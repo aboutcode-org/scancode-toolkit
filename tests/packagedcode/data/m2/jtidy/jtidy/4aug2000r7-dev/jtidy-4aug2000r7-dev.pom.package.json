@@ -35,7 +35,7 @@
       "name": "Java HTML Tidy License", 
       "url": "http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
       "comments": null, 
-      "distribution": null
+      "text": "<license><name>Java HTML Tidy License</name><url>http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95</url><distribution>repo</distribution></license>"
     }
   ], 
   "notice_text": null, 

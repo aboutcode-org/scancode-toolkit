@@ -17,7 +17,8 @@
       "name": "The Apache Software License, Version 2.0", 
       "url": "http://ehcache.sourceforge.net/LICENSE.txt", 
       "comments": "The license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>The Apache Software License, Version 2.0</name><url>http://ehcache.sourceforge.net/LICENSE.txt</url><distribution>repo</distribution><comments>The license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.\n            </comments></license>"
     }
   ], 
   "developers": [

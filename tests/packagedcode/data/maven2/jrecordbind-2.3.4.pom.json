@@ -17,7 +17,8 @@
       "name": "LGPL", 
       "url": "http://www.gnu.org/copyleft/lesser.html", 
       "comments": null, 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>LGPL</name><url>http://www.gnu.org/copyleft/lesser.html</url><distribution>repo</distribution></license>"
     }
   ], 
   "developers": [

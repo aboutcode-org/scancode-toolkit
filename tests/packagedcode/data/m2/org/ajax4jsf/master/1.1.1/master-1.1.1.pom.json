@@ -17,7 +17,8 @@
       "name": "LGPL 2.1", 
       "url": "http://www.gnu.org/licenses/lgpl.html", 
       "comments": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>LGPL 2.1</name><url>http://www.gnu.org/licenses/lgpl.html</url><distribution>repo</distribution><comments>\n\t\t\t\tGNU LESSER GENERAL PUBLIC LICENSE Version 2.1\n\t\t\t</comments></license>"
     }
   ], 
   "developers": [

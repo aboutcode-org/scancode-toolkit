@@ -27,7 +27,7 @@
       "name": "HSQLDB License", 
       "url": "http://hsqldb.org/web/hsqlLicense.html", 
       "comments": null, 
-      "distribution": null
+      "text": "<license><name>HSQLDB License</name><url>http://hsqldb.org/web/hsqlLicense.html</url><distribution>repo</distribution></license>"
     }
   ], 
   "notice_text": null, 

@@ -23,7 +23,8 @@
       "name": "MIT", 
       "url": "LICENSE.txt", 
       "comments": null, 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>MIT</name><url>LICENSE.txt</url><distribution>repo</distribution></license>"
     }
   ], 
   "developers": [

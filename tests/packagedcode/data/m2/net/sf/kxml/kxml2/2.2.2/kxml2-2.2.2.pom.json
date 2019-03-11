@@ -17,7 +17,8 @@
       "name": "The BSD License", 
       "url": "http://www.opensource.org/licenses/bsd-license.html", 
       "comments": null, 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>The BSD License</name><url>http://www.opensource.org/licenses/bsd-license.html</url><distribution>repo</distribution></license>"
     }
   ], 
   "developers": [

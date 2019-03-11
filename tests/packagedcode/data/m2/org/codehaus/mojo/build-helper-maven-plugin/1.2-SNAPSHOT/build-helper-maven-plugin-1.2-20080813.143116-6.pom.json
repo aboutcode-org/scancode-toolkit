@@ -23,7 +23,8 @@
       "name": "The MIT License", 
       "url": "http://www.opensource.org/licenses/mit-license.php", 
       "comments": null, 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>The MIT License</name><url>http://www.opensource.org/licenses/mit-license.php</url><distribution>repo</distribution></license>"
     }
   ], 
   "developers": [

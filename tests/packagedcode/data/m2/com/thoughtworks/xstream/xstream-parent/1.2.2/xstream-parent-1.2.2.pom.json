@@ -17,7 +17,8 @@
       "name": "BSD style", 
       "url": "http://xstream.codehaus.com/license.html", 
       "comments": null, 
-      "distribution": "repo"
+      "distribution": "repo", 
+      "text": "<license><name>BSD style</name><url>http://xstream.codehaus.com/license.html</url><distribution>repo</distribution></license>"
     }
   ], 
   "developers": [], 

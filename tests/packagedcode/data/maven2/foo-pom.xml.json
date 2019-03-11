@@ -23,7 +23,8 @@
       "name": "Eclipse Public License - v 1.0", 
       "url": "http://www.eclipse.org/legal/epl-v10.html", 
       "comments": null, 
-      "distribution": null
+      "distribution": null, 
+      "text": "<license><name>Eclipse Public License - v 1.0</name><url>http://www.eclipse.org/legal/epl-v10.html</url></license>"
     }
   ], 
   "developers": [

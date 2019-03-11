@@ -17,13 +17,15 @@
       "name": "Public Domain", 
       "url": null, 
       "comments": null, 
-      "distribution": null
+      "distribution": null, 
+      "text": "<license><name>Public Domain</name></license>"
     }, 
     {
       "name": "GPL", 
       "url": "http://nexb.com", 
       "comments": null, 
-      "distribution": null
+      "distribution": null, 
+      "text": "<license><name>GPL</name><url>http://nexb.com</url></license>"
     }
   ], 
   "developers": [], 

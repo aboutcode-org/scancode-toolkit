@@ -35,7 +35,7 @@
       "name": "MPL 1.1", 
       "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html", 
       "comments": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
-      "distribution": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
+      "text": "<license><name>MPL 1.1</name><url>http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&amp;content-type=text/html</url><comments>Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.</comments></license>"
     }
   ], 
   "notice_text": null, 

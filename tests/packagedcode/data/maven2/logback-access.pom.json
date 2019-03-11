@@ -23,7 +23,8 @@
       "name": "GNU Lesser General Public License", 
       "url": "http://www.gnu.org/licenses/lgpl.html", 
       "comments": null, 
-      "distribution": null
+      "distribution": null, 
+      "text": "<license><name> GNU Lesser General Public License</name><url>http://www.gnu.org/licenses/lgpl.html</url></license>"
     }
   ], 
   "developers": [], 

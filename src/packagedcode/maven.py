@@ -53,6 +53,7 @@ from typecode import contenttype
 from packagedcode.models import Package
 
 
+
 TRACE = False
 
 logger = logging.getLogger(__name__)
@@ -147,8 +148,17 @@ class MavenPomPackage(models.Package):
             baseurl=baseurl)
 
     def compute_normalized_license(self):
-        declared_license_str = json.dumps(self.declared_license)
-        return models.compute_normalized_license(declared_license_str)
+        """
+        Get the license expression by combing the pure text from the declared license. 
+        The  value is original xml format
+        """
+        if self.declared_license:
+            declared_license_str = []
+            for license_declaration in self.declared_license:
+                if license_declaration.get('text'):
+                    declared_license_str.append(
+                        license_declaration.get('text'))
+            return models.compute_normalized_license('\n'.join(declared_license_str))
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
     """
@@ -561,6 +571,10 @@ class MavenPom(pom.Pom):
                 ('comments', self._get_attribute('comments', lic)),
                 # arcane and seldom used
                 ('distribution', self._get_attribute('distribution', lic)),
+                # Add the whole text of the licenses
+                ('text', etree.tostring(lic, encoding='utf-8', method='xml')
+)
+                
             ])
 
     def _find_parties(self, key='developers/developer'):
@@ -1036,7 +1050,7 @@ def get_maven_licenses(licenses):
                 ('name', each.get('name')),
                 ('url', each.get('url')),
                 ('comments', each.get('comments')),
-                ('distribution', each.get('comments')),
+                ('text', each.get('text')),
             ]))
     return declared_license
 
