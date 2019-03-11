@@ -31,26 +31,25 @@ from os.path import dirname
 from os.path import join
 from pprint import pformat
 import io
-import json
 import logging
 import os.path
 import re
 
-import attr
-import javaproperties
 from lxml import etree
 from packageurl import PackageURL
-from pymaven import pom
 from pymaven import artifact
+from pymaven import pom
+import attr
+import javaproperties
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from packagedcode.utils import normalize_vcs_url
+from packagedcode.models import Package
 from packagedcode.utils import VCS_URLS
+from packagedcode.utils import normalize_vcs_url
 from textcode import analysis
 from typecode import contenttype
-from packagedcode.models import Package
 
 
 
@@ -156,8 +155,7 @@ class MavenPomPackage(models.Package):
             declared_license_str = []
             for license_declaration in self.declared_license:
                 if license_declaration.get('text'):
-                    declared_license_str.append(
-                        license_declaration.get('text'))
+                    declared_license_str.append(license_declaration.get('text'))
             return models.compute_normalized_license('\n'.join(declared_license_str))
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
