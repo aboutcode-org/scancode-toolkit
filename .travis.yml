@@ -7,9 +7,6 @@ python:
 # Use a global PYTEST variable to run all of the tests in a uniform fashion
 # The --cov-report=term option displays coverage in CI logs
 # The --cov-report=xml option is important for codecov.io
-env:
-  global:
-    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
   matrix:
     - sudo: required
         services:
