@@ -2,21 +2,30 @@ language: python
 
 python:
   - 2.7.13
+matrix:
+  include:
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686
+           PRE_CMD=linux32
 
+install:
+  - docker pull $DOCKER_IMAGE
+script:
+  - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/scancode-toolkit/etc/release/build-plugins.sh
 # Use a matrix of TEST_SUITE variables to distribute tests to several machines
 # Use a global PYTEST variable to run all of the tests in a uniform fashion
 # The --cov-report=term option displays coverage in CI logs
 # The --cov-report=xml option is important for codecov.io
+env:
+  global:
+    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
   matrix:
-    - sudo: required
-        services:
-            - docker
-        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
-
-    - sudo: required
-        services:
-            - docker
-        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686 PRE_CMD=linux32
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode"
     - TEST_SUITE="$PYTEST tests/extractcode"
@@ -48,7 +57,8 @@ python:
 # Set `python:` (to empty) to clear it from the travis-ci web interface
 # Set `osx_image: xcode7.3` to pin OSX and Python versions, see here:
 #   https://docs.travis-ci.com/user/osx-ci-environment/
-     
+matrix:
+  include:
     - os: osx
       env: TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
       language: generic
@@ -99,10 +109,9 @@ python:
       language: generic
       python:
       osx_image: xcode7.3
-     
+
 # TODO: ship pytest-cov and codecov with scancode-toolkit
 install:
-  - docker pull $DOCKER_IMAGE
   - ./configure
 
 script:
@@ -110,7 +119,7 @@ script:
   # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
   # - echo $TEST_SUITE
   - $TEST_SUITE
-  - docker run --rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/scancode-toolkit/etc/release/build-plugins.sh
+
 # Pay attention to both calls below. They will succeed even if there
 # is no coverage information or connection to reporting website fails.
 after_success:
