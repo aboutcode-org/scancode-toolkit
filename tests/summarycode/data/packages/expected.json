@@ -41,8 +41,15 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
-        "license_expression": "public-domain",
-        "declared_license": "Public Domain",
+        "license_expression": "public-domain AND unknown",
+        "declared_license": [
+          {
+            "name": "Public Domain",
+            "url": null,
+            "comments": null,
+            "text": "<license><name>Public Domain</name></license>"
+          }
+        ],
         "notice_text": null,
         "manifest_path": null,
         "dependencies": [],
@@ -704,8 +711,15 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "public-domain",
-          "declared_license": "Public Domain",
+          "license_expression": "public-domain AND unknown",
+          "declared_license": [
+            {
+              "name": "Public Domain",
+              "url": null,
+              "comments": null,
+              "text": "<license><name>Public Domain</name></license>"
+            }
+          ],
           "notice_text": null,
           "manifest_path": null,
           "dependencies": [],
