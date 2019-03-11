@@ -121,7 +121,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<3',    
+    python_requires='>=2.7,<4',    
     install_requires=[
         # cluecode
         # Some nltk version ranges are buggy
