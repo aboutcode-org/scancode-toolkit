@@ -167,11 +167,11 @@ class TestLicense(FileBasedTesting):
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_create_template_rule(self):
+    def test_create_rule_ignore_punctuation(self):
         test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
-        expected = ['a', 'one', 'a', 'two', 'a', 'three']
+        expected = ['one', 'two', 'three']
         assert expected == list(test_rule.tokens())
-        assert 6 == test_rule.length
+        assert 3 == test_rule.length
 
     def test_create_plain_rule_with_text_file(self):
 
@@ -182,9 +182,9 @@ class TestRule(FileBasedTesting):
             return tf
 
         test_rule = models.Rule(text_file=create_test_file('A one. A two. A three.'))
-        expected = ['a', 'one', 'a', 'two', 'a', 'three']
+        expected = ['one', 'two', 'three']
         assert expected == list(test_rule.tokens())
-        assert 6 == test_rule.length
+        assert 3 == test_rule.length
 
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
@@ -264,14 +264,6 @@ class TestRule(FileBasedTesting):
         expected = [
             'i', 'hereby', 'abandon', 'any', 'sax', '2', '0', 'the', 'and',
             'release', 'all', 'of', 'the', 'sax', '2', '0', 'source', 'code',
-            'of', 'his'
-        ]
-        assert expected == rule_tokens
-
-        rule_tokens = list(rule.tokens(lower=False))
-        expected = [
-            'I', 'hereby', 'abandon', 'any', 'SAX', '2', '0', 'the', 'and',
-            'Release', 'all', 'of', 'the', 'SAX', '2', '0', 'source', 'code',
             'of', 'his'
         ]
         assert expected == rule_tokens

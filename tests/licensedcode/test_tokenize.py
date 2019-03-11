@@ -183,12 +183,12 @@ class TestTokenizers(FileBasedTesting):
         disclaimer.'''
 
         result = list(query_tokenizer(text))
-        assert 39 == len(result)
+        assert 38 == len(result)
 
         expected = u'''redistribution and use in source and binary forms with or
         without modification are permitted provided that the following
         conditions are met redistributions of source code must retain the above
-        copyright notice this list of conditions and the following
+        copyright notice this of conditions and the following
         disclaimer'''.split()
         assert expected == result
 
