@@ -15,7 +15,7 @@ for i in `ls plugins`
   do 
     pushd plugins/$i
     rm -rf dist build
-    python setup.py release
+    python setup.py bdist_wheel --universal
     cp `find dist/ -type f` ../../thirdparty/
     popd
   done
