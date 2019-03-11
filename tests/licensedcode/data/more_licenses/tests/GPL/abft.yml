@@ -1,3 +1,2 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+  - gpl-2.0-plus

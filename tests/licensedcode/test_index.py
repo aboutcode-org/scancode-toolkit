@@ -92,7 +92,7 @@ class TestIndexing(IndexTesting):
             (u'one two three four five gpl', 5, 1, 5, 1,),
             (u'The rose is a rose mit', 3, 2, 3, 3),
             (u'The license is GPL', 2, 2, 2, 2),
-            (u'The license is a GPL', 3, 2, 3, 2),
+            (u'The license is this GPL', 3, 2, 3, 2),
             (u'a license is a rose', 2, 2, 3, 2),
             (u'the gpl', 1, 1, 1, 1),
             (u'the mit', 1, 1, 1, 1),
@@ -357,13 +357,15 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 212) == match.ispan
 
     def test_match_return_correct_offsets(self):
-        _stored_text = u'A GPL. A MIT. A LGPL.'
-        #         0   1  2   3  4    5
+        # notes: A is a stopword. This and that are not
+        _stored_text = u'This GPL. A MIT. That LGPL.'
+        #                0    1    2 3    4    5
+
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
         idx = index.LicenseIndex([rule])
-        querys = u'some junk. A GPL. A MIT. A LGPL.'
-        #             0    1  2   3  4   5  6    7
+        querys = u'some junk. this GPL. A MIT. that LGPL.'
+        #          0    1     2    3    4 5    6    7
 
         result = idx.match(query_string=querys)
         assert 1 == len(result)

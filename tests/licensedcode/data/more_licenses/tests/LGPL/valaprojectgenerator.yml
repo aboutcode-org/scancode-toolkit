@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - lgpl-2.1-plus
   - gpl-2.0
@@ -17,7 +18,7 @@ license_expressions:
   - gpl-1.0-plus
   - lgpl-2.0-plus
   - lgpl-2.0-plus
-  - lgpl-2.1-plus
+  - lgpl-2.0-plus
   - gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1 OR bsd-new
   - gpl-3.0
   - lgpl-2.1 AND gpl-2.0 AND gpl-3.0

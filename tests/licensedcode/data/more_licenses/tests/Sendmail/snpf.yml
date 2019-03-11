@@ -1,7 +1,6 @@
+expected_failure: yes
 license_expressions:
   - purdue-bsd
-  - bsd-new
   - bsd-simplified-source
-  - bsd-new
-  - bsd-simplified
+  - bsd-no-disclaimer
   - bsd-original-uc

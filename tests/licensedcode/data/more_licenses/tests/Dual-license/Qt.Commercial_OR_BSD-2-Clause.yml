@@ -1,4 +1,2 @@
 license_expressions:
-  - commercial-license
-  - bsd-new
-  - bsd-simplified
+  - commercial-license OR bsd-simplified

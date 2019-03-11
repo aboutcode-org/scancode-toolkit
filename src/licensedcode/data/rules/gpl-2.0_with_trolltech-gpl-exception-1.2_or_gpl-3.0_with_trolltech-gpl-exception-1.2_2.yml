@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 WITH trolltech-gpl-exception-1.2 OR gpl-3.0 WITH trolltech-gpl-exception-1.2
+is_license_notice: yes
+referenced_filenames:
+    - GPL_Exception_Addendum.txt
