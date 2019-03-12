@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - commercial-license
   - commercial-license

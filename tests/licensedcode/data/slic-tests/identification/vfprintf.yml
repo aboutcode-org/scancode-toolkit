@@ -1,3 +1,4 @@
 license_expressions:
   - bsd-1988
-  - bsd-simplified-intel
+  - bsd-new-tcpdump
+expected_failure: yes

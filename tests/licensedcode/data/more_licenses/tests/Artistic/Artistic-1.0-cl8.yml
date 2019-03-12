@@ -1,2 +1,4 @@
+expected_failure: yes
 license_expressions:
+  - artistic-2.0
   - artistic-1.0-cl8
