@@ -17,8 +17,7 @@
       "name": "The 3-Clause BSD License", 
       "url": "https://opensource.org/licenses/BSD-3-Clause", 
       "comments": null, 
-      "distribution": null, 
-      "text": "<license><name>The 3-Clause BSD License</name><url>https://opensource.org/licenses/BSD-3-Clause</url></license>"
+      "distribution": null
     }
   ], 
   "developers": [

@@ -17,8 +17,7 @@
       "name": "The Apache Software License, Version 2.0", 
       "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
       "comments": "A business-friendly OSS license", 
-      "distribution": "repo", 
-      "text": "<license><name>The Apache Software License, Version 2.0</name><url>http://www.apache.org/licenses/LICENSE-2.0.txt</url><distribution>repo</distribution><comments>A business-friendly OSS license</comments></license>"
+      "distribution": "repo"
     }
   ], 
   "developers": [

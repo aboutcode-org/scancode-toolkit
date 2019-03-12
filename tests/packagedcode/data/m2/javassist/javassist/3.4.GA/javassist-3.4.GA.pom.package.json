@@ -26,8 +26,7 @@
     {
       "name": "lgpl", 
       "url": "http://repository.jboss.com/licenses/lgpl.txt", 
-      "comments": null, 
-      "text": "<license><name>lgpl</name><url>http://repository.jboss.com/licenses/lgpl.txt</url></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

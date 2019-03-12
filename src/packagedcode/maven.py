@@ -148,15 +148,31 @@ class MavenPomPackage(models.Package):
 
     def compute_normalized_license(self):
         """
-        Get the license expression by combing the pure text from the declared license. 
-        The  value is original xml format
+        Get the license expression by combing the expression with AND of all licenses, and in each license, combining the expression with AND from detected value from name, url and comments.
         """
         if self.declared_license:
-            declared_license_str = []
+            detected_licenses = []
             for license_declaration in self.declared_license:
-                if license_declaration.get('text'):
-                    declared_license_str.append(license_declaration.get('text'))
-            return models.compute_normalized_license('\n'.join(declared_license_str))
+                detected_from_name = license_declaration.get('name')
+                detected_from_url = license_declaration.get('url')
+                detected_from_comments = license_declaration.get('comments')
+                # 1. try detection on the value of name if not empty and keep this
+                # 2. try detection on the value of url  if not empty and keep this
+                # 3. try detection on the value of comment  if not empty and keep this
+                # 4. if the three detection are for the same license, this becomes the kept license for that one licenses item
+                # 5. if not, the name should have precedence and any unknowns
+                # in url and comment should be ignored.
+                detected_items = [models.compute_normalized_license(item) for item in (detected_from_name, detected_from_url, detected_from_comments) if item and item != 'unknown']
+                if not detected_items:
+                    # all detected value from name, url and comments are
+                    # unknown, we should return unknown
+                    license_detected = 'unknown'
+                else:
+                    # use and expression to combine detected values from name,
+                    # url and comment
+                    license_detected = models.compute_normalized_license(' AND '.join(detected_items))
+                detected_licenses.append(license_detected)
+            return models.compute_normalized_license(' AND '.join(detected_licenses))
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
     """
@@ -569,10 +585,6 @@ class MavenPom(pom.Pom):
                 ('comments', self._get_attribute('comments', lic)),
                 # arcane and seldom used
                 ('distribution', self._get_attribute('distribution', lic)),
-                # Add the whole text of the licenses
-                ('text', etree.tostring(lic, encoding='utf-8', method='xml')
-)
-                
             ])
 
     def _find_parties(self, key='developers/developer'):
@@ -1048,7 +1060,6 @@ def get_maven_licenses(licenses):
                 ('name', each.get('name')),
                 ('url', each.get('url')),
                 ('comments', each.get('comments')),
-                ('text', each.get('text')),
             ]))
     return declared_license
 

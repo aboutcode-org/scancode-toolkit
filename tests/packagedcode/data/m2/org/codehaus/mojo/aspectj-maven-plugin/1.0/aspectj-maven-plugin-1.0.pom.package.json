@@ -41,8 +41,7 @@
     {
       "name": "The MIT License", 
       "url": "LICENSE.txt", 
-      "comments": null, 
-      "text": "<license><name>The MIT License</name><url>LICENSE.txt</url><distribution>repo</distribution></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

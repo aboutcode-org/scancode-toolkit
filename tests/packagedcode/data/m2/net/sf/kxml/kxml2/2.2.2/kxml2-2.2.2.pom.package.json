@@ -41,8 +41,7 @@
     {
       "name": "The BSD License", 
       "url": "http://www.opensource.org/licenses/bsd-license.html", 
-      "comments": null, 
-      "text": "<license><name>The BSD License</name><url>http://www.opensource.org/licenses/bsd-license.html</url><distribution>repo</distribution></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

@@ -34,8 +34,7 @@
     {
       "name": "LGPL", 
       "url": "http://www.gnu.org/copyleft/lesser.html", 
-      "comments": null, 
-      "text": "<license><name>LGPL</name><url>http://www.gnu.org/copyleft/lesser.html</url><distribution>repo</distribution></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

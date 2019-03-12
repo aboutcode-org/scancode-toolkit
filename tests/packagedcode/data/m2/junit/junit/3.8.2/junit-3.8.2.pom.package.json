@@ -34,8 +34,7 @@
     {
       "name": "Common Public License Version 1.0", 
       "url": "http://www.opensource.org/licenses/cpl1.0.txt", 
-      "comments": null, 
-      "text": "<license><name>Common Public License Version 1.0</name><url>http://www.opensource.org/licenses/cpl1.0.txt</url></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

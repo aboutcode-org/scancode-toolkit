@@ -26,8 +26,7 @@
     {
       "name": "MIT License", 
       "url": "http://httpunit.sourceforge.net/doc/license.html", 
-      "comments": null, 
-      "text": "<license><name>MIT License</name><url>http://httpunit.sourceforge.net/doc/license.html</url></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

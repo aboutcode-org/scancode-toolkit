@@ -17,8 +17,7 @@
       "name": "Public Domain", 
       "url": "http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
       "comments": null, 
-      "distribution": null, 
-      "text": "<license><name>Public Domain</name><url>http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt</url></license>"
+      "distribution": null
     }
   ], 
   "developers": [], 

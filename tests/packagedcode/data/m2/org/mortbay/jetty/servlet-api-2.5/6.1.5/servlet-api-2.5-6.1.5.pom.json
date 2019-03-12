@@ -23,8 +23,7 @@
       "name": "CDDL 1.0", 
       "url": "https://glassfish.dev.java.net/public/CDDLv1.0.html", 
       "comments": null, 
-      "distribution": null, 
-      "text": "<license><name>CDDL 1.0</name><url>https://glassfish.dev.java.net/public/CDDLv1.0.html</url></license>"
+      "distribution": null
     }
   ], 
   "developers": [], 

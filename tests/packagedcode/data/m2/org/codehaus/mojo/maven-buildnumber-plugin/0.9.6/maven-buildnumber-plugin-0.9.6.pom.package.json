@@ -34,8 +34,7 @@
     {
       "name": "The MIT License", 
       "url": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
-      "comments": null, 
-      "text": "<license><name>The MIT License</name><url>http://commons.ucalgary.ca/projects/licenses/mit-license.txt</url><distribution>repo</distribution></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

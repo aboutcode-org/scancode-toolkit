@@ -531,8 +531,7 @@
     {
       "name": "The Apache Software License, Version 2.0", 
       "url": "/LICENSE.txt", 
-      "comments": null, 
-      "text": "<license><name>The Apache Software License, Version 2.0</name><url>/LICENSE.txt</url></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

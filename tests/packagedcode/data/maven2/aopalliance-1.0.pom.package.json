@@ -26,14 +26,12 @@
     {
       "name": "Public Domain", 
       "url": null, 
-      "comments": null, 
-      "text": "<license><name>Public Domain</name></license>"
+      "comments": null
     }, 
     {
       "name": "GPL", 
       "url": "http://nexb.com", 
-      "comments": null, 
-      "text": "<license><name>GPL</name><url>http://nexb.com</url></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 

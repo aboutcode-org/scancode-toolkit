@@ -34,8 +34,7 @@
     {
       "name": "Apache 2.0 License", 
       "url": "http://www.apache.org/licenses/LICENSE-2.0", 
-      "comments": null, 
-      "text": "<license><name>Apache 2.0 License</name><url>http://www.apache.org/licenses/LICENSE-2.0</url><distribution>repo</distribution></license>"
+      "comments": null
     }
   ], 
   "notice_text": null, 
