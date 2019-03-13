@@ -121,14 +121,18 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<4',    
+    python_requires='>=2.7,<3',    
     install_requires=[
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
+<<<<<<< HEAD
         'py2-ipaddress >= 2.0, <3.5;python_version<"3"',
         'ipaddress',
+=======
+        'py2-ipaddress >= 2.0, <3.5',
+>>>>>>> parent of 9a9e4dd9b... Add Support python3 to ipaddress module
         'url >= 0.1.4, < 0.1.6',
         'fingerprints == 0.5.4',
 
