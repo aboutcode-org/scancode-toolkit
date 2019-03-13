@@ -43,7 +43,7 @@ setup(
         'open source', 'typecode', 'libmagic'
     ],
     install_requires=[
-        'scancode-toolkit',
+        # 'scancode-toolkit',
     ],
     entry_points={
         'scancode_location_provider': [

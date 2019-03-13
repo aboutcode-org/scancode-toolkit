@@ -43,7 +43,7 @@ setup(
         'open source', 'extractcode', 'libarchive'
     ],
     install_requires=[
-        'scancode-toolkit',
+        # 'scancode-toolkit',
     ],
     entry_points={
         'scancode_location_provider': [
