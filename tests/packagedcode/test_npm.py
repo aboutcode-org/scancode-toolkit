@@ -141,7 +141,7 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/invalid/package.json')
         try:
             npm.parse(test_file)
-        except ValueError, e:
+        except ValueError as e:
             assert 'No JSON object could be decoded' in str(e)
 
     def test_parse_keywords(self):

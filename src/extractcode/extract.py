@@ -188,7 +188,7 @@ def extract_file(location, target, kinds=extractcode.default_kinds, verbose=Fals
             warnings.extend(warns)
             fileutils.copytree(tmp_tgt, target)
             fileutils.delete(tmp_tgt)
-        except Exception, e:
+        except Exception as e:
             errors = [str(e).strip(' \'"')]
             if verbose:
                 errors.append(traceback.format_exc())

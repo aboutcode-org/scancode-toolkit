@@ -77,7 +77,7 @@ class TestFreeBSD(PackageTester):
         test_file = self.get_test_loc('freebsd/not_yaml/+COMPACT_MANIFEST')
         try:
             freebsd.parse(test_file)
-        except saneyaml.YAMLError, e:
+        except saneyaml.YAMLError as e:
             assert 'while parsing a block node' in str(e)
 
     def test_parse_invalid_metafile(self):

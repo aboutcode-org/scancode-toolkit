@@ -273,7 +273,7 @@ class License(object):
 
                 setattr(self, k, v)
 
-        except Exception, e:
+        except Exception as e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
@@ -1028,7 +1028,7 @@ class Rule(object):
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
-        except Exception, e:
+        except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', 'file://' + self.data_file)
             print('#############################')
