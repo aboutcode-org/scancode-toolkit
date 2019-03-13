@@ -128,7 +128,7 @@ setup(
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.5;python_version<"3"'
-        'ipaddress;python_version>"3"',
+        'ipaddress',
         'url >= 0.1.4, < 0.1.6',
         'fingerprints == 0.5.4',
 
