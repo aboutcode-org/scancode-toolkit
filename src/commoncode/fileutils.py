@@ -499,7 +499,7 @@ def copytree(src, dst):
             errors.append((srcname, dstname, str(why)))
 
     if errors:
-        raise shutil.Error, errors
+        raise shutil.Error(errors)
 
 
 def copyfile(src, dst):
