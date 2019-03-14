@@ -99,7 +99,7 @@ or TRACE_CANDIDATES):
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a)
                                      for a in args))
 
 

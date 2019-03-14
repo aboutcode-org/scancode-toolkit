@@ -51,7 +51,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a) for a in args))
 
 """
 Find patterns in text lines such as a emails and URLs.

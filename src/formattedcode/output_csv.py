@@ -325,7 +325,7 @@ def flatten_package(_package, path, prefix='package__'):
 
         pack[nk] = ''
 
-        if isinstance(val, basestring):
+        if isinstance(val, (str, bytes)):
             pack[nk] = val
         else:
             # Use repr if not a string
