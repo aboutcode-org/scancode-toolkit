@@ -84,6 +84,7 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
+
 # Paths can only be sanely handled as raw bytes on Linux
 if on_linux:
     PATH_TYPE = bytes
@@ -93,8 +94,13 @@ if on_linux:
     DOT = b'.'
     if py2:
         PATH_SEP = bytes(os.sep)
+        PATH_ENV_VAR = b'PATH'
+        PATH_ENV_SEP = bytes(os.pathsep)
     else:
         PATH_SEP = bytes(os.sep, encoding='utf-8')
+        PATH_ENV_VAR = 'PATH'
+        PATH_ENV_SEP = bytes(os.pathsep, encoding='utf-8')
+
 else:
     PATH_TYPE = unicode
     POSIX_PATH_SEP = '/'
@@ -102,6 +108,10 @@ else:
     EMPTY_STRING = ''
     DOT = '.'
     PATH_SEP = unicode(os.sep)
+
+    PATH_ENV_VAR = 'PATH'
+    PATH_ENV_SEP = unicode(os.pathsep)
+
 
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 
