@@ -3,7 +3,7 @@ language: python
 python:
   - 3.6.1
 
-# Use a matrix of TEST_SUITE variables to distribute tests to several machines
+# Use a marix of TEST_SUITE variables to distribute tests to several machines
 # Use a global PYTEST variable to run all of the tests in a uniform fashion
 # The --cov-report=term option displays coverage in CI logs
 # The --cov-report=xml option is important for the codecov.io
