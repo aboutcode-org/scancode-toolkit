@@ -206,7 +206,7 @@ def is_relative_path(s):
 def is_win_path(s):
     """
     Return True if s looks like a win path.
-    Example: c:\usr\lib\librt.so.1.
+    Example: c:\\usr\\lib\\librt.so.1.
     """
     winpath = re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE).match
     return winpath(s)
