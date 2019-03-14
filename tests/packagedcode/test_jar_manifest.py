@@ -118,7 +118,6 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=F
     if isinstance(test_name, unicode):
         test_name = test_name.encode('utf-8')
     test_manifest.__name__ = test_name
-    test_manifest.funcname = test_name
     return test_manifest
 
 
