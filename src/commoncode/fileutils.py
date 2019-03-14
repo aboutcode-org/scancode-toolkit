@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 # Python 2 and 3 support
 try:
     # Python 2
-    unicode
     str = unicode  # NOQA
 except NameError:
     # Python 3
@@ -85,13 +84,22 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 # Paths can only be sanely handled as raw bytes on Linux
-PATH_TYPE = bytes if on_linux else unicode
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-WIN_PATH_SEP = b'\\' if on_linux else '\\'
+if on_linux:
+    PATH_TYPE = bytes
+    POSIX_PATH_SEP = b'/'
+    WIN_PATH_SEP = b'\\'
+    EMPTY_STRING = b''
+    DOT = b'.'
+    PATH_SEP = bytes(os.sep, encoding='utf-8')
+else:
+    PATH_TYPE = unicode
+    POSIX_PATH_SEP = '/'
+    WIN_PATH_SEP = '\\'
+    EMPTY_STRING = ''
+    DOT = '.'
+    PATH_SEP = unicode(os.sep)
+
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
-EMPTY_STRING = b'' if on_linux else ''
-DOT = b'.' if on_linux else '.'
-PATH_SEP = bytes(os.sep) if on_linux else unicode(os.sep)
 
 
 """
