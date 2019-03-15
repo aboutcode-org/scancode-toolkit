@@ -44,13 +44,13 @@ import javaproperties
 
 from commoncode import filetype
 from commoncode import fileutils
+from license_expression import Licensing
 from packagedcode import models
 from packagedcode.models import Package
 from packagedcode.utils import VCS_URLS
 from packagedcode.utils import normalize_vcs_url
 from textcode import analysis
 from typecode import contenttype
-
 
 
 TRACE = False
@@ -148,31 +148,65 @@ class MavenPomPackage(models.Package):
 
     def compute_normalized_license(self):
         """
-        Get the license expression by combing the expression with AND of all licenses, and in each license, combining the expression with AND from detected value from name, url and comments.
+        Get the license expression by combining the expression with AND of all licenses, and in each license, combining the expression with AND from detected value from name, url and comments.
         """
-        if self.declared_license:
-            detected_licenses = []
-            for license_declaration in self.declared_license:
-                detected_from_name = license_declaration.get('name')
-                detected_from_url = license_declaration.get('url')
-                detected_from_comments = license_declaration.get('comments')
-                # 1. try detection on the value of name if not empty and keep this
-                # 2. try detection on the value of url  if not empty and keep this
-                # 3. try detection on the value of comment  if not empty and keep this
-                # 4. if the three detection are for the same license, this becomes the kept license for that one licenses item
-                # 5. if not, the name should have precedence and any unknowns
-                # in url and comment should be ignored.
-                detected_items = [models.compute_normalized_license(item) for item in (detected_from_name, detected_from_url, detected_from_comments) if item and item != 'unknown']
-                if not detected_items:
-                    # all detected value from name, url and comments are
-                    # unknown, we should return unknown
-                    license_detected = 'unknown'
+        return compute_normalized_license(self.declared_license)
+
+def compute_normalized_license(listed_license_dictionary):
+    '''
+    Return a detected license by parsing the passing listed license dictionary.
+    It is to combining each licenses with licensing AND feature.
+    '''
+    if listed_license_dictionary:
+        licensing = Licensing()
+        detected_licenses = []
+        for license_declaration in listed_license_dictionary:
+            license_name = license_declaration.get('name')
+            license_url = license_declaration.get('url')
+            license_comments = license_declaration.get('comments')
+            # 1. try detection on the value of name if not empty and keep this
+            # 2. try detection on the value of url  if not empty and keep this
+            # 3. try detection on the value of comment  if not empty and keep this
+            # 4. if the three detection are for the same license, this becomes the kept license for that one licenses item
+            # 5. if not, the name should have precedence and any unknowns
+            # in url and comment should be ignored.
+            detected_license_via_name = models.compute_normalized_license(license_name)
+            detected_license_via_url = models.compute_normalized_license(license_url)
+            detected_license_via_comments = models.compute_normalized_license(license_comments)
+
+            if detected_license_via_name and detected_license_via_name == detected_license_via_url and detected_license_via_comments == detected_license_via_url:
+                # if three detection are the same and not empty, return one
+                # value
+                detected_licenses.append(detected_license_via_name)
+            else:
+                if detected_license_via_name:
+                    if detected_license_via_url == 'unknown':
+                        detected_license_via_url = None
+                    if detected_license_via_comments == 'unknown':
+                        detected_license_via_comments = None
                 else:
-                    # use and expression to combine detected values from name,
-                    # url and comment
-                    license_detected = models.compute_normalized_license(' AND '.join(detected_items))
-                detected_licenses.append(license_detected)
-            return models.compute_normalized_license(' AND '.join(detected_licenses))
+                    if detected_license_via_url:
+                        if detected_license_via_comments == 'unknown':
+                            detected_license_via_comments = None
+                # Form a list and the element does not contain any None value, since the None value means 'unknown' from above assignment.
+                detected_items = [item for item in (detected_license_via_name, detected_license_via_url, detected_license_via_comments) if item]
+                if detected_items:
+                    if len(detected_items) == 1:
+                        detected_licenses.append(detected_items[0])
+                    else:
+                        # Combine if name, url and comments are different licenses
+                        detected_license_expr = licensing.parse(detected_items)
+                        combined_expression_object = licensing.AND(detected_license_expr)
+                        detected_licenses.append(str(combined_expression_object))
+        if detected_licenses:
+            if len(detected_licenses) == 1:
+                return str(detected_licenses[0])
+            else:
+                # Combine if pom contains more than 1 licenses declarations.
+                licensing = Licensing()
+                combined_expression_object = licensing.AND(*detected_licenses)
+                return str(combined_expression_object)
+
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
     """

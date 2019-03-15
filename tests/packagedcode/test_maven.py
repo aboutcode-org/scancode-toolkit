@@ -354,6 +354,18 @@ class TestPomProperties(testcase.FileBasedTesting):
         assert 'org.activiti' == pom.namespace
 
 
+class TestMavenModules(testcase.FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_compute_normalized_license(self):
+        list_license_dictionary = [{'name': 'apache-2.0'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+
 def relative_walk(dir_path):
     """
     Walk path and yield POM files paths relative to dir_path.
