@@ -354,17 +354,32 @@ class TestPomProperties(testcase.FileBasedTesting):
         assert 'org.activiti' == pom.namespace
 
 
-class TestMavenModules(testcase.FileBasedTesting):
+class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_compute_normalized_license(self):
+    def test_compute_normalized_license_1(self):
         list_license_dictionary = [{'name': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
         result = maven.compute_normalized_license(list_license_dictionary)
         expected = 'apache-2.0 AND mit'
         assert expected == result
-
+    
+    def test_compute_normalized_license_2(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+        
+    def test_compute_normalized_license_3(self):
+        list_license_dictionary = [{'name': 'unknown', 'url': 'apache-2.0'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = '(unknown AND apache-2.0) AND mit'
+        assert expected == result
 
 def relative_walk(dir_path):
     """

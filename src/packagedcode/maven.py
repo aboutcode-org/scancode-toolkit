@@ -195,8 +195,9 @@ def compute_normalized_license(listed_license_dictionary):
                         detected_licenses.append(detected_items[0])
                     else:
                         # Combine if name, url and comments are different licenses
-                        detected_license_expr = licensing.parse(detected_items)
-                        combined_expression_object = licensing.AND(detected_license_expr)
+                        licensing = Licensing()
+                        total_license_expression = [licensing.parse(detected_item, simple=True) for detected_item in detected_items]
+                        combined_expression_object = licensing.AND(*total_license_expression)
                         detected_licenses.append(str(combined_expression_object))
         if detected_licenses:
             if len(detected_licenses) == 1:
@@ -204,7 +205,8 @@ def compute_normalized_license(listed_license_dictionary):
             else:
                 # Combine if pom contains more than 1 licenses declarations.
                 licensing = Licensing()
-                combined_expression_object = licensing.AND(*detected_licenses)
+                total_license_expression = [licensing.parse(detected_license, simple=True) for detected_license in detected_licenses]
+                combined_expression_object = licensing.AND(*total_license_expression)
                 return str(combined_expression_object)
 
 
