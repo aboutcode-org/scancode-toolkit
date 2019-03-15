@@ -381,6 +381,15 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = '(unknown AND apache-2.0) AND mit'
         assert expected == result
 
+        
+    def test_compute_normalized_license_4(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'apache-2.0'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
 def relative_walk(dir_path):
     """
     Walk path and yield POM files paths relative to dir_path.

@@ -174,9 +174,12 @@ def compute_normalized_license(listed_license_dictionary):
             detected_license_via_url = models.compute_normalized_license(license_url)
             detected_license_via_comments = models.compute_normalized_license(license_comments)
 
-            if detected_license_via_name and detected_license_via_name == detected_license_via_url and detected_license_via_comments == detected_license_via_url:
+            if detected_license_via_name and ((detected_license_via_name == detected_license_via_url and detected_license_via_comments == detected_license_via_url) or (detected_license_via_name == detected_license_via_url and not detected_license_via_comments) or (detected_license_via_name == detected_license_via_comments and not detected_license_via_url)):
                 # if three detection are the same and not empty, return one
                 # value
+                # or one of detected_license_via_url and
+                # detected_license_via_comments is empty, and the other equals
+                # to  detected_license_via_name return one value
                 detected_licenses.append(detected_license_via_name)
             else:
                 if detected_license_via_name:
