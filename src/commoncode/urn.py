@@ -85,8 +85,12 @@ Examples:
 The product object type syntax is the same as the component syntax.
 """
 
-from urllib import quote_plus
-from urllib import unquote_plus
+try:
+    from urllib.parse import quote_plus
+    from urllib.parse import unquote_plus
+except ImportError:
+    from urllib import quote_plus
+    from urllib import unquote_plus
 
 
 class URNValidationError(Exception):
@@ -116,13 +120,13 @@ def encode(object_type, **fields):
 
     # case is not significant for the object type
     object_type = object_type.strip().lower()
-    urn_prefix = u'urn:dje:{0}:'.format(quote_plus(object_type))
+    urn_prefix = 'urn:dje:{0}:'.format(quote_plus(object_type))
 
     object_fields = URN_SCHEMAS[object_type]['fields']
     # leading and trailing white spaces are not significant
     # each URN part is encoded individually BEFORE assembling the URN
     encoded_fields = [quote_plus(fields[f].strip()) for f in object_fields]
-    encoded_fields = u':'.join(encoded_fields)
+    encoded_fields = ':'.join(encoded_fields)
     return urn_prefix + encoded_fields
 
 
@@ -141,7 +145,7 @@ def decode(urn):
 
     # object type is always lowercase
     object_type = segments[2].lower()
-    if object_type not in URN_SCHEMAS.keys():
+    if object_type not in URN_SCHEMAS:
         raise URNValidationError('Unsupported URN object type.')
 
     fields = segments[3:]
