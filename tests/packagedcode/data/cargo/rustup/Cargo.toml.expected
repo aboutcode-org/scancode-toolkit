@@ -6,9 +6,17 @@
  "qualifiers": null,
  "subpath": null,
  "primary_language": "Rust",
- "description": null,
+ "description": "Manage multiple rust installations with ease",
  "release_date": null,
- "parties": {},
+ "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Diggory Blake",
+      "email": "diggsey@googlemail.com",
+      "url": null
+    }
+ ],
  "keywords": {},
  "homepage_url": null,
  "download_url": null,
@@ -29,7 +37,7 @@
  "contains_source_code": null,
  "source_packages": {},
  "purl": "pkg:cargo/rustup@1.17.0",
- "repository_homepage_url": "https://crates.io//crates/rustup",
- "repository_download_url": "https://crates.io/api/v1//crates/rustup/1.17.0/download",
- "api_data_url": "https://crates.io/api/v1//crates/rustup"
+ "repository_homepage_url": "https://crates.io/crates/rustup",
+ "repository_download_url": "https://crates.io/api/v1/crates/rustup/1.17.0/download",
+ "api_data_url": "https://crates.io/api/v1/crates/rustup"
 }

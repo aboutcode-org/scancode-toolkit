@@ -120,7 +120,7 @@ def build_package(package_data):
     package = RustCargoCrate(
         name=name,
         version=version,
-        description=description,
+        description=description.strip(),
         **ordered_dict_map
     )
 
