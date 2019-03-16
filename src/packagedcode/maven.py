@@ -66,7 +66,6 @@ Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
 
-
 @attr.s()
 class MavenPomPackage(models.Package):
     metafiles = ('*.pom', 'pom.xml',)
