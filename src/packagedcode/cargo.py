@@ -137,6 +137,10 @@ def build_package(package_data):
 
 
 def party_mapper(party, package, party_type):
+    """
+    Update package parties with party of `party_type` and return package.
+    https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
+    """
     for auth in party:
         name, email = parse_person(auth)
         package.parties.append(models.Party(
@@ -144,10 +148,27 @@ def party_mapper(party, package, party_type):
             name=name,
             role=party_type,
             email=email))
+
     return package
 
 
 def parse_person(person):
+    """
+    https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
+    A "person" is an object with an optional "name" or "email" field.
+
+    A person can be in the form:
+      "author": "Isaac Z. Schlueter <i@izs.me>"
+
+    For example:
+    >>> parse_person('Barney Rubble <b@rubble.com>')
+    (u'Barney Rubble', u'b@rubble.com')
+    >>> parse_person('Barney Rubble')
+    (u'Barney Rubble', None)
+    >>> parse_person('<b@rubble.com>')
+    (None, u'b@rubble.com')
+    """
+
     parsed = person_parser(person)
     if not parsed:
         name = None
