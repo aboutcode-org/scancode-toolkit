@@ -27,10 +27,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-
+from functools import partial
 import io
 import toml
 import logging
+import re
 
 import attr
 
@@ -112,7 +113,7 @@ def build_package(package_data):
     # the appropriate data (source_packages, dependencies, etc..)
     # At the moment, this is only useful for making tests pass
     ordered_dict_map = {}
-    for key in ("source_packages", "dependencies", "keywords", "parties"):
+    for key in ("source_packages", "dependencies", "keywords"):
         ordered_dict_map[key] = OrderedDict()
 
     package = RustCargoCrate(
@@ -121,4 +122,51 @@ def build_package(package_data):
         **ordered_dict_map
     )
 
+    field_mappers = [
+        ('authors', partial(party_mapper, party_type="author")),
+    ]
+    for source, func in field_mappers:
+        value = package_data.get('package').get(source)
+        func(value, package)
+
     return package
+
+
+def party_mapper(party, package, party_type):
+    for auth in party:
+        name, email = parse_person(auth)
+        package.parties.append(models.Party(
+            type=models.party_person,
+            name=name,
+            role=party_type,
+            email=email))
+    return package
+
+
+def parse_person(person):
+    parsed = person_parser(person)
+    if not parsed:
+        name = None
+        parsed = person_parser_no_name(person)
+    else:
+        name = parsed.group('name')
+
+    email = parsed.group('email')
+
+    if name:
+        name = name.strip()
+    if email:
+        email = email.strip('<> ')
+
+    return name, email
+
+
+person_parser = re.compile(
+    r'^(?P<name>[^\(<]+)'
+    r'\s?'
+    r'(?P<email><([^>]+)>)?'
+).match
+
+person_parser_no_name = re.compile(
+    r'(?P<email><([^>]+)>)?'
+).match
