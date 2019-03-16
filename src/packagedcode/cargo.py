@@ -108,6 +108,7 @@ def build_package(package_data):
 
     name = package_data.get('package').get('name')
     version = package_data.get('package').get('version')
+    description = package_data.get('package').get('description')
 
     # TODO: Remove this ordered_dict_map once cargo.py is able to handle
     # the appropriate data (source_packages, dependencies, etc..)
@@ -119,6 +120,7 @@ def build_package(package_data):
     package = RustCargoCrate(
         name=name,
         version=version,
+        description=description,
         **ordered_dict_map
     )
 
