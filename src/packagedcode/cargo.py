@@ -109,6 +109,8 @@ def build_package(package_data):
     name = package_data.get('package').get('name')
     version = package_data.get('package').get('version')
     description = package_data.get('package').get('description')
+    if description:
+        description = description.strip()
 
     # TODO: Remove this ordered_dict_map once cargo.py is able to handle
     # the appropriate data (source_packages, dependencies, etc..)
@@ -120,7 +122,7 @@ def build_package(package_data):
     package = RustCargoCrate(
         name=name,
         version=version,
-        description=description.strip(),
+        description=description,
         **ordered_dict_map
     )
 
@@ -128,7 +130,7 @@ def build_package(package_data):
         ('authors', partial(party_mapper, party_type="author")),
     ]
     for source, func in field_mappers:
-        value = package_data.get('package').get(source)
+        value = package_data.get('package').get(source, [])
         func(value, package)
 
     return package
