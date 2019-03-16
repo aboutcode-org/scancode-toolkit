@@ -59,9 +59,9 @@ class RustCargoCrate(models.Package):
     metafiles = ('Cargo.toml',)
     default_type = 'cargo'
     default_primary_language = 'Rust'
-    default_web_baseurl = "https://crates.io/"
-    default_download_baseurl = "https://crates.io/api/v1/"
-    default_api_baseurl = "https://crates.io/api/v1/"
+    default_web_baseurl = "https://crates.io"
+    default_download_baseurl = "https://crates.io/api/v1"
+    default_api_baseurl = "https://crates.io/api/v1"
 
     @classmethod
     def recognize(cls, location):
