@@ -1,0 +1,37 @@
+#################################################################
+#################################################################
+#######                                                   #######
+#######               Open Icon Library                   #######
+#######    Relevant Parts of Original License File        #######
+#######                                                   #######
+#################################################################
+#################################################################
+
+
+##################################################################
+## Licenses:
+
+Creative Commons Attribution-Share Alike 3.0 Unported (CC-BY-SA 3.0)
+	link: http://creativecommons.org/licenses/by-sa/3.0/
+
+GNU Lesser General Public License 2.1 (LGPL)
+	link: http://creativecommons.org/licenses/LGPL/2.1/
+
+Public Domain (PD)
+	link: http://en.wikipedia.org/wiki/Public_domain
+
+
+
+###################################################
+## File List:
+##
+
+File Name   /    Source    /   License
+office-chart-line-stacked.png / oxygen / CC-BY-SA 3.0 or LGPL
+zoom-in-5.png / oxygen / CC-BY-SA 3.0 or LGPL
+view-right-close.png / oxygen / CC-BY-SA 3.0 or LGPL
+view-right-new-3.png / oxygen / CC-BY-SA 3.0 or LGPL
+window-new-6.png / oxygen / CC-BY-SA 3.0 or LGPL
+draw-eraser-2.png / oxygen / CC-BY-SA 3.0 or LGPL
+document-save-5.png / oxygen / CC-BY-SA 3.0 or LGPL
+anonymous_simple_weather_symbols_1.png / open_clip_art_library / PD
