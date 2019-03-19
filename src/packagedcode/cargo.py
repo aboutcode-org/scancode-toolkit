@@ -95,9 +95,7 @@ def parse(location):
     if not is_cargo_toml(location):
         return
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = toml.load(location, _dict=OrderedDict)
-
+    package_data = toml.load(location, _dict=OrderedDict)
     return build_package(package_data)
 
 
