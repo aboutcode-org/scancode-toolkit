@@ -420,6 +420,15 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = 'mit'
         assert expected == result
 
+    def test_compute_normalized_license_with_duplicated_license(self):
+        list_license_dictionary = [{'name': 'LGPL'},
+                                   {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'lgpl-2.0-plus'
+        assert expected == result
+
+
 def relative_walk(dir_path):
     """
     Walk path and yield POM files paths relative to dir_path.

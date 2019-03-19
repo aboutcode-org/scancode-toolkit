@@ -159,7 +159,8 @@ def compute_normalized_license(listed_license_dictionary):
     '''
     if listed_license_dictionary:
         licensing = Licensing()
-        detected_licenses = []
+        # Use set instead of list to avoid duplication.
+        detected_licenses = set()
         for license_declaration in listed_license_dictionary:
             name = license_declaration.get('name')
             url = license_declaration.get('url')
@@ -185,22 +186,22 @@ def compute_normalized_license(listed_license_dictionary):
             if via_name and ((via_name == via_url and via_comments == via_url) or (via_name == via_url and not via_comments) or (via_name == via_comments and not via_url)):
                 # if three detection are the same and not empty, return the value
                 # or one of url or comments is empty and the non-empty one equals to the name value
-                detected_licenses.append(via_name)
+                detected_licenses.add(via_name)
             else:
                 # Form a list and the element does not contain any None value, since the None value means 'unknown' or real empty value from above assignment.
                 detected_items = [item for item in (via_name, via_url, via_comments) if item]
                 if detected_items:
                     if len(detected_items) == 1:
-                        detected_licenses.append(detected_items[0])
+                        detected_licenses.add(detected_items[0])
                     else:
                         # Combine if name, url and comments are different licenses
                         licensing = Licensing()
                         total_license_expression = [licensing.parse(detected_item, simple=True) for detected_item in detected_items]
                         combined_expression_object = licensing.AND(*total_license_expression)
-                        detected_licenses.append(str(combined_expression_object))
+                        detected_licenses.add(str(combined_expression_object))
         if detected_licenses:
             if len(detected_licenses) == 1:
-                return str(detected_licenses[0])
+                return str(detected_licenses.pop())
             else:
                 # Combine if pom contains more than 1 licenses declarations.
                 licensing = Licensing()
