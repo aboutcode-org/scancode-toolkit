@@ -27,12 +27,12 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from os.path import dirname
-from os.path import join
-from pprint import pformat
 import io
 import logging
 import os.path
+from os.path import dirname
+from os.path import join
+from pprint import pformat
 import re
 
 from lxml import etree
