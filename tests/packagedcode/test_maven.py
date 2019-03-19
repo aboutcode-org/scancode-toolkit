@@ -357,23 +357,39 @@ class TestPomProperties(testcase.FileBasedTesting):
 class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_compute_normalized_license_1(self):
+    def test_compute_normalized_license_two_names_only(self):
         list_license_dictionary = [{'name': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
         result = maven.compute_normalized_license(list_license_dictionary)
         expected = 'apache-2.0 AND mit'
         assert expected == result
-    
-    def test_compute_normalized_license_2(self):
-        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown'},
+
+    def test_compute_normalized_license_tree_nodes(self):
+        list_license_dictionary = [{'name': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
         result = maven.compute_normalized_license(list_license_dictionary)
         expected = 'apache-2.0 AND mit'
         assert expected == result
         
-    def test_compute_normalized_license_3(self):
+    def test_compute_normalized_license_with_unknown_url(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_unknown_name(self):
         list_license_dictionary = [{'name': 'unknown', 'url': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
@@ -381,13 +397,27 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = '(unknown AND apache-2.0) AND mit'
         assert expected == result
 
-        
-    def test_compute_normalized_license_4(self):
+    def test_compute_normalized_license_same_name_url(self):
         list_license_dictionary = [{'name': 'apache-2.0', 'url': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
         result = maven.compute_normalized_license(list_license_dictionary)
         expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_same_name_url_comments(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_url_invalid(self):
+        list_license_dictionary = [{'name': 'MIT', 'url': 'LICENSE.txt'},
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'mit'
         assert expected == result
 
 def relative_walk(dir_path):

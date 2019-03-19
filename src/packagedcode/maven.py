@@ -173,23 +173,21 @@ def compute_normalized_license(listed_license_dictionary):
             via_name = models.compute_normalized_license(name)
             via_url = models.compute_normalized_license(url)
             via_comments = models.compute_normalized_license(comments)
-
+            
+            if via_name:
+                # The name should have precedence and any unknowns
+                # in url and comment should be ignored.
+                if via_url == 'unknown':
+                    via_url = None
+                if via_comments == 'unknown':
+                    via_comments = None
+            
             if via_name and ((via_name == via_url and via_comments == via_url) or (via_name == via_url and not via_comments) or (via_name == via_comments and not via_url)):
-                # if three detection are the same and not empty, return one
-                # value
-                # or if url or name is empty and one of them equals to name
+                # if three detection are the same and not empty, return the value
+                # or one of url or comments is empty and the non-empty one equals to the name value
                 detected_licenses.append(via_name)
             else:
-                if via_name:
-                    if via_url == 'unknown':
-                        via_url = None
-                    if via_comments == 'unknown':
-                        via_comments = None
-                else:
-                    if via_url:
-                        if via_comments == 'unknown':
-                            via_comments = None
-                # Form a list and the element does not contain any None value, since the None value means 'unknown' from above assignment.
+                # Form a list and the element does not contain any None value, since the None value means 'unknown' or real empty value from above assignment.
                 detected_items = [item for item in (via_name, via_url, via_comments) if item]
                 if detected_items:
                     if len(detected_items) == 1:
