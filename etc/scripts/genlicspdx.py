@@ -55,6 +55,12 @@ FOSS_CATEGORIES = set([
 ])
 
 
+NON_INTERESTING_KEYS=set([
+    'other-copyleft',
+    'other-permissive',
+])
+
+
 @click.command()
 @click.argument('license_dir',
     type=click.Path(file_okay=False, exists=True, writable=True,
