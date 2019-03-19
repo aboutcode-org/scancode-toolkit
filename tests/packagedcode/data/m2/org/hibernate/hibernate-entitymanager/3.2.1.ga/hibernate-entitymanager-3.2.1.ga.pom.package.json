@@ -21,7 +21,7 @@
   "code_view_url": "http://anonhibernate.labs.jboss.com/trunk/HibernateExt", 
   "vcs_url": "http://anonhibernate.labs.jboss.com/trunk/HibernateExt", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "lgpl-2.0-plus AND ((gpl-1.0-plus AND lgpl-2.1-plus) AND unknown)", 
   "declared_license": [
     {
       "name": "GNU LESSER GENERAL PUBLIC LICENSE", 

@@ -225,7 +225,7 @@
   "code_view_url": "http://acegisecurity.svn.sourceforge.net/viewcvs.cgi/acegisecurity/trunk/acegisecurity/", 
   "vcs_url": "svn+https://acegisecurity.svn.sourceforge.net/svnroot/acegisecurity/trunk/acegisecurity", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0", 

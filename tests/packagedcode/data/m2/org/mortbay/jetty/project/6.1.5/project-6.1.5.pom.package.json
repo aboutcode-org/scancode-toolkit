@@ -85,7 +85,7 @@
   "code_view_url": "http://fisheye.codehaus.org/viewrep/jetty/", 
   "vcs_url": "svn+https://svn.codehaus.org/jetty/jetty/trunk", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "Apache License Version 2.0", 

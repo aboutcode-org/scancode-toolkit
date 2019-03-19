@@ -50,7 +50,7 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/wagon/wagon-providers/wagon-file", 
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/wagon/trunk/wagon-providers/wagon-file", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0", 

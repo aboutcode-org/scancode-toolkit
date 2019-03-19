@@ -21,7 +21,7 @@
   "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/", 
   "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "lgpl-2.0-plus", 
   "declared_license": [
     {
       "name": "GNU Lesser General Public License", 

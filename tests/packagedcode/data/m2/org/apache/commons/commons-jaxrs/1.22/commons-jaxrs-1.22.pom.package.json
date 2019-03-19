@@ -64,7 +64,7 @@
   "code_view_url": "https://github.com/PennState/commons-jaxrs", 
   "vcs_url": "git+ssh://git@github.com:PennState/commons-jaxrs.git", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "(apache-2.0 AND unknown) AND apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache License, Version 2.0", 

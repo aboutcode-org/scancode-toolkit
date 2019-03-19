@@ -29,7 +29,7 @@
   "code_view_url": "https://github.com/xsonorg/xco.git", 
   "vcs_url": "git+https://github.com/xsonorg/xco.git", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0", 

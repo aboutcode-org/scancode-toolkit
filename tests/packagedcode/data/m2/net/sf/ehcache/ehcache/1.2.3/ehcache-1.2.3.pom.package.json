@@ -71,7 +71,7 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/ehcache/", 
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/ehcache", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0", 

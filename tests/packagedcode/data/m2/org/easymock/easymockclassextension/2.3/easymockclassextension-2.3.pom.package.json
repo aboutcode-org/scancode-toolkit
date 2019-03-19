@@ -21,7 +21,7 @@
   "code_view_url": "http://easymock.cvs.sourceforge.net/easymock/easymockclassextension/", 
   "vcs_url": "cvs+pserver:anonymous@easymock.cvs.sourceforge.net:/cvsroot/easymock:easymockclassextension", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "mit", 
   "declared_license": [
     {
       "name": "MIT License", 

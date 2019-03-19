@@ -29,7 +29,7 @@
   "code_view_url": "https://github.com/SubiyaCryolite/Jenesis-Data-Store", 
   "vcs_url": "git+https://github.com/SubiyaCryolite/Jenesis-Data-Store.git", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "(bsd-new AND unknown) AND ((bsd-new OR epl-1.0 OR apache-2.0 OR mit) AND unknown)", 
   "declared_license": [
     {
       "name": "The 3-Clause BSD License", 

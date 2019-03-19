@@ -113,7 +113,7 @@
   "code_view_url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk", 
   "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/logging/trunk", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "The Apache Software License, Version 2.0", 

@@ -29,7 +29,7 @@
   "code_view_url": "http://junit.cvs.sourceforge.net/junit/", 
   "vcs_url": "http://junit.cvs.sourceforge.net/junit/", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "cpl-1.0", 
   "declared_license": [
     {
       "name": "Common Public License Version 1.0", 

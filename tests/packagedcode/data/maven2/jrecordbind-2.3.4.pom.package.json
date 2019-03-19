@@ -29,7 +29,7 @@
   "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/", 
   "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus", 
   "declared_license": [
     {
       "name": "LGPL", 

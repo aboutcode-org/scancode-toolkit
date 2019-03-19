@@ -21,7 +21,7 @@
   "code_view_url": null, 
   "vcs_url": null, 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "cddl-1.0", 
   "declared_license": [
     {
       "name": "Common Development and Distribution License (CDDL) v1.0", 

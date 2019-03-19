@@ -21,7 +21,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easymock", 
   "vcs_url": "cvs+pserver:easymock.cvs.sourceforge.net:/cvsroot/easymock:easymock", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "mit", 
   "declared_license": [
     {
       "name": "MIT License", 

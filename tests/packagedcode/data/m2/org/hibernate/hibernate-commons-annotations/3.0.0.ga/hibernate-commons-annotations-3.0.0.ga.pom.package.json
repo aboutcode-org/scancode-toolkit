@@ -21,7 +21,7 @@
   "code_view_url": "scm:svn:http://anonsvn.jboss.org/repos/hibernate/commons-annotations", 
   "vcs_url": "scm:svn:http://anonsvn.jboss.org/repos/hibernate/commons-annotations", 
   "copyright": null, 
-  "license_expression": null, 
+  "license_expression": "lgpl-2.0-plus AND ((gpl-1.0-plus AND lgpl-2.1-plus) AND unknown)", 
   "declared_license": [
     {
       "name": "GNU LESSER GENERAL PUBLIC LICENSE", 

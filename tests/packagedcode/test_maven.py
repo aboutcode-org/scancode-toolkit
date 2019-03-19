@@ -117,6 +117,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
         if not package:
             package = {}
         else:
+            package.license_expression = package.compute_normalized_license()
             package = package.to_dict()
 
         if regen:
