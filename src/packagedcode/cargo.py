@@ -59,9 +59,9 @@ class RustCargoCrate(models.Package):
     metafiles = ('Cargo.toml',)
     default_type = 'cargo'
     default_primary_language = 'Rust'
-    default_web_baseurl = "https://crates.io"
-    default_download_baseurl = "https://crates.io/api/v1"
-    default_api_baseurl = "https://crates.io/api/v1"
+    default_web_baseurl = 'https://crates.io'
+    default_download_baseurl = 'https://crates.io/api/v1'
+    default_api_baseurl = 'https://crates.io/api/v1'
 
     @classmethod
     def recognize(cls, location):
@@ -106,9 +106,10 @@ def build_package(package_data):
     Return a Pacakge object from a package data mapping or None.
     """
 
-    name = package_data.get('package').get('name')
-    version = package_data.get('package').get('version')
-    description = package_data.get('package').get('description')
+    core_package_data = package_data.get('package', {})
+    name = core_package_data.get('name')
+    version = core_package_data.get('version')
+    description = core_package_data.get('description')
     if description:
         description = description.strip()
 
@@ -116,7 +117,7 @@ def build_package(package_data):
     # the appropriate data (source_packages, dependencies, etc..)
     # At the moment, this is only useful for making tests pass
     ordered_dict_map = {}
-    for key in ("source_packages", "dependencies", "keywords"):
+    for key in ('source_packages', 'dependencies', 'keywords'):
         ordered_dict_map[key] = OrderedDict()
 
     package = RustCargoCrate(
@@ -127,10 +128,10 @@ def build_package(package_data):
     )
 
     field_mappers = [
-        ('authors', partial(party_mapper, party_type="author")),
+        ('authors', partial(party_mapper, party_type='author')),
     ]
     for source, func in field_mappers:
-        value = package_data.get('package').get(source, [])
+        value = core_package_data.get(source, [])
         func(value, package)
 
     return package
