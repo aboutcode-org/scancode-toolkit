@@ -147,9 +147,6 @@ class MavenPomPackage(models.Package):
             baseurl=baseurl)
 
     def compute_normalized_license(self):
-        """
-        Get the license expression by combining the expression with AND of all licenses, and in each license, combining the expression with AND from detected value from name, url and comments.
-        """
         return compute_normalized_license(self.declared_license)
 
 def compute_normalized_license(listed_license_dictionary):
