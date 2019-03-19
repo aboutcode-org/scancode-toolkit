@@ -381,7 +381,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
-    def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
+    def test_compute_normalized_license_with_unknown_url_known_comments(self):
         list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
@@ -389,6 +389,14 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
+    def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
+        list_license_dictionary = [{'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'},
+                                   {'name': 'mit'}
+                                   ]
+        result = maven.compute_normalized_license(list_license_dictionary)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+        
     def test_compute_normalized_license_unknown_name(self):
         list_license_dictionary = [{'name': 'unknown', 'url': 'apache-2.0'},
                                    {'name': 'mit'}
@@ -397,7 +405,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
         expected = '(unknown AND apache-2.0) AND mit'
         assert expected == result
 
-    def test_compute_normalized_license_same_name_url(self):
+    def test_compute_normalized_license_same_name_and_url(self):
         list_license_dictionary = [{'name': 'apache-2.0', 'url': 'apache-2.0'},
                                    {'name': 'mit'}
                                    ]
