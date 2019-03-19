@@ -1783,7 +1783,7 @@ class UnicodeDammit:
             u = self._toUnicode(markup, proposed)
             self.markup = u
             self.originalEncoding = proposed
-        except Exception, e:
+        except Exception as e:
             # print "That didn't work!"
             # print e
             return None

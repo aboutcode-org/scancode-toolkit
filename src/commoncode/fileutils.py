@@ -127,14 +127,14 @@ def create_dir(location):
 
         # avoid multi-process TOCTOU conditions when creating dirs
         # the directory may have been created since the exist check
-        except WindowsError, e:
+        except WindowsError as e:
             # [Error 183] Cannot create a file when that file already exists
             if e and e.winerror == 183:
                 if not os.path.isdir(location):
                     raise
             else:
                 raise
-        except (IOError, OSError), o:
+        except (IOError, OSError) as o:
             if o.errno == errno.EEXIST:
                 if not os.path.isdir(location):
                     raise
@@ -493,9 +493,9 @@ def copytree(src, dst):
                 copyfile(srcname, dstname)
         # catch the Error from the recursive copytree so that we can
         # continue with other files
-        except shutil.Error, err:
+        except shutil.Error as err:
             errors.extend(err.args[0])
-        except EnvironmentError, why:
+        except EnvironmentError as why:
             errors.append((srcname, dstname, str(why)))
 
     if errors:

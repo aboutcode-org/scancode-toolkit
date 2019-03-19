@@ -242,7 +242,7 @@ class Archive(object):
                     if r == ARCHIVE_EOF:
                         return
                     entry = Entry(self, entry_struct)
-                except ArchiveWarning, aw:
+                except ArchiveWarning as aw:
                     if not entry:
                         entry = Entry(self, entry_struct)
                     if aw.msg and aw.msg not in entry.warnings:
@@ -400,7 +400,7 @@ class Entry(object):
             os.utime(unique_path, (self.time, self.time))
             return target_path
 
-        except ArchiveWarning, aw:
+        except ArchiveWarning as aw:
             msg = aw.args and '\n'.join(aw.args) or 'No message provided.'
             if msg not in self.warnings:
                 self.warnings.append(msg)
