@@ -62,7 +62,8 @@
     {
       "name": "The P6Spy Software License, Version 1.1", 
       "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 

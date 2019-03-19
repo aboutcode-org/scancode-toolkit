@@ -26,7 +26,8 @@
     {
       "name": "MIT License", 
       "url": "http://www.easymock.org/License.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

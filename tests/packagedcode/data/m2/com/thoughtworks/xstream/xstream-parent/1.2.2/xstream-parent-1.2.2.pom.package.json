@@ -34,7 +34,8 @@
     {
       "name": "BSD style", 
       "url": "http://xstream.codehaus.com/license.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

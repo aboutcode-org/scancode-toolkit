@@ -26,7 +26,8 @@
     {
       "name": "Common Development and Distribution License (CDDL) v1.0", 
       "url": "http://www.sun.com/cddl/cddl.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

@@ -34,7 +34,8 @@
     {
       "name": "The 3-Clause BSD License", 
       "url": "https://opensource.org/licenses/BSD-3-Clause", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 

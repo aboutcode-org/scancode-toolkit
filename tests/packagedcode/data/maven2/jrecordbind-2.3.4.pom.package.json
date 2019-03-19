@@ -34,7 +34,8 @@
     {
       "name": "LGPL", 
       "url": "http://www.gnu.org/copyleft/lesser.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

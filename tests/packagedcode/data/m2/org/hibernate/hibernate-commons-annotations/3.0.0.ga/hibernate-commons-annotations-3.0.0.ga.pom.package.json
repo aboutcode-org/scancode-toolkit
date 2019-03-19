@@ -26,7 +26,8 @@
     {
       "name": "GNU LESSER GENERAL PUBLIC LICENSE", 
       "url": "http://www.gnu.org/licenses/lgpl.txt", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

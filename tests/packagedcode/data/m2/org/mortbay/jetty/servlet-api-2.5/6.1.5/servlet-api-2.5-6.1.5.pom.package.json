@@ -26,7 +26,8 @@
     {
       "name": "CDDL 1.0", 
       "url": "https://glassfish.dev.java.net/public/CDDLv1.0.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 

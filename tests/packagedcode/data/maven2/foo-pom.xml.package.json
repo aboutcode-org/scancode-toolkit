@@ -34,7 +34,8 @@
     {
       "name": "Eclipse Public License - v 1.0", 
       "url": "http://www.eclipse.org/legal/epl-v10.html", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 

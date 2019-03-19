@@ -26,7 +26,8 @@
     {
       "name": "Public Domain", 
       "url": "http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 

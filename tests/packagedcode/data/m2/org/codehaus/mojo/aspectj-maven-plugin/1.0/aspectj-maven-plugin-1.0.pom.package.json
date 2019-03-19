@@ -41,7 +41,8 @@
     {
       "name": "The MIT License", 
       "url": "LICENSE.txt", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

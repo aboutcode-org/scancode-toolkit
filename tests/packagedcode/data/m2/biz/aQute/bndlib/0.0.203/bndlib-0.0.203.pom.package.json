@@ -34,7 +34,8 @@
     {
       "name": "This material is licensed under the Apache Software License, Version 2.0", 
       "url": "http://www.apache.org/licenses/LICENSE-2.0", 
-      "comments": null
+      "comments": null, 
+      "distribution": "repo"
     }
   ], 
   "notice_text": null, 

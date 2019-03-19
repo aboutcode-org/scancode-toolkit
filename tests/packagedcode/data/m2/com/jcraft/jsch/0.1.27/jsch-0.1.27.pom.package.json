@@ -34,7 +34,8 @@
     {
       "name": "BSD", 
       "url": "http://www.jcraft.com/jsch/LICENSE.txt", 
-      "comments": null
+      "comments": null, 
+      "distribution": null
     }
   ], 
   "notice_text": null, 
