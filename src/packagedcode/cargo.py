@@ -110,13 +110,6 @@ def build_package(package_data):
     if description:
         description = description.strip()
 
-    # TODO: Remove this ordered_dict_map once cargo.py is able to handle
-    # the appropriate data (source_packages, dependencies, etc..)
-    # At the moment, this is only useful for making tests pass
-    ordered_dict_map = {}
-    for key in ('source_packages', 'dependencies', 'keywords'):
-        ordered_dict_map[key] = OrderedDict()
-
     authors = core_package_data.get('authors')
     parties = list(party_mapper(authors, party_role='author'))
 
@@ -125,7 +118,6 @@ def build_package(package_data):
         version=version,
         description=description,
         parties=parties,
-        **ordererd_dict_map,
     )
 
     return package

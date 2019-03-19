@@ -24,7 +24,7 @@
       "url": null
    }
  ],
- "keywords": {},
+ "keywords": [],
  "homepage_url": null,
  "download_url": null,
  "size": null,
@@ -40,9 +40,9 @@
  "declared_license": null,
  "notice_text": null,
  "manifest_path": null,
- "dependencies": {},
+ "dependencies": [],
  "contains_source_code": null,
- "source_packages": {},
+ "source_packages": [],
  "purl": "pkg:cargo/rustfmt-nightly@1.0.3",
  "repository_homepage_url": "https://crates.io/crates/rustfmt-nightly",
  "repository_download_url": "https://crates.io/api/v1/crates/rustfmt-nightly/1.0.3/download",

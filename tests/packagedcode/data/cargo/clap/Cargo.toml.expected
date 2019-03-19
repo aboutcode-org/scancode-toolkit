@@ -17,7 +17,7 @@
      "url": null
    }
  ],
- "keywords": {},
+ "keywords": [],
  "homepage_url": null,
  "download_url": null,
  "size": null,
@@ -33,9 +33,9 @@
  "declared_license": null,
  "notice_text": null,
  "manifest_path": null,
- "dependencies": {},
+ "dependencies": [],
  "contains_source_code": null,
- "source_packages": {},
+ "source_packages": [],
  "purl": "pkg:cargo/clap@2.32.0",
  "repository_homepage_url": "https://crates.io/crates/clap",
  "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
