@@ -1037,7 +1037,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
-    declared_license = get_maven_licenses(pom.licenses)
+    declared_license = pom.licenses
 
     source_packages = []
     # TODO: what does this mean????
@@ -1084,20 +1084,6 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     )
     return package
 
-
-def get_maven_licenses(licenses):
-    """
-    Return a list of order dictionary to store license by paring the passing maven licenses
-    """
-    declared_license = []
-    if licenses:
-        for each in licenses:
-            declared_license.append(OrderedDict([
-                ('name', each.get('name')),
-                ('url', each.get('url')),
-                ('comments', each.get('comments')),
-            ]))
-    return declared_license
 
 def build_vcs_and_code_view_urls(scm):
     """
