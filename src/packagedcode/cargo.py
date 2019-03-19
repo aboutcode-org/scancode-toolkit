@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from functools import partial
 import io
 import toml
 import logging
@@ -118,37 +117,32 @@ def build_package(package_data):
     for key in ('source_packages', 'dependencies', 'keywords'):
         ordered_dict_map[key] = OrderedDict()
 
+    authors = core_package_data.get('authors')
+    parties = list(party_mapper(authors, party_role='author'))
+
     package = RustCargoCrate(
         name=name,
         version=version,
         description=description,
-        **ordered_dict_map
+        parties=parties,
+        **ordererd_dict_map,
     )
 
-    field_mappers = [
-        ('authors', partial(party_mapper, party_type='author')),
-    ]
-    for source, func in field_mappers:
-        value = core_package_data.get(source, [])
-        func(value, package)
-
     return package
 
 
-def party_mapper(party, package, party_type):
+def party_mapper(party, party_role):
     """
-    Update package parties with party of `party_type` and return package.
+    Yields a Party object with party of `party_role`.
     https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
     """
-    for auth in party:
-        name, email = parse_person(auth)
-        package.parties.append(models.Party(
+    for person in party:
+        name, email = parse_person(person)
+        yield models.Party(
             type=models.party_person,
             name=name,
-            role=party_type,
-            email=email))
-
-    return package
+            role=party_role,
+            email=email)
 
 
 def parse_person(person):
