@@ -150,10 +150,10 @@ class MavenPomPackage(models.Package):
         return compute_normalized_license(self.declared_license)
 
 def compute_normalized_license(listed_license_dictionary):
-    '''
+    """
     Return a detected license by parsing the passing listed license dictionary.
     It is to combining each licenses with licensing AND feature.
-    '''
+    """
     if listed_license_dictionary:
         licensing = Licensing()
         # Use set instead of list to avoid duplication.
