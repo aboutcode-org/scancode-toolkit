@@ -35,20 +35,20 @@ from os.path import join
 from pprint import pformat
 import re
 
+import attr
+import javaproperties
+from license_expression import Licensing
 from lxml import etree
 from packageurl import PackageURL
 from pymaven import artifact
 from pymaven import pom
-import attr
-import javaproperties
 
 from commoncode import filetype
 from commoncode import fileutils
-from license_expression import Licensing
 from packagedcode import models
 from packagedcode.models import Package
-from packagedcode.utils import VCS_URLS
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
 
@@ -98,7 +98,7 @@ class MavenPomPackage(models.Package):
                     if ancestor.name == 'META-INF':
                         jar_root_dir = ancestor.parent(codebase)
                         return jar_root_dir
-    
+
             return manifest_resource.parent(codebase)
 
         elif manifest_resource.path.endswith('META-INF/MANIFEST.MF'):
@@ -149,10 +149,10 @@ class MavenPomPackage(models.Package):
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
+
 def compute_normalized_license(listed_license_dictionary):
     """
-    Return a detected license by parsing the passing listed license dictionary.
-    It is to combining each licenses with licensing AND feature.
+    Return a detected license expression from a declared license mapping.
     """
     if listed_license_dictionary:
         licensing = Licensing()
@@ -171,7 +171,7 @@ def compute_normalized_license(listed_license_dictionary):
             via_name = models.compute_normalized_license(name)
             via_url = models.compute_normalized_license(url)
             via_comments = models.compute_normalized_license(comments)
-            
+
             if via_name:
                 # The name should have precedence and any unknowns
                 # in url and comment should be ignored.
@@ -179,7 +179,7 @@ def compute_normalized_license(listed_license_dictionary):
                     via_url = None
                 if via_comments == 'unknown':
                     via_comments = None
-            
+
             if via_name and ((via_name == via_url and via_comments == via_url) or (via_name == via_url and not via_comments) or (via_name == via_comments and not via_url)):
                 # if three detection are the same and not empty, return the value
                 # or one of url or comments is empty and the non-empty one equals to the name value
