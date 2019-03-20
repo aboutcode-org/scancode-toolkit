@@ -209,7 +209,7 @@ Try 'scancode --help' for help on options and arguments.'''
 try:
     # IMPORTANT: this discovers, loads and validates all available plugins
     plugin_classes, plugin_options = PluginManager.load_plugins()
-except ImportError, e:
+except ImportError as e:
     echo_stderr('========================================================================')
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
     echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')

@@ -439,7 +439,7 @@ class BaseArchiveTestCase(FileBasedTesting):
     def assertExceptionContains(self, text, callableObj, *args, **kwargs):
         try:
             callableObj(*args, **kwargs)
-        except Exception, e:
+        except Exception as e:
             if text not in str(e):
                 raise self.failureException(
                        'Exception %(e)r raised, '
@@ -1027,7 +1027,7 @@ class TestZip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         try:
             archive.extract_zip(test_file, test_dir)
-        except Exception, e:
+        except Exception as e:
             assert isinstance(e, ExtractErrorFailedToExtract)
             assert 'Password protected archive, unable to extract' in str(e)
 
