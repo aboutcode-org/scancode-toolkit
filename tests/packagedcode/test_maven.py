@@ -222,7 +222,7 @@ class TestMavenMisc(BaseMavenCase):
         resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
 
         codebase = Codebase(test_dir, resource_attributes=resource_attributes)
-        manifest_resource = [r for r in codebase.walk() if r.name=='pom.xml'][0]
+        manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
         package = maven.MavenPomPackage.recognize(manifest_resource.location)
         manifest_resource.packages.append(package.to_dict())
         manifest_resource.save(codebase)
@@ -359,82 +359,92 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_compute_normalized_license_two_names_only(self):
-        declared_license = [{'name': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
     def test_compute_normalized_license_tree_nodes(self):
-        declared_license = [{'name': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
-        
+
     def test_compute_normalized_license_with_unknown_url(self):
-        declared_license = [{'name': 'apache-2.0', 'url': 'unknown'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
     def test_compute_normalized_license_with_unknown_url_known_comments(self):
-        declared_license = [{'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
     def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
-        declared_license = [{'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
-        
+
     def test_compute_normalized_license_unknown_name(self):
-        declared_license = [{'name': 'unknown', 'url': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'unknown', 'url': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = '(unknown AND apache-2.0) AND mit'
         assert expected == result
 
     def test_compute_normalized_license_same_name_and_url(self):
-        declared_license = [{'name': 'apache-2.0', 'url': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
     def test_compute_normalized_license_same_name_url_comments(self):
-        declared_license = [{'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'},
-                                   {'name': 'mit'}
-                                   ]
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'apache-2.0 AND mit'
         assert expected == result
 
     def test_compute_normalized_license_with_url_invalid(self):
-        declared_license = [{'name': 'MIT', 'url': 'LICENSE.txt'},
-                                   ]
+        declared_license = [
+            {'name': 'MIT', 'url': 'LICENSE.txt'},
+        ]
         result = maven.compute_normalized_license(declared_license)
         expected = 'mit'
         assert expected == result
 
     def test_compute_normalized_license_with_duplicated_license(self):
-        declared_license = [{'name': 'LGPL'},
-                                   {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
-                                   ]
+        declared_license = [
+            {'name': 'LGPL'},
+            {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
+        ]
         result = maven.compute_normalized_license(declared_license)
-        expected = 'lgpl-2.0-plus'
+        expected = 'lgpl-2.0-plus AND lgpl-2.0-plus'
         assert expected == result
 
 
