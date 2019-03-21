@@ -35,7 +35,12 @@
   "vcs_url": "git://github.com/Postmedia/jsonp-filter",
   "copyright": null,
   "license_expression": null,
-  "declared_license": "MIT\nhttps://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE"
+    }
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

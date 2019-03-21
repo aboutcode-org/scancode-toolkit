@@ -45,7 +45,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": null,
-  "declared_license": "MIT",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": ""
+    }
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

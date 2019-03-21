@@ -37,7 +37,12 @@
   "vcs_url": "git://github.com/sartak/grunt-inline-imgsize.git",
   "copyright": null,
   "license_expression": null,
-  "declared_license": "MIT\nhttps://github.com/sartak/grunt-inline-imgsize/blob/master/LICENSE-MIT",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sartak/grunt-inline-imgsize/blob/master/LICENSE-MIT"
+    }
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

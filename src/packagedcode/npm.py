@@ -34,6 +34,7 @@ import logging
 import re
 
 import attr
+from license_expression import Licensing
 from packageurl import PackageURL
 from six import string_types
 
@@ -95,8 +96,66 @@ class NpmPackage(models.Package):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
     def compute_normalized_license(self):
-        # TODO: there is a mapping of well known licenses to reuse too
-        return models.compute_normalized_license(self.declared_license)
+        return compute_normalized_license(self.declared_license)
+
+def compute_normalized_license(declared_license):
+    """
+    Return a detected license expression from a declared license mapping.
+    """
+    if not declared_license:
+        return
+
+    licensing = Licensing()
+
+    detected_licenses = []
+
+    for license_declaration in declared_license:
+        # 1. try detection on the value of type if not empty and keep this
+        type = license_declaration.get('type')
+        via_type = models.compute_normalized_license(type)
+
+        # 2. try detection on the value of url  if not empty and keep this
+        url = license_declaration.get('url')
+        via_url = models.compute_normalized_license(url)
+
+
+        if via_type:
+            # The type should have precedence and any unknowns
+            # in url should be ignored.
+            if via_url == 'unknown':
+                via_url = None
+
+        # Check the three detections to decide which license to keep
+        type_and_url = via_type == via_url
+        all_same = type_and_url
+        if via_type:
+            if all_same:
+                detected_licenses.append(via_type)
+            else:
+                # we have some non-unknown license detected in url
+                detections = via_type, via_url
+                detections = [l for l in detections if l]
+                if detections:
+                    if len(detections) == 1:
+                        combined_expression = detections[0]
+                    else:
+                        expressions = [
+                            licensing.parse(le, simple=True) for le in detections]
+                        combined_expression = str(licensing.AND(*expressions))
+                    detected_licenses.append(combined_expression)
+
+        elif via_url:
+            detected_licenses.append(via_url)
+
+    if len(detected_licenses) == 1:
+        return detected_licenses[0]
+
+    if detected_licenses:
+        # Combine if pom contains more than one licenses declarations.
+        expressions = [licensing.parse(le, simple=True) for le in detected_licenses]
+        combined_expression = licensing.AND(*expressions)
+        return str(combined_expression)
+
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """
@@ -263,7 +322,7 @@ def build_package(package_data):
         dnl_url = npm_download_url(package.namespace, package.name, package.version)
         package.download_url = dnl_url.strip()
 
-    # licenses are a tad specialwith many different data structures
+    # licenses are a tad special with many different data structures
     lic = package_data.get('license')
     lics = package_data.get('licenses')
     package = licenses_mapper(lic, lics, package)
@@ -339,22 +398,20 @@ def split_scoped_package_name(name):
     return ns, name
 
 
-def get_licensing(license_object):
+def get_declared_licenses(license_object):
     """
-    Return actual declared licensing info from a license_data object that can be
-    a string, list, dict or dict list and come from the license or licenses
-    package.json tag.
+    Return the declared licenses, which is a list of order dictionary of licenses
     """
     if not license_object:
-        return
+        return []
 
-    declared_license = None
+    declared_licenses = []
     if isinstance(license_object, string_types):
         # current form
         # TODO: handle "SEE LICENSE IN <filename>"
         # TODO: handle UNLICENSED
         # TODO: parse expression with license_expression library
-        declared_license = license_object
+        declared_licenses.append({'type': license_object})
 
     elif isinstance(license_object, dict):
         # old, deprecated form
@@ -364,7 +421,7 @@ def get_licensing(license_object):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        declared_license = '\n'.join(v for v in license_object.values() if v)
+        declared_licenses.append(license_object)
 
     elif isinstance(license_object, list):
         # old, deprecated form
@@ -374,22 +431,16 @@ def get_licensing(license_object):
         or
         "licenses": ["MIT"],
         """
-        lics = []
         for lic in license_object:
             if not lic:
                 continue
             if isinstance(lic, string_types):
-                lics.append(lic)
+                declared_licenses.append({'type': lic})
             elif isinstance(lic, dict):
-                lics_val = '\n'.join(v for v in lic.values() if v)
-                lics.append(lics_val)
+                declared_licenses.append(lic)
             else:
-                lics.append(repr(lic))
-        declared_license = u'\n'.join(lics)
-
-    else:
-        declared_license = repr(license_object)
-    return declared_license
+                declared_licenses.append({'type': repr(lic)})
+    return declared_licenses
 
 
 def licenses_mapper(license, licenses, package):  # NOQA
@@ -407,15 +458,11 @@ def licenses_mapper(license, licenses, package):  # NOQA
     - (Deprecated) an array or a list of arrays of type, url.
     -  "license": "UNLICENSED" means this is proprietary
     """
-    licensing1 = get_licensing(license)
-    licensing2 = get_licensing(licenses)
-    declared_license = '\n'.join([v for v in (licensing1, licensing2) if v])
+    declared_license = get_declared_licenses(license)
+    licenses = get_declared_licenses(licenses)
+    declared_license.extend(licenses)
 
-    if declared_license:
-        if package.declared_license:
-            package.declared_license = '\n'.join([package.declared_license, declared_license])
-        else:
-            package.declared_license = declared_license
+    package.declared_license = declared_license
     return package
 
 

@@ -54,7 +54,11 @@
   "vcs_url": "https://github.com/lodash/lodash",
   "copyright": null,
   "license_expression": null,
-  "declared_license": "MIT",
+  "declared_license": [
+    {
+      "type": "MIT"
+    }
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [
