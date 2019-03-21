@@ -102,7 +102,7 @@ class MavenPomPackage(models.Package):
 
             return manifest_resource.parent(codebase)
 
-        elif manifest_resource.path.endswith('META-INF/MANIFEST.MF'):
+        elif manifest_resource.path.lower().endswith('meta-inf/manifest.mf'):
             # the root is the parent of META-INF
             return manifest_resource.parent(codebase).parent(codebase)
 
