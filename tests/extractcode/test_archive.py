@@ -379,7 +379,7 @@ class BaseArchiveTestCase(FileBasedTesting):
         excClass = excInstance.__class__
         try:
             callableObj(*args, **kwargs)
-        except excClass, e:
+        except excClass as e:
             self.assertEqual(str(excInstance), str(e))
         else:
             if hasattr(excClass, '__name__'):
@@ -813,7 +813,7 @@ class TestZip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         try:
             archive.extract_zip(test_file, test_dir)
-        except libarchive2.ArchiveError, ae:
+        except libarchive2.ArchiveError as ae:
             assert 'Invalid central directory signature' in str(ae)
 
         # fails because of https://github.com/libarchive/libarchive/issues/545
@@ -829,7 +829,7 @@ class TestZip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         try:
             archive.extract_zip(test_file, test_dir)
-        except libarchive2.ArchiveError, ae:
+        except libarchive2.ArchiveError as ae:
             assert 'Invalid central directory signature' in str(ae)
         # fails because of https://github.com/libarchive/libarchive/issues/545
         result = os.path.join(test_dir, 'f1')
@@ -2020,7 +2020,7 @@ class TestSevenZip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         try:
             archive.extract_7z(test_file, test_dir)
-        except libarchive2.ArchiveError, e:
+        except libarchive2.ArchiveError as e:
             assert 'Damaged 7-Zip archive' in e.msg
 
     def test_extract_7z_basic_with_space_in_file_name(self):
