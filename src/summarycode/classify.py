@@ -45,7 +45,6 @@ Tag files as "key" or important and top-level files.
 # Tracing flag
 TRACE = False
 
-
 def logger_debug(*args):
     pass
 
@@ -90,8 +89,8 @@ class FileClassifier(PreScanPlugin):
                       'as a Maven pom.xml or an npm package.json')),
 
         ('is_readme',
-
          Boolean(help='True if this file is likely a README file.')),
+
         ('is_top_level',
          Boolean(help='True if this file is "top-level" file located either at '
                       'the root of a package or in a well-known common location.')),
@@ -223,7 +222,7 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
                     if TRACE:
                         logger_debug('PackageTopAndKeyFilesTagger: descendants')
                         for rpath, desc in descendants.iteritems():
-                            logger_debug('rapth:', rpath, 'desc:', desc)
+                            logger_debug('rpath:', rpath, 'desc:', desc)
 
                 for rpath, desc in descendants.iteritems():
                     if extra_root_dirs and get_matches(rpath, extra_root_dirs):
@@ -279,6 +278,8 @@ _MANIFEST_ENDS = {
     '+manifest': 'freebsd',
     '.gemspec': 'gem',
     '/metadata': 'gem',
+    # the extracted metadata of a gem archive
+    '/metadata.gz-extract': 'gem',
     '/build.gradle': 'gradle',
     '.cabal': 'haskell',
     '/haxelib.json': 'haxelib',
