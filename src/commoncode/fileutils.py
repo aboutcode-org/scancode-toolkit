@@ -499,7 +499,7 @@ def copytree(src, dst):
             errors.append((srcname, dstname, str(why)))
 
     if errors:
-        raise shutil.Error, errors
+        raise shutil.Error(errors)
 
 
 def copyfile(src, dst):
@@ -540,7 +540,7 @@ def copytime(src, dst):
     if hasattr(os, 'utime'):
         try:
             os.utime(dst, (st.st_atime, st.st_mtime))
-        except OSError, why:
+        except OSError as why:
             if WindowsError is not None and isinstance(why, WindowsError):
                 # File access times cannot be copied on Windows
                 pass
