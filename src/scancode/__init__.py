@@ -35,7 +35,7 @@ from os.path import getsize
 from os.path import getmtime
 from os.path import join
 from os.path import exists
-from types import BooleanType
+from types import *
 
 import click
 from click.types import BoolParamType
