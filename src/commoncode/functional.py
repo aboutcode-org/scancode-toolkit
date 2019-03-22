@@ -25,7 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import functools
-from types import ListType, TupleType, GeneratorType
+from types import *
 from array import array
 
 
