@@ -666,7 +666,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         matches = idx.match(location=query_loc)
         expected = [
             # filtered: LicenseMatch(matcher='3-seq', rule=rules['rule1.RULE'], qspan=Span(4, 47) | Span(50, 59), ispan=Span(1, 53)),
-            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 86), ispan=Span(0, 62)),
+            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 85), ispan=Span(0, 61)),
         ]
 
         assert expected == matches

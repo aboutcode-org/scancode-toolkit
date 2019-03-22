@@ -31,7 +31,7 @@ license_expressions:
     - x11-fsf
     - proprietary-license
     - bsd-new
-    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-2010
     - bsd-new
     - brian-gladman-dual
     - public-domain
@@ -87,7 +87,7 @@ license_expressions:
     - gpl-1.0-plus
     - bsd-new
     - public-domain
-    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-2010
     - clear-bsd
     - bsd-new
     - unicode-mappings

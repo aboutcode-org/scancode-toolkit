@@ -1,4 +1,4 @@
 license_expression: apache-1.1
 is_license_notice: yes
-notes: This is the old "Castor" license from http://www.castor.org/license.txt which is essentially
-    based on an Apache 1.1 template
+referenced_filenames:
+    - LICENSE.xerces_2_5_0.txt

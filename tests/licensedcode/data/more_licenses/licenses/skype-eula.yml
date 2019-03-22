@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - unknown
 notes: this is a license from fossology license reference Skype-EULA (Skype EULA) http://www.skype.com/intl/en-us/legal/eula/

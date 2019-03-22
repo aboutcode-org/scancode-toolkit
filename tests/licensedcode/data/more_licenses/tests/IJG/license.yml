@@ -4,6 +4,7 @@ license_expressions:
   - bsd-new
   - unknown
   - bsd-new
+  - bsd-new
   - libpng
   - bsd-simplified
   - ijg

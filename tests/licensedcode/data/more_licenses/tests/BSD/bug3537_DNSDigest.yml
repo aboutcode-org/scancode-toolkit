@@ -1,6 +1,6 @@
 license_expressions:
   - apache-2.0
   - openssl
-  - openssl
-  - openssl
+  - proprietary-license
+  - bsd-no-disclaimer
   - ssleay-windows

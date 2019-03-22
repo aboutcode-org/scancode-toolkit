@@ -9,3 +9,4 @@ text_urls:
 other_urls:
     - amm-info@iis.fraunhofer.de
     - www.iis.fraunhofer.de/amm
+minimum_coverage: 40

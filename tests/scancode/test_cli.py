@@ -630,7 +630,7 @@ def test_scan_does_scan_rpm():
     check_json_scan(expected_file, result_file, regen=False)
 
 
-def test_scan_cli_help(regen=True):
+def test_scan_cli_help(regen=False):
     expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
     if regen:

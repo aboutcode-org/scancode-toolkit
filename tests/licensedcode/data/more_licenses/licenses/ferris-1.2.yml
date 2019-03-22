@@ -1,4 +1,6 @@
+expected_failure: yes
 license_expressions:
+  - unknown
   - apsl-1.1
 notes: this is a license from fossology license reference Ferris-1.2 (Ferris Public Source License
   Ver. 1.2) http://mokit.sourceforge.net/License.html

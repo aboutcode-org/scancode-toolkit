@@ -1,9 +1,16 @@
 license_expressions:
-  - other-permissive
   - cmu-uc
-  - bsd-axis
+  - cmu-uc
   - bsd-new
-  - unknown
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
   - bsd-new
   - bsd-new
   - bsd-new

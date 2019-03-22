@@ -1,4 +1,5 @@
+expected_failure: yes
 license_expressions:
-    - proprietary-license
-    - apache-2.0
-    - proprietary-license
+  - proprietary-license
+  - proprietary-license
+  - proprietary-license

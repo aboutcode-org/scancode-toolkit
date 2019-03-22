@@ -34,7 +34,9 @@ import attr
 from licensedcode import MAX_DIST
 from licensedcode import query
 from licensedcode.spans import Span
+from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
+
 
 """
 LicenseMatch data structure and matches merging and filtering routines.
@@ -1150,7 +1152,7 @@ class Token(object):
     is_known = attr.ib(default=False)
 
 
-def tokenize_matched_text(location, query_string, is_known):
+def tokenize_matched_text(location, query_string, dictionary):
     """
     Yield Token objects with pos and line number collected from the file at
     `location` or the `query_string` string. `is_known` is a function that
@@ -1159,10 +1161,12 @@ def tokenize_matched_text(location, query_string, is_known):
     pos = -1
     for line_num, line in query.query_lines(location, query_string, strip=False):
         for is_text, token_str in matched_query_text_tokenizer(line):
-            known = is_known(token_str)
+            known = token_str.lower() in dictionary
             tok = Token(
-                value=token_str, line_num=line_num,
-                is_text=is_text, is_known=known)
+                value=token_str,
+                line_num=line_num,
+                is_text=is_text,
+                is_known=known)
             if known:
                 pos += 1
                 tok.pos = pos
@@ -1246,12 +1250,13 @@ def reportable_tokens(tokens, match, whole_lines=False):
             yield tok
 
 
-
 def get_full_matched_text(
         match, location=None, query_string=None, idx=None,
-        whole_lines=False, highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
+        whole_lines=False,
+        highlight_matched=u'%s', highlight_not_matched=u'[%s]',
+        stopwords=STOPWORDS):
     """
-    Yield unicode strings corresponding to the full matched matched query text
+    Yield unicode strings corresponding to the full matched query text
     given a query file at `location` or a `query_string`, a `match` LicenseMatch
     and an `idx` LicenseIndex.
 
@@ -1270,144 +1275,18 @@ def get_full_matched_text(
     """
     assert location or query_string
     assert idx
-    dictionary_get = idx.dictionary.get
-
-    def is_known_token(t):
-        return dictionary_get(t.lower()) is not None
-
     # Create and process a stream of Tokens
-    tokens = tokenize_matched_text(location, query_string, is_known=is_known_token)
+    tokens = tokenize_matched_text(location, query_string, dictionary=idx.dictionary)
     tokens = reportable_tokens(tokens, match, whole_lines=whole_lines)
 
     # Finally yield strings with eventual highlightings
     for token in tokens:
-        if token.is_text:
+        val = token.value
+        if token.is_text and val.lower() not in stopwords:
             if token.is_matched:
-                yield highlight_matched % token.value
+                yield highlight_matched % val
             else:
-                yield highlight_not_matched % token.value
+                yield highlight_not_matched % val
         else:
             # we do not highlight punctuation..
-            yield token.value
-
-
-
-
-
-@attr.s(slots=True)
-class Token2(object):
-    """
-    Used to represent a token in collected matched texts and SPDX identifiers.
-    """
-    # original text value for this token.
-    value = attr.ib()
-    # line number, one-based
-    line_num = attr.ib()
-    # absolute position for known tokens, zero-based. -1 for unknown tokens
-    pos = attr.ib(default=-1)
-    # False if this is punctuation
-    is_text = attr.ib(default=False)
-    # True if included in the returned matched text
-    is_included = attr.ib(default=False, repr=False)
-    # True if part of a match
-    is_matched = attr.ib(default=False, repr=False)
-    # True if this is a known token
-    is_known = attr.ib(default=False)
-
-
-def get_full_matched_text_orig(
-        match, location=None, query_string=None, idx=None,
-        whole_lines=False, highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
-    """
-    Yield unicode strings corresponding to the full matched matched query text
-    given a query file at `location` or a `query_string`, a `match` LicenseMatch
-    and an `idx` LicenseIndex.
-
-    This contains the full text including punctuations and spaces that are not
-    participating in the match proper.
-
-    If `whole_lines` is True, the unmatched part at the start of the first
-    matched line and the end of the last matched lines are also included in the
-    returned text.
-
-    Each token is interpolated for "highlighting" and emphasis with the
-    `highlight_matched` format string for matched tokens or to the
-    `highlight_not_matched` for tokens not matched. The default is to enclose an
-    unmatched token sequence in [] square brackets. Punctuation is not
-    highlighted.
-    """
-    assert location or query_string
-    assert idx
-    dictionary_get = idx.dictionary.get
-
-    def _tokenize(location, query_string):
-        """Yield Tokens with pos and line number."""
-        _pos = -1
-        for _line_num, _line in query.query_lines(location, query_string, strip=False):
-            for _is_text, _token in matched_query_text_tokenizer(_line):
-                _known = _is_text and dictionary_get(_token.lower()) is not None
-                _tok = Token2(value=_token, line_num=_line_num, is_text=_is_text, is_known=_known)
-                if _known:
-                    _pos += 1
-                    _tok.pos = _pos
-                yield _tok
-
-    def _in_matched_lines(tokens, _start_line, _end_line):
-        """Yield tokens that are within matched start and end lines."""
-        for _tok in tokens:
-            if _tok.line_num < _start_line:
-                continue
-            if _tok.line_num > _end_line:
-                break
-            yield _tok
-
-    def _tag_tokens_as_matched(tokens, qspan):
-        """Tag tokens within qspan as matched."""
-        for _tok in tokens:
-            if _tok.pos != -1 and _tok.is_known and _tok.pos in qspan:
-                _tok.is_matched = True
-            yield _tok
-
-    def _tag_tokens_as_included_in_whole_lines(tokens, _start_line, _end_line):
-        """Tag tokens within start and end lines as included."""
-        for _tok in tokens:
-            if _start_line <= _tok.line_num <= _end_line:
-                _tok.is_included = True
-            yield _tok
-
-    def _tag_tokens_as_included_in_matched_range(tokens, _start, _end):
-        """Tag tokens within start and end positions as included."""
-        started = False
-        finished = False
-        for _tok in tokens:
-            if not started and _tok.pos == _start:
-                started = True
-
-            if started and not finished:
-                _tok.is_included = True
-
-            yield _tok
-
-            if _tok.pos == _end:
-                finished = True
-
-    # Create and process a stream of Tokens
-    tokenized = _tokenize(location, query_string)
-    in_matched_lines = _in_matched_lines(tokenized, match.start_line, match.end_line)
-    matched = _tag_tokens_as_matched(in_matched_lines, match.qspan)
-    if whole_lines:
-        as_included = _tag_tokens_as_included_in_whole_lines(matched, match.start_line, match.end_line)
-    else:
-        as_included = _tag_tokens_as_included_in_matched_range(matched, match.qspan.start, match.qspan.end)
-    tokens = (t for t in as_included if t.is_included)
-
-    # Finally yield strings with eventual highlightings
-    for token in tokens:
-        if token.is_text:
-            if token.is_matched:
-                yield highlight_matched % token.value
-            else:
-                yield highlight_not_matched % token.value
-        else:
-            # punctuation
-            yield token.value
+            yield val

@@ -1,10 +1,2 @@
 license_expressions:
-  - mpl-1.1
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - mpl-1.1 OR gpl-1.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - gpl-2.0
+  - mpl-1.1 OR lgpl-2.0-plus

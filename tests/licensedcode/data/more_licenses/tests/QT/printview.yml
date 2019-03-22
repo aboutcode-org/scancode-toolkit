@@ -1,8 +1,10 @@
 license_expressions:
   - lgpl-2.0-plus
   - commercial-license
+  - commercial-license
   - lgpl-2.1
   - unknown
   - lgpl-2.0-plus
   - lgpl-2.0-plus
   - gpl-3.0
+expected_failure: yes

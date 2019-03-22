@@ -1,0 +1,7 @@
+key: bsd-new-tcpdump
+short_name: BSD-Modified tcpdump variant
+name: BSD-Modified tcpdump variant
+category: Permissive
+owner: tcpdump
+notes: |-
+    This license is a custom variation on the BSD  found in tcpdump

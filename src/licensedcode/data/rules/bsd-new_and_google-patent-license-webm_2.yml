@@ -4,3 +4,4 @@ minimum_coverage: 60
 relevance: 90
 referenced_filenames:
     - COPYING
+    - PATENTS

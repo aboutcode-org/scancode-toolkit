@@ -9,7 +9,7 @@ license_expressions:
     - epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR unknown-spdx WITH unknown-spdx
     - gpl-3.0
     - epl-2.0 OR apache-2.0
-    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-2010
     - bsd-plus-mod-notice
     - gpl-2.0-plus
     - gpl-1.0-plus

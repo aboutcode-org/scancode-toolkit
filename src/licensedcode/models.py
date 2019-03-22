@@ -374,7 +374,7 @@ class License(object):
             # local text consistency
             text = lic.text
 
-            license_qtokens = tuple(query_tokenizer(text, lower=True))
+            license_qtokens = tuple(query_tokenizer(text))
             if not license_qtokens:
                 info('No license text')
             else:
@@ -801,7 +801,7 @@ class Rule(object):
             self.license_expression = expression.render()
             self.license_expression_object = expression
 
-    def tokens(self, lower=True):
+    def tokens(self):
         """
         Return an iterable of token strings for this rule. Length, relevance and
         minimum_coverage may be recomputed as a side effect.
@@ -819,7 +819,7 @@ class Rule(object):
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
-        for token in query_tokenizer(self.text(), lower=lower):
+        for token in query_tokenizer(self.text()):
             length += 1
             yield token
 

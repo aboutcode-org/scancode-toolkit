@@ -20,10 +20,10 @@
     }
   ],
   "license_clarity_score": {
-    "score": 60,
+    "score": 45,
     "has_declared_license_in_key_files": true,
     "file_level_license_and_copyright_coverage": 0.0,
-    "has_consistent_key_and_file_level_licenses": true,
+    "has_consistent_key_and_file_level_licenses": false,
     "is_using_only_spdx_licenses": true,
     "has_full_text_for_all_licenses": false
   },
@@ -274,7 +274,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -288,14 +288,14 @@
           "start_line": 1,
           "end_line": 1,
           "matched_rule": {
-            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "identifier": "apache-2.0_176.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
             ],
             "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_notice": true,
+            "is_license_reference": false,
             "is_license_tag": false
           }
         }

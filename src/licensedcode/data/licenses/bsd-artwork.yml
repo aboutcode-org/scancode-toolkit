@@ -1,0 +1,9 @@
+key: bsd-artwork
+short_name: BSD Artwork
+name: BSD Artwork License
+category: Permissive
+owner: Armin Ronacher
+homepage_url: http://flask.pocoo.org/docs/1.0/license/
+notes: this is a bsd-like license for ogos nd artwork without a disclaimer
+other_urls:
+    - https://www.getlektor.com/license/
