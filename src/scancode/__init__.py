@@ -35,7 +35,6 @@ from os.path import getsize
 from os.path import getmtime
 from os.path import join
 from os.path import exists
-from types import *
 
 import click
 from click.types import BoolParamType
@@ -197,7 +196,7 @@ def _validate_option_dependencies(ctx, param, value,
         return
 
     def _is_set(_value, _param):
-        if _param.type in (BooleanType, BoolParamType):
+        if _param.type in (bool, BoolParamType):
             return _value
 
         if _param.multiple:
