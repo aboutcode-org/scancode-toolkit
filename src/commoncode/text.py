@@ -237,4 +237,3 @@ def as_unicode(s):
         if not isinstance(s, unicode):
             s = unicode(s)
         return s
-
