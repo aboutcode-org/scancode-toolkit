@@ -187,11 +187,14 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
             # What if we scanned a single file and we do not have a root proper?
             return
 
+        root_path = codebase.root.path
+
         has_packages = hasattr(codebase.root, 'packages')
         if not has_packages:
+            # FIXME: this is not correct... we may still have cases where this
+            # is wrong: e.g. a META-INF directory and we may not have a package 
             return
 
-        root_path = codebase.root.path
 
         for resource in codebase.walk(topdown=True):
             packages_info = resource.packages or []
@@ -212,6 +215,8 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
                     logger_debug('PackageTopAndKeyFilesTagger: extra_key_files:', extra_key_files)
 
                 if not (extra_root_dirs or extra_key_files):
+                    # FIXME: this is not correct!
+                    # we may still have other files under the actual root.
                     continue
 
                 if not descendants:
@@ -251,17 +256,20 @@ LEGAL_STARTS_ENDS = (
     'copying',
     'copyright',
     'copyrights',
+
+    'copyleft',
     'notice',
     'license',
     'licenses',
     'licence',
     'licences',
+    'licensing',
+    'licencing',
+
     'legal',
     'eula',
     'agreement',
     'copyleft',
-    'licensing',
-    'licencing',
     'patent',
     'patents',
 )
@@ -281,25 +289,31 @@ _MANIFEST_ENDS = {
     # the extracted metadata of a gem archive
     '/metadata.gz-extract': 'gem',
     '/build.gradle': 'gradle',
-    '.cabal': 'haskell',
-    '/haxelib.json': 'haxelib',
+    '/project.clj': 'clojure',
     '.pom': 'maven',
     '/pom.xml': 'maven',
+
+    '.cabal': 'haskell',
+    '/haxelib.json': 'haxe',
     '/package.json': 'npm',
     '.nuspec': 'nuget',
     '.pod': 'perl',
     '/meta.yml': 'perl',
     '/dist.ini': 'perl',
+
     '/pipfile': 'pypi',
     '/setup.cfg': 'pypi',
     '/setup.py': 'pypi',
+    '/PKG-INFO': 'pypi',
+    '/pyproject.toml': 'pypi', 
     '.spec': 'rpm',
     '/cargo.toml': 'rust',
     '.spdx': 'spdx',
+    '/dependencies': 'generic',
 
     # note that these two cannot be top-level for now
-    '/debian/copyright': 'deb',
-    '/meta-inf/manifest.mf': 'maven',
+    'debian/copyright': 'deb',
+    'meta-inf/manifest.mf': 'maven',
 
     # TODO: Maven also has sometimes a pom under META-INF/
     # 'META-INF/manifest.mf': 'JAR and OSGI',
