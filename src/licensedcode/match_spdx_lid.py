@@ -37,6 +37,7 @@ from license_expression import LicenseSymbol
 from license_expression import LicenseWithExceptionSymbol
 from license_expression import Licensing
 
+from commoncode import compat
 from licensedcode.match import LicenseMatch
 from licensedcode.models import SpdxRule
 from licensedcode.spans import Span
@@ -62,7 +63,7 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 MATCH_SPDX_ID = '4-spdx-id'
 
@@ -358,7 +359,9 @@ def clean_text(text):
 
 
 # note: LIST, DNL REM can be vomment indicators is a comment indicators
-stripper = re.compile('''(list|dnl|rem)?[\s'"]*spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*''', re.IGNORECASE).sub
+stripper = re.compile(
+    '''(list|dnl|rem)?[\s'"]*spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*''',
+    re.IGNORECASE).sub
 
 
 def strip_spdx_lid(text):

@@ -30,6 +30,7 @@ from functools import partial
 import os
 
 import click
+from commoncode import compat
 click.disable_unicode_literals_warning = True
 
 from commoncode import fileutils
@@ -41,14 +42,6 @@ from scancode.api import extract_archives
 from scancode import print_about
 from scancode import utils
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -119,7 +112,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
         if not item:
             return ''
         source = item.source
-        if not isinstance(source, unicode):
+        if not isinstance(source, compat.unicode):
             source = toascii(source, translit=True).decode('utf-8', 'replace')
         if verbose:
             if item.done:
@@ -127,7 +120,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
             line = source and get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
         else:
             line = source and fileutils.file_name(source) or ''
-        if not isinstance(line, unicode):
+        if not isinstance(line, compat.unicode):
             line = toascii(line, translit=True).decode('utf-8', 'replace')
         return 'Extracting: %(line)s' % locals()
 
@@ -142,7 +135,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
             has_errors = has_errors or bool(xev.errors)
             has_warnings = has_warnings or bool(xev.warnings)
             source = fileutils.as_posixpath(xev.source)
-            if not isinstance(source, unicode):
+            if not isinstance(source, compat.unicode):
                 source = toascii(source, translit=True).decode('utf-8', 'replace')
                 source = get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:

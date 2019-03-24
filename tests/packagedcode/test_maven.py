@@ -38,6 +38,7 @@ from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
 from scancode.resource import Codebase
+from commoncode import compat
 
 
 def parse_pom(location=None, text=None, check_is_pom=False):
@@ -386,7 +387,7 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if isinstance(test_name, unicode):
+    if isinstance(test_name, compat.string_types):
         test_name = test_name.encode('utf-8')
     test_pom.__name__ = test_name
     return test_pom

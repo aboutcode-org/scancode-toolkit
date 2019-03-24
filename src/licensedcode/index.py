@@ -39,6 +39,7 @@ from time import time
 
 from intbitset import intbitset
 
+from commoncode import compat
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode.frequent_tokens import global_tokens_by_ranks
@@ -99,7 +100,7 @@ or TRACE_CANDIDATES):
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a)
                                      for a in args))
 
 

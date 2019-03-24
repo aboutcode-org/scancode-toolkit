@@ -37,6 +37,7 @@ from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 from summarycode import facet
+from commoncode import compat
 
 
 # Tracing flags
@@ -56,7 +57,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 """
 A plugin to compute a licensing clarity score as designed in ClearlyDefined

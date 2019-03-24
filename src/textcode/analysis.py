@@ -34,6 +34,7 @@ import unicodedata
 
 import chardet
 
+from commoncode import compat
 from commoncode.system import on_linux
 from textcode import pdf
 from textcode import markup
@@ -65,7 +66,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 def numbered_text_lines(location, demarkup=False, plain_text=False):
@@ -88,7 +89,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if not location:
         return iter([])
 
-    if not isinstance(location, (str, bytes)):
+    if not isinstance(location, compat.string_types):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         if TRACE:
@@ -248,7 +249,7 @@ def as_unicode(line):
 
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
-    if isinstance(line, unicode):
+    if isinstance(line, compat.unicode):
         return line
     try:
         s = line.decode('UTF-8')
@@ -268,7 +269,7 @@ def as_unicode(line):
             except UnicodeDecodeError:
                 try:
                     enc = chardet.detect(line)['encoding']
-                    s = unicode(line, enc)
+                    s = compat.unicode(line, enc)
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
                     s = strings.string_from_string(s)

@@ -37,6 +37,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
+from commoncode import compat
 
 """
 Tag files as "key" or important and top-level files.
@@ -72,7 +73,7 @@ if TRACE:
 
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 @pre_scan_impl

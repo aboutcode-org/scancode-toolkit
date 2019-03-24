@@ -34,6 +34,7 @@ from commoncode import text
 from typecode import contenttype
 from contextlib import closing
 from collections import OrderedDict
+from commoncode import compat
 
 
 TRACE = False
@@ -163,7 +164,7 @@ def pe_info(location, include_extra_data=False):
 
             for k, v in strtab.entries.items():
                 # convert unicode to a safe ASCII representation
-                value = unicode(text.toascii(v).strip())
+                value = compat.unicode(text.toascii(v).strip())
                 if k in PE_INFO_KEYSET:
                     peinf[k] = value
                 else:

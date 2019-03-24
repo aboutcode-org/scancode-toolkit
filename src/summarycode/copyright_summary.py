@@ -39,6 +39,7 @@ from commoncode.text import toascii
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
+from commoncode import compat
 
 # Tracing flags
 TRACE = False
@@ -61,7 +62,7 @@ if TRACE or TRACE_CANO:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 # TODO: keep the original order of statements as much as possible
 

@@ -39,17 +39,8 @@ import click
 from click.types import BoolParamType
 
 from commoncode import fileutils
+from commoncode import compat
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 # Tracing flags
 TRACE = False
@@ -67,7 +58,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (unicode, str))
+        return logger.debug(' '.join(isinstance(a, compat.string_types)
                                      and a or repr(a) for a in args))
 
 

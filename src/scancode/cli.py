@@ -48,6 +48,7 @@ click.disable_unicode_literals_warning = True
 # import early
 from scancode_config import __version__ as scancode_version
 
+from commoncode import compat
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
@@ -92,18 +93,6 @@ from scancode.utils import path_progress_message
 from scancode.utils import progressmanager
 
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
-
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
@@ -121,7 +110,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode)
+        return logger.debug(' '.join(isinstance(a, compat.string_types)
                                      and a or repr(a) for a in args))
 
 echo_stderr = partial(click.secho, err=True)
@@ -525,7 +514,7 @@ def run_scan(
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
-        assert isinstance(input, (bytes, unicode))
+        assert isinstance(input, compat.string_types)
 
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
@@ -1485,7 +1474,7 @@ def get_pretty_params(ctx, generic_paths=False):
 
         # coerce to string for non-basic supported types
         if not (value in (True, False, None)
-            or isinstance(value, (str, unicode, bytes, tuple, list, dict, OrderedDict))):
+            or isinstance(value, (str, compat.unicode, bytes, tuple, list, dict, OrderedDict))):
             value = repr(value)
 
         # opts is a list of CLI options as in "--strip-root": the last opt is
