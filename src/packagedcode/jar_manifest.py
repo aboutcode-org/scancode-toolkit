@@ -33,17 +33,6 @@ from commoncode.fileutils import as_posixpath
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.maven import parse_scm_connection
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
-
 
 """
 A JAR/WAR/EAR and OSGi MANIFEST.MF parser and handler.
