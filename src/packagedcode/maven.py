@@ -86,7 +86,7 @@ class MavenPomPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.endswith('pom.xml'):
+        if manifest_resource.name.endswith(('pom.xml', '.pom',)):
             # the root is either the parent or further up for poms stored under
             # a META-INF dir
             package_data = manifest_resource.packages[0]
@@ -101,11 +101,6 @@ class MavenPomPackage(models.Package):
                         return jar_root_dir
 
             return manifest_resource.parent(codebase)
-
-        elif manifest_resource.path.lower().endswith('meta-inf/manifest.mf'):
-            # the root is the parent of META-INF
-            return manifest_resource.parent(codebase).parent(codebase)
-
         else:
             return manifest_resource
 
@@ -149,6 +144,20 @@ class MavenPomPackage(models.Package):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+    @classmethod
+    def extra_key_files(cls):
+        return [
+            'META-INF/MANIFEST.MF',
+            'META-INF/LICENSE',
+        ]
+
+    @classmethod
+    def extra_root_dirs(cls):
+        return [
+            'META-INF'
+        ]
+
 
 def compute_normalized_license(declared_license):
     """

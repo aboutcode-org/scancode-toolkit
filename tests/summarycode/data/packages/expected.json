@@ -51,7 +51,7 @@
           }
         ],
         "notice_text": null,
-        "manifest_path": null,
+        "manifest_path": "aopalliance-1.0.pom",
         "dependencies": [],
         "contains_source_code": null,
         "source_packages": [
@@ -63,8 +63,8 @@
         "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
         "files": [
           {
-            "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-            "type": "file"
+            "path": "scan/aopalliance/aopalliance/1.0",
+            "type": "directory"
           }
         ]
       },
@@ -683,12 +683,6 @@
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
-      "packages": [],
-      "scan_errors": []
-    },
-    {
-      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "type": "file",
       "packages": [
         {
           "type": "maven",
@@ -723,7 +717,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "aopalliance-1.0.pom",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -735,12 +729,18 @@
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
           "files": [
             {
-              "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-              "type": "file"
+              "path": "scan/aopalliance/aopalliance/1.0",
+              "type": "directory"
             }
           ]
         }
       ],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+      "type": "file",
+      "packages": [],
       "scan_errors": []
     },
     {
