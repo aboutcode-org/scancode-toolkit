@@ -27,7 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import itertools
-import string
+
 
 # This is a list of top common words sorted by decreasing frequency and was
 # borrowed (and heavily modified) from http://norvig.com/ngrams/count_1w100k.txt
@@ -10516,8 +10516,8 @@ def frequent_junk_mix_digit_letters():
     """
 
     def build():
-        for d in string.digits:
-            for l in string.lowercase:
+        for d in '0123456789':
+            for l in 'abcdefghijklmnopqrstuvwxyz':
                 yield d + l
                 yield l + d
 
