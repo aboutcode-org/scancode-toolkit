@@ -261,6 +261,11 @@ class TestIndexing(IndexTesting):
         except AssertionError as e:
             assert u'Duplicate rules' in str(e)
 
+    def test_index_does_not_fail_on_rules_with_similar_normalized_names(self):
+        rule_dir = self.get_test_loc('index/similar_names/rules')
+        lics_dir = self.get_test_loc('index/similar_names/licenses')
+        index.LicenseIndex(models.get_rules(lics_dir, rule_dir))
+
 
 class TestMatchNoTemplates(IndexTesting):
     test_data_dir = TEST_DATA_DIR

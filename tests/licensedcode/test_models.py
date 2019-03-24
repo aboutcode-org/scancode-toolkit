@@ -413,3 +413,9 @@ class TestRule(FileBasedTesting):
             self.fail('Exception not raised.')
         except Exception as  e:
             assert expected in str(e)
+
+    def test_load_rules_loads_file_content_at_path_and_not_path_as_string(self):
+        rule_dir = self.get_test_loc('models/similar_names')
+        rules = list(models.load_rules(rule_dir))
+        result = [' '.join(list(r.tokens())[-4:]) for r in  rules]
+        assert not any([r=='rules proprietary 10 rule' for r in result])
