@@ -14,7 +14,6 @@
     "group": "System/Internationalization",
     "url": null,
     "source_rpm": "mdv-rpm-summary-0.9.3-1mdv2010.0.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

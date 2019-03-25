@@ -14,7 +14,6 @@
     "group": "Applications/Networking/Security",
     "url": "http://alfandega.sourceforge.net/",
     "source_rpm": "alfandega-2.2-2.rh80.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

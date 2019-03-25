@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import namedtuple
 import logging
@@ -34,7 +35,7 @@ from six import string_types
 
 from packagedcode import models
 from packagedcode import nevra
-from packagedcode.pyrpm.rpm import RPM
+from packagedcode.pyrpm import RPM
 from packagedcode.utils import build_description
 import typecode.contenttype
 
@@ -76,12 +77,10 @@ RPM_TAGS = (
     'license',
     'packager',
     'group',
-    'patch',
     'url',
     'source_rpm',
-    'source_package',
     'dist_url',
-    'bin_or_src',
+    'is_binary',
 )
 
 RPMtags = namedtuple('RPMtags', list(RPM_TAGS))
@@ -89,28 +88,20 @@ RPMtags = namedtuple('RPMtags', list(RPM_TAGS))
 
 def get_rpm_tags(location, include_desc=False):
     """
-    Return a dictionary of RPM tags for the file at location or an empty
-    dictionary. Include the long RPM description value if include_desc is True.
+    Return an RPMtags object for the file at location or None.
+    Include the long RPM description value if `include_desc` is True.
     """
     T = typecode.contenttype.get_type(location)
+
     if 'rpm' not in T.filetype_file.lower():
-        return {}
+        return
 
     with open(location, 'rb') as rpmf:
         rpm = RPM(rpmf)
-        tags = rpm.get_tags()
-
-        # this is not a real 'tag' but some header flag, let's treat it as a
-        # tag for our purpose
-        tags['bin_or_src'] = 'bin' if rpm.binary else 'src'
-
-        # We decode as nUTF-8 by default and avoid errors with a replacement.
-        # UTF-8 should be the standard for RPMs, though for older rpms mileage
-        # may vary
-        tags = {t: unicode(tags[t], 'UTF-8', 'replace') for t in RPM_TAGS}
-        if not include_desc:
-            tags['description'] = u''
-    return tags and RPMtags(**tags) or None
+    tags = {k: v for k, v in rpm.to_dict().items() if k in RPM_TAGS}
+    if not include_desc:
+        tags['description'] = None
+    return RPMtags(**tags)
 
 
 class EVR(namedtuple('EVR', 'epoch version release')):
@@ -176,6 +167,7 @@ def parse(location):
         epoch = tags.epoch and int(tags.epoch) or None
     except ValueError:
         epoch = None
+
     evr = EVR(
         version=tags.version or None,
         release=tags.release or None,
@@ -183,7 +175,7 @@ def parse(location):
 
     qualifiers = {}
     os = tags.os
-    if os and os != 'linux':
+    if os and os.lower() != 'linux':
         qualifiers['os'] = os
 
     arch = tags.arch
@@ -214,10 +206,9 @@ def parse(location):
     if tags.vendor:
         parties.append(models.Party(name=tags.vendor, role='vendor'))
 
-
     description = build_description(tags.summary, tags.description)
-        
-    if TRACE: 
+
+    if TRACE:
         data = dict(
             name=name,
             version=evr,
@@ -225,8 +216,7 @@ def parse(location):
             homepage_url=tags.url or None,
             parties=parties,
             declared_license=tags.license or None,
-            source_packages=source_packages
-        )
+            source_packages=source_packages)
         logger_debug('parse: data to create a package:\n', data)
 
     package = RpmPackage(
@@ -236,9 +226,9 @@ def parse(location):
         homepage_url=tags.url or None,
         parties=parties,
         declared_license=tags.license or None,
-        source_packages=source_packages
-    )
-    if TRACE: 
+        source_packages=source_packages)
+
+    if TRACE:
         logger_debug('parse: created package:\n', package)
 
     return package

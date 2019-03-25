@@ -14,7 +14,6 @@
     "group": "Development/Languages/Perl",
     "url": null,
     "source_rpm": "perl-Term-ReadKey-2.20-1.7.3.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

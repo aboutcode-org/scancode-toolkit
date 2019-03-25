@@ -14,7 +14,6 @@
     "group": "System/Libraries",
     "url": "http://squeeze.xfce.org",
     "source_rpm": "squeeze-0.2.3-8mdv2010.0.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

@@ -14,7 +14,6 @@
     "group": "System/Kernel",
     "url": "http://linux-hotplug.sf.net/",
     "source_rpm": null,
-    "source_package": null,
     "dist_url": "srcrep:08daa5aad5d370288b2e472d300afb6c-fxload",
     "is_binary": false
 }
