@@ -28,13 +28,14 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import io
 import os
 
 from commoncode.testcase import FileBasedTesting
 
-from packagedcode.pyrpm import rpm as pyrpm
+from packagedcode import pyrpm
 
 
 class RPMTest(FileBasedTesting):
@@ -56,33 +57,34 @@ class RPMTest(FileBasedTesting):
             'to work and integrate best with Enlightenment.'
         )
 
-        assert 'Eterm' == rpm[pyrpm.rpmdefs.RPMTAG_NAME] == rpm.name
-        assert '0.9.3' == rpm[pyrpm.rpmdefs.RPMTAG_VERSION] == rpm.version
-        assert '5mdv2007.0' == rpm[pyrpm.rpmdefs.RPMTAG_RELEASE]
-        assert 'i586' == rpm[pyrpm.rpmdefs.RPMTAG_ARCH]
-        assert 'BSD' == rpm[pyrpm.rpmdefs.RPMTAG_COPYRIGHT]
-        assert description == rpm[pyrpm.rpmdefs.RPMTAG_DESCRIPTION]
+        assert 'Eterm' == rpm[pyrpm.RPMTAG_NAME] == rpm.name
+        assert '0.9.3' == rpm[pyrpm.RPMTAG_VERSION] == rpm.version
+        assert '5mdv2007.0' == rpm[pyrpm.RPMTAG_RELEASE]
+        assert 'i586' == rpm[pyrpm.RPMTAG_ARCH]
+        assert 'BSD' == rpm[pyrpm.RPMTAG_COPYRIGHT]
+        assert description == rpm[pyrpm.RPMTAG_DESCRIPTION]
         assert rpm.is_binary is True
         assert 'Eterm-0.9.3' == rpm.package
         assert 'Eterm-0.9.3-5mdv2007.0.i586.rpm' == rpm.filename
 
-        expected = {'arch': u'i586',
-        'description': description,
-        'dist_url': None,
-        'distribution': u'Mandriva Linux',
-        'epoch': None,
-        'group': u'Terminals',
-        'is_binary': True,
-        'license': u'BSD',
-        'name': u'Eterm',
-        'os': u'linux',
-        'packager': u'Jerome Soyer <saispo@mandriva.org>',
-        'release': u'5mdv2007.0',
-        'source_package': None,
-        'source_rpm': None,
-        'summary': u'Eterm (Enlightened Terminal Emulator) is a terminal emulator',
-        'url': u'http://eterm.sourceforge.net/',
-        'vendor': u'Mandriva',
-        'version': u'0.9.3'}
+        expected = {
+            'arch': u'i586',
+            'description': description,
+            'dist_url': None,
+            'distribution': u'Mandriva Linux',
+            'epoch': None,
+            'group': u'Terminals',
+            'is_binary': True,
+            'license': u'BSD',
+            'name': u'Eterm',
+            'os': u'linux',
+            'packager': u'Jerome Soyer <saispo@mandriva.org>',
+            'release': u'5mdv2007.0',
+            'source_rpm': None,
+            'summary': u'Eterm (Enlightened Terminal Emulator) is a terminal emulator',
+            'url': u'http://eterm.sourceforge.net/',
+            'vendor': u'Mandriva',
+            'version': u'0.9.3'
+        }
 
         assert expected == rpm.to_dict()
