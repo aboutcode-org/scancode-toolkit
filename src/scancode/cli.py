@@ -904,7 +904,7 @@ def run_scan(
             scan_names = ', '.join(p.name for p in scanner_plugins)
             echo_func('Scanning done.', fg='green' if success else 'red')
             display_summary(codebase, scan_names, processes, errors=errors,
-                            verbose=verbose, echo_func=echo_func)
+                            echo_func=echo_func)
 
         ########################################################################
         # 10. optionally assemble results to return
@@ -1241,9 +1241,22 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     return location, rid, scan_errors, scan_time, results, timings
 
 
-def display_summary(codebase, scan_names, processes, errors, verbose, echo_func=echo_stderr):
+def display_summary(codebase, scan_names, processes, errors, echo_func=echo_stderr):
     """
     Display a scan summary.
+    """
+    error_messages, summary_messages = get_displayable_summary(
+        codebase, scan_names, processes, errors)
+    for msg in error_messages:
+        echo_func(msg, fg='red')
+
+    for msg in summary_messages:
+        echo_func(msg)
+
+
+def get_displayable_summary(codebase, scan_names, processes, errors):
+    """
+    Return displayable summary messages
     """
     initial_files_count = codebase.counters.get('initial:files_count', 0)
     initial_dirs_count = codebase.counters.get('initial:dirs_count', 0)
@@ -1312,44 +1325,46 @@ def display_summary(codebase, scan_names, processes, errors, verbose, echo_func=
         final_size_count = ''
 
     ######################################################################
-
+    error_messages = []
     errors_count = len(errors)
     if errors:
-        echo_func('Some files failed to scan properly:', fg='red')
+        error_messages.append('Some files failed to scan properly:')
         for error in errors:
             for me in error.splitlines(False):
-                echo_func(me , fg='red')
+                error_messages.append(me)
 
     ######################################################################
-
-    echo_func('Summary:        %(scan_names)s with %(processes)d process(es)' % locals())
-    echo_func('Errors count:   %(errors_count)d' % locals())
-    echo_func('Scan Speed:     %(scan_file_speed).2f files/sec. %(scan_size_speed)s' % locals())
+    summary_messages = []
+    summary_messages.append('Summary:        %(scan_names)s with %(processes)d process(es)' % locals())
+    summary_messages.append('Errors count:   %(errors_count)d' % locals())
+    summary_messages.append('Scan Speed:     %(scan_file_speed).2f files/sec. %(scan_size_speed)s' % locals())
     if prescan_scan_time:
-        echo_func('Early Scanners Speed:     %(prescan_scan_file_speed).2f '
+        summary_messages.append('Early Scanners Speed:     %(prescan_scan_file_speed).2f '
                     'files/sec. %(prescan_scan_size_speed)s' % locals())
 
-    echo_func('Initial counts: %(initial_res_count)d resource(s): '
+    summary_messages.append('Initial counts: %(initial_res_count)d resource(s): '
                                '%(initial_files_count)d file(s) '
                                'and %(initial_dirs_count)d directorie(s) '
                                '%(initial_size_count)s' % locals())
 
-    echo_func('Final counts:   %(final_res_count)d resource(s): '
+    summary_messages.append('Final counts:   %(final_res_count)d resource(s): '
                                '%(final_files_count)d file(s) '
                                'and %(final_dirs_count)d directorie(s) '
                                '%(final_size_count)s' % locals())
 
-    echo_func('Timings:')
+    summary_messages.append('Timings:')
 
     cle = codebase.get_or_create_current_header().to_dict()
-    echo_func('  scan_start: {start_timestamp}'.format(**cle))
-    echo_func('  scan_end:   {end_timestamp}'.format(**cle))
+    summary_messages.append('  scan_start: {start_timestamp}'.format(**cle))
+    summary_messages.append('  scan_end:   {end_timestamp}'.format(**cle))
 
     for name, value, in codebase.timings.items():
         if value > 0.1:
-            echo_func('  %(name)s: %(value).2fs' % locals())
+            summary_messages.append('  %(name)s: %(value).2fs' % locals())
 
     # TODO: if timing was requested display top per-scan/per-file stats?
+
+    return error_messages, summary_messages
 
 
 def collect_errors(codebase, verbose=False):

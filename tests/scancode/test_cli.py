@@ -34,6 +34,7 @@ from unittest.case import skipIf
 
 import click
 click.disable_unicode_literals_warning = True
+import pytest
 
 from commoncode import fileutils
 from commoncode.fileutils import fsencode
@@ -728,7 +729,35 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
     run_scan_click(args, expected_rc=0)
 
 
-def test_display_summary_edge_case_scan_time_zero():
+def test_get_displayable_summary():
+    from scancode.cli import get_displayable_summary
+    from scancode.resource import Codebase
+
+    # Set up test codebase
+    test_codebase = test_env.get_test_loc('resource/client')
+    codebase = Codebase(test_codebase, strip_root=True)
+    codebase.timings['scan'] = 0
+    scan_names = 'foo, bar, baz'
+    processes = 23
+    errors = ['failed to scan ABCD']
+    results = get_displayable_summary(codebase, scan_names, processes, errors)
+    expected = (
+        [u'Some files failed to scan properly:', u'failed to scan ABCD'],
+        [
+            u'Summary:        foo, bar, baz with 23 process(es)',
+            u'Errors count:   1',
+            u'Scan Speed:     0.00 files/sec. ',
+            u'Initial counts: 0 resource(s): 0 file(s) and 0 directorie(s) ',
+            u'Final counts:   0 resource(s): 0 file(s) and 0 directorie(s) ',
+            u'Timings:',
+            u'  scan_start: None',
+            u'  scan_end:   None']
+    )
+    assert expected == results
+
+
+@pytest.mark.xfail#('weird test with TTY interactions that need to be revisited')
+def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     from io import StringIO
     import sys
 
@@ -739,22 +768,19 @@ def test_display_summary_edge_case_scan_time_zero():
     test_codebase = test_env.get_test_loc('resource/client')
     codebase = Codebase(test_codebase, strip_root=True)
     codebase.timings['scan'] = 0
-    scan_names = ''
-    processes = 0
-    verbose = False
-    errors = []
-    # Redirect summary output from `stderr` to `result`
-    result = StringIO()
-    sys.stderr = result
+    scan_names = 'foo, bar, baz'
+    processes = 23
+    errors = ['failed to scan ABCD']
+    try:
+        # Redirect summary output from `stderr` to `result`
+        result = StringIO()
+        sys.stderr = result
 
-    # Output from `display_summary` will be in `result`
-    display_summary(codebase, scan_names, processes, errors, verbose)
-
-    # Set `stderr` back
-    sys.stderr = sys.__stderr__
-
-    # No exception should be thrown and this assertion should pass
-    assert 'Scan Speed:     0.00 files/sec.' in result.getvalue()
+        # Output from `display_summary` will be in `result`
+        display_summary(codebase, scan_names, processes, errors)
+    finally:
+        # Set `stderr` back
+        sys.stderr = sys.__stderr__
 
 
 def test_check_error_count():
