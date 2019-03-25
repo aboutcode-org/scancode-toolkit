@@ -35,11 +35,7 @@
   "vcs_url": "git+https://github.com/npm/npm",
   "copyright": null,
   "license_expression": null,
-  "declared_license": [
-    {
-      "type": "Artistic-2.0"
-    }
-  ],
+  "declared_license": "Artistic-2.0",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

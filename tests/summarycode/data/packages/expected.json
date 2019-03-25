@@ -151,11 +151,7 @@
         "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
         "copyright": null,
         "license_expression": "mit",
-        "declared_license": [
-          {
-            "type": "MIT"
-          }
-        ],
+        "declared_license": "MIT",
         "notice_text": null,
         "manifest_path": "package.json",
         "dependencies": [
@@ -851,11 +847,7 @@
           "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
           "copyright": null,
           "license_expression": "mit",
-          "declared_license": [
-            {
-              "type": "MIT"
-            }
-          ],
+          "declared_license": "MIT",
           "notice_text": null,
           "manifest_path": "package.json",
           "dependencies": [

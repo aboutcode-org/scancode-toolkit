@@ -48,11 +48,7 @@
   "vcs_url": "git+https://github.com/chenglou/react-motion.git",
   "copyright": null,
   "license_expression": null,
-  "declared_license": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "declared_license": "MIT",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [
