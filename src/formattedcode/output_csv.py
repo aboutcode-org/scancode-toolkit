@@ -37,6 +37,7 @@ from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
+from commoncode.compat import string_types
 
 
 # Tracing flags
@@ -298,7 +299,7 @@ def flatten_package(_package, path, prefix='package__'):
                     if isinstance(component_val, list):
                         component_val = '\n'.join(component_val)
 
-                    if not isinstance(component_val, str):
+                    if not isinstance(component_val, string_types):
                         component_val = repr(component_val)
 
                     existing = pack.get(component_new_key) or []
