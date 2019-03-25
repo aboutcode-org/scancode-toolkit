@@ -37,7 +37,6 @@ import re
 
 import attr
 import javaproperties
-from license_expression import Licensing
 from lxml import etree
 from packageurl import PackageURL
 from pymaven import artifact

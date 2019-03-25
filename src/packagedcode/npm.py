@@ -34,7 +34,6 @@ import logging
 import re
 
 import attr
-from license_expression import Licensing
 from packageurl import PackageURL
 from six import string_types
 
