@@ -38,7 +38,7 @@
   "code_view_url": null,
   "vcs_url": "git+https://github.com/stevepapa/angular2-autosize.git",
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "mit",
   "declared_license": "MIT",
   "notice_text": null,
   "manifest_path": null,

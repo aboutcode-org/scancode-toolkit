@@ -43,6 +43,7 @@ class PackageTester(testcase.FileBasedTesting):
         """
         expected_loc = self.get_test_loc(expected_loc)
 
+        package.license_expression = package.compute_normalized_license()
         results = package.to_dict()
 
         if regen:

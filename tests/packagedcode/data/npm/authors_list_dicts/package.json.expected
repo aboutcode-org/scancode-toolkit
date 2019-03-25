@@ -49,7 +49,7 @@
   "code_view_url": null,
   "vcs_url": "git+https://github.com/csscomb/grunt-csscomb.git",
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "mit AND (mit AND unknown)",
   "declared_license": [
     {
       "type": "MIT",
