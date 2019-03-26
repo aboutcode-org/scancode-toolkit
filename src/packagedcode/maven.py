@@ -37,6 +37,7 @@ import re
 
 import attr
 import javaproperties
+from license_expression import Licensing
 from lxml import etree
 from packageurl import PackageURL
 from pymaven import artifact
@@ -46,7 +47,6 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.models import Package
-from packagedcode.utils import compute_normalized_license
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
@@ -148,6 +148,81 @@ class MavenPomPackage(models.Package):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+def compute_normalized_license(declared_license):
+    """
+    Return a detected license expression from a declared license mapping.
+    """
+    if not declared_license:
+        return
+
+    licensing = Licensing()
+
+    detected_licenses = []
+
+    for license_declaration in declared_license:
+        # 1. try detection on the value of name if not empty and keep this
+        name = license_declaration.get('name')
+        via_name = models.compute_normalized_license(name)
+
+        # 2. try detection on the value of url  if not empty and keep this
+        url = license_declaration.get('url')
+        via_url = models.compute_normalized_license(url)
+
+        # 3. try detection on the value of comment  if not empty and keep this
+        comments = license_declaration.get('comments')
+        via_comments = models.compute_normalized_license(comments)
+
+
+        if via_name:
+            # The name should have precedence and any unknowns
+            # in url and comment should be ignored.
+            if via_url == 'unknown':
+                via_url = None
+            if via_comments == 'unknown':
+                via_comments = None
+
+        # Check the three detections to decide which license to keep
+        name_and_url = via_name == via_url
+        name_and_comment = via_name == via_comments
+        all_same = name_and_url and name_and_comment
+
+        if via_name:
+            if all_same:
+                detected_licenses.append(via_name)
+
+            # name and (url or comment) are same
+            elif name_and_url and not via_comments:
+                detected_licenses.append(via_name)
+            elif name_and_comment and not via_url:
+                detected_licenses.append(via_name)
+
+            else:
+                # we have some non-unknown license detected in url or comment
+                detections = via_name, via_url, via_comments
+                detections = [l for l in detections if l]
+                if detections:
+                    if len(detections) == 1:
+                        combined_expression = detections[0]
+                    else:
+                        expressions = [
+                            licensing.parse(le, simple=True) for le in detections]
+                        combined_expression = str(licensing.AND(*expressions))
+                    detected_licenses.append(combined_expression)
+
+        elif via_url:
+            detected_licenses.append(via_url)
+        elif via_comments:
+            detected_licenses.append(via_comments)
+
+    if len(detected_licenses) == 1:
+        return detected_licenses[0]
+
+    if detected_licenses:
+        # Combine if pom contains more than one licenses declarations.
+        expressions = [licensing.parse(le, simple=True) for le in detected_licenses]
+        combined_expression = licensing.AND(*expressions)
+        return str(combined_expression)
 
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):

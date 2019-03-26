@@ -34,13 +34,13 @@ import logging
 import re
 
 import attr
+from license_expression import Licensing
 from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from packagedcode.utils import compute_normalized_license
 from packagedcode.utils import parse_repo_url
 
 
@@ -97,6 +97,73 @@ class NpmPackage(models.Package):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+def compute_normalized_license(declared_license):
+    """
+    Return a detected license expression from a declared license mapping.
+    """
+    if not declared_license:
+        return
+
+    licensing = Licensing()
+
+    detected_licenses = []
+    
+    if isinstance(declared_license, string_types):
+        # if the declared_license is a string, use list to wrapper it and use the following loop to handle in order not to have to many if condition
+        declared_license = [declared_license]
+
+    for license_declaration in declared_license:
+        if isinstance(license_declaration, string_types):
+            license_declaration = models.compute_normalized_license(license_declaration)
+            if license_declaration:
+                detected_licenses.append(license_declaration)
+        elif isinstance(license_declaration, dict):
+            # 1. try detection on the value of type if not empty and keep this
+            type = license_declaration.get('type')
+            via_type = models.compute_normalized_license(type)
+    
+            # 2. try detection on the value of url  if not empty and keep this
+            url = license_declaration.get('url')
+            via_url = models.compute_normalized_license(url)
+    
+    
+            if via_type:
+                # The type should have precedence and any unknowns
+                # in url should be ignored.
+                if via_url == 'unknown':
+                    via_url = None
+    
+            # Check the three detections to decide which license to keep
+            type_and_url = via_type == via_url
+            all_same = type_and_url
+            if via_type:
+                if all_same:
+                    detected_licenses.append(via_type)
+                else:
+                    # we have some non-unknown license detected in url
+                    detections = via_type, via_url
+                    detections = [l for l in detections if l]
+                    if detections:
+                        if len(detections) == 1:
+                            combined_expression = detections[0]
+                        else:
+                            expressions = [
+                                licensing.parse(le, simple=True) for le in detections]
+                            combined_expression = str(licensing.AND(*expressions))
+                        detected_licenses.append(combined_expression)
+    
+            elif via_url:
+                detected_licenses.append(via_url)
+
+    if len(detected_licenses) == 1:
+        return detected_licenses[0]
+
+    if detected_licenses:
+        # Combine if pom contains more than one licenses declarations.
+        expressions = [licensing.parse(le, simple=True) for le in detected_licenses]
+        combined_expression = licensing.AND(*expressions)
+        return str(combined_expression)
 
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
