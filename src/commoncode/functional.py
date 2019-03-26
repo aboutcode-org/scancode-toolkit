@@ -25,7 +25,7 @@
 from __future__ import absolute_import, print_function
 
 import functools
-from types import ListType, TupleType, GeneratorType
+from types import GeneratorType
 from array import array
 
 
@@ -53,7 +53,7 @@ def flatten(seq):
     """
     r = []
     for x in seq:
-        if isinstance(x, (ListType, TupleType)):
+        if isinstance(x, (list, tuple)):
             r.extend(flatten(x))
         elif isinstance(x, GeneratorType):
             r.extend(flatten(list(x)))
@@ -102,7 +102,7 @@ def memoize(fun):
         if kwargs:
             return fun(*args, **kwargs)
         # convert any list args to a tuple
-        args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
+        args = tuple(tuple(arg) if isinstance(arg, (list, tuple, array)) else arg
                      for arg in args)
         try:
             return memos[args]

@@ -908,7 +908,7 @@ class SoupStrainer:
     def _matches(self, markup, matchAgainst):
         #print "Matching %s against %s" % (markup, matchAgainst)
         result = False
-        if matchAgainst == True and type(matchAgainst) == types.BooleanType:
+        if matchAgainst == True and type(matchAgainst) == bool:
             result = markup != None
         elif callable(matchAgainst):
             result = matchAgainst(markup)
@@ -950,7 +950,7 @@ def isList(l):
     """Convenience method that works with all 2.x versions of Python
     to determine whether or not something is listlike."""
     return hasattr(l, '__iter__') \
-           or (type(l) in (types.ListType, types.TupleType))
+           or (type(l) in (list, tuple))
 
 def isString(s):
     """Convenience method that works with all 2.x versions of Python
@@ -1755,7 +1755,7 @@ class UnicodeDammit:
         """Changes a MS smart quote character to an XML or HTML
         entity."""
         sub = self.MS_CHARS.get(orig)
-        if type(sub) == types.TupleType:
+        if type(sub) == tuple:
             if self.smartQuotesTo == 'xml':
                 sub = '&#x%s;' % sub[1]
             else:
