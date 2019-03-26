@@ -35,7 +35,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "(apache-2.0 AND cc0-1.0 AND apache-2.0 AND free-unknown) AND unknown",
   "declared_license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others\nLicense :: OSI Approved :: Apache Software License\nLicense :: OSI Approved :: CC0",
   "notice_text": null,
   "manifest_path": null,

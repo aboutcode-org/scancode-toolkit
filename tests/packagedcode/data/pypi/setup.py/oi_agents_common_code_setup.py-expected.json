@@ -38,7 +38,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "gpl-3.0 AND free-unknown AND gpl-3.0",
   "declared_license": "GPLv3\nLicense :: OSI Approved :: GPLv3 License",
   "notice_text": null,
   "manifest_path": null,

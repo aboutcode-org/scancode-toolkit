@@ -31,7 +31,7 @@
   "code_view_url": "https://svnweb.freebsd.org/ports/head/security/0d1n",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "gpl-3.0",
   "declared_license": "GPLv3",
   "notice_text": null,
   "manifest_path": null,
