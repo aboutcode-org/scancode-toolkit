@@ -231,9 +231,9 @@ def has_spdx_licenses(resource):
     Return True if a Resource licenses are all known SPDX licenses.
     """
     for detected_license in getattr(resource, 'licenses', []) or []:
-        if not detected_license or not detected_license.get('spdx_license_key'):
-            return False
-    return True
+        if detected_license and detected_license.get('spdx_license_key'):
+            return True
+    return False
 
 
 def get_spdx_keys():
