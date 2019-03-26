@@ -392,12 +392,22 @@ def licenses_mapper(license, licenses, package):  # NOQA
     - (Deprecated) an array or a list of arrays of type, url.
     -  "license": "UNLICENSED" means this is proprietary
     """
-    declared_license = get_declared_licenses(license)
-    if not declared_license:
-        declared_license = get_declared_licenses(licenses)
-    package.declared_license = declared_license
-    return package
+    # Value by parsing 'license' element
+    declared_license_via_license = get_declared_licenses(license)
+    # Value by parsing 'license' element
+    declared_license_via_licenses = get_declared_licenses(licenses)
 
+    if declared_license_via_license and declared_license_via_licenses:
+        declared_licenses = []
+        for declared_license_via in [declared_license_via_license, declared_license_via_licenses]:
+            if isinstance(declared_license_via, list):
+                declared_licenses.extend(declared_license_via)
+            else:
+                declared_licenses.append(declared_license_via)
+        package.declared_license = declared_licenses
+    else:
+        package.declared_license = declared_license_via_license or declared_license_via_licenses
+    return package
 
 def party_mapper(party, package, party_type):
     """
