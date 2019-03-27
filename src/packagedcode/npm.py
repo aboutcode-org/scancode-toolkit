@@ -109,10 +109,6 @@ def compute_normalized_license(declared_license):
 
     detected_licenses = []
     
-    if isinstance(declared_license, string_types):
-        # if the declared_license is a string, use list to wrapper it and use the following loop to handle in order not to have to many if condition
-        return models.compute_normalized_license(declared_license)
-
     for license_declaration in declared_license:
         if isinstance(license_declaration, string_types):
             license_declaration = models.compute_normalized_license(license_declaration)
@@ -131,14 +127,12 @@ def compute_normalized_license(declared_license):
             if via_type:
                 # The type should have precedence and any unknowns
                 # in url should be ignored.
+                #TODO: find a better way to detect unknown licenses
                 if via_url == 'unknown':
                     via_url = None
     
-            # Check the three detections to decide which license to keep
-            type_and_url = via_type == via_url
-            all_same = type_and_url
             if via_type:
-                if all_same:
+                if via_type == via_url:
                     detected_licenses.append(via_type)
                 else:
                     # we have some non-unknown license detected in url
@@ -414,15 +408,12 @@ def get_declared_licenses(license_object):
     if not license_object:
         return []
 
-    declared_licenses = []
-    if isinstance(license_object, string_types):
-        # current form
-        # TODO: handle "SEE LICENSE IN <filename>"
-        # TODO: handle UNLICENSED
-        # TODO: parse expression with license_expression library
-        return license_object
 
-    elif isinstance(license_object, dict):
+    if isinstance(license_object, string_types):
+        return [license_object]
+    
+    declared_licenses = []
+    if isinstance(license_object, dict):
         # old, deprecated form
         """
          "license": {
@@ -459,22 +450,11 @@ def licenses_mapper(license, licenses, package):  # NOQA
     - (Deprecated) an array or a list of arrays of type, url.
     -  "license": "UNLICENSED" means this is proprietary
     """
-    # Value by parsing 'license' element
-    declared_license_via_license = get_declared_licenses(license)
-    # Value by parsing 'license' element
-    declared_license_via_licenses = get_declared_licenses(licenses)
-
-    if declared_license_via_license and declared_license_via_licenses:
-        declared_licenses = []
-        for declared_license_via in [declared_license_via_license, declared_license_via_licenses]:
-            if isinstance(declared_license_via, list):
-                declared_licenses.extend(declared_license_via)
-            else:
-                declared_licenses.append(declared_license_via)
-        package.declared_license = declared_licenses
-    else:
-        package.declared_license = declared_license_via_license or declared_license_via_licenses
+    declared_license = get_declared_licenses(license) or []
+    declared_license.extend(get_declared_licenses(licenses)  or [])
+    package.declared_license = declared_license
     return package
+
 
 def party_mapper(party, package, party_type):
     """
