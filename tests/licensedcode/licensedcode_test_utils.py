@@ -129,7 +129,7 @@ class LicenseTest(object):
         else:
             if not self.notes:
                 raise Exception(
-                    'A license test with expected license_expressions should '
+                    'A license test without expected license_expressions should '
                     'have explanatory notes:  for: file://' + self.data_file)
 
     def to_dict(self):
