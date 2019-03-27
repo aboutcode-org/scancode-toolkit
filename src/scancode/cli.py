@@ -272,8 +272,9 @@ def print_options(ctx, param, value):
 
 @click.pass_context
 
-# ensure that the input path is bytes on Linux, unicode elsewhere
-@click.argument('input', metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+@click.argument('input',
+    metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+    # ensure that the input path is bytes on Linux, unicode elsewhere
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 
 @click.option('--strip-root',
@@ -383,7 +384,7 @@ def print_options(ctx, param, value):
     is_flag=True, default=False,
     help='Keep temporary files and show the directory where temporary files '
          'are stored. (By default temporary files are deleted when a scan is '
-         'completed.',
+         'completed.)',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
@@ -495,9 +496,8 @@ def scancode(ctx, input,  # NOQA
         raise e
 
     except ScancodeError as se:
-        # TODO :consider raising a usage error?
-        echo_func(se.message, color='red')
-        ctx.exit(2)
+        # this will exit
+        raise click.BadParameter(se.message)
 
     rc = 0 if success else 1
     ctx.exit(rc)
@@ -531,6 +531,10 @@ def run_scan(
     if not echo_func:
         def echo_func(*args, **kwargs): pass
 
+    if not input:
+        msg = 'At least one input path is required.'
+        raise ScancodeError(msg)
+
     if not isinstance(input, (list, tuple)):
         # nothing else todo
         assert isinstance(input, (bytes, unicode))
@@ -543,9 +547,8 @@ def run_scan(
         # a common root directory and none is an absolute path
 
         if any(os.path.isabs(p) for p in input):
-            msg = ('ERROR: invalid inputs: input paths must be relative and '
-                  'share a common parent when using multiple inputs.')
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = ('Invalid inputs: all input paths must be relative.')
+            raise ScancodeError(msg)
 
         # find the common prefix directory (note that this is a pre string operation
         # hence it may return non-existing paths
@@ -557,8 +560,8 @@ def run_scan(
             common_prefix = PATH_TYPE('.')
 
         elif not os.path.isdir(common_prefix):
-            msg = 'ERROR: invalid inputs: all input paths must share a common parent directory.'
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = 'Invalid inputs: all input paths must share a common parent directory.'
+            raise ScancodeError(msg)
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
@@ -630,7 +633,7 @@ def run_scan(
                     else:
                         non_enabled_plugins_by_qname[qname] = plugin
                 except:
-                    msg = 'ERROR: failed to load plugin: %(qname)s:' % locals()
+                    msg = 'Failed to load plugin: %(qname)s:' % locals()
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # NOTE: these are list of plugin instances, not classes!
