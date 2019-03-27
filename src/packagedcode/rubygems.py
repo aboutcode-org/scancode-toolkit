@@ -496,10 +496,12 @@ def get_dependencies(dependencies):
             constraints.append(version_constraint)
 
         # if we have only one version constraint and this is "=" then we are resolved
-        is_resolved = constraint == '='
-        is_resolved = is_resolved and len(constraints) == 1
-
+        is_resolved =False
+        if constraints and len(constraints) == 1:
+            is_resolved = constraint == '='
+        
         version_constraint = ', '.join(constraints)
+
         dep = models.DependentPackage(
             purl=RubyGem.create(name=name).purl,
             requirement=version_constraint or None,
@@ -640,7 +642,6 @@ def normalize(gem_data, known_fields=known_fields):
     return OrderedDict(
         [(k, gem_data.get(k) or None) for k in known_fields]
     )
-
 
 
 def parse_spec(location):

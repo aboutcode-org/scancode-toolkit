@@ -32,10 +32,11 @@ import json
 import os
 from unittest.case import expectedFailure
 
+import saneyaml
+
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
-
 
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
@@ -98,6 +99,16 @@ class TestRubyGemspec(FileBasedTesting):
         self.check_gemspec(
             'rubygems/gemspec/with_variables.gemspec',
             'rubygems/gemspec/with_variables.gemspec.expected.json')
+
+
+class TestRubyGemMetadata(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_build_rubygem_package_does_not_crash(self):
+        test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
+        with open(test_file) as tf:
+            metadata = saneyaml.load(tf.read())
+        rubygems.build_rubygem_package(metadata)        
 
 
 def relative_walk(dir_path, extension='.gem'):
