@@ -512,7 +512,7 @@ consistency = ScoringElement(
     scorer=has_consistent_key_and_file_level_licenses,
     weight=15)
 
-spdx_licenses = ScoringElement(
+spdx_license = ScoringElement(
     is_binary=True,
     name='is_using_only_spdx_licenses',
     scorer=is_using_only_spdx_licenses,
@@ -543,6 +543,6 @@ SCORING_ELEMENTS = [
     declared,
     discovered,
     consistency,
-    spdx_licenses,
+    spdx_license,
     full_text
 ]
