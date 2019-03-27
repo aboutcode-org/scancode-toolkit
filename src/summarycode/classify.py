@@ -274,6 +274,7 @@ LEGAL_STARTS_ENDS = (
     'patents',
 )
 
+
 _MANIFEST_ENDS = {
     '.about': 'ABOUT file',
     '/bower.json': 'bower',
