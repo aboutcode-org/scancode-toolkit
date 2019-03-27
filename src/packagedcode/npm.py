@@ -111,7 +111,7 @@ def compute_normalized_license(declared_license):
     
     if isinstance(declared_license, string_types):
         # if the declared_license is a string, use list to wrapper it and use the following loop to handle in order not to have to many if condition
-        declared_license = [declared_license]
+        return models.compute_normalized_license(declared_license)
 
     for license_declaration in declared_license:
         if isinstance(license_declaration, string_types):
