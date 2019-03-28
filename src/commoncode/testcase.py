@@ -295,7 +295,7 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
             for tarinfo in tarinfos:
                 if tar_can_extract(tarinfo, verbatim):
                     if not verbatim:
-                        tarinfo.mode = 0700
+                        tarinfo.mode = 0o700
                     to_extract.append(tarinfo)
             tar.extractall(target_dir, members=to_extract)
         finally:
@@ -426,7 +426,7 @@ def make_non_readable(location):
         current_stat = stat.S_IMODE(os.lstat(location).st_mode)
         os.chmod(location, current_stat & ~stat.S_IREAD)
     else:
-        os.chmod(location, 0555)
+        os.chmod(location, 0o555)
 
 
 def make_non_writable(location):
