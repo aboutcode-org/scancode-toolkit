@@ -106,14 +106,12 @@ def compute_normalized_license(declared_license):
         return
 
     licensing = Licensing()
-
     detected_licenses = []
-    
     for license_declaration in declared_license:
         if isinstance(license_declaration, string_types):
-            license_declaration = models.compute_normalized_license(license_declaration)
-            if license_declaration:
-                detected_licenses.append(license_declaration)
+            detected_license = models.compute_normalized_license(license_declaration)
+            if detected_license:
+                detected_licenses.append(detected_license)
         elif isinstance(license_declaration, dict):
             # 1. try detection on the value of type if not empty and keep this
             type = license_declaration.get('type')
@@ -122,8 +120,7 @@ def compute_normalized_license(declared_license):
             # 2. try detection on the value of url  if not empty and keep this
             url = license_declaration.get('url')
             via_url = models.compute_normalized_license(url)
-    
-    
+
             if via_type:
                 # The type should have precedence and any unknowns
                 # in url should be ignored.
@@ -142,8 +139,7 @@ def compute_normalized_license(declared_license):
                         if len(detections) == 1:
                             combined_expression = detections[0]
                         else:
-                            expressions = [
-                                licensing.parse(le, simple=True) for le in detections]
+                            expressions = [licensing.parse(le, simple=True) for le in detections]
                             combined_expression = str(licensing.AND(*expressions))
                         detected_licenses.append(combined_expression)
     

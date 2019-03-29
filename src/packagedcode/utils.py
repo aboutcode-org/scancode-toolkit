@@ -28,10 +28,6 @@ from __future__ import unicode_literals
 
 from six import string_types
 
-from license_expression import Licensing
-
-from packagedcode import models
-
 
 PLAIN_URLS = (
     'https://',
