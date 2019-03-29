@@ -132,17 +132,12 @@ def compute_normalized_license(declared_license):
                 if via_type == via_url:
                     detected_licenses.append(via_type)
                 else:
-                    # we have some non-unknown license detected in url
-                    detections = via_type, via_url
-                    detections = [l for l in detections if l]
-                    if detections:
-                        if len(detections) == 1:
-                            combined_expression = detections[0]
-                        else:
-                            expressions = [licensing.parse(le, simple=True) for le in detections]
-                            combined_expression = str(licensing.AND(*expressions))
+                    if not via_url:
+                        detected_licenses.append(via_type)
+                    else:
+                        expressions = [licensing.parse(le, simple=True) for le in [via_type, via_url]]
+                        combined_expression = str(licensing.AND(*expressions))
                         detected_licenses.append(combined_expression)
-    
             elif via_url:
                 detected_licenses.append(via_url)
 
