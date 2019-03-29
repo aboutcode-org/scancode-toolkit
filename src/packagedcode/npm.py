@@ -394,7 +394,9 @@ def split_scoped_package_name(name):
 
 def get_declared_licenses(license_object):
     """
-    Return the declared licenses, which is a list of order dictionary of licenses
+    Return the declared licenses, if the passing license_object is string type, return the the list to wrap the string. 
+    If the type is dictionary, return the list of the dictionary
+    If the type is list, return the list.
     """
     if not license_object:
         return []
