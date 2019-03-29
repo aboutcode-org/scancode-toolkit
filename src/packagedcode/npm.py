@@ -114,8 +114,8 @@ def compute_normalized_license(declared_license):
                 detected_licenses.append(detected_license)
         elif isinstance(license_declaration, dict):
             # 1. try detection on the value of type if not empty and keep this
-            type = license_declaration.get('type')
-            via_type = models.compute_normalized_license(type)
+            ltype = license_declaration.get('type')
+            via_type = models.compute_normalized_license(ltype)
     
             # 2. try detection on the value of url  if not empty and keep this
             url = license_declaration.get('url')
