@@ -98,36 +98,39 @@ class NpmPackage(models.Package):
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
+
 def compute_normalized_license(declared_license):
     """
-    Return a detected license expression from a declared license mapping.
+    Return a normalized license expression string detected from a list of
+    declared license items.
     """
     if not declared_license:
         return
 
-    licensing = Licensing()
     detected_licenses = []
-    for license_declaration in declared_license:
-        if isinstance(license_declaration, string_types):
-            detected_license = models.compute_normalized_license(license_declaration)
+
+    for declared in declared_license:
+        if isinstance(declared, string_types):
+            detected_license = models.compute_normalized_license(declared)
             if detected_license:
                 detected_licenses.append(detected_license)
-        elif isinstance(license_declaration, dict):
+
+        elif isinstance(declared, dict):
             # 1. try detection on the value of type if not empty and keep this
-            ltype = license_declaration.get('type')
+            ltype = declared.get('type')
             via_type = models.compute_normalized_license(ltype)
-    
+
             # 2. try detection on the value of url  if not empty and keep this
-            url = license_declaration.get('url')
+            url = declared.get('url')
             via_url = models.compute_normalized_license(url)
 
             if via_type:
                 # The type should have precedence and any unknowns
                 # in url should be ignored.
-                #TODO: find a better way to detect unknown licenses
-                if via_url == 'unknown':
+                # TODO: find a better way to detect unknown licenses
+                if via_url in ('unknown', 'unknwon-license-reference',):
                     via_url = None
-    
+
             if via_type:
                 if via_type == via_url:
                     detected_licenses.append(via_type)
@@ -135,20 +138,32 @@ def compute_normalized_license(declared_license):
                     if not via_url:
                         detected_licenses.append(via_type)
                     else:
-                        expressions = [licensing.parse(le, simple=True) for le in [via_type, via_url]]
-                        combined_expression = str(licensing.AND(*expressions))
+                        combined_expression = combine_expressions([via_type, via_url])
                         detected_licenses.append(combined_expression)
             elif via_url:
                 detected_licenses.append(via_url)
 
-    if len(detected_licenses) == 1:
-        return detected_licenses[0]
-
     if detected_licenses:
-        # Combine if pom contains more than one licenses declarations.
-        expressions = [licensing.parse(le, simple=True) for le in detected_licenses]
-        combined_expression = licensing.AND(*expressions)
-        return str(combined_expression)
+        return combine_expressions(detected_licenses)
+
+
+def combine_expressions(expressions, licensing=Licensing()):
+    """
+    Return a combined license expression string with AND, given a list of
+    license expressions.
+
+    For example:
+    >>> a = 'mit'
+    >>> b = 'gpl'
+    >>> combine_expressions([a, b])
+    'mit AND gpl'
+    """
+    if not expressions:
+        return
+    if len(expressions) == 1:
+        return expressions[0]
+    expressions = [licensing.parse(le, simple=True) for le in expressions]
+    return str(licensing.AND(*expressions))
 
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
@@ -323,7 +338,8 @@ def build_package(package_data):
     if TRACE:
         declared_license = package.declared_license
         logger.debug(
-            'parse: license: {lic} licenses: {lics} declared_license: {declared_license}'.format(locals()))
+            'parse: license: {lic} licenses: {lics} '
+            'declared_license: {declared_license}'.format(locals()))
 
     return package
 
@@ -394,20 +410,18 @@ def split_scoped_package_name(name):
 
 def get_declared_licenses(license_object):
     """
-    Return the declared licenses, if the passing license_object is string type, return the the list to wrap the string. 
-    If the type is dictionary, return the list of the dictionary
-    If the type is list, return the list.
+    Return a list of declared licenses, either strings or dicts.
     """
     if not license_object:
         return []
 
-
     if isinstance(license_object, string_types):
+        # current, up to date form
         return [license_object]
-    
+
     declared_licenses = []
     if isinstance(license_object, dict):
-        # old, deprecated form
+        # old, deprecated forms
         """
          "license": {
             "type": "MIT",
@@ -417,7 +431,7 @@ def get_declared_licenses(license_object):
         declared_licenses.append(license_object)
 
     elif isinstance(license_object, list):
-        # old, deprecated form
+        # old, deprecated forms
         """
         "licenses": [{"type": "Apache License, Version 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
@@ -787,7 +801,6 @@ def parse_person(person):
     return name, email, url
 
 
-
 def keywords_mapper(keywords, package):
     """
     Update package keywords and return package.
@@ -802,4 +815,3 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
-
