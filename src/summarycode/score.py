@@ -67,7 +67,49 @@ A plugin to compute a licensing clarity score as designed in ClearlyDefined
 
 
 # minimum score to consider a license detection as good.
-MIN_GOOD_LICENSE_SCORE = 80
+
+# MIN_GOOD_LICENSE_SCORE = 80
+
+@attr.s
+class LicenseFilter(object):
+    min_score = attr.ib(default=0)
+    min_coverage = attr.ib(default=0)
+    min_relevance = attr.ib(default=0)
+
+FILTERS = dict(
+    is_license_text=LicenseFilter(min_score=70, min_coverage=80),
+    is_license_notice=LicenseFilter(min_score=80, min_coverage=80),
+    is_license_tag=LicenseFilter(min_coverage=100),
+    is_license_reference=LicenseFilter(min_score=50, min_coverage=100),
+)
+
+
+def is_good_license(detected_license):
+    score = detected_license['score']
+    rule = detected_license['matched_rule']
+    coverage = rule['match_coverage']
+    relevance = rule['rule_relevance']
+    match_types = OrderedDict([
+        ('is_license_text', rule['is_license_text']),
+        ('is_license_notice', rule['is_license_notice']),
+        ('is_license_reference', rule['is_license_reference']),
+        ('is_license_tag', rule['is_license_tag']),
+    ])
+    matched = False
+    for match_type, mval in match_types.items():
+        if mval:
+            matched = True
+            break
+    if not matched:
+        return False
+
+    thresholds = FILTERS[match_type]
+    if (score >= thresholds.min_score
+    and coverage >= thresholds.min_coverage
+    and relevance >= thresholds.min_relevance):
+        return True
+
+    return False
 
 
 @post_scan_impl
@@ -103,7 +145,7 @@ class LicenseClarityScore(PostScanPlugin):
         codebase.attributes.license_clarity_score.update(scoring_elements)
 
 
-def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def compute_license_score(codebase, **kwargs):
     """
     Return a mapping of scoring elements and a license clarity score computed at
     the codebase level.
@@ -111,8 +153,6 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
 
     score = 0
     scoring_elements = OrderedDict(score=score)
-
-    kwargs.update(dict(min_score=min_score))
 
     for element in SCORING_ELEMENTS:
         element_score = element.scorer(codebase, **kwargs)
@@ -132,13 +172,13 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     return scoring_elements
 
 
-def get_declared_license_keys(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def get_declared_license_keys(codebase, **kwargs):
     """
     Return a list of declared license keys found in packages and key files.
     """
     return (
-        get_declared_license_keys_in_key_files(codebase, min_score)
-      +get_declared_license_keys_in_packages(codebase)
+        get_declared_license_keys_in_key_files(codebase) +
+        get_declared_license_keys_in_packages(codebase)
     )
 
 
@@ -165,8 +205,7 @@ def get_declared_license_keys_in_packages(codebase, **kwargs):
     return detected_good_licenses
 
 
-def get_declared_license_keys_in_key_files(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def get_declared_license_keys_in_key_files(codebase, **kwargs):
     """
     Return a list of "declared" license keys from the expressions as detected in
     key files.
@@ -185,7 +224,7 @@ def get_declared_license_keys_in_key_files(
             continue
 
         for detected_license in getattr(resource, 'licenses', []) or []:
-            if detected_license['score'] < min_score:
+            if not is_good_license(detected_license):
                 declared.append('unknown')
             else:
                 declared.append(detected_license['key'])
@@ -204,10 +243,10 @@ def is_core_facet(resource, core_facet=facet.FACET_CORE):
     return not resource.facets or core_facet in resource.facets
 
 
-def has_good_licenses(resource, min_score=MIN_GOOD_LICENSE_SCORE):
+def has_good_licenses(resource):
     """
-    Return True if a Resource licenses are all detected with a score above
-    min_score and is generally a "good license" detection-wise.
+    Return True if a Resource licenses are all detected as a "good license"
+    detection-wise.
     """
     licenses = getattr(resource, 'licenses', []) or []
 
@@ -216,49 +255,12 @@ def has_good_licenses(resource, min_score=MIN_GOOD_LICENSE_SCORE):
 
     for detected_license in licenses:
         # the license score must be above some threshold
-        if detected_license['score'] < min_score:
+        if not is_good_license(detected_license):
             return False
-
         # and not an "unknown" license
         if is_unknown_license(detected_license['key']):
             return False
-
     return True
-
-
-def has_spdx_licenses(resource):
-    """
-    Return True if a Resource licenses are all known SPDX licenses.
-    """
-    for detected_license in getattr(resource, 'licenses', []) or []:
-        if detected_license and detected_license.get('spdx_license_key'):
-            return True
-    return False
-
-
-def get_spdx_keys():
-    """
-    Return a set of ScanCode license keys for licenses that are listed in SPDX.
-    """
-    licenses = get_licenses_db()
-    spdx = {}
-    for lic in licenses.values():
-        if (lic.spdx_license_key or lic.other_spdx_license_keys):
-            spdx.add(lic.key)
-    return frozenset(spdx)
-
-
-_spdx_keys = None
-
-def is_spdx_license(lic_key, spdx_keys=_spdx_keys):
-    """
-    Return True if a license key is for some lesser known or unknown license.
-    """
-    global _spdx_keys
-    if not spdx_keys:
-        _spdx_keys = spdx_keys = get_spdx_keys()
-
-    return lic_key in spdx_keys
 
 
 def is_unknown_license(lic_key):
@@ -276,21 +278,49 @@ def has_unkown_licenses(resource):
                    for lic in getattr(resource, 'licenses', []) or [])
 
 
-def is_using_only_spdx_licenses(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+_spdx_keys = None
+
+
+def get_spdx_keys():
+    """
+    Return a set of ScanCode license keys for licenses that are listed in SPDX.
+    """
+    global _spdx_keys
+    if not _spdx_keys:
+        licenses = get_licenses_db()
+        spdx = set()
+        for lic in licenses.values():
+            if (lic.spdx_license_key or lic.other_spdx_license_keys):
+                spdx.add(lic.key)
+        _spdx_keys = frozenset(spdx)
+    return _spdx_keys
+
+
+def is_using_only_spdx_licenses(codebase, **kwargs):
     """
     Return True if all file-level detected licenses are SPDX licenses.
     """
-    return all(has_spdx_licenses(res) for res in codebase.walk() if res.is_file)
+    licenses = chain.from_iterable(res.licenses for res in codebase.walk() if res.is_file)
+    keys = set(l['key'] for l in licenses)
+    spdx_keys = get_spdx_keys()
+    return all(k in spdx_keys for k in keys)
 
 
-def has_consistent_key_and_file_level_licenses(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def is_using_only_spdx_licenses2(codebase, **kwargs):
+    """
+    Return True if all file-level detected licenses are SPDX licenses.
+    """
+    licenses = chain.from_iterable(res.licenses for res in codebase.walk() if res.is_file)
+    spdx_keys = set(l['spdx_license_key'] for l in licenses)
+    return all(spdx_keys)
+
+
+def has_consistent_key_and_file_level_licenses(codebase, **kwargs):
     """
     Return True if the file-level licenses are consistent with top level key
     files licenses.
     """
-    key_files_licenses, other_files_licenses = get_unique_licenses(codebase, min_score)
+    key_files_licenses, other_files_licenses = get_unique_licenses(codebase)
 
     if (key_files_licenses
     and key_files_licenses == other_files_licenses
@@ -300,7 +330,7 @@ def has_consistent_key_and_file_level_licenses(
         return False
 
 
-def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def get_unique_licenses(codebase, **kwargs):
     """
     Return a tuple of two sets of license keys found in the codebase with at least min_score:
     - the set license found in key files
@@ -325,7 +355,7 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
             license_keys = other_license_keys
 
         for detected_license in getattr(resource, 'licenses', []) or []:
-            if detected_license['score'] < min_score:
+            if not is_good_license(detected_license):
                 license_keys.add('unknown')
             else:
                 license_keys.add(detected_license['key'])
@@ -333,8 +363,7 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     return key_license_keys, other_license_keys
 
 
-def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENSE_SCORE,
-                                             key_files_only=False, **kwargs):
+def get_detected_license_keys_with_full_text(codebase, key_files_only=False, **kwargs):
     """
     Return a set of license keys for which at least one detection includes the
     full license text.
@@ -352,7 +381,7 @@ def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENS
             continue
 
         for detected_license in getattr(resource, 'licenses', []) or []:
-            if detected_license['score'] < min_score:
+            if not is_good_license(detected_license):
                 continue
             if not detected_license['matched_rule']['is_license_text']:
                 continue
@@ -361,32 +390,29 @@ def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENS
     return license_keys
 
 
-def has_full_text_in_key_files_for_all_licenses(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def has_full_text_in_key_files_for_all_licenses(codebase, **kwargs):
     """
     Return True if the full text of all licenses is preset in the codebase key,
     top level files.
     """
-    return _has_full_text(codebase, min_score, key_files_only=True, **kwargs)
+    return _has_full_text(codebase, key_files_only=True, **kwargs)
 
 
-def has_full_text_for_all_licenses(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def has_full_text_for_all_licenses(codebase, **kwargs):
     """
     Return True if the full text of all licenses is preset in the codebase.
     """
-    return _has_full_text(codebase, min_score, key_files_only=False, **kwargs)
+    return _has_full_text(codebase, key_files_only=False, **kwargs)
 
 
-def _has_full_text(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, key_files_only=False, **kwargs):
+def _has_full_text(codebase, key_files_only=False, **kwargs):
     """
     Return True if the full text of all licenses is preset in the codebase.
     Consider only key files if key_files_only is True.
     """
 
     key_files_license_keys, other_files_license_keys = get_unique_licenses(
-        codebase, min_score, **kwargs)
+        codebase, **kwargs)
 
     if TRACE:
         logger_debug(
@@ -395,7 +421,7 @@ def _has_full_text(
 
     all_keys = key_files_license_keys & other_files_license_keys
     keys_with_license_text = get_detected_license_keys_with_full_text(
-        codebase, min_score, key_files_only, **kwargs)
+        codebase, key_files_only, **kwargs)
 
     if TRACE:
         logger_debug(
@@ -404,14 +430,13 @@ def _has_full_text(
     return all_keys and (all_keys == keys_with_license_text)
 
 
-def get_file_level_license_and_copyright_coverage(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def get_file_level_license_and_copyright_coverage(codebase, **kwargs):
     """
     Return a float between 0 and 1 that represent the proportions of files that
     have a license and a copyright vs. all files.
     """
     scoring_element = 0
-    covered_files, files_count = get_other_licenses_and_copyrights_counts(codebase, min_score)
+    covered_files, files_count = get_other_licenses_and_copyrights_counts(codebase)
 
     if TRACE:
         logger_debug('compute_license_score:covered_files:',
@@ -426,8 +451,7 @@ def get_file_level_license_and_copyright_coverage(
     return scoring_element
 
 
-def get_other_licenses_and_copyrights_counts(
-        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+def get_other_licenses_and_copyrights_counts(codebase, **kwargs):
     """
     Return a tuple of (count of files with a license/copyright, total count of
     files).
@@ -478,7 +502,7 @@ def get_other_licenses_and_copyrights_counts(
             files_with_a_copyright_count += 1
 
         # ... where the license is a "good one"
-        if  has_good_licenses(resource, min_score):
+        if has_good_licenses(resource):
             files_with_a_good_license_count += 1
             if copyrights:
                 files_with_good_license_and_copyright_count += 1
@@ -500,11 +524,13 @@ declared = ScoringElement(
     scorer=get_declared_license_keys,
     weight=30)
 
+
 discovered = ScoringElement(
     is_binary=False,
     name='file_level_license_and_copyright_coverage',
     scorer=get_file_level_license_and_copyright_coverage,
     weight=25)
+
 
 consistency = ScoringElement(
     is_binary=True,
@@ -512,11 +538,13 @@ consistency = ScoringElement(
     scorer=has_consistent_key_and_file_level_licenses,
     weight=15)
 
+
 spdx_license = ScoringElement(
     is_binary=True,
     name='is_using_only_spdx_licenses',
     scorer=is_using_only_spdx_licenses,
     weight=15)
+
 
 full_text = ScoringElement(
     is_binary=True,
@@ -530,6 +558,7 @@ unkown = ScoringElement(
     name='has_unkown_licenses',
     scorer=has_unkown_licenses,
     weight=15)
+
 
 # not used for now
 full_text_in_key_files = ScoringElement(
