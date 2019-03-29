@@ -28,7 +28,15 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from itertools import islice
-from itertools import izip
+
+# Python 2 and 3 support
+try:
+        # Python 2
+    import itertools.izip as zip
+except ImportError:
+        # Python 3
+        pass
+
 import re
 from zlib import crc32
 
@@ -168,7 +176,7 @@ def ngrams(iterable, ngram_length):
     >>> list(ngrams(tuple([1,2,3,4,5]), 2))
     [(1, 2), (2, 3), (3, 4), (4, 5)]
     """
-    return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
+    return zip(*(islice(iterable, i, None) for i in range(ngram_length)))
 
 
 def select_ngrams(ngrams, with_pos=False):

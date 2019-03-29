@@ -28,7 +28,14 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from functools import partial
-from itertools import imap
+
+# Python 2 and 3 support
+try:
+        # Python 2
+    import itertools.imap as map
+except ImportError:
+        # Python 3
+        pass
 
 from plugincode import CodebasePlugin
 from plugincode import PluginManager
@@ -104,7 +111,7 @@ class OutputPlugin(CodebasePlugin):
 
         strip_root = kwargs.get('strip_root', False)
         resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
-        return imap(serializer, resources)
+        return map(serializer, resources)
 
 
 output_plugins = PluginManager(
