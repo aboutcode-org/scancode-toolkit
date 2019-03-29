@@ -32,7 +32,15 @@ from collections import Counter
 from collections import defaultdict
 import cPickle
 from functools import partial
-from itertools import izip
+
+# Python 2 and 3 support
+try:
+        # Python 2
+    import itertools.izip as zip
+except ImportError:
+        # Python 3
+        pass
+
 from operator import itemgetter
 import sys
 from time import time
@@ -297,7 +305,7 @@ class LicenseIndex(object):
         # assigned randomly here at first by unzipping: we get the frequencies
         # and tokens->id at once this way
         ########################################################################
-        tokens_by_tid, frequencies_by_tid = izip(*frequencies_by_token.items())
+        tokens_by_tid, frequencies_by_tid = zip(*frequencies_by_token.items())
         self.tokens_by_tid = tokens_by_tid
         self.len_tokens = len_tokens = len(tokens_by_tid)
         msg = 'Cannot support more than licensedcode.index.MAX_TOKENS: %d' % MAX_TOKENS

@@ -36,7 +36,15 @@ import scancode_config
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
-from itertools import imap
+
+# Python 2 and 3 support
+try:
+        # Python 2
+    import itertools.imap as map
+except ImportError:
+        # Python 3
+        pass
+
 import os
 import sys
 from time import time
@@ -1120,7 +1128,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             pool.close()
         else:
             # no multiprocessing with processes=0 or -1
-            scans = imap(runner, resources)
+            scans = map(runner, resources)
 
         if progress_manager:
             scans = progress_manager(scans)
