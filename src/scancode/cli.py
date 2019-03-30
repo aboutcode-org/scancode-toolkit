@@ -529,7 +529,8 @@ def run_scan(
     """
 
     if not echo_func:
-        def echo_func(*args, **kwargs): pass
+        def echo_func(*_args, **_kwargs):
+            pass
 
     if not input:
         msg = 'At least one input path is required.'
