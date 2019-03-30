@@ -6,4 +6,4 @@
     # to its nickname.
     self.clients = {}
     self.client_name_generator = ('+' * times + chr(c)
-        for times in xrange(0, sys.maxint) for c in xrange(ord('A'),ord('Z')))
+        for times in xrange(0, sys.maxsize) for c in xrange(ord('A'),ord('Z')))
