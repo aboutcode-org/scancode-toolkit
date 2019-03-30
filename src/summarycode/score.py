@@ -303,16 +303,7 @@ def is_using_only_spdx_licenses(codebase, **kwargs):
     licenses = chain.from_iterable(res.licenses for res in codebase.walk() if res.is_file)
     keys = set(l['key'] for l in licenses)
     spdx_keys = get_spdx_keys()
-    return all(k in spdx_keys for k in keys)
-
-
-def is_using_only_spdx_licenses2(codebase, **kwargs):
-    """
-    Return True if all file-level detected licenses are SPDX licenses.
-    """
-    licenses = chain.from_iterable(res.licenses for res in codebase.walk() if res.is_file)
-    spdx_keys = set(l['spdx_license_key'] for l in licenses)
-    return all(spdx_keys)
+    return keys and spdx_keys and all(k in spdx_keys for k in keys)
 
 
 def has_consistent_key_and_file_level_licenses(codebase, **kwargs):
