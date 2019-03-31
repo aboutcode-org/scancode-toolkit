@@ -91,8 +91,8 @@ def is_good_license(detected_license):
     """
     score = detected_license['score']
     rule = detected_license['matched_rule']
-    coverage = rule['match_coverage']
-    relevance = rule['rule_relevance']
+    coverage = rule.get('match_coverage') or 0
+    relevance = rule.get('rule_relevance') or 0
     match_types = OrderedDict([
         ('is_license_text', rule['is_license_text']),
         ('is_license_notice', rule['is_license_notice']),
@@ -107,11 +107,18 @@ def is_good_license(detected_license):
     if not matched:
         return False
 
+    
     thresholds = FILTERS[match_type]
-    if (score >= thresholds.min_score
-    and coverage >= thresholds.min_coverage
-    and relevance >= thresholds.min_relevance):
-        return True
+
+    # if the scan was not using --license-diag, we may not have these details
+    if not coverage or not relevance:
+        if score >= thresholds.min_score:
+            return True
+    else:
+        if (score >= thresholds.min_score
+        and coverage >= thresholds.min_coverage
+        and relevance >= thresholds.min_relevance):
+            return True
 
     return False
 
