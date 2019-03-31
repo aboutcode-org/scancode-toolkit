@@ -97,7 +97,8 @@ class LicenseScanner(ScanPlugin):
         CommandLineOption(('--license-diag',),
             is_flag=True,
             required_options=['license'],
-            help='Include diagnostic information in license scan results.',
+            help='(DEPRECATED: this is always included by default now). '
+            'Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(
@@ -121,6 +122,13 @@ class LicenseScanner(ScanPlugin):
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
                     license_diag=False, **kwargs):
+
+        quiet = kwargs.get('quiet')
+        verbose = kwargs.get('quiet')
+        if verbose or not quiet:
+            import click
+            click.echo('--license-diag is now DEPRECATED and always included '
+                       'with the returned license match data.', err=True)
 
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,

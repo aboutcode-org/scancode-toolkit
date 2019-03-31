@@ -54,7 +54,6 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
             location=location,
             license=True,
             license_text=True,
-            license_diag=True,
             copyright=True,
             info=True,
             processes=0,

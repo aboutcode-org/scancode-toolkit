@@ -140,7 +140,7 @@ DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
-def get_licenses(location, min_score=0, include_text=False, diag=False,
+def get_licenses(location, min_score=0, include_text=False,
                  license_url_template=DEJACODE_LICENSE_URL, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
@@ -157,9 +157,6 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
 
     if `include_text` is True, matched text is included in the returned
     `licenses` data.
-
-    If `diag` is True, additional license match details are returned with the
-    "matched_rule" key of the returned `licenses` data.
     """
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
@@ -211,13 +208,12 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             matched_rule['is_license_reference'] = match.rule.is_license_reference
             matched_rule['is_license_tag'] = match.rule.is_license_tag
 
-            # FIXME: for sanity these should always be included??? or returned as a flat item sset?
-            if diag:
-                matched_rule['matcher'] = match.matcher
-                matched_rule['rule_length'] = match.rule.length
-                matched_rule['matched_length'] = match.ilen()
-                matched_rule['match_coverage'] = match.coverage()
-                matched_rule['rule_relevance'] = match.rule.relevance
+            matched_rule['matcher'] = match.matcher
+            matched_rule['rule_length'] = match.rule.length
+            matched_rule['matched_length'] = match.ilen()
+            matched_rule['match_coverage'] = match.coverage()
+            matched_rule['rule_relevance'] = match.rule.relevance
+
             # FIXME: for sanity this should always be included?????
             if include_text:
                 result['matched_text'] = matched_text
