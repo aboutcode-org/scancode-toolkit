@@ -221,5 +221,6 @@ Other contributors, listed alphabetically, are:
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
 * Rostyslav Golda -- FloScript lexer
+* GitHub, Inc -- DASM16, Augeas, TOML, and Slash lexers
 
 Many thanks for all contributions!
