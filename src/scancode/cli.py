@@ -39,11 +39,11 @@ from functools import partial
 
 # Python 2 and 3 support
 try:
-        # Python 2
-    import itertools.imap as map
+    # Python 2
+    import itertools.imap as map #NOQA
 except ImportError:
-        # Python 3
-        pass
+    # Python 3
+    pass
 
 import os
 import sys
