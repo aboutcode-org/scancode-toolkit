@@ -123,13 +123,6 @@ class LicenseScanner(ScanPlugin):
                     license_url_template=DEJACODE_LICENSE_URL,
                     license_diag=False, **kwargs):
 
-        quiet = kwargs.get('quiet')
-        verbose = kwargs.get('quiet')
-        if verbose or not quiet:
-            import click
-            click.echo('--license-diag is now DEPRECATED and always included '
-                       'with the returned license match data.', err=True)
-
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
