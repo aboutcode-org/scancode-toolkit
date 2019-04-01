@@ -40,6 +40,7 @@ from commoncode import fileutils
 from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 
 
 # TODO: check:
@@ -99,25 +100,7 @@ class RubyGem(models.Package):
         return manifest_resource
 
     def compute_normalized_license(self):
-        # TODO: there is a mapping of well known licenses to reuse too
-
-        if not self.declared_license or not self.declared_license.strip():
-            return
-
-        # scancode convention is to put one license per line when there are
-        # multiple licenses as a list in the manifest.
-        lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
-        if not lines:
-            return
-
-        # we default to and AND as the Gem spec is rather vague on what it means
-        # to have a list of licenses. Note that we do not use the
-        # license_expression library for this, as each license may not be
-        # parsable at all: instead we do this at the string level
-        if len(lines) > 1:
-            lines = ['({})'.format(l) for l in lines]
-        licenses = ' AND '.join(lines)
-        return models.compute_normalized_license(licenses)
+        return compute_normalized_license(self.declared_license)
 
     @classmethod
     def recognize(cls, location):
@@ -165,6 +148,30 @@ class RubyGem(models.Package):
     @classmethod
     def extra_root_dirs(cls):
         return ['data.tar.gz-extract']
+
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    for declared in declared_license:
+        #TODO:  scancode convention is to put one license per line when there are
+        # multiple licenses as a list in the manifest.
+        # lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
+        if declared:
+            detected_license = models.compute_normalized_license(declared)
+            if detected_license:
+                detected_licenses.append(detected_license)
+
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
 
 
 def rubygems_homepage_url(name, version, repo='https://rubygems.org/gems'):

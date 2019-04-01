@@ -44,7 +44,7 @@
     "code_view_url": "https://github.com/rubocop-hq/rubocop/", 
     "vcs_url": null, 
     "copyright": null, 
-    "license_expression": null, 
+    "license_expression": "mit", 
     "declared_license": [
       "MIT"
     ], 
