@@ -31,7 +31,9 @@
     "vcs_url": null, 
     "copyright": null, 
     "license_expression": null, 
-    "declared_license": "BSD-3-Clause", 
+    "declared_license": [
+      "BSD-3-Clause"
+    ], 
     "notice_text": null, 
     "manifest_path": null, 
     "dependencies": [

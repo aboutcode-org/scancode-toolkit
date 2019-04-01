@@ -291,9 +291,7 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
     description = '\n'.join(descriptions)
 
-    # Since the gem spec doc is not clear https://guides.rubygems.org
-    # /specification-reference/#licenseo, we will treat a list of licenses and a
-    # conjunction for now (e.g. AND)
+
     declared_licenses = []
     licenses = gem_data.get('licenses') or []
     for lic in licenses:
@@ -306,6 +304,7 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
 
     declared_license = '\n'.join(declared_licenses) or None
 
+
     package = RubyGem(
         name=name,
         description=description,
@@ -313,6 +312,13 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
         download_url=download_url,
         declared_license=declared_license,
     )
+
+    # Since the gem spec doc is not clear https://guides.rubygems.org
+    # /specification-reference/#licenseo, we will treat a list of licenses and a
+    # conjunction for now (e.g. AND)
+    license = gem_data.get('license')
+    licenses = gem_data.get('licenses')
+    package = licenses_mapper(license, licenses, package)
 
     # we can have one singular or a plural list of authors
     authors = gem_data.get('authors') or []
@@ -382,6 +388,22 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     if not package.homepage_url:
         package.homepage_url = package.repository_homepage_url()
 
+    return package
+
+
+def licenses_mapper(license, licenses, package):
+    """
+    Update package licensing and return package based on the `license` and
+    `licenses` values found in a package.
+    """
+    declared_licenses = []
+    if license:
+        declared_licenses.append(str(license).strip())
+    if licenses:
+        for lic in licenses:
+            if lic and lic.strip():
+                declared_licenses.append(lic.strip())
+    package.declared_license = declared_licenses
     return package
 
 
