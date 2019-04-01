@@ -46,7 +46,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 22
           },
           "matched_text": "license: LGPL-2.1"
         }
