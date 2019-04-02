@@ -50,7 +50,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @output_filter_impl
