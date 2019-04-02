@@ -31,7 +31,7 @@ def set_from_text(text):
     return set(u.lower().strip('/') for u in text.split())
 
 
-JUNK_EMAILS = set_from_text(u'''
+JUNK_HOSTS_AND_DOMAINS = set_from_text('''
     test@test.com
     exmaple.com
     example.com
@@ -42,7 +42,7 @@ JUNK_EMAILS = set_from_text(u'''
 ''')
 
 
-JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
+JUNK_HOSTS_AND_DOMAINS = set_from_text('''
     exmaple.com
     example.com
     example.net
@@ -57,11 +57,11 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     localhost
 ''')
 
-JUNK_IPS = set_from_text(u'''
+JUNK_IPS = set_from_text('''
     1.2.3.4
 ''')
 
-JUNK_URLS = set_from_text(u'''
+JUNK_URLS = set_from_text('''
     http://www.adobe.com/2006/mxml
     http://www.w3.org/1999/XSL/Transform
     http://docs.oasis-open.org/ns/xri/xrd-1.0
