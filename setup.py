@@ -123,6 +123,11 @@ setup(
     ],
     python_requires='>=2.7,<3',    
     install_requires=[
+        # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
+        # See https://github.com/nexB/scancode-toolkit/issues/1463
+        'more_itertools <  6.0.0; python_version == "2.7"',
+        # end hack
+
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
@@ -141,7 +146,7 @@ setup(
 
         # commoncode
         'backports.os == 0.1.1',
-        'future == 0.16.0',
+        'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
         # required by saneyaml
         'PyYAML >= 3.11, <=3.13',
