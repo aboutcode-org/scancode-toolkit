@@ -50,7 +50,7 @@ from commoncode.system import on_windows
 test_run_temp_dir = None
 
 # set to 1 to see the slow tests
-timing_threshold = sys.maxint
+timing_threshold = sys.maxsize
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
