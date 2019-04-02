@@ -1006,7 +1006,7 @@ class KotlinLexer(RegexLexer):
 
     .. versionadded:: 1.5
     """
-
+    
     name = 'Kotlin'
     aliases = ['kotlin']
     filenames = ['*.kt']
@@ -1017,15 +1017,22 @@ class KotlinLexer(RegexLexer):
     kt_name = ('@?[_' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl') + ']' +
                '[' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl', 'Nd', 'Pc', 'Cf',
                                  'Mn', 'Mc') + ']*')
-    kt_id = '(' + kt_name + '|`' + kt_name + '`)'
+    
+    kt_space_name = ('@?[_' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl') + ']' +
+               '[' + uni.combine('Lu', 'Ll', 'Lt', 'Lm', 'Nl', 'Nd', 'Pc', 'Cf',
+                                 'Mn', 'Mc', 'Zs') + ',-]*')
+
+    kt_id = '(' + kt_name + '|`' + kt_space_name + '`)'
 
     tokens = {
         'root': [
             (r'^\s*\[.*?\]', Name.Attribute),
             (r'[^\S\n]+', Text),
+            (r'\s+', Text),
             (r'\\\n', Text),  # line continuation
             (r'//.*?\n', Comment.Single),
             (r'/[*].*?[*]/', Comment.Multiline),
+            (r'""".*?"""', String),
             (r'\n', Text),
             (r'::|!!|\?[:.]', Operator),
             (r'[~!%^&*()+=|\[\]:;,.<>/?-]', Punctuation),
@@ -1035,11 +1042,14 @@ class KotlinLexer(RegexLexer):
             (r"'\\.'|'[^\\]'", String.Char),
             (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?[flFL]?|"
              r"0[xX][0-9a-fA-F]+[Ll]?", Number),
-            (r'(class)(\s+)(object)', bygroups(Keyword, Text, Keyword)),
+            (r'(object)(\s+)(:)(\s+)', bygroups(Keyword, Text, Punctuation, Text), 'class'),
+            (r'(companion)(\s+)(object)', bygroups(Keyword, Text, Keyword)),
             (r'(class|interface|object)(\s+)', bygroups(Keyword, Text), 'class'),
             (r'(package|import)(\s+)', bygroups(Keyword, Text), 'package'),
+            (r'(val|var)(\s+)([(])', bygroups(Keyword, Text, Punctuation), 'property_dec'),
             (r'(val|var)(\s+)', bygroups(Keyword, Text), 'property'),
             (r'(fun)(\s+)', bygroups(Keyword, Text), 'function'),
+            (r'(inline fun)(\s+)', bygroups(Keyword, Text), 'function'),
             (r'(abstract|annotation|as|break|by|catch|class|companion|const|'
              r'constructor|continue|crossinline|data|do|dynamic|else|enum|'
              r'external|false|final|finally|for|fun|get|if|import|in|infix|'
@@ -1058,9 +1068,26 @@ class KotlinLexer(RegexLexer):
         'property': [
             (kt_id, Name.Property, '#pop')
         ],
+        'property_dec': [
+            (r'(,)(\s*)', bygroups(Punctuation, Text)),
+            (r'(:)(\s*)', bygroups(Punctuation, Text)),
+            (r'<', Punctuation, 'generic'),
+            (r'([)])', Punctuation, '#pop'),
+            (kt_id, Name.Property)
+        ],
         'function': [
+            (r'<', Punctuation, 'generic'),
+            (r''+kt_id+'([.])'+kt_id, bygroups(Name.Class, Punctuation, Name.Function), '#pop'),
             (kt_id, Name.Function, '#pop')
         ],
+        'generic': [
+            (r'(>)(\s*)', bygroups(Punctuation, Text), '#pop'),
+            (r':',Punctuation),
+            (r'(reified|out|in)\b', Keyword),
+            (r',',Text),
+            (r'\s+',Text),
+            (kt_id,Name)
+        ]
     }
 
 
