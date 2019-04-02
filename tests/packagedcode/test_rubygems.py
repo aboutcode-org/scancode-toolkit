@@ -122,7 +122,9 @@ def create_test_function(test_loc, test_name, regen=False):
     def check_rubygem(self):
         loc = self.get_test_loc(test_loc)
         expected_json_loc = loc + '.json'
-        package = [rubygems.get_gem_package(location=loc).to_dict()]
+        package = rubygems.get_gem_package(location=loc)
+        package.license_expression = package.compute_normalized_license()
+        package = [package.to_dict()]
         if regen:
             with open(expected_json_loc, 'wb') as ex:
                 json.dump(package, ex, indent=2)
