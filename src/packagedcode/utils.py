@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from license_expression import Licensing
 from six import string_types
 
 
@@ -146,3 +147,22 @@ def build_description(summary, description):
             description = '\n'.join([summary , description])
 
     return description
+
+def combine_expressions(expressions, licensing=Licensing()):
+    """
+    Return a combined license expression string with AND, given a list of
+    license expressions.
+
+    For example:
+    >>> a = 'mit'
+    >>> b = 'gpl'
+    >>> combine_expressions([a, b])
+    'mit AND gpl'
+    """
+    if not expressions:
+        return
+    if len(expressions) == 1:
+        return expressions[0]
+    expressions = [licensing.parse(le, simple=True) for le in expressions]
+    return str(licensing.AND(*expressions))
+

@@ -47,6 +47,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.models import Package
+from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
@@ -202,27 +203,16 @@ def compute_normalized_license(declared_license):
                 detections = via_name, via_url, via_comments
                 detections = [l for l in detections if l]
                 if detections:
-                    if len(detections) == 1:
-                        combined_expression = detections[0]
-                    else:
-                        expressions = [
-                            licensing.parse(le, simple=True) for le in detections]
-                        combined_expression = str(licensing.AND(*expressions))
-                    detected_licenses.append(combined_expression)
-
+                    combined_expression =  combine_expressions(detections)
+                    if combined_expression:
+                        detected_licenses.append(combined_expression)
         elif via_url:
             detected_licenses.append(via_url)
         elif via_comments:
             detected_licenses.append(via_comments)
 
-    if len(detected_licenses) == 1:
-        return detected_licenses[0]
-
     if detected_licenses:
-        # Combine if pom contains more than one licenses declarations.
-        expressions = [licensing.parse(le, simple=True) for le in detected_licenses]
-        combined_expression = licensing.AND(*expressions)
-        return str(combined_expression)
+        return combine_expressions(detected_licenses)
 
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):

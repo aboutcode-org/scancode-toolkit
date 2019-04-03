@@ -34,13 +34,13 @@ import logging
 import re
 
 import attr
-from license_expression import Licensing
 from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 from packagedcode.utils import parse_repo_url
 
 
@@ -145,25 +145,6 @@ def compute_normalized_license(declared_license):
 
     if detected_licenses:
         return combine_expressions(detected_licenses)
-
-
-def combine_expressions(expressions, licensing=Licensing()):
-    """
-    Return a combined license expression string with AND, given a list of
-    license expressions.
-
-    For example:
-    >>> a = 'mit'
-    >>> b = 'gpl'
-    >>> combine_expressions([a, b])
-    'mit AND gpl'
-    """
-    if not expressions:
-        return
-    if len(expressions) == 1:
-        return expressions[0]
-    expressions = [licensing.parse(le, simple=True) for le in expressions]
-    return str(licensing.AND(*expressions))
 
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
