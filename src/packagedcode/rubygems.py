@@ -162,12 +162,9 @@ def compute_normalized_license(declared_license):
     detected_licenses = []
 
     for declared in declared_license:
-        #TODO:  scancode convention is to put one license per line when there are
-        # multiple licenses as a list in the manifest.
-        if declared:
-            detected_license = models.compute_normalized_license(declared)
-            if detected_license:
-                detected_licenses.append(detected_license)
+        detected_license = models.compute_normalized_license(declared)
+        if detected_license:
+            detected_licenses.append(detected_license)
 
     if detected_licenses:
         return combine_expressions(detected_licenses)
