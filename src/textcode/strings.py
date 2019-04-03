@@ -27,6 +27,7 @@ from __future__ import print_function
 
 import re
 import string
+import os
 
 from commoncode.text import toascii
 
@@ -34,11 +35,8 @@ from commoncode.text import toascii
 Extract raw ASCII strings from (possibly) binary strings.
 Both plain ASCII and UTF-16-LE-encoded (aka. wide) strings are extracted.
 The later is found typically in some Windows PEs.
-
 This is more or less similar to what GNU Binutils strings does.
-
 Does not recognize and extract non-ASCII characters
-
 Some alternative and references:
 https://github.com/fireeye/flare-floss (also included)
 http://stackoverflow.com/questions/10637055/how-do-i-extract-unicode-character-sequences-from-an-mz-executable-file
@@ -198,9 +196,14 @@ def is_relative_path(s):
     """
     Return True if s looks like a relative posix path.
     Example: usr/lib/librt.so.1 or ../usr/lib
+    >>> is_relative_path("../usr/lib")
+    True
+    >>> is_relative_path("../usr")
+    True
+    >>> is_relative_path("..")
+    True
     """
-    relative = re.compile('^(?:([^/]|\.\.)[\w_\-]+/.*$)', re.IGNORECASE).match
-    return relative(s)
+    return not os.path.isabs(s)
 
 
 def is_win_path(s):
