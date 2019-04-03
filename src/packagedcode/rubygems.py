@@ -164,7 +164,6 @@ def compute_normalized_license(declared_license):
     for declared in declared_license:
         #TODO:  scancode convention is to put one license per line when there are
         # multiple licenses as a list in the manifest.
-        # lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
         if declared:
             detected_license = models.compute_normalized_license(declared)
             if detected_license:
@@ -298,34 +297,20 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
     description = '\n'.join(descriptions)
 
-
-    declared_licenses = []
-    licenses = gem_data.get('licenses') or []
-    for lic in licenses:
-        if lic and lic.strip():
-            declared_licenses.append(lic)
-
-    lic = gem_data.get('license') or ''
-    if lic and license.lic():
-        declared_licenses.append(license.strip())
-
-    declared_license = '\n'.join(declared_licenses) or None
-
+    # Since the gem spec doc is not clear https://guides.rubygems.org
+    # /specification-reference/#licenseo, we will treat a list of licenses and a
+    # conjunction for now (e.g. AND)
+    license = gem_data.get('license')
+    licenses = gem_data.get('licenses')
+    declared_license = licenses_mapper(license, licenses)
 
     package = RubyGem(
         name=name,
         description=description,
         homepage_url=gem_data.get('homepage'),
         download_url=download_url,
-        declared_license=declared_license,
+        declared_license=declared_license
     )
-
-    # Since the gem spec doc is not clear https://guides.rubygems.org
-    # /specification-reference/#licenseo, we will treat a list of licenses and a
-    # conjunction for now (e.g. AND)
-    license = gem_data.get('license')
-    licenses = gem_data.get('licenses')
-    package = licenses_mapper(license, licenses, package)
 
     # we can have one singular or a plural list of authors
     authors = gem_data.get('authors') or []
@@ -398,9 +383,9 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     return package
 
 
-def licenses_mapper(license, licenses, package):
+def licenses_mapper(license, licenses):
     """
-    Update package licensing and return package based on the `license` and
+    Return declared_licenses list based on the `license` and
     `licenses` values found in a package.
     """
     declared_licenses = []
@@ -410,8 +395,7 @@ def licenses_mapper(license, licenses, package):
         for lic in licenses:
             if lic and lic.strip():
                 declared_licenses.append(lic.strip())
-    package.declared_license = declared_licenses
-    return package
+    return declared_licenses
 
 
 def get_dependencies(dependencies):
