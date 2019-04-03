@@ -4,7 +4,7 @@ configure.
 """
 
 import sys
-
+import platform
 """
 Check that we run a supported OS and architecture.
 """
@@ -22,12 +22,12 @@ if sys.maxsize > 2 ** 32:
 else:
     arch = '32'
 
-sys_platform = str(sys.platform).lower()
-if sys_platform.startswith('linux'):
+sys_platform = platform.system()
+if sys_platform == "Linux":
     os = 'linux'
-elif 'win32' in sys_platform:
+elif sys_platform == "Windows":
     os = 'win'
-elif 'darwin' in sys_platform:
+elif sys_platform == "Darwin":
     os = 'mac'
 else:
     unsupported(sys_platform)
