@@ -59,6 +59,7 @@ except ImportError:
 from commoncode import filetype
 from commoncode.filetype import is_rwx
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 # this exception is not available on posix
 try:
@@ -91,8 +92,10 @@ WIN_PATH_SEP = b'\\' if on_linux else '\\'
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 EMPTY_STRING = b'' if on_linux else ''
 DOT = b'.' if on_linux else '.'
-PATH_SEP = bytes(os.sep) if on_linux else unicode(os.sep)
-
+if py2:
+   PATH_SEP = bytes(os.sep) if on_linux else unicode(os.sep)	
+else:
+   PATH_SEP = bytes(os.sep, encoding='utf-8') if on_linux else unicode(os.sep)
 
 """
 File, paths and directory utility functions.
