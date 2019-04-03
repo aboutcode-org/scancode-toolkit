@@ -26,12 +26,47 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from unittest import TestCase
 
+from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 
+from packages_test_utils import PackageTester
 
-class TestPackageUtils(TestCase):
+class TestPackageUtils(PackageTester):
+    def test_normalize_vcs_url_basic(self):
+        url = 'https://pear2.php.net'
+        result = normalize_vcs_url(url)
+        expected = 'https://pear2.php.net'
+        assert expected == result
+
+    def test_normalize_vcs_url_svn(self):
+        url = 'http://svn.example.org/projectA/'
+        result = normalize_vcs_url(url)
+        expected = 'http://svn.example.org/projectA/'
+        assert expected == result
+
+    def test_normalize_vcs_url_github(self):
+        url = 'https://github.com/igorw/monolog'
+        result = normalize_vcs_url(url)
+        expected = 'https://github.com/igorw/monolog'
+        assert expected == result
+
+    def test_normalize_vcs_url_bitbucket(self):
+        url = 'git@bitbucket.org:vendor/my-private-repo.git'
+        result = normalize_vcs_url(url)
+        expected = 'https://bitbucket.org/vendor/my-private-repo.git'
+        assert expected == result
+
+    def test_normalize_vcs_url_does_not_pad_git_plus(self):
+        url = 'git+git://bitbucket.org/vendor/my-private-repo.git'
+        result = normalize_vcs_url(url)
+        assert url== result
+
+    def test_normalize_vcs_url_does_not_pad_git_plus2(self):
+        url = 'git+https://github.com/stevepapa/angular2-autosize.git'
+        result = normalize_vcs_url(url)
+        expected = 'git+https://github.com/stevepapa/angular2-autosize.git'
+        assert expected == result
 
     def test_normalize_vcs_url_0(self):
         test = 'npm/npm'
@@ -112,3 +147,15 @@ class TestPackageUtils(TestCase):
         assert None == normalize_vcs_url(None)
         assert None == normalize_vcs_url('')
         assert None == normalize_vcs_url(' ')
+
+    def test_combine_expressions_with_empty_input(self):
+        assert None == combine_expressions(None)
+        assert None == combine_expressions([])
+
+    def test_combine_expressions_with_regular(self):
+        assert 'mit AND apache-2.0' == combine_expressions(
+            ['mit', 'apache-2.0'])
+
+    def test_combine_expressions_with_duplicated_elements(self):
+        assert 'mit AND apache-2.0' == combine_expressions(
+            ['mit', 'apache-2.0', 'mit'])
