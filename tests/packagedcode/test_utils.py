@@ -26,13 +26,14 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from unittest import TestCase
 
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 
-from packages_test_utils import PackageTester
 
-class TestPackageUtils(PackageTester):
+class TestPackageUtils(TestCase):
+
     def test_normalize_vcs_url_basic(self):
         url = 'https://pear2.php.net'
         result = normalize_vcs_url(url)
