@@ -46,8 +46,11 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "mit AND unknown",
-  "declared_license": "MIT\nLicense :: OSI Approved :: MIT License",
+  "license_expression": "mit",
+  "declared_license": [
+    "MIT",
+    "License :: OSI Approved :: MIT License"
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

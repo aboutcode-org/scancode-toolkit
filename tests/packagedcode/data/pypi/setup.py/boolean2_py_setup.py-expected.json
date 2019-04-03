@@ -40,8 +40,11 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "(bsd-new AND bsd-new) AND unknown",
-  "declared_license": "revised BSD license\nLicense :: OSI Approved :: BSD License",
+  "license_expression": "(bsd-new AND unknown) AND bsd-new",
+  "declared_license": [
+    "revised BSD license",
+    "License :: OSI Approved :: BSD License"
+  ],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
