@@ -26,6 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 from license_expression import Licensing
 from six import string_types
 
@@ -171,6 +173,9 @@ def combine_expressions(expressions, licensing=Licensing()):
         raise TypeError(
             'expressions should be a list or tuple and not: {}'.format(
                 type(expressions)))
+
+    # Remove duplicate element in the expressions list
+    expressions = OrderedDict((x, True) for x in expressions).keys()
 
     if len(expressions) == 1:
         return expressions[0]
