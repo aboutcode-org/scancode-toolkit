@@ -83,6 +83,7 @@ OTHER_CATEGORIES = set([
     'Free Restricted',
     'Proprietary Free',
     'Unstated License',
+    'Hardware License',
 ])
 
 

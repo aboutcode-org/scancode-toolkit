@@ -1,0 +1,8 @@
+key: cern-ohl-1.1
+short_name: CERN Open Hardware License v1.1
+name: CERN Open Hardware License v1.1
+spdx_license_key: CERN-OHL-1.1
+other_urls:
+    - https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1
+category: Hardware License
+owner: CERN

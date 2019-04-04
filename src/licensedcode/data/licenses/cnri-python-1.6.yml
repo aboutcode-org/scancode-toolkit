@@ -11,3 +11,4 @@ text_urls:
 other_urls:
     - http://spdx.org/licenses/CNRI-Python
     - http://www.opensource.org/licenses/CNRI-Python
+    - https://opensource.org/licenses/CNRI-Python

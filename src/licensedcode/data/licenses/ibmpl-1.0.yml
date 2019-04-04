@@ -4,7 +4,7 @@ name: IBM Public License
 category: Copyleft Limited
 owner: IBM
 homepage_url: http://www.opensource.org/licenses/ibmpl.php
-notes: |-
+notes: |
     Per SPDX.org, this license is OSI certified. This license was superseded by
     CPL.
 spdx_license_key: IPL-1.0
@@ -13,3 +13,4 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/ibmpl.php
 other_urls:
     - http://www.opensource.org/licenses/IPL-1.0
+    - https://opensource.org/licenses/IPL-1.0

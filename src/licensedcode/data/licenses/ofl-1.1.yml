@@ -4,7 +4,7 @@ name: Open Font License 1.1
 category: Free Restricted
 owner: SIL International
 homepage_url: http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web
-notes: |-
+notes: |
     Per SPDX.org, this license was released 26 February 2007. This license is
     OSI certified
 spdx_license_key: OFL-1.1
@@ -15,3 +15,4 @@ other_urls:
     - http://scripts.sil.org/OFL
     - http://www.opensource.org/licenses/OFL-1.1
     - https://github.com/adobe-fonts/source-code-pro/blob/master/LICENSE.txt
+    - https://opensource.org/licenses/OFL-1.1
