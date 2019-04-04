@@ -444,7 +444,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
         ]
         result = maven.compute_normalized_license(declared_license)
-        expected = 'lgpl-2.0-plus AND lgpl-2.0-plus'
+        expected = 'lgpl-2.0-plus'
         assert expected == result
 
 
