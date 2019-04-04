@@ -59,17 +59,12 @@ matrix:
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven_more.py --ignore=tests/licensedcode/test_detection_datadriven.py"
+      env: TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
       env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven_more.py""
       language: generic
       python:
       osx_image: xcode7.3
