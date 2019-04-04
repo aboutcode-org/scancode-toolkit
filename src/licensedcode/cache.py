@@ -189,7 +189,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
     """
     Return a LicenseIndex: either load a cached index or build and cache the
     index.
-    - If the cache does not exist, a new index is built an cached.
+    - If the cache does not exist, a new index is built and cached.
     - If `check_consistency` is True, the cache is checked for consistency and
       rebuilt if inconsistent or stale.
     - If `check_consistency` is False, the cache is NOT checked for consistency

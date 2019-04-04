@@ -106,7 +106,7 @@ class BasePlugin(object):
     # TODO: pass own command options name/values as concrete kwargs
     def is_enabled(self, **kwargs):
         """
-        Return True is this plugin is enabled by user-selected options.
+        Return True if this plugin is enabled by user-selected options.
         Subclasses must override.
         This receives all the ScanCode call arguments as kwargs.
         """
