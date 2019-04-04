@@ -852,7 +852,7 @@ class Rule(object):
 
     def same_licensing(self, other):
         """
-        Return True if the other rule has a the same licensing as this rule.
+        Return True if the other rule has the same licensing as this rule.
         """
         if self.license_expression and other.license_expression:
             return self.licensing.is_equivalent(
@@ -1003,7 +1003,7 @@ class Rule(object):
         Dump a representation of this rule as two files:
          - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
-        Does nothing if this rule was created a from a License (e.g.
+        Does nothing if this rule was created from a License (e.g.
         `is_license` is True)
         """
         if self.is_license:
@@ -1065,7 +1065,7 @@ class Rule(object):
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
 
-        if not (0 <= self.relevance <= 100):
+        if not (0 <= self.minimum_coverage <= 100):
             msg = (
                 'License rule {} data file has an invalid minimum_coverage. '
                 'Should be between 0 and 100: {}')
