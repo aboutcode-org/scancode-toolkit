@@ -28,10 +28,8 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 import io
-import os
-from os.path import abspath
-from os.path import exists
-from os.path import join
+from itertools import chain
+from os import path
 from unittest.case import expectedFailure
 
 import attr
@@ -39,6 +37,7 @@ import attr
 import cluecode.copyrights
 from commoncode import saneyaml
 from commoncode.testcase import FileDrivenTesting
+from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
 """
@@ -46,7 +45,7 @@ Data-driven Copyright test utilities.
 """
 
 test_env = FileDrivenTesting()
-test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+test_env.test_data_dir = path.join(path.dirname(__file__), 'data')
 
 
 @attr.s(slots=True)
@@ -114,16 +113,17 @@ class CopyrightTest(object):
                     if b'_file' in field.name]
         fields_filter = attr.filters.exclude(*filtered)
         data = attr.asdict(self, filter=fields_filter, dict_factory=OrderedDict)
-        return OrderedDict([(key, value) for key, value in data.items()
-                            # do not dump false and empties
-                            if value])
+        return OrderedDict([
+            (key, value) for key, value in data.items()
+            # do not dump false and empties
+            if value])
 
     def dump(self, check_exists=False):
         """
         Dump a representation of self to a .yml data_file in YAML block format.
         """
         as_yaml = saneyaml.dump(self.to_dict())
-        if check_exists and os.path.exists(self.data_file):
+        if check_exists and path.exists(self.data_file):
             raise Exception(self.data_file)
         with io.open(self.data_file, 'w', encoding='utf-8') as df:
             df.write(as_yaml)
@@ -133,66 +133,13 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
     """
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
-    # first collect files with .yml extension and files with other no extensions
-    # extension in two maps keyed by the test file path
-    data_files = {}
-    test_files = {}
-    dangling_text = set()
-    dangling_yml = set()
+    test_dirs = (path.join(test_dir, td) for td in
+        ('copyrights', 'ics', 'holders', 'authors', 'years'))
 
-    def collect(subdir):
-        for top, _, files in os.walk(join(test_dir, subdir)):
-            for yfile in files:
-                if yfile. endswith('~'):
-                    continue
-                file_path = abspath(join(top, yfile))
+    all_test_files = chain.from_iterable(
+        get_test_file_pairs(td) for td in test_dirs)
 
-                if yfile.endswith('.yml'):
-                    data_file_path = file_path
-                    test_file_path = file_path.replace('.yml', '')
-                else:
-                    test_file_path = file_path
-                    data_file_path = test_file_path + '.yml'
-
-                if not exists(test_file_path):
-                    dangling_text.add(test_file_path)
-                if not exists(data_file_path):
-                    dangling_yml.add(data_file_path)
-
-                data_files[test_file_path] = data_file_path
-                test_files[test_file_path] = test_file_path
-
-    for data_directory in ('copyrights', 'ics', 'holders', 'authors', 'years'):
-        collect(data_directory)
-
-    if dangling_text or dangling_yml:
-        print('Dangling missing/copyright TEXT files')
-        for o in sorted(dangling_text):
-            print(o)
-        print('Dangling missing/copyright YAML files')
-        for o in sorted(dangling_yml):
-            print(o)
-        raise Exception(
-            'Dangling/missing copyright TEXT files.\n' + '\n'.join(sorted(dangling_text))
-            +'\n\n'
-            'Dangling/missing copyright YAML files.\n' + '\n'.join(sorted(dangling_yml))
-        )
-
-    # ensure that each data file has a corresponding test file
-    diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
-    if diff:
-        print('orphaned copyright test files')
-        for o in sorted(diff):
-            print(o)
-
-    assert not diff, ('Orphaned copyright test file(s) found: '
-                      'test file without its YAML test descriptor '
-                      'or YAML test descriptor without its test file.')
-
-    # second, create pairs of corresponding (data_file, test file) for files
-    # that have the same base_name
-    for base_name, data_file in data_files.items():
-        test_file = test_files[base_name]
+    for data_file, test_file in all_test_files:
         yield CopyrightTest(data_file, test_file)
 
 
