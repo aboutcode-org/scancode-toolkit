@@ -83,82 +83,73 @@ def parse(location):
     return build_package(package_data)
 
 
-def get_vcs_repo(content):
-    """
-    Return the repo type and url.
-    """
-    repo = content.get('repository', {})
-    if repo:
-        return repo.get('type'), repo.get('url')
-    return None, None
-
-
-def build_packages_from_jsonfile(package_data, uri=None, purl=None):
+def build_package(package_data):
     """
     Yield Package built from Bower json package_data
     """
-    licenses_content = package_data.get('license')
-    declared_licenses = set([])
-    if licenses_content:
-        if isinstance(licenses_content, list):
-            for lic in licenses_content:
-                declared_licenses.add(lic)
-        else:
-            declared_licenses.add(licenses_content)
-
-    keywords_content = package_data.get('keywords', [])
     name = package_data.get('name')
+    if not name:
+        return
 
-    devdependencies = package_data.get('devDependencies')
-    dev_dependencies = []
-    if devdependencies:
-        for key, value in devdependencies.items():
-            dev_dependencies.append(
-                models.DependentPackage(purl=key, requirement=value, scope='devdependency')
+    description = package_data.get('description')
+    version = package_data.get('version')
+    keywords = package_data.get('keywords', [])
+
+    authors = package_data.get('authors', [])
+    parties = []
+    if authors:
+        for author in authors:
+            if isinstance(author, dict):
+                name = author.get('name')
+                email = author.get('email')
+                url = author.get('homepage')
+                parties.append(models.Party(name=name, role='author', email=email, url=url))
+            else:
+                parties.append(models.Party(name=author, role='author'))
+
+    homepage_url = package_data.get('homepage')
+    repository = package_data.get('repository', {})
+    vcs_url = None
+    if repository:
+        repo_type = repository.get('type')
+        repo_url = repository.get('url')
+        if repo_type and repo_url:
+            vcs_url = '{}+{}'.format(repo_type, repo_url)
+
+    deps = package_data.get('dependencies', {})
+    dependencies = []
+    if deps:
+        for dep_name, requirement in deps.items():
+            dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='bower', name=dep_name).to_string(),
+                    scope='dependencies',
+                    requirement=requirement,
+                    is_runtime=True,
+                    is_optional=False,
+                )
             )
 
-    dependencies = package_data.get('dependencies')
-    dependencies_build = []
-    if dependencies:
-        for key, value in dependencies.items():
-            dependencies_build.append(
-                models.DependentPackage(purl=key, requirement=value, scope='runtime')
+    dev_dependencies = package_data.get('devDependencies', {})
+    if dev_dependencies:
+        for dep_name, requirement in dev_dependencies.items():
+            dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='bower', name=dep_name).to_string(),
+                    scope='devDependencies',
+                    requirement=requirement,
+                    is_runtime=False,
+                    is_optional=True,
+                )
             )
 
-    if name:
-        vcs_tool, vcs_repo = get_vcs_repo(package_data)
-        if vcs_tool and vcs_repo:
-            # Form the vsc_url by
-            # https://spdx.org/spdx-specification-21-web-version#h.49x2ik5
-            vcs_repo = vcs_tool + '+' + vcs_repo
-        common_data = dict(
-            type='bower',
-            name=name,
-            description=package_data.get('description'),
-            version=package_data.get('version'),
-            vcs_url=vcs_repo,
-            keywords=keywords_content,
-            homepage_url=package_data.get('homepage'),
-        )
-
-        if declared_licenses:
-            common_data['declared_license'] = '\n'.join(declared_licenses)
-
-        author_content = package_data.get('authors', [])
-        if author_content:
-            parties = common_data.get('parties')
-            if not parties:
-                common_data['parties'] = []
-            for author in author_content:
-                common_data['parties'].append(models.Party(name=author, role='author',))
-
-        dependencies = []
-        if dependencies_build:
-            dependencies.extend(dependencies_build)
-        if dev_dependencies:
-            dependencies.extend(dev_dependencies)
-        if len(dependencies) > 0:
-            common_data['dependencies'] = dependencies
-        package = BowerPackage(**common_data)
-        package.set_purl(purl)
-        yield package
+    return BowerPackage(
+        name=name,
+        description=description,
+        version=version,
+        keywords=keywords,
+        parties=parties,
+        homepage_url=homepage_url,
+        vcs_url=vcs_url,
+        dependencies=dependencies
+    )
