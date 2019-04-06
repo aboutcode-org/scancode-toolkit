@@ -1,0 +1,5 @@
+license_expression: apache-2.0 AND other-permissive AND gpl-3.0 AND other-copyleft
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt

@@ -1,0 +1,10 @@
+Anything that ends up being part of the  library needs to be released
+under LGPLv2.1+ or a license compatible with it (though the latter will
+only be accepted for cases where the code originated elsewhere and was
+imported into ).
+
+Language bindings for the libraries need to be released under LGPLv2.1+.
+
+Anything else (non-libaries) needs to be Free Software and needs to be
+allowed to link with LGPLv2.1+ code (if needed). LC upstream prefers
+LGPLv2.1+ or GPLv2 for those.
