@@ -42,8 +42,14 @@ class TestBower(PackageTester):
         expected_loc = self.get_test_loc('bower/basic/expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_bower_json_basic_list_of_licenses(self):
+    def test_parse_bower_json_list_of_licenses(self):
         test_file = self.get_test_loc('bower/list-of-licenses/bower.json')
         package = bower.parse(test_file)
         expected_loc = self.get_test_loc('bower/list-of-licenses/expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_bower_json_author_objects(self):
+        test_file = self.get_test_loc('bower/author-objects/bower.json')
+        package = bower.parse(test_file)
+        expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_package(package, expected_loc, regen=False)
