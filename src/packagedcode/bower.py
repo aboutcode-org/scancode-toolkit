@@ -27,21 +27,16 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from functools import partial
 import io
 import json
 import logging
-import re
 
 import attr
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from packagedcode.utils import combine_expressions
-from packagedcode.utils import parse_repo_url
 
 
 TRACE = False
@@ -155,3 +150,4 @@ def build_package(package_data):
         vcs_url=vcs_url,
         dependencies=dependencies
     )
+
