@@ -51,9 +51,6 @@ of the GPL:
 
  2. FLOSS License List
 
-!!!
-!!! License list is removed from the test file
-!!!
 
     Due to the many variants of some of the above licenses, we
     require that any version follow the 2003 version of the Free
