@@ -93,6 +93,7 @@ def build_package(package_data):
 
     description = package_data.get('description')
     version = package_data.get('version')
+    license = package_data.get('license')
     keywords = package_data.get('keywords', [])
 
     authors = package_data.get('authors', [])
@@ -147,6 +148,7 @@ def build_package(package_data):
         name=name,
         description=description,
         version=version,
+        declared_license=license,
         keywords=keywords,
         parties=parties,
         homepage_url=homepage_url,
