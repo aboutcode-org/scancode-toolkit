@@ -1,4 +1,3 @@
-
 # Copyright (c) 2019 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -33,10 +32,12 @@ import logging
 
 import attr
 from packageurl import PackageURL
+from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 
 
 TRACE = False
@@ -58,6 +59,9 @@ class BowerPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    def compute_normalized_license(self):
+        return compute_normalized_license(self.declared_license)
+
 
 def is_bower_json(location):
     return (filetype.is_file(location)
@@ -67,7 +71,7 @@ def is_bower_json(location):
 
 def parse(location):
     """
-    Return a Package object from a package.json file or None.
+    Return a Package object from a bower.json file or None.
     """
     if not is_bower_json(location):
         return
@@ -89,6 +93,8 @@ def build_package(package_data):
     description = package_data.get('description')
     version = package_data.get('version')
     license = package_data.get('license')
+    if license and isinstance(license, string_types):
+        license = [license]
     keywords = package_data.get('keywords', [])
 
     authors = package_data.get('authors', [])
@@ -151,3 +157,21 @@ def build_package(package_data):
         dependencies=dependencies
     )
 
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license strings.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    for declared in declared_license:
+        detected_license = models.compute_normalized_license(declared)
+        if detected_license:
+            detected_licenses.append(detected_license)
+
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
