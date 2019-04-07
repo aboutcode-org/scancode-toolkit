@@ -461,9 +461,9 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 
 def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
     """
-    Return a mapping of key->license and an iterable of license detection rules
-    loaded from licenses and rules files.
-    Raise a MissingLicenses exceptions if a rule references unknown license key.
+    Yield Rule objects loaded from license files found in `licenses_data_dir`
+    and rule files fourn in `rules_data_dir`. Raise a Exceptions if a rule is
+    inconsistent or incorrect.
     """
     from licensedcode.cache import get_licenses_db
     licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
