@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017  Free Software Foundation Europe e.V.
+# Copyright (C) 2019  Free Software Foundation Europe e.V.
 #
 # This file is part of reuse, available from its original location:
 # <https://git.fsfe.org/reuse/reuse/>.
