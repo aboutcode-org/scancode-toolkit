@@ -6,4 +6,4 @@ license_expressions:
     - bsd-new
     - apache-2.0
     - ms-pl
-expected_failure: yes
+# expected_failure: yes

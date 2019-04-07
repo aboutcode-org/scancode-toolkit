@@ -1,4 +1,2 @@
 license_expressions:
-  - bsd-1988
-  - bsd-new-tcpdump
-expected_failure: yes
+  - bsd-original-uc
