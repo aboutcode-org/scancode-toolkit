@@ -36,7 +36,6 @@ from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
@@ -66,8 +65,7 @@ class BowerPackage(models.Package):
 
 def is_bower_json(location):
     return (filetype.is_file(location)
-            and (fileutils.file_name(location).lower() == 'bower.json'
-            or fileutils.file_name(location).lower() == '.bower.json'))
+            and location.lower().endswith('bower.json', '.bower.json'))
 
 
 def parse(location):
