@@ -1,3 +1,4 @@
 license_expression: mpl-2.0-no-copyleft-exception
 is_license_notice: yes
-minimum_coverage: 95
+minimum_coverage: 80
+relevance: 100

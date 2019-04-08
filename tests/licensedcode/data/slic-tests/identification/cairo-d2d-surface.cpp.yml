@@ -1,12 +1,2 @@
 license_expressions:
-  - lgpl-2.1
-  - lgpl-2.0-plus
-  - mpl-1.1
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.1
-  - free-unknown
-  - mpl-1.1
-  - mpl-1.1
-  - warranty-disclaimer
-  - lgpl-2.0-plus
+  - lgpl-2.1 OR mpl-1.1

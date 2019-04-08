@@ -95,16 +95,24 @@ class BaseMavenCase(testcase.FileBasedTesting):
         """
         test_pom_loc = self.get_test_loc(test_pom)
         expected_json_loc = test_pom_loc + '.json'
-        parsed_pom = parse_pom(location=test_pom_loc)
+        results = parse_pom(location=test_pom_loc)
 
         if regen:
             with open(expected_json_loc, 'wb') as ex:
-                json.dump(parsed_pom, ex, indent=2)
+                json.dump(results, ex, indent=2)
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert json.dumps(expected, indent=2) == json.dumps(parsed_pom, indent=2)
+        results_dump = json.dumps(results, indent=2)
+        expected_dump = json.dumps(expected, indent=2)
+        try:
+            assert expected_dump == results_dump
+        except AssertionError:
+            test_pom_loc = 'file://' + test_pom_loc
+            expected_json_loc = 'file://' + expected_json_loc
+            expected = [test_pom_loc, expected_json_loc, expected_dump]
+            assert '\n'.join(expected) == results_dump
 
     def check_parse_to_package(self, test_pom, regen=False):
         """
@@ -115,19 +123,27 @@ class BaseMavenCase(testcase.FileBasedTesting):
         expected_json_loc = test_pom_loc + '.package.json'
         package = maven.parse(location=test_pom_loc)
         if not package:
-            package = {}
+            results = {}
         else:
             package.license_expression = package.compute_normalized_license()
-            package = package.to_dict()
+            results = package.to_dict()
 
         if regen:
             with open(expected_json_loc, 'wb') as ex:
-                json.dump(package, ex, indent=2)
+                json.dump(results, ex, indent=2)
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert json.dumps(expected, indent=2) == json.dumps(package, indent=2)
+        results_dump = json.dumps(results, indent=2)
+        expected_dump = json.dumps(expected, indent=2)
+        try:
+            assert expected_dump == results_dump
+        except AssertionError:
+            test_pom_loc = 'file://' + test_pom_loc
+            expected_json_loc = 'file://' + expected_json_loc
+            expected = [test_pom_loc, expected_json_loc, expected_dump]
+            assert '\n'.join(expected) == results_dump
 
 
 class TestMavenMisc(BaseMavenCase):

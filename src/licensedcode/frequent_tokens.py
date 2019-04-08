@@ -10515,6 +10515,9 @@ Tommi
 Komulainen
 iki
 fi
+bungisoft
+HSQLDB
+RedBase
 '''
 
 

@@ -36,7 +36,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/kxml/kxml2/", 
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/kxml:kxml2", 
   "copyright": null, 
-  "license_expression": "bsd-new AND (bsd-new AND unknown)", 
+  "license_expression": "bsd-new", 
   "declared_license": [
     {
       "name": "The BSD License", 

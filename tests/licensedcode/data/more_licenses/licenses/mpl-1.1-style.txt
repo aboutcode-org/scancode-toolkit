@@ -1,1 +1,1 @@
-MPL-1.1-style is a MPL-style license, Please look up MPL-1.1 in the License Admin to view the original one.
+MPL-1.1-style is a MPL-style license

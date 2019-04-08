@@ -1,0 +1,5 @@
+license_expression: mpl-1.1 OR lgpl-2.1-plus
+is_license_reference: yes
+notes: javassist license choice
+minimum_coverage: 99
+relevance: 100
