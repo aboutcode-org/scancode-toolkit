@@ -166,7 +166,6 @@ def build_package(package_data):
     )
 
 
-
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of
@@ -181,6 +180,8 @@ def compute_normalized_license(declared_license):
         detected_license = models.compute_normalized_license(declared)
         if detected_license:
             detected_licenses.append(detected_license)
+        else:
+            detected_licenses.append('unknown')
 
     if detected_licenses:
         return combine_expressions(detected_licenses)
