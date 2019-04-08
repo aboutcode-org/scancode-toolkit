@@ -1,1 +1,0 @@
-MX4J is referenced without a version number. Please look up MX4J in the License Admin to view the different versions.

@@ -29,7 +29,7 @@
   "code_view_url": null, 
   "vcs_url": null, 
   "copyright": null, 
-  "license_expression": "mpl-1.1 AND (lgpl-2.0-plus AND unknown)", 
+  "license_expression": "mpl-1.1 AND (mpl-1.1 OR lgpl-2.1-plus)", 
   "declared_license": [
     {
       "name": "MPL 1.1", 

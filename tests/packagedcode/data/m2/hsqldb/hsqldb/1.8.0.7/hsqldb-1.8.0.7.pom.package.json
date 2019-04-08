@@ -21,7 +21,7 @@
   "code_view_url": "http://sourceforge.net/cvs/?group_id=23316", 
   "vcs_url": "http://sourceforge.net/cvs/?group_id=23316", 
   "copyright": null, 
-  "license_expression": "unknown", 
+  "license_expression": "bsd-new", 
   "declared_license": [
     {
       "name": "HSQLDB License", 
