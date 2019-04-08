@@ -85,78 +85,88 @@ def parse(location):
 
 def build_package(package_data):
     """
-    Yield Package built from Bower json package_data
+    Return a Package built from Bower json `package_data`.
     """
     name = package_data.get('name')
+    # FIXME: having no name may not be a problem See #1514
     if not name:
         return
 
     description = package_data.get('description')
     version = package_data.get('version')
-    license = package_data.get('license')
-    if license and isinstance(license, string_types):
-        license = [license]
-    keywords = package_data.get('keywords', [])
+    declared_license = package_data.get('license')
+    if declared_license:
+        if isinstance(declared_license, string_types):
+            declared_license = [declared_license]
+        elif isinstance(declared_license, (list, tuple)):
+            declared_license = [l for l in declared_license if l and l.strip()]
+        else:
+            declared_license = [repr(declared_license)]
 
-    authors = package_data.get('authors', [])
+    keywords = package_data.get('keywords') or []
+
     parties = []
-    if authors:
-        for author in authors:
-            if isinstance(author, dict):
-                name = author.get('name')
-                email = author.get('email')
-                url = author.get('homepage')
-                parties.append(models.Party(name=name, role='author', email=email, url=url))
-            else:
-                parties.append(models.Party(name=author, role='author'))
+
+    authors = package_data.get('authors') or []
+    for author in authors:
+        if isinstance(author, dict):
+            name = author.get('name')
+            email = author.get('email')
+            url = author.get('homepage')
+            party = models.Party(name=name, role='author', email=email, url=url)
+            parties.append(party)
+        elif isinstance(author, string_types):
+            parties.append(models.Party(name=author, role='author'))
+        else:
+            parties.append(models.Party(name=repr(author), role='author'))
 
     homepage_url = package_data.get('homepage')
-    repository = package_data.get('repository', {})
+
+    repository = package_data.get('repository') or {}
+    repo_type = repository.get('type')
+    repo_url = repository.get('url')
+
     vcs_url = None
-    if repository:
-        repo_type = repository.get('type')
-        repo_url = repository.get('url')
-        if repo_type and repo_url:
-            vcs_url = '{}+{}'.format(repo_type, repo_url)
+    if repo_type and repo_url:
+        vcs_url = '{}+{}'.format(repo_type, repo_url)
 
-    deps = package_data.get('dependencies', {})
+    deps = package_data.get('dependencies') or {}
     dependencies = []
-    if deps:
-        for dep_name, requirement in deps.items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='bower', name=dep_name).to_string(),
-                    scope='dependencies',
-                    requirement=requirement,
-                    is_runtime=True,
-                    is_optional=False,
-                )
+    for dep_name, requirement in deps.items():
+        dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='bower', name=dep_name).to_string(),
+                scope='dependencies',
+                requirement=requirement,
+                is_runtime=True,
+                is_optional=False,
             )
+        )
 
-    dev_dependencies = package_data.get('devDependencies', {})
-    if dev_dependencies:
-        for dep_name, requirement in dev_dependencies.items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='bower', name=dep_name).to_string(),
-                    scope='devDependencies',
-                    requirement=requirement,
-                    is_runtime=False,
-                    is_optional=True,
-                )
+    dev_dependencies = package_data.get('devDependencies') or {}
+    for dep_name, requirement in dev_dependencies.items():
+        dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='bower', name=dep_name).to_string(),
+                scope='devDependencies',
+                requirement=requirement,
+                is_runtime=False,
+                is_optional=True,
             )
+        )
 
     return BowerPackage(
         name=name,
         description=description,
         version=version,
-        declared_license=license,
+        declared_license=declared_license,
         keywords=keywords,
         parties=parties,
         homepage_url=homepage_url,
         vcs_url=vcs_url,
         dependencies=dependencies
     )
+
 
 
 def compute_normalized_license(declared_license):
