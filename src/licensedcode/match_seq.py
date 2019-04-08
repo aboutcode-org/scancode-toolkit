@@ -77,7 +77,6 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
 
     matches = []
     qstart = qbegin
-    qlen = len(query_run)
 
     # match as long as long we find alignments and have high matchable tokens
     # this allows to find repeated instances of the same rule in the query run

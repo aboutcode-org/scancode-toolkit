@@ -59,7 +59,7 @@ class TestGemfileLock(FileBasedTesting):
         try:
             assert expected == results
         except AssertionError:
-            assert expected.items() == results.items()
+            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
 
     def check_gemfile_lock(self, test_file, expected_loc, regen=False):
         test_file = self.get_test_loc(test_file)

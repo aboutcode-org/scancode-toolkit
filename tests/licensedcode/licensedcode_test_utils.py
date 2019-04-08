@@ -26,23 +26,19 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import defaultdict
 from collections import OrderedDict
 import io
 import os
-from os.path import abspath
-from os.path import join
-import pprint
+
 import traceback
 import unittest
 
 import attr
 from license_expression import Licensing
 
-from commoncode import fileutils
 from commoncode import saneyaml
 from commoncode import text
-from itertools import chain
+from commoncode.testcase import get_test_file_pairs
 
 # Python 2 and 3 support
 try:
@@ -156,73 +152,15 @@ class LicenseTest(object):
         return text.python_safe_name(test_name)
 
 
-def load_license_tests(test_dir):
-    """
-    Yield an iterable of LicenseTest loaded from test data files in test_dir.
-    """
-    # first collect files with .yml extension and files with other extensions
-    # in two  maps keyed by file base_name
-    data_files = {}
-    test_files = {}
-    paths_ignoring_case = defaultdict(list)
-
-    for top, _, files in os.walk(test_dir):
-        for yfile in files:
-            if yfile. endswith('~'):
-                continue
-            base_name = fileutils.file_base_name(yfile)
-            file_path = abspath(join(top, yfile))
-            file_base_path = abspath(join(top, base_name))
-            paths_ignoring_case[file_path.lower()].append(file_path)
-            if yfile.endswith('.yml'):
-                assert file_base_path not in data_files
-                data_files[file_base_path] = file_path
-            else:
-                assert file_base_path not in test_files
-                test_files[file_base_path] = file_path
-
-    # ensure that test file paths are unique when you ignore case
-    # we use the file names as test method names (and we have Windows that's
-    # case insensitive
-    dupes = list(chain.from_iterable(
-        paths for paths in paths_ignoring_case.values() if len(paths) != 1))
-    if dupes:
-        msg = 'Non unique License test file(s) found when ignoring case!'
-        print(msg)
-        for item in dupes:
-            print(repr(item))
-        raise Exception(msg + '\n' + pprint.pformat(dupes))
-
-    # ensure that each data file has a corresponding test file
-    diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
-    if diff:
-        msg = (
-            'Orphaned license test file(s) found: '
-            'test file without its YAML test descriptor '
-            'or YAML test descriptor without its test file.')
-        print(msg)
-        for item in diff:
-            print(repr(item))
-        raise Exception(msg + '\n' + pprint.pformat(diff))
-
-    for base_name, data_file in data_files.items():
-        test_file = test_files[base_name]
-        yield LicenseTest(data_file, test_file)
-
-
 def build_tests(test_dir, clazz, regen=False):
     """
     Dynamically build license_test methods from a sequence of LicenseTest and
     attach these method to the clazz license test class.
     """
-    return _build_tests(load_license_tests(test_dir), clazz, regen)
 
+    license_tests = (LicenseTest(data_file, test_file)
+             for data_file, test_file in get_test_file_pairs(test_dir))
 
-def _build_tests(license_tests, clazz, regen=False):
-    """
-    Dynamically build license_test methods from a sequence of LicenseTest and
-    attach these method to the clazz license test class.
-    """
     # TODO: check that we do not have duplicated tests with same data and text
 
     for license_test in license_tests:

@@ -991,12 +991,12 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
 
         assert 1 == len(matches)
         match = matches[0]
-        assert 'apache-2.0_8.RULE' == match.rule.identifier
+        assert 'apache-2.0_212.RULE' == match.rule.identifier
         assert match_aho.MATCH_AHO_EXACT == match.matcher
 
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)
-        assert u'The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt' == qtext
-        assert (3, 4) == match.lines()
+        assert u'license The Apache Software License Version 2 0 http www apache org licenses LICENSE 2 0 txt' == qtext
+        assert (1, 4) == match.lines()
 
     def test_match_does_not_detect_spurrious_short_apache_rule(self):
         idx = cache.get_index()
