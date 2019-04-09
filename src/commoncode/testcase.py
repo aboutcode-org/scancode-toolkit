@@ -27,9 +27,12 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
+from collections import defaultdict
 import filecmp
 from functools import partial
+from itertools import chain
 import os
+from os import path
 import shutil
 import stat
 import sys
@@ -92,14 +95,14 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     assert test_path
     assert test_data_dir
 
-    if not os.path.exists(test_data_dir):
+    if not path.exists(test_data_dir):
         raise IOError("[Errno 2] No such directory: test_data_dir not found:"
                       " '%(test_data_dir)s'" % locals())
 
     tpath = to_os_native_path(test_path)
-    test_loc = os.path.abspath(os.path.join(test_data_dir, tpath))
+    test_loc = path.abspath(path.join(test_data_dir, tpath))
 
-    if exists and not os.path.exists(test_loc):
+    if exists and not path.exists(test_loc):
         raise IOError("[Errno 2] No such file or directory: "
                       "test_path not found: '%(test_loc)s'" % locals())
 
@@ -132,15 +135,15 @@ class FileDrivenTesting(object):
 
         test_loc = get_test_loc(test_path, test_data_dir, debug=debug)
         if copy:
-            base_name = os.path.basename(test_loc)
+            base_name = path.basename(test_loc)
             if filetype.is_file(test_loc):
                 # target must be an existing dir
                 target_dir = self.get_temp_dir()
                 fileutils.copyfile(test_loc, target_dir)
-                test_loc = os.path.join(target_dir, base_name)
+                test_loc = path.join(target_dir, base_name)
             else:
                 # target must be a NON existing dir
-                target_dir = os.path.join(self.get_temp_dir(), base_name)
+                target_dir = path.join(self.get_temp_dir(), base_name)
                 fileutils.copytree(test_loc, target_dir)
                 # cleanup of VCS that could be left over from checkouts
                 self.remove_vcs(target_dir)
@@ -166,7 +169,7 @@ class FileDrivenTesting(object):
 
         file_name = file_name + extension
         temp_dir = self.get_temp_dir(dir_name)
-        location = os.path.join(temp_dir, file_name)
+        location = path.join(temp_dir, file_name)
         return location
 
     def get_temp_dir(self, sub_dir_path=None):
@@ -180,7 +183,7 @@ class FileDrivenTesting(object):
         global test_run_temp_dir
         if not test_run_temp_dir:
             from scancode_config import scancode_root_dir
-            test_tmp_root_dir = os.path.join(scancode_root_dir, 'tmp')
+            test_tmp_root_dir = path.join(scancode_root_dir, 'tmp')
             # now we add a space in the path for testing path with spaces
             test_run_temp_dir = fileutils.get_temp_dir(
                 base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
@@ -193,7 +196,7 @@ class FileDrivenTesting(object):
         if sub_dir_path:
             # create a sub directory hierarchy if requested
             sub_dir_path = to_os_native_path(sub_dir_path)
-            test_run_temp_subdir = os.path.join(test_run_temp_subdir, sub_dir_path)
+            test_run_temp_subdir = path.join(test_run_temp_subdir, sub_dir_path)
             fileutils.create_dir(test_run_temp_subdir)
         return test_run_temp_subdir
 
@@ -211,13 +214,13 @@ class FileDrivenTesting(object):
                 if vcs_dir in dirs:
                     for vcsroot, vcsdirs, vcsfiles in os.walk(test_dir):
                         for vcsfile in vcsdirs + vcsfiles:
-                            vfile = os.path.join(vcsroot, vcsfile)
+                            vfile = path.join(vcsroot, vcsfile)
                             fileutils.chmod(vfile, fileutils.RW, recurse=False)
-                    shutil.rmtree(os.path.join(root, vcs_dir), False)
+                    shutil.rmtree(path.join(root, vcs_dir), False)
 
             # editors temp file leftovers
             tilde = b'~' if on_linux else '~'
-            map(os.remove, [os.path.join(root, file_loc)
+            map(os.remove, [path.join(root, file_loc)
                             for file_loc in files if file_loc.endswith(tilde)])
 
     def __extract(self, test_path, extract_func=None, verbatim=False):
@@ -231,7 +234,7 @@ class FileDrivenTesting(object):
         if on_linux:
             test_path = fsencode(test_path)
         test_path = to_os_native_path(test_path)
-        target_path = os.path.basename(test_path)
+        target_path = path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
         if on_linux:
@@ -307,7 +310,7 @@ def extract_zip(location, target_dir, *args, **kwargs):
     """
     Extract a zip archive file at location in the target_dir directory.
     """
-    if not os.path.isfile(location) and zipfile.is_zipfile(location):
+    if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
     if on_linux:
@@ -318,13 +321,13 @@ def extract_zip(location, target_dir, *args, **kwargs):
         for info in zipf.infolist():
             name = info.filename
             content = zipf.read(name)
-            target = os.path.join(target_dir, name)
-            if not os.path.exists(os.path.dirname(target)):
-                os.makedirs(os.path.dirname(target))
-            if not content and target.endswith(os.path.sep):
-                if not os.path.exists(target):
+            target = path.join(target_dir, name)
+            if not path.exists(path.dirname(target)):
+                os.makedirs(path.dirname(target))
+            if not content and target.endswith(path.sep):
+                if not path.exists(target):
                     os.makedirs(target)
-            if not os.path.exists(target):
+            if not path.exists(target):
                 with open(target, 'wb') as f:
                     f.write(content)
 
@@ -334,7 +337,7 @@ def extract_zip_raw(location, target_dir, *args, **kwargs):
     Extract a zip archive file at location in the target_dir directory.
     Use the builtin extractall function
     """
-    if not os.path.isfile(location) and zipfile.is_zipfile(location):
+    if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
     if on_linux:
@@ -396,8 +399,8 @@ def is_same(dir1, dir2):
         return False
 
     for subdir in compared.common_dirs:
-        if not is_same(os.path.join(dir1, subdir),
-                       os.path.join(dir2, subdir)):
+        if not is_same(path.join(dir1, subdir),
+                       path.join(dir2, subdir)):
             return False
     return True
 
@@ -447,3 +450,78 @@ def make_non_executable(location):
     if on_posix:
         current_stat = stat.S_IMODE(os.lstat(location).st_mode)
         os.chmod(location, current_stat & ~stat.S_IEXEC)
+
+
+def get_test_file_pairs(test_dir):
+    """
+    Yield tuples of (data_file, test_file) from a test data `test_dir` directory.
+    Raise exception for orphaned/dangling files.
+    Each test consist of a pair of files:
+    - a test file.
+    - a data file with the same name as a test file and a '.yml' extension added.
+    Each test file path should be unique in the tree ignoring case.
+    """
+    # collect files with .yml extension and files with other extensions
+    data_files = {}
+    test_files = {}
+    dangling_test_files = set()
+    dangling_data_files = set()
+    paths_ignoring_case = defaultdict(list)
+
+    for top, _, files in os.walk(test_dir):
+        for tfile in files:
+            if tfile.endswith('~'):
+                continue
+            file_path = path.abspath(path.join(top, tfile))
+
+            if tfile.endswith('.yml'):
+                data_file_path = file_path
+                test_file_path = file_path.replace('.yml', '')
+            else:
+                test_file_path = file_path
+                data_file_path = test_file_path + '.yml'
+
+            if not path.exists(test_file_path):
+                dangling_test_files.add(test_file_path)
+
+            if not path.exists(data_file_path):
+                dangling_data_files.add(data_file_path)
+
+            paths_ignoring_case[file_path.lower()].append(file_path)
+
+            data_files[test_file_path] = data_file_path
+            test_files[test_file_path] = test_file_path
+
+    # ensure that we haev no dangling files
+    if dangling_test_files or dangling_data_files:
+        msg = ['Dangling missing test files without a YAML data file:'] + sorted(dangling_test_files)
+        msg += ['Dangling missing YAML data files without a test file'] + sorted(dangling_data_files)
+        msg = '\n'.join(msg)
+        print(msg)
+        raise Exception(msg)
+
+    # ensure that each data file has a corresponding test file
+    diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
+    if diff:
+        msg = [
+            'Orphaned copyright test file(s) found: '
+            'test file without its YAML test data file '
+            'or YAML test data file without its test file.'] + sorted(diff)
+        msg = '\n'.join(msg)
+        print(msg)
+        raise Exception(msg)
+
+    # ensure that test file paths are unique when you ignore case
+    # we use the file names as test method names (and we have Windows that's
+    # case insensitive
+    dupes = list(chain.from_iterable(
+        paths for paths in paths_ignoring_case.values() if len(paths) != 1))
+    if dupes:
+        msg = ['Non unique test/data file(s) found when ignoring case!'] + sorted(dupes)
+
+        msg = '\n'.join(msg)
+        print(msg)
+        raise Exception(msg)
+
+    for test_file in test_files:
+        yield test_file + '.yml', test_file

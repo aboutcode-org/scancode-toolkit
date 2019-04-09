@@ -10,3 +10,5 @@ other_spdx_license_keys:
     - GPL-1.0+
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
+other_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html

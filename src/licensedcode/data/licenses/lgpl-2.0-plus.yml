@@ -4,7 +4,7 @@ name: GNU Library General Public License 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-notes: |-
+notes: |
     Per SPDX.org, this license was released June 1991. This license has been
     superseded by LGPL v2.1
 spdx_license_key: LGPL-2.0-or-later
@@ -12,3 +12,5 @@ other_spdx_license_keys:
     - LGPL-2.0+
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+other_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html

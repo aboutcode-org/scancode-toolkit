@@ -9,3 +9,5 @@ other_spdx_license_keys:
     - bzip2-1.0.5
 other_urls:
     - http://www.bzip.org/
+notes: until bzip2 1.0.6 there is only one license and not two as listed in SPDX
+

@@ -1,0 +1,100 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "express-jwt",
+  "version": "3.4.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "JWT authentication middleware.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Matias Woloski",
+      "email": "matias@auth0.com",
+      "url": "https://www.auth0.com/"
+    }
+  ],
+  "keywords": [
+    "auth",
+    "authn",
+    "authentication",
+    "authz",
+    "authorization",
+    "http",
+    "jwt",
+    "token",
+    "oauth",
+    "express"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/express-jwt/-/express-jwt-3.4.0.tgz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": "http://github.com/auth0/express-jwt/issues",
+  "code_view_url": null,
+  "vcs_url": "git://github.com/auth0/express-jwt.git",
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/async",
+      "requirement": "^1.5.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/express-unless",
+      "requirement": "^0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/jsonwebtoken",
+      "requirement": "^5.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/lodash.set",
+      "requirement": "^4.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "1.x.x",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/express-jwt@3.4.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/express-jwt",
+  "repository_download_url": "https://registry.npmjs.org/express-jwt/-/express-jwt-3.4.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/express-jwt/3.4.0"
+}

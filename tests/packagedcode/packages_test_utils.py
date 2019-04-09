@@ -63,4 +63,4 @@ class PackageTester(testcase.FileBasedTesting):
         try:
             assert expected == results
         except AssertionError:
-            assert expected.items() == results.items()
+            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)

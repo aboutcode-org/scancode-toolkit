@@ -23,5 +23,5 @@ CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 python2.7 "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
 if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
-    source $CONFIGURE_ROOT_DIR/bin/activate
+    source "$CONFIGURE_ROOT_DIR/bin/activate"
 fi

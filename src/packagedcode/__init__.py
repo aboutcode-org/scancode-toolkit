@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from packagedcode import models
+from packagedcode import bower
 from packagedcode import cargo
 from packagedcode import freebsd
 from packagedcode import haxe
@@ -57,7 +58,7 @@ PACKAGE_TYPES = [
     haxe.HaxePackage,
     cargo.RustCargoCrate,
     models.MeteorPackage,
-    models.BowerPackage,
+    bower.BowerPackage,
     freebsd.FreeBSDPackage,
     models.CpanModule,
     rubygems.RubyGem,

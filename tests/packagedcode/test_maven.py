@@ -104,7 +104,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected.items() == parsed_pom.items()
+        assert json.dumps(expected, indent=2) == json.dumps(parsed_pom, indent=2)
 
     def check_parse_to_package(self, test_pom, regen=False):
         """
@@ -127,7 +127,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected.items() == package.items()
+        assert json.dumps(expected, indent=2) == json.dumps(package, indent=2)
 
 
 class TestMavenMisc(BaseMavenCase):

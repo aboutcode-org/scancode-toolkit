@@ -30,9 +30,10 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "gpl-2.0",
-  "declared_license": [
-    "GPLv2"
-  ],
+  "declared_license": {
+    "license": "GPLv2",
+    "classifiers": []
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
