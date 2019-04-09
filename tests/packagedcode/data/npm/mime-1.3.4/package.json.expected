@@ -1,0 +1,67 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "mime",
+  "version": "1.3.4",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "A comprehensive library for mime-type mapping",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Robert Kieffer",
+      "email": "robert@broofa.com",
+      "url": "http://github.com/broofa"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "Benjamin Thomas",
+      "email": "benjamin@benjaminthomas.org",
+      "url": "http://github.com/bentomas"
+    }
+  ],
+  "keywords": [
+    "util",
+    "mime"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/mime/-/mime-1.3.4.tgz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": "git+https://github.com/broofa/node-mime",
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/broofa/node-mime/master/LICENSE"
+    }
+  ],
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/mime-db",
+      "requirement": "^1.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/mime@1.3.4",
+  "repository_homepage_url": "https://www.npmjs.com/package/mime",
+  "repository_download_url": "https://registry.npmjs.org/mime/-/mime-1.3.4.tgz",
+  "api_data_url": "https://registry.npmjs.org/mime/1.3.4"
+}

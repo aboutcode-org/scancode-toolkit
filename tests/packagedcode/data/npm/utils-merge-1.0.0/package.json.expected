@@ -1,0 +1,67 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "utils-merge",
+  "version": "1.0.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "merge() utility function",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Jared Hanson",
+      "email": "jaredhanson@gmail.com",
+      "url": "http://www.jaredhanson.net/"
+    }
+  ],
+  "keywords": [
+    "util"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": "http://github.com/jaredhanson/utils-merge/issues",
+  "code_view_url": null,
+  "vcs_url": "git://github.com/jaredhanson/utils-merge.git",
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "1.x.x",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/chai",
+      "requirement": "1.x.x",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/utils-merge@1.0.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/utils-merge",
+  "repository_download_url": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/utils-merge/1.0.0"
+}
