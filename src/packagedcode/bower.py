@@ -65,7 +65,7 @@ class BowerPackage(models.Package):
 
 def is_bower_json(location):
     return (filetype.is_file(location)
-            and location.lower().endswith('bower.json', '.bower.json'))
+            and location.lower().endswith(('bower.json', '.bower.json')))
 
 
 def parse(location):

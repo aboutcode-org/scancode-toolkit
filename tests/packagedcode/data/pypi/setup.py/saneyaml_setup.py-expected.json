@@ -41,10 +41,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "apache-2.0",
-  "declared_license": [
-    "Apache-2.0",
-    "License :: OSI Approved :: Apache Software License"
-  ],
+  "declared_license": {
+    "license": "Apache-2.0",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

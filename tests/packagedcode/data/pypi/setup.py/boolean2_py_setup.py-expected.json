@@ -41,10 +41,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "(bsd-new AND unknown) AND bsd-new",
-  "declared_license": [
-    "revised BSD license",
-    "License :: OSI Approved :: BSD License"
-  ],
+  "declared_license": {
+    "license": "revised BSD license",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
