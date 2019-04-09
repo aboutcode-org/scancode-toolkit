@@ -25,6 +25,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+from collections import OrderedDict
 import json
 import logging
 import os
@@ -89,11 +90,20 @@ def compute_normalized_license(declared_license):
 
     detected_licenses = []
 
-    for declared in declared_license:
-        if isinstance(declared, string_types):
-            detected_license = models.compute_normalized_license(declared)
+    for value in declared_license.values():
+        if not value:
+            continue
+        # The value could be a string or a list
+        if isinstance(value, string_types):
+            detected_license = models.compute_normalized_license(value)
             if detected_license:
                 detected_licenses.append(detected_license)
+        else:
+            for declared in value:
+                detected_license = models.compute_normalized_license(declared)
+                if detected_license:
+                    detected_licenses.append(detected_license)
+            
     if detected_licenses:
         return combine_expressions(detected_licenses)
 
@@ -263,15 +273,15 @@ def parse_setup_py(location):
             type=models.party_person,
             name=author, role='author'))
 
+    declared_license = OrderedDict()
+    license_setuptext = get_setup_attribute(setup_text, 'license')
+    declared_license['license'] = license_setuptext
+
     classifiers = get_classifiers(setup_text)
     license_classifiers = [c for c in classifiers if c.startswith('License')]
+    declared_license['classifiers'] = license_classifiers
+    
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
-
-    declared_license = []
-    license_setuptext =  get_setup_attribute(setup_text, 'license')
-    if license_setuptext:
-        declared_license.append(license_setuptext)
-    declared_license.extend(license_classifiers)
 
     package = PythonPackage(
         name=get_setup_attribute(setup_text, 'name'),

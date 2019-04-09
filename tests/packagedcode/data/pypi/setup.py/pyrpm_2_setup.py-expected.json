@@ -42,10 +42,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "unknown AND bsd-new",
-  "declared_license": [
-    "BSD\",      classifiers=[          'Development Status :: 4 - Beta",
-    "License :: OSI Approved :: BSD License"
-  ],
+  "declared_license": {
+    "license": "BSD\",      classifiers=[          'Development Status :: 4 - Beta",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

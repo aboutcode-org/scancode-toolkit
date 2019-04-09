@@ -40,10 +40,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "mit",
-  "declared_license": [
-    "MIT License",
-    "License :: OSI Approved :: MIT License"
-  ],
+  "declared_license": {
+    "license": "MIT License",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

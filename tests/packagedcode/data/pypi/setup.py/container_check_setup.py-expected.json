@@ -40,10 +40,12 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "unknown AND apache-2.0",
-  "declared_license": [
-    "Apache Software License",
-    "License :: OSI Approved :: Apache Software License"
-  ],
+  "declared_license": {
+    "license": "Apache Software License",
+    "classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
