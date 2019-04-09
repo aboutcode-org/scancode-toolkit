@@ -752,12 +752,15 @@ class TestContentType(FileBasedTesting):
     def test_docx_office_word(self):
         test_file = self.get_test_loc('contenttype/doc/office/word.docx')
         assert 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' == get_mimetype_file(test_file)
+        assert 'microsoft word 2007+' == get_filetype(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     def test_pptx_office_is_archive(self):
         test_file = self.get_test_loc('contenttype/doc/office/power.pptx')
+        assert 'application/vnd.openxmlformats-officedocument.presentationml.presentation' == get_mimetype_file(test_file)
+        assert 'microsoft powerpoint 2007+' == get_filetype(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -765,6 +768,7 @@ class TestContentType(FileBasedTesting):
     def test_doc_office_excel_xlsx(self):
         test_file = self.get_test_loc('contenttype/doc/office/excel.xlsx')
         assert 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' == get_mimetype_file(test_file)
+        assert 'microsoft excel 2007+' == get_filetype(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)

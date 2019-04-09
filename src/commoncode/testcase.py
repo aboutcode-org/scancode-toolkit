@@ -181,7 +181,7 @@ class FileDrivenTesting(object):
         if not test_run_temp_dir:
             from scancode_config import scancode_root_dir
             test_tmp_root_dir = os.path.join(scancode_root_dir, 'tmp')
-            # not we add a space in the path for testing path with spaces
+            # now we add a space in the path for testing path with spaces
             test_run_temp_dir = fileutils.get_temp_dir(
                 base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
         if on_linux:
