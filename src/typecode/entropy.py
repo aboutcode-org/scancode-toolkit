@@ -66,7 +66,7 @@ def gzip_entropy(s):
     compressed length to the original length. Because of overhead this
     does not gives great results on short strings.
     """
-    if not bytes:
+    if not s:
         return 0
 
     length = len(s)
