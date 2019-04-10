@@ -53,7 +53,6 @@ def flatten(seq):
     """
     r = []
     for x in seq:
-        if isinstance(x, (list, tuple)):
         if isinstance(x, (list, tuple, array)):
             r.extend(flatten(x))
         elif isinstance(x, GeneratorType):
