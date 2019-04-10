@@ -88,7 +88,7 @@ class TestExtract(FileBasedTesting):
         test_file = self.get_test_loc('extract/readonly/read_only.tar.gz', copy=True)
         """
         This test file was created with:
-            import tarfile, time, datetime, StringIO, os
+            import tarfile, time, datetime, io, os
             TEXT = 'something\n'
             tar = tarfile.open('read_only.tar.gz', 'w:gz')
             for i in range(0, 2):
@@ -101,7 +101,7 @@ class TestExtract(FileBasedTesting):
                 tarinfo.type = tarfile.REGTYPE
                 tarinfo.mode = 0 # this is the readonly part
                 tarinfo.mtime = time.mktime(datetime.datetime.now().timetuple())
-                file = StringIO.StringIO()
+                file = io.StringIO()
                 file.write(TEXT)
                 file.seek(0)
                 tarinfo.size = len(TEXT)

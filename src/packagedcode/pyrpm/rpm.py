@@ -35,7 +35,7 @@ file.
 
 from __future__ import absolute_import
 
-from StringIO import StringIO
+from io import StringIO
 import struct
 import re
 

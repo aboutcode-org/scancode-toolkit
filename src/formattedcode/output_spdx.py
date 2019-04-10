@@ -344,7 +344,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     # encode to UTF8 bytes.
 
     if package.files:
-        from StringIO import StringIO
+        from io import StringIO
         spdx_output = StringIO()
         write_document(doc, spdx_output, validate=False)
         result = spdx_output.getvalue()

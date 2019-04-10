@@ -140,7 +140,7 @@ class Godep(object):
         """
         Load a Godeps JSON string.
         """
-        from cStringIO import StringIO
+        from io import StringIO
         self.load(StringIO(string))
         return self
 
