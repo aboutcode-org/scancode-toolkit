@@ -49,14 +49,6 @@ from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode import text
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 """
 Minimal wrapper for executing external commands in sub-processes. The approach
