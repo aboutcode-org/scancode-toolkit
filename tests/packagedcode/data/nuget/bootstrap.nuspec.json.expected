@@ -36,7 +36,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": "Copyright 2015",
-  "license_expression": null,
+  "license_expression": "mit",
   "declared_license": "https://github.com/twbs/bootstrap/blob/master/LICENSE",
   "notice_text": null,
   "manifest_path": null,

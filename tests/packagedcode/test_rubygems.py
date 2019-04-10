@@ -32,10 +32,11 @@ import json
 import os
 from unittest.case import expectedFailure
 
+import saneyaml
+
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
-
 
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
@@ -100,6 +101,16 @@ class TestRubyGemspec(FileBasedTesting):
             'rubygems/gemspec/with_variables.gemspec.expected.json')
 
 
+class TestRubyGemMetadata(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_build_rubygem_package_does_not_crash(self):
+        test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
+        with open(test_file) as tf:
+            metadata = saneyaml.load(tf.read())
+        rubygems.build_rubygem_package(metadata)        
+
+
 def relative_walk(dir_path, extension='.gem'):
     """
     Walk `dir_path` and yield paths that end with `extension` relative to
@@ -122,7 +133,9 @@ def create_test_function(test_loc, test_name, regen=False):
     def check_rubygem(self):
         loc = self.get_test_loc(test_loc)
         expected_json_loc = loc + '.json'
-        package = [rubygems.get_gem_package(location=loc).to_dict()]
+        package = rubygems.get_gem_package(location=loc)
+        package.license_expression = package.compute_normalized_license()
+        package = [package.to_dict()]
         if regen:
             with open(expected_json_loc, 'wb') as ex:
                 json.dump(package, ex, indent=2)

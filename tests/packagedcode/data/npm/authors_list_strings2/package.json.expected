@@ -44,7 +44,7 @@
   "vcs_url": "git+http://github.com/gomfunkel/node-exif.git",
   "copyright": null,
   "license_expression": null,
-  "declared_license": null,
+  "declared_license": [],
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

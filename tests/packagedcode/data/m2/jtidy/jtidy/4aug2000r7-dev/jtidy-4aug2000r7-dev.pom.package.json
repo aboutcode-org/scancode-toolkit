@@ -29,8 +29,15 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/jtidy/trunk/jtidy/", 
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "Java HTML Tidy License\nhttp://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
+  "license_expression": "unknown", 
+  "declared_license": [
+    {
+      "name": "Java HTML Tidy License", 
+      "url": "http://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

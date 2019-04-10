@@ -147,7 +147,7 @@
           "start_line": 25,
           "end_line": 51,
           "matched_rule": {
-            "identifier": "bsd-original-uc_4.RULE",
+            "identifier": "bsd-original-uc_3.RULE",
             "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
@@ -155,7 +155,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 241,
+            "matched_length": 241,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -246,7 +251,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 50,
+            "matched_length": 50,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         },
         {
@@ -274,7 +284,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 50,
+            "matched_length": 50,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],

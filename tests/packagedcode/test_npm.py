@@ -217,6 +217,27 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_utils_merge_1_0_0(self):
+        test_file = self.get_test_loc('npm/utils-merge-1.0.0/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/utils-merge-1.0.0/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_mime_1_3_4(self):
+        test_file = self.get_test_loc('npm/mime-1.3.4/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/mime-1.3.4/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_express_jwt_3_4_0(self):
+        test_file = self.get_test_loc('npm/express-jwt-3.4.0/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/express-jwt-3.4.0/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
     def test_vcs_repository_mapper(self):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'

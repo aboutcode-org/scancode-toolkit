@@ -1,0 +1,10 @@
+license_expressions:
+  - ((epl-2.0 OR apache-2.0) OR (gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 WITH openjdk-exception))
+    AND unicode AND public-domain AND mit AND zlib AND zlib
+  - epl-2.0 OR apache-2.0
+  - unicode
+  - unicode
+  - public-domain
+  - mit
+  - zlib
+  - zlib

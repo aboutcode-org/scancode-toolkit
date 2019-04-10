@@ -28,6 +28,7 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 import simplejson
+from six import string_types
 
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
@@ -100,6 +101,11 @@ class JsonPrettyOutput(OutputPlugin):
         write_json(results, output_file=output_json_pp, pretty=True)
 
 
+def get_opened_file(output_file):
+    if isinstance(output_file, string_types()):
+        return open(output_file, 'wb')
+
+
 def write_json(results, output_file, pretty=False, **kwargs):
     """
     Write `results` to the `output_file` opened file-like object.
@@ -110,8 +116,17 @@ def write_json(results, output_file, pretty=False, **kwargs):
         kwargs.update(dict(indent=2 * b' '))
     else:
         kwargs.update(dict(separators=(b',', b':',)))
-    output_file.write(simplejson.dumps(results, **kwargs))
-    output_file.write(b'\n')
+
+    close_of = False
+    try:
+        if isinstance(output_file, string_types):
+            output_file = open(output_file, 'wb')
+            close_of = True
+        output_file.write(simplejson.dumps(results, **kwargs))
+        output_file.write(b'\n')
+    finally:
+        if close_of:
+            output_file.close()
 
 
 def get_results(codebase, as_list=False, **kwargs):

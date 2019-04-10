@@ -33,8 +33,12 @@ Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
 special_names = (
-    'COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
-    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
+    'COPYING', 'COPYRIGHT', 'NOTICE', 
+    'LICENSE', 'LICENCE', 'LICENSING', 'LICENCING',
+    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 
+    'COMMITMENT'
+)
+
 
 special_names_lower = tuple(x.lower() for x in special_names)
 

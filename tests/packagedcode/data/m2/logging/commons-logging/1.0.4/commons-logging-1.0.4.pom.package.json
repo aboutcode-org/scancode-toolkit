@@ -92,8 +92,15 @@
   "code_view_url": "http://cvs.apache.org/viewcvs/jakarta-commons/logging/", 
   "vcs_url": "cvs+pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/logging", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
+  "license_expression": "apache-2.0", 
+  "declared_license": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

@@ -57,6 +57,7 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
                 '--copyright',
                 '--info',
                 '--classify',
+                '--license-diag',
                 '--license-clarity-score',
                 test_dir, '--json', result_file]
         run_scan_click(args)

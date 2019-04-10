@@ -6,10 +6,18 @@
  "qualifiers": null,
  "subpath": null,
  "primary_language": "Rust",
- "description": null,
+ "description": "A simple to use, efficient, and full featured  Command Line Argument Parser",
  "release_date": null,
- "parties": {},
- "keywords": {},
+ "parties": [
+   {
+     "type": "person",
+     "role": "author",
+     "name": "Kevin K.",
+     "email": "kbknapp@gmail.com",
+     "url": null
+   }
+ ],
+ "keywords": [],
  "homepage_url": null,
  "download_url": null,
  "size": null,
@@ -25,11 +33,11 @@
  "declared_license": null,
  "notice_text": null,
  "manifest_path": null,
- "dependencies": {},
+ "dependencies": [],
  "contains_source_code": null,
- "source_packages": {},
+ "source_packages": [],
  "purl": "pkg:cargo/clap@2.32.0",
- "repository_homepage_url": "https://crates.io//crates/clap",
- "repository_download_url": "https://crates.io/api/v1//crates/clap/2.32.0/download",
- "api_data_url": "https://crates.io/api/v1//crates/clap"
+ "repository_homepage_url": "https://crates.io/crates/clap",
+ "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
+ "api_data_url": "https://crates.io/api/v1/crates/clap"
 }

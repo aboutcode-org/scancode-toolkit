@@ -28,11 +28,21 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from itertools import islice
-from itertools import izip
+
+# Python 2 and 3 support
+try:
+        # Python 2
+    import itertools.izip as zip
+except ImportError:
+        # Python 3
+        pass
+
 import re
 from zlib import crc32
 
+from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
+
 
 """
 Utilities to break texts in lines and tokens (aka. words) with specialized version
@@ -71,9 +81,12 @@ query_pattern = '[^_\W]+\+?[^_\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
-def query_tokenizer(text, lower=True):
+def query_tokenizer(text, stopwords=STOPWORDS):
     """
-    Return an iterable of tokens from a unicode query text.
+    Return an iterable of tokens from a unicode query text. Ignore words that
+    exist as lowercase in the `stopwords` set.
+
+    For example::
     >>> list(query_tokenizer(''))
     []
     >>> list(query_tokenizer('some Text with   spAces! + _ -'))
@@ -86,10 +99,17 @@ def query_tokenizer(text, lower=True):
     [u'hi', u'some', u'text', u'with', u'noth+', u'ing', u'junk', u'spaces']
 
     """
+    return _query_tokenizer(text.lower(), stopwords)
+
+
+def _query_tokenizer(text, stopwords=STOPWORDS):
+    """
+    Return an iterable of tokens from a unicode query text. Ignore words that
+    exist as lowercase in the `stopwords` set.
+    """
     if not text:
         return []
-    text = lower and text.lower() or text
-    return (token for token in word_splitter(text) if token)
+    return (token for token in word_splitter(text) if token and token not in stopwords)
 
 
 # Alternate pattern which is the opposite of query_pattern used for
@@ -98,13 +118,13 @@ not_query_pattern = '[_\W\s\+]+[_\W\s]?'
 
 # collect tokens and non-token texts in two different groups
 _text_capture_pattern = (
-    '(?P<token>'
-    +query_pattern
-    +')'
-    +'|'
-    +'(?P<punct>'
-    +not_query_pattern
-    +')'
+    '(?P<token>' +
+        query_pattern +
+    ')' +
+    '|' +
+    '(?P<punct>' +
+        not_query_pattern +
+    ')'
 )
 tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 
@@ -168,7 +188,7 @@ def ngrams(iterable, ngram_length):
     >>> list(ngrams(tuple([1,2,3,4,5]), 2))
     [(1, 2), (2, 3), (3, 4), (4, 5)]
     """
-    return izip(*(islice(iterable, i, None) for i in range(ngram_length)))
+    return zip(*(islice(iterable, i, None) for i in range(ngram_length)))
 
 
 def select_ngrams(ngrams, with_pos=False):

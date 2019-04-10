@@ -32,7 +32,7 @@
   "code_view_url": "https://svnweb.freebsd.org/ports/head/devel/rubygem-facets",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "gpl-2.0 AND unknown",
   "declared_license": "RUBY OR GPLv2",
   "notice_text": null,
   "manifest_path": null,

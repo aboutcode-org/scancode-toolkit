@@ -1,0 +1,28 @@
+The FreeRTOS GPL exception text follows:
+
+Any FreeRTOS *source code*, whether modified or in it's original release form,
+or whether in whole or in part, can only be distributed by you under the terms
+of the GNU General Public License plus this exception.  An independent module is
+a module which is not derived from or based on FreeRTOS.
+
+Clause 1:
+
+Linking FreeRTOS with other modules is making a combined work based on FreeRTOS.
+Thus, the terms and conditions of the GNU General Public License V2 cover the
+whole combination.
+
+As a special exception, the copyright holders of FreeRTOS give you permission to
+link FreeRTOS with independent modules to produce a statically linked
+executable, regardless of the license terms of these independent modules, and to
+copy and distribute the resulting executable under terms of your choice,
+provided that you also meet, for each linked independent module, the terms and
+conditions of the license of that module.  An independent module is a module
+which is not derived from or based on FreeRTOS.
+
+Clause 2:
+
+FreeRTOS may not be used for any competitive or comparative purpose, including
+the publication of any form of run time or compile time metric, without the
+express permission of Real Time Engineers Ltd. (this is the norm within the
+industry and is intended to ensure information accuracy).
+

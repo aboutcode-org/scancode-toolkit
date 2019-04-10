@@ -36,7 +36,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": "Copyright \u00a9 Microsoft Corporation",
-  "license_expression": null,
+  "license_expression": "ms-net-library",
   "declared_license": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
   "notice_text": null,
   "manifest_path": null,

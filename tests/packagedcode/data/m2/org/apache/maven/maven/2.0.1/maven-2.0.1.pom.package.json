@@ -85,8 +85,15 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/components/tags/maven-2.0.1", 
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/components/tags/maven-2.0.1", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "license_expression": "apache-2.0", 
+  "declared_license": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

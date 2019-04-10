@@ -251,7 +251,7 @@ def run_scripts(configs, root_dir, configured_python, quiet=False):
         print("* Configuring ...")
     # Run Python scripts for each configurations
     for py_script in get_conf_files(configs, root_dir, python_scripts):
-        cmd = [configured_python, '"' + os.path.join(root_dir, py_script) + '"']
+        cmd = ['"' + configured_python + '"', '"' + os.path.join(root_dir, py_script) + '"']
         call(cmd, root_dir)
 
     # Run sh_script scripts for each configurations

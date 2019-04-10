@@ -1,0 +1,6 @@
+key: bsd-top-gpl-addition
+short_name: BSD 3-Clause with GPL reference
+name: BSD 3-Clause with GPL reference
+category: Permissive
+owner: Initio Corporation
+notes: this license requires top of the file notice. See in linux kernels

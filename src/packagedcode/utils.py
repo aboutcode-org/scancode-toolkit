@@ -26,6 +26,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
+from license_expression import Licensing
 from six import string_types
 
 
@@ -50,8 +53,8 @@ VCS_URLS = (
 )
 
 
-#TODO this does not really normalize the URL
-#TODO handle vcs_tool
+# TODO this does not really normalize the URL
+# TODO handle vcs_tool
 def normalize_vcs_url(repo_url, vcs_tool=None):
     """
     Return a normalized vcs_url version control URL given some `repo_url` and an
@@ -102,12 +105,12 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
         else:
             # git@github.com/Filirom1/npm2aur.git
             host, _, repo = right.partition('/')
-            
+
         if any(r in host for r in ('bitbucket', 'gitlab', 'github')):
             scheme = 'https'
         else:
             scheme = 'git'
-            
+
         return '%(scheme)s://%(host)s/%(repo)s' % locals()
 
     # FIXME: where these URL schemes come from??
@@ -116,10 +119,10 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
             'bitbucket': 'https://bitbucket.org/%(repo)s',
             'github': 'https://github.com/%(repo)s',
             'gitlab': 'https://gitlab.com/%(repo)s',
-            'gist': 'https://gist.github.com/%(repo)s',}
+            'gist': 'https://gist.github.com/%(repo)s', }
         hoster, _, repo = repo_url.partition(':')
         return hoster_urls[hoster] % locals()
-    
+
     if len(repo_url.split('/')) == 2:
         # implicit github, but that's only on NPM?
         return 'https://github.com/%(repo_url)s' % locals()
@@ -131,14 +134,13 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
 parse_repo_url = normalize_vcs_url
 
 
-
 def build_description(summary, description):
     """
     Return a description string from a summary and description
     """
     summary = (summary or '').strip()
     description = (description or '').strip()
-    
+
     if not description:
         description = summary
     else:
@@ -146,3 +148,37 @@ def build_description(summary, description):
             description = '\n'.join([summary , description])
 
     return description
+
+
+def combine_expressions(expressions, licensing=Licensing()):
+    """
+    Return a combined license expression string with AND, given a list of
+    license expressions strings.
+
+    For example:
+    >>> a = 'mit'
+    >>> b = 'gpl'
+    >>> combine_expressions([a, b])
+    'mit AND gpl'
+    >>> assert 'mit' == combine_expressions([a])
+    >>> combine_expressions([])
+    >>> combine_expressions(None)
+    >>> combine_expressions(('gpl', 'mit', 'apache',))
+    'gpl AND mit AND apache'
+    """
+    if not expressions:
+        return
+
+    if not isinstance(expressions, (list, tuple)):
+        raise TypeError(
+            'expressions should be a list or tuple and not: {}'.format(
+                type(expressions)))
+
+    # Remove duplicate element in the expressions list
+    expressions = OrderedDict((x, True) for x in expressions).keys()
+
+    if len(expressions) == 1:
+        return expressions[0]
+
+    expressions = [licensing.parse(le, simple=True) for le in expressions]
+    return str(licensing.AND(*expressions))

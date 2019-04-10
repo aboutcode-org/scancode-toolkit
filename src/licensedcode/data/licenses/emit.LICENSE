@@ -1,0 +1,32 @@
+The Enhanced MIT License
+
+Introduction
+
+This license is exactly like the MIT License, with one exception –
+Any distribution of this source code or any modification thereof in source code format, must be done under the Enhanced MIT license and not under any other licenses, such as GPL.
+
+The Reason
+
+We believe MIT license has a bug since it allows others to use it against its nature. Our belief is that the MIT license is intended to make source code available to anyone who wants to use it without additional obligations, but we have found cases where someone takes a project licensed under MIT license, adds a few lines of source code to it, and then changes the licensing to a different, more restrictive license which is against the nature and the intent of the MIT license. By doing so, the source code released under the original MIT is no longer a true “free/open” source code, thus undermining the intention of the original creator of the source code.
+The concept of this Enhanced MIT license is simple and more robust – you can do what you want with this source code, exactly like any other MIT license, but if you release it again as open source (even if modified), you must release it under this Enhanced MIT license – to be clear, this is not a “viral” license, it only refers to the actual source code released under this license and not to other components interacting with it. If GPL is a viral license, this license can be described as a “robust” one as it prevents licensing changes that are against its nature and it defends its own licensing principles. The essence of the Enhanced MIT license is to prevent bullies from using open source code that is truly free and open under the MIT License and turning it into other viral and more restrictive licenses – such as GPL.
+
+Q: Can I build an application with it, or DLL, or any other binary distribution, and not share the source code?
+A: Yes, exactly like in a regular MIT license
+
+Q: Can I use the EMIT license in combination with other source codes under other licenses without being forced to change the license for the other source codes?
+A: Yes, this license does not require any change to other source codes, and it allows you to distribute it with other source code licensed under other licenses.
+
+Q: Can I add code to this license and then change the license to something else, such as GPL? Or MIT?
+A: No, if you add/change the source code, the license must be kept as Enhanced MIT license.
+
+Official Wording of The EMIT
+
+The Enhanced MIT License (EMIT)
+Copyright (c) 2016 Wix.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+1) the above copyright notice, this permission notice and the complete introduction section above shall be included in all copies or substantial portions of the Software.
+2) when the Software is distributed as source code, the licensee is prohibited to change the license of the Software to any “viral” copyleft-type license, such as, inter alia: GPL, LGPL, EPL, MPL, etc.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

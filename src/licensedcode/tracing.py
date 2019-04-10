@@ -30,8 +30,10 @@ from itertools import chain
 from functools import partial
 import textwrap
 
-from licensedcode import query
 from licensedcode.spans import Span
+from licensedcode import tokenize
+from licensedcode.stopwords import STOPWORDS
+
 
 """
 Utility function to trace matched texts.
@@ -57,7 +59,8 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
             get_match_itext(match, width))
 
 
-def get_matched_qtext(match, location=None, query_string=None, idx=None, width=120, margin=0):
+def get_matched_qtext(match, location=None, query_string=None, idx=None,
+                      width=120, margin=0):
     """
     Return the matched query text as a wrapped string of `width` given a match, a
     query location or string and an index.
@@ -69,7 +72,8 @@ def get_matched_qtext(match, location=None, query_string=None, idx=None, width=1
     If `width` is a number superior to zero, the texts are wrapped to width with an
     optional `margin`.
     """
-    return format_text(matched_query_tokens_str(match, location, query_string, idx), width=width, margin=margin)
+    mqts = matched_query_tokens_str(match, location, query_string, idx)
+    return format_text(mqts, width=width, margin=margin)
 
 
 def get_match_itext(match, width=120, margin=0):
@@ -83,7 +87,8 @@ def get_match_itext(match, width=120, margin=0):
     If `width` is a number superior to zero, the texts are wrapped to width with an
     optional `margin`.
     """
-    return format_text(matched_rule_tokens_str(match), width=width, margin=margin)
+    mrts = matched_rule_tokens_str(match)
+    return format_text(mrts, width=width, margin=margin)
 
 
 def format_text(tokens, width=120, no_match='<no-match>', margin=4):
@@ -95,14 +100,17 @@ def format_text(tokens, width=120, no_match='<no-match>', margin=4):
     tokens = map(nomatch, tokens)
     noop = lambda x: [x]
     initial_indent = subsequent_indent = u' ' * margin
-    wrapper = partial(textwrap.wrap, width=width, break_on_hyphens=False,
-                      initial_indent=initial_indent,
-                      subsequent_indent=subsequent_indent)
+    wrapper = partial(textwrap.wrap,
+        width=width,
+        break_on_hyphens=False,
+        initial_indent=initial_indent,
+        subsequent_indent=subsequent_indent)
     wrap = width and wrapper or noop
     return u'\n'.join(wrap(u' '.join(tokens)))
 
 
-def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
+def matched_query_tokens_str(match, location=None, query_string=None, idx=None,
+                             stopwords=STOPWORDS):
     """
     Return an iterable of matched query token strings given a query file at
     `location` or a `query_string`, a match and an index.
@@ -113,8 +121,8 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
     assert idx
     dictionary_get = idx.dictionary.get
 
-    tokens = (query.query_tokenizer(line, lower=False)
-              for _ln, line in query.query_lines(location, query_string))
+    tokens = (tokenize._query_tokenizer(line, stopwords=stopwords)
+              for _ln, line in tokenize.query_lines(location, query_string))
     tokens = chain.from_iterable(tokens)
     match_qspan = match.qspan
     match_qspan_start = match_qspan.start
@@ -123,7 +131,11 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
     started = False
     finished = False
     for token in tokens:
-        token_id = dictionary_get(token.lower())
+        toklow = token.lower()
+        if toklow in stopwords:
+            continue
+
+        token_id = dictionary_get(toklow)
         if token_id is None:
             if not started:
                 continue
@@ -156,7 +168,7 @@ def matched_rule_tokens_str(match):
     ispan = match.ispan
     ispan_start = ispan.start
     ispan_end = ispan.end
-    for pos, token in enumerate(match.rule.tokens(lower=False)):
+    for pos, token in enumerate(match.rule.tokens()):
         if ispan_start <= pos <= ispan_end:
             if pos in ispan:
                 yield token

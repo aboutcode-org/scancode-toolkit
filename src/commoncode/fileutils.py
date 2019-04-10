@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 # Python 2 and 3 support
 try:
     # Python 2
+    unicode
     str = unicode  # NOQA
 except NameError:
     # Python 3
@@ -58,6 +59,7 @@ except ImportError:
 from commoncode import filetype
 from commoncode.filetype import is_rwx
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 # this exception is not available on posix
 try:

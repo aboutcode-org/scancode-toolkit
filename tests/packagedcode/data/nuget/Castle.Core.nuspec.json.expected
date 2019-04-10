@@ -36,7 +36,7 @@
   "code_view_url": null,
   "vcs_url": "git+https://github.com/castleproject/Core",
   "copyright": "Copyright (c) 2004-2017 Castle Project - http://www.castleproject.org/",
-  "license_expression": null,
+  "license_expression": "apache-2.0",
   "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
   "notice_text": null,
   "manifest_path": null,
