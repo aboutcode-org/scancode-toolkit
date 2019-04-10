@@ -102,7 +102,7 @@ if TRACE or TRACE_QR or TRACE_SPDX:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a) for a in args))
 
 # for the cases of very long lines, we break in abritrary pseudo lines at 50
 # tokens to avoid getting huge query runs for texts on a single line (e.g.

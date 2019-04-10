@@ -88,7 +88,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if not location:
         return iter([])
 
-    if not isinstance(location, basestring):
+    if not isinstance(location, (str, bytes)):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         if TRACE:
