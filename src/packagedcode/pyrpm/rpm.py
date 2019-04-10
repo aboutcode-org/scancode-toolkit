@@ -1,8 +1,8 @@
-# -*- coding: iso-8859-15 -*-
+# -*- coding: utf-8 -*-
 # -*- Mode: Python; py-ident-offset: 4 -*-
 # vim:ts=4:sw=4:et
 
-# Copyright (c) M�rio Morgado
+# Copyright (c) Mário Morgado
 #
 # Redistribution and use in source and binary forms, with or without modification,
 # are permitted provided that the following conditions are met:
@@ -25,169 +25,174 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-'''
+"""
 PyRPM
 =====
 
 PyRPM is a pure python, simple to use, module to read information from a RPM
 file.
-'''
+"""
 
 from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
-from io import StringIO
+from io import BytesIO
 import struct
-import re
 
 from . import rpmdefs
 
-HEADER_MAGIC_NUMBER = re.compile('(\x8e\xad\xe8)')
 
+def find_magic_number(data,):
+    """
+    Return the start position where the magic number was found in the `data`
+    file-like object or None if not found.
+    """
+    magic_number = rpmdefs.RPM_HEADER_MAGIC_NUMBER
+    lmn = len(magic_number)
 
-def find_magic_number(regexp, data):
-    ''' find a magic number in a buffer
-    '''
-    string = data.read(1)
-    while 1:
-        match = regexp.search(string)
-        if match:
-            return data.tell() - 3
-        byte = data.read(1)
-        if not byte:
-            return None
-        else:
-            string += byte
+    base = data.tell()
+    while True:
+        chunk = data.read(lmn)
+        if not chunk or len(chunk) != lmn:
+            return
+        if chunk == magic_number:
+            return base
+        base += 1
+        data.seek(base)
 
 
 class Entry(object):
-    ''' RPM Header Entry
-    '''
-
-    def __init__(self, entry, store):
-        self.entry = entry
-        self.store = store
-
-        self.switch = {
-            rpmdefs.RPM_DATA_TYPE_CHAR:            self.__readchar,
-            rpmdefs.RPM_DATA_TYPE_INT8:            self.__readint8,
-            rpmdefs.RPM_DATA_TYPE_INT16:           self.__readint16,
-            rpmdefs.RPM_DATA_TYPE_INT32:           self.__readint32,
-            rpmdefs.RPM_DATA_TYPE_INT64:           self.__readint64,
-            rpmdefs.RPM_DATA_TYPE_STRING:          self.__readstring,
-            rpmdefs.RPM_DATA_TYPE_BIN:             self.__readbin,
-            rpmdefs.RPM_DATA_TYPE_STRING_ARRAY:    self.__readstring,
-            rpmdefs.RPM_DATA_TYPE_ASN1:            self.__readbin,
-            rpmdefs.RPM_DATA_TYPE_OPENPGP:         self.__readbin,
-            rpmdefs.RPM_DATA_TYPE_I18NSTRING_TYPE: self.__readstring
-        }
-        self.store.seek(entry[2])
-        self.value = self.switch[entry[1]]()
-        self.tag = entry[0]
-
-    def __str__(self):
-        return "(%s, %s)" % (self.tag, self.value,)
+    """
+    RPM Header Entry
+    """
+    def __init__(self, tag, type, value):  # NOQA
+        self.tag = tag
+        self.type = type
+        self.value = value
 
     def __repr__(self):
-        return "(%s, %s)" % (self.tag, self.value,)
+        return 'Entry(%r, %r, %r)' % (self.tag, self.type, self.value,)
 
-    def __readchar(self, offset=1):
-        ''' store is a pointer to the store offset
-        where the char should be read
-        '''
-        data = self.store.read(offset)
-        fmt = '!' + str(offset) + 'c'
-        value = struct.unpack(fmt, data)
-        return value
+    @classmethod
+    def parse_entry(cls, etag, etype, eoffset, ecount, data_store):
 
-    def __readint8(self, offset=1):
-        ''' int8 = 1byte
-        '''
-        return self.__readchar(offset)
+        reader_by_type = {
+            rpmdefs.RPM_DATA_TYPE_NULL:            cls.read_null,
+            rpmdefs.RPM_DATA_TYPE_CHAR:            cls.read_char,
+            rpmdefs.RPM_DATA_TYPE_INT8:            cls.read_int8,
+            rpmdefs.RPM_DATA_TYPE_INT16:           cls.read_int16,
+            rpmdefs.RPM_DATA_TYPE_INT32:           cls.read_int32,
+            rpmdefs.RPM_DATA_TYPE_INT64:           cls.read_int64,
+            rpmdefs.RPM_DATA_TYPE_STRING:          cls.read_string,
+            rpmdefs.RPM_DATA_TYPE_BIN:             cls.read_bin,
+            rpmdefs.RPM_DATA_TYPE_STRING_ARRAY:    cls.read_string_array,
+            rpmdefs.RPM_DATA_TYPE_ASN1:            cls.read_bin,
+            rpmdefs.RPM_DATA_TYPE_OPENPGP:         cls.read_bin,
+            rpmdefs.RPM_DATA_TYPE_I18NSTRING_TYPE: cls.read_string
+        }
 
-    def __readint16(self, offset=1):
-        ''' int16 = 2bytes
-        '''
-        data = self.store.read(offset * 2)
-        fmt = '!' + str(offset) + 'i'
-        value = struct.unpack(fmt, data)
-        return value
+        reader = reader_by_type[etype]
 
-    def __readint32(self, offset=1):
-        ''' int32 = 4bytes
-        '''
-        data = self.store.read(offset * 4)
-        fmt = '!' + str(offset) + 'i'
-        value = struct.unpack(fmt, data)
-        return value
+        # seek to position in store
+        data_store.seek(eoffset)
+        value = reader(data_store, ecount)
 
-    def __readint64(self, offset=1):
-        ''' int64 = 8bytes
-        '''
-        data = self.store.read(offset * 4)
-        fmt = '!' + str(offset) + 'l'
-        value = struct.unpack(fmt, data)
-        return value
+        return Entry(etag, etype, value)
 
-    def __readstring(self):
-        ''' read a string entry
-        '''
-        string = ''
-        while 1:
-            char = self.__readchar()
-            if char[0] == '\x00':  # read until '\0'
+    @classmethod
+    def _read(cls, fmt, store):
+        size = struct.calcsize(fmt)
+        data = store.read(size)
+        if len(data) == 0:
+            return b''
+
+        unpacked_data = struct.unpack(fmt, data)
+        if len(unpacked_data) == 1:
+            return unpacked_data[0]
+        else:
+            return unpacked_data
+
+    @classmethod
+    def read_null(cls, store, count):
+        return None
+
+    @classmethod
+    def read_char(cls, store, count=1):
+        return cls._read('!{}c'.format(count), store)
+
+    @classmethod
+    def read_int8(cls, store, count):
+        return cls._read('!{}B'.format(count), store)
+
+    @classmethod
+    def read_int16(cls, store, count):
+        return cls._read('!{}H'.format(count), store)
+
+    @classmethod
+    def read_int32(cls, store, count):
+        return cls._read('!{}I'.format(count), store)
+
+    @classmethod
+    def read_int64(cls, store, count):
+        return cls._read('!{}Q'.format(count), store)
+
+    @classmethod
+    def read_string(cls, store, count):
+        string = b''
+        while True:
+            char = cls.read_char(store, count=1)
+            if len(char) == 0 or char == b'\x00':
+                # read until '\0'
                 break
-            string += char[0]
-        return string
+            string += char
+        # We decode as UTF-8 by default and avoid errors with a replacement.
+        # UTF-8 should be the standard for RPMs, though for older rpms mileage
+        # may vary
+        return string and string.decode('utf-8', errors='replace') or None
 
-    def __readbin(self):
-        ''' read a binary entry
-        '''
-        if self.entry[0] == rpmdefs.RPMSIGTAG_MD5:
-            data = self.store.read(rpmdefs.MD5_SIZE)
-            value = struct.unpack('!' + rpmdefs.MD5_SIZE + 's', data)
-            return value
-        elif self.entry[0] == rpmdefs.RPMSIGTAG_PGP:
-            data = self.store.read(rpmdefs.PGP_SIZE)
-            value = struct.unpack('!' + rpmdefs.PGP_SIZE + 's', data)
-            return value
+    @classmethod
+    def read_string_array(cls, store, count):
+        return [cls.read_string(store, 1) for _ in range(count)]
+
+    @classmethod
+    def read_bin(cls, store, count):
+        return cls._read('!{}s'.format(count), store)
+
+    @classmethod
+    def read_i18n_string(cls, store, count):
+        return cls._read_('!{}s'.format(count), store)
 
 
 class Header(object):
-    ''' RPM Header Structure
-    '''
+    """
+    RPM Header Structure
+    """
 
-    def __init__(self, header, entries, store):
-        self.header = header
-        self.entries = entries
+    def __init__(self, header, entries_index, store):
         self.store = store
-        self.pentries = []
-        self.rentries = []
-        self.__readentries()
-
-    def __readentry(self, entry):
-        ''' [4bytes][4bytes][4bytes][4bytes]
-               TAG    TYPE   OFFSET  COUNT
-        '''
+        self.entries = []
         entryfmt = '!llll'
-        entry = struct.unpack(entryfmt, entry)
-        if entry[0] < rpmdefs.RPMTAG_MIN_NUMBER or\
-                entry[0] > rpmdefs.RPMTAG_MAX_NUMBER:
-            return None
-        return entry
 
-    def __readentries(self):
-        ''' read a rpm entry
-        '''
-        for entry in self.entries:
-            entry = self.__readentry(entry)
+        for entry_index in entries_index:
+            """
+            Each entry data is in the form
+             [4bytes][4bytes][4bytes][4bytes]
+              TAG     TYPE    OFFSET  COUNT
+            """
+            entry_data = struct.unpack(entryfmt, entry_index)
+            if not entry_data:
+                continue
+            etag, etype, eoffset, ecount = entry_data
+            if not (rpmdefs.RPMTAG_MIN_NUMBER <= etag <= rpmdefs.RPMTAG_MAX_NUMBER):
+                # TODO: log me!!!
+                continue
+            if etag not in rpmdefs.RPMTAGS:
+                # TODO: log me!!!
+                continue
+            entry = Entry.parse_entry(etag, etype, eoffset, ecount , store)
             if entry:
-                if entry[0] in rpmdefs.RPMTAGS:
-                    self.pentries.append(entry)
-
-        for pentry in self.pentries:
-            entry = Entry(pentry, self.store)
-            if entry:
-                self.rentries.append(entry)
+                self.entries.append(entry)
 
 
 class RPMError(BaseException):
@@ -197,141 +202,254 @@ class RPMError(BaseException):
 class RPM(object):
 
     def __init__(self, rpm):
-        ''' rpm - StringIO.StringIO | file
-        '''
+        """
+        Create a new RPM from an `rpm` file-like object.
+        """
         if hasattr(rpm, 'read'):  # if it walk like a duck..
             self.rpmfile = rpm
         else:
-            raise ValueError('invalid initialization: '
-                             'StringIO or file expected received %s'
-                                 % (type(rpm),))
-        self.binary = None
-        self.source = None
-        self.__entries = []
-        self.__headers = []
+            raise ValueError(
+                'Expected file-like object, but got: %r' % (type(rpm),))
+        self.is_binary = True
+        self.headers = []
+        self.entries_by_tag = {}
 
-        self.__readlead()
-        offset = self.__read_sigheader()
-        self.__readheaders(offset)
+        self.read_lead()
+        offset = self.read_sigheader()
+        self.read_headers(offset)
 
-    def __readlead(self):
-        ''' reads the rpm lead section
+    def read_lead(self):
+        """
+        Read the rpm lead section
 
-            struct rpmlead {
-               unsigned char magic[4];
-               unsigned char major, minor;
-               short type;
-               short archnum;
-               char name[66];
-               short osnum;
-               short signature_type;
-               char reserved[16];
-               } ;
-        '''
+        struct rpmlead {
+           unsigned char magic[4];
+           unsigned char major, minor;
+           short type;
+           short archnum;
+           char name[66];
+           short osnum;
+           short signature_type;
+           char reserved[16];
+           } ;
+        """
         lead_fmt = '!4sBBhh66shh16s'
         data = self.rpmfile.read(96)
         value = struct.unpack(lead_fmt, data)
 
         magic_num = value[0]
-        ptype = value[3]
+        package_type = value[3]
 
         if magic_num != rpmdefs.RPM_LEAD_MAGIC_NUMBER:
-            raise RPMError('wrong magic number this is not a RPM file')
+            raise RPMError('Wrong magic number: this is not a RPM file')
 
-        if ptype == 1:
-            self.binary = False
-            self.source = True
-        elif ptype == 0:
-            self.binary = True
-            self.source = False
+        if package_type == 0:
+            self.is_binary = True
+        elif package_type == 1:
+            self.is_binary = False
         else:
-            raise RPMError('wrong package type this is not a RPM file')
+            raise RPMError('Wrong package type: should either 0 (binary RPM) or 1 (source RPM).')
 
-    def __read_sigheader(self):
-        ''' read signature header
+    def read_sigheader(self):
+        """
+        Read signature header
 
-            ATN: this will not return any usefull information
-            besides the file offset
-        '''
-        start = find_magic_number(HEADER_MAGIC_NUMBER, self.rpmfile)
+        ATN: this will not return any usefull information
+        besides the file offset
+        """
+        start = find_magic_number(self.rpmfile)
         if not start:
             raise RPMError('invalid RPM file, signature header not found')
-        # return the offsite after the magic number
+        # return the offset after the magic number
         return start + 3
 
-    def __readheader(self, header):
-        ''' reads the header-header section
+    def read_header(self, header):
+        """
+        Read the header-header section
         [3bytes][1byte][4bytes][4bytes][4bytes]
           MN      VER   UNUSED  IDXNUM  STSIZE
-        '''
-        headerfmt = '!3sc4sll'
+        """
         if not len(header) == 16:
             raise RPMError('invalid header size')
 
+        headerfmt = '!3sc4sll'
         header = struct.unpack(headerfmt, header)
         magic_num = header[0]
         if magic_num != rpmdefs.RPM_HEADER_MAGIC_NUMBER:
             raise RPMError('invalid RPM header')
         return header
 
-    def __readheaders(self, offset):
-        ''' read information headers
-        '''
+    def read_headers(self, offset):
+        """
+        Read information headers
+        """
         # lets find the start of the header
         self.rpmfile.seek(offset)
-        start = find_magic_number(HEADER_MAGIC_NUMBER, self.rpmfile)
+        start = find_magic_number(self.rpmfile)
         # go back to the begining of the header
         self.rpmfile.seek(start)
         header = self.rpmfile.read(16)
-        header = self.__readheader(header)
-        entries = []
-        for entry in range(header[3]):
-            _entry = self.rpmfile.read(16)
-            entries.append(_entry)
-        store = StringIO(self.rpmfile.read(header[4]))
-        self.__headers.append(Header(header, entries, store))
+        header = self.read_header(header)
+        entries_index = []
+        entries_count = header[3]
+        for _entry in range(entries_count):
+            entry_index = self.rpmfile.read(16)
+            entries_index.append(entry_index)
+        store = BytesIO(self.rpmfile.read(header[4]))
+        header = Header(header, entries_index, store)
+        self.headers.append(header)
 
-        for header in self.__headers:
-            for entry in header.rentries:
-                self.__entries.append(entry)
+        for header in self.headers:
+            for entry in header.entries:
+                self.entries_by_tag[entry.tag] = entry
 
     def __iter__(self):
-        for entry in self.__entries:
+        for entry in self.entries_by_tag.values():
             yield entry
 
     def __getitem__(self, item):
-        for entry in self:
-            if entry.tag == item:
-                if entry.value and isinstance(entry.value, str):
-                    return entry.value
+        return self.get_entry_value(item)
 
+    def get_entry_value(self, tag):
+        """
+        Return the value of an Entry for the `tag` number or None.
+        """
+        entry = self.entries_by_tag.get(tag)
+        if not entry or not entry.value:
+            return
+        return entry.value
+
+    @property
     def name(self):
-        return self[rpmdefs.RPMTAG_NAME]
+        return self.get_entry_value(rpmdefs.RPMTAG_NAME)
 
+    @property
+    def epoch(self):
+        """
+        Return a epoch or None for the epoch 0 and if no epoch is defined.
+        """
+        epoch = self.get_entry_value(rpmdefs.RPMTAG_EPOCH)
+        if not epoch:
+            return
+        if isinstance(epoch, (tuple, list)):
+            epoch = epoch[0]
+        if not isinstance(epoch, str):
+            epoch = str(epoch)
+        if not epoch or epoch == '0':
+            return
+        if epoch.lower() == 'none':
+            return
+        return epoch or None
+
+    @property
+    def version(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_VERSION)
+
+    @property
+    def release(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_RELEASE)
+
+    @property
+    def arch(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_ARCH)
+
+    @property
+    def os(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_OS)
+
+    @property
+    def summary(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_SUMMARY)
+
+    @property
+    def description(self):
+        # the full description is often a long text
+        return self.get_entry_value(rpmdefs.RPMTAG_DESCRIPTION)
+
+    @property
+    def distribution(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_DISTRIBUTION)
+
+    @property
+    def vendor(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_VENDOR)
+
+    @property
+    def packager(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_PACKAGER)
+
+    @property
+    def license(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_LICENSE)
+
+    @property
+    def patch(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_PATCH)
+
+    @property
+    def group(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_GROUP)
+
+    @property
+    def url(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_URL)
+
+    @property
+    def dist_url(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_DISTURL)
+
+    @property
+    def source_rpm(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_SOURCERPM)
+
+    @property
+    def source_package(self):
+        return self.get_entry_value(rpmdefs.RPMTAG_SOURCEPACKAGE)
+
+    @property
     def package(self):
-        name = self[rpmdefs.RPMTAG_NAME]
-        version = self[rpmdefs.RPMTAG_VERSION]
-        return '-'.join([name, version, ])
+        return '-'.join([self.name, self.version])
 
+    @property
     def filename(self):
-        package = self.package()
-        release = self[rpmdefs.RPMTAG_RELEASE]
-        name = '-'.join([package, release, ])
-        arch = self[rpmdefs.RPMTAG_ARCH]
-        if self.binary:
-            return '.'.join([name, arch, 'rpm', ])
+        name = '-'.join([self.package, self.release])
+        arch = self.arch
+        if self.is_binary:
+            ext = 'rpm'
         else:
-            return '.'.join([name, arch, 'src.rpm', ])
+            ext = 'src.rpm'
+        return '.'.join([name, arch, ext])
 
     def get_tags(self):
-        '''
-        returns a dict of tags, keyed by name'''
+        """
+        returns a dict of tags, keyed by name
+        """
         tgs = {}
         for tagid, tagname in rpmdefs.RPMTAGS.items():
-            try:
-                tag = self[tagid]
-                if tag == 'None' or tag == None : tag = ''
-                tgs[tagname] = tag
-            except:
-                tgs[tagname] = ''
+            tag = self[tagid]
+            if not tag or tag == 'None':
+                tag = None
+            tgs[tagname] = tag
         return tgs
+
+    def to_dict(self):
+        return dict(
+            name=self.name,
+            epoch=self.epoch,
+            version=self.version,
+            release=self.release,
+            arch=self.arch,
+            os=self.os,
+            summary=self.summary,
+            description=self.description,
+            distribution=self.distribution,
+            vendor=self.vendor,
+            packager=self.packager,
+            license=self.license,
+            group=self.group,
+            url=self.url,
+            dist_url=self.dist_url,
+            source_rpm=self.source_rpm,
+            source_package=self.source_package,
+            is_binary=self.is_binary,
+        )
