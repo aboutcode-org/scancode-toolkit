@@ -148,8 +148,6 @@ setup(
         'backports.os == 0.1.1',
         'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
-        # required by saneyaml
-        'PyYAML >= 3.11, <=3.13',
         'saneyaml',
 
         # licensedcode
