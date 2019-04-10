@@ -40,6 +40,7 @@ from ctypes import POINTER
 from ctypes import create_string_buffer
 
 from commoncode import command
+from commoncode import compat
 from commoncode import fileutils
 from commoncode import paths
 
@@ -346,7 +347,7 @@ class Entry(object):
         path = func(self.entry_struct)
         if not path:
             path = func_w(self.entry_struct)
-        if isinstance(path, unicode):
+        if isinstance(path, compat.unicode):
             # FIXME: encoding MAY fail if the encoding is NOT UTF-8!
             # .... should we transliterate there?
             path = path.encode('utf-8')

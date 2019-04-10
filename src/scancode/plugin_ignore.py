@@ -32,6 +32,7 @@ from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
+from commoncode import compat
 
 
 # Tracing flags
@@ -53,7 +54,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, compat.unicode) and a or repr(a) for a in args))
 
 
 @pre_scan_impl

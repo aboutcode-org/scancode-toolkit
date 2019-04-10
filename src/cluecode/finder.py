@@ -32,7 +32,9 @@ import ipaddress
 import url as urlpy
 
 from cluecode import finder_data
+from commoncode import compat
 from textcode import analysis
+
 
 # Tracing flags
 TRACE = False
@@ -51,7 +53,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 """
 Find patterns in text lines such as a emails and URLs.
@@ -79,7 +81,7 @@ def find(location, patterns):
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, unicode(match), line, lineno
+                yield key, compat.unicode(match), line, lineno
 
 
 def unique_filter(matches):
@@ -233,7 +235,7 @@ def find_urls(location, unique=True):
 
     matches = apply_filters(matches, *filters)
     for _key, url, _line, lineno in matches:
-        yield unicode(url), lineno
+        yield compat.unicode(url), lineno
 
 
 EMPTY_URLS = set(['https', 'http', 'ftp', 'www', ])
@@ -434,7 +436,7 @@ def get_ip(s):
         return False
 
     try:
-        ip = ipaddress.ip_address(unicode(s))
+        ip = ipaddress.ip_address(compat.unicode(s))
         return ip
     except ValueError:
         return False

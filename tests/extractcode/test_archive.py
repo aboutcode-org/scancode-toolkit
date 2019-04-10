@@ -52,6 +52,7 @@ from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
+from commoncode import compat
 
 """
 For each archive type --when possible-- we are testing extraction of:
@@ -1907,7 +1908,7 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_with_non_ascii_path(self):
         test_file = self.get_test_loc('archive/rar/non_ascii_corrupted.rar')
         # The bug only occurs if the path was given as Unicode
-        test_file = unicode(test_file)
+        test_file = compat.unicode(test_file)
         test_dir = self.get_temp_dir()
         # raise an exception but still extracts some
         expected = Exception('Prefix found')
@@ -2404,7 +2405,7 @@ def to_posix(path):
     the windows explorer (except as a UNC or share name). It will be a valid path
     everywhere in Python. It will not be valid for windows command line operations.
     """
-    is_unicode = isinstance(path, unicode)
+    is_unicode = isinstance(path, compat.unicode)
     ntpath_sep = is_unicode and u'\\' or '\\'
     posixpath_sep = is_unicode and u'/' or '/'
     if is_posixpath(path):
@@ -2425,8 +2426,8 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         listed in the `test_file.excepted` file exist in the extracted target
         directory. Regen expected file if True.
         """
-        if not isinstance(test_file, unicode):
-            test_file = unicode(test_file)
+        if not isinstance(test_file, compat.unicode):
+            test_file = compat.unicode(test_file)
         test_file = self.get_test_loc(test_file)
         test_dir = self.get_temp_dir()
         warnings = test_function(test_file, test_dir)
@@ -2438,7 +2439,7 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
 
         len_test_dir = len(test_dir)
         extracted = sorted(path[len_test_dir:] for path in fileutils.resource_iter(test_dir, with_dirs=False))
-        extracted = [unicode(p) for p in extracted]
+        extracted = [compat.unicode(p) for p in extracted]
         extracted = [to_posix(p) for p in extracted]
 
         if on_linux:

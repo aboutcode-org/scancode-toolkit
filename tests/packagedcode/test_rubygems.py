@@ -37,7 +37,7 @@ import saneyaml
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
-
+from commoncode import compat
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
 # this is a multiple personality package (Java  and Ruby)
@@ -145,7 +145,7 @@ def create_test_function(test_loc, test_name, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if isinstance(test_name, unicode):
+    if isinstance(test_name, compat.string_types):
         test_name = test_name.encode('utf-8')
     check_rubygem.__name__ = test_name
     return check_rubygem

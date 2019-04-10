@@ -34,6 +34,7 @@ from commoncode.text import toascii
 from commoncode.text import unixlinesep
 from cluecode import copyrights_hint
 from textcode import analysis
+from commoncode import compat
 
 
 # Tracing flags
@@ -58,7 +59,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 """
 Detect and collect copyright statements.

@@ -34,6 +34,7 @@ from intbitset import intbitset
 from commoncode.dict_utils import sparsify
 
 from licensedcode.models import Rule
+from commoncode import compat
 
 """
 Approximate matching strategies using token sets and multisets.
@@ -132,7 +133,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (str, bytes)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 # TODO: add bigrams sets and multisets
 # TODO: see also https://github.com/bolo1729/python-memopt/blob/master/memopt/memopt.py for multisets

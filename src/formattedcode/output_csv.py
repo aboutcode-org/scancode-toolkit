@@ -31,21 +31,12 @@ from collections import OrderedDict
 
 import unicodecsv
 
+from commoncode import compat
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
-    basestring = str  # NOQA
 
 
 # Tracing flags
@@ -65,7 +56,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode)
+        return logger.debug(' '.join(isinstance(a, compat.string_types)
                                      and a or repr(a) for a in args))
 
 
@@ -325,7 +316,7 @@ def flatten_package(_package, path, prefix='package__'):
 
         pack[nk] = ''
 
-        if isinstance(val, (str, bytes)):
+        if isinstance(val, compat.string_types):
             pack[nk] = val
         else:
             # Use repr if not a string

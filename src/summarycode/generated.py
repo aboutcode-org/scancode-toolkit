@@ -36,6 +36,7 @@ from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import OTHER_SCAN_GROUP
 import typecode.contenttype
+from commoncode import compat
 
 """
 Tag files as generated.
@@ -58,7 +59,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 @scan_impl

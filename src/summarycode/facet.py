@@ -35,6 +35,7 @@ from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
+from commoncode import compat
 
 # Tracing flag
 TRACE = False
@@ -53,7 +54,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 """
 Assign a facet to a file.

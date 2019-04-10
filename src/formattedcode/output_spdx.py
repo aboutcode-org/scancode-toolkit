@@ -44,22 +44,12 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
+from commoncode import compat
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 # Tracing flags
 TRACE = False
@@ -78,7 +68,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode)
+        return logger.debug(' '.join(isinstance(a, compat.string_types)
                                      and a or repr(a) for a in args))
 
 """
