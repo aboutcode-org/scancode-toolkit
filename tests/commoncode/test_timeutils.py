@@ -96,7 +96,7 @@ class TestTimeStamp(FileBasedTesting):
 
     def test_tstamp2time9(self):
         dt_from_ts = tstamp2time('2010-06-30T21:26:40.000Z')
-        assert dt_from_ts == datetime(year=2010, month=06, day=30, hour=21, minute=26, second=40, microsecond=0, tzinfo=UTC())
+        assert dt_from_ts == datetime(year=2010, month=6, day=30, hour=21, minute=26, second=40, microsecond=0, tzinfo=UTC())
 
     def test_tstamp2time_raise(self):
         self.assertRaises(ValueError, tstamp2time, '201011A12T13:14:15Z')
