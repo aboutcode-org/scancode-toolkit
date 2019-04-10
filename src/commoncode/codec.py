@@ -26,6 +26,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+
+from commoncode.system import py2
+
 """
 Numbers to bytes or strings and URLs coder/decoders.
 """
@@ -33,6 +36,12 @@ Numbers to bytes or strings and URLs coder/decoders.
 padding = b'/'
 
 b85_symbols = b'0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~'
+
+if not py2:
+    # bytes are no longer "strings" on Python3, but an array of integers not characters
+    # FIXME: there is likely a better way
+    b85_symbols = tuple(bytes(c, encoding='ascii') for c in b85_symbols.decode('ascii'))
+
 len_b85_symbols = len(b85_symbols)
 
 
