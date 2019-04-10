@@ -38,7 +38,7 @@ def isoformat(utc_date):
 def get_file_mtime(location, iso=True):
     """
     Return a string containing the last modified date of a file formatted
-    as an ISO time stamp is ISO is True or a as raw number since epoch.
+    as an ISO time stamp if ISO is True or as a raw number since epoch.
     """
     date = ''
     # FIXME: use file types

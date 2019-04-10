@@ -50,7 +50,8 @@ def test_license_option_reports_license_expressions():
     result_file = test_env.get_temp_file('json')
     args = ['--license', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_license/license-expression/scan.expected.json'), result_file, regen=False)
+    test_loc = test_env.get_test_loc('plugin_license/license-expression/scan.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
 
 
 def test_scan_license_with_url_template():
@@ -58,6 +59,7 @@ def test_scan_license_with_url_template():
     result_file = test_env.get_temp_file('json')
     args = ['--license', '--license-url-template', 'https://example.com/urn:{}',
              test_dir, '--json-pp', result_file]
+    test_loc = test_env.get_test_loc('plugin_license/license_url.expected.json')
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_license/license_url.expected.json'), result_file)
+    check_json_scan(test_loc, result_file)
 

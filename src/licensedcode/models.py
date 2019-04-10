@@ -83,6 +83,7 @@ OTHER_CATEGORIES = set([
     'Free Restricted',
     'Proprietary Free',
     'Unstated License',
+    'Hardware License',
 ])
 
 
@@ -273,7 +274,7 @@ class License(object):
 
                 setattr(self, k, v)
 
-        except Exception, e:
+        except Exception as e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
@@ -374,7 +375,7 @@ class License(object):
             # local text consistency
             text = lic.text
 
-            license_qtokens = tuple(query_tokenizer(text, lower=True))
+            license_qtokens = tuple(query_tokenizer(text))
             if not license_qtokens:
                 info('No license text')
             else:
@@ -460,9 +461,9 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 
 def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
     """
-    Return a mapping of key->license and an iterable of license detection rules
-    loaded from licenses and rules files.
-    Raise a MissingLicenses exceptions if a rule references unknown license key.
+    Yield Rule objects loaded from license files found in `licenses_data_dir`
+    and rule files fourn in `rules_data_dir`. Raise a Exceptions if a rule is
+    inconsistent or incorrect.
     """
     from licensedcode.cache import get_licenses_db
     licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
@@ -801,7 +802,7 @@ class Rule(object):
             self.license_expression = expression.render()
             self.license_expression_object = expression
 
-    def tokens(self, lower=True):
+    def tokens(self):
         """
         Return an iterable of token strings for this rule. Length, relevance and
         minimum_coverage may be recomputed as a side effect.
@@ -819,7 +820,7 @@ class Rule(object):
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
-        for token in query_tokenizer(self.text(), lower=lower):
+        for token in query_tokenizer(self.text()):
             length += 1
             yield token
 
@@ -852,7 +853,7 @@ class Rule(object):
 
     def same_licensing(self, other):
         """
-        Return True if the other rule has a the same licensing as this rule.
+        Return True if the other rule has the same licensing as this rule.
         """
         if self.license_expression and other.license_expression:
             return self.licensing.is_equivalent(
@@ -1003,7 +1004,7 @@ class Rule(object):
         Dump a representation of this rule as two files:
          - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
-        Does nothing if this rule was created a from a License (e.g.
+        Does nothing if this rule was created from a License (e.g.
         `is_license` is True)
         """
         if self.is_license:
@@ -1028,7 +1029,7 @@ class Rule(object):
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
-        except Exception, e:
+        except Exception as e:
             print('#############################')
             print('INVALID LICENSE RULE FILE:', 'file://' + self.data_file)
             print('#############################')
@@ -1065,7 +1066,7 @@ class Rule(object):
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
 
-        if not (0 <= self.relevance <= 100):
+        if not (0 <= self.minimum_coverage <= 100):
             msg = (
                 'License rule {} data file has an invalid minimum_coverage. '
                 'Should be between 0 and 100: {}')

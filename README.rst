@@ -30,7 +30,7 @@ Why is ScanCode better?
   outputs.
 
 - You can save your scan results as **JSON, HTML, CSV or SPDX**. And you can use the
-  companion `ScanCode workbench GUI app <https://github.com/nexB /scancode-workbench>`_ 
+  companion `ScanCode workbench GUI app <https://github.com/nexB/scancode-workbench>`_
   to review and display scan results, statistics and graphics.
 
 - ScanCode is **actively maintained**, has a **growing community of users**.

@@ -29,9 +29,13 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import re
 
+import attr
+
 from commoncode.fileutils import as_posixpath
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.maven import parse_scm_connection
+from packagedcode.models import Package
+
 
 # Python 2 and 3 support
 try:
@@ -55,11 +59,34 @@ See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres
 """
 
 
+@attr.s()
+class JavaArchive(Package):
+    metafiles = ('META-INF/MANIFEST.MF',)
+    extensions = ('.jar', '.war', '.ear')
+    filetypes = ('java archive ', 'zip archive',)
+    mimetypes = ('application/java-archive', 'application/zip',)
+    default_type = 'jar'
+    default_primary_language = 'Java'
+
+    @classmethod
+    def recognize(cls, location):
+        if is_manifest(location):
+            return parse_manifest(location)
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.path.lower().endswith('meta-inf/manifest.mf'):
+            # the root is the parent of META-INF
+            return manifest_resource.parent(codebase).parent(codebase)
+        else:
+            return manifest_resource
+
+
 def is_manifest(location):
     """
     Return Trye if the file at location is a Manifest.
     """
-    return as_posixpath(location).endswith('META-INF/MANIFEST.MF')
+    return as_posixpath(location).lower().endswith('meta-inf/manifest.mf')
 
 
 def parse_manifest(location):
@@ -201,7 +228,7 @@ def get_normalized_package_data(manifest_main_section):
     ##############################
     package_type = namespace = name = version = None
     descriptions = []
-    
+
     # FIXME: may be we should then return each "personality"
     # we have several cases for names:
     # this is built with gradle and we have good id data
@@ -214,7 +241,7 @@ def get_normalized_package_data(manifest_main_section):
 
     # we have been created by maven archiver
     elif i_title and i_vendid and i_version:
-        # TODO: improve name and namespace if ns is in name 
+        # TODO: improve name and namespace if ns is in name
         namespace = i_vendid
         name = i_title
         package_type = 'maven' if (i_title_is_id and not name.startswith(namespace)) else 'jar'

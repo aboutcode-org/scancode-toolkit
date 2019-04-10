@@ -29,8 +29,15 @@
   "code_view_url": "https://github.com/raphw/byte-buddy.git", 
   "vcs_url": "git+https://github.com/raphw/byte-buddy.git", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt\nA business-friendly OSS license", 
+  "license_expression": "apache-2.0", 
+  "declared_license": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": "A business-friendly OSS license", 
+      "distribution": "repo"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - mit-license-1998
   - mit-old-style

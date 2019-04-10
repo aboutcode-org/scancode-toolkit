@@ -1,0 +1,11 @@
+license_expressions:
+    - apache-2.0
+    - mx4j
+    - epl-1.0
+    - zlib
+    - bzip2-libbzip-2010
+    - cpl-1.0
+    - zlib
+    - bzip2-libbzip-2010
+    - cpl-1.0
+    - lzma-cpl-exception

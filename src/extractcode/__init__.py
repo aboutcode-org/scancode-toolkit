@@ -75,7 +75,7 @@ special_package = 7
 kind_labels = {
     1: 'docs',
     2: 'regular',
-    3: 'regular',
+    3: 'regular_nested',
     4: 'package',
     5: 'file_system',
     6: 'patches',

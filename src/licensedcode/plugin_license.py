@@ -97,7 +97,8 @@ class LicenseScanner(ScanPlugin):
         CommandLineOption(('--license-diag',),
             is_flag=True,
             required_options=['license'],
-            help='Include diagnostic information in license scan results.',
+            help='(DEPRECATED: this is always included by default now). '
+            'Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(

@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH trolltech-gpl-exception-1.2
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.GPL
+    - GPL_EXCEPTION.txt

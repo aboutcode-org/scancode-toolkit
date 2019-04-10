@@ -32,7 +32,7 @@
   "code_view_url": "https://svnweb.freebsd.org/ports/head/print/rubygem-ttfunk",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "(gpl-3.0 AND gpl-2.0) AND unknown",
   "declared_license": "GPLv3 OR RUBY OR GPLv2",
   "notice_text": null,
   "manifest_path": null,

@@ -29,8 +29,11 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": "Apache License 2.0",
+  "license_expression": "apache-2.0",
+  "declared_license": {
+    "license": "Apache License 2.0",
+    "classifiers": []
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

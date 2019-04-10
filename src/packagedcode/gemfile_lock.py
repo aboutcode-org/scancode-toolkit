@@ -469,7 +469,7 @@ class GemfileLockParser(object):
         # for bundler: not finding one is an error
         try:
             gem = self.all_gems[name]
-        except KeyError, e:
+        except KeyError as e:
             gem = Gem(name)
             self.all_gems[name] = gem
             if name != 'bundler' and TRACE:

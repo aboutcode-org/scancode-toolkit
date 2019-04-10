@@ -1770,7 +1770,7 @@ if __name__ == '__main__':
             print "%s is in %s" % (bv2, bv1)
         else:
             print "%s is not in %s" % (bv2, bv1)
-    except ValueError, arg:
+    except ValueError as arg:
         print "Error Message: " + str(arg)
 
     print "\nTest the size modifier when a bit vector is initialized with the intVal method:"

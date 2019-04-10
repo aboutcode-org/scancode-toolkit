@@ -84,7 +84,7 @@ def to_base85(num):
 
 def to_base10(s, b=36):
     """
-    Convert a string s representing a number in base b back to an integer where base <= 85.
+    Convert a string `s` representing a number in base `b` back to an integer where base <= 85.
     """
 
     assert b <= len(b85_symbols) and b >= 2, 'Base must be in range(2, %d)' % (len(b85_symbols))

@@ -55,6 +55,12 @@ FOSS_CATEGORIES = set([
 ])
 
 
+NON_INTERESTING_KEYS=set([
+    'other-copyleft',
+    'other-permissive',
+])
+
+
 @click.command()
 @click.argument('license_dir',
     type=click.Path(file_okay=False, exists=True, writable=True,
@@ -69,7 +75,7 @@ def cli(license_dir, verbose):
     """
 
     base_kwargs = dict(
-        license=True, license_diag=True, license_text=True, info=True,
+        license=True, license_text=True, info=True,
         strip_root=True, quiet=True, return_results=False)
 
     licenses_by_key = load_licenses(with_deprecated=False)

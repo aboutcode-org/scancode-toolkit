@@ -36,7 +36,15 @@ import scancode_config
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
-from itertools import imap
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    import itertools.imap as map #NOQA
+except ImportError:
+    # Python 3
+    pass
+
 import os
 import sys
 from time import time
@@ -209,7 +217,7 @@ Try 'scancode --help' for help on options and arguments.'''
 try:
     # IMPORTANT: this discovers, loads and validates all available plugins
     plugin_classes, plugin_options = PluginManager.load_plugins()
-except ImportError, e:
+except ImportError as e:
     echo_stderr('========================================================================')
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
     echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')
@@ -264,8 +272,9 @@ def print_options(ctx, param, value):
 
 @click.pass_context
 
-# ensure that the input path is bytes on Linux, unicode elsewhere
-@click.argument('input', metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+@click.argument('input',
+    metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+    # ensure that the input path is bytes on Linux, unicode elsewhere
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 
 @click.option('--strip-root',
@@ -375,7 +384,7 @@ def print_options(ctx, param, value):
     is_flag=True, default=False,
     help='Keep temporary files and show the directory where temporary files '
          'are stored. (By default temporary files are deleted when a scan is '
-         'completed.',
+         'completed.)',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
@@ -487,9 +496,8 @@ def scancode(ctx, input,  # NOQA
         raise e
 
     except ScancodeError as se:
-        # TODO :consider raising a usage error?
-        echo_func(se.message, color='red')
-        ctx.exit(2)
+        # this will exit
+        raise click.BadParameter(se.message)
 
     rc = 0 if success else 1
     ctx.exit(rc)
@@ -521,7 +529,12 @@ def run_scan(
     """
 
     if not echo_func:
-        def echo_func(*args, **kwargs): pass
+        def echo_func(*_args, **_kwargs):
+            pass
+
+    if not input:
+        msg = 'At least one input path is required.'
+        raise ScancodeError(msg)
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
@@ -535,9 +548,8 @@ def run_scan(
         # a common root directory and none is an absolute path
 
         if any(os.path.isabs(p) for p in input):
-            msg = ('ERROR: invalid inputs: input paths must be relative and '
-                  'share a common parent when using multiple inputs.')
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = ('Invalid inputs: all input paths must be relative.')
+            raise ScancodeError(msg)
 
         # find the common prefix directory (note that this is a pre string operation
         # hence it may return non-existing paths
@@ -549,8 +561,8 @@ def run_scan(
             common_prefix = PATH_TYPE('.')
 
         elif not os.path.isdir(common_prefix):
-            msg = 'ERROR: invalid inputs: all input paths must share a common parent directory.'
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = 'Invalid inputs: all input paths must share a common parent directory.'
+            raise ScancodeError(msg)
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
@@ -622,7 +634,7 @@ def run_scan(
                     else:
                         non_enabled_plugins_by_qname[qname] = plugin
                 except:
-                    msg = 'ERROR: failed to load plugin: %(qname)s:' % locals()
+                    msg = 'Failed to load plugin: %(qname)s:' % locals()
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # NOTE: these are list of plugin instances, not classes!
@@ -1120,7 +1132,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             pool.close()
         else:
             # no multiprocessing with processes=0 or -1
-            scans = imap(runner, resources)
+            scans = map(runner, resources)
 
         if progress_manager:
             scans = progress_manager(scans)

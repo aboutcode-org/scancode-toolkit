@@ -87,13 +87,13 @@ class TestIndexing(IndexTesting):
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
-            (u'a one a two a three licensed.', 4, 1, 6, 1),
-            (u'a four a five a six licensed.', 3, 2, 5, 2),
-            (u'one two three four five gpl', 5, 1, 5, 1,),
-            (u'The rose is a rose mit', 3, 2, 3, 3),
+            (u'a one a two a three licensed.', 3, 1, 3, 1),
+            (u'a four a five a six licensed.', 2, 2, 2, 2),
+            (u'one two three four five gpl', 5, 1, 5, 1),
+            (u'The rose is a rose mit', 2, 2, 2, 3),
             (u'The license is GPL', 2, 2, 2, 2),
-            (u'The license is a GPL', 3, 2, 3, 2),
-            (u'a license is a rose', 2, 2, 3, 2),
+            (u'The license is this GPL', 3, 2, 3, 2),
+            (u'a license is a rose', 1, 2, 1, 2),
             (u'the gpl', 1, 1, 1, 1),
             (u'the mit', 1, 1, 1, 1),
             (u'the bsd', 1, 1, 1, 1),
@@ -109,27 +109,27 @@ class TestIndexing(IndexTesting):
         assert expected_lengths == results
 
         xdict = {
-            u'a': 0,
             u'bsd': 15,
-            u'five': 5,
-            u'four': 4,
+            u'five': 4,
+            u'four': 3,
             u'gpl': 8,
-            u'is': 2,
+            u'is': 1,
             u'lgpl': 13,
             u'license': 9,
             u'licensed': 11,
             u'mit': 12,
-            u'one': 7,
+            u'one': 6,
             u'rose': 10,
             u'six': 14,
-            u'the': 1,
-            u'three': 3,
-            u'two': 6}
+            u'the': 0,
+            u'this': 7,
+            u'three': 2,
+            u'two': 5
+        }
 
         assert xdict == idx.dictionary
 
         xtbi = [
-            u'a',
             u'the',
             u'is',
             u'three',
@@ -137,6 +137,7 @@ class TestIndexing(IndexTesting):
             u'five',
             u'two',
             u'one',
+            u'this',
             u'gpl',
             u'license',
             u'rose',
@@ -150,12 +151,12 @@ class TestIndexing(IndexTesting):
 
         expected_as_dict = {
             u'_tst_18_4': {u'gpl': [3], u'license': [1]},
-            u'_tst_19_6': {u'license': [1], u'rose': [4]},
-            u'_tst_20_5': {u'gpl': [4], u'license': [1]},
-            u'_tst_22_3': {u'mit': [5], u'rose': [1, 4]},
+            u'_tst_19_6': {u'license': [0], u'rose': [2]},
+            u'_tst_22_3': {u'mit': [4], u'rose': [1, 3]},
+            u'_tst_23_5': {u'gpl': [4], u'license': [1]},
             u'_tst_27_2': {u'gpl': [5]},
-            u'_tst_29_0': {u'licensed': [6]},
-            u'_tst_29_1': {u'licensed': [6], u'six': [5]},
+            u'_tst_29_0': {u'licensed': [3]},
+            u'_tst_29_1': {u'licensed': [3], u'six': [2]},
             u'_tst_7_7': {u'gpl': [1]},
             u'_tst_7_8': {u'mit': [1]},
             u'_tst_7_9': {u'bsd': [1]},
@@ -279,7 +280,7 @@ class TestMatchNoTemplates(IndexTesting):
         match = result[0]
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
-        assert 'Redistribution and use in source and binary forms with or without modification are permitted' == itext
+        assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
 
         assert Span(0, 13) == match.qspan
         assert Span(0, 13) == match.ispan
@@ -299,7 +300,7 @@ class TestMatchNoTemplates(IndexTesting):
         match = result[0]
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert 'licensed under the GPL licensed under the GPL' == qtext
-        assert 'licensed under the GPL licensed under the GPL' == itext
+        assert 'licensed under the gpl licensed under the gpl' == itext
 
         assert Span(0, 7) == match.qspan
         assert Span(0, 7) == match.ispan
@@ -313,7 +314,7 @@ class TestMatchNoTemplates(IndexTesting):
 
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert u'licensed under the GPL licensed under the GPL' == qtext
-        assert u'licensed under the GPL licensed under the GPL' == itext
+        assert u'licensed under the gpl licensed under the gpl' == itext
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
         _stored_text = u'licensed under the GPL, licensed under the GPL'
@@ -328,7 +329,7 @@ class TestMatchNoTemplates(IndexTesting):
         match = result[0]
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert u'licensed [that] under [is] the [that] GPL licensed [or] under [not] the GPL' == qtext
-        assert u'licensed under the GPL licensed under the GPL' == itext
+        assert u'licensed under the gpl licensed under the gpl' == itext
 
     def test_match_exact_from_file(self):
         idx = index.LicenseIndex(self.get_test_rules('index/mini'))
@@ -340,7 +341,7 @@ class TestMatchNoTemplates(IndexTesting):
 
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
-        assert 'Redistribution and use in source and binary forms with or without modification are permitted' == itext
+        assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
 
         assert Span(0, 13) == match.qspan
         assert Span(0, 13) == match.ispan
@@ -353,27 +354,29 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(location=query)
         assert 1 == len(result)
         match = result[0]
-        assert Span(0, 212) == match.qspan
-        assert Span(0, 212) == match.ispan
+        assert Span(0, 209) == match.qspan
+        assert Span(0, 209) == match.ispan
 
     def test_match_return_correct_offsets(self):
-        _stored_text = u'A GPL. A MIT. A LGPL.'
-        #         0   1  2   3  4    5
+        # notes: A is a stopword. This and that are not
+        _stored_text = u'This GPL. A MIT. That LGPL.'
+        #                0    1    2 3    4    5
+
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
         idx = index.LicenseIndex([rule])
-        querys = u'some junk. A GPL. A MIT. A LGPL.'
-        #             0    1  2   3  4   5  6    7
+        querys = u'some junk. this GPL. A MIT. that LGPL.'
+        #          0    1     2    3    4 5    6    7
 
         result = idx.match(query_string=querys)
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
-        assert 'A GPL A MIT A LGPL' == qtext
-        assert 'A GPL A MIT A LGPL' == itext
+        assert 'this GPL MIT that LGPL' == qtext
+        assert 'this gpl mit that lgpl' == itext
 
-        assert Span(0, 5) == match.qspan
-        assert Span(0, 5) == match.ispan
+        assert Span(0, 4) == match.qspan
+        assert Span(0, 4) == match.ispan
 
 
 class TestMatchWithTemplates(IndexTesting):
@@ -427,10 +430,10 @@ No part of match        '''
             are met
 
             Redistributions of source code must retain the above copyright
-            notice this list of conditions and the following disclaimer
+            notice this of conditions and the following disclaimer
 
             Redistributions in binary form must reproduce the above copyright
-            notice this list of conditions and the following disclaimer in the
+            notice this of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             Neither the name of [nexB] <Inc> nor the names of its
@@ -440,7 +443,7 @@ No part of match        '''
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
             AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE COPYRIGHT
+            PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE COPYRIGHT
             OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL
             SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED
             TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR
@@ -456,10 +459,10 @@ No part of match        '''
             are met
 
             Redistributions of source code must retain the above copyright
-            notice this list of conditions and the following disclaimer
+            notice this of conditions and the following disclaimer
 
             Redistributions in binary form must reproduce the above copyright
-            notice this list of conditions and the following disclaimer in the
+            notice this of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             Neither the name of nor the names of its contributors may be
@@ -469,7 +472,7 @@ No part of match        '''
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
             AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE COPYRIGHT
+            PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE COPYRIGHT
             OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL
             SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED
             TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR
@@ -477,15 +480,15 @@ No part of match        '''
             LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING
             NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS
             SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
-        """.split()
+        """.lower().split()
 
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
 
-        assert Span(Span(1, 72) | Span(74, 212)) == match.qspan
+        assert (Span(1, 70) | Span(72, 209)) == match.qspan
 
-        assert Span(0, 210) == match.ispan
+        assert Span(0, 207) == match.ispan
         assert 100 == match.coverage()
 
     def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
@@ -510,11 +513,11 @@ No part of match        '''
             the following conditions are met
 
             1 Redistributions of source code must retain copyright statements
-            and notices Redistributions must also contain a copy of this
+            and notices Redistributions must also contain copy of this
             document
 
             2 Redistributions in binary form must reproduce the above copyright
-            notice this list of conditions and the following disclaimer in the
+            notice this of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             3 The name [groovy] must not be used to endorse or promote
@@ -524,7 +527,7 @@ No part of match        '''
 
             4 Products derived from this Software may not be called [groovy]
             nor may [groovy] appear in their names without prior written
-            permission of <The> [Codehaus] [groovy] is a registered
+            permission of <The> [Codehaus] [groovy] is registered
             trademark of <The> [Codehaus]
 
             5 Due credit should be given to <The> [Codehaus]
@@ -534,7 +537,7 @@ No part of match        '''
             <THIS> <SOFTWARE> <IS> <PROVIDED> <BY> <THE> [CODEHAUS] AND CONTRIBUTORS
             AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT
             LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            A PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <THE> [CODEHAUS]
+            PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <THE> [CODEHAUS]
             OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT
             INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT
             NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF
@@ -552,11 +555,11 @@ No part of match        '''
             the following conditions are met
 
             1 Redistributions of source code must retain copyright statements
-            and notices Redistributions must also contain a copy of this
+            and notices Redistributions must also contain copy of this
             document
 
             2 Redistributions in binary form must reproduce the above copyright
-            notice this list of conditions and the following disclaimer in the
+            notice this of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             3 The name must not be used to endorse or promote products
@@ -565,14 +568,14 @@ No part of match        '''
 
             4 Products derived from this Software may not be called nor
             may appear in their names without prior written permission of
-            is a registered trademark of
+            is registered trademark of
 
             5 Due credit should be given to
 
             <THIS> <SOFTWARE> <IS> <PROVIDED> <BY>
             AND CONTRIBUTORS AS IS AND ANY
             EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE
-            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+            IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR PARTICULAR
             PURPOSE ARE DISCLAIMED IN NO EVENT SHALL OR ITS CONTRIBUTORS
             BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR
             CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED TO PROCUREMENT OF
@@ -581,7 +584,7 @@ No part of match        '''
             IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR
             OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF
             ADVISED OF THE
-        """.split()
+        """.lower().split()
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()

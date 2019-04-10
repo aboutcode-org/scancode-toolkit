@@ -73,7 +73,7 @@ class ScanPlugin(CodebasePlugin):
         All mapping keys must be strings, including for any nested
         mappings. 
 
-        The first level mapping keys must be valida Python identifiers and MUST
+        The first level mapping keys must be valid Python identifiers and MUST
         be declared as "resource_attributes" Resource-level attributes
         (otherwise this will fail at run time).
 
@@ -94,7 +94,7 @@ class ScanPlugin(CodebasePlugin):
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Process a `codebase` Codebase object updating its Reosource as needed.
+        Process a `codebase` Codebase object updating its Resource as needed.
         Subclasses can override optionally.
         This receives all the ScanCode call arguments as kwargs.
         """

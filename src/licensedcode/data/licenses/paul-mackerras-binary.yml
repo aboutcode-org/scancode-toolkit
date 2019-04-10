@@ -1,0 +1,6 @@
+key: paul-mackerras-binary
+short_name: Paul Mackerras Binary License
+name: Paul Mackerras Binary License
+category: Permissive
+owner: Paul Mackerras
+notes: this is very similar to the bsd-ack but there is a different warranty disclaimer

@@ -71,7 +71,7 @@ class IsLicenseText(PostScanPlugin):
     options = [
         CommandLineOption(('--is-license-text',),
             is_flag=True, default=False,
-            required_options=['info', 'license_text', 'license_diag'],
+            required_options=['info', 'license_text'],
             help='Set the "is_license_text" flag to true for files that contain '
                  'mostly license texts and notices (e.g over 90% of the content). [EXPERIMENTAL]',
             help_group=POST_SCAN_GROUP)

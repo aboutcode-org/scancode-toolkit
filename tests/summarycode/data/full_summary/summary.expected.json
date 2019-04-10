@@ -2406,7 +2406,9 @@
         "vcs_url": "git+https://github.com/npm/npm.git@fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
         "copyright": null,
         "license_expression": "artistic-2.0",
-        "declared_license": "Artistic-2.0",
+        "declared_license": [
+          "Artistic-2.0"
+        ],
         "notice_text": null,
         "manifest_path": "package.json",
         "dependencies": [
@@ -5274,7 +5276,9 @@
           "vcs_url": "git+https://github.com/npm/npm.git@fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
           "copyright": null,
           "license_expression": "artistic-2.0",
-          "declared_license": "Artistic-2.0",
+          "declared_license": [
+            "Artistic-2.0"
+          ],
           "notice_text": null,
           "manifest_path": "package.json",
           "dependencies": [
@@ -6015,7 +6019,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 125,
+            "matched_length": 125,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6086,7 +6095,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 14,
+            "matched_length": 14,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -6163,7 +6177,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 125,
+            "matched_length": 125,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6304,7 +6323,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 125,
+            "matched_length": 125,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6468,7 +6492,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -6539,7 +6568,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 144,
+            "matched_length": 144,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6610,7 +6644,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -6659,7 +6698,7 @@
       "licenses": [
         {
           "key": "cc0-1.0",
-          "score": 97.45,
+          "score": 97.48,
           "name": "Creative Commons CC0 1.0 Universal",
           "short_name": "CC0-1.0",
           "category": "Public Domain",
@@ -6681,7 +6720,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 992,
+            "matched_length": 967,
+            "match_coverage": 97.48,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6740,7 +6784,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
           }
         }
       ],
@@ -6858,7 +6907,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 176,
+            "matched_length": 176,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         },
         {
@@ -6886,7 +6940,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 176,
+            "matched_length": 176,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -6957,7 +7016,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7028,7 +7092,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7099,7 +7168,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7240,7 +7314,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 27,
+            "matched_length": 25,
+            "match_coverage": 92.59,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7340,7 +7419,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 132,
+            "matched_length": 132,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -7446,7 +7530,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7517,7 +7606,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7617,7 +7711,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 71,
+            "matched_length": 71,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -7688,7 +7787,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 144,
+            "matched_length": 144,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -7759,7 +7863,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -7830,7 +7939,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": true,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 12,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],

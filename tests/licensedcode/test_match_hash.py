@@ -54,8 +54,8 @@ class TestHashMatch(FileBasedTesting):
         assert 100 == match.coverage()
         assert match_hash.MATCH_HASH == match.matcher
         assert rules[0] == match.rule
-        assert Span(0, 121) == match.qspan
-        assert Span(0, 121) == match.ispan
+        assert Span(0, 119) == match.qspan
+        assert Span(0, 119) == match.ispan
 
     def test_match_hash_returns_correct_offset(self):
         rule_dir = self.get_test_loc('hash/rules')
@@ -68,5 +68,5 @@ class TestHashMatch(FileBasedTesting):
         assert match_hash.MATCH_HASH == match.matcher
         assert 100 == match.coverage()
         assert rules[0] == match.rule
-        assert Span(0, 121) == match.qspan
-        assert Span(0, 121) == match.ispan
+        assert Span(0, 119) == match.qspan
+        assert Span(0, 119) == match.ispan

@@ -1,0 +1,8 @@
+key: tapr-ohl-1.0
+short_name: TAPR Open Hardware License v1.0
+name: TAPR Open Hardware License v1.0
+spdx_license_key: TAPR-OHL-1.0
+other_urls:
+    - https://www.tapr.org/OHL
+category: Hardware License
+owner: TAPR

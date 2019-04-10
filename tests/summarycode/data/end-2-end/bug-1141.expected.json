@@ -301,7 +301,12 @@
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "1-hash",
+            "rule_length": 102,
+            "matched_length": 102,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],
@@ -510,7 +515,12 @@
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
-            "is_license_tag": false
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 102,
+            "matched_length": 102,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],

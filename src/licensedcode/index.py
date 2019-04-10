@@ -32,10 +32,15 @@ from collections import Counter
 from collections import defaultdict
 import cPickle
 from functools import partial
-from itertools import izip
 from operator import itemgetter
 import sys
 from time import time
+
+# Python 2 and 3 support
+try:
+    import itertools.izip as zip  # NOQA
+except ImportError:
+    pass
 
 from intbitset import intbitset
 
@@ -152,6 +157,7 @@ class LicenseIndex(object):
         'negative_rids',
         'false_positive_rids',
         'weak_rids',
+        'approx_matchable_rules_subset',
         'largest_false_positive_length',
 
         'optimized',
@@ -217,6 +223,9 @@ class LicenseIndex(object):
 
         # these rule ids are for rules made entirely of low, junk tokens
         self.weak_rids = set()
+
+        # only these rule ids can be matched in a sequence match
+        self.approx_matchable_rules_subset = set()
 
         # length of the largest false_positive rule
         self.largest_false_positive_length = 0
@@ -297,7 +306,7 @@ class LicenseIndex(object):
         # assigned randomly here at first by unzipping: we get the frequencies
         # and tokens->id at once this way
         ########################################################################
-        tokens_by_tid, frequencies_by_tid = izip(*frequencies_by_token.items())
+        tokens_by_tid, frequencies_by_tid = zip(*frequencies_by_token.items())
         self.tokens_by_tid = tokens_by_tid
         self.len_tokens = len_tokens = len(tokens_by_tid)
         msg = 'Cannot support more than licensedcode.index.MAX_TOKENS: %d' % MAX_TOKENS
@@ -429,6 +438,12 @@ class LicenseIndex(object):
         self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
 
+        # only these rules can only be matched as a sequence.
+        # we exclude small and "weak" rules from the subset entirely: they are
+        # unlikely to be matchable with a seq match
+        self.approx_matchable_rules_subset = intbitset(
+            (self.regular_rids | self.small_rids).difference(self.weak_rids))
+
         # sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
 
@@ -520,9 +535,7 @@ class LicenseIndex(object):
         list of matches.
         """
         matches = []
-        # we exclude small and "weak" rules from the subset entirely: they are
-        # unlikely to be matchable with a seq match
-        rules_subset = (self.regular_rids | self.small_rids).difference(self.weak_rids)
+        rules_subset = self.approx_matchable_rules_subset
 
         for query_run in query.query_runs:
 

@@ -12,3 +12,4 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/postgresql
 other_urls:
     - http://www.opensource.org/licenses/PostgreSQL
+    - https://opensource.org/licenses/PostgreSQL

@@ -14,5 +14,6 @@ other_urls:
     - https://joinup.ec.europa.eu/page/eupl-text-11-12
     - https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/eupl_v1.2_en.pdf
     - https://joinup.ec.europa.eu/sites/default/files/inline-files/EUPL%20v1_2%20EN(1).txt
+    - https://opensource.org/licenses/EUPL-1.1
 minimum_coverage: 80
 standard_notice: Licensed under the EUPL

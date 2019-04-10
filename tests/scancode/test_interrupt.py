@@ -72,3 +72,24 @@ class TestInterrupt(FileBasedTesting):
 
         after = threading.active_count()
         assert before == after
+
+    def test_interruptible_stops_execution_on_exception(self):
+        before = threading.active_count()
+
+        def some_crashing_function():
+            raise Exception('I have to crash. Now!')
+
+        results, _ = interrupt.interruptible(some_crashing_function, timeout=1.0)
+        assert 'ERROR: Unknown error:' in results
+        assert 'I have to crash. Now!' in results
+
+        after = threading.active_count()
+        assert before == after
+
+    def test_fake_interruptible_stops_execution_on_exception(self):
+        def some_crashing_function():
+            raise Exception('I have to crash. Now!')
+
+        results, _ = interrupt.fake_interruptible(some_crashing_function, timeout=1.0)
+        assert 'ERROR: Unknown error:' in results
+        assert 'I have to crash. Now!' in results

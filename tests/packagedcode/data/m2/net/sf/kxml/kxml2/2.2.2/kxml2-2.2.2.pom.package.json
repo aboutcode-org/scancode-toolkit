@@ -36,8 +36,15 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/kxml/kxml2/", 
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/kxml:kxml2", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
+  "license_expression": "bsd-new AND (bsd-new AND unknown)", 
+  "declared_license": [
+    {
+      "name": "The BSD License", 
+      "url": "http://www.opensource.org/licenses/bsd-license.html", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

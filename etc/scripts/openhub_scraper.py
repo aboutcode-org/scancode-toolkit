@@ -26,7 +26,11 @@
 import io
 import json
 import os
-import urllib2
+
+try:
+    from urlib.request import urlopen
+except ImportError:
+    from urllib2 import urlopen
 
 from bs4 import BeautifulSoup
 
@@ -57,7 +61,7 @@ def parse_webpage(url, page_no):
     Parses the given webpage using 'BeautifulSoup' and returns html content of
     that webpage.
     """
-    page = urllib2.urlopen(url + page_no)
+    page = urlopen(url + page_no)
     parsed_page = BeautifulSoup(page, 'html.parser')
     return parsed_page
 

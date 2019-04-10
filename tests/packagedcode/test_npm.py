@@ -141,7 +141,7 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/invalid/package.json')
         try:
             npm.parse(test_file)
-        except ValueError, e:
+        except ValueError as e:
             assert 'No JSON object could be decoded' in str(e)
 
     def test_parse_keywords(self):
@@ -214,6 +214,27 @@ class TestNpm(PackageTester):
     def test_parse_with_invalid_dep(self):
         test_file = self.get_test_loc('npm/invalid-dep/package.json')
         expected_loc = self.get_test_loc('npm/invalid-dep/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_utils_merge_1_0_0(self):
+        test_file = self.get_test_loc('npm/utils-merge-1.0.0/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/utils-merge-1.0.0/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_mime_1_3_4(self):
+        test_file = self.get_test_loc('npm/mime-1.3.4/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/mime-1.3.4/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_express_jwt_3_4_0(self):
+        test_file = self.get_test_loc('npm/express-jwt-3.4.0/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/express-jwt-3.4.0/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 

@@ -1,78 +1,75 @@
 {
   "bsd-no-mod_1": {
     "warranty": [
-      47,
-      120
+      46,
+      117
     ],
     "interruption": [
-      194
+      190
     ],
     "requirement": [
-      81
+      78
     ],
     "exemplary": [
-      171
+      167
     ],
     "negligence": [
-      211
+      207
     ],
     "caused": [
-      196
+      192
     ],
     "fitness": [
-      151
+      148
     ],
     "herein": [
       21
     ],
     "conditioned": [
-      74
-    ],
-    "minimum": [
-      61
+      72
     ],
     "including": [
-      76,
-      139,
-      175,
-      210
+      74,
+      136,
+      171,
+      206
     ],
     "names": [
-      89,
-      98
+      86,
+      95
     ],
     "substantially": [
-      78
+      75
     ],
     "event": [
-      160
+      156
     ],
     "substitute": [
-      182
+      178
     ],
     "use": [
       2,
-      188,
-      221
+      184,
+      217
     ],
     "strict": [
-      206
+      202
     ],
     "unmodified": [
       23,
       27
     ],
     "shall": [
-      161
+      157
     ],
     "merchantibility": [
-      149
+      146
     ],
     "forms": [
       7
     ],
     "tort": [
-      209
+      205
     ],
     "contained": [
       20
@@ -81,330 +78,330 @@
       19
     ],
     "damages": [
-      174,
-      233
+      170,
+      229
     ],
     "above": [
       36,
-      92
+      89
     ],
     "endorse": [
-      106
+      103
     ],
     "consequential": [
-      173
+      169
     ],
     "neither": [
-      87
+      84
     ],
     "warranties": [
-      138,
-      146
+      135,
+      143
     ],
     "particular": [
-      154
+      150
     ],
     "notice": [
       38
     ],
     "used": [
       26,
-      104
+      101
     ],
     "form": [
-      57
+      56
     ],
     "permission": [
-      118
+      115
     ],
     "express": [
-      135
+      132
     ],
     "however": [
-      195
+      191
     ],
     "possibility": [
-      230
+      226
     ],
     "otherwise": [
-      213
+      209
     ],
     "liability": [
-      202,
-      207
+      198,
+      203
     ],
     "met": [
       16
     ],
     "goods": [
-      183
+      179
     ],
     "purpose": [
-      155
+      151
     ],
     "noninfringement": [
-      148
+      145
     ],
     "advised": [
-      227
+      223
     ],
     "promote": [
-      108
+      105
     ],
     "permitted": [
       9
     ],
     "nor": [
-      96
+      93
     ],
     "must": [
       33,
-      58,
-      72
+      57,
+      70
     ],
     "loss": [
-      186
+      182
     ],
     "redistributions": [
       29,
-      54
+      53
     ],
     "disclaimed": [
-      157
+      153
     ],
     "contract": [
-      205
+      201
     ],
     "reproduce": [
-      59
+      58
     ],
     "procurement": [
-      180
+      176
     ],
     "implied": [
-      137,
-      145
+      134,
+      142
     ],
     "liable": [
-      168
+      164
     ],
     "retain": [
       34
     ],
     "redistribution": [
       0,
-      71,
-      85
+      69,
+      82
     ],
     "arising": [
-      214
+      210
     ],
     "modification": [
-      52
+      51
     ],
     "profits": [
-      191
+      187
     ],
     "disclaimer": [
-      48,
-      50,
-      63,
-      67,
-      80
+      47,
+      49,
+      61,
+      65,
+      77
     ]
   },
   "bsd-new_0": {
     "interruption": [
-      174
+      171
     ],
     "exemplary": [
-      151
-    ],
-    "negligence": [
-      191
-    ],
-    "caused": [
-      176
-    ],
-    "fitness": [
-      127
-    ],
-    "direct": [
-      147
-    ],
-    "including": [
-      116,
-      155,
-      190
-    ],
-    "names": [
-      77
-    ],
-    "owner": [
-      140
-    ],
-    "indirect": [
       148
     ],
+    "negligence": [
+      188
+    ],
+    "caused": [
+      173
+    ],
+    "fitness": [
+      125
+    ],
+    "direct": [
+      144
+    ],
+    "including": [
+      114,
+      152,
+      187
+    ],
+    "names": [
+      75
+    ],
+    "owner": [
+      137
+    ],
+    "indirect": [
+      145
+    ],
     "event": [
-      136
+      133
     ],
     "substitute": [
-      162
+      159
     ],
     "use": [
       2,
-      168,
-      201
+      165,
+      198
     ],
     "strict": [
-      186
+      183
     ],
     "shall": [
-      137
+      134
     ],
     "damage": [
-      213
+      210
     ],
     "forms": [
       7
     ],
     "tort": [
-      189
+      186
     ],
     "materials": [
-      63
+      61
     ],
     "damages": [
-      154
+      151
     ],
     "above": [
       28,
-      46
+      45
     ],
     "endorse": [
-      85
+      83
     ],
     "consequential": [
-      153
+      150
     ],
     "neither": [
-      68
+      66
     ],
     "warranties": [
-      115,
-      123
+      113,
+      121
     ],
     "particular": [
-      130
+      127
     ],
     "notice": [
       30,
-      48
+      47
     ],
     "used": [
-      83
+      81
     ],
     "form": [
-      42
+      41
     ],
     "permission": [
-      97
+      95
     ],
     "express": [
-      112
+      110
     ],
     "however": [
-      175
+      172
     ],
     "possibility": [
-      210
+      207
     ],
     "otherwise": [
-      193
+      190
     ],
     "liability": [
-      182,
-      187
+      179,
+      184
     ],
     "met": [
       20
     ],
     "goods": [
-      163
+      160
     ],
     "purpose": [
-      131
+      128
     ],
     "advised": [
-      207
+      204
     ],
     "promote": [
-      87
+      85
     ],
     "permitted": [
       13
     ],
     "nor": [
-      75
+      73
     ],
     "must": [
       25,
-      43
+      42
     ],
     "loss": [
-      166
+      163
     ],
     "merchantability": [
-      125
+      123
     ],
     "redistributions": [
       21,
-      39
+      38
     ],
     "disclaimed": [
-      133
+      130
     ],
     "incidental": [
-      149
+      146
     ],
     "contract": [
-      185
+      182
     ],
     "reproduce": [
-      44
+      43
     ],
     "procurement": [
-      160
+      157
     ],
     "implied": [
-      114,
-      122
+      112,
+      120
     ],
     "liable": [
-      144
+      141
     ],
     "retain": [
       26
     ],
     "distribution": [
-      67
+      65
     ],
     "redistribution": [
       0
     ],
     "arising": [
-      194
+      191
     ],
     "modification": [
       11
     ],
     "profits": [
-      171
+      168
     ],
     "disclaimer": [
-      38,
-      56
+      37,
+      54
     ]
   }
 }

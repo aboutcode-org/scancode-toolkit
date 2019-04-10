@@ -101,7 +101,7 @@ class TestQueryWithSingleRun(IndexTesting):
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
-        expected = [['and', None, None, None, None, None]]
+        expected = [['and', None, None, None, None]]
         assert expected == qtbl_as_str(result)
 
     def test_Query_known_and_unknown_positions(self):
@@ -291,63 +291,63 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
                                  _ranked_tokens=ranked_toks,
                                  _spdx_tokens=set())
-        assert 2 == idx.len_junk
-        assert {'a': 0, 'the': 1, 'binary': 2, 'is': 3, } == idx.dictionary
+        assert 1 == idx.len_junk
+        assert {u'binary': 1, u'is': 2, u'the': 0} == idx.dictionary
 
         # two junks
         q = Query(query_string='a the', idx=idx)
         assert q.line_by_pos
         qrun = q.query_runs[0]
-        assert [0, 1] == qrun.tokens
+        assert [0] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 2] == qrun.tokens
+        assert [1] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2, 1] == qrun.tokens
+        assert [1, 0] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2] == qrun.tokens
+        assert [1] == qrun.tokens
         assert {-1: 1} == qrun.query.unknowns_by_pos
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2] == qrun.tokens
+        assert [1] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2, 0, 2] == qrun.tokens
+        assert [1, 1] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [0, 2, 0, 2] == qrun.tokens
-        assert {1: 1} == qrun.query.unknowns_by_pos
+        assert [1, 1] == qrun.tokens
+        assert {0: 1} == qrun.query.unknowns_by_pos
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2, 0, 2] == qrun.tokens
+        assert [1, 1] == qrun.tokens
         assert {0: 2} == qrun.query.unknowns_by_pos
 
         # unknowns at start, middle and end
@@ -355,8 +355,8 @@ class TestQueryWithSingleRun(IndexTesting):
         #                         u     u           u    u            u    u
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [2, 0, 2] == qrun.tokens
-        assert {-1: 2, 0: 2, 2: 2} == qrun.query.unknowns_by_pos
+        assert [1, 1] == qrun.tokens
+        assert {0: 2, 1: 2, -1: 2} == qrun.query.unknowns_by_pos
 
     def test_query_tokens_are_same_for_different_text_formatting(self):
 
@@ -382,19 +382,15 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_query_run_unknowns(self):
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')])
 
-        assert {'a': 0, 'binary': 1, 'is': 2, 'the': 3} == idx.dictionary
-        assert 2 == idx.len_junk
+
+        assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
+        assert 1 == idx.len_junk
 
         # multiple unknowns at start, middle and end
         q = Query(query_string='that new binary was sure a kind of the real mega deal', idx=idx)
         # known pos                      0               1         2
         # abs pos                  0   1 2      3   4    5 6    7  8   9    10   11
-        expected = {
-            - 1: 2,
-            0: 2,
-            1: 2,
-            2: 3,
-        }
+        expected = {-1: 2, 0: 4, 1: 3}
         assert expected == dict(q.unknowns_by_pos)
 
 
@@ -423,13 +419,13 @@ class TestQueryWithMultipleRuns(IndexTesting):
         query_loc = self.get_test_loc('index/queryruns')
         qry = Query(location=query_loc, idx=idx)
         expected = [
-            {'end': 84,
+            {'end': 82,
              'start': 0,
              'tokens': u'the redistribution and use in ... 2 1 3 c 4'},
-            {'end': 97,
-             'start': 85,
+            {'end': 95,
+             'start': 83,
              'tokens': u'this software is provided by ... holders and contributors as is'},
-            {'end': 98, 'start': 98, 'tokens': u'redistributions'}
+            {'end': 96, 'start': 96, 'tokens': u'redistributions'}
         ]
 
         result = [q.to_dict(brief=True) for q in qry.query_runs]
@@ -472,16 +468,16 @@ class TestQueryWithMultipleRuns(IndexTesting):
             u'''redistribution and use in source and binary forms with or
             without modification are permitted provided that the following
             conditions are met redistributions of source code must retain the
-            above copyright notice this list of conditions and the following
+            above copyright notice this of conditions and the following
             disclaimer redistributions in binary form must reproduce the above
-            copyright notice this list of conditions and the following
+            copyright notice this of conditions and the following
             disclaimer in the documentation and or other materials provided with
             the distribution neither the name of <None> inc nor the names of its
             contributors may be used to endorse or promote products derived from
             this software without specific prior written permission this
             software is provided by the copyright holders and contributors as is
             and any express or implied warranties including but not limited to
-            the implied warranties of merchantability and fitness for a
+            the implied warranties of merchantability and fitness for
             particular purpose are disclaimed in no event shall the copyright
             owner or contributors be liable for any direct indirect incidental
             special exemplary or consequential damages including but not limited
@@ -526,10 +522,10 @@ class TestQueryWithMultipleRuns(IndexTesting):
         result = [q.to_dict(brief=False) for q in qry.query_runs]
         expected = [{
             'start': 0,
-            'end': 216,
+            'end': 213,
             'tokens':(
                 u'x11 license copyright c 1996 x consortium permission is hereby '
-                u'granted free of charge to any person obtaining a copy of this '
+                u'granted free of charge to any person obtaining copy of this '
                 u'software and associated documentation files the software to deal in '
                 u'the software without restriction including without limitation the '
                 u'rights to use copy modify merge publish distribute sublicense and or '
@@ -539,7 +535,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 u'included in all copies or substantial portions of the software the '
                 u'software is provided as is without warranty of any kind express or '
                 u'implied including but not limited to the warranties of '
-                u'merchantability fitness for a particular purpose and noninfringement '
+                u'merchantability fitness for particular purpose and noninfringement '
                 u'in no event shall the x consortium be liable for any claim damages or '
                 u'other liability whether in an action of contract tort or otherwise '
                 u'arising from out of or in connection with the software or the use or '
@@ -547,10 +543,10 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 u'name of the x consortium shall not be used in advertising or '
                 u'otherwise to promote the sale use or other dealings in this software '
                 u'without prior written authorization from the x consortium x window '
-                u'system is a trademark of x consortium inc'
+                u'system is trademark of x consortium inc'
             )
         }]
-        assert 217 == len(qry.query_runs[0].tokens)
+        assert 214 == len(qry.query_runs[0].tokens)
         assert expected == result
 
     def test_query_run_has_correct_offset(self):
@@ -561,17 +557,17 @@ class TestQueryWithMultipleRuns(IndexTesting):
         q = Query(location=query_doc, idx=idx, line_threshold=4)
         result = [qr.to_dict() for qr in q.query_runs]
         expected = [
-            {'end': 0, 'start': 0, 'tokens': u'inc'},
-            {'end': 123, 'start': 1,
-            'tokens': (
+            {b'end': 0, b'start': 0, b'tokens': u'inc'},
+            {b'end': 121, b'start': 1,
+             b'tokens': (
                 u'this library is free software you can redistribute it and or modify '
                 u'it under the terms of the gnu library general public license as '
                 u'published by the free software foundation either version 2 of the '
                 u'license or at your option any later version this library is '
                 u'distributed in the hope that it will be useful but without any '
                 u'warranty without even the implied warranty of merchantability or '
-                u'fitness for a particular purpose see the gnu library general public '
-                u'license for more details you should have received a copy of the gnu '
+                u'fitness for particular purpose see the gnu library general public '
+                u'license for more details you should have received copy of the gnu '
                 u'library general public license along with this library see the file '
                 u'copying lib if not write to the free software foundation inc 51 '
                 u'franklin street fifth floor boston ma 02110 1301 usa')
@@ -587,7 +583,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         q = Query(query_doc, idx=idx)
         result = [qr.to_dict() for qr in q.query_runs]
         expected = [
-            {'end': 121, 'start': 0,
+            {'end': 119, 'start': 0,
              'tokens':
                 'this library is free software you can redistribute it '
                 'and or modify it under the terms of the gnu library '
@@ -596,9 +592,9 @@ class TestQueryWithMultipleRuns(IndexTesting):
                 'option any later version this library is distributed in '
                 'the hope that it will be useful but without any warranty '
                 'without even the implied warranty of merchantability or '
-                'fitness for a particular purpose see the gnu library '
+                'fitness for particular purpose see the gnu library '
                 'general public license for more details you should have '
-                'received a copy of the gnu library general public '
+                'received copy of the gnu library general public '
                 'license along with this library see the file copying lib '
                 'if not write to the free software foundation 51 franklin '
                 'street fifth floor boston ma 02110 1301 usa'}
@@ -614,8 +610,8 @@ class TestQueryWithMultipleRuns(IndexTesting):
 
     def test_QueryRun_with_all_digit_lines(self):
         idx = index.LicenseIndex([Rule(stored_text='''
-            redistributions 0 1 2 3 4 1568 5 6 7 368 8 9 10 80 12213 232312 in 
-            binary 345 in 256 
+            redistributions 0 1 2 3 4 1568 5 6 7 368 8 9 10 80 12213 232312 in
+            binary 345 in 256
             free 1953
              software 406
              foundation 1151
@@ -686,7 +682,8 @@ class TestQueryWithFullIndex(FileBasedTesting):
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 900
         qr = result.query_runs[0]
-        assert 'license dual bsd gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
+        assert 'license dual bsd gpl' in u' '.join(
+            idx.tokens_by_tid[t] for t in qr.matchable_tokens())
 
     def test_query_run_tokens(self):
         query_s = u' '.join(u''' 3 unable to create proc entry license gpl
@@ -695,7 +692,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         status cache caches create proc entry baridationally generate proc event acpi evaluate
         object acpi remove notify remove proc entry acpi baridationally driver acpi acpi gcc gnu
         4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack pointer current
-        stack pointer this module end usr src modules acpi include linux include asm
+        stack pointer this module end usr modules acpi include linux include asm
         include asm generic include acpi acpi c posix types 32 h types h types h h h
         h h
         '''.split())
@@ -706,7 +703,9 @@ class TestQueryWithFullIndex(FileBasedTesting):
         # NOTE: this is not a token present in any rules or licenses
         unknown_tokens = ('baridationally',)
         assert unknown_tokens not in idx.dictionary
-        assert u' '.join([t for t in query_s.split() if t not in unknown_tokens]) == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
+        assert u' '.join([t for t in query_s.split()
+            if t not in unknown_tokens]) == u' '.join(
+                idx.tokens_by_tid[t] for t in qr.tokens)
 
     def test_query_run_tokens_matchable(self):
         idx = cache.get_index()
@@ -736,17 +735,19 @@ class TestQueryWithFullIndex(FileBasedTesting):
         caches create proc entry                generate proc event acpi evaluate
         object acpi remove notify remove proc entry acpi             driver acpi
         acpi gcc gnu 4 2 3 ubuntu 4 2 3 gcc gnu 4 2 3 ubuntu 4 2 3 current stack
-        pointer current stack pointer this module end usr src modules acpi include
+        pointer current stack pointer this module end usr modules acpi include
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for t in qr.tokens)
 
-        assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
+        assert expected_qr0 == u' '.join(
+            idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
         # only gpl and gnu are is in high matchables
         expected = u'license gpl gnu gnu'
-        assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
+        assert expected == u' '.join(
+            idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
 
     def test_query_run_for_text_with_long_lines(self):
         location1 = self.get_test_loc('query/long_lines.txt')

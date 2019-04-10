@@ -6,3 +6,4 @@ owner: Carnegie Mellon University
 homepage_url: http://www.cmu.edu/computing/
 text_urls:
     - http://cyrusimap.org/mediawiki/index.php/Downloads#Licensing
+minimum_coverage: 70

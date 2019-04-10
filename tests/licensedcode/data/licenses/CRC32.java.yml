@@ -1,0 +1,5 @@
+license_expressions:
+  - apache-2.0
+  - bsd-new
+  - zlib
+notes: https://raw.githubusercontent.com/netty/netty/3ca6c4d9385134d730567a932812c281d772f320/src/main/java/org/jboss/netty/util/internal/jzlib/CRC32.java
