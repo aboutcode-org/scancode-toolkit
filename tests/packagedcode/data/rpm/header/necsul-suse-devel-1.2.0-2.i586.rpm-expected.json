@@ -1,6 +1,6 @@
 {
     "name": "necsul-suse-devel",
-    "epoch": "None",
+    "epoch": null,
     "version": "1.2.0",
     "release": "2",
     "arch": "i586",
@@ -14,7 +14,6 @@
     "group": "Development/Libraries",
     "url": "http://www.express.nec.co.jp/",
     "source_rpm": "necsul-suse-devel-1.2.0-2.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

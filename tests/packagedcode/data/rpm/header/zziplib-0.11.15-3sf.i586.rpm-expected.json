@@ -14,7 +14,6 @@
     "group": "Development/Libraries",
     "url": "http://zziplib.sf.net",
     "source_rpm": "zziplib-0.11.15-3sf.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

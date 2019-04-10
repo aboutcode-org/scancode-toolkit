@@ -14,7 +14,6 @@
     "group": "Networking/Admin",
     "url": "http://www.fping.com/",
     "source_rpm": "fping-2.4b2-5.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

@@ -14,7 +14,6 @@
     "group": "Networking",
     "url": null,
     "source_rpm": "netkit-base-0.17-30994cl.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }

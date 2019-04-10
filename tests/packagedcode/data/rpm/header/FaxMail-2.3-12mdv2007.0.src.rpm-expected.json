@@ -14,7 +14,6 @@
     "group": "Networking/Mail",
     "url": "http://www.inference.phy.cam.ac.uk/FaxMail/",
     "source_rpm": null,
-    "source_package": null,
     "dist_url": null,
     "is_binary": false
 }

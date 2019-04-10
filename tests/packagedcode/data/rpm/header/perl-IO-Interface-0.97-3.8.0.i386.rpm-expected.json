@@ -14,7 +14,6 @@
     "group": "Applications/CPAN",
     "url": "http://www.cpan.org",
     "source_rpm": "perl-IO-Interface-0.97-3.8.0.src.rpm",
-    "source_package": null,
     "dist_url": null,
     "is_binary": true
 }
