@@ -51,6 +51,8 @@ from __future__ import print_function
 import ctypes
 
 from commoncode import command
+from commoncode import compat
+from commoncode.system import on_linux
 from plugincode.location_provider import get_location
 
 # Python 2 and 3 support
@@ -163,6 +165,8 @@ class Detector(object):
         self.cookie = _magic_open(self.flags)
         if not magic_db_location:
             magic_db_location = get_location(TYPECODE_LIBMAGIC_DATABASE)
+        if on_linux:
+            magic_db_location = fsencode(magic_db_location)
         _magic_load(self.cookie, magic_db_location)
 
     def get(self, location):
@@ -183,12 +187,11 @@ class Detector(object):
             # location string may therefore be mangled and the file not accessible
             # anymore by libmagic in some cases.
             try:
-                # FIXME: use filesystem encoding instead
-                uloc = location.encode('utf-8')
+                uloc = fsencode(location)
                 return  _magic_file(self.cookie, uloc)
             except:
                 # if all fails, read the start of the file instead
-                with open(location) as fd:
+                with open(location, 'rb') as fd:
                     buf = fd.read(16384)
                 return _magic_buffer(self.cookie, buf, len(buf))
 
@@ -210,7 +213,14 @@ def check_error(result, func, args):  # NOQA
     ctypes error handler/checker:  Check for errors and raise an exception or
     return the result otherwise.
     """
-    if result is None or result < 0 or str(result).startswith('cannot open'):
+    is_int =isinstance(result, int)
+    is_bytes =isinstance(result, bytes)
+    is_text =isinstance(result, compat.unicode)
+
+    if (result is None 
+    or (is_int and result < 0) 
+    or (is_bytes and compat.unicode(result, encoding='utf-8').startswith('cannot open'))
+    or (is_text and result.startswith('cannot open'))):
         err = _magic_error(args[0])
         raise MagicException(err)
     else:
