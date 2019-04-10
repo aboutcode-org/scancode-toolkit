@@ -92,7 +92,10 @@ if on_linux:
     WIN_PATH_SEP = b'\\'
     EMPTY_STRING = b''
     DOT = b'.'
-    PATH_SEP = bytes(os.sep, encoding='utf-8')
+    if py2:
+        PATH_SEP = bytes(os.sep)
+    else:
+        PATH_SEP = bytes(os.sep, encoding='utf-8')
 else:
     PATH_TYPE = unicode
     POSIX_PATH_SEP = '/'
