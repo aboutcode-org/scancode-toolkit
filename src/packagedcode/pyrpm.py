@@ -26,11 +26,10 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 """
-PyRPM
-=====
-
 PyRPM is a pure python, simple to use, module to read information from a RPM
 file.
+
+This is heavily modified version from the original.
 """
 
 from __future__ import absolute_import
@@ -40,23 +39,124 @@ from __future__ import unicode_literals
 from io import BytesIO
 import struct
 
-from . import rpmdefs
+
+"""""
+RPM constants
+
+From rpm.org lib/rpmtag.h
+See also: http://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Core-generic/pkgformat.html
+"""
+
+# the first 4 bytes of an RPM
+RPM_LEAD_MAGIC_NUMBER = b'\xed\xab\xee\xdb'
+
+# the start of the header (there are some data we ignore before taht)
+RPM_HEADER_MAGIC_NUMBER = b'\x8e\xad\xe8'
+
+RPMTAG_MIN_NUMBER = 1000
+RPMTAG_MAX_NUMBER = 1146
+
+# signature tags
+RPMSIGTAG_SIZE = 1000
+RPMSIGTAG_LEMD5_1 = 1001
+RPMSIGTAG_PGP = 1002
+RPMSIGTAG_LEMD5_2 = 1003
+RPMSIGTAG_MD5 = 1004
+RPMSIGTAG_GPG = 1005
+RPMSIGTAG_PGP5 = 1006
+
+MD5_SIZE = 16  # 16 bytes long
+PGP_SIZE = 152  # 152 bytes long
+
+# data types definition
+RPM_DATA_TYPE_NULL = 0
+RPM_DATA_TYPE_CHAR = 1
+RPM_DATA_TYPE_INT8 = 2
+RPM_DATA_TYPE_INT16 = 3
+RPM_DATA_TYPE_INT32 = 4
+RPM_DATA_TYPE_INT64 = 5
+RPM_DATA_TYPE_STRING = 6
+RPM_DATA_TYPE_BIN = 7
+# these types are not really standard, 8 and 9 were used for strings in the past
+# rpm3 defines these this way
+RPM_DATA_TYPE_STRING_ARRAY = 8  # entries with multiple strings
+RPM_DATA_TYPE_I18NSTRING_TYPE = 9  # internationalized string
+# new types, not yet supported, though said to be handled as binary
+RPM_DATA_TYPE_ASN1 = 10
+RPM_DATA_TYPE_OPENPGP = 11
+
+RPM_DATA_TYPES = (
+    RPM_DATA_TYPE_NULL,
+    RPM_DATA_TYPE_CHAR,
+    RPM_DATA_TYPE_INT8,
+    RPM_DATA_TYPE_INT16,
+    RPM_DATA_TYPE_INT32,
+    RPM_DATA_TYPE_INT64,
+    RPM_DATA_TYPE_STRING,
+    RPM_DATA_TYPE_BIN,
+    RPM_DATA_TYPE_STRING_ARRAY,
+    RPM_DATA_TYPE_I18NSTRING_TYPE,
+    RPM_DATA_TYPE_ASN1,
+    RPM_DATA_TYPE_OPENPGP
+)
+
+# tags to collect
+
+RPMTAG_NAME = 1000
+RPMTAG_VERSION = 1001
+RPMTAG_RELEASE = 1002
+RPMTAG_EPOCH = 1003
+RPMTAG_SUMMARY = 1004
+RPMTAG_DESCRIPTION = 1005
+RPMTAG_DISTRIBUTION = 1010
+RPMTAG_VENDOR = 1011
+RPMTAG_COPYRIGHT = 1014
+RPMTAG_LICENSE = 1014
+RPMTAG_PACKAGER = 1015
+RPMTAG_GROUP = 1016
+RPMTAG_PATCH = 1019
+RPMTAG_URL = 1020
+RPMTAG_OS = 1021
+RPMTAG_ARCH = 1022
+RPMTAG_SOURCERPM = 1044
+# a number ... not clear what it is
+RPMTAG_SOURCEPACKAGE = 1106
+RPMTAG_DISTURL = 1123
+
+RPMTAGS = {
+   RPMTAG_NAME: 'name',
+   RPMTAG_EPOCH: 'epoch',
+   RPMTAG_VERSION: 'version',
+   RPMTAG_RELEASE: 'release',
+   RPMTAG_SUMMARY: 'summary',
+   RPMTAG_DESCRIPTION: 'description',
+   RPMTAG_DISTRIBUTION: 'distribution',
+   RPMTAG_VENDOR: 'vendor',
+   RPMTAG_LICENSE: 'license',
+   RPMTAG_PACKAGER: 'packager',
+   RPMTAG_GROUP: 'group',
+   RPMTAG_PATCH: 'patch',
+   RPMTAG_URL: 'url',
+   RPMTAG_OS: 'os',
+   RPMTAG_ARCH: 'arch',
+   RPMTAG_SOURCERPM: 'source_rpm',
+   RPMTAG_DISTURL: 'dist_url',
+}
 
 
-def find_magic_number(data,):
+def find_magic_number(data):
     """
     Return the start position where the magic number was found in the `data`
     file-like object or None if not found.
     """
-    magic_number = rpmdefs.RPM_HEADER_MAGIC_NUMBER
-    lmn = len(magic_number)
+    lmn = len(RPM_HEADER_MAGIC_NUMBER)
 
     base = data.tell()
     while True:
         chunk = data.read(lmn)
         if not chunk or len(chunk) != lmn:
             return
-        if chunk == magic_number:
+        if chunk == RPM_HEADER_MAGIC_NUMBER:
             return base
         base += 1
         data.seek(base)
@@ -78,18 +178,18 @@ class Entry(object):
     def parse_entry(cls, etag, etype, eoffset, ecount, data_store):
 
         reader_by_type = {
-            rpmdefs.RPM_DATA_TYPE_NULL:            cls.read_null,
-            rpmdefs.RPM_DATA_TYPE_CHAR:            cls.read_char,
-            rpmdefs.RPM_DATA_TYPE_INT8:            cls.read_int8,
-            rpmdefs.RPM_DATA_TYPE_INT16:           cls.read_int16,
-            rpmdefs.RPM_DATA_TYPE_INT32:           cls.read_int32,
-            rpmdefs.RPM_DATA_TYPE_INT64:           cls.read_int64,
-            rpmdefs.RPM_DATA_TYPE_STRING:          cls.read_string,
-            rpmdefs.RPM_DATA_TYPE_BIN:             cls.read_bin,
-            rpmdefs.RPM_DATA_TYPE_STRING_ARRAY:    cls.read_string_array,
-            rpmdefs.RPM_DATA_TYPE_ASN1:            cls.read_bin,
-            rpmdefs.RPM_DATA_TYPE_OPENPGP:         cls.read_bin,
-            rpmdefs.RPM_DATA_TYPE_I18NSTRING_TYPE: cls.read_string
+            RPM_DATA_TYPE_NULL:            cls.read_null,
+            RPM_DATA_TYPE_CHAR:            cls.read_char,
+            RPM_DATA_TYPE_INT8:            cls.read_int8,
+            RPM_DATA_TYPE_INT16:           cls.read_int16,
+            RPM_DATA_TYPE_INT32:           cls.read_int32,
+            RPM_DATA_TYPE_INT64:           cls.read_int64,
+            RPM_DATA_TYPE_STRING:          cls.read_string,
+            RPM_DATA_TYPE_BIN:             cls.read_bin,
+            RPM_DATA_TYPE_STRING_ARRAY:    cls.read_string_array,
+            RPM_DATA_TYPE_ASN1:            cls.read_bin,
+            RPM_DATA_TYPE_OPENPGP:         cls.read_bin,
+            RPM_DATA_TYPE_I18NSTRING_TYPE: cls.read_string
         }
 
         reader = reader_by_type[etype]
@@ -184,10 +284,10 @@ class Header(object):
             if not entry_data:
                 continue
             etag, etype, eoffset, ecount = entry_data
-            if not (rpmdefs.RPMTAG_MIN_NUMBER <= etag <= rpmdefs.RPMTAG_MAX_NUMBER):
+            if not (RPMTAG_MIN_NUMBER <= etag <= RPMTAG_MAX_NUMBER):
                 # TODO: log me!!!
                 continue
-            if etag not in rpmdefs.RPMTAGS:
+            if etag not in RPMTAGS:
                 # TODO: log me!!!
                 continue
             entry = Entry.parse_entry(etag, etype, eoffset, ecount , store)
@@ -240,7 +340,7 @@ class RPM(object):
         magic_num = value[0]
         package_type = value[3]
 
-        if magic_num != rpmdefs.RPM_LEAD_MAGIC_NUMBER:
+        if magic_num != RPM_LEAD_MAGIC_NUMBER:
             raise RPMError('Wrong magic number: this is not a RPM file')
 
         if package_type == 0:
@@ -275,7 +375,7 @@ class RPM(object):
         headerfmt = '!3sc4sll'
         header = struct.unpack(headerfmt, header)
         magic_num = header[0]
-        if magic_num != rpmdefs.RPM_HEADER_MAGIC_NUMBER:
+        if magic_num != RPM_HEADER_MAGIC_NUMBER:
             raise RPMError('invalid RPM header')
         return header
 
@@ -321,14 +421,14 @@ class RPM(object):
 
     @property
     def name(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_NAME)
+        return self.get_entry_value(RPMTAG_NAME)
 
     @property
     def epoch(self):
         """
         Return a epoch or None for the epoch 0 and if no epoch is defined.
         """
-        epoch = self.get_entry_value(rpmdefs.RPMTAG_EPOCH)
+        epoch = self.get_entry_value(RPMTAG_EPOCH)
         if not epoch:
             return
         if isinstance(epoch, (tuple, list)):
@@ -343,68 +443,64 @@ class RPM(object):
 
     @property
     def version(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_VERSION)
+        return self.get_entry_value(RPMTAG_VERSION)
 
     @property
     def release(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_RELEASE)
+        return self.get_entry_value(RPMTAG_RELEASE)
 
     @property
     def arch(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_ARCH)
+        return self.get_entry_value(RPMTAG_ARCH)
 
     @property
     def os(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_OS)
+        return self.get_entry_value(RPMTAG_OS)
 
     @property
     def summary(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_SUMMARY)
+        return self.get_entry_value(RPMTAG_SUMMARY)
 
     @property
     def description(self):
         # the full description is often a long text
-        return self.get_entry_value(rpmdefs.RPMTAG_DESCRIPTION)
+        return self.get_entry_value(RPMTAG_DESCRIPTION)
 
     @property
     def distribution(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_DISTRIBUTION)
+        return self.get_entry_value(RPMTAG_DISTRIBUTION)
 
     @property
     def vendor(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_VENDOR)
+        return self.get_entry_value(RPMTAG_VENDOR)
 
     @property
     def packager(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_PACKAGER)
+        return self.get_entry_value(RPMTAG_PACKAGER)
 
     @property
     def license(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_LICENSE)
+        return self.get_entry_value(RPMTAG_LICENSE)
 
     @property
     def patch(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_PATCH)
+        return self.get_entry_value(RPMTAG_PATCH)
 
     @property
     def group(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_GROUP)
+        return self.get_entry_value(RPMTAG_GROUP)
 
     @property
     def url(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_URL)
+        return self.get_entry_value(RPMTAG_URL)
 
     @property
     def dist_url(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_DISTURL)
+        return self.get_entry_value(RPMTAG_DISTURL)
 
     @property
     def source_rpm(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_SOURCERPM)
-
-    @property
-    def source_package(self):
-        return self.get_entry_value(rpmdefs.RPMTAG_SOURCEPACKAGE)
+        return self.get_entry_value(RPMTAG_SOURCERPM)
 
     @property
     def package(self):
@@ -425,7 +521,7 @@ class RPM(object):
         returns a dict of tags, keyed by name
         """
         tgs = {}
-        for tagid, tagname in rpmdefs.RPMTAGS.items():
+        for tagid, tagname in RPMTAGS.items():
             tag = self[tagid]
             if not tag or tag == 'None':
                 tag = None
@@ -450,6 +546,5 @@ class RPM(object):
             url=self.url,
             dist_url=self.dist_url,
             source_rpm=self.source_rpm,
-            source_package=self.source_package,
             is_binary=self.is_binary,
         )
