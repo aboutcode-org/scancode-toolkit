@@ -150,9 +150,9 @@ def build_description(summary, description):
     return description
 
 
-def combine_expressions(expressions, licensing=Licensing()):
+def combine_expressions(expressions, relation='AND', licensing=Licensing()):
     """
-    Return a combined license expression string with AND, given a list of
+    Return a combined license expression string with relation, given a list of
     license expressions strings.
 
     For example:
@@ -181,4 +181,7 @@ def combine_expressions(expressions, licensing=Licensing()):
         return expressions[0]
 
     expressions = [licensing.parse(le, simple=True) for le in expressions]
-    return str(licensing.AND(*expressions))
+    if relation == 'OR':
+        return str(licensing.OR(*expressions))
+    else:
+        return str(licensing.AND(*expressions))
