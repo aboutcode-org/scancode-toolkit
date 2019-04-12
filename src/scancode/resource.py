@@ -389,7 +389,7 @@ class Codebase(object):
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
+                ('ERROR: cannot populate codebase: %(s)r\n' % _error)
                 +traceback.format_exc())
 
         def skip_ignored(_loc):
