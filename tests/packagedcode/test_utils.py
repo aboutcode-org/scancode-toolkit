@@ -160,3 +160,7 @@ class TestPackageUtils(TestCase):
     def test_combine_expressions_with_duplicated_elements(self):
         assert 'mit AND apache-2.0' == combine_expressions(
             ['mit', 'apache-2.0', 'mit'])
+
+    def test_combine_expressions_with_or_relationship(self):
+        assert 'mit OR apache-2.0' == combine_expressions(
+            ['mit', 'apache-2.0'], 'OR')
