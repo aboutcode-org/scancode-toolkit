@@ -8,3 +8,4 @@ other_urls:
     - http://eikeon.com/
     - http://www.agendaless.com
 notes: composite
+minimum_coverage: 60
