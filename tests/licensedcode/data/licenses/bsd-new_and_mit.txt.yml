@@ -1,5 +1,5 @@
 license_expressions:
+    - bsd-new OR mit
     - bsd-new
     - mit
-    - bsd-new
-    - python-cwi
+

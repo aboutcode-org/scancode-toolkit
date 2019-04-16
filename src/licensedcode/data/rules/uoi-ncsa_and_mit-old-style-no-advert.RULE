@@ -1,7 +1,6 @@
 All autoconf files are licensed under the LLVM license with the following
 additions:
 
-llvm/autoconf/install-sh:
         This script is licensed under the LLVM license, with the following
         additional copyrights and restrictions:
 
