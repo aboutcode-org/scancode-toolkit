@@ -3,3 +3,5 @@ is_license_notice: yes
 notes: Hostapd dual bsd/gpl
 referenced_filenames:
     - COPYING
+minimum_coverage: 60
+
