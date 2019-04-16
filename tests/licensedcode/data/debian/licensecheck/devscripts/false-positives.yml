@@ -1,5 +1,6 @@
 license_expressions:
-  - free-unknown
+  - x11-tiff
+  - bsd-top
   - generic-cla
   - unknown-license-reference
   - unknown
