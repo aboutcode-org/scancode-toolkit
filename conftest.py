@@ -21,7 +21,6 @@ from subprocess import check_output
 from subprocess import STDOUT
 
 import pytest
-import six
 
 
 """
@@ -165,10 +164,6 @@ def should_skip(path_string):
     Return True if a `path_string` should be skipped.
     """
     path_string = path_string.replace('\\', '/')
-    if six.PY3:
-        # skip testing on Python 3 for now until we tag these modules
-        # as testable . See #295 for details
-        return True
 
     if path_string.endswith('setup.py'):
         return True
