@@ -704,9 +704,9 @@ class Rule(object):
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
     # with a relevance of zero
-    is_false_positive = attr.ib(default=False)
+    is_false_positive = attr.ib(default=False, repr=False)
 
-    is_negative = attr.ib(default=False)
+    is_negative = attr.ib(default=False, repr=False)
 
     # is this rule text only to be matched with a minimum coverage?
     minimum_coverage = attr.ib(default=0)
@@ -749,7 +749,7 @@ class Rule(object):
     ###########################################################################
 
     # length in number of token strings
-    length = attr.ib(default=0, repr=False)
+    length = attr.ib(default=0)
 
     # lengths in token ids, including high/low token counts, set in indexing.
     # This considers the all tokens occurences
@@ -869,9 +869,11 @@ class Rule(object):
 
     def small(self):
         """
-        Is this a small rule? It needs special handling for detection.
+        Is this a small rule? It needs special handling for detection and will
+        only be matched exactly.
         """
         SMALL_RULE = 15
+        # FIXME: minimum_coverage is abusing the notion of "small"
         return self.length < SMALL_RULE or self.minimum_coverage == 100
 
     def thresholds(self):
