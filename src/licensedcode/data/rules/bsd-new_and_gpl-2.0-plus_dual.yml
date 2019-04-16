@@ -1,3 +1,5 @@
 license_expression: bsd-new AND gpl-2.0-plus
 is_license_notice: yes
 notes: notice found in some dual-licensed packages
+minimum_coverage: 65
+

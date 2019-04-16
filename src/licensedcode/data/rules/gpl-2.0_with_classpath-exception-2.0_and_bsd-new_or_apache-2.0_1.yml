@@ -2,3 +2,5 @@ license_expression: gpl-2.0 WITH classpath-exception-2.0 AND (bsd-new OR apache-
 is_license_notice: yes
 referenced_filenames:
     - LICENSE
+minimum_coverage: 35
+
