@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import division
 
 from collections import defaultdict
-from collections import namedtuple
 
 from intbitset import intbitset
 
@@ -188,17 +187,16 @@ def index_token_sets(token_ids, len_junk, len_good):
     Return a 4-tuple of low & high tids sets, low & high tids multisets given a
     token_ids sequence.
     """
-    # For multisets, we use a defaultdict, rather than a Counter. This is midly
-    # faster than a Counter for sparse sets.
-
-    # this variant uses intbitset to evaluate its performance wrt to bitarray
-
     low_tids_set = intbitset(len_junk)
     low_tids_set_add = low_tids_set.add
     high_tids_set = intbitset(len_good)
     high_tids_set_add = high_tids_set.add
+
+    # For multisets, we use a defaultdict, rather than a Counter. This is midly
+    # faster than a Counter for sparse sets.
     low_tids_mset = defaultdict(int)
     high_tids_mset = defaultdict(int)
+
     for tid in token_ids:
         # this skips unknown token ids that are -1 as well as possible None
         if tid < 0:
@@ -210,13 +208,11 @@ def index_token_sets(token_ids, len_junk, len_good):
             high_tids_mset[tid] += 1
             high_tids_set_add(tid)
 
-    # sparify for speed
+    # OPTMIZED: ify for speed
     sparsify(low_tids_mset)
     sparsify(high_tids_mset)
     return low_tids_set, high_tids_set, low_tids_mset, high_tids_mset
 
-
-CandidateData = namedtuple('CandidateData', 'intersection distance matched_length high_inter_len low_inter_len')
 
 # FIXME: we should consider existing aho matches when considering candidate
 # and not rematch these at all
@@ -250,12 +246,12 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
         query_run.matchable_tokens(), idx.len_junk, idx.len_good)
 
     # initial rules
-    candidates = [(rid, rule, None) 
+    candidates = [(rid, rule, None)
         for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
 
     # step 1 is on token id sets:
     qlow, qhigh = qlows, qhighs
-    sets_by_rid = idx.tids_sets_by_rid
+    sets_by_rid = idx.tids_lohi_sets_by_rid
     intersector, counter = tids_sets_intersector, tids_set_counter
     thresholds_getter = Rule.thresholds_unique
 
@@ -269,21 +265,21 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
             ilow, ihigh = sets_by_rid[rid]
 
             if TRACE_ULTRA_DEEP:
-                logger_debug('candidate: qlow:', 
+                logger_debug('candidate: qlow:',
                     [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
-                logger_debug('candidate: ilow:', 
+                logger_debug('candidate: ilow:',
                     [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
-                logger_debug('candidate: qhigh:', 
+                logger_debug('candidate: qhigh:',
                     [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
-                logger_debug('candidate: ihigh:', 
+                logger_debug('candidate: ihigh:',
                     [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
 
             thresholds = thresholds_getter(rule)
             if TRACE_DEEP:
-                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds,
                                         intersector, counter, rule, idx)
             else:
-                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds,
                                         intersector, counter)
             if compared:
                 sort_order, intersection = compared
@@ -307,7 +303,7 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
 
         # step 2 is on tids multisets: update the parameters after step1 if needed
         qlow, qhigh = qlowms, qhighms
-        sets_by_rid = idx.tids_msets_by_rid
+        sets_by_rid = idx.tids_lohi_msets_by_rid
         intersector, counter = tids_multisets_intersector, tids_multiset_counter
         thresholds_getter = Rule.thresholds
 
@@ -316,11 +312,7 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
         tops = [rule.identifier for _rid, rule, _inter in candidates[:10]]
         logger_debug(tops)
 
-    # discard false positive rules from candidates: we never want to run
-    # a sequence match on these
-    # TODO: discard also rules that can only be matched exactly with the automaton
-    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.is_false_positive]
-
+    candidates = [rule for (_rid, rule, _inter) in candidates]
     return candidates
 
 

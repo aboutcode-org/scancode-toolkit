@@ -230,7 +230,7 @@ class TestIndexing(IndexTesting):
             {u'is': 1, u'redistribution': 1},
             {u'any': 1, u'is': 1, u'redistribution': 1}
         ]
-        low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_msets_by_rid)
+        low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_lohi_msets_by_rid)
         htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in high_tids_msets_by_rid]
         assert expected_high_tids_msets_by_rid == htmset
