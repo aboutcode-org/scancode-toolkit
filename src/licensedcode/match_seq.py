@@ -22,11 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, division, print_function
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
+
 
 TRACE = False
 TRACE2 = False
@@ -55,16 +58,15 @@ like approaches.
 MATCH_SEQ = '3-seq'
 
 
-def match_sequence(idx, candidate, query_run, start_offset=0):
+def match_sequence(idx, rule, query_run, start_offset=0):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
-    against the `idx` index for the `candidate` rule tuple (rid, rule,
-    intersection).
+    against the `idx` index for the candidate `rule`.
     """
-    if not candidate:
+    if not rule:
         return []
 
-    rid, rule, _intersection = candidate
+    rid = rule.rid
     high_postings = idx.high_postings_by_rid[rid]
     itokens = idx.tids_by_rid[rid]
 
@@ -86,7 +88,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
         if not query_run_matchables:
             break
         # ensure that we use qstart + qlen or we could miss matches on some query runs
-        block_matches = match_blocks(qtokens, itokens, qstart, qfinish+1, high_postings, len_junk, query_run_matchables, _idx=idx)
+        block_matches = match_blocks(qtokens, itokens, qstart, qfinish + 1, high_postings, len_junk, query_run_matchables, _idx=idx)
         if not block_matches:
             break
         if TRACE2:

@@ -1055,7 +1055,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         test_loc = self.get_test_loc('detect/short_l_and_gpls')
         matches = idx.match(location=test_loc)
-        assert 6 == len(matches)
+        assert 4 == len(matches)
         results = [m.matched_text(whole_lines=False) for m in matches]
         expected = [
             'This software is distributed under the following licenses:\n[Driver]:      GNU General Public License (GPL)',
