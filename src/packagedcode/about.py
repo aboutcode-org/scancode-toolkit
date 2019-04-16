@@ -31,12 +31,10 @@ import io
 import logging
 
 import attr
-from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 import saneyaml
 
 
@@ -90,14 +88,19 @@ def build_package(package_data):
     homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
     download_url = package_data.get('download_url')
     declared_license = package_data.get('license_expression')
+    copyright = package_data.get('copyright')
 
     owner = package_data.get('owner')
-    parties = [models.Party(name=repr(owner), role='owner')]
+    if not isinstance(owner, string_types):
+        owner = repr(owner)
+    parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 
     return AboutPackage(
+        type='about',
         name=name,
         version=version,
         declared_license=declared_license,
+        copyright=copyright,
         parties=parties,
         homepage_url=homepage_url,
         download_url=download_url,
