@@ -34,11 +34,12 @@
   "copyright": null,
   "license_expression": "gpl-3.0 OR ruby OR gpl-2.0",
   "declared_license": {
-    "OR": [
+    "licenses": [
       "GPLv3",
       "RUBY",
       "GPLv2"
-    ]
+    ],
+    "licenselogic": "or"
   },
   "notice_text": null,
   "manifest_path": null,

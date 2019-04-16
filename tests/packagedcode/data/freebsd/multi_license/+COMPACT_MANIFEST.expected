@@ -34,10 +34,11 @@
   "copyright": null,
   "license_expression": "unknown",
   "declared_license": {
-    "AND": [
+    "licenses": [
       "PSFL",
       "BSD3CLAUSE"
-    ]
+    ],
+    "licenselogic": "and"
   },
   "notice_text": null,
   "manifest_path": null,

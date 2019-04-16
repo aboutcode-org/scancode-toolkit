@@ -79,26 +79,25 @@ def compute_normalized_license(declared_license):
     if not declared_license:
         return
 
-    detected_licenses = []
-    if isinstance(declared_license, list):
-        for declared in declared_license:
-            detected_license = models.compute_normalized_license(declared)
-            if detected_license:
-                detected_licenses.append(detected_license)
-        if detected_licenses:
-            return combine_expressions(detected_licenses)
+    licenses = declared_license.get('licenses')
+    if not licenses:
+        return
 
-    elif isinstance(declared_license, dict):
-        for relation in ['AND', 'OR']:
-            values = declared_license.get(relation)
-            if values:
-                for declared in values:
-                    detected_license = models.compute_normalized_license(declared)
-                    if detected_license:
-                        detected_licenses.append(detected_license)
-                if detected_licenses:
-                    return combine_expressions(detected_licenses, relation)
+    license_logic = declared_license.get('licenselogic')
+    relation= 'AND'
+    if license_logic:
+        if license_logic == 'or' or license_logic == 'dual':
+            relation = 'OR'
     
+    detected_licenses = []
+    for declared in licenses:
+        detected_license = models.compute_normalized_license(declared)
+        if detected_license:
+            detected_licenses.append(detected_license)
+    
+    if detected_licenses:
+        return combine_expressions(detected_licenses, relation)
+
 
 def is_freebsd_manifest(location):
     return (filetype.is_file(location)
@@ -182,19 +181,11 @@ def license_mapper(package_data, package):
         return
 
     declared_license = OrderedDict()
-    # licenselogic is found as 'or' in some cases in the wild
-    if license_logic == 'or' or license_logic == 'dual':
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        declared_license['OR'] = lics
-    # licenselogic is found as 'and' in some cases in the wild
-    elif license_logic == 'and' or license_logic == 'multi':
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        declared_license['AND'] = lics
-    # 'single' or default licenselogic value
-    else:
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        declared_license = lics
-
+    lics = [l.strip() for l in licenses if l and l.strip()]
+    declared_license['licenses'] = lics
+    if license_logic:
+        declared_license['licenselogic'] = license_logic
+        
     package.declared_license = declared_license
     return package
 

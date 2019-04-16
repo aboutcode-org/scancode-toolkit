@@ -34,10 +34,11 @@
   "copyright": null,
   "license_expression": "ruby OR gpl-2.0",
   "declared_license": {
-    "OR": [
+    "licenses": [
       "RUBY",
       "GPLv2"
-    ]
+    ],
+    "licenselogic": "or"
   },
   "notice_text": null,
   "manifest_path": null,
