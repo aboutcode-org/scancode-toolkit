@@ -7,3 +7,5 @@ homepage_url: http://www.jython.org/license.txt
 text_urls:
     - http://www.jython.org/license.txt
 notes: this is a complex composite of multiple licenses
+minimum_coverage: 20
+
