@@ -111,6 +111,11 @@ STOPWORDS = frozenset({
     'hairsp',
     'bull',
     'bullet',
+
+    # some xml char entities
+    'x3c',
+    'x3e',
+
 })
 
 
