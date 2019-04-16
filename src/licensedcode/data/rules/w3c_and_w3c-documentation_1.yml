@@ -1,0 +1,5 @@
+license_expression: w3c AND w3c-documentation
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.dom-software.txt
+    - LICENSE.dom-documentation.txt
