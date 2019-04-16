@@ -1,5 +1,4 @@
 license_expressions:
-  - unknown
-  - unknown
+  - w3c AND w3c-documentation
   - apache-2.0
   - public-domain

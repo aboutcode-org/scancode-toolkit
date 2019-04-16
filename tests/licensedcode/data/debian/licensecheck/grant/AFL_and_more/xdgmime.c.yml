@@ -1,3 +1,2 @@
 license_expressions:
-  - afl-2.0
-  - lgpl-2.0-plus
+  - afl-2.0 OR lgpl-2.0-plus
