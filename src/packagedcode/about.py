@@ -79,7 +79,7 @@ def parse(location):
 
 def build_package(package_data):
     """
-    Return a Package built from Bower json `package_data`.
+    Return a Package built from `package_data` obtained by an ABOUT file.
     """
     name = package_data.get('name')
     # FIXME: having no name may not be a problem See #1514
@@ -87,7 +87,7 @@ def build_package(package_data):
         return
 
     version = package_data.get('version')
-    homepage_url = package_data.get('home_url')
+    homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
     download_url = package_data.get('download_url')
     declared_license = package_data.get('license_expression')
 
