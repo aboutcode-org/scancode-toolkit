@@ -209,9 +209,6 @@ class BasePackage(BaseModel):
     # TODO: add description of the Package type for info
     # type_description = None
 
-    # Optional. Parsed package data can saved here for use at a later point
-    extra_data = OrderedDict()
-
     type = String(
         repr=True,
         label='package type',

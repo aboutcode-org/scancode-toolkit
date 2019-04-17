@@ -51,6 +51,7 @@ if TRACE:
 @attr.s()
 class AboutPackage(models.Package):
     metafiles = ('*.ABOUT',)
+    default_type = 'about'
 
     @classmethod
     def recognize(cls, location):
@@ -58,7 +59,9 @@ class AboutPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        about_resource = cls.extra_data.get('about_resource')
+        with io.open(manifest_resource.location, encoding='utf-8') as loc:
+            package_data = saneyaml.load(loc.read())
+        about_resource = package_data.get('about_resource')
         if about_resource:
             manifest_resource_parent = manifest_resource.parent(codebase)
             for child in manifest_resource_parent.children(codebase):
@@ -105,7 +108,7 @@ def build_package(package_data):
         owner = repr(owner)
     parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 
-    package = AboutPackage(
+    return AboutPackage(
         type='about',
         name=name,
         version=version,
@@ -115,9 +118,3 @@ def build_package(package_data):
         homepage_url=homepage_url,
         download_url=download_url,
     )
-
-    about_resource = package_data.get('about_resource')
-    if about_resource:
-        package.extra_data['about_resource'] = about_resource
-
-    return package
