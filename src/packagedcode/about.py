@@ -56,6 +56,16 @@ class AboutPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        about_resource = cls.extra_data.get('about_resource')
+        if about_resource:
+            manifest_resource_parent = manifest_resource.parent(codebase)
+            for child in manifest_resource_parent.children(codebase):
+                if child.name == about_resource:
+                    return child
+        return manifest_resource
+
 
 def is_about_file(location):
     return (filetype.is_file(location)
@@ -95,7 +105,7 @@ def build_package(package_data):
         owner = repr(owner)
     parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 
-    return AboutPackage(
+    package = AboutPackage(
         type='about',
         name=name,
         version=version,
@@ -105,3 +115,9 @@ def build_package(package_data):
         homepage_url=homepage_url,
         download_url=download_url,
     )
+
+    about_resource = package_data.get('about_resource')
+    if about_resource:
+        package.extra_data['about_resource'] = about_resource
+
+    return package
