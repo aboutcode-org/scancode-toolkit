@@ -112,12 +112,15 @@ def build_package(package_data):
 
     authors = core_package_data.get('authors')
     parties = list(party_mapper(authors, party_role='author'))
+    
+    declared_license = core_package_data.get('license')
 
     package = RustCargoCrate(
         name=name,
         version=version,
         description=description,
         parties=parties,
+        declared_license = declared_license 
     )
 
     return package
