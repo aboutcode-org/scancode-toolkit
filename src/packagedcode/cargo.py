@@ -79,9 +79,6 @@ class RustCargoCrate(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return '{}/crates/{}'.format(baseurl, self.name)
 
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
 
 def is_cargo_toml(location):
     return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.toml')
