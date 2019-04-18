@@ -1,2 +1,4 @@
 license_expression: mit-old-style-no-advert AND bsd-simplified
 is_license_notice: yes
+minimum_coverage: 60
+

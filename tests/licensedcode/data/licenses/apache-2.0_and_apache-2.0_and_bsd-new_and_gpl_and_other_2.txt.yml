@@ -2,6 +2,7 @@ license_expressions:
   - gpl-1.0-plus
   - apache-2.0
   - mit
+  - mit
   - proprietary-license OR lgpl-2.0-plus OR gpl-1.0-plus
   - ms-pl
   - mit
