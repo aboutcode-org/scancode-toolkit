@@ -817,7 +817,7 @@ class Rule(object):
         # on one line: this is used to determine a matching approach
 
         # FIXME: this does not lower the text first??
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
             self.minimum_coverage = 100
 
         for token in query_tokenizer(self.text()):
