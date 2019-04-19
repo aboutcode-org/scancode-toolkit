@@ -26,21 +26,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from itertools import chain
 from functools import partial
 import textwrap
-
-from licensedcode.spans import Span
-from licensedcode import tokenize
-from licensedcode.stopwords import STOPWORDS
-
 
 """
 Utility function to trace matched texts.
 """
 
 
-def get_texts(match, location=None, query_string=None, idx=None, width=120):
+def get_texts(match, width=80, margin=0):
     """
     Given a match and a query location of query string return a tuple of wrapped
     texts at `width` for:
@@ -48,56 +42,22 @@ def get_texts(match, location=None, query_string=None, idx=None, width=120):
     - the matched query text as a string.
     - the matched rule text as a string.
 
-    Unmatched positions to known tokens are represented between angular backets <>
-    and between square brackets [] for unknown tokens not part of the index.
-    Punctuation is removed , spaces are normalized (new line is replaced by a space),
-    case is preserved.
-
     If `width` is a number superior to zero, the texts are wrapped to width.
     """
-    return (get_matched_qtext(match, location, query_string, idx, width),
-            get_match_itext(match, width))
+    qtokens = match.matched_text(whole_lines=False).split()
+    mqt = format_text(tokens=qtokens, width=width, margin=margin)
+
+    itokens = matched_rule_tokens_str(match)
+    mit = format_text(tokens=itokens, width=width, margin=margin)
+
+    return mqt, mit
 
 
-def get_matched_qtext(match, location=None, query_string=None, idx=None,
-                      width=120, margin=0):
-    """
-    Return the matched query text as a wrapped string of `width` given a match, a
-    query location or string and an index.
-
-    Unmatched positions are represented between angular backets <> or square brackets
-    [] for unknown tokens not part of the index. Punctuation is removed , spaces are
-    normalized (new line is replaced by a space), case is preserved.
-
-    If `width` is a number superior to zero, the texts are wrapped to width with an
-    optional `margin`.
-    """
-    mqts = matched_query_tokens_str(match, location, query_string, idx)
-    return format_text(mqts, width=width, margin=margin)
-
-
-def get_match_itext(match, width=120, margin=0):
-    """
-    Return the matched rule text as a wrapped string of `width` given a match.
-
-    Unmatched positions are represented between angular backets <>.
-    Punctuation is removed , spaces are normalized (new line is replaced by a space),
-    case is preserved.
-
-    If `width` is a number superior to zero, the texts are wrapped to width with an
-    optional `margin`.
-    """
-    mrts = matched_rule_tokens_str(match)
-    return format_text(mrts, width=width, margin=margin)
-
-
-def format_text(tokens, width=120, no_match='<no-match>', margin=4):
+def format_text(tokens, width=80, margin=4):
     """
     Return a formatted text wrapped at `width` given an iterable of tokens.
     None tokens for unmatched positions are replaced with `no_match`.
     """
-    nomatch = lambda s: s or no_match
-    tokens = map(nomatch, tokens)
     noop = lambda x: [x]
     initial_indent = subsequent_indent = u' ' * margin
     wrapper = partial(textwrap.wrap,
@@ -109,90 +69,15 @@ def format_text(tokens, width=120, no_match='<no-match>', margin=4):
     return u'\n'.join(wrap(u' '.join(tokens)))
 
 
-def matched_query_tokens_str(match, location=None, query_string=None, idx=None,
-                             stopwords=STOPWORDS):
-    """
-    Return an iterable of matched query token strings given a query file at
-    `location` or a `query_string`, a match and an index.
-
-    Yield None for unmatched positions. Punctuation is removed, spaces are normalized
-    (new line is replaced by a space), case is preserved.
-    """
-    assert idx
-    dictionary_get = idx.dictionary.get
-
-    tokens = (tokenize._query_tokenizer(line, stopwords=stopwords)
-              for _ln, line in tokenize.query_lines(location, query_string))
-    tokens = chain.from_iterable(tokens)
-    match_qspan = match.qspan
-    match_qspan_start = match_qspan.start
-    match_qspan_end = match_qspan.end
-    known_pos = -1
-    started = False
-    finished = False
-    for token in tokens:
-        toklow = token.lower()
-        if toklow in stopwords:
-            continue
-
-        token_id = dictionary_get(toklow)
-        if token_id is None:
-            if not started:
-                continue
-            if finished:
-                break
-        else:
-            known_pos += 1
-
-        if match_qspan_start <= known_pos <= match_qspan_end:
-            started = True
-            if known_pos == match_qspan_end:
-                finished = True
-
-            if known_pos in match_qspan and token_id is not None:
-                yield token
-            else:
-                if token_id is not None:
-                    yield '<%s>' % token
-                else:
-                    yield '[%s]' % token
-
-
 def matched_rule_tokens_str(match):
     """
     Return an iterable of matched rule token strings given a match.
-    Yield None for unmatched positions.
     Punctuation is removed, spaces are normalized (new line is replaced by a space),
     case is preserved.
     """
-    ispan = match.ispan
-    ispan_start = ispan.start
-    ispan_end = ispan.end
     for pos, token in enumerate(match.rule.tokens()):
-        if ispan_start <= pos <= ispan_end:
-            if pos in ispan:
+        if match.ispan.start <= pos <= match.ispan.end:
+            if pos in match.ispan:
                 yield token
             else:
                 yield '<%s>' % token
-
-
-def _debug_print_matched_query_text(match, query, extras=5, logger_debug=None):
-    """
-    Print a matched query text including `extras` tokens before and after the match.
-    Used for debugging license matches.
-    """
-    # create a fake new match with extra unknown left and right
-    new_match = match.combine(match)
-    new_qstart = max([0, match.qstart - extras])
-    new_qend = min([match.qend + extras, len(query.tokens)])
-    new_qspan = Span(new_qstart, new_qend)
-    new_match.qspan = new_qspan
-
-    logger_debug(new_match)
-    logger_debug(' MATCHED QUERY TEXT with extras')
-    qt, _it = get_texts(
-        new_match,
-        location=query.location, query_string=query.query_string,
-        idx=query.idx)
-    print(qt)
-
