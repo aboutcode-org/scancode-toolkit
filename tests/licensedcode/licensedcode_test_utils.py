@@ -222,7 +222,7 @@ def make_test(license_test, regen=False):
             failure_trace .extend([test_name, 'test file: file://' + test_file])
 
             for match in matches:
-                qtext, itext = get_texts(match, location=test_file, idx=idx)
+                qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
                 rule_data_file = match.rule.data_file
                 failure_trace.extend(['', '',

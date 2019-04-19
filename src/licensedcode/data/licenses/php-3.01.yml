@@ -14,3 +14,4 @@ text_urls:
 other_urls:
     - http://www.php.net/software/
     - http://www.zend.com
+minimum_coverage: 60

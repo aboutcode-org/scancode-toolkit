@@ -3,3 +3,4 @@ is_license_notice: yes
 minimum_coverage: 60
 referenced_filenames:
     - COPYING
+minimum_coverage: 70

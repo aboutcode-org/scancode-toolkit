@@ -1,4 +1,4 @@
-license_expression: gpl-2.0 OR bsd-new
+license_expression: gpl-2.0 WITH linux-syscall-exception-gpl OR bsd-new
 notes: openib
 is_license_notice: yes
-is_license_tag: yes
+minimum_coverage: 70

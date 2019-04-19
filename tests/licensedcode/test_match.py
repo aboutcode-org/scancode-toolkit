@@ -671,6 +671,25 @@ class TestLicenseMatchFilter(FileBasedTesting):
 
         assert expected == matches
 
+    def test_filter_matches_filters_matches_does_not_discard_non_overlaping(self):
+        r1 = Rule(text_file='r1', license_expression='apache-1.1')
+        r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
+        r3 = Rule(text_file='r3', license_expression='gpl')
+
+        # we have these matches
+        # 1. ABC
+        # 2. ABCDEDFG
+        # 3.    DEFCGJLJLJKLJJLKJLJJJLJLJLJJL
+        # we do not want 1. to be discarded in the final
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 40), ispan=Span(0, 40))
+        m3 = LicenseMatch(rule=r3, qspan=Span(6, 120), ispan=Span(6, 120))
+
+        result, discarded = filter_contained_matches([m2, m1, m3])
+        assert [] == sorted([m1, m3]) == sorted(result)
+        assert [] == discarded
+
 
 class TestLicenseMatchScore(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
