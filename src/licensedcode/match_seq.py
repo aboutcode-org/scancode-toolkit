@@ -113,8 +113,7 @@ def match_sequence(idx, rule, query_run, start_offset=0):
                 matches.append(match)
                 if TRACE2:
                     from licensedcode.tracing import get_texts
-                    qt, it = get_texts(
-                        match, location=query.location, query_string=query.query_string, idx=idx)
+                    qt, it = get_texts(match)
                     logger_debug('###########################')
                     logger_debug(match)
                     logger_debug('###########################')

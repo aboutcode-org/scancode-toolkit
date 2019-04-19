@@ -51,6 +51,7 @@ TRACE_REFINE_SINGLE = False
 TRACE_REFINE_RULE_MIN_COVERAGE = False
 TRACE_SPAN_DETAILS = False
 TRACE_MATCHED_TEXT = False
+TRACE_MATCHED_TEXT_DETAILS = False
 
 
 def logger_debug(*args): pass
@@ -63,8 +64,6 @@ if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
     import logging
     import sys
 
-    from licensedcode.tracing import _debug_print_matched_query_text
-
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
@@ -73,7 +72,25 @@ if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
+    def _debug_print_matched_query_text(match, query, extras=5):
+        """
+        Print a matched query text including `extras` tokens before and after
+        the match. Used for debugging license matches.
+        """
+        # create a fake new match with extra tokens before and after
+        new_match = match.combine(match)
+        new_qstart = max([0, match.qstart - extras])
+        new_qend = min([match.qend + extras, len(query.tokens)])
+        new_qspan = Span(new_qstart, new_qend)
+        new_match.qspan = new_qspan
+    
+        logger_debug(new_match)
+        logger_debug(' MATCHED QUERY TEXT with extras')
+        qt = new_match.matched_text(whole_lines=False)
+        print(qt)
 
+
+# TODO: use attrs
 # FIXME: Implement each ordering functions. From the Python docs: Note: While
 # this decorator makes it easy to create well behaved totally ordered types, it
 # does come at the cost of slower execution and more complex stack traces for
@@ -515,6 +532,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
     matches.sort(key=sorter)
     matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
                         in groupby(matches, key=lambda m: m.rule.identifier)]
+
     if TRACE_MERGE: print('merge_matches: number of matches to process:', len(matches))
 
     merged = []
@@ -688,7 +706,7 @@ def filter_contained_matches(matches):
 
             # TODO: is this really correct?: we could break/shortcircuit rather
             # than continue since continuing looking next matches will yield no
-            # new findings stop when no overlap: Touching and overlapping
+            # new findings. e.g. stop when no overlap: Touching and overlapping
             # matches have a zero distance.
             if current_match.qdistance_to(next_match):
                 if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
@@ -1088,7 +1106,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     matches, discarded = filter_if_only_known_words_rule(matches)
     all_discarded.extend(discarded)
-    _log(matches, discarded, 'WITH UNKNOWN WORDS')
+    _log(matches, discarded, 'ACCEPTABLE IF UNKNOWN WORDS')
 
     matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
@@ -1096,7 +1114,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     matches, discarded = filter_spurious_single_token(matches, query)
     all_discarded.extend(discarded)
-    _log(matches, discarded, 'MULTIPLE TOKENS')
+    _log(matches, discarded, 'MORE THAN ONE NON SPURIOUS TOKEN')
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
@@ -1199,7 +1217,8 @@ def reportable_tokens(tokens, match, whole_lines=False):
             continue
         if tok.line_num > end_line:
             break
-        logger_debug('reportable_tokens:', tok)
+        if TRACE_MATCHED_TEXT_DETAILS:
+            logger_debug('reportable_tokens:', tok)
 
         is_included = False
 
@@ -1207,12 +1226,14 @@ def reportable_tokens(tokens, match, whole_lines=False):
         if tok.pos != -1 and tok.is_known and tok.pos in span:
             tok.is_matched = True
             is_included = True
-            logger_debug('  tok.is_matched = True')
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('  tok.is_matched = True')
 
         if whole_lines:
             # we only work on matched lines so no need to test further
             # if start_line <= tok.line_num <= end_line.
-            logger_debug('  whole_lines')
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('  whole_lines')
             is_included = True
 
         else:
@@ -1222,16 +1243,19 @@ def reportable_tokens(tokens, match, whole_lines=False):
             # start
             if not started and tok.pos == start:
                 started = True
-                logger_debug('  start')
+                if TRACE_MATCHED_TEXT_DETAILS:
+                    logger_debug('  start')
                 is_included = True
 
             # middle
             if started and not finished:
-                logger_debug('    middle')
+                if TRACE_MATCHED_TEXT_DETAILS:
+                    logger_debug('    middle')
                 is_included = True
 
             if tok.pos == end:
-                logger_debug('  at end')
+                if TRACE_MATCHED_TEXT_DETAILS:
+                    logger_debug('  at end')
                 finished = True
                 started = False
                 end_pos = real_pos
@@ -1242,7 +1266,8 @@ def reportable_tokens(tokens, match, whole_lines=False):
                 if not tok.is_text:
                     tok.value = tok.value.rstrip()
                     if tok.value:
-                        logger_debug('  end yield')
+                        if TRACE_MATCHED_TEXT_DETAILS:
+                            logger_debug('  end yield')
                         is_included = True
 
         last_pos = real_pos
