@@ -6,3 +6,4 @@ owner: JPRS
 homepage_url: https://jprs.co.jp/idn/idnkit2-OSCL.txt
 text_urls:
     - https://jprs.co.jp/idn/idnkit2-OSCL.txt
+minimum_coverage: 70

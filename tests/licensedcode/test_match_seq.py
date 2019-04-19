@@ -82,7 +82,7 @@ class TestMatchSeq(FileBasedTesting):
             IN NO EVENT SHALL THE <OLD> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF <NEW> SUCH DAMAGE
         """.lower().split()
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert exp_qtext == qtext.split()
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
@@ -97,7 +97,7 @@ class TestMatchSeq(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert match_seq.MATCH_SEQ == match.matcher
-        qtext, _itext = get_texts(match, location=query_loc, idx=idx)
+        qtext, _itext = get_texts(match)
         expected = u'''
         Redistribution and use in source and
         binary forms with or without modification are permitted provided that the following

@@ -278,7 +278,7 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(query_string=querys)
         assert 1 == len(result)
         match = result[0]
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
         assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
 
@@ -298,7 +298,7 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(query_string=querys)
         assert 1 == len(result)
         match = result[0]
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert 'licensed under the GPL licensed under the GPL' == qtext
         assert 'licensed under the gpl licensed under the gpl' == itext
 
@@ -312,7 +312,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 7) == match.qspan
         assert Span(0, 7) == match.ispan
 
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert u'licensed under the GPL licensed under the GPL' == qtext
         assert u'licensed under the gpl licensed under the gpl' == itext
 
@@ -327,7 +327,7 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(query_string=querys)
         assert 1 == len(result)
         match = result[0]
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert u'licensed [that] under [is] the [that] GPL licensed [or] under [not] the GPL' == qtext
         assert u'licensed under the gpl licensed under the gpl' == itext
 
@@ -339,7 +339,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
 
-        qtext, itext = get_texts(match, location=query_loc, idx=idx)
+        qtext, itext = get_texts(match)
         assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
         assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
 
@@ -371,7 +371,7 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(query_string=querys)
         assert 1 == len(result)
         match = result[0]
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert 'this GPL MIT that LGPL' == qtext
         assert 'this gpl mit that lgpl' == itext
 
@@ -482,7 +482,7 @@ No part of match        '''
             SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
         """.lower().split()
 
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
 
@@ -585,7 +585,7 @@ No part of match        '''
             OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF
             ADVISED OF THE
         """.lower().split()
-        qtext, itext = get_texts(match, location=query_loc, idx=idx)
+        qtext, itext = get_texts(match)
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
         assert match.coverage() > 97
@@ -618,6 +618,6 @@ No part of match        '''
         assert Span(0, 4) | Span(6, 10) == match.qspan
         assert Span(0, 9) == match.ispan
         assert 100 == match.coverage()
-        qtext, itext = get_texts(match, query_string=querys, idx=idx)
+        qtext, itext = get_texts(match)
         assert 'copyright reserved mit is license <is> [the] copyright reserved mit is license' == qtext
         assert 'copyright reserved mit is license copyright reserved mit is license' == itext

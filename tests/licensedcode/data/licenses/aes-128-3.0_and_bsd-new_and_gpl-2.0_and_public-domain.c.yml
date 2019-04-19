@@ -1,3 +1,2 @@
 license_expressions:
-    - public-domain AND (gpl-2.0 OR bsd-new)
-    - public-domain-disclaimer
+    - public-domain-disclaimer AND (gpl-2.0 OR bsd-new) AND public-domain-disclaimer

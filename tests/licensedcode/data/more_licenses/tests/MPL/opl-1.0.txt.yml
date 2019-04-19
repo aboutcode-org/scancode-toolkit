@@ -1,6 +1,7 @@
+expected_failure: yes
+notes: this is an mpl-1.1 deruvative... very rare.
 license_expressions:
   - mpl-1.1
-  - mpl-1.1
-  - mpl-1.1
-  - mpl-1.0
+  - sugarcrm-1.1.3
   - open-public
+

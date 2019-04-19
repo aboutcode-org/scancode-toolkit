@@ -1,0 +1,6 @@
+license_expression: public-domain-disclaimer AND (gpl-2.0 OR bsd-new) AND public-domain-disclaimer
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+    - README
+minimum_coverage: 70
