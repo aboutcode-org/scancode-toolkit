@@ -27,6 +27,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
+"""
+A set of common words that are ignored from matching such as HTML tags.
+"""
+
 STOPWORDS = frozenset({
 # common XML character references as &quot;
     'quot',
@@ -46,10 +50,10 @@ STOPWORDS = frozenset({
     'span',
     'class',
     'pre',
-    'list',  # also a comment prefix
     'ul',
     'ol',
     'li',
+    'hr',
     'tr',
     'td',
     'th',
@@ -111,11 +115,12 @@ STOPWORDS = frozenset({
     'hairsp',
     'bull',
     'bullet',
-
     # some xml char entities
     'x3c',
     'x3e',
 
+    # seen in many CSS
+    'lists',
 })
 
 
