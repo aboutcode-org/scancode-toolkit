@@ -1374,19 +1374,15 @@ class VirtualCodebase(Codebase):
         self.resource_attributes = resource_attributes or OrderedDict()
         self.resource_class = None
         self.has_single_resource = False
+        self.location = location
 
         scan_data = self._get_scan_data(location)
         self._populate(scan_data)
 
-    def _get_scan_data(self, location):
+    def _get_scan_data_helper(self, location):
         """
-        Return scan data loaded from `location` that is either:
-        - a path string
-        - a JSON string
-        - a Python mapping
+        Return scan data loaded from `location`, which is a path string
         """
-        if isinstance(location, dict):
-            return location
         try:
             return json.loads(location, object_pairs_hook=OrderedDict)
         except:
@@ -1397,6 +1393,24 @@ class VirtualCodebase(Codebase):
                 scan_data = json.load(
                     f, object_pairs_hook=OrderedDict, encoding='utf-8')
             return scan_data
+
+    def _get_scan_data(self, location):
+        """
+        Return scan data loaded from `location` that is either:
+        - a path string
+        - a JSON string
+        - a Python mapping
+
+        or `location` is a List that contains multiple paths to scans that are to be joined together.
+        """
+        if isinstance(location, dict):
+            return location
+        if isinstance(location, (list, tuple,)):
+            scan_data = OrderedDict()
+            for loc in location:
+                scan_data.update(self._get_scan_data_helper(loc))
+            return scan_data
+        return self._get_scan_data_helper(location)
 
     def _create_empty_resource_data(self):
         """
@@ -1527,9 +1541,14 @@ class VirtualCodebase(Codebase):
         ##########################################################
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
-        sample_resource_path = sample_resource_data['path']
-        sample_resource_path = sample_resource_path.strip('/')
-        root_path = sample_resource_path.split('/')[0]
+
+        multiple_input = isinstance(self.location, (list, tuple,)) and len(self.location) > 1
+        if multiple_input:
+            root_path = 'virtual_root'
+        else:
+            sample_resource_path = sample_resource_data['path']
+            sample_resource_path = sample_resource_path.strip('/')
+            root_path = sample_resource_path.split('/')[0]
         root_name = root_path
         root_is_file = False
         root_data = self._create_empty_resource_data()
@@ -1541,6 +1560,8 @@ class VirtualCodebase(Codebase):
 
         for resource_data in resources_data:
             path = resource_data.get('path')
+            if multiple_input:
+                path = os.path.join(root_path, path)
             name = resource_data.get('name', None)
             if not name:
                 name = file_name(path)
