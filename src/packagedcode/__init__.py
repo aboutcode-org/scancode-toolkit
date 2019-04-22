@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from packagedcode import models
+from packagedcode import about
 from packagedcode import bower
 from packagedcode import cargo
 from packagedcode import freebsd
@@ -53,6 +54,7 @@ PACKAGE_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
+    about.AboutPackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
