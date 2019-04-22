@@ -30,10 +30,22 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
+import logging
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from typecode.contenttype import get_type
+
+
+TRACE = False
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
 
 """
 Main scanning functions.
@@ -237,9 +249,9 @@ def get_package_info(location, **kwargs):
         manifest = recognize_package(location)
         if manifest:
             return dict(packages=[manifest.to_dict()])
-    except Exception:
-        # FIXME: this should be logged somehow, but for now we avoid useless
-        # errors per #983
+    except Exception as e:
+        if TRACE:
+            logger.error('get_package_info: {}: Exception: {}'.format(location, e))
         pass
     return dict(packages=[])
 
