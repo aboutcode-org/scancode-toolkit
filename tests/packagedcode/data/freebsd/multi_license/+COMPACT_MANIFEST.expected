@@ -33,7 +33,13 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": "unknown",
-  "declared_license": "PSFL AND BSD3CLAUSE",
+  "declared_license": {
+    "licenses": [
+      "PSFL",
+      "BSD3CLAUSE"
+    ],
+    "licenselogic": "and"
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
