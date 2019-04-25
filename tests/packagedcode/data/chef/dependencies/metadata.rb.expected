@@ -1,0 +1,60 @@
+{
+  "type": "chef",
+  "namespace": null,
+  "name": "build-essential",
+  "version": "8.2.1",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "Ruby",
+  "description": "Installs C compiler / build tools",
+  "release_date": null,
+  "parties": [
+    {
+      "type": null,
+      "role": "maintainer",
+      "name": "Chef Software, Inc.",
+      "email": "cookbooks@chef.io",
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": "https://supermarket.chef.io/cookbooks/build-essential/versions/8.2.1/download",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": "https://github.com/chef-cookbooks/build-essential/issues",
+  "code_view_url": "https://github.com/chef-cookbooks/build-essential",
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": "Apache-2.0",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:chef/mingw",
+      "requirement": ">= 1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:chef/seven_zip",
+      "requirement": null,
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:chef/build-essential@8.2.1",
+  "repository_homepage_url": null,
+  "repository_download_url": "https://supermarket.chef.io/cookbooks/build-essential/versions/8.2.1/download",
+  "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/build-essential/versions/8.2.1"
+}

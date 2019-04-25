@@ -47,6 +47,11 @@ class TestChef(PackageTester):
         expected_file = self.get_test_loc('chef/basic/metadata.rb.expected')
         self.check_package(chef.parse(test_file), expected_file, regen=False)
 
+    def test_parse_from_rb_dependency_requirement(self):
+        test_file = self.get_test_loc('chef/dependencies/metadata.rb')
+        expected_file = self.get_test_loc('chef/dependencies/metadata.rb.expected')
+        self.check_package(chef.parse(test_file), expected_file, regen=False)
+
     def test_build_package(self):
         package_data = OrderedDict(
             name='test',
