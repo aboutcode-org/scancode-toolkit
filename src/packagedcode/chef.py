@@ -145,20 +145,24 @@ class ChefMetadataFormatter(Formatter):
         metadata = {}
         line = []
         for ttype, value in tokens:
-            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation, Token.Literal.String.Double,)\
-                    and value not in ('\"', '\'',):
+            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation,
+                    Token.Literal.String.Single, Token.Literal.String.Double,):
                 line.append(value)
             if ttype in (Token.Text,) and value.endswith('\n') and line:
                 # The field name should be the first element in the list
                 key = line.pop(0)
+                joined_line = ''.join(line)
+                if ((joined_line.startswith('"') and joined_line.endswith('"')) or
+                        (joined_line.startswith('\'') and joined_line.endswith('\''))):
+                    joined_line = joined_line[1:-1]
                 if key == 'depends':
                     depends = metadata.get(key)
                     if not depends:
-                        metadata[key] = [''.join(line)]
+                        metadata[key] = [joined_line]
                     else:
-                        metadata[key].append(''.join(line))
+                        metadata[key].append(joined_line)
                 else:
-                    metadata[key] = ''.join(line)
+                    metadata[key] = joined_line
                 line = []
         json.dump(metadata, outfile)
 
@@ -170,17 +174,17 @@ def parse(location):
     if is_metadata_json(location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
-        return build_package_from_json(package_data)
+        return build_package(package_data)
 
     if is_metadata_rb(location):
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
         formatted_file_contents = highlight(file_contents, RubyLexer(), ChefMetadataFormatter())
         package_data = json.loads(formatted_file_contents)
-        return build_package_from_rb(package_data)
+        return build_package(package_data)
 
 
-def build_package_from_json(package_data):
+def build_package(package_data):
     """
     Return a Package object from a package_data mapping (from a metadata.json or
     similar) or None.
@@ -210,79 +214,41 @@ def build_package_from_json(package_data):
     bug_tracking_url = package_data.get('issues_url', '')
 
     dependencies = package_data.get('dependencies', {})
+    depends = package_data.get('depends', [])
     package_dependencies = []
-    for dependency_name, requirement in dependencies.items():
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(type='chef', name=dependency_name).to_string(),
-                scope='dependencies',
-                requirement=requirement,
-                is_runtime=True,
-                is_optional=False,
+    # If `package_data` is from a `metadata.json` file, then dependencies will
+    # be in the `dependencies` field
+    if dependencies:
+        for dependency_name, requirement in dependencies.items():
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='chef', name=dependency_name).to_string(),
+                    scope='dependencies',
+                    requirement=requirement,
+                    is_runtime=True,
+                    is_optional=False,
+                )
             )
-        )
-
-    return ChefPackage(
-        name=name,
-        version=version,
-        parties=parties,
-        description= description.strip() or None,
-        declared_license=license.strip() or None,
-        code_view_url=code_view_url.strip() or None,
-        bug_tracking_url=bug_tracking_url.strip() or None,
-        download_url=chef_download_url(name, version).strip(),
-        dependencies=package_dependencies,
-    )
-
-
-def build_package_from_rb(package_data):
-    """
-    Return a Package object from a package_data mapping (from a metadata.json or
-    similar) or None.
-    """
-    name = package_data.get('name')
-    version = package_data.get('version')
-    if not name or not version:
-        # a metadata.json without name and version is not a usable chef package
-        # FIXME: raise error?
-        return
-
-    maintainer_name = package_data.get('maintainer', '')
-    maintainer_email = package_data.get('maintainer_email', '')
-    parties = []
-    if maintainer_name or maintainer_email:
-        parties.append(
-            models.Party(
-                name=maintainer_name or None,
-                role='maintainer',
-                email=maintainer_email or None,
+    # If `package_data` is from a `metadata.rb` file, then dependencies will
+    # be in the `depends` field
+    elif depends:
+        for dependency in depends:
+            dep_requirement = dependency.rsplit(',')
+            if len(dep_requirement) == 2:
+                dep_name = dep_requirement[0]
+                requirement = dep_requirement[1]
+            else:
+                dep_name = dependency
+                requirement = None
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='chef', name=dep_name).to_string(),
+                    scope='dependencies',
+                    requirement=requirement,
+                    is_runtime=True,
+                    is_optional=False,
+                )
             )
-        )
-
-    description = package_data.get('description', '') or package_data.get('long_description', '')
-    license = package_data.get('license', '')
-    code_view_url = package_data.get('source_url', '')
-    bug_tracking_url = package_data.get('issues_url', '')
-
-    dependencies = package_data.get('depends', [])
-    package_dependencies = []
-    for dependency in dependencies:
-        dep_requirement = dependency.rsplit(',')
-        if len(dep_requirement) == 2:
-            dep_name = dep_requirement[0]
-            requirement = dep_requirement[1]
-        else:
-            dep_name = dependency
-            requirement = None
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(type='chef', name=dep_name).to_string(),
-                scope='dependencies',
-                requirement=requirement,
-                is_runtime=True,
-                is_optional=False,
-            )
-        )
 
     return ChefPackage(
         name=name,
