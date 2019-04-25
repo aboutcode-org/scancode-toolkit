@@ -1,4 +1,3 @@
-
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -33,6 +32,10 @@ import logging
 
 import attr
 from packageurl import PackageURL
+from pygments import highlight
+from pygments.formatter import Formatter
+from pygments.lexers import RubyLexer
+from pygments.token import Token
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -112,20 +115,72 @@ def is_metadata_json(location):
             and fileutils.file_name(location).lower() == 'metadata.json')
 
 
+def is_metadata_rb(location):
+    return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'metadata.rb')
+
+
+def ChefMetadataFormatter(Formatter):
+    def format(self, tokens, outfile):
+        """
+        Parse lines from a `metadata.rb` file.
+
+        For example, a field in `metadata.rb` can look like this:
+
+        name               "python"
+
+        `RubyLexer()` interprets the line as so:
+
+        ['Token.Name.Builtin', "u'name'"],
+        ['Token.Text', "u'              '"],
+        ['Token.Literal.String.Double', 'u\'"\''],
+        ['Token.Literal.String.Double', "u'python'"],
+        ['Token.Literal.String.Double', 'u\'"\''],
+        ['Token.Text', "u'\\n'"]
+
+        With this pattern of tokens, we iterate through the token stream to
+        create a dictionary whose keys are the variable names from `metadata.rb`
+        and its values are those variable's values.
+        """
+        metadata = {}
+        line = []
+        for ttype, value in tokens:
+            if ttype in (Token.Name, Token.Name.Builtin,
+                         Token.Punctuation, Token.Literal.String.Double,):
+                line.append(value)
+            if ttype is (Token.Text,) and value.endswith('\n'):
+                # The field name should be the first element in the list
+                key = line.pop(0)
+                if key == 'depends':
+                    depends = metadata.get(key)
+                    if not depends:
+                        metadata[key] = [''.join(line)]
+                    else:
+                        metadata[key].append(''.join(line))
+                else:
+                    metadata[key] = ''.join(line)
+                line = []
+        json.dump(metadata, outfile)
+
+
 def parse(location):
     """
     Return a Package object from a metadata.json file or None.
     """
-    if not is_metadata_json(location):
-        return
+    if is_metadata_json(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        return build_package_from_json(package_data)
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+    if is_metadata_rb(location):
+        with io.open(location, encoding='utf-8') as loc:
+            file_contents = loc.read()
+        formatted_file_contents = highlight(file_contents, RubyLexer(), ChefMetadataFormatter())
+        package_data = json.loads(formatted_file_contents)
+        return build_package_from_rb(package_data)
 
-    return build_package(package_data)
 
-
-def build_package(package_data):
+def build_package_from_json(package_data):
     """
     Return a Package object from a package_data mapping (from a metadata.json or
     similar) or None.
@@ -171,6 +226,63 @@ def build_package(package_data):
                 is_optional=False,
             )
             package_dependencies.append(dep)
+
+    return ChefPackage(
+        name=name,
+        version=version,
+        parties=parties,
+        description= description.strip() or None,
+        declared_license=license.strip() or None,
+        code_view_url=code_view_url.strip() or None,
+        bug_tracking_url=bug_tracking_url.strip() or None,
+        download_url=chef_download_url(name, version).strip(),
+        dependencies=package_dependencies,
+    )
+
+
+def build_package_from_rb(package_data):
+    """
+    Return a Package object from a package_data mapping (from a metadata.json or
+    similar) or None.
+    """
+    name = package_data.get('name')
+    version = package_data.get('version')
+    if not name or not version:
+        # a metadata.json without name and version is not a usable chef package
+        # FIXME: raise error?
+        return
+
+    maintainer_name = package_data.get('maintainer', '')
+    maintainer_email = package_data.get('maintainer_email', '')
+    parties = []
+    if maintainer_name or maintainer_email:
+        parties.append(
+            models.Party(
+                name=maintainer_name or None,
+                role='maintainer',
+                email=maintainer_email or None,
+            )
+        )
+
+    description = package_data.get('description', '')
+    if not description:
+        description = package_data.get('long_description', '')
+
+    license = package_data.get('license', '')
+    code_view_url = package_data.get('source_url', '')
+    bug_tracking_url = package_data.get('issues_url', '')
+
+    # TODO: handle cases where there is a version requirement
+    dependencies = package_data.get('depends', [])
+    package_dependencies = []
+    for dependency in dependencies.items():
+        dep = models.DependentPackage(
+            purl=PackageURL(type='chef', name=dependency).to_string(),
+            scope='dependencies',
+            is_runtime=True,
+            is_optional=False,
+        )
+        package_dependencies.append(dep)
 
     return ChefPackage(
         name=name,
