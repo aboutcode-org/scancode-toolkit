@@ -146,19 +146,21 @@ class ChefMetadataFormatter(Formatter):
         metadata = OrderedDict()
         line = []
         for ttype, value in tokens:
-            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation,
-                    Token.Literal.String.Single, Token.Literal.String.Double,):
+            # We don't allow tokens that are just '\"' or '\''
+            if (ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation,
+                    Token.Literal.String.Single, Token.Literal.String.Double,)
+                    and value not in ('"', '\'')):
+                # Some tokens are strings with leading and trailing quotes, so we remove them
+                if ((value.startswith('"') and value.endswith('"')) or
+                        (value.startswith('\'') and value.endswith('\''))):
+                    value = value[1:-1]
                 line.append(value)
+
             if ttype in (Token.Text,) and value.endswith('\n') and line:
                 # The field name should be the first element in the list
                 key = line.pop(0)
                 # Join all tokens as a single string
                 joined_line = ''.join(line)
-
-                # Remove leading and trailing quotes
-                if ((joined_line.startswith('"') and joined_line.endswith('"')) or
-                        (joined_line.startswith('\'') and joined_line.endswith('\''))):
-                    joined_line = joined_line[1:-1]
 
                 # Store dependencies as dependency_name:dependency_requirement
                 # in an Object instead of a single string
