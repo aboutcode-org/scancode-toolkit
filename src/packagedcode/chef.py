@@ -120,7 +120,7 @@ def is_metadata_rb(location):
             and fileutils.file_name(location).lower() == 'metadata.rb')
 
 
-def ChefMetadataFormatter(Formatter):
+class ChefMetadataFormatter(Formatter):
     def format(self, tokens, outfile):
         """
         Parse lines from a `metadata.rb` file.
@@ -145,10 +145,10 @@ def ChefMetadataFormatter(Formatter):
         metadata = {}
         line = []
         for ttype, value in tokens:
-            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation, Token.Literal.String.Double,)
+            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation, Token.Literal.String.Double,)\
                     and value not in ('\"', '\'',):
                 line.append(value)
-            if ttype in (Token.Text,) and value.endswith('\n'):
+            if ttype in (Token.Text,) and value.endswith('\n') and line:
                 # The field name should be the first element in the list
                 key = line.pop(0)
                 if key == 'depends':
@@ -204,28 +204,23 @@ def build_package_from_json(package_data):
             )
         )
 
-    description = package_data.get('description', '')
-    if not description:
-        description = package_data.get('long_description', '')
-
+    description = package_data.get('description', '') or package_data.get('long_description', '')
     license = package_data.get('license', '')
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    dependencies = package_data.get('dependencies') or None
+    dependencies = package_data.get('dependencies', {})
     package_dependencies = []
-    if dependencies:
-        for dependency_name, requirement in dependencies.items():
-            if not dependency_name:
-                continue
-            dep = models.DependentPackage(
+    for dependency_name, requirement in dependencies.items():
+        package_dependencies.append(
+            models.DependentPackage(
                 purl=PackageURL(type='chef', name=dependency_name).to_string(),
                 scope='dependencies',
                 requirement=requirement,
                 is_runtime=True,
                 is_optional=False,
             )
-            package_dependencies.append(dep)
+        )
 
     return ChefPackage(
         name=name,
@@ -264,19 +259,16 @@ def build_package_from_rb(package_data):
             )
         )
 
-    description = package_data.get('description', '')
-    if not description:
-        description = package_data.get('long_description', '')
-
+    description = package_data.get('description', '') or package_data.get('long_description', '')
     license = package_data.get('license', '')
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
     dependencies = package_data.get('depends', [])
     package_dependencies = []
-    for dependency in dependencies.items():
+    for dependency in dependencies:
         dep_requirement = dependency.rsplit(',')
-        if len(deps) == 2:
+        if len(dep_requirement) == 2:
             dep_name = dep_requirement[0]
             requirement = dep_requirement[1]
         else:
