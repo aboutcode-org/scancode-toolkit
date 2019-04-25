@@ -145,10 +145,10 @@ def ChefMetadataFormatter(Formatter):
         metadata = {}
         line = []
         for ttype, value in tokens:
-            if ttype in (Token.Name, Token.Name.Builtin,
-                         Token.Punctuation, Token.Literal.String.Double,):
+            if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation, Token.Literal.String.Double,)
+                    and value not in ('\"', '\'',):
                 line.append(value)
-            if ttype is (Token.Text,) and value.endswith('\n'):
+            if ttype in (Token.Text,) and value.endswith('\n'):
                 # The field name should be the first element in the list
                 key = line.pop(0)
                 if key == 'depends':
@@ -272,17 +272,25 @@ def build_package_from_rb(package_data):
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    # TODO: handle cases where there is a version requirement
     dependencies = package_data.get('depends', [])
     package_dependencies = []
     for dependency in dependencies.items():
-        dep = models.DependentPackage(
-            purl=PackageURL(type='chef', name=dependency).to_string(),
-            scope='dependencies',
-            is_runtime=True,
-            is_optional=False,
+        dep_requirement = dependency.rsplit(',')
+        if len(deps) == 2:
+            dep_name = dep_requirement[0]
+            requirement = dep_requirement[1]
+        else:
+            dep_name = dependency
+            requirement = None
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='chef', name=dep_name).to_string(),
+                scope='dependencies',
+                requirement=requirement,
+                is_runtime=True,
+                is_optional=False,
+            )
         )
-        package_dependencies.append(dep)
 
     return ChefPackage(
         name=name,
