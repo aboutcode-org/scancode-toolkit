@@ -143,7 +143,7 @@ class ChefMetadataFormatter(Formatter):
         and its values are those variable's values. This dictionary is then dumped
         to `outfile` as JSON.
         """
-        metadata = {}
+        metadata = OrderedDict()
         line = []
         for ttype, value in tokens:
             if ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation,
@@ -152,19 +152,33 @@ class ChefMetadataFormatter(Formatter):
             if ttype in (Token.Text,) and value.endswith('\n') and line:
                 # The field name should be the first element in the list
                 key = line.pop(0)
+                # Join all tokens as a single string
                 joined_line = ''.join(line)
+
+                # Remove leading and trailing quotes
                 if ((joined_line.startswith('"') and joined_line.endswith('"')) or
                         (joined_line.startswith('\'') and joined_line.endswith('\''))):
                     joined_line = joined_line[1:-1]
+
+                # Store dependencies as dependency_name:dependency_requirement
+                # in an Object instead of a single string
                 if key == 'depends':
-                    # `depends` is a list since there can be multiple dependencies
+                    # Dependencies are listed in the form of dependency,requirement
+                    dep_requirement = joined_line.rsplit(',')
+                    if len(dep_requirement) == 2:
+                        dep_name = dep_requirement[0]
+                        requirement = dep_requirement[1]
+                    else:
+                        dep_name = joined_line
+                        requirement = None
                     depends = metadata.get(key)
                     if not depends:
-                        metadata[key] = [joined_line]
+                        metadata[key] = OrderedDict({dep_name: requirement})
                     else:
-                        metadata[key].append(joined_line)
+                        metadata[key].update({dep_name: requirement})
                 else:
                     metadata[key] = joined_line
+
                 line = []
         json.dump(metadata, outfile)
 
@@ -215,42 +229,18 @@ def build_package(package_data):
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    dependencies = package_data.get('dependencies', {})
-    depends = package_data.get('depends', [])
+    dependencies = package_data.get('dependencies', {}) or package_data.get('depends', {})
     package_dependencies = []
-    # If `package_data` is from a `metadata.json` file, then dependencies will
-    # be in the `dependencies` field
-    if dependencies:
-        for dependency_name, requirement in dependencies.items():
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='chef', name=dependency_name).to_string(),
-                    scope='dependencies',
-                    requirement=requirement,
-                    is_runtime=True,
-                    is_optional=False,
-                )
+    for dependency_name, requirement in dependencies.items():
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='chef', name=dependency_name).to_string(),
+                scope='dependencies',
+                requirement=requirement,
+                is_runtime=True,
+                is_optional=False,
             )
-    # If `package_data` is from a `metadata.rb` file, then dependencies will
-    # be in the `depends` field
-    elif depends:
-        for dependency in depends:
-            dep_requirement = dependency.rsplit(',')
-            if len(dep_requirement) == 2:
-                dep_name = dep_requirement[0]
-                requirement = dep_requirement[1]
-            else:
-                dep_name = dependency
-                requirement = None
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='chef', name=dep_name).to_string(),
-                    scope='dependencies',
-                    requirement=requirement,
-                    is_runtime=True,
-                    is_optional=False,
-                )
-            )
+        )
 
     return ChefPackage(
         name=name,
