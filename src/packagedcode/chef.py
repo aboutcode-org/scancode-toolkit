@@ -140,7 +140,8 @@ class ChefMetadataFormatter(Formatter):
 
         With this pattern of tokens, we iterate through the token stream to
         create a dictionary whose keys are the variable names from `metadata.rb`
-        and its values are those variable's values.
+        and its values are those variable's values. This dictionary is then dumped
+        to `outfile` as JSON.
         """
         metadata = {}
         line = []
@@ -156,6 +157,7 @@ class ChefMetadataFormatter(Formatter):
                         (joined_line.startswith('\'') and joined_line.endswith('\''))):
                     joined_line = joined_line[1:-1]
                 if key == 'depends':
+                    # `depends` is a list since there can be multiple dependencies
                     depends = metadata.get(key)
                     if not depends:
                         metadata[key] = [joined_line]
@@ -169,7 +171,7 @@ class ChefMetadataFormatter(Formatter):
 
 def parse(location):
     """
-    Return a Package object from a metadata.json file or None.
+    Return a Package object from a metadata.json file or a metadata.rb file or None.
     """
     if is_metadata_json(location):
         with io.open(location, encoding='utf-8') as loc:
