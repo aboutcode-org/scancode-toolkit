@@ -143,7 +143,7 @@ class ChefMetadataFormatter(Formatter):
         and its values are those variable's values. This dictionary is then dumped
         to `outfile` as JSON.
         """
-        metadata = OrderedDict()
+        metadata = OrderedDict(depends=OrderedDict())
         line = []
         for ttype, value in tokens:
             # We don't allow tokens that are just '\"' or '\''
@@ -173,11 +173,7 @@ class ChefMetadataFormatter(Formatter):
                     else:
                         dep_name = joined_line
                         requirement = None
-                    depends = metadata.get(key)
-                    if not depends:
-                        metadata[key] = OrderedDict({dep_name: requirement})
-                    else:
-                        metadata[key].update({dep_name: requirement})
+                    metadata[key].update({dep_name: requirement})
                 else:
                     metadata[key] = joined_line
 
