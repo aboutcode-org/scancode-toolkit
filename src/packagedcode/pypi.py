@@ -322,3 +322,79 @@ def parse(location):
     parser = parsers.get(file_name)
     if parser:
         return parser(location)
+
+
+def build_package(package_data):
+    """
+    Yield Package object from a package_data mapping json file.
+    """
+    info = package_data.get('info')
+    if not info:
+        return
+    # mapping of information that are common to all the downloads of a version
+    short_desc = info.get('summary')
+    long_desc = info.get('description')
+    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
+    description = '\n'.join(descriptions)
+    common_data = dict(
+        name=info.get('name'),
+        version=info.get('version'),
+        description=description,
+        homepage_url=info.get('home_page'),
+        bug_tracking_url=info.get('bugtrack_url'),
+    )
+
+    author = info.get('author')
+    email = info.get('author_email')
+    if author or email:
+        parties = common_data.get('parties')
+        if not parties:
+            common_data['parties'] = []
+        common_data['parties'].append(models.Party(
+            type=models.party_person, name=author, role='author', email=email))
+
+    maintainer = info.get('maintainer')
+    email = info.get('maintainer_email')
+    if maintainer or email:
+        parties = common_data.get('parties')
+        if not parties:
+            common_data['parties'] = []
+        common_data['parties'].append(models.Party(
+            type=models.party_person, name=maintainer, role='maintainer', email=email))
+
+    declared_license = OrderedDict()
+    setuptext_licenses = []
+    lic = info.get('license')
+    if lic and lic != 'UNKNOWN':
+        setuptext_licenses.append(lic)
+    declared_license['license'] = setuptext_licenses 
+
+    classifiers_licenses = []
+    classifiers = info.get('classifiers')
+    if classifiers and not classifiers_licenses:
+        licenses = [lic for lic in classifiers if lic.lower().startswith('license')]
+        for lic in licenses:
+            classifiers_licenses.append(lic)
+    declared_license['classifiers'] = classifiers_licenses 
+    
+    common_data['declared_license'] = declared_license
+
+    kw = info.get('keywords')
+    if kw:
+        common_data['keywords'] = [k.strip() for k in kw.split(',') if k.strip()]
+    
+    package = PythonPackage(**common_data)
+    return package
+
+
+def parse_date(s):
+    """
+    Return date string in YYYY-MM-DD format from a datetime string
+    """
+    if s:
+        try:
+            return arrow.get(s, 'YYYY-MM-DD').format('YYYY-MM-DD')
+        except ParserError:
+            # If we can't parse a date, it's not a big deal as `release_date`
+            # is not an important field for us
+            return
