@@ -336,7 +336,7 @@ def build_package(package_data):
         return
     short_desc = info.get('summary')
     long_desc = info.get('description')
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
+    descriptions = [d for d in (short_desc, long_desc) if d and d.strip() and d.strip()!='UNKNOWN']
     description = '\n'.join(descriptions)
     common_data = dict(
         name=name,

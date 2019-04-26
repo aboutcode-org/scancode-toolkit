@@ -246,3 +246,12 @@ class TestPyPi(PackageTester):
             content = json.loads(json_input)
             package = pypi.build_package(content)
             self.check_package(package, expected_loc, regen=False)
+
+    def test_build_package2(self):
+        test_file = self.get_test_loc('pypi/3to2/input.json')
+        expected_loc = self.get_test_loc('pypi/3to2/expected.json')
+        with open(test_file) as pypi_json:
+            json_input = pypi_json.read()
+            content = json.loads(json_input)
+            package = pypi.build_package(content)
+            self.check_package(package, expected_loc, regen=False)
