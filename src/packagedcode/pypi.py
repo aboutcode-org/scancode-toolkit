@@ -331,13 +331,15 @@ def build_package(package_data):
     info = package_data.get('info')
     if not info:
         return
-    # mapping of information that are common to all the downloads of a version
+    name=info.get('name')
+    if not name:
+        return
     short_desc = info.get('summary')
     long_desc = info.get('description')
     descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
     description = '\n'.join(descriptions)
     common_data = dict(
-        name=info.get('name'),
+        name=name,
         version=info.get('version'),
         description=description,
         homepage_url=info.get('home_page'),
@@ -385,16 +387,3 @@ def build_package(package_data):
     
     package = PythonPackage(**common_data)
     return package
-
-
-def parse_date(s):
-    """
-    Return date string in YYYY-MM-DD format from a datetime string
-    """
-    if s:
-        try:
-            return arrow.get(s, 'YYYY-MM-DD').format('YYYY-MM-DD')
-        except ParserError:
-            # If we can't parse a date, it's not a big deal as `release_date`
-            # is not an important field for us
-            return
