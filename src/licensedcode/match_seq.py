@@ -87,8 +87,7 @@ def match_sequence(idx, rule, query_run, start_offset=0):
     while qstart <= qfinish:
         if not query_run_matchables:
             break
-        # ensure that we use qstart + len or we could miss matches on some
-        # query runs
+
         block_matches = match_blocks(
             qtokens, itokens, qstart, qfinish + 1,
             high_postings, len_junk, query_run_matchables, _idx=idx)
