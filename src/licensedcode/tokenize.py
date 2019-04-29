@@ -31,11 +31,11 @@ from itertools import islice
 
 # Python 2 and 3 support
 try:
-        # Python 2
-    import itertools.izip as zip
+    # Python 2
+    import itertools.izip as zip #NOQA
 except ImportError:
-        # Python 3
-        pass
+    # Python 3
+    pass
 
 import re
 from zlib import crc32
