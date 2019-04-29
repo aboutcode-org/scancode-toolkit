@@ -1,0 +1,8 @@
+Update: The Berkeley copyright was changed, and the change
+is retroactive to all "true" BSD software (ie everything
+from UCB as opposed to other peoples code that just carried
+the same license). The new copyright doesn't clash with the
+GPL, so the module-only restriction has been removed..
+
+
+Because this code is derived from the 4.3BSD compress source:

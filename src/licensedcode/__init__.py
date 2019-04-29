@@ -31,4 +31,4 @@ MIN_MATCH_HIGH_LENGTH = 3
 # FIXME: we should consider the length of two rules and two matches when considering MAX_DIST
 # eventually this should be skipped early right during the matching too
 # maximum distance between two matches to merge
-MAX_DIST = 120
+MAX_DIST = 50

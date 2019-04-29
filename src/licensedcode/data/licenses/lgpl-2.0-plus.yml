@@ -14,3 +14,4 @@ text_urls:
     - http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
 other_urls:
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+minimum_coverage: 80

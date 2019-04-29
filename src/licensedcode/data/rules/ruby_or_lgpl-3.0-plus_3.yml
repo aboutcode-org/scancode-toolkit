@@ -2,3 +2,4 @@ license_expression: ruby OR lgpl-3.0-plus
 is_license_notice: yes
 minimum_coverage: 100
 relevance: 90
+notes: this is found mostly in Ruby gettext

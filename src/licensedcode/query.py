@@ -104,7 +104,7 @@ if TRACE or TRACE_QR or TRACE_SPDX:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-# for the cases of very long lines, we break in abritrary pseudo lines at 50
+# for the cases of very long lines, we break in abritrary pseudo lines at 25
 # tokens to avoid getting huge query runs for texts on a single line (e.g.
 # minified JS or CSS)
 MAX_TOKEN_PER_LINE = 25

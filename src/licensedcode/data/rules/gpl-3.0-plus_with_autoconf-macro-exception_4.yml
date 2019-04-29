@@ -1,2 +1,3 @@
 license_expression: gpl-3.0-plus WITH autoconf-macro-exception
 is_license_notice: yes
+minimum_coverage: 80

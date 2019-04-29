@@ -142,7 +142,7 @@ class TestAPI(FileBasedTesting):
         test_file = self.get_test_loc('api/license/apache-1.0.txt')
         results = api.get_licenses(test_file)
         expected = [
-            'apache-1.0 AND public-domain',
+            'apache-1.0',
             'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
         ]
         assert expected == results['license_expressions']

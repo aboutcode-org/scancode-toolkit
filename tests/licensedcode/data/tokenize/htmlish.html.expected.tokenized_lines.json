@@ -44,9 +44,7 @@
     "name", 
     "viewport", 
     "content", 
-    "width", 
     "device", 
-    "width", 
     "initial", 
     "scale", 
     "1", 
@@ -102,7 +100,6 @@
   ], 
   [
     "link", 
-    "rel", 
     "shortcut", 
     "icon", 
     "favicon", 
@@ -114,7 +111,6 @@
   ], 
   [
     "link", 
-    "rel", 
     "stylesheet", 
     "static", 
     "gfx", 
@@ -124,7 +120,6 @@
     "3900721321"
   ], 
   [
-    "script", 
     "type", 
     "text", 
     "javascript", 
@@ -137,22 +132,18 @@
     "6", 
     "dev", 
     "min", 
-    "js", 
-    "script"
+    "js"
   ], 
   [
-    "script", 
     "type", 
     "text", 
     "javascript", 
     "dynamic", 
     "globals", 
     "head", 
-    "3900721321", 
-    "script"
+    "3900721321"
   ], 
   [
-    "script", 
     "type", 
     "text", 
     "javascript"
@@ -163,9 +154,7 @@
     "key", 
     "1152637df16c5354802b2c083c8aa334"
   ], 
-  [
-    "script"
-  ], 
+  [], 
   [
     "head"
   ], 
@@ -174,14 +163,12 @@
     "js"
   ], 
   [
-    "script", 
     "type", 
     "text", 
     "javascript", 
     "dynamic", 
     "globals", 
-    "3900721321", 
-    "script"
+    "3900721321"
   ], 
   [
     "noscript", 
@@ -193,9 +180,7 @@
     "html", 
     "gtm", 
     "twt88b", 
-    "height", 
     "0", 
-    "width", 
     "0", 
     "style", 
     "display", 
@@ -228,8 +213,7 @@
     "clearfix"
   ], 
   [
-    "left", 
-    "side"
+    "left"
   ], 
   [
     "logo", 
@@ -254,8 +238,6 @@
   [
     "clean", 
     "left", 
-    "side", 
-    "nav", 
     "top"
   ], 
   [
@@ -273,15 +255,11 @@
   [], 
   [
     "mobile", 
-    "nav", 
     "button", 
-    "nav", 
     "lines"
   ], 
   [
-    "nav", 
-    "right", 
-    "side"
+    "right"
   ], 
   [
     "clean", 
@@ -303,24 +281,19 @@
     "in", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "login", 
     "sign", 
     "in"
   ], 
   [], 
-  [
-    "nav"
-  ], 
+  [], 
   [], 
   [
     "header"
   ], 
   [
-    "nav", 
     "mobile", 
-    "nav", 
     "dropdown"
   ], 
   [
@@ -338,7 +311,6 @@
     "about", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "about"
   ], 
@@ -346,7 +318,6 @@
     "pricing", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "pricing"
   ], 
@@ -364,7 +335,6 @@
     "in", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "login", 
     "sign", 
@@ -382,7 +352,6 @@
     "about", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "about"
   ], 
@@ -398,7 +367,6 @@
     "team", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "team", 
     "detectify"
@@ -417,7 +385,6 @@
     "technology", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "technology"
   ], 
@@ -435,7 +402,6 @@
     "engine", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "detectify", 
     "engine"
@@ -449,16 +415,13 @@
     "security", 
     "button", 
     "no", 
-    "border", 
     "white", 
     "our", 
     "security"
   ], 
   [], 
   [], 
-  [
-    "nav"
-  ], 
+  [], 
   [], 
   [
     "login", 
@@ -471,8 +434,7 @@
   [
     "card", 
     "cont", 
-    "m", 
-    "auto"
+    "m"
   ], 
   [
     "login", 
@@ -585,7 +547,6 @@
     "blue", 
     "filled", 
     "thin", 
-    "border", 
     "sign", 
     "in", 
     "button"
@@ -597,7 +558,6 @@
   ], 
   [
     "left", 
-    "side", 
     "welcome", 
     "account", 
     "create", 
@@ -606,7 +566,6 @@
   ], 
   [
     "right", 
-    "side", 
     "forgot", 
     "forgot", 
     "password"

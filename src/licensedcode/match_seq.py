@@ -87,10 +87,14 @@ def match_sequence(idx, rule, query_run, start_offset=0):
     while qstart <= qfinish:
         if not query_run_matchables:
             break
-        # ensure that we use qstart + qlen or we could miss matches on some query runs
-        block_matches = match_blocks(qtokens, itokens, qstart, qfinish + 1, high_postings, len_junk, query_run_matchables, _idx=idx)
+        # ensure that we use qstart + len or we could miss matches on some
+        # query runs
+        block_matches = match_blocks(
+            qtokens, itokens, qstart, qfinish + 1,
+            high_postings, len_junk, query_run_matchables, _idx=idx)
         if not block_matches:
             break
+
         if TRACE2:
             logger_debug('block_matches:')
             for m in block_matches:
@@ -108,9 +112,11 @@ def match_sequence(idx, rule, query_run, start_offset=0):
             ispan = Span(iposses)
             # skip single word matched as as sequence
             if len(qspan) > 1:
-                match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
-                                     matcher=MATCH_SEQ, query=query)
+                match = LicenseMatch(
+                    rule, qspan, ispan, hispan, qbegin,
+                    matcher=MATCH_SEQ, query=query)
                 matches.append(match)
+
                 if TRACE2:
                     from licensedcode.tracing import get_texts
                     qt, it = get_texts(match)

@@ -497,7 +497,7 @@ def scancode(ctx, input,  # NOQA
 
     except ScancodeError as se:
         # this will exit
-        raise click.BadParameter(se.message)
+        raise click.BadParameter(str(se))
 
     rc = 0 if success else 1
     ctx.exit(rc)

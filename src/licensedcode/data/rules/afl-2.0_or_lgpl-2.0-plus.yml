@@ -1,3 +1,4 @@
 license_expression: afl-2.0 OR lgpl-2.0-plus
 is_license_notice: yes
 notes: the reference is LGPL 2v eventhough it mentions lesser (which would be 2.1+)
+minimum_coverage: 60

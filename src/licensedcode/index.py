@@ -52,7 +52,6 @@ from licensedcode import match_aho
 from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_set
-from licensedcode import match_set2
 from licensedcode import match_spdx_lid
 from licensedcode import query
 from licensedcode import tokenize
@@ -69,22 +68,11 @@ strategy.
 
 # Tracing flags
 TRACE = False
-
-TRACE_CANDIDATES = False
-TRACE_QUERY_RUN = False
-TRACE_QUERY_RUN_SIMPLE = False
-
 TRACE_MATCHES = False
 TRACE_MATCHES_TEXT = False
-
 TRACE_NEGATIVE = False
-TRACE_EXACT = False
-TRACE_APPROX = True
-
-TRACE_MATCHES_DISCARD = False
-
 TRACE_INDEXING_PERF = False
-TRACE_SPDX = False
+TRACE_TOKEN_DOC_FREQ = False
 
 
 def logger_debug(*args):
@@ -92,12 +80,9 @@ def logger_debug(*args):
 
 
 if (TRACE
-or TRACE_INDEXING_PERF
-or TRACE_QUERY_RUN_SIMPLE
+or TRACE_MATCHES
 or TRACE_NEGATIVE
-or TRACE_SPDX
-or TRACE_APPROX
-or TRACE_CANDIDATES):
+or TRACE_INDEXING_PERF):
 
     import logging
 
@@ -124,7 +109,7 @@ NGRAM_LEN = 32
 MAX_TOKENS = (2 ** 15) - 1
 
 # If 1/4, 1/4 of all tokens will be treated as junk
-PROPORTION_OF_JUNK = 1 / 3
+PROPORTION_OF_JUNK = 0.7
 
 
 class LicenseIndex(object):
@@ -142,15 +127,13 @@ class LicenseIndex(object):
         'dictionary',
         'digit_only_tids',
         'tokens_by_tid',
+
         'tokens_idf_by_tid',
 
         'rules_by_rid',
         'tids_by_rid',
 
         'high_postings_by_rid',
-
-        'tids_lohi_sets_by_rid',
-        'tids_lohi_msets_by_rid',
 
         'tids_all_sets_by_rid',
         'tids_all_msets_by_rid',
@@ -160,12 +143,9 @@ class LicenseIndex(object):
         'negative_automaton',
 
         'regular_rids',
-        'small_rids',
         'negative_rids',
         'false_positive_rids',
-        'weak_rids',
-        'approx_matchable_rids_subset',
-        'largest_false_positive_length',
+        'approx_matchable_rids',
 
         'optimized',
     )
@@ -214,12 +194,6 @@ class LicenseIndex(object):
         # inverted index postings list
         self.high_postings_by_rid = []
 
-        # mapping-like of rule_id -> tuple of low and high tokens ids sets/multisets
-        # (low_tids_set, high_tids_set)
-        self.tids_lohi_sets_by_rid = []
-        # (low_tids_mset, high_tids_mset)
-        self.tids_lohi_msets_by_rid = []
-
         # mapping-like of rule_id -> tokens ids sets/multisets
         self.tids_all_sets_by_rid = []
         self.tids_all_msets_by_rid = []
@@ -231,21 +205,15 @@ class LicenseIndex(object):
         self.rules_automaton = match_aho.get_automaton()
         self.negative_automaton = match_aho.get_automaton()
 
-        # disjunctive sets of rule ids: regular, negative, small, false positive
+        # disjunctive sets of rule ids: regular, negative, false positive, and
+        # things that can only be matched exactly
+
         # TODO: consider using intbitset instead
         self.regular_rids = set()
         self.negative_rids = set()
-        self.small_rids = set()
         self.false_positive_rids = set()
-
-        # these rule ids are for rules made entirely of low, junk tokens
-        self.weak_rids = set()
-
-        # only these rule ids can be matched in a sequence match
-        self.approx_matchable_rids_subset = set()
-
-        # length of the largest false_positive rule
-        self.largest_false_positive_length = 0
+        # these rule ids are for rules that can be matched with a sequence match
+        self.approx_matchable_rids = set()
 
         # if True the index has been optimized and becomes read only:
         # no new rules can be added
@@ -258,6 +226,21 @@ class LicenseIndex(object):
 
             # index all and optimize
             self._add_rules(rules, _ranked_tokens, _spdx_tokens)
+
+            if TRACE_TOKEN_DOC_FREQ:
+                print('LicenseIndex: token, frequency')
+                from itertools import chain
+                tokens_by_tid = self.tokens_by_tid
+                regular_rids = self.regular_rids
+                tokens_idf_by_tid= self.tokens_idf_by_tid
+                tf = Counter(chain.from_iterable(
+                    tids for rid, tids in enumerate(self.tids_by_rid)
+                    if rid in regular_rids))
+
+                for tid, freq in tf.most_common():
+                    ts = tokens_by_tid[tid]
+                    idf = tokens_idf_by_tid[tid]
+                    print(u'"{ts}","{freq}","{idf}"'.format(**locals()))
 
             if TRACE_INDEXING_PERF:
                 duration = time() - start
@@ -294,15 +277,14 @@ class LicenseIndex(object):
         # OPTIMIZATION: bind frequently used methods to the local scope
         false_positive_rids_add = self.false_positive_rids.add
         negative_rids_add = self.negative_rids.add
-        small_rids_add = self.small_rids.add
         regular_rids_add = self.regular_rids.add
 
         for rid, rul in enumerate(self.rules_by_rid):
+            rul.rid = rid
+
             rul_tokens = list(rul.tokens())
             token_strings_by_rid_append(rul_tokens)
             token_strings_count_update(rul_tokens)
-            # assign the rid to the rule object for sanity
-            rul.rid = rid
 
             # classify rules and build disjuncted sets of rids
             if rul.is_false_positive:
@@ -310,14 +292,11 @@ class LicenseIndex(object):
                 # they are used only in post-matching filtering
                 false_positive_rids_add(rid)
             elif rul.is_negative:
-                # negative rules are matched early and their exactly matched
-                # tokens are removed from the token stream
+                # negative rules are matched early and their exactly matched.
+                # Their tokens are removed from the token stream
                 negative_rids_add(rid)
-            elif rul.small():
-                # small rules are best matched with a specialized approach
-                small_rids_add(rid)
             else:
-                # regular rules are matched using a common approach
+                # regular rules are matched using the standard approach
                 regular_rids_add(rid)
 
         # Add SPDX key tokens to the dictionary. track which are only from SPDX leys
@@ -340,6 +319,7 @@ class LicenseIndex(object):
         # initial dictionary mapping to old/arbitrary token ids
         ########################################################################
         self.dictionary = dictionary = {ts: tid for tid, ts in enumerate(tokens_by_tid)}
+        # OPTIMIZED
         sparsify(dictionary)
 
         # replace token strings with arbitrary (and temporary) integer ids
@@ -354,40 +334,37 @@ class LicenseIndex(object):
             spdx_token_ids = set(dictionary[tok] for tok in spdx_tokens)
 
         #######################################################################
-        # renumber token ids based on frequencies and common words
+        # renumber token ids based on frequencies and common words aka. "frequent_tokens"
         #######################################################################
-        renumbered = self.renumber_token_ids(
+        len_junk, self.dictionary, self.tokens_by_tid, self.tids_by_rid = self.renumber_token_ids(
             tokens_count_by_tid, _ranked_tokens, _spdx_token_ids=spdx_token_ids)
-        (
-            self.len_junk,
-            self.dictionary,
-            self.tokens_by_tid,
-            self.tids_by_rid,
-            self.weak_rids,
-        ) = renumbered
 
-        len_junk, dictionary, tokens_by_tid, tids_by_rid, weak_rids = renumbered
+        # Some rules cannot be matched as a sequence: we exclude "weak" rules as
+        # not "approx" matchable These weak rules made entirely of junk tokens:
+        # they can only be matched using an automaton
+        weak_rids = get_weak_rids(len_junk, self.tids_by_rid, _idx=self)
+        self.approx_matchable_rids = self.regular_rids.difference(weak_rids)
 
+        # some tokens are made entirely of digits and these can create some
+        # worst case behavior when there are long runs on these
         self.digit_only_tids = intbitset([
-            i for i, s in enumerate(tokens_by_tid) if s.isdigit()])
+            i for i, s in enumerate(self.tokens_by_tid) if s.isdigit()])
 
         #######################################################################
         # build index structures
         #######################################################################
-        self.len_good = len_good = len_tokens - len_junk
+        self.len_junk = len_junk
+        self.len_good = len_tokens - len_junk
         len_rules = len(self.rules_by_rid)
 
         # a count in how many doc a tokens shows into
         tokens_doc_freq_by_tid = [0 for _ in range(len_tokens)]
 
-        # since we only use these for regular rules, these lists may be sparse
+        # since we only use these for regular rules, these lists may be sparse.
         # their index is the rule rid
-        range_len_rules = list(range(len_rules))
-        self.high_postings_by_rid = high_postings_by_rid = [None for _ in range_len_rules]
-        self.tids_lohi_sets_by_rid = tids_lohi_sets_by_rid = [None for _ in range_len_rules]
-        self.tids_lohi_msets_by_rid = tids_lohi_msets_by_rid = [None for _ in range_len_rules]
-        self.tids_all_sets_by_rid = tids_all_sets_by_rid = [None for _ in range_len_rules]
-        self.tids_all_msets_by_rid = tids_all_msets_by_rid = [None for _ in range_len_rules]
+        self.high_postings_by_rid = high_postings_by_rid = [None] * len_rules
+        self.tids_all_sets_by_rid = tids_all_sets_by_rid = [None] * len_rules
+        self.tids_all_msets_by_rid = tids_all_msets_by_rid = [None] * len_rules
 
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
@@ -405,101 +382,104 @@ class LicenseIndex(object):
         match_set_tids_set_counter = match_set.tids_set_counter
         match_set_tids_multiset_counter = match_set.tids_multiset_counter
 
+        #######################################################################
         # build by-rule index structures over the token ids seq of each rule
-        for rid, rule_token_ids in enumerate(tids_by_rid):
+        #######################################################################
+        for rid, rule_token_ids in enumerate(self.tids_by_rid):
             rule = rules_by_rid[rid]
 
+            if TRACE and rule.identifier == 'public-domain_this.RULE':
+                logger_debug('by-rule index structure', rule)
             # build hashes index and check for duplicates rule texts
             rule_hash = match_hash_index_hash(rule_token_ids)
             dupe_rules_by_hash[rule_hash].append(rule)
 
-            rule_is_weak = rid in weak_rids
-
             if rule.is_negative:
                 negative_automaton_add(tids=rule_token_ids, rid=rid)
-            else:
-                # update hashes index
-                rid_by_hash[rule_hash] = rid
+                continue
 
-                # update high postings index: positions by high tids
+            # update hashes index
+            rid_by_hash[rule_hash] = rid
+
+            rule.is_approx_matchable = is_approx_matchable = rid not in weak_rids
+
+            # no postings for rules that cannot be matched as a sequence (too short and weak)
+            if is_approx_matchable:
+                ####################
+                # update high postings index: positions by high tids used to
+                # speed up sequence matching
+                ####################
                 # TODO: this could be optimized with a group_by
+                postings = defaultdict(list)
+                for pos, tid in enumerate(rule_token_ids):
+                    if tid >= len_junk:
+                        postings[tid].append(pos)
+                # OPTIMIZED: for speed and memory: convert postings to arrays
+                postings = {tid: array('h', value) for tid, value in postings.items()}
+                # OPTIMIZED: for speed, sparsify dict
+                sparsify(postings)
+                high_postings_by_rid[rid] = postings
 
-                # FIXME: we do not want to keep small rules and rules that
-                # cannot be seq matches in the index
+            ####################
+            # build sets and multisets indexes, for all regular rules as we need the thresholds
+            ####################
+            tids_set, tids_mset = match_set.index_token_sets(rule_token_ids)
+            tids_all_msets_by_rid[rid] = tids_mset
+            tids_all_sets_by_rid[rid] = tids_set
 
-                # no postings for junk only rules
-                # we do not want to keep small rules and rules that
-                # cannot be seq matches in the index
-                if not rule_is_weak:
-                    postings = defaultdict(list)
-                    for pos, tid in enumerate(rule_token_ids):
-                        if tid >= len_junk:
-                            postings[tid].append(pos)
-                    # OPTIMIZED: for speed and memory: convert postings to arrays
-                    postings = {tid: array('h', value) for tid, value in postings.items()}
-                    # OPTIMIZED: for speed, sparsify dict
-                    sparsify(postings)
-                    high_postings_by_rid[rid] = postings
+            ####################################################################
+            ####################################################################
+            # FIXME!!!!!!! we should store them if we need them
+            tids_set_high=  match_set.high_tids_set_subset(tids_set, len_junk)
+            tids_mset_high=  match_set.high_tids_multiset_subset(tids_mset, len_junk)
+            
 
-                # build high and low tids sets and multisets
-                rlow_set, rhigh_set, rlow_mset, rhigh_mset = match_set.index_token_sets(
-                    rule_token_ids, len_junk, len_good)
+            # FIXME!!!!!!!
+            ####################################################################
+            ####################################################################
 
-                # no set indexes for junk only rules, as we will never seq match these
-                if not rule_is_weak:
-                    tids_lohi_sets_by_rid[rid] = rlow_set, rhigh_set
-                    tids_lohi_msets_by_rid[rid] = rlow_mset, rhigh_mset
+            ####################
+            # update rule thresholds
+            ####################
+            rule.length_unique = match_set_tids_set_counter(tids_set)
+            rule.high_length_unique = match_set_tids_set_counter(tids_set_high)
 
-                ####################
-                # build new sets and multisets
-                tids_set, tids_mset = match_set2.index_token_sets(rule_token_ids, len_tokens)
+            rule.high_length = match_set_tids_multiset_counter(tids_mset_high)
+            rule.compute_thresholds()
 
-                # no set indexes for junk only rules, as we will never seq match these
-                if not rule_is_weak:
-                    tids_all_sets_by_rid[rid] = tids_set
-                    tids_all_msets_by_rid[rid] = tids_mset
+            ####################
+            # update idf counters
+            ####################
+            for tid in tids_set:
+                tokens_doc_freq_by_tid[tid] += 1
 
-                # update idf counters
-                for tid in tids_set:
-                    tokens_doc_freq_by_tid[tid] += 1
-                ####################
+            ####################
+            # populate automaton with the whole rule tokens sequence, for
+            # all RULEs, be they "standard", weak or small (but not negative
+            ####################
+            rules_automaton_add(tids=rule_token_ids, rid=rid)
 
-                # populate automaton with the whole rule tokens sequence
-                rules_automaton_add(tids=rule_token_ids, rid=rid)
-                # ... and ngrams: compute ngrams and populate the automaton with ngrams
-                if (USE_AHO_FRAGMENTS
-                and rule.minimum_coverage < 100
-                and len(rule_token_ids) > NGRAM_LEN):
-                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
-                    selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
-                    for pos, ngram in selected_ngrams:
-                        rules_automaton_add(tids=ngram, rid=rid, start=pos)
+            ####################
+            # ... and ngrams: compute ngrams and populate the automaton with ngrams
+            ####################
+            if (USE_AHO_FRAGMENTS
+            and is_approx_matchable
+            and rule.minimum_coverage < 100
+            and len(rule_token_ids) > NGRAM_LEN):
 
-                # FIXME: this may not be updated for a rule that is createda at
-                # match time such as SPDX rules
-
-                # update rule thresholds
-                rule.low_unique = match_set_tids_set_counter(rlow_set)
-                rule.high_unique = match_set_tids_set_counter(rhigh_set)
-                rule.length_unique = rule.high_unique + rule.low_unique
-                rule.low_length = match_set_tids_multiset_counter(rlow_mset)
-                rule.high_length = match_set_tids_multiset_counter(rhigh_mset)
-                assert rule.length == rule.low_length + rule.high_length
+                all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
+                for pos, ngram in selected_ngrams:
+                    rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
         # finalize automatons
         self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
 
-        # finalize tokens IDF
-        self.tokens_idf_by_tid = match_set2.compute_idfs(len_rules, tokens_doc_freq_by_tid)
+        # finalize tokens IDF (inverse documents frequency)
+        self.tokens_idf_by_tid = match_set.compute_idfs(len_rules, tokens_doc_freq_by_tid)
 
-        # only these rules can only be matched as a sequence.
-        # we exclude small and "weak" rules from the subset entirely: they are
-        # unlikely to be matchable with a seq match
-        self.approx_matchable_rids_subset = intbitset(
-            (self.regular_rids | self.small_rids).difference(self.weak_rids))
-
-        # sparser dicts for faster lookup
+        # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
@@ -530,14 +510,14 @@ class LicenseIndex(object):
             if TRACE_MATCHES or TRACE_NEGATIVE:
                 map(logger_debug, matches)
 
-            if (TRACE_MATCHES_TEXT  or TRACE_NEGATIVE) and with_text:
+            if (TRACE_MATCHES_TEXT or TRACE_NEGATIVE) and with_text:
                 logger_debug(message + ' MATCHED TEXTS')
 
                 from licensedcode.tracing import get_texts
 
                 for m in matches:
                     logger_debug(m)
-                    qt, it = get_texts(m, location, query_string, self)
+                    qt, it = get_texts(m)
                     print('  MATCHED QUERY TEXT:', qt)
                     print('  MATCHED RULE TEXT:', it)
                     print()
@@ -583,30 +563,38 @@ class LicenseIndex(object):
             query=query, filter_false_positive=False, merge=False)
         return matches
 
-    def get_approximate_matches(self, query, matched_qspans=None,
-                                _set_matcher=match_set2, **kwargs):
+    def get_approximate_matches(self, query, matched_qspans, existing_matches, **kwargs):
         """
         Approximate matching strategy breaking a query in query_runs and using
         exacat matching then multiple local alignments (aka. diff). Return a
         list of matches.
         """
         matches = []
-        rules_subset = self.approx_matchable_rids_subset
 
         for query_run in query.query_runs:
 
+            # we cannot do a sequence match in query run without some high token left
             if not query_run.is_matchable(include_low=False, qspans=matched_qspans):
                 continue
+
+            # collect rules already matched exactly withing that query run: we
+            # do not need to try to rematch these
+            mrid = set(get_matched_rule_ids(existing_matches, query_run))
+            matchable_rids = self.approx_matchable_rids.difference(mrid)
 
             # inverted index match and ranking, query run-level
             # FIXME: we should consider aho matches to excludes them from candidates
             # FIXME: also exclude from candidates any rule that is only aho-matchable
             qrun_matches = []
             MAX_CANDIDATES = 50
-            candidates = _set_matcher.compute_candidates(
-                query_run, self, rules_subset=rules_subset, top=MAX_CANDIDATES)
+            candidates = match_set.compute_candidates(
+                query_run=query_run,
+                idx=self,
+                matchable_rids=matchable_rids,
+                top=MAX_CANDIDATES)
 
-            # multiple sequence matching/alignment, query run-level
+            # multiple sequence matching/alignment for each canidate, query run-
+            # level for as long as we have more non-overlapping matches returned
             for candidate_rule in candidates:
                 start_offset = 0
                 while True:
@@ -614,14 +602,13 @@ class LicenseIndex(object):
                         self, candidate_rule, query_run, start_offset=start_offset)
                     if not rule_matches:
                         break
+                    matches_end = max(m.qend for m in rule_matches)
+                    qrun_matches.extend(rule_matches)
+                    if matches_end + 1 < query_run.end:
+                        start_offset = matches_end + 1
+                        continue
                     else:
-                        matches_end = max(m.qend for m in rule_matches)
-                        qrun_matches.extend(rule_matches)
-                        if matches_end + 1 < query_run.end:
-                            start_offset = matches_end + 1
-                            continue
-                        else:
-                            break
+                        break
 
             matches.extend(match.merge_matches(qrun_matches, max_dist=MAX_DIST))
 
@@ -639,8 +626,6 @@ class LicenseIndex(object):
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
         """
-        # TODO: add match degenerated expressions with custom symbols
-
         assert 0 <= min_score <= 100
 
         if not location and not query_string:
@@ -661,6 +646,7 @@ class LicenseIndex(object):
             match.set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
+        # TODO: add match to degenerated expressions with custom symbols
         if as_expression:
             matches = self.get_spdx_id_matches(qry, from_spdx_id_lines=False)
             match.set_lines(matches, qry.line_by_pos)
@@ -678,15 +664,15 @@ class LicenseIndex(object):
         matches = []
 
         matchers = [
-            # matcher, include_low in matchable
+            # matcher, include_low in post-matching remaining matchable check
             (self.get_spdx_id_matches, True),
-            (self.get_exact_matches, True),
+            (self.get_exact_matches, False),
             (self.get_approximate_matches, False),
         ]
 
         already_matched_qspans = []
         for matcher, include_low in matchers:
-            matched = matcher(qry, qspans=already_matched_qspans)
+            matched = matcher(qry, matched_qspans=already_matched_qspans, existing_matches=matches)
             if TRACE:
                 logger_debug()
                 logger_debug('matching with matcher:', matcher)
@@ -698,6 +684,7 @@ class LicenseIndex(object):
             # collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match fragments (unused for now)
             already_matched_qspans.extend(m.qspan for m in matched if m.coverage() == 100)
+
             if not whole_query_run.is_matchable(
                 include_low=include_low, qspans=already_matched_qspans):
                 break
@@ -712,16 +699,17 @@ class LicenseIndex(object):
 
         matches, _discarded = match.refine_matches(
             matches, idx=self, query=qry, min_score=min_score,
-            max_dist=MAX_DIST // 2, filter_false_positive=True)
-
+            max_dist=MAX_DIST // 2, filter_false_positive=True, merge=True)
 
         matches.sort()
         match.set_lines(matches, qry.line_by_pos)
 
         if TRACE:
             logger_debug()
+            logger_debug()
             self.debug_matches(matches, 'final matches',
-                               location, query_string , with_text=True, query=qry)
+                               location, query_string ,
+                               with_text=True, query=qry)
         return matches
 
     def negative_match(self, query_run):
@@ -743,19 +731,19 @@ class LicenseIndex(object):
             from sys import getsizeof as size_of
 
         fields = [
-        'dictionary',
-        'tokens_by_tid',
-        'rid_by_hash',
-        'rules_by_rid',
-        'tids_by_rid',
+            'dictionary',
+            'tokens_by_tid',
+            'rid_by_hash',
+            'rules_by_rid',
+            'tids_by_rid',
 
-        'tids_lohi_sets_by_rid',
-        'tids_lohi_msets_by_rid',
+            'tids_lohi_sets_by_rid',
+            'tids_lohi_msets_by_rid',
 
-        'regular_rids',
-        'negative_rids',
-        'small_rids',
-        'false_positive_rids',
+            'regular_rids',
+            'negative_rids',
+            'approx_matchable_rids'
+            'false_positive_rids',
         ]
 
         plen = max(map(len, fields)) + 1
@@ -831,7 +819,6 @@ class LicenseIndex(object):
         - dictionary: mapping of token string->token id
         - tokens_by_tid: reverse mapping of token id->token string
         - tids_by_rid: mapping of rule id-> array of token ids
-        - weak_rids: a set of rule ids whose tokens are all junk tokens
 
         The arguments all relate to old, temporary token ids and are:
         - `tokens_count_by_old_tid`: mapping of token id-> token occurences
@@ -932,36 +919,48 @@ class LicenseIndex(object):
         # By construction this should always be true
         assert set(tokens_by_new_tid) == set(tokens_by_old_tid)
 
-        # collect weak rules made entirely of junk tokens: they can only be
-        # matched using an automaton
-        weak_rids = set()
-        weak_rids_add = weak_rids.add
-        index_problems = []
-        for rid, new_tids in enumerate(new_tids_by_rid):
-            if not any(t >= len_junk for t in new_tids):
-                weak_rids_add(rid)
-
-                if TRACE :
-                    rule = self.rules_by_rid[rid]
-                    if not rule.is_negative:
-                        message = (
-                            'WARNING: Weak rule, made only of frequent junk tokens. '
-                            'Can only be matched exactly:',
-                            self.rules_by_rid[rid].identifier,
-                            u' '.join(tokens_by_new_tid[t] for t in new_tids))
-                        index_problems.append(u' '.join(message))
-
-        if TRACE and index_problems:
-            # raise IndexError(u'\n'.join(index_problems))
-            print()
-            print('############################################')
-            map(print, index_problems)
-            print('############################################')
-            print()
-
         # TODO: Check that the junk count choice is correct: for instance using
         # some stats based on standard deviation or markov chains or similar
         # conditional probabilities such that we verify that we CANNOT create a
         # distinctive meaningful license string made entirely from junk tokens
 
-        return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid, weak_rids
+        return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid
+
+
+def get_weak_rids(len_junk, tids_by_rid, _idx):
+    """
+    Return a set of "weak" rule ids made entirely of junk tokens: they can only be
+    matched using an automaton.
+    """
+    weak_rids = set()
+    weak_rids_add = weak_rids.add
+    for rid, tids in enumerate(tids_by_rid):
+        if any(t >= len_junk for t in tids):
+            continue
+        weak_rids_add(rid)
+
+    if TRACE :
+        for rid in sorted(weak_rids):
+            rule = _idx.rules_by_rid[rid]
+            if not rule.is_negative:
+                message = (
+                    'WARNING: Weak rule, made only of frequent junk tokens. '
+                    'Can only be matched exactly:',
+                    _idx.rules_by_rid[rid].identifier,
+                    u' '.join(_idx.tokens_by_tid[t] for t in tids))
+                logger_debug(u' '.join(message))
+
+    return weak_rids
+
+
+def get_matched_rule_ids(matches, query_run):
+    """
+    Yield the subset of matched rule ids from a `matches` LicenseMatch
+    sequence that are within the `query_run` query run.
+    """
+    qstart = query_run.start
+    qend = query_run.end
+
+    for match in matches:
+        if qstart <= match.qstart and match.qend <= qend:
+            yield match.rule.rid

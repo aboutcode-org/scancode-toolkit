@@ -68,16 +68,14 @@ class TestMatchSeq(FileBasedTesting):
         assert match_seq.MATCH_SEQ == match.matcher
 
         exp_qtext = u"""
-            Copyright [2003] [C] [James] [All] [Rights] [Reserved]
-            THIS IS FROM THE CODEHAUS
+            CODEHAUS
             AND CONTRIBUTORS
             IN NO EVENT SHALL THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         """.split()
 
         exp_itext = u"""
-            Copyright
-            THIS IS FROM THE <OLD> CODEHAUS
+            CODEHAUS
             AND CONTRIBUTORS
             IN NO EVENT SHALL THE <OLD> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF <NEW> SUCH DAMAGE
@@ -86,7 +84,7 @@ class TestMatchSeq(FileBasedTesting):
         assert exp_qtext == qtext.split()
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
-        assert 90 <= match.coverage()
+        assert match.coverage() >=70
 
     def test_match_seq_are_correct_on_apache(self):
         rule_dir = self.get_test_loc('match_seq/rules')
@@ -99,33 +97,42 @@ class TestMatchSeq(FileBasedTesting):
         assert match_seq.MATCH_SEQ == match.matcher
         qtext, _itext = get_texts(match)
         expected = u'''
-        Redistribution and use in source and
-        binary forms with or without modification are permitted provided that the following
-        conditions are met 
-        <1> Redistributions of source code must retain the above copyright
-        notice this of conditions and the following disclaimer 
-        <2> Redistributions in
-        binary form must reproduce the above copyright notice this  of conditions and the
-        following disclaimer in the documentation and or other materials provided with the
-        distribution 
-        <3> The end user documentation included with the redistribution if any
-        must include the following acknowledgment <4> <This> <product> <includes> <software>
-        <developed> <by> <the> <OpenSymphony> <Group> <http> <www> <opensymphony> <com> <5>
-        Alternately this acknowledgment may appear in the software itself if and wherever
-        such third party acknowledgments normally appear The names OpenSymphony and The
-        OpenSymphony Group must not be used to endorse or promote products derived from this
-        software without prior written permission For written permission please contact
-        license opensymphony com Products derived from this software may not be called
-        OpenSymphony or OsCore nor may OpenSymphony or OsCore appear in their name
-        without prior written permission of the OpenSymphony Group THIS SOFTWARE IS PROVIDED
-        AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE
-        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR PARTICULAR PURPOSE ARE
-        DISCLAIMED IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR ITS CONTRIBUTORS BE
-        LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES
-        INCLUDING BUT NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE
-        DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF
-        LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR
-        OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE
-        POSSIBILITY OF SUCH DAMAGE
+            Redistribution and use in source and binary forms, with or without modification,
+            are permitted provided that the following conditions are met:
+            
+            [1]. Redistributions of source code must retain the above copyright notice, this
+            list of conditions and the following disclaimer.
+            
+            [2]. Redistributions in binary form must reproduce the above copyright notice,
+            this list of conditions and the following disclaimer in the documentation and/or
+            other materials provided with the distribution.
+            
+            [3]. The end-user documentation included with the redistribution, if any, must
+            include the following acknowledgment:
+            
+            [4]. "[This] [product] [includes] [software] [developed] [by] [the] [OpenSymphony] [Group]
+            ([http]://[www].[opensymphony].[com]/)."
+            
+            [5]. Alternately, this acknowledgment may appear in the software itself, if and
+            wherever such third-party acknowledgments normally appear.
+            
+            The names "OpenSymphony" and "The OpenSymphony Group" must not be used to
+            endorse or promote products derived from this software without prior written
+            permission. For written permission, please contact license@opensymphony.com .
+            
+            Products derived from this software may not be called "OpenSymphony" or
+            "OsCore", nor may "OpenSymphony" or "OsCore" appear in their name, without prior
+            written permission of the OpenSymphony Group.
+            
+            THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+            INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+            FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE
+            SOFTWARE FOUNDATION OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+            INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+            LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+            PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+            LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+            OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+            ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         '''
         assert expected.split() == qtext.split()

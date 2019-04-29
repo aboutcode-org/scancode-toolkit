@@ -67,6 +67,8 @@ STOPWORDS = frozenset({
     'blockquote',
     'body',
     'id',
+    'script', 
+    'rel',
 
 # debian copyright files <s> tags
     's',
@@ -121,6 +123,24 @@ STOPWORDS = frozenset({
 
     # seen in many CSS
     'lists',
+    'side','nav',
+    'height', 
+    'auto', 
+    'border', 
+    'padding', 
+    'width',
+
+    # seen in Perl PODs
+    'f',
+    'head1',
+    'head2',
+    'head3',
+
+    # TODO: consider common english stop words (the of a ...)
+    #'the',
+    #'of',
+    #'a',
+
 })
 
 

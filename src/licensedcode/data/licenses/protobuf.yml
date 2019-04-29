@@ -4,3 +4,4 @@ name: Protobuf License
 category: Permissive
 owner: Google
 homepage_url: http://protobuf.googlecode.com/svn/trunk/COPYING.txt
+minimum_coverage: 90

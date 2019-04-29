@@ -1,4 +1,3 @@
 license_expressions:
   - gpl-2.0
-  - x11-r75
-  - intel-bcl
+  - x11-r75 AND intel-bcl

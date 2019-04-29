@@ -1,18 +1,5 @@
 license_expressions:
-  - cmu-uc
-  - cmu-uc
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
-  - bsd-new
+  - net-snmp
   - bsd-new
   - bsd-new
   - bsd-new

@@ -29,7 +29,7 @@
   "code_view_url": null, 
   "vcs_url": null, 
   "copyright": null, 
-  "license_expression": "(apache-2.0 AND unknown) AND apache-2.0", 
+  "license_expression": "apache-2.0", 
   "declared_license": [
     {
       "name": "This material is licensed under the Apache Software License, Version 2.0", 

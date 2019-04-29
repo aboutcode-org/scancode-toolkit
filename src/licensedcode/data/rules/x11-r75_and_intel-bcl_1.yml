@@ -1,0 +1,3 @@
+license_expression: x11-r75 AND intel-bcl
+is_license_text: yes
+minimum_coverage: 95

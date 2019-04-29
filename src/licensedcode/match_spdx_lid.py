@@ -107,7 +107,7 @@ def spdx_id_match(idx, query_run, text):
     if cleaned.startswith(('list', 'dnl', 'rem',)):
         match_start += 1
         match_len -= 1
-        matched_tokens[1:]
+        matched_tokens = matched_tokens[1:]
 
     # build synthetic rule
     # TODO: ensure that all the SPDX license keys are known symbols

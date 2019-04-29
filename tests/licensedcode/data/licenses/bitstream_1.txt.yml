@@ -1,5 +1,4 @@
 license_expressions:
-    - free-unknown
-    - historical
+    - x11-bitstream
     - nonexclusive
-    - free-unknown
+

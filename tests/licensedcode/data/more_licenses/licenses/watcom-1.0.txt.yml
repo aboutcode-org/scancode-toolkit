@@ -1,4 +1,3 @@
-expected_failure: yes
 license_expressions:
   - sybase
 notes: this is a license from fossology license reference Watcom-1.0 (Sybase Open Watcom Public

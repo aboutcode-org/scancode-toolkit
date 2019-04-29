@@ -1,0 +1,5 @@
+license_expression: bsd-simplified AND gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+    - LICENSE

@@ -70,7 +70,7 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [
             [],
             [None],
-            [12, 0, 6, 3, 2, 0, 1, 10, 7],
+            [12, 0, 9, 6, 3, 0, 1, 5, 10],
             [],
             [None, None, None, None],
             [None, 0, None],
@@ -115,7 +115,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
         # this show our 4 known token in this query with their known position
         # "Redistribution and use in"
-        assert [6, 0, 3, 5] == qry.tokens
+        assert [6, 0, 4, 3] == qry.tokens
 
         # the first two tokens are unknown, then starting after "in" we have three trailing unknown.
         assert { -1: 2, 3: 3, } == qry.unknowns_by_pos
@@ -130,13 +130,14 @@ class TestQueryWithSingleRun(IndexTesting):
             # and
             0,
             # use
-            3,
+            4,
             # in
-            5,
+            3,
             # other form always'
             None, None, None
         ]
-        assert result == expected
+        assert expected == result
+        
 
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
@@ -291,63 +292,63 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
                                  _ranked_tokens=ranked_toks,
                                  _spdx_tokens=set())
-        assert 1 == idx.len_junk
-        assert {u'binary': 1, u'is': 2, u'the': 0} == idx.dictionary
+        assert 2 == idx.len_junk
+        assert {u'binary': 2, u'is': 0, u'the': 1} == idx.dictionary
 
         # two junks
         q = Query(query_string='a the', idx=idx)
         assert q.line_by_pos
         qrun = q.query_runs[0]
-        assert [0] == qrun.tokens
+        assert [1] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [2] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 0] == qrun.tokens
+        assert [2, 1] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [2] == qrun.tokens
         assert {-1: 1} == qrun.query.unknowns_by_pos
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [2] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [2, 2] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [2, 2] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [2, 2] == qrun.tokens
         assert {0: 2} == qrun.query.unknowns_by_pos
 
         # unknowns at start, middle and end
@@ -355,7 +356,7 @@ class TestQueryWithSingleRun(IndexTesting):
         #                         u     u           u    u            u    u
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [2, 2] == qrun.tokens
         assert {0: 2, 1: 2, -1: 2} == qrun.query.unknowns_by_pos
 
     def test_query_tokens_are_same_for_different_text_formatting(self):
@@ -382,9 +383,8 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_query_run_unknowns(self):
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')])
 
-
-        assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
-        assert 1 == idx.len_junk
+        assert {u'binary': 0, u'is': 2, u'the': 1} == idx.dictionary
+        assert 2 == idx.len_junk
 
         # multiple unknowns at start, middle and end
         q = Query(query_string='that new binary was sure a kind of the real mega deal', idx=idx)
@@ -468,9 +468,9 @@ class TestQueryWithMultipleRuns(IndexTesting):
             u'''redistribution and use in source and binary forms with or
             without modification are permitted provided that the following
             conditions are met redistributions of source code must retain the
-            above copyright notice this of conditions and the following
+            above copyright notice this list of conditions and the following
             disclaimer redistributions in binary form must reproduce the above
-            copyright notice this of conditions and the following
+            copyright notice this list of conditions and the following
             disclaimer in the documentation and or other materials provided with
             the distribution neither the name of <None> inc nor the names of its
             contributors may be used to endorse or promote products derived from

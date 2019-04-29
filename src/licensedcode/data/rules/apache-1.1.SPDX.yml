@@ -1,4 +1,4 @@
-license_expression: apache-1.1 AND public-domain
+license_expression: apache-1.1
 is_license_notice: yes
 minimum_coverage: 10
 notes: license text as published by SPDX. It also contains a public domain reference

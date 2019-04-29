@@ -21,7 +21,7 @@
   "code_view_url": "http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j", 
   "vcs_url": "svn+http://svn.mysql.com/svnpublic/connector-j/trunk/connector-j", 
   "copyright": null, 
-  "license_expression": "((mpl-1.1 OR lgpl-2.1-plus OR apache-2.0) AND unknown) AND gpl-1.0-plus AND ((gpl-1.0-plus AND unknown) AND unknown)", 
+  "license_expression": "gpl-2.0 AND gpl-1.0-plus AND ((gpl-1.0-plus AND unknown) AND unknown)", 
   "declared_license": [
     {
       "name": "The GNU General Public License, Version 2", 

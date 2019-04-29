@@ -1,4 +1,7 @@
 license_expressions:
   - python
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - python
 notes: this is a license from fossology license reference Python-2.4.4 (Python License 2.4.4)
   http://www.python.org/download/releases/2.4.6/license/

@@ -139,16 +139,24 @@ class Span(Set):
         return self._set == other._set
 
     def __and__(self, *others):
-        return Span(self._set.intersection(*(o._set for o in others)))
+        return Span(self._set.intersection(*[o._set for o in others]))
 
     def __or__(self, *others):
-        return Span(self._set.union(*(o._set for o in others)))
+        return Span(self._set.union(*[o._set for o in others]))
 
     def union(self, *others):
+        """
+        Return the union of this span with other spans as a new span.
+        (i.e. all positions that are in either spans.)
+        """
         return self.__or__(*others)
 
-    def difference(self, other):
-        return self._set.difference(other._set)
+    def difference(self, *others):
+        """
+        Return the difference of two or more spans as a new span.
+        (i.e. all positions that are in this span but not the others.)
+        """
+        return Span(self._set.difference(*[o._set for o in others]))
 
     def __repr__(self):
         """

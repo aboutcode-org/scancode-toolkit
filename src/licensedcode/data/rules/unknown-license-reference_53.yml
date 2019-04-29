@@ -1,0 +1,4 @@
+license_expression: unknown-license-reference AND jam
+referenced_filenames:
+    - jam.c
+is_license_reference: yes

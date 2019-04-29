@@ -1,10 +1,4 @@
 license_expressions:
-  - gpl-1.0-plus
   - python
-  - gpl-1.0-plus
-  - python
-  - python
-  - python
-  - python-cwi
 notes: this is a license from fossology license reference Python-2.0.1 (Python License 2.0.1)
   http://www.python.org/download/releases/2.0.1/license/

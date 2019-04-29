@@ -41,62 +41,28 @@
           "reference_url": "https://example.com/urn:apache-1.0",
           "spdx_license_key": "Apache-1.0",
           "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 2,
+          "start_line": 4,
           "end_line": 54,
           "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
+            "identifier": "apache-1.0.LICENSE",
+            "license_expression": "apache-1.0",
             "licenses": [
-              "apache-1.0",
-              "public-domain"
+              "apache-1.0"
             ],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
-            "matcher": "1-hash",
-            "rule_length": 375,
-            "matched_length": 375,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
-        },
-        {
-          "key": "public-domain",
-          "score": 100.0,
-          "name": "Public Domain",
-          "short_name": "Public Domain",
-          "category": "Public Domain",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": "http://www.linfo.org/publicdomain.html",
-          "text_url": "",
-          "reference_url": "https://example.com/urn:public-domain",
-          "spdx_license_key": null,
-          "spdx_url": "",
-          "start_line": 2,
-          "end_line": 54,
-          "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
-            "licenses": [
-              "apache-1.0",
-              "public-domain"
-            ],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "matcher": "1-hash",
-            "rule_length": 375,
-            "matched_length": 375,
+            "matcher": "2-aho",
+            "rule_length": 368,
+            "matched_length": 368,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
         }
       ],
       "license_expressions": [
-        "apache-1.0 AND public-domain"
+        "apache-1.0"
       ],
       "scan_errors": []
     }
