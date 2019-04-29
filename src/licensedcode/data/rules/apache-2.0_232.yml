@@ -3,3 +3,4 @@ is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - /usr/share/common-licenses/Apache-2.0
+minimum_coverage: 70

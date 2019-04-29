@@ -6,3 +6,4 @@ owner: Lutris Technologies, Inc.
 homepage_url: http://ksoap.objectweb.org/software/license/index.html
 text_urls:
     - http://ksoap.objectweb.org/software/license/index.html
+minimum_coverage: 30

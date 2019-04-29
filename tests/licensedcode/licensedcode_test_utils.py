@@ -218,30 +218,34 @@ def make_test(license_test, regen=False):
         except:
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
-            failure_trace = detected_expressions[:]
-            failure_trace .extend([test_name, 'test file: file://' + test_file])
-
+            results = expected_expressions + ['======================', '']
+            failure_trace = detected_expressions[:] + ['======================', '']
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
-                rule_data_file = match.rule.data_file
-                failure_trace.extend(['', '',
-                    '======= MATCH ====', match,
+                if match.rule.is_license:
+                    rule_data_file = rule_text_file.replace('LICENSE', 'yml')
+                else:
+                    rule_data_file = match.rule.data_file
+                failure_trace.extend(['',
+                    '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
                     failure_trace.append('file://{test_data_file}'.format(**locals()))
 
-                failure_trace.append(qtext.splitlines())
+                failure_trace.append('')
+                failure_trace.append(qtext)
                 failure_trace.extend(['',
-                    '======= Matched Rule Text for:'
+                    '======= Matched Rule Text for:',
                     'file://{rule_text_file}'.format(**locals()),
                     'file://{rule_data_file}'.format(**locals()),
-                    itext.splitlines(),
+                    '',
+                    itext,
                 ])
             # this assert will always fail and provide a detailed failure trace
-            assert expected_expressions == failure_trace
+            assert '\n'.join(results) == '\n'.join(failure_trace)
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name

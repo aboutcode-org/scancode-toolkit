@@ -6,3 +6,4 @@ owner: Tom Wu
 homepage_url: http://www-cs-students.stanford.edu/~tjw/jsbn/LICENSE
 other_urls:
     - http://www-cs-students.stanford.edu/~tjw/jsbn/
+minimum_coverage: 90

@@ -1,11 +1,11 @@
 license_expressions:
   - ijg
   - public-domain
+  - proprietary-license
+  - bsd-new
+  - bsd-new AND ijg AND libpng
+  - free-unknown
   - bsd-new
   - unknown
-  - bsd-new
-  - bsd-new
-  - libpng
-  - bsd-simplified
   - ijg
   - ijg

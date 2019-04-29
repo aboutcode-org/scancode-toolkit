@@ -2,7 +2,7 @@ license_expressions:
     - gpl-3.0-plus
     - lgpl-2.1-plus
     - lgpl-2.1-plus
-    - lgpl-2.1-plus
+    - lgpl-2.1-plus AND free-unknown
     - mit-modern
     - gpl-2.0-plus
     - gpl-2.0-plus

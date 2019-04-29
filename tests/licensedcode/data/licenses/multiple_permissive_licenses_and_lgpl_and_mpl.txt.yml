@@ -2,19 +2,11 @@ license_expressions:
   - mit
   - freetype
   - mit
-  - x11
-  - bsd-new AND free-unknown
-  - bsd-new
+  - unicode-icu-58
   - unknown
-  - bsd-new
-  - bsd-new
-  - unknown
-  - naist-2003
-  - bsd-simplified
-  - bsd-new
-  - public-domain
-  - public-domain
   - sgi-freeb-2.0
+  - libpng
+  - libpng
   - libpng
   - bsd-new
   - mit

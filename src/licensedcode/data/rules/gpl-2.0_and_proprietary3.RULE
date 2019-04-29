@@ -1,0 +1,96 @@
+LICENSE AGREEMENT
+FEDORA(TM) 
+
+This agreement governs the download, installation or use of the Software
+(as defined below) and any updates to the Software, regardless of the
+delivery mechanism. The Software is a collective work under U.S.
+Copyright Law.  Subject to the following terms, Fedora Project grants to
+the user ("User") a license to this collective work pursuant to the GNU
+General Public License version 2.  By downloading, installing or using
+the Software, User agrees to the terms of this agreement.
+
+1.  THE SOFTWARE.  Fedora (the "Software") is a modular Linux
+operating system consisting of hundreds of software components. The
+end user license agreement for each component is located in the
+component''s source code.  With the exception of certain image files
+containing the Fedora trademark identified in Section 2 below, the
+license terms for the components permit User to copy and
+redistribute the component.  With the potential exception of certain
+firmware files (denoted in the License field of the RPM packaging),
+the license terms for the components permit User to copy, modify and
+redistribute the component, in both source code and binary code
+forms.  This agreement does not limit User''s rights under, or grant
+User rights that supersede, the license terms of any particular
+component.
+
+2.  INTELLECTUAL PROPERTY RIGHTS.  The Software and each of its
+components, including the source code, documentation, appearance,
+structure and organization are copyrighted by Fedora Project and
+others and are protected under copyright and other laws.  Title to
+the Software and any component, or to any copy, modification, or
+merged portion shall remain with the aforementioned, subject to the
+applicable license.  The "Fedora" trademark is a trademark of Red
+Hat, Inc. ("Red Hat") in the U.S. and other countries and is used by
+permission.  This agreement permits User to distribute unmodified
+copies of Software using the Fedora trademark on the condition that
+User follows Red Hat''s trademark guidelines located at
+http://fedoraproject.org/wiki/Legal.  User must abide by these
+trademark guidelines when distributing the Software, regardless of
+whether the Software has been modified.  If User modifies the
+Software, then User must replace all images containing the "Fedora"
+trademark.  Those images are in the fedora-logos package.
+
+3.  LIMITED WARRANTY.  Except as specifically stated in this agreement
+or a license for a particular component, TO THE MAXIMUM EXTENT
+PERMITTED UNDER APPLICABLE LAW, THE SOFTWARE AND THE COMPONENTS ARE
+PROVIDED AND LICENSED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EXPRESSED OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF
+MERCHANTABILITY, NON-INFRINGEMENT OR FITNESS FOR A PARTICULAR
+PURPOSE.  Neither the Fedora Project nor Red Hat warrants that the
+functions contained in the Software will meet User''s requirements or
+that the operation of the Software will be entirely error free or
+appear precisely as described in the accompanying documentation.
+USE OF THE SOFTWARE IS AT USER''S OWN RISK.
+
+4.  LIMITATION OF REMEDIES AND LIABILITY. TO THE MAXIMUM EXTENT
+PERMITTED BY APPLICABLE LAW, FEDORA PROJECT AND RED HAT WILL NOT BE
+LIABLE TO USER FOR ANY DAMAGES, INCLUDING INCIDENTAL OR
+CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST SAVINGS ARISING OUT OF
+THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF FEDORA PROJECT OR
+RED HAT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+5.  EXPORT CONTROL.  As required by U.S. law, User represents and
+warrants that it: (a) understands that the Software is subject to
+export controls under the U.S. Commerce Department''s Export
+Administration Regulations ("EAR"); (b) is not located in a
+prohibited destination country under the EAR or U.S. sanctions
+regulations (currently Cuba, Iran, Iraq, North Korea, Sudan and
+Syria); (c) will not export, re-export, or transfer the Software to
+any prohibited destination, entity, or individual without the
+necessary export license(s) or authorizations(s) from the U.S.
+Government; (d) will not use or transfer the Software for use in any
+sensitive nuclear, chemical or biological weapons, or missile
+technology end-uses unless authorized by the U.S. Government by
+regulation or specific license; (e) understands and agrees that if
+it is in the United States and exports or transfers the Software to
+eligible end users, it will, as required by EAR Section 741.17(e),
+submit semi-annual reports to the Commerce Department''s Bureau of
+Industry & Security (BIS), which include the name and address
+(including country) of each transferee; and (f) understands that
+countries other than the United States may restrict the import, use,
+or export of encryption products and that it shall be solely
+responsible for compliance with any such import, use, or export
+restrictions.
+
+6.  GENERAL.  If any provision of this agreement is held to be
+unenforceable, that shall not affect the enforceability of the
+remaining provisions.  This agreement shall be governed by the laws
+of the State of North Carolina and of the United States, without
+regard to any conflict of laws provisions, except that the United
+Nations Convention on the International Sale of Goods shall not
+apply.
+
+Copyright (C) 2010 Fedora Project. All rights reserved.  "Red Hat" and
+"Fedora" are trademarks of Red Hat, Inc.  "Linux" is a registered
+trademark of Linus Torvalds.  All other trademarks are the property of
+their respective owners.

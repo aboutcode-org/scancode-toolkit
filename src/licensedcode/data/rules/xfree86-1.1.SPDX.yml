@@ -1,4 +1,5 @@
 license_expression: xfree86-1.1
 is_license_text: yes
-minimum_coverage: 10
 notes: license text as published by SPDX
+minimum_coverage: 80
+

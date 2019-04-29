@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 
 from collections import Counter
 from collections import defaultdict
-from collections import namedtuple
 from collections import OrderedDict
 from functools import partial
 from itertools import chain
@@ -49,24 +48,26 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
 from commoncode import saneyaml
-from textcode.analysis import numbered_text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode.tokenize import query_tokenizer
 
-# these are globals but always side-by-side with the code so not moving
-data_dir = join(abspath(dirname(__file__)), 'data')
-licenses_data_dir = join(data_dir, 'licenses')
-rules_data_dir = join(data_dir, 'rules')
+from textcode.analysis import numbered_text_lines
+
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
 data file and one or more text files containing license or notice texts.
 """
 
-# Set to True to print detailed representations of objects when tracing
+# Set to True to print more detailed representations of objects when tracing
 TRACE_REPR = False
+
+# these are globals but always side-by-side with the code so do no not move them around
+data_dir = join(abspath(dirname(__file__)), 'data')
+licenses_data_dir = join(data_dir, 'licenses')
+rules_data_dir = join(data_dir, 'rules')
 
 
 FOSS_CATEGORIES = set([
@@ -636,28 +637,6 @@ def load_rules(rules_data_dir=rules_data_dir):
         raise Exception(msg)
 
 
-# a set of thresholds for this rule to determine when a match should be treated
-# as a good match
-# TODO: use attr instead
-Thresholds = namedtuple(
-    'Thresholds',
-    [
-        # number of "high" tokens in this rule
-        'high_len',
-        # number of "low" tokens in this rule
-        'low_len',
-        # length of the rule
-        'length',
-        # boolean set to True from Rule.small()
-        'small',
-        # minimum number of "high" tokens to match for this rule
-        'min_high',
-        # minimum number of tokens to match for this rule
-        'min_len'
-    ]
-)
-
-
 @attr.s(slots=True)
 class Rule(object):
     """
@@ -671,7 +650,7 @@ class Rule(object):
     ###########
 
     # optional rule id int typically assigned at indexing time
-    rid = attr.ib(default=None, repr=False)
+    rid = attr.ib(default=None, repr=TRACE_REPR)
 
     # unique identifier
     identifier = attr.ib(default=None)
@@ -748,21 +727,38 @@ class Rule(object):
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
-    # length in number of token strings
+    # lengths in tokens
     length = attr.ib(default=0)
+    min_matched_length = attr.ib(default=0, repr=TRACE_REPR)
 
-    # lengths in token ids, including high/low token counts, set in indexing.
-    # This considers the all tokens occurences
-    high_length = attr.ib(default=0, repr=False)
-    low_length = attr.ib(default=0, repr=False)
-    _thresholds = attr.ib(default=None, repr=False)
+    high_length = attr.ib(default=0, repr=TRACE_REPR)
+    min_high_matched_length = attr.ib(default=0, repr=TRACE_REPR)
 
-    # lengths in token ids, including high/low token counts, set in indexing.
-    # This considers the unique tokens (ignoring multiple occurences)
-    high_unique = attr.ib(default=0, repr=False)
-    low_unique = attr.ib(default=0, repr=False)
-    length_unique = attr.ib(default=0, repr=False)
-    _thresholds_unique = attr.ib(default=None, repr=False)
+    # lengths in unique token.
+    length_unique = attr.ib(default=0, repr=TRACE_REPR)
+    min_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
+
+    high_length_unique = attr.ib(default=0, repr=TRACE_REPR)
+    min_high_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
+
+    is_small = attr.ib(default=False, repr=TRACE_REPR)
+    is_approx_matchable = attr.ib(default=True, repr=TRACE_REPR)
+
+    has_computed_thresholds = attr.ib(default=False, repr=False)
+
+    def get_length(self, unique=False):
+        return self.length_unique if unique else self.length
+
+    def get_min_matched_length(self, unique=False):
+        return (self.min_matched_length_unique if unique
+                else self.min_matched_length)
+
+    def get_high_length(self, unique=False):
+        return self.high_length_unique if unique else self.high_length
+
+    def get_min_high_matched_length(self, unique=False):
+        return (self.min_high_matched_length_unique if unique
+                else self.min_high_matched_length)
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.text_file:
@@ -867,96 +863,28 @@ class Rule(object):
             return self.licensing.contains(
                 self.license_expression_object, other.license_expression_object)
 
-    def small(self):
+    def compute_thresholds(self):
         """
-        Is this a small rule? It needs special handling for detection and will
-        only be matched exactly.
+        Compute and set thresholds either considering the occurrence of all
+        tokens or the occurance of unique tokens.
         """
-        SMALL_RULE = 15
-        # FIXME: minimum_coverage is abusing the notion of "small"
-        return self.length < SMALL_RULE or self.minimum_coverage == 100
+        if not self.has_computed_thresholds:
+            self.minimum_coverage, self.min_matched_length, self.min_high_matched_length = (
+                compute_thresholds_occurences(
+                    self.minimum_coverage,
+                    self.length,
+                    self.high_length))
 
-    def thresholds(self):
-        """
-        Return a Thresholds tuple considering the occurrence of all tokens.
-        """
-        if not self._thresholds:
-            length = self.length
-            high_length = self.high_length
-            if length > 200:
-                min_high = high_length // 10
-                min_len = length // 10
-            else:
-                min_high = min([high_length, MIN_MATCH_HIGH_LENGTH])
-                min_len = MIN_MATCH_LENGTH
+            self.min_matched_length_unique, self.min_high_matched_length_unique = (
+            compute_thresholds_unique(
+                self.minimum_coverage,
+                self.length,
+                self.length_unique, self.high_length_unique))
 
-            # note: we cascade ifs from largest to smallest lengths
-            # FIXME: this is not efficient
+            SMALL_RULE = 15
+            self.is_small = self.length < SMALL_RULE
+            self.has_computed_thresholds = True
 
-            if self.length < 30:
-                min_len = length // 2
-
-            if self.length < 10:
-                min_high = high_length
-                min_len = length
-                self.minimum_coverage = 80
-
-            if self.length < 3:
-                min_high = high_length
-                min_len = length
-                self.minimum_coverage = 100
-
-            if self.minimum_coverage == 100:
-                min_high = high_length
-                min_len = length
-
-            self._thresholds = Thresholds(
-                high_length, self.low_length, length,
-                self.small(), min_high, min_len
-            )
-        return self._thresholds
-
-    def thresholds_unique(self):
-        """
-        Return a Thresholds tuple considering the occurrence of only unique tokens.
-        """
-        if not self._thresholds_unique:
-            length = self.length
-            high_unique = self.high_unique
-            length_unique = self.length_unique
-
-            if length > 200:
-                min_high = high_unique // 10
-                min_len = length // 10
-            else:
-                highu = (int(high_unique // 2)) or high_unique
-                min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
-                min_len = MIN_MATCH_LENGTH
-
-            # note: we cascade IFs from largest to smallest lengths
-            if length < 20:
-                min_high = high_unique
-                min_len = min_high
-
-            if length < 10:
-                min_high = high_unique
-                if length_unique < 2:
-                    min_len = length_unique
-                else:
-                    min_len = length_unique - 1
-
-            if length < 5:
-                min_high = high_unique
-                min_len = length_unique
-
-            if self.minimum_coverage == 100:
-                min_high = high_unique
-                min_len = length_unique
-
-            self._thresholds_unique = Thresholds(
-                high_unique, self.low_unique, length_unique,
-                self.small(), min_high, min_len)
-        return self._thresholds_unique
 
     def to_dict(self):
         """
@@ -1158,6 +1086,78 @@ class Rule(object):
             or self.is_license_tag
         )
 
+def compute_thresholds_occurences(minimum_coverage, length, high_length):
+    """
+    Compute and return thresholds considering the occurrence of all tokens.
+    """
+    if minimum_coverage == 100:
+        min_matched_length = length
+        min_high_matched_length = high_length
+        return minimum_coverage, min_matched_length, min_high_matched_length
+
+    if length < 3:
+        min_high_matched_length = high_length
+        min_matched_length = length
+        if not minimum_coverage:
+            minimum_coverage = 100
+
+    elif length < 10:
+        min_matched_length = length
+        min_high_matched_length = high_length
+        if not minimum_coverage:
+            minimum_coverage = 80
+
+    elif length < 30:
+        min_matched_length = length // 2
+        min_high_matched_length = min(high_length, MIN_MATCH_HIGH_LENGTH)
+
+    elif length < 200:
+        min_matched_length = MIN_MATCH_LENGTH
+        min_high_matched_length = min(high_length, MIN_MATCH_HIGH_LENGTH)
+
+    else:  # if length >= 200:
+
+        min_matched_length = length // 10
+        min_high_matched_length = high_length // 10
+
+    return minimum_coverage, min_matched_length, min_high_matched_length
+
+
+def compute_thresholds_unique(minimum_coverage, length, length_unique, high_length_unique):
+    """
+    Compute and set thresholds considering the occurrence of only unique tokens.
+    """
+    if minimum_coverage == 100:
+        min_matched_length_unique = length_unique
+        min_high_matched_length_unique = high_length_unique
+        return min_matched_length_unique, min_high_matched_length_unique
+
+    if length > 200:
+        min_matched_length_unique = length // 10
+        min_high_matched_length_unique = high_length_unique // 10
+
+    elif length < 5:
+        min_matched_length_unique = length_unique
+        min_high_matched_length_unique = high_length_unique
+
+    elif length < 10:
+        if length_unique < 2:
+            min_matched_length_unique = length_unique
+        else:
+            min_matched_length_unique = length_unique - 1
+        min_high_matched_length_unique = high_length_unique
+
+    elif length < 20:
+        min_matched_length_unique = high_length_unique
+        min_high_matched_length_unique = high_length_unique
+
+    else:
+        min_matched_length_unique = MIN_MATCH_LENGTH
+        highu = (int(high_length_unique // 2)) or high_length_unique
+        min_high_matched_length_unique = min(highu, MIN_MATCH_HIGH_LENGTH)
+
+    return min_matched_length_unique, min_high_matched_length_unique
+
 
 @attr.s(slots=True, repr=False)
 class SpdxRule(Rule):
@@ -1167,7 +1167,8 @@ class SpdxRule(Rule):
 
     Since we may have an infinite possible number of SPDX expressions and these
     are not backed by a traditional rule text file, we use this class to handle
-    the specifics of these how rules that are built at matching time.
+    the specifics of these how rules that are built at matching time: one rule
+    is created for each detected SPDX license expression.
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
@@ -1192,15 +1193,13 @@ class SpdxRule(Rule):
         self.license_expression = expression.render()
         self.license_expression_object = expression
         self.is_license_tag = True
+        self.is_small = False
 
     def load(self):
         raise NotImplementedError
 
     def dump(self):
         raise NotImplementedError
-
-    def small(self):
-        return False
 
 
 def _print_rule_stats():

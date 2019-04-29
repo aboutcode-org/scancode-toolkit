@@ -1,3 +1,2 @@
 license_expressions:
-  - bsd-simplified
-  - gpl-2.0
+  - bsd-simplified AND gpl-2.0

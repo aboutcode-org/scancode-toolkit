@@ -223,7 +223,7 @@ class TestRule(FileBasedTesting):
         except NotImplementedError:
             pass
 
-        assert not rule.small()
+        assert not rule.is_small
         assert rule.relevance == 100
 
     def test_spdxrule_with_invalid_expression(self):
@@ -268,23 +268,64 @@ class TestRule(FileBasedTesting):
         ]
         assert expected == rule_tokens
 
+    def test_compute_thresholds_occurences(self):
+        minimum_coverage = 0.0
+        length = 54
+        high_length = 11
+
+        results = models.compute_thresholds_occurences(minimum_coverage, length, high_length)
+        expected_min_cov = 0.0
+        expected_min_matched_length = 4
+        expected_min_high_matched_length = 3
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
+
+        length_unique = 39
+        high_length_unique = 7
+
+        results = models.compute_thresholds_unique(
+            minimum_coverage, length, length_unique, high_length_unique)
+        expected_min_matched_length_unique = 4
+        expected_min_high_matched_length_unique = 3
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
+
+
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
         r1 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
-        r1_text = 'licensed under the GPL,{{}} licensed under the GPL'
-        r1 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r1_text)
-        r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
+        results = models.compute_thresholds_occurences(r1.minimum_coverage, r1.length, r1.high_length)
+        expected_min_cov = 80
+        expected_min_matched_length = 8
+        expected_min_high_matched_length = 8
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
 
-        _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
+        results = models.compute_thresholds_unique(
+            r1.minimum_coverage, r1.length, r1.length_unique, r1.high_length_unique)
+        
+        expected_min_matched_length_unique = 3
+        expected_min_high_matched_length_unique = 2
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
+
+        results = models.compute_thresholds_occurences(r2.minimum_coverage, r2.length, r2.high_length)
+        expected_min_cov = 0.0
+        expected_min_matched_length = 4
+        expected_min_high_matched_length = 3
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
+
+        results = models.compute_thresholds_unique(
+            r2.minimum_coverage, r2.length, r2.length_unique, r2.high_length_unique)
+        expected_min_matched_length_unique = 4
+        expected_min_high_matched_length_unique = 1
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')

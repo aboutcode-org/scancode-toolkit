@@ -10,3 +10,7 @@ other_urls:
     - http://opensource.org/licenses/Intel
     - https://opensource.org/licenses/Intel
     - https://opensource.org/licenses/intel-open-source-license.php
+notes: this has this title in SPDX and OSI text
+ The Intel Open Source License for CDSA/CSSM Implementation
+ (BSD License with Export Notice)
+minimum_coverage: 75

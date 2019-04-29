@@ -1,0 +1,6 @@
+license_expression: openssl-exception-lgpl-2.0-plus
+is_license_reference: yes
+referenced_filenames:
+    - COPYING
+relevance: 95
+minimum_coverage: 80

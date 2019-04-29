@@ -7,3 +7,4 @@ homepage_url: http://www.day.com/maven/jsr170/jars/LICENSE.txt
 text_urls:
     - http://www.day.com/maven/jsr170/jars/LICENSE.txt
     - http://www.day.com/maven/jsr170/licenses/day-spec-license.htm
+minimum_coverage: 70

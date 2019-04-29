@@ -6,3 +6,4 @@ other_urls:
     - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/sunrpc/auth_gss/gss_generic_token.c?h=v4.19
 category: Permissive
 owner: Unspecified
+minimum_coverage: 40

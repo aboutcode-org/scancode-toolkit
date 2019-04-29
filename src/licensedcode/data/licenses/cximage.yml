@@ -4,3 +4,4 @@ name: CxImage License
 category: Permissive
 owner: CxImage Project
 homepage_url: http://www.xdp.it/cximage/
+minimum_coverage: 30

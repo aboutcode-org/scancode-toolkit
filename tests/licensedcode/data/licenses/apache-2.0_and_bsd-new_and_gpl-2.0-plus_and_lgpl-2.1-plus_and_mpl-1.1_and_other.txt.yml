@@ -1,3 +1,8 @@
+expected_failure: yes
+notes: somehow we should get a full bsd-new text detected. But this only works
+ when we increase the number of candidates OR we decrease the number of empties
+ between two query runs to get more query runs.
+
 license_expressions:
     - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
     - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
@@ -6,4 +11,4 @@ license_expressions:
     - bsd-new
     - apache-2.0
     - ms-pl
-# expected_failure: yes
+

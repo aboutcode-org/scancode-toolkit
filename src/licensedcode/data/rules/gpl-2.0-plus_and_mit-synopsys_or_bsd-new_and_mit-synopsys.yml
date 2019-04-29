@@ -1,4 +1,4 @@
 license_expression: (gpl-2.0-plus AND mit-synopsys) OR (bsd-new AND mit-synopsys)
 is_license_notice: yes
-minimum_coverage: 40
+minimum_coverage: 80
 

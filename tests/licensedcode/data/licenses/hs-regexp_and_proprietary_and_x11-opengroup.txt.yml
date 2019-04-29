@@ -3,7 +3,7 @@ license_expressions:
     - x11-xconsortium
     - historical
     - x11-keith-packard
-    - x11-dec1
+    - historical
     - x11-x11r5
     - xfree86-1.0
     - x11-doc

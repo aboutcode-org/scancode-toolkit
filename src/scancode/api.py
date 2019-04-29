@@ -222,7 +222,7 @@ def get_licenses(location, min_score=0, include_text=False,
 
             matched_rule['matcher'] = match.matcher
             matched_rule['rule_length'] = match.rule.length
-            matched_rule['matched_length'] = match.ilen()
+            matched_rule['matched_length'] = match.len()
             matched_rule['match_coverage'] = match.coverage()
             matched_rule['rule_relevance'] = match.rule.relevance
 

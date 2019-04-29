@@ -6718,6 +6718,7 @@ hawk
 rebel
 perceived
 origins
+origin
 hired
 makeup
 textile
@@ -9562,6 +9563,8 @@ derive
 version
 versions
 program
+programming
+language
 programs
 developers
 developer
@@ -10520,6 +10523,7 @@ fi
 bungisoft
 HSQLDB
 RedBase
+rabbitmq
 '''
 
 

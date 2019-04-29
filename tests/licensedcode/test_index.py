@@ -87,44 +87,46 @@ class TestIndexing(IndexTesting):
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
-            (u'a one a two a three licensed.', 3, 1, 3, 1),
-            (u'a four a five a six licensed.', 2, 2, 2, 2),
-            (u'one two three four five gpl', 5, 1, 5, 1),
-            (u'The rose is a rose mit', 2, 2, 2, 3),
-            (u'The license is GPL', 2, 2, 2, 2),
-            (u'The license is this GPL', 3, 2, 3, 2),
-            (u'a license is a rose', 1, 2, 1, 2),
-            (u'the gpl', 1, 1, 1, 1),
-            (u'the mit', 1, 1, 1, 1),
-            (u'the bsd', 1, 1, 1, 1),
-            (u'the lgpl', 1, 1, 1, 1),
+            (u'a one a two a three licensed.',        (4, 1, 4, 2)),
+            (u'a four a five a six licensed.',        (4, 1, 4, 2)),
+            (u'one two three four five gpl',          (6, 1, 6, 2)),
+            (u'The rose is a rose mit',               (4, 0, 5, 0)),
+            (u'The license is GPL',                   (4, 2, 4, 4)),
+            (u'The license is this GPL',              (5, 2, 5, 4)),
+            (u'a license is a rose',                  (3, 1, 3, 2)),
+            (u'the gpl',                              (2, 1, 2, 2)),
+            (u'the mit',                              (2, 0, 2, 0)),
+            (u'the bsd',                              (2, 1, 2, 2)),
+            (u'the lgpl',                             (2, 1, 2, 2)),
         ]
         idx = index.LicenseIndex()
         rules = [models.Rule(stored_text=t[0]) for t in test_rules]
         idx._add_rules(rules)
 
-        assert 8 == idx.len_junk
-        expected_lengths = [r[1:] for r in test_rules]
-        results = [(rule.low_unique, rule.high_unique, rule.low_length, rule.high_length) for rule in rules]
+        assert 11 == idx.len_junk
+        expected_lengths = [r[1] for r in test_rules]
+        results = [
+            (rule.length_unique, rule.high_length_unique, 
+             rule.length, rule.high_length) for rule in rules]
         assert expected_lengths == results
 
         xdict = {
-            u'bsd': 15,
-            u'five': 4,
-            u'four': 3,
-            u'gpl': 8,
-            u'is': 1,
-            u'lgpl': 13,
-            u'license': 9,
-            u'licensed': 11,
-            u'mit': 12,
-            u'one': 6,
-            u'rose': 10,
-            u'six': 14,
-            u'the': 0,
-            u'this': 7,
-            u'three': 2,
-            u'two': 5
+            'bsd': 15,      
+            'five': 5,
+            'four': 4,
+            'gpl': 11,
+            'is': 1,
+            'lgpl': 14,
+            'license': 12,
+            'licensed': 13,
+            'mit': 8,
+            'one': 7,
+            'rose': 2,
+            'six': 10,
+            'the': 0,
+            'this': 9,
+            'three': 3,
+            'two': 6
         }
 
         assert xdict == idx.dictionary
@@ -132,35 +134,36 @@ class TestIndexing(IndexTesting):
         xtbi = [
             u'the',
             u'is',
+            u'rose',
             u'three',
             u'four',
             u'five',
             u'two',
             u'one',
+            u'mit',
             u'this',
+            u'six',
             u'gpl',
             u'license',
-            u'rose',
             u'licensed',
-            u'mit',
             u'lgpl',
-            u'six',
             u'bsd']
 
         assert xtbi == idx.tokens_by_tid
 
         expected_as_dict = {
-            u'_tst_18_4': {u'gpl': [3], u'license': [1]},
-            u'_tst_19_6': {u'license': [0], u'rose': [2]},
-            u'_tst_22_3': {u'mit': [4], u'rose': [1, 3]},
-            u'_tst_23_5': {u'gpl': [4], u'license': [1]},
-            u'_tst_27_2': {u'gpl': [5]},
             u'_tst_29_0': {u'licensed': [3]},
-            u'_tst_29_1': {u'licensed': [3], u'six': [2]},
+            u'_tst_29_1': {u'licensed': [3]},
+            u'_tst_27_2': {u'gpl': [5]},
+            u'_tst_22_3': {},
+            u'_tst_18_4': {u'gpl': [3], u'license': [1]},
+            u'_tst_23_5': {u'gpl': [4], u'license': [1]},
+            u'_tst_19_6': {u'license': [0]},
             u'_tst_7_7': {u'gpl': [1]},
-            u'_tst_7_8': {u'mit': [1]},
+            u'_tst_7_8': {},
             u'_tst_7_9': {u'bsd': [1]},
-            u'_tst_8_10': {u'lgpl': [1]}}
+            u'_tst_8_10': {u'lgpl': [1]}
+        }
 
         assert expected_as_dict == idx.to_dict()
 
@@ -175,84 +178,80 @@ class TestIndexing(IndexTesting):
 
         idx._add_rules(rules)
 
-        assert 4 == idx.len_junk
+        assert 6 == idx.len_junk
 
         expected_index = {
-            'plain1_0': {u'redistribution': [0]},
-            'plain2_1': {u'is': [1], u'redistribution': [0], u'yes': [2]},
-            'plain3_2': {u'is': [1], u'redistribution': [0], u'yes': [3]},
-            'plain4_3': {u'is': [1], u'redistribution': [0], u'yes': [4]},
-            'plain5_4': {u'is': [1], u'redistribution': [0]},
-            'tmpl10_5': {u'any': [5], u'is': [1], u'redistribution': [0], u'thing': [6]},
-            'tmpl2_6': {u'is': [1], u'redistribution': [0]},
-            'tmpl3_7': {u'is': [1], u'redistribution': [0]},
-            'tmpl4_8': {u'is': [1], u'redistribution': [0]},
-            'tmpl5_2_9': {u'is': [1], u'redistribution': [0], u'yes': [4]},
-            'tmpl6_10': {u'is': [1], u'redistribution': [0]},
-            'tmpl7_11': {u'is': [1], u'redistribution': [0]},
-            'tmpl9_12': {u'any': [5], u'is': [1], u'redistribution': [0]}
+        'plain1_0': {u'redistribution': [0]},
+        'plain2_1': {u'redistribution': [0], u'yes': [2]},
+        'plain3_2': {u'redistribution': [0], u'yes': [3]},
+        'plain4_3': {u'redistribution': [0], u'yes': [4]},
+        'plain5_4': {u'redistribution': [0]},
+        'tmpl10_5': {u'redistribution': [0], u'thing': [6]},
+        'tmpl2_6': {u'redistribution': [0]},
+        'tmpl3_7': {u'redistribution': [0]},
+        'tmpl4_8': {u'redistribution': [0]},
+        'tmpl5_2_9': {u'redistribution': [0], u'yes': [4]},
+        'tmpl6_10': {u'redistribution': [0]},
+        'tmpl7_11': {u'redistribution': [0]},
+        'tmpl9_12': {u'redistribution': [0]}
         }
 
         assert expected_index == idx.to_dict()
 
         expected_dict = {
-            u'all': 1,
-            u'allowed': 0,
-            u'and': 2,
-            u'any': 7,
-            u'for': 3,
-            u'is': 5,
-            u'redistribution': 4,
-            u'thing': 8,
-            u'yes': 6
-        }
+            'is': 0,
+            'allowed': 1,
+            'all': 2,
+            'and': 3,
+            'any': 5,
+            'for': 4,
+            'redistribution': 6,
+            'thing': 8,
+            'yes': 7}
 
         assert expected_dict == idx.dictionary
 
         expected_tids = [
-            u'allowed', u'all', u'and', u'for', u'redistribution', u'is',
-            u'yes', u'any', u'thing'
-        ]
+            'is',
+            'allowed',
+            'all',
+            'and',
+            'for',
+            'any',
+            'redistribution',
+            'yes',
+            'thing']
         assert expected_tids == idx.tokens_by_tid
 
-        expected_high_tids_msets_by_rid = [
-            {u'redistribution': 1},
-            {u'is': 1, u'redistribution': 1, u'yes': 1},
-            {u'is': 1, u'redistribution': 1, u'yes': 1},
-            {u'is': 1, u'redistribution': 1, u'yes': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'any': 1, u'is': 1, u'redistribution': 1, u'thing': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'is': 1, u'redistribution': 1, u'yes': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'is': 1, u'redistribution': 1},
-            {u'any': 1, u'is': 1, u'redistribution': 1}
-        ]
-        low_tids_msets_by_rid, high_tids_msets_by_rid = zip(*idx.tids_lohi_msets_by_rid)
-        htmset = [{idx.tokens_by_tid[tok]:freq for (tok, freq) in tids_mset.items()}
-                  for tids_mset in high_tids_msets_by_rid]
-        assert expected_high_tids_msets_by_rid == htmset
+        expected_tids_all_msets_by_rid = [
+            {u'redistribution': 2},
+            {u'is': 2, u'redistribution': 2, u'yes': 2},
+            {u'allowed': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
+            {u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
+            {u'all': 2, u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2},
+            {u'all': 2,
+             u'allowed': 2,
+             u'and': 2,
+             u'any': 2,
+             u'is': 2,
+             u'redistribution': 2,
+             u'thing': 2},
+            {u'is': 2, u'redistribution': 2},
+            {u'allowed': 2, u'is': 2, u'redistribution': 2},
+            {u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2},
+            {u'all': 2, u'allowed': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
+            {u'all': 2, u'allowed': 2, u'and': 2, u'is': 2, u'redistribution': 2},
+            {u'all': 2, u'allowed': 2, u'is': 2, u'redistribution': 2},
+            {u'all': 2,
+             u'allowed': 2,
+             u'and': 2,
+             u'any': 2,
+             u'is': 2,
+             u'redistribution': 2}]
 
-        expected_low_tids_msets_by_rid = [
-            {},
-            {},
-            {u'allowed': 1},
-            {u'allowed': 1, u'for': 1},
-            {u'all': 1, u'allowed': 1, u'for': 1},
-            {u'all': 1, u'allowed': 1, u'and': 1},
-            {},
-            {u'allowed': 1},
-            {u'allowed': 1, u'for': 1},
-            {u'all': 1, u'allowed': 1},
-            {u'all': 1, u'allowed': 1, u'and': 1},
-            {u'all': 1, u'allowed': 1},
-            {u'all': 1, u'allowed': 1, u'and': 1}
-        ]
-
-        assert expected_low_tids_msets_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in tids_mset.items()}
-                                                  for tids_mset in low_tids_msets_by_rid]
+        htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
+                  for tids_mset in idx.tids_all_msets_by_rid]
+        assert expected_tids_all_msets_by_rid == htmset
 
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
@@ -279,8 +278,8 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
-        assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
+        assert 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.' == qtext
+        assert 'redistribution and use in source and binary forms with or without modification\nare permitted' == itext
 
         assert Span(0, 13) == match.qspan
         assert Span(0, 13) == match.ispan
@@ -299,7 +298,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'licensed under the GPL licensed under the GPL' == qtext
+        assert 'licensed under the GPL, licensed under the GPL' == qtext
         assert 'licensed under the gpl licensed under the gpl' == itext
 
         assert Span(0, 7) == match.qspan
@@ -313,7 +312,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 7) == match.ispan
 
         qtext, itext = get_texts(match)
-        assert u'licensed under the GPL licensed under the GPL' == qtext
+        assert u'licensed under the GPL, licensed under the GPL' == qtext
         assert u'licensed under the gpl licensed under the gpl' == itext
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
@@ -328,7 +327,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match)
-        assert u'licensed [that] under [is] the [that] GPL licensed [or] under [not] the GPL' == qtext
+        assert u'licensed [that] under [is] the [that] GPL, licensed [or] under [not] the GPL' == qtext
         assert u'licensed under the gpl licensed under the gpl' == itext
 
     def test_match_exact_from_file(self):
@@ -340,8 +339,8 @@ class TestMatchNoTemplates(IndexTesting):
         match = result[0]
 
         qtext, itext = get_texts(match)
-        assert 'Redistribution and use in source and binary forms with or without modification are permitted' == qtext
-        assert 'redistribution and use in source and binary forms with or without modification are permitted' == itext
+        assert 'Redistribution and use in source and binary forms, with or without modification,\nare permitted.' == qtext
+        assert 'redistribution and use in source and binary forms with or without modification\nare permitted' == itext
 
         assert Span(0, 13) == match.qspan
         assert Span(0, 13) == match.ispan
@@ -354,8 +353,8 @@ class TestMatchNoTemplates(IndexTesting):
         result = idx.match(location=query)
         assert 1 == len(result)
         match = result[0]
-        assert Span(0, 209) == match.qspan
-        assert Span(0, 209) == match.ispan
+        assert Span(0, 211) == match.qspan
+        assert Span(0, 211) == match.ispan
 
     def test_match_return_correct_offsets(self):
         # notes: A is a stopword. This and that are not
@@ -372,7 +371,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert 1 == len(result)
         match = result[0]
         qtext, itext = get_texts(match)
-        assert 'this GPL MIT that LGPL' == qtext
+        assert 'this GPL. A MIT. that LGPL.' == qtext
         assert 'this gpl mit that lgpl' == itext
 
         assert Span(0, 4) == match.qspan
@@ -425,32 +424,30 @@ No part of match        '''
         assert match_seq.MATCH_SEQ == match.matcher
 
         exp_qtext = u"""
-            Redistribution and use in source and binary forms with or without
-            modification are permitted provided that the following conditions
-            are met
-
-            Redistributions of source code must retain the above copyright
-            notice this of conditions and the following disclaimer
-
-            Redistributions in binary form must reproduce the above copyright
-            notice this of conditions and the following disclaimer in the
-            documentation and or other materials provided with the distribution
-
-            Neither the name of [nexB] <Inc> nor the names of its
-            contributors may be used to endorse or promote products derived from
-            this software without specific prior written permission
-
-            THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-            AS IS AND ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING BUT NOT
-            LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL THE COPYRIGHT
-            OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT INCIDENTAL
-            SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT NOT LIMITED
-            TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF USE DATA OR
-            PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF
-            LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT INCLUDING
-            NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS
-            SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+            Redistribution and use in source and binary forms, with or without modification,
+            are permitted provided that the following conditions are met:
+            
+                * Redistributions of source code must retain the above copyright notice,
+                this list of conditions and the following disclaimer.
+            
+                * Redistributions in binary form must reproduce the above copyright notice,
+                this list of conditions and the following disclaimer in the documentation
+                and/or other materials provided with the distribution.
+            
+                * Neither the name of [nexB] [Inc]. nor the names of its contributors may be
+                used to endorse or promote products derived from this software without
+                specific prior written permission.
+            
+            THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+            ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+            WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+            DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+            ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+            (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+            LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+            ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+            (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+            SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         """.split()
 
         exp_itext = u"""
@@ -459,10 +456,10 @@ No part of match        '''
             are met
 
             Redistributions of source code must retain the above copyright
-            notice this of conditions and the following disclaimer
+            notice this list of conditions and the following disclaimer
 
             Redistributions in binary form must reproduce the above copyright
-            notice this of conditions and the following disclaimer in the
+            notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             Neither the name of nor the names of its contributors may be
@@ -486,9 +483,9 @@ No part of match        '''
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
 
-        assert (Span(1, 70) | Span(72, 209)) == match.qspan
+        assert (Span(1, 72) | Span(74, 211)) == match.qspan
 
-        assert Span(0, 207) == match.ispan
+        assert Span(0, 209) == match.ispan
         assert 100 == match.coverage()
 
     def test_match_to_indexed_template_with_few_tokens_around_gaps(self):
@@ -506,45 +503,46 @@ No part of match        '''
         match = result[0]
 
         exp_qtext = u"""
-            All Rights Reserved
-
-            Redistribution and use of this software and associated documentation
-            Software with or without modification are permitted provided that
-            the following conditions are met
-
-            1 Redistributions of source code must retain copyright statements
-            and notices Redistributions must also contain copy of this
-            document
-
-            2 Redistributions in binary form must reproduce the above copyright
-            notice this of conditions and the following disclaimer in the
-            documentation and or other materials provided with the distribution
-
-            3 The name [groovy] must not be used to endorse or promote
-            products derived from this Software without prior written permission
-            of <The> [Codehaus] For written permission please contact
-            [info] [codehaus] [org]
-
-            4 Products derived from this Software may not be called [groovy]
-            nor may [groovy] appear in their names without prior written
-            permission of <The> [Codehaus] [groovy] is registered
-            trademark of <The> [Codehaus]
-
-            5 Due credit should be given to <The> [Codehaus]
-            [http] [groovy] [codehaus] [org]
-
-
-            <THIS> <SOFTWARE> <IS> <PROVIDED> <BY> <THE> [CODEHAUS] AND CONTRIBUTORS
-            AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT
-            LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-            PARTICULAR PURPOSE ARE DISCLAIMED IN NO EVENT SHALL <THE> [CODEHAUS]
-            OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT INDIRECT
-            INCIDENTAL SPECIAL EXEMPLARY OR CONSEQUENTIAL DAMAGES INCLUDING BUT
-            NOT LIMITED TO PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES LOSS OF
-            USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
-            ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT
-            INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE
-            OF THIS SOFTWARE EVEN IF ADVISED OF THE
+            All Rights Reserved.
+            
+             Redistribution and use of this software and associated documentation
+             ("Software"), with or without modification, are permitted provided
+             that the following conditions are met:
+            
+             1. Redistributions of source code must retain copyright
+                statements and notices.  Redistributions must also contain a
+                copy of this document.
+            
+             2. Redistributions in binary form must reproduce the
+                above copyright notice, this list of conditions and the
+                following disclaimer in the documentation and/or other
+                materials provided with the distribution.
+            
+             3. The name "[groovy]" must not be used to endorse or promote
+                products derived from this Software without prior written
+                permission of [The] [Codehaus].  For written permission,
+                please contact [info]@[codehaus].[org].
+            
+             4. Products derived from this Software may not be called "[groovy]"
+                nor may "[groovy]" appear in their names without prior written
+                permission of [The] [Codehaus]. "[groovy]" is a registered
+                trademark of [The] [Codehaus].
+            
+             5. Due credit should be given to [The] [Codehaus] -
+                [http]://[groovy].[codehaus].[org]/
+            
+             [THIS] [SOFTWARE] [IS] [PROVIDED] [BY] [THE] [CODEHAUS] AND CONTRIBUTORS
+             ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+             NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+             FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+             [THE] [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+             INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+             (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+             SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+             HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+             STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+             ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+             OF THE 
         """.split()
 
         exp_itext = u"""
@@ -559,7 +557,7 @@ No part of match        '''
             document
 
             2 Redistributions in binary form must reproduce the above copyright
-            notice this of conditions and the following disclaimer in the
+            notice this list of conditions and the following disclaimer in the
             documentation and or other materials provided with the distribution
 
             3 The name must not be used to endorse or promote products
@@ -597,7 +595,7 @@ No part of match        '''
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
         idx = index.LicenseIndex([rule])
-        expected_idx = {'_tst_73_0': {u'copyright': [0, 5], u'license': [4, 9], u'mit': [2, 7]}}
+        expected_idx = {u'_tst_73_0': {u'license': [4, 9], u'mit': [2, 7]}}
         assert expected_idx == idx.to_dict()
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'
@@ -619,5 +617,5 @@ No part of match        '''
         assert Span(0, 9) == match.ispan
         assert 100 == match.coverage()
         qtext, itext = get_texts(match)
-        assert 'copyright reserved mit is license <is> [the] copyright reserved mit is license' == qtext
+        assert 'copyright reserved mit is license [is] [the] copyright reserved mit is license' == qtext
         assert 'copyright reserved mit is license copyright reserved mit is license' == itext

@@ -1,4 +1,4 @@
-license_expression: spl-1.0 OR lgpl-2.1
+license_expression: spl-1.0 OR lgpl-2.1-plus
 is_license_notice: yes
 relevance: 100
-notes: this is very specific to Beanshell
+notes: this is found in Beanshell

@@ -1,3 +1,2 @@
 license_expressions:
-  - artistic-2.0
-  - public-domain-disclaimer
+  - artistic-2.0 AND public-domain-disclaimer

@@ -1,0 +1,4 @@
+license_expression: unknown-license-reference AND libpng
+referenced_filenames:
+    - Tidy.java
+is_license_reference: yes

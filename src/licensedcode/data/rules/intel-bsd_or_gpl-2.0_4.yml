@@ -1,3 +1,4 @@
 license_expression: intel-bsd OR gpl-2.0
 is_license_notice: yes
 notes: formerly the madwifi-dual license key
+minimum_coverage: 80

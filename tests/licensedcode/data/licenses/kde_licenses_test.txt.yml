@@ -1,8 +1,8 @@
 license_expressions:
     - gpl-2.0 OR gpl-3.0-plus
-    - lgpl-2.1 OR lgpl-3.0-plus
+    - lgpl-2.1 OR lgpl-3.0
     - gpl-2.0-plus
-    - gpl-3.0-plus
+    - gpl-3.0
     - gpl-3.0-plus
     - gpl-3.0-plus
     - gpl-3.0-plus
@@ -11,11 +11,8 @@ license_expressions:
     - lgpl-2.1-plus
     - bsd-simplified
     - bsd-simplified
-    - bsd-new
-    - unknown
-    - unknown
     - x11-xconsortium
-    - x11-xconsortium
+    - mit
     - mit
 
 

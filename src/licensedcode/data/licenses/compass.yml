@@ -3,3 +3,4 @@ short_name: Compass License
 name: Compass License
 category: Permissive
 owner: Christopher M. Eppstein
+minimum_coverage: 85

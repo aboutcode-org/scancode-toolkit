@@ -1,0 +1,4 @@
+license_expression: qt-commercial-1.1 OR lgpl-2.1 WITH qt-company-exception-lgpl-2.1
+    OR lgpl-3.0 WITH qt-company-exception-lgpl-2.1
+notes: Qt is available under a choice of licenses. This is a common choice
+is_license_notice: yes

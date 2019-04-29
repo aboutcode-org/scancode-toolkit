@@ -70,11 +70,12 @@ A plugin to compute a licensing clarity score as designed in ClearlyDefined
 
 # MIN_GOOD_LICENSE_SCORE = 80
 
-@attr.s
+@attr.s(slots=True)
 class LicenseFilter(object):
     min_score = attr.ib(default=0)
     min_coverage = attr.ib(default=0)
     min_relevance = attr.ib(default=0)
+
 
 FILTERS = dict(
     is_license_text=LicenseFilter(min_score=70, min_coverage=80),

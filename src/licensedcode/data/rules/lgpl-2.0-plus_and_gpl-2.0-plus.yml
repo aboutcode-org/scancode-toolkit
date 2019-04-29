@@ -1,2 +1,9 @@
 license_expression: lgpl-2.0-plus AND gpl-2.0-plus
 is_license_notice: yes
+minimum_coverage: 80
+minimum_coverage: 70
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-2
+    - /usr/share/common-licenses/LGPL-2
+relevance: 100
+

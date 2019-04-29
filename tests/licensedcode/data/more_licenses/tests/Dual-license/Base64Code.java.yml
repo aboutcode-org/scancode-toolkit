@@ -1,12 +1,3 @@
 license_expressions:
-  - epl-1.0
-  - lgpl-2.0-plus
-  - lgpl-2.1-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - apache-2.0
-  - apache-2.0
-  - bsd-new
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
+  - epl-1.0 OR lgpl-2.1-plus OR gpl-2.0-plus OR apache-2.0 OR bsd-new
+  - epl-1.0 OR lgpl-2.1-plus OR gpl-2.0-plus OR apache-2.0 OR bsd-new

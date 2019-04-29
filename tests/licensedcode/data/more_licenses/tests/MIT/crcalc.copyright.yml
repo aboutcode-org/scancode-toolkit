@@ -1,6 +1,5 @@
 license_expressions:
   - apache-2.0
-  - unknown
-  - proprietary-license
-  - unknown
-  - proprietary-license
+  - crcalc
+  - crcalc
+

@@ -1,3 +1,4 @@
 license_expression: lgpl-2.1 AND apache-2.0
 is_license_notice: yes
 notes: this is a weird conlicted license found in Ajax4JSF from Exadel.
+minimum_coverage: 50

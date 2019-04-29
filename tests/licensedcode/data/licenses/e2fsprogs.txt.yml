@@ -1,5 +1,8 @@
 license_expressions:
-    - gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+    - gpl-2.0
+    - lgpl-2.0
+    - bsd-new
+    - mit
     - bsd-new
     - lgpl-2.1-plus
     - lgpl-2.1-plus

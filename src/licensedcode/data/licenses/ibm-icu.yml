@@ -7,4 +7,4 @@ homepage_url: http://source.icu-project.org/repos/icu/icu/trunk/license.html
 notes: composite of x11 licenses and others
 text_urls:
     - http://icu-project.org/repos/icu/icu/trunk/license.html
-minimum_coverage: 80
+minimum_coverage: 75

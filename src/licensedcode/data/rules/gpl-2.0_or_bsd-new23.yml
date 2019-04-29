@@ -1,6 +1,6 @@
 license_expression: gpl-2.0 AND bsd-new
 is_license_notice: yes
-minimum_coverage: 60
+minimum_coverage: 90
 notes: openib
 referenced_filenames:
     - COPYING
