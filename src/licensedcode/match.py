@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -543,7 +543,7 @@ def set_lines(matches, line_by_pos):
                 logger_debug('set_lines: match.end_line :', match.end_line)
 
 
-def merge_matches(matches, max_dist=MAX_DIST):
+def merge_matches(matches, max_dist=None):
     """
     Merge matches to the same rule in a sequence of LicenseMatch matches. Return
     a new list of merged matches if they can be merged. Match sequences that
@@ -565,11 +565,15 @@ def merge_matches(matches, max_dist=MAX_DIST):
 
     if TRACE_MERGE: print('merge_matches: number of matches to process:', len(matches))
 
+    if max_dist is None:
+        max_dist = MAX_DIST
+
     merged = []
     for rid, rule_matches in matches_by_rule:
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
+
         rule_length = rule_matches[0].rule.length
-        max_rule_side_dist = min((rule_length // 2) or 1, MAX_DIST)
+        max_rule_side_dist = min((rule_length // 2) or 1, max_dist)
 
         # compare two matches in the sorted sequence: current and next
         i = 0
@@ -977,7 +981,7 @@ def filter_overlapping_matches(matches):
     return matches, discarded
 
 
-def restore_non_overlapping(matches, discarded, max_dist=MAX_DIST):
+def restore_non_overlapping(matches, discarded):
     """
     Return a tuple of (matches, discarded) sequences of LicenseMatch given
     `matches` and `discarded` sequences of LicenseMatch. Reintegrate as matches
@@ -986,7 +990,7 @@ def restore_non_overlapping(matches, discarded, max_dist=MAX_DIST):
     all_matched_qspans = Span().union(*(m.qspan for m in matches))
     to_keep = []
     to_discard = []
-    for disc in merge_matches(discarded, max_dist=max_dist):
+    for disc in merge_matches(discarded):
         if not disc.qspan & all_matched_qspans:
             # keep previously discarded matches that do not inteserset at all
             to_keep.append(disc)
@@ -1221,7 +1225,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     if TRACE_REFINE: map(logger_debug, matches)
 
     if merge:
-        matches = merge_matches(matches, max_dist=max_dist)
+        matches = merge_matches(matches)
         if TRACE: logger_debug('     ##### refine_matches: STARTING MERGED_matches#:', len(matches))
 
     all_discarded = []
@@ -1255,7 +1259,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     all_discarded.extend(discarded)
     _log(matches, discarded, 'GOOD')
 
-    matches = merge_matches(matches, max_dist=max_dist)
+    matches = merge_matches(matches)
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
 
@@ -1266,7 +1270,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     matches, discarded = filter_overlapping_matches(matches)
     _log(matches, discarded, 'NON OVERLAPPING')
     if discarded:
-        to_keep, discarded = restore_non_overlapping(matches, discarded, max_dist)
+        to_keep, discarded = restore_non_overlapping(matches, discarded)
         matches.extend(to_keep)
         _log(to_keep, discarded, 'NON OVERLAPPING REFINED')
     all_discarded.extend(discarded)
@@ -1282,7 +1286,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
         _log(matches, discarded, 'HIGH ENOUGH SCORE')
 
     if merge:
-        matches = merge_matches(matches, max_dist=max_dist)
+        matches = merge_matches(matches)
 
     logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
