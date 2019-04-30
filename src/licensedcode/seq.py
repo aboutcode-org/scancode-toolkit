@@ -26,9 +26,15 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
     `matchables` is a set of matchable positions. Positions absent from this set are ignored.
 
-    Return (i,j,k) tuple such that a[i:i+k] is equal to b[j:j+k], where
+    Return (i,j,k) Match tuple where:
+        "i" in the start in "a"
+        "j" in the start in "b"
+        "k" in the size of the match
+
+    and such that a[i:i+k] is equal to b[j:j+k], where
         alo <= i <= i+k <= ahi
         blo <= j <= j+k <= bhi
+
     and for all (i',j',k') matchable token positions meeting those conditions,
         k >= k'
         i <= i'
@@ -73,46 +79,41 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
         j2len = newj2len
         j2lenget = j2len.get
 
-    # Extend the best by non-junk tokens on each end.
+    return extend_match(
+        besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, matchables)
+
+
+def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, matchables):
+    """
+    Extend a match identifier by (besti, bestj, bestsize) with non-junk matching
+    tokens on each end; or if have a non-empty match, append any matching tokens
+    on each end. Return a new Match.
+    """
+
     while (besti > alo and bestj > blo
-        and b[bestj - 1] >= len_junk
-        and a[besti - 1] == b[bestj - 1]
-        and (besti - 1) in matchables
-        ):
+           and (bestsize or b[bestj - 1] >= len_junk)
+           and a[besti - 1] == b[bestj - 1]
+           and (besti - 1) in matchables):
+
         besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
 
     while (besti + bestsize < ahi and bestj + bestsize < bhi
-        and b[bestj + bestsize] >= len_junk
-        and a[besti + bestsize] == b[bestj + bestsize]
-        and (besti + bestsize) in matchables
-        ):
+           and (bestsize or b[bestj + bestsize] >= len_junk)
+           and a[besti + bestsize] == b[bestj + bestsize]
+           and (besti + bestsize) in matchables):
 
         bestsize += 1
 
-    if bestsize:
-        # if have a non-empty match, append any matching tokens on each end.
-        while (besti > alo and bestj > blo
-            and a[besti - 1] == b[bestj - 1]
-            and (besti - 1) in matchables
-            ):
-            besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
-    
-        while (besti + bestsize < ahi and bestj + bestsize < bhi
-            and a[besti + bestsize] == b[bestj + bestsize]
-            and (besti + bestsize) in matchables
-            ):
-            bestsize = bestsize + 1
-    
     return Match(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), _idx=None):
+def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset()):
     """
-    Return list of matching block Match triples describing matching subsequences
-    of `a` in `b` starting from the `a_start` position in `a` up to the `a_end`
-    position in `a`.
+    Return a list of matching block Match triples describing matching
+    subsequences of `a` in `b` starting from the `a_start` position in `a` up to
+    the `a_end` position in `a`.
 
-    `b2j` is a mapping of b "high" token ids -> list of positions in b.
+    `b2j` is a mapping of b "high" token ids -> list of positions in b, e.g. a posting list.
     `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
     `matchables` is a set of matchable positions. Positions absent from this set are ignored.
 
@@ -137,11 +138,13 @@ def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), _i
         # a[alo:i] vs b[blo:j] unknown
         # a[i:i+k] same as b[j:j+k]
         # a[i+k:ahi] vs b[j+k:bhi] unknown
-        if k:  # if k is 0, there was no matching block
+        if k:  # if k is 0, there was no matching block as the size is 0
             matching_blocks_append(x)
             if alo < i and blo < j:
+                # there is unprocessed things remaining to the left
                 queue_append((alo, i, blo, j))
             if i + k < ahi and j + k < bhi:
+                # there is unprocessed things remaining to the right
                 queue_append((i + k, ahi, j + k, bhi))
 
     matching_blocks.sort()
@@ -149,6 +152,7 @@ def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), _i
     # collapse adjacent blocks
     i1 = j1 = k1 = 0
     non_adjacent = []
+    non_adjacent_append = non_adjacent.append
     for i2, j2, k2 in matching_blocks:
         # Is this block adjacent to i1, j1, k1?
         if i1 + k1 == i2 and j1 + k1 == j2:
@@ -161,9 +165,9 @@ def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), _i
             # the dummy we started with), and make the second block the new block to
             # compare against.
             if k1:
-                non_adjacent.append((i1, j1, k1))
+                non_adjacent_append((i1, j1, k1))
             i1, j1, k1 = i2, j2, k2
     if k1:
-        non_adjacent.append((i1, j1, k1))
+        non_adjacent_append((i1, j1, k1))
 
     return map(Match._make, non_adjacent)
