@@ -223,5 +223,6 @@ Other contributors, listed alphabetically, are:
 * Vincent Zurczak -- Roboconf lexer
 * Rostyslav Golda -- FloScript lexer
 * GitHub, Inc -- DASM16, Augeas, TOML, and Slash lexers
+* Simon Garnotel -- FreeFem++ lexer
 
 Many thanks for all contributions!
