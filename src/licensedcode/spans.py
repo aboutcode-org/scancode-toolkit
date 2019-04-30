@@ -213,6 +213,10 @@ class Span(Set):
         if isinstance(other, intbitset):
             return self._set.issuperset(other)
 
+    @property
+    def set(self):
+        return self._set
+
     def issubset(self, other):
         return self._set.issubset(other._set)
 
