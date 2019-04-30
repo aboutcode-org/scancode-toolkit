@@ -90,7 +90,7 @@ def match_sequence(idx, rule, query_run, start_offset=0):
 
         block_matches = match_blocks(
             qtokens, itokens, qstart, qfinish + 1,
-            high_postings, len_junk, query_run_matchables, _idx=idx)
+            high_postings, len_junk, query_run_matchables)
         if not block_matches:
             break
 
@@ -106,9 +106,8 @@ def match_sequence(idx, rule, query_run, start_offset=0):
         # but this will be sorted out at LicenseMatch merging and filtering time
         for qpos, ipos, mlen in block_matches:
             qspan = Span(range(qpos, qpos + mlen))
-            iposses = range(ipos, ipos + mlen)
-            hispan = Span(p for p in iposses if itokens[p] >= len_junk)
-            ispan = Span(iposses)
+            ispan = Span(range(ipos, ipos + mlen))
+            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
             # skip single word matched as as sequence
             if len(qspan) > 1:
                 match = LicenseMatch(
