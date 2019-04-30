@@ -140,6 +140,7 @@ class LicenseIndex(object):
 
         'rid_by_hash',
         'rules_automaton',
+        'fragments_automaton',
         'negative_automaton',
 
         'regular_rids',
@@ -203,6 +204,10 @@ class LicenseIndex(object):
 
         # Aho-Corasick automatons for regular and negative rules
         self.rules_automaton = match_aho.get_automaton()
+        if USE_AHO_FRAGMENTS:
+            self.fragments_automaton = match_aho.get_automaton()
+        else:
+            self.fragments_automaton = None
         self.negative_automaton = match_aho.get_automaton()
 
         # disjunctive sets of rule ids: regular, negative, false positive, and
@@ -372,6 +377,13 @@ class LicenseIndex(object):
         # build closures for methods that populate automatons
         negative_automaton_add = partial(
             match_aho.add_sequence, automaton=self.negative_automaton)
+
+        if USE_AHO_FRAGMENTS:
+            fragments_automaton_add = partial(
+                match_aho.add_sequence, automaton=self.fragments_automaton)
+        else:
+            fragments_automaton_add = lambda x: x
+
         rules_automaton_add = partial(
             match_aho.add_sequence, automaton=self.rules_automaton)
 
@@ -420,6 +432,18 @@ class LicenseIndex(object):
                 sparsify(postings)
                 high_postings_by_rid[rid] = postings
 
+                ####################
+                # ... and ngrams: compute ngrams and populate an automaton with ngrams
+                ####################
+                if (USE_AHO_FRAGMENTS
+                and rule.minimum_coverage < 100
+                and len(rule_token_ids) > NGRAM_LEN):
+    
+                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                    selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
+                    for pos, ngram in selected_ngrams:
+                        fragments_automaton_add(tids=ngram, rid=rid, start=pos)
+
             ####################
             # build sets and multisets indexes, for all regular rules as we need the thresholds
             ####################
@@ -459,22 +483,11 @@ class LicenseIndex(object):
             ####################
             rules_automaton_add(tids=rule_token_ids, rid=rid)
 
-            ####################
-            # ... and ngrams: compute ngrams and populate the automaton with ngrams
-            ####################
-            if (USE_AHO_FRAGMENTS
-            and is_approx_matchable
-            and rule.minimum_coverage < 100
-            and len(rule_token_ids) > NGRAM_LEN):
-
-                all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
-                selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
-                for pos, ngram in selected_ngrams:
-                    rules_automaton_add(tids=ngram, rid=rid, start=pos)
-
         # finalize automatons
         self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
+        if USE_AHO_FRAGMENTS:
+            self.fragments_automaton.make_automaton()
 
         # finalize tokens IDF (inverse documents frequency)
         self.tokens_idf_by_tid = match_set.compute_idfs(len_rules, tokens_doc_freq_by_tid)
@@ -610,7 +623,7 @@ class LicenseIndex(object):
                     else:
                         break
 
-            matches.extend(match.merge_matches(qrun_matches, max_dist=MAX_DIST))
+            matches.extend(match.merge_matches(qrun_matches))
 
         return matches
 
