@@ -33,6 +33,7 @@ from collections import defaultdict
 import cPickle
 from functools import partial
 from operator import itemgetter
+import pickle
 import sys
 from time import time
 
@@ -101,7 +102,7 @@ or TRACE_INDEXING_PERF):
 USE_AHO_FRAGMENTS = False
 
 # length of ngrams used for fragments detection
-NGRAM_LEN = 32
+NGRAM_LEN = 6
 
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up to
 # 32767. Since we use internally several arrays of ints for smaller and optimized
@@ -237,7 +238,7 @@ class LicenseIndex(object):
                 from itertools import chain
                 tokens_by_tid = self.tokens_by_tid
                 regular_rids = self.regular_rids
-                tokens_idf_by_tid= self.tokens_idf_by_tid
+                tokens_idf_by_tid = self.tokens_idf_by_tid
                 tf = Counter(chain.from_iterable(
                     tids for rid, tids in enumerate(self.tids_by_rid)
                     if rid in regular_rids))
@@ -276,8 +277,8 @@ class LicenseIndex(object):
         token_strings_by_rid_append = token_strings_by_rid.append
 
         # count token strings globally
-        token_strings_count = Counter()
-        token_strings_count_update = token_strings_count.update
+        token_strings_count = defaultdict(int)
+        # token_strings_count_update = token_strings_count.update
 
         # OPTIMIZATION: bind frequently used methods to the local scope
         false_positive_rids_add = self.false_positive_rids.add
@@ -289,7 +290,8 @@ class LicenseIndex(object):
 
             rul_tokens = list(rul.tokens())
             token_strings_by_rid_append(rul_tokens)
-            token_strings_count_update(rul_tokens)
+            for t in rul_tokens:
+                token_strings_count[t] += 1
 
             # classify rules and build disjuncted sets of rids
             if rul.is_false_positive:
@@ -309,7 +311,8 @@ class LicenseIndex(object):
         spdx_tokens = None
         if _spdx_tokens:
             spdx_tokens = _spdx_tokens.difference(token_strings_count)
-            token_strings_count_update(_spdx_tokens)
+            for t in _spdx_tokens:
+                token_strings_count[t] += 1
 
         # Create the tokens lookup structure at once. Note that tokens ids are
         # assigned randomly here at first by unzipping: we get the frequencies
@@ -435,13 +438,12 @@ class LicenseIndex(object):
                 ####################
                 # ... and ngrams: compute ngrams and populate an automaton with ngrams
                 ####################
-                if (USE_AHO_FRAGMENTS
-                and rule.minimum_coverage < 100
-                and len(rule_token_ids) > NGRAM_LEN):
-    
+                if (USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > NGRAM_LEN):
+
                     all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
-                    selected_ngrams = tokenize.select_ngrams(all_ngrams, with_pos=True)
-                    for pos, ngram in selected_ngrams:
+                    all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
+#                     all_ngrams_with_pos = enumerate(all_ngrams)
+                    for pos, ngram in all_ngrams_with_pos:
                         fragments_automaton_add(tids=ngram, rid=rid, start=pos)
 
             ####################
@@ -454,9 +456,9 @@ class LicenseIndex(object):
             ####################################################################
             ####################################################################
             # FIXME!!!!!!! we should store them if we need them
-            tids_set_high=  match_set.high_tids_set_subset(tids_set, len_junk)
-            tids_mset_high=  match_set.high_tids_multiset_subset(tids_mset, len_junk)
-            
+            tids_set_high = match_set.high_tids_set_subset(tids_set, len_junk)
+            tids_mset_high = match_set.high_tids_multiset_subset(tids_mset, len_junk)
+
 
             # FIXME!!!!!!!
             ####################################################################
@@ -576,11 +578,26 @@ class LicenseIndex(object):
             query=query, filter_false_positive=False, merge=False)
         return matches
 
+    def get_fragments_matches(self, query, matched_qspans, **kwargs):
+        """
+        Approximate matching strategy breaking a query in query_runs and using
+        fragment matching. Return a list of matches.
+        """
+        matches = []
+
+        for query_run in query.query_runs:
+            # we cannot do a sequence match in query run without some high token left
+            if not query_run.is_matchable(include_low=False, qspans=matched_qspans):
+                continue
+            qrun_matches = match_aho.match_fragments(self, query_run)
+            matches.extend(match.merge_matches(qrun_matches))
+
+        return matches
+
     def get_approximate_matches(self, query, matched_qspans, existing_matches, **kwargs):
         """
         Approximate matching strategy breaking a query in query_runs and using
-        exacat matching then multiple local alignments (aka. diff). Return a
-        list of matches.
+        multiple local alignments (aka. diff). Return a list of matches.
         """
         matches = []
 
@@ -676,11 +693,15 @@ class LicenseIndex(object):
 
         matches = []
 
+        if USE_AHO_FRAGMENTS:
+            approx = (self.get_fragments_matches, False)
+        else:
+            approx = (self.get_approximate_matches, False)
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
             (self.get_spdx_id_matches, True),
             (self.get_exact_matches, False),
-            (self.get_approximate_matches, False),
+            approx
         ]
 
         already_matched_qspans = []
@@ -802,22 +823,53 @@ class LicenseIndex(object):
         return u' '.join('None' if t is None else self.tokens_by_tid[t] for t in tokens)
 
     @staticmethod
-    def loads(saved):
+    def loads(saved, fast=True):
         """
         Return a LicenseIndex from a pickled string.
         """
-        idx = cPickle.loads(saved)
+        pickler = cPickle if fast else pickle
+        idx = pickler.loads(saved)
         # perform some optimizations on the dictionaries
         sparsify(idx.dictionary)
         return idx
 
-    def dumps(self):
+    @staticmethod
+    def load(fn, fast=True):
+        """
+        Return a LicenseIndex loaded from the `fn` file-like object pickled index.
+        """
+        pickler = cPickle if fast else pickle
+        idx = pickler.load(fn)
+        # perform some optimizations on the dictionaries
+        sparsify(idx.dictionary)
+        return idx
+
+    def dumps(self, fast=True):
         """
         Return a pickled string of self.
         """
-        # here cPickle fails. Pickle is slower but works
-        import pickle
-        return pickle.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
+        # here cPickle fails when we load it back. Pickle is slower to write but
+        # works when we read with cPickle :|
+        pickler = cPickle if fast else pickle
+        pickled = pickler.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
+
+        # NB: this is making the usage of cPickle possible... as a weird workaround.
+        # the gain from dumping using cPickle is not as big with this optimize
+        # but still much faster than using the plain pickle module
+        # TODO: revisit me after the Python3 port
+        import pickletools
+        pickletools.code2op = sparsify(pickletools.code2op)
+        pickled = pickletools.optimize(pickled)
+        return pickled
+
+    def dump(self, fn, fast=False):
+        """
+        Dump (write) a pickled self to the `fn` file-like object.
+        """
+        # here cPickle fails when we load it back. Pickle is slower to write but
+        # works when we read with cPickle :|
+        pickler = cPickle if fast else pickle
+        return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
 
     def renumber_token_ids(self, tokens_count_by_old_tid,
                            _ranked_tokens=global_tokens_by_ranks,
