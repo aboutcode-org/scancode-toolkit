@@ -185,7 +185,8 @@ def get_cached_index(cache_dir=scancode_cache_dir,
                      # used for testing only
                      timeout=LICENSE_INDEX_LOCK_TIMEOUT,
                      tree_base_dir=scancode_src_dir,
-                     licenses_data_dir=None, rules_data_dir=None,):
+                     licenses_data_dir=None, rules_data_dir=None,
+                     use_dumps=True):
     """
     Return a LicenseIndex: either load a cached index or build and cache the
     index.
@@ -244,8 +245,11 @@ def get_cached_index(cache_dir=scancode_cache_dir,
             idx = LicenseIndex(rules, _spdx_tokens=spdx_tokens)
 
             with open(cache_file, 'wb') as ifc:
-                ifc.write(idx.dumps())
-
+                if use_dumps:
+                    ifc.write(idx.dumps())
+                else:
+                    idx.dump(ifc)
+                    
             # save the new checksums tree
             with open(checksum_file, 'wb') as ctcs:
                 ctcs.write(current_checksum
@@ -258,7 +262,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
         raise
 
 
-def load_index(cache_file):
+def load_index(cache_file, use_loads=False):
     """
     Return a LicenseIndex loaded from cache.
     """
@@ -266,7 +270,10 @@ def load_index(cache_file):
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
         try:
-            return LicenseIndex.loads(ifc.read())
+            if use_loads:
+                return LicenseIndex.loads(ifc.read())
+            else:
+                return LicenseIndex.load(ifc)
         except:
             ex_type, ex_msg, ex_traceback = sys.exc_info()
             message = (str(ex_msg) +

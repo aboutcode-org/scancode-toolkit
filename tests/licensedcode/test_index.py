@@ -87,17 +87,17 @@ class TestIndexing(IndexTesting):
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
-            (u'a one a two a three licensed.',        (4, 1, 4, 2)),
-            (u'a four a five a six licensed.',        (4, 1, 4, 2)),
-            (u'one two three four five gpl',          (6, 1, 6, 2)),
-            (u'The rose is a rose mit',               (4, 0, 5, 0)),
-            (u'The license is GPL',                   (4, 2, 4, 4)),
-            (u'The license is this GPL',              (5, 2, 5, 4)),
-            (u'a license is a rose',                  (3, 1, 3, 2)),
-            (u'the gpl',                              (2, 1, 2, 2)),
-            (u'the mit',                              (2, 0, 2, 0)),
-            (u'the bsd',                              (2, 1, 2, 2)),
-            (u'the lgpl',                             (2, 1, 2, 2)),
+            (u'a one a two a three licensed.', (4, 1, 4, 2)),
+            (u'a four a five a six licensed.', (4, 1, 4, 2)),
+            (u'one two three four five gpl', (6, 1, 6, 2)),
+            (u'The rose is a rose mit', (4, 0, 5, 0)),
+            (u'The license is GPL', (4, 2, 4, 4)),
+            (u'The license is this GPL', (5, 2, 5, 4)),
+            (u'a license is a rose', (3, 1, 3, 2)),
+            (u'the gpl', (2, 1, 2, 2)),
+            (u'the mit', (2, 0, 2, 0)),
+            (u'the bsd', (2, 1, 2, 2)),
+            (u'the lgpl', (2, 1, 2, 2)),
         ]
         idx = index.LicenseIndex()
         rules = [models.Rule(stored_text=t[0]) for t in test_rules]
@@ -106,12 +106,12 @@ class TestIndexing(IndexTesting):
         assert 11 == idx.len_junk
         expected_lengths = [r[1] for r in test_rules]
         results = [
-            (rule.length_unique, rule.high_length_unique, 
+            (rule.length_unique, rule.high_length_unique,
              rule.length, rule.high_length) for rule in rules]
         assert expected_lengths == results
 
         xdict = {
-            'bsd': 15,      
+            'bsd': 15,
             'five': 5,
             'four': 4,
             'gpl': 11,
@@ -426,18 +426,18 @@ No part of match        '''
         exp_qtext = u"""
             Redistribution and use in source and binary forms, with or without modification,
             are permitted provided that the following conditions are met:
-            
+
                 * Redistributions of source code must retain the above copyright notice,
                 this list of conditions and the following disclaimer.
-            
+
                 * Redistributions in binary form must reproduce the above copyright notice,
                 this list of conditions and the following disclaimer in the documentation
                 and/or other materials provided with the distribution.
-            
+
                 * Neither the name of [nexB] [Inc]. nor the names of its contributors may be
                 used to endorse or promote products derived from this software without
                 specific prior written permission.
-            
+
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
             ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
             WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -504,33 +504,33 @@ No part of match        '''
 
         exp_qtext = u"""
             All Rights Reserved.
-            
+
              Redistribution and use of this software and associated documentation
              ("Software"), with or without modification, are permitted provided
              that the following conditions are met:
-            
+
              1. Redistributions of source code must retain copyright
                 statements and notices.  Redistributions must also contain a
                 copy of this document.
-            
+
              2. Redistributions in binary form must reproduce the
                 above copyright notice, this list of conditions and the
                 following disclaimer in the documentation and/or other
                 materials provided with the distribution.
-            
+
              3. The name "[groovy]" must not be used to endorse or promote
                 products derived from this Software without prior written
                 permission of [The] [Codehaus].  For written permission,
                 please contact [info]@[codehaus].[org].
-            
+
              4. Products derived from this Software may not be called "[groovy]"
                 nor may "[groovy]" appear in their names without prior written
                 permission of [The] [Codehaus]. "[groovy]" is a registered
                 trademark of [The] [Codehaus].
-            
+
              5. Due credit should be given to [The] [Codehaus] -
                 [http]://[groovy].[codehaus].[org]/
-            
+
              [THIS] [SOFTWARE] [IS] [PROVIDED] [BY] [THE] [CODEHAUS] AND CONTRIBUTORS
              ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
              NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -542,7 +542,7 @@ No part of match        '''
              HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-             OF THE 
+             OF THE
         """.split()
 
         exp_itext = u"""
@@ -619,3 +619,146 @@ No part of match        '''
         qtext, itext = get_texts(match)
         assert 'copyright reserved mit is license [is] [the] copyright reserved mit is license' == qtext
         assert 'copyright reserved mit is license copyright reserved mit is license' == itext
+
+
+class TestIndexDumpLoad(IndexTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_dumps_loads_default(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        dumps = idx.dumps()
+        idx2 = index.LicenseIndex.loads(dumps)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dump_load_default(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        test_dump = self.get_temp_file()
+        with open(test_dump, 'wb') as td:
+            idx.dump(td)
+        with open(test_dump, 'rb') as td:
+            idx2 = index.LicenseIndex.load(td)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+        with open(test_dump, 'rb') as td:
+            idx3 = index.LicenseIndex.loads(td.read())
+        assert expected == sorted(idx3.dictionary)
+
+    def test_dumps_fast_loads_fast(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        dumps = idx.dumps(fast=True)
+        idx2 = index.LicenseIndex.loads(dumps, fast=True)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dumps_slow_loads_slow(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        dumps = idx.dumps(fast=False)
+        idx2 = index.LicenseIndex.loads(dumps, fast=False)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dumps_fast_loads_slow(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        dumps = idx.dumps(fast=True)
+        idx2 = index.LicenseIndex.loads(dumps, fast=False)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dumps_slow_loads_fast(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        dumps = idx.dumps(fast=False)
+        idx2 = index.LicenseIndex.loads(dumps, fast=True)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dump_fast_load_fast(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        test_dump = self.get_temp_file()
+        with open(test_dump, 'wb') as td:
+            idx.dump(td, fast=True)
+        with open(test_dump, 'rb') as td:
+            idx2 = index.LicenseIndex.load(td, fast=True)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dump_fast_load_slow(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        test_dump = self.get_temp_file()
+        with open(test_dump, 'wb') as td:
+            idx.dump(td, fast=True)
+        with open(test_dump, 'rb') as td:
+            idx2 = index.LicenseIndex.load(td, fast=False)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dump_slow_load_slow(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        test_dump = self.get_temp_file()
+        with open(test_dump, 'wb') as td:
+            idx.dump(td, fast=False)
+        with open(test_dump, 'rb') as td:
+            idx2 = index.LicenseIndex.load(td, fast=False)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)
+
+    def test_dump_slow_load_fast(self):
+        test_rules = self.get_test_rules('index/dump_load')
+        idx = index.LicenseIndex(test_rules)
+        test_dump = self.get_temp_file()
+        with open(test_dump, 'wb') as td:
+            idx.dump(td, fast=False)
+        with open(test_dump, 'rb') as td:
+            idx2 = index.LicenseIndex.load(td, fast=True)
+        expected = [
+            u'and', u'are', u'as', u'binary', u'by', u'conditions',
+            u'copyright', u'following', u'forms', u'holder', u'in', u'is',
+            u'met', u'permitted', u'provided', u'redistribution', u'software',
+            u'source', u'that', u'the', u'this', u'use']
+        assert expected == sorted(idx2.dictionary)

@@ -38,9 +38,10 @@ Matching strategy for exact matching using Aho-Corasick automatons.
 
 # Set to False to enable debug tracing
 TRACE = False
+TRACE_FRAG = False
 TRACE_DEEP = False
 
-if TRACE:
+if TRACE or TRACE_FRAG:
     import logging
     import sys
 
@@ -51,6 +52,7 @@ if TRACE:
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
 else:
 
     def logger_debug(*args):
@@ -86,14 +88,13 @@ MATCH_AHO_EXACT = '2-aho'
 MATCH_AHO_FRAG = '5-aho-frag'
 
 
-def exact_match(idx, query_run, automaton):
+def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT):
     """
     Return a list of exact LicenseMatch by matching the `query_run` against
     the `automaton` and `idx` index.
     """
     if TRACE: logger_debug(' #exact_AHO: start ... ')
     if TRACE_DEEP: logger_debug(' #exact_AHO: query_run:', query_run)
-    matcher = MATCH_AHO_EXACT
 
     matches = []
     matches_append = matches.append
@@ -118,7 +119,7 @@ def exact_match(idx, query_run, automaton):
         matches_append(match)
 
     if TRACE and matches:
-        logger_debug(' ##exact_AHO: matches found#', matches)
+        logger_debug(' ##exact_AHO: matches found#')
         map(print, matches)
 
     return matches
@@ -131,7 +132,9 @@ def get_matched_spans(positions, matchables):
     within the `matchables` set of matchable positions.
     """
     for rid, match_qstart, match_qend, istart, iend in positions:
-        
+        # if not all( x >= 0 for x in (match_qstart, match_qend, istart, iend)):
+        #    raise Exception(rid, match_qstart, match_qend, istart, iend)
+
         qspan = Span(list(range(match_qstart, match_qend)))
         # TODO: is this about negatives? this should be optimized?
         # if any(p not in query_run_matchables for p in qspan):
@@ -156,35 +159,102 @@ def get_matched_positions(tokens, qbegin, automaton):
     qtokens_as_str = array('h', tokens).tostring()
     for qend, matched_rule_segments in automaton.iter(qtokens_as_str):
 
+        ################################
+        # FIXME: use a trie of ints or a trie of Unicode characters to avoid
+        # this shenaningan. NB: this will be possible when using Python 3
+        ################################
+        # Since the Tries stores bytes and we have two bytes per tokenid,
+        # the real end must be adjusted
+        real_qend = (qend - 1) / 2
+        # ... and there is now a real possibility of a false match. For
+        # instance say we have these tokens : gpl encoded as 0012 and lgpl
+        # encoded as 1200 and mit as 2600 And if we scan this "mit lgpl" we
+        # get this encoding 2600 1200. The automaton will find a matched
+        # string of 0012 to gpl in the middle matching falsely so we check
+        # that the corrected end qposition must be always an integer.
+        real_qend_int = int(real_qend)
+        if real_qend != real_qend_int:
+            if TRACE_DEEP: logger_debug(
+                '   #EXACT get_matches: real_qend != int(real_qend), '
+                'discarding match to matched_rule_segments:', matched_rule_segments)
+            continue
+
         for rid, istart, iend in matched_rule_segments:
             if TRACE_DEEP: logger_debug(
                 '   #EXACT get_matches: found match to rule:', rid)
 
-            ################################
-            # FIXME: use a trie of ints or a trie of Unicode characters to avoid
-            # this shenaningan. NB: this will be possible when using Python 3
-            ################################
-            # Since the Tries stores bytes and we have two bytes per tokenid,
-            # the real end must be adjusted
-            real_qend = (qend - 1) / 2
-            # ... and there is now a real possibility of a false match. For
-            # instance say we have these tokens : gpl encoded as 0012 and lgpl
-            # encoded as 1200 and mit as 2600 And if we scan this "mit lgpl" we
-            # get this encoding 2600 1200. The automaton will find a matched
-            # string of 0012 to gpl in the middle matching falsely so we check
-            # that the corrected end qposition must be always an integer.
-            real_qend_int = int(real_qend)
-            if real_qend != real_qend_int:
-                if TRACE: logger_debug(
-                    '   #EXACT get_matches: real_qend != int(real_qend), '
-                    'discarding match to rule:', rid)
-                continue
-
             iend = iend + 1
             match_len = iend - istart
 
-            qend = qbegin + int(real_qend) + 1
+            qend = qbegin + real_qend_int + 1
             qstart = qend - match_len
 
             yield rid, qstart, qend, istart, iend
 
+
+def match_fragments(idx, query_run):
+    """
+    Return a list of Span by matching the `query_run` against
+    the `automaton` and `idx` index.
+    """
+    if TRACE_FRAG:
+        logger_debug('-------------->match_fragments')
+    # 1. Get matches using the AHO Fragments automaton
+    matches = exact_match(
+        idx, query_run, automaton=idx.fragments_automaton, matcher=MATCH_AHO_FRAG)
+    if TRACE_FRAG:
+        logger_debug('match_fragments')
+        map(print, matches)
+
+    # 2. Merge matches with a zero max distance
+    from licensedcode.match import merge_matches
+    matches = merge_matches(matches, max_dist=0)
+
+    # 3. Craft matching blocks and non-matching blocks from the matched spans
+
+    sorter = lambda m: (m.rule.rid, m.qspan.start, -m.hilen(), -m.len())
+    matches.sort(key=sorter)
+    matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
+                        in groupby(matches, key=lambda m: m.rule.rid)]
+
+    from licensedcode.seq import extend_match
+
+    rules_by_rid = idx.rules_by_rid
+    tids_by_rid = idx.tids_by_rid
+    len_junk = idx.len_junk
+
+    alo = qbegin = query_run.start
+    ahi = query_run.end
+    query = query_run.query
+    qtokens = query.tokens
+
+    # match as long as long we find alignments and have high matchable tokens
+    # this allows to find repeated instances of the same rule in the query run
+    matchables = query_run.matchables
+
+    frag_matches = []
+
+    for rid, rule_matches in matches_by_rule:
+        itokens = tids_by_rid[rid]
+        blo, bhi = 0, len(itokens)
+        rule = rules_by_rid[rid]
+
+        for match in rule_matches:
+            i, j , k = match.qstart, match.istart, match.len()
+
+            qpos, ipos, mlen = extend_match(
+                i, j, k, qtokens, itokens,
+                alo, ahi, blo, bhi, len_junk, matchables)
+
+            qspan = Span(range(qpos, qpos + mlen))
+            ispan = Span(range(ipos, ipos + mlen))
+            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
+                matcher=MATCH_AHO_FRAG, query=query)
+            frag_matches.append(match)
+
+    # 3. Craft non-matching blocks from the matched spans using the non-matched parts
+    # 4. Run sequence matching using the non-matching blocks as input
+    # 5. Merge matches as usual
+
+    return frag_matches
