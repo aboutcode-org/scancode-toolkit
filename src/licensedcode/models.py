@@ -885,7 +885,6 @@ class Rule(object):
             self.is_small = self.length < SMALL_RULE
             self.has_computed_thresholds = True
 
-
     def to_dict(self):
         """
         Return an ordered mapping of self, excluding texts. Used for
