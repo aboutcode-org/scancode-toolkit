@@ -6,7 +6,13 @@ environment:
         - TEST_SUITE: "py.test -n 2 -vvs tests/scancode"
         - TEST_SUITE: "py.test -n 2 -vvs tests/extractcode"
         - TEST_SUITE: "py.test -n 2 -vvs tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py  --ignore=tests/licensedcode/test_detection_datadriven.py"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/licensedcode/test_detection_datadriven.py"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven"
+        - TEST_SUITE: "py.test -n 2 tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven"
         - TEST_SUITE: "py.test -vvs tests/licensedcode/test_zzzz_cache.py"
         - TEST_SUITE: "py.test -n 2 -s tests/cluecode"
         - TEST_SUITE: "py.test -n 2 -s tests/packagedcode"
@@ -23,3 +29,5 @@ test_script:
 
 on_failure:
     - "python etc/scripts/irc-notify.py aboutcode [{project_name}:{branch}] {short_commit}: \"{message}\" ({author}) {color_red}Failed - {build_url}"
+
+    

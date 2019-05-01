@@ -6,7 +6,7 @@ python:
 # Use a matrix of TEST_SUITE variables to distribute tests to several machines
 # Use a global PYTEST variable to run all of the tests in a uniform fashion
 # The --cov-report=term option displays coverage in CI logs
-# The --cov-report=xml option is important for codecov.io
+# The --cov-report=xml option is important for codecov.ioTestFossLicDataDriven
 env:
   global:
     - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
@@ -15,7 +15,13 @@ env:
     - TEST_SUITE="$PYTEST tests/scancode"
     - TEST_SUITE="$PYTEST tests/extractcode"
     - TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven"
     - TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py"
     - TEST_SUITE="$PYTEST tests/cluecode"
     - TEST_SUITE="$PYTEST tests/packagedcode"
@@ -64,7 +70,36 @@ matrix:
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py"
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven"
+      language: generic
+      python:
+      osx_image: xcode7.3
+    - os: osx
+      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven"
       language: generic
       python:
       osx_image: xcode7.3
