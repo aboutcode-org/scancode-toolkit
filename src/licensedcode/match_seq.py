@@ -106,10 +106,10 @@ def match_sequence(idx, rule, query_run, start_offset=0):
         # but this will be sorted out at LicenseMatch merging and filtering time
         for qpos, ipos, mlen in block_matches:
             qspan = Span(range(qpos, qpos + mlen))
-            ispan = Span(range(ipos, ipos + mlen))
-            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
             # skip single word matched as as sequence
-            if len(qspan) > 1:
+            if mlen > 1:
+                ispan = Span(range(ipos, ipos + mlen))
+                hispan = Span(p for p in ispan if itokens[p] >= len_junk)
                 match = LicenseMatch(
                     rule, qspan, ispan, hispan, qbegin,
                     matcher=MATCH_SEQ, query=query)
