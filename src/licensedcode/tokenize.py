@@ -218,18 +218,18 @@ def select_ngrams(ngrams, with_pos=False):
     [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
     last = None
-    for i, ngram in enumerate(ngrams):
+    for pos, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
         nghs = [crc32(str(ng)) for ng in ngram]
         min_hash = min(nghs)
         if with_pos:
-            ngram = (i, ngram,)
-        if nghs[0] == min_hash or nghs[-1] == min_hash:
+            ngram = (pos, ngram,)
+        if min_hash in (nghs[0], nghs[-1]):
             yield ngram
             last = ngram
         else:
             # always yield the first or last ngram too.
-            if i == 0:
+            if pos == 0:
                 yield ngram
                 last = ngram
     if last != ngram:
