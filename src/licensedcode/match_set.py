@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import division
 
 from array import array
-from collections import Counter
 from collections import defaultdict
 from math import log
 
@@ -183,9 +182,11 @@ def index_token_sets(token_ids, *args, **kwargs):
     Return a tuple of (tids set, tids multiset) given a `token_ids` tids
     sequence.
     """
-    tids_mset = Counter(tid for tid in token_ids
+    tids_mset = defaultdict(int)
+    for tid in token_ids:
         # this skips unknown token ids that are -1 as well as possible None
-        if tid >= 0)
+        if tid >= 0:
+            tids_mset[tid] += 1
     # OPTIMIZED: sparsify for speed
     sparsify(tids_mset)
 
