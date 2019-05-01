@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -149,4 +149,15 @@ class TestTokenizingPerformance(FileBasedTesting):
         from timeit import timeit
         print()
         print('With Object or namedtuple')
-        print(timeit(stmt='from licensedcode.models import get_all_rules;get_all_rules()', number=10))
+        print(timeit(stmt='from licensedcode.models import get_rules;list(get_rules())', number=10))
+
+    @skip('Use only for local profiling')
+    def test_get_all_rules_performance_profiling(self):
+        import cProfile as profile
+        import pstats
+        stats = 'get_all_rules_performance_profile_log.txt'
+        test_py = 'list(models.get_rules())'
+        profile.runctx(test_py, globals(), locals(), stats)
+        p = pstats.Stats(stats)
+        p.sort_stats('time').print_stats(40)
+        raise Exception('get_all_rules perfs test')
