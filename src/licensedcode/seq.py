@@ -86,8 +86,9 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
 def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, matchables):
     """
     Extend a match identifier by (besti, bestj, bestsize) with non-junk matching
-    tokens on each end; or if have a non-empty match, append any matching tokens
-    on each end. Return a new Match.
+    tokens on each end; or if we have a non-empty match with non-junk tokens
+    already, append any matching tokens (including junk) on each end. Return a
+    new Match.
     """
 
     while (besti > alo and bestj > blo
