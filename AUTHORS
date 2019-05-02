@@ -35,6 +35,7 @@ Other contributors, listed alphabetically, are:
 * Stéphane Blondon -- SGF lexer
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
+* Martijn Braam -- Kernel log lexer
 * Matthias Bussonnier -- ANSI style handling for terminal-256 formatter
 * chebee7i -- Python traceback lexer improvements
 * Hiram Chirino -- Scaml and Jade lexers
