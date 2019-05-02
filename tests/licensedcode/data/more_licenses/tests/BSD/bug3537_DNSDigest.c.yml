@@ -1,7 +1,7 @@
 license_expressions:
   - apache-2.0
   - openssl
-  - openssl-ssleay
-  - openssl-ssleay
-  - openssl-ssleay
+  - openssl
+  - proprietary-license
+  - ssleay
 

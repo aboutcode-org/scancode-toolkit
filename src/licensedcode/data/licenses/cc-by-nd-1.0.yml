@@ -9,3 +9,4 @@ text_urls:
     - http://creativecommons.org/licenses/by-nd/1.0/legalcode
 other_urls:
     - https://creativecommons.org/licenses/by-nd/1.0/legalcode
+minimum_coverage: 50

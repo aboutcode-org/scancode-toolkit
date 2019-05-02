@@ -14,3 +14,5 @@ other_urls:
     - http://opensource.org/licenses/Entessa
     - http://sourceforge.net/softwaremap/?&fq[]=trove%3A397
     - https://opensource.org/licenses/Entessa
+minimum_coverage: 90
+

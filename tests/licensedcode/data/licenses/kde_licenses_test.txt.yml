@@ -11,6 +11,7 @@ license_expressions:
     - lgpl-2.1-plus
     - bsd-simplified
     - bsd-simplified
+    - bsd-new
     - x11-xconsortium
     - mit
     - mit

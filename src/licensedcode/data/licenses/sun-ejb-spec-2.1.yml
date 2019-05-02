@@ -3,3 +3,5 @@ short_name: Sun EJB Specification 2.1
 name: Sun EJB Specification 2.1
 category: Proprietary Free
 owner: Oracle (Sun)
+minimum_coverage: 30
+

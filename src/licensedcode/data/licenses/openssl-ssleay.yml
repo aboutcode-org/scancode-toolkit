@@ -12,3 +12,5 @@ spdx_license_key: OpenSSL
 text_urls:
     - http://www.openssl.org/source/license.html
 faq_url: http://www.openssl.org/support/faq.html
+minimum_coverage: 30
+

@@ -87,17 +87,17 @@ class TestIndexing(IndexTesting):
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
-            (u'a one a two a three licensed.', (4, 1, 4, 2)),
-            (u'a four a five a six licensed.', (4, 1, 4, 2)),
-            (u'one two three four five gpl', (6, 1, 6, 2)),
+            (u'a one a two a three licensed.', (4, 1, 4, 1)),
+            (u'a four a five a six licensed.', (4, 1, 4, 1)),
+            (u'one two three four five gpl', (6, 1, 6, 1)),
             (u'The rose is a rose mit', (4, 0, 5, 0)),
-            (u'The license is GPL', (4, 2, 4, 4)),
-            (u'The license is this GPL', (5, 2, 5, 4)),
-            (u'a license is a rose', (3, 1, 3, 2)),
-            (u'the gpl', (2, 1, 2, 2)),
+            (u'The license is GPL', (4, 2, 4, 2)),
+            (u'The license is this GPL', (5, 2, 5, 2)),
+            (u'a license is a rose', (3, 1, 3, 1)),
+            (u'the gpl', (2, 1, 2, 1)),
             (u'the mit', (2, 0, 2, 0)),
-            (u'the bsd', (2, 1, 2, 2)),
-            (u'the lgpl', (2, 1, 2, 2)),
+            (u'the bsd', (2, 1, 2, 1)),
+            (u'the lgpl', (2, 1, 2, 1)),
         ]
         idx = index.LicenseIndex()
         rules = [models.Rule(stored_text=t[0]) for t in test_rules]
@@ -224,30 +224,31 @@ class TestIndexing(IndexTesting):
         assert expected_tids == idx.tokens_by_tid
 
         expected_tids_all_msets_by_rid = [
-            {u'redistribution': 2},
-            {u'is': 2, u'redistribution': 2, u'yes': 2},
-            {u'allowed': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
-            {u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
-            {u'all': 2, u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2},
-            {u'all': 2,
-             u'allowed': 2,
-             u'and': 2,
-             u'any': 2,
-             u'is': 2,
-             u'redistribution': 2,
-             u'thing': 2},
-            {u'is': 2, u'redistribution': 2},
-            {u'allowed': 2, u'is': 2, u'redistribution': 2},
-            {u'allowed': 2, u'for': 2, u'is': 2, u'redistribution': 2},
-            {u'all': 2, u'allowed': 2, u'is': 2, u'redistribution': 2, u'yes': 2},
-            {u'all': 2, u'allowed': 2, u'and': 2, u'is': 2, u'redistribution': 2},
-            {u'all': 2, u'allowed': 2, u'is': 2, u'redistribution': 2},
-            {u'all': 2,
-             u'allowed': 2,
-             u'and': 2,
-             u'any': 2,
-             u'is': 2,
-             u'redistribution': 2}]
+            {u'redistribution': 1},
+            {u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'allowed': 1, u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'all': 1, u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1,
+             u'allowed': 1,
+             u'and': 1,
+             u'any': 1,
+             u'is': 1,
+             u'redistribution': 1,
+             u'thing': 1},
+            {u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'is': 1, u'redistribution': 1},
+            {u'allowed': 1, u'for': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1, u'allowed': 1, u'is': 1, u'redistribution': 1, u'yes': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1, u'allowed': 1, u'is': 1, u'redistribution': 1},
+            {u'all': 1,
+             u'allowed': 1,
+             u'and': 1,
+             u'any': 1,
+             u'is': 1,
+             u'redistribution': 1}
+            ]
 
         htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in idx.tids_all_msets_by_rid]
