@@ -136,6 +136,10 @@ STOPWORDS = frozenset({
     'head2',
     'head3',
 
+    # seen in RTF markup
+    # this may be a solution to https://github.com/nexB/scancode-toolkit/issues/1548
+    #'par',
+
     # TODO: consider common english stop words (the of a ...)
     #'the',
     #'of',
