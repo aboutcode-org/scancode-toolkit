@@ -4,7 +4,7 @@ from __future__ import print_function
 from collections import namedtuple as _namedtuple
 
 """
-Token sequences alignement and diffing based on the longest common substrings of
+Token sequences alignment and diffing based on the longest common substrings of
 "high tokens". This essentially a non-optimal and reasonably fast single local
 sequence alignment between two sequences of integers/token ids.
 
@@ -62,20 +62,21 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     j2lenget = j2len.get
     nothing = []
     for i in range(alo, ahi):
-        if not i in matchables:
-            continue
-        # look at all instances of a[i] in b; note that because
-        # b2j has no junk token, the loop is skipped if a[i] is junk
         newj2len = {}
-        for j in b2j_get(a[i], nothing):
-            # a[i] matches b[j]
-            if j < blo:
-                continue
-            if j >= bhi:
-                break
-            k = newj2len[j] = j2lenget(j - 1, 0) + 1
-            if k > bestsize:
-                besti, bestj, bestsize = i - k + 1, j - k + 1, k
+        # we cannot do LCS on junk or non matchable
+        cura = a[i]
+        if cura >= len_junk or i not in matchables:
+            # look at all instances of a[i] in b; note that because
+            # b2j has no junk token, the loop is skipped if a[i] is junk
+            for j in b2j_get(cura, nothing):
+                # a[i] matches b[j]
+                if j < blo:
+                    continue
+                if j >= bhi:
+                    break
+                k = newj2len[j] = j2lenget(j - 1, 0) + 1
+                if k > bestsize:
+                    besti, bestj, bestsize = i - k + 1, j - k + 1, k
         j2len = newj2len
         j2lenget = j2len.get
 
@@ -96,7 +97,9 @@ def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, mat
            and a[besti - 1] == b[bestj - 1]
            and (besti - 1) in matchables):
 
-        besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
+        besti -= 1
+        bestj -= 1
+        bestsize += 1
 
     while (besti + bestsize < ahi and bestj + bestsize < bhi
            and (bestsize or b[bestj + bestsize] >= len_junk)
