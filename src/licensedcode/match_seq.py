@@ -61,7 +61,7 @@ MATCH_SEQ = '3-seq'
 def match_sequence(idx, rule, query_run, start_offset=0):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
-    against the `idx` index for the candidate `rule`.
+    starting at `start_offset` against the `idx` index for the candidate `rule`.
     """
     if not rule:
         return []
@@ -89,8 +89,10 @@ def match_sequence(idx, rule, query_run, start_offset=0):
             break
 
         block_matches = match_blocks(
-            qtokens, itokens, qstart, qfinish + 1,
-            high_postings, len_junk, query_run_matchables)
+            a=qtokens, b=itokens, a_start=qstart, a_end=qfinish + 1,
+            b2j=high_postings, len_junk=len_junk,
+            matchables=query_run_matchables)
+
         if not block_matches:
             break
 
