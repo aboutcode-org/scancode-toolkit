@@ -616,7 +616,7 @@ class LicenseIndex(object):
             # FIXME: we should consider aho matches to excludes them from candidates
             # FIXME: also exclude from candidates any rule that is only aho-matchable
             qrun_matches = []
-            MAX_CANDIDATES = 50
+            MAX_CANDIDATES = 65
             candidates = match_set.compute_candidates(
                 query_run=query_run,
                 idx=self,
