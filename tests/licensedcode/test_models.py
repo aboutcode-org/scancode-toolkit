@@ -301,7 +301,7 @@ class TestRule(FileBasedTesting):
         results = models.compute_thresholds_occurences(r1.minimum_coverage, r1.length, r1.high_length)
         expected_min_cov = 80
         expected_min_matched_length = 8
-        expected_min_high_matched_length = 8
+        expected_min_high_matched_length = 4
         expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
         assert expected == results
 

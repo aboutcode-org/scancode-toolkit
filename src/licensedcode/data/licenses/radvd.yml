@@ -6,3 +6,4 @@ owner: Unspecified
 homepage_url: https://github.com/reubenhwk/radvd/blob/master/COPYRIGHT
 other_urls:
     - http://www.litech.org/radvd/
+minimum_coverage: 60

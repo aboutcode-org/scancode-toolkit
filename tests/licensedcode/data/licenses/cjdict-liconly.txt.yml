@@ -1,7 +1,7 @@
 license_expressions:
   - unicode
   - bsd-new AND free-unknown
-  - bsd-new AND unknown
+  - bsd-new
   - unknown
   - unknown
   - bsd-new

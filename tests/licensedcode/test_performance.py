@@ -110,6 +110,14 @@ class TestMatchingPerf(FileBasedTesting):
         self.profile_match(idx, locations, stats_file)
 
     @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_with_seq_matches(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = cache.get_index()
+        stats_file = 'license_match_mixed_matching_full_index_profile_seq_matches_log.txt'
+        locations = [self.get_test_loc(f) for f in ['perf/seq_query.txt']]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_binary_lkm(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
