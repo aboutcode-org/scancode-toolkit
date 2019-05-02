@@ -225,7 +225,7 @@ def compute_high_token_sets(tids_set, tids_mset, len_junk):
 # would discard when we compute candaites to eventually discard many or all candidates
 # we compute too many candidates that may waste time in seq matching for no reason
 
-def compute_candidates(query_run, idx, matchable_rids, top=30):
+def compute_candidates(query_run, idx, matchable_rids, top=50):
     """
     Return a ranked list of rule candidates for further matching give a
     `query_run`. Use approximate matching based on token sets ignoring
@@ -321,7 +321,7 @@ def compute_candidates(query_run, idx, matchable_rids, top=30):
 
     ###########################################################################
     # return top and remove sort_order from Schwartzian transform)
-    candidates = [candidate_rule for _rank, _rid, candidate_rule in candidates[:top * 3]]
+    candidates = [candidate_rule for _rank, _rid, candidate_rule in candidates[:top]]
 
     if TRACE_CANDIDATES and candidates:
         logger_debug('\n\n\ncompute_candidates: FINAL candidates:', len(candidates))
