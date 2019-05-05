@@ -58,7 +58,7 @@ like approaches.
 MATCH_SEQ = '3-seq'
 
 
-def match_sequence(idx, rule, query_run, start_offset=0):
+def match_sequence(idx, rule, query_run, high_postings, start_offset=0):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     starting at `start_offset` against the `idx` index for the candidate `rule`.
@@ -67,7 +67,6 @@ def match_sequence(idx, rule, query_run, start_offset=0):
         return []
 
     rid = rule.rid
-    high_postings = idx.high_postings_by_rid[rid]
     itokens = idx.tids_by_rid[rid]
 
     len_junk = idx.len_junk

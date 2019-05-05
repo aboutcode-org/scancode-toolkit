@@ -260,16 +260,16 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     unique = True
     tfidf_computer = compute_tfidf_set_score
 
-    candidates = ((None, rid, rule) for rid, rule in enumerate(idx.rules_by_rid)
+    candidates = ((None, rid, rule, None) for rid, rule in enumerate(idx.rules_by_rid)
                   if rid in matchable_rids)
-
     for step in 'sets', 'multisets':
         sortable_candidates = []
+        sortable_candidates_append = sortable_candidates.append
 
-        for _, rid, rule in candidates:
+        for _, rid, rule, intersection in candidates:
             iset = sets_by_rid[rid]
 
-            rank = compare_token_sets(
+            rank, inter = compare_token_sets(
                 qset,
                 qset_len,
                 high_qset_len,
@@ -285,18 +285,24 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
             )
 
             if rank:
-                sortable_candidates.append((rank, rid, rule))
+                # With this trick the intersection will be the one from the
+                # first step, e.g. a simple set. On the first step, intersection
+                # is None and inter is the intersected set. On the second step,
+                # intersection is is the intersected set of the first step, so
+                # the intersected multiset is ignored.
+                inter = intersection or inter
+                sortable_candidates_append((rank, rid, rule, inter))
 
         if not sortable_candidates:
-            return []
+            return sortable_candidates
 
         # rank and keep only the top candidates
-        candidates = sorted(sortable_candidates, reverse=True)[:top * 10]
-
+        sortable_candidates.sort(reverse=True)
+        candidates = sortable_candidates[:top * 10]
 
         if TRACE_CANDIDATES and candidates:
             logger_debug('\n\n\ncompute_candidates:', step, 'candidates:', len(candidates))
-            for scores, _rid, rule in candidates[:top * 5]:
+            for scores, _rid, rule, _inter in candidates[:top * 5]:
                 logger_debug(rule)
                 logger_debug(scores)
                 logger_debug()
@@ -321,14 +327,13 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
 
     ###########################################################################
     # return top and remove sort_order from Schwartzian transform)
-    candidates = [candidate_rule for _rank, _rid, candidate_rule in candidates[:top]]
+    candidates = [(candidate_rule, intersection)
+                  for _rank, _rid, candidate_rule, intersection in candidates[:top]]
 
     if TRACE_CANDIDATES and candidates:
         logger_debug('\n\n\ncompute_candidates: FINAL candidates:', len(candidates))
-        for scores, _rid, rule in candidates:
+        for rule, _intersection in candidates:
             logger_debug(rule)
-            logger_debug(scores)
-            logger_debug()
 
     return candidates
 
@@ -342,30 +347,30 @@ def compare_token_sets(
         tfidf_computer,
         tokens_idf_by_tid):
     """
-    Return a score tuple for rank sorting key or None.
+    Return a score tuple for rank sorting key or (None, None).
     Compare a `qset` query token ids set or multiset with a `iset` index rule
     token ids set or multiset.
     """
     intersection = intersector(qset, iset)
     if not intersection:
-        return
+        return None, None
     high_intersection = high_intersection_filter(intersection, len_junk)
     if not high_intersection:
-        return
+        return None, None
 
     high_matched_length = counter(high_intersection)
     min_high_matched_length = rule.get_min_high_matched_length(unique)
 
     # need some high match above min high
     if high_matched_length < min_high_matched_length:
-        return
+        return None, None
 
     iset_len = rule.get_length(unique)
     matched_length = counter(intersection)
     min_matched_length = rule.get_min_matched_length(unique)
 
     if matched_length < min_matched_length:
-        return
+        return None, None
 
     high_iset_len = rule.get_high_length(unique)
 
@@ -384,7 +389,7 @@ def compare_token_sets(
     minimum_coverage = rule.minimum_coverage
     # FIXME: we should not recompute this /100 ... it should be cached
     if minimum_coverage and containment < (minimum_coverage / 100):
-        return
+        return None, None
 
     high_union_length = high_qset_len + high_iset_len - high_matched_length
     high_resemblance = high_matched_length / high_union_length
@@ -433,7 +438,7 @@ def compare_token_sets(
             'matched_length', matched_length,
             'iset_len', iset_len,
             'qset_len', qset_len,
-        )
+        ), high_intersection
 
     return (
         score,
@@ -450,7 +455,7 @@ def compare_token_sets(
         matched_length,
         iset_len,
         qset_len,
-    )
+    ), high_intersection
 
 
 def compute_tfidf_set_score(intersection, qset_len, tokens_idf_by_tid):

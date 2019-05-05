@@ -48,11 +48,10 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
 from commoncode import saneyaml
-
-from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
+from licensedcode import MIN_MATCH_LENGTH
+from licensedcode import SMALL_RULE
 from licensedcode.tokenize import query_tokenizer
-
 from textcode.analysis import numbered_text_lines
 
 
@@ -863,7 +862,7 @@ class Rule(object):
             return self.licensing.contains(
                 self.license_expression_object, other.license_expression_object)
 
-    def compute_thresholds(self):
+    def compute_thresholds(self, small_rule=SMALL_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
         tokens or the occurance of unique tokens.
@@ -881,8 +880,7 @@ class Rule(object):
                 self.length,
                 self.length_unique, self.high_length_unique))
 
-            SMALL_RULE = 15
-            self.is_small = self.length < SMALL_RULE
+            self.is_small = self.length < small_rule
             self.has_computed_thresholds = True
 
     def to_dict(self):
@@ -1085,7 +1083,9 @@ class Rule(object):
             or self.is_license_tag
         )
 
-def compute_thresholds_occurences(minimum_coverage, length, high_length):
+def compute_thresholds_occurences(minimum_coverage, length, high_length, 
+        _MIN_MATCH_HIGH_LENGTH = MIN_MATCH_HIGH_LENGTH,
+        _MIN_MATCH_LENGTH = MIN_MATCH_LENGTH):
     """
     Compute and return thresholds considering the occurrence of all tokens.
     """
@@ -1108,11 +1108,11 @@ def compute_thresholds_occurences(minimum_coverage, length, high_length):
 
     elif length < 30:
         min_matched_length = length // 2
-        min_high_matched_length = min(high_length, MIN_MATCH_HIGH_LENGTH)
+        min_high_matched_length = min(high_length, _MIN_MATCH_HIGH_LENGTH)
 
     elif length < 200:
-        min_matched_length = MIN_MATCH_LENGTH
-        min_high_matched_length = min(high_length, MIN_MATCH_HIGH_LENGTH)
+        min_matched_length = _MIN_MATCH_LENGTH
+        min_high_matched_length = min(high_length, _MIN_MATCH_HIGH_LENGTH)
 
     else:  # if length >= 200:
 
