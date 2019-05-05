@@ -68,15 +68,15 @@ class TestMatchSeq(FileBasedTesting):
         assert match_seq.MATCH_SEQ == match.matcher
 
         exp_qtext = u"""
-            CODEHAUS
-            AND CONTRIBUTORS
+            Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved]. 
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         """.split()
 
         exp_itext = u"""
-            CODEHAUS
-            AND CONTRIBUTORS
+            Copyright
+            THIS IS FROM THE <OLD> CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE <OLD> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF <NEW> SUCH DAMAGE
         """.lower().split()

@@ -29,6 +29,7 @@ from itertools import groupby
 
 import ahocorasick
 
+from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -66,22 +67,30 @@ def get_automaton():
     return ahocorasick.Automaton(ahocorasick.STORE_ANY)
 
 
-def add_sequence(automaton, tids, rid, start=0):
+def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
     """
     Add the `tids` sequence of token ids for the `rid` Rule id starting at `start`
     position to the an Aho-Corasick `automaton`.
+
+    If `with_duplicates` is True and if `tids` exists in the automaton, append a
+    rule pointers to a list of "values" for these `tids`. Otherwise if `tids`
+    exists in the automaton, adding a new sequence will overwrite the previous
+    entry.
     """
     end = len(tids) - 1
-    tokens = array('h', tids).tostring()
-    existing = automaton.get(tokens, None)
-    # the value for a trie key is a set of tuples (rule id, start position, end position)
+    # the value for a trie key is a list of tuples (rule id, start position, end position)
     value = rid, start, start + end
-    if existing:
-        # ensure that for identical strings added several times, all rid/pos are
-        # added to the value set
-        existing.add(value)
+    tokens = array('h', tids).tostring()
+    if with_duplicates:
+        existing = automaton.get(tokens, None)
+        if existing:
+            # ensure that for identical strings added several times, all rid/pos are
+            # added to the value set
+            existing.append(value)
+        else:
+            automaton.add_word(tokens, [value])
     else:
-        automaton.add_word(tokens, set([value]))
+        automaton.add_word(tokens, [value])
 
 
 MATCH_AHO_EXACT = '2-aho'
@@ -154,10 +163,26 @@ def get_matched_positions(tokens, qbegin, automaton):
     `tokens` sequence of token ids starting at the `qbegin` absolute query start
     position position using the `automaton`.
     """
+    for qend, matched_rule_segments in get_matches(tokens, qbegin, automaton):
+        for rid, istart, iend in matched_rule_segments:
+            if TRACE_DEEP:
+                logger_debug('   #EXACT get_matches: found match to rule:', rid)
+            iend = iend + 1
+            match_len = iend - istart
+            qstart = qend - match_len
+            yield rid, qstart, qend, istart, iend
+
+
+def get_matches(tokens, qbegin, automaton):
+    """
+    Yield tuples of automaton matches positions as (match end, match value) from
+    matching `tokens` sequence of token ids starting at the `qbegin` absolute
+    query start position position using the `automaton`.
+    """
     # iterate over matched strings: the matched value is (rule id, index start
     # pos, index end pos)
     qtokens_as_str = array('h', tokens).tostring()
-    for qend, matched_rule_segments in automaton.iter(qtokens_as_str):
+    for qend, matched_value in automaton.iter(qtokens_as_str):
 
         ################################
         # FIXME: use a trie of ints or a trie of Unicode characters to avoid
@@ -176,20 +201,10 @@ def get_matched_positions(tokens, qbegin, automaton):
         if real_qend != real_qend_int:
             if TRACE_DEEP: logger_debug(
                 '   #EXACT get_matches: real_qend != int(real_qend), '
-                'discarding match to matched_rule_segments:', matched_rule_segments)
+                'discarding match to value:', matched_value)
             continue
-
-        for rid, istart, iend in matched_rule_segments:
-            if TRACE_DEEP: logger_debug(
-                '   #EXACT get_matches: found match to rule:', rid)
-
-            iend = iend + 1
-            match_len = iend - istart
-
-            qend = qbegin + real_qend_int + 1
-            qstart = qend - match_len
-
-            yield rid, qstart, qend, istart, iend
+        qend = qbegin + real_qend_int + 1
+        yield qend, matched_value
 
 
 def match_fragments(idx, query_run):
@@ -258,3 +273,35 @@ def match_fragments(idx, query_run):
     # 5. Merge matches as usual
 
     return frag_matches
+
+
+def add_start(automaton, tids, rule_identifier, rule_length):
+    """
+    Add the `tids` sequence of starting token ids for the `rule_identifier` Rule
+    or `rule_length` to the an Aho-Corasick `automaton`.
+    """
+    # the value for a trie key is list of (rule identifier, rule_length)
+    tokens = array('h', tids).tostring()
+    existing = automaton.get(tokens, None)
+    value = rule_length, rule_identifier
+    if existing:
+        existing.append(value)
+    else:
+        automaton.add_word(tokens, [value])
+
+
+def finalize_starts(automaton):
+    for values in automaton.values():
+        values.sort(reverse=True)
+    automaton.make_automaton()
+
+
+def get_matched_starts(tokens, qbegin, automaton, len_start=SMALL_RULE):
+    """
+    Yield tuples of matched positions as (qstart, [(rule_length, rule_id), ...).
+    Match `tokens` sequence of token ids starting at the `qbegin` absolute query
+    start position position using the `automaton`.
+    """
+    for qend, values in get_matches(tokens, qbegin, automaton):
+        qstart = qend - len_start
+        yield qstart, values

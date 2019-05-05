@@ -3,7 +3,7 @@ license_expressions:
   - freetype
   - mit
   - unicode-icu-58
-  - unknown
+  - naist-2003
   - sgi-freeb-2.0
   - libpng
   - libpng

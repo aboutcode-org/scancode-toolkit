@@ -47,6 +47,7 @@ from intbitset import intbitset
 
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
+from licensedcode import SMALL_RULE
 from licensedcode.frequent_tokens import global_tokens_by_ranks
 from licensedcode import match
 from licensedcode import match_aho
@@ -143,6 +144,7 @@ class LicenseIndex(object):
         'rules_automaton',
         'fragments_automaton',
         'negative_automaton',
+        'starts_automaton',
 
         'regular_rids',
         'negative_rids',
@@ -210,6 +212,7 @@ class LicenseIndex(object):
         else:
             self.fragments_automaton = None
         self.negative_automaton = match_aho.get_automaton()
+        self.starts_automaton = match_aho.get_automaton()
 
         # disjunctive sets of rule ids: regular, negative, false positive, and
         # things that can only be matched exactly
@@ -377,18 +380,21 @@ class LicenseIndex(object):
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
 
-        # build closures for methods that populate automatons
-        negative_automaton_add = partial(
-            match_aho.add_sequence, automaton=self.negative_automaton)
+        # build partials for methods that populate automatons
+        negative_automaton_add = partial(match_aho.add_sequence,
+            automaton=self.negative_automaton, with_duplicates=False)
 
         if USE_AHO_FRAGMENTS:
-            fragments_automaton_add = partial(
-                match_aho.add_sequence, automaton=self.fragments_automaton)
+            fragments_automaton_add = partial(match_aho.add_sequence,
+                automaton=self.fragments_automaton, with_duplicates=True)
         else:
             fragments_automaton_add = lambda x: x
 
-        rules_automaton_add = partial(
-            match_aho.add_sequence, automaton=self.rules_automaton)
+        rules_automaton_add = partial(match_aho.add_sequence,
+            automaton=self.rules_automaton, with_duplicates=False)
+
+        starts_automaton_add = partial(match_aho.add_start,
+            automaton=self.starts_automaton)
 
         # OPTIMIZED: bind frequently used objects to local scope
         rules_by_rid = self.rules_by_rid
@@ -396,6 +402,11 @@ class LicenseIndex(object):
         match_hash_index_hash = match_hash.index_hash
         match_set_tids_set_counter = match_set.tids_set_counter
         match_set_tids_multiset_counter = match_set.tids_multiset_counter
+
+        len_starts = SMALL_RULE
+        min_len_starts = SMALL_RULE * 6
+
+        ngram_len = NGRAM_LEN
 
         #######################################################################
         # build by-rule index structures over the token ids seq of each rule
@@ -436,15 +447,22 @@ class LicenseIndex(object):
                 high_postings_by_rid[rid] = postings
 
                 ####################
-                # ... and ngrams: compute ngrams and populate an automaton with ngrams
+                # ... and ngram fragments: compute ngrams and populate an automaton with ngrams
                 ####################
-                if (USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > NGRAM_LEN):
-
-                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=NGRAM_LEN)
+                if (USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > ngram_len):
+                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
                     all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
-#                     all_ngrams_with_pos = enumerate(all_ngrams)
+                    # all_ngrams_with_pos = enumerate(all_ngrams)
                     for pos, ngram in all_ngrams_with_pos:
                         fragments_automaton_add(tids=ngram, rid=rid, start=pos)
+                #############################################################
+                #############################################################
+
+            # use the start and end of this rule as a break point for query runs
+            if is_approx_matchable and rule.length > min_len_starts:
+                starts_automaton_add(
+                    tids=rule_token_ids[:len_starts],
+                    rule_identifier=rule.identifier, rule_length=rule.length)
 
             ####################
             # build sets and multisets indexes, for all regular rules as we need the thresholds
@@ -458,7 +476,6 @@ class LicenseIndex(object):
             # FIXME!!!!!!! we should store them if we need them
             tids_set_high = match_set.high_tids_set_subset(tids_set, len_junk)
             tids_mset_high = match_set.high_tids_multiset_subset(tids_mset, len_junk)
-
 
             # FIXME!!!!!!!
             ####################################################################
@@ -490,6 +507,8 @@ class LicenseIndex(object):
         self.rules_automaton.make_automaton()
         if USE_AHO_FRAGMENTS:
             self.fragments_automaton.make_automaton()
+
+        match_aho.finalize_starts(self.starts_automaton)
 
         # finalize tokens IDF (inverse documents frequency)
         self.tokens_idf_by_tid = match_set.compute_idfs(len_rules, tokens_doc_freq_by_tid)
@@ -616,20 +635,27 @@ class LicenseIndex(object):
             # FIXME: we should consider aho matches to excludes them from candidates
             # FIXME: also exclude from candidates any rule that is only aho-matchable
             qrun_matches = []
-            MAX_CANDIDATES = 65
+            MAX_CANDIDATES = 30
             candidates = match_set.compute_candidates(
                 query_run=query_run,
                 idx=self,
                 matchable_rids=matchable_rids,
                 top=MAX_CANDIDATES)
 
-            # multiple sequence matching/alignment for each canidate, query run-
-            # level for as long as we have more non-overlapping matches returned
-            for candidate_rule in candidates:
+            # Perform multiple sequence matching/alignment for each candidate,
+            # query run-level for as long as we have more non-overlapping
+            # matches returned
+            for candidate_rule, high_intersection in candidates:
+                high_postings = self.high_postings_by_rid[candidate_rule.rid]
+                high_postings = {
+                    tid: postings for tid, postings in high_postings.items()
+                        if tid in high_intersection}
                 start_offset = 0
                 while True:
                     rule_matches = match_seq.match_sequence(
-                        self, candidate_rule, query_run, start_offset=start_offset)
+                        self, candidate_rule, query_run,
+                        high_postings=high_postings,
+                        start_offset=start_offset)
                     if not rule_matches:
                         break
                     matches_end = max(m.qend for m in rule_matches)
