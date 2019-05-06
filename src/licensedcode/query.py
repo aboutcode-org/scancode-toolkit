@@ -28,6 +28,7 @@ from __future__ import print_function
 
 from collections import defaultdict
 from collections import deque
+from itertools import chain
 import re
 
 from intbitset import intbitset
@@ -84,6 +85,7 @@ counting lines is useless and other heuristic are needed.
 # Tracing flags
 TRACE = False
 TRACE_QR = False
+TRACE_QR_BREAK = False
 TRACE_REPR = False
 TRACE_SPDX = False
 
@@ -92,7 +94,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR or TRACE_SPDX:
+if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_SPDX:
     import logging
     import sys
 
@@ -366,6 +368,34 @@ class Query(object):
         iterator of lines (eg. list) of token ids.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
+        self._tokenize_and_build_runs(tokens_by_line, line_threshold)
+
+        if TRACE_QR:
+            print()
+            logger_debug('Initial Query runs for query:', self.location)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
+
+    def refine_runs(self):
+        # TODO: move me to the approximate matching loop so that this is done only if neeed
+        # rebreak query runs based on potential rule boundaries
+        query_runs = list(chain.from_iterable(
+            break_on_boundaries(qr) for qr in self.query_runs))
+
+        if TRACE_QR_BREAK:
+            logger_debug('Initial # query runs:', len(self.query_runs), 'after breaking:', len(query_runs))
+
+        self.query_runs = query_runs
+
+        if TRACE_QR:
+            print()
+            logger_debug('FINAL Query runs for query:', self.location)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
+
+    def _tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         len_junk = self.idx.len_junk
         digit_only_tids = self.idx.digit_only_tids
 
@@ -395,7 +425,7 @@ class Query(object):
                 # start new query run
                 query_run = QueryRun(query=self, start=pos)
                 empty_lines = 0
- 
+
             if len(query_run) == 0:
                 query_run.start = pos
 
@@ -443,6 +473,58 @@ class Query(object):
 
                 print(' ' , repr(qr), 'high_matchables:', high_matchables)
             print()
+
+
+def break_on_boundaries(query_run):
+    """
+    Given a QueryRun, yield more query runs broken down on boundaries discovered
+    from matched rules and matched rule starts and ends.
+    """
+    if len(query_run) < 150:
+        yield query_run
+    else:
+        from licensedcode.match_aho import get_matched_starts
+    
+        qr_tokens = query_run.tokens
+        qr_start = query_run.start
+        qr_end = query_run.end
+        query = query_run.query
+        idx = query.idx
+    
+        matched_starts = get_matched_starts(
+            qr_tokens, qr_start, automaton=idx.starts_automaton)
+    
+        starts = dict(matched_starts)
+    
+        if TRACE_QR_BREAK:
+            logger_debug('break_on_boundaries: len(starts):', len(starts),)
+    
+        if not starts:
+            if TRACE_QR_BREAK: logger_debug('break_on_boundaries: Qr returned unchanged')
+            yield query_run
+    
+        else:
+            positions = deque()
+            pos = qr_start
+            while pos < qr_end:
+                matches = starts.get(pos, None)
+                if matches:
+                    min_length, _ridentifier = matches[0]
+                    if len(positions) >= min_length:
+                        qr = QueryRun(query, positions[0], positions[-1])
+                        if TRACE_QR_BREAK:
+                            logger_debug('\nbreak_on_boundaries: new QueryRun', qr, '\n', matches, '\n')
+                        yield qr
+                        positions.clear()
+                positions.append(pos)
+                pos += 1
+    
+            if positions:
+                qr = QueryRun(query, positions[0], positions[-1])
+                yield qr
+                if TRACE_QR_BREAK:
+                    print()
+                    logger_debug('\nbreak_on_boundaries: final QueryRun', qr, '\n', matches, '\n')
 
 
 is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
