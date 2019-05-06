@@ -99,11 +99,15 @@ or TRACE_INDEXING_PERF):
 
 
 # Feature switch to enable or not ngram fragments detection
-# FIXME: this is not used
 USE_AHO_FRAGMENTS = False
 
 # length of ngrams used for fragments detection
 NGRAM_LEN = 6
+
+
+# Feature switch to enable or not extra query run breaking based on rule starts
+USE_RULE_STARTS = False
+
 
 # Maximum number of unique tokens we can handle: 16 bits signed integers are up to
 # 32767. Since we use internally several arrays of ints for smaller and optimized
@@ -207,12 +211,9 @@ class LicenseIndex(object):
 
         # Aho-Corasick automatons for regular and negative rules
         self.rules_automaton = match_aho.get_automaton()
-        if USE_AHO_FRAGMENTS:
-            self.fragments_automaton = match_aho.get_automaton()
-        else:
-            self.fragments_automaton = None
+        self.fragments_automaton = match_aho.get_automaton() if USE_AHO_FRAGMENTS else None
         self.negative_automaton = match_aho.get_automaton()
-        self.starts_automaton = match_aho.get_automaton()
+        self.starts_automaton = match_aho.get_automaton() if USE_RULE_STARTS else None
 
         # disjunctive sets of rule ids: regular, negative, false positive, and
         # things that can only be matched exactly
@@ -393,8 +394,11 @@ class LicenseIndex(object):
         rules_automaton_add = partial(match_aho.add_sequence,
             automaton=self.rules_automaton, with_duplicates=False)
 
-        starts_automaton_add = partial(match_aho.add_start,
-            automaton=self.starts_automaton)
+        if USE_RULE_STARTS:
+            starts_automaton_add_start = partial(match_aho.add_start,
+                automaton=self.starts_automaton)
+        else:
+            starts_automaton_add_start = lambda x: x
 
         # OPTIMIZED: bind frequently used objects to local scope
         rules_by_rid = self.rules_by_rid
@@ -459,10 +463,11 @@ class LicenseIndex(object):
                 #############################################################
 
             # use the start and end of this rule as a break point for query runs
-            if is_approx_matchable and rule.length > min_len_starts:
-                starts_automaton_add(
+            if USE_RULE_STARTS and is_approx_matchable and rule.length > min_len_starts:
+                starts_automaton_add_start(
                     tids=rule_token_ids[:len_starts],
-                    rule_identifier=rule.identifier, rule_length=rule.length)
+                    rule_identifier=rule.identifier,
+                    rule_length=rule.length)
 
             ####################
             # build sets and multisets indexes, for all regular rules as we need the thresholds
@@ -507,8 +512,8 @@ class LicenseIndex(object):
         self.rules_automaton.make_automaton()
         if USE_AHO_FRAGMENTS:
             self.fragments_automaton.make_automaton()
-
-        match_aho.finalize_starts(self.starts_automaton)
+        if USE_RULE_STARTS:
+            match_aho.finalize_starts(self.starts_automaton)
 
         # finalize tokens IDF (inverse documents frequency)
         self.tokens_idf_by_tid = match_set.compute_idfs(len_rules, tokens_doc_freq_by_tid)
@@ -620,6 +625,11 @@ class LicenseIndex(object):
         """
         matches = []
 
+        if USE_RULE_STARTS:
+            query.refine_runs()
+
+        MAX_CANDIDATES = 65
+
         for query_run in query.query_runs:
 
             # we cannot do a sequence match in query run without some high token left
@@ -635,7 +645,6 @@ class LicenseIndex(object):
             # FIXME: we should consider aho matches to excludes them from candidates
             # FIXME: also exclude from candidates any rule that is only aho-matchable
             qrun_matches = []
-            MAX_CANDIDATES = 30
             candidates = match_set.compute_candidates(
                 query_run=query_run,
                 idx=self,
