@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'AbutCode'
-copyright = '2019, Tushar'
-author = 'Tushar'
+project = 'ScanCode toolkit'
+copyright = '2019, ScanCode-toolkit authors and contributors'
+author = 'ScanCode-toolkit authors and contributors'
 
 
 # -- General configuration ---------------------------------------------------
