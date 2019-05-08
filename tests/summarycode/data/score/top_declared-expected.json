@@ -149,7 +149,7 @@
       "licenses": [
         {
           "key": "mit",
-          "score": 99.0,
+          "score": 100.0,
           "name": "MIT License",
           "short_name": "MIT License",
           "category": "Permissive",
@@ -176,7 +176,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 100.0
           }
         }
       ],
