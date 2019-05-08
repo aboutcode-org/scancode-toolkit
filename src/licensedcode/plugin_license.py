@@ -84,7 +84,7 @@ class LicenseScanner(ScanPlugin):
         CommandLineOption(('--license-text',),
             is_flag=True,
             required_options=['license'],
-            help='Include the detected licenses matched text.',
+            help='Include the detected licenses matched text for json output only.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
