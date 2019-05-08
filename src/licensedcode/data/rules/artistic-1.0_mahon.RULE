@@ -1,4 +1,6 @@
-Preamble
+             The "Artistic License"
+
+                Preamble
 
 The intent of this document is to state the conditions under which a Package may
 be copied, such that the Copyright Holder maintains some semblance of artistic
@@ -20,7 +22,7 @@ package.
 "You" is you, if you're thinking about copying or distributing this Package.
 
 "Reasonable copying fee" is whatever you can justify on the basis of media cost,
-duplication charges, time of people involved, and so on. (You will not be
+duplication charges, time of people involved, and so on.  (You will not be
 required to justify it to the Copyright Holder, but only to the computing
 community at large as a market that must bear the fee.)
 
@@ -33,7 +35,7 @@ Version of this Package without restriction, provided that you duplicate all of
 the original copyright notices and associated disclaimers.
 
 2. You may apply bug fixes, portability fixes and other modifications derived
-from the Public Domain or from the Copyright Holder. A Package modified in such
+from the Public Domain or from the Copyright Holder.  A Package modified in such
 a way shall still be considered the Standard Version.
 
 3. You may otherwise modify your copy of this Package in any way, provided that
@@ -42,7 +44,7 @@ changed that file, and provided that you do at least ONE of the following:
 
 a) place your modifications in the Public Domain or otherwise make them Freely
 Available, such as by posting said modifications to Usenet or an equivalent
-medium, or placing the modifications on a major archive site such as ftp.uu.net,
+medium, or placing the modifications on a major archive site such as uunet.uu.net,
 or by allowing the Copyright Holder to include your modifications in the
 Standard Version of the Package.
 
@@ -74,7 +76,7 @@ d) make other distribution arrangements with the Copyright Holder.
 
 5. You may charge a reasonable copying fee for any distribution of this Package.
 You may charge any fee you choose for support of this Package. You may not
-charge a fee for this Package itself. However, you may distribute this Package
+charge a fee for this Package itself.  However, you may distribute this Package
 in aggregate with other (possibly commercial) programs as part of a larger
 (possibly commercial) software distribution provided that you do not advertise
 this Package as a product of your own.
@@ -84,8 +86,11 @@ the programs of this Package do not automatically fall under the copyright of
 this Package, but belong to whomever generated them, and may be sold
 commercially, and may be aggregated with this Package.
 
-7. C or perl subroutines supplied by you and linked into this Package shall not
-be considered part of this Package.
+7. C subroutines supplied by you and linked into this Package in order to
+emulate subroutines and variables of the language defined by this Package shall
+not be considered part of this Package, but are the equivalent of input as in
+Paragraph 6, provided these subroutines do not change the language in any way
+that would cause it to fail the regression tests for the language.
 
 8. The name of the Copyright Holder may not be used to endorse or promote
 products derived from this software without specific prior written permission.
@@ -94,4 +99,4 @@ products derived from this software without specific prior written permission.
 WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
-The End
+                The End
