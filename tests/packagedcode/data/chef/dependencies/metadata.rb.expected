@@ -29,7 +29,7 @@
   "code_view_url": "https://github.com/chef-cookbooks/build-essential",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "apache-2.0",
   "declared_license": "Apache-2.0",
   "notice_text": null,
   "manifest_path": null,
