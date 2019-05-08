@@ -27,12 +27,14 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import json
 import os
 
 from packagedcode import pypi
 
 from packages_test_utils import PackageTester
 from unittest.case import expectedFailure
+
 
 
 class TestPyPi(PackageTester):
@@ -235,3 +237,21 @@ class TestPyPi(PackageTester):
         package = pypi.parse_setup_py(test_file)
         expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
+        
+    def test_build_package(self):
+        test_file = self.get_test_loc('pypi/vmock/input.json')
+        expected_loc = self.get_test_loc('pypi/vmock/expected.json')
+        with open(test_file) as pypi_json:
+            json_input = pypi_json.read()
+            content = json.loads(json_input)
+            package = pypi.build_package(content)
+            self.check_package(package, expected_loc, regen=False)
+
+    def test_build_package2(self):
+        test_file = self.get_test_loc('pypi/3to2/input.json')
+        expected_loc = self.get_test_loc('pypi/3to2/expected.json')
+        with open(test_file) as pypi_json:
+            json_input = pypi_json.read()
+            content = json.loads(json_input)
+            package = pypi.build_package(content)
+            self.check_package(package, expected_loc, regen=False)
