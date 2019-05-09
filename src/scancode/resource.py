@@ -1406,12 +1406,10 @@ class VirtualCodebase(Codebase):
         if isinstance(location, dict):
             return location
         if isinstance(location, (list, tuple,)):
-            combined_scan_data = OrderedDict(headers=[], files=[])
+            scan_data = OrderedDict()
             for loc in location:
-                scan_data = self._get_scan_data_helper(loc)
-                combined_scan_data['headers'].extend(scan_data['headers'])
-                combined_scan_data['files'].extend(scan_data['files'])
-            return combined_scan_data
+                scan_data.update(self._get_scan_data_helper(loc))
+            return scan_data
         return self._get_scan_data_helper(location)
 
     def _create_empty_resource_data(self):
