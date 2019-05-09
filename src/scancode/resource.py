@@ -1401,7 +1401,7 @@ class VirtualCodebase(Codebase):
         - a JSON string
         - a Python mapping
 
-        or `location` is a List or a Tuple that contains multiple paths to scans that are to be joined together.
+        or `location` is a List that contains multiple paths to scans that are to be joined together.
         """
         if isinstance(location, dict):
             return location
@@ -1411,7 +1411,6 @@ class VirtualCodebase(Codebase):
                 scan_data = self._get_scan_data_helper(loc)
                 combined_scan_data['headers'].extend(scan_data['headers'])
                 combined_scan_data['files'].extend(scan_data['files'])
-            combined_scan_data['headers'] = sorted(combined_scan_data['headers'], key=lambda x: x['start_timestamp'])
             return combined_scan_data
         return self._get_scan_data_helper(location)
 
@@ -1545,7 +1544,6 @@ class VirtualCodebase(Codebase):
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
 
-        # Create a virtual root if we are merging multiple scans together
         multiple_input = isinstance(self.location, (list, tuple,)) and len(self.location) > 1
         if multiple_input:
             root_path = 'virtual_root'
@@ -1564,7 +1562,6 @@ class VirtualCodebase(Codebase):
 
         for resource_data in resources_data:
             path = resource_data.get('path')
-            # Append virtual_root path to imported Resource path if we are merging multiple scans
             if multiple_input:
                 path = os.path.join(root_path, path)
             name = resource_data.get('name', None)
