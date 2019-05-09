@@ -320,7 +320,6 @@ def print_options(ctx, param, value):
 
 @click.option('--from-json',
     is_flag=True,
-    multiple=True,
     help='Load codebase from an existing JSON scan',
     help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
 
@@ -544,7 +543,7 @@ def run_scan(
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
-    elif not from_json:
+    else:
         # we received a several input paths: we can handle this IFF they share
         # a common root directory and none is an absolute path
 
