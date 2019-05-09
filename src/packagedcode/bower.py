@@ -33,6 +33,7 @@ if TRACE:
 class BowerPackage(models.Package):
     metafiles = ('bower.json', '.bower.json')
     default_type = 'bower'
+    default_primary_language = 'JavaScript'
 
     @classmethod
     def recognize(cls, location):
