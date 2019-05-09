@@ -1409,14 +1409,8 @@ class VirtualCodebase(Codebase):
             combined_scan_data = OrderedDict(headers=[], files=[])
             for loc in location:
                 scan_data = self._get_scan_data_helper(loc)
-                headers = scan_data.get('headers')
-                if headers:
-                    combined_scan_data['headers'].extend(headers)
-                files = scan_data.get('files')
-                if files:
-                    combined_scan_data['files'].extend(files)
-                else:
-                    raise Exception('Input file does not have Resources to import: {}'.format(loc))
+                combined_scan_data['headers'].extend(scan_data['headers'])
+                combined_scan_data['files'].extend(scan_data['files'])
             combined_scan_data['headers'] = sorted(combined_scan_data['headers'], key=lambda x: x['start_timestamp'])
             return combined_scan_data
         return self._get_scan_data_helper(location)

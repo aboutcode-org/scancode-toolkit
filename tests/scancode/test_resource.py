@@ -1195,18 +1195,3 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
             ])
         ]
         assert expected == results
-
-    def test_VirtualCodebase_create_from_multiple_scans(self):
-        test_file_1 = self.get_test_loc('resource/virtual_codebase/combine-1.json')
-        test_file_2 = self.get_test_loc('resource/virtual_codebase/combine-2.json')
-        input = (test_file_1, test_file_2)
-        codebase = VirtualCodebase(input)
-        results = sorted(r.to_dict() for r in codebase.walk())
-        expected = [
-            OrderedDict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/samples'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/samples/NOTICE'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/thirdparty'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
-        ]
-        assert expected == results
