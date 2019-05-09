@@ -48,6 +48,12 @@ org.eclipse.core.resources.prefs
 
 # Sphinx
 docs/_build
+docs/bin
+docs/build
+docs/include
+docs/Lib
+doc/pyvenv.cfg
+pyvenv.cfg
 
 # Various junk and temp files
 .DS_Store
