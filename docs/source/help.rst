@@ -1,7 +1,7 @@
 Help
 ====
 
-ScanCode Toolkit is part ot the AboutCode suite of open source projects.
+ScanCode Toolkit is part of the AboutCode family of open source projects.
 
 AboutCode Projects
 ******************
