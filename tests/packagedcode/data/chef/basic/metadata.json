@@ -1,0 +1,39 @@
+{
+  "name": "301",
+  "description": "Installs/Configures 301",
+  "long_description": "Installs/Configures 301",
+  "maintainer": "Mark Wilkerson",
+  "maintainer_email": "mark@segfawlt.net",
+  "license": "MIT",
+  "platforms": {
+
+  },
+  "dependencies": {
+    "nodejs": ">= 0.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.1.0"
+}
