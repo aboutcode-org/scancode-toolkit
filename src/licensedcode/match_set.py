@@ -196,10 +196,10 @@ def index_token_sets(token_ids, *args, **kwargs):
 
 def compute_idfs(len_rules, tokens_doc_freq_by_tid):
     """
-    Return a mapping of {token id -> inverse document frequency} given mapping
-    of `tokens_doc_freq_by_tid` counting the number of rules in which a token if
-    occurs and the `len_rules` number of rules.
-    Note this is a using a sequence as mapping where the key is the sequence index.
+    Return a mapping of {token id -> inverse document frequency} given a mapping
+    of `tokens_doc_freq_by_tid` counting the number of rules in which a token
+    occurs and the `len_rules` number of rules. Note this is a using a sequence
+    as mapping where the key is the sequence index.
     """
     # note: we use a more compact array of floats where the index is a token id.
     # note we perform some smoothing as in sklearn:
