@@ -51,7 +51,6 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
 
     If no blocks match, return (alo, blo, 0).
     """
-
     besti, bestj, bestsize = alo, blo, 0
     b2j_get = b2j.get
 
@@ -111,7 +110,7 @@ def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, mat
     return Match(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset()):
+def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), *args, **kwargs):
     """
     Return a list of matching block Match triples describing matching
     subsequences of `a` in `b` starting from the `a_start` position in `a` up to
