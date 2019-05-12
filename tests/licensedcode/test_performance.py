@@ -35,6 +35,7 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 # Instructions: Comment out the skip decorators to run a test. Do not commit without a skip
@@ -66,6 +67,33 @@ class TestMatchingPerf(FileBasedTesting):
         stats_file = 'license_match_limited_index_profile_log.txt'
         locations = [self.get_test_loc('detect/rule_template/query.txt')]
         self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_index_with_single_license(self):
+        from time import time
+        from licensedcode import query
+
+        # pre-index : we are profiling only the detection, not the indexing
+        rule_dir = self.get_test_loc('perf/idx/rules')
+        rules = models.load_rules(rule_dir)
+        idx = index.LicenseIndex(rules)
+        location = self.get_test_loc('perf/idx/query.txt')
+        querys = open(location, 'rb').read()
+
+        qry = query.build_query(query_string=querys, idx=idx)
+
+        def mini_seq_match(idx):
+            list(idx.get_approximate_matches(qry, [], []))
+
+
+        # qtokens_as_str = array('h', tokens).tostring()
+        start = time()
+        for _ in range(100):
+            mini_seq_match(idx)
+        duration = time() - start
+        values = ('ScanCode diff:', duration)
+        print(*values)
+        raise Exception(values)
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
