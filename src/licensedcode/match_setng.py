@@ -33,10 +33,11 @@ from math import log
 from intbitset import intbitset
 
 from commoncode.dict_utils import sparsify
+from licensedcode.tokenize import ngrams
 
 
 """
-Approximate matching strategies using token sets and multisets.
+Approximate matching strategies using token and ngram sets and multisets.
 
 This is used as a pre-filter to find candidates rules that have the highest
 likeliness of matching a query and to filter rules that could not possibly yield
@@ -133,10 +134,10 @@ tids_set_counter = len
 
 def multisets_intersector(qmset, imset):
     """
-    Return the intersection of a query and index token ids multisets. For a
-    token id present in both multisets, the intersection value is the smaller of
-    the occurence count in the query and rule for this token.
-    Optimized for defaultdicts.
+    Return the intersection of a query and index token id bigrams multisets. For
+    a key present in both multisets, the intersection value is the smaller of
+    the occurence count in the query and rule for this key. Optimized for
+    defaultdicts.
     """
     # NOTE: Using a Counter is less efficient
     intersection = defaultdict(int)
@@ -169,26 +170,49 @@ def high_tids_set_subset(tids_set, len_junk):
 
 def high_multiset_subset(mset, len_junk):
     """
-    Return a subset of a set of token ids that are high tokens.
+    Return a subset of a multiset of bigrams that contain high tokens.
     """
-    return {tid: count for tid, count in mset.items() if tid >= len_junk}
+    return {bigram: count for bigram, count in mset.items() 
+            if bigram[0] >= len_junk or bigram[1] >= len_junk}
 
 
 def build_set_and_mset(token_ids):
     """
-    Return a tuple of (tids set, tids multiset) given a `token_ids` tids
-    sequence.
+    Return a tuple of (tids set, multiset) given a `token_ids` tids sequence.
+    NOTES: this is used for indexing
     """
-    tids_mset = defaultdict(int)
-    for tid in token_ids:
-        # this skips unknown token ids that are -1 as well as possible None
-        if tid >= 0:
-            tids_mset[tid] += 1
+    tids_set = intbitset()
+    bigrams_mset = defaultdict(int)
+    
+    for bigram in ngrams(token_ids, 2):
+        bigram = tuple(bigram)
+        bigrams_mset[bigram] += 1
+        tids_set.update(bigram)
     # OPTIMIZED: sparsify for speed
-    sparsify(tids_mset)
+    sparsify(bigrams_mset)
 
-    tids_set = intbitset(tids_mset.keys())
-    return tids_set, tids_mset
+    return tids_set, bigrams_mset
+
+
+def build_query_set_and_mset(query_run):
+    """
+    Return a tuple of (tids set, multiset) given a `query_run`
+    """
+    mset = defaultdict(int)
+    tids_set = intbitset()
+    matchables = query_run.matchables
+    
+    for qpos, bigram in enumerate(ngrams(query_run.tokens, 2), query_run.start):
+        if not(qpos in matchables and qpos+1 in matchables):
+            continue
+        bigram = tuple(bigram)
+        mset[bigram] += 1
+        tids_set.update(bigram)
+
+    # OPTIMIZED: sparsify for speed
+    sparsify(mset)
+
+    return tids_set, mset
 
 
 def compute_token_idfs(len_rules, tokens_doc_freq_by_tid):
@@ -203,6 +227,18 @@ def compute_token_idfs(len_rules, tokens_doc_freq_by_tid):
     # See https://github.com/scikit-learn/scikit-learn/blob/645d3224182d1dd3723ffbf983172aad07cfeba8/sklearn/feature_extraction/text.py#L1131
     return array('f', (log((len_rules + 1) / (tdf + 1)) + 1
                        for tdf in tokens_doc_freq_by_tid))
+
+
+def compute_bigram_idfs(len_rules, bigrams_doc_freq_by_tid):
+    """
+    Return a mapping of {bigram -> inverse document frequency} given a mapping
+    of `bigram s_doc_freq_by_tid` counting the number of rules in which a bigram
+    occurs and the `len_rules` number of rules.
+    """
+    # note we perform some smoothing as in sklearn:
+    # See https://github.com/scikit-learn/scikit-learn/blob/645d3224182d1dd3723ffbf983172aad07cfeba8/sklearn/feature_extraction/text.py#L1131
+    return {big: (log((len_rules + 1) / (bdf + 1)) + 1)
+            for big, bdf in bigrams_doc_freq_by_tid.items()}
 
 
 def compute_high_set_and_mset(tids_set, mset, len_junk):
@@ -233,7 +269,7 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     other measures.
     """
     # collect query-side sets used for matching
-    qset, qmset = build_set_and_mset(query_run.matchable_tokens())
+    qset, qmset = build_query_set_and_mset(query_run)
 
     len_junk = idx.len_junk
 
@@ -318,7 +354,7 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
 
         sets_by_rid = idx.msets_by_rid
         unique = False
-        idf_by_tid = idx.tokens_idf_by_tid
+        idf_by_tid = idx.bigrams_idf_by_bigram
         tfidf_computer = compute_tfidf_mset_score
 
     ###########################################################################
@@ -466,9 +502,9 @@ def compute_tfidf_tids_set_score(intersection, qset_len, idf_by_tid):
 
 def compute_tfidf_mset_score(intersection, qset_len, idf_by_tid):
     """
-    Return a score as a float for an `intersection` multiset of matched token
-    ids from a query of length `qset_len` and `idf_by_tid` a mapping of
-    {token id -> idf}
+    Return a score as a float for an `intersection` multiset of matched token id
+    bigrams from a query of length `qset_len` and `idf_by_tid` a mapping
+    of {bigram -> idf}
     """
-    return sum((tid_count / qset_len) * idf_by_tid[tid]
-               for tid, tid_count in intersection.items())
+    return sum((tid_count / qset_len) * idf_by_tid[bigram]
+               for bigram, tid_count in intersection.items())
