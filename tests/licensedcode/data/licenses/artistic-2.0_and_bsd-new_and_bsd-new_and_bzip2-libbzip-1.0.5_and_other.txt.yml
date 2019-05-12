@@ -1,9 +1,9 @@
 license_expressions:
-    - artistic-2.0 OR gpl-1.0-plus
-    - zlib
-    - unicode
-    - unicode
-    - artistic-2.0 OR gpl-1.0-plus
-    - bsd-new
-    - bsd-new
-    - bzip2-libbzip-2010
+  - artistic-2.0 OR gpl-1.0-plus
+  - zlib
+  - unicode
+  - unicode
+  - artistic-2.0 OR gpl-1.0-plus
+  - bsd-new
+  - bsd-new
+  - bzip2-libbzip-2010
