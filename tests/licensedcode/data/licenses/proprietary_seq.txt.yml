@@ -1,2 +1,2 @@
 license_expressions:
-  - commercial-license
+  - proprietary-license OR commercial-license
