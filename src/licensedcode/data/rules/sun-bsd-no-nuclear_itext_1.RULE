@@ -1,3 +1,5 @@
+The following files contain material that was copyrighted by SUN:
+
 The original code was released under the BSD license, and contained the following
 extra restriction: "You acknowledge that Software is not designed, licensed or intended
 for use in the design, construction, operation or maintenance of any nuclear facility."
@@ -11,8 +13,6 @@ Note that numerous fixes were applied to the code used in iText by Paulo Soares,
 but apart from the fixes there were no essential changes between the code that
 was originally adapted and the code that is now available under the following
 license:
-
- Copyright (c) 2005 Sun Microsystems, Inc. All  Rights Reserved.
  
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
