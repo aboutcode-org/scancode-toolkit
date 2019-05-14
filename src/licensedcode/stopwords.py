@@ -145,6 +145,9 @@ STOPWORDS = frozenset({
     #'of',
     #'a',
 
+    # common in C literals
+    'printf',
+
 })
 
 
