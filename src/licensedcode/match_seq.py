@@ -59,7 +59,7 @@ MATCH_SEQ = '3-seq'
 
 
 def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
-                   match_blocks=None):
+                   match_blocks=None, keep_high_solo=False):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     starting at `start_offset` against the `idx` index for the candidate `rule`.
@@ -89,13 +89,13 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
     while qstart <= qfinish:
 
         if TRACE2:
-            logger_debug('\n\n==========================LOOP=============================')
+            logger_debug('\n\nmatch_seq:==========================LOOP=============================')
 
         if not query_run.is_matchable(include_low=False):
             break
 
         if TRACE2:
-            logger_debug('running block_matches:', 'a_start:', qstart, 'a_end', qfinish + 1)
+            logger_debug('match_seq:running block_matches:', 'a_start:', qstart, 'a_end', qfinish + 1)
 
 
         block_matches = match_blocks(
@@ -111,7 +111,7 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
 
         for qpos, ipos, mlen in block_matches:
             if TRACE2:
-                logger_debug('\n\nblock_matches:', qpos, ipos, mlen)
+                logger_debug('\n\nmatch_seq:block_matches:', qpos, ipos, mlen)
                 logger_debug(
                     'qtokens:',  # repr(array('h', qtokens[qpos:qpos + mlen]).tostring()),
                     '\n', ' '.join(idx.tokens_by_tid[t] for t in qtokens[qpos:qpos + mlen]))
@@ -120,45 +120,46 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
                     '\n', ' '.join(idx.tokens_by_tid[t] for t in itokens[ipos:ipos + mlen]))
 
             # FIXME: really? skip single word matched as as sequence
-            if mlen < 2:
-                continue
+            # FIXME: checking the distance from the previous matches (that are
+            # always for the same rule) would be more effective
+            if mlen > 1 or (keep_high_solo and mlen ==1 and qtokens[qpos] >= len_junk):
+                qiposses = []
+                qiposses_append = qiposses.append
+    
+                for qp, ip in zip(range(qpos, qpos + mlen), range(ipos, ipos + mlen)):
+                    if qp in query_run.matchables:
+                        qiposses_append((qp, ip))
 
-            qiposses = []
-            qiposses_append = qiposses.append
-
-            for qp, ip in zip(range(qpos, qpos + mlen), range(ipos, ipos + mlen)):
-                if qp in query_run.matchables:
-                    qiposses_append((qp, ip))
-
-            qspan, ispan = zip(*qiposses)
-            qspan = Span(qspan)
-            ispan = Span(ispan)
-
-            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-
-            match = LicenseMatch(
-                rule, qspan, ispan, hispan, qbegin,
-                matcher=MATCH_SEQ, query=query)
-
-            matches.append(match)
-
-            if TRACE3:
-                from licensedcode.tracing import get_texts
-                qt, it = get_texts(match)
-                logger_debug('###########################')
-                logger_debug(match)
-                logger_debug('###########################')
-                logger_debug(qt)
-                logger_debug('###########################')
-                logger_debug(it)
-                logger_debug('###########################')
-            # FIXME: is this desirable
-            query_run.subtract(qspan)
+                if qiposses:
+                    qspan, ispan = zip(*qiposses)
+                    qspan = Span(qspan)
+                    ispan = Span(ispan)
+        
+                    hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+        
+                    match = LicenseMatch(
+                        rule, qspan, ispan, hispan, qbegin,
+                        matcher=MATCH_SEQ, query=query)
+        
+                    matches.append(match)
+        
+                    if TRACE3:
+                        from licensedcode.tracing import get_texts
+                        qt, it = get_texts(match)
+                        logger_debug('match_seq: ###########################')
+                        logger_debug(match)
+                        logger_debug('###########################')
+                        logger_debug(qt)
+                        logger_debug('###########################')
+                        logger_debug(it)
+                        logger_debug('###########################')
+                    # FIXME: could this help??
+                    # query_run.subtract(qspan)
 
             qstart = max(qstart, qpos + mlen + 1)
 
     if TRACE:
-        logger_debug('!!!    match_sequence: FINAL LicenseMatch(es)')
+        logger_debug('match_seq: FINAL LicenseMatch(es)')
         list(map(logger_debug, matches))
         logger_debug('\n\n')
 
