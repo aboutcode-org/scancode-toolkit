@@ -223,7 +223,7 @@ class TestIndexing(IndexTesting):
             'thing']
         assert expected_tids == idx.tokens_by_tid
 
-        expected_tids_all_msets_by_rid = [
+        expected_msets_by_rid = [
             {u'redistribution': 1},
             {u'is': 1, u'redistribution': 1, u'yes': 1},
             {u'allowed': 1, u'is': 1, u'redistribution': 1, u'yes': 1},
@@ -251,8 +251,8 @@ class TestIndexing(IndexTesting):
             ]
 
         htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
-                  for tids_mset in idx.tids_all_msets_by_rid]
-        assert expected_tids_all_msets_by_rid == htmset
+                  for tids_mset in idx.msets_by_rid]
+        assert expected_msets_by_rid == htmset
 
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
