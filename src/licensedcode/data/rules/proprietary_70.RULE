@@ -38,20 +38,20 @@ DEVELOPER. undertakes to provide source code of any FREE APPLICATION included in
 The following APPLICATIONS are used and distributed by DEVELOPER. on conditions other than those listed in item 2.2 of the Agreement:
 
     Firmware for Intel WiFi adapters
-    NVIDIA video adapter drivers
-    Matrox video adapter drivers
-    VIA video adapter drivers
-    NVIDIA NForce video adapter drivers
-    Drivers for pct789 (PCTel), cm8738, i8xx, sis and via686a modems
-    Promise IDE/RAID controller drivers
-    Lucent/Agere support modules
+     video adapter drivers
+     video adapter drivers
+     video adapter drivers
+      video adapter drivers
+    Drivers for  modems
+     IDE/RAID controller drivers
+    / support modules
     Adobe Flash Player Plugin
     Java 2 (SUN) Runtime Environment, Standard Edition
-    Yandex.Bar Firefox plugin
+    . Firefox plugin
 
 Owners of exclusive rights for the listed above APPLICATIONS this way or the other limit your freedom of using these APPLICATIONS. Please familiarize yourself with license agreements accompanying these APPLICATIONS to decide, whether any use of any of those APPLICATIONS is legitimate, if it's outside boundaries of "free reproduction". License agreements for these APPLICATIONS are inside correspondent packages of the Distribution.
 
-Drivers for ATI, NVIDIA and VIA video adapters are allowed to be distributed as part of ALT Linux distributions.
+Drivers for  video adapters are allowed to be distributed as part of Linux distributions.
 
 2.4 Use of Distribution's design elements and text on its cover or box
 
@@ -71,4 +71,4 @@ Copyright for Applications that are part of the Distribution, including exclusiv
 
 DEVELOPER. hope that Applications that are part of the Distribution will will be useful, but does not give any warranty for their fitness for any particular purpose or their quality (including absence of errors or standards conformity) and is not in charge for any possible damage, direct or implied, that is result of using these Applications.
 
-http://www.simplylinux.ru
+

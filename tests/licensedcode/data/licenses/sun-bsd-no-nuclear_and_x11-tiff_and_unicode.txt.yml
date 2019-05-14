@@ -1,3 +1,6 @@
 license_expressions:
-    - bsd-3-clause-no-nuclear-warranty AND x11-tiff AND unicode
-notes: intertwined license mentions
+  - bsd-3-clause-no-nuclear-warranty
+  - x11-tiff
+  - unicode
+  - unicode
+notes: intertwined license mentions in an itext notice

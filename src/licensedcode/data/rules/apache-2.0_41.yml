@@ -1,6 +1,6 @@
 license_expression: apache-2.0
 is_license_notice: yes
-minimum_coverage: 70
+minimum_coverage: 90
 referenced_filenames:
     - /usr/share/common-licenses/Apache-2.0
 relevance: 100

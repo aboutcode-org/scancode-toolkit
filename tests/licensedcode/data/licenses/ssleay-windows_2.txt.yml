@@ -1,2 +1,2 @@
 license_expressions:
-  - openssl-ssleay
+  - ssleay-windows
