@@ -24,6 +24,11 @@ Print scan results to stdout as pretty formatted JSON.
 
     scancode -lc --package --ignore README --processes 4 --json-pp - samples/
 
+Scan a file for copyright and packages. Print scan results to file as pretty
+formatted JSON.
+
+    scancode --copyright --package  samples/zlib/zlib.h --json-pp - > scan.json
+
 Scan a directory while ignoring all files with .txt extension.
 Print scan results to stdout as pretty formatted JSON.
 It is recommended to use quotes around glob patterns to prevent pattern
