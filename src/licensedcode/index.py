@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -53,7 +53,6 @@ from licensedcode import match
 from licensedcode import match_aho
 from licensedcode import match_hash
 from licensedcode import match_seq
-from licensedcode import match_set
 from licensedcode import match_spdx_lid
 from licensedcode import query
 from licensedcode import tokenize
@@ -73,6 +72,7 @@ TRACE = False
 TRACE_MATCHES = False
 TRACE_MATCHES_TEXT = False
 TRACE_NEGATIVE = False
+TRACE_APPROX = False
 TRACE_INDEXING_PERF = False
 TRACE_TOKEN_DOC_FREQ = False
 
@@ -84,6 +84,7 @@ def logger_debug(*args):
 if (TRACE
 or TRACE_MATCHES
 or TRACE_NEGATIVE
+or TRACE_APPROX
 or TRACE_INDEXING_PERF):
 
     import logging
@@ -98,20 +99,38 @@ or TRACE_INDEXING_PERF):
                                      for a in args))
 
 
-# Feature switch to enable or not ngram fragments detection
+############################## Feature SWITCHES ################################
+########## Ngram fragments detection
 USE_AHO_FRAGMENTS = False
-
 # length of ngrams used for fragments detection
-NGRAM_LEN = 6
+AHO_FRAGMENTS_NGRAM_LEN = 6
 
-
+########## Query run breaking using rule starts
 # Feature switch to enable or not extra query run breaking based on rule starts
 USE_RULE_STARTS = False
 
+########## Alternative diff
+# Use standard or alternative diff/sequence matching algorithm
+USE_STANDARD_SEQ = True
+if USE_STANDARD_SEQ:
+    from licensedcode.seq import match_blocks  # NOQA
+else:
+    from licensedcode.dmp import match_blocks  # NOQA
 
-# Maximum number of unique tokens we can handle: 16 bits signed integers are up to
-# 32767. Since we use internally several arrays of ints for smaller and optimized
-# storage we cannot exceed this number of tokens.
+########## Use Bigrams instead of tokens
+# Enable using an bigrams for multisets/bags instead of tokens
+USE_BIGRAM_MULTISETS = False
+if USE_BIGRAM_MULTISETS:
+    from licensedcode import match_setng as match_set  # NOQA
+else:
+    from licensedcode import match_set  # NOQA
+
+############################## Feature SWITCHES ################################
+
+
+# Maximum number of unique tokens we can handle: 16 bits signed integers are up
+# to 32767. Since we use internally several arrays of ints for smaller and
+# optimized storage we cannot exceed this number of tokens.
 MAX_TOKENS = (2 ** 15) - 1
 
 # If 1/4, 1/4 of all tokens will be treated as junk
@@ -135,14 +154,15 @@ class LicenseIndex(object):
         'tokens_by_tid',
 
         'tokens_idf_by_tid',
+        'bigrams_idf_by_bigram',
 
         'rules_by_rid',
         'tids_by_rid',
 
         'high_postings_by_rid',
 
-        'tids_all_sets_by_rid',
-        'tids_all_msets_by_rid',
+        'sets_by_rid',
+        'msets_by_rid',
 
         'rid_by_hash',
         'rules_automaton',
@@ -188,6 +208,10 @@ class LicenseIndex(object):
         # document occurence frequency) as a float.
         self.tokens_idf_by_tid = []
 
+        # mapping of bigram tuple -> bigrams IDF (inverse document frequency) as
+        # a float.
+        self.bigrams_idf_by_bigram = {}
+
         # Note: all the following are mappings-like (using lists) of
         # rid-> data are lists of data where the index is the rule id.
 
@@ -203,17 +227,17 @@ class LicenseIndex(object):
         self.high_postings_by_rid = []
 
         # mapping-like of rule_id -> tokens ids sets/multisets
-        self.tids_all_sets_by_rid = []
-        self.tids_all_msets_by_rid = []
+        self.sets_by_rid = []
+        self.msets_by_rid = []
 
         # mapping of hash -> single rid for hash match: duplicated rules are not allowed
         self.rid_by_hash = {}
 
         # Aho-Corasick automatons for regular and negative rules
         self.rules_automaton = match_aho.get_automaton()
-        self.fragments_automaton = match_aho.get_automaton() if USE_AHO_FRAGMENTS else None
+        self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
         self.negative_automaton = match_aho.get_automaton()
-        self.starts_automaton = match_aho.get_automaton() if USE_RULE_STARTS else None
+        self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
 
         # disjunctive sets of rule ids: regular, negative, false positive, and
         # things that can only be matched exactly
@@ -240,22 +264,20 @@ class LicenseIndex(object):
             if TRACE_TOKEN_DOC_FREQ:
                 print('LicenseIndex: token, frequency')
                 from itertools import chain
-                tokens_by_tid = self.tokens_by_tid
-                regular_rids = self.regular_rids
-                tokens_idf_by_tid = self.tokens_idf_by_tid
-                tf = Counter(chain.from_iterable(
-                    tids for rid, tids in enumerate(self.tids_by_rid)
-                    if rid in regular_rids))
+                tf = Counter(chain.from_iterable(tids for rid, tids
+                        in enumerate(self.tids_by_rid)
+                        if rid in self.regular_rids))
 
                 for tid, freq in tf.most_common():
-                    ts = tokens_by_tid[tid]
-                    idf = tokens_idf_by_tid[tid]
+                    ts = self.tokens_by_tid[tid]
+                    idf = self.tokens_idf_by_tid[tid]
                     print(u'"{ts}","{freq}","{idf}"'.format(**locals()))
 
             if TRACE_INDEXING_PERF:
                 duration = time() - start
                 len_rules = len(self.rules_by_rid)
-                print('LicenseIndex: built index with %(len_rules)d rules in %(duration)f seconds.' % locals())
+                print('LicenseIndex: built index with %(len_rules)d rules in '
+                      '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
     def _add_rules(self, rules, _ranked_tokens=global_tokens_by_ranks,
@@ -369,14 +391,17 @@ class LicenseIndex(object):
         self.len_good = len_tokens - len_junk
         len_rules = len(self.rules_by_rid)
 
-        # a count in how many doc a tokens shows into
+        # count in how many doc a token shows into
         tokens_doc_freq_by_tid = [0 for _ in range(len_tokens)]
+
+        # count in how many doc a token bigram shows into
+        bigrams_doc_freq_by_big = defaultdict(int)
 
         # since we only use these for regular rules, these lists may be sparse.
         # their index is the rule rid
         self.high_postings_by_rid = high_postings_by_rid = [None] * len_rules
-        self.tids_all_sets_by_rid = tids_all_sets_by_rid = [None] * len_rules
-        self.tids_all_msets_by_rid = tids_all_msets_by_rid = [None] * len_rules
+        self.sets_by_rid = sets_by_rid = [None] * len_rules
+        self.msets_by_rid = msets_by_rid = [None] * len_rules
 
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
@@ -405,12 +430,12 @@ class LicenseIndex(object):
         rid_by_hash = self.rid_by_hash
         match_hash_index_hash = match_hash.index_hash
         match_set_tids_set_counter = match_set.tids_set_counter
-        match_set_tids_multiset_counter = match_set.tids_multiset_counter
+        match_set_multiset_counter = match_set.multiset_counter
 
         len_starts = SMALL_RULE
         min_len_starts = SMALL_RULE * 6
 
-        ngram_len = NGRAM_LEN
+        ngram_len = AHO_FRAGMENTS_NGRAM_LEN
 
         #######################################################################
         # build by-rule index structures over the token ids seq of each rule
@@ -433,12 +458,12 @@ class LicenseIndex(object):
 
             rule.is_approx_matchable = is_approx_matchable = rid not in weak_rids
 
-            # no postings for rules that cannot be matched as a sequence (too short and weak)
-            if is_approx_matchable:
-                ####################
-                # update high postings index: positions by high tids used to
-                # speed up sequence matching
-                ####################
+            ####################
+            # update high postings index: positions by high tids used to
+            # speed up sequence matching
+            ####################
+            if USE_STANDARD_SEQ and is_approx_matchable:
+                # no postings for rules that cannot be matched as a sequence (too short and weak)
                 # TODO: this could be optimized with a group_by
                 postings = defaultdict(list)
                 for pos, tid in enumerate(rule_token_ids):
@@ -450,17 +475,17 @@ class LicenseIndex(object):
                 sparsify(postings)
                 high_postings_by_rid[rid] = postings
 
-                ####################
-                # ... and ngram fragments: compute ngrams and populate an automaton with ngrams
-                ####################
-                if (USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > ngram_len):
-                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
-                    all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
-                    # all_ngrams_with_pos = enumerate(all_ngrams)
-                    for pos, ngram in all_ngrams_with_pos:
-                        fragments_automaton_add(tids=ngram, rid=rid, start=pos)
-                #############################################################
-                #############################################################
+            ####################
+            # ... and ngram fragments: compute ngrams and populate an automaton with ngrams
+            ####################
+            if USE_AHO_FRAGMENTS and is_approx_matchable and rule.minimum_coverage < 100 and rule.length > ngram_len:
+                all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
+                all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
+                # all_ngrams_with_pos = enumerate(all_ngrams)
+                for pos, ngram in all_ngrams_with_pos:
+                    fragments_automaton_add(tids=ngram, rid=rid, start=pos)
+            #############################################################
+            #############################################################
 
             # use the start and end of this rule as a break point for query runs
             if USE_RULE_STARTS and is_approx_matchable and rule.length > min_len_starts:
@@ -472,15 +497,16 @@ class LicenseIndex(object):
             ####################
             # build sets and multisets indexes, for all regular rules as we need the thresholds
             ####################
-            tids_set, tids_mset = match_set.index_token_sets(rule_token_ids)
-            tids_all_msets_by_rid[rid] = tids_mset
-            tids_all_sets_by_rid[rid] = tids_set
+            tids_set, mset = match_set.build_set_and_mset(rule_token_ids)
+            sets_by_rid[rid] = tids_set
+            msets_by_rid[rid] = mset
 
             ####################################################################
             ####################################################################
-            # FIXME!!!!!!! we should store them if we need them
+            # FIXME!!!!!!! we should store them: we need them and we recompute
+            # them later at match time
             tids_set_high = match_set.high_tids_set_subset(tids_set, len_junk)
-            tids_mset_high = match_set.high_tids_multiset_subset(tids_mset, len_junk)
+            mset_high = match_set.high_multiset_subset(mset, len_junk)
 
             # FIXME!!!!!!!
             ####################################################################
@@ -492,7 +518,7 @@ class LicenseIndex(object):
             rule.length_unique = match_set_tids_set_counter(tids_set)
             rule.high_length_unique = match_set_tids_set_counter(tids_set_high)
 
-            rule.high_length = match_set_tids_multiset_counter(tids_mset_high)
+            rule.high_length = match_set_multiset_counter(mset_high)
             rule.compute_thresholds()
 
             ####################
@@ -500,6 +526,10 @@ class LicenseIndex(object):
             ####################
             for tid in tids_set:
                 tokens_doc_freq_by_tid[tid] += 1
+
+            if USE_BIGRAM_MULTISETS:
+                for bigram in tokenize.ngrams(rule_token_ids, 2):
+                    bigrams_doc_freq_by_big[tuple(bigram)] += 1
 
             ####################
             # populate automaton with the whole rule tokens sequence, for
@@ -510,13 +540,20 @@ class LicenseIndex(object):
         # finalize automatons
         self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
+
         if USE_AHO_FRAGMENTS:
             self.fragments_automaton.make_automaton()
+
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
 
         # finalize tokens IDF (inverse documents frequency)
-        self.tokens_idf_by_tid = match_set.compute_idfs(len_rules, tokens_doc_freq_by_tid)
+        self.tokens_idf_by_tid = match_set.compute_token_idfs(
+            len_rules, tokens_doc_freq_by_tid)
+
+        if USE_BIGRAM_MULTISETS:
+            self.bigrams_idf_by_bigram = match_set.compute_bigram_idfs(# NOQA
+                len_rules, bigrams_doc_freq_by_big)
 
         # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
@@ -624,16 +661,20 @@ class LicenseIndex(object):
         multiple local alignments (aka. diff). Return a list of matches.
         """
         matches = []
-
         if USE_RULE_STARTS:
             query.refine_runs()
 
         MAX_CANDIDATES = 65
 
+        if TRACE_APPROX:
+            logger_debug('get_approximate_matches: len(query.query_runs):', len(query.query_runs))
+
         for query_run in query.query_runs:
 
             # we cannot do a sequence match in query run without some high token left
             if not query_run.is_matchable(include_low=False, qspans=matched_qspans):
+                if TRACE_APPROX:
+                    logger_debug('get_approximate_matches: query_run not matchable:', query.query_runs)
                 continue
 
             # collect rules already matched exactly withing that query run: we
@@ -651,20 +692,31 @@ class LicenseIndex(object):
                 matchable_rids=matchable_rids,
                 top=MAX_CANDIDATES)
 
+            if TRACE_APPROX:
+                logger_debug('get_approximate_matches: candidates:', [cr for cr, _ in candidates])
+
             # Perform multiple sequence matching/alignment for each candidate,
             # query run-level for as long as we have more non-overlapping
             # matches returned
             for candidate_rule, high_intersection in candidates:
-                high_postings = self.high_postings_by_rid[candidate_rule.rid]
-                high_postings = {
-                    tid: postings for tid, postings in high_postings.items()
-                        if tid in high_intersection}
+                if USE_STANDARD_SEQ:
+                    high_postings = self.high_postings_by_rid[candidate_rule.rid]
+                    high_postings = {
+                        tid: postings for tid, postings in high_postings.items()
+                            if tid in high_intersection}
+                    if TRACE_APPROX:
+                        logger_debug('get_approximate_matches: using high_postings:', len(high_postings))
+                else:
+                    high_postings = None
+
+
                 start_offset = 0
                 while True:
                     rule_matches = match_seq.match_sequence(
                         self, candidate_rule, query_run,
                         high_postings=high_postings,
-                        start_offset=start_offset)
+                        start_offset=start_offset,
+                        match_blocks=match_blocks)
                     if not rule_matches:
                         break
                     matches_end = max(m.qend for m in rule_matches)
@@ -732,6 +784,7 @@ class LicenseIndex(object):
             approx = (self.get_fragments_matches, False)
         else:
             approx = (self.get_approximate_matches, False)
+
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
             (self.get_spdx_id_matches, True),
@@ -741,10 +794,12 @@ class LicenseIndex(object):
 
         already_matched_qspans = []
         for matcher, include_low in matchers:
-            matched = matcher(qry, matched_qspans=already_matched_qspans, existing_matches=matches)
             if TRACE:
                 logger_debug()
                 logger_debug('matching with matcher:', matcher)
+
+            matched = matcher(qry, matched_qspans=already_matched_qspans, existing_matches=matches)
+            if TRACE:
                 self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
 
             matches.extend(matched)
