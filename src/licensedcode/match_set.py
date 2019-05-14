@@ -28,6 +28,7 @@ from __future__ import division
 
 from array import array
 from collections import defaultdict
+from collections import namedtuple
 from math import log
 
 from intbitset import intbitset
@@ -334,6 +335,24 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     return candidates
 
 
+_score_fields = ['score' ,
+'high_tfidf_score',
+'tfidf_score',
+'adjusted_containment',
+'high_containment',
+'containment',
+'high_resemblance',
+'resemblance',
+'high_matched_length',
+'minus_high_distance',
+'minus_distance',
+'matched_length',
+'iset_len',
+'qset_len']
+
+ScoresVector = namedtuple('ScoresVector', _score_fields)
+
+
 def compare_token_sets(
         qset, qset_len, high_qset_len,
         iset,
@@ -343,9 +362,11 @@ def compare_token_sets(
         tfidf_computer,
         idf_by_tid):
     """
-    Return a score tuple for rank sorting key or (None, None).
-    Compare a `qset` query token ids set or multiset with a `iset` index rule
-    token ids set or multiset.
+    Compare a `qset` query set or multiset with a `iset` index rule set or
+    multiset. Return a tuple of (ScoresVector tuple, intersection) from
+    comparing the sets. The ScoresVector is designed to be used as a rank
+    sorting key to rank multiple set intersections. Return (None, None) if there
+    is no relevant intersection between sets.
     """
     intersection = intersector(qset, iset)
     if not intersection:
@@ -402,11 +423,11 @@ def compare_token_sets(
 
     tfidf_score = tfidf_computer(intersection=intersection,
         qset_len=qset_len, idf_by_tid=idf_by_tid)
+    # tdidf_score = tdidf_score / intersection_len
 
     high_tfidf_score = tfidf_computer(intersection=high_intersection,
         qset_len=high_qset_len, idf_by_tid=idf_by_tid)
 
-#     tdidf_score = tdidf_score / intersection_len
 
     score = (
         6 * high_tfidf_score +
@@ -418,40 +439,23 @@ def compare_token_sets(
         1 * resemblance
     ) / 30
 
-    if TRACE_CANDIDATES:
-        return (
-            'score', score,
-            'high_tfidf_score', round(high_tfidf_score, 5),
-            'tfidf_score', round(tfidf_score, 5),
-            'adjusted_containment', round(adjusted_containment, 5),
-            'high_containment', round(high_containment, 5),
-            'containment', round(containment, 5),
-            'high_resemblance', round(resemblance, 5),
-            'resemblance', round(resemblance, 5),
-            'high_matched_length', high_matched_length,
-            '-high_distance', -high_distance,
-            '-distance', -distance,
-            'matched_length', matched_length,
-            'iset_len', iset_len,
-            'qset_len', qset_len,
-        ), high_intersection
-
-    return (
-        score,
-        round(high_tfidf_score, 5),
-        round(tfidf_score, 5),
-        round(adjusted_containment, 5),
-        round(high_containment, 5),
-        round(containment, 5),
-        round(resemblance, 5),
-        round(resemblance, 5),
-        high_matched_length,
-        -high_distance,
-        -distance,
-        matched_length,
-        iset_len,
-        qset_len,
-    ), high_intersection
+    scores = ScoresVector(
+        score=score,
+        high_tfidf_score=round(high_tfidf_score, 5),
+        tfidf_score=round(tfidf_score, 5),
+        adjusted_containment=round(adjusted_containment, 5),
+        high_containment=round(high_containment, 5),
+        containment=round(containment, 5),
+        high_resemblance=round(high_resemblance, 5),
+        resemblance=round(resemblance, 5),
+        high_matched_length=high_matched_length,
+        minus_high_distance=-high_distance,
+        minus_distance=-distance,
+        matched_length=matched_length,
+        iset_len=iset_len,
+        qset_len=qset_len,
+    )
+    return scores, high_intersection
 
 
 def compute_tfidf_tids_set_score(intersection, qset_len, idf_by_tid):
