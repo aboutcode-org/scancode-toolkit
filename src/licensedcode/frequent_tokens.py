@@ -10525,6 +10525,7 @@ HSQLDB
 RedBase
 rabbitmq
 OLIVETTI
+libgcj
 '''
 
 
