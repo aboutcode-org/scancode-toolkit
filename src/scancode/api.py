@@ -180,6 +180,11 @@ def get_licenses(location, min_score=0, include_text=False,
     detected_expressions = []
     for match in idx.match(location=location, min_score=min_score, **kwargs):
         
+        if include_text:
+            # TODO: handle whole lines with the case of very long lines
+            matched_text = match.matched_text(whole_lines=False)
+
+
         detected_expressions.append(match.rule.license_expression)
 
         for license_key in match.rule.license_keys():
@@ -224,7 +229,6 @@ def get_licenses(location, min_score=0, include_text=False,
 
             # FIXME: for sanity this should always be included?????
             if include_text:
-                matched_text = match.matched_text(whole_lines=False)
                 result['matched_text'] = matched_text
 
     return OrderedDict([
