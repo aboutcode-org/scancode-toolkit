@@ -3,3 +3,4 @@ short_name: X11-Style (Lucent)
 name: X11-Style (Lucent)
 category: Permissive
 owner: Alcatel-Lucent
+minimum_coverage: 80

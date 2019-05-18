@@ -1,0 +1,59 @@
+ADAPTIVE PUBLIC LICENSE
+Version 1.0
+THE LICENSED WORK IS PROVIDED UNDER THE TERMS OF THIS ADAPTIVE PUBLIC LICENSE ("LICENSE"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE LICENSED WORK CONSTITUTES RECIPIENT''S ACCEPTANCE OF THIS LICENSE AND ITS TERMS, WHETHER OR NOT SUCH RECIPIENT READS THE TERMS OF THIS LICENSE. "LICENSED WORK" AND "RECIPIENT" ARE DEFINED BELOW.
+
+IMPORTANT NOTE: This License is "adaptive", and the generic version or another version of an Adaptive Public License should not be relied upon to determine your rights and obligations under this License. You must read the specific Adaptive Public License that you receive with the Licensed Work, as certain terms are defined at the outset by the Initial Contributor.
+
+See Section 2.2 below, Exhibit A attached, and any Suppfile.txt accompanying this License to determine the specific adaptive features applicable to this License. For example, without limiting the foregoing, (a) for selected choice of law and jurisdiction see Part 3 of Exhibit A; (b) for the selected definition of Third Party see Part 4 of Exhibit A; and (c) for selected patent licensing terms (if any) see Section 2.2 below and Part 6 of Exhibit A.
+
+1. DEFINITIONS.
+
+1.1. "CONTRIBUTION" means:
+
+(a) In the case of the Initial Contributor, the Initial Work distributed under this License by the Initial Contributor; and
+
+(b) In the case of each Subsequent Contributor, the Subsequent Work originating from and distributed by such Subsequent Contributor.
+
+1.2. "DESIGNATED WEB SITE" means the web site having the URL identified in Part 1 of Exhibit A, which URL may be changed by the Initial Contributor by posting on the current Designated Web Site the new URL for at least sixty (60) days.
+
+1.3. "DISTRIBUTOR" means any Person that distributes the Licensed Work or any portion thereof to at least one Third Party.
+
+1.4. "ELECTRONIC DISTRIBUTION MECHANISM" means any mechanism generally accepted in the software development community for the electronic transfer of data.
+
+1.5. "EXECUTABLE" means the Licensed Work in any form other than Source Code.
+
+1.6. "GOVERNING JURISDICTION" means the state, province or other legal jurisdiction identified in Part 3 of Exhibit A.
+
+1.7. "INDEPENDENT MODULE" means a separate module of software and/or data that is not a derivative work of or copied from the Licensed Work or any portion thereof. In addition, a module does not qualify as an Independent Module but instead forms part of the Licensed Work if the module: (a) is embedded in the Licensed Work; (b) is included by reference in the Licensed Work other than by a function call or a class reference; or (c) must be included or contained, in whole or in part, within a file directory or subdirectory actually containing files making up the Licensed Work.
+
+1.8. "INITIAL CONTRIBUTOR" means the Person or entity identified as the Initial Contributor in the notice required by Part 1 of Exhibit A.
+
+1.9. "INITIAL WORK" means the initial Source Code, object code (if any) and documentation for the computer program identified in Part 2 of Exhibit A, as such Source Code, object code and documentation is distributed under this License by the Initial Contributor.
+
+1.10. "LARGER WORK" means a work that combines the Licensed Work or portions thereof with code not governed by this License.
+
+1.11. "LICENSED WORK" means the Initial Work and/or any Subsequent Work, in each case including portions thereof.
+
+1.12. "LICENSE NOTICE" has the meaning assigned in Part 5 of Exhibit A.
+
+1.13. "MODIFICATION" or "MODIFICATIONS" means any change to and/or addition to the Licensed Work.
+
+1.14. "PERSON" means an individual or other legal entity, including a corporation, partnership or other body.
+
+1.15. "RECIPIENT" means any Person who receives or obtains the Licensed Work under this License (by way of example, without limiting the foregoing, any Subsequent Contributor or Distributor).
+
+1.16. "SOURCE CODE" means the source code for a computer program, including the source code for all modules and components of the computer program, plus any associated interface definition files, and scripts used to control compilation and installation of an executable.
+
+1.17. "SUBSEQUENT CONTRIBUTOR" means any Person that makes or contributes to the making of any Subsequent Work and that distributes that Subsequent Work to at least one Third Party.
+
+1.18. "SUBSEQUENT WORK" means a work that has resulted or arises from changes to and/or additions to:
+
+(a) the Initial Work;
+
+(b) any other Subsequent Work; or
+
+(c) to any combination of the Initial Work and any such other Subsequent Work;
+
+where such changes and/or additions originate from a Subsequent Contributor. A Subsequent Work will "originate" from a Subsequent Contributor if the Subsequent Work was a result of efforts by such Subsequent Contributor (or anyone acting on such Subsequent Contributor''s behalf, such as, a contractor or other entity that is engaged by or under the direction of the Subsequent Contributor). For greater certainty, a Subsequent Work expressly excludes and shall not capture within its meaning any Independent Module.
+
+1.19. "SUPPLEMENT FILE" means a file distributed with the Licensed Work having a file name "suppfile.txt".

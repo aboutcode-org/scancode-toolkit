@@ -3,3 +3,6 @@ short_name: X11-Style (Realmode)
 name: X11-Style (Realmode)
 category: Permissive
 owner: XFree86 Project, Inc
+minimum_coverage: 80
+notes: a composite of x11-keith-packard and other license comments
+minimum_coverage: 80

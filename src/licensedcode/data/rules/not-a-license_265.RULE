@@ -1,0 +1,4 @@
+The license was clarified
+so that the code that SWIG generated could be distributed
+under license terms of the user's choice/requirements and at the same time the SWIG
+source was placed under the GNU General Public License version 3.

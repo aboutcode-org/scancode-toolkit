@@ -9,3 +9,4 @@ spdx_license_key: NTP
 osi_url: https://opensource.org/licenses/NTP
 other_urls:
     - http://www.opensource.org/licenses/NTP
+minimum_coverage: 70

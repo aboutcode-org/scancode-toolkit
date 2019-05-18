@@ -1,2 +1,4 @@
 license_expression: mit-old-style-no-advert
 is_license_text: yes
+minimum_coverage: 90
+notes: this has the extra "and sell" permissions

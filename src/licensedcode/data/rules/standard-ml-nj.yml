@@ -1,4 +1,3 @@
 license_expression: standard-ml-nj
 is_license_text: yes
-minimum_coverage: 90
-notes: a variant with a repeated warranty disclaimer
+minimum_coverage: 80
