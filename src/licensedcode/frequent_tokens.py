@@ -40,7 +40,6 @@ import string
 
 def frequent_global_words():
     return u'''
-_
 the
 of
 and
@@ -9394,8 +9393,8 @@ bmc
 Corcoran
 Daisuke
 Okajima
-Kohsuke 
-Kawaguchi 
+Kohsuke
+Kawaguchi
 relaxngcc
 linuxnet
 MUSCLE
@@ -9654,9 +9653,9 @@ mp3
 dav webdav
 mod
 Foundation Inc
-Hewlett-Packard Company Palo Alto Ca
-Digital Equipment Corporation, Maynard, Mass.
-JA-SIG jasig collaborative
+Hewlett Packard Company Palo Alto Ca
+Digital Equipment Corporation Maynard Mass
+JA SIG jasig collaborative
 yan
 Christopher
 Andrew
@@ -9788,10 +9787,10 @@ bound
 conditions
 condition
 Initial Writer
-following 
-files 
-contain 
-material 
+following
+files
+contain
+material
 SUN
 preview
 Android SDK
@@ -9895,7 +9894,7 @@ Herzegovina
 Bulgaria
 Croatia
 Cyprus
-Czech 
+Czech
 Republic
 Denmark
 Estonia
@@ -9957,9 +9956,7 @@ dr
 eCryptfs
 MICRONAS
 USA
-HEWLETT-PACKARD
 HEWLETT PACKARD
-GTCO-CALCOMP
 GTCO CALCOMP
 sha256
 sha512
@@ -10007,7 +10004,7 @@ device structures
 vectors
 wireless lan
 GnuPG
-Jean-loup
+Jean loup
 Jean loup Gailly
 Mark Adler
 jloup
@@ -10067,9 +10064,9 @@ openscenegraph
 Robert
 Osfield
 SDBM
-James Newton-King
-_blank
-_target
+James Newton King
+blank
+target
 target
 aaad
 aac
@@ -10135,7 +10132,7 @@ classnames
 cli
 close
 closed
-cloud-based
+cloud based
 collect
 collection
 collections
@@ -10204,7 +10201,7 @@ editors
 einen
 element
 en
-en_us
+en us
 enablin
 encode
 encoded
@@ -10325,7 +10322,7 @@ overwrite
 panasonic
 parameter
 parsing
-php-development
+php development
 plan9
 plugins
 precedente
@@ -10435,7 +10432,7 @@ vs
 vue
 wasn
 ways
-web-based
+web based
 workaround
 working
 wrapper
@@ -10453,7 +10450,7 @@ smartmontools
 smartmontool
 w64
 mingw
-runtime 
+runtime
 psycopg
 psycopg2
 adapter
@@ -10503,7 +10500,7 @@ GmbH
 filamentgroup
 Nelson Morgan
 John Wawrzynek
-balupton 
+balupton
 jquery
 history
 prawn
