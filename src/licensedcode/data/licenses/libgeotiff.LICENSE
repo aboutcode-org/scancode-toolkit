@@ -71,7 +71,6 @@ conditions:
    ascribed to the EPSG dataset which is made available at no charge. The
    ownership of the EPSG dataset [OGP] must be acknowledged.
 
-
 3. Subsets of information may be extracted from the dataset. Users are
    advised that coordinate reference system and coordinate transformation
    descriptions are incomplete unless all elements detailed as essential
