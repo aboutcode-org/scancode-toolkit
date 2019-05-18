@@ -5,4 +5,4 @@ category: Permissive
 owner: XFree86 Project, Inc
 minimum_coverage: 80
 notes: a composite of x11-keith-packard and other license comments
-minimum_coverage: 80
+minimum_coverage: 85

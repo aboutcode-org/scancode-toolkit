@@ -6,3 +6,4 @@ owner: JGraph
 homepage_url: http://www.jgraph.com/jgraphdownload.html
 other_urls:
     - http://www.jgraph.com/jgraphdownload.html
+minimum_coverage: 70

@@ -7,3 +7,4 @@ homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
 other_urls:
     - https://nodejs.org/en/
 notes: composite
+minimum_coverage: 70

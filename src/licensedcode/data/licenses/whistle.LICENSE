@@ -1,12 +1,10 @@
-Copyright (c) 1996-1999 Whistle Communications, Inc.
-All rights reserved.
-
 Subject to the following obligations and disclaimer of warranty, use and
 redistribution of this software, in source or object code forms, with or
 without modifications are expressly permitted by Whistle Communications;
 provided, however, that:
 1. Any and all reproductions of the source or object code must include the
 copyright notice above and the following disclaimer of warranties; and
+
 2. No rights are granted, in any manner or form, to use Whistle
 Communications, Inc. trademarks, including the mark "WHISTLE
 COMMUNICATIONS" on advertising, endorsements, or otherwise except as
@@ -29,5 +27,3 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF WHISTLE COMMUNICATIONS IS ADVISED OF THE POSSIBILITY
 OF SUCH DAMAGE.
-
-Author: Julian Elischer <julian@freebsd.org>

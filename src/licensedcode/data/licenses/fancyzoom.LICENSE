@@ -1,13 +1,3 @@
-FancyZoom.js - v1.1 - http://www.fancyzoom.com
-
-Copyright (c) 2008 Cabel Sasser / Panic Inc
-All rights reserved.
-
-Requires: FancyZoomHTML.js
-Instructions: Include JS files in page, call setupZoom() in onLoad. That's it!
-              Any <a href> links to images will be updated to zoom inline.
-              Add rel="nozoom" to your <a href> to disable zooming for an image.
-
 Redistribution and use of this effect in source form, with or without modification,
 are permitted provided that the following conditions are met:
 
