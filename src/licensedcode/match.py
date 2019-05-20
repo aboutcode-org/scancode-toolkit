@@ -506,6 +506,26 @@ class LicenseMatch(object):
 
         return False
 
+    def itokens(self, idx):
+        """
+        Return the sequence of matched itoken ids.
+        """
+        ispan = self.ispan
+        rid = self.rule.rid
+        if rid is not None:
+            for pos, token in enumerate(idx.tids_by_rid[rid]):
+                if pos in ispan:
+                    yield token
+
+    def itokens_hash(self, idx):
+        """
+        Return a hash from the matched itoken ids.
+        """
+        from licensedcode.match_hash import index_hash
+        itokens = list(self.itokens(idx))
+        if itokens:
+            return index_hash(itokens)
+
     def matched_text(self, whole_lines=False,
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
         """
@@ -1196,21 +1216,32 @@ def filter_spurious_matches(matches):
     return kept, discarded
 
 
-def filter_false_positive_matches(matches):
+def filter_false_positive_matches(matches, idx=None):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches given a `matches` list of LicenseMatch by removing
     matches to false positive rules.
     """
+    from licensedcode.models import SpdxRule
+
     kept = []
     discarded = []
+    false_positive_rid_by_hash = idx.false_positive_rid_by_hash
+
     for match in matches:
         if match.rule.is_false_positive:
             if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
             discarded.append(match)
-        else:
-            # if TRACE_REFINE: logger_debug('    ==> NOT DISCARDING FALSE POSITIVE:', match)
-            kept.append(match)
+            continue
+
+        if not isinstance(match.rule, SpdxRule) and idx:
+            if match.rule.rid is not None and match.itokens_hash(idx) in false_positive_rid_by_hash:
+                if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE HASH:', match)
+                discarded.append(match)
+                continue
+        
+        kept.append(match)
+
     return kept, discarded
 
 
@@ -1287,7 +1318,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     _log(matches, discarded_contained, 'NON CONTAINED')
 
     if filter_false_positive:
-        matches, discarded = filter_false_positive_matches(matches)
+        matches, discarded = filter_false_positive_matches(matches, idx)
         all_discarded.extend(discarded)
         _log(matches, discarded, 'TRUE POSITIVE')
 
