@@ -36,6 +36,7 @@ from operator import itemgetter
 import pickle
 import sys
 from time import time
+from licensedcode.match_set import ScoresVector
 
 # Python 2 and 3 support
 try:
@@ -54,6 +55,8 @@ from licensedcode import match_aho
 from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_spdx_lid
+from licensedcode.dmp import match_blocks as match_blocks_dmp
+from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
 
@@ -61,10 +64,10 @@ from licensedcode import tokenize
 """
 Main license index construction, query processing and matching entry points for
 license detection.
-The LicenseIndex is the main class and holds the index structures and the
-`match` method drives the matching as a succession of matching strategies.
-Actual matching is delegated to other modules that implement a matching
-strategy.
+
+The LicenseIndex is the main class and holds the index structures. The `match`
+method drives the matching using a succession of matching strategies. Actual
+matching is delegated to other modules that implement a matching strategy.
 """
 
 # Tracing flags
@@ -73,6 +76,7 @@ TRACE_MATCHES = False
 TRACE_MATCHES_TEXT = False
 TRACE_NEGATIVE = False
 TRACE_APPROX = False
+TRACE_APPROX_CANDIDATES = False
 TRACE_INDEXING_PERF = False
 TRACE_TOKEN_DOC_FREQ = False
 
@@ -81,11 +85,9 @@ def logger_debug(*args):
     pass
 
 
-if (TRACE
-or TRACE_MATCHES
-or TRACE_NEGATIVE
-or TRACE_APPROX
-or TRACE_INDEXING_PERF):
+if (TRACE or TRACE_MATCHES or TRACE_NEGATIVE
+    or TRACE_APPROX or TRACE_APPROX_CANDIDATES
+    or TRACE_INDEXING_PERF):
 
     import logging
 
@@ -108,14 +110,6 @@ AHO_FRAGMENTS_NGRAM_LEN = 6
 ########## Query run breaking using rule starts
 # Feature switch to enable or not extra query run breaking based on rule starts
 USE_RULE_STARTS = False
-
-########## Alternative diff
-# Use standard or alternative diff/sequence matching algorithm
-USE_STANDARD_SEQ = True
-if USE_STANDARD_SEQ:
-    from licensedcode.seq import match_blocks  # NOQA
-else:
-    from licensedcode.dmp import match_blocks  # NOQA
 
 ########## Use Bigrams instead of tokens
 # Enable using an bigrams for multisets/bags instead of tokens
@@ -165,6 +159,7 @@ class LicenseIndex(object):
         'msets_by_rid',
 
         'rid_by_hash',
+        'false_positive_rid_by_hash',
         'rules_automaton',
         'fragments_automaton',
         'negative_automaton',
@@ -232,6 +227,9 @@ class LicenseIndex(object):
 
         # mapping of hash -> single rid for hash match: duplicated rules are not allowed
         self.rid_by_hash = {}
+
+        # mapping of hash -> single false positive rid for hash match
+        self.false_positive_rid_by_hash = {}
 
         # Aho-Corasick automatons for regular and negative rules
         self.rules_automaton = match_aho.get_automaton()
@@ -428,6 +426,7 @@ class LicenseIndex(object):
         # OPTIMIZED: bind frequently used objects to local scope
         rules_by_rid = self.rules_by_rid
         rid_by_hash = self.rid_by_hash
+        false_positive_rid_by_hash = self.false_positive_rid_by_hash
         match_hash_index_hash = match_hash.index_hash
         match_set_tids_set_counter = match_set.tids_set_counter
         match_set_multiset_counter = match_set.multiset_counter
@@ -454,15 +453,17 @@ class LicenseIndex(object):
                 continue
 
             # update hashes index
-            rid_by_hash[rule_hash] = rid
-
-            rule.is_approx_matchable = is_approx_matchable = rid not in weak_rids
+            if rule.is_false_positive:
+                false_positive_rid_by_hash[rule_hash] = rid
+            else:
+                rid_by_hash[rule_hash] = rid
+            rule.is_approx_matchable = is_approx_matchable = rid not in weak_rids and not rule.is_false_positive
 
             ####################
             # update high postings index: positions by high tids used to
             # speed up sequence matching
             ####################
-            if USE_STANDARD_SEQ and is_approx_matchable:
+            if is_approx_matchable:
                 # no postings for rules that cannot be matched as a sequence (too short and weak)
                 # TODO: this could be optimized with a group_by
                 postings = defaultdict(list)
@@ -557,6 +558,7 @@ class LicenseIndex(object):
 
         # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
+        sparsify(self.false_positive_rid_by_hash)
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
@@ -664,10 +666,13 @@ class LicenseIndex(object):
         if USE_RULE_STARTS:
             query.refine_runs()
 
-        MAX_CANDIDATES = 65
+        MAX_CANDIDATES = 100
 
         if TRACE_APPROX:
             logger_debug('get_approximate_matches: len(query.query_runs):', len(query.query_runs))
+
+
+        matchable_rids = self.approx_matchable_rids
 
         for query_run in query.query_runs:
 
@@ -676,11 +681,6 @@ class LicenseIndex(object):
                 if TRACE_APPROX:
                     logger_debug('get_approximate_matches: query_run not matchable:', query.query_runs)
                 continue
-
-            # collect rules already matched exactly withing that query run: we
-            # do not need to try to rematch these
-            mrid = set(get_matched_rule_ids(existing_matches, query_run))
-            matchable_rids = self.approx_matchable_rids.difference(mrid)
 
             # inverted index match and ranking, query run-level
             # FIXME: we should consider aho matches to excludes them from candidates
@@ -692,23 +692,32 @@ class LicenseIndex(object):
                 matchable_rids=matchable_rids,
                 top=MAX_CANDIDATES)
 
-            if TRACE_APPROX:
-                logger_debug('get_approximate_matches: candidates:', [cr for cr, _ in candidates])
+            if TRACE_APPROX_CANDIDATES:
+                logger_debug('get_approximate_matches: candidates:')
+                print(','.join(['rank', 'rule'] + list(ScoresVector._fields)))
+
+                for rank, (candidate_rule, high_intersection, score_vec) in enumerate(candidates, 1):
+                    print(','.join(str(x) for x in [rank, candidate_rule.identifier] + list(score_vec)))
 
             # Perform multiple sequence matching/alignment for each candidate,
             # query run-level for as long as we have more non-overlapping
             # matches returned
-            for candidate_rule, high_intersection in candidates:
-                if USE_STANDARD_SEQ:
+            for candidate_rule, high_intersection, score_vec in candidates:
+                if False:  # candidate_rule.is_license_text and candidate_rule.length > 100 and score_vec.resemblance> 0.95:
+                    # Myers diff works best when the difference are small
+                    match_blocks = match_blocks_dmp
+                    high_postings = None
+                else:
+                    # we prefer to use the high tken aware seq matching only
+                    # when the matches are not clear. it works best when things
+                    # are farther apart
+                    match_blocks = match_blocks_seq
                     high_postings = self.high_postings_by_rid[candidate_rule.rid]
                     high_postings = {
                         tid: postings for tid, postings in high_postings.items()
                             if tid in high_intersection}
                     if TRACE_APPROX:
                         logger_debug('get_approximate_matches: using high_postings:', len(high_postings))
-                else:
-                    high_postings = None
-
 
                 start_offset = 0
                 while True:
@@ -802,11 +811,20 @@ class LicenseIndex(object):
             if TRACE:
                 self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
 
+            # subtract whole text matched if this is long enough
+            matched = match.merge_matches(matched)
+
             matches.extend(matched)
+
+            for m in matched:
+                if m.rule.is_license_text and m.rule.length > 120 and m.coverage() > 98:
+                    qry.subtract(m.qspan)
+
             # check if we have some matchable left
             # do not match futher if we do not need to
             # collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match fragments (unused for now)
+
             already_matched_qspans.extend(m.qspan for m in matched if m.coverage() == 100)
 
             if not whole_query_run.is_matchable(
@@ -829,10 +847,8 @@ class LicenseIndex(object):
         match.set_lines(matches, qry.line_by_pos)
 
         if TRACE:
-            logger_debug()
-            logger_debug()
-            self.debug_matches(matches, 'final matches',
-                               location, query_string ,
+            print()
+            self.debug_matches(matches, 'final matches', location, query_string ,
                                with_text=True, query=qry)
         return matches
 
@@ -854,21 +870,21 @@ class LicenseIndex(object):
             print('Index statistics will be approximate: `pip install pympler` for correct structure sizes')
             from sys import getsizeof as size_of
 
-        fields = [
+        fields = (
             'dictionary',
             'tokens_by_tid',
             'rid_by_hash',
             'rules_by_rid',
             'tids_by_rid',
 
-            'tids_lohi_sets_by_rid',
-            'tids_lohi_msets_by_rid',
+            'sets_by_rid',
+            'msets_by_rid',
 
             'regular_rids',
             'negative_rids',
-            'approx_matchable_rids'
+            'approx_matchable_rids',
             'false_positive_rids',
-        ]
+        )
 
         plen = max(map(len, fields)) + 1
         internal_structures = [s + (' ' * (plen - len(s))) for s in fields]
