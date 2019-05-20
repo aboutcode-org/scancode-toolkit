@@ -229,17 +229,8 @@ class License(object):
             if attr.name == 'language' and value == 'en':
                 return False
 
-            if attr.name == 'relevance':
-                if self.has_stored_relevance:
-                    return bool(value)
-                else:
-                    return False
-
-            if attr.name == 'minimum_coverage':
-                if self.has_stored_minimum_coverage:
-                    return bool(value)
-                else:
-                    return False
+            if attr.name == 'minimum_coverage' and value==100:
+                return False
             return True
 
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
@@ -536,7 +527,7 @@ def build_rules_from_licenses(licenses):
                 text_file=text_file,
                 license_expression=license_key,
 
-                has_stored_relevance=True,
+                has_stored_relevance=False,
                 relevance=100,
                 
                 has_stored_minimum_coverage=bool(minimum_coverage),
@@ -932,11 +923,8 @@ class Rule(object):
                 rl = int(rl)
             data['relevance'] = rl
 
-        if self.has_stored_minimum_coverage and self.minimum_coverage:
-            mc = self.minimum_coverage
-            if int(mc) == mc:
-                mc = int(mc)
-            data['minimum_coverage'] = mc
+        if self.has_stored_minimum_coverage and self.minimum_coverage > 0:
+            data['minimum_coverage'] = self.minimum_coverage
 
         if self.referenced_filenames:
             data['referenced_filenames'] = self.referenced_filenames
