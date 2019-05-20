@@ -573,6 +573,7 @@ def merge_matches(matches, max_dist=None):
         if TRACE_MERGE: logger_debug('merge_matches: processing rule:', rid)
 
         rule_length = rule_matches[0].rule.length
+        # FIXME this is likely too much as we are getting gaps that are often too big
         max_rule_side_dist = min((rule_length // 2) or 1, max_dist)
 
         # compare two matches in the sorted sequence: current and next
@@ -992,7 +993,7 @@ def restore_non_overlapping(matches, discarded):
     to_discard = []
     for disc in merge_matches(discarded):
         if not disc.qspan & all_matched_qspans:
-            # keep previously discarded matches that do not inteserset at all
+            # keep previously discarded matches that do not intersect at all
             to_keep.append(disc)
         else:
             to_discard.append(disc)
@@ -1263,17 +1264,27 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
     if TRACE_REFINE: map(logger_debug, matches)
 
-    matches, discarded = filter_contained_matches(matches)
-    all_discarded.extend(discarded)
-    _log(matches, discarded, 'NON CONTAINED')
+    matches, discarded_contained = filter_contained_matches(matches)
+    _log(matches, discarded_contained, 'NON CONTAINED')
 
-    matches, discarded = filter_overlapping_matches(matches)
-    _log(matches, discarded, 'NON OVERLAPPING')
-    if discarded:
-        to_keep, discarded = restore_non_overlapping(matches, discarded)
+    matches, discarded_overlapping = filter_overlapping_matches(matches)
+    _log(matches, discarded_overlapping, 'NON OVERLAPPING')
+
+    if discarded_contained:
+        to_keep, discarded_contained = restore_non_overlapping(matches, discarded_contained)
         matches.extend(to_keep)
-        _log(to_keep, discarded, 'NON OVERLAPPING REFINED')
-    all_discarded.extend(discarded)
+        all_discarded.extend(discarded_contained)
+        _log(to_keep, discarded_contained, 'NON CONTAINED REFINED')
+
+    if discarded_overlapping:
+        to_keep, discarded_overlapping = restore_non_overlapping(matches, discarded_overlapping)
+        matches.extend(to_keep)
+        all_discarded.extend(discarded_overlapping)
+        _log(to_keep, discarded_overlapping, 'NON OVERLAPPING REFINED')
+
+    matches, discarded_contained = filter_contained_matches(matches)
+    all_discarded.extend(discarded_contained)
+    _log(matches, discarded_contained, 'NON CONTAINED')
 
     if filter_false_positive:
         matches, discarded = filter_false_positive_matches(matches)
