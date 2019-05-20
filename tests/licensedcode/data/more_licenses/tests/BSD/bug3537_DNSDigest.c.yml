@@ -1,7 +1,7 @@
 license_expressions:
   - apache-2.0
+  - apache-2.0
   - openssl
-  - openssl
-  - proprietary-license
-  - ssleay
-
+  - openssl-ssleay
+  - ssleay-windows
+notes: SOK

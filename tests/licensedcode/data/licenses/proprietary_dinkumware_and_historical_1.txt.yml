@@ -1,3 +1,5 @@
 license_expressions:
-    - proprietary-license
-    - historical
+  - proprietary-license
+  - unknown-license-reference
+  - mit-old-style
+notes: SOK

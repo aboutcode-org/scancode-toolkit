@@ -1,4 +1,5 @@
 license_expressions:
-  - standard-ml-nj
+  - historical
   - x11-opengroup
   - x11-xconsortium
+notes: SOK

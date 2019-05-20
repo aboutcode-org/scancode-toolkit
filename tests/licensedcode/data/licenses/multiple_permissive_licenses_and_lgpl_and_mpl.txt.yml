@@ -2,8 +2,23 @@ license_expressions:
   - mit
   - freetype
   - mit
-  - unicode-icu-58
+#  - unicode-icu-58
+  - x11
+  - x11
+  - bsd-new AND free-unknown
+
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - bsd-new
   - naist-2003
+  - naist-2003
+  - bsd-simplified
+  - bsd-new
+  - public-domain
+  - public-domain
+
   - sgi-freeb-2.0
   - libpng
   - libpng

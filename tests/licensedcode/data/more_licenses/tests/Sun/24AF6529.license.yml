@@ -1,2 +1,5 @@
 license_expressions:
-  - oracle-entitlement-05-15
+  - sun-entitlement-jaf
+  - warranty-disclaimer
+  - sun-bcl-opendmk
+

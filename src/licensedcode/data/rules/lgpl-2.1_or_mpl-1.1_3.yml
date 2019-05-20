@@ -3,3 +3,4 @@ is_license_notice: yes
 referenced_filenames:
     - COPYING-LGPL-2.1
     - COPYING-MPL-1.1
+minimum_coverage: 85

@@ -1,0 +1,14 @@
+This package, the EXT2 filesystem utilities, are made available under
+the GNU Public License version 2, with the exception of the lib/ext2fs
+and lib/e2p libraries, which are made available under the GNU Library
+General Public License Version 2, the lib/uuid library which is made
+available under a BSD-style license and the lib/et and lib/ss
+libraries which are made available under an MIT-style license.  Please
+see lib/uuid/COPYING for more details for the license for the files
+comprising the libuuid library, and the source file headers of the
+libet and libss libraries for more information.
+
+On Debian GNU systems, the complete text of the GNU General Public
+License can be found in `/usr/share/common-licenses/GPL-2'.  The
+complete text of the GNU Library General Public License can be found
+in '/usr/share/common-licenses/LGPL-2'.

@@ -1,2 +1,6 @@
 license_expressions:
-    - gpl-2.0 OR bsd-simplified
+  - gpl-1.0-plus
+  - bsd-simplified
+  - bsd-simplified
+notes: SOK
+

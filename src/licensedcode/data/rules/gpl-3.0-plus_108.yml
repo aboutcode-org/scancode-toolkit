@@ -1,4 +1,6 @@
-license_expression: gpl-3.0-plus
+license_expression: gpl-3.0-plus AND lgpl-3.0-plus
 is_license_notice: yes
 referenced_filenames:
     - COPYING3
+relevance: 95
+notes: this is a set of confusing LGPL and GPL mixed references

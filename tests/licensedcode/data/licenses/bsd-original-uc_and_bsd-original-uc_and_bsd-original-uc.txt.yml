@@ -2,5 +2,5 @@ license_expressions:
   - bsd-original-uc
   - other-permissive
   - other-permissive
-  - bsd-2-clause-freebsd
   - bsd-original-uc
+notes: SOK

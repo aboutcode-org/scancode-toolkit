@@ -1,2 +1,4 @@
 license_expressions:
-  - lgpl-2.1 AND apache-2.0
+  - lgpl-2.1
+  - apache-2.0
+notes: SOK
