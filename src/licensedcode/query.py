@@ -484,25 +484,25 @@ def break_on_boundaries(query_run):
         yield query_run
     else:
         from licensedcode.match_aho import get_matched_starts
-    
+
         qr_tokens = query_run.tokens
         qr_start = query_run.start
         qr_end = query_run.end
         query = query_run.query
         idx = query.idx
-    
+
         matched_starts = get_matched_starts(
             qr_tokens, qr_start, automaton=idx.starts_automaton)
-    
+
         starts = dict(matched_starts)
-    
+
         if TRACE_QR_BREAK:
             logger_debug('break_on_boundaries: len(starts):', len(starts),)
-    
+
         if not starts:
             if TRACE_QR_BREAK: logger_debug('break_on_boundaries: Qr returned unchanged')
             yield query_run
-    
+
         else:
             positions = deque()
             pos = qr_start
@@ -518,7 +518,7 @@ def break_on_boundaries(query_run):
                         positions.clear()
                 positions.append(pos)
                 pos += 1
-    
+
             if positions:
                 qr = QueryRun(query, positions[0], positions[-1])
                 yield qr
@@ -565,30 +565,6 @@ class QueryRun(object):
         self.digit_only_tids = self.query.idx.digit_only_tids
         self._low_matchables = None
         self._high_matchables = None
-
-    @property
-    def low_matchables(self):
-        """
-        Set of known positions for low token ids that are still matchable for
-        this run.
-        """
-        if not self._low_matchables:
-            self._low_matchables = intbitset(
-                [pos for pos in self.query.low_matchables
-                 if self.start <= pos <= self.end])
-        return self._low_matchables
-
-    @property
-    def high_matchables(self):
-        """
-        Set of known positions for high token ids that are still matchable for
-        this run.
-        """
-        if not self._high_matchables:
-            self._high_matchables = intbitset(
-                [pos for pos in self.query.high_matchables
-                 if self.start <= pos <= self.end])
-        return self._high_matchables
 
     def __len__(self):
         if self.end is None:
@@ -656,7 +632,7 @@ class QueryRun(object):
         """
         Return True if this query run has some matchable high token positions.
         Optinally if `include_low`m include low tokens.
-        If a list of `qspans` is provided, their positions are first subtracted.
+        If a list of `qspans` is provided, their positions are also subtracted.
         """
         if include_low:
             matchables = self.matchables
@@ -690,8 +666,33 @@ class QueryRun(object):
         high_matchables = self.high_matchables
         if not high_matchables:
             return []
-        return (tid if pos in (high_matchables | self.low_matchables) else -1
+        matchables = high_matchables | self.low_matchables
+        return (tid if pos in (matchables) else -1
                 for pos, tid in self.tokens_with_pos())
+
+    @property
+    def low_matchables(self):
+        """
+        Set of known positions for low token ids that are still matchable for
+        this run.
+        """
+        if not self._low_matchables:
+            self._low_matchables = intbitset(
+                [pos for pos in self.query.low_matchables
+                 if self.start <= pos <= self.end])
+        return self._low_matchables
+
+    @property
+    def high_matchables(self):
+        """
+        Set of known positions for high token ids that are still matchable for
+        this run.
+        """
+        if not self._high_matchables:
+            self._high_matchables = intbitset(
+                [pos for pos in self.query.high_matchables
+                 if self.start <= pos <= self.end])
+        return self._high_matchables
 
     def subtract(self, qspan):
         """
@@ -700,13 +701,8 @@ class QueryRun(object):
         """
         if qspan:
             self.query.subtract(qspan)
-            # also update locally: this is a property hence the side effect
-            self.high_matchables
-            self._high_matchables.difference_update(qspan)
-
-            # also update locally: this is a property hence the side effect
-            self.low_matchables
-            self._low_matchables.difference_update(qspan)
+            self._high_matchables = self.high_matchables.difference_update(qspan)
+            self._low_matchables = self.low_matchables.difference_update(qspan)
 
     def to_dict(self, brief=False, comprehensive=False, include_high=False):
         """
