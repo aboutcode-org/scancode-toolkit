@@ -122,39 +122,30 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
             # FIXME: really? skip single word matched as as sequence
             # FIXME: checking the distance from the previous matches (that are
             # always for the same rule) would be more effective
-            if mlen > 1 or (keep_high_solo and mlen ==1 and qtokens[qpos] >= len_junk):
-                qiposses = []
-                qiposses_append = qiposses.append
-    
-                for qp, ip in zip(range(qpos, qpos + mlen), range(ipos, ipos + mlen)):
-                    if qp in query_run.matchables:
-                        qiposses_append((qp, ip))
+            if mlen > 1 or (keep_high_solo and mlen == 1 and qtokens[qpos] >= len_junk):
+                qspan = Span(range(qpos, qpos + mlen))
+                ispan = Span(range(ipos, ipos + mlen))
 
-                if qiposses:
-                    qspan, ispan = zip(*qiposses)
-                    qspan = Span(qspan)
-                    ispan = Span(ispan)
-        
-                    hispan = Span(p for p in ispan if itokens[p] >= len_junk)
-        
-                    match = LicenseMatch(
-                        rule, qspan, ispan, hispan, qbegin,
-                        matcher=MATCH_SEQ, query=query)
-        
-                    matches.append(match)
-        
-                    if TRACE3:
-                        from licensedcode.tracing import get_texts
-                        qt, it = get_texts(match)
-                        logger_debug('match_seq: ###########################')
-                        logger_debug(match)
-                        logger_debug('###########################')
-                        logger_debug(qt)
-                        logger_debug('###########################')
-                        logger_debug(it)
-                        logger_debug('###########################')
-                    # FIXME: could this help??
-                    # query_run.subtract(qspan)
+                hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+
+                match = LicenseMatch(
+                    rule, qspan, ispan, hispan, qbegin,
+                    matcher=MATCH_SEQ, query=query)
+
+                matches.append(match)
+
+                if TRACE3:
+                    from licensedcode.tracing import get_texts
+                    qt, it = get_texts(match)
+                    logger_debug('match_seq: ###########################')
+                    logger_debug(match)
+                    logger_debug('###########################')
+                    logger_debug(qt)
+                    logger_debug('###########################')
+                    logger_debug(it)
+                    logger_debug('###########################')
+                # FIXME: could this help??
+                # query_run.subtract(qspan)
 
             qstart = max(qstart, qpos + mlen + 1)
 
