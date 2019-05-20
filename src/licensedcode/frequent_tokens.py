@@ -9754,6 +9754,7 @@ PostgreSQL Data Base Management System formerly known as Postgres then as Postgr
 Codehaus
 Tatu Ylonen ylo cs hut fi
 openssl
+openssh
 handling
 Greg Stein gstein lyra org
 Igor author
@@ -10523,6 +10524,21 @@ RedBase
 rabbitmq
 OLIVETTI
 libgcj
+whitehouse
+gov
+ext2
+ext2fs
+e2p
+uuid
+lib
+libet
+libss
+et
+ss
+libuuid
+altera
+arm
+ltd
 '''
 
 
