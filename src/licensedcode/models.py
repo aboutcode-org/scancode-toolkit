@@ -147,7 +147,6 @@ class License(object):
     key_aliases = __attrib(default=attr.Factory(list))
 
     minimum_coverage = __attrib(default=0)
-    relevance = __attrib(default=100)
     standard_notice = __attrib(default=None)
 
     # data file paths and known extensions
@@ -230,9 +229,17 @@ class License(object):
             if attr.name == 'language' and value == 'en':
                 return False
 
-            if attr.name == 'relevance' and value == 100:
-                return False
+            if attr.name == 'relevance':
+                if self.has_stored_relevance:
+                    return bool(value)
+                else:
+                    return False
 
+            if attr.name == 'minimum_coverage':
+                if self.has_stored_minimum_coverage:
+                    return bool(value)
+                else:
+                    return False
             return True
 
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
@@ -523,18 +530,20 @@ def build_rules_from_licenses(licenses):
     """
     for license_key, license_obj in licenses.iteritems():
         text_file = join(license_obj.src_dir, license_obj.text_file)
-        minimum_coverage = license_obj.minimum_coverage or 0
-        has_stored_relevance = license_obj.relevance != 100
-        relevance = license_obj.relevance or 100
-
         if exists(text_file):
-            yield Rule(text_file=text_file,
-                       license_expression=license_key,
-                       minimum_coverage=minimum_coverage,
-                       relevance=relevance,
-                       has_stored_relevance=has_stored_relevance,
-                       is_license=True,
-                       is_license_text=True)
+            minimum_coverage = license_obj.minimum_coverage or 0
+            yield Rule(
+                text_file=text_file,
+                license_expression=license_key,
+
+                has_stored_relevance=True,
+                relevance=100,
+                
+                has_stored_minimum_coverage=bool(minimum_coverage),
+                minimum_coverage=minimum_coverage,
+                
+                is_license=True,
+                is_license_text=True)
 
 
 def get_all_spdx_keys(licenses):
@@ -679,15 +688,21 @@ class Rule(object):
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # is this rule text a false positive when matched? (filtered out) FIXME: this
-    # should be unified with the relevance: a false positive match is a a match
-    # with a relevance of zero
+    # is this rule text a false positive when matched? (filtered out)
+    # FIXME: this should be unified with the relevance: a false positive match
+    # is a a match with a relevance of zero
     is_false_positive = attr.ib(default=False, repr=False)
 
+    # is this rule text a negative rule? it will be removed from the tokens streams
     is_negative = attr.ib(default=False, repr=False)
 
-    # is this rule text only to be matched with a minimum coverage?
+    # is this rule text only to be matched with a minimum coverage e.g. a
+    # minimum proportion of tokens as a float between 0 and 100 where 100 means
+    # all tokens must be matched and a smaller value means a smaller propertion
+    # of matched tokens is acceptable. this is computed unless this is provided
+    # here.
     minimum_coverage = attr.ib(default=0)
+    has_stored_minimum_coverage = attr.ib(default=False, repr=False)
 
     # Can this rule be matched if there are unknown words in its matched range?
     # The default is to allow known and unknown words. Unknown words are words
@@ -780,6 +795,9 @@ class Rule(object):
         if self.relevance and self.relevance != 100:
             self.has_stored_relevance = True
 
+        if self.minimum_coverage:
+            self.has_stored_minimum_coverage = True
+
         if self.license_expression:
             try:
                 expression = self.licensing.parse(self.license_expression)
@@ -836,7 +854,8 @@ class Rule(object):
             return self.stored_text
 
         else:
-            raise Exception('Inconsistent rule text for: ' + self.identifier + '\nfile://' + self.text_file)
+            raise Exception('Inconsistent rule text for: ' + 
+                            self.identifier + '\nfile://' + self.text_file)
 
     def license_keys(self, unique=True):
         """
@@ -867,21 +886,21 @@ class Rule(object):
         Compute and set thresholds either considering the occurrence of all
         tokens or the occurance of unique tokens.
         """
-        if not self.has_computed_thresholds:
-            self.minimum_coverage, self.min_matched_length, self.min_high_matched_length = (
-                compute_thresholds_occurences(
-                    self.minimum_coverage,
-                    self.length,
-                    self.high_length))
-
-            self.min_matched_length_unique, self.min_high_matched_length_unique = (
-            compute_thresholds_unique(
+        minimum_coverage, self.min_matched_length, self.min_high_matched_length = (
+            compute_thresholds_occurences(
                 self.minimum_coverage,
                 self.length,
-                self.length_unique, self.high_length_unique))
+                self.high_length))
+        if not self.has_stored_minimum_coverage:
+            self.minimum_coverage = minimum_coverage
 
-            self.is_small = self.length < small_rule
-            self.has_computed_thresholds = True
+        self.min_matched_length_unique, self.min_high_matched_length_unique = (
+        compute_thresholds_unique(
+            self.minimum_coverage,
+            self.length,
+            self.length_unique, self.high_length_unique))
+
+        self.is_small = self.length < small_rule
 
     def to_dict(self):
         """
@@ -907,13 +926,13 @@ class Rule(object):
             if tag_value:
                 data[flag] = tag_value
 
-        if self.has_stored_relevance:
+        if self.has_stored_relevance and self.relevance:
             rl = self.relevance
             if int(rl) == rl:
                 rl = int(rl)
             data['relevance'] = rl
 
-        if self.minimum_coverage:
+        if self.has_stored_minimum_coverage and self.minimum_coverage:
             mc = self.minimum_coverage
             if int(mc) == mc:
                 mc = int(mc)
@@ -1083,9 +1102,9 @@ class Rule(object):
             or self.is_license_tag
         )
 
-def compute_thresholds_occurences(minimum_coverage, length, high_length, 
-        _MIN_MATCH_HIGH_LENGTH = MIN_MATCH_HIGH_LENGTH,
-        _MIN_MATCH_LENGTH = MIN_MATCH_LENGTH):
+def compute_thresholds_occurences(minimum_coverage, length, high_length,
+        _MIN_MATCH_HIGH_LENGTH=MIN_MATCH_HIGH_LENGTH,
+        _MIN_MATCH_LENGTH=MIN_MATCH_LENGTH):
     """
     Compute and return thresholds considering the occurrence of all tokens.
     """
@@ -1097,32 +1116,34 @@ def compute_thresholds_occurences(minimum_coverage, length, high_length,
     if length < 3:
         min_high_matched_length = high_length
         min_matched_length = length
-        if not minimum_coverage:
-            minimum_coverage = 100
+        minimum_coverage = 100
 
     elif length < 10:
         min_matched_length = length
         min_high_matched_length = high_length
-        if not minimum_coverage:
-            minimum_coverage = 80
+        minimum_coverage = 80
 
     elif length < 30:
         min_matched_length = length // 2
         min_high_matched_length = min(high_length, _MIN_MATCH_HIGH_LENGTH)
+        minimum_coverage = 50
 
     elif length < 200:
         min_matched_length = _MIN_MATCH_LENGTH
         min_high_matched_length = min(high_length, _MIN_MATCH_HIGH_LENGTH)
+        #minimum_coverage = max(15, int(length//10))
 
     else:  # if length >= 200:
-
         min_matched_length = length // 10
         min_high_matched_length = high_length // 10
+        #minimum_coverage = int(length//10)
 
     return minimum_coverage, min_matched_length, min_high_matched_length
 
 
-def compute_thresholds_unique(minimum_coverage, length, length_unique, high_length_unique):
+def compute_thresholds_unique(minimum_coverage, length, length_unique, high_length_unique,
+        _MIN_MATCH_HIGH_LENGTH=MIN_MATCH_HIGH_LENGTH,
+        _MIN_MATCH_LENGTH=MIN_MATCH_LENGTH):
     """
     Compute and set thresholds considering the occurrence of only unique tokens.
     """
@@ -1151,9 +1172,9 @@ def compute_thresholds_unique(minimum_coverage, length, length_unique, high_leng
         min_high_matched_length_unique = high_length_unique
 
     else:
-        min_matched_length_unique = MIN_MATCH_LENGTH
+        min_matched_length_unique = _MIN_MATCH_LENGTH
         highu = (int(high_length_unique // 2)) or high_length_unique
-        min_high_matched_length_unique = min(highu, MIN_MATCH_HIGH_LENGTH)
+        min_high_matched_length_unique = min(highu, _MIN_MATCH_HIGH_LENGTH)
 
     return min_matched_length_unique, min_high_matched_length_unique
 
