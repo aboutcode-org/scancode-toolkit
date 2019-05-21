@@ -7,3 +7,4 @@ text_urls:
     - http://www.hboehm.info/gc/license.txt
 other_urls:
     - http://www.hboehm.info/gc/
+notes: stlport-4.5 and mozilla-gc are mostly the same
