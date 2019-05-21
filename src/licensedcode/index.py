@@ -666,7 +666,7 @@ class LicenseIndex(object):
         if USE_RULE_STARTS:
             query.refine_runs()
 
-        MAX_CANDIDATES = 100
+        MAX_CANDIDATES = 70
 
         if TRACE_APPROX:
             logger_debug('get_approximate_matches: len(query.query_runs):', len(query.query_runs))
