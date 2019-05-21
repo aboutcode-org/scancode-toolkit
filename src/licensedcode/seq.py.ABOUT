@@ -17,7 +17,7 @@ owner: nexB
 
 license_expression: python
 licenses:
--   file: seq.LICENSE
+-   file: seq.py.LICENSE
     key: python
     name: Python Software Foundation License v2
 
