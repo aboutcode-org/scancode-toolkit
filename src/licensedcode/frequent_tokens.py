@@ -10524,6 +10524,7 @@ RedBase
 rabbitmq
 OLIVETTI
 libgcj
+libjava
 whitehouse
 gov
 ext2
@@ -10539,6 +10540,8 @@ libuuid
 altera
 arm
 ltd
+CORE
+SDI
 '''
 
 
