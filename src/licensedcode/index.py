@@ -36,7 +36,6 @@ from operator import itemgetter
 import pickle
 import sys
 from time import time
-from licensedcode.match_set import ScoresVector
 
 # Python 2 and 3 support
 try:
@@ -54,6 +53,7 @@ from licensedcode import match
 from licensedcode import match_aho
 from licensedcode import match_hash
 from licensedcode import match_seq
+from licensedcode import match_set
 from licensedcode import match_spdx_lid
 from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
@@ -114,10 +114,6 @@ USE_RULE_STARTS = False
 ########## Use Bigrams instead of tokens
 # Enable using an bigrams for multisets/bags instead of tokens
 USE_BIGRAM_MULTISETS = False
-if USE_BIGRAM_MULTISETS:
-    from licensedcode import match_setng as match_set  # NOQA
-else:
-    from licensedcode import match_set  # NOQA
 
 ############################## Feature SWITCHES ################################
 
@@ -498,7 +494,8 @@ class LicenseIndex(object):
             ####################
             # build sets and multisets indexes, for all regular rules as we need the thresholds
             ####################
-            tids_set, mset = match_set.build_set_and_mset(rule_token_ids)
+            tids_set, mset = match_set.build_set_and_mset(
+                rule_token_ids, _use_bigrams=USE_BIGRAM_MULTISETS)
             sets_by_rid[rid] = tids_set
             msets_by_rid[rid] = mset
 
@@ -507,7 +504,8 @@ class LicenseIndex(object):
             # FIXME!!!!!!! we should store them: we need them and we recompute
             # them later at match time
             tids_set_high = match_set.high_tids_set_subset(tids_set, len_junk)
-            mset_high = match_set.high_multiset_subset(mset, len_junk)
+            mset_high = match_set.high_multiset_subset(
+                mset, len_junk, _use_bigrams=USE_BIGRAM_MULTISETS)
 
             # FIXME!!!!!!!
             ####################################################################
@@ -690,23 +688,25 @@ class LicenseIndex(object):
                 query_run=query_run,
                 idx=self,
                 matchable_rids=matchable_rids,
-                top=MAX_CANDIDATES)
+                top=MAX_CANDIDATES,
+                _use_bigrams=USE_BIGRAM_MULTISETS)
 
             if TRACE_APPROX_CANDIDATES:
                 logger_debug('get_approximate_matches: candidates:')
-                print(','.join(['rank', 'rule'] + list(ScoresVector._fields)))
-
-                for rank, (candidate_rule, high_intersection, score_vec) in enumerate(candidates, 1):
-                    print(','.join(str(x) for x in [rank, candidate_rule.identifier] + list(score_vec)))
+                for rank, can in enumerate(candidates, 1):
+                    print(rank, can)
 
             # Perform multiple sequence matching/alignment for each candidate,
             # query run-level for as long as we have more non-overlapping
             # matches returned
-            for candidate_rule, high_intersection, score_vec in candidates:
-                if False:  # candidate_rule.is_license_text and candidate_rule.length > 100 and score_vec.resemblance> 0.95:
+
+            for _score_vecs, candidate_rule, high_intersection in candidates:
+                if False:
+                    # candidate_rule.is_license_text and candidate_rule.length > 100 and score_vec.resemblance> 0.95:
                     # Myers diff works best when the difference are small
                     match_blocks = match_blocks_dmp
                     high_postings = None
+
                 else:
                     # we prefer to use the high tken aware seq matching only
                     # when the matches are not clear. it works best when things
@@ -716,6 +716,7 @@ class LicenseIndex(object):
                     high_postings = {
                         tid: postings for tid, postings in high_postings.items()
                             if tid in high_intersection}
+
                     if TRACE_APPROX:
                         logger_debug('get_approximate_matches: using high_postings:', len(high_postings))
 
@@ -726,10 +727,13 @@ class LicenseIndex(object):
                         high_postings=high_postings,
                         start_offset=start_offset,
                         match_blocks=match_blocks)
+
                     if not rule_matches:
                         break
+
                     matches_end = max(m.qend for m in rule_matches)
                     qrun_matches.extend(rule_matches)
+
                     if matches_end + 1 < query_run.end:
                         start_offset = matches_end + 1
                         continue
@@ -811,11 +815,10 @@ class LicenseIndex(object):
             if TRACE:
                 self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
 
-            # subtract whole text matched if this is long enough
             matched = match.merge_matches(matched)
-
             matches.extend(matched)
 
+            # subtract whole text matched if this is long enough
             for m in matched:
                 if m.rule.is_license_text and m.rule.length > 120 and m.coverage() > 98:
                     qry.subtract(m.qspan)
