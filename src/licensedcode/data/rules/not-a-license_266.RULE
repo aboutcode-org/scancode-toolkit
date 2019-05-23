@@ -1,0 +1,2 @@
+echo "Please replace the Apache license header comment text with:"
+echo "SPDX-License-Identifier: Apache-2.0"

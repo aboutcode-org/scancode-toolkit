@@ -1,4 +1,6 @@
 license_expressions:
   - sun-entitlement-jaf
   - sun-bcl-opendmk
-
+expected_failure: yes
+notes: the results of matching this can change a bit over time, but are always
+ detected as some variant of a proprietary Sun agreement
