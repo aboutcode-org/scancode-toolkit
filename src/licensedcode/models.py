@@ -335,7 +335,8 @@ class License(object):
             if not lic.category:
                 error('No category')
             if lic.category and lic.category not in CATEGORIES:
-                error('Unknown license category: {}'.format(lic.category))
+                cats = '\n'.join(sorted(CATEGORIES))
+                error('Unknown license category: {}.\nUse one of these valid categories:\n{}'.format(lic.category, cats))
             if not lic.owner:
                 error('No owner')
 

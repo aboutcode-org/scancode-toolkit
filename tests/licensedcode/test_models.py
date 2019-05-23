@@ -133,8 +133,14 @@ class TestLicense(FileBasedTesting):
                 'No name',
                 'No category',
                 'No owner'],
-            'gpl-1.0': ['Unknown license category: GNU Copyleft'],
-            'w3c-docs-19990405': ['Unknown license category: Permissive Restricted']
+            'gpl-1.0': [
+                'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nUnstated License'],
+            'w3c-docs-19990405': [
+                'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nUnstated License']
         }
 
         assert expected_errors == errors
