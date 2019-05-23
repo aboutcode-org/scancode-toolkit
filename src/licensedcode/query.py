@@ -271,6 +271,15 @@ class Query(object):
         """
         return self.low_matchables | self.high_matchables
 
+    @property
+    def matched(self):
+        """
+        Return a set of every matched token positions for this query.
+        """
+        all_pos = intbitset(range(len(self.tokens)))
+        all_pos.difference_update(self.matchables())
+        return all_pos
+
     # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
         """
@@ -666,8 +675,7 @@ class QueryRun(object):
         high_matchables = self.high_matchables
         if not high_matchables:
             return []
-        matchables = high_matchables | self.low_matchables
-        return (tid if pos in (matchables) else -1
+        return (tid if pos in self.matchables else -1
                 for pos, tid in self.tokens_with_pos())
 
     @property
