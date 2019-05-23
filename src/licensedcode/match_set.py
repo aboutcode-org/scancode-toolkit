@@ -29,12 +29,14 @@ from __future__ import division
 from array import array
 from collections import defaultdict
 from collections import namedtuple
+from functools import partial
 from itertools import groupby
 from math import log
 
 from intbitset import intbitset
 
 from commoncode.dict_utils import sparsify
+from licensedcode.tokenize import ngrams
 
 
 """
@@ -105,13 +107,17 @@ Finally we return the sorted top candidates.
 # Set to True for tracing
 TRACE = False
 TRACE_CANDIDATES = False
-TRACE_CANDIDATES_DEEP = False
+TRACE_CANDIDATES_SET = False
+TRACE_CANDIDATES_MSET = False
 TRACE_CANDIDATES_FILTER_DUPE = False
 
 def logger_debug(*args): pass
 
 
-if TRACE or TRACE_CANDIDATES or TRACE_CANDIDATES_DEEP or TRACE_CANDIDATES_FILTER_DUPE:
+if (TRACE or TRACE_CANDIDATES or
+  TRACE_CANDIDATES_SET or TRACE_CANDIDATES_SET or
+  TRACE_CANDIDATES_FILTER_DUPE):
+
     import logging
     import sys
 
@@ -169,28 +175,93 @@ def high_tids_set_subset(tids_set, len_junk):
     return intbitset([i for i in tids_set if i >= len_junk])
 
 
-def high_multiset_subset(mset, len_junk):
+def high_tids_multiset_subset(mset, len_junk):
     """
-    Return a subset of a set of token ids that are high tokens.
+    Return a subset of a multiset with items made only of high tokens.
     """
-    return {tid: count for tid, count in mset.items() if tid >= len_junk}
+    return {tid: count for tid, count in mset.items()
+            if tid >= len_junk}
 
 
-def build_set_and_mset(token_ids):
+def high_bigrams_multiset_subset(mset, len_junk):
     """
-    Return a tuple of (tids set, tids multiset) given a `token_ids` tids
+    Return a subset of a multiset with items made only of high tokens.
+    """
+    return {bigram: count for bigram, count in mset.items()
+            if bigram[0] >= len_junk or bigram[1] >= len_junk}
+
+
+def high_multiset_subset(mset, len_junk, _use_bigrams=False):
+    """
+    Return a subset of a multiset with items made only of high tokens.
+    """
+    if _use_bigrams:
+        return high_bigrams_multiset_subset(mset, len_junk)
+    else:
+        return high_tids_multiset_subset(mset, len_junk)
+
+
+# FIXME: this is NOT used at all BUT should be used and pe-indexed
+def compute_high_set_and_mset(tids_set, mset, len_junk, _use_bigrams=False):
+    """
+    Return a tuple of (high tids set, high tids multiset) given a
+    tids_set and mset of all token tids and the `len_junk`.
+    """
+    high_tids_set = high_tids_set_subset(tids_set, len_junk)
+    high_mset = high_multiset_subset(mset, len_junk, _use_bigrams=_use_bigrams)
+    return high_tids_set, high_mset
+
+
+def build_set_and_tids_mset(token_ids):
+    """
+    Return a tuple of (tids set, multiset) given a `token_ids` tids
     sequence.
     """
     tids_mset = defaultdict(int)
+
     for tid in token_ids:
-        # this skips unknown token ids that are -1
-        if tid >= 0:
-            tids_mset[tid] += 1
+        # this skips already matched token ids that are -1
+        if tid == -1:
+            continue
+        tids_mset[tid] += 1
     # OPTIMIZED: sparsify for speed
     sparsify(tids_mset)
 
     tids_set = intbitset(tids_mset.keys())
+
     return tids_set, tids_mset
+
+
+def build_set_and_bigrams_mset(token_ids):
+    """
+    Return a tuple of (tids set, multiset) given a `token_ids` tids
+    sequence.
+    """
+    tids_set = intbitset()
+    bigrams_mset = defaultdict(int)
+
+    for bigram in ngrams(token_ids, 2):
+        # this skips already matched token ids that are -1
+        if -1 in bigram:
+            continue
+        bigrams_mset[bigram] += 1
+        tids_set.update(bigram)
+
+    # OPTIMIZED: sparsify for speed
+    sparsify(bigrams_mset)
+
+    return tids_set, bigrams_mset
+
+
+def build_set_and_mset(token_ids, _use_bigrams=False):
+    """
+    Return a tuple of (tids set, multiset) given a `token_ids` tids
+    sequence.
+    """
+    if _use_bigrams:
+        return build_set_and_bigrams_mset(token_ids)
+    else:
+        return build_set_and_tids_mset(token_ids)
 
 
 def compute_token_idfs(len_rules, tokens_doc_freq_by_tid):
@@ -207,25 +278,23 @@ def compute_token_idfs(len_rules, tokens_doc_freq_by_tid):
                        for tdf in tokens_doc_freq_by_tid))
 
 
-def compute_high_set_and_mset(tids_set, mset, len_junk):
+def compute_bigram_idfs(len_rules, bigrams_doc_freq_by_tid):
     """
-    Return a tuple of (high tids set, high tids multiset) given a
-    tids_set and mset of all token tids and the `len_junk`.
+    Return a mapping of {bigram -> inverse document frequency} given a mapping
+    of `bigrams_doc_freq_by_tid` counting the number of rules in which a bigram
+    occurs and the `len_rules` number of rules.
     """
-    high_tids_set = high_tids_set_subset(tids_set, len_junk)
-    high_mset = high_multiset_subset(mset, len_junk)
-    return high_tids_set, high_mset
+    # note we perform some smoothing as in sklearn:
+    # See https://github.com/scikit-learn/scikit-learn/blob/645d3224182d1dd3723ffbf983172aad07cfeba8/sklearn/feature_extraction/text.py#L1131
+    return {big: (log((len_rules + 1) / (bdf + 1)) + 1)
+            for big, bdf in bigrams_doc_freq_by_tid.items()}
 
 
-# FIXME: we should consider existing aho matches when considering candidate
-# and not rematch these at all
+# FIXME: we should consider more aggressively the thresholds and what a match filters
+# would discard when we compute candaites to eventually discard many or all candidates
+# we compute too many candidates that may waste time in seq matching for no reason
 
-# FIXME: we should consider more aggressively the thresholds and what a match
-# filters would discard when we compute candaites to eventually discard many or
-# all candidates we compute too many candidates that may waste time in seq
-# matching for no reason
-
-def compute_candidates(query_run, idx, matchable_rids, top=50):
+def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=False):
     """
     Return a ranked list of rule candidates for further matching give a
     `query_run`. Use approximate matching based on token sets ignoring
@@ -236,7 +305,8 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     other measures.
     """
     # collect query-side sets used for matching
-    qset, qmset = build_set_and_mset(query_run.matchable_tokens())
+    token_ids = query_run.matchable_tokens()
+    qset, qmset = build_set_and_mset(token_ids, _use_bigrams=_use_bigrams)
 
     len_junk = idx.len_junk
 
@@ -250,15 +320,15 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     sortable_candidates = []
     sortable_candidates_append = sortable_candidates.append
 
-    qset_len = tids_set_counter(qset)
-    high_qset_len = tids_set_counter(high_tids_set_subset(qset, len_junk))
     sets_by_rid = idx.sets_by_rid
+    set_idf_by_tid = idx.tokens_idf_by_tid
+
     for rid, rule in enumerate(idx.rules_by_rid):
         if rid not in matchable_rids:
             continue
 
-        scores_vector, high_intersection = compare_token_sets(
-            qset=qset, qset_len=qset_len, high_qset_len=high_qset_len,
+        scores_vectors, high_intersection = compare_token_sets(
+            qset=qset,
             iset=sets_by_rid[rid],
             intersector=tids_sets_intersector,
             counter=tids_set_counter,
@@ -267,24 +337,23 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
             unique=True,
             rule=rule,
             tfidf_computer=compute_tfidf_tids_set_score,
-            idf_by_tid=idx.tokens_idf_by_tid)
+            idf_by_tid=set_idf_by_tid,
+            filter_non_matching=True)
 
-
-        if scores_vector:
+        if scores_vectors:
             # With this trick the high_intersection will be the one from the
             # first step, e.g. a simple set. On the first step,
             # high_intersection is None and intersection is the intersected
             # set. On the second step, high_intersection is the intersected
             # set of the first step, so the intersected multiset is ignored.
-            sortable_candidates_append((scores_vector, rid, rule, high_intersection))
+            sortable_candidates_append((scores_vectors, rid, rule, high_intersection))
 
     if not sortable_candidates:
         return sortable_candidates
 
-    # rank candidates
-    sortable_candidates = sorted(sortable_candidates, reverse=True)
+    sortable_candidates.sort(reverse=True)
 
-    if TRACE_CANDIDATES_DEEP and sortable_candidates:
+    if TRACE_CANDIDATES_SET:
         logger_debug('\n\n\ncompute_candidates: sets: sortable_candidates:', len(sortable_candidates))
         print()
         for rank, x in enumerate(sortable_candidates[:20], 1):
@@ -294,64 +363,67 @@ def compute_candidates(query_run, idx, matchable_rids, top=50):
     ####################################################################
     # step 2 is on tids multisets
     ####################################################################
-    # keep only the top candidates
+    # keep only the 10 x top candidates
     candidates = sortable_candidates[:top * 10]
     sortable_candidates = []
     sortable_candidates_append = sortable_candidates.append
 
-    qmset_len = multiset_counter(qmset)
-    high_qmset_len = multiset_counter(high_multiset_subset(qmset, len_junk))
+    if _use_bigrams:
+        mset_idf_by_tid = idx.bigrams_idf_by_bigram
+        filter_non_matching = False
+    else:
+        mset_idf_by_tid = idx.tokens_idf_by_tid
+        filter_non_matching = True
 
     msets_by_rid = idx.msets_by_rid
-    for _score_vector, rid, rule, high_intersection in candidates:
 
-        scores_vector, _intersection = compare_token_sets(
-            qset=qmset, qset_len=qmset_len,
-            high_qset_len=high_qmset_len,
+    high_intersection_filter = partial(high_multiset_subset, _use_bigrams=_use_bigrams)
+
+    for _score_vectors, rid, rule, high_intersection in candidates:
+
+        scores_vectors, _intersection = compare_token_sets(
+            qset=qmset,
             iset=msets_by_rid[rid],
             intersector=multisets_intersector,
             counter=multiset_counter,
-            high_intersection_filter=high_multiset_subset,
+            high_intersection_filter=high_intersection_filter,
             len_junk=len_junk,
             unique=False,
             rule=rule,
             tfidf_computer=compute_tfidf_mset_score,
-            idf_by_tid=idx.tokens_idf_by_tid)
+            idf_by_tid=mset_idf_by_tid,
+            filter_non_matching=filter_non_matching)
 
-        if scores_vector:
+        if scores_vectors:
             # we keep the high_intersection  of sets, not multisets
-            sortable_candidates_append((scores_vector, rid, rule, high_intersection))
+            sortable_candidates_append((scores_vectors, rule, high_intersection))
 
     if not sortable_candidates:
         return sortable_candidates
 
     # rank candidates
-    sortable_candidates = sorted(filter_dupes(sortable_candidates), reverse=True)
+    candidates = sorted(filter_dupes(sortable_candidates), reverse=True)[:top]
 
-    if TRACE_CANDIDATES_DEEP and sortable_candidates:
-        logger_debug('\n\n\ncompute_candidates: FILTERED: sortable_candidates:', len(sortable_candidates))
-        print()
-        print(','.join(['rank', 'rule'] + list(ScoresVector._fields)))
-        for rank, x in enumerate(sortable_candidates[:20], 1):
-            print(rank, x)
-        print()
+    if TRACE_CANDIDATES_MSET and candidates:
+        logger_debug('\n\n\ncompute_candidates: FINAL: sortable_candidates:', len(candidates))
+        # CSV-like printout
+        print(','.join(
+            ['rank', 'rule'] +
+            [x + '_rounded' for x in ScoresVector._fields] +
+            list(ScoresVector._fields)))
 
-    ###########################################################################
-    # keep top and remove sort_order from Schwartzian transform)
-    candidates = [(candidate_rule, high_intersection, scores_vector)
-                  for scores_vector, _rid, candidate_rule, high_intersection in sortable_candidates[:top]]
+        for rank, ((score_vec1, score_vec2), rule, high_intersection) in enumerate(candidates, 1):
+            print(','.join(str(x) for x in ([rank, rule.identifier] + list(score_vec1) + list(score_vec2))))
 
-    return candidates
+    return candidates[:top]
 
 
-def compare_token_sets(
-        qset, qset_len, high_qset_len,
-        iset,
+def compare_token_sets(qset, iset,
         intersector, counter, high_intersection_filter,
         len_junk, unique,
         rule,
-        tfidf_computer,
-        idf_by_tid):
+        tfidf_computer, idf_by_tid,
+        filter_non_matching=True):
     """
     Compare a `qset` query set or multiset with a `iset` index rule set or
     multiset. Return a tuple of (ScoresVector tuple, intersection) from
@@ -362,90 +434,61 @@ def compare_token_sets(
     intersection = intersector(qset, iset)
     if not intersection:
         return None, None
+
     high_intersection = high_intersection_filter(intersection, len_junk)
-    if not high_intersection:
-        return None, None
 
-    high_matched_length = counter(high_intersection)
-    min_high_matched_length = rule.get_min_high_matched_length(unique)
+    if filter_non_matching:
+        if not high_intersection:
+            return None, None
 
-    # need some high match above min high
-    if high_matched_length < min_high_matched_length:
-        return None, None
+        high_matched_length = counter(high_intersection)
+        min_high_matched_length = rule.get_min_high_matched_length(unique)
 
-    iset_len = rule.get_length(unique)
+        # need some high match above min high
+        if high_matched_length < min_high_matched_length:
+            return None, None
+
     matched_length = counter(intersection)
     min_matched_length = rule.get_min_matched_length(unique)
 
-    if matched_length < min_matched_length:
+    if filter_non_matching and matched_length < min_matched_length:
         return None, None
 
-    high_iset_len = rule.get_high_length(unique)
-
-    # Compute ranking elements
-    #########################################
-
-    # resemblance and containment
+    iset_len = rule.get_length(unique)
+    qset_len = counter(qset)
+    # Compute resemblance and containment
     union_len = qset_len + iset_len - matched_length
     resemblance = matched_length / union_len
 
-    high_union_length = high_qset_len + high_iset_len - high_matched_length
-    high_resemblance = high_matched_length / high_union_length
-
     containment = matched_length / iset_len
-    high_containment = high_matched_length / high_iset_len
 
     minimum_coverage = rule.minimum_coverage
     # FIXME: we should not recompute this /100 ... it should be cached
-    if minimum_coverage and containment < (minimum_coverage / 100):
+    if filter_non_matching and minimum_coverage and containment < (minimum_coverage / 100):
         return None, None
 
     tfidf_score = tfidf_computer(intersection=intersection,
         qset_len=qset_len, idf_by_tid=idf_by_tid)
 
-    high_tfidf_score = tfidf_computer(intersection=high_intersection,
-        qset_len=high_qset_len, idf_by_tid=idf_by_tid)
-
-    scores = ScoresVector(
-        containment_r=round(containment, 1),
-        resemblance_r=round(resemblance, 1),
-        matched_length_r=round(matched_length / 20, 1),
-        tfidf_score_r=round(tfidf_score, 1),
-
-        containment=containment,
-        resemblance=resemblance,
-        matched_length=matched_length,
-        tfidf_score=tfidf_score,
-
-        high_containment=high_containment,
-        high_resemblance=high_resemblance,
-        high_matched_length=high_matched_length,
-        high_tfidf_score=high_tfidf_score,
-
-        iset_len=iset_len,
-        qset_len=qset_len,
+    scores = (
+        ScoresVector(
+            containment=round(containment, 1),
+            resemblance=round(resemblance, 1),
+            matched_length=round(matched_length / 20, 1),
+            tfidf_score=round(tfidf_score, 1)
+        ),
+        ScoresVector(
+            containment=containment,
+            resemblance=resemblance,
+            matched_length=matched_length,
+            tfidf_score=tfidf_score,
+        )
     )
     return scores, high_intersection
 
 
 _scores_vector_fields = [
-    'containment_r',
-    'resemblance_r',
-    'matched_length_r',
-    'tfidf_score_r',
-
-    'containment',
-    'resemblance',
-    'matched_length',
-    'tfidf_score',
-
-    'high_containment',
-    'high_resemblance',
-    'high_tfidf_score',
-    'high_matched_length',
-
-    'iset_len',
-    'qset_len'
+    'containment', 'resemblance', 'matched_length', 'tfidf_score',
 ]
 
 ScoresVector = namedtuple('ScoresVector', _scores_vector_fields)
@@ -457,11 +500,11 @@ def filter_dupes(sortable_candidates):
     yield filtered candidates.
     """
     def keyfunc(item):
-        sv, _rid, rule, _inter = item
+        (sv_round, _sv), rule, _inter = item
         return (
             rule.license_expression,
-            sv.containment_r, sv.resemblance_r,
-            sv.matched_length_r
+            sv_round.containment, sv_round.resemblance,
+            sv_round.matched_length
         )
 
     sortable_candidates = sorted(sortable_candidates, key=keyfunc)
@@ -476,7 +519,7 @@ def filter_dupes(sortable_candidates):
                 print(dupe)
 
             print()
-            print('Keeping only:',duplicates[0])
+            print('Keeping only:', duplicates[0])
             print()
             print()
 
