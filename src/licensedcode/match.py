@@ -1245,6 +1245,29 @@ def filter_false_positive_matches(matches, idx=None):
     return kept, discarded
 
 
+def filter_already_matched_matches(matches, query):
+    """
+    Return a filtered list of kept LicenseMatch matches and a list of
+    discardable matches given a `matches` list of LicenseMatch by removing
+    matches that have at least oneposition that is already matched in the
+    `query`.
+    """
+    kept = []
+    discarded = []
+    matched_pos = query.matched()
+    for match in matches:
+        # FIXME: do not use internals!!!
+        match_qspan_set = match.qspan._set
+        if match_qspan_set & matched_pos:
+            # discard any match that has any position already matched
+            if TRACE_REFINE: logger_debug('    ==> DISCARDING ALREADY MATCHED:', match)
+            discarded.append(match)
+        else:
+            kept.append(match)
+
+    return kept, discarded
+
+
 def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
                    filter_false_positive=True, merge=True):
     """
