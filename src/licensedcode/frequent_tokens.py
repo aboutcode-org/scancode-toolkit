@@ -10542,6 +10542,7 @@ arm
 ltd
 CORE
 SDI
+libzmq
 '''
 
 

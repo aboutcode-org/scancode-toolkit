@@ -58,6 +58,7 @@ STOPWORDS = frozenset({
     'td',
     'th',
     'img',
+    'alt',
     'src',
     'h1',
     'h2',
@@ -147,6 +148,9 @@ STOPWORDS = frozenset({
 
     # common in C literals
     'printf',
+    
+    # common in shell
+    'echo',
 
 })
 
