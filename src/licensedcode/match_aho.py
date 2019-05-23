@@ -209,29 +209,33 @@ def get_matches(tokens, qbegin, automaton):
 
 def match_fragments(idx, query_run):
     """
-    Return a list of Span by matching the `query_run` against
-    the `automaton` and `idx` index.
+    Return a list of Span by matching the `query_run` against the `automaton`
+    and `idx` index.
+
+    This is using a BLAST-like matching approach: we match ngram fragments of
+    rules (e.g. a seed) and then we extend left and right.
     """
     if TRACE_FRAG:
         logger_debug('-------------->match_fragments')
-    # 1. Get matches using the AHO Fragments automaton
+
+    # Get matches using the AHO Fragments automaton
     matches = exact_match(
         idx, query_run, automaton=idx.fragments_automaton, matcher=MATCH_AHO_FRAG)
     if TRACE_FRAG:
         logger_debug('match_fragments')
         map(print, matches)
 
-    # 2. Merge matches with a zero max distance
+    # Discard fragments that have any already matched positions in previous matches
+    from licensedcode.match import filter_already_matched_matches
+    matches, _discarded = filter_already_matched_matches(matches, query_run.query)
+
+
+    # Merge matches with a zero max distance, e.g. contiguous or overlapping
+    # with matches to the same rule
     from licensedcode.match import merge_matches
     matches = merge_matches(matches, max_dist=0)
 
-    # 3. Craft matching blocks and non-matching blocks from the matched spans
-
-    sorter = lambda m: (m.rule.rid, m.qspan.start, -m.hilen(), -m.len())
-    matches.sort(key=sorter)
-    matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
-                        in groupby(matches, key=lambda m: m.rule.rid)]
-
+    # extend matched fragments left and right. We group by rule
     from licensedcode.seq import extend_match
 
     rules_by_rid = idx.rules_by_rid
@@ -242,12 +246,13 @@ def match_fragments(idx, query_run):
     ahi = query_run.end
     query = query_run.query
     qtokens = query.tokens
-
-    # match as long as long we find alignments and have high matchable tokens
-    # this allows to find repeated instances of the same rule in the query run
     matchables = query_run.matchables
 
     frag_matches = []
+
+    keyf = lambda m: m.rule.rid
+    matches.sort(key=keyf)
+    matches_by_rule = groupby(matches, key=keyf)
 
     for rid, rule_matches in matches_by_rule:
         itokens = tids_by_rid[rid]
@@ -256,7 +261,7 @@ def match_fragments(idx, query_run):
 
         for match in rule_matches:
             i, j , k = match.qstart, match.istart, match.len()
-
+            # extend alignment left and right as long as we have matchables
             qpos, ipos, mlen = extend_match(
                 i, j, k, qtokens, itokens,
                 alo, ahi, blo, bhi, len_junk, matchables)
@@ -268,9 +273,8 @@ def match_fragments(idx, query_run):
                 matcher=MATCH_AHO_FRAG, query=query)
             frag_matches.append(match)
 
-    # 3. Craft non-matching blocks from the matched spans using the non-matched parts
-    # 4. Run sequence matching using the non-matching blocks as input
-    # 5. Merge matches as usual
+    # Merge matches as usual
+    matches = merge_matches(matches)
 
     return frag_matches
 
