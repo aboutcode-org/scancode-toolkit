@@ -152,8 +152,8 @@ def matched_query_text_tokenizer(text):
 
 def ngrams(iterable, ngram_length):
     """
-    Return an iterable of ngrams of length `ngram_length` given an iterable.
-    Each ngram is a tuple of ngram_length items.
+    Return an iterable of ngrams of length `ngram_length` given an `iterable`.
+    Each ngram is a tuple of `ngram_length` items.
 
     The returned iterable is empty if the input iterable contains less than
     `ngram_length` items.
