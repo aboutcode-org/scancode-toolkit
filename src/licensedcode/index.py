@@ -49,6 +49,7 @@ from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode import SMALL_RULE
 from licensedcode.frequent_tokens import global_tokens_by_ranks
+from licensedcode.legalese import common_license_words
 from licensedcode import match
 from licensedcode import match_aho
 from licensedcode import match_hash
@@ -59,7 +60,6 @@ from licensedcode.dmp import match_blocks as match_blocks_dmp
 from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
-
 
 """
 Main license index construction, query processing and matching entry points for
@@ -77,6 +77,7 @@ TRACE_MATCHES_TEXT = False
 TRACE_NEGATIVE = False
 TRACE_APPROX = False
 TRACE_APPROX_CANDIDATES = False
+TRACE_APPROX_MATCHES = False
 TRACE_INDEXING_PERF = False
 TRACE_TOKEN_DOC_FREQ = False
 
@@ -86,7 +87,7 @@ def logger_debug(*args):
 
 
 if (TRACE or TRACE_MATCHES or TRACE_NEGATIVE
-    or TRACE_APPROX or TRACE_APPROX_CANDIDATES
+    or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
     or TRACE_INDEXING_PERF):
 
     import logging
@@ -169,7 +170,7 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _ranked_tokens=global_tokens_by_ranks,
+    def __init__(self, rules=None, _ranked_tokens=common_license_words,
                  _spdx_tokens=None):
         """
         Initialize the index with an iterable of Rule objects.
@@ -253,6 +254,7 @@ class LicenseIndex(object):
                 print('LicenseIndex: building index.')
 
             # index all and optimize
+            # FIXME: _spdx_tokens are unlikely correct
             self._add_rules(rules, _ranked_tokens, _spdx_tokens)
 
             if TRACE_TOKEN_DOC_FREQ:
@@ -274,7 +276,7 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _ranked_tokens=global_tokens_by_ranks,
+    def _add_rules(self, rules, _ranked_tokens=common_license_words,
                    _spdx_tokens=None):
         """
         Add a list of Rule objects to the index and constructs optimized and
@@ -577,26 +579,24 @@ class LicenseIndex(object):
         """
         Log debug-level data for a list of `matches`.
         """
-        if TRACE or TRACE_NEGATIVE:
-            logger_debug(message + ':', len(matches))
-            if query:
-                # set line early to ease debugging
-                match.set_lines(matches, query.line_by_pos)
+        logger_debug(message + ':', len(matches))
+        if query:
+            # set line early to ease debugging
+            match.set_lines(matches, query.line_by_pos)
 
-            if TRACE_MATCHES or TRACE_NEGATIVE:
-                map(logger_debug, matches)
+        if not with_text:
+            map(logger_debug, matches)
+        else:
+            logger_debug(message + ' MATCHED TEXTS')
 
-            if (TRACE_MATCHES_TEXT or TRACE_NEGATIVE) and with_text:
-                logger_debug(message + ' MATCHED TEXTS')
+            from licensedcode.tracing import get_texts
 
-                from licensedcode.tracing import get_texts
-
-                for m in matches:
-                    logger_debug(m)
-                    qt, it = get_texts(m)
-                    print('  MATCHED QUERY TEXT:', qt)
-                    print('  MATCHED RULE TEXT:', it)
-                    print()
+            for m in matches:
+                logger_debug(m)
+                qt, it = get_texts(m)
+                print('  MATCHED QUERY TEXT:', qt)
+                print('  MATCHED RULE TEXT:', it)
+                print()
 
     def get_spdx_id_matches(self, query, from_spdx_id_lines=True, **kwargs):
         """
@@ -717,9 +717,6 @@ class LicenseIndex(object):
                         tid: postings for tid, postings in high_postings.items()
                             if tid in high_intersection}
 
-                    if TRACE_APPROX:
-                        logger_debug('get_approximate_matches: using high_postings:', len(high_postings))
-
                 start_offset = 0
                 while True:
                     rule_matches = match_seq.match_sequence(
@@ -727,6 +724,11 @@ class LicenseIndex(object):
                         high_postings=high_postings,
                         start_offset=start_offset,
                         match_blocks=match_blocks)
+
+                    if TRACE_APPROX_MATCHES:
+                        self.debug_matches(
+                            rule_matches, 'get_approximate_matches: rule_matches:',
+                            with_text=True, query=query)
 
                     if not rule_matches:
                         break
@@ -980,7 +982,7 @@ class LicenseIndex(object):
         pickler = cPickle if fast else pickle
         return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
 
-    def renumber_token_ids(self, tokens_count_by_old_tid,
+    def renumber_token_ids1(self, tokens_count_by_old_tid,
                            _ranked_tokens=global_tokens_by_ranks,
                            _spdx_token_ids=None):
         """
@@ -1082,6 +1084,103 @@ class LicenseIndex(object):
             for new_tid, token in enumerate(tokens_by_new_tid)}
         # OPTIMIZED
         sparsify(new_dictionary)
+
+        old_tids_by_rid = self.tids_by_rid
+
+        # mapping of rule_id->new token_ids array
+        new_tids_by_rid = [array('h', (old_to_new_tids[tid] for tid in old_tids))
+            for old_tids in old_tids_by_rid]
+
+        # Now do a few sanity checks...
+        # By construction this should always be true
+        assert set(tokens_by_new_tid) == set(tokens_by_old_tid)
+
+        # TODO: Check that the junk count choice is correct: for instance using
+        # some stats based on standard deviation or markov chains or similar
+        # conditional probabilities such that we verify that we CANNOT create a
+        # distinctive meaningful license string made entirely from junk tokens
+
+        return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid
+
+    def renumber_token_ids(self, tokens_count_by_old_tid,
+                           _legal_tokens=common_license_words,
+                           _spdx_token_ids=None):
+        """
+        Return updated index structures with new token ids such that the most
+        common tokens (aka. 'junk' or 'low' tokens) have the lowest ids.
+
+        Return a tuple of (len_junk, dictionary, tokens_by_tid, tids_by_rid)
+        - len_junk: the number of junk_old_tids tokens such that all junk token
+          ids are smaller than this number.
+        - dictionary: mapping of token string->token id
+        - tokens_by_tid: reverse mapping of token id->token string
+        - tids_by_rid: mapping of rule id-> array of token ids
+
+        The arguments all relate to old, temporary token ids and are:
+        - `tokens_count_by_old_tid`: mapping of token id-> token occurences
+           count across all rules.
+        - `_ranked_tokens`: callable returning a list of common lowercase token
+          strings, ranked from most common to least common.
+        - `_spdx_token_ids` if provided is a set of token ids that are only
+          comming from SPDX keys and are not otherwise present in other license
+          rules.
+
+        Common tokens are computed based on a curated list of frequent words and
+        token frequencies across rules such that common (aka. junk) tokens have
+        lower token ids strictly smaller than len_junk.
+        """
+        old_dictionary = self.dictionary
+        tokens_by_old_tid = self.tokens_by_tid
+        old_tids_by_rid = self.tids_by_rid
+
+        # keep only good tokens that actually do exist
+        good_old_tids = (old_dictionary.get(token) for token in  _legal_tokens)
+        good_old_tids = set(t for t in good_old_tids if t is not None)
+
+        # track tokens for rules with a single token: their token is never
+        # common/junk otherwise they can never be detected
+        solo_old_tids = set(tokens[0] for tokens in old_tids_by_rid if len(tokens) == 1)
+        good_old_tids.update(solo_old_tids)
+
+        # create initial set of common/junk token ids
+        junk_old_tids = set()
+
+        ############################
+        # TODO: Why???
+        # FIXME: likely wrong
+        # Ensure that tokens that are only found in SPDX keys are
+        # treated as common/junk
+        if _spdx_token_ids:
+            junk_old_tids.update(_spdx_token_ids)
+        good_old_tids.difference_update(junk_old_tids)
+        ############################
+
+        # Build the candidate common/junk set as an approximate proportion of
+        # total tokens
+        len_tokens = len(tokens_by_old_tid)
+
+        len_good = len(good_old_tids)
+        len_junk = len_tokens - len_good
+
+        new_to_old_tids = [(old_tid, token) for old_tid, token in enumerate(tokens_by_old_tid)]
+        new_to_old_tids.sort(key=lambda ot_tk: ot_tk[0] in good_old_tids)
+
+        new_old_tokens = [(new_tid, old_tid, token) for new_tid, (old_tid, token)
+                        in enumerate(new_to_old_tids)]
+
+        # create the new dictionary tokens trings -> new id
+        new_dictionary = {token: new_tid for (new_tid, _old, token) in new_old_tokens}
+        # OPTIMIZED
+        sparsify(new_dictionary)
+
+        # keep a mapping from old to new id used for renumbering index structures
+        old_to_new_tids = [new_tid
+           for (new_tid, _old_tid, _token) in sorted(new_old_tokens, key=itemgetter(1))]
+
+
+        # create the new ids -> tokens string mapping
+        new_old_tokens.sort()
+        tokens_by_new_tid = [token for (_new_tid, _old_tid, token) in new_old_tokens]
 
         old_tids_by_rid = self.tids_by_rid
 
