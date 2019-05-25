@@ -27,8 +27,6 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from functools import partial
-
 import attr
 
 from plugincode.scan import ScanPlugin
@@ -37,3 +35,26 @@ from scancode import CommandLineOption
 from scancode import OTHER_SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
 
+@scan_impl
+class FingerprintScanner(ScanPlugin):
+    """
+    Scan a file Resource to generate fingerprint.
+    """
+
+    resource_attributes = dict(fingerprint=attr.ib(default=None, repr=False))
+
+    sort_order = 1
+
+    options = [
+        CommandLineOption(('-f', '--fingerprint'),
+                          is_flag=True, default=False,
+                          help='Scan <input> to generate fingerprint.',
+                          help_group=OTHER_SCAN_GROUP)
+    ]
+
+    def is_enabled(self, fingerprint, **kwargs):
+        return fingerprint
+
+    def get_scanner(self, **kwargs):
+        from scancode.api import generate_fingerprint
+        return generate_fingerprint
