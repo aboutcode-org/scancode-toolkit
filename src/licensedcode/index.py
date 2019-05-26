@@ -170,8 +170,8 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _ranked_tokens=common_license_words,
-                 _spdx_tokens=None):
+    def __init__(self, rules=None, _ranked_tokens=global_tokens_by_ranks,
+                 _spdx_tokens=None, use_new=False):
         """
         Initialize the index with an iterable of Rule objects.
         """
@@ -252,10 +252,15 @@ class LicenseIndex(object):
             if TRACE_INDEXING_PERF:
                 start = time()
                 print('LicenseIndex: building index.')
+            if use_new:
+                _ranked_tokens = common_license_words
+                ruler = self._add_rules2
+            else:
+                _ranked_tokens = global_tokens_by_ranks
+                ruler = self._add_rules
 
             # index all and optimize
-            # FIXME: _spdx_tokens are unlikely correct
-            self._add_rules(rules, _ranked_tokens, _spdx_tokens)
+            ruler(rules, _ranked_tokens, _spdx_tokens)
 
             if TRACE_TOKEN_DOC_FREQ:
                 print('LicenseIndex: token, frequency')
@@ -276,7 +281,7 @@ class LicenseIndex(object):
                       '%(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _ranked_tokens=common_license_words,
+    def _add_rules(self, rules, _ranked_tokens=global_tokens_by_ranks,
                    _spdx_tokens=None):
         """
         Add a list of Rule objects to the index and constructs optimized and
@@ -565,6 +570,296 @@ class LicenseIndex(object):
             dupe_rule_paths = [
                 '\n'.join(
                     sorted([('file://' + rule.text_file) if rule.text_file else ('text: ' + rule.stored_text)
+                            for rule in rules])
+                    )
+                for rules in dupe_rules
+            ]
+            msg = ('Duplicate rules: \n' + '\n\n'.join(dupe_rule_paths))
+            raise AssertionError(msg)
+
+        self.optimized = True
+
+    def _add_rules2(self, rules, _ranked_tokens=common_license_words,
+                   _spdx_tokens=frozenset()):
+        """
+        Add a list of Rule objects to the index and constructs optimized and
+        immutable index structures.
+
+        `_spdx_tokens` if provided is a set of token strings from known SPDX
+        keys: theirs tokens need to be accounted for in the dictionary.
+        """
+        if self.optimized:
+            raise Exception('Index has been optimized and cannot be updated.')
+
+        # initial dictionary mapping for known legalese tokens
+        ########################################################################
+
+        # FIXME: we should start at 1, and ids are become valid unichr values
+
+        self.dictionary = dictionary = {
+            ts: tid for tid, ts in enumerate(common_license_words)}
+        dictionary_get = dictionary.get
+        
+        len_good = len(dictionary)
+        highest_tid = len_good -1
+
+        # Add SPDX key tokens to the dictionary
+        ########################################################################
+        for sts in _spdx_tokens:
+            stid = dictionary_get(sts)
+            if stid is None:
+                # we have a never yet seen token, so we assign a new tokenid
+                highest_tid += 1
+                stid = highest_tid
+                dictionary[stid] = sts
+
+        # OPTIMIZED
+        sparsify(dictionary)
+
+        self.rules_by_rid = rules_by_rid = list(rules)
+        len_rules = len(rules_by_rid)
+
+        # create index data structures
+        # OPTIMIZATION: bind frequently used methods to the local scope for index structures
+        ########################################################################
+        tids_by_rid_append = self.tids_by_rid.append
+
+        false_positive_rids_add = self.false_positive_rids.add
+        negative_rids_add = self.negative_rids.add
+        regular_rids_add = self.regular_rids.add
+        approx_matchable_rids_add = self.approx_matchable_rids.add
+
+        # since we only use these for regular rules, these lists may be sparse.
+        # their index is the rule rid
+        self.high_postings_by_rid = high_postings_by_rid = [None] * len_rules
+        self.sets_by_rid = sets_by_rid = [None] * len_rules
+        self.msets_by_rid = msets_by_rid = [None] * len_rules
+
+        # count in how many doc a token shows up
+        tokens_doc_freq_by_tid = defaultdict(int)
+        # count in how many doc a token bigram shows up
+        bigrams_doc_freq_by_big = defaultdict(int)
+
+        # track all duplicate rules: fail and report dupes at once at the end
+        dupe_rules_by_hash = defaultdict(list)
+
+        # build partials for methods that populate automatons
+        negative_automaton_add = partial(match_aho.add_sequence,
+            automaton=self.negative_automaton, with_duplicates=False)
+
+        rules_automaton_add = partial(match_aho.add_sequence,
+            automaton=self.rules_automaton, with_duplicates=False)
+
+        if USE_AHO_FRAGMENTS:
+            fragments_automaton_add = partial(match_aho.add_sequence,
+                automaton=self.fragments_automaton, with_duplicates=True)
+
+        if USE_RULE_STARTS:
+            starts_automaton_add_start = partial(match_aho.add_start,
+                automaton=self.starts_automaton)
+
+        # OPTIMIZED: bind frequently used objects to local scope
+        rid_by_hash = self.rid_by_hash
+        false_positive_rid_by_hash = self.false_positive_rid_by_hash
+        match_hash_index_hash = match_hash.index_hash
+        match_set_tids_set_counter = match_set.tids_set_counter
+        match_set_multiset_counter = match_set.multiset_counter
+
+        len_starts = SMALL_RULE
+        min_len_starts = SMALL_RULE * 6
+
+        ngram_len = AHO_FRAGMENTS_NGRAM_LEN
+
+        # Index each rule
+        ########################################################################
+        for rid, rule in enumerate(rules_by_rid):
+
+            # assign rid
+            rule.rid = rid
+
+            rule_token_ids = array('h', [])
+            tids_by_rid_append(rule_token_ids)
+
+            is_weak = True
+
+            for rts in rule.tokens():
+                rtid = dictionary_get(rts)
+                if rtid is None:
+                    # we have a never yet seen token, so we assign a new tokenid
+                    # note: we could use the length of the dictionary instead
+                    highest_tid += 1
+                    rtid = highest_tid
+                    dictionary[rts] = rtid
+                if is_weak and rtid < len_good:
+                    is_weak = False
+
+                rule_token_ids.append(rtid)
+
+            # build hashes index and check for duplicates rule texts
+            rule_hash = match_hash_index_hash(rule_token_ids)
+            dupe_rules_by_hash[rule_hash].append(rule)
+
+            # classify rules and build disjuncted sets of rids
+            if rule.is_negative:
+                # negative rules are matched early and their exactly matched.
+                # Their tokens are removed from the token stream
+                negative_rids_add(rid)
+                negative_automaton_add(tids=rule_token_ids, rid=rid)
+                continue
+
+            if rule.is_false_positive:
+                # false positive rules do not participate in the matches at all
+                # they are used only in post-matching filtering
+                false_positive_rids_add(rid)
+                false_positive_rid_by_hash[rule_hash] = rid
+                rule.is_approx_matchable = False
+                continue
+
+            # from now on, we have regular rules
+            rid_by_hash[rule_hash] = rid
+            regular_rids_add(rid)
+
+            if is_weak:
+                # Some rules cannot be matched as a sequence as "weak" rules
+                rule.is_approx_matchable = False
+            else:
+                rule.is_approx_matchable = True
+                approx_matchable_rids_add(rid)
+
+                ####################
+                # update high postings: positions by high tids used to
+                # speed up sequence matching
+                ####################
+                # no postings for rules that cannot be matched as a sequence (too short and weak)
+                # TODO: this could be optimized with a group_by
+                postings = defaultdict(list)
+                for pos, tid in enumerate(rule_token_ids):
+                    if tid < len_good:
+                        postings[tid].append(pos)
+                # OPTIMIZED: for speed and memory: convert postings to arrays
+                postings = {tid: array('h', value) for tid, value in postings.items()}
+                # OPTIMIZED: for speed, sparsify dict
+                sparsify(postings)
+                high_postings_by_rid[rid] = postings
+
+                ####################
+                # ... and ngram fragments: compute ngrams and populate an automaton with ngrams
+                ####################
+                if USE_AHO_FRAGMENTS and rule.minimum_coverage < 100 and rule.length > ngram_len:
+                    all_ngrams = tokenize.ngrams(rule_token_ids, ngram_length=ngram_len)
+                    all_ngrams_with_pos = tokenize.select_ngrams(all_ngrams, with_pos=True)
+                    # all_ngrams_with_pos = enumerate(all_ngrams)
+                    for pos, ngram in all_ngrams_with_pos:
+                        fragments_automaton_add(tids=ngram, rid=rid, start=pos)
+
+                ####################
+                # use the start and end of this rule as a break point for query runs
+                ####################
+                if USE_RULE_STARTS and rule.length > min_len_starts:
+                    starts_automaton_add_start(
+                        tids=rule_token_ids[:len_starts],
+                        rule_identifier=rule.identifier,
+                        rule_length=rule.length)
+
+            ####################
+            # build sets and multisets indexes, for all regular rules as we need the thresholds
+            ####################
+            tids_set, mset = match_set.build_set_and_mset(
+                rule_token_ids, _use_bigrams=USE_BIGRAM_MULTISETS)
+            sets_by_rid[rid] = tids_set
+            msets_by_rid[rid] = mset
+
+            ####################################################################
+            ####################################################################
+            # FIXME!!!!!!! we should store them: we need them and we recompute
+            # them later at match time
+            tids_set_high = match_set.high_tids_set_subset(
+                tids_set, len_good)
+            mset_high = match_set.high_multiset_subset(
+                mset, len_good, _use_bigrams=USE_BIGRAM_MULTISETS)
+
+            # FIXME!!!!!!!
+            ####################################################################
+            ####################################################################
+
+            ####################
+            # update rule thresholds
+            ####################
+            rule.length_unique = match_set_tids_set_counter(tids_set)
+            rule.high_length_unique = match_set_tids_set_counter(tids_set_high)
+
+            rule.high_length = match_set_multiset_counter(mset_high)
+            rule.compute_thresholds()
+
+            ####################
+            # update idf counters
+            ####################
+            for tid in tids_set:
+                tokens_doc_freq_by_tid[tid] += 1
+
+            if USE_BIGRAM_MULTISETS:
+                for bigram in tokenize.ngrams(rule_token_ids, 2):
+                    bigrams_doc_freq_by_big[bigram] += 1
+
+            ####################
+            # populate automaton with the whole rule tokens sequence, for
+            # all RULEs, be they "standard", weak or small (but not negative
+            ####################
+            rules_automaton_add(tids=rule_token_ids, rid=rid)
+
+
+        ########################################################################
+        # Finalize index data structures
+        ########################################################################
+
+        # Create the tid -> token string lookup structure.
+        ########################################################################
+        self.tokens_by_tid = tokens_by_tid = [
+            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
+        self.len_tokens = len_tokens = len(tokens_by_tid)
+
+        # Finalize automatons
+        ########################################################################
+        self.negative_automaton.make_automaton()
+        self.rules_automaton.make_automaton()
+
+        if USE_AHO_FRAGMENTS:
+            self.fragments_automaton.make_automaton()
+
+        if USE_RULE_STARTS:
+            match_aho.finalize_starts(self.starts_automaton)
+
+        # Compute tokens IDF (inverse documents frequency)
+        ########################################################################
+        self.tokens_idf_by_tid = match_set.compute_token_idfs(
+            len_rules, tokens_doc_freq_by_tid)
+
+        if USE_BIGRAM_MULTISETS:
+            self.bigrams_idf_by_bigram = match_set.compute_bigram_idfs(# NOQA
+                len_rules, bigrams_doc_freq_by_big)
+
+        # OPTIMIZED: sparser dicts for faster lookup
+        sparsify(self.rid_by_hash)
+        sparsify(self.false_positive_rid_by_hash)
+
+        ########################################################################
+        # Do some sanity checks
+        ########################################################################
+
+        msg = 'Inconsistent structure lengths'
+        assert len_tokens == highest_tid + 1 == len(dictionary), msg
+
+        msg = 'Cannot support more than licensedcode.index.MAX_TOKENS: %d' % MAX_TOKENS
+        assert len_tokens <= MAX_TOKENS, msg
+
+        dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
+        if dupe_rules:
+            dupe_rule_paths = [
+                '\n'.join(
+                    sorted([
+                        ('file://' + rule.text_file)
+                        if rule.text_file
+                        else ('text: ' + rule.stored_text)
                             for rule in rules])
                     )
                 for rules in dupe_rules
@@ -982,7 +1277,7 @@ class LicenseIndex(object):
         pickler = cPickle if fast else pickle
         return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
 
-    def renumber_token_ids1(self, tokens_count_by_old_tid,
+    def renumber_token_ids(self, tokens_count_by_old_tid,
                            _ranked_tokens=global_tokens_by_ranks,
                            _spdx_token_ids=None):
         """
@@ -1102,108 +1397,11 @@ class LicenseIndex(object):
 
         return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid
 
-    def renumber_token_ids(self, tokens_count_by_old_tid,
-                           _legal_tokens=common_license_words,
-                           _spdx_token_ids=None):
-        """
-        Return updated index structures with new token ids such that the most
-        common tokens (aka. 'junk' or 'low' tokens) have the lowest ids.
-
-        Return a tuple of (len_junk, dictionary, tokens_by_tid, tids_by_rid)
-        - len_junk: the number of junk_old_tids tokens such that all junk token
-          ids are smaller than this number.
-        - dictionary: mapping of token string->token id
-        - tokens_by_tid: reverse mapping of token id->token string
-        - tids_by_rid: mapping of rule id-> array of token ids
-
-        The arguments all relate to old, temporary token ids and are:
-        - `tokens_count_by_old_tid`: mapping of token id-> token occurences
-           count across all rules.
-        - `_ranked_tokens`: callable returning a list of common lowercase token
-          strings, ranked from most common to least common.
-        - `_spdx_token_ids` if provided is a set of token ids that are only
-          comming from SPDX keys and are not otherwise present in other license
-          rules.
-
-        Common tokens are computed based on a curated list of frequent words and
-        token frequencies across rules such that common (aka. junk) tokens have
-        lower token ids strictly smaller than len_junk.
-        """
-        old_dictionary = self.dictionary
-        tokens_by_old_tid = self.tokens_by_tid
-        old_tids_by_rid = self.tids_by_rid
-
-        # keep only good tokens that actually do exist
-        good_old_tids = (old_dictionary.get(token) for token in  _legal_tokens)
-        good_old_tids = set(t for t in good_old_tids if t is not None)
-
-        # track tokens for rules with a single token: their token is never
-        # common/junk otherwise they can never be detected
-        solo_old_tids = set(tokens[0] for tokens in old_tids_by_rid if len(tokens) == 1)
-        good_old_tids.update(solo_old_tids)
-
-        # create initial set of common/junk token ids
-        junk_old_tids = set()
-
-        ############################
-        # TODO: Why???
-        # FIXME: likely wrong
-        # Ensure that tokens that are only found in SPDX keys are
-        # treated as common/junk
-        if _spdx_token_ids:
-            junk_old_tids.update(_spdx_token_ids)
-        good_old_tids.difference_update(junk_old_tids)
-        ############################
-
-        # Build the candidate common/junk set as an approximate proportion of
-        # total tokens
-        len_tokens = len(tokens_by_old_tid)
-
-        len_good = len(good_old_tids)
-        len_junk = len_tokens - len_good
-
-        new_to_old_tids = [(old_tid, token) for old_tid, token in enumerate(tokens_by_old_tid)]
-        new_to_old_tids.sort(key=lambda ot_tk: ot_tk[0] in good_old_tids)
-
-        new_old_tokens = [(new_tid, old_tid, token) for new_tid, (old_tid, token)
-                        in enumerate(new_to_old_tids)]
-
-        # create the new dictionary tokens trings -> new id
-        new_dictionary = {token: new_tid for (new_tid, _old, token) in new_old_tokens}
-        # OPTIMIZED
-        sparsify(new_dictionary)
-
-        # keep a mapping from old to new id used for renumbering index structures
-        old_to_new_tids = [new_tid
-           for (new_tid, _old_tid, _token) in sorted(new_old_tokens, key=itemgetter(1))]
-
-
-        # create the new ids -> tokens string mapping
-        new_old_tokens.sort()
-        tokens_by_new_tid = [token for (_new_tid, _old_tid, token) in new_old_tokens]
-
-        old_tids_by_rid = self.tids_by_rid
-
-        # mapping of rule_id->new token_ids array
-        new_tids_by_rid = [array('h', (old_to_new_tids[tid] for tid in old_tids))
-            for old_tids in old_tids_by_rid]
-
-        # Now do a few sanity checks...
-        # By construction this should always be true
-        assert set(tokens_by_new_tid) == set(tokens_by_old_tid)
-
-        # TODO: Check that the junk count choice is correct: for instance using
-        # some stats based on standard deviation or markov chains or similar
-        # conditional probabilities such that we verify that we CANNOT create a
-        # distinctive meaningful license string made entirely from junk tokens
-
-        return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid
-
 
 def get_weak_rids(len_junk, tids_by_rid, _idx):
     """
-    Return a set of "weak" rule ids made entirely of junk tokens: they can only be
-    matched using an automaton.
+    Return a set of "weak" rule ids made entirely of junk tokens: they can only
+    be matched using an automaton.
     """
     weak_rids = set()
     weak_rids_add = weak_rids.add

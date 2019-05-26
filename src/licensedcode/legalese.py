@@ -74,10 +74,10 @@ common_license_words = frozenset([
 'damages',
 'liability',
 'means',
-'otherwise',
 'licensor',
 'modify',
-'modifications',
+# 'modifications',
+# 'modification',
 'licenses',
 'granted',
 'distributed',
@@ -92,7 +92,6 @@ common_license_words = frozenset([
 'licensee',
 'gpl',
 'disclaimer',
-'modification',
 'express',
 'permitted',
 'commercial',
@@ -4502,5 +4501,6 @@ common_license_words = frozenset([
 'mailer',
 'triggered',
 'copyrightnotice',
-'intimidating'
+'intimidating',
+'imagemagick',
 ])

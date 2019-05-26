@@ -10543,6 +10543,15 @@ ltd
 CORE
 SDI
 libzmq
+Otherwise
+JORIS VAN DAMME
+LibTiff
+AWARE SYSTEMS
+genivia
+engelen
+acm
+org
+modification
 '''
 
 
