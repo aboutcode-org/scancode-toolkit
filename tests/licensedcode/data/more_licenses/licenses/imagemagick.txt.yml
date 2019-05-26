@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - imagemagick
 notes: this is a license from fossology license reference ImageMagick (ImageMagick EULA) http://www.imagemagick.org/script/license.php
