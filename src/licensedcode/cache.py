@@ -235,11 +235,14 @@ def get_cached_index(cache_dir=scancode_cache_dir,
             # Here, the cache is not consistent with the latest code and
             # data: It is either stale or non-existing: we need to
             # rebuild the index and cache it
+
+            # FIXME: caching a pickle of this would be 10x times faster
+            license_db = get_licenses_db(licenses_data_dir=licenses_data_dir)
+
             rules = get_rules(
                 licenses_data_dir=licenses_data_dir,
                 rules_data_dir=rules_data_dir)
 
-            license_db = get_licenses_db(licenses_data_dir=licenses_data_dir)
             spdx_tokens = set(get_all_spdx_key_tokens(license_db))
 
             idx = LicenseIndex(rules, _spdx_tokens=spdx_tokens)
