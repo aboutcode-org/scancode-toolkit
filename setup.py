@@ -30,11 +30,6 @@ except ValueError:
 ####
 
 
-_sys_v0 = sys.version_info[0]
-py2 = _sys_v0 == 2
-py3 = _sys_v0 == 3
-
-
 def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
                 use_default=USE_DEFAULT_VERSION):
     """
@@ -96,16 +91,6 @@ def read(*names, **kwargs):
     ).read()
 
 
-# Accept Python3, but only when running setup.py. Released wheels should be for
-# Python 2 only until we completed the Python3 port
-if py2:
-    python_requires= '>=2.7,<3'
-elif py3:
-    python_requires= '>=3.6'
-else:
-    raise Exception('Unsupported Python version.')
-
-
 setup(
     name='scancode-toolkit',
     version=get_version(),
@@ -136,7 +121,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires=python_requires,
+    python_requires='>=2.7,<3',    
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
@@ -147,7 +132,7 @@ setup(
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
-        'py2-ipaddress >= 2.0, <3.5; python_version<"3"',
+        'py2-ipaddress >= 2.0, <3.5;python_version<"3"',
         'url >= 0.1.4, < 0.1.6',
         'fingerprints == 0.5.4',
 
@@ -160,18 +145,17 @@ setup(
         'extractcode-7z',
 
         # commoncode
-        'backports.os == 0.1.1; python_version<"3"',
+        'backports.os == 0.1.1',
         'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
         'saneyaml',
-        'path.py',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
         'boolean.py >= 3.5,  < 4.0',
         'license_expression >= 0.99,  < 1.0',
-        'pyahocorasick >= 1.4, < 1.5',
+        'pyahocorasick >= 1.1, < 1.2',
 
         # multiple
         'lxml >= 4.0.0, < 5.0.0',
@@ -198,14 +182,13 @@ setup(
         'xmltodict >= 0.11.0',
         'javaproperties >= 0.5',
         'toml >= 0.10.0',
-        'pkginfo >= 1.5.0.1',
-        'dparse >= 0.4.1',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=17.4, < 20.0',
+        'attrs >=17.4, < 19.0',
+        'cattrs',
         'typing >=3.6, < 3.7',
 
         # scancode outputs
@@ -260,6 +243,7 @@ setup(
             'emails = cluecode.plugin_email:EmailScanner',
             'urls = cluecode.plugin_url:UrlScanner',
             'generated = summarycode.generated:GeneratedCodeDetector',
+            'fingerprint = cluecode.plugin_fingerprint:FingerprintScanner',
         ],
 
         # scancode_post_scan is the entry point for post_scan plugins executed
