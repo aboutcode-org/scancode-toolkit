@@ -175,7 +175,7 @@ of the Software, and to permit persons to whom the Software is
         // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
         // copies of the Software, and to permit persons to whom the Software is
         // furnished to do so, subject to the following conditions:
-        
+
         // The above copyright  "[add] [text]"  notice and this permission notice shall be included in
         // all copies or substantial portions of the Software.
         '''.split()
@@ -1139,26 +1139,15 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert Span(0, 3) == match.ispan
 
 
-@skip('Needs review')
-class TestToFix(FileBasedTesting):
+class TestRegression(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_detection_in_complex_json(self):
-        # NOTE: this test cannot pass as we do not have several of the licenses
-        # listed in this JSON
-        test_file = self.get_test_loc('detect/json/all.json')
-        import json
-        item_map = json.load(test_file)
-        for item in item_map:
-            itemid = item_map[item
-        ]['id',
-        ]
-            content = itemid + ' \n ' + item_map[item
-        ]['url',
-        ] + ' \n ' + item_map[item
-        ]['title',
-        ]
-            tmp_file = self.get_temp_file()
-            fh = open(tmp_file, 'w')
-            fh.write(content)
-            fh.close()
+    def test_detection_does_not_munge_first_matched_word(self):
+        idx = cache.get_index()
+        qloc = self.get_test_loc('detect/truncated/seq-match-truncated.bug')
+        matches = idx.match(location=qloc)
+        assert 2 == len(matches)
+        match = matches[1]
+        matched_text = match.matched_text(whole_lines=False)
+        first_word = matched_text.split()[0]
+        assert 'Permission' == first_word

@@ -21,11 +21,11 @@
     }
   ],
   "license_clarity_score": {
-    "score": 68,
+    "score": 53,
     "declared": true,
     "discovered": 0.33,
     "consistency": true,
-    "spdx": true,
+    "spdx": false,
     "license_texts": false
   },
   "files": [

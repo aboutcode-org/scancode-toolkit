@@ -70,7 +70,7 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [
             [],
             [None],
-            [12, 0, 9, 6, 3, 0, 1, 5, 10],
+            [12, 0, 9, 5, 2, 0, 1, 4, 10],
             [],
             [None, None, None, None],
             [None, 0, None],

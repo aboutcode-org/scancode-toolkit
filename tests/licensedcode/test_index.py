@@ -543,7 +543,7 @@ No part of match        '''
              HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
-             OF THE
+             OF THE [POSSIBILITY] [OF] [SUCH] DAMAGE.
         """.split()
 
         exp_itext = u"""
@@ -582,7 +582,7 @@ No part of match        '''
             INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER
             IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR
             OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF
-            ADVISED OF THE
+            ADVISED OF THE DAMAGE
         """.lower().split()
         qtext, itext = get_texts(match)
         assert exp_qtext == qtext.split()
