@@ -35,6 +35,7 @@ from license_expression import Licensing
 
 from commoncode.datautils import Mapping
 from licensedcode.cache import get_licenses_db
+from licensedcode import models
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -301,12 +302,7 @@ def get_spdx_keys():
     """
     global _spdx_keys
     if not _spdx_keys:
-        licenses = get_licenses_db()
-        spdx = set()
-        for lic in licenses.values():
-            if (lic.spdx_license_key or lic.other_spdx_license_keys):
-                spdx.add(lic.key)
-        _spdx_keys = frozenset(spdx)
+        _spdx_keys = frozenset(models.get_all_spdx_keys(get_licenses_db()))
     return _spdx_keys
 
 
