@@ -31,10 +31,10 @@ from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
-import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
+from commoncode.fingerprint import generate_fingerprint
 from typecode.contenttype import get_type
 
 
@@ -43,6 +43,7 @@ TRACE = False
 logger = logging.getLogger(__name__)
 
 if TRACE:
+    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -57,7 +58,7 @@ Note: this API is unstable and still evolving.
 """
 
 
-def get_copyrights(location, deadline=sys.maxsize, **kwargs):
+def get_copyrights(location, **kwargs):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
     of mappings for copyright detected in the file at `location`.
@@ -68,7 +69,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     holders = []
     authors = []
 
-    for dtype, value, start, end in detect_copyrights(location, deadline=deadline):
+    for dtype, value, start, end in detect_copyrights(location):
 
         if dtype == 'copyrights':
             copyrights.append(
@@ -153,8 +154,7 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False,
-                 license_url_template=DEJACODE_LICENSE_URL,
-                 deadline=sys.maxsize, **kwargs):
+                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -179,8 +179,7 @@ def get_licenses(location, min_score=0, include_text=False,
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score,
-                           deadline=deadline, **kwargs):
+    for match in idx.match(location=location, min_score=min_score, **kwargs):
 
         if include_text:
             # TODO: handle whole lines with the case of very long lines
@@ -224,7 +223,7 @@ def get_licenses(location, min_score=0, include_text=False,
 
             matched_rule['matcher'] = match.matcher
             matched_rule['rule_length'] = match.rule.length
-            matched_rule['matched_length'] = match.len()
+            matched_rule['matched_length'] = match.ilen()
             matched_rule['match_coverage'] = match.coverage()
             matched_rule['rule_relevance'] = match.rule.relevance
 
@@ -284,6 +283,12 @@ def get_file_info(location, **kwargs):
     result['is_script'] = bool(collector.is_script)
     return result
 
+def get_fingerprint(location, **kwargs):
+    """
+    Return a mapping of fingerprint generated for the file at `location`.
+    """
+    result = generate_fingerprint(location)
+    return dict(fingerprint=result)
 
 def extract_archives(location, recurse=True):
     """

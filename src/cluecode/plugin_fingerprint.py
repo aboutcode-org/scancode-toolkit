@@ -56,5 +56,5 @@ class FingerprintScanner(ScanPlugin):
         return fingerprint
 
     def get_scanner(self, **kwargs):
-        from scancode.api import generate_fingerprint
-        return generate_fingerprint
+        from scancode.api import get_fingerprint
+        return get_fingerprint
