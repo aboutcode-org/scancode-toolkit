@@ -34,6 +34,7 @@ import logging
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
+from commoncode.fingerprint import generate_fingerprint
 from typecode.contenttype import get_type
 
 
@@ -282,6 +283,12 @@ def get_file_info(location, **kwargs):
     result['is_script'] = bool(collector.is_script)
     return result
 
+def get_fingerprint(location, **kwargs):
+    """
+    Return a mapping of fingerprint generated for the file at `location`.
+    """
+    result = generate_fingerprint(location)
+    return dict(fingerprint=result)
 
 def extract_archives(location, recurse=True):
     """
