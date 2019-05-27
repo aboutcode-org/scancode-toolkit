@@ -256,7 +256,7 @@ class LicenseIndex(object):
                 _ranked_tokens = common_license_words
                 ruler = self._add_rules2
             else:
-                _ranked_tokens = global_tokens_by_ranks
+                _ranked_tokens = _ranked_tokens or global_tokens_by_ranks
                 ruler = self._add_rules
 
             # index all and optimize
