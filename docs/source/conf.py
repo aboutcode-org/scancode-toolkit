@@ -14,6 +14,14 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# Adding Support for Images and GIFs in Sphinx
+from sphinx.builders.html import StandaloneHTMLBuilder
+StandaloneHTMLBuilder.supported_image_types = [
+    'image/svg+xml',
+    'image/gif',
+    'image/png',
+    'image/jpeg'
+]
 
 # -- Project information -----------------------------------------------------
 
