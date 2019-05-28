@@ -21,6 +21,75 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+import hashlib
+
 
 def generate_fingerprint(location):
-    pass
+    """
+        Return fingerprint of the file at `location`.
+    """
+    token_list = get_tokenlist(location)
+    weighted_list = get_weightedlist(token_list)
+    fingerprint = process_weightedlist(weighted_list)
+
+    return "".join(str(x) for x in fingerprint)
+
+
+def get_tokenlist(location):
+    """
+       Return a list of tokens for the file at `location`.
+    """
+    results = []
+
+    with open(location, 'r') as f:
+        for line in f:
+            for token in line.split():
+                results.append(token)
+
+    return results
+
+
+def get_weightedlist(token_list):
+    """
+        Return a weighted array from the word token list.
+    """
+    result = [0] * 128
+    shingle_length = 3
+    length = len(token_list) - shingle_length
+
+    for index in range(length):
+        shingle = token_list[index] + token_list[index + 1] + token_list[index + 2]
+        process_shingles(shingle, result)
+
+    return result
+
+
+def process_weightedlist(weighted_list):
+    """
+        Return fingerprint from a weighted array.
+    """
+    result = []
+
+    for item in weighted_list:
+        if item > 0:
+            result.append(1)
+        else:
+            result.append(0)
+
+    return result
+
+
+def process_shingles(shingle, weighted_list):
+    """
+        modify weighted list wrt to shingle
+    """
+    result = hashlib.md5(shingle.encode()).hexdigest()
+    hash_length = 128
+    binary_hash = bin(int(result, 16))[2:].zfill(hash_length)
+    for bit in range(hash_length):
+        if binary_hash[bit] == '1':
+            weighted_list[bit] += 1
+        else:
+            weighted_list[bit] -= 1
+
+    return weighted_list
