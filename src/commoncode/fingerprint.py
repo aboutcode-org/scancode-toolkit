@@ -23,6 +23,8 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 import hashlib
 
+hash_length = 128
+shingle_length = 3
 
 def generate_fingerprint(location):
     """
@@ -53,12 +55,13 @@ def get_weightedlist(token_list):
     """
         Return a weighted array from the word token list.
     """
-    result = [0] * 128
-    shingle_length = 3
+    result = [0] * hash_length
     length = len(token_list) - shingle_length
 
     for index in range(length):
-        shingle = token_list[index] + token_list[index + 1] + token_list[index + 2]
+        shingle = ''
+        for shingle_count in range(index, index + shingle_length):
+            shingle += token_list[shingle_count]
         process_shingles(shingle, result)
 
     return result
@@ -84,8 +87,8 @@ def process_shingles(shingle, weighted_list):
         modify weighted list wrt to shingle
     """
     result = hashlib.md5(shingle.encode()).hexdigest()
-    hash_length = 128
     binary_hash = bin(int(result, 16))[2:].zfill(hash_length)
+
     for bit in range(hash_length):
         if binary_hash[bit] == '1':
             weighted_list[bit] += 1
