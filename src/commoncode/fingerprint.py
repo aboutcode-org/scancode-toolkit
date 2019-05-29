@@ -21,6 +21,7 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
 import hashlib
 
 hash_length = 128
@@ -34,7 +35,7 @@ def generate_fingerprint(location):
     weighted_list = get_weightedlist(token_list)
     fingerprint = process_weightedlist(weighted_list)
 
-    return "".join(str(x) for x in fingerprint)
+    return "".join(str(bit) for bit in fingerprint)
 
 
 def get_tokenlist(location):
@@ -56,13 +57,16 @@ def get_weightedlist(token_list):
         Return a weighted array from the word token list.
     """
     result = [0] * hash_length
-    length = len(token_list) - shingle_length
+    length = len(token_list) - shingle_length + 1
 
-    for index in range(length):
-        shingle = ''
-        for shingle_count in range(index, index + shingle_length):
-            shingle += token_list[shingle_count]
-        process_shingles(shingle, result)
+    if length > 0:
+        for index in range(length):
+            shingle = ''
+            for shingle_count in range(index, index + shingle_length):
+                shingle += token_list[shingle_count]
+            process_shingles(shingle, result)
+    else:
+        process_shingles(''.join(token_list), result)
 
     return result
 
