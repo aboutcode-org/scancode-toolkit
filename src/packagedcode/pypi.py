@@ -35,6 +35,12 @@ import sys
 import attr
 from six import string_types
 
+from pkginfo import BDist
+from pkginfo import Develop
+from pkginfo import SDist
+from pkginfo import UnpackedSDist
+from pkginfo import Wheel
+
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
@@ -322,6 +328,74 @@ def parse(location):
     parser = parsers.get(file_name)
     if parser:
         return parser(location)
+
+
+def parse2(location):
+    pass
+
+
+def parse_source_distribution(location):
+    """
+    SDist objects are created from a filesystem path to the corresponding archive. Such as Zip or .tar.gz files
+    """
+    sdist = SDist(location)
+    if sdist:
+        common_data = dict(
+            name=sdist.name,
+            version=sdist.version,
+        )
+        package = PythonPackage(**common_data)
+        return package
+
+
+def parse_unpackaged_source(location):
+    """
+    Passing it the path to the unpacked package, or by passing it the setup.py at the top level.
+    """
+    unpackaged_dist = None
+    try:
+        unpackaged_dist = UnpackedSDist(location)
+    except ValueError:
+        try:
+            unpackaged_dist = Develop(location)
+        except ValueError:
+            pass
+
+    if unpackaged_dist and unpackaged_dist.name:
+        common_data = dict(
+            name=unpackaged_dist.name,
+            version=unpackaged_dist.version,
+        )
+        package = PythonPackage(**common_data)
+        return package
+
+
+def parse_egg_binary(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    binary_dist = BDist(location)
+    if binary_dist:
+        common_data = dict(
+            name=binary_dist.name,
+            version=binary_dist.version,
+        )
+        package = PythonPackage(**common_data)
+        return package
+
+
+def parse_wheel(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    wheel = Wheel(location)
+    if wheel:
+        common_data = dict(
+            name=wheel.name,
+            version=wheel.version,
+        )
+        package = PythonPackage(**common_data)
+        return package
 
 
 def build_package(package_data):

@@ -255,3 +255,9 @@ class TestPyPi(PackageTester):
             content = json.loads(json_input)
             package = pypi.build_package(content)
             self.check_package(package, expected_loc, regen=False)
+    
+    def test_pkginfo_parse_with_unpackaged_source(self):
+        test_file = self.get_test_loc('pypi')
+        package = pypi.parse_unpackaged_source(test_file)
+        expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
+        self.check_package(package, expected_loc, regen=False)
