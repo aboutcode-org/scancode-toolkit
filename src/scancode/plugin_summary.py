@@ -66,29 +66,39 @@ class OriginSummary(PostScanPlugin):
             if not children:
                 continue
 
-            dir_licenses = Counter()
-            dir_copyrights = Counter()
+            dir_licenses_count = Counter()
+            dir_licenses = OrderedDict()
+            dir_copyrights_count = Counter()
             child_dir_file_count = 0
+
             for child in children:
                 child_file_count = child.files_count
                 child_dir_file_count += child_file_count
                 # TODO: Figure out a better way to keep track of how many Resources had what license
                 # or copyright
-                count = child_file_count if not child.is_file else 1
-                for license_expression in child.license_expressions:
-                    dir_licenses.update({license_expression: count})
+                count = child_file_count * 0.8 if not child.is_file else 1
+                for license in child.licenses:
+                    license_key = license['key']
+                    dir_licenses_count.update({license_key: count})
+                    dir_licenses[license_key] = license
                 for copyright in child.copyrights:
-                    dir_copyrights.update({copyright['value']: count})
+                    dir_copyrights_count.update({copyright['value']: count})
 
             total_file_count = resource.files_count + child_dir_file_count
-            for k, v in dir_licenses.items():
-                if is_majority(v, total_file_count):
-                    resource.license_expressions.append(k)
-                    codebase.save_resource(resource)
+            license_expressions = set()
 
-            for k, v in dir_copyrights.items():
+            for k, v in dir_licenses_count.items():
                 if is_majority(v, total_file_count):
-                    resource.copyrights.append(OrderedDict(start_line=None, end_line=None, value=k))
+                    license = dir_licenses[k]
+                    resource.licenses.append(license)
+                    codebase.save_resource(resource)
+                    license_expressions.add(license['matched_rule']['license_expression'])
+            resource.license_expressions = list(license_expressions)
+            codebase.save_resource(resource)
+
+            for k, v in dir_copyrights_count.items():
+                if is_majority(v, total_file_count):
+                    resource.copyrights.append(OrderedDict(value=k, start_line=None, end_line=None))
                     codebase.save_resource(resource)
 
 
