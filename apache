@@ -1,0 +1,16 @@
+http://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0.html
+https://www.apache.org/licenses/LICENSE-2.0.html
+http://www.apache.org/licenses/LICENSE-2.0.txt
+https://www.apache.org/licenses/LICENSE-2.0.txt
+http://apache.org/licenses/LICENSE-2.0
+https://apache.org/licenses/LICENSE-2.0
+http://apache.org/licenses/LICENSE-2.0.html
+https://apache.org/licenses/LICENSE-2.0.html
+http://apache.org/licenses/LICENSE-2.0.txt
+https://apache.org/licenses/LICENSE-2.0.txt
+  <licenses>    <license>      <name>Apache License, Version 2.0</name>      <url>https://www.apache.org/licenses/LICENSE-2.0</url>      <distribution>repo</distribution>    </license>  </licenses>
+  <licenses>    <license>      <name>Apache License, Version 2.0</name>      <url>https://apache.org/licenses/LICENSE-2.0</url>      <distribution>repo</distribution>    </license>  </licenses>
+  <licenses>    <license>      <name>Apache License, Version 2.0</name>      <url>http://www.apache.org/licenses/LICENSE-2.0</url>      <distribution>repo</distribution>    </license>  </licenses>
+  <licenses>    <license>      <name>Apache License, Version 2.0</name>      <url>http://apache.org/licenses/LICENSE-2.0</url>      <distribution>repo</distribution>    </license>  </licenses>
