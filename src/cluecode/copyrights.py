@@ -277,7 +277,7 @@ patterns = [
       r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
-    (r'^(OR|VALUE|END)$', 'NN'),
+    (r'^(OR|VALUE|END|TODO)$', 'NN'),
 
     # Various rare non CAPS but NNP, treated as full names
     (r'^(FSF[\.,]?)$', 'NAME'),
