@@ -599,9 +599,9 @@ class LicenseIndex(object):
         self.dictionary = dictionary = {
             ts: tid for tid, ts in enumerate(common_license_words)}
         dictionary_get = dictionary.get
-        
+
         len_good = len(dictionary)
-        highest_tid = len_good -1
+        highest_tid = len_good - 1
 
         # Add SPDX key tokens to the dictionary
         ########################################################################
@@ -934,7 +934,7 @@ class LicenseIndex(object):
             query=query, filter_false_positive=False, merge=False)
         return matches
 
-    def get_fragments_matches(self, query, matched_qspans, **kwargs):
+    def get_fragments_matches(self, query, matched_qspans, deadline=sys.maxsize, **kwargs):
         """
         Approximate matching strategy breaking a query in query_runs and using
         fragment matching. Return a list of matches.
@@ -947,10 +947,14 @@ class LicenseIndex(object):
                 continue
             qrun_matches = match_aho.match_fragments(self, query_run)
             matches.extend(match.merge_matches(qrun_matches))
+            # break if deadline has passed
+            if time() > deadline:
+                break
 
         return matches
 
-    def get_approximate_matches(self, query, matched_qspans, existing_matches, **kwargs):
+    def get_approximate_matches(self, query, matched_qspans, existing_matches,
+                                deadline=sys.maxsize, **kwargs):
         """
         Approximate matching strategy breaking a query in query_runs and using
         multiple local alignments (aka. diff). Return a list of matches.
@@ -1037,12 +1041,24 @@ class LicenseIndex(object):
                     else:
                         break
 
+                    # break if deadline has passed
+                    if time() > deadline:
+                        break
+
+                # break if deadline has passed
+                if time() > deadline:
+                    break
+
             matches.extend(match.merge_matches(qrun_matches))
+
+            # break if deadline has passed
+            if time() > deadline:
+                break
 
         return matches
 
     def match(self, location=None, query_string=None, min_score=0,
-              as_expression=False, **kwargs):
+              as_expression=False, deadline=sys.maxsize, **kwargs):
         """
         This is the main entry point to match licenses.
 
@@ -1052,6 +1068,9 @@ class LicenseIndex(object):
 
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
+
+        `deadline` is a time.time() value in seconds by which the processing should stop
+        and return whatever was matched so far.
         """
         assert 0 <= min_score <= 100
 
@@ -1108,7 +1127,8 @@ class LicenseIndex(object):
                 logger_debug()
                 logger_debug('matching with matcher:', matcher)
 
-            matched = matcher(qry, matched_qspans=already_matched_qspans, existing_matches=matches)
+            matched = matcher(qry, matched_qspans=already_matched_qspans,
+                              existing_matches=matches, deadline=deadline)
             if TRACE:
                 self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
 
@@ -1129,6 +1149,10 @@ class LicenseIndex(object):
 
             if not whole_query_run.is_matchable(
                 include_low=include_low, qspans=already_matched_qspans):
+                break
+
+            # break if deadline has passed
+            if time() > deadline:
                 break
 
         if not matches:

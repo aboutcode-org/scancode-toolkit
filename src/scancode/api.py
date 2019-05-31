@@ -153,7 +153,8 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False,
-                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
+                 license_url_template=DEJACODE_LICENSE_URL,
+                 deadline=sys.maxsize, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -178,7 +179,8 @@ def get_licenses(location, min_score=0, include_text=False,
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score, **kwargs):
+    for match in idx.match(location=location, min_score=min_score, 
+                           deadline=deadline, **kwargs):
 
         if include_text:
             # TODO: handle whole lines with the case of very long lines
