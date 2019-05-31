@@ -90,11 +90,12 @@ def process_shingles(shingle, weighted_list):
     """
         modify weighted list wrt to shingle
     """
-    result = hashlib.md5(shingle.encode()).hexdigest()
-    binary_hash = bin(int(result, 16))[2:].zfill(hash_length)
+    hex_hash = hashlib.md5(shingle.encode()).hexdigest()
+    binary_hash = bin(int(hex_hash, 16))
+    result = binary_hash[2:].zfill(hash_length)
 
     for bit in range(hash_length):
-        if binary_hash[bit] == '1':
+        if result[bit] == '1':
             weighted_list[bit] += 1
         else:
             weighted_list[bit] -= 1
