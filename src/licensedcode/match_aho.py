@@ -22,7 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import, division
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 
 from array import array
 from itertools import groupby
@@ -117,7 +119,6 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT):
     rules_by_rid = idx.rules_by_rid
     tids_by_rid = idx.tids_by_rid
     query = query_run.query
-
     for rid, qspan, ispan in matched_spans:
         itokens = tids_by_rid[rid]
         hispan = Span(p for p in ispan if itokens[p] >= len_junk)
@@ -126,7 +127,6 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT):
         match = LicenseMatch(
             rule, qspan, ispan, hispan, qbegin, matcher=matcher, query=query)
         matches_append(match)
-
     if TRACE and matches:
         logger_debug(' ##exact_AHO: matches found#')
         map(print, matches)
