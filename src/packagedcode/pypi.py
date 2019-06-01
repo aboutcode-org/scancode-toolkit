@@ -389,12 +389,23 @@ def parse_wheel(location):
     Passing wheel file location which is generated via setup.py bdist_wheel.
     """
     wheel = Wheel(location)
-    if wheel:
+    if wheel and wheel.name:
         common_data = dict(
             name=wheel.name,
             version=wheel.version,
+            description = wheel.description,
+            download_url = wheel.download_url,
+            homepage_url = wheel.home_page,
         )
         package = PythonPackage(**common_data)
+        if wheel.license:
+            #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
+            package.declared_license = {'license': wheel.license}
+        
+        if wheel.maintainer:
+            common_data['parties'] = []
+            common_data['parties'].append(models.Party(
+                type=models.party_person, name=wheel.maintainer, role='author', email=wheel.maintainer_email))
         return package
 
 
