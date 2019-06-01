@@ -31,6 +31,7 @@ from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
+import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
@@ -42,7 +43,6 @@ TRACE = False
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -57,7 +57,7 @@ Note: this API is unstable and still evolving.
 """
 
 
-def get_copyrights(location, **kwargs):
+def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
     of mappings for copyright detected in the file at `location`.
@@ -68,7 +68,7 @@ def get_copyrights(location, **kwargs):
     holders = []
     authors = []
 
-    for dtype, value, start, end in detect_copyrights(location):
+    for dtype, value, start, end in detect_copyrights(location, deadline=deadline):
 
         if dtype == 'copyrights':
             copyrights.append(
@@ -179,7 +179,7 @@ def get_licenses(location, min_score=0, include_text=False,
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score, 
+    for match in idx.match(location=location, min_score=min_score,
                            deadline=deadline, **kwargs):
 
         if include_text:
