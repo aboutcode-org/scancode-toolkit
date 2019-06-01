@@ -29,6 +29,8 @@ from __future__ import print_function
 from collections import deque
 import os
 import re
+import sys
+from time import time
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
@@ -51,7 +53,6 @@ def logger_debug(*args):
 
 if TRACE or TRACE_DEEP:
     import logging
-    import sys
 
     logger = logging.getLogger(__name__)
     logging.basicConfig(stream=sys.stdout)
@@ -76,7 +77,8 @@ The process consists in:
 """
 
 
-def detect_copyrights(location, copyrights=True, holders=True, authors=True, include_years=True):
+def detect_copyrights(location, copyrights=True, holders=True, authors=True,
+                      include_years=True, deadline=sys.maxsize):
     """
     Yield tuples of (detection type, detected string, start line, end line)
     detected in file at `location`.
@@ -96,6 +98,8 @@ def detect_copyrights(location, copyrights=True, holders=True, authors=True, inc
         for detection in detector.detect(candidates, copyrights, holders, authors, include_years):
             # tuple of type, string, start, end
             yield detection
+        if time() > deadline:
+            break
 
 
 _YEAR = (r'('
@@ -749,7 +753,7 @@ grammar = """
 
     # Joe DASILVA
     NAME: {<NNP> <CAPS>} #352
-    
+
     # <s> Gangadharan N </s>
     NAME: {<NNP>  <PN>+} #353
 
