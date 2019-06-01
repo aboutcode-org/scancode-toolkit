@@ -26,12 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-from array import array
 from collections import defaultdict
 from collections import namedtuple
 from functools import partial
 from itertools import groupby
-from math import log
 
 from intbitset import intbitset
 
@@ -51,10 +49,9 @@ We collect a subset of rules that could be matched by ranking them and keep the
 top candidates. We also filter out rules based on minimum thresholds such as
 matched token occurrences or an approximation of the length of a match.
 
-The primary technique is token ids sets and multisets intersections. We use the
-a tf-idf and intersection length to compute scores/ranking elements including
-ressemblance and containment. This is essentially a traditional IR inverted
-index approach.
+The primary technique is token ids sets and multisets intersections. We compute
+a resemblance and containment based on these set intersections that is used as
+vector to rank. This is essentially a traditional IR inverted index approach.
 
 But we also want to return every matches and not just probabilistic top-ranked
 matches based on frequencies as is typically done in a search engine. There2fore
@@ -103,6 +100,7 @@ step: skip if some threshold is not met and rank the candidates.
 
 Finally we return the sorted top candidates.
 """
+
 
 # Set to True for tracing
 TRACE = False
@@ -264,35 +262,10 @@ def build_set_and_mset(token_ids, _use_bigrams=False):
         return build_set_and_tids_mset(token_ids)
 
 
-def compute_token_idfs(len_rules, tokens_doc_freq_by_tid):
-    """
-    Return a mapping of {token id -> inverse document frequency} given mapping
-    of `tokens_doc_freq_by_tid` counting the number of rules in which a token if
-    occurs and the `len_rules` number of rules.
-    Note this is a using a sequence as mapping where the key is the sequence index.
-    """
-    # note: we use a more compact array of floats where the index is a token id.
-    # note we perform some smoothing as in sklearn:
-    # See https://github.com/scikit-learn/scikit-learn/blob/645d3224182d1dd3723ffbf983172aad07cfeba8/sklearn/feature_extraction/text.py#L1131
-    return array('f', (log((len_rules + 1) / (tdf + 1)) + 1
-                       for tdf in tokens_doc_freq_by_tid))
-
-
-def compute_bigram_idfs(len_rules, bigrams_doc_freq_by_tid):
-    """
-    Return a mapping of {bigram -> inverse document frequency} given a mapping
-    of `bigrams_doc_freq_by_tid` counting the number of rules in which a bigram
-    occurs and the `len_rules` number of rules.
-    """
-    # note we perform some smoothing as in sklearn:
-    # See https://github.com/scikit-learn/scikit-learn/blob/645d3224182d1dd3723ffbf983172aad07cfeba8/sklearn/feature_extraction/text.py#L1131
-    return {big: (log((len_rules + 1) / (bdf + 1)) + 1)
-            for big, bdf in bigrams_doc_freq_by_tid.items()}
-
-
-# FIXME: we should consider more aggressively the thresholds and what a match filters
-# would discard when we compute candaites to eventually discard many or all candidates
-# we compute too many candidates that may waste time in seq matching for no reason
+# FIXME: we should consider more aggressively the thresholds and what a match
+# filters would discard when we compute candidates to eventually discard many or
+# all candidates: we compute too many candidates that may waste time in seq
+# matching for no reason.
 
 def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=False):
     """
@@ -321,7 +294,6 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
     sortable_candidates_append = sortable_candidates.append
 
     sets_by_rid = idx.sets_by_rid
-    set_idf_by_tid = idx.tokens_idf_by_tid
 
     for rid, rule in enumerate(idx.rules_by_rid):
         if rid not in matchable_rids:
@@ -336,8 +308,6 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
             len_junk=len_junk,
             unique=True,
             rule=rule,
-            tfidf_computer=compute_tfidf_tids_set_score,
-            idf_by_tid=set_idf_by_tid,
             filter_non_matching=True)
 
         if scores_vectors:
@@ -369,10 +339,8 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
     sortable_candidates_append = sortable_candidates.append
 
     if _use_bigrams:
-        mset_idf_by_tid = idx.bigrams_idf_by_bigram
         filter_non_matching = False
     else:
-        mset_idf_by_tid = idx.tokens_idf_by_tid
         filter_non_matching = True
 
     msets_by_rid = idx.msets_by_rid
@@ -390,8 +358,6 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
             len_junk=len_junk,
             unique=False,
             rule=rule,
-            tfidf_computer=compute_tfidf_mset_score,
-            idf_by_tid=mset_idf_by_tid,
             filter_non_matching=filter_non_matching)
 
         if scores_vectors:
@@ -422,7 +388,6 @@ def compare_token_sets(qset, iset,
         intersector, counter, high_intersection_filter,
         len_junk, unique,
         rule,
-        tfidf_computer, idf_by_tid,
         filter_non_matching=True):
     """
     Compare a `qset` query set or multiset with a `iset` index rule set or
@@ -454,42 +419,45 @@ def compare_token_sets(qset, iset,
     if filter_non_matching and matched_length < min_matched_length:
         return None, None
 
+    # Compute resemblance and containment: note we are interested in the index-
+    # side containment of a rule in the query and not how much of a query is
+    # contained in a rule. In practice we have three main cases:
+    # 1. A smaller notice contained in a larger code file or doc file
+    # 2. A single whole license text
+    # 3. A file that contains mostly licenses notices and texts and contain several of these
+    # Containment captures best case 1.
+    # Resemblance captures best case 2.
+    # Containment first and resemblance second also helps with case 3. which is
+    # mixed and gives the best rankings in practice, as we want to further
+    # process first rules that are highly contained in the query.
     iset_len = rule.get_length(unique)
     qset_len = counter(qset)
-    # Compute resemblance and containment
     union_len = qset_len + iset_len - matched_length
     resemblance = matched_length / union_len
-
     containment = matched_length / iset_len
 
-    minimum_coverage = rule.minimum_coverage
-    # FIXME: we should not recompute this /100 ... it should be cached
-    if filter_non_matching and minimum_coverage and containment < (minimum_coverage / 100):
-        return None, None
+    minimum_containment = rule._minimum_containment
 
-    tfidf_score = tfidf_computer(intersection=intersection,
-        qset_len=qset_len, idf_by_tid=idf_by_tid)
+    # FIXME: we should not recompute this /100 ... it should be cached in the index
+    if filter_non_matching and minimum_containment and containment < minimum_containment:
+        return None, None
 
     scores = (
         ScoresVector(
             containment=round(containment, 1),
             resemblance=round(resemblance, 1),
             matched_length=round(matched_length / 20, 1),
-            tfidf_score=round(tfidf_score, 1)
         ),
         ScoresVector(
             containment=containment,
             resemblance=resemblance,
             matched_length=matched_length,
-            tfidf_score=tfidf_score,
         )
     )
     return scores, high_intersection
 
 
-_scores_vector_fields = [
-    'containment', 'resemblance', 'matched_length', 'tfidf_score',
-]
+_scores_vector_fields = ['containment', 'resemblance', 'matched_length']
 
 ScoresVector = namedtuple('ScoresVector', _scores_vector_fields)
 
@@ -503,7 +471,8 @@ def filter_dupes(sortable_candidates):
         (sv_round, _sv), rule, _inter = item
         return (
             rule.license_expression,
-            sv_round.containment, sv_round.resemblance,
+            sv_round.containment,
+            sv_round.resemblance,
             sv_round.matched_length
         )
 
@@ -524,24 +493,3 @@ def filter_dupes(sortable_candidates):
             print()
 
         yield duplicates[0]
-
-
-def compute_tfidf_tids_set_score(intersection, qset_len, idf_by_tid):
-    """
-    Return a score as a float for an `intersection` set of matched token ids from
-    a query of length `qset_len` and `idf_by_tid` mapping of
-    {token id -> idf}
-    """
-    # TODO: double check that qset_len is the length of unique tokens!!!
-    inv_qset_len = 1 / qset_len
-    return sum(inv_qset_len * idf_by_tid[tid] for tid in intersection)
-
-
-def compute_tfidf_mset_score(intersection, qset_len, idf_by_tid):
-    """
-    Return a score as a float for an `intersection` multiset of matched token
-    ids from a query of length `qset_len` and `idf_by_tid` a mapping of
-    {token id -> idf}
-    """
-    return sum((item_count / qset_len) * idf_by_tid[item]
-               for item, item_count in intersection.items())
