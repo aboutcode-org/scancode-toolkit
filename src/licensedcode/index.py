@@ -144,9 +144,6 @@ class LicenseIndex(object):
         'digit_only_tids',
         'tokens_by_tid',
 
-        'tokens_idf_by_tid',
-        'bigrams_idf_by_bigram',
-
         'rules_by_rid',
         'tids_by_rid',
 
@@ -194,15 +191,6 @@ class LicenseIndex(object):
         # token id and the value the actual token string.
         # This the reverse of the dictionary.
         self.tokens_by_tid = []
-
-        # mapping-like of token id -> token IDF (inverse document frequency) as a
-        # list where the index is the token id and the value is the IDF (inverse
-        # document occurence frequency) as a float.
-        self.tokens_idf_by_tid = []
-
-        # mapping of bigram tuple -> bigrams IDF (inverse document frequency) as
-        # a float.
-        self.bigrams_idf_by_bigram = {}
 
         # Note: all the following are mappings-like (using lists) of
         # rid-> data are lists of data where the index is the rule id.
@@ -268,11 +256,6 @@ class LicenseIndex(object):
                 tf = Counter(chain.from_iterable(tids for rid, tids
                         in enumerate(self.tids_by_rid)
                         if rid in self.regular_rids))
-
-                for tid, freq in tf.most_common():
-                    ts = self.tokens_by_tid[tid]
-                    idf = self.tokens_idf_by_tid[tid]
-                    print(u'"{ts}","{freq}","{idf}"'.format(**locals()))
 
             if TRACE_INDEXING_PERF:
                 duration = time() - start
@@ -391,12 +374,6 @@ class LicenseIndex(object):
         self.len_junk = len_junk
         self.len_good = len_tokens - len_junk
         len_rules = len(self.rules_by_rid)
-
-        # count in how many doc a token shows into
-        tokens_doc_freq_by_tid = [0 for _ in range(len_tokens)]
-
-        # count in how many doc a token bigram shows into
-        bigrams_doc_freq_by_big = defaultdict(int)
 
         # since we only use these for regular rules, these lists may be sparse.
         # their index is the rule rid
@@ -528,16 +505,6 @@ class LicenseIndex(object):
             rule.compute_thresholds()
 
             ####################
-            # update idf counters
-            ####################
-            for tid in tids_set:
-                tokens_doc_freq_by_tid[tid] += 1
-
-            if USE_BIGRAM_MULTISETS:
-                for bigram in tokenize.ngrams(rule_token_ids, 2):
-                    bigrams_doc_freq_by_big[tuple(bigram)] += 1
-
-            ####################
             # populate automaton with the whole rule tokens sequence, for
             # all RULEs, be they "standard", weak or small (but not negative
             ####################
@@ -552,14 +519,6 @@ class LicenseIndex(object):
 
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
-
-        # finalize tokens IDF (inverse documents frequency)
-        self.tokens_idf_by_tid = match_set.compute_token_idfs(
-            len_rules, tokens_doc_freq_by_tid)
-
-        if USE_BIGRAM_MULTISETS:
-            self.bigrams_idf_by_bigram = match_set.compute_bigram_idfs(# NOQA
-                len_rules, bigrams_doc_freq_by_big)
 
         # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
@@ -634,11 +593,6 @@ class LicenseIndex(object):
         self.high_postings_by_rid = high_postings_by_rid = [None] * len_rules
         self.sets_by_rid = sets_by_rid = [None] * len_rules
         self.msets_by_rid = msets_by_rid = [None] * len_rules
-
-        # count in how many doc a token shows up
-        tokens_doc_freq_by_tid = defaultdict(int)
-        # count in how many doc a token bigram shows up
-        bigrams_doc_freq_by_big = defaultdict(int)
 
         # track all duplicate rules: fail and report dupes at once at the end
         dupe_rules_by_hash = defaultdict(list)
@@ -792,16 +746,6 @@ class LicenseIndex(object):
             rule.compute_thresholds()
 
             ####################
-            # update idf counters
-            ####################
-            for tid in tids_set:
-                tokens_doc_freq_by_tid[tid] += 1
-
-            if USE_BIGRAM_MULTISETS:
-                for bigram in tokenize.ngrams(rule_token_ids, 2):
-                    bigrams_doc_freq_by_big[bigram] += 1
-
-            ####################
             # populate automaton with the whole rule tokens sequence, for
             # all RULEs, be they "standard", weak or small (but not negative
             ####################
@@ -828,15 +772,6 @@ class LicenseIndex(object):
 
         if USE_RULE_STARTS:
             match_aho.finalize_starts(self.starts_automaton)
-
-        # Compute tokens IDF (inverse documents frequency)
-        ########################################################################
-        self.tokens_idf_by_tid = match_set.compute_token_idfs(
-            len_rules, tokens_doc_freq_by_tid)
-
-        if USE_BIGRAM_MULTISETS:
-            self.bigrams_idf_by_bigram = match_set.compute_bigram_idfs(# NOQA
-                len_rules, bigrams_doc_freq_by_big)
 
         # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
@@ -924,12 +859,12 @@ class LicenseIndex(object):
 
         return matches
 
-    def get_exact_matches(self, query, **kwargs):
+    def get_exact_matches(self, query, deadline=sys.maxsize, **kwargs):
         """
         Extract matching strategy using an automaton for multimatching at once.
         """
         wqr = query.whole_query_run()
-        matches = match_aho.exact_match(self, wqr, self.rules_automaton)
+        matches = match_aho.exact_match(self, wqr, self.rules_automaton, deadline=deadline)
         matches, _discarded = match.refine_matches(matches, self,
             query=query, filter_false_positive=False, merge=False)
         return matches
