@@ -121,7 +121,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<3',    
+    python_requires='>=2.7,<3',
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
@@ -188,7 +188,6 @@ setup(
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >=17.4, < 19.0',
-        'cattrs',
         'typing >=3.6, < 3.7',
 
         # scancode outputs
