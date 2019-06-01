@@ -154,7 +154,7 @@ class Differ(object):
         if deadline == None:
             # Unlike in most languages, Python counts time in seconds.
             if not self.timeout:
-                deadline = sys.maxint
+                deadline = sys.maxsize
             else:
                 deadline = time.time() + self.timeout
 
