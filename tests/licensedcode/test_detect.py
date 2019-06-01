@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-from unittest.case import skip
 
 from commoncode.testcase import FileBasedTesting
 
@@ -123,9 +122,9 @@ class TestIndexMatch(FileBasedTesting):
         qtext, itext = get_texts(match)
         expected_qtext = '''
 Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this 
+// of this
 software and associated documentation files (the "Software"), to deal
-// in 
+// in
 #,.,
                                   ///
 THE SOFTWARE WITHOUT RESTRICTION, INCLUDING WITHOUT LIMITATION THE RIGHTS
@@ -1151,3 +1150,16 @@ class TestRegression(FileBasedTesting):
         matched_text = match.matched_text(whole_lines=False)
         first_word = matched_text.split()[0]
         assert 'Permission' == first_word
+
+    def test_detection_does_merge_contained_matches_separated_by_false_positive(self):
+        idx = cache.get_index()
+        qloc = self.get_test_loc('detect/contained/moz')
+        matches = idx.match(location=qloc)
+        assert 1 == len(matches)
+        match = matches[0]
+        matched_text = match.matched_text(whole_lines=False)
+        words = matched_text.split()
+        first_words = words[0: 3]
+        assert ['BEGIN', 'LICENSE', 'BLOCK'] == first_words
+        last_words = words[-4:-1]
+        assert ['END', 'LICENSE', 'BLOCK'] == last_words

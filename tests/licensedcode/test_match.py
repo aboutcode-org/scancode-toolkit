@@ -38,10 +38,13 @@ from licensedcode.match import get_full_matched_text
 from licensedcode.match import LicenseMatch
 from licensedcode.match import merge_matches
 from licensedcode.match import restore_non_overlapping
+from licensedcode.match import tokenize_matched_text
+from licensedcode.match import Token
 
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
+from licensedcode.match import reportable_tokens
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -901,10 +904,11 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         assert 1 == len(result)
         match = result[0]
 
+        # Note that there is a trailing space in that string
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
@@ -929,19 +933,28 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         assert 1 == len(result)
         match = result[0]
 
+        # Note that there is a trailing space in that string
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
+        # the text is finally rstripped
+        matched_text = match.matched_text()
+        assert expected.rstrip() == matched_text
+
+
         # test again using some HTML with tags
+        # Note that there is a trailing space in that string
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+        matched_text = u''.join(get_full_matched_text(
+            match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
         assert expected == matched_text
 
         # test again using whole_lines
@@ -949,7 +962,8 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC\n"""
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
+        matched_text = u''.join(get_full_matched_text(
+            match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
         assert expected == matched_text
 
     def test_get_full_matched_text_does_not_munge_underscore(self):
@@ -981,3 +995,144 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = 'MODULE_LICENSE_GPL+ +'
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
+
+    def test_tokenize_matched_text_does_cache_last_call_from_query_string_and_location(self):
+        dictionary = {'module': 0, 'license': 1, 'gpl+': 2}
+        location = None
+        query_string = 'the MODULE_LICENSE_GPL+ foobar'
+        result1 = tokenize_matched_text(location, query_string, dictionary)
+        result2 = tokenize_matched_text(location, query_string, dictionary)
+        assert result2 is result1
+
+        location = self.get_test_loc('match/query.txt')
+        query_string = None
+        result3 = tokenize_matched_text(location, query_string, dictionary)
+        assert result3 is not result2
+        assert result3 == result2
+
+        result4 = tokenize_matched_text(location, query_string, dictionary)
+        assert result4 is result3
+
+    def test_tokenize_matched_text_does_return_correct_tokens(self):
+        querys = u'''
+            foobar 45 Copyright 2003 (C) James. All Rights Reserved.  THIS
+            IS FROM THE CODEHAUS AND CONTRIBUTORS
+        '''
+        dictionary = dict(this=0, event=1, possibility=2, reserved=3, liable=5, copyright=6)
+        result = tokenize_matched_text(location=None, query_string=querys, dictionary=dictionary)
+        expected = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=False, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'IS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'FROM', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THE', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'CODEHAUS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'AND', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'CONTRIBUTORS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'\n', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'        ', line_num=4, pos=-1, is_text=False, is_matched=False, is_known=False)]
+
+        assert expected == result
+
+    def test_reportable_tokens_filter_tokens_does_not_strip_last_token_value(self):
+        tokens = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=False, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+        ]
+
+        match_qspan = Span(0, 1)
+        result = list(reportable_tokens(tokens, match_qspan, start_line=1, end_line=2, whole_lines=False))
+        expected = [
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=True, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=True, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False)
+        ]
+
+        assert expected == result
+
+        # est again with whole lines
+        match_qspan = Span(0, 1)
+        result = list(reportable_tokens(tokens, match_qspan, start_line=1, end_line=2, whole_lines=True))
+        expected = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=True, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=True, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False)]
+
+        assert expected == result
