@@ -26,6 +26,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+from time import time
+import sys
+
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -40,7 +43,6 @@ def logger_debug(*args): pass
 
 if TRACE or TRACE2 or TRACE3:
     import logging
-    import sys
 
     logger = logging.getLogger(__name__)
 
@@ -58,10 +60,12 @@ like approaches.
 MATCH_SEQ = '3-seq'
 
 
-def match_sequence(idx, rule, query_run, high_postings, start_offset=0, match_blocks=None):
+def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
+                   match_blocks=None, deadline=sys.maxsize):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     starting at `start_offset` against the `idx` index for the candidate `rule`.
+    Stop processing when reachin the deadline time.
     """
     if not rule:
         return []
@@ -133,6 +137,12 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0, match_bl
                     logger_debug('###########################')
 
             qstart = max([qstart, qspan_end])
+
+            if time() > deadline:
+                break
+
+        if time() > deadline:
+            break
 
     if TRACE:
         logger_debug('match_seq: FINAL LicenseMatch(es)')

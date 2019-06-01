@@ -99,7 +99,7 @@ MATCH_AHO_EXACT = '2-aho'
 MATCH_AHO_FRAG = '5-aho-frag'
 
 
-def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT):
+def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
     """
     Return a list of exact LicenseMatch by matching the `query_run` against
     the `automaton` and `idx` index.
