@@ -149,27 +149,24 @@ def nolinesep(text):
 
 
 def toascii(s, translit=False):
-    u""" Convert a Unicode string to ASCII characters, including replacing accented
+    """
+    Convert a Unicode string to ASCII characters, including replacing accented
     characters with their non-accented equivalent.
 
     If `translit` is False use the Unicode NFKD equivalence.
-
     If `translit` is True, use a transliteration with the unidecode library.
 
-    Non ISO-Latin and non ASCII characters are stripped from the
-    output.
-    When no transliteration is possible, the resulting character is replaced
-    by an underscore "_".
+    Non ISO-Latin and non ASCII characters are stripped from the output. When no
+    transliteration is possible, the resulting character is replaced by an
+    underscore "_".
 
     For Unicode NFKD equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
-
     The convertion may NOT preserve the original string length and with NFKD some
     characters may be deleted.
-
     Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
 
     For example:
-    >>> acc =   u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿẞß®©œŒØøÆæ₵₡￠¢Žž"
+    >>> acc = u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿẞß®©œŒØøÆæ₵₡￠¢Žž"
     >>> noacc = r'AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyyZz'
     >>> toascii(acc, translit=False) == noacc
     True
