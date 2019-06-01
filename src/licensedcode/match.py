@@ -52,6 +52,7 @@ TRACE_FILTER_SPURIOUS_SINGLE_TOKEN = False
 TRACE_FILTER_SPURIOUS = False
 TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_LOW_SCORE = False
+TRACE_SET_LINES = False
 
 TRACE_MATCHED_TEXT = False
 TRACE_MATCHED_TEXT_DETAILS = False
@@ -76,7 +77,9 @@ if (TRACE
     or TRACE_FILTER_SHORT
     or TRACE_FILTER_RULE_MIN_COVERAGE
     or TRACE_FILTER_LOW_SCORE
-    or TRACE_MATCHED_TEXT):
+    or TRACE_MATCHED_TEXT
+    or TRACE_SET_LINES
+    or TRACE_MATCHED_TEXT_DETAILS):
 
     import logging
     import sys
@@ -526,6 +529,8 @@ class LicenseMatch(object):
         if itokens:
             return index_hash(itokens)
 
+    # FIXME: this should be done for all the matches found in a given scanned
+    # location at once to avoid reprocessing many times the original text
     def matched_text(self, whole_lines=False,
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
         """
@@ -535,7 +540,7 @@ class LicenseMatch(object):
         query = self.query
         if not query:
             # TODO: should we raise an exception instead???
-            # this cvase should never exist except for tests!
+            # this case should never exist except for tests!
             return u''
         return u''.join(get_full_matched_text(
             self,
@@ -558,7 +563,7 @@ def set_lines(matches, line_by_pos):
         for match in matches:
             match.start_line = line_by_pos[match.qstart]
             match.end_line = line_by_pos[match.qend]
-            if TRACE:
+            if TRACE_SET_LINES:
                 logger_debug('set_lines: match.start_line :', match.start_line)
                 logger_debug('set_lines: match.end_line :', match.end_line)
 
@@ -725,11 +730,12 @@ def filter_contained_matches(matches):
     match of this set is kept.
     """
 
-    discarded = []
-
     # do not bother if there is only one match
     if len(matches) < 2:
-        return matches, discarded
+        return matches, []
+
+    discarded = []
+    discarded_append = discarded.append
 
     # sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
@@ -753,27 +759,26 @@ def filter_contained_matches(matches):
                 logger_debug('---> filter_contained_matches: current: i=', i, current_match)
                 logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
-            # TODO: is this really correct?: we could BREAK/shortcircuit rather
-            # than continue since continuing looking next matches will yield no
-            # new findings. e.g. stop when no overlap is possible. Based on
-            # sorting order if no overlap is possible, then no future overlap
-            # will be possible with the urrent match??? this is is TBD. Note
-            # that touching and overlapping matches have a zero distance.
-            if current_match.qdistance_to(next_match):
+            # BREAK/shortcircuit rather than continue since continuing looking
+            # next matches will yield no new findings. e.g. stop when no overlap
+            # is possible. Based on sorting order if no overlap is possible,
+            # then no future overlap will be possible with the current match.
+            # Note that touching and overlapping matches have a zero distance.
+            if next_match.qend > current_match.qend:
                 if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
                 j += 1
-                continue
+                break
 
             # equals matched spans
             if current_match.qspan == next_match.qspan:
                 if current_match.coverage() >= next_match.coverage():
                     if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed next with lower or equal coverage', matches[j], '\n')
-                    discarded.append(next_match)
+                    discarded_append(next_match)
                     del matches[j]
                     continue
                 else:
                     if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next EQUALS current, removed current with lower coverage', matches[i], '\n')
-                    discarded.append(current_match)
+                    discarded_append(current_match)
                     del matches[i]
                     i -= 1
                     break
@@ -781,14 +786,14 @@ def filter_contained_matches(matches):
             # remove contained matched spans
             if current_match.qcontains(next_match):
                 if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: next CONTAINED in current, removed next', matches[j], '\n')
-                discarded.append(next_match)
+                discarded_append(next_match)
                 del matches[j]
                 continue
 
             # remove contained matches the other way
             if next_match.qcontains(current_match):
                 if TRACE_FILTER_CONTAINED: logger_debug('    ---> ###filter_contained_matches: current CONTAINED in next, removed current', matches[i], '\n')
-                discarded.append(current_match)
+                discarded_append(current_match)
                 del matches[i]
                 i -= 1
                 break
@@ -814,11 +819,12 @@ def filter_overlapping_matches(matches):
     larger match may be removed.
     """
 
-    discarded = []
-
     # do not bother if there is only one match
     if len(matches) < 2:
-        return matches, discarded
+        return matches, []
+
+    discarded = []
+    discarded_append = discarded.append
 
     # overlap relationships and thresholds between two matches: based on
     # this containment we may prefer one match over the other and discard a
@@ -850,21 +856,25 @@ def filter_overlapping_matches(matches):
                 logger_debug('---> filter_overlapping_matches: current: i=', i, current_match)
                 logger_debug('---> filter_overlapping_matches: next:    j=', j, next_match)
 
-            # TODO: is this really correct?: we could BREAK/shortcircuit rather
-            # than continue since continuing looking next matches will yield no
-            # new findings. e.g. stop when no overlap is possible. Based on
-            # sorting order if no overlap is possible, then no future overlap
-            # will be possible with the urrent match??? this is is TBD. Note
-            # that touching and overlapping matches have a zero distance.
-            if current_match.qdistance_to(next_match):
-                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
+
+            # BREAK/shortcircuit rather than continue since continuing looking
+            # next matches will yield no new findings. e.g. stop when no overlap
+            # is possible.
+            if next_match.qstart > current_match.qend:
+#                or not overlap and current_match.qdistance_to(next_match) >= 0
+#             and ):
+                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: matches disjoint: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
+                j += 1
+                break
+
+            overlap = current_match.overlap(next_match)
+            if not overlap:
+                if TRACE_FILTER_OVERLAPPING: logger_debug('    ---> ###filter_overlapping_matches: matches do not overlap: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
                 j += 1
                 continue
 
+            # next match overlaps with current
             # handle overlapping matches: determine overlap and containment relationships
-            overlap = current_match.overlap(next_match)
-
-            # next match overlap to current
             overlap_ratio_to_next = overlap / next_match.len()
 
             extra_large_next = overlap_ratio_to_next >= OVERLAP_EXTRA_LARGE
@@ -902,26 +912,26 @@ def filter_overlapping_matches(matches):
 
             if extra_large_next and current_match.len() >= next_match.len():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: EXTRA_LARGE next included, removed shorter next', matches[j], '\n')
-                discarded.append(next_match)
+                discarded_append(next_match)
                 del matches[j]
                 continue
 
             if extra_large_current and current_match.len() <= next_match.len():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: EXTRA_LARGE next includes current, removed shorter current', matches[i], '\n')
-                discarded.append(current_match)
+                discarded_append(current_match)
                 del matches[i]
                 i -= 1
                 break
 
             if large_next and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: LARGE next included, removed shorter next', matches[j], '\n')
-                discarded.append(next_match)
+                discarded_append(next_match)
                 del matches[j]
                 continue
 
             if large_current and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: LARGE next includes current, removed shorter current', matches[i], '\n')
-                discarded.append(current_match)
+                discarded_append(current_match)
                 del matches[i]
                 i -= 1
                 break
@@ -931,14 +941,14 @@ def filter_overlapping_matches(matches):
                 if current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
                     if TRACE_FILTER_OVERLAPPING: logger_debug(
                         '      ---> ###filter_overlapping_matches: MEDIUM next included with next licensing contained, removed next', matches[j], '\n',)
-                    discarded.append(next_match)
+                    discarded_append(next_match)
                     del matches[j]
                     continue
 
                 if next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
                     if TRACE_FILTER_OVERLAPPING: logger_debug(
                         '      ---> ###filter_overlapping_matches: MEDIUM next includes current with current licensing contained, removed current', matches[i], '\n')
-                    discarded.append(current_match)
+                    discarded_append(current_match)
                     del matches[i]
                     i -= 1
                     break
@@ -948,27 +958,27 @@ def filter_overlapping_matches(matches):
                 if current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
                     if TRACE_FILTER_OVERLAPPING: logger_debug(
                         '      ---> ###filter_overlapping_matches: MEDIUM current, bigger current with next licensing contained, removed next', matches[j], '\n')
-                    discarded.append(next_match)
+                    discarded_append(next_match)
                     del matches[j]
                     continue
 
                 if next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
                     if TRACE_FILTER_OVERLAPPING: logger_debug(
                         '      ---> ###filter_overlapping_matches: MEDIUM current, bigger next current with current licensing contained, removed current', matches[i], '\n')
-                    discarded.append(current_match)
+                    discarded_append(current_match)
                     del matches[i]
                     i -= 1
                     break
 
             if small_next and current_match.surround(next_match) and current_match.licensing_contains(next_match) and current_match.len() >= next_match.len() and current_match.hilen() >= next_match.hilen():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: SMALL next surrounded, removed next', matches[j], '\n')
-                discarded.append(next_match)
+                discarded_append(next_match)
                 del matches[j]
                 continue
 
             if small_current and next_match.surround(current_match) and next_match.licensing_contains(current_match) and current_match.len() <= next_match.len() and current_match.hilen() <= next_match.hilen():
                 if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: SMALL current surrounded, removed current', matches[i], '\n')
-                discarded.append(next_match)
+                discarded_append(next_match)
                 del matches[i]
                 i -= 1
                 break
@@ -991,7 +1001,7 @@ def filter_overlapping_matches(matches):
                         # we want at least 90% of the current that is in the overlap
                         if overlap_len >= (clen * 0.9):
                             if TRACE_FILTER_OVERLAPPING: logger_debug('      ---> ###filter_overlapping_matches: current mostly contained in previsou and next, removed current', matches[i], '\n')
-                            discarded.append(next_match)
+                            discarded_append(next_match)
                             del matches[i]
                             i -= 1
                             break
@@ -1239,7 +1249,7 @@ def filter_false_positive_matches(matches, idx=None):
                 if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE HASH:', match)
                 discarded.append(match)
                 continue
-        
+
         kept.append(match)
 
     return kept, discarded
@@ -1378,11 +1388,29 @@ class Token(object):
     is_known = attr.ib(default=False)
 
 
-def tokenize_matched_text(location, query_string, dictionary):
+def tokenize_matched_text(location, query_string, dictionary, _cache={}):
+    """
+    Return a list of Token objects with pos and line number collected from the
+    file at `location` or the `query_string` string. `dictionary` is the index
+    mapping of tokens to token ids.
+    """
+    key = location, query_string
+    cached = _cache.get(key)
+    if cached:
+        return cached
+
+    # we only cache the last call
+    _cache.clear()
+    _cache[key] = result = list(
+        _tokenize_matched_text(location, query_string, dictionary))
+    return result
+
+
+def _tokenize_matched_text(location, query_string, dictionary):
     """
     Yield Token objects with pos and line number collected from the file at
-    `location` or the `query_string` string. `is_known` is a function that
-    returns True if a token is a known word.
+    `location` or the `query_string` string. `dictionary` is the index mapping
+    of tokens to token ids.
     """
     pos = -1
     for line_num, line in query.query_lines(location, query_string, strip=False):
@@ -1399,20 +1427,19 @@ def tokenize_matched_text(location, query_string, dictionary):
             yield tok
 
 
-def reportable_tokens(tokens, match, whole_lines=False):
+def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
     """
-    Yield Tokens from an iterable of `tokens` that are inside a `match`
-    LicenseMatch. Known matched tokens are tagged as is_matched=True.
+    Yield Tokens from an iterable of `tokens` that are inside a `match_qspan`
+    matched Span starting at `start_line` and ending at `end_line`. Known
+    matched tokens are tagged as is_matched=True.
+
     If `whole_lines` is True, any token within matched lines range is included.
-    Otherwise, a token is included if its position is within the matched span or
-    it is a punctuation token immediately before or after the matched span even
-    though not matched.
+    Otherwise, a token is included if its position is within the matched
+    match_qspan or it is a punctuation token immediately after the matched
+    match_qspan even though not matched.
     """
-    span = match.qspan
-    start = span.start
-    end = span.end
-    start_line = match.start_line
-    end_line = match.end_line
+    start = match_qspan.start
+    end = match_qspan.end
 
     started = False
     finished = False
@@ -1426,12 +1453,12 @@ def reportable_tokens(tokens, match, whole_lines=False):
         if tok.line_num > end_line:
             break
         if TRACE_MATCHED_TEXT_DETAILS:
-            logger_debug('reportable_tokens:', tok)
+            logger_debug('reportable_tokens:', real_pos, tok)
 
         is_included = False
 
         # tagged known matched tokens (useful for highlighting)
-        if tok.pos != -1 and tok.is_known and tok.pos in span:
+        if tok.pos != -1 and tok.is_known and tok.pos in match_qspan:
             tok.is_matched = True
             is_included = True
             if TRACE_MATCHED_TEXT_DETAILS:
@@ -1445,7 +1472,7 @@ def reportable_tokens(tokens, match, whole_lines=False):
             is_included = True
 
         else:
-            # Are we in the span range or a punctuation right before or after
+            # Are we in the match_qspan range or a punctuation right before or after
             # that range?
 
             # start
@@ -1472,8 +1499,9 @@ def reportable_tokens(tokens, match, whole_lines=False):
             if finished and not started and end_pos and last_pos == end_pos:
                 end_pos = 0
                 if not tok.is_text:
-                    tok.value = tok.value.rstrip()
-                    if tok.value:
+                    # strip the trailing spaces of the last token
+                    # tok.value = tok.value.rstrip()
+                    if tok.value.strip():
                         if TRACE_MATCHED_TEXT_DETAILS:
                             logger_debug('  end yield')
                         is_included = True
@@ -1510,7 +1538,8 @@ def get_full_matched_text(
     assert idx
     # Create and process a stream of Tokens
     tokens = tokenize_matched_text(location, query_string, dictionary=idx.dictionary)
-    tokens = reportable_tokens(tokens, match, whole_lines=whole_lines)
+    tokens = reportable_tokens(
+        tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
 
     # Finally yield strings with eventual highlightings
     for token in tokens:
