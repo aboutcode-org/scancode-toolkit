@@ -229,7 +229,7 @@ class License(object):
             if attr.name == 'language' and value == 'en':
                 return False
 
-            if attr.name == 'minimum_coverage' and value==100:
+            if attr.name == 'minimum_coverage' and value == 100:
                 return False
             return True
 
@@ -530,10 +530,10 @@ def build_rules_from_licenses(licenses):
 
                 has_stored_relevance=False,
                 relevance=100,
-                
+
                 has_stored_minimum_coverage=bool(minimum_coverage),
                 minimum_coverage=minimum_coverage,
-                
+
                 is_license=True,
                 is_license_text=True)
 
@@ -695,6 +695,8 @@ class Rule(object):
     # here.
     minimum_coverage = attr.ib(default=0)
     has_stored_minimum_coverage = attr.ib(default=False, repr=False)
+    # same as minimum_coverage but divided/100
+    _minimum_containment = attr.ib(default=0)
 
     # Can this rule be matched if there are unknown words in its matched range?
     # The default is to allow known and unknown words. Unknown words are words
@@ -846,7 +848,7 @@ class Rule(object):
             return self.stored_text
 
         else:
-            raise Exception('Inconsistent rule text for: ' + 
+            raise Exception('Inconsistent rule text for: ' +
                             self.identifier + '\nfile://' + self.text_file)
 
     def license_keys(self, unique=True):
@@ -885,6 +887,8 @@ class Rule(object):
                 self.high_length))
         if not self.has_stored_minimum_coverage:
             self.minimum_coverage = minimum_coverage
+
+        self._minimum_containment = self.minimum_coverage / 100
 
         self.min_matched_length_unique, self.min_high_matched_length_unique = (
         compute_thresholds_unique(
@@ -1000,6 +1004,7 @@ class Rule(object):
                 raise Exception(msg.format(self, unknown_attributes))
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
+        self._minimum_containment = self.minimum_coverage / 100
 
         if not (0 <= self.minimum_coverage <= 100):
             msg = (
@@ -1120,12 +1125,12 @@ def compute_thresholds_occurences(minimum_coverage, length, high_length,
     elif length < 200:
         min_matched_length = _MIN_MATCH_LENGTH
         min_high_matched_length = min(high_length, _MIN_MATCH_HIGH_LENGTH)
-        #minimum_coverage = max(15, int(length//10))
+        # minimum_coverage = max(15, int(length//10))
 
     else:  # if length >= 200:
         min_matched_length = length // 10
         min_high_matched_length = high_length // 10
-        #minimum_coverage = int(length//10)
+        # minimum_coverage = int(length//10)
 
     return minimum_coverage, min_matched_length, min_high_matched_length
 
