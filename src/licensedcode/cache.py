@@ -252,7 +252,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
                     ifc.write(idx.dumps())
                 else:
                     idx.dump(ifc)
-                    
+
             # save the new checksums tree
             with open(checksum_file, 'wb') as ctcs:
                 ctcs.write(current_checksum

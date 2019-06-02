@@ -68,7 +68,7 @@ STOPWORDS = frozenset({
     'blockquote',
     'body',
     'id',
-    'script', 
+    'script',
     'rel',
 
 # debian copyright files <s> tags
@@ -124,11 +124,11 @@ STOPWORDS = frozenset({
 
     # seen in many CSS
     'lists',
-    'side','nav',
-    'height', 
-    'auto', 
-    'border', 
-    'padding', 
+    'side', 'nav',
+    'height',
+    'auto',
+    'border',
+    'padding',
     'width',
 
     # seen in Perl PODs
@@ -139,16 +139,16 @@ STOPWORDS = frozenset({
 
     # seen in RTF markup
     # this may be a solution to https://github.com/nexB/scancode-toolkit/issues/1548
-    #'par',
+    # 'par',
 
     # TODO: consider common english stop words (the of a ...)
-    #'the',
-    #'of',
-    #'a',
+    # 'the',
+    # 'of',
+    # 'a',
 
     # common in C literals
     'printf',
-    
+
     # common in shell
     'echo',
 

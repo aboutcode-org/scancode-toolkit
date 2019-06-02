@@ -313,7 +313,7 @@ class TestRule(FileBasedTesting):
 
         results = models.compute_thresholds_unique(
             r1.minimum_coverage, r1.length, r1.length_unique, r1.high_length_unique)
-        
+
         expected_min_matched_length_unique = 3
         expected_min_high_matched_length_unique = 2
         expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique

@@ -65,12 +65,12 @@ class LicensePolicy(PostScanPlugin):
 
     def process_codebase(self, codebase, license_policy, **kwargs):
         """
-        Populate a license_policy mapping with four attributes: license_key, label, 
+        Populate a license_policy mapping with four attributes: license_key, label,
         icon, and color_code at the File Resource level.
         """
         if not self.is_enabled(license_policy):
             return
-        
+
         if has_policy_duplicates(license_policy):
             codebase.errors.append('ERROR: License Policy file contains duplicate entries.\n')
             return
@@ -91,12 +91,12 @@ class LicensePolicy(PostScanPlugin):
                 resource.license_policy = {}
                 codebase.save_resource(resource)
                 continue
-            
+
             for key in resource_license_keys:
                 for policy in policies:
                     if key == policy.get('license_key'):
                         # Apply the policy to the Resource
-                        resource.license_policy = policy 
+                        resource.license_policy = policy
                         codebase.save_resource(resource)
 
 
@@ -108,10 +108,10 @@ def has_policy_duplicates(license_policy_location):
     policies = load_license_policy(license_policy_location).get('license_policies', [])
 
     unique_policies = OrderedDict()
-    
+
     if policies == []:
         return False
-    
+
     for policy in policies:
         license_key = policy.get('license_key')
 

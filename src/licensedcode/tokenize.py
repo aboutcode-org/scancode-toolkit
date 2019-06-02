@@ -32,7 +32,7 @@ from itertools import islice
 # Python 2 and 3 support
 try:
     # Python 2
-    import itertools.izip as zip #NOQA
+    import itertools.izip as zip  # NOQA
 except ImportError:
     # Python 3
     pass

@@ -68,5 +68,5 @@ def test_detection_does_not_timeout_on_sqlite3_amalgamation():
     test_dir = test_env.extract_test_tar('detect/sqlite/sqlite.tgz')
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('detect/sqlite/sqlite.expected.json')
-    run_scan_click(['-l', '--license-text',  '--timeout', '10', '--json-pp', result_file, test_dir])
+    run_scan_click(['-l', '--license-text', '--timeout', '10', '--json-pp', result_file, test_dir])
     check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
