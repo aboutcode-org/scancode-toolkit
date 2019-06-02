@@ -76,7 +76,7 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
     rid = rule.rid
     itokens = idx.tids_by_rid[rid]
 
-    len_junk = idx.len_junk
+    len_legalese = idx.len_legalese
 
     qbegin = query_run.start + start_offset
     qfinish = query_run.end
@@ -103,7 +103,7 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
 
         block_matches = match_blocks(
             a=qtokens, b=itokens, a_start=qstart, a_end=qfinish + 1,
-            b2j=high_postings, len_junk=len_junk,
+            b2j=high_postings, len_good=len_legalese,
             matchables=query_run.matchables)
 
         if not block_matches:
@@ -116,10 +116,10 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
 
             qspan_end = qpos + mlen
             # skip single non-high word matched as as sequence
-            if mlen > 1 or (mlen == 1 and qtokens[qpos] >= len_junk):
+            if mlen > 1 or (mlen == 1 and qtokens[qpos] < len_legalese):
                 qspan = Span(range(qpos, qspan_end))
                 ispan = Span(range(ipos, ipos + mlen))
-                hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+                hispan = Span(p for p in ispan if itokens[p] < len_legalese)
                 match = LicenseMatch(
                     rule, qspan, ispan, hispan, qbegin,
                     matcher=MATCH_SEQ, query=query)

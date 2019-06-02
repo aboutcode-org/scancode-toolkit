@@ -696,7 +696,7 @@ class Rule(object):
     minimum_coverage = attr.ib(default=0)
     has_stored_minimum_coverage = attr.ib(default=False, repr=False)
     # same as minimum_coverage but divided/100
-    _minimum_containment = attr.ib(default=0)
+    _minimum_containment = attr.ib(default=0, repr=False)
 
     # Can this rule be matched if there are unknown words in its matched range?
     # The default is to allow known and unknown words. Unknown words are words

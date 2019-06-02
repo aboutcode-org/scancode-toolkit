@@ -18,13 +18,14 @@ license: PSF. See seq.ABOUT file for details.
 Match = _namedtuple('Match', 'a b size')
 
 
-def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
+def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_good, matchables):
     """
     Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].
 
     `b2j` is a mapping of b high token ids -> list of position in b
-    `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
-    `matchables` is a set of matchable positions. Positions absent from this set are ignored.
+    `len_good` is such that token ids smaller than `_good_good` are treated as
+    good, non-junk tokens. `matchables` is a set of matchable positions.
+    Positions absent from this set are ignored.
 
     Return (i,j,k) Match tuple where:
         "i" in the start in "a"
@@ -45,8 +46,8 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
     in a, return the one that starts earliest in b.
 
     First the longest matching block (aka contiguous substring) is determined
-    where no junk element appears in the block.  Then that block is extended as
-    far as possible by matching other tokens including junk on both sides.  So
+    where no junk element appears in the block. Then that block is extended as
+    far as possible by matching other tokens including junk on both sides. So
     the resulting block never matches on junk.
 
     If no blocks match, return (alo, blo, 0).
@@ -64,7 +65,7 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
         newj2len = {}
         # we cannot do LCS on junk or non matchable
         cura = a[i]
-        if cura >= len_junk and i in matchables:
+        if cura < len_good and i in matchables:
             # look at all instances of a[i] in b; note that because
             # b2j has no junk token, the loop is skipped if a[i] is junk
             for j in b2j_get(cura, nothing):
@@ -79,46 +80,46 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
         j2len = newj2len
         j2lenget = j2len.get
 
-    return extend_match(
-        besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, matchables)
+    return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
 
 
-def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, len_junk, matchables):
+def extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables):
     """
-    Extend a match identifier by (besti, bestj, bestsize) with non-junk matching
-    tokens on each end; or if we have a non-empty match with non-junk tokens
-    already, append any matching tokens (including junk) on each end. Return a
-    new Match.
+    Extend a match identifier by (besti, bestj, bestsize) with any matching
+    tokens on each end. Return a new Match.
     """
+    if bestsize:
+        while (besti > alo and bestj > blo
+               and a[besti - 1] == b[bestj - 1]
+               and (besti - 1) in matchables):
 
-    while (besti > alo and bestj > blo
-#            and (bestsize or b[bestj - 1] >= len_junk)
-           and a[besti - 1] == b[bestj - 1]
-           and (besti - 1) in matchables):
+            besti -= 1
+            bestj -= 1
+            bestsize += 1
 
-        besti -= 1
-        bestj -= 1
-        bestsize += 1
+        while (besti + bestsize < ahi and bestj + bestsize < bhi
+               and a[besti + bestsize] == b[bestj + bestsize]
+               and (besti + bestsize) in matchables):
 
-    while (besti + bestsize < ahi and bestj + bestsize < bhi
-#            and (bestsize or b[bestj + bestsize] >= len_junk)
-           and a[besti + bestsize] == b[bestj + bestsize]
-           and (besti + bestsize) in matchables):
-
-        bestsize += 1
+            bestsize += 1
 
     return Match(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), *args, **kwargs):
+def match_blocks(a, b, a_start, a_end, b2j, len_good, matchables=frozenset(), *args, **kwargs):
     """
     Return a list of matching block Match triples describing matching
     subsequences of `a` in `b` starting from the `a_start` position in `a` up to
     the `a_end` position in `a`.
 
-    `b2j` is a mapping of b "high" token ids -> list of positions in b, e.g. a posting list.
-    `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
-    `matchables` is a set of matchable positions. Positions absent from this set are ignored.
+    `b2j` is a mapping of b "high" token ids -> list of positions in b, e.g. a
+    posting list.
+
+    `len_good` is such that token ids smaller than `len_good` are treated as
+    important, non-junk tokens.
+
+    `matchables` is a set of matchable positions. Positions absent from this set
+    are ignored.
 
     Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].
     The triples are monotonically increasing in i and in j.  It is also
@@ -137,7 +138,8 @@ def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), *a
     matching_blocks_append = matching_blocks.append
     while queue:
         alo, ahi, blo, bhi = queue_pop()
-        i, j, k = x = find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables)
+        i, j, k = x = find_longest_match(
+            a, b, alo, ahi, blo, bhi, b2j, len_good, matchables)
         # a[alo:i] vs b[blo:j] unknown
         # a[i:i+k] same as b[j:j+k]
         # a[i+k:ahi] vs b[j+k:bhi] unknown
@@ -159,14 +161,14 @@ def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), *a
     for i2, j2, k2 in matching_blocks:
         # Is this block adjacent to i1, j1, k1?
         if i1 + k1 == i2 and j1 + k1 == j2:
-            # Yes, so collapse them -- this just increases the length of the first
-            # block by the length of the second, and the first block so lengthened
-            # remains the block to compare against.
+            # Yes, so collapse them -- this just increases the length of the
+            # first block by the length of the second, and the first block so
+            # lengthened remains the block to compare against.
             k1 += k2
         else:
-            # Not adjacent: keep it unless this is the first block (k1==0 means it's
-            # the dummy we started with), and make the second block the new block to
-            # compare against.
+            # Not adjacent: keep it unless this is the first block (k1==0 means
+            # it's the dummy we started with), and make the second block the new
+            # block to compare against.
             if k1:
                 non_adjacent_append((i1, j1, k1))
             i1, j1, k1 = i2, j2, k2

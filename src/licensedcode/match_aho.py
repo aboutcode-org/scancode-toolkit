@@ -115,13 +115,13 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
     matched_positions = get_matched_positions(query_run.tokens, qbegin, automaton)
     matched_spans = get_matched_spans(matched_positions, query_run.matchables)
 
-    len_junk = idx.len_junk
+    len_legalese = idx.len_legalese
     rules_by_rid = idx.rules_by_rid
     tids_by_rid = idx.tids_by_rid
     query = query_run.query
     for rid, qspan, ispan in matched_spans:
         itokens = tids_by_rid[rid]
-        hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+        hispan = Span(p for p in ispan if itokens[p] < len_legalese)
 
         rule = rules_by_rid[rid]
         match = LicenseMatch(
@@ -240,7 +240,7 @@ def match_fragments(idx, query_run):
 
     rules_by_rid = idx.rules_by_rid
     tids_by_rid = idx.tids_by_rid
-    len_junk = idx.len_junk
+    len_legalese = idx.len_legalese
 
     alo = qbegin = query_run.start
     ahi = query_run.end
@@ -264,11 +264,11 @@ def match_fragments(idx, query_run):
             # extend alignment left and right as long as we have matchables
             qpos, ipos, mlen = extend_match(
                 i, j, k, qtokens, itokens,
-                alo, ahi, blo, bhi, len_junk, matchables)
+                alo, ahi, blo, bhi, matchables)
 
             qspan = Span(range(qpos, qpos + mlen))
             ispan = Span(range(ipos, ipos + mlen))
-            hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+            hispan = Span(p for p in ispan if itokens[p] < len_legalese)
             match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
                 matcher=MATCH_AHO_FRAG, query=query)
             frag_matches.append(match)

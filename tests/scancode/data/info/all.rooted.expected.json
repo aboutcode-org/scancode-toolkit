@@ -242,7 +242,7 @@
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new2.RULE",
+            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
             "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
@@ -275,7 +275,7 @@
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new2.RULE",
+            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
             "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",

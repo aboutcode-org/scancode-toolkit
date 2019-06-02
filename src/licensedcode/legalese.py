@@ -27,10 +27,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-# This is a list of words that are specific to licenses and are sorted by
-# decreasing frequency. This list is used to compare this ranking with the
-# license tokens rankings and build an initial list of non-license-related
-# tokens we call junk
+# This is a list of words that are specific to licenses. This list is used to
+# classify words are legalese or less interesting non-legalese aka. junk words
 
 
 common_license_words = frozenset([
@@ -76,8 +74,6 @@ common_license_words = frozenset([
 'means',
 'licensor',
 'modify',
-# 'modifications',
-# 'modification',
 'licenses',
 'granted',
 'distributed',
@@ -169,6 +165,7 @@ common_license_words = frozenset([
 'intended',
 'individual',
 'exemplary',
+'author',
 'authors',
 'contribution',
 'sell',
@@ -4075,7 +4072,6 @@ common_license_words = frozenset([
 'hurricanes',
 'proceeds',
 'commutative',
-'integerlog',
 'remit',
 'afl21',
 'warrenties',
@@ -4096,12 +4092,10 @@ common_license_words = frozenset([
 'rapport',
 'vandalism',
 'encouraging',
-'constantin',
 'indebted',
 'inconvenient',
 'interpretations',
 'commissions',
-'unhappy',
 'redefined',
 'hinder',
 'disperse',
@@ -4201,7 +4195,6 @@ common_license_words = frozenset([
 'possiblity',
 'profitability',
 'improperly',
-'telecommuters',
 'depreciated',
 'promoted',
 'copyrightfax',
@@ -4320,7 +4313,6 @@ common_license_words = frozenset([
 'overwriting',
 'tooling',
 'authoring',
-'geocities',
 'subscribed',
 'deposited',
 'decrypting',

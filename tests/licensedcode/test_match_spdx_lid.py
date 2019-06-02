@@ -402,6 +402,10 @@ class TestMatchSpdx(FileBasedTesting):
         idx = cache.get_index()
         dic = idx.dictionary
         licenses = cache.get_licenses_db()
-        tokens = models.get_all_spdx_key_tokens(licenses)
-        for token in tokens:
-            dic[token]
+        tokens = set(models.get_all_spdx_key_tokens(licenses))
+        keys =set(idx.dictionary)
+        try:
+            assert tokens.issubset(keys)
+        except:
+            for token in tokens:
+                dic[token]

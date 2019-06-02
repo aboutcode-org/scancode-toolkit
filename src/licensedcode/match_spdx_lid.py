@@ -129,8 +129,8 @@ def spdx_id_match(idx, query_run, text):
     # we use the query side to build the ispans
     ispan = Span(range(0, match_len))
 
-    len_junk = idx.len_junk
-    hispan = Span(p for p, t in enumerate(matched_tokens) if t >= len_junk)
+    len_legalese = idx.len_legalese
+    hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
 
     match = LicenseMatch(
         rule=rule, qspan=qspan, ispan=ispan, hispan=hispan,

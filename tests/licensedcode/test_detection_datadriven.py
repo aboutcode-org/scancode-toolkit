@@ -32,7 +32,7 @@ from os.path import dirname
 import unittest
 
 
-from licensedcode_test_utils import build_tests
+from licensedcode_test_utils import build_tests #NOQA
 
 """
 Data-driven tests using expectations stored in YAML files.

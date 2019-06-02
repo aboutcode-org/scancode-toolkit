@@ -40,6 +40,8 @@ from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 
+from licensedcode_test_utils import mini_legalese  # NOQA
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -48,11 +50,15 @@ Test the core license detection mechanics.
 """
 
 
+def MiniLicenseIndex(*args, **kwargs):
+    return index.LicenseIndex(*args, _legalese=mini_legalese, **kwargs)
+
+
 class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_does_not_return_matches_for_empty_query(self):
-        idx = index.LicenseIndex([Rule(stored_text='A one. A two. license A three.')])
+        idx = MiniLicenseIndex([Rule(stored_text='A one. A two. license A three.')])
 
         matches = idx.match(query_string='')
         assert [] == matches
@@ -60,15 +66,16 @@ class TestIndexMatch(FileBasedTesting):
         assert [] == matches
 
     def test_match_does_not_return_matches_for_junk_queries(self):
-        idx = index.LicenseIndex([Rule(stored_text='A one. a license two. license A three.')])
+        idx = MiniLicenseIndex([Rule(stored_text='A one. a license two. license A three.')])
 
         assert [] == idx.match(query_string=u'some other junk')
         assert [] == idx.match(query_string=u'some junk')
 
     def test_match_return_one_match_with_correct_offsets(self):
-        idx = index.LicenseIndex([
+        idx = MiniLicenseIndex([
             Rule(stored_text='A one. a license two. A three.',
-                 license_expression='abc')])
+                 license_expression='abc')]
+        )
 
         querys = u'some junk. A one. A license two. A three.'
         #          0    1     2 3    4 5       6    7 8
@@ -86,7 +93,7 @@ class TestIndexMatch(FileBasedTesting):
     def test_match_can_match_exactly_rule_text_used_as_query(self):
         test_file = self.get_test_loc('detect/mit/mit.c')
         rule = Rule(text_file=test_file, license_expression='mit')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         matches = idx.match(test_file)
         assert 1 == len(matches)
@@ -100,7 +107,7 @@ class TestIndexMatch(FileBasedTesting):
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
         ftr = Rule(text_file=tf1, license_expression='mit')
-        idx = index.LicenseIndex([ftr])
+        idx = MiniLicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/mit2.c')
         matches = idx.match(query_doc)
@@ -113,7 +120,7 @@ class TestIndexMatch(FileBasedTesting):
     def test_match_matches_correctly_simple_exact_query_across_query_runs(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
         ftr = Rule(text_file=tf1, license_expression='mit')
-        idx = index.LicenseIndex([ftr])
+        idx = MiniLicenseIndex([ftr])
         query_doc = self.get_test_loc('detect/mit/mit3.c')
         matches = idx.match(query_doc)
         assert 1 == len(matches)
@@ -160,7 +167,7 @@ of the Software, and to permit persons to whom the Software is
     def test_match_with_surrounding_junk_should_return_an_exact_match(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
         ftr = Rule(text_file=tf1, license_expression='mit')
-        idx = index.LicenseIndex([ftr])
+        idx = MiniLicenseIndex([ftr])
 
         query_loc = self.get_test_loc('detect/mit/mit4.c')
         matches = idx.match(query_loc)
@@ -197,7 +204,7 @@ of the Software, and to permit persons to whom the Software is
         assert 95.56 == match.score()
 
     def test_match_to_single_word_does_not_have_zero_score(self):
-        idx = index.LicenseIndex(
+        idx = MiniLicenseIndex(
             [Rule(stored_text='LGPL', license_expression='lgpl-2.0')]
         )
         matches = idx.match(query_string='LGPL')
@@ -206,7 +213,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_to_threshold_words_has_hundred_score(self):
         threshold = 18
-        idx = index.LicenseIndex(
+        idx = MiniLicenseIndex(
             [Rule(stored_text=' LGPL ' * threshold, license_expression='lgpl-2.0')]
         )
         matches = idx.match(query_string=' LGPL ' * threshold)
@@ -216,7 +223,7 @@ of the Software, and to permit persons to whom the Software is
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
         rule = Rule(text_file=rule_file, license_expression='mit')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         query_doc = self.get_test_loc('approx/mit/mit4.c')
         matches = idx.match(query_doc)
@@ -231,10 +238,9 @@ of the Software, and to permit persons to whom the Software is
         assert 93.48 == m2.score()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
-        idx = index.LicenseIndex(
+        idx = MiniLicenseIndex(
             [Rule(stored_text='MIT License', license_expression='mit')]
         )
-        assert {'_tst_11_0': {'license': [1]}} == idx.to_dict(True)
 
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
@@ -292,7 +298,7 @@ of the Software, and to permit persons to whom the Software is
     def test_match_simple_rule(self):
         tf1 = self.get_test_loc('detect/mit/t1.txt')
         ftr = Rule(text_file=tf1, license_expression='bsd-original')
-        idx = index.LicenseIndex([ftr])
+        idx = MiniLicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/t2.txt')
         matches = idx.match(query_doc)
@@ -306,24 +312,24 @@ of the Software, and to permit persons to whom the Software is
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_2(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos1.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_3(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos2.txt')
-        idx = index.LicenseIndex(
+        idx = MiniLicenseIndex(
             [Rule(text_file=test_file, license_expression='kerberos')]
         )
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_4(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos3.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
+        idx = MiniLicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_overlap_detection1(self):
@@ -366,7 +372,7 @@ of the Software, and to permit persons to whom the Software is
         rule2 = Rule(stored_text=license2, license_expression='overlap')
         rule3 = Rule(stored_text=license3, license_expression='overlap')
         rule4 = Rule(stored_text=license4, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2, rule3, rule4])
+        idx = MiniLicenseIndex([rule1, rule2, rule3, rule4])
 
         querys = 'Redistribution and use bla permitted.'
         # test : license1 is in the index and contains no other rule. should return rule1 at exact coverage.
@@ -394,7 +400,7 @@ of the Software, and to permit persons to whom the Software is
 
         rule1 = Rule(stored_text=license1, license_expression='overlap')
         rule2 = Rule(stored_text=license2, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2])
+        idx = MiniLicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
 
@@ -422,7 +428,7 @@ of the Software, and to permit persons to whom the Software is
 
         rule1 = Rule(stored_text=license1, license_expression='overlap')
         rule2 = Rule(stored_text=license2, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2])
+        idx = MiniLicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
 
@@ -457,7 +463,7 @@ of the Software, and to permit persons to whom the Software is
 
         rule1 = Rule(stored_text=license1, license_expression='overlap')
         rule2 = Rule(stored_text=license2, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2])
+        idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
             Redistributions of source must retain copyright.
@@ -497,7 +503,7 @@ of the Software, and to permit persons to whom the Software is
 
         rule1 = Rule(stored_text=license1, license_expression='overlap')
         rule2 = Rule(stored_text=license2, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2])
+        idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
         Redistribution and use permitted.
@@ -531,7 +537,7 @@ of the Software, and to permit persons to whom the Software is
 
         rule1 = Rule(stored_text=license1, license_expression='overlap')
         rule2 = Rule(stored_text=license2, license_expression='overlap')
-        idx = index.LicenseIndex([rule1, rule2])
+        idx = MiniLicenseIndex([rule1, rule2])
 
         querys = '''My source.
         Redistribution and use permitted for MIT license.
@@ -548,7 +554,7 @@ of the Software, and to permit persons to whom the Software is
 
     def test_fulltext_detection_works_with_partial_overlap_from_location(self):
         test_doc = self.get_test_loc('detect/templates/license3.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_doc, license_expression='mylicense')])
+        idx = MiniLicenseIndex([Rule(text_file=test_doc, license_expression='mylicense')])
 
         query_loc = self.get_test_loc('detect/templates/license4.txt')
         matches = idx.match(query_loc)
@@ -594,7 +600,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         of X Consortium, Inc.
         '''
         rule = Rule(stored_text=tf1_text, license_expression='x-consortium')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
         matches = idx.match(query_loc)
@@ -626,7 +632,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         of X Consortium, Inc.
         '''
         rule = Rule(stored_text=rule_text, license_expression='x-consortium')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
         matches = idx.match(location=query_loc)
@@ -666,7 +672,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         '''
         rule = Rule(stored_text=rule_text, license_expression='x-consortium')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         query_string = u'''
         IN NO EVENT SHALL THE Y CORP
@@ -700,7 +706,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the {{}}above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
         reproduce the word for word above copyright notice.'''
@@ -718,7 +724,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the stipulated {{}}above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
         reproduce the stipulated word for word above copyright notice.'''
@@ -737,7 +743,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         test_text = u'''Redistributions in binary form must
         {{}} reproduce as is stipulated {{}}above copyright notice'''
         rule = Rule(stored_text=test_text, license_expression='mylicense')
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
         reproduce as is stipulated the word for word above copyright notice.'''
@@ -756,7 +762,13 @@ class TestIndexPartialMatch(FileBasedTesting):
         into the Public Domain.
         '''
         rule = Rule(stored_text=test_text, license_expression='public-domain')
-        idx = index.LicenseIndex([rule])
+
+        legalese = (
+            mini_legalese
+            | set(['property', 'abandon', 'rights', ]))
+
+        idx = index.LicenseIndex([rule], _legalese=legalese)
+
         querys = '''
         SAX2 is Free!
         I hereby abandon any property rights to SAX 2.0 (the Simple API for
@@ -796,7 +808,12 @@ class TestIndexPartialMatch(FileBasedTesting):
         # failed when a gapped token starts at a beginning of rule with few tokens before
         test_file = self.get_test_loc('detect/templates/license7.txt')
         rule = Rule(text_file=test_file, license_expression='lic')
-        idx = index.LicenseIndex([rule])
+
+        legalese = (
+            mini_legalese
+            | set(['permission', 'written', 'registered', 'derived', 'damage', 'due']))
+
+        idx = index.LicenseIndex([rule], _legalese=legalese)
 
         qloc = self.get_test_loc('detect/templates/license8.txt')
         matches = idx.match(qloc)
@@ -895,14 +912,15 @@ class TestIndexPartialMatch(FileBasedTesting):
 
     def test_match_can_match_with_index_built_from_rule_directory_with_sun_bcls(self):
         rule_dir = self.get_test_loc('detect/rule_template/rules')
-        idx = index.LicenseIndex(load_rules(rule_dir))
+        idx = MiniLicenseIndex(load_rules(rule_dir))
 
         # at line 151 the query has an extra "Software" word inserted to avoid hash matching
         query_loc = self.get_test_loc('detect/rule_template/query.txt')
         matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        assert Span(0, 940) | Span(942, 1722) == match.qspan
+        expected = Span(0, 941) | Span(943, 1722)
+        assert expected == match.qspan
         assert match_seq.MATCH_SEQ == match.matcher
 
 

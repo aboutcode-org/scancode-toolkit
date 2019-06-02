@@ -83,11 +83,11 @@ def hash_match(idx, query_run, **kwargs):
     if rid is not None:
         rule = idx.rules_by_rid[rid]
         itokens = idx.tids_by_rid[rid]
-        len_junk = idx.len_junk
+        len_legalese = idx.len_legalese
         logger_debug('match_hash: Match:', rule.identifier)
         qspan = Span(range(query_run.start, query_run.end + 1))
         ispan = Span(range(0, rule.length))
-        hispan = Span(p for p in ispan if itokens[p] >= len_junk)
+        hispan = Span(p for p in ispan if itokens[p] < len_legalese)
         match = LicenseMatch(rule, qspan, ispan, hispan, query_run.start, matcher=MATCH_HASH, query=query_run.query)
         matches.append(match)
     return matches

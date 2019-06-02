@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import difflib
 from unittest.case import TestCase
 
 from licensedcode import seq
@@ -156,12 +155,12 @@ class TestSeq(TestCase):
             13406: [8]
         }
 
-        len_junk = 5789
+        len_good = 20000
 
         a_start = 357
         a_end = 52
         b_start = 0
         b_end = 53
 
-        tests = seq.find_longest_match(a, b, a_start, len(a), b_start, b_end, b2j, len_junk, matchables)
+        tests = seq.find_longest_match(a, b, a_start, len(a), b_start, b_end, b2j, len_good, matchables)
         assert seq.Match(a=357, b=0, size=8) == tests

@@ -166,47 +166,47 @@ def multiset_counter(mset):
     return sum(mset.values())
 
 
-def high_tids_set_subset(tids_set, len_junk):
+def high_tids_set_subset(tids_set, len_legalese):
     """
-    Return a subset of a set of token ids that are high tokens.
+    Return a subset of a set of token ids that are only legalese tokens.
     """
-    return intbitset([i for i in tids_set if i >= len_junk])
+    return intbitset([i for i in tids_set if i < len_legalese])
 
 
-def high_tids_multiset_subset(mset, len_junk):
+def high_tids_multiset_subset(mset, len_legalese):
     """
-    Return a subset of a multiset with items made only of high tokens.
+    Return a subset of a multiset with items made only of legalese tokens.
     """
     return {tid: count for tid, count in mset.items()
-            if tid >= len_junk}
+            if tid < len_legalese}
 
 
-def high_bigrams_multiset_subset(mset, len_junk):
+def high_bigrams_multiset_subset(mset, len_legalese):
     """
-    Return a subset of a multiset with items made only of high tokens.
+    Return a subset of a multiset with items made only of legalese tokens.
     """
     return {bigram: count for bigram, count in mset.items()
-            if bigram[0] >= len_junk or bigram[1] >= len_junk}
+            if bigram[0] < len_legalese or bigram[1] < len_legalese}
 
 
-def high_multiset_subset(mset, len_junk, _use_bigrams=False):
+def high_multiset_subset(mset, len_legalese, _use_bigrams=False):
     """
-    Return a subset of a multiset with items made only of high tokens.
+    Return a subset of a multiset with items made only of legalese tokens.
     """
     if _use_bigrams:
-        return high_bigrams_multiset_subset(mset, len_junk)
+        return high_bigrams_multiset_subset(mset, len_legalese)
     else:
-        return high_tids_multiset_subset(mset, len_junk)
+        return high_tids_multiset_subset(mset, len_legalese)
 
 
 # FIXME: this is NOT used at all BUT should be used and pe-indexed
-def compute_high_set_and_mset(tids_set, mset, len_junk, _use_bigrams=False):
+def compute_high_set_and_mset(tids_set, mset, len_legalese, _use_bigrams=False):
     """
     Return a tuple of (high tids set, high tids multiset) given a
-    tids_set and mset of all token tids and the `len_junk`.
+    tids_set and mset of all token tids and the `len_legalese`.
     """
-    high_tids_set = high_tids_set_subset(tids_set, len_junk)
-    high_mset = high_multiset_subset(mset, len_junk, _use_bigrams=_use_bigrams)
+    high_tids_set = high_tids_set_subset(tids_set, len_legalese)
+    high_mset = high_multiset_subset(mset, len_legalese, _use_bigrams=_use_bigrams)
     return high_tids_set, high_mset
 
 
@@ -267,7 +267,9 @@ def build_set_and_mset(token_ids, _use_bigrams=False):
 # all candidates: we compute too many candidates that may waste time in seq
 # matching for no reason.
 
-def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=False):
+def compute_candidates(query_run, idx, matchable_rids, top=50,
+                       high_resemblance=False, high_resemblance_threshold=0.8,
+                       _use_bigrams=False):
     """
     Return a ranked list of rule candidates for further matching give a
     `query_run`. Use approximate matching based on token sets ignoring
@@ -276,12 +278,15 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
 
     The ranking is based on a combo of resemblance, containment, length and
     other measures.
+
+    if `high_resemblance` is True, this return only candidates that have a a
+    high resemblance above `high_resemblance_threshold`.
     """
     # collect query-side sets used for matching
     token_ids = query_run.matchable_tokens()
     qset, qmset = build_set_and_mset(token_ids, _use_bigrams=_use_bigrams)
 
-    len_junk = idx.len_junk
+    len_legalese = idx.len_legalese
 
     # perform two steps of ranking:
     # step one with tid sets and step two with tid multisets for refinement
@@ -299,24 +304,23 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
         if rid not in matchable_rids:
             continue
 
-        scores_vectors, high_intersection = compare_token_sets(
+        scores_vectors, high_set_intersection = compare_token_sets(
             qset=qset,
             iset=sets_by_rid[rid],
             intersector=tids_sets_intersector,
             counter=tids_set_counter,
             high_intersection_filter=high_tids_set_subset,
-            len_junk=len_junk,
+            len_legalese=len_legalese,
             unique=True,
             rule=rule,
-            filter_non_matching=True)
+            filter_non_matching=True,
+            high_resemblance_threshold=high_resemblance_threshold)
 
         if scores_vectors:
-            # With this trick the high_intersection will be the one from the
-            # first step, e.g. a simple set. On the first step,
-            # high_intersection is None and intersection is the intersected
-            # set. On the second step, high_intersection is the intersected
-            # set of the first step, so the intersected multiset is ignored.
-            sortable_candidates_append((scores_vectors, rid, rule, high_intersection))
+            svr, svf = scores_vectors
+            if (not high_resemblance
+            or (high_resemblance and svr.is_highly_resemblant and svf.is_highly_resemblant)):
+                sortable_candidates_append((scores_vectors, rid, rule, high_set_intersection))
 
     if not sortable_candidates:
         return sortable_candidates
@@ -347,7 +351,7 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
 
     high_intersection_filter = partial(high_multiset_subset, _use_bigrams=_use_bigrams)
 
-    for _score_vectors, rid, rule, high_intersection in candidates:
+    for _score_vectors, rid, rule, high_set_intersection in candidates:
 
         scores_vectors, _intersection = compare_token_sets(
             qset=qmset,
@@ -355,14 +359,19 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
             intersector=multisets_intersector,
             counter=multiset_counter,
             high_intersection_filter=high_intersection_filter,
-            len_junk=len_junk,
+            len_legalese=len_legalese,
             unique=False,
             rule=rule,
-            filter_non_matching=filter_non_matching)
+            filter_non_matching=filter_non_matching,
+            high_resemblance_threshold=high_resemblance_threshold)
 
         if scores_vectors:
-            # we keep the high_intersection  of sets, not multisets
-            sortable_candidates_append((scores_vectors, rule, high_intersection))
+            svr, svf = scores_vectors
+            if (not high_resemblance
+            or (high_resemblance and svr.is_highly_resemblant and svf.is_highly_resemblant)):
+                # note: we keep the high_set_intersection of sets from step1,
+                # not multisets from this step2
+                sortable_candidates_append((scores_vectors, rid, rule, high_set_intersection))
 
     if not sortable_candidates:
         return sortable_candidates
@@ -378,7 +387,7 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
             [x + '_rounded' for x in ScoresVector._fields] +
             list(ScoresVector._fields)))
 
-        for rank, ((score_vec1, score_vec2), rule, high_intersection) in enumerate(candidates, 1):
+        for rank, ((score_vec1, score_vec2), rid, rule, high_set_intersection) in enumerate(candidates, 1):
             print(','.join(str(x) for x in ([rank, rule.identifier] + list(score_vec1) + list(score_vec2))))
 
     return candidates[:top]
@@ -386,9 +395,10 @@ def compute_candidates(query_run, idx, matchable_rids, top=50, _use_bigrams=Fals
 
 def compare_token_sets(qset, iset,
         intersector, counter, high_intersection_filter,
-        len_junk, unique,
+        len_legalese, unique,
         rule,
-        filter_non_matching=True):
+        filter_non_matching=True,
+        high_resemblance_threshold=0.8):
     """
     Compare a `qset` query set or multiset with a `iset` index rule set or
     multiset. Return a tuple of (ScoresVector tuple, intersection) from
@@ -400,7 +410,7 @@ def compare_token_sets(qset, iset,
     if not intersection:
         return None, None
 
-    high_intersection = high_intersection_filter(intersection, len_junk)
+    high_intersection = high_intersection_filter(intersection, len_legalese)
 
     if filter_non_matching:
         if not high_intersection:
@@ -442,13 +452,16 @@ def compare_token_sets(qset, iset,
     if filter_non_matching and minimum_containment and containment < minimum_containment:
         return None, None
 
+    rounded_resemblance = round(resemblance, 1)
     scores = (
         ScoresVector(
+            is_highly_resemblant=rounded_resemblance >= high_resemblance_threshold,
             containment=round(containment, 1),
-            resemblance=round(resemblance, 1),
+            resemblance=rounded_resemblance,
             matched_length=round(matched_length / 20, 1),
         ),
         ScoresVector(
+            is_highly_resemblant=resemblance >= high_resemblance_threshold,
             containment=containment,
             resemblance=resemblance,
             matched_length=matched_length,
@@ -457,18 +470,18 @@ def compare_token_sets(qset, iset,
     return scores, high_intersection
 
 
-_scores_vector_fields = ['containment', 'resemblance', 'matched_length']
+_scores_vector_fields = ['is_highly_resemblant', 'containment', 'resemblance', 'matched_length']
 
 ScoresVector = namedtuple('ScoresVector', _scores_vector_fields)
 
 
 def filter_dupes(sortable_candidates):
     """
-    Given a list of sortable_c    andidates as (score_vector, rid, rule, intersection)
+    Given a list of `sortable_candidates` as (score_vector, rid, rule, intersection)
     yield filtered candidates.
     """
     def keyfunc(item):
-        (sv_round, _sv), rule, _inter = item
+        (sv_round, _sv_full), _rid, rule, _inter = item
         return (
             rule.license_expression,
             sv_round.containment,

@@ -232,11 +232,11 @@ class Query(object):
         # this method has side effects to populate various data structures
         self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
 
-        len_junk = idx.len_junk
+        len_legalese = idx.len_legalese
         tokens = self.tokens
         # sets of known token positions initialized after query tokenization:
-        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_junk])
-        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_junk])
+        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_legalese])
+        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_legalese])
 
     def whole_query_run(self):
         """
@@ -405,7 +405,7 @@ class Query(object):
             print()
 
     def _tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
-        len_junk = self.idx.len_junk
+        len_legalese = self.idx.len_legalese
         digit_only_tids = self.idx.digit_only_tids
 
         # initial query run
@@ -450,7 +450,7 @@ class Query(object):
                 if token_id is not None:
                     tokens_append(token_id)
                     line_has_known_tokens = True
-                    if token_id >= len_junk:
+                    if token_id < len_legalese:
                         line_has_good_tokens = True
                     query_run.end = pos
                     pos += 1
@@ -478,7 +478,7 @@ class Query(object):
             print()
             logger_debug('Query runs for query:', self.location)
             for qr in self.query_runs:
-                high_matchables = len([p for p, t in enumerate(qr.tokens) if t >= len_junk])
+                high_matchables = len([p for p, t in enumerate(qr.tokens) if t < len_legalese])
 
                 print(' ' , repr(qr), 'high_matchables:', high_matchables)
             print()
@@ -555,7 +555,7 @@ class QueryRun(object):
     positions inclusive.
     """
     __slots__ = (
-        'query', 'start', 'end', 'len_junk', 'digit_only_tids',
+        'query', 'start', 'end', 'len_legalese', 'digit_only_tids',
         '_low_matchables', '_high_matchables',
     )
 
@@ -570,7 +570,7 @@ class QueryRun(object):
         self.start = start
         self.end = end
 
-        self.len_junk = self.query.idx.len_junk
+        self.len_legalese = self.query.idx.len_legalese
         self.digit_only_tids = self.query.idx.digit_only_tids
         self._low_matchables = None
         self._high_matchables = None
@@ -635,6 +635,7 @@ class QueryRun(object):
         """
         Return True if this query run contains only digit tokens.
         """
+        # FIXME: this should be cached
         return intbitset(self.tokens).issubset(self.digit_only_tids)
 
     def is_matchable(self, include_low=False, qspans=None):
@@ -737,7 +738,7 @@ class QueryRun(object):
             high_tokens = ''
         else:
             tokens = tokens_string(self.tokens)
-            high_tokens = set(t for t in self.tokens if t >= self.len_junk)
+            high_tokens = set(t for t in self.tokens if t < self.len_legalese)
             high_tokens = tokens_string(high_tokens, sort=True)
 
         to_dict = dict(

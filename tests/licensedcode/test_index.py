@@ -26,9 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import io
 import os
-import json
 
 from commoncode.testcase import FileBasedTesting
 
@@ -39,6 +37,13 @@ from licensedcode import match_seq
 from licensedcode import models
 from licensedcode.query import Query
 from licensedcode.tracing import get_texts
+
+from licensedcode_test_utils import mini_legalese  # NOQA
+
+
+def MiniLicenseIndex(*args, **kwargs):
+    return index.LicenseIndex(*args, _legalese=mini_legalese, **kwargs)
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -56,172 +61,111 @@ class IndexTesting(FileBasedTesting):
 
 class TestIndexing(IndexTesting):
 
-    def check_index_as_dict(self, idx, expected, regen=False):
-        as_dict = idx.to_dict()
-        expected = self.get_test_loc(expected)
-        if regen:
-            with open(expected, 'wb') as jx:
-                jx.write(json.dumps(as_dict, indent=2, separators=(',', ': ')))
-
-        with io.open(expected, encoding='utf-8') as exp:
-            expected_as_dict = json.load(exp)
-        assert expected_as_dict == as_dict
-
-    def test_init_with_rules(self):
-        test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
-        idx = index.LicenseIndex(test_rules)
-        self.check_index_as_dict(idx, 'index/test_init_with_rules.json')
-
-    def test__add_rules(self):
-        test_rules = self.get_test_rules('index/bsd', ['bsd-new', 'bsd-no-mod'])
-        idx = index.LicenseIndex()
-        idx._add_rules(test_rules)
-        self.check_index_as_dict(idx, 'index/test__add_rules.json')
-
-    def test__add_rules_with_templates(self):
-        test_rules = self.get_test_rules('index/bsd_templates2')
-        idx = index.LicenseIndex()
-        idx._add_rules(test_rules)
-        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json')
-
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
             (u'a one a two a three licensed.', (4, 1, 4, 1)),
             (u'a four a five a six licensed.', (4, 1, 4, 1)),
-            (u'one two three four five gpl', (6, 1, 6, 1)),
+            (u'one two three four five gpl', (6, 0, 6, 0)),
             (u'The rose is a rose mit', (4, 0, 5, 0)),
-            (u'The license is GPL', (4, 2, 4, 2)),
-            (u'The license is this GPL', (5, 2, 5, 2)),
+            (u'The license is GPL', (4, 1, 4, 1)),
+            (u'The license is this GPL', (5, 1, 5, 1)),
             (u'a license is a rose', (3, 1, 3, 1)),
-            (u'the gpl', (2, 1, 2, 1)),
+            (u'the gpl', (2, 0, 2, 0)),
             (u'the mit', (2, 0, 2, 0)),
-            (u'the bsd', (2, 1, 2, 1)),
-            (u'the lgpl', (2, 1, 2, 1)),
+            (u'the bsd', (2, 0, 2, 0)),
+            (u'the lgpl', (2, 0, 2, 0)),
         ]
-        idx = index.LicenseIndex()
+        idx = MiniLicenseIndex()
         rules = [models.Rule(stored_text=t[0]) for t in test_rules]
-        idx._add_rules(rules)
+        idx._add_rules(rules, _legalese=mini_legalese,)
 
-        assert 11 == idx.len_junk
+        assert 40 == idx.len_legalese
         expected_lengths = [r[1] for r in test_rules]
         results = [
             (rule.length_unique, rule.high_length_unique,
              rule.length, rule.high_length) for rule in rules]
         assert expected_lengths == results
 
-        xdict = {
-            'bsd': 15,
-            'five': 5,
-            'four': 4,
-            'gpl': 11,
-            'is': 1,
-            'lgpl': 14,
-            'license': 12,
-            'licensed': 13,
-            'mit': 8,
-            'one': 7,
-            'rose': 2,
-            'six': 10,
-            'the': 0,
-            'this': 9,
-            'three': 3,
-            'two': 6
-        }
+        expected = set([
+            'bsd',
+            'five',
+            'four',
+            'gpl',
+            'is',
+            'lgpl',
+            'mit',
+            'one',
+            'rose',
+            'six',
+            'the',
+            'this',
+            'three',
+            'two'])
 
-        assert xdict == idx.dictionary
+        xdict = {key for key, val in idx.dictionary.items() if val >= idx.len_legalese}
 
-        xtbi = [
-            u'the',
-            u'is',
-            u'rose',
-            u'three',
-            u'four',
-            u'five',
-            u'two',
-            u'one',
-            u'mit',
-            u'this',
-            u'six',
-            u'gpl',
-            u'license',
-            u'licensed',
-            u'lgpl',
-            u'bsd']
+        assert expected == xdict
 
-        assert xtbi == idx.tokens_by_tid
+        xtbi = sorted([
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six',
+            'gpl',
+            'the',
+            'rose',
+            'is',
+            'mit',
+            'this',
+            'bsd',
+            'lgpl'])
 
-        expected_as_dict = {
-            u'_tst_29_0': {u'licensed': [3]},
-            u'_tst_29_1': {u'licensed': [3]},
-            u'_tst_27_2': {u'gpl': [5]},
-            u'_tst_22_3': {},
-            u'_tst_18_4': {u'gpl': [3], u'license': [1]},
-            u'_tst_23_5': {u'gpl': [4], u'license': [1]},
-            u'_tst_19_6': {u'license': [0]},
-            u'_tst_7_7': {u'gpl': [1]},
-            u'_tst_7_8': {},
-            u'_tst_7_9': {u'bsd': [1]},
-            u'_tst_8_10': {u'lgpl': [1]}
-        }
-
-        assert expected_as_dict == idx.to_dict()
+        assert xtbi == sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese])
 
     def test_index_structures_with__add_rules(self):
         base = self.get_test_loc('index/tokens_count')
         keys = sorted(os.listdir(base))
-        idx = index.LicenseIndex()
+        idx = MiniLicenseIndex()
         rules = []
         for key in keys:
             rules.append(models.Rule(
                 text_file=os.path.join(base, key), license_expression='gpl-2.0'))
 
-        idx._add_rules(rules)
+        idx._add_rules(rules, _legalese=mini_legalese)
 
-        assert 6 == idx.len_junk
+        assert 40 == idx.len_legalese
 
-        expected_index = {
-        'plain1_0': {u'redistribution': [0]},
-        'plain2_1': {u'redistribution': [0], u'yes': [2]},
-        'plain3_2': {u'redistribution': [0], u'yes': [3]},
-        'plain4_3': {u'redistribution': [0], u'yes': [4]},
-        'plain5_4': {u'redistribution': [0]},
-        'tmpl10_5': {u'redistribution': [0], u'thing': [6]},
-        'tmpl2_6': {u'redistribution': [0]},
-        'tmpl3_7': {u'redistribution': [0]},
-        'tmpl4_8': {u'redistribution': [0]},
-        'tmpl5_2_9': {u'redistribution': [0], u'yes': [4]},
-        'tmpl6_10': {u'redistribution': [0]},
-        'tmpl7_11': {u'redistribution': [0]},
-        'tmpl9_12': {u'redistribution': [0]}
-        }
-
-        assert expected_index == idx.to_dict()
-
-        expected_dict = {
-            'is': 0,
-            'allowed': 1,
-            'all': 2,
-            'and': 3,
-            'any': 5,
-            'for': 4,
-            'redistribution': 6,
-            'thing': 8,
-            'yes': 7}
-
-        assert expected_dict == idx.dictionary
-
-        expected_tids = [
-            'is',
-            'allowed',
+        expected = set([
             'all',
+            'allowed',
             'and',
-            'for',
             'any',
+            'for',
+            'is',
             'redistribution',
-            'yes',
-            'thing']
-        assert expected_tids == idx.tokens_by_tid
+            'thing',
+            'yes'])
+
+        xdict = {key for key, val in idx.dictionary.items() if val >= idx.len_legalese}
+
+        assert expected == xdict
+
+        xtbi = sorted([
+            'all',
+            'allowed',
+            'and',
+            'any',
+            'for',
+            'is',
+            'redistribution',
+            'thing',
+            'yes'
+        ])
+
+        assert xtbi == sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese])
 
         expected_msets_by_rid = [
             {u'redistribution': 1},
@@ -247,8 +191,7 @@ class TestIndexing(IndexTesting):
              u'and': 1,
              u'any': 1,
              u'is': 1,
-             u'redistribution': 1}
-            ]
+             u'redistribution': 1}]
 
         htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in idx.msets_by_rid]
@@ -257,7 +200,7 @@ class TestIndexing(IndexTesting):
     def test_index_fails_on_duplicated_rules(self):
         rule_dir = self.get_test_loc('index/no_duplicated_rule')
         try:
-            index.LicenseIndex(models.load_rules(rule_dir))
+            MiniLicenseIndex(models.load_rules(rule_dir))
             self.fail('Exception on dupes not raised')
         except AssertionError as e:
             assert u'Duplicate rules' in str(e)
@@ -268,7 +211,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = index.LicenseIndex([models.Rule(stored_text=rule_text, license_expression='bsd')])
+        idx = MiniLicenseIndex([models.Rule(stored_text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
@@ -291,7 +234,7 @@ class TestMatchNoTemplates(IndexTesting):
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
 
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
         querys = u'Hi licensed under the GPL, licensed under the GPL yes.'
         #          0        1   2   3     4       5     6    7   8   9
 
@@ -321,7 +264,7 @@ class TestMatchNoTemplates(IndexTesting):
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
 
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
 
         result = idx.match(query_string=querys)
@@ -332,7 +275,7 @@ class TestMatchNoTemplates(IndexTesting):
         assert u'licensed under the gpl licensed under the gpl' == itext
 
     def test_match_exact_from_file(self):
-        idx = index.LicenseIndex(self.get_test_rules('index/mini'))
+        idx = MiniLicenseIndex(self.get_test_rules('index/mini'))
         query_loc = self.get_test_loc('index/queryperfect-mini')
 
         result = idx.match(location=query_loc)
@@ -348,7 +291,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_multiple(self):
         test_rules = self.get_test_rules('index/bsd')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         query = self.get_test_loc('index/querysimple')
 
         result = idx.match(location=query)
@@ -364,7 +307,7 @@ class TestMatchNoTemplates(IndexTesting):
 
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
-        idx = index.LicenseIndex([rule])
+        idx = MiniLicenseIndex([rule])
         querys = u'some junk. this GPL. A MIT. that LGPL.'
         #          0    1     2    3    4 5    6    7
 
@@ -384,7 +327,7 @@ class TestMatchWithTemplates(IndexTesting):
 
     def test_match_with_template_and_multiple_rules(self):
         test_rules = self.get_test_rules('index/bsd_templates',)
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         querys = u'''
 
 
@@ -496,7 +439,10 @@ No part of match        '''
 
         rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'),
                            license_expression='test')
-        idx = index.LicenseIndex([rule])
+        legalese = (
+            mini_legalese
+            | set(['permission', 'written', 'registered', 'derived', 'damage', 'due']))
+        idx = index.LicenseIndex([rule], _legalese=legalese)
 
         query_loc = self.get_test_loc('index/templates/query.txt')
         result = idx.match(location=query_loc)
@@ -595,9 +541,7 @@ No part of match        '''
         #                 0        1  2   3       4               5        6   7  8       9
         license_expression = 'tst'
         rule = models.Rule(license_expression=license_expression, stored_text=_stored_text)
-        idx = index.LicenseIndex([rule])
-        expected_idx = {u'_tst_73_0': {u'license': [4, 9], u'mit': [2, 7]}}
-        assert expected_idx == idx.to_dict()
+        idx = MiniLicenseIndex([rule])
 
         querys = u'Hi my copyright reserved mit is license is the copyright reserved mit is license yes.'
         #           0  1         2        3   4  5       6  7   8         9       10  11 12      13  14
@@ -627,7 +571,7 @@ class TestIndexDumpLoad(IndexTesting):
 
     def test_dumps_loads_default(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         dumps = idx.dumps()
         idx2 = index.LicenseIndex.loads(dumps)
         expected = [
@@ -635,11 +579,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dump_load_default(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         test_dump = self.get_temp_file()
         with open(test_dump, 'wb') as td:
             idx.dump(td)
@@ -650,15 +594,15 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
         with open(test_dump, 'rb') as td:
             idx3 = index.LicenseIndex.loads(td.read())
-        assert expected == sorted(idx3.dictionary)
+        assert expected == sorted([k for k, v in idx3.dictionary.items() if v >= idx3.len_legalese])
 
     def test_dumps_fast_loads_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         dumps = idx.dumps(fast=True)
         idx2 = index.LicenseIndex.loads(dumps, fast=True)
         expected = [
@@ -666,11 +610,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dumps_slow_loads_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         dumps = idx.dumps(fast=False)
         idx2 = index.LicenseIndex.loads(dumps, fast=False)
         expected = [
@@ -678,11 +622,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dumps_fast_loads_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         dumps = idx.dumps(fast=True)
         idx2 = index.LicenseIndex.loads(dumps, fast=False)
         expected = [
@@ -690,11 +634,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dumps_slow_loads_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         dumps = idx.dumps(fast=False)
         idx2 = index.LicenseIndex.loads(dumps, fast=True)
         expected = [
@@ -702,11 +646,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dump_fast_load_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         test_dump = self.get_temp_file()
         with open(test_dump, 'wb') as td:
             idx.dump(td, fast=True)
@@ -717,11 +661,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dump_fast_load_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         test_dump = self.get_temp_file()
         with open(test_dump, 'wb') as td:
             idx.dump(td, fast=True)
@@ -732,11 +676,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dump_slow_load_slow(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         test_dump = self.get_temp_file()
         with open(test_dump, 'wb') as td:
             idx.dump(td, fast=False)
@@ -747,11 +691,11 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])
 
     def test_dump_slow_load_fast(self):
         test_rules = self.get_test_rules('index/dump_load')
-        idx = index.LicenseIndex(test_rules)
+        idx = MiniLicenseIndex(test_rules)
         test_dump = self.get_temp_file()
         with open(test_dump, 'wb') as td:
             idx.dump(td, fast=False)
@@ -762,4 +706,4 @@ class TestIndexDumpLoad(IndexTesting):
             u'copyright', u'following', u'forms', u'holder', u'in', u'is',
             u'met', u'permitted', u'provided', u'redistribution', u'software',
             u'source', u'that', u'the', u'this', u'use']
-        assert expected == sorted(idx2.dictionary)
+        assert expected == sorted([k for k, v in idx2.dictionary.items() if v >= idx2.len_legalese])

@@ -254,3 +254,48 @@ def make_test(license_test, regen=False):
         closure_test_function = unittest.expectedFailure(closure_test_function)
 
     return closure_test_function
+
+
+# a small test set of legalese to use in tests
+mini_legalese = frozenset([
+'accordance',
+'alternatively',
+'according',
+'acknowledgement',
+'enforcement',
+'admission',
+'alleged',
+'accused',
+'determines',
+'exceeding',
+'assessment',
+'exceeds',
+'literal',
+'existed',
+'ignored',
+'complementary',
+'responded',
+'observed',
+'assessments',
+'volunteer',
+'admitted',
+'ultimately',
+'choices',
+'complications',
+'allowance',
+'fragments',
+'plaintiff',
+'license',
+'agreement',
+'gnu',
+'general',
+'warranty',
+'distribute',
+'distribution',
+'licensed',
+'covered',
+'warranties',
+'damages',
+'liability',
+'means',
+])
