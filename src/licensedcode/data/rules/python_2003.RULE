@@ -28,17 +28,6 @@ the various releases.
     Release         Derived     Year        Owner       GPL-
             from                                compatible? (1)
 
-    0.9.0 thru 1.2              1991-1995   CWI         yes
-    1.3 thru 1.5.2  1.2         1995-1999   CNRI        yes
-    1.6             1.5.2       2000        CNRI        no
-    2.0             1.6         2000        BeOpen.com  no
-    1.6.1           1.6         2001        CNRI        no
-    2.1             2.0+1.6.1   2001        PSF         no
-    2.0.1           2.0+1.6.1   2001        PSF         yes
-    2.1.1           2.1+2.0.1   2001        PSF         yes
-    2.2             2.1.1       2001        PSF         yes
-    2.1.2           2.1.1       2002        PSF         yes
-    2.1.3           2.1.2       2002        PSF         yes
 
 Footnotes:
 
@@ -69,7 +58,7 @@ license to reproduce, analyze, test, perform and/or display publicly,
 prepare derivative works, distribute, and otherwise use Python  
 alone or in any derivative version, provided, however, that PSF's
 License Agreement and PSF's notice of copyright, i.e., "Copyright (c)
-2001, 2002, 2003 Python Software Foundation; All Rights Reserved" are
+Python Software Foundation; All Rights Reserved" are
 retained in Python   alone or in any derivative version prepared
 by Licensee.
 

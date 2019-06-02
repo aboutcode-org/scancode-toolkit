@@ -4,4 +4,3 @@ license_expressions:
   - openssl
   - openssl-ssleay
   - ssleay-windows
-notes: SOK
