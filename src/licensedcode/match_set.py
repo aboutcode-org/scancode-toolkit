@@ -445,6 +445,12 @@ def compare_token_sets(qset, iset,
     union_len = qset_len + iset_len - matched_length
     resemblance = matched_length / union_len
     containment = matched_length / iset_len
+    # by squaring the resemblance that is otherwise between 0 and 1, we make
+    # higher resemblance more important and lower ones less so. This is
+    # capturing that resemblance matters when high (e.g. the sets are highly
+    # similar) and that otherwise containment matters most. This is could be
+    # seen as a form of "smoothing"
+    amplified_resemblance = resemblance ** 2
 
     minimum_containment = rule._minimum_containment
 
@@ -452,25 +458,28 @@ def compare_token_sets(qset, iset,
     if filter_non_matching and minimum_containment and containment < minimum_containment:
         return None, None
 
-    rounded_resemblance = round(resemblance, 1)
     scores = (
         ScoresVector(
-            is_highly_resemblant=rounded_resemblance >= high_resemblance_threshold,
+            is_highly_resemblant=round(resemblance, 1) >= high_resemblance_threshold,
             containment=round(containment, 1),
-            resemblance=rounded_resemblance,
+            resemblance=round(amplified_resemblance, 1),
             matched_length=round(matched_length / 20, 1),
         ),
         ScoresVector(
             is_highly_resemblant=resemblance >= high_resemblance_threshold,
             containment=containment,
-            resemblance=resemblance,
+            resemblance=amplified_resemblance,
             matched_length=matched_length,
         )
     )
     return scores, high_intersection
 
 
-_scores_vector_fields = ['is_highly_resemblant', 'containment', 'resemblance', 'matched_length']
+_scores_vector_fields = [
+    'is_highly_resemblant',
+    'containment',
+    'resemblance',
+    'matched_length']
 
 ScoresVector = namedtuple('ScoresVector', _scores_vector_fields)
 
