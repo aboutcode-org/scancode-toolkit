@@ -79,64 +79,29 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-1.0",
           "spdx_license_key": "Apache-1.0",
           "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 6,
+          "start_line": 8,
           "end_line": 58,
           "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
+            "identifier": "apache-1.0.LICENSE",
+            "license_expression": "apache-1.0",
             "licenses": [
-              "apache-1.0",
-              "public-domain"
+              "apache-1.0"
             ],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 375,
-            "matched_length": 375,
+            "rule_length": 368,
+            "matched_length": 368,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "Copyright (c)  <year> The Apache Group.  All rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
-        },
-        {
-          "key": "public-domain",
-          "score": 100.0,
-          "name": "Public Domain",
-          "short_name": "Public Domain",
-          "category": "Public Domain",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": "http://www.linfo.org/publicdomain.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
-          "spdx_license_key": null,
-          "spdx_url": "",
-          "start_line": 6,
-          "end_line": 58,
-          "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
-            "licenses": [
-              "apache-1.0",
-              "public-domain"
-            ],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "matcher": "2-aho",
-            "rule_length": 375,
-            "matched_length": 375,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Copyright (c)  <year> The Apache Group.  All rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
+          "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
         }
       ],
       "license_expressions": [
-        "apache-1.0 AND public-domain"
+        "apache-1.0"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -176,64 +141,29 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-1.0",
           "spdx_license_key": "Apache-1.0",
           "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 38,
+          "start_line": 40,
           "end_line": 90,
           "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
+            "identifier": "apache-1.0.LICENSE",
+            "license_expression": "apache-1.0",
             "licenses": [
-              "apache-1.0",
-              "public-domain"
+              "apache-1.0"
             ],
             "is_license_text": true,
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 375,
-            "matched_length": 375,
+            "rule_length": 368,
+            "matched_length": 368,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "Copyright (c)  <year> The Apache Group.  All rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
-        },
-        {
-          "key": "public-domain",
-          "score": 100.0,
-          "name": "Public Domain",
-          "short_name": "Public Domain",
-          "category": "Public Domain",
-          "is_exception": false,
-          "owner": "Unspecified",
-          "homepage_url": "http://www.linfo.org/publicdomain.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
-          "spdx_license_key": null,
-          "spdx_url": "",
-          "start_line": 38,
-          "end_line": 90,
-          "matched_rule": {
-            "identifier": "apache-1.0_group_template2.RULE",
-            "license_expression": "apache-1.0 AND public-domain",
-            "licenses": [
-              "apache-1.0",
-              "public-domain"
-            ],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "matcher": "2-aho",
-            "rule_length": 375,
-            "matched_length": 375,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Copyright (c)  <year> The Apache Group.  All rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
+          "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer. \n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in\n    the documentation and/or other materials provided with the\n    distribution.\n \n 3. All advertising materials mentioning features or use of this\n    software must display the following acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n    endorse or promote products derived from this software without\n    prior written permission. For written permission, please contact\n    apache@apache.org.\n \n 5. Products derived from this software may not be called \"Apache\"\n    nor may \"Apache\" appear in their names without prior written\n    permission of the Apache Group.\n \n 6. Redistributions of any form whatsoever must retain the following\n    acknowledgment:\n    \"This product includes software developed by the Apache Group\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\n \n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n OF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\n This software consists of voluntary contributions made by many\n individuals on behalf of the Apache Group and was originally based\n on public domain software written at the National Center for\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\n For more information on the Apache Group and the Apache HTTP server\n project, please see <http://www.apache.org/>."
         }
       ],
       "license_expressions": [
-        "apache-1.0 AND public-domain"
+        "apache-1.0"
       ],
       "is_license_text": false,
       "files_count": 0,
@@ -286,8 +216,8 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 210,
-            "matched_length": 210,
+            "rule_length": 212,
+            "matched_length": 212,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
@@ -516,8 +446,8 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 210,
-            "matched_length": 210,
+            "rule_length": 212,
+            "matched_length": 212,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },

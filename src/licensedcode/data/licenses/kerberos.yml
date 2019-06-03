@@ -3,3 +3,5 @@ short_name: Kerberos License
 name: Kerberos License
 category: Permissive
 owner: MIT
+minimum_coverage: 80
+notes: this is a complex composite

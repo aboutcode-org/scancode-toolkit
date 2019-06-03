@@ -1,5 +1,3 @@
 license_expressions:
-  - openpub
-  - openpub
-  - openpub
-  - openpub
+  - openpub AND free-unknown
+

@@ -1,5 +1,6 @@
 license_expression: bsd-new
-is_license_reference: yes
-notes: Found in Chromium
+is_license_notice: yes
+notes: Found in Chromium and Go. There are also some use of the same notice with a bsd-simplified
 referenced_filenames:
     - LICENSE
+relevance: 90

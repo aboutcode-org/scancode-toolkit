@@ -3,3 +3,4 @@ is_license_notice: yes
 referenced_filenames:
     - COPYING
     - COPYING.GPLv2
+minimum_coverage: 25

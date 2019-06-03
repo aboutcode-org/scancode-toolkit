@@ -4,4 +4,5 @@ referenced_filenames:
     - COPYING.LIB
     - /usr/share/common-licenses/LGPL-2
     - /usr/share/common-licenses/LGPL-3
-    
+minimum_coverage: 70
+relevance: 100

@@ -40,7 +40,7 @@ from functools import partial
 # Python 2 and 3 support
 try:
     # Python 2
-    import itertools.imap as map #NOQA
+    import itertools.imap as map  # NOQA
 except ImportError:
     # Python 3
     pass
@@ -497,7 +497,7 @@ def scancode(ctx, input,  # NOQA
 
     except ScancodeError as se:
         # this will exit
-        raise click.BadParameter(se.message)
+        raise click.BadParameter(str(se))
 
     rc = 0 if success else 1
     ctx.exit(rc)
@@ -1237,13 +1237,23 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     else:
         interruptor = interruptible
 
+    # The timeout is a soft deadline for a scanner to stop processing
+    # and start returning values. The kill timeout is otherwise there
+    # as a gatekeeper for runaway processes.
+
     # run each scanner in sequence in its own interruptible
     for scanner in scanners:
         if with_timing:
             start = time()
 
         try:
-            runner = partial(scanner.function, location)
+            # pass a deadline that the scanner can opt to honor or not
+            if timeout:
+                deadline = time() + int(timeout / 2.5)
+            else:
+                deadline = sys.maxsize
+
+            runner = partial(scanner.function, location, deadline=deadline)
             error, values_mapping = interruptor(runner, timeout=timeout)
             if error:
                 msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + error

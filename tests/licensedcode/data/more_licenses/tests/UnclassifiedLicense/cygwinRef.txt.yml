@@ -1,2 +1,3 @@
 license_expressions:
-  - unknown
+  - gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus AND other-copyleft AND other-permissive
+

@@ -4,3 +4,4 @@ referenced_filenames:
     - LICENSE.LGPL
     - LGPL_EXCEPTION.txt
     - LICENSE.GPL
+minimum_coverage: 50

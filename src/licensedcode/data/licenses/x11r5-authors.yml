@@ -6,3 +6,4 @@ category: Permissive
 owner: XFree86 Project, Inc
 other_urls:
     - http://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz
+minimum_coverage: 80

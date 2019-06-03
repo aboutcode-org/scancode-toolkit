@@ -1,0 +1,15 @@
+The data may be used, copied and distributed subject to the following conditions:
+
+    Whilst every effort has been made to ensure the accuracy of the information contained in the EPSG Facilities, neither the OGP nor any of its members past present or future warrants their accuracy or will, regardless of its or their negligence, assume liability for any foreseeable or unforeseeable use made thereof, which liability is hereby excluded. Consequently, such use is at your own risk. You are obliged to inform anyone to whom you provide the EPSG Facilities of these Terms of Use.
+
+    DATA AND INFORMATION PROVIDED IN THE EPSG FACILITIES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+
+    The data may be included in any commercial package provided that any commerciality is based on value added by the provider and not on a value ascribed to the EPSG Dataset which is made available at no charge.
+
+    Ownership of the EPSG Dataset by OGP must be acknowledged in any publication or transmission (by whatever means) thereof (including permitted modifications).
+
+    Subsets of information may be extracted from the dataset. Users are advised that coordinate reference system and coordinate transformation descriptions are incomplete unless all elements detailed as essential in OGP Surveying and Positioning Guidance Note 7-1 annex F are included.
+
+    Essential elements should preferably be reproduced as described in the dataset. Modification of parameter values is permitted as described in the table below to allow change to the content of the information provided that numeric equivalence is achieved. Numeric equivalence refers to the results of geodetic calculations in which the parameters are used, for example (I) conversion of ellipsoid defining parameters, or (ii) conversion of parameters between one and two standard parallel projection methods, or (iii) conversion of parameters between 7-parameter geocentric transformation methods.
+
+    No data that has been modified other than as permitted in these Terms of Use shall be attributed to the EPSG Dataset.

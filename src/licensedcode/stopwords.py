@@ -27,6 +27,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
+"""
+A set of common words that are ignored from matching such as HTML tags.
+"""
+
 STOPWORDS = frozenset({
 # common XML character references as &quot;
     'quot',
@@ -46,14 +50,15 @@ STOPWORDS = frozenset({
     'span',
     'class',
     'pre',
-    'list',  # also a comment prefix
     'ul',
     'ol',
     'li',
+    'hr',
     'tr',
     'td',
     'th',
     'img',
+    'alt',
     'src',
     'h1',
     'h2',
@@ -63,6 +68,8 @@ STOPWORDS = frozenset({
     'blockquote',
     'body',
     'id',
+    'script',
+    'rel',
 
 # debian copyright files <s> tags
     's',
@@ -111,6 +118,40 @@ STOPWORDS = frozenset({
     'hairsp',
     'bull',
     'bullet',
+    # some xml char entities
+    'x3c',
+    'x3e',
+
+    # seen in many CSS
+    'lists',
+    'side', 'nav',
+    'height',
+    'auto',
+    'border',
+    'padding',
+    'width',
+
+    # seen in Perl PODs
+    'f',
+    'head1',
+    'head2',
+    'head3',
+
+    # seen in RTF markup
+    # this may be a solution to https://github.com/nexB/scancode-toolkit/issues/1548
+    # 'par',
+
+    # TODO: consider common english stop words (the of a ...)
+    # 'the',
+    # 'of',
+    # 'a',
+
+    # common in C literals
+    'printf',
+
+    # common in shell
+    'echo',
+
 })
 
 

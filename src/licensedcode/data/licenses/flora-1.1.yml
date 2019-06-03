@@ -9,3 +9,4 @@ other_urls:
     - https://github.com/search?q=%22Flora+License+%22&type=Code
     - http://floralicense.org/
     - https://review.tizen.org/git/?p=apps/home/taskmanager.git;a=blob_plain;f=LICENSE;hb=HEAD
+minimum_coverage: 95

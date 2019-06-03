@@ -1,0 +1,7 @@
+license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
+is_license_notice: yes
+referenced_filenames:
+    - Documentation/preamble.txt
+    - Documentation/license.txt
+    - Documentation/gpl.txt
+    - Documentation/lgpl.txt

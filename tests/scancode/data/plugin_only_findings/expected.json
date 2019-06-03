@@ -65,8 +65,8 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 241,
-            "matched_length": 241,
+            "rule_length": 243,
+            "matched_length": 243,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
@@ -137,7 +137,7 @@
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new2.RULE",
+            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
             "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
@@ -170,7 +170,7 @@
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
-            "identifier": "gpl-2.0_or_bsd-new2.RULE",
+            "identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
             "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",

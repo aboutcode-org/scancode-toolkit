@@ -29,3 +29,4 @@ standard_notice: |-
     <http://www.mysql.com/about/legal/licensing/foss-exception.html>
     This software is OSI Certified Open Source Software.
     OSI Certified is a certification mark of the Open Source Initiative.
+minimum_coverage: 95

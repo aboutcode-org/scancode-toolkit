@@ -1,0 +1,16 @@
+This is the Linux Documentation Project ``Manifesto''
+Last Revision 21 September 1998, by Michael K. Johnson 
+
+Copyright and License
+Here is a ``boilerplate'' license you may apply to your work. It has not been reviewed by a lawyer; feel free to have your own lawyer review it (or your modification of it) for its applicability to your own desires. Remember that in order for your document to be part of the LDP, you must allow unlimited reproduction and distribution without fee.
+
+This manual may be reproduced and distributed in whole or in part, without fee, subject to the following conditions:
+
+    The copyright notice above and this permission notice must be preserved complete on all complete or partial copies.
+    Any translation or derived work must be approved by the author in writing before distribution.
+    If you distribute this work in part, instructions for obtaining the complete version of this manual must be included, and a means for obtaining a complete version provided.
+    Small portions may be reproduced as illustrations for reviews or quotes in other works without this permission notice if proper citation is given. 
+
+Exceptions to these rules may be granted for academic purposes: Write to the author and ask. These restrictions are here to protect us as authors, not to restrict you as learners and educators.
+
+All source code in this document is placed under the GNU General Public License, available via anonymous FTP from prep.ai.mit.edu:/pub/gnu/COPYING. 

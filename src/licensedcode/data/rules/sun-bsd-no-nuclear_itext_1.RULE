@@ -1,0 +1,48 @@
+The following files contain material that was copyrighted by SUN:
+
+The original code was released under the BSD license, and contained the following
+extra restriction: "You acknowledge that Software is not designed, licensed or intended
+for use in the design, construction, operation or maintenance of any nuclear facility."
+
+In a mail sent to Bruno Lowagie on January 23, 2008, Brian Burkhalter (@sun.com)
+writes: "This code is under a BSD license and supersedes the older codec packages
+on which your code is based. It also includes numerous fixes among them being the
+ability to handle a lot of 'broken' TIFFs."
+
+Note that numerous fixes were applied to the code used in iText by Paulo Soares,
+but apart from the fixes there were no essential changes between the code that
+was originally adapted and the code that is now available under the following
+license:
+ 
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+- Redistribution of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+- Redistribution in binary form must reproduce the above copyright notice, this
+list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+Neither the name of Sun Microsystems, Inc. or the names of contributors may be
+used to endorse or promote products derived from this software without specific
+prior written permission.
+
+This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS
+OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED
+WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-
+INFRINGEMENT, ARE HEREBY EXCLUDED. SUN MIDROSYSTEMS, INC. ("SUN") AND ITS
+LICENSORS SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT
+OF USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES. IN NO
+EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA,
+OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES,
+HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE
+OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+You acknowledge that this software is not designed or intended for use in the
+design, construction, operation or maintenance of any nuclear facility.
+
+The main difference can be found in the final paragraph: the restriction
+that the source code is not "licensed" in this particular situation has
+been removed.

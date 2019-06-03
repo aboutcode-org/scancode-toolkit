@@ -3,3 +3,4 @@ short_name: X11-Style (Adobe-DEC)
 name: X11-Style (Adobe-DEC)
 category: Permissive
 owner: Adobe Systems
+minimum_coverage: 85

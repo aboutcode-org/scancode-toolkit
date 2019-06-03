@@ -3,9 +3,11 @@ Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL); Joel
 Askelöf (Ericsson Radio Systems AB); and Bertrand Berthelot, David
 Bouchard, Félix Henry, Gerard Mozelle and Patrice Onno (Canon Research
 Centre France S.A) in the course of development of the JPEG2000
-standard as specified by ISO/IEC 15444 (JPEG 2000 Standard). This
-software module is an implementation of a part of the JPEG 2000
-Standard. Swiss Federal Institute of Technology-EPFL, Ericsson Radio
+standard as specified by ISO/IEC 15444 (JPEG 2000 Standard). 
+
+This software module is an implementation of a part of the JPEG 2000 Standard. 
+
+Swiss Federal Institute of Technology-EPFL, Ericsson Radio
 Systems AB and Canon Research Centre France S.A (collectively JJ2000
 Partners) agree not to assert against ISO/IEC and users of the JPEG
 2000 Standard (Users) any of their rights under the copyright, not

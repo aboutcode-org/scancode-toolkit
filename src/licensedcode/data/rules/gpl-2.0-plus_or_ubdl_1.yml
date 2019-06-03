@@ -2,3 +2,5 @@ license_expression: gpl-2.0-plus WITH ubdl
 is_license_notice: yes
 referenced_filenames:
     - COPYING.UDBL
+minimum_coverage: 90
+    

@@ -23,7 +23,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import re
 import os
@@ -32,13 +34,23 @@ from commoncode.testcase import FileBasedTesting
 
 from cluecode import finder
 from unittest.case import expectedFailure
+from cluecode.finder import urls_regex
+from cluecode.finder import find
 
 
 def find_emails_tester(lines_or_location, with_lineno=False, unique=True):
+    return _find_tester(finder.find_emails, lines_or_location, with_lineno, unique)
+
+
+def find_urls_tester(lines_or_location, with_lineno=False, unique=True):
+    return _find_tester(finder.find_urls, lines_or_location, with_lineno, unique)
+
+
+def _find_tester(func, lines_or_location, with_lineno=False, unique=True):
     """
-    Helper function for testing emails with or without line numbers.
+    Helper function for testing URLs or emails with or without line numbers.
     """
-    result = list(finder.find_emails(lines_or_location, unique))
+    result = list(func(lines_or_location, unique))
     if not with_lineno:
         result = [val for val, _ln in result]
     return result
@@ -135,7 +147,7 @@ class TestEmail(FileBasedTesting):
         assert expected == result
 
     def test_find_emails_does_not_return_junk(self):
-        lines = '''
+        lines = b'''
             (akpm@linux-foundation.org) serves as a maintainer of last resort.
             of your patch set.  linux-kernel@vger.kernel.org functions as a list of
             Linux kernel.  His e-mail address is <torvalds@linux-foundation.org>.
@@ -166,16 +178,6 @@ class TestEmail(FileBasedTesting):
         expected = []
         result = find_emails_tester(test_file)
         assert expected == result
-
-
-def find_urls_tester(lines_or_location, with_lineno=False, unique=True):
-    """
-    Helper function for testing URLs with or without line numbers.
-    """
-    result = list(finder.find_urls(lines_or_location, unique))
-    if not with_lineno:
-        result = [val for val, _ln in result]
-    return result
 
 
 class TestUrl(FileBasedTesting):
@@ -252,9 +254,8 @@ class TestUrl(FileBasedTesting):
             u'http://alaphalinu.org/isc',
             u'http://alaphalinu.org/isc.txt',
             u'http://alaphalinu.org/isc.html',
-            u'http://alaphalinu.org/somedir',
-            u'http://kernelnewbies.org/',
             u'http://alaphalinu.org/somedir/',
+            u'http://kernelnewbies.org/',
         ]
         result = find_urls_tester(lines)
         assert expected == result
@@ -693,6 +694,35 @@ class TestUrl(FileBasedTesting):
         url = u"http://www.w3.org/XML/1998/namespace%00%00%00%00xmlns%00%00%00http:/www.w3.org/2000/xmlns/%00%00%00ixmlElement_setTagName%00%00ixmlElement_findAttributeNode%00%00%00#document#text#cdata-sectionnnMap"
         result = [val for val, _ln in finder.find_urls([url])]
         assert not result
+
+    def test_find_urls_in_go_does_not_crash_with_unicode_error(self):
+        test_file = self.get_test_loc('finder/url/verify.go')
+        expected = [
+            'https://tools.ietf.org/html/rfc5280#section-4.2.1.6',
+            'https://tools.ietf.org/html/rfc2821#section-4.1.2',
+            'https://tools.ietf.org/html/rfc2822#section-4',
+            'https://tools.ietf.org/html/rfc2822#section-3.2.4',
+            'https://tools.ietf.org/html/rfc3696#section-3',
+            'https://tools.ietf.org/html/rfc5280#section-4.2.1.10',
+            'https://tools.ietf.org/html/rfc6125#appendix-B.2'
+        ]
+        result = find_urls_tester(test_file)
+        assert expected == result
+
+    def test_find_urls_does_not_crash_on_mojibake_bytes(self):
+        lines = [
+            b'    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2”.',
+        ]
+        expected = ['https://tools.ietf.org/html/rfc2821#section-4.1.2']
+        result = find_urls_tester(lines)
+        assert expected == result
+
+    def test_find_in_go_does_not_crash_with_unicode_error(self):
+        test_file = self.get_test_loc('finder/url/verify.go')
+        patterns = [('urls', urls_regex(),)]
+        for _key, url, _line, _lineno in find(test_file, patterns):
+            assert type(url) == str
+
 
 class TestSearch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

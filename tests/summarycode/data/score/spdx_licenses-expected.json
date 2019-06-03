@@ -21,11 +21,11 @@
     }
   ],
   "license_clarity_score": {
-    "score": 45,
+    "score": 30,
     "declared": true,
     "discovered": 0.0,
     "consistency": false,
-    "spdx": true,
+    "spdx": false,
     "license_texts": false
   },
   "files": [
@@ -116,7 +116,7 @@
       "licenses": [
         {
           "key": "mit",
-          "score": 99.0,
+          "score": 100.0,
           "name": "MIT License",
           "short_name": "MIT License",
           "category": "Permissive",
@@ -143,7 +143,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 99.0
+            "rule_relevance": 100.0
           }
         }
       ],

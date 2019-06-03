@@ -7,3 +7,4 @@ homepage_url: https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNL
 spdx_license_key: BSD-3-Clause-LBNL
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/LBNLBSD
+minimum_coverage: 90

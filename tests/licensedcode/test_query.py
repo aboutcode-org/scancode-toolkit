@@ -56,7 +56,9 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_Query_tokens_by_line_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        rule = Rule(stored_text=rule_text, license_expression='bsd')
+        legalese = set(['redistribution', 'form', ])
+        idx = index.LicenseIndex([rule], _legalese=legalese)
         querys = '''
             The
             Redistribution and use in source and binary are permitted
@@ -70,10 +72,10 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [
             [],
             [None],
-            [12, 0, 6, 3, 2, 0, 1, 10, 7],
+            [0, 2, 3, 4, 5, 2, 6, 12, 13],
             [],
             [None, None, None, None],
-            [None, 0, None],
+            [None, 2, None],
             [None],
         ]
 
@@ -101,24 +103,28 @@ class TestQueryWithSingleRun(IndexTesting):
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
-        expected = [['and', None, None, None, None]]
+        expected = [['and', None, None, None, 'license']]
         assert expected == qtbl_as_str(result)
 
     def test_Query_known_and_unknown_positions(self):
+
         rule_text = 'Redistribution and use in source and binary forms'
-        idx = index.LicenseIndex([Rule(stored_text=rule_text, license_expression='bsd')])
+        rule = Rule(stored_text=rule_text, license_expression='bsd')
+        legalese = set(['redistribution', 'form', ])
+        idx = index.LicenseIndex([rule], _legalese=legalese)
+
         querys = 'The new Redistribution and use in other form always'
         qry = Query(query_string=querys, idx=idx, _test_mode=False)
         # we have only 4 known positions in this query, hence only 4 entries there on a single line
         # "Redistribution and use in"
-        assert [1, 1, 1, 1] == qry.line_by_pos
+        assert [1, 1, 1, 1, 1] == qry.line_by_pos
 
         # this show our 4 known token in this query with their known position
         # "Redistribution and use in"
-        assert [6, 0, 3, 5] == qry.tokens
+        assert [0, 2, 3, 4, 1] == qry.tokens
 
         # the first two tokens are unknown, then starting after "in" we have three trailing unknown.
-        assert { -1: 2, 3: 3, } == qry.unknowns_by_pos
+        assert {3: 1, 4: 1, -1: 2} == qry.unknowns_by_pos
 
         # This shows how knowns and unknowns are blended
         result = list(qry.tokens_with_unknowns())
@@ -126,17 +132,18 @@ class TestQueryWithSingleRun(IndexTesting):
             # The  new
             None, None,
             # Redistribution
-            6,
-            # and
             0,
+            # and
+            2,
             # use
             3,
             # in
-            5,
+            4,
             # other form always'
-            None, None, None
+            None, 1, None
         ]
-        assert result == expected
+        assert expected == result
+
 
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
@@ -287,67 +294,67 @@ class TestQueryWithSingleRun(IndexTesting):
         assert u' '.join(index_text_tokens) == u' '.join(query_text_tokens)
 
     def test_query_run_tokens_with_junk(self):
-        ranked_toks = lambda : ['the', 'is', 'a']
+        legalese = set(['binary'])
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
-                                 _ranked_tokens=ranked_toks,
+                                 _legalese=legalese,
                                  _spdx_tokens=set())
-        assert 1 == idx.len_junk
-        assert {u'binary': 1, u'is': 2, u'the': 0} == idx.dictionary
+        assert 1 == idx.len_legalese
+        assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
 
         # two junks
         q = Query(query_string='a the', idx=idx)
         assert q.line_by_pos
         qrun = q.query_runs[0]
-        assert [0] == qrun.tokens
+        assert [2] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [0] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one junk
         q = Query(query_string='binary the', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 0] == qrun.tokens
+        assert [0, 2] == qrun.tokens
         assert {} == qrun.query.unknowns_by_pos
 
         # one unknown at start
         q = Query(query_string='that binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [0] == qrun.tokens
         assert {-1: 1} == qrun.query.unknowns_by_pos
 
         # one unknown at end
         q = Query(query_string='binary that', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1] == qrun.tokens
+        assert [0] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [0, 0] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # onw unknown in the middle
         q = Query(query_string='a binary that a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [0, 0] == qrun.tokens
         assert {0: 1} == qrun.query.unknowns_by_pos
 
         # two unknowns in the middle
         q = Query(query_string='binary that was a binary', idx=idx)
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [0, 0] == qrun.tokens
         assert {0: 2} == qrun.query.unknowns_by_pos
 
         # unknowns at start, middle and end
@@ -355,7 +362,7 @@ class TestQueryWithSingleRun(IndexTesting):
         #                         u     u           u    u            u    u
         qrun = q.query_runs[0]
         assert q.line_by_pos
-        assert [1, 1] == qrun.tokens
+        assert [0, 0] == qrun.tokens
         assert {0: 2, 1: 2, -1: 2} == qrun.query.unknowns_by_pos
 
     def test_query_tokens_are_same_for_different_text_formatting(self):
@@ -380,11 +387,11 @@ class TestQueryWithSingleRun(IndexTesting):
             assert expected.tokens == qr.tokens
 
     def test_query_run_unknowns(self):
-        idx = index.LicenseIndex([Rule(stored_text='a is the binary')])
-
+        legalese = set(['binary'])
+        idx = index.LicenseIndex([Rule(stored_text='a is the binary')], _legalese=legalese)
 
         assert {u'binary': 0, u'is': 1, u'the': 2} == idx.dictionary
-        assert 1 == idx.len_junk
+        assert 1 == idx.len_legalese
 
         # multiple unknowns at start, middle and end
         q = Query(query_string='that new binary was sure a kind of the real mega deal', idx=idx)
@@ -468,11 +475,11 @@ class TestQueryWithMultipleRuns(IndexTesting):
             u'''redistribution and use in source and binary forms with or
             without modification are permitted provided that the following
             conditions are met redistributions of source code must retain the
-            above copyright notice this of conditions and the following
+            above copyright notice this list of conditions and the following
             disclaimer redistributions in binary form must reproduce the above
-            copyright notice this of conditions and the following
+            copyright notice this list of conditions and the following
             disclaimer in the documentation and or other materials provided with
-            the distribution neither the name of <None> inc nor the names of its
+            the distribution neither the name of nexb inc nor the names of its
             contributors may be used to endorse or promote products derived from
             this software without specific prior written permission this
             software is provided by the copyright holders and contributors as is
@@ -609,7 +616,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert irt == qrt
 
     def test_QueryRun_with_all_digit_lines(self):
-        idx = index.LicenseIndex([Rule(stored_text='''
+        rule = Rule(stored_text='''
             redistributions 0 1 2 3 4 1568 5 6 7 368 8 9 10 80 12213 232312 in
             binary 345 in 256
             free 1953
@@ -623,7 +630,11 @@ class TestQueryWithMultipleRuns(IndexTesting):
              foundation 234
              software 694
              foundation 110
-        ''')])
+        ''')
+
+        legalese = set(['binary', 'redistributions', 'foundation'])
+        idx = index.LicenseIndex([rule], _legalese=legalese)
+
         qs = '''
               25  17   1   -80.00000      .25000    37.00000      .25000
             0: 5107 -2502 -700 496 -656 468 -587 418 -481 347 -325 256 -111 152 166 50
@@ -647,6 +658,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
             {b'end': 5, b'start': 0, b'tokens': u'1 80 0 256 1568 1953'},
             {b'end': 12, b'start': 6, b'tokens': u'406 1151 1 429 368 634 8'},
             {b'end': 17, b'start': 13, b'tokens': u'1955 724 2 932 234'},
+            {b'end': 20, b'start': 18, b'tokens': u'694 634 110'},
         ]
 
         assert expected == result
@@ -745,7 +757,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
             idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
         # only gpl and gnu are is in high matchables
-        expected = u'license gpl gnu gnu'
+        expected = u'license gpl author gnu gnu'
         assert expected == u' '.join(
             idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
 
@@ -759,5 +771,5 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert not ft2.is_text_with_long_lines
 
         idx = cache.get_index()
-        assert len(Query(location1, idx=idx).query_runs) == 3
-        assert len(Query(location2, idx=idx).query_runs) == 14
+        assert len(Query(location1, idx=idx).query_runs) == 17
+        assert len(Query(location2, idx=idx).query_runs) == 15

@@ -3,3 +3,4 @@ short_name: X11-Style (DSC Technologies)
 name: X11-Style (DSC Technologies)
 category: Permissive
 owner: Alcatel-Lucent
+minimum_coverage: 90

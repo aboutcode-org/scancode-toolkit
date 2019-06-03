@@ -1,4 +1,2 @@
 license_expressions:
-  - spl-1.0
-  - spl-1.0
-  - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+  - spl-1.0 OR lgpl-2.1-plus

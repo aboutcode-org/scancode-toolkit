@@ -4,4 +4,4 @@ name: GPL 2.0 plus Adaptec conditions
 category: Copyleft
 owner: Adaptec
 minimum_coverage: 90
-notes: this is a composite license
+notes: this is a combination of GPL and BSD terms

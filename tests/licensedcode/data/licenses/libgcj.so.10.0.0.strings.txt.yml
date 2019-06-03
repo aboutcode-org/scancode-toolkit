@@ -10,7 +10,7 @@ license_expressions:
     - gpl-2.0-plus WITH classpath-exception-2.0
     - gpl-2.0-plus WITH classpath-exception-2.0
     - gpl-2.0-plus WITH classpath-exception-2.0
-    - mozilla-gc
+    - warranty-disclaimer
 notes: |
     this is a subset of the strings extracted from libgcj.so.10.0.0
     originally from http://vault.centos.org/6.4/cr/x86_64/Packages/libgcj-4.4.7-4.el6.i686.rpm

@@ -4,3 +4,4 @@ name: Jason Mayes License
 category: Permissive
 owner: Jason Mayes
 faq_url: http://www.jasonmayes.com/projects/twitterApi/
+minimum_coverage: 90

@@ -1,0 +1,2 @@
+ This feature can be turned off if linking with GPL code
+is problematic, using "configure --without-gpl".

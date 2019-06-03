@@ -14,3 +14,4 @@ other_urls:
     - http://www.opensource.org/licenses/PHP-3.0
     - http://www.php.net/license/3_0.txt
     - https://opensource.org/licenses/PHP-3.0
+minimum_coverage: 60

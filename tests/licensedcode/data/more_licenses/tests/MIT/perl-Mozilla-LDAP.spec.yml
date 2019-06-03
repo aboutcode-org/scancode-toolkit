@@ -1,7 +1,6 @@
 license_expressions:
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
+  - mpl-1.0 AND gpl-2.0-plus AND lgpl-2.0-plus
   - mpl-1.1
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
+  - mpl-1.0 AND gpl-2.0-plus AND lgpl-2.0-plus
   - mpl-1.1
+

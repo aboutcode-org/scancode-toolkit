@@ -1,6 +1,2 @@
 license_expressions:
-  - gpl-1.0-plus
-  - unknown
-  - unknown
-  - gpl-2.0-plus
-  - gpl-1.0-plus
+  - gpl-2.0-plus WITH openssl-exception-gpl-2.0 OR gsoap-1.3b OR commercial-license

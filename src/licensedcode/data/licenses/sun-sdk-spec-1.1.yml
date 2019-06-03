@@ -3,3 +3,4 @@ short_name: Sun SDK Specification 1.1
 name: Sun SDK Specification 1.1
 category: Proprietary Free
 owner: Oracle (Sun)
+minimum_coverage: 30

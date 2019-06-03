@@ -31,11 +31,11 @@ from itertools import islice
 
 # Python 2 and 3 support
 try:
-        # Python 2
-    import itertools.izip as zip
+    # Python 2
+    import itertools.izip as zip  # NOQA
 except ImportError:
-        # Python 3
-        pass
+    # Python 3
+    pass
 
 import re
 from zlib import crc32
@@ -152,8 +152,8 @@ def matched_query_text_tokenizer(text):
 
 def ngrams(iterable, ngram_length):
     """
-    Return an iterable of ngrams of length `ngram_length` given an iterable.
-    Each ngram is a tuple of ngram_length items.
+    Return an iterable of ngrams of length `ngram_length` given an `iterable`.
+    Each ngram is a tuple of `ngram_length` items.
 
     The returned iterable is empty if the input iterable contains less than
     `ngram_length` items.
@@ -218,18 +218,18 @@ def select_ngrams(ngrams, with_pos=False):
     [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
     last = None
-    for i, ngram in enumerate(ngrams):
+    for pos, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
         nghs = [crc32(str(ng)) for ng in ngram]
         min_hash = min(nghs)
         if with_pos:
-            ngram = (i, ngram,)
-        if nghs[0] == min_hash or nghs[-1] == min_hash:
+            ngram = (pos, ngram,)
+        if min_hash in (nghs[0], nghs[-1]):
             yield ngram
             last = ngram
         else:
             # always yield the first or last ngram too.
-            if i == 0:
+            if pos == 0:
                 yield ngram
                 last = ngram
     if last != ngram:

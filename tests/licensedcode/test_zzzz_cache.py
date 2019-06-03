@@ -205,7 +205,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         # load index, forced from file
         idx2 = cache.load_index(cache_file)
-        assert idx1.to_dict(True) == idx2.to_dict(True)
+        assert set(idx1.dictionary.keys()) == set(idx2.dictionary.keys())
 
         # reset global caches
         cache._LICENSE_SYMBOLS_BY_SPDX_KEY = {}

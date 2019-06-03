@@ -9,3 +9,4 @@ notes: |-
     disclaimer as found in the libpbm license.
 text_urls:
     - https://github.com/BackupTheBerlios/oolite-linux-svn/blob/4ae1a88fd7bfaae3918d48170710ccfaf252e3d5/branches/DynamicOolite/deps/src/libhttp-1.1/httpget.c
+minimum_coverage: 70

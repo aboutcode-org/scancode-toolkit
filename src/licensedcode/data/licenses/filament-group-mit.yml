@@ -6,3 +6,5 @@ owner: Filament Group
 homepage_url: http://filamentgroup.com/examples/mit-license.txt
 text_urls:
     - http://filamentgroup.com/examples/mit-license.txt
+minimum_coverage: 85
+

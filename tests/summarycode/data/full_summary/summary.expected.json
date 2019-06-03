@@ -50,11 +50,11 @@
         "count": 1
       },
       {
-        "value": "cmr-no",
+        "value": "gpl-2.0-plus WITH ada-linking-exception",
         "count": 1
       },
       {
-        "value": "gpl-2.0-plus WITH ada-linking-exception",
+        "value": "mit-old-style",
         "count": 1
       }
     ],
@@ -7688,25 +7688,25 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "cmr-no",
+          "key": "mit-old-style",
           "score": 100.0,
-          "name": "Christian Michelsen Research AS License",
-          "short_name": "CMR License",
+          "name": "MIT Old Style",
+          "short_name": "MIT Old Style",
           "category": "Permissive",
           "is_exception": false,
-          "owner": "CMR - Christian Michelsen Research AS",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cmr-no",
+          "owner": "MIT",
+          "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
+          "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
           "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 9,
           "end_line": 15,
           "matched_rule": {
-            "identifier": "cmr-no.LICENSE",
-            "license_expression": "cmr-no",
+            "identifier": "mit-old-style_cmr-no_1.RULE",
+            "license_expression": "mit-old-style",
             "licenses": [
-              "cmr-no"
+              "mit-old-style"
             ],
             "is_license_text": true,
             "is_license_notice": false,
@@ -7721,7 +7721,7 @@
         }
       ],
       "license_expressions": [
-        "cmr-no"
+        "mit-old-style"
       ],
       "holders": [
         {

@@ -31,6 +31,7 @@ from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
+import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
@@ -42,7 +43,6 @@ TRACE = False
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -57,7 +57,7 @@ Note: this API is unstable and still evolving.
 """
 
 
-def get_copyrights(location, **kwargs):
+def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
     of mappings for copyright detected in the file at `location`.
@@ -68,7 +68,7 @@ def get_copyrights(location, **kwargs):
     holders = []
     authors = []
 
-    for dtype, value, start, end in detect_copyrights(location):
+    for dtype, value, start, end in detect_copyrights(location, deadline=deadline):
 
         if dtype == 'copyrights':
             copyrights.append(
@@ -153,7 +153,8 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False,
-                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
+                 license_url_template=DEJACODE_LICENSE_URL,
+                 deadline=sys.maxsize, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -178,7 +179,8 @@ def get_licenses(location, min_score=0, include_text=False,
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score, **kwargs):
+    for match in idx.match(location=location, min_score=min_score,
+                           deadline=deadline, **kwargs):
 
         if include_text:
             # TODO: handle whole lines with the case of very long lines
@@ -222,7 +224,7 @@ def get_licenses(location, min_score=0, include_text=False,
 
             matched_rule['matcher'] = match.matcher
             matched_rule['rule_length'] = match.rule.length
-            matched_rule['matched_length'] = match.ilen()
+            matched_rule['matched_length'] = match.len()
             matched_rule['match_coverage'] = match.coverage()
             matched_rule['rule_relevance'] = match.rule.relevance
 

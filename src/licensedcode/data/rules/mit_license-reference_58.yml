@@ -1,0 +1,5 @@
+license_expression: mit
+referenced_filenames:
+    - lua.h
+is_license_reference: yes
+minimum_coverage: 100

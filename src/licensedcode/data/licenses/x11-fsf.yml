@@ -3,3 +3,4 @@ short_name: X11-Style (FSF)
 name: X11-Style (FSF)
 category: Permissive
 owner: Free Software Foundation (FSF)
+minimum_coverage: 80

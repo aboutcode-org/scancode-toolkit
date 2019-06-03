@@ -1,4 +1,4 @@
 license_expression: openssl-ssleay
 is_license_text: yes
-minimum_coverage: 20
+minimum_coverage: 80
 notes: license text as published by SPDX

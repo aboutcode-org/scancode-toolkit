@@ -12,3 +12,5 @@ faq_url: http://curl.haxx.se/docs/faq.html
 other_urls:
     - http://curl.haxx.se/legal/licmix.html
     - https://github.com/bagder/curl/blob/master/COPYING
+minimum_coverage: 15
+

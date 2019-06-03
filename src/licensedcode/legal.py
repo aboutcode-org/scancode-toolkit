@@ -33,9 +33,9 @@ Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
 special_names = (
-    'COPYING', 'COPYRIGHT', 'NOTICE', 
+    'COPYING', 'COPYRIGHT', 'NOTICE',
     'LICENSE', 'LICENCE', 'LICENSING', 'LICENCING',
-    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 
+    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT',
     'COMMITMENT'
 )
 

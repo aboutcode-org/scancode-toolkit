@@ -29,7 +29,7 @@
   "code_view_url": "http://svn.codehaus.org/mojo/trunk/mojo/build-helper-maven-plugin", 
   "vcs_url": "svn+http://svn.codehaus.org/mojo/trunk/mojo/build-helper-maven-plugin", 
   "copyright": null, 
-  "license_expression": "mit AND (mit AND unknown)", 
+  "license_expression": "mit", 
   "declared_license": [
     {
       "name": "The MIT License", 

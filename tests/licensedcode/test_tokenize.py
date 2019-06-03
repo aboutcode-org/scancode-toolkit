@@ -183,12 +183,11 @@ class TestTokenizers(FileBasedTesting):
         disclaimer.'''
 
         result = list(query_tokenizer(text))
-        assert 38 == len(result)
 
         expected = u'''redistribution and use in source and binary forms with or
         without modification are permitted provided that the following
         conditions are met redistributions of source code must retain the above
-        copyright notice this of conditions and the following
+        copyright notice this list of conditions and the following
         disclaimer'''.split()
         assert expected == result
 
@@ -374,6 +373,77 @@ class TestTokenizers(FileBasedTesting):
             u'love', u'is', u'not', u'subject', u'to', u'law']
         assert expected == list(query_tokenizer(text))
 
+    def test_query_lines_on_html_like_texts(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.txt')
+        expected_file = test_file + '.expected.query_lines.json'
+
+        # we dumps/loads to normalize tuples/etc
+        result = json.loads(json.dumps(list(query_lines(test_file))))
+
+        if regen:
+            with open(expected_file, 'wb') as exc_test:
+                json.dump(result , exc_test, indent=2)
+
+        with io.open(expected_file, encoding='utf-8') as exc_test:
+            expected = json.load(exc_test)
+
+        assert expected == result
+
+    def test_query_lines_on_html_like_texts_2(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.html')
+        expected_file = test_file + '.expected.query_lines.json'
+
+        # we dumps/loads to normalize tuples/etc
+        result = json.loads(json.dumps(list(query_lines(test_file))))
+
+        if regen:
+            with open(expected_file, 'wb') as exc_test:
+                json.dump(result , exc_test, indent=2)
+
+        with io.open(expected_file, encoding='utf-8') as exc_test:
+            expected = json.load(exc_test)
+
+        assert expected == result
+
+    def test_query_tokenizer_on_html_like_texts(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.txt')
+        expected_file = test_file + '.expected.tokenized_lines.json'
+
+        lines = query_lines(test_file)
+        tokens = list(list(query_tokenizer(line)) for _ln, line in lines)
+
+        # we dumps/loads to normalize tuples/etc
+        result = json.loads(json.dumps(tokens))
+
+        if regen:
+            with open(expected_file, 'wb') as exc_test:
+                json.dump(result , exc_test, indent=2)
+
+        with io.open(expected_file, encoding='utf-8') as exc_test:
+            expected = json.load(exc_test)
+
+        assert expected == result
+
+    def test_query_tokenizer_lines_on_html_like_texts_2(self, regen=False):
+        test_file = self.get_test_loc('tokenize/htmlish.html')
+        expected_file = test_file + '.expected.tokenized_lines.json'
+
+        lines = query_lines(test_file)
+        tokens = list(list(query_tokenizer(line)) for _ln, line in lines)
+
+        # we dumps/loads to normalize tuples/etc
+        result = json.loads(json.dumps(tokens))
+
+        if regen:
+            with open(expected_file, 'wb') as exc_test:
+                json.dump(result , exc_test, indent=2)
+
+        with io.open(expected_file, encoding='utf-8') as exc_test:
+            expected = json.load(exc_test)
+
+        assert expected == result
+
+
 
 class TestNgrams(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -480,7 +550,8 @@ class MatchedTextTokenizer(FileBasedTesting):
         ]
         assert expected == result
 
-        result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
+        result_as_text = u''.join(itertools.chain.from_iterable(
+            [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
 
     def test_matched_query_text_tokenizer_works_with_spdx_ids(self):
@@ -544,5 +615,6 @@ class MatchedTextTokenizer(FileBasedTesting):
 
         assert expected == result
 
-        result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
+        result_as_text = u''.join(itertools.chain.from_iterable(
+            [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text

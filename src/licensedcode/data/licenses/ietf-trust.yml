@@ -11,3 +11,5 @@ other_urls:
     - http://opensource.org/licenses/bsd-license.php
     - http://trustee.ietf.org/license-info/
     - http://trustee.ietf.org/policyandprocedures.html
+minimum_coverage: 70
+

@@ -16,3 +16,5 @@ other_urls:
     - http://www.opensource.org/licenses/GPL-2.0
     - https://opensource.org/licenses/GPL-2.0
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+minimum_coverage: 10
+

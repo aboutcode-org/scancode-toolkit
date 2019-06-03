@@ -3,3 +3,5 @@ short_name: Dr John Maddock License
 name: Dr John Maddock License
 category: Permissive
 owner: Dr John Maddock
+is_deprecated: yes
+notes: replaced by mit-old-style

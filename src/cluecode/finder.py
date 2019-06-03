@@ -24,6 +24,8 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
+
 
 import string
 import re
@@ -31,18 +33,23 @@ import re
 import ipaddress
 import url as urlpy
 
+from commoncode.text import toascii
 from cluecode import finder_data
 from textcode import analysis
 
+
 # Tracing flags
 TRACE = False
+TRACE_URL = False
+TRACE_EMAIL = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE:
+if TRACE or TRACE_URL or TRACE_EMAIL:
+
     import logging
     import sys
     logger = logging.getLogger(__name__)
@@ -52,6 +59,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+
 
 """
 Find patterns in text lines such as a emails and URLs.
@@ -79,7 +87,7 @@ def find(location, patterns):
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, unicode(match), line, lineno
+                yield key, toascii(match), line, lineno
 
 
 def unique_filter(matches):
@@ -144,6 +152,11 @@ def find_emails(location, unique=True):
     patterns = [('emails', emails_regex(),)]
     matches = find(location, patterns)
 
+    if TRACE_EMAIL:
+        matches = list(matches)
+        for r in matches:
+            logger_debug('find_emails: match:', r)
+
     filters = (junk_email_domains_filter,)
     if unique:
         filters += (unique_filter,)
@@ -186,7 +199,7 @@ url_body = '[^\s<>\[\]"]'
 
 def urls_regex():
     # no space, no < >, no [ ] and no double quote
-    return re.compile(r'''
+    return re.compile('''
         (
             # URLs with schemes
             (?:%(schemes)s)://%(url_body)s+
@@ -233,6 +246,9 @@ def find_urls(location, unique=True):
 
     matches = apply_filters(matches, *filters)
     for _key, url, _line, lineno in matches:
+        if TRACE_URL:
+            logger_debug('find_urls: lineno:', lineno, '_line:', repr(_line),
+                         'type(url):', type(url), 'url:', repr(url))
         yield unicode(url), lineno
 
 
@@ -261,8 +277,8 @@ def verbatim_crlf_url_cleaner(matches):
     # FIXME: when is this possible and could happen?
     for key, url, line, lineno in matches:
         if not url.endswith('/'):
-            url = url.replace(r'\n', '')
-            url = url.replace(r'\r', '')
+            url = url.replace('\n', '')
+            url = url.replace('\r', '')
         yield key, url, line, lineno
 
 
@@ -316,7 +332,7 @@ def add_fake_scheme(url):
     Add a fake http:// scheme to URL if has none.
     """
     if not has_scheme(url):
-        url = u'http://' + url.lstrip(u':/').strip()
+        url = 'http://' + url.lstrip(':/').strip()
     return url
 
 
@@ -324,7 +340,7 @@ def has_scheme(url):
     """
     Return True if url has a scheme.
     """
-    return re.match('^(?:%(schemes)s)://.*' % globals(), url)
+    return re.match('^(?:%(schemes)s)://.*' % globals(), url, re.UNICODE)
 
 
 def user_pass_cleaning_filter(matches):
@@ -398,17 +414,17 @@ def canonical_url_cleaner(matches):
             yield key, match , line, lineno
 
 
-IP_V4_RE = r'^(\d{1,3}\.){0,3}\d{1,3}$'
+IP_V4_RE = '^(\d{1,3}\.){0,3}\d{1,3}$'
 
 
 def is_ip_v4(s):
-    return re.compile(IP_V4_RE).match(s)
+    return re.compile(IP_V4_RE, re.UNICODE).match(s)
 
 
 IP_V6_RE = (
-    r'^([0-9a-f]{0,4}:){2,7}[0-9a-f]{0,4}$'
+    '^([0-9a-f]{0,4}:){2,7}[0-9a-f]{0,4}$'
     '|'
-    r'^([0-9a-f]{0,4}:){2,6}(\d{1,3}\.){0,3}\d{1,3}$'
+    '^([0-9a-f]{0,4}:){2,6}(\d{1,3}\.){0,3}\d{1,3}$'
 )
 
 
@@ -416,7 +432,7 @@ def is_ip_v6(s):
     """
     Return True is string s is an IP V6 address
     """
-    return re.compile(IP_V6_RE).match(s)
+    return re.compile(IP_V6_RE, re.UNICODE).match(s)
 
 
 def is_ip(s):
