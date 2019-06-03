@@ -198,7 +198,7 @@
           "start_line": 7,
           "end_line": 7,
           "matched_rule": {
-            "identifier": "mit_34.RULE",
+            "identifier": "mit_30.RULE",
             "license_expression": "mit",
             "licenses": [
               "mit"
