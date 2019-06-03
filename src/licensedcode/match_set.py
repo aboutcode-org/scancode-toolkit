@@ -489,19 +489,24 @@ def filter_dupes(sortable_candidates):
     Given a list of `sortable_candidates` as (score_vector, rid, rule, intersection)
     yield filtered candidates.
     """
-    def keyfunc(item):
+    def group_key(item):
         (sv_round, _sv_full), _rid, rule, _inter = item
         return (
             rule.license_expression,
+            sv_round.is_highly_resemblant,
             sv_round.containment,
             sv_round.resemblance,
             sv_round.matched_length
         )
 
-    sortable_candidates = sorted(sortable_candidates, key=keyfunc)
+    sortable_candidates = sorted(sortable_candidates, key=group_key)
 
-    for group, duplicates in groupby(sortable_candidates, key=keyfunc):
-        duplicates = sorted(duplicates, reverse=True)
+    def rank_key(item):
+        (_sv_round, sv_full), _rid, rule, _inter = item
+        return sv_full, rule.identifier
+
+    for group, duplicates in groupby(sortable_candidates, key=group_key):
+        duplicates = sorted(duplicates, reverse=True, key=rank_key)
 
         if TRACE_CANDIDATES_FILTER_DUPE:
             print()
