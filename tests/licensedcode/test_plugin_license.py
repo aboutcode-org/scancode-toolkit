@@ -65,9 +65,17 @@ def test_scan_license_with_url_template():
 
 
 def test_detection_does_not_timeout_on_sqlite3_amalgamation():
-    test_dir = test_env.extract_test_tar('detect/sqlite/sqlite.tgz')
+    test_dir = test_env.extract_test_tar('plugin_license/sqlite/sqlite.tgz')
     result_file = test_env.get_temp_file('json')
-    expected_file = test_env.get_test_loc('detect/sqlite/sqlite.expected.json')
+    expected_file = test_env.get_test_loc('plugin_license/sqlite/sqlite.expected.json')
     # we use the default 120 seconds timeout
     run_scan_click(['-l', '--license-text', '--json-pp', result_file, test_dir])
+    check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+
+
+def test_detection_is_correct_in_legacy_npm_package_json():
+    test_dir = test_env.get_test_loc('plugin_license/package/package.json')
+    result_file = test_env.get_temp_file('json')
+    expected_file = test_env.get_test_loc('plugin_license/package/package.expected.json')
+    run_scan_click(['-lp', '--json-pp', result_file, test_dir])
     check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
