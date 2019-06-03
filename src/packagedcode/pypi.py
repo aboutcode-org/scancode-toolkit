@@ -41,6 +41,7 @@ from pkginfo import SDist
 from pkginfo import UnpackedSDist
 from pkginfo import Wheel
 
+from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
@@ -331,7 +332,25 @@ def parse(location):
 
 
 def parse2(location):
-    pass
+    """
+    Parse using the pkginfo library according the file types and return package.
+    """
+    is_dir = filetype.is_dir(location)
+    if is_dir:
+        parser = parse_unpackaged_source
+        return parser(location)
+    else:
+        file_name = fileutils.file_name(location)
+        parsers = {
+            'setup.py': parse_unpackaged_source,
+            '.whl': parse_wheel,
+            '.egg': parse_egg_binary,
+            '.tar.gz': parse_source_distribution,
+            '.zip': parse_source_distribution,
+        }
+        for name, parser in parsers.items():
+            if file_name.endswith(name):
+                return parser(location)
 
 
 def parse_source_distribution(location):
@@ -361,13 +380,7 @@ def parse_unpackaged_source(location):
         except ValueError:
             pass
 
-    if unpackaged_dist and unpackaged_dist.name:
-        common_data = dict(
-            name=unpackaged_dist.name,
-            version=unpackaged_dist.version,
-        )
-        package = PythonPackage(**common_data)
-        return package
+    return parse_with_pkginfo(unpackaged_dist)
 
 
 def parse_egg_binary(location):
@@ -375,13 +388,7 @@ def parse_egg_binary(location):
     Passing wheel file location which is generated via setup.py bdist_wheel.
     """
     binary_dist = BDist(location)
-    if binary_dist:
-        common_data = dict(
-            name=binary_dist.name,
-            version=binary_dist.version,
-        )
-        package = PythonPackage(**common_data)
-        return package
+    return parse_with_pkginfo(binary_dist)
 
 
 def parse_wheel(location):
@@ -389,23 +396,27 @@ def parse_wheel(location):
     Passing wheel file location which is generated via setup.py bdist_wheel.
     """
     wheel = Wheel(location)
-    if wheel and wheel.name:
+    return parse_with_pkginfo(wheel)
+
+
+def parse_with_pkginfo(object):
+    if object and object.name:
         common_data = dict(
-            name=wheel.name,
-            version=wheel.version,
-            description = wheel.description,
-            download_url = wheel.download_url,
-            homepage_url = wheel.home_page,
+            name=object.name,
+            version=object.version,
+            description = object.description,
+            download_url = object.download_url,
+            homepage_url = object.home_page,
         )
         package = PythonPackage(**common_data)
-        if wheel.license:
+        if object.license:
             #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
-            package.declared_license = {'license': wheel.license}
+            package.declared_license = {'license': object.license}
         
-        if wheel.maintainer:
+        if object.maintainer:
             common_data['parties'] = []
             common_data['parties'].append(models.Party(
-                type=models.party_person, name=wheel.maintainer, role='author', email=wheel.maintainer_email))
+                type=models.party_person, name=object.maintainer, role='author', email=object.maintainer_email))
         return package
 
 

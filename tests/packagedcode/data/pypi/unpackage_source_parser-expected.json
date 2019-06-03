@@ -10,7 +10,7 @@
   "release_date": null,
   "parties": [],
   "keywords": [],
-  "homepage_url": null,
+  "homepage_url": "http://nexb.com",
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -21,8 +21,10 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "license_expression": "unknown",
+  "declared_license": {
+    "license": "BSD"
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
