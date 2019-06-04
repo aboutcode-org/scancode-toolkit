@@ -1,0 +1,12 @@
+trigger:
+  branches:
+    include: ['pipeline']
+  tags:
+    include: ['*']
+
+jobs:
+  - job: TEST
+    displayName: Performing test 
+    steps:
+      - script: ./configure
+      - script: ./bin/py.test -vvs tests/commoncode
