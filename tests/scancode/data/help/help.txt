@@ -13,10 +13,11 @@ Options:
     -c, --copyright  Scan <input> for copyrights.
 
   other scans:
-    -i, --info   Scan <input> for file information (size, checksums, etc).
-    --generated  Classify automatically generated code files with a flag.
-    -e, --email  Scan <input> for emails.
-    -u, --url    Scan <input> for urls.
+    -i, --info         Scan <input> for file information (size, checksums, etc).
+    --generated        Classify automatically generated code files with a flag.
+    -e, --email        Scan <input> for emails.
+    -f, --fingerprint  Scan <input> to generate fingerprint.
+    -u, --url          Scan <input> for urls.
 
   scan options:
     --license-diag               (DEPRECATED: this is always included by default
