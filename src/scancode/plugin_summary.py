@@ -42,8 +42,10 @@ from scancode import POST_SCAN_GROUP
 class OriginSummary(PostScanPlugin):
     """
     Rolls up copyright and license results to the directory level if a copyright or license
-    is detected in 80% or more of total files in a directory
+    is detected in 50% or more of total files in a directory
     """
+    resource_attributes = dict(origin_summary=attr.ib(default=attr.Factory(OrderedDict)))
+
     sort_order = 8
 
     options = [
@@ -74,15 +76,25 @@ class OriginSummary(PostScanPlugin):
             for child in children:
                 child_file_count = child.files_count
                 child_dir_file_count += child_file_count
-                # TODO: Figure out a better way to keep track of how many Resources had what license
-                # or copyright
-                count = child_file_count * 0.8 if not child.is_file else 1
+
                 for license in child.licenses:
                     license_key = license['key']
-                    dir_licenses_count.update({license_key: count})
+                    if child.is_file:
+                        license_count = 1
+                    else:
+                        child_licenses_count = child.origin_summary.get('licenses')
+                        license_count = child_licenses_count[license_key]
+                    dir_licenses_count.update({license_key: license_count})
                     dir_licenses[license_key] = license
+
                 for copyright in child.copyrights:
-                    dir_copyrights_count.update({copyright['value']: count})
+                    copyright_value = copyright['value']
+                    if child.is_file:
+                        copyright_count = 1
+                    else:
+                        child_copyrights_count = child.origin_summary.get('copyrights')
+                        copyright_count = child_copyrights_count[copyright_value]
+                    dir_copyrights_count.update({copyright_value: copyright_count})
 
             total_file_count = resource.files_count + child_dir_file_count
             license_expressions = set()
@@ -90,20 +102,23 @@ class OriginSummary(PostScanPlugin):
             for k, v in dir_licenses_count.items():
                 if is_majority(v, total_file_count):
                     license = dir_licenses[k]
+                    license_expressions.add(license['matched_rule']['license_expression'])
                     resource.licenses.append(license)
                     codebase.save_resource(resource)
-                    license_expressions.add(license['matched_rule']['license_expression'])
-            resource.license_expressions = list(license_expressions)
-            codebase.save_resource(resource)
 
             for k, v in dir_copyrights_count.items():
                 if is_majority(v, total_file_count):
                     resource.copyrights.append(OrderedDict(value=k, start_line=None, end_line=None))
                     codebase.save_resource(resource)
 
+            resource.license_expressions = list(license_expressions)
+            resource.origin_summary['licenses'] = dir_licenses_count
+            resource.origin_summary['copyrights'] = dir_copyrights_count
+            codebase.save_resource(resource)
+
 
 def is_majority(count, files_count):
     """
-    Return True is this resource is a whatever directory with at least over 80% of whatever at full depth.
+    Return True is this resource is a whatever directory with at least over 50% of whatever at full depth.
     """
-    return count / files_count >= 0.8
+    return count / files_count >= 0.5
