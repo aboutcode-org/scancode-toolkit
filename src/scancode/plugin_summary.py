@@ -71,12 +71,8 @@ class OriginSummary(PostScanPlugin):
             dir_licenses_count = Counter()
             dir_licenses = OrderedDict()
             dir_copyrights_count = Counter()
-            child_dir_file_count = 0
 
             for child in children:
-                child_file_count = child.files_count
-                child_dir_file_count += child_file_count
-
                 for license in child.licenses:
                     license_key = license['key']
                     if child.is_file:
@@ -96,22 +92,22 @@ class OriginSummary(PostScanPlugin):
                         copyright_count = child_copyrights_count[copyright_value]
                     dir_copyrights_count.update({copyright_value: copyright_count})
 
-            total_file_count = resource.files_count + child_dir_file_count
+            file_count = resource.files_count
             license_expressions = set()
 
             for k, v in dir_licenses_count.items():
-                if is_majority(v, total_file_count):
+                if is_majority(v, file_count):
                     license = dir_licenses[k]
                     license_expressions.add(license['matched_rule']['license_expression'])
                     resource.licenses.append(license)
                     codebase.save_resource(resource)
 
             for k, v in dir_copyrights_count.items():
-                if is_majority(v, total_file_count):
+                if is_majority(v, file_count):
                     resource.copyrights.append(OrderedDict(value=k, start_line=None, end_line=None))
                     codebase.save_resource(resource)
 
-            resource.license_expressions = list(license_expressions)
+            resource.license_expressions = license_expressions
             resource.origin_summary['licenses'] = dir_licenses_count
             resource.origin_summary['copyrights'] = dir_copyrights_count
             codebase.save_resource(resource)
