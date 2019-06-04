@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from array import array
 from itertools import groupby
 
 import ahocorasick
@@ -66,7 +65,7 @@ def get_automaton():
     """
     Return a new empty automaton.
     """
-    return ahocorasick.Automaton(ahocorasick.STORE_ANY)
+    return ahocorasick.Automaton(ahocorasick.STORE_ANY, ahocorasick.KEY_SEQUENCE)
 
 
 def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
@@ -82,7 +81,7 @@ def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
     end = len(tids) - 1
     # the value for a trie key is a list of tuples (rule id, start position, end position)
     value = rid, start, start + end
-    tokens = array('h', tids).tostring()
+    tokens = tuple(tids)
     if with_duplicates:
         existing = automaton.get(tokens, None)
         if existing:
@@ -181,29 +180,9 @@ def get_matches(tokens, qbegin, automaton):
     """
     # iterate over matched strings: the matched value is (rule id, index start
     # pos, index end pos)
-    qtokens_as_str = array('h', tokens).tostring()
-    for qend, matched_value in automaton.iter(qtokens_as_str):
-
-        ################################
-        # FIXME: use a trie of ints or a trie of Unicode characters to avoid
-        # this shenaningan. NB: this will be possible when using Python 3
-        ################################
-        # Since the Tries stores bytes and we have two bytes per tokenid,
-        # the real end must be adjusted
-        real_qend = (qend - 1) / 2
-        # ... and there is now a real possibility of a false match. For
-        # instance say we have these tokens : gpl encoded as 0012 and lgpl
-        # encoded as 1200 and mit as 2600 And if we scan this "mit lgpl" we
-        # get this encoding 2600 1200. The automaton will find a matched
-        # string of 0012 to gpl in the middle matching falsely so we check
-        # that the corrected end qposition must be always an integer.
-        real_qend_int = int(real_qend)
-        if real_qend != real_qend_int:
-            if TRACE_DEEP: logger_debug(
-                '   #EXACT get_matches: real_qend != int(real_qend), '
-                'discarding match to value:', matched_value)
-            continue
-        qend = qbegin + real_qend_int + 1
+    qtokens = tuple(tokens)
+    for qend, matched_value in automaton.iter(qtokens):
+        qend = qbegin + qend + 1
         yield qend, matched_value
 
 
@@ -285,7 +264,7 @@ def add_start(automaton, tids, rule_identifier, rule_length):
     or `rule_length` to the an Aho-Corasick `automaton`.
     """
     # the value for a trie key is list of (rule identifier, rule_length)
-    tokens = array('h', tids).tostring()
+    tokens = tuple(tids)
     existing = automaton.get(tokens, None)
     value = rule_length, rule_identifier
     if existing:
