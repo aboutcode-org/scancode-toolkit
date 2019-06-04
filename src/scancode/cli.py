@@ -320,6 +320,7 @@ def print_options(ctx, param, value):
 
 @click.option('--from-json',
     is_flag=True,
+    multiple=True,
     help='Load codebase from an existing JSON scan',
     help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
 
@@ -543,7 +544,12 @@ def run_scan(
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
-    else:
+
+    # This is the case where we have a list of inputs, but the list of inputs are not from the
+    # `from_json` option. If the `from_json` option is available and we have a list of inputs
+    # from it, we can pass `input` just fine when we create a VirtualCodebase, otherwise we have to
+    # process `input` below.
+    elif not from_json:
         # we received a several input paths: we can handle this IFF they share
         # a common root directory and none is an absolute path
 
