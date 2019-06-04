@@ -44,7 +44,11 @@ class OriginSummary(PostScanPlugin):
     Rolls up copyright and license results to the directory level if a copyright or license
     is detected in 50% or more of total files in a directory
     """
-    resource_attributes = dict(origin_summary=attr.ib(default=attr.Factory(OrderedDict)))
+    resource_attributes = dict(
+        origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
+        is_summary=attr.ib(default=False, type=bool),
+        summarized=attr.ib(default=False, type=bool)
+    )
 
     sort_order = 8
 
@@ -61,6 +65,10 @@ class OriginSummary(PostScanPlugin):
 
     def process_codebase(self, codebase, **kwargs):
         for resource in codebase.walk(topdown=False):
+            # TODO: Tag directory as summary if summarization has occured
+            # TODO: Consider facets for later
+            # TODO: Group summarizations by copyright holders and license expressions
+
             if resource.is_file:
                 continue
 
@@ -68,48 +76,46 @@ class OriginSummary(PostScanPlugin):
             if not children:
                 continue
 
-            dir_licenses_count = Counter()
-            dir_licenses = OrderedDict()
-            dir_copyrights_count = Counter()
+            dir_license_expressions_count = Counter()
+            dir_holders_count = Counter()
 
             for child in children:
-                for license in child.licenses:
-                    license_key = license['key']
+                # TODO: Tag child as summarized if it's been summarized
+                for license_expression in child.license_expressions:
                     if child.is_file:
-                        license_count = 1
+                        license_expressions_count = 1
                     else:
-                        child_licenses_count = child.origin_summary.get('licenses')
-                        license_count = child_licenses_count[license_key]
-                    dir_licenses_count.update({license_key: license_count})
-                    dir_licenses[license_key] = license
+                        child_license_expressions_count = child.origin_summary.get('license_expressions')
+                        license_expressions_count = child_license_expressions_count[license_expression]
+                    dir_license_expressions_count.update({license_expression: license_expressions_count})
 
-                for copyright in child.copyrights:
-                    copyright_value = copyright['value']
+                # TODO: Use copyright holders
+                for holder in child.holders:
+                    holder_value = holder['value']
                     if child.is_file:
-                        copyright_count = 1
+                        holder_count = 1
                     else:
-                        child_copyrights_count = child.origin_summary.get('copyrights')
-                        copyright_count = child_copyrights_count[copyright_value]
-                    dir_copyrights_count.update({copyright_value: copyright_count})
+                        child_holders_count = child.origin_summary.get('holders')
+                        holder_count = child_holders_count[holder_value]
+                    dir_holders_count.update({holder_value: holder_count})
 
             file_count = resource.files_count
-            license_expressions = set()
 
-            for k, v in dir_licenses_count.items():
+            # TODO: Check for contradictions when performing summarizations
+            for k, v in dir_license_expressions_count.items():
                 if is_majority(v, file_count):
-                    license = dir_licenses[k]
-                    license_expressions.add(license['matched_rule']['license_expression'])
-                    resource.licenses.append(license)
+                    resource.license_expressions.append(k)
+                    resource.is_summary = True
                     codebase.save_resource(resource)
 
-            for k, v in dir_copyrights_count.items():
+            for k, v in dir_holders_count.items():
                 if is_majority(v, file_count):
-                    resource.copyrights.append(OrderedDict(value=k, start_line=None, end_line=None))
+                    resource.holders.append(OrderedDict(value=k, start_line=None, end_line=None))
+                    resource.is_summary = True
                     codebase.save_resource(resource)
 
-            resource.license_expressions = license_expressions
-            resource.origin_summary['licenses'] = dir_licenses_count
-            resource.origin_summary['copyrights'] = dir_copyrights_count
+            resource.origin_summary['license_expressions'] = dir_license_expressions_count
+            resource.origin_summary['holders'] = dir_holders_count
             codebase.save_resource(resource)
 
 
@@ -117,4 +123,5 @@ def is_majority(count, files_count):
     """
     Return True is this resource is a whatever directory with at least over 50% of whatever at full depth.
     """
+    # TODO: Increase this and test with real codebases
     return count / files_count >= 0.5
