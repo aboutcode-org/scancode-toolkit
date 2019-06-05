@@ -47,7 +47,7 @@ class OriginSummary(PostScanPlugin):
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
         is_summary=attr.ib(default=False, type=bool),
-        summarized=attr.ib(default=False, type=bool)
+        is_summarized=attr.ib(default=False, type=bool)
     )
 
     sort_order = 8
@@ -65,7 +65,6 @@ class OriginSummary(PostScanPlugin):
 
     def process_codebase(self, codebase, **kwargs):
         for resource in codebase.walk(topdown=False):
-            # TODO: Tag directory as summary if summarization has occured
             # TODO: Consider facets for later
             # TODO: Group summarizations by copyright holders and license expressions
 
@@ -80,7 +79,6 @@ class OriginSummary(PostScanPlugin):
             dir_holders_count = Counter()
 
             for child in children:
-                # TODO: Tag child as summarized if it's been summarized
                 for license_expression in child.license_expressions:
                     if child.is_file:
                         license_expressions_count = 1
@@ -89,7 +87,6 @@ class OriginSummary(PostScanPlugin):
                         license_expressions_count = child_license_expressions_count[license_expression]
                     dir_license_expressions_count.update({license_expression: license_expressions_count})
 
-                # TODO: Use copyright holders
                 for holder in child.holders:
                     holder_value = holder['value']
                     if child.is_file:
@@ -117,6 +114,25 @@ class OriginSummary(PostScanPlugin):
             resource.origin_summary['license_expressions'] = dir_license_expressions_count
             resource.origin_summary['holders'] = dir_holders_count
             codebase.save_resource(resource)
+
+        # Pass 2: tag the Resources that have been summarized
+        for resource in codebase.walk(topdown=True):
+            if resource.is_file or not resource.is_summary:
+                continue
+
+            children = resource.children(codebase)
+            if not children:
+                continue
+
+            # TODO: There's probably a more pleasing way to do this
+            for child in children:
+                for child_license_expression in child.license_expressions:
+                    for child_holder in child.holders:
+                        for resource_holder in resource.holders:
+                            if (child_license_expression in resource.license_expressions
+                                    and child_holder['value'] == resource_holder['value']):
+                                child.is_summarized = True
+                                codebase.save_resource(child)
 
 
 def is_majority(count, files_count):
