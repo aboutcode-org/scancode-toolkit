@@ -262,8 +262,21 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_pkginfo_parse_with_unpackaged_source_with_parse_function(self):
+        test_file = self.get_test_loc('pypi')
+        package = pypi.parse2(test_file)
+        expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
     def test_pkginfo_parse_with_wheelfile(self):
         test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
         package = pypi.parse_wheel(test_file)
+        expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+
+    def test_pkginfo_parse_with_wheelfile_with_parse_function(self):
+        test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        package = pypi.parse2(test_file)
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
