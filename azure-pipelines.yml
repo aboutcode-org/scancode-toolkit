@@ -1,6 +1,6 @@
 trigger:
   branches:
-    include: ['pipeline']
+    include: ['*']
   tags:
     include: ['*']
 
