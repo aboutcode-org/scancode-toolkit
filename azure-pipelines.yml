@@ -1,0 +1,70 @@
+trigger:
+  branches:
+    include: ['*']
+  tags:
+    include: ['*']
+
+jobs:
+  strategy:
+    matrix:
+      Python36:
+        python.version: '2.7'
+      Python37:
+        python.version: '3.6'
+      ubuntu14:
+      containerImage: ubuntu:14.04
+      ubuntu16:
+      containerImage: ubuntu:16.04
+      ubuntu18:
+      containerImage: ubuntu:18.04
+
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-16.04'
+    container: $[ variables['containerImage'] ]
+  steps:
+    displayName: Performing test 
+    steps:
+      - task: UsePythonVersion@0
+      inputs:
+      versionSpec: '$(python.version)'
+      - script: ./configure
+      - script: ./bin/py.test -vvs tests/commoncode
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+         inputs:
+            testResultsFiles: '**/test-*.xml'
+            testRunTitle: 'Publish test results for Python $(python.version)'
+
+- job: macOS
+    pool:
+    vmImage: 'macOS-10.14'
+  steps:
+      - task: UsePythonVersion@0
+      inputs:
+      versionSpec: '$(python.version)'
+      - script: ./configure
+      - script: ./bin/py.test -vvs tests/commoncode
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+         inputs:
+            testResultsFiles: '**/test-*.xml'
+            testRunTitle: 'Publish test results for Python $(python.version)'
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+      - task: UsePythonVersion@0
+      inputs:
+      versionSpec: '$(python.version)'
+      - script: configure
+      - script: ./bin/py.test -vvs tests/commoncode
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+         inputs:
+            testResultsFiles: '**/test-*.xml'
+            testRunTitle: 'Publish test results for Python $(python.version)'
+
+       
+    
+    
