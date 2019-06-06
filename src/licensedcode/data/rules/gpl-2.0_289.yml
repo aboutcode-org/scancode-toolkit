@@ -1,2 +1,5 @@
 license_expression: gpl-2.0
-is_license_notice: yes
+is_license_reference: yes
+notes: in dutch
+relevance: 80
+minimum_coverage: 100

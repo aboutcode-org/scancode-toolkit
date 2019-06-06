@@ -32,8 +32,14 @@
   "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": "PSFL AND BSD3CLAUSE",
+  "license_expression": "python AND bsd-new",
+  "declared_license": {
+    "licenses": [
+      "PSFL",
+      "BSD3CLAUSE"
+    ],
+    "licenselogic": "and"
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

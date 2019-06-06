@@ -39,6 +39,8 @@ from six import string_types
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.utils import combine_expressions
+
 
 """
 Parse PHP composer package manifests, see https://getcomposer.org/ and
@@ -94,7 +96,39 @@ class PHPComposerPackage(models.Package):
         """
         Per https://getcomposer.org/doc/04-schema.md#license this is an expression
         """
-        return models.Package.compute_normalized_license(self)
+        return compute_normalized_license(self.declared_license)
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items or string type.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    if isinstance(declared_license, string_types):
+        if declared_license == 'proprietary':
+            return declared_license
+        if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
+            declared_license = declared_license.strip().rstrip(')').lstrip('(')
+            declared_license = declared_license.split(' or ')
+        else:
+            return models.compute_normalized_license(declared_license)
+
+    if isinstance(declared_license, list):
+        for declared in declared_license:
+            detected_license = models.compute_normalized_license(declared)
+            detected_licenses.append(detected_license)
+    else:
+        declared_license = repr(declared_license)
+        detected_license = models.compute_normalized_license(declared_license)
+
+    if detected_licenses:
+        # build a proper license expression: the defaultfor composer is OR
+        return combine_expressions(detected_licenses, 'OR')
 
 
 def is_phpcomposer_json(location):
@@ -200,25 +234,11 @@ def licensing_mapper(licenses, package, is_private=False):
     license and the `is_private` Fkag is True, we return a "proprietary-license"
     license.
     """
-    if not licenses:
+    if not licenses and is_private:
+        package.declared_license = 'proprietary-license'
         return package
 
-    if isinstance(licenses, list):
-        # For a package, when there is a choice between licenses
-        # ("disjunctive license"), multiple can be specified as array.
-        # build a proper license expression: the defaultfor composer is OR
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        lics = ' OR '.join(lics)
-
-    elif not isinstance(licenses, string_types):
-        lics = repr(licenses)
-    else:
-        lics = licenses
-
-    if not lics and is_private:
-        lics ='proprietary-license'
-
-    package.declared_license = lics or None
+    package.declared_license = licenses
     return package
 
 

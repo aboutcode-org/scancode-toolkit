@@ -329,7 +329,7 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
             f.write(b'data=')
             simplejson.dump(results, f, iterable_as_array=True)
 
-    except HtmlAppAssetCopyWarning, w:
+    except HtmlAppAssetCopyWarning as w:
         raise w
 
     except Exception as e:  # NOQA

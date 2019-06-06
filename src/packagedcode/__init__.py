@@ -25,7 +25,10 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from packagedcode import chef
 from packagedcode import models
+from packagedcode import about
+from packagedcode import bower
 from packagedcode import cargo
 from packagedcode import freebsd
 from packagedcode import haxe
@@ -52,12 +55,13 @@ PACKAGE_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
+    about.AboutPackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
     models.MeteorPackage,
-    models.BowerPackage,
+    bower.BowerPackage,
     freebsd.FreeBSDPackage,
     models.CpanModule,
     rubygems.RubyGem,
@@ -76,6 +80,7 @@ PACKAGE_TYPES = [
     models.AppleDmgPackage,
     models.IsoImagePackage,
     models.SquashfsPackage,
+    chef.ChefPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}

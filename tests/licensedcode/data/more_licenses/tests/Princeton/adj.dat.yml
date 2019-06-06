@@ -1,0 +1,4 @@
+license_expressions:
+  - wordnet
+expected_failure: yes
+

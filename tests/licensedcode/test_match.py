@@ -31,13 +31,21 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
+
 from licensedcode.match import filter_contained_matches
+from licensedcode.match import filter_overlapping_matches
+from licensedcode.match import get_full_matched_text
 from licensedcode.match import LicenseMatch
+from licensedcode.match import merge_matches
+from licensedcode.match import restore_non_overlapping
+from licensedcode.match import tokenize_matched_text
+from licensedcode.match import Token
+
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-from licensedcode.match import merge_matches
-from licensedcode.match import get_full_matched_text
+from licensedcode.match import reportable_tokens
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -195,24 +203,24 @@ class TestLicenseMatchBasic(FileBasedTesting):
         _idx = index.LicenseIndex([small_rule, long_rule])
 
         test = LicenseMatch(rule=small_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12))
-        assert test.small()
+        assert test.is_small()
         test = LicenseMatch(rule=small_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(11, 12))
-        assert test.small()
+        assert test.is_small()
 
         test = LicenseMatch(rule=small_rule, qspan=Span(10, 11, 12), ispan=Span(10, 11, 12), hispan=Span(11, 12))
-        assert test.small()
+        assert test.is_small()
 
         test = LicenseMatch(rule=small_rule, qspan=Span(1, 6), ispan=Span(1, 6))
-        assert test.small()
+        assert test.is_small()
 
         test = LicenseMatch(rule=long_rule, qspan=Span(0, 10), ispan=Span(0, 10), hispan=Span(12))
-        assert test.small()
+        assert test.is_small()
 
         test = LicenseMatch(rule=long_rule, qspan=Span(5, 10), ispan=Span(5, 10), hispan=Span(5, 6))
-        assert test.small()
+        assert test.is_small()
 
         test = LicenseMatch(rule=small_rule, qspan=Span(1, 10), ispan=Span(1, 10), hispan=Span(3, 6))
-        assert not test.small()
+        assert not test.is_small()
 
     def test_LicenseMatch_score_is_not_100_with_aho_match_and_extra_unknown_token_hash_match(self):
         text = (
@@ -224,7 +232,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         querys = (
             'this file is licensed under the GPL license version2 only '
-            + ' big ' +
+            +' big ' +
             'or any other version. You can redistribute this file under '
             'this or any other license.')
 
@@ -241,7 +249,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         querys = (
             'this file is licensed under the GPL license version2 only '
-            + ' is ' +
+            +' is ' +
             'or any other version. You can redistribute this file under '
             'this or any other license.')
 
@@ -258,7 +266,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
         querys = (
             'this this file is licensed under the GPL license version2 only '
-            + ' big ' +
+            +' big ' +
             'or any other version. You can redistribute this file under '
             'this or any other license. that')
 
@@ -361,7 +369,7 @@ class TestMergeMatches(FileBasedTesting):
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_filter_does_filter_overlaping_matches_with_same_licensings(self):
+    def test_filter_contained_matches_only_filter_contained_matches_with_same_licensings(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -370,10 +378,22 @@ class TestMergeMatches(FileBasedTesting):
         same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
 
         matches, discarded = filter_contained_matches([overlap, same_span1, same_span2])
+        assert [overlap, same_span1] == matches
+        assert discarded
+
+    def test_filter_overlaping_matches_does_filter_overlaping_matches_with_same_licensings(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
+        r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
+
+        overlap = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        same_span1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches, discarded = filter_overlapping_matches([overlap, same_span1, same_span2])
         assert [overlap] == matches
         assert discarded
 
-    def test_filter_prefers_longer_overlaping_matches(self):
+    def test_filter_contained_matches_prefers_longer_overlaping_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
 
@@ -382,6 +402,18 @@ class TestMergeMatches(FileBasedTesting):
         same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 8), ispan=Span(1, 8))
 
         matches, discarded = filter_contained_matches([overlap, same_span1, same_span2])
+        assert [overlap, same_span2] == matches
+        assert discarded
+
+    def test_filter_overlapping_matches_prefers_longer_overlaping_matches(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
+        r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
+
+        overlap = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        same_span1 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        same_span2 = LicenseMatch(rule=r2, qspan=Span(1, 8), ispan=Span(1, 8))
+
+        matches, discarded = filter_overlapping_matches([overlap, same_span1, same_span2])
         assert [same_span2] == matches
         assert discarded
 
@@ -439,7 +471,7 @@ class TestMergeMatches(FileBasedTesting):
         result = merge_matches([m1, contained1, contained2, m5])
         assert sorted([m1, contained1, contained2, m5]) == sorted(result)
 
-    def test_filter_does_not_filter_multiple_contained_matches_across_rules(self):
+    def test_filter_contained_matches_does_filter_across_rules(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
 
@@ -453,9 +485,25 @@ class TestMergeMatches(FileBasedTesting):
         m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
 
         result, _discarded = filter_contained_matches([m1, contained1, contained2, m5])
+        assert [m1, m5] == result
+
+    def test_filter_overlapping_matches_does_not_filter_multiple_contained_matches_across_rules(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+
+        r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
+        contained1 = LicenseMatch(rule=r2, qspan=Span(1, 2), ispan=Span(1, 2))
+
+        r3 = Rule(text_file='r3', license_expression='apache-2.0 OR gpl')
+        contained2 = LicenseMatch(rule=r3, qspan=Span(3, 4), ispan=Span(3, 4))
+
+        r5 = Rule(text_file='r5', license_expression='apache-2.0 OR gpl')
+        m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        result, _discarded = filter_overlapping_matches([m1, contained1, contained2, m5])
         assert [m1] == result
 
-    def test_filter_multiple_contained_matches(self):
+    def test_filter_contained_matches_filters_multiple_contained_matches(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
 
@@ -469,8 +517,26 @@ class TestMergeMatches(FileBasedTesting):
         m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
 
         matches, discarded = filter_contained_matches([m1, contained1, contained2, m5])
+        assert [m1, m5] == matches
+        assert sorted([contained1, contained2, ]) == sorted(discarded)
+
+    def test_filter_overlapping_matches_filters_multiple_contained_matches(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+
+        r2 = Rule(text_file='r2', license_expression='apache-2.0 OR gpl')
+        contained1 = LicenseMatch(rule=r2, qspan=Span(1, 2), ispan=Span(1, 2))
+
+        r3 = Rule(text_file='r3', license_expression='apache-2.0 OR gpl')
+        contained2 = LicenseMatch(rule=r3, qspan=Span(3, 4), ispan=Span(3, 4))
+
+        r5 = Rule(text_file='r5', license_expression='apache-2.0 OR gpl')
+        m5 = LicenseMatch(rule=r5, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        matches, discarded = filter_overlapping_matches([m1, contained1, contained2, m5])
         assert [m1] == matches
         assert sorted([m5, contained1, contained2, ]) == sorted(discarded)
+
 
     def test_merge_does_not_merge_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0')
@@ -483,7 +549,7 @@ class TestMergeMatches(FileBasedTesting):
         matches = merge_matches([m1, m2, m5])
         assert sorted([LicenseMatch(rule=r1, qspan=Span(0, 6), ispan=Span(0, 6)), m2]) == sorted(matches)
 
-    def test_filter_filters_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
+    def test_filter_contained_matches_filters_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
@@ -492,6 +558,19 @@ class TestMergeMatches(FileBasedTesting):
         m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
 
         matches, discarded = filter_contained_matches([m1, m2, m5])
+
+        assert [m1, m5] == matches
+        assert discarded
+
+    def test_filter_overlapping_matches_filters_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0')
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m5 = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        r2 = Rule(text_file='r2', license_expression='apache-2.0')
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        matches, discarded = filter_overlapping_matches([m1, m2, m5])
 
         assert [m5] == matches
         assert discarded
@@ -551,12 +630,12 @@ class TestMergeMatches(FileBasedTesting):
     def test_merge_does_not_merge_overlapping_matches_in_sequence_with_assymetric_overlap(self):
         r1 = Rule(text_file='r1', license_expression=u'lgpl-2.0-plus')
 
-        # ---> merge_matches: current: LicenseMatch<'3-seq', lines=(9, 28), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=87.5, qlen=126, ilen=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(199, 200), ispan=Span(5, 21)|Span(23, 46)|Span(48, 77)|Span(79, 93)|Span(95, 100)|Span(108, 128)|Span(130, 142), hispan=Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
-        # ---> merge_matches: next:    LicenseMatch<'2-aho', lines=(28, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, qlen=144, ilen=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143), qspan=Span(198, 341), ispan=Span(0, 143), hispan=Span(1)|Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
-        #     ---> ###merge_matches: next overlaps in sequence current, merged as new: LicenseMatch<'3-seq 2-aho', lines=(9, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, qlen=268, ilen=144, hilen=21, rlen=144, qreg=(50, 341), ireg=(0, 143), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(198, 341), ispan=Span(0, 143), his
+        # ---> merge_matches: current: LicenseMatch<'3-seq', lines=(9, 28), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=87.5, len=126, ilen=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(199, 200), ispan=Span(5, 21)|Span(23, 46)|Span(48, 77)|Span(79, 93)|Span(95, 100)|Span(108, 128)|Span(130, 142), hispan=Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
+        # ---> merge_matches: next:    LicenseMatch<'2-aho', lines=(28, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, len=144, ilen=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143), qspan=Span(198, 341), ispan=Span(0, 143), hispan=Span(1)|Span(10)|Span(14)|Span(18)|Span(24)|Span(27)|Span(52)|Span(57)|Span(61)|Span(65, 66)|Span(68)|Span(70)|Span(80)|Span(88)|Span(96)|Span(111)|Span(113)|Span(115)|Span(131)|Span(141)>
+        #     ---> ###merge_matches: next overlaps in sequence current, merged as new: LicenseMatch<'3-seq 2-aho', lines=(9, 44), 'lgpl-2.0-plus_9.RULE', u'lgpl-2.0-plus', choice=False, score=100.0, len=268, hilen=21, rlen=144, qreg=(50, 341), ireg=(0, 143), qspan=Span(50, 90)|Span(92, 142)|Span(151, 182)|Span(198, 341), ispan=Span(0, 143), his
 
-        # ---> merge_matches: current: qlen=126, ilen=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142)
-        # ---> merge_matches: next:    qlen=144, ilen=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143)
+        # ---> merge_matches: current: len=126, hilen=20, rlen=144, qreg=(50, 200), ireg=(5, 142)
+        # ---> merge_matches: next:    len=144, hilen=21, rlen=144, qreg=(198, 341), ireg=(0, 143)
 
         m1 = LicenseMatch(
             rule=r1,
@@ -587,13 +666,25 @@ class TestMergeMatches(FileBasedTesting):
 class TestLicenseMatchFilter(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_filter_matches_filters_multiple_nested_contained_matches_and_large_overlapping(self):
+    def test_filter_contained_matches_matches_filters_multiple_nested_contained_matches_and_large_overlapping(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        large_overlap = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
+        contained = LicenseMatch(rule=r1, qspan=Span(1, 4), ispan=Span(1, 4))
+        in_contained = LicenseMatch(rule=r1, qspan=Span(2, 3), ispan=Span(2, 3))
+
+        result, discarded = filter_contained_matches([m1, contained, in_contained, large_overlap])
+        assert [m1, large_overlap] == result
+        assert [contained, in_contained] == discarded
+
+    def test_filter_overlapping_matches_matches_filters_multiple_nested_contained_matches_and_large_overlapping(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
         large_overlap = LicenseMatch(rule=r1, qspan=Span(1, 6), ispan=Span(1, 6))
         contained = LicenseMatch(rule=r1, qspan=Span(1, 4), ispan=Span(1, 4))
         in_contained = LicenseMatch(rule=r1, qspan=Span(2, 3), ispan=Span(2, 3))
-        result, discarded = filter_contained_matches([m1, contained, in_contained, large_overlap])
+        result, discarded = filter_overlapping_matches([m1, contained, in_contained, large_overlap])
         assert [m1] == result
         assert discarded
 
@@ -632,7 +723,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert [m4] == result
         assert discarded
 
-    def test_filter_matches_does_filter_matches_with_contained_spans_if_licenses_are_different(self):
+    def test_filter_contained_matches_matches_does_filter_matches_with_contained_spans_if_licenses_are_different(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
 
@@ -643,10 +734,24 @@ class TestLicenseMatchFilter(FileBasedTesting):
         m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
 
         matches, discarded = filter_contained_matches([m1, m2, m3])
+        assert [m1, m2] == matches
+        assert discarded
+
+    def test_filter_overlapping_matches_matches_does_filter_matches_with_contained_spans_if_licenses_are_different(self):
+        r1 = Rule(text_file='r1', license_expression='apache-2.0')
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        r2 = Rule(text_file='r2', license_expression='apache-2.0')
+        m2 = LicenseMatch(rule=r2, qspan=Span(1, 6), ispan=Span(1, 6))
+
+        r3 = Rule(text_file='r3', license_expression='apache-1.1')
+        m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
+
+        matches, discarded = filter_overlapping_matches([m1, m2, m3])
         assert [m2] == matches
         assert discarded
 
-    def test_filter_matches_filters_matches_with_medium_overlap_only_if_license_are_the_same(self):
+    def test_filter_overlapping_matches_matches_filters_matches_with_medium_overlap_only_if_license_are_the_same(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.1')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 10), ispan=Span(0, 10))
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 11), ispan=Span(3, 11))
@@ -654,7 +759,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
         r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
         m3 = LicenseMatch(rule=r2, qspan=Span(7, 15), ispan=Span(7, 15))
 
-        result, discarded = filter_contained_matches([m1, m2, m3])
+        result, discarded = filter_overlapping_matches([m1, m2, m3])
         assert sorted([m1, m3]) == sorted(result)
         assert discarded
 
@@ -666,10 +771,52 @@ class TestLicenseMatchFilter(FileBasedTesting):
         matches = idx.match(location=query_loc)
         expected = [
             # filtered: LicenseMatch(matcher='3-seq', rule=rules['rule1.RULE'], qspan=Span(4, 47) | Span(50, 59), ispan=Span(1, 53)),
-            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 86), ispan=Span(0, 62)),
+            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 85), ispan=Span(0, 61)),
         ]
 
         assert expected == matches
+
+    def test_filter_contained_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+        r1 = Rule(text_file='r1', license_expression='apache-1.1')
+        r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
+        r3 = Rule(text_file='r3', license_expression='gpl')
+
+        # we have these matches
+        # 1. ABC
+        # 2. ABCDEDFG
+        # 3.    DEFCGJLJLJKLJJLKJLJJJLJLJLJJL
+        # we do not want 1. to be discarded in the final
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 40), ispan=Span(0, 40))
+        m3 = LicenseMatch(rule=r3, qspan=Span(6, 120), ispan=Span(6, 120))
+
+        result, discarded = filter_contained_matches([m2, m1, m3])
+        assert [m2, m3] == result
+        assert [m1] == discarded
+
+    def test_filter_overlapping_matches_matches_filters_matches_does_not_discard_non_overlaping(self):
+        r1 = Rule(text_file='r1', license_expression='apache-1.1')
+        r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
+        r3 = Rule(text_file='r3', license_expression='gpl')
+
+        # we have these matches
+        # 1. ABC
+        # 2. ABCDEDFG
+        # 3.    DEFCGJLJLJKLJJLKJLJJJLJLJLJJL
+        # we do not want 1. to be discarded in the final
+
+        m1 = LicenseMatch(rule=r1, qspan=Span(0, 5), ispan=Span(0, 5))
+        m2 = LicenseMatch(rule=r2, qspan=Span(0, 40), ispan=Span(0, 40))
+        m3 = LicenseMatch(rule=r3, qspan=Span(6, 120), ispan=Span(6, 120))
+
+        result, discarded = filter_overlapping_matches([m2, m1, m3])
+        assert [m3] == result
+        assert [m1, m2] == discarded
+
+        result, discarded = restore_non_overlapping(result, discarded)
+        assert [m1] == result
+        assert [m2] == discarded
 
 
 class TestLicenseMatchScore(FileBasedTesting):
@@ -757,13 +904,13 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         assert 1 == len(result)
         match = result[0]
 
+        # Note that there is a trailing space in that string
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
-
 
     def test_get_full_matched_text(self):
         rule_text = u'''
@@ -786,19 +933,28 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         assert 1 == len(result)
         match = result[0]
 
+        # Note that there is a trailing space in that string
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
+        # the text is finally rstripped
+        matched_text = match.matched_text()
+        assert expected.rstrip() == matched_text
+
+
         # test again using some HTML with tags
+        # Note that there is a trailing space in that string
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+        matched_text = u''.join(get_full_matched_text(
+            match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
         assert expected == matched_text
 
         # test again using whole_lines
@@ -806,7 +962,8 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC\n"""
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
+        matched_text = u''.join(get_full_matched_text(
+            match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
         assert expected == matched_text
 
     def test_get_full_matched_text_does_not_munge_underscore(self):
@@ -838,3 +995,144 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = 'MODULE_LICENSE_GPL+ +'
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
+
+    def test_tokenize_matched_text_does_cache_last_call_from_query_string_and_location(self):
+        dictionary = {'module': 0, 'license': 1, 'gpl+': 2}
+        location = None
+        query_string = 'the MODULE_LICENSE_GPL+ foobar'
+        result1 = tokenize_matched_text(location, query_string, dictionary)
+        result2 = tokenize_matched_text(location, query_string, dictionary)
+        assert result2 is result1
+
+        location = self.get_test_loc('match/query.txt')
+        query_string = None
+        result3 = tokenize_matched_text(location, query_string, dictionary)
+        assert result3 is not result2
+        assert result3 == result2
+
+        result4 = tokenize_matched_text(location, query_string, dictionary)
+        assert result4 is result3
+
+    def test_tokenize_matched_text_does_return_correct_tokens(self):
+        querys = u'''
+            foobar 45 Copyright 2003 (C) James. All Rights Reserved.  THIS
+            IS FROM THE CODEHAUS AND CONTRIBUTORS
+        '''
+        dictionary = dict(this=0, event=1, possibility=2, reserved=3, liable=5, copyright=6)
+        result = tokenize_matched_text(location=None, query_string=querys, dictionary=dictionary)
+        expected = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=False, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'IS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'FROM', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THE', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'CODEHAUS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'AND', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'CONTRIBUTORS', line_num=3, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'\n', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'        ', line_num=4, pos=-1, is_text=False, is_matched=False, is_known=False)]
+
+        assert expected == result
+
+    def test_reportable_tokens_filter_tokens_does_not_strip_last_token_value(self):
+        tokens = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=False, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=3, pos=-1, is_text=False, is_matched=False, is_known=False),
+        ]
+
+        match_qspan = Span(0, 1)
+        result = list(reportable_tokens(tokens, match_qspan, start_line=1, end_line=2, whole_lines=False))
+        expected = [
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=True, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=True, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False)
+        ]
+
+        assert expected == result
+
+        # est again with whole lines
+        match_qspan = Span(0, 1)
+        result = list(reportable_tokens(tokens, match_qspan, start_line=1, end_line=2, whole_lines=True))
+        expected = [
+            Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'foobar', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'45', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Copyright', line_num=2, pos=0, is_text=True, is_matched=True, is_known=True),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'2003', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' (', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'C', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u') ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'James', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u'. ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'All', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Rights', line_num=2, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value=u' ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'Reserved', line_num=2, pos=1, is_text=True, is_matched=True, is_known=True),
+            Token(value=u'.  ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
+            Token(value=u'THIS', line_num=2, pos=2, is_text=True, is_matched=False, is_known=True),
+            Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False)]
+
+        assert expected == result

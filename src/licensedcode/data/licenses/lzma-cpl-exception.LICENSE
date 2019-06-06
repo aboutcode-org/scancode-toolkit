@@ -1,4 +1,4 @@
-I.6 Special exception for LZMA compression module
+Special exception for LZMA compression module
 
 Igor Pavlov and Amir Szekely, the authors of the LZMA compression module for NSIS, 
 expressly permit you to statically or dynamically link your code (or bind by name) 

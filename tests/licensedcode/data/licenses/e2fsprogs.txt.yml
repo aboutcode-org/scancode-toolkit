@@ -1,0 +1,7 @@
+license_expressions:
+    - gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+    - bsd-new
+    - lgpl-2.1-plus
+    - lgpl-2.1-plus
+    - lgpl-2.1-plus
+notes: this is a composite license for e2fsprogs

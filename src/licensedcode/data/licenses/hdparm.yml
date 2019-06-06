@@ -2,4 +2,5 @@ key: hdparm
 short_name: HDPARM License
 name: HDPARM License
 category: Permissive
-owner: Unspecified
+owner: Mark Lord
+minimum_coverage: 90

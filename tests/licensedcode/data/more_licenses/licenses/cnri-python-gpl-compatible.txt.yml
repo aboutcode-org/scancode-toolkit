@@ -1,0 +1,5 @@
+license_expressions:
+  - cnri-python-1.6
+  - cnri-python-1.6.1
+notes: this is a license from fossology license reference CNRI-Python-GPL-Compatible (CNRI Python
+  Open Source GPL Compatible License Agreement) http://www.python.org/download/releases/1.6.1/download_win/

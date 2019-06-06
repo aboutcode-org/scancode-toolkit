@@ -30,10 +30,22 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
+import logging
+import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from typecode.contenttype import get_type
+
+
+TRACE = False
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
 
 """
 Main scanning functions.
@@ -45,7 +57,7 @@ Note: this API is unstable and still evolving.
 """
 
 
-def get_copyrights(location, **kwargs):
+def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
     of mappings for copyright detected in the file at `location`.
@@ -56,7 +68,7 @@ def get_copyrights(location, **kwargs):
     holders = []
     authors = []
 
-    for dtype, value, start, end in detect_copyrights(location):
+    for dtype, value, start, end in detect_copyrights(location, deadline=deadline):
 
         if dtype == 'copyrights':
             copyrights.append(
@@ -140,8 +152,9 @@ DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
-def get_licenses(location, min_score=0, include_text=False, diag=False,
-                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
+def get_licenses(location, min_score=0, include_text=False,
+                 license_url_template=DEJACODE_LICENSE_URL,
+                 deadline=sys.maxsize, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -157,9 +170,6 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
 
     if `include_text` is True, matched text is included in the returned
     `licenses` data.
-
-    If `diag` is True, additional license match details are returned with the
-    "matched_rule" key of the returned `licenses` data.
     """
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
@@ -169,7 +179,8 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score, **kwargs):
+    for match in idx.match(location=location, min_score=min_score,
+                           deadline=deadline, **kwargs):
 
         if include_text:
             # TODO: handle whole lines with the case of very long lines
@@ -211,13 +222,12 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             matched_rule['is_license_reference'] = match.rule.is_license_reference
             matched_rule['is_license_tag'] = match.rule.is_license_tag
 
-            # FIXME: for sanity these should always be included??? or returned as a flat item sset?
-            if diag:
-                matched_rule['matcher'] = match.matcher
-                matched_rule['rule_length'] = match.rule.length
-                matched_rule['matched_length'] = match.ilen()
-                matched_rule['match_coverage'] = match.coverage()
-                matched_rule['rule_relevance'] = match.rule.relevance
+            matched_rule['matcher'] = match.matcher
+            matched_rule['rule_length'] = match.rule.length
+            matched_rule['matched_length'] = match.len()
+            matched_rule['match_coverage'] = match.coverage()
+            matched_rule['rule_relevance'] = match.rule.relevance
+
             # FIXME: for sanity this should always be included?????
             if include_text:
                 result['matched_text'] = matched_text
@@ -241,9 +251,9 @@ def get_package_info(location, **kwargs):
         manifest = recognize_package(location)
         if manifest:
             return dict(packages=[manifest.to_dict()])
-    except Exception:
-        # FIXME: this should be logged somehow, but for now we avoid useless
-        # errors per #983
+    except Exception as e:
+        if TRACE:
+            logger.error('get_package_info: {}: Exception: {}'.format(location, e))
         pass
     return dict(packages=[])
 

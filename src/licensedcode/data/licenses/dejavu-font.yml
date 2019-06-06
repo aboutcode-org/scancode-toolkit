@@ -4,4 +4,4 @@ name: DejaVu Font License
 category: Permissive
 owner: Unspecified
 is_deprecated: yes
-notes: this happens to be really a double bitstream.
+notes: this is a composite of a double bitstream. 

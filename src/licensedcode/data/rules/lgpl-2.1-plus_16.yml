@@ -1,2 +1,5 @@
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+minimum_coverage: 50

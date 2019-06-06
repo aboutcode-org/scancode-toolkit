@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,22 +22,27 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, division, print_function
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+from time import time
+import sys
 
 from licensedcode.match import LicenseMatch
-from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
+
 
 TRACE = False
 TRACE2 = False
+TRACE3 = False
 
 
 def logger_debug(*args): pass
 
 
-if TRACE:
+if TRACE or TRACE2 or TRACE3:
     import logging
-    import sys
 
     logger = logging.getLogger(__name__)
 
@@ -55,20 +60,23 @@ like approaches.
 MATCH_SEQ = '3-seq'
 
 
-def match_sequence(idx, candidate, query_run, start_offset=0):
+def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
+                   match_blocks=None, deadline=sys.maxsize):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
-    against the `idx` index for the `candidate` rule tuple (rid, rule,
-    intersection).
+    starting at `start_offset` against the `idx` index for the candidate `rule`.
+    Stop processing when reachin the deadline time.
     """
-    if not candidate:
+    if not rule:
         return []
 
-    rid, rule, _intersection = candidate
-    high_postings = idx.high_postings_by_rid[rid]
+    if not match_blocks:
+        from licensedcode.seq import match_blocks
+
+    rid = rule.rid
     itokens = idx.tids_by_rid[rid]
 
-    len_junk = idx.len_junk
+    len_legalese = idx.len_legalese
 
     qbegin = query_run.start + start_offset
     qfinish = query_run.end
@@ -77,43 +85,49 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
 
     matches = []
     qstart = qbegin
-    qlen = len(query_run)
 
     # match as long as long we find alignments and have high matchable tokens
     # this allows to find repeated instances of the same rule in the query run
-    query_run_matchables = query_run.matchables
 
     while qstart <= qfinish:
-        if not query_run_matchables:
+
+        if TRACE2:
+            logger_debug('\n\nmatch_seq:==========================LOOP=============================')
+
+        if not query_run.is_matchable(include_low=False):
             break
-        # ensure that we use qstart + qlen or we could miss matches on some query runs
-        block_matches = match_blocks(qtokens, itokens, qstart, qfinish+1, high_postings, len_junk, query_run_matchables, _idx=idx)
+
+        if TRACE2:
+            logger_debug('match_seq:running block_matches:', 'a_start:', qstart, 'a_end', qfinish + 1)
+
+
+        block_matches = match_blocks(
+            a=qtokens, b=itokens, a_start=qstart, a_end=qfinish + 1,
+            b2j=high_postings, len_good=len_legalese,
+            matchables=query_run.matchables)
+
         if not block_matches:
             break
-        if TRACE2:
-            logger_debug('block_matches:')
-            for m in block_matches:
-                i, j, k = m
-                logger_debug(m)
-                logger_debug('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
-                logger_debug('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
 
-        # create one match for each matching block: this not entirely correct
-        # but this will be sorted out at LicenseMatch merging and filtering time
+        # create one match for each matching block: they will be further merged
+        # at LicenseMatch merging and filtering time
+
         for qpos, ipos, mlen in block_matches:
-            qspan = Span(range(qpos, qpos + mlen))
-            iposses = range(ipos, ipos + mlen)
-            hispan = Span(p for p in iposses if itokens[p] >= len_junk)
-            ispan = Span(iposses)
-            # skip single word matched as as sequence
-            if len(qspan) > 1:
-                match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
-                                     matcher=MATCH_SEQ, query=query)
+
+            qspan_end = qpos + mlen
+            # skip single non-high word matched as as sequence
+            if mlen > 1 or (mlen == 1 and qtokens[qpos] < len_legalese):
+                qspan = Span(range(qpos, qspan_end))
+                ispan = Span(range(ipos, ipos + mlen))
+                hispan = Span(p for p in ispan if itokens[p] < len_legalese)
+                match = LicenseMatch(
+                    rule, qspan, ispan, hispan, qbegin,
+                    matcher=MATCH_SEQ, query=query)
                 matches.append(match)
+
                 if TRACE2:
                     from licensedcode.tracing import get_texts
-                    qt, it = get_texts(
-                        match, location=query.location, query_string=query.query_string, idx=idx)
+                    qt, it = get_texts(match)
                     logger_debug('###########################')
                     logger_debug(match)
                     logger_debug('###########################')
@@ -122,10 +136,17 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
                     logger_debug(it)
                     logger_debug('###########################')
 
-            qstart = max([qstart, qspan.end + 1])
+            qstart = max([qstart, qspan_end])
+
+            if time() > deadline:
+                break
+
+        if time() > deadline:
+            break
 
     if TRACE:
-        logger_debug('!!!    match_sequence: FINAL LicenseMatch(es)')
+        logger_debug('match_seq: FINAL LicenseMatch(es)')
         list(map(logger_debug, matches))
         logger_debug('\n\n')
+
     return matches

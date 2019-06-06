@@ -29,8 +29,15 @@
   "code_view_url": "http://junit.cvs.sourceforge.net/junit/", 
   "vcs_url": "http://junit.cvs.sourceforge.net/junit/", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
+  "license_expression": "cpl-1.0", 
+  "declared_license": [
+    {
+      "name": "Common Public License Version 1.0", 
+      "url": "http://www.opensource.org/licenses/cpl1.0.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

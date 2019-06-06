@@ -15,7 +15,13 @@ and without fee or royalty is hereby granted, provided that you include the
 following on ALL copies of the document, or portions thereof, that you use:
 
 1. A link or URI to the original W3C document.
-2. The pre-existing copyright notice of the original author, if it doesn't exist, a notice of the form: "Copyright © World Wide Web Consortium , (Massachusetts Institute of Technology , Institut National de Recherche en Informatique et en Automatique , Keio University ). All Rights Reserved."
+2. The pre-existing copyright notice of the original author, if it doesn't exist,
+a notice of the form:
+
+"Copyright © World Wide Web Consortium , (Massachusetts Institute of Technology ,
+Institut National de Recherche en Informatique et en Automatique , Keio University ).
+All Rights Reserved."
+
 3. If it exists, the STATUS of the W3C document.
 
 When space permits, inclusion of the full text of this NOTICE should be

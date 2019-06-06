@@ -3,3 +3,4 @@ short_name: NTLM License
 name: NTLM License
 category: Permissive
 owner: Unspecified
+minimum_coverage: 15

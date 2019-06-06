@@ -36,8 +36,13 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": "BSD\nLicense :: OSI Approved :: BSD License",
+  "license_expression": "unknown AND bsd-new",
+  "declared_license": {
+    "license": "BSD",
+    "classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

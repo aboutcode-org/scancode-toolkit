@@ -1,0 +1,4 @@
+license_expressions:
+  - (mpl-1.1 OR epl-1.0) AND h2-1.0 AND proprietary-license
+notes: this is a license from fossology license reference H2-1.0 (H2 License - Version 1.0)
+  http://www.h2database.com/html/license.html#h2_license

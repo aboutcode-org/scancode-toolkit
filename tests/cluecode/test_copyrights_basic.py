@@ -30,7 +30,7 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights as copyrights_module
-import cluecode_assert_utils
+import cluecode_test_utils
 
 
 class TestTextPreparation(FileBasedTesting):
@@ -218,7 +218,7 @@ class TestCopyrightDetector(FileBasedTesting):
             'Copyright Eclipse, IBM and others',
             '(c) 2008',
         ]
-        copyrights, _, _ = cluecode_assert_utils.copyright_detector(location)
+        copyrights, _, _ = cluecode_test_utils.copyright_detector(location)
         assert expected == copyrights
 
     def test_detect_with_lines(self):

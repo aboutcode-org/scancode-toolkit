@@ -120,11 +120,6 @@ class PackageScanner(ScanPlugin):
                 # 3. set the manifest_path if needed.
                 # 4. save.
 
-                # NOTE: do not do this if the new_package_root is not an ancestor
-                # FIXME: this may not hold at all times?
-                ancestors = resource.ancestors(codebase)
-                if new_package_root not in ancestors:
-                    continue
                 # here we have a relocated Resource and we compute the manifest path
                 # relative to the new package root
                 new_package_root_path = new_package_root.path and new_package_root.path.strip('/')
@@ -137,4 +132,3 @@ class PackageScanner(ScanPlugin):
                 codebase.save_resource(new_package_root)
                 resource.packages = []
                 codebase.save_resource(resource)
-

@@ -1,0 +1,5 @@
+license_expressions:
+  - apache-2.0
+  - bsd-new
+  - zlib
+notes: https://raw.githubusercontent.com/netty/netty/netty-3.9.2.Final/src/main/java/org/jboss/netty/util/internal/jzlib/JZlib.java

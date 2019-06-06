@@ -43,6 +43,7 @@ class PackageTester(testcase.FileBasedTesting):
         """
         expected_loc = self.get_test_loc(expected_loc)
 
+        package.license_expression = package.compute_normalized_license()
         results = package.to_dict()
 
         if regen:
@@ -62,4 +63,4 @@ class PackageTester(testcase.FileBasedTesting):
         try:
             assert expected == results
         except AssertionError:
-            assert expected.items() == results.items()
+            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)

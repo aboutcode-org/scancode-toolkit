@@ -6,3 +6,5 @@ owner: Unicode Consortium
 homepage_url: http://unicode.org/
 text_urls:
     - http://unicode.org/copyright.html
+minimum_coverage: 60
+

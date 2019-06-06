@@ -31,8 +31,13 @@
   "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": "GPLv2",
+  "license_expression": "gpl-2.0",
+  "declared_license": {
+    "licenses": [
+      "GPLv2"
+    ],
+    "licenselogic": "single"
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

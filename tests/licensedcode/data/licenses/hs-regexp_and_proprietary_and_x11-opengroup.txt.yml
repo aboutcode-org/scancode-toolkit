@@ -1,0 +1,10 @@
+license_expressions:
+  - x11-opengroup
+  - x11-xconsortium
+  - historical
+  - x11-keith-packard
+  - x11-dec1
+  - x11-x11r5
+  - xfree86-1.0
+  - x11-doc
+  - xfree86-1.0

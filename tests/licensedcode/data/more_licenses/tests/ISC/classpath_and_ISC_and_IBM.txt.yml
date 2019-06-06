@@ -1,0 +1,4 @@
+license_expressions:
+  - gpl-2.0-plus WITH classpath-exception-2.0
+  - isc
+  - ibm-dhcp

@@ -1,3 +1,2 @@
-expected_failure: yes
 license_expressions:
-    - bsd-new
+    - bzip2-libbzip-2010

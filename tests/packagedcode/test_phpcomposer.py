@@ -79,3 +79,15 @@ class TestPHPcomposer(PackageTester):
         expected_loc = self.get_test_loc('phpcomposer/modern/composer.json.expected')
         package = phpcomposer.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_fake_license1(self):
+        test_file = self.get_test_loc('phpcomposer/fake/composer.json')
+        expected_loc = self.get_test_loc('phpcomposer/fake/composer.json.expected')
+        package = phpcomposer.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_fake_license2(self):
+        test_file = self.get_test_loc('phpcomposer/fake2/composer.json')
+        expected_loc = self.get_test_loc('phpcomposer/fake2/composer.json.expected')
+        package = phpcomposer.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)

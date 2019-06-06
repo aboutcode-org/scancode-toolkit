@@ -1,0 +1,1 @@
+the MODULE_LICENSE_GPL+ foobar

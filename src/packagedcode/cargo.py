@@ -27,10 +27,10 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-
 import io
 import toml
 import logging
+import re
 
 import attr
 
@@ -58,9 +58,9 @@ class RustCargoCrate(models.Package):
     metafiles = ('Cargo.toml',)
     default_type = 'cargo'
     default_primary_language = 'Rust'
-    default_web_baseurl = "https://crates.io/"
-    default_download_baseurl = "https://crates.io/api/v1/"
-    default_api_baseurl = "https://crates.io/api/v1/"
+    default_web_baseurl = 'https://crates.io'
+    default_download_baseurl = 'https://crates.io/api/v1'
+    default_api_baseurl = 'https://crates.io/api/v1'
 
     @classmethod
     def recognize(cls, location):
@@ -79,9 +79,6 @@ class RustCargoCrate(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return '{}/crates/{}'.format(baseurl, self.name)
 
-    def compute_normalized_license(self):
-        return models.compute_normalized_license(self.declared_license)
-
 
 def is_cargo_toml(location):
     return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.toml')
@@ -94,9 +91,7 @@ def parse(location):
     if not is_cargo_toml(location):
         return
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = toml.load(location, _dict=OrderedDict)
-
+    package_data = toml.load(location, _dict=OrderedDict)
     return build_package(package_data)
 
 
@@ -105,20 +100,83 @@ def build_package(package_data):
     Return a Pacakge object from a package data mapping or None.
     """
 
-    name = package_data.get('package').get('name')
-    version = package_data.get('package').get('version')
+    core_package_data = package_data.get('package', {})
+    name = core_package_data.get('name')
+    version = core_package_data.get('version')
+    description = core_package_data.get('description')
+    if description:
+        description = description.strip()
 
-    # TODO: Remove this ordered_dict_map once cargo.py is able to handle
-    # the appropriate data (source_packages, dependencies, etc..)
-    # At the moment, this is only useful for making tests pass
-    ordered_dict_map = {}
-    for key in ("source_packages", "dependencies", "keywords", "parties"):
-        ordered_dict_map[key] = OrderedDict()
+    authors = core_package_data.get('authors')
+    parties = list(party_mapper(authors, party_role='author'))
+    
+    declared_license = core_package_data.get('license')
 
     package = RustCargoCrate(
         name=name,
         version=version,
-        **ordered_dict_map
+        description=description,
+        parties=parties,
+        declared_license = declared_license 
     )
 
     return package
+
+
+def party_mapper(party, party_role):
+    """
+    Yields a Party object with party of `party_role`.
+    https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
+    """
+    for person in party:
+        name, email = parse_person(person)
+        yield models.Party(
+            type=models.party_person,
+            name=name,
+            role=party_role,
+            email=email)
+
+
+def parse_person(person):
+    """
+    https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
+    A "person" is an object with an optional "name" or "email" field.
+
+    A person can be in the form:
+      "author": "Isaac Z. Schlueter <i@izs.me>"
+
+    For example:
+    >>> parse_person('Barney Rubble <b@rubble.com>')
+    (u'Barney Rubble', u'b@rubble.com')
+    >>> parse_person('Barney Rubble')
+    (u'Barney Rubble', None)
+    >>> parse_person('<b@rubble.com>')
+    (None, u'b@rubble.com')
+    """
+
+    parsed = person_parser(person)
+    if not parsed:
+        name = None
+        parsed = person_parser_no_name(person)
+    else:
+        name = parsed.group('name')
+
+    email = parsed.group('email')
+
+    if name:
+        name = name.strip()
+    if email:
+        email = email.strip('<> ')
+
+    return name, email
+
+
+person_parser = re.compile(
+    r'^(?P<name>[^\(<]+)'
+    r'\s?'
+    r'(?P<email><([^>]+)>)?'
+).match
+
+person_parser_no_name = re.compile(
+    r'(?P<email><([^>]+)>)?'
+).match

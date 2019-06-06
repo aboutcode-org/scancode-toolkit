@@ -1,0 +1,6 @@
+license_expressions:
+  - apache-2.0
+  - apache-2.0
+  - openssl
+  - openssl-ssleay
+  - ssleay-windows

@@ -3,3 +3,4 @@ short_name: BSD Intel License
 name: BSD Intel License
 category: Permissive
 owner: Intel Corporation
+is_deprecated: yes

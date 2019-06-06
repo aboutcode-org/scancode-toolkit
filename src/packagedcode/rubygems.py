@@ -40,6 +40,7 @@ from commoncode import fileutils
 from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 
 
 # TODO: check:
@@ -99,25 +100,7 @@ class RubyGem(models.Package):
         return manifest_resource
 
     def compute_normalized_license(self):
-        # TODO: there is a mapping of well known licenses to reuse too
-
-        if not self.declared_license or not self.declared_license.strip():
-            return
-
-        # scancode convention is to put one license per line when there are
-        # multiple licenses as a list in the manifest.
-        lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
-        if not lines:
-            return
-
-        # we default to and AND as the Gem spec is rather vague on what it means
-        # to have a list of licenses. Note that we do not use the
-        # license_expression library for this, as each license may not be
-        # parsable at all: instead we do this at the string level
-        if len(lines) > 1:
-            lines = ['({})'.format(l) for l in lines]
-        licenses = ' AND '.join(lines)
-        return models.compute_normalized_license(licenses)
+        return compute_normalized_license(self.declared_license)
 
     @classmethod
     def recognize(cls, location):
@@ -160,11 +143,31 @@ class RubyGem(models.Package):
 
     @classmethod
     def extra_key_files(cls):
-        return ['metadata.gz-extract/metadata.gz-extract']
+        return ['metadata.gz-extract', 'metadata.gz-extract/metadata.gz-extract']
 
     @classmethod
     def extra_root_dirs(cls):
-        return ['data.tar.gz-extract']
+        return ['data.tar.gz-extract', 'metadata.gz-extract']
+
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    for declared in declared_license:
+        detected_license = models.compute_normalized_license(declared)
+        if detected_license:
+            detected_licenses.append(detected_license)
+
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
 
 
 def rubygems_homepage_url(name, version, repo='https://rubygems.org/gems'):
@@ -294,24 +297,16 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     # Since the gem spec doc is not clear https://guides.rubygems.org
     # /specification-reference/#licenseo, we will treat a list of licenses and a
     # conjunction for now (e.g. AND)
-    declared_licenses = []
-    licenses = gem_data.get('licenses') or []
-    for lic in licenses:
-        if lic and lic.strip():
-            declared_licenses.append(lic)
-
-    lic = gem_data.get('license') or ''
-    if lic and license.lic():
-        declared_licenses.append(license.strip())
-
-    declared_license = '\n'.join(declared_licenses) or None
+    license = gem_data.get('license')
+    licenses = gem_data.get('licenses')
+    declared_license = licenses_mapper(license, licenses)
 
     package = RubyGem(
         name=name,
         description=description,
         homepage_url=gem_data.get('homepage'),
         download_url=download_url,
-        declared_license=declared_license,
+        declared_license=declared_license
     )
 
     # we can have one singular or a plural list of authors
@@ -383,6 +378,21 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
         package.homepage_url = package.repository_homepage_url()
 
     return package
+
+
+def licenses_mapper(license, licenses):
+    """
+    Return declared_licenses list based on the `license` and
+    `licenses` values found in a package.
+    """
+    declared_licenses = []
+    if license:
+        declared_licenses.append(str(license).strip())
+    if licenses:
+        for lic in licenses:
+            if lic and lic.strip():
+                declared_licenses.append(lic.strip())
+    return declared_licenses
 
 
 def get_dependencies(dependencies):
@@ -486,10 +496,12 @@ def get_dependencies(dependencies):
             constraints.append(version_constraint)
 
         # if we have only one version constraint and this is "=" then we are resolved
-        is_resolved = constraint == '='
-        is_resolved = is_resolved and len(constraints) == 1
-
+        is_resolved =False
+        if constraints and len(constraints) == 1:
+            is_resolved = constraint == '='
+        
         version_constraint = ', '.join(constraints)
+
         dep = models.DependentPackage(
             purl=RubyGem.create(name=name).purl,
             requirement=version_constraint or None,
@@ -630,7 +642,6 @@ def normalize(gem_data, known_fields=known_fields):
     return OrderedDict(
         [(k, gem_data.get(k) or None) for k in known_fields]
     )
-
 
 
 def parse_spec(location):

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -35,6 +35,7 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 # Instructions: Comment out the skip decorators to run a test. Do not commit without a skip
@@ -66,6 +67,33 @@ class TestMatchingPerf(FileBasedTesting):
         stats_file = 'license_match_limited_index_profile_log.txt'
         locations = [self.get_test_loc('detect/rule_template/query.txt')]
         self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_index_with_single_license(self):
+        from time import time
+        from licensedcode import query
+
+        # pre-index : we are profiling only the detection, not the indexing
+        rule_dir = self.get_test_loc('perf/idx/rules')
+        rules = models.load_rules(rule_dir)
+        idx = index.LicenseIndex(rules)
+        location = self.get_test_loc('perf/idx/query.txt')
+        querys = open(location, 'rb').read()
+
+        qry = query.build_query(query_string=querys, idx=idx)
+
+        def mini_seq_match(idx):
+            list(idx.get_approximate_matches(qry, [], []))
+
+
+        # qtokens_as_str = array('h', tokens).tostring()
+        start = time()
+        for _ in range(100):
+            mini_seq_match(idx)
+        duration = time() - start
+        values = ('ScanCode diff:', duration)
+        print(*values)
+        raise Exception(values)
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
@@ -110,6 +138,14 @@ class TestMatchingPerf(FileBasedTesting):
         self.profile_match(idx, locations, stats_file)
 
     @skip('Use only for local profiling')
+    def test_match_license_performance_profiling_on_full_index_with_seq_matches(self):
+        # pre-index : we are profiling only the detection, not the indexing
+        idx = cache.get_index()
+        stats_file = 'license_match_mixed_matching_full_index_profile_seq_matches_log.txt'
+        locations = [self.get_test_loc(f) for f in ['perf/seq_query.txt']]
+        self.profile_match(idx, locations, stats_file)
+
+    @skip('Use only for local profiling')
     def test_match_license_performance_profiling_on_full_index_binary_lkm(self):
         # pre-index : we are profiling only the detection, not the indexing
         idx = cache.get_index()
@@ -149,4 +185,15 @@ class TestTokenizingPerformance(FileBasedTesting):
         from timeit import timeit
         print()
         print('With Object or namedtuple')
-        print(timeit(stmt='from licensedcode.models import get_all_rules;get_all_rules()', number=10))
+        print(timeit(stmt='from licensedcode.models import get_rules;list(get_rules())', number=10))
+
+    @skip('Use only for local profiling')
+    def test_get_all_rules_performance_profiling(self):
+        import cProfile as profile
+        import pstats
+        stats = 'get_all_rules_performance_profile_log.txt'
+        test_py = 'list(models.get_rules())'
+        profile.runctx(test_py, globals(), locals(), stats)
+        p = pstats.Stats(stats)
+        p.sort_stats('time').print_stats(40)
+        raise Exception('get_all_rules perfs test')

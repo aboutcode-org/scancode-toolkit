@@ -95,16 +95,24 @@ class BaseMavenCase(testcase.FileBasedTesting):
         """
         test_pom_loc = self.get_test_loc(test_pom)
         expected_json_loc = test_pom_loc + '.json'
-        parsed_pom = parse_pom(location=test_pom_loc)
+        results = parse_pom(location=test_pom_loc)
 
         if regen:
             with open(expected_json_loc, 'wb') as ex:
-                json.dump(parsed_pom, ex, indent=2)
+                json.dump(results, ex, indent=2)
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected.items() == parsed_pom.items()
+        results_dump = json.dumps(results, indent=2)
+        expected_dump = json.dumps(expected, indent=2)
+        try:
+            assert expected_dump == results_dump
+        except AssertionError:
+            test_pom_loc = 'file://' + test_pom_loc
+            expected_json_loc = 'file://' + expected_json_loc
+            expected = [test_pom_loc, expected_json_loc, expected_dump]
+            assert '\n'.join(expected) == results_dump
 
     def check_parse_to_package(self, test_pom, regen=False):
         """
@@ -115,18 +123,27 @@ class BaseMavenCase(testcase.FileBasedTesting):
         expected_json_loc = test_pom_loc + '.package.json'
         package = maven.parse(location=test_pom_loc)
         if not package:
-            package = {}
+            results = {}
         else:
-            package = package.to_dict()
+            package.license_expression = package.compute_normalized_license()
+            results = package.to_dict()
 
         if regen:
             with open(expected_json_loc, 'wb') as ex:
-                json.dump(package, ex, indent=2)
+                json.dump(results, ex, indent=2)
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
-        assert expected.items() == package.items()
+        results_dump = json.dumps(results, indent=2)
+        expected_dump = json.dumps(expected, indent=2)
+        try:
+            assert expected_dump == results_dump
+        except AssertionError:
+            test_pom_loc = 'file://' + test_pom_loc
+            expected_json_loc = 'file://' + expected_json_loc
+            expected = [test_pom_loc, expected_json_loc, expected_dump]
+            assert '\n'.join(expected) == results_dump
 
 
 class TestMavenMisc(BaseMavenCase):
@@ -221,7 +238,7 @@ class TestMavenMisc(BaseMavenCase):
         resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
 
         codebase = Codebase(test_dir, resource_attributes=resource_attributes)
-        manifest_resource = [r for r in codebase.walk() if r.name=='pom.xml'][0]
+        manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
         package = maven.MavenPomPackage.recognize(manifest_resource.location)
         manifest_resource.packages.append(package.to_dict())
         manifest_resource.save(codebase)
@@ -352,6 +369,99 @@ class TestPomProperties(testcase.FileBasedTesting):
         test_loc = self.get_test_loc('maven2_props/props_file/activiti-image-generator/pom.xml')
         pom = maven.parse(test_loc, check_is_pom=False)
         assert 'org.activiti' == pom.namespace
+
+
+class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_compute_normalized_license_two_names_only(self):
+        declared_license = [
+            {'name': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_tree_nodes(self):
+        declared_license = [
+            {'name': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_unknown_url(self):
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_unknown_url_known_comments(self):
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_unknown_url_unknown_comments(self):
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_unknown_name(self):
+        declared_license = [
+            {'name': 'unknown', 'url': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = '(unknown AND apache-2.0) AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_same_name_and_url(self):
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_same_name_url_comments(self):
+        declared_license = [
+            {'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'},
+            {'name': 'mit'}
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'apache-2.0 AND mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_url_invalid(self):
+        declared_license = [
+            {'name': 'MIT', 'url': 'LICENSE.txt'},
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'mit'
+        assert expected == result
+
+    def test_compute_normalized_license_with_duplicated_license(self):
+        declared_license = [
+            {'name': 'LGPL'},
+            {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
+        ]
+        result = maven.compute_normalized_license(declared_license)
+        expected = 'lgpl-2.0-plus'
+        assert expected == result
 
 
 def relative_walk(dir_path):

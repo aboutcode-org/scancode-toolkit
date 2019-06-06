@@ -1,0 +1,16 @@
+license_expressions:
+  - apache-2.0
+  - unlicense
+  - gpl-2.0
+  - apache-2.0
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+  - lgpl-2.1-plus
+  - gpl-2.0-plus
+  - mit
+  - warranty-disclaimer
+  - bsd-new OR epl-1.0 OR apache-2.0 OR mit
+  - apache-2.0
+  - agpl-3.0
+  - unknown-spdx OR unknown-spdx
+  - bsd-new

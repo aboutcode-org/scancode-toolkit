@@ -1,0 +1,35 @@
+Linux Documentation Project Copying License
+Last modified 30 March 1994
+
+The following copyright license applies to all works by the Linux Documentation Project.
+
+Please read the license carefully---it is somewhat like the GNU General Public License, but there are several conditions in it that differ from what you may be used to. If you have any questions, please mail Matt Welsh, the LDP coordinator, at mdw@sunsite.unc.edu.
+
+The Linux Documentation Project manuals may be reproduced and distributed in whole or in part, subject to the following conditions:
+
+All Linux Documentation Project manuals are copyrighted by their respective authors. THEY ARE NOT IN THE PUBLIC DOMAIN.
+
+    The copyright notice above and this permission notice must be preserved complete on all complete or partial copies.
+    Any translation or derivative work of Linux Installation and Getting Started must be approved by the author in writing before distribution.
+    If you distribute Linux Installation and Getting Started in part, instructions for obtaining the complete version of this manual must be included, and a means for obtaining a complete version provided.
+    Small portions may be reproduced as illustrations for reviews or quotes in other works without this permission notice if proper citation is given.
+    The GNU General Public License referenced below may be reproduced under the conditions given within it. 
+
+Exceptions to these rules may be granted for academic purposes: Write to the author and ask. These restrictions are here to protect us as authors, not to restrict you as educators and learners. All source code in Linux Installation and Getting Started is placed under the GNU General Public License, available via anonymous FTP from here.
+
+Publishing LDP Manuals
+If you're a publishing company interested in distributing any of the LDP manuals, read on.
+
+By the license given in the previous section, anyone is allowed to publish and distribute verbatim copies of the Linux Documentation Project manuals. You don't need our explicit permission for this. However, if you would like to distribute a translation or derivative work based on any of the LDP manuals, you must obtain permission from the author, in writing, before doing so.
+
+All translations and derivative works of LDP manuals must be placed under the Linux Documentation License given in the previous section. That is, if you plan to release a translation of one of the manuals, it must be freely distributable by the above terms.
+
+You may, of course, sell the LDP manuals for profit. We encourage you to do so. Keep in mind, however, that because the LDP manuals are freely distributable, anyone may photocopy or distribute printed copies free of charge, if they wish to do so.
+
+We do not require to be paid royalties for any profit earned from selling LDP manuals. However, we would like to suggest that if you do sell LDP manuals for profit, that you either offer the author royalties, or donate a portion of your earnings to the author, the LDP as a whole, or to the Linux development community. You may also wish to send one or more free copies of the LDP manual that you are distributing to the author. Your show of support for the LDP and the Linux community will be very appreciated.
+
+We would like to be informed of any plans to publish or distribute LDP manuals, just so we know how they're becoming available. If you are publishing or planning to publish any LDP manuals, please send mail to Matt Welsh (mdw@sunsite.unc.edu) either by electronic mail or telephone at +1 607 256 7372.
+
+We encourage Linux software distributors to distribute the LDP manuals (such as the Installation and Getting Started Guide) with their software. The LDP manuals are intended to be used as the "official" Linux documentation, and we'd like to see mail-order distributors bundling the LDP manuals with the software. As the LDP manuals mature, hopefully they will fulfill this goal more adequately.
+
+Matt Welsh, mdw@sunsite.unc.edu

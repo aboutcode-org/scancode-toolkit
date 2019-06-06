@@ -9,3 +9,4 @@ text_urls:
     - https://www.x.org/releases/X11R7.7/doc/libXtst/xtestlib.txt
 other_urls:
     - https://books.google.com/books?id=DgzG_28omiYC&pg=PA393&lpg=PA393&dq=%22This+documentation+is+provided+%60%60as+is%27%27+without+express+or+implied+warranty.%22&source=bl&ots=dH16WA9q7t&sig=hS0ElVWtLI_JJ_D3WbCmnH56XdA&hl=en&sa=X&ved=0ahUKEwiZytPX2YrQAhXmr1QKHVOkA0YQ6AEIKzAD#v=onepage&q=%22This%20documentation%20is%20provided%20%60%60as%20is%27%27%20without%20express%20or%20implied%20warranty.%22&f=false
+minimum_coverage: 80

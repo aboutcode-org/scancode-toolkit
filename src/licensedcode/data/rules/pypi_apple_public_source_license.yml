@@ -1,2 +1,5 @@
 license_expression: apsl-2.0
 is_license_tag: yes
+notes: we picked the latest version and we set the relevance to less than 100 because of that.
+ the tag does not have a license version
+relevance: 90

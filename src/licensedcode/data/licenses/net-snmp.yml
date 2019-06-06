@@ -6,3 +6,4 @@ owner: Net-SNMP
 spdx_license_key: Net-SNMP
 homepage_url: http://net-snmp.sourceforge.net/about/license.html
 notes: composite
+minimum_coverage: 70

@@ -133,8 +133,14 @@ class TestLicense(FileBasedTesting):
                 'No name',
                 'No category',
                 'No owner'],
-            'gpl-1.0': ['Unknown license category: GNU Copyleft'],
-            'w3c-docs-19990405': ['Unknown license category: Permissive Restricted']
+            'gpl-1.0': [
+                'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nUnstated License'],
+            'w3c-docs-19990405': [
+                'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nUnstated License']
         }
 
         assert expected_errors == errors
@@ -167,11 +173,11 @@ class TestLicense(FileBasedTesting):
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_create_template_rule(self):
+    def test_create_rule_ignore_punctuation(self):
         test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
-        expected = ['a', 'one', 'a', 'two', 'a', 'three']
+        expected = ['one', 'two', 'three']
         assert expected == list(test_rule.tokens())
-        assert 6 == test_rule.length
+        assert 3 == test_rule.length
 
     def test_create_plain_rule_with_text_file(self):
 
@@ -182,9 +188,9 @@ class TestRule(FileBasedTesting):
             return tf
 
         test_rule = models.Rule(text_file=create_test_file('A one. A two. A three.'))
-        expected = ['a', 'one', 'a', 'two', 'a', 'three']
+        expected = ['one', 'two', 'three']
         assert expected == list(test_rule.tokens())
-        assert 6 == test_rule.length
+        assert 3 == test_rule.length
 
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
@@ -223,7 +229,7 @@ class TestRule(FileBasedTesting):
         except NotImplementedError:
             pass
 
-        assert not rule.small()
+        assert not rule.is_small
         assert rule.relevance == 100
 
     def test_spdxrule_with_invalid_expression(self):
@@ -268,13 +274,28 @@ class TestRule(FileBasedTesting):
         ]
         assert expected == rule_tokens
 
-        rule_tokens = list(rule.tokens(lower=False))
-        expected = [
-            'I', 'hereby', 'abandon', 'any', 'SAX', '2', '0', 'the', 'and',
-            'Release', 'all', 'of', 'the', 'SAX', '2', '0', 'source', 'code',
-            'of', 'his'
-        ]
-        assert expected == rule_tokens
+    def test_compute_thresholds_occurences(self):
+        minimum_coverage = 0.0
+        length = 54
+        high_length = 11
+
+        results = models.compute_thresholds_occurences(minimum_coverage, length, high_length)
+        expected_min_cov = 0.0
+        expected_min_matched_length = 4
+        expected_min_high_matched_length = 3
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
+
+        length_unique = 39
+        high_length_unique = 7
+
+        results = models.compute_thresholds_unique(
+            minimum_coverage, length, length_unique, high_length_unique)
+        expected_min_matched_length_unique = 4
+        expected_min_high_matched_length_unique = 3
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
+
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
@@ -282,17 +303,35 @@ class TestRule(FileBasedTesting):
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
         r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
-        r1_text = 'licensed under the GPL,{{}} licensed under the GPL'
-        r1 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r1_text)
-        r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
+        results = models.compute_thresholds_occurences(r1.minimum_coverage, r1.length, r1.high_length)
+        expected_min_cov = 80
+        expected_min_matched_length = 8
+        expected_min_high_matched_length = 4
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
 
-        _idx = index.LicenseIndex([r1, r2])
-        assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
-        assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
+        results = models.compute_thresholds_unique(
+            r1.minimum_coverage, r1.length, r1.length_unique, r1.high_length_unique)
+
+        expected_min_matched_length_unique = 3
+        expected_min_high_matched_length_unique = 2
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
+
+        results = models.compute_thresholds_occurences(r2.minimum_coverage, r2.length, r2.high_length)
+        expected_min_cov = 0.0
+        expected_min_matched_length = 4
+        expected_min_high_matched_length = 3
+        expected = expected_min_cov, expected_min_matched_length, expected_min_high_matched_length
+        assert expected == results
+
+        results = models.compute_thresholds_unique(
+            r2.minimum_coverage, r2.length, r2.length_unique, r2.high_length_unique)
+        expected_min_matched_length_unique = 4
+        expected_min_high_matched_length_unique = 1
+        expected = expected_min_matched_length_unique, expected_min_high_matched_length_unique
+        assert expected == results
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')

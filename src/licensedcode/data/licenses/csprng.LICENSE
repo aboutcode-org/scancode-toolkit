@@ -1,0 +1,13 @@
+Redistribution of the CSPRNG
+modules and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice
+and this permission notice in its entirety.
+
+2. Redistributions in binary form must reproduce the copyright notice in
+the documentation and/or other materials provided with the distribution.
+
+3. A copy of any bugfixes or enhancements made must be provided to the
+author, <pgut001@cs.auckland.ac.nz> to allow them to be added to the
+baseline version of the code.

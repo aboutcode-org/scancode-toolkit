@@ -25,6 +25,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+from collections import OrderedDict
 import json
 import logging
 import os
@@ -37,6 +38,8 @@ from six import string_types
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
+from packagedcode.utils import combine_expressions
+
 
 """
 Detect and collect Python packages information.
@@ -72,6 +75,37 @@ class PythonPackage(models.Package):
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None
+    
+    def compute_normalized_license(self):
+        return compute_normalized_license(self.declared_license)
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+    """
+    if not declared_license:
+        return
+
+    detected_licenses = []
+
+    for value in declared_license.values():
+        if not value:
+            continue
+        # The value could be a string or a list
+        if isinstance(value, string_types):
+            detected_license = models.compute_normalized_license(value)
+            if detected_license:
+                detected_licenses.append(detected_license)
+        else:
+            for declared in value:
+                detected_license = models.compute_normalized_license(declared)
+                if detected_license:
+                    detected_licenses.append(detected_license)
+            
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
 
 
 PKG_INFO_ATTRIBUTES = [
@@ -239,12 +273,15 @@ def parse_setup_py(location):
             type=models.party_person,
             name=author, role='author'))
 
+    declared_license = OrderedDict()
+    license_setuptext = get_setup_attribute(setup_text, 'license')
+    declared_license['license'] = license_setuptext
+
     classifiers = get_classifiers(setup_text)
     license_classifiers = [c for c in classifiers if c.startswith('License')]
+    declared_license['classifiers'] = license_classifiers
+    
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
-
-    licenses = [get_setup_attribute(setup_text, 'license')] + license_classifiers
-    declared_license = '\n'.join(l for l in licenses if l and l.strip())
 
     package = PythonPackage(
         name=get_setup_attribute(setup_text, 'name'),
@@ -285,3 +322,68 @@ def parse(location):
     parser = parsers.get(file_name)
     if parser:
         return parser(location)
+
+
+def build_package(package_data):
+    """
+    Yield Package object from a package_data mapping json file.
+    """
+    info = package_data.get('info')
+    if not info:
+        return
+    name=info.get('name')
+    if not name:
+        return
+    short_desc = info.get('summary')
+    long_desc = info.get('description')
+    descriptions = [d for d in (short_desc, long_desc) if d and d.strip() and d.strip()!='UNKNOWN']
+    description = '\n'.join(descriptions)
+    common_data = dict(
+        name=name,
+        version=info.get('version'),
+        description=description,
+        homepage_url=info.get('home_page'),
+        bug_tracking_url=info.get('bugtrack_url'),
+    )
+
+    author = info.get('author')
+    email = info.get('author_email')
+    if author or email:
+        parties = common_data.get('parties')
+        if not parties:
+            common_data['parties'] = []
+        common_data['parties'].append(models.Party(
+            type=models.party_person, name=author, role='author', email=email))
+
+    maintainer = info.get('maintainer')
+    email = info.get('maintainer_email')
+    if maintainer or email:
+        parties = common_data.get('parties')
+        if not parties:
+            common_data['parties'] = []
+        common_data['parties'].append(models.Party(
+            type=models.party_person, name=maintainer, role='maintainer', email=email))
+
+    declared_license = OrderedDict()
+    setuptext_licenses = []
+    lic = info.get('license')
+    if lic and lic != 'UNKNOWN':
+        setuptext_licenses.append(lic)
+    declared_license['license'] = setuptext_licenses 
+
+    classifiers_licenses = []
+    classifiers = info.get('classifiers')
+    if classifiers and not classifiers_licenses:
+        licenses = [lic for lic in classifiers if lic.lower().startswith('license')]
+        for lic in licenses:
+            classifiers_licenses.append(lic)
+    declared_license['classifiers'] = classifiers_licenses 
+    
+    common_data['declared_license'] = declared_license
+
+    kw = info.get('keywords')
+    if kw:
+        common_data['keywords'] = [k.strip() for k in kw.split(',') if k.strip()]
+    
+    package = PythonPackage(**common_data)
+    return package

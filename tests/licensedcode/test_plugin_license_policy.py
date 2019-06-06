@@ -43,17 +43,17 @@ class TestLicensePolicy(FileDrivenTesting):
     def test_process_codebase_info_license_duplicate_key_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
         policy_file = self.get_test_loc('plugin_license_policy/process_codebase_info_license_duplicate_key_policy_file.yml')
-        
+
         result_file = self.get_temp_file('json')
 
         run_scan_click(['--info', '--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
         scan_result = load_json_result(result_file)
-        
+
         for result in scan_result['files']:
             assert 'license_policy' in result.keys()
             assert {} == result['license_policy']
-        
+
     def test_process_codebase_info_license_valid_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
         policy_file = self.get_test_loc('plugin_license_policy/process_codebase_info_license_valid_policy_file.yml')
@@ -117,7 +117,7 @@ class TestLicensePolicy(FileDrivenTesting):
 
         for result in scan_result['files']:
             assert result.get('license_policy') == {}
-    
+
     def test_process_codebase_empty_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
         policy_file = self.get_test_loc('plugin_license_policy/process_codebase_empty_policy_file.yml')
@@ -149,14 +149,14 @@ class TestLicensePolicy(FileDrivenTesting):
 
         for result in scan_result['files']:
             assert result.get('license_policy') == {}
-    
+
     def test_has_policy_duplcates_invalid_dupes(self):
         test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_invalid_dupes.yml')
 
         result = has_policy_duplicates(test_file)
 
         assert True == result
-    
+
     def test_has_policy_duplcates_valid(self):
         test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_valid.yml')
 
@@ -177,10 +177,10 @@ class TestLicensePolicy(FileDrivenTesting):
         result = has_policy_duplicates(test_file)
 
         assert False == result
-    
+
     def test_load_license_policy_duplicate_keys(self):
         test_file = self.get_test_loc('plugin_license_policy/load_license_policy_duplicate_keys.yml')
-    
+
         expected = OrderedDict([
             ('license_policies', [
                 OrderedDict([
@@ -267,7 +267,7 @@ class TestLicensePolicy(FileDrivenTesting):
         result = load_license_policy(test_file)
 
         assert expected == result
-    
+
     def test_load_license_policy_empty(self):
         test_file = self.get_test_loc('plugin_license_policy/load_license_policy_empty.yml')
 

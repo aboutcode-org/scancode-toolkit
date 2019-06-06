@@ -42,9 +42,16 @@
         "vcs_url": null,
         "copyright": null,
         "license_expression": "public-domain",
-        "declared_license": "Public Domain",
+        "declared_license": [
+          {
+            "name": "Public Domain",
+            "url": null,
+            "comments": null,
+            "distribution": null
+          }
+        ],
         "notice_text": null,
-        "manifest_path": null,
+        "manifest_path": "aopalliance-1.0.pom",
         "dependencies": [],
         "contains_source_code": null,
         "source_packages": [
@@ -56,8 +63,8 @@
         "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
         "files": [
           {
-            "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-            "type": "file"
+            "path": "scan/aopalliance/aopalliance/1.0",
+            "type": "directory"
           }
         ]
       },
@@ -95,7 +102,12 @@
         "vcs_url": null,
         "copyright": null,
         "license_expression": "gpl-2.0",
-        "declared_license": "GPLv2",
+        "declared_license": {
+          "licenses": [
+            "GPLv2"
+          ],
+          "licenselogic": "single"
+        },
         "notice_text": null,
         "manifest_path": "+COMPACT_MANIFEST",
         "dependencies": [],
@@ -144,7 +156,9 @@
         "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
         "copyright": null,
         "license_expression": "mit",
-        "declared_license": "MIT",
+        "declared_license": [
+          "MIT"
+        ],
         "notice_text": null,
         "manifest_path": "package.json",
         "dependencies": [
@@ -674,12 +688,6 @@
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
-      "packages": [],
-      "scan_errors": []
-    },
-    {
-      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "type": "file",
       "packages": [
         {
           "type": "maven",
@@ -705,9 +713,16 @@
           "vcs_url": null,
           "copyright": null,
           "license_expression": "public-domain",
-          "declared_license": "Public Domain",
+          "declared_license": [
+            {
+              "name": "Public Domain",
+              "url": null,
+              "comments": null,
+              "distribution": null
+            }
+          ],
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "aopalliance-1.0.pom",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -719,12 +734,18 @@
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
           "files": [
             {
-              "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-              "type": "file"
+              "path": "scan/aopalliance/aopalliance/1.0",
+              "type": "directory"
             }
           ]
         }
       ],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+      "type": "file",
+      "packages": [],
       "scan_errors": []
     },
     {
@@ -771,7 +792,12 @@
           "vcs_url": null,
           "copyright": null,
           "license_expression": "gpl-2.0",
-          "declared_license": "GPLv2",
+          "declared_license": {
+            "licenses": [
+              "GPLv2"
+            ],
+            "licenselogic": "single"
+          },
           "notice_text": null,
           "manifest_path": "+COMPACT_MANIFEST",
           "dependencies": [],
@@ -833,7 +859,9 @@
           "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
           "copyright": null,
           "license_expression": "mit",
-          "declared_license": "MIT",
+          "declared_license": [
+            "MIT"
+          ],
           "notice_text": null,
           "manifest_path": "package.json",
           "dependencies": [

@@ -1,0 +1,6 @@
+license_expressions:
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - (mpl-1.1 OR gpl-2.0) AND bsd-new
+  - mpl-1.1

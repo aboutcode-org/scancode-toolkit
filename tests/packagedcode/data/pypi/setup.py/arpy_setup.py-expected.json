@@ -22,7 +22,10 @@
   "vcs_url": null,
   "copyright": null,
   "license_expression": null,
-  "declared_license": "",
+  "declared_license": {
+    "license": null,
+    "classifiers": []
+  },
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],

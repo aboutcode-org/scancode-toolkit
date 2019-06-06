@@ -630,7 +630,7 @@ def test_scan_does_scan_rpm():
     check_json_scan(expected_file, result_file, regen=False)
 
 
-def test_scan_cli_help(regen=True):
+def test_scan_cli_help(regen=False):
     expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
     if regen:
@@ -809,3 +809,23 @@ def test_scan_keep_temp_files_keeps_files():
     # this does not make sense but that's what is seen in practice
     expected = 8 if on_windows else 7
     assert expected == len(list(os.walk(temp_directory)))
+
+
+def test_scan_errors_out_without_an_input_path():
+    args = ['--json-pp', '-']
+    result = run_scan_click(args, expected_rc=2)
+    assert 'Error: Invalid value: At least one input path is required.' in result.output
+
+
+def test_merge_multiple_scans():
+    test_file_1 = test_env.get_test_loc('resource/virtual_codebase/sample.json')
+    test_file_2 = test_env.get_test_loc('resource/virtual_codebase/thirdparty.json')
+    result_file = test_env.get_temp_file('json')
+    args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
+    result = run_scan_click(args, expected_rc=0)
+    expected = test_env.get_test_loc('resource/virtual_codebase/out.json')
+    with open(expected, 'rb') as f:
+        expected_files = json.loads(f.read())['files']
+    with open(result_file, 'rb') as f:
+        result_files = json.loads(f.read())['files']
+    assert expected_files == result_files

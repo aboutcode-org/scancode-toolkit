@@ -39,11 +39,11 @@ from functools import partial
 
 # Python 2 and 3 support
 try:
-        # Python 2
-    import itertools.imap as map
+    # Python 2
+    import itertools.imap as map  # NOQA
 except ImportError:
-        # Python 3
-        pass
+    # Python 3
+    pass
 
 import os
 import sys
@@ -217,7 +217,7 @@ Try 'scancode --help' for help on options and arguments.'''
 try:
     # IMPORTANT: this discovers, loads and validates all available plugins
     plugin_classes, plugin_options = PluginManager.load_plugins()
-except ImportError, e:
+except ImportError as e:
     echo_stderr('========================================================================')
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
     echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')
@@ -272,8 +272,9 @@ def print_options(ctx, param, value):
 
 @click.pass_context
 
-# ensure that the input path is bytes on Linux, unicode elsewhere
-@click.argument('input', metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+@click.argument('input',
+    metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+    # ensure that the input path is bytes on Linux, unicode elsewhere
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 
 @click.option('--strip-root',
@@ -319,6 +320,7 @@ def print_options(ctx, param, value):
 
 @click.option('--from-json',
     is_flag=True,
+    multiple=True,
     help='Load codebase from an existing JSON scan',
     help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
 
@@ -383,7 +385,7 @@ def print_options(ctx, param, value):
     is_flag=True, default=False,
     help='Keep temporary files and show the directory where temporary files '
          'are stored. (By default temporary files are deleted when a scan is '
-         'completed.',
+         'completed.)',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
@@ -495,9 +497,8 @@ def scancode(ctx, input,  # NOQA
         raise e
 
     except ScancodeError as se:
-        # TODO :consider raising a usage error?
-        echo_func(se.message, color='red')
-        ctx.exit(2)
+        # this will exit
+        raise click.BadParameter(str(se))
 
     rc = 0 if success else 1
     ctx.exit(rc)
@@ -529,7 +530,12 @@ def run_scan(
     """
 
     if not echo_func:
-        def echo_func(*args, **kwargs): pass
+        def echo_func(*_args, **_kwargs):
+            pass
+
+    if not input:
+        msg = 'At least one input path is required.'
+        raise ScancodeError(msg)
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
@@ -538,14 +544,18 @@ def run_scan(
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
-    else:
+
+    # This is the case where we have a list of inputs, but the list of inputs are not from the
+    # `from_json` option. If the `from_json` option is available and we have a list of inputs
+    # from it, we can pass `input` just fine when we create a VirtualCodebase, otherwise we have to
+    # process `input` below.
+    elif not from_json:
         # we received a several input paths: we can handle this IFF they share
         # a common root directory and none is an absolute path
 
         if any(os.path.isabs(p) for p in input):
-            msg = ('ERROR: invalid inputs: input paths must be relative and '
-                  'share a common parent when using multiple inputs.')
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = ('Invalid inputs: all input paths must be relative.')
+            raise ScancodeError(msg)
 
         # find the common prefix directory (note that this is a pre string operation
         # hence it may return non-existing paths
@@ -557,8 +567,8 @@ def run_scan(
             common_prefix = PATH_TYPE('.')
 
         elif not os.path.isdir(common_prefix):
-            msg = 'ERROR: invalid inputs: all input paths must share a common parent directory.'
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+            msg = 'Invalid inputs: all input paths must share a common parent directory.'
+            raise ScancodeError(msg)
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
@@ -630,7 +640,7 @@ def run_scan(
                     else:
                         non_enabled_plugins_by_qname[qname] = plugin
                 except:
-                    msg = 'ERROR: failed to load plugin: %(qname)s:' % locals()
+                    msg = 'Failed to load plugin: %(qname)s:' % locals()
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # NOTE: these are list of plugin instances, not classes!
@@ -1233,13 +1243,23 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     else:
         interruptor = interruptible
 
+    # The timeout is a soft deadline for a scanner to stop processing
+    # and start returning values. The kill timeout is otherwise there
+    # as a gatekeeper for runaway processes.
+
     # run each scanner in sequence in its own interruptible
     for scanner in scanners:
         if with_timing:
             start = time()
 
         try:
-            runner = partial(scanner.function, location)
+            # pass a deadline that the scanner can opt to honor or not
+            if timeout:
+                deadline = time() + int(timeout / 2.5)
+            else:
+                deadline = sys.maxsize
+
+            runner = partial(scanner.function, location, deadline=deadline)
             error, values_mapping = interruptor(runner, timeout=timeout)
             if error:
                 msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + error

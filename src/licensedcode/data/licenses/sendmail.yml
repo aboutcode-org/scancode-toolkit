@@ -11,3 +11,5 @@ other_urls:
     - https://web.archive.org/web/20160322142305/https://www.sendmail.com/pdfs/open_source/sendmail_license.pdf
 notes: this version of the license dates from 2004. There several minor variations
  publichsed since.
+minimum_coverage: 80
+

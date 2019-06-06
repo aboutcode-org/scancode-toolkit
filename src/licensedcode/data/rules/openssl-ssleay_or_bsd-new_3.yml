@@ -1,0 +1,3 @@
+license_expression: openssl-ssleay OR bsd-new
+is_license_notice: yes
+minimum_coverage: 90

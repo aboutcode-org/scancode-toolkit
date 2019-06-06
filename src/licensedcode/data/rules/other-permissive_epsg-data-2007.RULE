@@ -1,0 +1,15 @@
+Use of the Data
+
+The user assumes the entire risk as to the accuracy and the use of this data. The data may be used, copied and distributed subject to the following conditions:
+
+    INFORMATION PROVIDED IN THIS DOCUMENT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+    The data may be included in any commercial package provided that any commerciality is based on value added  by the provider and not on a value ascribed to the EPSG dataset which is made available at no charge. The ownership of the EPSG dataset [OGP] must be acknowledged.
+    Subsets of information may be extracted from the dataset. Users are advised that coordinate reference system and coordinate transformation descriptions are incomplete unless all elements detailed as essential in OGP Surveying and Positioning Guidance Note 7-1 annex F are included.
+    Essental elements should preferably be reproduced as described in the dataset. Modification of parameter values is permitted as described in the table below to allow change to the content of the information provided that numeric equivalence is achieved. Numeric equivalence refers to the results of geodetic calculations in which the parameters are used, for example (i) conversion of ellipsoid defining parameters, or (ii) conversion of parameters between one and two standard parallel projection methods, or (iii) conversion of parameters between 7-parameter geocentric transformation methods.
+
+As given in EPSG dataset
+
+Permitted change for vendors / users to adopt
+(detailed permissions omitted)
+
+No data that has been modified other than as permitted in these terms and conditions shall be described as or attributed to the EPSG dataset. 

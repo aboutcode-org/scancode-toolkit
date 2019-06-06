@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 #
-# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -32,6 +34,7 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 
+from textcode.analysis import as_unicode
 from textcode.analysis import unicode_text_lines
 from textcode.analysis import numbered_text_lines
 from commoncode.fileutils import resource_iter
@@ -134,3 +137,13 @@ class TestAnalysis(FileBasedTesting):
         ]
         assert expected == result
         assert 2 == len(result)
+
+    def test_as_unicode_converts_bytes_to_unicode(self):
+        test_line =  b'    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2”.'
+        result = as_unicode(test_line)
+        assert type(result) == unicode
+
+    def test_numbered_text_lines_return_unicode(self):
+        test_file = self.get_test_loc('analysis/verify.go')
+        for _lineno, line in numbered_text_lines(test_file):
+            assert type(line) == unicode

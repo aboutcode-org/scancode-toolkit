@@ -6,3 +6,4 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL
     - /usr/share/common-licenses/LGPL-3
     - COPYING.LIB
+minimum_coverage: 60

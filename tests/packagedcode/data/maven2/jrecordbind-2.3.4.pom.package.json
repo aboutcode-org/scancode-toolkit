@@ -29,8 +29,15 @@
   "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/", 
   "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/", 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
+  "license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus", 
+  "declared_license": [
+    {
+      "name": "LGPL", 
+      "url": "http://www.gnu.org/copyleft/lesser.html", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

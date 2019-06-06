@@ -1,0 +1,16 @@
+
+
+This software is licensed under the GNU GENERAL PUBLIC LICENCE Version
+2. Except that any software in the lib/ directory is for the creation of a
+linkable library to the tools and is licensed under the GNU LESSER GENERAL
+PUBLIC LICENCE Version 2.1.  Contributing Authors agree that their code is
+submitted under the licence appropriate for its location within the source
+tree (GPL except for LGPL in lib/) and agree that any future patches, provided
+they are accepted into the project, may change the licence of their code from
+GPL to LGPL by moving pieces of it into lib/ or LGPL to GPL by moving pieces
+of it out of lib/
+
+Note that the only valid version of the GPL is THIS particular version
+of the license (ie v2, not v2.2 or v3.x or whatever), unless explicitly
+otherwise stated.
+--------------------

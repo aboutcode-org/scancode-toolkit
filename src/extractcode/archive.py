@@ -468,7 +468,7 @@ ZipHandler = Handler(
 
 OfficeDocHandler = Handler(
     name='Office doc',
-    filetypes=('zip archive',),
+    filetypes=('zip archive', 'microsoft word 2007+', 'microsoft excel 2007+', 'microsoft powerpoint 2007+'),
     mimetypes=('application/zip', 'application/vnd.openxmlformats',),
     # Extensions of office documents that are zip files too
     extensions=(

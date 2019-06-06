@@ -1,0 +1,5 @@
+license_expression: gpl-2.0-plus AND lgpl-2.0
+is_license_notice: yes
+notes: GPL 2 or later notice, with conflicting references to the LGPL as a leftover
+relevance: 95
+minimum_coverage: 80

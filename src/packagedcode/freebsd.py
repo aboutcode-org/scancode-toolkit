@@ -37,6 +37,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode import saneyaml
 from packagedcode import models
+from packagedcode.utils import combine_expressions
 
 """
 Handle FreeBSD ports
@@ -65,6 +66,37 @@ class FreeBSDPackage(models.Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
+
+    def compute_normalized_license(self):
+        return compute_normalized_license(self.declared_license)
+
+
+def compute_normalized_license(declared_license):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items or an ordered dict.
+    """
+    if not declared_license:
+        return
+
+    licenses = declared_license.get('licenses')
+    if not licenses:
+        return
+
+    license_logic = declared_license.get('licenselogic')
+    relation= 'AND'
+    if license_logic:
+        if license_logic == 'or' or license_logic == 'dual':
+            relation = 'OR'
+    
+    detected_licenses = []
+    for declared in licenses:
+        detected_license = models.compute_normalized_license(declared)
+        if detected_license:
+            detected_licenses.append(detected_license)
+    
+    if detected_licenses:
+        return combine_expressions(detected_licenses, relation)
 
 
 def is_freebsd_manifest(location):
@@ -148,20 +180,13 @@ def license_mapper(package_data, package):
     if not licenses:
         return
 
-    # licenselogic is found as 'or' in some cases in the wild
-    if license_logic == 'or' or license_logic == 'dual':
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        lics = ' OR '.join(lics)
-    # licenselogic is found as 'and' in some cases in the wild
-    elif license_logic == 'and' or license_logic == 'multi':
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        lics = ' AND '.join(lics)
-    # 'single' or default licenselogic value
-    else:
-        lics = [l.strip() for l in licenses if l and l.strip()]
-        lics = ', '.join(lics)
-
-    package.declared_license = lics or None
+    declared_license = OrderedDict()
+    lics = [l.strip() for l in licenses if l and l.strip()]
+    declared_license['licenses'] = lics
+    if license_logic:
+        declared_license['licenselogic'] = license_logic
+        
+    package.declared_license = declared_license
     return package
 
 

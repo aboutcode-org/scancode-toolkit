@@ -1,0 +1,17 @@
+license_expressions:
+  - gpl-1.0-plus
+  - apache-2.0
+  - mit
+  - mit
+  - proprietary-license OR lgpl-2.0-plus OR gpl-1.0-plus
+  - ms-pl
+  - mit
+  - zlib-acknowledgement
+  - apache-2.0 OR mpl-1.1
+  - apache-2.0 OR mpl-1.1
+  - mpl-1.1
+  - bsd-new
+  - cc-by-sa-2.5
+  - free-unknown
+  - ms-pl
+  - gpl-1.0-plus

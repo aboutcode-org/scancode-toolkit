@@ -9,7 +9,8 @@
         "--info": true,
         "--json": "<file>",
         "--license": true,
-        "--license-clarity-score": true
+        "--license-clarity-score": true,
+        "--license-diag": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -20,12 +21,12 @@
     }
   ],
   "license_clarity_score": {
-    "score": 68,
-    "has_declared_license_in_key_files": true,
-    "file_level_license_and_copyright_coverage": 0.33,
-    "has_consistent_key_and_file_level_licenses": true,
-    "is_using_only_spdx_licenses": true,
-    "has_full_text_for_all_licenses": false
+    "score": 53,
+    "declared": true,
+    "discovered": 0.33,
+    "consistency": true,
+    "spdx": false,
+    "license_texts": false
   },
   "files": [
     {
@@ -115,7 +116,7 @@
       "licenses": [
         {
           "key": "mit",
-          "score": 99.0,
+          "score": 100.0,
           "name": "MIT License",
           "short_name": "MIT License",
           "category": "Permissive",
@@ -137,7 +138,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": true
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -233,7 +239,12 @@
             "is_license_text": false,
             "is_license_notice": false,
             "is_license_reference": false,
-            "is_license_tag": true
+            "is_license_tag": true,
+            "matcher": "4-spdx-id",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
           }
         }
       ],

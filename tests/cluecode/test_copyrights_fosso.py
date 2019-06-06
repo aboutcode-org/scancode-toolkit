@@ -35,7 +35,7 @@ import pytest
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
 
-import cluecode_assert_utils
+import cluecode_test_utils
 
 """
 Tests of ScanCode copyright detection using Fossology copyright test suite data.
@@ -152,7 +152,7 @@ def build_copyright_test_methods_with_fossology_data():
 
 def make_test_func(test_file_loc, expected_file_loc, expected):
     def copyright_test_method(self):
-        copyrights, _authors, _holders = cluecode_assert_utils.copyright_detector(test_file_loc)
+        copyrights, _authors, _holders = cluecode_test_utils.copyright_detector(test_file_loc)
         copyrights = [c.encode('utf-8') for c in copyrights]
 
         try:

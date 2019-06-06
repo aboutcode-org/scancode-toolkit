@@ -4,3 +4,4 @@ name: ComponentAce JCraft License
 category: Permissive
 owner: ComponentAce
 notes: composite license_expression bsd-new and bsd-new and zlib
+minimum_coverage: 85

@@ -6,3 +6,4 @@ owner: CERN - European Organization for Nuclear Research
 homepage_url: http://acs.lbl.gov/software/colt/license.html
 text_urls:
     - http://acs.lbl.gov/software/colt/license.html
+minimum_coverage: 85

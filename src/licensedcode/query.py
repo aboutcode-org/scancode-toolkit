@@ -28,6 +28,7 @@ from __future__ import print_function
 
 from collections import defaultdict
 from collections import deque
+from itertools import chain
 import re
 
 from intbitset import intbitset
@@ -84,6 +85,7 @@ counting lines is useless and other heuristic are needed.
 # Tracing flags
 TRACE = False
 TRACE_QR = False
+TRACE_QR_BREAK = False
 TRACE_REPR = False
 TRACE_SPDX = False
 
@@ -92,7 +94,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR or TRACE_SPDX:
+if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_SPDX:
     import logging
     import sys
 
@@ -104,7 +106,7 @@ if TRACE or TRACE_QR or TRACE_SPDX:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-# for the cases of very long lines, we break in abritrary pseudo lines at 50
+# for the cases of very long lines, we break in abritrary pseudo lines at 25
 # tokens to avoid getting huge query runs for texts on a single line (e.g.
 # minified JS or CSS)
 MAX_TOKEN_PER_LINE = 25
@@ -230,11 +232,11 @@ class Query(object):
         # this method has side effects to populate various data structures
         self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
 
-        len_junk = idx.len_junk
+        len_legalese = idx.len_legalese
         tokens = self.tokens
         # sets of known token positions initialized after query tokenization:
-        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_junk])
-        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_junk])
+        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_legalese])
+        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_legalese])
 
     def whole_query_run(self):
         """
@@ -268,6 +270,15 @@ class Query(object):
         Return a set of every matchable token positions for this query.
         """
         return self.low_matchables | self.high_matchables
+
+    @property
+    def matched(self):
+        """
+        Return a set of every matched token positions for this query.
+        """
+        all_pos = intbitset(range(len(self.tokens)))
+        all_pos.difference_update(self.matchables())
+        return all_pos
 
     # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
@@ -366,7 +377,35 @@ class Query(object):
         iterator of lines (eg. list) of token ids.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
-        len_junk = self.idx.len_junk
+        self._tokenize_and_build_runs(tokens_by_line, line_threshold)
+
+        if TRACE_QR:
+            print()
+            logger_debug('Initial Query runs for query:', self.location)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
+
+    def refine_runs(self):
+        # TODO: move me to the approximate matching loop so that this is done only if neeed
+        # rebreak query runs based on potential rule boundaries
+        query_runs = list(chain.from_iterable(
+            break_on_boundaries(qr) for qr in self.query_runs))
+
+        if TRACE_QR_BREAK:
+            logger_debug('Initial # query runs:', len(self.query_runs), 'after breaking:', len(query_runs))
+
+        self.query_runs = query_runs
+
+        if TRACE_QR:
+            print()
+            logger_debug('FINAL Query runs for query:', self.location)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
+
+    def _tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
+        len_legalese = self.idx.len_legalese
         digit_only_tids = self.idx.digit_only_tids
 
         # initial query run
@@ -395,7 +434,7 @@ class Query(object):
                 # start new query run
                 query_run = QueryRun(query=self, start=pos)
                 empty_lines = 0
- 
+
             if len(query_run) == 0:
                 query_run.start = pos
 
@@ -411,7 +450,7 @@ class Query(object):
                 if token_id is not None:
                     tokens_append(token_id)
                     line_has_known_tokens = True
-                    if token_id >= len_junk:
+                    if token_id < len_legalese:
                         line_has_good_tokens = True
                     query_run.end = pos
                     pos += 1
@@ -439,10 +478,62 @@ class Query(object):
             print()
             logger_debug('Query runs for query:', self.location)
             for qr in self.query_runs:
-                high_matchables = len([p for p, t in enumerate(qr.tokens) if t >= len_junk])
+                high_matchables = len([p for p, t in enumerate(qr.tokens) if t < len_legalese])
 
                 print(' ' , repr(qr), 'high_matchables:', high_matchables)
             print()
+
+
+def break_on_boundaries(query_run):
+    """
+    Given a QueryRun, yield more query runs broken down on boundaries discovered
+    from matched rules and matched rule starts and ends.
+    """
+    if len(query_run) < 150:
+        yield query_run
+    else:
+        from licensedcode.match_aho import get_matched_starts
+
+        qr_tokens = query_run.tokens
+        qr_start = query_run.start
+        qr_end = query_run.end
+        query = query_run.query
+        idx = query.idx
+
+        matched_starts = get_matched_starts(
+            qr_tokens, qr_start, automaton=idx.starts_automaton)
+
+        starts = dict(matched_starts)
+
+        if TRACE_QR_BREAK:
+            logger_debug('break_on_boundaries: len(starts):', len(starts),)
+
+        if not starts:
+            if TRACE_QR_BREAK: logger_debug('break_on_boundaries: Qr returned unchanged')
+            yield query_run
+
+        else:
+            positions = deque()
+            pos = qr_start
+            while pos < qr_end:
+                matches = starts.get(pos, None)
+                if matches:
+                    min_length, _ridentifier = matches[0]
+                    if len(positions) >= min_length:
+                        qr = QueryRun(query, positions[0], positions[-1])
+                        if TRACE_QR_BREAK:
+                            logger_debug('\nbreak_on_boundaries: new QueryRun', qr, '\n', matches, '\n')
+                        yield qr
+                        positions.clear()
+                positions.append(pos)
+                pos += 1
+
+            if positions:
+                qr = QueryRun(query, positions[0], positions[-1])
+                yield qr
+                if TRACE_QR_BREAK:
+                    print()
+                    logger_debug('\nbreak_on_boundaries: final QueryRun', qr, '\n', matches, '\n')
 
 
 is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
@@ -464,7 +555,7 @@ class QueryRun(object):
     positions inclusive.
     """
     __slots__ = (
-        'query', 'start', 'end', 'len_junk', 'digit_only_tids',
+        'query', 'start', 'end', 'len_legalese', 'digit_only_tids',
         '_low_matchables', '_high_matchables',
     )
 
@@ -479,34 +570,10 @@ class QueryRun(object):
         self.start = start
         self.end = end
 
-        self.len_junk = self.query.idx.len_junk
+        self.len_legalese = self.query.idx.len_legalese
         self.digit_only_tids = self.query.idx.digit_only_tids
         self._low_matchables = None
         self._high_matchables = None
-
-    @property
-    def low_matchables(self):
-        """
-        Set of known positions for low token ids that are still matchable for
-        this run.
-        """
-        if not self._low_matchables:
-            self._low_matchables = intbitset(
-                [pos for pos in self.query.low_matchables
-                 if self.start <= pos <= self.end])
-        return self._low_matchables
-
-    @property
-    def high_matchables(self):
-        """
-        Set of known positions for high token ids that are still matchable for
-        this run.
-        """
-        if not self._high_matchables:
-            self._high_matchables = intbitset(
-                [pos for pos in self.query.high_matchables
-                 if self.start <= pos <= self.end])
-        return self._high_matchables
 
     def __len__(self):
         if self.end is None:
@@ -568,13 +635,14 @@ class QueryRun(object):
         """
         Return True if this query run contains only digit tokens.
         """
+        # FIXME: this should be cached
         return intbitset(self.tokens).issubset(self.digit_only_tids)
 
     def is_matchable(self, include_low=False, qspans=None):
         """
         Return True if this query run has some matchable high token positions.
         Optinally if `include_low`m include low tokens.
-        If a list of `qspans` is provided, their positions are first subtracted.
+        If a list of `qspans` is provided, their positions are also subtracted.
         """
         if include_low:
             matchables = self.matchables
@@ -608,8 +676,32 @@ class QueryRun(object):
         high_matchables = self.high_matchables
         if not high_matchables:
             return []
-        return (tid if pos in (high_matchables | self.low_matchables) else -1
+        return (tid if pos in self.matchables else -1
                 for pos, tid in self.tokens_with_pos())
+
+    @property
+    def low_matchables(self):
+        """
+        Set of known positions for low token ids that are still matchable for
+        this run.
+        """
+        if not self._low_matchables:
+            self._low_matchables = intbitset(
+                [pos for pos in self.query.low_matchables
+                 if self.start <= pos <= self.end])
+        return self._low_matchables
+
+    @property
+    def high_matchables(self):
+        """
+        Set of known positions for high token ids that are still matchable for
+        this run.
+        """
+        if not self._high_matchables:
+            self._high_matchables = intbitset(
+                [pos for pos in self.query.high_matchables
+                 if self.start <= pos <= self.end])
+        return self._high_matchables
 
     def subtract(self, qspan):
         """
@@ -618,13 +710,8 @@ class QueryRun(object):
         """
         if qspan:
             self.query.subtract(qspan)
-            # also update locally: this is a property hence the side effect
-            self.high_matchables
-            self._high_matchables.difference_update(qspan)
-
-            # also update locally: this is a property hence the side effect
-            self.low_matchables
-            self._low_matchables.difference_update(qspan)
+            self._high_matchables = self.high_matchables.difference_update(qspan)
+            self._low_matchables = self.low_matchables.difference_update(qspan)
 
     def to_dict(self, brief=False, comprehensive=False, include_high=False):
         """
@@ -651,7 +738,7 @@ class QueryRun(object):
             high_tokens = ''
         else:
             tokens = tokens_string(self.tokens)
-            high_tokens = set(t for t in self.tokens if t >= self.len_junk)
+            high_tokens = set(t for t in self.tokens if t < self.len_legalese)
             high_tokens = tokens_string(high_tokens, sort=True)
 
         to_dict = dict(

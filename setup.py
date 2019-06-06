@@ -121,13 +121,18 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<3',    
+    python_requires='>=2.7,<3',
     install_requires=[
+        # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
+        # See https://github.com/nexB/scancode-toolkit/issues/1463
+        'more_itertools <  6.0.0; python_version == "2.7"',
+        # end hack
+
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
-        'py2-ipaddress >= 2.0, <3.5',
+        'py2-ipaddress >= 2.0, <3.5;python_version<"3"',
         'url >= 0.1.4, < 0.1.6',
         'fingerprints == 0.5.4',
 
@@ -141,10 +146,8 @@ setup(
 
         # commoncode
         'backports.os == 0.1.1',
-        'future == 0.16.0',
+        'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
-        # required by saneyaml
-        'PyYAML >= 3.11, <=3.13',
         'saneyaml',
 
         # licensedcode
@@ -185,7 +188,6 @@ setup(
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >=17.4, < 19.0',
-        'cattrs',
         'typing >=3.6, < 3.7',
 
         # scancode outputs

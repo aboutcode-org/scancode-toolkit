@@ -1,0 +1,53 @@
+License Agreement
+
+IMPORTANT! Read the terms and conditions of this license agreement (hereafter "Agreement") carefully before using (hereafter "Software"). Use of the Software implies acceptance of this Agreement, and legally binds you and/or your company (hereafter "Licensee"), and  (hereafter "Licensor"), to the terms and conditions set forth below.
+
+1 Grant of License
+
+Subject to the terms and conditions of this Agreement, Licensor hereby grants to Licensee a non-exclusive and non-transferable license to install and use the Software on a Licensee''s host machine, to modify the Software, and to distribute some parts of the Software.
+
+1.1 Installation and use
+
+The Software may only be installed on a single host machine, however Licensee may uninstall the Software and reinstall it on a different host without notice to Licensor. The Software may not be remotely accessed from another machine.
+
+The Software may only be used by a single software developer, whose identity shall be registered by Licensee. Right to use the Software may be transferred from one developer to another in the same organization upon request to Licensor, however such transfers are limited to one every six months.
+
+1.2 Modification
+
+Licensee may modify and recompile the source code of all GUI components and examples included with the Software. Subject to prior notice to Licensor, Licensee may modify and recompile the source code of the core spell checker engine, however such a modification frees Licensor from any further technical support to Licensee.
+
+Licensee may modify and rebuild all dictionaries included with the Software.
+
+1.3 Distribution
+
+Licensee may distribute a copy of the binary class library and binary dictionary files, in original or modified form, along with any application, developed by Licensee, which integrates . Licensee may not distribute any other part of the Software, in either modified or original form.
+
+Licensee shall include the following copyright notice:, with every copy of any application, developed by Licensee, which integrates . This copyright notice may be placed together with Licensee''s own copyright notices, or in any reasonably visible location in the packaging or documentation of the application.
+
+Licensee may not include the binary class library and binary dictionary files with any software product which is itself a development kit, a component or a library.
+
+2 Restrictions
+
+The Software is copyrighted and title to all copies is retained by Licensor. Licensee may not make copies of the Software, other than a single copy for archival purposes. Licensee may, for its internal use only, print copies of the documentation of the Software, in which event all proprietary rights notices on the Software shall be reproduced and applied. Except as stated in section 1, Licensee may not modify, decompile, or otherwise reverse engineer the Software.
+
+The Software is not designed or licensed for use in on-line control equipment in hazardous environments such as operation of nuclear facilities, aircraft navigation or control, or direct life support machines.
+
+The Software is confidential and proprietary information of Licensor. Licensee agrees to protect the Software from unauthorized use or disclosure.
+
+3 Warranty Disclaimer
+
+Licensor does not warrant that the Software will meet Licensee''s requirements or that the Software is error-free. Except as specified in this Agreement, Licensor expressly disclaims all warranties, express or implied, with respect to the Software, including, but not limited to, warranties of merchantability, fitness for a particular purpose or non-infringement.
+
+4 Limitation of Liability
+
+In no event shall Licensor be liable to Licensee or a third party for any lost revenue, profit or data, or for any indirect, special or consequential damages, however caused and regardless of theory of liability, arising out of the use of or inability to use the Software, even if Licensor has been advised of the possibility of such damages.
+
+5 Termination
+
+This license is effective from the date purchased by Licensee and is perpetual unless terminated by Licensee''s election or by breach of this Agreement. Licensee may terminate this license at any time by destroying all copies of the Software, including any documentation. This license will terminate immediately without notice from Licensor if Licensee fails to comply with any provision of this Agreement. Upon termination, Licensee must destroy all copies of the Software, including any documentation.
+
+6 Entirety
+
+This Agreement is the complete and exclusive statement of agreements between Licensee and Licensor relating to the Software. It supersedes all prior agreements and understandings, and prevails over any conflicting or additional terms of any quote, order, acknowledgement, or similar communication between the parties before or during the term of this Agreement. It may be modified only in writing signed by both parties.
+
+This Agreement is made under, shall be governed by and construed in accordance with the French law.

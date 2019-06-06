@@ -1,0 +1,14 @@
+license_expressions:
+  - tatu-ylonen
+  - gary-s-brown
+  - bsd-new
+  - other-permissive
+  - bsd-new
+  - other-permissive
+  - public-domain
+  - public-domain-disclaimer
+  - bsd-original-uc
+  - bsd-original-uc
+  - bsd-simplified
+  - bsd-simplified
+notes: Openssh templatized

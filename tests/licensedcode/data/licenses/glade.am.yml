@@ -1,0 +1,4 @@
+license_expressions:
+  - gpl-1.0-plus
+  - lgpl-2.0-plus
+notes: ideally nothing should be detected as this is bare mention of file names.

@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+import pytest
 
 from packagedcode import cargo
 
@@ -65,3 +66,36 @@ class TestCargo(PackageTester):
         expected_loc = self.get_test_loc('cargo/rustup/Cargo.toml.expected')
         package = cargo.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+
+PERSON_PARSER_TEST_TABLE = [
+    ('Barney Rubble <b@rubble.com>', ('Barney Rubble ', '<b@rubble.com>')),
+    ('Barney Rubble', ('Barney Rubble', None)),
+    ('Some Good Guy <hisgoodmail@email.com>', ('Some Good Guy ', '<hisgoodmail@email.com>')),
+    ('Some Good Guy', ('Some Good Guy', None)),
+]
+
+PERSON_NO_NAME_PARSER_TEST_TABLE = [
+    ('<b@rubble.com>', (None, '<b@rubble.com>')),
+    ('<anotherguy@email.com>', (None, '<anotherguy@email.com>')),
+]
+
+class TestRegex(object):
+    @pytest.mark.parametrize('person, expected_person', PERSON_PARSER_TEST_TABLE)
+    def test_person_parser(self, person, expected_person):
+        parsed_person = cargo.person_parser(person)
+        person_information = parsed_person.groupdict()
+        name, email = person_information.get('name'), person_information.get('email')
+        assert (name, email) == expected_person
+
+    def test_person_parser_no_name_failure(self):
+        person = '<emailwithoutname@email.com>'
+        parsed_person = cargo.person_parser(person)
+        assert parsed_person is None
+
+    @pytest.mark.parametrize('person, expected_person', PERSON_NO_NAME_PARSER_TEST_TABLE)
+    def test_person_parser_no_name(self, person, expected_person):
+        parsed_person = cargo.person_parser_no_name(person)
+        person_information = parsed_person.groupdict()
+        name, email = person_information.get('name'), person_information.get('email')
+        assert (name, email) == expected_person

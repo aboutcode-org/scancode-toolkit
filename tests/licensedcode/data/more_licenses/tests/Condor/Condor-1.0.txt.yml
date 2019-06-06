@@ -1,0 +1,3 @@
+license_expressions:
+  - condor-1.1
+notes: this is really a condor 1.0 but we do not track it and it is super rare

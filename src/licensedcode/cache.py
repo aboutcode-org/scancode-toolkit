@@ -185,11 +185,12 @@ def get_cached_index(cache_dir=scancode_cache_dir,
                      # used for testing only
                      timeout=LICENSE_INDEX_LOCK_TIMEOUT,
                      tree_base_dir=scancode_src_dir,
-                     licenses_data_dir=None, rules_data_dir=None,):
+                     licenses_data_dir=None, rules_data_dir=None,
+                     use_dumps=True):
     """
     Return a LicenseIndex: either load a cached index or build and cache the
     index.
-    - If the cache does not exist, a new index is built an cached.
+    - If the cache does not exist, a new index is built and cached.
     - If `check_consistency` is True, the cache is checked for consistency and
       rebuilt if inconsistent or stale.
     - If `check_consistency` is False, the cache is NOT checked for consistency
@@ -234,17 +235,23 @@ def get_cached_index(cache_dir=scancode_cache_dir,
             # Here, the cache is not consistent with the latest code and
             # data: It is either stale or non-existing: we need to
             # rebuild the index and cache it
+
+            # FIXME: caching a pickle of this would be 10x times faster
+            license_db = get_licenses_db(licenses_data_dir=licenses_data_dir)
+
             rules = get_rules(
                 licenses_data_dir=licenses_data_dir,
                 rules_data_dir=rules_data_dir)
 
-            license_db = get_licenses_db(licenses_data_dir=licenses_data_dir)
             spdx_tokens = set(get_all_spdx_key_tokens(license_db))
 
             idx = LicenseIndex(rules, _spdx_tokens=spdx_tokens)
 
             with open(cache_file, 'wb') as ifc:
-                ifc.write(idx.dumps())
+                if use_dumps:
+                    ifc.write(idx.dumps())
+                else:
+                    idx.dump(ifc)
 
             # save the new checksums tree
             with open(checksum_file, 'wb') as ctcs:
@@ -258,7 +265,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
         raise
 
 
-def load_index(cache_file):
+def load_index(cache_file, use_loads=False):
     """
     Return a LicenseIndex loaded from cache.
     """
@@ -266,7 +273,10 @@ def load_index(cache_file):
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
         try:
-            return LicenseIndex.loads(ifc.read())
+            if use_loads:
+                return LicenseIndex.loads(ifc.read())
+            else:
+                return LicenseIndex.load(ifc)
         except:
             ex_type, ex_msg, ex_traceback = sys.exc_info()
             message = (str(ex_msg) +

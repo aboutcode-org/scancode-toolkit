@@ -3,8 +3,10 @@ Version 1.0, January 1, 2003
 The Qwt library and included programs are provided under the terms
 of the GNU LESSER GENERAL PUBLIC LICENSE (LGPL) with the following
 exceptions:
+
     1. Widgets that are subclassed from Qwt widgets do not
        constitute a derivative work.
+
     2. Static linking of applications and widgets to the
        Qwt library does not constitute a derivative work
        and does not require the author to provide source
@@ -15,6 +17,7 @@ exceptions:
        version of Qwt, then the changes to Qwt must be 
        provided under the terms of the LGPL in sections
        1, 2, and 4.
+
     3. You do not have to provide a copy of the Qwt license
        with programs that are linked to the Qwt library, nor
        do you have to identify the Qwt license in your
