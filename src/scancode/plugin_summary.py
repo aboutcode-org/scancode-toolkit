@@ -32,10 +32,33 @@ from collections import OrderedDict
 
 import attr
 
+from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
+
+
+# Tracing flags
+TRACE = True
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
 @post_scan_impl
@@ -46,8 +69,7 @@ class OriginSummary(PostScanPlugin):
     """
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
-        is_summary=attr.ib(default=False, type=bool),
-        is_summarized=attr.ib(default=False, type=bool)
+        summarized_to=attr.ib(default=None, type=str)
     )
 
     sort_order = 8
@@ -55,15 +77,19 @@ class OriginSummary(PostScanPlugin):
     options = [
         CommandLineOption(('--origin-summary',),
             is_flag=True, default=False,
-            required_options=['copyright','license'],
             help='Origin summary',
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, origin_summary, copyright, license, **kwargs):
-        return origin_summary and copyright and license
+    def is_enabled(self, origin_summary, **kwargs):
+        return origin_summary
 
     def process_codebase(self, codebase, **kwargs):
+        root = codebase.get_resource(0)
+        if not hasattr(root, 'copyrights') or not hasattr(root, 'licenses'):
+            # TODO: Raise warning(?) if these fields are not there
+            return
+
         for resource in codebase.walk(topdown=False):
             # TODO: Consider facets for later
             # TODO: Group summarizations by copyright holders and license expressions
@@ -75,64 +101,43 @@ class OriginSummary(PostScanPlugin):
             if not children:
                 continue
 
-            dir_license_expressions_count = Counter()
-            dir_holders_count = Counter()
+            # TODO: Consider using a list of resource id's to avoid walking a codebase multiple times
+            origin_count = Counter()
 
             for child in children:
-                for license_expression in child.license_expressions:
-                    if child.is_file:
-                        license_expressions_count = 1
-                    else:
-                        child_license_expressions_count = child.origin_summary.get('license_expressions')
-                        license_expressions_count = child_license_expressions_count[license_expression]
-                    dir_license_expressions_count.update({license_expression: license_expressions_count})
+                if child.is_file:
+                    license_expression = combine_expressions(child.license_expressions)
+                    holders = tuple(h['value'] for h in child.holders if h['value'])
+                    if not license_expression or not holders:
+                        continue
+                    origin = holders, license_expression
+                    origin_count[origin] += 1
+                else:
+                    # We are in a subdirectory
+                    child_origin_count = child.extra_data.get('origin_count', {})
+                    origin_count.update(child_origin_count)
 
-                for holder in child.holders:
-                    holder_value = holder['value']
-                    if child.is_file:
-                        holder_count = 1
-                    else:
-                        child_holders_count = child.origin_summary.get('holders')
-                        holder_count = child_holders_count[holder_value]
-                    dir_holders_count.update({holder_value: holder_count})
-
-            file_count = resource.files_count
-
-            # TODO: Check for contradictions when performing summarizations
-            for k, v in dir_license_expressions_count.items():
-                if is_majority(v, file_count):
-                    resource.license_expressions.append(k)
-                    resource.is_summary = True
+            if origin_count:
+                resource.extra_data['origin_count'] = origin_count
+                resource.save(codebase)
+                (holders, license_expression), top_count = origin_count.most_common(1)[0]
+                # TODO: Check for contradictions when performing summarizations
+                if is_majority(top_count, resource.files_count):
+                    resource.origin_summary['license_expression'] = license_expression
+                    resource.origin_summary['holders'] = holders
+                    resource.origin_summary['count'] = top_count
                     codebase.save_resource(resource)
 
-            for k, v in dir_holders_count.items():
-                if is_majority(v, file_count):
-                    resource.holders.append(OrderedDict(value=k, start_line=None, end_line=None))
-                    resource.is_summary = True
-                    codebase.save_resource(resource)
-
-            resource.origin_summary['license_expressions'] = dir_license_expressions_count
-            resource.origin_summary['holders'] = dir_holders_count
-            codebase.save_resource(resource)
-
-        # Pass 2: tag the Resources that have been summarized
-        for resource in codebase.walk(topdown=True):
-            if resource.is_file or not resource.is_summary:
-                continue
-
-            children = resource.children(codebase)
-            if not children:
-                continue
-
-            # TODO: There's probably a more pleasing way to do this
-            for child in children:
-                for child_license_expression in child.license_expressions:
-                    for child_holder in child.holders:
-                        for resource_holder in resource.holders:
-                            if (child_license_expression in resource.license_expressions
-                                    and child_holder['value'] == resource_holder['value']):
-                                child.is_summarized = True
-                                codebase.save_resource(child)
+                    for descendant in resource.walk(codebase, topdown=True):
+                        if descendant.is_file:
+                            d_license_expression = combine_expressions(descendant.license_expressions)
+                            d_holders = tuple(h['value'] for h in descendant.holders)
+                        else:
+                            d_license_expression = descendant.origin_summary.get('license_expression')
+                            d_holders  = descendant.origin_summary.get('holders')
+                        if (d_holders, d_license_expression) == (holders, license_expression):
+                            descendant.summarized_to = resource.path
+                            descendant.save(codebase)
 
 
 def is_majority(count, files_count):
