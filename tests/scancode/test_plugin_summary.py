@@ -70,3 +70,14 @@ class TestOriginSummary(FileDrivenTesting):
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
         assert expected == results
+
+    def test_origin_summary_no_null_values_are_summarized(self):
+        scan_loc = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary.json')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary-expected.json')
+        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        with open(expected_file, 'rb') as f:
+            expected = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
+        with open(result_file, 'rb') as f:
+            results = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
+        assert expected == results
