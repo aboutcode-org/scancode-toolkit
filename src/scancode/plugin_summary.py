@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -142,7 +142,7 @@ class OriginSummary(PostScanPlugin):
 
 def is_majority(count, files_count):
     """
-    Return True is this resource is a whatever directory with at least over 50% of whatever at full depth.
+    Return True is this resource is a whatever directory with at least over 75% of whatever at full depth.
     """
     # TODO: Increase this and test with real codebases
-    return count / files_count >= 0.5
+    return count / files_count >= 0.75
