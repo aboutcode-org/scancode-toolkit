@@ -92,6 +92,10 @@ Options:
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
                              directory as a new source_file_counts attribute
+    --origin-summary         Summarize copyright holders and license expressions
+                             to the directory level if a copyright holder or
+                             license expression is detected in 75% or more of
+                             total files in a directory
     --summary                Summarize license, copyright and other scans at the
                              codebase level.
     --summary-by-facet       Summarize license, copyright and other scans and
