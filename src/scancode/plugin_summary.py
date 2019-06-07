@@ -64,8 +64,8 @@ if TRACE:
 @post_scan_impl
 class OriginSummary(PostScanPlugin):
     """
-    Rolls up copyright and license results to the directory level if a copyright or license
-    is detected in 75% or more of total files in a directory
+    Summarize copyright holders and license expressions to the directory level if a copyright holder
+    or license expression is detected in 75% or more of total files in a directory
     """
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
@@ -77,8 +77,11 @@ class OriginSummary(PostScanPlugin):
     options = [
         CommandLineOption(('--origin-summary',),
             is_flag=True, default=False,
-            help='Origin summary',
-            help_group=POST_SCAN_GROUP)
+            help='Summarize copyright holders and license expressions to the directory level '
+                 'if a copyright holder or license expression is detected in 75% or more of '
+                 'total files in a directory',
+            help_group=POST_SCAN_GROUP
+        )
     ]
 
     def is_enabled(self, origin_summary, **kwargs):
@@ -106,7 +109,7 @@ class OriginSummary(PostScanPlugin):
             for child in children:
                 if child.is_file:
                     license_expression = combine_expressions(child.license_expressions)
-                    holders = tuple(h['value'] for h in child.holders if h['value'])
+                    holders = tuple(h['value'] for h in child.holders)
                     if not license_expression or not holders:
                         continue
                     origin = holders, license_expression
@@ -145,7 +148,7 @@ class OriginSummary(PostScanPlugin):
 
 def is_majority(count, files_count):
     """
-    Return True is this resource is a whatever directory with at least over 75% of whatever at full depth.
+    Return True if `count` is 75% or more of `files_count`
     """
     # TODO: Increase this and test with real codebases
     return count / files_count >= 0.75
