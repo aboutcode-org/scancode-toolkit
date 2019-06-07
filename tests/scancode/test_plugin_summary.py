@@ -31,7 +31,6 @@ from os.path import join
 import json
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.plugin_summary import is_majority
 

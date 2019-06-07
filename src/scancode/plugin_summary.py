@@ -65,7 +65,7 @@ if TRACE:
 class OriginSummary(PostScanPlugin):
     """
     Rolls up copyright and license results to the directory level if a copyright or license
-    is detected in 50% or more of total files in a directory
+    is detected in 75% or more of total files in a directory
     """
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
@@ -92,7 +92,6 @@ class OriginSummary(PostScanPlugin):
 
         for resource in codebase.walk(topdown=False):
             # TODO: Consider facets for later
-            # TODO: Group summarizations by copyright holders and license expressions
 
             if resource.is_file:
                 continue
@@ -101,8 +100,8 @@ class OriginSummary(PostScanPlugin):
             if not children:
                 continue
 
-            # TODO: Consider using a list of resource id's to avoid walking a codebase multiple times
             origin_count = Counter()
+            child_rids = []
 
             for child in children:
                 if child.is_file:
@@ -115,7 +114,10 @@ class OriginSummary(PostScanPlugin):
                 else:
                     # We are in a subdirectory
                     child_origin_count = child.extra_data.get('origin_count', {})
+                    if not child_origin_count:
+                        continue
                     origin_count.update(child_origin_count)
+                child_rids.append(child.rid)
 
             if origin_count:
                 resource.extra_data['origin_count'] = origin_count
@@ -128,16 +130,17 @@ class OriginSummary(PostScanPlugin):
                     resource.origin_summary['count'] = top_count
                     codebase.save_resource(resource)
 
-                    for descendant in resource.walk(codebase, topdown=True):
-                        if descendant.is_file:
-                            d_license_expression = combine_expressions(descendant.license_expressions)
-                            d_holders = tuple(h['value'] for h in descendant.holders)
+                    for child_rid in child_rids:
+                        child = codebase.get_resource(child_rid)
+                        if child.is_file:
+                            child_license_expression = combine_expressions(child.license_expressions)
+                            child_holders = tuple(h['value'] for h in child.holders)
                         else:
-                            d_license_expression = descendant.origin_summary.get('license_expression')
-                            d_holders  = descendant.origin_summary.get('holders')
-                        if (d_holders, d_license_expression) == (holders, license_expression):
-                            descendant.summarized_to = resource.path
-                            descendant.save(codebase)
+                            child_license_expression = child.origin_summary.get('license_expression')
+                            child_holders  = child.origin_summary.get('holders')
+                        if (child_holders, child_license_expression) == (holders, license_expression):
+                            child.summarized_to = resource.path
+                            child.save(codebase)
 
 
 def is_majority(count, files_count):
