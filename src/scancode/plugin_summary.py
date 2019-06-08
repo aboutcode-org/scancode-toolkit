@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import Counter
+from collections import defaultdict
 from collections import OrderedDict
 
 import attr
@@ -67,6 +68,10 @@ class OriginSummary(PostScanPlugin):
     Summarize copyright holders and license expressions to the directory level if a copyright holder
     or license expression is detected in 75% or more of total files in a directory
     """
+    codebase_attributes = dict(
+        summarized_directories=attr.ib(default=attr.Factory(OrderedDict))
+    )
+
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
         summarized_to=attr.ib(default=None, type=str)
@@ -93,6 +98,9 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
+        summarized_dirs_by_license_and_holder = defaultdict(list)
+
+        # Pass 1: summarize origin clues to directory level and tag summarized Resources
         for resource in codebase.walk(topdown=False):
             # TODO: Consider facets for later
 
@@ -105,7 +113,6 @@ class OriginSummary(PostScanPlugin):
 
             origin_count = Counter()
             child_rids = []
-
             for child in children:
                 if child.is_file:
                     license_expression = combine_expressions(child.license_expressions)
@@ -125,13 +132,17 @@ class OriginSummary(PostScanPlugin):
             if origin_count:
                 resource.extra_data['origin_count'] = origin_count
                 resource.save(codebase)
-                (holders, license_expression), top_count = origin_count.most_common(1)[0]
+                origin, top_count = origin_count.most_common(1)[0]
+                holders, license_expression = origin
                 # TODO: Check for contradictions when performing summarizations
                 if is_majority(top_count, resource.files_count):
                     resource.origin_summary['license_expression'] = license_expression
                     resource.origin_summary['holders'] = holders
                     resource.origin_summary['count'] = top_count
                     codebase.save_resource(resource)
+
+                    if resource.is_dir:
+                        summarized_dirs_by_license_and_holder[origin].append(resource.path)
 
                     for child_rid in child_rids:
                         child = codebase.get_resource(child_rid)
@@ -144,6 +155,13 @@ class OriginSummary(PostScanPlugin):
                         if (child_holders, child_license_expression) == (holders, license_expression):
                             child.summarized_to = resource.path
                             child.save(codebase)
+
+        for (holders, license_expression), summarized_dirs in summarized_dirs_by_license_and_holder.items():
+            holder = ', '.join(holders)
+            if holder in codebase.attributes.summarized_directories:
+                codebase.attributes.summarized_directories[holder][license_expression].extend(sorted(summarized_dirs))
+            else:
+                codebase.attributes.summarized_directories[holder] = {license_expression: sorted(summarized_dirs)}
 
 
 def is_majority(count, files_count):
