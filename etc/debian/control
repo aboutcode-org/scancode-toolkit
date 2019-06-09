@@ -1,0 +1,36 @@
+Source: scancode-toolkit
+Section: unknown
+Priority: optional
+Maintainer: root <root@40825ee16090>
+Build-Depends: debhelper (>= 11), dh-python, python, python-setuptools
+Standards-Version: 4.1.3
+Homepage: <insert the upstream URL, if relevant>
+X-Python-Version: >= 2.6
+X-Python3-Version: >= 3.2
+
+Package: python-scancode-toolkit
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Suggests: python-scancode-toolkit-doc
+Description: <insert up to 60 chars description> (Python 2)
+ <insert long description, indented with spaces>
+ .
+ This package installs the library for Python 2.
+
+Package: python3-scancode-toolkit
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Suggests: python-scancode-toolkit-doc
+Description: <insert up to 60 chars description> (Python 3)
+ <insert long description, indented with spaces>
+ .
+ This package installs the library for Python 3.
+
+Package: python-scancode-toolkit-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Description: <insert up to 60 chars description> (common documentation)
+ <insert long description, indented with spaces>
+ .
+ This is the common documentation package.

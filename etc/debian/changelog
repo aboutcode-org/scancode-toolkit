@@ -1,0 +1,5 @@
+scancode-toolkit (3.0.2.post811.bdc0a6db4-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- root <root@40825ee16090>  Sat, 08 Jun 2019 05:48:34 +0000
