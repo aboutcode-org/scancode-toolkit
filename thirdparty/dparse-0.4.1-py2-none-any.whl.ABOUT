@@ -1,0 +1,11 @@
+about_resource: dparse-0.4.1-py2-none-any.whl
+copyright: Copyright (c) 2017, Jannis Gebauer
+description: A parser for Python dependency files
+download_url: https://files.pythonhosted.org/packages/8b/47/15ed57610527be03bd9a3f0853bc5a22f87f6e80cbe59a2608b30f19ed78/dparse-0.4.1-py2-none-any.whl
+homepage_url: https://github.com/pyupio/dparse
+license_expression: mit
+license_file: dparse-0.4.1-py2-none-any.whl.LICENSE
+name: dparse
+owner: Jannis Gebauer
+vcs_url: https://github.com/pyupio/dparse
+version: 0.4.1
