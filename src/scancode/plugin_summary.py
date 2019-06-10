@@ -69,7 +69,8 @@ class OriginSummary(PostScanPlugin):
     or license expression is detected in 75% or more of total files in a directory
     """
     codebase_attributes = dict(
-        summarized_directories=attr.ib(default=attr.Factory(OrderedDict))
+        # TODO: we cannot maintain sort order with defaultdict
+        summarized_directories=attr.ib(default=attr.Factory(lambda: defaultdict(lambda: defaultdict(list))))
     )
 
     resource_attributes = dict(
@@ -156,12 +157,10 @@ class OriginSummary(PostScanPlugin):
                             child.summarized_to = resource.path
                             child.save(codebase)
 
+        # TODO: Deal with maintaining sort order
         for (holders, license_expression), summarized_dirs in summarized_dirs_by_license_and_holder.items():
-            holder = ', '.join(holders)
-            if holder in codebase.attributes.summarized_directories:
-                codebase.attributes.summarized_directories[holder][license_expression].extend(sorted(summarized_dirs))
-            else:
-                codebase.attributes.summarized_directories[holder] = {license_expression: sorted(summarized_dirs)}
+            holder = '\n'.join(holders)
+            codebase.attributes.summarized_directories[license_expression][holder].extend(sorted(summarized_dirs))
 
 
 def is_majority(count, files_count):
