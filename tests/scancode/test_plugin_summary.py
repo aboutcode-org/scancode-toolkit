@@ -41,12 +41,20 @@ class TestOriginSummary(FileDrivenTesting):
     def test_is_majority_above_threshold(self):
         files_count = 10
         src_count = 8
-        assert is_majority(src_count, files_count)
+        threshold = None
+        assert is_majority(src_count, files_count, threshold)
 
     def test_is_majority_below_threshold(self):
         files_count = 10
         src_count = 7
-        assert not is_majority(src_count, files_count)
+        threshold = None
+        assert not is_majority(src_count, files_count, threshold)
+
+    def test_is_majority_set_custom_threshold(self):
+        files_count = 10
+        src_count = 6
+        threshold = 0.5
+        assert is_majority(src_count, files_count, threshold)
 
     def test_origin_summary_clear_summary(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary.json')
