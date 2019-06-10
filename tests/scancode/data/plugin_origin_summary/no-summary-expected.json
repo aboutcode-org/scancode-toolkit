@@ -9,13 +9,32 @@
         ],
         "--copyright": true,
         "--info": true,
+        "--json-pp": "no-summary.json",
+        "--license": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2019-06-06T234629.299676",
+      "end_timestamp": "2019-06-06T234634.617394",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.0.2.post622.ca4dcb2.dirty.20190530214353",
+      "options": {
+        "input": [
+          "no-summary.json"
+        ],
+        "--from-json": true,
         "--json-pp": "no-summary-expected.json",
-        "--license": true,
         "--origin-summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-06-07T012821.074369",
-      "end_timestamp": "2019-06-07T012825.892004",
+      "start_timestamp": "2019-06-10T234749.437124",
+      "end_timestamp": "2019-06-10T234749.457181",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -23,6 +42,20 @@
       }
     }
   ],
+  "summarized_directories": {
+    "apache-2.0": {
+      "Acme Corporation": [
+        "no_summary/src"
+      ]
+    },
+    "mit": {
+      "Omega Inc.": [
+        "no_summary/third_party",
+        "no_summary/third_party/module_2",
+        "no_summary/third_party/module_3"
+      ]
+    }
+  },
   "files": [
     {
       "path": "no_summary",
