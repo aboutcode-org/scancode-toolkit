@@ -84,7 +84,13 @@ class OriginSummary(PostScanPlugin):
             is_flag=True, default=False,
             help='Summarize copyright holders and license expressions to the directory level '
                  'if a copyright holder or license expression is detected in 75% or more of '
-                 'total files in a directory',
+                 'total files in a directory.',
+            help_group=POST_SCAN_GROUP
+        ),
+        CommandLineOption(('--origin-summary-threshold',),
+            is_flag=False, default=False,
+            help='Set a custom threshold for origin summarization.',
+            required_options=['origin_summary'],
             help_group=POST_SCAN_GROUP
         )
     ]
@@ -92,7 +98,7 @@ class OriginSummary(PostScanPlugin):
     def is_enabled(self, origin_summary, **kwargs):
         return origin_summary
 
-    def process_codebase(self, codebase, **kwargs):
+    def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
         root = codebase.get_resource(0)
         if not hasattr(root, 'copyrights') or not hasattr(root, 'licenses'):
             # TODO: Raise warning(?) if these fields are not there
@@ -135,7 +141,7 @@ class OriginSummary(PostScanPlugin):
                 origin, top_count = origin_count.most_common(1)[0]
                 holders, license_expression = origin
                 # TODO: Check for contradictions when performing summarizations
-                if is_majority(top_count, resource.files_count):
+                if is_majority(top_count, resource.files_count, origin_summary_threshold):
                     resource.origin_summary['license_expression'] = license_expression
                     resource.origin_summary['holders'] = holders
                     resource.origin_summary['count'] = top_count
@@ -172,9 +178,10 @@ class OriginSummary(PostScanPlugin):
                     codebase_summarized_dirs[license_expression] = OrderedDict({holder: sorted_summarized_dirs})
 
 
-def is_majority(count, files_count):
+def is_majority(count, files_count, threshold):
     """
-    Return True if `count` is 75% or more of `files_count`
+    Return True if `count` divided by `files_count` is greater than or equal to `threshold`
     """
     # TODO: Increase this and test with real codebases
-    return count / files_count >= 0.75
+    threshold = threshold or 0.75
+    return count / files_count >= threshold
