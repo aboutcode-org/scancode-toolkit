@@ -98,9 +98,9 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        summarized_dirs_by_license_and_holder = defaultdict(list)
+        summarized_dirs_by_license_and_holder = defaultdict(lambda: defaultdict(list))
 
-        # Pass 1: summarize origin clues to directory level and tag summarized Resources
+        # Summarize origin clues to directory level and tag summarized Resources
         for resource in codebase.walk(topdown=False):
             # TODO: Consider facets for later
 
@@ -142,7 +142,8 @@ class OriginSummary(PostScanPlugin):
                     codebase.save_resource(resource)
 
                     if resource.is_dir:
-                        summarized_dirs_by_license_and_holder[origin].append(resource.path)
+                        holder = '\n'.join(holders)
+                        summarized_dirs_by_license_and_holder[license_expression][holder].append(resource.path)
 
                     for child_rid in child_rids:
                         child = codebase.get_resource(child_rid)
@@ -156,18 +157,19 @@ class OriginSummary(PostScanPlugin):
                             child.summarized_to = resource.path
                             child.save(codebase)
 
-        repacked_summarized_dirs = defaultdict(lambda: defaultdict(list))
-        for (holders, license_expression), summarized_dirs in summarized_dirs_by_license_and_holder.items():
-            holder = '\n'.join(holders)
-            repacked_summarized_dirs[license_expression][holder].extend(summarized_dirs)
-
-        for license_expression, summarized_dirs_by_holders in sorted(repacked_summarized_dirs.items()):
+        # Add summarized directory info to the `summarized_directories` codebase attribute in sorted order
+        for license_expression, summarized_dirs_by_holders in sorted(summarized_dirs_by_license_and_holder.items()):
             for holder, summarized_dirs in sorted(summarized_dirs_by_holders.items()):
-                codebase_summarized_directories = codebase.attributes.summarized_directories
-                if license_expression in codebase_summarized_directories:
-                    codebase.attributes.summarized_directories[license_expression].update({holder: sorted(summarized_dirs)})
+                codebase_summarized_dirs = codebase.attributes.summarized_directories
+                sorted_summarized_dirs = sorted(summarized_dirs)
+                # TODO: These checks could be avoided if there was an ordered defaultdict
+                if license_expression in codebase_summarized_dirs:
+                    if holder in codebase_summarized_dirs[license_expression]:
+                        codebase_summarized_dirs[license_expression][holder].extend(sorted_summarized_dirs)
+                    else:
+                        codebase_summarized_dirs[license_expression][holder] = sorted_summarized_dirs
                 else:
-                    codebase.attributes.summarized_directories[license_expression] = OrderedDict({holder: sorted(summarized_dirs)})
+                    codebase_summarized_dirs[license_expression] = OrderedDict({holder: sorted_summarized_dirs})
 
 
 def is_majority(count, files_count):
