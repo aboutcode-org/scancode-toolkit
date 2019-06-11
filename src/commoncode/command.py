@@ -42,6 +42,7 @@ from commoncode.fileutils import fsencode
 from commoncode.fileutils import get_temp_dir
 from commoncode.system import on_linux
 from commoncode.system import on_windows
+from commoncode.system import py2
 from commoncode import text
 
 # Python 2 and 3 support
@@ -225,8 +226,12 @@ def load_shared_library(dll_path, lib_dir):
 
     raise ImportError('Failed to load shared library with ctypes: %(dll_path)r and lib_dir:  %(lib_dir)r' % locals())
 
+if py2:
+    PATH_ENV_VAR = b'PATH'
+else:
+    PATH_ENV_VAR = 'PATH'
 
-def update_path_environment(new_path, _os_module=_os_module):
+def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_ENV_VAR):
     """
     Update the PATH environment variable by adding `new_path` to the front
     of PATH if `new_path` is not alreday in the PATH.
@@ -242,7 +247,7 @@ def update_path_environment(new_path, _os_module=_os_module):
     if not new_path:
         return
 
-    path_env = _os_module.environ.get(b'PATH')
+    path_env = _os_module.environ.get(_path_env_var)
     if not path_env:
         # this is quite unlikely to ever happen, but here for safety
         path_env = ''
@@ -271,4 +276,4 @@ def update_path_environment(new_path, _os_module=_os_module):
             # recode to bytes using FS encoding
             new_path_env = fsencode(new_path_env)
         # ... and set the variable back as bytes
-        _os_module.environ[b'PATH'] = new_path_env
+        _os_module.environ[_path_env_var] = new_path_env
