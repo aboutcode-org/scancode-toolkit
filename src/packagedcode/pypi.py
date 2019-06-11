@@ -41,11 +41,15 @@ from pkginfo import SDist
 from pkginfo import UnpackedSDist
 from pkginfo import Wheel
 
+import dparse
+from dparse import filetypes
+
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
+from packageurl import PackageURL
 
 
 """
@@ -418,6 +422,34 @@ def parse_with_pkginfo(object):
             common_data['parties'].append(models.Party(
                 type=models.party_person, name=object.maintainer, role='author', email=object.maintainer_email))
         return package
+
+
+def parse_with_dparse(location):
+    file_name = fileutils.file_name(location)
+    if file_name not in (filetypes.requirements_txt,
+                         filetypes.conda_yml,
+                         filetypes.tox_ini,
+                         filetypes.pipfile,
+                         filetypes.pipfile_lock):
+        return
+    with open(location, 'rb') as f:
+        content = f.read()
+        df = dparse.parse(content, file_type=file_name)
+        df_dependencies = df.dependencies
+        if not df_dependencies:
+            return
+        package_dependencies = []
+        for df_dependency in df_dependencies:
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='pypi', name=df_dependency.name).to_string(),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                )
+            )
+        return package_dependencies
 
 
 def build_package(package_data):
