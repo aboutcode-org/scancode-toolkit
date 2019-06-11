@@ -62,10 +62,15 @@ class TestOriginSummary(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_origin_summary/clear-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
-            expected = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
+            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
-        assert expected == results
+            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            summarized_directories_results = results['summarized_directories']
+            files_results = results['files']
+        assert expected_summarized_directories == summarized_directories_results
+        assert expected_files == files_results
 
     def test_origin_summary_no_summary(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/no-summary.json')
@@ -73,10 +78,15 @@ class TestOriginSummary(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_origin_summary/no-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
-            expected = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
+            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
-        assert expected == results
+            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            summarized_directories_results = results['summarized_directories']
+            files_results = results['files']
+        assert expected_summarized_directories == summarized_directories_results
+        assert expected_files == files_results
 
     def test_origin_summary_no_null_values_are_summarized(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary.json')
@@ -84,7 +94,12 @@ class TestOriginSummary(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
-            expected = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
+            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)['files']
-        assert expected == results
+            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            summarized_directories_results = results['summarized_directories']
+            files_results = results['files']
+        assert expected_summarized_directories == summarized_directories_results
+        assert expected_files == files_results
