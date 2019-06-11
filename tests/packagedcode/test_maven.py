@@ -499,7 +499,6 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
     if isinstance(test_name, unicode):
         test_name = test_name.encode('utf-8')
     test_pom.__name__ = test_name
-    test_pom.funcname = test_name
     return test_pom
 
 

@@ -248,8 +248,7 @@ def make_test(license_test, regen=False):
             assert '\n'.join(results) == '\n'.join(failure_trace)
 
     closure_test_function.__name__ = test_name
-    closure_test_function.funcname = test_name
-
+    
     if expected_failure:
         closure_test_function = unittest.expectedFailure(closure_test_function)
 

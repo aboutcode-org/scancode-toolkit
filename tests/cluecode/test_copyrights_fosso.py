@@ -142,7 +142,6 @@ def build_copyright_test_methods_with_fossology_data():
             test_name = test_name.encode('utf-8')
 
         test_method.__name__ = test_name
-        test_method.funcname = test_name
 
         if test_name in expected_failures:
             test_method = pytest.mark.xfail(test_method)

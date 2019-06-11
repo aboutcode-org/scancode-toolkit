@@ -148,7 +148,6 @@ def create_test_function(test_loc, test_name, regen=False):
     if isinstance(test_name, unicode):
         test_name = test_name.encode('utf-8')
     check_rubygem.__name__ = test_name
-    check_rubygem.funcname = test_name
     return check_rubygem
 
 
