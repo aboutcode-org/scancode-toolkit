@@ -164,8 +164,8 @@ class OriginSummary(PostScanPlugin):
                             child.save(codebase)
 
         # Add summarized directory info to the `summarized_directories` codebase attribute in sorted order
-        for license_expression, summarized_dirs_by_holders in sorted(summarized_dirs_by_license_and_holder.items()):
-            for holder, summarized_dirs in sorted(summarized_dirs_by_holders.items()):
+        for license_expression, summarized_dirs_by_holders in iter(sorted(summarized_dirs_by_license_and_holder.iteritems())):
+            for holder, summarized_dirs in iter(sorted(summarized_dirs_by_holders.iteritems())):
                 codebase_summarized_dirs = codebase.attributes.summarized_directories
                 sorted_summarized_dirs = sorted(summarized_dirs)
                 # TODO: These checks could be avoided if there was an ordered defaultdict

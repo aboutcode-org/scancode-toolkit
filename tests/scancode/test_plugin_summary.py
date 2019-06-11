@@ -103,3 +103,22 @@ class TestOriginSummary(FileDrivenTesting):
             files_results = results['files']
         assert expected_summarized_directories == summarized_directories_results
         assert expected_files == files_results
+
+    def test_origin_summary_custom_threshold(self):
+        scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary.json')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_origin_summary/custom-threshold-expected.json')
+        threshold = '1'
+        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file, '--origin-summary-threshold', threshold])
+        with open(expected_file, 'rb') as f:
+            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            expected_custom_threshold = expected_scan['headers'][-1]['options']['--origin-summary-threshold']
+            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_files = expected_scan['files']
+        with open(result_file, 'rb') as f:
+            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            summarized_directories_results = results['summarized_directories']
+            files_results = results['files']
+        assert expected_custom_threshold == threshold
+        assert expected_summarized_directories == summarized_directories_results
+        assert expected_files == files_results
