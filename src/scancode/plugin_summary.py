@@ -178,7 +178,7 @@ class OriginSummary(PostScanPlugin):
                     codebase_summarized_dirs[license_expression] = OrderedDict({holder: sorted_summarized_dirs})
 
 
-def is_majority(count, files_count, threshold):
+def is_majority(count, files_count, threshold=None):
     """
     Return True if `count` divided by `files_count` is greater than or equal to `threshold`
     """
