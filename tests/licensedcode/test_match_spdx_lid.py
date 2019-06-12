@@ -113,7 +113,6 @@ def build_spdx_line_tests(clazz, test_dir='spdx/lines', regen=False):
         test_name = str(test_name)
         test_method = get_query_spdx_lines_test_method(test_loc, expected_loc, regen)
         test_method.__name__ = test_name
-        test_method.funcname = test_name
         # attach that method to our test class
         setattr(clazz, test_name, test_method)
 

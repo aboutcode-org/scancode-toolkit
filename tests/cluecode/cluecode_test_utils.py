@@ -265,7 +265,6 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
         test_name = test_name.encode('utf-8')
 
     closure_test_function.__name__ = test_name
-    closure_test_function.funcname = test_name
 
     if test.expected_failures:
         closure_test_function = expectedFailure(closure_test_function)
