@@ -41,7 +41,7 @@ from multiprocessing import pool
 
 def wrapped(func):
     # ensure that we do not double wrap
-    if func.func_name != 'wrap':
+    if func.__name__ != 'wrap':
 
         def wrap(self, timeout=None):
             return func(self, timeout=timeout or 1e10)
