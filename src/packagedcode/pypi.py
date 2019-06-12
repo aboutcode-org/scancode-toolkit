@@ -342,7 +342,10 @@ def parse2(location):
     is_dir = filetype.is_dir(location)
     if is_dir:
         parser = parse_unpackaged_source
-        return parser(location)
+        package =  parser(location)
+        if package:
+            parse_dependencies(location, package)
+            return package
     else:
         file_name = fileutils.file_name(location)
         parsers = {
@@ -354,8 +357,23 @@ def parse2(location):
         }
         for name, parser in parsers.items():
             if file_name.endswith(name):
-                return parser(location)
+                package =  parser(location)
+                if package:
+                    parent_directory = fileutils.parent_directory(location)
+                    parse_dependencies(parent_directory, package)
+                    return package
 
+
+def parse_dependencies(location, package):
+    """
+    Loop all resources from the passing folder location, get the dependencies from the resources and set it to the passing package object.
+    """
+    for resource_location in os.listdir(location):
+        dependencies = parse_with_dparse(resource_location)
+        if dependencies:
+            package.dependencies = dependencies
+    
+    
 
 def parse_source_distribution(location):
     """
@@ -425,6 +443,9 @@ def parse_with_pkginfo(object):
 
 
 def parse_with_dparse(location):
+    is_dir = filetype.is_dir(location)
+    if is_dir:
+        return
     file_name = fileutils.file_name(location)
     if file_name not in (filetypes.requirements_txt,
                          filetypes.conda_yml,
