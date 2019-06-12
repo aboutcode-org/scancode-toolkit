@@ -421,24 +421,24 @@ def parse_wheel(location):
     return parse_with_pkginfo(wheel)
 
 
-def parse_with_pkginfo(object):
-    if object and object.name:
+def parse_with_pkginfo(pkginfo):
+    if pkginfo and pkginfo.name:
         common_data = dict(
-            name=object.name,
-            version=object.version,
-            description = object.description,
-            download_url = object.download_url,
-            homepage_url = object.home_page,
+            name=pkginfo.name,
+            version=pkginfo.version,
+            description = pkginfo.description,
+            download_url = pkginfo.download_url,
+            homepage_url = pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
-        if object.license:
+        if pkginfo.license:
             #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
-            package.declared_license = {'license': object.license}
+            package.declared_license = {'license': pkginfo.license}
         
-        if object.maintainer:
+        if pkginfo.maintainer:
             common_data['parties'] = []
             common_data['parties'].append(models.Party(
-                type=models.party_person, name=object.maintainer, role='author', email=object.maintainer_email))
+                type=models.party_person, name=pkginfo.maintainer, role='author', email=pkginfo.maintainer_email))
         return package
 
 
@@ -461,6 +461,10 @@ def parse_with_dparse(location):
             return
         package_dependencies = []
         for df_dependency in df_dependencies:
+            specs = df_dependency.specs
+            requirement = None
+            if specs:
+                requirement = str(specs)
             package_dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -468,6 +472,7 @@ def parse_with_dparse(location):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
+                    requirement = requirement,
                 )
             )
         return package_dependencies
