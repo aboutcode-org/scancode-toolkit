@@ -89,6 +89,20 @@ if TRACE:
 PATH_TYPE = bytes if on_linux else unicode
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
+
+if on_linux:
+    PATH_TYPE = bytes 
+    POSIX_PATH_SEP = b'/'        
+    WIN_PATH_SEP = b'\\'
+    EMPTY_STRING = b''
+    DOT = b'.'
+else:
+    PATH_TYPE = unicode
+    POSIX_PATH_SEP = '/'
+    WIN_PATH_SEP = '\\'
+    EMPTY_STRING = ''
+    DOT = '.'
+
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 EMPTY_STRING = b'' if on_linux else ''
 DOT = b'.' if on_linux else '.'
