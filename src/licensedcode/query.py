@@ -370,10 +370,10 @@ class Query(object):
                     # keep the line, start/end known pos for SPDX matching
                     spdx_text = strip_spdx_lid(line)
                     spdx_start_known_pos = line_start_known_pos + spdx_start_offset
-                    if spdx_start_known_pos < line_end_known_pos:
+                    if TRACE_SPDX:
+                        logger_debug('tokens_by_line: spdx-line:', (spdx_text, spdx_start_known_pos, line_end_known_pos))
+                    if spdx_start_known_pos <= line_end_known_pos:
                         self.spdx_lines.append((spdx_text, spdx_start_known_pos, line_end_known_pos))
-                        if TRACE:
-                            logger_debug('tokens_by_line: spdx-line:', spdx_text)
 
             yield line_tokens
 
