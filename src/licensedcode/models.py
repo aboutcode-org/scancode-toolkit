@@ -992,16 +992,15 @@ class Rule(object):
             msg = 'License rule {} is missing a license_expression.'
             raise Exception(msg.format(self))
 
-        relevance = data.get('relevance')
-        if relevance is not None:
+        relevance = float(data.get('relevance', 0))
+        if relevance:
+            if relevance <= 0 or relevance > 100:
+                msg = ('License rule {} data file has an invalid relevance. '
+                       'Should be above 0 and 100 or less: {}')
+                raise Exception(msg.format(self, repr(relevance)))
             # Keep track if we have a stored relevance of not.
+            self.relevance = relevance
             self.has_stored_relevance = True
-            self.relevance = float(relevance)
-            if not (0 < self.relevance <= 100):
-                msg = (
-                    'License rule {} data file has an invalid relevance. '
-                    'Should be between 0 and 100: {}')
-                raise Exception(msg.format(self, unknown_attributes))
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
         self._minimum_containment = self.minimum_coverage / 100
@@ -1058,11 +1057,15 @@ class Rule(object):
 
         The current threshold is 18 words.
         """
+
+        if isinstance(self, SpdxRule):
+            self.relevance = 100
+            return
+
         if self.has_stored_relevance:
             return
 
-        # case for false positive: they do not have licenses and their matches are
-        # never returned. Relevance is zero.
+        # case for false positive
         if self.is_false_positive:
             self.relevance = 100
             return
@@ -1093,8 +1096,8 @@ class Rule(object):
             self.is_license_text
             or self.is_license_notice
             or self.is_license_reference
-            or self.is_license_tag
-        )
+            or self.is_license_tag)
+
 
 def compute_thresholds_occurences(minimum_coverage, length, high_length,
         _MIN_MATCH_HIGH_LENGTH=MIN_MATCH_HIGH_LENGTH,
@@ -1187,18 +1190,15 @@ class SpdxRule(Rule):
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.identifier = 'spdx-license-identifier: ' + self.license_expression
-        self.has_stored_relevance = True
-        self.relevance = 100
-
+        expression = None
         try:
             expression = self.licensing.parse(self.license_expression)
         except:
             raise Exception(
                 'Unable to parse License rule expression: ' +
-                repr(self.license_expression) + ' for: file://' +
-                (self.data_file or '') +
-                '\n' + traceback.format_exc()
-            )
+                repr(self.license_expression) + ' for: SPDX rule:' +
+                self.stored_text +
+                '\n' + traceback.format_exc())
         if expression is None:
             raise Exception(
                 'Unable to parse License rule expression: '
