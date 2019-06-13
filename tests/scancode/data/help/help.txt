@@ -16,7 +16,8 @@ Options:
     -i, --info         Scan <input> for file information (size, checksums, etc).
     --generated        Classify automatically generated code files with a flag.
     -e, --email        Scan <input> for emails.
-    -f, --fingerprint  Scan <input> to generate fingerprint.
+    -f, --fingerprint  Scan <input> to generate simhash fingerprints for
+                       similarity matching.
     -u, --url          Scan <input> for urls.
 
   scan options:
