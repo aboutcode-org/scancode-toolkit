@@ -45,6 +45,8 @@ from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
 from licensedcode.match import reportable_tokens
+from licensedcode import models
+from licensedcode.index import LicenseIndex
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -1136,3 +1138,19 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             Token(value=u'\n', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False)]
 
         assert expected == result
+
+    def test_matched_text_is_collected_correctly_end2end(self):
+        licenses_data_dir = self.get_test_loc('matched_text/index/licenses')
+        rules_data_dir = self.get_test_loc('matched_text/index/rules')
+        query_location= self.get_test_loc('matched_text/query.txt')
+        rules = models.get_rules(licenses_data_dir, rules_data_dir)
+        idx = LicenseIndex(rules)
+
+        results= [match.matched_text() for match in idx.match(location=query_location)]
+        expected =[
+            'This source code is licensed under both the Apache 2.0 license '
+            '(found in the\n#  LICENSE',
+            'This source code is licensed under [both] [the] [Apache] [2].[0] license '
+            '(found in the\n#  LICENSE file in the root directory of this source tree)',
+            'GPLv2 (']
+        assert expected == results

@@ -77,8 +77,8 @@ if (TRACE
     or TRACE_FILTER_SHORT
     or TRACE_FILTER_RULE_MIN_COVERAGE
     or TRACE_FILTER_LOW_SCORE
-    or TRACE_MATCHED_TEXT
     or TRACE_SET_LINES
+    or TRACE_MATCHED_TEXT
     or TRACE_MATCHED_TEXT_DETAILS):
 
     import logging
@@ -1369,7 +1369,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     return matches, all_discarded
 
 
-@attr.s(slots=True)
+@attr.s(slots=True, frozen=True)
 class Token(object):
     """
     Used to represent a token in collected matched texts and SPDX identifiers.
@@ -1416,15 +1416,17 @@ def _tokenize_matched_text(location, query_string, dictionary):
     for line_num, line in query.query_lines(location, query_string, strip=False):
         for is_text, token_str in matched_query_text_tokenizer(line):
             known = token_str.lower() in dictionary
-            tok = Token(
+            if known:
+                pos += 1
+                p = pos
+            else:
+                p = -1
+            yield Token(
                 value=token_str,
                 line_num=line_num,
                 is_text=is_text,
-                is_known=known)
-            if known:
-                pos += 1
-                tok.pos = pos
-            yield tok
+                is_known=known,
+                pos=p)
 
 
 def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
@@ -1459,7 +1461,7 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
 
         # tagged known matched tokens (useful for highlighting)
         if tok.pos != -1 and tok.is_known and tok.pos in match_qspan:
-            tok.is_matched = True
+            tok = attr.evolve(tok, is_matched = True)
             is_included = True
             if TRACE_MATCHED_TEXT_DETAILS:
                 logger_debug('  tok.is_matched = True')
