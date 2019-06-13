@@ -36,16 +36,15 @@ jobs:
   pool:
      vmImage: $(imageName)
     
-     steps:
-    
-      - task: UsePythonVersion@0
-        inputs:
-        versionSpec: '$(pythonVersion)'
-        architecture: 'x64'
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+     versionSpec: '$(pythonVersion)'
+     architecture: 'x64'
       
-      - script: |
-         ./configure
-         ./bin/py.test -vvs tests/commoncode
+  - script: ./configure
+  - script: ./bin/py.test -vvs tests/commoncode
+
 - job : TestSuite2
   displayName: Performing test On Windows
   strategy:
@@ -73,13 +72,12 @@ jobs:
   pool:
      vmImage: $(imageName)
     
-     steps:
+  steps:
     
-      - task: UsePythonVersion@0
-        inputs:
-        versionSpec: '$(pythonVersion)'
-        architecture: 'x64'
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(pythonVersion)'
+      architecture: 'x64'
       
-      - script: |
-         configure
-         ./bin/py.test -vvs tests/commoncode
+  - script: configure
+  - script: ./bin/py.test -vvs tests/commoncode
