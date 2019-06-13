@@ -63,13 +63,13 @@ class TestOriginSummary(FileDrivenTesting):
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
             expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_summaries = expected_scan['summaries']
             expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summarized_directories_results = results['summarized_directories']
+            summaries_results = results['summaries']
             files_results = results['files']
-        assert expected_summarized_directories == summarized_directories_results
+        assert expected_summaries == summaries_results
         assert expected_files == files_results
 
     def test_origin_summary_no_summary(self):
@@ -79,13 +79,13 @@ class TestOriginSummary(FileDrivenTesting):
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
             expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_summaries = expected_scan['summaries']
             expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summarized_directories_results = results['summarized_directories']
+            summaries_results = results['summaries']
             files_results = results['files']
-        assert expected_summarized_directories == summarized_directories_results
+        assert expected_summaries == summaries_results
         assert expected_files == files_results
 
     def test_origin_summary_no_null_values_are_summarized(self):
@@ -95,13 +95,13 @@ class TestOriginSummary(FileDrivenTesting):
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
         with open(expected_file, 'rb') as f:
             expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_summaries = expected_scan['summaries']
             expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summarized_directories_results = results['summarized_directories']
+            summaries_results = results['summaries']
             files_results = results['files']
-        assert expected_summarized_directories == summarized_directories_results
+        assert expected_summaries == summaries_results
         assert expected_files == files_results
 
     def test_origin_summary_custom_threshold(self):
@@ -113,13 +113,13 @@ class TestOriginSummary(FileDrivenTesting):
         with open(expected_file, 'rb') as f:
             expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
             expected_custom_threshold = expected_scan['headers'][-1]['options']['--origin-summary-threshold']
-            expected_summarized_directories = expected_scan['summarized_directories']
+            expected_summaries = expected_scan['summaries']
             expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)
             result_threshold = results['headers'][-1]['options']['--origin-summary-threshold']
-            summarized_directories_results = results['summarized_directories']
+            summaries_results = results['summaries']
             files_results = results['files']
         assert expected_custom_threshold == result_threshold
-        assert expected_summarized_directories == summarized_directories_results
+        assert expected_summaries == summaries_results
         assert expected_files == files_results
