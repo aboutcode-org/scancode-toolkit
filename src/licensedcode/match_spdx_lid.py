@@ -152,6 +152,8 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
     other error happens somehow, this function returns instead a bare
     expression made of only "unknown-spdx" symbol.
     """
+    if TRACE:
+        logger_debug('get_expression:text:', text)
     expression = None
     try:
         expression = _parse_expression(text, licensing, spdx_symbols, unknown_symbol)

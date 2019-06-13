@@ -354,11 +354,13 @@ class Query(object):
 
             line_end_known_pos = known_pos
             # this works ONLY if the line starts with SPDX or we have one word
-            # (such as acomment indicator DNL, REM etc.) and an SPDX id)
+            # (such as a comment indicator DNL, REM etc.) and an SPDX id)
             if do_collect_spdx_lines and (
                 line_tokens[:3] == spdx_lid_token_ids
                 or line_tokens[1:4] == spdx_lid_token_ids):
                 # keep the line, start/end  known pos for SPDX matching
+                if TRACE:
+                    logger_debug('tokens_by_line: spdx-line:', line)
                 self.spdx_lines.append((line, line_start_known_pos, line_end_known_pos))
 
             yield line_tokens
