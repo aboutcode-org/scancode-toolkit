@@ -64,7 +64,7 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-MATCH_SPDX_ID = '4-spdx-id'
+MATCH_SPDX_ID = '1-spdx-id'
 
 
 def spdx_id_match(idx, query_run, text):
@@ -101,13 +101,12 @@ def spdx_id_match(idx, query_run, text):
     match_start = query_run.start
     matched_tokens = query_run.tokens
 
-    # are we starting with SPDX-License-Identifier or not? if yes: fix start
+    if TRACE:
+        logger_debug('spdx_id_match: matched_tokens: 1:', 
+                     matched_tokens, [idx.tokens_by_tid[tid] for tid in matched_tokens])
+
     cleaned = clean_text(text).lower()
-    # FIXME: dnl and rem may not be known tokens hence the pos will be wrong
-    if cleaned.startswith(('list', 'dnl', 'rem',)):
-        match_start += 1
-        match_len -= 1
-        matched_tokens = matched_tokens[1:]
+    if TRACE: logger_debug('spdx_id_match: cleaned :', cleaned)
 
     # build synthetic rule
     # TODO: ensure that all the SPDX license keys are known symbols
@@ -121,6 +120,10 @@ def spdx_id_match(idx, query_run, text):
         # not padded originally with this tag
         stored_text=text,
         length=match_len)
+
+    if TRACE:
+        logger_debug('spdx_id_match: synthetic rule:', rule.relevance)
+        logger_debug('spdx_id_match: synthetic rule:', rule)
 
     # build match from parsed expression
     # collect match start and end: e.g. the whole text
@@ -152,6 +155,10 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
     other error happens somehow, this function returns instead a bare
     expression made of only "unknown-spdx" symbol.
     """
+    text = prepare_text(text)
+    if not text:
+        return
+
     if TRACE:
         logger_debug('get_expression:text:', text)
     expression = None
@@ -160,6 +167,8 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
         if TRACE:
             logger_debug('get_expression:1:', expression)
     except Exception:
+        if TRACE: logger_debug('get_expression:failed1:')
+
         try:
             # try to parse again using a lenient recovering parsing process
             # such as for plain space or comma-separated list of licenses (e.g. UBoot)
@@ -167,6 +176,8 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
             if TRACE:
                 logger_debug('get_expression:2:', expression)
         except Exception:
+            if TRACE:
+                logger_debug('get_expression:3: failing')
             pass
 
     if expression is None:
@@ -215,7 +226,6 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     `licensing` reference Licensing. Return None or raise an exception on
     errors.
     """
-    text = prepare_text(text)
     if not text:
         return
 
@@ -283,7 +293,6 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
     other error happens somehow, this function returns instead a bare
     expression made of only "unknown-spdx" symbol.
     """
-    text = prepare_text(text)
     if not text:
         return
 
@@ -336,10 +345,7 @@ def prepare_text(text):
     leading and trailing punctuations, normalized for spaces and without an
     SPDX-License-Identifier prefix.
     """
-    text = clean_text(text)
-    text = strip_spdx_lid(text)
-    text = clean_text(text)
-    return text
+    return clean_text(strip_spdx_lid(text))
 
 
 def clean_text(text):
@@ -349,22 +355,19 @@ def clean_text(text):
     """
     text = ' '.join(text.split())
     punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\]^_`{|}~\t\r\n "
-    # do not remove significant expression punctuations: leading parens at head
-    # and closing parens or + at tail.
+    # remove significant expression punctuations in wrong spot: leading parens
+    # at head and closing parens or + at tail.
     leading_punctuation_spaces = punctuation_spaces + ")+"
     trailng_punctuation_spaces = punctuation_spaces + "("
-    if 'spdx-license-identifier' in text.lower():
-        # a line may have ( before the spdx-license-idenifier lead
-        leading_punctuation_spaces += '('
     return text.lstrip(leading_punctuation_spaces).rstrip(trailng_punctuation_spaces)
 
 
 # note: LIST, DNL REM can be vomment indicators is a comment indicators
-stripper = re.compile('''(list|dnl|rem)?[\s'"]*spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*''', re.IGNORECASE).sub
-
+splitter = re.compile('spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*', re.IGNORECASE).split
 
 def strip_spdx_lid(text):
     """
     Return a text striped from the a leading "SPDX license identifier" if any.
+    We split on "SPDX license identifier" and get the last item
     """
-    return stripper('', text)
+    return splitter(text)[-1]

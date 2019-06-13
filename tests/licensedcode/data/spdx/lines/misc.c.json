@@ -1,92 +1,82 @@
 [
   [
-    "* SPDX-License-Identifier: Apache-2.0", 
-    5, 
+    "Apache-2.0", 
+    8, 
     10
   ], 
   [
-    ";; SPDX-License-Identifier: Unlicense", 
-    17, 
-    20
-  ], 
-  [
-    "# SPDX-License-Identifier: GPL-2.0", 
-    22, 
+    "GPL-2.0", 
+    25, 
     27
   ], 
   [
-    "* SPDX-License-Identifier: Apache-2.0", 
-    43, 
+    "Apache-2.0", 
+    46, 
     48
   ], 
   [
-    "* SPDX-License-Identifier:     GPL-2.0+", 
-    49, 
+    "GPL-2.0+", 
+    52, 
     54
   ], 
   [
-    "# SPDX-License-Identifier: GPL-2.0+", 
-    55, 
+    "GPL-2.0+", 
+    58, 
     60
   ], 
   [
-    "#  SPDX-License-Identifier: LGPL-2.1+", 
-    61, 
+    "LGPL-2.1+", 
+    64, 
     66
   ], 
   [
-    "/* SPDX-License-Identifier: GPL-2.0+ */", 
-    67, 
+    "GPL-2.0+ */", 
+    70, 
     72
   ], 
   [
-    "* SPDX-License-Identifier: MIT", 
-    82, 
-    85
-  ], 
-  [
-    "* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)", 
-    140, 
+    "(BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)", 
+    143, 
     155
   ], 
   [
-    "SPDX-License-Identifier: Apache-2.0", 
-    157, 
+    "Apache-2.0", 
+    160, 
     162
   ], 
   [
-    "* SPDX-License-Identifier:   AGPL-3.0", 
-    170, 
+    "AGPL-3.0", 
+    173, 
     175
   ], 
   [
-    ". #. # SPDX-License-Identifier: BSD-3-Clause. import", 
-    176, 
+    "BSD-3-Clause. import", 
+    179, 
     182
   ], 
   [
-    "SPDX-License-Identifier: BSD-3-Clause", 
-    183, 
+    "BSD-3-Clause", 
+    186, 
     188
   ], 
   [
-    "4  * SPDX-License-Identifier: BSD-2-Clause-NetBSD", 
-    189, 
+    "BSD-2-Clause-NetBSD", 
+    193, 
     196
   ], 
   [
-    ", it SPDX-License-Identifier: GPL-2.", 
-    211, 
+    "GPL-2.", 
+    215, 
     216
   ], 
   [
-    ".. SPDX-License-Identifier: CC-BY-4.0", 
-    278, 
+    "CC-BY-4.0", 
+    281, 
     284
   ], 
   [
-    "\"SPDX-License-Identifier: GPL-2.0+\". Is there any reason we shouldn't go ahead with this?", 
-    307, 
+    "GPL-2.0+\". Is there any reason we shouldn't go ahead with this?", 
+    310, 
     322
   ]
 ]

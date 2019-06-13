@@ -1,47 +1,27 @@
 [
   [
-    "# SPDX-License-Identifier: MIT", 
-    2, 
-    5
-  ], 
-  [
-    "* SPDX-License-Identifier: MIT", 
-    14, 
-    17
-  ], 
-  [
-    "# SPDX-License-Identifier:    BSD-3-Clause", 
-    81, 
+    "BSD-3-Clause", 
+    84, 
     86
   ], 
   [
-    "# SPDX-License-Identifier: MIT", 
-    99, 
-    102
-  ], 
-  [
-    "// SPDX-License-Identifier: BSD-2-Clause", 
-    122, 
+    "BSD-2-Clause", 
+    125, 
     127
   ], 
   [
-    "// SPDX-License-Identifier: MIT", 
-    136, 
-    139
-  ], 
-  [
-    "// SPDX-License-Identifier: LGPL-3.0+", 
-    145, 
+    "LGPL-3.0+", 
+    148, 
     150
   ], 
   [
-    "// SPDX-License-Identifier: AGPL-3.0", 
-    158, 
+    "AGPL-3.0", 
+    161, 
     163
   ], 
   [
-    "SPDX-License-Identifier: Apache-2.0", 
-    170, 
+    "Apache-2.0", 
+    173, 
     175
   ]
 ]

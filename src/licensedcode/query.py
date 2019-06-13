@@ -249,12 +249,13 @@ class Query(object):
     def spdx_lid_query_runs_and_text(self):
         """
         Yield a tuple of query run, line text for each SPDX-License-Identifier line.
+        SPDX-License-Identifier is not part of what is returned.
         """
-        for line_text, start, end in self.spdx_lines:
+        for spdx_text, start, end in self.spdx_lines:
             qr = QueryRun(query=self, start=start, end=end)
             if TRACE_SPDX:
-                logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  line_text:', line_text)
-            yield qr, line_text
+                logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  spdx_text:', spdx_text)
+            yield qr, spdx_text
 
     def subtract(self, qspan):
         """
@@ -301,6 +302,8 @@ class Query(object):
         query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
         `shorts_and_digits_pos` and `spdx_lines` as a side effect.
         """
+        from licensedcode.match_spdx_lid import strip_spdx_lid
+
         # bind frequently called functions to local scope
         tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
@@ -355,13 +358,22 @@ class Query(object):
             line_end_known_pos = known_pos
             # this works ONLY if the line starts with SPDX or we have one word
             # (such as a comment indicator DNL, REM etc.) and an SPDX id)
-            if do_collect_spdx_lines and (
-                line_tokens[:3] == spdx_lid_token_ids
-                or line_tokens[1:4] == spdx_lid_token_ids):
-                # keep the line, start/end  known pos for SPDX matching
-                if TRACE:
-                    logger_debug('tokens_by_line: spdx-line:', line)
-                self.spdx_lines.append((line, line_start_known_pos, line_end_known_pos))
+            if do_collect_spdx_lines:
+                spdx_start_offset = 0
+                if line_tokens[:3] == spdx_lid_token_ids:
+                    spdx_start_offset = 3
+                elif line_tokens[1:4] == spdx_lid_token_ids:
+                    spdx_start_offset = 4
+                elif line_tokens[2:5] == spdx_lid_token_ids:
+                    spdx_start_offset = 5
+                if spdx_start_offset:
+                    # keep the line, start/end known pos for SPDX matching
+                    spdx_text = strip_spdx_lid(line)
+                    spdx_start_known_pos = line_start_known_pos + spdx_start_offset
+                    if spdx_start_known_pos < line_end_known_pos:
+                        self.spdx_lines.append((spdx_text, spdx_start_known_pos, line_end_known_pos))
+                        if TRACE:
+                            logger_debug('tokens_by_line: spdx-line:', spdx_text)
 
             yield line_tokens
 
