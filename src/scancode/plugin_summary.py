@@ -69,7 +69,7 @@ class OriginSummary(PostScanPlugin):
     or license expression is detected in 75% or more of total files in a directory
     """
     codebase_attributes = dict(
-        summarized_directories=attr.ib(default=attr.Factory(OrderedDict))
+        summaries=attr.ib(default=attr.Factory(OrderedDict))
     )
 
     resource_attributes = dict(
@@ -104,7 +104,7 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        summarized_dirs_by_license_and_holder = defaultdict(lambda: defaultdict(list))
+        identifier_counts = Counter()
 
         # Summarize origin clues to directory level and tag summarized Resources
         for resource in codebase.walk(topdown=False):
@@ -147,9 +147,9 @@ class OriginSummary(PostScanPlugin):
                     resource.origin_summary['count'] = top_count
                     codebase.save_resource(resource)
 
-                    if resource.is_dir:
-                        holder = '\n'.join(holders)
-                        summarized_dirs_by_license_and_holder[license_expression][holder].append(resource.path)
+                    holder = '\n'.join(holders)
+                    identifier = '{}_{}'.format(license, holder)
+                    identifier_counts[identifier] += 1
 
                     for child_rid in child_rids:
                         child = codebase.get_resource(child_rid)
@@ -160,22 +160,11 @@ class OriginSummary(PostScanPlugin):
                             child_license_expression = child.origin_summary.get('license_expression')
                             child_holders  = child.origin_summary.get('holders')
                         if (child_holders, child_license_expression) == (holders, license_expression):
-                            child.summarized_to = resource.path
+                            child.summarized_to = identifier
                             child.save(codebase)
 
-        # Add summarized directory info to the `summarized_directories` codebase attribute in sorted order
-        for license_expression, summarized_dirs_by_holders in iter(sorted(summarized_dirs_by_license_and_holder.iteritems())):
-            for holder, summarized_dirs in iter(sorted(summarized_dirs_by_holders.iteritems())):
-                codebase_summarized_dirs = codebase.attributes.summarized_directories
-                sorted_summarized_dirs = sorted(summarized_dirs)
-                # TODO: These checks could be avoided if there was an ordered defaultdict
-                if license_expression in codebase_summarized_dirs:
-                    if holder in codebase_summarized_dirs[license_expression]:
-                        codebase_summarized_dirs[license_expression][holder].extend(sorted_summarized_dirs)
-                    else:
-                        codebase_summarized_dirs[license_expression][holder] = sorted_summarized_dirs
-                else:
-                    codebase_summarized_dirs[license_expression] = OrderedDict({holder: sorted_summarized_dirs})
+        for identifier, count in iter(sorted(identifier_counts.iteritems())):
+            codebase.attributes.summaries[identifier] = OrderedDict(count=identifier_counts[identifier])
 
 
 def is_majority(count, files_count, threshold=None):
