@@ -117,8 +117,9 @@ class TestOriginSummary(FileDrivenTesting):
             expected_files = expected_scan['files']
         with open(result_file, 'rb') as f:
             results = json.loads(f.read(), object_pairs_hook=OrderedDict)
+            result_threshold = results['headers'][-1]['options']['--origin-summary-threshold']
             summarized_directories_results = results['summarized_directories']
             files_results = results['files']
-        assert expected_custom_threshold == threshold
+        assert expected_custom_threshold == result_threshold
         assert expected_summarized_directories == summarized_directories_results
         assert expected_files == files_results

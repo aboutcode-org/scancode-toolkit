@@ -88,7 +88,7 @@ class OriginSummary(PostScanPlugin):
             help_group=POST_SCAN_GROUP
         ),
         CommandLineOption(('--origin-summary-threshold',),
-            is_flag=False, default=False,
+            is_flag=False, type=float,
             help='Set a custom threshold for origin summarization.',
             required_options=['origin_summary'],
             help_group=POST_SCAN_GROUP
