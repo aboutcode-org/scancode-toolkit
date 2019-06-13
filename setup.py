@@ -243,7 +243,7 @@ setup(
             'emails = cluecode.plugin_email:EmailScanner',
             'urls = cluecode.plugin_url:UrlScanner',
             'generated = summarycode.generated:GeneratedCodeDetector',
-            'fingerprint = cluecode.plugin_fingerprint:FingerprintScanner',
+            'fingerprint = scancode.plugin_fingerprint:FingerprintScanner',
         ],
 
         # scancode_post_scan is the entry point for post_scan plugins executed
