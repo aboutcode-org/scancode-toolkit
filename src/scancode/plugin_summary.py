@@ -62,6 +62,14 @@ if TRACE:
             ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
+@attr.s
+class Summary(object):
+    identifier = attr.ib()
+    license_expression = attr.ib()
+    holders = attr.ib()
+    count = attr.ib()
+
+
 @post_scan_impl
 class OriginSummary(PostScanPlugin):
     """
@@ -69,7 +77,7 @@ class OriginSummary(PostScanPlugin):
     or license expression is detected in 75% or more of total files in a directory
     """
     codebase_attributes = dict(
-        summaries=attr.ib(default=attr.Factory(OrderedDict))
+        summaries=attr.ib(default=attr.Factory(list))
     )
 
     resource_attributes = dict(
@@ -104,7 +112,7 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        identifier_counts = Counter()
+        identifiers = OrderedDict()
 
         # Summarize origin clues to directory level and tag summarized Resources
         for resource in codebase.walk(topdown=False):
@@ -148,8 +156,16 @@ class OriginSummary(PostScanPlugin):
                     codebase.save_resource(resource)
 
                     holder = '\n'.join(holders)
-                    identifier = '{}_{}'.format(license, holder)
-                    identifier_counts[identifier] += 1
+                    identifier = '{}_{}'.format(license_expression, holder)
+                    if identifier in identifiers:
+                        identifiers[identifier].count += 1
+                    else:
+                        identifiers[identifier] = Summary(
+                            identifier=identifier,
+                            license_expression=license_expression,
+                            holders=holders,
+                            count=1
+                        )
 
                     for child_rid in child_rids:
                         child = codebase.get_resource(child_rid)
@@ -163,8 +179,8 @@ class OriginSummary(PostScanPlugin):
                             child.summarized_to = identifier
                             child.save(codebase)
 
-        for identifier, count in iter(sorted(identifier_counts.iteritems())):
-            codebase.attributes.summaries[identifier] = OrderedDict(count=identifier_counts[identifier])
+        for _, summary in iter(sorted(identifiers.iteritems())):
+            codebase.attributes.summaries.append(summary)
 
 
 def is_majority(count, files_count, threshold=None):
