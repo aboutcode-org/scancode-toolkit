@@ -1,83 +1,82 @@
 trigger:
-  branches:
-    include: ['*']
-  tags:
-    include: ['*']
+    branches:
+        include: ['*']
+    tags:
+        include: ['*']
 
 jobs:
-- job: TestSuite1
-  displayName: Performing test On Linux and Mac
-  strategy:
-     matrix:
-      #linux
-      'ubuntu-16-py27':
-        imageName: 'ubuntu-16.04'
-        pythonVersion: '2.7'
-      'ubuntu-16-py36':
-        imageName: 'ubuntu-16.04'
-        pythonVersion: '3.6'
+    - job: posix_-tests
+      displayName: Run tests on Linux and macOS
+      strategy:
+          matrix:
+              #linux
+              ubuntu-16-py27:
+                  imageName: ubuntu-16.04
+                  pythonVersion: '2.7'
+              ubuntu-16-py36:
+                  imageName: ubuntu-16.04
+                  pythonVersion: '3.6'
 
-      #High Sierra
-      'macOS-10.13-py27':                       
-        imageName: 'macos-10.13'
-        pythonVersion: '2.7'
-      'macOS-10.13-py37':                       
-        imageName: 'macos-10.13'
-        pythonVersion: '3.6'
+              #High Sierra
+              macOS-10.13-py27:
+                  imageName: macos-10.13
+                  pythonVersion: '2.7'
+              macOS-10.13-py37:
+                  imageName: macos-10.13
+                  pythonVersion: '3.6'
 
-      #Mojave
-      'macOS-10.14-py27':                       
-        imageName: 'macos-10.14'
-        pythonVersion: '2.7'
-      'macOS-10.14-py37':                       
-        imageName: 'macos-10.14'
-        pythonVersion: '3.6'
+              #Mojave
+              macOS-10.14-py27:
+                  imageName: macos-10.14
+                  pythonVersion: '2.7'
+              macOS-10.14-py37:
+                  imageName: macos-10.14
+                  pythonVersion: '3.6'
 
-  pool:
-     vmImage: $(imageName)
-    
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-     versionSpec: '$(pythonVersion)'
-     architecture: 'x64'
-      
-  - script: ./configure
-  - script: ./bin/py.test -vvs tests/commoncode
+      pool:
+          vmImage: $(imageName)
 
-- job : TestSuite2
-  displayName: Performing test On Windows
-  strategy:
-     matrix:
-      #Windows
-      'Windows-py27':
-        imageName: 'vs2017-win2016'
-        pythonVersion: '2.7'
-      'Windows-py36':
-        imageName: 'vs2017-win2016'
-        pythonVersion: '3.6'
-      'Windows1-py27':
-        imageName: 'vs2015-win2012r2'
-        pythonVersion: '2.7'
-      'Windows1-py36':
-        imageName: 'vs2015-win2012r2'
-        pythonVersion: '3.6'
-      'Windows2-py27':
-        imageName: 'windows-2019'
-        pythonVersion: '2.7'
-      'Windows2-py36':
-        imageName: 'windows-2019'
-        pythonVersion: '3.6'
-  
-  pool:
-     vmImage: $(imageName)
-    
-  steps:
-    
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(pythonVersion)'
-      architecture: 'x64'
-      
-  - script: configure
-  - script: ./bin/py.test -vvs tests/commoncode
+      steps:
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '$(pythonVersion)'
+
+          - script: ./configure
+          - script: ./bin/pytest -vvs tests/commoncode
+
+    - job : win_tests
+      displayName: Run tests on Windows
+      strategy:
+          matrix:
+              #Windows
+              Windows-py27:
+                  imageName: vs2017-win2016
+                  pythonVersion: '2.7'
+              Windows-py36:
+                  imageName: vs2017-win2016
+                  pythonVersion: '3.6'
+              Windows1-py27:
+                  imageName: vs2015-win2012r2
+                  pythonVersion: '2.7'
+              Windows1-py36:
+                  imageName: vs2015-win2012r2
+                  pythonVersion: '3.6'
+              Windows2-py27:
+                  imageName: windows-2019
+                  pythonVersion: '2.7'
+              Windows2-py36:
+                  imageName: windows-2019
+                  pythonVersion: '3.6'
+
+      pool:
+          vmImage: $(imageName)
+
+      steps:
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '$(pythonVersion)'
+                architecture: x64
+
+          - script: configure
+            displayName: configure
+          - script: bin\pytest -vvs tests\commoncode
