@@ -72,18 +72,6 @@ def get_normalized_expression(query_string):
     manifests.
     Return None if there is the `query_string` is empty. Return "unknown" as a
     license expression if there is a `query_string` but nothing was detected.
-
-    For example::
-    >>> get_normalized_expression('mit')
-    'mit'
-    >>> get_normalized_expression('mit or asasa or Apache-2.0')
-    'apache-2.0 AND unknown'
-    >>> get_normalized_expression('mit or asasa or Apache-2.0')
-    'apache-2.0 AND unknown'
-    >>> get_normalized_expression('mit asasa or Apache-2.0')
-    'apache-2.0 AND unknown'
-    >>> assert get_normalized_expression('') is None
-    >>> assert get_normalized_expression(None) is None
     """
     if not query_string or not query_string.strip():
         return
