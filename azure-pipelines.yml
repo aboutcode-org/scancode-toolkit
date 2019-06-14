@@ -5,7 +5,7 @@ trigger:
         include: ['*']
 
 jobs:
-    - job: posix_-tests
+    - job: posix_tests
       displayName: Run tests on Linux and macOS
       strategy:
           matrix:
