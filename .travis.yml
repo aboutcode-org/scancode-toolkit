@@ -9,7 +9,7 @@ python:
 # The --cov-report=xml option is important for codecov.ioTestFossLicDataDriven
 env:
   global:
-    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
+    - PYTEST="bin/py.test -n 2 -vvs --test-suite=all --cov=src --cov-report=term --cov-report=xml"
   matrix:
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode"
