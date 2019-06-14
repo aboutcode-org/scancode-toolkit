@@ -99,10 +99,32 @@ def build_package(package_data):
     Return a Conda Package object from a dictionary yaml data.
     """
     print(package_data)
+   
+   
+def get_yaml_data(location):
+    """
+    Get variables and parse the yaml file, replace the variable with the value and return dictionary.
+    """
+    variables = get_variables(location)
+    yaml_lines = []
+    with io.open(location, encoding='utf-8') as loc:
+        for line in loc.readlines():
+            if not line:
+                continue
+            pure_line = line.strip()
+            if pure_line.startswith('{%') and pure_line.endswith('%}') and '=' in pure_line:
+                continue
+            # Replace the variable with the value
+            if '{{' in line and '}}' in line:
+                for variable, value in variables.items():
+                    line = line.replace('{{ ' + variable + ' }}', value)                        
+            yaml_lines.append(line)
+    return yamlload('\n'.join(yaml_lines))
+    
     
 def get_variables(location):
     """
-    Conda yaml will have variabales defined at the beginning of the file, the idea is to parse it and return a dictionary of the variable and value
+    Conda yaml will have variables defined at the beginning of the file, the idea is to parse it and return a dictionary of the variable and value
     For example:
     {% set version = "0.45.0" %}
     {% set sha256 = "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f" %}
