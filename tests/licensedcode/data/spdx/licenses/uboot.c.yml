@@ -1,5 +1,5 @@
 license_expressions:
-  - unknown-spdx
+  - unknown-spdx OR unknown-spdx OR unknown-spdx OR unknown-spdx OR unknown-spdx OR unknown-spdx
   - bsd-simplified
   - bsd-new
   - bsd-new
