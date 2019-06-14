@@ -89,8 +89,7 @@ def parse(location):
     if not is_conda_yaml(location):
         return
 
-    with io.open(location, encoding='utf-8') as loc:
-        yaml_data = yamlload(loc.read())
+    yaml_data = get_yaml_data(location)
     return build_package(yaml_data)
 
 
