@@ -39,12 +39,16 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
+
+import pytest
+pytestmark = pytest.mark.scanslow
+
+
 """
 This test suite is based on many sources including a rather large subset of
 Android ICS, providing a rather diversified sample of a typical Linux-based user
 space environment.
 """
-
 
 class TestCopyrightDataDriven(FileBasedTesting):
     # test functions are attached to this class at module import time

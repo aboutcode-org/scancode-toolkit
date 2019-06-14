@@ -34,6 +34,7 @@ import json
 import os
 
 import unicodecsv
+import pytest
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
@@ -207,6 +208,7 @@ def test_csv_tree():
     check_csvs(result_file, expected_file)
 
 
+@pytest.mark.scanslow
 def test_can_process_live_scan_with_all_options():
     test_dir = test_env.get_test_loc('csv/livescan/scan')
     result_file = test_env.get_temp_file('csv')
@@ -216,6 +218,7 @@ def test_can_process_live_scan_with_all_options():
     check_csvs(result_file, expected_file, regen=False)
 
 
+@pytest.mark.scanslow
 def test_can_process_live_scan_for_packages_strip_root():
     test_dir = test_env.get_test_loc('csv/packages/scan')
     result_file = test_env.get_temp_file('csv')
@@ -225,6 +228,7 @@ def test_can_process_live_scan_for_packages_strip_root():
     check_csvs(result_file, expected_file, regen=False)
 
 
+@pytest.mark.scanslow
 def test_can_process_live_scan_for_packages_with_root():
     test_dir = test_env.get_test_loc('csv/packages/scan')
     result_file = test_env.get_temp_file('csv')

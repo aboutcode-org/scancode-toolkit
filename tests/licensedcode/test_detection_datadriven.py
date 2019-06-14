@@ -34,6 +34,13 @@ import unittest
 
 from licensedcode_test_utils import build_tests #NOQA
 
+
+import pytest
+pytestmark = pytest.mark.scanslow
+
+
+
+
 """
 Data-driven tests using expectations stored in YAML files.
 Test functions are attached to test classes at module import time
