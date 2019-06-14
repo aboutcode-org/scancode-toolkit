@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - (c) 2018 Nordea Bank Abp
+holders:
+    - Nordea Bank Abp
+holders_summary:
+    -   value: Nordea Bank Abp
+        count: 1
