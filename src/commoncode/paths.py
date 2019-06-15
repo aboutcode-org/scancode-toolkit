@@ -31,6 +31,7 @@ from os.path import commonprefix
 import posixpath
 import re
 
+from commoncode import compat
 from commoncode.text import as_unicode
 from commoncode.text import toascii
 from commoncode.fileutils import as_posixpath
@@ -61,7 +62,7 @@ def safe_path(path, posix=False):
     path with blackslash separators otherwise.
     """
     # if the path is UTF, try to use unicode instead
-    if not isinstance(path, unicode):
+    if not isinstance(path, compat.unicode):
         path = as_unicode(path)
 
     path = path.strip()
@@ -81,7 +82,7 @@ def safe_path(path, posix=False):
         return '_'
 
     # always return posix
-    sep = u'/' if isinstance(path, unicode) else b'/'
+    sep = u'/' if isinstance(path, compat.unicode) else b'/'
     path = sep.join(segments)
     return as_posixpath(path)
 
@@ -97,7 +98,7 @@ def path_handlers(path, posix=True):
     use_posix = posix or is_posix
     pathmod = use_posix and posixpath or ntpath
     path_sep = POSIX_PATH_SEP if use_posix else WIN_PATH_SEP
-    path_sep = isinstance(path, unicode) and unicode(path_sep) or path_sep
+    path_sep = isinstance(path, compat.unicode) and compat.unicode(path_sep) or path_sep
     return pathmod, path_sep
 
 
@@ -112,7 +113,7 @@ def resolve(path, posix=True):
     The `path` is treated as a POSIX path if `posix` is True (default) or as a
     Windows path with blackslash separators otherwise.
     """
-    is_unicode = isinstance(path, unicode)
+    is_unicode = isinstance(path, compat.unicode)
     dot = is_unicode and u'.' or b'.'
 
     if not path:
