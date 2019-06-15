@@ -35,6 +35,7 @@ import url as urlpy
 
 from commoncode.text import toascii
 from cluecode import finder_data
+from commoncode import compat
 from textcode import analysis
 
 
@@ -58,7 +59,7 @@ if TRACE or TRACE_URL or TRACE_EMAIL:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 """
@@ -88,7 +89,6 @@ def find(location, patterns):
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
                 yield key, toascii(match), line, lineno
-
 
 def unique_filter(matches):
     """
@@ -249,7 +249,7 @@ def find_urls(location, unique=True):
         if TRACE_URL:
             logger_debug('find_urls: lineno:', lineno, '_line:', repr(_line),
                          'type(url):', type(url), 'url:', repr(url))
-        yield unicode(url), lineno
+        yield compat.unicode(url), lineno
 
 
 EMPTY_URLS = set(['https', 'http', 'ftp', 'www', ])
@@ -450,7 +450,7 @@ def get_ip(s):
         return False
 
     try:
-        ip = ipaddress.ip_address(unicode(s))
+        ip = ipaddress.ip_address(compat.unicode(s))
         return ip
     except ValueError:
         return False

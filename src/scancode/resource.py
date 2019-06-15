@@ -53,6 +53,7 @@ except ImportError:
     import tempfile
     temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
+from commoncode import compat
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
@@ -75,16 +76,6 @@ from commoncode.fileutils import splitext_name
 from commoncode import ignore
 from commoncode.system import on_linux
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -117,7 +108,7 @@ if TRACE or TRACE_DEEP:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 class ResourceNotInCache(Exception):

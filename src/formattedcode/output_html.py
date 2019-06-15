@@ -54,6 +54,7 @@ from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
+from commoncode import compat
 
 """
 Output plugins to write scan results using templates such as HTML.
@@ -136,7 +137,7 @@ def write_templated(output_file, results, version, template_loc):
     template = get_template(template_loc)
 
     for template_chunk in generate_output(results, version, template):
-        assert isinstance(template_chunk, unicode)
+        assert isinstance(template_chunk, compat.unicode)
         try:
             output_file.write(template_chunk)
         except Exception:

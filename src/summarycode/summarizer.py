@@ -32,6 +32,7 @@ from collections import OrderedDict
 
 import attr
 
+from commoncode import compat
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -58,7 +59,7 @@ if TRACE or TRACE_LIGHT:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 """
 top_level:

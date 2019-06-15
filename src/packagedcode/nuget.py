@@ -31,15 +31,7 @@ import xmltodict
 
 from packagedcode import models
 from packagedcode.utils import build_description
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
+from commoncode import compat
 
 # TODO: add dependencies
 
@@ -64,7 +56,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (str, unicode)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 @attr.s()

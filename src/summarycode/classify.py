@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+from commoncode import compat
 from commoncode.datautils import Boolean
 from commoncode.fileset import get_matches
 from plugincode.pre_scan import PreScanPlugin
@@ -71,7 +72,7 @@ if TRACE:
 
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 @pre_scan_impl

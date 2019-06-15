@@ -45,6 +45,7 @@ import requests
 
 from commoncode import fetch
 from commoncode import fileutils
+from commoncode import compat
 
 import licensedcode
 from licensedcode.models import load_licenses
@@ -892,7 +893,7 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
 
             continue
 
-        if isinstance(scancode_value, basestring) and isinstance(external_value, basestring):
+        if (isinstance(scancode_value, compat.string_types) and isinstance(external_value, compat.string_types)):
             # keep the stripped and normalized spaces value
             # normalized spaces
             normalized_scancode_value = ' '.join(scancode_value.split())

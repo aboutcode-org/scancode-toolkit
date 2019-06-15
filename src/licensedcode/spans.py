@@ -32,6 +32,7 @@ from __future__ import division
 from __future__ import print_function
 
 from collections import Set
+from commoncode import compat
 from itertools import count
 from itertools import groupby
 
@@ -107,7 +108,7 @@ class Span(Set):
 
         elif len_args == 1:
             # args0 is a single int or an iterable of ints
-            if isinstance(args[0], (int, long)):
+            if isinstance(args[0], compat.integer_types):
                 self._set = intbitset(args)
             else:
                 # some sequence or iterable
@@ -204,7 +205,7 @@ class Span(Set):
         if isinstance(other, Span):
             return self._set.issuperset(other._set)
 
-        if isinstance(other, (int, long)):
+        if isinstance(other, compat.integer_types):
             return self._set.__contains__(other)
 
         if isinstance(other, (set, frozenset)):

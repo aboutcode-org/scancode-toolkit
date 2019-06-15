@@ -54,6 +54,8 @@ from typecode.pygments_lexers import guess_lexer
 from typecode import magic2
 from typecode import entropy
 from commoncode.datautils import String
+from commoncode import compat
+
 
 """
 Utilities to detect and report the type of a file or path based on its name,
@@ -77,7 +79,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 
@@ -96,13 +98,13 @@ PLAIN_TEXT_EXTENSIONS = ('.rst', '.rest', '.txt', '.md',
                         # are probably more.
                          '.log')
 if not on_linux:
-    PLAIN_TEXT_EXTENSIONS = tuple(unicode(e) for e in PLAIN_TEXT_EXTENSIONS)
+    PLAIN_TEXT_EXTENSIONS = tuple(compat.unicode(e) for e in PLAIN_TEXT_EXTENSIONS)
 
 C_EXTENSIONS = set(['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
                     '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
 
 if not on_linux:
-    C_EXTENSIONS = set(unicode(e) for e in C_EXTENSIONS)
+    C_EXTENSIONS = set(compat.unicode(e) for e in C_EXTENSIONS)
 
 ELF_EXE = 'executable'
 ELF_SHARED = 'shared object'
