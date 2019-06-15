@@ -37,6 +37,11 @@ from commoncode.text import python_safe_name
 
 import cluecode_test_utils
 
+
+import pytest
+pytestmark = pytest.mark.scanslow
+
+
 """
 Tests of ScanCode copyright detection using Fossology copyright test suite data.
 """

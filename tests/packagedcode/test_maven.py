@@ -32,6 +32,7 @@ import json
 import os.path
 
 import attr
+import pytest
 
 from commoncode import fileutils
 from commoncode import text
@@ -520,10 +521,12 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
 
 
 class TestMavenDataDrivenPomMisc(BaseMavenCase):
+    pytestmark = pytest.mark.scanslow
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
             prefix='test_maven2_parse_misc_', check_pom=True, regen=False)
+
 build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
             prefix='test_maven2_package_misc_', check_pom=False, regen=False)
 
@@ -538,6 +541,7 @@ build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
 
 
 class TestMavenDataDrivenPomComprehensive(BaseMavenCase):
+    pytestmark = pytest.mark.scanslow
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 # note: we use short dir names to deal with Windows long paths limitations

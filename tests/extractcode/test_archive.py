@@ -70,7 +70,7 @@ For each archive type --when possible-- we are testing extraction of:
 """
 
 
-class TestSmokeTest(FileBasedTesting):
+class TestExtractorTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def check_get_extractors(self, test_file, expected, kinds=()):

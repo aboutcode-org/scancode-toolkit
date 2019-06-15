@@ -41,6 +41,10 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.resource import VirtualCodebase
 
 
+import pytest
+pytestmark = pytest.mark.scanslow
+
+
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
