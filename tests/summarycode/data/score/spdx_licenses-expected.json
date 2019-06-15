@@ -130,7 +130,7 @@
           "start_line": 7,
           "end_line": 7,
           "matched_rule": {
-            "identifier": "mit_34.RULE",
+            "identifier": "mit_30.RULE",
             "license_expression": "mit",
             "licenses": [
               "mit"
@@ -240,9 +240,9 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
-            "matcher": "4-spdx-id",
-            "rule_length": 4,
-            "matched_length": 4,
+            "matcher": "1-spdx-id",
+            "rule_length": 1,
+            "matched_length": 1,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }

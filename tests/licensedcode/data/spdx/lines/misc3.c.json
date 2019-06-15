@@ -1,12 +1,12 @@
 [
   [
-    "SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause", 
-    0, 
+    "GPL-2.0+        BSD-3-Clause", 
+    3, 
     8
   ], 
   [
-    "SPDX license identifier: MPL-2.0.", 
-    9, 
+    "MPL-2.0.", 
+    12, 
     14
   ]
 ]

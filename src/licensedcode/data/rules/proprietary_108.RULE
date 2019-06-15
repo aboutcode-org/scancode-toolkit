@@ -1,0 +1,14 @@
+Details pertaining to the 
+ * coordinate system have been release in the public domain (see references above).
+ * This code is an independent implementation of the SCH coordinate system
+ * that conforms to the PROJ.4 conventions and uses the details presented in these
+ * publicly released documents. All credit for the development of the coordinate
+ * system and its use should be directed towards the original developers at JPL.
+ ******************************************************************************
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.

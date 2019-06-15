@@ -155,7 +155,7 @@ setup(
         'intbitset >= 2.3.0,  < 3.0',
         'boolean.py >= 3.5,  < 4.0',
         'license_expression >= 0.99,  < 1.0',
-        'pyahocorasick >= 1.1, < 1.2',
+        'pyahocorasick >= 1.4, < 1.5',
 
         # multiple
         'lxml >= 4.0.0, < 5.0.0',

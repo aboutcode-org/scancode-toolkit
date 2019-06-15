@@ -1,0 +1,33 @@
+key: gpl-2.0
+short_name: GPL 2.0
+name: GNU General Public License 2.0
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
+notes: "This is the last version of the GPL text as published by the FSF. This\nvariation was\
+    \ published around about the time of the FSF released the GPL 3\nin July 2007.\nhttp://web.archive.org/web/20070716031727/http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt\
+    \ \nIt is found live here https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt\nand here\
+    \ https://www.gnu.org/licenses/old-licenses/gpl-2.0.html \nIt refers to the Franklin Street\
+    \ address and to the\nGNU Lesser General Public License everywhere both in the text and\
+    \ HTML\nformats. There are four other variations that were published over the\nyears. You\
+    \ can find these in the GPL rules as gpl-2.0_100.RULE,\ngpl-2.0_101.RULE, gpl-2.0_102.RULE\
+    \ and gpl-2.0_103.RULE. Their\ncorresponding YAML data explains their history and provides\
+    \ archive.org\npointer to their texts. Per SPDX.org, this license was released June 1991\n\
+    This license is OSI certified."
+spdx_license_key: GPL-2.0-only
+other_spdx_license_keys:
+    - GPL-2.0
+text_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+osi_url: http://opensource.org/licenses/gpl-license.php
+faq_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.html
+other_urls:
+    - http://creativecommons.org/choose/cc-gpl
+    - http://creativecommons.org/images/public/cc-GPL-a.png
+    - http://creativecommons.org/licenses/GPL/2.0/
+    - http://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+    - http://www.opensource.org/licenses/GPL-2.0
+    - https://opensource.org/licenses/GPL-2.0
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html

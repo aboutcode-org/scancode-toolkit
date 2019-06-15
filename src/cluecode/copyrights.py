@@ -417,6 +417,11 @@ patterns = [
     # Facility
     (r'Tecnologia', 'COMP'),
     (r'Facility', 'COMP'),
+    # (danish) company suffix
+    (r'^ApS|A\/S|IVS\.?,?$', 'COMP'),
+    # (finnsih) company suffix
+    (r'^Abp\.?,?$', 'COMP'),
+
 
     # "holders" is considered Special
     (r'^HOLDER\(S\)$', 'JUNK'),
