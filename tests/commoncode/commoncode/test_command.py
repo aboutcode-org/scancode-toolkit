@@ -32,6 +32,7 @@ from unittest.case import skipIf
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
+from commoncode import compat
 
 
 class TestCommand(FileBasedTesting):
@@ -48,7 +49,7 @@ class TestCommand(FileBasedTesting):
         # converting to Unicode could cause an "ordinal not in range..."
         # exception
         assert stdout == b'non ascii:  just passed it !'
-        unicode(stdout)
+        compat.unicode(stdout)
 
     @skipIf(not on_linux, 'Linux only')
     def test_update_path_environment_linux_from_bytes(self):
