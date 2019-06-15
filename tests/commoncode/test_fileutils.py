@@ -43,6 +43,7 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import make_non_executable
 from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
+from commoncode import compat
 
 
 class TestPermissions(FileBasedTesting):
@@ -301,11 +302,11 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        test_dir = unicode(test_dir)
+        test_dir = compat.unicode(test_dir)
         result = list(os.walk(test_dir))
         expected = [
-            (unicode(test_dir), ['a'], [u'2.csv']),
-            (unicode(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
+            (compat.unicode(test_dir), ['a'], [u'2.csv']),
+            (compat.unicode(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
         ]
         assert expected == result
 
@@ -326,7 +327,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = join(test_dir, 'unicode')
 
         if on_linux:
-            test_dir = unicode(test_dir)
+            test_dir = compat.unicode(test_dir)
         result = list(x[-1] for x in fileutils.walk(test_dir))
         if on_linux:
             expected = [['2.csv'], ['gru\xcc\x88n.png']]
@@ -365,7 +366,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
-            test_dir = unicode(test_dir)
+            test_dir = compat.unicode(test_dir)
         result = list(os.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
@@ -461,11 +462,11 @@ class TestFileUtilsIter(FileBasedTesting):
         if on_linux:
             assert all(isinstance(p, bytes) for p in result)
         else:
-            assert all(isinstance(p, unicode) for p in result)
+            assert all(isinstance(p, compat.unicode) for p in result)
 
     def test_resource_iter_return_unicode_on_unicode_input(self):
         test_dir = self.get_test_loc('fileutils/walk')
-        base = unicode(self.get_test_loc('fileutils'))
+        base = compat.unicode(self.get_test_loc('fileutils'))
         result = sorted([as_posixpath(f.replace(base, ''))
                          for f in fileutils.resource_iter(test_dir, with_dirs=True)])
         expected = [
@@ -479,7 +480,7 @@ class TestFileUtilsIter(FileBasedTesting):
             u'/walk/unicode.zip'
         ]
         assert sorted(expected) == sorted(result)
-        assert all(isinstance(p, unicode) for p in result)
+        assert all(isinstance(p, compat.unicode) for p in result)
 
     def test_resource_iter_can_walk_unicode_path_with_zip(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
@@ -488,7 +489,7 @@ class TestFileUtilsIter(FileBasedTesting):
         if on_linux:
             EMPTY_STRING = ''
         else:
-            test_dir = unicode(test_dir)
+            test_dir = compat.unicode(test_dir)
             EMPTY_STRING = u''
 
         result = sorted([p.replace(test_dir, EMPTY_STRING) for p in fileutils.resource_iter(test_dir)])
@@ -517,7 +518,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
-            test_dir = unicode(test_dir)
+            test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
         assert 18 == len(result)
 
@@ -526,7 +527,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
-            test_dir = unicode(test_dir)
+            test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
 

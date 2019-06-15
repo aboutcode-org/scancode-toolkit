@@ -36,6 +36,7 @@ from licensedcode import query
 from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
+from commoncode import compat
 
 
 """
@@ -87,7 +88,7 @@ if (TRACE
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

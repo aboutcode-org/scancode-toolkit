@@ -31,6 +31,7 @@ from collections import OrderedDict
 import json
 import os.path
 
+from commoncode import compat
 from commoncode import text
 from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest
@@ -115,7 +116,7 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=F
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if isinstance(test_name, unicode):
+    if isinstance(test_name, compat.string_types):
         test_name = test_name.encode('utf-8')
     test_manifest.__name__ = test_name
     return test_manifest

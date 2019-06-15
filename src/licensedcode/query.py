@@ -39,6 +39,7 @@ from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
+from commoncode import compat
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -104,7 +105,7 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_SPDX:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 # for the cases of very long lines, we break in abritrary pseudo lines at 25
 # tokens to avoid getting huge query runs for texts on a single line (e.g.

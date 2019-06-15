@@ -35,6 +35,7 @@ from attr.validators import in_ as choices
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
 
+from commoncode import compat
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
 from commoncode.datautils import Integer
@@ -42,18 +43,6 @@ from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.datautils import TriBoolean
-
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str_orig = str
-    bytes = str  # NOQA
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 
 """
@@ -99,7 +88,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, (bytes, str)) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 

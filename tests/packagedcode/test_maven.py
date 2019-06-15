@@ -34,6 +34,7 @@ import os.path
 import attr
 import pytest
 
+from commoncode import compat
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
@@ -497,7 +498,7 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if isinstance(test_name, unicode):
+    if isinstance(test_name, compat.string_types):
         test_name = test_name.encode('utf-8')
     test_pom.__name__ = test_name
     return test_pom

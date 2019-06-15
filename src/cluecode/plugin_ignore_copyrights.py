@@ -33,6 +33,7 @@ from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
 from scancode import CommandLineOption
 from scancode import OUTPUT_FILTER_GROUP
+from commoncode import compat
 
 
 def logger_debug(*args):
@@ -50,7 +51,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 @output_filter_impl

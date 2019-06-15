@@ -36,6 +36,8 @@ from intbitset import intbitset
 from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
 
+from commoncode import compat
+
 
 """
 Approximate matching strategies using token sets and multisets.
@@ -124,7 +126,7 @@ if (TRACE or TRACE_CANDIDATES or
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 def tids_sets_intersector(qset, iset):

@@ -36,6 +36,7 @@ from pluggy import PluginManager as PluggyPluginManager
 
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
+from commoncode import compat
 
 
 
@@ -56,7 +57,7 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 def logger_debug(*args):
-    return logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
+    return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
 project_name = __name__

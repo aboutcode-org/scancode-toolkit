@@ -31,13 +31,6 @@ from commoncode.testcase import FileBasedTesting
 from cluecode_test_utils import build_tests
 from cluecode_test_utils import load_copyright_tests
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 
 import pytest
