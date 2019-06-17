@@ -97,8 +97,27 @@ def build_package(package_data):
     """
     Return a Conda Package object from a dictionary yaml data.
     """
-    print(package_data)
-   
+    for key, value in package_data.items():
+            print('eeeeeeeee')
+            print(key)
+            print(value)
+    
+    name = None
+    version = None
+    package_element = package_data.get('package')
+    if package_element:
+        for key, value in package_element.items():
+            if key == 'name':
+                name = value
+            if key == 'version':
+                version = value
+    if name:
+        package = CondaPackage(
+            name=name,
+            version=version or None,
+        )
+        return package
+       
    
 def get_yaml_data(location):
     """

@@ -46,3 +46,9 @@ class TestConda(PackageTester):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_yaml_data(test_file)
         assert  (u'package', OrderedDict([(u'name', u'abeona'), (u'version', u'0.45.0')]))==results.items()[0]
+
+    def test_parse(self):
+        test_file = self.get_test_loc('conda/meta.yaml')
+        package = conda.parse(test_file)
+        expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
+        self.check_package(package, expected_loc, regen=True)
