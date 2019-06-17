@@ -98,26 +98,52 @@ def build_package(package_data):
     Return a Conda Package object from a dictionary yaml data.
     """
     for key, value in package_data.items():
-            print('eeeeeeeee')
-            print(key)
-            print(value)
-    
+        print('eeeeeeeee')
+        print(key)
+        print(value)
+
     name = None
     version = None
+
+    # Handle the package element
     package_element = package_data.get('package')
     if package_element:
         for key, value in package_element.items():
             if key == 'name':
                 name = value
-            if key == 'version':
+            elif key == 'version':
                 version = value
-    if name:
-        package = CondaPackage(
-            name=name,
-            version=version or None,
-        )
-        return package
-       
+    if not name:
+        return
+
+    package = CondaPackage(
+        name=name,
+        version=version or None,
+    )
+
+    # Handle the source element
+    source_element = package_data.get('source')
+    if source_element:
+        for key, value in source_element.items():
+            if key == 'url' and value:
+                package.download_url = value
+            elif key == 'sha256' and value:
+                package.sha256 = value
+
+    # Handle the about element
+    about_element = package_data.get('about')
+    if about_element:
+        for key, value in about_element.items():
+            if key == 'home' and value:
+                package.homepage_url = value
+            #elif key == 'license' and value:
+            #    package.declared_license = value
+            elif key == 'summary' and value:
+                package.description = value
+            elif key == 'dev_url' and value:
+                package.vcs_url = value
+    return package
+
    
 def get_yaml_data(location):
     """
