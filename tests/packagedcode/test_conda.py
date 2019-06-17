@@ -51,4 +51,4 @@ class TestConda(PackageTester):
         test_file = self.get_test_loc('conda/meta.yaml')
         package = conda.parse(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)

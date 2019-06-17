@@ -77,6 +77,9 @@ class CondaPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    def compute_normalized_license(self):
+        return models.compute_normalized_license(self.declared_license)
+
 
 def is_conda_yaml(location):
     return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'meta.yaml')
@@ -136,8 +139,8 @@ def build_package(package_data):
         for key, value in about_element.items():
             if key == 'home' and value:
                 package.homepage_url = value
-            #elif key == 'license' and value:
-            #    package.declared_license = value
+            elif key == 'license' and value:
+                package.declared_license = value
             elif key == 'summary' and value:
                 package.description = value
             elif key == 'dev_url' and value:
