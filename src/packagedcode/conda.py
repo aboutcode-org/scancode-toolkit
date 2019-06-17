@@ -38,6 +38,7 @@ from six import string_types
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packageurl import PackageURL
 
 
 """
@@ -145,6 +146,28 @@ def build_package(package_data):
                 package.description = value
             elif key == 'dev_url' and value:
                 package.vcs_url = value
+                
+    # Handle the about element
+    requirements_element = package_data.get('requirements')
+    if requirements_element:
+        for key, value in requirements_element.items():
+            # Run element format is like:
+            # (u'run', [u'mccortex ==1.0', u'nextflow ==19.01.0', u'cortexpy ==0.45.7', u'kallisto ==0.44.0', u'bwa', u'pandas', u'progressbar2', u'python >=3.6'])])
+            if key == 'run' and value and isinstance(value, (list, tuple)):
+                package_dependencies = []
+                for dependency in value:
+                    for splitter in ('==', '>='):
+                        dependency = dependency.split(splitter)[0]
+                    package_dependencies.append(
+                        models.DependentPackage(
+                            purl=PackageURL(
+                                type='conda', name=dependency).to_string(),
+                            scope='dependencies',
+                            is_runtime=True,
+                            is_optional=False,
+                        )
+                    )
+                package.dependencies = package_dependencies
     return package
 
    
