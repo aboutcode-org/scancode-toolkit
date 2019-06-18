@@ -78,12 +78,17 @@ else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
 
+# Python versions
+_sys_v0 = sys.version_info[0]
+py2 = _sys_v0 == 2
+py3 = _sys_v0 == 3
+
 # common file basenames for requirements and scripts
 base = ('base',)
 
 # known full file names with txt extension for requirements
 # base is always last
-requirements = tuple(p + '.txt' for p in platform_names + base)
+requirement_filenames = tuple('requirements_' + p + '.txt' for p in platform_names + base)
 
 # known full file names with py extensions for scripts
 # base is always last
@@ -129,6 +134,8 @@ def clean(root_dir):
         bin
         lib
         Lib
+        Lib64
+        lib64
         include
         Include
         Scripts
@@ -139,6 +146,7 @@ def clean(root_dir):
         pip-selfcheck.json
         src/scancode_toolkit.egg-info
         SCANCODE_DEV_MODE
+        man
     '''.split()
 
     # also clean __pycache__ if any
@@ -168,7 +176,7 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
             yield option + '"' + path + '"'
 
 
-def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
+def create_virtualenv_py2(std_python, root_dir, tpp_dirs=(), quiet=False):
     """
     Create a virtualenv in `root_dir` using the `std_python` Python
     executable. One of the `tpp_dirs` must contain a vendored virtualenv.py and
@@ -209,6 +217,27 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     call(vcmd, root_dir)
 
 
+def create_virtualenv_py3(std_python, root_dir, tpp_dirs=(), quiet=False):
+    """
+    Create a virtualenv in `root_dir` using the `std_python` Python
+    executable.
+
+    @std_python: Path or name of the Python executable to use.
+
+    @root_dir: directory in which the virtualenv will be created. This is also
+    the root directory for the project and the base directory for vendored
+    components directory paths.
+    """
+    if not quiet:
+        print("* Configuring Python ...")
+
+    vcmd = [std_python, '-m', 'venv']
+    if quiet:
+        vcmd += ['--quiet']
+    call(vcmd, root_dir)
+    run_pip(['pip', 'setuptools', 'virtualenv', 'wheel'], root_dir, tpp_dirs, quiet)
+
+
 def activate(root_dir):
     """ Activate a virtualenv in the current process."""
     bin_dir = os.path.join(root_dir, 'bin')
@@ -223,24 +252,35 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     Install requirements from requirement files found in `configs` with pip,
     using the vendored components in `tpp_dirs`.
     """
+    requirement_files = get_conf_files(configs, root_dir, requirement_filenames, quiet)
+    requirements = []
+    for req_file in requirement_files:
+        req_loc = os.path.join(root_dir, req_file)
+        requirements.extend(['--requirement' , '"' + req_loc + '"'])
+    run_pip(requirements, root_dir, tpp_dirs, quiet)
+
+
+def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
+    """
+    Install a list of `requirements` with pip,
+    using the vendored components in `tpp_dirs`.
+    """
     if not quiet:
         print("* Installing components ...")
-    requirement_files = get_conf_files(configs, root_dir, requirements, quiet)
     if on_win:
         bin_dir = os.path.join(root_dir, 'bin')
         configured_python = os.path.join(bin_dir, 'python.exe')
         base_cmd = [configured_python, '-m', 'pip']
     else:
         base_cmd = ['pip']
-    for req_file in requirement_files:
-        pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir']
-        if quiet:
-            pcmd += ['--quiet']
-        pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
-        pcmd.extend(pip_dir_args)
-        req_loc = os.path.join(root_dir, req_file)
-        pcmd.extend(['-r' , '"' + req_loc + '"'])
-        call(pcmd, root_dir)
+    pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir']
+    pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
+    pcmd.extend(pip_dir_args)
+    if quiet:
+        pcmd += ['--quiet']
+    pcmd.extend(requirements)
+
+    call(pcmd, root_dir)
 
 
 def run_scripts(configs, root_dir, configured_python, quiet=False):
@@ -276,7 +316,7 @@ def chmod_bin(directory):
             os.chmod(os.path.join(path, f), rwx)
 
 
-def get_conf_files(config_dir_paths, root_dir, file_names=requirements, quiet=False):
+def get_conf_files(config_dir_paths, root_dir, file_names=requirement_filenames, quiet=False):
     """
     Return a list of collected path-prefixed file paths matching names in a
     file_names tuple, based on config_dir_paths, root_dir and the types of
@@ -408,6 +448,10 @@ if __name__ == '__main__':
                 print()
         else:
             thirdparty_dirs.append(path)
+    if py2:
+        create_virtualenv = create_virtualenv_py2
+    else:
+        create_virtualenv = create_virtualenv_py2
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):

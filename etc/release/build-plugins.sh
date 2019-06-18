@@ -4,18 +4,22 @@
 #
 
 # ScanCode release script
-# This script builds wheels for plugins in the plugins/ directory
+# This script builds wheels for plugins in the plugins-builtin/ directory
 
 set -e
 
 # un-comment to trace execution
 # set -x
 
-for i in `ls plugins`
+
+mkdir -p dist
+
+for i in `ls plugins-builtin`
   do 
-    pushd plugins/$i
+    pushd plugins-builtin/$i
     rm -rf dist build
     python setup.py release
     cp `find dist/ -type f` ../../thirdparty/
+    cp `find dist/ -type f` ../../dist/
     popd
   done

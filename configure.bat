@@ -1,62 +1,49 @@
 @echo OFF
-
-@rem Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
+@rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 @rem ################################
-@rem # change these variables to customize this script locally
+@rem # Defaults. change these variables to customize this script locally
 @rem ################################
 @rem # you can define one or more thirdparty dirs, each prefixed with TPP_DIR
 set TPP_DIR=thirdparty
+
+set DEFAULT_PYTHON=python
 
 @rem # default configurations for dev
 set CONF_DEFAULT="etc/conf/dev"
 @rem #################################
 
-set SCANCODE_ROOT_DIR=%~dp0
-@rem !!!!!!!!!!! ATTENTION !!!!!
-@rem there is a space at the end of the set SCANCODE_CLI_ARGS=  line ... 
-@rem NEVER remove this!
-@rem otherwise, this script and scancode do not work.  
-set SCANCODE_CLI_ARGS= 
-@rem Collect/Slurp all command line arguments in a variable
+set CFG_ROOT_DIR=%~dp0
+
+@rem Collect all command line arguments in a variable
+@rem Use a trailing space in the next line to set the variable to an empty string
+set CFG_CMD_LINE_ARGS=
+
+@rem a possible alternative way and simpler way to slurp args
+@rem set CFG_CMD_LINE_ARGS=%*
+
 :collectarg
- if ""%1""=="""" (
-    goto continue
- )
- call set SCANCODE_CLI_ARGS=%SCANCODE_CLI_ARGS% %1
+ if ""%1""=="""" goto continue
+ call set CFG_CMD_LINE_ARGS=%CFG_CMD_LINE_ARGS% %1
  shift
  goto collectarg
 
 :continue
 
-@rem default to dev configuration when no args are passed
-if "%SCANCODE_CLI_ARGS%"==" " (
-    set SCANCODE_CLI_ARGS="%CONF_DEFAULT%"
-    goto configure
-)
+@rem Set defaults when no args are passed
+if "%CFG_CMD_LINE_ARGS%"=="" set CFG_CMD_LINE_ARGS="%CONF_DEFAULT%"
+if "%PYTHON_EXE%"=="" set PYTHON_EXE=%DEFAULT_PYTHON%
 
-:configure
-if not exist "c:\python27\python.exe" (
-    echo(
-    echo On Windows, ScanCode requires Python 2.7.x 32 bits to be installed first.
-    echo(
-    echo Please download and install Python 2.7 ^(Windows x86 MSI installer^) version 2.7.10.
-    echo Install Python on the c: drive and use all default installer options.
-    echo Do NOT install Python v3 or any 64 bits edition.
-    echo Instead download Python from this url and see the README.rst file for more details:
-    echo(
-    echo    https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
-    echo(
-    exit /b 1
-)
 
-call c:\python27\python.exe "%SCANCODE_ROOT_DIR%etc\configure.py" %SCANCODE_CLI_ARGS%
+call "%PYTHON_EXE%" "%CFG_ROOT_DIR%etc\configure.py" %CFG_CMD_LINE_ARGS%
+
+@rem Return a proper return code on failure
 if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
-if exist "%SCANCODE_ROOT_DIR%bin\activate" (
-    "%SCANCODE_ROOT_DIR%bin\activate"
-)
-goto EOS
 
-:EOS
+@rem Activate the virtualenv
+endlocal
+if exist "%CFG_ROOT_DIR%bin\activate" (
+    "%CFG_ROOT_DIR%bin\activate"
+)

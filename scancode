@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 
 # A minimal shell wrapper to the CLI entry point fo ScanCode
