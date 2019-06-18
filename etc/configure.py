@@ -9,8 +9,9 @@ directories paths arguments and the operating system platform. To use, create
 a configuration directory tree that contains any of these:
 
  * Requirements files named with this convention:
- - base.txt contains common requirements installed on all platforms.
- - win.txt, linux.txt, mac.txt, posix.txt are os-specific requirements.
+ - requirements_base.txt contains common requirements installed on all platforms.
+ - requirements_win.txt, requirements_linux.txt, requirements_mac.txt and 
+   requirements_posix.txt are os-specific requirements.
 
  * Python scripts files named with this convention:
  - base.py is a common script executed on all os before os-specific scripts.
@@ -42,15 +43,15 @@ specific ones.
 
 For example a tree could be looking like this:
     etc/conf
-        base.txt : base pip requirements for all platforms
-        linux.txt : linux-only pip requirements
+        requirements_base.txt : base pip requirements for all platforms
+        requirements_linux.txt : linux-only pip requirements
         base.py : base config script for all platforms
         win.py : windows-only config script
         posix.sh: posix-only shell script
 
     etc/conf/prod
-            base.txt : base pip requirements for all platforms
-            linux.txt : linux-only pip requirements
+            requirements_base.txt : base pip requirements for all platforms
+            requirements_linux.txt : linux-only pip requirements
             linux.sh : linux-only script
             base.py : base config script for all platforms
             mac.py : mac-only config script
