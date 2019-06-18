@@ -34,7 +34,8 @@ except NameError:  # pragma: nocover
     # Python 3
     unicode = str  # NOQA
 
-string_types = str, bytes, unicode,
+string_types = str, unicode,
+
 
 try:
     # Python 2
