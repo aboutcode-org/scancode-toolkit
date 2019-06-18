@@ -1,0 +1,21 @@
+about_resource: beautifulsoup4-4.6.0-py3-none-any.whl
+name: Beautiful Soup
+version: 4.6.0
+download_url: https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl
+description: Beautiful Soup is a Python library designed for quick turnaround projects like
+  screen-scraping.
+homepage_url: http://www.crummy.com/software/BeautifulSoup/bs4/
+license_expression: mit
+copyright: Copyright (c) Leonard Richardson
+notice_file: beautifulsoup4-4.6.0-py3-none-any.whl.NOTICE
+notice_url: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/LICENSE
+attribute: yes
+owner: Beautiful Soup
+vcs_repository: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/files
+checksum_md5: f6becf1889e5697734cc98798d2f0111
+checksum_sha1: a8168785cc0d1d777741a59e41cc2f31613eeaab
+package_url: pkg:pypi/beautifulsoup4@4.6.0
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

@@ -1,0 +1,22 @@
+about_resource: more-itertools-4.2.0.tar.gz
+name: more_itertools
+version: 4.2.0
+download_url: https://files.pythonhosted.org/packages/c0/2f/6773347277d76c5ade4414a6c3f785ef27e7f5c4b0870ec7e888e66a8d83/more-itertools-4.2.0.tar.gz
+description: More routines for operating on iterables, beyond itertools
+homepage_url: https://github.com/erikrose/more-itertools
+license_expression: mit
+copyright: Copyright (c) Erik Rose
+notice_file: more-itertools-4.2.0.tar.gz.NOTICE
+notice_url: https://github.com/erikrose/more-itertools/blob/4.2.0/LICENSE
+attribute: yes
+owner: Erik Rose
+owner_url: http://www.grinchcentral.com/
+contact: grinch@grinchcentral.com
+vcs_repository: https://github.com/erikrose/more-itertools
+checksum_md5: 5629c955d17df328ec534989f0649369
+checksum_sha1: 7d14e4dd435d762129e10ec28d2d9828d4cb9887
+package_url: pkg:pypi/more-itertools@4.2.0
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

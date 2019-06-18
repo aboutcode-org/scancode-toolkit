@@ -11,7 +11,7 @@ homepage_url: https://certifi.io/en/latest/
 license_expression: mpl-2.0
 name: certifi
 notice_url: https://certifi.io/en/latest/
-notice_file: certifi.NOTICE
+notice_file: certifi-2018.4.16-py2.py3-none-any.whl.NOTICE
 license_file: mpl-2.0.LICENSE
 owner: Kenneth Reitz
 owner_url: https://github.com/kennethreitz
