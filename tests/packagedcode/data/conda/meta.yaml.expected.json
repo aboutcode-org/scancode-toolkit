@@ -28,7 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:conda/mccortex",
-      "requirement": null,
+      "requirement": "==1.0",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
@@ -36,7 +36,7 @@
     },
     {
       "purl": "pkg:conda/nextflow",
-      "requirement": null,
+      "requirement": "==19.01.0",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
@@ -44,7 +44,7 @@
     },
     {
       "purl": "pkg:conda/cortexpy",
-      "requirement": null,
+      "requirement": "==0.45.7",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
@@ -52,7 +52,7 @@
     },
     {
       "purl": "pkg:conda/kallisto",
-      "requirement": null,
+      "requirement": "==0.44.0",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
@@ -84,7 +84,7 @@
     },
     {
       "purl": "pkg:conda/python",
-      "requirement": null,
+      "requirement": ">=3.6",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,

@@ -101,11 +101,6 @@ def build_package(package_data):
     """
     Return a Conda Package object from a dictionary yaml data.
     """
-    for key, value in package_data.items():
-        print('eeeeeeeee')
-        print(key)
-        print(value)
-
     name = None
     version = None
 
@@ -156,12 +151,20 @@ def build_package(package_data):
             if key == 'run' and value and isinstance(value, (list, tuple)):
                 package_dependencies = []
                 for dependency in value:
-                    for splitter in ('==', '>='):
-                        dependency = dependency.split(splitter)[0]
+                    requirement = None
+                    for splitter in ('==', '>=',  '<=', '>', '<'):
+                        if splitter in dependency:
+                            splits = dependency.split(splitter)
+                            # Replace the package name and keep the relationship and version
+                            # For example: keep ==19.01.0
+                            requirement = dependency.replace(splits[0], '').strip()
+                            dependency = splits[0].strip()
+                            break
                     package_dependencies.append(
                         models.DependentPackage(
                             purl=PackageURL(
                                 type='conda', name=dependency).to_string(),
+                            requirement=requirement,
                             scope='dependencies',
                             is_runtime=True,
                             is_optional=False,
