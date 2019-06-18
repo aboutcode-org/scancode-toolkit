@@ -57,13 +57,15 @@ For example a tree could be looking like this:
             mac.py : mac-only config script
 """
 
+from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import os
-import stat
-import sys
 import shutil
+import stat
 import subprocess
+import sys
 
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
@@ -279,6 +281,8 @@ def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
     pcmd.extend(pip_dir_args)
     if quiet:
         pcmd += ['--quiet']
+    else:
+        pcmd += ['-vvv']
     pcmd.extend(requirements)
 
     call(pcmd, root_dir)
