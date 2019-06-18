@@ -1,115 +1,240 @@
-trigger:
-    branches:
-        include: ['*']
-    tags:
-        include: ['*']
+# Per doc trigger and pr may not be needed https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#triggering-a-pipeline
+#trigger:
+#    branches:
+#        include: ['*']
+#    tags:
+#        include: ['*']
+
+#pr:
+#    branches:
+#        include: ['*']
 
 jobs:
-    - job: posix_tests
-      displayName: POSIX
-      strategy:
+
+################################################################################
+# These jobs are using VMs and Azure-provided Pythons
+################################################################################
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          name: ubuntu_16
+          image_name: ubuntu-16.04
           matrix:
-              #linux
-              ubuntu-16-py27:
-                  imageName: ubuntu-16.04
-                  pythonVersion: '2.7'
-              ubuntu-16-py36:
-                  imageName: ubuntu-16.04
-                  pythonVersion: '3.6'
+              py27:
+                  python_version: '2.7'
+                  test_suite: bin/py.test -vvs tests/commoncode
+#              py36:
+#                  python_version: '3.6'
+#              py37:
+#                  python_version: '3.7'
 
-              #High Sierra
-              macOS-10.13-py27:
-                  imageName: macos-10.13
-                  pythonVersion: '2.7'
-              macOS-10.13-py37:
-                  imageName: macos-10.13
-                  pythonVersion: '3.6'
-
-#              #Mojave
-#              macOS-10.14-py27:
-#                  imageName: macos-10.14
-#                  pythonVersion: '2.7'
-#              macOS-10.14-py37:
-#                  imageName: macos-10.14
-#                  pythonVersion: '3.6'
-
-      pool:
-          vmImage: $(imageName)
-
-      steps:
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '$(pythonVersion)'
-            displayName: Install Python (using Azure task)
-          - script: ./configure
-            displayName: Run configure
-          - script: ./bin/pytest -vvs tests/commoncode
-            displayName: Run tests
-
-    - job : win_tests
-      displayName: Win
-      strategy:
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          name: macos_1013
+          image_name: macos-10.13
           matrix:
-              Windows_2016_py27_x86:
-                  imageName: vs2017-win2016
-                  pythonVersion: '2.7'
-                  architecture: x86
-              Windows_2016_py36_x86:
-                  imageName: vs2017-win2016
-                  pythonVersion: '3.6'
-                  architecture: x86
-#              Windows_2012_py27_x86:
-#                  imageName: vs2015-win2012r2
-#                  pythonVersion: '2.7'
-#                  architecture: x86
-#              Windows_2012_py36_x86:
-#                  imageName: vs2015-win2012r2
-#                  pythonVersion: '3.6'
-#                  architecture: x86
-#              Windows_2019_py27_x86:
-#                  imageName: windows-2019
-#                  pythonVersion: '2.7'
-#                  architecture: x86
-#              Windows_2019_py36_x86:
-#                  imageName: windows-2019
-#                  pythonVersion: '3.6'
-#                  architecture: x86
-#              Windows_2016_py27_x64:
-#                  imageName: vs2017-win2016
-#                  pythonVersion: '2.7'
-#                  architecture: x64
-#              Windows_2016_py36_x64:
-#                  imageName: vs2017-win2016
-#                  pythonVersion: '3.6'
-#                  architecture: x64
-#              Windows_2012_py27_x64:
-#                  imageName: vs2015-win2012r2
-#                  pythonVersion: '2.7'
-#                  architecture: x64
-#              Windows_2012_py36_x64:
-#                  imageName: vs2015-win2012r2
-#                  pythonVersion: '3.6'
-#                  architecture: x64
-#              Windows_2019_py27_x64:
-#                  imageName: windows-2019
-#                  pythonVersion: '2.7'
-#                  architecture: x64
-#              Windows_2019_py36_x64:
-#                  imageName: windows-2019
-#                  pythonVersion: '3.6'
-#                  architecture: x64
+              py27:
+                  python_version: '2.7'
+                  test_suite: bin/py.test -vvs tests/commoncode
+#              py36:
+#                  python_version: '3.6'
+#              py37:
+#                  python_version: '3.7'
 
-      pool:
-          vmImage: $(imageName)
+#    - template: etc/ci/azure-posix.yml
+#      parameters:
+#          name: macos_1014
+#          image_name: macos-10.14
+#          matrix:
+#              py27:
+#                  python_version: '2.7'
+#              py36:
+#                  python_version: '3.6'
+#              py37:
+#                  python_version: '3.7'
 
-      steps:
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '$(pythonVersion)'
-                architecture: $(architecture)
-            displayName: Install Python (using Azure task)
+    - template: etc/ci/azure-win.yml
+      parameters:
+          name: Win_2016_32
+          image_name: vs2017-win2016
+          matrix:
+              py27:
+                  python_version: '2.7'
+                  python_architecture: x86
+                  test_suite: bin\py.test -vvs tests\commoncode
+#              py36:
+#                  python_version: '3.6'
+#                  python_architecture: x86
+#              py37:
+#                  python_version: '3.7'
+#                  python_architecture: x86
 
-          - script: configure
-            displayName: Run configure
-          - script: bin\pytest -vvs tests\commoncode
-            displayName: Run tests
+#    - template: etc/ci/azure-win.yml
+#      parameters:
+#          name: Win_2016_64
+#          image_name: vs2017-win2016
+#          matrix:
+#              py27:
+#                  python_version: '2.7'
+#                  python_architecture: x64
+#              py36:
+#                  python_version: '3.6'
+#                  python_architecture: x64
+#              py37:
+#                  python_version: '3.7'
+#                  python_architecture: x64
+
+
+################################################################################
+# These jobs are using containers and their own Python
+################################################################################
+
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: ubuntu_16_xenial_py27
+#          container: ubuntu:xenial
+#          python_path: python2.7
+#          install_python: sudo apt-get install -y python python-dev
+#          matrix:
+#              commoncode:
+#                  test_suite: bin/pytest -vvs tests/commoncode
+#
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: ubuntu_16_xenial_py36
+#          container: ubuntu:xenial
+#          python_path: python3.6
+#          install_python: |
+#             sudo apt-get -y install software-properties-common
+#             sudo add-apt-repository -y ppa:deadsnakes
+#             sudo apt-get -y update
+#             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+#
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: ubuntu_18_bionic_py27
+#          container: ubuntu:bionic
+#          python_path: python2.7
+#          install_python: sudo apt-get install -y python python-dev
+#
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: ubuntu_18_bionic_py36
+#          container: ubuntu:bionic
+#          python_path: python3.6
+#          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+#
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: centos7_py27
+#          container: centos:7
+#          python_path: python2.7
+#          install_python: sudo yum install -y python python27-devel
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: centos7_py36
+#          container: centos:7
+#          python_path: python3.6
+#          install_python: |
+#              set -e -x
+#              sudo yum install -y epel-release
+#              sudo yum install -y python36 python36-devel python36-virtualenv
+#
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: manylinux1_64_py27
+#          container: quay.io/pypa/manylinux1_x86_64:latest
+#          python_path: /opt/python/cp27-cp27mu/bin/python
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: manylinux1_64_py36
+#          container: quay.io/pypa/manylinux1_x86_64:latest
+#          python_path: /opt/python/cp36-cp36m/bin/python
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: manylinux2010_64_py27
+#          container: quay.io/pypa/manylinux2010_x86_64:latest
+#          python_path: /opt/python/cp27-cp27mu/bin/python
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: manylinux2010_64_py36
+#          container: quay.io/pypa/manylinux2010_x86_64:latest
+#          python_path: /opt/python/cp36-cp36m/bin/python
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: manylinux2010_64_py37
+#          container: quay.io/pypa/manylinux2010_x86_64:latest
+#          python_path: /opt/python/cp37-cp37m/bin/python
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: fedora_30_py27
+#          container: fedora:30
+#          package_manager: dnf
+#          python_path: python2.7
+#          install_python: |
+#              set -e -x
+#              sudo dnf install -y python2 python2-devel
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          name: fedora_30_py37
+#          container: fedora:30
+#          package_manager: dnf
+#          python_path: python3.7
+#          install_python: |
+#              set -e -x
+#              sudo dnf install -y python3 python3-devel python3-virtualenv
+#
+#
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: debian_9_stretch_py27
+#          container: debian:stretch
+#          python_path: python2.7
+#          install_python: sudo apt-get install -y python python-dev
+
+
+################################################################################
+# These jobs are using containers and their own Python: FAILING FOR NOW
+################################################################################
+
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          name: debian_9_stretch_py36
+#          container: debian:stretch
+#          python_path: python3.6
+#          install_python: |
+#            set -e -x
+#            sudo apt-get install -y \
+#                libncurses5-dev libncursesw5-dev libreadline6-dev \
+#                libdb-dev libgdbm-dev libsqlite3-dev libssl-dev \
+#                libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev \
+#                libcurl4-openssl-dev libpam0g-dev \
+#                libsqlite3-dev tk-dev libffi-dev \
+#                curl
+#            export PYVER=3.6.8
+#            curl -o Python-$PYVER.tgz https://www.python.org/ftp/python/$PYVER/Python-$PYVER.tgz
+#            tar -xvf Python-$PYVER.tgz
+#            cd Python-$PYVER
+#            ./configure --enable-optimizations
+#            make -j8
+#            sudo make altinstall

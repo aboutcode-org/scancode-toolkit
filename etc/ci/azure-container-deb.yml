@@ -1,0 +1,46 @@
+parameters:
+    name: ''
+    container: ''
+    python_path: ''
+    package_manager: apt-get
+    install_python: ''
+    install_packages: |
+        set -e -x
+        sudo apt-get -y update
+        sudo apt-get -y install \
+            build-essential \
+            xz-utils zlib1g bzip2 libbz2-1.0 tar \
+            sqlite3 libxml2-dev libxslt1-dev \
+            software-properties-common openssl
+    matrix: []
+
+
+jobs:
+    - job: ${{ parameters.name }}
+
+      pool:
+          vmImage: 'ubuntu-16.04'
+
+      container:
+          image: ${{ parameters.container }}
+          options: '--name ${{ parameters.name }} -v /usr/bin/docker:/tmp/docker:ro'
+
+      strategy:
+          matrix:
+              ${{ insert }}: ${{ parameters.matrix }}
+
+      steps:
+          - script: /tmp/docker exec -t -u 0 ${{ parameters.name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
+            displayName: Install sudo
+
+          - script: ${{ parameters.install_packages }}
+            displayName: Install required packages
+
+          - script: ${{ parameters.install_python }}
+            displayName: Install Python
+
+          - script: PYTHON_EXE=${{ parameters.python_path }} ./configure
+            displayName: 'Configure'
+
+          - script: $(test_suite)
+            displayName: 'Run tests'

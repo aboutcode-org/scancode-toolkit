@@ -1,0 +1,46 @@
+parameters:
+    name: ''
+    container: ''
+    python_path: ''
+    package_manager: yum
+    install_python: ''
+    install_packages: |
+        set -e -x
+        sudo yum groupinstall -y "Development Tools"
+        sudo yum install -y \
+            openssl openssl-devel \
+            sqlite-devel zlib-devel xz-devel bzip2-devel \
+            bzip2 tar unzip zip \
+            libxml2-devel libxslt-devel
+    matrix: []
+
+
+jobs:
+    - job: ${{ parameters.name }}
+
+      pool:
+          vmImage: 'ubuntu-16.04'
+
+      container:
+          image: ${{ parameters.container }}
+          options: '--name ${{ parameters.name }} -v /usr/bin/docker:/tmp/docker:ro'
+
+      strategy:
+          matrix:
+              ${{ insert }}: ${{ parameters.matrix }}
+
+      steps:
+          - script: /tmp/docker exec -t -u 0 ${{ parameters.name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
+            displayName: Install sudo
+
+          - script: ${{ parameters.install_packages }}
+            displayName: Install required packages
+
+          - script: ${{ parameters.install_python }}
+            displayName: Install Python
+
+          - script: PYTHON_EXE=${{ parameters.python_path }} ./configure
+            displayName: 'Configure'
+
+          - script: $(test_suite)
+            displayName: 'Run tests'

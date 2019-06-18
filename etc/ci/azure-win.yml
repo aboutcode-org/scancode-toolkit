@@ -1,0 +1,26 @@
+parameters:
+    name: ''
+    image_name: ''
+    matrix: []
+
+jobs:
+    - job: ${{ parameters.name }}
+
+      pool:
+          vmImage: ${{ parameters.image_name }}
+
+      strategy:
+          matrix:
+              ${{ insert }}: ${{ parameters.matrix }}
+
+      steps:
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '$(python_version)'
+                architecture: '$(python_architecture)'
+
+          - script: configure
+            displayName: 'Configure'
+
+          - script: $(test_suite)
+            displayName: 'Run tests'
