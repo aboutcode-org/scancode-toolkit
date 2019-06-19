@@ -33,6 +33,7 @@ from collections import OrderedDict
 
 import attr
 
+from commoncode.text import python_safe_name
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -67,7 +68,6 @@ class Summary(object):
     identifier = attr.ib()
     license_expression = attr.ib()
     holders = attr.ib()
-    count = attr.ib()
 
 
 @post_scan_impl
@@ -112,7 +112,8 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        identifiers = OrderedDict()
+        identifiers = []
+        base_identifier_counts = Counter()
 
         # Summarize origin clues to directory level and tag summarized Resources
         for resource in codebase.walk(topdown=False):
@@ -156,16 +157,17 @@ class OriginSummary(PostScanPlugin):
                     codebase.save_resource(resource)
 
                     holder = '\n'.join(holders)
-                    identifier = '{}_{}'.format(license_expression, holder)
-                    if identifier in identifiers:
-                        identifiers[identifier].count += 1
-                    else:
-                        identifiers[identifier] = Summary(
+                    base_identifier =  python_safe_name('{}_{}'.format(license_expression, holder))
+                    # Keep track of identifiers so we can enumerate them properly
+                    base_identifier_counts[base_identifier] += 1
+                    identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
+                    identifiers.append(
+                        Summary(
                             identifier=identifier,
                             license_expression=license_expression,
                             holders=holders,
-                            count=1
                         )
+                    )
 
                     for child_rid in child_rids:
                         child = codebase.get_resource(child_rid)
@@ -179,8 +181,28 @@ class OriginSummary(PostScanPlugin):
                             child.summarized_to = identifier
                             child.save(codebase)
 
-        for _, summary in iter(sorted(identifiers.iteritems())):
-            codebase.attributes.summaries.append(summary)
+        # Create intermediate data structure to gather all similar identifiers
+        summary_by_identifiers = OrderedDict()
+        for base_identifier in sorted(base_identifier_counts.keys()):
+            ids = []
+            summary = None
+            for identifier in identifiers:
+                if base_identifier in identifier.identifier:
+                    ids.append(identifier.identifier)
+                    if not summary:
+                        summary = identifier
+            if summary:
+                summary_by_identifiers[tuple(ids)] = summary
+
+        # Consolidate duplicate summaries to one identifier
+        sorted_summary_by_identifiers = sorted(summary_by_identifiers.items())
+        for resource in codebase.walk(topdown=True):
+            for identifiers, summary in sorted_summary_by_identifiers:
+                if resource.summarized_to in identifiers:
+                    resource.summarized_to = summary.identifier
+
+        # Attach summaries to codebase level attribute
+        codebase.attributes.summaries = [summary for _, summary in sorted_summary_by_identifiers]
 
 
 def is_majority(count, files_count, threshold=None):

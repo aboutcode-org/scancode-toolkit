@@ -23,7 +23,7 @@
     },
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post641.ddc72be.dirty.20190613001617",
+      "tool_version": "3.0.2.post645.da1303c.dirty.20190619010049",
       "options": {
         "input": [
           "clear-summary.json"
@@ -34,8 +34,8 @@
         "--origin-summary-threshold": 1.0
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-06-13T191007.455394",
-      "end_timestamp": "2019-06-13T191007.482806",
+      "start_timestamp": "2019-06-19T010226.587988",
+      "end_timestamp": "2019-06-19T010226.615509",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -45,20 +45,18 @@
   ],
   "summaries": [
     {
-      "identifier": "apache-2.0_Acme Corporation",
+      "identifier": "apache_2_0_acme_corporation_1",
       "license_expression": "apache-2.0",
       "holders": [
         "Acme Corporation"
-      ],
-      "count": 1
+      ]
     },
     {
-      "identifier": "mit_Omega Inc.",
+      "identifier": "mit_omega_inc_1",
       "license_expression": "mit",
       "holders": [
         "Omega Inc."
-      ],
-      "count": 3
+      ]
     }
   ],
   "files": [
@@ -280,7 +278,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -358,7 +356,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -436,7 +434,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -514,7 +512,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -592,7 +590,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -670,7 +668,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -748,7 +746,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -826,7 +824,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -904,7 +902,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "apache-2.0_Acme Corporation",
+      "summarized_to": "apache_2_0_acme_corporation_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -978,7 +976,7 @@
         ],
         "count": 2
       },
-      "summarized_to": "mit_Omega Inc.",
+      "summarized_to": "mit_omega_inc_3",
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -1056,7 +1054,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "mit_Omega Inc.",
+      "summarized_to": "mit_omega_inc_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1134,7 +1132,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "mit_Omega Inc.",
+      "summarized_to": "mit_omega_inc_1",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1171,7 +1169,7 @@
         ],
         "count": 1
       },
-      "summarized_to": "mit_Omega Inc.",
+      "summarized_to": "mit_omega_inc_3",
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
@@ -1249,7 +1247,7 @@
       ],
       "authors": [],
       "origin_summary": {},
-      "summarized_to": "mit_Omega Inc.",
+      "summarized_to": "mit_omega_inc_2",
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
