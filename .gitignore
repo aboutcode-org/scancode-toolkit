@@ -76,3 +76,5 @@ pyvenv.cfg
 /.python-version
 /man/
 /.pytest_cache/
+lib64
+tcl
