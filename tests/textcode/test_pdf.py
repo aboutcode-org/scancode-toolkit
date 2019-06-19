@@ -44,7 +44,7 @@ class TestPdf(FileBasedTesting):
 Extracts text from a pdf file.
 """
 import contextlib
-from StringIO import StringIO
+from io import StringIO
 
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage

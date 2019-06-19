@@ -729,7 +729,7 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
 
 
 def test_display_summary_edge_case_scan_time_zero():
-    from cStringIO import StringIO
+    from io import StringIO
     import sys
 
     from scancode.cli import display_summary
