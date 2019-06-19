@@ -1,4 +1,4 @@
-@echo OFF
+@echo ON
 setlocal
 @rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
@@ -33,6 +33,10 @@ set CFG_ROOT_DIR=%~dp0
 set CONFIGURED_PYTHON=%CFG_ROOT_DIR%Scripts\python.exe
 
 set "CFG_CMD_LINE_ARGS= "
+
+python --version
+python -c "import sys;print(sys.executable)"
+
 
 @rem parse command line options and arguments 
 if ""%1""=="""" (
