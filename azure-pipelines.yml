@@ -22,7 +22,7 @@ jobs:
           matrix:
               py27:
                   python_version: '2.7'
-                  test_suite: bin/py.test -vvs tests/commoncode
+                  test_suite: bin/py.test -vvs -n8
 #              py36:
 #                  python_version: '3.6'
 #              py37:
@@ -35,7 +35,7 @@ jobs:
           matrix:
               py27:
                   python_version: '2.7'
-                  test_suite: bin/py.test -vvs tests/commoncode
+                  test_suite: bin/py.test -vvs -n8
 #              py36:
 #                  python_version: '3.6'
 #              py37:
@@ -61,7 +61,7 @@ jobs:
               py27:
                   python_version: '2.7'
                   python_architecture: x86
-                  test_suite: bin\py.test -vvs tests\commoncode
+                  test_suite: bin\py.test -vvs -n8
 #              py36:
 #                  python_version: '3.6'
 #                  python_architecture: x86
