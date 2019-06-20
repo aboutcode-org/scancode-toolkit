@@ -21,7 +21,7 @@ jobs:
                     --source https://vstsagenttools.blob.core.windows.net/tools/hostedtoolcache/linux/Python/2.7.15 \
                     --destination $AGENT_TOOLSDIRECTORY/Python/2.7.15
                 original_directory=$PWD
-                setups=$(find $AGENT_TOOLSDIRECTORY/Python -name setup.sh)
+                setups=$(find $AGENT_TOOLSDIRECTORY/Python/2.7.15 -name setup.sh)
                 for setup in $setups; do
                     chmod +x $setup;
                     cd $(dirname $setup);
