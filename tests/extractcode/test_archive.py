@@ -2715,14 +2715,36 @@ class TestZipSlip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.extract_zip(test_file, test_dir)
         assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'good.txt'
+        ]
         if on_windows:
-            expected = [u'good.txt', u'tmp/evil.txt']
+            try:
+                check_files(test_dir, expected)
+            except AssertionError:
+                expected = [u'good.txt', u'tmp/evil.txt']
+                check_files(test_dir, expected)
         else:
-            expected = [
-                'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
-                'good.txt'
-            ]
-        check_files(test_dir, expected)
+            check_files(test_dir, expected)
+
+    def test_extract_zipslip_zip_win(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'good.txt'
+        ]
+        if on_windows:
+            try:
+                check_files(test_dir, expected)
+            except AssertionError:
+                expected = [u'Temp/evil.txt', u'good.txt']
+                check_files(test_dir, expected)
+        else:
+            check_files(test_dir, expected)
 
     @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
     def test_extract_zipslip_tar_posix(self):
@@ -2734,20 +2756,6 @@ class TestZipSlip(BaseArchiveTestCase):
             'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
             'good.txt'
         ]
-        check_files(test_dir, expected)
-
-    def test_extract_zipslip_zip_win(self):
-        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.zip')
-        test_dir = self.get_temp_dir()
-        result = archive.extract_zip(test_file, test_dir)
-        assert [] == result
-        if on_windows:
-            expected = [u'Temp/evil.txt', u'good.txt']
-        else:
-            expected = [
-                'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
-                'good.txt'
-            ]
         check_files(test_dir, expected)
 
     @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
