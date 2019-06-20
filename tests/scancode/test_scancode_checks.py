@@ -77,6 +77,6 @@ class TestCheckCode(unittest.TestCase):
 
 class TestRelease(unittest.TestCase):
 
-    @unittest.skipIf(not on_linux, 'Release creation is tested only on Linux')
+    @unittest.skip('This cano only work if running in its own isolated test run and process.')
     def test_create_source_release_archives(self):
         subprocess.check_output('./etc/release/release.sh'.split(), cwd=root_dir)

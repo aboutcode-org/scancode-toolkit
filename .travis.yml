@@ -25,6 +25,7 @@ env:
     - TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py"
     - TEST_SUITE="$PYTEST tests/cluecode"
     - TEST_SUITE="$PYTEST tests/packagedcode"
+    - TEST_SUITE="./etc/release/release.sh"
 
 
 # Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
