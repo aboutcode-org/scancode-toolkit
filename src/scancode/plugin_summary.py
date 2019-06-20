@@ -68,6 +68,7 @@ class Summary(object):
     identifier = attr.ib()
     license_expression = attr.ib()
     holders = attr.ib()
+    type=attr.ib()
 
 
 @post_scan_impl
@@ -113,6 +114,7 @@ class OriginSummary(PostScanPlugin):
             return
 
         identifiers = []
+        packages = []
         base_identifier_counts = Counter()
 
         # Summarize origin clues to directory level and tag summarized Resources
@@ -166,6 +168,7 @@ class OriginSummary(PostScanPlugin):
                             identifier=identifier,
                             license_expression=license_expression,
                             holders=holders,
+                            type=['license', 'holder']
                         )
                     )
 
@@ -180,6 +183,25 @@ class OriginSummary(PostScanPlugin):
                         if (child_holders, child_license_expression) == (holders, license_expression):
                             child.summarized_to = identifier
                             child.save(codebase)
+
+            resource_packages = resource.packages
+            if resource_packages:
+                # TODO: Should package data have greater precedence than summarized license expression/holders?
+                license_expression = resource_packages['license_expression']
+                holders = resource_packages['copyright']
+                base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
+                base_identifier_counts[base_identifier] += 1
+                identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
+                for child in resource.walk(topdown=True):
+                    child.summarized_to = identifier
+                identifier.append(
+                    Summary(
+                        identifier=identifier,
+                        license_expression=license_expression,
+                        holders=holders,
+                        type=['package']
+                    )
+                )
 
         # Create intermediate data structure to gather all similar identifiers
         summary_by_identifiers = OrderedDict()
