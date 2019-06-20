@@ -54,7 +54,7 @@ class Simhash:
         """
         result = None
 
-        if len(self.tokens) != 0:
+        if len(self.tokens):
             fingerprint_binary = self.generate_fingerprint()
             result = binascii.hexlify(fingerprint_binary)
 
@@ -93,8 +93,8 @@ class Simhash:
 
         return result
 
-
-    def bitarray_from_bytes(self, b):
+    @staticmethod
+    def bitarray_from_bytes(b):
         """
         Return bitarray from a byte string, interpreted as machine values.
         """
