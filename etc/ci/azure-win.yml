@@ -19,7 +19,7 @@ jobs:
                 versionSpec: '$(python_version)'
                 architecture: '$(python_architecture)'
 
-          - script: configure --python python.exe
+          - script: configure --python path
             displayName: 'Configure'
 
           - script: $(test_suite)

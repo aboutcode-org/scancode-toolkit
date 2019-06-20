@@ -10,7 +10,9 @@ setlocal
 @rem #  <some conf path> : this must be the last argument and sets the path to a
 @rem #    configuration directory to use.
 @rem #  --python < path to python.exe> : this must be the first argument and set
-@rem #    the path to the Python executable to use.
+@rem #    the path to the Python executable to use. If < path to python.exe> is
+@rem #    set to "path", then the executable will be the python.exe available
+@rem #    in the PATH.
 @rem ################################
 
 @rem ################################
@@ -75,10 +77,15 @@ if exist "%CONFIGURED_PYTHON%" (
     )
 )
 
+if ""%PROVIDED_PYTHON%""==""path"" (
+    @rem use a bare python available in the PATH
+    set PYTHON_EXECUTABLE=python
+    goto run
+)
+
 if exist "%PROVIDED_PYTHON%" (
     set PYTHON_EXECUTABLE=%PROVIDED_PYTHON%
     goto run
-
 )
 
 if exist %DEFAULT_PYTHON% (
