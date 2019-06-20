@@ -15,7 +15,7 @@ jobs:
 # These jobs are using VMs and Azure-provided Pythons
 ################################################################################
 
-    - template: etc/ci/azure-posix.yml
+    - template: etc/ci/azure-linux.yml
       parameters:
           name: ubuntu_16
           image_name: ubuntu-16.04
@@ -28,7 +28,7 @@ jobs:
 #              py37:
 #                  python_version: '3.7'
 
-    - template: etc/ci/azure-posix.yml
+    - template: etc/ci/azure-mac.yml
       parameters:
           name: macos_1013
           image_name: macos-10.13
