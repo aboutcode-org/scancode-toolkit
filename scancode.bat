@@ -11,12 +11,11 @@ set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%Scripts\python.exe
 @rem Use a trailing space in the next line sets the variable to an empty string (rather than unseting it)
 set "SCANCODE_CMD_LINE_ARGS= "
 
-
 :collectarg
- if ""%1""=="""" goto continue
- call set SCANCODE_CMD_LINE_ARGS=%SCANCODE_CMD_LINE_ARGS% %1
- shift
- goto collectarg
+    if ""%1""=="""" goto continue
+    call set SCANCODE_CMD_LINE_ARGS=%SCANCODE_CMD_LINE_ARGS% %1
+    shift
+goto collectarg
 
 :continue
 
@@ -25,12 +24,12 @@ goto scancode
 
 :configure
 echo * Configuring ScanCode for first use...
+@rem FIXME: we did not set a given Python PATH
 set CONFIGURE_QUIET=1
-call "%SCANCODE_ROOT_DIR%\configure" etc/conf
+call "%SCANCODE_ROOT_DIR%configure" etc/conf
 
 @rem Return a proper return code on failure
 if %errorlevel% neq 0 (
-    endlocal
     exit /b %errorlevel%
 )
 

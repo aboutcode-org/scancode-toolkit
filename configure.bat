@@ -1,4 +1,4 @@
-@echo ON
+@echo OFF
 setlocal
 @rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
@@ -103,7 +103,7 @@ if not exist "%PYTHON_EXECUTABLE%" (
 call ""%PYTHON_EXECUTABLE%"" "%CFG_ROOT_DIR%etc\configure.py" %CFG_CMD_LINE_ARGS%
 
 @rem Return a proper return code on failure
-if not "%errorlevel%"=="0" (
+if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
