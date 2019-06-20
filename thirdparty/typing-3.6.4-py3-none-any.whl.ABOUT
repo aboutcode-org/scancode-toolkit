@@ -1,4 +1,6 @@
 about_resource: typing-3.6.4-py3-none-any.whl
+version: 3.6.4
+name: typing
 download_url: https://files.pythonhosted.org/packages/05/2b/2b05bf1d5a9dd450447c9a5df3e118a465e5d3cb12b73b7220a5064a403f/typing-3.6.4-py3-none-any.whl
 homepage_url: https://github.com/python/typing
 notes: This is a backport of the standard library typing module to Python versions older than
