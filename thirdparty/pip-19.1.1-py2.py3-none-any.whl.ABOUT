@@ -15,7 +15,6 @@ licenses:
 -   file: mit.LICENSE
     key: mit
     name: MIT License
-name: pip
 notice_file: pip-19.1.1-py2.py3-none-any.whl.NOTICE
 copyright: Copyright (c) 2008-2016 The pip developers (see AUTHORS.txt file)
 notice_url: https://github.com/pypa/pip/blob/master/LICENSE.txt
