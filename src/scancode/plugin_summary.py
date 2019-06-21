@@ -147,6 +147,7 @@ class OriginSummary(PostScanPlugin):
                     origin_count.update(child_origin_count)
                 child_rids.append(child.rid)
 
+            summary = None
             if origin_count:
                 resource.extra_data['origin_count'] = origin_count
                 resource.save(codebase)
@@ -165,13 +166,11 @@ class OriginSummary(PostScanPlugin):
                     # Keep track of identifiers so we can enumerate them properly
                     base_identifier_counts[base_identifier] += 1
                     identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-                    identifiers.append(
-                        Summary(
+                    summary = Summary(
                             identifier=identifier,
                             license_expression=license_expression,
                             holders=holders,
                             type=['license', 'holder']
-                        )
                     )
 
                     for child_rid in child_rids:
@@ -199,14 +198,14 @@ class OriginSummary(PostScanPlugin):
                 for child in resource.walk(codebase, topdown=True):
                     child.summarized_to = identifier
                     child.save(codebase)
-                identifiers.append(
-                    Summary(
-                        identifier=identifier,
-                        license_expression=license_expression,
-                        holders=holders,
-                        type=['package']
-                    )
+                summary = Summary(
+                    identifier=identifier,
+                    license_expression=license_expression,
+                    holders=holders,
+                    type=['package']
                 )
+
+            identifiers.append(summary)
 
         # Create intermediate data structure to gather all similar identifiers
         summary_by_identifiers = OrderedDict()
