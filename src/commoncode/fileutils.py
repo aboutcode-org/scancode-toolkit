@@ -79,9 +79,7 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 # Paths can only be sanely handled as raw bytes on Linux
-PATH_TYPE = bytes if on_linux else unicode
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-WIN_PATH_SEP = b'\\' if on_linux else '\\'
+
 
 if on_linux:
     PATH_TYPE = bytes 
@@ -89,20 +87,26 @@ if on_linux:
     WIN_PATH_SEP = b'\\'
     EMPTY_STRING = b''
     DOT = b'.'
+    if py2:
+        PATH_SEP = bytes(os.sep)
+        PATH_ENV_VAR = b'PATH'
+        PATH_ENV_SEP = bytes(os.pathsep)
+    else:
+        PATH_SEP = bytes(os.sep, encoding='utf-8')
+        PATH_ENV_VAR = 'PATH'
+        PATH_ENV_SEP = bytes(os.pathsep, encoding='utf-8')
+
 else:
     PATH_TYPE = unicode
     POSIX_PATH_SEP = '/'
     WIN_PATH_SEP = '\\'
     EMPTY_STRING = ''
     DOT = '.'
+    PATH_SEP = unicode(os.sep)
+    PATH_ENV_VAR = 'PATH'
+    PATH_ENV_SEP = unicode(os.pathsep)
 
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
-EMPTY_STRING = b'' if on_linux else ''
-DOT = b'.' if on_linux else '.'
-if py2:
-   PATH_SEP = bytes(os.sep) if on_linux else unicode(os.sep)	
-else:
-   PATH_SEP = bytes(os.sep, encoding='utf-8') if on_linux else unicode(os.sep)
 
 """
 File, paths and directory utility functions.
