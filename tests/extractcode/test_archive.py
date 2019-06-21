@@ -951,17 +951,18 @@ class TestZip(BaseArchiveTestCase):
         except:
             assert self.expected_deeply_nested_relative_path_alternative == result
 
-    @skipIf(on_windows, 'Expectation are different on Windows')
+    @expectedFailure
+    @skipIf(on_windows, 'Expectations are different on Windows')
     def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
         try:
             sevenzip.extract(test_file, test_dir)
-            self.fail('Shoul raise an exception')
+            self.fail('Should raise an exception')
         except ExtractErrorFailedToExtract as e:
             assert 'Unknown extraction error' == str(e)
 
-    @skipIf(not on_windows, 'Expectation are different on Windows')
+    @skipIf(not on_windows, 'Expectations are different on Windows')
     def test_extract_zip_with_relative_path_deeply_nested_with_7zip_windows(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
