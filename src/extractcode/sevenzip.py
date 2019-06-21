@@ -201,7 +201,7 @@ def extract(location, target_dir, arch_type='*'):
     lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
     cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
 
-    rc, stdout, stderr = command.execute2(
+    ex_args = dict(
         cmd_loc=cmd_loc,
         args=args,
         lib_dir=lib_dir,
@@ -209,9 +209,14 @@ def extract(location, target_dir, arch_type='*'):
         env=timezone,
     )
 
+    if TRACE:
+        logger.debug('extract: args: ' + repr(ex_args))
+
+    rc, stdout, stderr = command.execute2(**ex_args)
+
     if rc != 0:
         if TRACE:
-            logger.debug('extract failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
+            logger.debug('extract: failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
         error = get_7z_errors(stdout) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
