@@ -128,6 +128,7 @@ class OriginSummary(PostScanPlugin):
             if not children:
                 continue
 
+            # Collect license expression and holders count for stat-based summarization
             origin_count = Counter()
             child_rids = []
             for child in children:
@@ -149,10 +150,11 @@ class OriginSummary(PostScanPlugin):
             if origin_count:
                 resource.extra_data['origin_count'] = origin_count
                 resource.save(codebase)
+
                 origin, top_count = origin_count.most_common(1)[0]
-                holders, license_expression = origin
                 # TODO: Check for contradictions when performing summarizations
                 if is_majority(top_count, resource.files_count, origin_summary_threshold):
+                    holders, license_expression = origin
                     resource.origin_summary['license_expression'] = license_expression
                     resource.origin_summary['holders'] = holders
                     resource.origin_summary['count'] = top_count
@@ -184,17 +186,20 @@ class OriginSummary(PostScanPlugin):
                             child.summarized_to = identifier
                             child.save(codebase)
 
+            # If a Resource is the root of a package, then every Resource under this one is part of
+            # this package and should be summarized to this Resource
             resource_packages = resource.packages
-            if resource_packages:
+            for package in resource_packages:
                 # TODO: Should package data have greater precedence than summarized license expression/holders?
-                license_expression = resource_packages['license_expression']
-                holders = resource_packages['copyright']
+                license_expression = package['license_expression']
+                holders = package['copyright']
                 base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
                 base_identifier_counts[base_identifier] += 1
                 identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-                for child in resource.walk(topdown=True):
+                for child in resource.walk(codebase, topdown=True):
                     child.summarized_to = identifier
-                identifier.append(
+                    child.save(codebase)
+                identifiers.append(
                     Summary(
                         identifier=identifier,
                         license_expression=license_expression,
