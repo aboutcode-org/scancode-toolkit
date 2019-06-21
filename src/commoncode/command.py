@@ -37,6 +37,10 @@ import logging
 import signal
 import subprocess
 
+from commoncode.fileutils import EMPTY_STRING
+from commoncode.fileutils import PATH_ENV_VAR
+from commoncode.fileutils import PATH_ENV_SEP
+
 from commoncode import compat
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
@@ -224,7 +228,7 @@ if py2:
 else:
     PATH_ENV_VAR = 'PATH'
 
-def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_ENV_VAR):
+def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_ENV_VAR, _path_env_sep=PATH_ENV_SEP):
     """
     Update the PATH environment variable by adding `new_path` to the front
     of PATH if `new_path` is not alreday in the PATH.
@@ -241,32 +245,46 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
         return
 
     path_env = _os_module.environ.get(_path_env_var)
+    
+    if on_linux and not py2:
+        # use bytes for now
+        path_env = path_env.encode('utf-8')
+    
     if not path_env:
         # this is quite unlikely to ever happen, but here for safety
-        path_env = ''
+        path_env = EMPTY_STRING
 
     # ensure we use unicode or bytes depending on OSes
+    # TODO: deal also with Python versions
     if on_linux:
         new_path = fsencode(new_path)
         path_env = fsencode(path_env)
-        sep = _os_module.pathsep
+
     else:
         new_path = fsdecode(new_path)
         path_env = fsdecode(path_env)
-        sep = unicode(_os_module.pathsep)
 
-    path_segments = path_env.split(sep)
-
+    try:
+        path_segments = path_env.split(_path_env_sep)
+    except:
+        raise Exception(repr((path_env, _path_env_sep)))
+    
     # add lib path to the front of the PATH env var
     # this will use bytes on Linux and unicode elsewhere
     if new_path not in path_segments:
         if not path_env:
             new_path_env = new_path
         else:
-            new_path_env = sep.join([new_path, path_env])
+            new_path_env = _path_env_sep.join([new_path, path_env])
+        
+        if py2:
+            if not on_linux:
+                new_path_env = fsencode(new_path_env)
+        else:
+            # we do not convert Linux to bytes on Py3
+            if on_linux:
+                new_path_env = fsdecode(new_path_env)
 
-        if not on_linux:
-            # recode to bytes using FS encoding
-            new_path_env = fsencode(new_path_env)
-        # ... and set the variable back as bytes
+        # at this stage new_path_env is unicode on all OSes on Py3
+        # and on Py2:  bytes on Linux and unicode elsewhere
         _os_module.environ[_path_env_var] = new_path_env
