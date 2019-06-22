@@ -202,7 +202,7 @@ setup(
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=17.4, < 19.0',
+        'attrs >=17.4, < 20.0',
         'typing >=3.6, < 3.7',
 
         # scancode outputs

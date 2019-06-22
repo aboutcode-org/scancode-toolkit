@@ -1,0 +1,17 @@
+about_resource: pefile-2018.8.8-py3-none-any.whl
+name: pefile
+version: 2018.8.8
+download_url: https://github.com/nexB/scancode-toolkit/raw/295-tests-and-setup/thirdparty/pefile-2018.8.8-py3-none-any.whl
+description: pefile is a Python module to read and work with PE (Portable Executable) files
+homepage_url: https://github.com/erocarrera/pefile
+license_expression: mit
+copyright: Copyright (c) Ero Carrera <ero.carrera@gmail.com>
+notice_url: https://raw.githubusercontent.com/erocarrera/pefile/2286e9856ccbd5d1f82dd16d5a1526b2a90e63da/LICENSE
+attribute: yes
+owner: pefile Project
+checksum_md5: ff37788e107dcae7b035fc180e9a8cab
+checksum_sha1: 742de3e620a6436e5aa24e1417d52872c4047759
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
