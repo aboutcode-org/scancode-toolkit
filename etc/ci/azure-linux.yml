@@ -14,23 +14,6 @@ jobs:
               ${{ insert }}: ${{ parameters.matrix }}
 
       steps:
-          - script: |
-                set -e
-                rm -rf $AGENT_TOOLSDIRECTORY/Python/2.7.16
-                azcopy --recursive \
-                    --source https://vstsagenttools.blob.core.windows.net/tools/hostedtoolcache/linux/Python/2.7.15 \
-                    --destination $AGENT_TOOLSDIRECTORY/Python/2.7.15
-                original_directory=$PWD
-                setups=$(find $AGENT_TOOLSDIRECTORY/Python/2.7.15 -name setup.sh)
-                for setup in $setups; do
-                    chmod +x $setup;
-                    cd $(dirname $setup);
-                    ./$(basename $setup);
-                    cd $original_directory;
-                done;
-
-            displayName: 'Workaround to Azure bug https://developercommunity.visualstudio.com/content/problem/598264/known-issue-azure-pipelines-images-missing-sqlite3.html : roll back Python versions'
-
           - task: UsePythonVersion@0
             inputs:
                 versionSpec: '$(python_version)'
