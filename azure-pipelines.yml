@@ -46,7 +46,7 @@ jobs:
               - '3.6'
           test_suites: 
               misc: $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: $(PYTEST) tests/scancode
+              scancode: $(PYTEST) tests/scancode --reruns 1
               extractcode: $(PYTEST) tests/extractcode
               packagedcode: $(PYTEST) tests/packagedcode
 

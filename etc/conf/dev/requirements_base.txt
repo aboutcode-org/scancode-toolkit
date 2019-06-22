@@ -10,3 +10,4 @@ bumpversion
 coverage
 pytest-cov
 codecov
+pytest-rerunfailures
