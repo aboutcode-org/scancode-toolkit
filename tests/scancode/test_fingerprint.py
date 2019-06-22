@@ -165,3 +165,62 @@ class TestFingerprint(FileBasedTesting):
         simhash.update('this will get added too!')
         expected = bitarray('00000010000000000011110010100000101000001111100000000001010110000110101110111000100000110101000000010100100000000010110011010010')
         assert simhash.generate_fingerprint() == expected
+
+    def test_similarity_matching1(self):
+        simhash1 = Simhash()
+        simhash2 = Simhash()
+
+        test_file1 = self.get_test_loc('fingerprint/similarity_matching1.py')
+        test_file2 = self.get_test_loc('fingerprint/similarity_matching2.py')
+
+        with open(test_file1, 'r') as f:
+            hashable1 = f.read()
+
+        with open(test_file2, 'r') as f:
+            hashable2 = f.read()
+
+        simhash1.update(hashable1)
+        simhash2.update(hashable2)
+        distance = simhash1.hamming_distance(simhash1.generate_fingerprint(), simhash2.generate_fingerprint())
+
+        assert distance == 14
+
+
+    def test_similarity_matching2(self):
+        simhash1 = Simhash()
+        simhash2 = Simhash()
+
+        test_file1 = self.get_test_loc('fingerprint/similarity_matching3.py')
+        test_file2 = self.get_test_loc('fingerprint/similarity_matching4.py')
+
+        with open(test_file1, 'r') as f:
+            hashable1 = f.read()
+
+        with open(test_file2, 'r') as f:
+            hashable2 = f.read()
+
+        simhash1.update(hashable1)
+        simhash2.update(hashable2)
+        distance = simhash1.hamming_distance(simhash1.generate_fingerprint(), simhash2.generate_fingerprint())
+
+        assert distance == 66
+
+
+    def test_similarity_matching3(self):
+        simhash1 = Simhash()
+        simhash2 = Simhash()
+
+        test_file1 = self.get_test_loc('fingerprint/similarity_matching5.py')
+        test_file2 = self.get_test_loc('fingerprint/similarity_matching6.py')
+
+        with open(test_file1, 'r') as f:
+            hashable1 = f.read()
+
+        with open(test_file2, 'r') as f:
+            hashable2 = f.read()
+
+        simhash1.update(hashable1)
+        simhash2.update(hashable2)
+        distance = simhash1.hamming_distance(simhash1.generate_fingerprint(), simhash2.generate_fingerprint())
+
+        assert distance == 13
