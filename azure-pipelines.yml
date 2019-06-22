@@ -9,6 +9,28 @@
 #    branches:
 #        include: ['*']
 
+variables:
+    PYTEST: bin/py.test -n 2 -vvs --test-suite=all
+#    test_suites: 
+#        - $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+#        - $(PYTEST) tests/scancode
+#        - $(PYTEST) tests/extractcode
+#        - $(PYTEST) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
+#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+#        - $(PYTEST) tests/licensedcode/test_zzzz_cache.py
+#        - $(PYTEST) tests/cluecode
+#        - $(PYTEST) tests/packagedcode
+#        - ./etc/release/release.sh
+#    python_versions:
+#        - '2.7'
+#        - '3.6'
+
 jobs:
 
 ################################################################################
@@ -17,16 +39,17 @@ jobs:
 
     - template: etc/ci/azure-linux.yml
       parameters:
-          name: ubuntu_16
+          os_name: ubuntu_16
           image_name: ubuntu-16.04
-          matrix:
-              py27:
-                  python_version: '2.7'
-                  test_suite: bin/py.test -vvs -n2
-#              py36:
-#                  python_version: '3.6'
-#              py37:
-#                  python_version: '3.7'
+          python_versions:
+              - '2.7'
+              - '3.6'
+          test_suites: 
+              misc: $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST) tests/scancode
+              extractcode: $(PYTEST) tests/extractcode
+              packagedcode: $(PYTEST) tests/packagedcode
+
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -35,23 +58,22 @@ jobs:
           matrix:
               py27:
                   python_version: '2.7'
-                  test_suite: bin/py.test -vvs -n2
-#              py36:
-#                  python_version: '3.6'
-#              py37:
-#                  python_version: '3.7'
+                  test_suite: bin/py.test -vvs -n2 tests/commoncode
+              py36:
+                  python_version: '3.6'
+                  test_suite: bin/py.test -vvs -n2 tests/commoncode
 
-#    - template: etc/ci/azure-posix.yml
-#      parameters:
-#          name: macos_1014
-#          image_name: macos-10.14
-#          matrix:
-#              py27:
-#                  python_version: '2.7'
-#              py36:
-#                  python_version: '3.6'
-#              py37:
-#                  python_version: '3.7'
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          name: macos_1014
+          image_name: macos-10.14
+          matrix:
+              py27:
+                  python_version: '2.7'
+                  test_suite: bin/py.test -vvs -n2 tests/commoncode
+              py36:
+                  python_version: '3.6'
+                  test_suite: bin/py.test -vvs -n2 tests/commoncode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -61,13 +83,11 @@ jobs:
               py27:
                   python_version: '2.7'
                   python_architecture: x86
-                  test_suite: bin\py.test -vvs -n2
-#              py36:
-#                  python_version: '3.6'
-#                  python_architecture: x86
-#              py37:
-#                  python_version: '3.7'
-#                  python_architecture: x86
+                  test_suite: bin\py.test -vvs -n2 tests/commoncode
+              py36:
+                  python_version: '3.6'
+                  python_architecture: x86
+                  test_suite: bin\py.test -vvs -n2 tests/commoncode
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
