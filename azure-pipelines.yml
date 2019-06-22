@@ -1,35 +1,7 @@
-# Per doc trigger and pr may not be needed https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml#triggering-a-pipeline
-#trigger:
-#    branches:
-#        include: ['*']
-#    tags:
-#        include: ['*']
-
-#pr:
-#    branches:
-#        include: ['*']
 
 variables:
     PYTEST: bin/py.test -n 2 -vvs --test-suite=all
-#    test_suites: 
-#        - $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-#        - $(PYTEST) tests/scancode
-#        - $(PYTEST) tests/extractcode
-#        - $(PYTEST) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
-#        - $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
-#        - $(PYTEST) tests/licensedcode/test_zzzz_cache.py
-#        - $(PYTEST) tests/cluecode
-#        - $(PYTEST) tests/packagedcode
-#        - ./etc/release/release.sh
-#    python_versions:
-#        - '2.7'
-#        - '3.6'
+    PYTESTWIN: bin\py.test -n 2 -vvs --test-suite=all
 
 jobs:
 
@@ -46,52 +18,93 @@ jobs:
               - '3.6'
           test_suites: 
               misc: $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: $(PYTEST) tests/scancode --reruns 1
+              scancode: $(PYTEST) tests/scancode
               extractcode: $(PYTEST) tests/extractcode
+              license_base: $(PYTEST) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_main: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
+              license_retro: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+              license_spdx: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+              license_tools: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
+              license_slic: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
+              license_foss: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
+              license_deb: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+              license_cache: $(PYTEST) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST) tests/cluecode
               packagedcode: $(PYTEST) tests/packagedcode
 
-
     - template: etc/ci/azure-mac.yml
       parameters:
-          name: macos_1013
+          os_name: macos_1013
           image_name: macos-10.13
-          matrix:
-              py27:
-                  python_version: '2.7'
-                  test_suite: bin/py.test -vvs -n2 tests/commoncode
-              py36:
-                  python_version: '3.6'
-                  test_suite: bin/py.test -vvs -n2 tests/commoncode
+          python_versions:
+              - '2.7'
+              - '3.6'
+          test_suites: 
+              misc: $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST) tests/scancode
+              extractcode: $(PYTEST) tests/extractcode
+              license_base: $(PYTEST) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_main: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
+              license_retro: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+              license_spdx: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+              license_tools: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
+              license_slic: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
+              license_foss: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
+              license_deb: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+              license_cache: $(PYTEST) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST) tests/cluecode
+              packagedcode: $(PYTEST) tests/packagedcode
 
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          name: macos_1014
-          image_name: macos-10.14
-          matrix:
-              py27:
-                  python_version: '2.7'
-                  test_suite: bin/py.test -vvs -n2 tests/commoncode
-              py36:
-                  python_version: '3.6'
-                  test_suite: bin/py.test -vvs -n2 tests/commoncode
+#    - template: etc/ci/azure-mac.yml
+#      parameters:
+#          os_name: macos_1014
+#          image_name: macos-10.14
+#          python_versions:
+#              - '2.7'
+#              - '3.6'
+#          test_suites: 
+#              misc: $(PYTEST) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+#              scancode: $(PYTEST) tests/scancode
+#              extractcode: $(PYTEST) tests/extractcode
+#              license_base: $(PYTEST) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+#              license_main: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
+#              license_retro: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+#              license_spdx: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+#              license_tools: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
+#              license_slic: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
+#              license_foss: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
+#              license_deb: $(PYTEST) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+#              license_cache: $(PYTEST) tests/licensedcode/test_zzzz_cache.py
+#              cluecode: $(PYTEST) tests/cluecode
+#              packagedcode: $(PYTEST) tests/packagedcode
 
     - template: etc/ci/azure-win.yml
       parameters:
-          name: Win_2016_32
+          os_name: Win_2016_32
           image_name: vs2017-win2016
-          matrix:
-              py27:
-                  python_version: '2.7'
-                  python_architecture: x86
-                  test_suite: bin\py.test -vvs -n2 tests/commoncode
-              py36:
-                  python_version: '3.6'
-                  python_architecture: x86
-                  test_suite: bin\py.test -vvs -n2 tests/commoncode
+          python_versions:
+              - '2.7'
+              - '3.6'
+          test_suites:
+              misc: $(PYTESTWINWIN) --ignore=tests\scancode --ignore=tests\extractcode --ignore=tests\licensedcode --ignore=tests\cluecode --ignore=tests\packagedcode
+              scancode: $(PYTESTWIN) tests\scancode
+              extractcode: $(PYTESTWIN) tests\extractcode
+              license_base: $(PYTESTWIN) tests\licensedcode --ignore=tests\licensedcode\test_zzzz_cache.py --ignore=tests\licensedcode\test_detection_datadriven.py
+              license_main: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestLicenseDataDriven
+              license_retro: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+              license_spdx: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+              license_tools: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestLicenseToolsDataDriven
+              license_slic: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestSlicDataDriven
+              license_foss: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestFossLicDataDriven
+              license_deb: $(PYTESTWIN) tests\licensedcode\test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+              license_cache: $(PYTESTWIN) tests\licensedcode\test_zzzz_cache.py
+              cluecode: $(PYTESTWIN) tests\cluecode
+              packagedcode: $(PYTESTWIN) tests\packagedcode
+
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
-#          name: Win_2016_64
+#          os_name: Win_2016_64
 #          image_name: vs2017-win2016
 #          matrix:
 #              py27:
@@ -105,13 +118,28 @@ jobs:
 #                  python_architecture: x64
 
 
+    - job: Build release archives an installers
+
+      pool:
+          vmImage: ubuntu-16.04
+
+      steps:
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '2.7'
+            displayName: 'Install Python 2.7'
+
+          - script: ./etc/release/release.sh
+            displayName: 'Build installable releases'
+
+
 ################################################################################
 # These jobs are using containers and their own Python
 ################################################################################
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          name: ubuntu_16_xenial_py27
+#          os_name: ubuntu_16_xenial_py27
 #          container: ubuntu:xenial
 #          python_path: python2.7
 #          install_python: sudo apt-get install -y python python-dev
@@ -121,7 +149,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          name: ubuntu_16_xenial_py36
+#          os_name: ubuntu_16_xenial_py36
 #          container: ubuntu:xenial
 #          python_path: python3.6
 #          install_python: |
@@ -132,7 +160,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          name: ubuntu_18_bionic_py27
+#          os_name: ubuntu_18_bionic_py27
 #          container: ubuntu:bionic
 #          python_path: python2.7
 #          install_python: sudo apt-get install -y python python-dev
@@ -147,14 +175,14 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: centos7_py27
+#          os_name: centos7_py27
 #          container: centos:7
 #          python_path: python2.7
 #          install_python: sudo yum install -y python python27-devel
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: centos7_py36
+#          os_name: centos7_py36
 #          container: centos:7
 #          python_path: python3.6
 #          install_python: |
@@ -165,7 +193,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: manylinux1_64_py27
+#          os_name: manylinux1_64_py27
 #          container: quay.io/pypa/manylinux1_x86_64:latest
 #          python_path: /opt/python/cp27-cp27mu/bin/python
 #          install_packages: echo "No extra packages for now"
@@ -173,7 +201,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: manylinux1_64_py36
+#          os_name: manylinux1_64_py36
 #          container: quay.io/pypa/manylinux1_x86_64:latest
 #          python_path: /opt/python/cp36-cp36m/bin/python
 #          install_packages: echo "No extra packages for now"
@@ -181,7 +209,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: manylinux2010_64_py27
+#          os_name: manylinux2010_64_py27
 #          container: quay.io/pypa/manylinux2010_x86_64:latest
 #          python_path: /opt/python/cp27-cp27mu/bin/python
 #          install_packages: echo "No extra packages for now"
@@ -189,7 +217,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: manylinux2010_64_py36
+#          os_name: manylinux2010_64_py36
 #          container: quay.io/pypa/manylinux2010_x86_64:latest
 #          python_path: /opt/python/cp36-cp36m/bin/python
 #          install_packages: echo "No extra packages for now"
@@ -197,7 +225,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: manylinux2010_64_py37
+#          os_name: manylinux2010_64_py37
 #          container: quay.io/pypa/manylinux2010_x86_64:latest
 #          python_path: /opt/python/cp37-cp37m/bin/python
 #          install_packages: echo "No extra packages for now"
@@ -206,7 +234,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: fedora_30_py27
+#          os_name: fedora_30_py27
 #          container: fedora:30
 #          package_manager: dnf
 #          python_path: python2.7
@@ -216,7 +244,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          name: fedora_30_py37
+#          os_name: fedora_30_py37
 #          container: fedora:30
 #          package_manager: dnf
 #          python_path: python3.7
@@ -227,7 +255,7 @@ jobs:
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          name: debian_9_stretch_py27
+#          os_name: debian_9_stretch_py27
 #          container: debian:stretch
 #          python_path: python2.7
 #          install_python: sudo apt-get install -y python python-dev
@@ -239,7 +267,7 @@ jobs:
 
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
-#          name: debian_9_stretch_py36
+#          os_name: debian_9_stretch_py36
 #          container: debian:stretch
 #          python_path: python3.6
 #          install_python: |
