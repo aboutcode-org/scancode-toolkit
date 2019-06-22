@@ -113,122 +113,150 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        identifiers = []
-        packages = []
+        summaries_by_path = OrderedDict()
         base_identifier_counts = Counter()
 
-        # Summarize origin clues to directory level and tag summarized Resources
-        for resource in codebase.walk(topdown=False):
-            # TODO: Consider facets for later
+        collecters = [stat_summary, tag_package_files]
+        for collecter in collecters:
+            summaries, bics = collecter(codebase, base_identifier_counts, origin_summary_threshold=origin_summary_threshold)
+            merge_summaries_by_path(summaries_by_path, summaries)
+            base_identifier_counts.update(bics)
 
-            if resource.is_file:
-                continue
+        for summary_path, summaries in sorted(summaries_by_path.items()):
+            # TODO: implement
+            for summary in summaries:
+                if 'package' in summary.type:
+                    summaries_by_path[summary_path] = summary
+            else:
+                summaries_by_path[summary_path] = summary
 
-            children = resource.children(codebase)
-            if not children:
-                continue
+        # Consolidate duplicate summaries to one identifier
+        for resource in codebase.walk(topdown=True):
+            resource_path = resource.path
+            if resource_path in summaries_by_path:
+                resource.summarized_to = summaries_by_path[resource_path].identifier
 
-            # Collect license expression and holders count for stat-based summarization
-            origin_count = Counter()
-            child_rids = []
-            for child in children:
-                if child.is_file:
-                    license_expression = combine_expressions(child.license_expressions)
-                    holders = tuple(h['value'] for h in child.holders)
-                    if not license_expression or not holders:
-                        continue
-                    origin = holders, license_expression
-                    origin_count[origin] += 1
-                else:
-                    # We are in a subdirectory
-                    child_origin_count = child.extra_data.get('origin_count', {})
-                    if not child_origin_count:
-                        continue
-                    origin_count.update(child_origin_count)
-                child_rids.append(child.rid)
+        # Attach summaries to codebase level attribute
+        codebase.attributes.summaries = [summary for _, summary in sorted(summaries_by_path.items())]
 
-            summary = None
-            if origin_count:
-                resource.extra_data['origin_count'] = origin_count
-                resource.save(codebase)
 
-                origin, top_count = origin_count.most_common(1)[0]
-                # TODO: Check for contradictions when performing summarizations
-                if is_majority(top_count, resource.files_count, origin_summary_threshold):
-                    holders, license_expression = origin
-                    resource.origin_summary['license_expression'] = license_expression
-                    resource.origin_summary['holders'] = holders
-                    resource.origin_summary['count'] = top_count
-                    codebase.save_resource(resource)
+def merge_summaries_by_path(summaries_1, summaries_2):
+    for k, v in summaries_2.items():
+        if k not in summaries_1:
+            summaries_1[k] = v
+        else:
+            summaries_1[k].extend(v)
 
-                    holder = '\n'.join(holders)
-                    base_identifier =  python_safe_name('{}_{}'.format(license_expression, holder))
-                    # Keep track of identifiers so we can enumerate them properly
-                    base_identifier_counts[base_identifier] += 1
-                    identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-                    summary = Summary(
-                            identifier=identifier,
-                            license_expression=license_expression,
-                            holders=holders,
-                            type=['license', 'holder']
-                    )
 
-                    for child_rid in child_rids:
-                        child = codebase.get_resource(child_rid)
-                        if child.is_file:
-                            child_license_expression = combine_expressions(child.license_expressions)
-                            child_holders = tuple(h['value'] for h in child.holders)
-                        else:
-                            child_license_expression = child.origin_summary.get('license_expression')
-                            child_holders  = child.origin_summary.get('holders')
-                        if (child_holders, child_license_expression) == (holders, license_expression):
-                            child.summarized_to = identifier
-                            child.save(codebase)
+def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold=None, **kwargs):
+    summaries_by_path = defaultdict(list)
+    base_identifier_counts = base_identifier_counts or Counter()
 
-            # If a Resource is the root of a package, then every Resource under this one is part of
-            # this package and should be summarized to this Resource
-            resource_packages = resource.packages
-            for package in resource_packages:
-                # TODO: Should package data have greater precedence than summarized license expression/holders?
-                license_expression = package['license_expression']
-                holders = package['copyright']
-                base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
+    # Summarize origin clues to directory level and tag summarized Resources
+    for resource in codebase.walk(topdown=False):
+        # TODO: Consider facets for later
+
+        if resource.is_file:
+            continue
+
+        children = resource.children(codebase)
+        if not children:
+            continue
+
+        # Collect license expression and holders count for stat-based summarization
+        origin_count = Counter()
+        child_rids = []
+        for child in children:
+            if child.is_file:
+                license_expression = combine_expressions(child.license_expressions)
+                holders = tuple(h['value'] for h in child.holders)
+                if not license_expression or not holders:
+                    continue
+                origin = holders, license_expression
+                origin_count[origin] += 1
+            else:
+                # We are in a subdirectory
+                child_origin_count = child.extra_data.get('origin_count', {})
+                if not child_origin_count:
+                    continue
+                origin_count.update(child_origin_count)
+            child_rids.append(child.rid)
+
+        if origin_count:
+            resource.extra_data['origin_count'] = origin_count
+            resource.save(codebase)
+
+            origin, top_count = origin_count.most_common(1)[0]
+            # TODO: Check for contradictions when performing summarizations
+            if is_majority(top_count, resource.files_count, origin_summary_threshold):
+                holders, license_expression = origin
+                resource.origin_summary['license_expression'] = license_expression
+                resource.origin_summary['holders'] = holders
+                resource.origin_summary['count'] = top_count
+                codebase.save_resource(resource)
+
+                holder = '\n'.join(holders)
+                base_identifier =  python_safe_name('{}_{}'.format(license_expression, holder))
+                # Keep track of identifiers so we can enumerate them properly
                 base_identifier_counts[base_identifier] += 1
                 identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-                for child in resource.walk(codebase, topdown=True):
-                    child.summarized_to = identifier
-                    child.save(codebase)
-                summary = Summary(
+                summaries_by_path[resource.path].append(
+                    Summary(
+                        identifier=identifier,
+                        license_expression=license_expression,
+                        holders=holders,
+                        type=['license', 'holder']
+                    )
+                )
+
+                for child_rid in child_rids:
+                    child = codebase.get_resource(child_rid)
+                    if child.is_file:
+                        child_license_expression = combine_expressions(child.license_expressions)
+                        child_holders = tuple(h['value'] for h in child.holders)
+                    else:
+                        child_license_expression = child.origin_summary.get('license_expression')
+                        child_holders  = child.origin_summary.get('holders')
+                    if (child_holders, child_license_expression) == (holders, license_expression):
+                        child.summarized_to = identifier
+                        child.save(codebase)
+
+    return summaries_by_path, base_identifier_counts
+
+
+def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
+    summaries_by_path = defaultdict(list)
+    base_identifier_counts = base_identifier_counts or Counter()
+
+    # Summarize origin clues to directory level and tag summarized Resources
+    for resource in codebase.walk(topdown=False):
+        # TODO: Consider facets for later
+        if resource.is_file:
+            continue
+
+        # If a Resource is the root of a package, then every Resource under this one is part of
+        # this package and should be summarized to this Resource
+        resource_packages = resource.packages
+        for package in resource_packages:
+            # TODO: Should package data have greater precedence than summarized license expression/holders?
+            license_expression = package['license_expression']
+            holders = package['copyright']
+            base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
+            base_identifier_counts[base_identifier] += 1
+            identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
+            for child in resource.walk(codebase, topdown=True):
+                child.summarized_to = identifier
+                child.save(codebase)
+            summaries_by_path[resource.path].append(
+                Summary(
                     identifier=identifier,
                     license_expression=license_expression,
                     holders=holders,
                     type=['package']
                 )
+            )
 
-            identifiers.append(summary)
-
-        # Create intermediate data structure to gather all similar identifiers
-        summary_by_identifiers = OrderedDict()
-        for base_identifier in sorted(base_identifier_counts.keys()):
-            ids = []
-            summary = None
-            for identifier in identifiers:
-                if base_identifier in identifier.identifier:
-                    ids.append(identifier.identifier)
-                    if not summary:
-                        summary = identifier
-            if summary:
-                summary_by_identifiers[tuple(ids)] = summary
-
-        # Consolidate duplicate summaries to one identifier
-        sorted_summary_by_identifiers = sorted(summary_by_identifiers.items())
-        for resource in codebase.walk(topdown=True):
-            for identifiers, summary in sorted_summary_by_identifiers:
-                if resource.summarized_to in identifiers:
-                    resource.summarized_to = summary.identifier
-
-        # Attach summaries to codebase level attribute
-        codebase.attributes.summaries = [summary for _, summary in sorted_summary_by_identifiers]
+    return summaries_by_path, base_identifier_counts
 
 
 def is_majority(count, files_count, threshold=None):
