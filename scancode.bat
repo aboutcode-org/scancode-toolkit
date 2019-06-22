@@ -1,5 +1,4 @@
 @echo OFF
-setlocal
 @rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 @rem  A wrapper to ScanCode command line entry point
@@ -35,6 +34,3 @@ if %errorlevel% neq 0 (
 
 :scancode
 "%SCANCODE_ROOT_DIR%Scripts\scancode" %SCANCODE_CMD_LINE_ARGS%
-
-endlocal
-
