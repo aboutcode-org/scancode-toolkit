@@ -128,12 +128,21 @@ class Simhash:
 
 
     def bitarray_from_hex(self, fingerprint_hex):
+        """
+        Return bitarray from a hex string.
+        """
         bytes = binascii.unhexlify(fingerprint_hex)
         result = self.bitarray_from_bytes(bytes)
+
         return result
 
+
     def hamming_distance(self, fingerprint1, fingerprint2):
+        """
+        Return hamming distance between two given fingerprints
+        """
         result = 0
+
         for idx in range(HASH_LENGTH):
             if fingerprint1[idx] != fingerprint2[idx]:
                 result += 1
