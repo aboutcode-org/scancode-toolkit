@@ -130,11 +130,7 @@ def call(cmd, root_dir):
     cmd = ' '.join(cmd)
     if TRACE:
         print('\n===> About to run command:\n%(cmd)s\n' % locals())
-
-    if  subprocess.Popen(cmd, shell=True, env=dict(os.environ), cwd=root_dir).wait() != 0:
-        print()
-        print('Failed to execute command:\n"%(cmd)s". Aborting...' % locals())
-        sys.exit(1)
+    subprocess.check_call(cmd, shell=True, env=dict(os.environ), cwd=root_dir)
 
 
 def find_pycache(root_dir):
@@ -181,15 +177,12 @@ def clean(root_dir):
     cleanable.extend(find_pycache(root_dir))
 
     for d in cleanable:
-        try:
-            loc = os.path.join(root_dir, d)
-            if os.path.exists(loc):
-                if os.path.isdir(loc):
-                    shutil.rmtree(loc)
-                else:
-                    os.remove(loc)
-        except:
-            raise
+        loc = os.path.join(root_dir, d)
+        if os.path.exists(loc):
+            if os.path.isdir(loc):
+                shutil.rmtree(loc)
+            else:
+                os.remove(loc)
 
 
 def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
