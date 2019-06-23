@@ -33,14 +33,8 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test -n 2 -vvs tests/commoncode
-              misc: bin/py.test -n 2 -vvs --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: bin/py.test -n 2 -vvs tests/scancode
-              extractcode: bin/py.test -n 2 -vvs tests/extractcode
-              license: bin/py.test -n 2 -vvs tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-              license_cache: bin/py.test -n 2 -vvs tests/licensedcode/test_zzzz_cache.py
-              cluecode: bin/py.test -n 2 -vvs tests/cluecode
-              packagedcode: bin/py.test -n 2 -vvs tests/packagedcode
+              all: bin/py.test -n 2 -vvs --ignore=tests/scancode
+              scancode: bin/py.test -vvs tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -48,14 +42,8 @@ jobs:
           image_name: macos-10.13
           python_versions: ['2.7', '3.6']
           test_suites:
-              commoncode: bin/py.test -n 2 -vvs tests/commoncode
-              misc: bin/py.test -n 2 -vvs --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: bin/py.test -n 2 -vvs tests/scancode
-              extractcode: bin/py.test -n 2 -vvs tests/extractcode
-              license: bin/py.test -n 2 -vvs tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-              license_cache: bin/py.test -n 2 -vvs tests/licensedcode/test_zzzz_cache.py
-              cluecode: bin/py.test -n 2 -vvs tests/cluecode
-              packagedcode: bin/py.test -n 2 -vvs tests/packagedcode
+              all: bin/py.test -n 2 -vvs --ignore=tests/scancode
+              scancode: bin/py.test -vvs tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -63,7 +51,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['2.7', '3.6']
           test_suites:
-              scancode: bin/py.test -n 2 -vvs tests/scancode
+              scancode: bin/py.test -vvs tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -72,14 +60,8 @@ jobs:
           python_versions: ['2.7', '3.6']
           python_architecture: x86
           test_suites:
-              commoncode: Scripts\py.test -n 2 -vvs tests\commoncode
-              misc: Scripts\py.test -n 2 -vvs --ignore=tests\commoncode --ignore=tests\scancode --ignore=tests\extractcode --ignore=tests\licensedcode --ignore=tests\cluecode --ignore=tests\packagedcode
-              scancode: Scripts\py.test -n 2 -vvs tests\scancode
-              extractcode: Scripts\py.test -n 2 -vvs tests\extractcode
-              license: Scripts\py.test -n 2 -vvs tests\licensedcode --ignore=tests\licensedcode\test_zzzz_cache.py --ignore=tests\licensedcode\test_detection_datadriven.py
-              license_cache: Scripts\py.test -n 2 -vvs tests\licensedcode\test_zzzz_cache.py
-              cluecode: Scripts\py.test -n 2 -vvs tests\cluecode
-              packagedcode: Scripts\py.test -n 2 -vvs tests\packagedcode
+              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
+              scancode: Scripts\py.test -vvs tests\scancode
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
@@ -88,15 +70,9 @@ jobs:
 #          python_versions: ['2.7', '3.6']
 #          python_architecture: x64
 #          test_suites:
-#              commoncode: Scripts\py.test -n 2 -vvs tests\commoncode
-#              misc: Scripts\py.test -n 2 -vvs --ignore=tests\commoncode --ignore=tests\scancode --ignore=tests\extractcode --ignore=tests\licensedcode --ignore=tests\cluecode --ignore=tests\packagedcode
-#              scancode: Scripts\py.test -n 2 -vvs tests\scancode
-#              extractcode: Scripts\py.test -n 2 -vvs tests\extractcode
-#              license: Scripts\py.test -n 2 -vvs tests\licensedcode --ignore=tests\licensedcode\test_zzzz_cache.py --ignore=tests\licensedcode\test_detection_datadriven.py
-#              license_cache: Scripts\py.test -n 2 -vvs tests\licensedcode\test_zzzz_cache.py
-#              cluecode: Scripts\py.test -n 2 -vvs tests\cluecode
-#              packagedcode: Scripts\py.test -n 2 -vvs tests\packagedcode
-#
+#              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
+#              scancode: Scripts\py.test -vvs tests\scancode
+
     - job: Build_release
       pool:
           vmImage: ubuntu-16.04
