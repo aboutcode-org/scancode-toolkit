@@ -39,12 +39,16 @@ This test suite runs code checks such as:
  - release archives creation
 """
 
+import pytest
+pytestmark = pytest.mark.scanslow
+
 
 root_dir = dirname(dirname(dirname(__file__)))
 
 on_linux = str(sys.platform).lower().startswith('linux')
 
 
+@unittest.skipIf(not on_linux, 'Check about files only on one OS')
 class TestCheckAboutFiles(unittest.TestCase):
     def test_about_files_thirdparty(self):
         subprocess.check_output('bin/about check thirdparty/'.split(), cwd=root_dir)
@@ -65,18 +69,12 @@ class TestCheckAboutFiles(unittest.TestCase):
         subprocess.check_output('bin/about check scancode-toolkit.ABOUT'.split(), cwd=root_dir)
 
 
+@unittest.skip('We do not yet check for code style')
+@unittest.skipIf(not on_linux, 'Check codestyle only on one OS')
 class TestCheckCode(unittest.TestCase):
 
-    @unittest.skip('We do not yet check for code style')
     def test_codestyle(self):
         subprocess.check_output(
             'bin/pycodestyle --ignore E501,W503,W504,W605 '
             '--exclude=lib,lib64,thirdparty,'
             'docs,bin,migrations,settings,local,tmp .'.split(), cwd=root_dir)
-
-
-class TestRelease(unittest.TestCase):
-
-    @unittest.skip('This cano only work if running in its own isolated test run and process.')
-    def test_create_source_release_archives(self):
-        subprocess.check_output('./etc/release/release.sh'.split(), cwd=root_dir)
