@@ -13,7 +13,7 @@ jobs:
           python_versions: ['2.7']
           test_suites:
               misc: bin/py.test -n 2 -vvs --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: bin/py.test -n 2 -vvs --test-suite=all tests/scancode
+              scancode: bin/py.test -n 2 -vvs --reruns=1 --test-suite=all tests/scancode
               extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
               license_base: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
               license_main: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
@@ -34,7 +34,7 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               all: bin/py.test -n 2 -vvs --ignore=tests/scancode
-              scancode: bin/py.test -vvs tests/scancode
+              scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -43,7 +43,7 @@ jobs:
           python_versions: ['2.7', '3.6']
           test_suites:
               all: bin/py.test -n 2 -vvs --ignore=tests/scancode
-              scancode: bin/py.test -vvs tests/scancode
+              scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -51,7 +51,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['2.7', '3.6']
           test_suites:
-              scancode: bin/py.test -vvs tests/scancode
+              scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -61,7 +61,7 @@ jobs:
           python_architecture: x86
           test_suites:
               all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
-              scancode: Scripts\py.test -vvs tests\scancode
+              scancode: Scripts\py.test -vvs --reruns=1 tests\scancode
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
