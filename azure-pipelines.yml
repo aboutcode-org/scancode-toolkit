@@ -33,35 +33,51 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=1 tests/scancode
+              commoncode: bin/py.test -vvs tests/commoncode
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          os_name: macos_1013
+          os_name: macos_1013_py27
           image_name: macos-10.13
-          python_versions: ['2.7', '3.6']
+          python_versions: ['2.7']
           test_suites:
               all: bin/py.test -n 2 -vvs --ignore=tests/scancode
               scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          os_name: macos_1014
-          image_name: macos-10.14
-          python_versions: ['2.7', '3.6']
+          os_name: macos_1013_py36
+          image_name: macos-10.13
+          python_versions: ['3.6']
           test_suites:
-              scancode: bin/py.test -vvs --reruns=1 tests/scancode
+              commoncode: bin/py.test -vvs tests/commoncode
+
+#    - template: etc/ci/azure-mac.yml
+#      parameters:
+#          os_name: macos_1014
+#          image_name: macos-10.14
+#          python_versions: ['2.7', '3.6']
+#          test_suites:
+#              scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
-          os_name: Win_2016_32
+          os_name: Win_2016_32_py27
           image_name: vs2017-win2016
-          python_versions: ['2.7', '3.6']
+          python_versions: ['2.7']
           python_architecture: x86
           test_suites:
               all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
               scancode: Scripts\py.test -vvs --reruns=1 tests\scancode
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          os_name: Win_2016_32_py36
+          image_name: vs2017-win2016
+          python_versions: ['3.6']
+          python_architecture: x86
+          test_suites:
+              commoncode: Scripts\py.test -n 2 -vvs tests\commoncode
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
