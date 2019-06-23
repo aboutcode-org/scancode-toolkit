@@ -1,38 +1,7 @@
 
 variables:
-
     PYTEST_BASE: bin/py.test -n 2 -vvs
-
     PYTEST_ALL: bin/py.test -n 2 -vvs --test-suite=all
-
-    base_tests: 
-        commoncode: $(PYTEST_BASE) tests/commoncode
-        misc: $(PYTEST_BASE) --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-        scancode: $(PYTEST_BASE) tests/scancode
-        extractcode: $(PYTEST_BASE) tests/extractcode
-        license: $(PYTEST_BASE) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-        license_cache: $(PYTEST_BASE) tests/licensedcode/test_zzzz_cache.py
-        cluecode: $(PYTEST_BASE) tests/cluecode
-        packagedcode: $(PYTEST_BASE) tests/packagedcode
-
-    smoke_tests: 
-        scancode: $(PYTEST_BASE) tests/scancode
-
-    all_tests: 
-        misc: $(PYTEST_ALL) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-        scancode: $(PYTEST_ALL) tests/scancode
-        extractcode: $(PYTEST_ALL) tests/extractcode
-        license_base: $(PYTEST_ALL) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-        license_main: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
-        license_retro: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
-        license_spdx: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
-        license_tools: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
-        license_slic: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
-        license_foss: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
-        license_deb: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
-        license_cache: $(PYTEST_ALL) tests/licensedcode/test_zzzz_cache.py
-        cluecode: $(PYTEST_ALL) tests/cluecode
-        packagedcode: $(PYTEST_ALL) tests/packagedcode
 
 
 jobs:
@@ -46,46 +15,92 @@ jobs:
           os_name: ubuntu_16
           image_name: ubuntu-16.04
           python_versions: ['2.7']
-          test_suites: $(all_tests)
-
+          test_suites:
+              misc: $(PYTEST_ALL) --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST_ALL) tests/scancode
+              extractcode: $(PYTEST_ALL) tests/extractcode
+              license_base: $(PYTEST_ALL) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_main: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
+              license_retro: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
+              license_spdx: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
+              license_tools: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
+              license_slic: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
+              license_foss: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
+              license_deb: $(PYTEST_ALL) tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
+              license_cache: $(PYTEST_ALL) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST_ALL) tests/cluecode
+              packagedcode: $(PYTEST_ALL) tests/packagedcode
+      
     - template: etc/ci/azure-linux.yml
       parameters:
           os_name: ubuntu_16
           image_name: ubuntu-16.04
           python_versions: ['3.6']
-          test_suites: $(base_tests)
+          test_suites:
+              commoncode: $(PYTEST_BASE) tests/commoncode
+              misc: $(PYTEST_BASE) --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST_BASE) tests/scancode
+              extractcode: $(PYTEST_BASE) tests/extractcode
+              license: $(PYTEST_BASE) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_cache: $(PYTEST_BASE) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST_BASE) tests/cluecode
+              packagedcode: $(PYTEST_BASE) tests/packagedcode
 
     - template: etc/ci/azure-mac.yml
       parameters:
           os_name: macos_1013
           image_name: macos-10.13
           python_versions: ['2.7', '3.6']
-          test_suites: $(base_tests)
+          test_suites:
+              commoncode: $(PYTEST_BASE) tests/commoncode
+              misc: $(PYTEST_BASE) --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST_BASE) tests/scancode
+              extractcode: $(PYTEST_BASE) tests/extractcode
+              license: $(PYTEST_BASE) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_cache: $(PYTEST_BASE) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST_BASE) tests/cluecode
+              packagedcode: $(PYTEST_BASE) tests/packagedcode
 
     - template: etc/ci/azure-mac.yml
       parameters:
           os_name: macos_1014
           image_name: macos-10.14
           python_versions: ['2.7', '3.6']
-          test_suites: $(smoke_tests)
+          test_suites:
+              scancode: $(PYTEST_BASE) tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
           os_name: Win_2016_32
           image_name: vs2017-win2016
           python_versions: ['2.7', '3.6']
-          test_suites: $(base_tests)
           python_architecture: x86
+          test_suites:
+              commoncode: $(PYTEST_BASE) tests/commoncode
+              misc: $(PYTEST_BASE) --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: $(PYTEST_BASE) tests/scancode
+              extractcode: $(PYTEST_BASE) tests/extractcode
+              license: $(PYTEST_BASE) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+              license_cache: $(PYTEST_BASE) tests/licensedcode/test_zzzz_cache.py
+              cluecode: $(PYTEST_BASE) tests/cluecode
+              packagedcode: $(PYTEST_BASE) tests/packagedcode
 
 #    - template: etc/ci/azure-win.yml
 #      parameters:
 #          os_name: Win_2016_64
 #          image_name: vs2017-win2016
 #          python_versions: ['2.7', '3.6']
-#          test_suites: $(smoke_tests)
 #          python_architecture: x64
+#          test_suites:
+#              commoncode: $(PYTEST_BASE) tests/commoncode
+#              misc: $(PYTEST_BASE) --ignore=tests/commoncode --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+#              scancode: $(PYTEST_BASE) tests/scancode
+#              extractcode: $(PYTEST_BASE) tests/extractcode
+#              license: $(PYTEST_BASE) tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
+#              license_cache: $(PYTEST_BASE) tests/licensedcode/test_zzzz_cache.py
+#              cluecode: $(PYTEST_BASE) tests/cluecode
+#              packagedcode: $(PYTEST_BASE) tests/packagedcode
 #
-
     - job: Build_release
       pool:
           vmImage: ubuntu-16.04
