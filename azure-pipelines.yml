@@ -12,7 +12,7 @@ jobs:
 
     - template: etc/ci/azure-linux.yml
       parameters:
-          os_name: ubuntu_16
+          os_name: ubuntu_16_py27
           image_name: ubuntu-16.04
           python_versions: ['2.7']
           test_suites:
@@ -33,7 +33,7 @@ jobs:
       
     - template: etc/ci/azure-linux.yml
       parameters:
-          os_name: ubuntu_16
+          os_name: ubuntu_16_py36
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:

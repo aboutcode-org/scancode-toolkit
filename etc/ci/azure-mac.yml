@@ -3,6 +3,7 @@ parameters:
     image_name: ''
     python_versions: []
     test_suites: {}
+    python_architecture: x64
 
 jobs:
     - job: ${{ parameters.os_name }}
@@ -14,7 +15,7 @@ jobs:
           matrix:
             ${{ each pyver in parameters.python_versions }}:
               ${{ each tsuite in parameters.test_suites }}:
-                 ${{ format('python_{0}_{1}', pyver, tsuite.key) }}:
+                 ${{ format('py{0} {1}', pyver, tsuite.key) }}:
                      python_version: ${{ pyver }}
                      test_suite_label: ${{ tsuite.key }}
                      test_suite: ${{ tsuite.value }}
@@ -22,10 +23,11 @@ jobs:
           - task: UsePythonVersion@0
             inputs:
                 versionSpec: '$(python_version)'
+                architecture: '${{ parameters.python_architecture }}'
             displayName: 'Install Python $(python_version)'
 
           - script: ./configure
             displayName: 'Run Configure'
 
           - script: $(test_suite)
-            displayName: 'Run $(test_suite_label) tests on Python $(python_version)'
+            displayName: 'Run $(test_suite_label) tests with py$(python_version) on ${{ parameters.os_name }}'
