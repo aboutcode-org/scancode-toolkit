@@ -36,7 +36,7 @@ from commoncode import compat
 
 
 class TestCommand(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), b'data')
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_execute2_non_ascii_output(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
