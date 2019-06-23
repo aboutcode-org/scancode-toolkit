@@ -25,7 +25,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
- """
+"""
 PyRPM is a pure python, simple to use, module to read information from a RPM
 file.
 This is heavily modified version from the original.
@@ -39,7 +39,7 @@ from io import BytesIO
 import struct
 
 
- """""
+"""""
 RPM constants
 From rpm.org lib/rpmtag.h
 See also: http://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Core-generic/pkgformat.html
@@ -98,9 +98,9 @@ RPM_DATA_TYPES = (
     RPM_DATA_TYPE_OPENPGP
 )
 
- # tags to collect
+# tags to collect
 
- RPMTAG_NAME = 1000
+RPMTAG_NAME = 1000
 RPMTAG_VERSION = 1001
 RPMTAG_RELEASE = 1002
 RPMTAG_EPOCH = 1003
@@ -175,7 +175,7 @@ class Entry(object):
     @classmethod
     def parse_entry(cls, etag, etype, eoffset, ecount, data_store):
 
-         reader_by_type = {
+        reader_by_type = {
             RPM_DATA_TYPE_NULL:            cls.read_null,
             RPM_DATA_TYPE_CHAR:            cls.read_char,
             RPM_DATA_TYPE_INT8:            cls.read_int8,
@@ -190,13 +190,13 @@ class Entry(object):
             RPM_DATA_TYPE_I18NSTRING_TYPE: cls.read_string
         }
 
-         reader = reader_by_type[etype]
+        reader = reader_by_type[etype]
 
-         # seek to position in store
+        # seek to position in store
         data_store.seek(eoffset)
         value = reader(data_store, ecount)
 
-         return Entry(etag, etype, value)
+        return Entry(etag, etype, value)
 
     @classmethod
     def _read(cls, fmt, store):
@@ -205,7 +205,7 @@ class Entry(object):
         if len(data) == 0:
             return b''
 
-         unpacked_data = struct.unpack(fmt, data)
+        unpacked_data = struct.unpack(fmt, data)
         if len(unpacked_data) == 1:
             return unpacked_data[0]
         else:
@@ -272,7 +272,7 @@ class Header(object):
         self.entries = []
         entryfmt = '!llll'
 
-         for entry_index in entries_index:
+        for entry_index in entries_index:
             """
             Each entry data is in the form
              [4bytes][4bytes][4bytes][4bytes]
@@ -312,14 +312,14 @@ class RPM(object):
         self.headers = []
         self.entries_by_tag = {}
 
-         self.read_lead()
+        self.read_lead()
         offset = self.read_sigheader()
         self.read_headers(offset)
 
     def read_lead(self):
         """
         Read the rpm lead section
-         struct rpmlead {
+        struct rpmlead {
            unsigned char magic[4];
            unsigned char major, minor;
            short type;
@@ -334,13 +334,13 @@ class RPM(object):
         data = self.rpmfile.read(96)
         value = struct.unpack(lead_fmt, data)
 
-         magic_num = value[0]
+        magic_num = value[0]
         package_type = value[3]
 
-         if magic_num != RPM_LEAD_MAGIC_NUMBER:
+        if magic_num != RPM_LEAD_MAGIC_NUMBER:
             raise RPMError('Wrong magic number: this is not a RPM file')
 
-         if package_type == 0:
+        if package_type == 0:
             self.is_binary = True
         elif package_type == 1:
             self.is_binary = False
@@ -350,7 +350,7 @@ class RPM(object):
     def read_sigheader(self):
         """
         Read signature header
-         ATN: this will not return any usefull information
+        ATN: this will not return any usefull information
         besides the file offset
         """
         start = find_magic_number(self.rpmfile)
@@ -368,7 +368,7 @@ class RPM(object):
         if not len(header) == 16:
             raise RPMError('invalid header size')
 
-         headerfmt = '!3sc4sll'
+        headerfmt = '!3sc4sll'
         header = struct.unpack(headerfmt, header)
         magic_num = header[0]
         if magic_num != RPM_HEADER_MAGIC_NUMBER:
@@ -395,7 +395,7 @@ class RPM(object):
         header = Header(header, entries_index, store)
         self.headers.append(header)
 
-         for header in self.headers:
+        for header in self.headers:
             for entry in header.entries:
                 self.entries_by_tag[entry.tag] = entry
 
@@ -512,7 +512,7 @@ class RPM(object):
             ext = 'src.rpm'
         return '.'.join([name, arch, ext])
 
-     def get_tags(self):
+    def get_tags(self):
         """
         returns a dict of tags, keyed by name
         """
@@ -524,7 +524,7 @@ class RPM(object):
             tgs[tagname] = tag
         return tgs
 
-     def to_dict(self):
+    def to_dict(self):
         return dict(
             name=self.name,
             epoch=self.epoch,

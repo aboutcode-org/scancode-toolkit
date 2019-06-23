@@ -36,7 +36,6 @@ from commoncode import compat
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from packagedcode import rpm
-from collections import OrderedDict
 
 
 class TestRpmBasics(FileBasedTesting):
@@ -93,7 +92,7 @@ class TestRpmBasics(FileBasedTesting):
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
-        from packagedcode.pyrpm.pyrpm import RPM
+        from packagedcode.pyrpm import RPM
         raw_rpm = RPM(open(test_file, 'rb'))
         alltags = raw_rpm.get_tags()
         expected = {
@@ -119,29 +118,29 @@ class TestRpmBasics(FileBasedTesting):
         }
 
         assert expected == alltags
-        # tests that tags are all unicode without error
+        # tests that tags are all unicode
         assert all([isinstance(v, compat.unicode) for v in alltags.values() if v])
-    
+
     def test_get_rpm_tags_(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
 
         expected = rpm.RPMtags(
-            name =' python-glc',
-            version = '0.7.1',
-            release = '1',
-            epoch= None,
-            summary = 'ctypes Python bindings for QuesoGLC',
-            distribution = None,
-            vendor = 'Arno P\xe4hler <paehler@graviscom.de>',
-            license = 'LGPL',
-            packager = None,
-            group = 'Development/Libraries',
-            url = 'ftp://ftp.graviscom.de/pub/python-glc/',
-            os = 'linux',
-            arch = 'noarch',
-            source_rpm = None,
-            description = 'These bindings permit access to QuesoGLC, an open source\nimplementation of TrueType font rendering for OpenGL.',
-            dist_url = None,
+            name='python-glc',
+            version='0.7.1',
+            release='1',
+            epoch=None,
+            summary='ctypes Python bindings for QuesoGLC',
+            distribution=None,
+            vendor='Arno P\xe4hler <paehler@graviscom.de>',
+            license='LGPL',
+            packager=None,
+            group='Development/Libraries',
+            url='ftp://ftp.graviscom.de/pub/python-glc/',
+            os='linux',
+            arch='noarch',
+            source_rpm=None,
+            description='These bindings permit access to QuesoGLC, an open source\nimplementation of TrueType font rendering for OpenGL.',
+            dist_url=None,
             is_binary=False,
         )
         assert expected == rpm.get_rpm_tags(test_file, include_desc=True)
@@ -153,7 +152,8 @@ class TestRpmBasics(FileBasedTesting):
         assert not rpm.get_rpm_tags(test_file, include_desc=True)
         assert not rpm.get_rpm_tags(test_file, include_desc=False)
 
-    def check_json(result, expected_file, regen=False):
+
+def check_json(result, expected_file, regen=False):
     if regen:
         with io.open(expected_file, 'wb') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
@@ -202,7 +202,7 @@ class TestRpmTags(FileBasedTesting):
 
     def test_rpm_tags_cndrvcups_lipslx_2_00_2_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/cndrvcups-lipslx-2.00-2.i386.rpm')
-        self.check_rpm_tags(test_file)        
+        self.check_rpm_tags(test_file)
 
     def test_rpm_tags_elfinfo_1_0_1_fc9_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/elfinfo-1.0-1.fc9.src.rpm')
@@ -266,7 +266,7 @@ class TestRpmTags(FileBasedTesting):
 
     def test_rpm_tags_fxload_2002_04_11_212_1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fxload-2002_04_11-212.1.src.rpm')
-        self.check_rpm_tags(test_file)        
+        self.check_rpm_tags(test_file)
 
     def test_rpm_tags_kimera_1_40_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/kimera-1.40+-b1.src.rpm')
@@ -279,7 +279,6 @@ class TestRpmTags(FileBasedTesting):
     def test_rpm_tags_m4ri_20081028_5_fc12_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/m4ri-20081028-5.fc12.src.rpm')
         self.check_rpm_tags(test_file)
-
 
     def test_rpm_tags_m4ri_devel_20081028_5_fc12_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/m4ri-devel-20081028-5.fc12.ppc.rpm')
@@ -424,7 +423,7 @@ class TestRpmTags(FileBasedTesting):
     def test_rpm_tags_renamed_rpm(self):
         test_file = self.get_test_loc('rpm/header/renamed.rpm')
         self.check_rpm_tags(test_file)
-        
+
     def test_rpm_tags_rpm_trailing_rpm(self):
         test_file = self.get_test_loc('rpm/header/rpm_trailing.rpm')
         self.check_rpm_tags(test_file)
