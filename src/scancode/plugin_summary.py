@@ -113,43 +113,40 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        summaries_by_path = OrderedDict()
         base_identifier_counts = Counter()
 
         collecters = [stat_summary, tag_package_files]
         for collecter in collecters:
-            summaries, bics = collecter(codebase, base_identifier_counts, origin_summary_threshold=origin_summary_threshold)
-            merge_summaries_by_path(summaries_by_path, summaries)
+            bics = collecter(codebase, base_identifier_counts, origin_summary_threshold=origin_summary_threshold)
             base_identifier_counts.update(bics)
 
-        for summary_path, summaries in sorted(summaries_by_path.items()):
-            # TODO: implement
-            for summary in summaries:
-                if 'package' in summary.type:
-                    summaries_by_path[summary_path] = summary
-            else:
-                summaries_by_path[summary_path] = summary
-
-        # Consolidate duplicate summaries to one identifier
+        # Pick one summary for a Resource
+        # TODO: Be smarter about this. Consider more criteria picking a summary.
         for resource in codebase.walk(topdown=True):
-            resource_path = resource.path
-            if resource_path in summaries_by_path:
-                resource.summarized_to = summaries_by_path[resource_path].identifier
+            resource_summaries = sorted(resource.extra_data.get('summaries', []))
+            if not resource_summaries:
+                continue
+            for summary in resource_summaries:
+                if 'package' in summary.type:
+                    # Package data has higher precedence over other types
+                    resource.extra_data['summary'] = summary
+                    break
+                else:
+                    resource.extra_data['summary'] = summary
+            resource.save(codebase)
+            resource_summary = resource.extra_data['summary']
+            codebase.attributes.summaries.append(resource_summary)
+            resource_summary_identifier = resource_summary.identifier
+            resource.summarized_to = resource_summary_identifier
 
-        # Attach summaries to codebase level attribute
-        codebase.attributes.summaries = [summary for _, summary in sorted(summaries_by_path.items())]
-
-
-def merge_summaries_by_path(summaries_1, summaries_2):
-    for k, v in summaries_2.items():
-        if k not in summaries_1:
-            summaries_1[k] = v
-        else:
-            summaries_1[k].extend(v)
+            children = resource.children(codebase)
+            if not children:
+                continue
+            for child in children:
+                child.summarized_to = resource_summary_identifier
 
 
 def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold=None, **kwargs):
-    summaries_by_path = defaultdict(list)
     base_identifier_counts = base_identifier_counts or Counter()
 
     # Summarize origin clues to directory level and tag summarized Resources
@@ -200,7 +197,9 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                 # Keep track of identifiers so we can enumerate them properly
                 base_identifier_counts[base_identifier] += 1
                 identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-                summaries_by_path[resource.path].append(
+
+                resource_summaries = resource.extra_data.get('summaries', [])
+                resource_summaries.append(
                     Summary(
                         identifier=identifier,
                         license_expression=license_expression,
@@ -208,6 +207,8 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                         type=['license', 'holder']
                     )
                 )
+                resource.extra_data['summaries'] = resource_summaries
+                resource.save(codebase)
 
                 for child_rid in child_rids:
                     child = codebase.get_resource(child_rid)
@@ -221,7 +222,7 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                         child.summarized_to = identifier
                         child.save(codebase)
 
-    return summaries_by_path, base_identifier_counts
+    return base_identifier_counts
 
 
 def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
@@ -247,7 +248,9 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
             for child in resource.walk(codebase, topdown=True):
                 child.summarized_to = identifier
                 child.save(codebase)
-            summaries_by_path[resource.path].append(
+
+            resource_summaries = resource.extra_data.get('summaries', [])
+            resource_summaries.append(
                 Summary(
                     identifier=identifier,
                     license_expression=license_expression,
@@ -255,8 +258,10 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
                     type=['package']
                 )
             )
+            resource.extra_data['summaries'] = resource_summaries
+            resource.save(codebase)
 
-    return summaries_by_path, base_identifier_counts
+    return base_identifier_counts
 
 
 def is_majority(count, files_count, threshold=None):
