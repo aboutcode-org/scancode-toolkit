@@ -121,18 +121,19 @@ class OriginSummary(PostScanPlugin):
             base_identifier_counts.update(bics)
 
         # Pick one summary for a Resource
-        # TODO: Be smarter about this. Consider more criteria picking a summary.
         for resource in codebase.walk(topdown=True):
             resource_summaries = sorted(resource.extra_data.get('summaries', []))
             if not resource_summaries:
                 continue
             for summary in resource_summaries:
+                # TODO: Be smarter about this. Consider more criteria picking a summary.
                 if 'package' in summary.type:
                     # Package data has higher precedence over other types
                     resource.extra_data['summary'] = summary
                     break
-                else:
+                elif ('license', 'holder',) in summary.type:
                     resource.extra_data['summary'] = summary
+                    break
             resource.save(codebase)
             resource_summary = resource.extra_data['summary']
             codebase.attributes.summaries.append(resource_summary)
@@ -210,23 +211,10 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                 resource.extra_data['summaries'] = resource_summaries
                 resource.save(codebase)
 
-                for child_rid in child_rids:
-                    child = codebase.get_resource(child_rid)
-                    if child.is_file:
-                        child_license_expression = combine_expressions(child.license_expressions)
-                        child_holders = tuple(h['value'] for h in child.holders)
-                    else:
-                        child_license_expression = child.origin_summary.get('license_expression')
-                        child_holders  = child.origin_summary.get('holders')
-                    if (child_holders, child_license_expression) == (holders, license_expression):
-                        child.summarized_to = identifier
-                        child.save(codebase)
-
     return base_identifier_counts
 
 
 def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
-    summaries_by_path = defaultdict(list)
     base_identifier_counts = base_identifier_counts or Counter()
 
     # Summarize origin clues to directory level and tag summarized Resources
@@ -235,19 +223,14 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
         if resource.is_file:
             continue
 
-        # If a Resource is the root of a package, then every Resource under this one is part of
-        # this package and should be summarized to this Resource
         resource_packages = resource.packages
         for package in resource_packages:
-            # TODO: Should package data have greater precedence than summarized license expression/holders?
+            # TODO: Get other things to create identifiers from
             license_expression = package['license_expression']
             holders = package['copyright']
             base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
             base_identifier_counts[base_identifier] += 1
             identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
-            for child in resource.walk(codebase, topdown=True):
-                child.summarized_to = identifier
-                child.save(codebase)
 
             resource_summaries = resource.extra_data.get('summaries', [])
             resource_summaries.append(
