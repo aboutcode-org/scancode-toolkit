@@ -24,6 +24,7 @@
 
 import binascii
 from bitarray import bitarray
+from bitarray import bitdiff
 from licensedcode.tokenize import ngrams
 import hashlib
 
@@ -141,10 +142,6 @@ class Simhash:
         """
         Return hamming distance between two given fingerprints
         """
-        result = 0
-
-        for idx in range(HASH_LENGTH):
-            if fingerprint1[idx] != fingerprint2[idx]:
-                result += 1
+        result = bitdiff(fingerprint1, fingerprint2)
 
         return result
