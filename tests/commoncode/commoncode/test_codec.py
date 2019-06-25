@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,29 +24,33 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from unittest import TestCase
 
-from commoncode.codec import bin_to_num, num_to_bin
-from commoncode.codec import _encode, to_base_n
-from commoncode.codec import to_base10, to_base85
+from commoncode.codec import bin_to_num
+from commoncode.codec import num_to_bin
+from commoncode.codec import urlsafe_b64encode_int
+
+import pytest
+pytestmark = pytest.mark.scanpy3 #NOQA
 
 
 class TestCodec(TestCase):
 
     def test_bin_to_num_basic(self):
         expected = 123
-        result = bin_to_num('{')
+        result = bin_to_num(b'{')
         assert expected == result
 
     def test_bin_to_num_zero(self):
         expected = 0
-        result = bin_to_num('\x00')
+        result = bin_to_num(b'\x00')
         assert expected == result
 
     def test_bin_to_num_large_number(self):
         expected = 432346237462348763
-        result = bin_to_num('\x06\x00\x00\x9c\xbf\xeb\x83\xdb')
+        result = bin_to_num(b'\x06\x00\x00\x9c\xbf\xeb\x83\xdb')
         assert expected == result
 
     def test_bin_to_num_and_num_to_bin_is_idempotent(self):
@@ -55,73 +59,44 @@ class TestCodec(TestCase):
         assert expected == result
 
     def test_num_to_bin_basic(self):
-        expected = '{'
+        expected = b'{'
         result = num_to_bin(123)
         assert expected == result
 
     def test_num_to_bin_zero(self):
-        expected = '\x00'
+        expected = b'\x00'
         result = num_to_bin(0)
         assert expected == result
 
     def test_num_to_bin_large_number(self):
-        expected = '\x06\x00\x00\x9c\xbf\xeb\x83\xdb'
+        expected = b'\x06\x00\x00\x9c\xbf\xeb\x83\xdb'
         result = num_to_bin(432346237462348763)
         assert expected == result
 
     def test_num_to_bin_bin_to_num_is_idempotent(self):
-        expected = '\x06\x00\x00\x9c\xbf\xeb\x83\xdb'
-        result = num_to_bin(bin_to_num('\x06\x00\x00\x9c\xbf\xeb\x83\xdb'))
+        expected = b'\x06\x00\x00\x9c\xbf\xeb\x83\xdb'
+        result = num_to_bin(bin_to_num(b'\x06\x00\x00\x9c\xbf\xeb\x83\xdb'))
         assert expected == result
 
-    def test_encode_zero(self):
-        assert  'AA==' == _encode(0)
+    def test_urlsafe_b64encode_int_zero(self):
+        assert  b'AA==' == urlsafe_b64encode_int(0)
 
-    def test_encode_basic(self):
-        assert 'HKq1w7M=' == _encode(123123123123)
+    def test_urlsafe_b64encode_int_basic(self):
+        assert b'HKq1w7M=' == urlsafe_b64encode_int(123123123123)
 
-    def test_encode_limit_8bits_255(self):
-        assert '_w==' == _encode(255)
+    def test_urlsafe_b64encode_int_limit_8bits_255(self):
+        assert b'_w==' == urlsafe_b64encode_int(255)
 
-    def test_encode_limit_8bits_256(self):
-        assert 'AQA=' == _encode(256)
+    def test_urlsafe_b64encode_int_limit_8bits_256(self):
+        assert b'AQA=' == urlsafe_b64encode_int(256)
 
-    def test_encode_adds_no_padding_for_number_that_are_multiple_of_6_bits(self):
-        assert '____________' == _encode(0xFFFFFFFFFFFFFFFFFF)
-        assert 8 == len(_encode(0xFFFFFFFFFFFF))
+    def test_urlsafe_b64encode_int_adds_no_padding_for_number_that_are_multiple_of_6_bits(self):
+        assert b'____________' == urlsafe_b64encode_int(0xFFFFFFFFFFFFFFFFFF)
+        assert 8 == len(urlsafe_b64encode_int(0xFFFFFFFFFFFF))
 
-    def test_encode_very_large_number(self):
-        b64 = ('QAAAAAAgAAAAAQAACAAAAAAAAAAAAAAkAAIAAAAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAiAAAAAAAIAAAAAAAAAAAAAAEAACAAAAAAAA=')
+    def test_urlsafe_b64encode_int_very_large_number(self):
+        b64 = (b'QAAAAAAgAAAAAQAACAAAAAAAAAAAAAAkAAIAAAAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAiAAAAAAAIAAAAAAAAAAAAAAEAACAAAAAAAA=')
         expected = b64
-        num = 2678771517966886466622496485850735537232223496190189203248435106535830319026141316924949516664780383591425235756710588949364368366679435700855700642969357960349427980681242720502045830438444033569999428606714388704082526548154984676817460705606960919023941301616034362869262429593297635158449513824256L
-        result = _encode(num)
+        num = 2678771517966886466622496485850735537232223496190189203248435106535830319026141316924949516664780383591425235756710588949364368366679435700855700642969357960349427980681242720502045830438444033569999428606714388704082526548154984676817460705606960919023941301616034362869262429593297635158449513824256
+        result = urlsafe_b64encode_int(num)
         assert expected == result
-
-    def test_base64_is_idempotent(self):
-        for i in [0, 63, 782963129, 99999999, 2147483647]:
-            assert i == to_base10(to_base_n(i, 64), 64)
-
-    def test_base36_is_idempotent(self):
-        for i in [0, 63, 782963129, 99999999, 2147483647]:
-            assert i == to_base10(to_base_n(i, 36), 36)
-
-    def test_base85_is_idempotent(self):
-        # we use this for 12-bit hashes
-        for i in [0, 63, 100, 1000, 4095, 4294967295]:
-            assert i == to_base10(to_base85(i), 85)
-
-    def test_to_base_n_with_unknown_base_raise_exception(self):
-        try:
-            to_base_n(892103712, 86)
-        except AssertionError:
-            pass
-
-        try:
-            to_base_n(892103712, 16522)
-        except AssertionError:
-            pass
-
-        try:
-            to_base_n(892103712, 1)
-        except AssertionError:
-            pass
