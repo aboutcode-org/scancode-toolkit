@@ -12,7 +12,7 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['2.7']
           test_suites:
-              misc: bin/py.test -n 2 -vvs --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              misc: bin/py.test -vvs --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
               scancode: bin/py.test -vvs --test-suite=all tests/scancode
               extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
               license_base: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
