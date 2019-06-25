@@ -87,15 +87,10 @@ class TestContentType(FileBasedTesting):
         assert os.path.exists(test_file)
 
         expected = 'PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
-        if on_windows:
-            # FIXME: this is a very short png file though
-            expected = 'Non-ISO extended-ASCII text'
+        
         assert expected == get_filetype_file(test_file)
-
+        
         expected = 'image/png'
-        if on_windows:
-            # FIXME: this is a very short png file though
-            expected = 'text/plain'
         assert expected == get_mimetype_file(test_file)
 
     @skipIf(not on_linux, 'Windows and macOS have some issues with some non-unicode paths')
