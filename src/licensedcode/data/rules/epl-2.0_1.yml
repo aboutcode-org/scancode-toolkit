@@ -1,4 +1,5 @@
-license_expression: epl-2.0
+license_expression: bsd-new AND epl-2.0 AND free-unknown
 is_license_notice: yes
 minimum_coverage: 98
-notes: there is a typo in the text withan EDL reference
+relevance: 100
+notes: there is a typo in the text with an EDL reference

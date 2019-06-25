@@ -1,0 +1,4 @@
+license_expression: epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+notes: this is in the JRuby pom.rb
