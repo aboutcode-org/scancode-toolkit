@@ -93,19 +93,12 @@ APACHE_MIME_TYPES = os.path.join(data_dir, 'apache', 'mime.types')
 # Ensure that all dates are UTC, especially for fine free file.
 os.environ['TZ'] = 'UTC'
 
-PLAIN_TEXT_EXTENSIONS = ('.rst', '.rest', '.txt', '.md',
-                        # This one is actually not handled by Pygments. There
-                        # are probably more.
-                         '.log')
-if not on_linux:
-    PLAIN_TEXT_EXTENSIONS = tuple(compat.unicode(e) for e in PLAIN_TEXT_EXTENSIONS)
-
-C_EXTENSIONS = set(['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
-                    '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
-
-if not on_linux:
-    C_EXTENSIONS = set(compat.unicode(e) for e in C_EXTENSIONS)
-
+def as_bytes(items):
+    """
+    Return a tuple of bytes items from a sequence of string items.
+    """
+    return tuple(e.encode('utf-8') for e in items)
+    
 ELF_EXE = 'executable'
 ELF_SHARED = 'shared object'
 ELF_RELOC = 'relocatable'
@@ -360,7 +353,10 @@ class Type(object):
         """
         if self._is_js_map is None:
             # FIXME: when moving to Python 3
-            extensions = ('.js.map', '.css.map',) if on_linux else (u'.js.map', u'.css.map',)
+            extensions = '.js.map', '.css.map',
+            if on_linux:
+                extensions = as_bytes(extensions)
+            
             self._is_js_map = (
                 self.is_text is True
                 and self.location.endswith(extensions)
@@ -380,8 +376,8 @@ class Type(object):
 
         ft = self.filetype_file.lower()
         can_extract = bool(archive.can_extract(self.location))
-        docx_ext = 'x' if on_linux else u'x'
-
+        docx_ext = b'x' if on_linux else u'x'
+        
         if self.is_text:
             self._is_archive = False
 
@@ -403,8 +399,12 @@ class Type(object):
     @property
     def is_office_doc(self):
         loc = self.location.lower()
-        if loc.endswith(('.doc', '.docx', '.xlsx', '.xlsx', '.ppt', '.pptx',) if on_linux
-                        else (u'.doc', u'.docx', u'.xlsx', u'.xlsx', u'.ppt', u'.pptx',)):
+        # FIXME: add open office extensions
+
+        msoffice_exts = u'.doc', u'.docx', u'.xlsx', u'.xlsx', u'.ppt', u'.pptx'
+        if on_linux:
+            msoffice_exts = as_bytes(msoffice_exts)
+        if loc.endswith(msoffice_exts):
             return True
         else:
             return False
@@ -417,16 +417,17 @@ class Type(object):
         # FIXME: this should beased on proper package recognition, not this simplistic check
         ft = self.filetype_file.lower()
         loc = self.location.lower()
+        package_archive_extensions = u'.jar', u'.war', u'.ear', u'.zip', '.whl', '.egg'
+        if on_linux:
+            package_archive_extensions = as_bytes(package_archive_extensions)
+        gem_extension = b'.gem' if on_linux else u'.gem'
+
+        # FIXME: this is grossly under specified and is missing many packages
         if ('debian binary package' in ft
-         or ft.startswith('rpm ')
-         or (ft == 'posix tar archive' and loc.endswith(
-             '.gem' if on_linux else u'.gem'))
-         or (ft.startswith(('zip archive',)) and loc.endswith(
-            ('.jar', '.war', '.ear', '.egg', '.whl',) if on_linux
-            else (u'.jar', u'.war', u'.ear', u'.egg', u'.whl',)))
-         or (ft.startswith(('java archive',)) and loc.endswith(
-            ('.jar', '.war', '.ear', '.zip',) if on_linux
-            else (u'.jar', u'.war', u'.ear', u'.zip',)))
+        or ft.startswith('rpm ')
+        or (ft == 'posix tar archive' and loc.endswith(gem_extension))
+        or (ft.startswith(('zip archive', 'java archive'))
+            and loc.endswith(package_archive_extensions))
         ):
             return True
         else:
@@ -438,11 +439,14 @@ class Type(object):
         Return True if the file is some kind of compressed file.
         """
         ft = self.filetype_file.lower()
-        docx_ext = 'x' if on_linux else u'x'
+        docx_ext = b'x' if on_linux else u'x'
         if (not self.is_text
-        and (any(x in ft for x in ('squashfs filesystem', 'compressed'))
-          or self.is_package
-          or (self.is_office_doc and self.location.endswith(docx_ext))
+        and (
+            '(zip)' in ft
+            or ft.startswith(('zip archive', 'java archive'))
+            or self.is_package
+            or any(x in ft for x in ('squashfs filesystem', 'compressed'))
+            or (self.is_office_doc and self.location.endswith(docx_ext))
         )):
             return True
         else:
@@ -535,10 +539,12 @@ class Type(object):
         Return True if a file possibly contains some text.
         """
         if self._contains_text is None:
+            svg_ext = b'.svg' if on_linux else u'.svg'
+
             if not self.is_file:
                 self._contains_text = False
 
-            elif self.is_media and not self.location.lower().endswith(('.svg')):
+            elif self.is_media and not self.location.lower().endswith(svg_ext):
                 # and not self.is_media_with_meta:
                 self._contains_text = False
 
@@ -580,11 +586,11 @@ class Type(object):
             max_entropy = 1.3
 
             if (ft == 'data'
-             or is_data(self.location)
-             or ('data' in ft and size > large_file)
-             or (self.is_text and size > large_text_file)
-             or (self.is_text and size > large_text_file)
-             or (entropy.entropy(self.location, length=5000) < max_entropy)):
+            or is_data(self.location)
+            or ('data' in ft and size > large_file)
+            or (self.is_text and size > large_text_file)
+            or (self.is_text and size > large_text_file)
+            or (entropy.entropy(self.location, length=5000) < max_entropy)):
 
                 self._is_data = True
             else:
@@ -609,6 +615,12 @@ class Type(object):
         """
         if self.is_text is False:
             return False
+        PLAIN_TEXT_EXTENSIONS = (
+            '.rst', '.rest', '.txt', '.md',
+            # This one is actually not handled by Pygments. There are probably more.
+            '.log')
+        if on_linux:
+            PLAIN_TEXT_EXTENSIONS = as_bytes(PLAIN_TEXT_EXTENSIONS)
 
         if self.location.endswith(PLAIN_TEXT_EXTENSIONS):
             return False
@@ -628,6 +640,12 @@ class Type(object):
 
     @property
     def is_c_source(self):
+        C_EXTENSIONS = set(
+            ['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
+            '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
+        if on_linux:
+            C_EXTENSIONS = set(as_bytes(C_EXTENSIONS))
+
         ext = fileutils.file_extension(self.location)
         if self.is_text is True and ext.lower() in C_EXTENSIONS:
             return True
@@ -686,9 +704,9 @@ class Type(object):
         if self.is_file is True:
             name = fileutils.file_name(self.location)
 
-            if (fnmatch.fnmatch(name, '*.java' if on_linux else u'*.java')
-             or fnmatch.fnmatch(name, '*.aj' if on_linux else u'*.aj')
-             or fnmatch.fnmatch(name, '*.ajt' if on_linux else u'*.ajt')):
+            if (fnmatch.fnmatch(name, b'*.java' if on_linux else u'*.java')
+             or fnmatch.fnmatch(name, b'*.aj' if on_linux else u'*.aj')
+             or fnmatch.fnmatch(name, b'*.ajt' if on_linux else u'*.ajt')):
                 return True
             else:
                 return False
@@ -702,7 +720,7 @@ class Type(object):
         """
         if self.is_file is True:
             name = fileutils.file_name(self.location)
-            if fnmatch.fnmatch(name, '*?.class' if on_linux else u'*?.class'):
+            if fnmatch.fnmatch(name, b'*?.class' if on_linux else u'*?.class'):
                 return True
             else:
                 return False
@@ -724,7 +742,9 @@ DATA_TYPE_DEFINITIONS = tuple([
     TypeDefinition(
         name='MySQL ARCHIVE Storage Engine data files',
         filetypes=('mysql table definition file',),
-        extensions=('.arm', '.arz', '.arn',),
+        extensions=
+            (b'.arm', b'.arz', b'.arn',) if on_linux
+            else (u'.arm', u'.arz', u'.arn',),
     ),
 ])
 
@@ -749,8 +769,6 @@ def is_data(location, definitions=DATA_TYPE_DEFINITIONS):
 
         exts = ddef.extensions
         if exts:
-            if on_linux:
-                exts = tuple(fileutils.fsencode(e) for e in exts)
             extension_matched = exts and location.lower().endswith(exts)
 
         if TRACE:
@@ -809,8 +827,6 @@ def get_filetype(location):
     return T.filetype_file.lower()
 
 
-STD_INCLUDES = ('/usr/lib/gcc', '/usr/lib', '/usr/include',
-                '<built-in>', '/tmp/glibc-',)
 
 
 def is_standard_include(location):
@@ -818,6 +834,11 @@ def is_standard_include(location):
     Return True if the `location` file path refers to something that looks like
     a standard C/C++ include.
     """
+    STD_INCLUDES = (
+        '/usr/lib/gcc', '/usr/lib', '/usr/include',
+        '<built-in>', '/tmp/glibc-',
+    )
+
     if (location.startswith(STD_INCLUDES) or location.endswith(STD_INCLUDES)):
         return True
     else:
@@ -831,6 +852,9 @@ def is_binary(location):
     known_extensions = (
         '.pyc', '.pgm', '.mp3', '.mp4', '.mpeg', '.mpg', '.emf', 
         '.pgm', '.pbm', '.ppm')
+    if on_linux:
+        known_extensions = as_bytes(known_extensions)
+        
     if location.endswith(known_extensions):
         return True
     return is_binary_string(get_starting_chunk(location))
