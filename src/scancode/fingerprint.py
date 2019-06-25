@@ -142,6 +142,7 @@ class Simhash:
         """
         Return hamming distance between two given fingerprints
         """
-        result = bitdiff(fingerprint1, fingerprint2)
+        distance = bitdiff(fingerprint1, fingerprint2)
+        result = int(distance)
 
         return result
