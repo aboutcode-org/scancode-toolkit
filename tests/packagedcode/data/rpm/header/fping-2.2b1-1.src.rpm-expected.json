@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.2b1",
+    "release": "1",
+    "arch": "i386",
+    "os": "Linux",
+    "summary": "A tool to ping multiple hosts at once.",
+    "description": null,
+    "distribution": null,
+    "vendor": "teuto.net Netzdienste GmbH",
+    "license": "GPL",
+    "packager": "Lars Marowsky-Bree <lmb@teuto.net>",
+    "group": "Applications/Internet",
+    "url": null,
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

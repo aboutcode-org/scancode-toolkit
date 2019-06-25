@@ -1,0 +1,19 @@
+{
+    "name": "mvlutils",
+    "epoch": null,
+    "version": "2.8.4",
+    "release": "7.0.2.0801061",
+    "arch": "mips64_fp_le",
+    "os": "linux",
+    "summary": "Miscellanious system utilites",
+    "description": null,
+    "distribution": "MontaVista Linux",
+    "vendor": "MontaVista Software, Inc.",
+    "license": "GPL/Other",
+    "packager": "<source@mvista.com>",
+    "group": "base",
+    "url": null,
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

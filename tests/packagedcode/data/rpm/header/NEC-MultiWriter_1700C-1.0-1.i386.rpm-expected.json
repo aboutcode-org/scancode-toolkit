@@ -1,0 +1,19 @@
+{
+    "name": "NEC-MultiWriter_1700C",
+    "epoch": null,
+    "version": "1.0",
+    "release": "1",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "Printer Driver for NEC MultiWriter 1700C",
+    "description": null,
+    "distribution": null,
+    "vendor": "NEC Corporation",
+    "license": "Copyright (C) 2005 Fuji Xerox Co., Ltd.",
+    "packager": null,
+    "group": "Hardware/Printing",
+    "url": null,
+    "source_rpm": "NEC-MultiWriter_1700C-1.0-1.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

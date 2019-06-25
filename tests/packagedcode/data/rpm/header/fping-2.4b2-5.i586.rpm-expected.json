@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2",
+    "release": "5",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "fping - pings multiple hosts at once",
+    "description": null,
+    "distribution": "PLD 1.0 (Ra)",
+    "vendor": "PLD",
+    "license": "distributable",
+    "packager": "PLD bug tracking system ( http://bugs.pld.org.pl/ )",
+    "group": "Networking/Admin",
+    "url": "http://www.fping.com/",
+    "source_rpm": "fping-2.4b2-5.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

@@ -1,0 +1,19 @@
+{
+    "name": "perl-CGI",
+    "epoch": "2",
+    "version": "3.42",
+    "release": "8",
+    "arch": "noarch",
+    "os": "linux",
+    "summary": "CGI modules for perl",
+    "description": null,
+    "distribution": null,
+    "vendor": "ATrpms.net",
+    "license": "Artistic",
+    "packager": "ATrpms <http://ATrpms.net/>",
+    "group": "Development/Languages",
+    "url": "http://search.cpan.org/~lds/CGI.pm-3.42/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

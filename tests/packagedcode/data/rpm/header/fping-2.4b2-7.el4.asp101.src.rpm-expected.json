@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2",
+    "release": "7.el4.asp101",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "Scriptable, parallelized ping-like utility",
+    "description": null,
+    "distribution": null,
+    "vendor": "ASPLinux",
+    "license": "BSD",
+    "packager": "ASPLinux Team <packages@asp-linux.com>",
+    "group": "Applications/Internet",
+    "url": "http://www.fping.com/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2",
+    "release": "8mdv2007.1",
+    "arch": "sparc",
+    "os": "linux",
+    "summary": "Quickly ping N number of hosts to determine their reachability",
+    "description": null,
+    "distribution": "Mandriva Linux",
+    "vendor": "Mandriva",
+    "license": "GPL",
+    "packager": "Stefan van der Eijk <stefan@mandriva.org>",
+    "group": "Networking/Other",
+    "url": "http://www.fping.com/",
+    "source_rpm": "fping-2.4b2-8mdv2007.1.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

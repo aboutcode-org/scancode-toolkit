@@ -1,0 +1,19 @@
+{
+    "name": "ping",
+    "epoch": "1",
+    "version": "ss020927",
+    "release": "54702cl",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "The ping networking program",
+    "description": null,
+    "distribution": "Conectiva Linux",
+    "vendor": "Conectiva",
+    "license": "BSD",
+    "packager": "Conectiva S.A. <security@conectiva.com.br>",
+    "group": "Networking",
+    "url": null,
+    "source_rpm": "iputils-ss020927-54702cl.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

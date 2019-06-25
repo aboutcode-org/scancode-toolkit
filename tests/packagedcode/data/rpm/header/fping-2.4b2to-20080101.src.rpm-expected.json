@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2to",
+    "release": "20080101",
+    "arch": "ix86",
+    "os": "freebsd6.2",
+    "summary": "ICMP Host Pinging Tool",
+    "description": null,
+    "distribution": "OpenPKG Community",
+    "vendor": "Thomas Dzubin",
+    "license": "Open Source",
+    "packager": "OpenPKG Foundation e.V.",
+    "group": "Mapping",
+    "url": "http://fping.sourceforge.net/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

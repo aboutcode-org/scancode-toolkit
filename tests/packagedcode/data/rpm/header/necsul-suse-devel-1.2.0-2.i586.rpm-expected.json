@@ -1,0 +1,19 @@
+{
+    "name": "necsul-suse-devel",
+    "epoch": null,
+    "version": "1.2.0",
+    "release": "2",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "The Status Utility for Linux development toolkit.",
+    "description": null,
+    "distribution": null,
+    "vendor": "Fuji Xerox Co., Ltd.",
+    "license": "(C) 2005-2006 Fuji Xerox Co., Ltd.",
+    "packager": "Fuji Xerox Co., Ltd.",
+    "group": "Development/Libraries",
+    "url": "http://www.express.nec.co.jp/",
+    "source_rpm": "necsul-suse-devel-1.2.0-2.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

@@ -1,0 +1,19 @@
+{
+    "name": "ping",
+    "epoch": null,
+    "version": "0.17",
+    "release": "30994cl",
+    "arch": "sparc",
+    "os": "linux",
+    "summary": "The ping networking program",
+    "description": null,
+    "distribution": "Conectiva Linux",
+    "vendor": "Conectiva",
+    "license": "BSD",
+    "packager": null,
+    "group": "Networking",
+    "url": null,
+    "source_rpm": "netkit-base-0.17-30994cl.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

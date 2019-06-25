@@ -1,0 +1,19 @@
+{
+    "name": "perl-Crypt-IDEA",
+    "epoch": null,
+    "version": "1.08",
+    "release": "2.fc10",
+    "arch": "x86_64",
+    "os": "linux",
+    "summary": "Perl interface to IDEA block cipher",
+    "description": null,
+    "distribution": "Fedora 10",
+    "vendor": "RPM Fusion",
+    "license": "BSD with advertising",
+    "packager": "<http://free.rpmfusion.org/>",
+    "group": "Development/Libraries",
+    "url": "http://search.cpan.org/dist/Crypt-IDEA/",
+    "source_rpm": "perl-Crypt-IDEA-1.08-2.fc10.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

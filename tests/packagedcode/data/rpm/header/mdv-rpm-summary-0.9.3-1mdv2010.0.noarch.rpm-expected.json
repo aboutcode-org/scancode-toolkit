@@ -1,0 +1,19 @@
+{
+    "name": "mdv-rpm-summary",
+    "epoch": null,
+    "version": "0.9.3",
+    "release": "1mdv2010.0",
+    "arch": "noarch",
+    "os": "linux",
+    "summary": "Localization files for packages summaries",
+    "description": null,
+    "distribution": "Mandriva Linux",
+    "vendor": "Mandriva",
+    "license": "GPL",
+    "packager": "Anne Nicolas <anne.nicolas@mandriva.com>",
+    "group": "System/Internationalization",
+    "url": null,
+    "source_rpm": "mdv-rpm-summary-0.9.3-1mdv2010.0.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

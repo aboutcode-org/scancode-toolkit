@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2",
+    "release": "10.fc12",
+    "arch": "x86_64",
+    "os": "linux",
+    "summary": "Scriptable, parallelized ping-like utility",
+    "description": null,
+    "distribution": "Koji",
+    "vendor": "Fedora Project",
+    "license": "BSD with advertising",
+    "packager": "Fedora Project",
+    "group": "Applications/Internet",
+    "url": "http://www.fping.com/",
+    "source_rpm": "fping-2.4b2-10.fc12.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

@@ -1,0 +1,19 @@
+{
+    "name": "fxload",
+    "epoch": null,
+    "version": "2002_04_11",
+    "release": "212.1",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "Download Firmware into USB FX and FX2 Devices",
+    "description": null,
+    "distribution": "openSUSE 11.0 (i586)",
+    "vendor": "SUSE LINUX Products GmbH, Nuernberg, Germany",
+    "license": "LGPL v2.1 or later",
+    "packager": "http://bugs.opensuse.org",
+    "group": "System/Kernel",
+    "url": "http://linux-hotplug.sf.net/",
+    "source_rpm": null,
+    "dist_url": "srcrep:08daa5aad5d370288b2e472d300afb6c-fxload",
+    "is_binary": false
+}
