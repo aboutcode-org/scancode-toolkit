@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.2b1",
+    "release": "49607cl",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "A tool to ping multiple hosts at once.",
+    "description": null,
+    "distribution": "Conectiva Linux",
+    "vendor": "Conectiva",
+    "license": "GPL",
+    "packager": "Conectiva S.A. <security@conectiva.com.br>",
+    "group": "Networking",
+    "url": "http://www.kernel.org/pub/software/admin/mon/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

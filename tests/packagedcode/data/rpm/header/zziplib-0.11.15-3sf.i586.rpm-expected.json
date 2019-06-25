@@ -1,0 +1,19 @@
+{
+    "name": "zziplib",
+    "epoch": "2",
+    "version": "0.11.15",
+    "release": "3sf",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "ZZipLib - libZ-based ZIP-access Library",
+    "description": null,
+    "distribution": "Sourceforge",
+    "vendor": "Guido Draheim <guidod@gmx.de>",
+    "license": "LGPL",
+    "packager": "Guido Draheim <guidod@gmx.de>",
+    "group": "Development/Libraries",
+    "url": "http://zziplib.sf.net",
+    "source_rpm": "zziplib-0.11.15-3sf.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

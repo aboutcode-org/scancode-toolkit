@@ -1,0 +1,19 @@
+{
+    "name": "perl-Net-IP",
+    "epoch": null,
+    "version": "1.15",
+    "release": "1.8.0",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "Net::IP Perl module",
+    "description": null,
+    "distribution": null,
+    "vendor": null,
+    "license": "Perl",
+    "packager": null,
+    "group": "Development/Languages",
+    "url": null,
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

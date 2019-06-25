@@ -1,0 +1,19 @@
+{
+    "name": "perl-IO-Interface",
+    "epoch": null,
+    "version": "0.97",
+    "release": "3.8.0",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "A Perl module to find information about network interface cards.",
+    "description": null,
+    "distribution": null,
+    "vendor": null,
+    "license": "distributable",
+    "packager": null,
+    "group": "Applications/CPAN",
+    "url": "http://www.cpan.org",
+    "source_rpm": "perl-IO-Interface-0.97-3.8.0.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

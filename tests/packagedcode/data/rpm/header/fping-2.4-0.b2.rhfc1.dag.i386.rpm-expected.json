@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4",
+    "release": "0.b2.rhfc1.dag",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "A utility to ping multiple hosts at once.",
+    "description": null,
+    "distribution": null,
+    "vendor": "Dag Apt Repository, http://dag.wieers.com/apt/",
+    "license": "distributable",
+    "packager": "Dag Wieers <dag@wieers.com>",
+    "group": "Applications/Internet",
+    "url": "http://www.fping.com/",
+    "source_rpm": "fping-2.4-0.b2.rhfc1.dag.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

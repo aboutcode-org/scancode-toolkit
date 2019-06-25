@@ -1,0 +1,19 @@
+{
+    "name": "perl-Term-ReadKey",
+    "epoch": null,
+    "version": "2.20",
+    "release": "1.7.3",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "Term::ReadKey perl module",
+    "description": null,
+    "distribution": null,
+    "vendor": null,
+    "license": "GPL",
+    "packager": "Mirko Zeibig <mirko@zeibig.net>",
+    "group": "Development/Languages/Perl",
+    "url": null,
+    "source_rpm": "perl-Term-ReadKey-2.20-1.7.3.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

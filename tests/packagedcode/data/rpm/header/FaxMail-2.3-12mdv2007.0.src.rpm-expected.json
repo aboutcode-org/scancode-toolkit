@@ -1,0 +1,19 @@
+{
+    "name": "FaxMail",
+    "epoch": null,
+    "version": "2.3",
+    "release": "12mdv2007.0",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "A program to send faxes for free via email and the TPC system",
+    "description": null,
+    "distribution": "Mandriva Linux",
+    "vendor": "Mandriva",
+    "license": "GPL",
+    "packager": "Stew Benedict <sbenedict@mandriva.com>",
+    "group": "Networking/Mail",
+    "url": "http://www.inference.phy.cam.ac.uk/FaxMail/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

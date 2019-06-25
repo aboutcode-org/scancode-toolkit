@@ -1,0 +1,19 @@
+{
+    "name": "python-glc",
+    "epoch": null,
+    "version": "0.7.1",
+    "release": "1",
+    "arch": "noarch",
+    "os": "linux",
+    "summary": "ctypes Python bindings for QuesoGLC",
+    "description": null,
+    "distribution": null,
+    "vendor": "Arno P\u00e4hler <paehler@graviscom.de>",
+    "license": "LGPL",
+    "packager": null,
+    "group": "Development/Libraries",
+    "url": "ftp://ftp.graviscom.de/pub/python-glc/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

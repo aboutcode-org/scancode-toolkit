@@ -1,0 +1,19 @@
+{
+    "name": "cndrvcups-common",
+    "epoch": null,
+    "version": "2.00",
+    "release": "2",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "Canon Printer Driver Common Module for Linux v2.00",
+    "description": null,
+    "distribution": null,
+    "vendor": "CANON INC.",
+    "license": "See the LICENSE*.txt file.",
+    "packager": null,
+    "group": "Applications/Publishing",
+    "url": null,
+    "source_rpm": "cndrvcups-common-2.00-2.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

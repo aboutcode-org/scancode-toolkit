@@ -1,0 +1,19 @@
+{
+    "name": "libsqueeze0.2_0",
+    "epoch": null,
+    "version": "0.2.3",
+    "release": "8mdv2010.0",
+    "arch": "i586",
+    "os": "linux",
+    "summary": "Main library for squeeze",
+    "description": null,
+    "distribution": "Mandriva Linux",
+    "vendor": "Mandriva",
+    "license": "GPlv2+",
+    "packager": "Thierry Vignaud <tvignaud@mandriva.com>",
+    "group": "System/Libraries",
+    "url": "http://squeeze.xfce.org",
+    "source_rpm": "squeeze-0.2.3-8mdv2010.0.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

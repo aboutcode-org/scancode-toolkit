@@ -1,0 +1,19 @@
+{
+    "name": "elfinfo",
+    "epoch": null,
+    "version": "1.0",
+    "release": "1.fc9",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "ELF file parser a subset of eu-readelf",
+    "description": null,
+    "distribution": null,
+    "vendor": null,
+    "license": "GPLv2",
+    "packager": null,
+    "group": "Development/Tools",
+    "url": "http://code.google.com/p/elfinfo/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

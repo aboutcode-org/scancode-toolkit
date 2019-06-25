@@ -1,0 +1,19 @@
+{
+    "name": "python-glc",
+    "epoch": null,
+    "version": "0.7.1",
+    "release": "1",
+    "arch": null,
+    "os": "n-glc/",
+    "summary": "ctypes Python bindings for QuesoGLC",
+    "description": null,
+    "distribution": null,
+    "vendor": "a",
+    "license": "om.de>",
+    "packager": null,
+    "group": ">",
+    "url": "tar.gz",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

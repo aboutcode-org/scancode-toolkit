@@ -1,0 +1,19 @@
+{
+    "name": "setup",
+    "epoch": null,
+    "version": "2.5.49",
+    "release": "b1",
+    "arch": "noarch",
+    "os": "linux",
+    "summary": "A set of system configuration and setup files.",
+    "description": null,
+    "distribution": null,
+    "vendor": null,
+    "license": "public domain",
+    "packager": "yui <yui@po.yui.mine.nu>",
+    "group": "System Environment/Base",
+    "url": null,
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}

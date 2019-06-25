@@ -1,0 +1,19 @@
+{
+    "name": "m4ri-devel",
+    "epoch": null,
+    "version": "20081028",
+    "release": "5.fc12",
+    "arch": "ppc",
+    "os": "linux",
+    "summary": "Development files for m4ri",
+    "description": null,
+    "distribution": "Koji",
+    "vendor": "Fedora Project",
+    "license": "GPLv2+",
+    "packager": "Fedora Project",
+    "group": "Development/Libraries",
+    "url": "http://m4ri.sagemath.org/",
+    "source_rpm": "m4ri-20081028-5.fc12.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}

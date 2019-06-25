@@ -1,0 +1,19 @@
+{
+    "name": "fping",
+    "epoch": null,
+    "version": "2.4b2",
+    "release": "114.1",
+    "arch": "ppc",
+    "os": "linux",
+    "summary": "A Program to Ping Multiple Hosts",
+    "description": null,
+    "distribution": "openSUSE 11.0 (PPC)",
+    "vendor": "SUSE LINUX Products GmbH, Nuernberg, Germany",
+    "license": "X11/MIT",
+    "packager": "http://bugs.opensuse.org",
+    "group": "Productivity/Networking/Diagnostic",
+    "url": "http://www.fping.com",
+    "source_rpm": "fping-2.4b2-114.1.src.rpm",
+    "dist_url": "srcrep:16c0b301019ebee17d30ec7abf9417de-fping",
+    "is_binary": true
+}

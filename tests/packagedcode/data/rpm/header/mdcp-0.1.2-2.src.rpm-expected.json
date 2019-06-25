@@ -1,0 +1,19 @@
+{
+    "name": "mdcp",
+    "epoch": null,
+    "version": "0.1.2",
+    "release": "2",
+    "arch": "i386",
+    "os": "linux",
+    "summary": "copy from a disk device to many.",
+    "description": null,
+    "distribution": "OpenSuSE",
+    "vendor": "Monzyne, W.",
+    "license": "GPL",
+    "packager": "Wagner Monzyne <wamonzyne@hotmail.com>",
+    "group": "sysutils",
+    "url": "http://mdcp.sourceforge.net/",
+    "source_rpm": null,
+    "dist_url": null,
+    "is_binary": false
+}
