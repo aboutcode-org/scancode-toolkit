@@ -1,0 +1,20 @@
+about_resource: psutil-5.6.2-cp27-none-win32.whl
+name: psutil
+version: 5.6.2
+download_url: https://files.pythonhosted.org/packages/56/8f/1bfb7e563e413f110ee06ac0cf12bb4b27f78e9cf277892d97ba08de4eac/psutil-5.6.2-cp27-none-win32.whl
+description: Cross-platform lib for process and system monitoring in Python
+homepage_url: https://github.com/giampaolo/psutil
+license_expression: bsd-new
+copyright: Copyright (c) Jay Loden, Dave Daeschler, Giampaolo Rodola
+notice_file: psutil-5.6.2-cp27-none-win32.whl.NOTICE
+attribute: yes
+owner: Giampaolo Rodola
+owner_url: https://github.com/giampaolo
+vcs_repository: https://github.com/giampaolo/psutil
+checksum_md5: ac340b163ac1196f2330939f7113428d
+checksum_sha1: 4975e12b818b30f0ae04bf6a48477d4e122f563c
+package_url: pkg:pypi/psutil@5.6.2
+licenses:
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE

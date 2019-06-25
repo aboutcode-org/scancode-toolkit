@@ -9,7 +9,7 @@
 set -e
 
 # un-comment to trace execution
-# set -x
+set -x
 
 echo "###  BUILDING ScanCode release ###"
 

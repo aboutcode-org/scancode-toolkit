@@ -30,6 +30,11 @@ except ValueError:
 ####
 
 
+_sys_v0 = sys.version_info[0]
+py2 = _sys_v0 == 2
+py3 = _sys_v0 == 3
+
+
 def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
                 use_default=USE_DEFAULT_VERSION):
     """
@@ -91,6 +96,16 @@ def read(*names, **kwargs):
     ).read()
 
 
+# Accept Python3, but only when running setup.py. Released wheels should be for
+# Python 2 only until we completed the Python3 port
+if py2:
+    python_requires= '>=2.7,<3'
+elif py3:
+    python_requires= '>=3.6'
+else:
+    raise Exception('Unsupported Python version.')
+
+
 setup(
     name='scancode-toolkit',
     version=get_version(),
@@ -121,7 +136,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<3',
+    python_requires=python_requires,
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
@@ -132,7 +147,7 @@ setup(
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
-        'py2-ipaddress >= 2.0, <3.5;python_version<"3"',
+        'py2-ipaddress >= 2.0, <3.5; python_version<"3"',
         'url >= 0.1.4, < 0.1.6',
         'fingerprints == 0.5.4',
 
@@ -145,7 +160,7 @@ setup(
         'extractcode-7z',
 
         # commoncode
-        'backports.os == 0.1.1',
+        'backports.os == 0.1.1; python_version<"3"',
         'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
         'saneyaml',
@@ -187,7 +202,7 @@ setup(
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=17.4, < 19.0',
+        'attrs >=17.4, < 20.0',
         'typing >=3.6, < 3.7',
 
         # scancode outputs

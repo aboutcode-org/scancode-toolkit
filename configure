@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 ################################
 # change these variables to customize this script locally
@@ -21,7 +21,12 @@ fi
 
 CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-python2.7 "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
+if [[ "$PYTHON_EXE" == "" ]]; then
+    PYTHON_EXE=python
+fi
+
+$PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
+
 if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
     source "$CONFIGURE_ROOT_DIR/bin/activate"
 fi

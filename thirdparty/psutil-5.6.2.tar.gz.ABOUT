@@ -1,0 +1,20 @@
+about_resource: psutil-5.6.2.tar.gz
+name: psutil
+version: 5.6.2
+download_url: https://files.pythonhosted.org/packages/c6/c1/beed5e4eaa1345901b595048fab1c85aee647ea0fc02d9e8bf9aceb81078/psutil-5.6.2.tar.gz
+description: Cross-platform lib for process and system monitoring in Python
+homepage_url: https://github.com/giampaolo/psutil
+license_expression: bsd-new
+copyright: Copyright (c) Jay Loden, Dave Daeschler, Giampaolo Rodola
+notice_file: psutil-5.6.2.tar.gz.NOTICE
+attribute: yes
+owner: Giampaolo Rodola
+owner_url: https://github.com/giampaolo
+vcs_repository: https://github.com/giampaolo/psutil
+checksum_md5: 571962acd249bcfbae317884af47c402
+checksum_sha1: c01d48a103196eb513b72d32fbc7cee1ed64a38c
+package_url: pkg:pypi/psutil@5.6.2
+licenses:
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE

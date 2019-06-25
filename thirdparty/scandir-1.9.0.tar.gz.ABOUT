@@ -14,3 +14,4 @@ name: scandir
 owner: Ben Hoyt
 vcs_url: https://github.com/benhoyt/scandir
 version: 1.9.0
+notes: this is builtin Python3
