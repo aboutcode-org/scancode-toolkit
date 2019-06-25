@@ -531,14 +531,14 @@ class LicenseIndex(object):
         self.optimized = True
 
     def debug_matches(self, matches, message, location=None, query_string=None,
-                      with_text=False, query=None):
+                      with_text=False, qry=None):
         """
         Log debug-level data for a list of `matches`.
         """
         logger_debug(message + ':', len(matches))
-        if query:
+        if qry:
             # set line early to ease debugging
-            match.set_lines(matches, query.line_by_pos)
+            match.set_lines(matches, qry.line_by_pos)
 
         if not with_text:
             map(logger_debug, matches)
@@ -742,8 +742,8 @@ class LicenseIndex(object):
 
                 if TRACE_APPROX_MATCHES:
                     self.debug_matches(
-                        rule_matches, 'get_query_run_approximate_matches: rule_matches:',
-                        with_text=True, query=query)
+                        matches=rule_matches, message='get_query_run_approximate_matches: rule_matches:',
+                        with_text=True, qry=query_run.query)
 
                 if not rule_matches:
                     break
@@ -800,10 +800,10 @@ class LicenseIndex(object):
         if not whole_query_run or not whole_query_run.matchables:
             return []
 
-        hash_matches = match_hash.hash_match(self, whole_query_run)
-        if hash_matches:
-            match.set_lines(hash_matches, qry.line_by_pos)
-            return hash_matches
+        matches = match_hash.hash_match(self, whole_query_run)
+        if matches:
+            match.set_lines(matches, qry.line_by_pos)
+            return matches
 
         # TODO: add match to degenerated expressions with custom symbols
         if as_expression:
@@ -818,7 +818,8 @@ class LicenseIndex(object):
                 whole_query_run.subtract(neg.qspan)
             if TRACE_NEGATIVE:
                 self.debug_matches(
-                    negative_matches, 'negative_matches', location, query_string)  # , with_text, query)
+                    matches=negative_matches, message='negative_matches',
+                    location=location, query_string=query_string)  # , with_text, query)
 
         matches = []
 
@@ -843,7 +844,9 @@ class LicenseIndex(object):
             matched = matcher(qry, matched_qspans=already_matched_qspans,
                               existing_matches=matches, deadline=deadline)
             if TRACE:
-                self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
+                self.debug_matches(
+                    matches=matched, message='matched',
+                    location=location, query_string=query_string)  # , with_text, query)
 
             matched = match.merge_matches(matched)
             matches.extend(matched)
@@ -873,8 +876,9 @@ class LicenseIndex(object):
 
         if TRACE:
             logger_debug()
-            self.debug_matches(matches, 'matches before final merge',
-                               location, query_string, with_text=True, query=qry)
+            self.debug_matches(matches=matches, message='matches before final merge',
+                               location=location, query_string=query_string,
+                               with_text=True, qry=qry)
 
         matches, _discarded = match.refine_matches(
             matches, idx=self, query=qry, min_score=min_score,
@@ -885,8 +889,9 @@ class LicenseIndex(object):
 
         if TRACE:
             print()
-            self.debug_matches(matches, 'final matches', location, query_string ,
-                               with_text=True, query=qry)
+            self.debug_matches(matches=matches, message='final matches',
+                               location=location, query_string=query_string ,
+                               with_text=True, qry=qry)
         return matches
 
     def negative_match(self, query_run):
