@@ -9,22 +9,14 @@ python:
 # The --cov-report=xml option is important for codecov.ioTestFossLicDataDriven
 env:
   global:
-    - PYTEST="bin/py.test -n 2 -vvs --test-suite=all --cov=src --cov-report=term --cov-report=xml"
+    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
+    - PYTESTM="bin/py.test -n 2 -vvs"
   matrix:
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode --reruns 1"
-    - TEST_SUITE="$PYTEST tests/extractcode"
     - TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven"
-    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven"
     - TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py --reruns 1"
-    - TEST_SUITE="$PYTEST tests/cluecode"
-    - TEST_SUITE="$PYTEST tests/packagedcode"
+    - TEST_SUITE="$PYTEST tests/cluecode tests/packagedcode tests/extractcode"
     - TEST_SUITE="./etc/release/release.sh"
 
 
@@ -46,81 +38,31 @@ env:
 matrix:
   include:
     - os: osx
-      env: TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
+      env: TEST_SUITE="$PYTESTM --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/scancode"
+      env: TEST_SUITE="$PYTESTM tests/scancode"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/extractcode"
+      env: TEST_SUITE="$PYTESTM tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py"
+      env: TEST_SUITE="$PYTESTM tests/licensedcode/test_zzzz_cache.py"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/cluecode"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTEST tests/packagedcode"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="./etc/release/release.sh"
+      env: TEST_SUITE="$PYTESTM tests/cluecode tests/packagedcode tests/extractcode"
       language: generic
       python:
       osx_image: xcode7.3
 
-# TODO: ship pytest-cov and codecov with scancode-toolkit
 install:
   - ./configure
 
