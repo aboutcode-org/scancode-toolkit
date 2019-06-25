@@ -230,7 +230,7 @@ def create_virtualenv_py2(std_python, root_dir, tpp_dirs=(), quiet=False):
 
     vcmd = [quote(std_python), quote(venv_py), '--never-download']
     if quiet:
-        vcmd += ['--quiet']
+        vcmd += ['-qq']
     # third parties may be in more than one directory
     vcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir))
     # we create the virtualenv in the root_dir
@@ -261,7 +261,7 @@ def create_virtualenv_py3(std_python, root_dir, tpp_dirs=(), quiet=False):
 
     vcmd = [quote(std_python), '-m', 'venv']
     if quiet:
-        vcmd += ['--quiet']
+        vcmd += ['-qq']
     # we create the virtualenv in the root_dir
     vcmd.append(quote(root_dir))
     call(vcmd, root_dir)
@@ -300,7 +300,7 @@ def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
         '--no-warn-script-location']
     pcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
     if quiet:
-        pcmd += ['--quiet']
+        pcmd += ['-qq']
 
     pcmd.extend(requirements)
     call(pcmd, root_dir)
