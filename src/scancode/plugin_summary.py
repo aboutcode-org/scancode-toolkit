@@ -109,6 +109,9 @@ class OriginSummary(PostScanPlugin):
 
     def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
         root = codebase.get_resource(0)
+
+        # TODO: Should we activate or deactivate certain summarization options based on
+        # the attributes that are present in the codebase?
         if not hasattr(root, 'copyrights') or not hasattr(root, 'licenses'):
             # TODO: Raise warning(?) if these fields are not there
             return
@@ -194,7 +197,7 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                 codebase.save_resource(resource)
 
                 holder = '\n'.join(holders)
-                base_identifier =  python_safe_name('{}_{}'.format(license_expression, holder))
+                base_identifier = python_safe_name('{}_{}'.format(license_expression, holder))
                 # Keep track of identifiers so we can enumerate them properly
                 base_identifier_counts[base_identifier] += 1
                 identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
@@ -225,19 +228,14 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
 
         resource_packages = resource.packages
         for package in resource_packages:
-            # TODO: Get other things to create identifiers from
             license_expression = package['license_expression']
-            holders = package['copyright']
-            base_identifier = python_safe_name('{}_{}'.format(license_expression, holders))
-            base_identifier_counts[base_identifier] += 1
-            identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
+            identifier = python_safe_name(package['purl'])
 
             resource_summaries = resource.extra_data.get('summaries', [])
             resource_summaries.append(
                 Summary(
                     identifier=identifier,
                     license_expression=license_expression,
-                    holders=holders,
                     type=['package']
                 )
             )
@@ -245,6 +243,16 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
             resource.save(codebase)
 
     return base_identifier_counts
+
+
+def tag_nr_files(codebase, **kwargs):
+    # TODO: Load set of extensions to NR from somewhere
+    nr_exts = []
+    # Summarize origin clues to directory level and tag summarized Resources
+    for resource in codebase.walk(topdown=False):
+        if resource.extension in nr_exts:
+            resource.extra_data['NR'] = True
+            resource.save(codebase)
 
 
 def is_majority(count, files_count, threshold=None):
