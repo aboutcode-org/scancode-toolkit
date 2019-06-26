@@ -1,0 +1,362 @@
+-*-org-*-
+* Version 0.8.0
+** Prototype libraries
+   - Each DSO can now ship an ltrace config file (called prototype
+     library) that ltrace will open when that DSO is loaded to process
+     image.  See ltrace(1) for details.
+
+   - ltrace.conf is no longer part of installation tarball.  Instead,
+     we now ship libc.so.conf, libm.so.conf, libacl.so.conf, and
+     syscalls.conf.  Those are now istalled to /usr/share/ltrace by
+     default.  /etc/ltrace.conf and $HOME/.ltrace.conf are still
+     loaded if present, and can contain arbitrary user configuration.
+
+   - The option -F was retrofitted to be a colon-separated list of
+     prototype libraries, and directories to look for prototype
+     libraries in.  On Linux, ltrace looks into XDG_CONFIG_HOME,
+     XDG_CONFIG_DIRS, and /usr/share/ltrace as well.
+
+   - Wide character strings are supported in prototypes.  Use "string"
+     lens as usual, but use array of integers as underlying type.
+     libc.so.conf now contains prototypes of wide character functions.
+
+   - Sole void function parameter such as in the following example, is
+     now considered obsolete:
+
+     | int fork(void); |
+
+     This use is still accepted, taken to mean "hide(int)", but
+     produces a warning, and will be removed in future.
+
+** Architectural support
+   - MIPS and MIPSel are now handled by the same backend.
+   - ARMv6, ARMv7 and ARMv8 (AArch64) are supported, including full
+     fetch backend.  ARMv8 backend doesn't support tracing of 32-bit
+     binaries, as currently there's no 32-bit userspace available for
+     ARM64 processors.
+   - Imagination Technologies Meta is now supported.
+
+   - On Linux, tracing of IFUNC symbols is supported.  On i386,
+     x86_64, ppc32 with secure PLT and ppc64, IRELATIVE PLT slots are
+     traced as well.
+
+** -w output now shows full library path
+    The output format is similar to glibc's backtrace_symbols, e.g.:
+     > /bin/ls(_init+0x19be) [0x40398e]
+     > /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xed) [0x7f50cbc3676d]
+     > /bin/ls(_init+0x25fd) [0x4045cd]
+
+* Version 0.7.3 [2013-09-15 Sun]
+** Bugfixes
+*** [MIPS] Fix build on mips big endian
+    This bug caused messages like:
+    | Making all in mips
+    | /bin/sh: line 17: cd: mips: No such file or directory
+*** [MIPS] Fix SIGSEGV on mips big endian
+    This bug caused runtime messages like:
+    | [0x4000000] --- SIGSEGV (Segmentation fault) ---
+    | [0xffffffff] +++ killed by SIGSEGV +++
+*** Fix build with CLANG on FREEBSD
+
+* Version 0.7.2 [2012-12-07 Fri]
+** Bugfixes
+*** (Again) detect VDSO entry in r_debug linkmap with non-empty name
+    This bug caused messages like:
+    | Couldn't determine base address of linux-vdso32.so.1
+    | Couldn't load ELF object linux-vdso32.so.1: No such file or directory
+*** Fix building with libunwind 1.1
+*** Fix prototype lookup for -x symbols from shared libraries
+    Ltrace was unable to find prototypes of static symbols in shared
+    libraries.  It changed the symbol name internally to the form
+    name@libfoo.so.  Thus mangled, symbols were not found in config
+    files.
+
+* Version 0.7.1 [2012-11-29 Thu]
+** Bugfixes
+*** ltrace.conf.5 is now installed to man5 as it should be
+*** [PowerPC] A header file necessary for building is now shipped
+*** [MIPS] Work around duplicate symbol request bug
+    This fixes the ltrace abort:
+    | ./ltrace: proc.c: 755: breakpoint_for_symbol: Assertion `bp->libsym == ((void *)0)' failed.
+
+*** Detect VDSO entry in r_debug linkmap with non-empty name
+    This bug caused messages like:
+    | Couldn't determine base address of linux-vdso32.so.1
+    | Couldn't load ELF object linux-vdso32.so.1: No such file or directory
+
+*** Temporary files are wiped properly after the test suite has been run
+*** Parsing typedefs with common prefix now works as it should
+    More exactly, if there were typedefs X and XY (in this order), and
+    a reference was made to X, ltrace would match XY instead.
+
+** Cofiguration Files
+*** The following prototypes in ltrace.conf were added or updated
+    __ctype_get_mb_cur_max, __endmntent, __getmntent_r, __setmntent,
+    a64l, abort, abs, addmntent, getmntent_r, hasmntopt, inet_addr,
+    inet_aton, inet_lnaof, inet_makeaddr, inet_netof, inet_network,
+    inet_ntoa, kill, l64a, labs, memcpy, memmove, setlocale,
+    sigaction, sigaddset, sigandset, sigdelset, sigemptyset,
+    sigfillset, sigisemptyset, sigismember, signal, sigorset,
+    sigpending, sigprocmask, sigsuspend.
+
+*** Duplicate typedefs are now guarded against
+*** It's now possible to define recursive structures
+    Please read ltrace.conf(5) man page, chapter "recursive
+    structures", to learn about this new feature.
+
+*** New lens "bitvec" is available
+    This allows displaying various data types as bit vectors.  Please
+    read ltrace.conf(5) to learn more.
+
+*** Octal lens renamed to "oct"
+    For reasons of consistency with "hex".  "octal" is still valid and
+    will be for forseeable future.
+
+*** The hex lens can now format floating point arguments
+
+* Version 0.7.0 [2012-11-09 Fri]
+** Tracing
+*** Full support for tracing multi-threaded processes
+
+    Ltrace now understands thread groups, and it stops all threads
+    before manipulating breakpoints.  The downside is that performance
+    of multi-threaded processes is rather bad, because handling any
+    event implies stopping the whole job.  The upside is that
+    individual threads don't get random SIGILL's and SIGSEGV's and
+    events are not missed.
+
+*** Support for tracing inter-library calls
+
+    -e and -x were extended to allow library selectors.  See the man
+    page for details.
+
+*** Better support for parameter passing ("fetch backend")
+
+    This version brings more complete support for parameter passing,
+    including passing structures in registers, passing double on i386,
+    and other edge cases that were not handled correctly before.  The
+    following architectures now have implementation of fetch backend:
+    i386, x86_64, ppc, ppc64, ia64, s390, s390x, m68k.
+
+*** Awareness of deny_ptrace SELinux boolean
+
+    The deny_ptrace boolean denies all processes from being able to
+    use ptrace to manipulate other processes.  Ltrace now understands
+    that this boolean exists, and recommends turning it off, if it is
+    on and ltrace fails to attach to a process.
+
+*** Limited support for tracing returns from tail call functions
+*** -e, -x and -l selectors now allow using globs and regular expressions
+
+    See the man page for details of the selector syntax.  This changes
+    the way -x and -l behave with respect to tracing libraries opened
+    by dlopen:
+
+    - In 0.6.0, only those -x symbols that were unmatched in main
+      binary were used to search through symbol table of libraries
+      opened with dlopen.  In 0.7.0, -x and -e are applied uniformly
+      to each mapped binary: the main binary, dependent DSO's, and any
+      dlopened libraries.
+
+    - In 0.6.0, -l argument was a filename to open and inspect.  In
+      0.7.0, -l is a glob expression matched against each mapped
+      binary.
+
+*** -g command line option dropped
+
+    This option was introduced in 0.6.0 with the meaning identical to
+    -L, which should be used instead.
+
+*** Test suite can now be run under valgrind
+
+    Use --enable-valgrind to turn this on.
+
+*** [ppc] Support both BSS and secure PLTs for 32-bit processes
+*** [mips] Implement software singlestepping
+*** [mips] Add support for CPIC main programs
+*** Support tracing PIE binaries
+
+** Configuration Files
+
+*** New abstraction: parameter pack
+
+    Parameter packs describe zero or more of actual arguments, whose
+    type can be determined in runtime.  The only parameter pack
+    currently implemented is "format" for decoding printf-style format
+    strings.
+
+    In future, it should be relatively straightforward to add more
+    parameter packs for functions like execl, and others.
+
+*** New expression: zero
+
+    When used in array length expressions, it means "this array ends
+    at the first element with zero value".  C strings are essentially
+    array(char, zero)*.
+
+*** Lenses: change the way that underlying type is rendered
+
+    Lenses are used similarly to parametrized types, e.g.:
+    | void func(lens(int)); |
+
+**** octal
+
+     "octal", which used to be a separate type, is now lens, which can
+     be used to render any underlying type in base 8.  Plain "octal"
+     is still valid and means the same thing as "octal(int)".
+
+**** hex, hide, bool
+
+     Similarly, "hex" lens was introduced to format as base 16.
+     "hide" was introduced to conceal given argument.  "bool" lens was
+     added to format objects as either true, or false.
+
+**** enum
+
+     "enum" became lens as well.  Because enum already uses
+     parentheses to denote the list of enumeration values, the
+     underlying type is selected by square brackets:
+
+     | void func(enum[short](RED,GREEN,BLUE)); |
+
+**** string
+
+     "string" was also turned to lens.  The argument can be either a
+     char*, or pointer to array of char, or array of char.  The latter
+     is useful in cases like the following:
+
+     | void func_struct_2(struct(string(array(char, 6)))); |
+
+*** Misspelling of "int" as "itn" temporarily accepted, but deprecated
+
+    Pre-0.7 ltrace shipped a buggy version of ltrace.conf that
+    contained the following prototype:
+
+    | itn acl_valid(addr); |
+
+    To support extant versions of ltrace.conf, that use is now
+    considered valid, and "itn" is a synonym of "int".  It is however
+    deprecated, and will produce a warning in future.
+
+*** Using void as top-level function argument now deprecated
+
+    Functions that take no arguments shouldn't pretend to take one
+    parameter of void type.  For example the following:
+
+    | int fork(void); |
+
+    ... should be declared like this:
+
+    | int fork(); |
+
+    To support extant versions of ltrace.conf, that use is now
+    considered valid.  It is however deprecated, and will produce a
+    warning in future.
+
+*** Using void to hide one argument is now obsolete
+
+    Ltrace needs to know the exact underlying type to decide what the
+    calling convention is.  The use of void to mean "hide this
+    argument", such as the following example, is therefore obsolete:
+
+    | void func(void, array(int, arg1)); |
+
+    Instead, rewrite the prototype depending on the exact underlying
+    type:
+
+    | void func(hide(int), array(int, arg1));  |
+    | void func(hide(long), array(int, arg1)); |
+
+    To support extant versions of ltrace.conf, this use is still
+    accepted, and "void" is taken to mean "hide(int)".  It is however
+    obsolete, produces a warning, and will be removed in future.
+
+** Documentation
+
+*** New manual page ltrace.conf(5)
+*** README, INSTALL brought up to date
+*** New file CREDITS with a list of contributors
+
+** Bugfixes
+
+*** Fix detaching from a process
+
+    Earlier, a process that ltrace detached from would sometimes die
+    of SIGSEGV, SIGTRAP, or SIGILL.  These were caused by ltrace
+    detaching from the process just after that process hit a
+    breakpoint.  Program counter would thus be left pointing
+    mid-instruction, or signals would be left pending.
+
+*** Argument to -n is now checked for validity
+*** Fix tracing across exec in a stripped binary
+*** [x86] ORIG_RAX/ORIG_EAX may not contain original syscall number
+
+    In cases where the system call shouldn't be restarted, these are
+    set to -1.  In that case assume that the return is from the
+    topmost syscall.  This gets rid of some "unexpected breakpoint"
+    messages on x86_64 and i386.
+
+*** [ppc] Fix races in tracing -e events in 64-bit processes
+
+    On ppc, the contents of PLT table change after the first call.
+    Ltrace used to handle this by reinserting the (now overwritten)
+    breakpoint after the function returns.  This introduced a window
+    where calls to the same function from the same binary (either a
+    recursive calls, or calls from another thread) weren't traced.
+    This is fixed as of 0.7.0.
+
+    As a side effect, events requested via -e now only hit when a PLT
+    call is made, which is consistent with other architectures.
+
+*** [ppc] Allow stepping over lwarx instruction
+
+** Known bugs
+
+*** [arm] Tracing is not supported at all on ARM
+
+    ltrace might work on older kernels, but no attempt was made to
+    fully support it.  Newer kernels don't support PTRACE_SINGLESTEP,
+    which ltrace depends on.  Before singlestepping is implemented in
+    software, ARM is considered unsupported.
+
+* Version 0.6.0 [2011-01-06 Thu]
+
+** General Features
+
+*** Use autotools for building
+*** New option -b: disables output of signals received by the tracee
+*** New option -w: print stack trace of events
+
+    Pass --with-libunwind to configure to enable the feature.  This
+    requires libunwind.
+
+*** Support tracing of symbols from libraries opened with dlopen
+
+    These symbols are selected by -x.
+
+** Architecture-specific Changes
+
+*** Various fixes for MIPS and PowerPC
+*** Support for ARM Thumb mode
+*** Implement fetching of 5th and further function arguments on s390
+*** Support fork/exec syscalls on 31-bit s390
+*** Support for float and double arguments on x86_64
+*** Fixes for return arguments (after '+') in nested calls on x86_64
+
+* License
+-------------------------------------------------------------------------------
+Copyright (C) 2012-2014 Petr Machata <pmachata@redhat.com>
+This file is part of ltrace.
+
+ltrace is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+
+ltrace is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
