@@ -72,8 +72,6 @@ matching is delegated to other modules that implement a matching strategy.
 
 # Tracing flags
 TRACE = False
-TRACE_MATCHES = False
-TRACE_MATCHES_TEXT = False
 TRACE_NEGATIVE = False
 TRACE_APPROX = False
 TRACE_APPROX_CANDIDATES = False
@@ -86,7 +84,7 @@ def logger_debug(*args):
     pass
 
 
-if (TRACE or TRACE_MATCHES or TRACE_NEGATIVE
+if (TRACE or TRACE_NEGATIVE
     or TRACE_APPROX or TRACE_APPROX_CANDIDATES or TRACE_APPROX_MATCHES
     or TRACE_INDEXING_PERF):
 
