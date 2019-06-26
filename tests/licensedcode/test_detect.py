@@ -1181,3 +1181,54 @@ class TestRegression(FileBasedTesting):
         assert ['BEGIN', 'LICENSE', 'BLOCK'] == first_words
         last_words = words[-4:-1]
         assert ['END', 'LICENSE', 'BLOCK'] == last_words
+
+    def test_detection_return_correct_lgpl_with_correct_text_using_full_index(self):
+        idx = cache.get_index()
+        query_location = self.get_test_loc('detect/lgpl_not_gpl/query.txt')
+        matches = idx.match(location=query_location)
+        results = [match.matched_text() for match in matches][0]
+        expected = (
+            u'is free software; you can redistribute it and/or modify\n'
+            ' * it under the terms of the GNU General Public License as published by\n'
+            ' * the Free Software Foundation; either version 2 of the License, or\n'
+            ' * (at your option) any later version.\n'
+            ' * \n'
+            ' * [testVMX] is distributed in the hope that it will be useful,\n'
+            ' * but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
+            ' * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
+            ' * GNU General Public License for more details.\n'
+            ' * \n'
+            ' * You should have received a copy of the GNU General Public License\n'
+            ' * along with [testVMX]; if not, write to the Free Software\n'
+            ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307'
+        )
+        
+        assert expected == results
+        assert 'gpl-2.0-plus' == matches[0].rule.license_expression
+
+    def test_detection_return_correct_lgpl_with_correct_text_using_controlled_index(self):
+        from licensedcode import models
+
+        rules_data_dir = self.get_test_loc('detect/lgpl_not_gpl/index/rules')
+        query_location = self.get_test_loc('detect/lgpl_not_gpl/query.txt')
+        rules = models.load_rules(rules_data_dir)
+        idx = index.LicenseIndex(rules)
+        matches = idx.match(location=query_location)
+        results = [match.matched_text() for match in matches][0]
+        expected = (
+            u'is free software; you can redistribute it and/or modify\n'
+            ' * it under the terms of the GNU General Public License as published by\n'
+            ' * the Free Software Foundation; either version 2 of the License, or\n'
+            ' * (at your option) any later version.\n'
+            ' * \n'
+            ' * [testVMX] is [distributed] in the hope that it will be useful,\n'
+            ' * but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
+            ' * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
+            ' * GNU General Public License for more details.\n'
+            ' * \n'
+            ' * You should have received a copy of the GNU General Public License\n'
+            ' * along with [testVMX]; if not, write to the Free Software\n'
+            ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307'
+        )
+        assert expected == results
+        assert 'lgpl-2.1-plus' == matches[0].rule.license_expression
