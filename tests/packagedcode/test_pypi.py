@@ -30,11 +30,12 @@ from collections import OrderedDict
 import json
 import os
 
-from packagedcode import pypi
-
-from packages_test_utils import PackageTester
 from unittest.case import expectedFailure
 
+from packagedcode import pypi
+from packagedcode.models import DependentPackage
+
+from packages_test_utils import PackageTester
 
 
 class TestPyPi(PackageTester):
@@ -255,3 +256,34 @@ class TestPyPi(PackageTester):
             content = json.loads(json_input)
             package = pypi.build_package(content)
             self.check_package(package, expected_loc, regen=False)
+    
+    def test_pkginfo_parse_with_unpackaged_source(self):
+        test_file = self.get_test_loc('pypi')
+        package = pypi.parse_unpackaged_source(test_file)
+        expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pkginfo_parse_with_unpackaged_source_with_parse_function(self):
+        test_file = self.get_test_loc('pypi')
+        package = pypi.parse2(test_file)
+        expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pkginfo_parse_with_wheelfile(self):
+        test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        package = pypi.parse_wheel(test_file)
+        expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+
+    def test_pkginfo_parse_with_wheelfile_with_parse_function(self):
+        test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
+        package = pypi.parse2(test_file)
+        expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
+        self.check_package(package, expected_loc, regen=False)
+        
+    def test_parse_with_dparse(self):
+        test_file = self.get_test_loc('pypi/dparse/requirements.txt')
+        dependencies = pypi.parse_with_dparse(test_file)
+        assert [DependentPackage(purl=u'pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies'),
+                DependentPackage(purl=u'pkg:pypi/requests', requirement='==2.7.0', scope='dependencies')] == dependencies

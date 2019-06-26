@@ -35,10 +35,21 @@ import sys
 import attr
 from six import string_types
 
+from pkginfo import BDist
+from pkginfo import Develop
+from pkginfo import SDist
+from pkginfo import UnpackedSDist
+from pkginfo import Wheel
+
+import dparse
+from dparse import filetypes
+
+from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
+from packageurl import PackageURL
 
 
 """
@@ -322,6 +333,149 @@ def parse(location):
     parser = parsers.get(file_name)
     if parser:
         return parser(location)
+
+
+def parse2(location):
+    """
+    Parse using the pkginfo library according the file types and return package.
+    """
+    is_dir = filetype.is_dir(location)
+    if is_dir:
+        parser = parse_unpackaged_source
+        package =  parser(location)
+        if package:
+            parse_dependencies(location, package)
+            return package
+    else:
+        file_name = fileutils.file_name(location)
+        parsers = {
+            'setup.py': parse_unpackaged_source,
+            '.whl': parse_wheel,
+            '.egg': parse_egg_binary,
+            '.tar.gz': parse_source_distribution,
+            '.zip': parse_source_distribution,
+        }
+        for name, parser in parsers.items():
+            if file_name.endswith(name):
+                package =  parser(location)
+                if package:
+                    parent_directory = fileutils.parent_directory(location)
+                    parse_dependencies(parent_directory, package)
+                    return package
+
+
+def parse_dependencies(location, package):
+    """
+    Loop all resources from the passing folder location, get the dependencies from the resources and set it to the passing package object.
+    """
+    for resource_location in os.listdir(location):
+        dependencies = parse_with_dparse(resource_location)
+        if dependencies:
+            package.dependencies = dependencies
+    
+    
+
+def parse_source_distribution(location):
+    """
+    SDist objects are created from a filesystem path to the corresponding archive. Such as Zip or .tar.gz files
+    """
+    sdist = SDist(location)
+    if sdist:
+        common_data = dict(
+            name=sdist.name,
+            version=sdist.version,
+        )
+        package = PythonPackage(**common_data)
+        return package
+
+
+def parse_unpackaged_source(location):
+    """
+    Passing it the path to the unpacked package, or by passing it the setup.py at the top level.
+    """
+    unpackaged_dist = None
+    try:
+        unpackaged_dist = UnpackedSDist(location)
+    except ValueError:
+        try:
+            unpackaged_dist = Develop(location)
+        except ValueError:
+            pass
+
+    return parse_with_pkginfo(unpackaged_dist)
+
+
+def parse_egg_binary(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    binary_dist = BDist(location)
+    return parse_with_pkginfo(binary_dist)
+
+
+def parse_wheel(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    wheel = Wheel(location)
+    return parse_with_pkginfo(wheel)
+
+
+def parse_with_pkginfo(pkginfo):
+    if pkginfo and pkginfo.name:
+        common_data = dict(
+            name=pkginfo.name,
+            version=pkginfo.version,
+            description = pkginfo.description,
+            download_url = pkginfo.download_url,
+            homepage_url = pkginfo.home_page,
+        )
+        package = PythonPackage(**common_data)
+        if pkginfo.license:
+            #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
+            package.declared_license = {'license': pkginfo.license}
+        
+        if pkginfo.maintainer:
+            common_data['parties'] = []
+            common_data['parties'].append(models.Party(
+                type=models.party_person, name=pkginfo.maintainer, role='author', email=pkginfo.maintainer_email))
+        return package
+
+
+def parse_with_dparse(location):
+    is_dir = filetype.is_dir(location)
+    if is_dir:
+        return
+    file_name = fileutils.file_name(location)
+    if file_name not in (filetypes.requirements_txt,
+                         filetypes.conda_yml,
+                         filetypes.tox_ini,
+                         filetypes.pipfile,
+                         filetypes.pipfile_lock):
+        return
+    with open(location, 'rb') as f:
+        content = f.read()
+        df = dparse.parse(content, file_type=file_name)
+        df_dependencies = df.dependencies
+        if not df_dependencies:
+            return
+        package_dependencies = []
+        for df_dependency in df_dependencies:
+            specs = df_dependency.specs
+            requirement = None
+            if specs:
+                requirement = str(specs)
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='pypi', name=df_dependency.name).to_string(),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    requirement = requirement,
+                )
+            )
+        return package_dependencies
 
 
 def build_package(package_data):
