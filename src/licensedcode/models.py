@@ -172,7 +172,7 @@ class License(object):
         """
         if not target_dir or target_dir == self.src_dir:
             raise ValueError(
-                'Cannot relocate f License to empty directory or same directory.')
+                'Cannot relocate {} License to empty directory or same directory.'.format(self.key))
 
         if new_key:
             key = new_key
