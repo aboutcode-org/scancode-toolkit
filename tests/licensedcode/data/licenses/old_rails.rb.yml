@@ -1,3 +1,3 @@
 license_expressions:
-    - ruby OR gpl-2.0-plus
+    - ruby OR gpl-2.0-plus OR gpl-3.0-plus
 notes: from https://bogomips.org/unicorn.git/plain/lib/unicorn/app/old_rails.rb

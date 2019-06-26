@@ -1200,7 +1200,7 @@ class TestRegression(FileBasedTesting):
             ' * \n'
             ' * You should have received a copy of the GNU General Public License\n'
             ' * along with [testVMX]; if not, write to the Free Software\n'
-            ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307'
+            ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  US'
         )
         
         assert expected == results

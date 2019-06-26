@@ -1,7 +1,7 @@
 license_expressions:
     - epl-2.0
     - bsd-new
-    - epl-2.0
+    - bsd-new AND epl-2.0 AND free-unknown
     - cpl-1.0
     - apache-1.1
     - apache-2.0
