@@ -116,30 +116,41 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
-        base_identifier_counts = Counter()
-
+        # Collecters should be independent and not depend on the result of another
         collecters = [stat_summary, tag_package_files]
         for collecter in collecters:
-            bics = collecter(codebase, base_identifier_counts, origin_summary_threshold=origin_summary_threshold)
-            base_identifier_counts.update(bics)
+            collecter(codebase, origin_summary_threshold=origin_summary_threshold)
 
+        # TODO: Make summarizers for each type of summarization
+        # TODO: Should these be coupled with collectors?
         # Pick one summary for a Resource
         for resource in codebase.walk(topdown=True):
             resource_summaries = sorted(resource.extra_data.get('summaries', []))
             if not resource_summaries:
                 continue
+
+            summaries_by_type = defaultdict(list)
             for summary in resource_summaries:
-                # TODO: Be smarter about this. Consider more criteria picking a summary.
-                if 'package' in summary.type:
-                    # Package data has higher precedence over other types
-                    resource.extra_data['summary'] = summary
-                    break
-                elif ('license', 'holder',) in summary.type:
-                    resource.extra_data['summary'] = summary
-                    break
-            resource.save(codebase)
-            resource_summary = resource.extra_data['summary']
+                summaries_by_type[summary.type].append(summary)
+
+            package_summary = summaries_by_type.get('package', [])
+            license_holder_summary = summaries_by_type.get('license-holders', [])
+
+            # TODO: We get the first Summary from the list for now, consider other criteria when
+            # selecting a summary
+            if package_summary:
+                # Package summary has precendence over all other types of summaries
+                resource_summary = package_summary[0]
+            elif license_holder_summary:
+                resource_summary = license_holder_summary[0]
+            else:
+                # We only handle these two types for now
+                continue
+
             codebase.attributes.summaries.append(resource_summary)
+
+            # Set the summarized_to field of this resource and its children to the identifier
+            # of the summary
             resource_summary_identifier = resource_summary.identifier
             resource.summarized_to = resource_summary_identifier
 
@@ -150,9 +161,7 @@ class OriginSummary(PostScanPlugin):
                 child.summarized_to = resource_summary_identifier
 
 
-def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold=None, **kwargs):
-    base_identifier_counts = base_identifier_counts or Counter()
-
+def stat_summary(codebase, origin_summary_threshold=None, **kwargs):
     # Summarize origin clues to directory level and tag summarized Resources
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
@@ -197,10 +206,7 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                 codebase.save_resource(resource)
 
                 holder = '\n'.join(holders)
-                base_identifier = python_safe_name('{}_{}'.format(license_expression, holder))
-                # Keep track of identifiers so we can enumerate them properly
-                base_identifier_counts[base_identifier] += 1
-                identifier = python_safe_name('{}_{}'.format(base_identifier, base_identifier_counts[base_identifier]))
+                identifier = python_safe_name('{}_{}'.format(license_expression, holder))
 
                 resource_summaries = resource.extra_data.get('summaries', [])
                 resource_summaries.append(
@@ -208,19 +214,15 @@ def stat_summary(codebase, base_identifier_counts=None, origin_summary_threshold
                         identifier=identifier,
                         license_expression=license_expression,
                         holders=holders,
-                        type=['license', 'holder']
+                        type='license-holders'
                     )
                 )
                 resource.extra_data['summaries'] = resource_summaries
                 resource.save(codebase)
 
-    return base_identifier_counts
 
-
-def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
-    base_identifier_counts = base_identifier_counts or Counter()
-
-    # Summarize origin clues to directory level and tag summarized Resources
+def tag_package_files(codebase, **kwargs):
+    # Summarize Package clues to directory level
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
         if resource.is_file:
@@ -236,13 +238,11 @@ def tag_package_files(codebase, base_identifier_counts=None, **kwargs):
                 Summary(
                     identifier=identifier,
                     license_expression=license_expression,
-                    type=['package']
+                    type='package'
                 )
             )
             resource.extra_data['summaries'] = resource_summaries
             resource.save(codebase)
-
-    return base_identifier_counts
 
 
 def tag_nr_files(codebase, **kwargs):
