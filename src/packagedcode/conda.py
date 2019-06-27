@@ -67,8 +67,8 @@ if TRACE:
 @attr.s()
 class CondaPackage(models.Package):
     metafiles = ('meta.yaml',)
-    filetypes = ('.yaml',)
-    mimetypes = ('application/json',)
+    filetypes = ('.yaml', 'ASCII text')
+    mimetypes = ('text/plain')
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = None
