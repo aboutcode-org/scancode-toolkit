@@ -1,0 +1,19 @@
+As per http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses,
+
+the "NCSA/University of Illinois Open Source License" is compatible
+with the GPL (both version 2 and 3).  What is claimed to be
+compatible is this
+
+http://www.opensource.org/licenses/UoI-NCSA.php
+
+and the LLVM documentation at
+
+http://www.llvm.org/docs/DeveloperPolicy.html#license
+
+says all the code in LLVM is available under the University of
+Illinois/NCSA Open Source License, at this URL
+
+http://www.opensource.org/licenses/UoI-NCSA.php
+
+viz, the same one that the FSF pages claim is compatible.  So I
+think it's OK to include it.
