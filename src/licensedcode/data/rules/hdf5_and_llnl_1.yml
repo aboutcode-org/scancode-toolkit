@@ -1,0 +1,5 @@
+license_expression: hdf5 AND llnl
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING_LBNL_HDF5
