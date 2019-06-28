@@ -65,8 +65,8 @@ if TRACE:
 
 @attr.s()
 class CondaPackage(models.Package):
-    metafiles = ('meta.yaml',)
-    filetypes = ('.yaml')
+    metafiles = ('meta.yaml',  'META.yml',)
+    filetypes = ('.yaml', '.yml')
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = None
@@ -78,10 +78,10 @@ class CondaPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.endswith(('meta.yaml', '.yaml',)):
+        if manifest_resource.name.endswith(('meta.yaml', '.yaml',  'META.yml', '.yml')):
             # the root is either the parent or further up for yaml stored under
             # a INFO dir
-            path = 'info/recipe.tar/recipe/meta.yaml'.format(**locals())
+            path = 'info/recipe.tar-extract/recipe/meta.yaml'
             if manifest_resource.path.endswith(path):
                 for ancestor in manifest_resource.ancestors(codebase):
                     if ancestor.name == 'info':

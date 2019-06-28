@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 import os
 from collections import OrderedDict
 
+from scancode.resource import Codebase
+
 from packages_test_utils import PackageTester
 
 from packagedcode import conda
@@ -52,3 +54,11 @@ class TestConda(PackageTester):
         package = conda.parse(test_file)
         expected_loc = self.get_test_loc('conda/meta.yaml.expected.json')
         self.check_package(package, expected_loc, regen=False)
+
+    def test_root_dir(self):
+        test_file = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract/info/recipe.tar-extract/recipe/meta.yaml')
+        test_dir = self.get_test_loc('conda/requests-kerberos-0.8.0-py35_0.tar.bz2-extract')
+        codebase = Codebase(test_dir)
+        manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
+        proot = conda.CondaPackage.get_package_root(manifest_resource, codebase)
+        assert test_dir == proot.location
