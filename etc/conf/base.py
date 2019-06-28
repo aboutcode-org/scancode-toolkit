@@ -1,9 +1,11 @@
+from __future__ import absolute_import
+
+import sys
+
 """
 This base config script gets automatically executed for all platforms via
 configure.
 """
-
-import sys
 
 """
 Check that we run a supported OS and architecture.
