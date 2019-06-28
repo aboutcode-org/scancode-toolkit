@@ -166,7 +166,6 @@ def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **k
     We yield a fileset for the root Resource in `codebase` if there is a majority license expression
     and copyright holder, such that we can properly report every instance of summarization
     """
-    # Summarize origin clues to directory level and tag summarized Resources
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
 
@@ -209,32 +208,18 @@ def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **k
                 resource.origin_summary['count'] = top_count
                 codebase.save_resource(resource)
 
-            # Check to see which one of the children are part of the majority and create filesets from that
+            # Check to see which one of the children are part of the majority and create a Fileset from that
             else:
                 for child in resource.children(codebase):
-                    child_license_expression = child.origin_summary.get('license_expression')
-                    child_holders = child.origin_summary.get('holders')
-                    if child_license_expression and child_holders:
-                        yield Fileset(
-                            type='license-exp-holders',
-                            resources=collect_fileset_resources(child, codebase),
-                            primary_resource=child,
-                            discovered_license_expression=child_license_expression,
-                            discovered_holders=child_holders
-                        )
+                    fs = create_license_exp_holders_fileset(child, codebase)
+                    if fs:
+                        yield fs
 
     # Yield a Fileset for root if there is a majority
     root = codebase.get_resource(0)
-    root_license_expression = root.origin_summary.get('license_expression')
-    root_holders = root.origin_summary.get('holders')
-    if root_license_expression and root_holders:
-        yield Fileset(
-            type='license-exp-holders',
-            resources=collect_fileset_resources(root, codebase),
-            primary_resource=root,
-            discovered_license_expression=root_license_expression,
-            discovered_holders=root_holders
-        )
+    fs = create_license_exp_holders_fileset(root, codebase)
+    if fs:
+        yield fs
 
 
 def is_majority(count, files_count, threshold=None):
@@ -246,7 +231,23 @@ def is_majority(count, files_count, threshold=None):
     return count / files_count >= threshold
 
 
-def collect_fileset_resources(resource, codebase):
+def create_license_exp_holders_fileset(resource, codebase):
+    """
+    Return a Fileset for `resource` if it can be summarized on license expression and holders
+    """
+    license_expression = resource.origin_summary.get('license_expression')
+    holders = resource.origin_summary.get('holders')
+    if license_expression and holders:
+        return Fileset(
+            type='license-exp-holders',
+            resources=get_fileset_resources(resource, codebase),
+            primary_resource=resource,
+            discovered_license_expression=license_expression,
+            discovered_holders=holders
+        )
+
+
+def get_fileset_resources(resource, codebase):
     """
     Return a list of resources to be used to create a Fileset from `resource`
     """
@@ -255,12 +256,14 @@ def collect_fileset_resources(resource, codebase):
     if not license_expression and holders:
         return
     resources = []
-    for c in resource.walk(codebase, topdown=False):
-        if ((c.is_file and combine_expressions(c.license_expressions) == license_expression
-                and c.holders == holders)
-                or (c.is_dir and c.origin_summary.get('license_expression', '') == license_expression
-                and c.origin_summary.get('holders', '') == holders)):
-            resources.append(c)
+    for r in resource.walk(codebase, topdown=False):
+        if ((r.is_file
+                and combine_expressions(r.license_expressions) == license_expression
+                and r.holders == holders)
+                or (r.is_dir
+                and r.origin_summary.get('license_expression', '') == license_expression
+                and r.origin_summary.get('holders', '') == holders)):
+            resources.append(r)
     return resources
 
 
