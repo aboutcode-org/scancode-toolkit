@@ -132,7 +132,7 @@ class OriginSummary(PostScanPlugin):
 
         filesets = []
         # Collecters should be independent and not depend on the result of another
-        collecters = [get_package_filesets, get_license_exp_holder_fileset]
+        collecters = [get_package_filesets, get_license_exp_holders_fileset]
         for collecter in collecters:
             filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
@@ -141,7 +141,7 @@ class OriginSummary(PostScanPlugin):
 
 def get_package_filesets(codebase, **kwargs):
     """
-    Yield filesets for each detected package in the codebase
+    Yield a Fileset for each detected package in the codebase
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
@@ -156,21 +156,16 @@ def get_package_filesets(codebase, **kwargs):
             )
 
 
-def get_license_exp_holder_fileset(codebase, origin_summary_threshold=None, **kwargs):
-    def collect_fileset_resources(resource, codebase):
-        license_expression = resource.origin_summary.get('license_expression')
-        holders = resource.origin_summary.get('holders')
-        if not license_expression and holders:
-            return
-        resources = []
-        for c in resource.walk(codebase, topdown=False):
-            if ((c.is_file and combine_expressions(c.license_expressions) == license_expression
-                    and c.holders == holders)
-                    or (c.is_dir and c.origin_summary.get('license_expression', '') == license_expression
-                    and c.origin_summary.get('holders', '') == holders)):
-                resources.append(c)
-        return resources
+def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **kwargs):
+    """
+    Yield a Fileset for each directory where 75% or more of the files have the same license
+    expression and copyright holders ONLY IF its parent directory has no majority license expression
+    and copyright holders. This means each yielded Fileset is a "local maximum" in terms of being
+    able to summarize on license expression and copyright holders.
 
+    We yield a fileset for the root Resource in `codebase` if there is a majority license expression
+    and copyright holder, such that we can properly report every instance of summarization
+    """
     # Summarize origin clues to directory level and tag summarized Resources
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
@@ -221,7 +216,7 @@ def get_license_exp_holder_fileset(codebase, origin_summary_threshold=None, **kw
                     child_holders = child.origin_summary.get('holders')
                     if child_license_expression and child_holders:
                         yield Fileset(
-                            type='license-holder',
+                            type='license-exp-holders',
                             resources=collect_fileset_resources(child, codebase),
                             primary_resource=child,
                             discovered_license_expression=child_license_expression,
@@ -234,7 +229,7 @@ def get_license_exp_holder_fileset(codebase, origin_summary_threshold=None, **kw
     root_holders = root.origin_summary.get('holders')
     if root_license_expression and root_holders:
         yield Fileset(
-            type='license-holder',
+            type='license-exp-holders',
             resources=collect_fileset_resources(root, codebase),
             primary_resource=root,
             discovered_license_expression=root_license_expression,
@@ -251,6 +246,24 @@ def is_majority(count, files_count, threshold=None):
     return count / files_count >= threshold
 
 
+def collect_fileset_resources(resource, codebase):
+    """
+    Return a list of resources to be used to create a Fileset from `resource`
+    """
+    license_expression = resource.origin_summary.get('license_expression')
+    holders = resource.origin_summary.get('holders')
+    if not license_expression and holders:
+        return
+    resources = []
+    for c in resource.walk(codebase, topdown=False):
+        if ((c.is_file and combine_expressions(c.license_expressions) == license_expression
+                and c.holders == holders)
+                or (c.is_dir and c.origin_summary.get('license_expression', '') == license_expression
+                and c.origin_summary.get('holders', '') == holders)):
+            resources.append(c)
+    return resources
+
+
 def process_filesets(filesets, codebase, **kwargs):
     """
     Create summaries based on collected filesets
@@ -258,17 +271,18 @@ def process_filesets(filesets, codebase, **kwargs):
     identifier = 0
     for fileset in filesets:
         summary_type = fileset.type
+        license_expression = None
+        holders = None
         if summary_type == 'package':
             license_expression = fileset.package.license_expression
-            holders = None
-        if summary_type == 'license-holder':
+        if summary_type == 'license-exp-holders':
             license_expression = fileset.discovered_license_expression
             holders = fileset.discovered_holders
         codebase.attributes.summaries.append(
             Summary(
                 identifier=identifier,
-                license_expression=license_expression or None,
-                holders=holders or None,
+                license_expression=license_expression,
+                holders=holders,
                 type=summary_type,
             )
         )
@@ -278,11 +292,17 @@ def process_filesets(filesets, codebase, **kwargs):
         identifier += 1
 
 
-def tag_nr_files(codebase, **kwargs):
+def get_nr_fileset(codebase, **kwargs):
+    """
+    Yield a Fileset for all Resources that are not to be reported
+    """
     # TODO: Load set of extensions to NR from somewhere
     nr_exts = []
-    # Summarize origin clues to directory level and tag summarized Resources
+    resources = []
     for resource in codebase.walk(topdown=False):
         if resource.extension in nr_exts:
-            resource.extra_data['NR'] = True
-            resource.save(codebase)
+            resources.append(resource)
+    yield Fileset(
+        type='nr',
+        resources=resources
+    )
