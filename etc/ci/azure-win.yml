@@ -1,12 +1,12 @@
 parameters:
-    os_name: ''
+    job_name: ''
     image_name: ''
     python_versions: []
     test_suites: {}
     python_architecture: x86
 
 jobs:
-    - job: ${{ parameters.os_name }}
+    - job: ${{ parameters.job_name }}
 
       pool:
           vmImage: ${{ parameters.image_name }}
@@ -30,4 +30,4 @@ jobs:
             displayName: 'Run Configure'
 
           - script: $(test_suite)
-            displayName: 'Run $(test_suite_label) tests with py$(python_version) on ${{ parameters.os_name }}'
+            displayName: 'Run $(test_suite_label) tests with py$(python_version) on ${{ parameters.job_name }}'
