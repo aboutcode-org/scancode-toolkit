@@ -86,6 +86,14 @@ class NpmPackage(models.Package):
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
+    @classmethod
+    def get_package_resources(cls, root, codebase):
+        yield root
+        for resource in root.walk(codebase, topdown=True):
+            if resource.is_dir and resource.parent == root and resource.name == 'node_modules':
+                continue
+            yield resource
+
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return npm_homepage_url(self.namespace, self.name, registry=baseurl)
 

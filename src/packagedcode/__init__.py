@@ -124,3 +124,12 @@ def get_package_class(scan_data, default=models.Package):
         return default
     ptype_class = PACKAGES_BY_TYPE.get(ptype)
     return ptype_class or default
+
+
+def get_package_instance(scan_data):
+    scan_data.pop('api_data_url')
+    scan_data.pop('repository_download_url')
+    scan_data.pop('purl')
+    scan_data.pop('repository_homepage_url')
+    klas = get_package_class(scan_data)
+    return klas(**scan_data)
