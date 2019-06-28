@@ -42,8 +42,7 @@ from packageurl import PackageURL
 
 
 """
-Parse Conda manifests, see https://getcomposer.org/ and
-https://packagist.org/
+Parse Conda manifests, see https://docs.conda.io/en/latest/
 
 """
 
@@ -67,8 +66,7 @@ if TRACE:
 @attr.s()
 class CondaPackage(models.Package):
     metafiles = ('meta.yaml',)
-    filetypes = ('.yaml', 'ASCII text')
-    mimetypes = ('text/plain')
+    filetypes = ('.yaml')
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = None
@@ -77,6 +75,21 @@ class CondaPackage(models.Package):
     @classmethod
     def recognize(cls, location):
         return parse(location)
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.name.endswith(('meta.yaml', '.yaml',)):
+            # the root is either the parent or further up for yaml stored under
+            # a INFO dir
+            path = 'info/recipe.tar/recipe/meta.yaml'.format(**locals())
+            if manifest_resource.path.endswith(path):
+                for ancestor in manifest_resource.ancestors(codebase):
+                    if ancestor.name == 'info':
+                        root_dir = ancestor.parent(codebase)
+                        return root_dir
+            return manifest_resource.parent(codebase)
+        else:
+            return manifest_resource
 
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
