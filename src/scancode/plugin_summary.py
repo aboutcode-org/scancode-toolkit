@@ -34,6 +34,7 @@ from collections import OrderedDict
 import attr
 
 from commoncode.text import python_safe_name
+from packagedcode import get_package_instance
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -69,6 +70,19 @@ class Summary(object):
     license_expression = attr.ib()
     holders = attr.ib()
     type=attr.ib()
+
+
+@attr.s
+class Fileset(object):
+    type=attr.ib()
+    identifier = attr.ib(default=-1) # maybe
+    primary_resource = attr.ib(default=None) # in case of packages, will be package root
+    resources = attr.ib(default=attr.Factory(list))
+    package = attr.ib(default=None)
+    declared_license_expression = attr.ib(default=None)
+    declared_holders = attr.ib(default=None)
+    discovered_license_expression = attr.ib(default=None)
+    discovered_holders = attr.ib(default=None)
 
 
 @post_scan_impl
@@ -116,52 +130,47 @@ class OriginSummary(PostScanPlugin):
             # TODO: Raise warning(?) if these fields are not there
             return
 
+        filesets = []
         # Collecters should be independent and not depend on the result of another
-        collecters = [stat_summary, tag_package_files]
+        collecters = [get_package_filesets, get_license_exp_holder_fileset]
         for collecter in collecters:
-            collecter(codebase, origin_summary_threshold=origin_summary_threshold)
+            filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        # TODO: Make summarizers for each type of summarization
-        # TODO: Should these be coupled with collectors?
-        # Pick one summary for a Resource
-        for resource in codebase.walk(topdown=True):
-            resource_summaries = sorted(resource.extra_data.get('summaries', []))
-            if not resource_summaries:
-                continue
-
-            summaries_by_type = defaultdict(list)
-            for summary in resource_summaries:
-                summaries_by_type[summary.type].append(summary)
-
-            package_summary = summaries_by_type.get('package', [])
-            license_holder_summary = summaries_by_type.get('license-holders', [])
-
-            # TODO: We get the first Summary from the list for now, consider other criteria when
-            # selecting a summary
-            if package_summary:
-                # Package summary has precendence over all other types of summaries
-                resource_summary = package_summary[0]
-            elif license_holder_summary:
-                resource_summary = license_holder_summary[0]
-            else:
-                # We only handle these two types for now
-                continue
-
-            codebase.attributes.summaries.append(resource_summary)
-
-            # Set the summarized_to field of this resource and its children to the identifier
-            # of the summary
-            resource_summary_identifier = resource_summary.identifier
-            resource.summarized_to = resource_summary_identifier
-
-            children = resource.children(codebase)
-            if not children:
-                continue
-            for child in children:
-                child.summarized_to = resource_summary_identifier
+        process_filesets(filesets, codebase)
 
 
-def stat_summary(codebase, origin_summary_threshold=None, **kwargs):
+def get_package_filesets(codebase, **kwargs):
+    """
+    Yield filesets for each detected package in the codebase
+    """
+    for resource in codebase.walk(topdown=False):
+        for package_data in resource.packages:
+            package = get_package_instance(package_data)
+            yield Fileset(
+                type='package',
+                resources=list(package.get_package_resources(resource, codebase)),
+                # TODO: add package declared license and holders
+                # TODO: may be better as primary license
+                primary_resource=resource,
+                package=package
+            )
+
+
+def get_license_exp_holder_fileset(codebase, origin_summary_threshold=None, **kwargs):
+    def collect_fileset_resources(resource, codebase):
+        license_expression = resource.origin_summary.get('license_expression')
+        holders = resource.origin_summary.get('holders')
+        if not license_expression and holders:
+            return
+        resources = []
+        for c in resource.walk(codebase, topdown=False):
+            if ((c.is_file and combine_expressions(c.license_expressions) == license_expression
+                    and c.holders == holders)
+                    or (c.is_dir and c.origin_summary.get('license_expression', '') == license_expression
+                    and c.origin_summary.get('holders', '') == holders)):
+                resources.append(c)
+        return resources
+
     # Summarize origin clues to directory level and tag summarized Resources
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
@@ -205,44 +214,68 @@ def stat_summary(codebase, origin_summary_threshold=None, **kwargs):
                 resource.origin_summary['count'] = top_count
                 codebase.save_resource(resource)
 
-                holder = '\n'.join(holders)
-                identifier = python_safe_name('{}_{}'.format(license_expression, holder))
+            # Check to see which one of the children are part of the majority and create filesets from that
+            else:
+                for child in resource.children(codebase):
+                    child_license_expression = child.origin_summary.get('license_expression')
+                    child_holders = child.origin_summary.get('holders')
+                    if child_license_expression and child_holders:
+                        yield Fileset(
+                            type='license-holder',
+                            resources=collect_fileset_resources(child, codebase),
+                            primary_resource=child,
+                            discovered_license_expression=child_license_expression,
+                            discovered_holders=child_holders
+                        )
 
-                resource_summaries = resource.extra_data.get('summaries', [])
-                resource_summaries.append(
-                    Summary(
-                        identifier=identifier,
-                        license_expression=license_expression,
-                        holders=holders,
-                        type='license-holders'
-                    )
-                )
-                resource.extra_data['summaries'] = resource_summaries
-                resource.save(codebase)
+    # Yield a Fileset for root if there is a majority
+    root = codebase.get_resource(0)
+    root_license_expression = root.origin_summary.get('license_expression')
+    root_holders = root.origin_summary.get('holders')
+    if root_license_expression and root_holders:
+        yield Fileset(
+            type='license-holder',
+            resources=collect_fileset_resources(root, codebase),
+            primary_resource=root,
+            discovered_license_expression=root_license_expression,
+            discovered_holders=root_holders
+        )
 
 
-def tag_package_files(codebase, **kwargs):
-    # Summarize Package clues to directory level
-    for resource in codebase.walk(topdown=False):
-        # TODO: Consider facets for later
-        if resource.is_file:
-            continue
+def is_majority(count, files_count, threshold=None):
+    """
+    Return True if `count` divided by `files_count` is greater than or equal to `threshold`
+    """
+    # TODO: Increase this and test with real codebases
+    threshold = threshold or 0.75
+    return count / files_count >= threshold
 
-        resource_packages = resource.packages
-        for package in resource_packages:
-            license_expression = package['license_expression']
-            identifier = python_safe_name(package['purl'])
 
-            resource_summaries = resource.extra_data.get('summaries', [])
-            resource_summaries.append(
-                Summary(
-                    identifier=identifier,
-                    license_expression=license_expression,
-                    type='package'
-                )
+def process_filesets(filesets, codebase, **kwargs):
+    """
+    Create summaries based on collected filesets
+    """
+    identifier = 0
+    for fileset in filesets:
+        summary_type = fileset.type
+        if summary_type == 'package':
+            license_expression = fileset.package.license_expression
+            holders = None
+        if summary_type == 'license-holder':
+            license_expression = fileset.discovered_license_expression
+            holders = fileset.discovered_holders
+        codebase.attributes.summaries.append(
+            Summary(
+                identifier=identifier,
+                license_expression=license_expression or None,
+                holders=holders or None,
+                type=summary_type,
             )
-            resource.extra_data['summaries'] = resource_summaries
-            resource.save(codebase)
+        )
+        for res in fileset.resources:
+            res.summarized_to = identifier
+            res.save(codebase)
+        identifier += 1
 
 
 def tag_nr_files(codebase, **kwargs):
@@ -253,12 +286,3 @@ def tag_nr_files(codebase, **kwargs):
         if resource.extension in nr_exts:
             resource.extra_data['NR'] = True
             resource.save(codebase)
-
-
-def is_majority(count, files_count, threshold=None):
-    """
-    Return True if `count` divided by `files_count` is greater than or equal to `threshold`
-    """
-    # TODO: Increase this and test with real codebases
-    threshold = threshold or 0.75
-    return count / files_count >= threshold
