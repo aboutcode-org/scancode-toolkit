@@ -2,4 +2,5 @@ license_expression: unknown AND gpl-2.0-plus
 is_license_notice: yes
 referenced_filenames:
     - COPYING
+    - /usr/doc/copyright/GPL
 notes: Seen in the kernel

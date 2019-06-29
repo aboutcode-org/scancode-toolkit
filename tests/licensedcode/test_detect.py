@@ -1082,8 +1082,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-mit', (231, 238), Span(932, 995)),
-            (u'free-unknown', (306, 307), Span(1291, 1313))
+            (u'fsf-mit', (231, 238), Span(934, 997)),
+            (u'free-unknown', (306, 307), Span(1293, 1315))
         ]
         self.check_position('positions/automake.pl', expected)
 
@@ -1100,7 +1100,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         test_loc = self.get_test_loc('detect/short_l_and_gpls')
         matches = idx.match(location=test_loc)
         assert 8 == len(matches)
-        results = [m.matched_text(whole_lines=False) for m in matches]
+        results = [m.matched_text(whole_lines=False, _usecache=False) for m in matches]
         expected = [
             'This software is distributed under the following licenses:',
             'GNU General Public License (GPL)',
@@ -1165,7 +1165,7 @@ class TestRegression(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 2 == len(matches)
         match = matches[1]
-        matched_text = match.matched_text(whole_lines=False)
+        matched_text = match.matched_text(whole_lines=False, _usecache=False)
         first_word = matched_text.split()[0]
         assert 'Permission' == first_word
 
@@ -1175,7 +1175,7 @@ class TestRegression(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        matched_text = match.matched_text(whole_lines=False)
+        matched_text = match.matched_text(whole_lines=False, _usecache=False)
         words = matched_text.split()
         first_words = words[0: 3]
         assert ['BEGIN', 'LICENSE', 'BLOCK'] == first_words
@@ -1186,7 +1186,7 @@ class TestRegression(FileBasedTesting):
         idx = cache.get_index()
         query_location = self.get_test_loc('detect/lgpl_not_gpl/query.txt')
         matches = idx.match(location=query_location)
-        results = [match.matched_text() for match in matches][0]
+        results = [m.matched_text(_usecache=False) for m in matches][0]
         expected = (
             u'is free software; you can redistribute it and/or modify\n'
             ' * it under the terms of the GNU General Public License as published by\n'
@@ -1202,9 +1202,10 @@ class TestRegression(FileBasedTesting):
             ' * along with [testVMX]; if not, write to the Free Software\n'
             ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  US'
         )
-        
+        match = matches[0]
+        rule = match.rule
         assert expected == results
-        assert 'gpl-2.0-plus' == matches[0].rule.license_expression
+        assert 'gpl-2.0-plus' == rule.license_expression
 
     def test_detection_return_correct_lgpl_with_correct_text_using_controlled_index(self):
         from licensedcode import models
@@ -1214,14 +1215,14 @@ class TestRegression(FileBasedTesting):
         rules = models.load_rules(rules_data_dir)
         idx = index.LicenseIndex(rules)
         matches = idx.match(location=query_location)
-        results = [match.matched_text() for match in matches][0]
+        results = [match.matched_text(_usecache=False) for match in matches][0]
         expected = (
             u'is free software; you can redistribute it and/or modify\n'
             ' * it under the terms of the GNU General Public License as published by\n'
             ' * the Free Software Foundation; either version 2 of the License, or\n'
             ' * (at your option) any later version.\n'
             ' * \n'
-            ' * [testVMX] is [distributed] in the hope that it will be useful,\n'
+            ' * [testVMX] is distributed in the hope that it will be useful,\n'
             ' * but WITHOUT ANY WARRANTY; without even the implied warranty of\n'
             ' * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
             ' * GNU General Public License for more details.\n'
@@ -1231,4 +1232,6 @@ class TestRegression(FileBasedTesting):
             ' * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307'
         )
         assert expected == results
-        assert 'lgpl-2.1-plus' == matches[0].rule.license_expression
+        matched_rule = matches[0].rule
+        assert 'gpl-2.0-plus_258.RULE' == matched_rule.identifier
+        assert 'gpl-2.0-plus' == matched_rule.license_expression
