@@ -152,8 +152,8 @@
             "licenses": [
               "bsd-original-uc"
             ],
-            "is_license_text": false,
-            "is_license_notice": true,
+            "is_license_text": true,
+            "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "2-aho",

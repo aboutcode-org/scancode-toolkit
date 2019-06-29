@@ -1022,7 +1022,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             IS FROM THE CODEHAUS AND CONTRIBUTORS
         '''
         dictionary = dict(this=0, event=1, possibility=2, reserved=3, liable=5, copyright=6)
-        result = tokenize_matched_text(location=None, query_string=querys, dictionary=dictionary, _usecache=False)
+        result = tokenize_matched_text(location=None, query_string=querys, dictionary=dictionary)
         expected = [
             Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
             Token(value=u'            ', line_num=2, pos=-1, is_text=False, is_matched=False, is_known=False),
