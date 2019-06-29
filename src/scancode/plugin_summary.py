@@ -132,11 +132,11 @@ class OriginSummary(PostScanPlugin):
 
         filesets = []
         # Collecters should be independent and not depend on the result of another
-        collecters = [get_package_filesets, get_license_exp_holders_fileset]
-        for collecter in collecters:
+        fileset_collecters = [get_package_filesets, get_license_exp_holders_fileset]
+        for collecter in fileset_collecters:
             filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        process_filesets(filesets, codebase)
+        codebase.attributes.summaries = create_summaries(filesets, codebase)
 
 
 def get_package_filesets(codebase, **kwargs):
@@ -267,10 +267,11 @@ def get_fileset_resources(resource, codebase):
     return resources
 
 
-def process_filesets(filesets, codebase, **kwargs):
+def create_summaries(filesets, codebase, **kwargs):
     """
-    Create summaries based on collected filesets
+    Return a list of summaries from `filesets`
     """
+    summaries = []
     identifier = 0
     for fileset in filesets:
         summary_type = fileset.type
@@ -281,7 +282,10 @@ def process_filesets(filesets, codebase, **kwargs):
         if summary_type == 'license-exp-holders':
             license_expression = fileset.discovered_license_expression
             holders = fileset.discovered_holders
-        codebase.attributes.summaries.append(
+        for res in fileset.resources:
+            res.summarized_to = identifier
+            res.save(codebase)
+        summaries.append(
             Summary(
                 identifier=identifier,
                 license_expression=license_expression,
@@ -289,10 +293,8 @@ def process_filesets(filesets, codebase, **kwargs):
                 type=summary_type,
             )
         )
-        for res in fileset.resources:
-            res.summarized_to = identifier
-            res.save(codebase)
         identifier += 1
+    return summaries
 
 
 def get_nr_fileset(codebase, **kwargs):
