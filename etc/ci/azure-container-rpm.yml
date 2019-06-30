@@ -3,7 +3,7 @@ parameters:
     image_name: 'ubuntu-16.04'
     container: ''
     python_path: ''
-    python_version = ''
+    python_version: ''
     package_manager: yum
     install_python: ''
     install_packages: |
