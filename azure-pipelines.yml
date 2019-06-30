@@ -116,9 +116,8 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
-#          matrix:
-#              commoncode:
-#                  test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
@@ -131,7 +130,9 @@ jobs:
 #             sudo add-apt-repository -y ppa:deadsnakes
 #             sudo apt-get -y update
 #             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-#
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+
     - template: etc/ci/azure-container-deb.yml
       parameters:
           job_name: ubuntu18_py27
@@ -139,8 +140,8 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
+          test_suite_label: commoncode
+          test_suite: bin/pytest -vvs tests/commoncode
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
@@ -149,8 +150,8 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
+          test_suite_label: commoncode
+          test_suite: bin/pytest -vvs tests/commoncode
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -159,6 +160,8 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo yum install -y python python27-devel
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -170,6 +173,8 @@ jobs:
 #              set -e -x
 #              sudo yum install -y epel-release
 #              sudo yum install -y python36 python36-devel python36-virtualenv
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #
 #    - template: etc/ci/azure-container-rpm.yml
@@ -180,6 +185,8 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -189,6 +196,8 @@ jobs:
 #          python_version: '3.6'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -198,6 +207,8 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -207,6 +218,8 @@ jobs:
 #          python_version: '3.6'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -216,6 +229,8 @@ jobs:
 #          python_version: '3.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #
 #    - template: etc/ci/azure-container-rpm.yml
@@ -228,6 +243,8 @@ jobs:
 #          install_python: |
 #              set -e -x
 #              sudo dnf install -y python2 python2-devel
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -239,6 +256,8 @@ jobs:
 #          install_python: |
 #              set -e -x
 #              sudo dnf install -y python3 python3-devel python3-virtualenv
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 #
 #
 #    - template: etc/ci/azure-container-deb.yml
@@ -248,6 +267,8 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
 
 
 ################################################################################
@@ -276,3 +297,5 @@ jobs:
 #            ./configure --enable-optimizations
 #            make -j8
 #            sudo make altinstall
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode

@@ -14,7 +14,8 @@ parameters:
             xz-utils zlib1g bzip2 libbz2-1.0 tar \
             sqlite3 libxml2-dev libxslt1-dev \
             software-properties-common openssl
-    test_suites: {}
+    test_suite: ''
+    test_suite_label: ''
 
 
 jobs:
@@ -26,13 +27,6 @@ jobs:
       container:
           image: ${{ parameters.container }}
           options: '--name ${{ parameters.job_name }} -v /usr/bin/docker:/tmp/docker:ro'
-
-      strategy:
-          matrix:
-              ${{ each tsuite in parameters.test_suites }}:
-                 ${{ format('{0}_{1}', parameters.job_name, tsuite.key) }}:
-                     test_suite_label: ${{ tsuite.key }}
-                     test_suite: ${{ tsuite.value }}
 
       steps:
           - checkout: self
@@ -50,5 +44,5 @@ jobs:
           - script: PYTHON_EXE=${{ parameters.python_path }} ./configure
             displayName: 'Run Configure'
 
-          - script: $(test_suite)
-            displayName: 'Run $(test_suite_label) tests with py${{ parameters.python_version }} on ${{ parameters.job_name }}'
+          - script: ${{ parametres.test_suite }}
+            displayName: 'Run ${{ parametres.test_suite_label }} tests with py${{ parameters.python_version }} on ${{ parameters.job_name }}'
