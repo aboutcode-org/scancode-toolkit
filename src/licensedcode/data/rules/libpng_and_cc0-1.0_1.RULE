@@ -1,0 +1,15 @@
+* LICENSING
+* =========
+*
+* This code is copyright of the authors, see the COPYRIGHT define above.  The
+* code is licensed as above, using the libpng license.  The code generates
+* images which are solely the product of the code; the options choose which of
+* the many possibilities to generate.  The images that result (but not the code
+* which generates them) are licensed as defined here:
+*
+* IMPORTANT: the COPYRIGHT #define must contain ISO-Latin-1 characters, the
+* IMAGE_LICENSING #define must contain UTF-8 characters.  The 'copyright'
+* symbol 0xA9U (\251) in ISO-Latin-1 encoding and 0xC20xA9 (\302\251) in UTF-8.
+*/
+define IMAGE_LICENSING "Dedicated to the public domain per Creative Commons "\
+   "license \"CC0 1.0\"; https://creativecommons.org/publicdomain/zero/1.0/"

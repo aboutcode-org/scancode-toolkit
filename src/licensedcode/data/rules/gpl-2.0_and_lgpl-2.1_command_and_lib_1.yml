@@ -3,3 +3,5 @@ is_license_notice: yes
 referenced_filenames:
     - COPYING
     - COPYING.LIB
+minimum_coverage: 60
+relevance: 100
