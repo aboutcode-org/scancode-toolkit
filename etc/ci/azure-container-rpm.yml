@@ -44,5 +44,5 @@ jobs:
           - script: PYTHON_EXE=${{ parameters.python_path }} ./configure
             displayName: 'Run Configure'
 
-          - script: ${{ parametres.test_suite }}
-            displayName: 'Run ${{ parametres.test_suite_label }} tests with py${{ parameters.python_version }} on ${{ parameters.job_name }}'
+          - script: ${{ parameters.test_suite }}
+            displayName: 'Run ${{ parameters.test_suite_label }} tests with py${{ parameters.python_version }} on ${{ parameters.job_name }}'
