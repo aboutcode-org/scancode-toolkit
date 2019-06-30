@@ -103,7 +103,7 @@ def spdx_id_match(idx, query_run, text):
     matched_tokens = query_run.tokens
 
     if TRACE:
-        logger_debug('spdx_id_match: matched_tokens: 1:', 
+        logger_debug('spdx_id_match: matched_tokens: 1:',
                      matched_tokens, [idx.tokens_by_tid[tid] for tid in matched_tokens])
 
     cleaned = clean_text(text).lower()
@@ -199,19 +199,18 @@ OLD_SPDX_EXCEPTION_LICENSES_SUBS = None
 def get_old_expressions_subs_table(licensing):
     global OLD_SPDX_EXCEPTION_LICENSES_SUBS
     if not OLD_SPDX_EXCEPTION_LICENSES_SUBS:
-        EXPRESSSIONS_BY_OLD_SPDX_IDS = {
-            'eCos-2.0': 'gpl-2.0+ wITH ecos-exception-2.0',
-            'GPL-2.0-with-autoconf-exception': 'gpl-2.0 WITH autoconf-exception-2.0',
-            'GPL-2.0-with-bison-exception': 'gpl-2.0 WITH bison-exception-2.2',
-            'GPL-2.0-with-classpath-exception': 'gpl-2.0 WITH classpath-exception-2.0',
-            'GPL-2.0-with-font-exception': 'gpl-2.0 WITH font-exception-2.0',
-            'GPL-2.0-with-GCC-exception': 'gpl-2.0 WITH gcc-linking-exception-2.0',
-            'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
-            'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
-            'Nunit': 'zlib-acknowledgement',
-            'wxWindows': 'lgpl-2.0-plus WITH wxwindows-exception-3.1',
-            'StandardML-NJ': ' SMLNJ',
-        }
+        #
+        EXPRESSSIONS_BY_OLD_SPDX_IDS = {k.lower(): v.lower() for k, v in {
+            'eCos-2.0': 'gpl-2.0-or-later WITH ecos-exception-2.0',
+            'GPL-2.0-with-autoconf-exception': 'gpl-2.0-only WITH autoconf-exception-2.0',
+            'GPL-2.0-with-bison-exception': 'gpl-2.0-only WITH bison-exception-2.2',
+            'GPL-2.0-with-classpath-exception': 'gpl-2.0-only WITH classpath-exception-2.0',
+            'GPL-2.0-with-font-exception': 'gpl-2.0-only WITH font-exception-2.0',
+            'GPL-2.0-with-GCC-exception': 'gpl-2.0-only WITH gcc-exception-2.0',
+            'GPL-3.0-with-autoconf-exception': 'gpl-3.0-only WITH autoconf-exception-3.0',
+            'GPL-3.0-with-GCC-exception': 'gpl-3.0-only WITH gcc-exception-3.1',
+            'wxWindows': 'lgpl-2.0-or-later WITH wxwindows-exception-3.1',
+        }.items()}
 
         OLD_SPDX_EXCEPTION_LICENSES_SUBS = {
             licensing.parse(k): licensing.parse(v)
@@ -229,7 +228,7 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     """
     if not text:
         return
-
+    text = text.lower()
     expression = licensing.parse(text, simple=True)
 
     if expression is None:
@@ -237,7 +236,6 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
         return
     if TRACE:
         logger_debug(' #_parse_expression: parsed:', repr(expression.render()))
-
 
     # substitute old SPDX symbols with new ones if any
     old_expressions_subs = get_old_expressions_subs_table(licensing)

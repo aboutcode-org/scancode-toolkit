@@ -1,0 +1,14 @@
+SPDX-License-Identifier: GPL-2.0-with-GCC-exception
+SPDX-License-Identifier: gpl-2.0-with-gcc-exception
+SPDX-License-Identifier: eCos-2.0
+SPDX-License-Identifier: GPL-2.0-with-autoconf-exception
+SPDX-License-Identifier: GPL-2.0-with-bison-exception
+SPDX-License-Identifier: GPL-2.0-with-classpath-exception
+SPDX-License-Identifier: GPL-2.0-with-font-exception
+SPDX-License-Identifier: GPL-2.0-with-GCC-exception
+SPDX-License-Identifier: GPL-3.0-with-autoconf-exception
+SPDX-License-Identifier: GPL-3.0-with-GCC-exception
+SPDX-License-Identifier: wxWindows
+SPDX-License-Identifier: Nunit and GPL-2.0+
+SPDX-License-Identifier: wxWindows
+SPDX-License-Identifier: StandardML-NJ AND GPL-1.0+

@@ -1,0 +1,17 @@
+license_expressions:
+    - gpl-2.0 WITH gcc-linking-exception-2.0
+    - gpl-2.0 WITH gcc-linking-exception-2.0
+    - gpl-2.0-plus WITH ecos-exception-2.0
+    - gpl-2.0 WITH autoconf-exception-2.0
+    - gpl-2.0 WITH bison-exception-2.2
+    - gpl-2.0 WITH classpath-exception-2.0
+    - gpl-2.0 WITH font-exception-gpl
+    - gpl-2.0 WITH gcc-linking-exception-2.0
+    - gpl-3.0 WITH autoconf-exception-3.0
+    - gpl-3.0 WITH gcc-exception-3.1
+    - lgpl-2.0-plus WITH wxwindows-exception-3.1
+    - zlib-acknowledgement AND gpl-2.0-plus
+    - lgpl-2.0-plus WITH wxwindows-exception-3.1
+    - standard-ml-nj AND gpl-1.0-plus
+
+notes: check that the substitution table works as expected for legacy deprecated SPDX identifiers
