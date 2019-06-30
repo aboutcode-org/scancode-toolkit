@@ -59,7 +59,6 @@ jobs:
           python_versions: ['2.7', '3.6']
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
-              # scancode: bin/py.test -vvs --reruns=1 tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -94,10 +93,14 @@ jobs:
       pool:
           vmImage: ubuntu-16.04
       steps:
+          - checkout: self
+            fetchDepth: 10
+
           - task: UsePythonVersion@0
             inputs:
                 versionSpec: '2.7'
             displayName: 'Install Python 2.7'
+
           - script: ./etc/release/release.sh
             displayName: 'Build installable releases'
 
@@ -136,14 +139,20 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
+          test_suites:
+              commoncode: bin/py.test -vvs tests/commoncode
 
     - template: etc/ci/azure-container-deb.yml
-      parameters:
+      parameters:          test_suites:
+              commoncode: bin/py.test -vvs tests/commoncode
+      
           name: ubuntu18_py36
           container: ubuntu:bionic
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+          test_suites:
+              commoncode: bin/py.test -vvs tests/commoncode
 
 
 #    - template: etc/ci/azure-container-rpm.yml

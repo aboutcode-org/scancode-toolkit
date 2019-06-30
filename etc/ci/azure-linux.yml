@@ -21,6 +21,9 @@ jobs:
                      test_suite: ${{ tsuite.value }}
 
       steps:
+          - checkout: self
+            fetchDepth: 10
+
           - task: UsePythonVersion@0
             inputs:
                 versionSpec: '$(python_version)'

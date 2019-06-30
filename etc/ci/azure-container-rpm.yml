@@ -14,9 +14,7 @@ parameters:
             sqlite-devel zlib-devel xz-devel bzip2-devel \
             bzip2 tar unzip zip \
             libxml2-devel libxslt-devel
-    test_suites:
-        commoncode: bin/py.test -vvs tests/commoncode
-        # scancode: bin/py.test -vvs --reruns=1 tests/scancode
+    test_suites: {}
 
 
 jobs:
@@ -37,6 +35,9 @@ jobs:
                      test_suite: ${{ tsuite.value }}
 
       steps:
+          - checkout: self
+            fetchDepth: 10
+
           - script: /tmp/docker exec -t -u 0 ${{ parameters.job_name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
             displayName: Install sudo
 
