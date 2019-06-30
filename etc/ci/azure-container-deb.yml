@@ -32,7 +32,7 @@ jobs:
       strategy:
           matrix:
               ${{ each tsuite in parameters.test_suites }}:
-                 ${{ format('{0}', tsuite.key) }}:
+                 ${{ format('{0}_{1}', parameters.job_name, tsuite.key) }}:
                      test_suite_label: ${{ tsuite.key }}
                      test_suite: ${{ tsuite.value }}
 
