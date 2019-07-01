@@ -297,7 +297,7 @@ def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
         base_cmd = [configured_pip]
     pcmd = base_cmd + [
         'install', '--upgrade', '--no-index', '--no-cache-dir',
-        '--no-warn-script-location']
+    ]
     pcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
     if quiet:
         pcmd += ['-qq']
