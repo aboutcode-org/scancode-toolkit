@@ -1,10 +1,8 @@
 environment:
     matrix:
-        - TEST_SUITE: "py.test -n 2 -vvs --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/scancode  --reruns 1"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py  --ignore=tests/licensedcode/test_detection_datadriven.py"
-        - TEST_SUITE: "py.test -n 2 -s tests/extractcode tests/cluecode tests/packagedcode"
-        - TEST_SUITE: "py.test -vvs tests/licensedcode/test_zzzz_cache.py --reruns 1"
+        - TEST_SUITE: "py.test -vvs --reruns 3 -n2 --ignore=tests/scancode --ignore=tests/licensedcode/test_zzzz_cache.py"
+        - TEST_SUITE: "py.test -vvs --reruns 3     tests/scancode"
+        - TEST_SUITE: "py.test -vvs --reruns 3     tests/licensedcode/test_zzzz_cache.py"
 
 install:
     - configure
