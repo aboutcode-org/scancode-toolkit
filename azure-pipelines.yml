@@ -136,7 +136,7 @@ jobs:
     - template: etc/ci/azure-container-deb.yml
       parameters:
           job_name: ubuntu18_py27
-          container: ubuntu:bionic
+          container: 'ubuntu:bionic'
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
@@ -145,7 +145,7 @@ jobs:
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
-          name: ubuntu18_py36
+          job_name: ubuntu18_py36
           container: ubuntu:bionic
           python_path: python3.6
           python_version: '3.6'
