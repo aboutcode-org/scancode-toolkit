@@ -295,6 +295,21 @@ class TestFileUtils(FileBasedTesting):
         assert b == fsdecode(fsencode(b))
 
 
+def is_on_macos_14_or_higher():
+    """
+    Return True if the current OS is macPS 14 or higher.
+    It uses APFS by default and has a different behavior wrt. unicode and
+    filesystem encodings.
+    """
+    import platform
+    macos_ver = platform.mac_ver()
+    macos_ver = macos_ver[0]
+    macos_ver = macos_ver.split('.')
+    return macos_ver > ['10', '14']
+
+on_macos_14_or_higher = is_on_macos_14_or_higher()
+
+
 class TestFileUtilsWalk(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -351,6 +366,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         ]
         assert expected == result
 
+    @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
@@ -361,6 +377,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
 
+    @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
@@ -513,6 +530,7 @@ class TestFileUtilsIter(FileBasedTesting):
             ]
         assert expected == result
 
+    @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path_with_dirs(self):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
@@ -522,6 +540,7 @@ class TestFileUtilsIter(FileBasedTesting):
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
         assert 18 == len(result)
 
+    @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
