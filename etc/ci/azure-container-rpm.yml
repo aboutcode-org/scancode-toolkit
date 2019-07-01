@@ -26,13 +26,13 @@ jobs:
 
       container:
           image: ${{ parameters.container }}
-          options: '--name ${{ parameters.job_name }} -v /usr/bin/docker:/tmp/docker:ro'
+          options: '--name ${{ parameters.job_name }} -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v /usr/bin/docker:/tmp/docker:ro'
 
       steps:
           - checkout: self
             fetchDepth: 10
 
-          - script: /tmp/docker exec -t -u 0 ${{ parameters.job_name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
+          - script: /tmp/docker exec -t -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -u 0 ${{ parameters.job_name }} $(Build.SourcesDirectory)/etc/ci/install_sudo.sh ${{ parameters.package_manager }}
             displayName: Install sudo
 
           - script: ${{ parameters.install_packages }}
