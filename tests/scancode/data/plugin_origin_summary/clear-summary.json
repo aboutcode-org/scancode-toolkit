@@ -2,7 +2,7 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post622.ca4dcb2.dirty.20190530214353",
+      "tool_version": "3.0.2.post658.ef069e7.dirty.20190701175204",
       "options": {
         "input": [
           "clear_summary/"
@@ -10,11 +10,12 @@
         "--copyright": true,
         "--info": true,
         "--json-pp": "clear-summary.json",
-        "--license": true
+        "--license": true,
+        "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-06-06T234321.851466",
-      "end_timestamp": "2019-06-06T234327.251991",
+      "start_timestamp": "2019-07-01T190259.905772",
+      "end_timestamp": "2019-07-01T190307.968903",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -47,6 +48,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "files_count": 13,
       "dirs_count": 4,
       "size_count": 627,
@@ -123,6 +125,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -152,6 +155,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 459,
@@ -228,6 +232,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -304,6 +309,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -380,6 +386,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -456,6 +463,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -532,6 +540,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -608,6 +617,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -684,6 +694,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -760,6 +771,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -836,6 +848,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -865,6 +878,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "files_count": 3,
       "dirs_count": 2,
       "size_count": 117,
@@ -894,6 +908,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -970,6 +985,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1046,6 +1062,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1075,6 +1092,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
@@ -1151,6 +1169,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

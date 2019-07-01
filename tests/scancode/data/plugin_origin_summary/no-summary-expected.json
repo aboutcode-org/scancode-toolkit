@@ -2,39 +2,21 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post622.ca4dcb2.dirty.20190530214353",
+      "tool_version": "3.0.2.post658.ef069e7.dirty.20190701175204",
       "options": {
         "input": [
           "no_summary/"
         ],
         "--copyright": true,
         "--info": true,
-        "--json-pp": "no-summary.json",
-        "--license": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-06-06T234629.299676",
-      "end_timestamp": "2019-06-06T234634.617394",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post645.da1303c.dirty.20190619010049",
-      "options": {
-        "input": [
-          "no-summary.json"
-        ],
-        "--from-json": true,
         "--json-pp": "no-summary-expected.json",
-        "--origin-summary": true
+        "--license": true,
+        "--origin-summary": true,
+        "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-06-19T010222.357873",
-      "end_timestamp": "2019-06-19T010222.381482",
+      "start_timestamp": "2019-07-01T190320.263138",
+      "end_timestamp": "2019-07-01T190329.079785",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -44,18 +26,12 @@
   ],
   "summaries": [
     {
-      "identifier": "apache_2_0_acme_corporation_1",
-      "license_expression": "apache-2.0",
-      "holders": [
-        "Acme Corporation"
-      ]
-    },
-    {
-      "identifier": "mit_omega_inc_1",
+      "identifier": 0,
       "license_expression": "mit",
       "holders": [
         "Omega Inc."
-      ]
+      ],
+      "type": "license-exp-holders"
     }
   ],
   "files": [
@@ -83,6 +59,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
       "summarized_to": null,
       "files_count": 7,
@@ -161,6 +138,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
       "summarized_to": null,
       "files_count": 0,
@@ -192,6 +170,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "origin_summary": {
         "license_expression": "apache-2.0",
         "holders": [
@@ -276,8 +255,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "apache_2_0_acme_corporation_1",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -354,8 +334,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "apache_2_0_acme_corporation_1",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -432,8 +413,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "apache_2_0_acme_corporation_1",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -463,6 +445,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "origin_summary": {
         "license_expression": "mit",
         "holders": [
@@ -500,6 +483,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "origin_summary": {
         "license_expression": "mit",
         "holders": [
@@ -507,7 +491,7 @@
         ],
         "count": 2
       },
-      "summarized_to": "mit_omega_inc_3",
+      "summarized_to": 0,
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -584,8 +568,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "mit_omega_inc_1",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -662,8 +647,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "mit_omega_inc_1",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -693,6 +679,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "origin_summary": {
         "license_expression": "mit",
         "holders": [
@@ -700,7 +687,7 @@
         ],
         "count": 1
       },
-      "summarized_to": "mit_omega_inc_3",
+      "summarized_to": 0,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
@@ -777,8 +764,9 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "origin_summary": {},
-      "summarized_to": "mit_omega_inc_2",
+      "summarized_to": null,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

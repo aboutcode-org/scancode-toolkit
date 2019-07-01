@@ -238,13 +238,15 @@ def create_license_exp_holders_fileset(resource, codebase):
     license_expression = resource.origin_summary.get('license_expression')
     holders = resource.origin_summary.get('holders')
     if license_expression and holders:
-        return Fileset(
-            type='license-exp-holders',
-            resources=get_fileset_resources(resource, codebase),
-            primary_resource=resource,
-            discovered_license_expression=license_expression,
-            discovered_holders=holders
-        )
+        fileset_resources = get_fileset_resources(resource, codebase)
+        if fileset_resources:
+            return Fileset(
+                type='license-exp-holders',
+                resources=fileset_resources,
+                primary_resource=resource,
+                discovered_license_expression=license_expression,
+                discovered_holders=holders
+            )
 
 
 def get_fileset_resources(resource, codebase):
@@ -271,6 +273,8 @@ def create_summaries(filesets, codebase, **kwargs):
     """
     Return a list of summaries from `filesets`
     """
+    # TODO: Introduce notion of precedence for package data
+    # TODO: Process filesets further before creating summaries
     summaries = []
     identifier = 0
     for fileset in filesets:
