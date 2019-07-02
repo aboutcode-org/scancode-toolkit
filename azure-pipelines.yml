@@ -3,7 +3,7 @@
 jobs:
 
 ################################################################################
-# These jobs are using VMs and Azure-provided Pythons
+# These jobs are using VMs and Azure-provided Pythons 2.7
 ################################################################################
 
     - template: etc/ci/azure-linux.yml
@@ -12,9 +12,8 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['2.7']
           test_suites:
-              misc: bin/py.test -vvs --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: bin/py.test -vvs --test-suite=all tests/scancode
-              extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
+              misc: bin/py.test -vvs --reruns=3 --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
+              scancode: bin/py.test -vvs --reruns=3 --test-suite=all tests/scancode
               license_base: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
               license_main: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
               license_retro: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
@@ -23,42 +22,10 @@ jobs:
               license_slic: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
               license_foss: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
               license_deb: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
-              license_cache: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_zzzz_cache.py
+              license_cache: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/licensedcode/test_zzzz_cache.py
+              extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
               cluecode: bin/py.test -n 2 -vvs --test-suite=all tests/cluecode
               packagedcode: bin/py.test -n 2 -vvs --test-suite=all tests/packagedcode
-      
-    - template: etc/ci/azure-linux.yml
-      parameters:
-          job_name: vm_ubuntu16_py36
-          image_name: ubuntu-16.04
-          python_versions: ['3.6']
-          test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
-
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos1013_py27
-          image_name: macos-10.13
-          python_versions: ['2.7']
-          test_suites:
-              all: bin/py.test -n 2 -vvs --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=1 tests/scancode
-
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos_1013_py36
-          image_name: macos-10.13
-          python_versions: ['3.6']
-          test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
-
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos1014
-          image_name: macos-10.14
-          python_versions: ['2.7', '3.6']
-          test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -67,46 +34,30 @@ jobs:
           python_versions: ['2.7']
           python_architecture: x86
           test_suites:
-              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
-              scancode: Scripts\py.test -vvs --reruns=1 tests\scancode
+              all: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode
+              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
 
-    - template: etc/ci/azure-win.yml
+    - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: Win2016_32_py36
-          image_name: vs2017-win2016
-          python_versions: ['3.6']
-          python_architecture: x86
+          job_name: macos1013_py27
+          image_name: macos-10.13
+          python_versions: ['2.7']
           test_suites:
-              commoncode: Scripts\py.test -n 2 -vvs tests\commoncode
+              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
-#    - template: etc/ci/azure-win.yml
-#      parameters:
-#          job_name: Win2016_64
-#          image_name: vs2017-win2016
-#          python_versions: ['2.7', '3.6']
-#          python_architecture: x64
-#          test_suites:
-#              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
-#              scancode: Scripts\py.test -vvs tests\scancode
-
-    - job: Build_release_archive
-      pool:
-          vmImage: ubuntu-16.04
-      steps:
-          - checkout: self
-            fetchDepth: 10
-
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '2.7'
-            displayName: 'Install Python 2.7'
-
-          - script: ./etc/release/release.sh
-            displayName: 'Build installable releases'
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos1014_py27
+          image_name: macos-10.14
+          python_versions: ['2.7']
+          test_suites:
+              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
 
 ################################################################################
-# These jobs are using containers and their own Python
+# These jobs are using containers and their own Python 2.7
 ################################################################################
 
 #    - template: etc/ci/azure-container-deb.yml
@@ -118,20 +69,6 @@ jobs:
 #          install_python: sudo apt-get install -y python python-dev
 #          test_suite_label: commoncode
 #          test_suite: bin/pytest -vvs tests/commoncode
-#
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: ubuntu16_py36
-#          container: ubuntu:xenial
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: |
-#             sudo apt-get -y install software-properties-common
-#             sudo add-apt-repository -y ppa:deadsnakes
-#             sudo apt-get -y update
-#             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
@@ -140,16 +77,6 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suite_label: commoncode
-          test_suite: bin/pytest -vvs tests/commoncode
-
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py36
-          container: ubuntu:bionic
-          python_path: python3.6
-          python_version: '3.6'
-          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
           test_suite_label: commoncode
           test_suite: bin/pytest -vvs tests/commoncode
 
@@ -165,35 +92,10 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: centos7_py36
-#          container: centos:7
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: |
-#              set -e -x
-#              sudo yum install -y epel-release
-#              sudo yum install -y python36 python36-devel python36-virtualenv
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
-#
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
 #          job_name: manylinux1_py27
 #          container: quay.io/pypa/manylinux1_x86_64:latest
 #          python_path: /opt/python/cp27-cp27mu/bin/python
 #          python_version: '2.7'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux1_py36
-#          container: quay.io/pypa/manylinux1_x86_64:latest
-#          python_path: /opt/python/cp36-cp36m/bin/python
-#          python_version: '3.6'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
 #          test_suite_label: commoncode
@@ -212,29 +114,6 @@ jobs:
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: manylinux2010_py36
-#          container: quay.io/pypa/manylinux2010_x86_64:latest
-#          python_path: /opt/python/cp36-cp36m/bin/python
-#          python_version: '3.6'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux2010_py37
-#          container: quay.io/pypa/manylinux2010_x86_64:latest
-#          python_path: /opt/python/cp37-cp37m/bin/python
-#          python_version: '3.7'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
-#
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
 #          job_name: fedora30_py27
 #          container: fedora:30
 #          package_manager: dnf
@@ -246,6 +125,152 @@ jobs:
 #          test_suite_label: commoncode
 #          test_suite: bin/pytest -vvs tests/commoncode
 #
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          job_name: debian9_py27
+#          container: debian:stretch
+#          python_path: python2.7
+#          python_version: '2.7'
+#          install_python: sudo apt-get install -y python python-dev
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+
+########################################################################
+# RELEASE on 2.7
+########################################################################
+
+    - job: Build_release_archive
+      pool:
+          vmImage: ubuntu-16.04
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '2.7'
+            displayName: 'Install Python 2.7'
+
+          - script: ./etc/release/release.sh
+            displayName: 'Build installable releases'
+
+
+################################################################################
+# These jobs are using VMs and Azure-provided Pythons 3.6
+################################################################################
+
+    - template: etc/ci/azure-linux.yml
+      parameters:
+          job_name: vm_ubuntu16_py36
+          image_name: ubuntu-16.04
+          python_versions: ['3.6']
+          test_suites:
+              commoncode: |
+                bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_functional.py
+
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos_1013_py36
+          image_name: macos-10.13
+          python_versions: ['3.6']
+          test_suites:
+              commoncode: |
+                bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_functional.py
+
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos1014_py36
+          image_name: macos-10.14
+          python_versions: ['3.6']
+          test_suites:
+              commoncode: |
+                bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_functional.py
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: Win2016_32_py36
+          image_name: vs2017-win2016
+          python_versions: ['3.6']
+          python_architecture: x86
+          test_suites:
+              commoncode: |
+                bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_functional.py
+
+
+################################################################################
+# These jobs are using containers and their own Python 3.6
+################################################################################
+
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          job_name: ubuntu16_py36
+#          container: ubuntu:xenial
+#          python_path: python3.6
+#          python_version: '3.6'
+#          install_python: |
+#             sudo apt-get -y install software-properties-common
+#             sudo add-apt-repository -y ppa:deadsnakes
+#             sudo apt-get -y update
+#             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+
+    - template: etc/ci/azure-container-deb.yml
+      parameters:
+          job_name: ubuntu18_py36
+          container: ubuntu:bionic
+          python_path: python3.6
+          python_version: '3.6'
+          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+          test_suite_label: commoncode
+          test_suite: |
+              bin/py.test -vvs tests/commoncode/test_codec.py
+              bin/py.test -vvs tests/commoncode/test_functional.py
+
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          job_name: centos7_py36
+#          container: centos:7
+#          python_path: python3.6
+#          python_version: '3.6'
+#          install_python: |
+#              set -e -x
+#              sudo yum install -y epel-release
+#              sudo yum install -y python36 python36-devel python36-virtualenv
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          job_name: manylinux1_py36
+#          container: quay.io/pypa/manylinux1_x86_64:latest
+#          python_path: /opt/python/cp36-cp36m/bin/python
+#          python_version: '3.6'
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+#
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          job_name: manylinux2010_py36
+#          container: quay.io/pypa/manylinux2010_x86_64:latest
+#          python_path: /opt/python/cp36-cp36m/bin/python
+#          python_version: '3.6'
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
+#          test_suite_label: commoncode
+#          test_suite: bin/pytest -vvs tests/commoncode
+#
+
+################################################################################
+# These jobs are using containers and their own Python 3.7
+################################################################################
+
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: fedora30_py37
@@ -259,22 +284,23 @@ jobs:
 #          test_suite_label: commoncode
 #          test_suite: bin/pytest -vvs tests/commoncode
 #
-#
-#    - template: etc/ci/azure-container-deb.yml
+#    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
-#          job_name: debian9_py27
-#          container: debian:stretch
-#          python_path: python2.7
-#          python_version: '2.7'
-#          install_python: sudo apt-get install -y python python-dev
+#          job_name: manylinux2010_py37
+#          container: quay.io/pypa/manylinux2010_x86_64:latest
+#          python_path: /opt/python/cp37-cp37m/bin/python
+#          python_version: '3.7'
+#          install_packages: echo "No extra packages for now"
+#          install_python: echo "Python is pre-installed"
 #          test_suite_label: commoncode
 #          test_suite: bin/pytest -vvs tests/commoncode
 
 
 ################################################################################
-# These jobs are using containers and their own Python: FAILING FOR NOW
+# These jobs are using containers and their own Python 3.6: FAILING FOR NOW
 ################################################################################
 
+# here we build from sources
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
 #          job_name: debian9_py36
@@ -299,3 +325,20 @@ jobs:
 #            sudo make altinstall
 #          test_suite_label: commoncode
 #          test_suite: bin/pytest -vvs tests/commoncode
+
+
+################################################################################
+# Misc: we do not support yet Windows 64
+################################################################################
+
+# 
+#    - template: etc/ci/azure-win.yml
+#      parameters:
+#          job_name: Win2016_64
+#          image_name: vs2017-win2016
+#          python_versions: ['2.7', '3.6']
+#          python_architecture: x64
+#          test_suites:
+#              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
+#              scancode: Scripts\py.test -vvs tests\scancode
+
