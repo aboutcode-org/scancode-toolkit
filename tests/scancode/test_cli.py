@@ -41,6 +41,7 @@ from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
+from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
 
 from scancode.cli_test_utils import check_json_scan
@@ -362,12 +363,15 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
             result_file] + ([verbosity] if verbosity else [])
     results = run_scan_click(args)
 
-    # the paths for each OS end up encoded differently.
+    # the paths for each OS ends up encoded differently.
     # See for details:
     # https://github.com/nexB/scancode-toolkit/issues/390
     # https://github.com/nexB/scancode-toolkit/issues/688
+    # https://github.com/nexB/scancode-toolkit/issues/1635
 
-    if on_linux:
+    if on_macos_14_or_higher:
+        expected = 'unicodepath/unicodepath.expected-mac14.json' + verbosity
+    elif on_linux:
         expected = 'unicodepath/unicodepath.expected-linux.json' + verbosity
     elif on_mac:
         expected = 'unicodepath/unicodepath.expected-mac.json' + verbosity
@@ -477,7 +481,7 @@ def test_scan_can_handle_weird_file_names():
         raise Exception('Not a supported OS?')
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
-
+@skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
@@ -733,7 +737,7 @@ def test_get_displayable_summary():
     from scancode.cli import get_displayable_summary
     from scancode.resource import Codebase
 
-     # Set up test codebase
+    # Set up test codebase
     test_codebase = test_env.get_test_loc('resource/client')
     codebase = Codebase(test_codebase, strip_root=True)
     codebase.timings['scan'] = 0
@@ -848,7 +852,7 @@ def test_merge_multiple_scans():
     test_file_2 = test_env.get_test_loc('resource/virtual_codebase/thirdparty.json')
     result_file = test_env.get_temp_file('json')
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
-    result = run_scan_click(args, expected_rc=0)
+    run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('resource/virtual_codebase/out.json')
     with open(expected, 'rb') as f:
         expected_files = json.loads(f.read())['files']
