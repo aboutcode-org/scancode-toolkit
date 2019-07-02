@@ -50,33 +50,6 @@ def os_arch():
         raise Exception('Unsupported OS/platform %r' % sys_platform)
     return os, arch
 
-# FIXME use these for architectures
-
-
-'''
-darwin/386
-darwin/amd64
-
-linux/386
-linux/amd64
-linux/arm
-
-windows/386
-windows/amd64
-
-freebsd/386
-freebsd/amd64
-freebsd/arm
-
-openbsd/386
-openbsd/amd64
-
-netbsd/386
-netbsd/amd64
-netbsd/arm
-
-plan9/386
-'''
 #
 # OS/Arch
 #
@@ -89,6 +62,25 @@ on_posix = not on_windows and (on_mac or on_linux)
 current_os_arch = '%(current_os)s-%(current_arch)s' % locals()
 noarch = 'noarch'
 current_os_noarch = '%(current_os)s-%(noarch)s' % locals()
+
+del os_arch
+
+
+def is_on_macos_14_or_higher():
+    """
+    Return True if the current OS is macPS 14 or higher.
+    It uses APFS by default and has a different behavior wrt. unicode and
+    filesystem encodings.
+    """
+    import platform
+    macos_ver = platform.mac_ver()
+    macos_ver = macos_ver[0]
+    macos_ver = macos_ver.split('.')
+    return macos_ver > ['10', '14']
+
+on_macos_14_or_higher = is_on_macos_14_or_higher()
+
+del is_on_macos_14_or_higher
 
 #
 # Shared library file extensions
