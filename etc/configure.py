@@ -82,6 +82,7 @@ import stat
 import subprocess
 import sys
 
+
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
 on_win = False
@@ -96,10 +97,12 @@ else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
 
+
 # Python versions
 _sys_v0 = sys.version_info[0]
 py2 = _sys_v0 == 2
 py3 = _sys_v0 == 3
+
 
 # common file basenames for requirements and scripts
 base = ('base',)
@@ -296,7 +299,9 @@ def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
         configured_pip = quote(os.path.join(root_dir, 'bin', 'pip'))
         base_cmd = [configured_pip]
     pcmd = base_cmd + [
-        'install', '--upgrade', '--no-index', '--no-cache-dir',
+        'install',
+        '--upgrade',
+        '--no-index', '--no-cache-dir',
     ]
     pcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
     if quiet:
@@ -579,7 +584,7 @@ if __name__ == '__main__':
 
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
     run_scripts(configs, root_dir, configured_python, quiet=quiet)
-    chmod_bin(bin_dir)
+    # chmod_bin(bin_dir)
     if not quiet:
         print("* Configuration completed.")
         print()
