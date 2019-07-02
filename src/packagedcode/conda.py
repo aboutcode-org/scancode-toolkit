@@ -70,7 +70,7 @@ class CondaPackage(models.Package):
     filetypes = ('.yaml', '.yml')
     default_type = 'conda'
     default_web_baseurl = None
-    default_download_baseurl = None
+    default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
     default_api_baseurl = None
 
     @classmethod
@@ -91,6 +91,10 @@ class CondaPackage(models.Package):
             return manifest_resource.parent(codebase)
         else:
             return manifest_resource
+
+    @classmethod
+    def extra_root_dirs(cls):
+        return ['recipe', 'info']
 
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
