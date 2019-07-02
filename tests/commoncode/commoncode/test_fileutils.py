@@ -38,6 +38,7 @@ from commoncode.fileutils import fsdecode
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_mac
+from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
 from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import make_non_executable
@@ -293,21 +294,6 @@ class TestFileUtils(FileBasedTesting):
         assert a == fsencode(fsdecode(b))
         assert b == fsdecode(fsencode(a))
         assert b == fsdecode(fsencode(b))
-
-
-def is_on_macos_14_or_higher():
-    """
-    Return True if the current OS is macPS 14 or higher.
-    It uses APFS by default and has a different behavior wrt. unicode and
-    filesystem encodings.
-    """
-    import platform
-    macos_ver = platform.mac_ver()
-    macos_ver = macos_ver[0]
-    macos_ver = macos_ver.split('.')
-    return macos_ver > ['10', '14']
-
-on_macos_14_or_higher = is_on_macos_14_or_higher()
 
 
 class TestFileUtilsWalk(FileBasedTesting):
