@@ -919,7 +919,7 @@ class TestIndexPartialMatch(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        expected = Span(0, 941) | Span(943, 1722)
+        expected = Span(0, 941) | Span(943, 1723)
         assert expected == match.qspan
         assert match_seq.MATCH_SEQ == match.matcher
 
@@ -1082,8 +1082,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-mit', (231, 238), Span(934, 997)),
-            (u'free-unknown', (306, 307), Span(1293, 1315))
+            (u'fsf-mit', (231, 238), Span(935, 998)),
+            (u'free-unknown', (306, 307), Span(1294, 1316))
         ]
         self.check_position('positions/automake.pl', expected)
 
