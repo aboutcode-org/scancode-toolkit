@@ -333,17 +333,6 @@ def run_scripts(configs, root_dir, configured_python, quiet=False):
         call(cmd, root_dir)
 
 
-def chmod_bin(directory):
-    """
-    Makes the directory and its children executable recursively.
-    """
-    rwx = (stat.S_IXUSR | stat.S_IRUSR | stat.S_IWUSR
-           | stat.S_IXGRP | stat.S_IXOTH)
-    for path, _, files in os.walk(directory):
-        for f in files:
-            os.chmod(os.path.join(path, f), rwx)
-
-
 def get_conf_files(config_dir_paths, root_dir, file_names=requirement_filenames, quiet=False):
     """
     Return a list of collected path-prefixed file paths matching names in a
@@ -584,7 +573,6 @@ if __name__ == '__main__':
 
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
     run_scripts(configs, root_dir, configured_python, quiet=quiet)
-    # chmod_bin(bin_dir)
     if not quiet:
         print("* Configuration completed.")
         print()
