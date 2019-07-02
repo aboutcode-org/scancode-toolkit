@@ -97,7 +97,7 @@ class CondaPackage(models.Package):
 
 
 def is_conda_yaml(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower().endswith(('.yaml', '.yml'))
+    return (filetype.is_file(location) and fileutils.file_name(location).lower().endswith(('.yaml', '.yml')))
 
 
 def parse(location):
