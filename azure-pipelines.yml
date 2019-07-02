@@ -197,8 +197,8 @@ jobs:
           python_architecture: x86
           test_suites:
               commoncode: |
-                bin/py.test -vvs tests/commoncode/test_codec.py
-                bin/py.test -vvs tests/commoncode/test_functional.py
+                Scripts\py.test -vvs tests\commoncode\test_codec.py
+                Scripts\py.test -vvs tests\commoncode\test_functional.py
 
 
 ################################################################################
