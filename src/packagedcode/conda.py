@@ -67,7 +67,8 @@ if TRACE:
 @attr.s()
 class CondaPackage(models.Package):
     metafiles = ('meta.yaml',  'META.yml',)
-    filetypes = ('.yaml', '.yml')
+    filetypes = ('.bz', '.bz2', 'bzip2',)
+    mimetypes = ('application/x-bzip2',)
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
@@ -79,7 +80,7 @@ class CondaPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.endswith(('.yaml', '.yml')):
+        if manifest_resource.name.lower().endswith(('.yaml', '.yml')):
             # the root is either the parent or further up for yaml stored under
             # a INFO dir
             path = 'info/recipe.tar-extract/recipe/meta.yaml'
