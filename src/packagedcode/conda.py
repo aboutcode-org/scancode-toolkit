@@ -32,11 +32,12 @@ import logging
 import sys
 
 import attr
-from  saneyaml import load as yamlload
 from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode import saneyaml
+
 from packagedcode import models
 from packageurl import PackageURL
 
@@ -205,7 +206,7 @@ def get_yaml_data(location):
                 for variable, value in variables.items():
                     line = line.replace('{{ ' + variable + ' }}', value)                        
             yaml_lines.append(line)
-    return yamlload('\n'.join(yaml_lines))
+    return saneyaml.load('\n'.join(yaml_lines))
     
     
 def get_variables(location):
