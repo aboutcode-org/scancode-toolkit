@@ -202,18 +202,27 @@ def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **k
             origin, top_count = origin_count.most_common(1)[0]
             # TODO: Check for contradictions when performing summarizations
             if is_majority(top_count, resource.files_count, origin_summary_threshold):
-                holders, license_expression = origin
-                resource.origin_summary['license_expression'] = license_expression
-                resource.origin_summary['holders'] = holders
+                majority_holders, majority_license_expression = origin
+                resource.origin_summary['license_expression'] = majority_license_expression
+                resource.origin_summary['holders'] = majority_holders
                 resource.origin_summary['count'] = top_count
-                codebase.save_resource(resource)
+                resource.save(codebase)
 
-            # Check to see which one of the children are part of the majority and create a Fileset from that
-            else:
-                for child in resource.children(codebase):
-                    fs = create_license_exp_holders_fileset(child, codebase)
-                    if fs:
-                        yield fs
+        # If we have a summary for the directory we're in, we check to see if any of our children
+        # have summaries and yield filesets for them
+        # We do this to make sure we report each fileset that has a majority, so it doesn't get
+        # lost when another license expression, holders combination is more dominant later on
+        if resource.origin_summary:
+            for child in children:
+                if child.is_file:
+                    continue
+                # We only care about the children with different expressions and holders from ours
+                if (child.origin_summary['license_expression'] == majority_license_expression 
+                        and child.origin_summary['holders'] == majority_holders):
+                    continue
+                fs = create_license_exp_holders_fileset(child, codebase)
+                if fs:
+                    yield fs
 
     # Yield a Fileset for root if there is a majority
     root = codebase.get_resource(0)
