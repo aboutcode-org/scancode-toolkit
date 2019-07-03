@@ -134,11 +134,15 @@ class OriginSummary(PostScanPlugin):
 
         filesets = []
         # Collecters should be independent and not depend on the result of another
-        fileset_collecters = [get_package_filesets, get_license_exp_holders_fileset]
+        fileset_collecters = [get_package_filesets, get_license_exp_holders_filesets]
         for collecter in fileset_collecters:
             filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        processed_filesets = process_filesets(filesets, codebase)
+        processed_filesets = []
+        fileset_processors = [process_license_exp_holders_filesets]
+        for processor in fileset_processors:
+            processed_filesets.extend(processor(filesets, codebase, **kwargs))
+
         codebase.attributes.summaries = create_summaries(processed_filesets, codebase)
 
 
@@ -159,7 +163,7 @@ def get_package_filesets(codebase, **kwargs):
             )
 
 
-def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **kwargs):
+def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None, **kwargs):
     """
     Yield a Fileset for each directory where 75% or more of the files have the same license
     expression and copyright holders ONLY IF its parent directory has no majority license expression
@@ -281,15 +285,30 @@ def get_fileset_resources(resource, codebase):
     return resources
 
 
-def process_filesets(filesets, codebase, **kwargs):
+def process_license_exp_holders_filesets(filesets, codebase, **kwargs):
     """
-    We combine/remove/etc. filesets here
+    Combine Filesets with the same license expression and holders
+    into a single Fileset
     """
-    processed_filesets = []
-    # TODO: Put in processing logic
+    filesets_by_holders_lic_exp = defaultdict(list)
     for fileset in filesets:
-        processed_filesets.append(fileset)
-    return processed_filesets
+        if not (fileset.type == 'license-exp-holders'):
+            # We yield the other Filesets that we don't handle
+            yield fileset
+            continue
+        origin = fileset.discovered_holders, fileset.discovered_license_expression
+        filesets_by_holders_lic_exp[origin].append(fileset)
+
+    for (fileset_holders, fileset_license_expression), filesets in filesets_by_holders_lic_exp.items():
+        fileset_resources = []
+        for fileset in filesets:
+            fileset_resources.extend(fileset.resources)
+        yield Fileset(
+            type='license-exp-holders',
+            resources=fileset_resources,
+            discovered_license_expression=fileset_license_expression,
+            discovered_holders=fileset_holders
+        )
 
 
 def create_summaries(filesets, codebase, **kwargs):
