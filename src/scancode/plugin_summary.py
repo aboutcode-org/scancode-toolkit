@@ -138,10 +138,10 @@ class OriginSummary(PostScanPlugin):
         for collecter in fileset_collecters:
             filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        processed_filesets = []
+        processed_filesets = filesets
         fileset_processors = [process_license_exp_holders_filesets]
         for processor in fileset_processors:
-            processed_filesets.extend(processor(filesets, codebase, **kwargs))
+            processed_filesets = list(processor(processed_filesets))
 
         codebase.attributes.summaries = create_summaries(processed_filesets, codebase)
 
@@ -285,7 +285,7 @@ def get_fileset_resources(resource, codebase):
     return resources
 
 
-def process_license_exp_holders_filesets(filesets, codebase, **kwargs):
+def process_license_exp_holders_filesets(filesets):
     """
     Combine Filesets with the same license expression and holders
     into a single Fileset
@@ -311,7 +311,7 @@ def process_license_exp_holders_filesets(filesets, codebase, **kwargs):
         )
 
 
-def create_summaries(filesets, codebase, **kwargs):
+def create_summaries(filesets, codebase):
     """
     Return a list of summaries from `filesets`
     """
