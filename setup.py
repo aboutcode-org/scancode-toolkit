@@ -141,6 +141,7 @@ setup(
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
         'more_itertools <  6.0.0; python_version == "2.7"',
+        'path.py',
         # end hack
 
         # cluecode
