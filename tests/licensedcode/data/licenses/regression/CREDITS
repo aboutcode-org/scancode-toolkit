@@ -1,0 +1,136 @@
+	This is at least a partial credits-file of people that have
+	contributed to the Ltrace project.  It is sorted by name and
+	formatted to allow easy grepping and beautification by
+	scripts.  The fields are: name (N), email (E), web-address
+	(W), PGP key ID and fingerprint (P), description (D), and
+	snail-mail address (S).
+----------
+
+N: Pat Beirne
+E: pbeirne@home.com
+D: ARM port
+
+N: Anton Blanchard
+E: anton@samba.org
+D: PowerPC port
+
+N: Jakub Bogusz
+E: qboosh@pld-linux.org
+D: Alpha port
+
+N: Paul Buerger
+E: pbuerger@avetec.org
+D: Fix measuring time spent in a syscall
+
+N: Silvio Cesare
+E: silvio@big.net.au
+D: ELF hacking
+
+N: Juan Cespedes
+W: http://cespedes.org/
+E: cespedes@debian.org
+D: All development up to 0.5.3
+
+N: Luca Clementi
+E: luca.clementi@gmail.com
+D: stack trace improvement
+
+N: Joe Damato
+E: ice799@gmail.com
+D: libdl support
+D: libunwind support
+D: Release 0.6
+
+N: Sedat Dilek
+E: sedat.dilek@gmail.com
+D: Fixes and testing for MIPS arch
+
+N: Michael K. Edwards
+E: m.k.edwards@gmail.com
+D: Fixes
+
+N: Morten Eriksen
+E: mortene@sim.no
+D: Fixes
+
+N: Timothy Fesig
+E: slate@us.ibm.com
+D: s390 port
+
+N: Roman Hodek
+E: Roman.Hodek@informatik.uni-erlangen.de
+D: m68k port
+
+N: Edgar E. Iglesias
+E: edgar.iglesias@gmail.com
+D: CRIS port
+D: MIPSel port
+
+N: Andreas Jaeger
+E: aj@suse.de
+D: x86-64 port
+
+N: Jakub Jelinek
+E: jakub@redhat.com
+D: SPARC port
+D: x86-64 fixes
+D: libelf support
+D: Fixes
+
+N: Michal Ludvig
+E: mludvig@suse.cz
+D: x86-64 fixes
+D: Support for Elf64 binaries
+
+N: Petr Machata
+E: pmachata@redhat.com
+D: Tracing multi-threaded processes
+D: Tracing inter-library calls
+D: Tracing PIE binaries
+D: Fetch backend, ABI fixes for various arches
+D: PowerPC fixes
+D: Manual pages
+D: Release 0.7
+
+N: Santiago Romero
+E: santiago.romero@imdea.org
+
+N: Andreas Schwab
+E: schwab@linux-m68k.org
+D: m68k fixes, fetch backend
+
+N: César Sánchez
+E: cesar.sanchez@imdea.org
+
+N: Eric Vaitl
+E: evaitl@cisco.com
+D: MIPSel port
+
+N: Ian Wienand
+E: ianw@gelato.unsw.edu.au
+D: ia64 port
+
+N: Peter Wu
+E: lekensteyn@gmail.com
+W: https://lekensteyn.nl/
+D: Fixes
+
+N: Andrey Zonov
+E: zont@FreeBSD.org
+D: Portability fixes
+
+
+# This file is part of ltrace.
+#
+# ltrace is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# ltrace is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.

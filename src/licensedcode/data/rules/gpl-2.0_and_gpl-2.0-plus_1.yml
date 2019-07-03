@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 AND gpl-2.0-plus
+is_license_notice: yes
+relevance: 90
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+notes: a notice found in Valgrind README... and this is a tad hard to parse.

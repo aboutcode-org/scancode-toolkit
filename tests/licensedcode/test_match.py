@@ -912,7 +912,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
     def test_get_full_matched_text(self):
@@ -942,11 +942,11 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
 
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
         # the text is finally rstripped
-        matched_text = match.matched_text()
+        matched_text = match.matched_text(_usecache=False)
         assert expected.rstrip() == matched_text
 
 
@@ -957,7 +957,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
         matched_text = u''.join(get_full_matched_text(
-            match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
+            match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>', _usecache=False))
         assert expected == matched_text
 
         # test again using whole_lines
@@ -981,7 +981,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         match = result[0]
 
         expected = 'MODULE_LICENSE_GPL'
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
     def test_get_full_matched_text_does_not_munge_plus(self):
@@ -996,7 +996,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         match = result[0]
 
         expected = 'MODULE_LICENSE_GPL+ +'
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
     def test_tokenize_matched_text_does_cache_last_call_from_query_string_and_location(self):
@@ -1007,7 +1007,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         result2 = tokenize_matched_text(location, query_string, dictionary)
         assert result2 is result1
 
-        location = self.get_test_loc('match/query.txt')
+        location = self.get_test_loc('match/tokenize_matched_text_query.txt')
         query_string = None
         result3 = tokenize_matched_text(location, query_string, dictionary)
         assert result3 is not result2
@@ -1146,7 +1146,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         rules = models.load_rules(rules_data_dir)
         idx = LicenseIndex(rules)
 
-        results = [match.matched_text() for match in idx.match(location=query_location)]
+        results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
         expected = [
             'This source code is licensed under both the Apache 2.0 license '
             '(found in the\n#  LICENSE',
@@ -1158,6 +1158,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
     def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
         query_location = self.get_test_loc('matched_text_spdx/query.txt')
         idx = cache.get_index()
-        results = [match.matched_text() for match in idx.match(location=query_location)]
+        results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
         expected = ['BSD-2-Clause-Patent']
         assert expected == results

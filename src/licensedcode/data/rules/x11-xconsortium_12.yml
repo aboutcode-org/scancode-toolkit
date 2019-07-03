@@ -1,3 +1,4 @@
 license_expression: x11-xconsortium
 is_license_reference: yes
 relevance: 70
+only_known_words: yes

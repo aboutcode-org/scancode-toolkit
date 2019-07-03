@@ -1,0 +1,5 @@
+Note:
+- libexif is LGPLv2.1
+- do not statically link to it
+- do not upgrade to LGPLv3
+

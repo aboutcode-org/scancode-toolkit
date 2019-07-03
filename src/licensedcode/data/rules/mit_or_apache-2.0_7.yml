@@ -4,3 +4,4 @@ referenced_filenames:
   - LICENSE-APACHE
   - LICENSE-MIT
 relevance: 100
+minimum_coverage: 80

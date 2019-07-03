@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE.GPL

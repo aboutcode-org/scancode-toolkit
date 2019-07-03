@@ -68,7 +68,7 @@ STOPWORDS = frozenset({
     'h5',
     'blockquote',
     'body',
-    'id',
+    #'id',
     'script',
     'rel',
 

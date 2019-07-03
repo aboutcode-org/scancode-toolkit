@@ -533,10 +533,15 @@ class LicenseMatch(object):
     # FIXME: this should be done for all the matches found in a given scanned
     # location at once to avoid reprocessing many times the original text
     def matched_text(self, whole_lines=False,
-                     highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
+                     highlight_matched=u'%s', highlight_not_matched=u'[%s]',
+                     _usecache=True):
         """
         Return the matched text for this match or an empty string if no
         query exists for this match.
+
+        _usecache can be set to False in testsing to avoid cache unwanted side
+        effects as the caching is dependent on the index being used and the
+        index can cahnge when testing.
         """
         query = self.query
         if not query:
@@ -550,7 +555,7 @@ class LicenseMatch(object):
             idx=query.idx,
             whole_lines=whole_lines,
             highlight_matched=highlight_matched,
-            highlight_not_matched=highlight_not_matched)
+            highlight_not_matched=highlight_not_matched, _usecache=_usecache)
         ).rstrip()
 
 
@@ -1399,7 +1404,6 @@ def tokenize_matched_text(location, query_string, dictionary, _cache={}):
     cached = _cache.get(key)
     if cached:
         return cached
-
     # we only cache the last call
     _cache.clear()
     _cache[key] = result = list(
@@ -1462,7 +1466,7 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
 
         # tagged known matched tokens (useful for highlighting)
         if tok.pos != -1 and tok.is_known and tok.pos in match_qspan:
-            tok = attr.evolve(tok, is_matched = True)
+            tok = attr.evolve(tok, is_matched=True)
             is_included = True
             if TRACE_MATCHED_TEXT_DETAILS:
                 logger_debug('  tok.is_matched = True')
@@ -1518,7 +1522,7 @@ def get_full_matched_text(
         match, location=None, query_string=None, idx=None,
         whole_lines=False,
         highlight_matched=u'%s', highlight_not_matched=u'[%s]',
-        stopwords=STOPWORDS):
+        stopwords=STOPWORDS, _usecache=True):
     """
     Yield unicode strings corresponding to the full matched query text
     given a query file at `location` or a `query_string`, a `match` LicenseMatch
@@ -1537,10 +1541,24 @@ def get_full_matched_text(
     unmatched token sequence in [] square brackets. Punctuation is not
     highlighted.
     """
+    if TRACE_MATCHED_TEXT:
+        logger_debug('get_full_matched_text:  match:', match)
     assert location or query_string
     assert idx
     # Create and process a stream of Tokens
-    tokens = tokenize_matched_text(location, query_string, dictionary=idx.dictionary)
+    if not _usecache:
+        # for testing only, reset cache on each call
+        tokens = tokenize_matched_text(
+            location, query_string, dictionary=idx.dictionary, _cache={})
+    else:
+        # for testing only
+        tokens = tokenize_matched_text(
+            location, query_string, dictionary=idx.dictionary, _cache={})
+
+
+    if TRACE_MATCHED_TEXT:
+        tokens = list(tokens)
+        logger_debug('get_full_matched_text:  tokens:', tokens)
     tokens = reportable_tokens(
         tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
 

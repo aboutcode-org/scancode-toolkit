@@ -1,0 +1,4 @@
+license_expression: bzip2-libbzip-2010
+is_license_reference: yes
+relevance: 80
+notes: seen in Valgrind. This is bzip2-libbzip-2010 and not a bsd-new.

@@ -83,8 +83,8 @@ shared tokens. We can skip rules based on thresholds and we then rank and keep
 the top rules.
 
 
-Tokens ids  multisets aka. frequency counters aka. term vectors
-===============================================================
+Tokens ids multisets aka. frequency counters aka. term vectors
+==============================================================
 
 A tokens frequency counter maps a token id to the number of times it shows up in
 a text. This is also called a multiset or a bag or counter or a term vector.

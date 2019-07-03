@@ -1,0 +1,3 @@
+The match.asm code in contrib is under the GNU General Public License.
+Since it's part of zlib, doesn't that mean that all of zlib falls under the
+GNU GPL?

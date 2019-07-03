@@ -1,0 +1,4 @@
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - Documentation/scsi/dpti.txt

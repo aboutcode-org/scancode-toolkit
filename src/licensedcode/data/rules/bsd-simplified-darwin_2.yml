@@ -1,5 +1,6 @@
 license_expression: bsd-simplified-darwin
-is_license_text: yes
+is_license_notice: yes
+relevance: 100
 referenced_filenames:
     - COPYING
 minimum_coverage: 90
