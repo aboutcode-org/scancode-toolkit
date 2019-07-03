@@ -220,20 +220,22 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_tru
 def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    args = ['--copyright', '--timeout', '0.000001', '--verbose',
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '--timeout', '0.000001', '--verbose',
             test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     assert 'ERROR: Processing interrupted: timeout' in result.output
     assert 'patchelf.pdf' in result.output
     result_json = json.loads(open(result_file).read())
-    assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: copyrights')
+    assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: emails')
     assert result_json['headers'][0]['errors']
 
 
 def test_failing_scan_return_proper_exit_code():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    args = ['--copyright', '--timeout', '0.000001',
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '--timeout', '0.000001',
             test_file, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
@@ -317,42 +319,31 @@ def test_scan_works_with_no_processes_non_threaded_mode():
 
 
 def test_scan_works_with_multiple_processes_and_timeouts():
-    # this contains test files with a lot of copyrights that should
-    # take more thant timeout to scan
-    test_dir = test_env.get_test_loc('timeout', copy=True)
-    # add some random bytes to the test files to ensure that the license results will
-    # not be cached
-    import time, random
-    for tf in fileutils.resource_iter(test_dir, with_dirs=False):
-        with open(tf, 'a') as tfh:
-            tfh.write(
-                '(c)' + str(time.time()) + repr([random.randint(0, 10 ** 6) for _ in range(10000)]) + '(c)')
+    test_dir = test_env.get_test_loc('timeout')
 
     result_file = test_env.get_temp_file('json')
 
-    args = ['--copyright', '--processes', '2', '--timeout', '0.000001',
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['--email', '--processes', '2',
+            '--timeout', '0.00000001',
+            # this will guarantee that an email scan takes at least one second
+            '--test-mode',
             '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
     expected = [
         [(u'path', u'test1.txt'),
          (u'type', u'file'),
-         (u'authors', []),
-         (u'copyrights', []),
-         (u'holders', []),
-         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
+         (u'emails', []),
+         (u'scan_errors', [u'ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test2.txt'),
          (u'type', u'file'),
-         (u'authors', []),
-         (u'copyrights', []),
-         (u'holders', []),
-         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
+         (u'emails', []),
+         (u'scan_errors', [u'ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test3.txt'),
          (u'type', u'file'),
-         (u'authors', []),
-         (u'copyrights', []),
-         (u'holders', []),
-         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
+         (u'emails', []),
+         (u'scan_errors', [u'ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]
 
     result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
@@ -538,8 +529,9 @@ def test_scan_can_run_from_other_directory():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use very short timeouts to simulate an error
-    args = ['-c', '-n', '0', '--timeout', '0.0001', test_file, '--json', '-']
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '-n', '0', '--timeout', '0.0001',
+            test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
     assert 'Path: many_copyrights.c' in stderr
@@ -549,8 +541,9 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use very short timeouts to simulate an error
-    args = ['-c', '-n', '2', '--timeout', '0.0001', test_file, '--json', '-']
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '-n', '2', '--timeout', '0.0001',
+            test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
     assert 'Path: many_copyrights.c' in stderr
@@ -560,23 +553,25 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
 
 def test_scan_logs_errors_messages_verbosely():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use very short timeouts to simulate an error
-    args = ['-c', '--verbose', '-n', '0', '--timeout', '0.0001', test_file, '--json', '-']
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '--verbose', '-n', '0', '--timeout', '0.0001',
+            test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
     assert 'Path: many_copyrights.c' in stderr
 
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stdout
-    assert 'ERROR: for scanner: copyrights:' in stdout
+    assert 'ERROR: for scanner: emails:' in stdout
 
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stderr
-    assert 'ERROR: for scanner: copyrights:' in stderr
+    assert 'ERROR: for scanner: emails:' in stderr
 
 
 def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use very short timeouts to simulate an error
-    args = ['-c', '--verbose', '-n', '2', '--timeout', '0.0001', test_file, '--json', '-']
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '--verbose', '-n', '2', '--timeout', '0.0001',
+            test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
     assert 'Path: many_copyrights.c' in stderr
@@ -636,6 +631,22 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
         assert expected1 in result.output
         assert expected2 in result.output
         assert expected3 not in result.output
+
+
+def test_scan_does_scan_php_composer():
+    test_file = test_env.get_test_loc('composer/composer.json')
+    expected_file = test_env.get_test_loc('composer/composer.expected.json')
+    result_file = test_env.get_temp_file('results.json')
+    run_scan_click(['--package', test_file, '--json', result_file])
+    check_json_scan(expected_file, result_file)
+
+
+def test_scan_does_scan_rpm():
+    test_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm')
+    expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
+    result_file = test_env.get_temp_file('results.json')
+    run_scan_click(['--package', test_file, '--json', result_file])
+    check_json_scan(expected_file, result_file, regen=False)
 
 
 def test_scan_cli_help(regen=False):
@@ -797,7 +808,8 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
 def test_check_error_count():
     test_dir = test_env.get_test_loc('failing')
     result_file = test_env.get_temp_file('json')
-    args = ['--email', '--url', '--timeout', '0.000001',
+    # we use a short timeout and a --test-mode --email scan to simulate an error
+    args = ['-e', '--test-mode', '--timeout', '0.000001',
             test_dir, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     output = result.output

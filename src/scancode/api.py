@@ -104,12 +104,19 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     return results
 
 
-def get_emails(location, threshold=50, **kwargs):
+def get_emails(location, threshold=50, test_mode=False, **kwargs):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
     mappings for emails detected in the file at `location`.
     Return only up to `threshold` values. Return all values if `threshold` is 0.
+
+    If test_mode is True, the scan will be slow for testing purpose and pause
+    for one second.
     """
+    if test_mode:
+        import time
+        time.sleep(1)
+
     from cluecode.finder import find_emails
     results = []
 
