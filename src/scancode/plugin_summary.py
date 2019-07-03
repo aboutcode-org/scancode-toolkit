@@ -269,7 +269,7 @@ def get_fileset_resources(resource, codebase):
     holders = resource.origin_summary.get('holders')
     if not license_expression and holders:
         return
-    resources = []
+    resources = [resource]
     for r in resource.walk(codebase, topdown=False):
         if ((r.is_file
                 and combine_expressions(r.license_expressions) == license_expression
