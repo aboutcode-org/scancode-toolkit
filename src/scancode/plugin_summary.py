@@ -126,7 +126,9 @@ class OriginSummary(PostScanPlugin):
 
         # TODO: Should we activate or deactivate certain summarization options based on
         # the attributes that are present in the codebase?
-        if not hasattr(root, 'copyrights') or not hasattr(root, 'licenses'):
+        if (not hasattr(root, 'copyrights')
+                or not hasattr(root, 'licenses')
+                or not hasattr(root, 'packages')):
             # TODO: Raise warning(?) if these fields are not there
             return
 
@@ -136,7 +138,8 @@ class OriginSummary(PostScanPlugin):
         for collecter in fileset_collecters:
             filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        codebase.attributes.summaries = create_summaries(filesets, codebase)
+        processed_filesets = process_filesets(filesets, codebase)
+        codebase.attributes.summaries = create_summaries(processed_filesets, codebase)
 
 
 def get_package_filesets(codebase, **kwargs):
@@ -217,7 +220,7 @@ def get_license_exp_holders_fileset(codebase, origin_summary_threshold=None, **k
                 if child.is_file:
                     continue
                 # We only care about the children with different expressions and holders from ours
-                if (child.origin_summary['license_expression'] == majority_license_expression 
+                if (child.origin_summary['license_expression'] == majority_license_expression
                         and child.origin_summary['holders'] == majority_holders):
                     continue
                 fs = create_license_exp_holders_fileset(child, codebase)
@@ -276,6 +279,17 @@ def get_fileset_resources(resource, codebase):
                 and r.origin_summary.get('holders', '') == holders)):
             resources.append(r)
     return resources
+
+
+def process_filesets(filesets, codebase, **kwargs):
+    """
+    We combine/remove/etc. filesets here
+    """
+    processed_filesets = []
+    # TODO: Put in processing logic
+    for fileset in filesets:
+        processed_filesets.append(fileset)
+    return processed_filesets
 
 
 def create_summaries(filesets, codebase, **kwargs):
