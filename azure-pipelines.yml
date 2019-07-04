@@ -167,6 +167,7 @@ jobs:
           test_suites:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_fileutils.py
                 bin/py.test -vvs tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-mac.yml
@@ -177,6 +178,7 @@ jobs:
           test_suites:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_fileutils.py
                 bin/py.test -vvs tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-mac.yml
@@ -187,6 +189,7 @@ jobs:
           test_suites:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py
+                bin/py.test -vvs tests/commoncode/test_fileutils.py
                 bin/py.test -vvs tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-win.yml
@@ -198,6 +201,7 @@ jobs:
           test_suites:
               commoncode: |
                 Scripts\py.test -vvs tests\commoncode\test_codec.py
+                Scripts\py.test -vvs tests\commoncode\test_fileutils.py
                 Scripts\py.test -vvs tests\commoncode\test_functional.py
 
 
@@ -229,6 +233,7 @@ jobs:
           test_suite_label: commoncode
           test_suite: |
               bin/py.test -vvs tests/commoncode/test_codec.py
+              bin/py.test -vvs tests/commoncode/test_fileutils.py
               bin/py.test -vvs tests/commoncode/test_functional.py
 
 #    - template: etc/ci/azure-container-rpm.yml

@@ -46,6 +46,9 @@ from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
 from commoncode import compat
 
+import pytest
+pytestmark = pytest.mark.scanpy3 #NOQA
+
 
 class TestPermissions(FileBasedTesting):
     """
@@ -152,7 +155,7 @@ class TestPermissions(FileBasedTesting):
         src_file = self.get_temp_file()
         dest = self.get_temp_dir()
         with open(src_file, 'wb') as f:
-            f.write('')
+            f.write(b'')
         try:
             make_non_readable(src_file)
             if on_posix:
