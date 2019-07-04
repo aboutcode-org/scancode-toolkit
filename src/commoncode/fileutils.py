@@ -97,14 +97,14 @@ if on_linux:
         PATH_ENV_SEP = bytes(os.pathsep, encoding='utf-8')
 
 else:
-    PATH_TYPE = unicode
+    PATH_TYPE = str
     POSIX_PATH_SEP = '/'
     WIN_PATH_SEP = '\\'
     EMPTY_STRING = ''
     DOT = '.'
-    PATH_SEP = unicode(os.sep)
+    PATH_SEP = str(os.sep)
     PATH_ENV_VAR = 'PATH'
-    PATH_ENV_SEP = unicode(os.pathsep)
+    PATH_ENV_SEP = str(os.pathsep)
 
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 
