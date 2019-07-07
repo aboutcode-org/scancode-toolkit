@@ -30,9 +30,9 @@ from collections import OrderedDict
 import io
 from itertools import chain
 from os import path
-from unittest.case import expectedFailure
 
 import attr
+import pytest
 
 import cluecode.copyrights
 from commoncode import saneyaml
@@ -267,7 +267,7 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     closure_test_function.__name__ = test_name
 
     if test.expected_failures:
-        closure_test_function = expectedFailure(closure_test_function)
+        closure_test_function = pytest.mark.xfail(closure_test_function)
 
     return closure_test_function, test_name
 

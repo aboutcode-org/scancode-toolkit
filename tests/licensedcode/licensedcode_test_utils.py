@@ -29,12 +29,11 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import io
 import os
-
 import traceback
-import unittest
 
 import attr
 from license_expression import Licensing
+import pytest
 
 from commoncode import saneyaml
 from commoncode import text
@@ -250,7 +249,7 @@ def make_test(license_test, regen=False):
     closure_test_function.__name__ = test_name
     
     if expected_failure:
-        closure_test_function = unittest.expectedFailure(closure_test_function)
+        closure_test_function = pytest.mark.xfail(closure_test_function)
 
     return closure_test_function
 
