@@ -9,14 +9,33 @@
         ],
         "--copyright": true,
         "--info": true,
-        "--json-pp": "clear-summary-expected.json",
+        "--json-pp": "clear-summary.json",
         "--license": true,
-        "--origin-summary": true,
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-01T190237.416506",
-      "end_timestamp": "2019-07-01T190245.468301",
+      "start_timestamp": "2019-07-01T190259.905772",
+      "end_timestamp": "2019-07-01T190307.968903",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 13
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.0.2.post661.6010b7bb0.dirty.20190703221318",
+      "options": {
+        "input": [
+          "clear-summary.json"
+        ],
+        "--from-json": true,
+        "--json-pp": "clear-summary-expected.json",
+        "--origin-summary": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2019-07-03T231813.001403",
+      "end_timestamp": "2019-07-03T231813.023085",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -27,6 +46,14 @@
   "summaries": [
     {
       "identifier": 0,
+      "license_expression": "mit",
+      "holders": [
+        "Omega Inc."
+      ],
+      "type": "license-exp-holders"
+    },
+    {
+      "identifier": 1,
       "license_expression": "apache-2.0",
       "holders": [
         "Acme Corporation"
@@ -67,7 +94,7 @@
         ],
         "count": 10
       },
-      "summarized_to": null,
+      "summarized_to": 1,
       "files_count": 13,
       "dirs_count": 4,
       "size_count": 627,
@@ -184,7 +211,7 @@
         ],
         "count": 9
       },
-      "summarized_to": 0,
+      "summarized_to": 1,
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 459,
@@ -933,7 +960,7 @@
         ],
         "count": 3
       },
-      "summarized_to": null,
+      "summarized_to": 0,
       "files_count": 3,
       "dirs_count": 2,
       "size_count": 117,
@@ -971,7 +998,7 @@
         ],
         "count": 2
       },
-      "summarized_to": null,
+      "summarized_to": 0,
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -1167,7 +1194,7 @@
         ],
         "count": 1
       },
-      "summarized_to": null,
+      "summarized_to": 0,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,

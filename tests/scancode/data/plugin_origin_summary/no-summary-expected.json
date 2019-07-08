@@ -9,14 +9,35 @@
         ],
         "--copyright": true,
         "--info": true,
-        "--json-pp": "no-summary-expected.json",
+        "--json-pp": "no-summary.json",
         "--license": true,
-        "--origin-summary": true,
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-01T190320.263138",
-      "end_timestamp": "2019-07-01T190329.079785",
+      "start_timestamp": "2019-07-01T190752.241543",
+      "end_timestamp": "2019-07-01T190759.929938",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.0.2.post1112.bf2c5e484.dirty.20190708215333",
+      "options": {
+        "input": [
+          "no-summary.json"
+        ],
+        "--from-json": [
+          true
+        ],
+        "--json-pp": "no-summary-expected.json",
+        "--origin-summary": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2019-07-08T235338.816735",
+      "end_timestamp": "2019-07-08T235338.831528",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -24,16 +45,7 @@
       }
     }
   ],
-  "summaries": [
-    {
-      "identifier": 0,
-      "license_expression": "mit",
-      "holders": [
-        "Omega Inc."
-      ],
-      "type": "license-exp-holders"
-    }
-  ],
+  "summaries": [],
   "files": [
     {
       "path": "no_summary",
@@ -491,7 +503,7 @@
         ],
         "count": 2
       },
-      "summarized_to": 0,
+      "summarized_to": null,
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -687,7 +699,7 @@
         ],
         "count": 1
       },
-      "summarized_to": 0,
+      "summarized_to": null,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,

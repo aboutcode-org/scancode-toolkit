@@ -99,7 +99,7 @@ Options:
                                     copyright holder or license expression is
                                     detected in 75% or more of total files in a
                                     directory.
-    --origin-summary-threshold TEXT
+    --origin-summary-threshold FLOAT
                                     Set a custom threshold for origin
                                     summarization.
     --summary                       Summarize license, copyright and other scans

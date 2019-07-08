@@ -9,15 +9,36 @@
         ],
         "--copyright": true,
         "--info": true,
-        "--json-pp": "custom-threshold-expected.json",
+        "--json-pp": "clear-summary.json",
         "--license": true,
-        "--origin-summary": true,
-        "--origin-summary-threshold": 1.0,
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-01T192509.922140",
-      "end_timestamp": "2019-07-01T192520.619541",
+      "start_timestamp": "2019-07-01T190259.905772",
+      "end_timestamp": "2019-07-01T190307.968903",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 13
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.0.2.post1112.bf2c5e484.dirty.20190708215333",
+      "options": {
+        "input": [
+          "clear-summary.json"
+        ],
+        "--from-json": [
+          true
+        ],
+        "--json-pp": "custom-threshold-expected.json",
+        "--origin-summary": true,
+        "--origin-summary-threshold": 1.0
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2019-07-08T235148.388167",
+      "end_timestamp": "2019-07-08T235148.409126",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -25,16 +46,7 @@
       }
     }
   ],
-  "summaries": [
-    {
-      "identifier": 0,
-      "license_expression": "mit",
-      "holders": [
-        "Omega Inc."
-      ],
-      "type": "license-exp-holders"
-    }
-  ],
+  "summaries": [],
   "files": [
     {
       "path": "clear_summary",
@@ -966,7 +978,7 @@
         ],
         "count": 2
       },
-      "summarized_to": 0,
+      "summarized_to": null,
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -1162,7 +1174,7 @@
         ],
         "count": 1
       },
-      "summarized_to": 0,
+      "summarized_to": null,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
