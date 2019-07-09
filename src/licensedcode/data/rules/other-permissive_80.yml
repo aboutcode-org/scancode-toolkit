@@ -1,0 +1,9 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Per Fedora "This license contains a title preservation clause, which can literally be
+    read as a purported requirement to assign copyright in derivative works upstream to OpenVision.
+    However, the use of the word "retained" suggests instead that it should be read as a mere
+    assertion of persistence of copyright in derivative works. Since this would automatically
+    occur, as long as code persists from the original OpenVision copyrighted code base, under
+    this interpretation, this becomes functionally equivalent to MIT.
