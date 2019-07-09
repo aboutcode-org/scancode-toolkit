@@ -273,7 +273,7 @@ patterns = [
     # MORE NN exceptions to NNP or CAPS
     # 'Berkeley Software Distribution',??
     (r'^(Unicode|Modified|NULL|FALSE|False|TRUE|True|Last|Predefined|If|Standard'
-      r'|Versions?\.?|Package|PACKAGE|Powered|License[d\.e\:]?|License-Alias\:?|Legal'
+      r'|Versions?\.?|Package|PACKAGE|Powered|Licen[cs]e[d\.e\:]?|License-Alias\:?|Legal'
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
       r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|LegalTrademarks|OriginalFilename'
@@ -291,15 +291,15 @@ patterns = [
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
     # various junk bits
-    (r'^example\.com$', 'JUNK'),
-    (r'^null$', 'JUNK'),
-
+    (r'^(example\.com'
+      r'|null$'
+      r'|:Licen[cs]e)$', 'JUNK'),
+    
     # when uppercase this is likely part of some SQL statement
     (r'FROM|CREATE|CURDIR', 'JUNK'),
     (r'RECURSIVE|VIEW', 'NN'),
     # found in sqlite
     (r'\+0|ToUpper', 'JUNK'),
-
 
     # Java
     (r'^.*Servlet,?|class$', 'JUNK'),
