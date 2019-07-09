@@ -1,3 +1,2 @@
 license_expressions:
-  - unknown
-expected_failure: yes
+  - bzip2-libbzip-2010
