@@ -76,6 +76,14 @@ class ChefPackage(models.Package):
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
+    @classmethod
+    def get_package_resources(cls, root, codebase):
+        yield root
+        for resource in root.walk(codebase, topdown=True):
+            if resource.is_dir and resource.name == 'node_modules':
+                continue
+            yield resource
+
     def repository_download_url(self, baseurl=default_download_baseurl):
         return chef_download_url(self.name, self.version, registry=baseurl)
 

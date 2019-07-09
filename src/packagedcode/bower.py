@@ -59,6 +59,14 @@ class BowerPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_resources(cls, root, codebase):
+        yield root
+        for resource in root.walk(codebase, topdown=True):
+            if resource.is_dir and resource.name == 'node_modules':
+                continue
+            yield resource
+
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
