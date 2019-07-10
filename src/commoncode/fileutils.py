@@ -172,7 +172,7 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
         if not base_dir:
             base_dir = tempfile.gettempdir()
         else:
-            if on_linux:
+            if on_linux and py2:
                 base_dir = fsencode(base_dir)
 
     if not os.path.exists(base_dir):
@@ -181,7 +181,7 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
     if not has_base:
         prefix = 'scancode-tk-'
 
-    if on_linux:
+    if on_linux and py2:
         prefix = fsencode(prefix)
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
