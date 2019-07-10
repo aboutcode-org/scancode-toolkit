@@ -166,9 +166,9 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               commoncode: |
-                bin/py.test -vvs tests/commoncode/test_codec.py
-                bin/py.test -vvs tests/commoncode/test_fileutils.py
-                bin/py.test -vvs tests/commoncode/test_functional.py
+                bin/py.test -vvs tests/commoncode/test_codec.py \
+                    tests/commoncode/test_fileutils.py \
+                    tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -177,9 +177,9 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               commoncode: |
-                bin/py.test -vvs tests/commoncode/test_codec.py
-                bin/py.test -vvs tests/commoncode/test_fileutils.py
-                bin/py.test -vvs tests/commoncode/test_functional.py
+                bin/py.test -vvs tests/commoncode/test_codec.py \
+                    tests/commoncode/test_fileutils.py \
+                    tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -188,9 +188,9 @@ jobs:
           python_versions: ['3.6']
           test_suites:
               commoncode: |
-                bin/py.test -vvs tests/commoncode/test_codec.py
-                bin/py.test -vvs tests/commoncode/test_fileutils.py
-                bin/py.test -vvs tests/commoncode/test_functional.py
+                bin/py.test -vvs tests/commoncode/test_codec.py \
+                    tests/commoncode/test_fileutils.py \
+                    tests/commoncode/test_functional.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -200,9 +200,7 @@ jobs:
           python_architecture: x86
           test_suites:
               commoncode: |
-                Scripts\py.test -vvs tests\commoncode\test_codec.py
-                Scripts\py.test -vvs tests\commoncode\test_fileutils.py
-                Scripts\py.test -vvs tests\commoncode\test_functional.py
+                Scripts\py.test -vvs tests\commoncode\test_codec.py tests\commoncode\test_fileutils.py tests\commoncode\test_functional.py
 
 
 ################################################################################
@@ -232,9 +230,9 @@ jobs:
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
           test_suite_label: commoncode
           test_suite: |
-              bin/py.test -vvs tests/commoncode/test_codec.py
-              bin/py.test -vvs tests/commoncode/test_fileutils.py
-              bin/py.test -vvs tests/commoncode/test_functional.py
+                bin/py.test -vvs tests/commoncode/test_codec.py \
+                    tests/commoncode/test_fileutils.py \
+                    tests/commoncode/test_functional.py
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
