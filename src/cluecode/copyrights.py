@@ -32,7 +32,6 @@ import re
 import sys
 from time import time
 
-from commoncode.text import toascii
 from commoncode.text import unixlinesep
 from cluecode import copyrights_hint
 from textcode import analysis
@@ -2049,9 +2048,6 @@ def prepare_text_line(line):
     # in apache'>Copyright replace ">" by "> "
     line = line.replace('>', '> ')
     line = line.replace('<', ' <')
-
-    # normalize to ascii text
-    line = toascii(line, translit=True)
 
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings

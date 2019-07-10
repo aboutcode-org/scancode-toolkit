@@ -31,7 +31,6 @@ from itertools import islice
 
 from commoncode import compat
 from commoncode.datautils import Boolean
-from commoncode.text import toascii
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -201,7 +200,7 @@ def get_generated_code_hint(location, generated_keywords=GENERATED_KEYWORDS):
         return
     with open(location, 'rb') as filein:
         for line in islice(filein, max_lines):
-            text = toascii(line.strip())
+            text = compat.unicode(line.strip())
             textl = text.lower()
             if any(kw in textl for kw in generated_keywords):
                 # yield only the first 100 chars..

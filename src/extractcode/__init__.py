@@ -38,7 +38,6 @@ from commoncode.fileutils import create_dir
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
-from commoncode.text import toascii
 from commoncode.system import on_linux
 from os.path import dirname
 from os.path import join

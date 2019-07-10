@@ -33,7 +33,6 @@ import re
 import ipaddress
 import url as urlpy
 
-from commoncode.text import toascii
 from cluecode import finder_data
 from commoncode import compat
 from textcode import analysis
@@ -88,7 +87,7 @@ def find(location, patterns):
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, toascii(match), line, lineno
+                yield key, match, line, lineno
 
 def unique_filter(matches):
     """
@@ -306,7 +305,7 @@ def end_of_url_cleaner(matches):
         yield key, url, line, lineno
 
 
-non_standard_urls_prefix = ('git@',)
+non_standard_urls_prefix = compat.unicode('git@',)
 
 
 def is_filterable(url):

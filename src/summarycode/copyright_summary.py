@@ -36,7 +36,6 @@ from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
 from commoncode import compat
-from commoncode.text import toascii
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
@@ -158,7 +157,7 @@ class Text(object):
         self.key = key.strip('.,').strip()
 
     def transliterate(self):
-        self.key = toascii(self.key, translit=True)
+        self.key = compat.unicode(self.key)
 
     def fingerprint(self):
         if TRACE_TEXT or TRACE_FP:

@@ -34,7 +34,6 @@ import re
 from intbitset import intbitset
 
 import typecode
-from commoncode.text import toascii
 
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
@@ -742,7 +741,7 @@ class QueryRun(object):
         def tokens_string(tks, sort=False):
             "Return a string from a token id seq"
             tks = ('None' if tid is None else tokens_by_tid[tid] for tid in tks)
-            ascii = partial(toascii, translit=True)
+            ascii = partial(compat.unicode)
             tks = map(ascii, tks)
             if sort:
                 tks = sorted(tks)

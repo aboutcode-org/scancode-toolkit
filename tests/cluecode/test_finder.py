@@ -30,6 +30,7 @@ from __future__ import unicode_literals
 import re
 import os
 
+from commoncode import compat
 from commoncode.testcase import FileBasedTesting
 
 from cluecode import finder
@@ -721,7 +722,7 @@ class TestUrl(FileBasedTesting):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
         for _key, url, _line, _lineno in find(test_file, patterns):
-            assert type(url) == str
+            assert type(url) == compat.unicode
 
 
 class TestSearch(FileBasedTesting):

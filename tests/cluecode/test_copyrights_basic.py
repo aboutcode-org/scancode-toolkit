@@ -55,7 +55,7 @@ class TestTextPreparation(FileBasedTesting):
         cp = u'Muła'
         result = copyrights_module.prepare_text_line(cp)
         assert 'Mula' == result
-
+    
     def test_strip_markup(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
         result = copyrights_module.strip_markup(cp)

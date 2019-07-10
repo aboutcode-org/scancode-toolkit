@@ -35,7 +35,6 @@ click.disable_unicode_literals_warning = True
 from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
-from commoncode.text import toascii
 
 from scancode_config import __version__
 from scancode.api import extract_archives
@@ -113,7 +112,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
             return ''
         source = item.source
         if not isinstance(source, compat.unicode):
-            source = toascii(source, translit=True).decode('utf-8', 'replace')
+            source = compat.unicode(source).decode('utf-8', 'replace')
         if verbose:
             if item.done:
                 return ''
@@ -121,7 +120,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
         else:
             line = source and fileutils.file_name(source) or ''
         if not isinstance(line, compat.unicode):
-            line = toascii(line, translit=True).decode('utf-8', 'replace')
+            line = compat.unicode(line).decode('utf-8', 'replace')
         return 'Extracting: %(line)s' % locals()
 
     def display_extract_summary():
@@ -136,7 +135,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
             has_warnings = has_warnings or bool(xev.warnings)
             source = fileutils.as_posixpath(xev.source)
             if not isinstance(source, compat.unicode):
-                source = toascii(source, translit=True).decode('utf-8', 'replace')
+                source = compat.unicode(source).decode('utf-8', 'replace')
                 source = get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
                 echo_stderr('ERROR extracting: %(source)s: %(e)s' % locals(), fg='red')

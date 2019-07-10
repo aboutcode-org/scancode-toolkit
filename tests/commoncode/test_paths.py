@@ -27,6 +27,11 @@ from __future__ import absolute_import, print_function
 from unittest import TestCase
 
 from commoncode import paths
+from commoncode.system import py2
+from commoncode.system import py3
+
+import pytest
+pytestmark = pytest.mark.scanpy3 #NOQA
 
 
 class TestPortablePath(TestCase):
@@ -83,12 +88,15 @@ class TestPortablePath(TestCase):
 
     def test_safe_path_posix_style_french_char(self):
         test = paths.safe_path('/includes/webform.compon\xc3nts.inc/')
-        expected = 'includes/webform.componAnts.inc'
+        expected = 'includes/webform.compon_nts.inc'
         assert expected == test
 
     def test_safe_path_posix_style_chinese_char(self):
         test = paths.safe_path('/includes/webform.compon\xd2\xaants.inc/')
-        expected = 'includes/webform.componS_nts.inc'
+        if py2:
+          expected = 'includes/webform.compon_nts.inc'
+        if py3:
+          expected = 'includes/webform.compon__nts.inc'
         assert expected == test
 
     def test_safe_path_windows_style_dots(self):

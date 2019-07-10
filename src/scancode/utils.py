@@ -36,8 +36,10 @@ from click._termui_impl import ProgressBar
 from commoncode import compat
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
-from commoncode.text import toascii
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 """
 Command line UI utilities for help and and progress reporting.
@@ -104,7 +106,7 @@ class ProgressLogger(ProgressBar):
         if line:
             # only add new lines if there is an item_show_func
             nl = bool(self.item_show_func)
-            echo(line, file=self.file, nl=nl, color=self.color)
+            echo(line.encode("utf8"), file=self.file, nl=nl, color=self.color)
             self.file.flush()
 
     def format_progress_line(self):
@@ -223,7 +225,6 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
         return ''
     location = item[0]
     errors = item[2]
-    location = compat.unicode(toascii(location))
     progress_line = location
     if not verbose:
         max_file_name_len = file_name_max_len()

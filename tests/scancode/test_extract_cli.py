@@ -198,9 +198,9 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]
     file_result = [f for f in file_result if f]
     expected = [
-        '/unicodepath/Ho_',
-        '/unicodepath/Ho_a',
-        '/unicodepath/koristenjem_Karkkainen_-_Sander.pdf'
+        '/unicodepath/____',
+        '/unicodepath/____a',
+        '/unicodepath/koris_tenjem_Ka_rkka_inen___Sander.pdf'
     ]
     assert sorted(expected) == sorted(file_result)
 
@@ -221,9 +221,9 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]
     file_result = [f for f in file_result if f]
     expected = [
-        '/unicodepath/Ho_',
-        '/unicodepath/Ho_a',
-        '/unicodepath/koristenjem_Karkkainen_-_Sander.pdf'
+        '/unicodepath/____',
+        '/unicodepath/____a',
+        '/unicodepath/koris_tenjem_Ka_rkka_inen___Sander.pdf'
     ]
     assert sorted(expected) == sorted(file_result)
 

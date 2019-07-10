@@ -28,6 +28,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from commoncode import compat
 import re
 import logging
 import unicodedata
@@ -35,13 +36,6 @@ import unicodedata
 import chardet
 from text_unidecode import unidecode
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 """
 A text processing module providing functions to process and prepare text
@@ -148,41 +142,6 @@ def nolinesep(text):
     return text.replace(CR, ' ').replace(LF, ' ')
 
 
-def toascii(s, translit=False):
-    """
-    Convert a Unicode string to ASCII characters, including replacing accented
-    characters with their non-accented equivalent.
-
-    If `translit` is False use the Unicode NFKD equivalence.
-    If `translit` is True, use a transliteration with the unidecode library.
-
-    Non ISO-Latin and non ASCII characters are stripped from the output. When no
-    transliteration is possible, the resulting character is replaced by an
-    underscore "_".
-
-    For Unicode NFKD equivalence, see http://en.wikipedia.org/wiki/Unicode_equivalence
-    The convertion may NOT preserve the original string length and with NFKD some
-    characters may be deleted.
-    Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
-
-    For example:
-    >>> acc = u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿẞß®©œŒØøÆæ₵₡￠¢Žž"
-    >>> noacc = r'AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyyZz'
-    >>> toascii(acc, translit=False) == noacc
-    True
-    >>> noacc = r'AAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyySsss(r)(c)oeOEOoAEae_CL/CC/Zz'
-    >>> toascii(acc, translit=True) == noacc
-    True
-    """
-    try:
-        if translit:
-            converted = unidecode(s).encode('ascii', 'ignore')
-            converted = converted.replace('[?]', '_')
-        else:
-            converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
-    except:
-        converted = str(s.decode('ascii', 'ignore'))
-    return converted
 
 
 def python_safe_name(s):
@@ -196,7 +155,7 @@ def python_safe_name(s):
     >>> s2 = "string1 +or "
     >>> assert python_safe_name(s1) == python_safe_name(s2)
     """
-    s = toascii(s)
+    s = compat.unicode(s)
     s = foldcase(s)
     s = nopunctuation(s)
     s = s.replace(' ', '_')
@@ -217,11 +176,11 @@ def as_unicode(s):
     if not s:
         return s
 
-    if isinstance(s, unicode):
+    if isinstance(s, compat.unicode):
         return s
 
     try:
-        return s.decode('utf-8')
+        return s.decode('utf-8')  
     except UnicodeDecodeError:
         try:
             encoding = chardet.detect(s)
@@ -230,7 +189,4 @@ def as_unicode(s):
                 return s.decode(encoding)
         except UnicodeDecodeError:
                 pass
-        s = toascii(s, translit=True)
-        if not isinstance(s, unicode):
-            s = unicode(s)
         return s

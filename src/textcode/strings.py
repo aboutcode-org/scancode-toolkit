@@ -28,7 +28,6 @@ from __future__ import print_function
 import re
 import string
 
-from commoncode.text import toascii
 
 """
 Extract raw ASCII strings from (possibly) binary strings.
@@ -64,8 +63,6 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
             if not buf:
                 break
             for s in strings_from_string(buf, clean=clean, min_len=min_len):
-                if ascii:
-                    s = toascii(s)
                 s = s.strip()
                 if len(s) >= min_len:
                     yield s

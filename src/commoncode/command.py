@@ -140,8 +140,8 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     if not to_files:
         # return output as ASCII string loaded from the output files
-        sop = text.toascii(open(sop, 'rb').read().strip())
-        sep = text.toascii(open(sep, 'rb').read().strip())
+        sop = open(sop, 'rb').read().strip()
+        sep = open(sep, 'rb').read().strip()
     return rc, sop, sep
 
 
