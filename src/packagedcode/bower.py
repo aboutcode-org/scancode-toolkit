@@ -60,6 +60,10 @@ class BowerPackage(models.Package):
         return parse(location)
 
     @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
+    @classmethod
     def get_package_resources(cls, root, codebase):
         yield root
         for resource in root.walk(codebase, topdown=True):

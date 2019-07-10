@@ -325,6 +325,12 @@ def create_summaries(filesets, codebase):
         holders = None
         if summary_type == 'package':
             license_expression = fileset.package.license_expression
+            fileset_package_copyright = fileset.package.copyright
+            if fileset_package_copyright:
+                # TODO: Get holder from copyright
+                holders = [fileset_package_copyright]
+            else:
+                holders = [party.get('name') for party in fileset.package.parties]
         if summary_type == 'license-exp-holders':
             license_expression = fileset.discovered_license_expression
             holders = fileset.discovered_holders
