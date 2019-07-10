@@ -88,8 +88,11 @@ class LicenseTest(object):
 
         data = {}
         if self.data_file:
-            with io.open(self.data_file, encoding='utf-8') as df:
-                data = saneyaml.load(df.read()) or {}
+            try:
+                with io.open(self.data_file, encoding='utf-8') as df:
+                    data = saneyaml.load(df.read()) or {}
+            except Exception as e:
+                raise Exception('Failed to read:', 'file://' + self.data_file, e)
 
         self.license_expressions = data.pop('license_expressions', [])
 
@@ -247,7 +250,7 @@ def make_test(license_test, regen=False):
             assert '\n'.join(results) == '\n'.join(failure_trace)
 
     closure_test_function.__name__ = test_name
-    
+
     if expected_failure:
         closure_test_function = pytest.mark.xfail(closure_test_function)
 

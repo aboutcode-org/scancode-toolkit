@@ -1,0 +1,54 @@
+
+"Author" herein refers to Jordan Russell (the creator of the Toolbar2000
+components).
+"Software" refers to all files bearing this notice, as well as any other
+files and source code included with Toolbar2000 (typically extracted from a
+.zip archive), and all content in them, regardless of whether any
+modifications have been made.
+
+Except where otherwise noted, all of the documentation and Software included
+in the Toolbar2000 package is copyrighted by Jordan Russell (the Author).
+
+
+Use and distribution of the software is permitted provided that all of the
+following terms are accepted:
+
+1. The Software is provided "as-is," without any express or implied
+   warranty. In no event shall the Author be held liable for any damages
+   arising from the use of the Software.
+
+2. All redistributions of the Software's files must be in their original,
+   unmodified form. Distributions of modified versions of the files is not
+   permitted without express written permission of the Author.
+
+3. All redistributions of the Software's files must retain all copyright
+   notices and web site addresses that are currently in place, and must
+   include this list of conditions without modification.
+
+4. None of the Software's files may be redistributed for profit or as part
+   of another software package without express written permission of the
+   Author.
+
+5. You are permitted to Compile the Software into any kind of applications.
+   ("Compile" here refers to the automatic process of translating the
+   Software's source code into executable machine code by a compiler such
+   as the one included with Borland's Delphi or C++Builder.)
+   However, compilation into commercial or shareware applications, or any
+   applications that you or your organization are profiting from, requires
+   registration (payment) of the software. Such payment is made to the Author
+   of the Software (Jordan Russell).
+   For information on registering, see the Toolbar2000 documentation or this
+   web page:
+   http://www.jrsoftware.org/tb2kreg.php
+
+6. Redistribution of any of the Software's files in object form (including
+   but not limited to .DCU and .OBJ formats) is strictly prohibited without
+   express written permission of the Author.
+
+7. Full backward compatibility in future versions of the Software is not
+   guaranteed. In no event shall the Author be held liable for any
+   inconvenience or damages arising from lack of backward compatibility.
+
+If you do not agree to all of the above terms, you are not permitted to
+use the Software in any way, and all copies of it must be deleted from your
+system(s).

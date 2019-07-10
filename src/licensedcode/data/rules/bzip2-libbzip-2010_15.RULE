@@ -1,0 +1,4 @@
+ * This file uses bzip2 library code which is written
+ * by Julian Seward <jseward@bzip.org>.
+ * See README and LICENSE files in bz/ directory for more information
+ * about bzip2 library code.
