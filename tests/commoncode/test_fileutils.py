@@ -30,6 +30,7 @@ from os.path import join
 from os.path import sep
 from unittest.case import skipIf
 
+from commoncode import compat
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
@@ -40,11 +41,12 @@ from commoncode.system import on_posix
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
+from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import make_non_executable
 from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
-from commoncode import compat
+
 
 import pytest
 pytestmark = pytest.mark.scanpy3 #NOQA
@@ -371,7 +373,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux:
+        if not on_linux and py2:
             test_dir = compat.unicode(test_dir)
         result = list(os.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
