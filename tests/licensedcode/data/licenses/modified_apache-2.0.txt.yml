@@ -1,5 +1,5 @@
-expected_failure: yes
 license_expressions:
   - proprietary-license
   - proprietary-license
   - proprietary-license
+expected_failure: yes

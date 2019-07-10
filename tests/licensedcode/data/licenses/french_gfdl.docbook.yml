@@ -1,4 +1,3 @@
-expected_failure: yes
 license_expressions:
   - gfdl-1.1
   - gfdl-1.1-plus
@@ -8,4 +7,4 @@ license_expressions:
   - gfdl-1.1-plus
   - gfdl-1.1-plus
   - gpl-1.0-plus
-
+expected_failure: yes
