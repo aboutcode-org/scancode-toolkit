@@ -15,13 +15,98 @@ license_expressions:
   - bsd-new
   - zlib
   - w3c-software-19980720
+  - unknown
   - jscheme
   - bsd-3-clause-no-change
   - apache-1.1
   - w3c
+  - w3c
+  - apache-1.1
   - apache-1.1
   - npl-1.1
   - mpl-1.1
   - khronos
   - apache-1.1
-expected_failure: yes
+  - apache-1.1
+  - public-domain
+  - sax-pd
+  - sax-pd
+  - sax-pd
+  - apache-1.1
+  - proprietary-license
+  - bzip2-libbzip-2010
+  - bsd-new
+  - libpng
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
+  - x11
+  - unknown
+  - bzip2-libbzip-2010
+  - mit
+  - unknown
+  - unknown
+  - xfree86-1.1
+  - apache-1.1
+  - ijg
+  - ijg
+  - xfree86-1.0
+  - x11-keith-packard
+  - xfree86-1.0
+  - apache-2.0
+  - apache-2.0
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - mit-no-advert-export-control
+  - unknown
+  - x11-r75
+  - x11-keith-packard
+  - unicode
+  - historical
+  - x11
+  - mit
+  - historical
+  - x11-xconsortium
+  - x11-r75
+  - unicode
+  - x11
+  - x11
+  - x11-opengroup
+  - x11-keith-packard
+  - x11-xconsortium
+  - x11-xconsortium
+  - x11-keith-packard
+  - xfree86-1.0
+  - unknown
+  - free-unknown
+  - zlib
+  - apache-1.1
+  - apache-1.1
+  - public-domain
+  - zlib
+  - gpl-2.0-plus
+  - gpl-1.0-plus
+  - mozilla-gc
+  - gpl-1.0-plus
+  - mit
+  - x11-lucent
+  - sunpro
+  - gpl-2.0
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - classpath-exception-2.0
+  - gpl-1.0-plus
+  - classpath-exception-2.0
+  - gpl-1.0-plus WITH autoconf-simple-exception-2.0
+  - gpl-2.0-plus
+  - zlib
+  - mozilla-gc
+  - mit
+  - gpl-2.0-plus
+  - gpl-2.0-plus
+  - gpl-1.0-plus
+  - gpl-2.0

@@ -1,5 +1,4 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+  - interbase-1.0
 notes: this is a license from fossology license reference Interbase (Interbase Public License)
   http://info.borland.com/devsupport/interbase/opensource/IPL.html

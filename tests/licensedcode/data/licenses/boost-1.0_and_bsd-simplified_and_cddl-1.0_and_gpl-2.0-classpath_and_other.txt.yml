@@ -1,86 +1,133 @@
 license_expressions:
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
+  - gpl-2.0
   - lgpl-3.0
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
+  - lgpl-3.0
+  - lgpl-3.0
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
   - spl-1.0
   - lgpl-2.0-plus
   - bsd-new
+  - unknown
   - bitstream
+  - unknown
+  - unknown
   - gpl-1.0-plus
+  - proprietary-license
   - gpl-1.0-plus
   - font-exception-gpl
+  - standard-ml-nj
+  - unknown
   - boost-1.0
+  - unknown
   - boost-original
+  - unknown
   - mit-old-style
+  - standard-ml-nj
+  - mpl-1.1 OR lgpl-2.1
+  - lgpl-2.1
+  - lgpl-2.1
+  - lgpl-2.1
   - mpl-1.1
-  - lgpl-2.0-plus
-  - lgpl-2.1
-  - lgpl-2.0-plus
+  - mpl-1.1
   - lgpl-2.1
   - lgpl-2.1
-  - lgpl-2.1
-  - gpl-1.0-plus
-  - gpl-1.0-plus
+  - unknown
+  - other-permissive
+  - curl
+  - gpl-1.0
   - gpl-2.0-plus
   - mit
   - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
+  - lgpl-2.0
+  - lgpl-2.0
   - bsd-new
   - bsd-new
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
+  - gpl-2.0 OR lgpl-2.1 OR mpl-1.1
   - gpl-2.0
-  - gpl-1.0-plus
-  - gpl-1.0-plus
+  - gpl-2.0
+  - gpl-2.0
+  - gpl-2.0 OR lgpl-2.1 OR mpl-1.1
+  - bsd-original
+  - bsd-original
   - lgpl-2.0-plus
-  - bsd-new
-  - bsd-new
-  - ijg
-  - bsd-new
-  - bsd-new
-  - bitstream
-  - bitstream
-  - bitstream
-  - lgpl-2.1
-  - bitstream
-  - bitstream
-  - lgpl-2.1
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - openssl-ssleay
-  - lgpl-2.0
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - public-domain
-  - bitstream
-  - bitstream
-  - bitstream
-  - bitstream
-  - lgpl-2.1
-  - bitstream
-  - bitstream
-  - lgpl-2.1
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - openssl-ssleay
-  - lgpl-2.0
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - public-domain
-  - stlport-4.5
-  - lgpl-2.0-plus
-  - mit
-  - lgpl-2.0-plus
-  - lppl-1.2 OR later
-  - mit
-  - mit
-  - gpl-1.0-plus
+  - w3c-software-19980720
   - unknown
-expected_failure: yes
+  - unknown
+  - ijg
+  - w3c-software-19980720
+  - lgpl-2.0-plus
+  - bsd-new
+  - bsd-new
+  - w3c-software-19980720
+  - unknown
+  - x11-xconsortium
+  - mpl-1.1
+  - unknown
+  - x11-xconsortium
+  - lgpl-2.1
+  - other-permissive
+  - apache-2.0
+  - unknown
+  - unknown
+  - x11-r75
+  - lgpl-2.1
+  - lgpl-2.0-plus
+  - gpl-1.0-plus
+  - fsf-mit
+  - mpl-1.1
+  - unknown
+  - openssl
+  - ssleay-windows
+  - python
+  - lgpl-2.0 OR apache-2.0
+  - lgpl-3.0
+  - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
+  - public-domain AND other-permissive
+  - unknown
+  - x11-keith-packard
+  - mpl-1.0
+  - mpl-1.0
+  - x11-r75
+  - unknown
+  - x11-xconsortium
+  - mpl-1.1
+  - unknown
+  - x11-xconsortium
+  - lgpl-2.1
+  - other-permissive
+  - apache-2.0
+  - unknown
+  - unknown
+  - x11-r75
+  - lgpl-2.1
+  - lgpl-2.0-plus
+  - gpl-1.0-plus
+  - fsf-mit
+  - mpl-1.1
+  - unknown
+  - openssl
+  - ssleay-windows
+  - python
+  - lgpl-2.0 OR apache-2.0
+  - lgpl-3.0
+  - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
+  - public-domain AND other-permissive
+  - unknown
+  - x11-keith-packard
+  - mpl-1.0
+  - cddl-1.0 OR gpl-2.0
+  - stlport-4.5
+  - apache-2.0
+  - other-permissive
+  - lgpl-2.0-plus
+  - mit
+  - lgpl-2.0-plus
+  - lppl-1.2
+  - mit
+  - mit
+  - gpl-2.0
+  - zlib

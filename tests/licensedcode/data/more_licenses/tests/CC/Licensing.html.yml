@@ -1,13 +1,16 @@
 license_expressions:
   - gpl-1.0-plus
   - cc-by-3.0
+  - unknown
   - cc-by-3.0
   - gpl-1.0-plus
   - cc-by-3.0
+  - unknown
   - gpl-2.0
   - gpl-1.0-plus
+  - unknown
   - gpl-2.0
-  - gpl-1.0-plus
+  - gpl-3.0-plus
   - gpl-2.0
-  - gpl-1.0-plus
-expected_failure: yes
+  - gpl-3.0-plus
+  - unknown

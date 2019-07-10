@@ -1,17 +1,20 @@
 license_expressions:
   - gpl-2.0
-  - gpl-1.0-plus
   - gpl-2.0
   - gpl-1.0-plus
+  - unknown
   - gpl-2.0
+  - unknown
   - gpl-2.0
   - gpl-2.0
   - bsd-new
+  - unknown
   - gpl-1.0-plus
   - gpl-1.0-plus
   - gpl-2.0
   - gpl-1.0-plus
   - gpl-1.0-plus
+  - unknown
   - gpl-1.0-plus
   - gpl-2.0
   - gpl-1.0-plus
@@ -19,6 +22,7 @@ license_expressions:
   - gpl-1.0-plus
   - gpl-1.0-plus
   - gpl-1.0-plus
+  - unknown
   - gpl-2.0
   - gpl-2.0
   - gpl-2.0-plus
@@ -30,11 +34,10 @@ license_expressions:
   - gpl-2.0
   - gpl-1.0-plus
   - gpl-3.0
-  - gpl-2.0
-  - gpl-2.0
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-2.0-plus
-  - gpl-2.0
   - unknown
-expected_failure: yes
+  - gpl-2.0
+  - gpl-2.0
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-2.0

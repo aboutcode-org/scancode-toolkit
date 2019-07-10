@@ -1,4 +1,3 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+  - bsd-new
 notes: no license should be detected

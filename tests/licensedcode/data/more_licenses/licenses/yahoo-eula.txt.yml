@@ -1,6 +1,9 @@
 license_expressions:
   - unknown
+  - unknown
   - proprietary-license
-expected_failure: yes
+  - other-permissive
+  - amd-historical
+  - amd-historical
 notes: this is a license from fossology license reference Yahoo-EULA (Yahoo Software License)
   http://info.yahoo.com/legal/us/yahoo/toolbar/tbeula/tbeula-282.html

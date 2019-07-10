@@ -3,21 +3,17 @@ license_expressions:
   - x11-keith-packard
   - x11-opengroup
   - unicode-mappings
+  - bsd-2-clause-netbsd
   - bsd-simplified
-  - bsd-top
-  - bsd-new
-  - bsd-new
+  - robert-hubley
   - mit
   - mit
   - bsd-new
   - bsd-original-uc
-  - mit
   - x11-opengroup
   - mit
   - mit
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
   - gpl-2.0
-  - unknown
-expected_failure: yes
+  - gpl-2.0
+  - gpl-2.0
+  - gpl-2.0

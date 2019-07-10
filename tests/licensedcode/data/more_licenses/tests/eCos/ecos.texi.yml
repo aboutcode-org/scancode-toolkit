@@ -1,12 +1,12 @@
 license_expressions:
   - gpl-1.0-plus
-  - gpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
   - gpl-2.0
+  - gpl-1.0-plus
   - unknown
-  - infineon-free
+  - gpl-1.0-plus
+  - gpl-2.0
   - gpl-2.0 WITH ecos-exception-2.0
   - gpl-2.0-plus
-  - lgpl-2.0-plus
-expected_failure: yes
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus

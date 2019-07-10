@@ -1,6 +1,2 @@
 license_expressions:
-  - unknown
-  - unknown
-  - unknown
-  - unknown
-expected_failure: yes
+  - occt-pl

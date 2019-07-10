@@ -1,4 +1,4 @@
 license_expressions:
-    - lgpl-3.0-plus WITH openssl-exception-lgpl-3.0-plus
-    - zpl-2.1
-    - zlib
+  - lgpl-3.0-plus WITH openssl-exception-lgpl-3.0-plus
+  - zpl-2.1
+  - zlib
