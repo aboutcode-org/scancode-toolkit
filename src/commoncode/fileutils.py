@@ -26,8 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from commoncode import compat
-
 try:
     from os import fsencode
     from os import fsdecode
@@ -49,6 +47,7 @@ try:
 except ImportError:
     scancode_temp_dir = None
 
+from commoncode import compat
 from commoncode import filetype
 from commoncode.filetype import is_rwx
 from commoncode.system import on_linux
@@ -60,16 +59,15 @@ try:
 except NameError:
     WindowsError = None  # NOQA
 
-TRACE = False
 
 import logging
-
 logger = logging.getLogger(__name__)
 
 
+TRACE = False
+
 def logger_debug(*args):
     pass
-
 
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
@@ -78,33 +76,28 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
-# Paths can only be sanely handled as raw bytes on Linux
+
+# Paths can only be sanely handled as raw bytes on Linux and Python2
 
 
-if on_linux:
+if on_linux and py2:
     PATH_TYPE = bytes 
     POSIX_PATH_SEP = b'/'        
     WIN_PATH_SEP = b'\\'
     EMPTY_STRING = b''
     DOT = b'.'
-    if py2:
-        PATH_SEP = bytes(os.sep)
-        PATH_ENV_VAR = b'PATH'
-        PATH_ENV_SEP = bytes(os.pathsep)
-    else:
-        PATH_SEP = bytes(os.sep, encoding='utf-8')
-        PATH_ENV_VAR = 'PATH'
-        PATH_ENV_SEP = bytes(os.pathsep, encoding='utf-8')
-
+    PATH_SEP = bytes(os.sep)
+    PATH_ENV_VAR = b'PATH'
+    PATH_ENV_SEP = bytes(os.pathsep)
 else:
-    PATH_TYPE = str
+    PATH_TYPE = compat.unicode
     POSIX_PATH_SEP = '/'
     WIN_PATH_SEP = '\\'
     EMPTY_STRING = ''
     DOT = '.'
-    PATH_SEP = str(os.sep)
+    PATH_SEP = compat.unicode(os.sep)
     PATH_ENV_VAR = 'PATH'
-    PATH_ENV_SEP = str(os.pathsep)
+    PATH_ENV_SEP = compat.unicode(os.pathsep)
 
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 
@@ -133,7 +126,7 @@ def create_dir(location):
         # may fail on win if the path is too long
         # FIXME: consider using UNC ?\\ paths
 
-        if on_linux:
+        if on_linux and py2:
             location = fsencode(location)
         try:
             os.makedirs(location)
@@ -379,7 +372,7 @@ def splitext(path, force_posix=False):
     else:
         base_name, extension = posixpath.splitext(name)
         # handle composed extensions of tar.gz, bz, zx,etc
-        if base_name.endswith(b'.tar' if on_linux else '.tar'):
+        if base_name.endswith(b'.tar' if on_linux and py2 else '.tar'):
             base_name, extension2 = posixpath.splitext(base_name)
             extension = extension2 + extension
     return base_name, extension
@@ -403,7 +396,7 @@ def walk(location, ignored=ignore_nothing):
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
 
     # TODO: consider using the new "scandir" module for some speed-up.
@@ -448,7 +441,7 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
                     if the location should be ignored.
     :return: an iterable of file and directory locations.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
     for top, dirs, files in walk(location, ignored):
         if with_dirs:
@@ -475,7 +468,7 @@ def copytree(src, dst):
     This function is similar to and derived from the Python shutil.copytree
     function. See fileutils.py.ABOUT for details.
     """
-    if on_linux:
+    if on_linux and py2:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -524,7 +517,7 @@ def copyfile(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux:
+    if on_linux and py2:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -545,7 +538,7 @@ def copytime(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux:
+    if on_linux and py2:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -583,7 +576,7 @@ def chmod(location, flags, recurse=False):
     """
     if not location or not os.path.exists(location):
         return
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
 
     location = os.path.abspath(location)
@@ -613,7 +606,7 @@ def chmod_tree(location, flags):
     """
     Update permissions recursively in a directory tree `location`.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
     if filetype.is_dir(location):
         for top, dirs, files in walk(location):
@@ -632,7 +625,9 @@ def _rm_handler(function, path, excinfo):  # NOQA
     shutil.rmtree handler invoked on error when deleting a directory tree.
     This retries deleting once before giving up.
     """
-    if on_linux:
+    if TRACE:
+        logger_debug('_rm_handler:', 'path:', path, 'excinfo:', excinfo)
+    if on_linux and py2:
         path = fsencode(path)
     if function in (os.rmdir, os.listdir):
         try:
@@ -664,7 +659,7 @@ def delete(location, _err_handler=_rm_handler):
     if not location:
         return
 
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
 
     if os.path.exists(location) or filetype.is_broken_link(location):
