@@ -220,7 +220,6 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
             copyrights_summary=copyrights_summary,
             authors_summary=authors_summary,
         )
-        results = {k: v for k, v in results.items() if k in test.what}
 
         expected_yaml = test.dumps()
 
