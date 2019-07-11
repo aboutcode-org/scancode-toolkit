@@ -135,11 +135,11 @@ class TestLicense(FileBasedTesting):
                 'No owner'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\nHardware License\n'
+                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License']
         }
 
