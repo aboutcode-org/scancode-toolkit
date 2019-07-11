@@ -99,6 +99,12 @@ class RubyGem(models.Package):
         # unknown?
         return manifest_resource
 
+    @classmethod
+    def get_package_resources(cls, root, codebase):
+        yield root
+        for resource in root.walk(codebase, topdown=True):
+            yield resource
+
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
@@ -499,7 +505,7 @@ def get_dependencies(dependencies):
         is_resolved =False
         if constraints and len(constraints) == 1:
             is_resolved = constraint == '='
-        
+
         version_constraint = ', '.join(constraints)
 
         dep = models.DependentPackage(

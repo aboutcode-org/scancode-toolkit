@@ -83,6 +83,12 @@ class NugetPackage(models.Package):
             return manifest_resource.parent(codebase)
         return manifest_resource
 
+    @classmethod
+    def get_package_resources(cls, root, codebase):
+        yield root
+        for resource in root.walk(codebase, topdown=True):
+            yield resource
+
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return baseurl + '{name}/{version}'.format(
             name=self.name, version=self.version)
@@ -92,7 +98,7 @@ class NugetPackage(models.Package):
             name=self.name, version=self.version)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        # the name is lowercased 
+        # the name is lowercased
         # https://api.nuget.org/v3/registration3/newtonsoft.json/10.0.1.json
         return baseurl + '{name}/{version}.json'.format(
             name=self.name.lower(), version=self.version)
