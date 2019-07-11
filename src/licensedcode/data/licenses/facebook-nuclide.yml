@@ -1,7 +1,7 @@
 key: facebook-nuclide
 short_name: Facebook Nuclide Software License
 name: Facebook License Agreement for Nuclide Software
-category: Free Restricted
+category: Proprietary Free
 owner: Facebook
 homepage_url: https://github.com/facebook/nuclide/blob/master/LICENSE
 text_urls:

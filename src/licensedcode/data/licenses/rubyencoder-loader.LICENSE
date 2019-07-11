@@ -1,0 +1,41 @@
+RUBYENCODER LOADER LICENCE 
+ 
+This Licence applies to the use of the Loaders for RubyEncoder by End Users and is granted by SourceGuardian Ltd (registered number 05663267) which is referred to in this Licence as “RubyEncoder”.  The licence terms for the use of RubyEncoder software are set out at http://www.rubyencoder.com/terms.html. If you are a licensee of RubyEncoder your use of the Loaders is governed by that licence.
+
+If you are an End User of RubyEncoder then, by downloading the Loader, you are accepting the terms of this Licence on behalf of yourself and any company, unincorporated association or partnership for which you work.  This Licence comes into effect on the date that you download the Loader.  If, having read the Licence, you do not agree to be bound to any of its terms you should not download the Loader and any enquiries on the content of this Licence should be directed to RubyEncoder, C/O SourceGuardian Ltd, Rotterdam House, 116 Quayside, Newcastle upon Tyne. NE16 5EG. Tel: 0845 155 2455 Email: support@rubyencoder.com.
+
+1.    Definitions
+
+Defect    Any material error that prevents the Loader from uploading or downloading scripts to and from RubyEncoder (unless used in conjunction with third party software that is not on the list of maintained software on RubyEncoder’s website)
+End User(s)    Users of the Loader in commercial operation 
+
+Loader    The software program that facilitates the conversion of scripts encoded with RubyEncoderto  readable form
+
+Maintainence    Issuing updates to RubyEncoder to ensure continuing compatibility with third party software programs with which RubyEncoder is designed to inter-operate. 
+
+RubyEncoder    The software encryption product of that name used to encrypt scripts from human-readable form into a form capable of being read only with the Loader, available at www.rubyencoder.com
+
+Support    Assisting the End User with enquiries relating to Defects
+
+2.    License for End Users
+Subject to the remaining provisions of this Licence SourceGuardian Ltd grants to the End User a world-wide, royalty free, non-exclusive, licence to permit the End User to use the Loader in its commercial operations for the purposes of:
+2.1    Reading scripts encrypted withRubyEncoder;
+2.2    Bundling the End User’s own software applications together with the Loader;
+2.3    Linking the End User’s software applications to the Loaders on RubyEncoder’s website (to ensure that the applications remain current with the latest updated version of the Loader)
+
+This License shall be deemed to apply to and cover any use of the Loaders prior to the effective date of this Licence.
+
+3.    Restrictions and Exceptions
+3.1    The rights granted to the End User under this Licence do not operate to assign or transfer the ownership of any intellectual property rights in the Loader to the End User.
+3.2    The Loader is intended for commercial use only and not for use by consumers. By accepting this Licence the End User confirms that he or she is acting in the course of business.  The End User will not remove or obscure any copyright or ownership notices or warning legends from the Loader nor will the End User attempt to reverse engineer, decompile or otherwise interfere with the Loader except to the extent expressly permitted by law or under this Licence. SourceGuardian Ltd may terminate this Licence immediately if it discovers that the End User is in breach of its obligations in this Licence and in such a case the End User will immediately delete the Loader from its computer systems and will on request by SourceGuardian Ltd provide and execute such written assurances as SourceGuardian Ltd may require confirming such deletion.
+3.3    The Loader is licensed free of charge and accordingly is provided on an “as is” basis.  The End User agrees and acknowledges that SourceGuardian Ltd has no liability to the End User, whether in contract, tort (including negligence) or otherwise arising from any Defects in the Loader and all warranties implied by the laws of any jurisdiction in which the End User uses the Loader are expressly excuded to the fullest extent permitted by the laws of such jurisdiction.
+3.4    In no event will SourceGuardian Ltd be liable to the End User for any consequential loss or any financial loss.
+3.5    SourceGuardian Ltd's only obligation to the End User is to use reasonable commercial efforts to (i) correct Defects within a reasonable time (ii) ensure the the Loader is not corrupted and is free of any computer virus, trojans, worms or logic bombs and (iii) to issue Maintenance updates from time to time. SourceGuardian Ltd may terminate or assign its obligations under this paragraph 3.5 by publishing a notice to this effect on the RubyEncoder website at www.rubyencoder.com.  In such circumstances the provisions of paragraph 3.2 will also terminate.Nothing in this Licence applies so as to exclude or limit any liability that SourceGuardian Ltd may have to the End User based on fraudulent misrepresentation or personal injury resulting from SourceGuardian Ltd's negligence.
+
+4.    General
+4.1    This Agreement contains the entire agreement between the parties on the subject matter of this Agreement and supersedes all representations, undertakings and agreements previously made between the parties with respect to the subject matter of this Agreement.
+4.2    If any provision (or part of a provision) of this Licence is found by any court or administrative body of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions will remain in force. If any invalid, unenforceable or illegal provision would be valid, enforceable or legal if some part of it were deleted, the provision will apply with whatever modification is necessary to give effect to the commercial intention of the parties.
+4.3    This Licence constitutes the whole agreement between the parties and supersedes any previous arrangement, understanding or agreement between them relating to its subject matter.
+4.4    Each party acknowledges and agrees that in entering into this Licence it does not rely on any undertaking, promise, assurance, statement, representation, warranty or understanding (whether in writing or not) of any person (whether party to this Licence or not) relating to the subject matter of this Licence, other than as expressly set out in this Licence.
+4.5    This Licence and any disputes or claims arising out of or in connection with it or its subject matter or formation (including non-contractual disputes or claims) are governed by, and should be construed in accordance with, the law of England and Wales.
+4.6    The parties irrevocably agree that the courts of England have exclusive jurisdiction to settle any dispute or claim that arises out of or in connection with the Contract or its subject matter or formation (including non-contractual disputes or claims).

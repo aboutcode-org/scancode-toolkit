@@ -1,7 +1,7 @@
 key: unlimited-linking-exception-gpl
 short_name: Unlimited linking exception to GPL
 name: Unlimited linking exception to GPL
-category: Copyleft Limited
+category: Copyleft
 owner: Free Software Foundation (FSF)
 notes: this is a rare variant of an LGPL exception foudn in glibc
 is_exception: yes

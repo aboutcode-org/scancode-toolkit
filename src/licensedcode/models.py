@@ -75,6 +75,8 @@ FOSS_CATEGORIES = set([
     'Patent License',
     'Permissive',
     'Public Domain',
+    'Source-available',
+    'Free Restricted',
 ])
 
 
