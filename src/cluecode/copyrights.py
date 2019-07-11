@@ -479,7 +479,8 @@ patterns = [
     # or et.al.
     (r'^[Oo]ther?s|et\.al[\.,]?$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
-    (r'^([-/]|to)$', 'DASH'),
+    (r'^[-/]$', 'DASH'),
+    (r'^to$', 'TO'),
 
     # explicitly ignoring these words: FIXME: WHY?
     (r'^([Tt]his|THIS|[Pp]ermissions?|PERMISSIONS?|All)$', 'NN'),
@@ -631,11 +632,12 @@ grammar = """
 #######################################
 
     YR-RANGE: {<YR>+ <CC>+ <YR>}        #20
-    YR-RANGE: {<YR> <DASH>* <YR|CD>+}        #30
+    YR-RANGE: {<YR> <DASH|TO>* <YR|CD>+}        #30
     YR-RANGE: {<CD>? <YR>+}        #40
     YR-RANGE: {<YR>+ }        #50
     YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
     YR-RANGE: {<YR-AND>+}        #70
+    YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
 
 #######################################
@@ -1208,6 +1210,11 @@ grammar = """
 
     # Copyright (c) 2007-2014 IOLA and Ole Laursen.
     COPYRIGHT: {<COPYRIGHT> <ANDCO>}
+
+    # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
+    COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
+
+
 
 # Authors
     # Created by XYZ
