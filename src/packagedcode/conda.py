@@ -67,8 +67,6 @@ if TRACE:
 @attr.s()
 class CondaPackage(models.Package):
     metafiles = ('meta.yaml',  'META.yml',)
-    filetypes = ('.bz', '.bz2', 'bzip2',)
-    mimetypes = ('application/x-bzip2',)
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
