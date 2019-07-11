@@ -95,7 +95,7 @@ class CopyrightTest(object):
                 msg = 'file://' + self.data_file + '\n' + repr(self) + '\n' + traceback.format_exc()
                 raise Exception(msg)
 
-        # fix counts to be ints: sane yaml loads everything as string
+        # fix counts to be ints: saneyaml loads everything as string
         for holders_sum in self.holders_summary:
             holders_sum['count'] = int(holders_sum['count'])
 
@@ -118,15 +118,20 @@ class CopyrightTest(object):
             # do not dump false and empties
             if value])
 
+    def dumps(self):
+        """
+        Return a string representation of self in YAML block format.
+        """
+        return saneyaml.dump(self.to_dict())
+
     def dump(self, check_exists=False):
         """
         Dump a representation of self to a .yml data_file in YAML block format.
         """
-        as_yaml = saneyaml.dump(self.to_dict())
         if check_exists and path.exists(self.data_file):
             raise Exception(self.data_file)
         with io.open(self.data_file, 'w', encoding='utf-8') as df:
-            df.write(as_yaml)
+            df.write(self.dumps())
 
 
 def load_copyright_tests(test_dir=test_env.test_data_dir):
@@ -214,44 +219,24 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
             holders_summary=holders_summary,
             copyrights_summary=copyrights_summary,
             authors_summary=authors_summary,
-            )
+        )
+        results = {k: v for k, v in results.items() if k in test.what}
+
+        expected_yaml = test.dumps()
+
+        for wht in test.what:
+            setattr(test, wht, results.get(wht))
+        results_yaml = test.dumps()
 
         if regen:
-            for wht in test.what:
-                setattr(test, wht, results.get(wht))
             test.dump()
+        if expected_yaml != results_yaml:
+            expected_yaml = (
+                'data file: file://' + data_file +
+                '\ntest file: file://' + test_file + '\n'
+            ) + expected_yaml
 
-        failing = []
-        all_expected = []
-        all_results = []
-        for wht in test.what:
-            expected = getattr(test, wht, [])
-            result = results[wht]
-            if wht.endswith('_summary'):
-                expected.sort()
-                result.sort()
-            try:
-                assert expected == result
-            except:
-                # On failure, we compare against more result data to get additional
-                # failure details, including the test_file and full results
-                # this assert will always fail and provide a more detailed failure trace
-                if wht.endswith('_summary'):
-                    all_expected.append([e.items() for e in expected])
-                    all_results.append([r.items() for r in result])
-                else:
-                    all_expected.append(expected)
-                    all_results.append(result)
-                failing.append(wht)
-
-        if all_expected:
-            all_expected += [
-                'failing tests: ' + ', '.join(failing),
-                'data file: file://' + data_file,
-                'test file: file://' + test_file
-            ]
-
-            assert all_expected == all_results
+            assert expected_yaml == results_yaml
 
     data_file = test.data_file
     test_file = test.test_file
