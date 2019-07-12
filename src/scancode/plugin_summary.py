@@ -70,10 +70,18 @@ class Summary(object):
     license_expression = attr.ib()
     holders = attr.ib()
     type=attr.ib()
+    purl=attr.ib(default=None)
+    primary_license=attr.ib(default=None)
+    secondary_license=attr.ib(default=None)
 
 
 @attr.s
 class Fileset(object):
+    """
+    A grouping of files that share the same origin
+    """
+    # TODO: have an attribute for key files (one that strongly determines origin)
+    # TODO: Don't serialize things we don't care about
     type=attr.ib()
     identifier = attr.ib(default=-1) # maybe
     primary_resource = attr.ib(default=None) # in case of packages, will be package root
@@ -83,6 +91,24 @@ class Fileset(object):
     declared_holders = attr.ib(default=None)
     discovered_license_expression = attr.ib(default=None)
     discovered_holders = attr.ib(default=None)
+
+
+@attr.s
+class PackageFileset(Fileset):
+    """
+    TODO: add collation method for filesets to get licenses and holders to augment primary origin data
+    TODO: Identify key files based off of root of package
+    TODO: Override processing method to be specific to PackageFileset
+    """
+    pass
+
+
+@attr.s
+class LicenseHolderFileset(Fileset):
+    """
+    TODO: override processing method to be specific to LicenseHolderFileset
+    """
+    pass
 
 
 @post_scan_impl
@@ -122,31 +148,19 @@ class OriginSummary(PostScanPlugin):
         return origin_summary
 
     def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
-        root = codebase.get_resource(0)
-
-        # TODO: Should we activate or deactivate certain summarization options based on
-        # the attributes that are present in the codebase?
-        if (not hasattr(root, 'copyrights')
-                or not hasattr(root, 'licenses')
-                or not hasattr(root, 'packages')):
-            # TODO: Raise warning(?) if these fields are not there
-            return
-
         filesets = []
-        # Collecters should be independent and not depend on the result of another
-        fileset_collecters = [get_package_filesets, get_license_exp_holders_filesets]
-        for collecter in fileset_collecters:
-            filesets.extend(collecter(codebase, origin_summary_threshold=origin_summary_threshold))
+        root = codebase.get_resource(0)
+        if hasattr(root, 'packages'):
+            filesets.extend(get_package_filesets(codebase))
+        if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
+            filesets.extend(get_license_exp_holders_filesets(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        processed_filesets = filesets
-        fileset_processors = [process_license_exp_holders_filesets]
-        for processor in fileset_processors:
-            processed_filesets = list(processor(processed_filesets))
-
-        codebase.attributes.summaries = create_summaries(processed_filesets, codebase)
+        if filesets:
+            filesets = process_license_exp_holders_filesets(filesets)
+            codebase.attributes.summaries = create_summaries(filesets, codebase)
 
 
-def get_package_filesets(codebase, **kwargs):
+def get_package_filesets(codebase):
     """
     Yield a Fileset for each detected package in the codebase
     """
@@ -163,7 +177,7 @@ def get_package_filesets(codebase, **kwargs):
             )
 
 
-def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None, **kwargs):
+def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     """
     Yield a Fileset for each directory where 75% or more of the files have the same license
     expression and copyright holders ONLY IF its parent directory has no majority license expression
@@ -316,14 +330,11 @@ def create_summaries(filesets, codebase):
     Return a list of summaries from `filesets`
     """
     # TODO: Introduce notion of precedence for package data
-    # TODO: Process filesets further before creating summaries
     summaries = []
-    identifier = 0
-    for fileset in filesets:
-        summary_type = fileset.type
+    for identifier, fileset in enumerate(filesets):
         license_expression = None
         holders = None
-        if summary_type == 'package':
+        if fileset.type == 'package':
             license_expression = fileset.package.license_expression
             fileset_package_copyright = fileset.package.copyright
             if fileset_package_copyright:
@@ -331,7 +342,8 @@ def create_summaries(filesets, codebase):
                 holders = [fileset_package_copyright]
             else:
                 holders = [party.get('name') for party in fileset.package.parties]
-        if summary_type == 'license-exp-holders':
+        if fileset.type == 'license-exp-holders':
+            # TODO: consider primary and secondary origins
             license_expression = fileset.discovered_license_expression
             holders = fileset.discovered_holders
         for res in fileset.resources:
@@ -342,14 +354,13 @@ def create_summaries(filesets, codebase):
                 identifier=identifier,
                 license_expression=license_expression,
                 holders=holders,
-                type=summary_type,
+                type=fileset.type,
             )
         )
-        identifier += 1
     return summaries
 
 
-def get_nr_fileset(codebase, **kwargs):
+def get_nr_fileset(codebase):
     """
     Yield a Fileset for all Resources that are not to be reported
     """

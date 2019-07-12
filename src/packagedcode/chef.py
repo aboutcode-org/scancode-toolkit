@@ -77,9 +77,9 @@ class ChefPackage(models.Package):
         return manifest_resource.parent(codebase)
 
     @classmethod
-    def get_package_resources(cls, root, codebase):
-        yield root
-        for resource in root.walk(codebase, topdown=True):
+    def get_package_resources(cls, package_root, codebase):
+        yield package_root
+        for resource in package_root.walk(codebase, topdown=True):
             if resource.is_dir and resource.name == 'node_modules':
                 continue
             yield resource

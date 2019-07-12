@@ -105,9 +105,9 @@ class MavenPomPackage(models.Package):
             return manifest_resource
 
     @classmethod
-    def get_package_resources(cls, root, codebase):
-        yield root
-        for resource in root.walk(codebase, topdown=True):
+    def get_package_resources(cls, package_root, codebase):
+        yield package_root
+        for resource in package_root.walk(codebase, topdown=True):
             yield resource
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
