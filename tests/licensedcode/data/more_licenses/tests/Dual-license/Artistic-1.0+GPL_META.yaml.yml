@@ -1,3 +1,2 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+    - artistic-2.0 OR gpl-1.0-plus

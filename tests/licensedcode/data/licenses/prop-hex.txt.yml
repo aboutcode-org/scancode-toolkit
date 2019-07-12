@@ -1,4 +1,3 @@
 license_expressions:
-    - proprietary-license
-    - other-permissive
-
+  - proprietary-license
+  - other-permissive

@@ -1,4 +1,4 @@
 license_expressions:
-    - (gpl-3.0 WITH sencha-app-floss-exception OR gpl-3.0 WITH sencha-dev-floss-exception OR
-        sencha-commercial) AND (public-domain AND mit AND mit)
+  - (gpl-3.0 WITH sencha-app-floss-exception OR gpl-3.0 WITH sencha-dev-floss-exception OR sencha-commercial)
+    AND (public-domain AND mit AND mit)
 notes: complex notice for Sencha touch 2.4.2

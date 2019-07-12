@@ -4681,7 +4681,7 @@
       "licenses": [
         {
           "key": "artistic-2.0",
-          "score": 50.0,
+          "score": 90.0,
           "name": "Artistic License 2.0",
           "short_name": "Artistic 2.0",
           "category": "Copyleft Limited",
@@ -4695,20 +4695,20 @@
           "start_line": 198,
           "end_line": 198,
           "matched_rule": {
-            "identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
+            "identifier": "artistic-2.0_28.RULE",
             "license_expression": "artistic-2.0",
             "licenses": [
               "artistic-2.0"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 90.0
           }
         }
       ],

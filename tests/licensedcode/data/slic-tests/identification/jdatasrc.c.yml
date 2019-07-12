@@ -1,3 +1,4 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+    - ijg
+    - unknown-license-reference
+

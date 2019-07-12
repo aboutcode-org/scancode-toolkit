@@ -1,5 +1,6 @@
-expected_failure: yes
 license_expressions:
+  - unknown
+  - unknown
   - unknown
   - unknown
   - unknown

@@ -816,6 +816,9 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
     matching. In this case, the key that is used is that from the ScanCode
     license.
     """
+    if TRACE:
+        print('merge_licenses:', scancode_license, external_license)
+
     updated_scancode_attributes = []
 
     def update_scancode(_attrib, _sc_val, _ext_val):

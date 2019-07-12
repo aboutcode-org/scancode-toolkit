@@ -1,3 +1,2 @@
 license_expressions:
-  - lgpl-2.1
-expected_failure: yes
+  - lgpl-2.0

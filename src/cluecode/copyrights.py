@@ -273,7 +273,7 @@ patterns = [
     # MORE NN exceptions to NNP or CAPS
     # 'Berkeley Software Distribution',??
     (r'^(Unicode|Modified|NULL|FALSE|False|TRUE|True|Last|Predefined|If|Standard'
-      r'|Versions?\.?|Package|PACKAGE|Powered|License[d\.e\:]?|License-Alias\:?|Legal'
+      r'|Versions?\.?|Package|PACKAGE|Powered|Licen[cs]e[d\.e\:]?|License-Alias\:?|Legal'
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
       r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|LegalTrademarks|OriginalFilename'
@@ -282,7 +282,7 @@ patterns = [
       r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
-    (r'^(OR|VALUE|END|TODO)$', 'NN'),
+    (r'^(OR|VALUE|END|TODO|DOCUMENTATION|CHANGES|ISC-LICENSE)$', 'NN'),
 
     # Various rare non CAPS but NNP, treated as full names
     (r'^(FSF[\.,]?)$', 'NAME'),
@@ -291,15 +291,15 @@ patterns = [
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
     # various junk bits
-    (r'^example\.com$', 'JUNK'),
-    (r'^null$', 'JUNK'),
-
+    (r'^(example\.com'
+      r'|null$'
+      r'|:Licen[cs]e)$', 'JUNK'),
+    
     # when uppercase this is likely part of some SQL statement
     (r'FROM|CREATE|CURDIR', 'JUNK'),
     (r'RECURSIVE|VIEW', 'NN'),
     # found in sqlite
     (r'\+0|ToUpper', 'JUNK'),
-
 
     # Java
     (r'^.*Servlet,?|class$', 'JUNK'),
@@ -479,7 +479,8 @@ patterns = [
     # or et.al.
     (r'^[Oo]ther?s|et\.al[\.,]?$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
-    (r'^([-/]|to)$', 'DASH'),
+    (r'^[-/]$', 'DASH'),
+    (r'^to$', 'TO'),
 
     # explicitly ignoring these words: FIXME: WHY?
     (r'^([Tt]his|THIS|[Pp]ermissions?|PERMISSIONS?|All)$', 'NN'),
@@ -631,11 +632,12 @@ grammar = """
 #######################################
 
     YR-RANGE: {<YR>+ <CC>+ <YR>}        #20
-    YR-RANGE: {<YR> <DASH>* <YR|CD>+}        #30
+    YR-RANGE: {<YR> <DASH|TO>* <YR|CD>+}        #30
     YR-RANGE: {<CD>? <YR>+}        #40
     YR-RANGE: {<YR>+ }        #50
     YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
     YR-RANGE: {<YR-AND>+}        #70
+    YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
 
 #######################################
@@ -1208,6 +1210,11 @@ grammar = """
 
     # Copyright (c) 2007-2014 IOLA and Ole Laursen.
     COPYRIGHT: {<COPYRIGHT> <ANDCO>}
+
+    # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
+    COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
+
+
 
 # Authors
     # Created by XYZ

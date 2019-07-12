@@ -1,4 +1,1 @@
-license_expressions:
-  - TODO
-expected_failure: yes
 notes: no license should be detected

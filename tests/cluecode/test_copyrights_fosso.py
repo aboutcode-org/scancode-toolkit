@@ -56,7 +56,6 @@ expected_failures = set('''
     test_fossology_copyright_testdata18
     test_fossology_copyright_testdata83
     test_fossology_copyright_testdata87
-    test_fossology_copyright_testdata79
     test_fossology_copyright_testdata78
     test_fossology_copyright_testdata5
     test_fossology_copyright_testdata86

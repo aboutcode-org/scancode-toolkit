@@ -1551,9 +1551,8 @@ def get_full_matched_text(
         tokens = tokenize_matched_text(
             location, query_string, dictionary=idx.dictionary, _cache={})
     else:
-        # for testing only
         tokens = tokenize_matched_text(
-            location, query_string, dictionary=idx.dictionary, _cache={})
+            location, query_string, dictionary=idx.dictionary)
 
 
     if TRACE_MATCHED_TEXT:

@@ -1,3 +1,2 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+    - other-permissive

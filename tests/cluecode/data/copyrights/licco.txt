@@ -1,0 +1,23 @@
+Metadata-Version: 1.2
+Name: unittest2pytest
+Version: 0.4
+Summary: Convert unittest test-cases to pytest
+Home-page: https://github.com/pytest-dev/unittest2pytest
+Author: Hartmut Goebel
+Author-email: h.goebel@crazy-compilers.com
+License: GPLv3+
+Description-Content-Type: UNKNOWN
+Description: ==================================
+        unittest2pytest
+        ==================================
+        
+        -----------------------------------------------------
+        Helps converting unittest test-cases to pytest
+        -----------------------------------------------------
+        
+        :Author:    Hartmut Goebel <h.goebel@crazy-compilers.com>
+        :Version:   0.4
+        :Copyright: 2015-2019 by Hartmut Goebel
+        :Licence:   GNU Public Licence v3 or later (GPLv3+)
+        :Homepage:  https://github.com/pytest-dev/unittest2pytest
+

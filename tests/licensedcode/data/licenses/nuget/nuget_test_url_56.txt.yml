@@ -1,3 +1,2 @@
 license_expressions:
-  - unknown
-expected_failure: yes
+  - bsd-new AND ijg AND x11-tiff AND bsd-new

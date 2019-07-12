@@ -1,0 +1,12 @@
+key: fair-source-0.9
+short_name: Fair Source v0.9
+name: Fair Source License v0.9
+category: Source-available
+owner: Fair Source
+homepage_url: https://fair.io/
+text_urls:
+    - https://fair.io/#license
+    - https://github.com/fairsource/fairsource/blob/master/fair-source-license-v0.9.txt
+faq_url: https://fair.io/#faq
+other_urls:
+    - https://github.com/search?p=2&q=%22Fair+Source+License%22&type=Code

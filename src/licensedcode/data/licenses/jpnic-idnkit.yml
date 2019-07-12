@@ -1,11 +1,12 @@
 key: jpnic-idnkit
-short_name: JPNIC idnkit license
-name: JPNIC idnkit license
+short_name: JPNIC idnkit License
+name: JPNIC idnkit License
 category: Permissive
 owner: JPNIC
 homepage_url: https://www.nic.ad.jp/ja/idn/idnkit/download/
+spdx_license_key: JPNIC
 text_urls:
     - https://dev.w3.org/libwww/modules/idn/LICENSE.txt
 other_urls:
+    - https://gitlab.isc.org/isc-projects/bind9/blob/master/COPYRIGHT#L366
     - https://jprs.co.jp/idn/
-spdx_license_key: jpnic

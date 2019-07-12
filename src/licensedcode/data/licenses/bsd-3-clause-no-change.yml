@@ -2,7 +2,7 @@ key: bsd-3-clause-no-change
 short_name: BSD 3-Clause No Change
 name: BSD 3-Clause No Change
 category: Permissive
-owner: David Corcoran <corcoran@linuxnet.com>
+owner: David Corcoran
 homepage_url: https://pcsclite.apdu.fr/
 notes: there is an extra clause about changes which has some ambiguities
 other_urls:

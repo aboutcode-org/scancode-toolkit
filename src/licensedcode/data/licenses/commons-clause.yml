@@ -1,7 +1,7 @@
 key: commons-clause
 short_name: Commons Clause
 name: Commons Clause License Condition v1.0
-category: Free Restricted
+category: Source-available
 owner: FOSSA
 homepage_url: https://commonsclause.com/
 notes: This extra condition restricts selling and commercial usage. The Commons Clause is a
@@ -12,4 +12,6 @@ text_urls:
 faq_url: https://commonsclause.com/#faq
 other_urls:
     - https://github.com/fossas/commons-clause
+    - https://github.com/neo4j/neo4j/blob/3.5/packaging/LICENSE.txt
+    - https://leveljournal.com/source-available-licensing
     - https://redislabs.com/community/licences/

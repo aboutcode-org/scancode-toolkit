@@ -1,4 +1,3 @@
 license_expressions:
-    - gpl-2.0 OR bsd-new
-    - bsd-unmodified
-
+  - gpl-2.0 OR bsd-new
+  - bsd-unmodified
