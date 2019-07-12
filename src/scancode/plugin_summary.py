@@ -43,7 +43,7 @@ from scancode import POST_SCAN_GROUP
 
 
 # Tracing flags
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
@@ -67,12 +67,12 @@ if TRACE:
 @attr.s
 class Summary(object):
     identifier = attr.ib()
-    license_expression = attr.ib()
-    holders = attr.ib()
     type=attr.ib()
+    primary_license_expression=attr.ib(default=None)
+    primary_holders = attr.ib(default=attr.Factory(list))
+    secondary_license_expression=attr.ib(default=None)
+    secondary_holders = attr.ib(default=attr.Factory(list))
     purl=attr.ib(default=None)
-    primary_license=attr.ib(default=None)
-    secondary_license=attr.ib(default=None)
 
 
 @attr.s
@@ -96,19 +96,29 @@ class Fileset(object):
 @attr.s
 class PackageFileset(Fileset):
     """
-    TODO: add collation method for filesets to get licenses and holders to augment primary origin data
     TODO: Identify key files based off of root of package
-    TODO: Override processing method to be specific to PackageFileset
     """
-    pass
+    def create_summary(self, identifier):
+        return Summary(
+            identifier=identifier,
+            type=self.type,
+            primary_license_expression=self.declared_license_expression,
+            primary_holders=self.declared_holders,
+            secondary_license_expression=self.discovered_license_expression,
+            secondary_holders=self.discovered_holders,
+            purl=self.package.purl
+        )
 
 
 @attr.s
 class LicenseHolderFileset(Fileset):
-    """
-    TODO: override processing method to be specific to LicenseHolderFileset
-    """
-    pass
+    def create_summary(self, identifier):
+        return Summary(
+            identifier=identifier,
+            type=self.type,
+            primary_license_expression=self.discovered_license_expression,
+            primary_holders=self.discovered_holders
+        )
 
 
 @post_scan_impl
@@ -167,13 +177,26 @@ def get_package_filesets(codebase):
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
-            yield Fileset(
+            package_fileset = list(package.get_package_resources(resource, codebase))
+            package_license_expression = package.license_expression
+            # TODO: Get holders from package copyright
+            discovered_license_expressions = []
+            discovered_holders = []
+            for package_resource in package_fileset:
+                package_resource_license_expression = package_resource.license_expression
+                # We want to collect the license expressions that are not declared by the manifest
+                if package_resource_license_expression == package_license_expression:
+                    continue
+                discovered_license_expressions.append(package_resource_license_expression)
+                discovered_holders.extend(package_resource.holders)
+            yield PackageFileset(
                 type='package',
-                resources=list(package.get_package_resources(resource, codebase)),
-                # TODO: add package declared license and holders
-                # TODO: may be better as primary license
+                resources=package_fileset,
                 primary_resource=resource,
-                package=package
+                package=package,
+                declared_license_expression=package_license_expression,
+                discovered_license_expression=combine_expressions(discovered_license_expressions),
+                discovered_holders=set(discovered_holders)
             )
 
 
@@ -199,7 +222,6 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
 
         # Collect license expression and holders count for stat-based summarization
         origin_count = Counter()
-        child_rids = []
         for child in children:
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
@@ -214,7 +236,6 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
                 if not child_origin_count:
                     continue
                 origin_count.update(child_origin_count)
-            child_rids.append(child.rid)
 
         if origin_count:
             resource.extra_data['origin_count'] = origin_count
@@ -270,8 +291,8 @@ def create_license_exp_holders_fileset(resource, codebase):
     if license_expression and holders:
         fileset_resources = get_fileset_resources(resource, codebase)
         if fileset_resources:
-            return Fileset(
-                type='license-exp-holders',
+            return LicenseHolderFileset(
+                type='license-holders',
                 resources=fileset_resources,
                 primary_resource=resource,
                 discovered_license_expression=license_expression,
@@ -304,21 +325,21 @@ def process_license_exp_holders_filesets(filesets):
     Combine Filesets with the same license expression and holders
     into a single Fileset
     """
-    filesets_by_holders_lic_exp = defaultdict(list)
+    filesets_by_holders_license_expression = defaultdict(list)
     for fileset in filesets:
-        if not (fileset.type == 'license-exp-holders'):
+        if not (fileset.type == 'license-holders'):
             # We yield the other Filesets that we don't handle
             yield fileset
             continue
         origin = fileset.discovered_holders, fileset.discovered_license_expression
-        filesets_by_holders_lic_exp[origin].append(fileset)
+        filesets_by_holders_license_expression[origin].append(fileset)
 
-    for (fileset_holders, fileset_license_expression), filesets in filesets_by_holders_lic_exp.items():
+    for (fileset_holders, fileset_license_expression), filesets in filesets_by_holders_license_expression.items():
         fileset_resources = []
         for fileset in filesets:
             fileset_resources.extend(fileset.resources)
-        yield Fileset(
-            type='license-exp-holders',
+        yield LicenseHolderFileset(
+            type='license-holders',
             resources=fileset_resources,
             discovered_license_expression=fileset_license_expression,
             discovered_holders=fileset_holders
@@ -332,31 +353,10 @@ def create_summaries(filesets, codebase):
     # TODO: Introduce notion of precedence for package data
     summaries = []
     for identifier, fileset in enumerate(filesets):
-        license_expression = None
-        holders = None
-        if fileset.type == 'package':
-            license_expression = fileset.package.license_expression
-            fileset_package_copyright = fileset.package.copyright
-            if fileset_package_copyright:
-                # TODO: Get holder from copyright
-                holders = [fileset_package_copyright]
-            else:
-                holders = [party.get('name') for party in fileset.package.parties]
-        if fileset.type == 'license-exp-holders':
-            # TODO: consider primary and secondary origins
-            license_expression = fileset.discovered_license_expression
-            holders = fileset.discovered_holders
         for res in fileset.resources:
             res.summarized_to = identifier
             res.save(codebase)
-        summaries.append(
-            Summary(
-                identifier=identifier,
-                license_expression=license_expression,
-                holders=holders,
-                type=fileset.type,
-            )
-        )
+        summaries.append(fileset.create_summary(identifier))
     return summaries
 
 
