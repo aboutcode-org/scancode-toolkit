@@ -1,3 +1,2 @@
 license_expressions:
-  - boost-1.0 AND mit
-expected_failure: yes
+  - boost-1.0 OR mit

@@ -5,3 +5,6 @@ category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: https://oss.oracle.com/licenses/universal-foss-exception/
 is_exception: yes
+spdx_license_key: Universal-FOSS-exception-1.0
+other_urls:
+    - https://oss.oracle.com/licenses/universal-foss-exception/

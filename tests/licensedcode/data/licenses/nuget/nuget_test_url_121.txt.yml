@@ -1,3 +1,2 @@
 license_expressions:
-  - unknown
-expected_failure: yes
+  - apache-2.0 AND (ms-pl OR apache-2.0) AND ms-pl

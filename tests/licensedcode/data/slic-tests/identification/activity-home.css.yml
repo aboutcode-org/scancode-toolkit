@@ -1,4 +1,2 @@
 license_expressions:
-  - TODO
-  - w3c
-expected_failure: yes
+    - w3c-software-doc-20150513

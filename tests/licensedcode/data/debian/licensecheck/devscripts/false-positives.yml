@@ -1,10 +1,8 @@
-expected_failure: yes
 license_expressions:
   - x11-tiff
-  - bsd-top
+  - lilo
   - generic-cla
   - unknown-license-reference
   - unknown
   - public-domain
   - public-domain
-

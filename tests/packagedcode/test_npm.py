@@ -156,6 +156,12 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_double_legacy_licenses_as_dict(self):
+        test_file = self.get_test_loc('npm/double_license/package.json')
+        expected_loc = self.get_test_loc('npm/double_license/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
     def test_parse_nodep(self):
         test_file = self.get_test_loc('npm/nodep/package.json')
         expected_loc = self.get_test_loc('npm/nodep/package.json.expected')

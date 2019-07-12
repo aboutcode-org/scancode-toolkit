@@ -1,2 +1,3 @@
 license_expressions:
-    - lgpl-2.1 WITH lzma-sdk-2006-exception OR cpl-1.0 WITH lzma-sdk-2006-exception
+  - lzma-sdk-2006
+notes: composite of lgpl-2.1 WITH lzma-sdk-2006-exception OR cpl-1.0 WITH lzma-sdk-2006-exception

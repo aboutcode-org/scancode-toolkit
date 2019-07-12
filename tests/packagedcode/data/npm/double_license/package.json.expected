@@ -1,0 +1,132 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "grunt-esvm",
+  "version": "3.2.8",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "Create elasticsearch clusters from grunt.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Spencer Alger",
+      "email": "spencer.alger@elasticsearch.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "gruntplugin"
+  ],
+  "homepage_url": "https://github.com/spenceralger/grunt-esvm",
+  "download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": "https://github.com/spenceralger/grunt-esvm/issues",
+  "code_view_url": null,
+  "vcs_url": "git://github.com/spenceralger/grunt-esvm.git",
+  "copyright": null,
+  "license_expression": "apache-2.0",
+  "declared_license": [
+    "Apache-2.0",
+    {
+      "type": "Apache 2.0",
+      "url": "https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md"
+    }
+  ],
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/bluebird",
+      "requirement": "^2.9.30",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/cli-color",
+      "requirement": "~0.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/cli-table",
+      "requirement": "~0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/libesvm",
+      "requirement": "^3.8.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/lodash",
+      "requirement": "^3.9.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/moment",
+      "requirement": "^2.10.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/wreck",
+      "requirement": "^5.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "requirement": ">=0.4.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/load-grunt-config",
+      "requirement": "~0.19.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "requirement": ">=0.4.0",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/grunt-esvm@3.2.8",
+  "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
+  "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+  "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8"
+}

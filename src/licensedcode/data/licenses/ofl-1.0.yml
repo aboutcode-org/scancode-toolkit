@@ -1,10 +1,10 @@
 key: ofl-1.0
 short_name: OFL 1.0
-name: Open Font License 1.0
-category: Free Restricted
+name: SIL Open Font License 1.0
+category: Permissive
 owner: SIL International
 homepage_url: http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web
-notes: |-
+notes: |
     Per SPDX.org, this license has been superseded. This license was released
     in November 2005.
 spdx_license_key: OFL-1.0

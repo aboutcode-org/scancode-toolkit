@@ -1,4 +1,3 @@
 license_expressions:
-    - x11
-    - unknown
-notes: DANSE notice which is an X11 with some extras, reported as unknown
+  - x11 AND other-permissive
+notes: DANSE notice which is an X11 with some extras

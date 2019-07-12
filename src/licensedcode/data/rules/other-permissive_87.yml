@@ -1,0 +1,8 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: for a time (between 1999 and 2004) this was the license from sudo from https://www.sudo.ws/repos/sudo/file/92712e895afb/LICENSE
+    until https://www.sudo.ws/repos/sudo/file/d8d7bfc8a18b/LICENSE e.g. this was a BSD Original/4
+    clauses made into 3 clause then with a new 4th clause added borrowed from the Apache 1.1
+    license. This is not worthy of being its own license entry as this is no longer in use.
+    This is also referenced at http://www.linfo.org/bsdlicense.html

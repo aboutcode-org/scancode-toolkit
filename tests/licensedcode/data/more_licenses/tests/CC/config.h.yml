@@ -1,3 +1,2 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+    - cc-by-sa-3.0

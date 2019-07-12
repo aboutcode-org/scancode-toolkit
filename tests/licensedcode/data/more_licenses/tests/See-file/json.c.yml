@@ -1,3 +1,3 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+    - unknown-license-reference
+

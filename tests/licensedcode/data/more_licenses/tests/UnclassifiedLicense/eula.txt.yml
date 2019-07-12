@@ -1,3 +1,5 @@
 license_expressions:
-  - TODO
-expected_failure: yes
+  - unknown
+  - fsf-mit
+  - fsf-mit
+  - amd-historical

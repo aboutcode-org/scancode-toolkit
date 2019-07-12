@@ -1,0 +1,4 @@
+license_expression: x11 AND other-permissive
+is_license_notice: yes
+notes: rare extra notice added to an X11 license by the Danse project
+minimum_coverage: 80

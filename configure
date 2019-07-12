@@ -33,3 +33,5 @@ $PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
 if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
     source "$CONFIGURE_ROOT_DIR/bin/activate"
 fi
+
+set +e
