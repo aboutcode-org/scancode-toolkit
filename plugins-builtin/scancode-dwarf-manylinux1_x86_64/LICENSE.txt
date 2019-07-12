@@ -1,0 +1,31 @@
+
+David Anderson: December 2006
+The code in the dwarfdump directory is (if you look
+in each file) covered by the GPL (not the LGPL).  The
+DWARFDUMPCOPYRIGHT file, though, said (before December 24,
+2006) the copyright is LGPL.  There is no doubt in my (David
+Anderson) mind that the intent was always that dwarfdump be
+GPL and the copyright markings in each file are correct.
+
+There are three files marked with the LGPL: tag_tree.list
+tag_attr.list acconfig.h.  These markings are left as is and
+these are are therefore LGPL files.
+
+The DWARFDUMPCOPYRIGHT file now (Dec 24 2006) has both
+copyrights and an explanation of where each applies.
+
+
+
+-------------------------------------------
+The text present for years, thru Dec 23, 2006:
+The files:
+	dwarfdump.c
+	and all the .h and .c files in this implementation of
+	dwarfdump are copyrighted according to the file
+	DWARFDUMPCOPYRIGHT.   
+
+
+
+$Source: /plroot/cmplrs.src/v7.4.5m/.RCS/PL/dwarfdump/RCS/COPYING,v $
+$Revision: 1.1 $
+$Date: 2001/01/16 17:47:55 $
