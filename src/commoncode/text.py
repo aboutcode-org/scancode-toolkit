@@ -28,6 +28,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from commoncode import compat
+from commoncode.system import py2
+
 import re
 import logging
 import unicodedata
@@ -181,10 +184,12 @@ def toascii(s, translit=False):
         else:
             converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-        converted = str(s.decode('ascii', 'ignore'))
+        if py2:
+            converted = compat.unicode(s.decode('ascii', 'ignore'))
+        else:
+            converted = compat.unicode(s)
     return converted
-
-
+    
 def python_safe_name(s):
     """
     Return a name derived from string `s` safe to use as a Python identifier.
@@ -217,7 +222,7 @@ def as_unicode(s):
     if not s:
         return s
 
-    if isinstance(s, unicode):
+    if isinstance(s, compat.unicode):
         return s
 
     try:
@@ -231,6 +236,6 @@ def as_unicode(s):
         except UnicodeDecodeError:
                 pass
         s = toascii(s, translit=True)
-        if not isinstance(s, unicode):
-            s = unicode(s)
+        if not isinstance(s, compat.unicode):
+            s = compat.unicode(s)
         return s
