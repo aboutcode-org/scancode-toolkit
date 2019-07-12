@@ -37,7 +37,7 @@ import dwarf
 import dwarf2
 
 @scan_impl
-class Dwarfcanner(ScanPlugin):
+class DwarfScanner(ScanPlugin):
     """
     Scan a dwarf infos for URLs.
     """
