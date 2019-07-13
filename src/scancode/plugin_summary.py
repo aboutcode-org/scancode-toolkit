@@ -33,6 +33,7 @@ from collections import OrderedDict
 
 import attr
 
+from cluecode.copyrights import CopyrightDetector
 from commoncode.text import python_safe_name
 from packagedcode import get_package_instance
 from packagedcode.utils import combine_expressions
@@ -172,29 +173,41 @@ class OriginSummary(PostScanPlugin):
 
 def get_package_filesets(codebase):
     """
-    Yield a Fileset for each detected package in the codebase
+    Yield a PackageFileset for each detected package in the codebase
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
             package_fileset = list(package.get_package_resources(resource, codebase))
             package_license_expression = package.license_expression
-            # TODO: Get holders from package copyright
+            package_copyright = package.copyright
+
+            package_holders = []
+            if package_copyright:
+                for _, holder, _, _ in CopyrightDetector().detect([(0, package_copyright),], \
+                        copyrights=False, holders=True, authors=False, include_years=False):
+                    package_holders.append(holder)
+            package_holders_set = set(package_holders)
+
             discovered_license_expressions = []
             discovered_holders = []
             for package_resource in package_fileset:
                 package_resource_license_expression = package_resource.license_expression
+                package_resource_holders = package_resource.holders
                 # We want to collect the license expressions that are not declared by the manifest
-                if package_resource_license_expression == package_license_expression:
+                if (package_resource_license_expression == package_license_expression
+                        or set(package_resource_holders).issubset(package_holders_set)):
                     continue
                 discovered_license_expressions.append(package_resource_license_expression)
-                discovered_holders.extend(package_resource.holders)
+                discovered_holders.extend(package_resource_holders)
+
             yield PackageFileset(
                 type='package',
                 resources=package_fileset,
                 primary_resource=resource,
                 package=package,
                 declared_license_expression=package_license_expression,
+                declared_holders=package_holders,
                 discovered_license_expression=combine_expressions(discovered_license_expressions),
                 discovered_holders=set(discovered_holders)
             )
