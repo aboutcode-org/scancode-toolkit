@@ -37,6 +37,8 @@ from commoncode.testcase import FileBasedTesting
 from os.path import join
 from os.path import exists
 
+import pytest
+pytestmark = pytest.mark.scanpy3 #NOQA
 
 class TypeTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -140,7 +142,7 @@ class CountTest(FileBasedTesting):
     def test_get_file_count_with_single_file(self):
         test_file = self.get_temp_file()
         with open(test_file, 'wb') as f:
-            f.write('')
+            f.write(b'')
         assert filetype.is_file(test_file)
         assert 1 == filetype.get_file_count(test_file)
 

@@ -168,9 +168,11 @@ jobs:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py \
                     tests/commoncode/test_date.py \
+                    tests/commoncode/test_filetype.py \
                     tests/commoncode/test_fileset.py \
                     tests/commoncode/test_fileutils.py \
                     tests/commoncode/test_functional.py \
+                    tests/commoncode/test_ignore.py \
                     tests/commoncode/test_paths.py \
                     tests/commoncode/test_saneyaml.py \
                     tests/commoncode/test_timeutils.py \
@@ -186,9 +188,11 @@ jobs:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py \
                     tests/commoncode/test_date.py \
+                    tests/commoncode/test_filetype.py \
                     tests/commoncode/test_fileset.py \
                     tests/commoncode/test_fileutils.py \
                     tests/commoncode/test_functional.py \
+                    tests/commoncode/test_ignore.py \
                     tests/commoncode/test_paths.py \
                     tests/commoncode/test_saneyaml.py \
                     tests/commoncode/test_timeutils.py \
@@ -204,9 +208,11 @@ jobs:
               commoncode: |
                 bin/py.test -vvs tests/commoncode/test_codec.py \
                     tests/commoncode/test_date.py \
+                    tests/commoncode/test_filetype.py \
                     tests/commoncode/test_fileset.py \
                     tests/commoncode/test_fileutils.py \
                     tests/commoncode/test_functional.py \
+                    tests/commoncode/test_ignore.py \
                     tests/commoncode/test_paths.py \
                     tests/commoncode/test_saneyaml.py \
                     tests/commoncode/test_timeutils.py \
@@ -221,7 +227,7 @@ jobs:
           python_architecture: x86
           test_suites:
               commoncode: |
-                Scripts\py.test -vvs tests\commoncode\test_codec.py tests/commoncode/test_date.py tests/commoncode/test_fileset.py tests\commoncode\test_fileutils.py tests\commoncode\test_functional.py tests\commoncode\test_paths.py tests/commoncode/test_saneyaml.py tests/commoncode/test_timeutils.py tests/commoncode/test_urn.py tests/commoncode/test_version.py
+                Scripts\py.test -vvs tests\commoncode\test_codec.py tests/commoncode/test_date.py tests/commoncode/test_filetype.py tests/commoncode/test_fileset.py tests\commoncode\test_fileutils.py tests\commoncode\test_functional.py tests/commoncode/test_ignore.py tests\commoncode\test_paths.py tests/commoncode/test_saneyaml.py tests/commoncode/test_timeutils.py tests/commoncode/test_urn.py tests/commoncode/test_version.py
 
 
 ################################################################################
@@ -253,9 +259,11 @@ jobs:
           test_suite: |
                 bin/py.test -vvs tests/commoncode/test_codec.py \
                     tests/commoncode/test_date.py \
+                    tests/commoncode/test_filetype.py \
                     tests/commoncode/test_fileset.py \
                     tests/commoncode/test_fileutils.py \
                     tests/commoncode/test_functional.py \
+                    tests/commoncode/test_ignore.py \
                     tests/commoncode/test_paths.py \
                     tests/commoncode/test_saneyaml.py \
                     tests/commoncode/test_timeutils.py \
