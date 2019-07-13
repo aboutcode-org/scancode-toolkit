@@ -27,6 +27,7 @@ from __future__ import absolute_import, print_function
 import re
 
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 
 def VERSION_PATTERNS_REGEX():
@@ -54,9 +55,9 @@ def VERSION_PATTERNS_REGEX():
 ]]
 
 
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-EMPTY_STRING = b' ' if on_linux else ' '
-VERSION_PREFIX = b'v' if on_linux else 'v'
+POSIX_PATH_SEP = b'/' if on_linux and py2 else '/'
+EMPTY_STRING = b' ' if on_linux and py2 else ' '
+VERSION_PREFIX = b'v' if on_linux and py2 else 'v'
 
 
 def hint(path):

@@ -32,6 +32,7 @@ import os
 from commoncode import fileutils
 from commoncode import paths
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 
 TRACE = False
@@ -44,8 +45,8 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-EMPTY_STRING = b'' if on_linux else ''
+POSIX_PATH_SEP = b'/' if on_linux and py2 else '/'
+EMPTY_STRING = b'' if on_linux and py2 else ''
 
 
 """
