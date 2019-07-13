@@ -30,6 +30,8 @@ import os
 import commoncode.testcase
 from commoncode import fileset
 
+import pytest
+pytestmark = pytest.mark.scanpy3 #NOQA
 
 class FilesetTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -37,7 +39,7 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
     def test_load(self):
         irf = self.get_test_loc('fileset/scancodeignore.lst')
         result = fileset.load(irf)
-        assert ['/foo/*', '!/foobar/*', 'bar/*', '#comment'] == result
+        assert [b'/foo/*', b'!/foobar/*', b'bar/*', b'#comment'] == result
 
     def test_is_included_basic(self):
         assert fileset.is_included('/common/src/', {}, {})
