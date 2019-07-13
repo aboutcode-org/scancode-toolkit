@@ -21,7 +21,7 @@
   "code_view_url": null, 
   "vcs_url": null, 
   "copyright": null, 
-  "license_expression": "public-domain", 
+  "license_expression": "public-domain AND sax-pd", 
   "declared_license": [
     {
       "name": "Public Domain", 

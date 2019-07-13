@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 WITH classpath-exception-2.0 OR cddl-1.1
+is_license_text: yes
+notes: weird format for cddl + gpl + classpath
+ contains extra notice for jurisdiction
+minimum_coverage: 80
+relevance: 99
