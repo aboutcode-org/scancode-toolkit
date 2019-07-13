@@ -37,9 +37,8 @@ from scancode.cli import run_scan
 
 
 """
-Generate an SPDX document for each license known in ScanCode that are not usted
-at SPDX.
-Run python genlicspdx.py -h for help.
+Generate an SPDX document for each license known in ScanCode that are not
+listed at SPDX. Run python genlicspdx.py -h for help.
 
 NOTE: this is rather inefficient as it is starting a new command line process
 for each license, taking a few seconds each time.
