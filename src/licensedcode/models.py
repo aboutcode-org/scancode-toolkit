@@ -150,6 +150,13 @@ class License(object):
     minimum_coverage = __attrib(default=0)
     standard_notice = __attrib(default=None)
 
+    # lists of copuyrights, emails and URLs that can be ignored when detected
+    # in this license as they are part of the license or rule text itself
+    ignorable_copyrights = __attrib(default=attr.Factory(list))
+    ignorable_authors = __attrib(default=attr.Factory(list))
+    ignorable_urls = __attrib(default=attr.Factory(list))
+    ignorable_emails = __attrib(default=attr.Factory(list))
+
     # data file paths and known extensions
     data_file = __attrib(default=None)
     text_file = __attrib(default=None)
@@ -541,7 +548,12 @@ def build_rules_from_licenses(licenses):
                 minimum_coverage=minimum_coverage,
 
                 is_license=True,
-                is_license_text=True)
+                is_license_text=True,
+                ignorable_copyrights=license_obj.ignorable_copyrights,
+                ignorable_authors=license_obj.ignorable_authors,
+                ignorable_urls=license_obj.ignorable_urls,
+                ignorable_emails=license_obj.ignorable_emails,
+            )
 
 
 def get_all_spdx_keys(licenses):
@@ -727,6 +739,15 @@ class Rule(object):
 
     # set to True if the rule is built from a .LICENSE full text
     is_license = attr.ib(default=False, repr=False)
+
+    # lists of copuyrights, emails and URLs that can be ignored when detected
+    # in this license as they are part of the license or rule text itself
+    ignorable_copyrights = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_authors = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_urls = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_emails = attr.ib(default=attr.Factory(list), repr=False)
+
+    ###########################################################################
 
     # path to the YAML data file for this rule
     data_file = attr.ib(default=None, repr=False)
