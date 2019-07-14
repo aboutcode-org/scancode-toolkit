@@ -7,7 +7,8 @@ homepage_url: http://www.mysql.com/about/legal/licensing/foss-exception.html
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+minimum_coverage: 95
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License version 2 as published by
     the Free Software Foundation.
@@ -29,4 +30,3 @@ standard_notice: |-
     <http://www.mysql.com/about/legal/licensing/foss-exception.html>
     This software is OSI Certified Open Source Software.
     OSI Certified is a certification mark of the Open Source Initiative.
-minimum_coverage: 95

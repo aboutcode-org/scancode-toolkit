@@ -4,7 +4,7 @@ name: MIT Xfig Variant
 category: Permissive
 owner: Xfig Project
 homepage_url: http://www.xfig.org
-notes: |-
+notes: |
     From http://web.archive.org/web/2000212193456/http://www.xfig.org/xfigdist/
     xfig.README.3.2.4 The xfig copyright has changed slightly since the
     previous version. The previous notice allowed the *selling* of xfig or any

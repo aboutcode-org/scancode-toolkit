@@ -1,6 +1,6 @@
 license_expression: bsd-new AND facebook-patent-rights-2
 is_license_notice: yes
-notes: this is found in older react.js. In lz4 this is used with a bsd-simplified
+relevance: 90
 referenced_filenames:
     - LICENSE
-relevance: 90
+notes: this is found in older react.js. In lz4 this is used with a bsd-simplified

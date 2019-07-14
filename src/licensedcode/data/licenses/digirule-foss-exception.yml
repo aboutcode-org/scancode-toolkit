@@ -10,7 +10,7 @@ other_urls:
     - http://www.digirulesolutions.com/drupal/foss
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip
-standard_notice: |-
+standard_notice: |
     DigiRule Solutions's FOSS License Exception Terms and Conditions
     1. Definitions.
     "Derivative Work" means a derivative work, as defined under applicable

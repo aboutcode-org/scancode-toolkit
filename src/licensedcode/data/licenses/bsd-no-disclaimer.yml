@@ -3,7 +3,6 @@ short_name: BSD-2-Clause no disclaimer
 name: BSD-2-Clause without Warranty Disclaimer
 category: Permissive
 owner: Unspecified
-notes: A rare variant that comes with a slightly different wording and no
- warranty disclaimer.
+notes: A rare variant that comes with a slightly different wording and no warranty disclaimer.
 other_urls:
     - https://github.com/miekg/miek.nl/blob/17ef2d311da721ccb3ddb3649ec41ff51305952f/static/downloads/2009/tt.pl.txt#L5

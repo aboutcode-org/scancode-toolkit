@@ -4,7 +4,7 @@ name: WTFNMFPL-1.0
 category: Permissive
 owner: adversary.org
 homepage_url: https://github.com/adversary-org/wtfnmf
-notes: |-
+notes: |
     The Do What The Fuck You Want To But It's Not My Fault Public License
     (WTFNMFPL or WTFNMFPLv1) is a variation on the Do What The Fuck You Want
     Public License (WTFPL) by Sam Hocevar. Essentially it is the same as the

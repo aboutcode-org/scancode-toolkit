@@ -7,7 +7,7 @@ homepage_url: https://github.com/go-yaml/yaml/blob/v2/LICENSE
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation; either version 3 of the License, or (at your

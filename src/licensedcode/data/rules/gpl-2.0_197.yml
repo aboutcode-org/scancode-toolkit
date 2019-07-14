@@ -1,6 +1,6 @@
 license_expression: gpl-2.0
 is_license_reference: yes
+relevance: 99
 referenced_filenames:
     - kernel-base/COPYING
-relevance: 99
 notes: this is a notice found in the linux kernel that is both weak and incorrect

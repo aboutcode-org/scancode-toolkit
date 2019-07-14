@@ -6,7 +6,7 @@ owner: FreeBASIC Project
 is_exception: yes
 other_urls:
     - https://master.dl.sourceforge.net/project/fbc/Source%20Code/FreeBASIC-1.05.0-source.tar.gz
-standard_notice: |-
+standard_notice: |
     The FreeBASIC runtime library (libfb and the thread-safe version, libfbmt)
     and the FreeBASIC graphics library (libfbgfx and the thread-safe version,
     libfbgfxmt) are licensed under the GNU LGPLv2 or later, with this exception

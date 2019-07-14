@@ -4,7 +4,7 @@ name: Scheme Widget Library (SWL) Software License Agreement
 category: Permissive
 owner: Cadence Research Systems
 homepage_url: http://www.scheme.com/download/swl-lic.html
-notes: |-
+notes: |
     Per Fedora, this permissive license is derived from MIT, however, it has
     significant rewording and merits being considered as an independent
     license. It is Free and GPL-Compatible. A copy of the license text was

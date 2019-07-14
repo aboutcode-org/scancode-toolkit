@@ -234,7 +234,12 @@ class License(object):
                 return False
             return True
 
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        data = attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        cv = data.get('minimum_coverage')
+        if cv and isinstance(cv, float) and int(cv) == cv:
+            cv = int(cv)
+            data['minimum_coverage'] = cv
+        return data
 
     def dump(self):
         """
@@ -925,12 +930,15 @@ class Rule(object):
 
         if self.has_stored_relevance and self.relevance:
             rl = self.relevance
-            if int(rl) == rl:
+            if isinstance(rl, float) and int(rl) == rl:
                 rl = int(rl)
             data['relevance'] = rl
 
         if self.has_stored_minimum_coverage and self.minimum_coverage > 0:
-            data['minimum_coverage'] = self.minimum_coverage
+            cv = self.minimum_coverage
+            if isinstance(cv, float) and int(cv) == cv:
+                cv = int(cv)
+            data['minimum_coverage'] = cv
 
         if self.referenced_filenames:
             data['referenced_filenames'] = self.referenced_filenames

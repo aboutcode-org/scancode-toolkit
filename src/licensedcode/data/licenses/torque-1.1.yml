@@ -4,7 +4,7 @@ name: TORQUE v2.5+ Software License v1.1
 category: Copyleft Limited
 owner: Adaptive Computing Enterprises
 homepage_url: https://fedoraproject.org/wiki/Licensing/TORQUEv1.1
-notes: |-
+notes: |
     Per Fedora, when the licensing for TORQUE 2.4 expired, the TORQUE upstream
     drafted a new license with updated contact information. The intention was
     to have a lawyer retain the same functionality as the older licensing, but

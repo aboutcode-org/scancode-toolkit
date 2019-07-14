@@ -1,5 +1,5 @@
 license_expression: proprietary-license
 is_license_text: yes
 relevance: 100
-minimum_coverage: '90.0'
+minimum_coverage: 90
 notes: a modified apache license

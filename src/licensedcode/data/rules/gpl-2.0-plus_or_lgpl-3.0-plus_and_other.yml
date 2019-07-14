@@ -1,4 +1,5 @@
-license_expression: (gpl-2.0-plus OR lgpl-3.0-plus) AND gpl-3.0-plus AND unicode-tou AND unicode AND other-permissive AND other-copyleft
+license_expression: (gpl-2.0-plus OR lgpl-3.0-plus) AND gpl-3.0-plus AND unicode-tou AND unicode
+    AND other-permissive AND other-copyleft
 is_license_notice: yes
 referenced_filenames:
     - COPYINGv2

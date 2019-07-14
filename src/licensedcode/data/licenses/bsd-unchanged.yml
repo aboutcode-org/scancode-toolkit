@@ -3,7 +3,7 @@ short_name: BSD Unchanged
 name: BSD Simplified with Unchanged requirement
 category: Permissive
 owner: Unspecified
-notes: |-
+notes: |
     Contains this extra text "in this position and unchanged" when compared
     with a bsd-simplified. Found in the BSD codebase, for instance at
     http://web.mit.edu/freebsd/head/sys/sys/sbuf.h

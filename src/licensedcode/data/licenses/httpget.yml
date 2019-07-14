@@ -4,7 +4,7 @@ name: httpget notice and disclaimer
 category: Permissive
 owner: Unspecified
 homepage_url: http://www.softorchestra.com/downloads/
-notes: |-
+notes: |
     This license is an historical permission with a simplified warranty
     disclaimer as found in the libpbm license.
 text_urls:

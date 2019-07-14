@@ -4,14 +4,14 @@ name: WxWindows Library Exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/newlicen.htm
+notes: formerly was SPDX id wxWindows
 is_exception: yes
 spdx_license_key: WxWindows-exception-3.1
-notes: formerly was SPDX id wxWindows
 osi_url: https://opensource.org/licenses/WXwindows
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - http://www.opensource.org/licenses/WXwindows
-standard_notice: |-
+standard_notice: |
     The wxWindows Library Licence
     Copyright (c) 1998 Julian Smart, Robert Roebling [, ...]
     Everyone is permitted to copy and distribute verbatim copies of this

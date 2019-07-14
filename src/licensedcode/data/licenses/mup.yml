@@ -4,7 +4,7 @@ name: Mup License
 category: Permissive
 owner: Arkkra Enterprises
 homepage_url: http://www.arkkra.com/doc/license.html
-notes: |-
+notes: |
     Per Fedora, this is a BSD derived Free license, but clause 3 makes it GPL-
     incompatible, due to the need to include the reasons for the changes. A
     copy of this license was taken from http://www.arkkra.com/doc/license.html

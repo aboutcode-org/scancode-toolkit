@@ -11,7 +11,7 @@ text_urls:
 other_urls:
     - http://directory.fedoraproject.org/wiki/GPL_Exception_License_Text
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This Program is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation; version 2 of the License.

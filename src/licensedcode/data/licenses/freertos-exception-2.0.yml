@@ -11,7 +11,7 @@ other_urls:
     - http://www.freertos.org/a00114.html
     - http://www.freertos.org/a00114.html#exception
     - https://web.archive.org/web/20060809182744/http://www.freertos.org/a00114.html
-standard_notice: |-
+standard_notice: |
     The FreeRTOS source code is licensed by a modified GNU General Public
     License - the modification taking the form of an exception.
     The exception permits the source code of applications that use FreeRTOS

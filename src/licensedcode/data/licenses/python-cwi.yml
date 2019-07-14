@@ -4,7 +4,7 @@ name: Python CWI License Agreement
 category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://docs.python.org/license.html
-notes: |-
+notes: |
     This is the old license of Python as used from inception from 0.9.0 thru
     1.2 versions. This is a MIT/BSD-style license that is rather rare these
     days but also unique. It is also found at the bottom of the current Python

@@ -4,7 +4,7 @@ name: Apple Public Source License 1.2
 category: Copyleft Limited
 owner: Apple
 homepage_url: http://www.opensource.apple.com/apsl/1.2.txt
-notes: |-
+notes: |
     Per SPDX.org, this license was released 4 Jan 2001. This license was OSI
     certified
 spdx_license_key: APSL-1.2

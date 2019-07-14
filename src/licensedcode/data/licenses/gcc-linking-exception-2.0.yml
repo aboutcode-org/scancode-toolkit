@@ -8,7 +8,7 @@ spdx_license_key: GCC-exception-2.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - https://gcc.gnu.org/git/?p=gcc.git;a=blob;f=gcc/libgcc1.c;h=762f5143fc6eed57b6797c82710f3538aa52b40b;hb=cb143a3ce4fb417c68f5fa2691a1b1b1053dfba9#l10
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation; either version 2, or (at your option) any later

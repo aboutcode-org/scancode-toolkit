@@ -10,7 +10,7 @@ text_urls:
     - http://www.gnu.org/licenses/autoconf-exception-3.0.html
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation, either version 3 of the License, or (at your option)

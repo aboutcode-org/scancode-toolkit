@@ -1,4 +1,5 @@
 license_expression: cpl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
 is_license_notice: yes
 relevance: 90
-notes: a conflicted license with reference to the CPL and EPL (likely a mistake from EPL 2.0) seen in JRuby
+notes: a conflicted license with reference to the CPL and EPL (likely a mistake from EPL 2.0)
+    seen in JRuby

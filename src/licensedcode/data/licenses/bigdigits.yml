@@ -4,7 +4,7 @@ name: BigDigits License
 category: Permissive
 owner: DI Management Services
 homepage_url: http://www.di-mgt.com.au/
-notes: |-
+notes: |
     As of version 2.5 (October 2015) we have re-issued this source code under
     the Mozilla Public License, v. 2.0. We have no objection whatsoever to
     developers using this code in commercial software or as part of an open

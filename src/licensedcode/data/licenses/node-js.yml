@@ -4,7 +4,7 @@ name: Node License
 category: Permissive
 owner: Joyent
 homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
+notes: composite
 other_urls:
     - https://nodejs.org/en/
-notes: composite
 minimum_coverage: 70

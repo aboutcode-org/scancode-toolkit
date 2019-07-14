@@ -3,7 +3,7 @@ short_name: Agere BSD
 name: Agere Systems BSD Software license
 category: Permissive
 owner: LSI Corporation
-notes: |-
+notes: |
     commonly found in Linux The driver is coverred by the following copyright
     and software license. ... license text ... The following statement from
     Agere clarifies the status of the firmware. I would like to confirm that

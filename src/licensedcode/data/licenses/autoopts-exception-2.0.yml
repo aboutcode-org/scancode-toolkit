@@ -5,7 +5,7 @@ category: Copyleft Limited
 owner: Bruce Korb
 homepage_url: http://www.gnu.org/software/autogen/autoopts.html
 is_exception: yes
-standard_notice: |-
+standard_notice: |
     Automated Options is free software.
     You may redistribute it and/or modify it under the terms of the
     GNU General Public License, as published by the Free Software

@@ -4,7 +4,7 @@ name: Linux-OpenIB
 category: Permissive
 owner: Linux Foundation
 homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h
-notes: |-
+notes: |
     This license is a hybrid of two common licenses the BSD-2-Clause (bsd-
     simplified) and the MIT License (mit).
 spdx_license_key: Linux-OpenIB

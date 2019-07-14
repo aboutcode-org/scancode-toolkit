@@ -4,7 +4,7 @@ name: Jython License
 category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://www.jython.org/license.txt
+notes: this is a complex composite of multiple licenses
 text_urls:
     - http://www.jython.org/license.txt
-notes: this is a complex composite of multiple licenses
 minimum_coverage: 80

@@ -1,9 +1,9 @@
 key: blessing
 short_name: SQLite Blessing
 name: SQLite Blessing
-spdx_license_key: blessing
 category: Public Domain
 owner: SQLite
+spdx_license_key: blessing
 other_urls:
     - https://www.sqlite.org/src/artifact/e33a4df7e32d742a?ln=4-9
     - https://sqlite.org/src/artifact/df5091916dbb40e6

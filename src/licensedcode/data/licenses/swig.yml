@@ -4,7 +4,7 @@ name: SWIG Library License
 category: Permissive
 owner: SWIG
 homepage_url: http://www.swig.org/
-notes: |-
+notes: |
     SWIG is itself GPL-licensed. The SWIG library and examples, under the Lib
     and Examples top level directories are distributed under the these terms.
 text_urls:

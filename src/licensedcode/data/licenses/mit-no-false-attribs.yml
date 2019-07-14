@@ -4,7 +4,7 @@ name: MIT with no false attribution License
 category: Permissive
 owner: npm Registry
 homepage_url: https://fedoraproject.org/wiki/Licensing/MITNFA
-notes: |-
+notes: |
     Per Fedora, this license is based on the MIT license, but contains an
     additional section covering the removal of attributions in certain
     modification scenarios. It is Free and GPL-compatible. Use License MITNFA

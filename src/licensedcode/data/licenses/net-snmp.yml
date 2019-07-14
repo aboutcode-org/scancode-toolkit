@@ -3,7 +3,7 @@ short_name: Net SNMP License
 name: Net SNMP License
 category: Permissive
 owner: Net-SNMP
-spdx_license_key: Net-SNMP
 homepage_url: http://net-snmp.sourceforge.net/about/license.html
 notes: composite
+spdx_license_key: Net-SNMP
 minimum_coverage: 70

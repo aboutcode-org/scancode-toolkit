@@ -4,7 +4,7 @@ name: Enlightenment (EFL) MIT-Style License
 category: Permissive
 owner: Enlightenment
 homepage_url: http://www.enlightenment.org/
-notes: |-
+notes: |
     Per Fedora, this license is a modified version of the common MIT license,
     with an additional advertising clause that makes it GPL-incompatible. It
     was originally found at

@@ -4,7 +4,7 @@ name: BSD-2-Clause-NetBSD License
 category: Permissive
 owner: NetBSD
 homepage_url: http://www.netbsd.org/about/redistribution.html#default
-notes: |-
+notes: |
     Except for the NetBSD Foundation name this license is identical to the
     bsd-simplified Per SPDX.org, NetBSD adopted this 2-clause license in 2008
     for code contributed to NetBSD Foundation.

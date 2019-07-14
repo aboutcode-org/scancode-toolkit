@@ -1,9 +1,9 @@
 key: shl-0.51
 short_name: Solderpad Hardware License, Version 0.51
 name: Solderpad Hardware License, Version 0.51
-spdx_license_key: SHL-0.51
 category: Proprietary Free
 owner: Solderpad
+spdx_license_key: SHL-0.51
 other_urls:
     - https://solderpad.org/licenses/SHL-0.51/
 standard_notice: |

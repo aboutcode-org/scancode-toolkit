@@ -9,7 +9,7 @@ text_urls:
     - https://alioth.debian.org/frs/download.php/file/4224/sane-backends-1.0.27.tar.gz
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
     published by the Free Software Foundation; either version 2 of the

@@ -6,7 +6,7 @@ owner: Free Software Foundation (FSF)
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
-standard_notice: |-
+standard_notice: |
     The GNU C Library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either

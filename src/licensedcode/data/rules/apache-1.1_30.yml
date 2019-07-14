@@ -1,5 +1,4 @@
 license_expression: apache-1.1
 is_license_text: yes
-notes: Apache bsf declaration
 minimum_coverage: 70
-
+notes: Apache bsf declaration

@@ -4,7 +4,7 @@ name: Allegro 4 License
 category: Permissive
 owner: Allegro Project
 homepage_url: http://alleg.sourceforge.net//license.html
-notes: |-
+notes: |
     Per SPDX.org, this license may also be known as Allegro 4. The Allegro 5
     license shown at the alleg.sourceforge.net URL is the same as zlib.
 spdx_license_key: Giftware

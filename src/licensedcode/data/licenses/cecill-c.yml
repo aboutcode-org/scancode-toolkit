@@ -1,11 +1,11 @@
 key: cecill-c
+language: fr
 short_name: CeCILL-C License
 name: CeCILL-C Free Software License Agreement
 category: Copyleft
 owner: CeCILL
-language: fr
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL-C_V1-fr.html
-notes: |-
+notes: |
     per SPDX.org, English translation can be found here
     http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html
 spdx_license_key: CECILL-C

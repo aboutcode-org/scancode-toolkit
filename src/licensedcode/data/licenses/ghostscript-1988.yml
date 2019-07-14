@@ -3,7 +3,7 @@ short_name: Ghostscript General Public License 1988
 name: Ghostscript General Public License 1988
 category: Copyleft
 owner: Richard Stallman
-notes: |-
+notes: |
     This is a rare license and there is no original web location available
     anymore. Because some old version of the "ansi2knr.c" found in libjpeg and
     libpng have it, It can still be found sometimes in the wild.

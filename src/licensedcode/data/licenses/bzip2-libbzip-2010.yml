@@ -4,10 +4,9 @@ name: bzip2 License 2010
 category: Permissive
 owner: bzip
 homepage_url: https://github.com/asimonov-im/bzip2/blob/master/LICENSE
+notes: until bzip2 1.0.6 there is only one license and not two as listed in SPDX
 spdx_license_key: bzip2-1.0.6
 other_spdx_license_keys:
     - bzip2-1.0.5
 other_urls:
     - http://www.bzip.org/
-notes: until bzip2 1.0.6 there is only one license and not two as listed in SPDX
-

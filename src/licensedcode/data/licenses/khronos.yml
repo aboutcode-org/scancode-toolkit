@@ -3,7 +3,7 @@ short_name: Khronos License
 name: Khronos License
 category: Permissive
 owner: Khronos Group
-notes: |-
+notes: |
     This is the same text as the MIT license with minor modifications. In the
     first paragraph "this software and/or associated documentation" is used
     instead of "this software and associated documentation" The words "the

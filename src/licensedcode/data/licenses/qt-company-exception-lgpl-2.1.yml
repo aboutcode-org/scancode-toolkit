@@ -8,7 +8,7 @@ is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
     - https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation; either version 2.1 of the License, or (at
@@ -20,7 +20,7 @@ standard_notice: |-
     You should have received a copy of the GNU Lesser General Public License
     along with this library; if not, write to the Free Software Foundation,
     Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-    
+
     As a special exception to the GNU Lesser General Public License version 2.1, the
     object code form of a "work that uses the Library" may incorporate material from
     a header file that is part of the Library. You may distribute such object code

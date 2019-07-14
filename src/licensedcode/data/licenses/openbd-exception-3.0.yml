@@ -6,7 +6,7 @@ owner: OpenBD
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     Open BlueDragon (OpenBD) is distributed under the GNU General Public
     License (v3). A copy of this can be found in the COPYING.txt file or
     at http://www.gnu.org/licenses/

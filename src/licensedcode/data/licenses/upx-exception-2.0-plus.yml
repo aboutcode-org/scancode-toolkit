@@ -11,7 +11,8 @@ other_urls:
     - http://upx.tsx.org
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+minimum_coverage: 50
+standard_notice: |
     The Ultimate Packer for eXecutables
     Copyright (c) 1996-2000 Markus Oberhumer & Laszlo Molnar
     http://wildsau.idv.uni-linz.ac.at/mfx/upx.html
@@ -90,4 +91,3 @@ standard_notice: |-
     Markus F.X.J. Oberhumer Laszlo Molnar
     markus.oberhumer@jk.uni-linz.ac.at ml1050@cdata.tvnet.hu
     Linz, Austria, 25 Feb 2000
-minimum_coverage: 50

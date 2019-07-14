@@ -7,7 +7,7 @@ homepage_url: http://para.inria.fr/~maranget/hevea/distri/LICENSE
 is_exception: yes
 other_urls:
     - http://para.inria.fr/~maranget/hevea/distri/hevea-2.32.tar.gz
-standard_notice: |-
+standard_notice: |
     As a special exception to the Q Public Licence, you may develop
     application programs, reusable components and other software items
     that link with the original or modified versions of the Software

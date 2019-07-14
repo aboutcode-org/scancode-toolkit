@@ -1,5 +1,4 @@
 license_expression: openssl
 is_license_text: yes
-notes: openssl long variant
 minimum_coverage: 40
-
+notes: openssl long variant
