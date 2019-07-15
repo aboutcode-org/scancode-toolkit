@@ -36,10 +36,12 @@ from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode import compat
 
+import pytest
 
 class TestCommand(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
+    
+    @pytest.mark.scanslow
     def test_execute2_non_ascii_output(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
         rc, stdout, stderr = command.execute2(
@@ -52,7 +54,8 @@ class TestCommand(FileBasedTesting):
         # exception
         assert stdout == b'non ascii:  just passed it !'
         compat.unicode(stdout)
-
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_linux, 'Linux only')
     def test_update_path_environment_linux_from_bytes(self):
 
@@ -71,7 +74,8 @@ class TestCommand(FileBasedTesting):
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
         assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
-
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_linux, 'Linux only')
     def test_update_path_environment_linux_from_unicode(self):
 
@@ -90,7 +94,8 @@ class TestCommand(FileBasedTesting):
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
         assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
-
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_mac, 'Mac only')
     def test_update_path_environment_mac_from_bytes(self):
 
@@ -100,16 +105,17 @@ class TestCommand(FileBasedTesting):
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': 'foo\udcb1bar'} == MockOs.environ
 
         unicode_path = u'/bin/foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': '/bin/foo\udcb1bar:foo\udcb1bar'} == MockOs.environ
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
-
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': '/bin/foo\udcb1bar:foo\udcb1bar'} == MockOs.environ
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_mac, 'Mac only')
     def test_update_path_environment_mac_from_unicode(self):
 
@@ -119,16 +125,17 @@ class TestCommand(FileBasedTesting):
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': 'foo\udcb1bar'} == MockOs.environ
 
         bytes_path = b'/bin/foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': '/bin/foo\udcb1bar:foo\udcb1bar'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
-
+        assert {b'PATH': b'/usr/bin:/usr/local', 'PATH': '/bin/foo\udcb1bar:foo\udcb1bar'} == MockOs.environ
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_windows, 'Windows only')
     def test_update_path_environment_windows_from_bytes(self):
 
@@ -147,7 +154,8 @@ class TestCommand(FileBasedTesting):
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
         {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
-
+    
+    pytestmark = pytest.mark.scanpy3 #NOQA
     @skipIf(not on_windows, 'Windows only')
     def test_update_path_environment_windows_from_unicode(self):
 
