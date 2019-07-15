@@ -192,11 +192,13 @@ def get_package_filesets(codebase):
             discovered_license_expressions = []
             discovered_holders = []
             for package_resource in package_fileset:
-                package_resource_license_expression = package_resource.license_expression
+                package_resource_license_expression = combine_expressions(package_resource.license_expressions)
                 package_resource_holders = package_resource.holders
-                # We want to collect the license expressions that are not declared by the manifest
-                if (package_resource_license_expression == package_license_expression
+                if not package_resource_license_expression or not package_resource_holders:
+                    continue
+                elif (package_resource_license_expression == package_license_expression
                         or set(package_resource_holders).issubset(package_holders_set)):
+                    # We only want the license expressions and holders that are not declared by the manifest
                     continue
                 discovered_license_expressions.append(package_resource_license_expression)
                 discovered_holders.extend(package_resource_holders)
