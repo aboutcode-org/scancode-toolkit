@@ -161,7 +161,7 @@ class OriginSummary(PostScanPlugin):
     def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
         filesets = []
         root = codebase.get_resource(0)
-        if hasattr(root, 'packages'):
+        if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
             filesets.extend(get_package_filesets(codebase))
         if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
             filesets.extend(get_license_exp_holders_filesets(codebase, origin_summary_threshold=origin_summary_threshold))
@@ -186,22 +186,22 @@ def get_package_filesets(codebase):
             if package_copyright:
                 for _, holder, _, _ in CopyrightDetector().detect([(0, package_copyright),], \
                         copyrights=False, holders=True, authors=False, include_years=False):
-                    package_holders.append(holder)
-            package_holders_set = set(package_holders)
+                    package_holders.append(holder.get('value'))
 
             discovered_license_expressions = []
             discovered_holders = []
             for package_resource in package_fileset:
                 package_resource_license_expression = combine_expressions(package_resource.license_expressions)
                 package_resource_holders = package_resource.holders
-                if not package_resource_license_expression or not package_resource_holders:
-                    continue
-                elif (package_resource_license_expression == package_license_expression
-                        or set(package_resource_holders).issubset(package_holders_set)):
-                    # We only want the license expressions and holders that are not declared by the manifest
+                if not package_resource_license_expression and not package_resource_holders:
                     continue
                 discovered_license_expressions.append(package_resource_license_expression)
-                discovered_holders.extend(package_resource_holders)
+                discovered_holders.extend(h.get('value') for h in package_resource_holders)
+
+            # Remove top-level package license from discovered licenses
+            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic != package_license_expression]
+            # Remove top-level holders from discovered holders
+            discovered_holders = [holder for holder in discovered_holders if holder not in package_holders]
 
             yield PackageFileset(
                 type='package',
@@ -209,9 +209,9 @@ def get_package_filesets(codebase):
                 primary_resource=resource,
                 package=package,
                 declared_license_expression=package_license_expression,
-                declared_holders=package_holders,
+                declared_holders=sorted(package_holders),
                 discovered_license_expression=combine_expressions(discovered_license_expressions),
-                discovered_holders=set(discovered_holders)
+                discovered_holders=set(sorted(discovered_holders))
             )
 
 
