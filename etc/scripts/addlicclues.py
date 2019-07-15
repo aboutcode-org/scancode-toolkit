@@ -27,6 +27,8 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
 
+from os import path
+
 import click
 click.disable_unicode_literals_warning = True
 
@@ -58,6 +60,8 @@ def copyright_detector(location):
 
 def update_ignorables(licensish):
     print('Processing:', licensish)
+    if not path.exists(licensish.text_file):
+        return licensish
     copyrights, authors = copyright_detector(licensish.text_file)
 
     copyrights.update(licensish.ignorable_copyrights)
@@ -73,7 +77,7 @@ def update_ignorables(licensish):
     emails = set(u for (u, _ln) in find_emails(licensish.text_file) if u)
     emails.update(licensish.ignorable_emails)
     licensish.ignorable_emails = sorted(emails)
-
+    return licensish
 
 
 @click.command()
