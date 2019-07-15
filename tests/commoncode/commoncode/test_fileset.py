@@ -39,7 +39,7 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
     def test_load(self):
         irf = self.get_test_loc('fileset/scancodeignore.lst')
         result = fileset.load(irf)
-        assert [b'/foo/*', b'!/foobar/*', b'bar/*', b'#comment'] == result
+        assert ['/foo/*', '!/foobar/*', 'bar/*', '#comment'] == result
 
     def test_is_included_basic(self):
         assert fileset.is_included('/common/src/', {}, {})
