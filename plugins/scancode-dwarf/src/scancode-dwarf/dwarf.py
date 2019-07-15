@@ -39,7 +39,9 @@ from commoncode import command
 from typecode import contenttype
 
 
-bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+SCANCODE_DWARF_LIB = 'scancode.dwarf.libdir'
+
+bin_dir = SCANCODE_DWARF_LIB
 
 
 ################################################################
@@ -99,7 +101,7 @@ class Dwarf(object):
         Parse dwarfdump info section of an elf file.
         """
         dwarfdump_command = 'dwarfdump2'
-        rc, out, err = command.execute(
+        rc, out, err = command.execute2(
             cmd=dwarfdump_command,
             args=['-i', self.elf_location],
             root_dir=bin_dir,
