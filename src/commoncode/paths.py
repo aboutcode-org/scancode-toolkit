@@ -50,9 +50,9 @@ if on_linux and py2:
    WIN_PATH_SEP = b'\\' 
    EMPTY_STRING = b''  
 else:
-   POSIX_PATH_SEP = '/'
-   WIN_PATH_SEP = '\\'
-   EMPTY_STRING = ''
+   POSIX_PATH_SEP = u'/'
+   WIN_PATH_SEP = u'\\'
+   EMPTY_STRING = u''
 
 #
 # Build OS-portable and safer paths

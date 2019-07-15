@@ -26,9 +26,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import binascii
+
 from collections import OrderedDict
 import hashlib
 
+from commoncode import compat
 from commoncode.codec import bin_to_num
 from commoncode.codec import urlsafe_b64encode
 from commoncode import filetype
@@ -60,7 +63,7 @@ def _hash_mod(bitsize, hmodule):
             return self.h
 
         def hexdigest(self):
-            return self.h and self.h.encode('hex')
+            return self.h and binascii.hexlify(self.h)
 
         def b64digest(self):
             return self.h and urlsafe_b64encode(self.h)
@@ -108,7 +111,7 @@ class sha1_git_hasher(object):
         return self.h
 
     def hexdigest(self):
-        return self.h and self.h.encode('hex')
+        return self.h and binascii.hexlify(self.h)
 
     def b64digest(self):
         return self.h and urlsafe_b64encode(self.h)
