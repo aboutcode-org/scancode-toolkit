@@ -14,3 +14,5 @@ notes: |
     short notice version at https://www.w3.org/Consortium/Legal/2015/copyright-
     software-short-notice.html
 spdx_license_key: W3C-20150513
+ignorable_copyrights:
+    - Copyright (c) YEAR W3C(r) MIT, ERCIM, Keio

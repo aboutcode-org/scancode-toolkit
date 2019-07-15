@@ -6,3 +6,5 @@ owner: Matthew Might
 homepage_url: http://matt.might.net/articles/crapl/
 text_urls:
     - http://matt.might.net/articles/crapl/CRAPL-LICENSE.txt
+ignorable_urls:
+    - http://matt.might.net/

@@ -14,3 +14,5 @@ other_urls:
     - http://www.gnu.org/licenses/license-list.html#ArtisticLicense
     - http://www.perlfoundation.org/artistic_license_1_0
     - https://opensource.org/licenses/Artistic-1.0
+ignorable_urls:
+    - http://ftp.uu.net/

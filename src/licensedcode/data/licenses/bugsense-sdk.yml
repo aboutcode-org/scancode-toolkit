@@ -8,3 +8,7 @@ text_urls:
     - https://www.bugsense.com/sdklicense
 other_urls:
     - https://www.bugsense.com/termsofuse
+ignorable_urls:
+    - http://www.bugsense.com/
+ignorable_emails:
+    - mobilesupport@splunk.com

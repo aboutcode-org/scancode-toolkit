@@ -16,3 +16,5 @@ other_urls:
     - http://www.opensource.org/licenses/GPL-3.0
     - https://opensource.org/licenses/GPL-3.0
     - https://www.gnu.org/licenses/gpl-3.0-standalone.html
+ignorable_urls:
+    - http://www.gnu.org/licenses/

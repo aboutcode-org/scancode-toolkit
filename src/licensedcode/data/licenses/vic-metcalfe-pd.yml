@@ -4,3 +4,9 @@ name: Vic Metcalfe Public Domain Notice
 category: Public Domain
 owner: Vic Metcalfe
 homepage_url: http://www.utdallas.edu/~cantrell/ee6345/sockets/socket-faq-examples/sockhelp.c
+ignorable_authors:
+    - Vic Metcalfe (vic@brutus.tlug.org)
+ignorable_urls:
+    - http://www.interlog.com/~vic/sock-faq
+ignorable_emails:
+    - vic@brutus.tlug.org

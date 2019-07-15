@@ -8,3 +8,5 @@ notes: Per SPDX.org, this license was released 25 August 1998.
 spdx_license_key: OLDAP-1.1
 text_urls:
     - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=806557a5ad59804ef3a44d5abfbe91d706b0791f
+ignorable_copyrights:
+    - Copyright 1998, The OpenLDAP Foundation.

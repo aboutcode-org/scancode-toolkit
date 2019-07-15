@@ -19,3 +19,10 @@ other_urls:
     - http://www.freebsd.org/copyright/license.html
     - http://www.fsf.org/licensing/essays/bsd.html
     - http://www.gnu.org/philosophy/bsd.html
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of California
+ignorable_authors:
+    - UC Berkeley and its contributors.
+    - the University of California, Berkeley and its contributors.
+ignorable_urls:
+    - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

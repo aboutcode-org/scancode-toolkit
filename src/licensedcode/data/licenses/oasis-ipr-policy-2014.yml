@@ -4,3 +4,12 @@ name: Oasis IPR Policy License 2014-10-15
 category: Proprietary Free
 owner: OASIS
 homepage_url: https://www.oasis-open.org/policies-guidelines/ipr
+ignorable_copyrights:
+    - Copyright (c) OASIS
+ignorable_authors:
+    - a RAND Mode TC
+    - a Technical Committee
+    - an RF Mode TC
+ignorable_urls:
+    - http://www.oasis-open.org/policies-guidelines/ipr
+    - http://www.oasis-open.org/who/intellectualproperty.php

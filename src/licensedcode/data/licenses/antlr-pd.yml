@@ -13,3 +13,8 @@ text_urls:
 other_urls:
     - http://www.antlr2.org/license.html
     - http://www.spdx.org/licenses/ANTLR-PD
+ignorable_authors:
+    - Terence Parr
+ignorable_emails:
+    - parrt@antlr.org
+    - parrt@cs.usfca.edu

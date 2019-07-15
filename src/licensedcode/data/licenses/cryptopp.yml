@@ -3,3 +3,5 @@ short_name: Crypto++ License
 name: Crypto++ License
 category: Permissive
 owner: Wei Dai
+ignorable_copyrights:
+    - Compilation Copyright (c) 1995-2010 by Wei Dai.

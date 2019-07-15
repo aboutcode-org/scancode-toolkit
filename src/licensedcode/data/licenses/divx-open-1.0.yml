@@ -4,3 +4,7 @@ name: DivX Open License v1.0
 category: Copyleft Limited
 owner: DivX, LLC
 minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright (c) 2001 Project
+ignorable_authors:
+    - Project

@@ -3,3 +3,10 @@ short_name: Larabie Fonts EULA
 name: Larabie Fonts EULA
 category: Proprietary Free
 owner: Larabie Fonts
+ignorable_urls:
+    - http://come.to/larabiefonts
+    - http://uk.zarcrom.com/font/
+    - http://www.larabiefonts.com/
+ignorable_emails:
+    - drowsy@cheerful.com
+    - rlarabie@hotmail.com

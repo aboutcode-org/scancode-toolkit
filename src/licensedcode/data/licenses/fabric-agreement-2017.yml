@@ -3,3 +3,5 @@ short_name: Fabric Software and Services Agreement 2017
 name: Fabric Software and Services Agreement 2017
 category: Commercial
 owner: Google
+ignorable_copyrights:
+    - (c) , transfer, disclose, or otherwise make any Fabric Technology

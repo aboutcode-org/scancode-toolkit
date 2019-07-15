@@ -4,3 +4,6 @@ name: Microsoft ASP.NET Software License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/aspnet_and_web_tools_2012_2_rtw_eula_enu.htm
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/products/ceip/en-us/privacypolicy.mspx

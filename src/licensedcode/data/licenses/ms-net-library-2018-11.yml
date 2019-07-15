@@ -4,3 +4,7 @@ name: Microsoft .NET Library License 2018-11
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm
+ignorable_urls:
+    - http://go.microsoft.com/?linkid=9840733
+    - http://www.microsoft.com/exporting
+    - https://go.microsoft.com/fwlink/?LinkID=824704

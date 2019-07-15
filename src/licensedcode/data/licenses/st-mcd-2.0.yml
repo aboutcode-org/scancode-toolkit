@@ -33,3 +33,5 @@ notes: |
      This is the one I used for now as a text. It as has this header "SLA0044 Rev5/February 2018"
 text_urls:
     - https://www.st.com/software_license_agreement_liberty_v2
+ignorable_urls:
+    - http://www.opensource.org/

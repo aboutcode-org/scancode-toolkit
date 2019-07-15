@@ -4,3 +4,5 @@ name: Microsoft SQL Server Compact 4.0 License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/SQLCE_EULA_ENU.rtf
+ignorable_urls:
+    - http://www.microsoft.com/exporting

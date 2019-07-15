@@ -6,3 +6,7 @@ owner: Intel Corporation
 homepage_url: https://registrationcenter.intel.com/en/forms/?productid=2558&licensetype=2
 text_urls:
     - https://software.intel.com/sites/default/files/managed/67/99/Master_EULA_for_Intel_Sw_Development_Products_March_2016.pdf
+ignorable_urls:
+    - http://www.intel.com/privacy
+    - https://software.intel.com/en
+    - https://software.intel.com/en-us/articles/end-user-license-agreement

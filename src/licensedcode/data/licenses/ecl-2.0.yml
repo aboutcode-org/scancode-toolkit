@@ -17,3 +17,7 @@ osi_url: http://opensource.org/licenses/ecl2.php
 other_urls:
     - http://opensource.org/licenses/ECL-2.0
     - https://opensource.org/licenses/ECL-2.0
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.osedu.org/licenses/
+    - http://www.osedu.org/licenses/ECL-2.0

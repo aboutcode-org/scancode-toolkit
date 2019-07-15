@@ -10,3 +10,5 @@ notes: |
 text_urls:
     - https://web.archive.org/web/20110519100109/http://h2database.com/html/license.html
 minimum_coverage: 98
+ignorable_authors:
+    - the Initial Developer

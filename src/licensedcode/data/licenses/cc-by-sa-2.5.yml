@@ -9,3 +9,5 @@ text_urls:
     - http://creativecommons.org/licenses/by-sa/2.5/legalcode
 other_urls:
     - https://creativecommons.org/licenses/by-sa/2.5/legalcode
+ignorable_urls:
+    - http://creativecommons.org/

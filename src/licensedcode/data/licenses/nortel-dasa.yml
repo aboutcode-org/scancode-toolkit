@@ -3,3 +3,5 @@ short_name: Nortel DASA License
 name: Nortel DASA License
 category: Permissive
 owner: Unspecified
+ignorable_emails:
+    - frank@comsys.dofn.de

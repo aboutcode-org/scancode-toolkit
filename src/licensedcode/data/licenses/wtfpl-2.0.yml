@@ -9,3 +9,5 @@ text_urls:
     - http://sam.zoy.org/wtfpl/COPYING
 other_urls:
     - http://fedoraproject.org/wiki/Licensing/WTFPL
+ignorable_copyrights:
+    - Copyright (c) 2004 Sam Hocevar

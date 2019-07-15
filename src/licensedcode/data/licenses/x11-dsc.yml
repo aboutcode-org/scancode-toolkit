@@ -4,3 +4,6 @@ name: X11-Style (DSC Technologies)
 category: Permissive
 owner: Alcatel-Lucent
 minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright 1997 DSC Technologies Corporation
+    - copyrighted by DSC Technologies

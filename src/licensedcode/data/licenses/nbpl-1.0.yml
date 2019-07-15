@@ -10,3 +10,5 @@ notes: |
 spdx_license_key: NBPL-1.0
 text_urls:
     - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894
+ignorable_copyrights:
+    - Copyright 1998, Net Boolean Incorporated, Redwood City, California, USA

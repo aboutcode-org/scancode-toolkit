@@ -6,3 +6,5 @@ owner: Blue Oak Council
 spdx_license_key: BlueOak-1.0.0
 other_urls:
     - https://blueoakcouncil.org/license/1.0.0
+ignorable_urls:
+    - https://blueoakcouncil.org/license/1.0.0

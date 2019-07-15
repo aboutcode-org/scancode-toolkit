@@ -7,3 +7,9 @@ homepage_url: http://www.adobe.com/products/air/sdk-eula.html
 other_urls:
     - www.adobe.com/go/redistributeairsdk
     - http://www.adobe.com/products/air/sdk-agreement.html
+ignorable_urls:
+    - http://www.adobe.com/go/air_developer_privacy
+    - http://www.adobe.com/go/redistributeairsdk
+    - http://www.adobe.com/go/thirdparty
+    - http://www.adobe.com/products/air/crosspromotion-program-agreement.html
+    - http://www.mpegla.com/

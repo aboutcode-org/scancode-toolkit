@@ -8,3 +8,5 @@ spdx_license_key: SISSL-1.2
 text_urls:
     - http://gridscheduler.sourceforge.net/Gridengine_SISSL_license.html
 minimum_coverage: 50
+ignorable_copyrights:
+    - Copyright (c) 2001 Sun Microsystems, Inc.

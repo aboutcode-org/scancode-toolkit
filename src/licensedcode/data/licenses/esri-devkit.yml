@@ -3,3 +3,5 @@ short_name: Esri Developer Kit License
 name: Esri Developer Kit License
 category: Proprietary Free
 owner: Esri
+ignorable_copyrights:
+    - Copyright 2006 ESRI

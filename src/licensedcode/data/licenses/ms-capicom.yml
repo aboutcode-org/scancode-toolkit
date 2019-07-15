@@ -5,3 +5,5 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/library/aa375754.aspx
 faq_url: http://en.wikipedia.org/wiki/CAPICOM
+ignorable_urls:
+    - http://www.microsoft.com/exporting

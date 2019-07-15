@@ -8,3 +8,9 @@ spdx_license_key: DOC
 text_urls:
     - http://www.cs.wustl.edu/~schmidt/ACE-copying.html
 minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright (c) 1993-2009
+    - copyrighted by Douglas C. Schmidt and his research group at Washington University, University
+        of California, Irvine, and Vanderbilt University
+ignorable_authors:
+    - the DOC Group at the Institute

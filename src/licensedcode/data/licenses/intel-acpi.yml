@@ -9,3 +9,5 @@ notes: |
     http://www.intel.com/technology/iapc/acpi/license2.htm. A copy was taken
     from the last available version at archive.org.
 spdx_license_key: Intel-ACPI
+ignorable_copyrights:
+    - Copyright (c) 1999-2005, Intel Corp.

@@ -15,3 +15,11 @@ other_urls:
     - http://www.php.net/software/
     - http://www.zend.com
 minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 1999 - 2012 The PHP Group.
+ignorable_urls:
+    - http://www.php.net/
+    - http://www.php.net/software/
+    - http://www.zend.com/
+ignorable_emails:
+    - group@php.net

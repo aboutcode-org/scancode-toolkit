@@ -18,3 +18,5 @@ notes: |
     TOSL is GPL-incompatible because of the addition of the "no more
     restrictive" language.
 spdx_license_key: TOSL
+ignorable_copyrights:
+    - copyright (c) 2006 Mike Mintz and Robert Ekendahl.

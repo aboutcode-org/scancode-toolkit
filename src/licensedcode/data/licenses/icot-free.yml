@@ -3,3 +3,5 @@ short_name: ICOT Free Software
 name: ICOT Free Software
 category: Permissive
 owner: ICOT
+ignorable_authors:
+    - Users of the Program.

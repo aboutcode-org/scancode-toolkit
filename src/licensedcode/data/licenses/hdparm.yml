@@ -4,3 +4,5 @@ name: HDPARM License
 category: Permissive
 owner: Unspecified
 minimum_coverage: 90
+ignorable_emails:
+    - mlord@pobox.com

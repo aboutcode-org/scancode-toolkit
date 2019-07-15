@@ -4,3 +4,5 @@ name: Microsoft Exchange Server 2010 SP2 Web Services SDK
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://msdn.microsoft.com/en-US/library/dd877074(v=exchg.140)
+ignorable_urls:
+    - http://www.microsoft.com/exporting

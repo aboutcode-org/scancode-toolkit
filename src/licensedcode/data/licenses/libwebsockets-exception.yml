@@ -48,3 +48,5 @@ standard_notice: |
     - test-apps/*.h
     - lwsws/*
     ------ end of exceptions
+ignorable_urls:
+    - https://libwebsockets.org/

@@ -5,3 +5,7 @@ category: Permissive
 owner: NRL
 homepage_url: http://web.mit.edu/network/isakmp/nrllicense.html
 spdx_license_key: NRL
+ignorable_copyrights:
+    - copyright by The Regents of the University of California.
+ignorable_authors:
+    - the University of California, Berkeley and its contributors.

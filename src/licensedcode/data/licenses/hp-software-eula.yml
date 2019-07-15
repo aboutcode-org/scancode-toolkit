@@ -6,3 +6,5 @@ owner: HP - Hewlett Packard
 homepage_url: http://h20000.www2.hp.com/bizsupport/TechSupport/softwareLicense.jsp?lang=en&cc=us&prodSeriesId=3219717&prodTypeId=0
 text_urls:
     - http://h20000.www2.hp.com/bizsupport/TechSupport/softwareLicense.jsp?lang=en&cc=us&prodSeriesId=3219717&prodTypeId=0
+ignorable_urls:
+    - http://www.hp.com/

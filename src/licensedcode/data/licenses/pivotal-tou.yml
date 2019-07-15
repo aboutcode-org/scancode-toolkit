@@ -5,3 +5,5 @@ category: Commercial
 owner: Pivotal
 homepage_url: https://pivotal.io/terms-of-use
 minimum_coverage: 90
+ignorable_urls:
+    - https://pivotal.io/terms-of-use

@@ -6,3 +6,5 @@ owner: Unspecified
 homepage_url: http://destroydrop.com/javascripts/tree/
 other_urls:
     - http://destroydrop.com/javascripts/tree/
+ignorable_copyrights:
+    - Copyright (c) 2002-2003 Geir Landr

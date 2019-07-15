@@ -8,3 +8,5 @@ text_urls:
     - http://www.washington.edu/pine/overview/legal.html
 other_urls:
     - http://www.washington.edu/pine/
+ignorable_copyrights:
+    - Copyright 1989-2007 by the University of Washington.

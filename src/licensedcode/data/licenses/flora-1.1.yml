@@ -10,3 +10,5 @@ other_urls:
     - http://floralicense.org/
     - https://review.tizen.org/git/?p=apps/home/taskmanager.git;a=blob_plain;f=LICENSE;hb=HEAD
 minimum_coverage: 95
+ignorable_urls:
+    - http://floralicense.org/license

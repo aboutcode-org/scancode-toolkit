@@ -5,3 +5,11 @@ category: Commercial
 owner: Digia
 homepage_url: http://www.qt.io/terms-conditions/#application_development
 faq_url: http://www.qt.io/faq/
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/info/GPLv2.html
+    - http://www.gnu.org/copyleft/gpl-3.0.html
+    - http://www.gnu.org/licenses/lgpl-3.0.html
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+    - http://www.qt.io/
+ignorable_emails:
+    - sales@qt.io

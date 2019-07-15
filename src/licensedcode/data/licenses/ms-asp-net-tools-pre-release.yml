@@ -4,3 +4,6 @@ name: Microsoft ASP.NET Tools Pre-Release License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/aspnetcomponent_enu.htm
+ignorable_urls:
+    - http://go.microsoft.com/fwlink/?LinkId=296594
+    - http://www.microsoft.com/exporting

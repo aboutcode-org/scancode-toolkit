@@ -3,3 +3,5 @@ short_name: HP JRE License
 name: Hewlett Packard JRE License
 category: Proprietary Free
 owner: HP - Hewlett Packard
+ignorable_copyrights:
+    - copyrighted by HP

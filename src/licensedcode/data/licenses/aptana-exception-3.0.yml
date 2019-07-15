@@ -79,3 +79,5 @@ standard_notice: |
     "Powered by Aptana". On user interface screens, this text must be visibly
     and clearly displayed in the title bar, status bar, or otherwise directly
     in the view that is in focus.
+ignorable_urls:
+    - http://www.aptana.com/legal/gpl

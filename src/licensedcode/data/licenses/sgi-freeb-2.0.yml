@@ -10,3 +10,5 @@ text_urls:
     - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.2.0.pdf
 other_urls:
     - http://oss.sgi.com/projects/FreeB/
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB/

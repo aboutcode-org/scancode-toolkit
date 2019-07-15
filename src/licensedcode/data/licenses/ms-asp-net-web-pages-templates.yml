@@ -7,3 +7,5 @@ homepage_url: http://www.microsoft.com/web/webpi/eula/webpages_2_eula_enu.htm
 other_urls:
     - http://go.microsoft.com/fwlink/?LinkId=210218
     - https://www.microsoft.com/web/webpi/eula/ASPNET-Web-Pages-Template-License.rtf
+ignorable_urls:
+    - http://www.microsoft.com/exporting

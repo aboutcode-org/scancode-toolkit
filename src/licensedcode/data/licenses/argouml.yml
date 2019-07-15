@@ -5,3 +5,5 @@ category: Permissive
 owner: Tigris Project
 other_urls:
     - http://argouml-downloads.tigris.org/nonav/argouml-0.24/ArgoUML-0.24-src.tar.gz
+ignorable_copyrights:
+    - copyrighted by The Regents of the University of California.

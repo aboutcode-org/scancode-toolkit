@@ -23,3 +23,7 @@ other_urls:
     - https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#jCharts_Variant
     - http://openorb.sourceforge.net/license.txt
     - https://confluence.sakaiproject.org/plugins/viewsource/viewpagesrc.action?pageId=28442642
+ignorable_urls:
+    - http://www.dom4j.org/
+ignorable_emails:
+    - dom4j-info@metastuff.com

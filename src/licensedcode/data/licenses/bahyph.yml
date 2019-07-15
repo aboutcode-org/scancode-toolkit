@@ -5,3 +5,7 @@ category: Permissive
 owner: GMV
 homepage_url: https://fedoraproject.org/wiki/Licensing/Bahyph
 spdx_license_key: Bahyph
+ignorable_copyrights:
+    - Copyright (c) GMV 1991
+ignorable_emails:
+    - tex@gmv.es

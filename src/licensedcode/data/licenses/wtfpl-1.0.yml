@@ -18,3 +18,5 @@ text_urls:
     - http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL
 other_urls:
     - http://cvs.windowmaker.org/co.php/wm/COPYING.WTFPL
+ignorable_copyrights:
+    - Copyright (c) 2000 Banlu Kemiyatorn

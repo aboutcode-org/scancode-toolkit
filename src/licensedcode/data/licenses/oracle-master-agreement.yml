@@ -4,3 +4,5 @@ name: Oracle Master Agreement (OMA)
 category: Commercial
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/us/corporate/contracts/oma/index.html
+ignorable_urls:
+    - http://www.oracle.com/us/corporate/contracts/oma/index.html

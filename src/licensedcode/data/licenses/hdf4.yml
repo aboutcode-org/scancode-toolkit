@@ -50,3 +50,5 @@ standard_notice: |
     The Independent JPEG Group (JPEG), Jean-loup Gailly and Mark Adler (gzip),
     and Digital Equipment Corporation (DEC).
     ---------------------------------------------------------------------------
+ignorable_authors:
+    - The HDF Group

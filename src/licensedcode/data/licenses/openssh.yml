@@ -8,3 +8,26 @@ notes: composite
 other_urls:
     - http://www.openssh.org/
 minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California.
+    - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
+    - Copyright (c) 1998 CORE SDI S.A., Buenos Aires, Argentina.
+    - Copyright 1995, 1996 by David Mazieres <dm@lcs.mit.edu>
+    - Copyright Patrick Powell 1995
+ignorable_authors:
+    - Antoon Bosselaers <antoon.bosselaers@esat.kuleuven.ac.be>
+    - Patrick Powell (papowell@astart.com)
+    - Paulo Barreto <paulo.barreto@terra.com.br>
+    - Vincent Rijmen <vincent.rijmen@esat.kuleuven.ac.be>
+ignorable_urls:
+    - http://www.core-sdi.com/
+    - http://www.cs.hut.fi/crypto
+ignorable_emails:
+    - antoon.bosselaers@esat.kuleuven.ac.be
+    - dm@lcs.mit.edu
+    - futo@core-sdi.com
+    - papowell@astart.com
+    - paulo.barreto@terra.com.br
+    - phk@login.dknet.dk
+    - vincent.rijmen@esat.kuleuven.ac.be
+    - ylo@cs.hut.fi

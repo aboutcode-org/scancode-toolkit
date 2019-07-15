@@ -5,3 +5,5 @@ category: Permissive
 owner: Michael Barr
 homepage_url: https://fedoraproject.org/wiki/Licensing/Barr
 spdx_license_key: Barr
+ignorable_emails:
+    - barr@barrs.org

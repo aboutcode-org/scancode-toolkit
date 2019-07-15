@@ -9,3 +9,5 @@ is_exception: yes
 other_urls:
     - http://web.archive.org/web/20140816133230/http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/
     - http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/
+ignorable_urls:
+    - http://www.sencha.com/license

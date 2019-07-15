@@ -3,3 +3,5 @@ short_name: Concursive Public License 1.0
 name: Concursive Public License 1.0
 category: Proprietary Free
 owner: Concursive
+ignorable_copyrights:
+    - copyrighted interfaces, Concursive Corporation

@@ -13,3 +13,5 @@ text_urls:
     - http://www.bittorrent.com/legal/bittorrent-open-source-license
 other_urls:
     - http://directory.fsf.org/wiki/License:BitTorrentOSL1.1
+ignorable_urls:
+    - http://www.bittorrent.com/license

@@ -9,3 +9,7 @@ text_urls:
 other_urls:
     - https://embedthis.com/goahead/
     - https://embedthis.com/goahead/licensing.html
+ignorable_copyrights:
+    - Copyright (c) 20xx GoAhead Software, Inc.
+ignorable_emails:
+    - info@goahead.com

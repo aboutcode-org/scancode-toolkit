@@ -7,3 +7,5 @@ homepage_url: http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa
 text_urls:
     - http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0
 faq_url: http://www.openwebfoundation.org/faqs/open-web-foundation-cla-1-0-owfa-1-0-faq
+ignorable_copyrights:
+    - Copyright Grant. I

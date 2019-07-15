@@ -4,3 +4,6 @@ name: Excelsior JET Runtime License
 category: Commercial
 owner: Excelsior
 homepage_url: http://www.excelsior-usa.com/jetlicenses.html
+ignorable_urls:
+    - http://www.excelsior-usa.com/fees.html
+    - http://www.excelsior-usa.com/pdf/iltemplate.pdf

@@ -5,3 +5,8 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: https://code.visualstudio.com/License/
 faq_url: https://code.visualstudio.com/
+ignorable_urls:
+    - http://go.microsoft.com/fwlink/?LinkID=528096&clcid=0x409
+    - http://go.microsoft.com/fwlink/?LinkID=616397
+    - http://thirdpartysource.microsoft.com/
+    - http://www.microsoft.com/exporting

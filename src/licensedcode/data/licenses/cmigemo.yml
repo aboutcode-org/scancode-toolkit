@@ -8,3 +8,8 @@ text_urls:
     - http://fedoraproject.org/wiki/Licensing/CMigemo
 other_urls:
     - http://fedoraproject.org/wiki/Licensing/CMigemo
+ignorable_authors:
+    - MURAOKA Taro
+ignorable_emails:
+    - koron@tka.att.ne.jp
+    - mtasaka@ioa.s.u-tokyo.ac.jp

@@ -7,3 +7,7 @@ homepage_url: http://www.jhauser.us/arithmetic/SoftFloat.html
 notes: this license with extra requirements was used for Softfloat v2 and in the linux kernel.
     The newest v3 uses a plain bsd-new license
 minimum_coverage: 90
+ignorable_authors:
+    - John R. Hauser.
+ignorable_urls:
+    - http://www.jhauser.us/arithmetic/SoftFloat-2b/SoftFloat-source.txt

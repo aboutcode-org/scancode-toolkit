@@ -3,3 +3,5 @@ short_name: ITU-T License
 name: ITU-T License
 category: Free Restricted
 owner: ITU - International Telecommunications Union
+ignorable_urls:
+    - http://www.itu.int/ipr

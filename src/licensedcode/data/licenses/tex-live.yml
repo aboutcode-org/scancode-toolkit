@@ -4,3 +4,15 @@ name: TeX Live License
 category: Permissive
 owner: Karl Berry
 homepage_url: ftp://tug.org/historic/systems/texlive/2007/LICENSE.TL
+ignorable_urls:
+    - http://latex-project.org/lppl.html
+    - http://www.ctan.org/tex-archive/help/Catalogue/
+    - http://www.debian.org/intro/free
+    - http://www.gnu.org/licenses/license-list.html
+    - http://www.gnu.org/philosophy/free-sw.html
+    - http://www.tug.org/tex-live/
+    - http://www.tug.org/texlive/
+    - http://www.tug.org/usergroups.html
+    - https://www.tug.org/donate/dev.html
+ignorable_emails:
+    - texlive@tug.org

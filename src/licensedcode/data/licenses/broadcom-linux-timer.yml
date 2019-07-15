@@ -3,3 +3,5 @@ short_name: Broadcom Warranty Disclaimer
 name: Broadcom Warranty Disclaimer
 category: Permissive
 owner: Broadcom
+ignorable_copyrights:
+    - Copyright (c) Broadcom Corporation

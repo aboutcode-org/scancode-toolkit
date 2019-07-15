@@ -3,3 +3,5 @@ short_name: MS Windows Driver Kit License
 name: Microsoft Windows Driver Kit License
 category: Proprietary Free
 owner: Microsoft
+ignorable_urls:
+    - http://www.microsoft.com/exporting

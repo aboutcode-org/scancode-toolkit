@@ -6,3 +6,7 @@ owner: Microsoft
 homepage_url: https://github.com/dotnet/corefx/blob/master/PATENTS.TXT
 other_urls:
     - https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/
+ignorable_urls:
+    - https://github.com/dotnet/coreclr
+    - https://github.com/dotnet/corefx
+    - https://github.com/dotnet/corert

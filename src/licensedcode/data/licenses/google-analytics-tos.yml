@@ -10,3 +10,7 @@ other_urls:
     - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
     - http://www.google.com/analytics
     - http://www.google.com/privacy.html
+ignorable_urls:
+    - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html

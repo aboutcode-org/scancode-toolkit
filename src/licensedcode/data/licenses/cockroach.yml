@@ -6,3 +6,9 @@ owner: Cockroachlabs
 homepage_url: https://www.cockroachlabs.com/cockroachdb-community-license
 text_urls:
     - https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt
+ignorable_copyrights:
+    - copyright owner, other than Cockroach Labs, from whom Cockroach Labs
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://cla-assistant.io/cockroachdb/cockroach
+    - https://github.com/cockroachdb/cockroach

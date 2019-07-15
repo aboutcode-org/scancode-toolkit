@@ -6,3 +6,5 @@ owner: CERN
 spdx_license_key: CERN-OHL-1.2
 other_urls:
     - https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.2
+ignorable_copyrights:
+    - copyright CERN. Anyone

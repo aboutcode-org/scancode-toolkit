@@ -27,3 +27,8 @@ notes: |
     [___] License. If you do not delete the provisions above,a recipient may
     use your version of this file under either the MPL or the [___] License.
 spdx_license_key: SNIA
+ignorable_authors:
+    - the Initial Developer
+ignorable_urls:
+    - http://www.snia.org/smi/developers/cim/
+    - http://www.snia.org/smi/developers/open_source/

@@ -4,3 +4,5 @@ name: Wide Open License
 category: Permissive
 owner: Iowegian International
 homepage_url: http://www.dspguru.com/wide-open-license
+ignorable_urls:
+    - http://www.dspguru.com/wide-open-license

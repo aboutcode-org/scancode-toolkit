@@ -6,3 +6,5 @@ owner: Microsoft
 faq_url: http://go.microsoft.com/fwlink/?LinkID=66406&clcid=0x409
 other_urls:
     - www.support.microsoft.com/common/international.aspx
+ignorable_urls:
+    - http://www.support.microsoft.com/common/international.aspx

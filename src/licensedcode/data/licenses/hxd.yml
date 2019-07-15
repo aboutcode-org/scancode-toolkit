@@ -4,3 +4,5 @@ name: HxD License
 category: Proprietary Free
 owner: mh-nexus
 homepage_url: https://mh-nexus.de/en/hxd/license.php
+ignorable_urls:
+    - http://mh-nexus.de/hxd

@@ -20,3 +20,8 @@ other_urls:
     - https://opensource.google.com/docs/using/agpl-policy/
     - https://opensource.org/licenses/AGPL-3.0
     - https://www.gnu.org/licenses/agpl.txt
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_urls:
+    - http://fsf.org/
+    - http://www.gnu.org/licenses/

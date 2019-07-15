@@ -12,3 +12,6 @@ text_urls:
     - http://openjdk.java.net/legal/gplv2+ce.html
     - http://openjdk.java.net/legal/assembly-exception.html
     - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html

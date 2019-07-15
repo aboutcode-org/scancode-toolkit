@@ -7,3 +7,18 @@ homepage_url: http://net-snmp.sourceforge.net/about/license.html
 notes: composite
 spdx_license_key: Net-SNMP
 minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 2001-2003, Networks Associates Technology, Inc
+    - Copyright (c) 2003 Sun Microsystems, Inc.
+    - Copyright (c) 2003-2006, Sparta, Inc
+    - Copyright (c) 2004, Cisco, Inc and Information Network Center
+    - Copyright (c) Fabasoft R&D Software GmbH & Co
+    - Copyright 1989, 1991, 1992 by Carnegie Mellon University
+    - Copyright 1996, 1998-2000 The Regents of the University of California
+    - copyright (c) 2001-2003, Cambridge Broadband Ltd.
+ignorable_authors:
+    - Bernhard Penz
+ignorable_urls:
+    - http://net-snmp.sourceforge.net/about/license.html
+ignorable_emails:
+    - oss@fabasoft.com

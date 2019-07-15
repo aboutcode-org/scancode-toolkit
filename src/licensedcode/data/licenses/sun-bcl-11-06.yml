@@ -3,3 +3,5 @@ short_name: Sun BCL 11 plus 6
 name: Sun BCL 11 plus 6
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_urls:
+    - http://www.sun.com/policies/trademarks

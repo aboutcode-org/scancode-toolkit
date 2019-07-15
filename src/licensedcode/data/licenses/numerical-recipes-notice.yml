@@ -3,3 +3,7 @@ short_name: Numerical Recipes Notice
 name: Numerical Recipes Notice
 category: Commercial
 owner: Numerical Recipes
+ignorable_urls:
+    - http://www.nr.com/
+ignorable_emails:
+    - orders@nr.com

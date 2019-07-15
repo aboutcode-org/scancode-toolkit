@@ -8,3 +8,5 @@ spdx_license_key: copyleft-next-0.3.0
 text_urls:
     - https://github.com/copyleft-next/copyleft-next/blob/master/Releases/copyleft-next-0.3.0
     - https://raw.githubusercontent.com/richardfontana/copyleft-next/master/Releases/copyleft-next-0.3.0
+ignorable_urls:
+    - https://gitorious.org/copyleft-next/

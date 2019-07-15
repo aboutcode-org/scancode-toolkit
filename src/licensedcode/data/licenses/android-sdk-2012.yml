@@ -4,3 +4,5 @@ name: Android Software Development Kit License Agreement 2012
 category: Proprietary Free
 owner: Google
 homepage_url: https://developer.android.com/sdk/terms.html
+ignorable_urls:
+    - http://source.android.com/

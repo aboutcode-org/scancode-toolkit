@@ -6,3 +6,5 @@ owner: OASIS
 homepage_url: http://www.oasis-open.org/org
 text_urls:
     - http://www.oasis-open.org/org
+ignorable_copyrights:
+    - Copyright (c) OASIS

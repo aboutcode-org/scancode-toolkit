@@ -12,3 +12,16 @@ other_urls:
     - http://trustee.ietf.org/license-info/
     - http://trustee.ietf.org/policyandprocedures.html
 minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) IETF Trust
+ignorable_authors:
+    - authors. The IETF Trust and the Internet Society
+    - the IETF Trust
+ignorable_urls:
+    - http://opensource.org/licenses/bsd-license.php
+    - http://trustee.ietf.org/license-info
+    - http://trustee.ietf.org/policyandprocedures.html
+    - http://www.ietf.org/ipr
+ignorable_emails:
+    - ietf-ipr@ietf.org
+    - trustees@ietf.org

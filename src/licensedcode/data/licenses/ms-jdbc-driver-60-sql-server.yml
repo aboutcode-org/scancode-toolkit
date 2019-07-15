@@ -4,3 +4,5 @@ name: Microsoft JDBC Driver 6.0 for SQL Server
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=11774
+ignorable_urls:
+    - http://www.microsoft.com/exporting

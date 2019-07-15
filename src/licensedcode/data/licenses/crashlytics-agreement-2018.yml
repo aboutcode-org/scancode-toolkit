@@ -3,3 +3,10 @@ short_name: Crashlytics Agreement 2018
 name: Crashlytics Agreement 2018
 category: Commercial
 owner: Google
+ignorable_copyrights:
+    - (c) Google LLC
+ignorable_urls:
+    - http://www.answers.io/
+    - http://www.crashlytics.com/
+ignorable_emails:
+    - support@crashlytics.com

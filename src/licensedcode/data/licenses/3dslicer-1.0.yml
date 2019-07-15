@@ -10,3 +10,5 @@ faq_url: https://www.slicer.org/wiki/CommercialUse
 other_urls:
     - http://www.slicer.org
     - http://wiki.na-mic.org/Wiki/index.php/Slicer3
+ignorable_authors:
+    - The Brigham and Women's Hospital, Inc.

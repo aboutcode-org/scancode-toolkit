@@ -10,3 +10,7 @@ standard_notice: |
     If you plan to redistribute ActivePerl you will need a different license.
     For more information please visit ActivePerl OEM Licensing or contact us
     directly.
+ignorable_urls:
+    - http://www.activestate.com/
+ignorable_emails:
+    - sales@activestate.com

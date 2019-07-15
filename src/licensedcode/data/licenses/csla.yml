@@ -6,3 +6,6 @@ owner: Marimer, LLC
 homepage_url: https://github.com/MarimerLLC/csla/blob/master/license.txt
 text_urls:
     - https://github.com/MarimerLLC/csla/blob/master/license.txt
+ignorable_copyrights:
+    - Copyright 2013 by Marimer, LLC, Eden Prairie, MN
+    - Copyright 2013 by Marimer, LLC.

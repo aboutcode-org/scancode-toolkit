@@ -3,3 +3,7 @@ short_name: Oracle BCL for Java EE Technologies
 name: Oracle BCL for Java EE Technologies
 category: Proprietary Free
 owner: Oracle Corporation
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/technetwork/java/javaee/documentation/index.html
+    - http://www.oracle.com/us/legal/third-party-trademarks/index.html

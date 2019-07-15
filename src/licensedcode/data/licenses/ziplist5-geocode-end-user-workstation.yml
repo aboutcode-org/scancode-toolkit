@@ -5,3 +5,5 @@ category: Commercial
 owner: CD Light LLC
 homepage_url: https://web.archive.org/web/20160904120244/http://zipinfo.com/products/z5LL/z5lllw.htm
 faq_url: https://web.archive.org/web/20160904120249/http://zipinfo.com/products/z5LL/z5lllo.htm
+ignorable_emails:
+    - support@zipinfo.com

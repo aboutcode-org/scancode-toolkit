@@ -5,3 +5,6 @@ category: Permissive
 owner: XFree86 Project, Inc
 notes: a composite of x11-keith-packard and other license comments
 minimum_coverage: 85
+ignorable_emails:
+    - KendallB@scitechsoft.com
+    - x86emu@linuxlabs.com

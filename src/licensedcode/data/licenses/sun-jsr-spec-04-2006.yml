@@ -4,3 +4,5 @@ name: Sun JSR Specification License April 2006
 category: Proprietary Free
 owner: Oracle (Sun)
 notes: a highly similar earlier version was published in January 2006.
+ignorable_copyrights:
+    - Copyright 2006 SUN MICROSYSTEMS, INC.

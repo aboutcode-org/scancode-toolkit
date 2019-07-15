@@ -4,3 +4,5 @@ name: Sencha Commercial License v1.1
 category: Commercial
 owner: Sencha
 homepage_url: http://www.sencha.com/legal/sencha-commercial-software-license-agreement/
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html

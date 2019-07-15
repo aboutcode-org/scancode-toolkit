@@ -10,3 +10,7 @@ text_urls:
     - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.1.doc
 other_urls:
     - http://oss.sgi.com/projects/FreeB/
+ignorable_authors:
+    - Silicon Graphics, Inc.
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB

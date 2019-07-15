@@ -53,3 +53,7 @@ standard_notice: |
     The availability of this Exception does not imply any general presumption
     that third-party software is unaffected by the copyleft requirements of the
     license of Autoconf.
+ignorable_copyrights:
+    - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_urls:
+    - http://fsf.org/

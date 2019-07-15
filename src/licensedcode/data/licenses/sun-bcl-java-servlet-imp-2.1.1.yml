@@ -3,3 +3,5 @@ short_name: Sun BCL Java Servlet Implementation 2.1.1
 name: Sun BCL Java Servlet Implementation Classes 2.1.1
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_urls:
+    - http://java.sun.com/

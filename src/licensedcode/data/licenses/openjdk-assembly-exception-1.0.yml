@@ -31,3 +31,6 @@ standard_notice: |
     with the Classpath exception). If you modify or add to the OpenJDK code,
     that new GPL2 code may still be combined with Designated Exception Modules
     if the new code is made subject to this exception by its copyright holder.
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html

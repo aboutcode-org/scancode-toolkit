@@ -4,3 +4,5 @@ name: Zipeg License
 category: Proprietary Free
 owner: Leo Kuznetsov
 homepage_url: http://www.zipeg.com/about
+ignorable_urls:
+    - http://www.zipeg.com/

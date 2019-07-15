@@ -7,3 +7,5 @@ homepage_url: https://github.com/richardfontana/copyleft-next/blob/master/Releas
 spdx_license_key: copyleft-next-0.3.1
 other_urls:
     - https://github.com/copyleft-next/copyleft-next/blob/master/Releases/copyleft-next-0.3.1
+ignorable_urls:
+    - https://github.com/copyleft-next/copyleft-next.git/

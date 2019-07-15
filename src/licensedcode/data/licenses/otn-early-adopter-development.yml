@@ -6,3 +6,7 @@ owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/ea-license-noexhibits-1938914.html
 text_urls:
     - http://www.oracle.com/technetwork/licenses/ea-license-noexhibits-1938914.html
+ignorable_authors:
+    - the OTN Program
+ignorable_urls:
+    - http://www.oracle.com/us/legal/privacy/index.html

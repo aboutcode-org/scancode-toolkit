@@ -9,3 +9,5 @@ spdx_license_key: Unlicense
 text_urls:
     - http://unlicense.org/
 faq_url: http://unlicense.org/
+ignorable_urls:
+    - http://unlicense.org/

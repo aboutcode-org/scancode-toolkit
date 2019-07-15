@@ -4,3 +4,6 @@ name: JetBrains Purchase Terms
 category: Commercial
 owner: JetBrains
 homepage_url: https://www.jetbrains.com/store/terms/
+ignorable_urls:
+    - http://www.jetbrains.com/
+    - https://account.jetbrains.com/

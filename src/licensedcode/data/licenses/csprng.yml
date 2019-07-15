@@ -3,3 +3,5 @@ short_name: CSPRNG
 name: CSPRNG
 category: Free Restricted
 owner: Peter Gutmann
+ignorable_emails:
+    - pgut001@cs.auckland.ac.nz

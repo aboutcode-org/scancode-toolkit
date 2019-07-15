@@ -10,3 +10,5 @@ faq_url: http://creativecommons.org/licenses/by/2.0/uk/
 other_urls:
     - http://www.legislation.gov.uk/ukpga/1988/48
     - http://www.webtoolkit.info/license
+ignorable_urls:
+    - http://creativecommons.org/

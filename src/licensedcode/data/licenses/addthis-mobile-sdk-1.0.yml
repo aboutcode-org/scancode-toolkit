@@ -7,3 +7,7 @@ homepage_url: https://www.addthis.com/appsdk-license-agreement#.VvMVkRIrJZ1
 other_urls:
     - http://www.addthis.com/about
 minimum_coverage: 80
+ignorable_urls:
+    - http://www.addthis.com/tos
+ignorable_emails:
+    - SUPPORT@ADDTHIS.COM

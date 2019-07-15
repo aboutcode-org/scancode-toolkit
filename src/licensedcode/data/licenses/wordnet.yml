@@ -6,3 +6,5 @@ owner: Princeton University
 homepage_url: http://wordnetcode.princeton.edu
 text_urls:
     - http://wordnetcode.princeton.edu/3.0/LICENSE
+ignorable_copyrights:
+    - Copyright by Princeton University.

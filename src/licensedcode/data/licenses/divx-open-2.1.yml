@@ -3,3 +3,7 @@ short_name: DivX Open License 2.1
 name: DivX Open License v2.1
 category: Copyleft Limited
 owner: DivX, LLC
+ignorable_copyrights:
+    - Copyright (c) 2001 Project
+ignorable_authors:
+    - Project

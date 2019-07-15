@@ -36,3 +36,5 @@ standard_notice: |
     documentation to satisfy this requirement:
     [program/widget] is based in part on the work of
     the Qwt project (http://qwt.sf.net).
+ignorable_urls:
+    - http://qwt.sf.net/

@@ -4,3 +4,5 @@ name: Sun SDK Specification 1.1
 category: Proprietary Free
 owner: Oracle (Sun)
 minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright 2002 Sun Microsystems, Inc.
