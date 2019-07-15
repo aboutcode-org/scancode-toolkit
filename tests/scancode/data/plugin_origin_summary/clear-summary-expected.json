@@ -24,18 +24,20 @@
     },
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post661.6010b7bb0.dirty.20190703221318",
+      "tool_version": "3.0.2.post1147.c8f8ad544.dirty.20190712175200",
       "options": {
         "input": [
           "clear-summary.json"
         ],
-        "--from-json": true,
+        "--from-json": [
+          true
+        ],
         "--json-pp": "clear-summary-expected.json",
         "--origin-summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-03T231813.001403",
-      "end_timestamp": "2019-07-03T231813.023085",
+      "start_timestamp": "2019-07-15T212608.490318",
+      "end_timestamp": "2019-07-15T212608.511193",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -46,19 +48,25 @@
   "summaries": [
     {
       "identifier": 0,
-      "license_expression": "mit",
-      "holders": [
+      "type": "license-holders",
+      "primary_license_expression": "mit",
+      "primary_holders": [
         "Omega Inc."
       ],
-      "type": "license-exp-holders"
+      "secondary_license_expression": null,
+      "secondary_holders": [],
+      "purl": null
     },
     {
       "identifier": 1,
-      "license_expression": "apache-2.0",
-      "holders": [
+      "type": "license-holders",
+      "primary_license_expression": "apache-2.0",
+      "primary_holders": [
         "Acme Corporation"
       ],
-      "type": "license-exp-holders"
+      "secondary_license_expression": null,
+      "secondary_holders": [],
+      "purl": null
     }
   ],
   "files": [
