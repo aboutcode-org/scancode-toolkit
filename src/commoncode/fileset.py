@@ -45,8 +45,8 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-POSIX_PATH_SEP = b'/' if on_linux and py2 else '/'
-EMPTY_STRING = b'' if on_linux and py2 else ''
+POSIX_PATH_SEP = b'/' if on_linux and py2 else u'/'
+EMPTY_STRING = b'' if on_linux and py2 else u''
 
 
 """
@@ -187,8 +187,9 @@ def load(location):
     fn = os.path.abspath(os.path.normpath(os.path.expanduser(location)))
     msg = ('File %(location)s does not exist or not a file.') % locals()
     assert (os.path.exists(fn) and os.path.isfile(fn)), msg
-    with open(fn, 'rb') as f:
-        return [l.strip() for l in f if l and l.strip()]
+    mode = 'rb' if on_linux and py2 else 'r'
+    with open(fn, mode) as f:
+       return [l.strip() for l in f if l and l.strip()]
 
 
 def includes_excludes(patterns, message):

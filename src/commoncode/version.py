@@ -55,9 +55,9 @@ def VERSION_PATTERNS_REGEX():
 ]]
 
 
-POSIX_PATH_SEP = b'/' if on_linux and py2 else '/'
-EMPTY_STRING = b' ' if on_linux and py2 else ' '
-VERSION_PREFIX = b'v' if on_linux and py2 else 'v'
+POSIX_PATH_SEP = b'/' if on_linux and py2 else u'/'
+EMPTY_STRING = b' ' if on_linux and py2 else u' '
+VERSION_PREFIX = b'v' if on_linux and py2 else u'v'
 
 
 def hint(path):

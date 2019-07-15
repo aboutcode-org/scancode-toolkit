@@ -246,17 +246,13 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
 
     path_env = _os_module.environ.get(_path_env_var)
     
-    if on_linux and not py2:
-        # use bytes for now
-        path_env = path_env.encode('utf-8')
-    
     if not path_env:
         # this is quite unlikely to ever happen, but here for safety
         path_env = EMPTY_STRING
 
     # ensure we use unicode or bytes depending on OSes
     # TODO: deal also with Python versions
-    if on_linux:
+    if on_linux and py2:
         new_path = fsencode(new_path)
         path_env = fsencode(path_env)
 

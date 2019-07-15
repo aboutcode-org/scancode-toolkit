@@ -38,13 +38,6 @@ import unicodedata
 import chardet
 from text_unidecode import unidecode
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 """
 A text processing module providing functions to process and prepare text
@@ -180,14 +173,12 @@ def toascii(s, translit=False):
     try:
         if translit:
             converted = unidecode(s).encode('ascii', 'ignore')
+            if not py2: converted = converted.decode('ascii')
             converted = converted.replace('[?]', '_')
         else:
             converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-        if py2:
-            converted = compat.unicode(s.decode('ascii', 'ignore'))
-        else:
-            converted = compat.unicode(s)
+          converted = compat.unicode(s.decode('ascii', 'ignore'))
     return converted
     
 def python_safe_name(s):
