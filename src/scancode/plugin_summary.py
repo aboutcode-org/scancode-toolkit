@@ -69,10 +69,10 @@ if TRACE:
 class Summary(object):
     identifier = attr.ib()
     type=attr.ib()
-    primary_license_expression=attr.ib(default=None)
-    primary_holders = attr.ib(default=attr.Factory(list))
-    secondary_license_expression=attr.ib(default=None)
-    secondary_holders = attr.ib(default=attr.Factory(list))
+    core_license_expression=attr.ib(default=None)
+    core_holders = attr.ib(default=attr.Factory(list))
+    context_license_expression=attr.ib(default=None)
+    context_holders = attr.ib(default=attr.Factory(list))
     purl=attr.ib(default=None)
 
 
@@ -88,10 +88,10 @@ class Fileset(object):
     primary_resource = attr.ib(default=None) # in case of packages, will be package root
     resources = attr.ib(default=attr.Factory(list))
     package = attr.ib(default=None)
-    declared_license_expression = attr.ib(default=None)
-    declared_holders = attr.ib(default=None)
-    discovered_license_expression = attr.ib(default=None)
-    discovered_holders = attr.ib(default=None)
+    core_license_expression = attr.ib(default=None)
+    core_holders = attr.ib(default=None)
+    context_license_expression = attr.ib(default=None)
+    context_holders = attr.ib(default=None)
 
 
 @attr.s
@@ -103,10 +103,10 @@ class PackageFileset(Fileset):
         return Summary(
             identifier=identifier,
             type=self.type,
-            primary_license_expression=self.declared_license_expression,
-            primary_holders=self.declared_holders,
-            secondary_license_expression=self.discovered_license_expression,
-            secondary_holders=self.discovered_holders,
+            core_license_expression=self.core_license_expression,
+            core_holders=self.core_holders,
+            context_license_expression=self.context_license_expression,
+            context_holders=self.context_holders,
             purl=self.package.purl
         )
 
@@ -117,8 +117,8 @@ class LicenseHolderFileset(Fileset):
         return Summary(
             identifier=identifier,
             type=self.type,
-            primary_license_expression=self.discovered_license_expression,
-            primary_holders=self.discovered_holders
+            core_license_expression=self.core_license_expression,
+            core_holders=self.core_holders
         )
 
 
@@ -184,7 +184,8 @@ def get_package_filesets(codebase):
 
             package_holders = []
             if package_copyright:
-                for _, holder, _, _ in CopyrightDetector().detect([(0, package_copyright),], \
+                numbered_lines = [(0, package_copyright)]
+                for _, holder, _, _ in CopyrightDetector().detect(numbered_lines,
                         copyrights=False, holders=True, authors=False, include_years=False):
                     package_holders.append(holder.get('value'))
 
@@ -208,10 +209,10 @@ def get_package_filesets(codebase):
                 resources=package_fileset,
                 primary_resource=resource,
                 package=package,
-                declared_license_expression=package_license_expression,
-                declared_holders=sorted(package_holders),
-                discovered_license_expression=combine_expressions(discovered_license_expressions),
-                discovered_holders=set(sorted(discovered_holders))
+                core_license_expression=package_license_expression,
+                core_holders=sorted(package_holders),
+                context_license_expression=combine_expressions(discovered_license_expressions),
+                context_holders=set(sorted(discovered_holders))
             )
 
 
@@ -297,8 +298,8 @@ def create_license_exp_holders_fileset(resource, codebase):
                 type='license-holders',
                 resources=fileset_resources,
                 primary_resource=resource,
-                discovered_license_expression=license_expression,
-                discovered_holders=holders
+                core_license_expression=license_expression,
+                core_holders=holders
             )
 
 
@@ -333,7 +334,7 @@ def process_license_exp_holders_filesets(filesets):
             # We yield the other Filesets that we don't handle
             yield fileset
             continue
-        origin = fileset.discovered_holders, fileset.discovered_license_expression
+        origin = fileset.core_holders, fileset.core_license_expression
         filesets_by_holders_license_expression[origin].append(fileset)
 
     for (fileset_holders, fileset_license_expression), filesets in filesets_by_holders_license_expression.items():
@@ -343,8 +344,8 @@ def process_license_exp_holders_filesets(filesets):
         yield LicenseHolderFileset(
             type='license-holders',
             resources=fileset_resources,
-            discovered_license_expression=fileset_license_expression,
-            discovered_holders=fileset_holders
+            core_license_expression=fileset_license_expression,
+            core_holders=fileset_holders
         )
 
 
@@ -354,7 +355,13 @@ def create_summaries(filesets, codebase):
     """
     # TODO: Introduce notion of precedence for package data
     summaries = []
-    for identifier, fileset in enumerate(filesets):
+    for idx, fileset in enumerate(filesets):
+        holders = ' '.join(fileset.core_holders)
+        if holders:
+            identifier = python_safe_name('{} {}'.format(holders, idx))
+        else:
+            identifier = idx
+        fileset.identifier = identifier
         for res in fileset.resources:
             res.summarized_to = identifier
             res.save(codebase)
