@@ -128,6 +128,7 @@ class OriginSummary(PostScanPlugin):
         return origin_summary
 
     def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
+        # Collect Filesets
         filesets = []
         root = codebase.get_resource(0)
         if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
@@ -138,17 +139,24 @@ class OriginSummary(PostScanPlugin):
         if not filesets:
             return
 
+        # Process Filesets (if needed)
         filesets = process_license_exp_holders_filesets(filesets)
-        for idx, fileset in enumerate(filesets):
-            # TODO: 70 char limit to component names
-            # TODO: Consider adding license expression to be part of identifier
-            core_holders = '_'.join(fileset.core_holders)
-            context_holders = '_'.join(fileset.context_holders)
-            holders = core_holders or context_holders
-            if holders:
-                identifier = python_safe_name('{}_{}'.format(holders, idx))
+
+        # Add Filesets to codebase
+        for idx, fileset in enumerate(filesets, start=1):
+            if fileset.type == 'package':
+                identifier = fileset.package.purl
             else:
-                identifier = idx
+                # TODO: Consider adding license expression to be part of identifier
+                core_holders = '_'.join(fileset.core_holders)
+                context_holders = '_'.join(fileset.context_holders)
+                holders = core_holders or context_holders
+                # We do not want the identifier to be too long
+                holders = holders[:65]
+                if holders:
+                    identifier = python_safe_name('{}_{}'.format(holders, idx))
+                else:
+                    identifier = idx
             fileset.identifier = identifier
             for res in fileset.resources:
                 res.summarized_to.append(identifier)
