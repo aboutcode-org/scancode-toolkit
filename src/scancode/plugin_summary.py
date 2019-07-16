@@ -35,6 +35,7 @@ import attr
 
 from cluecode.copyrights import CopyrightDetector
 from commoncode.text import python_safe_name
+from license_expression import Licensing
 from packagedcode import get_package_instance
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
@@ -197,13 +198,19 @@ def get_package_filesets(codebase):
             # Remove top-level holders and NoneTypes from discovered holders
             discovered_holders = [holder for holder in discovered_holders if holder and holder not in package_holders]
 
+            combined_discovered_license_expression = combine_expressions(discovered_license_expressions)
+            if combined_discovered_license_expression:
+                simplified_discovered_license_expression = str(Licensing().parse(combined_discovered_license_expression).simplify())
+            else:
+                simplified_discovered_license_expression = None
+
             yield Fileset(
                 type='package',
                 resources=package_fileset,
                 package=package,
                 core_license_expression=package_license_expression,
                 core_holders=sorted(package_holders),
-                context_license_expression=combine_expressions(discovered_license_expressions),
+                context_license_expression=simplified_discovered_license_expression,
                 context_holders=set(sorted(discovered_holders))
             )
 
