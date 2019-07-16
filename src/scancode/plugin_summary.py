@@ -66,17 +66,6 @@ if TRACE:
 
 
 @attr.s
-class Summary(object):
-    identifier = attr.ib()
-    type=attr.ib()
-    core_license_expression=attr.ib(default=None)
-    core_holders = attr.ib(default=attr.Factory(list))
-    context_license_expression=attr.ib(default=None)
-    context_holders = attr.ib(default=attr.Factory(list))
-    purl=attr.ib(default=None)
-
-
-@attr.s
 class Fileset(object):
     """
     A grouping of files that share the same origin
@@ -85,7 +74,6 @@ class Fileset(object):
     # TODO: Don't serialize things we don't care about
     type=attr.ib()
     identifier = attr.ib(default=-1) # maybe
-    primary_resource = attr.ib(default=None) # in case of packages, will be package root
     resources = attr.ib(default=attr.Factory(list))
     package = attr.ib(default=None)
     core_license_expression = attr.ib(default=None)
@@ -93,33 +81,15 @@ class Fileset(object):
     context_license_expression = attr.ib(default=None)
     context_holders = attr.ib(default=None)
 
-
-@attr.s
-class PackageFileset(Fileset):
-    """
-    TODO: Identify key files based off of root of package
-    """
-    def create_summary(self, identifier):
-        return Summary(
-            identifier=identifier,
-            type=self.type,
-            core_license_expression=self.core_license_expression,
-            core_holders=self.core_holders,
-            context_license_expression=self.context_license_expression,
-            context_holders=self.context_holders,
-            purl=self.package.purl
-        )
-
-
-@attr.s
-class LicenseHolderFileset(Fileset):
-    def create_summary(self, identifier):
-        return Summary(
-            identifier=identifier,
-            type=self.type,
-            core_license_expression=self.core_license_expression,
-            core_holders=self.core_holders
-        )
+    def to_dict(self, **kwargs):
+        """
+        Return an OrderedDict of primitive Python types.
+        """
+        def dict_fields(attr, value):
+            if attr.name in ('resources', ):
+                return False
+            return True
+        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
 
 @post_scan_impl
@@ -129,7 +99,7 @@ class OriginSummary(PostScanPlugin):
     or license expression is detected in 75% or more of total files in a directory
     """
     codebase_attributes = dict(
-        summaries=attr.ib(default=attr.Factory(list))
+        filesets=attr.ib(default=attr.Factory(list))
     )
 
     resource_attributes = dict(
@@ -166,9 +136,21 @@ class OriginSummary(PostScanPlugin):
         if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
             filesets.extend(get_license_exp_holders_filesets(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        if filesets:
-            filesets = process_license_exp_holders_filesets(filesets)
-            codebase.attributes.summaries = create_summaries(filesets, codebase)
+        if not filesets:
+            return
+
+        filesets = process_license_exp_holders_filesets(filesets)
+        for idx, fileset in enumerate(filesets):
+            holders = ' '.join(fileset.core_holders)
+            if holders:
+                identifier = python_safe_name('{} {}'.format(holders, idx))
+            else:
+                identifier = idx
+            fileset.identifier = identifier
+            for res in fileset.resources:
+                res.summarized_to = identifier
+                res.save(codebase)
+            codebase.attributes.filesets.append(fileset.to_dict())
 
 
 def get_package_filesets(codebase):
@@ -204,10 +186,9 @@ def get_package_filesets(codebase):
             # Remove top-level holders from discovered holders
             discovered_holders = [holder for holder in discovered_holders if holder not in package_holders]
 
-            yield PackageFileset(
+            yield Fileset(
                 type='package',
                 resources=package_fileset,
-                primary_resource=resource,
                 package=package,
                 core_license_expression=package_license_expression,
                 core_holders=sorted(package_holders),
@@ -294,10 +275,9 @@ def create_license_exp_holders_fileset(resource, codebase):
     if license_expression and holders:
         fileset_resources = get_fileset_resources(resource, codebase)
         if fileset_resources:
-            return LicenseHolderFileset(
+            return Fileset(
                 type='license-holders',
                 resources=fileset_resources,
-                primary_resource=resource,
                 core_license_expression=license_expression,
                 core_holders=holders
             )
@@ -330,7 +310,7 @@ def process_license_exp_holders_filesets(filesets):
     """
     filesets_by_holders_license_expression = defaultdict(list)
     for fileset in filesets:
-        if not (fileset.type == 'license-holders'):
+        if not fileset.type == 'license-holders':
             # We yield the other Filesets that we don't handle
             yield fileset
             continue
@@ -341,7 +321,7 @@ def process_license_exp_holders_filesets(filesets):
         fileset_resources = []
         for fileset in filesets:
             fileset_resources.extend(fileset.resources)
-        yield LicenseHolderFileset(
+        yield Fileset(
             type='license-holders',
             resources=fileset_resources,
             core_license_expression=fileset_license_expression,
