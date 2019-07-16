@@ -2,7 +2,6 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post658.ef069e7.dirty.20190701175204",
       "options": {
         "input": [
           "no_summary/"
@@ -14,8 +13,6 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-01T190752.241543",
-      "end_timestamp": "2019-07-01T190759.929938",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -24,20 +21,15 @@
     },
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post1112.bf2c5e484.dirty.20190708215333",
       "options": {
-        "input": [
-          "no-summary.json"
-        ],
+        "input": "<path>",
         "--from-json": [
           true
         ],
-        "--json-pp": "no-summary-expected.json",
+        "--json": "<file>",
         "--origin-summary": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-08T235338.816735",
-      "end_timestamp": "2019-07-08T235338.831528",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -45,7 +37,30 @@
       }
     }
   ],
-  "summaries": [],
+  "filesets": [
+    {
+      "type": "license-holders",
+      "identifier": "omega_inc__1",
+      "package": null,
+      "core_license_expression": "mit",
+      "core_holders": [
+        "Omega Inc."
+      ],
+      "context_license_expression": null,
+      "context_holders": []
+    },
+    {
+      "type": "license-holders",
+      "identifier": "acme_corporation_2",
+      "package": null,
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "Acme Corporation"
+      ],
+      "context_license_expression": null,
+      "context_holders": []
+    }
+  ],
   "files": [
     {
       "path": "no_summary",
@@ -54,7 +69,6 @@
       "base_name": "no_summary",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -73,7 +87,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 7,
       "dirs_count": 4,
       "size_count": 321,
@@ -86,7 +100,6 @@
       "base_name": "README",
       "extension": "",
       "size": 51,
-      "date": "2019-06-06",
       "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
       "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
       "mime_type": "text/plain",
@@ -152,7 +165,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -165,7 +178,6 @@
       "base_name": "src",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -190,7 +202,9 @@
         ],
         "count": 3
       },
-      "summarized_to": null,
+      "summarized_to": [
+        "acme_corporation_2"
+      ],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 153,
@@ -203,7 +217,6 @@
       "base_name": "src1",
       "extension": ".src",
       "size": 51,
-      "date": "2019-06-06",
       "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
       "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
       "mime_type": "text/plain",
@@ -269,7 +282,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -282,7 +295,6 @@
       "base_name": "src2",
       "extension": ".src",
       "size": 51,
-      "date": "2019-06-06",
       "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
       "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
       "mime_type": "text/plain",
@@ -348,7 +360,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -361,7 +373,6 @@
       "base_name": "src3",
       "extension": ".src",
       "size": 51,
-      "date": "2019-06-06",
       "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
       "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
       "mime_type": "text/plain",
@@ -427,7 +438,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -440,7 +451,6 @@
       "base_name": "third_party",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -465,7 +475,9 @@
         ],
         "count": 3
       },
-      "summarized_to": null,
+      "summarized_to": [
+        "omega_inc__1"
+      ],
       "files_count": 3,
       "dirs_count": 2,
       "size_count": 117,
@@ -478,7 +490,6 @@
       "base_name": "module_2",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -503,7 +514,10 @@
         ],
         "count": 2
       },
-      "summarized_to": null,
+      "summarized_to": [
+        "omega_inc__1",
+        "omega_inc__1"
+      ],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -516,7 +530,6 @@
       "base_name": "src_3",
       "extension": ".src",
       "size": 39,
-      "date": "2019-06-06",
       "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
       "md5": "85256778b96d48b69923d905f1f322ba",
       "mime_type": "text/plain",
@@ -582,7 +595,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -595,7 +608,6 @@
       "base_name": "src_5",
       "extension": ".src",
       "size": 39,
-      "date": "2019-06-06",
       "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
       "md5": "85256778b96d48b69923d905f1f322ba",
       "mime_type": "text/plain",
@@ -661,7 +673,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -674,7 +686,6 @@
       "base_name": "module_3",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -699,7 +710,10 @@
         ],
         "count": 1
       },
-      "summarized_to": null,
+      "summarized_to": [
+        "omega_inc__1",
+        "omega_inc__1"
+      ],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
@@ -712,7 +726,6 @@
       "base_name": "srcfile",
       "extension": "",
       "size": 39,
-      "date": "2019-06-06",
       "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
       "md5": "85256778b96d48b69923d905f1f322ba",
       "mime_type": "text/plain",
@@ -778,7 +791,7 @@
       "authors": [],
       "packages": [],
       "origin_summary": {},
-      "summarized_to": null,
+      "summarized_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

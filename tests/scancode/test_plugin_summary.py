@@ -31,6 +31,7 @@ from os.path import join
 import json
 
 from commoncode.testcase import FileDrivenTesting
+from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.plugin_summary import is_majority
 
@@ -61,48 +62,21 @@ class TestOriginSummary(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/clear-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
-        with open(expected_file, 'rb') as f:
-            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summaries = expected_scan['summaries']
-            expected_files = expected_scan['files']
-        with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summaries_results = results['summaries']
-            files_results = results['files']
-        assert expected_summaries == summaries_results
-        assert expected_files == files_results
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_no_summary(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/no-summary.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/no-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
-        with open(expected_file, 'rb') as f:
-            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summaries = expected_scan['summaries']
-            expected_files = expected_scan['files']
-        with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summaries_results = results['summaries']
-            files_results = results['files']
-        assert expected_summaries == summaries_results
-        assert expected_files == files_results
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_no_null_values_are_summarized(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary-expected.json')
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
-        with open(expected_file, 'rb') as f:
-            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_summaries = expected_scan['summaries']
-            expected_files = expected_scan['files']
-        with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            summaries_results = results['summaries']
-            files_results = results['files']
-        assert expected_summaries == summaries_results
-        assert expected_files == files_results
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_custom_threshold(self):
         scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary.json')
@@ -110,16 +84,4 @@ class TestOriginSummary(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_origin_summary/custom-threshold-expected.json')
         threshold = '1'
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file, '--origin-summary-threshold', threshold])
-        with open(expected_file, 'rb') as f:
-            expected_scan = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            expected_custom_threshold = expected_scan['headers'][-1]['options']['--origin-summary-threshold']
-            expected_summaries = expected_scan['summaries']
-            expected_files = expected_scan['files']
-        with open(result_file, 'rb') as f:
-            results = json.loads(f.read(), object_pairs_hook=OrderedDict)
-            result_threshold = results['headers'][-1]['options']['--origin-summary-threshold']
-            summaries_results = results['summaries']
-            files_results = results['files']
-        assert expected_custom_threshold == result_threshold
-        assert expected_summaries == summaries_results
-        assert expected_files == files_results
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
