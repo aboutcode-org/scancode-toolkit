@@ -71,15 +71,14 @@ class Fileset(object):
     A grouping of files that share the same origin
     """
     # TODO: have an attribute for key files (one that strongly determines origin)
-    # TODO: Don't serialize things we don't care about
     type=attr.ib()
-    identifier = attr.ib(default=-1) # maybe
+    identifier = attr.ib(default=None)
     resources = attr.ib(default=attr.Factory(list))
     package = attr.ib(default=None)
     core_license_expression = attr.ib(default=None)
-    core_holders = attr.ib(default=None)
+    core_holders = attr.ib(default=attr.Factory(list))
     context_license_expression = attr.ib(default=None)
-    context_holders = attr.ib(default=None)
+    context_holders = attr.ib(default=attr.Factory(list))
 
     def to_dict(self, **kwargs):
         """
@@ -104,7 +103,7 @@ class OriginSummary(PostScanPlugin):
 
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
-        summarized_to=attr.ib(default=None, type=str)
+        summarized_to=attr.ib(default=attr.Factory(list))
     )
 
     sort_order = 8
@@ -141,21 +140,25 @@ class OriginSummary(PostScanPlugin):
 
         filesets = process_license_exp_holders_filesets(filesets)
         for idx, fileset in enumerate(filesets):
-            holders = ' '.join(fileset.core_holders)
+            # TODO: 70 char limit to component names
+            # TODO: Consider adding license expression to be part of identifier
+            core_holders = '_'.join(fileset.core_holders)
+            context_holders = '_'.join(fileset.context_holders)
+            holders = core_holders or context_holders
             if holders:
-                identifier = python_safe_name('{} {}'.format(holders, idx))
+                identifier = python_safe_name('{}_{}'.format(holders, idx))
             else:
                 identifier = idx
             fileset.identifier = identifier
             for res in fileset.resources:
-                res.summarized_to = identifier
+                res.summarized_to.append(identifier)
                 res.save(codebase)
             codebase.attributes.filesets.append(fileset.to_dict())
 
 
 def get_package_filesets(codebase):
     """
-    Yield a PackageFileset for each detected package in the codebase
+    Yield a Fileset for each detected package in the codebase
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
@@ -327,26 +330,6 @@ def process_license_exp_holders_filesets(filesets):
             core_license_expression=fileset_license_expression,
             core_holders=fileset_holders
         )
-
-
-def create_summaries(filesets, codebase):
-    """
-    Return a list of summaries from `filesets`
-    """
-    # TODO: Introduce notion of precedence for package data
-    summaries = []
-    for idx, fileset in enumerate(filesets):
-        holders = ' '.join(fileset.core_holders)
-        if holders:
-            identifier = python_safe_name('{} {}'.format(holders, idx))
-        else:
-            identifier = idx
-        fileset.identifier = identifier
-        for res in fileset.resources:
-            res.summarized_to = identifier
-            res.save(codebase)
-        summaries.append(fileset.create_summary(identifier))
-    return summaries
 
 
 def get_nr_fileset(codebase):
