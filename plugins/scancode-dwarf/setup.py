@@ -46,7 +46,7 @@ setup(
     ],
     entry_points={
         'scancode_scan': [
-            'scancode-dwarf = scancode_dwarf:DwarfScanner',
+            'scancode-dwarf = scandwarf:DwarfScanner',
         ],
     }
 
