@@ -192,10 +192,10 @@ def get_package_filesets(codebase):
                 discovered_license_expressions.append(package_resource_license_expression)
                 discovered_holders.extend(h.get('value') for h in package_resource_holders)
 
-            # Remove top-level package license from discovered licenses
-            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic != package_license_expression]
-            # Remove top-level holders from discovered holders
-            discovered_holders = [holder for holder in discovered_holders if holder not in package_holders]
+            # Remove top-level package license and NoneTypes from discovered licenses
+            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic and lic != package_license_expression]
+            # Remove top-level holders and NoneTypes from discovered holders
+            discovered_holders = [holder for holder in discovered_holders if holder and holder not in package_holders]
 
             yield Fileset(
                 type='package',
