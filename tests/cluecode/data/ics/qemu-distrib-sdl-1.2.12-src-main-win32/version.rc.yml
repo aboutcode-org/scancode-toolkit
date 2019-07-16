@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007 Sam Lantinga
+  - Copyright (c) 2007 Sam Lantinga
 holders:
-    - Sam Lantinga
+  - Sam Lantinga
 holders_summary:
-    -   value: Sam Lantinga
-        count: 1
+  - value: Sam Lantinga
+    count: 1

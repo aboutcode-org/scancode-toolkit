@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - copyright (c) 2006 by aleal
+  - copyright (c) 2006 by aleal
 holders:
-    - aleal
+  - aleal
 holders_summary:
-    -   value: aleal
-        count: 1
+  - value: aleal
+    count: 1

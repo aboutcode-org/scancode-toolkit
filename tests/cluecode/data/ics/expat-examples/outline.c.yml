@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1999, Clark Cooper
+  - Copyright 1999, Clark Cooper
 holders:
-    - Clark Cooper
+  - Clark Cooper
 holders_summary:
-    -   value: Clark Cooper
-        count: 1
+  - value: Clark Cooper
+    count: 1

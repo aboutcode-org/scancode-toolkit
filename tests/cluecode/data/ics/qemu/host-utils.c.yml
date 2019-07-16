@@ -1,15 +1,15 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003 Fabrice Bellard
-    - Copyright (c) 2007 Aurelien Jarno
+  - Copyright (c) 2003 Fabrice Bellard
+  - Copyright (c) 2007 Aurelien Jarno
 holders:
-    - Fabrice Bellard
-    - Aurelien Jarno
+  - Fabrice Bellard
+  - Aurelien Jarno
 holders_summary:
-    -   value: Aurelien Jarno
-        count: 1
-    -   value: Fabrice Bellard
-        count: 1
+  - value: Aurelien Jarno
+    count: 1
+  - value: Fabrice Bellard
+    count: 1

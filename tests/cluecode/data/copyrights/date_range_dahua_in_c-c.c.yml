@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) Copyright 2006 to 2007 Dahua Digital.
+  - (c) Copyright 2006 to 2007 Dahua Digital
 holders:
-    - Dahua Digital.
+  - Dahua Digital
 holders_summary:
-    -   value: Dahua Digital.
-        count: 1
+  - value: Dahua Digital
+    count: 1

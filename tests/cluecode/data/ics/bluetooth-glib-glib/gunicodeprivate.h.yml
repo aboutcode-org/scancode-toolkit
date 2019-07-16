@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003 Noah Levitt
+  - Copyright (c) 2003 Noah Levitt
 holders:
-    - Noah Levitt
+  - Noah Levitt
 holders_summary:
-    -   value: Noah Levitt
-        count: 1
+  - value: Noah Levitt
+    count: 1

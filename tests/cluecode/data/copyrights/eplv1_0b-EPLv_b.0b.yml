@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003, 2005 IBM Corporation and others.
+  - Copyright (c) 2003, 2005 IBM Corporation and others
 holders:
-    - IBM Corporation and others.
+  - IBM Corporation and others
 holders_summary:
-    -   value: IBM Corporation and others.
-        count: 1
+  - value: IBM Corporation and others
+    count: 1

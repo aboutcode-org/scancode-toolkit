@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 - James Bottomley <James.Bottomley@steeleye.com>
+  - Copyright (c) 2005 - James Bottomley <James.Bottomley@steeleye.com>
 holders:
-    - James Bottomley
+  - James Bottomley
 holders_summary:
-    -   value: James Bottomley
-        count: 1
+  - value: James Bottomley
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1998 Julian Smart, Robert Roebling
+  - Copyright (c) 1998 Julian Smart, Robert Roebling
 holders:
-    - Julian Smart, Robert Roebling
+  - Julian Smart, Robert Roebling
 holders_summary:
-    -   value: Julian Smart, Robert Roebling
-        count: 1
+  - value: Julian Smart, Robert Roebling
+    count: 1

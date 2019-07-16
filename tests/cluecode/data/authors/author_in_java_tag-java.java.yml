@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Apple Banana Car
+  - Apple Banana Car
 authors_summary:
-    -   value: Apple Banana Car
-        count: 1
+  - value: Apple Banana Car
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006,2007 Josh Coalson
+  - Copyright (c) 2006,2007 Josh Coalson
 holders:
-    - Josh Coalson
+  - Josh Coalson
 holders_summary:
-    -   value: Josh Coalson
-        count: 1
+  - value: Josh Coalson
+    count: 1

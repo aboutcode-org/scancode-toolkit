@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1999 Al Smith
+  - Copyright (c) 1999 Al Smith
 holders:
-    - Al Smith
+  - Al Smith
 holders_summary:
-    -   value: Al Smith
-        count: 1
+  - value: Al Smith
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1995-2000 EPFL-LRC/ICA
+  - Copyright 1995-2000 EPFL-LRC/ICA
 holders:
-    - EPFL-LRC/ICA
+  - EPFL-LRC/ICA
 holders_summary:
-    -   value: EPFL-LRC/ICA
-        count: 1
+  - value: EPFL-LRC/ICA
+    count: 1

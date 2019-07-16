@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000 Lennert Buytenhek
+  - Copyright (c) 2000 Lennert Buytenhek
 holders:
-    - Lennert Buytenhek
+  - Lennert Buytenhek
 holders_summary:
-    -   value: Lennert Buytenhek
-        count: 1
+  - value: Lennert Buytenhek
+    count: 1

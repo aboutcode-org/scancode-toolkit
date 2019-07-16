@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2004-2006 Dominik Brodowski
+  - Copyright 2004-2006 Dominik Brodowski
 holders:
-    - Dominik Brodowski
+  - Dominik Brodowski
 holders_summary:
-    -   value: Dominik Brodowski
-        count: 1
+  - value: Dominik Brodowski
+    count: 1

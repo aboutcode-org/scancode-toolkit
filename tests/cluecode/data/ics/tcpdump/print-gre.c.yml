@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2002 Jason L. Wright (jason@thought.net)
+  - Copyright (c) 2002 Jason L. Wright (jason@thought.net)
 holders:
-    - Jason L. Wright
+  - Jason L. Wright
 holders_summary:
-    -   value: Jason L. Wright
-        count: 1
+  - value: Jason L. Wright
+    count: 1

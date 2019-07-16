@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1997 Transmeta Corporation
+  - Copyright 1997 Transmeta Corporation
 holders:
-    - Transmeta Corporation
+  - Transmeta Corporation
 holders_summary:
-    -   value: Transmeta Corporation
-        count: 1
+  - value: Transmeta Corporation
+    count: 1

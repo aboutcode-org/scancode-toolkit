@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) by Joseph Gil
+  - (c) by Joseph Gil
 holders:
-    - Joseph Gil
+  - Joseph Gil
 holders_summary:
-    -   value: Joseph Gil
-        count: 1
+  - value: Joseph Gil
+    count: 1

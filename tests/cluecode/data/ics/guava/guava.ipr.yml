@@ -1,6 +1,6 @@
 what:
-    - copyrights
+  - copyrights
 copyrights:
-    - Copyright (c) Google Inc.
+  - Copyright (c) Google Inc.
 expected_failures:
-    - copyrights
+  - copyrights

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1999-2002 Vojtech Pavlik
+  - Copyright (c) 1999-2002 Vojtech Pavlik
 holders:
-    - Vojtech Pavlik
+  - Vojtech Pavlik
 holders_summary:
-    -   value: Vojtech Pavlik
-        count: 1
+  - value: Vojtech Pavlik
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2008 Eli Friedman
+  - Copyright (c) 2008 Eli Friedman
 holders:
-    - Eli Friedman
+  - Eli Friedman
 holders_summary:
-    -   value: Eli Friedman
-        count: 1
+  - value: Eli Friedman
+    count: 1

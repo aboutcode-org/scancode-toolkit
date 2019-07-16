@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) Trolltech ASA.
+  - Copyright (c) Trolltech ASA.
 holders:
-    - Trolltech ASA.
+  - Trolltech ASA.
 holders_summary:
-    -   value: Trolltech ASA.
-        count: 1
+  - value: Trolltech ASA.
+    count: 1

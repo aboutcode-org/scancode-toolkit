@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) 1998 Rusty Russell
+  - (c) 1998 Rusty Russell
 holders:
-    - Rusty Russell
+  - Rusty Russell
 holders_summary:
-    -   value: Rusty Russell
-        count: 1
+  - value: Rusty Russell
+    count: 1

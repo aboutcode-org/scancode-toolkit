@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2005 Fluendo, S.L.
+  - Copyright 2005 Fluendo, S.L.
 holders:
-    - Fluendo, S.L.
+  - Fluendo, S.L.
 holders_summary:
-    -   value: Fluendo, S.L.
-        count: 1
+  - value: Fluendo, S.L.
+    count: 1

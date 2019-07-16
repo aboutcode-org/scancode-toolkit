@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright ?2004-2006 Company
+  - Copyright ?2004-2006 Company
 holders:
-    - Company
+  - Company
 holders_summary:
-    -   value: Company
-        count: 1
+  - value: Company
+    count: 1

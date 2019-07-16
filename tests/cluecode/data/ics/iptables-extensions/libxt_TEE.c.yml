@@ -1,16 +1,15 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) Sebastian Classen, 2007 Jan Engelhardt , 2007 - 2010
+  - Copyright (c) Sebastian Classen, 2007 Jan Engelhardt , 2007 - 2010
 holders:
-    - Sebastian Classen, Jan Engelhardt ,
+  - Sebastian Classen, Jan Engelhardt ,
 holders_summary:
-    -   value: Sebastian Classen, Jan Engelhardt ,
-        count: 1
+  - value: Sebastian Classen, Jan Engelhardt ,
+    count: 1
 expected_failures:
-    - copyrights
-    - holders
-    - holders_summary
-
+  - copyrights
+  - holders
+  - holders_summary

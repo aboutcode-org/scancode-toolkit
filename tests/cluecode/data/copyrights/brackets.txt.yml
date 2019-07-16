@@ -1,11 +1,10 @@
 what:
-    - copyrights
-    - holders
+  - copyrights
+  - holders
 copyrights:
-    - Copyright (c) <2010-2012> <Ciaran Jessup>
+  - Copyright (c) <2010-2012> <Ciaran Jessup>
 holders:
-    - Ciaran Jessup
+  - Ciaran Jessup
 expected_failures:
-    - copyrights
-    - holders
-
+  - copyrights
+  - holders

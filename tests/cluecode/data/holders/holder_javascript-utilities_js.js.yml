@@ -1,11 +1,11 @@
 what:
-    - holders
-    - holders_summary
+  - holders
+  - holders_summary
 holders:
-    - Yahoo! Inc.
-    - Robert Penner
+  - Yahoo! Inc.
+  - Robert Penner
 holders_summary:
-    -   value: Robert Penner
-        count: 1
-    -   value: Yahoo! Inc.
-        count: 1
+  - value: Robert Penner
+    count: 1
+  - value: Yahoo! Inc.
+    count: 1

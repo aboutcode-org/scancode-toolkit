@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 Alan D. Brunelle <Alan.Brunelle@hp.com>
+  - Copyright (c) 2006 Alan D. Brunelle <Alan.Brunelle@hp.com>
 holders:
-    - Alan D. Brunelle
+  - Alan D. Brunelle
 holders_summary:
-    -   value: Alan D. Brunelle
-        count: 1
+  - value: Alan D. Brunelle
+    count: 1

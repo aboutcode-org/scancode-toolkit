@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 Alex Beregszaszi
+  - Copyright (c) 2005 Alex Beregszaszi
 holders:
-    - Alex Beregszaszi
+  - Alex Beregszaszi
 holders_summary:
-    -   value: Alex Beregszaszi
-        count: 1
+  - value: Alex Beregszaszi
+    count: 1

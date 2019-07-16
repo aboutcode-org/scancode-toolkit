@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2008 Samuel Thibault
+  - Copyright (c) 2008 Samuel Thibault
 holders:
-    - Samuel Thibault
+  - Samuel Thibault
 holders_summary:
-    -   value: Samuel Thibault
-        count: 1
+  - value: Samuel Thibault
+    count: 1

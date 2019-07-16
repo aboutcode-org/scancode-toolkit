@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2008-2009, Motorola
+  - Copyright (c) 2008-2009, Motorola
 holders:
-    - Motorola
+  - Motorola
 holders_summary:
-    -   value: Motorola
-        count: 1
+  - value: Motorola
+    count: 1

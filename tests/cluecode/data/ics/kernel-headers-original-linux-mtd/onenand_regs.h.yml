@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 Samsung Electronics
+  - Copyright (c) 2005 Samsung Electronics
 holders:
-    - Samsung Electronics
+  - Samsung Electronics
 holders_summary:
-    -   value: Samsung Electronics
-        count: 1
+  - value: Samsung Electronics
+    count: 1

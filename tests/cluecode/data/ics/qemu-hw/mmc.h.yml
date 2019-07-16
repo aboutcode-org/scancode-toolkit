@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2002 Hewlett-Packard Company
+  - Copyright 2002 Hewlett-Packard Company
 holders:
-    - Hewlett-Packard Company
+  - Hewlett-Packard Company
 holders_summary:
-    -   value: Hewlett-Packard, Inc.
-        count: 1
+  - value: Hewlett-Packard, Inc.
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007 Leah Culver
+  - Copyright (c) 2007 Leah Culver
 holders:
-    - Leah Culver
+  - Leah Culver
 holders_summary:
-    -   value: Leah Culver
-        count: 1
+  - value: Leah Culver
+    count: 1

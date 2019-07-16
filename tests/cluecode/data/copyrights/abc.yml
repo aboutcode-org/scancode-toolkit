@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 abc.org
+  - Copyright (c) 2006 abc.org
 holders:
-    - abc.org
+  - abc.org
 holders_summary:
-    -   value: abc.org
-        count: 1
+  - value: abc.org
+    count: 1

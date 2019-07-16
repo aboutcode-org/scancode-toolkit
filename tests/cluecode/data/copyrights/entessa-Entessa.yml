@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003 Entessa, LLC.
+  - Copyright (c) 2003 Entessa, LLC.
 holders:
-    - Entessa, LLC.
+  - Entessa, LLC.
 holders_summary:
-    -   value: Entessa, LLC.
-        count: 1
+  - value: Entessa, LLC.
+    count: 1

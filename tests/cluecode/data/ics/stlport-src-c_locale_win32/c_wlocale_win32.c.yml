@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007 2008 Francois Dumont
+  - Copyright (c) 2007 2008 Francois Dumont
 holders:
-    - Francois Dumont
+  - Francois Dumont
 holders_summary:
-    -   value: Francois Dumont
-        count: 1
+  - value: Francois Dumont
+    count: 1

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) 2005 - Peter Nederlof
+  - (c) 2005 - Peter Nederlof
 holders:
-    - Peter Nederlof
+  - Peter Nederlof
 holders_summary:
-    -   value: Peter Nederlof
-        count: 1
+  - value: Peter Nederlof
+    count: 1

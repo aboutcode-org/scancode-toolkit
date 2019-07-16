@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 Niels Provos <provos@citi.umich.edu>
+  - Copyright (c) 2006 Niels Provos <provos@citi.umich.edu>
 holders:
-    - Niels Provos
+  - Niels Provos
 holders_summary:
-    -   value: Niels Provos
-        count: 1
+  - value: Niels Provos
+    count: 1

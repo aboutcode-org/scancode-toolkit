@@ -1,8 +1,8 @@
 what:
-    - holders
-    - holders_summary
+  - holders
+  - holders_summary
 holders:
-    - Carnegie Mellon University
+  - Carnegie Mellon University
 holders_summary:
-    -   value: Carnegie Mellon University
-        count: 1
+  - value: Carnegie Mellon University
+    count: 1

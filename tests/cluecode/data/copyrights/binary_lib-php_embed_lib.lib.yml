@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright nexB and others (c) 2012
+  - Copyright nexB and others (c) 2012
 holders:
-    - nexB and others
+  - nexB and others
 holders_summary:
-    -   value: nexB and others
-        count: 1
+  - value: nexB and others
+    count: 1

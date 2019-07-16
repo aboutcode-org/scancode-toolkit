@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2002-2004, K A Fraser
+  - Copyright (c) 2002-2004, K A Fraser
 holders:
-    - K A Fraser
+  - K A Fraser
 holders_summary:
-    -   value: K A Fraser
-        count: 1
+  - value: K A Fraser
+    count: 1

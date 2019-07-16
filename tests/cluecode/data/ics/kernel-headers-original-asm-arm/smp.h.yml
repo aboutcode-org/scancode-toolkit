@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2004-2005 ARM Ltd.
+  - Copyright (c) 2004-2005 ARM Ltd.
 holders:
-    - ARM Ltd.
+  - ARM Ltd.
 holders_summary:
-    -   value: ARM Ltd.
-        count: 1
+  - value: ARM Ltd.
+    count: 1

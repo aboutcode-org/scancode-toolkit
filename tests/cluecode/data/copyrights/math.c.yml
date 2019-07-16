@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1989, 1991, 1993, 1994 The Regents of the University of California.
+  - Copyright (c) 1989, 1991, 1993, 1994 The Regents of the University of California
   - Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au>
   - Copyright (c) 2001 Aaron Lehmann <aaronl@vitelus.com>
   - Paul Mundt <lethal@linux-sh.org> (c) 2004
   - Vladimir Oleynik <dzo@simtreas.ru> (c) 2001-2005
 holders:
-  - The Regents of the University of California.
+  - The Regents of the University of California
   - Herbert Xu
   - Aaron Lehmann
   - Paul Mundt
@@ -21,8 +21,7 @@ holders_summary:
     count: 1
   - value: Paul Mundt
     count: 1
-  - value: The Regents of the University of California.
+  - value: The Regents of the University of California
     count: 1
   - value: Vladimir Oleynik
     count: 1
-

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2004 Jean Tourrilhes <jt@hpl.hp.com>
+  - Copyright (c) 2004 Jean Tourrilhes <jt@hpl.hp.com>
 holders:
-    - Jean Tourrilhes
+  - Jean Tourrilhes
 holders_summary:
-    -   value: Jean Tourrilhes
-        count: 1
+  - value: Jean Tourrilhes
+    count: 1

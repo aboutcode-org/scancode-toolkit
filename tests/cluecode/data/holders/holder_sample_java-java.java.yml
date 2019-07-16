@@ -1,8 +1,8 @@
 what:
-    - holders
-    - holders_summary
+  - holders
+  - holders_summary
 holders:
-    - Sample ABC Inc.
+  - Sample ABC Inc.
 holders_summary:
-    -   value: Sample ABC Inc.
-        count: 1
+  - value: Sample ABC Inc.
+    count: 1
