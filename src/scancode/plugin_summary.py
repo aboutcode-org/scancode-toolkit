@@ -82,7 +82,7 @@ class Fileset(object):
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict of primitive Python types.
+        Return an OrderedDict that contains the attributes (except for `resources`) and values for this Fileset
         """
         def dict_fields(attr, value):
             if attr.name in ('resources', ):
@@ -203,12 +203,7 @@ def get_package_filesets(codebase):
 def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     """
     Yield a Fileset for each directory where 75% or more of the files have the same license
-    expression and copyright holders ONLY IF its parent directory has no majority license expression
-    and copyright holders. This means each yielded Fileset is a "local maximum" in terms of being
-    able to summarize on license expression and copyright holders.
-
-    We yield a fileset for the root Resource in `codebase` if there is a majority license expression
-    and copyright holder, such that we can properly report every instance of summarization
+    expression and copyright holders
     """
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
