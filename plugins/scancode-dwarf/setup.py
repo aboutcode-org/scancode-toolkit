@@ -43,6 +43,8 @@ setup(
     ],
     install_requires=[
         'scancode-toolkit',
+        'attr',
+        'scancode-dwarfdump',
     ],
     entry_points={
         'scancode_scan': [
