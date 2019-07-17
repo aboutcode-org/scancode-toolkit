@@ -46,13 +46,13 @@ to OS-safe paths and to POSIX paths.
 """
 
 if on_linux and py2:
-   POSIX_PATH_SEP = b'/' 
-   WIN_PATH_SEP = b'\\' 
-   EMPTY_STRING = b''  
+    POSIX_PATH_SEP = b'/' 
+    WIN_PATH_SEP = b'\\' 
+    EMPTY_STRING = b''  
 else:
-   POSIX_PATH_SEP = u'/'
-   WIN_PATH_SEP = u'\\'
-   EMPTY_STRING = u''
+    POSIX_PATH_SEP = u'/'
+    WIN_PATH_SEP = u'\\'
+    EMPTY_STRING = u''
 
 #
 # Build OS-portable and safer paths
@@ -169,9 +169,9 @@ def resolve(path, posix=True):
     return path
 
 
-legal_punctuation = "!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
-legal_chars = 'A-Za-z0-9' + legal_punctuation
-illegal_chars_re = '[^' + legal_chars + ']'
+legal_punctuation = r"!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
+legal_chars = r'A-Za-z0-9' + legal_punctuation
+illegal_chars_re = r'[^' + legal_chars + r']'
 replace_illegal_chars = re.compile(illegal_chars_re).sub
 
 
@@ -193,19 +193,6 @@ def portable_filename(filename):
 
     Also inspired by Werkzeug:
     https://raw.githubusercontent.com/pallets/werkzeug/8c2d63ce247ba1345e1b9332a68ceff93b2c07ab/werkzeug/utils.py
-
-    For example:
-    >>> expected = 'A___file__with_Spaces.mov'
-    >>> assert expected == portable_filename("A:\\ file/ with Spaces.mov")
-
-    Unresolved relative paths will be trated as a single filename. Use
-    resolve instead if you want to resolve paths:
-    >>> expected = '___.._.._etc_passwd'
-    >>> assert expected == portable_filename("../../../etc/passwd")
-
-    Unicode name are transliterated:
-    >>> expected = 'This_contain_UMLAUT_umlauts.txt'
-    >>> assert expected == portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
     """
     filename = toascii(filename, translit=True)
 
