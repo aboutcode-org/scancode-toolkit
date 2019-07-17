@@ -211,7 +211,7 @@ class TestCommand(FileBasedTesting):
 
         unicode_path = u'c:\\bin\\foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {'PATH': 'c:\\bin\\foo?bar;c:\\windows;C:Program Files'} == MockOs.environ
 
     @skipIf(not (on_windows and py3), 'Windows only on Py3')
     def test_update_path_environment_windows_from_unicode(self):
@@ -222,8 +222,8 @@ class TestCommand(FileBasedTesting):
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {'PATH': 'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {'PATH': 'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
