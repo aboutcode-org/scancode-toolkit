@@ -51,7 +51,7 @@ from commoncode.testcase import make_non_writable
 
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 @skipIf(py3, 'Somehow permissions tests do not work OK yet on Python 3')
@@ -847,6 +847,46 @@ class TestFileExtension(FileBasedTesting):
         assert expected_name == result
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
         assert expected_name == result
+
+    def test_splitext_base(self):
+        expected = 'path', '.ext'
+        assert expected == fileutils.splitext('C:\\dir\\path.ext')
+
+    def test_splitext_directories_even_with_dotted_names_have_no_extension(self):
+        import ntpath
+        expected = 'path.ext', ''
+        assert expected == fileutils.splitext('C:\\dir\\path.ext' + ntpath.sep)
+
+        expected = 'path.ext', ''
+        assert expected == fileutils.splitext('/dir/path.ext/')
+
+        expected = 'file', '.txt'
+        assert expected == fileutils.splitext('/some/file.txt')
+
+    def test_splitext_composite_extensions_for_tarballs_are_properly_handled(self):
+        expected = 'archive', '.tar.gz'
+        assert expected == fileutils.splitext('archive.tar.gz')
+
+    def test_splitext_name_base(self):
+        expected = 'path', '.ext'
+        assert expected ==fileutils.splitext_name('path.ext')
+
+    def test_splitext_name_directories_have_no_extension(self):
+        expected = 'path.ext', ''
+        assert expected ==fileutils.splitext_name('path.ext', is_file=False)
+
+        expected = 'file', '.txt'
+        assert expected ==fileutils.splitext_name('file.txt')
+
+    def test_splitext_name_composite_extensions_for_tarballs_are_properly_handled(self):
+        expected = 'archive', '.tar.gz'
+        assert expected ==fileutils.splitext_name('archive.tar.gz')
+
+    def test_splitext_name_dotfile_are_properly_handled(self):
+        expected = '.dotfile', ''
+        assert expected ==fileutils.splitext_name('.dotfile')
+        expected = '.dotfile', '.this'
+        assert expected ==fileutils.splitext_name('.dotfile.this')
 
 
 class TestParentDir(FileBasedTesting):
