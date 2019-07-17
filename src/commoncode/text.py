@@ -71,7 +71,7 @@ def foldcase(text):
 
 
 def nopunc():
-    return re.compile(r'[\W_]', re.MULTILINE|re.UNICODE)
+    return re.compile(r'[\W_]', re.MULTILINE | re.UNICODE)
 
 
 def nopunctuation(text):
@@ -160,5 +160,7 @@ def as_unicode(s):
     """
     if isinstance(s, compat.unicode):
         return s
+    if s == b'':
+        return u''
     assert isinstance(s, bytes), 's must be bytes but is: {}'.format(s)
     return UnicodeDammit(s).markup

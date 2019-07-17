@@ -52,7 +52,7 @@ class TestCommand(FileBasedTesting):
             'python', ['-c', "print b'non ascii: \\xe4 just passed it !'"]
         )
         assert b'' == stderr
-        assert b'non ascii:  just passed it !' == stdout
+        assert b'non ascii: a just passed it !' == stdout
         assert rc == 0
         # do not throw exception
         compat.unicode(stdout)
