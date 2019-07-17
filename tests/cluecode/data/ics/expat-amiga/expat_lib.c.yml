@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2001-2007 Expat maintainers.
+  - Copyright (c) 2001-2007 Expat maintainers
 holders:
-  - Expat maintainers.
+  - Expat maintainers
 holders_summary:
-  - value: Expat maintainers.
+  - value: Expat maintainers
     count: 1

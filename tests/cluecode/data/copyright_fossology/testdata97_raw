@@ -19,9 +19,9 @@ o glbl.c (exec_global), io.c (read_stream, get_stream_line), main.c
   substitute_matching_text): parentheses to quiet -Wall.
 o ed.1: various fixes by Matt Kraai <kraai@alumni.carnegiemellon.edu>
 
-Program <s>Copyright (c) 1993, 1994 Andrew Moore, Talke Studio.</s>
-        <s>Copyright (c) 2006, 2007 Antonio Diaz Diaz.</s>
-Modifications for Debian <s>Copyright (c) 1997-2007 James Troup.</s>
+Program <s>Copyright (c) 1993, 1994 Andrew Moore, Talke Studio</s>.
+        <s>Copyright (c) 2006, 2007 Antonio Diaz Diaz</s>.
+Modifications for Debian <s>Copyright (c) 1997-2007 James Troup</s>.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

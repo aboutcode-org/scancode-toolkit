@@ -1214,8 +1214,7 @@ grammar = """
     # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
     COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
 
-    # Copyright (C), 2001-2011, Omega Tech. Co., Ltd.
-    COPYRIGHT: {<COPY>+ <ANDCO>}  #2841
+
 
 # Authors
     # Created by XYZ
@@ -1404,6 +1403,7 @@ def refine_copyright(c):
         s = s[:-1]
 
     s = u' '.join(s)
+    s = strip_trailing_period(s)
     return s
 
 
@@ -1506,6 +1506,8 @@ def refine_holder(s, prefixes=HOLDERS_PREFIXES, junk_holders=JUNK_HOLDERS,
     refined = _refine_names(s, prefixes)
     refined = strip_suffixes(refined, suffixes)
     refined = refined.strip()
+    refined = strip_trailing_period(refined)
+
     if refined and refined.lower() not in junk_holders:
         return refined
 
@@ -1533,6 +1535,7 @@ def refine_author(s, prefixes=AUTHORS_PREFIXES, junk_authors=JUNK_AUTHORS):
     # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
     refined = _refine_names(s, prefixes)
     refined = refined.strip()
+    refined = strip_trailing_period(refined)
     if refined and refined.lower() not in junk_authors:
         return refined
 
@@ -1562,6 +1565,32 @@ def strip_suffixes(s, suffixes=()):
         s = s[:-1]
     s = u' '.join(s)
     return s
+
+
+def strip_trailing_period(s):
+    """
+    Return the `s` string with trailing periods removed when needed.
+    """
+    if not s:
+        return s
+    if not s.endswith('.'):
+        return s
+
+    if len(s) < 3 :
+        return s
+
+    if s[-2].isupper():
+        # U.S.A. , e.V., M.I.T. and similar
+        return s
+
+    if s[-3] == '.':
+        # S.A. , e.v., b.v. and other
+        return s
+
+    if s.lower().endswith(('inc.', 'corp.', 'ltd.', 'llc.', 'co.', 'llp.')):
+        return s
+
+    return s.rstrip('.')
 
 
 def refine_date(c):

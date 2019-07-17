@@ -4,12 +4,12 @@ what:
   - holders_summary
 copyrights:
   - Copyright 2007, Google Inc.
-  - Copyright (c) 1998 the Initial Developer.
+  - Copyright (c) 1998 the Initial Developer
 holders:
   - Google Inc.
-  - the Initial Developer.
+  - the Initial Developer
 holders_summary:
   - value: Google Inc.
     count: 1
-  - value: the Initial Developer.
+  - value: the Initial Developer
     count: 1

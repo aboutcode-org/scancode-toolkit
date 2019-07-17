@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) Zope Corporation (tm) and Contributors.
+  - Copyright (c) Zope Corporation (tm) and Contributors
 holders:
-  - Zope Corporation (tm) and Contributors.
+  - Zope Corporation (tm) and Contributors
 holders_summary:
-  - value: Zope Corporation (tm) and Contributors.
+  - value: Zope Corporation (tm) and Contributors
     count: 1

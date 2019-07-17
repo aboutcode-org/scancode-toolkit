@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2004 ARM Limited.
+  - Copyright (c) 2004 ARM Limited
 holders:
-  - ARM Limited.
+  - ARM Limited
 holders_summary:
-  - value: ARM Limited.
+  - value: ARM Limited
     count: 1

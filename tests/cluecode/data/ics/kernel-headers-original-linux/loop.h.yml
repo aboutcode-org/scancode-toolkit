@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 1993 by Theodore Ts'o.
+  - Copyright 1993 by Theodore Ts'o
 holders:
-  - Theodore Ts'o.
+  - Theodore Ts'o
 holders_summary:
-  - value: Theodore Ts'o.
+  - value: Theodore Ts'o
     count: 1

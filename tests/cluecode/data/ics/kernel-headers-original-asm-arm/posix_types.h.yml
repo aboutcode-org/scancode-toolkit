@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1996-1998 Russell King.
+  - Copyright (c) 1996-1998 Russell King
 holders:
-  - Russell King.
+  - Russell King
 holders_summary:
-  - value: Russell King.
+  - value: Russell King
     count: 1

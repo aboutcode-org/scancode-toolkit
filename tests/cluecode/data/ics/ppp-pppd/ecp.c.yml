@@ -4,12 +4,12 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 2002 The Android Open Source Project
-  - Copyright (c) 1994-2002 Paul Mackerras.
+  - Copyright (c) 1994-2002 Paul Mackerras
 holders:
   - The Android Open Source Project
-  - Paul Mackerras.
+  - Paul Mackerras
 holders_summary:
-  - value: Paul Mackerras.
+  - value: Paul Mackerras
     count: 1
   - value: The Android Open Source Project, Inc.
     count: 1

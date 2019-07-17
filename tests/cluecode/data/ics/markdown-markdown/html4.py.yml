@@ -3,11 +3,11 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1999-2007 by Fredrik Lundh.
+  - Copyright (c) 1999-2007 by Fredrik Lundh
   - Copyright (c) 1999-2007 by Fredrik Lundh
 holders:
-  - Fredrik Lundh.
+  - Fredrik Lundh
   - Fredrik Lundh
 holders_summary:
-  - value: Fredrik Lundh.
+  - value: Fredrik Lundh
     count: 2

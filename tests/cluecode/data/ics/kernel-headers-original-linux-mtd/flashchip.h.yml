@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - (c) 2000 Red Hat.
+  - (c) 2000 Red Hat
 holders:
-  - Red Hat.
+  - Red Hat
 holders_summary:
   - value: Red Hat, Inc.
     count: 1

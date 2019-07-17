@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1998-2000 Tim Janik.
+  - Copyright (c) 1998-2000 Tim Janik
 holders:
-  - Tim Janik.
+  - Tim Janik
 holders_summary:
-  - value: Tim Janik.
+  - value: Tim Janik
     count: 1

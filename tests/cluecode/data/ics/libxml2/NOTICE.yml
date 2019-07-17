@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1998-2003 Daniel Veillard.
+  - Copyright (c) 1998-2003 Daniel Veillard
 holders:
-  - Daniel Veillard.
+  - Daniel Veillard
 holders_summary:
-  - value: Daniel Veillard.
+  - value: Daniel Veillard
     count: 1

@@ -42,7 +42,7 @@ lib/fts.c
 
 /*-
  * <s>Copyright (c) 1990, 1993, 1994
- *      The Regents of the University of California.  All rights reserved.</s>
+ *      The Regents of the University of California</s>.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -90,7 +90,7 @@ lib/fts_.h
 
 /*
  * <s>Copyright (c) 1989, 1993
- *      The Regents of the University of California.  All rights reserved.</s>
+ *      The Regents of the University of California</s>.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -121,7 +121,7 @@ lib/rand-isaac.[ch]
 -------------------
 
    <s>Copyright (c) 1999-2006 Free Software Foundation, Inc.</s><s>
-   Copyright (c) 1997, 1998, 1999 Colin Plumb.</s>
+   Copyright (c) 1997, 1998, 1999 Colin Plumb</s>.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -157,7 +157,7 @@ lib/inet_ntop.c
    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
 
 /*
- * <s>Copyright (c) 1996-1999 by Internet Software Consortium.</s>
+ * <s>Copyright (c) 1996-1999 by Internet Software Consortium</s>.
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -248,7 +248,7 @@ src/shred.c
 -----------
 
    <s>Copyright (c) 1999-2007 Free Software Foundation, Inc.</s><s>
-   Copyright (c) 1997, 1998, 1999 Colin Plumb.</s>
+   Copyright (c) 1997, 1998, 1999 Colin Plumb</s>.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

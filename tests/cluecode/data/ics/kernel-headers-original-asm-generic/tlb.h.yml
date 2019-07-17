@@ -4,12 +4,12 @@ what:
   - holders_summary
 copyrights:
   - Copyright 2001 Red Hat, Inc.
-  - Copyright Linus Torvalds and others.
+  - Copyright Linus Torvalds and others
 holders:
   - Red Hat, Inc.
-  - Linus Torvalds and others.
+  - Linus Torvalds and others
 holders_summary:
-  - value: Linus Torvalds and others.
+  - value: Linus Torvalds and others
     count: 1
   - value: Red Hat, Inc.
     count: 1

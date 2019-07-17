@@ -2,11 +2,11 @@ This is the Debian package of Texinfo, the GNU documentation system.
 
 This package was previously <s>maintained by Ian Jackson, Erick
 Branderhorst, Galen Hazelwood, and Josip Rodin</s>. Today, it is 
-<s>maintained by the Debian TeX Task Force <debian-tex-maint@lists.debian.org>.</s>
+<s>maintained by the Debian TeX Task Force <debian-tex-maint@lists.debian.org></s>.
 
 The original source can be found at: http://ftp.gnu.org/gnu/texinfo/
 
-Upstream <s>maintainer: Karl Berry <karl@cs.umb.edu>.</s>
+Upstream <s>maintainer: Karl Berry <karl@cs.umb.edu></s>.
 
   All programs <s>Copyright (c) 1987, 1992, 1993, 1994, 1995, 1996, 1997, 
   1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007

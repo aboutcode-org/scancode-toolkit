@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2002-2008 by John Cowan.
+  - Copyright 2002-2008 by John Cowan
 holders:
-  - John Cowan.
+  - John Cowan
 holders_summary:
-  - value: John Cowan.
+  - value: John Cowan
     count: 1

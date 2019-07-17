@@ -4,7 +4,7 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 2003 Andrew Bartlet <abartlet@samba.org>
-  - Copyright 1999 Paul Mackerras, Alan Curry.
+  - Copyright 1999 Paul Mackerras, Alan Curry
   - Copyright (c) 2002 Roaring Penguin Software Inc.
   - Copyright (c) 1996, Matjaz Godec <gody@elgo.si>
   - Copyright (c) 1996, Lars Fenneberg <in5y050@public.uni-hamburg.de>
@@ -17,7 +17,7 @@ copyrights:
   - Copyright (c) Martin Pool 2003
 holders:
   - Andrew Bartlet
-  - Paul Mackerras, Alan Curry.
+  - Paul Mackerras, Alan Curry
   - Roaring Penguin Software Inc.
   - Matjaz Godec
   - Lars Fenneberg
@@ -43,7 +43,7 @@ holders_summary:
     count: 1
   - value: Miguel A.L. Paraz
     count: 1
-  - value: Paul Mackerras, Alan Curry.
+  - value: Paul Mackerras, Alan Curry
     count: 1
   - value: Sean E. Millichamp
     count: 1

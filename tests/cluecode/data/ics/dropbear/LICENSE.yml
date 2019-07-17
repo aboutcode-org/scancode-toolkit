@@ -8,7 +8,7 @@ copyrights:
   - Portions copyright (c) 2004 Mihnea Stoenescu
   - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
   - (c) Todd C. Miller
-  - copyright 1997-2003 Simon Tatham.
+  - copyright 1997-2003 Simon Tatham
   - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
     Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
 holders:
@@ -17,7 +17,7 @@ holders:
   - Mihnea Stoenescu
   - Tatu Ylonen , Espoo, Finland
   - Todd C. Miller
-  - Simon Tatham.
+  - Simon Tatham
   - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
     Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
 holders_summary:
@@ -28,7 +28,7 @@ holders_summary:
   - value: Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,
       Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
     count: 1
-  - value: Simon Tatham.
+  - value: Simon Tatham
     count: 1
   - value: Tatu Ylonen , Espoo, Finland
     count: 1

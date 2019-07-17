@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2003 IBM Corporation.
+  - Copyright (c) 2003 IBM Corporation
 holders:
-  - IBM Corporation.
+  - IBM Corporation
 holders_summary:
-  - value: IBM Corporation.
+  - value: IBM Corporation
     count: 1

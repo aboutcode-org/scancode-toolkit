@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2007, 2008 CodeSourcery.
+  - Copyright (c) 2007, 2008 CodeSourcery
 holders:
-  - CodeSourcery.
+  - CodeSourcery
 holders_summary:
-  - value: CodeSourcery.
+  - value: CodeSourcery
     count: 1

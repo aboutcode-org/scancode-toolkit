@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1994-2002 Paul Mackerras.
+  - Copyright (c) 1994-2002 Paul Mackerras
 holders:
-  - Paul Mackerras.
+  - Paul Mackerras
 holders_summary:
-  - value: Paul Mackerras.
+  - value: Paul Mackerras
     count: 1

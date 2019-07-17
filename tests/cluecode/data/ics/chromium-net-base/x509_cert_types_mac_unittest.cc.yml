@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2010 The Chromium Authors.
+  - Copyright (c) 2010 The Chromium Authors
   - (c) Kasim 2005
   - (c) 1999 Entrust.net Limited
   - (c) Kasim 2005
   - (c) 1999 Entrust.net Limited
 holders:
-  - The Chromium Authors.
+  - The Chromium Authors
   - Kasim
   - Entrust.net Limited
   - Kasim
@@ -19,5 +19,5 @@ holders_summary:
     count: 2
   - value: Kasim
     count: 2
-  - value: The Chromium Authors.
+  - value: The Chromium Authors
     count: 1

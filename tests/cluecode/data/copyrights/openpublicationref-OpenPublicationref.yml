@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2000 by ThisOldHouse.
+  - Copyright (c) 2000 by ThisOldHouse
 holders:
-  - ThisOldHouse.
+  - ThisOldHouse
 holders_summary:
-  - value: ThisOldHouse.
+  - value: ThisOldHouse
     count: 1

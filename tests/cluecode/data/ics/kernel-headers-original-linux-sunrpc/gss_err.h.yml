@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2002 The Regents of the University of Michigan.
+  - Copyright (c) 2002 The Regents of the University of Michigan
   - Copyright 1993 by OpenVision Technologies, Inc.
 holders:
-  - The Regents of the University of Michigan.
+  - The Regents of the University of Michigan
   - OpenVision Technologies, Inc.
 holders_summary:
   - value: OpenVision Technologies, Inc.
     count: 1
-  - value: The Regents of the University of Michigan.
+  - value: The Regents of the University of Michigan
     count: 1

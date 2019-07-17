@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2008 IBM Corporation.
+  - Copyright 2008 IBM Corporation
 holders:
-  - IBM Corporation.
+  - IBM Corporation
 holders_summary:
-  - value: IBM Corporation.
+  - value: IBM Corporation
     count: 1

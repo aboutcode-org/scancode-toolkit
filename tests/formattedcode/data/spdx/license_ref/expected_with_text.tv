@@ -19,7 +19,7 @@ PackageLicenseInfoFromFiles: CC0-1.0
 PackageLicenseInfoFromFiles: LicenseRef-scancode-other-copyleft
 PackageLicenseInfoFromFiles: LicenseRef-scancode-other-permissive
 PackageLicenseInfoFromFiles: LicenseRef-scancode-scancode-acknowledgment
-PackageCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
+PackageCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others
 </text>
 # File
 FileName: ./scan/NOTICE
@@ -30,7 +30,7 @@ LicenseInfoInFile: CC0-1.0
 LicenseInfoInFile: LicenseRef-scancode-other-copyleft
 LicenseInfoInFile: LicenseRef-scancode-other-permissive
 LicenseInfoInFile: LicenseRef-scancode-scancode-acknowledgment
-FileCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
+FileCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others
 </text>
 # Extracted Licenses
 LicenseID: LicenseRef-scancode-other-copyleft

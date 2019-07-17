@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 1995, Russell King.
+  - Copyright 1995, Russell King
   - Copyright 2001, Nicolas Pitre
 holders:
-  - Russell King.
+  - Russell King
   - Nicolas Pitre
 holders_summary:
   - value: Nicolas Pitre
     count: 1
-  - value: Russell King.
+  - value: Russell King
     count: 1

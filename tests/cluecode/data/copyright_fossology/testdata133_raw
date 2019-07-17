@@ -153,7 +153,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 The Base64Decode() and Base64Encode() methods in magick/utility.c is based on source code obtained from OpenSSH.  The source code is distributed under the following license:
 
-<s>Copyright (c) 2000 Markus Friedl.</s>  All rights reserved.
+<s>Copyright (c) 2000 Markus Friedl</s>.  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 

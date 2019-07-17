@@ -19,7 +19,7 @@
   "summary": {
     "copyrights": [
       {
-        "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+        "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
         "count": 1
       },
       {
@@ -29,7 +29,7 @@
     ],
     "holders": [
       {
-        "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+        "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
         "count": 1
       },
       {
@@ -58,7 +58,7 @@
       "type": "file",
       "holders": [
         {
-          "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+          "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
           "end_line": 46
         },
@@ -70,7 +70,7 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+          "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
           "start_line": 44,
           "end_line": 46
         },

@@ -1,6 +1,6 @@
 This is the Debian prepackaged version of the GNU gettext utilities.
-GNU gettext was <s>written by Ulrich Drepper <drepper@gnu.org>.</s>
-emacs po-mode was <s>written by François Pinard <pinard@iro.umontreal.ca>.</s>
+GNU gettext was <s>written by Ulrich Drepper <drepper@gnu.org></s>.
+emacs po-mode was <s>written by François Pinard <pinard@iro.umontreal.ca></s>.
 
 This package was first created by Erick Branderhorst <branderh@debian.org>,
 and is currently maintained by Santiago Vila <sanvila@debian.org>.

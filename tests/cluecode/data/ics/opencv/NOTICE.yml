@@ -5,10 +5,10 @@ what:
 copyrights:
   - Copyright (c) 2000-2006, Intel Corporation
   - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
-  - Copyright (c) 1992, 1993 The Regents of the University of California.
+  - Copyright (c) 1992, 1993 The Regents of the University of California
   - Copyright (c) 2008, Liu Liu
   - Copyright (c) 2008, Google
-  - Copyright (c) 1992, 1993 The Regents of the University of California.
+  - Copyright (c) 1992, 1993 The Regents of the University of California
   - Copyright (c) 2002, MD-Mathematische Dienste GmbH Im Defdahl
   - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin
   - Copyright (c) 2000, Intel Corporation
@@ -27,14 +27,14 @@ copyrights:
   - Copyright (c) 1981-1999 Ken Turkowski. <turk@computer.org>
   - Copyright (c) 1998 Yossi Rubner Computer Science Department, Stanford University
   - Copyright (c) 2006 Simon Perreault
-  - Copyright (c) 1995 Intel Corporation.
+  - Copyright (c) 1995 Intel Corporation
 holders:
   - Intel Corporation
   - SIProp Project
-  - The Regents of the University of California.
+  - The Regents of the University of California
   - Liu Liu
   - Google
-  - The Regents of the University of California.
+  - The Regents of the University of California
   - MD-Mathematische Dienste GmbH Im Defdahl
   - Chih-Chung Chang and Chih-Jen Lin
   - Intel Corporation
@@ -49,17 +49,17 @@ holders:
   - Intel Corporation
   - Intel Corporation
   - Intel Corporation
-  - Ken Turkowski.
-  - Ken Turkowski.
+  - Ken Turkowski
+  - Ken Turkowski
   - Yossi Rubner Computer Science Department, Stanford University
   - Simon Perreault
-  - Intel Corporation.
+  - Intel Corporation
 holders_summary:
   - value: Intel Corporation
     count: 12
-  - value: Ken Turkowski.
+  - value: Ken Turkowski
     count: 2
-  - value: The Regents of the University of California.
+  - value: The Regents of the University of California
     count: 2
   - value: Chih-Chung Chang and Chih-Jen Lin
     count: 1

@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2002 Guy Harris.
+  - Copyright (c) 2002 Guy Harris
 holders:
-  - Guy Harris.
+  - Guy Harris
 holders_summary:
-  - value: Guy Harris.
+  - value: Guy Harris
     count: 1

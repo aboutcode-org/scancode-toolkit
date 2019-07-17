@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2000 Markus Friedl.
+  - Copyright (c) 2000 Markus Friedl
   - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
 holders:
-  - Markus Friedl.
+  - Markus Friedl
   - Tatu Ylonen , Espoo, Finland
 holders_summary:
-  - value: Markus Friedl.
+  - value: Markus Friedl
     count: 1
   - value: Tatu Ylonen , Espoo, Finland
     count: 1

@@ -5,11 +5,11 @@ what:
 copyrights:
   - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
   - Copyright (c) 2002-2009 ooo-build/Go-OO Team
-  - (c) Sun Microsystems.
+  - (c) Sun Microsystems
   - Copyright 2002-2009 Sun Microsystems, Inc.
   - Copyright 2002-2009 Sun Microsystems, Inc.
   - Copyright (c) 2002-2005 Maxim Shemanarev
-  - Copyright 2001-2004 The Apache Software Foundation.
+  - Copyright 2001-2004 The Apache Software Foundation
   - Copyright 2003-2007 The Apache Software Foundation
   - Copyright 2001-2007 The Apache Software Foundation
   - Copyright 1999-2007 The Apache Software Foundation
@@ -70,7 +70,7 @@ copyrights:
   - Copyright 1997-1999 World Wide Web Consortium
   - Copyright (c) 2002-2003 Aleksey Sanin
   - Copyright (c) 2003 America Online, Inc.
-  - Copyright (c) 2001-2002 Daniel Veillard.
+  - Copyright (c) 2001-2002 Daniel Veillard
   - Copyright (c) 1998-2001 by the University of Florida
   - Copyright (c) 1991, 2007 Free Software Foundation, Inc
   - Copyright 2004 The Apache Software Foundation
@@ -88,7 +88,7 @@ copyrights:
   - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
   - Copyright (c) 1998 Netscape Communications Corporation
   - Copyright (c) 1998-2007 The OpenSSL Project
-  - Copyright (c) 1998-2007 The OpenSSL Project.
+  - Copyright (c) 1998-2007 The OpenSSL Project
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
   - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
   - Copyright (c) 2000 BeOpen.com
@@ -104,7 +104,7 @@ copyrights:
   - Copyright ? 1999 CERN - European Organization for Nuclear Research
   - Copyright (c) 2002-2003 Aleksey Sanin
   - Copyright (c) 2003 America Online, Inc.
-  - Copyright (c) 2001-2002 Daniel Veillard.
+  - Copyright (c) 2001-2002 Daniel Veillard
   - Copyright (c) 1998-2001 by the University of Florida
   - Copyright (c) 1991, 2007 Free Software Foundation, Inc
   - Copyright 2004 The Apache Software Foundation
@@ -122,7 +122,7 @@ copyrights:
   - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
   - Copyright (c) 1998 Netscape Communications Corporation
   - Copyright (c) 1998-2007 The OpenSSL Project
-  - Copyright (c) 1998-2007 The OpenSSL Project.
+  - Copyright (c) 1998-2007 The OpenSSL Project
   - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
   - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
   - Copyright (c) 2000 BeOpen.com
@@ -156,11 +156,11 @@ copyrights:
 holders:
   - Software in the Public Interest, Inc.
   - ooo-build/Go-OO Team
-  - Sun Microsystems.
+  - Sun Microsystems
   - Sun Microsystems, Inc.
   - Sun Microsystems, Inc.
   - Maxim Shemanarev
-  - The Apache Software Foundation.
+  - The Apache Software Foundation
   - The Apache Software Foundation
   - The Apache Software Foundation
   - The Apache Software Foundation
@@ -220,7 +220,7 @@ holders:
   - World Wide Web Consortium
   - Aleksey Sanin
   - America Online, Inc.
-  - Daniel Veillard.
+  - Daniel Veillard
   - the University of Florida
   - Free Software Foundation, Inc
   - The Apache Software Foundation
@@ -238,7 +238,7 @@ holders:
   - Vladimir Berezniker
   - Netscape Communications Corporation
   - The OpenSSL Project
-  - The OpenSSL Project.
+  - The OpenSSL Project
   - Eric Young
   - Python Software Foundation
   - BeOpen.com
@@ -254,7 +254,7 @@ holders:
   - CERN - European Organization for Nuclear Research
   - Aleksey Sanin
   - America Online, Inc.
-  - Daniel Veillard.
+  - Daniel Veillard
   - the University of Florida
   - Free Software Foundation, Inc
   - The Apache Software Foundation
@@ -272,7 +272,7 @@ holders:
   - Vladimir Berezniker
   - Netscape Communications Corporation
   - The OpenSSL Project
-  - The OpenSSL Project.
+  - The OpenSSL Project
   - Eric Young
   - Python Software Foundation
   - BeOpen.com
@@ -304,7 +304,7 @@ holders:
   - Glyph & Cog, LLC.
   - Jean-loup Gailly and Mark Adler
 holders_summary:
-  - value: The Apache Software Foundation.
+  - value: The Apache Software Foundation
     count: 11
   - value: Free Software Foundation, Inc.
     count: 8
@@ -334,7 +334,7 @@ holders_summary:
     count: 2
   - value: Corporation for National Research Initiatives
     count: 2
-  - value: Daniel Veillard.
+  - value: Daniel Veillard
     count: 2
   - value: David Beckett
     count: 2

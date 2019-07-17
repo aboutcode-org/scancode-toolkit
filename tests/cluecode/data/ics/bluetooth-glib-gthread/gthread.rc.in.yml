@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald.
-  - Copyright (c) 1998 Sebastian Wilhelmi.
+  - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
+  - Copyright (c) 1998 Sebastian Wilhelmi
 holders:
-  - Peter Mattis, Spencer Kimball and Josh MacDonald.
-  - Sebastian Wilhelmi.
+  - Peter Mattis, Spencer Kimball and Josh MacDonald
+  - Sebastian Wilhelmi
 holders_summary:
-  - value: Peter Mattis, Spencer Kimball and Josh MacDonald.
+  - value: Peter Mattis, Spencer Kimball and Josh MacDonald
     count: 1
-  - value: Sebastian Wilhelmi.
+  - value: Sebastian Wilhelmi
     count: 1

@@ -4,12 +4,12 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 2003 Red Hat Inc.
-  - Copyright (c) 1999, 2000 Aladdin Enterprises.
+  - Copyright (c) 1999, 2000 Aladdin Enterprises
 holders:
   - Red Hat Inc.
-  - Aladdin Enterprises.
+  - Aladdin Enterprises
 holders_summary:
-  - value: Aladdin Enterprises.
+  - value: Aladdin Enterprises
     count: 1
   - value: Red Hat, Inc.
     count: 1

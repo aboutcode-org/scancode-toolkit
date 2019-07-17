@@ -1,4 +1,4 @@
-gcc-defaults is <s>Copyright (c) 2000, 2001, 2006 Debian.</s>
+gcc-defaults is <s>Copyright (c) 2000, 2001, 2006 Debian</s>.
 
 These scripts are free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -17,7 +17,7 @@ Public License can be found in `/usr/share/common-licenses/GPL'.
 The c89 and c99 man pages are taken from netbsd:
 
 <s>Copyright (c) 1999 The NetBSD Foundation, Inc.
-All rights reserved.</s>
+All rights reserved</s>.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
