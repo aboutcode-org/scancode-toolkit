@@ -40,8 +40,6 @@ import subprocess
 from commoncode.fileutils import EMPTY_STRING
 from commoncode.fileutils import PATH_ENV_VAR
 from commoncode.fileutils import PATH_ENV_SEP
-
-from commoncode import compat
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import get_temp_dir
@@ -103,11 +101,15 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     # temp files for stderr and stdout
     tmp_dir = get_temp_dir(prefix='cmd-')
-    sop = join(tmp_dir, 'stdout')
-    sep = join(tmp_dir, 'stderr')
+
+    stdout = b'stdout' if on_linux and py2 else 'stdout'
+    sop = join(tmp_dir, stdout)
+
+    stderr = b'stderr' if on_linux and py2 else 'stderr'
+    sep = join(tmp_dir, stderr)
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
-    # though we can execute command that just happen to be in the path
+    # though we can execute commands that just happen to be in the path
     shell = True if on_windows else False
 
     if TRACE:
@@ -118,8 +120,9 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     proc = None
     rc = 100
+    write_mode = 'wb' if py2 else 'w'
     try:
-        with open(sop, 'wb') as stdout, open(sep, 'wb') as stderr:
+        with open(sop, write_mode) as stdout, open(sep, write_mode) as stderr:
             popen_args = dict(
                 cwd=cwd,
                 env=env,
@@ -223,10 +226,12 @@ def load_shared_library(dll_path, lib_dir):
 
     raise ImportError('Failed to load shared library with ctypes: %(dll_path)r and lib_dir:  %(lib_dir)r' % locals())
 
+
 if py2:
     PATH_ENV_VAR = b'PATH'
 else:
     PATH_ENV_VAR = 'PATH'
+
 
 def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_ENV_VAR, _path_env_sep=PATH_ENV_SEP):
     """
@@ -245,7 +250,7 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
         return
 
     path_env = _os_module.environ.get(_path_env_var)
-    
+
     if not path_env:
         # this is quite unlikely to ever happen, but here for safety
         path_env = EMPTY_STRING
@@ -264,7 +269,7 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
         path_segments = path_env.split(_path_env_sep)
     except:
         raise Exception(repr((path_env, _path_env_sep)))
-    
+
     # add lib path to the front of the PATH env var
     # this will use bytes on Linux and unicode elsewhere
     if new_path not in path_segments:
@@ -272,7 +277,7 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
             new_path_env = new_path
         else:
             new_path_env = _path_env_sep.join([new_path, path_env])
-        
+
         if py2:
             if not on_linux:
                 new_path_env = fsencode(new_path_env)
