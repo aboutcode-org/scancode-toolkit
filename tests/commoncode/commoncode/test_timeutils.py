@@ -61,7 +61,7 @@ class TestTimeStamp(FileBasedTesting):
     def test_tstamp2time_format(self):
         import re
         ts = time2tstamp()
-        pat = '^20\d\d-[0-1][0-9]-[0-3]\dT[0-2]\d[0-6]\d[0-6]\d.\d\d\d\d\d\d$'
+        pat = r'^20\d\d-[0-1][0-9]-[0-3]\dT[0-2]\d[0-6]\d[0-6]\d.\d\d\d\d\d\d$'
         assert re.match(pat, ts)
 
     def test_tstamp2time(self):
