@@ -251,6 +251,8 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
             resource.extra_data['origin_count'] = origin_count
             resource.save(codebase)
 
+            # TODO: When there is a tie, we need to be explicit and consistent about the tiebreaker
+            # TODO: Consider creating two filesets instead of tiebreaking
             origin, top_count = origin_count.most_common(1)[0]
             if is_majority(top_count, resource.files_count, origin_summary_threshold):
                 majority_holders, majority_license_expression = origin

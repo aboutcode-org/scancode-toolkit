@@ -127,9 +127,9 @@ def get_package_class(scan_data, default=models.Package):
 
 
 def get_package_instance(scan_data):
-    scan_data.pop('api_data_url')
-    scan_data.pop('repository_download_url')
-    scan_data.pop('purl')
-    scan_data.pop('repository_homepage_url')
+    scan_data.pop('api_data_url', None)
+    scan_data.pop('repository_download_url', None)
+    scan_data.pop('purl', None)
+    scan_data.pop('repository_homepage_url', None)
     klas = get_package_class(scan_data)
     return klas(**scan_data)
