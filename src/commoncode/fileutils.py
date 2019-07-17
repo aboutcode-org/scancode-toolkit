@@ -284,27 +284,6 @@ def splitext_name(file_name, is_file=True):
     Return a tuple of Unicode strings (basename, extension) for a file name. The
     basename is the file name minus its extension. Return an empty extension
     string for a directory. Not the same as os.path.splitext_name.
-
-    For example:
-    >>> expected = 'path', '.ext'
-    >>> assert expected == splitext_name('path.ext')
-
-    Directories even with dotted names have no extension:
-    >>> expected = 'path.ext', ''
-    >>> assert expected == splitext_name('path.ext', is_file=False)
-
-    >>> expected = 'file', '.txt'
-    >>> assert expected == splitext_name('file.txt')
-
-    Composite extensions for tarballs are properly handled:
-    >>> expected = 'archive', '.tar.gz'
-    >>> assert expected == splitext_name('archive.tar.gz')
-
-    dotfile are properly handled:
-    >>> expected = '.dotfile', ''
-    >>> assert expected == splitext_name('.dotfile')
-    >>> expected = '.dotfile', '.this'
-    >>> assert expected == splitext_name('.dotfile.this')
     """
 
     if not file_name:
@@ -333,25 +312,6 @@ def splitext(path, force_posix=False):
     the file name minus its extension. Return an empty extension string for a
     directory. A directory is identified by ending with a path separator. Not
     the same as os.path.splitext.
-
-    For example:
-    >>> expected = 'path', '.ext'
-    >>> assert expected == splitext('C:\\dir\path.ext')
-
-    Directories even with dotted names have no extension:
-    >>> import ntpath
-    >>> expected = 'path.ext', ''
-    >>> assert expected == splitext('C:\\dir\\path.ext' + ntpath.sep)
-
-    >>> expected = 'path.ext', ''
-    >>> assert expected == splitext('/dir/path.ext/')
-
-    >>> expected = 'file', '.txt'
-    >>> assert expected == splitext('/some/file.txt')
-
-    Composite extensions for tarballs are properly handled:
-    >>> expected = 'archive', '.tar.gz'
-    >>> assert expected == splitext('archive.tar.gz')
     """
     base_name = EMPTY_STRING
     extension = EMPTY_STRING
