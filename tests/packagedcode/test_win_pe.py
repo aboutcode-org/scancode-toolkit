@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -38,14 +37,14 @@ from packagedcode import win_pe
 class TestWinPe(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_win_pe(self, test_file, expected_file, regen=False):
+    def check_win_pe(self, test_file, expected_file, regen=True):
         result = win_pe.pe_info(test_file, include_extra_data=True)
         if regen:
             with open(expected_file, 'wb') as out:
                 json.dump(result, out, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as expect:
-            expected = json.load(expect, object_pairs_hook=OrderedDict)
+            expected = json.load(expect)
         assert expected == dict(result)
 
     def test_win_pe_ctypes_test_pyd(self):
