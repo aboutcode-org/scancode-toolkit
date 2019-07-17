@@ -41,7 +41,8 @@ from typecode import contenttype
 
 
 # TODO: implement a plugin for this
-SCANCODE_BINUTILS_NM_EXE = 'scancode.binutils.nm.exe'
+SCANCODE_BINUTILS_NM_EXE = 'scancode.nm.exe'
+
 
 logger = logging.getLogger(__name__)
 

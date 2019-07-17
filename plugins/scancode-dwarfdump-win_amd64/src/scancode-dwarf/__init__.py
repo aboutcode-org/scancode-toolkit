@@ -42,6 +42,8 @@ class DwarfDumpPaths(LocationProviderPlugin):
         curr_dir = dirname(abspath(__file__))
         locations = {
             'scancode.dwarfdump.lib': join(curr_dir, 'bin'),
-            'scancode.dwarfdump.exe': join(curr_dir, 'bin', 'dwarfdump2'),
+            'scancode.dwarfdump.exe': join(curr_dir, 'bin', 'dwarfdump2.exe'),
+            'scancode.nm.exe': join(curr_dir, 'bin', 'nm-new.exe'),
+
         }
         return locations
