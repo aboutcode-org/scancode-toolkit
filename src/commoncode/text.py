@@ -158,9 +158,7 @@ def as_unicode(s):
     """
     Return unicode for a string be it bytes or unicode.
     """
-    if not s:
-        return s
-
     if isinstance(s, compat.unicode):
         return s
+    assert isinstance(s, bytes), 's must be bytes but is: {}'.format(s)
     return UnicodeDammit(s).markup
