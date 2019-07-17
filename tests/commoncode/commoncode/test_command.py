@@ -175,8 +175,8 @@ class TestCommand(FileBasedTesting):
     def test_update_path_environment_mac_from_unicode(self):
 
         class MockOs(object):
-                environ = {'PATH': '/usr/bin:/usr/local'}
-                pathsep = ':'
+            environ = {'PATH': '/usr/bin:/usr/local'}
+            pathsep = ':'
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
@@ -202,48 +202,28 @@ class TestCommand(FileBasedTesting):
         else:
             assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
-    @skipIf(not on_windows, 'Windows only')
-    def test_update_path_environment_windows_from_bytes(self):
+    @skipIf(not (on_windows and py2), 'Windows only on Py2')
+    def test_update_path_environment_windows_py2(self):
 
         class MockOs(object):
-            if py2:
-                environ = {b'PATH': b'c:\\windows;C:Program Files'}
-                pathsep = b';'
-            else:
-                environ = {'PATH': 'c:\\windows;C:Program Files'}
-                pathsep = ';'
-
-        bytes_path = b'foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'}
+            environ = {'PATH': b'c:\\windows;C:Program Files'}
+            pathsep = ';'
 
         unicode_path = u'c:\\bin\\foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
 
-        bytes_path = b'foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
-
-    @skipIf(not on_windows, 'Windows only')
+    @skipIf(not (on_windows and py3), 'Windows only on Py3')
     def test_update_path_environment_windows_from_unicode(self):
 
         class MockOs(object):
-            if py2:
-                environ = {b'PATH': b'c:\\windows;C:Program Files'}
-                pathsep = b';'
-            else:
-                environ = {'PATH': 'c:\\windows;C:Program Files'}
-                pathsep = ';'
+            environ = {u'PATH': u'c:\\windows;C:Program Files'}
+            pathsep = u';'
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'}
-
-        bytes_path = b'c:\\bin\\foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'} == MockOs.environ
