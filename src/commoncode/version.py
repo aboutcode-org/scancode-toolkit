@@ -33,25 +33,25 @@ from commoncode.system import py2
 def VERSION_PATTERNS_REGEX():
     return [re.compile(x) for x in [
     # Eclipse features
-    'v\d+\.feature\_(\d+\.){1,3}\d+',
+    r'v\d+\.feature\_(\d+\.){1,3}\d+',
     # Common version patterns
-    '(M?(v\d+(\-|\_))?\d+\.){1,3}\d+[A-Za-z0-9]*((\.|\-|_|~)'
-        '(b|B|rc|r|v|RC|alpha|beta|BETA|M|m|pre|vm|G)?\d+((\-|\.)\d+)?)?'
-        '((\.|\-)(((alpha|dev|beta|rc|FINAL|final|pre)(\-|\_)\d+[A-Za-z]?'
-        '(\-RELEASE)?)|alpha|dev(\.\d+\.\d+)?'
-        '|beta|BETA|final|FINAL|release|fixed|(cr\d(\_\d*)?)))?',
+    r'(M?(v\d+(\-|\_))?\d+\.){1,3}\d+[A-Za-z0-9]*((\.|\-|_|~)'
+        r'(b|B|rc|r|v|RC|alpha|beta|BETA|M|m|pre|vm|G)?\d+((\-|\.)\d+)?)?'
+        r'((\.|\-)(((alpha|dev|beta|rc|FINAL|final|pre)(\-|\_)\d+[A-Za-z]?'
+        r'(\-RELEASE)?)|alpha|dev(\.\d+\.\d+)?'
+        r'|beta|BETA|final|FINAL|release|fixed|(cr\d(\_\d*)?)))?',
     #
-    '[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+',
+    r'[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+',
     #
-    '(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?',
+    r'(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?',
     #
-    'current|previous|latest|alpha|beta',
+    r'current|previous|latest|alpha|beta',
     #
-    '\d{4}-\d{2}-\d{2}',
+    r'\d{4}-\d{2}-\d{2}',
     #
-    '(\d(\-|\_)){1,2}\d',
+    r'(\d(\-|\_)){1,2}\d',
     #
-    '\d{5,14}',
+    r'\d{5,14}',
 ]]
 
 
