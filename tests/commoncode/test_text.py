@@ -30,9 +30,10 @@ from __future__ import unicode_literals
 from commoncode import compat
 from commoncode import text
 from commoncode.text import CR, LF
+from commoncode.system import py2
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 def test_lines():
@@ -58,10 +59,14 @@ def test_foldcase():
 
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
+    if py2:
+        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
+    else:
+        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
     assert expected == text.nopunctuation(test).split()
+
     test = 'This problem is about: sequence-bunching\n\n just \n'
-    expected = 'This problem is about  sequence bunching  just '
+    expected = 'This problem is about  sequence bunching   just  '
     assert expected == text.nopunctuation(test)
 
 
@@ -86,7 +91,7 @@ def test_toascii():
 
 def test_python_safe_name():
     s = "not `\\a /`good` -safe name ??"
-    assert 'not______good___safe_name' == text.python_safe_name(s)
+    assert 'not___a___good___safe_name' == text.python_safe_name(s)
     s1 = "string1++or+"
     s2 = "string1 +or "
     assert text.python_safe_name(s1) == text.python_safe_name(s2)

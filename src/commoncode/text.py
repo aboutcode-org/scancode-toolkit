@@ -31,11 +31,10 @@ import logging
 import re
 import unicodedata
 
-import chardet
 from text_unidecode import unidecode
+from bs4.dammit import UnicodeDammit
 
 from commoncode import compat
-from commoncode.system import py2
 
 
 """
@@ -72,7 +71,7 @@ def foldcase(text):
 
 
 def nopunc():
-    return re.compile(r'[\W_]', re.MULTILINE)
+    return re.compile(r'[\W_]', re.MULTILINE|re.UNICODE)
 
 
 def nopunctuation(text):
@@ -81,6 +80,8 @@ def nopunctuation(text):
     Preserve the characters offsets by replacing punctuation with spaces.
     Warning: this also drops line endings.
     """
+    if not isinstance(text, compat.unicode):
+        text = as_unicode(text)
     return re.sub(nopunc(), ' ', text)
 
 
@@ -95,6 +96,8 @@ def unixlinesep(text, preserve=False):
     Normalize a string to Unix line separators. Preserve character offset by
     replacing with spaces if preserve is True.
     """
+    if not isinstance(text, compat.unicode):
+        text = as_unicode(text)
     return text.replace(CRLF, CRLF_NO_CR if preserve else LF).replace(CR, LF)
 
 
@@ -102,13 +105,15 @@ def nolinesep(text):
     """
     Removes line separators, replacing them with spaces.
     """
+    if not isinstance(text, compat.unicode):
+        text = as_unicode(text)
     return text.replace(CR, ' ').replace(LF, ' ')
 
 
 def toascii(s, translit=False):
     """
-    Convert a Unicode string to ASCII characters, including replacing accented
-    characters with their non-accented equivalent.
+    Convert a Unicode or byte string to ASCII characters, including replacing
+    accented characters with their non-accented equivalent.
 
     If `translit` is False use the Unicode NFKD equivalence.
     If `translit` is True, use a transliteration with the unidecode library.
@@ -122,24 +127,24 @@ def toascii(s, translit=False):
     characters may be deleted.
     Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
     """
-    assert isinstance(s, compat.unicode), 'string is not a unicode text: "{}"'.format(s)
-    try:
-        if translit:
-            converted = unidecode(s).encode('ascii', 'ignore')
-            if not py2: 
-                converted = converted.decode('ascii')
-            converted = converted.replace('[?]', '_')
-        else:
-            converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
-    except:
-        converted = compat.unicode(s.decode('ascii', 'ignore'))
-    return converted
+    if not isinstance(s, compat.unicode):
+        s = as_unicode(s)
+    if translit:
+        converted = unidecode(s)
+    else:
+        converted = unicodedata.normalize('NFKD', s)
+
+    converted = converted.replace('[?]', '_')
+    converted = converted.encode('ascii', 'ignore')
+    return converted.decode('ascii')
 
 
 def python_safe_name(s):
     """
     Return a name derived from string `s` safe to use as a Python identifier.
     """
+    if not isinstance(s, compat.unicode):
+        s = as_unicode(s)
     s = toascii(s)
     s = foldcase(s)
     s = nopunctuation(s)
@@ -152,29 +157,10 @@ def python_safe_name(s):
 def as_unicode(s):
     """
     Return unicode for a string be it bytes or unicode.
-    Try to decode as Unicode. Try first some default encodings,
-    then attempt Unicode trans-literation and finally
-    fall-back to ASCII strings extraction.
-
-    TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
     if not s:
         return s
 
     if isinstance(s, compat.unicode):
         return s
-
-    try:
-        return s.decode('utf-8')
-    except UnicodeDecodeError:
-        try:
-            encoding = chardet.detect(s)
-            if encoding:
-                encoding = encoding.get('encoding')
-                return s.decode(encoding)
-        except UnicodeDecodeError:
-                pass
-        s = toascii(s, translit=True)
-        if not isinstance(s, compat.unicode):
-            s = compat.unicode(s)
-        return s
+    return UnicodeDammit(s).markup
