@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,21 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
 import json
 import os
 from unittest.case import skipIf
 
-# FIXME: this is a temp hack
-import private_test_utils as FIXED_testcase
- 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
-from compiledcode import dwarf3
+import scandwarf
 
 
 @skipIf(on_mac, 'Mac is not yet supported: nm needs to be built first')
@@ -44,9 +42,9 @@ class TestDwarf3(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def check_dwarf3(self, test_file, expected_file, regen=False):
-        test_loc = FIXED_testcase.get_test_loc(test_file, self.test_data_dir, exists=False)
-        result = list(dwarf3.get_source_file_path_references(test_loc))
-        expected_loc = FIXED_testcase.get_test_loc(expected_file, self.test_data_dir, exists=False)
+        test_loc = self.get_test_loc(test_file, self.test_data_dir, exists=False)
+        result = list(scandwarf.dwarf_source_path(test_loc))
+        expected_loc = self.get_test_loc(expected_file, self.test_data_dir, exists=False)
 
         if regen:
             with open(expected_loc, 'wb') as exc:

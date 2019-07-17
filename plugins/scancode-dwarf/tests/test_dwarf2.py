@@ -22,20 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
 import json
 import os
 from unittest.case import skipIf
 
-
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
-from compiledcode import dwarf2
-import private_test_utils as FIXED_testcase
+from scandwarf import dwarf2
 
 
 @skipIf(on_mac, 'Mac is not yet supported: nm needs to be built first')
@@ -82,7 +81,7 @@ class TestDwarf2(FileBasedTesting):
         test_loc = self.get_test_loc(test_file)
         result = [list(r) for r in dwarf2.get_dwarfs(test_loc)]
 
-        expected_loc = FIXED_testcase.get_test_loc(expected_file, self.test_data_dir)
+        expected_loc = self.get_test_loc(expected_file)
 
         if regen:
             with open(expected_loc, 'wb') as exc:
