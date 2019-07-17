@@ -41,6 +41,7 @@ class DwarfDumpPaths(LocationProviderPlugin):
     def get_locations(self):
         curr_dir = dirname(abspath(__file__))
         locations = {
+            'scancode.dwarfdump.lib': join(curr_dir, 'bin'),
             'scancode.dwarfdump.exe': join(curr_dir, 'bin', 'dwarfdump2'),
         }
         return locations

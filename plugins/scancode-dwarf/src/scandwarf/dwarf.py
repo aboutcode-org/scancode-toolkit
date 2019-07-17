@@ -41,6 +41,8 @@ from typecode import contenttype
 
 
 SCANCODE_DWARFDUMP_EXE = 'scancode.dwarfdump.exe'
+SCANCODE_DWARFDUMP_LIB = 'scancode.dwarfdump.lib'
+
 
 
 ################################################################
@@ -74,6 +76,8 @@ class Dwarf(object):
     def __init__(self, location):
 
         self.cmd_loc = get_location(SCANCODE_DWARFDUMP_EXE)
+        
+        self.lib_loc = get_location(SCANCODE_DWARFDUMP_LIB)
 
         # The elf location
         self.elf_location = location
@@ -103,6 +107,7 @@ class Dwarf(object):
         rc, out, err = command.execute2(
             cmd_loc=self.cmd_loc,
             args=['-i', self.elf_location],
+            lib_dir=self.lib_loc,
             to_files=True
         )
 
