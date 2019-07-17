@@ -60,7 +60,7 @@ def test_foldcase():
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
     if py2:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
+        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', '\xc2', '\xc2','just']
     else:
         expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
     assert expected == text.nopunctuation(test).split()
@@ -87,6 +87,13 @@ def test_toascii():
     assert expected == text.toascii(acc, translit=False)
     expected = r'AAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyySsss(r)(c)oeOEOoAEae_CL/CC/Zz'
     assert expected == text.toascii(acc, translit=True)
+
+
+def test_toascii_works_with_empty_unicode_or_bytes():
+    assert u'' == text.toascii(b'', translit=False)
+    assert u'' == text.toascii(u'', translit=True)
+    assert u'' == text.toascii(b'', translit=False)
+    assert u'' == text.toascii(u'', translit=True)
 
 
 def test_python_safe_name():
