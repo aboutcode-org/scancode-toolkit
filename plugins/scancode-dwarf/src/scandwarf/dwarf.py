@@ -101,7 +101,7 @@ class Dwarf(object):
         Parse dwarfdump info section of an elf file.
         """
         rc, out, err = command.execute2(
-            cmd=self.cmd_loc,
+            cmd_loc=self.cmd_loc,
             args=['-i', self.elf_location],
             to_files=True
         )

@@ -91,10 +91,10 @@ def call_nm(elffile):
     """
     logger.debug('Executing nm command on %(elffile)r' % locals())
 
-
     nm_command = get_location(SCANCODE_BINUTILS_NM_EXE)
     return command.execute2(
-        cmd=nm_command, args=['-al', elffile], to_files=True)
+        cmd_loc=nm_command, 
+        args=['-al', elffile], to_files=True)
 
 
 Entry = namedtuple('Entry', ['type', 'symbol', 'path', 'linenum'])
