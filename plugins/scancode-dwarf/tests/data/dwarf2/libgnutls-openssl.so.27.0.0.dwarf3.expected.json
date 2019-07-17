@@ -1,0 +1,13 @@
+[
+  "ERROR: dwarfdump2 ERROR:  dwarf_loclist:  DW_DLE_LOC_EXPR_BAD (128)\n", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/asnprintf.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/c-ctype.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/printf-args.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/printf-parse.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/read-file.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/sockets.c", 
+  "/tmp/buildd/gnutls26-2.12.20/lib/gl/vasnprintf.c", 
+  "/tmp/buildd/gnutls26-2.12.20/libextra/gnutls_openssl.c", 
+  "/tmp/buildd/gnutls26-2.12.20/libextra/openssl_compat.c", 
+  "fd-hook.c"
+]
