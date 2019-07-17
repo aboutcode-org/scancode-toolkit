@@ -69,6 +69,12 @@ class AboutPackage(models.Package):
                     return child
         return manifest_resource
 
+    @classmethod
+    def get_package_resources(cls, package_root, codebase):
+        yield package_root
+        for resource in package_root.walk(codebase, topdown=True):
+            yield resource
+
 
 def is_about_file(location):
     return (filetype.is_file(location)

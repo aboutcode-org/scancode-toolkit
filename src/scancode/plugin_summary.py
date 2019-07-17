@@ -181,7 +181,7 @@ def get_package_filesets(codebase):
                 numbered_lines = [(0, package_copyright)]
                 for _, holder, _, _ in CopyrightDetector().detect(numbered_lines,
                         copyrights=False, holders=True, authors=False, include_years=False):
-                    package_holders.append(holder.get('value'))
+                    package_holders.append(holder)
 
             discovered_license_expressions = []
             discovered_holders = []
