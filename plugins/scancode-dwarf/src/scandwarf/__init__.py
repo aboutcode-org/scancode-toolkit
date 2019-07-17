@@ -25,30 +25,38 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 from functools import partial
+from itertools import chain
 
+import attr
+
+from commoncode import fileutils
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import SCAN_GROUP
-from typecode.contenttype import get_type
+from typecode import contenttype
 
-import dwarf
-import dwarf2
+from scandwarf import dwarf
+from scandwarf import dwarf2
+
 
 @scan_impl
 class DwarfScanner(ScanPlugin):
     """
     Scan a dwarf infos for URLs.
     """
-    resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
+    resource_attributes = dict(
+        dwarf_source_path=attr.ib(default=attr.Factory(list), repr=False))
 
     options = [
         CommandLineOption(('--dwarf',),
             is_flag=True, default=False,
-            help='Scan dwarf info.',
+            help='Collect source code path from compilation units found in '
+                 'ELF DWARFs.',
             help_group=SCAN_GROUP,
-            sort_order=50),
+            sort_order=100),
     ]
 
     def is_enabled(self, dwarf, **kwargs):
@@ -60,20 +68,17 @@ class DwarfScanner(ScanPlugin):
 
 def get_dwarfs(location, **kwargs):
     """
-    Return a mapping with original_source_files and included_source_files
+    Return a mapping with original_source_files and included_source_files or None.
     """
-    d = dwarf.Dwarf(location)
-    if d:
-        dwarf_source_path_result = dwarf_source_path
-        if dwarf_source_path_result:
-            results = OrderedDict([
-                ('dwarf_source_path', list(dwarf_source_path)),
-            ])
-            return results
+    return dict(
+        dwarf_source_path=list(dwarf_source_path(location)))
 
 
 def dwarf_source_path(location):
-    """Collect unique paths to compiled source code found in Elf binaries DWARF sections for D2D."""
+    """
+    Collect unique paths to compiled source code found in Elf binaries DWARF
+    sections for D2D.
+    """
     location = location
     T = contenttype.get_type(location)
     if not (T.is_elf or T.is_stripped_elf):
@@ -100,7 +105,9 @@ def dwarf_source_path(location):
 
 
 def get_dwarf1(location):
-    """Using Dwarfdump"""
+    """
+    Using Dwarfdump
+    """
     d = dwarf.Dwarf(location)
     if d:
         # Note: we return all paths at once, when we should probably return the
@@ -110,7 +117,9 @@ def get_dwarf1(location):
 
 
 def get_dwarf2(location):
-    """Using NM"""
+    """
+    Using NM
+    """
     for _, _, path_to_source, _ in dwarf2.get_dwarfs(location):
         if path_to_source:
             yield path_to_source
