@@ -34,6 +34,7 @@ except NameError:  # pragma: nocover
     # Python 3
     unicode = str  # NOQA
 
+# FIXME: this is WRONG!!!!!! a str on py2 is neither bytes nor text string really
 string_types = str, unicode,
 
 
