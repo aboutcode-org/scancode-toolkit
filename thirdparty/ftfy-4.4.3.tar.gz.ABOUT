@@ -1,3 +1,5 @@
+name: ftfy
+version: 4.4.3
 about_resource: ftfy-4.4.3.tar.gz
 download_url: https://files.pythonhosted.org/packages/21/5d/9385540977b00df1f3a0c0f07b7e6c15b5e7a3109d7f6ae78a0a764dab22/ftfy-4.4.3.tar.gz
 license_expression: mit
