@@ -38,7 +38,6 @@ class Simhash:
     def __init__(self):
         self.tokens = []
 
-
     def generate_fingerprint(self):
         """
         Return fingerprint as a bitarray
@@ -47,7 +46,6 @@ class Simhash:
         fingerprint = self.process_weighted_hash(weighted_hash)
 
         return fingerprint
-
 
     def hex_digest(self):
         """
@@ -59,7 +57,6 @@ class Simhash:
             fingerprint_binary = self.generate_fingerprint()
             result = binascii.hexlify(fingerprint_binary)
         return result
-
 
     def get_weighted_hash(self):
         """
@@ -77,7 +74,6 @@ class Simhash:
             self.process_shingles(''.join(self.tokens), result)
 
         return result
-
 
     def process_weighted_hash(self, weighted_hash):
         """
@@ -103,7 +99,6 @@ class Simhash:
 
         return a
 
-
     def process_shingles(self, shingle, weighted_list):
         """
         Modify weighted list wrt to shingle
@@ -119,14 +114,12 @@ class Simhash:
 
         return weighted_list
 
-
     def update(self, string):
         """
         Update tokens by appending new tokens
         """
         new_tokens = string.split()
         self.tokens += new_tokens
-
 
     def bitarray_from_hex(self, fingerprint_hex):
         """
@@ -137,10 +130,11 @@ class Simhash:
 
         return result
 
-
     def hamming_distance(self, fingerprint1, fingerprint2):
         """
-        Return hamming distance between two given fingerprints
+        Return hamming distance between two given fingerprints.
+        Hamming distance is the difference in the bits of two binary string.
+        Files with fingerprints whose hamming distance are less tends to be more similar.
         """
         distance = bitdiff(fingerprint1, fingerprint2)
         result = int(distance)

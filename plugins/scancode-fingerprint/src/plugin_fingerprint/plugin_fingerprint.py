@@ -41,7 +41,6 @@ class FingerprintScanner(ScanPlugin):
     """
     Scan a file Resource to generate fingerprint.
     """
-
     resource_attributes = dict(fingerprint=attr.ib(default=None, repr=False))
 
     sort_order = 1
@@ -58,6 +57,7 @@ class FingerprintScanner(ScanPlugin):
 
     def get_scanner(self, **kwargs):
         return get_fingerprint
+
 
 def get_fingerprint(location, **kwargs):
     """

@@ -31,7 +31,6 @@ from commoncode.testcase import FileBasedTesting
 from plugin_fingerprint.fingerprint import Simhash
 from plugin_fingerprint.fingerprint import HASH_LENGTH
 
-
 class TestFingerprint(FileBasedTesting):
 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -48,7 +47,6 @@ class TestFingerprint(FileBasedTesting):
         expected = [0, -2, 2, 0, 0, -2, 2, 2, -2, 0, -2, 0, 0, 0, -2, 0, 2, 0, -2, -2, 0, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0, -2, 2, 0, 0, 0, -2, 2, 0, 0, 0, 0, 0, 2, -2, 0, 0, -2, 2, 0, -2, 2, 2, -2, 0, -2, 2, 0, -2, 2, 0, 2, 2, 0, 0, 0, 2, 0, 0, -2, 0, 0, 0, 2, -2, 0, 0, 0, -2, 0, 0, 2, 0, 2, 0, 0, 0, 0, -2, -2, 2, 2, 0, 0, -2, -2, -2, -2, -2, 0, 0, 2, 0, 2, 2, -2, 0, 2, 2, -2, 0, -2, -2, 2, 0, 2, 0, 0, 0, 0, 2, -2, 0, 2, -2, -2, 0, -2]
         assert result == expected
 
-
     def test_get_weighted_hash2(self):
         simhash = Simhash()
         test_file = self.get_test_loc('fingerprint/get_weighted_hash-test2.txt')
@@ -61,13 +59,11 @@ class TestFingerprint(FileBasedTesting):
         expected = [-1, -1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, -1, -1, 1, 1, 1, -1, -1, -1, -1, 1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1]
         assert result == expected
 
-
     def test_process_weighted_hash1(self):
         simhash = Simhash()
         result = simhash.process_weighted_hash([1, 2, 3, 4])
         expected = bitarray('1111')
         assert result == expected
-
 
     def test_process_weighted_hash2(self):
         simhash = Simhash()
@@ -75,13 +71,11 @@ class TestFingerprint(FileBasedTesting):
         expected = bitarray('0000')
         assert result == expected
 
-
     def test_process_weighted_hash3(self):
         simhash = Simhash()
         result = simhash.process_weighted_hash([1, -2, -3, 4, 5, -6, 7, 0, 0])
         expected = bitarray('100110100')
         assert result == expected
-
 
     def test_process_shingles1(self):
         simhash = Simhash()
@@ -90,7 +84,6 @@ class TestFingerprint(FileBasedTesting):
         result = simhash.process_shingles('Thisisfortesting', weighted_hash)
         assert result == expected
 
-
     def test_process_shingles2(self):
         simhash = Simhash()
         weighted_hash = [0, 0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 2, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 0, 0, 2, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 2, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0]
@@ -98,14 +91,12 @@ class TestFingerprint(FileBasedTesting):
         result = simhash.process_shingles('tryforanotherone', weighted_hash)
         assert result == expected
 
-
     def test_process_shingles3(self):
         simhash = Simhash()
         weighted_hash = [0, 0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 2, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 2, 2, 0, 0, 0, 0, 2, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 2, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0]
         expected = [1, -1, 1, 1, -1, -1, 1, 3, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 1, 1, 1, 3, 1, 3, 3, 1, 1, 3, -1, 1, 1, 1, 1, 3, 1, 1, 3, 1, 1, -1, 1, -1, 3, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 3, 1, 1, 1, 1, 1, 3, 1, 1, 3, -1, 1, 3, -1, -1, -1, -1, 1, 1, 1, 1, 1, -1, 3, 3, 3, 3, 1, 1, -1, 1, 1, -1, 3, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 3, 1, -1, 1, -1, 1, 1, -1, 1]
         result = simhash.process_shingles('for(inti=0;i<n;i++)', weighted_hash)
         assert result == expected
-
 
     def test_hex_digest1(self):
         simhash = Simhash()
@@ -118,7 +109,6 @@ class TestFingerprint(FileBasedTesting):
         result = simhash.hex_digest()
         assert result == '4e42d8c0ed6693654866425451210417'
 
-
     def test_hex_digest2(self):
         simhash = Simhash()
         test_file = self.get_test_loc('fingerprint/fingerprint-test2.c')
@@ -129,7 +119,6 @@ class TestFingerprint(FileBasedTesting):
         simhash.update(hashable)
         result = simhash.hex_digest()
         assert result == 'baa2d1d169be06a306c1873afe6db4da'
-
 
     def test_hex_digest3(self):
         simhash = Simhash()
@@ -142,11 +131,9 @@ class TestFingerprint(FileBasedTesting):
         result = simhash.hex_digest()
         assert result == '7f43e1b18f9c0e705fcf28007bc41754'
 
-
     def test_hex_digest3(self):
         simhash = Simhash()
         assert simhash.hex_digest() == None
-
 
     def test_update(self):
         simhash = Simhash()
@@ -155,7 +142,6 @@ class TestFingerprint(FileBasedTesting):
         simhash.update('This is for testing purpose \n It should work fine')
         expected = ['This', 'is', 'for', 'testing', 'purpose', 'It', 'should', 'work', 'fine']
         assert simhash.tokens == expected
-
 
     def test_generate_fingerprint(self):
         simhash = Simhash()
@@ -186,7 +172,6 @@ class TestFingerprint(FileBasedTesting):
 
         assert distance == 14
 
-
     def test_similarity_matching2(self):
         simhash1 = Simhash()
         simhash2 = Simhash()
@@ -205,7 +190,6 @@ class TestFingerprint(FileBasedTesting):
         distance = simhash1.hamming_distance(simhash1.generate_fingerprint(), simhash2.generate_fingerprint())
 
         assert distance == 66
-
 
     def test_similarity_matching3(self):
         simhash1 = Simhash()
