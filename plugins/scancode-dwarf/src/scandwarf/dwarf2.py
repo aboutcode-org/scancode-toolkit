@@ -28,20 +28,22 @@ Functions to extract information from binary Elf files DWARF debug data from
 the standard nm command output.
 """
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import namedtuple
 import logging
-import os
 import re
 
 from commoncode import command
+from plugincode.location_provider import get_location
 from typecode import contenttype
 
 
-logger = logging.getLogger(__name__)
+# TODO: implement a plugin for this
+SCANCODE_BINUTILS_NM_EXE = 'scancode.binutils.nm.exe'
 
-bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
+logger = logging.getLogger(__name__)
 
 
 ################################################################
@@ -88,9 +90,11 @@ def call_nm(elffile):
     stdout and stderr.
     """
     logger.debug('Executing nm command on %(elffile)r' % locals())
-    nm_command = 'nm-new'
-    return command.execute(cmd=nm_command, args=['-al', elffile],
-                           root_dir=bin_dir, to_files=True)
+
+
+    nm_command = get_location(SCANCODE_BINUTILS_NM_EXE)
+    return command.execute2(
+        cmd=nm_command, args=['-al', elffile], to_files=True)
 
 
 Entry = namedtuple('Entry', ['type', 'symbol', 'path', 'linenum'])
@@ -145,7 +149,7 @@ def get_dwarfs(location):
     Yields this tuple:
         (symbol_type, symbol, path_to_source, symbol_source_line)
     """
-    
+
     T = contenttype.get_type(location)
     if T.is_elf:
         rc, out, err = call_nm(location)

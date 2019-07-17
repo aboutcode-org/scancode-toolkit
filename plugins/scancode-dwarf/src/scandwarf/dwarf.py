@@ -23,48 +23,46 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-""" 
+"""
 A set of functions and objects to extract information from binary Elf files
 DWARF debug data.
 """
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
-import os
 import posixpath
 import re
 
 from commoncode import command
+from plugincode.location_provider import get_location
 from typecode import contenttype
 
 
-SCANCODE_DWARF_LIB = 'scancode.dwarf.libdir'
-
-bin_dir = SCANCODE_DWARF_LIB
+SCANCODE_DWARFDUMP_EXE = 'scancode.dwarfdump.exe'
 
 
 ################################################################
 # DWARFDUMP PARSING
 ################################################################
 def EMPTY_LINE_RE():
-    return re.compile("^\s*$")
-
+    return re.compile('^\s*$')
 
 def DCOMP_UNIT_START_RE():
-    return re.compile("^COMPILE_UNIT<header overall offset =.*$")
+    return re.compile('^COMPILE_UNIT<header overall offset =.*$')
 
 def DCMPDIR_RE():
-    return re.compile(r"^DW_AT_comp_dir\s*(.*)$")
+    return re.compile(r'^DW_AT_comp_dir\s*(.*)$')
 
 def DCMPDIR_FILE_RE():
-    return re.compile(r"^DW_AT_name\s*(.*)$")
+    return re.compile(r'^DW_AT_name\s*(.*)$')
 
 def DLOCAL_SYMBOLS_RE():
-    return re.compile(r"^LOCAL_SYMBOLS:$")
+    return re.compile(r'^LOCAL_SYMBOLS:$')
 
 def DWARF_FILES_RE():
-    return re.compile(r"^DW_AT_(?:decl|call)_file\s*\d*\s*(.*)$")
+    return re.compile(r'^DW_AT_(?:decl|call)_file\s*\d*\s*(.*)$')
 
 
 class Dwarf(object):
@@ -75,6 +73,8 @@ class Dwarf(object):
 
     def __init__(self, location):
 
+        self.cmd_loc = get_location(SCANCODE_DWARFDUMP_EXE)
+
         # The elf location
         self.elf_location = location
         # Source files that were compiled and linked explicitly to create this
@@ -83,7 +83,7 @@ class Dwarf(object):
 
         # Source files that were compiled and linked implicitly from the
         # standard library or by the toolchain when this Elf was created.
-       
+
         # These files may vary from platform to platform and version of the Gnu
         # toolchain. They are not always relevant from an interaction perspective
         # except in a few cases, such as LKM.
@@ -100,11 +100,9 @@ class Dwarf(object):
         """
         Parse dwarfdump info section of an elf file.
         """
-        dwarfdump_command = 'dwarfdump2'
         rc, out, err = command.execute2(
-            cmd=dwarfdump_command,
+            cmd=self.cmd_loc,
             args=['-i', self.elf_location],
-            root_dir=bin_dir,
             to_files=True
         )
 
@@ -130,14 +128,14 @@ class Dwarf(object):
 
     def asdict(self):
         return OrderedDict([
-            ('original_source_files', self.original_source_files), 
+            ('original_source_files', self.original_source_files),
             ('included_source_files', self.included_source_files)
         ])
-        
+
 
 def cleanup(paths):
     """
-    Given a list of paths, returns two lists: a list of paths likely to be 
+    Given a list of paths, returns two lists: a list of paths likely to be
     original code and a list of paths likely to be standard includes.
     """
     # TODO: mostly copied from dwarf.Dwarf._cleanup ...
@@ -152,7 +150,6 @@ def cleanup(paths):
         else:
             original.append(p)
     return original, std_includes
-
 
 
 class DwarfInfo(object):
@@ -173,7 +170,7 @@ class DwarfInfo(object):
     <1><   37>      DW_TAG_base_type
                     DW_AT_byte_size             4
                     DW_AT_encoding              DW_ATE_unsigned
-                    DW_AT_name                  unsigned int    
+                    DW_AT_name                  unsigned int
     <1><  122>      DW_TAG_typedef
                     DW_AT_name                  __off_t
                     DW_AT_decl_file             4 /usr/include/bits/types.h
@@ -204,7 +201,7 @@ class DwarfInfo(object):
                     DW_AT_name                  _IO_FILE
                     DW_AT_byte_size             148
                     DW_AT_decl_file             6 /usr/include/stdio.h
-                    DW_AT_decl_line             45                    
+                    DW_AT_decl_line             45
     <2>< 1429>      DW_TAG_inlined_subroutine
                     DW_AT_abstract_origin       <1125>
                     DW_AT_ranges                32
