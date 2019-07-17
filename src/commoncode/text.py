@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# NOTE: the iso-8859-15 charset is not a mistake.
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -28,15 +27,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from commoncode import compat
-from commoncode.system import py2
-
-import re
 import logging
+import re
 import unicodedata
 
 import chardet
 from text_unidecode import unidecode
+
+from commoncode import compat
+from commoncode.system import py2
 
 
 """
@@ -61,29 +60,13 @@ def lines(s):
     Because of these constraints "".split() cannot be used directly. We first
     replace things where we want to split with line endings, then we
     splitlines.
-
-    For example:
-    >>> t='''This problem is.
-    ... It is therefore
-    ...
-    ...
-    ...  However,we
-    ... without introducing ..
-    ...  However, I have
-    ...
-    ...
-    ... '''
-    >>> len([p[1] for p in lines(t)])
-    5
-    >>> expected = ['This problem is.', 'It is therefore', 'However,we', 'without introducing ..', 'However, I have']
-    >>> assert expected == [p for p in lines(t)]
     """
     return [l.strip() for l in s.splitlines() if l.strip()]
 
 
 def foldcase(text):
     """
-    Fold the cases of a text to lower case
+    Fold the case of a text to lower case.
     """
     return text.lower()
 
@@ -97,17 +80,6 @@ def nopunctuation(text):
     Replaces any non alphanum symbol (i.e. punctuation) in text with space.
     Preserve the characters offsets by replacing punctuation with spaces.
     Warning: this also drops line endings.
-
-    For example:
-    >>> t = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    >>> expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'just']
-    >>> assert expected == nopunctuation(t).split()
-    >>> t = r'''This problem is about: sequence-bunching
-    ...
-    ... just
-    ... '''
-    >>> expected = 'This problem is about  sequence bunching  just '
-    >>> assert expected == nopunctuation(t)
     """
     return re.sub(nopunc(), ' ', text)
 
@@ -122,13 +94,6 @@ def unixlinesep(text, preserve=False):
     """
     Normalize a string to Unix line separators. Preserve character offset by
     replacing with spaces if preserve is True.
-
-    For example:
-    >>> t= CR + LF + LF + CR + CR + LF
-    >>> unixlinesep(t) == LF + LF + LF + LF
-    True
-    >>> unixlinesep(t, True) == ' ' + LF + LF + LF + ' ' + LF
-    True
     """
     return text.replace(CRLF, CRLF_NO_CR if preserve else LF).replace(CR, LF)
 
@@ -136,10 +101,6 @@ def unixlinesep(text, preserve=False):
 def nolinesep(text):
     """
     Removes line separators, replacing them with spaces.
-    For example:
-    >>> t = CR + LF + CR + CR + CR + LF
-    >>> nolinesep(t) == '      '
-    True
     """
     return text.replace(CR, ' ').replace(LF, ' ')
 
@@ -160,37 +121,24 @@ def toascii(s, translit=False):
     The convertion may NOT preserve the original string length and with NFKD some
     characters may be deleted.
     Inspired from: http://code.activestate.com/recipes/251871/#c10 by Aaron Bentley.
-
-    For example:
-    >>> acc = u"ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüýÿẞß®©œŒØøÆæ₵₡￠¢Žž"
-    >>> noacc = r'AAAAAACEEEEIIIINOOOOOUUUUYaaaaaaceeeeiiiinooooouuuuyyZz'
-    >>> toascii(acc, translit=False) == noacc
-    True
-    >>> noacc = r'AAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyySsss(r)(c)oeOEOoAEae_CL/CC/Zz'
-    >>> toascii(acc, translit=True) == noacc
-    True
     """
+    assert isinstance(s, compat.unicode), 'string is not a unicode text: "{}"'.format(s)
     try:
         if translit:
             converted = unidecode(s).encode('ascii', 'ignore')
-            if not py2: converted = converted.decode('ascii')
+            if not py2: 
+                converted = converted.decode('ascii')
             converted = converted.replace('[?]', '_')
         else:
             converted = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')
     except:
-          converted = compat.unicode(s.decode('ascii', 'ignore'))
+        converted = compat.unicode(s.decode('ascii', 'ignore'))
     return converted
-    
+
+
 def python_safe_name(s):
     """
     Return a name derived from string `s` safe to use as a Python identifier.
-
-    For example:
-    >>> s = "not `\\a /`good` -safe name ??"
-    >>> assert python_safe_name(s) == 'not______good___safe_name'
-    >>> s1 = "string1++or+"
-    >>> s2 = "string1 +or "
-    >>> assert python_safe_name(s1) == python_safe_name(s2)
     """
     s = toascii(s)
     s = foldcase(s)
