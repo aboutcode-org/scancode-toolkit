@@ -147,6 +147,19 @@ class TestPortablePath(TestCase):
         expected = '.'
         assert expected == test
 
+    def test_portable_filename(self):
+        expected = 'A___file__with_Spaces.mov'
+        assert expected == paths.portable_filename("A:\\ file/ with Spaces.mov")
+
+        # Unresolved relative paths will be treated as a single filename. Use
+        # resolve instead if you want to resolve paths:
+        expected = '___.._.._etc_passwd'
+        assert expected == paths.portable_filename("../../../etc/passwd")
+
+        # Unicode name are transliterated:
+        expected = 'This_contain_UMLAUT_umlauts.txt'
+        assert expected == paths.portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
+
 
 class TestCommonPath(TestCase):
 
