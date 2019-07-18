@@ -73,6 +73,8 @@ class AboutPackage(models.Package):
     def get_package_resources(cls, package_root, codebase):
         yield package_root
         for resource in package_root.walk(codebase, topdown=True):
+            if resource.is_dir and resource.parent == package_root and resource.name == 'node_modules':
+                continue
             yield resource
 
 
