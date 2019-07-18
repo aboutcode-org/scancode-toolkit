@@ -225,8 +225,8 @@ class TestCommand(FileBasedTesting):
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {u'PATH': u'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {u'PATH': u'c:\\bin\\foo\udcb1bar;foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {u'PATH': u'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
