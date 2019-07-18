@@ -99,12 +99,6 @@ class RubyGem(models.Package):
         # unknown?
         return manifest_resource
 
-    @classmethod
-    def get_package_resources(cls, root, codebase):
-        yield root
-        for resource in root.walk(codebase, topdown=True):
-            yield resource
-
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 

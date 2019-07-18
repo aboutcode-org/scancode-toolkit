@@ -83,12 +83,6 @@ class NugetPackage(models.Package):
             return manifest_resource.parent(codebase)
         return manifest_resource
 
-    @classmethod
-    def get_package_resources(cls, package_root, codebase):
-        yield package_root
-        for resource in package_root.walk(codebase, topdown=True):
-            yield resource
-
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return baseurl + '{name}/{version}'.format(
             name=self.name, version=self.version)

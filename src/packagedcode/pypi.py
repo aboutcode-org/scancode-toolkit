@@ -87,12 +87,6 @@ class PythonPackage(models.Package):
     default_download_baseurl = None
     default_api_baseurl = None
 
-    @classmethod
-    def get_package_resources(cls, root, codebase):
-        yield root
-        for resource in root.walk(codebase, topdown=True):
-            yield resource
-
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
