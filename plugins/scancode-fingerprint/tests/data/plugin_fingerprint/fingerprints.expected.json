@@ -1,0 +1,39 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--fingerprint": true,
+        "--json": "<file>",
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 3
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "factorial-test.java",
+      "type": "file",
+      "fingerprint": "01cfb437aced3f7d8e4184f4d8673127",
+      "scan_errors": []
+    },
+    {
+      "path": "hello-test.c",
+      "type": "file",
+      "fingerprint": "bb274e73955fbebd97c9c37e7f1e09d2",
+      "scan_errors": []
+    },
+    {
+      "path": "lorem-test.txt",
+      "type": "file",
+      "fingerprint": "72c54ab1f6b56cb97df6152182eb95b3",
+      "scan_errors": []
+    }
+  ]
+}
