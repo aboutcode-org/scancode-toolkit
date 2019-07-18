@@ -137,5 +137,5 @@ class TestScanPluginDwarfScan(FileBasedTesting):
         args = ['--dwarf', test_dir, '--json', result_file]
         run_scan_click(args)
         test_loc = self.get_test_loc('dwarf/ssdeep.x86_64_scan.expected.json')
-        check_json_scan(test_loc, result_file, regen=True)
+        check_json_scan(test_loc, result_file, regen=False)
         
