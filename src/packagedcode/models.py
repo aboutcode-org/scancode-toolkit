@@ -506,6 +506,15 @@ class Package(BasePackage):
         """
         return manifest_resource
 
+    @classmethod
+    def get_package_resources(cls, package_root, codebase):
+        """
+        Yield the Resources of a Package starting from `package_root`
+        """
+        yield package_root
+        for resource in package_root.walk(codebase, topdown=True):
+            yield resource
+
     def compute_normalized_license(self):
         """
         Return a normalized license_expression string using the declared_license
