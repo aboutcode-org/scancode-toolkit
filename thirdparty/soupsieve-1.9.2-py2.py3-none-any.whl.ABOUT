@@ -1,3 +1,5 @@
+name: soupsieve
+version: 1.9.2
 about_resource: soupsieve-1.9.2-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/35/e3/25079e8911085ab76a6f2facae0771078260c930216ab0b0c44dc5c9bf31/soupsieve-1.9.2-py2.py3-none-any.whl
 license_expression: mit

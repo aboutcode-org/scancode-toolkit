@@ -1,3 +1,5 @@
+name: backports.functools_lru_cache
+version: 1.5
 about_resource: backports.functools_lru_cache-1.5-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/03/8e/2424c0e65c4a066e28f539364deee49b6451f8fcd4f718fefa50cc3dcf48/backports.functools_lru_cache-1.5-py2.py3-none-any.whl
 license_expression: mit
