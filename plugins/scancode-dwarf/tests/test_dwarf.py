@@ -29,6 +29,9 @@ from collections import OrderedDict
 import json
 import os
 
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
+
 from scandwarf.dwarf import Dwarf
 from commoncode.testcase import FileBasedTesting
 
@@ -122,3 +125,17 @@ class TestDwarf(FileBasedTesting):
 
     def test_dwarf_ssdeep_x86_64(self):
         self.check_dwarf('dwarf/ssdeep.x86_64', 'dwarf/ssdeep.x86_64.dwarf.expected.json')
+
+
+class TestScanPluginDwarfScan(FileBasedTesting):
+
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_scancode_with_dwarf(self):
+        test_dir = self.get_test_loc('dwarf/ssdeep.x86_64')
+        result_file = self.get_temp_file('json')
+        args = ['--dwarf', test_dir, '--json', result_file]
+        run_scan_click(args)
+        test_loc = self.get_test_loc('dwarf/ssdeep.x86_64_scan.expected.json')
+        check_json_scan(test_loc, result_file, regen=True)
+        
