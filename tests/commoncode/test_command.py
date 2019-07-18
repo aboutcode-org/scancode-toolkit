@@ -27,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import os
+import sys
 from unittest.case import skipIf
 
 from commoncode import command
@@ -48,8 +49,9 @@ class TestCommand(FileBasedTesting):
     @skipIf(not py2, 'Behaviour of console encodings changed in Python3')
     def test_execute2_non_ascii_output_py2(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
+        python = sys.executable
         rc, stdout, stderr = command.execute2(
-            'python', ['-c', "print b'non ascii: \\xe4 just passed it !'"]
+            python, ['-c', "print b'non ascii: \\xe4 just passed it !'"]
         )
         assert b'' == stderr
         assert b'non ascii: a just passed it !' == stdout
@@ -60,8 +62,9 @@ class TestCommand(FileBasedTesting):
     @skipIf(not py3, 'Behaviour of console encodings changed in Python3')
     def test_execute2_non_ascii_output_py3(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
+        python = sys.executable
         rc, stdout, stderr = command.execute2(
-            'python', ['-c', 'print("non ascii: été just passed it !")']
+            python, ['-c', 'print("non ascii: été just passed it !")']
         )
         assert '' == stderr
         assert 'non ascii: ete just passed it !' == stdout
@@ -226,4 +229,4 @@ class TestCommand(FileBasedTesting):
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
+        assert {u'PATH': u'c:\\bin\\foo\udcb1bar;foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
