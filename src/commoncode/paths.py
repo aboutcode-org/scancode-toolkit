@@ -46,9 +46,9 @@ to OS-safe paths and to POSIX paths.
 """
 
 if on_linux and py2:
-    POSIX_PATH_SEP = b'/' 
-    WIN_PATH_SEP = b'\\' 
-    EMPTY_STRING = b''  
+    POSIX_PATH_SEP = b'/'
+    WIN_PATH_SEP = b'\\'
+    EMPTY_STRING = b''
 else:
     POSIX_PATH_SEP = u'/'
     WIN_PATH_SEP = u'\\'

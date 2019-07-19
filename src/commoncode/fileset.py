@@ -189,7 +189,7 @@ def load(location):
     assert (os.path.exists(fn) and os.path.isfile(fn)), msg
     mode = 'rb' if on_linux and py2 else 'r'
     with open(fn, mode) as f:
-       return [l.strip() for l in f if l and l.strip()]
+        return [l.strip() for l in f if l and l.strip()]
 
 
 def includes_excludes(patterns, message):

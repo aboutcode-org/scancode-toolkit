@@ -290,7 +290,7 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     location = fsencode(location)
     if on_linux and py2:
         target_dir = fsencode(target_dir)
- 
+
     with open(location, 'rb') as input_tar:
         tar = None
         try:

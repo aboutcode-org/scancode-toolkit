@@ -25,6 +25,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from saneyaml import dump
-from saneyaml import load
-from saneyaml import YAMLError
+from saneyaml import dump  # NOQA
+from saneyaml import load  # NOQA
+from saneyaml import YAMLError  # NOQA

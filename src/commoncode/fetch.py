@@ -77,9 +77,9 @@ def ping_url(url):
     Returns True is `url` is reachable.
     """
     try:
-       from urlib.request import urlopen
+        from urlib.request import urlopen
     except ImportError:
-       from urllib2 import urlopen
+        from urllib2 import urlopen
 
     # FIXME: if there is no 200 HTTP status, then the ULR may not be reachable.
     try:
