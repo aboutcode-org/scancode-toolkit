@@ -33,7 +33,7 @@ from commoncode.functional import memoize
 from commoncode.functional import partial
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestFunctional(TestCase):

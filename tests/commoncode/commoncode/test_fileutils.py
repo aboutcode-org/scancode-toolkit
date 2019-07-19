@@ -869,24 +869,24 @@ class TestFileExtension(FileBasedTesting):
 
     def test_splitext_name_base(self):
         expected = 'path', '.ext'
-        assert expected ==fileutils.splitext_name('path.ext')
+        assert expected == fileutils.splitext_name('path.ext')
 
     def test_splitext_name_directories_have_no_extension(self):
         expected = 'path.ext', ''
-        assert expected ==fileutils.splitext_name('path.ext', is_file=False)
+        assert expected == fileutils.splitext_name('path.ext', is_file=False)
 
         expected = 'file', '.txt'
-        assert expected ==fileutils.splitext_name('file.txt')
+        assert expected == fileutils.splitext_name('file.txt')
 
     def test_splitext_name_composite_extensions_for_tarballs_are_properly_handled(self):
         expected = 'archive', '.tar.gz'
-        assert expected ==fileutils.splitext_name('archive.tar.gz')
+        assert expected == fileutils.splitext_name('archive.tar.gz')
 
     def test_splitext_name_dotfile_are_properly_handled(self):
         expected = '.dotfile', ''
-        assert expected ==fileutils.splitext_name('.dotfile')
+        assert expected == fileutils.splitext_name('.dotfile')
         expected = '.dotfile', '.this'
-        assert expected ==fileutils.splitext_name('.dotfile.this')
+        assert expected == fileutils.splitext_name('.dotfile.this')
 
 
 class TestParentDir(FileBasedTesting):
