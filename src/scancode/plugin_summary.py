@@ -95,6 +95,12 @@ class Fileset(object):
 @post_scan_impl
 class OriginSummary(PostScanPlugin):
     """
+    A post-scan plugin that returns Filesets for summarized resources.
+
+    This plugin summarizes resources by:
+    - Packages
+    - Copyright holders and license expression, i
+
     Summarize copyright holders and license expressions to the directory level if a copyright holder
     or license expression is detected in 75% or more of total files in a directory
     """
@@ -144,7 +150,7 @@ class OriginSummary(PostScanPlugin):
         filesets = process_license_exp_holders_filesets(filesets)
 
         # Add Filesets to codebase
-        for idx, fileset in enumerate(filesets, start=1):
+        for index, fileset in enumerate(filesets, start=1):
             if fileset.type == 'package':
                 identifier = fileset.package.purl
             else:
@@ -155,14 +161,19 @@ class OriginSummary(PostScanPlugin):
                 # We do not want the identifier to be too long
                 holders = holders[:65]
                 if holders:
-                    identifier = python_safe_name('{}_{}'.format(holders, idx))
+                    identifier = python_safe_name('{}_{}'.format(holders, index))
                 else:
-                    identifier = idx
+                    identifier = index
             fileset.identifier = identifier
-            for res in fileset.resources:
-                res.summarized_to.append(identifier)
-                res.save(codebase)
+            for resource in fileset.resources:
+                resource.summarized_to.append(identifier)
+                resource.save(codebase)
             codebase.attributes.filesets.append(fileset.to_dict())
+
+        # Sort and dedupe identifiers in summarized_to
+        for resource in codebase.walk(topdown=True):
+            resource.summarized_to = set(sorted(resource.summarized_to))
+            resource.save(codebase)
 
 
 def get_package_filesets(codebase):
@@ -172,7 +183,7 @@ def get_package_filesets(codebase):
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
-            package_fileset = list(package.get_package_resources(resource, codebase))
+            package_resources = list(package.get_package_resources(resource, codebase))
             package_license_expression = package.license_expression
             package_copyright = package.copyright
 
@@ -185,7 +196,11 @@ def get_package_filesets(codebase):
 
             discovered_license_expressions = []
             discovered_holders = []
-            for package_resource in package_fileset:
+            for package_resource in package_resources:
+                # If a resource is part of a package Fileset, then it cannot be part of any other type of Fileset
+                package_resource.extra_data['in_package_fileset'] = True
+                package_resource.save(codebase)
+
                 package_resource_license_expression = combine_expressions(package_resource.license_expressions)
                 package_resource_holders = package_resource.holders
                 if not package_resource_license_expression and not package_resource_holders:
@@ -206,7 +221,7 @@ def get_package_filesets(codebase):
 
             yield Fileset(
                 type='package',
-                resources=package_fileset,
+                resources=package_resources,
                 package=package,
                 core_license_expression=package_license_expression,
                 core_holders=sorted(package_holders),
@@ -220,6 +235,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     Yield a Fileset for each directory where 75% or more of the files have the same license
     expression and copyright holders
     """
+    origin_translation_table = {}
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
 
@@ -239,7 +255,9 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
                 if not license_expression or not holders:
                     continue
                 origin = holders, license_expression
-                origin_count[origin] += 1
+                origin_key = ''.join(holders) + license_expression
+                origin_translation_table[origin_key] = origin
+                origin_count[origin_key] += 1
             else:
                 # We are in a subdirectory
                 child_origin_count = child.extra_data.get('origin_count', {})
@@ -253,9 +271,9 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
 
             # TODO: When there is a tie, we need to be explicit and consistent about the tiebreaker
             # TODO: Consider creating two filesets instead of tiebreaking
-            origin, top_count = origin_count.most_common(1)[0]
+            origin_key, top_count = origin_count.most_common(1)[0]
             if is_majority(top_count, resource.files_count, origin_summary_threshold):
-                majority_holders, majority_license_expression = origin
+                majority_holders, majority_license_expression = origin_translation_table[origin_key]
                 resource.origin_summary['license_expression'] = majority_license_expression
                 resource.origin_summary['holders'] = majority_holders
                 resource.origin_summary['count'] = top_count
@@ -323,19 +341,23 @@ def process_license_exp_holders_filesets(filesets):
     Combine Filesets with the same license expression and holders
     into a single Fileset
     """
+    origin_translation_table = {}
     filesets_by_holders_license_expression = defaultdict(list)
     for fileset in filesets:
-        if not fileset.type == 'license-holders':
+        if fileset.type != 'license-holders':
             # We yield the other Filesets that we don't handle
             yield fileset
             continue
         origin = fileset.core_holders, fileset.core_license_expression
-        filesets_by_holders_license_expression[origin].append(fileset)
+        origin_key = ''.join(fileset.core_holders) + fileset.core_license_expression
+        origin_translation_table[origin_key] = origin
+        filesets_by_holders_license_expression[origin_key].append(fileset)
 
-    for (fileset_holders, fileset_license_expression), filesets in filesets_by_holders_license_expression.items():
+    for origin_key, filesets in filesets_by_holders_license_expression.items():
         fileset_resources = []
         for fileset in filesets:
             fileset_resources.extend(fileset.resources)
+        fileset_holders, fileset_license_expression = origin_translation_table[origin_key]
         yield Fileset(
             type='license-holders',
             resources=fileset_resources,

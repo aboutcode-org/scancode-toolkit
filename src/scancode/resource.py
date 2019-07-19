@@ -698,6 +698,8 @@ class Codebase(object):
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
             with open(cache_location, 'rb') as cached:
+                # TODO: Use custom json encoder to encode JSON list as a tuple
+                # TODO: Consider using simplejson
                 data = json.load(cached, object_pairs_hook=OrderedDict, encoding='utf-8')
                 return self.resource_class(**data)
         except Exception:
