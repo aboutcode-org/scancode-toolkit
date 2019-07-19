@@ -966,6 +966,16 @@ class Rule(object):
 
         if self.notes:
             data['notes'] = self.notes
+
+        if self.ignorable_copyrights:
+            data['ignorable_copyrights'] = self.ignorable_copyrights
+        if self.ignorable_authors:
+            data['ignorable_authors'] = self.ignorable_authors
+        if self.ignorable_urls:
+            data['ignorable_urls'] = self.ignorable_urls
+        if self.ignorable_emails:
+            data['ignorable_emails'] = self.ignorable_emails
+
         return data
 
     def dump(self):
