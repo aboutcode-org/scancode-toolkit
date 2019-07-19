@@ -27,7 +27,10 @@ from __future__ import absolute_import, print_function
 from unittest import TestCase
 
 from commoncode import paths
+from commoncode.system import py2
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestPortablePath(TestCase):
 
@@ -87,7 +90,10 @@ class TestPortablePath(TestCase):
         assert expected == test
 
     def test_safe_path_posix_style_chinese_char(self):
-        test = paths.safe_path('/includes/webform.compon\xd2\xaants.inc/')
+        if py2:
+            test = paths.safe_path('/includes/webform.compon\xd2\xaants.inc/')
+        else:
+            test = paths.safe_path(b'/includes/webform.compon\xd2\xaants.inc/')
         expected = 'includes/webform.componS_nts.inc'
         assert expected == test
 
@@ -140,6 +146,19 @@ class TestPortablePath(TestCase):
         test = paths.resolve('includes/../')
         expected = '.'
         assert expected == test
+
+    def test_portable_filename(self):
+        expected = 'A___file__with_Spaces.mov'
+        assert expected == paths.portable_filename("A:\\ file/ with Spaces.mov")
+
+        # Unresolved relative paths will be treated as a single filename. Use
+        # resolve instead if you want to resolve paths:
+        expected = '___.._.._etc_passwd'
+        assert expected == paths.portable_filename("../../../etc/passwd")
+
+        # Unicode name are transliterated:
+        expected = 'This_contain_UMLAUT_umlauts.txt'
+        assert expected == paths.portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt')
 
 
 class TestCommonPath(TestCase):

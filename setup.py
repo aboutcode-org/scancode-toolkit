@@ -201,6 +201,10 @@ setup(
         'pkginfo >= 1.5.0.1',
         'dparse >= 0.4.1',
 
+        # used to fix mojibake in Windows PE
+        'ftfy <  5.0.0; python_version == "2.7"',
+        'ftfy>=  5.0.0; python_version > "3"',
+
         # scancode
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',

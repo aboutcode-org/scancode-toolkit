@@ -32,6 +32,7 @@ import os
 from commoncode import fileutils
 from commoncode import paths
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 
 TRACE = False
@@ -44,8 +45,8 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-EMPTY_STRING = b'' if on_linux else ''
+POSIX_PATH_SEP = b'/' if on_linux and py2 else u'/'
+EMPTY_STRING = b'' if on_linux and py2 else u''
 
 
 """
@@ -186,7 +187,8 @@ def load(location):
     fn = os.path.abspath(os.path.normpath(os.path.expanduser(location)))
     msg = ('File %(location)s does not exist or not a file.') % locals()
     assert (os.path.exists(fn) and os.path.isfile(fn)), msg
-    with open(fn, 'rb') as f:
+    mode = 'rb' if on_linux and py2 else 'r'
+    with open(fn, mode) as f:
         return [l.strip() for l in f if l and l.strip()]
 
 
