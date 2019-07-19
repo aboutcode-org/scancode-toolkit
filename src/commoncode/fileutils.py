@@ -81,8 +81,8 @@ if TRACE:
 
 
 if on_linux and py2:
-    PATH_TYPE = bytes 
-    POSIX_PATH_SEP = b'/'        
+    PATH_TYPE = bytes
+    POSIX_PATH_SEP = b'/'
     WIN_PATH_SEP = b'\\'
     EMPTY_STRING = b''
     DOT = b'.'

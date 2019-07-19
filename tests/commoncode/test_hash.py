@@ -44,28 +44,28 @@ from commoncode.system import py2
 from commoncode.system import py3
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestHash(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-    
+
     def test_get_hasher(self):
         h = get_hasher(160)
         assert b'hvfkN_qlp_zhXR3cuerq6jd2Z7g=' == h(b'a').b64digest()
         assert b'4MkDWJjdUvxlxBRUzsnE0mEb-zc=' == h(b'aa').b64digest()
         assert b'fiQN50-x7Qj6CNOAY_amqRRiqBU=' == h(b'aaa').b64digest()
-    
+
     def test_short_hashes(self):
         h = get_hasher(32)
         assert b'0cc175b9' == h(b'a').hexdigest()
         assert b'4124bc0a' == h(b'aa').hexdigest()
         h = get_hasher(64)
         assert b'4124bc0a9335c27f' == h(b'aa').hexdigest()
-    
+
     def test_sha1_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
         assert sha1(test_file) == b'3ca69e8d6c234a469d16ac28a4a658c92267c423'
-    
+
     def test_sha1_checksum_on_text2(self):
         test_file = self.get_test_loc('hash/dir2/a.txt')
         assert sha1(test_file) == b'3ca69e8d6c234a469d16ac28a4a658c92267c423'
@@ -81,7 +81,7 @@ class TestHash(FileBasedTesting):
     def test_md5_checksum_on_text(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
         assert md5(test_file) == b'40c53c58fdafacc83cfff6ee3d2f6d69'
-    
+
     def test_md5_checksum_on_text2(self):
         test_file = self.get_test_loc('hash/dir2/a.txt')
         assert md5(test_file) == b'40c53c58fdafacc83cfff6ee3d2f6d69'
@@ -123,7 +123,7 @@ class TestHash(FileBasedTesting):
         ])
         result = multi_checksums(test_file, 'md5 sha1 sha256'.split())
         assert expected == result
-    
+
     def test_multi_checksums_custom(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
         result = multi_checksums(test_file, ('sha512',))

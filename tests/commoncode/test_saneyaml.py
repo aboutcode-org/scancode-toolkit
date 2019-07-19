@@ -36,7 +36,7 @@ from commoncode import saneyaml
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestSaneyaml(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

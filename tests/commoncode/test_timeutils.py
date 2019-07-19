@@ -30,7 +30,7 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.timeutils import time2tstamp, tstamp2time, UTC
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestTimeStamp(FileBasedTesting):
 

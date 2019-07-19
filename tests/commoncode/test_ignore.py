@@ -34,7 +34,7 @@ from commoncode import ignore
 from commoncode.system import on_mac
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class IgnoreTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

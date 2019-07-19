@@ -60,7 +60,7 @@ def test_foldcase():
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
     if py2:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', '\xc2', '\xc2','just']
+        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', '\xc2', '\xc2', 'just']
     else:
         expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
     assert expected == text.nopunctuation(test).split()

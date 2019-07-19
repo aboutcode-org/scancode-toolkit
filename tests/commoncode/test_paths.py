@@ -30,7 +30,7 @@ from commoncode import paths
 from commoncode.system import py2
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestPortablePath(TestCase):
 

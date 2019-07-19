@@ -40,7 +40,7 @@ from os.path import join
 from os.path import exists
 
 import pytest
-pytestmark = pytest.mark.scanpy3 #NOQA
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TypeTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -77,10 +77,10 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         # symlinks and special files are not supported on win
         if on_posix:
             expected += [ ('2-SYMTYPE', 'l'), ('6-FIFOTYPE', 's'), ]
-        
+
         if on_windows and py3:
             expected += [ ('2-SYMTYPE', 'l') ]
-        
+
         assert sorted(expected) == sorted(results)
 
     def test_is_rwx_with_none(self):

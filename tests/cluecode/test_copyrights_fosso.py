@@ -38,7 +38,6 @@ from commoncode.text import python_safe_name
 import cluecode_test_utils
 
 
-import pytest
 pytestmark = pytest.mark.scanslow
 
 

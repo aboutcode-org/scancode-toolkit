@@ -27,11 +27,9 @@ from __future__ import division
 from __future__ import print_function
 
 import binascii
-
 from collections import OrderedDict
 import hashlib
 
-from commoncode import compat
 from commoncode.codec import bin_to_num
 from commoncode.codec import urlsafe_b64encode
 from commoncode import filetype
