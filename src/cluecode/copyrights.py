@@ -261,12 +261,12 @@ patterns = [
 
     # Various NN, exceptions to NNP or CAPS
     (r'^(Send|It|Mac|Support|Information|Various|Mouse|Wheel'
-      r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
-      r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Note|Delay|Separa.*|Added'
+      r'|Vendors?|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
+      r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Notes?|Delay|Separa.*|Added'
       r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
-      r'|Agreement\.?|Immediately|Any|Custom|Reference|Each'
-      r'|Education|AIRTM|Copying|Updated|Source|Code|Website'
-      r'|Holder\.?'
+      r'|Agreements?\.?|Immediately|Any|Custom|References?|Each'
+      r'|Education|AIRTM|Copying|Updated|Source|Code|Websites|Public\.?'
+      r'|Joint|Assignment'
       r')?$', 'NN'),
     # |Products\.?
 
@@ -293,7 +293,10 @@ patterns = [
     # various junk bits
     (r'^(example\.com'
       r'|null$'
-      r'|:Licen[cs]e)$', 'JUNK'),
+      r'|:Licen[cs]e)$'
+      r'|Agent\.?$'
+      r'|behalf$|its$'
+      r'|[aA]nyone$', 'JUNK'),
 
     # when uppercase this is likely part of some SQL statement
     (r'FROM|CREATE|CURDIR', 'JUNK'),
@@ -353,6 +356,9 @@ patterns = [
     # FIXME: may be lowercase instead?
     (r'^(Title:?|Debianized-By:?|Upstream-Maintainer:?|Content-MD5)$', 'JUNK'),
     (r'^(Upstream-Author:?|Packaged-By:?)$', 'JUNK'),
+
+    # NOT a copyright Copyright.txt : treat as NN
+    (r'^Copyright\.txt$', 'NN'),
 
     # NOT a copyright symbol (ie. "copyrighted."): treat as NN
     (r'^[Cc](opyright(s|ed)?|OPYRIGHT(S|ED))\.$', 'NN'),
@@ -426,7 +432,7 @@ patterns = [
 
     # "holders" is considered Special
     (r'^HOLDER\(S\)$', 'JUNK'),
-    (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
+    (r'^([Hh]olders?|HOLDERS?).?$', 'HOLDER'),
 
     # not NNPs
     (r'^([Rr]espective|JavaScript)$', 'NN'),
@@ -1214,7 +1220,8 @@ grammar = """
     # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
     COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
 
-
+    #copyright of CERN. or copyright CERN.
+    COPYRIGHT: {<COPY> <OF>? <PN>}        #26371
 
 # Authors
     # Created by XYZ
@@ -1242,6 +1249,7 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
+
 """
 
 
@@ -1516,6 +1524,7 @@ JUNK_AUTHORS = frozenset([
     # in GNU licenses
     'james hacker.',
     'james random hacker.',
+    'contributor. c. a',
 ])
 
 AUTHORS_PREFIXES = frozenset(set.union(
@@ -1628,6 +1637,9 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright holder and contributor',
     'copyright-holder and its contributors',
     'copyright holders and contributors.',
+    'copyright holder and contributors.',
+    'copyright holders and contributors',
+    'copyright holder and contributors',
 
     'copyrighted material, only this license, or another one contracted with the authors',
     'copyright notices, authorship',
