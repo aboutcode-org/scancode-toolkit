@@ -41,22 +41,22 @@
   "filesets": [
     {
       "type": "license-holders",
-      "identifier": "omega_inc__1",
+      "identifier": "acme_corporation_1",
       "package": null,
-      "core_license_expression": "mit",
+      "core_license_expression": "apache-2.0",
       "core_holders": [
-        "Omega Inc."
+        "Acme Corporation"
       ],
       "context_license_expression": null,
       "context_holders": []
     },
     {
       "type": "license-holders",
-      "identifier": "acme_corporation_2",
+      "identifier": "omega_inc__2",
       "package": null,
-      "core_license_expression": "apache-2.0",
+      "core_license_expression": "mit",
       "core_holders": [
-        "Acme Corporation"
+        "Omega Inc."
       ],
       "context_license_expression": null,
       "context_holders": []
@@ -203,9 +203,7 @@
         ],
         "count": 9
       },
-      "summarized_to": [
-        "acme_corporation_2"
-      ],
+      "summarized_to": [],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 459,
@@ -944,9 +942,7 @@
         ],
         "count": 3
       },
-      "summarized_to": [
-        "omega_inc__1"
-      ],
+      "summarized_to": [],
       "files_count": 3,
       "dirs_count": 2,
       "size_count": 117,
@@ -983,10 +979,7 @@
         ],
         "count": 2
       },
-      "summarized_to": [
-        "omega_inc__1",
-        "omega_inc__1"
-      ],
+      "summarized_to": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 78,
@@ -1179,10 +1172,7 @@
         ],
         "count": 1
       },
-      "summarized_to": [
-        "omega_inc__1",
-        "omega_inc__1"
-      ],
+      "summarized_to": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 39,
