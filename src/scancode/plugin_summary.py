@@ -172,7 +172,8 @@ class OriginSummary(PostScanPlugin):
 
         # Sort and dedupe identifiers in summarized_to
         for resource in codebase.walk(topdown=True):
-            resource.summarized_to = set(sorted(resource.summarized_to))
+            resource.summarized_to = set(sorted(i for i in resource.summarized_to
+                if i.startswith('pkg:') and resource.extra_data.get('in_package_fileset')))
             resource.save(codebase)
 
 
@@ -239,7 +240,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
 
-        if resource.is_file:
+        if resource.is_file or resource.extra_data.get('in_package_fileset'):
             continue
 
         children = resource.children(codebase)
@@ -249,6 +250,8 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
         # Collect license expression and holders count for stat-based summarization
         origin_count = Counter()
         for child in children:
+            if child.extra_data.get('in_package_fileset'):
+                continue
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
                 holders = tuple(h['value'] for h in child.holders)
@@ -286,7 +289,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     # Yield a Fileset for root if there is a majority
     root = codebase.get_resource(0)
     fs = create_license_exp_holders_fileset(root, codebase)
-    if fs:
+    if fs and root.extra_data.get('in_package_fileset'):
         yield fs
 
 
@@ -324,8 +327,10 @@ def get_fileset_resources(resource, codebase):
     holders = resource.origin_summary.get('holders')
     if not license_expression and holders:
         return
-    resources = [resource]
+    resources = [] if resource.extra_data.get('in_package_fileset') else [resource]
     for r in resource.walk(codebase, topdown=False):
+        if r.extra_data.get('in_package_fileset'):
+            continue
         if ((r.is_file
                 and combine_expressions(r.license_expressions) == license_expression
                 and r.holders == holders)
