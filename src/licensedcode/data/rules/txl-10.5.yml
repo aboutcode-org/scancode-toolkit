@@ -1,2 +1,4 @@
 license_expression: txl-10.5
 is_license_reference: yes
+ignorable_urls:
+    - http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt

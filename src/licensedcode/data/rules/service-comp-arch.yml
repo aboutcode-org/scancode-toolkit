@@ -1,2 +1,4 @@
 license_expression: service-comp-arch
 is_license_text: yes
+ignorable_urls:
+    - http://www.osoa.org/display/Main/Service+Component+Architecture+Specifications

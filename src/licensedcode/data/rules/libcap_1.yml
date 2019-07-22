@@ -1,3 +1,5 @@
 license_expression: libcap
 is_license_text: yes
 minimum_coverage: 10
+ignorable_copyrights:
+    - copyright. THIS SOFTWARE IS PROVIDED AS

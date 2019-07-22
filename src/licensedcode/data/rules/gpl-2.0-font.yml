@@ -1,2 +1,4 @@
 license_expression: font-exception-gpl
 is_license_reference: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-faq.html#FontException

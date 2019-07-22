@@ -42,7 +42,7 @@ copyrights:
   - Copyright (c) 1999 Pai-Hsiang Hsiao
   - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
     Academia Sinica
-  - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+  - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu http://casper.beckman.uiuc.edu/~c-tsai4
   - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
   - Copyright (c) 2002 the Initial Developer
   - Copyright (c) 2006-2008 Jason Evans jasone@FreeBSD.org
@@ -51,6 +51,7 @@ copyrights:
   - Copyright 2007-2009 Niels Provos and Nick Mathewson
   - Copyright (c) 2004 2005, Google Inc.
   - copyright (c) 1991-1998, Thomas G. Lane
+  - copyright holder, Aladdin Enterprises of Menlo Park
   - copyright by the Free Software Foundation
   - copyright by M.I.T.
   - Copyright property of CompuServe Incorporated
@@ -68,7 +69,7 @@ copyrights:
   - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Copyright (c) 1991 Free Software Foundation, Inc.
   - copyrighted by the Free Software Foundation
-  - Copyright (c) 2005, 2006 Nick Galbreath
+  - Copyright (c) 2005, 2006 Nick Galbreath nickg at modp dot com
   - Copyright 2008 MolokoCacao
   - Copyright (c) 2004-2009 Sergey Lyubka
   - Portions Copyright (c) 2009 Gilbert Wellisch
@@ -154,6 +155,7 @@ holders:
   - Niels Provos and Nick Mathewson
   - Google Inc.
   - Thomas G. Lane
+  - Aladdin Enterprises of Menlo Park
   - the Free Software Foundation
   - M.I.T.
   - CompuServe Incorporated
@@ -171,7 +173,7 @@ holders:
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - Nick Galbreath
+  - Nick Galbreath nickg at modp dot com
   - MolokoCacao
   - Sergey Lyubka
   - Gilbert Wellisch
@@ -235,6 +237,8 @@ holders_summary:
     count: 2
   - value: Thomas G. Lane
     count: 2
+  - value: Aladdin Enterprises of Menlo Park
+    count: 1
   - value: Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen, Alp
       Toker, Anders Carlsson, Andrew Wellington, Antti
     count: 1
@@ -311,7 +315,7 @@ holders_summary:
     count: 1
   - value: Nara Institute of Science and Technology
     count: 1
-  - value: Nick Galbreath
+  - value: Nick Galbreath nickg at modp dot com
     count: 1
   - value: Niels Provos
     count: 1

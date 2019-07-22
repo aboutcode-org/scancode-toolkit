@@ -1,2 +1,4 @@
 license_expression: openpub
 is_license_reference: yes
+ignorable_urls:
+    - http://opencontent.org/openpub/

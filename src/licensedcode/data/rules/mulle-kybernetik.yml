@@ -1,2 +1,4 @@
 license_expression: mulle-kybernetik
 is_license_reference: yes
+ignorable_urls:
+    - http://www.mulle-kybernetik.com/en/index.html

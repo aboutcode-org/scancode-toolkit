@@ -1,3 +1,5 @@
 license_expression: openssl-ssleay AND other-permissive
 is_license_reference: yes
 notes: from OpenSSL CHANGES
+ignorable_urls:
+    - https://www.openssl.org/source/OCB-patent-grant-OpenSSL.pdf

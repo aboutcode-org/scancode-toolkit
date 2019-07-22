@@ -1,2 +1,4 @@
 license_expression: pine
 is_license_reference: yes
+ignorable_urls:
+    - http://www.washington.edu/pine/overview/legal.html

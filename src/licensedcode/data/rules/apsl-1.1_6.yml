@@ -1,2 +1,4 @@
 license_expression: apsl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.apple.com/source/IOSerialFamily/IOSerialFamily-7/APPLE_LICENSE

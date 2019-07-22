@@ -1,2 +1,4 @@
 license_expression: python
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Python Software Foundation

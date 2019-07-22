@@ -1,2 +1,4 @@
 license_expression: bsd-new
 is_license_reference: yes
+ignorable_urls:
+    - http://choosealicense.com/licenses/bsd-3-clause

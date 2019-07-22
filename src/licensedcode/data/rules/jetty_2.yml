@@ -1,2 +1,4 @@
 license_expression: jetty
 is_license_reference: yes
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/Jetty_

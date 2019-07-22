@@ -1,2 +1,4 @@
 license_expression: eupl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.osor.eu/eupl/european-union-public-licence-eupl-v.1.1

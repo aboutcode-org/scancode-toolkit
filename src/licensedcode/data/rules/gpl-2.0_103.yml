@@ -10,3 +10,6 @@ notes: |
     In this text version, it refers to the Franklin Street address rather than
     Franklin St and uses the GNU Library General Public License references
     throughout.
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation

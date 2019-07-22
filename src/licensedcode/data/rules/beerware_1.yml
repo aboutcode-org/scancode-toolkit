@@ -1,2 +1,4 @@
 license_expression: beerware
 is_license_notice: yes
+ignorable_emails:
+    - phk@login.dknet.dk

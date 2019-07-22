@@ -1,3 +1,5 @@
 license_expression: bsd-new
 is_license_reference: yes
 notes: Found in Jcraft POMs
+ignorable_urls:
+    - http://www.jcraft.com/jsch/LICENSE.txt

@@ -5,3 +5,6 @@ notes: |
     incorrect Apache license text found in EasyEclipse
     there is a minor typo in section 2 where "in License" is used instead
     of "in this License"
+ignorable_urls:
+    - http://www.apache.org/licenses/
+    - http://www.apache.org/licenses/LICENSE-2.0

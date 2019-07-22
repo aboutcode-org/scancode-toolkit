@@ -3,3 +3,5 @@ is_license_notice: yes
 referenced_filenames:
     - ITKCopyright.txt
 notes: either apache or bsd
+ignorable_urls:
+    - http://www.itk.org/HTML/Copyright.htm

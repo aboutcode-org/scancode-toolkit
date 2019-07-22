@@ -1,16 +1,16 @@
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
-// Licensed material of Private Company, All Rights Reserved, (C) 2005    //
+// Licensed material of Foobar Company, All Rights Reserved, (C) 2005    //
 //                                                                          //
 //////////////////////////////////////////////////////////////////////////////
 //
 // Copyright:
-//                       Private Company (PC)
-//                    Property of Private Company
+//                       Foobar Company (PC)
+//                    Property of Foobar Company
 //         Do not copy or distribute without written permission
 //
 //                           Copyright (2003)
-//                          Private Company
+//                          Foobar Company
 //                         All Rights Reserved
 //
 // Filename:    somefile.cpp

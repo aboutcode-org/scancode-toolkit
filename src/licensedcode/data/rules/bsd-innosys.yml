@@ -2,3 +2,5 @@ license_expression: bsd-innosys
 is_license_text: yes
 relevance: 99
 minimum_coverage: 70
+ignorable_copyrights:
+    - copyright Keyspan USB Async Message Formats

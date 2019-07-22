@@ -1,2 +1,4 @@
 license_expression: ms-pl
 is_license_notice: yes
+ignorable_urls:
+    - http://www.microsoft.com/en-us/openness/licenses.aspx

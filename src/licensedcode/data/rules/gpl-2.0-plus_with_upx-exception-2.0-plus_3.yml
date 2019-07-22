@@ -1,2 +1,4 @@
 license_expression: gpl-2.0-plus WITH upx-exception-2.0-plus
 is_license_reference: yes
+ignorable_urls:
+    - http://upx.sourceforge.net/upx-license.html

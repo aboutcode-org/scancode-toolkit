@@ -18,7 +18,7 @@ copyrights:
   - Copyright (c) 1995-2000 Corporation for National Research Initiatives
   - Copyright (c) 2001 EU DataGrid
   - Copyright (c) 2000. OCLC Research
-  - Copyright (c) 1999 Trolltech AS
+  - Copyright (c) 1999 Trolltech AS, Norway
 holders:
   - the Massachusetts Institute of Technology
   - AT&T
@@ -34,7 +34,7 @@ holders:
   - Corporation for National Research Initiatives
   - EU DataGrid
   - OCLC Research
-  - Trolltech AS
+  - Trolltech AS, Norway
 holders_summary:
   - value: AT&T
     count: 1
@@ -59,7 +59,7 @@ holders_summary:
     count: 1
   - value: Software in the Public Interest, Inc.
     count: 1
-  - value: Trolltech AS
+  - value: Trolltech AS, Norway
     count: 1
   - value: ooo-build/Go-OO Team
     count: 1

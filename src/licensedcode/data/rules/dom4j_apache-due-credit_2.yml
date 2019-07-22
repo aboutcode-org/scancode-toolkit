@@ -1,2 +1,6 @@
 license_expression: dom4j
 is_license_text: yes
+ignorable_urls:
+    - http://groovy.codehaus.org/
+ignorable_emails:
+    - info@codehaus.org

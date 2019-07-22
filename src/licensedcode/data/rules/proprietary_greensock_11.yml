@@ -1,2 +1,6 @@
 license_expression: proprietary-license
 is_license_notice: yes
+ignorable_urls:
+    - http://greensock.com/standard-license
+    - https://greensock.com/licensing
+    - https://greensock.com/why-license/

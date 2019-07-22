@@ -1,2 +1,4 @@
 license_expression: emit
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Wix.com

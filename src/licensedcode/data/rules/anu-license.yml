@@ -1,2 +1,4 @@
 license_expression: anu-license
 is_license_reference: yes
+ignorable_urls:
+    - http://www.panasonic.net/pcc/support/pbx/docs/freeware_header.txt

@@ -1,2 +1,4 @@
 license_expression: rute
 is_license_reference: yes
+ignorable_urls:
+    - http://rute.sourceforge.net/

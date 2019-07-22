@@ -327,7 +327,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_sample_py(self):
         test_file = self.get_test_loc('copyrights_basic/sample_py-py.py')
         expected = [
-            (u'COPYRIGHT 2006 ABC ABC', 6, 7)
+            (u'COPYRIGHT 2006 ABC', 6, 7)
         ]
         check_detection_with_lines(expected, test_file)
 

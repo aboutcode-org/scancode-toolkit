@@ -1,2 +1,4 @@
 is_negative: yes
 notes: comments about licensing
+ignorable_copyrights:
+    - Copyright 2003 Free Software Foundation, Inc.

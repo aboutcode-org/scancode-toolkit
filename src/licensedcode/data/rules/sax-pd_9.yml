@@ -1,3 +1,7 @@
 license_expression: sax-pd
 is_license_notice: yes
 relevance: 100
+ignorable_authors:
+    - David Megginson
+ignorable_urls:
+    - http://www.saxproject.org/

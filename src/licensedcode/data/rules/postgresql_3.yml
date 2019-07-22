@@ -1,2 +1,4 @@
 license_expression: postgresql
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/postgresql

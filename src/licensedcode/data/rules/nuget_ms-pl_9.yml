@@ -1,2 +1,4 @@
 license_expression: ms-pl
 is_license_tag: yes
+ignorable_urls:
+    - http://opensource.org/licenses/ms-pl.html

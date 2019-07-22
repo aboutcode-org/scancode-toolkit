@@ -1,3 +1,5 @@
 license_expression: zveno-research
 is_license_text: yes
 notes: zveno-research
+ignorable_urls:
+    - http://www.zveno.com/

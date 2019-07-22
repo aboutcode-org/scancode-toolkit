@@ -1,2 +1,4 @@
 license_expression: gfdl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.lysator.liu.se/~kjell-e/tekla/linux/security/fdl.html

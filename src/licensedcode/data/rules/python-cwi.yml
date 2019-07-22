@@ -1,2 +1,4 @@
 license_expression: python-cwi
 is_license_text: yes
+ignorable_urls:
+    - ftp://ftp.python.org/

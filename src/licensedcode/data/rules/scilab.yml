@@ -1,2 +1,4 @@
 license_expression: cecill-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.scilab.org/legal/license.html

@@ -1,2 +1,4 @@
 license_expression: uoi-ncsa
 is_license_reference: yes
+ignorable_urls:
+    - http://otm.illinois.edu/uiuc_openSource

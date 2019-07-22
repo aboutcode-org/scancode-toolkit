@@ -244,8 +244,8 @@ For files in the jpeg directory:
   liability claims are assumed by the product vendor.
 
   ansi2knr.c is included in this distribution by permission of
-  L. Peter Deutsch, sole proprietor of its copyright holder, Aladdin
-  Enterprises of Menlo Park, CA.  ansi2knr.c is NOT covered by the
+  L. Peter Deutsch, sole proprietor of its <s>copyright holder, Aladdin
+  Enterprises of Menlo Park</s>, CA.  ansi2knr.c is NOT covered by the
   above copyright and conditions, but instead by the usual
   distribution terms of the Free Software Foundation; principally,
   that you must include source code if you redistribute it.  (See the

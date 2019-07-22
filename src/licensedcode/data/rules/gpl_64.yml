@@ -1,3 +1,5 @@
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 notes: No version gpl declaration
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html

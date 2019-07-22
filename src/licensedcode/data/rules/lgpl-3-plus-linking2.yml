@@ -1,2 +1,6 @@
 license_expression: lgpl-3.0-plus WITH linking-exception-lgpl-3.0
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_urls:
+    - http://fsf.org/

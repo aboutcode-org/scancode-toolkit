@@ -1,2 +1,4 @@
 license_expression: apple-attribution
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) 1988-1991 Apple Computer, Inc.

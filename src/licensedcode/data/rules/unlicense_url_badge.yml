@@ -1,2 +1,5 @@
 license_expression: unlicense
 is_license_reference: yes
+ignorable_urls:
+    - http://unlicense.org/
+    - https://img.shields.io/badge/license-Unlicense-blue.svg

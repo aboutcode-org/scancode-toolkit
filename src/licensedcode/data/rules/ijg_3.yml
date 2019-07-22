@@ -1,2 +1,4 @@
 license_expression: ijg
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright property of CompuServe Incorporated.

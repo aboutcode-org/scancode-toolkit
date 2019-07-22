@@ -1,2 +1,4 @@
 license_expression: khronos
 is_license_reference: yes
+ignorable_urls:
+    - http://www.khronos.org/developers

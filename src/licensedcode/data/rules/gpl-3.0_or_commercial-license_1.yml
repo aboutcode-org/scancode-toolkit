@@ -3,3 +3,5 @@ is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSES.txt
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/gpl-3.0.html

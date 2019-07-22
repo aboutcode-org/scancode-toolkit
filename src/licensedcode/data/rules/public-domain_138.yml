@@ -2,3 +2,5 @@ license_expression: public-domain
 is_license_reference: yes
 relevance: 80
 notes: this URL does not exists
+ignorable_urls:
+    - https://spdx.org/licenses/PublicDomain.html

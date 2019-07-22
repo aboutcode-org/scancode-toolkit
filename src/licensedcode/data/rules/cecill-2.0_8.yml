@@ -3,3 +3,5 @@ is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - Licence_CeCILL_V2-en.txt
+ignorable_urls:
+    - http://www.cecill.info/index.en.html

@@ -1,2 +1,4 @@
 license_expression: sfl-license
 is_license_reference: yes
+ignorable_urls:
+    - http://legacy.imatix.com/html/sfl/sfl4.htm

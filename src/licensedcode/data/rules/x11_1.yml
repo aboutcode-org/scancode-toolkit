@@ -1,2 +1,4 @@
 license_expression: x11
 is_license_reference: yes
+ignorable_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html

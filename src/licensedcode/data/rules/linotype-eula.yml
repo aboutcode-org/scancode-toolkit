@@ -1,2 +1,4 @@
 license_expression: linotype-eula
 is_license_reference: yes
+ignorable_urls:
+    - http://www.linotype.com/2061-28225/licenseagreementforfontsoftware.html

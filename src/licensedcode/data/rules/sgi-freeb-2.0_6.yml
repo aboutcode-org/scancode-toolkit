@@ -1,3 +1,6 @@
 license_expression: sgi-freeb-2.0
 is_license_text: yes
 minimum_coverage: 75
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB
+    - http://oss.sgi.com/projects/FreeB/&quot;http:/oss.sgi.com/projects/FreeB/

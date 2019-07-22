@@ -1,2 +1,4 @@
 license_expression: wordnet
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright by Princeton University.

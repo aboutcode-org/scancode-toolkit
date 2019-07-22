@@ -1,0 +1,1 @@
+Copyright 2002 (C) The Codehaus. All Rights Reserved.

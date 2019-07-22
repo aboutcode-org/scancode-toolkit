@@ -1,2 +1,4 @@
 license_expression: proprietary-license
 is_license_text: yes
+ignorable_urls:
+    - http://www.confluent.io/confluent-community-license

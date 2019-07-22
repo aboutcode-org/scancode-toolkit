@@ -1,2 +1,4 @@
 license_expression: afl-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://flashlinux.org.uk/licenses/licenses/AFL-2.0.txt

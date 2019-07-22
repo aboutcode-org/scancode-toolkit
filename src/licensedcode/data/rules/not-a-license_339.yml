@@ -1,2 +1,4 @@
 is_negative: yes
 notes: not a license URL
+ignorable_urls:
+    - http://www.xmlpull.org/v1

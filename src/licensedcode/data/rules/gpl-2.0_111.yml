@@ -4,3 +4,5 @@ referenced_filenames:
     - COPYING
 notes: The Linux kernel source code is released under the GPL ... means we are talking GPL-2.0
     only
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-faq.html

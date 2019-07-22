@@ -1,2 +1,4 @@
 license_expression: tgppl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://allmydata.org/source/tahoe/trunk/COPYING.TGPPL.html

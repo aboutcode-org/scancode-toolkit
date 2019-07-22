@@ -5,3 +5,5 @@ referenced_filenames:
     - COPYING3
     - COPYING.RUNTIME
 notes: the exception is not super clear
+ignorable_urls:
+    - http://www.gnu.org/licenses/

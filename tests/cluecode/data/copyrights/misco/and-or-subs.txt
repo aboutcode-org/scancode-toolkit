@@ -1,0 +1,2 @@
+Copyright (c) 2013 Digia Plc and/or its subsidiary(-ies) and other contributors
+

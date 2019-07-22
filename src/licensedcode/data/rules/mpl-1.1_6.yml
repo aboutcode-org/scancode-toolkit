@@ -2,3 +2,5 @@ license_expression: mpl-1.1
 is_license_notice: yes
 minimum_coverage: 80
 notes: MPL in rabbitmq
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

@@ -1,0 +1,3 @@
+in a BSD-style copyright.)
+
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS

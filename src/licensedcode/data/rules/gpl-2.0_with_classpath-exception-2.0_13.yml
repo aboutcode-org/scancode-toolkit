@@ -4,3 +4,5 @@ relevance: 99
 referenced_filenames:
     - LICENSE
 notes: there is some ambiguity in the redundant gpl notice
+ignorable_urls:
+    - http://www.oracle.com/

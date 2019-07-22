@@ -1,2 +1,4 @@
 license_expression: mit-old-style-no-advert
 is_license_reference: yes
+ignorable_urls:
+    - http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29

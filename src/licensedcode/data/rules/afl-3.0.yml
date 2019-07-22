@@ -1,2 +1,4 @@
 license_expression: afl-3.0
 is_license_reference: yes
+ignorable_urls:
+    - http://opensource.org/licenses/afl-3.0.php

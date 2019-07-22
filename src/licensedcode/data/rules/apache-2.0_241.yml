@@ -4,3 +4,5 @@ relevance: 100
 referenced_filenames:
     - LICENSE.txt
     - NOTICE.tx
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0

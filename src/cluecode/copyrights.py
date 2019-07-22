@@ -174,18 +174,20 @@ patterns = [
     # a single comma is not an NNP
     (r'^,$', 'CC'),
 
+    # when lowercase with period. this is not a Copyright statement
+    (r'^copyright\.\)?$', 'NN'),
+
     # JUNK are things to ignore
     # All Rights Reserved. should be a terminator/delimiter.
-    (r'^([Aa]ll [Rr]ights? [Rr]eserved|ALL RIGHTS? RESERVED|[Aa]ll|ALL)$', 'JUNK'),
-    (r'^([Rr]eserved|RESERVED)[,]?$', 'JUNK'),
+    (r'^([Aa]ll|ALL|[Rr]ights?|RIGHTS?|[Rr]eserved[\.,]?|RESERVED[\.,]?)$', 'ALLRIGHT'),
 
     # found in crypto certificates and LDAP
-    (r'^(O=?|OU=?|XML)$', 'JUNK'),
+    (r'^(O=|OU=?|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
 
     (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
      r'Description:?|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
-    (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
+    (r'^(Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
     (r'^(Derivative|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
      r'[Ll]icen[cs]ors?|under)$', 'JUNK'),
@@ -211,7 +213,7 @@ patterns = [
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
     (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
     # various programming constructs
-    (r'^(var|this|return|function|thats?|xmlns|file)$', 'JUNK'),
+    (r'^(var|[Tt]his|return|function|thats?|xmlns|file)$', 'JUNK'),
 
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
@@ -227,20 +229,25 @@ patterns = [
      r'|available|Recipient\.?|LICENSEE|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
+     r'|you|means'
      r')$', 'JUNK'),
 
     # various trailing words that are junk
-    (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
+    (r'^(?:Copyleft|LegalCopyright|Distributed|Report|'
      r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?|'
      r'[Ff]unctionality|bgcolor|F+|Rewrote|Much|remains?,?|Implementation|earlier'
      r'|al.|is|[lL]aws?|Insert|url|[Ss]ee|[Pp]ackage\.?|'
-     r'|Covered|date|practices'
+     r'|Covered|date|practices|[Aa]ny|ANY'
      r'|fprintf.*'
      r'|CURDIR|Environment/Libraries|Environment/Base'
+     r'|Owner|behalf|know-how'
      r')$', 'JUNK'),
 
     # some copyright templates in licenses
     (r'^\$(date-of-software|date-of-document)$', 'JUNK'),
+
+    # some HTML tags
+    (r'^(width)$', 'JUNK'),
 
     # NOT A CAPS
     # [YEAR] W3C® (MIT, ERCIM, Keio, Beihang)."
@@ -259,6 +266,9 @@ patterns = [
     # with a comma, always CAPS (MIT alone is too error prone to be always tagged as CAPS
     (r'^MIT,$', 'CAPS'),
 
+    # MIT s common enough
+    (r'^MIT.?$', 'MIT'),
+
     # Various NN, exceptions to NNP or CAPS
     (r'^(Send|It|Mac|Support|Information|Various|Mouse|Wheel'
       r'|Vendors?|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
@@ -266,7 +276,10 @@ patterns = [
       r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
       r'|Agreements?\.?|Immediately|Any|Custom|References?|Each'
       r'|Education|AIRTM|Copying|Updated|Source|Code|Websites|Public\.?'
-      r'|Joint|Assignment'
+      r'|Joint|Assignment|Work|Attribution|Phrase|Timer|Manager'
+      r'|AGPL.?'
+      r'|Baslerstr\.?|E-[Mm]ail|Email'
+      r'|Authored|Linux|Target'
       r')?$', 'NN'),
     # |Products\.?
 
@@ -277,15 +290,18 @@ patterns = [
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
       r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|LegalTrademarks|OriginalFilename'
-      r'|Permission'
-      r'|PGP|Sort|Redistribution|Reserved\.?'
-      r')$', 'NN'),
+      r'|Permission|Section|Related|Government\.?'
+      r'|PGP|Sort|Redistribution|Products?\.?|Customer\'?s?'
+      r'|Site\.?|Except|Trademarks?|Logos?|Grants?\.?|Mode|Email\:?'
+    r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
-    (r'^(OR|VALUE|END|TODO|DOCUMENTATION|CHANGES|ISC-LICENSE)$', 'NN'),
+    (r'^(OR|VALUE|END|TODO|DOCUMENTATION|CHANGES|ISC-LICENSE'
+      r'|PROVIDED|SOFTWARE'
+    r')$', 'NN'),
 
-    # Various rare non CAPS but NNP, treated as full names
-    (r'^(FSF[\.,]?)$', 'NAME'),
+    # Various rare non CAPS but NNP/NAME, treated as full names
+    (r'^(FSFE?[\.,]?)$', 'NAME'),
 
     # Windows XP
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
@@ -295,7 +311,7 @@ patterns = [
       r'|null$'
       r'|:Licen[cs]e)$'
       r'|Agent\.?$'
-      r'|behalf$|its$'
+      r'|behalf$$'
       r'|[aA]nyone$', 'JUNK'),
 
     # when uppercase this is likely part of some SQL statement
@@ -365,13 +381,17 @@ patterns = [
 
     # copyright word or symbol
     # note the leading @ .... this may be a source of problems
-    (r'.?(@?([Cc]opyright)s?:?|[Cc]opr\.?|[(][Cc][)]|(COPYRIGHT)S?:?)', 'COPY'),
+    (r'.?(@?([Cc]opyright)(s|ed)?:?|[Cc]opr\.?|[(][Cc][)]|(COPYRIGHT)(S|ED)?:?)$', 'COPY'),
+
 
     # copyright in markup, until we strip markup: apache'>Copyright or left'>Copyright
     (r'[A-Za-z0-9]+[\'">]+[Cc]opyright', 'COPY'),
 
-    # A copyright line in .Net meta files
-    (r'^AssemblyCopyright$', 'COPY'),
+    # A copyright line in some manifest, meta or structured files
+    (r'^(AssemblyCopyright|AppCopyright)$', 'COPY'),
+
+    # with a trailing coma
+    (r'^Copyright,$', 'COPY'),
 
     # AT&T (the company), needs special handling
     (r'^AT\&T[\.,]?$', 'COMP'),
@@ -397,8 +417,11 @@ patterns = [
     (r'^L\.P\.?$', 'COMP'),
     (r'^[Ss]ubsidiar(y|ies)$', 'COMP'),
     (r'^[Ss]ubsidiary\(\-ies\)\.?$', 'COMP'),
-    # company suffix : SA, SAS, AS, AG, AB, AS, CO, labs followed by a dot
-    (r'^(S\.?A\.?S?\.?|Sas\.?|sas\.?|AS\.?|AG\.?|AB\.?|Labs?\.?|[Cc][Oo]\.?|Research|Center|INRIA|Societe).?$', 'COMP'),
+    # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
+    (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe)\.?$', 'COMP'),
+    # company suffix : AS: this is frequent beyond Norway.
+    (r'^AS.$', 'COMP'),
+    (r'^AS', 'CAPS'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # ( e.V. german) company suffix
@@ -448,7 +471,7 @@ patterns = [
     (r'^[Aa]uthor\.?$', 'AUTH'),
     (r'^[Aa]uthors\.?$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHS'),
-    (r'^[Cc]ontribut(ors?|ing)\.?$', 'CONTRIBUTORS'),
+    (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
@@ -534,7 +557,7 @@ patterns = [
     (r'^(The|Commons|[Ii]ntltool|[Tt]ext|software|Permissions?|Natural'
      r'|Docs?|Jsunittest|Asset|Packaging|Tool|Android|Win32|Do|Xalan'
      r'|Programming|Objects|Material|Improvement|Example|COPYING'
-     r'|Experimental|Additional|So)$', 'NN'),
+     r'|Experimental|Additional|So|HylaFAX)$', 'NN'),
 
     # composed proper nouns, ie. Jean-Claude or ST-Microelectronics
     # FIXME: what about a variant with spaces around the dash?
@@ -558,8 +581,8 @@ patterns = [
     # saxon genitive, ie. Philippe's
     (r"^[A-Z][a-z]+[']s$", 'NNP'),
 
-    # Uppercase dotted name, ie. P.
-    (r"^([A-Z][.]?|[A-Z]+[\.])$", 'PN'),
+    # Uppercase dotted name, ie. P. or DMTF.
+    (r"^([A-Z]+\.)+$", 'PN'),
 
     # proper noun with some separator and trailing comma
     (r"^[A-Z]+[.][A-Z][a-z]+[,]?$", 'NNP'),
@@ -645,6 +668,11 @@ grammar = """
     YR-RANGE: {<YR-AND>+}        #70
     YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
+
+#######################################
+# SUFFIX
+#######################################
+    ALLRIGHTRESERVED: { <ALLRIGHT><ALLRIGHT><ALLRIGHT>}  #allrightsreserved
 
 #######################################
 # NAMES and COMPANIES
@@ -762,6 +790,8 @@ grammar = """
     # Kaleb S. KEITHLEY
     NAME: {<NNP> <NNP> <CAPS>} #345
 
+    NAME3: {<YR-RANGE> <NNP> <NNP>+} #350
+
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
@@ -809,12 +839,15 @@ grammar = """
 
     NAME2: {<NAME> <EMAIL>}        #530
 
-    NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #535
+    #Project Mayo.
+    NAME3: {<YR-RANGE> <NAME2|COMPANY>+ <NNP>?}        #535
+
     NAME3: {<YR-RANGE> <NAME2|COMPANY>+ <CC> <YR-RANGE>}        #540
     NAME: {<NAME|NAME2>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
     NAME: {<NAME|NAME2>+ <CC|OF>? <NAME|NAME2|COMPANY>}        #560
 
-    # FIXME HIGHLY LIKELY SCREWED LAST MOD
+    #
+    NAME: {<NNP><NNP>}        #5611
     # strip Software from Copyright (c) Ian Darwin 1995. Software
     NAME3: {<NAME>+ <YR-RANGE>}        #5611
 
@@ -830,6 +863,11 @@ grammar = """
     NAME: {<PORTIONS> <OF> <NN> <NAME>+} #566
 
     NAME3: {<YR-RANGE> <NAME>+ <CONTRIBUTORS>?}        #570
+
+    #also accept trailing email and URLs
+    NAME3: {<NAME3> <EMAIL>?<URL>?}        #5701
+    NAME3: {<NAME3>+}        #5702
+
     NAME: {<NNP> <OF> <NNP>}        #580
     NAME: {<NAME> <NNP>}        #590
     NAME: {<NN|NNP|CAPS>+ <CC> <OTH>}        #600
@@ -982,8 +1020,11 @@ grammar = """
     # Copyright (c) 2007-2010 the original author or authors.
     NAME: {<NN> <JUNK> <AUTH|CONTRIBUTORS|AUTHS> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1960
 
-    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s>
+    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s> #19601
     NAME: {<NNP>  <PN>  <EMAIL>}
+
+    # Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
+    NAME: {<NAME>  <DASH>  <NAME>  <CAPS>} #19601
 
 #######################################
 # VARIOUS FORMS OF COPYRIGHT
@@ -998,7 +1039,14 @@ grammar = """
     #Copyright . 2008 Mycom Pany, inc.
     COPYRIGHT: {<COPY>+ <NN> <NAME3>}        #1560
 
-    COPYRIGHT: {<COPY> <COPY>? <NAME|NAME2|NAME3>+ <YR-RANGE>*}        #1570
+    # Copyright (c) 1995-2008 Software in the Public Interest
+    COPYRIGHT: {<COPY>+  <NAME3>  <IN>  <NN><NN>  <NNP>} #1562
+
+    # GeSHi (C) 2004 - 2007 Nigel McNie, MyCo Inc.
+    COPYRIGHT: {<NNP>  <COPY>+  <NAME3>  <COMPANY>+}        #1565
+
+    # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
+    COPYRIGHT: {<COPY>+ <NAME|NAME2|NAME3>+ <YR-RANGE>*}        #1570
 
     COPYRIGHT: {<COPY>+ <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
@@ -1089,6 +1137,9 @@ grammar = """
     # Copyright (c) 2017 Contributors et.al.
     COPYRIGHT: { <COPY>  <COPY>  <YR-RANGE>  <CONTRIBUTORS>  <OTH> } #2276
 
+    # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
+    COPYRIGHT: {<COPYRIGHT>  <COPY>+  <YR-RANGE>  <ALLRIGHTRESERVED>} #2290
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
@@ -1107,6 +1158,9 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}        #2430
 
     COPYRIGHT: {<COPYRIGHT2> <NAME|NAME2|NAME3>+}        #2860
+
+    # Rare form Copyright (c) 2008 All rights reserved by Amalasoft Corporation.
+    COPYRIGHT: {<COPYRIGHT2> <ALLRIGHTRESERVED> <BY> <COMPANY>}        #2861
 
     # Copyright (c) 1996 Adrian Rodriguez (adrian@franklins-tower.rutgers.edu) Laboratory for Computer Science Research Computing Facility
     COPYRIGHT: {<COPYRIGHT> <NAME>} #2400
@@ -1193,8 +1247,12 @@ grammar = """
     # copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc
     COPYRIGHT: {<COPY> <PN>?  <YR-RANGE> <BY> <NN> <NAME>}   #2007
 
+    # Copyright (C) 2005 SUSE Linux Products GmbH.
+    COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <NN>  <COMPANY>} #2008
+
     # COPYRIGHT (c) 2006 - 2009 DIONYSOS
-    COPYRIGHT: {<COPYRIGHT2> <CAPS>} # 2008
+    COPYRIGHT: {<COPYRIGHT2> <CAPS>} #2009
+
     # Copyright (C) 2000 See Beyond Communications Corporation
     COPYRIGHT2: {<COPYRIGHT2> <JUNK> <COMPANY>} # 2010
 
@@ -1211,11 +1269,12 @@ grammar = """
     #Copyright or Copr. CNRS
     COPYRIGHT: {<COPY> <NN> <COPY> <COPYRIGHT|NAME5>}        #2560
     COPYRIGHT: {<COPYRIGHT2> <BY> <NAME5>} #2561
+
     # Copyright (c) 2004, The Codehaus
     COPYRIGHT: {<COPYRIGHT2> <NN> <NNP>} #2562
 
     # Copyright (c) 2007-2014 IOLA and Ole Laursen.
-    COPYRIGHT: {<COPYRIGHT> <ANDCO>}
+    COPYRIGHT: {<COPYRIGHT> <ANDCO>}  #2563
 
     # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
     COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
@@ -1223,9 +1282,41 @@ grammar = """
     #copyright of CERN. or copyright CERN.
     COPYRIGHT: {<COPY> <OF>? <PN>}        #26371
 
+    COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
+
+    COPYRIGHT: {<COPYRIGHT2> <COPY> <NN> <NNP> <ALLRIGHTRESERVED>} #3000
+
+    # Copyright (c) World Wide Web Consortium , Massachusetts Institute of Technology ,
+    # Institut National de Recherche en Informatique et en Automatique , Keio University
+    COPYRIGHT: {<COPYRIGHT>  <OF>  <COMPANY>  <NAME>  <NAME>  <COMPANY> } #3000
+
+    #  Copyright (c) 1988, 1993 The Regents of the University ofCalifornia. All rights reserved.
+    COPYRIGHT: {<COPYRIGHT>  <OF>  <NN>  <UNI>  <NN|OF>? <NNP>?  <ALLRIGHTRESERVED> } #3010
+
+    # (C) Unpublished Work of Sample Group, Inc.  All Rights Reserved.
+    COPYRIGHT: {<COPY>+  <NNP>  <NN>  <OF>  <COMPANY>} #3020
+
+    # Foobar Company, All Rights Reserved, (C) 2005
+    COPYRIGHT: {<COMPANY> <ALLRIGHTRESERVED> <COPYRIGHT2>} #3030
+
+    # Copyright (c) 2000 United States Government as represented by the Secretary of the Navy. All rights reserved.
+    COPYRIGHT: {<COPYRIGHT>  <NN>  <NN>  <NN>  <BY>  <NN>  <NAME>  <ALLRIGHTRESERVED>} #3035
+
+    # Copyright (c) 2007-2008, Y Giridhar Appaji Nag <giridhar@appaji.net>
+    COPYRIGHT: {<COPYRIGHT>  <COMPANY|NAME|NAME2|NAME3>+} #3040
+
+    # copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc.
+    COPYRIGHT: {<COPYRIGHT2>  <BY>  <COMPANY>} #3050
+
+    # Copyright (c) 2007 Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    COPYRIGHT: {<COPYRIGHT>  <NAME5>  <ANDCO>} #3060
+
+#######################################
 # Authors
+#######################################
     # Created by XYZ
     AUTH: {<AUTH2>+ <BY>}        #2645
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2|NAME3>+ <YR-RANGE>*}        #2660
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
@@ -1241,7 +1332,14 @@ grammar = """
     AUTHOR: {<AUTHOR> <ANDAUTH>+}        #2760
 
     # developed by Mitsubishi and NTT.
-    AUTHOR: {<AUTH|AUTHS|AUTH2> <BY>? <NNP> <CC> <PN>}
+    AUTHOR: {<AUTH|AUTHS|AUTH2> <BY>? <NNP> <CC> <PN>} #2761
+
+    # developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
+    AUTHOR: {<AUTHOR>  <NN>  <NAME>  <NAME>} #2762
+
+#######################################
+# Mixed AUTHORS and COPYRIGHTS
+#######################################
 
     # Compounded statements usings authors
     # found in some rare cases with a long list of authors.
@@ -1249,6 +1347,13 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
+    # copyrighted by MIT
+    COPYRIGHT: {<COPY>  <BY>  <MIT>} #2840
+
+#######################################
+# Last resort catch all ending with allrights
+#######################################
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <NNP|CAPS|YR-RANGE|NAME|NAME2|NAME3|NAME5|NAME5|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
 """
 
@@ -1269,8 +1374,8 @@ def strip_some_punct(s):
     """
     if s:
         s = s.strip(''','"}{-_:;&''')
-        s = s.lstrip('.>)]')
-        s = s.rstrip('<([')
+        s = s.lstrip('.>)]\/')
+        s = s.rstrip('<([\/')
     return s
 
 
@@ -1371,6 +1476,7 @@ def refine_copyright(c):
     Refine a detected copyright string.
     FIXME: the grammar should not allow this to happen.
     """
+    c = c.strip()
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
     c = c.strip('/ ')
@@ -1378,6 +1484,8 @@ def refine_copyright(c):
     c = strip_all_unbalanced_parens(c)
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
+    c = c.replace('AppCopyright', 'Copyright')
+    c = c.replace('JCOPYRIGHT', 'Copyright')
     # FIXME: this should be in the grammar, but is hard to get there right
     # these are often artifacts of markup
     c = c.replace('COPYRIGHT Copyright', 'Copyright')
@@ -1391,6 +1499,7 @@ def refine_copyright(c):
     c = c.replace('copyright" Copyright', 'Copyright')
 
     c = c.replace('<p>', ' ')
+    c = c.strip()
 
     prefixes = set([
         'by',
@@ -1411,7 +1520,9 @@ def refine_copyright(c):
         s = s[:-1]
 
     s = u' '.join(s)
+    s = s.strip('+')
     s = strip_trailing_period(s)
+    s = s.strip()
     return s
 
 
@@ -1454,9 +1565,10 @@ def _refine_names(s, prefixes=PREFIXES):
     s = strip_numbers(s)
     s = strip_all_unbalanced_parens(s)
     s = strip_some_punct(s)
-
-    return strip_prefixes(s, prefixes)
-
+    s = s.strip()
+    s = strip_prefixes(s, prefixes)
+    s = s.strip()
+    return s
 
 JUNK_HOLDERS = frozenset([
     'property',
@@ -1492,6 +1604,11 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'works',
         'present',
         'at',
+        # this may truncate rare companies named "all something"
+        'all',
+        'right',
+        'rights',
+        'reserved',
     ])
 ))
 
@@ -1502,6 +1619,9 @@ HOLDERS_SUFFIXES = frozenset([
     'licensing@',
     '(minizip)',
     'website',
+    '(c)',
+    '<http',
+    '/>',
 ])
 
 
@@ -1514,7 +1634,11 @@ def refine_holder(s, prefixes=HOLDERS_PREFIXES, junk_holders=JUNK_HOLDERS,
     refined = _refine_names(s, prefixes)
     refined = strip_suffixes(refined, suffixes)
     refined = refined.strip()
+    refined = refined.strip('+')
+    refined = refined.replace('( ', ' ').replace(' )', ' ')
+    refined = refined.strip()
     refined = strip_trailing_period(refined)
+    refined = refined.strip()
 
     if refined and refined.lower() not in junk_holders:
         return refined
@@ -1525,12 +1649,13 @@ JUNK_AUTHORS = frozenset([
     'james hacker.',
     'james random hacker.',
     'contributor. c. a',
+    'grant the u.s. government and others',
 ])
 
 AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
-        'author', 'authors', 'author(s)', 'authored', 'created'
+        'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
         ])
 ))
 
@@ -1582,8 +1707,12 @@ def strip_trailing_period(s):
     """
     if not s:
         return s
+
+    s = s.strip()
+
     if not s.endswith('.'):
         return s
+
 
     if len(s) < 3 :
         return s
@@ -1608,6 +1737,15 @@ def refine_date(c):
     FIXME: the grammar should not allow this to happen.
     """
     return strip_some_punct(c)
+
+
+# Set of authors that get detected and are junk/false positive
+# note: this must be lowercase and be kept to a minimum.
+# A junk copyright cannot be resolved otherwise by parsing with a grammar.
+# It would be best not to have to resort to this, but this is practical.
+JUNK_AUTHORS = frozenset([
+    'contributing project',
+])
 
 
 # Set of statements that get detected and are junk/false positive
@@ -1686,11 +1824,15 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright merged arm',
     # common in sqlite
     '(c) as',
-
+#    'copyright as',
     # from libmng - libmng.spec
     # Copyright: AS IS
     # Group: System Environment/Libraries
-    'copyright as is group system'
+    'copyright as is group system',
+
+    'copyright united states',
+    'copyright as is group',
+
 ])
 
 # simple tokenization: spaces and some punctuation
@@ -1724,8 +1866,9 @@ class CopyrightDetector(object):
         return u' '.join(node_string.split())
 
     def detect(self, numbered_lines,
-                copyrights=True, holders=True, authors=True, include_years=True,
-                _junk=JUNK_COPYRIGHTS):
+                copyrights=True, holders=True, authors=True,
+                include_years=True, include_allrights=False,
+                _junk=JUNK_COPYRIGHTS, _junk_authors=JUNK_AUTHORS):
         """
         Yield tuples of (detection type, detected value, start_line, end_line)
         where the type is one of copyrights, authors, holders. Use an iterable
@@ -1752,16 +1895,22 @@ class CopyrightDetector(object):
 
         CopyrightDetector_as_str = CopyrightDetector.as_str
 
-        if include_years:
-            year_labels = ()
+        if include_allrights:
+            non_copyright_labels = frozenset()
         else:
-            year_labels = frozenset(['YR-RANGE', 'YR', 'YR-AND', 'YR-PLUS', ])
+            non_copyright_labels = frozenset([
+                'ALLRIGHT', 'ALLRIGHTRESERVED', ])
+
+        if not include_years:
+            non_copyright_labels = non_copyright_labels | frozenset([
+                'YR-RANGE', 'YR', 'YR-AND', 'YR-PLUS'])
 
         non_holder_labels = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
             'EMAIL', 'URL',
             'HOLDER', 'AUTHOR',
+            'ALLRIGHT', 'ALLRIGHTRESERVED',
             ])
 
         # then walk the parse tree, collecting copyrights, years and authors
@@ -1769,7 +1918,7 @@ class CopyrightDetector(object):
             if not isinstance(tree_node, Tree):
                 continue
 
-            node_text = CopyrightDetector_as_str(tree_node, ignores=year_labels)
+            node_text = CopyrightDetector_as_str(tree_node, ignores=non_copyright_labels)
             tree_node_label = tree_node.label()
 
             if 'COPYRIGHT' in tree_node_label:
@@ -1792,7 +1941,7 @@ class CopyrightDetector(object):
 
             elif authors and tree_node_label == 'AUTHOR':
                 refined_auth = refine_author(node_text)
-                if refined_auth:
+                if refined_auth and refined_auth.lower() not in _junk_authors:
                     if TRACE: logger_debug('CopyrightDetector: detected authors:', refined_auth, start_line, end_line)
                     yield 'authors', refined_auth, start_line, end_line
 
@@ -2030,6 +2179,7 @@ def prepare_text_line(line):
     line = line.replace(u'©', u' (c) ')
     line = line.replace(u'\251', u' (c) ')
     line = line.replace('&copy;', ' (c) ')
+    line = line.replace('&copy', ' (c) ')
     line = line.replace('&#169;', ' (c) ')
     line = line.replace('&#xa9;', ' (c) ')
     line = line.replace('&#XA9;', ' (c) ')

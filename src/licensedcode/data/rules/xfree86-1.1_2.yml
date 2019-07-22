@@ -1,2 +1,4 @@
 license_expression: xfree86-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.xfree86.org/current/LICENSE4.html

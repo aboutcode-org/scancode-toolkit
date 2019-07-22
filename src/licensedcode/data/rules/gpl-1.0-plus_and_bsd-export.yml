@@ -4,3 +4,7 @@ minimum_coverage: 80
 referenced_filenames:
     - COPYING
 notes: found in the Linux kernel
+ignorable_copyrights:
+    - Copyright (c) Cavium Networks (support@cavium.com).
+ignorable_emails:
+    - support@cavium.com

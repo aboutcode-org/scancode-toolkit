@@ -1,3 +1,5 @@
 license_expression: mpl-1.1
 is_license_reference: yes
 notes: http://www.mozilla.org/MPL/1.1/
+ignorable_urls:
+    - http://www.mozilla.org/MPL/1.1/

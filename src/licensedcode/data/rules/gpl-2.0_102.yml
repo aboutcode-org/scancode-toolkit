@@ -13,3 +13,6 @@ notes: |
     The corresponding text version at
     http://web.archive.org/web/20050507090312/http://www.fsf.org/copyleft/gpl.txt
     was not updated for a few days.
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation

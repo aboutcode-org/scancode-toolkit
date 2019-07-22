@@ -1,3 +1,6 @@
 license_expression: proprietary-license
 is_license_notice: yes
 notes: WR proprietary notice
+ignorable_copyrights:
+    - Copyright 1998 Integrated Systems, Inc.
+    - Copyright 2000 Wind River Systems, Inc.

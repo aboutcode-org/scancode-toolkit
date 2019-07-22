@@ -1,2 +1,6 @@
 license_expression: gfdl-1.2
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2000,2001,2002 Free Software Foundation, Inc.
+ignorable_urls:
+    - http://www.gnu.org/copyleft

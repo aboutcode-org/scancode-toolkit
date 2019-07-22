@@ -1,2 +1,4 @@
 license_expression: sleepycat
 is_license_reference: yes
+ignorable_urls:
+    - http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html

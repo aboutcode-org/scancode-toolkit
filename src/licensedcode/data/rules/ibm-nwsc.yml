@@ -1,2 +1,4 @@
 license_expression: ibm-nwsc
 is_license_reference: yes
+ignorable_urls:
+    - http://www.ibm.com/developerworks/data/zones/informix/library/techarticle/nair/0204nairlicense.html

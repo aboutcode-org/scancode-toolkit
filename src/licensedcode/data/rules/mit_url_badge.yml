@@ -1,2 +1,5 @@
 license_expression: mit
 is_license_reference: yes
+ignorable_urls:
+    - https://img.shields.io/badge/License-MIT-yellow.svg
+    - https://opensource.org/licenses/MIT

@@ -1,2 +1,4 @@
 license_expression: epl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://opensource.org/licenses/eclipse-1.0.php

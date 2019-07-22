@@ -1,2 +1,6 @@
 license_expression: sybase
 is_license_notice: yes
+ignorable_copyrights:
+    - Portions Copyright (c) 1983-2002 Sybase, Inc.
+ignorable_urls:
+    - http://www.sybase.com/developer/opensource

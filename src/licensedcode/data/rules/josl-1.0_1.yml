@@ -1,2 +1,4 @@
 license_expression: josl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://code.google.com/p/jabber-net/source/browse/branches/RELEASE_1_0/LICENSE.txt

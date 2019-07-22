@@ -4,3 +4,5 @@ minimum_coverage: 90
 referenced_filenames:
     - COPYING
 notes: openib
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html

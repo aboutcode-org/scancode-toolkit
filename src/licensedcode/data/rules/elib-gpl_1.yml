@@ -1,2 +1,4 @@
 license_expression: elib-gpl
 is_license_reference: yes
+ignorable_urls:
+    - http://www.math.utah.edu/docs/info/elib_3.html

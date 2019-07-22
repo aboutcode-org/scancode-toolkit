@@ -1,2 +1,4 @@
 license_expression: open-group
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opengroup.org/openmotif/license/

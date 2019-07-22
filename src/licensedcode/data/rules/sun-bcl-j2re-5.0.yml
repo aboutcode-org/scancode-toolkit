@@ -1,2 +1,4 @@
 license_expression: sun-bcl-j2re-5.0
 is_license_reference: yes
+ignorable_urls:
+    - http://java.sun.com/j2se/1.5.0/jre-1_5_0_06-license.txt

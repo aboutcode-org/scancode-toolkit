@@ -1,2 +1,4 @@
 license_expression: libpng
 is_license_reference: yes
+ignorable_urls:
+    - http://libpng.org/pub/png/src/libpng-LICENSE.txt

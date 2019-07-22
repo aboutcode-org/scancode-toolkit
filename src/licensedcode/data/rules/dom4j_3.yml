@@ -1,2 +1,6 @@
 license_expression: dom4j
 is_license_text: yes
+ignorable_urls:
+    - http://www.dom4j.org/
+ignorable_emails:
+    - dom4j-info@metastuff.com

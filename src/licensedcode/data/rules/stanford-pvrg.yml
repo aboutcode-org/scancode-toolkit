@@ -1,2 +1,4 @@
 license_expression: stanford-pvrg
 is_license_reference: yes
+ignorable_urls:
+    - http://marathon.csee.usf.edu/Mammography/JpegInfo.html

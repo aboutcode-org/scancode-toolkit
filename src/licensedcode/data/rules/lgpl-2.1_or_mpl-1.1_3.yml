@@ -4,3 +4,5 @@ minimum_coverage: 85
 referenced_filenames:
     - COPYING-LGPL-2.1
     - COPYING-MPL-1.1
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

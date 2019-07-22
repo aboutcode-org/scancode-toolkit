@@ -1,2 +1,8 @@
 license_expression: rpsl-1.0
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1995-2002 RealNetworks, Inc.
+ignorable_urls:
+    - https://www.helixcommunity.org/content/complicense
+    - https://www.helixcommunity.org/content/rcsl
+    - https://www.helixcommunity.org/content/rpsl

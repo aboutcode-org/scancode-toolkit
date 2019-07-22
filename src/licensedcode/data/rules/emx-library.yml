@@ -1,2 +1,4 @@
 license_expression: emx-library
 is_license_reference: yes
+ignorable_urls:
+    - http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX

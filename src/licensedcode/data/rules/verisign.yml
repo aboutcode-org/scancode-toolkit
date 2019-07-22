@@ -1,2 +1,4 @@
 license_expression: verisign
 is_license_reference: yes
+ignorable_urls:
+    - http://www.verisign.com/repository/CPS

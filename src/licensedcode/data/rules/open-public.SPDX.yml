@@ -2,3 +2,6 @@ license_expression: open-public
 is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
+ignorable_authors:
+    - means Lutris Technologies, Inc.
+    - the Initial Developer

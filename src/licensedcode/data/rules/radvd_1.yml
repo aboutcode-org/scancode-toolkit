@@ -1,2 +1,4 @@
 license_expression: radvd
 is_license_reference: yes
+ignorable_urls:
+    - https://github.com/reubenhwk/radvd/blob/master/COPYRIGHT

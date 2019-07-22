@@ -1,2 +1,4 @@
 license_expression: public-domain
 is_license_tag: yes
+ignorable_copyrights:
+    - copyright Public Domain

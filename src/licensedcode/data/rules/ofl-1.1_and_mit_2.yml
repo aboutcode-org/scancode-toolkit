@@ -1,2 +1,4 @@
 license_expression: ofl-1.1 AND mit
 is_license_tag: yes
+ignorable_urls:
+    - http://fontawesome.io/license

@@ -1,2 +1,4 @@
 license_expression: opera-widget-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://dev.opera.com/articles/view/opera-widgets-sdk/

@@ -1,2 +1,4 @@
 license_expression: openssl-ssleay
 is_license_reference: yes
+ignorable_urls:
+    - http://www.openssl.org/source/license.html

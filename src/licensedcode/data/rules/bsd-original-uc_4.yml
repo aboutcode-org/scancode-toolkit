@@ -1,2 +1,4 @@
 license_expression: bsd-original-uc
 is_license_reference: yes
+ignorable_urls:
+    - http://www.freebsd.org/copyright/license.html

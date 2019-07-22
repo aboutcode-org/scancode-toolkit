@@ -1,2 +1,4 @@
 license_expression: mit OR unlicense
 is_license_notice: yes
+ignorable_urls:
+    - http://unlicense.org/

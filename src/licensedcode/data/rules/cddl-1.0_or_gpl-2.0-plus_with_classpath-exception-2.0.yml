@@ -3,3 +3,8 @@ is_license_notice: yes
 relevance: 99
 minimum_coverage: 80
 notes: weird format for cddl + gpl + classpath contains extra notice for jurisdiction
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_authors:
+    - the Initial Developer

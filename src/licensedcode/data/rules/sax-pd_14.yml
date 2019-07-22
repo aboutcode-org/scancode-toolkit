@@ -1,3 +1,5 @@
 license_expression: sax-pd
 is_license_tag: yes
 relevance: 100
+ignorable_urls:
+    - http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt

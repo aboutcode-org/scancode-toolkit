@@ -3,3 +3,7 @@ is_license_text: yes
 referenced_filenames:
     - COPYING.txt
 notes: this is an old ruby license circa 1999.
+ignorable_authors:
+    - Yukihiro Matsumoto <matz@netlab.co.jp>
+ignorable_emails:
+    - matz@netlab.co.jp

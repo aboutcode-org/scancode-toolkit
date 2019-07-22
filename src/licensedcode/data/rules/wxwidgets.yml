@@ -1,2 +1,4 @@
 license_expression: wxwidgets
 is_license_reference: yes
+ignorable_urls:
+    - http://www.wxwidgets.org/about/licence.htm

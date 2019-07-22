@@ -4,3 +4,5 @@ relevance: 100
 minimum_coverage: 99
 referenced_filenames:
     - license.txt
+ignorable_urls:
+    - https://github.com/Tencent/rapidjson/blob/master/license.txt

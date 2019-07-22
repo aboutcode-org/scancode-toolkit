@@ -1,2 +1,4 @@
 license_expression: radvd
 is_license_reference: yes
+ignorable_urls:
+    - http://www.litech.org/radvd/

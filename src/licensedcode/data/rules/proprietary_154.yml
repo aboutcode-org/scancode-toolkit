@@ -1,2 +1,8 @@
 license_expression: proprietary-license
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Software AG
+ignorable_authors:
+    - Software AG
+ignorable_urls:
+    - http://www.softwareag.com/developer/legal.htm

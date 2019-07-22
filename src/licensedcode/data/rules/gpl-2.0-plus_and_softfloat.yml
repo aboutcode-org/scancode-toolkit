@@ -5,3 +5,5 @@ minimum_coverage: 60
 referenced_filenames:
     - COPYING
 notes: this combo is alway used with a gpl-2.0-plus
+ignorable_authors:
+    - John R. Hauser.

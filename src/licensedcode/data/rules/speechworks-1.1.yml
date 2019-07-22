@@ -1,2 +1,4 @@
 license_expression: speechworks-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.speech.cs.cmu.edu/openvxi/OpenVXI_1_4/License.txt

@@ -1,2 +1,4 @@
 license_expression: lgpl-2.0 WITH mini-xml-exception-lgpl-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.minixml.org/documentation.php/license.html

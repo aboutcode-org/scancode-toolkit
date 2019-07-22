@@ -1,2 +1,4 @@
 license_expression: adobe-dng-sdk
 is_license_text: yes
+ignorable_urls:
+    - http://www.adobe.com/

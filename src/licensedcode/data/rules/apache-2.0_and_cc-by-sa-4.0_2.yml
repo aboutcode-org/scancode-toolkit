@@ -5,3 +5,5 @@ referenced_filenames:
     - LICENSE
     - CONTRIBUTING.md
     - LICENSE.docs
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/4.0

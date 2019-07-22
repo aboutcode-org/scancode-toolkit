@@ -1,2 +1,4 @@
 license_expression: artistic-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.perlfoundation.org/attachment/legal/artistic-2_0.txt

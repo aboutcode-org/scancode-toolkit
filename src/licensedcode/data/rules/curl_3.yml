@@ -1,2 +1,4 @@
 license_expression: curl
 is_license_reference: yes
+ignorable_urls:
+    - http://curl.haxx.se/legal/licmix.html

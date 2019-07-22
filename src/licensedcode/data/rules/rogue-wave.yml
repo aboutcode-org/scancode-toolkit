@@ -1,2 +1,4 @@
 license_expression: rogue-wave
 is_license_reference: yes
+ignorable_urls:
+    - http://www.roguewave.com/products.aspx

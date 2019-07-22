@@ -49,7 +49,7 @@
         "count": 1
       },
       {
-        "value": "Copyright (c) - Members of the Gmerlin project gmerlin-general@lists.sourceforge.net",
+        "value": "Copyright (c) - Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
         "count": 1
       }
     ],
@@ -536,7 +536,7 @@
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net",
+          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
           "start_line": 4,
           "end_line": 6
         }

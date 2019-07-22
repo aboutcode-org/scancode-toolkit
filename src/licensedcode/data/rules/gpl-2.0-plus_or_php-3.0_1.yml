@@ -4,3 +4,5 @@ relevance: 100
 minimum_coverage: 60
 referenced_filenames:
     - LICENSE
+ignorable_emails:
+    - core@php.net

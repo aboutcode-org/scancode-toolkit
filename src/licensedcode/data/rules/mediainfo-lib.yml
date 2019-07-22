@@ -1,2 +1,4 @@
 license_expression: mediainfo-lib
 is_license_reference: yes
+ignorable_urls:
+    - http://mediainfo.sourceforge.net/en

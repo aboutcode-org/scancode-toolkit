@@ -1,3 +1,5 @@
 license_expression: tcl
 is_license_text: yes
 notes: tcl format minor change
+ignorable_authors:
+    - grant the U.S. Government and others

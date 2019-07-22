@@ -1,2 +1,4 @@
 license_expression: openldap-2.8
 is_license_reference: yes
+ignorable_urls:
+    - http://www.openldap.org/software/release/license.html

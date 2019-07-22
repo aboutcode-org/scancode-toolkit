@@ -1,2 +1,4 @@
 license_expression: efl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - https://fedoraproject.org/wiki/Licensing/Eiffel_Forum_License_V1

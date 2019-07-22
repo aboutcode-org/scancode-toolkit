@@ -11,3 +11,7 @@ notes: |
     of files and minor typos.
     The Ruby license was first introduced there in early 1998
     https://github.com/ruby/ruby/blob/7ea2ceddb832b9973694fecac9fe3c30400735ba/README
+ignorable_authors:
+    - Yukihiro Matsumoto <matz@zetabits.com>
+ignorable_emails:
+    - matz@zetabits.com

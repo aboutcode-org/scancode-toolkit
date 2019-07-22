@@ -32,10 +32,9 @@ import re
 
 import pytest
 
+import cluecode_test_utils
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
-
-import cluecode_test_utils
 
 
 pytestmark = pytest.mark.scanslow
@@ -50,16 +49,13 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 expected_failures = set('''
-    test_fossology_copyright_testdata14
     test_fossology_copyright_testdata19
-    test_fossology_copyright_testdata18
-    test_fossology_copyright_testdata83
-    test_fossology_copyright_testdata87
-    test_fossology_copyright_testdata78
-    test_fossology_copyright_testdata5
-    test_fossology_copyright_testdata86
-    test_fossology_copyright_testdata126
     test_fossology_copyright_testdata31
+    test_fossology_copyright_testdata78
+    test_fossology_copyright_testdata86
+    test_fossology_copyright_testdata14
+    test_fossology_copyright_testdata5
+    test_fossology_copyright_testdata24
     '''.split()
 )
 

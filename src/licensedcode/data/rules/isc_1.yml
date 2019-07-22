@@ -1,2 +1,4 @@
 license_expression: isc
 is_license_reference: yes
+ignorable_urls:
+    - https://www.isc.org/isc-license-1.0.html

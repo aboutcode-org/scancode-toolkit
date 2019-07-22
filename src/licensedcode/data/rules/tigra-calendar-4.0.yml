@@ -1,2 +1,4 @@
 license_expression: tigra-calendar-4.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.javascript-calendar.com/docs/#license

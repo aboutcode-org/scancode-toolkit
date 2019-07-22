@@ -1,2 +1,4 @@
 license_expression: lppl-1.3c
 is_license_reference: yes
+ignorable_urls:
+    - https://latex-project.org/lppl.txt

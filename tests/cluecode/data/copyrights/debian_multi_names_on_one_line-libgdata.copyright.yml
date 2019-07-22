@@ -8,7 +8,7 @@ copyrights:
   - copyright 2000 Eskil Heyn Olsen , 2000 Ximian, Inc.
   - copyright 1998 The Free Software Foundation , 2000 Ximian, Inc.
   - copyright 1998-2005 The OpenLDAP Foundation
-  - Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California
+  - Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California, USA.
   - Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001
     Critical Path
   - (c) Copyright 1996 Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation
@@ -18,7 +18,7 @@ copyrights:
   - copyright 2002 Andrea Campi
   - copyright 2003 Andrea Campi
   - Copyright 2002 Jonas Borgstrom <jonas@codefactory.se> 2002 Daniel Lundin <daniel@codefactory.se>
-    2002 CodeFactory AB
+    2002 CodeFactory AB.
   - copyright 1996 Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation
     and Siemens Rolm Communications Inc.
   - copyright 1986-2000 Hiram Clawson
@@ -32,7 +32,7 @@ holders:
   - Eskil Heyn Olsen , Ximian, Inc.
   - The Free Software Foundation , Ximian, Inc.
   - The OpenLDAP Foundation
-  - The OpenLDAP Foundation , Redwood City, California
+  - The OpenLDAP Foundation , Redwood City, California, USA.
   - Eric Busboom , The Software Studio Critical Path
   - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
     Rolm Communications Inc.
@@ -72,7 +72,7 @@ holders_summary:
     count: 1
   - value: The OpenLDAP Foundation
     count: 1
-  - value: The OpenLDAP Foundation , Redwood City, California
+  - value: The OpenLDAP Foundation , Redwood City, California, USA.
     count: 1
   - value: The Regents of the University of California
     count: 1

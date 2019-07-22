@@ -1,3 +1,7 @@
 license_expression: unlicense
 is_license_text: yes
 minimum_coverage: 80
+ignorable_copyrights:
+    - copyright law. THE SOFTWARE IS PROVIDED AS
+ignorable_urls:
+    - http://unlicense.org/

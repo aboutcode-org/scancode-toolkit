@@ -1,2 +1,4 @@
 is_negative: yes
 notes: part of the aladdin license but not an RSA notice
+ignorable_urls:
+    - http://www.ietf.org/rfc/rfc1321.txt
