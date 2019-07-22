@@ -246,6 +246,15 @@ def make_test(license_test, regen=False):
                     '',
                     itext,
                 ])
+            else:
+                failure_trace.extend(['',
+                    '======= NO MATCH ====', 
+                    '======= Not Matched Query Text for:',
+                    'file://{test_file}'.format(**locals())
+                ])
+                if test_data_file:
+                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                
             # this assert will always fail and provide a detailed failure trace
             assert '\n'.join(results) == '\n'.join(failure_trace)
 

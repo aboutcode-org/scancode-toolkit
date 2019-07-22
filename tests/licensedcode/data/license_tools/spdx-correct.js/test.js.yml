@@ -1,2 +1,6 @@
-expected_failure: yes
-notes: no licenses, but the rule has been removed not-a-license_182.RULE
+license_expressions:
+  - mit
+  - mit
+  - mit
+  - mit
+notes: no license shoud be found, but this is a tough act

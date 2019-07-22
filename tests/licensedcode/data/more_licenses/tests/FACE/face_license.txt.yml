@@ -1,4 +1,5 @@
 license_expressions:
-    - unknown
-expected_failure: yes
+    - ace-tao
+    - ace-tao
+    - ace-tao
 
