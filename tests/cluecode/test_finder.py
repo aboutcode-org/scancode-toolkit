@@ -27,15 +27,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import re
 import os
+import re
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
-
+from commoncode import compat
 from cluecode import finder
-from unittest.case import expectedFailure
-from cluecode.finder import urls_regex
 from cluecode.finder import find
+from cluecode.finder import urls_regex
 
 
 def find_emails_tester(lines_or_location, with_lineno=False, unique=True):
@@ -721,7 +721,7 @@ class TestUrl(FileBasedTesting):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
         for _key, url, _line, _lineno in find(test_file, patterns):
-            assert type(url) == str
+            assert type(url) == compat.unicode
 
 
 class TestSearch(FileBasedTesting):

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -26,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import os
+import sys
 from unittest.case import skipIf
 
 from commoncode import command
@@ -34,135 +36,197 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestCommand(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_execute2_non_ascii_output(self):
+    @skipIf(not py2, 'Behaviour of console encodings changed in Python3')
+    def test_execute2_non_ascii_output_py2(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
+        python = sys.executable
         rc, stdout, stderr = command.execute2(
-            b'python', ['-c', "print b'non ascii: \\xe4 just passed it !'"]
+            python, ['-c', "print b'non ascii: \\xe4 just passed it !'"]
         )
+        assert b'' == stderr
+        assert b'non ascii: a just passed it !' == stdout
         assert rc == 0
-        assert stderr == b''
-
-        # converting to Unicode could cause an "ordinal not in range..."
-        # exception
-        assert stdout == b'non ascii:  just passed it !'
+        # do not throw exception
         compat.unicode(stdout)
+
+    @skipIf(not py3, 'Behaviour of console encodings changed in Python3')
+    def test_execute2_non_ascii_output_py3(self):
+        # Popen returns a *binary* string with non-ascii chars: skips these
+        python = sys.executable
+        rc, stdout, stderr = command.execute2(
+            python, ['-c', 'print("non ascii: été just passed it !")']
+        )
+        assert '' == stderr
+        assert 'non ascii: ete just passed it !' == stdout
+        assert 0 == rc
+        # do not throw exception
+        stdout.encode('ascii')
 
     @skipIf(not on_linux, 'Linux only')
     def test_update_path_environment_linux_from_bytes(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'/usr/bin:/usr/local'}
-            pathsep = b':'
+            if py2:
+                environ = {b'PATH': b'/usr/bin:/usr/local'}
+                pathsep = b':'
+            else:
+                environ = {'PATH': '/usr/bin:/usr/local'}
+                pathsep = ':'
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {b'PATH': b'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': 'foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         unicode_path = u'/bin/foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
     @skipIf(not on_linux, 'Linux only')
     def test_update_path_environment_linux_from_unicode(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'/usr/bin:/usr/local'}
-            pathsep = b':'
+
+            if py2:
+                environ = {b'PATH': b'/usr/bin:/usr/local'}
+                pathsep = b':'
+            else:
+                environ = {'PATH': '/usr/bin:/usr/local'}
+                pathsep = ':'
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {b'PATH': b'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': 'foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         bytes_path = b'/bin/foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {b'PATH': b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
     @skipIf(not on_mac, 'Mac only')
     def test_update_path_environment_mac_from_bytes(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'/usr/bin:/usr/local'}
-            pathsep = b':'
+                environ = {'PATH': '/usr/bin:/usr/local'}
+                pathsep = ':'
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': 'foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         unicode_path = u'/bin/foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         bytes_path = b'foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
     @skipIf(not on_mac, 'Mac only')
     def test_update_path_environment_mac_from_unicode(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'/usr/bin:/usr/local'}
-            pathsep = b':'
+            environ = {'PATH': '/usr/bin:/usr/local'}
+            pathsep = ':'
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {'PATH': 'foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': 'foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         bytes_path = b'/bin/foo\xb1bar'
         command.update_path_environment(bytes_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+        if py2:
+            assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
 
-    @skipIf(not on_windows, 'Windows only')
-    def test_update_path_environment_windows_from_bytes(self):
+        if py2:
+            assert {'PATH': '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local'} == MockOs.environ
+        else:
+            assert {'PATH': '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local'} == MockOs.environ
+
+    @skipIf(not (on_windows and py2), 'Windows only on Py2')
+    def test_update_path_environment_windows_py2(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'c:\\windows;C:Program Files'}
-            pathsep = b';'
-
-        bytes_path = b'foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'}
+            environ = {'PATH': b'c:\\windows;C:Program Files'}
+            pathsep = ';'
 
         unicode_path = u'c:\\bin\\foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {'PATH': 'c:\\bin\\foo?bar;c:\\windows;C:Program Files'} == MockOs.environ
 
-        bytes_path = b'foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
-
-    @skipIf(not on_windows, 'Windows only')
+    @skipIf(not (on_windows and py3), 'Windows only on Py3')
     def test_update_path_environment_windows_from_unicode(self):
 
         class MockOs(object):
-            environ = {b'PATH': b'c:\\windows;C:Program Files'}
-            pathsep = b':'
+            environ = {u'PATH': u'c:\\windows;C:Program Files'}
+            pathsep = u';'
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'foo\xb1bar;c:\\windows;C:Program Files'}
-
-        bytes_path = b'c:\\bin\\foo\xb1bar'
-        command.update_path_environment(bytes_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {u'PATH': u'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ
 
         unicode_path = u'foo\udcb1bar'
         command.update_path_environment(unicode_path, MockOs)
-        {'PATH': 'c:\\bin\\foo\xb1bar;foo\xb1bar;c:\\windows;C:Program Files'}
+        assert {u'PATH': u'foo\udcb1bar;c:\\windows;C:Program Files'} == MockOs.environ

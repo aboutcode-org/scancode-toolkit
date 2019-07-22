@@ -26,15 +26,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+from contextlib import closing
 import logging
 
+from ftfy import fix_text
 import pefile
 
 from commoncode import text
 from typecode import contenttype
-from contextlib import closing
-from collections import OrderedDict
-from commoncode import compat
 
 
 TRACE = False
@@ -160,11 +160,12 @@ def pe_info(location, include_extra_data=False):
                 logger.debug('pe_info: Entries keys: ' + str(set(k for k in strtab.entries)))
                 logger.debug('pe_info: Entry values:')
                 for k, v in strtab.entries.items():
-                    logger.debug('  ' + str(k) + ': ' + repr(v))
+                    logger.debug('  ' + str(k) + ': ' + repr(type(v)) + repr(v))
 
             for k, v in strtab.entries.items():
                 # convert unicode to a safe ASCII representation
-                value = compat.unicode(text.toascii(v).strip())
+                value = text.as_unicode(v).strip()
+                value = fix_text(value)
                 if k in PE_INFO_KEYSET:
                     peinf[k] = value
                 else:

@@ -29,6 +29,8 @@ from datetime import datetime
 from commoncode.testcase import FileBasedTesting
 from commoncode.timeutils import time2tstamp, tstamp2time, UTC
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestTimeStamp(FileBasedTesting):
 
@@ -59,7 +61,7 @@ class TestTimeStamp(FileBasedTesting):
     def test_tstamp2time_format(self):
         import re
         ts = time2tstamp()
-        pat = '^20\d\d-[0-1][0-9]-[0-3]\dT[0-2]\d[0-6]\d[0-6]\d.\d\d\d\d\d\d$'
+        pat = r'^20\d\d-[0-1][0-9]-[0-3]\dT[0-2]\d[0-6]\d[0-6]\d.\d\d\d\d\d\d$'
         assert re.match(pat, ts)
 
     def test_tstamp2time(self):

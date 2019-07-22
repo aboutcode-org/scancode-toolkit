@@ -39,6 +39,7 @@ from os.path import exists
 import click
 from click.types import BoolParamType
 
+from commoncode import compat
 from commoncode import fileutils
 
 

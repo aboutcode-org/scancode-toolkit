@@ -30,8 +30,6 @@ from os.path import join
 from os.path import sep
 from unittest.case import skipIf
 
-import pytest
-
 from commoncode import compat
 from commoncode import filetype
 from commoncode import fileutils
@@ -51,6 +49,12 @@ from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
 
 
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
+@skipIf(py3, 'Somehow permissions tests do not work OK yet on Python 3')
 class TestPermissionsDeletions(FileBasedTesting):
     """
     This is failing for now on Python 3
@@ -83,8 +87,6 @@ class TestPermissions(FileBasedTesting):
     Several assertions or test are skipped on non posix OSes.
     Windows handles permissions and special files differently.
     """
-    pytestmark = pytest.mark.scanpy3  # NOQA
-
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_chmod_on_non_existing_file_throws_no_exception(self):
@@ -261,7 +263,6 @@ class TestPermissions(FileBasedTesting):
 
 
 class TestFileUtils(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     @skipIf(on_windows, 'Windows handles special files differently.')
@@ -311,7 +312,6 @@ class TestFileUtils(FileBasedTesting):
 
 
 class TestFileUtilsWalk(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_os_walk_with_unicode_path(self):
@@ -391,7 +391,6 @@ class TestFileUtilsWalk(FileBasedTesting):
 
 
 class TestFileUtilsIter(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_resource_iter(self):
@@ -560,7 +559,6 @@ class TestFileUtilsIter(FileBasedTesting):
 
 
 class TestBaseName(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_file_base_name_on_path_and_location_1(self):
@@ -664,7 +662,6 @@ class TestBaseName(FileBasedTesting):
 
 
 class TestFileName(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_file_name_on_path_and_location_1(self):
@@ -759,7 +756,6 @@ class TestFileName(FileBasedTesting):
 
 
 class TestFileExtension(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_file_extension_on_path_and_location_1(self):
@@ -852,9 +848,48 @@ class TestFileExtension(FileBasedTesting):
         result = fileutils.file_extension((os.path.join(test_dir, test_file)))
         assert expected_name == result
 
+    def test_splitext_base(self):
+        expected = 'path', '.ext'
+        assert expected == fileutils.splitext('C:\\dir\\path.ext')
+
+    def test_splitext_directories_even_with_dotted_names_have_no_extension(self):
+        import ntpath
+        expected = 'path.ext', ''
+        assert expected == fileutils.splitext('C:\\dir\\path.ext' + ntpath.sep)
+
+        expected = 'path.ext', ''
+        assert expected == fileutils.splitext('/dir/path.ext/')
+
+        expected = 'file', '.txt'
+        assert expected == fileutils.splitext('/some/file.txt')
+
+    def test_splitext_composite_extensions_for_tarballs_are_properly_handled(self):
+        expected = 'archive', '.tar.gz'
+        assert expected == fileutils.splitext('archive.tar.gz')
+
+    def test_splitext_name_base(self):
+        expected = 'path', '.ext'
+        assert expected == fileutils.splitext_name('path.ext')
+
+    def test_splitext_name_directories_have_no_extension(self):
+        expected = 'path.ext', ''
+        assert expected == fileutils.splitext_name('path.ext', is_file=False)
+
+        expected = 'file', '.txt'
+        assert expected == fileutils.splitext_name('file.txt')
+
+    def test_splitext_name_composite_extensions_for_tarballs_are_properly_handled(self):
+        expected = 'archive', '.tar.gz'
+        assert expected == fileutils.splitext_name('archive.tar.gz')
+
+    def test_splitext_name_dotfile_are_properly_handled(self):
+        expected = '.dotfile', ''
+        assert expected == fileutils.splitext_name('.dotfile')
+        expected = '.dotfile', '.this'
+        assert expected == fileutils.splitext_name('.dotfile.this')
+
 
 class TestParentDir(FileBasedTesting):
-    pytestmark = pytest.mark.scanpy3  # NOQA
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parent_directory_on_path_and_location_1(self):
