@@ -3,70 +3,29 @@
     {
       "tool_name": "scancode-toolkit",
       "options": {
-        "input": [
-          "no_summary/"
-        ],
+        "input": "<path>",
         "--copyright": true,
         "--info": true,
-        "--json-pp": "no-summary.json",
+        "--json": "<file>",
         "--license": true,
+        "--origin-summary": true,
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
       "errors": [],
       "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>",
-        "--origin-summary": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
+        "files_count": 4
       }
     }
   ],
-  "filesets": [
-    {
-      "type": "license-holders",
-      "identifier": "acme_corporation_1",
-      "package": null,
-      "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "Acme Corporation"
-      ],
-      "context_license_expression": null,
-      "context_holders": []
-    },
-    {
-      "type": "license-holders",
-      "identifier": "omega_inc__2",
-      "package": null,
-      "core_license_expression": "mit",
-      "core_holders": [
-        "Omega Inc."
-      ],
-      "context_license_expression": null,
-      "context_holders": []
-    }
-  ],
+  "filesets": [],
   "files": [
     {
-      "path": "no_summary",
+      "path": "no-summary",
       "type": "directory",
-      "name": "no_summary",
-      "base_name": "no_summary",
+      "name": "no-summary",
+      "base_name": "no-summary",
       "extension": "",
       "size": 0,
       "sha1": null,
@@ -88,135 +47,20 @@
       "packages": [],
       "origin_summary": {},
       "summarized_to": [],
-      "files_count": 7,
-      "dirs_count": 4,
-      "size_count": 321,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/README",
-      "type": "file",
-      "name": "README",
-      "base_name": "README",
-      "extension": "",
-      "size": 51,
-      "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
-      "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": true,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [
-        {
-          "key": "apache-2.0",
-          "score": 90.0,
-          "name": "Apache License 2.0",
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 3,
-          "end_line": 3,
-          "matched_rule": {
-            "identifier": "apache-2.0_65.RULE",
-            "license_expression": "apache-2.0",
-            "licenses": [
-              "apache-2.0"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "matcher": "2-aho",
-            "rule_length": 4,
-            "matched_length": 4,
-            "match_coverage": 100.0,
-            "rule_relevance": 90.0
-          }
-        }
-      ],
-      "license_expressions": [
-        "apache-2.0"
-      ],
-      "holders": [
-        {
-          "value": "Acme Corporation",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "copyrights": [
-        {
-          "value": "Copyright (c) Acme Corporation",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {},
-      "summarized_to": [],
-      "files_count": 0,
+      "files_count": 4,
       "dirs_count": 0,
-      "size_count": 0,
+      "size_count": 146,
       "scan_errors": []
     },
     {
-      "path": "no_summary/src",
-      "type": "directory",
-      "name": "src",
-      "base_name": "src",
-      "extension": "",
-      "size": 0,
-      "sha1": null,
-      "md5": null,
-      "mime_type": null,
-      "file_type": null,
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": false,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
-      "holders": [],
-      "copyrights": [],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {
-        "license_expression": "apache-2.0",
-        "holders": [
-          "Acme Corporation"
-        ],
-        "count": 3
-      },
-      "summarized_to": [],
-      "files_count": 3,
-      "dirs_count": 0,
-      "size_count": 153,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/src/src1.src",
+      "path": "no-summary/src1",
       "type": "file",
-      "name": "src1.src",
+      "name": "src1",
       "base_name": "src1",
-      "extension": ".src",
-      "size": 51,
-      "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
-      "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
+      "extension": "",
+      "size": 52,
+      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
+      "md5": "40e0b73c327d10cb3f42e23d300380b0",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -229,7 +73,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 90.0,
+          "score": 50.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -240,23 +84,23 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 3,
-          "end_line": 3,
+          "start_line": 2,
+          "end_line": 2,
           "matched_rule": {
-            "identifier": "apache-2.0_65.RULE",
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 4,
-            "matched_length": 4,
+            "rule_length": 3,
+            "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 50.0
           }
         }
       ],
@@ -265,16 +109,16 @@
       ],
       "holders": [
         {
-          "value": "Acme Corporation",
+          "value": "the apache software foundation",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Acme Corporation",
+          "value": "copyright the apache software foundation",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -287,14 +131,14 @@
       "scan_errors": []
     },
     {
-      "path": "no_summary/src/src2.src",
+      "path": "no-summary/src2",
       "type": "file",
-      "name": "src2.src",
+      "name": "src2",
       "base_name": "src2",
-      "extension": ".src",
-      "size": 51,
-      "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
-      "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
+      "extension": "",
+      "size": 52,
+      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
+      "md5": "40e0b73c327d10cb3f42e23d300380b0",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -307,7 +151,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 90.0,
+          "score": 50.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -318,23 +162,23 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 3,
-          "end_line": 3,
+          "start_line": 2,
+          "end_line": 2,
           "matched_rule": {
-            "identifier": "apache-2.0_65.RULE",
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "license_expression": "apache-2.0",
             "licenses": [
               "apache-2.0"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
-            "rule_length": 4,
-            "matched_length": 4,
+            "rule_length": 3,
+            "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 50.0
           }
         }
       ],
@@ -343,16 +187,16 @@
       ],
       "holders": [
         {
-          "value": "Acme Corporation",
+          "value": "the apache software foundation",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Acme Corporation",
+          "value": "copyright the apache software foundation",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -365,14 +209,14 @@
       "scan_errors": []
     },
     {
-      "path": "no_summary/src/src3.src",
+      "path": "no-summary/src3",
       "type": "file",
-      "name": "src3.src",
+      "name": "src3",
       "base_name": "src3",
-      "extension": ".src",
-      "size": 51,
-      "sha1": "7c1f639687ae71a2c5471ec21664163b9affd536",
-      "md5": "20946ada9a5bd89a1e46e1933f82fd3d",
+      "extension": "",
+      "size": 21,
+      "sha1": "4db983fe0ab8117f9b74c50a8a7f3a045ae57284",
+      "md5": "0aa9f7cb419649708faee0d981acbf47",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -382,55 +226,20 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
-        {
-          "key": "apache-2.0",
-          "score": 90.0,
-          "name": "Apache License 2.0",
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 3,
-          "end_line": 3,
-          "matched_rule": {
-            "identifier": "apache-2.0_65.RULE",
-            "license_expression": "apache-2.0",
-            "licenses": [
-              "apache-2.0"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "matcher": "2-aho",
-            "rule_length": 4,
-            "matched_length": 4,
-            "match_coverage": 100.0,
-            "rule_relevance": 90.0
-          }
-        }
-      ],
-      "license_expressions": [
-        "apache-2.0"
-      ],
+      "licenses": [],
+      "license_expressions": [],
       "holders": [
         {
-          "value": "Acme Corporation",
+          "value": "me inc",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Acme Corporation",
+          "value": "copyright me inc",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "authors": [],
@@ -443,88 +252,14 @@
       "scan_errors": []
     },
     {
-      "path": "no_summary/third_party",
-      "type": "directory",
-      "name": "third_party",
-      "base_name": "third_party",
-      "extension": "",
-      "size": 0,
-      "sha1": null,
-      "md5": null,
-      "mime_type": null,
-      "file_type": null,
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": false,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
-      "holders": [],
-      "copyrights": [],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {
-        "license_expression": "mit",
-        "holders": [
-          "Omega Inc."
-        ],
-        "count": 3
-      },
-      "summarized_to": [],
-      "files_count": 3,
-      "dirs_count": 2,
-      "size_count": 117,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/third_party/module_2",
-      "type": "directory",
-      "name": "module_2",
-      "base_name": "module_2",
-      "extension": "",
-      "size": 0,
-      "sha1": null,
-      "md5": null,
-      "mime_type": null,
-      "file_type": null,
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": false,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
-      "holders": [],
-      "copyrights": [],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {
-        "license_expression": "mit",
-        "holders": [
-          "Omega Inc."
-        ],
-        "count": 2
-      },
-      "summarized_to": [],
-      "files_count": 2,
-      "dirs_count": 0,
-      "size_count": 78,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/third_party/module_2/src_3.src",
+      "path": "no-summary/src4",
       "type": "file",
-      "name": "src_3.src",
-      "base_name": "src_3",
-      "extension": ".src",
-      "size": 39,
-      "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
-      "md5": "85256778b96d48b69923d905f1f322ba",
+      "name": "src4",
+      "base_name": "src4",
+      "extension": "",
+      "size": 21,
+      "sha1": "4db983fe0ab8117f9b74c50a8a7f3a045ae57284",
+      "md5": "0aa9f7cb419649708faee0d981acbf47",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -534,248 +269,20 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
-        {
-          "key": "mit",
-          "score": 99.0,
-          "name": "MIT License",
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "is_exception": false,
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 3,
-          "end_line": 3,
-          "matched_rule": {
-            "identifier": "mit_34.RULE",
-            "license_expression": "mit",
-            "licenses": [
-              "mit"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 99.0
-          }
-        }
-      ],
-      "license_expressions": [
-        "mit"
-      ],
-      "holders": [
-        {
-          "value": "Omega Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "copyrights": [
-        {
-          "value": "Copyright (c) Omega Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {},
-      "summarized_to": [],
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/third_party/module_2/src_5.src",
-      "type": "file",
-      "name": "src_5.src",
-      "base_name": "src_5",
-      "extension": ".src",
-      "size": 39,
-      "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
-      "md5": "85256778b96d48b69923d905f1f322ba",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": true,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [
-        {
-          "key": "mit",
-          "score": 99.0,
-          "name": "MIT License",
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "is_exception": false,
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 3,
-          "end_line": 3,
-          "matched_rule": {
-            "identifier": "mit_34.RULE",
-            "license_expression": "mit",
-            "licenses": [
-              "mit"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 99.0
-          }
-        }
-      ],
-      "license_expressions": [
-        "mit"
-      ],
-      "holders": [
-        {
-          "value": "Omega Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "copyrights": [
-        {
-          "value": "Copyright (c) Omega Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {},
-      "summarized_to": [],
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/third_party/module_3",
-      "type": "directory",
-      "name": "module_3",
-      "base_name": "module_3",
-      "extension": "",
-      "size": 0,
-      "sha1": null,
-      "md5": null,
-      "mime_type": null,
-      "file_type": null,
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": false,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
-      "copyrights": [],
-      "authors": [],
-      "packages": [],
-      "origin_summary": {
-        "license_expression": "mit",
-        "holders": [
-          "Omega Inc."
-        ],
-        "count": 1
-      },
-      "summarized_to": [],
-      "files_count": 1,
-      "dirs_count": 0,
-      "size_count": 39,
-      "scan_errors": []
-    },
-    {
-      "path": "no_summary/third_party/module_3/srcfile",
-      "type": "file",
-      "name": "srcfile",
-      "base_name": "srcfile",
-      "extension": "",
-      "size": 39,
-      "sha1": "3e32db8780814deab3b23aeff423655d7a27e3ca",
-      "md5": "85256778b96d48b69923d905f1f322ba",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
-      "programming_language": null,
-      "is_binary": false,
-      "is_text": true,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": false,
-      "is_script": false,
-      "licenses": [
-        {
-          "key": "mit",
-          "score": 99.0,
-          "name": "MIT License",
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "is_exception": false,
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 3,
-          "end_line": 3,
-          "matched_rule": {
-            "identifier": "mit_34.RULE",
-            "license_expression": "mit",
-            "licenses": [
-              "mit"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "matcher": "2-aho",
-            "rule_length": 2,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "rule_relevance": 99.0
-          }
-        }
-      ],
-      "license_expressions": [
-        "mit"
-      ],
       "holders": [
         {
-          "value": "Omega Inc.",
+          "value": "me inc",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) Omega Inc.",
+          "value": "copyright me inc",
           "start_line": 1,
-          "end_line": 1
+          "end_line": 2
         }
       ],
       "authors": [],

@@ -93,7 +93,7 @@
       "summarized_to": [],
       "files_count": 6,
       "dirs_count": 1,
-      "size_count": 333,
+      "size_count": 382,
       "scan_errors": []
     },
     {
@@ -160,7 +160,7 @@
       ],
       "files_count": 4,
       "dirs_count": 0,
-      "size_count": 231,
+      "size_count": 280,
       "scan_errors": []
     },
     {
@@ -169,9 +169,9 @@
       "name": "package.json",
       "base_name": "package",
       "extension": ".json",
-      "size": 78,
-      "sha1": "cb5244fdb5b56f3c80a354c4c12ad0831b6a78df",
-      "md5": "985f757e56da685ae306c9cc41253f30",
+      "size": 127,
+      "sha1": "1409b07ec2c2346c8c523c8c3111d2154e8e8405",
+      "md5": "a056434ef02c76871a504f45368577c6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -195,8 +195,8 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
           "spdx_license_key": "Apache-2.0",
           "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 4,
-          "end_line": 4,
+          "start_line": 5,
+          "end_line": 5,
           "matched_rule": {
             "identifier": "apache-2.0_65.RULE",
             "license_expression": "apache-2.0",

@@ -58,32 +58,29 @@ class TestOriginSummary(FileDrivenTesting):
         assert is_majority(src_count, files_count, threshold)
 
     def test_origin_summary_clear_summary(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary.json')
+        # 75% of the files have the same license expression and holder, so we should have one fileset
+        scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/clear-summary-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        run_scan_click(['-clip', scan_loc, '--origin-summary', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_no_summary(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/no-summary.json')
+        # 50% of the files have the same license expression and holder, so no fileset should be created
+        scan_loc = self.get_test_loc('plugin_origin_summary/no-summary')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/no-summary-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
-
-    def test_origin_summary_no_null_values_are_summarized(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary.json')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_origin_summary/no-null-in-origin-summary-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        run_scan_click(['-clip', scan_loc, '--origin-summary', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_custom_threshold(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/clear-summary.json')
+        # A little over half of the files in this directory have the same license and holder, but under the default 75% threshold
+        # There should be a fileset created for this license-holder
+        scan_loc = self.get_test_loc('plugin_origin_summary/custom-threshold')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/custom-threshold-expected.json')
-        threshold = '1'
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file, '--origin-summary-threshold', threshold])
+        threshold = '0.6'
+        run_scan_click(['-clip', scan_loc, '--origin-summary', '--json', result_file, '--origin-summary-threshold', threshold])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_package_fileset(self):
