@@ -85,3 +85,10 @@ class TestOriginSummary(FileDrivenTesting):
         threshold = '1'
         run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file, '--origin-summary-threshold', threshold])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
+
+    def test_origin_package_files_should_not_be_considered_in_license_holder_filesets(self):
+        scan_loc = self.get_test_loc('plugin_origin_summary/package-files-not-counted-in-license-holders.json')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_origin_summary/package-files-not-counted-in-license-holders-expected.json')
+        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
