@@ -87,15 +87,17 @@ class TestOriginSummary(FileDrivenTesting):
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_package_fileset(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/package-fileset.json')
+        scan_loc = self.get_test_loc('plugin_origin_summary/package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_origin_summary/package-fileset-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        run_scan_click(['-clip', scan_loc, '--origin-summary', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_origin_summary_package_files_should_not_be_considered_in_license_holder_filesets(self):
-        scan_loc = self.get_test_loc('plugin_origin_summary/package-files-not-counted-in-license-holders.json')
+        scan_loc = self.get_test_loc('plugin_origin_summary/package-files-not-counted-in-license-holders')
         result_file = self.get_temp_file('json')
+        # There should not be a fileset for license-holder, even though every single file in this directory contains the
+        # same license expression and holder
         expected_file = self.get_test_loc('plugin_origin_summary/package-files-not-counted-in-license-holders-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--origin-summary', '--json', result_file])
+        run_scan_click(['-clip', scan_loc, '--origin-summary', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)

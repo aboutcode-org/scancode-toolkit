@@ -3,31 +3,13 @@
     {
       "tool_name": "scancode-toolkit",
       "options": {
-        "input": [
-          "ignore package files/package/"
-        ],
+        "input": "<path>",
         "--copyright": true,
         "--info": true,
-        "--json-pp": "package-fileset.json",
-        "--license": true,
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 4
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--from-json": [
-          true
-        ],
         "--json": "<file>",
-        "--origin-summary": true
+        "--license": true,
+        "--origin-summary": true,
+        "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
