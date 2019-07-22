@@ -64,7 +64,9 @@
         ],
         "count": 3
       },
-      "summarized_to": [],
+      "summarized_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 177,

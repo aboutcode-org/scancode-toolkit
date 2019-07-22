@@ -151,6 +151,9 @@ class OriginSummary(PostScanPlugin):
 
         # Add Filesets to codebase
         for index, fileset in enumerate(filesets, start=1):
+            # Skip Filesets that do not have files in them
+            if not fileset.resources:
+                continue
             if fileset.type == 'package':
                 identifier = fileset.package.purl
             else:

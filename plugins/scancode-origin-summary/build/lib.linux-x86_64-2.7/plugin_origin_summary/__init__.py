@@ -151,6 +151,8 @@ class OriginSummary(PostScanPlugin):
 
         # Add Filesets to codebase
         for index, fileset in enumerate(filesets, start=1):
+            if not fileset.resources:
+                continue
             if fileset.type == 'package':
                 identifier = fileset.package.purl
             else:
@@ -170,10 +172,9 @@ class OriginSummary(PostScanPlugin):
                 resource.save(codebase)
             codebase.attributes.filesets.append(fileset.to_dict())
 
-        # Sort and dedupe identifiers in summarized_to
+        # Dedupe and sort identifiers in summarized_to
         for resource in codebase.walk(topdown=True):
-            resource.summarized_to = set(sorted(i for i in resource.summarized_to
-                if i.startswith('pkg:') and resource.extra_data.get('in_package_fileset')))
+            resource.summarized_to = sorted(set(resource.summarized_to))
             resource.save(codebase)
 
 
@@ -210,9 +211,9 @@ def get_package_filesets(codebase):
                 discovered_holders.extend(h.get('value') for h in package_resource_holders)
 
             # Remove top-level package license and NoneTypes from discovered licenses
-            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic and lic != package_license_expression]
+            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic]
             # Remove top-level holders and NoneTypes from discovered holders
-            discovered_holders = [holder for holder in discovered_holders if holder and holder not in package_holders]
+            discovered_holders = [holder for holder in discovered_holders if holder]
 
             combined_discovered_license_expression = combine_expressions(discovered_license_expressions)
             if combined_discovered_license_expression:
@@ -289,7 +290,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
     # Yield a Fileset for root if there is a majority
     root = codebase.get_resource(0)
     fs = create_license_exp_holders_fileset(root, codebase)
-    if fs and root.extra_data.get('in_package_fileset'):
+    if fs and not root.extra_data.get('in_package_fileset'):
         yield fs
 
 
@@ -369,19 +370,3 @@ def process_license_exp_holders_filesets(filesets):
             core_license_expression=fileset_license_expression,
             core_holders=fileset_holders
         )
-
-
-def get_nr_fileset(codebase):
-    """
-    Yield a Fileset for all Resources that are not to be reported
-    """
-    # TODO: Load set of extensions to NR from somewhere
-    nr_exts = []
-    resources = []
-    for resource in codebase.walk(topdown=False):
-        if resource.extension in nr_exts:
-            resources.append(resource)
-    yield Fileset(
-        type='nr',
-        resources=resources
-    )

@@ -58,7 +58,7 @@
       },
       "core_license_expression": "apache-2.0",
       "core_holders": [],
-      "context_license_expression": null,
+      "context_license_expression": "apache-2.0",
       "context_holders": [
         "the apache software foundation"
       ]
