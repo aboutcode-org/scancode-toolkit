@@ -9,6 +9,4 @@ text_urls:
     - http://old.koalateam.com/jackaroo/OPL_1_0.TXT
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Public_License
-ignorable_authors:
-    - means Lutris Technologies, Inc.
-    - the Initial Developer
+

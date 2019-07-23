@@ -7,5 +7,4 @@ homepage_url: https://sites.google.com/site/fullycapable/
 notes: this is a bsd-style license with a GPL alternative
 text_urls:
     - https://git.kernel.org/pub/scm/libs/libcap/libcap.git/plain/License
-ignorable_copyrights:
-    - copyright. THIS SOFTWARE IS PROVIDED AS
+
