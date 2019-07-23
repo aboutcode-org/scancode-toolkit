@@ -59,10 +59,12 @@ def copyright_detector(location):
 
 
 def update_ignorables(licensish):
-    print('Processing:', licensish)
-    if not path.exists(licensish.text_file):
+    location = licensish.text_file
+    print('Processing:', 'file://' + location)
+    if not path.exists(location):
+        print('!')
         return licensish
-    copyrights, authors = copyright_detector(licensish.text_file)
+    copyrights, authors = copyright_detector(location)
 
     copyrights.update(licensish.ignorable_copyrights)
     licensish.ignorable_copyrights = sorted(copyrights)
@@ -70,13 +72,14 @@ def update_ignorables(licensish):
     authors.update(licensish.ignorable_authors)
     licensish.ignorable_authors = sorted(authors)
 
-    urls = set(u for (u, _ln) in find_urls(licensish.text_file) if u)
+    urls = set(u for (u, _ln) in find_urls(location) if u)
     urls.update(licensish.ignorable_urls)
     licensish.ignorable_urls = sorted(urls)
 
-    emails = set(u for (u, _ln) in find_emails(licensish.text_file) if u)
+    emails = set(u for (u, _ln) in find_emails(location) if u)
     emails.update(licensish.ignorable_emails)
     licensish.ignorable_emails = sorted(emails)
+
     return licensish
 
 
@@ -89,13 +92,13 @@ def cli(update=True):
     for lic in cache.get_licenses_db().values():
         print('.', end='')
         if update:
-            update_ignorables(lic)
+            lic = update_ignorables(lic)
         lic.dump()
 
     for rule in models.load_rules():
         print('.', end='')
         if update:
-            update_ignorables(rule)
+            rule = update_ignorables(rule)
         rule.dump()
 
 
