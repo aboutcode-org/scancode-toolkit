@@ -319,6 +319,18 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
+    def test_walk_skipped_directories_should_not_be_yielded(self):
+        # Resources that we continue past should not be added to the result list
+        test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
+        codebase = Codebase(test_codebase)
+        result = []
+        for resource in codebase.walk(topdown=True):
+            if resource.is_dir and resource.name == 'skip-this-directory':
+                continue
+            result.append(resource.name)
+        expected = ['this-should-be-returned']
+        assert expected == result
+
     def test__create_resource_can_add_child_to_file(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
