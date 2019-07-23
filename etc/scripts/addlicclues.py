@@ -66,18 +66,18 @@ def update_ignorables(licensish):
         return licensish
     copyrights, authors = copyright_detector(location)
 
-    copyrights.update(licensish.ignorable_copyrights)
+    # copyrights.update(licensish.ignorable_copyrights)
     licensish.ignorable_copyrights = sorted(copyrights)
 
-    authors.update(licensish.ignorable_authors)
+    # authors.update(licensish.ignorable_authors)
     licensish.ignorable_authors = sorted(authors)
 
     urls = set(u for (u, _ln) in find_urls(location) if u)
-    urls.update(licensish.ignorable_urls)
+    # urls.update(licensish.ignorable_urls)
     licensish.ignorable_urls = sorted(urls)
 
     emails = set(u for (u, _ln) in find_emails(location) if u)
-    emails.update(licensish.ignorable_emails)
+    # emails.update(licensish.ignorable_emails)
     licensish.ignorable_emails = sorted(emails)
 
     return licensish
@@ -89,14 +89,14 @@ def cli(update=True):
     """
     Update licenses and rules with ignorable copyrights, URLs and emails.
     """
-    for lic in cache.get_licenses_db().values():
-        print('.', end='')
+    for i, lic in enumerate(sorted(cache.get_licenses_db().values())):
+        print(i, end=' ')
         if update:
             lic = update_ignorables(lic)
         lic.dump()
 
-    for rule in models.load_rules():
-        print('.', end='')
+    for i, rule in enumerate(sorted(models.load_rules())):
+        print(i, end=' ')
         if update:
             rule = update_ignorables(rule)
         rule.dump()
