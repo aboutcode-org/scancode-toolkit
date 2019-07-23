@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2010 The WebM project
+  - Copyright (c) 2010 The WebM project authors
   - Copyright (c) 2002-2010 The Xiph.Org Foundation and contributors
 holders:
-  - The WebM project
+  - The WebM project authors
   - The Xiph.Org Foundation and contributors
 holders_summary:
-  - value: The WebM project
+  - value: The WebM project authors
     count: 1
   - value: The Xiph.Org Foundation and contributors
     count: 1

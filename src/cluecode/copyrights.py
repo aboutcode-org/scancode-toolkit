@@ -183,7 +183,7 @@ patterns = [
 
     # found in crypto certificates and LDAP
     (r'^(O=|OU=?|XML)$', 'JUNK'),
-    (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
+    (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginally?|[Rr]epresentations?\.?)$', 'JUNK'),
 
     (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
      r'Description:?|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
@@ -225,8 +225,8 @@ patterns = [
     # neither and nor conjunctions and some common licensing words are NOT part
     # of a copyright statement
     (r'^(neither|nor|providing|Execute|NOTICE|passes|LAWS\,?|Should'
-     r'|Licensing|Disclaimer|Law|Some|Derived|Limitations?|Nothing|Policy'
-     r'|available|Recipient\.?|LICENSEE|Application|Receiving|Party|interfaces'
+     r'|Licensing|licensing\@|Disclaimer|Law|Some|Derived|Limitations?|Nothing|Policy'
+     r'|available|Recipient\.?|LICENSEES?\.?|[Ll]icensees?,?|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
      r'|you|means'
@@ -240,7 +240,7 @@ patterns = [
      r'|Covered|date|practices|[Aa]ny|ANY'
      r'|fprintf.*'
      r'|CURDIR|Environment/Libraries|Environment/Base'
-     r'|Owner|behalf|know-how'
+     r'|Owner|behalf|know-how|interfaces?,?|than|whom|are'
      r')$', 'JUNK'),
 
     # some copyright templates in licenses
@@ -278,8 +278,8 @@ patterns = [
       r'|Education|AIRTM|Copying|Updated|Source|Code|Websites|Public\.?'
       r'|Joint|Assignment|Work|Attribution|Phrase|Timer|Manager'
       r'|AGPL.?'
-      r'|Baslerstr\.?|E-[Mm]ail|Email'
-      r'|Authored|Linux|Target'
+      r'|Baslerstr\.?|E-[Mm]ail|Email|original'
+      r'|Authored|Linux|Target|Technical|Users?|Policy,?'
       r')?$', 'NN'),
     # |Products\.?
 
@@ -293,6 +293,7 @@ patterns = [
       r'|Permission|Section|Related|Government\.?'
       r'|PGP|Sort|Redistribution|Products?\.?|Customer\'?s?'
       r'|Site\.?|Except|Trademarks?|Logos?|Grants?\.?|Mode|Email\:?'
+      r'|Contracts?|Convention'
     r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
@@ -443,7 +444,7 @@ patterns = [
     (r'^[Ac]cademi[ae]s?$', 'UNI'),
     # institutes
     (r'INSTITUTE', 'COMP'),
-    (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'COMP'),
+    (r'^\(?[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?\)?$', 'COMP'),
     # Facility
     (r'Tecnologia', 'COMP'),
     (r'Facility', 'COMP'),
@@ -469,7 +470,9 @@ patterns = [
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)[,\.]?$', 'JUNK'),
     # "authors" or "contributors" is interesting, and so a tag of its own
     (r'^[Aa]uthor\.?$', 'AUTH'),
-    (r'^[Aa]uthors\.?$', 'AUTHS'),
+    (r'^Authors\.?$', 'AUTHS'),
+    (r'^authors$', 'AUTHS'),
+    (r'^authors\.$', 'AUTHDOT'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHS'),
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
 
@@ -1018,7 +1021,7 @@ grammar = """
 
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
-    NAME: {<NN> <JUNK> <AUTH|CONTRIBUTORS|AUTHS> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1960
+    NAME: {<NN> <NN> <AUTH|CONTRIBUTORS|AUTHS> <NN> <AUTH|CONTRIBUTORS|AUTHS|AUTH|AUTHDOT>}        #1960
 
     # Copyright (C) <s>Suresh P <suresh@ippimail.com></s> #19601
     NAME: {<NNP>  <PN>  <EMAIL>}
@@ -1311,6 +1314,9 @@ grammar = """
     # Copyright (c) 2007 Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing
     COPYRIGHT: {<COPYRIGHT>  <NAME5>  <ANDCO>} #3060
 
+    # Copyright (c) 1995-2018 The PNG Reference Library Authors
+    COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NAME>} #3065
+
 #######################################
 # Authors
 #######################################
@@ -1337,6 +1343,10 @@ grammar = """
     # developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
     AUTHOR: {<AUTHOR>  <NN>  <NAME>  <NAME>} #2762
 
+    # created by Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software 
+    AUTHOR: {<AUTH2>  <CC>  <AUTHOR>  <NN>  <NAME>  <NN>  <NN>  <NNP>} #26451
+
+
 #######################################
 # Mixed AUTHORS and COPYRIGHTS
 #######################################
@@ -1353,7 +1363,7 @@ grammar = """
 #######################################
 # Last resort catch all ending with allrights
 #######################################
-    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <NNP|CAPS|YR-RANGE|NAME|NAME2|NAME3|NAME5|NAME5|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <NNP|AUTHDOT|CAPS|YR-RANGE|NAME|NAME2|NAME3|NAME5|NAME5|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
 """
 
@@ -1373,7 +1383,7 @@ def strip_some_punct(s):
     Return a string stripped from some leading and trailing punctuations.
     """
     if s:
-        s = s.strip(''','"}{-_:;&''')
+        s = s.strip(''','"}{-_:;&@''')
         s = s.lstrip('.>)]\/')
         s = s.rstrip('<([\/')
     return s
@@ -1913,6 +1923,13 @@ class CopyrightDetector(object):
             'ALLRIGHT', 'ALLRIGHTRESERVED',
             ])
 
+        non_authors_labels = frozenset([
+            'COPY',
+            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
+            'HOLDER', 'AUTHOR',
+            'ALLRIGHT', 'ALLRIGHTRESERVED',
+            ])
+
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
             if not isinstance(tree_node, Tree):
@@ -1940,6 +1957,8 @@ class CopyrightDetector(object):
                                 if TRACE: logger_debug('CopyrightDetector: detected holders:', refined_holder, start_line, end_line)
 
             elif authors and tree_node_label == 'AUTHOR':
+                node_text = CopyrightDetector_as_str(tree_node, ignores=non_authors_labels)
+
                 refined_auth = refine_author(node_text)
                 if refined_auth and refined_auth.lower() not in _junk_authors:
                     if TRACE: logger_debug('CopyrightDetector: detected authors:', refined_auth, start_line, end_line)
