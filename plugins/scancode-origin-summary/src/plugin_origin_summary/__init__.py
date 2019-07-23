@@ -67,23 +67,23 @@ if TRACE:
 
 
 @attr.s
-class Fileset(object):
+class Component(object):
     """
     A grouping of files that share the same origin
     """
     # TODO: have an attribute for key files (one that strongly determines origin)
     type=attr.ib()
-    identifier = attr.ib(default=None)
+    name = attr.ib(default=None)
     resources = attr.ib(default=attr.Factory(list))
     package = attr.ib(default=None)
-    core_license_expression = attr.ib(default=None)
-    core_holders = attr.ib(default=attr.Factory(list))
-    context_license_expression = attr.ib(default=None)
-    context_holders = attr.ib(default=attr.Factory(list))
+    license_expression = attr.ib(default=None)
+    holders = attr.ib(default=attr.Factory(list))
+    other_license_expression = attr.ib(default=None)
+    other_holders = attr.ib(default=attr.Factory(list))
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict that contains the attributes (except for `resources`) and values for this Fileset
+        Return an OrderedDict that contains the attributes (except for `resources`) and values for this Component
         """
         def dict_fields(attr, value):
             if attr.name in ('resources', ):
@@ -91,11 +91,15 @@ class Fileset(object):
             return True
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
+    @property
+    def copyright(self):
+        return 'Copyright (c) {}'.format(', '.join(self.holders))
+
 
 @post_scan_impl
 class OriginSummary(PostScanPlugin):
     """
-    A post-scan plugin that returns Filesets for summarized resources.
+    A post-scan plugin that returns Components for summarized resources.
 
     This plugin summarizes resources by:
     - Packages
@@ -105,12 +109,12 @@ class OriginSummary(PostScanPlugin):
     or license expression is detected in 75% or more of total files in a directory
     """
     codebase_attributes = dict(
-        filesets=attr.ib(default=attr.Factory(list))
+        components=attr.ib(default=attr.Factory(list))
     )
 
     resource_attributes = dict(
         origin_summary=attr.ib(default=attr.Factory(OrderedDict)),
-        summarized_to=attr.ib(default=attr.Factory(list))
+        consolidated_to=attr.ib(default=attr.Factory(list))
     )
 
     sort_order = 8
@@ -135,53 +139,53 @@ class OriginSummary(PostScanPlugin):
         return origin_summary
 
     def process_codebase(self, codebase, origin_summary_threshold=None, **kwargs):
-        # Collect Filesets
-        filesets = []
+        # Collect Components
+        components = []
         root = codebase.get_resource(0)
         if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
-            filesets.extend(get_package_filesets(codebase))
+            components.extend(get_package_components(codebase))
         if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
-            filesets.extend(get_license_exp_holders_filesets(codebase, origin_summary_threshold=origin_summary_threshold))
+            components.extend(get_license_exp_holders_components(codebase, origin_summary_threshold=origin_summary_threshold))
 
-        if not filesets:
+        if not components:
             return
 
-        # Process Filesets (if needed)
-        filesets = process_license_exp_holders_filesets(filesets)
+        # Process Components (if needed)
+        components = process_license_exp_holders_components(components)
 
-        # Add Filesets to codebase
-        for index, fileset in enumerate(filesets, start=1):
-            # Skip Filesets that do not have files in them
-            if not fileset.resources:
+        # Add Components to codebase
+        for index, component in enumerate(components, start=1):
+            # Skip Components that do not have files in them
+            if not component.resources:
                 continue
-            if fileset.type == 'package':
-                identifier = fileset.package.purl
+            if component.type == 'package':
+                name = component.package.purl
             else:
-                # TODO: Consider adding license expression to be part of identifier
-                core_holders = '_'.join(fileset.core_holders)
-                context_holders = '_'.join(fileset.context_holders)
-                holders = core_holders or context_holders
-                # We do not want the identifier to be too long
+                # TODO: Consider adding license expression to be part of name
+                holders = '_'.join(component.holders)
+                other_holders = '_'.join(component.other_holders)
+                holders = holders or other_holders
+                # We do not want the name to be too long
                 holders = holders[:65]
                 if holders:
-                    identifier = python_safe_name('{}_{}'.format(holders, index))
+                    name = python_safe_name('{}_{}'.format(holders, index))
                 else:
-                    identifier = index
-            fileset.identifier = identifier
-            for resource in fileset.resources:
-                resource.summarized_to.append(identifier)
+                    name = index
+            component.name = name
+            for resource in component.resources:
+                resource.consolidated_to.append(name)
                 resource.save(codebase)
-            codebase.attributes.filesets.append(fileset.to_dict())
+            codebase.attributes.components.append(component.to_dict())
 
-        # Dedupe and sort identifiers in summarized_to
+        # Dedupe and sort names in consolidated_to
         for resource in codebase.walk(topdown=True):
-            resource.summarized_to = sorted(set(resource.summarized_to))
+            resource.consolidated_to = sorted(set(resource.consolidated_to))
             resource.save(codebase)
 
 
-def get_package_filesets(codebase):
+def get_package_components(codebase):
     """
-    Yield a Fileset for each detected package in the codebase
+    Yield a Component for each detected package in the codebase
     """
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
@@ -200,8 +204,8 @@ def get_package_filesets(codebase):
             discovered_license_expressions = []
             discovered_holders = []
             for package_resource in package_resources:
-                # If a resource is part of a package Fileset, then it cannot be part of any other type of Fileset
-                package_resource.extra_data['in_package_fileset'] = True
+                # If a resource is part of a package Component, then it cannot be part of any other type of Component
+                package_resource.extra_data['in_package_component'] = True
                 package_resource.save(codebase)
 
                 package_resource_license_expression = combine_expressions(package_resource.license_expressions)
@@ -222,27 +226,27 @@ def get_package_filesets(codebase):
             else:
                 simplified_discovered_license_expression = None
 
-            yield Fileset(
+            yield Component(
                 type='package',
                 resources=package_resources,
                 package=package,
-                core_license_expression=package_license_expression,
-                core_holders=sorted(package_holders),
-                context_license_expression=simplified_discovered_license_expression,
-                context_holders=set(sorted(discovered_holders))
+                license_expression=package_license_expression,
+                holders=sorted(package_holders),
+                other_license_expression=simplified_discovered_license_expression,
+                other_holders=set(sorted(discovered_holders))
             )
 
 
-def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
+def get_license_exp_holders_components(codebase, origin_summary_threshold=None):
     """
-    Yield a Fileset for each directory where 75% or more of the files have the same license
+    Yield a Component for each directory where 75% or more of the files have the same license
     expression and copyright holders
     """
     origin_translation_table = {}
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
 
-        if resource.is_file or resource.extra_data.get('in_package_fileset'):
+        if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
 
         children = resource.children(codebase)
@@ -252,7 +256,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
         # Collect license expression and holders count for stat-based summarization
         origin_count = Counter()
         for child in children:
-            if child.extra_data.get('in_package_fileset'):
+            if child.extra_data.get('in_package_component'):
                 continue
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
@@ -275,7 +279,7 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
             resource.save(codebase)
 
             # TODO: When there is a tie, we need to be explicit and consistent about the tiebreaker
-            # TODO: Consider creating two filesets instead of tiebreaking
+            # TODO: Consider creating two components instead of tiebreaking
             origin_key, top_count = origin_count.most_common(1)[0]
             if is_majority(top_count, resource.files_count, origin_summary_threshold):
                 majority_holders, majority_license_expression = origin_translation_table[origin_key]
@@ -284,14 +288,14 @@ def get_license_exp_holders_filesets(codebase, origin_summary_threshold=None):
                 resource.origin_summary['count'] = top_count
                 resource.save(codebase)
 
-                fs = create_license_exp_holders_fileset(resource, codebase)
+                fs = create_license_exp_holders_component(resource, codebase)
                 if fs:
                     yield fs
 
-    # Yield a Fileset for root if there is a majority
+    # Yield a Component for root if there is a majority
     root = codebase.get_resource(0)
-    fs = create_license_exp_holders_fileset(root, codebase)
-    if fs and not root.extra_data.get('in_package_fileset'):
+    fs = create_license_exp_holders_component(root, codebase)
+    if fs and not root.extra_data.get('in_package_component'):
         yield fs
 
 
@@ -304,34 +308,34 @@ def is_majority(count, files_count, threshold=None):
     return count / files_count >= threshold
 
 
-def create_license_exp_holders_fileset(resource, codebase):
+def create_license_exp_holders_component(resource, codebase):
     """
-    Return a Fileset for `resource` if it can be summarized on license expression and holders
+    Return a Component for `resource` if it can be summarized on license expression and holders
     """
     license_expression = resource.origin_summary.get('license_expression')
     holders = resource.origin_summary.get('holders')
     if license_expression and holders:
-        fileset_resources = get_fileset_resources(resource, codebase)
-        if fileset_resources:
-            return Fileset(
+        component_resources = get_component_resources(resource, codebase)
+        if component_resources:
+            return Component(
                 type='license-holders',
-                resources=fileset_resources,
-                core_license_expression=license_expression,
-                core_holders=holders
+                resources=component_resources,
+                license_expression=license_expression,
+                holders=holders
             )
 
 
-def get_fileset_resources(resource, codebase):
+def get_component_resources(resource, codebase):
     """
-    Return a list of resources to be used to create a Fileset from `resource`
+    Return a list of resources to be used to create a Component from `resource`
     """
     license_expression = resource.origin_summary.get('license_expression')
     holders = resource.origin_summary.get('holders')
     if not license_expression and holders:
         return
-    resources = [] if resource.extra_data.get('in_package_fileset') else [resource]
+    resources = [] if resource.extra_data.get('in_package_component') else [resource]
     for r in resource.walk(codebase, topdown=False):
-        if r.extra_data.get('in_package_fileset'):
+        if r.extra_data.get('in_package_component'):
             continue
         if ((r.is_file
                 and combine_expressions(r.license_expressions) == license_expression
@@ -343,31 +347,31 @@ def get_fileset_resources(resource, codebase):
     return resources
 
 
-def process_license_exp_holders_filesets(filesets):
+def process_license_exp_holders_components(components):
     """
-    Combine Filesets with the same license expression and holders
-    into a single Fileset
+    Combine Components with the same license expression and holders
+    into a single Component
     """
     origin_translation_table = {}
-    filesets_by_holders_license_expression = defaultdict(list)
-    for fileset in filesets:
-        if fileset.type != 'license-holders':
-            # We yield the other Filesets that we don't handle
-            yield fileset
+    components_by_holders_license_expression = defaultdict(list)
+    for component in components:
+        if component.type != 'license-holders':
+            # We yield the other Components that we don't handle
+            yield component
             continue
-        origin = fileset.core_holders, fileset.core_license_expression
-        origin_key = ''.join(fileset.core_holders) + fileset.core_license_expression
+        origin = component.holders, component.license_expression
+        origin_key = ''.join(component.holders) + component.license_expression
         origin_translation_table[origin_key] = origin
-        filesets_by_holders_license_expression[origin_key].append(fileset)
+        components_by_holders_license_expression[origin_key].append(component)
 
-    for origin_key, filesets in filesets_by_holders_license_expression.items():
-        fileset_resources = []
-        for fileset in filesets:
-            fileset_resources.extend(fileset.resources)
-        fileset_holders, fileset_license_expression = origin_translation_table[origin_key]
-        yield Fileset(
+    for origin_key, components in components_by_holders_license_expression.items():
+        component_resources = []
+        for component in components:
+            component_resources.extend(component.resources)
+        component_holders, component_license_expression = origin_translation_table[origin_key]
+        yield Component(
             type='license-holders',
-            resources=fileset_resources,
-            core_license_expression=fileset_license_expression,
-            core_holders=fileset_holders
+            resources=component_resources,
+            license_expression=component_license_expression,
+            holders=component_holders
         )
