@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 import os.path
 
 from packagedcode import bower
+from scancode.resource import Codebase
+from scancode.resource import VirtualCodebase
 
 from packages_test_utils import PackageTester
 
@@ -53,3 +55,18 @@ class TestBower(PackageTester):
         package = bower.parse(test_file)
         expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_package(package, expected_loc, regen=False)
+
+    def test_get_package_resources(self):
+        test_dir = self.get_test_loc('bower/get_package_resource')
+        codebase = Codebase(test_dir)
+        root = codebase.get_resource(0)
+        package_resources = list(bower.BowerPackage.get_package_resources(root, codebase))
+        result = [r.name for r in package_resources]
+
+        expected_file = self.get_test_loc('haxe/package_resources/test-expected.json')
+        virtual_codebase = VirtualCodebase(expected_file)
+        virtual_root = virtual_codebase.get_resource(0)
+        virtual_package_resources = list(haxe.HaxePackage.get_package_resources(virtual_root, virtual_codebase))
+        expected = [r.name for r in virtual_package_resources]
+
+        assert expected == result
