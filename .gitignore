@@ -78,3 +78,7 @@ pyvenv.cfg
 /.pytest_cache/
 lib64
 tcl
+
+# Nested ScanCode plugins
+*build*
+*dist*
