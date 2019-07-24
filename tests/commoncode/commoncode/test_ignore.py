@@ -32,6 +32,7 @@ import commoncode.testcase
 from commoncode import fileutils
 from commoncode import ignore
 from commoncode.system import on_mac
+from commoncode.system import on_windows
 
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
@@ -186,3 +187,35 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         ]
 
         assert expected == result
+
+    @skipIf(on_mac, 'We are only testing on Linux for now')
+    @skipIf(on_windows, 'We are only testing on Linux for now')
+    def test_is_ignored_path_string_skip_special(self):
+        test_path = '/test/path'
+        assert ignore.is_ignored(test_path, {'asdf': 'skip'}, {}, skip_special=True)
+        assert not ignore.is_ignored(test_path, {'asdf': 'skip'}, {}, skip_special=False)
+
+    @skipIf(on_mac, 'We are only testing on Linux for now')
+    @skipIf(on_windows, 'We are only testing on Linux for now')
+    def test_is_ignored_special_files_skip_special(self):
+        test_fifo = self.get_temp_file()
+        os.mkfifo(test_fifo)
+        assert ignore.is_ignored(test_fifo, {'asdf': 'skip'}, {}, skip_special=True)
+        assert not ignore.is_ignored(test_fifo, {'asdf': 'skip'}, {}, skip_special=False)
+
+        test_symlink = self.get_temp_file()
+        test_file_location = self.get_test_loc('ignore/vcs.tgz')
+        os.symlink(test_file_location, test_symlink)
+        assert ignore.is_ignored(test_symlink, {'asdf': 'skip'}, {}, skip_special=True)
+        assert not ignore.is_ignored(test_symlink, {'asdf': 'skip'}, {}, skip_special=False)
+
+    @skipIf(on_mac, 'We are only testing on Linux for now')
+    @skipIf(on_windows, 'We are only testing on Linux for now')
+    def test_is_ignored_real_location_skip_special(self):
+        test_file_location = self.get_test_loc('ignore/vcs.tgz')
+        assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=True)
+        assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=False)
+
+        test_dir_location = self.get_test_loc('ignore')
+        assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=True)
+        assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=False)
