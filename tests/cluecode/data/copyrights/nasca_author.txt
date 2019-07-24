@@ -1,0 +1,1 @@
+   "author": "Nasca Iacob <sy@another-d-mention.ro> (https://github.com/cthackers)",

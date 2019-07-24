@@ -229,7 +229,7 @@ patterns = [
      r'|available|Recipient\.?|LICENSEES?\.?|[Ll]icensees?,?|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
-     r'|you|means'
+     r'|you|means|information|laws?,?|Alternately'
      r')$', 'JUNK'),
 
     # various trailing words that are junk
@@ -273,13 +273,14 @@ patterns = [
     (r'^(Send|It|Mac|Support|Information|Various|Mouse|Wheel'
       r'|Vendors?|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
       r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Notes?|Delay|Separa.*|Added'
-      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
+      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New'
       r'|Agreements?\.?|Immediately|Any|Custom|References?|Each'
       r'|Education|AIRTM|Copying|Updated|Source|Code|Websites|Public\.?'
       r'|Joint|Assignment|Work|Attribution|Phrase|Timer|Manager'
-      r'|AGPL.?'
-      r'|Baslerstr\.?|E-[Mm]ail|Email|original'
+      r'|AGPL.?|MIT'
+      r'|Baslerstr\.?|E-[Mm]ail|Email|Original|Library|Activation\.?'
       r'|Authored|Linux|Target|Technical|Users?|Policy,?'
+      r'|Norwegian|Act[\.,]?|Further'
       r')?$', 'NN'),
     # |Products\.?
 
@@ -293,7 +294,7 @@ patterns = [
       r'|Permission|Section|Related|Government\.?'
       r'|PGP|Sort|Redistribution|Products?\.?|Customer\'?s?'
       r'|Site\.?|Except|Trademarks?|Logos?|Grants?\.?|Mode|Email\:?'
-      r'|Contracts?|Convention'
+      r'|Contracts?|Convention|JMagnetic'
     r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
@@ -358,7 +359,7 @@ patterns = [
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
     # Misc corner case combos ?(mixed or CAPS) that are NNP
-    (r'^Software,\',|\(Royal|PARADIGM|nexB|D\.T\.Shield\.?|Antill\',$', 'NNP'),
+    (r'^Software,\',|\(Royal|PARADIGM|nexB|UserTesting|D\.T\.Shield\.?|Antill\',$', 'NNP'),
 
     # Corner cases of lowercased NNPs
     (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
@@ -453,7 +454,6 @@ patterns = [
     # (finnsih) company suffix
     (r'^Abp\.?,?$', 'COMP'),
 
-
     # "holders" is considered Special
     (r'^HOLDER\(S\)$', 'JUNK'),
     (r'^([Hh]olders?|HOLDERS?).?$', 'HOLDER'),
@@ -470,9 +470,9 @@ patterns = [
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)[,\.]?$', 'JUNK'),
     # "authors" or "contributors" is interesting, and so a tag of its own
     (r'^[Aa]uthor\.?$', 'AUTH'),
-    (r'^Authors\.?$', 'AUTHS'),
-    (r'^authors$', 'AUTHS'),
     (r'^authors\.$', 'AUTHDOT'),
+    (r'^Authors\.?$', 'AUTHS'),
+    (r'^authors|author\'$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHS'),
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
 
@@ -498,7 +498,7 @@ patterns = [
     # by
     (r'^by|BY|By$', 'BY'),
 
-    # FIXMEL following is used NOWHERE
+    # FIXME following is used NOWHERE
     (r'^following$', 'FOLLOW'),
 
     # conjunction: and
@@ -1317,11 +1317,17 @@ grammar = """
     # Copyright (c) 1995-2018 The PNG Reference Library Authors
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NAME>} #3065
 
+    # Copyright (c) 2011 The WebRTC project authors
+    COPYRIGHT: {<COPY><COPY>  <NAME3>  <AUTHS>} #1567
+
 #######################################
 # Authors
 #######################################
+    # developed by Project Mayo.
+    AUTHOR: {<AUTH2>  <BY>  <COMPANY>  <NNP> } #26441
     # Created by XYZ
     AUTH: {<AUTH2>+ <BY>}        #2645
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2|NAME3>+ <YR-RANGE>*}        #2660
@@ -1660,12 +1666,14 @@ JUNK_AUTHORS = frozenset([
     'james random hacker.',
     'contributor. c. a',
     'grant the u.s. government and others',
+    'james random hacker',
 ])
 
 AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
         'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
+        'author\'',
         ])
 ))
 
@@ -1755,6 +1763,7 @@ def refine_date(c):
 # It would be best not to have to resort to this, but this is practical.
 JUNK_AUTHORS = frozenset([
     'contributing project',
+    'its author',
 ])
 
 
@@ -1842,6 +1851,11 @@ JUNK_COPYRIGHTS = frozenset([
 
     'copyright united states',
     'copyright as is group',
+    'copyrighted by its',
+    'copyright',
+    'copyright by',
+    'copyrighted',
+    'copyrighted by',
 
 ])
 
