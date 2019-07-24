@@ -213,7 +213,7 @@ patterns = [
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
     (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
     # various programming constructs
-    (r'^(var|[Tt]his|return|function|thats?|xmlns|file)$', 'JUNK'),
+    (r'^(var|[Tt]his|return|function|thats?|xmlns|file|[Aa]sync|Keyspan)$', 'JUNK'),
 
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
@@ -229,7 +229,7 @@ patterns = [
      r'|available|Recipient\.?|LICENSEES?\.?|[Ll]icensees?,?|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
-     r'|you|means|information|laws?,?|Alternately'
+     r'|you|means|information|laws?,?|Alternately|INFRINGEMENT\.?'
      r')$', 'JUNK'),
 
     # various trailing words that are junk
@@ -1667,6 +1667,7 @@ JUNK_AUTHORS = frozenset([
     'contributor. c. a',
     'grant the u.s. government and others',
     'james random hacker',
+    'james hacker',
 ])
 
 AUTHORS_PREFIXES = frozenset(set.union(
