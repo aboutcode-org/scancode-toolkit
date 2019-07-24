@@ -28,12 +28,14 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 from os.path import dirname
 from os.path import exists
 from os.path import join
 
-from commoncode.testcase import FileBasedTesting
+from commoncode import ignore
 from commoncode.fileutils import parent_directory
+from commoncode.testcase import FileBasedTesting
 
 from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import run_scan_click
@@ -324,11 +326,17 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
         codebase = Codebase(test_codebase)
         result = []
-        for resource in codebase.walk(topdown=True):
-            if resource.is_dir and resource.name == 'skip-this-directory':
-                continue
+        _ignored = partial(
+            ignore.is_ignored,
+            ignores={
+               'skip-this-directory': 'skip',
+            },
+            unignores={},
+            skip_special=False
+        )
+        for resource in codebase.walk(topdown=True, ignored=_ignored,):
             result.append(resource.name)
-        expected = ['this-should-be-returned']
+        expected = ['skip_directories_during_walk', 'this-should-be-returned']
         assert expected == result
 
     def test__create_resource_can_add_child_to_file(self):

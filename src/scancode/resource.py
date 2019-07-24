@@ -164,6 +164,10 @@ class Header(object):
         return cls(**kwargs)
 
 
+def ignore_nothing(_):
+    return False
+
+
 class Codebase(object):
     """
     Represent a codebase being scanned. A Codebase is a tree of Resources.
@@ -760,7 +764,7 @@ class Codebase(object):
 
         return removed_rids
 
-    def walk(self, topdown=True, skip_root=False):
+    def walk(self, topdown=True, skip_root=False, ignored=ignore_nothing):
         """
         Yield all resources for this Codebase walking its resource tree.
         Walk the tree top-down, depth-first if `topdown` is True, otherwise walk
@@ -773,6 +777,12 @@ class Codebase(object):
         a codebase with a single resource.
         """
         root = self.root
+
+        if ignored(root.path):
+            return
+
+        root = attr.evolve(root)
+
         # include root if no children (e.g. codebase with a single resource)
         if skip_root and not root.has_children():
             skip_root = False
@@ -781,7 +791,7 @@ class Codebase(object):
         if topdown and not skip_root:
             yield root
 
-        for res in root.walk(self, topdown):
+        for res in root.walk(self, topdown=topdown, ignored=ignored):
             yield res
 
         if not topdown and not skip_root:
@@ -1097,7 +1107,7 @@ class Resource(object):
 
         return files_count, dirs_count, size_count
 
-    def walk(self, codebase, topdown=True,):
+    def walk(self, codebase, topdown=True, ignored=ignore_nothing):
         """
         Yield all descendant Resources of this Resource. Does not include self.
 
@@ -1110,11 +1120,12 @@ class Resource(object):
 
         for child in self.children(codebase):
             child = attr.evolve(child)
-            if topdown:
+            if topdown and not ignored(child.path):
                 yield child
-            for subchild in child.walk(codebase, topdown):
-                yield subchild
-            if not topdown:
+            for subchild in child.walk(codebase, topdown=topdown, ignored=ignored):
+                if not ignored(subchild.path):
+                    yield subchild
+            if not topdown and not ignored(child.path):
                 yield child
 
     def has_children(self):
