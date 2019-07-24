@@ -165,7 +165,7 @@
     "authors": [
       {
         "value": null,
-        "count": 21
+        "count": 20
       },
       {
         "value": "Bela Ban",
@@ -173,6 +173,10 @@
       },
       {
         "value": "Gilles Vollant",
+        "count": 1
+      },
+      {
+        "value": "name' Isaac Z.",
         "count": 1
       }
     ],
@@ -3214,7 +3218,7 @@
         "authors": [
           {
             "value": null,
-            "count": 21
+            "count": 20
           },
           {
             "value": "Bela Ban",
@@ -3222,6 +3226,10 @@
           },
           {
             "value": "Gilles Vollant",
+            "count": 1
+          },
+          {
+            "value": "name' Isaac Z.",
             "count": 1
           }
         ],
@@ -4717,7 +4725,13 @@
       ],
       "holders": [],
       "copyrights": [],
-      "authors": [],
+      "authors": [
+        {
+          "value": "name' Isaac Z.",
+          "start_line": 16,
+          "end_line": 18
+        }
+      ],
       "packages": [],
       "summary": {
         "license_expressions": [
@@ -4740,7 +4754,7 @@
         ],
         "authors": [
           {
-            "value": null,
+            "value": "name' Isaac Z.",
             "count": 1
           }
         ],

@@ -224,12 +224,12 @@ patterns = [
 
     # neither and nor conjunctions and some common licensing words are NOT part
     # of a copyright statement
-    (r'^(neither|nor|providing|Execute|NOTICE|passes|LAWS\,?|Should'
-     r'|Licensing|licensing\@|Disclaimer|Law|Some|Derived|Limitations?|Nothing|Policy'
-     r'|available|Recipient\.?|LICENSEES?\.?|[Ll]icensees?,?|Application|Receiving|Party|interfaces'
+    (r'^(neither|nor|providing|Execute|NOTICE|passes|Should'
+     r'|[Ll]icensing\@?|Disclaimer|LAWS\,?|[Ll]aws?,?|Some|Derived|Limitations?|Nothing|Policy'
+     r'|available|Recipient\.?|LICEN[CS]EES?\.?|[Ll]icen[cs]ees?,?|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
-     r'|you|means|information|laws?,?|Alternately|INFRINGEMENT\.?'
+     r'|you|means|information|Alternately|INFRINGEMENT\.?|Install|Updates|Record-keeping|Privacy'
      r')$', 'JUNK'),
 
     # various trailing words that are junk
@@ -280,7 +280,7 @@ patterns = [
       r'|AGPL.?|MIT'
       r'|Baslerstr\.?|E-[Mm]ail|Email|Original|Library|Activation\.?'
       r'|Authored|Linux|Target|Technical|Users?|Policy,?'
-      r'|Norwegian|Act[\.,]?|Further'
+      r'|Norwegian|Act[\.,]?|Further|NOTICE\.?|Licen[cs]e,?|Patents?'
       r')?$', 'NN'),
     # |Products\.?
 
@@ -1349,7 +1349,7 @@ grammar = """
     # developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
     AUTHOR: {<AUTHOR>  <NN>  <NAME>  <NAME>} #2762
 
-    # created by Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software 
+    # created by Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software
     AUTHOR: {<AUTH2>  <CC>  <AUTHOR>  <NN>  <NAME>  <NN>  <NN>  <NNP>} #26451
 
 

@@ -185,7 +185,13 @@
       ],
       "holders": [],
       "copyrights": [],
-      "authors": [],
+      "authors": [
+        {
+          "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
+          "start_line": 6,
+          "end_line": 8
+        }
+      ],
       "is_legal": false,
       "is_manifest": true,
       "is_readme": false,
