@@ -40,6 +40,7 @@ from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.text import toascii
 from commoncode.system import on_linux
+from commoncode.system import py2
 from os.path import dirname
 from os.path import join
 from os.path import exists
@@ -52,16 +53,16 @@ DEBUG = False
 
 root_dir = join(dirname(__file__), 'bin')
 
-POSIX_PATH_SEP = b'/' if on_linux else '/'
-WIN_PATH_SEP = b'\\' if on_linux else '\\'
+POSIX_PATH_SEP = b'/' if  (on_linux and py2)  else '/'
+WIN_PATH_SEP = b'\\' if  (on_linux and py2)  else '\\'
 PATHS_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
-EMPTY_STRING = b'' if on_linux else ''
-DOT = b'.' if on_linux else '.'
+EMPTY_STRING = b'' if  (on_linux and py2)  else ''
+DOT = b'.' if  (on_linux and py2)  else '.'
 DOTDOT = DOT + DOT
-UNDERSCORE = b'_' if on_linux else '_'
+UNDERSCORE = b'_' if (on_linux and py2)  else '_'
 
 # Suffix added to extracted target_dir paths
-EXTRACT_SUFFIX = b'-extract' if on_linux else r'-extract'
+EXTRACT_SUFFIX = b'-extract' if (on_linux  and py2) else r'-extract'
 
 # high level archive "kinds"
 docs = 1
@@ -113,7 +114,7 @@ def is_extracted(location):
     Return True is the location is already extracted to the corresponding
     extraction location.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
     return location and exists(get_extraction_path(location))
 
@@ -122,7 +123,7 @@ def get_extraction_path(path):
     """
     Return a path where to extract.
     """
-    if on_linux:
+    if on_linux and py2:
         path = fsencode(path)
     return path.rstrip(PATHS_SEPS) + EXTRACT_SUFFIX
 
@@ -131,7 +132,7 @@ def remove_archive_suffix(path):
     """
     Remove all the extracted suffix from a path.
     """
-    if on_linux:
+    if on_linux and py2:
         path = fsencode(path)
     return re.sub(EXTRACT_SUFFIX, EMPTY_STRING, path)
 
@@ -141,7 +142,7 @@ def remove_backslashes_and_dotdots(directory):
     Walk a directory and rename the files if their names contain backslashes.
     Return a list of errors if any.
     """
-    if on_linux:
+    if on_linux and py2:
         directory = fsencode(directory)
     errors = []
     for top, _, files in os.walk(directory):
@@ -179,7 +180,7 @@ def new_name(location, is_dir=False):
        the extension unchanged.
     """
     assert location
-    if on_linux:
+    if on_linux and py2:
         location = fsencode(location)
     location = location.rstrip(PATHS_SEPS)
     assert location
