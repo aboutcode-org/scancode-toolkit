@@ -30,6 +30,7 @@ from collections import namedtuple
 import logging
 import os
 
+from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode import functional
@@ -51,7 +52,6 @@ from extractcode import sevenzip
 from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
-from commoncode import compat
 
 
 logger = logging.getLogger(__name__)
