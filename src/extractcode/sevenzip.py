@@ -270,12 +270,15 @@ def list_entries(location, arch_type='*'):
     lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
     cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
 
-    rc, stdout, _stderr = command.execute2(
+    rc, stdout, stderr = command.execute2(
         cmd_loc=cmd_loc,
         args=args,
         lib_dir=lib_dir,
         env=timezone,
         to_files=True)
+
+    if TRACE:
+        logger.debug('list_entries: rc: {rc}\nstderr: file://{stderr}\nstdout: file://{stdout}\n'.format(**locals()))
 
     if rc != 0:
         # FIXME: this test is useless
@@ -325,6 +328,9 @@ def as_entry(infos):
 def parse_7z_listing(location, utf=False):
     """
     Parse a long format 7zip listing and return an iterable of entry.
+    
+    If `utf` is True, the console output will treated as utf-8-encoded text.
+    Otherwise it is treated as bytes.
 
     The 7zip -slt format is:
     - copyright and version details
@@ -387,10 +393,28 @@ def parse_7z_listing(location, utf=False):
     # FIXME: do something with header and footer?
 
     entries = []
-    path_sep = utf and u'\n\n' or b'\n\n'
+
+    if utf:
+        path_sep = u'\n\n'
+        msg_sep = u':'
+        equal_sep = u'='
+        errror_line_starters = 'Open Warning:', 'Errors:', 'Warnings:'
+    else:
+        path_sep = b'\n\n'
+        msg_sep = b':'
+        equal_sep = b'='
+        errror_line_starters = b'Open Warning:', b'Errors:', b'Warnings:'
+    if TRACE:
+        from pprint import pprint
+        logger.debug('parse_7z_listing: body:')
+        pprint(body)
+
     paths = re.split(path_sep, body, flags=re.MULTILINE)
-    msg_sep = utf and u':' or b':'
-    equal_sep = utf and u'=' or b'='
+    if TRACE:
+        from pprint import pprint
+        logger.debug('parse_7z_listing: paths:')
+        pprint(paths)
+
     for path in paths:
         is_err = False
         errors = []
@@ -400,7 +424,7 @@ def parse_7z_listing(location, utf=False):
             line = line.strip()
             if not line:
                 continue
-            if line.startswith(('Open Warning:', 'Errors:', 'Warnings:')):
+            if line.startswith(errror_line_starters):
                 is_err = True
                 messages = line.split(msg_sep, 1)
                 errors.append(messages)
