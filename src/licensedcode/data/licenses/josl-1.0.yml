@@ -9,7 +9,7 @@ text_urls:
 osi_url: http://www.opensource.org/licenses/jabberpl.php
 ignorable_copyrights:
     - Copyright (c) 1999-2000 Jabber.com, Inc.
-    - Portions Copyright (c) 1998-1999 Jeremie Miller.
+    - Portions Copyright (c) 1998-1999 Jeremie Miller
 ignorable_urls:
     - http://www.jabber.com/
     - http://www.jabber.com/license/

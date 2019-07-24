@@ -17,3 +17,5 @@ other_urls:
 ignorable_copyrights:
     - Copyright (c) 1989 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+ignorable_authors:
+    - James Hacker

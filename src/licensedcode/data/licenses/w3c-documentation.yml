@@ -7,6 +7,7 @@ homepage_url: http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html
 text_urls:
     - http://www.w3.org/TR/REC-DOM-Level-1/copyright-notice.html
 ignorable_copyrights:
-    - Copyright (c) 1998 World Wide Web Consortium, Massachusetts Institute of Technology, Institut
-        National de Recherche en Informatique et en Automatique , Keio University
-    - Copyright (c) World Wide Web Consortium, Massachusetts Institute
+    - Copyright (c) 1998 World Wide Web Consortium, (Massachusetts Institute of Technology,
+        Institut National de Recherche en Informatique et en Automatique , Keio University )
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology , Institut
+        National de Recherche en Informatique et en Automatique, Keio University )

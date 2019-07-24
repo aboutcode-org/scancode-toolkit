@@ -7,8 +7,8 @@ homepage_url: http://www.free-soft.org/mirrors/www.opensource.org/licenses/oclc.
 text_urls:
     - http://www.free-soft.org/mirrors/www.opensource.org/licenses/oclc.php
 ignorable_copyrights:
-    - Copyright (c) 2000- (insert then current year) OCLC OCLC Research and others.
-    - Copyright (c) 2000. OCLC Research.
+    - Copyright (c) 2000- (insert then current year) OCLC OCLC Research and others
+    - Copyright (c) 2000. OCLC Research
 ignorable_urls:
     - http://purl.oclc.org/oclc/research/ORPL
     - http://www.oclc.org/oclc/research

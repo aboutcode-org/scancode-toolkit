@@ -8,4 +8,4 @@ text_urls:
     - http://aws.amazon.com/asl/
     - https://github.com/aws/aws-sdk-android/blob/master/LICENSE.AMAZON.txt
 ignorable_copyrights:
-    - (c) 2008 Amazon.com, Inc.
+    - (c) 2008 Amazon.com, Inc. or its affiliates

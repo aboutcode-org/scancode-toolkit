@@ -5,8 +5,10 @@ category: Permissive
 owner: MX4J Project
 other_urls:
     - http://mx4j.sourceforge.net
+ignorable_copyrights:
+    - (c) by the MX4J contributors
 ignorable_authors:
-    - the MX4J project (http://mx4j.sourceforge.net).
+    - the MX4J project (http://mx4j.sourceforge.net)
 ignorable_urls:
     - http://mx4j.sourceforge.net/
 ignorable_emails:

@@ -4,7 +4,7 @@ name: Brent Corkum License
 category: Permissive
 owner: Rocscience
 ignorable_authors:
-    - Brent Corkum Email corkum@rocscience.com
+    - Brent Corkum
 ignorable_urls:
     - http://www.rocscience.com/~corkum/BCMenu.html
 ignorable_emails:

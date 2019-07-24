@@ -8,7 +8,7 @@ text_urls:
     - http://ksoap.objectweb.org/software/license/index.html
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright 1997-2000 Lutris Technologies (http://www.lutris.com).
+    - Copyright 1997-2000 Lutris Technologies (http://www.lutris.com)
     - Copyright Lutris Technologies, Inc.
 ignorable_authors:
     - Lutris Technologies, Inc.

@@ -14,8 +14,8 @@ other_urls:
 minimum_coverage: 70
 ignorable_copyrights:
     - Copyright (c) IETF Trust
+    - Copyright (c) IETF Trust and the persons identified as the document authors
 ignorable_authors:
-    - authors. The IETF Trust and the Internet Society
     - the IETF Trust
 ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php

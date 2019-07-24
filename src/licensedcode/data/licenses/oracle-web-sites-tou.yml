@@ -7,7 +7,7 @@ homepage_url: http://www.oracle.com/html/terms.html
 text_urls:
     - http://www.oracle.com/html/terms.html
 ignorable_copyrights:
-    - Copyright (c) 1995, 2010, Oracle and/or its affiliates.
+    - Copyright (c) 1995, 2010, Oracle and/or its affiliates
 ignorable_urls:
     - http://www.oracle.com/html/privacy.html
     - http://www.oracle.com/html/terms.html

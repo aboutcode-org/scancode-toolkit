@@ -9,4 +9,4 @@ text_urls:
     - http://www.day.com/maven/jsr170/licenses/day-spec-license.htm
 minimum_coverage: 70
 ignorable_copyrights:
-    - Copyright 2005 Day Management AG
+    - Copyright 2005 Day Management AG Barfusserplatz

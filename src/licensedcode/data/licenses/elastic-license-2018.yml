@@ -13,8 +13,6 @@ other_urls:
 standard_notice: |
     Licensed under the Elastic License; you may not use this file except in
     compliance with the Elastic License.
-ignorable_authors:
-    - UN Convention on Contracts
 ignorable_urls:
     - https://www.elastic.co/subscriptions
 ignorable_emails:

@@ -5,9 +5,9 @@ category: Permissive
 owner: Fourthought, Inc.
 ignorable_copyrights:
     - Copyright (c) 2000 Fourthought, Inc.
-    - Copyright (c) 2000 The Apache Software Foundation.
+    - Copyright (c) 2000 The Apache Software Foundation
 ignorable_authors:
-    - Fourthought, Inc. (http://www.fourthought.com).
+    - Fourthought, Inc. (http://www.fourthought.com)
 ignorable_urls:
     - http://www.fourthought.com/
 ignorable_emails:

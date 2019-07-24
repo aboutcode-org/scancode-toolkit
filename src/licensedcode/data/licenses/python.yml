@@ -13,7 +13,7 @@ other_urls:
     - http://www.gnu.org/licenses/license-list.html#PythonOld
     - https://opensource.org/licenses/Python-2.0
 ignorable_copyrights:
-    - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam
+    - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands
     - Copyright (c) 1995-2001 Corporation for National Research Initiatives
     - Copyright (c) Python Software Foundation
 ignorable_urls:

@@ -15,5 +15,3 @@ text_urls:
     - https://fedoraproject.org/wiki/Licensing/SWL
 other_urls:
     - https://puredata.info/about/pdlicense
-ignorable_authors:
-    - grant the U.S. Government and others

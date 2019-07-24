@@ -9,4 +9,4 @@ other_urls:
     - https://mariadb.com/bsl-faq-adopting/
     - https://mariadb.com/products/mariadb-enterprise
 ignorable_copyrights:
-    - copyright (c) 2017 MariaDB Corporation
+    - copyright (c) 2017 MariaDB Corporation Ab

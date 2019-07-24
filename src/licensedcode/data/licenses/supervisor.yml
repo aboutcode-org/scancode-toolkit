@@ -13,8 +13,8 @@ ignorable_copyrights:
     - Copyright (c) 2002-2005, Daniel Krech, http://eikeon.com
     - Copyright (c) 2006-2011 Agendaless Consulting and Contributors. (http://www.agendaless.com)
     - Copyright (c) 2007 Zope Corporation and Contributors
-    - Copyright (c) Sam Rushing.
-    - Copyright (c) by Daniel Krech, http://eikeon.com/.
+    - Copyright (c) Sam Rushing
+    - Copyright (c) by Daniel Krech, http://eikeon.com/
 ignorable_authors:
     - Sam Rushing
 ignorable_urls:

@@ -6,5 +6,5 @@ owner: Open Cascade
 homepage_url: http://www.opencascade.com/content/occt-public-license
 spdx_license_key: OCCT-PL
 ignorable_copyrights:
-    - copyright (c) OPEN CASCADE SAS, 2001.
-    - copyright (c) Open CASCADE SAS, 2001.
+    - (c) Open CASCADE SAS, 2001
+    - copyright (c) OPEN CASCADE SAS, 2001

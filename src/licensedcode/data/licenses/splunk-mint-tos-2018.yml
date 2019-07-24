@@ -4,8 +4,6 @@ name: Splunk MINT Terms of Service 2018
 category: Proprietary Free
 owner: Splunk
 homepage_url: https://www.splunk.com/en_us/legal/terms/splunk-mint-terms-of-service.html
-ignorable_copyrights:
-    - (c) Splunk gives Customer
 ignorable_urls:
     - http://docs.splunk.com/Documentation
     - http://splunk.com/goto/splunkcloud_aup

@@ -6,4 +6,4 @@ owner: Wouter van Oortmerssen
 homepage_url: https://fedoraproject.org/wiki/Licensing/Cube
 spdx_license_key: Cube
 ignorable_copyrights:
-    - Copyright (c) 2001-2003 Wouter van Oortmerssen.
+    - Copyright (c) 2001-2003 Wouter van Oortmerssen

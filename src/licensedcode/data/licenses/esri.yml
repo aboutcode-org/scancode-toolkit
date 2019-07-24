@@ -5,10 +5,6 @@ category: Commercial
 owner: Esri
 homepage_url: http://www.esri.com/legal/pdfs/mla_e204_e300/english
 minimum_coverage: 60
-ignorable_copyrights:
-    - Esri's Copyright Policy
-ignorable_authors:
-    - licensees of ArcGIS Online
 ignorable_urls:
     - http://links.esri.com/agol/transactiondef
     - http://support.esri.com/en/support

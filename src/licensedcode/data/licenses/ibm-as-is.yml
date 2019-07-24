@@ -3,3 +3,5 @@ short_name: IBM AS-IS License
 name: IBM AS-IS License
 category: Permissive
 owner: IBM
+ignorable_copyrights:
+    - COPYRIGHT I B M CORPORATION 2000

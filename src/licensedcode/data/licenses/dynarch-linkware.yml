@@ -7,6 +7,6 @@ text_urls:
     - http://wme.cs.kent.edu/manipulatives/GeometryEditor/hmenu/license.html
 minimum_coverage: 95
 ignorable_copyrights:
-    - (c) Dynarch.com 2003-2005.
+    - (c) Dynarch.com 2003-2005
 ignorable_urls:
     - http://www.dynarch.com/products/dhtml-menu/

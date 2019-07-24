@@ -16,7 +16,7 @@ other_urls:
     - https://opensource.org/licenses/PHP-3.0
 minimum_coverage: 60
 ignorable_copyrights:
-    - Copyright (c) 1999 - 2006 The PHP Group.
+    - Copyright (c) 1999 - 2006 The PHP Group
 ignorable_urls:
     - http://www.php.net/
     - http://www.zend.com/

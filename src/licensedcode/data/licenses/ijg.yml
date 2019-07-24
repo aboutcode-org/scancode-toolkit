@@ -11,7 +11,8 @@ other_urls:
     - http://dev.w3.org/cvsweb/Amaya/libjpeg/Attic/README?rev=1.2
     - http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses
 ignorable_copyrights:
-    - Copyright property of CompuServe Incorporated.
-    - copyright (c) 1991-1998, Thomas G. Lane.
+    - Copyright property of CompuServe Incorporated
+    - copyright (c) 1991-1998, Thomas G. Lane
     - copyright by M.I.T.
     - copyright by the Free Software Foundation
+    - copyright holder, Aladdin Enterprises of Menlo Park

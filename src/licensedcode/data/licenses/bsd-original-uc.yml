@@ -22,7 +22,7 @@ other_urls:
 ignorable_copyrights:
     - copyrighted by the Regents of the University of California
 ignorable_authors:
-    - UC Berkeley and its contributors.
-    - the University of California, Berkeley and its contributors.
+    - UC Berkeley and its contributors
+    - the University of California, Berkeley and its contributors
 ignorable_urls:
     - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

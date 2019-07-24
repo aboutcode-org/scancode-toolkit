@@ -7,6 +7,4 @@ homepage_url: https://sourceforge.net/project/shownotes.php?group_id=123700&rele
 text_urls:
     - https://sourceforge.net/project/shownotes.php?group_id=123700&release_id=291669
 ignorable_copyrights:
-    - Copyright (c) 2004, 2005 Health Administration Corporation.
-ignorable_authors:
-    - Health Administration Corporation
+    - Copyright (c) 2004, 2005 Health Administration Corporation

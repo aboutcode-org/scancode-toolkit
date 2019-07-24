@@ -7,7 +7,7 @@ homepage_url: http://www.php.net/license/2_02.txt
 osi_url: http://www.opensource.org/licenses/php.html
 minimum_coverage: 60
 ignorable_copyrights:
-    - Copyright (c) 1999 - 2002 The PHP Group.
+    - Copyright (c) 1999 - 2002 The PHP Group
 ignorable_urls:
     - http://www.php.net/
     - http://www.php.net/license/ZendGrant

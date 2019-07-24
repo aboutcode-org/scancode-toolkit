@@ -9,7 +9,6 @@ text_urls:
 ignorable_copyrights:
     - Copyright 2007-2009 by Apple Inc.
     - copyright 2006 by Jelmer Vernooij
-    - copyright 2006 by Jelmer Vernooij.
 ignorable_authors:
     - Apple Inc.
 ignorable_urls:

@@ -6,9 +6,6 @@ owner: Adobe Systems
 homepage_url: http://www.adobe.com/legal/general-terms.html
 text_urls:
     - http://www.adobe.com/legal/general-terms.html
-ignorable_copyrights:
-    - Copyright Agent Adobe Systems Incorporated
-    - Copyright Agent. Our
 ignorable_urls:
     - http://www.adobe.com/go/activation
     - http://www.adobe.com/go/edu_purchasing

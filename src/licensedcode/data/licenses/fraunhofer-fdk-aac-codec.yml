@@ -13,7 +13,6 @@ minimum_coverage: 40
 ignorable_copyrights:
     - (c) Copyright 1995 - 2012 Fraunhofer-Gesellschaft zur Forderung der angewandten Forschung
         e.V.
-    - copyright holders and contributors AS
 ignorable_urls:
     - http://www.iis.fraunhofer.de/amm
     - http://www.vialicensing.com/

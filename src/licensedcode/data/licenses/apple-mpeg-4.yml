@@ -4,6 +4,6 @@ name: Apple MPEG-4 License
 category: Free Restricted
 owner: Apple
 ignorable_copyrights:
-    - Copyright (c) 1999.
+    - Copyright (c) 1999
 ignorable_authors:
     - Apple Computer, Inc.

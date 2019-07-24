@@ -10,7 +10,7 @@ other_urls:
     - https://web.archive.org/web/20181003101040/https://www.proofpoint.com/sites/default/files/sendmail-license.pdf
 minimum_coverage: 60
 ignorable_copyrights:
-    - Copyright (c) 1988, 1993 The Regents
+    - Copyright (c) 1988, 1993 The Regents of the University ofCalifornia
     - Copyright (c) 1998-2014 Proofpoint, Inc.
 ignorable_emails:
     - sendmail-license@proofpoint.com

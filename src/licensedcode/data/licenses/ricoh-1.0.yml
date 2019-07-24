@@ -14,7 +14,7 @@ other_urls:
     - http://www.opensource.org/licenses/RSCPL
     - https://opensource.org/licenses/RSCPL
 ignorable_copyrights:
-    - Copyright (c) 1995-1999.
+    - Copyright (c) 1995-1999
 ignorable_authors:
     - Ricoh Silicon Valley, Inc.
 ignorable_urls:

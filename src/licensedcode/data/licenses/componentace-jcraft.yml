@@ -6,7 +6,7 @@ owner: ComponentAce
 notes: composite license_expression bsd-new and bsd-new and zlib
 minimum_coverage: 85
 ignorable_copyrights:
-    - Copyright (c) 2000,2001,2002,2003
+    - Copyright (c) 2000,2001,2002,2003 ymnk, JCraft,Inc.
     - Copyright (c) 2006, ComponentAce http://www.componentace.com
 ignorable_urls:
     - http://www.componentace.com/

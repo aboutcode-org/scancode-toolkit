@@ -7,4 +7,4 @@ other_urls:
     - http://www.trieuvan.com/apache/apr/apr-iconv-1.2.1.tar.gz
     - https://apr.apache.org/
 ignorable_authors:
-    - its contributors.
+    - its contributors

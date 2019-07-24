@@ -17,8 +17,8 @@ other_urls:
     - https://opensource.org/licenses/OCLC-2.0
 ignorable_copyrights:
     - Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.
-        and other contributors.
-    - Copyright (c) 2002. OCLC Research.
+        and other contributors
+    - Copyright (c) 2002. OCLC Research
 ignorable_urls:
     - http://purl.oclc.org/oclc/research/ORPL
     - http://www.oclc.org/oclc/research

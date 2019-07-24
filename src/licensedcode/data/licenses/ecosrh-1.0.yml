@@ -13,8 +13,8 @@ text_urls:
     - http://sourceware.cygnus.com/ecos/license-overview.html
 minimum_coverage: 70
 ignorable_copyrights:
-    - Copyright (c) 1998 Cygnus Solutions (http://www.cygnus.com).
-    - Copyright (c) 1998 Cygnus Solutions.
+    - Copyright (c) 1998 Cygnus Solutions
+    - Copyright (c) 1998 Cygnus Solutions (http://www.cygnus.com)
 ignorable_urls:
     - http://sourceware.cygnus.com/ecos
     - http://www.cygnus.com/

@@ -4,8 +4,6 @@ name: Appfire EULA
 category: Proprietary Free
 owner: Appfire
 homepage_url: http://appfire.com/eula
-ignorable_copyrights:
-    - Copyright A. The Products
 ignorable_urls:
     - https://bobswift.atlassian.net/
     - https://bobswift.atlassian.net/wiki/questions

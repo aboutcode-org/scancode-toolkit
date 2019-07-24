@@ -6,7 +6,7 @@ owner: Mitre
 homepage_url: https://opensource.org/licenses/mitrepl
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright (c) . The MITRE Corporation (http://www.mitre.org/).
+    - Copyright (c) . The MITRE Corporation (http://www.mitre.org/)
 ignorable_urls:
     - http://www.mitre.org/
 ignorable_emails:
