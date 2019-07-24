@@ -342,7 +342,8 @@ def splitext(path, force_posix=False):
 #
 
 
-ignore_nothing = lambda _: False
+def ignore_nothing(_):
+    return False
 
 
 def walk(location, ignored=ignore_nothing):
