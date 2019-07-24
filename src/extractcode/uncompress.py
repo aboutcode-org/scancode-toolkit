@@ -31,10 +31,14 @@ import gzip
 import logging
 import os
 
-# These imports add support for multistream BZ2 files
-# This is a Python2 backport for bz2file from Python3
-# Because of http://bugs.python.org/issue20781
-from bz2file import BZ2File
+try:
+    # These imports add support for multistream BZ2 files
+    # This is a Python2 backport for bz2file from Python3
+    # Because of http://bugs.python.org/issue20781
+    from bz2file import BZ2File
+except ImportError:
+    from bz2 import BZ2File
+
 
 from commoncode import fileutils
 from extractcode import EXTRACT_SUFFIX

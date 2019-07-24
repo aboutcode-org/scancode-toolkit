@@ -155,7 +155,7 @@ setup(
         'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98',
+        'bz2file >= 0.98; python_version<"3"',
         'extractcode-libarchive',
         'extractcode-7z',
 
