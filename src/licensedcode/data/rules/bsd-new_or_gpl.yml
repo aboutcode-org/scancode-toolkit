@@ -1,5 +1,3 @@
 license_expression: bsd-new OR gpl-1.0-plus
 is_license_notice: yes
 minimum_coverage: 80
-ignorable_copyrights:
-    - copyright holder and contributors

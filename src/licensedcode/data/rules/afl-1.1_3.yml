@@ -2,4 +2,4 @@ license_expression: afl-1.1
 is_license_text: yes
 minimum_coverage: 60
 ignorable_copyrights:
-    - Copyright (c) 2002 Lawrence E. Rosen.
+    - Copyright (c) 2002 Lawrence E. Rosen

@@ -3,4 +3,4 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright 1989 2004 by Hunter Goatley.
+    - Copyright 1989 2004 by Hunter Goatley

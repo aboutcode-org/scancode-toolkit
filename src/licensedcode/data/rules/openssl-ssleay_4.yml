@@ -4,11 +4,10 @@ minimum_coverage: 80
 notes: full openssl/ssleay with extra headers
 ignorable_copyrights:
     - Copyright (c) Eric Young (eay@cryptsoft.com)
-    - Copyright (c) The OpenSSL Project.
+    - Copyright (c) The OpenSSL Project
 ignorable_authors:
-    - Eric Young (eay@cryptsoft.com).
+    - Eric Young (eay@cryptsoft.com)
     - Tim Hudson (tjh@cryptsoft.com)
-    - Tim Hudson (tjh@cryptsoft.com).
     - the OpenSSL Project
 ignorable_urls:
     - http://www.openssl.org/

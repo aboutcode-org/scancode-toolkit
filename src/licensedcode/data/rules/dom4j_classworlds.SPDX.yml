@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright 2002
+    - Copyright 2002 (c) The Codehaus
 ignorable_urls:
     - http://classworlds.codehaus.org/
 ignorable_emails:

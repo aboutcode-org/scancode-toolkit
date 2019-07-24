@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 80
 notes: Saxpath full text template
 ignorable_authors:
-    - the SAXPath Project (http://www.saxpath.org/).
+    - the SAXPath Project (http://www.saxpath.org/)
 ignorable_urls:
     - http://www.saxpath.org/
 ignorable_emails:

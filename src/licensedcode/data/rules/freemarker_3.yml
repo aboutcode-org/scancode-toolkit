@@ -2,7 +2,7 @@ license_expression: freemarker
 is_license_text: yes
 minimum_coverage: 80
 ignorable_authors:
-    - the Visigoth Software Society (http://www.visigoths.org/).
+    - the Visigoth Software Society (http://www.visigoths.org/)
 ignorable_urls:
     - http://www.visigoths.org/
 ignorable_emails:

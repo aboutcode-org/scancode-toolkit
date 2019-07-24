@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 60
 notes: Apache 1.1 style, werken saxpath
 ignorable_authors:
-    - the SAXPath Project (http://www.saxpath.org/).
+    - the SAXPath Project (http://www.saxpath.org/)
 ignorable_urls:
     - http://www.saxpath.org/
 ignorable_emails:

@@ -2,4 +2,4 @@ license_expression: openldap-1.4
 is_license_text: yes
 notes: OpenLDAP 1.4
 ignorable_copyrights:
-    - Copyright 1998-1999, The OpenLDAP Foundation.
+    - Copyright 1998-1999, The OpenLDAP Foundation

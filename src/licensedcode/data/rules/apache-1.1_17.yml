@@ -3,7 +3,7 @@ is_license_text: yes
 notes: Batik variant of Apache 1.1 with hyphenation. This variant has been formatted with hyphenation
     breaking some words in multiple words
 ignorable_authors:
-    - the Apache Software Foundation (http://www.apache.org/).
+    - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:

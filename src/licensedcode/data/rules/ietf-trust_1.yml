@@ -2,8 +2,9 @@ license_expression: ietf-trust
 is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) IETF Trust
+    - Copyright (c) IETF Trust and the persons identified as the document authors
 ignorable_authors:
-    - authors. The IETF Trust and the Internet Society
+    - authorship IETF Trust
     - the IETF Trust
 ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php

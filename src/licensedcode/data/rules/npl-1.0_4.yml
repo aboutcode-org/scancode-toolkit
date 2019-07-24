@@ -3,6 +3,6 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright (c) 1998 Netscape Communications Corporation.
+    - Copyright (c) 1998 Netscape Communications Corporation
 ignorable_urls:
     - http://www.mozilla.org/NPL/Software

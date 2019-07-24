@@ -1,7 +1,7 @@
 license_expression: cvwl
 is_license_notice: yes
 ignorable_copyrights:
-    - Copyright &copy The MITRE Corporation
+    - Copyright (c) The MITRE Corporation
 ignorable_urls:
     - http://www.mitre.org/
 ignorable_emails:

@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright (c) Zope Corporation.
+    - Copyright (c) Zope Corporation
 ignorable_authors:
     - Zope Corporation
 ignorable_urls:

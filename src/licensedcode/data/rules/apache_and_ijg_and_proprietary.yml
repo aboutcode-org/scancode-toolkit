@@ -3,9 +3,9 @@ is_license_reference: yes
 minimum_coverage: 90
 notes: found in SUN/Oracle JREs
 ignorable_copyrights:
-    - Copyright property of CompuServe Incorporated.
-    - Portions Copyright Eastman Kodak Company 1992.
+    - Copyright property of CompuServe Incorporated
+    - Portions Copyright Eastman Kodak Company 1992
 ignorable_authors:
-    - the Apache Software Foundation (http://www.apache.org).
+    - the Apache Software Foundation (http://www.apache.org)
 ignorable_urls:
     - http://www.apache.org/

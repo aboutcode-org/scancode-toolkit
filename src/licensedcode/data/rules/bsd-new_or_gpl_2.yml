@@ -2,5 +2,3 @@ license_expression: bsd-new OR gpl-1.0-plus
 is_license_notice: yes
 minimum_coverage: 80
 notes: Dual licenses for GPL and BSD-NEW
-ignorable_copyrights:
-    - copyright. THIS SOFTWARE IS PROVIDED AS

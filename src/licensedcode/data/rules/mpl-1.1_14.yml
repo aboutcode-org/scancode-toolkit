@@ -1,7 +1,5 @@
 license_expression: mpl-1.1
 is_license_text: yes
 notes: another MPL variant
-ignorable_authors:
-    - the Initial Developer
 ignorable_urls:
     - http://www.mozilla.org/MPL/

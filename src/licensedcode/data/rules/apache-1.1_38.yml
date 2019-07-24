@@ -1,7 +1,7 @@
 license_expression: apache-1.1
 is_license_text: yes
 ignorable_authors:
-    - the Caucho Technology (http://www.caucho.com/).
+    - the Caucho Technology (http://www.caucho.com/)
 ignorable_urls:
     - http://www.caucho.com/
 ignorable_emails:

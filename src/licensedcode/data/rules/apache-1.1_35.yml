@@ -2,9 +2,9 @@ license_expression: apache-1.1
 is_license_text: yes
 notes: Apache-1.1-style template
 ignorable_copyrights:
-    - Copyright (c) The Apache Software Foundation.
+    - Copyright (c) The Apache Software Foundation
 ignorable_authors:
-    - the Apache Software Foundation (http://www.apache.org/).
+    - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:

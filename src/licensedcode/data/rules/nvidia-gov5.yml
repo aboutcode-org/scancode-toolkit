@@ -2,6 +2,6 @@ license_expression: nvidia
 is_license_notice: yes
 minimum_coverage: 90
 ignorable_copyrights:
-    - Copyright 1993-1999 NVIDIA, Corporation.
+    - Copyright 1993-1999 NVIDIA, Corporation
 ignorable_emails:
     - jgarzik@pobox.com

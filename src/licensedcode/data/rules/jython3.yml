@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 85
 ignorable_copyrights:
     - Copyright (c) 1996-1999 Corporation for National Research Initiatives
-    - Copyright (c) 2000-2009 Jython Developers.
+    - Copyright (c) 2000-2009 Jython Developers
     - Copyright (c) 2007 Python Software Foundation
 ignorable_authors:
     - Brian Zimmer

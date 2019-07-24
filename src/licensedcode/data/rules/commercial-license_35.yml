@@ -1,6 +1,4 @@
 license_expression: commercial-license
 is_license_text: yes
-ignorable_copyrights:
-    - (c) any associated software, technology
 ignorable_urls:
     - http://www.eastwindnetworks.com/

@@ -5,7 +5,7 @@ referenced_filenames:
     - NOTICE
     - LICENSE
 ignorable_authors:
-    - The Apache Software Foundation (http://www.apache.org/).
+    - The Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
     - http://www.apache.org/
     - http://www.saxproject.org/

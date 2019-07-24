@@ -2,4 +2,4 @@ license_expression: ietf
 is_license_notice: yes
 notes: IETF license text, with typos
 ignorable_copyrights:
-    - Copyright (c) The Internet Society (1999).
+    - Copyright (c) The Internet Society (1999)

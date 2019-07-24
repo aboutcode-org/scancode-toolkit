@@ -2,7 +2,7 @@ license_expression: gpl-2.0 AND proprietary-license
 is_license_notice: yes
 minimum_coverage: 80
 ignorable_copyrights:
-    - Copyright (c) 2010 Fedora Project.
+    - Copyright (c) 2010 Fedora Project
     - copyrighted by Fedora Project and others
 ignorable_urls:
     - http://fedoraproject.org/wiki/Legal

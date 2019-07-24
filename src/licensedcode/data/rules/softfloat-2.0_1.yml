@@ -1,6 +1,6 @@
 license_expression: softfloat-2.0
 is_license_text: yes
 ignorable_authors:
-    - John R. Hauser.
+    - John R. Hauser
 ignorable_urls:
     - http://http.cs.berkeley.edu/~jhauser/

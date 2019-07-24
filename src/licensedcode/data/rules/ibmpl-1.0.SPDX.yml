@@ -3,4 +3,4 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright (c) 1996, 1999 International Business Machines Corporation and others.
+    - Copyright (c) 1996, 1999 International Business Machines Corporation and others

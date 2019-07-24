@@ -229,7 +229,7 @@ patterns = [
      r'|available|Recipient\.?|LICEN[CS]EES?\.?|[Ll]icen[cs]ees?,?|Application|Receiving|Party|interfaces'
      r'|owner|Sui|Generis|Conditioned|Disclaimer|Warranty|Represents|Sufficient|Each'
      r'|Partially|Limitation|Liability|Named|Use.|EXCEPT|OWNER\.?|Comments\.?'
-     r'|you|means|information|Alternately|INFRINGEMENT\.?|Install|Updates|Record-keeping|Privacy'
+     r'|you|means|information|[Aa]lternatively.?|[Aa]lternately.?|INFRINGEMENT.?|Install|Updates|Record-keeping|Privacy'
      r')$', 'JUNK'),
 
     # various trailing words that are junk
@@ -279,7 +279,7 @@ patterns = [
       r'|Joint|Assignment|Work|Attribution|Phrase|Timer|Manager'
       r'|AGPL.?|MIT'
       r'|Baslerstr\.?|E-[Mm]ail|Email|Original|Library|Activation\.?'
-      r'|Authored|Linux|Target|Technical|Users?|Policy,?'
+      r'|Authored|Linux|Target|Technical|Users?|Policy,?|Visit|Those'
       r'|Norwegian|Act[\.,]?|Further|NOTICE\.?|Licen[cs]e,?|Patents?'
       r')?$', 'NN'),
     # |Products\.?
@@ -1323,13 +1323,15 @@ grammar = """
 #######################################
 # Authors
 #######################################
+
     # developed by Project Mayo.
-    AUTHOR: {<AUTH2>  <BY>  <COMPANY>  <NNP> } #26441
+    AUTHOR: {<AUTH2>+ <BY> <COMPANY> <NNP>}        #2645-1
     # Created by XYZ
-    AUTH: {<AUTH2>+ <BY>}        #2645
+    AUTH: {<AUTH2>+ <BY>}        #2645-2
 
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2|NAME3>+ <YR-RANGE>*}        #2660
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
@@ -1337,6 +1339,7 @@ grammar = """
     AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+}        #2700
     AUTHOR: {<YR-RANGE> <NAME|NAME2>+}        #2710
     AUTHOR: {<BY> <CC>? <NAME2>+}        #2720
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NAME2>+}        #2720
     AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH|AUTHS>}        #2730
     AUTHOR: {<BY> <EMAIL>}        #2740
@@ -1350,8 +1353,10 @@ grammar = """
     AUTHOR: {<AUTHOR>  <NN>  <NAME>  <NAME>} #2762
 
     # created by Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software
-    AUTHOR: {<AUTH2>  <CC>  <AUTHOR>  <NN>  <NAME>  <NN>  <NN>  <NNP>} #26451
+    AUTHOR: {<AUTH2>  <CC>  <AUTHOR>  <NN>  <NAME>  <NN>  <NN>  <NNP>} #2645-4
 
+    # developed by the XML DB Initiative http//www.xmldb.org
+    AUTHOR: {<AUTH2>  <COMPANY>} #2645-7
 
 #######################################
 # Mixed AUTHORS and COPYRIGHTS
@@ -1365,6 +1370,9 @@ grammar = """
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
     # copyrighted by MIT
     COPYRIGHT: {<COPY>  <BY>  <MIT>} #2840
+
+    # Copyright (c) 1995-2018 The PNG Reference Library Authors
+    COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NN>  <AUTHS>} #3000
 
 #######################################
 # Last resort catch all ending with allrights
@@ -1674,7 +1682,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
         'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
-        'author\'',
+        'author\'', 'authors,', 
         ])
 ))
 

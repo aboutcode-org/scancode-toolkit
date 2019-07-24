@@ -1,9 +1,5 @@
 license_expression: generic-cla
 is_license_notice: yes
 notes: Oracle CLA for OpenOffice
-ignorable_copyrights:
-    - Joint Copyright Assignment
-ignorable_authors:
-    - Sun Microsystems, Inc. 'Sun
 ignorable_emails:
     - Copyrightfax@sun.com

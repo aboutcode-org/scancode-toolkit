@@ -2,9 +2,9 @@ license_expression: apache-1.1
 is_license_text: yes
 minimum_coverage: 80
 ignorable_copyrights:
-    - copyright (c) 1999, International Business Machines, Inc., http://www.apache.org.
+    - copyright (c) 1999, International Business Machines, Inc., http://www.apache.org
 ignorable_authors:
-    - the Apache Software Foundation (http://www.apache.org/).
+    - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:

@@ -3,4 +3,4 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - (c) the European Community 2007 This European Union Public
+    - (c) the European Community 2007

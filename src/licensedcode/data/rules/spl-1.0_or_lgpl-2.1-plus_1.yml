@@ -2,7 +2,5 @@ license_expression: spl-1.0 OR lgpl-2.1-plus
 is_license_notice: yes
 relevance: 100
 notes: this is found in Beanshell
-ignorable_copyrights:
-    - Copyright GNU Public
 ignorable_urls:
     - http://www.sun.com/

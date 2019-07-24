@@ -3,10 +3,10 @@ is_license_text: yes
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
-    - Copyright (c) 1998-2016 The OpenSSL Project.
+    - Copyright (c) 1998-2016 The OpenSSL Project
 ignorable_authors:
-    - Eric Young (eay@cryptsoft.com).
-    - Tim Hudson (tjh@cryptsoft.com).
+    - Eric Young (eay@cryptsoft.com)
+    - Tim Hudson (tjh@cryptsoft.com)
     - the OpenSSL Project
 ignorable_urls:
     - http://www.openssl.org/

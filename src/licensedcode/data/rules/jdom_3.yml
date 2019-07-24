@@ -2,10 +2,10 @@ license_expression: jdom
 is_license_text: yes
 notes: Original text
 ignorable_copyrights:
-    - Copyright (c) 2000-2002 Jason Hunter & Brett McLaughlin.
+    - Copyright (c) 2000-2002 Jason Hunter & Brett McLaughlin
 ignorable_authors:
     - Jason Hunter and Brett McLaughlin
-    - the JDOM Project (http://www.jdom.org/).
+    - the JDOM Project (http://www.jdom.org/). Alternatively
 ignorable_urls:
     - http://www.jdom.org/
     - http://www.jdom.org/images/logos

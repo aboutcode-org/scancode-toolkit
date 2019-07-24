@@ -5,5 +5,3 @@ minimum_coverage: 60
 referenced_filenames:
     - LICENSE
     - PATENTS
-ignorable_authors:
-    - contributing project

@@ -3,7 +3,6 @@ is_license_notice: yes
 minimum_coverage: 95
 ignorable_copyrights:
     - Copyright The LLVM project
-    - Copyright, License, and Patents
 ignorable_urls:
     - http://www.opensource.org/licenses/UoI-NCSA.php
     - http://www.opensource.org/licenses/mit-license.php

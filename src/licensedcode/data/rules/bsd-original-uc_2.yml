@@ -2,4 +2,4 @@ license_expression: bsd-original-uc
 is_license_notice: yes
 notes: Lawrence Labs original BSD variant
 ignorable_authors:
-    - the Network Research Group at Lawrence Berkeley National Laboratory.
+    - the Network Research Group at Lawrence Berkeley National Laboratory

@@ -2,7 +2,7 @@ license_expression: php-3.01
 is_license_text: yes
 minimum_coverage: 70
 ignorable_copyrights:
-    - Copyright (c) 1999 - 2010 The PHP Group.
+    - Copyright (c) 1999 - 2010 The PHP Group
 ignorable_urls:
     - http://www.php.net/
     - http://www.php.net/software/

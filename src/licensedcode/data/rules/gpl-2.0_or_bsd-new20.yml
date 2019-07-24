@@ -4,4 +4,4 @@ minimum_coverage: 85
 referenced_filenames:
     - LICENSE.GPL
 ignorable_copyrights:
-    - Copyright (c) Corporation.
+    - Copyright (c) Corporation

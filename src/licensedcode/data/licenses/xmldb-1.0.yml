@@ -12,7 +12,7 @@ other_urls:
 ignorable_copyrights:
     - Copyright (c) 2000-2003 The XML:DB Initiative
 ignorable_authors:
-    - the XML:DB Initiative (http://www.xmldb.org/). Alternately
+    - the XML:DB Initiative (http://www.xmldb.org/)
 ignorable_urls:
     - http://www.xmldb.org/
 ignorable_emails:
