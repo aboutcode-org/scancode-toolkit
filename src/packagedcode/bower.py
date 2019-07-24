@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 import io
 import json
 import logging
@@ -36,6 +37,7 @@ from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
+from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
@@ -65,10 +67,16 @@ class BowerPackage(models.Package):
 
     @classmethod
     def get_package_resources(cls, package_root, codebase):
+        _ignored = partial(
+            ignore.is_ignored,
+            ignores={
+               'node_modules': 'skip',
+            },
+            unignores={},
+            skip_special=False
+        )
         yield package_root
-        for resource in package_root.walk(codebase, topdown=True):
-            if resource.is_dir and resource.name == 'node_modules':
-                continue
+        for resource in package_root.walk(codebase, topdown=True, ignored=_ignored):
             yield resource
 
     def compute_normalized_license(self):

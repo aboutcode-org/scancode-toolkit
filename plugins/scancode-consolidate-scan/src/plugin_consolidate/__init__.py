@@ -78,6 +78,7 @@ class Component(object):
     package = attr.ib(default=None)
     license_expression = attr.ib(default=None)
     holders = attr.ib(default=attr.Factory(list))
+    consolidated_copyright = attr.ib(default=None)
     other_license_expression = attr.ib(default=None)
     other_holders = attr.ib(default=attr.Factory(list))
 
@@ -89,11 +90,13 @@ class Component(object):
             if attr.name in ('resources', ):
                 return False
             return True
+        self.consolidated_copyright = self.consolidate_copyright()
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
-    @property
-    def copyright(self):
-        return 'Copyright (c) {}'.format(', '.join(self.holders))
+    def consolidate_copyright(self):
+        holders = self.holders + self.other_holders
+        if holders:
+            return 'Copyright (c) {}'.format(', '.join(holders))
 
 
 @post_scan_impl
@@ -126,10 +129,10 @@ class Consolidate(PostScanPlugin):
         )
     ]
 
-    def is_enabled(self, origin_summary, **kwargs):
-        return origin_summary
+    def is_enabled(self, consolidate, **kwargs):
+        return consolidate
 
-    def process_codebase(self, codebase):
+    def process_codebase(self, codebase, **kwargs):
         # Collect Components
         components = []
         root = codebase.get_resource(0)
@@ -222,9 +225,9 @@ def get_package_components(codebase):
                 resources=package_resources,
                 package=package,
                 license_expression=package_license_expression,
-                holders=sorted(package_holders),
+                holders=sorted(set(package_holders)),
                 other_license_expression=simplified_discovered_license_expression,
-                other_holders=set(sorted(discovered_holders))
+                other_holders=sorted(set(discovered_holders))
             )
 
 
@@ -233,6 +236,10 @@ def get_license_exp_holders_components(codebase):
     Yield a Component for each directory where 75% or more of the files have the same license
     expression and copyright holders
     """
+    root = codebase.get_resource(0)
+    if root.extra_data.get('in_package_component'):
+        return
+
     origin_translation_table = {}
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
@@ -284,9 +291,8 @@ def get_license_exp_holders_components(codebase):
                     yield fs
 
     # Yield a Component for root if there is a majority
-    root = codebase.get_resource(0)
     fs = create_license_exp_holders_component(root, codebase)
-    if fs and not root.extra_data.get('in_package_component'):
+    if fs:
         yield fs
 
 
