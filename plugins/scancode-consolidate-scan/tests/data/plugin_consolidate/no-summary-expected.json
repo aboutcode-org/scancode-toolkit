@@ -19,6 +19,8 @@
       }
     }
   ],
+  "consolidated_components": [],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "no-summary",
@@ -44,6 +46,7 @@
       "copyrights": [],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 146,
@@ -120,6 +123,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -196,6 +200,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -237,6 +242,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -278,6 +284,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

@@ -19,6 +19,20 @@
       }
     }
   ],
+  "consolidated_components": [
+    {
+      "type": "license-holders",
+      "name": "the_apache_software_foundation_1",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "the apache software foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) the apache software foundation",
+      "other_license_expression": null,
+      "other_holders": []
+    }
+  ],
+  "consolidated_packages": [],
   "files": [
     {
       "path": "clear-summary",
@@ -44,6 +58,9 @@
       "copyrights": [],
       "authors": [],
       "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 177,
@@ -120,6 +137,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -196,6 +214,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -272,6 +291,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -313,6 +333,7 @@
       ],
       "authors": [],
       "packages": [],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
