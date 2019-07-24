@@ -41,18 +41,18 @@ from commoncode import fileutils
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-import typecode.contenttype
 
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_size
 
 import extractcode
-
 from extractcode import archive
 from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
+import typecode.contenttype
+
 
 """
 For each archive type --when possible-- we are testing extraction of:
@@ -81,8 +81,8 @@ class TestExtractorTest(FileBasedTesting):
         else:
             extractors = archive.get_extractors(test_loc)
 
-        ft = typecode.contenttype.get_type(test_loc).filetype_file
-        mt = typecode.contenttype.get_type(test_loc).mimetype_file
+        ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
+        mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
         fe = fileutils.file_extension(test_loc).lower()
         em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
         msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
@@ -527,7 +527,7 @@ class TestTarGzip(BaseArchiveTestCase):
         exp_file = self.get_test_loc('archive/tgz/mixed_case_and_symlink.tgz.expected')
         with io.open(exp_file, encoding='utf-8') as ef:
             expected_files = json.load(ef)
-        check_files(test_dir, map(str, expected_files))
+        check_files(test_dir, list(map(str, expected_files)))
 
     def test_extract_targz_symlinks(self):
         test_file = self.get_test_loc('archive/tgz/symlink.tar.gz')
@@ -566,7 +566,7 @@ class TestTarGzip(BaseArchiveTestCase):
         assert os.listdir(test_dir)
 
 
-class TestGzip(BaseArchiveTestCase):
+class TestUnCompressGzip(BaseArchiveTestCase):
 
     def test_uncompress_gzip_basic(self):
         test_file = self.get_test_loc('archive/gzip/file_4.26-1.diff.gz')
@@ -710,7 +710,7 @@ class TestTarBz2(BaseArchiveTestCase):
         assert open(expected, 'rb').read() == open(result, 'rb').read()
 
 
-class TestBz2(BaseArchiveTestCase):
+class TestUncompressBz2(BaseArchiveTestCase):
 
     def test_uncompress_bzip2_basic(self):
         test_file = self.get_test_loc('archive/bz2/single_file_not_tarred.bz2')
@@ -747,6 +747,9 @@ class TestBz2(BaseArchiveTestCase):
         expected = self.get_test_loc('archive/bz2/bzip2_multistream/expected.csv')
         result = os.path.join(test_dir, 'example-file.csv.bz2-extract')
         assert open(expected, 'rb').read() == open(result, 'rb').read()
+
+
+class TestSevenzipBz2(BaseArchiveTestCase):
 
     def test_sevenzip_extract_can_handle_bz2_multistream_differently(self):
         test_file = self.get_test_loc('archive/bz2/bzip2_multistream/example-file.csv.bz2')
