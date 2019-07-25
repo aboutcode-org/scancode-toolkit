@@ -1,0 +1,213 @@
+--------------------------------------------
+Package: about
+  class: packagedcode.about:AboutPackage
+  metafiles: *.ABOUT
+
+--------------------------------------------
+Package: android
+  class: packagedcode.models:AndroidApp
+  extensions: .apk
+  filetypes: zip archive
+
+--------------------------------------------
+Package: android-lib
+  class: packagedcode.models:AndroidLibrary
+  extensions: .aar
+  filetypes: zip archive
+
+--------------------------------------------
+Package: axis2
+  class: packagedcode.models:Axis2Mar
+  metafiles: META-INF/module.xml
+  extensions: .mar
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: bower
+  class: packagedcode.bower:BowerPackage
+  metafiles: bower.json, .bower.json
+
+--------------------------------------------
+Package: cab
+  class: packagedcode.models:CabPackage
+  extensions: .cab
+  filetypes: microsoft cabinet
+
+--------------------------------------------
+Package: cargo
+  class: packagedcode.cargo:RustCargoCrate
+  metafiles: Cargo.toml
+
+--------------------------------------------
+Package: chef
+  class: packagedcode.chef:ChefPackage
+  metafiles: metadata.json, metadata.rb
+  filetypes: .tgz
+
+--------------------------------------------
+Package: chrome
+  class: packagedcode.models:ChromeExtension
+  extensions: .crx
+  filetypes: data
+
+--------------------------------------------
+Package: composer
+  class: packagedcode.phpcomposer:PHPComposerPackage
+  metafiles: composer.json
+  filetypes: .json
+
+--------------------------------------------
+Package: cpan
+  class: packagedcode.models:CpanModule
+  metafiles: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
+  extensions: .tar.gz
+
+--------------------------------------------
+Package: deb
+  class: packagedcode.models:DebianPackage
+  metafiles: *.control
+  extensions: .deb
+  filetypes: debian binary package
+
+--------------------------------------------
+Package: dmg
+  class: packagedcode.models:AppleDmgPackage
+  extensions: .dmg, .sparseimage
+  filetypes: zlib compressed
+
+--------------------------------------------
+Package: ear
+  class: packagedcode.models:JavaEar
+  metafiles: META-INF/application.xml, META-INF/ejb-jar.xml
+  extensions: .ear
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: freebsd
+  class: packagedcode.freebsd:FreeBSDPackage
+  metafiles: +COMPACT_MANIFEST
+
+--------------------------------------------
+Package: gem
+  class: packagedcode.rubygems:RubyGem
+  metafiles: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
+  extensions: .gem
+  filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: haxe
+  class: packagedcode.haxe:HaxePackage
+  metafiles: haxelib.json
+
+--------------------------------------------
+Package: installshield
+  class: packagedcode.models:InstallShieldPackage
+  extensions: .exe
+  filetypes: installshield
+
+--------------------------------------------
+Package: ios
+  class: packagedcode.models:IOSApp
+  extensions: .ipa
+  filetypes: zip archive
+
+--------------------------------------------
+Package: iso
+  class: packagedcode.models:IsoImagePackage
+  extensions: .iso, .udf, .img
+  filetypes: iso 9660 cd-rom, high sierra cd-rom
+
+--------------------------------------------
+Package: ivy
+  class: packagedcode.models:IvyJar
+  metafiles: ivy.xml
+  extensions: .jar
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: jar
+  class: packagedcode.models:JavaJar
+  metafiles: META-INF/MANIFEST.MF
+  extensions: .jar
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: jboss
+  class: packagedcode.models:JBossSar
+  metafiles: META-INF/jboss-service.xml
+  extensions: .sar
+  filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: maven
+  class: packagedcode.maven:MavenPomPackage
+  metafiles: *.pom, pom.xml
+  extensions: .pom
+
+--------------------------------------------
+Package: meteor
+  class: packagedcode.models:MeteorPackage
+  metafiles: package.js
+
+--------------------------------------------
+Package: mozilla
+  class: packagedcode.models:MozillaExtension
+  extensions: .xpi
+  filetypes: zip archive
+
+--------------------------------------------
+Package: msi
+  class: packagedcode.models:MsiInstallerPackage
+  extensions: .msi
+  filetypes: msi installer
+
+--------------------------------------------
+Package: npm
+  class: packagedcode.npm:NpmPackage
+  metafiles: package.json, npm-shrinkwrap.json
+  filetypes: .tgz
+
+--------------------------------------------
+Package: nsis
+  class: packagedcode.models:NSISInstallerPackage
+  extensions: .exe
+  filetypes: nullsoft installer
+
+--------------------------------------------
+Package: nuget
+  class: packagedcode.nuget:NugetPackage
+  metafiles: [Content_Types].xml, *.nuspec
+  extensions: .nupkg
+  filetypes: zip archive, microsoft ooxml
+
+--------------------------------------------
+Package: pypi
+  class: packagedcode.pypi:PythonPackage
+  extensions: .egg, .whl, .pyz, .pex
+  filetypes: zip archive
+
+--------------------------------------------
+Package: rpm
+  class: packagedcode.rpm:RpmPackage
+  metafiles: *.spec
+  extensions: .rpm, .srpm, .mvl, .vip
+  filetypes: rpm 
+
+--------------------------------------------
+Package: shar
+  class: packagedcode.models:SharPackage
+  extensions: .sha, .shar, .bin
+  filetypes: posix shell script
+
+--------------------------------------------
+Package: squashfs
+  class: packagedcode.models:SquashfsPackage
+  filetypes: squashfs
+
+--------------------------------------------
+Package: war
+  class: packagedcode.models:JavaWar
+  metafiles: WEB-INF/web.xml
+  extensions: .war
+  filetypes: java archive , zip archive
+

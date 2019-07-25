@@ -644,6 +644,15 @@ def test_scan_cli_help(regen=False):
     assert open(expected_file).read() == result.output
 
 
+def test_package_list_help(regen=False):
+    expected_file = test_env.get_test_loc('help/listpackages.txt')
+    result = run_scan_click(['--list-packages'])
+    if regen:
+        with open(expected_file, 'wb') as ef:
+            ef.write(result.output)
+    assert open(expected_file).read() == result.output
+
+
 def test_scan_errors_out_with_unknown_option():
     test_file = test_env.get_test_loc('license_text/test.txt')
     args = ['--json--info', test_file]
