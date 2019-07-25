@@ -1,0 +1,39 @@
+{
+  "name": "test",
+  "description": "test",
+  "long_description": "test",
+  "maintainer": "test",
+  "maintainer_email": "test@segfawlt.net",
+  "license": "MIT",
+  "platforms": {
+
+  },
+  "dependencies": {
+
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.1.0"
+}

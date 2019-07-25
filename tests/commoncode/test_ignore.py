@@ -188,15 +188,13 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
         assert expected == result
 
-    @skipIf(on_mac, 'We are only testing on Linux for now')
-    @skipIf(on_windows, 'We are only testing on Linux for now')
+    @skipIf(on_mac or on_windows, 'We are only testing on posix for now')
     def test_is_ignored_path_string_skip_special(self):
         test_path = '/test/path'
         assert ignore.is_ignored(test_path, {'asdf': 'skip'}, {}, skip_special=True)
         assert not ignore.is_ignored(test_path, {'asdf': 'skip'}, {}, skip_special=False)
 
-    @skipIf(on_mac, 'We are only testing on Linux for now')
-    @skipIf(on_windows, 'We are only testing on Linux for now')
+    @skipIf(on_mac or on_windows, 'We are only testing on posix for now')
     def test_is_ignored_special_files_skip_special(self):
         test_fifo = self.get_temp_file()
         os.mkfifo(test_fifo)
@@ -209,8 +207,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert ignore.is_ignored(test_symlink, {'asdf': 'skip'}, {}, skip_special=True)
         assert not ignore.is_ignored(test_symlink, {'asdf': 'skip'}, {}, skip_special=False)
 
-    @skipIf(on_mac, 'We are only testing on Linux for now')
-    @skipIf(on_windows, 'We are only testing on Linux for now')
+    @skipIf(on_mac or on_windows, 'We are only testing on posix for now')
     def test_is_ignored_real_location_skip_special(self):
         test_file_location = self.get_test_loc('ignore/vcs.tgz')
         assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=True)

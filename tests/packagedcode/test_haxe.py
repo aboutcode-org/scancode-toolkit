@@ -30,6 +30,7 @@ import os.path
 
 from packagedcode import haxe
 from scancode.resource import Codebase
+from scancode.resource import VirtualCodebase
 
 from packages_test_utils import PackageTester
 
@@ -68,3 +69,12 @@ class TestHaxe(PackageTester):
         manifest_resource = codebase.get_resource_from_path(test_file, absolute=True)
         proot = haxe.HaxePackage.get_package_root(manifest_resource, codebase)
         assert test_dir == proot.location
+
+    def test_get_package_resources(self):
+        test_dir = self.get_test_loc('haxe/package_resources/test')
+        codebase = Codebase(test_dir)
+        root = codebase.root
+        package_resources = list(haxe.HaxePackage.get_package_resources(root, codebase))
+        result = [r.name for r in package_resources]
+        expected = ['test', 'haxelib.json', 'src', 'a.src']
+        assert expected == result

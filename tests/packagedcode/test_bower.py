@@ -59,14 +59,8 @@ class TestBower(PackageTester):
     def test_get_package_resources(self):
         test_dir = self.get_test_loc('bower/get_package_resource')
         codebase = Codebase(test_dir)
-        root = codebase.get_resource(0)
+        root = codebase.root
         package_resources = list(bower.BowerPackage.get_package_resources(root, codebase))
         result = [r.name for r in package_resources]
-
-        expected_file = self.get_test_loc('haxe/package_resources/test-expected.json')
-        virtual_codebase = VirtualCodebase(expected_file)
-        virtual_root = virtual_codebase.get_resource(0)
-        virtual_package_resources = list(haxe.HaxePackage.get_package_resources(virtual_root, virtual_codebase))
-        expected = [r.name for r in virtual_package_resources]
-
+        expected = ['get_package_resource', 'bower.json', 'package.json', 'src', 'src1']
         assert expected == result
