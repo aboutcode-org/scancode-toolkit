@@ -2,7 +2,7 @@ key: crcalc
 short_name: CRCalc license
 name: CRCalc license
 category: Permissive
-owner: SGI
+owner: SGI - Silicon Graphics
 homepage_url: http://www.hboehm.info/crcalc/COPYRIGHT.txt
 notes: this is included in Android and is a rather unique text
 text_urls:

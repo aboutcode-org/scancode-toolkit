@@ -1,8 +1,9 @@
 key: shl-0.5
-short_name: Solderpad Hardware License v0.5
-name: Solderpad Hardware License v0.5
-category: Proprietary Free
-owner: Solderpad
+short_name: SolderPad Hardware License v0.5
+name: SolderPad Hardware License v0.5
+category: Permissive
+owner: SolderPad
+homepage_url: https://solderpad.org/licenses/SHL-0.5/
 spdx_license_key: SHL-0.5
 other_urls:
     - https://solderpad.org/licenses/SHL-0.5/

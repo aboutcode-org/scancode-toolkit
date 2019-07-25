@@ -1,9 +1,9 @@
 key: st-mcd-2.0
-short_name: ST MCD V2
-name: MCD-ST Liberty SW License Agreement V2
+short_name: STMicro Liberty License v2
+name: STMicro Liberty License v2
 category: Free Restricted
-owner: STMicroelectronics International N.V.
-homepage_url: https://www.st.com/
+owner: STMicroelectronics
+homepage_url: https://www.st.com/software_license_agreement_liberty_v2
 notes: |
     We have mess in here
     https://www.st.com/software_license_agreement_liberty_v2 does redirect to different licenses over the years.
@@ -32,6 +32,7 @@ notes: |
      https://www.st.com/content/ccc/resource/legal/legal_agreement/license_agreement/group0/59/57/63/12/cf/a6/47/65/SLA0044/files/SLA0044.txt/jcr:content/translations/en.SLA0044.txt
      This is the one I used for now as a text. It as has this header "SLA0044 Rev5/February 2018"
 text_urls:
+    - https://www.st.com/content/ccc/resource/legal/legal_agreement/license_agreement/group0/59/57/63/12/cf/a6/47/65/SLA0044/files/SLA0044.txt/jcr:content/translations/en.SLA0044.txt
     - https://www.st.com/software_license_agreement_liberty_v2
 ignorable_urls:
     - http://www.opensource.org/

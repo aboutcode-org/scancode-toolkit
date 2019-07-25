@@ -1,0 +1,10 @@
+key: polyform-internal-use-1.0.0
+short_name: Polyform Internal Use License 1.0.0
+name: Polyform Internal Use License 1.0.0
+category: Source-available
+owner: Polyform
+homepage_url: https://polyformproject.org/licenses/internal-use/1.0.0/
+text_urls:
+    - https://polyformproject.org/wp-content/uploads/2019/07/Polyform-Internal-Use-1.0.0.txt
+ignorable_urls:
+    - https://polyformproject.org/licenses/internal-use/1.0.0

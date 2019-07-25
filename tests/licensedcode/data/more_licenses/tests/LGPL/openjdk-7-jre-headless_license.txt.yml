@@ -61,7 +61,7 @@ license_expressions:
   - apache-2.0
   - mit-no-advert-export-control
   - unknown
-  - x11-r75
+  - mit
   - x11-keith-packard
   - unicode
   - historical
@@ -69,7 +69,7 @@ license_expressions:
   - mit
   - historical
   - x11-xconsortium
-  - x11-r75
+  - mit
   - unicode
   - x11
   - x11

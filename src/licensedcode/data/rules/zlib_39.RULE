@@ -1,0 +1,5 @@
+(* zlibpas -- Pascal interface to the zlib data compression library
+ *
+ * Copyright (C) Cosmin Truta.
+ * Derived from original sources by Bob Dellaca.
+ * For conditions of distribution and use, see copyright notice in readme.txt
