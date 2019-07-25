@@ -110,11 +110,12 @@ class ConsolidatedComponent(object):
 class ConsolidatedPackage(object):
     package = attr.ib()
     consolidation = attr.ib()
+    identifier = attr.ib(default=None)
 
     def to_dict(self, **kwargs):
         package = self.package.to_dict()
-        consolidation = self.consolidation.to_dict()
-        package.update(consolidation)
+        package['identifier'] = self.identifier
+        package.update(self.consolidation.to_dict())
         return package
 
 
@@ -153,7 +154,7 @@ class Consolidate(PostScanPlugin):
         # Collect ConsolidatedPackages and ConsolidatedComponents
         packages = []
         components = []
-        root = codebase.get_resource(0)
+        root = codebase.root
         if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
             packages.extend(get_package_components(codebase))
         if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
@@ -180,18 +181,19 @@ class Consolidate(PostScanPlugin):
                 name = python_safe_name('{}_{}'.format(holders, index))
             else:
                 name = index
-            component.name = name
+            component.consolidation.name = name
             for resource in component.consolidation.resources:
                 resource.consolidated_to.append(name)
                 resource.save(codebase)
             codebase.attributes.consolidated_components.append(component.to_dict())
 
-        for package in packages:
+        for index, package in enumerate(packages, start=1):
             if not package.consolidation.resources:
                 continue
-            purl = package.package.purl
+            identifier = python_safe_name('{}_{}'.format(package.package.purl, index))
+            package.identifier = identifier
             for resource in package.consolidation.resources:
-                resource.consolidated_to.append(purl)
+                resource.consolidated_to.append(identifier)
                 resource.save(codebase)
             codebase.attributes.consolidated_packages.append(package.to_dict())
 
@@ -262,7 +264,7 @@ def get_license_exp_holders_components(codebase):
     Yield a Component for each directory where 75% or more of the files have the same license
     expression and copyright holders
     """
-    root = codebase.get_resource(0)
+    root = codebase.root
     if root.extra_data.get('in_package_component'):
         return
 
