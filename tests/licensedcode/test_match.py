@@ -915,6 +915,18 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
 
+        expected_origin_text = u"""Copyright 2003 (C) James. All Rights Reserved.
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+        origin_matched_text = u''.join(get_full_matched_text(
+            match,
+            query_string=querys,
+            idx=idx,
+            highlight_not_matched=u'%s',
+        ))
+        assert expected_origin_text == origin_matched_text
+
     def test_get_full_matched_text(self):
         rule_text = u'''
             Copyright {{some copyright}}

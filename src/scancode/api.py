@@ -154,7 +154,8 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 def get_licenses(location, min_score=0, include_text=False,
                  license_url_template=DEJACODE_LICENSE_URL,
-                 deadline=sys.maxsize, **kwargs):
+                 deadline=sys.maxsize, include_origin_text=False,
+                 **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
     `location`
@@ -170,6 +171,8 @@ def get_licenses(location, min_score=0, include_text=False,
 
     if `include_text` is True, matched text is included in the returned
     `licenses` data.
+    if `include_origin_text` is True, matched text is included in the returned
+    `licenses` data without highlighting.
     """
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
@@ -185,6 +188,12 @@ def get_licenses(location, min_score=0, include_text=False,
         if include_text:
             # TODO: handle whole lines with the case of very long lines
             matched_text = match.matched_text(whole_lines=False)
+        if include_origin_text:
+            highlight_not_matched = highlight_matched = u'%s'
+            origin_matched_text = match.matched_text(
+                highlight_matched=highlight_matched,
+                highlight_not_matched=highlight_not_matched,
+                whole_lines=False)
 
         detected_expressions.append(match.rule.license_expression)
 
@@ -231,6 +240,8 @@ def get_licenses(location, min_score=0, include_text=False,
             # FIXME: for sanity this should always be included?????
             if include_text:
                 result['matched_text'] = matched_text
+            if include_origin_text:
+                result['origin_matched_text'] = origin_matched_text
 
     return OrderedDict([
         ('licenses', detected_licenses),
