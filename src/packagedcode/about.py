@@ -54,6 +54,11 @@ if TRACE:
 class AboutPackage(models.Package):
     metafiles = ('*.ABOUT',)
     default_type = 'about'
+    # This is a mapping containing path patterns that we do not want to return
+    # as part of this Package's set of resources
+    ignorable_path_patterns = {
+        'node_modules': 'skip'
+    }
 
     @classmethod
     def recognize(cls, location):
@@ -73,14 +78,7 @@ class AboutPackage(models.Package):
 
     @classmethod
     def get_package_resources(cls, package_root, codebase):
-        _ignored = partial(
-            ignore.is_ignored,
-            ignores={
-               'node_modules': 'skip',
-            },
-            unignores={},
-            skip_special=False
-        )
+        _ignored = partial(ignore.is_ignored, ignores=cls.ignorable_path_patterns, skip_special=False)
         yield package_root
         for resource in package_root.walk(codebase, topdown=True, ignored=_ignored):
             yield resource
