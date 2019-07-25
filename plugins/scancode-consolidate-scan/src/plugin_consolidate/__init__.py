@@ -68,12 +68,13 @@ if TRACE:
 
 @attr.s
 class Consolidation(object):
-    resources = attr.ib(default=attr.Factory(list))
+    identifier = attr.ib(default=None)
     core_license_expression = attr.ib(default=None)
     core_holders = attr.ib(default=attr.Factory(list))
     consolidated_copyright = attr.ib(default=None)
     other_license_expression = attr.ib(default=None)
     other_holders = attr.ib(default=attr.Factory(list))
+    resources = attr.ib(default=attr.Factory(list))
 
     def to_dict(self, **kwargs):
         def dict_fields(attr, value):
@@ -97,11 +98,9 @@ class ConsolidatedComponent(object):
     # TODO: have an attribute for key files (one that strongly determines origin)
     type=attr.ib()
     consolidation = attr.ib()
-    name = attr.ib(default=None)
 
     def to_dict(self, **kwargs):
         c = OrderedDict(type=self.type)
-        c['name'] = self.name
         c.update(self.consolidation.to_dict())
         return c
 
@@ -110,11 +109,9 @@ class ConsolidatedComponent(object):
 class ConsolidatedPackage(object):
     package = attr.ib()
     consolidation = attr.ib()
-    identifier = attr.ib(default=None)
 
     def to_dict(self, **kwargs):
         package = self.package.to_dict()
-        package['identifier'] = self.identifier
         package.update(self.consolidation.to_dict())
         return package
 
@@ -178,10 +175,10 @@ class Consolidate(PostScanPlugin):
             # We do not want the name to be too long
             holders = holders[:65]
             if holders:
-                name = python_safe_name('{}_{}'.format(holders, index))
+                identifier = python_safe_name('{}_{}'.format(holders, index))
             else:
-                name = index
-            component.consolidation.name = name
+                identifier = index
+            component.consolidation.name = identifier
             for resource in component.consolidation.resources:
                 resource.consolidated_to.append(name)
                 resource.save(codebase)
@@ -191,7 +188,7 @@ class Consolidate(PostScanPlugin):
             if not package.consolidation.resources:
                 continue
             identifier = python_safe_name('{}_{}'.format(package.package.purl, index))
-            package.identifier = identifier
+            package.consolidation.identifier = identifier
             for resource in package.consolidation.resources:
                 resource.consolidated_to.append(identifier)
                 resource.save(codebase)
