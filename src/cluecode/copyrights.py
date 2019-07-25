@@ -1374,6 +1374,9 @@ grammar = """
     # Copyright (c) 1995-2018 The PNG Reference Library Authors
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NN>  <AUTHS>} #3000
 
+    # COPYRIGHT Written by John Cunningham Bowler, 2015.
+    COPYRIGHT: {<COPY>  <AUTHOR>} #4000
+
 #######################################
 # Last resort catch all ending with allrights
 #######################################
