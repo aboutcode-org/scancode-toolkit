@@ -178,9 +178,9 @@ class Consolidate(PostScanPlugin):
                 identifier = python_safe_name('{}_{}'.format(holders, index))
             else:
                 identifier = index
-            component.consolidation.name = identifier
+            component.consolidation.identifier = identifier
             for resource in component.consolidation.resources:
-                resource.consolidated_to.append(name)
+                resource.consolidated_to.append(identifier)
                 resource.save(codebase)
             codebase.attributes.consolidated_components.append(component.to_dict())
 
