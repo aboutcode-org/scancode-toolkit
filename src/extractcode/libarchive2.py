@@ -137,7 +137,7 @@ def extract(location, target_dir):
             else:
                 msgs = ['No path available: ']
 
-            msgs.extend([w.strip('"\' ') for w in entry.warnings if w and w.strip('"\' ')])
+            msgs.extend([w.decode('utf-8').strip('"\' ') for w in entry.warnings if w and w.decode('utf-8').strip('"\' ')])
             msgs = '\n'.join(msgs) or 'No message provided'
 
             if msgs not in warnings:

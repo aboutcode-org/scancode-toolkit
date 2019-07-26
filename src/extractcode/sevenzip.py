@@ -374,9 +374,10 @@ def parse_7z_listing(location, utf=False):
     if len(header_tail) == 1:
         # we have only a header, likely an error condition or an empty archive
         return []
-
-    empty = utf and u'' or b''
-
+    if utf:
+        empty = u''  
+    else:
+        empty = b''
     _header, body = header_tail
     body_sep = utf and u'\n\n\n' or b'\n\n\n'
     body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)

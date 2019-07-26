@@ -172,6 +172,7 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
+              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -181,6 +182,7 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
+              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -190,6 +192,7 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
+              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -199,8 +202,8 @@ jobs:
           python_architecture: x86
           test_suites:
               commoncode: Scripts\py.test -vvs tests\commoncode
-              plugincode: Scripts\py.test -vvs tests\plugincode
-
+              plugincode and extractcode: Scripts\py.test -vvs tests\plugincode tests\extractcode\test_libarchive2.py
+              
 ################################################################################
 # These jobs are using containers and their own Python 3.6
 ################################################################################
@@ -226,10 +229,11 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: commoncode and plugincode
+          test_suite_label: commoncode,plugincode & extractcode
           test_suite: |
                 bin/py.test -vvs tests/commoncode
                 bin/py.test -vvs tests/plugincode
+                bin/py.test -vvs tests/extractcode/test_libarchive2.py
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
