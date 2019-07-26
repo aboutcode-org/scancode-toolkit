@@ -68,6 +68,10 @@ if TRACE:
 
 @attr.s
 class Consolidation(object):
+    """
+    A grouping of files that share the same origin. Other clues found in the
+    codebase are stored in `other_license_expression` and `other_holders`
+    """
     identifier = attr.ib(default=None)
     core_license_expression = attr.ib(default=None)
     core_holders = attr.ib(default=attr.Factory(list))
@@ -92,9 +96,6 @@ class Consolidation(object):
 
 @attr.s
 class ConsolidatedComponent(object):
-    """
-    A grouping of files that share the same origin
-    """
     # TODO: have an attribute for key files (one that strongly determines origin)
     type=attr.ib()
     consolidation = attr.ib()
@@ -164,6 +165,16 @@ class Consolidate(PostScanPlugin):
         components = process_license_exp_holders_components(components)
 
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
+        for index, package in enumerate(packages, start=1):
+            if not package.consolidation.resources:
+                continue
+            identifier = python_safe_name('{}_{}'.format(package.package.purl, index))
+            package.consolidation.identifier = identifier
+            for resource in package.consolidation.resources:
+                resource.consolidated_to.append(identifier)
+                resource.save(codebase)
+            codebase.attributes.consolidated_packages.append(package.to_dict())
+
         for index, component in enumerate(components, start=1):
             # Skip ConsolidatedComponents that do not have files in them
             if not component.consolidation.resources:
@@ -183,16 +194,6 @@ class Consolidate(PostScanPlugin):
                 resource.consolidated_to.append(identifier)
                 resource.save(codebase)
             codebase.attributes.consolidated_components.append(component.to_dict())
-
-        for index, package in enumerate(packages, start=1):
-            if not package.consolidation.resources:
-                continue
-            identifier = python_safe_name('{}_{}'.format(package.package.purl, index))
-            package.consolidation.identifier = identifier
-            for resource in package.consolidation.resources:
-                resource.consolidated_to.append(identifier)
-                resource.save(codebase)
-            codebase.attributes.consolidated_packages.append(package.to_dict())
 
         # Dedupe and sort names in consolidated_to
         for resource in codebase.walk(topdown=True):
@@ -258,8 +259,8 @@ def get_package_components(codebase):
 
 def get_license_exp_holders_components(codebase):
     """
-    Yield a Component for each directory where 75% or more of the files have the same license
-    expression and copyright holders
+    Yield a Component for each directory where 75% or more of the files have the
+    same license expression and copyright holders
     """
     root = codebase.root
     if root.extra_data.get('in_package_component'):
@@ -323,7 +324,8 @@ def get_license_exp_holders_components(codebase):
 
 def is_majority(count, files_count):
     """
-    Return True if `count` divided by `files_count` is greater than or equal to `threshold`
+    Return True if `count` divided by `files_count` is greater than or equal to
+    `threshold`
     """
     # TODO: Increase this and test with real codebases
     threshold = 0.75
@@ -332,7 +334,8 @@ def is_majority(count, files_count):
 
 def create_license_exp_holders_component(resource, codebase):
     """
-    Return a Component for `resource` if it can be summarized on license expression and holders
+    Return a Component for `resource` if it can be summarized on license
+    expression and holders
     """
     license_expression = resource.extra_data.get('origin_summary_license_expression')
     holders = resource.extra_data.get('origin_summary_holders')
@@ -374,8 +377,8 @@ def get_component_resources(resource, codebase):
 
 def process_license_exp_holders_components(components):
     """
-    Combine Components with the same license expression and holders
-    into a single Component
+    Combine Components with the same license expression and holders into a
+    single Component
     """
     origin_translation_table = {}
     components_by_holders_license_expression = defaultdict(list)
