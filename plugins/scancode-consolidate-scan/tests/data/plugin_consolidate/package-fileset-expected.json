@@ -57,6 +57,7 @@
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "identifier": "pkg_npm_test_package_0_0_1_1",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
       "consolidated_copyright": "Copyright (c) the apache software foundation",
@@ -126,7 +127,7 @@
         }
       ],
       "consolidated_to": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -193,7 +194,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -272,7 +273,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -351,7 +352,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -430,7 +431,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg:npm/test-package@0.0.1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

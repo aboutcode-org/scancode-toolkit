@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "license-holders",
-      "name": "the_apache_software_foundation_1",
+      "identifier": "the_apache_software_foundation_1",
       "core_license_expression": "apache-2.0",
       "core_holders": [
         "the apache software foundation"
