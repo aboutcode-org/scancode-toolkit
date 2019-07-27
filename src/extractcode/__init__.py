@@ -103,7 +103,7 @@ def is_extraction_path(path):
     """
     Return True is the path points to an extraction path.
     """
-    if on_linux:
+    if on_linux and py2:
         path = fsencode(path)
 
     return path and path.rstrip(PATHS_SEPS).endswith(EXTRACT_SUFFIX)

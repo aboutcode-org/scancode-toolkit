@@ -172,10 +172,7 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: |
-                  bin/py.test -vvs tests/extractcode/test_libarchive2.py \
-                  tests/extractcode/test_extractcode.py
-
+              extractcode: bin/py.test -vvs tests/extractcode
     - template: etc/ci/azure-mac.yml
       parameters:
           job_name: macos_1013_py36
@@ -184,10 +181,8 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: |
-                    bin/py.test -vvs tests/extractcode/test_libarchive2.py \
-                    tests/extractcode/test_extractcode.py
-
+              extractcode: bin/py.test -vvs tests/extractcode
+          
     - template: etc/ci/azure-mac.yml
       parameters:
           job_name: macos1014_py36
@@ -196,9 +191,7 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: |
-                    bin/py.test -vvs tests/extractcode/test_libarchive2.py \
-                    tests/extractcode/test_extractcode.py
+              extractcode: bin/py.test -vvs tests/extractcode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -209,8 +202,7 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test -vvs tests\commoncode
               plugincode: Scripts\py.test -vvs tests\plugincode 
-              extractcode: |
-                    Scripts\py.test -vvs tests\extractcode\test_libarchive2.py tests\extractcode\test_extractcode.py
+              extractcode: Scripts\py.test -vvs tests\extractcode
               
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -241,7 +233,7 @@ jobs:
           test_suite: |
                 bin/py.test -vvs tests/commoncode
                 bin/py.test -vvs tests/plugincode
-                bin/py.test -vvs tests/extractcode/test_libarchive2.py
+                bin/py.test -vvs tests/extractcode 
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
