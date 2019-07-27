@@ -10,3 +10,5 @@ text_urls:
     - http://www.latex-project.org/lppl/lppl-1-0.txt
 ignorable_copyrights:
     - Copyright 1999 LaTeX3 Project
+ignorable_holders:
+    - LaTeX3 Project

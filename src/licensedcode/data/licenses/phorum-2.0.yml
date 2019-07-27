@@ -13,6 +13,9 @@ ignorable_copyrights:
     - copyright (c) 2000 The Apache Software Foundation
 ignorable_authors:
     - the Phorum Development Team (http://phorum.org/)
+ignorable_holders:
+    - The Apache Software Foundation
+    - The Phorum Development Team
 ignorable_urls:
     - http://phorum.org/
     - http://www.apache.org/

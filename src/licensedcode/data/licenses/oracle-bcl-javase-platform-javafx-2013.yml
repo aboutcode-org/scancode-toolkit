@@ -6,6 +6,8 @@ owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/terms/license/index.html
 ignorable_copyrights:
     - Copyright YEAR Oracle America, Inc.
+ignorable_holders:
+    - Oracle America, Inc.
 ignorable_urls:
     - http://www.oracle.com/technetwork/java/javase/documentation/index.html
     - http://www.oracle.com/us/legal/third-party-trademarks/index.html

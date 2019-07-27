@@ -13,6 +13,8 @@ ignorable_copyrights:
     - Copyright (c) 1998, 1999, 2000 Red Hat, Inc. (http://www.redhat.com/)
 ignorable_authors:
     - Red Hat
+ignorable_holders:
+    - Red Hat, Inc.
 ignorable_urls:
     - http://sourceware.cygnus.com/ecos
     - http://www.redhat.com/

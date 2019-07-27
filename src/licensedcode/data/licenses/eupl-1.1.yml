@@ -21,3 +21,5 @@ other_urls:
     - https://opensource.org/licenses/EUPL-1.1
 ignorable_copyrights:
     - (c) the European Community 2007
+ignorable_holders:
+    - the European Community

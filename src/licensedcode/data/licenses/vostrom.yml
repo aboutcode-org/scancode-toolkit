@@ -9,5 +9,7 @@ other_urls:
     - https://fedoraproject.org/wiki/Licensing/VOSTROM
 ignorable_copyrights:
     - Copyright (c) 2007 VOSTROM Holdings, Inc.
+ignorable_holders:
+    - VOSTROM Holdings, Inc.
 ignorable_emails:
     - license@vostrom.com

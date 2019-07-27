@@ -3,3 +3,5 @@ is_license_notice: yes
 minimum_coverage: 99
 ignorable_copyrights:
     - copyrighted by Wolfgang Denk
+ignorable_holders:
+    - Wolfgang Denk

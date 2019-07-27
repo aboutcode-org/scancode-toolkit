@@ -4,5 +4,7 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) Zope Corporation (tm) and Contributors
+ignorable_holders:
+    - Zope Corporation (tm) and Contributors
 ignorable_urls:
     - http://www.zope.com/Marks

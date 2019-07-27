@@ -7,6 +7,8 @@ homepage_url: http://www.esri.com/legal/pdfs/mla_e204_e300/english
 minimum_coverage: 60
 ignorable_copyrights:
     - copyright date(s) from the source materials Esri and its licensors
+ignorable_holders:
+    - date(s) from the source materials Esri and its licensors
 ignorable_urls:
     - http://links.esri.com/agol/transactiondef
     - http://support.esri.com/en/support

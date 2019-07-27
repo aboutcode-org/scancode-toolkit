@@ -7,5 +7,8 @@ minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) ISO/IEC 2005
     - Copyright 2005, International Telecommunications Union, Geneva
+ignorable_holders:
+    - ISO/IEC
+    - International Telecommunications Union, Geneva
 ignorable_urls:
     - http://www.itu.int/

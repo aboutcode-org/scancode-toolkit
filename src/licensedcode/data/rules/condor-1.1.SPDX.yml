@@ -5,6 +5,8 @@ notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) 1990-2006 Condor Team, Computer Sciences Department, University of Wisconsin-Madison,
         Madison, WI.
+ignorable_holders:
+    - Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison, WI.
 ignorable_authors:
     - the Condor Project, Condor Team, Computer Sciences Department, University of Wisconsin-Madison
 ignorable_urls:

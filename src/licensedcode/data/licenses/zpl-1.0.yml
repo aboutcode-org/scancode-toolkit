@@ -9,5 +9,7 @@ ignorable_copyrights:
     - Copyright (c) Digital Creations
 ignorable_authors:
     - Digital Creations
+ignorable_holders:
+    - Digital Creations
 ignorable_urls:
     - http://www.zope.org/

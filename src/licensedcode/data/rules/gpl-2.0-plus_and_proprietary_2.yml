@@ -3,3 +3,5 @@ is_license_notice: yes
 minimum_coverage: 80
 ignorable_copyrights:
     - (c) Copyright 2007-2008 Xilinx Inc.
+ignorable_holders:
+    - Xilinx Inc.

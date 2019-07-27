@@ -20,6 +20,15 @@ ignorable_authors:
     - Daniel J. Bernstein <djb@cr.yp.to>
     - Matt Johnston
     - Tom St Denis
+ignorable_holders:
+    - Google Inc.
+    - Matt Johnston
+    - Mihnea Stoenescu
+    - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
+        Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
+    - Simon Tatham
+    - Tatu Ylonen , Espoo, Finland
+    - Todd C. Miller
 ignorable_urls:
     - http://code.google.com/p/curve25519-donna/
     - http://cr.yp.to/ecdh.html

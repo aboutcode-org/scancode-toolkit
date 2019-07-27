@@ -4,6 +4,8 @@ notes: This is the license for Mx4j from http://mx4j.sourceforge.net/docs/ch01s0
     is essentially based on an Apache 1.1 template
 ignorable_copyrights:
     - Copyright (c) 2001-2004 by the MX4J contributors
+ignorable_holders:
+    - the MX4J contributors
 ignorable_authors:
     - the MX4J project (http://mx4j.sourceforge.net)
 ignorable_urls:

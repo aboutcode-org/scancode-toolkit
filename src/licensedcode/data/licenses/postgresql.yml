@@ -16,3 +16,6 @@ other_urls:
 ignorable_copyrights:
     - Portions Copyright (c) 1994, The Regents of the University of California
     - Portions Copyright (c) The PostgreSQL Global Development Group
+ignorable_holders:
+    - The PostgreSQL Global Development Group
+    - The Regents of the University of California

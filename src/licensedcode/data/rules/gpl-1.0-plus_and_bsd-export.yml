@@ -6,5 +6,7 @@ referenced_filenames:
 notes: found in the Linux kernel
 ignorable_copyrights:
     - Copyright (c) Cavium Networks (support@cavium.com)
+ignorable_holders:
+    - Cavium Networks
 ignorable_emails:
     - support@cavium.com

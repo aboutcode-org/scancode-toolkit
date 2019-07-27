@@ -9,3 +9,5 @@ text_urls:
 faq_url: http://www.affero.org/oagf.html
 ignorable_copyrights:
     - Copyright (c) 2007 Affero Inc.
+ignorable_holders:
+    - Affero Inc.

@@ -10,6 +10,8 @@ text_urls:
     - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=b0d176738e96a0d3b9f85cb51e140a86f21be715
 ignorable_copyrights:
     - Copyright 1999-2000, The OpenLDAP Foundation, Redwood City, California, USA.
+ignorable_holders:
+    - The OpenLDAP Foundation, Redwood City, California, USA.
 ignorable_urls:
     - http://www.openldap.org/
 ignorable_emails:

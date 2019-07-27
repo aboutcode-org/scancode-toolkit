@@ -8,3 +8,5 @@ text_urls:
 minimum_coverage: 95
 ignorable_copyrights:
     - (c) Dynarch.com 2004
+ignorable_holders:
+    - Dynarch.com

@@ -14,3 +14,6 @@ other_urls:
 ignorable_copyrights:
     - Copyright (c) 1989 M. Stephenson
     - copyright 1988 Richard M. Stallman
+ignorable_holders:
+    - M. Stephenson
+    - Richard M. Stallman

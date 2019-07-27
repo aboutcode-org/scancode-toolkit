@@ -17,3 +17,5 @@ other_urls:
     - https://web.archive.org/web/20120101081418/http://rosenlaw.com:80/OSL3.0.htm
 ignorable_copyrights:
     - Copyright (c) 2005 Lawrence Rosen
+ignorable_holders:
+    - Lawrence Rosen

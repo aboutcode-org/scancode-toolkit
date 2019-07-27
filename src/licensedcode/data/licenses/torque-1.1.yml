@@ -23,6 +23,8 @@ ignorable_copyrights:
     - Copyright (c) 2010-2011 Adaptive Computing Enterprises, Inc.
 ignorable_authors:
     - NASA Ames Research Center, Lawrence Livermore National Laboratory, and Veridian
+ignorable_holders:
+    - Adaptive Computing Enterprises, Inc.
 ignorable_urls:
     - http://www.adaptivecomputing.com/
     - http://www.clusterresources.com/

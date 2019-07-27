@@ -24,5 +24,7 @@ ignorable_copyrights:
 ignorable_authors:
     - UC Berkeley and its contributors
     - the University of California, Berkeley and its contributors
+ignorable_holders:
+    - the Regents of the University of California
 ignorable_urls:
     - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

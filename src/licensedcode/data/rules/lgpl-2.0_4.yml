@@ -4,3 +4,6 @@ notes: Lgpl 2.0 formatting variant, derived from GPL
 ignorable_copyrights:
     - Copyright (c) 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

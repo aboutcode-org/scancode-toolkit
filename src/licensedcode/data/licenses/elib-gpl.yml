@@ -9,3 +9,5 @@ text_urls:
 faq_url: http://www.math.utah.edu/docs/info/elib_3.html
 ignorable_copyrights:
     - Copyright (c) 1992 Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation

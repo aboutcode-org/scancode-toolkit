@@ -8,3 +8,5 @@ other_urls:
     - http://www.netperf.org/netperf/training/Netperf.html
 ignorable_copyrights:
     - copyrighted works of Hewlett-Packard Co.
+ignorable_holders:
+    - Hewlett-Packard Co.

@@ -10,3 +10,5 @@ text_urls:
 faq_url: https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/pref-license.html
 ignorable_copyrights:
     - Copyright (c) The FreeBSD Project
+ignorable_holders:
+    - The FreeBSD Project

@@ -6,3 +6,5 @@ owner: Duxbury Systems, Inc.
 homepage_url: http://www.duxburysystems.com/
 ignorable_copyrights:
     - Copyright 1988-1993 Duxbury Systems, Inc.
+ignorable_holders:
+    - Duxbury Systems, Inc.

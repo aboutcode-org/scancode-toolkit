@@ -6,3 +6,5 @@ owner: Microsoft
 homepage_url: http://research.microsoft.com/en-us/um/redmond/projects/invisible/EULA.htm
 ignorable_copyrights:
     - (c) 2004 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation

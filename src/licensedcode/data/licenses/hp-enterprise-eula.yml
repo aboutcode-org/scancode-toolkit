@@ -8,5 +8,7 @@ other_urls:
     - http://h20564.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_973decf09d114d81b4c97603df
 ignorable_copyrights:
     - Copyright 2015 Hewlett Packard Enterprise Development LP
+ignorable_holders:
+    - Hewlett Packard Enterprise Development LP
 ignorable_urls:
     - http://www.hpe.com/software/SWLicensing

@@ -3,3 +3,5 @@ is_license_notice: yes
 notes: douns in MSFT CNTLK. Not clear if this is redistributable or not.
 ignorable_copyrights:
     - Copyright (c) 2017 Intel Corporation
+ignorable_holders:
+    - Intel Corporation

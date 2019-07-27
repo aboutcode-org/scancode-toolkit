@@ -3,5 +3,7 @@ is_license_text: yes
 minimum_coverage: 90
 ignorable_copyrights:
     - Copyright (c) ImageMagick Studio LLC
+ignorable_holders:
+    - ImageMagick Studio LLC
 ignorable_urls:
     - https://imagemagick.org/script/license.php

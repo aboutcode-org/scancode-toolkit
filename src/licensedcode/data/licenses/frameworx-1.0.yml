@@ -18,5 +18,7 @@ ignorable_copyrights:
     - (c) THE FRAMEWORX COMPANY 2003
 ignorable_authors:
     - The Frameworx Company
+ignorable_holders:
+    - THE FRAMEWORX COMPANY
 ignorable_urls:
     - http://www.frameworx.com/

@@ -22,5 +22,7 @@ other_urls:
     - https://www.gnu.org/licenses/lgpl-3.0-standalone.html
 ignorable_copyrights:
     - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
 ignorable_urls:
     - http://fsf.org/

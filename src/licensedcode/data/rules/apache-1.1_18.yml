@@ -3,6 +3,9 @@ is_license_notice: yes
 ignorable_copyrights:
     - Copyright (c) The International Cooperation for the Integration of Processes in Prepress,
         Press and Postpress (CIP4)
+ignorable_holders:
+    - The International Cooperation for the Integration of Processes in Prepress, Press and
+        Postpress (CIP4)
 ignorable_urls:
     - http://www.cip4.org/
 ignorable_emails:

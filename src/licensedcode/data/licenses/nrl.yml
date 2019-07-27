@@ -9,3 +9,5 @@ ignorable_copyrights:
     - copyright by The Regents of the University of California
 ignorable_authors:
     - the University of California, Berkeley and its contributors
+ignorable_holders:
+    - The Regents of the University of California

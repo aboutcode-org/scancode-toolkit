@@ -10,3 +10,5 @@ other_urls:
     - http://www.nicta.com.au/
 ignorable_copyrights:
     - Copyright (c) 2004 National ICT Australia Ltd
+ignorable_holders:
+    - National ICT Australia Ltd

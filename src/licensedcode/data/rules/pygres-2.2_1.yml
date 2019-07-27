@@ -4,6 +4,9 @@ notes: from http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?vie
 ignorable_copyrights:
     - Copyright (c) 1995, Pascal Andre
     - copyright 1997, 1998, 1999 by D'Arcy J.M. Cain
+ignorable_holders:
+    - D'Arcy J.M. Cain
+    - Pascal Andre
 ignorable_emails:
     - andre@chimay.via.ecp.fr
     - andre@via.ecp.fr

@@ -8,5 +8,7 @@ other_urls:
     - https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download
 ignorable_copyrights:
     - Copyright (c) 1999-2001 LizardTech, Inc.
+ignorable_holders:
+    - LizardTech, Inc.
 ignorable_urls:
     - http://www.fsf.org/

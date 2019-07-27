@@ -35,6 +35,23 @@ ignorable_authors:
     - The Perl Foundation
     - Tim Hudson (tjh@cryptsoft.com)
     - the OpenSSL Project
+ignorable_holders:
+    - Apple Computer, Inc.
+    - Ben Noordhuis
+    - Christopher Jeffrey
+    - Google Inc.
+    - Igor Sysoev
+    - Isaac Z. Schlueter
+    - Jean-loup Gailly and Mark Adler
+    - Joyent, Inc. and other Node contributors
+    - Mathias Bynens
+    - Nginx, Inc.
+    - Sun Microsystems Inc.
+    - The OpenSSL Project
+    - The Perl Foundation
+    - Tjarda Koster
+    - the Massachusetts Institute of Technology
+    - the V8 project authors
 ignorable_urls:
     - http://jelloween.deviantart.com/
     - http://mathiasbynens.be/

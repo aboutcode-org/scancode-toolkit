@@ -6,3 +6,5 @@ owner: Oracle Corporation
 homepage_url: https://oss.oracle.com/licenses/OCSL
 ignorable_copyrights:
     - Copyright 1999, 2000 Oracle Corporation
+ignorable_holders:
+    - Oracle Corporation

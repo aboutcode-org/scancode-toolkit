@@ -4,6 +4,8 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) 2002 The Trustees of Indiana University
+ignorable_holders:
+    - The Trustees of Indiana University
 ignorable_authors:
     - the Indiana University Extreme! Lab
 ignorable_urls:

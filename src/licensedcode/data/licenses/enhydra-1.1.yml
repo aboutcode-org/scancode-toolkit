@@ -12,6 +12,9 @@ ignorable_copyrights:
     - Copyright Lutris Technologies, Inc.
 ignorable_authors:
     - Lutris Technologies, Inc.
+ignorable_holders:
+    - Lutris Technologies
+    - Lutris Technologies, Inc.
 ignorable_urls:
     - http://www.enhydra.org/
     - http://www.lutris.com/

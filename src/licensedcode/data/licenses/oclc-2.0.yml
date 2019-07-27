@@ -19,6 +19,9 @@ ignorable_copyrights:
     - Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.
         and other contributors
     - Copyright (c) 2002. OCLC Research
+ignorable_holders:
+    - OCLC Online Computer Library Center, Inc. and other contributors
+    - OCLC Research
 ignorable_urls:
     - http://purl.oclc.org/oclc/research/ORPL
     - http://www.oclc.org/oclc/research

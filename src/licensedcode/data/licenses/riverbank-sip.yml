@@ -5,3 +5,5 @@ category: Free Restricted
 owner: Riverbank Computing
 ignorable_copyrights:
     - Copyright (c) 2009 Riverbank Computing Limited
+ignorable_holders:
+    - Riverbank Computing Limited

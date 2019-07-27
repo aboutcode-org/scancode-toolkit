@@ -5,3 +5,5 @@ referenced_filenames:
     - LICENSE.GPL
 ignorable_copyrights:
     - Copyright (c) Corporation
+ignorable_holders:
+    - Corporation

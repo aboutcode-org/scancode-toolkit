@@ -1,5 +1,5 @@
 license_expression: bsd-new OR gpl-2.0-plus
-minimum_coverage: 10
 is_license_notice: yes
-notes: formerly libcap license and not 100% a bsd-new
 relevance: 95
+minimum_coverage: 10
+notes: formerly libcap license and not 100% a bsd-new

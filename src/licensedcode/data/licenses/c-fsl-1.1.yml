@@ -8,3 +8,5 @@ text_urls:
     - https://www.elstel.org/license/C-FSL-v1.1.txt
 ignorable_copyrights:
     - copyright 2016, by Elmar Stellnberger
+ignorable_holders:
+    - Elmar Stellnberger

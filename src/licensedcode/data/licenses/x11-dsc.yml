@@ -7,3 +7,6 @@ minimum_coverage: 90
 ignorable_copyrights:
     - Copyright 1997 DSC Technologies Corporation
     - copyrighted by DSC Technologies
+ignorable_holders:
+    - DSC Technologies
+    - DSC Technologies Corporation

@@ -10,3 +10,5 @@ text_urls:
 minimum_coverage: 70
 ignorable_copyrights:
     - Copyright 2005 Day Management AG Barfusserplatz
+ignorable_holders:
+    - Day Management AG Barfusserplatz

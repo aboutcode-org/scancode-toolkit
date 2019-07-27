@@ -16,6 +16,8 @@ ignorable_copyrights:
         Madison, WI.
 ignorable_authors:
     - the Condor Project, Condor Team, Computer Sciences Department, University of Wisconsin-Madison
+ignorable_holders:
+    - Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison, WI.
 ignorable_urls:
     - http://www.condorproject.org/
 ignorable_emails:

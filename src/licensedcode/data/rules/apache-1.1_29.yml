@@ -3,6 +3,8 @@ is_license_text: yes
 notes: Apache 1.1  variant
 ignorable_copyrights:
     - Copyright (c) 2000-2002 The Apache Software Foundation
+ignorable_holders:
+    - The Apache Software Foundation
 ignorable_authors:
     - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:

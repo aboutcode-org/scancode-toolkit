@@ -12,6 +12,8 @@ ignorable_copyrights:
     - Copyright (c) 2001-2009 Robert A. van Engelen, Genivia inc.
 ignorable_authors:
     - Robert A. van Engelen
+ignorable_holders:
+    - Robert A. van Engelen, Genivia inc.
 ignorable_urls:
     - http://www.cs.fsu.edu/
     - http://www.genivia.com/

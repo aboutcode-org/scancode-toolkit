@@ -8,3 +8,5 @@ text_urls:
     - http://allmydata.org/source/tahoe/trunk/COPYING.TGPPL.html
 ignorable_copyrights:
     - Copyright (c) 2007 Zooko
+ignorable_holders:
+    - Zooko

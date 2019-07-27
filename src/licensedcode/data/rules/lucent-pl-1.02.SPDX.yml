@@ -4,3 +4,5 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) 2003, Lucent Technologies Inc. and others
+ignorable_holders:
+    - Lucent Technologies Inc. and others

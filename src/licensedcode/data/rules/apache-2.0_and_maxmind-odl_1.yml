@@ -3,6 +3,8 @@ is_license_notice: yes
 minimum_coverage: 70
 ignorable_copyrights:
     - Copyright (c) MaxMind, Inc.
+ignorable_holders:
+    - MaxMind, Inc.
 ignorable_urls:
     - http://maxmind.com/
     - http://www.apache.org/licenses/LICENSE-2.0

@@ -8,3 +8,5 @@ text_urls:
     - http://www.aps.anl.gov/epics/license/open.php
 ignorable_copyrights:
     - (c) <HOLDERS>
+ignorable_holders:
+    - <HOLDERS>

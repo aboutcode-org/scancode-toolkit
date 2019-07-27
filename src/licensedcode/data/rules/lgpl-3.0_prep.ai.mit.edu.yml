@@ -2,5 +2,7 @@ license_expression: lgpl-3.0
 is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
 ignorable_urls:
     - https://fsf.org/

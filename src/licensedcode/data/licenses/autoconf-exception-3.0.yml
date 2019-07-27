@@ -55,5 +55,7 @@ standard_notice: |
     license of Autoconf.
 ignorable_copyrights:
     - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
 ignorable_urls:
     - http://fsf.org/

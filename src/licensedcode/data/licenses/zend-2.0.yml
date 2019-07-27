@@ -9,6 +9,8 @@ text_urls:
     - https://web.archive.org/web/20130517195954/http://www.zend.com/license/2_00.txt
 ignorable_copyrights:
     - Copyright (c) 1999-2002 Zend Technologies Ltd.
+ignorable_holders:
+    - Zend Technologies Ltd.
 ignorable_urls:
     - http://www.zend.com/
 ignorable_emails:

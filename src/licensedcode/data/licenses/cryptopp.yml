@@ -5,3 +5,5 @@ category: Permissive
 owner: Wei Dai
 ignorable_copyrights:
     - Compilation Copyright (c) 1995-2010 by Wei Dai
+ignorable_holders:
+    - Compilation by Wei Dai

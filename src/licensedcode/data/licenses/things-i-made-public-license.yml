@@ -7,5 +7,7 @@ homepage_url: https://github.com/marcus-crane/pkgparse-node/blob/46446413cbdd1b7
 notes: a rare license replaced by MIT since.
 ignorable_copyrights:
     - Copyright (c) Marcus Crane <marcus@thingsima.de>
+ignorable_holders:
+    - Marcus Crane
 ignorable_emails:
     - marcus@thingsima.de

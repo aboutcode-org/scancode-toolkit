@@ -16,6 +16,13 @@ ignorable_copyrights:
 ignorable_authors:
     - many people associated with the Info-ZIP group
     - the Info-ZIP group
+ignorable_holders:
+    - Greg Roelofs
+    - Igor Mandrichenko
+    - Mike White
+    - Norbert Pueschel
+    - Samuel H. Smith
+    - Steve P. Miller
 ignorable_urls:
     - ftp://ftp.cdrom.com/pub/infozip/
     - ftp://ftp.wustl.edu/pub/aminet/util/time/clockdaemon.lha

@@ -8,3 +8,5 @@ text_urls:
     - http://www.fastcgi.com/drupal/node/8
 ignorable_copyrights:
     - copyrighted by Open Market, Inc
+ignorable_holders:
+    - Open Market, Inc

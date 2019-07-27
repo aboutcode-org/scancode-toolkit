@@ -6,3 +6,5 @@ owner: OpenNETCF Consulting
 homepage_url: http://www.opennetcf.com/products/licenses.aspx
 ignorable_copyrights:
     - (c) 2006-2012 OpenNETCF Consulting, LLC.
+ignorable_holders:
+    - OpenNETCF Consulting, LLC.

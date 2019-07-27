@@ -8,3 +8,7 @@ ignorable_copyrights:
     - Copyright (c) 1998, 1999 Glenn Randers-Pehrson
     - Copyright (c) 2000-2002 Glenn Randers-Pehrson
     - Copyright (c) 2004, 2006-2010 Glenn Randers-Pehrson
+ignorable_holders:
+    - Andreas Dilger
+    - Glenn Randers-Pehrson
+    - Guy Eric Schalnat, Group 42, Inc.

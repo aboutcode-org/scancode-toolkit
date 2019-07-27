@@ -8,5 +8,7 @@ other_urls:
     - http://research.microsoft.com/downloads
 ignorable_copyrights:
     - Copyright (c) Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
 ignorable_urls:
     - http://research.microsoft.com/downloads

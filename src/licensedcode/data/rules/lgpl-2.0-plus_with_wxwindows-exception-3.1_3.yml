@@ -5,3 +5,6 @@ referenced_filenames:
 ignorable_copyrights:
     - Copyright (c) 1998 Julian Smart, Robert Roebling
     - Copyright (c) 2002 Robert Osfield
+ignorable_holders:
+    - Julian Smart, Robert Roebling
+    - Robert Osfield

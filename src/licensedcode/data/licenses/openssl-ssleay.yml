@@ -19,6 +19,8 @@ ignorable_authors:
     - Eric Young (eay@cryptsoft.com)
     - Tim Hudson (tjh@cryptsoft.com)
     - the OpenSSL Project
+ignorable_holders:
+    - Eric Young
 ignorable_urls:
     - http://www.openssl.org/
 ignorable_emails:

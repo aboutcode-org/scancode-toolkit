@@ -8,3 +8,5 @@ notes: |
     Common in the Linux kernel
 ignorable_copyrights:
     - Copyright (c) InnoSys Incorporated
+ignorable_holders:
+    - InnoSys Incorporated

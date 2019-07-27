@@ -3,6 +3,9 @@ is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) RealNetworks, Inc., 1995-2002
     - Copyright 1995-2002 RealNetworks, Inc. and/or its licensors
+ignorable_holders:
+    - RealNetworks, Inc.
+    - RealNetworks, Inc. and/or its licensors
 ignorable_urls:
     - http://www.realnetworks.com/info/helixlogo.html
     - https://www.helixcommunity.org/content/complicense

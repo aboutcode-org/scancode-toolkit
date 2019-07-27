@@ -9,3 +9,5 @@ text_urls:
     - https://github.com/aws/aws-sdk-android/blob/master/LICENSE.AMAZON.txt
 ignorable_copyrights:
     - (c) 2008 Amazon.com, Inc. or its affiliates
+ignorable_holders:
+    - Amazon.com, Inc. or its affiliates

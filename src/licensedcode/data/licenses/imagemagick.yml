@@ -11,5 +11,7 @@ text_urls:
 faq_url: http://www.imagemagick.org/script/export.php
 ignorable_copyrights:
     - Copyright 1999-2009 ImageMagick Studio LLC
+ignorable_holders:
+    - ImageMagick Studio LLC
 ignorable_urls:
     - http://www.imagemagick.org/www/license.html

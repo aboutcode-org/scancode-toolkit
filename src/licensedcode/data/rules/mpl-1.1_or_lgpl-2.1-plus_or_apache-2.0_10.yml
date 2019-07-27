@@ -3,6 +3,8 @@ is_license_notice: yes
 minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) Shigeru Chiba
+ignorable_holders:
+    - Shigeru Chiba
 ignorable_authors:
     - the Initial Developer
 ignorable_urls:

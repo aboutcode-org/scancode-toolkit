@@ -5,3 +5,5 @@ category: Proprietary Free
 owner: Oracle (Sun)
 ignorable_copyrights:
     - Copyright 2006 SUN MICROSYSTEMS, INC.
+ignorable_holders:
+    - SUN MICROSYSTEMS, INC.

@@ -10,5 +10,9 @@ ignorable_copyrights:
     - Copyright (c) 2002-2004 Mark Adler
 ignorable_authors:
     - Paul Le Roux <pleroux@swprofessionals.com>
+ignorable_holders:
+    - Brian Gladman, Worcester, UK.
+    - Mark Adler
+    - Paul Le Roux
 ignorable_emails:
     - pleroux@swprofessionals.com

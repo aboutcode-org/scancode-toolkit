@@ -9,3 +9,5 @@ other_urls:
     - http://rc.quest.com/topics/openssh/license.php#tcpwrappers
 ignorable_copyrights:
     - Copyright 1995 by Wietse Venema
+ignorable_holders:
+    - Wietse Venema

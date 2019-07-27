@@ -32,3 +32,6 @@ standard_notice: |
 ignorable_copyrights:
     - copyrighted by me and others
     - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation

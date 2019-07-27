@@ -9,3 +9,8 @@ ignorable_copyrights:
     - Copyright 1996,97 Silicon Graphics Computer Systems, Inc.
     - Copyright 1997 Moscow Center for SPARC Technology
     - Copyright 1999,2000 Boris Fomitchev
+ignorable_holders:
+    - Boris Fomitchev
+    - Hewlett-Packard Company
+    - Moscow Center for SPARC Technology
+    - Silicon Graphics Computer Systems, Inc.

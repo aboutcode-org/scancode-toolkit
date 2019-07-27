@@ -9,6 +9,8 @@ other_urls:
     - https://fedoraproject.org/wiki/Licensing/Qhull
 ignorable_copyrights:
     - Qhull, Copyright (c) 1993-2003
+ignorable_holders:
+    - Qhull
 ignorable_urls:
     - http://www.qhull.org/
 ignorable_emails:

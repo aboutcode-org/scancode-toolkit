@@ -9,5 +9,7 @@ text_urls:
     - http://www.info-zip.org/doc/LICENSE.20050210
 ignorable_copyrights:
     - Copyright (c) 1990-2005 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP.
 ignorable_urls:
     - ftp://ftp.info-zip.org/pub/infozip/license.html

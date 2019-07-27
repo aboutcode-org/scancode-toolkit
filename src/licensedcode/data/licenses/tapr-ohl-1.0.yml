@@ -9,5 +9,7 @@ other_urls:
     - https://www.tapr.org/OHL
 ignorable_copyrights:
     - Copyright 2007 TAPR
+ignorable_holders:
+    - TAPR
 ignorable_urls:
     - http://www.tapr.org/OHL

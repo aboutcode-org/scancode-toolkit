@@ -5,3 +5,5 @@ category: Permissive
 owner: NVIDIA
 ignorable_copyrights:
     - Copyright 1993-2012 NVIDIA Corporation
+ignorable_holders:
+    - NVIDIA Corporation

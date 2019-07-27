@@ -10,6 +10,9 @@ text_urls:
 ignorable_copyrights:
     - COPYRIGHT 3DFX INTERACTIVE, INC. 1999
     - copyright notice (3dfx Interactive, Inc. 1999)
+ignorable_holders:
+    - 3DFX INTERACTIVE, INC.
+    - 3dfx Interactive, Inc.
 ignorable_emails:
     - INFO@3DFX.COM
     - info@3dfx.com

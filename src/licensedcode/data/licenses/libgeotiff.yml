@@ -9,3 +9,6 @@ minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) 1999, Frank Warmerdam
     - copyright (c) 1995 Niles D. Ritter
+ignorable_holders:
+    - Frank Warmerdam
+    - Niles D. Ritter

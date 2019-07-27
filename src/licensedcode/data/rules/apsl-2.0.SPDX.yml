@@ -4,6 +4,8 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Portions Copyright (c) 1999-2007 Apple Inc.
+ignorable_holders:
+    - Apple Inc.
 ignorable_urls:
     - http://www.apple.com/legal/guidelinesfor3rdparties.html
     - http://www.opensource.apple.com/apsl/

@@ -23,6 +23,17 @@ ignorable_copyrights:
     - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
         http://casper.beckman.uiuc.edu/~c-tsai4
     - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
+ignorable_holders:
+    - Brian Eugene Wilson, Robert Martin Campbell
+    - Chih-Hao Tsai Beckman Institute, University of Illinois
+    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
+    - Google Inc.
+    - International Business Machines Corporation and others
+    - LeRoy Benjamin Sharon
+    - Nara Institute of Science and Technology
+    - Pai-Hsiang Hsiao
+    - TaBE Project
+    - Unicode, Inc.
 ignorable_urls:
     - http://casper.beckman.uiuc.edu/~c-tsai4
     - http://chasen.aist-nara.ac.jp/chasen/distribution.html

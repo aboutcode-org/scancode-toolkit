@@ -13,6 +13,8 @@ ignorable_copyrights:
     - Copyright (c) 2000-2003 The XML:DB Initiative
 ignorable_authors:
     - the XML:DB Initiative (http://www.xmldb.org/)
+ignorable_holders:
+    - The XML:DB Initiative
 ignorable_urls:
     - http://www.xmldb.org/
 ignorable_emails:

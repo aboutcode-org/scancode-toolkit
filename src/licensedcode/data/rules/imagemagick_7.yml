@@ -4,5 +4,7 @@ minimum_coverage: 70
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright 1999-2013 ImageMagick Studio LLC
+ignorable_holders:
+    - ImageMagick Studio LLC
 ignorable_urls:
     - http://www.imagemagick.org/script/license.php

@@ -8,6 +8,8 @@ ignorable_copyrights:
 ignorable_authors:
     - Teodor Danciu (http://jasperreports.sourceforge.net)
     - Teodor Danciu http://jasperreports.sourceforge.net
+ignorable_holders:
+    - Teodor Danciu
 ignorable_urls:
     - http://jasperreports.sourceforge.net/
 ignorable_emails:

@@ -11,5 +11,9 @@ ignorable_copyrights:
     - copyright 2006 by Jelmer Vernooij
 ignorable_authors:
     - Apple Inc.
+    - permission from Apple Inc.
+ignorable_holders:
+    - Apple Inc.
+    - Jelmer Vernooij
 ignorable_urls:
     - http://www.cups.org/

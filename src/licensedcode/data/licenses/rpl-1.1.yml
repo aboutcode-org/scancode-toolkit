@@ -17,5 +17,7 @@ other_urls:
 ignorable_copyrights:
     - Copyright (c) 1999-2002 Technical Pursuit Inc.
     - Copyright (c) 2001-2002 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.
 ignorable_urls:
     - http://www.technicalpursuit.com/

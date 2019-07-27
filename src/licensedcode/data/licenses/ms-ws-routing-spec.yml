@@ -5,3 +5,5 @@ category: Permissive
 owner: Microsoft
 ignorable_copyrights:
     - Copyright 2001 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation

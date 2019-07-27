@@ -17,5 +17,7 @@ text_urls:
     - https://github.com/adversary-org/wtfnmf/blob/master/COPYING.WTFNMFPL
 ignorable_copyrights:
     - Copyright (c) 2013 Ben McGinnes <ben@adversary.org>
+ignorable_holders:
+    - Ben McGinnes
 ignorable_emails:
     - ben@adversary.org

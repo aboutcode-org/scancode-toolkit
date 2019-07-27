@@ -7,6 +7,9 @@ notes: found in the OpenJDK. Some ambiguity because of the double gpl 2 only not
 ignorable_copyrights:
     - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
         National de Recherche en Informatique et en Automatique, Keio University)
+ignorable_holders:
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+        Recherche en Informatique et en Automatique, Keio University)
 ignorable_urls:
     - http://www.oracle.com/
     - http://www.w3.org/Consortium/Legal/

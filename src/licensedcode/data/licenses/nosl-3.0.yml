@@ -14,3 +14,5 @@ other_urls:
     - https://opensource.org/licenses/NOSL3.0
 ignorable_copyrights:
     - Copyright (c) 2005 Lawrence Rosen
+ignorable_holders:
+    - Lawrence Rosen

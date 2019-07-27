@@ -4,3 +4,5 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright r 2005 Lawrence Rosen
+ignorable_holders:
+    - r Lawrence Rosen

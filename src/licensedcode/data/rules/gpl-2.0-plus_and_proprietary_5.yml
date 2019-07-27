@@ -5,3 +5,6 @@ ignorable_copyrights:
     - (c) Copyright 2002 Xilinx Inc., Systems Engineering Group
     - (c) Copyright 2004 Xilinx Inc., Systems Engineering Group
     - (c) Copyright 2007-2008 Xilinx Inc.
+ignorable_holders:
+    - Xilinx Inc.
+    - Xilinx Inc., Systems Engineering Group

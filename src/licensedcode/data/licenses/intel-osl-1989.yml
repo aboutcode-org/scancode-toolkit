@@ -5,3 +5,5 @@ category: Permissive
 owner: Intel Corporation
 ignorable_copyrights:
     - Copyright (c) 1989, Intel Corporation
+ignorable_holders:
+    - Intel Corporation

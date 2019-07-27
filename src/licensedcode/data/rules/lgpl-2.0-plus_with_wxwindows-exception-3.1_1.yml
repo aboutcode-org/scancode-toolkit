@@ -4,3 +4,5 @@ referenced_filenames:
     - COPYING.LIB
 ignorable_copyrights:
     - Copyright (c) 1998-2005 Julian Smart, Robert Roebling
+ignorable_holders:
+    - Julian Smart, Robert Roebling

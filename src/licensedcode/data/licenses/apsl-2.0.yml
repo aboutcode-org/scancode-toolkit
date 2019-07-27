@@ -14,6 +14,8 @@ osi_url: http://opensource.org/licenses/apsl-2.0.php
 faq_url: http://www.gnu.org/philosophy/apsl.html
 ignorable_copyrights:
     - Portions Copyright (c) 1999-2003 Apple Computer, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
 ignorable_urls:
     - http://www.apple.com/legal/guidelinesfor3rdparties.html
     - http://www.opensource.apple.com/apsl/

@@ -5,3 +5,5 @@ category: Permissive
 owner: Broadcom
 ignorable_copyrights:
     - Copyright (c) Broadcom Corporation
+ignorable_holders:
+    - Broadcom Corporation

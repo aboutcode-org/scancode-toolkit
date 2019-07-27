@@ -15,3 +15,5 @@ other_urls:
     - https://opensource.org/licenses/QPL-1.0
 ignorable_copyrights:
     - Copyright (c) 1999 Trolltech AS, Norway
+ignorable_holders:
+    - Trolltech AS, Norway

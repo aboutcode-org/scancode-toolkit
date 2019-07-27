@@ -4,6 +4,8 @@ referenced_filenames:
     - LICENSE
 ignorable_copyrights:
     - Copyright 2004-2017 vFeed IO Cases
+ignorable_holders:
+    - vFeed IO Cases
 ignorable_urls:
     - http://vfeed.io/
 ignorable_emails:

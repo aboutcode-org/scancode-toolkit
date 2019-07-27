@@ -4,6 +4,9 @@ notes: Full text of rpsl
 ignorable_copyrights:
     - Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors
     - Copyright (c) RealNetworks, Inc., 1995-2002
+ignorable_holders:
+    - RealNetworks, Inc.
+    - RealNetworks, Inc. and/or its licensors
 ignorable_urls:
     - http://www.realnetworks.com/info/helixlogo.html
     - https://www.helixcommunity.org/content/complicense

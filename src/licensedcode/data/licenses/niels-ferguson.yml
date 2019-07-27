@@ -5,3 +5,5 @@ category: Permissive
 owner: Unspecified
 ignorable_copyrights:
     - Copyright (c) 2002 by Niels Ferguson
+ignorable_holders:
+    - Niels Ferguson

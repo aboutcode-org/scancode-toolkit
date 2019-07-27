@@ -3,3 +3,5 @@ is_license_notice: yes
 minimum_coverage: 70
 ignorable_copyrights:
     - Copyright 1995-1996 by Mylex Corporation
+ignorable_holders:
+    - Mylex Corporation

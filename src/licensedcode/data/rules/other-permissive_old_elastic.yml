@@ -4,5 +4,7 @@ notes: from http://www.elasticworld.org/license.html
 ignorable_copyrights:
     - Copyright (c) 1997-1999 Marco Pantaleoni
     - Copyright (c) 1999 Marco Pantaleoni
+ignorable_holders:
+    - Marco Pantaleoni
 ignorable_urls:
     - http://www.elasticworld.org/license.html

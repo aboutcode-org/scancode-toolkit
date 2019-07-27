@@ -24,6 +24,8 @@ other_urls:
 minimum_coverage: 10
 ignorable_copyrights:
     - (c) Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen 2004
+ignorable_holders:
+    - Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen
 ignorable_urls:
     - http://www.d-fsl.de/
     - http://www.fsf.org/licenses/gpl

@@ -5,6 +5,10 @@ ignorable_copyrights:
     - (c) 2009 Daniel Baumann
     - Copyright (c) 2009 Cyril Lacoux
     - Copyright (c) Broadcom Corporation
+ignorable_holders:
+    - Broadcom Corporation
+    - Cyril Lacoux
+    - Daniel Baumann
 ignorable_authors:
     - Broadcom Corporation
 ignorable_urls:

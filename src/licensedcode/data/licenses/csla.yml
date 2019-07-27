@@ -9,3 +9,6 @@ text_urls:
 ignorable_copyrights:
     - Copyright 2013 by Marimer, LLC, Eden Prairie, MN
     - Copyright 2013 by Marimer, LLC.
+ignorable_holders:
+    - Marimer, LLC, Eden Prairie, MN
+    - Marimer, LLC.

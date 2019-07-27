@@ -3,3 +3,5 @@ is_license_notice: yes
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.

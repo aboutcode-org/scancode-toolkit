@@ -8,3 +8,5 @@ text_urls:
     - http://wordnetcode.princeton.edu/3.0/LICENSE
 ignorable_copyrights:
     - Copyright by Princeton University
+ignorable_holders:
+    - Princeton University

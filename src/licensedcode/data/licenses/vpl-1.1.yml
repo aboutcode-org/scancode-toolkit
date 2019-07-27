@@ -9,5 +9,7 @@ other_urls:
     - https://www.vtiger.com/open-source-crm/
 ignorable_copyrights:
     - Copyright (c) www.vtiger.com
+ignorable_holders:
+    - www.vtiger.com
 ignorable_urls:
     - http://www.vtiger.com/

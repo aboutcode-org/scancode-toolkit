@@ -14,3 +14,6 @@ ignorable_copyrights:
 ignorable_authors:
     - N.M. Maclaren
     - the University of Cambridge
+ignorable_holders:
+    - N.M. Maclaren
+    - University of Cambridge

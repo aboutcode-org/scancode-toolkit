@@ -3,6 +3,9 @@ is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) IETF Trust
     - Copyright (c) IETF Trust and the persons identified as the document authors
+ignorable_holders:
+    - IETF Trust
+    - IETF Trust and the persons identified as the document authors
 ignorable_authors:
     - authorship IETF Trust
     - the IETF Trust

@@ -11,5 +11,7 @@ other_urls:
     - https://embedthis.com/goahead/licensing.html
 ignorable_copyrights:
     - Copyright (c) 20xx GoAhead Software, Inc.
+ignorable_holders:
+    - 20xx GoAhead Software, Inc.
 ignorable_emails:
     - info@goahead.com

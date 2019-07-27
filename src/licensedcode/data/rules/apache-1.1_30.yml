@@ -4,6 +4,8 @@ minimum_coverage: 70
 notes: Apache bsf declaration
 ignorable_copyrights:
     - Copyright (c) 2002 The Apache Software Foundation
+ignorable_holders:
+    - The Apache Software Foundation
 ignorable_authors:
     - Sanjiva Weerawarana and others at International Business Machines
     - the Apache Software Foundation (http://www.apache.org/)

@@ -3,6 +3,8 @@ is_license_text: yes
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) 1991-2016 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
 ignorable_urls:
     - http://source.icu-project.org/repos/icu
     - http://www.unicode.org/Public

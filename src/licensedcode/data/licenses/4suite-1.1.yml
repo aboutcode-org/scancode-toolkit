@@ -8,6 +8,9 @@ ignorable_copyrights:
     - Copyright (c) 2000 The Apache Software Foundation
 ignorable_authors:
     - Fourthought, Inc. (http://www.fourthought.com)
+ignorable_holders:
+    - Fourthought, Inc.
+    - The Apache Software Foundation
 ignorable_urls:
     - http://www.fourthought.com/
 ignorable_emails:

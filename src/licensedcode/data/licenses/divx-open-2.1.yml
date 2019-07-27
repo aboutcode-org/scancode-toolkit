@@ -7,3 +7,5 @@ ignorable_copyrights:
     - Copyright (c) 2001 Project Mayo
 ignorable_authors:
     - Project Mayo
+ignorable_holders:
+    - Project Mayo

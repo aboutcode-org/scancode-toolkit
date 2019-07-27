@@ -20,3 +20,5 @@ notes: |
 spdx_license_key: TOSL
 ignorable_copyrights:
     - copyright (c) 2006 Mike Mintz and Robert Ekendahl
+ignorable_holders:
+    - Mike Mintz and Robert Ekendahl

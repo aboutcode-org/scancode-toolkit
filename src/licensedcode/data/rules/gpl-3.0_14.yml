@@ -5,3 +5,5 @@ notes: this is a bizarre rule for a partially truncated GPL-3.0 license that sho
     then in a few places. See for some examples https://github.com/search?q=%22interactive+mode%3A+Copyright+(C)+This+program%22&type=Code
 ignorable_copyrights:
     - Copyright (c) 2007 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.

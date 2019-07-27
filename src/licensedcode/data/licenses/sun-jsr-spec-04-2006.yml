@@ -6,3 +6,5 @@ owner: Oracle (Sun)
 notes: a highly similar earlier version was published in January 2006.
 ignorable_copyrights:
     - Copyright 2006 SUN MICROSYSTEMS, INC.
+ignorable_holders:
+    - SUN MICROSYSTEMS, INC.

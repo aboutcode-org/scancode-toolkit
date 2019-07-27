@@ -3,6 +3,8 @@ is_license_notice: yes
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) 1998 the Initial Developer
+ignorable_holders:
+    - the Initial Developer
 ignorable_authors:
     - the Initial Developer
 ignorable_urls:

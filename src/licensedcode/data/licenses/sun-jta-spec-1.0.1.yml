@@ -6,5 +6,7 @@ owner: Oracle (Sun)
 homepage_url: http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download
 ignorable_copyrights:
     - Copyright 1997-1999 Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
 ignorable_urls:
     - http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download

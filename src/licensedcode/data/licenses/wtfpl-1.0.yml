@@ -20,3 +20,5 @@ other_urls:
     - http://cvs.windowmaker.org/co.php/wm/COPYING.WTFPL
 ignorable_copyrights:
     - Copyright (c) 2000 Banlu Kemiyatorn
+ignorable_holders:
+    - Banlu Kemiyatorn

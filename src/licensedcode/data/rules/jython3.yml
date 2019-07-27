@@ -5,6 +5,10 @@ ignorable_copyrights:
     - Copyright (c) 1996-1999 Corporation for National Research Initiatives
     - Copyright (c) 2000-2009 Jython Developers
     - Copyright (c) 2007 Python Software Foundation
+ignorable_holders:
+    - Corporation for National Research Initiatives
+    - Jython Developers
+    - Python Software Foundation
 ignorable_authors:
     - Brian Zimmer
 ignorable_urls:

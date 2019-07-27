@@ -3,3 +3,5 @@ is_license_text: yes
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright ?? 1991-2013 Unicode, Inc.
+ignorable_holders:
+    - ?? Unicode, Inc.

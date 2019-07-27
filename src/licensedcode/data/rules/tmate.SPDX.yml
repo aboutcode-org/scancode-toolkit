@@ -4,5 +4,7 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) 2004-2012 TMate Software
+ignorable_holders:
+    - TMate Software
 ignorable_emails:
     - support@svnkit.com

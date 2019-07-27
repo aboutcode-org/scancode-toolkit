@@ -8,5 +8,7 @@ text_urls:
     - http://www.java.com/en/download/license.jsp
 ignorable_copyrights:
     - Copyright 2004, Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
 ignorable_urls:
     - http://www.sun.com/policies/trademarks

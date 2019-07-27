@@ -16,3 +16,5 @@ other_urls:
 minimum_coverage: 10
 ignorable_copyrights:
     - Copyright YEAR United States Government as represented by
+ignorable_holders:
+    - United States Government as represented by

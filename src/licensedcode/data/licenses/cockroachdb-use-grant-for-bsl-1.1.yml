@@ -8,5 +8,7 @@ is_exception: yes
 faq_url: https://www.cockroachlabs.com/blog/oss-relicensing-cockroachdb/
 ignorable_copyrights:
     - (c) 2019 Cockroach Labs, Inc.
+ignorable_holders:
+    - Cockroach Labs, Inc.
 ignorable_urls:
     - https://cockroachlabs.com/

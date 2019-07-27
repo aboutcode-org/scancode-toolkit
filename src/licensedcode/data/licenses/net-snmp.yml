@@ -19,6 +19,15 @@ ignorable_copyrights:
     - copyright (c) 2001-2003, Cambridge Broadband Ltd.
 ignorable_authors:
     - Bernhard Penz
+ignorable_holders:
+    - Cambridge Broadband Ltd.
+    - Carnegie Mellon University
+    - Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications
+    - Fabasoft R&D Software GmbH & Co
+    - Networks Associates Technology, Inc
+    - Sparta, Inc
+    - Sun Microsystems, Inc.
+    - The Regents of the University of California
 ignorable_urls:
     - http://net-snmp.sourceforge.net/about/license.html
 ignorable_emails:

@@ -9,3 +9,5 @@ text_urls:
     - http://mediainfo.sourceforge.net/en
 ignorable_copyrights:
     - Copyright 2002-2010 MediaArea.net SARL.
+ignorable_holders:
+    - MediaArea.net SARL.

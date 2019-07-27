@@ -14,3 +14,9 @@ ignorable_copyrights:
         University of Illinois
 ignorable_authors:
     - the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
+ignorable_holders:
+    - Kitware Inc.
+    - Los Alamos National Laboratory
+    - Sandia Corporation, Kitware Inc.
+    - U.S. Army Research Laboratory
+    - the Board of Trustees of the University of Illinois

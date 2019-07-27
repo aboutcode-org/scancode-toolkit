@@ -9,6 +9,8 @@ text_urls:
 minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
 ignorable_urls:
     - http://www.unicode.org/Public
     - http://www.unicode.org/cldr/data

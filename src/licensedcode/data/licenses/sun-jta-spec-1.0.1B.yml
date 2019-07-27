@@ -7,3 +7,5 @@ homepage_url: http://download.oracle.com/otndocs/jcp/7083-jta-1.0.1B-mr-spec-oth
 minimum_coverage: 30
 ignorable_copyrights:
     - Copyright 2002 Sun Micro systems, Inc.
+ignorable_holders:
+    - Sun Micro systems, Inc.

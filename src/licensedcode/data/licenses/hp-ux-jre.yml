@@ -5,3 +5,5 @@ category: Proprietary Free
 owner: HP - Hewlett Packard
 ignorable_copyrights:
     - copyrighted by HP
+ignorable_holders:
+    - HP

@@ -11,6 +11,8 @@ other_urls:
     - http://www.sugarcrm.com/page/sugarcrm-public-license/en
 ignorable_copyrights:
     - Copyright (c) 2004 SugarCRM, Inc.
+ignorable_holders:
+    - SugarCRM, Inc.
 ignorable_urls:
     - http://www.mozilla.org/MPL/MPL-1.1.html
     - http://www.sugarcrm.com/

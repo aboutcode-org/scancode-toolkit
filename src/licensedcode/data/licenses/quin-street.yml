@@ -12,5 +12,7 @@ other_urls:
     - http://www.codeguru.com/submission-guidelines.php#permission
 ignorable_copyrights:
     - Copyright 1999-2014 QuinStreet, Inc.
+ignorable_holders:
+    - QuinStreet, Inc.
 ignorable_emails:
     - copyrightagent@quinstreet.com

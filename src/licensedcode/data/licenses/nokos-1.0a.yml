@@ -14,3 +14,5 @@ other_urls:
     - https://opensource.org/licenses/nokia
 ignorable_copyrights:
     - Copyright (c) Nokia and others
+ignorable_holders:
+    - Nokia and others

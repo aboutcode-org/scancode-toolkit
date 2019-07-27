@@ -8,3 +8,5 @@ notes: See also https://wptavern.com/wix-removes-gpl-licensed-wordpress-code-fro
 minimum_coverage: 50
 ignorable_copyrights:
     - Copyright (c) 2016 Wix.com
+ignorable_holders:
+    - Wix.com

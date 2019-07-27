@@ -5,3 +5,5 @@ category: Permissive
 owner: Oracle Corporation
 ignorable_copyrights:
     - (c) Date BEA Systems, Inc.
+ignorable_holders:
+    - Date BEA Systems, Inc.

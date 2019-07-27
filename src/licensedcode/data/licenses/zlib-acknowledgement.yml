@@ -19,3 +19,7 @@ ignorable_copyrights:
     - Copyright (c) 2000-2002 Philip A. Craig
     - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
     - Portions Copyright (c) 2002-2007 Charlie Poole
+ignorable_holders:
+    - Charlie Poole
+    - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
+    - Philip A. Craig

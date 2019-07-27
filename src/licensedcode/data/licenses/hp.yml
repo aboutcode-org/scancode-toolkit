@@ -8,3 +8,5 @@ text_urls:
     - http://h30097.www3.hp.com/hp_sw_license.html
 ignorable_copyrights:
     - (c) HEWLETT-PACKARD COMPANY, 2004
+ignorable_holders:
+    - HEWLETT-PACKARD COMPANY

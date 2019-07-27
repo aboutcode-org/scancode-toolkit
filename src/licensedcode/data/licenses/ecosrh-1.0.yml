@@ -15,6 +15,8 @@ minimum_coverage: 70
 ignorable_copyrights:
     - Copyright (c) 1998 Cygnus Solutions
     - Copyright (c) 1998 Cygnus Solutions (http://www.cygnus.com)
+ignorable_holders:
+    - Cygnus Solutions
 ignorable_urls:
     - http://sourceware.cygnus.com/ecos
     - http://www.cygnus.com/

@@ -17,3 +17,5 @@ other_urls:
     - https://opensource.org/licenses/RPL-1.5
 ignorable_copyrights:
     - Copyright (c) 2001-2007 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.

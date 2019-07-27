@@ -12,5 +12,8 @@ minimum_coverage: 60
 ignorable_copyrights:
     - Copyright (c) 1988, 1993 The Regents of the University ofCalifornia
     - Copyright (c) 1998-2014 Proofpoint, Inc.
+ignorable_holders:
+    - Proofpoint, Inc.
+    - The Regents of the University ofCalifornia
 ignorable_emails:
     - sendmail-license@proofpoint.com

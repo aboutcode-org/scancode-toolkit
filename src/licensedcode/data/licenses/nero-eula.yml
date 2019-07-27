@@ -27,6 +27,22 @@ ignorable_copyrights:
 ignorable_authors:
     - Coding Technologies 'CT . www.codingtechnologies.com
     - the OpenSSL Project
+ignorable_holders:
+    - DTS, Inc.
+    - Dolby Laboratories
+    - Dolby Laboratories, Inc.
+    - Dr Brian Gladman, Worcester, UK.
+    - Gracenote
+    - Gracenote. Gracenote Software
+    - Microsoft Corporation
+    - Nero AG and its licensors
+    - Nero AG.
+    - RSA Data Security, Inc.
+    - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
+        Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad Khalifa, Markus
+        Kuhn, and CORE SDI S.A.
+    - Simon Tatham
+    - The OpenSSL Project
 ignorable_urls:
     - http://ffmpeg.mplayerhq.hu/
     - http://fp.gladman.plus.com/

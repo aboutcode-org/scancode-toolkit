@@ -9,5 +9,7 @@ other_urls:
     - https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1
 ignorable_copyrights:
     - copyright of CERN.
+ignorable_holders:
+    - CERN.
 ignorable_urls:
     - http://www.ohwr.org/

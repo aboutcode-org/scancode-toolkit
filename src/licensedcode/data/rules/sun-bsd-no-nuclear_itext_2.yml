@@ -4,3 +4,5 @@ relevance: 99
 minimum_coverage: 90
 ignorable_copyrights:
     - copyrighted by SUN
+ignorable_holders:
+    - SUN

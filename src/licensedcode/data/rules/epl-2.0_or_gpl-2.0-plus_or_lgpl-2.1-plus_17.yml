@@ -4,6 +4,8 @@ relevance: 90
 notes: reference to cpl2
 ignorable_copyrights:
     - Copyright (c) 2009 Yoko Harada <yokolet@gmail.com>
+ignorable_holders:
+    - Yoko Harada
 ignorable_urls:
     - http://www.eclipse.org/legal/cpl-v10.html
 ignorable_emails:

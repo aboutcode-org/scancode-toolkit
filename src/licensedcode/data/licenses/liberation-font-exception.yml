@@ -7,3 +7,7 @@ homepage_url: https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
 is_exception: yes
 text_urls:
     - https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
+ignorable_copyrights:
+    - Copyright (c) 2007 Red Hat, Inc.
+ignorable_holders:
+    - Red Hat, Inc.

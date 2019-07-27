@@ -154,6 +154,7 @@ class License(object):
     # in this license as they are part of the license or rule text itself
     ignorable_copyrights = __attrib(default=attr.Factory(list))
     ignorable_authors = __attrib(default=attr.Factory(list))
+    ignorable_holders = __attrib(default=attr.Factory(list))
     ignorable_urls = __attrib(default=attr.Factory(list))
     ignorable_emails = __attrib(default=attr.Factory(list))
 
@@ -549,7 +550,9 @@ def build_rules_from_licenses(licenses):
 
                 is_license=True,
                 is_license_text=True,
+                
                 ignorable_copyrights=license_obj.ignorable_copyrights,
+                ignorable_holders=license_obj.ignorable_holders,
                 ignorable_authors=license_obj.ignorable_authors,
                 ignorable_urls=license_obj.ignorable_urls,
                 ignorable_emails=license_obj.ignorable_emails,
@@ -743,6 +746,7 @@ class Rule(object):
     # lists of copuyrights, emails and URLs that can be ignored when detected
     # in this license as they are part of the license or rule text itself
     ignorable_copyrights = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_holders = attr.ib(default=attr.Factory(list), repr=False)
     ignorable_authors = attr.ib(default=attr.Factory(list), repr=False)
     ignorable_urls = attr.ib(default=attr.Factory(list), repr=False)
     ignorable_emails = attr.ib(default=attr.Factory(list), repr=False)
@@ -969,6 +973,8 @@ class Rule(object):
 
         if self.ignorable_copyrights:
             data['ignorable_copyrights'] = self.ignorable_copyrights
+        if self.ignorable_holders:
+            data['ignorable_holders'] = self.ignorable_holders
         if self.ignorable_authors:
             data['ignorable_authors'] = self.ignorable_authors
         if self.ignorable_urls:
@@ -1071,6 +1077,12 @@ class Rule(object):
         if not self.notes and (self.is_negative or self.is_false_positive):
             msg = 'Special License rule {} is missing explanatory notes.'
             raise Exception(msg.format(self))
+
+        self.ignorable_copyrights = data.get('ignorable_copyrights', [])
+        self.ignorable_holders = data.get('ignorable_holders', [])
+        self.ignorable_authors = data.get('ignorable_authors', [])
+        self.ignorable_urls = data.get('ignorable_urls', [])
+        self.ignorable_emails = data.get('ignorable_emails', [])
 
         return self
 

@@ -3,3 +3,5 @@ is_license_notice: yes
 relevance: 100
 ignorable_copyrights:
     - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - the Free Software Foundation

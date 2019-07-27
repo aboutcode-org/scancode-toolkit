@@ -7,3 +7,5 @@ homepage_url: http://www.mail-archive.com/debian-legal@lists.debian.org/msg04177
 faq_url: http://www.mail-archive.com/debian-legal@lists.debian.org/msg04177.html
 ignorable_copyrights:
     - COPYRIGHT 1989 by The Board of Trustees of Leland Stanford Junior University
+ignorable_holders:
+    - The Board of Trustees of Leland Stanford Junior University

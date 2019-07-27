@@ -3,6 +3,9 @@ is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others
     - copyright Sun Microsystems Inc.
+ignorable_holders:
+    - Mort Bay Consulting Pty. Ltd. (Australia) and others
+    - Sun Microsystems Inc.
 ignorable_urls:
     - http://ftp.uu.net/
     - http://jetty.mortbay.org/

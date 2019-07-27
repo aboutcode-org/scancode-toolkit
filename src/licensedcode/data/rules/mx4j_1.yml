@@ -3,6 +3,8 @@ is_license_text: yes
 notes: MX4J variant
 ignorable_copyrights:
     - Copyright (c) 2001 MX4J.
+ignorable_holders:
+    - MX4J.
 ignorable_authors:
     - the MX4J project (http://mx4j.sourceforge.net)
 ignorable_urls:

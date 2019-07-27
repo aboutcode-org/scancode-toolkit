@@ -4,6 +4,9 @@ minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) The Apache Software Foundation
     - copyright (c) International Business Machines, Inc., http://www.ibm.com
+ignorable_holders:
+    - International Business Machines, Inc.
+    - The Apache Software Foundation
 ignorable_authors:
     - the Apache Software Foundation (http://www.apache.org/)
 ignorable_urls:

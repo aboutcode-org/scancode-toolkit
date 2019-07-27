@@ -3,5 +3,7 @@ is_license_notice: yes
 minimum_coverage: 90
 ignorable_copyrights:
     - Copyright (c) Broadcom Corporation
+ignorable_holders:
+    - Broadcom Corporation
 ignorable_urls:
     - http://www.broadcom.com/licenses/GPLv2.php

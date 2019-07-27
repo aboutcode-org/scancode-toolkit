@@ -3,3 +3,5 @@ is_license_text: yes
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) Everyone
+ignorable_holders:
+    - Everyone

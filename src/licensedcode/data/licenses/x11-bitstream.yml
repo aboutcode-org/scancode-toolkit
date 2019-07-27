@@ -6,3 +6,5 @@ owner: Bitstream
 notes: this is an historical license with an extra grant
 ignorable_copyrights:
     - (c) Copyright 1989-1992, Bitstream Inc., Cambridge, MA.
+ignorable_holders:
+    - Bitstream Inc., Cambridge, MA.

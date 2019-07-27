@@ -7,3 +7,5 @@ homepage_url: http://www.lemis.com/grog/UNIX/ancient-source-all.pdf
 spdx_license_key: Caldera
 ignorable_copyrights:
     - Copyright (c) Caldera International Inc.
+ignorable_holders:
+    - Caldera International Inc.

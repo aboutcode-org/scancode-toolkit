@@ -10,5 +10,7 @@ ignorable_copyrights:
     - (c) 1991-9 Silicon Graphics, Inc.
 ignorable_authors:
     - Silicon Graphics, Inc.
+ignorable_holders:
+    - Silicon Graphics, Inc.
 ignorable_urls:
     - http://www.sgi.com/software/opensource/glx/license.html

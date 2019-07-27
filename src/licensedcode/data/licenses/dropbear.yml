@@ -26,6 +26,17 @@ ignorable_authors:
     - Matt Johnston
     - Theo de Raadt
     - Tom St Denis
+ignorable_holders:
+    - Andre Lucas
+    - Jason Downs
+    - Matt Johnston
+    - Mihnea Stoenescu
+    - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
+        Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
+    - Simon Tatham
+    - Tatu Ylonen , Timo Rinne
+    - Theo de Raadt
+    - Todd C. Miller
 ignorable_emails:
     - tri@iki.fi
     - ylo@cs.hut.fi

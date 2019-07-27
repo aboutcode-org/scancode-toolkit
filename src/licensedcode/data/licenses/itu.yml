@@ -8,5 +8,7 @@ text_urls:
     - http://www.itu.int/
 ignorable_copyrights:
     - Copyright, International Telecommunications Union, Geneva
+ignorable_holders:
+    - International Telecommunications Union, Geneva
 ignorable_urls:
     - http://www.itu.int/

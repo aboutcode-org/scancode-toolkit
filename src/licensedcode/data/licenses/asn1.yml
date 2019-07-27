@@ -7,6 +7,8 @@ ignorable_copyrights:
     - copyright Peter Gutmann <pgut001@cs.auckland.ac.nz>
 ignorable_authors:
     - David Kemp <dpkemp@missi.ncsc.mil>
+ignorable_holders:
+    - Peter Gutmann
 ignorable_urls:
     - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c
     - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg

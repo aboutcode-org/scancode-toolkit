@@ -20,3 +20,5 @@ ignorable_copyrights:
     - Copyright (c) 2000-2006, The Perl Foundation
 ignorable_authors:
     - The Perl Foundation
+ignorable_holders:
+    - The Perl Foundation

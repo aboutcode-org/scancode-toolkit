@@ -5,3 +5,5 @@ referenced_filenames:
 notes: rpm dual
 ignorable_copyrights:
     - Copyright (c) by Red Hat Software, Inc.
+ignorable_holders:
+    - Red Hat Software, Inc.

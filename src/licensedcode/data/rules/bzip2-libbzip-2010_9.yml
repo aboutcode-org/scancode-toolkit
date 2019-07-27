@@ -5,3 +5,5 @@ referenced_filenames:
     - COPYING
 ignorable_copyrights:
     - Copyright (c) 2000-2017 Julian Seward
+ignorable_holders:
+    - Julian Seward

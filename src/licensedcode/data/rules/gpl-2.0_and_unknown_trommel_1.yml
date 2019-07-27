@@ -5,3 +5,5 @@ minimum_coverage: 95
 notes: this is a modified GPL text
 ignorable_copyrights:
     - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - the Free Software Foundation

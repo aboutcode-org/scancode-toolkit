@@ -7,6 +7,9 @@ homepage_url: https://www.oasis-open.org/policies-guidelines/ipr
 ignorable_copyrights:
     - Copyright (c) OASIS
     - copyright year
+ignorable_holders:
+    - .
+    - OASIS
 ignorable_urls:
     - http://www.oasis-open.org/policies-guidelines/ipr
     - http://www.oasis-open.org/who/intellectualproperty.php

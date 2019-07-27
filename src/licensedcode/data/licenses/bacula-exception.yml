@@ -112,3 +112,7 @@ ignorable_copyrights:
     - Copyright (c) 2000-2014 Free Software Foundation Europe e.V.
     - Copyright (c) 2000-2017 Kern Sibbald
     - Copyright (c) 2013-2017 Marcin Haba
+ignorable_holders:
+    - Free Software Foundation Europe e.V.
+    - Kern Sibbald
+    - Marcin Haba

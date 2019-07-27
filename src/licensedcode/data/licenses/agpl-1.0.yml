@@ -14,3 +14,7 @@ ignorable_copyrights:
     - Copyright (c) 2002 Affero Inc.
     - copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by Affero, Inc.
+ignorable_holders:
+    - Affero Inc.
+    - Affero, Inc.
+    - Free Software Foundation, Inc.

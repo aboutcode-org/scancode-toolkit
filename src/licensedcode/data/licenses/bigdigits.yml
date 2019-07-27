@@ -19,6 +19,8 @@ ignorable_copyrights:
     - copyright (c) 2001-11 by D.I. Management Services Pty Limited
 ignorable_authors:
     - David Ireland
+ignorable_holders:
+    - D.I. Management Services Pty Limited
 ignorable_urls:
     - http://www.di-mgt.com.au/
     - http://www.di-mgt.com.au/bigdigits.html

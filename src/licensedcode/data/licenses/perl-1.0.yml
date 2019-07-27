@@ -5,3 +5,5 @@ category: Permissive
 owner: Perl Foundation
 ignorable_copyrights:
     - Copyright (c) 1987, Larry Wall
+ignorable_holders:
+    - Larry Wall

@@ -4,3 +4,5 @@ minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
     - Copyright (c) 2001-2007 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.

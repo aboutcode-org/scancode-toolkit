@@ -11,3 +11,5 @@ notes: |
 spdx_license_key: Intel-ACPI
 ignorable_copyrights:
     - Copyright (c) 1999-2005, Intel Corp.
+ignorable_holders:
+    - Intel Corp.

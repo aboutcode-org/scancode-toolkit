@@ -16,3 +16,5 @@ other_urls:
     - https://opensource.org/licenses/IPL-1.0
 ignorable_copyrights:
     - Copyright (c) 1996, 1999 International Business Machines Corporation and others
+ignorable_holders:
+    - International Business Machines Corporation and others

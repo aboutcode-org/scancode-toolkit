@@ -5,3 +5,5 @@ category: Permissive
 owner: IBM
 ignorable_copyrights:
     - COPYRIGHT I B M CORPORATION 2000
+ignorable_holders:
+    - I B M CORPORATION

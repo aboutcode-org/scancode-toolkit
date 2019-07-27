@@ -4,5 +4,8 @@ minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) 2010 Fedora Project
     - copyrighted by Fedora Project and others
+ignorable_holders:
+    - Fedora Project
+    - Fedora Project and others
 ignorable_urls:
     - http://fedoraproject.org/wiki/Legal

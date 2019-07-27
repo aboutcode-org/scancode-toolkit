@@ -5,3 +5,5 @@ category: Permissive
 owner: Apple
 ignorable_copyrights:
     - Copyright (c) Apple Inc.
+ignorable_holders:
+    - Apple Inc.

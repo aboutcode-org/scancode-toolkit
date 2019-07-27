@@ -7,6 +7,8 @@ ignorable_copyrights:
     - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
 ignorable_authors:
     - Robert A. van Engelen
+ignorable_holders:
+    - Robert A. van Engelen, Genivia inc.
 ignorable_urls:
     - http://genivia.com/Products/gsoap/contract.html
     - http://genivia.com/Products/gsoap/license.pdf

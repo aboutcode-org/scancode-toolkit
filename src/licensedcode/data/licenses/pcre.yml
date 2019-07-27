@@ -11,6 +11,9 @@ ignorable_copyrights:
     - copyright by the University of Cambridge, England
 ignorable_authors:
     - Philip Hazel
+ignorable_holders:
+    - University of Cambridge
+    - the University of Cambridge, England
 ignorable_urls:
     - ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 ignorable_emails:

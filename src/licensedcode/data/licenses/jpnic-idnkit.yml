@@ -12,3 +12,5 @@ other_urls:
     - https://jprs.co.jp/idn/
 ignorable_copyrights:
     - Copyright (c) 2000-2002 Japan Network Information Center
+ignorable_holders:
+    - Japan Network Information Center
