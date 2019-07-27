@@ -172,7 +172,9 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
+              extractcode: |
+                  bin/py.test -vvs tests/extractcode/test_libarchive2.py \
+                  tests/extractcode/test_extractcode.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -182,7 +184,9 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
+              extractcode: |
+                    bin/py.test -vvs tests/extractcode/test_libarchive2.py \
+                    tests/extractcode/test_extractcode.py
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -192,7 +196,9 @@ jobs:
           test_suites:
               commoncode: bin/py.test -vvs tests/commoncode
               plugincode: bin/py.test -vvs tests/plugincode
-              extractcode: bin/py.test -vvs tests/extractcode/test_libarchive2.py
+              extractcode: |
+                    bin/py.test -vvs tests/extractcode/test_libarchive2.py \
+                    tests/extractcode/test_extractcode.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -202,7 +208,9 @@ jobs:
           python_architecture: x86
           test_suites:
               commoncode: Scripts\py.test -vvs tests\commoncode
-              plugincode and extractcode: Scripts\py.test -vvs tests\plugincode tests\extractcode\test_libarchive2.py
+              plugincode: Scripts\py.test -vvs tests\plugincode 
+              extractcode: |
+                    Scripts\py.test -vvs tests\extractcode\test_libarchive2.py tests\extractcode\test_extractcode.py
               
 ################################################################################
 # These jobs are using containers and their own Python 3.6
