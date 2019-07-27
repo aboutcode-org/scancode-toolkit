@@ -550,7 +550,7 @@ def build_rules_from_licenses(licenses):
 
                 is_license=True,
                 is_license_text=True,
-                
+
                 ignorable_copyrights=license_obj.ignorable_copyrights,
                 ignorable_holders=license_obj.ignorable_holders,
                 ignorable_authors=license_obj.ignorable_authors,
@@ -1284,3 +1284,48 @@ def _print_rule_stats():
     print('Top 15 high lengths: ', high_sizes.most_common(15))
     print('15 smallest high lengths: ', sorted(high_sizes.iteritems(),
                                                key=itemgetter(0))[:15])
+
+
+def update_ignorables(licensish, verbose=False, dump=True):
+    """
+    Collect, update and save the ignorable_* attributes of a `licensish` Rule or
+    License object.
+    """
+    location = licensish.text_file
+
+    if verbose:
+        print('Processing:', 'file://' + location)
+
+    if not exists(location):
+        return licensish
+
+    # collect and set ignorable copyrights, holders and authors
+    from cluecode.copyrights import detect_copyrights
+    copyrights = set()
+    holders = set()
+    authors = set()
+
+    for dtype, value, _start, _end in detect_copyrights(location):
+        if dtype == 'copyrights':
+            copyrights.add(value)
+        elif dtype == 'holders':
+            holders.add(value)
+        elif dtype == 'authors':
+            authors.add(value)
+
+    licensish.ignorable_copyrights = sorted(copyrights)
+    licensish.ignorable_holders = sorted(holders)
+    licensish.ignorable_authors = sorted(authors)
+
+    # collect and set ignrable emails and urls
+    from cluecode.finder import find_urls
+    from cluecode.finder import find_emails
+
+    urls = set(u for (u, _ln) in find_urls(location) if u)
+    licensish.ignorable_urls = sorted(urls)
+
+    emails = set(u for (u, _ln) in find_emails(location) if u)
+    licensish.ignorable_emails = sorted(emails)
+    if dump:
+        licensish.dump()
+    return licensish

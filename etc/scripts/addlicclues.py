@@ -27,14 +27,10 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
 
-from os import path
 
 import click
 click.disable_unicode_literals_warning = True
 
-from cluecode.copyrights import detect_copyrights
-from cluecode.finder import find_urls
-from cluecode.finder import find_emails
 from licensedcode import cache
 from licensedcode import models
 
@@ -43,44 +39,12 @@ from licensedcode import models
 Update licenses and rules with ignorable copyrights, URLs and emails.
 """
 
-def copyright_detector(location):
-    """
-    Return sets of detected copyrights and authors in file at location.
-    """
-    copyrights = set()
-    authors = set()
-    for dtype, value, _start, _end in detect_copyrights(location):
-        if dtype == 'copyrights':
-            copyrights.add(value)
-        elif dtype == 'authors':
-            authors.add(value)
 
-    return copyrights, authors
-
-
-def update_ignorables(licensish):
-    location = licensish.text_file
-    print('Processing:', 'file://' + location)
-    if not path.exists(location):
-        print('!')
-        return licensish
-    copyrights, authors = copyright_detector(location)
-
-    # copyrights.update(licensish.ignorable_copyrights)
-    licensish.ignorable_copyrights = sorted(copyrights)
-
-    # authors.update(licensish.ignorable_authors)
-    licensish.ignorable_authors = sorted(authors)
-
-    urls = set(u for (u, _ln) in find_urls(location) if u)
-    # urls.update(licensish.ignorable_urls)
-    licensish.ignorable_urls = sorted(urls)
-
-    emails = set(u for (u, _ln) in find_emails(location) if u)
-    # emails.update(licensish.ignorable_emails)
-    licensish.ignorable_emails = sorted(emails)
-
-    return licensish
+def refresh_ignorables(licensishes):
+    for i, lic in enumerate(sorted(licensishes)):
+        print(i, end=' ')
+        lic = models.update_ignorables(lic, verbose=True)
+        lic.dump()
 
 
 @click.command()
@@ -89,17 +53,8 @@ def cli(update=True):
     """
     Update licenses and rules with ignorable copyrights, URLs and emails.
     """
-    for i, lic in enumerate(sorted(cache.get_licenses_db().values())):
-        print(i, end=' ')
-        if update:
-            lic = update_ignorables(lic)
-        lic.dump()
-
-    for i, rule in enumerate(sorted(models.load_rules())):
-        print(i, end=' ')
-        if update:
-            rule = update_ignorables(rule)
-        rule.dump()
+    refresh_ignorables(cache.get_licenses_db().values())
+    refresh_ignorables(models.load_rules())
 
 
 if __name__ == '__main__':

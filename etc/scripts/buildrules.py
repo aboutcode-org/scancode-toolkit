@@ -34,10 +34,9 @@ import click
 click.disable_unicode_literals_warning = True
 import saneyaml
 
-from commoncode import fileutils
 
 from licensedcode.models import Rule
-from licensedcode.models import load_rules
+from licensedcode.models import update_ignorables
 
 
 TRACE = True
@@ -89,7 +88,6 @@ def rule_exists(text):
     Return the matched rule if the text is an existing rule matched exactly, False otherwise.
     """
     from licensedcode.cache import get_index
-    from licensedcode.cache import get_licenses_db
     from licensedcode.match_hash import MATCH_HASH
     idx = get_index()
 
@@ -171,10 +169,11 @@ def cli(licenses_file):
             # cleanup
             os.remove(text_file)
             os.remove(data_file)
-            print('Skipping alreday added rule with text:\n', rtxt)
+            print('Skipping already added rule with text for:', license_expression)
         else:
             rules_tokens.add(rule_tokens)
             rule.dump()
+            update_ignorables(rule, verbose=True)
             print('Rule added:', rule.identifier)
 
 
