@@ -1,0 +1,65 @@
+OPaC Free Public License
+
+Copyright © 1997-1998, OPaC bright ideas, Suscévaz, Switzerland. All rights reserved.
+
+OPaC bright ideas (the "Licenser") is the owner of a computer software program known as the OPaC Class Library ("OPaC"). The OPaC Free Public License (this "License") applies to OPaC and to any translation or modification of this software program ("Derivative Works"). Hereinafter, translation is included without limitation in the term "modification". Each licensee is addressed as "you". "Program" will refer to any work that you distribute or publish, that in whole or in part contains or is derived from OPaC or any part thereof.
+
+OPaC is a copyrighted work whose copyright is held by the Licenser.
+
+By modifying or distributing OPaC or Derivative Works, you indicate your acceptance of this license to do so, and all its terms and conditions for copying, distributing or modifying OPaC or Derivative Works. Nothing other than this license grants you permission to modify or distribute OPaC or Derivative Works. The actions are prohibited by law. If you do not accept these terms and conditions, do not modify or distribute OPaC or Derivative Works.
+
+1. Licenses.
+
+Licenser hereby grants you the following rights, provided that you comply with all of the restrictions set forth in this License and provided, further, that you distribute an unmodified copy of this License with OPaC :
+
+(a) You may copy and distribute literal (i.e., verbatim) copies of OPaC's source code as you receive it throughout the world, in any medium.
+
+(b) You may modify OPaC, create Derivative Works and distribute copies of such throughout the world, in any medium.
+
+2. Restrictions.
+
+This License is subject to the following restrictions :
+
+(a) Distribution of OPaC or any Derivative Works by a commercial organisation to any third party is prohibited if any payment is made in connection with such distribution, whether directly (as in payment for a copy of OPaC) or indirectly (as in payment for some service related to OPaC, or payment for some product or service that includes a copy of OPaC or Derivative Works "without charge"; these are only examples and not an exhaustive enumeration of prohibited activities). However, the following methods of distribution involving payment shall not in and of themselves be a violation of this restriction :
+
+(i) Posting OPaC on a public access information storage and retrieval service for which a fee is received for retrieving information (such as an on-line service), provided that the fee is not content-dependent (i.e., the fee would be the same for retrieving the same volume of information consisting of random data).
+
+(ii) Distributing OPaC on media customarily used for software distribution (i.e., on CD-ROM), provided that the files containing OPaC are reproduced entirely and verbatim on such media, and provided further that all information on such media be redistributable for non-commercial purposes without charge.
+
+(b) Activities other than copying, distribution and modification of OPaC are not subject to this License and are outside its scope. Functional use (running) of OPaC is not restricted, and any output produced through the use of OPaC is subject to this License only if its contents constitute Derivative Works (independent of having been made by running OPaC).
+
+(c) You must meet all of the following conditions with respect to the distribution of any work based on OPaC :
+
+(i) If you have modified OPaC, you must cause your work to carry prominent notices stating that you have modified OPaC's files and the date of any change.
+
+(ii) You must cause the Program to be licensed as a whole and at no charge to all third parties under the terms of this License.
+
+(iii) You must cause your Program, at each time it commences its operation, to display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty). Such notice must also state that users may redistribute the Program only under the conditions of this License and tell the user how to view the copy of this License included with the Program. If the Program is interactive, it may display this announcement in its "About box".
+
+(iv) You must accompany the Program with the complete corresponding machine-readable source code, delivered on a medium customarily used for software interchange. The source code for a work means the preferred form of the work for making modifications to it. For an executable work, complete source code means all the source code for all modules it contains including, but not limited to, any associated interface definition files and scripts used for the compilation and installation of the executable code. However, the source code distributed need not include anything that is normally distributed (in either source or binary form) with the major components (compiler, kernel, and so on) of the operating system on which the executable runs.
+
+(v) If you distribute any written or printed material at all with OPaC or any Derivative Works, such material must include either a written copy of this License, or a prominent written indication that OPaC or the Derivative Works are covered by this License and written instructions for printing and/or displaying the copy of the License on the distribution's medium.
+
+(vi) You may not impose any further restrictions on the recipient's exercise of the rights granted herein.
+
+If the distribution of executable or object code is made by offering the equivalent ability to copy from a designated place, then offering equivalent ability to copy the source code from the same place counts as distribution of the source code, even though third parties are not compelled to copy the source code along with the object code.
+
+3. Reservation of Rights.
+
+No rights are granted to OPaC except as expressly set forth herein. You may not copy, modify, sub-license, or distribute OPaC except as expressly provided under this License. Any attempt otherwise to copy, modify, sub-license or distribute OPaC is void, and will automatically terminate your rights under this License. However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
+
+4. Other Restrictions.
+
+If the distribution and/or use of OPaC is restricted in certain countries for any reason, Licenser may add an explicit geographical distribution limitation excluding these countries, so that distribution is permitted only in or among countries not thus excluded. In such case, this License incorporates the limitation as if written in the body of this License.
+
+5. Limitations.
+
+OPaC is provided to you "as is", without warranty. There is no warranty for OPaC, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose and non-infringement of third party rights. The entire risk as to the quality and performance of OPaC is with you. Should OPaC prove defective, you assume the cost of all necessary servicing, repair or correction.
+
+In no event unless required by applicable law or agreed to in writing will Licenser, or any other party who may modify and/or redistribute OPaC as permitted above, be liable to you for damages, including any general, special, incidental or consequential damages arising out of the use or inability to use OPaC (including, but not limited to, loss of data or data being rendered inaccurate or losses sustained by you or third parties or a failure of OPaC to operate with any other programs), even if such holder or other party has been advised of the possibility of such damages.
+
+6. General.
+
+If a part of this contract breaches the Swiss Law, this part will be meant in the best applicable original meaning, and all other clauses of this contract will remain valid.
+
+This License Agreement is governed by the laws of the Canton de Vaud, Switzerland.

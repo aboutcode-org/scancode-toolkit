@@ -22,7 +22,7 @@ copyrights:
   - copyrighted by the Free Software Foundation
   - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
   - copyrighted by the Free Software Foundation
-  - Copyright (c) 2002-2010 The ANGLE Project
+  - Copyright (c) 2002-2010 The ANGLE Project Authors
   - Copyright (c) 2009 Apple Inc.
   - Portions Copyright (c) 1999-2007 Apple Inc.
   - copyright (c) 1996-2010 Julian R Seward
@@ -127,7 +127,7 @@ holders:
   - the Free Software Foundation
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - The ANGLE Project
+  - The ANGLE Project Authors
   - Apple Inc.
   - Apple Inc.
   - Julian R Seward
@@ -341,7 +341,7 @@ holders_summary:
     count: 1
   - value: Thai Open Source Software Center Ltd and Clark Cooper
     count: 1
-  - value: The ANGLE Project
+  - value: The ANGLE Project Authors
     count: 1
   - value: The OpenSSL Project
     count: 1

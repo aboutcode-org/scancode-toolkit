@@ -211,7 +211,7 @@ patterns = [
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
     (r'^[Cc]ontribution\.?', 'JUNK'),
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
-    (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
+    (r'^dylid|BeOS|Generates?|Thanks?|therein', 'JUNK'),
     # various programming constructs
     (r'^(var|[Tt]his|return|function|thats?|xmlns|file|[Aa]sync|Keyspan)$', 'JUNK'),
 
@@ -239,8 +239,8 @@ patterns = [
      r'|al.|is|[lL]aws?|Insert|url|[Ss]ee|[Pp]ackage\.?|'
      r'|Covered|date|practices|[Aa]ny|ANY'
      r'|fprintf.*'
-     r'|CURDIR|Environment/Libraries|Environment/Base'
-     r'|Owner|behalf|know-how|interfaces?,?|than|whom|are'
+     r'|CURDIR|Environment/Libraries|Environment/Base|Violations\.?'
+     r'|Owner|behalf|know-how|interfaces?,?|than|whom|are|However,?|[Cc]ollectively'
      r')$', 'JUNK'),
 
     # some copyright templates in licenses
@@ -294,7 +294,7 @@ patterns = [
       r'|Permission|Section|Related|Government\.?'
       r'|PGP|Sort|Redistribution|Products?\.?|Customer\'?s?'
       r'|Site\.?|Except|Trademarks?|Logos?|Grants?\.?|Mode|Email\:?'
-      r'|Contracts?|Convention|JMagnetic'
+      r'|Contracts?|Convention|JMagnetic|Appropriate|Qualified'
     r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
@@ -469,9 +469,9 @@ patterns = [
 
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)[,\.]?$', 'JUNK'),
     # "authors" or "contributors" is interesting, and so a tag of its own
-    (r'^[Aa]uthor\.?$', 'AUTH'),
-    (r'^authors\.$', 'AUTHDOT'),
-    (r'^Authors\.?$', 'AUTHS'),
+    (r'^[Aa]uthor$', 'AUTH'),
+    (r'^[Aa]uthors?\.$', 'AUTHDOT'),
+    (r'^Authors$', 'AUTHS'),
     (r'^authors|author\'$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHS'),
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
@@ -1679,6 +1679,7 @@ JUNK_AUTHORS = frozenset([
     'grant the u.s. government and others',
     'james random hacker',
     'james hacker',
+    'company',
 ])
 
 AUTHORS_PREFIXES = frozenset(set.union(
