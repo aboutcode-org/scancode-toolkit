@@ -1,0 +1,339 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.0.2.post1250.904952c36",
+      "options": {
+        "input": [
+          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/multiple-same-holder-and-license/"
+        ],
+        "--consolidate": true,
+        "--copyright": true,
+        "--info": true,
+        "--json-pp": "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/multiple-same-holder-and-license-expected.json",
+        "--license": true,
+        "--package": true,
+        "--processes": "4"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2019-07-29T215139.665043",
+      "end_timestamp": "2019-07-29T215144.091866",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "consolidated_components": [
+    {
+      "type": "license-holders",
+      "identifier": "ibm_corp__ibm_corp__1",
+      "core_license_expression": "gpl-2.0",
+      "core_holders": [
+        "IBM Corp.",
+        "IBM Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) IBM Corp., IBM Corp.",
+      "other_license_expression": null,
+      "other_holders": []
+    },
+    {
+      "type": "license-holders",
+      "identifier": "ibm_corp__ibm_corp__2",
+      "core_license_expression": "gpl-2.0",
+      "core_holders": [
+        "IBM Corp.",
+        "IBM Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) IBM Corp., IBM Corp.",
+      "other_license_expression": null,
+      "other_holders": []
+    }
+  ],
+  "consolidated_packages": [],
+  "files": [
+    {
+      "path": "multiple-same-holder-and-license",
+      "type": "directory",
+      "name": "multiple-same-holder-and-license",
+      "base_name": "multiple-same-holder-and-license",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "ibm_corp__ibm_corp__1",
+        "ibm_corp__ibm_corp__2"
+      ],
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 164,
+      "scan_errors": []
+    },
+    {
+      "path": "multiple-same-holder-and-license/bar",
+      "type": "file",
+      "name": "bar",
+      "base_name": "bar",
+      "extension": "",
+      "size": 82,
+      "date": "2019-07-29",
+      "sha1": "aa6bd87dbe009f5fbd70b2653a60fc0b63c78b8e",
+      "md5": "6456c2560504a2b5896168b54e4c02fa",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 16.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-2.0_561.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 16.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "gpl-2.0_561.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0",
+        "gpl-2.0"
+      ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "Copyright (c) IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "ibm_corp__ibm_corp__1",
+        "ibm_corp__ibm_corp__2"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "multiple-same-holder-and-license/foo",
+      "type": "file",
+      "name": "foo",
+      "base_name": "foo",
+      "extension": "",
+      "size": 82,
+      "date": "2019-07-29",
+      "sha1": "aa6bd87dbe009f5fbd70b2653a60fc0b63c78b8e",
+      "md5": "6456c2560504a2b5896168b54e4c02fa",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 16.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-2.0_561.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 16.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "gpl-2.0_561.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0",
+        "gpl-2.0"
+      ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "Copyright (c) IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "ibm_corp__ibm_corp__1",
+        "ibm_corp__ibm_corp__2"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

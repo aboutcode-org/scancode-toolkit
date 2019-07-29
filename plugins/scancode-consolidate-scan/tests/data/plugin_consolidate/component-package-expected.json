@@ -1,0 +1,803 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": [
+          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package/"
+        ],
+        "--copyright": true,
+        "--info": true,
+        "--json-pp": "/home/jono/component-package.json",
+        "--license": true,
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--consolidate": true,
+        "--from-json": [
+          true
+        ],
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    }
+  ],
+  "consolidated_components": [
+    {
+      "type": "license-holders",
+      "identifier": "the_apache_software_foundation_1",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "the apache software foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) the apache software foundation",
+      "other_license_expression": null,
+      "other_holders": []
+    }
+  ],
+  "consolidated_packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "test-package",
+      "version": "0.0.1",
+      "qualifiers": null,
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "apache-2.0",
+      "declared_license": [
+        "apache-2.0"
+      ],
+      "notice_text": null,
+      "manifest_path": "package.json",
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "purl": "pkg:npm/test-package@0.0.1",
+      "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+      "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "identifier": "pkg_npm_test_package_0_0_1_1",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [],
+      "consolidated_copyright": "Copyright (c) IBM Corp., the apache software foundation",
+      "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
+      "other_holders": [
+        "IBM Corp.",
+        "the apache software foundation"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "component-package",
+      "type": "directory",
+      "name": "component-package",
+      "base_name": "component-package",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [],
+      "files_count": 7,
+      "dirs_count": 2,
+      "size_count": 441,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/component",
+      "type": "directory",
+      "name": "component",
+      "base_name": "component",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
+      "files_count": 4,
+      "dirs_count": 0,
+      "size_count": 185,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/component/src1",
+      "type": "file",
+      "name": "src1",
+      "base_name": "src1",
+      "extension": "",
+      "size": 52,
+      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
+      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/component/src2",
+      "type": "file",
+      "name": "src2",
+      "base_name": "src2",
+      "extension": "",
+      "size": 52,
+      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
+      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/component/src3",
+      "type": "file",
+      "name": "src3",
+      "base_name": "src3",
+      "extension": "",
+      "size": 52,
+      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
+      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/component/src4",
+      "type": "file",
+      "name": "src4",
+      "base_name": "src4",
+      "extension": "",
+      "size": 29,
+      "sha1": "b96a516faa485efd92b065688527ac33cf911b0c",
+      "md5": "4ae24ad918c5f6bf526e6db5691a3f11",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "lgpl-2.0",
+          "score": 80.0,
+          "name": "GNU Library General Public License 2.0",
+          "short_name": "LGPL 2.0",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/lgpl-2.0.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0",
+          "spdx_license_key": "LGPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-only",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "lgpl-2.0_bare_id.RULE",
+            "license_expression": "lgpl-2.0",
+            "licenses": [
+              "lgpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 80.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "lgpl-2.0"
+      ],
+      "holders": [
+        {
+          "value": "nexb inc.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright nexb inc.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/package",
+      "type": "directory",
+      "name": "package",
+      "base_name": "package",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "test-package",
+          "version": "0.0.1",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            "apache-2.0"
+          ],
+          "notice_text": null,
+          "manifest_path": "package.json",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": []
+        }
+      ],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 3,
+      "dirs_count": 0,
+      "size_count": 256,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/package/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 127,
+      "sha1": "1409b07ec2c2346c8c523c8c3111d2154e8e8405",
+      "md5": "a056434ef02c76871a504f45368577c6",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 100.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "apache-2.0_65.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/package/src1",
+      "type": "file",
+      "name": "src1",
+      "base_name": "src1",
+      "extension": "",
+      "size": 51,
+      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
+      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright the apache software foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "component-package/package/src2",
+      "type": "file",
+      "name": "src2",
+      "base_name": "src2",
+      "extension": "",
+      "size": 78,
+      "sha1": "ddbbd1133bac042f1c1bcbd4aa31337756837271",
+      "md5": "79cb837ae2b9a134e62b7bf3762b5ddc",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 16.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "unknown_25.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        },
+        {
+          "key": "gpl-1.0-plus",
+          "score": 100.0,
+          "name": "GNU General Public License 1.0 or later",
+          "short_name": "GPL 1.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+          "spdx_license_key": "GPL-1.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "gpl-1.0-plus_33.RULE",
+            "license_expression": "gpl-1.0-plus",
+            "licenses": [
+              "gpl-1.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 5,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "gpl-1.0-plus"
+      ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "copyright (c) 2017 IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

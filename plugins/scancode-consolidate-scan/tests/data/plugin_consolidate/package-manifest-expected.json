@@ -1,0 +1,203 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--consolidate": true,
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "consolidated_components": [],
+  "consolidated_packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "test-package",
+      "version": "0.0.1",
+      "qualifiers": null,
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "license_expression": "apache-2.0",
+      "declared_license": [
+        "apache-2.0"
+      ],
+      "notice_text": null,
+      "manifest_path": "package.json",
+      "dependencies": [],
+      "contains_source_code": null,
+      "source_packages": [],
+      "purl": "pkg:npm/test-package@0.0.1",
+      "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+      "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "identifier": "pkg_npm_test_package_0_0_1_1",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [],
+      "consolidated_copyright": null,
+      "other_license_expression": "apache-2.0",
+      "other_holders": []
+    }
+  ],
+  "files": [
+    {
+      "path": "package-manifest",
+      "type": "directory",
+      "name": "package-manifest",
+      "base_name": "package-manifest",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "test-package",
+          "version": "0.0.1",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            "apache-2.0"
+          ],
+          "notice_text": null,
+          "manifest_path": "package.json",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": []
+        }
+      ],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 78,
+      "scan_errors": []
+    },
+    {
+      "path": "package-manifest/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 78,
+      "sha1": "cb5244fdb5b56f3c80a354c4c12ad0831b6a78df",
+      "md5": "985f757e56da685ae306c9cc41253f30",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "apache-2.0",
+          "score": 100.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "apache-2.0_65.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-2.0"
+      ],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

@@ -13,12 +13,12 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode post-scan plugin to return components for different types of codebase consolidation.'''
+desc = '''A ScanCode post-scan plugin that consolidates components and packages.'''
 
 setup(
     name='scancode-consolidate-scan',
     version='1.0.0',
-    license='Apache-2.0 with ScanCode acknowledgment',
+    license='apache-2.0 AND scancode-acknowledgement',
     description=desc,
     long_description=desc,
     author='nexB',
@@ -39,14 +39,19 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'components', 'summarization'
+        'open source',
+        'scancode',
+        'components',
+        'packages',
+        'summarization',
+        'consolidation'
     ],
     install_requires=[
         'scancode-toolkit',
     ],
     entry_points={
         'scancode_post_scan': [
-            'consolidate = plugin_consolidate:Consolidate',
+            'consolidate = plugin_consolidate:Consolidator',
         ],
     }
 )
