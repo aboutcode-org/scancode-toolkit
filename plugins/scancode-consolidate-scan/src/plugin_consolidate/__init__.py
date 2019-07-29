@@ -319,12 +319,12 @@ def get_license_holders_consolidated_components(codebase):
                 resource.extra_data['origin_summary_holders'] = majority_holders
                 resource.extra_data['origin_summary_count'] = top_count
                 resource.save(codebase)
-
-                c = create_license_holders_consolidated_component(resource, codebase)
-                if c:
-                    yield c
-
-    # TODO: stop if you have a majority but the parent doesnt have it
+            else:
+                # If there is no majority, we see if any of our child directories had majorities
+                for child in children:
+                    c = create_license_holders_consolidated_component(child, codebase)
+                    if c:
+                        yield c
 
     # Yield a Component for root if there is a majority
     c = create_license_holders_consolidated_component(root, codebase)

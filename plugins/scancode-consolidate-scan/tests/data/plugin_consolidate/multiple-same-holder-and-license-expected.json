@@ -2,22 +2,16 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post1250.904952c36",
       "options": {
-        "input": [
-          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/multiple-same-holder-and-license/"
-        ],
+        "input": "<path>",
         "--consolidate": true,
         "--copyright": true,
         "--info": true,
-        "--json-pp": "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/multiple-same-holder-and-license-expected.json",
+        "--json": "<file>",
         "--license": true,
-        "--package": true,
-        "--processes": "4"
+        "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-29T215139.665043",
-      "end_timestamp": "2019-07-29T215144.091866",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -37,18 +31,6 @@
       "consolidated_copyright": "Copyright (c) IBM Corp., IBM Corp.",
       "other_license_expression": null,
       "other_holders": []
-    },
-    {
-      "type": "license-holders",
-      "identifier": "ibm_corp__ibm_corp__2",
-      "core_license_expression": "gpl-2.0",
-      "core_holders": [
-        "IBM Corp.",
-        "IBM Corp."
-      ],
-      "consolidated_copyright": "Copyright (c) IBM Corp., IBM Corp.",
-      "other_license_expression": null,
-      "other_holders": []
     }
   ],
   "consolidated_packages": [],
@@ -60,7 +42,6 @@
       "base_name": "multiple-same-holder-and-license",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "mime_type": null,
@@ -79,8 +60,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1",
-        "ibm_corp__ibm_corp__2"
+        "ibm_corp__ibm_corp__1"
       ],
       "files_count": 2,
       "dirs_count": 0,
@@ -94,7 +74,6 @@
       "base_name": "bar",
       "extension": "",
       "size": 82,
-      "date": "2019-07-29",
       "sha1": "aa6bd87dbe009f5fbd70b2653a60fc0b63c78b8e",
       "md5": "6456c2560504a2b5896168b54e4c02fa",
       "mime_type": "text/plain",
@@ -203,8 +182,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1",
-        "ibm_corp__ibm_corp__2"
+        "ibm_corp__ibm_corp__1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -218,7 +196,6 @@
       "base_name": "foo",
       "extension": "",
       "size": 82,
-      "date": "2019-07-29",
       "sha1": "aa6bd87dbe009f5fbd70b2653a60fc0b63c78b8e",
       "md5": "6456c2560504a2b5896168b54e4c02fa",
       "mime_type": "text/plain",
@@ -327,8 +304,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1",
-        "ibm_corp__ibm_corp__2"
+        "ibm_corp__ibm_corp__1"
       ],
       "files_count": 0,
       "dirs_count": 0,

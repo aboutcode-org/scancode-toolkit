@@ -132,5 +132,14 @@ class TestConsolidate(FileDrivenTesting):
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
 
+    def test_consolidate_origin_summary_license_holder_rollup(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/license-holder-rollup')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/license-holder-rollup-expected.json')
+        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
+        # There should be two consolidated components for things under
+        # no-majority and one consolidated component for clear-majority
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
+
     # TODO: test that test data is basd off of samples from the outside world and not something
     # that only exists in scancode tests
