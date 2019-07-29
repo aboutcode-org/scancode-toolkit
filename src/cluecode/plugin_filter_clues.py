@@ -73,138 +73,79 @@ class RedundantCluesFilter(PostScanPlugin):
         return filter_clues
 
     def process_codebase(self, codebase, **kwargs):
-        from licensedcode.cache import get_index
+        """
+        Update detected clues to remove redundant clues already found in another
+        detected clue for all the resources of codebase.
+        """
         if TRACE: logger_debug('RedundantFilter:process_codebase')
+
+        from licensedcode.cache import get_index
 
         rules_by_id = {r.identifier: r for r in get_index().rules_by_rid}
 
-        for res in codebase.walk():
-            # collect ignrable clues from matched licenses if any
-            # as lists of (set of lines number, set of ignorable values)
-            lic_ignorable_emails = []
-            lic_ignorable_urls = []
-            lic_ignorable_auths = []
-            lic_ignorable_holders = []
-            lic_ignorable_copyrights = []
+        for resource in codebase.walk():
+            resource = filter_ignorables(resource, rules_by_id)
+            resource.save(codebase)
 
-            seenl = set()
-            for l in getattr(res, 'licenses', []):
-                if TRACE:
-                    logger_debug('collecting license match:', l['key'], l['score'])
-                # build tuple of (set of lines number, license) from all licenses
-                # ignore ppor partial matches
-                if l['score'] < 85:
-                    if TRACE: logger_debug('  skipping, score too low')
-                    continue
-                lr = frozenset(range(l['start_line'], l['end_line'] + 1))
-                rid = l.get('matched_rule', {}).get('identifier')
-                if TRACE: logger_debug('  RID:', rid)
-                if not rid:
-                    # we are missing the license match details, we can only skip
-                    if TRACE: logger_debug('  skipping, no RID')
-                    continue
-                if (lr, rid) in seenl:
-                    if TRACE: logger_debug('  skipping, already seen')
-                    continue
 
-                seenl.add((lr, rid))
-                rule = rules_by_id[rid]
-                if TRACE: logger_debug('  rule:', rule)
+def filter_ignorables(resource, rules_by_id):
+    """
+    Filter ignorable clues from the `resource` Resource objects using all
+    the scan details attached to that `resource` and the `rules_by_id`
+    mapping of {identifier: license Rule object}. Retune the modified
+    resouce. Update is in-place.
+    """
 
-                if TRACE: logger_debug('  adding rule.ignorable_copyrights:', rule.ignorable_copyrights)
-                if rule.ignorable_copyrights:
-                    lic_ignorable_copyrights.append(
-                        (lr, frozenset(rule.ignorable_copyrights))
-                    )
+    iemails, iurls, iauths, iholders, icopyrights = collect_ignorables(resource, rules_by_id)
 
-                if TRACE: logger_debug('  adding rule.ignorable_holders:', rule.ignorable_holders)
-                if rule.ignorable_holders:
-                    lic_ignorable_holders.append(
-                        (lr, frozenset(rule.ignorable_holders))
-                    )
+    detected_copyrights = getattr(resource, 'copyrights', [])
+    detected_emails = getattr(resource, 'emails', [])
+    detected_urls = getattr(resource, 'urls', [])
+    detected_holders = getattr(resource, 'holders', [])
+    detected_authors = getattr(resource, 'authors', [])
 
-                if TRACE: logger_debug('  adding rule.ignorable_authors:', rule.ignorable_authors)
-                if rule.ignorable_authors:
-                    lic_ignorable_auths.append(
-                        (lr, frozenset(rule.ignorable_authors))
-                    )
+    idetected_copyrights = [
+        (frozenset(range(c['start_line'], c['end_line'] + 1)), c['value'])
+            for c in detected_copyrights]
+    idetected_authors = [
+        (frozenset(range(a['start_line'], a['end_line'] + 1)), a['value'])
+            for a in detected_authors]
 
-                if TRACE: logger_debug('  adding rule.ignorable_emails:', rule.ignorable_emails)
-                if rule.ignorable_emails:
-                    lic_ignorable_emails.append(
-                        (lr, frozenset(rule.ignorable_emails))
-                    )
+    if TRACE:
+        logger_debug('iemails', iemails)
+        logger_debug('iurls', iurls)
+        logger_debug('iauths', iauths)
+        logger_debug('iholders', iholders)
+        logger_debug('icopyrights', icopyrights)
+        logger_debug('idetected_copyrights', idetected_copyrights)
+        logger_debug('idetected_authors', idetected_authors)
 
-                if TRACE: logger_debug('  adding rule.ignorable_urls:', rule.ignorable_urls)
-                if rule.ignorable_urls:
-                    lic_ignorable_urls.append(
-                        (lr, frozenset(r.rstrip('/') for r in rule.ignorable_urls))
-                    )
+    # discard redundant emails if ignorable or in a detected copyright or author
+    resource.emails = list(filter_values(attributes=detected_emails,
+            ignorables=idetected_copyrights + idetected_authors + iemails,
+            attrib='email'))
 
-            if TRACE:
-                logger_debug('lic_ignorable_emails', lic_ignorable_emails)
-                logger_debug('lic_ignorable_urls', lic_ignorable_urls)
-                logger_debug('lic_ignorable_auths', lic_ignorable_auths)
-                logger_debug('lic_ignorable_holders', lic_ignorable_holders)
-                logger_debug('lic_ignorable_copyrights', lic_ignorable_copyrights)
+    # discard redundant urls if ignorable or in a detected copyright or author
+    resource.urls = list(filter_values(attributes=detected_urls,
+            ignorables=idetected_copyrights + idetected_authors + iurls,
+            attrib='url', strip='/'))
 
-            # collect tuple of matched data (set of lines number, value string)
-            copy_lines = [
-                (
-                    frozenset(range(c['start_line'], c['end_line'] + 1)),
-                    c['value']
-                )
-                for c in getattr(res, 'copyrights', [])]
-            auth_lines = [
-                (
-                    frozenset(range(a['start_line'], a['end_line'] + 1)),
-                    a['value']
-                )
-                for a in getattr(res, 'authors', [])]
+    # discard redundant authors if ignorable or in a detected copyright
+    resource.authors = list(filter_values(attributes=detected_authors,
+            ignorables=idetected_copyrights + iauths,
+            attrib='value'))
 
-            if TRACE:
-                logger_debug('copy_lines', copy_lines)
-                logger_debug('auth_lines', auth_lines)
+    # discard redundant holders if ignorable
+    resource.holders = list(filter_values(attributes=detected_holders,
+            ignorables=iholders,
+            attrib='value'))
 
-            cop_auth = copy_lines + auth_lines
+    # discard redundant copyrights if ignorable
+    resource.copyrights = list(filter_values(attributes=detected_copyrights,
+            ignorables=icopyrights,
+            attrib='value'))
 
-            # discard redundant emails
-            res.emails = list(filter_values(
-                attributes=getattr(res, 'emails' , []),
-                ignorables=cop_auth + lic_ignorable_emails,
-                attrib='email',
-            ))
-
-            # discard redundant urls
-            res.urls = list(filter_values(
-                attributes=getattr(res, 'urls' , []),
-                ignorables=cop_auth + lic_ignorable_urls,
-                attrib='url',
-                strip='/'
-            ))
-
-            # discard redundant authors
-            res.authors = list(filter_values(
-                attributes=getattr(res, 'authors' , []),
-                ignorables=lic_ignorable_auths,
-                attrib='value',
-            ))
-
-            # discard redundant holders
-            res.holders = list(filter_values(
-                attributes=getattr(res, 'holders' , []),
-                ignorables=lic_ignorable_holders,
-                attrib='value',
-            ))
-
-            # discard redundant copyrights
-            res.copyrights = list(filter_values(
-                attributes=getattr(res, 'copyrights' , []),
-                ignorables=lic_ignorable_copyrights,
-                attrib='value',
-            ))
-
-            res.save(codebase)
+    return resource
 
 
 def filter_values(attributes, ignorables, attrib='value', strip=''):
@@ -226,3 +167,64 @@ def filter_values(attributes, ignorables, attrib='value', strip=''):
                 break
         if not ignored:
             yield item
+
+
+def collect_ignorables(resource, rules_by_id):
+    """
+    Collect and return ignorable clues from matched licenses in the Resource
+    `resource`. Each ignorable emails, urls, authors, holders, copyrights is
+    a set of (set of lines number, set of ignorable values)
+    """
+    emails = set()
+    urls = set()
+    authors = set()
+    holders = set()
+    copyrights = set()
+
+    # build tuple of (set of lines number, set of ignorbale values)
+    for lic in getattr(resource, 'licenses', []):
+
+        if TRACE: logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
+        lines_range = frozenset(range(lic['start_line'], lic['end_line'] + 1))
+        matched_rule = lic.get('matched_rule', {})
+        rid = matched_rule.get('identifier')
+        match_coverage = matched_rule.get('match_coverage', 0)
+
+        # ignore poor partial matches
+        # TODO: there must be a better way using coverage
+        if match_coverage < 90:
+            if TRACE: logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
+            continue
+
+        if not rid:
+            # we are missing the license match details, we can only skip
+            if TRACE: logger_debug('  collect_ignorables: skipping, no RID')
+            continue
+
+        rule = rules_by_id[rid]
+        ign_copyrights = rule.ignorable_copyrights
+        ign_holders = rule.ignorable_holders
+        ign_authors = rule.ignorable_authors
+        ign_emails = rule.ignorable_emails
+        ign_urls = rule.ignorable_urls
+
+        if ign_copyrights:
+            copyrights.add((lines_range, frozenset(ign_copyrights)))
+        if ign_holders:
+            holders.add((lines_range, frozenset(ign_holders)))
+        if ign_authors:
+            authors.add((lines_range, frozenset(ign_authors)))
+        if ign_emails:
+            emails.add((lines_range, frozenset(ign_emails)))
+        if ign_urls:
+            urls.add((lines_range, frozenset(r.rstrip('/') for r in ign_urls)))
+
+        if TRACE:
+            logger_debug('  collect_ignorables: rule:', rule)
+            logger_debug('  collect_ignorables: adding rule.ignorable_copyrights:', ign_copyrights)
+            logger_debug('  collect_ignorables: adding rule.ignorable_holders:', ign_holders)
+            logger_debug('  collect_ignorables: adding rule.ignorable_authors:', ign_authors)
+            logger_debug('  collect_ignorables: adding rule.ignorable_emails:', ign_emails)
+            logger_debug('  collect_ignorables: adding rule.ignorable_urls:', ign_urls)
+
+    return emails, urls, authors, holders, copyrights
