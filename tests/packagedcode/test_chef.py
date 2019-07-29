@@ -107,11 +107,3 @@ class TestChef(PackageTester):
         )
         expected_file = self.get_test_loc('chef/basic/test_package_code_view_url_and_bug_tracking_url.json.expected')
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
-
-    def test_ChefPackage_get_package_resources(self):
-        test_loc= self.get_test_loc('chef/get_package_resources')
-        codebase = Codebase(test_loc)
-        root = codebase.root
-        expected = ['get_package_resources', 'metadata.json', 'this-should-be-returned']
-        results = [r.name for r in chef.ChefPackage.get_package_resources(root, codebase)]
-        assert expected == results

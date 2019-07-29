@@ -55,12 +55,3 @@ class TestBower(PackageTester):
         package = bower.parse(test_file)
         expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_package(package, expected_loc, regen=False)
-
-    def test_get_package_resources(self):
-        test_dir = self.get_test_loc('bower/get_package_resource')
-        codebase = Codebase(test_dir)
-        root = codebase.root
-        package_resources = list(bower.BowerPackage.get_package_resources(root, codebase))
-        result = [r.name for r in package_resources]
-        expected = ['get_package_resource', 'bower.json', 'package.json', 'src', 'src1']
-        assert expected == result
