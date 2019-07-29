@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 import os.path
 
 from packagedcode import npm
+from scancode.resource import Codebase
 
 from packages_test_utils import PackageTester
 
@@ -265,6 +266,18 @@ class TestNpm(PackageTester):
         expected = 'https://github.com/vendor/my-private-repo@213123aefd'
         result = npm.vcs_repository_mapper(repo, package, rev)
         assert expected == result.vcs_url
+
+    def test_npm_get_package_resources(self):
+        test_loc= self.get_test_loc('npm/get_package_resources')
+        codebase = Codebase(test_loc)
+        root = codebase.root
+        expected = [
+            'get_package_resources',
+            'get_package_resources/package.json',
+            'get_package_resources/this-should-be-returned'
+        ]
+        results = [r.path for r in npm.NpmPackage.get_package_resources(root, codebase)]
+        assert expected == results
 
 class MockPackage(object):
     pass

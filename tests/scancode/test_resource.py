@@ -326,14 +326,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
         codebase = Codebase(test_codebase)
         result = []
-        _ignored = partial(
-            ignore.is_ignored,
-            ignores={
-               'skip-this-directory': 'skip',
-            },
-            unignores={},
-            skip_special=False
-        )
+        def _ignored(resource, codebase):
+            return resource.is_dir and resource.name == 'skip-this-directory'
         for resource in codebase.walk(topdown=True, ignored=_ignored,):
             result.append(resource.name)
         expected = ['skip_directories_during_walk', 'this-should-be-returned']

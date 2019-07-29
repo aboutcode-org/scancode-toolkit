@@ -164,7 +164,13 @@ class Header(object):
         return cls(**kwargs)
 
 
-def ignore_nothing(_):
+def ignore_nothing(resource, codebase):
+    """
+    Return True if `resource` should be ignored.
+
+    This function is used as a callable for `ignored` argument in Codebase and
+    Resource walk.
+    """
     return False
 
 
@@ -775,10 +781,13 @@ class Codebase(object):
 
         If `skip_root` is True, the root resource is not returned unless this is
         a codebase with a single resource.
+
+        `ignored` is a callable that accepts two arguments, `resource` and `codebase`,
+        and returns True if `resource` should be ignored.
         """
         root = self.root
 
-        if ignored(root.path):
+        if ignored(root, self):
             return
 
         root = attr.evolve(root)
@@ -1116,17 +1125,21 @@ class Resource(object):
 
         Each level is sorted by children sort order (e.g. without-children, then
         with-children and each group by case-insensitive name)
+
+        `ignored` is a callable that accepts two arguments, `resource` and `codebase`,
+        and returns True if `resource` should be ignored.
         """
 
         for child in self.children(codebase):
-            child = attr.evolve(child)
-            if topdown and not ignored(child.path):
-                yield child
-            for subchild in child.walk(codebase, topdown=topdown, ignored=ignored):
-                if not ignored(subchild.path):
-                    yield subchild
-            if not topdown and not ignored(child.path):
-                yield child
+            if not ignored(child, codebase):
+                child = attr.evolve(child)
+                if topdown:
+                    yield child
+                for subchild in child.walk(codebase, topdown=topdown, ignored=ignored):
+                    if not ignored(subchild, codebase):
+                        yield subchild
+                if not topdown:
+                    yield child
 
     def has_children(self):
         """

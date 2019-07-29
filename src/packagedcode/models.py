@@ -511,9 +511,22 @@ class Package(BasePackage):
         """
         Yield the Resources of a Package starting from `package_root`
         """
-        yield package_root
-        for resource in package_root.walk(codebase, topdown=True):
+        if not Package.is_ignored_package_resource(package_root, codebase):
+            yield package_root
+        for resource in package_root.walk(codebase, topdown=True, ignored=Package.is_ignored_package_resource):
             yield resource
+
+    @classmethod
+    def ignore_resource(cls, resource, codebase):
+        """
+        Return True if `resource` should be ignored.
+        """
+        return False
+
+    @staticmethod
+    def is_ignored_package_resource(resource, codebase):
+        from packagedcode import PACKAGE_TYPES
+        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_TYPES)
 
     def compute_normalized_license(self):
         """

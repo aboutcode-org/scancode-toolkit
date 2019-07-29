@@ -49,16 +49,12 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
+# TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
 
 @attr.s()
 class AboutPackage(models.Package):
     metafiles = ('*.ABOUT',)
     default_type = 'about'
-    # This is a mapping containing path patterns that we do not want to return
-    # as part of this Package's set of resources
-    ignorable_path_patterns = {
-        'node_modules': 'skip'
-    }
 
     @classmethod
     def recognize(cls, location):
@@ -75,13 +71,6 @@ class AboutPackage(models.Package):
                 if child.name == about_resource:
                     return child
         return manifest_resource
-
-    @classmethod
-    def get_package_resources(cls, package_root, codebase):
-        _ignored = partial(ignore.is_ignored, ignores=cls.ignorable_path_patterns, skip_special=False)
-        yield package_root
-        for resource in package_root.walk(codebase, topdown=True, ignored=_ignored):
-            yield resource
 
 
 def is_about_file(location):

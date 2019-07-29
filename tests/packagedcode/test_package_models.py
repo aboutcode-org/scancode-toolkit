@@ -164,3 +164,16 @@ class TestModels(PackageTester):
         )
         expected_loc = 'models/full-expected.json'
         self.check_package(package, expected_loc, regen=False)
+
+    def test_Package_get_package_resource_works_with_nested_packages_and_ignores(self):
+        from packagedcode import get_package_instance
+        from packagedcode import npm
+        from scancode.resource import VirtualCodebase
+        scan_loc = self.get_test_loc('models/nested-npm-packages.json')
+        codebase = VirtualCodebase(scan_loc)
+        for resource in codebase.walk():
+            for package_data in resource.packages:
+                package = get_package_instance(package_data)
+                assert isinstance(package, npm.NpmPackage)
+                package_resources = list(package.get_package_resources(resource, codebase))
+                assert any(r.name == 'package.json' for r in package_resources), resource.path
