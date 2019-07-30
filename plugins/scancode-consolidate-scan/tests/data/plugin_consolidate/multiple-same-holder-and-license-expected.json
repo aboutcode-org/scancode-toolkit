@@ -23,15 +23,19 @@
     {
       "type": "license-holders",
       "identifier": "ibm_corp__ibm_corp__1",
+      "consolidated_license_expression": "gpl-2.0",
+      "consolidated_holders": [
+        "IBM Corp."
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "gpl-2.0",
-      "other_license_expression": null,
-      "consolidated_core_copyright": "Copyright (c) IBM Corp., IBM Corp.",
-      "consolidated_other_copyright": null,
       "core_holders": [
         "IBM Corp.",
         "IBM Corp."
       ],
-      "other_holders": []
+      "other_license_expression": null,
+      "other_holders": [],
+      "resources_count": 3
     }
   ],
   "consolidated_packages": [],

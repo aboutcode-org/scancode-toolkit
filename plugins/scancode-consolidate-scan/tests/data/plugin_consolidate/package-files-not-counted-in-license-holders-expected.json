@@ -58,15 +58,20 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software",
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "apache-2.0",
-      "other_license_expression": "apache-2.0",
-      "consolidated_core_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
-      "consolidated_other_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
       "core_holders": [],
+      "other_license_expression": "apache-2.0",
       "other_holders": [
         "The Apache Software",
         "The Apache Software Foundation"
-      ]
+      ],
+      "resources_count": 5
     }
   ],
   "files": [

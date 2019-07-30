@@ -23,38 +23,50 @@
     {
       "type": "license-holders",
       "identifier": "ibm_corp__1",
+      "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "consolidated_holders": [
+        "IBM Corp."
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
-      "other_license_expression": null,
-      "consolidated_core_copyright": "Copyright (c) IBM Corp.",
-      "consolidated_other_copyright": null,
       "core_holders": [
         "IBM Corp."
       ],
-      "other_holders": []
+      "other_license_expression": null,
+      "other_holders": [],
+      "resources_count": 2
     },
     {
       "type": "license-holders",
       "identifier": "oracle_corp__2",
+      "consolidated_license_expression": "unknown AND apache-2.0",
+      "consolidated_holders": [
+        "Oracle Corp."
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "unknown AND apache-2.0",
-      "other_license_expression": null,
-      "consolidated_core_copyright": "Copyright (c) Oracle Corp.",
-      "consolidated_other_copyright": null,
       "core_holders": [
         "Oracle Corp."
       ],
-      "other_holders": []
+      "other_license_expression": null,
+      "other_holders": [],
+      "resources_count": 2
     },
     {
       "type": "license-holders",
       "identifier": "omega_com_3",
+      "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "consolidated_holders": [
+        "omega.com"
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
-      "other_license_expression": null,
-      "consolidated_core_copyright": "Copyright (c) omega.com",
-      "consolidated_other_copyright": null,
       "core_holders": [
         "omega.com"
       ],
-      "other_holders": []
+      "other_license_expression": null,
+      "other_holders": [],
+      "resources_count": 3
     }
   ],
   "consolidated_packages": [],

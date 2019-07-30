@@ -23,14 +23,18 @@
     {
       "type": "license-holders",
       "identifier": "the_apache_software_foundation_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": null,
       "core_license_expression": "apache-2.0",
-      "other_license_expression": null,
-      "consolidated_core_copyright": "Copyright (c) The Apache Software Foundation",
-      "consolidated_other_copyright": null,
       "core_holders": [
         "The Apache Software Foundation"
       ],
-      "other_holders": []
+      "other_license_expression": null,
+      "other_holders": [],
+      "resources_count": 4
     }
   ],
   "consolidated_packages": [],
