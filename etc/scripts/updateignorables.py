@@ -47,15 +47,33 @@ def refresh_ignorables(licensishes):
         lic.dump()
 
 
+class _Nothing(object):
+    pass
+
+
+NOTHING = _Nothing()
+
+
 @click.command()
+@click.argument('path',
+    default=NOTHING,
+    type=click.Path(exists=False, allow_dash=False),
+    metavar='PATH')
+
+
 @click.help_option('-h', '--help')
-def cli(update=True):
+def cli(path=None, update=True):
     """
     Update licenses and rules with ignorable copyrights, holders, authors URLs
     and emails.
     """
-    refresh_ignorables(cache.get_licenses_db().values())
-    refresh_ignorables(models.load_rules())
+
+    licensish = list(cache.get_licenses_db().values()) + list(models.load_rules())
+
+    if path and path != NOTHING:
+        licensish = [l for l in licensish 
+            if l.text_file.endswith(path) or l.data_file.endswith(path)]
+    refresh_ignorables(licensish)
 
 
 if __name__ == '__main__':
