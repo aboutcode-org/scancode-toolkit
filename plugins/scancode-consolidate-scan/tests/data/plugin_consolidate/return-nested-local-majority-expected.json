@@ -1,0 +1,593 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--consolidate": true,
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 4
+      }
+    }
+  ],
+  "consolidated_components": [
+    {
+      "type": "license-holders",
+      "identifier": "ibm_corp__1",
+      "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "core_holders": [
+        "IBM Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) IBM Corp.",
+      "other_license_expression": null,
+      "other_holders": []
+    },
+    {
+      "type": "license-holders",
+      "identifier": "the_apache_software_foundation_2",
+      "core_license_expression": "unknown AND apache-2.0",
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
+      "other_license_expression": null,
+      "other_holders": []
+    }
+  ],
+  "consolidated_packages": [],
+  "files": [
+    {
+      "path": "return-nested-local-majority",
+      "type": "directory",
+      "name": "return-nested-local-majority",
+      "base_name": "return-nested-local-majority",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_2"
+      ],
+      "files_count": 4,
+      "dirs_count": 2,
+      "size_count": 256,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo",
+      "type": "directory",
+      "name": "foo",
+      "base_name": "foo",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_2"
+      ],
+      "files_count": 4,
+      "dirs_count": 1,
+      "size_count": 256,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo/bar",
+      "type": "file",
+      "name": "bar",
+      "base_name": "bar",
+      "extension": "",
+      "size": 70,
+      "sha1": "d40f3510342b31094965c538277171ef83c3ff9a",
+      "md5": "4393b546ad103ae739b1409fefeff08a",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        },
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_2"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo/bax",
+      "type": "file",
+      "name": "bax",
+      "base_name": "bax",
+      "extension": "",
+      "size": 70,
+      "sha1": "d40f3510342b31094965c538277171ef83c3ff9a",
+      "md5": "4393b546ad103ae739b1409fefeff08a",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        },
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_2"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo/local-majority",
+      "type": "directory",
+      "name": "local-majority",
+      "base_name": "local-majority",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "ibm_corp__1"
+      ],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 46,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo/local-majority/baz",
+      "type": "file",
+      "name": "baz",
+      "base_name": "baz",
+      "extension": "",
+      "size": 46,
+      "sha1": "8b94498ae812abc4f82304aa2f9766df45ba1873",
+      "md5": "87ad74664f4ba242df4bedf2a83b2169",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-1.0-plus",
+          "score": 16.0,
+          "name": "GNU General Public License 1.0 or later",
+          "short_name": "GPL 1.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+          "spdx_license_key": "GPL-1.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "gpl_208.RULE",
+            "license_expression": "gpl-1.0-plus",
+            "licenses": [
+              "gpl-1.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          }
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 80.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "gpl-2.0_52.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 80.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-1.0-plus",
+        "gpl-2.0"
+      ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "ibm_corp__1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "return-nested-local-majority/foo/qux",
+      "type": "file",
+      "name": "qux",
+      "base_name": "qux",
+      "extension": "",
+      "size": 70,
+      "sha1": "d40f3510342b31094965c538277171ef83c3ff9a",
+      "md5": "4393b546ad103ae739b1409fefeff08a",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          }
+        },
+        {
+          "key": "apache-2.0",
+          "score": 50.0,
+          "name": "Apache License 2.0",
+          "short_name": "Apache 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+          "spdx_license_key": "Apache-2.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "license_expression": "apache-2.0",
+            "licenses": [
+              "apache-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "apache-2.0"
+      ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_2"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

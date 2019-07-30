@@ -141,5 +141,14 @@ class TestConsolidate(FileDrivenTesting):
         # no-majority and one consolidated component for clear-majority
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
+    def test_consolidate_return_nested_local_majority(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/return-nested-local-majority')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/return-nested-local-majority-expected.json')
+        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
+        # The nested majority is just 1 file, but has a different origin than the rest of the files above it
+        # and should be reported as a separate consolidated component
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
+
     # TODO: test that test data is basd off of samples from the outside world and not something
     # that only exists in scancode tests
