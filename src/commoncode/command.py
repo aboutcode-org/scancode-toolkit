@@ -37,6 +37,7 @@ import logging
 import signal
 import subprocess
 
+from commoncode import compat
 from commoncode.fileutils import EMPTY_STRING
 from commoncode.fileutils import PATH_ENV_VAR
 from commoncode.fileutils import PATH_ENV_SEP
@@ -216,10 +217,12 @@ def load_shared_library(dll_path, lib_dir):
 
     if not exists(dll_path):
         raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
-
-    if not isinstance(dll_path, bytes):
+    if on_linux and py2:
         # ensure that the path is not Unicode...
-        dll_path = fsencode(dll_path)
+        if not isinstance(dll_path, bytes):
+            dll_path = fsencode(dll_path)
+    if not isinstance(dll_path, compat.unicode):
+        dll_path = fsdecode(dll_path)
     lib = ctypes.CDLL(dll_path)
     if lib and lib._name:
         return lib
