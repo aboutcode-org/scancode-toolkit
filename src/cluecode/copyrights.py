@@ -795,6 +795,9 @@ grammar = """
 
     NAME3: {<YR-RANGE> <NNP> <NNP>+} #350
 
+    # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
+    NAME3: {<YR-RANGE>  <NN>  <CAPS>  <NN>  <NN>  <AUTHDOT>} #35011
+
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
@@ -849,8 +852,8 @@ grammar = """
     NAME: {<NAME|NAME2>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
     NAME: {<NAME|NAME2>+ <CC|OF>? <NAME|NAME2|COMPANY>}        #560
 
-    #
     NAME: {<NNP><NNP>}        #5611
+
     # strip Software from Copyright (c) Ian Darwin 1995. Software
     NAME3: {<NAME>+ <YR-RANGE>}        #5611
 
@@ -948,7 +951,6 @@ grammar = """
 
     # John Doe and Myriam Doe
     NAME: {<NAME|NNP> <CC> <NNP|NAME>}        #1120
-
 
     # International Business Machines Corporation and others
     COMPANY: {<COMPANY> <CC> <OTH>}        #1150
@@ -1686,7 +1688,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
         'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
-        'author\'', 'authors,', 
+        'author\'', 'authors,',
         ])
 ))
 
