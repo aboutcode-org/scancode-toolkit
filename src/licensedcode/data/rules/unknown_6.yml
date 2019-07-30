@@ -1,5 +1,8 @@
 license_expression: unknown
 is_license_reference: yes
-relevance: 90
+relevance: 100
 ignorable_urls:
     - https://github.com/dreamfactorysoftware/dsp-core/blob/master/LICENSE.txt
+notes: the original repository is no longer there. There is a possibility
+ that this was the original code https://github.com/pombredanne/dsp-core and was
+ Apache-licensed.
