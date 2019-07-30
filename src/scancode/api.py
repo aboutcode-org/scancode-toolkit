@@ -171,71 +171,84 @@ def get_licenses(location, min_score=0, include_text=False,
     if `include_text` is True, matched text is included in the returned
     `licenses` data.
     """
-    from licensedcode.cache import get_index
-    from licensedcode.cache import get_licenses_db
-
-    idx = get_index()
-    licenses = get_licenses_db()
+    from licensedcode import cache
+    idx = cache.get_index()
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score,
-                           deadline=deadline, **kwargs):
 
+    matches = idx.match(
+        location=location, min_score=min_score, deadline=deadline, **kwargs)
+
+    matched_text = None
+    for match in matches:
         if include_text:
             # TODO: handle whole lines with the case of very long lines
             matched_text = match.matched_text(whole_lines=False)
 
         detected_expressions.append(match.rule.license_expression)
 
-        for license_key in match.rule.license_keys():
-            lic = licenses.get(license_key)
-            result = OrderedDict()
-            detected_licenses.append(result)
-            result['key'] = lic.key
-            result['score'] = match.score()
-            result['name'] = lic.name
-            result['short_name'] = lic.short_name
-            result['category'] = lic.category
-            result['is_exception'] = lic.is_exception
-            result['owner'] = lic.owner
-            result['homepage_url'] = lic.homepage_url
-            result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-            result['reference_url'] = license_url_template.format(lic.key)
-            spdx_key = lic.spdx_license_key
-            result['spdx_license_key'] = spdx_key
-            if spdx_key:
-                spdx_key = lic.spdx_license_key.rstrip('+')
-                spdx_url = SPDX_LICENSE_URL.format(spdx_key)
-            else:
-                spdx_url = ''
-            result['spdx_url'] = spdx_url
-            result['start_line'] = match.start_line
-            result['end_line'] = match.end_line
-            matched_rule = result['matched_rule'] = OrderedDict()
-            matched_rule['identifier'] = match.rule.identifier
-            matched_rule['license_expression'] = match.rule.license_expression
-            matched_rule['licenses'] = match.rule.license_keys()
-
-            matched_rule['is_license_text'] = match.rule.is_license_text
-            matched_rule['is_license_notice'] = match.rule.is_license_notice
-            matched_rule['is_license_reference'] = match.rule.is_license_reference
-            matched_rule['is_license_tag'] = match.rule.is_license_tag
-
-            matched_rule['matcher'] = match.matcher
-            matched_rule['rule_length'] = match.rule.length
-            matched_rule['matched_length'] = match.len()
-            matched_rule['match_coverage'] = match.coverage()
-            matched_rule['rule_relevance'] = match.rule.relevance
-
-            # FIXME: for sanity this should always be included?????
-            if include_text:
-                result['matched_text'] = matched_text
+        detected_licenses.extend(
+            _licenses_data_from_match(match, matched_text, license_url_template)
+        )
 
     return OrderedDict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
     ])
+
+
+def _licenses_data_from_match(match, matched_text=None,
+                              license_url_template=DEJACODE_LICENSE_URL):
+    """
+    Return a list of "licenses" scan data built from a license match.
+    Used directly only internally for testing.
+    """
+    from licensedcode import cache
+    licenses = cache.get_licenses_db()
+
+    detected_licenses = []
+    for license_key in match.rule.license_keys():
+        lic = licenses.get(license_key)
+        result = OrderedDict()
+        detected_licenses.append(result)
+        result['key'] = lic.key
+        result['score'] = match.score()
+        result['name'] = lic.name
+        result['short_name'] = lic.short_name
+        result['category'] = lic.category
+        result['is_exception'] = lic.is_exception
+        result['owner'] = lic.owner
+        result['homepage_url'] = lic.homepage_url
+        result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
+        result['reference_url'] = license_url_template.format(lic.key)
+        spdx_key = lic.spdx_license_key
+        result['spdx_license_key'] = spdx_key
+        if spdx_key:
+            spdx_key = lic.spdx_license_key.rstrip('+')
+            spdx_url = SPDX_LICENSE_URL.format(spdx_key)
+        else:
+            spdx_url = ''
+        result['spdx_url'] = spdx_url
+        result['start_line'] = match.start_line
+        result['end_line'] = match.end_line
+        matched_rule = result['matched_rule'] = OrderedDict()
+        matched_rule['identifier'] = match.rule.identifier
+        matched_rule['license_expression'] = match.rule.license_expression
+        matched_rule['licenses'] = match.rule.license_keys()
+        matched_rule['is_license_text'] = match.rule.is_license_text
+        matched_rule['is_license_notice'] = match.rule.is_license_notice
+        matched_rule['is_license_reference'] = match.rule.is_license_reference
+        matched_rule['is_license_tag'] = match.rule.is_license_tag
+        matched_rule['matcher'] = match.matcher
+        matched_rule['rule_length'] = match.rule.length
+        matched_rule['matched_length'] = match.len()
+        matched_rule['match_coverage'] = match.coverage()
+        matched_rule['rule_relevance'] = match.rule.relevance
+        # FIXME: for sanity this should always be included?????
+        if matched_text:
+            result['matched_text'] = matched_text
+    return detected_licenses
 
 
 def get_package_info(location, **kwargs):
