@@ -3,13 +3,31 @@
     {
       "tool_name": "scancode-toolkit",
       "options": {
-        "input": "<path>",
-        "--consolidate": true,
+        "input": [
+          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package"
+        ],
         "--copyright": true,
         "--info": true,
-        "--json": "<file>",
+        "--json-pp": "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package.json",
         "--license": true,
         "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--consolidate": true,
+        "--from-json": [
+          true
+        ],
+        "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -24,11 +42,12 @@
       "type": "license-holders",
       "identifier": "the_apache_software_foundation_1",
       "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "the apache software foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) the apache software foundation",
       "other_license_expression": null,
+      "consolidated_core_copyright": "Copyright (c) The Apache Software Foundation",
+      "consolidated_other_copyright": null,
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
       "other_holders": []
     }
   ],
@@ -71,12 +90,14 @@
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
       "core_license_expression": "apache-2.0",
-      "core_holders": [],
-      "consolidated_copyright": "Copyright (c) IBM Corp., the apache software foundation",
       "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
+      "consolidated_core_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
+      "consolidated_other_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
+      "core_holders": [],
       "other_holders": [
         "IBM Corp.",
-        "the apache software foundation"
+        "The Apache Software",
+        "The Apache Software Foundation"
       ]
     }
   ],
@@ -108,7 +129,7 @@
       "consolidated_to": [],
       "files_count": 7,
       "dirs_count": 2,
-      "size_count": 441,
+      "size_count": 477,
       "scan_errors": []
     },
     {
@@ -140,7 +161,7 @@
       ],
       "files_count": 4,
       "dirs_count": 0,
-      "size_count": 185,
+      "size_count": 202,
       "scan_errors": []
     },
     {
@@ -149,9 +170,9 @@
       "name": "src1",
       "base_name": "src1",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -200,14 +221,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -228,9 +249,9 @@
       "name": "src2",
       "base_name": "src2",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -279,14 +300,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -307,9 +328,9 @@
       "name": "src3",
       "base_name": "src3",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -358,14 +379,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -386,9 +407,9 @@
       "name": "src4",
       "base_name": "src4",
       "extension": "",
-      "size": 29,
-      "sha1": "b96a516faa485efd92b065688527ac33cf911b0c",
-      "md5": "4ae24ad918c5f6bf526e6db5691a3f11",
+      "size": 34,
+      "sha1": "ce82bf2d5d3e79dabf5960159d1e14e46560da63",
+      "md5": "5817e002d5c6420ebcd4dfa66e500f10",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -437,14 +458,14 @@
       ],
       "holders": [
         {
-          "value": "nexb inc.",
+          "value": "nexB, Inc.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright nexb inc.",
+          "value": "Copyright (c) nexB, Inc.",
           "start_line": 1,
           "end_line": 2
         }
@@ -520,7 +541,7 @@
       ],
       "files_count": 3,
       "dirs_count": 0,
-      "size_count": 256,
+      "size_count": 275,
       "scan_errors": []
     },
     {
@@ -529,9 +550,9 @@
       "name": "package.json",
       "base_name": "package",
       "extension": ".json",
-      "size": 127,
-      "sha1": "1409b07ec2c2346c8c523c8c3111d2154e8e8405",
-      "md5": "a056434ef02c76871a504f45368577c6",
+      "size": 141,
+      "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
+      "md5": "e10ff141105dc64fbde2dc77c61275db",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -578,8 +599,20 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [],
-      "copyrights": [],
+      "holders": [
+        {
+          "value": "The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -596,9 +629,9 @@
       "name": "src1",
       "base_name": "src1",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -647,14 +680,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }

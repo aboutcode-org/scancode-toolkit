@@ -50,7 +50,7 @@ class TestConsolidate(FileDrivenTesting):
         assert not is_majority(src_count, files_count)
 
     def test_consolidate_clear_summary(self):
-        # 75% of the files have the same license expression and holder, so we should have one fileset
+        # 75% of the files have the same license expression and holder, so we should have one consolidated component
         scan_loc = self.get_test_loc('plugin_consolidate/clear-summary')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/clear-summary-expected.json')
@@ -58,31 +58,32 @@ class TestConsolidate(FileDrivenTesting):
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_consolidate_no_summary(self):
-        # 50% of the files have the same license expression and holder, so no fileset should be created
+        # 50% of the files have the same license expression and holder, so no consolidated component should be created
         scan_loc = self.get_test_loc('plugin_consolidate/no-summary')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/no-summary-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
-    def test_consolidate_package_fileset(self):
+    def test_consolidate_package(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/package-fileset-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
-    def test_consolidate_package_files_should_not_be_considered_in_license_holder_filesets(self):
+    def test_consolidate_package_files_should_not_be_considered_in_license_holder_consolidated_component(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package-files-not-counted-in-license-holders')
         result_file = self.get_temp_file('json')
-        # There should not be a fileset for license-holder, even though every single file in this directory contains the
-        # same license expression and holder
+        # There should not be a consolidated component for license-holder, even
+        # though every single file in this directory contains the same license
+        # expression and holder
         expected_file = self.get_test_loc('plugin_consolidate/package-files-not-counted-in-license-holders-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_consolidate_clear_summary_from_json(self):
-        # 75% of the files have the same license expression and holder, so we should have one fileset
+        # 75% of the files have the same license expression and holder, so we should have one consolidated component
         scan_loc = self.get_test_loc('plugin_consolidate/clear-summary.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/clear-summary-expected.json')
@@ -149,6 +150,3 @@ class TestConsolidate(FileDrivenTesting):
         # The nested majority is just 1 file, but has a different origin than the rest of the files above it
         # and should be reported as a separate consolidated component
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
-
-    # TODO: test that test data is basd off of samples from the outside world and not something
-    # that only exists in scancode tests

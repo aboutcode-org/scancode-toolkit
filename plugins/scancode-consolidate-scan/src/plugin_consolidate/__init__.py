@@ -75,9 +75,10 @@ class Consolidation(object):
     # TODO: Add file counts for proper accounting
     identifier = attr.ib(default=None)
     core_license_expression = attr.ib(default=None)
-    core_holders = attr.ib(default=attr.Factory(list))
-    consolidated_copyright = attr.ib(default=None)
     other_license_expression = attr.ib(default=None)
+    consolidated_core_copyright = attr.ib(default=None)
+    consolidated_other_copyright = attr.ib(default=None)
+    core_holders = attr.ib(default=attr.Factory(list))
     other_holders = attr.ib(default=attr.Factory(list))
     resources = attr.ib(default=attr.Factory(list))
 
@@ -86,14 +87,21 @@ class Consolidation(object):
             if attr.name in ('resources', ):
                 return False
             return True
-        self.consolidated_copyright = self.consolidate_copyright()
+        self.consolidated_core_copyright = self.consolidate_core_copyright()
+        self.consolidated_other_copyright = self.consolidate_other_copyright()
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
-    def consolidate_copyright(self):
+    def consolidate_core_copyright(self):
         # TODO: Verify and test that we are generating detectable copyrights
         holders = list(self.core_holders) + list(self.other_holders)
         if holders:
             return 'Copyright (c) {}'.format(', '.join(holders))
+
+    def consolidate_other_copyright(self):
+        # TODO: Verify and test that we are generating detectable copyrights
+        other_holders = list(self.other_holders)
+        if other_holders:
+            return 'Copyright (c) {}'.format(', '.join(other_holders))
 
 
 @attr.s
@@ -250,11 +258,11 @@ def get_consolidated_packages(codebase):
                 simplified_discovered_license_expression = None
 
             c = Consolidation(
-                resources=package_resources,
                 core_license_expression=package_license_expression,
-                core_holders=sorted(set(package_holders)),
                 other_license_expression=simplified_discovered_license_expression,
-                other_holders=sorted(set(discovered_holders))
+                core_holders=sorted(set(package_holders)),
+                other_holders=sorted(set(discovered_holders)),
+                resources=package_resources,
             )
             yield ConsolidatedPackage(
                 package=package,
@@ -365,9 +373,9 @@ def create_license_holders_consolidated_component(resource, codebase):
         component_resources = get_consolidated_component_resources(resource, codebase)
         if component_resources:
             c = Consolidation(
-                resources=component_resources,
                 core_license_expression=license_expression,
-                core_holders=holders
+                core_holders=holders,
+                resources=component_resources,
             )
             return ConsolidatedComponent(
                 type='license-holders',
@@ -417,9 +425,9 @@ def combine_license_holders_consolidated_components(components):
             component_resources.extend(component.consolidation.resources)
         component_holders, component_license_expression = origin_translation_table[origin_key]
         c = Consolidation(
-            resources=component_resources,
             core_license_expression=component_license_expression,
-            core_holders=component_holders
+            core_holders=component_holders,
+            resources=component_resources,
         )
         yield ConsolidatedComponent(
             type='license-holders',

@@ -24,11 +24,12 @@
       "type": "license-holders",
       "identifier": "the_apache_software_foundation_1",
       "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "the apache software foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) the apache software foundation",
       "other_license_expression": null,
+      "consolidated_core_copyright": "Copyright (c) The Apache Software Foundation",
+      "consolidated_other_copyright": null,
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
       "other_holders": []
     }
   ],
@@ -63,7 +64,7 @@
       ],
       "files_count": 4,
       "dirs_count": 0,
-      "size_count": 177,
+      "size_count": 200,
       "scan_errors": []
     },
     {
@@ -72,9 +73,9 @@
       "name": "src1",
       "base_name": "src1",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -123,14 +124,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -151,9 +152,9 @@
       "name": "src2",
       "base_name": "src2",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -202,14 +203,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -230,9 +231,9 @@
       "name": "src3",
       "base_name": "src3",
       "extension": "",
-      "size": 52,
-      "sha1": "c3205a52b29c4d6a8b9d30acfbf8190aecd41492",
-      "md5": "40e0b73c327d10cb3f42e23d300380b0",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -281,14 +282,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -309,9 +310,9 @@
       "name": "src4",
       "base_name": "src4",
       "extension": "",
-      "size": 21,
-      "sha1": "4db983fe0ab8117f9b74c50a8a7f3a045ae57284",
-      "md5": "0aa9f7cb419649708faee0d981acbf47",
+      "size": 32,
+      "sha1": "9d75736fe41651abebb509da45380299d93fbafd",
+      "md5": "55abb8def9f0ecedeca243349fbb9b62",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -321,18 +322,53 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 80.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_rule": {
+            "identifier": "gpl-2.0_52.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 80.0
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0"
+      ],
       "holders": [
         {
-          "value": "me inc",
+          "value": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright me inc",
+          "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }

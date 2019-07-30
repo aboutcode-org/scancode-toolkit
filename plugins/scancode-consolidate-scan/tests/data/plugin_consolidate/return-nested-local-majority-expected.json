@@ -24,22 +24,24 @@
       "type": "license-holders",
       "identifier": "ibm_corp__1",
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "other_license_expression": null,
+      "consolidated_core_copyright": "Copyright (c) IBM Corp.",
+      "consolidated_other_copyright": null,
       "core_holders": [
         "IBM Corp."
       ],
-      "consolidated_copyright": "Copyright (c) IBM Corp.",
-      "other_license_expression": null,
       "other_holders": []
     },
     {
       "type": "license-holders",
       "identifier": "the_apache_software_foundation_2",
       "core_license_expression": "unknown AND apache-2.0",
+      "other_license_expression": null,
+      "consolidated_core_copyright": "Copyright (c) The Apache Software Foundation",
+      "consolidated_other_copyright": null,
       "core_holders": [
         "The Apache Software Foundation"
       ],
-      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "other_license_expression": null,
       "other_holders": []
     }
   ],

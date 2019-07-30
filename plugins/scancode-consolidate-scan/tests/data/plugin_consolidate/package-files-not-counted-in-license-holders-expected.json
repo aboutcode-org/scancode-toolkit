@@ -59,11 +59,13 @@
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
       "core_license_expression": "apache-2.0",
-      "core_holders": [],
-      "consolidated_copyright": "Copyright (c) the apache software foundation",
       "other_license_expression": "apache-2.0",
+      "consolidated_core_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
+      "consolidated_other_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
+      "core_holders": [],
       "other_holders": [
-        "the apache software foundation"
+        "The Apache Software",
+        "The Apache Software Foundation"
       ]
     }
   ],
@@ -95,7 +97,7 @@
       "consolidated_to": [],
       "files_count": 6,
       "dirs_count": 1,
-      "size_count": 382,
+      "size_count": 421,
       "scan_errors": []
     },
     {
@@ -161,7 +163,7 @@
       ],
       "files_count": 4,
       "dirs_count": 0,
-      "size_count": 280,
+      "size_count": 309,
       "scan_errors": []
     },
     {
@@ -170,9 +172,9 @@
       "name": "package.json",
       "base_name": "package",
       "extension": ".json",
-      "size": 127,
-      "sha1": "1409b07ec2c2346c8c523c8c3111d2154e8e8405",
-      "md5": "a056434ef02c76871a504f45368577c6",
+      "size": 141,
+      "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
+      "md5": "e10ff141105dc64fbde2dc77c61275db",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -219,8 +221,20 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [],
-      "copyrights": [],
+      "holders": [
+        {
+          "value": "The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -237,9 +251,9 @@
       "name": "src1",
       "base_name": "src1",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -288,14 +302,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -316,9 +330,9 @@
       "name": "src2",
       "base_name": "src2",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -367,14 +381,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -395,9 +409,9 @@
       "name": "src3",
       "base_name": "src3",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -446,14 +460,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -474,9 +488,9 @@
       "name": "src1",
       "base_name": "src1",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -525,14 +539,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -551,9 +565,9 @@
       "name": "src2",
       "base_name": "src2",
       "extension": "",
-      "size": 51,
-      "sha1": "7006d64e62ac737d362896cf6fc091d67385e8c3",
-      "md5": "cdd74f2dca82a14244aaff0333fc8490",
+      "size": 56,
+      "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
+      "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -602,14 +616,14 @@
       ],
       "holders": [
         {
-          "value": "the apache software foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "copyrights": [
         {
-          "value": "copyright the apache software foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
