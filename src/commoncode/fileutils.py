@@ -190,10 +190,13 @@ def prepare_path(pth):
     Return the `pth` path string either as encoded bytes if on Linux and using
     Python 2 or as a unicode/text otherwise.
     """
-    if on_linux and py2 and isinstance(pth, compat.unicode):
-        return fsencode(pth)
-    if not isinstance(pth, compat.unicode):
-        return fsdecode(pth)
+    if on_linux and py2:
+        if not isinstance(pth, bytes):
+            pth = fsencode(pth)
+        return pth
+    else:    
+        if not isinstance(pth, compat.unicode):
+            return fsdecode(pth)
     return pth
 
 
