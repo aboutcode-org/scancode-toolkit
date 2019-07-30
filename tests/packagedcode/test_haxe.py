@@ -30,7 +30,6 @@ import os.path
 
 from packagedcode import haxe
 from scancode.resource import Codebase
-from scancode.resource import VirtualCodebase
 
 from packages_test_utils import PackageTester
 

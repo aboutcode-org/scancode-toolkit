@@ -29,8 +29,6 @@ from __future__ import unicode_literals
 import os.path
 
 from packagedcode import bower
-from scancode.resource import Codebase
-from scancode.resource import VirtualCodebase
 
 from packages_test_utils import PackageTester
 

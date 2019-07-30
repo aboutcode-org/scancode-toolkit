@@ -30,7 +30,6 @@ from collections import OrderedDict
 import os.path
 
 from packagedcode import chef
-from scancode.resource import Codebase
 
 from packages_test_utils import PackageTester
 
