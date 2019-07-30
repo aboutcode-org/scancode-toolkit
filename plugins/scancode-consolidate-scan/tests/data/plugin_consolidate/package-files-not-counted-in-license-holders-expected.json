@@ -63,7 +63,7 @@
         "The Apache Software",
         "The Apache Software Foundation"
       ],
-      "consolidated_copyright": null,
+      "consolidated_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
       "other_license_expression": "apache-2.0",

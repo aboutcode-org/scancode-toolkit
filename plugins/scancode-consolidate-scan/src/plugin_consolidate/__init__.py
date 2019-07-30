@@ -102,8 +102,7 @@ class Consolidation(object):
         # TODO: Verify and test that we are generating detectable copyrights
         if not self.consolidated_holders:
             self.consolidated_holders = sorted(set(list(self.core_holders) + list(self.other_holders)))
-        else:
-            return 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
+        return 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
 
 
 @attr.s

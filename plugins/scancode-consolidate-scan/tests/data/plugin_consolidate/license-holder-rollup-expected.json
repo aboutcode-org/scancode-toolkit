@@ -27,7 +27,7 @@
       "consolidated_holders": [
         "IBM Corp."
       ],
-      "consolidated_copyright": null,
+      "consolidated_copyright": "Copyright (c) IBM Corp.",
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "core_holders": [
         "IBM Corp."
@@ -43,7 +43,7 @@
       "consolidated_holders": [
         "Oracle Corp."
       ],
-      "consolidated_copyright": null,
+      "consolidated_copyright": "Copyright (c) Oracle Corp.",
       "core_license_expression": "unknown AND apache-2.0",
       "core_holders": [
         "Oracle Corp."
@@ -59,7 +59,7 @@
       "consolidated_holders": [
         "omega.com"
       ],
-      "consolidated_copyright": null,
+      "consolidated_copyright": "Copyright (c) omega.com",
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "core_holders": [
         "omega.com"
