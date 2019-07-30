@@ -75,7 +75,7 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0 AND (apache-2.0 AND gpl-1.0-plus AND unknown)",
+      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "consolidated_holders": [
         "IBM Corp.",
         "The Apache Software",

@@ -88,13 +88,15 @@ class Consolidation(object):
             if attr.name in ('resources', ):
                 return False
             return True
-        license_expressions_to_consolidate = []
+        license_expressions_to_combine = []
         if self.core_license_expression:
-            license_expressions_to_consolidate.append(self.core_license_expression)
+            license_expressions_to_combine.append(self.core_license_expression)
         if self.other_license_expression:
-            license_expressions_to_consolidate.append(self.other_license_expression)
-        if license_expressions_to_consolidate:
-            self.consolidated_license_expression = combine_expressions(license_expressions_to_consolidate)
+            license_expressions_to_combine.append(self.other_license_expression)
+        if license_expressions_to_combine:
+            combined_license_expression = combine_expressions(license_expressions_to_combine)
+            if combined_license_expression:
+                self.consolidated_license_expression = str(Licensing().parse(combined_license_expression).simplify())
         self.consolidated_copyright = self.consolidate_copyright()
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 

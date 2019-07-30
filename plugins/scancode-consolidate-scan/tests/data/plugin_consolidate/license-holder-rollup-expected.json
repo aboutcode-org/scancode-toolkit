@@ -39,7 +39,7 @@
     {
       "type": "license-holders",
       "identifier": "oracle_corp__2",
-      "consolidated_license_expression": "unknown AND apache-2.0",
+      "consolidated_license_expression": "apache-2.0 AND unknown",
       "consolidated_holders": [
         "Oracle Corp."
       ],

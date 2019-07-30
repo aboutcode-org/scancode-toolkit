@@ -39,7 +39,7 @@
     {
       "type": "license-holders",
       "identifier": "the_apache_software_foundation_2",
-      "consolidated_license_expression": "unknown AND apache-2.0",
+      "consolidated_license_expression": "apache-2.0 AND unknown",
       "consolidated_holders": [
         "The Apache Software Foundation"
       ],
