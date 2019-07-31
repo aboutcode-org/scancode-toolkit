@@ -498,7 +498,8 @@ class TestFileUtilsIter(FileBasedTesting):
             u'/walk/unicode.zip'
         ]
         assert sorted(expected) == sorted(result)
-        assert all(isinstance(p, compat.unicode) for p in result)
+        types = bytes if py2 and on_linux else compat.unicode
+        assert all(isinstance(p, types) for p in result)
 
     def test_resource_iter_can_walk_unicode_path_with_zip(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
