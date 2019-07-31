@@ -44,6 +44,10 @@ def is_ignored(location, ignores, unignores=None, skip_special=True):
     Return a tuple of (pattern , message) if a file at location is ignored
     or False otherwise.
     `ignores` and `unignores` are mappings of patterns to a reason.
+
+    If `skip_special` is True, location is checked and ignored if is considered a special file,
+    e.g. symlink, FIFO, device file, etc. and location is required to be an actual location to a
+    file rather than a path string.
     """
     if skip_special and filetype.is_special(location):
         return True

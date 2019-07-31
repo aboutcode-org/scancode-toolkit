@@ -499,7 +499,7 @@ def get_dependencies(dependencies):
         is_resolved =False
         if constraints and len(constraints) == 1:
             is_resolved = constraint == '='
-        
+
         version_constraint = ', '.join(constraints)
 
         dep = models.DependentPackage(

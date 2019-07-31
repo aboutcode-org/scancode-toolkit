@@ -92,7 +92,7 @@ class NugetPackage(models.Package):
             name=self.name, version=self.version)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        # the name is lowercased 
+        # the name is lowercased
         # https://api.nuget.org/v3/registration3/newtonsoft.json/10.0.1.json
         return baseurl + '{name}/{version}.json'.format(
             name=self.name.lower(), version=self.version)

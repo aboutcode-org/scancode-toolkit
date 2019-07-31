@@ -133,7 +133,7 @@ def remove_windows_extra_timeout(scancode_options, timeout=WINDOWS_CI_TIMEOUT):
             del scancode_options['--timeout']
 
 
-def check_json_scan(expected_file, result_file, regen=False, remove_file_date=False):
+def check_json_scan(expected_file, result_file, regen=False, remove_file_date=False, ignore_headers=False):
     """
     Check the scan `result_file` JSON results against the `expected_file`
     expected JSON results.
@@ -150,6 +150,10 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     expected = load_json_result(expected_file, remove_file_date)
+
+    if ignore_headers:
+        results.pop('headers', None)
+        expected.pop('headers', None)
 
     # NOTE we redump the JSON as a string for a more efficient display of the
     # failures comparison/diff

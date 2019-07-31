@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 import io
 import json
 import logging
@@ -36,6 +37,7 @@ from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
+from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 
@@ -58,6 +60,10 @@ class BowerPackage(models.Package):
     @classmethod
     def recognize(cls, location):
         return parse(location)
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)

@@ -164,6 +164,16 @@ class Header(object):
         return cls(**kwargs)
 
 
+def ignore_nothing(resource, codebase):
+    """
+    Return True if `resource` should be ignored.
+
+    This function is used as a callable for `ignored` argument in Codebase and
+    Resource walk.
+    """
+    return False
+
+
 class Codebase(object):
     """
     Represent a codebase being scanned. A Codebase is a tree of Resources.
@@ -698,6 +708,8 @@ class Codebase(object):
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
             with open(cache_location, 'rb') as cached:
+                # TODO: Use custom json encoder to encode JSON list as a tuple
+                # TODO: Consider using simplejson
                 data = json.load(cached, object_pairs_hook=OrderedDict, encoding='utf-8')
                 return self.resource_class(**data)
         except Exception:
@@ -758,7 +770,7 @@ class Codebase(object):
 
         return removed_rids
 
-    def walk(self, topdown=True, skip_root=False):
+    def walk(self, topdown=True, skip_root=False, ignored=ignore_nothing):
         """
         Yield all resources for this Codebase walking its resource tree.
         Walk the tree top-down, depth-first if `topdown` is True, otherwise walk
@@ -769,8 +781,17 @@ class Codebase(object):
 
         If `skip_root` is True, the root resource is not returned unless this is
         a codebase with a single resource.
+
+        `ignored` is a callable that accepts two arguments, `resource` and `codebase`,
+        and returns True if `resource` should be ignored.
         """
         root = self.root
+
+        if ignored(root, self):
+            return
+
+        root = attr.evolve(root)
+
         # include root if no children (e.g. codebase with a single resource)
         if skip_root and not root.has_children():
             skip_root = False
@@ -779,7 +800,7 @@ class Codebase(object):
         if topdown and not skip_root:
             yield root
 
-        for res in root.walk(self, topdown):
+        for res in root.walk(self, topdown=topdown, ignored=ignored):
             yield res
 
         if not topdown and not skip_root:
@@ -1095,7 +1116,7 @@ class Resource(object):
 
         return files_count, dirs_count, size_count
 
-    def walk(self, codebase, topdown=True,):
+    def walk(self, codebase, topdown=True, ignored=ignore_nothing):
         """
         Yield all descendant Resources of this Resource. Does not include self.
 
@@ -1104,16 +1125,21 @@ class Resource(object):
 
         Each level is sorted by children sort order (e.g. without-children, then
         with-children and each group by case-insensitive name)
+
+        `ignored` is a callable that accepts two arguments, `resource` and `codebase`,
+        and returns True if `resource` should be ignored.
         """
 
         for child in self.children(codebase):
-            child = attr.evolve(child)
-            if topdown:
-                yield child
-            for subchild in child.walk(codebase, topdown):
-                yield subchild
-            if not topdown:
-                yield child
+            if not ignored(child, codebase):
+                child = attr.evolve(child)
+                if topdown:
+                    yield child
+                for subchild in child.walk(codebase, topdown=topdown, ignored=ignored):
+                    if not ignored(subchild, codebase):
+                        yield subchild
+                if not topdown:
+                    yield child
 
     def has_children(self):
         """

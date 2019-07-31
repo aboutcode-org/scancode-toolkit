@@ -26,6 +26,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 import io
 import json
 import logging
@@ -39,6 +40,7 @@ from pygments.token import Token
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode import ignore
 from packagedcode import models
 
 

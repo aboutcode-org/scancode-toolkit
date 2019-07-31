@@ -28,12 +28,14 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 from os.path import dirname
 from os.path import exists
 from os.path import join
 
-from commoncode.testcase import FileBasedTesting
+from commoncode import ignore
 from commoncode.fileutils import parent_directory
+from commoncode.testcase import FileBasedTesting
 
 from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import run_scan_click
@@ -318,6 +320,18 @@ class TestCodebase(FileBasedTesting):
             ('walk', False)
         ]
         assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skipped_directories_should_not_be_yielded(self):
+        # Resources that we continue past should not be added to the result list
+        test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
+        codebase = Codebase(test_codebase)
+        result = []
+        def _ignored(resource, codebase):
+            return resource.is_dir and resource.name == 'skip-this-directory'
+        for resource in codebase.walk(topdown=True, ignored=_ignored,):
+            result.append(resource.name)
+        expected = ['skip_directories_during_walk', 'this-should-be-returned']
+        assert expected == result
 
     def test__create_resource_can_add_child_to_file(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')

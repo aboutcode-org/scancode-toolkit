@@ -39,6 +39,7 @@ from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import parse_repo_url
@@ -85,6 +86,10 @@ class NpmPackage(models.Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
+
+    @classmethod
+    def ignore_resource(cls, resource, codebase):
+        return resource.is_dir and resource.name == 'node_modules'
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return npm_homepage_url(self.namespace, self.name, registry=baseurl)

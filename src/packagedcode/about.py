@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from functools import partial
 import io
 import logging
 
@@ -34,6 +35,7 @@ import attr
 from six import string_types
 
 from commoncode import filetype
+from commoncode import ignore
 from packagedcode import models
 import saneyaml
 
@@ -47,6 +49,7 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
+# TODO: Override get_package_resource so it returns the Resource that the ABOUT file is describing
 
 @attr.s()
 class AboutPackage(models.Package):

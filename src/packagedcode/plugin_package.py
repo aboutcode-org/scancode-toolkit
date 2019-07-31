@@ -27,8 +27,11 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import os
+
 import attr
 
+from commoncode.fileutils import parent_directory
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -96,6 +99,11 @@ class PackageScanner(ScanPlugin):
             # arches/platforms for a gempsec or multiple sub package (with
             # "%package") in an RPM .spec file.
             for package_info in packages_info:
+                # Break if this Resource has already been set as a new Package root
+                manifest_path = package_info.get('manifest_path')
+                if manifest_path and manifest_path != resource.path:
+                    break
+
                 package_class = get_package_class(package_info)
                 new_package_root = package_class.get_package_root(resource, codebase)
 
@@ -120,13 +128,19 @@ class PackageScanner(ScanPlugin):
                 # 3. set the manifest_path if needed.
                 # 4. save.
 
-                # here we have a relocated Resource and we compute the manifest path
-                # relative to the new package root
-                new_package_root_path = new_package_root.path and new_package_root.path.strip('/')
-                if new_package_root_path:
-                    _, _, manifest_path = resource.path.partition(new_package_root_path)
-                    # note we could have also deserialized and serialized again instead
-                    package_info['manifest_path'] = manifest_path.lstrip('/')
+                # TODO: this is a hack for the ABOUT file Package parser, ABOUT files are kept alongside
+                # the resource its for
+                if new_package_root.is_file and resource.path.endswith('.ABOUT'):
+                    new_manifest_path = os.path.join(parent_directory(new_package_root.path), resource.name)
+                else:
+                    # here we have a relocated Resource and we compute the manifest path
+                    # relative to the new package root
+                    # TODO: We should have codebase relative paths for manifests
+                    new_package_root_path = new_package_root.path and new_package_root.path.strip('/')
+                    if new_package_root_path:
+                        _, _, new_manifest_path = resource.path.partition(new_package_root_path)
+                        # note we could have also deserialized and serialized again instead
+                package_info['manifest_path'] = new_manifest_path.lstrip('/')
 
                 new_package_root.packages.append(package_info)
                 codebase.save_resource(new_package_root)

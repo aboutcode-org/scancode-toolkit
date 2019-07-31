@@ -506,6 +506,28 @@ class Package(BasePackage):
         """
         return manifest_resource
 
+    @classmethod
+    def get_package_resources(cls, package_root, codebase):
+        """
+        Yield the Resources of a Package starting from `package_root`
+        """
+        if not Package.is_ignored_package_resource(package_root, codebase):
+            yield package_root
+        for resource in package_root.walk(codebase, topdown=True, ignored=Package.is_ignored_package_resource):
+            yield resource
+
+    @classmethod
+    def ignore_resource(cls, resource, codebase):
+        """
+        Return True if `resource` should be ignored.
+        """
+        return False
+
+    @staticmethod
+    def is_ignored_package_resource(resource, codebase):
+        from packagedcode import PACKAGE_TYPES
+        return any(pt.ignore_resource(resource, codebase) for pt in PACKAGE_TYPES)
+
     def compute_normalized_license(self):
         """
         Return a normalized license_expression string using the declared_license

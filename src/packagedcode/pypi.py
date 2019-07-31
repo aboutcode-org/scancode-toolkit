@@ -86,7 +86,7 @@ class PythonPackage(models.Package):
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None
-    
+
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
 
@@ -114,7 +114,7 @@ def compute_normalized_license(declared_license):
                 detected_license = models.compute_normalized_license(declared)
                 if detected_license:
                     detected_licenses.append(detected_license)
-            
+
     if detected_licenses:
         return combine_expressions(detected_licenses)
 
@@ -291,7 +291,7 @@ def parse_setup_py(location):
     classifiers = get_classifiers(setup_text)
     license_classifiers = [c for c in classifiers if c.startswith('License')]
     declared_license['classifiers'] = license_classifiers
-    
+
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
     package = PythonPackage(
@@ -372,8 +372,8 @@ def parse_dependencies(location, package):
         dependencies = parse_with_dparse(resource_location)
         if dependencies:
             package.dependencies = dependencies
-    
-    
+
+
 
 def parse_source_distribution(location):
     """
@@ -434,7 +434,7 @@ def parse_with_pkginfo(pkginfo):
         if pkginfo.license:
             #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
             package.declared_license = {'license': pkginfo.license}
-        
+
         if pkginfo.maintainer:
             common_data['parties'] = []
             common_data['parties'].append(models.Party(
@@ -523,7 +523,7 @@ def build_package(package_data):
     lic = info.get('license')
     if lic and lic != 'UNKNOWN':
         setuptext_licenses.append(lic)
-    declared_license['license'] = setuptext_licenses 
+    declared_license['license'] = setuptext_licenses
 
     classifiers_licenses = []
     classifiers = info.get('classifiers')
@@ -531,13 +531,13 @@ def build_package(package_data):
         licenses = [lic for lic in classifiers if lic.lower().startswith('license')]
         for lic in licenses:
             classifiers_licenses.append(lic)
-    declared_license['classifiers'] = classifiers_licenses 
-    
+    declared_license['classifiers'] = classifiers_licenses
+
     common_data['declared_license'] = declared_license
 
     kw = info.get('keywords')
     if kw:
         common_data['keywords'] = [k.strip() for k in kw.split(',') if k.strip()]
-    
+
     package = PythonPackage(**common_data)
     return package
