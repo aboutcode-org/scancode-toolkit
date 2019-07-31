@@ -80,7 +80,7 @@ class Consolidation(object):
     core_holders = attr.ib(default=attr.Factory(list))
     other_license_expression = attr.ib(default=None)
     other_holders = attr.ib(default=attr.Factory(list))
-    resources_count = attr.ib(default=None)
+    files_count = attr.ib(default=None)
     resources = attr.ib(default=attr.Factory(list))
 
     def to_dict(self, **kwargs):
@@ -265,7 +265,7 @@ def get_consolidated_packages(codebase):
                 core_holders=sorted(set(package_holders)),
                 other_license_expression=simplified_discovered_license_expression,
                 other_holders=sorted(set(discovered_holders)),
-                resources_count=len(package_resources),
+                files_count=sum(1 for package_resource in package_resources if package_resource.is_file),
                 resources=package_resources,
             )
             yield ConsolidatedPackage(
@@ -381,7 +381,7 @@ def create_license_holders_consolidated_component(resource, codebase):
             c = Consolidation(
                 core_license_expression=license_expression,
                 core_holders=holders,
-                resources_count=len(component_resources),
+                files_count=sum(1 for component_resource in component_resources if component_resource.is_file),
                 resources=component_resources,
             )
             return ConsolidatedComponent(
@@ -434,7 +434,7 @@ def combine_license_holders_consolidated_components(components):
         c = Consolidation(
             core_license_expression=component_license_expression,
             core_holders=component_holders,
-            resources_count=len(component_resources),
+            files_count=sum(1 for component_resource in component_resources if component_resource.is_file),
             resources=component_resources,
         )
         yield ConsolidatedComponent(

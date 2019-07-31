@@ -34,7 +34,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "resources_count": 2
+      "files_count": 1
     },
     {
       "type": "license-holders",
@@ -50,7 +50,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "resources_count": 5
+      "files_count": 3
     }
   ],
   "consolidated_packages": [],

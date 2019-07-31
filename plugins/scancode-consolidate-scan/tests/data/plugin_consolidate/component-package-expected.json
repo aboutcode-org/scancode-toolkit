@@ -34,7 +34,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "resources_count": 4
+      "files_count": 3
     }
   ],
   "consolidated_packages": [
@@ -90,7 +90,7 @@
         "The Apache Software",
         "The Apache Software Foundation"
       ],
-      "resources_count": 4
+      "files_count": 3
     }
   ],
   "files": [
