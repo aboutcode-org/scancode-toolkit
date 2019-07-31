@@ -64,6 +64,7 @@ class CranPackage(models.Package):
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
+
 def parse(location):
     """
     Return a Package object from a DESCRIPTION file or None.
@@ -80,6 +81,9 @@ def build_package(package_data):
     if name:
         package = CranPackage(
             name=name,
+            version = package_data.get('Version'),
+            description = package_data.get('Description'),
+            declared_license = package_data.get('License')
         )
         return package
 

@@ -36,9 +36,9 @@ from packages_test_utils import PackageTester
 class TestCran(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-
     def test_parse_as_package(self):
         test_file = self.get_test_loc('cran/codetools/DESCRIPTION')
         package = cran.parse(test_file)
-        expected_loc = self.get_test_loc('cran/codetools/package.json.expected')
-        self.check_package(package, expected_loc, regen=True)
+        expected_loc = self.get_test_loc(
+            'cran/codetools/package.json.expected')
+        self.check_package(package, expected_loc, regen=False)
