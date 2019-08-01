@@ -294,7 +294,7 @@ patterns = [
     (r'^(example\.com'
       r'|null$'
       r'|:Licen[cs]e)$', 'JUNK'),
-    
+
     # when uppercase this is likely part of some SQL statement
     (r'FROM|CREATE|CURDIR', 'JUNK'),
     (r'RECURSIVE|VIEW', 'NN'),
@@ -1214,7 +1214,8 @@ grammar = """
     # Vladimir Oleynik <dzo@simtreas.ru> (c) 2002
     COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
 
-
+    # Copyright (C), 2001-2011, Omega Tech. Co., Ltd.
+    COPYRIGHT: {<COPY> <COPY> <ANDCO>}  #2841
 
 # Authors
     # Created by XYZ
