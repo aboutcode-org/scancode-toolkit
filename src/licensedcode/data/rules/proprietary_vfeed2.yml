@@ -3,9 +3,9 @@ is_license_text: yes
 referenced_filenames:
     - LICENSE
 ignorable_copyrights:
-    - Copyright 2004-2017 vFeed IO Cases
+    - Copyright 2004-2017 vFeed IO
 ignorable_holders:
-    - vFeed IO Cases
+    - vFeed IO
 ignorable_urls:
     - http://vfeed.io/
 ignorable_emails:

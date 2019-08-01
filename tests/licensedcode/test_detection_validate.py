@@ -29,47 +29,93 @@ from __future__ import unicode_literals
 import os
 import unittest
 
+from commoncode import compat
+from commoncode.functional import flatten
 from commoncode import text
-from commoncode import fileutils
 
 from licensedcode import cache
 from licensedcode import models
-from licensedcode.match_hash import MATCH_HASH
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
+import pytest
+pytestmark = pytest.mark.scanslow
+
 
 """
-Validate that each license and rule text is properly detected with exact detection.
-This runs a lot of tests that may seem useless, but this is the only way we can
-guarantee that the rule data set integrity is now drifting.
+Validate that each license and rule text is properly detected with exact
+detection and that their ignorable clues are correctly detected.
+
+TODO: to make the license detection test worthy, we should disable hash matching
+such that we test everything else including the negative, automaton, sets and
+seq detections.
 """
 
 
-def make_test(test_file, test_name, negative=False):
+def make_validation_test(rule, test_name):
     """
     Build and return a test function closing on tests arguments.
     """
-    if isinstance(test_name, unicode):
+    if isinstance(test_name, compat.unicode):
         test_name = test_name.encode('utf-8')
 
-    if negative:
+    text_file = rule.text_file
+    if rule.is_negative or rule.is_false_positive:
         def closure_test_function(*args, **kwargs):
             idx = cache.get_index()
-            matches = idx.match(location=test_file)
-            assert not matches
+            results = idx.match(location=text_file)
+            try:
+                assert not results
+            except:
+                data_file = rule.data_file
+                # On failure, we compare againto get additional failure details such as
+                # a clickable text_file path
+                results = (
+                    results,
+                    'file://{data_file}'.format(**locals()),
+                    'file://{text_file}'.format(**locals()),
+                )
+                # this assert will always fail and provide a more detailed failure trace
+                assert not results
     else:
         def closure_test_function(*args, **kwargs):
             idx = cache.get_index()
-            matches = idx.match(location=test_file)
-            expected = [dict(rule=fileutils.file_name(test_file), matcher=MATCH_HASH)]
-            detected = [dict(rule=m.rule.identifier, matcher=m.matcher) for m in matches]
-            assert expected == detected
+            matches = idx.match(location=text_file, _skip_hash_match=True)
+            expected = [rule.identifier, '100']
+            results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
+
+            try:
+                assert expected == results
+            except:
+
+                from licensedcode.tracing import get_texts
+                data_file = rule.data_file
+                # On failure, we compare againto get additional failure details such as
+                # a clickable text_file path
+                failure_trace = ['======= TEST ====']
+                failure_trace.extend(results)
+                failure_trace.extend(['',
+                    'file://{data_file}'.format(**locals()),
+                    'file://{text_file}'.format(**locals()),
+                    '======================',
+                ])
+
+                for i, match in enumerate(matches):
+                    qtext, itext = get_texts(match)
+                    m_text_file = match.rule.text_file
+                    if match.rule.is_license:
+                        m_data_file = m_text_file.replace('LICENSE', 'yml')
+                    else:
+                        m_data_file = match.rule.data_file
+
+                    failure_trace.extend(['',
+                        '======= MATCH {} ===='.format(i), repr(match),
+                        'file://{m_data_file}'.format(**locals()),
+                        'file://{m_text_file}'.format(**locals()),
+                        '======= Matched Query Text:', '', qtext, ''
+                        '======= Matched Rule Text:', '', itext
+                    ])
+                    
+                # this assert will always fail and provide a detailed failure trace
+                assert '\n'.join(expected) == '\n'.join(failure_trace)
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
@@ -77,45 +123,115 @@ def make_test(test_file, test_name, negative=False):
     return closure_test_function
 
 
-def build_license_validation_tests(licenses_by_key, cls):
+def build_detection_validation_tests(rules, cls):
     """
-    Dynamically build an individual test method for each license texts in a
-    `licenses_by_key` {key: License} mapping then attach the test method to the
-    `cls` test class.
+    Dynamically build an individual test method for each rule texts in a `rules`
+    iterable of Rule objects then attach the test method to the `cls` test
+    class.
     """
     # TODO: add test to detect the standard notice??
 
-    for key, lic in licenses_by_key.items():
-        if lic.text_file and os.path.exists(lic.text_file):
-            test_name = ('test_validate_detect_license_' + text.python_safe_name(key))
-            test_method = make_test(test_file=lic.text_file, test_name=test_name)
+    for rule in rules:
+        if rule.text_file and os.path.exists(rule.text_file):
+            test_name = ('test_validate_detect_' + text.python_safe_name(rule.identifier))
+            test_method = make_validation_test(rule=rule, test_name=test_name)
             setattr(cls, test_name, test_method)
 
 
-class TestValidateLicenseTextDetection(unittest.TestCase):
-    # Test functions are attached to this class at import time
-    pass
-
-
-build_license_validation_tests(cache.get_licenses_db(), TestValidateLicenseTextDetection)
-
-
-def build_rule_validation_tests(rules, cls):
+def make_ignorables_test(rule, test_name):
     """
-    Dynamically build an individual test method for each license texts in a
-    `rules` iterable of Rule then attach the test method to the `cls` test
-    class.
+    Build and return a test function closing on tests arguments.
+    """
+    if isinstance(test_name, compat.unicode):
+        test_name = test_name.encode('utf-8')
+
+    def closure_test_function(*args, **kwargs):
+        check_ignorable_clues(rule)
+
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
+
+    return closure_test_function
+
+
+def check_ignorable_clues(rule):
+    """
+    Validate that all ignorable clues defined in a `rule` Rule object are
+    properly detected in that rule text file.
+    """
+    from itertools import chain
+    from scancode import api
+
+    text_file = rule.text_file
+
+    # scan clues
+    scan_data = {}
+    scan_data.update(api.get_copyrights(text_file))
+    scan_data.update(api.get_urls(text_file, threshold=0))
+    scan_data.update(api.get_emails(text_file, threshold=0))
+
+    results = {}
+    for what, detections in scan_data.items():
+        # remove lines
+        for detected in detections:
+            detected.pop('start_line', None)
+            detected.pop('end_line', None)
+
+        # remove keys and keep only values e.g. a list of detected copyrights,
+        # emails, etc
+        detections = sorted(set(chain(*(detected.values() for detected in detections))))
+        results[what] = detections
+
+    # collect ignorables
+    expected = dict(
+        copyrights=rule.ignorable_copyrights or [],
+        holders=rule.ignorable_holders or [],
+        authors=rule.ignorable_authors or [],
+        emails=rule.ignorable_emails or [],
+        urls=rule.ignorable_urls or [],
+    )
+
+    try:
+        assert expected == results
+    except:
+        # On failure, we compare againto get additional failure details such as
+        # a clickable text_file path
+        data_file = rule.data_file
+        results = (
+            results,
+            'file://{data_file}'.format(**locals()),
+            'file://{text_file}'.format(**locals()),
+        )
+        # this assert will always fail and provide a more detailed failure trace
+        assert expected == results
+
+
+def build_licensish_ignorables_validation_tests(rules, cls):
+    """
+    Dynamically build an individual test method for each text_file in a `rules`
+    Rules iterable then attach the test method to the `cls` test class.
     """
     for rule in rules:
-        test_id = text.python_safe_name(rule.identifier)
-        test_name = ('test_validate_detect_rule_' + test_id)
-        test_method = make_test(test_file=rule.text_file, test_name=test_name, negative=rule.is_negative)
-        setattr(cls, test_name, test_method)
+        if rule.text_file and os.path.exists(rule.text_file):
+            test_name = ('test_validate_ignorables_' + text.python_safe_name(rule.identifier))
+            test_method = make_ignorables_test(rule, test_name=test_name)
+            setattr(cls, test_name, test_method)
 
 
-class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
+class TestValidateLicenseDetectionOnLicenseRuleTexts(unittest.TestCase):
     # Test functions are attached to this class at import time
     pass
 
 
-build_rule_validation_tests(models.load_rules(), TestValidateLicenseRuleSelfDetection)
+class TestValidateLicensishIgnorables(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pass
+
+
+_rules = list(models.get_rules())
+build_detection_validation_tests(_rules, TestValidateLicenseDetectionOnLicenseRuleTexts)
+build_licensish_ignorables_validation_tests(_rules, TestValidateLicensishIgnorables)
+del _rules
+
+
+

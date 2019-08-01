@@ -1,0 +1,6 @@
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://github.com/appsattic/fmt/raw/master/LICENSE
+minimum_coverage: 99

@@ -1,0 +1,8 @@
+license_expression: epl-1.0 OR bsd-new
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSES.md
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/edl-v10.php
+    - https://www.eclipse.org/legal/epl-v10.html

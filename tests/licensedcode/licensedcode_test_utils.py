@@ -246,7 +246,7 @@ def make_test(license_test, regen=False):
                     '',
                     itext,
                 ])
-            else:
+            if not matches:
                 failure_trace.extend(['',
                     '======= NO MATCH ====', 
                     '======= Not Matched Query Text for:',

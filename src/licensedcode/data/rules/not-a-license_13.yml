@@ -1,8 +1,0 @@
-is_negative: yes
-notes: Curl doc on licensing where nothing should be detected. This is a discussion on licensing
-    which is interesting but not a license notice or statement.
-ignorable_urls:
-    - http://latex-project.org/lppl.html
-    - http://www.debian.org/intro/free
-    - http://www.gnu.org/licenses/license-list.html
-    - http://www.gnu.org/philosophy/free-sw.html

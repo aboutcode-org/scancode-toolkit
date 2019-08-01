@@ -1,0 +1,4 @@
+license_expression: nvidia
+is_license_notice: yes
+minimum_coverage: 95
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)

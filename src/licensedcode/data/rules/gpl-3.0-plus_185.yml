@@ -1,0 +1,7 @@
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-3.0.txt

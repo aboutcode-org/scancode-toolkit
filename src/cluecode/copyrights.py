@@ -279,7 +279,7 @@ patterns = [
       r'|Joint|Assignment|Work|Attribution|Phrase|Timer|Manager'
       r'|AGPL.?|MIT'
       r'|Baslerstr\.?|E-[Mm]ail|Email|Original|Library|Activation\.?'
-      r'|Authored|Linux|Target|Technical|Users?|Policy,?|Visit|Those'
+      r'|Authored|Linux|Target|Technical|Users?|Policy,?|Visit|Those|Cases'
       r'|Norwegian|Act[\.,]?|Further|NOTICE\.?|Licen[cs]e,?|Patents?'
       r')?$', 'NN'),
     # |Products\.?
@@ -358,8 +358,8 @@ patterns = [
 
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
-    # Misc corner case combos ?(mixed or CAPS) that are NNP
-    (r'^Software,\',|\(Royal|PARADIGM|nexB|UserTesting|D\.T\.Shield\.?|Antill\',$', 'NNP'),
+    # Misc corner case combos ?(mixed, NN or CAPS) that are NNP
+    (r'^Software,\',|\(Royal|PARADIGM|vFeed|nexB|UserTesting|D\.T\.Shield\.?|Antill\',$', 'NNP'),
 
     # Corner cases of lowercased NNPs
     (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
@@ -399,7 +399,7 @@ patterns = [
     (r'^AT\&T[\.,]?$', 'COMP'),
 
     # company suffix:     Tech.,ltd
-    (r'^([A-Z][a-z]+[\.,]+[Ll][Tt][Dd]).?$', 'COMP'),
+    (r'^([A-Z][a-z]+[\.,]+[Ll][Tt][Dd]).?,?$', 'COMP'),
 
     # company suffix
     (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
@@ -409,7 +409,7 @@ patterns = [
      r'[(]tm[)]).?$|[Ff]orum.?', 'COMP'),
 
     # company suffix
-    (r'^([cC]orp(oration|[\.,])?|[cC]orporations?[\.,]?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|'
+    (r'^([cC]orp(oration|\.,?)?|[cC][oO]\.,?|[cC]orporations?[\.,]?|[fF]oundation|[Aa]lliance|Working|[Gg]roup|'
      r'[Tt]echnolog(y|ies)|[Cc]ommunit(y|ies)|[Mm]icrosystems.?|[Pp]roject|'
      r'[Tt]eams?|[Tt]ech).?$', 'COMP'),
     (r"^Limited'?,?$", 'COMP'),
@@ -675,7 +675,9 @@ grammar = """
 #######################################
 # SUFFIX
 #######################################
-    ALLRIGHTRESERVED: { <ALLRIGHT><ALLRIGHT><ALLRIGHT>}  #allrightsreserved
+
+    # All/No/Some Rights Reserved
+    ALLRIGHTRESERVED: { <ALLRIGHT>?<ALLRIGHT><ALLRIGHT>}  #allrightsreserved
 
 #######################################
 # NAMES and COMPANIES
@@ -1320,7 +1322,7 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NAME>} #3065
 
     # Copyright (c) 2011 The WebRTC project authors
-    COPYRIGHT: {<COPY><COPY>  <NAME3>  <AUTHS>} #1567
+    COPYRIGHT: {<COPY><COPY>  <NAME3>  <AUTHS>} #1567}
 
 #######################################
 # Authors
@@ -1382,7 +1384,7 @@ grammar = """
 #######################################
 # Last resort catch all ending with allrights
 #######################################
-    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <NNP|AUTHDOT|CAPS|YR-RANGE|NAME|NAME2|NAME3|NAME5|NAME5|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <COPY|NNP|AUTHDOT|CAPS|YR-RANGE|NAME|NAME2|NAME3|NAME5|NAME5|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
 """
 
@@ -1500,12 +1502,49 @@ def strip_all_unbalanced_parens(s):
     return c
 
 
+def strip_balanced_edge_parens(s):
+    """
+    Return a string where a pair of balanced leading and trailing parenthesis is
+    stripped.
+
+    For instance:
+    >>> strip_balanced_edge_parens('(This is a super string)')
+    'This is a super string'
+    >>> strip_balanced_edge_parens('(This is a super string')
+    '(This is a super string'
+    >>> strip_balanced_edge_parens('This is a super string)')
+    'This is a super string)'
+    >>> strip_balanced_edge_parens('(This is a super (string')
+    '(This is a super (string'
+    >>> strip_balanced_edge_parens('(This is a super (string)')
+    '(This is a super (string)'
+    """
+    if s.startswith('(') and s.endswith(')'):
+        c = s[1:-1]
+        if '(' not in c and ')' not in c:
+            return c
+    return s
+
+
+COPYRIGHTS_SUFFIXES = frozenset([
+    'copyright',
+    '.',
+    ',',
+    'year',
+    'parts',
+    'any',
+    '0',
+    '1',
+    'author',
+])
+
+
 def refine_copyright(c):
     """
     Refine a detected copyright string.
     FIXME: the grammar should not allow this to happen.
     """
-    c = c.strip()
+    c = u' '.join(c.split())
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
     c = c.strip('/ ')
@@ -1534,25 +1573,15 @@ def refine_copyright(c):
         'by',
     ])
 
-    s = strip_prefixes(c, prefixes)
-
-    s = s.split()
+    c = strip_prefixes(c, prefixes)
+    c = c.strip('+')
+    c = strip_trailing_period(c)
 
     # fix traliing garbage, captured by the grammar
-    last_word = s[-1]
-    if last_word.lower() in ('parts', 'any', '0', '1'):
-        s = s[:-1]
-    # this is hard to catch otherwise, unless we split the author
-    # vs copyright grammar in two. Note that AUTHOR and Authors should be kept
-    last_word = s[-1]
-    if last_word.lower() == 'author' and last_word not in ('AUTHOR', 'AUTHORS', 'Authors',) :
-        s = s[:-1]
+    c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
 
-    s = u' '.join(s)
-    s = s.strip('+')
-    s = strip_trailing_period(s)
-    s = s.strip()
-    return s
+    c = strip_balanced_edge_parens(c)
+    return c.strip()
 
 
 PREFIXES = frozenset([
@@ -1599,6 +1628,7 @@ def _refine_names(s, prefixes=PREFIXES):
     s = s.strip()
     return s
 
+
 JUNK_HOLDERS = frozenset([
     'property',
     'licensing@',
@@ -1613,6 +1643,7 @@ JUNK_HOLDERS = frozenset([
     'disclaimed',
     'or',
 ])
+
 
 HOLDERS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
@@ -1641,6 +1672,7 @@ HOLDERS_PREFIXES = frozenset(set.union(
     ])
 ))
 
+
 HOLDERS_SUFFIXES = frozenset([
     'http',
     'and',
@@ -1651,6 +1683,16 @@ HOLDERS_SUFFIXES = frozenset([
     '(c)',
     '<http',
     '/>',
+    '.',
+    ',',
+    'year',
+    # this may truncate rare companies named "all something"
+    'some',
+    'all',
+    'right',
+    'rights',
+    'reserved',
+    'reserved.',
 ])
 
 
@@ -1688,7 +1730,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
         'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
-        'author\'', 'authors,',
+        'author\'', 'authors,', 'authorship',
         ])
 ))
 

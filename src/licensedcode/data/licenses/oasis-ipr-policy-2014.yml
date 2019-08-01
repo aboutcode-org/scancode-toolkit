@@ -5,11 +5,9 @@ category: Proprietary Free
 owner: OASIS
 homepage_url: https://www.oasis-open.org/policies-guidelines/ipr
 ignorable_copyrights:
-    - Copyright (c) OASIS
-    - copyright year
+    - Copyright (c) OASIS Open
 ignorable_holders:
-    - .
-    - OASIS
+    - OASIS Open
 ignorable_urls:
     - http://www.oasis-open.org/policies-guidelines/ipr
     - http://www.oasis-open.org/who/intellectualproperty.php

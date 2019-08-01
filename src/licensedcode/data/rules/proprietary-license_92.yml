@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.java.net/
+    - http://www.sun.com/service/servicelist

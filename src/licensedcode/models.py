@@ -508,7 +508,7 @@ def check_rules_integrity(rules, licenses_by_key):
         if unknown_keys:
             invalid_rules[rule.data_file].update(unknown_keys)
 
-        if not rule.has_importance_flags and not (rule.is_negative or rule.is_false_positive):
+        if not rule.has_flags and not (rule.is_negative or rule.is_false_positive):
             rules_without_flags.add(rule.data_file)
 
     if invalid_rules:
@@ -701,12 +701,12 @@ class Rule(object):
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # is this rule text a false positive when matched? (filtered out)
-    # FIXME: this should be unified with the relevance: a false positive match
-    # is a a match with a relevance of zero
+    # is this rule text a false positive when matched? it will filtered out at
+    # the end if matched
     is_false_positive = attr.ib(default=False, repr=False)
 
-    # is this rule text a negative rule? it will be removed from the tokens streams
+    # is this rule text a negative rule? it will be removed from the matchable
+    # text the start if matched
     is_negative = attr.ib(default=False, repr=False)
 
     # is this rule text only to be matched with a minimum coverage e.g. a
@@ -781,7 +781,6 @@ class Rule(object):
     min_high_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
 
     is_small = attr.ib(default=False, repr=TRACE_REPR)
-    is_approx_matchable = attr.ib(default=True, repr=TRACE_REPR)
 
     has_computed_thresholds = attr.ib(default=False, repr=False)
 
@@ -1139,16 +1138,12 @@ class Rule(object):
             self.relevance = min([100, computed])
 
     @property
-    def has_importance_flags(self):
+    def has_flags(self):
         """
-        Return True if this Rule has at least one "importance" flag set.
-        Needed as a temporary helper during setting importance flags.
+        Return True if this Rule has at least one flag set.
         """
-        return (
-            self.is_license_text
-            or self.is_license_notice
-            or self.is_license_reference
-            or self.is_license_tag)
+        return (self.is_license_text or self.is_license_notice
+            or self.is_license_reference or self.is_license_tag)
 
 
 def compute_thresholds_occurences(minimum_coverage, length, high_length,
