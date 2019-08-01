@@ -1215,7 +1215,7 @@ grammar = """
     COPYRIGHT: {<NAME2> <COPYRIGHT2>}        #2840
 
     # Copyright (C), 2001-2011, Omega Tech. Co., Ltd.
-    COPYRIGHT: {<COPY> <COPY> <ANDCO>}  #2841
+    COPYRIGHT: {<COPY>+ <ANDCO>}  #2841
 
 # Authors
     # Created by XYZ
