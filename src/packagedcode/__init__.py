@@ -25,6 +25,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from packagedcode import build
 from packagedcode import chef
 from packagedcode import models
 from packagedcode import about
@@ -81,6 +82,9 @@ PACKAGE_TYPES = [
     models.IsoImagePackage,
     models.SquashfsPackage,
     chef.ChefPackage,
+    build.BazelPackage,
+    build.BuckPackage,
+    build.AutotoolsPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
