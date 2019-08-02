@@ -28,8 +28,10 @@ from __future__ import unicode_literals
 
 import os.path
 
+from packagedcode import build
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode.resource import Codebase
 from packages_test_utils import PackageTester
 
 
@@ -49,3 +51,15 @@ class TestBuild(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=False)
+
+    def test_build_get_package_resources(self):
+        test_loc= self.get_test_loc('build/get_package_resources')
+        codebase = Codebase(test_loc)
+        root = codebase.root
+        expected = [
+            'get_package_resources',
+            'get_package_resources/BUCK',
+            'get_package_resources/file1',
+        ]
+        results = [r.path for r in build.BaseBuildManifestPackage.get_package_resources(root, codebase)]
+        assert expected == results
