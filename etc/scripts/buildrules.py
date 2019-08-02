@@ -32,14 +32,13 @@ import os
 
 import click
 click.disable_unicode_literals_warning = True
+from license_expression import Licensing
 import saneyaml
 
+from licensedcode import cache
+from licensedcode import models
+from licensedcode import match_hash
 
-from licensedcode.models import Rule
-from licensedcode.models import update_ignorables
-
-
-TRACE = True
 
 def load_data(location='00-new-licenses.txt'):
     with io.open(location, encoding='utf-8') as o:
@@ -87,15 +86,13 @@ def rule_exists(text):
     """
     Return the matched rule if the text is an existing rule matched exactly, False otherwise.
     """
-    from licensedcode.cache import get_index
-    from licensedcode.match_hash import MATCH_HASH
-    idx = get_index()
+    idx = cache.get_index()
 
     matches = idx.match(query_string=text)
     if len(matches) != 1:
         return False
     match = matches[0]
-    if match.matcher == MATCH_HASH:
+    if match.matcher == match_hash.MATCH_HASH:
         return match.rule.identifier
 
 
@@ -104,13 +101,11 @@ def find_rule_base_loc(license_expression):
     Return a new, unique and non-existing base name location suitable to create a new
     rule.
     """
-    from licensedcode.models import rules_data_dir
-    # existing_names = set(n.rsplit('.', 1)[0] for n in os.listdir(rules_data_dir) if n.endswith('.RULE'))
     template = license_expression.lower().strip().replace(' ', '_').replace('(', '').replace(')', '') + '_{}'
     idx = 1
     while True:
         base_name = template.format(idx)
-        base_loc = os.path.join(rules_data_dir, base_name)
+        base_loc = os.path.join(models.rules_data_dir, base_name)
         if not os.path.exists(base_loc + '.RULE'):
             return base_loc
         idx += 1
@@ -130,12 +125,17 @@ def cli(licenses_file):
         is_license_notice: yes
         ---
         This program is free software; you can redistribute it and/or modify
-        it under the terms of the GNU Lesser General Public License         
-        version 2.1 as published by the Free Software Foundation;           
+        it under the terms of the GNU Lesser General Public License
+        version 2.1 as published by the Free Software Foundation;
         ----------------------------------------
     """
+
     rule_data = load_data(licenses_file)
     rules_tokens = set()
+
+    licenses = cache.get_licenses_db()
+    licensing = Licensing(licenses.values())
+
     print()
     for data, text in rule_data:
         rdat = '\n'.join(data)
@@ -154,6 +154,8 @@ def cli(licenses_file):
             license_expression = license_expression.strip()
             if not license_expression:
                 raise Exception('Missing license_expression for text:', rtxt)
+            licensing.parse(license_expression, validate=True, simple=True)
+
         base_loc = find_rule_base_loc(license_expression)
 
         data_file = base_loc + '.yml'
@@ -163,7 +165,7 @@ def cli(licenses_file):
         text_file = base_loc + '.RULE'
         with io.open(text_file, 'w', encoding='utf-8') as o:
             o.write(rtxt)
-        rule = Rule(data_file=data_file, text_file=text_file)
+        rule = models.Rule(data_file=data_file, text_file=text_file)
         rule_tokens = tuple(rule.tokens())
         if rule_tokens in rules_tokens:
             # cleanup
@@ -173,7 +175,7 @@ def cli(licenses_file):
         else:
             rules_tokens.add(rule_tokens)
             rule.dump()
-            update_ignorables(rule, verbose=True)
+            models.update_ignorables(rule, verbose=True)
             print('Rule added:', rule.identifier)
 
 
