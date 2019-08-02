@@ -1,0 +1,16 @@
+license_expression: tex-live
+is_license_text: yes
+relevance: 99
+notes: the tex-live license has many small variations
+ignorable_urls:
+    - http://latex-project.org/lppl.html
+    - http://www.ctan.org/tex-archive/help/Catalogue/
+    - http://www.debian.org/intro/free
+    - http://www.gnu.org/licenses/license-list.html
+    - http://www.gnu.org/philosophy/free-sw.html
+    - http://www.tug.org/tex-live
+    - http://www.tug.org/tex-live/
+    - http://www.tug.org/usergroups.html
+    - https://www.tug.org/donate.html
+ignorable_emails:
+    - texlive@tug.org

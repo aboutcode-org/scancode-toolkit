@@ -177,10 +177,13 @@ patterns = [
     # when lowercase with period. this is not a Copyright statement
     (r'^copyright\.\)?$', 'NN'),
 
-    # JUNK are things to ignore
-    # All Rights Reserved. should be a terminator/delimiter.
-    (r'^([Aa]ll|ALL|[Rr]ights?|RIGHTS?|[Rr]eserved[\.,]?|RESERVED[\.,]?)$', 'ALLRIGHT'),
+    # Rights Reserved.
+    # All|Some|No Rights Reserved. should be a terminator/delimiter.
+    #(r'^([Aa]ll|ALL|NO|no|[Ss]ome|SOME)$', 'ALL'),
+    (r'^([Rr]ights?|RIGHTS?)$', 'RIGHT'),
+    (r'^([Rr]eserved|RESERVED|[Rr]eversed|REVERSED)[\.,]*$', 'RESERVED'),
 
+    # JUNK are things to ignore
     # found in crypto certificates and LDAP
     (r'^(O=|OU=?|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginally?|[Rr]epresentations?\.?)$', 'JUNK'),
@@ -677,7 +680,7 @@ grammar = """
 #######################################
 
     # All/No/Some Rights Reserved
-    ALLRIGHTRESERVED: { <ALLRIGHT>?<ALLRIGHT><ALLRIGHT>}  #allrightsreserved
+    ALLRIGHTRESERVED: { <NNP|NN|CAPS><RIGHT><RESERVED>}  #allrightsreserved
 
 #######################################
 # NAMES and COMPANIES
@@ -1322,7 +1325,14 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NAME5>  <NN>  <NAME>} #3065
 
     # Copyright (c) 2011 The WebRTC project authors
-    COPYRIGHT: {<COPY><COPY>  <NAME3>  <AUTHS>} #1567}
+    COPYRIGHT: {<COPY>+  <NAME3>  <AUTHS>} #1567
+    
+    # all rights in the middle
+    # Copyright (c) All right reserved SSC. Ltd.
+    COPYRIGHT: {<COPY>+  <ALLRIGHTRESERVED>  <COMPANY>}  #15673
+
+    # Copyright (c) All Rights Reserved by the District Export Council of Georgia
+    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED>  <BY>  <NN>  <NAME> } #15674
 
 #######################################
 # Authors
@@ -1536,6 +1546,8 @@ COPYRIGHTS_SUFFIXES = frozenset([
     '0',
     '1',
     'author',
+    'all',
+    'some',
 ])
 
 
@@ -1581,6 +1593,7 @@ def refine_copyright(c):
     c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
 
     c = strip_balanced_edge_parens(c)
+    c = strip_trailing_period(c)
     return c.strip()
 
 
@@ -1642,6 +1655,7 @@ JUNK_HOLDERS = frozenset([
     'parts',
     'disclaimed',
     'or',
+    '<holders>'
 ])
 
 
@@ -1664,13 +1678,15 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'works',
         'present',
         'at',
-        # this may truncate rare companies named "all something"
-        'all',
         'right',
         'rights',
         'reserved',
     ])
 ))
+
+
+HOLDERS_PREFIXES_WITH_ALL = HOLDERS_PREFIXES.union(set(['all']))
+
 
 
 HOLDERS_SUFFIXES = frozenset([
@@ -1696,12 +1712,18 @@ HOLDERS_SUFFIXES = frozenset([
 ])
 
 
-def refine_holder(s, prefixes=HOLDERS_PREFIXES, junk_holders=JUNK_HOLDERS,
+def refine_holder(s, prefixes=HOLDERS_PREFIXES, 
+                  prefixes_with_all=HOLDERS_PREFIXES_WITH_ALL,
+                  junk_holders=JUNK_HOLDERS,
                   suffixes=HOLDERS_SUFFIXES):
     """
     Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
     """
+    # handle the acse where "all right reserved" is in the middle and the
+    # company name contains the word all.
+    if 'reserved' in s.lower():
+        prefixes = prefixes_with_all
     refined = _refine_names(s, prefixes)
     refined = strip_suffixes(refined, suffixes)
     refined = refined.strip()
@@ -1725,6 +1747,7 @@ JUNK_AUTHORS = frozenset([
     'james hacker',
     'company',
 ])
+
 
 AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
@@ -1829,6 +1852,7 @@ JUNK_AUTHORS = frozenset([
 # A junk copyright cannot be resolved otherwise by parsing with a grammar.
 # It would be best not to have to resort to this, but this is practical.
 JUNK_COPYRIGHTS = frozenset([
+    'copyright (c)',
     '(c)',
     'full copyright statement',
     'copyrighted by their authors',
@@ -1913,8 +1937,9 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright by',
     'copyrighted',
     'copyrighted by',
-
+    'copyright (c) <holders>',
 ])
+
 
 # simple tokenization: spaces and some punctuation
 splitter = re.compile('[\\t =;]+').split
@@ -1938,12 +1963,12 @@ class CopyrightDetector(object):
         Optionally filters node labels provided in the ignores set.
         """
         if ignores:
-            leaves = (leaf_text for leaf_text, leaf_label in node.leaves()
-                                            if leaf_label not in ignores)
+            leaves = [leaf_text for leaf_text, leaf_label in node.leaves()
+                                            if leaf_label not in ignores]
         else:
             leaves = (leaf_text for leaf_text, leaf_label in node.leaves())
 
-        node_string = ' '.join(leaves)
+        node_string = u' '.join(leaves)
         return u' '.join(node_string.split())
 
     def detect(self, numbered_lines,
@@ -1979,8 +2004,7 @@ class CopyrightDetector(object):
         if include_allrights:
             non_copyright_labels = frozenset()
         else:
-            non_copyright_labels = frozenset([
-                'ALLRIGHT', 'ALLRIGHTRESERVED', ])
+            non_copyright_labels = frozenset(['RIGHT', 'RESERVED',])
 
         if not include_years:
             non_copyright_labels = non_copyright_labels | frozenset([
@@ -1991,15 +2015,15 @@ class CopyrightDetector(object):
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
             'EMAIL', 'URL',
             'HOLDER', 'AUTHOR',
-            'ALLRIGHT', 'ALLRIGHTRESERVED',
-            ])
+            'RIGHT', 'RESERVED',
+        ])
 
         non_authors_labels = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
             'HOLDER', 'AUTHOR',
-            'ALLRIGHT', 'ALLRIGHTRESERVED',
-            ])
+            'RIGHT', 'RESERVED',
+        ])
 
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
@@ -2014,7 +2038,7 @@ class CopyrightDetector(object):
                 if node_text and node_text.strip():
                     refined = refine_copyright(node_text)
                     # checking for junk is a last resort
-                    if refined.lower() not in _junk:
+                    if refined and refined.lower() not in _junk:
 
                         if copyrights:
                             if TRACE: logger_debug('CopyrightDetector: detected copyrights:', refined, start_line, end_line)

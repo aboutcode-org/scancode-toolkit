@@ -1,6 +1,2 @@
 license_expression: epics
 is_license_text: yes
-ignorable_copyrights:
-    - (c) <HOLDERS>
-ignorable_holders:
-    - <HOLDERS>

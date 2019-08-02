@@ -3,7 +3,7 @@ is_license_text: yes
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - (c) dates of first publication Silicon Graphics, Inc.
+    - Copyright (c) dates of first publication Silicon Graphics, Inc.
 ignorable_holders:
     - dates of first publication Silicon Graphics, Inc.
 ignorable_urls:
