@@ -181,23 +181,23 @@ class Consolidator(PostScanPlugin):
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
         codebase.attributes.consolidated_packages = consolidated_packages = []
         codebase.attributes.consolidated_components = consolidated_components = []
-        for index, consolidation in enumerate(consolidations, start=1):
-            if isinstance(consolidation, ConsolidatedPackage):
-                if not consolidation.consolidation.resources:
+        for index, c in enumerate(consolidations, start=1):
+            if isinstance(c, ConsolidatedPackage):
+                if not c.consolidation.resources:
                     continue
-                identifier = python_safe_name('{}_{}'.format(consolidation.package.purl, index))
-                package.consolidation.identifier = identifier
-                for resource in consolidation.consolidation.resources:
+                identifier = python_safe_name('{}_{}'.format(c.package.purl, index))
+                c.consolidation.identifier = identifier
+                for resource in c.consolidation.resources:
                     resource.consolidated_to.append(identifier)
                     resource.save(codebase)
-                consolidated_packages.append(consolidation.to_dict())
-            elif isinstance(consolidation, ConsolidatedComponent):
+                consolidated_packages.append(c.to_dict())
+            elif isinstance(c, ConsolidatedComponent):
                 # Skip ConsolidatedComponents that do not have files in them
-                if not consolidation.consolidation.resources:
+                if not c.consolidation.resources:
                     continue
                 # TODO: Consider adding license expression to be part of name
-                holders = '_'.join(consolidation.consolidation.core_holders)
-                other_holders = '_'.join(consolidation.consolidation.other_holders)
+                holders = '_'.join(c.consolidation.core_holders)
+                other_holders = '_'.join(c.consolidation.other_holders)
                 holders = holders or other_holders
                 # We do not want the name to be too long
                 holders = holders[:65]
@@ -205,11 +205,11 @@ class Consolidator(PostScanPlugin):
                     identifier = python_safe_name('{}_{}'.format(holders, index))
                 else:
                     identifier = index
-                consolidation.consolidation.identifier = identifier
-                for resource in consolidation.consolidation.resources:
+                c.consolidation.identifier = identifier
+                for resource in c.consolidation.resources:
                     resource.consolidated_to.append(identifier)
                     resource.save(codebase)
-                consolidated_components.append(consolidation.to_dict())
+                consolidated_components.append(c.to_dict())
 
         # Dedupe and sort names in consolidated_to
         for resource in codebase.walk(topdown=True):
@@ -237,10 +237,12 @@ def get_consolidated_packages(codebase):
 
             discovered_license_expressions = []
             discovered_holders = []
+            is_build_file = isinstance(package, BaseBuildManifestPackage)
             for package_resource in package_resources:
-                # If a resource is part of a package Component, then it cannot be part of any other type of Component
-                package_resource.extra_data['in_package_component'] = True
-                package_resource.save(codebase)
+                if not is_build_file:
+                    # If a resource is part of a package Component, then it cannot be part of any other type of Component
+                    package_resource.extra_data['in_package_component'] = True
+                    package_resource.save(codebase)
 
                 package_resource_license_expression = combine_expressions(package_resource.license_expressions)
                 package_resource_holders = package_resource.holders
@@ -268,7 +270,7 @@ def get_consolidated_packages(codebase):
                 files_count=sum(1 for package_resource in package_resources if package_resource.is_file),
                 resources=package_resources,
             )
-            if isinstance(package, BaseBuildManifestPackage):
+            if is_build_file:
                 yield ConsolidatedComponent(
                     type='build',
                     consolidation=c

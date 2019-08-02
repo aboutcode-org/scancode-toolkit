@@ -150,3 +150,10 @@ class TestConsolidate(FileDrivenTesting):
         # The nested majority is just 1 file, but has a different origin than the rest of the files above it
         # and should be reported as a separate consolidated component
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
+
+    def test_consolidate_component_package_build_from_live_scan(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/component-package-build')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/component-package-build-expected.json')
+        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
