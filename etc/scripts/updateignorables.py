@@ -51,27 +51,24 @@ class _Nothing(object):
     pass
 
 
-NOTHING = _Nothing()
-
 
 @click.command()
 @click.argument('path',
-    default=NOTHING,
+    nargs=-1,
     type=click.Path(exists=False, allow_dash=False),
     metavar='PATH')
 
 
 @click.help_option('-h', '--help')
-def cli(path=None, update=True):
+def cli(path=(), update=True):
     """
     Update licenses and rules with ignorable copyrights, holders, authors URLs
     and emails.
     """
-
     licensish = list(cache.get_licenses_db().values()) + list(models.load_rules())
 
-    if path and path != NOTHING:
-        licensish = [l for l in licensish 
+    if path:
+        licensish = [l for l in licensish
             if l.text_file.endswith(path) or l.data_file.endswith(path)]
     refresh_ignorables(licensish)
 
