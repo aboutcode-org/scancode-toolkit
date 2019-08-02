@@ -141,7 +141,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     test_dirs = (path.join(test_dir, td) for td in
-        ('copyrights', 'ics', 'holders', 'authors', 'years'))
+        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated'))
 
     all_test_files = chain.from_iterable(
         get_test_file_pairs(td) for td in test_dirs)
