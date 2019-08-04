@@ -2,3 +2,8 @@ what:
   - holders
   - copyrights
   - authors
+expected_failures:
+  - holders
+  - copyrights
+  - authors
+  

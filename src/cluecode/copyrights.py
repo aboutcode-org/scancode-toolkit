@@ -1100,10 +1100,13 @@ patterns = [
 
     # company suffix
     (r'^[Ii]nc[.]?[,\.]?\)?$', 'COMP'),
-    (r'^[I]ncorporated[,\.]?\)?$', 'COMP'),
+    (r'^[Ii]ncorporated[,\.]?\)?$', 'COMP'),
+
+    # ,Inc. suffix without spaces is directly a company name
+    (r'^.+,Inc\.$', 'COMPANY'),
 
     (r'^[Cc]ompany[,\.]?\)?$', 'COMP'),
-    (r'^Limited[,\.]?\)?$', 'COMP'),
+    (r'^[Lllimited[,\.]?\)?$', 'COMP'),
     (r'^LIMITED[,\.]?\)?$', 'COMP'),
 
     # Caps company suffixes
@@ -1209,6 +1212,7 @@ patterns = [
     (r'^@author$', 'AUTH'),
 
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
+    (r'^contributors,$', 'CONTRIBUTORS'),
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
@@ -1414,8 +1418,8 @@ patterns = [
     (r'\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions: there are so main TLD these days!
     # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
@@ -2138,13 +2142,6 @@ grammar = """
     # Copyright (c) 2011 The WebRTC project authors
     COPYRIGHT: {<COPY>+ <NAME-YEAR> <AUTHS>} #1567
 
-    # all rights in the middle
-    # Copyright (c) All right reserved SSC. Ltd.
-    COPYRIGHT: {<COPY>+  <ALLRIGHTRESERVED> <COMPANY>}  #15673
-
-    # Copyright (c) All Rights Reserved by the District Export Council of Georgia
-    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY> <NN> <NAME> } #15674
-
     # Copyright (c), ALL Consulting, 2008
     COPYRIGHT: {<COPY>+ <NN> <NN>? <NNP> <YR-RANGE>} # 15675
 
@@ -2156,6 +2153,39 @@ grammar = """
     # complex with markup
     # Copyright (C) &amp;#36;today.year Google Inc.
     COPYRIGHT: {<COPY> <COPY> <ANDCO>} # 15677
+
+    ############ All right reserved in the middle ##############################
+    # Copyright (c) All Rights Reserved by the District Export Council of Georgia
+    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY>? <NN> <NAME> } #15674
+
+    # Copyright (c) All right reserved SSC. Ltd.
+    # Copyright (C) All Rights Reserved by Leh. www.leh.jp
+    # Copyright (c) 2014-2019 New Avenue Foundation.
+    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <NAME|NAME-YEAR|COMPANY> } # 15680
+
+    # Copyright (c) - All Rights Reserved - PROAIM Medical.
+    COPYRIGHT: {<COPY>+ <DASH>? <ALLRIGHTRESERVED> <DASHCAPS> <NNP> } # 15690
+
+    # Copyright(c) All rights reserved by Minds, Japan Council for Quality Health Care.
+    # Copyright(c) All Rights Reserved by Chinese Service Center for Scholarly Exchange
+    COPYRIGHT: {<COPY>+  <ALLRIGHTRESERVED>  <BY>  <NAME|COMPANY>  <NN>  <NAME>}  #15700
+
+    # Copyright(c) All rights reserved by IBM Corp.
+    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY> <NAME|NAME-YEAR|COMPANY> } # 15710
+
+    # Copyright 2019, All Rights Reserved. # Author Pine cdtsgsz@gmail.com
+    COPYRIGHT: {<COPYRIGHT2>  <ALLRIGHTRESERVED>  <AUTH>  <NNP>  <EMAIL>? } #15750
+
+    ############################################################################
+
+    # South Baylo University Copyright (c) All Right Reserved. 2018
+    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED> <YR-RANGE>?} #15720
+
+    # Crown Copyright C All rights reserved. or Crown Copyright (C) All rights reserved.
+    COPYRIGHT: {<NAME-COPY> <NAME-CAPS|COPY> <ALLRIGHTRESERVED>} #15730
+
+    # Copyright EAVISE
+    COPYRIGHT: {<COPY> <NAME-CAPS> } #15740
 
 #######################################
 # Authors
@@ -2214,6 +2244,14 @@ grammar = """
 
     # COPYRIGHT Written by John Cunningham Bowler, 2015.
     COPYRIGHT: {<COPY> <AUTHOR>} #4000
+
+    # Created by Samvel Khalatyan, May 28, 2013 Copyright 2013, All rights reserved
+    COPYRIGHT: {<AUTHOR> <NN>  <YR-RANGE>  <COPYRIGHT2>  <ALLRIGHTRESERVED>} #4200
+
+    # Created by shazron on 11-06-15. Copyright 2011 . All rights reserved.
+    # *  Created by claudio beatrice on 2/21/10. Copyright 2010. All rights reserved.
+    COPYRIGHT: {<AUTH> <NN|NNP><NN|NNP>+  <COPYRIGHT|COPYRIGHT2>  <ALLRIGHTRESERVED>} #4210
+
 
 #######################################
 # Last resort catch all ending with allrights
@@ -2451,12 +2489,42 @@ COPYRIGHTS_JUNK = frozenset([
 
 
 ################################################################################
+# AUTHORS CLEANUPS
+################################################################################
+
+AUTHORS_PREFIXES = frozenset(set.union(
+    set(PREFIXES),
+    set(['contributor', 'contributors', 'contributor(s)',
+        'authors', 'author', 'author:','author(s)', 'authored', 'created', 'author.',
+        'author\'', 'authors,', 'authorship',
+        ])
+))
+
+# Set of authors that get detected and are junk/false positive
+# note: this must be lowercase and be kept to a minimum.
+# A junk copyright cannot be resolved otherwise by parsing with a grammar.
+# It would be best not to have to resort to this, but this is practical.
+AUTHORS_JUNK = frozenset([
+    # in GNU licenses
+    'james hacker.',
+    'james random hacker.',
+    'contributor. c. a',
+    'grant the u.s. government and others',
+    'james random hacker',
+    'james hacker',
+    'company',
+    'contributing project',
+    'its author',
+])
+
+################################################################################
 # HOLDERS CLEANUPS
 ################################################################################
 
 HOLDERS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
-    set([
+    set(AUTHORS_PREFIXES),
+    set(['-',
         'a',
         '<a',
         'href',
@@ -2484,7 +2552,6 @@ HOLDERS_PREFIXES = frozenset(set.union(
 
 
 HOLDERS_PREFIXES_WITH_ALL = HOLDERS_PREFIXES.union(set(['all']))
-
 
 HOLDERS_SUFFIXES = frozenset([
     'http',
@@ -2528,37 +2595,6 @@ HOLDERS_JUNK = frozenset([
     'disclaimed',
     'or',
     '<holders>'
-])
-
-
-################################################################################
-# AUTHORS CLEANUPS
-################################################################################
-
-AUTHORS_PREFIXES = frozenset(set.union(
-    set(PREFIXES),
-    set(['contributor', 'contributors', 'contributor(s)',
-        'author', 'authors', 'author(s)', 'authored', 'created', 'author.',
-        'author\'', 'authors,', 'authorship',
-        ])
-))
-
-
-# Set of authors that get detected and are junk/false positive
-# note: this must be lowercase and be kept to a minimum.
-# A junk copyright cannot be resolved otherwise by parsing with a grammar.
-# It would be best not to have to resort to this, but this is practical.
-AUTHORS_JUNK = frozenset([
-    # in GNU licenses
-    'james hacker.',
-    'james random hacker.',
-    'contributor. c. a',
-    'grant the u.s. government and others',
-    'james random hacker',
-    'james hacker',
-    'company',
-    'contributing project',
-    'its author',
 ])
 
 
