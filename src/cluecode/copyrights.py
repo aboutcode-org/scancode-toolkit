@@ -470,6 +470,7 @@ patterns = [
     (r'^PART$', 'JUNK'),
     (r'^[Oo]riginally?$', 'JUNK'),
     (r'^[Rr]epresentations?\.?$', 'JUNK'),
+    (r'^works,$', 'JUNK'),
 
     (r'^Refer$', 'JUNK'),
     (r'^Apt$', 'JUNK'),
@@ -528,9 +529,11 @@ patterns = [
     (r'^ISUPPER?$', 'JUNK'),
     (r'^ISLOWER$', 'JUNK'),
     (r'^AppPublisher$', 'JUNK'),
+
     (r'^DISCLAIMS?$', 'JUNK'),
     (r'^SPECIFICALLY$', 'JUNK'),
 
+    (r'^IDENTIFICATION$', 'JUNK'),
     (r'^WARRANTIE?S?$', 'JUNK'),
     (r'^WARRANTS?$', 'JUNK'),
     (r'^WARRANTYS?$', 'JUNK'),
@@ -687,7 +690,7 @@ patterns = [
     (r'^Title:?$', 'JUNK'),
     (r'^Debianized-By:?$', 'JUNK'),
     (r'^Upstream-Maintainer:?$', 'JUNK'),
-    (r'^Content-MD5$', 'JUNK'),
+    (r'^Content', 'JUNK'),
     (r'^Upstream-Author:?$', 'JUNK'),
     (r'^Packaged-By:?$', 'JUNK'),
 
@@ -744,6 +747,7 @@ patterns = [
     (r'^Info$', 'JUNK'),
     (r'^GA$', 'JUNK'),
     (r'^unzip$', 'JUNK'),
+    (r'^EULA', 'JUNK'),
 
     # this is not Copr.
     (r'^Coproduct,?[,\.]?$$', 'JUNK'),
@@ -764,30 +768,6 @@ patterns = [
     # K.K. (a company suffix), needs special handling
     (r'^K.K.,?$', 'NAME'),
 
-    # NOT A CAPS
-    # [YEAR] W3C® (MIT, ERCIM, Keio, Beihang)."
-
-    (r'^YEAR', 'NN'),
-
-    # RCS keywords are plain nouns, not proper nouns
-    (r'^Header$', 'NN'),
-    (r'^Id$', 'NN'),
-    (r'^Locker$', 'NN'),
-    (r'^Log$', 'NN'),
-    (r'^RCSfile$', 'NN'),
-    (r'^Revision$', 'NN'),
-
-    # names with a slash that are NNP
-    # Research/Unidata , LCS/Telegraphics.
-    (r'^('
-      r'[A-Z]'
-      r'([a-z]|[A-Z])'
-      r'+/[A-Z][a-z]+[\.,]?'
-    r')$', 'NNP'),
-
-    # communications
-    (r'communications', 'NNP'),
-
     # MIT is problematic
     # With a comma, always CAPS (MIT alone is too error prone to be always tagged as CAPS
     (r'^MIT,$', 'CAPS'),
@@ -798,214 +778,224 @@ patterns = [
     # ISC is always a company
     (r'^MIT$', 'COMP'),
 
-    # Various NN, exceptions to NNP or CAPS
-    (r'^BUT$', 'NN'),
-    (r'^NOT$', 'NN'),
-    (r'^INCLUDING,?$', 'NN'),
-    (r'^It$', 'NN'),
-    (r'^Mac$', 'NN'),
-    (r'^Support$', 'NN'),
-    (r'^Information$', 'NN'),
-    (r'^Various$', 'NN'),
-    (r'^Mouse$', 'NN'),
-    (r'^Wheel$', 'NN'),
-    (r'^Vendors?$', 'NN'),
-    (r'^Commercial$', 'NN'),
-    (r'^Indemnified$', 'NN'),
-    (r'^Luxi$', 'NN'),
-    (r'^These$', 'NN'),
-    (r'^Several$', 'NN'),
-    (r'^GnuPG$', 'NN'),
-    (r'^WPA$', 'NN'),
-    (r'^Supplicant$', 'NN'),
-    (r'^TagSoup$', 'NN'),
-    (r'^Contact$', 'NN'),
-    (r'^IA64$', 'NN'),
-    (r'^Foreign$', 'NN'),
-    (r'^Data$', 'NN'),
-    (r'^Atomic$', 'NN'),
-    (r'^Pentium$', 'NN'),
-    (r'^Notes?$', 'NN'),
-    (r'^Delay$', 'NN'),
-    (r'^Separa.*$', 'NN'),
-    (r'^Added$', 'NN'),
-    (r'^Glib$', 'NN'),
-    (r'^Gnome$', 'NN'),
-    (r'^Gaim$', 'NN'),
-    (r'^Open$', 'NN'),
-    (r'^Possible$', 'NN'),
-    (r'^In$', 'NN'),
-    (r'^Read$', 'NN'),
-    (r'^Permissions?$', 'NN'),
-    (r'^New$', 'NN'),
-    (r'^Agreements?\.?$', 'NN'),
-    (r'^Immediately$', 'NN'),
-    (r'^Any$', 'NN'),
-    (r'^Custom$', 'NN'),
-    (r'^References?$', 'NN'),
-    (r'^Each$', 'NN'),
-    (r'^Education$', 'NN'),
-    (r'^AIRTM$', 'NN'),
-    (r'^Copying$', 'NN'),
-    (r'^Updated$', 'NN'),
-    (r'^Source$', 'NN'),
-    (r'^Code$', 'NN'),
-    (r'^Websites$', 'NN'),
-    (r'^Public\.?$', 'NN'),
-    (r'^Joint$', 'NN'),
-    (r'^Assignment$', 'NN'),
-    (r'^Work$', 'NN'),
-    (r'^Attribution$', 'NN'),
-    (r'^Phrase$', 'NN'),
-    (r'^Timer$', 'NN'),
-    (r'^Manager$', 'NN'),
-    (r'^AGPL.?$', 'NN'),
-    (r'^Baslerstr\.?$', 'NN'),
-    (r'^E-[Mm]ail$', 'NN'),
-    (r'^Email$', 'NN'),
-    (r'^Original$', 'NN'),
-    (r'^Library$', 'NN'),
-    (r'^Activation\.?$', 'NN'),
-    (r'^Authored$', 'NN'),
-    (r'^Linux$', 'NN'),
-    (r'^Target$', 'NN'),
-    (r'^Technical$', 'NN'),
-    (r'^Users?$', 'NN'),
-    (r'^Policy,?$', 'NN'),
-    (r'^Visit$', 'NN'),
-    (r'^Those$', 'NN'),
-    (r'^Cases$', 'NN'),
-    (r'^Norwegian$', 'NN'),
-    (r'^Act[\.,]?$', 'NN'),
-    (r'^Further$', 'NN'),
-    (r'^NOTICE\.?$', 'NN'),
-    (r'^Licen[cs]e,?$', 'NN'),
-    (r'^Patents??$', 'NN'),
-    (r'^Implementation$', 'NN'),
+    # NOT A CAPS
+    # [YEAR] W3C® (MIT, ERCIM, Keio, Beihang)."
+    (r'^YEAR', 'NN'),
 
-    # MORE NN exceptions to NNP or CAPS
-    # 'Berkeley Software Distribution',??
-    (r'^Unicode$', 'NN'),
-    (r'^Modified$', 'NN'),
-    (r'^NULL$', 'NN'),
-    (r'^FALSE$', 'NN'),
-    (r'^False$', 'NN'),
-    (r'^TRUE$', 'NN'),
-    (r'^True$', 'NN'),
-    (r'^Last$', 'NN'),
-    (r'^Predefined$', 'NN'),
-    (r'^If$', 'NN'),
-    (r'^Standard$', 'NN'),
-    (r'^Versions?\.?$', 'NN'),
-    (r'^Package$', 'NN'),
-    (r'^PACKAGE$', 'NN'),
-    (r'^Powered$', 'NN'),
-    (r'^Licen[cs]e[d\.e\:]?$', 'NN'),
-    (r'^License-Alias\:?$', 'NN'),
-    (r'^Legal$', 'NN'),
-    (r'^Entity$', 'NN'),
-    (r'^Indemnification\.?$', 'NN'),
-    (r'^IS$', 'NN'),
-    (r'^This$', 'NN'),
-    (r'^Java$', 'NN'),
-    (r'^DoubleClick$', 'NN'),
-    (r'^DOM$', 'NN'),
-    (r'^SAX$', 'NN'),
-    (r'^URL$', 'NN'),
-    (r'^Operating$', 'NN'),
-    (r'^Original$', 'NN'),
-    (r'^Release$', 'NN'),
-    (r'^IEEE$', 'NN'),
-    (r'^Std$', 'NN'),
+
+    # Various NN, exceptions to NNP or CAPS: note that some are open ended and
+    # do not end with a $
+
+    (r'^Activation\.?$', 'NN'),
+    (r'^Act[\.,]?$', 'NN'),
+    (r'^Added', 'NN'),
+    (r'^Additional$', 'NN'),
+    (r'^AGPL.?$', 'NN'),
+    (r'^Agreements?\.?$', 'NN'),
+    (r'^AIRTM$', 'NN'),
+    (r'^Android$', 'NN'),
+    (r'^Any$', 'NN'),
+    (r'^Appropriate', 'NN'),
+    (r'^APPROPRIATE', 'NN'),
+    (r'^Asset$', 'NN'),
+    (r'^Assignment', 'NN'),
+    (r'^Atomic$', 'NN'),
+    (r'^Attribution$', 'NN'),
+    (r'^Authored$', 'NN'),
+    (r'^Baslerstr\.?$', 'NN'),
     (r'^BSD$', 'NN'),
-    (r'^POSIX$', 'NN'),
-    (r'^Derivative$', 'NN'),
-    (r'^Works$', 'NN'),
-    (r'^Intellij$', 'NN'),
-    (r'^IDEA$', 'NN'),
-    (r'^README$', 'NN'),
-    (r'^NEWS$', 'NN'),
-    (r'^CHANGELOG$', 'NN'),
-    (r'^Change[lL]og$', 'NN'),
+    (r'^BUT$', 'NN'),
+    (r'^Cases$', 'NN'),
+    (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
-    (r'^SIGN$', 'NN'),
-    (r'^F2Wku$', 'NN'),
-    (r'^LegalTrademarks$', 'NN'),
-    (r'^OriginalFilename$', 'NN'),
-    (r'^Permission$', 'NN'),
-    (r'^Section$', 'NN'),
-    (r'^Related$', 'NN'),
-    (r'^Government\.?$', 'NN'),
-    (r'^PGP$', 'NN'),
-    (r'^Sort$', 'NN'),
-    (r'^Redistribution$', 'NN'),
-    (r'^Products?\.?$', 'NN'),
-    (r'^Customer\'?s?$', 'NN'),
-    (r'^Site\.?$', 'NN'),
-    (r'^Except$', 'NN'),
-    (r'^Trademarks?$', 'NN'),
-    (r'^Logos?$', 'NN'),
-    (r'^Grants?\.?$', 'NN'),
-    (r'^Mode$', 'NN'),
-    (r'^Email\:?$', 'NN'),
+    (r'^CHANGELOG$', 'NN'),
+    (r'^CHANGES$', 'NN'),
+    (r'^Code$', 'NN'),
+    (r'^Commercial', 'NN'),
+    (r'^Commons$', 'NN'),
+    (r'^Contact', 'NN'),
     (r'^Contracts?$', 'NN'),
     (r'^Convention$', 'NN'),
-    (r'^JMagnetic$', 'NN'),
-    (r'^Appropriate$', 'NN'),
-    (r'^Qualified$', 'NN'),
-    (r'^DISCLAIMED.?$', 'NN'),
-    (r'^Generated$', 'NN'),
-    (r'^Send$', 'NN'),
-
-    # exceptions to proper nouns
-    (r'^The$', 'NN'),
-    (r'^Commons$', 'NN'),
-    (r'^[Ii]ntltool$', 'NN'),
-    (r'^[Tt]ext$', 'NN'),
-    (r'^software$', 'NN'),
-    (r'^Permissions?$', 'NN'),
-    (r'^Natural$', 'NN'),
+    (r'^Copying', 'NN'),
+    (r'^COPYING', 'NN'),
+    (r'^Customer', 'NN'),
+    (r'^Custom$', 'NN'),
+    (r'^Data$', 'NN'),
+    (r'^Date$', 'NN'),
+    (r'^DATED', 'NN'),
+    (r'^Delay', 'NN'),
+    (r'^Derivative', 'NN'),
+    (r'^DISCLAIMED', 'NN'),
     (r'^Docs?$', 'NN'),
-    (r'^Jsunittest$', 'NN'),
-    (r'^Asset$', 'NN'),
-    (r'^Packaging$', 'NN'),
-    (r'^Tool$', 'NN'),
-    (r'^Android$', 'NN'),
-    (r'^Win32$', 'NN'),
+    (r'^DOCUMENTATION', 'NN'),
+    (r'^DOM$', 'NN'),
     (r'^Do$', 'NN'),
-    (r'^Xalan$', 'NN'),
-    (r'^Programming$', 'NN'),
-    (r'^Objects$', 'NN'),
-    (r'^Material$', 'NN'),
-    (r'^Improvement$', 'NN'),
-    (r'^Example$', 'NN'),
-    (r'^COPYING$', 'NN'),
-    (r'^Experimental$', 'NN'),
-    (r'^Additional$', 'NN'),
-    (r'^So$', 'NN'),
-    (r'^HylaFAX$', 'NN'),
-
-    # MORE NN exceptions to CAPS
-    (r'^OR$', 'NN'),
-    (r'^VALUE$', 'NN'),
+    (r'^DoubleClick$', 'NN'),
+    (r'^Each$', 'NN'),
+    (r'^Education$', 'NN'),
+    (r'^E-?[Mm]ail\:?$', 'NN'),
     (r'^END$', 'NN'),
-    (r'^TODO$', 'NN'),
-    (r'^DOCUMENTATION$', 'NN'),
-    (r'^CHANGES$', 'NN'),
+    (r'^Entity$', 'NN'),
+    (r'^Example$', 'NN'),
+    (r'^Except$', 'NN'),
+    (r'^Experimental$', 'NN'),
+    (r'^F2Wku$', 'NN'),
+    (r'^False$', 'NN'),
+    (r'^FALSE$', 'NN'),
+    (r'^FAQ', 'NN'),
+    (r'^Foreign', 'NN'),
+    (r'^Further', 'NN'),
+    (r'^Gaim$', 'NN'),
+    (r'^Generated', 'NN'),
+    (r'^Glib$', 'NN'),
+    (r'^Gnome$', 'NN'),
+    (r'^GnuPG$', 'NN'),
+    (r'^Government', 'NN'),
+    (r'^Grants?\.?,?$', 'NN'),
+    (r'^Header', 'NN'),
+    (r'^HylaFAX$', 'NN'),
+    (r'^IA64$', 'NN'),
+    (r'^IDEA$', 'NN'),
+    (r'^Id$', 'NN'),
+    (r'^IEEE$', 'NN'),
+    (r'^If$', 'NN'),
+    (r'^[Ii]ntltool$', 'NN'),
+    (r'^Immediately$', 'NN'),
+    (r'^Implementation', 'NN'),
+    (r'^Improvement', 'NN'),
+    (r'^INCLUDING', 'NN'),
+    (r'^Indemnification', 'NN'),
+    (r'^Indemnified', 'NN'),
+    (r'^Information', 'NN'),
+    (r'^In$', 'NN'),
+    (r'^Intellij$', 'NN'),
     (r'^ISC-LICENSE$', 'NN'),
-    (r'^PROVIDED$', 'NN'),
-    (r'^SOFTWARE$', 'NN'),
-    (r'^RECURSIVE$', 'NN'),
-    (r'^VIEW$', 'NN'),
-    (r'^[Rr]espective$', 'NN'),
+    (r'^IS$', 'NN'),
+    (r'^It$', 'NN'),
+    (r'^Java$', 'NN'),
     (r'^JavaScript$', 'NN'),
-    (r'^[Tt]his$', 'NN'),
+    (r'^JMagnetic$', 'NN'),
+    (r'^Joint$', 'NN'),
+    (r'^Jsunittest$', 'NN'),
+    (r'^Last$', 'NN'),
+    (r'^LAW', 'NN'),
+    (r'^Legal$', 'NN'),
+    (r'^LegalTrademarks$', 'NN'),
+    (r'^Library$', 'NN'),
+    (r'^Libraries$', 'NN'),
+    # (r'^Licen[cs]e[d\.e\:]?$', 'NN'),
+    (r'^Licen[cs]e', 'NN'),
+    (r'^License-Alias\:?$', 'NN'),
+    (r'^Linux$', 'NN'),
+    (r'^Locker$', 'NN'),
+    (r'^Log$', 'NN'),
+    (r'^Logos?$', 'NN'),
+    (r'^Luxi$', 'NN'),
+    (r'^Mac$', 'NN'),
+    (r'^Manager$', 'NN'),
+    (r'^Mate    rial$', 'NN'),
+    (r'^Mode$', 'NN'),
+    (r'^Modified$', 'NN'),
+    (r'^Mouse$', 'NN'),
+    (r'^Natural$', 'NN'),
+    (r'^New$', 'NN'),
+    (r'^NEWS$', 'NN'),
+    (r'^Norwegian$', 'NN'),
+    (r'^Notes?$', 'NN'),
+    (r'^NOTICE', 'NN'),
+    (r'^NOT$', 'NN'),
+    (r'^NULL$', 'NN'),
+    (r'^Objects$', 'NN'),
+    (r'^Open$', 'NN'),
+    (r'^Operating$', 'NN'),
+    (r'^OriginalFilename$', 'NN'),
+    (r'^Original$', 'NN'),
+    (r'^OR$', 'NN'),
+    (r'^OWNER', 'NN'),
+    (r'^Package$', 'NN'),
+    (r'^PACKAGE$', 'NN'),
+    (r'^Packaging$', 'NN'),
+    (r'^Patent', 'NN'),
+    (r'^Pentium$', 'NN'),
+    (r'^[Pp]ermission', 'NN'),
+    # (r'^[Pp]ermissions?$', 'NN'),
+    # (r'^Permissions?$', 'NN'),
+    (r'^PERMISSIONS?', 'NN'),
+    (r'^PGP$', 'NN'),
+    (r'^Phrase', 'NN'),
+    (r'^Policy', 'NN'),
+    (r'^POSIX$', 'NN'),
+    (r'^Possible', 'NN'),
+    (r'^Powered$', 'NN'),
+    (r'^Predefined$', 'NN'),
+    (r'^Products?\.?$', 'NN'),
+    (r'^Programming$', 'NN'),
+    (r'^PROOF', 'NN'),
+    (r'^PROVIDED$', 'NN'),
+    (r'^Public\.?$', 'NN'),
+    (r'^Qualified$', 'NN'),
+    (r'^RCSfile$', 'NN'),
+    (r'^README$', 'NN'),
+    (r'^Read$', 'NN'),
+    (r'^RECURSIVE$', 'NN'),
+    (r'^Redistribution', 'NN'),
+    (r'^References', 'NN'),
+    (r'^Related$', 'NN'),
+    (r'^Release', 'NN'),
+    (r'^Revision', 'NN'),
+    (r'^RIGHT', 'NN'),
+    (r'^[Rr]espective', 'NN'),
+    (r'^SAX$', 'NN'),
+    (r'^Section', 'NN'),
+    (r'^Send$', 'NN'),
+    (r'^Separa', 'NN'),
+    (r'^Several$', 'NN'),
+    (r'^SIGN$', 'NN'),
+    (r'^Site\.?$', 'NN'),
+    (r'^software$', 'NN'),
+    (r'^SOFTWARE$', 'NN'),
+    (r'^So$', 'NN'),
+    (r'^Sort$', 'NN'),
+    (r'^Source$', 'NN'),
+    (r'^Standard$', 'NN'),
+    (r'^Std$', 'NN'),
+    (r'^Supplicant', 'NN'),
+    (r'^Support', 'NN'),
+    (r'^TagSoup$', 'NN'),
+    (r'^Target$', 'NN'),
+    (r'^Technical$', 'NN'),
+    (r'^The$', 'NN'),
+    (r'^THE', 'NN'),
+    (r'^These$', 'NN'),
+    (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
-    (r'^[Pp]ermissions?$', 'NN'),
-    (r'^PERMISSIONS?$', 'NN'),
+    (r'^Those$', 'NN'),
+    (r'^Timer$', 'NN'),
+    (r'^TODO$', 'NN'),
+    (r'^Tool$', 'NN'),
+    (r'^Trademarks?$', 'NN'),
+    (r'^True$', 'NN'),
+    (r'^TRUE$', 'NN'),
+    (r'^[Tt]ext$', 'NN'),
+    (r'^Unicode$', 'NN'),
+    (r'^Updated$', 'NN'),
+    (r'^URL$', 'NN'),
+    (r'^Users?$', 'NN'),
+    (r'^VALUE$', 'NN'),
+    (r'^Various', 'NN'),
+    (r'^Vendor', 'NN'),
+    (r'^Version', 'NN'),
+    (r'^VIEW$', 'NN'),
+    (r'^Visit', 'NN'),
+    (r'^Website', 'NN'),
+    (r'^Wheel$', 'NN'),
+    (r'^Win32$', 'NN'),
+    (r'^Work', 'NN'),
+    (r'^WPA$', 'NN'),
+    (r'^Xalan$', 'NN'),
+    (r'^YOUR', 'NN'),
 
     # Date/Day/Month text references
-    (r'^Date$', 'NN'),
     (r'^am$', 'NN'),
     (r'^pm$', 'NN'),
     (r'^AM$', 'NN'),
@@ -1028,9 +1018,24 @@ patterns = [
     (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
     (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)$', 'NN'),
 
+    # Things that end with "ing" are NNs
+    # (r'^.*ing[\.,]?$', 'NN'),
+
     ############################################################################
     # Proper Nouns
     ############################################################################
+
+    # names with a slash that are NNP
+    # Research/Unidata , LCS/Telegraphics.
+    (r'^('
+       r'[A-Z]'
+       r'([a-z]|[A-Z])+'
+       r'/'
+       r'[A-Z][a-z]+[\.,]?'
+     r')$', 'NNP'),
+
+    # communications
+    (r'communications', 'NNP'),
 
     # Places: TODO: these are NOT NNPs but we treat them as such for now
     (r'^\(?'
@@ -1100,14 +1105,14 @@ patterns = [
 
     # company suffix
     (r'^[Ii]nc[.]?[,\.]?\)?$', 'COMP'),
-    (r'^[Ii]ncorporated[,\.]?\)?$', 'COMP'),
+    (r'^Incorporated[,\.]?\)?$', 'COMP'),
 
     # ,Inc. suffix without spaces is directly a company name
     (r'^.+,Inc\.$', 'COMPANY'),
 
     (r'^[Cc]ompany[,\.]?\)?$', 'COMP'),
-    (r'^[Lllimited[,\.]?\)?$', 'COMP'),
-    (r'^LIMITED[,\.]?\)?$', 'COMP'),
+    (r'^Limited[,\.]??$', 'COMP'),
+    (r'^LIMITED[,\.]??$', 'COMP'),
 
     # Caps company suffixes
     (r'^INC\.?,?\)?$', 'COMP'),
@@ -1214,25 +1219,19 @@ patterns = [
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
     (r'^contributors,$', 'CONTRIBUTORS'),
 
+    # same for developed, etc...
+    (r'^[Cc]oded$', 'AUTH2'),
+    (r'^[Mm]odified$', 'AUTH2'),
+    (r'^[Cc]reated$', 'AUTH2'),
+    (r'^[Ww]ritten$', 'AUTH2'),
+    (r'^[Mm]aintained$', 'AUTH2'),
+    (r'^[Dd]eveloped$', 'AUTH2'),
+
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
 
     # same for maintainers, developers, admins.
     (r'^[Aa]dmins?$', 'MAINT'),
-
-    # same for developed, etc...
-    (r'^[Cc]oded$', 'AUTH2'),
-    (r'^[Rr]ecoded$', 'AUTH2'),
-    (r'^[Mm]odified$', 'AUTH2'),
-    (r'^[Cc]reated$', 'AUTH2'),
-    (r'^[Ww]ritten$', 'AUTH2'),
-
-    (r'^[Mm]aintained$', 'AUTH2'),
-    (r'^[Mm]aintainer$', 'AUTH2'),
-
-    (r'^[Dd]eveloped$', 'AUTH2'),
-
-    # FIXME: why MAINT??
     (r'^[Dd]evelopers?\.?$', 'MAINT'),
     (r'^[Mm]aintainers?\.?$', 'MAINT'),
     (r'^co-maintainers?$', 'MAINT'),
@@ -1371,7 +1370,7 @@ patterns = [
     (r'^iClick,?$', 'NNP'),
 
     # proper nouns with digits
-    (r'^([A-Z][a-z0-9]+){1,2}.?$', 'NNP'),
+    (r'^([A-Z][a-z0-9]+){1,2}\.?$', 'NNP'),
 
     # saxon genitive, ie. Philippe's
     (r"^[A-Z][a-z]+[']s$", 'NNP'),
@@ -1399,7 +1398,7 @@ patterns = [
 
     # proper noun: first CAP, including optional trailing comma
     # note: this also captures a bare comma as an NNP ... this is a bug
-    (r'^(([A-Z][a-zA-Z0-9]+){,2},?)$', 'NNP'),
+    (r'^([A-Z][a-zA-Z0-9]+){,2}\.?,?$', 'NNP'),
 
     ############################################################################
     # URLS and emails
@@ -1600,9 +1599,6 @@ grammar = """
 
     # NAME-YEAR starts or ends with a YEAR range
     NAME-YEAR: {<YR-RANGE> <NNP> <NNP>+} #350
-
-    # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
-    NAME-YEAR: {<YR-RANGE> <NN> <CAPS> <NN> <NN> <AUTHDOT>} #35011
 
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
@@ -2154,7 +2150,20 @@ grammar = """
     # Copyright (C) &amp;#36;today.year Google Inc.
     COPYRIGHT: {<COPY> <COPY> <ANDCO>} # 15677
 
+    # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
+    COPYRIGHT: {<COPYRIGHT> <NN> <AUTHDOT>} #35011
+
     ############ All right reserved in the middle ##############################
+
+    # http//www.enox.biz/ Copyright (C) All rights Reserved by Enoxbiz
+    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED>  <BY>  <NAME>}     #15800
+
+    # South Baylo University Copyright (c) All Right Reserved. 2018
+    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED> <YR-RANGE>?}      #15720
+
+    # Crown Copyright C All rights reserved. or Crown Copyright (C) All rights reserved.
+    COPYRIGHT: {<NAME-COPY> <NAME-CAPS|COPY> <ALLRIGHTRESERVED>}                #15730
+
     # Copyright (c) All Rights Reserved by the District Export Council of Georgia
     COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY>? <NN> <NAME> } #15674
 
@@ -2173,19 +2182,7 @@ grammar = """
     # Copyright(c) All rights reserved by IBM Corp.
     COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY> <NAME|NAME-YEAR|COMPANY> } # 15710
 
-    # Copyright 2019, All Rights Reserved. # Author Pine cdtsgsz@gmail.com
-    COPYRIGHT: {<COPYRIGHT2>  <ALLRIGHTRESERVED>  <AUTH>  <NNP>  <EMAIL>? } #15750
-
     ############################################################################
-
-    # South Baylo University Copyright (c) All Right Reserved. 2018
-    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED> <YR-RANGE>?} #15720
-
-    # Crown Copyright C All rights reserved. or Crown Copyright (C) All rights reserved.
-    COPYRIGHT: {<NAME-COPY> <NAME-CAPS|COPY> <ALLRIGHTRESERVED>} #15730
-
-    # Copyright EAVISE
-    COPYRIGHT: {<COPY> <NAME-CAPS> } #15740
 
 #######################################
 # Authors
@@ -2193,13 +2190,17 @@ grammar = """
 
     # developed by Project Mayo.
     AUTHOR: {<AUTH2>+ <BY> <COMPANY> <NNP>}        #2645-1
+
     # Created by XYZ
     AUTH: {<AUTH2>+ <BY>}        #2645-2
 
-    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+    # by  Yukihiro Matsumoto matz@netlab.co.jp.
+    # AUTH: {<BY> <NAME>}        #2645-3
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
 
-    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #2660
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}       #2660
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME-EMAIL>+}        #2670
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
@@ -2248,16 +2249,14 @@ grammar = """
     # Created by Samvel Khalatyan, May 28, 2013 Copyright 2013, All rights reserved
     COPYRIGHT: {<AUTHOR> <NN>  <YR-RANGE>  <COPYRIGHT2>  <ALLRIGHTRESERVED>} #4200
 
-    # Created by shazron on 11-06-15. Copyright 2011 . All rights reserved.
-    # *  Created by claudio beatrice on 2/21/10. Copyright 2010. All rights reserved.
-    COPYRIGHT: {<AUTH> <NN|NNP><NN|NNP>+  <COPYRIGHT|COPYRIGHT2>  <ALLRIGHTRESERVED>} #4210
-
 
 #######################################
 # Last resort catch all ending with allrights
 #######################################
 
-    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY> <COPY|NNP|AUTHDOT|CAPS|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
+    COPYRIGHT: {<COMPANY><COPY>+<ALLRIGHTRESERVED>}        #99900
+
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
 """
 
@@ -2274,14 +2273,15 @@ def refine_copyright(c):
     c = u' '.join(c.split())
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
-    c = c.strip('/ ')
+    c = c.strip(u'/ ')
     # c = fix_trailing_space_dot(c)
     c = strip_all_unbalanced_parens(c)
-    c = remove_dupe_copyright_words(c)
     c = remove_same_extra_words(c)
+    c = u' '.join(c.split())
+    c = remove_dupe_copyright_words(c)
+    c = strip_prefixes(c, prefixes=set([u'by', u'c']))
     c = c.strip()
-    c = strip_prefixes(c, prefixes=set(['by']))
-    c = c.strip('+')
+    c = c.strip(u'+')
     c = strip_balanced_edge_parens(c)
     c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
     c = strip_trailing_period(c)
@@ -2295,7 +2295,7 @@ def refine_holder(h):
     """
     # handle the acse where "all right reserved" is in the middle and the
     # company name contains the word all.
-    if 'reserved' in h.lower():
+    if u'reserved' in h.lower():
         prefixes = HOLDERS_PREFIXES_WITH_ALL
     else:
         prefixes = HOLDERS_PREFIXES
@@ -2397,6 +2397,7 @@ COPYRIGHTS_SUFFIXES = frozenset([
 # A junk copyright cannot be resolved otherwise by parsing with a grammar.
 # It would be best not to have to resort to this, but this is practical.
 COPYRIGHTS_JUNK = frozenset([
+    'c',
     'copyright (c)',
     '(c)',
     'full copyright statement',
@@ -2494,10 +2495,21 @@ COPYRIGHTS_JUNK = frozenset([
 
 AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
-    set(['contributor', 'contributors', 'contributor(s)',
-        'authors', 'author', 'author:','author(s)', 'authored', 'created', 'author.',
-        'author\'', 'authors,', 'authorship',
-        ])
+    set([
+        'contributor',
+        'contributors',
+        'contributor(s)',
+        'authors',
+        'author',
+        'author:',
+        'author(s)',
+        'authored',
+        'created',
+        'author.',
+        'author\'',
+        'authors,',
+        'authorship',
+    ])
 ))
 
 # Set of authors that get detected and are junk/false positive
@@ -2523,8 +2535,8 @@ AUTHORS_JUNK = frozenset([
 
 HOLDERS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
-    set(AUTHORS_PREFIXES),
-    set(['-',
+    set([
+        '-',
         'a',
         '<a',
         'href',
@@ -2628,6 +2640,9 @@ def remove_same_extra_words(c):
     c = c.replace('date-of-document', ' ')
     c = c.replace(' $ ', ' ')
     c = c.replace(' ? ', ' ')
+    c = c.replace('</a>', ' ')
+    c = c.replace('( )', ' ')
+    c = c.replace('()', ' ')
     return c
 
 

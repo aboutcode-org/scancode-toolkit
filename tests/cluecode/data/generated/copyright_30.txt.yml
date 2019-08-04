@@ -6,3 +6,8 @@ copyrights:
   - Copyright EAVISE
 holders:
   - EAVISE
+expected_failures:
+  - holders
+  - copyrights
+  - authors
+

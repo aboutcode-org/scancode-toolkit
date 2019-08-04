@@ -2,7 +2,10 @@ what:
   - holders
   - copyrights
   - authors
-copyrights:
-  - Created by shazron on 11-06-15. Copyright 2011
-holders:
+authors:
   - shazron on 11-06-15
+copyrights:
+  - Copyright 2011
+expected_failures:
+  - authors
+

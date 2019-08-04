@@ -2,7 +2,10 @@ what:
   - holders
   - copyrights
   - authors
-copyrights:
-  - Created by claudio beatrice on 2/21/10. Copyright 2010
-holders:
+authors:
   - claudio beatrice on 2/21/10
+copyrights:
+  - Copyright 2010
+expected_failures:
+  - authors
+
