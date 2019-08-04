@@ -1,0 +1,1 @@
+copyright__ = 'Copyright 2017 AllThingsTalk'

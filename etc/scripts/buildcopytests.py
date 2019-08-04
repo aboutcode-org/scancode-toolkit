@@ -29,7 +29,6 @@ from __future__ import print_function
 
 import io
 from os import path
-from os import listdir
 import sys
 
 import click
@@ -66,16 +65,18 @@ def find_test_file_loc(test_data_dir):
         idx += 1
 
 
-def build_dupe_index(test_data_dir):
+def build_dupe_index():
     """
     Return a set of existing generated copyright tests (to avoid duplication)
     """
     existing = set()
-    for name in listdir(test_data_dir):
-        if name.endswith('.yml'):
-            continue
-        with io.open(path.join(test_data_dir, name)) as cf:
-            existing.add(cf.read())
+    for test in cluecode_test_utils.load_copyright_tests():
+        try:
+            with io.open(test.test_file) as tf:
+                existing.add(tf.read().strip())
+        except UnicodeDecodeError:
+            with io.open(test.test_file, 'rb') as tf:
+                existing.add(tf.read().strip())
     return existing
 
 
@@ -94,7 +95,7 @@ def cli(copyrights_file):
 
     test_data_dir = path.join(cluecode_test_utils.test_env.test_data_dir, 'generated')
 
-    existing = build_dupe_index(test_data_dir)
+    existing = build_dupe_index()
 
     print()
 

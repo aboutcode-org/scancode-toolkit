@@ -49,13 +49,10 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 expected_failures = set('''
+    test_fossology_copyright_testdata5
     test_fossology_copyright_testdata19
-    test_fossology_copyright_testdata31
     test_fossology_copyright_testdata78
     test_fossology_copyright_testdata86
-    test_fossology_copyright_testdata14
-    test_fossology_copyright_testdata5
-    test_fossology_copyright_testdata24
     '''.split()
 )
 

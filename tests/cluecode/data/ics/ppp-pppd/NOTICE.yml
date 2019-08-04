@@ -35,12 +35,15 @@ holders:
   - Sun Microsystems, Inc.
   - Tommi Komulainen
   - INRIA
+  - Francis.Dupont@inria.fr
 holders_summary:
   - value: Paul Mackerras
     count: 7
   - value: Carnegie Mellon University
     count: 1
   - value: Eric Rosenquist
+    count: 1
+  - value: Francis.Dupont@inria.fr
     count: 1
   - value: INRIA
     count: 1
@@ -54,3 +57,4 @@ holders_summary:
     count: 1
   - value: Tommi Komulainen
     count: 1
+

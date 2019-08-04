@@ -10,11 +10,15 @@ copyrights:
 holders:
   - Tommi Komulainen
   - INRIA
+  - Francis.Dupont@inria.fr
   - Carnegie Mellon University
 holders_summary:
   - value: Carnegie Mellon University
+    count: 1
+  - value: Francis.Dupont@inria.fr
     count: 1
   - value: INRIA
     count: 1
   - value: Tommi Komulainen
     count: 1
+

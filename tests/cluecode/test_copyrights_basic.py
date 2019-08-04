@@ -204,7 +204,7 @@ class TestTextPreparation(FileBasedTesting):
             '''.splitlines()
 
         for line in lines:
-            line, _= copyrights_module.prep_line(line)
+            line, _ = copyrights_module.prep_line(line)
             assert not copyrights_module.is_candidate(line)
 
 

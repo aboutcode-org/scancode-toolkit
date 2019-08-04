@@ -13,9 +13,10 @@ jobs:
           python_versions: ['2.7']
           test_suites:
               misc: |
-                bin/py.test -vvs --reruns=3 --test-suite=all \
+                bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
                   --ignore=tests/scancode \
                   --ignore=tests/packagedcode \
+                  --ignore=tests/plugincode \
                   --ignore=tests/extractcode \
                   --ignore=tests/cluecode \
                   --ignore=tests/licensedcode
@@ -69,10 +70,6 @@ jobs:
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicensishIgnorables
 
-              packagedcode: |
-                bin/py.test  -n 3 -vvs --test-suite=all \
-                  tests/packagedcode
-
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: Win2016_32_py27
@@ -123,12 +120,15 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suite_label: commoncode and plugincode
+          test_suite_label: ported code
           test_suite: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
-                    tests/extractcode \
-                    tests/plugincode 
+            bin/py.test  -n 2 -vvs \
+              tests/commoncode \
+              tests/typecode \
+              tests/extractcode \
+              tests/plugincode 
+
+
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -254,8 +254,8 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test  -vvs tests\commoncode
               other: |
-                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode 
-              
+                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode
+
 ################################################################################
 # These jobs are using containers and their own Python 3.6
 ################################################################################
@@ -281,22 +281,13 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: commoncode
+          test_suite_label: ported code
           test_suite: |
-                bin/py.test -vvs tests/commoncode 
-
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py36_2
-          container: ubuntu:bionic
-          python_path: python3.6
-          python_version: '3.6'
-          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: other
-          test_suite: |
-                bin/py.test -vvs tests/typecode \
-                    tests/extractcode \
-                    tests/plugincode 
+            bin/py.test  -n 2 -vvs \
+              tests/commoncode \
+              tests/typecode \
+              tests/extractcode \
+              tests/plugincode 
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
