@@ -142,7 +142,7 @@ def cli(licenses_file):
         rtxt = '\n'.join(text)
         existing = rule_exists(rtxt)
         if existing:
-            print('Skipping existing rule:', existing, 'with text:\n', rtxt[:50], '...')
+            print('Skipping existing rule:', existing, 'with text:\n', rtxt[:50].strip(), '...')
             continue
 
         # validate YAML syntax
