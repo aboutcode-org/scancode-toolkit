@@ -98,14 +98,10 @@ class Consolidation(object):
             combined_license_expression = combine_expressions(license_expressions_to_combine)
             if combined_license_expression:
                 self.consolidated_license_expression = str(Licensing().parse(combined_license_expression).simplify())
-        self.consolidated_copyright = self.consolidate_copyright()
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
-
-    def consolidate_copyright(self):
+        self.consolidated_holders = sorted(set(list(self.core_holders) + list(self.other_holders)))
         # TODO: Verify and test that we are generating detectable copyrights
-        if not self.consolidated_holders:
-            self.consolidated_holders = sorted(set(list(self.core_holders) + list(self.other_holders)))
-        return 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
+        self.consolidated_copyright = 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
+        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
 
 @attr.s
@@ -182,9 +178,10 @@ class Consolidator(PostScanPlugin):
         codebase.attributes.consolidated_packages = consolidated_packages = []
         codebase.attributes.consolidated_components = consolidated_components = []
         for index, c in enumerate(consolidations, start=1):
+            # Skip consolidation if it does not have any Resources
+            if not c.consolidation.resources:
+                continue
             if isinstance(c, ConsolidatedPackage):
-                if not c.consolidation.resources:
-                    continue
                 identifier = python_safe_name('{}_{}'.format(c.package.purl, index))
                 c.consolidation.identifier = identifier
                 for resource in c.consolidation.resources:
@@ -192,19 +189,21 @@ class Consolidator(PostScanPlugin):
                     resource.save(codebase)
                 consolidated_packages.append(c.to_dict())
             elif isinstance(c, ConsolidatedComponent):
-                # Skip ConsolidatedComponents that do not have files in them
-                if not c.consolidation.resources:
-                    continue
-                # TODO: Consider adding license expression to be part of name
-                holders = '_'.join(c.consolidation.core_holders)
-                other_holders = '_'.join(c.consolidation.other_holders)
-                holders = holders or other_holders
-                # We do not want the name to be too long
-                holders = holders[:65]
-                if holders:
-                    identifier = python_safe_name('{}_{}'.format(holders, index))
+                if c.consolidation.identifier:
+                    # Use existing identifier
+                    identifier = python_safe_name('{}_{}'.format(c.consolidation.identifier, index))
                 else:
-                    identifier = index
+                    # Create identifier if we don't have one
+                    # TODO: Consider adding license expression to be part of name
+                    holders = '_'.join(c.consolidation.core_holders)
+                    other_holders = '_'.join(c.consolidation.other_holders)
+                    holders = holders or other_holders
+                    # We do not want the name to be too long
+                    holders = holders[:65]
+                    if holders:
+                        identifier = python_safe_name('{}_{}'.format(holders, index))
+                    else:
+                        identifier = index
                 c.consolidation.identifier = identifier
                 for resource in c.consolidation.resources:
                     resource.consolidated_to.append(identifier)
@@ -224,6 +223,7 @@ def get_consolidated_packages(codebase):
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
+            is_build_file = isinstance(package, BaseBuildManifestPackage)
             package_resources = list(package.get_package_resources(resource, codebase))
             package_license_expression = package.license_expression
             package_copyright = package.copyright
@@ -237,7 +237,6 @@ def get_consolidated_packages(codebase):
 
             discovered_license_expressions = []
             discovered_holders = []
-            is_build_file = isinstance(package, BaseBuildManifestPackage)
             for package_resource in package_resources:
                 if not is_build_file:
                     # If a resource is part of a package Component, then it cannot be part of any other type of Component
@@ -271,6 +270,7 @@ def get_consolidated_packages(codebase):
                 resources=package_resources,
             )
             if is_build_file:
+                c.identifier = package.name
                 yield ConsolidatedComponent(
                     type='build',
                     consolidation=c

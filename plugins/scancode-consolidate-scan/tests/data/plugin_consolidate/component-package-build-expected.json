@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "build",
-      "identifier": 1,
+      "identifier": "build_1",
       "consolidated_license_expression": null,
       "consolidated_holders": [],
       "consolidated_copyright": "Copyright (c) ",
@@ -193,7 +193,7 @@
         }
       ],
       "consolidated_to": [
-        1
+        "build_1"
       ],
       "files_count": 1,
       "dirs_count": 0,
@@ -225,7 +225,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        1
+        "build_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
