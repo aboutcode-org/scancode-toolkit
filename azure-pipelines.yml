@@ -60,16 +60,6 @@ jobs:
                 bin/py.test -n 3 --reruns=3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
-              license_validate: |
-                bin/py.test -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_validate.py \
-                  -k TestValidateLicenseDetectionOnLicenseRuleTexts
-
-              license_ignorable: | 
-                bin/py.test -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_validate.py \
-                  -k TestValidateLicensishIgnorables
-
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: Win2016_32_py27
