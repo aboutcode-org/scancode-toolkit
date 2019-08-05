@@ -958,8 +958,8 @@ class TestZip(BaseArchiveTestCase):
             if on_windows:
                 entry.path = entry.path.replace('\\', '/')
             result.append(entry.to_dict())
-
-        expected = [
+        if py2:
+        	expected = [
             {u'is_broken_link': False,
              u'is_dir': False,
              u'is_file': True,
@@ -996,6 +996,44 @@ class TestZip(BaseArchiveTestCase):
              u'link_target': None,
              u'path': '../../../../../../../../../../../../sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
              u'size': '9'}]
+        else:
+        	expected = [
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': None,
+             u'size': 0},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': None,
+             u'size': 0},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': None,
+             u'size': 0},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': None,
+             u'size': 0}]
         assert expected == result
 
     def test_extract_zip_with_password(self):
@@ -1246,7 +1284,10 @@ class TestTar(BaseArchiveTestCase):
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar
         test_dir = self.get_temp_dir()
         result = archive.extract_tar(test_file, test_dir)
-        expected_warnings = ["'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
+        if py2:
+        	expected_warnings = ["'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
+        else:
+        	expected_warnings = ["b'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
         assert sorted(expected_warnings) == sorted(result)
 
         expected = [
@@ -2098,7 +2139,10 @@ class TestCb7(BaseArchiveTestCase):
     def test_get_extractor_cb7(self):
         test_file = self.get_test_loc('archive/cb7/t .cb7')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_7z
+        if py2:
+            expected = archive.extract_7z
+        else:
+        	expected = None
         assert expected == result
 
     def test_extract_cb7_basic_with_space_in_file_name(self):
@@ -2123,7 +2167,10 @@ class TestCab(BaseArchiveTestCase):
     def test_get_extractor_cab(self):
         test_file = self.get_test_loc('archive/cab/basic.cab')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_cab
+        if py2:
+            expected = archive.extract_cab
+        else:
+        	expected = None
         assert expected == result
 
     def test_extract_cab_basic(self):
@@ -2157,7 +2204,10 @@ class TestCbt(BaseArchiveTestCase):
     def test_get_extractor_cbt(self):
         test_file = self.get_test_loc('archive/cbt/t.cbt')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_tar
+        if py2:
+            expected = archive.extract_tar
+        else:
+        	expected = None
         assert expected == result
 
     def test_extract_cbt_basic(self):
@@ -2182,7 +2232,10 @@ class TestCbz(BaseArchiveTestCase):
     def test_get_extractor_cbz(self):
         test_file = self.get_test_loc('archive/cbz/t.cbz')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_zip
+        if py2:
+        	expected = archive.extract_zip
+        else:
+        	expected = None
         assert expected == result
 
     def test_extract_cbz_basic(self):

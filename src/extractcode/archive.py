@@ -35,6 +35,7 @@ from commoncode import fileutils
 from commoncode import filetype
 from commoncode import functional
 from commoncode.system import on_linux
+from commoncode.system import py2
 
 from typecode import contenttype
 
@@ -148,7 +149,7 @@ def get_best_handler(location, kinds=all_kinds):
     """
     Return the best handler of None for the file at location.
     """
-    if on_linux:
+    if on_linux and py2: 
         location = fileutils.fsencode(location)
     location = os.path.abspath(os.path.expanduser(location))
     if not filetype.is_file(location):
@@ -167,7 +168,7 @@ def get_handlers(location):
     Return an iterable of (handler, type_matched, mime_matched,
     extension_matched,) for this `location`.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fileutils.fsencode(location)
 
     if filetype.is_file(location):
@@ -191,7 +192,7 @@ def get_handlers(location):
             mime_matched = handler.mimetypes and any(m in mtype for m in handler.mimetypes)
             exts = handler.extensions
             if exts:
-                if on_linux:
+                if on_linux and py2:
                     exts = tuple(fileutils.fsencode(e) for e in exts)
                 extension_matched = exts and location.lower().endswith(exts)
 
@@ -320,7 +321,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     hard to trace and debug very quickly. A depth of two is simple and sane and
     covers most common cases.
     """
-    if on_linux:
+    if on_linux and py2:
         location = fileutils.fsencode(location)
         target_dir = fileutils.fsencode(target_dir)
     abs_location = os.path.abspath(os.path.expanduser(location))
