@@ -25,7 +25,7 @@ ignorable_copyrights:
         Massar, Wez Furlong, Nicolas Barry, Justin Bradford, Ben Harris, Malcolm Smith, Ahmad
         Khalifa, Markus Kuhn, and CORE SDI S.A.
 ignorable_authors:
-    - Coding Technologies 'CT . www.codingtechnologies.com
+    - Coding Technologies
     - the OpenSSL Project
 ignorable_holders:
     - DTS, Inc.

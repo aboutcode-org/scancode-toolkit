@@ -13,6 +13,6 @@ spdx_license_key: OML
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Market_License
 ignorable_copyrights:
-    - copyrighted by Open Market, Inc
+    - copyrighted by Open Market, Inc 'Open Market
 ignorable_holders:
-    - Open Market, Inc
+    - Open Market, Inc 'Open Market

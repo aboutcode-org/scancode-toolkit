@@ -5,6 +5,6 @@ category: Proprietary Free
 owner: Oracle (Sun)
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright 2002 Sun Microsystems, Inc.
+    - Copyright 2002 Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A
 ignorable_holders:
-    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054, U.S.A

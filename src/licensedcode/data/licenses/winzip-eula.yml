@@ -4,6 +4,10 @@ name: WinZip EULA
 category: Commercial
 owner: WinZip Computing LLC.
 homepage_url: http://www.winzip.com/eula.html
+ignorable_copyrights:
+  - Copyright (c) 20 Your name WinZip Computing, S.L. and its licensors
+ignorable_holders:
+  - Your name WinZip Computing, S.L. and its licensors
 ignorable_authors:
     - WinZip's Self Extractor
 ignorable_urls:

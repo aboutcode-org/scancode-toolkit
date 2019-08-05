@@ -29,7 +29,7 @@ holders:
   - FUJITA Yuji
   - ooo-build/Go-OO Team
   - Software in the Public Interest, Inc.
-  - the Perl Porters
+  - the Perl 5 Porters
   - Academy of Motion Picture Arts and Sciences
   - Corporation for National Research Initiatives
   - EU DataGrid
@@ -65,5 +65,5 @@ holders_summary:
     count: 1
   - value: the Massachusetts Institute of Technology
     count: 1
-  - value: the Perl Porters
+  - value: the Perl 5 Porters
     count: 1

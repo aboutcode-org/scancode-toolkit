@@ -10,6 +10,8 @@ ignorable_copyrights:
     - Copyright (c) 2006, P2P Networks and Applications Research Group, The University of Melbourne
 ignorable_holders:
     - P2P Networks and Applications Research Group, The University of Melbourne
+ignorable_authors:
+    - P2P Networks and Applications Research Group The University of Melbourne, Australia http://www.cs.mu.oz.au/p2p
 ignorable_urls:
     - http://www.cs.mu.oz.au/p2p
     - http://www.opensource.org/licenses/UoI-NCSA.php

@@ -189,7 +189,7 @@ def as_sorted_mapping(counter):
     return summarized
 
 
-def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
+def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -245,7 +245,7 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
 
     tfn = test_file.replace(test_data_dir, '').strip('\/\\')
     whats = '_'.join(what)
-    test_name = 'test_%(whats)s_%(tfn)s' % locals()
+    test_name = 'test_%(tfn)s_%(index)s' % locals()
     test_name = python_safe_name(test_name)
 
     # onPython2 we need a plain non-unicode string
@@ -265,12 +265,12 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, re
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
     """
-    for test in copyright_tests:
+    for i, test in enumerate(sorted(copyright_tests,key=lambda x:x.test_file)):
         # closure on the test params
         if test.expected_failures:
             actual_regen = False
         else:
             actual_regen = regen
-        method, name = make_copyright_test_functions(test, test_data_dir, actual_regen)
+        method, name = make_copyright_test_functions(test, i, test_data_dir, actual_regen)
         # attach that method to our test class
         setattr(clazz, name, method)

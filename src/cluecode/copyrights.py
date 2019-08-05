@@ -165,25 +165,25 @@ class CopyrightDetector(object):
         non_copyright_labels = frozenset()
         if not include_years:
             non_copyright_labels = frozenset([
-                'YR-RANGE', 'YR', 'YR-AND', 'YR-PLUS'
+                'YR-RANGE', 'YR', 'YR-AND', 'YR-PLUS', 'BARE-YR',
             ])
 
         non_holder_labels = frozenset([
             'COPY',
-            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
+            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'EMAIL', 'URL',
             'HOLDER', 'AUTHOR',
         ])
 
         non_holder_labels_mini = frozenset([
             'COPY',
-            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
+            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'HOLDER', 'AUTHOR',
         ])
 
         non_authors_labels = frozenset([
             'COPY',
-            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS',
+            'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'HOLDER', 'AUTHOR',
         ])
 
@@ -313,25 +313,30 @@ class CopyrightDetector(object):
 _YEAR = (r'('
     '19[6-9][0-9]'  # 1960 to 1999
     '|'
-    '20[0-1][0-9]'  # 2000 to 2019
+    '20[0-2][0-9]'  # 2000 to 2019
 ')')
 
+
 _YEAR_SHORT = (r'('
-    '[6-9][0-9]'  # 19-60 to 19-99
+    '[6-9][0-9]'  # 60 to 99
     '|'
-    '[0-1][0-9]'  # 20-00 to 20-19
+    '[0-][0-9]'  # 00 to 29
 ')')
+
 
 _YEAR_YEAR = (r'('
               # fixme   v ....the underscore below is suspicious
-    '19[6-9][0-9][\.,\-]_[6-9][0-9]'  # 1960-99
+    '(19[6-9][0-9][\.,\-]_)+[6-9][0-9]'  # 1960-99
     '|'
-    '19[6-9][0-9][\.,\-]+[0-9]'  # 1998-9
+    '(19[6-9][0-9][\.,\-])+[0-9]'  # 1998-9
     '|'
-    '20[0-1][0-9][\.,\-]+[0-1][0-9]'  # 2001-16 or 2012-04
+    '(20[0-2][0-9][\.,\-])+[0-2][0-9]'  # 2001-16 or 2012-04
     '|'
-    '200[0-9][\.,\-]+[0-9]'  # 2001-4 not 2012
+    '(20[0-2][0-9][\.,\-])+[0-9]'  # 2001-4 not 2012
+    '|'
+    '(20[0-2][0-9][\.,\-])+20[0-2][0-9]'  # 2001-2012
 ')')
+
 
 _PUNCT = (r'('
     '['
@@ -344,6 +349,7 @@ _PUNCT = (r'('
     '|'
     '\&nbsp'  # html entity sometimes are double escaped
 ')*')  # repeated 0 or more times
+
 
 _YEAR_PUNCT = _YEAR + _PUNCT
 _YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
@@ -407,8 +413,8 @@ patterns = [
     (r'[A-Za-z0-9]+[\'">]+[Cc]opyright', 'COPY'),
 
     # A copyright line in some manifest, meta or structured files such Windows PE
-    (r'^AssemblyCopyright$', 'COPY'),
-    (r'^AppCopyright$', 'COPY'),
+    (r'^AssemblyCopyright.?$', 'COPY'),
+    (r'^AppCopyright?$', 'COPY'),
 
     ############################################################################
     # ALL Rights Reserved.
@@ -443,22 +449,6 @@ patterns = [
     # multiple parens (at least two (x) groups) is a sign of junk
     # such as in (1)(ii)(OCT
     (r'^.*\(.*\).*\(.*\).*$', 'JUNK'),
-
-#     (r'^LICENSEE?[,\.]?$', 'JUNK'),
-#     (r'^LICENSES[,\.]?$', 'JUNK'),
-#     (r'^LICENSED[,\.]?$', 'JUNK'),
-#
-#     (r'^Licensee?[,\.]?$', 'JUNK'),
-#     (r'^Licenses[,\.]?$', 'JUNK'),
-#     (r'^Licensed[,\.]?$', 'JUNK'),
-#
-#     (r'^LICENCEE?[,\.]?$', 'JUNK'),
-#     (r'^LICENCES[,\.]?$', 'JUNK'),
-#     (r'^LICENCED[,\.]?$', 'JUNK'),
-#
-#     (r'^Licencee?[,\.]?$', 'JUNK'),
-#     (r'^Licences[,\.]?$', 'JUNK'),
-#     (r'^Licenced[,\.]?$', 'JUNK'),
 
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
@@ -685,7 +675,7 @@ patterns = [
     # this trigger otherwise "copyright ownership. The ASF" in Apache license headers
     (r'^[Oo]wnership\.?$', 'JUNK'),
 
-    # exceptions to composed proper n    s, mostly debian copyright-related
+    # exceptions to composed proper namess, mostly debian copyright/control tag-related
     # FIXME: may be lowercase instead?
     (r'^Title:?$', 'JUNK'),
     (r'^Debianized-By:?$', 'JUNK'),
@@ -782,7 +772,6 @@ patterns = [
     # [YEAR] W3C® (MIT, ERCIM, Keio, Beihang)."
     (r'^YEAR', 'NN'),
 
-
     # Various NN, exceptions to NNP or CAPS: note that some are open ended and
     # do not end with a $
 
@@ -805,6 +794,7 @@ patterns = [
     (r'^Baslerstr\.?$', 'NN'),
     (r'^BSD$', 'NN'),
     (r'^BUT$', 'NN'),
+    (r'^But$', 'NN'),
     (r'^Cases$', 'NN'),
     (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
@@ -813,6 +803,8 @@ patterns = [
     (r'^Code$', 'NN'),
     (r'^Commercial', 'NN'),
     (r'^Commons$', 'NN'),
+    # TODO: Compilation could be JUNK?
+    (r'^Compilation', 'NN'),
     (r'^Contact', 'NN'),
     (r'^Contracts?$', 'NN'),
     (r'^Convention$', 'NN'),
@@ -836,18 +828,21 @@ patterns = [
     (r'^E-?[Mm]ail\:?$', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
-    (r'^Example$', 'NN'),
-    (r'^Except$', 'NN'),
+    (r'^Example', 'NN'),
+    (r'^Except', 'NN'),
     (r'^Experimental$', 'NN'),
     (r'^F2Wku$', 'NN'),
     (r'^False$', 'NN'),
     (r'^FALSE$', 'NN'),
     (r'^FAQ', 'NN'),
     (r'^Foreign', 'NN'),
+    (r'^From$', 'NN'),
     (r'^Further', 'NN'),
     (r'^Gaim$', 'NN'),
     (r'^Generated', 'NN'),
     (r'^Glib$', 'NN'),
+    (r'^GPLd', 'NN'),
+    (r'^GPL\'d', 'NN'),
     (r'^Gnome$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government', 'NN'),
@@ -857,6 +852,7 @@ patterns = [
     (r'^IA64$', 'NN'),
     (r'^IDEA$', 'NN'),
     (r'^Id$', 'NN'),
+    (r'^IDENTIFICATION?\.?$', 'NN'),
     (r'^IEEE$', 'NN'),
     (r'^If$', 'NN'),
     (r'^[Ii]ntltool$', 'NN'),
@@ -883,7 +879,6 @@ patterns = [
     (r'^LegalTrademarks$', 'NN'),
     (r'^Library$', 'NN'),
     (r'^Libraries$', 'NN'),
-    # (r'^Licen[cs]e[d\.e\:]?$', 'NN'),
     (r'^Licen[cs]e', 'NN'),
     (r'^License-Alias\:?$', 'NN'),
     (r'^Linux$', 'NN'),
@@ -893,13 +888,14 @@ patterns = [
     (r'^Luxi$', 'NN'),
     (r'^Mac$', 'NN'),
     (r'^Manager$', 'NN'),
-    (r'^Mate    rial$', 'NN'),
+    (r'^Material$', 'NN'),
     (r'^Mode$', 'NN'),
     (r'^Modified$', 'NN'),
     (r'^Mouse$', 'NN'),
     (r'^Natural$', 'NN'),
     (r'^New$', 'NN'),
     (r'^NEWS$', 'NN'),
+    (r'^Neither$', 'NN'),
     (r'^Norwegian$', 'NN'),
     (r'^Notes?$', 'NN'),
     (r'^NOTICE', 'NN'),
@@ -918,17 +914,17 @@ patterns = [
     (r'^Patent', 'NN'),
     (r'^Pentium$', 'NN'),
     (r'^[Pp]ermission', 'NN'),
-    # (r'^[Pp]ermissions?$', 'NN'),
-    # (r'^Permissions?$', 'NN'),
     (r'^PERMISSIONS?', 'NN'),
     (r'^PGP$', 'NN'),
     (r'^Phrase', 'NN'),
+    (r'^Plugin', 'NN'),
     (r'^Policy', 'NN'),
     (r'^POSIX$', 'NN'),
     (r'^Possible', 'NN'),
     (r'^Powered$', 'NN'),
     (r'^Predefined$', 'NN'),
     (r'^Products?\.?$', 'NN'),
+    (r'^PROFESSIONAL?\.?$', 'NN'),
     (r'^Programming$', 'NN'),
     (r'^PROOF', 'NN'),
     (r'^PROVIDED$', 'NN'),
@@ -952,6 +948,7 @@ patterns = [
     (r'^Several$', 'NN'),
     (r'^SIGN$', 'NN'),
     (r'^Site\.?$', 'NN'),
+    (r'^Statement', 'NN'),
     (r'^software$', 'NN'),
     (r'^SOFTWARE$', 'NN'),
     (r'^So$', 'NN'),
@@ -964,21 +961,22 @@ patterns = [
     (r'^TagSoup$', 'NN'),
     (r'^Target$', 'NN'),
     (r'^Technical$', 'NN'),
+    (r'^Termination$', 'NN'),
     (r'^The$', 'NN'),
     (r'^THE', 'NN'),
     (r'^These$', 'NN'),
     (r'^This$', 'NN'),
     (r'^THIS$', 'NN'),
     (r'^Those$', 'NN'),
-    (r'^Timer$', 'NN'),
+    (r'^Timer', 'NN'),
     (r'^TODO$', 'NN'),
-    (r'^Tool$', 'NN'),
+    (r'^Tool.?$', 'NN'),
     (r'^Trademarks?$', 'NN'),
     (r'^True$', 'NN'),
     (r'^TRUE$', 'NN'),
     (r'^[Tt]ext$', 'NN'),
     (r'^Unicode$', 'NN'),
-    (r'^Updated$', 'NN'),
+    (r'^Updated', 'NN'),
     (r'^URL$', 'NN'),
     (r'^Users?$', 'NN'),
     (r'^VALUE$', 'NN'),
@@ -1018,12 +1016,12 @@ patterns = [
     (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
     (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)$', 'NN'),
 
-    # Things that end with "ing" are NNs
-    # (r'^.*ing[\.,]?$', 'NN'),
-
     ############################################################################
     # Proper Nouns
     ############################################################################
+
+    # Title case word with a trailing parens is an NNP
+    (r'^[A-Z][a-z]{3,}\)$', 'NNP'),
 
     # names with a slash that are NNP
     # Research/Unidata , LCS/Telegraphics.
@@ -1221,6 +1219,7 @@ patterns = [
 
     # same for developed, etc...
     (r'^[Cc]oded$', 'AUTH2'),
+    (r'^[Rr]ecoded$', 'AUTH2'),
     (r'^[Mm]odified$', 'AUTH2'),
     (r'^[Cc]reated$', 'AUTH2'),
     (r'^[Ww]ritten$', 'AUTH2'),
@@ -1335,19 +1334,24 @@ patterns = [
             _YEAR_SHORT_PUNCT +
         ')*' + '$', 'YR'),
 
+    (r'^(' + _YEAR_YEAR + ')+$', 'YR'),
+
     # 88, 93, 94, 95, 96: this is a pattern mostly used in FSF copyrights
     (r'^[8-9][0-9],$', 'YR'),
+
+    # 80 to 99: this is a pattern mostly used in FSF copyrights
+    (r'^[8-9][0-9]$', 'BARE-YR'),
 
     # weird year
     (r'today.year', 'YR'),
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
-    # cardinal numbers
-    (r'^-?[0-9]+(.[0-9]+)?.?$', 'CD'),
-
     # Copyright templates in W3C documents
     (r'^\$?date-of-software$', 'YR'),
     (r'^\$?date-of-document$', 'YR'),
+
+    # cardinal numbers
+    (r'^-?[0-9]+(.[0-9]+)?.?$', 'CD'),
 
     ############################################################################
     # All caps and proper nouns
@@ -1460,13 +1464,15 @@ grammar = """
 #######################################
 
     YR-RANGE: {<YR>+ <CC>+ <YR>}        #20
-    YR-RANGE: {<YR> <DASH|TO>* <YR|CD>+}        #30
-    YR-RANGE: {<CD>? <YR>+}        #40
-    YR-RANGE: {<YR>+ }        #50
+    YR-RANGE: {<YR> <DASH|TO>* <YR|BARE-YR>+}        #30
+    YR-RANGE: {<CD|BARE-YR>? <YR> <BARE-YR>?}        #40
+    YR-RANGE: {<YR>+ <BARE-YR>? }        #50
     YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
-    YR-RANGE: {<YR-AND>+}        #70
+    YR-RANGE: {<YR-AND>+}        #70|
     YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
+
+    CD: {<BARE-YR>} #bareyear
 
 #######################################
 # All/No/Some Rights Reserved
@@ -1942,7 +1948,7 @@ grammar = """
     # (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <CAPS> <CAPS> <CAPS>? <CAPS>?} #2271
 
-    # NAME-COPY is a name with a trailing copuright
+    # NAME-COPY is a name with a trailing copyright
     # Daisy (c) 1998
     NAME-COPY: {<NNP> <COPY>} #2272
     COPYRIGHT2: {<NAME-COPY> <YR-RANGE>}  #2273
@@ -2159,7 +2165,7 @@ grammar = """
     COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED>  <BY>  <NAME>}     #15800
 
     # South Baylo University Copyright (c) All Right Reserved. 2018
-    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED> <YR-RANGE>?}      #15720
+    COPYRIGHT: {<COMPANY>  <COPY>  <COPY>  <ALLRIGHTRESERVED> <YR-RANGE>?}      #157201
 
     # Crown Copyright C All rights reserved. or Crown Copyright (C) All rights reserved.
     COPYRIGHT: {<NAME-COPY> <NAME-CAPS|COPY> <ALLRIGHTRESERVED>}                #15730
@@ -2183,6 +2189,12 @@ grammar = """
     COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY> <NAME|NAME-YEAR|COMPANY> } # 15710
 
     ############################################################################
+
+    # Copyright . 2008 Mycom Pany, inc. OR Copyright . 2008 company name, inc.
+    COPYRIGHT: {<COPY>  <NNP>  <NAME-YEAR> <COMPANY>?} #15720
+
+    # Copyright (c) 2008-1010 Intel Corporation
+    COPYRIGHT: {<COPY>  <COPY>  <CD>  <COMPANY>} #rare-cd-not-year
 
 #######################################
 # Authors
@@ -2258,6 +2270,8 @@ grammar = """
 
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
+    COPYRIGHT: {<COPY|NAME-COPY><COPY|NAME-COPY>}        #999990
+
 """
 
 
@@ -2308,7 +2322,7 @@ def refine_holder(h):
     h = strip_trailing_period(h)
     h = h.strip()
     h = strip_balanced_edge_parens(h)
-
+    h = h.strip()
     if h and h.lower() not in HOLDERS_JUNK:
         return h
 
@@ -2323,6 +2337,7 @@ def refine_author(a):
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
     a = a.strip()
     a = strip_trailing_period(a)
+    a = a.strip()
     if a and a.lower() not in AUTHORS_JUNK:
         return a
 
@@ -2333,7 +2348,7 @@ def refine_names(s, prefixes):
     FIXME: the grammar should not allow this to happen.
     """
     s = strip_some_punct(s)
-    s = strip_numbers(s)
+    s = strip_leading_numbers(s)
     s = strip_all_unbalanced_parens(s)
     s = strip_some_punct(s)
     s = s.strip()
@@ -2357,6 +2372,7 @@ PREFIXES = frozenset([
     'maintained',
     'by',
     'developed',
+    'created',
     'written',
     'recoded',
     'coded',
@@ -2397,8 +2413,13 @@ COPYRIGHTS_SUFFIXES = frozenset([
 # A junk copyright cannot be resolved otherwise by parsing with a grammar.
 # It would be best not to have to resort to this, but this is practical.
 COPYRIGHTS_JUNK = frozenset([
-    'c',
+    # TODO: consider removing to report these (and this is a sign that curation is needed)
     'copyright (c)',
+    '(c) by',
+
+    "copyright holder's name",
+    '(c) (c)',
+    'c',
     '(c)',
     'full copyright statement',
     'copyrighted by their authors',
@@ -2606,7 +2627,8 @@ HOLDERS_JUNK = frozenset([
     'parts',
     'disclaimed',
     'or',
-    '<holders>'
+    '<holders>',
+    'author',
 ])
 
 
@@ -2667,13 +2689,7 @@ def strip_suffixes(s, suffixes=()):
     striped. Normalize and strip spacing.
     """
     s = s.split()
-#     if TRACE_DEEP:
-#         logger_debug('strip_suffixes: suffixes:', suffixes)
-#         logger_debug('strip_suffixes: split:', s)
-
     while s and s[-1].lower() in suffixes:
-#         if TRACE_DEEP:
-#             logger_debug('   droping s[-1]:', s[-1])
         s = s[:-1]
     s = u' '.join(s)
     return s
@@ -2716,14 +2732,14 @@ def refine_date(c):
     return strip_some_punct(c)
 
 
-def strip_numbers(s):
+def strip_leading_numbers(s):
     """
-    Return a string removing words made only of numbers. If there is an
-    exception or s is not a string, return s as-is.
+    Return a string removing leading words made only of numbers.
     """
-    if s:
-        s = u' '.join([x for x in s.split(' ') if not x.isdigit()])
-    return s
+    s = s.split()
+    while s and s[0].isdigit():
+        s = s[1:]
+    return u' '.join(s)
 
 
 def strip_some_punct(s):
@@ -2731,7 +2747,7 @@ def strip_some_punct(s):
     Return a string stripped from some leading and trailing punctuations.
     """
     if s:
-        s = s.strip(''','"}{-_:;&@''')
+        s = s.strip(''','"}{-_:;&@!''')
         s = s.lstrip('.>)]\/')
         s = s.rstrip('<([\/')
     return s
@@ -3077,10 +3093,6 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     line = line.replace(u'(c)', u' (c) ')
     # the case of \251 is tested by 'weirdencoding.h'
     line = line.replace(u'©', u' (c) ')
-#     # this is not a copyright sign, but a circled C
-#     line = line.replace(u'Ⓒ ', u' (c) ')
-#     # this is not a copyright sign, but a circled C
-#     line = line.replace(u'ⓒ', u' (c) ')
     line = line.replace(u'\251', u' (c) ')
     line = line.replace(u'&copy;', u' (c) ')
     line = line.replace(u'&copy', u' (c) ')

@@ -36,10 +36,13 @@ import cluecode_test_utils
 class TestTextPreparation(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_strip_numbers(self):
-        a = 'Python 2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
-        expected = 'Python 2.6.6 (r266:84297, Aug 2010, 18:46:32) [MSC v.1500 bit (Intel)] on win32'
-        assert expected == copyrights_module.strip_numbers(a)
+    def test_strip_leading_numbers(self):
+        a = '2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
+        assert a == copyrights_module.strip_leading_numbers(a)
+
+        a = '26 6 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
+        expected = '2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
+        assert expected == copyrights_module.strip_leading_numbers(a)
 
     def test_prepare_text_line(self):
         cp = 'test (C) all rights reserved'
