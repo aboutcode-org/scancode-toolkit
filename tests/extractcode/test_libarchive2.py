@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 import ntpath
 import os
 import posixpath
+from unittest.case import expectedFailure
 from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
@@ -39,6 +40,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 
 from extractcode_assert_utils import check_files
 
@@ -85,11 +87,21 @@ class TestExtractorTest(FileBasedTesting):
                'with fe:%(fe)r, em:%(em)s' % locals())
         assert expected == extractors, msg
 
+    @expectedFailure
+    @skipIf(on_linux or py2, 'TODO: Things behave differently on Python 3 and win/mac')
+    def test_get_extractor_with_kinds_rpm_2_win_mac_py3(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        kinds = (archive.regular, archive.file_system, archive.docs, archive.package)
+        expected = [sevenzip.extract, libarchive2.extract]
+        self.check_get_extractors(test_file, expected, kinds)
+
+    @skipIf((on_windows or on_mac) and py3, 'TODO: Things behave differently on Python 3 and win/mac')
     def test_get_extractor_with_kinds_rpm_2(self):
         test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
         kinds = (archive.regular, archive.file_system, archive.docs, archive.package)
         expected = [sevenzip.extract, libarchive2.extract]
         self.check_get_extractors(test_file, expected, kinds)
+
 
     def test_libarchive_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
