@@ -54,7 +54,7 @@ class TestExtract(FileBasedTesting):
         if on_linux or py2:
             expected = ['a/b/a.txt', 'a/b/b.txt', 'a/c/c.txt']
         if not on_linux and not py2:
-            expected = []  
+            expected = []
         cleaned_test_file = test_file.replace(base, '')
         if on_linux or py2:
             expected_event = [
@@ -130,7 +130,7 @@ class TestExtract(FileBasedTesting):
             'somefilename-1.txt',
         )
         if not on_linux and not py2:
-            expected = () 
+            expected = ()
         test_dir = extractcode.get_extraction_path(test_file)
         check_files(test_dir, expected)
 
@@ -193,11 +193,11 @@ class TestExtract(FileBasedTesting):
         )
         if not on_linux and not py2:
             expected = [
-            'a/a.tar.gz', 
-            'a/a.txt', 
-            'b/a.txt', 
-            'b/b.tar.gz', 
-            'c/a.tar.gz', 
+            'a/a.tar.gz',
+            'a/a.txt',
+            'b/a.txt',
+            'b/b.tar.gz',
+            'c/a.tar.gz',
             'c/a.txt'
             ]
         test_dir = self.get_test_loc('extract/tree', copy=True)
@@ -232,8 +232,8 @@ class TestExtract(FileBasedTesting):
             'b/b.tar.gz-extract/b/a/.svn/prop-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/a/.svn/text-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/a/.svn/text-base/a.txt.svn-base',
-            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',    
-            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',    
+            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',
+            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',
             'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/c/c.txt',
             'b/b.tar.gz-extract/b/b/a.txt',
             'b/b.tar.gz-extract/b/b/.svn/all-wcprops',
@@ -248,8 +248,8 @@ class TestExtract(FileBasedTesting):
             'b/b.tar.gz-extract/b/c/.svn/prop-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/c/.svn/text-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/c/.svn/text-base/a.txt.svn-base',
-            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',    
-            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',   
+            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',
+            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',
             'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'c/a.tar.gz',
             'c/a.txt',
@@ -259,11 +259,11 @@ class TestExtract(FileBasedTesting):
         )
         if not on_linux and not py2:
             expected = [
-            'a/a.tar.gz', 
-            'a/a.txt', 
-            'b/a.txt', 
-            'b/b.tar.gz', 
-            'c/a.tar.gz', 
+            'a/a.tar.gz',
+            'a/a.txt',
+            'b/a.txt',
+            'b/b.tar.gz',
+            'c/a.tar.gz',
             'c/a.txt'
             ]
         test_dir = self.get_test_loc('extract/tree', copy=True)
@@ -320,11 +320,11 @@ class TestExtract(FileBasedTesting):
         )
         if not on_linux and not py2:
             shallow = [
-            'a/a.tar.gz', 
-            'a/a.txt', 
-            'b/a.txt', 
-            'b/b.tar.gz', 
-            'c/a.tar.gz', 
+            'a/a.tar.gz',
+            'a/a.txt',
+            'b/a.txt',
+            'b/b.tar.gz',
+            'c/a.tar.gz',
             'c/a.txt'
             ]
         if on_linux or py2:
@@ -349,8 +349,8 @@ class TestExtract(FileBasedTesting):
             'b/b.tar.gz-extract/b/a/.svn/prop-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/a/.svn/text-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/a/.svn/text-base/a.txt.svn-base',
-            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',    
-            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',    
+            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',
+            'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',
             'b/b.tar.gz-extract/b/a/a.tar.gz-extract/a/c/c.txt',
             'b/b.tar.gz-extract/b/b/a.txt',
             'b/b.tar.gz-extract/b/b/.svn/all-wcprops',
@@ -365,8 +365,8 @@ class TestExtract(FileBasedTesting):
             'b/b.tar.gz-extract/b/c/.svn/prop-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/c/.svn/text-base/a.tar.gz.svn-base',
             'b/b.tar.gz-extract/b/c/.svn/text-base/a.txt.svn-base',
-            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',    
-            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',   
+            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',
+            'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',
             'b/b.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
 
             'c/a.tar.gz',
@@ -377,11 +377,11 @@ class TestExtract(FileBasedTesting):
         )
         if not on_linux and not py2:
             recursed = [
-            'a/a.tar.gz', 
-            'a/a.txt', 
-            'b/a.txt', 
-            'b/b.tar.gz', 
-            'c/a.tar.gz', 
+            'a/a.tar.gz',
+            'a/a.txt',
+            'b/a.txt',
+            'b/b.tar.gz',
+            'c/a.tar.gz',
             'c/a.txt'
             ]
 
@@ -530,8 +530,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/a/.svn/text-base/a.tar.gz.svn-base',
             'nested_tars.tar.gz-extract/b/a/.svn/text-base/a.txt.svn-base',
             'nested_tars.tar.gz-extract/b/a/a.tar.gz',
-            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',    
-            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',    
+            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',
+            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',
             'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/a/a.txt',
             'nested_tars.tar.gz-extract/b/b/.svn/all-wcprops',
@@ -539,8 +539,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/b/.svn/format',
             'nested_tars.tar.gz-extract/b/b/.svn/text-base/a.txt.svn-base',
             'nested_tars.tar.gz-extract/b/b/a.txt',
-            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',    
-            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',    
+            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',
+            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',
             'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/c/.svn/all-wcprops',
             'nested_tars.tar.gz-extract/b/c/.svn/entries',
@@ -574,8 +574,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/a/.svn/text-base/a.tar.gz.svn-base',
             'nested_tars.tar.gz-extract/b/a/.svn/text-base/a.txt.svn-base',
             'nested_tars.tar.gz-extract/b/a/a.tar.gz',
-            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',    
-            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',    
+            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/a.txt',
+            'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/b/b.txt',
             'nested_tars.tar.gz-extract/b/a/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/a/a.txt',
             'nested_tars.tar.gz-extract/b/b/.svn/all-wcprops',
@@ -583,8 +583,8 @@ class TestExtract(FileBasedTesting):
             'nested_tars.tar.gz-extract/b/b/.svn/format',
             'nested_tars.tar.gz-extract/b/b/.svn/text-base/a.txt.svn-base',
             'nested_tars.tar.gz-extract/b/b/a.txt',
-            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',    
-            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',    
+            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/a.txt',
+            'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/b/b.txt',
             'nested_tars.tar.gz-extract/b/c/a.tar.gz-extract/a/c/c.txt',
             'nested_tars.tar.gz-extract/b/c/.svn/all-wcprops',
             'nested_tars.tar.gz-extract/b/c/.svn/entries',

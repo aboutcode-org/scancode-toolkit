@@ -149,7 +149,7 @@ def get_best_handler(location, kinds=all_kinds):
     """
     Return the best handler of None for the file at location.
     """
-    if on_linux and py2: 
+    if on_linux and py2:
         location = fileutils.fsencode(location)
     location = os.path.abspath(os.path.expanduser(location))
     if not filetype.is_file(location):

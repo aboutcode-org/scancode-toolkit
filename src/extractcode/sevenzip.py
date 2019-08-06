@@ -328,7 +328,7 @@ def as_entry(infos):
 def parse_7z_listing(location, utf=False):
     """
     Parse a long format 7zip listing and return an iterable of entry.
-    
+
     If `utf` is True, the console output will treated as utf-8-encoded text.
     Otherwise it is treated as bytes.
 
@@ -375,7 +375,7 @@ def parse_7z_listing(location, utf=False):
         # we have only a header, likely an error condition or an empty archive
         return []
     if utf:
-        empty = u''  
+        empty = u''
     else:
         empty = b''
     _header, body = header_tail
@@ -412,7 +412,7 @@ def parse_7z_listing(location, utf=False):
 
     paths = re.split(path_sep, body, flags=re.MULTILINE)
     if TRACE:
-        from pprint import pprint
+        from pprint import pprint # NOQA
         logger.debug('parse_7z_listing: paths:')
         pprint(paths)
 

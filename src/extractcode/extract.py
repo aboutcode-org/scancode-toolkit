@@ -195,6 +195,6 @@ def extract_file(location, target, kinds=extractcode.default_kinds, verbose=Fals
             if TRACE:
                 tb = traceback.format_exc()
                 logger.debug('extract_file: ERROR: %(location)r: %(errors)r\n%(e)r\n%(tb)s' % locals())
-            
+
         finally:
             yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)

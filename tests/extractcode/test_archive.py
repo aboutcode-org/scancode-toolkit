@@ -84,13 +84,13 @@ class TestExtractorTest(FileBasedTesting):
         else:
             extractors = archive.get_extractors(test_loc)
 
-        #ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
-        #mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
+        # ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
+        # mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
         fe = fileutils.file_extension(test_loc).lower()
         em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
-        #msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
-               #'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
-        #assert expected == extractors, msg
+        # msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+               # 'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
+        # assert expected == extractors, msg
 
     def test_get_extractors_1(self):
         test_file = 'archive/zip/basic.zip'
@@ -299,7 +299,7 @@ class TestExtractorTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.bz', []),
             ('archive/tgz/tarred_gzipped.gz', []),
             ('archive/gzip/mysql-arch.ARZ', []),
-        ]        
+        ]
         for test_file, expected in test_data:
             test_loc = self.get_test_loc(test_file)
             handlers = archive.get_handlers(test_loc)
@@ -734,7 +734,7 @@ class TestUncompressBz2(BaseArchiveTestCase):
             expected = Exception('invalid data stream')
         else:
             expected = Exception('Invalid data stream')
-            
+
         self.assertRaisesInstance(expected, archive.uncompress_bzip2,
                                   test_file, test_dir)
 
