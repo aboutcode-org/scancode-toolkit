@@ -48,6 +48,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode import text
+from commoncode.system import on_posix
 
 
 """
@@ -162,18 +163,21 @@ def get_env(base_vars=None, lib_dir=None):
         env_vars.update(base_vars)
 
     # Create and add LD environment variables
-    if lib_dir:
+    if lib_dir and on_posix:
         path_var = '%(lib_dir)s' % locals()
         # on Linux/posix
         env_vars['LD_LIBRARY_PATH'] = path_var
         # on Mac
         env_vars['DYLD_LIBRARY_PATH'] = path_var
 
-    # ensure that we use bytes, not unicode
-    def to_bytes(s):
-        return s if isinstance(s, bytes) else s.encode('utf-8')
+    if py2:
+        # ensure that we use bytes on py2 and unicode on py3
+        def to_bytes(s):
+            return s if isinstance(s, bytes) else s.encode('utf-8')
+        env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
+    else:
+        env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
 
-    env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
     return env_vars
 
 
