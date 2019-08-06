@@ -34,7 +34,6 @@ import re
 
 from commoncode  import command
 from commoncode.system import on_windows
-from commoncode.system import py3
 from commoncode import text
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
@@ -188,14 +187,9 @@ def extract(location, target_dir, arch_type='*'):
     # NB: we force running in the GMT timezone, because 7z is unable to set
     # the TZ correctly when the archive does not contain TZ info. This does
     # not work on Windows, because 7z is not using the TZ env var there.
-    os.environ.update({'TZ': 'GMT'})
     timezone = dict(os.environ)
-
-    if on_windows and py3:
-        # On python 3 ensure we set all variables as strings
-        timezone = {
-            text.as_unicode(key): text.as_unicode(value) for key, value in os.environ}
-
+    timezone.update({u'TZ': u'GMT'})
+    timezone = command.get_env(timezone)
     # Note: 7z does extract in the current directory so we cwd to the target dir first
     args = [
         extract,
@@ -264,7 +258,9 @@ def list_entries(location, arch_type='*'):
     # NB: we force running in the GMT timezone, because 7z is unable to set
     # the TZ correctly when the archive does not contain TZ info. This does
     # not work on Windows, because 7z is not using the TZ env var there.
-    timezone = os.environ.update({'TZ': 'GMT'})
+    timezone = dict(os.environ)
+    timezone.update({u'TZ': u'GMT'})
+    timezone = command.get_env(timezone)
 
     args = [
         listing,

@@ -101,9 +101,11 @@ def load_lib():
     libdir = get_location(EXTRACTCODE_LIBARCHIVE_LIBDIR)
     return command.load_shared_library(dll, libdir)
 
+def set_env_with_tz():
+    # NOTE: this is important to avoid timezone differences
+    os.environ['TZ'] = 'UTC'
 
-# NOTE: this is important to avoid timezone differences
-os.environ['TZ'] = 'UTC'
+set_env_with_tz()
 
 # NOTE: this is important to avoid locale-specific errors on various OS
 locale.setlocale(locale.LC_ALL, '')
@@ -124,6 +126,7 @@ def extract(location, target_dir):
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
     warnings = []
+    set_env_with_tz()
 
     for entry in list_entries(abs_location):
 
