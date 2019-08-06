@@ -419,6 +419,7 @@ class TestExtract(FileBasedTesting):
             if py3:
                 assert isinstance(emsg, compat.unicode)
 
+    @skipIf(py3 and not on_linux, 'Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives(self):
         expected = (
             'a.tar.gz',
@@ -432,6 +433,15 @@ class TestExtract(FileBasedTesting):
         assert errs == result.errors
         assert not result.warnings
 
+    @skipIf(py3 and on_linux, 'Expectations are different on Windows and macOS')
+    def test_extract_tree_with_corrupted_archives_mac_win(self):
+        expected = (
+            'a.tar.gz',
+        )
+        test_dir = self.get_test_loc('extract/corrupted', copy=True)
+        result = list(extract.extract(test_dir, recurse=False))
+        check_files(test_dir, expected)
+        assert [] == result
 
     def test_extract_with_empty_dir_and_small_files_ignores_empty_dirs(self):
         if on_linux or py2:
