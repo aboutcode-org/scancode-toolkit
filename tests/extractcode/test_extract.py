@@ -441,7 +441,14 @@ class TestExtract(FileBasedTesting):
         test_dir = self.get_test_loc('extract/corrupted', copy=True)
         result = list(extract.extract(test_dir, recurse=False))
         check_files(test_dir, expected)
-        assert [] == result
+        if py2:
+            assert len(result) == 2
+            result = result[1]
+            errs = ['gzip decompression failed']
+            assert errs == result.errors
+            assert not result.warnings
+        else:
+            assert [] == result
 
     def test_extract_with_empty_dir_and_small_files_ignores_empty_dirs(self):
         if on_linux or py2:

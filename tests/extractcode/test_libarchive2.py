@@ -80,9 +80,10 @@ class TestExtractorTest(FileBasedTesting):
         # mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
         fe = fileutils.file_extension(test_loc).lower()
         em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
-        # msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
-        # 'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
-        # assert expected == extractors, msg
+
+        msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+               'with fe:%(fe)r, em:%(em)s' % locals())
+        assert expected == extractors, msg
 
     def test_get_extractor_with_kinds_rpm_2(self):
         test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
@@ -175,6 +176,7 @@ class BaseArchiveTestCase(FileBasedTesting):
         else:
             raise self.failureException(
                    'Exception containing %(text)r not raised' % locals())
+
 
 class TestZip(BaseArchiveTestCase):
 
