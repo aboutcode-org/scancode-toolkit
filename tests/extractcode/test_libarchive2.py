@@ -26,14 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import io
 import ntpath
 import os
 import posixpath
-from unittest.case import expectedFailure
 from unittest.case import skipIf
 
-import commoncode.date
 from commoncode.testcase import FileBasedTesting
 from commoncode import compat
 from commoncode import filetype
@@ -42,12 +39,8 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import py2
-import typecode.contenttype
 
 from extractcode_assert_utils import check_files
-from extractcode_assert_utils import check_size
-
-import extractcode
 
 from extractcode import archive
 from extractcode import libarchive2
@@ -74,7 +67,7 @@ pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestExtractorTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-    
+
     def check_get_extractors(self, test_file, expected, kinds=()):
         test_loc = self.get_test_loc(test_file)
         if kinds:
@@ -82,13 +75,14 @@ class TestExtractorTest(FileBasedTesting):
         else:
             extractors = archive.get_extractors(test_loc)
 
-        #ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
-        #mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
+        # import typecode
+        # ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
+        # mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
         fe = fileutils.file_extension(test_loc).lower()
         em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
-        #msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
-               #'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
-        #assert expected == extractors, msg
+        # msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+        # 'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
+        # assert expected == extractors, msg
 
     def test_get_extractor_with_kinds_rpm_2(self):
         test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
@@ -272,7 +266,7 @@ class TestZip(BaseArchiveTestCase):
         u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
         u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
         u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt']
-    
+
     def test_extract_zip_with_relative_path_deeply_nested_with_libarchive(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
@@ -309,7 +303,7 @@ class TestLibarch(BaseArchiveTestCase):
             expected_warns = [
             "b'//': \nInvalid string table",
             "b'/0': \nCan't find long filename for entry"
-        ]        
+        ]
         assert expected_warns == result
         # inccorrect for now: need this: ['__.SYMDEF', 'release/init.obj']
         expected = ['0', 'dot', 'dot_1', 'dot_2']
@@ -499,7 +493,7 @@ def is_posixpath(location):
 def to_posix(path):
     """
     Return a path using the posix path separator given a path that may contain posix
-    or windows separators, converting \ to /. NB: this path will still be valid in
+    or windows separators, converting \\ to /. NB: this path will still be valid in
     the windows explorer (except as a UNC or share name). It will be a valid path
     everywhere in Python. It will not be valid for windows command line operations.
     """
@@ -512,7 +506,7 @@ def to_posix(path):
         else:
             return path
     return path.replace(ntpath_sep, posixpath_sep)
-    
+
 
 
 class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):

@@ -43,7 +43,7 @@ class TestSevenZip(FileBasedTesting):
             test = '''
 7-Zip 9.04 beta  Copyright (c) 1999-2009 Igor Pavlov  2009-05-30
 
-Processing archive: c:\w421\scripts\testfiles\archive\zip\zip_password_nexb.zip
+Processing archive: c:\\w421\\scripts\\testfiles\\archive\\zip\\zip_password_nexb.zip
 
 Extracting  a.txt     CRC Failed in encrypted file. Wrong password?
 
