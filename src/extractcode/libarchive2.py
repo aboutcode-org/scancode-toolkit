@@ -43,21 +43,18 @@ from commoncode import command
 from commoncode import compat
 from commoncode import fileutils
 from commoncode import paths
+from commoncode import text
 
 import extractcode
 from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
 from plugincode.location_provider import get_location
 
-# Python 2 and 3 support
-try:
-    from os import fsencode
-except ImportError:
-    from backports.os import fsencode  # NOQA
 
 logger = logging.getLogger(__name__)
-DEBUG = False
-# logging.basicConfig(level=logging.DEBUG)
+
+TRACE = False
+# logging.basicConfig(level=logging.TRACE)
 
 """
 libarchive2 is a minimal and specialized wrapper around a vendored libarchive archive
@@ -137,7 +134,10 @@ def extract(location, target_dir):
             else:
                 msgs = ['No path available: ']
 
-            msgs.extend([w.decode('utf-8').strip('"\' ') for w in entry.warnings if w and w.decode('utf-8').strip('"\' ')])
+            messages = (w for w in entry.warnings if w and w.strip())
+            messages = map(text.as_unicode, messages)
+            messages = (w.strip('"\' ') for w in messages)
+            msgs.extend(w for w in messages if w)
             msgs = '\n'.join(msgs) or 'No message provided'
 
             if msgs not in warnings:
@@ -249,12 +249,6 @@ class Archive(object):
                     if aw.msg and aw.msg not in entry.warnings:
                         entry.warnings.append(aw.msg)
 
-#                     msg = 'WARNING: '
-#                     if aw.msg and aw.msg not in entry.warnings:
-#                         msg += repr(aw.msg) + '\n'
-#                     if verbose:
-#                         msg += traceback.format_exc()
-#                     warnings.append(msg % locals())
                 finally:
                     if entry:
                         entry.warnings.extend(warnings)
@@ -422,21 +416,25 @@ class ArchiveException(ExtractError):
         if root_ex and isinstance(root_ex, ArchiveException):
             self.rc = root_ex.rc
             self.errno = root_ex.errno
-            self.msg = root_ex.args and '\n'.join(root_ex.args)
+            msg = root_ex.args or []
+            msg = map(text.as_unicode, msg)
+            msg = u'\n'.join(msg)
+            self.msg = msg or None
             self.func = root_ex.func
         else:
             self.rc = rc
             self.errno = archive_struct and errno(archive_struct) or None
-            self.msg = archive_struct and err_msg(archive_struct) or None
+            msg = archive_struct and err_msg(archive_struct) or ''
+            self.msg = msg and text.as_unicode(msg) or None
             self.func = archive_func and archive_func.__name__ or None
 
     def __str__(self):
-        msg = '%(msg)s'
-        if DEBUG:
-            msg += (': in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
+        if TRACE:
+            msg = (u'%(msg)s: in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
                     'root_ex=%(root_ex)s')
-        return msg % self.__dict__
+            return msg % self.__dict__
 
+        return self.msg
 
 class ArchiveWarning(ArchiveException):
     pass

@@ -37,9 +37,9 @@ from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_no_error
 from extractcode import extract
 from commoncode.system import on_linux
-from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
@@ -394,6 +394,31 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
         check_files(test_dir, recursed)
 
+    def test_uncompress_corrupted_archive_with_zlib(self):
+        from extractcode import archive
+        import zlib
+        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        target_dir = self.get_temp_dir()
+        try:
+            list(archive.uncompress_gzip(test_dir, target_dir))
+            raise Exception('no error raised')
+        except zlib.error as e:
+            assert str(e).startswith('Error -3 while decompressing')
+
+    def test_uncompress_corrupted_archive_with_libarchive(self):
+        from extractcode import libarchive2
+        from commoncode import compat
+        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        target_dir = self.get_temp_dir()
+        try:
+            list(libarchive2.extract(test_dir, target_dir))
+            raise Exception('no error raised')
+        except libarchive2.ArchiveError as e:
+            emsg = str(e)
+            assert 'gzip decompression failed' == emsg
+            if py3:
+                assert isinstance(emsg, compat.unicode)
+
     def test_extract_tree_with_corrupted_archives(self):
         expected = (
             'a.tar.gz',
@@ -406,6 +431,7 @@ class TestExtract(FileBasedTesting):
         errs = ['gzip decompression failed']
         assert errs == result.errors
         assert not result.warnings
+
 
     def test_extract_with_empty_dir_and_small_files_ignores_empty_dirs(self):
         if on_linux or py2:
