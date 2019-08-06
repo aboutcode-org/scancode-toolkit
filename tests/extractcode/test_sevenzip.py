@@ -28,7 +28,6 @@ from __future__ import print_function
 import os
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import py2
 from extractcode import sevenzip
 
 
@@ -95,8 +94,7 @@ Compressed: 7674
 
     def test_list_sevenzip_on_tar(self):
         test_file = self.get_test_loc('archive/tar/special.tar')
-        if py2:
-            expected = [
+        expected = [
             dict(path=u'0-REGTYPE', size=u'3765', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path=u'0-REGTYPE-TEXT', size=u'19941', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path=u'0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155', size=u'3765', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
@@ -108,26 +106,12 @@ Compressed: 7674
             dict(path=u'S-SPARSE', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path=u'S-SPARSE-WITH-NULLS', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
         ]
-        else:
-            expected = [
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
-        ]
         result = [e.to_dict() for e in sevenzip.list_entries(test_file)]
         assert expected == result
 
     def test_parse_7z_listing_linux(self):
         test_file = self.get_test_loc('archive/7z/listings/cpio_relative.cpio.linux')
-        if py2:
-            expected = [
+        expected = [
             dict(path='../..', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path='../../2folder', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path='../../2folder/3folder', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
@@ -136,17 +120,6 @@ Compressed: 7674
             dict(path='../../2folder/3folder/relative_file~', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path='../../2folder/relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
             dict(path='../../relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
-        ]
-        else:
-            expected = [
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=None, size=0, is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
         ]
         result = [e.to_dict() for e in sevenzip.parse_7z_listing(test_file, False)]
         assert expected == result

@@ -218,6 +218,7 @@ class TestZip(BaseArchiveTestCase):
         # fails because of https://github.com/libarchive/libarchive/issues/545
         result = os.path.join(test_dir, 'f1')
         assert os.path.exists(result)
+
     expected_deeply_nested_relative_path = [
         '/dotdot/',
         '/dotdot/dotdot/',
@@ -288,6 +289,7 @@ class TestZip(BaseArchiveTestCase):
         result = self.collect_extracted_path(test_dir)
         assert self.expected_deeply_nested_relative_path == result
 
+
 class TestLibarch(BaseArchiveTestCase):
 
     def test_extract_zip_with_relative_path_libarchive(self):
@@ -308,15 +310,9 @@ class TestLibarch(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/ar/winlib/htmlhelp.lib')
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
-        if py2:
-            expected_warns = [
+        expected_warns = [
             "'//': \nInvalid string table",
             "'/0': \nCan't find long filename for entry"
-        ]
-        else:
-            expected_warns = [
-            "b'//': \nInvalid string table",
-            "b'/0': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # inccorrect for now: need this: ['__.SYMDEF', 'release/init.obj']
@@ -327,8 +323,7 @@ class TestLibarch(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/ar/winlib/freetype.lib')
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
-        if py2:
-            expected_warns = [
+        expected_warns = [
             u"'//': \nInvalid string table",
             u"'/0': \nCan't find long filename for entry",
             u"'/34': \nCan't find long filename for entry",
@@ -363,43 +358,6 @@ class TestLibarch(BaseArchiveTestCase):
             u"'/1027': \nCan't find long filename for entry",
             u"'/1058': \nCan't find long filename for entry",
             u"'/1089': \nCan't find long filename for entry"
-        ]
-        else:
-            expected_warns = [
-            "b'//': \nInvalid string table",
-            "b'/0': \nCan't find long filename for entry",
-            "b'/34': \nCan't find long filename for entry",
-            "b'/68': \nCan't find long filename for entry",
-            "b'/104': \nCan't find long filename for entry",
-            "b'/137': \nCan't find long filename for entry",
-            "b'/173': \nCan't find long filename for entry",
-            "b'/205': \nCan't find long filename for entry",
-            "b'/239': \nCan't find long filename for entry",
-            "b'/275': \nCan't find long filename for entry",
-            "b'/311': \nCan't find long filename for entry",
-            "b'/344': \nCan't find long filename for entry",
-            "b'/375': \nCan't find long filename for entry",
-            "b'/406': \nCan't find long filename for entry",
-            "b'/442': \nCan't find long filename for entry",
-            "b'/477': \nCan't find long filename for entry",
-            "b'/512': \nCan't find long filename for entry",
-            "b'/545': \nCan't find long filename for entry",
-            "b'/577': \nCan't find long filename for entry",
-            "b'/611': \nCan't find long filename for entry",
-            "b'/645': \nCan't find long filename for entry",
-            "b'/681': \nCan't find long filename for entry",
-            "b'/717': \nCan't find long filename for entry",
-            "b'/750': \nCan't find long filename for entry",
-            "b'/784': \nCan't find long filename for entry",
-            "b'/818': \nCan't find long filename for entry",
-            "b'/853': \nCan't find long filename for entry",
-            "b'/888': \nCan't find long filename for entry",
-            "b'/923': \nCan't find long filename for entry",
-            "b'/957': \nCan't find long filename for entry",
-            "b'/993': \nCan't find long filename for entry",
-            "b'/1027': \nCan't find long filename for entry",
-            "b'/1058': \nCan't find long filename for entry",
-            "b'/1089': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # 7zip is better, but has a security bug for now
@@ -456,6 +414,7 @@ class TestLibarch(BaseArchiveTestCase):
         except libarchive2.ArchiveError as e:
             assert 'Damaged 7-Zip archive' in e.msg
 
+
 class TestCbr(BaseArchiveTestCase):
 
     def test_get_extractor_cbr(self):
@@ -481,6 +440,7 @@ class TestCbr(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 def is_posixpath(location):
     """
     Return True if the `location` path is likely a POSIX-like path using POSIX path
@@ -504,6 +464,7 @@ def is_posixpath(location):
         is_posix = False
     return is_posix
 
+
 def to_posix(path):
     """
     Return a path using the posix path separator given a path that may contain posix
@@ -520,7 +481,6 @@ def to_posix(path):
         else:
             return path
     return path.replace(ntpath_sep, posixpath_sep)
-
 
 
 class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
