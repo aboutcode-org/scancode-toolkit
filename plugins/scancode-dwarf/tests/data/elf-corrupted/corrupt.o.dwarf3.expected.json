@@ -1,0 +1,3 @@
+[
+  "ERROR: dwarfdump2 ERROR:  dwarf_elf_init:  DW_DLE_ELF_STRPTR_ERROR 30 a call to elf_strptr() failed trying to get a section name (30)\n"
+]

@@ -1,0 +1,24 @@
+{
+  "files": [
+    "begin.c"
+  ], 
+  "external_libs_objects": [], 
+  "global_functions": [
+    "gelf_getclass", 
+    "elf_memory", 
+    "elf_begin"
+  ], 
+  "standard_files": [], 
+  "local_functions": [
+    "getnum", 
+    "_elf_check_type"
+  ], 
+  "external_libs_functions": [], 
+  "standard_objects": [], 
+  "global_objects": [], 
+  "standard_functions": [], 
+  "local_objects": [
+    "fmag", 
+    "_elf_init"
+  ]
+}

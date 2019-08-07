@@ -1,0 +1,16 @@
+{
+  "files": [
+    "strtol.c"
+  ], 
+  "external_libs_objects": [], 
+  "global_functions": [
+    "strtol"
+  ], 
+  "standard_files": [], 
+  "local_functions": [], 
+  "external_libs_functions": [], 
+  "standard_objects": [], 
+  "global_objects": [], 
+  "standard_functions": [], 
+  "local_objects": []
+}

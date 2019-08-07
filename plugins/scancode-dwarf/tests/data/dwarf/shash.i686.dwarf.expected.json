@@ -1,0 +1,7 @@
+{
+  "original_source_files": [
+    "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crtn.S", 
+    "/usr/src/packages/BUILD/glibc-2.6.1/csu/init.c"
+  ], 
+  "included_source_files": []
+}

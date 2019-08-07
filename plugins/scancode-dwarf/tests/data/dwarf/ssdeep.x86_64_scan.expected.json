@@ -1,0 +1,56 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--dwarf": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "ssdeep.x86_64",
+      "type": "file",
+      "dwarf_source_path": [
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/find-file-size.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/main.h",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/main.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/ssdeep.h",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/match.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/engine.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/dig.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/cycles.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/helpers.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/ui.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/fuzzy.c",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/edit_dist.c",
+        "/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include/stddef.h",
+        "/usr/include/bits/types.h",
+        "/usr/include/stdio.h",
+        "/usr/include/libio.h",
+        "/usr/include/stdint.h",
+        "/usr/include/stdlib.h",
+        "/usr/include/getopt.h",
+        "/usr/include/time.h",
+        "/usr/include/bits/stat.h",
+        "/usr/include/bits/dirent.h",
+        "/usr/include/dirent.h",
+        "/usr/include/sys/stat.h",
+        "/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include/stdarg.h",
+        "/home/pombredanne/work/trunk/3rdparty/fingerprint/ssdeep/ssdeep-2.0/<built-in>",
+        "/usr/include/bits/stdio.h",
+        "/usr/include/sys/types.h",
+        "crtstuff.c"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

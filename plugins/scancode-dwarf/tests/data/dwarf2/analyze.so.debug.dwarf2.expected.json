@@ -1,0 +1,32 @@
+[
+  [
+    "t", 
+    "$a", 
+    "/usr/src/debug/ImageMagick-6.7.5-6/filters/analyze.c", 
+    "82"
+  ], 
+  [
+    "t", 
+    "$d", 
+    "/usr/src/debug/ImageMagick-6.7.5-6/filters/analyze.c", 
+    "112"
+  ], 
+  [
+    "a", 
+    "", 
+    "analyze.c", 
+    ""
+  ], 
+  [
+    "T", 
+    "analyzeImage", 
+    "/usr/src/debug/ImageMagick-6.7.5-6/filters/analyze.c", 
+    "80"
+  ], 
+  [
+    "a", 
+    "", 
+    "crtstuff.c", 
+    ""
+  ]
+]
