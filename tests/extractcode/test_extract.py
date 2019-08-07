@@ -27,8 +27,6 @@ from __future__ import absolute_import, print_function
 
 import io
 import os
-from unittest.case import expectedFailure
-from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
@@ -361,7 +359,7 @@ class TestExtract(FileBasedTesting):
             if py3:
                 assert isinstance(emsg, compat.unicode)
 
-    @skipIf(py3 and not on_linux, 'Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and not on_linux, 'Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_linux(self):
         expected = (
             'a.tar.gz',
@@ -375,7 +373,7 @@ class TestExtract(FileBasedTesting):
         assert errs == result.errors
         assert not result.warnings
 
-    @skipIf(py3 and on_linux, 'Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and on_linux, 'Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_mac_win(self):
         expected = (
             'a.tar.gz',
@@ -606,11 +604,11 @@ class TestExtract(FileBasedTesting):
         assert [] == warns
 
     # FIXME: create test
-    @expectedFailure
+    @pytest.mark.xfail
     def test_extract_with_kinds(self):
         assert False
 
-    @expectedFailure
+    @pytest.mark.xfail
     def test_extract_directory_of_windows_ar_archives(self):
         # this does not pass yet with libarchive and fails too with 7z
         test_dir = self.get_test_loc('extract/ar_tree/winlib', copy=True)
@@ -1034,7 +1032,7 @@ class TestExtract(FileBasedTesting):
     def test_recursive_import(self):
         from extractcode.extract import extract  # NOQA
 
-    @skipIf(on_windows, 'Windows behavior is slightly different with relative paths')
+    @pytest.mark.skipif(on_windows, 'Windows behavior is slightly different with relative paths')
     def test_extract_zipslip_tar_posix(self):
         test_dir = self.get_test_loc('extract/zipslip', copy=True)
         expected = [

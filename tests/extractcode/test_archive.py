@@ -29,8 +29,6 @@ from __future__ import unicode_literals
 
 import io
 import os
-from unittest.case import expectedFailure
-from unittest.case import skipIf
 
 import commoncode.date
 from commoncode import compat
@@ -468,7 +466,7 @@ class TestUncompressGzip(BaseArchiveTestCase):
         assert b'f1content\nf2content\n' == open(result, 'rb').read()
         assert [] == warnings
 
-    @skipIf(py3, 'Fails for now on Python 3')
+    @pytest.mark.skipif(py3, 'Fails for now on Python 3')
     def test_uncompress_gzip_with_trailing_data_py2(self):
         test_file = self.get_test_loc('archive/gzip/trailing_data.gz')
         test_dir = self.get_temp_dir()
@@ -477,8 +475,8 @@ class TestUncompressGzip(BaseArchiveTestCase):
         assert os.path.exists(result)
         assert [] == warnings
 
-    @expectedFailure
-    @skipIf(py2, 'Fails for now on Python 3')
+    @pytest.mark.xfail
+    @pytest.mark.skipif(py2, 'Fails for now on Python 3')
     def test_uncompress_gzip_with_trailing_data_py3(self):
         test_file = self.get_test_loc('archive/gzip/trailing_data.gz')
         test_dir = self.get_temp_dir()
@@ -862,8 +860,8 @@ class TestZip(BaseArchiveTestCase):
         except:
             assert self.expected_deeply_nested_relative_path_alternative == result
 
-    @expectedFailure
-    @skipIf(on_windows or  py3, 'Expectations are different on Windows')
+    @pytest.mark.xfail
+    @pytest.mark.skipif(on_windows or py3, 'Expectations are different on Windows')
     def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix_py2(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
@@ -873,7 +871,8 @@ class TestZip(BaseArchiveTestCase):
         except ExtractErrorFailedToExtract as e:
             assert 'Unknown extraction error' == str(e)
 
-    @skipIf(on_windows or py2, 'Expectations are different on Windows')
+    @pytest.mark.xfail
+    @pytest.mark.skipif(on_windows or py2, reason='Expectations are different on Windows')
     def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix_py3(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
@@ -883,7 +882,7 @@ class TestZip(BaseArchiveTestCase):
         except ExtractErrorFailedToExtract as e:
             assert 'Unknown extraction error' == str(e)
 
-    @skipIf(not on_windows, 'Expectations are different on Windows')
+    @pytest.mark.skipif(not on_windows, 'Expectations are different on Windows')
     def test_extract_zip_with_relative_path_deeply_nested_with_7zip_windows(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
@@ -1187,7 +1186,7 @@ class TestTar(BaseArchiveTestCase):
         # '6-FIFOTYPE: Skipping special file.'
         assert [] == result
 
-    @skipIf(on_windows, 'Unicode and/or Long paths are not handled well yet on windows')
+    @pytest.mark.skipif(on_windows, 'Unicode and/or Long paths are not handled well yet on windows')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
@@ -2076,7 +2075,7 @@ class TestDia(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'dia.dia-extract')
         assert os.path.exists(result)
 
-    @skipIf(py3, 'Fails for now on Python 3')
+    @pytest.mark.skipif(py3, 'Fails for now on Python 3')
     def test_extract_dia_with_trailing_data_py2(self):
         test_file = self.get_test_loc('archive/dia/dia_trailing.dia')
         test_dir = self.get_temp_dir()
@@ -2084,8 +2083,8 @@ class TestDia(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'dia_trailing.dia-extract')
         assert os.path.exists(result)
 
-    @expectedFailure
-    @skipIf(py2, 'Fails for now on Python 3')
+    @pytest.mark.xfail
+    @pytest.mark.skipif(py2, 'Fails for now on Python 3')
     def test_extract_dia_with_trailing_data_py3(self):
         test_file = self.get_test_loc('archive/dia/dia_trailing.dia')
         test_dir = self.get_temp_dir()
@@ -2344,7 +2343,7 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         assert expected == extracted
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
+@pytest.mark.skipif(not on_linux, 'Run only on Linux because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
@@ -2370,12 +2369,12 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux(ExtractArchive
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
+@pytest.mark.skipif(not on_linux, 'Run only on Linux because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux):
     check_only_warnings = True
 
 
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
+@pytest.mark.skipif(not on_mac, 'Run only on Mac because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
@@ -2401,12 +2400,12 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac(ExtractArchiveWi
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
 
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
+@pytest.mark.skipif(not on_mac, 'Run only on Mac because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMacWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac):
     check_only_warnings = True
 
 
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
+@pytest.mark.skipif(not on_windows, 'Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
@@ -2432,12 +2431,12 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows(ExtractArchi
         self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
 
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
+@pytest.mark.skipif(not on_windows, 'Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindowsWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows):
     check_only_warnings = True
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
+@pytest.mark.skipif(not on_linux, 'Run only on Linux because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
@@ -2457,7 +2456,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWi
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we now use libarchive for these
+    @pytest.mark.xfail  # not a problem: we now use libarchive for these
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2471,12 +2470,12 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWi
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
+@pytest.mark.skipif(not on_linux, 'Run only on Linux because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux):
     check_only_warnings = True
 
 
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
+@pytest.mark.skipif(not on_mac, 'Run only on Mac because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = True
 
@@ -2496,7 +2495,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArc
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure
+    @pytest.mark.xfail
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2510,42 +2509,13 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArc
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
+@pytest.mark.xfail
+@pytest.mark.skipif(not on_mac, 'Run only on Mac because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings):
     check_only_warnings = False
 
-    # not a problem: we use libarchive for these
-    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_7zip_with_weird_filenames_with_sevenzip)
 
-    # not a problem: we use libarchive for these
-    test_extract_ar_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_ar_with_weird_filenames_with_sevenzip)
-
-    # not a problem: we use libarchive for these
-    test_extract_cpio_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_cpio_with_weird_filenames_with_sevenzip)
-
-    # This is a problem
-    test_extract_iso_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_iso_with_weird_filenames_with_sevenzip)
-
-    # not a problem: we use libarchive for these
-    test_extract_tar_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_tar_with_weird_filenames_with_sevenzip)
-
-    # not a problem: we use libarchive for these
-    test_extract_zip_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_zip_with_weird_filenames_with_sevenzip)
-
-
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
+@pytest.mark.skipif(not on_windows, 'Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
@@ -2553,12 +2523,12 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
+    @pytest.mark.xfail  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
+    @pytest.mark.xfail  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2567,7 +2537,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
+    @pytest.mark.xfail  # not a problem: we use libarchive for these
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2576,21 +2546,69 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
+    @pytest.mark.xfail  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin):
+@pytest.mark.skipif(not on_windows, 'Run only on Windows because of specific test expectations.')
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = True
 
     if py2:
         # The results are not correct but not a problem: we use libarchive for these
-        test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
-            TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
-            .test_extract_7zip_with_weird_filenames_with_sevenzip)
+        @pytest.mark.xfail    
+        def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+    else:
+        def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    if py2:
+        @pytest.mark.xfail  # not a problem: we use libarchive for these
+        def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+    else:
+        def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    if py2:
+        @pytest.mark.xfail  # not a problem: we use libarchive for these
+        def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+    else:
+        def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    @pytest.mark.xfail  # not a problem: we use libarchive for these
+    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
+        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+
+    if py2:
+        @pytest.mark.xfail  # not a problem: we use libarchive for these
+        def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+    else:
+        def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+            test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
+            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
 class TestZipSlip(BaseArchiveTestCase):
@@ -2631,7 +2649,7 @@ class TestZipSlip(BaseArchiveTestCase):
         else:
             check_files(test_dir, expected)
 
-    @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
+    @pytest.mark.skipif(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
     def test_extract_zipslip_tar_posix(self):
         test_file = self.get_test_loc('archive/zipslip/zip-slip.tar')
         test_dir = self.get_temp_dir()
@@ -2643,7 +2661,7 @@ class TestZipSlip(BaseArchiveTestCase):
         ]
         check_files(test_dir, expected)
 
-    @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
+    @pytest.mark.skipif(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
     def test_extract_zipslip_tar_win(self):
         test_file = self.get_test_loc('archive/zipslip/zip-slip-win.tar')
         test_dir = self.get_temp_dir()
