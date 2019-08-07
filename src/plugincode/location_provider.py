@@ -34,10 +34,9 @@ import sys
 
 from pluggy import PluginManager as PluggyPluginManager
 
+from commoncode import compat
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
-from commoncode import compat
-
 
 
 """
