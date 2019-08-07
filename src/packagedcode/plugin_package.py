@@ -27,15 +27,39 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import os
-
 import attr
 
-from commoncode.fileutils import parent_directory
+import click
+click.disable_unicode_literals_warning = True
+
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
+from scancode import DOC_GROUP
 from scancode import SCAN_GROUP
+
+from packagedcode import PACKAGE_TYPES
+
+
+def print_packages(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    for package_cls in sorted(PACKAGE_TYPES, key=lambda pc: (pc.default_type)):
+        click.echo('--------------------------------------------')
+        click.echo('Package: {self.default_type}'.format(self=package_cls))
+        click.echo(
+            '  class: {self.__module__}:{self.__name__}'.format(self=package_cls))
+        if package_cls.metafiles:
+            click.echo('  metafiles: ', nl=False)
+            click.echo(', '.join(package_cls.metafiles))
+        if package_cls.extensions:
+            click.echo('  extensions: ', nl=False)
+            click.echo(', '.join(package_cls.extensions))
+        if package_cls.filetypes:
+            click.echo('  filetypes: ', nl=False)
+            click.echo(', '.join(package_cls.filetypes))
+        click.echo('')
+    ctx.exit()
 
 
 @scan_impl
@@ -58,6 +82,13 @@ class PackageScanner(ScanPlugin):
             # yes, this is showed as a SCAN plugin in doc/help
             help_group=SCAN_GROUP,
             sort_order=20),
+
+        CommandLineOption(
+            ( '--list-packages',),
+            is_flag=True, is_eager=True,
+            callback=print_packages,
+            help='Show the list of supported package types and exit.',
+            help_group=DOC_GROUP),
     ]
 
     def is_enabled(self, package, **kwargs):
@@ -146,3 +177,4 @@ class PackageScanner(ScanPlugin):
                 codebase.save_resource(new_package_root)
                 resource.packages = []
                 codebase.save_resource(resource)
+
