@@ -1,0 +1,6 @@
+license_expression: mit AND json
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/license-list.html#Expat
+    - https://www.gnu.org/licenses/license-list.html#JSON

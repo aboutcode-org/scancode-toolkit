@@ -33,6 +33,7 @@ license_expressions:
   - x11-fsf
   - freetype
   - proprietary-license
+  - warranty-disclaimer
   - bsd-new
   - zlib
   - bsd-new
@@ -45,6 +46,7 @@ license_expressions:
   - openldap-2.6
   - isc
   - json
+  - warranty-disclaimer
   - ijg
   - x11-tiff
   - x11-lucent
