@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import OrderedDict
+import io
 import json
 import logging
 import os
@@ -43,6 +44,8 @@ from pkginfo import Wheel
 
 import dparse
 from dparse import filetypes
+
+import saneyaml
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -78,14 +81,20 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
+    metafiles = ('metadata.json', '*setup.py','PKG-INFO', '*.whl', '*.egg')
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None
+
+    @classmethod
+    def recognize(cls, location):
+        package =  parse(location)
+        if not package:
+            package = parse2(location)
+        return package
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
@@ -136,22 +145,18 @@ def parse_pkg_info(location):
     """
     Return a Package from a a 'PKG-INFO' file at 'location' or None.
     """
-    if not location or not location.endswith('PKG-INFO'):
+    if not location:
         return
-    infos = {}
-    with open(location, 'rb') as inp:
-        pkg_info = inp.read()
 
-    for attribute in PKG_INFO_ATTRIBUTES:
-        # FIXME: what is this code doing? this is cryptic at best and messy
-        infos[attribute] = re.findall('^' + attribute + '[\s:]*.*', pkg_info, flags=re.MULTILINE)[0]
-        infos[attribute] = re.sub('^' + attribute + '[\s:]*', '', infos[attribute], flags=re.MULTILINE)
-        if infos[attribute] == 'UNKNOWN':
-            infos[attribute] = None
+    if not location.endswith('PKG-INFO'):
+        return
 
-    description = build_description(
-        infos.get('Summary'),
-        infos.get('Description'))
+    with io.open(location, encoding='utf-8') as loc:
+        infos = saneyaml.load(loc.read())
+    
+    logger.error(logger)
+    if not infos.get('Name'):
+        return
 
     parties = []
     author = infos.get('Author')
@@ -161,7 +166,7 @@ def parse_pkg_info(location):
     package = PythonPackage(
         name=infos.get('Name'),
         version=infos.get('Version'),
-        description=description or None,
+        description=infos.get('Summary') or infos.get('Description'),
         homepage_url=infos.get('Home-page') or None,
         # FIXME: this is NOT correct as classifiers can be used for this too
         declared_license=infos.get('License') or None,
@@ -372,7 +377,6 @@ def parse_dependencies(location, package):
         dependencies = parse_with_dparse(resource_location)
         if dependencies:
             package.dependencies = dependencies
-
 
 
 def parse_source_distribution(location):

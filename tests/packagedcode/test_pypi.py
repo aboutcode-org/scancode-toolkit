@@ -32,6 +32,9 @@ import os
 
 from unittest.case import expectedFailure
 
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import check_json_scan
+
 from packagedcode import pypi
 from packagedcode.models import DependentPackage
 
@@ -287,3 +290,10 @@ class TestPyPi(PackageTester):
         dependencies = pypi.parse_with_dparse(test_file)
         assert [DependentPackage(purl=u'pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies'),
                 DependentPackage(purl=u'pkg:pypi/requests', requirement='==2.7.0', scope='dependencies')] == dependencies
+
+    def test_package_command(self):
+        test_dir = self.get_test_loc('pypi/package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/package/package_expected.json')
+        run_scan_click(['--package','--strip-root','--processes', '-1', test_dir,  '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=True)
