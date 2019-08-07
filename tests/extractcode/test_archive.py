@@ -2586,10 +2586,11 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin):
     check_only_warnings = True
 
-    # The results are not correct but not a problem: we use libarchive for these
-    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
-        .test_extract_7zip_with_weird_filenames_with_sevenzip)
+    if py2:
+        # The results are not correct but not a problem: we use libarchive for these
+        test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
+            TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
+            .test_extract_7zip_with_weird_filenames_with_sevenzip)
 
 
 class TestZipSlip(BaseArchiveTestCase):
