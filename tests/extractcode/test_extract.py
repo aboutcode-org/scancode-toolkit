@@ -359,7 +359,7 @@ class TestExtract(FileBasedTesting):
             if py3:
                 assert isinstance(emsg, compat.unicode)
 
-    @pytest.mark.skipif(py3 and not on_linux, 'Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and not on_linux, reason='Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_linux(self):
         expected = (
             'a.tar.gz',
@@ -373,7 +373,7 @@ class TestExtract(FileBasedTesting):
         assert errs == result.errors
         assert not result.warnings
 
-    @pytest.mark.skipif(py3 and on_linux, 'Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and on_linux, reason='Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_mac_win(self):
         expected = (
             'a.tar.gz',
@@ -1032,7 +1032,7 @@ class TestExtract(FileBasedTesting):
     def test_recursive_import(self):
         from extractcode.extract import extract  # NOQA
 
-    @pytest.mark.skipif(on_windows, 'Windows behavior is slightly different with relative paths')
+    @pytest.mark.skipif(on_windows, reason='Windows behavior is slightly different with relative paths')
     def test_extract_zipslip_tar_posix(self):
         test_dir = self.get_test_loc('extract/zipslip', copy=True)
         expected = [
