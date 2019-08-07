@@ -30,10 +30,12 @@ from collections import defaultdict
 import io
 import logging
 import os
+from pprint import pprint
 import re
 
 from commoncode  import command
 from commoncode.system import on_windows
+from commoncode.system import py3
 from commoncode import text
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
@@ -80,8 +82,7 @@ def get_7z_errors(stdout):
     if not stdout or not stdout.strip():
         return
 
-    find_7z_errors = re.compile('^Error:(.*)$',
-                                re.MULTILINE | re.DOTALL).findall
+    find_7z_errors = re.compile('^Error:(.*)$', re.MULTILINE | re.DOTALL).findall
 
     stdlow = stdout.lower()
     for err, msg in sevenzip_errors:
@@ -212,7 +213,8 @@ def extract(location, target_dir, arch_type='*'):
     )
 
     if TRACE:
-        logger.debug('extract: args: ' + repr(ex_args))
+        logger.debug('extract: args:')
+        pprint(ex_args)
 
     rc, stdout, stderr = command.execute2(**ex_args)
 
@@ -229,8 +231,8 @@ def extract(location, target_dir, arch_type='*'):
 def list_entries(location, arch_type='*'):
     """
     Tield Entry tuples for each entry found in a 7zip-supported archive file at
-    location. Use the -t* 7z cli type option or the provided arch_type 7z type
-    (can be None).
+    `location`. Use the provided 7zip `arch_type` CLI archive type code (e.g. with
+    the "-t* 7z" cli type option) (can be None).
     """
     assert location
     abs_location = os.path.abspath(os.path.expanduser(location))
@@ -333,8 +335,8 @@ def parse_7z_listing(location, utf=False):
     """
     Parse a long format 7zip listing and return an iterable of entry.
 
-    If `utf` is True, the console output will treated as utf-8-encoded text.
-    Otherwise it is treated as bytes.
+    If `utf` is True or if on Python 3, the console output will treated as
+    utf-8-encoded text. Otherwise it is treated as bytes.
 
     The 7zip -slt format is:
     - copyright and version details
@@ -359,17 +361,40 @@ def parse_7z_listing(location, utf=False):
         such as Warnings: 1 Errors: 1
     - a line with two or more dashes or an empty line
     """
-    if utf:
+
+    if utf or py3:
         # read to unicode
         with io.open(location, 'r', encoding='utf-8') as listing:
             text = listing.read()
             text = text.replace(u'\r\n', u'\n')
+
+            header_sep = u'\n----------\n'
+            empty = u''
+            body_sep = u'\n\n\n'
+            path_sep = u'\n\n'
+            msg_sep = u':'
+            equal_sep = u'='
+            errror_line_starters = 'Open Warning:', 'Errors:', 'Warnings:'
+
     else:
         # read to bytes
         with io.open(location, 'rb') as listing:
             text = listing.read()
 
-    header_sep = utf and u'\n----------\n' or b'\n----------\n'
+            header_sep = b'\n----------\n'
+            empty = b''
+            body_sep = b'\n\n\n'
+            path_sep = b'\n\n'
+            msg_sep = b':'
+            equal_sep = b'='
+            errror_line_starters = b'Open Warning:', b'Errors:', b'Warnings:'
+
+    if TRACE:
+        logger.debug('parse_7z_listing: initial text: type: ' + repr(type(text)))
+        print('--------------------------------------')
+        print(text)
+        print('--------------------------------------')
+
     header_tail = re.split(header_sep, text, flags=re.MULTILINE)
     if len(header_tail) != 2:
         # we more than one a header, confusion entails.
@@ -378,12 +403,9 @@ def parse_7z_listing(location, utf=False):
     if len(header_tail) == 1:
         # we have only a header, likely an error condition or an empty archive
         return []
-    if utf:
-        empty = u''
-    else:
-        empty = b''
+
+    # FIXME: do something with header and footer?
     _header, body = header_tail
-    body_sep = utf and u'\n\n\n' or b'\n\n\n'
     body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)
     no_footer = len(body_and_footer) == 1
     multiple_footers = len(body_and_footer) > 2
@@ -395,28 +417,15 @@ def parse_7z_listing(location, utf=False):
     else:
         body, _footer == body_and_footer
 
-    # FIXME: do something with header and footer?
-
     entries = []
 
-    if utf:
-        path_sep = u'\n\n'
-        msg_sep = u':'
-        equal_sep = u'='
-        errror_line_starters = 'Open Warning:', 'Errors:', 'Warnings:'
-    else:
-        path_sep = b'\n\n'
-        msg_sep = b':'
-        equal_sep = b'='
-        errror_line_starters = b'Open Warning:', b'Errors:', b'Warnings:'
     if TRACE:
-        from pprint import pprint
         logger.debug('parse_7z_listing: body:')
-        pprint(body)
+        print(body)
 
     paths = re.split(path_sep, body, flags=re.MULTILINE)
+
     if TRACE:
-        from pprint import pprint  # NOQA
         logger.debug('parse_7z_listing: paths:')
         pprint(paths)
 

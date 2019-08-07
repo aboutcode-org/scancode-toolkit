@@ -43,6 +43,8 @@ from commoncode import command
 from commoncode import compat
 from commoncode import fileutils
 from commoncode import paths
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 
 import extractcode
@@ -100,6 +102,7 @@ def load_lib():
     dll = get_location(EXTRACTCODE_LIBARCHIVE_DLL)
     libdir = get_location(EXTRACTCODE_LIBARCHIVE_LIBDIR)
     return command.load_shared_library(dll, libdir)
+
 
 def set_env_with_tz():
     # NOTE: this is important to avoid timezone differences
@@ -323,31 +326,39 @@ class Entry(object):
             self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
             self.size = entry_size(self.entry_struct) or 0
             self.time = entry_time(self.entry_struct) or 0
-            self.path = self._path_bytes(entry_path, entry_path_w)
+            self.path = self.get_path(entry_path, entry_path_w)
             self.issym = self.filetype & AE_IFMT == AE_IFLNK
             # FIXME: could there be cases with link path and symlink is False?
             if self.issym:
-                self.symlink_path = self._path_bytes(symlink_path, symlink_path_w)
-            self.hardlink_path = self._path_bytes(hardlink_path, hardlink_path_w)
+                self.symlink_path = self.get_path(symlink_path, symlink_path_w)
+            self.hardlink_path = self.get_path(hardlink_path, hardlink_path_w)
             # hardlinks do not have a filetype: we test the path instead
             self.islnk = bool(self.hardlink_path)
 
     def is_empty(self):
         return not self.archive or not self.entry_struct
 
-    def _path_bytes(self, func, func_w):
+    def get_path(self, func, func_w):
         """
-        Return a path as a byte string converted to UTF-8-encoded bytes if this is
-        unicode. First call the path function `func` then call the wide char
+        Return a path calling first the path function `func` then the wide char
         equivalent `func_w` if `func` did not provide a path.
+
+        The path returned is either byte (on Python 2) or unicode string (Python
+        3) On Python 2, if a path is unicode its bytes are converted to
+        UTF-8-encoded bytes.
         """
         path = func(self.entry_struct)
         if not path:
             path = func_w(self.entry_struct)
-        if isinstance(path, compat.unicode):
+
+        if py2 and isinstance(path, compat.unicode):
             # FIXME: encoding MAY fail if the encoding is NOT UTF-8!
             # .... should we transliterate there?
             path = path.encode('utf-8')
+
+        if py3 and not isinstance(path, compat.unicode):
+            path = text.as_unicode(path)
+
         return path
 
     def write(self, target_dir, transform_path=lambda x: x):
@@ -391,8 +402,8 @@ class Entry(object):
             with open(unique_path, 'wb') as target:
                 chunk_size = 1
                 while chunk_size:
-                    chunk_size = read_entry_data(self.archive.archive_struct,
-                                                 sbuffer, chunk_len)
+                    chunk_size = read_entry_data(
+                        self.archive.archive_struct, sbuffer, chunk_len)
                     data = sbuffer.raw[0:chunk_size]
                     target.write(data)
             os.utime(unique_path, (self.time, self.time))
@@ -405,10 +416,16 @@ class Entry(object):
             return target_path
 
     def __repr__(self):
-        return ('Entry('
-            'path=%(path)r, size=%(size)r, isfile=%(isfile)r, isdir=%(isdir)r,'
-            'islnk=%(islnk)r, issym=%(issym)r, isspecial=%(isspecial)r'
-        ')'
+        return (
+            'Entry('
+                'path=%(path)r, '
+                'size=%(size)r, '
+                'isfile=%(isfile)r, '
+                'isdir=%(isdir)r,'
+                'islnk=%(islnk)r, '
+                'issym=%(issym)r, '
+                'isspecial=%(isspecial)r'
+            ')'
         ) % self.__dict__
 
 
@@ -439,6 +456,7 @@ class ArchiveException(ExtractError):
 
         return self.msg
 
+
 class ArchiveWarning(ArchiveException):
     pass
 
@@ -465,6 +483,7 @@ class ArchiveErrorPasswordProtected(ArchiveException, ExtractErrorPasswordProtec
 
 class ArchiveErrorIllegalOperationOnClosedArchive(ArchiveException):
     pass
+
 
 #################################################
 # ctypes defintion of the interface to libarchive
@@ -516,6 +535,7 @@ AE_IFDIR = 0o0040000  # Directory
 AE_IFIFO = 0o0010000  # Named pipe (fifo)
 
 AE_IFMT = 0o0170000  # Format mask
+
 
 #####################################
 # libarchive C functions declarations
