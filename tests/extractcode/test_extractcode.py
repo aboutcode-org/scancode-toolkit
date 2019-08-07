@@ -36,6 +36,7 @@ from extractcode import new_name
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
 
+
 class TestNewName(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 

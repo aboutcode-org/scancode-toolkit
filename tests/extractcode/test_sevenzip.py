@@ -30,7 +30,6 @@ import os
 from commoncode.testcase import FileBasedTesting
 from extractcode import sevenzip
 
-
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
 
