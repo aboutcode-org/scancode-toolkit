@@ -45,10 +45,10 @@ from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import get_temp_dir
 from commoncode.system import on_linux
+from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode import text
-from commoncode.system import on_posix
 
 
 """
@@ -221,12 +221,16 @@ def load_shared_library(dll_path, lib_dir):
 
     if not exists(dll_path):
         raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
+
     if on_linux and py2:
-        # ensure that the path is not Unicode...
+        # bytes only there ...
         if not isinstance(dll_path, bytes):
             dll_path = fsencode(dll_path)
-    if not isinstance(dll_path, compat.unicode):
-        dll_path = fsdecode(dll_path)
+    else:
+        # ... unicode everywhere else
+        if not isinstance(dll_path, compat.unicode):
+            dll_path = fsdecode(dll_path)
+
     lib = ctypes.CDLL(dll_path)
     if lib and lib._name:
         return lib
@@ -265,32 +269,34 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
     # ensure we use unicode or bytes depending on OSes
     # TODO: deal also with Python versions
     if on_linux and py2:
+        # bytes ...
         new_path = fsencode(new_path)
         path_env = fsencode(path_env)
-
     else:
+        # ... and unicode otherwise
         new_path = fsdecode(new_path)
         path_env = fsdecode(path_env)
 
     try:
-        path_segments = path_env.split(_path_env_sep)
+        path_elements = path_env.split(_path_env_sep)
     except:
         raise Exception(repr((path_env, _path_env_sep)))
 
     # add lib path to the front of the PATH env var
     # this will use bytes on Linux and unicode elsewhere
-    if new_path not in path_segments:
+    if new_path not in path_elements:
         if not path_env:
             new_path_env = new_path
         else:
             new_path_env = _path_env_sep.join([new_path, path_env])
 
         if py2:
-            if not on_linux:
+            # always use bytes for env vars...
+            if isinstance(new_path_env, compat.unicode):
                 new_path_env = fsencode(new_path_env)
         else:
-            # we do not convert Linux to bytes on Py3
-            if on_linux:
+            # ... else use unicode
+            if not isinstance(new_path_env, compat.unicode):
                 new_path_env = fsdecode(new_path_env)
 
         # at this stage new_path_env is unicode on all OSes on Py3
