@@ -28,25 +28,31 @@ from __future__ import unicode_literals
 
 import os
 
-from unittest.case import skipIf
 from unittest.case import expectedFailure
+from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
+from commoncode.system import py2
 
 from typecode.contenttype import get_filetype
-from typecode.contenttype import get_type
 from typecode.contenttype import get_pygments_lexer
-from typecode.contenttype import is_standard_include
+from typecode.contenttype import get_type
 from typecode.contenttype import is_data as contenttype_is_data
+from typecode.contenttype import is_standard_include
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
 get_filetype_pygment = lambda l: get_type(l).filetype_pygment
 get_filetype_file = lambda l: get_type(l).filetype_file
 get_mimetype_file = lambda l: get_type(l).mimetype_file
+
 is_text = lambda l: get_type(l).is_text
 is_archive = lambda l: get_type(l).is_archive
 is_compressed = lambda l: get_type(l).is_compressed
@@ -61,6 +67,7 @@ is_binary = lambda l: get_type(l).is_binary
 is_c_source = lambda l: get_type(l).is_c_source
 is_stripped_elf = lambda l: get_type(l).is_stripped_elf
 is_elf = lambda l: get_type(l).is_elf
+
 elf_type = lambda l: get_type(l).elf_type
 get_link_target = lambda l: get_type(l).link_target
 is_link = lambda l: get_type(l).is_link
@@ -96,7 +103,10 @@ class TestContentType(FileBasedTesting):
     @skipIf(not on_linux, 'Windows and macOS have some issues with some non-unicode paths')
     def test_filetype_file_on_unicode_file_name2(self):
         zip_file_name = 'contenttype/unicode/unicode2.zip'
-        test_zip = self.extract_test_zip(zip_file_name.encode('utf-8'))
+        if py2:
+            zip_file_name = zip_file_name.encode('utf-8')
+
+        test_zip = self.extract_test_zip(zip_file_name)
         test_dir = os.path.join(test_zip, 'a')
         f = [f for f in os.listdir(test_dir) if f.startswith('g')][0]
         test_file = os.path.join(test_dir, f)

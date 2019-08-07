@@ -25,8 +25,7 @@ jobs:
               license_cache: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/licensedcode/test_zzzz_cache.py
               extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
               cluecode: bin/py.test -n 2 -vvs --test-suite=all tests/cluecode
-              packagedcode: bin/py.test -n 2 -vvs --test-suite=all tests/packagedcode
-              plugincode: bin/py.test -n 2 -vvs tests/plugincode
+              packagedcode_plugincode: bin/py.test -n 2 -vvs --test-suite=all tests/packagedcode tests/plugincode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -37,7 +36,6 @@ jobs:
           test_suites:
               all: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              plugincode: Scripts\py.test -vvs tests\plugincode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -47,7 +45,6 @@ jobs:
           test_suites:
               all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
               scancode: bin/py.test -vvs --reruns=3 tests/scancode
-              plugincode: bin/py.test -n 2 -vvs tests/plugincode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -57,7 +54,6 @@ jobs:
           test_suites:
               all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
               scancode: bin/py.test -vvs --reruns=3 tests/scancode
-              plugincode: bin/py.test -n 2 -vvs tests/plugincode
 
 ################################################################################
 # These jobs are using containers and their own Python 2.7
@@ -82,8 +78,10 @@ jobs:
           install_python: sudo apt-get install -y python python-dev
           test_suite_label: commoncode and plugincode
           test_suite: |
-                bin/py.test -vvs tests/commoncode
-                bin/py.test -vvs tests/plugincode
+                bin/py.test  -n 2 -vvs tests/commoncode \
+                    tests/typecode \
+                    tests/extractcode \
+                    tests/plugincode 
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -170,8 +168,11 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
-              plugincode: bin/py.test -vvs tests/plugincode
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
+                    tests/extractcode \
+                    tests/plugincode 
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -179,8 +180,11 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
-              plugincode: bin/py.test -vvs tests/plugincode
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
+                    tests/extractcode \
+                    tests/plugincode 
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -188,8 +192,11 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test -vvs tests/commoncode
-              plugincode: bin/py.test -vvs tests/plugincode
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
+                    tests/extractcode \
+                    tests/plugincode 
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -198,9 +205,10 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              commoncode: Scripts\py.test -vvs tests\commoncode
-              plugincode: Scripts\py.test -vvs tests\plugincode
-
+              commoncode: Scripts\py.test  -vvs tests\commoncode
+              other: |
+                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode 
+              
 ################################################################################
 # These jobs are using containers and their own Python 3.6
 ################################################################################
@@ -226,10 +234,22 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: commoncode and plugincode
+          test_suite_label: commoncode
           test_suite: |
-                bin/py.test -vvs tests/commoncode
-                bin/py.test -vvs tests/plugincode
+                bin/py.test -vvs tests/commoncode 
+
+    - template: etc/ci/azure-container-deb.yml
+      parameters:
+          job_name: ubuntu18_py36_2
+          container: ubuntu:bionic
+          python_path: python3.6
+          python_version: '3.6'
+          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+          test_suite_label: other
+          test_suite: |
+                bin/py.test -vvs tests/typecode \
+                    tests/extractcode \
+                    tests/plugincode 
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:

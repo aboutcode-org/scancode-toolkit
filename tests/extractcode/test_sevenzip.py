@@ -22,12 +22,16 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os
 
 from commoncode.testcase import FileBasedTesting
 from extractcode import sevenzip
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestSevenZip(FileBasedTesting):
@@ -37,7 +41,7 @@ class TestSevenZip(FileBasedTesting):
             test = '''
 7-Zip 9.04 beta  Copyright (c) 1999-2009 Igor Pavlov  2009-05-30
 
-Processing archive: c:\w421\scripts\testfiles\archive\zip\zip_password_nexb.zip
+Processing archive: c:\\w421\\scripts\\testfiles\\archive\\zip\\zip_password_nexb.zip
 
 Extracting  a.txt     CRC Failed in encrypted file. Wrong password?
 
@@ -90,16 +94,46 @@ Compressed: 7674
     def test_list_sevenzip_on_tar(self):
         test_file = self.get_test_loc('archive/tar/special.tar')
         expected = [
-            dict(path=u'0-REGTYPE', size=u'3765', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'0-REGTYPE-TEXT', size=u'19941', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155', size=u'3765', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'1-LNKTYPE', size=u'0', is_file=True, is_dir=False, is_hardlink=True, is_symlink=False, link_target=u'0-REGTYPE', is_broken_link=False, is_special=False),
-            dict(path=u'2-SYMTYPE', size=u'17', is_file=True, is_dir=False, is_hardlink=False, is_symlink=True, link_target=u'testtar/0-REGTYPE', is_broken_link=False, is_special=False),
-            dict(path=u'3-CHRTYPE', size=u'0', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'5-DIRTYPE', size=u'0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'6-FIFOTYPE', size=u'0', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'S-SPARSE', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'S-SPARSE-WITH-NULLS', size=u'49152', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
+            dict(path=u'0-REGTYPE',
+                 size=u'3765', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'0-REGTYPE-TEXT',
+                 size=u'19941', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155',
+                 size=u'3765', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'1-LNKTYPE',
+                 size=u'0', is_file=True, is_dir=False, is_hardlink=True,
+                 is_symlink=False, link_target=u'0-REGTYPE',
+                 is_broken_link=False, is_special=False),
+            dict(path=u'2-SYMTYPE',
+                 size=u'17', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=True, link_target=u'testtar/0-REGTYPE',
+                 is_broken_link=False, is_special=False),
+            dict(path=u'3-CHRTYPE',
+                 size=u'0', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'5-DIRTYPE',
+                 size=u'0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'6-FIFOTYPE',
+                 size=u'0', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'S-SPARSE',
+                 size=u'49152', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'S-SPARSE-WITH-NULLS',
+                 size=u'49152', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False)
         ]
         result = [e.to_dict() for e in sevenzip.list_entries(test_file)]
         assert expected == result
@@ -107,14 +141,38 @@ Compressed: 7674
     def test_parse_7z_listing_linux(self):
         test_file = self.get_test_loc('archive/7z/listings/cpio_relative.cpio.linux')
         expected = [
-            dict(path='../..', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder/3folder', size='0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder/3folder/cpio_relative.cpio', size='0', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder/3folder/relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder/3folder/relative_file~', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../2folder/relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path='../../relative_file', size='14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
+            dict(path='../..',
+                 size='0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder',
+                 size='0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder/3folder',
+                 size='0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder/3folder/cpio_relative.cpio',
+                 size='0', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder/3folder/relative_file',
+                 size='14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder/3folder/relative_file~',
+                 size='14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../2folder/relative_file',
+                 size='14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path='../../relative_file',
+                 size='14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False)
         ]
         result = [e.to_dict() for e in sevenzip.parse_7z_listing(test_file, False)]
         assert expected == result
@@ -122,14 +180,38 @@ Compressed: 7674
     def test_parse_7z_listing_win(self):
         test_file = self.get_test_loc('archive/7z/listings/cpio_relative.cpio.win')
         expected = [
-            dict(path=u'..\\..', size=u'0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder', size=u'0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder\\3folder', size=u'0', is_file=False, is_dir=True, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder\\3folder\\cpio_relative.cpio', size=u'0', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder\\3folder\\relative_file', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder\\3folder\\relative_file~', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\2folder\\relative_file', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False),
-            dict(path=u'..\\..\\relative_file', size=u'14', is_file=True, is_dir=False, is_hardlink=False, is_symlink=False, link_target=None, is_broken_link=False, is_special=False)
+            dict(path=u'..\\..',
+                 size=u'0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder',
+                 size=u'0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder\\3folder',
+                 size=u'0', is_file=False, is_dir=True, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder\\3folder\\cpio_relative.cpio',
+                 size=u'0', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder\\3folder\\relative_file', size=u'14',
+                 is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder\\3folder\\relative_file~',
+                 size=u'14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\2folder\\relative_file',
+                 size=u'14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False),
+            dict(path=u'..\\..\\relative_file',
+                 size=u'14', is_file=True, is_dir=False, is_hardlink=False,
+                 is_symlink=False, link_target=None, is_broken_link=False,
+                 is_special=False)
         ]
         result = [e.to_dict() for e in sevenzip.parse_7z_listing(test_file, True)]
         assert expected == result

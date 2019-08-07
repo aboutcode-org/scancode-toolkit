@@ -34,10 +34,11 @@ import patch as pythonpatch
 
 from commoncode import paths
 from commoncode import fileutils
-import typecode.contenttype
-
+from commoncode import text
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
+import typecode.contenttype
+
 
 """
 Low level utilities to parse patch files and treat them as if they were
@@ -130,8 +131,17 @@ def patch_text(ptch):
     yield '+++ ' + fileutils.as_posixpath(ptch.target)
     hk = '@@ -%(startsrc)d,%(linessrc)d +%(starttgt)d,%(linestgt)d @@ %(desc)s'
 
+    def hunk_data(hnk):
+        return dict(
+            startsrc=hnk.startsrc,
+            linessrc=hnk.linessrc,
+            starttgt=hnk.starttgt,
+            linestgt=hnk.linestgt,
+            desc=text.as_unicode(hnk.desc),
+        )
+
     for hunk in ptch.hunks:
-        yield hk % hunk.__dict__
+        yield hk % hunk_data(hunk)
         for line in hunk.text:
             yield line
 

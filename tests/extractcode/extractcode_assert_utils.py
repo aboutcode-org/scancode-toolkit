@@ -26,8 +26,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import os
+import ntpath
+import posixpath
+
+from commoncode import compat
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.testcase import FileBasedTesting
+from commoncode.system import on_windows
+
 
 """
 Shared archiving test utils.
@@ -76,3 +83,150 @@ def check_no_error(result):
     for r in result:
         assert not r.errors
         assert not r.warnings
+
+
+def is_posixpath(location):
+    """
+    Return True if the `location` path is likely a POSIX-like path using POSIX path
+    separators (slash or "/")or has no path separator.
+
+    Return False if the `location` path is likely a Windows-like path using backslash
+    as path separators (e.g. "\").
+    """
+    has_slashes = '/' in location
+    has_backslashes = '\\' in location
+    # windows paths with drive
+    if location:
+        drive, _ = ntpath.splitdrive(location)
+        if drive:
+            return False
+
+    # a path is always POSIX unless it contains ONLY backslahes
+    # which is a rough approximation (it could still be posix)
+    is_posix = True
+    if has_backslashes and not has_slashes:
+        is_posix = False
+    return is_posix
+
+
+def to_posix(path):
+    """
+    Return a path using the posix path separator given a path that may contain posix
+    or windows separators, converting \\ to /. NB: this path will still be valid in
+    the windows explorer (except as a UNC or share name). It will be a valid path
+    everywhere in Python. It will not be valid for windows command line operations.
+    """
+    is_unicode = isinstance(path, compat.unicode)
+    ntpath_sep = is_unicode and u'\\' or '\\'
+    posixpath_sep = is_unicode and u'/' or '/'
+    if is_posixpath(path):
+        if on_windows:
+            return path.replace(ntpath_sep, posixpath_sep)
+        else:
+            return path
+    return path.replace(ntpath_sep, posixpath_sep)
+
+
+class BaseArchiveTestCase(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+
+    def check_get_extractors(self, test_file, expected, kinds=()):
+        from extractcode import archive
+
+        test_loc = self.get_test_loc(test_file)
+        if kinds:
+            extractors = archive.get_extractors(test_loc, kinds)
+        else:
+            extractors = archive.get_extractors(test_loc)
+
+        # import typecode
+        # ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
+        # mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
+        fe = fileutils.file_extension(test_loc).lower()
+        em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
+
+        msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+               'with fe:%(fe)r, em:%(em)s' % locals())
+        assert expected == extractors, msg
+
+
+    def assertRaisesInstance(self, excInstance, callableObj, *args, **kwargs):
+        """
+        This assertion accepts an instance instead of a class for refined
+        exception testing.
+        """
+        kwargs = kwargs or {}
+        excClass = excInstance.__class__
+        try:
+            callableObj(*args, **kwargs)
+        except excClass as e:
+            assert str(e).startswith(str(excInstance))
+        else:
+            if hasattr(excClass, '__name__'):
+                excName = excClass.__name__
+            else:
+                excName = str(excClass)
+            raise self.failureException('%s not raised' % excName)
+
+    def check_extract(self, test_function, test_file, expected, expected_warnings=None, check_all=False):
+        """
+        Run the extraction `test_function` on `test_file` checking that a map of
+        expected paths --> size exist in the extracted target directory.
+        Does not test the presence of all files unless `check_all` is True.
+        """
+        from extractcode import archive
+
+        test_file = self.get_test_loc(test_file)
+        test_dir = self.get_temp_dir()
+        warnings = test_function(test_file, test_dir)
+        if expected_warnings is not None:
+            assert expected_warnings == warnings
+
+        if check_all:
+            len_test_dir = len(test_dir)
+            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.resource_iter(test_dir, with_dirs=False)}
+            expected = {os.path.join(test_dir, exp_path): exp_size for exp_path, exp_size in expected.items()}
+            assert sorted(expected.items()) == sorted(extracted.items())
+        else:
+            for exp_path, exp_size in expected.items():
+                exp_loc = os.path.join(test_dir, exp_path)
+                msg = '''When extracting: %(test_file)s
+                    With function: %(test_function)r
+                    Failed to find expected path: %(exp_loc)s'''
+                assert os.path.exists(exp_loc), msg % locals()
+                if exp_size is not None:
+                    res_size = os.stat(exp_loc).st_size
+                    msg = '''When extracting: %(test_file)s
+                        With function: %(test_function)r
+                        Failed to assert the correct size %(exp_size)d
+                        Got instead: %(res_size)d
+                        for expected path: %(exp_loc)s'''
+                    assert exp_size == res_size, msg % locals()
+
+    def collect_extracted_path(self, test_dir):
+        result = []
+        td = fileutils.as_posixpath(test_dir)
+        for t, dirs, files in os.walk(test_dir):
+            t = fileutils.as_posixpath(t)
+            for d in dirs:
+                nd = posixpath.join(t, d).replace(td, '') + '/'
+                result.append(nd)
+            for f in files:
+                nf = posixpath.join(t, f).replace(td, '')
+                result.append(nf)
+        result = sorted(result)
+        return result
+
+    def assertExceptionContains(self, text, callableObj, *args, **kwargs):
+        try:
+            callableObj(*args, **kwargs)
+        except Exception as e:
+            if text not in str(e):
+                raise self.failureException(
+                       'Exception %(e)r raised, '
+                       'it should contain the text %(text)r '
+                       'and does not' % locals())
+        else:
+            raise self.failureException(
+                   'Exception containing %(text)r not raised' % locals())

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -24,9 +25,8 @@
 
 from __future__ import absolute_import, print_function
 
+import io
 import os
-from unittest.case import expectedFailure
-from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
@@ -36,7 +36,12 @@ import extractcode
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_no_error
 from extractcode import extract
+from commoncode.system import on_linux
 from commoncode.system import on_windows
+from commoncode.system import py3
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestExtract(FileBasedTesting):
@@ -329,7 +334,47 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
         check_files(test_dir, recursed)
 
-    def test_extract_tree_with_corrupted_archives(self):
+    def test_uncompress_corrupted_archive_with_zlib(self):
+        from extractcode import archive
+        import zlib
+        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        target_dir = self.get_temp_dir()
+        try:
+            list(archive.uncompress_gzip(test_dir, target_dir))
+            raise Exception('no error raised')
+        except zlib.error as e:
+            assert str(e).startswith('Error -3 while decompressing')
+
+    def test_uncompress_corrupted_archive_with_libarchive(self):
+        from extractcode import libarchive2
+        from commoncode import compat
+        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        target_dir = self.get_temp_dir()
+        try:
+            list(libarchive2.extract(test_dir, target_dir))
+            raise Exception('no error raised')
+        except libarchive2.ArchiveError as e:
+            emsg = str(e)
+            assert 'gzip decompression failed' == emsg
+            if py3:
+                assert isinstance(emsg, compat.unicode)
+
+    @pytest.mark.skipif(py3 and not on_linux, reason='Expectations are different on Windows and macOS')
+    def test_extract_tree_with_corrupted_archives_linux(self):
+        expected = (
+            'a.tar.gz',
+        )
+        test_dir = self.get_test_loc('extract/corrupted', copy=True)
+        result = list(extract.extract(test_dir, recurse=False))
+        check_files(test_dir, expected)
+        assert len(result) == 2
+        result = result[1]
+        errs = ['gzip decompression failed']
+        assert errs == result.errors
+        assert not result.warnings
+
+    @pytest.mark.skipif(py3 and on_linux, reason='Expectations are different on Windows and macOS')
+    def test_extract_tree_with_corrupted_archives_mac_win(self):
         expected = (
             'a.tar.gz',
         )
@@ -559,11 +604,11 @@ class TestExtract(FileBasedTesting):
         assert [] == warns
 
     # FIXME: create test
-    @expectedFailure
+    @pytest.mark.xfail
     def test_extract_with_kinds(self):
         assert False
 
-    @expectedFailure
+    @pytest.mark.xfail
     def test_extract_directory_of_windows_ar_archives(self):
         # this does not pass yet with libarchive and fails too with 7z
         test_dir = self.get_test_loc('extract/ar_tree/winlib', copy=True)
@@ -922,8 +967,8 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
 
     def touch(self, location):
-        with open(location, 'wb') as f:
-            f.write('\n')
+        with io.open(location, 'w') as f:
+            f.write(u'\n')
 
     def fake_extract(self, location):
         extracted = os.path.join(location + 'extract')
@@ -987,7 +1032,7 @@ class TestExtract(FileBasedTesting):
     def test_recursive_import(self):
         from extractcode.extract import extract  # NOQA
 
-    @skipIf(on_windows, 'Windows behavior is slightly different with relative paths')
+    @pytest.mark.skipif(on_windows, reason='Windows behavior is slightly different with relative paths')
     def test_extract_zipslip_tar_posix(self):
         test_dir = self.get_test_loc('extract/zipslip', copy=True)
         expected = [

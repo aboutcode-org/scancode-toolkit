@@ -35,6 +35,9 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.text import as_unicode
 from extractcode import patch
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestIsPatch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -58,13 +61,13 @@ class TestIsPatch(FileBasedTesting):
 def check_patch(test_file, expected_file, regen=False):
     result = [list(pi) for pi in patch.patch_info(test_file)]
 
-    result = [[as_unicode(s), as_unicode(t), map(as_unicode, lines)]
+    result = [[as_unicode(s), as_unicode(t), list(map(as_unicode, lines))]
               for s, t, lines in result]
 
     if regen:
         with io.open(expected_file, 'wb') as regened:
             json.dump(result, regened, indent=2)
-    with io.open(expected_file,  encoding='utf-8') as expect:
+    with io.open(expected_file, encoding='utf-8') as expect:
         expected = json.load(expect)
         assert expected == result
 

@@ -185,6 +185,20 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
 
 # TODO: move these functions to paths.py
 
+def prepare_path(pth):
+    """
+    Return the `pth` path string either as encoded bytes if on Linux and using
+    Python 2 or as a unicode/text otherwise.
+    """
+    if on_linux and py2:
+        if not isinstance(pth, bytes):
+            pth = fsencode(pth)
+        return pth
+    else:    
+        if not isinstance(pth, compat.unicode):
+            return fsdecode(pth)
+    return pth
+
 
 def is_posixpath(location):
     """
@@ -216,6 +230,7 @@ def as_posixpath(location):
     `location` path. This converts Windows paths to look like POSIX paths: Python
     accepts gracefully POSIX paths on Windows.
     """
+    location = prepare_path(location)
     return location.replace(WIN_PATH_SEP, POSIX_PATH_SEP)
 
 
@@ -224,6 +239,7 @@ def as_winpath(location):
     Return a Windows-like path using Windows path separators (backslash or "\") for a
     `location` path.
     """
+    location = prepare_path(location)
     return location.replace(POSIX_PATH_SEP, WIN_PATH_SEP)
 
 

@@ -56,10 +56,16 @@ test_run_temp_dir = None
 # set to 1 to see the slow tests
 timing_threshold = sys.maxsize
 
-POSIX_PATH_SEP = b'/' if on_linux and py2 else '/'
-WIN_PATH_SEP = b'\\' if on_linux and py2 else '\\'
-EMPTY_STRING = b'' if on_linux and py2 else ''
-DOT = b'.' if on_linux and py2 else '.'
+if on_linux and py2:
+    POSIX_PATH_SEP = b'/'
+    WIN_PATH_SEP = b'\\'
+    EMPTY_STRING = b''
+    DOT = b'.'
+else:
+    POSIX_PATH_SEP = u'/'
+    WIN_PATH_SEP = u'\\'
+    EMPTY_STRING = u''
+    DOT = u'.'
 
 if on_windows:
     OS_PATH_SEP = WIN_PATH_SEP

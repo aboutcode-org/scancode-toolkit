@@ -29,6 +29,8 @@ from collections import Counter
 import math
 import zlib
 
+from commoncode import compat
+
 
 def entropy(location, length=5000):
     """
@@ -68,6 +70,9 @@ def gzip_entropy(s):
     """
     if not s:
         return 0
+
+    if isinstance(s, compat.unicode):
+        s = s.encode('utf-8')
 
     length = len(s)
     if not length:
