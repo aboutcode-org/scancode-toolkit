@@ -106,9 +106,10 @@ def test_python_safe_name():
 
 def test_as_unicode():
     assert '' == text.as_unicode('')
+    assert isinstance(text.as_unicode(b'some bytes'), compat.unicode)
+    assert None == text.as_unicode(None)
     try:
-        text.as_unicode(None)
+        text.as_unicode(['foo'])
         raise Exception('Exception should have been raised')
     except AssertionError:
         pass
-    assert isinstance(text.as_unicode(b'some bytes'), compat.unicode)

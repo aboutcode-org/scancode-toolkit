@@ -78,10 +78,15 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         if on_posix:
             expected += [ ('2-SYMTYPE', 'l'), ('6-FIFOTYPE', 's'), ]
 
-        if on_windows and py3:
-            expected += [ ('2-SYMTYPE', 'l') ]
-
-        assert sorted(expected) == sorted(results)
+        try:
+            assert sorted(expected) == sorted(results)
+        except Exception as e:
+            if on_windows and py3:
+                # On some Windows symlinkes are detected OK (Windows 10?) but not in Windows 7
+                expected += [ ('2-SYMTYPE', 'l') ]
+                assert sorted(expected) == sorted(results)
+            else:
+                raise e
 
     def test_is_rwx_with_none(self):
         assert not filetype.is_writable(None)
