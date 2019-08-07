@@ -168,9 +168,9 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              all: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode 
 
@@ -180,21 +180,21 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
-              all: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode 
-          
+
     - template: etc/ci/azure-mac.yml
       parameters:
           job_name: macos1014_py36
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
-              all: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
+              commoncode: bin/py.test  -vvs tests/commoncode
+              other: |
+                 bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode 
 
@@ -205,8 +205,9 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              all: |
-                Scripts\py.test  -n 2 -vvs tests\commoncode tests\typecode tests\extractcode tests\plugincode 
+              commoncode: Scripts\py.test  -vvs tests\commoncode
+              other: |
+                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode 
               
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -233,13 +234,22 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: commoncode,plugincode & extractcode
+          test_suite_label: commoncode
           test_suite: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
+                bin/py.test -vvs tests/commoncode 
+
+    - template: etc/ci/azure-container-deb.yml
+      parameters:
+          job_name: ubuntu18_py36_2
+          container: ubuntu:bionic
+          python_path: python3.6
+          python_version: '3.6'
+          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+          test_suite_label: other
+          test_suite: |
+                bin/py.test -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode 
-
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
