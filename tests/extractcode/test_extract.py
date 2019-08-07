@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -24,6 +25,7 @@
 
 from __future__ import absolute_import, print_function
 
+import io
 import os
 from unittest.case import expectedFailure
 from unittest.case import skipIf
@@ -38,7 +40,6 @@ from extractcode_assert_utils import check_no_error
 from extractcode import extract
 from commoncode.system import on_linux
 from commoncode.system import on_windows
-from commoncode.system import py2
 from commoncode.system import py3
 
 import pytest
@@ -968,8 +969,8 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
 
     def touch(self, location):
-        with open(location, 'wb') as f:
-            f.write('\n')
+        with io.open(location, 'w') as f:
+            f.write(u'\n')
 
     def fake_extract(self, location):
         extracted = os.path.join(location + 'extract')

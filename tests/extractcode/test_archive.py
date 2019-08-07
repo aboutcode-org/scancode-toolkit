@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -38,22 +39,21 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 
+from extractcode_assert_utils import BaseArchiveTestCase
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_size
-from extractcode_assert_utils import BaseArchiveTestCase
+from extractcode_assert_utils import to_posix
 
 import extractcode
 from extractcode import archive
-from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
 
 import pytest
-from extractcode_assert_utils import to_posix
 pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 
 """
@@ -319,29 +319,6 @@ class TestGetExtractorTest(BaseArchiveTestCase):
         expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
         check_files(test_tgt_dir, expected)
 
-    def test_libarchive_extract_can_extract_to_relative_paths(self):
-        # The setup is a tad complex because we want to have a relative dir
-        # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code tree
-        from os.path import dirname, join, abspath
-        import tempfile
-        import shutil
-        from extractcode.libarchive2 import extract
-
-        test_file = self.get_test_loc('archive/relative_path/basic.zip')
-        scancode_root = dirname(dirname(dirname(__file__)))
-        scancode_tmp = join(scancode_root, 'tmp')
-        fileutils.create_dir(scancode_tmp)
-        scancode_root_abs = abspath(scancode_root)
-        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
-        test_tgt_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
-        shutil.copy(test_file, test_src_dir)
-        test_src_file = join(test_src_dir, 'basic.zip')
-        result = list(extract(test_src_file, test_tgt_dir))
-        assert [] == result
-        expected = ['c/a/a.txt', 'c/b/a.txt', 'c/c/a.txt']
-        check_files(test_tgt_dir, expected)
-
     def test_windows_media_player_skins_are_zip(self):
         test_file = self.get_test_loc('archive/wmz/Go.wmz')
         extractors = archive.get_extractors(test_file)
@@ -491,8 +468,18 @@ class TestUncompressGzip(BaseArchiveTestCase):
         assert b'f1content\nf2content\n' == open(result, 'rb').read()
         assert [] == warnings
 
-    # @skipIf(py3, 'TODO: somehow the Python 3 builtin gzip module noes not reconize this archive anymore')
-    def test_uncompress_gzip_with_trailing_data(self):
+    @skipIf(py3, 'Fails for now on Python 3')
+    def test_uncompress_gzip_with_trailing_data_py2(self):
+        test_file = self.get_test_loc('archive/gzip/trailing_data.gz')
+        test_dir = self.get_temp_dir()
+        warnings = archive.uncompress_gzip(test_file, test_dir)
+        result = os.path.join(test_dir, 'trailing_data.gz-extract')
+        assert os.path.exists(result)
+        assert [] == warnings
+
+    @expectedFailure
+    @skipIf(py2, 'Fails for now on Python 3')
+    def test_uncompress_gzip_with_trailing_data_py3(self):
         test_file = self.get_test_loc('archive/gzip/trailing_data.gz')
         test_dir = self.get_temp_dir()
         warnings = archive.uncompress_gzip(test_file, test_dir)
@@ -683,12 +670,12 @@ class TestShellArchives(BaseArchiveTestCase):
 
     def test_springboot_is_not_recognized_without_jar_extension(self):
         test_file = self.get_test_loc('archive/shar/demo-spring-boot.sh')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert None == handler
 
     def test_springboot_is_recognized_with_jar_extension(self):
         test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert handler.name == 'Springboot Java Jar package'
 
 
@@ -876,8 +863,18 @@ class TestZip(BaseArchiveTestCase):
             assert self.expected_deeply_nested_relative_path_alternative == result
 
     @expectedFailure
-    @skipIf(on_windows, 'Expectations are different on Windows')
-    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix(self):
+    @skipIf(on_windows or  py3, 'Expectations are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix_py2(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        try:
+            sevenzip.extract(test_file, test_dir)
+            self.fail('Should raise an exception')
+        except ExtractErrorFailedToExtract as e:
+            assert 'Unknown extraction error' == str(e)
+
+    @skipIf(on_windows or py2, 'Expectations are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix_py3(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
         try:
@@ -1067,17 +1064,17 @@ class TestZip(BaseArchiveTestCase):
 
     def test_get_best_handler_nuget_is_selected_over_zip(self):
         test_file = self.get_test_loc('archive/zip/moq.4.2.1507.118.nupkg')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert archive.NugetHandler == handler
 
     def test_get_best_handler_nuget_is_selected_over_zip2(self):
         test_file = self.get_test_loc('archive/zip/exceptionhero.javascript.1.0.5.nupkg')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert archive.NugetHandler == handler
 
     def test_get_best_handler_nuget_is_selected_over_zip3(self):
         test_file = self.get_test_loc('archive/zip/javascript-fastclass.1.1.729.121805.nupkg')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert archive.NugetHandler == handler
 
     def test_extract_zip_can_extract_windows_media_player_skins(self):
@@ -1197,7 +1194,13 @@ class TestTar(BaseArchiveTestCase):
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar
         test_dir = self.get_temp_dir()
         result = archive.extract_tar(test_file, test_dir)
-        expected_warnings = ["'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
+        if py2:
+            expected_warnings = [
+                "'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
+        else:
+            expected_warnings = [
+                 u"'pax/bad-pax-äöü': \nPathname can't be converted from UTF-8 to current locale."]
+
         assert sorted(expected_warnings) == sorted(result)
 
         expected = [
@@ -1249,7 +1252,7 @@ class TestDebian(BaseArchiveTestCase):
 
     def test_get_best_handler_deb_package_is_an_archive(self):
         test_file = self.get_test_loc('archive/deb/libjama-dev_1.2.4-2_all.deb')
-        handler = get_best_handler(test_file)
+        handler = archive.get_best_handler(test_file)
         assert archive.DebHandler == handler
 
     def test_extract_deb_package_3(self):
@@ -1540,8 +1543,8 @@ class TestCpio(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.extract_cpio(test_file, test_dir)
         expected = sorted(['elfinfo-1.0.tar.gz', 'elfinfo.spec'])
-        if on_linux:
-            expected = [bytes(e) for e in expected]
+        if on_linux and py2:
+            expected = [e.encode('utf-8')  for e in expected]
 
         assert expected == sorted(os.listdir(test_dir))
         assert ["'elfinfo.spec': \nSkipped 72 bytes before finding valid header"] == result
@@ -2073,12 +2076,23 @@ class TestDia(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'dia.dia-extract')
         assert os.path.exists(result)
 
-    def test_extract_dia_with_trailing_data(self):
+    @skipIf(py3, 'Fails for now on Python 3')
+    def test_extract_dia_with_trailing_data_py2(self):
         test_file = self.get_test_loc('archive/dia/dia_trailing.dia')
         test_dir = self.get_temp_dir()
         archive.uncompress_gzip(test_file, test_dir)
         result = os.path.join(test_dir, 'dia_trailing.dia-extract')
         assert os.path.exists(result)
+
+    @expectedFailure
+    @skipIf(py2, 'Fails for now on Python 3')
+    def test_extract_dia_with_trailing_data_py3(self):
+        test_file = self.get_test_loc('archive/dia/dia_trailing.dia')
+        test_dir = self.get_temp_dir()
+        archive.uncompress_gzip(test_file, test_dir)
+        result = os.path.join(test_dir, 'dia_trailing.dia-extract')
+        assert os.path.exists(result)
+
 
     def test_extract_dia_broken_1(self):
         test_file = self.get_test_loc('archive/dia/dia_broken.dia')

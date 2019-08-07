@@ -26,27 +26,18 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import os
-from unittest.case import skipIf
-
-from commoncode import compat
 from commoncode import fileutils
-from commoncode.system import on_linux
-from commoncode.system import on_mac
-from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import BaseArchiveTestCase
 
-from extractcode import archive
-from extractcode import libarchive2
-from extractcode import sevenzip
-
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
 
+
+"""
+Minimal smoke tests for libarchive2.
+"""
 
 class TestExtractorTest(BaseArchiveTestCase):
 

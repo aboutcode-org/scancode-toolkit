@@ -41,6 +41,7 @@ except ImportError:
 
 
 from commoncode import fileutils
+from commoncode.system import py2
 from extractcode import EXTRACT_SUFFIX
 
 
@@ -112,10 +113,11 @@ def uncompress_gzip(location, target_dir):
     Uncompress a gzip compressed file at location in the target_dir.
     Return a list warnings messages.
     """
+    
     return uncompress(location, target_dir, GzipFileWithTrailing)
 
 
-class GzipFileWithTrailing(gzip.GzipFile):
+class _GzipFileWithTrailing(gzip.GzipFile):
     """
     A subclass of gzip.GzipFile supporting files with trailing garbage. Ignore
     the garbage.
@@ -138,6 +140,12 @@ class GzipFileWithTrailing(gzip.GzipFile):
 
         self.first_file = False
         gzip.GzipFile._read_gzip_header(self)
+
+if py2:
+    GzipFileWithTrailing = _GzipFileWithTrailing
+else:
+    # FIXME: there is no easy way to monkey patch the gzip.py code in Python 3
+    GzipFileWithTrailing = gzip.GzipFile
 
 
 def get_compressed_file_content(location, decompressor):
