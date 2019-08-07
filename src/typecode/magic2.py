@@ -52,14 +52,19 @@ import ctypes
 
 from commoncode import command
 from commoncode import compat
-from commoncode.system import on_linux
 from plugincode.location_provider import get_location
 
 # Python 2 and 3 support
 try:
     from os import fsencode
+    from os import fsdecode
 except ImportError:
     from backports.os import fsencode  # NOQA
+    from backports.os import fsdecode  # NOQA
+
+
+TRACE = False
+
 
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
@@ -101,16 +106,20 @@ def load_lib():
     return command.load_shared_library(dll, libdir)
 
 
-def file_type(location):
-    """"
-    Return the detected filetype for file at `location` or an empty string if
-    nothing found or an error occurred.
-    """
-    try:
+if TRACE:
+    def file_type(location):
         return _detect(location, DETECT_TYPE)
-    except:
-        # TODO: log errors
-        return ''
+else:
+    def file_type(location):
+        """"
+        Return the detected filetype for file at `location` or an empty string if
+        nothing found or an error occurred.
+        """
+        try:
+            return _detect(location, DETECT_TYPE)
+        except:
+            # TODO: log errors
+            return ''
 
 
 def mime_type(location):
@@ -165,8 +174,11 @@ class Detector(object):
         self.cookie = _magic_open(self.flags)
         if not magic_db_location:
             magic_db_location = get_location(TYPECODE_LIBMAGIC_DATABASE)
-        if on_linux:
+
+        # Note: this location must always be bytes on Python2 and 3, all OSes
+        if isinstance(magic_db_location, compat.unicode):
             magic_db_location = fsencode(magic_db_location)
+
         _magic_load(self.cookie, magic_db_location)
 
     def get(self, location):
@@ -213,12 +225,12 @@ def check_error(result, func, args):  # NOQA
     ctypes error handler/checker:  Check for errors and raise an exception or
     return the result otherwise.
     """
-    is_int =isinstance(result, int)
-    is_bytes =isinstance(result, bytes)
-    is_text =isinstance(result, compat.unicode)
+    is_int = isinstance(result, int)
+    is_bytes = isinstance(result, bytes)
+    is_text = isinstance(result, compat.unicode)
 
-    if (result is None 
-    or (is_int and result < 0) 
+    if (result is None
+    or (is_int and result < 0)
     or (is_bytes and compat.unicode(result, encoding='utf-8').startswith('cannot open'))
     or (is_text and result.startswith('cannot open'))):
         err = _magic_error(args[0])
