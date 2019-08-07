@@ -22,14 +22,18 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import division
 from __future__ import absolute_import
+from __future__ import division
 
-import unittest
 from functools import partial
+import unittest
 
+from commoncode.system import py2
 from typecode.entropy import gzip_entropy
 from typecode.entropy import shannon_entropy
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 def check_entropy(data, expected, func=shannon_entropy):
@@ -47,7 +51,12 @@ class TestEntropy(unittest.TestCase):
         # https://github.com/UniquePassive/randcam/blob/9ebf7678f58427910b1a2b99704169dd467d47e1/tests/tests.py#L20
         # http://rosettacode.org/wiki/Entropy#Python
         check = partial(check_entropy, func=shannon_entropy)
-        check(b''.join(map(chr, range(256))), 8.0)
+
+        if py2:
+            check(b''.join(map(chr, range(256))), 8.0)
+        else:
+            check(bytes(list(range(256))), 8.0)
+
         check('', 0.0)
         check('0', 0.0)
         check(b'\x00' * 1024, 0.0)
@@ -77,7 +86,11 @@ class TestEntropy(unittest.TestCase):
 
     def test_gz_entropy(self):
         check = partial(check_entropy, func=gzip_entropy)
-        check(b''.join(map(chr, range(256))), 1.04)
+        if py2:
+            check(b''.join(map(chr, range(256))), 1.04)
+        else:
+            check(bytes(list(range(256))), 1.04)
+
         check('', 0.0)
         check('0', 9.0)
         check(b'\x00' * 1024, 0.02)
