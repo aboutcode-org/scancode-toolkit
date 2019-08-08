@@ -16,6 +16,11 @@ Package: android-lib
   filetypes: zip archive
 
 --------------------------------------------
+Package: autotools
+  class: packagedcode.build:AutotoolsPackage
+  metafiles: configure, configure.ac
+
+--------------------------------------------
 Package: axis2
   class: packagedcode.models:Axis2Mar
   metafiles: META-INF/module.xml
@@ -23,9 +28,19 @@ Package: axis2
   filetypes: java archive , zip archive
 
 --------------------------------------------
+Package: bazel
+  class: packagedcode.build:BazelPackage
+  metafiles: BUILD
+
+--------------------------------------------
 Package: bower
   class: packagedcode.bower:BowerPackage
   metafiles: bower.json, .bower.json
+
+--------------------------------------------
+Package: buck
+  class: packagedcode.build:BuckPackage
+  metafiles: BUCK
 
 --------------------------------------------
 Package: cab
