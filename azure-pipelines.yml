@@ -119,7 +119,6 @@ jobs:
               tests/plugincode 
 
 
-
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: centos7_py27
