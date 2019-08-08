@@ -2154,7 +2154,7 @@ grammar = """
 
     # Copyright (C), 2001-2011, Omega Tech. Co., Ltd.
     # Or complex with markup as in Copyright (C) &amp;#36;today.year Google Inc.
-    COPYRIGHT: {<COPY> <COPY> <ANDCO>} # 2841
+    COPYRIGHT: {<COPY> <COPY> <ANDCO>}  #2841
 
     # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
     COPYRIGHT: {<COPYRIGHT> <NN> <AUTHDOT>} #35011
@@ -2969,6 +2969,7 @@ def candidate_lines(numbered_lines):
             in_copyright = 0
             previous_chars = None
             continue
+
         elif is_candidate(prepped):
             # the state is now "in copyright"
             in_copyright = 2
@@ -3002,6 +3003,7 @@ def candidate_lines(numbered_lines):
                 # and decrement our state
                 in_copyright -= 1
                 if TRACE: logger_debug('   candidate_lines: line is in copyright')
+
         elif candidates:
             if TRACE:
                 cands = list(candidates)
