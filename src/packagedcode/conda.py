@@ -93,7 +93,7 @@ class CondaPackage(models.Package):
 
     @classmethod
     def extra_root_dirs(cls):
-        return ['recipe', 'info']
+        return ['**/recipe.tar-extract/recipe']
 
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)

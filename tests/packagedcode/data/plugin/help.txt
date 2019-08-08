@@ -72,6 +72,11 @@ Package: composer
   filetypes: .json
 
 --------------------------------------------
+Package: conda
+  class: packagedcode.conda:CondaPackage
+  metafiles: meta.yaml, META.yml
+
+--------------------------------------------
 Package: cpan
   class: packagedcode.models:CpanModule
   metafiles: *.pod, *.pm, MANIFEST, Makefile.PL, META.yml, META.json, *.meta, dist.ini
