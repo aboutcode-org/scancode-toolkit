@@ -46,12 +46,15 @@ PY3 = _sys_v0 == 3
 ################################################################################
 # pytest custom markers and CLI options
 ################################################################################
+PORTED_TO_PY3 = 'scanpy3'
+SLOW_TEST = 'scanslow'
+VALIDATION_TEST = 'scanvalidate'
 
 
 def pytest_configure(config):
-    config.addinivalue_line('markers', 'scanpy3: Mark a ScanCode test as supported on Python 3.')
-    config.addinivalue_line('markers', 'scanslow: Mark a ScanCode test as a slow, long running test.')
-    config.addinivalue_line('markers', 'scanvalidate: Mark a ScanCode test as a validation test, super slow, long running test.')
+    config.addinivalue_line('markers', PORTED_TO_PY3 + ': Mark a ScanCode test as supported on Python 3.')
+    config.addinivalue_line('markers', SLOW_TEST + ': Mark a ScanCode test as a slow, long running test.')
+    config.addinivalue_line('markers', VALIDATION_TEST + ': Mark a ScanCode test as a validation test, super slow, long running test.')
 
 
 TEST_SUITES = 'standard', 'all', 'validate'
@@ -86,7 +89,7 @@ def pytest_addoption(parser):
         help='Select which test suite to run: '
              '"standard" runs the standard test suite designed to run reasonably fast. '
              '"all" runs "standard" and "slow" (long running) tests. '
-             '"validate" runs "all" annd super slow "validate" tests.'
+             '"validate" runs all the tests. '
              'Use the @pytest.mark.scanslow marker to mark a test as "slow" test. '
              'Use the @pytest.mark.scanvalidate marker to mark a test as a "validate" test.'
         )
@@ -131,6 +134,9 @@ def pytest_collection_modifyitems(config, items):
     base_branch = config.getoption('base_branch')
     dry_run = config.getoption('dry_run')
 
+    run_everything = test_suite == 'validate'
+    run_slow_test = test_suite in ('all', 'validate')
+
     is_on_py3 = PY3
 
     tests_to_run = []
@@ -148,19 +154,20 @@ def pytest_collection_modifyitems(config, items):
             print('Run tests only in these changed modules:', ', '.join(sorted(impacted_modules)))
 
     for item in items:
-        is_validate = bool(item.get_closest_marker('scanvalidate'))
-        is_slow = bool(item.get_closest_marker('scanslow'))
-        runs_on_py3 = bool(item.get_closest_marker('scanpy3'))
+        is_validate = bool(item.get_closest_marker(VALIDATION_TEST))
+        is_slow = bool(item.get_closest_marker(SLOW_TEST))
+        runs_on_py3 = bool(item.get_closest_marker(PORTED_TO_PY3))
+        run_test_on_python3 = runs_on_py3 or force_py3
 
-        if is_validate and test_suite != 'validate':
+        if is_validate and not run_everything:
             tests_to_skip.append(item)
             continue
 
-        if is_slow and test_suite not in ('validate', 'all'):
+        if is_slow and not run_slow_test:
             tests_to_skip.append(item)
             continue
 
-        if is_on_py3 and not (runs_on_py3 or force_py3):
+        if is_on_py3 and not run_test_on_python3:
             tests_to_skip.append(item)
             continue
 
