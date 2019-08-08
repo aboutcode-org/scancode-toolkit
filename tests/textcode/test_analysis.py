@@ -42,6 +42,8 @@ from commoncode import compat
 from commoncode.system import on_linux
 from commoncode.system import py2
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 def check_text_lines(result, expected_file, regen=False):
         if regen:

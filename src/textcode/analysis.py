@@ -36,6 +36,7 @@ import chardet
 
 from commoncode import compat
 from commoncode.system import on_linux
+from commoncode.system import py2
 from textcode import pdf
 from textcode import markup
 from textcode import sfdb
