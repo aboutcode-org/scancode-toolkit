@@ -30,6 +30,8 @@ import os
 from commoncode.testcase import FileBasedTesting
 from textcode import sfdb
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestSfdb(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

@@ -32,6 +32,9 @@ from textcode import pdf
 from textcode.analysis import numbered_text_lines
 
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 class TestPdf(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

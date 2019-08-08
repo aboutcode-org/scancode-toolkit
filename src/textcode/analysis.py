@@ -148,8 +148,8 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if T.is_text:
         numbered_lines = enumerate(unicode_text_lines(location), 1)
         # text with very long lines such minified JS, JS map files or large JSON
-        locale = b'locale' if on_linux else u'locale'
-        package_json = b'package.json' if on_linux else u'package.json'
+        locale = b'locale' if on_linux and py2 else u'locale'
+        package_json = b'package.json' if on_linux and py2 else u'package.json'
 
         if (not location.endswith(package_json)
             and (T.is_text_with_long_lines or T.is_compact_js
