@@ -207,7 +207,7 @@ def break_numbered_unicode_text_lines(numbered_lines, split=u'([",\'])', max_len
         if len(line) > max_len:
             # spli then reassemble in more reasonable chunks
             splitted = splitter(line)
-            chunks = (splitted[i:i + chunk_len] for i in xrange(0, len(splitted), chunk_len))
+            chunks = (splitted[i:i + chunk_len] for i in range(0, len(splitted), chunk_len))
             for chunk in chunks:
                 full_chunk = u''.join(chunk)
                 if full_chunk:
