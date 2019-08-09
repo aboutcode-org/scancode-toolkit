@@ -1,3 +1,6 @@
+Overview
+========
+
 A ScanCode post-scan plugin to return consolidated components and consolidated
 packages for different types of codebase summarization.
 
@@ -12,4 +15,13 @@ been enhanced with data about other licenses and holders found within it.
 
 If a Resource is part of a consolidated component or consolidated package, then
 the identifier of the consolidated component or consolidated package it is part
-of is in the Resource's `consolidated_to` field.
+of is in the Resource's ``consolidated_to`` field.
+
+Installation
+============
+
+Activate the ``scancode-toolkit`` virtual environment and then install the consolidation plugin:
+
+cd <your scancode-toolkit directory>
+source bin/activate
+pip install -e plugins/scancode-consolidate-scan

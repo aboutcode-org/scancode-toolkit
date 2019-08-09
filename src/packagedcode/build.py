@@ -74,6 +74,10 @@ class BaseBuildManifestPackage(models.Package):
             version=version)
 
     @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
+    @classmethod
     def _is_build_manifest(cls, location):
         if not filetype.is_file(location):
             return False
@@ -97,7 +101,3 @@ class BazelPackage(BaseBuildManifestPackage):
 class BuckPackage(BaseBuildManifestPackage):
     metafiles = ('BUCK',)
     default_type = 'buck'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)

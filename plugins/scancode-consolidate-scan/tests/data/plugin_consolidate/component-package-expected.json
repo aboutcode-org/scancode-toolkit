@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "license-holders",
-      "identifier": "the_apache_software_foundation_1",
+      "identifier": "the_apache_software_foundation_2",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
         "The Apache Software Foundation"
@@ -149,7 +149,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "the_apache_software_foundation_2"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -228,7 +228,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "the_apache_software_foundation_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -307,7 +307,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "the_apache_software_foundation_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -386,7 +386,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "the_apache_software_foundation_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
