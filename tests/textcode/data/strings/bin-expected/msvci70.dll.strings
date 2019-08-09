@@ -1,662 +1,660 @@
-!This program cannot be run in DOS mode.
-$
-Rich
-.text
-`.rdata
-@.data
-.rsrc
-@.reloc
-QQSVW
-QQVW3
-tKS3
-7jTV
-7jLV
-A(9A$s
-FLt5
-FLtu3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-7jPV
-7jdV
-7jPV
-QQSVW3
-QQSVW3
-QQSVW3
-QQVW3
-QSV3
-D00W
-eu9M
-SVWj
-D0$W3
-tH9E
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-D0(Wj
-vLWj
-u89~,u1
-tJ9F(r=
-Hu5j
-QQSVW3
-HPQAQ
-SVWjP[S
-QVW3
-HPQAQ
-QSV3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-QQSVW3
-8csm
-!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
-MSVCI70.dll
-??0Iostream_init@@QAE@AAVios@@H@Z
-??0Iostream_init@@QAE@XZ
-??0exception@@QAE@ABQBD@Z
-??0exception@@QAE@ABV0@@Z
-??0exception@@QAE@XZ
-??0filebuf@@QAE@ABV0@@Z
-??0filebuf@@QAE@H@Z
-??0filebuf@@QAE@HPADH@Z
-??0filebuf@@QAE@XZ
-??0fstream@@QAE@ABV0@@Z
-??0fstream@@QAE@H@Z
-??0fstream@@QAE@HPADH@Z
-??0fstream@@QAE@PBDHH@Z
-??0fstream@@QAE@XZ
-??0ifstream@@QAE@ABV0@@Z
-??0ifstream@@QAE@H@Z
-??0ifstream@@QAE@HPADH@Z
-??0ifstream@@QAE@PBDHH@Z
-??0ifstream@@QAE@XZ
-??0ios@@IAE@ABV0@@Z
-??0ios@@IAE@XZ
-??0ios@@QAE@PAVstreambuf@@@Z
-??0iostream@@IAE@ABV0@@Z
-??0iostream@@IAE@XZ
-??0iostream@@QAE@PAVstreambuf@@@Z
-??0istream@@IAE@ABV0@@Z
-??0istream@@IAE@XZ
-??0istream@@QAE@PAVstreambuf@@@Z
-??0istream_withassign@@QAE@ABV0@@Z
-??0istream_withassign@@QAE@PAVstreambuf@@@Z
-??0istream_withassign@@QAE@XZ
-??0istrstream@@QAE@ABV0@@Z
-??0istrstream@@QAE@PAD@Z
-??0istrstream@@QAE@PADH@Z
-??0logic_error@@QAE@ABQBD@Z
-??0logic_error@@QAE@ABV0@@Z
-??0ofstream@@QAE@ABV0@@Z
-??0ofstream@@QAE@H@Z
-??0ofstream@@QAE@HPADH@Z
-??0ofstream@@QAE@PBDHH@Z
-??0ofstream@@QAE@XZ
-??0ostream@@IAE@ABV0@@Z
-??0ostream@@IAE@XZ
-??0ostream@@QAE@PAVstreambuf@@@Z
-??0ostream_withassign@@QAE@ABV0@@Z
-??0ostream_withassign@@QAE@PAVstreambuf@@@Z
-??0ostream_withassign@@QAE@XZ
-??0ostrstream@@QAE@ABV0@@Z
-??0ostrstream@@QAE@PADHH@Z
-??0ostrstream@@QAE@XZ
-??0stdiobuf@@QAE@ABV0@@Z
-??0stdiobuf@@QAE@PAU_iobuf@@@Z
-??0stdiostream@@QAE@ABV0@@Z
-??0stdiostream@@QAE@PAU_iobuf@@@Z
-??0streambuf@@IAE@PADH@Z
-??0streambuf@@IAE@XZ
-??0streambuf@@QAE@ABV0@@Z
-??0strstream@@QAE@ABV0@@Z
-??0strstream@@QAE@PADHH@Z
-??0strstream@@QAE@XZ
-??0strstreambuf@@QAE@ABV0@@Z
-??0strstreambuf@@QAE@H@Z
-??0strstreambuf@@QAE@P6APAXJ@ZP6AXPAX@Z@Z
-??0strstreambuf@@QAE@PADH0@Z
-??0strstreambuf@@QAE@PAEH0@Z
-??0strstreambuf@@QAE@XZ
-??1Iostream_init@@QAE@XZ
-??1exception@@UAE@XZ
-??1filebuf@@UAE@XZ
-??1fstream@@UAE@XZ
-??1ifstream@@UAE@XZ
-??1ios@@UAE@XZ
-??1iostream@@UAE@XZ
-??1istream@@UAE@XZ
-??1istream_withassign@@UAE@XZ
-??1istrstream@@UAE@XZ
-??1logic_error@@UAE@XZ
-??1ofstream@@UAE@XZ
-??1ostream@@UAE@XZ
-??1ostream_withassign@@UAE@XZ
-??1ostrstream@@UAE@XZ
-??1stdiobuf@@UAE@XZ
-??1stdiostream@@UAE@XZ
-??1streambuf@@UAE@XZ
-??1strstream@@UAE@XZ
-??1strstreambuf@@UAE@XZ
-??4Iostream_init@@QAEAAV0@ABV0@@Z
-??4exception@@QAEAAV0@ABV0@@Z
-??4filebuf@@QAEAAV0@ABV0@@Z
-??4fstream@@QAEAAV0@AAV0@@Z
-??4ifstream@@QAEAAV0@ABV0@@Z
-??4ios@@IAEAAV0@ABV0@@Z
-??4iostream@@IAEAAV0@AAV0@@Z
-??4iostream@@IAEAAV0@PAVstreambuf@@@Z
-??4istream@@IAEAAV0@ABV0@@Z
-??4istream@@IAEAAV0@PAVstreambuf@@@Z
-??4istream_withassign@@QAEAAV0@ABV0@@Z
-??4istream_withassign@@QAEAAVistream@@ABV1@@Z
-??4istream_withassign@@QAEAAVistream@@PAVstreambuf@@@Z
-??4istrstream@@QAEAAV0@ABV0@@Z
-??4logic_error@@QAEAAV0@ABV0@@Z
-??4ofstream@@QAEAAV0@ABV0@@Z
-??4ostream@@IAEAAV0@ABV0@@Z
-??4ostream@@IAEAAV0@PAVstreambuf@@@Z
-??4ostream_withassign@@QAEAAV0@ABV0@@Z
-??4ostream_withassign@@QAEAAVostream@@ABV1@@Z
-??4ostream_withassign@@QAEAAVostream@@PAVstreambuf@@@Z
-??4ostrstream@@QAEAAV0@ABV0@@Z
-??4stdiobuf@@QAEAAV0@ABV0@@Z
-??4stdiostream@@QAEAAV0@AAV0@@Z
-??4streambuf@@QAEAAV0@ABV0@@Z
-??4strstream@@QAEAAV0@AAV0@@Z
-??4strstreambuf@@QAEAAV0@ABV0@@Z
-??5istream@@QAEAAV0@AAC@Z
-??5istream@@QAEAAV0@AAD@Z
-??5istream@@QAEAAV0@AAE@Z
-??5istream@@QAEAAV0@AAF@Z
-??5istream@@QAEAAV0@AAG@Z
-??5istream@@QAEAAV0@AAH@Z
-??5istream@@QAEAAV0@AAI@Z
-??5istream@@QAEAAV0@AAJ@Z
-??5istream@@QAEAAV0@AAK@Z
-??5istream@@QAEAAV0@AAM@Z
-??5istream@@QAEAAV0@AAN@Z
-??5istream@@QAEAAV0@AAO@Z
-??5istream@@QAEAAV0@P6AAAV0@AAV0@@Z@Z
-??5istream@@QAEAAV0@P6AAAVios@@AAV1@@Z@Z
-??5istream@@QAEAAV0@PAC@Z
-??5istream@@QAEAAV0@PAD@Z
-??5istream@@QAEAAV0@PAE@Z
-??5istream@@QAEAAV0@PAVstreambuf@@@Z
-??6ostream@@QAEAAV0@C@Z
-??6ostream@@QAEAAV0@D@Z
-??6ostream@@QAEAAV0@E@Z
-??6ostream@@QAEAAV0@F@Z
-??6ostream@@QAEAAV0@G@Z
-??6ostream@@QAEAAV0@H@Z
-??6ostream@@QAEAAV0@I@Z
-??6ostream@@QAEAAV0@J@Z
-??6ostream@@QAEAAV0@K@Z
-??6ostream@@QAEAAV0@M@Z
-??6ostream@@QAEAAV0@N@Z
-??6ostream@@QAEAAV0@O@Z
-??6ostream@@QAEAAV0@P6AAAV0@AAV0@@Z@Z
-??6ostream@@QAEAAV0@P6AAAVios@@AAV1@@Z@Z
-??6ostream@@QAEAAV0@PAVstreambuf@@@Z
-??6ostream@@QAEAAV0@PBC@Z
-??6ostream@@QAEAAV0@PBD@Z
-??6ostream@@QAEAAV0@PBE@Z
-??6ostream@@QAEAAV0@PBX@Z
-??7ios@@QBEHXZ
-??Bios@@QBEPAXXZ
-??_7exception@@6B@
-??_7filebuf@@6B@
-??_7fstream@@6B@
-??_7ifstream@@6B@
-??_7ios@@6B@
-??_7iostream@@6B@
-??_7istream@@6B@
-??_7istream_withassign@@6B@
-??_7istrstream@@6B@
-??_7logic_error@@6B@
-??_7ofstream@@6B@
-??_7ostream@@6B@
-??_7ostream_withassign@@6B@
-??_7ostrstream@@6B@
-??_7stdiobuf@@6B@
-??_7stdiostream@@6B@
-??_7streambuf@@6B@
-??_7strstream@@6B@
-??_7strstreambuf@@6B@
-??_8fstream@@7Bistream@@@
-??_8fstream@@7Bostream@@@
-??_8ifstream@@7B@
-??_8iostream@@7Bistream@@@
-??_8iostream@@7Bostream@@@
-??_8istream@@7B@
-??_8istream_withassign@@7B@
-??_8istrstream@@7B@
-??_8ofstream@@7B@
-??_8ostream@@7B@
-??_8ostream_withassign@@7B@
-??_8ostrstream@@7B@
-??_8stdiostream@@7Bistream@@@
-??_8stdiostream@@7Bostream@@@
-??_8strstream@@7Bistream@@@
-??_8strstream@@7Bostream@@@
-??_Dfstream@@QAEXXZ
-??_Difstream@@QAEXXZ
-??_Diostream@@QAEXXZ
-??_Distream@@QAEXXZ
-??_Distream_withassign@@QAEXXZ
-??_Distrstream@@QAEXXZ
-??_Dofstream@@QAEXXZ
-??_Dostream@@QAEXXZ
-??_Dostream_withassign@@QAEXXZ
-??_Dostrstream@@QAEXXZ
-??_Dstdiostream@@QAEXXZ
-??_Dstrstream@@QAEXXZ
-??_Eexception@@UAEPAXI@Z
-??_Efilebuf@@UAEPAXI@Z
-??_Efstream@@UAEPAXI@Z
-??_Eifstream@@UAEPAXI@Z
-??_Eios@@UAEPAXI@Z
-??_Eiostream@@UAEPAXI@Z
-??_Eistream@@UAEPAXI@Z
-??_Eistream_withassign@@UAEPAXI@Z
-??_Eistrstream@@UAEPAXI@Z
-??_Elogic_error@@UAEPAXI@Z
-??_Eofstream@@UAEPAXI@Z
-??_Eostream@@UAEPAXI@Z
-??_Eostream_withassign@@UAEPAXI@Z
-??_Eostrstream@@UAEPAXI@Z
-??_Estdiobuf@@UAEPAXI@Z
-??_Estdiostream@@UAEPAXI@Z
-??_Estreambuf@@UAEPAXI@Z
-??_Estrstream@@UAEPAXI@Z
-??_Estrstreambuf@@UAEPAXI@Z
-??_Gexception@@UAEPAXI@Z
-??_Gfilebuf@@UAEPAXI@Z
-??_Gfstream@@UAEPAXI@Z
-??_Gifstream@@UAEPAXI@Z
-??_Gios@@UAEPAXI@Z
-??_Giostream@@UAEPAXI@Z
-??_Gistream@@UAEPAXI@Z
-??_Gistream_withassign@@UAEPAXI@Z
-??_Gistrstream@@UAEPAXI@Z
-??_Glogic_error@@UAEPAXI@Z
-??_Gofstream@@UAEPAXI@Z
-??_Gostream@@UAEPAXI@Z
-??_Gostream_withassign@@UAEPAXI@Z
-??_Gostrstream@@UAEPAXI@Z
-??_Gstdiobuf@@UAEPAXI@Z
-??_Gstdiostream@@UAEPAXI@Z
-??_Gstreambuf@@UAEPAXI@Z
-??_Gstrstream@@UAEPAXI@Z
-??_Gstrstreambuf@@UAEPAXI@Z
-?adjustfield@ios@@2JB
-?allocate@streambuf@@IAEHXZ
-?attach@filebuf@@QAEPAV1@H@Z
-?attach@fstream@@QAEXH@Z
-?attach@ifstream@@QAEXH@Z
-?attach@ofstream@@QAEXH@Z
-?bad@ios@@QBEHXZ
-?base@streambuf@@IBEPADXZ
-?basefield@ios@@2JB
-?binary@filebuf@@2HB
-?bitalloc@ios@@SAJXZ
-?blen@streambuf@@IBEHXZ
-?cerr@@3Vostream_withassign@@A
-?cin@@3Vistream_withassign@@A
-?clear@ios@@QAEXH@Z
-?clog@@3Vostream_withassign@@A
-?close@filebuf@@QAEPAV1@XZ
-?close@fstream@@QAEXXZ
-?close@ifstream@@QAEXXZ
-?close@ofstream@@QAEXXZ
-?clrlock@ios@@QAAXXZ
-?clrlock@streambuf@@QAEXXZ
-?cout@@3Vostream_withassign@@A
-?dbp@streambuf@@QAEXXZ
-?dec@@YAAAVios@@AAV1@@Z
-?delbuf@ios@@QAEXH@Z
-?delbuf@ios@@QBEHXZ
-?doallocate@streambuf@@MAEHXZ
-?doallocate@strstreambuf@@MAEHXZ
-?eatwhite@istream@@QAEXXZ
-?eback@streambuf@@IBEPADXZ
-?ebuf@streambuf@@IBEPADXZ
-?egptr@streambuf@@IBEPADXZ
-?endl@@YAAAVostream@@AAV1@@Z
-?ends@@YAAAVostream@@AAV1@@Z
-?eof@ios@@QBEHXZ
-?epptr@streambuf@@IBEPADXZ
-?fLockcInit@ios@@0HA
-?fail@ios@@QBEHXZ
-?fd@filebuf@@QBEHXZ
-?fd@fstream@@QBEHXZ
-?fd@ifstream@@QBEHXZ
-?fd@ofstream@@QBEHXZ
-?fill@ios@@QAEDD@Z
-?fill@ios@@QBEDXZ
-?flags@ios@@QAEJJ@Z
-?flags@ios@@QBEJXZ
-?floatfield@ios@@2JB
-?flush@@YAAAVostream@@AAV1@@Z
-?flush@ostream@@QAEAAV1@XZ
-?freeze@strstreambuf@@QAEXH@Z
-?gbump@streambuf@@IAEXH@Z
-?gcount@istream@@QBEHXZ
-?get@istream@@IAEAAV1@PADHH@Z
-?get@istream@@QAEAAV1@AAC@Z
-?get@istream@@QAEAAV1@AAD@Z
-?get@istream@@QAEAAV1@AAE@Z
-?get@istream@@QAEAAV1@AAVstreambuf@@D@Z
-?get@istream@@QAEAAV1@PACHD@Z
-?get@istream@@QAEAAV1@PADHD@Z
-?get@istream@@QAEAAV1@PAEHD@Z
-?get@istream@@QAEHXZ
-?getdouble@istream@@AAEHPADH@Z
-?getint@istream@@AAEHPAD@Z
-?getline@istream@@QAEAAV1@PACHD@Z
-?getline@istream@@QAEAAV1@PADHD@Z
-?getline@istream@@QAEAAV1@PAEHD@Z
-?good@ios@@QBEHXZ
-?gptr@streambuf@@IBEPADXZ
-?hex@@YAAAVios@@AAV1@@Z
-?ignore@istream@@QAEAAV1@HH@Z
-?in_avail@streambuf@@QBEHXZ
-?init@ios@@IAEXPAVstreambuf@@@Z
-?ipfx@istream@@QAEHH@Z
-?is_open@filebuf@@QBEHXZ
-?is_open@fstream@@QBEHXZ
-?is_open@ifstream@@QBEHXZ
-?is_open@ofstream@@QBEHXZ
-?isfx@istream@@QAEXXZ
-?iword@ios@@QBEAAJH@Z
-?lock@ios@@QAAXXZ
-?lock@streambuf@@QAEXXZ
-?lockbuf@ios@@QAAXXZ
-?lockc@ios@@KAXXZ
-?lockptr@ios@@IAEPAU_CRT_CRITICAL_SECTION@@XZ
-?lockptr@streambuf@@IAEPAU_CRT_CRITICAL_SECTION@@XZ
-?oct@@YAAAVios@@AAV1@@Z
-?open@filebuf@@QAEPAV1@PBDHH@Z
-?open@fstream@@QAEXPBDHH@Z
-?open@ifstream@@QAEXPBDHH@Z
-?open@ofstream@@QAEXPBDHH@Z
-?openprot@filebuf@@2HB
-?opfx@ostream@@QAEHXZ
-?osfx@ostream@@QAEXXZ
-?out_waiting@streambuf@@QBEHXZ
-?overflow@filebuf@@UAEHH@Z
-?overflow@stdiobuf@@UAEHH@Z
-?overflow@strstreambuf@@UAEHH@Z
-?pbackfail@stdiobuf@@UAEHH@Z
-?pbackfail@streambuf@@UAEHH@Z
-?pbase@streambuf@@IBEPADXZ
-?pbump@streambuf@@IAEXH@Z
-?pcount@ostrstream@@QBEHXZ
-?pcount@strstream@@QBEHXZ
-?peek@istream@@QAEHXZ
-?pptr@streambuf@@IBEPADXZ
-?precision@ios@@QAEHH@Z
-?precision@ios@@QBEHXZ
-?put@ostream@@QAEAAV1@C@Z
-?put@ostream@@QAEAAV1@D@Z
-?put@ostream@@QAEAAV1@E@Z
-?putback@istream@@QAEAAV1@D@Z
-?pword@ios@@QBEAAPAXH@Z
-?rdbuf@fstream@@QBEPAVfilebuf@@XZ
-?rdbuf@ifstream@@QBEPAVfilebuf@@XZ
-?rdbuf@ios@@QBEPAVstreambuf@@XZ
-?rdbuf@istrstream@@QBEPAVstrstreambuf@@XZ
-?rdbuf@ofstream@@QBEPAVfilebuf@@XZ
-?rdbuf@ostrstream@@QBEPAVstrstreambuf@@XZ
-?rdbuf@stdiostream@@QBEPAVstdiobuf@@XZ
-?rdbuf@strstream@@QBEPAVstrstreambuf@@XZ
-?rdstate@ios@@QBEHXZ
-?read@istream@@QAEAAV1@PACH@Z
-?read@istream@@QAEAAV1@PADH@Z
-?read@istream@@QAEAAV1@PAEH@Z
-?sbumpc@streambuf@@QAEHXZ
-?seekg@istream@@QAEAAV1@J@Z
-?seekg@istream@@QAEAAV1@JW4seek_dir@ios@@@Z
-?seekoff@filebuf@@UAEJJW4seek_dir@ios@@H@Z
-?seekoff@stdiobuf@@UAEJJW4seek_dir@ios@@H@Z
-?seekoff@streambuf@@UAEJJW4seek_dir@ios@@H@Z
-?seekoff@strstreambuf@@UAEJJW4seek_dir@ios@@H@Z
-?seekp@ostream@@QAEAAV1@J@Z
-?seekp@ostream@@QAEAAV1@JW4seek_dir@ios@@@Z
-?seekpos@streambuf@@UAEJJH@Z
-?setb@streambuf@@IAEXPAD0H@Z
-?setbuf@filebuf@@UAEPAVstreambuf@@PADH@Z
-?setbuf@fstream@@QAEPAVstreambuf@@PADH@Z
-?setbuf@ifstream@@QAEPAVstreambuf@@PADH@Z
-?setbuf@ofstream@@QAEPAVstreambuf@@PADH@Z
-?setbuf@streambuf@@UAEPAV1@PADH@Z
-?setbuf@strstreambuf@@UAEPAVstreambuf@@PADH@Z
-?setf@ios@@QAEJJ@Z
-?setf@ios@@QAEJJJ@Z
-?setg@streambuf@@IAEXPAD00@Z
-?setlock@ios@@QAAXXZ
-?setlock@streambuf@@QAEXXZ
-?setmode@filebuf@@QAEHH@Z
-?setmode@fstream@@QAEHH@Z
-?setmode@ifstream@@QAEHH@Z
-?setmode@ofstream@@QAEHH@Z
-?setp@streambuf@@IAEXPAD0@Z
-?setrwbuf@stdiobuf@@QAEHHH@Z
-?sgetc@streambuf@@QAEHXZ
-?sgetn@streambuf@@QAEHPADH@Z
-?sh_none@filebuf@@2HB
-?sh_read@filebuf@@2HB
-?sh_write@filebuf@@2HB
-?snextc@streambuf@@QAEHXZ
-?sputbackc@streambuf@@QAEHD@Z
-?sputc@streambuf@@QAEHH@Z
-?sputn@streambuf@@QAEHPBDH@Z
-?stdiofile@stdiobuf@@QAEPAU_iobuf@@XZ
-?stossc@streambuf@@QAEXXZ
-?str@istrstream@@QAEPADXZ
-?str@ostrstream@@QAEPADXZ
-?str@strstream@@QAEPADXZ
-?str@strstreambuf@@QAEPADXZ
-?sunk_with_stdio@ios@@0HA
-?sync@filebuf@@UAEHXZ
-?sync@istream@@QAEHXZ
-?sync@stdiobuf@@UAEHXZ
-?sync@streambuf@@UAEHXZ
-?sync@strstreambuf@@UAEHXZ
-?sync_with_stdio@ios@@SAXXZ
-?tellg@istream@@QAEJXZ
-?tellp@ostream@@QAEJXZ
-?text@filebuf@@2HB
-?tie@ios@@QAEPAVostream@@PAV2@@Z
-?tie@ios@@QBEPAVostream@@XZ
-?unbuffered@streambuf@@IAEXH@Z
-?unbuffered@streambuf@@IBEHXZ
-?underflow@filebuf@@UAEHXZ
-?underflow@stdiobuf@@UAEHXZ
-?underflow@strstreambuf@@UAEHXZ
-?unlock@ios@@QAAXXZ
-?unlock@streambuf@@QAEXXZ
-?unlockbuf@ios@@QAAXXZ
-?unlockc@ios@@KAXXZ
-?unsetf@ios@@QAEJJ@Z
-?what@exception@@UBEPBDXZ
-?width@ios@@QAEHH@Z
-?width@ios@@QBEHXZ
-?write@ostream@@QAEAAV1@PBCH@Z
-?write@ostream@@QAEAAV1@PBDH@Z
-?write@ostream@@QAEAAV1@PBEH@Z
-?writepad@ostream@@AAEAAV1@PBD0@Z
-?ws@@YAAAVistream@@AAV1@@Z
-?x_curindex@ios@@0HA
-?x_lockc@ios@@0U_CRT_CRITICAL_SECTION@@A
-?x_maxbit@ios@@0JA
-?x_statebuf@ios@@0PAJA
-?xalloc@ios@@SAHXZ
-?xsgetn@streambuf@@UAEHPADH@Z
-?xsputn@streambuf@@UAEHPBDH@Z
-__dummy_export
-_mtlock
-_mtunlock
-GUnknown exception
-%%%s.%.0ug
-%%%s.%.0uLg
-STREAMBUF DEBUG INFO: this=%p, _fAlloc=%d
-  base()=%p, ebuf()=%p,  blen()=%d
- pbase()=%p, pptr()=%p, epptr()=%p
- eback()=%p, gptr()=%p, egptr()=%p
-STREAMBUF DEBUG INFO: this=%p, unbuffered
-|RSDS\x
-msvci70.pdb
-KERNEL32.dll
-MSVCR70.dll
-GetCurrentProcessId
-GetCurrentThreadId
-GetTickCount
-QueryPerformanceCounter
-ExitProcess
-LeaveCriticalSection
-EnterCriticalSection
-DeleteCriticalSection
-InitializeCriticalSection
-DisableThreadLibraryCalls
-GetSystemTimeAsFileTime
-_sopen
-_setmode
-strtod
-isspace
-isdigit
-isxdigit
-strtol
-_errno
-strtoul
-strcpy
-strlen
-toupper
-sprintf
-fflush
-fputc
-??_U@YAPAXI@Z
-fgetc
-fread
-ftell
-fseek
-__badioinfo
-memcpy
-??1type_info@@UAE@XZ
-?terminate@@YAXXZ
-__dllonexit
-_onexit
-__security_error_handler
-free
-_initterm
-malloc
-_adjust_fdiv
-_except_handler3
-_read
-_write
-memmove
-__pioinfo
-_lseek
-_close
-??2@YAPAXI@Z
-__CxxFrameHandler
-??3@YAXPAX@Z
-fwrite
-_purecall
-.?AVstreambuf@@
-.?AVios@@
-.?AVistream@@
-.?AVistream_withassign@@
-.?AVostream@@
-.?AVostream_withassign@@
-.?AVfilebuf@@
-.?AVifstream@@
-.?AVofstream@@
-.?AViostream@@
-.?AVfstream@@
-.?AVstrstreambuf@@
-.?AVistrstream@@
-.?AVostrstream@@
-.?AVstdiobuf@@
-.?AVstrstream@@
-.?AVstdiostream@@
-.?AVexception@@
-.?AVlogic_error@@
-.?AVtype_info@@
-VS_VERSION_INFO
-StringFileInfo
-040904B0
-CompanyName
-Microsoft Corporation
-FileDescription
-Microsoft
-C++ Runtime Library
-FileVersion
-InternalName
-MSVCI70.DLL
-LegalCopyright
-Microsoft Corporation.  All rights reserved.
-OriginalFilename
-MSVCI70.DLL
-ProductName
-Microsoft
-Visual Studio .NET
-ProductVersion
-VarFileInfo
-Translation
-0"0'0N0Y0
-1'181D1L1T1`1n1|1
-2"2E2
-3B3V3a3
-5+515k5
-536b6l6
-7l9x9
-<,<:<H<V<]<i<v<
-=#=1=>=H=N=X=d=n=x=~=
-Z0a0~0
-6@7c7
-8@8Z8
-5-5p5
-5C6h6
-6=7d7a8v8|8
-80l0
-1!2[2l2
-8*909A9N9]9e9r9
-232c2
-515V5
-4"4h4
-485S5
-6+6D6N6V6`6u6~6
-7+757>7C7Q7[7d7v7
-7P9N:f:m:
-0*0m0
-0B1L1q1x1
-363I3
-3D4K4t4z4
-45!555G5q5
-5$6Y6
-7-7M7a7s7
-8F8X8x8
-9:9d9
-$1(14181<1T1
-<1@1P1T1d1h1l1p1t1x1|1
-2$2(282<2@2D2L2d2h2x2|2
-30343D3H3X3\3`3d3l3
-4$4(4,4044484<4@4D4H4L4P4`4d4t4x4|4
-5 5$5,5D5H5L5P5T5X5\5`5d5h5l5p5
-6,606@6D6H6L6P6T6X6`6x6|6
-7(7,707@7D7T7X7`7x7|7
-8 80848D8H8P8
-;4;<;D;P;h;p;|;
-< <(<4<L<T<`<x<
-?,?8?P?X?d?|?
-040<0D0P0
-0 0$000H0\0t0
-141T1p1
+[
+  "!This program cannot be run in DOS mode.\r\r\n$",
+  "Rich",
+  ".text",
+  "`.rdata",
+  "@.data",
+  ".rsrc",
+  "@.reloc",
+  "QQSVW",
+  "QQVW3",
+  "tKS3",
+  "7jTV",
+  "7jLV",
+  "A(9A$s",
+  "FLt5",
+  "FLtu3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "7jPV",
+  "7jdV",
+  "7jPV",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQVW3",
+  "QSV3",
+  "D00W",
+  "eu\r9M",
+  "SVWj",
+  "D0$W3",
+  "tH9E",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "D0(Wj",
+  "vLWj",
+  "u89~,u1",
+  "tJ9F(r=",
+  "Hu5j",
+  "QQSVW3",
+  "HPQAQ",
+  "SVWjP[S",
+  "QVW3",
+  "HPQAQ",
+  "QSV3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "QQSVW3",
+  "8csm",
+  "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
+  "MSVCI70.dll",
+  "??0Iostream_init@@QAE@AAVios@@H@Z",
+  "??0Iostream_init@@QAE@XZ",
+  "??0exception@@QAE@ABQBD@Z",
+  "??0exception@@QAE@ABV0@@Z",
+  "??0exception@@QAE@XZ",
+  "??0filebuf@@QAE@ABV0@@Z",
+  "??0filebuf@@QAE@H@Z",
+  "??0filebuf@@QAE@HPADH@Z",
+  "??0filebuf@@QAE@XZ",
+  "??0fstream@@QAE@ABV0@@Z",
+  "??0fstream@@QAE@H@Z",
+  "??0fstream@@QAE@HPADH@Z",
+  "??0fstream@@QAE@PBDHH@Z",
+  "??0fstream@@QAE@XZ",
+  "??0ifstream@@QAE@ABV0@@Z",
+  "??0ifstream@@QAE@H@Z",
+  "??0ifstream@@QAE@HPADH@Z",
+  "??0ifstream@@QAE@PBDHH@Z",
+  "??0ifstream@@QAE@XZ",
+  "??0ios@@IAE@ABV0@@Z",
+  "??0ios@@IAE@XZ",
+  "??0ios@@QAE@PAVstreambuf@@@Z",
+  "??0iostream@@IAE@ABV0@@Z",
+  "??0iostream@@IAE@XZ",
+  "??0iostream@@QAE@PAVstreambuf@@@Z",
+  "??0istream@@IAE@ABV0@@Z",
+  "??0istream@@IAE@XZ",
+  "??0istream@@QAE@PAVstreambuf@@@Z",
+  "??0istream_withassign@@QAE@ABV0@@Z",
+  "??0istream_withassign@@QAE@PAVstreambuf@@@Z",
+  "??0istream_withassign@@QAE@XZ",
+  "??0istrstream@@QAE@ABV0@@Z",
+  "??0istrstream@@QAE@PAD@Z",
+  "??0istrstream@@QAE@PADH@Z",
+  "??0logic_error@@QAE@ABQBD@Z",
+  "??0logic_error@@QAE@ABV0@@Z",
+  "??0ofstream@@QAE@ABV0@@Z",
+  "??0ofstream@@QAE@H@Z",
+  "??0ofstream@@QAE@HPADH@Z",
+  "??0ofstream@@QAE@PBDHH@Z",
+  "??0ofstream@@QAE@XZ",
+  "??0ostream@@IAE@ABV0@@Z",
+  "??0ostream@@IAE@XZ",
+  "??0ostream@@QAE@PAVstreambuf@@@Z",
+  "??0ostream_withassign@@QAE@ABV0@@Z",
+  "??0ostream_withassign@@QAE@PAVstreambuf@@@Z",
+  "??0ostream_withassign@@QAE@XZ",
+  "??0ostrstream@@QAE@ABV0@@Z",
+  "??0ostrstream@@QAE@PADHH@Z",
+  "??0ostrstream@@QAE@XZ",
+  "??0stdiobuf@@QAE@ABV0@@Z",
+  "??0stdiobuf@@QAE@PAU_iobuf@@@Z",
+  "??0stdiostream@@QAE@ABV0@@Z",
+  "??0stdiostream@@QAE@PAU_iobuf@@@Z",
+  "??0streambuf@@IAE@PADH@Z",
+  "??0streambuf@@IAE@XZ",
+  "??0streambuf@@QAE@ABV0@@Z",
+  "??0strstream@@QAE@ABV0@@Z",
+  "??0strstream@@QAE@PADHH@Z",
+  "??0strstream@@QAE@XZ",
+  "??0strstreambuf@@QAE@ABV0@@Z",
+  "??0strstreambuf@@QAE@H@Z",
+  "??0strstreambuf@@QAE@P6APAXJ@ZP6AXPAX@Z@Z",
+  "??0strstreambuf@@QAE@PADH0@Z",
+  "??0strstreambuf@@QAE@PAEH0@Z",
+  "??0strstreambuf@@QAE@XZ",
+  "??1Iostream_init@@QAE@XZ",
+  "??1exception@@UAE@XZ",
+  "??1filebuf@@UAE@XZ",
+  "??1fstream@@UAE@XZ",
+  "??1ifstream@@UAE@XZ",
+  "??1ios@@UAE@XZ",
+  "??1iostream@@UAE@XZ",
+  "??1istream@@UAE@XZ",
+  "??1istream_withassign@@UAE@XZ",
+  "??1istrstream@@UAE@XZ",
+  "??1logic_error@@UAE@XZ",
+  "??1ofstream@@UAE@XZ",
+  "??1ostream@@UAE@XZ",
+  "??1ostream_withassign@@UAE@XZ",
+  "??1ostrstream@@UAE@XZ",
+  "??1stdiobuf@@UAE@XZ",
+  "??1stdiostream@@UAE@XZ",
+  "??1streambuf@@UAE@XZ",
+  "??1strstream@@UAE@XZ",
+  "??1strstreambuf@@UAE@XZ",
+  "??4Iostream_init@@QAEAAV0@ABV0@@Z",
+  "??4exception@@QAEAAV0@ABV0@@Z",
+  "??4filebuf@@QAEAAV0@ABV0@@Z",
+  "??4fstream@@QAEAAV0@AAV0@@Z",
+  "??4ifstream@@QAEAAV0@ABV0@@Z",
+  "??4ios@@IAEAAV0@ABV0@@Z",
+  "??4iostream@@IAEAAV0@AAV0@@Z",
+  "??4iostream@@IAEAAV0@PAVstreambuf@@@Z",
+  "??4istream@@IAEAAV0@ABV0@@Z",
+  "??4istream@@IAEAAV0@PAVstreambuf@@@Z",
+  "??4istream_withassign@@QAEAAV0@ABV0@@Z",
+  "??4istream_withassign@@QAEAAVistream@@ABV1@@Z",
+  "??4istream_withassign@@QAEAAVistream@@PAVstreambuf@@@Z",
+  "??4istrstream@@QAEAAV0@ABV0@@Z",
+  "??4logic_error@@QAEAAV0@ABV0@@Z",
+  "??4ofstream@@QAEAAV0@ABV0@@Z",
+  "??4ostream@@IAEAAV0@ABV0@@Z",
+  "??4ostream@@IAEAAV0@PAVstreambuf@@@Z",
+  "??4ostream_withassign@@QAEAAV0@ABV0@@Z",
+  "??4ostream_withassign@@QAEAAVostream@@ABV1@@Z",
+  "??4ostream_withassign@@QAEAAVostream@@PAVstreambuf@@@Z",
+  "??4ostrstream@@QAEAAV0@ABV0@@Z",
+  "??4stdiobuf@@QAEAAV0@ABV0@@Z",
+  "??4stdiostream@@QAEAAV0@AAV0@@Z",
+  "??4streambuf@@QAEAAV0@ABV0@@Z",
+  "??4strstream@@QAEAAV0@AAV0@@Z",
+  "??4strstreambuf@@QAEAAV0@ABV0@@Z",
+  "??5istream@@QAEAAV0@AAC@Z",
+  "??5istream@@QAEAAV0@AAD@Z",
+  "??5istream@@QAEAAV0@AAE@Z",
+  "??5istream@@QAEAAV0@AAF@Z",
+  "??5istream@@QAEAAV0@AAG@Z",
+  "??5istream@@QAEAAV0@AAH@Z",
+  "??5istream@@QAEAAV0@AAI@Z",
+  "??5istream@@QAEAAV0@AAJ@Z",
+  "??5istream@@QAEAAV0@AAK@Z",
+  "??5istream@@QAEAAV0@AAM@Z",
+  "??5istream@@QAEAAV0@AAN@Z",
+  "??5istream@@QAEAAV0@AAO@Z",
+  "??5istream@@QAEAAV0@P6AAAV0@AAV0@@Z@Z",
+  "??5istream@@QAEAAV0@P6AAAVios@@AAV1@@Z@Z",
+  "??5istream@@QAEAAV0@PAC@Z",
+  "??5istream@@QAEAAV0@PAD@Z",
+  "??5istream@@QAEAAV0@PAE@Z",
+  "??5istream@@QAEAAV0@PAVstreambuf@@@Z",
+  "??6ostream@@QAEAAV0@C@Z",
+  "??6ostream@@QAEAAV0@D@Z",
+  "??6ostream@@QAEAAV0@E@Z",
+  "??6ostream@@QAEAAV0@F@Z",
+  "??6ostream@@QAEAAV0@G@Z",
+  "??6ostream@@QAEAAV0@H@Z",
+  "??6ostream@@QAEAAV0@I@Z",
+  "??6ostream@@QAEAAV0@J@Z",
+  "??6ostream@@QAEAAV0@K@Z",
+  "??6ostream@@QAEAAV0@M@Z",
+  "??6ostream@@QAEAAV0@N@Z",
+  "??6ostream@@QAEAAV0@O@Z",
+  "??6ostream@@QAEAAV0@P6AAAV0@AAV0@@Z@Z",
+  "??6ostream@@QAEAAV0@P6AAAVios@@AAV1@@Z@Z",
+  "??6ostream@@QAEAAV0@PAVstreambuf@@@Z",
+  "??6ostream@@QAEAAV0@PBC@Z",
+  "??6ostream@@QAEAAV0@PBD@Z",
+  "??6ostream@@QAEAAV0@PBE@Z",
+  "??6ostream@@QAEAAV0@PBX@Z",
+  "??7ios@@QBEHXZ",
+  "??Bios@@QBEPAXXZ",
+  "??_7exception@@6B@",
+  "??_7filebuf@@6B@",
+  "??_7fstream@@6B@",
+  "??_7ifstream@@6B@",
+  "??_7ios@@6B@",
+  "??_7iostream@@6B@",
+  "??_7istream@@6B@",
+  "??_7istream_withassign@@6B@",
+  "??_7istrstream@@6B@",
+  "??_7logic_error@@6B@",
+  "??_7ofstream@@6B@",
+  "??_7ostream@@6B@",
+  "??_7ostream_withassign@@6B@",
+  "??_7ostrstream@@6B@",
+  "??_7stdiobuf@@6B@",
+  "??_7stdiostream@@6B@",
+  "??_7streambuf@@6B@",
+  "??_7strstream@@6B@",
+  "??_7strstreambuf@@6B@",
+  "??_8fstream@@7Bistream@@@",
+  "??_8fstream@@7Bostream@@@",
+  "??_8ifstream@@7B@",
+  "??_8iostream@@7Bistream@@@",
+  "??_8iostream@@7Bostream@@@",
+  "??_8istream@@7B@",
+  "??_8istream_withassign@@7B@",
+  "??_8istrstream@@7B@",
+  "??_8ofstream@@7B@",
+  "??_8ostream@@7B@",
+  "??_8ostream_withassign@@7B@",
+  "??_8ostrstream@@7B@",
+  "??_8stdiostream@@7Bistream@@@",
+  "??_8stdiostream@@7Bostream@@@",
+  "??_8strstream@@7Bistream@@@",
+  "??_8strstream@@7Bostream@@@",
+  "??_Dfstream@@QAEXXZ",
+  "??_Difstream@@QAEXXZ",
+  "??_Diostream@@QAEXXZ",
+  "??_Distream@@QAEXXZ",
+  "??_Distream_withassign@@QAEXXZ",
+  "??_Distrstream@@QAEXXZ",
+  "??_Dofstream@@QAEXXZ",
+  "??_Dostream@@QAEXXZ",
+  "??_Dostream_withassign@@QAEXXZ",
+  "??_Dostrstream@@QAEXXZ",
+  "??_Dstdiostream@@QAEXXZ",
+  "??_Dstrstream@@QAEXXZ",
+  "??_Eexception@@UAEPAXI@Z",
+  "??_Efilebuf@@UAEPAXI@Z",
+  "??_Efstream@@UAEPAXI@Z",
+  "??_Eifstream@@UAEPAXI@Z",
+  "??_Eios@@UAEPAXI@Z",
+  "??_Eiostream@@UAEPAXI@Z",
+  "??_Eistream@@UAEPAXI@Z",
+  "??_Eistream_withassign@@UAEPAXI@Z",
+  "??_Eistrstream@@UAEPAXI@Z",
+  "??_Elogic_error@@UAEPAXI@Z",
+  "??_Eofstream@@UAEPAXI@Z",
+  "??_Eostream@@UAEPAXI@Z",
+  "??_Eostream_withassign@@UAEPAXI@Z",
+  "??_Eostrstream@@UAEPAXI@Z",
+  "??_Estdiobuf@@UAEPAXI@Z",
+  "??_Estdiostream@@UAEPAXI@Z",
+  "??_Estreambuf@@UAEPAXI@Z",
+  "??_Estrstream@@UAEPAXI@Z",
+  "??_Estrstreambuf@@UAEPAXI@Z",
+  "??_Gexception@@UAEPAXI@Z",
+  "??_Gfilebuf@@UAEPAXI@Z",
+  "??_Gfstream@@UAEPAXI@Z",
+  "??_Gifstream@@UAEPAXI@Z",
+  "??_Gios@@UAEPAXI@Z",
+  "??_Giostream@@UAEPAXI@Z",
+  "??_Gistream@@UAEPAXI@Z",
+  "??_Gistream_withassign@@UAEPAXI@Z",
+  "??_Gistrstream@@UAEPAXI@Z",
+  "??_Glogic_error@@UAEPAXI@Z",
+  "??_Gofstream@@UAEPAXI@Z",
+  "??_Gostream@@UAEPAXI@Z",
+  "??_Gostream_withassign@@UAEPAXI@Z",
+  "??_Gostrstream@@UAEPAXI@Z",
+  "??_Gstdiobuf@@UAEPAXI@Z",
+  "??_Gstdiostream@@UAEPAXI@Z",
+  "??_Gstreambuf@@UAEPAXI@Z",
+  "??_Gstrstream@@UAEPAXI@Z",
+  "??_Gstrstreambuf@@UAEPAXI@Z",
+  "?adjustfield@ios@@2JB",
+  "?allocate@streambuf@@IAEHXZ",
+  "?attach@filebuf@@QAEPAV1@H@Z",
+  "?attach@fstream@@QAEXH@Z",
+  "?attach@ifstream@@QAEXH@Z",
+  "?attach@ofstream@@QAEXH@Z",
+  "?bad@ios@@QBEHXZ",
+  "?base@streambuf@@IBEPADXZ",
+  "?basefield@ios@@2JB",
+  "?binary@filebuf@@2HB",
+  "?bitalloc@ios@@SAJXZ",
+  "?blen@streambuf@@IBEHXZ",
+  "?cerr@@3Vostream_withassign@@A",
+  "?cin@@3Vistream_withassign@@A",
+  "?clear@ios@@QAEXH@Z",
+  "?clog@@3Vostream_withassign@@A",
+  "?close@filebuf@@QAEPAV1@XZ",
+  "?close@fstream@@QAEXXZ",
+  "?close@ifstream@@QAEXXZ",
+  "?close@ofstream@@QAEXXZ",
+  "?clrlock@ios@@QAAXXZ",
+  "?clrlock@streambuf@@QAEXXZ",
+  "?cout@@3Vostream_withassign@@A",
+  "?dbp@streambuf@@QAEXXZ",
+  "?dec@@YAAAVios@@AAV1@@Z",
+  "?delbuf@ios@@QAEXH@Z",
+  "?delbuf@ios@@QBEHXZ",
+  "?doallocate@streambuf@@MAEHXZ",
+  "?doallocate@strstreambuf@@MAEHXZ",
+  "?eatwhite@istream@@QAEXXZ",
+  "?eback@streambuf@@IBEPADXZ",
+  "?ebuf@streambuf@@IBEPADXZ",
+  "?egptr@streambuf@@IBEPADXZ",
+  "?endl@@YAAAVostream@@AAV1@@Z",
+  "?ends@@YAAAVostream@@AAV1@@Z",
+  "?eof@ios@@QBEHXZ",
+  "?epptr@streambuf@@IBEPADXZ",
+  "?fLockcInit@ios@@0HA",
+  "?fail@ios@@QBEHXZ",
+  "?fd@filebuf@@QBEHXZ",
+  "?fd@fstream@@QBEHXZ",
+  "?fd@ifstream@@QBEHXZ",
+  "?fd@ofstream@@QBEHXZ",
+  "?fill@ios@@QAEDD@Z",
+  "?fill@ios@@QBEDXZ",
+  "?flags@ios@@QAEJJ@Z",
+  "?flags@ios@@QBEJXZ",
+  "?floatfield@ios@@2JB",
+  "?flush@@YAAAVostream@@AAV1@@Z",
+  "?flush@ostream@@QAEAAV1@XZ",
+  "?freeze@strstreambuf@@QAEXH@Z",
+  "?gbump@streambuf@@IAEXH@Z",
+  "?gcount@istream@@QBEHXZ",
+  "?get@istream@@IAEAAV1@PADHH@Z",
+  "?get@istream@@QAEAAV1@AAC@Z",
+  "?get@istream@@QAEAAV1@AAD@Z",
+  "?get@istream@@QAEAAV1@AAE@Z",
+  "?get@istream@@QAEAAV1@AAVstreambuf@@D@Z",
+  "?get@istream@@QAEAAV1@PACHD@Z",
+  "?get@istream@@QAEAAV1@PADHD@Z",
+  "?get@istream@@QAEAAV1@PAEHD@Z",
+  "?get@istream@@QAEHXZ",
+  "?getdouble@istream@@AAEHPADH@Z",
+  "?getint@istream@@AAEHPAD@Z",
+  "?getline@istream@@QAEAAV1@PACHD@Z",
+  "?getline@istream@@QAEAAV1@PADHD@Z",
+  "?getline@istream@@QAEAAV1@PAEHD@Z",
+  "?good@ios@@QBEHXZ",
+  "?gptr@streambuf@@IBEPADXZ",
+  "?hex@@YAAAVios@@AAV1@@Z",
+  "?ignore@istream@@QAEAAV1@HH@Z",
+  "?in_avail@streambuf@@QBEHXZ",
+  "?init@ios@@IAEXPAVstreambuf@@@Z",
+  "?ipfx@istream@@QAEHH@Z",
+  "?is_open@filebuf@@QBEHXZ",
+  "?is_open@fstream@@QBEHXZ",
+  "?is_open@ifstream@@QBEHXZ",
+  "?is_open@ofstream@@QBEHXZ",
+  "?isfx@istream@@QAEXXZ",
+  "?iword@ios@@QBEAAJH@Z",
+  "?lock@ios@@QAAXXZ",
+  "?lock@streambuf@@QAEXXZ",
+  "?lockbuf@ios@@QAAXXZ",
+  "?lockc@ios@@KAXXZ",
+  "?lockptr@ios@@IAEPAU_CRT_CRITICAL_SECTION@@XZ",
+  "?lockptr@streambuf@@IAEPAU_CRT_CRITICAL_SECTION@@XZ",
+  "?oct@@YAAAVios@@AAV1@@Z",
+  "?open@filebuf@@QAEPAV1@PBDHH@Z",
+  "?open@fstream@@QAEXPBDHH@Z",
+  "?open@ifstream@@QAEXPBDHH@Z",
+  "?open@ofstream@@QAEXPBDHH@Z",
+  "?openprot@filebuf@@2HB",
+  "?opfx@ostream@@QAEHXZ",
+  "?osfx@ostream@@QAEXXZ",
+  "?out_waiting@streambuf@@QBEHXZ",
+  "?overflow@filebuf@@UAEHH@Z",
+  "?overflow@stdiobuf@@UAEHH@Z",
+  "?overflow@strstreambuf@@UAEHH@Z",
+  "?pbackfail@stdiobuf@@UAEHH@Z",
+  "?pbackfail@streambuf@@UAEHH@Z",
+  "?pbase@streambuf@@IBEPADXZ",
+  "?pbump@streambuf@@IAEXH@Z",
+  "?pcount@ostrstream@@QBEHXZ",
+  "?pcount@strstream@@QBEHXZ",
+  "?peek@istream@@QAEHXZ",
+  "?pptr@streambuf@@IBEPADXZ",
+  "?precision@ios@@QAEHH@Z",
+  "?precision@ios@@QBEHXZ",
+  "?put@ostream@@QAEAAV1@C@Z",
+  "?put@ostream@@QAEAAV1@D@Z",
+  "?put@ostream@@QAEAAV1@E@Z",
+  "?putback@istream@@QAEAAV1@D@Z",
+  "?pword@ios@@QBEAAPAXH@Z",
+  "?rdbuf@fstream@@QBEPAVfilebuf@@XZ",
+  "?rdbuf@ifstream@@QBEPAVfilebuf@@XZ",
+  "?rdbuf@ios@@QBEPAVstreambuf@@XZ",
+  "?rdbuf@istrstream@@QBEPAVstrstreambuf@@XZ",
+  "?rdbuf@ofstream@@QBEPAVfilebuf@@XZ",
+  "?rdbuf@ostrstream@@QBEPAVstrstreambuf@@XZ",
+  "?rdbuf@stdiostream@@QBEPAVstdiobuf@@XZ",
+  "?rdbuf@strstream@@QBEPAVstrstreambuf@@XZ",
+  "?rdstate@ios@@QBEHXZ",
+  "?read@istream@@QAEAAV1@PACH@Z",
+  "?read@istream@@QAEAAV1@PADH@Z",
+  "?read@istream@@QAEAAV1@PAEH@Z",
+  "?sbumpc@streambuf@@QAEHXZ",
+  "?seekg@istream@@QAEAAV1@J@Z",
+  "?seekg@istream@@QAEAAV1@JW4seek_dir@ios@@@Z",
+  "?seekoff@filebuf@@UAEJJW4seek_dir@ios@@H@Z",
+  "?seekoff@stdiobuf@@UAEJJW4seek_dir@ios@@H@Z",
+  "?seekoff@streambuf@@UAEJJW4seek_dir@ios@@H@Z",
+  "?seekoff@strstreambuf@@UAEJJW4seek_dir@ios@@H@Z",
+  "?seekp@ostream@@QAEAAV1@J@Z",
+  "?seekp@ostream@@QAEAAV1@JW4seek_dir@ios@@@Z",
+  "?seekpos@streambuf@@UAEJJH@Z",
+  "?setb@streambuf@@IAEXPAD0H@Z",
+  "?setbuf@filebuf@@UAEPAVstreambuf@@PADH@Z",
+  "?setbuf@fstream@@QAEPAVstreambuf@@PADH@Z",
+  "?setbuf@ifstream@@QAEPAVstreambuf@@PADH@Z",
+  "?setbuf@ofstream@@QAEPAVstreambuf@@PADH@Z",
+  "?setbuf@streambuf@@UAEPAV1@PADH@Z",
+  "?setbuf@strstreambuf@@UAEPAVstreambuf@@PADH@Z",
+  "?setf@ios@@QAEJJ@Z",
+  "?setf@ios@@QAEJJJ@Z",
+  "?setg@streambuf@@IAEXPAD00@Z",
+  "?setlock@ios@@QAAXXZ",
+  "?setlock@streambuf@@QAEXXZ",
+  "?setmode@filebuf@@QAEHH@Z",
+  "?setmode@fstream@@QAEHH@Z",
+  "?setmode@ifstream@@QAEHH@Z",
+  "?setmode@ofstream@@QAEHH@Z",
+  "?setp@streambuf@@IAEXPAD0@Z",
+  "?setrwbuf@stdiobuf@@QAEHHH@Z",
+  "?sgetc@streambuf@@QAEHXZ",
+  "?sgetn@streambuf@@QAEHPADH@Z",
+  "?sh_none@filebuf@@2HB",
+  "?sh_read@filebuf@@2HB",
+  "?sh_write@filebuf@@2HB",
+  "?snextc@streambuf@@QAEHXZ",
+  "?sputbackc@streambuf@@QAEHD@Z",
+  "?sputc@streambuf@@QAEHH@Z",
+  "?sputn@streambuf@@QAEHPBDH@Z",
+  "?stdiofile@stdiobuf@@QAEPAU_iobuf@@XZ",
+  "?stossc@streambuf@@QAEXXZ",
+  "?str@istrstream@@QAEPADXZ",
+  "?str@ostrstream@@QAEPADXZ",
+  "?str@strstream@@QAEPADXZ",
+  "?str@strstreambuf@@QAEPADXZ",
+  "?sunk_with_stdio@ios@@0HA",
+  "?sync@filebuf@@UAEHXZ",
+  "?sync@istream@@QAEHXZ",
+  "?sync@stdiobuf@@UAEHXZ",
+  "?sync@streambuf@@UAEHXZ",
+  "?sync@strstreambuf@@UAEHXZ",
+  "?sync_with_stdio@ios@@SAXXZ",
+  "?tellg@istream@@QAEJXZ",
+  "?tellp@ostream@@QAEJXZ",
+  "?text@filebuf@@2HB",
+  "?tie@ios@@QAEPAVostream@@PAV2@@Z",
+  "?tie@ios@@QBEPAVostream@@XZ",
+  "?unbuffered@streambuf@@IAEXH@Z",
+  "?unbuffered@streambuf@@IBEHXZ",
+  "?underflow@filebuf@@UAEHXZ",
+  "?underflow@stdiobuf@@UAEHXZ",
+  "?underflow@strstreambuf@@UAEHXZ",
+  "?unlock@ios@@QAAXXZ",
+  "?unlock@streambuf@@QAEXXZ",
+  "?unlockbuf@ios@@QAAXXZ",
+  "?unlockc@ios@@KAXXZ",
+  "?unsetf@ios@@QAEJJ@Z",
+  "?what@exception@@UBEPBDXZ",
+  "?width@ios@@QAEHH@Z",
+  "?width@ios@@QBEHXZ",
+  "?write@ostream@@QAEAAV1@PBCH@Z",
+  "?write@ostream@@QAEAAV1@PBDH@Z",
+  "?write@ostream@@QAEAAV1@PBEH@Z",
+  "?writepad@ostream@@AAEAAV1@PBD0@Z",
+  "?ws@@YAAAVistream@@AAV1@@Z",
+  "?x_curindex@ios@@0HA",
+  "?x_lockc@ios@@0U_CRT_CRITICAL_SECTION@@A",
+  "?x_maxbit@ios@@0JA",
+  "?x_statebuf@ios@@0PAJA",
+  "?xalloc@ios@@SAHXZ",
+  "?xsgetn@streambuf@@UAEHPADH@Z",
+  "?xsputn@streambuf@@UAEHPBDH@Z",
+  "__dummy_export",
+  "_mtlock",
+  "_mtunlock",
+  "GUnknown exception",
+  "%%%s.%.0ug",
+  "%%%s.%.0uLg",
+  "STREAMBUF DEBUG INFO: this=%p, _fAlloc=%d\n  base()=%p, ebuf()=%p,  blen()=%d\n pbase()=%p, pptr()=%p, epptr()=%p\n eback()=%p, gptr()=%p, egptr()=%p",
+  "STREAMBUF DEBUG INFO: this=%p, unbuffered",
+  "|RSDS\\x",
+  "msvci70.pdb",
+  "KERNEL32.dll",
+  "MSVCR70.dll",
+  "GetCurrentProcessId",
+  "GetCurrentThreadId",
+  "GetTickCount",
+  "QueryPerformanceCounter",
+  "ExitProcess",
+  "LeaveCriticalSection",
+  "EnterCriticalSection",
+  "DeleteCriticalSection",
+  "InitializeCriticalSection",
+  "DisableThreadLibraryCalls",
+  "GetSystemTimeAsFileTime",
+  "_sopen",
+  "_setmode",
+  "strtod",
+  "isspace",
+  "isdigit",
+  "isxdigit",
+  "strtol",
+  "_errno",
+  "strtoul",
+  "strcpy",
+  "strlen",
+  "toupper",
+  "sprintf",
+  "fflush",
+  "fputc",
+  "??_U@YAPAXI@Z",
+  "fgetc",
+  "fread",
+  "ftell",
+  "fseek",
+  "__badioinfo",
+  "memcpy",
+  "??1type_info@@UAE@XZ",
+  "?terminate@@YAXXZ",
+  "__dllonexit",
+  "_onexit",
+  "__security_error_handler",
+  "free",
+  "_initterm",
+  "malloc",
+  "_adjust_fdiv",
+  "_except_handler3",
+  "_read",
+  "_write",
+  "memmove",
+  "__pioinfo",
+  "_lseek",
+  "_close",
+  "??2@YAPAXI@Z",
+  "__CxxFrameHandler",
+  "??3@YAXPAX@Z",
+  "fwrite",
+  "_purecall",
+  ".?AVstreambuf@@",
+  ".?AVios@@",
+  ".?AVistream@@",
+  ".?AVistream_withassign@@",
+  ".?AVostream@@",
+  ".?AVostream_withassign@@",
+  ".?AVfilebuf@@",
+  ".?AVifstream@@",
+  ".?AVofstream@@",
+  ".?AViostream@@",
+  ".?AVfstream@@",
+  ".?AVstrstreambuf@@",
+  ".?AVistrstream@@",
+  ".?AVostrstream@@",
+  ".?AVstdiobuf@@",
+  ".?AVstrstream@@",
+  ".?AVstdiostream@@",
+  ".?AVexception@@",
+  ".?AVlogic_error@@",
+  ".?AVtype_info@@",
+  "VS_VERSION_INFO",
+  "StringFileInfo",
+  "040904B0",
+  "CompanyName",
+  "Microsoft Corporation",
+  "FileDescription",
+  "Microsoft",
+  "C++ Runtime Library",
+  "FileVersion",
+  "InternalName",
+  "MSVCI70.DLL",
+  "LegalCopyright",
+  "Microsoft Corporation.  All rights reserved.",
+  "OriginalFilename",
+  "MSVCI70.DLL",
+  "ProductName",
+  "Microsoft",
+  "Visual Studio .NET",
+  "ProductVersion",
+  "VarFileInfo",
+  "Translation",
+  "0\"0'0N0Y0",
+  "1'181D1L1T1`1n1|1",
+  "2\"2E2",
+  "3B3V3a3",
+  "5+515k5",
+  "536b6l6",
+  "7l9x9",
+  "<,<:<H<V<]<i<v<",
+  "=#=1=>=H=N=X=d=n=x=~=",
+  "Z0a0~0",
+  "6@7c7",
+  "8@8Z8",
+  "5-5p5",
+  "5C6h6",
+  "6=7d7a8v8|8",
+  "80l0",
+  "1!2[2l2",
+  "8*909A9N9]9e9r9",
+  "232c2",
+  "515V5",
+  "4\"4h4",
+  "485S5",
+  "6+6D6N6V6`6u6~6",
+  "7+757>7C7Q7[7d7v7",
+  "7P9N:f:m:",
+  "0*0m0",
+  "0B1L1q1x1",
+  "363I3",
+  "3D4K4t4z4",
+  "4\r5!555G5q5",
+  "5$6Y6",
+  "7-7M7a7s7",
+  "8F8X8x8",
+  "9:9d9",
+  "$1(14181<1T1",
+  "<1@1P1T1d1h1l1p1t1x1|1",
+  "2$2(282<2@2D2L2d2h2x2|2",
+  "30343D3H3X3\\3`3d3l3",
+  "4$4(4,4044484<4@4D4H4L4P4`4d4t4x4|4",
+  "5 5$5,5D5H5L5P5T5X5\\5`5d5h5l5p5",
+  "6,606@6D6H6L6P6T6X6`6x6|6",
+  "7(7,707@7D7T7X7`7x7|7",
+  "8 80848D8H8P8",
+  ";4;<;D;P;h;p;|;",
+  "< <(<4<L<T<`<x<",
+  "?,?8?P?X?d?|?",
+  "040<0D0P0",
+  "0 0$000H0\\0t0",
+  "141T1p1"
+]

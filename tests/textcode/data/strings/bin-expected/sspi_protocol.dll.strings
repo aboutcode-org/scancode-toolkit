@@ -1,165 +1,163 @@
-!This program cannot be run in DOS mode.
-$
-/Richy
-.text
-`.rdata
-@.data
-.reloc
-L$(tuf
-D$ RPSU
-RPQV
-uCh4A
-SUVW
-9T$4u
-L$4h8A
-T$4h4A
-SUQVW
-WUPV
-tHj.V
-Ht
-HtL
-SUVW
-tJhpA
-3D$PUV
-D$TW3
-L$L3L$P
-u
-9l$p
-L$Dj Q
-L$DQU
-9l$lu
-9l$pt
-L$dh@S
-L$L3L$P
-L$dh@S
-PQh|A
-PQhXB
-V$Rh$B
-WhdC
-t"WSU
-D$TPh
-L$LQh
-QRSP
-l$0u5j
-l$xV3
-L$0PQ
-PRVh(D
-PRVh(D
-T$XUR
-3D$DV
-t	WVS
-NWVS
-u7WPS
-u&WVS
-cvspserver
-\wship6
-\ws2_32
-freeaddrinfo
-getnameinfo
-getaddrinfo
-connect to %s:%s failed: %s
-Couldn't bind to local port - %s
-cannot create socket: %s
-Error connecting to host %s: %s
-shutting down connection to %s: %s
-Proxy server %s does not support HTTP tunnelling
-CONNECT %s:%s HTTP/1.0
-Proxy name must be specified for HTTP tunnelling
-Unsupported tunnelling protocol '%s' specified
-HTTP
-:sspi[;keyword=value...]:[username[:password]@]host[:port][:]/path
-sspi interface v1.0
-sspi
-Couldn't get package data
-NTLM
-Couldn't initialise SSPI: no function table?!?
-Couldn't initialise SSPI:  loading security.dll failed
-InitSecurityInterfaceA
-security.dll
-secur32.dll
-cvsnt
-cvspass
-:sspi:%s@%s:%s
-:sspi:%s@%s:%s:%s
-Can't authenticate - server and client cannot agree on an authentication scheme (got '%s')
-[server aborted
-%s
-NTLM
-BEGIN SSPI
-Failed to store password
-Failed to delete password
-Nope!
-NTLM
-RSDS&
-d:\cvsbin\release builder\cvsnt\winrel\sspi_protocol.pdb
-WSOCK32.dll
-FormatMessageA
-GetVersionExA
-FreeLibrary
-GetProcAddress
-LoadLibraryA
-GetSystemDirectoryA
-KERNEL32.dll
-USER32.dll
-GetUserNameA
-ADVAPI32.dll
-_vsnprintf
-getc
-malloc
-calloc
-free
-sprintf
-strtoul
-strchr
-_snprintf
-fprintf
-atoi
-strncpy
-memmove
-exit
-fflush
-fwrite
-_strdup
-strstr
-printf
-MSVCR70.dll
-__security_error_handler
-_initterm
-_adjust_fdiv
-_except_handler3
-__dllonexit
-_onexit
-ExitProcess
-QueryPerformanceCounter
-GetTickCount
-GetCurrentThreadId
-GetCurrentProcessId
-GetSystemTimeAsFileTime
-DisableThreadLibraryCalls
-_read
-_write
-_stricmp
-sspi_protocol.dll
-get_protocol_interface
-rx5O`mHlF@LCtJDWo4Kw1"RQ_ApVvnzi)9S+.f(Y&g-2*{[#}76B|~;/\GsNXkj8$yuhedEIc?^]'%=0:q Z,b<3!a>MTPU
-0>0W0
-1'1U1l1
-2E3t3
-4\6a6g6x6
-6 7O7
-=J=O=U=g=r=
-0*0?0S0i0{0
-1&1,1S1d1v1
-2(242G2L2V2\2
-3+4E4
-7#7+707<7K7X7v7
-888c8v8
-9$9G9e9o9}9
->7>Q>a>k>s>
-0)0Q0V0]0e0p0
-111U1w1
-2$2+24292X2^2c2q2{2
-3H3O3e3m3v3~3
-5b5h5q5v5{5
-5/6<6H6N6
-0 0$0(0,04181<1@1P1T1X1\1`1d1h1l1p1t1x1
+[
+  "!This program cannot be run in DOS mode.\r\r\n$",
+  "/Richy",
+  ".text",
+  "`.rdata",
+  "@.data",
+  ".reloc",
+  "L$(tuf",
+  "D$ RPSU",
+  "RPQV",
+  "uCh4A",
+  "SUVW",
+  "9T$4u",
+  "L$4h8A",
+  "T$4h4A",
+  "SUQVW",
+  "WUPV",
+  "tHj.V",
+  "Ht\nHtL",
+  "SUVW",
+  "tJhpA",
+  "3D$PUV",
+  "D$TW3",
+  "L$L3L$P",
+  "u\n9l$p",
+  "L$Dj Q",
+  "L$DQU",
+  "9l$lu",
+  "9l$pt",
+  "L$dh@S",
+  "L$L3L$P",
+  "L$dh@S",
+  "PQh|A",
+  "PQhXB",
+  "V$Rh$B",
+  "WhdC",
+  "t\"WSU",
+  "D$TPh",
+  "L$LQh",
+  "QRSP",
+  "l$0u5j",
+  "l$xV3",
+  "L$0PQ",
+  "PRVh(D",
+  "PRVh(D",
+  "T$XUR",
+  "3D$DV",
+  "t\tWVS",
+  "NWVS",
+  "u7WPS",
+  "u&WVS",
+  "cvspserver",
+  "\\wship6",
+  "\\ws2_32",
+  "freeaddrinfo",
+  "getnameinfo",
+  "getaddrinfo",
+  "connect to %s:%s failed: %s",
+  "Couldn't bind to local port - %s",
+  "cannot create socket: %s",
+  "Error connecting to host %s: %s",
+  "shutting down connection to %s: %s",
+  "Proxy server %s does not support HTTP tunnelling",
+  "CONNECT %s:%s HTTP/1.0",
+  "Proxy name must be specified for HTTP tunnelling",
+  "Unsupported tunnelling protocol '%s' specified",
+  "HTTP",
+  ":sspi[;keyword=value...]:[username[:password]@]host[:port][:]/path",
+  "sspi interface v1.0",
+  "sspi",
+  "Couldn't get package data",
+  "NTLM",
+  "Couldn't initialise SSPI: no function table?!?",
+  "Couldn't initialise SSPI:  loading security.dll failed",
+  "InitSecurityInterfaceA",
+  "security.dll",
+  "secur32.dll",
+  "cvsnt",
+  "cvspass",
+  ":sspi:%s@%s:%s",
+  ":sspi:%s@%s:%s:%s",
+  "Can't authenticate - server and client cannot agree on an authentication scheme (got '%s')",
+  "[server aborted",
+  "%s\nNTLM",
+  "BEGIN SSPI",
+  "Failed to store password",
+  "Failed to delete password",
+  "Nope!",
+  "NTLM",
+  "RSDS&",
+  "d:\\cvsbin\\release builder\\cvsnt\\winrel\\sspi_protocol.pdb",
+  "WSOCK32.dll",
+  "FormatMessageA",
+  "GetVersionExA",
+  "FreeLibrary",
+  "GetProcAddress",
+  "LoadLibraryA",
+  "GetSystemDirectoryA",
+  "KERNEL32.dll",
+  "USER32.dll",
+  "GetUserNameA",
+  "ADVAPI32.dll",
+  "_vsnprintf",
+  "getc",
+  "malloc",
+  "calloc",
+  "free",
+  "sprintf",
+  "strtoul",
+  "strchr",
+  "_snprintf",
+  "fprintf",
+  "atoi",
+  "strncpy",
+  "memmove",
+  "exit",
+  "fflush",
+  "fwrite",
+  "_strdup",
+  "strstr",
+  "printf",
+  "MSVCR70.dll",
+  "__security_error_handler",
+  "_initterm",
+  "_adjust_fdiv",
+  "_except_handler3",
+  "__dllonexit",
+  "_onexit",
+  "ExitProcess",
+  "QueryPerformanceCounter",
+  "GetTickCount",
+  "GetCurrentThreadId",
+  "GetCurrentProcessId",
+  "GetSystemTimeAsFileTime",
+  "DisableThreadLibraryCalls",
+  "_read",
+  "_write",
+  "_stricmp",
+  "sspi_protocol.dll",
+  "get_protocol_interface",
+  "rx5O`mHlF@LCtJDWo4Kw1\"RQ_ApVvnzi)9S+.f(Y&g-2*{[#}76B|~;/\\GsNXkj8$yuhedEIc?^]'%=0:q Z,b<3!a>MTPU",
+  "0>0W0",
+  "1'1U1l1",
+  "2E3t3",
+  "4\\6a6g6x6",
+  "6 7O7",
+  "=J=O=U=g=r=",
+  "0*0?0S0i0{0",
+  "1&1,1S1d1v1",
+  "2(242G2L2V2\\2",
+  "3+4E4",
+  "7#7+707<7K7X7v7",
+  "888c8v8",
+  "9$9G9e9o9}9",
+  ">7>Q>a>k>s>",
+  "0)0Q0V0]0e0p0",
+  "111U1w1",
+  "2$2+24292X2^2c2q2{2",
+  "3H3O3e3m3v3~3",
+  "5b5h5q5v5{5",
+  "5/6<6H6N6",
+  "0 0$0(0,04181<1@1P1T1X1\\1`1d1h1l1p1t1x1"
+]

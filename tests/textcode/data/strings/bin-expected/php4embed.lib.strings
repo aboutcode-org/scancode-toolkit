@@ -1,164 +1,163 @@
-!<arch>
-/               1103042908              0       437       `
-0??_C@_01FBAH@1?$AA@
-??_C@_01GJD@?9?$AA@
-??_C@_01PLJA@0?$AA@
-??_C@_03HHKO@?$CFs?6?$AA@
-??_C@_05EENK@embed?$AA@
-??_C@_08OOAO@PHP_SELF?$AA@
-??_C@_0BD@IBOE@max_execution_time?$AA@
-??_C@_0BD@JNOK@register_argc_argv?$AA@
-??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@
-??_C@_0M@DAKO@html_errors?$AA@
-??_C@_0P@INNJ@implicit_flush?$AA@
-_php_embed_init
-_php_embed_module
-_php_embed_shutdown
-??_C@_01FBAH@1?$AA@
-??_C@_01GJD@?9?$AA@
-??_C@_01PLJA@0?$AA@
-??_C@_03HHKO@?$CFs?6?$AA@
-??_C@_05EENK@embed?$AA@
-??_C@_08OOAO@PHP_SELF?$AA@
-??_C@_0BD@IBOE@max_execution_time?$AA@
-??_C@_0BD@JNOK@register_argc_argv?$AA@
-??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@
-??_C@_0M@DAKO@html_errors?$AA@
-??_C@_0P@INNJ@implicit_flush?$AA@
-_php_embed_init
-_php_embed_module
-_php_embed_shutdown
-//              1103042908              0       27        `
-.\Release_TS\php_embed.obj
-/0              1103042908              100666  6875      `
-L
-.drectve
-.data
-.data
-.data
-.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.data
-.debug$F
-B.text
-P`.debug$F
-B.text
-P`.debug$F
-B.text
-P`.data
-.data
-.data
-.data
-.data
-.data
-.data
-.data
-.debug$F
-B.text
-P`.debug$F
-B-defaultlib:uuid.lib -defaultlib:uuid.lib -defaultlib:MSVCRT -defaultlib:OLDNAMES
-PHP Embedded Library
-embed
-v$VSW
-PHP_SELF
-max_execution_time
-implicit_flush
-html_errors
-register_argc_argv
-.file
-c:\php4build\snap\sapi\embed\php_embed.c
-@comp.id6&
-.drectve
-.data
-.data
-.data
-.text
-.debug$F
-.text
-.debug$F
-.text
-.debug$F
-.text
-.debug$F
-.text
-.debug$F
-.text
-.debug$F
-.text
-.data
-.debug$F
-.text
-.debug$F
-.text
-.debug$F
-.text
-.data
-.data
-.data
-.data
-.data
-.data
-.data
-.data
-.debug$F
-.text
-.debug$F
-_php_embed_module
-_zend_error
-_php_module_shutdown_wrapper
-??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@
-??_C@_05EENK@embed?$AA@
-_php_embed_read_cookies
-_php_embed_deactivate
-__imp__fflush
-__imp___iob
-_php_embed_ub_write
-__imp__php_handle_aborted_connection
-_php_embed_single_write
-__imp__fwrite
-_php_embed_flush
-_php_embed_send_header
-_php_embed_log_message
-__imp__fprintf
-??_C@_03HHKO@?$CFs?6?$AA@
-_php_embed_register_variables
-__imp__php_import_environment_variables
-_php_embed_startup
-__imp__php_module_startup
-_php_embed_init
-__imp__php_register_variable
-??_C@_08OOAO@PHP_SELF?$AA@
-??_C@_01GJD@?9?$AA@
-__imp__php_module_shutdown
-__imp__php_request_startup
-??_C@_0BD@IBOE@max_execution_time?$AA@
-??_C@_0P@INNJ@implicit_flush?$AA@
-??_C@_0M@DAKO@html_errors?$AA@
-??_C@_01PLJA@0?$AA@
-__imp__zend_alter_ini_entry
-??_C@_0BD@JNOK@register_argc_argv?$AA@
-??_C@_01FBAH@1?$AA@
-__imp__zend_llist_init
-__imp__sapi_startup
-__imp__sapi_globals_id
-__imp__core_globals_id
-__imp__executor_globals_id
-__imp__ts_resource_ex
-__imp__compiler_globals_id
-__imp__tsrm_startup
-__imp__setmode
-__imp___fmode
-_php_embed_shutdown
-__imp__tsrm_shutdown
-__imp__php_request_shutdown
+[
+  "!<arch>\n/               1103042908              0       437       `",
+  "0??_C@_01FBAH@1?$AA@",
+  "??_C@_01GJD@?9?$AA@",
+  "??_C@_01PLJA@0?$AA@",
+  "??_C@_03HHKO@?$CFs?6?$AA@",
+  "??_C@_05EENK@embed?$AA@",
+  "??_C@_08OOAO@PHP_SELF?$AA@",
+  "??_C@_0BD@IBOE@max_execution_time?$AA@",
+  "??_C@_0BD@JNOK@register_argc_argv?$AA@",
+  "??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@",
+  "??_C@_0M@DAKO@html_errors?$AA@",
+  "??_C@_0P@INNJ@implicit_flush?$AA@",
+  "_php_embed_init",
+  "_php_embed_module",
+  "_php_embed_shutdown",
+  "??_C@_01FBAH@1?$AA@",
+  "??_C@_01GJD@?9?$AA@",
+  "??_C@_01PLJA@0?$AA@",
+  "??_C@_03HHKO@?$CFs?6?$AA@",
+  "??_C@_05EENK@embed?$AA@",
+  "??_C@_08OOAO@PHP_SELF?$AA@",
+  "??_C@_0BD@IBOE@max_execution_time?$AA@",
+  "??_C@_0BD@JNOK@register_argc_argv?$AA@",
+  "??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@",
+  "??_C@_0M@DAKO@html_errors?$AA@",
+  "??_C@_0P@INNJ@implicit_flush?$AA@",
+  "_php_embed_init",
+  "_php_embed_module",
+  "_php_embed_shutdown",
+  "//              1103042908              0       27        `\n.\\Release_TS\\php_embed.obj",
+  "/0              1103042908              100666  6875      `\nL",
+  ".drectve",
+  ".data",
+  ".data",
+  ".data",
+  ".text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.data",
+  ".debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B.text",
+  "P`.data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".debug$F",
+  "B.text",
+  "P`.debug$F",
+  "B-defaultlib:uuid.lib -defaultlib:uuid.lib -defaultlib:MSVCRT -defaultlib:OLDNAMES",
+  "PHP Embedded Library",
+  "embed",
+  "v$VSW",
+  "PHP_SELF",
+  "max_execution_time",
+  "implicit_flush",
+  "html_errors",
+  "register_argc_argv",
+  ".file",
+  "c:\\php4build\\snap\\sapi\\embed\\php_embed.c",
+  "@comp.id6&",
+  ".drectve",
+  ".data",
+  ".data",
+  ".data",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".data",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  ".text",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".data",
+  ".debug$F",
+  ".text",
+  ".debug$F",
+  "_php_embed_module",
+  "_zend_error",
+  "_php_module_shutdown_wrapper",
+  "??_C@_0BF@LBAH@PHP?5Embedded?5Library?$AA@",
+  "??_C@_05EENK@embed?$AA@",
+  "_php_embed_read_cookies",
+  "_php_embed_deactivate",
+  "__imp__fflush",
+  "__imp___iob",
+  "_php_embed_ub_write",
+  "__imp__php_handle_aborted_connection",
+  "_php_embed_single_write",
+  "__imp__fwrite",
+  "_php_embed_flush",
+  "_php_embed_send_header",
+  "_php_embed_log_message",
+  "__imp__fprintf",
+  "??_C@_03HHKO@?$CFs?6?$AA@",
+  "_php_embed_register_variables",
+  "__imp__php_import_environment_variables",
+  "_php_embed_startup",
+  "__imp__php_module_startup",
+  "_php_embed_init",
+  "__imp__php_register_variable",
+  "??_C@_08OOAO@PHP_SELF?$AA@",
+  "??_C@_01GJD@?9?$AA@",
+  "__imp__php_module_shutdown",
+  "__imp__php_request_startup",
+  "??_C@_0BD@IBOE@max_execution_time?$AA@",
+  "??_C@_0P@INNJ@implicit_flush?$AA@",
+  "??_C@_0M@DAKO@html_errors?$AA@",
+  "??_C@_01PLJA@0?$AA@",
+  "__imp__zend_alter_ini_entry",
+  "??_C@_0BD@JNOK@register_argc_argv?$AA@",
+  "??_C@_01FBAH@1?$AA@",
+  "__imp__zend_llist_init",
+  "__imp__sapi_startup",
+  "__imp__sapi_globals_id",
+  "__imp__core_globals_id",
+  "__imp__executor_globals_id",
+  "__imp__ts_resource_ex",
+  "__imp__compiler_globals_id",
+  "__imp__tsrm_startup",
+  "__imp__setmode",
+  "__imp___fmode",
+  "_php_embed_shutdown",
+  "__imp__tsrm_shutdown",
+  "__imp__php_request_shutdown"
+]

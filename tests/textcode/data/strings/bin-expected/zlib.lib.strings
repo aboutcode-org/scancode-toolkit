@@ -1,48 +1,46 @@
-!<arch>
-/               1161153312              0       122       `
-__IMPORT_DESCRIPTOR_zlib
-__NULL_IMPORT_DESCRIPTOR
-zlib_NULL_THUNK_DATA
-__imp__initzlib
-_initzlib
-__IMPORT_DESCRIPTOR_zlib
-__NULL_IMPORT_DESCRIPTOR
-__imp__initzlib
-_initzlib
-zlib_NULL_THUNK_DATA
-zlib.pyd/       1161153312              0       483       `
-L
-.debug$S
-B.idata$2
-.idata$6
-zlib.pyd(
-Microsoft (R) LINK
-zlib.pyd
-@comp.id
-.idata$2@
-.idata$6
-.idata$4@
-.idata$5@
-__IMPORT_DESCRIPTOR_zlib
-__NULL_IMPORT_DESCRIPTOR
-zlib_NULL_THUNK_DATA
-zlib.pyd/       1161153312              0       248       `
-L
-.debug$S
-B.idata$3
-zlib.pyd(
-Microsoft (R) LINK
-@comp.id
-__NULL_IMPORT_DESCRIPTOR
-zlib.pyd/       1161153312              0       273       `
-L
-.debug$S
-B.idata$5
-.idata$4
-zlib.pyd(
-Microsoft (R) LINK
-@comp.id
-zlib_NULL_THUNK_DATA
-zlib.pyd/       1161153312              0       39        `
-_initzlib
-zlib.pyd
+[
+  "!<arch>\n/               1161153312              0       122       `",
+  "__IMPORT_DESCRIPTOR_zlib",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "zlib_NULL_THUNK_DATA",
+  "__imp__initzlib",
+  "_initzlib",
+  "__IMPORT_DESCRIPTOR_zlib",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "__imp__initzlib",
+  "_initzlib",
+  "zlib_NULL_THUNK_DATA",
+  "zlib.pyd/       1161153312              0       483       `\nL",
+  ".debug$S",
+  "B.idata$2",
+  ".idata$6",
+  "zlib.pyd(",
+  "Microsoft (R) LINK",
+  "zlib.pyd",
+  "@comp.id",
+  ".idata$2@",
+  ".idata$6",
+  ".idata$4@",
+  ".idata$5@",
+  "__IMPORT_DESCRIPTOR_zlib",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "zlib_NULL_THUNK_DATA",
+  "zlib.pyd/       1161153312              0       248       `\nL",
+  ".debug$S",
+  "B.idata$3",
+  "zlib.pyd(",
+  "Microsoft (R) LINK",
+  "@comp.id",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "zlib.pyd/       1161153312              0       273       `\nL",
+  ".debug$S",
+  "B.idata$5",
+  ".idata$4",
+  "zlib.pyd(",
+  "Microsoft (R) LINK",
+  "@comp.id",
+  "zlib_NULL_THUNK_DATA",
+  "zlib.pyd/       1161153312              0       39        `",
+  "_initzlib",
+  "zlib.pyd"
+]

@@ -1,3202 +1,3202 @@
-!This program cannot be run in DOS mode.
-$
-.text
-.data
-.rdata
-.edata
-0@.idata
-.reloc
-0B.stab
-.stabstr
-T0Qj
-d1Qj
-xta1
-45Qj
-46Qj
-R6Qj
-i6Qj
-77Qj
-i6Qj
-G7Qj
-X7Qj
-x7Qj
-@GQjsA
-@GQjr
-GGQj
-GGQj
-JGQj
-JGQj
-NGQj
-UGQj
-YGQj
-kGQj
-3HQj
-AHQj
-GHQj
-PHQj
-AHQj
-tHQj
-DKQj
-IQj;M
-IQj9
-iKQj
-oKQj
-xKQj
-oKQj
-hLQj
-nLQj
-5QQj
-KQQj
-UQQj
-eQQj
-oQQj
-eQQj
-8SQj
-8RQj
-bRQj
-iRQj
-4TQj
-KTQj
-YTQj
-pTQj
-UQjt!
-7UQj
-AUQj
-CUQj
-DUQj
-JUQj
-QUQj
-UUQj
-bUQj
-iUQj
-mUQj
-UUQj
-qUQj
-UUQj
-tUQj
-wUQj
-_VQjt
-wVQj
-WQjtu
->WQjt,
-$HWQj
-TWQj
-eWQj
-mWQj
-uWQjt
-XQjt
-XQjt
-YQjt
-6YQj
-GYQj
-RYQj
-eYQj
-mYQj
-uYQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-E 9A8v#
-0pQj
-0pQj
-=0pQj
-0pQj
-0pQj
-0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-=0pQj
-0pQj
-=0pQj
-=0pQj
-PpQj
-ppQj
-ppQj
-PpQj
-ppQj@
-4qQj
-C$0qQj
-4qQj
-Pj&Qj
-abcdefghi
-jklmnopqr^
-stuvwxyz
-{ABCDEFGHI
-}JKLMNOPQR
-STUVWXYZ
-@(#)$File: magic.c,v 1.62 2009/03/20 21:25:41 christos Exp $
-unknown
-writable,
-no read permission
-executable,
-regular file,
-cannot read `%s'
-@(#)$File: apprentice.c,v 1.151 2009/03/18 15:19:23 christos Exp $
-byte
-short
-default
-long
-string
-date
-beshort
-belong
-bedate
-leshort
-lelong
-ledate
-pstring
-ldate
-beldate
-leldate
-regex
-bestring16
-lestring16
-search
-medate
-meldate
-melong
-quad
-lequad
-bequad
-qdate
-leqdate
-beqdate
-qldate
-leqldate
-beqldate
-float
-befloat
-lefloat
-double
-bedouble
-ledouble
-leid3
-beid3
-indirect
-cont	offset	type	opcode	mask	value	desc
-mime
-apple
-strength
-Bad relation %c
-Bad type %d
-Pjcannot happen: m->type=%d
-PjUnknown factor op `%c'
-Cannot have factor op `%c' and factor %u
-Bad factor `%s'
-Current entry already has a strength type: %c %d
-Too large factor `%lu'
-APPLE type `%s' truncated %zu
-Current entry already has a APPLE type `%.8s', new type `%s'
-MIME type `%s' truncated %zu
-Current entry already has a MIME type `%s', new type `%s'
-elif
-else
-type `%s' invalid
-No current entry for :!%s type
-offset `%s' invalid
-No current entry for continuation
-missing ')' in indirect offset
-in_offset `%s' invalid
-invalid string op: %c
-syntax error: `if'
-syntax error: `elif'
-syntax error: `else'
-relative offset at level 0
-cannot read magic file `%s'
-Unknown !: entry `%s'
-'~' invalid for string types
-indirect offset type `%c' invalid
-zero range
-string extension `%c' invalid
-coding error: m->type=%d
-description `%s' truncated
-Printf format `%c' is not valid for type `%s' in description `%s'
-incomplete escape
-cannot get string from `%s'
-no need to escape `%c'
-string too long: `%s'
-%c= not supported
-unknown escape sequence: \%03o
-multiple ranges
-No format string for `%s' with description `%s'
-Internal error inconsistency between m->type and format strings
-Too many format strings (should have at most one) for `%s' with description `%s'
-escaped tab found, use \t instead
-missing range; defaulting to %d
-no modifiers allowed for 16-bit strings
-'/%c' not allowed on regex
-'/%c' only allowed on regex and search
-'Pj40Pj40Pj40Pj
-0Pj%0Pj
-0Pjf0Pjf0Pjf0Pj
--Pjv-Pj
--Pjj-Pj^-Pj
--Pj%-Pj
-8PjC0PjC0PjC0PjC0PjC0PjC0PjC0Pj
-8PjC0PjC0PjC0Pjf8Pj98Pj98Pj
-3Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pj
-7Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjA1PjA1Pjz4Pjz4Pjz4Pjz4PjA1Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjM7PjM7PjM7PjM7PjM7PjM7PjM7PjM7Pjz4Pjz4Pjz4Pjz4PjA1PjA1PjA1Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjA1Pjz4PjA1Pjz4Pjz4Pj
-7Pjz4Pjz4Pjz4Pj
-7Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pj
-7Pjz4Pjz4Pjz4PjX9Pjz4PjO9Pjz4PjC9Pjz4Pj
-8Pj35Pj
-5Pjy6Pj
-3Pjy6Pjy6Pj
-7Pjy6Pj
-3Pj07Pj
-3Pjy6Pj
-3Pjy6Pjy6Pj
-3Pjy6Pj
-3Pjy6Pj
-3Pjy6Pj
-3Pjy6Pjtext
-binary
-(no description)
-*** Possible binary test for text type
-level 0 "default" did not sort last
-<Pjp<Pj
-<Pjp<Pj
-<Pj%.3o
-`APjHAPj0APj
-@Pj%.*s%s
-.mime
-%.*s.mime%s
-apprentice.c
-p->type < FILE_NAMES_SIZE
-magic element size %lu != %lu
-file `%s' is too small
-error writing `%s'
-File %d.%d supports only version %d magic files. `%s' is version %d
-bad magic in `%s'
-using regular magic file `%s'
-cannot stat `%s'
-MAGIC
-/cygdrive/d/file-5.03/zhangyu/share/misc/magic
-cannot map `%s'
-cannot open `%s'
-could not find any magic files!
-error seeking `%s'
-@(#)$File: softmagic.c,v 1.135 2009/03/27 22:42:49 christos Exp $
-regex error %d, (%s)
-MPj3NPj+NPj&NPj
-NPjDNPj
-NPj+NPj
-NPj+NPj
-NPjDNPj
-NPjcNPjDNPjDNPj9NPj
-MPj&NPjinvalid m->type (%d) in mprint()
-QPj2OPj
-OPjkPPj
-SPj'TPj'TPj'TPj
-SPjRSPjRSPjRSPj
-RPjZSPjZSPjZSPj
-OPj\OPj}VPj
-VPj2VPjkVPj
-WPj@WPjGWPjNWPjUWPj`WPjlWPj5WPj
-XPj/XPjEXPj
-WPj^XPjnXPj
-_mget @%d:
-invalid offset %u in mcopy()
-invalid type %d in magiccheck()
-cannot happen: invalid relation `%c'
-%llu > %llu = %d
-%llu == %llu = %d
-%llu < %llu = %d
-((%llx & %llx) != %llx) = %d
-((%llx & %llx) == %llx) = %d
-cannot happen with double: invalid relation `%c'
-cannot happen with float: invalid relation `%c'
-%llu != %llu = %d
-regexec error %d, (%s)
-%lld > %lld = %d
-%lld < %lld = %d
-%llu == *any* = 1
-_PjG_Pj
-_Pj9bPj
-invalid type %d in mconvert()
-nPjYrPj
-nPj,rPjsPj
-rPjsPj
-oPj7pPj
-sPj7pPj
-pPj_sPj7pPj
-sPj&qPj
-sPj&qPj
-sPj&qPj
-qPj:sPj
-pPj tPjGpPj
-mPj`uPj
-mPjKuPj
-mPj6uPjguPj
-uPjguPjezPj[zPjzzPjozPjQzPjFzPj
-yPjK{Pj6{Pj!{Pj
-{Pjw{Pjm{Pj`{Pj
-wPj\wPj9wPj
-xPjzxPjcxPjKxPj1xPj
-yPj#zPj
-yPjqyPjNyPj)yPj
-vPjYvPj/vPj
-vPj
-@(#)$File: ascmagic.c,v 1.75 2009/02/03 20:27:51 christos Exp $
-C program
-text/x-c
-C++ program
-text/x-c++
-make commands
-text/x-makefile
-PL/1 program
-text/x-pl1
-assembler program
-text/x-asm
-English
-text/plain
-Pascal program
-text/x-pascal
-mail
-text/x-mail
-news
-text/x-news
-Java program
-text/x-java
-HTML document
-text/html
-BCPL program
-text/x-bcpl
-M4 macro language pre-processor
-text/x-m4
-PO (gettext message catalogue)
-text/x-po
-cannot happen error on names.h/types
-error/x-error
-msgid
-import
-"libhdr"
-"LIBHDR"
-template
-virtual
-class
-public:
-private:
-#include
-char
-double
-extern
-float
-struct
-union
-CFLAGS
-LDFLAGS
-.PRECIOUS
-.ascii
-.asciiz
-.byte
-.even
-.globl
-.text
-(input,
-program
-record
-Received:
->From
-Return-Path:
-Newsgroups:
-Path:
-Organization:
-href=
-HREF=
-<body
-<BODY
-<html
-<HTML
-binary
-, with
-line terminators
-, with overstriking
-text/plain
-, with very long lines
-, with escape sequences
-CRLF
-@(#)$File: encoding.c,v 1.3 2009/02/03 20:27:51 christos Exp $
-text
-ASCII
-us-ascii
-UTF-8 Unicode
-utf-8
-ISO-8859
-iso-8859-1
-UTF-8 Unicode (with BOM)
-Non-ISO extended-ASCII
-unknown-8bit
-EBCDIC
-ebcdic
-Big-endian UTF-16 Unicode
-utf-16be
-International EBCDIC
-binary
-Little-endian UTF-16 Unicode
-utf-16le
-@(#)$File: compress.c,v 1.63 2009/03/23 14:21:51 christos Exp $
-gzip
-uncompress
-bzip2
-lzip
-`IQjeIQj
-jIQjuIQj
-`IQjeIQj
-`IQjeIQj
-`IQjeIQj
-`IQjeIQj
-`IQjeIQj
-xIQj~IQj
-LZIP
-IQjeIQj
-7zXZ
-IQj~IQj
-/tmp/file.XXXXXX
-error while writing to temp file
-cannot create temporary file for pipe copy
-could not dup descriptor for temp file
-error copying from pipe to temp file
-zlib: %s
-compressed-encoding=
-cannot create pipe
-could not fork
-@(#)$File: is_tar.c,v 1.36 2009/02/03 20:27:51 christos Exp $
-tar archive
-POSIX tar archive
-POSIX tar archive (GNU)
-ustar
-ustar
-application/x-tar
-@(#)$File: readelf.c,v 1.81 2008/11/04 16:38:28 christos Exp $
-SVR4
-FreeBSD
-NetBSD
-AMD_SYSC
-CMOV
-AMD_MMX
-AMD_3DNow
-AMD_3DNowx
-FXSR
-SSE2
-PAUSE
-SSE3
-CX16
-TSCP
-AMD_SSE4A
-POPCNT
-AMD_LZCNT
-SSSE3
-SSE4.1
-SSE4.2
-0MQj
-9MQj
-BMQj
-JMQj
-TMQj
-dMQj
-hMQj
-mMQj
-sMQj
-xMQj
-MUL32
-DIV32
-FSMULD
-V8PLUS
-POPC
-VIS2
-ASI_BLK_INIT
-FMAF
-FJFMAU
-fOQj
-lOQj
-sOQj
-zOQj
-NetBSD-CORE
-, from '%.*s'
-, bad note name size 0x%lx
-NetBSD
-, for NetBSD
-, bad note description size 0x%lx
-CORE
-FreeBSD
-, for GNU/
-, from '%.31s'
-(signal %u)
-, %s-style
-OpenBSD
-, for OpenBSD
-DragonFly
-, for DragonFly
-, for FreeBSD
-<unknown>
-kNetBSD
-kFreeBSD
-Solaris
-Hurd
-Linux
-Pj, corrupted program header size
-, corrupted section header size
-, %sstripped
-, with unknown capability 0x%llx = 0x%llx
-, uses
-, uses frame pointer
-, not known to use frame pointer
-, with unknown software capability 0x%llx
-unknown hardware capability 0x%llx
-hardware capability 0x%llx
-Cannot allocate memory for note
-Pjstatically
-dynamically
-, %s linked%s
-(uses shared libs)
-, invalid note alignment 0x%lx
-, unknown class %d
-@(#)$File: print.c,v 1.66 2009/02/03 20:27:51 christos Exp $
-Warning:
-*Invalid time*
-%.8llx
-@(#)$File: fsmagic.c,v 1.59 2009/02/03 20:27:51 christos Exp $
-symbolic link in a loop
-broken symbolic link to `%s'
-application/x-symlink
-binary
-application/%s
-; charset=
-cannot open `%s' (%s)
-fifo (named pipe)
-x-fifo
-sticky
-empty
-x-empty
-block special
-x-block-device
-invalid mode 0%o
-directory
-x-directory
-cannot stat `%s'
-setuid
-setgid
-character special
-x-character-device
-x-path-too-long
-socket
-x-socket
-unreadable symlink `%s' (%s)
-x-symlink
-path too long: `%s'
-symbolic link to `%s'
-unreadable symlink `%s'
-@(#)$File: funcs.c,v 1.53 2009/04/07 11:07:00 christos Exp $
-line %u:
-vasprintf failed
-cannot allocate %zu bytes
-error seeking
-error reading
-binary
-empty
-application/x-empty
-data
-application/octet-stream
-very short file (no magic)
-ascmagic/enc %d
-; charset=
-zmagic %d
-tar %d
-cdf %d
-elf %d
-ascmagic %d
-softmagic %d
-no magic files loaded
-@(#)$File: apptype.c,v 1.11 2009/02/04 18:24:32 christos Exp $
-@(#)$File: cdf.c,v 1.30 2009/05/06 14:29:47 christos Exp $
-Code page
-Title
-Subject
-Author
-Keywords
-Comments
-Template
-Last Saved By
-Revision Number
-Total Editing Time
-Last Printed
-Create Time/Date
-Last Saved Time/Date
-Number of Pages
-Number of Words
-Number of Characters
-Thumbnail
-Name of Creating Application
-Security
-Locale ID
-EZQj
-KZQj
-SZQj
-ZZQj
-cZQj
-lZQj
-uZQj
->[Qjcdf.c
-(size_t)CDF_SEC_SIZE(h) == len
-(size_t)CDF_SHORT_SEC_SIZE(h) == len
-SummaryInformation
-Pj%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x
-@(#)$File: cdf_time.c,v 1.6 2009/03/10 11:44:29 christos Exp $
-@(#)$File: readcdf.c,v 1.18 2009/05/06 20:48:22 christos Exp $
-vnd.ms-office
-Cannot read short stream
-CDF V2 Document
-, corrupt: %s
-Can't read SAT
-Can't read SSAT
-Can't read directory
-application/%s
-Cannot read summary info
-Can't expand summary_info
-Little
-, %s Endian
-, Os %d, Version: %d.%d
-Word
-msword
-, Os: Windows, Version %d.%d
-, Os: MacOS, Version %d.%d
-Excel
-vnd.ms-excel
-Powerpoint
-vnd.ms-powerpoint
-!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFG
-cygmagic-1.dll
-cdf_count_chain
-cdf_print_classid
-cdf_print_elapsed_time
-cdf_print_property_name
-cdf_read_dir
-cdf_read_header
-cdf_read_long_sector_chain
-cdf_read_property_info
-cdf_read_sat
-cdf_read_sector
-cdf_read_sector_chain
-cdf_read_short_sector
-cdf_read_short_sector_chain
-cdf_read_short_stream
-cdf_read_ssat
-cdf_read_summary_info
-cdf_swap_class
-cdf_swap_dir
-cdf_swap_header
-cdf_timespec_to_timestamp
-cdf_timestamp_to_timespec
-cdf_tole2
-cdf_tole4
-cdf_tole8
-cdf_unpack_dir
-cdf_unpack_header
-cdf_unpack_summary_info
-file_apprentice
-file_ascmagic
-file_ascmagic_with_encoding
-file_badread
-file_badseek
-file_buffer
-file_check_mem
-file_delmagic
-file_encoding
-file_error
-file_fmttime
-file_formats
-file_fsmagic
-file_getbuffer
-file_is_tar
-file_looks_utf8
-file_magerror
-file_magwarn
-file_mdump
-file_names
-file_nformats
-file_nnames
-file_oomem
-file_pipe2file
-file_printf
-file_reset
-file_showstr
-file_signextend
-file_softmagic
-file_trycdf
-file_tryelf
-file_vprintf
-file_zmagic
-magic_buffer
-magic_check
-magic_close
-magic_compile
-magic_descriptor
-magic_errno
-magic_error
-magic_file
-magic_load
-magic_open
-magic_setflags
-sread
-__assert
-__errno
-__getreent
-_ctype_
-_daylight
-_fcntl64
-_fopen64
-_fstat64
-_impure_ptr
-_lseek64
-_lstat64
-_mmap64
-_open64
-_stat64
-abort
-access
-asctime
-asprintf
-calloc
-close
-closedir
-ctime
-cygwin_detach_dll
-cygwin_internal
-dll_dllcrt0
-dup2
-execvp
-exit
-fclose
-fflush
-fgets
-fork
-fprintf
-fputc
-free
-fwrite
-getenv
-gmtime
-iswprint
-malloc
-mbrtowc
-memchr
-memcpy
-memset
-mkstemp
-mktime
-munmap
-opendir
-pipe
-posix_regcomp
-posix_regerror
-posix_regexec
-posix_regfree
-qsort
-read
-readdir
-readlink
-realloc
-snprintf
-strchr
-strcspn
-strdup
-strerror
-strlcat
-strlcpy
-strlen
-strncmp
-strndup
-strrchr
-strstr
-strtod
-strtof
-strtol
-strtoul
-strtoull
-unlink
-utimes
-vasprintf
-vfprintf
-waitpid
-write
-_fcntl64
-_fopen64
-_fstat64
-_lseek64
-_lstat64
-_mmap64
-_open64
-posix_regcomp
-posix_regerror
-posix_regexec
-posix_regfree
-_stat64
-inflate
-inflateEnd
-inflateInit2_
-GetModuleHandleA
-cygwin1.dll
-cygz.dll
-KERNEL32.dll
-7)8K8
-1V1@2a2
-333R3
-5 5<5W5f5
-2;2O2o2z2
-9 :H:a:u:
-4:5t5
-9d:l:t:|:
-1(2U2
-181Z1
-1!2B2J2n2
-333Z3
-8$9*9W9
-1T2i2s213
-869t9
-1M2]5
-0"0B0z0
-0,1N1l1
-3?3H3^3
-5Q6c6
-8)9;9F9
-=1W1s1
-232I2_2u2
-3B3b3
-4<4Z4x4
-646P6l6
-7:7j7
-8L8\8p8
-6f7g8H9
-0&0=0b1
-8&9k9
-;%;A;c;j;s;
-4"525B5R5b5r5
-6"626B6R6b6r6
-7"727B7R7b7r7
-8"828B8R8b8r8
-9"929B9R9b9r9
-<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
-7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
-8 8$8(8,8084888<8@8D8H8L8P8T8X8
-9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
-? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
-0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
-1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
-2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
-3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
-4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
-44585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
-8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
-9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
-< <$<(<,<0<4<8<<<@<D<H<l<p<t<x<|<
-= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
-> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
-? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
-: :8:<:T:X:p:t:
->(>8>H>X>h>x>
-0(080H0X0h0
-183<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
-6d;l;t;|;
-;d<h<l<p<t<x<|<
-= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
-PjBB
-PjMB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-Pj4I
-PjMI
-PjBB
-PjBB
-PjBB
-PjBB
-p9PjBB
-4QjPM
-4QjrM
-APjBB
-CPjjN
-`CPjBB
-0LPj
-0LPj$
-0LPj
-LPjBB
-OPjBB
-VPj&R
-VPj&R
-WPj&R
-XPj&R
-YPj&R
-[PjBB
-^PjBB
-gPjBB
-mPjBB
-P|Pj V
-|PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-IQj e
-PjBB
-Pj7h
-Pj1s
-Pj1s
-Pj1s
-Pj1s
-Pj1s
-LQj x
-MQj]x
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjBB
-PjjN
-0pQj1
-Pj1s
-magic.c
-/cygdrive/d/file-5.03/src/
-gcc2_compiled.
-int:t(0,1)=r(0,1);-2147483648;2147483647;
-char:t(0,2)=r(0,2);0;127;
-long int:t(0,3)=r(0,3);-2147483648;2147483647;
-unsigned int:t(0,4)=r(0,4);0000000000000;0037777777777;
-long unsigned int:t(0,5)=r(0,5);0000000000000;0037777777777;
-long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;
-long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;
-short int:t(0,8)=@s16;r(0,8);-32768;32767;
-short unsigned int:t(0,9)=@s16;r(0,9);0;65535;
-signed char:t(0,10)=@s8;r(0,10);-128;127;
-unsigned char:t(0,11)=@s8;r(0,11);0;255;
-float:t(0,12)=r(0,1);4;0;
-double:t(0,13)=r(0,1);8;0;
-long double:t(0,14)=r(0,1);12;0;
-complex int:t(0,15)=s8real:(0,1),0,32;imag:(0,1),32,32;;
-complex float:t(0,16)=R3;8;0;
-complex double:t(0,17)=R3;16;0;
-complex long double:t(0,18)=R3;24;0;
-void:t(0,19)=(0,19)
-__builtin_va_list:t(0,20)=*(0,2)
-_Bool:t(0,21)=@s8;-16
-file.h
-/usr/include/stdio.h
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h
-size_t:t(3,1)=(0,4)
-/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h
-__gnuc_va_list:t(4,1)=(0,20)
-/usr/include/sys/reent.h
-/usr/include/sys/_types.h
-/usr/include/sys/lock.h
-_LOCK_T:t(7,1)=(7,2)=*(0,19)
-_off_t:t(6,1)=(0,3)
-_off64_t:t(6,2)=(0,6)
-_ssize_t:t(6,3)=(0,1)
-wint_t:t(8,1)=(0,4)
-_mbstate_t:t(6,4)=(6,5)=s8__count:(0,1),0,32;__value:(6,6)=u4__wch:(8,1),0,32;__wchb:(6,7)=ar(6,8)=r(6,8);0000000000000;0037777777777;;0;3;(0,11),0,32;;,32,32;;
-_flock_t:t(6,9)=(7,1)
-_iconv_t:t(6,10)=(7,2)
-__ULong:t(5,1)=(0,5)
-_Bigint:T(5,2)=s24_next:(5,3)=*(5,2),0,32;_k:(0,1),32,32;_maxwds:(0,1),64,32;_sign:(0,1),96,32;_wds:(0,1),128,32;_x:(5,4)=ar(6,8);0;0;(5,1),160,32;;
-__tm:T(5,5)=s36__tm_sec:(0,1),0,32;__tm_min:(0,1),32,32;__tm_hour:(0,1),64,32;__tm_mday:(0,1),96,32;__tm_mon:(0,1),128,32;__tm_year:(0,1),160,32;__tm_wday:(0,1),192,32;__tm_yday:(0,1),224,32;__tm_isdst:(0,1),256,32;;
-_on_exit_args:T(5,6)=s264_fnargs:(5,7)=ar(6,8);0;31;(7,2),0,1024;_dso_handle:(5,7),1024,1024;_fntypes:(5,1),2048,32;_is_cxa:(5,1),2080,32;;
-_atexit:T(5,8)=s400_next:(5,9)=*(5,8),0,32;_ind:(0,1),32,32;_fns:(5,10)=ar(6,8);0;31;(5,11)=*(5,12)=f(0,19),64,1024;_on_exit_args:(5,6),1088,2112;;
-__sbuf:T(5,13)=s8_base:(5,14)=*(0,11),0,32;_size:(0,1),32,32;;
-_fpos_t:t(5,15)=(0,3)
-_fpos64_t:t(5,16)=(6,2)
-__sFILE:T(5,17)=s92_p:(5,14),0,32;_r:(0,1),32,32;_w:(0,1),64,32;_flags:(0,8),96,16;_file:(0,8),112,16;_bf:(5,13),128,64;_lbfsize:(0,1),192,32;_cookie:(7,2),224,32;_read:(5,18)=*(5,19)=f(6,3),256,32;_write:(5,20)=*(5,21)=f(6,3),288,32;_seek:(5,22)=*(5,23)=f(5,15),320,32;_close:(5,24)=*(5,25)=f(0,1),352,32;_ub:(5,13),384,64;_up:(5,14),448,32;_ur:(0,1),480,32;_ubuf:(5,26)=ar(6,8);0;2;(0,11),512,24;_nbuf:(5,27)=ar(6,8);0;0;(0,11),536,8;_lb:(5,13),544,64;_blksize:(0,1),608,32;_offset:(0,1),640,32;_data:(5,28)=*(5,29)=xs_reent:,672,32;_lock:(6,9),704,32;;
-__sFILE64:T(5,30)=s104_p:(5,14),0,32;_r:(0,1),32,32;_w:(0,1),64,32;_flags:(0,8),96,16;_file:(0,8),112,16;_bf:(5,13),128,64;_lbfsize:(0,1),192,32;_data:(5,28),224,32;_cookie:(7,2),256,32;_read:(5,18),288,32;_write:(5,20),320,32;_seek:(5,22),352,32;_close:(5,24),384,32;_ub:(5,13),416,64;_up:(5,14),480,32;_ur:(0,1),512,32;_ubuf:(5,26),544,24;_nbuf:(5,27),568,8;_lb:(5,13),576,64;_blksize:(0,1),640,32;_flags2:(0,1),672,32;_offset:(6,2),704,64;_seek64:(5,31)=*(5,32)=f(5,16),768,32;_lock:(6,9),800,32;;
-__FILE:t(5,33)=(5,30)
-_glue:T(5,34)=s12_next:(5,35)=*(5,34),0,32;_niobs:(0,1),32,32;_iobs:(5,36)=*(5,33),64,32;;
-_rand48:T(5,37)=s14_seed:(5,38)=ar(6,8);0;2;(0,9),0,48;_mult:(5,38),48,48;_add:(0,9),96,16;;
-_reent:T(5,29)=s1064_errno:(0,1),0,32;_stdin:(5,36),32,32;_stdout:(5,36),64,32;_stderr:(5,36),96,32;_inc:(0,1),128,32;_emergency:(5,39)=ar(6,8);0;24;(0,2),160,200;_current_category:(0,1),384,32;_current_locale:(5,40)=*(5,41)=k(0,2),416,32;__sdidinit:(0,1),448,32;__cleanup:(5,42)=*(5,43)=f(0,19),480,32;_result:(5,3),512,32;_result_k:(0,1),544,32;_p5s:(5,3),576,32;_freelist:(5,44)=*(5,3),608,32;_cvtlen:(0,1),640,32;_cvtbuf:(5,45)=*(0,2),672,32;_new:(5,46)=u240_reent:(5,47)=s208_unused_rand:(0,4),0,32;_strtok_last:(5,45),32,32;_asctime_buf:(5,48)=ar(6,8);0;25;(0,2),64,208;_localtime_buf:(5,5),288,288;_gamma_signgam:(0,1),576,32;_rand_next:(0,7),640,64;_r48:(5,37),704,112;_mblen_state:(6,4),832,64;_mbtowc_state:(6,4),896,64;_wctomb_state:(6,4),960,64;_l64a_buf:(5,49)=ar(6,8);0;7;(0,2),1024,64;_signal_buf:(5,50)=ar(6,8);0;23;(0,2),1088,192;_getdate_err:(0,1),1280,32;_mbrlen_state:(6,4),1312,64;_mbrtowc_state:(6,4),1376,64;_mbsrtowcs_state:(6,4),1440,64;_wcrtomb_state:(6,4),1504,64;_wcsrtombs_state:(6,4),1568,64;;,0,1664;_unused:(5,51)=s240_nextf:(5,52)=ar(6,8);0;29;(5,14),0,960;_nmalloc:(5,53)=ar(6,8);0;29;(0,4),960,960;;,0,1920;;,704,1920;_atexit:(5,9),2624,32;_atexit0:(5,8),2656,3200;_sig_func:(5,54)=*(5,55)=*(5,56)=f(0,19),5856,32;__sglue:(5,34),5888,96;__sf:(5,57)=ar(6,8);0;2;(5,33),6016,2496;;
-/usr/include/sys/types.h
-/usr/include/machine/_types.h
-__int8_t:t(10,1)=(0,10)
-__uint8_t:t(10,2)=(0,11)
-__int16_t:t(10,3)=(0,8)
-__uint16_t:t(10,4)=(0,9)
-__int_least16_t:t(10,5)=(10,3)
-__uint_least16_t:t(10,6)=(10,4)
-__int32_t:t(10,7)=(0,1)
-__uint32_t:t(10,8)=(0,4)
-__int_least32_t:t(10,9)=(10,7)
-__uint_least32_t:t(10,10)=(10,8)
-__int64_t:t(10,11)=(0,6)
-__uint64_t:t(10,12)=(0,7)
-ptrdiff_t:t(11,1)=(0,1)
-wchar_t:t(11,2)=(0,9)
-/usr/include/machine/types.h
-__off_t:t(12,1)=(0,3)
-__pid_t:t(12,2)=(0,1)
-__loff_t:t(12,3)=(0,6)
-u_char:t(9,1)=(0,11)
-u_short:t(9,2)=(0,9)
-u_int:t(9,3)=(0,4)
-u_long:t(9,4)=(0,5)
-ushort:t(9,5)=(0,9)
-uint:t(9,6)=(0,4)
-clock_t:t(9,7)=(0,5)
-time_t:t(9,8)=(0,3)
-timespec:T(9,9)=s8tv_sec:(9,8),0,32;tv_nsec:(0,3),32,32;;
-itimerspec:T(9,10)=s16it_interval:(9,9),0,64;it_value:(9,9),64,64;;
-daddr_t:t(9,11)=(0,3)
-caddr_t:t(9,12)=(5,45)
-pid_t:t(9,13)=(0,1)
-ssize_t:t(9,14)=(6,3)
-nlink_t:t(9,15)=(0,9)
-fd_mask:t(9,16)=(0,3)
-_types_fd_set:T(9,17)=s8fds_bits:(9,18)=ar(6,8);0;1;(9,16),0,64;;
-_types_fd_set:t(9,19)=(9,17)
-clockid_t:t(9,20)=(0,5)
-timer_t:t(9,21)=(0,5)
-useconds_t:t(9,22)=(0,5)
-suseconds_t:t(9,23)=(0,3)
-/usr/include/cygwin/types.h
-/usr/include/stdint.h
-int8_t:t(14,1)=(0,10)
-int16_t:t(14,2)=(0,8)
-int32_t:t(14,3)=(0,3)
-int64_t:t(14,4)=(0,6)
-uint8_t:t(14,5)=(0,11)
-uint16_t:t(14,6)=(0,9)
-uint32_t:t(14,7)=(0,5)
-uint64_t:t(14,8)=(0,7)
-int_least8_t:t(14,9)=(0,10)
-int_least16_t:t(14,10)=(0,8)
-int_least32_t:t(14,11)=(0,3)
-int_least64_t:t(14,12)=(0,6)
-uint_least8_t:t(14,13)=(0,11)
-uint_least16_t:t(14,14)=(0,9)
-uint_least32_t:t(14,15)=(0,5)
-uint_least64_t:t(14,16)=(0,7)
-int_fast8_t:t(14,17)=(0,10)
-int_fast16_t:t(14,18)=(0,3)
-int_fast32_t:t(14,19)=(0,3)
-int_fast64_t:t(14,20)=(0,6)
-uint_fast8_t:t(14,21)=(0,11)
-uint_fast16_t:t(14,22)=(0,5)
-uint_fast32_t:t(14,23)=(0,5)
-uint_fast64_t:t(14,24)=(0,7)
-intptr_t:t(14,25)=(0,3)
-uintptr_t:t(14,26)=(0,5)
-intmax_t:t(14,27)=(0,6)
-uintmax_t:t(14,28)=(0,7)
-timespec_t:t(13,1)=(9,9)
-timestruc_t:t(13,2)=(9,9)
-off_t:t(13,3)=(6,2)
-loff_t:t(13,4)=(12,3)
-__dev16_t:t(13,5)=(0,8)
-__dev32_t:t(13,6)=(0,5)
-dev_t:t(13,7)=(13,6)
-blksize_t:t(13,8)=(0,3)
-__blkcnt32_t:t(13,9)=(0,3)
-__blkcnt64_t:t(13,10)=(0,6)
-blkcnt_t:t(13,11)=(13,10)
-fsblkcnt_t:t(13,12)=(0,5)
-fsfilcnt_t:t(13,13)=(0,5)
-__uid16_t:t(13,14)=(0,9)
-__uid32_t:t(13,15)=(0,5)
-uid_t:t(13,16)=(13,15)
-__gid16_t:t(13,17)=(0,9)
-__gid32_t:t(13,18)=(0,5)
-gid_t:t(13,19)=(13,18)
-__ino32_t:t(13,20)=(0,5)
-__ino64_t:t(13,21)=(0,7)
-ino_t:t(13,22)=(13,21)
-id_t:t(13,23)=(0,5)
-flock:T(13,24)=s32l_type:(0,8),0,16;l_whence:(0,8),16,16;l_start:(13,3),64,64;l_len:(13,3),128,64;l_pid:(9,13),192,32;;
-key_t:t(13,25)=(0,6)
-vm_offset_t:t(13,26)=(0,5)
-vm_size_t:t(13,27)=(0,5)
-vm_object_t:t(13,28)=(7,2)
-u_int8_t:t(13,29)=(0,11)
-u_int16_t:t(13,30)=(10,4)
-u_int32_t:t(13,31)=(10,8)
-u_int64_t:t(13,32)=(10,12)
-register_t:t(13,33)=(10,7)
-addr_t:t(13,34)=(5,45)
-mode_t:t(13,35)=(0,4)
-__pthread_t:T(13,36)=s1__dummy:(0,2),0,8;;
-pthread_t:t(13,37)=(13,38)=*(13,36)
-__pthread_mutex_t:T(13,39)=s1__dummy:(0,2),0,8;;
-pthread_mutex_t:t(13,40)=(13,41)=*(13,39)
-__pthread_key_t:T(13,42)=s1__dummy:(0,2),0,8;;
-pthread_key_t:t(13,43)=(13,44)=*(13,42)
-__pthread_attr_t:T(13,45)=s1__dummy:(0,2),0,8;;
-pthread_attr_t:t(13,46)=(13,47)=*(13,45)
-__pthread_mutexattr_t:T(13,48)=s1__dummy:(0,2),0,8;;
-pthread_mutexattr_t:t(13,49)=(13,50)=*(13,48)
-__pthread_condattr_t:T(13,51)=s1__dummy:(0,2),0,8;;
-pthread_condattr_t:t(13,52)=(13,53)=*(13,51)
-__pthread_cond_t:T(13,54)=s1__dummy:(0,2),0,8;;
-pthread_cond_t:t(13,55)=(13,56)=*(13,54)
-pthread_once_t:t(13,57)=(13,58)=s8mutex:(13,40),0,32;state:(0,1),32,32;;
-__pthread_rwlock_t:T(13,59)=s1__dummy:(0,2),0,8;;
-pthread_rwlock_t:t(13,60)=(13,61)=*(13,59)
-__pthread_rwlockattr_t:T(13,62)=s1__dummy:(0,2),0,8;;
-pthread_rwlockattr_t:t(13,63)=(13,64)=*(13,62)
-FILE:t(2,1)=(5,33)
-fpos_t:t(2,2)=(5,16)
-/usr/include/errno.h
-error_t:t(15,1)=(0,1)
-/usr/include/fcntl.h
-/usr/include/sys/fcntl.h
-eflock:T(17,1)=s24l_type:(0,8),0,16;l_whence:(0,8),16,16;l_start:(0,3),32,32;l_len:(0,3),64,32;l_pid:(0,8),96,16;l_xxx:(0,8),112,16;l_rpid:(0,3),128,32;l_rsys:(0,3),160,32;;
-/usr/include/sys/stat.h
-/usr/include/time.h
-tm:T(19,1)=s36tm_sec:(0,1),0,32;tm_min:(0,1),32,32;tm_hour:(0,1),64,32;tm_mday:(0,1),96,32;tm_mon:(0,1),128,32;tm_year:(0,1),160,32;tm_wday:(0,1),192,32;tm_yday:(0,1),224,32;tm_isdst:(0,1),256,32;;
-__tzrule_struct:T(19,2)=s28ch:(0,2),0,8;m:(0,1),32,32;n:(0,1),64,32;d:(0,1),96,32;s:(0,1),128,32;change:(9,8),160,32;offset:(0,3),192,32;;
-__tzrule_type:t(19,3)=(19,2)
-__tzinfo_struct:T(19,4)=s64__tznorth:(0,1),0,32;__tzyear:(0,1),32,32;__tzrule:(19,5)=ar(6,8);0;1;(19,3),64,448;;
-__tzinfo_type:t(19,6)=(19,4)
-/usr/include/signal.h
-/usr/include/sys/signal.h
-sigset_t:t(21,1)=(0,5)
-/usr/include/cygwin/signal.h
-_fpstate:T(22,1)=s112cw:(0,5),0,32;sw:(0,5),32,32;tag:(0,5),64,32;ipoff:(0,5),96,32;cssel:(0,5),128,32;dataoff:(0,5),160,32;datasel:(0,5),192,32;_st:(22,2)=ar(6,8);0;79;(0,11),224,640;nxst:(0,5),864,32;;
-ucontext:T(22,3)=s212cr2:(0,5),0,32;dr0:(0,5),32,32;dr1:(0,5),64,32;dr2:(0,5),96,32;dr3:(0,5),128,32;dr6:(0,5),160,32;dr7:(0,5),192,32;fpstate:(22,1),224,896;gs:(0,5),1120,32;fs:(0,5),1152,32;es:(0,5),1184,32;ds:(0,5),1216,32;edi:(0,5),1248,32;esi:(0,5),1280,32;ebx:(0,5),1312,32;edx:(0,5),1344,32;ecx:(0,5),1376,32;eax:(0,5),1408,32;ebp:(0,5),1440,32;eip:(0,5),1472,32;cs:(0,5),1504,32;eflags:(0,5),1536,32;esp:(0,5),1568,32;ss:(0,5),1600,32;_internal:(0,11),1632,8;oldmask:(0,5),1664,32;;
-sigval:T(22,4)=u4sival_int:(0,1),0,32;sival_ptr:(7,2),0,32;;
-sigval_t:t(22,5)=(22,4)
-sigevent:T(22,6)=s20sigev_value:(22,5),0,32;sigev_signo:(0,1),32,32;sigev_notify:(0,1),64,32;sigev_notify_function:(22,7)=*(22,8)=f(0,19),96,32;sigev_notify_attributes:(22,9)=*(13,46),128,32;;
-sigevent_t:t(22,10)=(22,6)
-_sigcommune:T(22,11)=s20_si_code:(10,8),0,32;_si_read_handle:(7,2),32,32;_si_write_handle:(7,2),64,32;_si_process_handle:(7,2),96,32;:(22,12)=u4_si_fd:(0,1),0,32;_si_pipe_fhandler:(7,2),0,32;_si_str:(5,45),0,32;;,128,32;;
-siginfo_t:t(22,13)=(22,14)=s148si_signo:(0,1),0,32;si_code:(0,1),32,32;si_pid:(9,13),64,32;si_uid:(13,16),96,32;si_errno:(0,1),128,32;:(22,15)=u128__pad:(22,16)=ar(6,8);0;31;(10,8),0,1024;_si_commune:(22,11),0,160;:(22,17)=u8:(22,18)=s8:(22,19)=u8:(22,20)=s8si_tid:(9,21),0,32;si_overrun:(0,4),32,32;;,0,64;si_sigval:(22,5),0,32;si_value:(22,5),0,32;;,0,64;;,0,64;;,0,64;:(22,21)=s12si_status:(0,1),0,32;si_utime:(9,7),32,32;si_stime:(9,7),64,32;;,0,96;si_addr:(7,2),0,32;;,160,1024;;
-:T(22,22)=eSI_USER:0,SI_ASYNCIO:2,SI_MESGQ:3,SI_TIMER:4,SI_QUEUE:5,SI_KERNEL:6,ILL_ILLOPC:7,ILL_ILLOPN:8,ILL_ILLADR:9,ILL_ILLTRP:10,ILL_PRVOPC:11,ILL_PRVREG:12,ILL_COPROC:13,ILL_BADSTK:14,FPE_INTDIV:15,FPE_INTOVF:16,FPE_FLTDIV:17,FPE_FLTOVF:18,FPE_FLTUND:19,FPE_FLTRES:20,FPE_FLTINV:21,FPE_FLTSUB:22,SEGV_MAPERR:23,SEGV_ACCERR:24,BUS_ADRALN:25,BUS_ADRERR:26,BUS_OBJERR:27,CLD_EXITED:28,CLD_KILLED:29,CLD_DUMPED:30,CLD_TRAPPED:31,CLD_STOPPED:32,CLD_CONTINUED:33,;
-:T(22,23)=eSIGEV_SIGNAL:0,SIGEV_NONE:1,SIGEV_THREAD:2,;
-_sig_func_ptr:t(22,24)=(5,55)
-sigaction:T(22,25)=s12:(22,26)=u4sa_handler:(22,24),0,32;sa_sigaction:(22,27)=*(22,28)=f(0,19),0,32;;,0,32;sa_mask:(21,1),32,32;sa_flags:(0,1),64,32;;
-sig_atomic_t:t(20,1)=(0,1)
-/usr/include/cygwin/stat.h
-stat:T(23,1)=s96st_dev:(13,7),0,32;st_ino:(13,22),64,64;st_mode:(13,35),128,32;st_nlink:(9,15),160,16;st_uid:(13,16),192,32;st_gid:(13,19),224,32;st_rdev:(13,7),256,32;st_size:(13,3),320,64;st_atim:(13,2),384,64;st_mtim:(13,2),448,64;st_ctim:(13,2),512,64;st_blksize:(13,8),576,32;st_blocks:(13,11),640,64;st_spare4:(23,2)=ar(6,8);0;1;(0,3),704,64;;
-/usr/include/inttypes.h
-imaxdiv_t:t(24,1)=(24,2)=s16quot:(14,27),0,64;rem:(14,27),64,64;;
-/usr/include/regex.h
-regoff_t:t(25,1)=(6,1)
-regex_t:t(25,2)=(25,3)=s16re_magic:(0,1),0,32;re_nsub:(3,1),32,32;re_endp:(5,40),64,32;re_g:(25,4)=*(25,5)=xsre_guts:,96,32;;
-regmatch_t:t(25,6)=(25,7)=s8rm_so:(25,1),0,32;rm_eo:(25,1),32,32;;
-va_list:t(26,1)=(4,1)
-VALUETYPE:T(1,1)=u32b:(14,5),0,8;h:(14,6),0,16;l:(14,7),0,32;q:(14,8),0,64;hs:(1,2)=ar(6,8);0;1;(14,5),0,16;hl:(1,3)=ar(6,8);0;3;(14,5),0,32;hq:(1,4)=ar(6,8);0;7;(14,5),0,64;s:(1,5)=ar(6,8);0;31;(0,2),0,256;us:(1,6)=ar(6,8);0;31;(0,11),0,256;f:(0,12),0,32;d:(0,13),0,64;;
-magic:T(1,7)=s200cont_level:(14,6),0,16;flag:(14,5),16,8;factor:(14,5),24,8;reln:(14,5),32,8;vallen:(14,5),40,8;type:(14,5),48,8;in_type:(14,5),56,8;in_op:(14,5),64,8;mask_op:(14,5),72,8;cond:(14,5),80,8;factor_op:(14,5),88,8;offset:(14,7),96,32;in_offset:(14,3),128,32;lineno:(14,7),160,32;_u:(1,8)=u8_mask:(14,8),0,64;_s:(1,9)=s8_count:(14,7),0,32;_flags:(14,7),32,32;;,0,64;;,192,64;value:(1,1),256,256;desc:(1,10)=ar(6,8);0;63;(0,2),512,512;mimetype:(1,10),1024,512;apple:(5,49),1536,64;;
-mlist:T(1,11)=s20magic:(1,12)=*(1,7),0,32;nmagic:(14,7),32,32;mapped:(0,1),64,32;next:(1,13)=*(1,11),96,32;prev:(1,13),128,32;;
-level_info:T(1,14)=s16off:(14,3),0,32;got_match:(0,1),32,32;last_match:(0,1),64,32;last_cond:(0,1),96,32;;
-cont:T(1,15)=s8len:(3,1),0,32;li:(1,16)=*(1,14),32,32;;
-out:T(1,17)=s8buf:(5,45),0,32;pbuf:(5,45),32,32;;
-magic_set:T(1,18)=s96mlist:(1,13),0,32;c:(1,15),32,64;o:(1,17),96,64;offset:(14,7),160,32;error:(0,1),192,32;flags:(0,1),224,32;event_flags:(0,1),256,32;file:(5,40),288,32;line:(3,1),320,32;search:(1,19)=s16s:(5,40),0,32;s_len:(3,1),32,32;offset:(3,1),64,32;rm_len:(3,1),96,32;;,352,128;ms_value:(1,1),512,256;;
-unichar:t(1,20)=(0,5)
-magic.h
-magic_t:t(27,1)=(27,2)=*(1,18)
-/usr/include/stdlib.h
-div_t:t(28,1)=(28,2)=s8quot:(0,1),0,32;rem:(0,1),32,32;;
-ldiv_t:t(28,3)=(28,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;
-lldiv_t:t(28,5)=(28,6)=s16quot:(0,6),0,64;rem:(0,6),64,64;;
-/usr/include/sys/time.h
-timeval:T(29,1)=s8tv_sec:(9,8),0,32;tv_usec:(9,23),32,32;;
-timezone:T(29,2)=s8tz_minuteswest:(0,1),0,32;tz_dsttime:(0,1),32,32;;
-itimerval:T(29,3)=s16it_interval:(29,1),0,64;it_value:(29,1),64,64;;
-/usr/include/netinet/in.h
-/usr/include/cygwin/in.h
-/usr/include/cygwin/socket.h
-socklen_t:t(32,1)=(0,1)
-sa_family_t:t(32,2)=(14,6)
-sockaddr:T(32,3)=s16sa_family:(32,2),0,16;sa_data:(32,4)=ar(6,8);0;13;(0,2),16,112;;
-sockaddr_storage:T(32,5)=s128ss_family:(32,2),0,16;_ss_pad1:(32,6)=ar(6,8);0;5;(0,2),16,48;__ss_align:(14,4),64,64;_ss_pad2:(32,7)=ar(6,8);0;111;(0,2),128,896;;
-/usr/include/asm/socket.h
-/usr/include/cygwin/if.h
-ifreq:T(34,1)=s32ifr_ifrn:(34,2)=u16ifrn_name:(34,3)=ar(6,8);0;15;(0,2),0,128;;,0,128;ifr_ifru:(34,4)=u16ifru_addr:(32,3),0,128;ifru_broadaddr:(32,3),0,128;ifru_netmask:(32,3),0,128;ifru_hwaddr:(32,3),0,128;ifru_flags:(0,8),0,16;ifru_metric:(0,1),0,32;ifru_mtu:(0,1),0,32;;,128,128;;
-ifconf:T(34,5)=s8ifc_len:(0,1),0,32;ifc_ifcu:(34,6)=u4ifcu_buf:(9,12),0,32;ifcu_req:(34,7)=*(34,1),0,32;;,32,32;;
-/usr/include/sys/uio.h
-iovec:T(35,1)=s8iov_base:(7,2),0,32;iov_len:(3,1),32,32;;
-ucred:T(32,8)=s12pid:(9,13),0,32;uid:(13,15),32,32;gid:(13,18),64,32;;
-linger:T(32,9)=s4l_onoff:(0,9),0,16;l_linger:(0,9),16,16;;
-msghdr:T(32,10)=s28msg_name:(7,2),0,32;msg_namelen:(32,1),32,32;msg_iov:(32,11)=*(35,1),64,32;msg_iovlen:(0,1),96,32;msg_control:(7,2),128,32;msg_controllen:(32,1),160,32;msg_flags:(0,1),192,32;;
-cmsghdr:T(32,12)=s12cmsg_len:(32,1),0,32;cmsg_level:(0,1),32,32;cmsg_type:(0,1),64,32;;
-in_port_t:t(31,1)=(14,6)
-in_addr_t:t(31,2)=(14,7)
-:T(31,3)=eIPPROTO_IP:0,IPPROTO_ICMP:1,IPPROTO_IGMP:2,IPPROTO_IPIP:4,IPPROTO_TCP:6,IPPROTO_EGP:8,IPPROTO_PUP:12,IPPROTO_UDP:17,IPPROTO_IDP:22,IPPROTO_RAW:255,IPPROTO_MAX:256,;
-:T(31,4)=eIPPORT_ECHO:7,IPPORT_DISCARD:9,IPPORT_SYSTAT:11,IPPORT_DAYTIME:13,IPPORT_NETSTAT:15,IPPORT_FTP:21,IPPORT_TELNET:23,IPPORT_SMTP:25,IPPORT_TIMESERVER:37,IPPORT_NAMESERVER:42,IPPORT_WHOIS:43,IPPORT_MTP:57,IPPORT_TFTP:69,IPPORT_RJE:77,IPPORT_FINGER:79,IPPORT_TTYLINK:87,IPPORT_SUPDUP:95,IPPORT_EXECSERVER:512,IPPORT_LOGINSERVER:513,IPPORT_CMDSERVER:514,IPPORT_EFSSERVER:520,IPPORT_BIFFUDP:512,IPPORT_WHOSERVER:513,IPPORT_ROUTESERVER:520,IPPORT_RESERVED:1024,IPPORT_USERRESERVED:5000,;
-in_addr:T(31,5)=s4s_addr:(31,2),0,32;;
-ip_mreq:T(31,6)=s8imr_multiaddr:(31,5),0,32;imr_interface:(31,5),32,32;;
-sockaddr_in:T(31,7)=s16sin_family:(32,2),0,16;sin_port:(31,1),16,16;sin_addr:(31,5),32,32;__pad:(31,8)=ar(6,8);0;7;(0,11),64,64;;
-magic_setflags:F(0,1)
-ms:p(27,2)
-flags:p(0,1)
-ms:r(27,2)
-flags:r(0,1)
-magic_open:F(27,2)
-free_mlist:f(0,19)
-mlist:P(1,13)
-ml:r(1,13)
-next:r(1,13)
-mg:r(1,12)
-unreadable_info:f(0,1)
-ms:P(27,2)
-md:P(13,35)
-file:p(5,40)
-file:r(5,40)
-magic_close:F(0,19)
-magic_load:F(0,1)
-magicfile:p(5,40)
-magicfile:r(5,40)
-magic_compile:F(0,1)
-magic_check:F(0,1)
-file_or_fd:f(5,40)
-inname:p(5,40)
-fd:p(0,1)
-rv:(0,1)
-buf:(5,14)
-sb:(23,1)
-nbytes:(9,14)
-ispipe:(0,1)
-fd:r(0,1)
-r:r(9,14)
-utsbuf:(0,22)=ar(6,8);0;1;(29,1)
-magic_file:F(5,40)
-inname:r(5,40)
-magic_descriptor:F(5,40)
-magic_buffer:F(5,40)
-buf:p(0,23)=*(0,24)=k(0,19)
-nb:p(3,1)
-buf:r(0,23)
-nb:r(3,1)
-magic_error:F(5,40)
-magic_errno:F(0,1)
-rcsid:S(0,25)=ar(6,8);0;60;(5,41)
-apprentice.c
-/usr/include/dirent.h
-/usr/include/sys/dirent.h
-dirent:T(30,1)=s276__d_version:(0,3),0,32;d_ino:(13,21),32,64;__d_unused1:(10,8),96,32;__d_internal1:(10,8),128,32;d_name:(30,2)=ar(6,8);0;255;(0,2),160,2048;;
-__DIR:T(30,3)=s36__d_cookie:(0,5),0,32;__d_dirent:(30,4)=*(30,1),32,32;__d_dirname:(5,45),64,32;__d_position:(6,1),96,32;__d_fd:(0,1),128,32;__d_internal:(0,4),160,32;__handle:(7,2),192,32;__fh:(7,2),224,32;__flags:(0,4),256,32;;
-DIR:t(30,5)=(30,3)
-magic_entry:T(0,22)=s12mp:(1,12),0,32;cont_count:(14,7),32,32;max_count:(14,7),64,32;;
-type_tbl_s:T(0,23)=s28name:(0,24)=ar(6,8);0;15;(5,41),0,128;len:(3,1),128,32;type:(0,1),160,32;format:(0,1),192,32;;
-cond_tbl_s:T(0,25)=s16name:(5,49),0,64;len:(3,1),64,32;cond:(0,1),96,32;;
-file_delmagic:F(0,19)
-p:p(1,12)
-type:p(0,1)
-entries:p(3,1)
-p:r(1,12)
-type:r(0,1)
-entries:r(3,1)
-apprentice_magic_strength:f(3,1)
-m:P(0,26)=*(0,27)=k(1,7)
-val:r(3,1)
-apprentice_sort:f(0,1)
-a:p(0,28)=*(0,29)=k(0,19)
-b:p(0,28)
-sa:r(3,1)
-sb:r(3,1)
-a:r(0,28)
-b:r(0,28)
-file_signextend:F(14,8)
-m:p(1,12)
-v:p(14,8)
-m:r(1,12)
-v:r(14,8)
-get_op:f(0,1)
-c:P(0,2)
-eatsize:f(0,19)
-p:P(0,30)=*(5,40)
-l:r(5,40)
-parse_strength:f(0,1)
-me:p(0,31)=*(0,22)
-line:p(5,40)
-el:(5,45)
-factor:r(0,5)
-me:r(0,31)
-line:r(5,40)
-parse_apple:f(0,1)
-me:p(0,31)
-i:r(3,1)
-m:(1,12)
-parse_mime:f(0,1)
-hextoint:f(0,1)
-c:P(0,1)
-load_1:f(0,19)
-action:p(0,1)
-fn:p(5,40)
-errs:p(0,32)=*(0,1)
-marray:p(0,33)=*(0,31)
-marraycount:p(0,34)=*(14,7)
-line:(0,35)=ar(6,8);0;1023;(0,2)
-lineno:(3,1)
-f:(0,36)=*(2,1)
-fn:r(5,40)
-len:r(3,1)
-l:(5,40)
-t:(5,45)
-op:r(0,1)
-cont_level:(14,7)
-p:r(0,37)=*(0,38)=k(0,25)
-cond:r(0,1)
-last_cond:r(0,1)
-p:r(0,39)=*(0,40)=k(0,23)
-have_range:r(0,1)
-nm:r(1,12)
-cnt:r(3,1)
-val:r(14,8)
-ptr:r(5,45)
-mp:r(0,31)
-ep:(5,45)
-s:r(5,40)
-warn:(0,1)
-origs:(5,40)
-p:r(5,45)
-pmax:(5,45)
-c:r(0,1)
-val:(0,1)
-p:r(0,39)
-p:r(0,37)
-ptr:r(5,40)
-quad_t:r(0,1)
-apprentice_load:f(0,1)
-magicp:p(0,41)=*(1,12)
-nmagicp:p(0,34)
-errs:(0,1)
-marray:(0,31)
-marraycount:(14,7)
-i:(14,7)
-mentrycount:(14,7)
-starttest:(14,7)
-subfn:(0,42)=ar(6,8);0;258;(0,2)
-st:(23,1)
-dir:r(0,43)=*(30,5)
-d:r(30,4)
-action:r(0,1)
-text:V(0,44)=ar(6,8);0;4;(5,41)
-binary:V(0,45)=ar(6,8);0;6;(5,41)
-len:V(0,46)=k(3,1)
-mstart:r(1,12)
-text:V(0,44)
-binary:V(0,45)
-len:V(0,46)
-file_showstr:F(0,19)
-fp:p(0,36)
-s:p(5,40)
-len:p(3,1)
-swap4:f(14,7)
-sv:p(14,7)
-rv:(14,7)
-mkdbname:f(5,45)
-fn:P(5,40)
-strip:p(0,1)
-p:r(5,40)
-q:r(5,40)
-buf:(5,45)
-swap8:f(14,8)
-sv:p(14,8)
-rv:(14,8)
-file_apprentice:F(1,13)
-mfn:(5,45)
-mlist:(1,13)
-magic:(1,12)
-nmagic:(14,7)
-rv:r(0,1)
-version:r(14,7)
-needsbyteswap:(0,1)
-dbname:(5,45)
-mm:(7,2)
-nmagic:r(14,7)
-sv:(14,6)
-rv:(14,6)
-dbname:r(5,45)
-file_names:G(0,47)=ar(6,8);0;41;(5,40)
-file_nnames:G(0,46)
-rcsid:S(0,48)=ar(6,8);0;66;(5,41)
-file_formats:G(0,49)=ar(6,8);0;41;(0,1)
-file_nformats:G(0,46)
-maxmagic:S(3,1)
-magicsize:S(3,1)
-usg_hdr:S(0,50)=ar(6,8);0;39;(5,41)
-bang:S(0,51)=ar(6,8);0;3;(0,52)=s12name:(5,40),0,32;len:(3,1),32,32;fun:(0,53)=*(0,54)=f(0,1),64,32;;
-type_tbl:S(0,55)=ar(6,8);0;41;(0,40)
-ar:S(0,56)=ar(6,8);0;1;(0,57)=k(14,7)
-ext:S(0,58)=ar(6,8);0;4;(5,41)
-softmagic.c
-handle_annotation:f(0,1)
-m:P(1,12)
-print_sep:f(0,1)
-firstline:P(0,1)
-check_fmt:f(0,1)
-rx:(25,2)
-rc:r(0,1)
-errmsg:(0,22)=ar(6,8);0;511;(0,2)
-moffset:f(14,3)
-p:r(0,23)=*(1,1)
-mprint:f(14,3)
-vf:(0,12)
-vd:(0,13)
-t:r(14,4)
-buf:(0,24)=ar(6,8);0;127;(0,2)
-p:r(0,23)
-cp:r(5,45)
-rval:r(0,1)
-cvt_16:f(0,19)
-p:P(0,23)
-m:P(0,25)=*(0,26)=k(1,7)
-cvt_32:f(0,19)
-m:P(0,25)
-cvt_64:f(0,19)
-cvt_float:f(0,19)
-cvt_double:f(0,19)
-mdebug:f(0,19)
-offset:P(14,7)
-str:P(5,40)
-mcopy:f(0,1)
-indir:p(0,1)
-s:p(0,27)=*(0,28)=k(0,11)
-offset:p(14,7)
-nbytes:p(3,1)
-linecnt:p(3,1)
-s:r(0,27)
-nbytes:r(3,1)
-src:r(0,27)
-esrc:r(0,27)
-dst:r(5,45)
-edst:r(5,45)
-b:r(5,40)
-c:r(5,40)
-last:r(5,40)
-buf:(5,40)
-lines:r(3,1)
-file_strncmp:f(14,8)
-s1:P(5,40)
-s2:P(5,40)
-flags:p(14,7)
-a:r(0,27)
-b:r(0,27)
-__x:r(0,1)
-magiccheck:f(0,1)
-l:(14,8)
-fl:r(0,12)
-fv:r(0,12)
-dl:r(0,13)
-dv:r(0,13)
-matched:r(0,1)
-a:r(5,40)
-rc:(0,1)
-errmsg:(0,22)
-slen:(3,1)
-idx:(3,1)
-pmatch:(0,29)=ar(6,8);0;0;(25,6)
-pmatch:(0,29)
-file_softmagic:F(0,1)
-buf:p(0,27)
-mode:p(0,1)
-ml:(1,13)
-magindex:r(14,7)
-cont_level:(0,4)
-need_separator:(0,1)
-returnval:(0,1)
-e:r(0,1)
-firstline:(0,1)
-printed_something:(0,1)
-print:(0,1)
-mget:f(0,1)
-s:p(0,27)
-cont_level:p(0,4)
-offset:r(14,7)
-count:(14,7)
-off:r(0,1)
-q:r(0,30)=*(0,31)=k(1,1)
-ptr1:r(5,45)
-ptr2:r(5,45)
-q:r(0,30)
-rcsid:S(0,32)=ar(6,8);0;65;(5,41)
-ascmagic.c
-names.h
-names:T(29,1)=s16name:(29,2)=ar(6,8);0;13;(0,2),0,112;type:(0,8),112,16;;
-trim_nuls:f(3,1)
-buf:P(0,22)=*(0,23)=k(0,11)
-nbytes:P(3,1)
-file_ascmagic_with_encoding:F(0,1)
-buf:p(0,22)
-ubuf:p(0,24)=*(1,20)
-ulen:p(3,1)
-code:p(5,40)
-type:p(5,40)
-utf8_buf:(5,14)
-p:r(0,25)=*(0,26)=k(29,1)
-mime:(0,1)
-subtype:(5,40)
-subtype_mime:(5,40)
-has_escapes:(0,1)
-has_backspace:(0,1)
-seen_cr:(0,1)
-n_crlf:(0,1)
-n_lf:(0,1)
-n_cr:(0,1)
-n_nel:(0,1)
-last_line_end:(3,1)
-has_long_lines:(0,1)
-code:r(5,40)
-buf:r(5,14)
-end:r(5,14)
-end:r(3,1)
-us:r(0,27)=*(0,28)=k(1,20)
-ulen:r(3,1)
-file_ascmagic:F(0,1)
-ubuf:(0,24)
-ulen:(3,1)
-code:(5,40)
-code_mime:(5,40)
-type:(5,40)
-buf:r(0,22)
-rcsid:S(0,29)=ar(6,8);0;63;(5,41)
-types:S(0,30)=ar(6,8);0;14;(0,31)=k(0,32)=s64human:(0,33)=ar(6,8);0;47;(0,2),0,384;mime:(0,34)=ar(6,8);0;15;(0,2),384,128;;
-names:S(0,35)=ar(6,8);0;49;(0,26)
-encoding.c
-looks_ascii:f(0,1)
-buf:p(0,22)=*(0,23)=k(0,11)
-ulen:p(0,25)=*(3,1)
-ulen:r(0,25)
-file_looks_utf8:F(0,1)
-ubuf:p(0,24)
-ulen:p(0,25)
-n:r(0,1)
-c:r(1,20)
-gotone:(0,1)
-ctrl:(0,1)
-following:r(0,1)
-looks_latin1:f(0,1)
-t:r(0,1)
-file_encoding:F(0,1)
-ubuf:p(0,26)=*(0,24)
-code:p(0,27)=*(5,40)
-code_mime:p(0,27)
-type:p(0,27)
-mlen:r(3,1)
-nbuf:(5,14)
-ubuf:r(0,24)
-bigend:(0,1)
-rcsid:S(0,28)=ar(6,8);0;62;(5,41)
-text_chars:S(0,29)=ar(6,8);0;255;(0,2)
-ebcdic_to_ascii:S(0,30)=ar(6,8);0;255;(0,11)
-compress.c
-/usr/include/sys/wait.h
-/usr/include/sys/resource.h
-rlim_t:t(30,1)=(0,5)
-rlimit:T(30,2)=s8rlim_cur:(30,1),0,32;rlim_max:(30,1),32,32;;
-rusage:T(30,3)=s72ru_utime:(31,1),0,64;ru_stime:(31,1),64,64;ru_maxrss:(0,3),128,32;ru_ixrss:(0,3),160,32;ru_idrss:(0,3),192,32;ru_isrss:(0,3),224,32;ru_minflt:(0,3),256,32;ru_majflt:(0,3),288,32;ru_nswap:(0,3),320,32;ru_inblock:(0,3),352,32;ru_oublock:(0,3),384,32;ru_msgsnd:(0,3),416,32;ru_msgrcv:(0,3),448,32;ru_nsignals:(0,3),480,32;ru_nvcsw:(0,3),512,32;ru_nivcsw:(0,3),544,32;;
-wait:T(29,1)=u4w_status:(0,1),0,32;__wait_terminated:(29,2)=s4__w_termsig:(0,4),0,7;__w_coredump:(0,4),7,1;__w_retcode:(0,4),8,8;:(0,4),16,16;;,0,32;__wait_stopped:(29,3)=s4__w_stopval:(0,4),0,8;__w_stopsig:(0,4),8,8;:(0,4),16,16;;,0,32;;
-/usr/include/zlib.h
-/usr/include/zconf.h
-Byte:t(33,1)=(0,11)
-uInt:t(33,2)=(0,4)
-uLong:t(33,3)=(0,5)
-Bytef:t(33,4)=(33,1)
-charf:t(33,5)=(0,2)
-intf:t(33,6)=(0,1)
-uIntf:t(33,7)=(33,2)
-uLongf:t(33,8)=(33,3)
-voidpc:t(33,9)=(33,10)=*(33,11)=k(0,19)
-voidpf:t(33,12)=(7,2)
-voidp:t(33,13)=(7,2)
-alloc_func:t(32,1)=(32,2)=*(32,3)=f(33,12)
-free_func:t(32,4)=(32,5)=*(32,6)=f(0,19)
-z_stream_s:T(32,7)=s56next_in:(32,8)=*(33,4),0,32;avail_in:(33,2),32,32;total_in:(33,3),64,32;next_out:(32,8),96,32;avail_out:(33,2),128,32;total_out:(33,3),160,32;msg:(5,45),192,32;state:(32,9)=*(32,10)=xsinternal_state:,224,32;zalloc:(32,1),256,32;zfree:(32,4),288,32;opaque:(33,12),320,32;data_type:(0,1),352,32;adler:(33,3),384,32;reserved:(33,3),416,32;;
-z_stream:t(32,11)=(32,7)
-z_streamp:t(32,12)=(32,13)=*(32,11)
-gz_header_s:T(32,14)=s52text:(0,1),0,32;time:(33,3),32,32;xflags:(0,1),64,32;os:(0,1),96,32;extra:(32,8),128,32;extra_len:(33,2),160,32;extra_max:(33,2),192,32;name:(32,8),224,32;name_max:(33,2),256,32;comment:(32,8),288,32;comm_max:(33,2),320,32;hcrc:(0,1),352,32;done:(0,1),384,32;;
-gz_header:t(32,15)=(32,14)
-gz_headerp:t(32,16)=(32,17)=*(32,15)
-in_func:t(32,18)=(32,19)=*(32,20)=f(0,4)
-out_func:t(32,21)=(32,22)=*(32,23)=f(0,1)
-gzFile:t(32,24)=(33,13)
-internal_state:T(32,10)=s4dummy:(0,1),0,32;;
-swrite:f(9,14)
-fd:P(0,1)
-buf:P(33,10)
-n:p(3,1)
-rn:(3,1)
-n:r(3,1)
-sread:F(9,14)
-buf:p(7,2)
-canbepipe:p(0,1)
-buf:r(7,2)
-file_pipe2file:F(0,1)
-startbuf:p(33,10)
-buf:(0,22)=ar(6,8);0;4095;(0,2)
-r:r(0,1)
-tfd:r(0,1)
-file_zmagic:F(0,1)
-name:p(5,40)
-buf:p(0,23)=*(0,24)=k(0,11)
-newbuf:(5,14)
-name:r(5,40)
-fdin:(0,25)=ar(6,8);0;1;(0,1)
-fdout:(0,25)
-flg:r(0,11)
-data_start:r(3,1)
-z:(32,11)
-fdin:(0,25)
-rcsid:S(0,26)=ar(6,8);0;63;(5,41)
-compr:S(0,27)=ar(6,8);0;9;(0,28)=k(0,29)=s28magic:(0,30)=ar(6,8);0;7;(5,41),0,64;maglen:(3,1),64,32;argv:(0,31)=ar(6,8);0;2;(5,40),96,96;silent:(0,1),192,32;;
-ncompr:S(3,1)
-is_tar.c
-tar.h
-header:T(28,1)=s345name:(28,2)=ar(6,8);0;99;(0,2),0,800;mode:(5,49),800,64;uid:(5,49),864,64;gid:(5,49),928,64;size:(28,3)=ar(6,8);0;11;(0,2),992,96;mtime:(28,3),1088,96;chksum:(5,49),1184,64;linkflag:(0,2),1248,8;linkname:(28,2),1256,800;magic:(5,49),2056,64;uname:(1,5),2120,256;gname:(1,5),2376,256;devmajor:(5,49),2632,64;devminor:(5,49),2696,64;;
-record:T(28,4)=u512charptr:(28,5)=ar(6,8);0;511;(0,2),0,4096;header:(28,1),0,2760;;
-file_is_tar:F(0,1)
-i:r(0,1)
-sum:r(0,1)
-digs:r(0,1)
-where:r(5,40)
-value:r(0,1)
-rcsid:S(0,24)=ar(6,8);0;61;(5,41)
-tartype:S(0,25)=ar(6,8);0;2;(0,26)=ar(6,8);0;31;(5,41)
-readelf.c
-readelf.h
-Elf32_Addr:t(28,1)=(14,7)
-Elf32_Off:t(28,2)=(14,7)
-Elf32_Half:t(28,3)=(14,6)
-Elf32_Word:t(28,4)=(14,7)
-Elf32_Char:t(28,5)=(14,5)
-Elf64_Addr:t(28,6)=(14,8)
-Elf64_Off:t(28,7)=(14,8)
-Elf64_Xword:t(28,8)=(14,8)
-Elf64_Half:t(28,9)=(14,6)
-Elf64_Word:t(28,10)=(14,7)
-Elf64_Char:t(28,11)=(14,5)
-Elf32_Ehdr:t(28,12)=(28,13)=s52e_ident:(28,14)=ar(6,8);0;15;(28,5),0,128;e_type:(28,3),128,16;e_machine:(28,3),144,16;e_version:(28,4),160,32;e_entry:(28,1),192,32;e_phoff:(28,2),224,32;e_shoff:(28,2),256,32;e_flags:(28,4),288,32;e_ehsize:(28,3),320,16;e_phentsize:(28,3),336,16;e_phnum:(28,3),352,16;e_shentsize:(28,3),368,16;e_shnum:(28,3),384,16;e_shstrndx:(28,3),400,16;;
-Elf64_Ehdr:t(28,15)=(28,16)=s64e_ident:(28,17)=ar(6,8);0;15;(28,11),0,128;e_type:(28,9),128,16;e_machine:(28,9),144,16;e_version:(28,10),160,32;e_entry:(28,6),192,64;e_phoff:(28,7),256,64;e_shoff:(28,7),320,64;e_flags:(28,10),384,32;e_ehsize:(28,9),416,16;e_phentsize:(28,9),432,16;e_phnum:(28,9),448,16;e_shentsize:(28,9),464,16;e_shnum:(28,9),480,16;e_shstrndx:(28,9),496,16;;
-Elf32_Phdr:t(28,18)=(28,19)=s32p_type:(28,4),0,32;p_offset:(28,2),32,32;p_vaddr:(28,1),64,32;p_paddr:(28,1),96,32;p_filesz:(28,4),128,32;p_memsz:(28,4),160,32;p_flags:(28,4),192,32;p_align:(28,4),224,32;;
-Elf64_Phdr:t(28,20)=(28,21)=s56p_type:(28,10),0,32;p_flags:(28,10),32,32;p_offset:(28,7),64,64;p_vaddr:(28,6),128,64;p_paddr:(28,6),192,64;p_filesz:(28,8),256,64;p_memsz:(28,8),320,64;p_align:(28,8),384,64;;
-Elf32_Shdr:t(28,22)=(28,23)=s40sh_name:(28,4),0,32;sh_type:(28,4),32,32;sh_flags:(28,4),64,32;sh_addr:(28,1),96,32;sh_offset:(28,2),128,32;sh_size:(28,4),160,32;sh_link:(28,4),192,32;sh_info:(28,4),224,32;sh_addralign:(28,4),256,32;sh_entsize:(28,4),288,32;;
-Elf64_Shdr:t(28,24)=(28,25)=s64sh_name:(28,10),0,32;sh_type:(28,10),32,32;sh_flags:(28,7),64,64;sh_addr:(28,6),128,64;sh_offset:(28,7),192,64;sh_size:(28,7),256,64;sh_link:(28,10),320,32;sh_info:(28,10),352,32;sh_addralign:(28,7),384,64;sh_entsize:(28,7),448,64;;
-elf_note:T(28,26)=s12n_namesz:(28,4),0,32;n_descsz:(28,4),32,32;n_type:(28,4),64,32;;
-Elf32_Nhdr:t(28,27)=(28,26)
-Elf64_Nhdr:t(28,28)=(28,29)=s12n_namesz:(28,10),0,32;n_descsz:(28,10),32,32;n_type:(28,10),64,32;;
-Elf32_Cap:t(28,30)=(28,31)=s8c_tag:(28,4),0,32;c_un:(28,32)=u4c_val:(28,4),0,32;c_ptr:(28,1),0,32;;,32,32;;
-Elf64_Cap:t(28,33)=(28,34)=s16c_tag:(28,8),0,64;c_un:(28,35)=u8c_val:(28,8),0,64;c_ptr:(28,6),0,64;;,64,64;;
-cap_desc:T(0,22)=s16cd_mask:(14,8),0,64;cd_name:(5,40),64,32;;
-cap_desc_t:t(0,23)=(0,22)
-getu16:f(14,6)
-swap:P(0,1)
-value:P(14,6)
-retval:r(0,24)=u2ui:(14,6),0,16;c:(0,25)=ar(6,8);0;1;(0,2),0,16;;
-getu32:f(14,7)
-value:P(14,7)
-retval:r(0,26)=u4ui:(14,7),0,32;c:(0,27)=ar(6,8);0;3;(0,2),0,32;;
-getu64:f(14,8)
-value:p(14,8)
-retval:r(0,28)=u8ui:(14,8),0,64;c:(5,49),0,64;;
-donote:f(3,1)
-ms:p(29,2)
-vbuf:p(7,2)
-offset:p(3,1)
-size:p(3,1)
-clazz:p(0,1)
-swap:p(0,1)
-align:p(3,1)
-flags:p(0,29)=*(0,1)
-nh32:(28,27)
-nh64:(28,28)
-noff:(3,1)
-doff:(3,1)
-os_style:(0,1)
-namesz:r(14,7)
-descsz:(14,7)
-align:r(3,1)
-c:r(0,11)
-cname:r(5,14)
-cp:r(5,14)
-reloffset:r(3,1)
-noffset:r(3,1)
-desc:(0,30)=ar(6,8);0;3;(14,7)
-ver_patch:r(14,7)
-ver_rel:r(14,7)
-ver_min:r(14,7)
-desc:(0,30)
-dophn_core:f(0,1)
-clazz:P(0,1)
-off:p(13,3)
-num:p(0,1)
-fsize:p(13,3)
-flags:p(0,29)
-ph32:(28,18)
-ph64:(28,20)
-offset:r(3,1)
-nbuf:(0,31)=ar(6,8);0;1023;(0,11)
-bufsize:r(9,14)
-savedoffset:r(13,3)
-doshn:f(0,1)
-mach:p(0,1)
-sh32:(28,22)
-sh64:(28,24)
-stripped:(0,1)
-nbuf:(7,2)
-noff:r(13,3)
-cap_hw1:(14,8)
-cap_sf1:(14,8)
-size:r(3,1)
-cdp:r(0,32)=*(0,33)=k(0,23)
-coff:(13,3)
-cap32:(28,30)
-cap64:(28,33)
-cbuf:(0,34)=ar(6,8);0;15;(0,2)
-cdp:r(0,32)
-cbuf:(0,34)
-dophn_exec:f(0,1)
-sh_num:p(0,1)
-linking_style:(5,40)
-shared_libraries:(5,40)
-nbuf:(0,31)
-bufsize:r(0,1)
-savedoffset:(13,3)
-off:r(13,3)
-file_tryelf:F(0,1)
-buf:p(0,35)=*(0,36)=k(0,11)
-elfclass.h
-clazz:(0,1)
-swap:r(0,1)
-fsize:(13,3)
-flags:(0,1)
-elf32hdr:(28,12)
-elf64hdr:(28,15)
-type:r(14,6)
-ms:r(29,2)
-buf:r(0,35)
-rcsid:S(0,37)=ar(6,8);0;62;(5,41)
-prpsoffsets32:S(0,38)=ar(6,8);0;4;(0,39)=k(3,1)
-prpsoffsets64:S(0,40)=ar(6,8);0;4;(0,39)
-os_style_names:S(0,41)=ar(6,8);0;2;(0,42)=ar(6,8);0;7;(5,41)
-cap_desc_sparc:S(0,43)=ar(6,8);0;11;(0,33)
-cap_desc_386:S(0,44)=ar(6,8);0;25;(0,33)
-print.c
-file_magwarn:F(0,19)
-ms:p(0,22)=*(1,18)
-f:p(5,40)
-ms:r(0,22)
-f:r(5,40)
-file_fmttime:F(5,40)
-v:p(14,7)
-local:p(0,1)
-pp:r(5,45)
-tm:r(0,23)=*(19,1)
-v:r(14,7)
-file_mdump:F(0,19)
-optyp:V(0,24)=ar(6,8);0;8;(5,41)
-fsmagic.c
-bad_link:f(0,1)
-err:P(0,1)
-buf:p(5,45)
-errfmt:r(5,40)
-mime:r(0,1)
-handle_mime:f(0,1)
-mime:P(0,1)
-str:p(5,40)
-str:r(5,40)
-file_fsmagic:F(0,1)
-sb:p(0,22)=*(23,1)
-ret:r(0,1)
-buf:(0,23)=ar(6,8);0;1027;(0,2)
-nch:r(0,1)
-tstatbuf:(23,1)
-sb:r(0,22)
-tmp:r(5,45)
-buf2:(0,24)=ar(6,8);0;2051;(0,2)
-buf2:(0,24)
-rcsid:S(0,25)=ar(6,8);0;62;(5,41)
-funcs.c
-/usr/include/wchar.h
-mbstate_t:t(29,1)=(6,4)
-/usr/include/wctype.h
-wctype_t:t(30,1)=(0,1)
-wctrans_t:t(30,2)=(0,1)
-file_error_core:f(0,19)
-error:P(0,1)
-va:p(26,1)
-lineno:p(14,7)
-va:r(26,1)
-lineno:r(14,7)
-file_error:F(0,19)
-error:p(0,1)
-error:r(0,1)
-file_vprintf:F(0,1)
-fmt:p(5,40)
-ap:p(26,1)
-len:r(0,1)
-newstr:(5,45)
-fmt:r(5,40)
-ap:r(26,1)
-file_printf:F(0,1)
-file_magerror:F(0,19)
-file_oomem:F(0,19)
-file_badseek:F(0,19)
-file_badread:F(0,19)
-file_buffer:F(0,1)
-buf:p(0,22)=*(0,23)=k(0,19)
-looks_text:(0,1)
-u8buf:(0,24)=*(1,20)
-file_reset:F(0,1)
-file_getbuffer:F(5,40)
-pbuf:r(5,45)
-op:r(5,45)
-np:r(5,45)
-psize:r(3,1)
-state:(29,1)
-nextchar:(11,2)
-mb_conv:(0,1)
-bytesconsumed:r(3,1)
-eop:(5,45)
-file_check_mem:F(0,1)
-level:p(0,4)
-level:r(0,4)
-apptype.c
-rcsid:S(0,22)=ar(6,8);0;62;(5,41)
-cdf.c
-cdf.h
-cdf_secid_t:t(28,1)=(14,3)
-cdf_header_t:t(28,2)=(28,3)=s512h_magic:(14,8),0,64;h_uuid:(28,4)=ar(6,8);0;1;(14,8),64,128;h_revision:(14,6),192,16;h_version:(14,6),208,16;h_byte_order:(14,6),224,16;h_sec_size_p2:(14,6),240,16;h_short_sec_size_p2:(14,6),256,16;h_unused0:(28,5)=ar(6,8);0;9;(14,5),272,80;h_num_sectors_in_sat:(14,7),352,32;h_secid_first_directory:(14,7),384,32;h_unused1:(1,3),416,32;h_min_size_standard_stream:(14,7),448,32;h_secid_first_sector_in_short_sat:(28,1),480,32;h_num_sectors_in_short_sat:(14,7),512,32;h_secid_first_sector_in_master_sat:(28,1),544,32;h_num_sectors_in_master_sat:(14,7),576,32;h_master_sat:(28,6)=ar(6,8);0;108;(28,1),608,3488;;
-cdf_dirid_t:t(28,7)=(14,3)
-cdf_timestamp_t:t(28,8)=(14,4)
-cdf_directory_t:t(28,9)=(28,10)=s136d_name:(28,11)=ar(6,8);0;31;(14,6),0,512;d_namelen:(14,6),512,16;d_type:(14,5),528,8;d_color:(14,5),536,8;d_left_child:(28,7),544,32;d_right_child:(28,7),576,32;d_storage:(28,7),608,32;d_storage_uuid:(28,4),640,128;d_flags:(14,7),768,32;d_created:(28,8),832,64;d_modified:(28,8),896,64;d_stream_first_sector:(28,1),960,32;d_size:(14,7),992,32;d_unused0:(14,7),1024,32;;
-cdf_sat_t:t(28,12)=(28,13)=s8sat_tab:(28,14)=*(28,1),0,32;sat_len:(3,1),32,32;;
-cdf_dir_t:t(28,15)=(28,16)=s8dir_tab:(28,17)=*(28,9),0,32;dir_len:(3,1),32,32;;
-cdf_stream_t:t(28,18)=(28,19)=s12sst_tab:(7,2),0,32;sst_len:(3,1),32,32;sst_dirlen:(3,1),64,32;;
-cdf_classid_t:t(28,20)=(28,21)=s16cl_dword:(14,7),0,32;cl_word:(28,22)=ar(6,8);0;1;(14,6),32,32;cl_two:(1,2),64,16;cl_six:(28,23)=ar(6,8);0;5;(14,5),80,48;;
-cdf_summary_info_header_t:t(28,24)=(28,25)=s28si_byte_order:(14,6),0,16;si_zero:(14,6),16,16;si_os_version:(14,6),32,16;si_os:(14,6),48,16;si_class:(28,20),64,128;si_count:(14,7),192,32;;
-cdf_section_declaration_t:t(28,26)=(28,27)=s20sd_class:(28,20),0,128;sd_offset:(14,7),128,32;;
-cdf_section_header_t:t(28,28)=(28,29)=s8sh_len:(14,7),0,32;sh_properties:(14,7),32,32;;
-cdf_property_info_t:t(28,30)=(28,31)=s16pi_id:(14,7),0,32;pi_type:(14,7),32,32;pi_val:(28,32)=u8_pi_u16:(14,6),0,16;_pi_s16:(14,2),0,16;_pi_u32:(14,7),0,32;_pi_s32:(14,3),0,32;_pi_u64:(14,8),0,64;_pi_s64:(14,4),0,64;_pi_tp:(28,8),0,64;_pi_str:(28,33)=s8s_len:(14,7),0,32;s_buf:(5,40),32,32;;,0,64;;,64,64;;
-cdf_info_t:t(28,34)=(28,35)=s12i_fd:(0,1),0,32;i_buf:(28,36)=*(28,37)=k(0,11),32,32;i_len:(3,1),64,32;;
-cdf_tole2:F(14,6)
-sv:p(0,1)
-cdf_tole4:F(14,7)
-cdf_tole8:F(14,8)
-cdf_swap_header:F(0,19)
-h:p(0,22)=*(28,2)
-h:r(0,22)
-cdf_unpack_header:F(0,19)
-h:p(0,22)
-buf:r(5,45)
-cdf_swap_dir:F(0,19)
-d:p(28,17)
-d:r(28,17)
-cdf_swap_class:F(0,19)
-d:p(0,23)=*(28,20)
-d:r(0,23)
-cdf_unpack_dir:F(0,19)
-cdf_check_stream_offset:f(0,1)
-sst:P(0,24)=*(0,25)=k(28,18)
-p:P(0,26)=*(0,27)=k(0,19)
-tail:p(3,1)
-e:r(5,40)
-cdf_read:f(9,14)
-info:p(0,28)=*(0,29)=k(28,34)
-siz:(3,1)
-cdf_read_header:F(0,1)
-info:p(0,28)
-buf:(0,30)=ar(6,8);0;511;(0,2)
-info:r(0,28)
-cdf_read_sector:F(9,14)
-offs:p(3,1)
-h:p(0,31)=*(0,32)=k(28,2)
-id:p(28,1)
-info:(0,28)
-buf:(7,2)
-offs:(3,1)
-h:r(0,31)
-id:r(28,1)
-cdf_read_short_sector:F(9,14)
-sst:p(0,24)
-h:p(0,31)
-sst:r(0,24)
-offs:r(3,1)
-cdf_read_sat:F(0,1)
-sat:p(0,33)=*(28,12)
-ss:(3,1)
-msa:(28,14)
-mid:r(28,1)
-sec:r(28,1)
-nsatpersec:(3,1)
-cdf_count_chain:F(3,1)
-sat:p(0,34)=*(0,35)=k(28,12)
-sid:p(28,1)
-j:r(3,1)
-maxsector:r(28,1)
-sid:r(28,1)
-cdf_read_long_sector_chain:F(0,1)
-sat:p(0,34)
-scn:p(0,36)=*(28,18)
-ss:r(3,1)
-nr:r(9,14)
-cdf_read_short_sector_chain:F(0,1)
-ssat:p(0,34)
-scn:p(0,36)
-cdf_read_sector_chain:F(0,1)
-sat:(0,34)
-ssat:r(0,34)
-scn:r(0,36)
-cdf_read_dir:F(0,1)
-dir:p(0,37)=*(28,15)
-ns:(3,1)
-nd:(3,1)
-sid:(28,1)
-cdf_read_ssat:F(0,1)
-ssat:p(0,33)
-cdf_read_short_stream:F(0,1)
-dir:p(0,38)=*(0,39)=k(28,15)
-d:r(0,40)=*(0,41)=k(28,9)
-sat:r(0,34)
-dir:r(0,38)
-cdf_read_summary_info:F(0,1)
-dir:p(0,38)
-d:r(0,40)
-name:V(0,42)=ar(6,8);0;19;(5,41)
-d:(5,40)
-s:r(0,43)=*(0,44)=k(14,6)
-l:r(3,1)
-s:r(0,43)
-cdf_read_property_info:F(0,1)
-offs:p(14,7)
-info:p(0,45)=*(0,46)=*(28,30)
-count:p(0,47)=*(3,1)
-maxcount:p(0,47)
-shp:r(0,48)=*(0,49)=k(28,28)
-sh:(28,28)
-p:(0,50)=*(0,51)=k(14,7)
-q:r(0,50)
-e:(0,50)
-s16:(14,2)
-s64:(14,4)
-u64:(14,8)
-tp:(28,8)
-o:r(3,1)
-nelements:r(3,1)
-inp:(0,46)
-offs:r(14,7)
-l:r(14,7)
-cdf_unpack_summary_info:F(0,1)
-ssi:p(0,52)=*(28,24)
-info:p(0,45)
-count:p(0,47)
-maxcount:(3,1)
-si:r(0,53)=*(0,54)=k(28,24)
-sd:(0,55)=*(0,56)=k(28,26)
-ssi:r(0,52)
-cdf_print_classid:F(0,1)
-buflen:p(3,1)
-id:p(0,57)=*(0,58)=k(28,20)
-buflen:r(3,1)
-id:r(0,57)
-cdf_print_property_name:F(0,1)
-bufsiz:p(3,1)
-p:p(14,7)
-bufsiz:r(3,1)
-p:r(14,7)
-cdf_print_elapsed_time:F(0,1)
-ts:p(28,8)
-days:r(0,1)
-hours:(0,1)
-ts:r(28,8)
-rcsid:S(0,59)=ar(6,8);0;58;(5,41)
-cdf_bo:S(0,60)=u4s:(0,61)=ar(6,8);0;3;(0,2),0,32;u:(14,7),0,32;;
-vn:S(0,62)=ar(6,8);0;19;(0,63)=k(0,64)=s8v:(14,7),0,32;n:(5,40),32,32;;
-cdf_time.c
-cdf_timestamp_to_timespec:F(0,1)
-ts:p(0,22)=*(9,9)
-t:p(27,8)
-tm:(19,1)
-days:(0,1)
-y:r(0,1)
-m:r(3,1)
-sub:r(0,1)
-cdf_timespec_to_timestamp:F(0,1)
-t:p(0,23)=*(27,8)
-ts:p(0,24)=*(0,25)=k(9,9)
-rcsid:S(0,26)=ar(6,8);0;62;(5,41)
-mdays:S(0,27)=ar(6,8);0;11;(0,28)=k(0,1)
-readcdf.c
-file_trycdf:F(0,1)
-buf:p(28,36)
-info:(28,34)
-h:(28,2)
-sat:(28,12)
-ssat:(28,12)
-sst:(28,18)
-scn:(28,18)
-dir:(28,15)
-expn:(5,40)
-buf:r(28,36)
-si:(28,24)
-info:(0,22)=*(28,30)
-count:(3,1)
-info:r(0,23)=*(0,24)=k(28,30)
-tp:r(28,8)
-ts:(9,9)
-buf:(1,10)
-str:(5,40)
-vbuf:(0,25)=ar(6,8);0;1023;(0,2)
-tbuf:(1,10)
-c:r(5,45)
-info:(0,22)
-info:r(0,23)
-vbuf:(0,25)
-.file
-magic.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.file
-apprentice.c
-_rcsid
-_usg_hdr
-_bang
-_get_op
-_eatsize
-_load_1
-text.1
-binary.2
-len.3
-_swap4
-_swap8
-done.0
-.text
-.data
-.stab
-.rdata
-.file
-softmagic.c
-_rcsid
-_moffset
-_mprint
-_cvt_16
-_cvt_32
-_cvt_64
-_mdebug
-_mcopy
-_mget
-.text
-.data
-.stab
-.rdata
-.file
-ascmagic.c
-_rcsid
-_types
-_names
-.text
-.data
-.stab
-.rdata
-.file
-encoding.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.file
-compress.c
-_rcsid
-_compr
-_ncompr
-_swrite
-_sread
-.text
-.data
-.stab
-.rdata
-.file
-is_tar.c
-_rcsid
-_tartype
-.text
-.data
-.stab
-.rdata
-.file
-readelf.c
-_rcsid
-_getu16
-_getu32
-_getu64
-_donote
-_doshn
-.text
-.data
-.stab
-.rdata
-.file
-print.c
-_rcsid
-optyp.0
-.text
-.data
-.stab
-.rdata
-.file
-fsmagic.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.file
-funcs.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.file
-apptype.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.file
-cdf.c
-_rcsid
-_cdf_bo
-name.0
-.text
-.data
-.stab
-.rdata
-.file
-cdf_time.c
-_rcsid
-_mdays
-.text
-.data
-.stab
-.rdata
-.file
-readcdf.c
-_rcsid
-.text
-.data
-.stab
-.rdata
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6,
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6<
-.text
-.data
-.text
-.data
-.text
-.data
-probe
-done
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.idata$7<
-.idata$5
-.idata$4D
-.idata$6@
-.text
-.data
-.idata$7
-.idata$5\
-.idata$4
-.idata$6|
-.text
-.data
-.idata$7
-.idata$5t
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5d
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5D
-.idata$4
-.idata$6D
-.text
-.idata$7
-.idata$5\
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5L
-.idata$4
-.idata$6d
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6H
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7d
-.idata$5
-.idata$4l
-.idata$6
-.text
-.idata$7
-.idata$5X
-.idata$4
-.idata$6
-.text
-.idata$7l
-.idata$5
-.idata$4t
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6P
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5T
-.idata$4
-.idata$6|
-.text
-.idata$7t
-.idata$5$
-.idata$4|
-.idata$6
-.text
-.data
-.idata$7
-.idata$5h
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5T
-.idata$4
-.idata$6t
-.text
-.data
-.idata$7
-.idata$5p
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6@
-.text
-.idata$7|
-.idata$5,
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$50
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5<
-.idata$4
-.idata$6,
-.text
-.idata$7
-.idata$54
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$58
-.idata$4
-.idata$6
-.text
-.idata$7H
-.idata$5
-.idata$4P
-.idata$6`
-.text
-.idata$78
-.idata$5
-.idata$4@
-.idata$68
-.text
-.idata$7x
-.idata$5(
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5`
-.idata$4
-.idata$6
-.text
-.idata$7L
-.idata$5
-.idata$4T
-.idata$6l
-.text
-.idata$7@
-.idata$5
-.idata$4H
-.idata$6H
-.text
-.idata$7
-.idata$5
-.idata$4(
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6$
-.text
-.data
-.idata$7
-.idata$5`
-.idata$4
-.idata$6
-.text
-.idata$7h
-.idata$5
-.idata$4p
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$64
-.text
-.idata$7P
-.idata$5
-.idata$4X
-.idata$6x
-.text
-.idata$7h
-.idata$5
-.idata$4p
-.idata$6
-.text
-.idata$7X
-.idata$5
-.idata$4`
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6\
-.text
-.idata$7
-.idata$5H
-.idata$4
-.idata$6\
-.text
-.idata$7
-.idata$5
-.idata$4$
-.idata$6
-.text
-.idata$7`
-.idata$5
-.idata$4h
-.idata$6
-.text
-.idata$7l
-.idata$5
-.idata$4t
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7p
-.idata$5
-.idata$4x
-.idata$6
-.text
-.idata$7T
-.idata$5
-.idata$4\
-.idata$6
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5|
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5x
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5P
-.idata$4
-.idata$6h
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5|
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5t
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6,
-.text
-.idata$7$
-.idata$5
-.idata$4,
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5x
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5@
-.idata$4
-.idata$68
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7d
-.idata$5
-.idata$4l
-.idata$6
-.text
-.idata$7p
-.idata$5
-.idata$4x
-.idata$6
-.text
-.idata$7
-.idata$5P
-.idata$4
-.idata$6p
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6h
-.text
-.idata$7
-.idata$5d
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5L
-.idata$4
-.idata$6\
-.text
-.idata$7`
-.idata$5
-.idata$4h
-.idata$6
-.text
-.idata$7D
-.idata$5
-.idata$4L
-.idata$6T
-.text
-.idata$7\
-.idata$5
-.idata$4d
-.idata$6
-.text
-.data
-.idata$7
-.idata$5l
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6t
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$5H
-.idata$4
-.idata$6P
-.text
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.data
-.text
-.idata$7
-.idata$5h
-.idata$4
-.idata$6
-.text
-.data
-.text
-.data
-.text
-.idata$7
-.idata$5p
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$50
-.idata$4
-.idata$6
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.idata$7
-.idata$5l
-.idata$4
-.idata$6
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6L
-.file
-fake
-hname
-fthunk
-.text
-.data
-.idata$2(
-.idata$5
-.idata$4
-.file
-fake
-.text
-.data
-.idata$4
-.idata$5
-.idata$7
-.text
-.data
-.idata$2
-.idata$5
-.idata$4d
-.idata$2
-.idata$5
-.idata$4
-.idata$2<
-.text
-.idata$7t
-.idata$5$
-.idata$4|
-.idata$6
-.text
-.idata$7x
-.idata$5(
-.idata$4
-.idata$6
-.text
-.idata$7|
-.idata$5,
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$54
-.idata$4
-.idata$6
-.text
-.idata$7
-.idata$58
-.idata$4
-.idata$6,
-.text
-.idata$7
-.idata$5<
-.idata$4
-.idata$68
-.text
-.idata$7
-.idata$5@
-.idata$4
-.idata$6D
-.text
-.idata$7
-.idata$5D
-.idata$4
-.idata$6P
-.text
-.idata$7(
-.idata$5
-.idata$40
-.idata$6
-.text
-.idata$7,
-.idata$5
-.idata$44
-.idata$6
-.text
-.idata$70
-.idata$5
-.idata$48
-.idata$6
-.text
-.idata$74
-.idata$5
-.idata$4<
-.idata$6(
-.idata$4
-.idata$5X
-.idata$7
-.idata$4
-.idata$5
-.idata$7
-.idata$4
-_strcspn
-_free
-_regfree0
-_mkstemp
-_strlcpy
-_fstat
-_readdir
-_fputc
-_execvp
-_regcomp`
-_mktime
-_environ4
-_open
-_fwrite
-__stat64
-_regexec@
-_memcpy
-_opendir
-_memset
-_stat
-__mmap64
-_waitpidp
-_munmap
-_fflush
-_fprintf`
-__alloca
-_lseek
-_strtol
-_strdup
-_gmtime
-_fopen
-_calloc
-__fmode
-_ctime
-_dup2
-_strlcat`
-_realloc
-_memchr
-_getenv
-_access
-_strtod
-_strchr
-_malloc
-_fclose
-_pipe
-_abort
-_lstat
-_asctime
-_unlink
-_fork
-___errno
-_strncmp
-_write
-_utimes
-_strndup
-_strrchr
-_strtoul
-_fgets
-_strlen
-_mbrtowc
-_read
-_exit
-_inflateH
-_mmap
-_strtof
-_qsort
-_fcntl
-__open64
-_strstr
-_close
-_magic_open
-_free_mlist
-_unreadable_info
-_magic_close
-_magic_load
-_magic_compile
-_magic_check
-_file_or_fd
-_magic_file
-_magic_descriptor
-_magic_buffer
-_magic_error
-_magic_errno
-_magic_setflags
-_type_tbl
-_magicsize
-_maxmagic
-_apprentice_magic_strength
-_apprentice_sort
-_file_signextend
-_parse_strength
-_parse_apple
-_parse_mime
-_hextoint
-last_cont_level.4
-cond_tbl.5
-_apprentice_load
-_file_showstr
-_mkdbname
-_file_apprentice
-_file_delmagic
-_handle_annotation
-_print_sep
-_check_fmt
-_cvt_float
-_cvt_double
-_file_strncmp
-_magiccheck
-_file_softmagic
-_trim_nuls
-_file_ascmagic
-_file_ascmagic_with_encoding
-_text_chars
-_ebcdic_to_ascii
-_looks_ascii
-_looks_latin1
-_file_encoding
-_file_looks_utf8
-_file_pipe2file
-_file_zmagic
-_file_is_tar
-_prpsoffsets64
-_prpsoffsets32
-_os_style_names
-_cap_desc_386
-_cap_desc_sparc
-_dophn_core
-_dophn_exec
-_file_tryelf
-_file_magwarn
-_file_mdump
-_file_fmttime
-_bad_link
-_handle_mime
-_file_fsmagic
-_file_error_core
-_file_vprintf
-_file_printf
-_file_magerror
-_file_oomem
-_file_badseek
-_file_badread
-_file_buffer
-_file_reset
-_file_getbuffer
-_file_check_mem
-_file_error
-_cdf_tole2
-_cdf_tole4
-_cdf_tole8
-_cdf_swap_header
-_cdf_unpack_header
-_cdf_swap_dir
-_cdf_swap_class
-_cdf_unpack_dir
-_cdf_check_stream_offset
-_cdf_read
-_cdf_read_header
-_cdf_read_sector
-_cdf_read_short_sector
-_cdf_read_sat
-_cdf_count_chain
-_cdf_read_long_sector_chain
-_cdf_read_short_sector_chain
-_cdf_read_sector_chain
-_cdf_read_dir
-_cdf_read_ssat
-_cdf_read_short_stream
-_cdf_read_summary_info
-_cdf_read_property_info
-_cdf_unpack_summary_info
-_cdf_print_classid
-_cdf_print_property_name
-_cdf_print_elapsed_time
-_cdf_timestamp_to_timespec
-_cdf_timespec_to_timestamp
-_file_trycdf
-___divdi3
-___udivdi3
-___umoddi3
-___moddi3
-___dllMain
-_storedPtr
-_storedReason
-_storedHandle
-__cygwin_dll_entry@12
-_dll_index
-__cygwin_noncygwin_dll_entry@12
-_DllMain@12
-_cygwin_attach_dll
-__cygwin_crt0_common@8
-_do_pseudo_reloc
-__pei386_runtime_relocator
-_cygwin_premain3
-_cygwin_premain2
-_cygwin_premain1
-_cygwin_premain0
-___RUNTIME_PSEUDO_RELOC_LIST__
-__imp___daylight
-__imp__read
-__imp__getenv
-__imp__utimes
-__data_start__
-___DTOR_LIST__
-__imp__mkstemp
-__nm___impure_ptr
-__imp__posix_regerror
-__imp__fstat
-__imp__fcntl
-__imp__strtod
-__imp__regcomp
-___tls_start__
-__imp__waitpid
-__imp__opendir
-__imp__regerror
-__imp__cygwin_detach_dll
-__imp__abort
-__size_of_stack_commit__
-__size_of_stack_reserve__
-__major_subsystem_version__
-___crt_xl_start__
-__imp__posix_regexec
-__imp__strndup
-_closedir
-___crt_xi_start__
-___chkstk
-__imp__mbrtowc
-___crt_xi_end__
-__head_cygz_dll
-__imp__lstat
-_posix_regcomp
-_asprintf
-_file_nformats
-_dll_dllcrt0
-_strtoull
-__imp__open
-___assert
-__fu0___daylight
-_GetModuleHandleA@4
-__imp__strstr
-_file_formats
-__imp__strncmp
-__imp__strtoul
-__imp__vasprintf
-__imp__strdup
-__imp__strtoull
-__imp___lstat64
-__bss_start__
-__imp__fputc
-___RUNTIME_PSEUDO_RELOC_LIST_END__
-__imp__write
-__imp__asprintf
-__size_of_heap_commit__
-__imp__access
-__imp__readlink
-__lseek64
-__imp__inflateInit2_
-___crt_xp_start__
-__imp__pipe
-_posix_regerror
-__lstat64
-___crt_xp_end__
-__imp__stat
-__minor_os_version__
-__imp__lseek
-__image_base__
-__imp__exit
-__section_alignment__
-__imp__readdir
-__imp___impure_ptr
-_posix_regfree
-_cygwin_internal
-_vasprintf
-__RUNTIME_PSEUDO_RELOC_LIST__
-__imp__memchr
-__nm___daylight
-_strerror
-__imp__qsort
-__imp__closedir
-_iswprint
-__imp__inflate
-__imp__mmap
-__data_end__
-__CTOR_LIST__
-__bss_end__
-__imp__posix_regcomp
-___crt_xc_end__
-__imp__asctime
-___crt_xc_start__
-__imp__regfree
-__imp__fgets
-__fopen64
-__imp__strchr
-___CTOR_LIST__
-__imp__regexec
-___getreent
-__imp___ctype_
-__imp___open64
-_cygwin1_dll_iname
-__imp__memcpy
-__head_cygwin1_dll
-__file_alignment__
-_inflateInit2_
-__imp__strrchr
-__imp__malloc
-_cygwin_detach_dll
-__major_os_version__
-__imp__dll_dllcrt0
-__imp__gmtime
-__imp__ctime
-__imp__realloc
-__imp___fcntl64
-__imp__mktime
-_posix_regexec
-__imp____getreent
-_snprintf
-__imp__GetModuleHandleA@4
-__imp__strtof
-__DTOR_LIST__
-_file_names
-__imp__fprintf
-__imp____assert
-__imp__memset
-__imp__fclose
-__imp__close
-__size_of_heap_reserve__
-___crt_xt_start__
-__imp__execvp
-___ImageBase
-__subsystem__
-__imp__strlen
-__imp__fflush
-__imp__strtol
-__imp___stat64
-__imp__calloc
-__fcntl64
-__fstat64
-__imp__strlcat
-__imp___fstat64
-__imp____errno
-__imp__fopen
-__imp__iswprint
-_cygz_dll_iname
-__imp__cygwin_internal
-___tls_end__
-__imp__dup2
-__imp__munmap
-__imp__strerror
-_readlink
-__imp___fopen64
-__imp__posix_regfree
-__imp__free
-__imp__snprintf
-__major_image_version__
-__loader_flags__
-__imp__strlcpy
-__head_libkernel32_a
-__minor_subsystem_version__
-__minor_image_version__
-__imp__vfprintf
-__nm_thnk___daylight
-__imp__unlink
-__imp__dup
-__imp__inflateEnd
-__imp__strcspn
-__imp___mmap64
-_inflateEnd
-__RUNTIME_PSEUDO_RELOC_LIST_END__
-__libkernel32_a_iname
-__imp___lseek64
-__nm___ctype_
-_file_nnames
-_regerror
-__imp__fork
-___crt_xt_end__
-_vfprintf
-__imp__fwrite
+[
+  "!This program cannot be run in DOS mode.\r\r\n$",
+  ".text",
+  ".data",
+  ".rdata",
+  ".edata",
+  "0@.idata",
+  ".reloc",
+  "0B.stab",
+  ".stabstr",
+  "T0Qj",
+  "d1Qj",
+  "xta1",
+  "45Qj",
+  "46Qj",
+  "R6Qj",
+  "i6Qj",
+  "77Qj",
+  "i6Qj",
+  "G7Qj",
+  "X7Qj",
+  "x7Qj",
+  "@GQjsA",
+  "@GQjr",
+  "GGQj",
+  "GGQj",
+  "JGQj",
+  "JGQj",
+  "NGQj",
+  "UGQj",
+  "YGQj",
+  "kGQj",
+  "3HQj",
+  "AHQj",
+  "GHQj",
+  "PHQj",
+  "AHQj",
+  "tHQj",
+  "DKQj",
+  "IQj;M",
+  "IQj9",
+  "iKQj",
+  "oKQj",
+  "xKQj",
+  "oKQj",
+  "hLQj",
+  "nLQj",
+  "5QQj",
+  "KQQj",
+  "UQQj",
+  "eQQj",
+  "oQQj",
+  "eQQj",
+  "8SQj",
+  "8RQj",
+  "bRQj",
+  "iRQj",
+  "4TQj",
+  "KTQj",
+  "YTQj",
+  "pTQj",
+  "UQjt!",
+  "7UQj",
+  "AUQj",
+  "CUQj",
+  "DUQj",
+  "JUQj",
+  "QUQj",
+  "UUQj",
+  "bUQj",
+  "iUQj",
+  "mUQj",
+  "UUQj",
+  "qUQj",
+  "UUQj",
+  "tUQj",
+  "wUQj",
+  "_VQjt",
+  "wVQj",
+  "WQjtu",
+  ">WQjt,",
+  "$HWQj",
+  "TWQj",
+  "eWQj",
+  "mWQj",
+  "uWQjt",
+  "XQjt",
+  "XQjt",
+  "YQjt",
+  "6YQj",
+  "GYQj",
+  "RYQj",
+  "eYQj",
+  "mYQj",
+  "uYQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "E 9A8v#",
+  "0pQj",
+  "0pQj",
+  "=0pQj",
+  "0pQj",
+  "0pQj",
+  "0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "=0pQj",
+  "0pQj",
+  "=0pQj",
+  "=0pQj",
+  "PpQj",
+  "ppQj",
+  "ppQj",
+  "PpQj",
+  "ppQj@",
+  "4qQj",
+  "C$0qQj",
+  "4qQj",
+  "Pj\r&Qj",
+  "abcdefghi",
+  "jklmnopqr^",
+  "stuvwxyz",
+  "{ABCDEFGHI",
+  "}JKLMNOPQR",
+  "STUVWXYZ",
+  "@(#)$File: magic.c,v 1.62 2009/03/20 21:25:41 christos Exp $",
+  "unknown",
+  "writable,",
+  "no read permission",
+  "executable,",
+  "regular file,",
+  "cannot read `%s'",
+  "@(#)$File: apprentice.c,v 1.151 2009/03/18 15:19:23 christos Exp $",
+  "byte",
+  "short",
+  "default",
+  "long",
+  "string",
+  "date",
+  "beshort",
+  "belong",
+  "bedate",
+  "leshort",
+  "lelong",
+  "ledate",
+  "pstring",
+  "ldate",
+  "beldate",
+  "leldate",
+  "regex",
+  "bestring16",
+  "lestring16",
+  "search",
+  "medate",
+  "meldate",
+  "melong",
+  "quad",
+  "lequad",
+  "bequad",
+  "qdate",
+  "leqdate",
+  "beqdate",
+  "qldate",
+  "leqldate",
+  "beqldate",
+  "float",
+  "befloat",
+  "lefloat",
+  "double",
+  "bedouble",
+  "ledouble",
+  "leid3",
+  "beid3",
+  "indirect",
+  "cont\toffset\ttype\topcode\tmask\tvalue\tdesc",
+  "mime",
+  "apple",
+  "strength",
+  "Bad relation %c",
+  "Bad type %d",
+  "Pjcannot happen: m->type=%d",
+  "PjUnknown factor op `%c'",
+  "Cannot have factor op `%c' and factor %u",
+  "Bad factor `%s'",
+  "Current entry already has a strength type: %c %d",
+  "Too large factor `%lu'",
+  "APPLE type `%s' truncated %zu",
+  "Current entry already has a APPLE type `%.8s', new type `%s'",
+  "MIME type `%s' truncated %zu",
+  "Current entry already has a MIME type `%s', new type `%s'",
+  "elif",
+  "else",
+  "type `%s' invalid",
+  "No current entry for :!%s type",
+  "offset `%s' invalid",
+  "No current entry for continuation",
+  "missing ')' in indirect offset",
+  "in_offset `%s' invalid",
+  "invalid string op: %c",
+  "syntax error: `if'",
+  "syntax error: `elif'",
+  "syntax error: `else'",
+  "relative offset at level 0",
+  "cannot read magic file `%s'",
+  "Unknown !: entry `%s'",
+  "'~' invalid for string types",
+  "indirect offset type `%c' invalid",
+  "zero range",
+  "string extension `%c' invalid",
+  "coding error: m->type=%d",
+  "description `%s' truncated",
+  "Printf format `%c' is not valid for type `%s' in description `%s'",
+  "incomplete escape",
+  "cannot get string from `%s'",
+  "no need to escape `%c'",
+  "string too long: `%s'",
+  "%c= not supported",
+  "unknown escape sequence: \\%03o",
+  "multiple ranges",
+  "No format string for `%s' with description `%s'",
+  "Internal error inconsistency between m->type and format strings",
+  "Too many format strings (should have at most one) for `%s' with description `%s'",
+  "escaped tab found, use \\t instead",
+  "missing range; defaulting to %d",
+  "no modifiers allowed for 16-bit strings",
+  "'/%c' not allowed on regex",
+  "'/%c' only allowed on regex and search",
+  "'Pj40Pj40Pj40Pj",
+  "0Pj%0Pj",
+  "0Pjf0Pjf0Pjf0Pj",
+  "-Pjv-Pj",
+  "-Pjj-Pj^-Pj",
+  "-Pj%-Pj",
+  "8PjC0PjC0PjC0PjC0PjC0PjC0PjC0Pj",
+  "8PjC0PjC0PjC0Pjf8Pj98Pj98Pj",
+  "3Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pj",
+  "7Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjA1PjA1Pjz4Pjz4Pjz4Pjz4PjA1Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjM7PjM7PjM7PjM7PjM7PjM7PjM7PjM7Pjz4Pjz4Pjz4Pjz4PjA1PjA1PjA1Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4PjA1Pjz4PjA1Pjz4Pjz4Pj",
+  "7Pjz4Pjz4Pjz4Pj",
+  "7Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pjz4Pj",
+  "7Pjz4Pjz4Pjz4PjX9Pjz4PjO9Pjz4PjC9Pjz4Pj",
+  "8Pj35Pj",
+  "5Pjy6Pj",
+  "3Pjy6Pjy6Pj",
+  "7Pjy6Pj",
+  "3Pj07Pj",
+  "3Pjy6Pj",
+  "3Pjy6Pjy6Pj",
+  "3Pjy6Pj",
+  "3Pjy6Pj",
+  "3Pjy6Pj",
+  "3Pjy6Pjtext",
+  "binary",
+  "(no description)",
+  "*** Possible binary test for text type",
+  "level 0 \"default\" did not sort last",
+  "<Pjp<Pj",
+  "<Pjp<Pj",
+  "<Pj%.3o",
+  "`APjHAPj0APj",
+  "@Pj%.*s%s",
+  ".mime",
+  "%.*s.mime%s",
+  "apprentice.c",
+  "p->type < FILE_NAMES_SIZE",
+  "magic element size %lu != %lu",
+  "file `%s' is too small",
+  "error writing `%s'",
+  "File %d.%d supports only version %d magic files. `%s' is version %d",
+  "bad magic in `%s'",
+  "using regular magic file `%s'",
+  "cannot stat `%s'",
+  "MAGIC",
+  "/cygdrive/d/file-5.03/zhangyu/share/misc/magic",
+  "cannot map `%s'",
+  "cannot open `%s'",
+  "could not find any magic files!",
+  "error seeking `%s'",
+  "@(#)$File: softmagic.c,v 1.135 2009/03/27 22:42:49 christos Exp $",
+  "regex error %d, (%s)",
+  "MPj3NPj+NPj&NPj",
+  "NPjDNPj",
+  "NPj+NPj",
+  "NPj+NPj",
+  "NPjDNPj",
+  "NPjcNPjDNPjDNPj9NPj",
+  "MPj&NPjinvalid m->type (%d) in mprint()",
+  "QPj2OPj",
+  "OPjkPPj",
+  "SPj'TPj'TPj'TPj",
+  "SPjRSPjRSPjRSPj",
+  "RPjZSPjZSPjZSPj",
+  "OPj\\OPj}VPj",
+  "VPj2VPjkVPj",
+  "WPj@WPjGWPjNWPjUWPj`WPjlWPj5WPj",
+  "XPj/XPjEXPj",
+  "WPj^XPjnXPj",
+  "_mget @%d:",
+  "invalid offset %u in mcopy()",
+  "invalid type %d in magiccheck()",
+  "cannot happen: invalid relation `%c'",
+  "%llu > %llu = %d",
+  "%llu == %llu = %d",
+  "%llu < %llu = %d",
+  "((%llx & %llx) != %llx) = %d",
+  "((%llx & %llx) == %llx) = %d",
+  "cannot happen with double: invalid relation `%c'",
+  "cannot happen with float: invalid relation `%c'",
+  "%llu != %llu = %d",
+  "regexec error %d, (%s)",
+  "%lld > %lld = %d",
+  "%lld < %lld = %d",
+  "%llu == *any* = 1",
+  "_PjG_Pj",
+  "_Pj9bPj",
+  "invalid type %d in mconvert()",
+  "nPjYrPj",
+  "nPj,rPj\rsPj",
+  "rPj\rsPj",
+  "oPj7pPj",
+  "sPj7pPj",
+  "pPj_sPj7pPj",
+  "sPj&qPj",
+  "sPj&qPj",
+  "sPj&qPj",
+  "qPj:sPj",
+  "pPj tPjGpPj",
+  "mPj`uPj",
+  "mPjKuPj",
+  "mPj6uPjguPj",
+  "uPjguPjezPj[zPjzzPjozPjQzPjFzPj",
+  "yPjK{Pj6{Pj!{Pj",
+  "{Pjw{Pjm{Pj`{Pj",
+  "wPj\\wPj9wPj",
+  "xPjzxPjcxPjKxPj1xPj",
+  "yPj#zPj",
+  "yPjqyPjNyPj)yPj",
+  "vPjYvPj/vPj\nvPj",
+  "@(#)$File: ascmagic.c,v 1.75 2009/02/03 20:27:51 christos Exp $",
+  "C program",
+  "text/x-c",
+  "C++ program",
+  "text/x-c++",
+  "make commands",
+  "text/x-makefile",
+  "PL/1 program",
+  "text/x-pl1",
+  "assembler program",
+  "text/x-asm",
+  "English",
+  "text/plain",
+  "Pascal program",
+  "text/x-pascal",
+  "mail",
+  "text/x-mail",
+  "news",
+  "text/x-news",
+  "Java program",
+  "text/x-java",
+  "HTML document",
+  "text/html",
+  "BCPL program",
+  "text/x-bcpl",
+  "M4 macro language pre-processor",
+  "text/x-m4",
+  "PO (gettext message catalogue)",
+  "text/x-po",
+  "cannot happen error on names.h/types",
+  "error/x-error",
+  "msgid",
+  "import",
+  "\"libhdr\"",
+  "\"LIBHDR\"",
+  "template",
+  "virtual",
+  "class",
+  "public:",
+  "private:",
+  "#include",
+  "char",
+  "double",
+  "extern",
+  "float",
+  "struct",
+  "union",
+  "CFLAGS",
+  "LDFLAGS",
+  ".PRECIOUS",
+  ".ascii",
+  ".asciiz",
+  ".byte",
+  ".even",
+  ".globl",
+  ".text",
+  "(input,",
+  "program",
+  "record",
+  "Received:",
+  ">From",
+  "Return-Path:",
+  "Newsgroups:",
+  "Path:",
+  "Organization:",
+  "href=",
+  "HREF=",
+  "<body",
+  "<BODY",
+  "<html",
+  "<HTML",
+  "binary",
+  ", with",
+  "line terminators",
+  ", with overstriking",
+  "text/plain",
+  ", with very long lines",
+  ", with escape sequences",
+  "CRLF",
+  "@(#)$File: encoding.c,v 1.3 2009/02/03 20:27:51 christos Exp $",
+  "text",
+  "ASCII",
+  "us-ascii",
+  "UTF-8 Unicode",
+  "utf-8",
+  "ISO-8859",
+  "iso-8859-1",
+  "UTF-8 Unicode (with BOM)",
+  "Non-ISO extended-ASCII",
+  "unknown-8bit",
+  "EBCDIC",
+  "ebcdic",
+  "Big-endian UTF-16 Unicode",
+  "utf-16be",
+  "International EBCDIC",
+  "binary",
+  "Little-endian UTF-16 Unicode",
+  "utf-16le",
+  "@(#)$File: compress.c,v 1.63 2009/03/23 14:21:51 christos Exp $",
+  "gzip",
+  "uncompress",
+  "bzip2",
+  "lzip",
+  "`IQjeIQj",
+  "jIQjuIQj",
+  "`IQjeIQj",
+  "`IQjeIQj",
+  "`IQjeIQj",
+  "`IQjeIQj",
+  "`IQjeIQj",
+  "xIQj~IQj",
+  "LZIP",
+  "IQjeIQj",
+  "7zXZ",
+  "IQj~IQj",
+  "/tmp/file.XXXXXX",
+  "error while writing to temp file",
+  "cannot create temporary file for pipe copy",
+  "could not dup descriptor for temp file",
+  "error copying from pipe to temp file",
+  "zlib: %s",
+  "compressed-encoding=",
+  "cannot create pipe",
+  "could not fork",
+  "@(#)$File: is_tar.c,v 1.36 2009/02/03 20:27:51 christos Exp $",
+  "tar archive",
+  "POSIX tar archive",
+  "POSIX tar archive (GNU)",
+  "ustar",
+  "ustar",
+  "application/x-tar",
+  "@(#)$File: readelf.c,v 1.81 2008/11/04 16:38:28 christos Exp $",
+  "SVR4",
+  "FreeBSD",
+  "NetBSD",
+  "AMD_SYSC",
+  "CMOV",
+  "AMD_MMX",
+  "AMD_3DNow",
+  "AMD_3DNowx",
+  "FXSR",
+  "SSE2",
+  "PAUSE",
+  "SSE3",
+  "CX16",
+  "TSCP",
+  "AMD_SSE4A",
+  "POPCNT",
+  "AMD_LZCNT",
+  "SSSE3",
+  "SSE4.1",
+  "SSE4.2",
+  "0MQj",
+  "9MQj",
+  "BMQj",
+  "JMQj",
+  "TMQj",
+  "dMQj",
+  "hMQj",
+  "mMQj",
+  "sMQj",
+  "xMQj",
+  "MUL32",
+  "DIV32",
+  "FSMULD",
+  "V8PLUS",
+  "POPC",
+  "VIS2",
+  "ASI_BLK_INIT",
+  "FMAF",
+  "FJFMAU",
+  "fOQj",
+  "lOQj",
+  "sOQj",
+  "zOQj",
+  "NetBSD-CORE",
+  ", from '%.*s'",
+  ", bad note name size 0x%lx",
+  "NetBSD",
+  ", for NetBSD",
+  ", bad note description size 0x%lx",
+  "CORE",
+  "FreeBSD",
+  ", for GNU/",
+  ", from '%.31s'",
+  "(signal %u)",
+  ", %s-style",
+  "OpenBSD",
+  ", for OpenBSD",
+  "DragonFly",
+  ", for DragonFly",
+  ", for FreeBSD",
+  "<unknown>",
+  "kNetBSD",
+  "kFreeBSD",
+  "Solaris",
+  "Hurd",
+  "Linux",
+  "Pj, corrupted program header size",
+  ", corrupted section header size",
+  ", %sstripped",
+  ", with unknown capability 0x%llx = 0x%llx",
+  ", uses",
+  ", uses frame pointer",
+  ", not known to use frame pointer",
+  ", with unknown software capability 0x%llx",
+  "unknown hardware capability 0x%llx",
+  "hardware capability 0x%llx",
+  "Cannot allocate memory for note",
+  "Pjstatically",
+  "dynamically",
+  ", %s linked%s",
+  "(uses shared libs)",
+  ", invalid note alignment 0x%lx",
+  ", unknown class %d",
+  "@(#)$File: print.c,v 1.66 2009/02/03 20:27:51 christos Exp $",
+  "Warning:",
+  "*Invalid time*",
+  "%.8llx",
+  "@(#)$File: fsmagic.c,v 1.59 2009/02/03 20:27:51 christos Exp $",
+  "symbolic link in a loop",
+  "broken symbolic link to `%s'",
+  "application/x-symlink",
+  "binary",
+  "application/%s",
+  "; charset=",
+  "cannot open `%s' (%s)",
+  "fifo (named pipe)",
+  "x-fifo",
+  "sticky",
+  "empty",
+  "x-empty",
+  "block special",
+  "x-block-device",
+  "invalid mode 0%o",
+  "directory",
+  "x-directory",
+  "cannot stat `%s'",
+  "setuid",
+  "setgid",
+  "character special",
+  "x-character-device",
+  "x-path-too-long",
+  "socket",
+  "x-socket",
+  "unreadable symlink `%s' (%s)",
+  "x-symlink",
+  "path too long: `%s'",
+  "symbolic link to `%s'",
+  "unreadable symlink `%s'",
+  "@(#)$File: funcs.c,v 1.53 2009/04/07 11:07:00 christos Exp $",
+  "line %u:",
+  "vasprintf failed",
+  "cannot allocate %zu bytes",
+  "error seeking",
+  "error reading",
+  "binary",
+  "empty",
+  "application/x-empty",
+  "data",
+  "application/octet-stream",
+  "very short file (no magic)",
+  "ascmagic/enc %d",
+  "; charset=",
+  "zmagic %d",
+  "tar %d",
+  "cdf %d",
+  "elf %d",
+  "ascmagic %d",
+  "softmagic %d",
+  "no magic files loaded",
+  "@(#)$File: apptype.c,v 1.11 2009/02/04 18:24:32 christos Exp $",
+  "@(#)$File: cdf.c,v 1.30 2009/05/06 14:29:47 christos Exp $",
+  "Code page",
+  "Title",
+  "Subject",
+  "Author",
+  "Keywords",
+  "Comments",
+  "Template",
+  "Last Saved By",
+  "Revision Number",
+  "Total Editing Time",
+  "Last Printed",
+  "Create Time/Date",
+  "Last Saved Time/Date",
+  "Number of Pages",
+  "Number of Words",
+  "Number of Characters",
+  "Thumbnail",
+  "Name of Creating Application",
+  "Security",
+  "Locale ID",
+  "EZQj",
+  "KZQj",
+  "SZQj",
+  "ZZQj",
+  "cZQj",
+  "lZQj",
+  "uZQj",
+  ">[Qjcdf.c",
+  "(size_t)CDF_SEC_SIZE(h) == len",
+  "(size_t)CDF_SHORT_SEC_SIZE(h) == len",
+  "SummaryInformation",
+  "Pj%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x",
+  "@(#)$File: cdf_time.c,v 1.6 2009/03/10 11:44:29 christos Exp $",
+  "@(#)$File: readcdf.c,v 1.18 2009/05/06 20:48:22 christos Exp $",
+  "vnd.ms-office",
+  "Cannot read short stream",
+  "CDF V2 Document",
+  ", corrupt: %s",
+  "Can't read SAT",
+  "Can't read SSAT",
+  "Can't read directory",
+  "application/%s",
+  "Cannot read summary info",
+  "Can't expand summary_info",
+  "Little",
+  ", %s Endian",
+  ", Os %d, Version: %d.%d",
+  "Word",
+  "msword",
+  ", Os: Windows, Version %d.%d",
+  ", Os: MacOS, Version %d.%d",
+  "Excel",
+  "vnd.ms-excel",
+  "Powerpoint",
+  "vnd.ms-powerpoint",
+  "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFG",
+  "cygmagic-1.dll",
+  "cdf_count_chain",
+  "cdf_print_classid",
+  "cdf_print_elapsed_time",
+  "cdf_print_property_name",
+  "cdf_read_dir",
+  "cdf_read_header",
+  "cdf_read_long_sector_chain",
+  "cdf_read_property_info",
+  "cdf_read_sat",
+  "cdf_read_sector",
+  "cdf_read_sector_chain",
+  "cdf_read_short_sector",
+  "cdf_read_short_sector_chain",
+  "cdf_read_short_stream",
+  "cdf_read_ssat",
+  "cdf_read_summary_info",
+  "cdf_swap_class",
+  "cdf_swap_dir",
+  "cdf_swap_header",
+  "cdf_timespec_to_timestamp",
+  "cdf_timestamp_to_timespec",
+  "cdf_tole2",
+  "cdf_tole4",
+  "cdf_tole8",
+  "cdf_unpack_dir",
+  "cdf_unpack_header",
+  "cdf_unpack_summary_info",
+  "file_apprentice",
+  "file_ascmagic",
+  "file_ascmagic_with_encoding",
+  "file_badread",
+  "file_badseek",
+  "file_buffer",
+  "file_check_mem",
+  "file_delmagic",
+  "file_encoding",
+  "file_error",
+  "file_fmttime",
+  "file_formats",
+  "file_fsmagic",
+  "file_getbuffer",
+  "file_is_tar",
+  "file_looks_utf8",
+  "file_magerror",
+  "file_magwarn",
+  "file_mdump",
+  "file_names",
+  "file_nformats",
+  "file_nnames",
+  "file_oomem",
+  "file_pipe2file",
+  "file_printf",
+  "file_reset",
+  "file_showstr",
+  "file_signextend",
+  "file_softmagic",
+  "file_trycdf",
+  "file_tryelf",
+  "file_vprintf",
+  "file_zmagic",
+  "magic_buffer",
+  "magic_check",
+  "magic_close",
+  "magic_compile",
+  "magic_descriptor",
+  "magic_errno",
+  "magic_error",
+  "magic_file",
+  "magic_load",
+  "magic_open",
+  "magic_setflags",
+  "sread",
+  "__assert",
+  "__errno",
+  "__getreent",
+  "_ctype_",
+  "_daylight",
+  "_fcntl64",
+  "_fopen64",
+  "_fstat64",
+  "_impure_ptr",
+  "_lseek64",
+  "_lstat64",
+  "_mmap64",
+  "_open64",
+  "_stat64",
+  "abort",
+  "access",
+  "asctime",
+  "asprintf",
+  "calloc",
+  "close",
+  "closedir",
+  "ctime",
+  "cygwin_detach_dll",
+  "cygwin_internal",
+  "dll_dllcrt0",
+  "dup2",
+  "execvp",
+  "exit",
+  "fclose",
+  "fflush",
+  "fgets",
+  "fork",
+  "fprintf",
+  "fputc",
+  "free",
+  "fwrite",
+  "getenv",
+  "gmtime",
+  "iswprint",
+  "malloc",
+  "mbrtowc",
+  "memchr",
+  "memcpy",
+  "memset",
+  "mkstemp",
+  "mktime",
+  "munmap",
+  "opendir",
+  "pipe",
+  "posix_regcomp",
+  "posix_regerror",
+  "posix_regexec",
+  "posix_regfree",
+  "qsort",
+  "read",
+  "readdir",
+  "readlink",
+  "realloc",
+  "snprintf",
+  "strchr",
+  "strcspn",
+  "strdup",
+  "strerror",
+  "strlcat",
+  "strlcpy",
+  "strlen",
+  "strncmp",
+  "strndup",
+  "strrchr",
+  "strstr",
+  "strtod",
+  "strtof",
+  "strtol",
+  "strtoul",
+  "strtoull",
+  "unlink",
+  "utimes",
+  "vasprintf",
+  "vfprintf",
+  "waitpid",
+  "write",
+  "_fcntl64",
+  "_fopen64",
+  "_fstat64",
+  "_lseek64",
+  "_lstat64",
+  "_mmap64",
+  "_open64",
+  "posix_regcomp",
+  "posix_regerror",
+  "posix_regexec",
+  "posix_regfree",
+  "_stat64",
+  "inflate",
+  "inflateEnd",
+  "inflateInit2_",
+  "GetModuleHandleA",
+  "cygwin1.dll",
+  "cygz.dll",
+  "KERNEL32.dll",
+  "7)8K8",
+  "1V1@2a2",
+  "333R3",
+  "5 5<5W5f5",
+  "2;2O2o2z2",
+  "9 :H:a:u:",
+  "4:5t5",
+  "9d:l:t:|:",
+  "1(2U2",
+  "181Z1",
+  "1!2B2J2n2",
+  "333Z3",
+  "8$9*9W9",
+  "1T2i2s213",
+  "869t9",
+  "1M2]5",
+  "0\"0B0z0",
+  "0,1N1l1",
+  "3?3H3^3",
+  "5Q6c6",
+  "8)9;9F9",
+  "=1W1s1",
+  "232I2_2u2",
+  "3B3b3",
+  "4<4Z4x4",
+  "646P6l6",
+  "7:7j7",
+  "8L8\\8p8",
+  "6f7g8H9",
+  "0&0=0b1",
+  "8&9k9",
+  ";%;A;c;j;s;",
+  "4\"525B5R5b5r5",
+  "6\"626B6R6b6r6",
+  "7\"727B7R7b7r7",
+  "8\"828B8R8b8r8",
+  "9\"929B9R9b9r9",
+  "<6@6D6H6L6P6T6X6\\6`6d6h6l6p6t6x6|6",
+  "7 7$7(7,7074787<7@7D7H7L7P7T7X7\\7`7d7h7l7p7t7x7|7",
+  "8 8$8(8,8084888<8@8D8H8L8P8T8X8",
+  "9 9$9(9,9094989<9@9D9H9L9P9T9X9\\9`9d9h9l9p9t9x9|9",
+  "? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\\?`?d?h?l?p?t?x?|?",
+  "0 0$0(0,0004080<0@0D0H0L0P0T0X0\\0`0d0h0l0p0t0x0|0",
+  "1 1$1(1,1014181<1@1D1H1L1P1T1X1\\1`1d1h1l1p1t1x1|1",
+  "2 2$2(2,2024282<2@2D2H2L2P2T2X2\\2`2d2h2l2p2t2x2|2",
+  "3 3$3(3,3034383<3@3D3H3L3P3T3X3\\3`3d3h3l3p3t3x3|3",
+  "4 4$4(4,4044484<4@4D4H4L4P4T4X4\\4`4d4h4l4p4t4x4|4",
+  "44585<5@5D5H5L5P5T5X5\\5`5d5h5l5p5t5x5|5",
+  "8 8$8(8,8084888<8@8D8H8L8P8T8X8\\8`8d8h8l8p8t8x8|8",
+  "9 9$9(9,9094989<9@9D9H9L9P9T9X9\\9`9d9h9l9p9t9x9|9",
+  "< <$<(<,<0<4<8<<<@<D<H<l<p<t<x<|<",
+  "= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\\=`=d=h=l=p=t=x=|=",
+  "> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\\>`>d>h>l>p>t>x>|>",
+  "? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\\?`?d?h?l?p?t?x?|?",
+  ": :8:<:T:X:p:t:",
+  ">(>8>H>X>h>x>",
+  "0(080H0X0h0",
+  "183<3@3D3H3L3P3T3X3\\3`3d3h3l3p3t3x3|3",
+  "6d;l;t;|;",
+  ";d<h<l<p<t<x<|<",
+  "= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\\=`=d=h=l=p=t=x=|=",
+  "PjBB",
+  "PjMB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "Pj4I",
+  "PjMI",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "p9PjBB",
+  "4QjPM",
+  "4QjrM",
+  "APjBB",
+  "CPjjN",
+  "`CPjBB",
+  "0LPj",
+  "0LPj$",
+  "0LPj",
+  "LPjBB",
+  "OPjBB",
+  "VPj&R",
+  "VPj&R",
+  "WPj&R",
+  "XPj&R",
+  "YPj&R",
+  "[PjBB",
+  "^PjBB",
+  "gPjBB",
+  "mPjBB",
+  "P|Pj V",
+  "|PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "IQj e",
+  "PjBB",
+  "Pj7h",
+  "Pj1s",
+  "Pj1s",
+  "Pj1s",
+  "Pj1s",
+  "Pj1s",
+  "LQj x",
+  "MQj]x",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjBB",
+  "PjjN",
+  "0pQj1",
+  "Pj1s",
+  "magic.c",
+  "/cygdrive/d/file-5.03/src/",
+  "gcc2_compiled.",
+  "int:t(0,1)=r(0,1);-2147483648;2147483647;",
+  "char:t(0,2)=r(0,2);0;127;",
+  "long int:t(0,3)=r(0,3);-2147483648;2147483647;",
+  "unsigned int:t(0,4)=r(0,4);0000000000000;0037777777777;",
+  "long unsigned int:t(0,5)=r(0,5);0000000000000;0037777777777;",
+  "long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",
+  "long long unsigned int:t(0,7)=@s64;r(0,7);0000000000000;01777777777777777777777;",
+  "short int:t(0,8)=@s16;r(0,8);-32768;32767;",
+  "short unsigned int:t(0,9)=@s16;r(0,9);0;65535;",
+  "signed char:t(0,10)=@s8;r(0,10);-128;127;",
+  "unsigned char:t(0,11)=@s8;r(0,11);0;255;",
+  "float:t(0,12)=r(0,1);4;0;",
+  "double:t(0,13)=r(0,1);8;0;",
+  "long double:t(0,14)=r(0,1);12;0;",
+  "complex int:t(0,15)=s8real:(0,1),0,32;imag:(0,1),32,32;;",
+  "complex float:t(0,16)=R3;8;0;",
+  "complex double:t(0,17)=R3;16;0;",
+  "complex long double:t(0,18)=R3;24;0;",
+  "void:t(0,19)=(0,19)",
+  "__builtin_va_list:t(0,20)=*(0,2)",
+  "_Bool:t(0,21)=@s8;-16",
+  "file.h",
+  "/usr/include/stdio.h",
+  "/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stddef.h",
+  "size_t:t(3,1)=(0,4)",
+  "/usr/lib/gcc/i686-pc-cygwin/3.4.4/include/stdarg.h",
+  "__gnuc_va_list:t(4,1)=(0,20)",
+  "/usr/include/sys/reent.h",
+  "/usr/include/sys/_types.h",
+  "/usr/include/sys/lock.h",
+  "_LOCK_T:t(7,1)=(7,2)=*(0,19)",
+  "_off_t:t(6,1)=(0,3)",
+  "_off64_t:t(6,2)=(0,6)",
+  "_ssize_t:t(6,3)=(0,1)",
+  "wint_t:t(8,1)=(0,4)",
+  "_mbstate_t:t(6,4)=(6,5)=s8__count:(0,1),0,32;__value:(6,6)=u4__wch:(8,1),0,32;__wchb:(6,7)=ar(6,8)=r(6,8);0000000000000;0037777777777;;0;3;(0,11),0,32;;,32,32;;",
+  "_flock_t:t(6,9)=(7,1)",
+  "_iconv_t:t(6,10)=(7,2)",
+  "__ULong:t(5,1)=(0,5)",
+  "_Bigint:T(5,2)=s24_next:(5,3)=*(5,2),0,32;_k:(0,1),32,32;_maxwds:(0,1),64,32;_sign:(0,1),96,32;_wds:(0,1),128,32;_x:(5,4)=ar(6,8);0;0;(5,1),160,32;;",
+  "__tm:T(5,5)=s36__tm_sec:(0,1),0,32;__tm_min:(0,1),32,32;__tm_hour:(0,1),64,32;__tm_mday:(0,1),96,32;__tm_mon:(0,1),128,32;__tm_year:(0,1),160,32;__tm_wday:(0,1),192,32;__tm_yday:(0,1),224,32;__tm_isdst:(0,1),256,32;;",
+  "_on_exit_args:T(5,6)=s264_fnargs:(5,7)=ar(6,8);0;31;(7,2),0,1024;_dso_handle:(5,7),1024,1024;_fntypes:(5,1),2048,32;_is_cxa:(5,1),2080,32;;",
+  "_atexit:T(5,8)=s400_next:(5,9)=*(5,8),0,32;_ind:(0,1),32,32;_fns:(5,10)=ar(6,8);0;31;(5,11)=*(5,12)=f(0,19),64,1024;_on_exit_args:(5,6),1088,2112;;",
+  "__sbuf:T(5,13)=s8_base:(5,14)=*(0,11),0,32;_size:(0,1),32,32;;",
+  "_fpos_t:t(5,15)=(0,3)",
+  "_fpos64_t:t(5,16)=(6,2)",
+  "__sFILE:T(5,17)=s92_p:(5,14),0,32;_r:(0,1),32,32;_w:(0,1),64,32;_flags:(0,8),96,16;_file:(0,8),112,16;_bf:(5,13),128,64;_lbfsize:(0,1),192,32;_cookie:(7,2),224,32;_read:(5,18)=*(5,19)=f(6,3),256,32;_write:(5,20)=*(5,21)=f(6,3),288,32;_seek:(5,22)=*(5,23)=f(5,15),320,32;_close:(5,24)=*(5,25)=f(0,1),352,32;_ub:(5,13),384,64;_up:(5,14),448,32;_ur:(0,1),480,32;_ubuf:(5,26)=ar(6,8);0;2;(0,11),512,24;_nbuf:(5,27)=ar(6,8);0;0;(0,11),536,8;_lb:(5,13),544,64;_blksize:(0,1),608,32;_offset:(0,1),640,32;_data:(5,28)=*(5,29)=xs_reent:,672,32;_lock:(6,9),704,32;;",
+  "__sFILE64:T(5,30)=s104_p:(5,14),0,32;_r:(0,1),32,32;_w:(0,1),64,32;_flags:(0,8),96,16;_file:(0,8),112,16;_bf:(5,13),128,64;_lbfsize:(0,1),192,32;_data:(5,28),224,32;_cookie:(7,2),256,32;_read:(5,18),288,32;_write:(5,20),320,32;_seek:(5,22),352,32;_close:(5,24),384,32;_ub:(5,13),416,64;_up:(5,14),480,32;_ur:(0,1),512,32;_ubuf:(5,26),544,24;_nbuf:(5,27),568,8;_lb:(5,13),576,64;_blksize:(0,1),640,32;_flags2:(0,1),672,32;_offset:(6,2),704,64;_seek64:(5,31)=*(5,32)=f(5,16),768,32;_lock:(6,9),800,32;;",
+  "__FILE:t(5,33)=(5,30)",
+  "_glue:T(5,34)=s12_next:(5,35)=*(5,34),0,32;_niobs:(0,1),32,32;_iobs:(5,36)=*(5,33),64,32;;",
+  "_rand48:T(5,37)=s14_seed:(5,38)=ar(6,8);0;2;(0,9),0,48;_mult:(5,38),48,48;_add:(0,9),96,16;;",
+  "_reent:T(5,29)=s1064_errno:(0,1),0,32;_stdin:(5,36),32,32;_stdout:(5,36),64,32;_stderr:(5,36),96,32;_inc:(0,1),128,32;_emergency:(5,39)=ar(6,8);0;24;(0,2),160,200;_current_category:(0,1),384,32;_current_locale:(5,40)=*(5,41)=k(0,2),416,32;__sdidinit:(0,1),448,32;__cleanup:(5,42)=*(5,43)=f(0,19),480,32;_result:(5,3),512,32;_result_k:(0,1),544,32;_p5s:(5,3),576,32;_freelist:(5,44)=*(5,3),608,32;_cvtlen:(0,1),640,32;_cvtbuf:(5,45)=*(0,2),672,32;_new:(5,46)=u240_reent:(5,47)=s208_unused_rand:(0,4),0,32;_strtok_last:(5,45),32,32;_asctime_buf:(5,48)=ar(6,8);0;25;(0,2),64,208;_localtime_buf:(5,5),288,288;_gamma_signgam:(0,1),576,32;_rand_next:(0,7),640,64;_r48:(5,37),704,112;_mblen_state:(6,4),832,64;_mbtowc_state:(6,4),896,64;_wctomb_state:(6,4),960,64;_l64a_buf:(5,49)=ar(6,8);0;7;(0,2),1024,64;_signal_buf:(5,50)=ar(6,8);0;23;(0,2),1088,192;_getdate_err:(0,1),1280,32;_mbrlen_state:(6,4),1312,64;_mbrtowc_state:(6,4),1376,64;_mbsrtowcs_state:(6,4),1440,64;_wcrtomb_state:(6,4),1504,64;_wcsrtombs_state:(6,4),1568,64;;,0,1664;_unused:(5,51)=s240_nextf:(5,52)=ar(6,8);0;29;(5,14),0,960;_nmalloc:(5,53)=ar(6,8);0;29;(0,4),960,960;;,0,1920;;,704,1920;_atexit:(5,9),2624,32;_atexit0:(5,8),2656,3200;_sig_func:(5,54)=*(5,55)=*(5,56)=f(0,19),5856,32;__sglue:(5,34),5888,96;__sf:(5,57)=ar(6,8);0;2;(5,33),6016,2496;;",
+  "/usr/include/sys/types.h",
+  "/usr/include/machine/_types.h",
+  "__int8_t:t(10,1)=(0,10)",
+  "__uint8_t:t(10,2)=(0,11)",
+  "__int16_t:t(10,3)=(0,8)",
+  "__uint16_t:t(10,4)=(0,9)",
+  "__int_least16_t:t(10,5)=(10,3)",
+  "__uint_least16_t:t(10,6)=(10,4)",
+  "__int32_t:t(10,7)=(0,1)",
+  "__uint32_t:t(10,8)=(0,4)",
+  "__int_least32_t:t(10,9)=(10,7)",
+  "__uint_least32_t:t(10,10)=(10,8)",
+  "__int64_t:t(10,11)=(0,6)",
+  "__uint64_t:t(10,12)=(0,7)",
+  "ptrdiff_t:t(11,1)=(0,1)",
+  "wchar_t:t(11,2)=(0,9)",
+  "/usr/include/machine/types.h",
+  "__off_t:t(12,1)=(0,3)",
+  "__pid_t:t(12,2)=(0,1)",
+  "__loff_t:t(12,3)=(0,6)",
+  "u_char:t(9,1)=(0,11)",
+  "u_short:t(9,2)=(0,9)",
+  "u_int:t(9,3)=(0,4)",
+  "u_long:t(9,4)=(0,5)",
+  "ushort:t(9,5)=(0,9)",
+  "uint:t(9,6)=(0,4)",
+  "clock_t:t(9,7)=(0,5)",
+  "time_t:t(9,8)=(0,3)",
+  "timespec:T(9,9)=s8tv_sec:(9,8),0,32;tv_nsec:(0,3),32,32;;",
+  "itimerspec:T(9,10)=s16it_interval:(9,9),0,64;it_value:(9,9),64,64;;",
+  "daddr_t:t(9,11)=(0,3)",
+  "caddr_t:t(9,12)=(5,45)",
+  "pid_t:t(9,13)=(0,1)",
+  "ssize_t:t(9,14)=(6,3)",
+  "nlink_t:t(9,15)=(0,9)",
+  "fd_mask:t(9,16)=(0,3)",
+  "_types_fd_set:T(9,17)=s8fds_bits:(9,18)=ar(6,8);0;1;(9,16),0,64;;",
+  "_types_fd_set:t(9,19)=(9,17)",
+  "clockid_t:t(9,20)=(0,5)",
+  "timer_t:t(9,21)=(0,5)",
+  "useconds_t:t(9,22)=(0,5)",
+  "suseconds_t:t(9,23)=(0,3)",
+  "/usr/include/cygwin/types.h",
+  "/usr/include/stdint.h",
+  "int8_t:t(14,1)=(0,10)",
+  "int16_t:t(14,2)=(0,8)",
+  "int32_t:t(14,3)=(0,3)",
+  "int64_t:t(14,4)=(0,6)",
+  "uint8_t:t(14,5)=(0,11)",
+  "uint16_t:t(14,6)=(0,9)",
+  "uint32_t:t(14,7)=(0,5)",
+  "uint64_t:t(14,8)=(0,7)",
+  "int_least8_t:t(14,9)=(0,10)",
+  "int_least16_t:t(14,10)=(0,8)",
+  "int_least32_t:t(14,11)=(0,3)",
+  "int_least64_t:t(14,12)=(0,6)",
+  "uint_least8_t:t(14,13)=(0,11)",
+  "uint_least16_t:t(14,14)=(0,9)",
+  "uint_least32_t:t(14,15)=(0,5)",
+  "uint_least64_t:t(14,16)=(0,7)",
+  "int_fast8_t:t(14,17)=(0,10)",
+  "int_fast16_t:t(14,18)=(0,3)",
+  "int_fast32_t:t(14,19)=(0,3)",
+  "int_fast64_t:t(14,20)=(0,6)",
+  "uint_fast8_t:t(14,21)=(0,11)",
+  "uint_fast16_t:t(14,22)=(0,5)",
+  "uint_fast32_t:t(14,23)=(0,5)",
+  "uint_fast64_t:t(14,24)=(0,7)",
+  "intptr_t:t(14,25)=(0,3)",
+  "uintptr_t:t(14,26)=(0,5)",
+  "intmax_t:t(14,27)=(0,6)",
+  "uintmax_t:t(14,28)=(0,7)",
+  "timespec_t:t(13,1)=(9,9)",
+  "timestruc_t:t(13,2)=(9,9)",
+  "off_t:t(13,3)=(6,2)",
+  "loff_t:t(13,4)=(12,3)",
+  "__dev16_t:t(13,5)=(0,8)",
+  "__dev32_t:t(13,6)=(0,5)",
+  "dev_t:t(13,7)=(13,6)",
+  "blksize_t:t(13,8)=(0,3)",
+  "__blkcnt32_t:t(13,9)=(0,3)",
+  "__blkcnt64_t:t(13,10)=(0,6)",
+  "blkcnt_t:t(13,11)=(13,10)",
+  "fsblkcnt_t:t(13,12)=(0,5)",
+  "fsfilcnt_t:t(13,13)=(0,5)",
+  "__uid16_t:t(13,14)=(0,9)",
+  "__uid32_t:t(13,15)=(0,5)",
+  "uid_t:t(13,16)=(13,15)",
+  "__gid16_t:t(13,17)=(0,9)",
+  "__gid32_t:t(13,18)=(0,5)",
+  "gid_t:t(13,19)=(13,18)",
+  "__ino32_t:t(13,20)=(0,5)",
+  "__ino64_t:t(13,21)=(0,7)",
+  "ino_t:t(13,22)=(13,21)",
+  "id_t:t(13,23)=(0,5)",
+  "flock:T(13,24)=s32l_type:(0,8),0,16;l_whence:(0,8),16,16;l_start:(13,3),64,64;l_len:(13,3),128,64;l_pid:(9,13),192,32;;",
+  "key_t:t(13,25)=(0,6)",
+  "vm_offset_t:t(13,26)=(0,5)",
+  "vm_size_t:t(13,27)=(0,5)",
+  "vm_object_t:t(13,28)=(7,2)",
+  "u_int8_t:t(13,29)=(0,11)",
+  "u_int16_t:t(13,30)=(10,4)",
+  "u_int32_t:t(13,31)=(10,8)",
+  "u_int64_t:t(13,32)=(10,12)",
+  "register_t:t(13,33)=(10,7)",
+  "addr_t:t(13,34)=(5,45)",
+  "mode_t:t(13,35)=(0,4)",
+  "__pthread_t:T(13,36)=s1__dummy:(0,2),0,8;;",
+  "pthread_t:t(13,37)=(13,38)=*(13,36)",
+  "__pthread_mutex_t:T(13,39)=s1__dummy:(0,2),0,8;;",
+  "pthread_mutex_t:t(13,40)=(13,41)=*(13,39)",
+  "__pthread_key_t:T(13,42)=s1__dummy:(0,2),0,8;;",
+  "pthread_key_t:t(13,43)=(13,44)=*(13,42)",
+  "__pthread_attr_t:T(13,45)=s1__dummy:(0,2),0,8;;",
+  "pthread_attr_t:t(13,46)=(13,47)=*(13,45)",
+  "__pthread_mutexattr_t:T(13,48)=s1__dummy:(0,2),0,8;;",
+  "pthread_mutexattr_t:t(13,49)=(13,50)=*(13,48)",
+  "__pthread_condattr_t:T(13,51)=s1__dummy:(0,2),0,8;;",
+  "pthread_condattr_t:t(13,52)=(13,53)=*(13,51)",
+  "__pthread_cond_t:T(13,54)=s1__dummy:(0,2),0,8;;",
+  "pthread_cond_t:t(13,55)=(13,56)=*(13,54)",
+  "pthread_once_t:t(13,57)=(13,58)=s8mutex:(13,40),0,32;state:(0,1),32,32;;",
+  "__pthread_rwlock_t:T(13,59)=s1__dummy:(0,2),0,8;;",
+  "pthread_rwlock_t:t(13,60)=(13,61)=*(13,59)",
+  "__pthread_rwlockattr_t:T(13,62)=s1__dummy:(0,2),0,8;;",
+  "pthread_rwlockattr_t:t(13,63)=(13,64)=*(13,62)",
+  "FILE:t(2,1)=(5,33)",
+  "fpos_t:t(2,2)=(5,16)",
+  "/usr/include/errno.h",
+  "error_t:t(15,1)=(0,1)",
+  "/usr/include/fcntl.h",
+  "/usr/include/sys/fcntl.h",
+  "eflock:T(17,1)=s24l_type:(0,8),0,16;l_whence:(0,8),16,16;l_start:(0,3),32,32;l_len:(0,3),64,32;l_pid:(0,8),96,16;l_xxx:(0,8),112,16;l_rpid:(0,3),128,32;l_rsys:(0,3),160,32;;",
+  "/usr/include/sys/stat.h",
+  "/usr/include/time.h",
+  "tm:T(19,1)=s36tm_sec:(0,1),0,32;tm_min:(0,1),32,32;tm_hour:(0,1),64,32;tm_mday:(0,1),96,32;tm_mon:(0,1),128,32;tm_year:(0,1),160,32;tm_wday:(0,1),192,32;tm_yday:(0,1),224,32;tm_isdst:(0,1),256,32;;",
+  "__tzrule_struct:T(19,2)=s28ch:(0,2),0,8;m:(0,1),32,32;n:(0,1),64,32;d:(0,1),96,32;s:(0,1),128,32;change:(9,8),160,32;offset:(0,3),192,32;;",
+  "__tzrule_type:t(19,3)=(19,2)",
+  "__tzinfo_struct:T(19,4)=s64__tznorth:(0,1),0,32;__tzyear:(0,1),32,32;__tzrule:(19,5)=ar(6,8);0;1;(19,3),64,448;;",
+  "__tzinfo_type:t(19,6)=(19,4)",
+  "/usr/include/signal.h",
+  "/usr/include/sys/signal.h",
+  "sigset_t:t(21,1)=(0,5)",
+  "/usr/include/cygwin/signal.h",
+  "_fpstate:T(22,1)=s112cw:(0,5),0,32;sw:(0,5),32,32;tag:(0,5),64,32;ipoff:(0,5),96,32;cssel:(0,5),128,32;dataoff:(0,5),160,32;datasel:(0,5),192,32;_st:(22,2)=ar(6,8);0;79;(0,11),224,640;nxst:(0,5),864,32;;",
+  "ucontext:T(22,3)=s212cr2:(0,5),0,32;dr0:(0,5),32,32;dr1:(0,5),64,32;dr2:(0,5),96,32;dr3:(0,5),128,32;dr6:(0,5),160,32;dr7:(0,5),192,32;fpstate:(22,1),224,896;gs:(0,5),1120,32;fs:(0,5),1152,32;es:(0,5),1184,32;ds:(0,5),1216,32;edi:(0,5),1248,32;esi:(0,5),1280,32;ebx:(0,5),1312,32;edx:(0,5),1344,32;ecx:(0,5),1376,32;eax:(0,5),1408,32;ebp:(0,5),1440,32;eip:(0,5),1472,32;cs:(0,5),1504,32;eflags:(0,5),1536,32;esp:(0,5),1568,32;ss:(0,5),1600,32;_internal:(0,11),1632,8;oldmask:(0,5),1664,32;;",
+  "sigval:T(22,4)=u4sival_int:(0,1),0,32;sival_ptr:(7,2),0,32;;",
+  "sigval_t:t(22,5)=(22,4)",
+  "sigevent:T(22,6)=s20sigev_value:(22,5),0,32;sigev_signo:(0,1),32,32;sigev_notify:(0,1),64,32;sigev_notify_function:(22,7)=*(22,8)=f(0,19),96,32;sigev_notify_attributes:(22,9)=*(13,46),128,32;;",
+  "sigevent_t:t(22,10)=(22,6)",
+  "_sigcommune:T(22,11)=s20_si_code:(10,8),0,32;_si_read_handle:(7,2),32,32;_si_write_handle:(7,2),64,32;_si_process_handle:(7,2),96,32;:(22,12)=u4_si_fd:(0,1),0,32;_si_pipe_fhandler:(7,2),0,32;_si_str:(5,45),0,32;;,128,32;;",
+  "siginfo_t:t(22,13)=(22,14)=s148si_signo:(0,1),0,32;si_code:(0,1),32,32;si_pid:(9,13),64,32;si_uid:(13,16),96,32;si_errno:(0,1),128,32;:(22,15)=u128__pad:(22,16)=ar(6,8);0;31;(10,8),0,1024;_si_commune:(22,11),0,160;:(22,17)=u8:(22,18)=s8:(22,19)=u8:(22,20)=s8si_tid:(9,21),0,32;si_overrun:(0,4),32,32;;,0,64;si_sigval:(22,5),0,32;si_value:(22,5),0,32;;,0,64;;,0,64;;,0,64;:(22,21)=s12si_status:(0,1),0,32;si_utime:(9,7),32,32;si_stime:(9,7),64,32;;,0,96;si_addr:(7,2),0,32;;,160,1024;;",
+  ":T(22,22)=eSI_USER:0,SI_ASYNCIO:2,SI_MESGQ:3,SI_TIMER:4,SI_QUEUE:5,SI_KERNEL:6,ILL_ILLOPC:7,ILL_ILLOPN:8,ILL_ILLADR:9,ILL_ILLTRP:10,ILL_PRVOPC:11,ILL_PRVREG:12,ILL_COPROC:13,ILL_BADSTK:14,FPE_INTDIV:15,FPE_INTOVF:16,FPE_FLTDIV:17,FPE_FLTOVF:18,FPE_FLTUND:19,FPE_FLTRES:20,FPE_FLTINV:21,FPE_FLTSUB:22,SEGV_MAPERR:23,SEGV_ACCERR:24,BUS_ADRALN:25,BUS_ADRERR:26,BUS_OBJERR:27,CLD_EXITED:28,CLD_KILLED:29,CLD_DUMPED:30,CLD_TRAPPED:31,CLD_STOPPED:32,CLD_CONTINUED:33,;",
+  ":T(22,23)=eSIGEV_SIGNAL:0,SIGEV_NONE:1,SIGEV_THREAD:2,;",
+  "_sig_func_ptr:t(22,24)=(5,55)",
+  "sigaction:T(22,25)=s12:(22,26)=u4sa_handler:(22,24),0,32;sa_sigaction:(22,27)=*(22,28)=f(0,19),0,32;;,0,32;sa_mask:(21,1),32,32;sa_flags:(0,1),64,32;;",
+  "sig_atomic_t:t(20,1)=(0,1)",
+  "/usr/include/cygwin/stat.h",
+  "stat:T(23,1)=s96st_dev:(13,7),0,32;st_ino:(13,22),64,64;st_mode:(13,35),128,32;st_nlink:(9,15),160,16;st_uid:(13,16),192,32;st_gid:(13,19),224,32;st_rdev:(13,7),256,32;st_size:(13,3),320,64;st_atim:(13,2),384,64;st_mtim:(13,2),448,64;st_ctim:(13,2),512,64;st_blksize:(13,8),576,32;st_blocks:(13,11),640,64;st_spare4:(23,2)=ar(6,8);0;1;(0,3),704,64;;",
+  "/usr/include/inttypes.h",
+  "imaxdiv_t:t(24,1)=(24,2)=s16quot:(14,27),0,64;rem:(14,27),64,64;;",
+  "/usr/include/regex.h",
+  "regoff_t:t(25,1)=(6,1)",
+  "regex_t:t(25,2)=(25,3)=s16re_magic:(0,1),0,32;re_nsub:(3,1),32,32;re_endp:(5,40),64,32;re_g:(25,4)=*(25,5)=xsre_guts:,96,32;;",
+  "regmatch_t:t(25,6)=(25,7)=s8rm_so:(25,1),0,32;rm_eo:(25,1),32,32;;",
+  "va_list:t(26,1)=(4,1)",
+  "VALUETYPE:T(1,1)=u32b:(14,5),0,8;h:(14,6),0,16;l:(14,7),0,32;q:(14,8),0,64;hs:(1,2)=ar(6,8);0;1;(14,5),0,16;hl:(1,3)=ar(6,8);0;3;(14,5),0,32;hq:(1,4)=ar(6,8);0;7;(14,5),0,64;s:(1,5)=ar(6,8);0;31;(0,2),0,256;us:(1,6)=ar(6,8);0;31;(0,11),0,256;f:(0,12),0,32;d:(0,13),0,64;;",
+  "magic:T(1,7)=s200cont_level:(14,6),0,16;flag:(14,5),16,8;factor:(14,5),24,8;reln:(14,5),32,8;vallen:(14,5),40,8;type:(14,5),48,8;in_type:(14,5),56,8;in_op:(14,5),64,8;mask_op:(14,5),72,8;cond:(14,5),80,8;factor_op:(14,5),88,8;offset:(14,7),96,32;in_offset:(14,3),128,32;lineno:(14,7),160,32;_u:(1,8)=u8_mask:(14,8),0,64;_s:(1,9)=s8_count:(14,7),0,32;_flags:(14,7),32,32;;,0,64;;,192,64;value:(1,1),256,256;desc:(1,10)=ar(6,8);0;63;(0,2),512,512;mimetype:(1,10),1024,512;apple:(5,49),1536,64;;",
+  "mlist:T(1,11)=s20magic:(1,12)=*(1,7),0,32;nmagic:(14,7),32,32;mapped:(0,1),64,32;next:(1,13)=*(1,11),96,32;prev:(1,13),128,32;;",
+  "level_info:T(1,14)=s16off:(14,3),0,32;got_match:(0,1),32,32;last_match:(0,1),64,32;last_cond:(0,1),96,32;;",
+  "cont:T(1,15)=s8len:(3,1),0,32;li:(1,16)=*(1,14),32,32;;",
+  "out:T(1,17)=s8buf:(5,45),0,32;pbuf:(5,45),32,32;;",
+  "magic_set:T(1,18)=s96mlist:(1,13),0,32;c:(1,15),32,64;o:(1,17),96,64;offset:(14,7),160,32;error:(0,1),192,32;flags:(0,1),224,32;event_flags:(0,1),256,32;file:(5,40),288,32;line:(3,1),320,32;search:(1,19)=s16s:(5,40),0,32;s_len:(3,1),32,32;offset:(3,1),64,32;rm_len:(3,1),96,32;;,352,128;ms_value:(1,1),512,256;;",
+  "unichar:t(1,20)=(0,5)",
+  "magic.h",
+  "magic_t:t(27,1)=(27,2)=*(1,18)",
+  "/usr/include/stdlib.h",
+  "div_t:t(28,1)=(28,2)=s8quot:(0,1),0,32;rem:(0,1),32,32;;",
+  "ldiv_t:t(28,3)=(28,4)=s8quot:(0,3),0,32;rem:(0,3),32,32;;",
+  "lldiv_t:t(28,5)=(28,6)=s16quot:(0,6),0,64;rem:(0,6),64,64;;",
+  "/usr/include/sys/time.h",
+  "timeval:T(29,1)=s8tv_sec:(9,8),0,32;tv_usec:(9,23),32,32;;",
+  "timezone:T(29,2)=s8tz_minuteswest:(0,1),0,32;tz_dsttime:(0,1),32,32;;",
+  "itimerval:T(29,3)=s16it_interval:(29,1),0,64;it_value:(29,1),64,64;;",
+  "/usr/include/netinet/in.h",
+  "/usr/include/cygwin/in.h",
+  "/usr/include/cygwin/socket.h",
+  "socklen_t:t(32,1)=(0,1)",
+  "sa_family_t:t(32,2)=(14,6)",
+  "sockaddr:T(32,3)=s16sa_family:(32,2),0,16;sa_data:(32,4)=ar(6,8);0;13;(0,2),16,112;;",
+  "sockaddr_storage:T(32,5)=s128ss_family:(32,2),0,16;_ss_pad1:(32,6)=ar(6,8);0;5;(0,2),16,48;__ss_align:(14,4),64,64;_ss_pad2:(32,7)=ar(6,8);0;111;(0,2),128,896;;",
+  "/usr/include/asm/socket.h",
+  "/usr/include/cygwin/if.h",
+  "ifreq:T(34,1)=s32ifr_ifrn:(34,2)=u16ifrn_name:(34,3)=ar(6,8);0;15;(0,2),0,128;;,0,128;ifr_ifru:(34,4)=u16ifru_addr:(32,3),0,128;ifru_broadaddr:(32,3),0,128;ifru_netmask:(32,3),0,128;ifru_hwaddr:(32,3),0,128;ifru_flags:(0,8),0,16;ifru_metric:(0,1),0,32;ifru_mtu:(0,1),0,32;;,128,128;;",
+  "ifconf:T(34,5)=s8ifc_len:(0,1),0,32;ifc_ifcu:(34,6)=u4ifcu_buf:(9,12),0,32;ifcu_req:(34,7)=*(34,1),0,32;;,32,32;;",
+  "/usr/include/sys/uio.h",
+  "iovec:T(35,1)=s8iov_base:(7,2),0,32;iov_len:(3,1),32,32;;",
+  "ucred:T(32,8)=s12pid:(9,13),0,32;uid:(13,15),32,32;gid:(13,18),64,32;;",
+  "linger:T(32,9)=s4l_onoff:(0,9),0,16;l_linger:(0,9),16,16;;",
+  "msghdr:T(32,10)=s28msg_name:(7,2),0,32;msg_namelen:(32,1),32,32;msg_iov:(32,11)=*(35,1),64,32;msg_iovlen:(0,1),96,32;msg_control:(7,2),128,32;msg_controllen:(32,1),160,32;msg_flags:(0,1),192,32;;",
+  "cmsghdr:T(32,12)=s12cmsg_len:(32,1),0,32;cmsg_level:(0,1),32,32;cmsg_type:(0,1),64,32;;",
+  "in_port_t:t(31,1)=(14,6)",
+  "in_addr_t:t(31,2)=(14,7)",
+  ":T(31,3)=eIPPROTO_IP:0,IPPROTO_ICMP:1,IPPROTO_IGMP:2,IPPROTO_IPIP:4,IPPROTO_TCP:6,IPPROTO_EGP:8,IPPROTO_PUP:12,IPPROTO_UDP:17,IPPROTO_IDP:22,IPPROTO_RAW:255,IPPROTO_MAX:256,;",
+  ":T(31,4)=eIPPORT_ECHO:7,IPPORT_DISCARD:9,IPPORT_SYSTAT:11,IPPORT_DAYTIME:13,IPPORT_NETSTAT:15,IPPORT_FTP:21,IPPORT_TELNET:23,IPPORT_SMTP:25,IPPORT_TIMESERVER:37,IPPORT_NAMESERVER:42,IPPORT_WHOIS:43,IPPORT_MTP:57,IPPORT_TFTP:69,IPPORT_RJE:77,IPPORT_FINGER:79,IPPORT_TTYLINK:87,IPPORT_SUPDUP:95,IPPORT_EXECSERVER:512,IPPORT_LOGINSERVER:513,IPPORT_CMDSERVER:514,IPPORT_EFSSERVER:520,IPPORT_BIFFUDP:512,IPPORT_WHOSERVER:513,IPPORT_ROUTESERVER:520,IPPORT_RESERVED:1024,IPPORT_USERRESERVED:5000,;",
+  "in_addr:T(31,5)=s4s_addr:(31,2),0,32;;",
+  "ip_mreq:T(31,6)=s8imr_multiaddr:(31,5),0,32;imr_interface:(31,5),32,32;;",
+  "sockaddr_in:T(31,7)=s16sin_family:(32,2),0,16;sin_port:(31,1),16,16;sin_addr:(31,5),32,32;__pad:(31,8)=ar(6,8);0;7;(0,11),64,64;;",
+  "magic_setflags:F(0,1)",
+  "ms:p(27,2)",
+  "flags:p(0,1)",
+  "ms:r(27,2)",
+  "flags:r(0,1)",
+  "magic_open:F(27,2)",
+  "free_mlist:f(0,19)",
+  "mlist:P(1,13)",
+  "ml:r(1,13)",
+  "next:r(1,13)",
+  "mg:r(1,12)",
+  "unreadable_info:f(0,1)",
+  "ms:P(27,2)",
+  "md:P(13,35)",
+  "file:p(5,40)",
+  "file:r(5,40)",
+  "magic_close:F(0,19)",
+  "magic_load:F(0,1)",
+  "magicfile:p(5,40)",
+  "magicfile:r(5,40)",
+  "magic_compile:F(0,1)",
+  "magic_check:F(0,1)",
+  "file_or_fd:f(5,40)",
+  "inname:p(5,40)",
+  "fd:p(0,1)",
+  "rv:(0,1)",
+  "buf:(5,14)",
+  "sb:(23,1)",
+  "nbytes:(9,14)",
+  "ispipe:(0,1)",
+  "fd:r(0,1)",
+  "r:r(9,14)",
+  "utsbuf:(0,22)=ar(6,8);0;1;(29,1)",
+  "magic_file:F(5,40)",
+  "inname:r(5,40)",
+  "magic_descriptor:F(5,40)",
+  "magic_buffer:F(5,40)",
+  "buf:p(0,23)=*(0,24)=k(0,19)",
+  "nb:p(3,1)",
+  "buf:r(0,23)",
+  "nb:r(3,1)",
+  "magic_error:F(5,40)",
+  "magic_errno:F(0,1)",
+  "rcsid:S(0,25)=ar(6,8);0;60;(5,41)",
+  "apprentice.c",
+  "/usr/include/dirent.h",
+  "/usr/include/sys/dirent.h",
+  "dirent:T(30,1)=s276__d_version:(0,3),0,32;d_ino:(13,21),32,64;__d_unused1:(10,8),96,32;__d_internal1:(10,8),128,32;d_name:(30,2)=ar(6,8);0;255;(0,2),160,2048;;",
+  "__DIR:T(30,3)=s36__d_cookie:(0,5),0,32;__d_dirent:(30,4)=*(30,1),32,32;__d_dirname:(5,45),64,32;__d_position:(6,1),96,32;__d_fd:(0,1),128,32;__d_internal:(0,4),160,32;__handle:(7,2),192,32;__fh:(7,2),224,32;__flags:(0,4),256,32;;",
+  "DIR:t(30,5)=(30,3)",
+  "magic_entry:T(0,22)=s12mp:(1,12),0,32;cont_count:(14,7),32,32;max_count:(14,7),64,32;;",
+  "type_tbl_s:T(0,23)=s28name:(0,24)=ar(6,8);0;15;(5,41),0,128;len:(3,1),128,32;type:(0,1),160,32;format:(0,1),192,32;;",
+  "cond_tbl_s:T(0,25)=s16name:(5,49),0,64;len:(3,1),64,32;cond:(0,1),96,32;;",
+  "file_delmagic:F(0,19)",
+  "p:p(1,12)",
+  "type:p(0,1)",
+  "entries:p(3,1)",
+  "p:r(1,12)",
+  "type:r(0,1)",
+  "entries:r(3,1)",
+  "apprentice_magic_strength:f(3,1)",
+  "m:P(0,26)=*(0,27)=k(1,7)",
+  "val:r(3,1)",
+  "apprentice_sort:f(0,1)",
+  "a:p(0,28)=*(0,29)=k(0,19)",
+  "b:p(0,28)",
+  "sa:r(3,1)",
+  "sb:r(3,1)",
+  "a:r(0,28)",
+  "b:r(0,28)",
+  "file_signextend:F(14,8)",
+  "m:p(1,12)",
+  "v:p(14,8)",
+  "m:r(1,12)",
+  "v:r(14,8)",
+  "get_op:f(0,1)",
+  "c:P(0,2)",
+  "eatsize:f(0,19)",
+  "p:P(0,30)=*(5,40)",
+  "l:r(5,40)",
+  "parse_strength:f(0,1)",
+  "me:p(0,31)=*(0,22)",
+  "line:p(5,40)",
+  "el:(5,45)",
+  "factor:r(0,5)",
+  "me:r(0,31)",
+  "line:r(5,40)",
+  "parse_apple:f(0,1)",
+  "me:p(0,31)",
+  "i:r(3,1)",
+  "m:(1,12)",
+  "parse_mime:f(0,1)",
+  "hextoint:f(0,1)",
+  "c:P(0,1)",
+  "load_1:f(0,19)",
+  "action:p(0,1)",
+  "fn:p(5,40)",
+  "errs:p(0,32)=*(0,1)",
+  "marray:p(0,33)=*(0,31)",
+  "marraycount:p(0,34)=*(14,7)",
+  "line:(0,35)=ar(6,8);0;1023;(0,2)",
+  "lineno:(3,1)",
+  "f:(0,36)=*(2,1)",
+  "fn:r(5,40)",
+  "len:r(3,1)",
+  "l:(5,40)",
+  "t:(5,45)",
+  "op:r(0,1)",
+  "cont_level:(14,7)",
+  "p:r(0,37)=*(0,38)=k(0,25)",
+  "cond:r(0,1)",
+  "last_cond:r(0,1)",
+  "p:r(0,39)=*(0,40)=k(0,23)",
+  "have_range:r(0,1)",
+  "nm:r(1,12)",
+  "cnt:r(3,1)",
+  "val:r(14,8)",
+  "ptr:r(5,45)",
+  "mp:r(0,31)",
+  "ep:(5,45)",
+  "s:r(5,40)",
+  "warn:(0,1)",
+  "origs:(5,40)",
+  "p:r(5,45)",
+  "pmax:(5,45)",
+  "c:r(0,1)",
+  "val:(0,1)",
+  "p:r(0,39)",
+  "p:r(0,37)",
+  "ptr:r(5,40)",
+  "quad_t:r(0,1)",
+  "apprentice_load:f(0,1)",
+  "magicp:p(0,41)=*(1,12)",
+  "nmagicp:p(0,34)",
+  "errs:(0,1)",
+  "marray:(0,31)",
+  "marraycount:(14,7)",
+  "i:(14,7)",
+  "mentrycount:(14,7)",
+  "starttest:(14,7)",
+  "subfn:(0,42)=ar(6,8);0;258;(0,2)",
+  "st:(23,1)",
+  "dir:r(0,43)=*(30,5)",
+  "d:r(30,4)",
+  "action:r(0,1)",
+  "text:V(0,44)=ar(6,8);0;4;(5,41)",
+  "binary:V(0,45)=ar(6,8);0;6;(5,41)",
+  "len:V(0,46)=k(3,1)",
+  "mstart:r(1,12)",
+  "text:V(0,44)",
+  "binary:V(0,45)",
+  "len:V(0,46)",
+  "file_showstr:F(0,19)",
+  "fp:p(0,36)",
+  "s:p(5,40)",
+  "len:p(3,1)",
+  "swap4:f(14,7)",
+  "sv:p(14,7)",
+  "rv:(14,7)",
+  "mkdbname:f(5,45)",
+  "fn:P(5,40)",
+  "strip:p(0,1)",
+  "p:r(5,40)",
+  "q:r(5,40)",
+  "buf:(5,45)",
+  "swap8:f(14,8)",
+  "sv:p(14,8)",
+  "rv:(14,8)",
+  "file_apprentice:F(1,13)",
+  "mfn:(5,45)",
+  "mlist:(1,13)",
+  "magic:(1,12)",
+  "nmagic:(14,7)",
+  "rv:r(0,1)",
+  "version:r(14,7)",
+  "needsbyteswap:(0,1)",
+  "dbname:(5,45)",
+  "mm:(7,2)",
+  "nmagic:r(14,7)",
+  "sv:(14,6)",
+  "rv:(14,6)",
+  "dbname:r(5,45)",
+  "file_names:G(0,47)=ar(6,8);0;41;(5,40)",
+  "file_nnames:G(0,46)",
+  "rcsid:S(0,48)=ar(6,8);0;66;(5,41)",
+  "file_formats:G(0,49)=ar(6,8);0;41;(0,1)",
+  "file_nformats:G(0,46)",
+  "maxmagic:S(3,1)",
+  "magicsize:S(3,1)",
+  "usg_hdr:S(0,50)=ar(6,8);0;39;(5,41)",
+  "bang:S(0,51)=ar(6,8);0;3;(0,52)=s12name:(5,40),0,32;len:(3,1),32,32;fun:(0,53)=*(0,54)=f(0,1),64,32;;",
+  "type_tbl:S(0,55)=ar(6,8);0;41;(0,40)",
+  "ar:S(0,56)=ar(6,8);0;1;(0,57)=k(14,7)",
+  "ext:S(0,58)=ar(6,8);0;4;(5,41)",
+  "softmagic.c",
+  "handle_annotation:f(0,1)",
+  "m:P(1,12)",
+  "print_sep:f(0,1)",
+  "firstline:P(0,1)",
+  "check_fmt:f(0,1)",
+  "rx:(25,2)",
+  "rc:r(0,1)",
+  "errmsg:(0,22)=ar(6,8);0;511;(0,2)",
+  "moffset:f(14,3)",
+  "p:r(0,23)=*(1,1)",
+  "mprint:f(14,3)",
+  "vf:(0,12)",
+  "vd:(0,13)",
+  "t:r(14,4)",
+  "buf:(0,24)=ar(6,8);0;127;(0,2)",
+  "p:r(0,23)",
+  "cp:r(5,45)",
+  "rval:r(0,1)",
+  "cvt_16:f(0,19)",
+  "p:P(0,23)",
+  "m:P(0,25)=*(0,26)=k(1,7)",
+  "cvt_32:f(0,19)",
+  "m:P(0,25)",
+  "cvt_64:f(0,19)",
+  "cvt_float:f(0,19)",
+  "cvt_double:f(0,19)",
+  "mdebug:f(0,19)",
+  "offset:P(14,7)",
+  "str:P(5,40)",
+  "mcopy:f(0,1)",
+  "indir:p(0,1)",
+  "s:p(0,27)=*(0,28)=k(0,11)",
+  "offset:p(14,7)",
+  "nbytes:p(3,1)",
+  "linecnt:p(3,1)",
+  "s:r(0,27)",
+  "nbytes:r(3,1)",
+  "src:r(0,27)",
+  "esrc:r(0,27)",
+  "dst:r(5,45)",
+  "edst:r(5,45)",
+  "b:r(5,40)",
+  "c:r(5,40)",
+  "last:r(5,40)",
+  "buf:(5,40)",
+  "lines:r(3,1)",
+  "file_strncmp:f(14,8)",
+  "s1:P(5,40)",
+  "s2:P(5,40)",
+  "flags:p(14,7)",
+  "a:r(0,27)",
+  "b:r(0,27)",
+  "__x:r(0,1)",
+  "magiccheck:f(0,1)",
+  "l:(14,8)",
+  "fl:r(0,12)",
+  "fv:r(0,12)",
+  "dl:r(0,13)",
+  "dv:r(0,13)",
+  "matched:r(0,1)",
+  "a:r(5,40)",
+  "rc:(0,1)",
+  "errmsg:(0,22)",
+  "slen:(3,1)",
+  "idx:(3,1)",
+  "pmatch:(0,29)=ar(6,8);0;0;(25,6)",
+  "pmatch:(0,29)",
+  "file_softmagic:F(0,1)",
+  "buf:p(0,27)",
+  "mode:p(0,1)",
+  "ml:(1,13)",
+  "magindex:r(14,7)",
+  "cont_level:(0,4)",
+  "need_separator:(0,1)",
+  "returnval:(0,1)",
+  "e:r(0,1)",
+  "firstline:(0,1)",
+  "printed_something:(0,1)",
+  "print:(0,1)",
+  "mget:f(0,1)",
+  "s:p(0,27)",
+  "cont_level:p(0,4)",
+  "offset:r(14,7)",
+  "count:(14,7)",
+  "off:r(0,1)",
+  "q:r(0,30)=*(0,31)=k(1,1)",
+  "ptr1:r(5,45)",
+  "ptr2:r(5,45)",
+  "q:r(0,30)",
+  "rcsid:S(0,32)=ar(6,8);0;65;(5,41)",
+  "ascmagic.c",
+  "names.h",
+  "names:T(29,1)=s16name:(29,2)=ar(6,8);0;13;(0,2),0,112;type:(0,8),112,16;;",
+  "trim_nuls:f(3,1)",
+  "buf:P(0,22)=*(0,23)=k(0,11)",
+  "nbytes:P(3,1)",
+  "file_ascmagic_with_encoding:F(0,1)",
+  "buf:p(0,22)",
+  "ubuf:p(0,24)=*(1,20)",
+  "ulen:p(3,1)",
+  "code:p(5,40)",
+  "type:p(5,40)",
+  "utf8_buf:(5,14)",
+  "p:r(0,25)=*(0,26)=k(29,1)",
+  "mime:(0,1)",
+  "subtype:(5,40)",
+  "subtype_mime:(5,40)",
+  "has_escapes:(0,1)",
+  "has_backspace:(0,1)",
+  "seen_cr:(0,1)",
+  "n_crlf:(0,1)",
+  "n_lf:(0,1)",
+  "n_cr:(0,1)",
+  "n_nel:(0,1)",
+  "last_line_end:(3,1)",
+  "has_long_lines:(0,1)",
+  "code:r(5,40)",
+  "buf:r(5,14)",
+  "end:r(5,14)",
+  "end:r(3,1)",
+  "us:r(0,27)=*(0,28)=k(1,20)",
+  "ulen:r(3,1)",
+  "file_ascmagic:F(0,1)",
+  "ubuf:(0,24)",
+  "ulen:(3,1)",
+  "code:(5,40)",
+  "code_mime:(5,40)",
+  "type:(5,40)",
+  "buf:r(0,22)",
+  "rcsid:S(0,29)=ar(6,8);0;63;(5,41)",
+  "types:S(0,30)=ar(6,8);0;14;(0,31)=k(0,32)=s64human:(0,33)=ar(6,8);0;47;(0,2),0,384;mime:(0,34)=ar(6,8);0;15;(0,2),384,128;;",
+  "names:S(0,35)=ar(6,8);0;49;(0,26)",
+  "encoding.c",
+  "looks_ascii:f(0,1)",
+  "buf:p(0,22)=*(0,23)=k(0,11)",
+  "ulen:p(0,25)=*(3,1)",
+  "ulen:r(0,25)",
+  "file_looks_utf8:F(0,1)",
+  "ubuf:p(0,24)",
+  "ulen:p(0,25)",
+  "n:r(0,1)",
+  "c:r(1,20)",
+  "gotone:(0,1)",
+  "ctrl:(0,1)",
+  "following:r(0,1)",
+  "looks_latin1:f(0,1)",
+  "t:r(0,1)",
+  "file_encoding:F(0,1)",
+  "ubuf:p(0,26)=*(0,24)",
+  "code:p(0,27)=*(5,40)",
+  "code_mime:p(0,27)",
+  "type:p(0,27)",
+  "mlen:r(3,1)",
+  "nbuf:(5,14)",
+  "ubuf:r(0,24)",
+  "bigend:(0,1)",
+  "rcsid:S(0,28)=ar(6,8);0;62;(5,41)",
+  "text_chars:S(0,29)=ar(6,8);0;255;(0,2)",
+  "ebcdic_to_ascii:S(0,30)=ar(6,8);0;255;(0,11)",
+  "compress.c",
+  "/usr/include/sys/wait.h",
+  "/usr/include/sys/resource.h",
+  "rlim_t:t(30,1)=(0,5)",
+  "rlimit:T(30,2)=s8rlim_cur:(30,1),0,32;rlim_max:(30,1),32,32;;",
+  "rusage:T(30,3)=s72ru_utime:(31,1),0,64;ru_stime:(31,1),64,64;ru_maxrss:(0,3),128,32;ru_ixrss:(0,3),160,32;ru_idrss:(0,3),192,32;ru_isrss:(0,3),224,32;ru_minflt:(0,3),256,32;ru_majflt:(0,3),288,32;ru_nswap:(0,3),320,32;ru_inblock:(0,3),352,32;ru_oublock:(0,3),384,32;ru_msgsnd:(0,3),416,32;ru_msgrcv:(0,3),448,32;ru_nsignals:(0,3),480,32;ru_nvcsw:(0,3),512,32;ru_nivcsw:(0,3),544,32;;",
+  "wait:T(29,1)=u4w_status:(0,1),0,32;__wait_terminated:(29,2)=s4__w_termsig:(0,4),0,7;__w_coredump:(0,4),7,1;__w_retcode:(0,4),8,8;:(0,4),16,16;;,0,32;__wait_stopped:(29,3)=s4__w_stopval:(0,4),0,8;__w_stopsig:(0,4),8,8;:(0,4),16,16;;,0,32;;",
+  "/usr/include/zlib.h",
+  "/usr/include/zconf.h",
+  "Byte:t(33,1)=(0,11)",
+  "uInt:t(33,2)=(0,4)",
+  "uLong:t(33,3)=(0,5)",
+  "Bytef:t(33,4)=(33,1)",
+  "charf:t(33,5)=(0,2)",
+  "intf:t(33,6)=(0,1)",
+  "uIntf:t(33,7)=(33,2)",
+  "uLongf:t(33,8)=(33,3)",
+  "voidpc:t(33,9)=(33,10)=*(33,11)=k(0,19)",
+  "voidpf:t(33,12)=(7,2)",
+  "voidp:t(33,13)=(7,2)",
+  "alloc_func:t(32,1)=(32,2)=*(32,3)=f(33,12)",
+  "free_func:t(32,4)=(32,5)=*(32,6)=f(0,19)",
+  "z_stream_s:T(32,7)=s56next_in:(32,8)=*(33,4),0,32;avail_in:(33,2),32,32;total_in:(33,3),64,32;next_out:(32,8),96,32;avail_out:(33,2),128,32;total_out:(33,3),160,32;msg:(5,45),192,32;state:(32,9)=*(32,10)=xsinternal_state:,224,32;zalloc:(32,1),256,32;zfree:(32,4),288,32;opaque:(33,12),320,32;data_type:(0,1),352,32;adler:(33,3),384,32;reserved:(33,3),416,32;;",
+  "z_stream:t(32,11)=(32,7)",
+  "z_streamp:t(32,12)=(32,13)=*(32,11)",
+  "gz_header_s:T(32,14)=s52text:(0,1),0,32;time:(33,3),32,32;xflags:(0,1),64,32;os:(0,1),96,32;extra:(32,8),128,32;extra_len:(33,2),160,32;extra_max:(33,2),192,32;name:(32,8),224,32;name_max:(33,2),256,32;comment:(32,8),288,32;comm_max:(33,2),320,32;hcrc:(0,1),352,32;done:(0,1),384,32;;",
+  "gz_header:t(32,15)=(32,14)",
+  "gz_headerp:t(32,16)=(32,17)=*(32,15)",
+  "in_func:t(32,18)=(32,19)=*(32,20)=f(0,4)",
+  "out_func:t(32,21)=(32,22)=*(32,23)=f(0,1)",
+  "gzFile:t(32,24)=(33,13)",
+  "internal_state:T(32,10)=s4dummy:(0,1),0,32;;",
+  "swrite:f(9,14)",
+  "fd:P(0,1)",
+  "buf:P(33,10)",
+  "n:p(3,1)",
+  "rn:(3,1)",
+  "n:r(3,1)",
+  "sread:F(9,14)",
+  "buf:p(7,2)",
+  "canbepipe:p(0,1)",
+  "buf:r(7,2)",
+  "file_pipe2file:F(0,1)",
+  "startbuf:p(33,10)",
+  "buf:(0,22)=ar(6,8);0;4095;(0,2)",
+  "r:r(0,1)",
+  "tfd:r(0,1)",
+  "file_zmagic:F(0,1)",
+  "name:p(5,40)",
+  "buf:p(0,23)=*(0,24)=k(0,11)",
+  "newbuf:(5,14)",
+  "name:r(5,40)",
+  "fdin:(0,25)=ar(6,8);0;1;(0,1)",
+  "fdout:(0,25)",
+  "flg:r(0,11)",
+  "data_start:r(3,1)",
+  "z:(32,11)",
+  "fdin:(0,25)",
+  "rcsid:S(0,26)=ar(6,8);0;63;(5,41)",
+  "compr:S(0,27)=ar(6,8);0;9;(0,28)=k(0,29)=s28magic:(0,30)=ar(6,8);0;7;(5,41),0,64;maglen:(3,1),64,32;argv:(0,31)=ar(6,8);0;2;(5,40),96,96;silent:(0,1),192,32;;",
+  "ncompr:S(3,1)",
+  "is_tar.c",
+  "tar.h",
+  "header:T(28,1)=s345name:(28,2)=ar(6,8);0;99;(0,2),0,800;mode:(5,49),800,64;uid:(5,49),864,64;gid:(5,49),928,64;size:(28,3)=ar(6,8);0;11;(0,2),992,96;mtime:(28,3),1088,96;chksum:(5,49),1184,64;linkflag:(0,2),1248,8;linkname:(28,2),1256,800;magic:(5,49),2056,64;uname:(1,5),2120,256;gname:(1,5),2376,256;devmajor:(5,49),2632,64;devminor:(5,49),2696,64;;",
+  "record:T(28,4)=u512charptr:(28,5)=ar(6,8);0;511;(0,2),0,4096;header:(28,1),0,2760;;",
+  "file_is_tar:F(0,1)",
+  "i:r(0,1)",
+  "sum:r(0,1)",
+  "digs:r(0,1)",
+  "where:r(5,40)",
+  "value:r(0,1)",
+  "rcsid:S(0,24)=ar(6,8);0;61;(5,41)",
+  "tartype:S(0,25)=ar(6,8);0;2;(0,26)=ar(6,8);0;31;(5,41)",
+  "readelf.c",
+  "readelf.h",
+  "Elf32_Addr:t(28,1)=(14,7)",
+  "Elf32_Off:t(28,2)=(14,7)",
+  "Elf32_Half:t(28,3)=(14,6)",
+  "Elf32_Word:t(28,4)=(14,7)",
+  "Elf32_Char:t(28,5)=(14,5)",
+  "Elf64_Addr:t(28,6)=(14,8)",
+  "Elf64_Off:t(28,7)=(14,8)",
+  "Elf64_Xword:t(28,8)=(14,8)",
+  "Elf64_Half:t(28,9)=(14,6)",
+  "Elf64_Word:t(28,10)=(14,7)",
+  "Elf64_Char:t(28,11)=(14,5)",
+  "Elf32_Ehdr:t(28,12)=(28,13)=s52e_ident:(28,14)=ar(6,8);0;15;(28,5),0,128;e_type:(28,3),128,16;e_machine:(28,3),144,16;e_version:(28,4),160,32;e_entry:(28,1),192,32;e_phoff:(28,2),224,32;e_shoff:(28,2),256,32;e_flags:(28,4),288,32;e_ehsize:(28,3),320,16;e_phentsize:(28,3),336,16;e_phnum:(28,3),352,16;e_shentsize:(28,3),368,16;e_shnum:(28,3),384,16;e_shstrndx:(28,3),400,16;;",
+  "Elf64_Ehdr:t(28,15)=(28,16)=s64e_ident:(28,17)=ar(6,8);0;15;(28,11),0,128;e_type:(28,9),128,16;e_machine:(28,9),144,16;e_version:(28,10),160,32;e_entry:(28,6),192,64;e_phoff:(28,7),256,64;e_shoff:(28,7),320,64;e_flags:(28,10),384,32;e_ehsize:(28,9),416,16;e_phentsize:(28,9),432,16;e_phnum:(28,9),448,16;e_shentsize:(28,9),464,16;e_shnum:(28,9),480,16;e_shstrndx:(28,9),496,16;;",
+  "Elf32_Phdr:t(28,18)=(28,19)=s32p_type:(28,4),0,32;p_offset:(28,2),32,32;p_vaddr:(28,1),64,32;p_paddr:(28,1),96,32;p_filesz:(28,4),128,32;p_memsz:(28,4),160,32;p_flags:(28,4),192,32;p_align:(28,4),224,32;;",
+  "Elf64_Phdr:t(28,20)=(28,21)=s56p_type:(28,10),0,32;p_flags:(28,10),32,32;p_offset:(28,7),64,64;p_vaddr:(28,6),128,64;p_paddr:(28,6),192,64;p_filesz:(28,8),256,64;p_memsz:(28,8),320,64;p_align:(28,8),384,64;;",
+  "Elf32_Shdr:t(28,22)=(28,23)=s40sh_name:(28,4),0,32;sh_type:(28,4),32,32;sh_flags:(28,4),64,32;sh_addr:(28,1),96,32;sh_offset:(28,2),128,32;sh_size:(28,4),160,32;sh_link:(28,4),192,32;sh_info:(28,4),224,32;sh_addralign:(28,4),256,32;sh_entsize:(28,4),288,32;;",
+  "Elf64_Shdr:t(28,24)=(28,25)=s64sh_name:(28,10),0,32;sh_type:(28,10),32,32;sh_flags:(28,7),64,64;sh_addr:(28,6),128,64;sh_offset:(28,7),192,64;sh_size:(28,7),256,64;sh_link:(28,10),320,32;sh_info:(28,10),352,32;sh_addralign:(28,7),384,64;sh_entsize:(28,7),448,64;;",
+  "elf_note:T(28,26)=s12n_namesz:(28,4),0,32;n_descsz:(28,4),32,32;n_type:(28,4),64,32;;",
+  "Elf32_Nhdr:t(28,27)=(28,26)",
+  "Elf64_Nhdr:t(28,28)=(28,29)=s12n_namesz:(28,10),0,32;n_descsz:(28,10),32,32;n_type:(28,10),64,32;;",
+  "Elf32_Cap:t(28,30)=(28,31)=s8c_tag:(28,4),0,32;c_un:(28,32)=u4c_val:(28,4),0,32;c_ptr:(28,1),0,32;;,32,32;;",
+  "Elf64_Cap:t(28,33)=(28,34)=s16c_tag:(28,8),0,64;c_un:(28,35)=u8c_val:(28,8),0,64;c_ptr:(28,6),0,64;;,64,64;;",
+  "cap_desc:T(0,22)=s16cd_mask:(14,8),0,64;cd_name:(5,40),64,32;;",
+  "cap_desc_t:t(0,23)=(0,22)",
+  "getu16:f(14,6)",
+  "swap:P(0,1)",
+  "value:P(14,6)",
+  "retval:r(0,24)=u2ui:(14,6),0,16;c:(0,25)=ar(6,8);0;1;(0,2),0,16;;",
+  "getu32:f(14,7)",
+  "value:P(14,7)",
+  "retval:r(0,26)=u4ui:(14,7),0,32;c:(0,27)=ar(6,8);0;3;(0,2),0,32;;",
+  "getu64:f(14,8)",
+  "value:p(14,8)",
+  "retval:r(0,28)=u8ui:(14,8),0,64;c:(5,49),0,64;;",
+  "donote:f(3,1)",
+  "ms:p(29,2)",
+  "vbuf:p(7,2)",
+  "offset:p(3,1)",
+  "size:p(3,1)",
+  "clazz:p(0,1)",
+  "swap:p(0,1)",
+  "align:p(3,1)",
+  "flags:p(0,29)=*(0,1)",
+  "nh32:(28,27)",
+  "nh64:(28,28)",
+  "noff:(3,1)",
+  "doff:(3,1)",
+  "os_style:(0,1)",
+  "namesz:r(14,7)",
+  "descsz:(14,7)",
+  "align:r(3,1)",
+  "c:r(0,11)",
+  "cname:r(5,14)",
+  "cp:r(5,14)",
+  "reloffset:r(3,1)",
+  "noffset:r(3,1)",
+  "desc:(0,30)=ar(6,8);0;3;(14,7)",
+  "ver_patch:r(14,7)",
+  "ver_rel:r(14,7)",
+  "ver_min:r(14,7)",
+  "desc:(0,30)",
+  "dophn_core:f(0,1)",
+  "clazz:P(0,1)",
+  "off:p(13,3)",
+  "num:p(0,1)",
+  "fsize:p(13,3)",
+  "flags:p(0,29)",
+  "ph32:(28,18)",
+  "ph64:(28,20)",
+  "offset:r(3,1)",
+  "nbuf:(0,31)=ar(6,8);0;1023;(0,11)",
+  "bufsize:r(9,14)",
+  "savedoffset:r(13,3)",
+  "doshn:f(0,1)",
+  "mach:p(0,1)",
+  "sh32:(28,22)",
+  "sh64:(28,24)",
+  "stripped:(0,1)",
+  "nbuf:(7,2)",
+  "noff:r(13,3)",
+  "cap_hw1:(14,8)",
+  "cap_sf1:(14,8)",
+  "size:r(3,1)",
+  "cdp:r(0,32)=*(0,33)=k(0,23)",
+  "coff:(13,3)",
+  "cap32:(28,30)",
+  "cap64:(28,33)",
+  "cbuf:(0,34)=ar(6,8);0;15;(0,2)",
+  "cdp:r(0,32)",
+  "cbuf:(0,34)",
+  "dophn_exec:f(0,1)",
+  "sh_num:p(0,1)",
+  "linking_style:(5,40)",
+  "shared_libraries:(5,40)",
+  "nbuf:(0,31)",
+  "bufsize:r(0,1)",
+  "savedoffset:(13,3)",
+  "off:r(13,3)",
+  "file_tryelf:F(0,1)",
+  "buf:p(0,35)=*(0,36)=k(0,11)",
+  "elfclass.h",
+  "clazz:(0,1)",
+  "swap:r(0,1)",
+  "fsize:(13,3)",
+  "flags:(0,1)",
+  "elf32hdr:(28,12)",
+  "elf64hdr:(28,15)",
+  "type:r(14,6)",
+  "ms:r(29,2)",
+  "buf:r(0,35)",
+  "rcsid:S(0,37)=ar(6,8);0;62;(5,41)",
+  "prpsoffsets32:S(0,38)=ar(6,8);0;4;(0,39)=k(3,1)",
+  "prpsoffsets64:S(0,40)=ar(6,8);0;4;(0,39)",
+  "os_style_names:S(0,41)=ar(6,8);0;2;(0,42)=ar(6,8);0;7;(5,41)",
+  "cap_desc_sparc:S(0,43)=ar(6,8);0;11;(0,33)",
+  "cap_desc_386:S(0,44)=ar(6,8);0;25;(0,33)",
+  "print.c",
+  "file_magwarn:F(0,19)",
+  "ms:p(0,22)=*(1,18)",
+  "f:p(5,40)",
+  "ms:r(0,22)",
+  "f:r(5,40)",
+  "file_fmttime:F(5,40)",
+  "v:p(14,7)",
+  "local:p(0,1)",
+  "pp:r(5,45)",
+  "tm:r(0,23)=*(19,1)",
+  "v:r(14,7)",
+  "file_mdump:F(0,19)",
+  "optyp:V(0,24)=ar(6,8);0;8;(5,41)",
+  "fsmagic.c",
+  "bad_link:f(0,1)",
+  "err:P(0,1)",
+  "buf:p(5,45)",
+  "errfmt:r(5,40)",
+  "mime:r(0,1)",
+  "handle_mime:f(0,1)",
+  "mime:P(0,1)",
+  "str:p(5,40)",
+  "str:r(5,40)",
+  "file_fsmagic:F(0,1)",
+  "sb:p(0,22)=*(23,1)",
+  "ret:r(0,1)",
+  "buf:(0,23)=ar(6,8);0;1027;(0,2)",
+  "nch:r(0,1)",
+  "tstatbuf:(23,1)",
+  "sb:r(0,22)",
+  "tmp:r(5,45)",
+  "buf2:(0,24)=ar(6,8);0;2051;(0,2)",
+  "buf2:(0,24)",
+  "rcsid:S(0,25)=ar(6,8);0;62;(5,41)",
+  "funcs.c",
+  "/usr/include/wchar.h",
+  "mbstate_t:t(29,1)=(6,4)",
+  "/usr/include/wctype.h",
+  "wctype_t:t(30,1)=(0,1)",
+  "wctrans_t:t(30,2)=(0,1)",
+  "file_error_core:f(0,19)",
+  "error:P(0,1)",
+  "va:p(26,1)",
+  "lineno:p(14,7)",
+  "va:r(26,1)",
+  "lineno:r(14,7)",
+  "file_error:F(0,19)",
+  "error:p(0,1)",
+  "error:r(0,1)",
+  "file_vprintf:F(0,1)",
+  "fmt:p(5,40)",
+  "ap:p(26,1)",
+  "len:r(0,1)",
+  "newstr:(5,45)",
+  "fmt:r(5,40)",
+  "ap:r(26,1)",
+  "file_printf:F(0,1)",
+  "file_magerror:F(0,19)",
+  "file_oomem:F(0,19)",
+  "file_badseek:F(0,19)",
+  "file_badread:F(0,19)",
+  "file_buffer:F(0,1)",
+  "buf:p(0,22)=*(0,23)=k(0,19)",
+  "looks_text:(0,1)",
+  "u8buf:(0,24)=*(1,20)",
+  "file_reset:F(0,1)",
+  "file_getbuffer:F(5,40)",
+  "pbuf:r(5,45)",
+  "op:r(5,45)",
+  "np:r(5,45)",
+  "psize:r(3,1)",
+  "state:(29,1)",
+  "nextchar:(11,2)",
+  "mb_conv:(0,1)",
+  "bytesconsumed:r(3,1)",
+  "eop:(5,45)",
+  "file_check_mem:F(0,1)",
+  "level:p(0,4)",
+  "level:r(0,4)",
+  "apptype.c",
+  "rcsid:S(0,22)=ar(6,8);0;62;(5,41)",
+  "cdf.c",
+  "cdf.h",
+  "cdf_secid_t:t(28,1)=(14,3)",
+  "cdf_header_t:t(28,2)=(28,3)=s512h_magic:(14,8),0,64;h_uuid:(28,4)=ar(6,8);0;1;(14,8),64,128;h_revision:(14,6),192,16;h_version:(14,6),208,16;h_byte_order:(14,6),224,16;h_sec_size_p2:(14,6),240,16;h_short_sec_size_p2:(14,6),256,16;h_unused0:(28,5)=ar(6,8);0;9;(14,5),272,80;h_num_sectors_in_sat:(14,7),352,32;h_secid_first_directory:(14,7),384,32;h_unused1:(1,3),416,32;h_min_size_standard_stream:(14,7),448,32;h_secid_first_sector_in_short_sat:(28,1),480,32;h_num_sectors_in_short_sat:(14,7),512,32;h_secid_first_sector_in_master_sat:(28,1),544,32;h_num_sectors_in_master_sat:(14,7),576,32;h_master_sat:(28,6)=ar(6,8);0;108;(28,1),608,3488;;",
+  "cdf_dirid_t:t(28,7)=(14,3)",
+  "cdf_timestamp_t:t(28,8)=(14,4)",
+  "cdf_directory_t:t(28,9)=(28,10)=s136d_name:(28,11)=ar(6,8);0;31;(14,6),0,512;d_namelen:(14,6),512,16;d_type:(14,5),528,8;d_color:(14,5),536,8;d_left_child:(28,7),544,32;d_right_child:(28,7),576,32;d_storage:(28,7),608,32;d_storage_uuid:(28,4),640,128;d_flags:(14,7),768,32;d_created:(28,8),832,64;d_modified:(28,8),896,64;d_stream_first_sector:(28,1),960,32;d_size:(14,7),992,32;d_unused0:(14,7),1024,32;;",
+  "cdf_sat_t:t(28,12)=(28,13)=s8sat_tab:(28,14)=*(28,1),0,32;sat_len:(3,1),32,32;;",
+  "cdf_dir_t:t(28,15)=(28,16)=s8dir_tab:(28,17)=*(28,9),0,32;dir_len:(3,1),32,32;;",
+  "cdf_stream_t:t(28,18)=(28,19)=s12sst_tab:(7,2),0,32;sst_len:(3,1),32,32;sst_dirlen:(3,1),64,32;;",
+  "cdf_classid_t:t(28,20)=(28,21)=s16cl_dword:(14,7),0,32;cl_word:(28,22)=ar(6,8);0;1;(14,6),32,32;cl_two:(1,2),64,16;cl_six:(28,23)=ar(6,8);0;5;(14,5),80,48;;",
+  "cdf_summary_info_header_t:t(28,24)=(28,25)=s28si_byte_order:(14,6),0,16;si_zero:(14,6),16,16;si_os_version:(14,6),32,16;si_os:(14,6),48,16;si_class:(28,20),64,128;si_count:(14,7),192,32;;",
+  "cdf_section_declaration_t:t(28,26)=(28,27)=s20sd_class:(28,20),0,128;sd_offset:(14,7),128,32;;",
+  "cdf_section_header_t:t(28,28)=(28,29)=s8sh_len:(14,7),0,32;sh_properties:(14,7),32,32;;",
+  "cdf_property_info_t:t(28,30)=(28,31)=s16pi_id:(14,7),0,32;pi_type:(14,7),32,32;pi_val:(28,32)=u8_pi_u16:(14,6),0,16;_pi_s16:(14,2),0,16;_pi_u32:(14,7),0,32;_pi_s32:(14,3),0,32;_pi_u64:(14,8),0,64;_pi_s64:(14,4),0,64;_pi_tp:(28,8),0,64;_pi_str:(28,33)=s8s_len:(14,7),0,32;s_buf:(5,40),32,32;;,0,64;;,64,64;;",
+  "cdf_info_t:t(28,34)=(28,35)=s12i_fd:(0,1),0,32;i_buf:(28,36)=*(28,37)=k(0,11),32,32;i_len:(3,1),64,32;;",
+  "cdf_tole2:F(14,6)",
+  "sv:p(0,1)",
+  "cdf_tole4:F(14,7)",
+  "cdf_tole8:F(14,8)",
+  "cdf_swap_header:F(0,19)",
+  "h:p(0,22)=*(28,2)",
+  "h:r(0,22)",
+  "cdf_unpack_header:F(0,19)",
+  "h:p(0,22)",
+  "buf:r(5,45)",
+  "cdf_swap_dir:F(0,19)",
+  "d:p(28,17)",
+  "d:r(28,17)",
+  "cdf_swap_class:F(0,19)",
+  "d:p(0,23)=*(28,20)",
+  "d:r(0,23)",
+  "cdf_unpack_dir:F(0,19)",
+  "cdf_check_stream_offset:f(0,1)",
+  "sst:P(0,24)=*(0,25)=k(28,18)",
+  "p:P(0,26)=*(0,27)=k(0,19)",
+  "tail:p(3,1)",
+  "e:r(5,40)",
+  "cdf_read:f(9,14)",
+  "info:p(0,28)=*(0,29)=k(28,34)",
+  "siz:(3,1)",
+  "cdf_read_header:F(0,1)",
+  "info:p(0,28)",
+  "buf:(0,30)=ar(6,8);0;511;(0,2)",
+  "info:r(0,28)",
+  "cdf_read_sector:F(9,14)",
+  "offs:p(3,1)",
+  "h:p(0,31)=*(0,32)=k(28,2)",
+  "id:p(28,1)",
+  "info:(0,28)",
+  "buf:(7,2)",
+  "offs:(3,1)",
+  "h:r(0,31)",
+  "id:r(28,1)",
+  "cdf_read_short_sector:F(9,14)",
+  "sst:p(0,24)",
+  "h:p(0,31)",
+  "sst:r(0,24)",
+  "offs:r(3,1)",
+  "cdf_read_sat:F(0,1)",
+  "sat:p(0,33)=*(28,12)",
+  "ss:(3,1)",
+  "msa:(28,14)",
+  "mid:r(28,1)",
+  "sec:r(28,1)",
+  "nsatpersec:(3,1)",
+  "cdf_count_chain:F(3,1)",
+  "sat:p(0,34)=*(0,35)=k(28,12)",
+  "sid:p(28,1)",
+  "j:r(3,1)",
+  "maxsector:r(28,1)",
+  "sid:r(28,1)",
+  "cdf_read_long_sector_chain:F(0,1)",
+  "sat:p(0,34)",
+  "scn:p(0,36)=*(28,18)",
+  "ss:r(3,1)",
+  "nr:r(9,14)",
+  "cdf_read_short_sector_chain:F(0,1)",
+  "ssat:p(0,34)",
+  "scn:p(0,36)",
+  "cdf_read_sector_chain:F(0,1)",
+  "sat:(0,34)",
+  "ssat:r(0,34)",
+  "scn:r(0,36)",
+  "cdf_read_dir:F(0,1)",
+  "dir:p(0,37)=*(28,15)",
+  "ns:(3,1)",
+  "nd:(3,1)",
+  "sid:(28,1)",
+  "cdf_read_ssat:F(0,1)",
+  "ssat:p(0,33)",
+  "cdf_read_short_stream:F(0,1)",
+  "dir:p(0,38)=*(0,39)=k(28,15)",
+  "d:r(0,40)=*(0,41)=k(28,9)",
+  "sat:r(0,34)",
+  "dir:r(0,38)",
+  "cdf_read_summary_info:F(0,1)",
+  "dir:p(0,38)",
+  "d:r(0,40)",
+  "name:V(0,42)=ar(6,8);0;19;(5,41)",
+  "d:(5,40)",
+  "s:r(0,43)=*(0,44)=k(14,6)",
+  "l:r(3,1)",
+  "s:r(0,43)",
+  "cdf_read_property_info:F(0,1)",
+  "offs:p(14,7)",
+  "info:p(0,45)=*(0,46)=*(28,30)",
+  "count:p(0,47)=*(3,1)",
+  "maxcount:p(0,47)",
+  "shp:r(0,48)=*(0,49)=k(28,28)",
+  "sh:(28,28)",
+  "p:(0,50)=*(0,51)=k(14,7)",
+  "q:r(0,50)",
+  "e:(0,50)",
+  "s16:(14,2)",
+  "s64:(14,4)",
+  "u64:(14,8)",
+  "tp:(28,8)",
+  "o:r(3,1)",
+  "nelements:r(3,1)",
+  "inp:(0,46)",
+  "offs:r(14,7)",
+  "l:r(14,7)",
+  "cdf_unpack_summary_info:F(0,1)",
+  "ssi:p(0,52)=*(28,24)",
+  "info:p(0,45)",
+  "count:p(0,47)",
+  "maxcount:(3,1)",
+  "si:r(0,53)=*(0,54)=k(28,24)",
+  "sd:(0,55)=*(0,56)=k(28,26)",
+  "ssi:r(0,52)",
+  "cdf_print_classid:F(0,1)",
+  "buflen:p(3,1)",
+  "id:p(0,57)=*(0,58)=k(28,20)",
+  "buflen:r(3,1)",
+  "id:r(0,57)",
+  "cdf_print_property_name:F(0,1)",
+  "bufsiz:p(3,1)",
+  "p:p(14,7)",
+  "bufsiz:r(3,1)",
+  "p:r(14,7)",
+  "cdf_print_elapsed_time:F(0,1)",
+  "ts:p(28,8)",
+  "days:r(0,1)",
+  "hours:(0,1)",
+  "ts:r(28,8)",
+  "rcsid:S(0,59)=ar(6,8);0;58;(5,41)",
+  "cdf_bo:S(0,60)=u4s:(0,61)=ar(6,8);0;3;(0,2),0,32;u:(14,7),0,32;;",
+  "vn:S(0,62)=ar(6,8);0;19;(0,63)=k(0,64)=s8v:(14,7),0,32;n:(5,40),32,32;;",
+  "cdf_time.c",
+  "cdf_timestamp_to_timespec:F(0,1)",
+  "ts:p(0,22)=*(9,9)",
+  "t:p(27,8)",
+  "tm:(19,1)",
+  "days:(0,1)",
+  "y:r(0,1)",
+  "m:r(3,1)",
+  "sub:r(0,1)",
+  "cdf_timespec_to_timestamp:F(0,1)",
+  "t:p(0,23)=*(27,8)",
+  "ts:p(0,24)=*(0,25)=k(9,9)",
+  "rcsid:S(0,26)=ar(6,8);0;62;(5,41)",
+  "mdays:S(0,27)=ar(6,8);0;11;(0,28)=k(0,1)",
+  "readcdf.c",
+  "file_trycdf:F(0,1)",
+  "buf:p(28,36)",
+  "info:(28,34)",
+  "h:(28,2)",
+  "sat:(28,12)",
+  "ssat:(28,12)",
+  "sst:(28,18)",
+  "scn:(28,18)",
+  "dir:(28,15)",
+  "expn:(5,40)",
+  "buf:r(28,36)",
+  "si:(28,24)",
+  "info:(0,22)=*(28,30)",
+  "count:(3,1)",
+  "info:r(0,23)=*(0,24)=k(28,30)",
+  "tp:r(28,8)",
+  "ts:(9,9)",
+  "buf:(1,10)",
+  "str:(5,40)",
+  "vbuf:(0,25)=ar(6,8);0;1023;(0,2)",
+  "tbuf:(1,10)",
+  "c:r(5,45)",
+  "info:(0,22)",
+  "info:r(0,23)",
+  "vbuf:(0,25)",
+  ".file",
+  "magic.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "apprentice.c",
+  "_rcsid",
+  "_usg_hdr",
+  "_bang",
+  "_get_op",
+  "_eatsize",
+  "_load_1",
+  "text.1",
+  "binary.2",
+  "len.3",
+  "_swap4",
+  "_swap8",
+  "done.0",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "softmagic.c",
+  "_rcsid",
+  "_moffset",
+  "_mprint",
+  "_cvt_16",
+  "_cvt_32",
+  "_cvt_64",
+  "_mdebug",
+  "_mcopy",
+  "_mget",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "ascmagic.c",
+  "_rcsid",
+  "_types",
+  "_names",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "encoding.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "compress.c",
+  "_rcsid",
+  "_compr",
+  "_ncompr",
+  "_swrite",
+  "_sread",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "is_tar.c",
+  "_rcsid",
+  "_tartype",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "readelf.c",
+  "_rcsid",
+  "_getu16",
+  "_getu32",
+  "_getu64",
+  "_donote",
+  "_doshn",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "print.c",
+  "_rcsid",
+  "optyp.0",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "fsmagic.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "funcs.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "apptype.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "cdf.c",
+  "_rcsid",
+  "_cdf_bo",
+  "name.0",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "cdf_time.c",
+  "_rcsid",
+  "_mdays",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".file",
+  "readcdf.c",
+  "_rcsid",
+  ".text",
+  ".data",
+  ".stab",
+  ".rdata",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6,",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6<",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  "probe",
+  "done",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7<",
+  ".idata$5",
+  ".idata$4D",
+  ".idata$6@",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5\\",
+  ".idata$4",
+  ".idata$6|",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5t",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5d",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5D",
+  ".idata$4",
+  ".idata$6D",
+  ".text",
+  ".idata$7",
+  ".idata$5\\",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5L",
+  ".idata$4",
+  ".idata$6d",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6H",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7d",
+  ".idata$5",
+  ".idata$4l",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5X",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7l",
+  ".idata$5",
+  ".idata$4t",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6P",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5T",
+  ".idata$4",
+  ".idata$6|",
+  ".text",
+  ".idata$7t",
+  ".idata$5$",
+  ".idata$4|",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5h",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5T",
+  ".idata$4",
+  ".idata$6t",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5p",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6@",
+  ".text",
+  ".idata$7|",
+  ".idata$5,",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$50",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5<",
+  ".idata$4",
+  ".idata$6,",
+  ".text",
+  ".idata$7",
+  ".idata$54",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$58",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7H",
+  ".idata$5",
+  ".idata$4P",
+  ".idata$6`",
+  ".text",
+  ".idata$78",
+  ".idata$5",
+  ".idata$4@",
+  ".idata$68",
+  ".text",
+  ".idata$7x",
+  ".idata$5(",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5`",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7L",
+  ".idata$5",
+  ".idata$4T",
+  ".idata$6l",
+  ".text",
+  ".idata$7@",
+  ".idata$5",
+  ".idata$4H",
+  ".idata$6H",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4(",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6$",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5`",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7h",
+  ".idata$5",
+  ".idata$4p",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$64",
+  ".text",
+  ".idata$7P",
+  ".idata$5",
+  ".idata$4X",
+  ".idata$6x",
+  ".text",
+  ".idata$7h",
+  ".idata$5",
+  ".idata$4p",
+  ".idata$6",
+  ".text",
+  ".idata$7X",
+  ".idata$5",
+  ".idata$4`",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6\\",
+  ".text",
+  ".idata$7",
+  ".idata$5H",
+  ".idata$4",
+  ".idata$6\\",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4$",
+  ".idata$6",
+  ".text",
+  ".idata$7`",
+  ".idata$5",
+  ".idata$4h",
+  ".idata$6",
+  ".text",
+  ".idata$7l",
+  ".idata$5",
+  ".idata$4t",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7p",
+  ".idata$5",
+  ".idata$4x",
+  ".idata$6",
+  ".text",
+  ".idata$7T",
+  ".idata$5",
+  ".idata$4\\",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5|",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5x",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5P",
+  ".idata$4",
+  ".idata$6h",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5|",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5t",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6,",
+  ".text",
+  ".idata$7$",
+  ".idata$5",
+  ".idata$4,",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5x",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5@",
+  ".idata$4",
+  ".idata$68",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7d",
+  ".idata$5",
+  ".idata$4l",
+  ".idata$6",
+  ".text",
+  ".idata$7p",
+  ".idata$5",
+  ".idata$4x",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5P",
+  ".idata$4",
+  ".idata$6p",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6h",
+  ".text",
+  ".idata$7",
+  ".idata$5d",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5L",
+  ".idata$4",
+  ".idata$6\\",
+  ".text",
+  ".idata$7`",
+  ".idata$5",
+  ".idata$4h",
+  ".idata$6",
+  ".text",
+  ".idata$7D",
+  ".idata$5",
+  ".idata$4L",
+  ".idata$6T",
+  ".text",
+  ".idata$7\\",
+  ".idata$5",
+  ".idata$4d",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5l",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6t",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$5H",
+  ".idata$4",
+  ".idata$6P",
+  ".text",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7",
+  ".idata$5h",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7",
+  ".idata$5p",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$50",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7",
+  ".idata$5l",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6L",
+  ".file",
+  "fake",
+  "hname",
+  "fthunk",
+  ".text",
+  ".data",
+  ".idata$2(",
+  ".idata$5",
+  ".idata$4",
+  ".file",
+  "fake",
+  ".text",
+  ".data",
+  ".idata$4",
+  ".idata$5",
+  ".idata$7",
+  ".text",
+  ".data",
+  ".idata$2",
+  ".idata$5",
+  ".idata$4d",
+  ".idata$2",
+  ".idata$5",
+  ".idata$4",
+  ".idata$2<",
+  ".text",
+  ".idata$7t",
+  ".idata$5$",
+  ".idata$4|",
+  ".idata$6",
+  ".text",
+  ".idata$7x",
+  ".idata$5(",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7|",
+  ".idata$5,",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$54",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7",
+  ".idata$58",
+  ".idata$4",
+  ".idata$6,",
+  ".text",
+  ".idata$7",
+  ".idata$5<",
+  ".idata$4",
+  ".idata$68",
+  ".text",
+  ".idata$7",
+  ".idata$5@",
+  ".idata$4",
+  ".idata$6D",
+  ".text",
+  ".idata$7",
+  ".idata$5D",
+  ".idata$4",
+  ".idata$6P",
+  ".text",
+  ".idata$7(",
+  ".idata$5",
+  ".idata$40",
+  ".idata$6",
+  ".text",
+  ".idata$7,",
+  ".idata$5",
+  ".idata$44",
+  ".idata$6",
+  ".text",
+  ".idata$70",
+  ".idata$5",
+  ".idata$48",
+  ".idata$6",
+  ".text",
+  ".idata$74",
+  ".idata$5",
+  ".idata$4<",
+  ".idata$6(",
+  ".idata$4",
+  ".idata$5X",
+  ".idata$7",
+  ".idata$4",
+  ".idata$5",
+  ".idata$7",
+  ".idata$4",
+  "_strcspn",
+  "_free",
+  "_regfree0",
+  "_mkstemp",
+  "_strlcpy",
+  "_fstat",
+  "_readdir",
+  "_fputc",
+  "_execvp",
+  "_regcomp`",
+  "_mktime",
+  "_environ4",
+  "_open",
+  "_fwrite",
+  "__stat64",
+  "_regexec@",
+  "_memcpy",
+  "_opendir",
+  "_memset",
+  "_stat",
+  "__mmap64",
+  "_waitpidp",
+  "_munmap",
+  "_fflush",
+  "_fprintf`",
+  "__alloca",
+  "_lseek",
+  "_strtol",
+  "_strdup",
+  "_gmtime",
+  "_fopen",
+  "_calloc",
+  "__fmode",
+  "_ctime",
+  "_dup2",
+  "_strlcat`",
+  "_realloc",
+  "_memchr",
+  "_getenv",
+  "_access",
+  "_strtod",
+  "_strchr",
+  "_malloc",
+  "_fclose",
+  "_pipe",
+  "_abort",
+  "_lstat",
+  "_asctime",
+  "_unlink",
+  "_fork",
+  "___errno",
+  "_strncmp",
+  "_write",
+  "_utimes",
+  "_strndup",
+  "_strrchr",
+  "_strtoul",
+  "_fgets",
+  "_strlen",
+  "_mbrtowc",
+  "_read",
+  "_exit",
+  "_inflateH",
+  "_mmap",
+  "_strtof",
+  "_qsort",
+  "_fcntl",
+  "__open64",
+  "_strstr",
+  "_close",
+  "_magic_open",
+  "_free_mlist",
+  "_unreadable_info",
+  "_magic_close",
+  "_magic_load",
+  "_magic_compile",
+  "_magic_check",
+  "_file_or_fd",
+  "_magic_file",
+  "_magic_descriptor",
+  "_magic_buffer",
+  "_magic_error",
+  "_magic_errno",
+  "_magic_setflags",
+  "_type_tbl",
+  "_magicsize",
+  "_maxmagic",
+  "_apprentice_magic_strength",
+  "_apprentice_sort",
+  "_file_signextend",
+  "_parse_strength",
+  "_parse_apple",
+  "_parse_mime",
+  "_hextoint",
+  "last_cont_level.4",
+  "cond_tbl.5",
+  "_apprentice_load",
+  "_file_showstr",
+  "_mkdbname",
+  "_file_apprentice",
+  "_file_delmagic",
+  "_handle_annotation",
+  "_print_sep",
+  "_check_fmt",
+  "_cvt_float",
+  "_cvt_double",
+  "_file_strncmp",
+  "_magiccheck",
+  "_file_softmagic",
+  "_trim_nuls",
+  "_file_ascmagic",
+  "_file_ascmagic_with_encoding",
+  "_text_chars",
+  "_ebcdic_to_ascii",
+  "_looks_ascii",
+  "_looks_latin1",
+  "_file_encoding",
+  "_file_looks_utf8",
+  "_file_pipe2file",
+  "_file_zmagic",
+  "_file_is_tar",
+  "_prpsoffsets64",
+  "_prpsoffsets32",
+  "_os_style_names",
+  "_cap_desc_386",
+  "_cap_desc_sparc",
+  "_dophn_core",
+  "_dophn_exec",
+  "_file_tryelf",
+  "_file_magwarn",
+  "_file_mdump",
+  "_file_fmttime",
+  "_bad_link",
+  "_handle_mime",
+  "_file_fsmagic",
+  "_file_error_core",
+  "_file_vprintf",
+  "_file_printf",
+  "_file_magerror",
+  "_file_oomem",
+  "_file_badseek",
+  "_file_badread",
+  "_file_buffer",
+  "_file_reset",
+  "_file_getbuffer",
+  "_file_check_mem",
+  "_file_error",
+  "_cdf_tole2",
+  "_cdf_tole4",
+  "_cdf_tole8",
+  "_cdf_swap_header",
+  "_cdf_unpack_header",
+  "_cdf_swap_dir",
+  "_cdf_swap_class",
+  "_cdf_unpack_dir",
+  "_cdf_check_stream_offset",
+  "_cdf_read",
+  "_cdf_read_header",
+  "_cdf_read_sector",
+  "_cdf_read_short_sector",
+  "_cdf_read_sat",
+  "_cdf_count_chain",
+  "_cdf_read_long_sector_chain",
+  "_cdf_read_short_sector_chain",
+  "_cdf_read_sector_chain",
+  "_cdf_read_dir",
+  "_cdf_read_ssat",
+  "_cdf_read_short_stream",
+  "_cdf_read_summary_info",
+  "_cdf_read_property_info",
+  "_cdf_unpack_summary_info",
+  "_cdf_print_classid",
+  "_cdf_print_property_name",
+  "_cdf_print_elapsed_time",
+  "_cdf_timestamp_to_timespec",
+  "_cdf_timespec_to_timestamp",
+  "_file_trycdf",
+  "___divdi3",
+  "___udivdi3",
+  "___umoddi3",
+  "___moddi3",
+  "___dllMain",
+  "_storedPtr",
+  "_storedReason",
+  "_storedHandle",
+  "__cygwin_dll_entry@12",
+  "_dll_index",
+  "__cygwin_noncygwin_dll_entry@12",
+  "_DllMain@12",
+  "_cygwin_attach_dll",
+  "__cygwin_crt0_common@8",
+  "_do_pseudo_reloc",
+  "__pei386_runtime_relocator",
+  "_cygwin_premain3",
+  "_cygwin_premain2",
+  "_cygwin_premain1",
+  "_cygwin_premain0",
+  "___RUNTIME_PSEUDO_RELOC_LIST__",
+  "__imp___daylight",
+  "__imp__read",
+  "__imp__getenv",
+  "__imp__utimes",
+  "__data_start__",
+  "___DTOR_LIST__",
+  "__imp__mkstemp",
+  "__nm___impure_ptr",
+  "__imp__posix_regerror",
+  "__imp__fstat",
+  "__imp__fcntl",
+  "__imp__strtod",
+  "__imp__regcomp",
+  "___tls_start__",
+  "__imp__waitpid",
+  "__imp__opendir",
+  "__imp__regerror",
+  "__imp__cygwin_detach_dll",
+  "__imp__abort",
+  "__size_of_stack_commit__",
+  "__size_of_stack_reserve__",
+  "__major_subsystem_version__",
+  "___crt_xl_start__",
+  "__imp__posix_regexec",
+  "__imp__strndup",
+  "_closedir",
+  "___crt_xi_start__",
+  "___chkstk",
+  "__imp__mbrtowc",
+  "___crt_xi_end__",
+  "__head_cygz_dll",
+  "__imp__lstat",
+  "_posix_regcomp",
+  "_asprintf",
+  "_file_nformats",
+  "_dll_dllcrt0",
+  "_strtoull",
+  "__imp__open",
+  "___assert",
+  "__fu0___daylight",
+  "_GetModuleHandleA@4",
+  "__imp__strstr",
+  "_file_formats",
+  "__imp__strncmp",
+  "__imp__strtoul",
+  "__imp__vasprintf",
+  "__imp__strdup",
+  "__imp__strtoull",
+  "__imp___lstat64",
+  "__bss_start__",
+  "__imp__fputc",
+  "___RUNTIME_PSEUDO_RELOC_LIST_END__",
+  "__imp__write",
+  "__imp__asprintf",
+  "__size_of_heap_commit__",
+  "__imp__access",
+  "__imp__readlink",
+  "__lseek64",
+  "__imp__inflateInit2_",
+  "___crt_xp_start__",
+  "__imp__pipe",
+  "_posix_regerror",
+  "__lstat64",
+  "___crt_xp_end__",
+  "__imp__stat",
+  "__minor_os_version__",
+  "__imp__lseek",
+  "__image_base__",
+  "__imp__exit",
+  "__section_alignment__",
+  "__imp__readdir",
+  "__imp___impure_ptr",
+  "_posix_regfree",
+  "_cygwin_internal",
+  "_vasprintf",
+  "__RUNTIME_PSEUDO_RELOC_LIST__",
+  "__imp__memchr",
+  "__nm___daylight",
+  "_strerror",
+  "__imp__qsort",
+  "__imp__closedir",
+  "_iswprint",
+  "__imp__inflate",
+  "__imp__mmap",
+  "__data_end__",
+  "__CTOR_LIST__",
+  "__bss_end__",
+  "__imp__posix_regcomp",
+  "___crt_xc_end__",
+  "__imp__asctime",
+  "___crt_xc_start__",
+  "__imp__regfree",
+  "__imp__fgets",
+  "__fopen64",
+  "__imp__strchr",
+  "___CTOR_LIST__",
+  "__imp__regexec",
+  "___getreent",
+  "__imp___ctype_",
+  "__imp___open64",
+  "_cygwin1_dll_iname",
+  "__imp__memcpy",
+  "__head_cygwin1_dll",
+  "__file_alignment__",
+  "_inflateInit2_",
+  "__imp__strrchr",
+  "__imp__malloc",
+  "_cygwin_detach_dll",
+  "__major_os_version__",
+  "__imp__dll_dllcrt0",
+  "__imp__gmtime",
+  "__imp__ctime",
+  "__imp__realloc",
+  "__imp___fcntl64",
+  "__imp__mktime",
+  "_posix_regexec",
+  "__imp____getreent",
+  "_snprintf",
+  "__imp__GetModuleHandleA@4",
+  "__imp__strtof",
+  "__DTOR_LIST__",
+  "_file_names",
+  "__imp__fprintf",
+  "__imp____assert",
+  "__imp__memset",
+  "__imp__fclose",
+  "__imp__close",
+  "__size_of_heap_reserve__",
+  "___crt_xt_start__",
+  "__imp__execvp",
+  "___ImageBase",
+  "__subsystem__",
+  "__imp__strlen",
+  "__imp__fflush",
+  "__imp__strtol",
+  "__imp___stat64",
+  "__imp__calloc",
+  "__fcntl64",
+  "__fstat64",
+  "__imp__strlcat",
+  "__imp___fstat64",
+  "__imp____errno",
+  "__imp__fopen",
+  "__imp__iswprint",
+  "_cygz_dll_iname",
+  "__imp__cygwin_internal",
+  "___tls_end__",
+  "__imp__dup2",
+  "__imp__munmap",
+  "__imp__strerror",
+  "_readlink",
+  "__imp___fopen64",
+  "__imp__posix_regfree",
+  "__imp__free",
+  "__imp__snprintf",
+  "__major_image_version__",
+  "__loader_flags__",
+  "__imp__strlcpy",
+  "__head_libkernel32_a",
+  "__minor_subsystem_version__",
+  "__minor_image_version__",
+  "__imp__vfprintf",
+  "__nm_thnk___daylight",
+  "__imp__unlink",
+  "__imp__dup",
+  "__imp__inflateEnd",
+  "__imp__strcspn",
+  "__imp___mmap64",
+  "_inflateEnd",
+  "__RUNTIME_PSEUDO_RELOC_LIST_END__",
+  "__libkernel32_a_iname",
+  "__imp___lseek64",
+  "__nm___ctype_",
+  "_file_nnames",
+  "_regerror",
+  "__imp__fork",
+  "___crt_xt_end__",
+  "_vfprintf",
+  "__imp__fwrite"
+]

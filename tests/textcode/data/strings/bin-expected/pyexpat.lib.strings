@@ -1,48 +1,46 @@
-!<arch>
-/               1161153314              0       134       `
-L__IMPORT_DESCRIPTOR_pyexpat
-__NULL_IMPORT_DESCRIPTOR
-pyexpat_NULL_THUNK_DATA
-__imp__initpyexpat
-_initpyexpat
-__IMPORT_DESCRIPTOR_pyexpat
-__NULL_IMPORT_DESCRIPTOR
-__imp__initpyexpat
-_initpyexpat
-pyexpat_NULL_THUNK_DATA
-pyexpat.pyd/    1161153314              0       494       `
-L
-.debug$S
-B.idata$2
-.idata$6
-pyexpat.pyd(
-Microsoft (R) LINK
-pyexpat.pyd
-@comp.id
-.idata$2@
-.idata$6
-.idata$4@
-.idata$5@
-__IMPORT_DESCRIPTOR_pyexpat
-__NULL_IMPORT_DESCRIPTOR
-pyexpat_NULL_THUNK_DATA
-pyexpat.pyd/    1161153314              0       251       `
-L
-.debug$S
-B.idata$3
-pyexpat.pyd(
-Microsoft (R) LINK
-@comp.id
-__NULL_IMPORT_DESCRIPTOR
-pyexpat.pyd/    1161153314              0       279       `
-L
-.debug$S
-B.idata$5
-.idata$4
-pyexpat.pyd(
-Microsoft (R) LINK
-@comp.id
-pyexpat_NULL_THUNK_DATA
-pyexpat.pyd/    1161153314              0       45        `
-_initpyexpat
-pyexpat.pyd
+[
+  "!<arch>\n/               1161153314              0       134       `",
+  "L__IMPORT_DESCRIPTOR_pyexpat",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "pyexpat_NULL_THUNK_DATA",
+  "__imp__initpyexpat",
+  "_initpyexpat",
+  "__IMPORT_DESCRIPTOR_pyexpat",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "__imp__initpyexpat",
+  "_initpyexpat",
+  "pyexpat_NULL_THUNK_DATA",
+  "pyexpat.pyd/    1161153314              0       494       `\nL",
+  ".debug$S",
+  "B.idata$2",
+  ".idata$6",
+  "pyexpat.pyd(",
+  "Microsoft (R) LINK",
+  "pyexpat.pyd",
+  "@comp.id",
+  ".idata$2@",
+  ".idata$6",
+  ".idata$4@",
+  ".idata$5@",
+  "__IMPORT_DESCRIPTOR_pyexpat",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "pyexpat_NULL_THUNK_DATA",
+  "pyexpat.pyd/    1161153314              0       251       `\nL",
+  ".debug$S",
+  "B.idata$3",
+  "pyexpat.pyd(",
+  "Microsoft (R) LINK",
+  "@comp.id",
+  "__NULL_IMPORT_DESCRIPTOR",
+  "pyexpat.pyd/    1161153314              0       279       `\nL",
+  ".debug$S",
+  "B.idata$5",
+  ".idata$4",
+  "pyexpat.pyd(",
+  "Microsoft (R) LINK",
+  "@comp.id",
+  "pyexpat_NULL_THUNK_DATA",
+  "pyexpat.pyd/    1161153314              0       45        `",
+  "_initpyexpat",
+  "pyexpat.pyd"
+]

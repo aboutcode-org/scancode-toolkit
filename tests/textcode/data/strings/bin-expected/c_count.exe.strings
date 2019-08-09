@@ -1,308 +1,309 @@
-!This program cannot be run in DOS mode.
-$
-.text
-0`.rdata
-0@.bss
-.idata
-c_count WARNING - newline in string, line %ld, file %s
-c_count ERROR - terminated in comment in %s
-c_count ERROR - terminated in string in %s
-Total:
-__getreent
-__main
-_ctype_
-_fopen64
-_impure_ptr
-calloc
-cygwin_internal
-dll_crt0__FP11per_process
-fclose
-fgets
-fprintf
-free
-getc
-malloc
-printf
-realloc
-strcmp
-strdup
-strlen
-ungetc
-_fopen64
-GetModuleHandleA
-cygwin1.dll
-KERNEL32.dll
-.text
-.data
-.file
-c_count.c
-_peek
-_ispeek
-_main
-.text
-.data
-.rdata
-probe
-done
-.text
-.data
-.text
-.data
-.text
-.idata$78
-.idata$5
-.idata$4H
-.idata$6(
-.text
-.idata$74
-.idata$5
-.idata$4D
-.idata$6
-.text
-.idata$7\
-.idata$5
-.idata$4l
-.idata$6
-.text
-.idata$7p
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7t
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7x
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$7T
-.idata$5
-.idata$4d
-.idata$6
-.text
-.idata$7P
-.idata$5
-.idata$4`
-.idata$6
-.text
-.idata$7h
-.idata$5
-.idata$4x
-.idata$6
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.text
-.idata$70
-.idata$5
-.idata$4@
-.idata$6
-.text
-.idata$7X
-.idata$5
-.idata$4h
-.idata$6
-.text
-.idata$7`
-.idata$5
-.idata$4p
-.idata$6
-.text
-.idata$7|
-.idata$5
-.idata$4
-.idata$6
-.text
-.data
-.text
-.idata$7@
-.idata$5
-.idata$4P
-.idata$6@
-.text
-.data
-.text
-.idata$7D
-.idata$5
-.idata$4T
-.idata$6P
-.text
-.idata$7l
-.idata$5
-.idata$4|
-.idata$6
-.text
-.idata$7d
-.idata$5
-.idata$4t
-.idata$6
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.data
-.text
-.idata$7H
-.idata$5
-.idata$4X
-.idata$6\
-.text
-.data
-.idata$7
-.idata$5
-.idata$4
-.idata$6
-.file
-fake
-hname
-fthunk
-.text
-.data
-.idata$2
-.idata$5
-.idata$4
-.file
-fake
-.text
-.data
-.idata$4
-.idata$5
-.idata$7
-.text
-.data
-.idata$2
-.idata$5
-.idata$4<
-.text
-.idata$7<
-.idata$5
-.idata$4L
-.idata$64
-.text
-.idata$7L
-.idata$5
-.idata$4\
-.idata$6p
-.idata$4
-.idata$5
-.idata$7
-_free
-_strcmp
-_getc
-_ungetc
-_environ4
-___main
-_fprintf
-__alloca
-_strdup
-_fopen
-_calloc
-__fmode
-_realloc
-_malloc
-_fclose
-_fgets
-_strlen
-_printf
-_WinMainCRTStartup
-_mainCRTStartup
-_warn_embedded_newlines
-last_char_was_newline.0
-_getachar
-_sloc_count
-_count_file
-_read_a_line
-_cygwin_crt0
-__cygwin_crt0_common@8
-_do_pseudo_reloc
-__pei386_runtime_relocator
-_cygwin_premain3
-_cygwin_premain2
-_cygwin_premain1
-_cygwin_premain0
-___RUNTIME_PSEUDO_RELOC_LIST__
-___cygwin_crt0_bp
-__data_start__
-___DTOR_LIST__
-__nm___impure_ptr
-___tls_start__
-_dll_crt0__FP11per_process
-__imp__getc
-__size_of_stack_commit__
-__size_of_stack_reserve__
-__major_subsystem_version__
-___crt_xl_start__
-___crt_xi_start__
-___chkstk
-___crt_xi_end__
-_GetModuleHandleA@4
-__imp__strdup
-__bss_start__
-___RUNTIME_PSEUDO_RELOC_LIST_END__
-_total_sloc
-__size_of_heap_commit__
-___crt_xp_start__
-___crt_xp_end__
-__minor_os_version__
-__image_base__
-__section_alignment__
-__imp__ungetc
-__imp___impure_ptr
-_cygwin_internal
-__RUNTIME_PSEUDO_RELOC_LIST__
-__data_end__
-__CTOR_LIST__
-__bss_end__
-___crt_xc_end__
-___crt_xc_start__
-__imp__fgets
-__fopen64
-___CTOR_LIST__
-___getreent
-__imp___ctype_
-_cygwin1_dll_iname
-__head_cygwin1_dll
-__imp__strcmp
-__imp____main
-__file_alignment__
-__imp__malloc
-__major_os_version__
-__imp__realloc
-__imp____getreent
-__imp__GetModuleHandleA@4
-__DTOR_LIST__
-__imp__fprintf
-__imp__fclose
-__size_of_heap_reserve__
-___crt_xt_start__
-___ImageBase
-__subsystem__
-__imp__strlen
-__imp__calloc
-__imp__fopen
-__imp__cygwin_internal
-___tls_end__
-__imp__dll_crt0__FP11per_process
-__imp___fopen64
-__imp__free
-_line_number
-__major_image_version__
-__loader_flags__
-__imp__printf
-__head_libkernel32_a
-__minor_subsystem_version__
-__minor_image_version__
-__RUNTIME_PSEUDO_RELOC_LIST_END__
-__libkernel32_a_iname
-__nm___ctype_
-___crt_xt_end__
+[
+  "!This program cannot be run in DOS mode.\r\r\n$",
+  ".text",
+  "0`.rdata",
+  "0@.bss",
+  ".idata",
+  "c_count WARNING - newline in string, line %ld, file %s",
+  "c_count ERROR - terminated in comment in %s",
+  "c_count ERROR - terminated in string in %s",
+  "Total:",
+  "__getreent",
+  "__main",
+  "_ctype_",
+  "_fopen64",
+  "_impure_ptr",
+  "calloc",
+  "cygwin_internal",
+  "dll_crt0__FP11per_process",
+  "fclose",
+  "fgets",
+  "fprintf",
+  "free",
+  "getc",
+  "malloc",
+  "printf",
+  "realloc",
+  "strcmp",
+  "strdup",
+  "strlen",
+  "ungetc",
+  "_fopen64",
+  "GetModuleHandleA",
+  "cygwin1.dll",
+  "KERNEL32.dll",
+  ".text",
+  ".data",
+  ".file",
+  "c_count.c",
+  "_peek",
+  "_ispeek",
+  "_main",
+  ".text",
+  ".data",
+  ".rdata",
+  "probe",
+  "done",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$78",
+  ".idata$5",
+  ".idata$4H",
+  ".idata$6(",
+  ".text",
+  ".idata$74",
+  ".idata$5",
+  ".idata$4D",
+  ".idata$6",
+  ".text",
+  ".idata$7\\",
+  ".idata$5",
+  ".idata$4l",
+  ".idata$6",
+  ".text",
+  ".idata$7p",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7t",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7x",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$7T",
+  ".idata$5",
+  ".idata$4d",
+  ".idata$6",
+  ".text",
+  ".idata$7P",
+  ".idata$5",
+  ".idata$4`",
+  ".idata$6",
+  ".text",
+  ".idata$7h",
+  ".idata$5",
+  ".idata$4x",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".idata$70",
+  ".idata$5",
+  ".idata$4@",
+  ".idata$6",
+  ".text",
+  ".idata$7X",
+  ".idata$5",
+  ".idata$4h",
+  ".idata$6",
+  ".text",
+  ".idata$7`",
+  ".idata$5",
+  ".idata$4p",
+  ".idata$6",
+  ".text",
+  ".idata$7|",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7@",
+  ".idata$5",
+  ".idata$4P",
+  ".idata$6@",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7D",
+  ".idata$5",
+  ".idata$4T",
+  ".idata$6P",
+  ".text",
+  ".idata$7l",
+  ".idata$5",
+  ".idata$4|",
+  ".idata$6",
+  ".text",
+  ".idata$7d",
+  ".idata$5",
+  ".idata$4t",
+  ".idata$6",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".data",
+  ".text",
+  ".idata$7H",
+  ".idata$5",
+  ".idata$4X",
+  ".idata$6\\",
+  ".text",
+  ".data",
+  ".idata$7",
+  ".idata$5",
+  ".idata$4",
+  ".idata$6",
+  ".file",
+  "fake",
+  "hname",
+  "fthunk",
+  ".text",
+  ".data",
+  ".idata$2",
+  ".idata$5",
+  ".idata$4",
+  ".file",
+  "fake",
+  ".text",
+  ".data",
+  ".idata$4",
+  ".idata$5",
+  ".idata$7",
+  ".text",
+  ".data",
+  ".idata$2",
+  ".idata$5",
+  ".idata$4<",
+  ".text",
+  ".idata$7<",
+  ".idata$5",
+  ".idata$4L",
+  ".idata$64",
+  ".text",
+  ".idata$7L",
+  ".idata$5",
+  ".idata$4\\",
+  ".idata$6p",
+  ".idata$4",
+  ".idata$5",
+  ".idata$7",
+  "_free",
+  "_strcmp",
+  "_getc",
+  "_ungetc",
+  "_environ4",
+  "___main",
+  "_fprintf",
+  "__alloca",
+  "_strdup",
+  "_fopen",
+  "_calloc",
+  "__fmode",
+  "_realloc",
+  "_malloc",
+  "_fclose",
+  "_fgets",
+  "_strlen",
+  "_printf",
+  "_WinMainCRTStartup",
+  "_mainCRTStartup",
+  "_warn_embedded_newlines",
+  "last_char_was_newline.0",
+  "_getachar",
+  "_sloc_count",
+  "_count_file",
+  "_read_a_line",
+  "_cygwin_crt0",
+  "__cygwin_crt0_common@8",
+  "_do_pseudo_reloc",
+  "__pei386_runtime_relocator",
+  "_cygwin_premain3",
+  "_cygwin_premain2",
+  "_cygwin_premain1",
+  "_cygwin_premain0",
+  "___RUNTIME_PSEUDO_RELOC_LIST__",
+  "___cygwin_crt0_bp",
+  "__data_start__",
+  "___DTOR_LIST__",
+  "__nm___impure_ptr",
+  "___tls_start__",
+  "_dll_crt0__FP11per_process",
+  "__imp__getc",
+  "__size_of_stack_commit__",
+  "__size_of_stack_reserve__",
+  "__major_subsystem_version__",
+  "___crt_xl_start__",
+  "___crt_xi_start__",
+  "___chkstk",
+  "___crt_xi_end__",
+  "_GetModuleHandleA@4",
+  "__imp__strdup",
+  "__bss_start__",
+  "___RUNTIME_PSEUDO_RELOC_LIST_END__",
+  "_total_sloc",
+  "__size_of_heap_commit__",
+  "___crt_xp_start__",
+  "___crt_xp_end__",
+  "__minor_os_version__",
+  "__image_base__",
+  "__section_alignment__",
+  "__imp__ungetc",
+  "__imp___impure_ptr",
+  "_cygwin_internal",
+  "__RUNTIME_PSEUDO_RELOC_LIST__",
+  "__data_end__",
+  "__CTOR_LIST__",
+  "__bss_end__",
+  "___crt_xc_end__",
+  "___crt_xc_start__",
+  "__imp__fgets",
+  "__fopen64",
+  "___CTOR_LIST__",
+  "___getreent",
+  "__imp___ctype_",
+  "_cygwin1_dll_iname",
+  "__head_cygwin1_dll",
+  "__imp__strcmp",
+  "__imp____main",
+  "__file_alignment__",
+  "__imp__malloc",
+  "__major_os_version__",
+  "__imp__realloc",
+  "__imp____getreent",
+  "__imp__GetModuleHandleA@4",
+  "__DTOR_LIST__",
+  "__imp__fprintf",
+  "__imp__fclose",
+  "__size_of_heap_reserve__",
+  "___crt_xt_start__",
+  "___ImageBase",
+  "__subsystem__",
+  "__imp__strlen",
+  "__imp__calloc",
+  "__imp__fopen",
+  "__imp__cygwin_internal",
+  "___tls_end__",
+  "__imp__dll_crt0__FP11per_process",
+  "__imp___fopen64",
+  "__imp__free",
+  "_line_number",
+  "__major_image_version__",
+  "__loader_flags__",
+  "__imp__printf",
+  "__head_libkernel32_a",
+  "__minor_subsystem_version__",
+  "__minor_image_version__",
+  "__RUNTIME_PSEUDO_RELOC_LIST_END__",
+  "__libkernel32_a_iname",
+  "__nm___ctype_",
+  "___crt_xt_end__"
+]
