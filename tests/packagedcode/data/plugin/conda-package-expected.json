@@ -1,0 +1,107 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--package": true,
+        "--processes": "-1",
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "info",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "info/recipe.tar-extract",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "info/recipe.tar-extract/recipe",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "info/recipe.tar-extract/recipe/meta.yaml",
+      "type": "file",
+      "packages": [
+        {
+          "type": "conda",
+          "namespace": null,
+          "name": "requests-kerberos",
+          "version": "0.8.0",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": null,
+          "description": "Kerberos authentication handler for python-requests",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://github.com/requests/requests-kerberos",
+          "download_url": "https://pypi.python.org/packages/source/r/requests-kerberos/requests-kerberos-0.8.0.tar.gz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "unknown",
+          "declared_license": "Other",
+          "notice_text": null,
+          "manifest_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:conda/python",
+              "requirement": null,
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:conda/requests",
+              "requirement": ">=1.1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            },
+            {
+              "purl": "pkg:conda/pykerberos",
+              "requirement": ">=1.1.8,<2.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:conda/requests-kerberos@0.8.0",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}

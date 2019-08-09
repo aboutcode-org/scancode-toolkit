@@ -30,6 +30,7 @@ from packagedcode import chef
 from packagedcode import models
 from packagedcode import about
 from packagedcode import bower
+from packagedcode import conda
 from packagedcode import cargo
 from packagedcode import freebsd
 from packagedcode import haxe
@@ -85,6 +86,7 @@ PACKAGE_TYPES = [
     build.BazelPackage,
     build.BuckPackage,
     build.AutotoolsPackage,
+    conda.CondaPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
