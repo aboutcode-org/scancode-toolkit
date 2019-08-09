@@ -74,7 +74,7 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
 
 # Extracted text is digit, letters, punctuation and white spaces
 punctuation = re.escape(b"""!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~""")
-whitespaces = b' \t\n\r'
+whitespaces = b' \\t\\n\\r\t\n\r'
 printable = b'A-Za-z0-9' + whitespaces + punctuation
 null_byte = b'\x00'
 
@@ -246,7 +246,7 @@ def is_java_ref(s):
     Return True if s looks like a reference to a java class or package in a
     class file.
     """
-    jref = re.compile(r'^.*$', re.IGNORECASE).match
+    jref = re.compile('^.*$', re.IGNORECASE).match
     # TODO: implement me
     jref(s)
     return False
@@ -256,7 +256,7 @@ def is_win_guid(s):
     """
     Return True if s looks like a windows GUID/APPID/CLSID.
     """
-    guid = re.compile(r'"\{[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}"', re.IGNORECASE).match
+    guid = re.compile('"\{[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}"', re.IGNORECASE).match
     # TODO: implement me
     guid(s)
     return False

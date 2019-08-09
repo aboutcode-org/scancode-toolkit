@@ -295,7 +295,7 @@ def unicode_text_lines(location):
     decode each line as Unicode.
     """
     with open(location, 'rb') as f:
-        for line in f.read().splitlines(False):
+        for line in f.read().splitlines(True):
             yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 
