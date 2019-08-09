@@ -60,7 +60,7 @@ class TestAnalysis(FileBasedTesting):
     def test_numbered_text_lines_from_list_or_location_yield_same_results(self):
         test_file = self.get_test_loc('analysis/bsd-new')
         with io.open(test_file, encoding='utf-8') as inf:
-            test_strings_list = inf.read().splitlines(True)
+            test_strings_list = inf.read().splitlines(False)
 
         # test when we are passing a location or a list
         from_loc = list(numbered_text_lines(location=test_file))

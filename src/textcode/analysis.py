@@ -294,9 +294,8 @@ def unicode_text_lines(location):
     contains text. Open the file as binary with universal new lines then try to
     decode each line as Unicode.
     """
-    # FIXME: the U mode is going to be deprecated
-    with open(location, 'rbU') as f:
-        for line in f:
+    with open(location, 'rb') as f:
+        for line in f.read().splitlines(False):
             yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 
