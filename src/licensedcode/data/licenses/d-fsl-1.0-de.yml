@@ -4,7 +4,7 @@ name: Deutsche Freie Software Lizenz
 category: Copyleft
 owner: Institute for Legal Issues On Free and Open Source Software
 homepage_url: http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/de/D-FSL-1_0_de.txt
-notes: |-
+notes: |
     Per SPDX.org, this license was created for and is backed by the German
     state. The English translation can be found here
     http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
@@ -22,3 +22,11 @@ other_urls:
     - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/deutsche-freie-software-lizenz
     - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/german-free-software-license
 minimum_coverage: 10
+ignorable_copyrights:
+    - (c) Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen 2004
+ignorable_holders:
+    - Ministerium fur Wissenschaft und Forschung Nordrhein-Westfalen
+ignorable_urls:
+    - http://www.d-fsl.de/
+    - http://www.fsf.org/licenses/gpl
+    - http://www.ifross.de/

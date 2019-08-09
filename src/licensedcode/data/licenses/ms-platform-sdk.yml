@@ -3,3 +3,9 @@ short_name: MS Platform SDK License
 name: Microsoft Platform SDK License
 category: Commercial
 owner: Microsoft
+ignorable_copyrights:
+    - Copyright (c) 1999-2002 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
+ignorable_urls:
+    - http://www.microsoft.com/exporting/

@@ -49,6 +49,7 @@ license_expressions:
   - unknown
   - xfree86-1.1
   - apache-1.1
+  - warranty-disclaimer
   - ijg
   - ijg
   - xfree86-1.0
@@ -61,18 +62,17 @@ license_expressions:
   - apache-2.0
   - mit-no-advert-export-control
   - unknown
-  - x11-r75
+  - mit
   - x11-keith-packard
   - unicode
   - historical
   - x11
   - mit
   - historical
+  - warranty-disclaimer
   - x11-xconsortium
-  - x11-r75
-  - unicode
   - x11
-  - x11
+  - x11-keith-packard
   - x11-opengroup
   - x11-keith-packard
   - x11-xconsortium

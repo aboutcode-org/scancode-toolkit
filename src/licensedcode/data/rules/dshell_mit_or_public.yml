@@ -1,2 +1,4 @@
 license_expression: mit AND public-domain
 is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/mit-license.php

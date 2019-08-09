@@ -6,3 +6,5 @@ owner: Altera Corporation
 homepage_url: https://www.altera.com/download/licensing/lic-jrunner.html
 text_urls:
     - https://www.altera.com/download/licensing/lic-jrunner.html
+ignorable_urls:
+    - https://www.altera.com/download/licensing/lic-jrunner.html

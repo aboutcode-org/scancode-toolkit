@@ -4,3 +4,5 @@ name: Shavlik Technologies EULA
 category: Commercial
 owner: Shavlik Technologies
 homepage_url: http://www.shavlik.com/
+ignorable_emails:
+    - info@shavlik.com

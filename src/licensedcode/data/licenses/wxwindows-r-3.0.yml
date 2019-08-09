@@ -7,3 +7,7 @@ homepage_url: http://www.wxwidgets.org/about/licence.htm
 text_urls:
     - http://www.wxwidgets.org/about/licence.htm
 minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 1998 Julian Smart, Robert Roebling
+ignorable_holders:
+    - Julian Smart, Robert Roebling

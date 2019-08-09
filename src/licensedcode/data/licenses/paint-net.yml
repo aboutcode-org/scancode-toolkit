@@ -4,3 +4,8 @@ name: Paint.NET License
 category: Proprietary Free
 owner: dotPDN
 homepage_url: http://www.getpaint.net/license.html
+ignorable_urls:
+    - http://www.everaldo.com/crystal
+    - http://www.getpaint.net/donate.html
+    - http://www.gnu.org/copyleft/lesser.html
+    - http://www.oxygen-icons.org/

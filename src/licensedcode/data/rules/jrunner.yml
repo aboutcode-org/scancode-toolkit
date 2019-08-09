@@ -1,2 +1,4 @@
 license_expression: jrunner
 is_license_reference: yes
+ignorable_urls:
+    - https://www.altera.com/download/licensing/lic-jrunner.html

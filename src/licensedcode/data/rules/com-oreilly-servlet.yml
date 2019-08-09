@@ -1,2 +1,4 @@
 license_expression: com-oreilly-servlet
 is_license_reference: yes
+ignorable_urls:
+    - http://www.servlets.com/cos/license.html

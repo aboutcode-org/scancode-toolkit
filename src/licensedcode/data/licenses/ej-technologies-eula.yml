@@ -6,3 +6,8 @@ owner: ej-technologies
 homepage_url: http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
 text_urls:
     - http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
+ignorable_urls:
+    - http://www.ej-technologies.com/
+    - http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
+ignorable_emails:
+    - info@ej-technologies.com

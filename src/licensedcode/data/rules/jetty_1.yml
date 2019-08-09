@@ -1,2 +1,4 @@
 license_expression: jetty
 is_license_reference: yes
+ignorable_urls:
+    - http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt

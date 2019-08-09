@@ -7,3 +7,9 @@ homepage_url: http://freetts.sourceforge.net/license.terms
 text_urls:
     - http://freetts.sourceforge.net/license.terms
 faq_url: http://freetts.sourceforge.net/docs/index.php
+ignorable_copyrights:
+    - Portions Copyright 1999-2001 Language Technologies Institute, Carnegie Mellon University
+    - Portions Copyright 2001-2004 Sun Microsystems, Inc.
+ignorable_holders:
+    - Language Technologies Institute, Carnegie Mellon University
+    - Sun Microsystems, Inc.

@@ -6,3 +6,9 @@ owner: Zapatec
 text_urls:
     - http://www.kean.edu/~cpd/calendar/zapatec/zpcal/doc/license.html
 minimum_coverage: 90
+ignorable_copyrights:
+    - (c) 2004-2006 Zapatec, Inc.
+ignorable_holders:
+    - Zapatec, Inc.
+ignorable_urls:
+    - http://www.zapatec.com/website/main/products/prod1/

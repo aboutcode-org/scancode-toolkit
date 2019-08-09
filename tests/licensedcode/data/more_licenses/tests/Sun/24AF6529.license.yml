@@ -1,7 +1,4 @@
 license_expressions:
-  - bsd-new
-  - unknown
-  - sun-entitlement-03-15
-  - sun-entitlement-03-15
+  - proprietary-license
 notes: the results of matching this can change a bit over time, but are always detected as some
-  variant of a proprietary Sun agreement
+  variant of a proprietary license or proprietary Sun agreement

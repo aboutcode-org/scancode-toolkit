@@ -3,3 +3,10 @@ short_name: First Works Appreciative License 1.2
 name: First Works Appreciative License 1.2
 category: Proprietary Free
 owner: Jonathan Michael Davis
+ignorable_copyrights:
+    - Copyright (c) 2005 Jonathan Michael Davis <jond_123@hotmail.com>
+ignorable_holders:
+    - Jonathan Michael Davis
+ignorable_emails:
+    - jon@jondavis.net
+    - jond_123@hotmail.com

@@ -5,3 +5,5 @@ category: Proprietary Free
 owner: Microsoft
 text_urls:
     - ftp://ftp.physik.hu-berlin.de/pub/useful/dx7asdk/DXF/license/directx%20sdk%20eula.txt
+ignorable_authors:
+    - permission from Microsoft Corporation

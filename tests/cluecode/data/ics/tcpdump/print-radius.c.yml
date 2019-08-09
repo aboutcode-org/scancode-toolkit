@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000 Alfredo Andres Omella.
+  - Copyright (c) 2000 Alfredo Andres Omella
 holders:
-    - Alfredo Andres Omella.
+  - Alfredo Andres Omella
 holders_summary:
-    -   value: Alfredo Andres Omella.
-        count: 1
+  - value: Alfredo Andres Omella
+    count: 1

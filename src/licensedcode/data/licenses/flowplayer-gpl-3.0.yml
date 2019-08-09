@@ -6,3 +6,7 @@ owner: Flowplayer
 homepage_url: https://flowplayer.org/license/
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.html
+ignorable_authors:
+    - ModOrg
+ignorable_urls:
+    - http://www.gnu.org/licenses/

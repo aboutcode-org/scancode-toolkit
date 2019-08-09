@@ -8,3 +8,11 @@ text_urls:
     - http://www.ok-labs.com/licenses#ozplb
 other_urls:
     - http://www.ertos.nicta.com.au
+ignorable_copyrights:
+    - Copyright (c) 2006, National ICT Australia, Ltd
+ignorable_authors:
+    - Embedded, Real-time and Operating Systems Program (ERTOS) National ICT Australia http://www.ertos.nicta.com.au
+ignorable_holders:
+    - National ICT Australia, Ltd
+ignorable_urls:
+    - http://www.ertos.nicta.com.au/

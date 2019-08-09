@@ -6,7 +6,7 @@ owner: KDE Project
 is_exception: yes
 other_urls:
     - https://download.kde.org/stable/applications/18.04.0/src/eventviews-18.04.0.tar.xz
-standard_notice: |-
+standard_notice: |
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or

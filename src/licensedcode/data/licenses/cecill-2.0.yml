@@ -4,7 +4,7 @@ name: CeCILL Free Software License Agreement v2.0
 category: Copyleft Limited
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences.en.html
-notes: |-
+notes: |
     per SPDX.org, English translation can be found here
     http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
 spdx_license_key: CECILL-2.0

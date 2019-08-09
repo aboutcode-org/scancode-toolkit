@@ -3,3 +3,12 @@ short_name: gSOAP Public License v1.3a
 name: gSOAP Public License v1.3a
 category: Copyleft Limited
 owner: Genivia
+ignorable_copyrights:
+    - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
+ignorable_authors:
+    - Robert A. van Engelen
+ignorable_holders:
+    - Robert A. van Engelen, Genivia inc.
+ignorable_urls:
+    - http://genivia.com/Products/gsoap/contract.html
+    - http://genivia.com/Products/gsoap/license.pdf

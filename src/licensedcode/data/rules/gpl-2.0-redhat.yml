@@ -1,2 +1,4 @@
 license_expression: 389-exception
 is_license_reference: yes
+ignorable_urls:
+    - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text

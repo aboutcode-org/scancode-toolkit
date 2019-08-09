@@ -3,6 +3,6 @@ short_name: Generic Bare Warranty Disclaimer
 name: Generic Bare Warranty Disclaimer
 category: Unstated License
 owner: Unspecified
-notes: |-
+notes: |
     This is a catch all license for plain, generic warranty disclaimers that do
     not provide much rights. Often seen in Microsoft code.

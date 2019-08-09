@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1995 Linus Torvalds
+  - Copyright 1995 Linus Torvalds
 holders:
-    - Linus Torvalds
+  - Linus Torvalds
 holders_summary:
-    -   value: Linus Torvalds
-        count: 1
+  - value: Linus Torvalds
+    count: 1

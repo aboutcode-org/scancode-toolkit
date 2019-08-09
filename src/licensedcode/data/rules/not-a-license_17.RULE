@@ -1,1 +1,1 @@
-Read the full text of the GPL
+["resultString"] || "").include?("Program License Agreement")

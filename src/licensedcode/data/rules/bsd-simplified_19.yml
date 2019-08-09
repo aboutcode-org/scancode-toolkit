@@ -1,4 +1,6 @@
 license_expression: bsd-simplified
 is_license_text: yes
-notes: BSD simplified with URL
 minimum_coverage: 60
+notes: BSD simplified with URL
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php

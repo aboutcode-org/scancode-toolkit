@@ -13,3 +13,14 @@ other_urls:
     - http://www.eu-egee.org/
     - http://www.opensource.org/licenses/EUDatagrid
     - https://opensource.org/licenses/EUDatagrid
+ignorable_copyrights:
+    - Copyright (c) 2001 EU DataGrid
+ignorable_authors:
+    - hep-project-grid-edg-license@cern.ch
+    - the EU DataGrid (http://www.eu-datagrid.org/)
+ignorable_holders:
+    - EU DataGrid
+ignorable_urls:
+    - http://www.eu-datagrid.org/
+ignorable_emails:
+    - hep-project-grid-edg-license@cern.ch

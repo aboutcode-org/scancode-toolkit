@@ -13,3 +13,11 @@ faq_url: http://www.gnu.org/philosophy/historical-apsl.html
 other_urls:
     - http://web.archive.org/web/20000901055846/http://www.opensource.apple.com/apsl/
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.1
+ignorable_copyrights:
+    - Portions Copyright (c) 1999-2000 Apple Computer, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
+ignorable_urls:
+    - http://www.apple.com/legal/guidelinesfor3rdparties.html
+    - http://www.apple.com/publicsource
+    - http://www.apple.com/publicsource/modifications.html

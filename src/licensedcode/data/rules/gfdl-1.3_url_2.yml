@@ -1,0 +1,5 @@
+license_expression: gfdl-1.3
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/gfdl-1.3-only.html

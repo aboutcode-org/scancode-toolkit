@@ -1,2 +1,4 @@
 license_expression: oclc-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.free-soft.org/mirrors/www.opensource.org/licenses/oclc.php

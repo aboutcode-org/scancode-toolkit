@@ -8,7 +8,7 @@ is_exception: yes
 spdx_license_key: Qwt-exception-1.0
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
-standard_notice: |-
+standard_notice: |
     Qwt License
     Version 1.0, January 1, 2003
     The Qwt library and included programs are provided under the terms
@@ -36,3 +36,5 @@ standard_notice: |-
     documentation to satisfy this requirement:
     [program/widget] is based in part on the work of
     the Qwt project (http://qwt.sf.net).
+ignorable_urls:
+    - http://qwt.sf.net/

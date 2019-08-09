@@ -3,3 +3,5 @@ short_name: Sun BCL JSMQ
 name: Sun BCL JSMQ
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_urls:
+    - http://www.sun.com/policies/trademarks

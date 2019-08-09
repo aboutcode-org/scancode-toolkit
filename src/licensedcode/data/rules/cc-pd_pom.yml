@@ -1,2 +1,4 @@
 license_expression: cc-pd
 is_license_reference: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain

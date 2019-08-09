@@ -1,15 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright © 2016年 Allen.
+  - Copyright (c) 2016Nian Allen
 holders:
-    - Allen.
+  - Allen
 holders_summary:
-    -   value: Allen
-        count: 1
-expected_failures:
-    - copyrights
-    - holders
-    - holders_summary
+  - value: Allen
+    count: 1

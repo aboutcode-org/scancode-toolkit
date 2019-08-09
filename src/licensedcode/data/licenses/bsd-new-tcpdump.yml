@@ -1,7 +1,6 @@
 key: bsd-new-tcpdump
-short_name: BSD-Modified tcpdump variant
-name: BSD-Modified tcpdump variant
+short_name: BSD-3-Clause tcpdump variant
+name: BSD-3-Clause tcpdump variant
 category: Permissive
-owner: tcpdump
-notes: |-
-    This license is a custom variation on the BSD  found in tcpdump
+owner: libpcap
+notes: This license is a custom variation on the BSD  found in tcpdump

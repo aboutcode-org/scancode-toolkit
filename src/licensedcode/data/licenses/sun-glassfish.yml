@@ -7,3 +7,5 @@ homepage_url: https://glassfish.dev.java.net/public/BinariesLicense.html
 text_urls:
     - https://glassfish.dev.java.net/public/BinariesLicense.html
 minimum_coverage: 80
+ignorable_urls:
+    - http://www.java.net/

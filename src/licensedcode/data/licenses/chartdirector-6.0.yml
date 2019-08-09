@@ -6,3 +6,11 @@ owner: Advanced Software Engineering Ltd.
 homepage_url: http://www.advsofteng.com/doc/cdcomdoc/license.htm
 other_urls:
     - http://www.advsofteng.com/
+ignorable_copyrights:
+    - (c) 2015 Advanced Software Engineering Limited
+ignorable_authors:
+    - using code from the Independent JPEG Group and the FreeType team
+ignorable_holders:
+    - Advanced Software Engineering Limited
+ignorable_urls:
+    - http://www.advsofteng.com/

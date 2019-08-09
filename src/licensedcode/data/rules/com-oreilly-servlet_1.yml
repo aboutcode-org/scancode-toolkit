@@ -1,2 +1,5 @@
 license_expression: com-oreilly-servlet
 is_license_text: yes
+ignorable_urls:
+    - http://www.amazon.com/exec/obidos/ASIN/0596000405/jasonhunter
+    - http://www.servlets.com/

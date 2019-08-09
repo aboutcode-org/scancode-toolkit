@@ -7,3 +7,9 @@ homepage_url: http://www.opensource-socialnetwork.org/licence/
 text_urls:
     - https://github.com/opensource-socialnetwork/opensource-socialnetwork/blob/v4.x/LICENSE.txt
 minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 2014-2017 OPEN SOURCE SOCIAL NETWORK. <https://www.opensource-socialnetwork.org/>
+ignorable_holders:
+    - OPEN SOURCE SOCIAL NETWORK.
+ignorable_urls:
+    - https://www.opensource-socialnetwork.org/

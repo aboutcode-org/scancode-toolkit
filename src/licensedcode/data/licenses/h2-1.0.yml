@@ -4,7 +4,7 @@ name: H2 License 1.0
 category: Copyleft Limited
 owner: H2 Group
 homepage_url: http://h2database.com
-notes: |-
+notes: |
     This is an old license that is derived from the MPL-1.1 and different
     enough to be tracked as such. Newer versions use a plain MPL-2.0 license.
 text_urls:

@@ -6,3 +6,5 @@ owner: Microsoft
 faq_url: http://msdn.microsoft.com/en-us/library/vstudio/ms235299(v=vs.100).aspx
 other_urls:
     - www.microsoft.com/exporting
+ignorable_urls:
+    - http://www.microsoft.com/exporting

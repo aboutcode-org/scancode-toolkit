@@ -6,3 +6,5 @@ owner: LavanTech
 homepage_url: http://www.lavantech.com/license.shtml
 text_urls:
     - http://www.lavantech.com/license.shtml
+ignorable_urls:
+    - http://www.lavantech.com/license.shtml

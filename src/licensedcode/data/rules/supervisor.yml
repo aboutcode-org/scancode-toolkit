@@ -1,2 +1,4 @@
 license_expression: supervisor
 is_license_reference: yes
+ignorable_urls:
+    - https://github.com/Supervisor/supervisor/blob/master/LICENSES.txt

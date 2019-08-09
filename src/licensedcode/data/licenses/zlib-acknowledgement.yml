@@ -4,7 +4,7 @@ name: ZLIB License with Acknowledgment
 category: Permissive
 owner: Charlie Poole
 homepage_url: https://fedoraproject.org/wiki/Licensing:ZlibWithAcknowledgement?rd=Licensing/ZlibWithAcknowledgement
-notes: |-
+notes: |
     Per Fedora, this license is the same as zlib, except that it requires that
     an acknowledgement be made in the product documentation. For Fedora, this
     is our Release notes, so if you have any packages which use this license,
@@ -15,3 +15,11 @@ other_spdx_license_keys:
     - Nunit
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement
+ignorable_copyrights:
+    - Copyright (c) 2000-2002 Philip A. Craig
+    - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
+    - Portions Copyright (c) 2002-2007 Charlie Poole
+ignorable_holders:
+    - Charlie Poole
+    - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
+    - Philip A. Craig

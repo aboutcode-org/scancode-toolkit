@@ -1,2 +1,5 @@
 license_expression: commercial-license
 is_license_notice: yes
+ignorable_urls:
+    - http://www.qt.io/contact-us
+    - http://www.qt.io/terms-conditions

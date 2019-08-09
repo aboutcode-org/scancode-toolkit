@@ -1,0 +1,4 @@
+license_expression: mit
+is_license_reference: yes
+ignorable_urls:
+    - https://github.com/hector-client/hector/wiki/License

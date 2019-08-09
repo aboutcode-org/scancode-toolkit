@@ -4,3 +4,9 @@ minimum_coverage: 80
 referenced_filenames:
     - NOTICE
     - LICENSE
+ignorable_authors:
+    - The Apache Software Foundation (http://www.apache.org/)
+ignorable_urls:
+    - http://www.apache.org/
+    - http://www.saxproject.org/
+    - http://www.w3c.org/

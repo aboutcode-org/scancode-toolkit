@@ -4,7 +4,7 @@ name: Standard ML of New Jersey
 category: Permissive
 owner: Alcatel-Lucent
 homepage_url: http://www.smlnj.org//license.html
-notes: |-
+notes: |
     per SPDX.org, SPDX ended up with this license on the license list twice
     once as of v1.17 with the short identifier SMLNJ and then added (again) as
     of v1.20 with the short identifier StandardML-NJ. The former list entry has

@@ -8,7 +8,7 @@ is_exception: yes
 faq_url: http://www.aptana.com/legal/gpl
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     This program Copyright (c) 2005-2015 by Appcelerator, Inc. This program is
     distributed under the GNU General Public license. This program is free
     software; you can redistribute it and/or modify it under the terms of the
@@ -79,3 +79,5 @@ standard_notice: |-
     "Powered by Aptana". On user interface screens, this text must be visibly
     and clearly displayed in the title bar, status bar, or otherwise directly
     in the view that is in focus.
+ignorable_urls:
+    - http://www.aptana.com/legal/gpl

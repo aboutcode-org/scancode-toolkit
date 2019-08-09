@@ -1,2 +1,4 @@
 license_expression: chris-maunder
 is_license_reference: yes
+ignorable_urls:
+    - http://www.codeproject.com/Members/Chris-Maunder

@@ -1,2 +1,4 @@
 license_expression: artistic-clarified
 is_license_reference: yes
+ignorable_urls:
+    - https://fedoraproject.org/wiki/Licensing/ArtisticClarified

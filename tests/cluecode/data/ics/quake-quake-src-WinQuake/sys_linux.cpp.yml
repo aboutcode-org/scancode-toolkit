@@ -1,13 +1,13 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) 1996 Id Software, inc.
-    - (c) 1996 Id Software, inc.
+  - (c) 1996 Id Software, inc. x1b 21 1H
+  - (c) 1996 Id Software, inc. x1b 21 1H
 holders:
-    - Id Software, inc.
-    - Id Software, inc.
+  - Id Software, inc. x1b 21 1H
+  - Id Software, inc. x1b 21 1H
 holders_summary:
-    -   value: Id Software, inc.
-        count: 2
+  - value: Id Software, inc. x1b 21 1H
+    count: 2

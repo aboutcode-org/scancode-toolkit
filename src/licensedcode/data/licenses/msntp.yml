@@ -6,3 +6,14 @@ owner: Fedora
 homepage_url: http://fedoraproject.org/wiki/Licensing/MSNTP
 text_urls:
     - http://fedoraproject.org/wiki/Licensing/MSNTP
+ignorable_copyrights:
+    - (c) Copyright N.M. Maclaren
+    - (c) Copyright University of Cambridge
+    - (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
+    - (c) Copyright, University of Cambridge, 1996, 1997, 2000
+ignorable_authors:
+    - N.M. Maclaren
+    - the University of Cambridge
+ignorable_holders:
+    - N.M. Maclaren
+    - University of Cambridge

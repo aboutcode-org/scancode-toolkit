@@ -6,3 +6,10 @@ owner: Unspecified
 homepage_url: http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
 text_urls:
     - http://fossat.googlecode.com/svn/trunk/bin/COPYRIGHT.txt
+ignorable_copyrights:
+    - Copyright 1988-2009 Queen's University at Kingston
+    - Copyright 2009 by Queen's University at Kingston
+    - Copyright Convention 1971 Paris
+ignorable_holders:
+    - Convention Paris
+    - Queen's University at Kingston

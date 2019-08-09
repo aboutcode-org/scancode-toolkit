@@ -12,3 +12,12 @@ osi_url: http://opensource.org/licenses/multics.txt
 other_urls:
     - http://www.opensource.org/licenses/Multics
     - https://opensource.org/licenses/Multics
+ignorable_copyrights:
+    - Copyright 1972 by Massachusetts Institute of Technology and Honeywell Information Systems
+        Inc.
+    - Copyright 2006 by BULL HN Information Systems Inc.
+    - Copyright 2006 by Bull SAS
+ignorable_holders:
+    - BULL HN Information Systems Inc.
+    - Bull SAS
+    - Massachusetts Institute of Technology and Honeywell Information Systems Inc.

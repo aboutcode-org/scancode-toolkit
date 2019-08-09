@@ -4,3 +4,10 @@ name: com.oreilly.servlet License
 category: Commercial
 owner: Servlets.com
 homepage_url: http://www.servlets.com/cos/license.html
+ignorable_copyrights:
+    - Copyright (c) 2001-2009 by Jason Hunter, jhunter_AT_servlets.com
+ignorable_holders:
+    - Jason Hunter, jhunter_AT_servlets.com
+ignorable_urls:
+    - http://www.amazon.com/exec/obidos/ASIN/0596000405/jasonhunter
+    - http://www.servlets.com/

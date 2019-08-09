@@ -1,2 +1,4 @@
 license_expression: netcdf
 is_license_notice: yes
+ignorable_urls:
+    - http://www.unidata.ucar.edu/software/netcdf/copyright.html

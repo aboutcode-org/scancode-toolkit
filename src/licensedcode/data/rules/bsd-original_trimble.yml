@@ -1,2 +1,5 @@
 license_expression: bsd-original
 is_license_notice: yes
+ignorable_authors:
+    - Trimble Navigation, Ltd.
+    - the Software and Component Technologies group of Trimble Navigation, Ltd.

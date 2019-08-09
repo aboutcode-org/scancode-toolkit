@@ -1,0 +1,9 @@
+license_expression: bzip2-libbzip-2010
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright (c) 1996-2006 Julian R Seward
+ignorable_holders:
+    - Julian R Seward
+ignorable_emails:
+    - jseward@bzip.org

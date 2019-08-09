@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2004-2010 Alex Pankratov.
+  - Copyright (c) 2004-2010 Alex Pankratov
 holders:
-    - Alex Pankratov.
+  - Alex Pankratov
 holders_summary:
-    -   value: Alex Pankratov.
-        count: 1
+  - value: Alex Pankratov
+    count: 1

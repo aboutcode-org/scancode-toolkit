@@ -6,3 +6,9 @@ owner: OpenVPN
 homepage_url: http://openvpn.net/index.php/license.html
 other_urls:
     - http://openvpn.net/index.php/license.html
+ignorable_copyrights:
+    - Copyright (c) 2009-2013 OpenVPN Technologies, Inc.
+ignorable_holders:
+    - OpenVPN Technologies, Inc.
+ignorable_urls:
+    - http://openvpn.net/

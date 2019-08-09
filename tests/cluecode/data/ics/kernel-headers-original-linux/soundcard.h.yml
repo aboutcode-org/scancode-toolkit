@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright by Hannu Savolainen 1993-1997
+  - Copyright by Hannu Savolainen 1993-1997
 holders:
-    - Hannu Savolainen
+  - Hannu Savolainen
 holders_summary:
-    -   value: Hannu Savolainen
-        count: 1
+  - value: Hannu Savolainen
+    count: 1

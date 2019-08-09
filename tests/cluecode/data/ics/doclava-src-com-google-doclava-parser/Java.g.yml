@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007-2008 Terence Parr
+  - Copyright (c) 2007-2008 Terence Parr
 holders:
-    - Terence Parr
+  - Terence Parr
 holders_summary:
-    -   value: Terence Parr
-        count: 1
+  - value: Terence Parr
+    count: 1

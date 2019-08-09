@@ -13,3 +13,15 @@ other_urls:
     - http://freetype.org/patents.html
     - http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT
     - http://www.freetype.org/
+ignorable_copyrights:
+    - Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg
+    - copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg
+    - copyright (c) The FreeType Project (www.freetype.org)
+ignorable_holders:
+    - David Turner, Robert Wilhelm, and Werner Lemberg
+    - The FreeType Project
+ignorable_urls:
+    - http://www.freetype.org/
+ignorable_emails:
+    - freetype-devel@nongnu.org
+    - freetype@nongnu.org

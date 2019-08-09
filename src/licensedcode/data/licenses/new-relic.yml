@@ -4,3 +4,7 @@ name: New Relic License
 category: Proprietary Free
 owner: New Relic
 homepage_url: https://github.com/newrelic/rpm/blob/master/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2008-2014 New Relic, Inc.
+ignorable_holders:
+    - New Relic, Inc.

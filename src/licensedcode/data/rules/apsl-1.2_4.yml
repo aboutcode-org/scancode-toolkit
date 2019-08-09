@@ -1,2 +1,4 @@
 license_expression: apsl-1.2
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/apsl.html

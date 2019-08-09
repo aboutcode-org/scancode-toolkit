@@ -5,3 +5,5 @@ category: Permissive
 owner: Jim Davies
 homepage_url: https://fedoraproject.org/wiki/Licensing/Zed
 spdx_license_key: Zed
+ignorable_emails:
+    - Jim.Davies@comlab.ox.ac.uk

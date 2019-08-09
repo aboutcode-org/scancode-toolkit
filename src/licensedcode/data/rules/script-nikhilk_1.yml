@@ -1,2 +1,4 @@
 license_expression: script-nikhilk
 is_license_reference: yes
+ignorable_urls:
+    - http://projects.nikhilk.net/Content/Projects/ScriptSharp/ScriptSharp.pdf

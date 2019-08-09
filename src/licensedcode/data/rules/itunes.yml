@@ -1,2 +1,4 @@
 license_expression: itunes
 is_license_reference: yes
+ignorable_urls:
+    - http://images.apple.com/legal/sla/docs/itunes.pdf

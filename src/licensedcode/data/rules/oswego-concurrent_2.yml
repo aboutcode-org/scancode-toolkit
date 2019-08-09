@@ -1,2 +1,6 @@
 license_expression: oswego-concurrent
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1994-2000 Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.

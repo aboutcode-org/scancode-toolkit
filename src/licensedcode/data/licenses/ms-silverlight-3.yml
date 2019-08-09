@@ -3,3 +3,7 @@ short_name: MS Silverlight 3 License
 name: Microsoft Silverlight 3 License
 category: Proprietary Free
 owner: Microsoft
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - http://www.mpegla.com/
+    - http://www.support.microsoft.com/common/international.aspx

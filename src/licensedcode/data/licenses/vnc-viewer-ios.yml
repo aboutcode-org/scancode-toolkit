@@ -4,3 +4,5 @@ name: VNCViewer for iOS EULA
 category: Commercial
 owner: RealVNCLimited
 homepage_url: https://www.realvnc.com/products/ios/licensing.pdf
+ignorable_emails:
+    - iphone-support@realvnc.com

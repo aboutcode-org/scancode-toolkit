@@ -3,3 +3,7 @@ short_name: Baekmuk Fonts License
 name: Baekmuk Fonts License
 category: Permissive
 owner: Unspecified
+ignorable_copyrights:
+    - Copyright (c) Kim Jeong-Hwan
+ignorable_holders:
+    - Kim Jeong-Hwan

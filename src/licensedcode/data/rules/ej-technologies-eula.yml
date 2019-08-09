@@ -1,2 +1,4 @@
 license_expression: ej-technologies-eula
 is_license_reference: yes
+ignorable_urls:
+    - http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html

@@ -1,0 +1,6 @@
+license_expression: apache-2.0 OR mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+    - https://www.apache.org/licenses/LICENSE-2.0

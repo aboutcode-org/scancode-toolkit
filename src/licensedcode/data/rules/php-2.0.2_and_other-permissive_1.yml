@@ -1,0 +1,14 @@
+license_expression: php-2.0.2 AND other-permissive
+is_license_text: yes
+relevance: 99
+notes: this is a rare license. We report the php-2.0.2 instead
+ignorable_copyrights:
+    - Copyright (c) 1999 The PHP Group
+ignorable_holders:
+    - The PHP Group
+ignorable_urls:
+    - http://www.php.net/
+    - http://www.zend.com/license/0_91.txt
+ignorable_emails:
+    - license@zend.com
+    - php-group@php.net

@@ -3,3 +3,5 @@ short_name: MS Remote NDIS USB Kit EULA
 name: Microsoft Remote NDIS USB Kit EULA
 category: Commercial
 owner: Microsoft
+ignorable_urls:
+    - http://www.microsoft.com/exporting

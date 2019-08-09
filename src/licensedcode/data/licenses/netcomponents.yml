@@ -6,3 +6,7 @@ owner: Savarese.Org
 homepage_url: http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
 text_urls:
     - http://gruntspud.sourceforge.net/NETCOMPONENTS_LICENSE.html
+ignorable_copyrights:
+    - Copyright (c) 1996-1999 Daniel F. Savarese
+ignorable_holders:
+    - Daniel F. Savarese

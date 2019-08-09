@@ -1,2 +1,4 @@
 license_expression: oreilly-notice
 is_license_reference: yes
+ignorable_urls:
+    - http://shop.oreilly.com/category/customer-service/faq-examples.do

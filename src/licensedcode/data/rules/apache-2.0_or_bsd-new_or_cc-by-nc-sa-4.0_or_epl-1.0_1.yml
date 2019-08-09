@@ -3,3 +3,5 @@ license_expression: apache-2.0 OR bsd-new OR cc-by-nc-sa-4.0 OR epl-1.0 OR agpl-
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 70
+ignorable_urls:
+    - https://spdx.org/licenses/

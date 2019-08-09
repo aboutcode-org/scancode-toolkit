@@ -9,7 +9,7 @@ spdx_license_key: i2p-gpl-java-exception
 other_urls:
     - http://geti2p.net/en/get-involved/develop/licenses#java_exception
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     GPL + java exception
     While it may be redundant, just for clarity the GPL'ed code included within
     I2PTunnel and other apps must be released under the GPL with an additional

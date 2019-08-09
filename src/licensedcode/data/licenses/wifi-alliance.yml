@@ -3,3 +3,5 @@ short_name: Wi-Fi Alliance
 name: Wi-Fi Alliance License
 category: Commercial
 owner: Wi-Fi Alliance
+ignorable_authors:
+    - permission from Wi-Fi Alliance

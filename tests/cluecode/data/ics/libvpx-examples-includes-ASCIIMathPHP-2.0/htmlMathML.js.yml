@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  - (c) Peter Jipsen http://www.chapman.edu/~jipsen
 holders:
-    - Peter Jipsen
+  - Peter Jipsen
 holders_summary:
-    -   value: Peter Jipsen
-        count: 1
+  - value: Peter Jipsen
+    count: 1

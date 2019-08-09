@@ -11,10 +11,11 @@ license_expressions:
   - bsd-new
   - carnegie-mellon-contributors
   - paul-mackerras-binary
+  - other-permissive
   - brian-clapper
   - historical
   - openldap-2.6
-  - openldap-2.0
+  - openldap-2.0.1
   - gpl-1.0-plus
   - gpl-1.0-plus
   - gpl-1.0-plus
@@ -32,6 +33,7 @@ license_expressions:
   - x11-fsf
   - freetype
   - proprietary-license
+  - warranty-disclaimer
   - bsd-new
   - zlib
   - bsd-new
@@ -44,6 +46,7 @@ license_expressions:
   - openldap-2.6
   - isc
   - json
+  - warranty-disclaimer
   - ijg
   - x11-tiff
   - x11-lucent
@@ -57,17 +60,6 @@ license_expressions:
   - gpl-1.0-plus
   - gpl-1.0-plus
   - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
-  - mpl-1.1 OR lgpl-2.0-plus
-  - gpl-2.0-plus
-  - lgpl-2.1-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
   - gpl-1.0-plus OR lgpl-2.0-plus OR bsd-simplified
   - openldap-2.1
   - openldap-2.8
@@ -115,6 +107,4 @@ license_expressions:
   - lgpl-2.0
   - bsd-new
   - bsd-new
-  - unknown
-expected_failure: yes
 notes: this is a notice from an iPhone 2

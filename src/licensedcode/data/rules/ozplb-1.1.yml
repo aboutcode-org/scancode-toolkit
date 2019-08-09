@@ -1,2 +1,4 @@
 license_expression: ozplb-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://p2p.cs.mu.oz.au/software/mpi-open/src/LICENSE

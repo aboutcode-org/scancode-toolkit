@@ -4,7 +4,7 @@ name: SNIA Public License 1.1
 category: Copyleft
 owner: SNIA
 homepage_url: https://fedoraproject.org/wiki/Licensing/SNIA_Public_License
-notes: |-
+notes: |
     Per Fedora, MPL 1.1 derived license with a few distinct changes They typoed
     the version number in Exhibit A (it says it is 1.0, which confused me at
     first, when I came across code using that attribution in its headers but
@@ -27,3 +27,6 @@ notes: |-
     [___] License. If you do not delete the provisions above,a recipient may
     use your version of this file under either the MPL or the [___] License.
 spdx_license_key: SNIA
+ignorable_urls:
+    - http://www.snia.org/smi/developers/cim/
+    - http://www.snia.org/smi/developers/open_source/

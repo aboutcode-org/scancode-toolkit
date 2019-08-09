@@ -1,2 +1,4 @@
 license_expression: ms-net-library
 is_license_text: yes
+ignorable_urls:
+    - http://www.microsoft.com/exporting

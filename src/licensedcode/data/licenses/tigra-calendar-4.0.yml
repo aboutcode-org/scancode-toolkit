@@ -4,3 +4,5 @@ name: Tigra Calendar v4.0 License
 category: Permissive
 owner: Softcomplex
 homepage_url: http://www.javascript-calendar.com/docs/#license
+ignorable_urls:
+    - http://www.javascript-calendar.com/docs/#license

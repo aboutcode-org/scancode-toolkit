@@ -1,0 +1,5 @@
+license_expression: tu-berlin
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/tu-berlin-1.0

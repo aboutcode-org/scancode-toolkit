@@ -6,7 +6,7 @@ owner: The HDF Group
 homepage_url: https://bitbucket.hdfgroup.org/projects/HDFFR/repos/hdf4/browse/COPYING?raw
 other_urls:
     - https://support.hdfgroup.org/ftp/HDF/releases/HDF4.2.14/src/hdf-4.2.14.tar.bz2
-standard_notice: |-
+standard_notice: |
     Copyright Notice and License Terms for
     Hierarchical Data Format (HDF) Software Library and Utilities
     ---------------------------------------------------------------------------
@@ -50,3 +50,5 @@ standard_notice: |-
     The Independent JPEG Group (JPEG), Jean-loup Gailly and Mark Adler (gzip),
     and Digital Equipment Corporation (DEC).
     ---------------------------------------------------------------------------
+ignorable_authors:
+    - The HDF Group

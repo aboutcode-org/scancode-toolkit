@@ -6,3 +6,5 @@ owner: MPEG7FexLib
 homepage_url: https://github.com/cdmh/MPEG7FexLib/blob/master/Extraction/ColorLayoutExtraction.cpp
 text_urls:
     - https://github.com/cdmh/MPEG7FexLib/blob/master/Extraction/EdgeHistExtraction.cpp
+ignorable_copyrights:
+    - Copyright (c) 1998-1999

@@ -1,6 +1,9 @@
 key: service-comp-arch
-short_name: Service Component Architecture
-owner: osoa
+short_name: Service Component Architecture License
+name: License for the Service Component Architecture JavaDoc, Interface Definition files and
+    XSD files
 category: Permissive
-name: License for the Service Component Architecture JavaDoc, Interface Definition files and XSD files
+owner: osoa
 homepage_url: http://www.osoa.org/display/Main/Service+Component+Architecture+Specifications
+ignorable_urls:
+    - http://www.osoa.org/display/Main/Service+Component+Architecture+Specifications

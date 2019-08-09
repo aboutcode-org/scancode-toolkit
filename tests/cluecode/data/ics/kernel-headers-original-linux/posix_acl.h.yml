@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) 2002 Andreas Gruenbacher, <a.gruenbacher@computer.org>
+  - (c) 2002 Andreas Gruenbacher, <a.gruenbacher@computer.org>
 holders:
-    - Andreas Gruenbacher
+  - Andreas Gruenbacher
 holders_summary:
-    -   value: Andreas Gruenbacher
-        count: 1
+  - value: Andreas Gruenbacher
+    count: 1

@@ -4,9 +4,13 @@ name: Net Boolean Public License 1.0
 category: Copyleft Limited
 owner: OpenLDAP Foundation
 homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894
-notes: |-
+notes: |
     Per SPDX.org, this license was released 22 August 1998. This license was
     issued twice, but only with formatting differences.
 spdx_license_key: NBPL-1.0
 text_urls:
     - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=37b4b3f6cc4bf34e1d3dec61e69914b9819d8894
+ignorable_copyrights:
+    - Copyright 1998, Net Boolean Incorporated, Redwood City, California, USA
+ignorable_holders:
+    - Net Boolean Incorporated, Redwood City, California, USA

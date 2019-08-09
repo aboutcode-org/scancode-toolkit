@@ -1,2 +1,4 @@
 license_expression: bsd-original
 is_license_reference: yes
+ignorable_urls:
+    - http://www.gnu.org/philosophy/bsd.html

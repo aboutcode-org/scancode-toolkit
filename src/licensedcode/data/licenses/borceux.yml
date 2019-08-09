@@ -5,3 +5,7 @@ category: Permissive
 owner: Francis Borceux
 homepage_url: https://fedoraproject.org/wiki/Licensing/Borceux
 spdx_license_key: Borceux
+ignorable_copyrights:
+    - Copyright 1993 Francis Borceux
+ignorable_holders:
+    - Francis Borceux

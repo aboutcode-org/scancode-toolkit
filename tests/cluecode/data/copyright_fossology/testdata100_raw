@@ -20,8 +20,8 @@ behaviour are documented in README.Debian.
 
 Copyright:
 
-The code in the fetchmail distribution is <s>Copyright 1997 by Eric S. Raymond.</s>
-Portions were also <s>copyrighted by Carl E. Harris, 1993 and 1995.</s>  Copyright
+The code in the fetchmail distribution is <s>Copyright 1997 by Eric S. Raymond</s>.
+Portions were also <s>copyrighted by Carl E. Harris, 1993 and 1995</s>.  Copyright
 retained for the purpose of protecting free software redistribution.
 
 The support for SMB authentication is <s>copyright by Andrew Tridgell</s> and
@@ -29,7 +29,7 @@ is under GPL version 2.  Tridge has granted a specific exemption for
 his GPL-licensed code to be linked with non-GPL-compliant code in
 fetchmail.  The relevant files are smb*.[ch] and ntlm.h.
 
-The code of interface.c is <s>Copyright (c) 1996,1997 by George M. Sipe.</s>
+The code of interface.c is <s>Copyright (c) 1996,1997 by George M. Sipe</s>.
 
 License:
 

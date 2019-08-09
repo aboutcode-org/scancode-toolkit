@@ -4,7 +4,7 @@ name: diffmark License
 category: Public Domain
 owner: Unspecified
 homepage_url: https://fedoraproject.org/wiki/Licensing/diffmark
-notes: |-
+notes: |
     Per Fedora, this extremely minimal and permissive license was found in
     diffmark (0.08). While poorly written, our interpretation of the text
     permits use, modification, and distribution. It also permits wearing it as

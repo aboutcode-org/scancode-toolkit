@@ -12,3 +12,7 @@ osi_url: http://www.opensource.org/licenses/nokia.html
 other_urls:
     - http://www.opensource.org/licenses/nokia
     - https://opensource.org/licenses/nokia
+ignorable_copyrights:
+    - Copyright (c) Nokia and others
+ignorable_holders:
+    - Nokia and others

@@ -1,2 +1,4 @@
 license_expression: ecosrh-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://ecos.sourceware.org/old-license.html

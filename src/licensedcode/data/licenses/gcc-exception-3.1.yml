@@ -11,7 +11,7 @@ text_urls:
 faq_url: http://www.gnu.org/licenses/gcc-exception-3.1-faq.html
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation, either version 3 of the License, or (at your option)
@@ -77,3 +77,9 @@ standard_notice: |-
     The availability of this Exception does not imply any general presumption
     that third-party software is unaffected by the copyleft requirements of the
     license of GCC.
+ignorable_copyrights:
+    - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/

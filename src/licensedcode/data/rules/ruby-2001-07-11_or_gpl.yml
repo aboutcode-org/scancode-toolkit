@@ -1,4 +1,5 @@
 license_expression: ruby OR gpl-2.0
+is_license_text: yes
 notes: |
     This replaced the GPL COPYING file with the ruby dual licensing terms
     https://raw.githubusercontent.com/ruby/ruby/cbc3756009999e58d717af4fc82ba6c33bd3e7e6/COPYING
@@ -8,4 +9,7 @@ notes: |
     of files and minor typos.
     The Ruby license was first introduced there in early 1998
     https://github.com/ruby/ruby/blob/7ea2ceddb832b9973694fecac9fe3c30400735ba/README
-is_license_text: yes
+ignorable_authors:
+    - Yukihiro Matsumoto <matz@zetabits.com>
+ignorable_emails:
+    - matz@zetabits.com

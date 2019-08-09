@@ -3,3 +3,5 @@ short_name: Greg Roelofs License
 name: Greg Roelofs License
 category: Permissive
 owner: Unspecified
+ignorable_authors:
+    - Greg Roelofs and contributors

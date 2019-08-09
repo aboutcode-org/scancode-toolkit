@@ -1238,24 +1238,14 @@ def filter_false_positive_matches(matches, idx=None):
     discardable matches given a `matches` list of LicenseMatch by removing
     matches to false positive rules.
     """
-    from licensedcode.models import SpdxRule
-
     kept = []
     discarded = []
-    false_positive_rid_by_hash = idx.false_positive_rid_by_hash
 
     for match in matches:
         if match.rule.is_false_positive:
             if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
             discarded.append(match)
             continue
-
-        if not isinstance(match.rule, SpdxRule) and idx:
-            if match.rule.rid is not None and match.itokens_hash(idx) in false_positive_rid_by_hash:
-                if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE HASH:', match)
-                discarded.append(match)
-                continue
-
         kept.append(match)
 
     return kept, discarded

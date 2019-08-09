@@ -4,3 +4,5 @@ name: Microsoft ASP.NET MVC 4 Extensions License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/web/webpi/eula/mvc4extensions_prerelease_eula.htm
+ignorable_urls:
+    - http://www.microsoft.com/exporting

@@ -4,3 +4,7 @@ name: Oracle BCL for Java SE and JavaFX Technologies 2013
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/downloads/java-se-archive-license-1382604.html
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/technetwork/java/javase/documentation/index.html
+    - http://www.oracle.com/us/legal/third-party-trademarks/index.html

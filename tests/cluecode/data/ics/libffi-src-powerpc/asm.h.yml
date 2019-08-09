@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1998 Geoffrey Keating
+  - Copyright (c) 1998 Geoffrey Keating
 holders:
-    - Geoffrey Keating
+  - Geoffrey Keating
 holders_summary:
-    -   value: Geoffrey Keating
-        count: 1
+  - value: Geoffrey Keating
+    count: 1

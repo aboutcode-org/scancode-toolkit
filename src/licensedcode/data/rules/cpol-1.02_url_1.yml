@@ -1,0 +1,5 @@
+license_expression: cpol-1.02
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/cpol-1.02

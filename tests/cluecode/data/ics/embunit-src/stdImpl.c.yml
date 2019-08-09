@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003 Embedded Unit Project
+  - Copyright (c) 2003 Embedded Unit Project
 holders:
-    - Embedded Unit Project
+  - Embedded Unit Project
 holders_summary:
-    -   value: Embedded Unit Project
-        count: 1
+  - value: Embedded Unit Project
+    count: 1

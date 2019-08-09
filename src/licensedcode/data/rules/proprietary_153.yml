@@ -1,2 +1,6 @@
 license_expression: proprietary-license
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) The Simputer Trust
+ignorable_holders:
+    - The Simputer Trust

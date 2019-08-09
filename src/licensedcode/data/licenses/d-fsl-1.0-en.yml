@@ -11,3 +11,14 @@ other_urls:
     - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/de/D-FSL-1_0_de.txt
     - http://www.dipp.nrw.de/d-fsl/nutzer/
 minimum_coverage: 10
+ignorable_copyrights:
+    - (c) Ministry of Science and Research, State of North-Rhine Westphalia 2004
+ignorable_authors:
+    - Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software
+        Institute for Legal Issues
+ignorable_holders:
+    - Ministry of Science and Research, State of North-Rhine Westphalia
+ignorable_urls:
+    - http://www.d-fsl.org/
+    - http://www.fsf.org/licenses/gpl
+    - http://www.ifross.de/

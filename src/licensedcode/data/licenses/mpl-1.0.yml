@@ -20,3 +20,5 @@ faq_url: http://www.mozilla.org/MPL/mpl-faq.html
 other_urls:
     - http://opensource.org/licenses/MPL-1.0
     - https://opensource.org/licenses/MPL-1.0
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

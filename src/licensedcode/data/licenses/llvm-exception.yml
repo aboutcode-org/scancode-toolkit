@@ -8,7 +8,7 @@ is_exception: yes
 spdx_license_key: LLVM-exception
 other_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.txt
-standard_notice: |-
+standard_notice: |
     --- LLVM Exceptions to the Apache 2.0 License ----
     As an exception, if, as a result of your compiling your source code,
     portions

@@ -5,3 +5,7 @@ category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: https://github.com/jsr107/jsr107spec/blob/master/LICENSE.txt
 minimum_coverage: 96
+ignorable_copyrights:
+    - Copyright 2015 Oracle America, Inc. and Greg Luck
+ignorable_holders:
+    - Oracle America, Inc. and Greg Luck

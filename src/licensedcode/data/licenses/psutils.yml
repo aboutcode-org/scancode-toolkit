@@ -7,3 +7,7 @@ homepage_url: https://fedoraproject.org/wiki/Licensing:Psutils?rd=Licensing/psut
 spdx_license_key: psutils
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/psutils
+ignorable_copyrights:
+    - copyright (c) 1991-1995 Angus J. C. Duggan
+ignorable_holders:
+    - Angus J. C. Duggan

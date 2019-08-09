@@ -1,2 +1,4 @@
 license_expression: gpl-1.0-plus AND ossn-3.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource-socialnetwork.org/licence

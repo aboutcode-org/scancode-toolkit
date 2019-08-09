@@ -1,2 +1,4 @@
 license_expression: unlicense
 is_license_tag: yes
+ignorable_urls:
+    - http://choosealicense.com/licenses/unlicense

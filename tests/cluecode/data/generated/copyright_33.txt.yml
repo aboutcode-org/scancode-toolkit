@@ -1,0 +1,13 @@
+what:
+  - holders
+  - copyrights
+  - authors
+copyrights:
+  - Copyright 2019
+authors:
+  - Author Pine <cdtsgsz@gmail.com>
+expected_failures:
+  - holders
+  - copyrights
+  - authors
+

@@ -7,3 +7,10 @@ homepage_url: https://fedoraproject.org/wiki/Licensing/DSDP
 spdx_license_key: DSDP
 text_urls:
     - http://www.mcs.anl.gov/hs/software/DSDP/Copyright.txt
+ignorable_copyrights:
+    - (c) COPYRIGHT 2004 UNIVERSITY OF CHICAGO
+ignorable_holders:
+    - UNIVERSITY OF CHICAGO
+ignorable_emails:
+    - benson@mcs.anl.gov
+    - yinyu-ye@stanford.edu

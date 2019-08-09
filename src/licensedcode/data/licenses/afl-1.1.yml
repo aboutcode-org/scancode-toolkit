@@ -16,3 +16,7 @@ osi_url: http://web.archive.org/web/20060924134536/http://www.opensource.org/lic
 other_urls:
     - http://wayback.archive.org/web/20021004124254/http://www.opensource.org/licenses/academic.php
     - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense
+ignorable_copyrights:
+    - Copyright (c) 2002 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1994-2006 The FreeBSD Project.
+  - Copyright 1994-2006 The FreeBSD Project
 holders:
-    - The FreeBSD Project.
+  - The FreeBSD Project
 holders_summary:
-    -   value: The FreeBSD Project.
-        count: 1
+  - value: The FreeBSD Project
+    count: 1

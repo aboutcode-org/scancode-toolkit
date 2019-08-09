@@ -6,3 +6,7 @@ owner: Metro Link Inc.
 homepage_url: http://web.archive.org/web/20120411024312/http://www.opengroup.org/openmotif/supporters/metrolink/license.html
 text_urls:
     - http://web.archive.org/web/20120411024312/http://www.opengroup.org/openmotif/supporters/metrolink/license.html
+ignorable_copyrights:
+    - Copyright (c) May, 2000 The Open Group, Metro Link, Incorporated and others
+ignorable_holders:
+    - May, The Open Group, Metro Link, Incorporated and others

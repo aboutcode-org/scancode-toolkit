@@ -7,9 +7,9 @@ or browsed online from http://svn.debian.org/
 
 This is a package <s>written originally by Christoph Lameter
 <clameter@debian.org> and extensively modified by Julian Gilbey
-<jdg@debian.org>.</s>
+<jdg@debian.org></s>.
 
-Many of the scripts were originally <s>written by other people.</s>  Please
+Many of the scripts were originally <s>written by other people</s>.  Please
 see the individual files (scripts and manpages) for more information.
 
 Most of the Devscripts::* Perl modules are from the deprecated

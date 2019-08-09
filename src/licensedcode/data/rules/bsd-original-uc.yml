@@ -1,2 +1,4 @@
 license_expression: bsd-original-uc
 is_license_reference: yes
+ignorable_urls:
+    - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

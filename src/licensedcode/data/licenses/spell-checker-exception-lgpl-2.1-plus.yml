@@ -4,13 +4,12 @@ name: Spell-Checker exception to LGPL 2.1 or later
 category: Copyleft Limited
 owner: AbiSource
 is_exception: yes
+text_urls:
+    - https://github.com/AbiWord/enchant/blob/master/src/enchant.h
 other_urls:
     - https://github.com/AbiWord/enchant/archive/enchant-1-0-0.tar.gz
     - http://www.gnu.org/licenses/lgpl-2.1.txt
-text_urls:
-    - https://github.com/AbiWord/enchant/blob/master/src/enchant.h
-
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
     License as published by the Free Software Foundation; either

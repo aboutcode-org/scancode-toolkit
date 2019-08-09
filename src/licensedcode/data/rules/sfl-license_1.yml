@@ -1,2 +1,4 @@
 license_expression: sfl-license
 is_license_reference: yes
+ignorable_urls:
+    - http://www.imatix.com/

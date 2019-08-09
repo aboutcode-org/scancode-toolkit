@@ -6,3 +6,11 @@ owner: SGI - Silicon Graphics
 homepage_url: http://www.xfree86.org/current/LICENSE10.html
 text_urls:
     - http://www.xfree86.org/current/LICENSE10.html
+ignorable_copyrights:
+    - Copyright (c) 1994-1999 Silicon Graphics, Inc.
+ignorable_authors:
+    - Silicon Graphics, Inc.
+ignorable_holders:
+    - Silicon Graphics, Inc.
+ignorable_urls:
+    - http://www.sgi.com/software/opensource/cid/license.html

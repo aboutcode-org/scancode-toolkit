@@ -8,3 +8,5 @@ text_urls:
     - http://www.genivia.com/Products/gsoap/contract.html
 other_urls:
     - sales@genivia.com
+ignorable_emails:
+    - sales@genivia.com

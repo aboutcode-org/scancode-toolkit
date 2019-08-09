@@ -1,2 +1,4 @@
 license_expression: smail-gpl
 is_license_reference: yes
+ignorable_urls:
+    - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL

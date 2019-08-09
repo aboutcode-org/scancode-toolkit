@@ -1,2 +1,6 @@
 license_expression: mit OR commercial-license
 is_license_text: yes
+ignorable_emails:
+    - info@nousguide.com
+minimum_coverage: 80
+

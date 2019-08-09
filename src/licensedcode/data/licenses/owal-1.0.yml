@@ -4,3 +4,7 @@ name: Opera Web Applications License v1.0
 category: Proprietary Free
 owner: Opera Software ASA
 minimum_coverage: 50
+ignorable_copyrights:
+    - (c) Copyright 2006 Opera Software ASA.
+ignorable_holders:
+    - Opera Software ASA.

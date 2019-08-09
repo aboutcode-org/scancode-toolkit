@@ -1,3 +1,5 @@
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 notes: gpl fsf url
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/gpl.html

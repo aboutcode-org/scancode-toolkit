@@ -11,7 +11,7 @@ text_urls:
 faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
 other_urls:
     - http://people.gnome.org/~markmc/openssl-and-the-gpl.html
-standard_notice: |-
+standard_notice: |
     The OpenSSL License is not compatible with the GPL, since it contains the
     following two clauses:
     * 3. All advertising materials mentioning features or use of this

@@ -10,3 +10,5 @@ text_urls:
     - https://fedoraproject.org/wiki/Licensing/Beerware
 other_urls:
     - https://people.freebsd.org/~phk/
+ignorable_emails:
+    - phk@FreeBSD.ORG

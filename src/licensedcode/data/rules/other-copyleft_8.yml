@@ -1,0 +1,9 @@
+license_expression: other-copyleft
+is_license_text: yes
+notes: this is a rare, copyleft-like license
+ignorable_copyrights:
+    - Copyright (c) 1999-2001 Michael Stutz <stutz@dsl.org>
+ignorable_holders:
+    - Michael Stutz
+ignorable_emails:
+    - stutz@dsl.org

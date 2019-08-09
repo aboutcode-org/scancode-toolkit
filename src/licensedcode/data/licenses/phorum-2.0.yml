@@ -8,3 +8,16 @@ text_urls:
     - http://www.phorum.org/license.txt
 other_urls:
     - http://phorum.org/
+ignorable_copyrights:
+    - Copyright (c) 2001 The Phorum Development Team
+    - copyright (c) 2000 The Apache Software Foundation
+ignorable_authors:
+    - the Phorum Development Team (http://phorum.org/)
+ignorable_holders:
+    - The Apache Software Foundation
+    - The Phorum Development Team
+ignorable_urls:
+    - http://phorum.org/
+    - http://www.apache.org/
+ignorable_emails:
+    - core@phorum.org

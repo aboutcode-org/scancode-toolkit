@@ -8,3 +8,5 @@ faq_url: https://www.confluent.io/confluent-community-license-faq
 other_urls:
     - https://www.confluent.io/blog/license-changes-confluent-platform
     - https://www.confluent.io/blog/developers-guide-confluent-community-license
+ignorable_urls:
+    - http://www.confluent.io/confluent-community-license

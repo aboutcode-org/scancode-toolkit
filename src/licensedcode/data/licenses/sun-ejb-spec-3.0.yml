@@ -3,3 +3,7 @@ short_name: Sun EJB Specification 3.0
 name: Sun EJB Specification 3.0
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_copyrights:
+    - Copyright 2006 SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054, U.S.A
+ignorable_holders:
+    - SUN MICROSYSTEMS, INC. 4150 Network Circle, Santa Clara, California 95054, U.S.A

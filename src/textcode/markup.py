@@ -110,7 +110,10 @@ def demarkup_text(text):
 
     # keep the opening tag name of certain tags that contains these strings
     # note: <s> are from debian copyright files
-    kept_tags = ('lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@', '<s>', '</s>')
+    kept_tags = (
+        'lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@', 
+        '<s>', '</s>', '169', 'a9'
+        )
 
     # find start and closing tags or the first white space whichever comes first
     # or entities

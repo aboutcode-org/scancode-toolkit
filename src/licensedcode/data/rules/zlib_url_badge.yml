@@ -1,2 +1,5 @@
 license_expression: zlib
 is_license_reference: yes
+ignorable_urls:
+    - https://img.shields.io/badge/License-Zlib-lightgrey.svg
+    - https://opensource.org/licenses/Zlib

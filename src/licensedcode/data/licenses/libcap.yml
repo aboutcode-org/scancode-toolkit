@@ -1,9 +1,10 @@
 key: libcap
+is_deprecated: yes
 short_name: libcap License
 name: libcap License
 category: Permissive
 owner: Unspecified
 homepage_url: https://sites.google.com/site/fullycapable/
+notes: this is a bsd-style license with a GPL alternative and is now reported as an expression instead
 text_urls:
     - https://git.kernel.org/pub/scm/libs/libcap/libcap.git/plain/License
-notes: this is a bsd-style license with a GPL alternative

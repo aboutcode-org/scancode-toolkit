@@ -7,7 +7,7 @@ homepage_url: http://www.eglibc.org/cgi-bin/viewvc.cgi/branches/eglibc-2_18/libc
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
-standard_notice: |-
+standard_notice: |
     Copyright (C) 1996-2013 Free Software Foundation, Inc.
     This file is part of the GNU C Library.
     The GNU C Library is free software; you can redistribute it and/or modify

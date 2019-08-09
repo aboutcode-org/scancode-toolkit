@@ -1,5 +1,5 @@
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+minimum_coverage: 85
 referenced_filenames:
     - License.txt
-minimum_coverage: 85

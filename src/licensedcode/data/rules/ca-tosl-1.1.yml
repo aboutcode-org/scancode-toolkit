@@ -1,2 +1,4 @@
 license_expression: ca-tosl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/ca-tosl1.1.php

@@ -6,3 +6,7 @@ owner: NVIDIA
 homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
 text_urls:
     - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
+ignorable_copyrights:
+    - Copyright (c) 1996-1998 NVIDIA, Corp.
+ignorable_holders:
+    - NVIDIA, Corp.

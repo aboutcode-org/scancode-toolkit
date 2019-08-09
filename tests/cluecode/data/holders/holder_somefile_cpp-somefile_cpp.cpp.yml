@@ -1,11 +1,17 @@
 what:
-    - holders
-    - holders_summary
+  - holders
+  - holders_summary
+  - copyrights
 holders:
-    - Private Company (PC) Property of Private Company
-    - Private Company
+  - Foobar Company
+  - Foobar Company (PC) Property of Foobar Company
+  - Foobar Company
+copyrights:
+  - Foobar Company, (c) 2005
+  - Copyright Foobar Company (PC) Property of Foobar Company
+  - Copyright (2003) Foobar Company
 holders_summary:
-    -   value: Private Company
-        count: 1
-    -   value: Private Company (PC) Property of Private Company
-        count: 1
+  - value: Foobar Company
+    count: 2
+  - value: Foobar Company (PC) Property of Foobar Company
+    count: 1

@@ -1,2 +1,4 @@
 is_negative: yes
 notes: not a license, just a comment about licenses
+ignorable_emails:
+    - buytenh@gnu.org

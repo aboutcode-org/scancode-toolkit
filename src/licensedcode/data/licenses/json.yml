@@ -9,3 +9,5 @@ text_urls:
     - http://www.json.org/license.html
 other_urls:
     - http://www.gnu.org/licenses/license-list.html#JSON
+minimum_coverage: 70
+

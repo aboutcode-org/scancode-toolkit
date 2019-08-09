@@ -1,8 +1,8 @@
 key: cecill-1.0
+language: fr
 short_name: CeCILL 1.0
 name: CeCILL Free Software License Agreement v1.0
 category: Copyleft
-language: fr
 owner: CeCILL
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL_V1-fr.html
 spdx_license_key: CECILL-1.0

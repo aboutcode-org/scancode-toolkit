@@ -4,7 +4,7 @@ name: MakeIndex Distribution Notice
 category: Copyleft
 owner: MakeIndex Project
 homepage_url: https://fedoraproject.org/wiki/Licensing/MakeIndex
-notes: |-
+notes: |
     Per Fedora, this license is free but GPL-incompatible, and was found in the
     MakeIndex component inside TeXLive.
 spdx_license_key: MakeIndex

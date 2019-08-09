@@ -4,7 +4,7 @@ name: BSD-Original-UC
 category: Permissive
 owner: Regents of the University of California
 homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-notes: |-
+notes: |
     Per SPDX.org, this is the same license as the BSD-4-Clause, but with a
     copyright notice for the Regents of the University of California. Captures
     the retroactive deletion of the third (advertising) clause of the Original
@@ -19,3 +19,12 @@ other_urls:
     - http://www.freebsd.org/copyright/license.html
     - http://www.fsf.org/licensing/essays/bsd.html
     - http://www.gnu.org/philosophy/bsd.html
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of California
+ignorable_authors:
+    - UC Berkeley and its contributors
+    - the University of California, Berkeley and its contributors
+ignorable_holders:
+    - the Regents of the University of California
+ignorable_urls:
+    - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change

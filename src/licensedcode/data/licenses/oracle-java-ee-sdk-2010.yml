@@ -5,4 +5,8 @@ category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javase/downloads/366879
 minimum_coverage: 50
-
+ignorable_authors:
+    - the OTN Program
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/products/export/index.html

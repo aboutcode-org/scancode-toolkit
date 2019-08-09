@@ -10,3 +10,9 @@ text_urls:
 other_urls:
     - http://fedoraproject.org/wiki/Licensing/TCL
     - https://fedoraproject.org/wiki/Licensing/TCL
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+        Corporation, ActiveState Corporation
+ignorable_holders:
+    - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
+        ActiveState Corporation

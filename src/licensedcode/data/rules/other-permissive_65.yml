@@ -1,4 +1,6 @@
 license_expression: other-permissive
 is_license_reference: yes
-notes:  reference to a patent grant from NTT for camelia in OpenSSL
 minimum_coverage: 90
+notes: reference to a patent grant from NTT for camelia in OpenSSL
+ignorable_urls:
+    - http://info.isl.ntt.co.jp/crypt/eng/info/chiteki.html

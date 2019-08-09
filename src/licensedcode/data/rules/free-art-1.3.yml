@@ -1,2 +1,4 @@
 license_expression: free-art-1.3
 is_license_reference: yes
+ignorable_urls:
+    - http://artlibre.org/licence/lal/en

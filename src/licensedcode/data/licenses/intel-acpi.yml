@@ -4,8 +4,12 @@ name: Intel ACPI Software License Agreement
 category: Permissive
 owner: Intel Corporation
 homepage_url: https://fedoraproject.org/wiki/Licensing/Intel_ACPI_Software_License_Agreement
-notes: |-
+notes: |
     Per Fedora, this license is no longer available at its original URL
     http://www.intel.com/technology/iapc/acpi/license2.htm. A copy was taken
     from the last available version at archive.org.
 spdx_license_key: Intel-ACPI
+ignorable_copyrights:
+    - Copyright (c) 1999-2005, Intel Corp.
+ignorable_holders:
+    - Intel Corp.

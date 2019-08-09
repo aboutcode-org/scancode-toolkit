@@ -1,2 +1,6 @@
 license_expression: proprietary-license
 is_license_text: yes
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of
+ignorable_holders:
+    - the Regents of the University of

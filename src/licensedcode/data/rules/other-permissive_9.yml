@@ -1,3 +1,5 @@
 license_expression: other-permissive
 is_license_reference: yes
 notes: an apache-2.0 license moified with an extra section 10
+ignorable_urls:
+    - https://github.com/palantir/blueprint/blob/develop/LICENSE

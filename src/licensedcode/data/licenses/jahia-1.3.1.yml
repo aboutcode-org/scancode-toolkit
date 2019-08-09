@@ -7,3 +7,7 @@ homepage_url: http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing
 text_urls:
     - http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing
 faq_url: http://www.jahia.org/cms/home/Jahiapedia/Jahia_Licensing
+ignorable_urls:
+    - http://www.collaborativesource.org/
+    - http://www.jahia.org/
+    - http://www.opensource.org/

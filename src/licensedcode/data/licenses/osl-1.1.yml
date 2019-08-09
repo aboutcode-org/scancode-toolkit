@@ -8,3 +8,7 @@ spdx_license_key: OSL-1.1
 other_urls:
     - http://www.gnu.org/licenses/license-list.html#OSL
     - https://fedoraproject.org/wiki/Licensing/OSL1.1
+ignorable_copyrights:
+    - Copyright (c) 2002 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen

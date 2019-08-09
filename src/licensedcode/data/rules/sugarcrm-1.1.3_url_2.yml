@@ -1,0 +1,5 @@
+license_expression: sugarcrm-1.1.3
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/sugarcrm-1.1.3.html

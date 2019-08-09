@@ -1,0 +1,7 @@
+license_expression: gpl-1.0-plus
+is_license_tag: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright GNU General
+ignorable_holders:
+    - GNU General

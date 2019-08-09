@@ -6,3 +6,11 @@ owner: Qualcomm
 homepage_url: http://www.eudora.com/products/unsupported/qpopper/license.html
 text_urls:
     - http://www.eudora.com/products/unsupported/qpopper/license.html
+ignorable_copyrights:
+    - (c) Copyright 1989-1991 The Regents of the University of California
+    - Copyright 1993-2006 QUALCOMM Incorporated
+ignorable_authors:
+    - Austin Shelton
+ignorable_holders:
+    - QUALCOMM Incorporated
+    - The Regents of the University of California

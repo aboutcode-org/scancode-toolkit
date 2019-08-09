@@ -20,3 +20,11 @@ other_urls:
     - http://www.opensource.org/licenses/GPL-3.0
     - https://opensource.org/licenses/GPL-3.0
     - https://www.gnu.org/licenses/gpl-3.0-standalone.html
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - http://www.gnu.org/licenses/
+    - http://www.gnu.org/philosophy/why-not-lgpl.html

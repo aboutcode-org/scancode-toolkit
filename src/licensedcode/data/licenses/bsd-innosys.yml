@@ -3,6 +3,10 @@ short_name: BSD-InnoSys
 name: BSD-InnoSys
 category: Permissive
 owner: InnoSys
-notes: |-
+notes: |
     This is a BSD variant with extra conditions on the placement of the notice.
     Common in the Linux kernel
+ignorable_copyrights:
+    - Copyright (c) InnoSys Incorporated
+ignorable_holders:
+    - InnoSys Incorporated

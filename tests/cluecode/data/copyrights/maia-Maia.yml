@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2004 by Robert LeBlanc
+  - Copyright 2004 by Robert LeBlanc
 holders:
-    - Robert LeBlanc
+  - Robert LeBlanc
 holders_summary:
-    -   value: Robert LeBlanc
-        count: 1
+  - value: Robert LeBlanc
+    count: 1

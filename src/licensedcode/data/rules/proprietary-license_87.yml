@@ -1,0 +1,13 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: See http://www.hacktivismo.com/about/hessla.php
+ignorable_urls:
+    - http://hacktivismo.com/
+    - http://hacktivismo.com/about/declarations/
+    - http://www.gnu.org/philosophy/free-sw.html
+    - http://www.hacktivismo.com/
+    - http://www.opensource.org/docs/definition_plain.php
+    - http://www.rosenlaw.com/osl.html
+    - http://www.un.org/Overview/rights.html
+    - http://www.unhchr.ch/html/menu3/b/a_ccpr.htm

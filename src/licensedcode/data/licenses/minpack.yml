@@ -5,3 +5,5 @@ category: Permissive
 owner: University of Chicago
 text_urls:
     - http://www.netlib.org/minpack/disclaimer
+ignorable_authors:
+    - the University of Chicago

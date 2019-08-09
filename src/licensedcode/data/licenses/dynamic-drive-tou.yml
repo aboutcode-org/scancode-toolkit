@@ -3,3 +3,9 @@ short_name: Dynamic Drive TOU
 name: Dynamic Drive Terms of Use
 category: Permissive
 owner: DynamicDrive
+ignorable_copyrights:
+    - (c) Dynamic Drive (http://www.dynamicdrive.com)
+ignorable_holders:
+    - Dynamic Drive
+ignorable_urls:
+    - http://www.dynamicdrive.com/

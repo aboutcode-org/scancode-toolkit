@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1996-2004, John LoVerso.
+  - Copyright 1996-2004, John LoVerso
 holders:
-    - John LoVerso.
+  - John LoVerso
 holders_summary:
-    -   value: John LoVerso.
-        count: 1
+  - value: John LoVerso
+    count: 1

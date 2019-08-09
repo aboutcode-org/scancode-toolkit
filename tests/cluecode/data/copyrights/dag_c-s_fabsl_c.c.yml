@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2003 Dag-Erling Coidan Smorgrav
+  - Copyright (c) 2003 Dag-Erling Coidan Smorgrav
 holders:
-    - Dag-Erling Coidan Smorgrav
+  - Dag-Erling Coidan Smorgrav
 holders_summary:
-    -   value: Dag-Erling Coidan Smorgrav
-        count: 1
+  - value: Dag-Erling Coidan Smorgrav
+    count: 1

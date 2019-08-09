@@ -3,3 +3,6 @@ short_name: Cloudera Express License
 name: Cloudera Express License
 category: Proprietary Free
 owner: Cloudera
+ignorable_urls:
+    - http://ccp.cloudera.com/display/SUPPORT/CLOUDERA+PUBLIC+BETA+AGREEMENT
+    - http://www.google.com/analytics/terms/us.html

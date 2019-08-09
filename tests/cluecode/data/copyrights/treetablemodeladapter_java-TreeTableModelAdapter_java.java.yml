@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1997, 1998 by Sun Microsystems, Inc.
+  - Copyright 1997, 1998 by Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
 holders:
-    - Sun Microsystems, Inc.
+  - Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
 holders_summary:
-    -   value: Sun Microsystems, Inc.
-        count: 1
+  - value: Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
+    count: 1

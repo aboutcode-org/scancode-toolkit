@@ -7,3 +7,7 @@ homepage_url: http://www.geuz.org/gl2ps/COPYING.GL2PS
 spdx_license_key: GL2PS
 text_urls:
     - http://www.geuz.org/gl2ps/COPYING.GL2PS
+ignorable_copyrights:
+    - Copyright (c) 2003, Christophe Geuzaine
+ignorable_holders:
+    - Christophe Geuzaine

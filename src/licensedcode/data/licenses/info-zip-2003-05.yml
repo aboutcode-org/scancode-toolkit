@@ -7,3 +7,9 @@ homepage_url: http://www.info-zip.org/
 text_urls:
     - http://web.archive.org/web/20030409023329/http://www.info-zip.org/doc/LICENSE
     - http://web.archive.org/web/20030601142019/http://www.info-zip.org/license.html
+ignorable_copyrights:
+    - Copyright (c) 1990-2003 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP.
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html

@@ -1,8 +1,8 @@
 license_expression: ruby OR gpl-2.0 OR gpl-3.0
 is_license_reference: yes
+minimum_coverage: 100
 referenced_filenames:
     - LICENSE
     - GPLv2
     - GPLv3
     - COPYING
-minimum_coverage: 100

@@ -1,2 +1,7 @@
 license_expression: zlib
 is_license_text: yes
+ignorable_urls:
+    - http://www.gzip.org/zlib/zlib_license.html
+ignorable_emails:
+    - jloup@gzip.org
+    - madler@alumni.caltech.edu

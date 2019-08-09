@@ -5,3 +5,9 @@ category: Permissive
 owner: Sony Computer Entertainment
 homepage_url: http://research.scea.com/scea_shared_source_license.html
 spdx_license_key: SCEA
+ignorable_copyrights:
+    - Copyright 2005 Sony Computer Entertainment Inc.
+ignorable_holders:
+    - Sony Computer Entertainment Inc.
+ignorable_urls:
+    - http://research.scea.com/scea_shared_source_license.html

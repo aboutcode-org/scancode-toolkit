@@ -5,3 +5,11 @@ category: Permissive
 owner: Indiana University
 text_urls:
     - http://www.bearcave.com/software/java/xml/xmlpull_license.html
+ignorable_copyrights:
+    - Copyright (c) 2002 Extreme! Lab, Indiana University
+ignorable_authors:
+    - the Indiana University Extreme! Lab (http://www.extreme.indiana.edu/)
+ignorable_holders:
+    - Extreme! Lab, Indiana University
+ignorable_urls:
+    - http://www.extreme.indiana.edu/

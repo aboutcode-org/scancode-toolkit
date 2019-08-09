@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 Academy of Motion Picture Arts and Sciences
+  - Copyright (c) 2006 Academy of Motion Picture Arts and Sciences 'A.M.P.A.S.
 holders:
-    - Academy of Motion Picture Arts and Sciences
+  - Academy of Motion Picture Arts and Sciences 'A.M.P.A.S.
 holders_summary:
-    -   value: Academy of Motion Picture Arts and Sciences
-        count: 1
+  - value: Academy of Motion Picture Arts and Sciences 'A.M.P.A.S.
+    count: 1

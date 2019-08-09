@@ -3,6 +3,6 @@ short_name: LLNL
 name: LLNL
 category: Permissive
 owner: Regents of the University of California
-notes: |-
+notes: |
     this notice is quite similar to the DSDP license and appears in similar
     forms in HDF5 and other common components

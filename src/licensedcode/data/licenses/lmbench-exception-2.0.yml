@@ -7,7 +7,7 @@ homepage_url: http://lmbench.sourceforge.net/
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     Distributed under the FSF GPL with additional restriction that results may
     be published only if
     (1) the benchmark is unmodified, and

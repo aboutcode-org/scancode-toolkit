@@ -4,7 +4,7 @@ name: NYSL 0.9982
 category: Permissive
 owner: Kazuhiro Inaba
 homepage_url: http://www.kmonos.net/nysl/index.en.html
-notes: |-
+notes: |
     the original version is in Japanese but we track the English text only for
     now
 text_urls:

@@ -36,10 +36,13 @@ import cluecode_test_utils
 class TestTextPreparation(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_strip_numbers(self):
-        a = 'Python 2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
-        expected = 'Python 2.6.6 (r266:84297, Aug 2010, 18:46:32) [MSC v.1500 bit (Intel)] on win32'
-        assert expected == copyrights_module.strip_numbers(a)
+    def test_strip_leading_numbers(self):
+        a = '2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
+        assert a == copyrights_module.strip_leading_numbers(a)
+
+        a = '26 6 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
+        expected = '2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on 12'
+        assert expected == copyrights_module.strip_leading_numbers(a)
 
     def test_prepare_text_line(self):
         cp = 'test (C) all rights reserved'
@@ -204,7 +207,7 @@ class TestTextPreparation(FileBasedTesting):
             '''.splitlines()
 
         for line in lines:
-            line, _= copyrights_module.prep_line(line)
+            line, _ = copyrights_module.prep_line(line)
             assert not copyrights_module.is_candidate(line)
 
 
@@ -320,14 +323,14 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_isc(self):
         test_file = self.get_test_loc('copyrights_basic/isc-c.c')
         expected = [
-            (u'Copyright (c) 1998-2000 The Internet Software Consortium.', 2, 3)
+            (u'Copyright (c) 1998-2000 The Internet Software Consortium', 2, 3)
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_sample_py(self):
         test_file = self.get_test_loc('copyrights_basic/sample_py-py.py')
         expected = [
-            (u'COPYRIGHT 2006 ABC ABC', 6, 7)
+            (u'COPYRIGHT 2006 ABC', 6, 7)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -364,15 +367,15 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_activefieldattribute_cs(self):
         test_file = self.get_test_loc('copyrights_basic/activefieldattribute_cs-ActiveFieldAttribute_cs.cs')
         expected = [
-            (u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.', 3, 5)
+            (u'Copyright 2009 - Thomas Hansen thomas@ra-ajax.org', 3, 5)
         ]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_addr_c(self):
         test_file = self.get_test_loc('copyrights_basic/addr_c-addr_c.c')
         expected = [
-            (u'Copyright 1999 Cornell University.', 3, 4),
-            (u'Copyright 2000 Jon Doe.', 5, 5)
+            (u'Copyright 1999 Cornell University', 3, 4),
+            (u'Copyright 2000 Jon Doe', 5, 5)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -393,7 +396,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_andre_darcy(self):
         test_file = self.get_test_loc('copyrights_basic/andre_darcy-c.c')
         expected = [
-            (u'Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr).', 2, 6),
+            (u'Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)', 2, 6),
             (u"copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)", 25, 26)
         ]
         check_detection_with_lines(expected, test_file)
@@ -411,7 +414,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         expected = [
             (u'Copyright 1999-2006 The Apache Software Foundation', 7, 7),
             (u'Copyright 1999-2006 The Apache Software Foundation', 17, 17),
-            (u'Copyright 2001-2003,2006 The Apache Software Foundation.', 28, 28),
+            (u'Copyright 2001-2003,2006 The Apache Software Foundation', 28, 28),
             (u'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org', 34, 34)
         ]
         check_detection_with_lines(expected, test_file)
@@ -428,7 +431,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         expected = [
             (u'Copyright (c) 2000 Atheros Communications, Inc.', 2, 2),
             (u'Copyright (c) 2001 Atheros Communications, Inc.', 3, 3),
-            (u'Copyright (c) 1994-1997 by Intel Corporation.', 8, 11)
+            (u'Copyright (c) 1994-1997 by Intel Corporation', 8, 11)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -442,7 +445,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_audio_c(self):
         test_file = self.get_test_loc('copyrights_basic/audio_c-c.c')
         expected = [
-            (u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.', 3, 4)
+            (u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke', 3, 4)
         ]
         check_detection_with_lines(expected, test_file)
 

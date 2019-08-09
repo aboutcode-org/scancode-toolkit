@@ -1,2 +1,4 @@
 license_expression: openpbs-2.3
 is_license_reference: yes
+ignorable_urls:
+    - http://www.openpbs.org/

@@ -8,3 +8,6 @@ text_urls:
     - http://www.dmoz.org/license.html
 other_urls:
     - http://dmoz.org/become_an_editor
+ignorable_urls:
+    - http://dmoz.org/
+    - http://dmoz.org/become_an_editor

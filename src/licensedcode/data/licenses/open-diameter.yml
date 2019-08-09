@@ -3,3 +3,9 @@ short_name: Open Diameter License
 name: Open Diameter License
 category: Copyleft
 owner: Open Diameter Project
+ignorable_copyrights:
+    - Copyright (c) 2002-2007 Open Diameter Project
+ignorable_holders:
+    - Open Diameter Project
+ignorable_emails:
+    - diameter-developers@lists.sourceforge.net

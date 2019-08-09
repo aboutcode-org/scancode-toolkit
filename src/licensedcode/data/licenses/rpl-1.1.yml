@@ -14,3 +14,10 @@ osi_url: http://opensource.org/licenses/RPL-1.1
 other_urls:
     - http://www.gnu.org/licenses/license-list.html#RPL
     - https://opensource.org/licenses/RPL-1.1
+ignorable_copyrights:
+    - Copyright (c) 1999-2002 Technical Pursuit Inc.
+    - Copyright (c) 2001-2002 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.
+ignorable_urls:
+    - http://www.technicalpursuit.com/

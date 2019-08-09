@@ -1,2 +1,5 @@
 license_expression: epl-1.0 OR lgpl-2.1
 is_license_tag: yes
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html

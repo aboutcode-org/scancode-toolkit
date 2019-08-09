@@ -3,3 +3,5 @@ is_license_reference: yes
 relevance: 100
 referenced_filenames:
     - toolkit/content/license.html
+ignorable_urls:
+    - http://www.mozilla.org/foundation/licensing.html

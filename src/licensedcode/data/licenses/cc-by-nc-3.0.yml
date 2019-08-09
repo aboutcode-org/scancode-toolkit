@@ -10,3 +10,5 @@ text_urls:
 other_urls:
     - https://creativecommons.org/licenses/by-nc/3.0/legalcode
 minimum_coverage: 30
+ignorable_urls:
+    - https://creativecommons.org/

@@ -1,0 +1,5 @@
+license_expression: ps-or-pdf-font-exception-20170817
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/ps-or-pdf-font-exception-20170817

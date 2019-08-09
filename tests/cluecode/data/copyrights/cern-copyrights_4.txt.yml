@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyright of CERN.
+  - copyright CERN.
+holders:
+  - CERN.
+  - CERN.
+notes: nothing should be detected

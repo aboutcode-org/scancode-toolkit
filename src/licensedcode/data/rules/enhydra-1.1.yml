@@ -1,2 +1,4 @@
 license_expression: enhydra-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://ksoap.objectweb.org/software/license/index.html

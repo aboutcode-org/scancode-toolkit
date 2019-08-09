@@ -4,3 +4,6 @@ name: Java Research License Version 1.5
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://download.java.net/jdk6/6u3/promoted/b05/jdk-6u3-fcs-src-b05-jrl-24_sep_2007.jar?q=download/jdk6/6u3/promoted/b05/jdk-6u3-fcs-src-b05-jrl-24_sep_2007.jar
+ignorable_urls:
+    - http://www.sun.com/its
+    - http://www.sun.com/policies/trademarks

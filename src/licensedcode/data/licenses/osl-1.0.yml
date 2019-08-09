@@ -15,3 +15,7 @@ other_urls:
     - http://opensource.org/licenses/OSL-1.0
     - http://www.gnu.org/licenses/license-list.html#OSL
     - https://opensource.org/licenses/OSL-1.0
+ignorable_copyrights:
+    - Copyright (c) 2002 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen

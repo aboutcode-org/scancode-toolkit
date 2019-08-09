@@ -1,2 +1,11 @@
 license_expression: ssleay
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1995-1997 Eric Young (eay@mincom.oz.au)
+ignorable_holders:
+    - Eric Young
+ignorable_authors:
+    - Eric Young (eay@mincom.oz.au)
+ignorable_emails:
+    - eay@mincom.oz.au
+    - tjh@mincom.oz.au

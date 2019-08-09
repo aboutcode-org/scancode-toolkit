@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1999 Boris Fomitchev
+  - Copyright (c) 1999 Boris Fomitchev
 holders:
-    - Boris Fomitchev
+  - Boris Fomitchev
 holders_summary:
-    -   value: Boris Fomitchev
-        count: 1
+  - value: Boris Fomitchev
+    count: 1

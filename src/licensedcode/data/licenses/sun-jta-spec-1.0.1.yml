@@ -4,3 +4,9 @@ name: Sun JTA Specification License v1.0.1
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download
+ignorable_copyrights:
+    - Copyright 1997-1999 Sun Microsystems, Inc. 901 San Antonio Road, Palo Alto, California 94303 U.S.A.
+ignorable_holders:
+    - Sun Microsystems, Inc. 901 San Antonio Road, Palo Alto, California 94303 U.S.A.
+ignorable_urls:
+    - http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download

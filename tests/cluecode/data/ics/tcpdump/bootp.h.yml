@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1988 by Carnegie Mellon.
+  - Copyright 1988 by Carnegie Mellon
 holders:
-    - Carnegie Mellon.
+  - Carnegie Mellon
 holders_summary:
-    -   value: Carnegie Mellon.
-        count: 1
+  - value: Carnegie Mellon
+    count: 1

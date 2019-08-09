@@ -1,4 +1,6 @@
-license_expression: gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 AND apache-1.1 AND apache-2.0 AND bsd-new AND bsd-original AND gpl-1.0-plus AND ijg AND lgpl-2.0-plus AND mit AND mpl-2.0 AND public-domain AND w3c AND zlib
+license_expression: gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 AND apache-1.1 AND apache-2.0
+    AND bsd-new AND bsd-original AND gpl-1.0-plus AND ijg AND lgpl-2.0-plus AND mit AND mpl-2.0
+    AND public-domain AND w3c AND zlib
 is_license_tag: yes
-relevance: 100
 only_known_words: yes
+relevance: 100

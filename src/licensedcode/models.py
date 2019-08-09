@@ -150,6 +150,14 @@ class License(object):
     minimum_coverage = __attrib(default=0)
     standard_notice = __attrib(default=None)
 
+    # lists of copuyrights, emails and URLs that can be ignored when detected
+    # in this license as they are part of the license or rule text itself
+    ignorable_copyrights = __attrib(default=attr.Factory(list))
+    ignorable_authors = __attrib(default=attr.Factory(list))
+    ignorable_holders = __attrib(default=attr.Factory(list))
+    ignorable_urls = __attrib(default=attr.Factory(list))
+    ignorable_emails = __attrib(default=attr.Factory(list))
+
     # data file paths and known extensions
     data_file = __attrib(default=None)
     text_file = __attrib(default=None)
@@ -234,7 +242,12 @@ class License(object):
                 return False
             return True
 
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        data = attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        cv = data.get('minimum_coverage')
+        if cv and isinstance(cv, float) and int(cv) == cv:
+            cv = int(cv)
+            data['minimum_coverage'] = cv
+        return data
 
     def dump(self):
         """
@@ -495,7 +508,7 @@ def check_rules_integrity(rules, licenses_by_key):
         if unknown_keys:
             invalid_rules[rule.data_file].update(unknown_keys)
 
-        if not rule.has_importance_flags and not (rule.is_negative or rule.is_false_positive):
+        if not rule.has_flags and not (rule.is_negative or rule.is_false_positive):
             rules_without_flags.add(rule.data_file)
 
     if invalid_rules:
@@ -536,7 +549,14 @@ def build_rules_from_licenses(licenses):
                 minimum_coverage=minimum_coverage,
 
                 is_license=True,
-                is_license_text=True)
+                is_license_text=True,
+
+                ignorable_copyrights=license_obj.ignorable_copyrights,
+                ignorable_holders=license_obj.ignorable_holders,
+                ignorable_authors=license_obj.ignorable_authors,
+                ignorable_urls=license_obj.ignorable_urls,
+                ignorable_emails=license_obj.ignorable_emails,
+            )
 
 
 def get_all_spdx_keys(licenses):
@@ -681,12 +701,12 @@ class Rule(object):
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # is this rule text a false positive when matched? (filtered out)
-    # FIXME: this should be unified with the relevance: a false positive match
-    # is a a match with a relevance of zero
+    # is this rule text a false positive when matched? it will filtered out at
+    # the end if matched
     is_false_positive = attr.ib(default=False, repr=False)
 
-    # is this rule text a negative rule? it will be removed from the tokens streams
+    # is this rule text a negative rule? it will be removed from the matchable
+    # text the start if matched
     is_negative = attr.ib(default=False, repr=False)
 
     # is this rule text only to be matched with a minimum coverage e.g. a
@@ -723,6 +743,16 @@ class Rule(object):
     # set to True if the rule is built from a .LICENSE full text
     is_license = attr.ib(default=False, repr=False)
 
+    # lists of copuyrights, emails and URLs that can be ignored when detected
+    # in this license as they are part of the license or rule text itself
+    ignorable_copyrights = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_holders = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_authors = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_urls = attr.ib(default=attr.Factory(list), repr=False)
+    ignorable_emails = attr.ib(default=attr.Factory(list), repr=False)
+
+    ###########################################################################
+
     # path to the YAML data file for this rule
     data_file = attr.ib(default=None, repr=False)
 
@@ -751,7 +781,6 @@ class Rule(object):
     min_high_matched_length_unique = attr.ib(default=0, repr=TRACE_REPR)
 
     is_small = attr.ib(default=False, repr=TRACE_REPR)
-    is_approx_matchable = attr.ib(default=True, repr=TRACE_REPR)
 
     has_computed_thresholds = attr.ib(default=False, repr=False)
 
@@ -925,18 +954,33 @@ class Rule(object):
 
         if self.has_stored_relevance and self.relevance:
             rl = self.relevance
-            if int(rl) == rl:
+            if isinstance(rl, float) and int(rl) == rl:
                 rl = int(rl)
             data['relevance'] = rl
 
         if self.has_stored_minimum_coverage and self.minimum_coverage > 0:
-            data['minimum_coverage'] = self.minimum_coverage
+            cv = self.minimum_coverage
+            if isinstance(cv, float) and int(cv) == cv:
+                cv = int(cv)
+            data['minimum_coverage'] = cv
 
         if self.referenced_filenames:
             data['referenced_filenames'] = self.referenced_filenames
 
         if self.notes:
             data['notes'] = self.notes
+
+        if self.ignorable_copyrights:
+            data['ignorable_copyrights'] = self.ignorable_copyrights
+        if self.ignorable_holders:
+            data['ignorable_holders'] = self.ignorable_holders
+        if self.ignorable_authors:
+            data['ignorable_authors'] = self.ignorable_authors
+        if self.ignorable_urls:
+            data['ignorable_urls'] = self.ignorable_urls
+        if self.ignorable_emails:
+            data['ignorable_emails'] = self.ignorable_emails
+
         return data
 
     def dump(self):
@@ -1033,6 +1077,12 @@ class Rule(object):
             msg = 'Special License rule {} is missing explanatory notes.'
             raise Exception(msg.format(self))
 
+        self.ignorable_copyrights = data.get('ignorable_copyrights', [])
+        self.ignorable_holders = data.get('ignorable_holders', [])
+        self.ignorable_authors = data.get('ignorable_authors', [])
+        self.ignorable_urls = data.get('ignorable_urls', [])
+        self.ignorable_emails = data.get('ignorable_emails', [])
+
         return self
 
     def compute_relevance(self):
@@ -1088,16 +1138,12 @@ class Rule(object):
             self.relevance = min([100, computed])
 
     @property
-    def has_importance_flags(self):
+    def has_flags(self):
         """
-        Return True if this Rule has at least one "importance" flag set.
-        Needed as a temporary helper during setting importance flags.
+        Return True if this Rule has at least one flag set.
         """
-        return (
-            self.is_license_text
-            or self.is_license_notice
-            or self.is_license_reference
-            or self.is_license_tag)
+        return (self.is_license_text or self.is_license_notice
+            or self.is_license_reference or self.is_license_tag)
 
 
 def compute_thresholds_occurences(minimum_coverage, length, high_length,
@@ -1233,3 +1279,48 @@ def _print_rule_stats():
     print('Top 15 high lengths: ', high_sizes.most_common(15))
     print('15 smallest high lengths: ', sorted(high_sizes.iteritems(),
                                                key=itemgetter(0))[:15])
+
+
+def update_ignorables(licensish, verbose=False, dump=True):
+    """
+    Collect, update and save the ignorable_* attributes of a `licensish` Rule or
+    License object.
+    """
+    location = licensish.text_file
+
+    if verbose:
+        print('Processing:', 'file://' + location)
+
+    if not exists(location):
+        return licensish
+
+    # collect and set ignorable copyrights, holders and authors
+    from cluecode.copyrights import detect_copyrights
+    copyrights = set()
+    holders = set()
+    authors = set()
+
+    for dtype, value, _start, _end in detect_copyrights(location):
+        if dtype == 'copyrights':
+            copyrights.add(value)
+        elif dtype == 'holders':
+            holders.add(value)
+        elif dtype == 'authors':
+            authors.add(value)
+
+    licensish.ignorable_copyrights = sorted(copyrights)
+    licensish.ignorable_holders = sorted(holders)
+    licensish.ignorable_authors = sorted(authors)
+
+    # collect and set ignrable emails and urls
+    from cluecode.finder import find_urls
+    from cluecode.finder import find_emails
+
+    urls = set(u for (u, _ln) in find_urls(location) if u)
+    licensish.ignorable_urls = sorted(urls)
+
+    emails = set(u for (u, _ln) in find_emails(location) if u)
+    licensish.ignorable_emails = sorted(emails)
+    if dump:
+        licensish.dump()
+    return licensish

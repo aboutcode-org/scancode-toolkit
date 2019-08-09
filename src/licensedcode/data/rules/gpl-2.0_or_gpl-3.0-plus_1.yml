@@ -1,4 +1,6 @@
 license_expression: gpl-2.0 OR gpl-3.0-plus
 is_license_notice: yes
-notes: see https://community.kde.org/Policies/Licensing_Policy
 minimum_coverage: 85
+notes: see https://community.kde.org/Policies/Licensing_Policy
+ignorable_urls:
+    - http://www.gnu.org/licenses/

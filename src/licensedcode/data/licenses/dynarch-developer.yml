@@ -6,3 +6,7 @@ owner: Dynarch
 text_urls:
     - http://jescali-swiss.com/media/js/hmenu/license.html
 minimum_coverage: 95
+ignorable_copyrights:
+    - (c) Dynarch.com 2004
+ignorable_holders:
+    - Dynarch.com

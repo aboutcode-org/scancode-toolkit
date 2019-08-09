@@ -8,7 +8,7 @@ is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
+standard_notice: |
     Syntext, Inc. GPL License Exception for Syntext Serna Free Edition
     Version 1.0
     Additional rights granted beyond the GPL (the "Exception").

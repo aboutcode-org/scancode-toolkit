@@ -1,0 +1,5 @@
+license_expression: latex2e
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/latex2e

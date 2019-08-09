@@ -4,3 +4,7 @@ name: Bitzi Public Domain
 category: Permissive
 owner: Bitzi Corporation
 homepage_url: http://bitzi.com/publicdomain
+ignorable_urls:
+    - http://bitzi.com/publicdomain
+ignorable_emails:
+    - info@bitzi.com

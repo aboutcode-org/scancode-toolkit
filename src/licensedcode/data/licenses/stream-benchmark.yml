@@ -6,3 +6,9 @@ owner: STREAM
 homepage_url: https://www.cs.virginia.edu/stream/ref.html#runrules
 text_urls:
     - https://www.cs.virginia.edu/stream/FTP/Code/stream.c
+ignorable_copyrights:
+    - copyright holder, John McCalpin
+ignorable_holders:
+    - John McCalpin
+ignorable_urls:
+    - http://www.cs.virginia.edu/stream/ref.html

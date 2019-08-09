@@ -7,7 +7,7 @@ is_exception: yes
 faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation; either version 2, or (at your option) any later
@@ -82,3 +82,6 @@ standard_notice: |-
     openjdk.java.net, openjdk.dev.java.net, or download.java.net under an open
     source license other than GPL, and your derivatives thereof that are in
     compliance with the applicable open source license.
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html

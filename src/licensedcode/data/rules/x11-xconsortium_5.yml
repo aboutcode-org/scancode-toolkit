@@ -1,6 +1,8 @@
 license_expression: x11-xconsortium
 is_license_notice: yes
 relevance: 100
-minimum_coverage: '80.0'
+minimum_coverage: 80
 referenced_filenames:
     - COPYING
+ignorable_urls:
+    - ftp://ftp.rpm.org/pub/rpm/dist

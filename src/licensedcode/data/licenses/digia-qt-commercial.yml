@@ -5,3 +5,6 @@ category: Commercial
 owner: Digia
 homepage_url: http://qt.digia.com/licensing
 notes: Qt is available under a choice of licenses, one is commercial
+ignorable_urls:
+    - http://qt.digia.com/contact-us
+    - http://qt.digia.com/licensing

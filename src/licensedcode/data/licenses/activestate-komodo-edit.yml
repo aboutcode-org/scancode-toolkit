@@ -6,3 +6,7 @@ owner: ActiveState Software, Inc.
 homepage_url: http://www.activestate.com/komodo-edit/license-agreement
 other_urls:
     - https://www.mozilla.org/en-US/MPL/1.1/
+ignorable_urls:
+    - http://www.activestate.com/
+ignorable_emails:
+    - license@activestate.com

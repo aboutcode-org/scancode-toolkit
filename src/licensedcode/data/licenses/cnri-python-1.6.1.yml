@@ -5,3 +5,9 @@ category: Permissive
 owner: CNRI
 homepage_url: http://www.python.org/download/releases/1.6.1/download_win/
 spdx_license_key: CNRI-Python-GPL-Compatible
+ignorable_copyrights:
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives
+ignorable_holders:
+    - Corporation for National Research Initiatives
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1013

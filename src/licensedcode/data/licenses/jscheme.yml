@@ -4,3 +4,5 @@ name: Jscheme License
 category: Permissive
 owner: Peter Norvig
 homepage_url: https://norvig.com/license.html
+ignorable_emails:
+    - peter@norvig.com

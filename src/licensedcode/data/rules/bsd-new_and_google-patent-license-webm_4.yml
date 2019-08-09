@@ -1,7 +1,7 @@
 license_expression: bsd-new AND google-patent-license-webm
 is_license_notice: yes
-minimum_coverage: 60
 relevance: 90
+minimum_coverage: 60
 referenced_filenames:
     - LICENSE
     - PATENTS

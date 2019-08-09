@@ -1,2 +1,4 @@
 license_expression: epics
 is_license_reference: yes
+ignorable_urls:
+    - http://www.aps.anl.gov/epics/license/open.php

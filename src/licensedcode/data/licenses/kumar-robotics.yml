@@ -6,7 +6,7 @@ owner: Kumar Robotics
 homepage_url: https://github.com/KumarRobotics/motion_capture_system/blob/master/mocap_qualisys/include/mocap_qualisys/StdString.h#L316
 other_urls:
     - https://github.com/KumarRobotics/motion_capture_system
-standard_notice: |-
+standard_notice: |
     // COPYRIGHT:
     // 2002 Joseph M. O'Leary. This code is 100% free. Use it anywhere you
     // want. Rewrite it, restructure it, whatever. If you can write software

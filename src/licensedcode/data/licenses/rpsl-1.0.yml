@@ -13,3 +13,14 @@ other_urls:
     - http://www.opensource.org/licenses/RPSL-1.0
     - https://helixcommunity.org/content/rpsl
     - https://opensource.org/licenses/RPSL-1.0
+ignorable_copyrights:
+    - Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors
+    - Copyright (c) RealNetworks, Inc., 1995-2002
+ignorable_holders:
+    - RealNetworks, Inc.
+    - RealNetworks, Inc. and/or its licensors
+ignorable_urls:
+    - http://www.realnetworks.com/info/helixlogo.html
+    - https://www.helixcommunity.org/content/complicense
+    - https://www.helixcommunity.org/content/rcsl
+    - https://www.helixcommunity.org/content/rpsl

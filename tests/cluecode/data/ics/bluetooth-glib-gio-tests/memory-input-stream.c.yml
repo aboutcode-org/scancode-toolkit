@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007 Imendio AB
+  - Copyright (c) 2007 Imendio AB
 holders:
-    - Imendio AB
+  - Imendio AB
 holders_summary:
-    -   value: Imendio AB
-        count: 1
+  - value: Imendio AB
+    count: 1

@@ -19,7 +19,7 @@
     <pre> THE Q PUBLIC LICENSE
  version 1.0
 
- <s>Copyright (c) 1999-2006 Trolltech ASA, Norway.</s>
+ <s>Copyright (c) 1999-2006 Trolltech ASA, Norway</s>.
  Everyone is permitted to copy and distribute this license document.
 
  The intent of this license is to establish freedom to share and change the
@@ -123,7 +123,7 @@
  by Oslo City Court.</pre>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
-<td width="30%"><s>Copyright &copy; 2006 <a href="trolltech.html">Trolltech</a></s></td>
+<td width="30%"><s>Copyright (c) 2006 trolltech.html' Trolltech</s></td>
 <td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt 4.2.1</div></td>
 </tr></table></div></address></body>

@@ -1,2 +1,6 @@
 license_expression: free-unknown
 is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Emagic
+ignorable_holders:
+    - Emagic

@@ -1,2 +1,5 @@
 license_expression: ssleay
 is_license_text: yes
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com

@@ -6,3 +6,8 @@ owner: OpenSSL
 homepage_url: http://www.openssl.org/source/license.html
 text_urls:
     - http://www.openssl.org/source/license.html
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com

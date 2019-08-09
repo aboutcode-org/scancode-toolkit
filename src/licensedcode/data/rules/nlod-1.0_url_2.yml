@@ -1,0 +1,5 @@
+license_expression: nlod-1.0
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/nlod-1.0.html

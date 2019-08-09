@@ -1,0 +1,10 @@
+    <licenses>
+        <license>
+            <name>Eclipse Publish License, Version 1.0</name>
+            <u  rl>https://github.com/locationtech/jts/blob/master/LICENSE_EPLv1.txt</url>
+        </license>
+        <license>
+            <name>Eclipse Distribution License - v 1.0</name>
+            <url>https://github.com/locationtech/jts/blob/master/LICENSE_EDLv1.txt</url>
+        </license>
+    </licenses>

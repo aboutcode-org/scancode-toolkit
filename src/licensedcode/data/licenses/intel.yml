@@ -5,3 +5,5 @@ category: Proprietary Free
 owner: Intel Corporation
 other_urls:
     - http://web.archive.org/web/20060924155349/http://www.mepis.org/node/10358
+ignorable_urls:
+    - http://opensource.org/licenses

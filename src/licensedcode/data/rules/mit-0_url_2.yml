@@ -1,0 +1,5 @@
+license_expression: mit-0
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/mit-0.html

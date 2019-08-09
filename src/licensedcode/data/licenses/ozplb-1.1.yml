@@ -6,3 +6,12 @@ owner: University of Melbourne P2P Group
 homepage_url: http://p2p.cs.mu.oz.au/software/mpi-open/src/LICENSE
 text_urls:
     - http://p2p.cs.mu.oz.au/software/mpi-open/src/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2006, P2P Networks and Applications Research Group, The University of Melbourne
+ignorable_holders:
+    - P2P Networks and Applications Research Group, The University of Melbourne
+ignorable_authors:
+    - P2P Networks and Applications Research Group The University of Melbourne, Australia http://www.cs.mu.oz.au/p2p
+ignorable_urls:
+    - http://www.cs.mu.oz.au/p2p
+    - http://www.opensource.org/licenses/UoI-NCSA.php

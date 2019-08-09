@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Steve Johnson
+  - Steve Johnson
 authors_summary:
-    -   value: Steve Johnson
-        count: 1
+  - value: Steve Johnson
+    count: 1

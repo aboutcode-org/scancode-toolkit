@@ -5,3 +5,7 @@ category: Permissive
 owner: ISO - International Organization for Standardization
 text_urls:
     - http://faac.cvs.sourceforge.net/viewvc/faac/faad/libfaad/config.c
+ignorable_copyrights:
+    - Copyright (c) 1996
+ignorable_authors:
+    - AT&T, Dolby Laboratories, Fraunhofer Gesellschaft IIS

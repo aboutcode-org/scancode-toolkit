@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2008 Gleb Natapov
+  - Copyright (c) 2008 Gleb Natapov
 holders:
-    - Gleb Natapov
+  - Gleb Natapov
 holders_summary:
-    -   value: Gleb Natapov
-        count: 1
+  - value: Gleb Natapov
+    count: 1

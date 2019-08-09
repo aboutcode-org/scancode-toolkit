@@ -4,3 +4,5 @@ name: Intel Royalty Free License
 category: Permissive
 owner: Intel Corporation
 minimum_coverage: 60
+ignorable_authors:
+    - Intel Corporation

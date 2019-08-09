@@ -1,2 +1,4 @@
 license_expression: lavantech
 is_license_reference: yes
+ignorable_urls:
+    - http://www.lavantech.com/license.shtml

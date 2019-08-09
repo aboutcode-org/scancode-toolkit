@@ -12,3 +12,7 @@ faq_url: http://www.osetfoundation.org/public-license/
 other_urls:
     - http://opensource.org/licenses/OPL-2.1
     - http://www.osetfoundation.org/public-license
+ignorable_copyrights:
+    - (c) 2015
+ignorable_urls:
+    - http://www.osetfoundation.org/public-license

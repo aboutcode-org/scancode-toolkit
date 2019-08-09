@@ -4,3 +4,5 @@ name: Microsoft Reactive Extensions EULA
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://msdn.microsoft.com/en-us/hh295787
+ignorable_urls:
+    - http://www.microsoft.com/exporting

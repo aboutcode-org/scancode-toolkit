@@ -6,3 +6,10 @@ owner: wingo
 homepage_url: http://www.wingo.com/jt_/license.html
 text_urls:
     - http://www.wingo.com/jt_/jt_license.html
+ignorable_copyrights:
+    - Copyright (c) 2002-2010 Joseph.Oster, wingo.com
+ignorable_holders:
+    - Joseph.Oster, wingo.com
+ignorable_urls:
+    - http://www.wingo.com/jt_/
+    - http://www.wingo.com/jt_/jt_license.html

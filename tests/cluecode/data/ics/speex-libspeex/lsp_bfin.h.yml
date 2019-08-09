@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 David Rowe
+  - Copyright (c) 2006 David Rowe
 holders:
-    - David Rowe
+  - David Rowe
 holders_summary:
-    -   value: David Rowe
-        count: 1
+  - value: David Rowe
+    count: 1

@@ -6,3 +6,9 @@ owner: Frontier Scripting
 homepage_url: http://www.spinwardstars.com/frontier/fal.html
 text_urls:
     - http://www.spinwardstars.com/frontier/fal10.txt
+ignorable_copyrights:
+    - Copyright (c) (c) 1999 by Samuel Reynolds
+ignorable_holders:
+    - Samuel Reynolds
+ignorable_urls:
+    - http://ftp.uu.net/

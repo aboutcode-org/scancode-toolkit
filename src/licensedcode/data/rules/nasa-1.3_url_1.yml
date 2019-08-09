@@ -1,0 +1,5 @@
+license_expression: nasa-1.3
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/nasa-1.3

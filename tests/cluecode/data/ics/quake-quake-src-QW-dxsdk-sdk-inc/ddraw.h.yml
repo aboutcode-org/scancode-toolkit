@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1994-1996 Microsoft Corporation.
+  - Copyright (c) 1994-1996 Microsoft Corporation
 holders:
-    - Microsoft Corporation.
+  - Microsoft Corporation
 holders_summary:
-    -   value: Microsoft Corporation.
-        count: 1
+  - value: Microsoft Corporation
+    count: 1

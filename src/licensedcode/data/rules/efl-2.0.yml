@@ -1,2 +1,4 @@
 license_expression: efl-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource-definition.org/licenses/ver2_eiffel.html

@@ -9,18 +9,18 @@ Upstream Authors:
 * GNU find was <s>written by Eric Decker <cire@cisco.com>,
 with enhancements by David MacKenzie <djm@gnu.org>,
 Jay Plett <jay@silence.princeton.nj.us>,
-and Tim Wood <axolotl!tim@toad.com>.</s>
+and Tim Wood <axolotl!tim@toad.com></s>.
 The idea for -print0 and xargs -0 came from
 Dan Bernstein <brnstnd@kramden.acf.nyu.edu>.  
 Improvements have been made by James Youngman <jay@gnu.org>.
 
 * GNU xargs
 was originally <s>written by Mike Rendell, with enhancements by David
-MacKenzie.</s> <s>Modifications by James Youngman Dmitry V. Levin</s>
+MacKenzie</s>. <s>Modifications by James Youngman Dmitry V. Levin</s>
 
 * GNU locate and its associated utilities were originally
 <s>written by James Woods, with enhancements by David MacKenzie, James Youngman
-and Bas van Gompel.</s>
+and Bas van Gompel</s>.
 
 Upstream's AUTHORS lists these major <s>contributors:
 Eric B. Decker
@@ -37,7 +37,7 @@ Dmitry V. Levin
 Bas van Gompel
 Eric Blake <ebb9@byu.net></s>
 
-Current upstream <s>maintainer is James Youngman <jay@gnu.org>.</s>
+Current upstream <s>maintainer is James Youngman <jay@gnu.org></s>.
 
 ----------------------------
    <s>Copyright (c) 1990, 91, 92, 93, 94, 2000,

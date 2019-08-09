@@ -4,7 +4,7 @@ name: Sun BCL OpenJDK
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://openjdk.java.net/legal/binary-license-2007-08-02.html
-notes: |-
+notes: |
     this is the official old license for the OpenJDK binaries but is rarely
     ever seen in practice as Sun/Oracle do not redistribute pre- built binaries
     for the OpenJDK.

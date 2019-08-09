@@ -15,7 +15,7 @@ all documentation is covered under the Academic Free License, v2.1
 
 much of the internal mysql and pgsql code (contained in internal/mysql and
 internal/pgsql, respectively) is originally derived from wwwconfig-common and
-<s>copyright (c) 2000-2004 Ola Lundqvist.</s>
+<s>copyright (c) 2000-2004 Ola Lundqvist</s>.
 
 all software (original and derived) is covered under the GPL:
 (see /usr/share/common-licenses/GPL on your debian system)

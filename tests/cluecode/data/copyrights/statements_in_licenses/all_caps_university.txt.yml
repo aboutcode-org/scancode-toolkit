@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) COPYRIGHT 2004 UNIVERSITY OF CHICAGO
+  - (c) COPYRIGHT 2004 UNIVERSITY OF CHICAGO
 holders:
-    - UNIVERSITY OF CHICAGO
+  - UNIVERSITY OF CHICAGO
 holders_summary:
-    -   value: UNIVERSITY OF CHICAGO
-        count: 1
+  - value: UNIVERSITY OF CHICAGO
+    count: 1

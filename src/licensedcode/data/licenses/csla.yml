@@ -5,4 +5,10 @@ category: Free Restricted
 owner: Marimer, LLC
 homepage_url: https://github.com/MarimerLLC/csla/blob/master/license.txt
 text_urls:
-    - https://github.com/MarimerLLC/csla/blob/master/license.txt
+    - https://github.com/MarimerLLC/csla/blob/0650fd13adc4689dcd6ec7b8f4609563ee12f401/license.md
+ignorable_copyrights:
+    - Copyright 2013 by Marimer, LLC, Eden Prairie, MN
+    - Copyright 2013 by Marimer, LLC.
+ignorable_holders:
+    - Marimer, LLC, Eden Prairie, MN
+    - Marimer, LLC.

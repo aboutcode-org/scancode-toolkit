@@ -1,0 +1,11 @@
+what:
+  - holders
+  - copyrights
+  - authors
+authors:
+  - shazron on 11-06-15
+copyrights:
+  - Copyright 2011
+expected_failures:
+  - authors
+

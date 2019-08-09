@@ -3,11 +3,12 @@ short_name: Bacula exception to AGPL 3.0
 name: Bacula exception to AGPL 3.0
 category: Copyleft Limited
 owner: Bacula
+notes: composite
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/
-notes: composite
-standard_notice: |-
+minimum_coverage: 70
+standard_notice: |
     Last revision: 21 May 2017
     Bacula is licensed under the GNU Affero General Public License, version
     3.0 as published by the Free Software Foundation, Inc. ("AGPLv3").
@@ -107,4 +108,11 @@ standard_notice: |-
     www.bacula.org. You may also obtain a copy of the AGPL (or LGPL) by writing
     to: Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
     02110-1301 USA
-minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 2000-2014 Free Software Foundation Europe e.V.
+    - Copyright (c) 2000-2017 Kern Sibbald
+    - Copyright (c) 2013-2017 Marcin Haba
+ignorable_holders:
+    - Free Software Foundation Europe e.V.
+    - Kern Sibbald
+    - Marcin Haba

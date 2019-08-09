@@ -14,3 +14,9 @@ faq_url: http://www.gnu.org/licenses/gpl-faq.html
 other_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
     - https://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
+ignorable_copyrights:
+    - Copyright (c) 1989 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

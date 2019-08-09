@@ -1,2 +1,4 @@
 license_expression: sleepycat
 is_license_reference: yes
+ignorable_urls:
+    - http://opensource.org/licenses/sleepycat.html

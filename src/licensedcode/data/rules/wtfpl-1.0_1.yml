@@ -1,2 +1,4 @@
 license_expression: wtfpl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL

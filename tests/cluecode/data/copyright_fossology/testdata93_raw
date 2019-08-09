@@ -8,10 +8,10 @@ It was downloaded from the Sourceforge.net download servers:
 
 Copyright:
 
-  <s>Copyright (c) 1999-2007 Norman Walsh.</s>
-  <s>Copyright (c) 2003 Jiri Kosek.</s>
-  <s>Copyright (c) 2004-2007 Steve Ball.</s>
-  <s>Copyright (c) 2005-2007 The DocBook Project.</s>
+  <s>Copyright (c) 1999-2007 Norman Walsh</s>.
+  <s>Copyright (c) 2003 Jiri Kosek</s>.
+  <s>Copyright (c) 2004-2007 Steve Ball</s>.
+  <s>Copyright (c) 2005-2007 The DocBook Project</s>.
 
   Several files in the
   /usr/share/xml/docbook/stylesheet/nwalsh/highlighting directory are
@@ -19,19 +19,19 @@ Copyright:
 
   delphi-hl.xml, ini-hl.xml, java-hl.xml, m2-hl.xml, myxml-hl.xml, 
   php-hl.xml:
-                 <s>Copyright (c) 2005 Michal Molhanec.</s>
+                 <s>Copyright (c) 2005 Michal Molhanec</s>.
 
   Several JavaScript files in the
   /usr/share/xml/docbook/stylesheet/nwalsh/slides/browser directory are
   copyright:
   
   xbLibrary.js:
-                 <s>Copyright (c) 2000 Bob Clary.</s>
+                 <s>Copyright (c) 2000 Bob Clary</s>.
   ua.js, xbDebug.js, xbDOM.js, xbStyle.js, xbStyle-css.js, xbStyle-nn4.js,
   xbStyle-not-supported.js:
-                 <s>Copyright (c) 2001 The Netscape Corporation.</s>
+                 <s>Copyright (c) 2001 The Netscape Corporation</s>.
   CTOCWidget.js:
-                 <s>Copyright (c) 2003 The Netscape Corporation.</s>
+                 <s>Copyright (c) 2003 The Netscape Corporation</s>.
   xbCollapsibleLists.js: 
                  <s>Copyright (c) 1997 Michael Bostock</s> (Netscape Communications).
                  <s>Copyright (c) 2001 Bob Clary</s> (Netscape Communications).
@@ -41,7 +41,7 @@ Copyright:
 Upstream <s>Author:
 
   Norman Walsh <ndw@nwalsh.com> and other docbook developers at
-  the Sourceforge DocBook Open Repository.</s> As you can see above, code was
+  the Sourceforge DocBook Open Repository</s>. As you can see above, code was
   also derived from other sources.
 
 License and warranty for most parts of the package: MIT/X Consortium License

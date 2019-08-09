@@ -1,2 +1,4 @@
 license_expression: ibm-dhcp
 is_license_reference: yes
+ignorable_urls:
+    - http://svn.opendnssec.org/trunk/OpenDNSSEC/common/b64_pton.c

@@ -1,13 +1,13 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1993-1999 NVIDIA, Corporation.
-    - Copyright 1993-1999 NVIDIA, Corporation.
+  - Copyright 1993-1999 NVIDIA, Corporation
+  - Copyright 1993-1999 NVIDIA, Corporation
 holders:
-    - NVIDIA, Corporation.
-    - NVIDIA, Corporation.
+  - NVIDIA, Corporation
+  - NVIDIA, Corporation
 holders_summary:
-    -   value: NVIDIA, Corporation.
-        count: 2
+  - value: NVIDIA, Corporation
+    count: 2

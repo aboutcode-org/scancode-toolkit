@@ -1,5 +1,5 @@
 license_expression: gpl-1.0-plus
 is_license_notice: yes
-notes: found in linux/arch/arm/nwfpe/
 referenced_filenames:
     - COPYING
+notes: found in linux/arch/arm/nwfpe/

@@ -1,0 +1,8 @@
+what:
+  - holders
+  - copyrights
+  - authors
+copyrights:
+  - Copyright (c) , 2001-2011, Acme Tech. Co. Ltd.
+holders:
+  - Acme Tech. Co. Ltd.

@@ -1,0 +1,5 @@
+license_expression: apafml
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/apafml.html

@@ -107,6 +107,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if TRACE:
         logger_debug('numbered_text_lines: T.filetype_file:', T.filetype_file)
         logger_debug('numbered_text_lines: T.is_text_with_long_lines:', T.is_text_with_long_lines)
+        logger_debug('numbered_text_lines: T.is_binary:', T.is_binary)
 
     if not T.contains_text:
         return iter([])

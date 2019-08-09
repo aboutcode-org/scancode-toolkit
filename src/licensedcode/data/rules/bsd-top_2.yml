@@ -1,3 +1,4 @@
 license_expression: bsd-top
 is_license_notice: yes
 relevance: 90
+minimum_coverage: 40

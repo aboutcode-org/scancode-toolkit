@@ -1,2 +1,8 @@
 license_expression: proprietary-license
 is_license_text: yes
+ignorable_copyrights:
+    - copyrighted work of Comtrol Corporation
+ignorable_holders:
+    - work of Comtrol Corporation
+ignorable_emails:
+    - info@comtrol.com

@@ -1,13 +1,16 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000 Sun Microsystems, Inc.
-    - Copyright (c) 2000 Sun Microsystems, Inc.
+  - Copyright (c) 2000 Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California 94303, U.S.A.
+  - Copyright (c) 2000 Sun Microsystems, Inc.
 holders:
-    - Sun Microsystems, Inc.
-    - Sun Microsystems, Inc.
+  - Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California 94303, U.S.A.
+  - Sun Microsystems, Inc.
 holders_summary:
-    -   value: Sun Microsystems, Inc.
-        count: 2
+  - value: Sun Microsystems, Inc.
+    count: 1
+  - value: Sun Microsystems, Inc., 901 San Antonio Road, Palo Alto, California 94303, U.S.A.
+    count: 1
+

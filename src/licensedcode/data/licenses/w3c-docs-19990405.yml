@@ -4,3 +4,13 @@ name: W3C Document Notice and License (1999-04-05)
 category: Free Restricted
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/copyright-documents-19990405
+ignorable_copyrights:
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
+        National de Recherche en Informatique et en Automatique, Keio University)
+ignorable_holders:
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+        Recherche en Informatique et en Automatique, Keio University)
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/
+ignorable_emails:
+    - site-policy@w3.org

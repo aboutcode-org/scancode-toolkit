@@ -6,3 +6,10 @@ owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
 text_urls:
     - http://www.oracle.com/technetwork/licenses/distribution-license-152002.html
+ignorable_authors:
+    - the OTN Program
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/products/export/index.html?content.html
+    - http://www.oracle.com/technetwork/indexes/documentation/index.html
+    - http://www.oracle.com/technetwork/licenses/distribution-license-152002.html

@@ -7,3 +7,12 @@ homepage_url: http://www.cognitiveweb.org/legal/license/
 notes: derived from the Jabber Open Source License
 text_urls:
     - http://www.cognitiveweb.org/legal/license/CognitiveWebOpenSourceLicense-1.1.txt
+ignorable_copyrights:
+    - Copyright (c) 2003-2003 CognitiveWeb
+    - Portions Copyright (c) 2002-2003 Bryan Thompson
+ignorable_holders:
+    - Bryan Thompson
+    - CognitiveWeb
+ignorable_urls:
+    - http://www.cognitiveweb.org/
+    - http://www.cognitiveweb.org/legal/license

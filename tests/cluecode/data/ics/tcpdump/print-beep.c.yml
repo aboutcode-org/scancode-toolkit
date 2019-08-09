@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000, Richard Sharpe
+  - Copyright (c) 2000, Richard Sharpe
 holders:
-    - Richard Sharpe
+  - Richard Sharpe
 holders_summary:
-    -   value: Richard Sharpe
-        count: 1
+  - value: Richard Sharpe
+    count: 1

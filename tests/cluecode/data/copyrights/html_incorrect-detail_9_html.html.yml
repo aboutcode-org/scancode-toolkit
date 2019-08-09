@@ -1,7 +1,7 @@
 what:
-    - copyrights
+  - copyrights
 copyrights:
-    - A12 Oe (c) 2004-2009
+  - A12 Oe (c) 2004-2009
 expected_failures:
-    - copyrights
+  - copyrights
 notes: this is a corner and rare case that fails for now.

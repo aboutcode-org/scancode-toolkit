@@ -1,2 +1,4 @@
 license_expression: sencha-commercial
 is_license_reference: yes
+ignorable_urls:
+    - http://www.sencha.com/legal/sencha-commercial-software-license-agreement/

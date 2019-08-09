@@ -11,3 +11,15 @@ text_urls:
 other_urls:
     - http://research.cs.wisc.edu/condor/license.html#condor
     - http://web.archive.org/web/20111123062036/http://research.cs.wisc.edu/condor/license.html#condor
+ignorable_copyrights:
+    - Copyright 1990-2006 Condor Team, Computer Sciences Department, University of Wisconsin-Madison,
+        Madison, WI.
+ignorable_authors:
+    - the Condor Project, Condor Team, Computer Sciences Department, University of Wisconsin-Madison
+ignorable_holders:
+    - Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison, WI.
+ignorable_urls:
+    - http://www.condorproject.org/
+ignorable_emails:
+    - condor-admin@cs.wisc.edu
+    - miron@cs.wisc.edu

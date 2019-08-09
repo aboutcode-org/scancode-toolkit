@@ -4,7 +4,7 @@ name: TORQUE v2.5+ Software License v1.1
 category: Copyleft Limited
 owner: Adaptive Computing Enterprises
 homepage_url: https://fedoraproject.org/wiki/Licensing/TORQUEv1.1
-notes: |-
+notes: |
     Per Fedora, when the licensing for TORQUE 2.4 expired, the TORQUE upstream
     drafted a new license with updated contact information. The intention was
     to have a lawyer retain the same functionality as the older licensing, but
@@ -19,3 +19,18 @@ notes: |-
     licensed TORQUEv1.1 and OpenPBS. This also means that this license is not
     useful for other codebases without removing Note 1.
 spdx_license_key: TORQUE-1.1
+ignorable_copyrights:
+    - Copyright (c) 2010-2011 Adaptive Computing Enterprises, Inc.
+ignorable_authors:
+    - NASA Ames Research Center, Lawrence Livermore National Laboratory, and Veridian
+ignorable_holders:
+    - Adaptive Computing Enterprises, Inc.
+ignorable_urls:
+    - http://www.adaptivecomputing.com/
+    - http://www.clusterresources.com/
+    - http://www.clusterresources.com/products/
+    - http://www.pbsworks.com/ResLibSearchResult.aspx?keywords=openpbs&industry=All&pro
+    - http://www.supercluster.org/mailman/listinfo/torqueusers
+ignorable_emails:
+    - torque-support@adaptivecomputing.com
+    - torqueusers@supercluster.org

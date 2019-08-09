@@ -8,3 +8,12 @@ spdx_license_key: Unicode-DFS-2015
 other_urls:
     - https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html
 minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 1991-2015 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/copyright.html
+    - http://www.unicode.org/reports

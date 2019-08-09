@@ -1,5 +1,5 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
-notes: GNU C Library  variant
 referenced_filenames:
     - COPYING.LIB
+notes: GNU C Library  variant

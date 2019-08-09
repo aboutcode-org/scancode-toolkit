@@ -1,2 +1,4 @@
 license_expression: ecl-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://opensource.org/licenses/ecl2.php

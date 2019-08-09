@@ -1,5 +1,6 @@
 license_expression: proprietary-license
 is_license_notice: yes
 referenced_filenames:
-  - LICENSE.rst
-
+    - LICENSE.rst
+ignorable_urls:
+    - http://www.steinwurf.com/licensing

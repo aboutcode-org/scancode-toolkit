@@ -1,8 +1,8 @@
 what:
-    - holders
-    - holders_summary
+  - holders
+  - holders_summary
 holders:
-    - Sam Leffler, Errno Consulting, Atheros Communications, Inc.
+  - Sam Leffler, Errno Consulting, Atheros Communications, Inc.
 holders_summary:
-    -   value: Sam Leffler, Errno Consulting, Atheros Communications, Inc.
-        count: 1
+  - value: Sam Leffler, Errno Consulting, Atheros Communications, Inc.
+    count: 1

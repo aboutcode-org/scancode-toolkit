@@ -1,0 +1,9 @@
+license_expression: gpl-1.0-plus
+is_license_tag: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright GNU General Public Licence, http://www.gnu.org/licenses/gpl.html
+ignorable_holders:
+    - GNU General Public Licence
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html

@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) YeAr Name
+  - Copyright (c) YeAr Name
 holders:
-    - Name
+  - Name
 holders_summary:
-    -   value: Name
-        count: 1
+  - value: Name
+    count: 1

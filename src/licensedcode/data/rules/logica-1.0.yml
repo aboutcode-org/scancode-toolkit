@@ -1,2 +1,4 @@
 license_expression: logica-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://opensmpp.logica.com/CommonPart/Download/Download.htm

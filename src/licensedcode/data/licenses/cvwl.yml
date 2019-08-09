@@ -5,3 +5,11 @@ category: Proprietary Free
 owner: Mitre
 homepage_url: https://opensource.org/licenses/mitrepl
 minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright (c) . The MITRE Corporation (http://www.mitre.org/)
+ignorable_holders:
+    - The MITRE Corporation
+ignorable_urls:
+    - http://www.mitre.org/
+ignorable_emails:
+    - corpc@mitre.org

@@ -1,2 +1,4 @@
 license_expression: dtree
 is_license_reference: yes
+ignorable_urls:
+    - http://destroydrop.com/javascripts/tree/

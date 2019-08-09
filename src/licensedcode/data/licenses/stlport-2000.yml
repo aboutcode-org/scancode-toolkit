@@ -4,3 +4,13 @@ name: STLport License 2000
 category: Permissive
 owner: STLport Consulting
 minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright 1994 Hewlett-Packard Company
+    - Copyright 1996,97 Silicon Graphics Computer Systems, Inc.
+    - Copyright 1997 Moscow Center for SPARC Technology
+    - Copyright 1999,2000 Boris Fomitchev
+ignorable_holders:
+    - Boris Fomitchev
+    - Hewlett-Packard Company
+    - Moscow Center for SPARC Technology
+    - Silicon Graphics Computer Systems, Inc.

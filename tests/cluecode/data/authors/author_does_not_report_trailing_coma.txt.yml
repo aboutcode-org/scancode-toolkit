@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Gordon Matzigkeit
+  - Gordon Matzigkeit
 authors_summary:
-    -   value: Gordon Matzigkeit
-        count: 1
+  - value: Gordon Matzigkeit
+    count: 1

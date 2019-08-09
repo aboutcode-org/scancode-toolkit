@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2007-2008 OpenMoko, Inc.
+  - Copyright (c) 2007-2008 OpenMoko, Inc.
 holders:
-    - OpenMoko, Inc.
+  - OpenMoko, Inc.
 holders_summary:
-    -   value: OpenMoko, Inc.
-        count: 1
+  - value: OpenMoko, Inc.
+    count: 1

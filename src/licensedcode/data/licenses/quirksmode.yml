@@ -4,3 +4,6 @@ name: Quirksmode Copyright Notice
 category: Permissive
 owner: Quirksmode
 homepage_url: http://www.quirksmode.org/about/copyright.html
+ignorable_urls:
+    - http://www.quirksmode.org/
+    - http://www.quirksmode.org/about/copyright.html

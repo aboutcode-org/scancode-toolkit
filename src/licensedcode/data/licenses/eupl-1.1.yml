@@ -19,3 +19,7 @@ other_urls:
     - https://joinup.ec.europa.eu/software/page/eupl/licence-eupl
     - https://joinup.ec.europa.eu/system/files/EN/EUPL%20v.1.1%20-%20Licence.pdf
     - https://opensource.org/licenses/EUPL-1.1
+ignorable_copyrights:
+    - (c) the European Community 2007
+ignorable_holders:
+    - the European Community

@@ -4,11 +4,12 @@ name: libwebsockets exception to LGPL 2.1
 category: Copyleft Limited
 owner: lws-team
 homepage_url: https://github.com/warmcat/libwebsockets/blob/master/LICENSE
+notes: composite
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
-notes: composite
-standard_notice: |-
+minimum_coverage: 70
+standard_notice: |
     Libwebsockets and included programs are provided under the terms of the GNU
     Library General Public License (LGPL) 2.1, with the following exceptions:
     1) Any reference, whether in these modifications or in the GNU
@@ -47,4 +48,5 @@ standard_notice: |-
     - test-apps/*.h
     - lwsws/*
     ------ end of exceptions
-minimum_coverage: 70
+ignorable_urls:
+    - https://libwebsockets.org/

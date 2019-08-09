@@ -4,7 +4,7 @@ name: XSkat License
 category: Permissive
 owner: XSkat
 homepage_url: https://fedoraproject.org/wiki/Licensing/XSkat_License
-notes: |-
+notes: |
     Per Fedora, this license is Free only when clause 2.b is used. It is always
     GPL-incompatible. Packagers using code under this license in Fedora should
     note that while the RPM changelog is sufficient to meet one requirement of

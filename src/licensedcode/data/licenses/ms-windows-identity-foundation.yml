@@ -3,6 +3,8 @@ short_name: MS Windows Identity Foundation License
 name: Microsoft Windows Identity Foundation License
 category: Proprietary Free
 owner: Microsoft
+notes: also contains some French language terms
 text_urls:
     - http://download.microsoft.com/download/7/0/1/70118832-3749-4C75-B860-456FC0712870/wif-nuget-eula-rtm.rtf
-notes: also contains some French language terms
+ignorable_urls:
+    - http://www.support.microsoft.com/common/international.aspx

@@ -8,7 +8,7 @@ spdx_license_key: u-boot-exception-2.0
 other_urls:
     - http://git.denx.de/?p=u-boot.git;a=blob;f=Licenses/Exceptions
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation; either version 2, or (at your option) any later
@@ -33,3 +33,9 @@ standard_notice: |-
     Foundation, but the instance of code that it refers to (the U-Boot source
     code) is copyrighted by me and others who actually wrote it.
     -- Wolfgang Denk
+ignorable_copyrights:
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation

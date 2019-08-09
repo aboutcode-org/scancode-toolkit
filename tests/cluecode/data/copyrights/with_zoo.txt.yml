@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2012-2013 Open-RnD Sp.
+  - Copyright (c) 2012-2013 Open-RnD Sp. z o.o.
 holders:
-    - Open-RnD Sp.
+  - Open-RnD Sp. z o.o.
 holders_summary:
-    -   value: Open-RnD Sp.
-        count: 1
+  - value: Open-RnD Sp. z o.o.
+    count: 1

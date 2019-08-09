@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2011 The WebRTC project
+  - Copyright (c) 2011 The WebRTC project authors
 holders:
-    - The WebRTC project
+  - The WebRTC project authors
 holders_summary:
-    -   value: The WebRTC project
-        count: 1
+  - value: The WebRTC project authors
+    count: 1

@@ -3,3 +3,5 @@ is_license_notice: yes
 referenced_filenames:
     - COPYING3
     - COPYING.RUNTIME
+ignorable_urls:
+    - http://www.gnu.org/licenses/

@@ -3,3 +3,10 @@ short_name: Sun BCL SDK 6.0
 name: Sun BCL SDK 6.0
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_copyrights:
+    - Copyright 2006, Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+ignorable_urls:
+    - http://java.com/data
+    - http://www.sun.com/policies/trademarks

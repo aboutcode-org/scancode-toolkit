@@ -6,3 +6,7 @@ owner: Adobe Systems
 homepage_url: http://labs.adobe.com/technologies/eula/flex2sdk.html
 text_urls:
     - http://labs.adobe.com/technologies/eula/flex2sdk.html
+ignorable_urls:
+    - http://www.adobe.com/education/purchasing
+    - http://www.adobe.com/store
+    - http://www.adobe.com/type/browser/legal/embeddingeula.html

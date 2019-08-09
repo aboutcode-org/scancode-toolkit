@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 Oren J. Maurice <oymaurice@hazorea.org.il>
+  - Copyright (c) 2005 Oren J. Maurice <oymaurice@hazorea.org.il>
 holders:
-    - Oren J. Maurice
+  - Oren J. Maurice
 holders_summary:
-    -   value: Oren J. Maurice
-        count: 1
+  - value: Oren J. Maurice
+    count: 1

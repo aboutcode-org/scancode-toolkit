@@ -2,9 +2,9 @@ key: lzma-sdk-2006-exception
 short_name: LZMA SDK 2006 Exception
 name: LZMA SDK 2006 CPL and LGPL Exception
 category: Copyleft Limited
-is_exception: yes
 owner: Igor Pavlov
 homepage_url: http://www.7-zip.org/sdk.html
 notes: this version of the license existed around 2006
+is_exception: yes
 other_urls:
     - http://sourceforge.net/projects/sevenzip/

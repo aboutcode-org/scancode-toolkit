@@ -4,7 +4,7 @@ name: Trusster Open Source License 1.0a
 category: Copyleft
 owner: Trusster
 homepage_url: https://fedoraproject.org/wiki/Licensing/TOSL
-notes: |-
+notes: |
     Per Fedora, the Trusster Open Source License (TOSL) is a derivation of the
     Sleepycat License. The one significant difference is that where the
     Sleepycat License says The source code must either be included in the
@@ -18,3 +18,7 @@ notes: |-
     TOSL is GPL-incompatible because of the addition of the "no more
     restrictive" language.
 spdx_license_key: TOSL
+ignorable_copyrights:
+    - copyright (c) 2006 Mike Mintz and Robert Ekendahl
+ignorable_holders:
+    - Mike Mintz and Robert Ekendahl

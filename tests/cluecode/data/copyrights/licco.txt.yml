@@ -1,10 +1,10 @@
 what:
-    - copyrights
-    - authors
-    - holders
+  - copyrights
+  - authors
+  - holders
 copyrights:
-    - Copyright 2015-2019 by Hartmut Goebel
-authors:
-    - Hartmut Goebel Author-email h.goebel@crazy-compilers.com
+  - Copyright 2015-2019 by Hartmut Goebel
 holders:
-    - Hartmut Goebel
+  - Hartmut Goebel
+authors:
+  - Hartmut Goebel Author-email h.goebel@crazy-compilers.com

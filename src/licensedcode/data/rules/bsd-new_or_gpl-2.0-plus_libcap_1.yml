@@ -1,0 +1,4 @@
+license_expression: bsd-new OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+notes: formerly libcap license and not 100% a bsd-new

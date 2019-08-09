@@ -1,0 +1,5 @@
+license_expression: gplcc-1.0
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/gpl-cc-1.0.html

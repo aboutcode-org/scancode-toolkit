@@ -4,3 +4,5 @@ name: O'Reilly Code Sample Notice
 category: Permissive
 owner: O'Reilly Media, Inc.
 homepage_url: http://shop.oreilly.com/category/customer-service/faq-examples.do
+ignorable_emails:
+    - permissions@oreilly.com

@@ -7,3 +7,7 @@ homepage_url: http://ebr.springsource.com/repository/app/bundle/version/detail?n
 faq_url: http://docs.oracle.com/cd/E13222_01/wls/docs100/commonj/commonj.html
 other_urls:
     - http://docs.oracle.com/cd/E13222_01/wls/docs100/commonj/commonj.html
+ignorable_urls:
+    - http://dev2dev.bea.com/technologies/commonj/index.jsp
+    - http://dev2dev.bea.com/wlplatform/commonj/twm.html
+    - http://www.ibm.com/developerworks/library/j-commonj-sdowmt/

@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - http://software.clapper.org/grizzled-slf4j/license.html

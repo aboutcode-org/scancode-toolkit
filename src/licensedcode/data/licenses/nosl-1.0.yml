@@ -7,3 +7,5 @@ homepage_url: http://bits.netizen.com.au/licenses/NOSL/
 spdx_license_key: NOSL
 text_urls:
     - http://bits.netizen.com.au/licenses/NOSL/nosl.txt
+ignorable_urls:
+    - http://netizen.com.au/licenses/NOPL/

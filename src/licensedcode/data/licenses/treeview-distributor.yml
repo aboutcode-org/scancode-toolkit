@@ -5,3 +5,11 @@ category: Proprietary Free
 owner: GubuSoft
 homepage_url: http://www.treeview.net/tv/license_dist.asp
 minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 2006 Conor O'Mahony (gubusoft@gubusoft.com)
+ignorable_holders:
+    - Conor O'Mahony
+ignorable_urls:
+    - http://www.treeview.net/
+ignorable_emails:
+    - gubusoft@gubusoft.com

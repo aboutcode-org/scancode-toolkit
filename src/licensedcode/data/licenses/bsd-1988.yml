@@ -3,3 +3,7 @@ short_name: BSD 1988
 name: BSD 1988
 category: Permissive
 owner: Regents of the University of California
+ignorable_copyrights:
+    - copyright holder and its contributors
+ignorable_holders:
+    - its contributors

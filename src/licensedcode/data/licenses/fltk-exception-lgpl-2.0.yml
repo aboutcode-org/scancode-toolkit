@@ -8,7 +8,7 @@ is_exception: yes
 spdx_license_key: FLTK-exception
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     The FLTK library and included programs are provided under the terms of the
     GNU Library General Public License (LGPL) with the following exceptions:
     Modifications to the FLTK configure script, config header file, and
@@ -35,3 +35,7 @@ standard_notice: |-
     requirement:
     [program/widget] is based in part on the work of the FLTK project
     (http://www.fltk.org).
+ignorable_urls:
+    - http://www.fltk.org/
+ignorable_emails:
+    - fltk-bugs@fltk.org

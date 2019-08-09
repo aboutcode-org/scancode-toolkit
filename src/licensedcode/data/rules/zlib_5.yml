@@ -1,6 +1,6 @@
 license_expression: zlib
 is_license_reference: yes
+relevance: 100
+minimum_coverage: 99
 referenced_filenames:
     - zlib.h
-minimum_coverage: 99
-relevance: 100

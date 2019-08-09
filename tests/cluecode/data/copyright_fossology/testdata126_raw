@@ -1,12 +1,12 @@
 This is the Debian GNU/Linux prepackaged version of the GNU groff
 document formatting system. 
-GNU groff was <s>written by James Clark <jjc@jclark.com>.</s>  
+GNU groff was <s>written by James Clark <jjc@jclark.com></s>.  
 It is now <s>maintained by Ted Harding <ted.harding@nessie.mcc.ac.uk> and
-Werner Lemberg <wl@gnu.org>.</s>
+Werner Lemberg <wl@gnu.org></s>.
 
 This Debian package was previously <s>maintained by Fabrizio Polacco
-<fpolacco@debian.org>.</s>
-It is now <s>maintained by Colin Watson <cjwatson@debian.org>.</s>
+<fpolacco@debian.org></s>.
+It is now <s>maintained by Colin Watson <cjwatson@debian.org></s>.
 
 The original tarball came from <URL:ftp://groff.ffii.org/pub/groff/>:
   4c7a1b478d230696f14743772f31639f  groff-1.18.1.tar.gz
@@ -59,7 +59,7 @@ dvi format, HP LaserJet 4 printers, Canon CAPSL printers, HTML format
 (still alpha), and typewriter-like devices.  Also included is a modified
 version of the Berkeley -me macros, an enhanced version of the X11
 xditview previewer, and an implementation of the -mm macros <s>contributed
-by Joergen Haegg (jh@axis.se).</s>
+by Joergen Haegg (jh@axis.se)</s>.
 
 xditview is <s>copyrighted by MIT</s> under the usual X terms.
 
@@ -513,7 +513,7 @@ to permit their use in free software.
 
 meintro.me and meref.me are distributed under the following terms:
 
-  <s>Copyright (c) 1986 The Regents of the University of California.</s>
+  <s>Copyright (c) 1986 The Regents of the University of California</s>.
   All rights reserved.
 
   Redistribution and use in source and binary forms are permitted

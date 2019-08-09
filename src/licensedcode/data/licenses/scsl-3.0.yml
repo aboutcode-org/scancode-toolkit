@@ -5,3 +5,5 @@ category: Copyleft Limited
 owner: Oracle (Sun)
 other_urls:
     - http://www.sun.com/software/jini/licensing/SCSL3_JiniTSA1.html
+ignorable_urls:
+    - http://sun.com/software/communitysource

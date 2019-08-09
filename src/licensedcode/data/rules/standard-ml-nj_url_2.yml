@@ -1,0 +1,5 @@
+license_expression: standard-ml-nj
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/smlnj.html

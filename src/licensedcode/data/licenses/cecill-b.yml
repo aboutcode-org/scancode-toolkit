@@ -1,9 +1,9 @@
 key: cecill-b
+language: fr
 short_name: CeCILL-B License
 name: CeCILL-B Free Software License Agreement
 category: Permissive
 owner: CeCILL
-language: fr
 homepage_url: http://www.cecill.info/licences/Licence_CeCILL-B_V1-fr.html
 notes: The primary text is in French.
 spdx_license_key: CECILL-B

@@ -1,0 +1,5 @@
+license_expression: mpl-2.0-no-copyleft-exception
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/mpl-2.0-no-copyleft-exception.html

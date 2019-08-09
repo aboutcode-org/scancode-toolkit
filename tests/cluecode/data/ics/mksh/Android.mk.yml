@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2010 Thorsten Glaser <t.glaser@tarent.de>
+  - Copyright (c) 2010 Thorsten Glaser <t.glaser@tarent.de>
 holders:
-    - Thorsten Glaser
+  - Thorsten Glaser
 holders_summary:
-    -   value: Thorsten Glaser
-        count: 1
+  - value: Thorsten Glaser
+    count: 1

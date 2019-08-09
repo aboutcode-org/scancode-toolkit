@@ -1,2 +1,4 @@
 license_expression: cc0-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://labs.creativecommons.org/licenses/zero-waive/1.0/us/legalcode

@@ -5,3 +5,5 @@ category: Permissive
 owner: nexB
 homepage_url: https://github.com/nexB/scancode-toolkit/
 minimum_coverage: 95
+ignorable_urls:
+    - https://github.com/nexB/scancode-toolkit/

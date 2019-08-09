@@ -374,7 +374,7 @@ class SpdxSource(ExternalLicensesSource):
         zip_url = 'https://github.com/{from_repo}/archive/{tag}.zip'.format(**locals())
         if TRACE_FETCH: print('Fetching SPDX license data version:', tag, 'from:', zip_url)
         licenses_zip = fetch.download_url(zip_url, timeout=120)
-        if TRACE_FETCH: print('Fteched SPDX licenses to:', licenses_zip)
+        if TRACE_FETCH: print('Fetched SPDX licenses to:', licenses_zip)
         with zipfile.ZipFile(licenses_zip) as archive:
             for path in archive.namelist():
                 if not (path.endswith('.json')

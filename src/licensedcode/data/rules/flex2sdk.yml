@@ -1,2 +1,4 @@
 license_expression: flex2sdk
 is_license_reference: yes
+ignorable_urls:
+    - http://labs.adobe.com/technologies/eula/flex2sdk.html

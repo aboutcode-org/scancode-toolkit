@@ -3,3 +3,13 @@ short_name: Codexia License
 name: Codexia License
 category: Proprietary Free
 owner: Codexia
+ignorable_copyrights:
+    - Mike Ryan (mike@codexia.com) Copyright (c) 2000
+    - portions (c) Allen Denver
+ignorable_holders:
+    - Allen Denver
+    - Mike Ryan
+ignorable_urls:
+    - http://www.codexia.com/
+ignorable_emails:
+    - mike@codexia.com

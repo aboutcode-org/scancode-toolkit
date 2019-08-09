@@ -1,2 +1,4 @@
 license_expression: uofu-rfpl
 is_license_reference: yes
+ignorable_urls:
+    - http://www.cs.utah.edu/~gk/teem/txt/LICENSE.txt

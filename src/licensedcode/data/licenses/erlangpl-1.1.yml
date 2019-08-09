@@ -7,3 +7,9 @@ homepage_url: http://www.erlang.org/EPLICENSE
 spdx_license_key: ErlPL-1.1
 text_urls:
     - http://www.erlang.org/EPLICENSE
+ignorable_copyrights:
+    - Copyright 1999, Ericsson Utvecklings AB.
+ignorable_holders:
+    - Ericsson Utvecklings AB.
+ignorable_urls:
+    - http://www.erlang.org/

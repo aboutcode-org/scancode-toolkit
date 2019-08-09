@@ -35,7 +35,9 @@ import attr
 import pytest
 
 import cluecode.copyrights
+from commoncode import compat
 from commoncode import saneyaml
+from commoncode.system import py2
 from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
@@ -139,7 +141,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     test_dirs = (path.join(test_dir, td) for td in
-        ('copyrights', 'ics', 'holders', 'authors', 'years'))
+        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated'))
 
     all_test_files = chain.from_iterable(
         get_test_file_pairs(td) for td in test_dirs)
@@ -187,7 +189,7 @@ def as_sorted_mapping(counter):
     return summarized
 
 
-def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
+def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -243,9 +245,11 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
 
     tfn = test_file.replace(test_data_dir, '').strip('\/\\')
     whats = '_'.join(what)
-    test_name = 'test_%(whats)s_%(tfn)s' % locals()
+    test_name = 'test_%(tfn)s_%(index)s' % locals()
     test_name = python_safe_name(test_name)
-    if isinstance(test_name, unicode):
+
+    # onPython2 we need a plain non-unicode string
+    if py2 and isinstance(test_name, compat.unicode):
         test_name = test_name.encode('utf-8')
 
     closure_test_function.__name__ = test_name
@@ -261,12 +265,12 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, re
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
     """
-    for test in copyright_tests:
+    for i, test in enumerate(sorted(copyright_tests,key=lambda x:x.test_file)):
         # closure on the test params
         if test.expected_failures:
             actual_regen = False
         else:
             actual_regen = regen
-        method, name = make_copyright_test_functions(test, test_data_dir, actual_regen)
+        method, name = make_copyright_test_functions(test, i, test_data_dir, actual_regen)
         # attach that method to our test class
         setattr(clazz, name, method)

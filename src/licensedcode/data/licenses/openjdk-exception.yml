@@ -2,13 +2,16 @@ key: openjdk-exception
 short_name: OpenJDK Exception
 name: OpenJDK Classpath and Assembly Exception
 category: Copyleft Limited
-is_exception: yes
 owner: Oracle Corporation
 homepage_url: http://openjdk.java.net/legal/
-notes: |-
+notes: |
     this exception is the combination of the classpath exception with extra
     terms and found only in the OpenJDK
+is_exception: yes
 text_urls:
     - http://openjdk.java.net/legal/gplv2+ce.html
     - http://openjdk.java.net/legal/assembly-exception.html
     - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html

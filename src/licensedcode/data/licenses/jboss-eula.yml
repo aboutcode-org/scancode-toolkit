@@ -5,3 +5,13 @@ category: Proprietary Free
 owner: JBoss Community
 text_urls:
     - http://repository.jboss.org/licenses/jbossorg-eula.txt
+ignorable_copyrights:
+    - Copyright 2006 Red Hat, Inc.
+ignorable_holders:
+    - Red Hat, Inc.
+ignorable_urls:
+    - http://www.jboss.com/company/logos
+    - http://www.jboss.org/
+    - http://www.opensource.org/licenses/index.php
+    - http://www.redhat.com/about/corporate/trademark
+    - http://www.redhat.com/licenses

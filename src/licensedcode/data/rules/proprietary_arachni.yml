@@ -1,3 +1,5 @@
 license_expression: proprietary-license
 is_license_text: yes
 minimum_coverage: 80
+ignorable_emails:
+    - license@arachni-scanner.com

@@ -1,2 +1,6 @@
 license_expression: proprietary-license
 is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) HANDSONCODE Sp
+ignorable_holders:
+    - HANDSONCODE Sp

@@ -1,2 +1,4 @@
 license_expression: ati-eula
 is_license_reference: yes
+ignorable_urls:
+    - http://www.amd.com/us/pages/amdhomepage.aspx

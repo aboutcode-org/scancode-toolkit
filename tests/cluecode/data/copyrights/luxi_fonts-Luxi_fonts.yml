@@ -1,15 +1,15 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - copyright (c) 2001 by Bigelow & Holmes Inc.
-    - copyright (c) 2001 by URW++ GmbH.
+  - copyright (c) 2001 by Bigelow & Holmes Inc.
+  - copyright (c) 2001 by URW++ GmbH.
 holders:
-    - Bigelow & Holmes Inc.
-    - URW++ GmbH.
+  - Bigelow & Holmes Inc.
+  - URW++ GmbH.
 holders_summary:
-    -   value: Bigelow & Holmes Inc.
-        count: 1
-    -   value: URW++ GmbH.
-        count: 1
+  - value: Bigelow & Holmes Inc.
+    count: 1
+  - value: URW++ GmbH.
+    count: 1

@@ -5,3 +5,7 @@ category: Copyleft Limited
 owner: National Security Agency
 homepage_url: https://github.com/dcblake/SMP/blob/master/Documentation/License.txt
 spdx_license_key: SMPPL
+ignorable_copyrights:
+    - Copyright (c) 1997-2002 National Security Agency
+ignorable_holders:
+    - National Security Agency

@@ -6,3 +6,10 @@ owner: InfoNode
 homepage_url: http://www.infonode.net/licenses/InfoNodeLicense.html
 other_urls:
     - http://www.nnl.se/html/english/index.html
+ignorable_copyrights:
+    - Copyright (c) 2004 NNL Technology
+ignorable_holders:
+    - NNL Technology
+ignorable_urls:
+    - http://proguard.sourceforge.net/
+    - http://www.nnl.se/

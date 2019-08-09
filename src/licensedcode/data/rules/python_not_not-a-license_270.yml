@@ -1,0 +1,6 @@
+license_expression: python
+is_license_reference: yes
+minimum_coverage: 99
+notes: this is an historical note found in Python licenses history blurb
+ignorable_urls:
+    - https://www.opensource.org/

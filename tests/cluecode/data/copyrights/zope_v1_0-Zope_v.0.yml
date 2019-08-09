@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) Digital Creations.
+  - Copyright (c) Digital Creations
 holders:
-    - Digital Creations.
+  - Digital Creations
 holders_summary:
-    -   value: Digital Creations.
-        count: 1
+  - value: Digital Creations
+    count: 1

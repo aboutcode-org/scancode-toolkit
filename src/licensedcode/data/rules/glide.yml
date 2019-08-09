@@ -1,2 +1,4 @@
 license_expression: glide
 is_license_reference: yes
+ignorable_urls:
+    - http://www.users.on.net/~triforce/glidexp/COPYING.txt

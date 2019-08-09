@@ -7,3 +7,5 @@ homepage_url: http://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.htm
 text_urls:
     - http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
 minimum_coverage: 80
+ignorable_authors:
+    - the University of California, Berkeley and its contributors

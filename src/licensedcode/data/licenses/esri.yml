@@ -5,3 +5,22 @@ category: Commercial
 owner: Esri
 homepage_url: http://www.esri.com/legal/pdfs/mla_e204_e300/english
 minimum_coverage: 60
+ignorable_copyrights:
+    - copyright date(s) from the source materials Esri and its licensors
+ignorable_holders:
+    - date(s) from the source materials Esri and its licensors
+ignorable_urls:
+    - http://links.esri.com/agol/transactiondef
+    - http://support.esri.com/en/support
+    - http://www.arcgis.com/
+    - http://www.esri.com/legal
+    - http://www.esri.com/legal/dmca_policy
+    - http://www.esri.com/legal/redistribution-rights
+    - http://www.esri.com/legal/software-license
+    - http://www.esri.com/software/arcgis/arcgis-for-home
+    - http://www.esri.com/supplierterms-HERE
+    - http://www.esri.com/terms-of-use-bodc
+    - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/e-802-bing-mapsvcs.pdf
+    - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/home-use-installation-support.pdf
+    - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9792-teleatlas_use_data.pdf
+    - http://www.esri.com/~/media/Files/Pdfs/legal/pdfs/j9946-icubed.pdf

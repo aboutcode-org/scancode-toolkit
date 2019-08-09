@@ -1,2 +1,4 @@
 license_expression: ofl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web

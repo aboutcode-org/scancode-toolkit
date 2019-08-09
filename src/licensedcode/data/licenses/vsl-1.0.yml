@@ -13,3 +13,11 @@ other_urls:
     - http://www.opensource.org/licenses/VSL-1.0
     - http://www.vovida.org
     - https://opensource.org/licenses/VSL-1.0
+ignorable_copyrights:
+    - Copyright (c) 2000 Vovida Networks, Inc.
+ignorable_holders:
+    - Vovida Networks, Inc.
+ignorable_urls:
+    - http://www.vovida.org/
+ignorable_emails:
+    - vocal@vovida.org

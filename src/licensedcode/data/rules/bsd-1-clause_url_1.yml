@@ -1,0 +1,5 @@
+license_expression: bsd-1-clause
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/bsd-1-clause

@@ -1,0 +1,5 @@
+license_expression: d-fsl-1.0-de
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/d-fsl-1.0.html

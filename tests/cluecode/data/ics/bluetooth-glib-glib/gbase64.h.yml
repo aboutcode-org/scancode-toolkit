@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 Alexander Larsson <alexl@redhat.com>
+  - Copyright (c) 2005 Alexander Larsson <alexl@redhat.com>
 holders:
-    - Alexander Larsson
+  - Alexander Larsson
 holders_summary:
-    -   value: Alexander Larsson
-        count: 1
+  - value: Alexander Larsson
+    count: 1

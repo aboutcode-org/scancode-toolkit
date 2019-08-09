@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - (c) 2011 - Anycompany, LLC
+  - (c) 2011 - Anycompany, LLC
 holders:
-    - Anycompany, LLC
+  - Anycompany, LLC
 holders_summary:
-    -   value: Anycompany, LLC
-        count: 1
+  - value: Anycompany, LLC
+    count: 1

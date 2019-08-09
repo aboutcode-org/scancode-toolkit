@@ -1,2 +1,4 @@
 license_expression: ofl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://spdx.org/licenses/OFL-1.0#licenseText

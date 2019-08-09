@@ -4,8 +4,15 @@ name: Saxpath License
 category: Permissive
 owner: Codehaus
 homepage_url: https://fedoraproject.org/wiki/Licensing/Saxpath_License
-notes: |-
+notes: |
     Per Fedora, this is a slightly modified version of Apache 1.1. The
     documentation requirement in Apache 1.1 has been weakened to a suggestion,
     but clause 4 still makes this license Free but GPL-incompatible.
 spdx_license_key: Saxpath
+ignorable_authors:
+    - the SAXPath Project (http://www.saxpath.org/)
+ignorable_urls:
+    - http://www.saxpath.org/
+ignorable_emails:
+    - license@saxpath.org
+    - pm@saxpath.org

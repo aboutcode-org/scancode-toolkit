@@ -1,0 +1,5 @@
+license_expression: eu-datagrid
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.eu-datagrid.org/license.html

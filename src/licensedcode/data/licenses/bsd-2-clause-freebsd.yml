@@ -8,3 +8,7 @@ spdx_license_key: BSD-2-Clause-FreeBSD
 text_urls:
     - http://www.freebsd.org/copyright/freebsd-license.html
 faq_url: https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/pref-license.html
+ignorable_copyrights:
+    - Copyright (c) The FreeBSD Project
+ignorable_holders:
+    - The FreeBSD Project

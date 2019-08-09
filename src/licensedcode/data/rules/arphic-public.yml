@@ -1,2 +1,4 @@
 license_expression: arphic-public
 is_license_reference: yes
+ignorable_urls:
+    - http://ftp.gnu.org/gnu/non-gnu/chinese-fonts-truetype/LICENSE

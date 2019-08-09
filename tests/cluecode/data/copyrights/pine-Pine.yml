@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1989-2007 by the University of Washington.
+  - Copyright 1989-2007 by the University of Washington
 holders:
-    - the University of Washington.
+  - the University of Washington
 holders_summary:
-    -   value: the University of Washington.
-        count: 1
+  - value: the University of Washington
+    count: 1

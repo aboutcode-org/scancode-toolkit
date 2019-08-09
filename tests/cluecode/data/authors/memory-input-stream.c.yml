@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Tim Janik
+  - Tim Janik
 authors_summary:
-    -   value: Tim Janik
-        count: 1
+  - value: Tim Janik
+    count: 1

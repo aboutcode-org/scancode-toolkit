@@ -5,3 +5,5 @@ category: Permissive
 owner: Unspecified
 other_urls:
     - http://www.xref-tech.com/sglib/
+ignorable_urls:
+    - http://www.opensource.org/

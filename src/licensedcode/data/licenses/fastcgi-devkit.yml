@@ -4,7 +4,7 @@ name: FastCGI DevKit
 category: Permissive
 owner: OpenMarket
 homepage_url: http://www.fastcgi.com/devkit/LICENSE.TERMS
-notes: |-
+notes: |
     Per Fedora, this license is based on MIT, but contains additional clauses
     which make it more than a simple MIT variant, notably, the requirement of
     statement of new terms of contributions under a different license. For that
@@ -12,3 +12,7 @@ notes: |-
 spdx_license_key: OML
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Market_License
+ignorable_copyrights:
+    - copyrighted by Open Market, Inc 'Open Market
+ignorable_holders:
+    - Open Market, Inc 'Open Market

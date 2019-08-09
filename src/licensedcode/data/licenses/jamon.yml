@@ -5,3 +5,9 @@ category: Free Restricted
 owner: Steve Souza
 homepage_url: http://jamonapi.sourceforge.net/JAMonLicense.html
 minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2002, Steve Souza (admin@jamonapi.com)
+ignorable_holders:
+    - Steve Souza
+ignorable_emails:
+    - admin@jamonapi.com

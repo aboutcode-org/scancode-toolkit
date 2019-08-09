@@ -1,0 +1,5 @@
+license_expression: w3c-software-19980720
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/w3c-19980720.html

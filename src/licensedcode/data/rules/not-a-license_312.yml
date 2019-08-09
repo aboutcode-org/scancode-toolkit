@@ -1,2 +1,6 @@
 is_negative: yes
 notes: not a license
+ignorable_urls:
+    - http://www.xara.com/
+ignorable_emails:
+    - burnus@net-b.de

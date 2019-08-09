@@ -7,3 +7,9 @@ homepage_url: http://www.7-zip.org/sdk.html
 other_urls:
     - http://sourceforge.net/projects/sevenzip/
     - http://www.7-zip.org/sdk.html
+ignorable_authors:
+    - Igor Pavlov
+ignorable_urls:
+    - http://www.7-zip.org/support.html
+    - http://www.gnu.org/
+    - http://www.opensource.org/

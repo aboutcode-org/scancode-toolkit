@@ -40,7 +40,7 @@ For the mod_mime_magic component:
  * originally posted to comp.sources.unix.  Copyright info for that program
  * is included below as required.
  * ---------------------------------------------------------------------------
- * - <s>Copyright (c) Ian F. Darwin, 1987.</s> Written by Ian F. Darwin.
+ * - <s>Copyright (c) Ian F. Darwin, 1987</s>. Written by Ian F. Darwin.
  *
  * This software is not subject to any license of the American Telephone and
  * Telegraph Company or of the Regents of the University of California.
@@ -99,7 +99,7 @@ For the  server\util_md5.c component:
 
 /* these portions extracted from mpack, John G. Myers - jgm+@cmu.edu */
 /* <s>(c) Copyright 1993,1994 by Carnegie Mellon University
- * All Rights Reserved.</s>
+ * All Rights Reserved</s>.
  *
  * Permission to use, copy, modify, distribute, and sell this software
  * and its documentation for any purpose is hereby granted without
@@ -147,8 +147,8 @@ For the  srclib\apr\include\apr_md5.h component:
  * licence for the modifications made to that material.
  */
 
-/* <s>Copyright (c) 1991-2, RSA Data Security, Inc. Created 1991. All
-   rights reserved.</s>
+/* <s>Copyright (c) 1991-2, RSA Data Security, Inc.</s> Created 1991. All
+   rights reserved.
 
    License to copy and use this software is granted provided that it
    is identified as the "RSA Data Security, Inc. MD5 Message-Digest
@@ -182,8 +182,8 @@ For the  srclib\apr\passwd\apr_md5.c component:
 /* MD5C.C - RSA Data Security, Inc., MD5 message-digest algorithm
  */
 
-/* <s>Copyright (c) 1991-2, RSA Data Security, Inc. Created 1991. All
-   rights reserved.</s>
+/* <s>Copyright (c) 1991-2, RSA Data Security, Inc.</s> Created 1991. All
+   rights reserved.
 
    License to copy and use this software is granted provided that it
    is identified as the "RSA Data Security, Inc. MD5 Message-Digest
@@ -219,8 +219,8 @@ For the srclib\apr-util\crypto\apr_md4.c component:
  * This is derived from material <s>copyright RSA Data Security, Inc.</s>
  * Their notice is reproduced below in its entirety.
  *
- * <s>Copyright (c) 1991-2, RSA Data Security, Inc. Created 1991. All
- * rights reserved.</s>
+ * <s>Copyright (c) 1991-2, RSA Data Security, Inc.</s> Created 1991. All
+ * rights reserved.
  *
  * License to copy and use this software is granted provided that it
  * is identified as the "RSA Data Security, Inc. MD4 Message-Digest
@@ -247,8 +247,8 @@ For the srclib\apr-util\include\apr_md4.h component:
  * This is derived from material <s>copyright RSA Data Security, Inc.</s>
  * Their notice is reproduced below in its entirety.
  *
- * <s>Copyright (c) 1991-2, RSA Data Security, Inc. Created 1991. All
- * rights reserved.</s>
+ * <s>Copyright (c) 1991-2, RSA Data Security, Inc.</s> Created 1991. All
+ * rights reserved.
  *
  * License to copy and use this software is granted provided that it
  * is identified as the "RSA Data Security, Inc. MD4 Message-Digest
@@ -275,8 +275,8 @@ For the srclib\apr-util\test\testdbm.c component:
 /* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * <s>Copyright (c) 2000-2002 The Apache Software Foundation.  All rights
- * reserved.</s>
+ * <s>Copyright (c) 2000-2002 The Apache Software Foundation</s>.  All rights
+ * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -338,8 +338,8 @@ For the srclib\apr-util\test\testmd4.c component:
  * This is derived from material <s>copyright RSA Data Security, Inc.</s>
  * Their notice is reproduced below in its entirety.
  *
- * <s>Copyright (c) 1990-2, RSA Data Security, Inc. Created 1990. All
- * rights reserved.</s>
+ * <s>Copyright (c) 1990-2, RSA Data Security, Inc.</s> Created 1990. All
+ * rights reserved.
  *
  * RSA Data Security, Inc. makes no representations concerning either
  * the merchantability of this software or the suitability of this
@@ -414,7 +414,7 @@ restrictions:
 
      Regular expression support is provided by the PCRE library package,
      which is open source software, <t>written by Philip Hazel</t>, and <s>copyright
-     by the University of Cambridge, England.</s>
+     by the University of Cambridge, England</s>.
 
    somewhere reasonably visible in your documentation and in any relevant
    files or online help data or similar. A reference to the ftp site for
@@ -445,7 +445,7 @@ For the test\zb.c component:
 /*                          ZeusBench V1.01
 			    ===============
 
-This program is <s>Copyright (c) Zeus Technology Limited 1996.</s>
+This program is <s>Copyright (c) Zeus Technology Limited 1996</s>.
 
 This program may be used and copied freely providing this copyright notice
 is not removed.

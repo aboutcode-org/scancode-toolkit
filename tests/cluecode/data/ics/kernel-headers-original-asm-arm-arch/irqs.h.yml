@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) Greg Lonnon 2001
+  - Copyright (c) Greg Lonnon 2001
 holders:
-    - Greg Lonnon
+  - Greg Lonnon
 holders_summary:
-    -   value: Greg Lonnon
-        count: 1
+  - value: Greg Lonnon
+    count: 1

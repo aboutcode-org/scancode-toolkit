@@ -1,2 +1,12 @@
 license_expression: proprietary-license AND apache-2.0
 is_license_text: yes
+ignorable_copyrights:
+    - (c) Dgraph Enterprise Edition
+ignorable_holders:
+    - Dgraph Enterprise Edition
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://cla-assistant.io/dgraph-io/dgraph
+    - https://github.com/dgraph-io/dgraph
+ignorable_emails:
+    - contact@dgraph.io

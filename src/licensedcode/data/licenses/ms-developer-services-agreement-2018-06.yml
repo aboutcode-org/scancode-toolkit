@@ -5,3 +5,8 @@ category: Proprietary Free
 owner: Microsoft
 homepage_url: https://docs.microsoft.com/en-us/legal/mdsa
 minimum_coverage: 80
+ignorable_urls:
+    - http://developer.microsoft.com/
+    - http://docs.microsoft.com/
+    - http://msdn.microsoft.com/
+    - http://technet.microsoft.com/

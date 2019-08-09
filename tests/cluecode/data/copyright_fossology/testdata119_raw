@@ -213,8 +213,8 @@ For files in the jpeg directory:
   is provided "AS IS", and you, its user, assume the entire risk as to
   its quality and accuracy.
 
-  This software is <s>copyright (c) 1991-1998, Thomas G. Lane.  All
-  Rights Reserved except as specified below.</s>
+  This software is <s>copyright (c) 1991-1998, Thomas G. Lane</s>.  All
+  Rights Reserved except as specified below.
 
   Permission is hereby granted to use, copy, modify, and distribute
   this software (or portions thereof) for any purpose, without fee,
@@ -244,8 +244,8 @@ For files in the jpeg directory:
   liability claims are assumed by the product vendor.
 
   ansi2knr.c is included in this distribution by permission of
-  L. Peter Deutsch, sole proprietor of its copyright holder, Aladdin
-  Enterprises of Menlo Park, CA.  ansi2knr.c is NOT covered by the
+  L. Peter Deutsch, sole proprietor of its <s>copyright holder, Aladdin
+  Enterprises of Menlo Park</s>, CA.  ansi2knr.c is NOT covered by the
   above copyright and conditions, but instead by the usual
   distribution terms of the Free Software Foundation; principally,
   that you must include source code if you redistribute it.  (See the
@@ -279,7 +279,7 @@ For files in the jpeg directory:
 
   We are required to state that
       "The Graphics Interchange Format(c) is the <s>Copyright property of
-      CompuServe Incorporated.</s>  GIF(sm) is a Service Mark property of
+      CompuServe Incorporated</s>.  GIF(sm) is a Service Mark property of
       CompuServe Incorporated."
 
   (The LZW Patent is now void - ed.)

@@ -1,2 +1,4 @@
 license_expression: bsd-new AND cc-pd
 is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain/

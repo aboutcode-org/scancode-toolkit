@@ -5,3 +5,11 @@ category: Permissive
 owner: xinetd
 homepage_url: https://fedoraproject.org/wiki/Licensing/Xinetd_License
 spdx_license_key: xinetd
+ignorable_copyrights:
+    - (c) Copyright 1992 by Panagiotis Tsirigotis
+    - Copyright 1998-2001 by Rob Braun
+    - Copyright 2001 by Steve Grubb
+ignorable_holders:
+    - Panagiotis Tsirigotis
+    - Rob Braun
+    - Steve Grubb

@@ -1,2 +1,4 @@
 license_expression: scansoft-1.2
 is_license_reference: yes
+ignorable_urls:
+    - http://www.speech.cs.cmu.edu/openvxi/OpenVXI_3.0/OpenSpeech_Browser_PIK/doc/License.txt

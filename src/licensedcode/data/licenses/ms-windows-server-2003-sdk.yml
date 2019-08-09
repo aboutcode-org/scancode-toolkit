@@ -3,3 +3,9 @@ short_name: MS Windows Server 2003 SP1 Platform SDK License
 name: Microsoft Windows Server 2003 SP1 Platform SDK License
 category: Proprietary Free
 owner: Microsoft
+ignorable_copyrights:
+    - Copyright (c) 1999-2005 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
+ignorable_urls:
+    - http://www.microsoft.com/exporting

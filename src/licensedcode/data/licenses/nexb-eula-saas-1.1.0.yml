@@ -3,3 +3,7 @@ short_name: nexB EULA for SaaS 1.1.0
 name: nexB EULA for SaaS 1.1.0
 category: Commercial
 owner: nexB
+ignorable_urls:
+    - https://dejacode.zendesk.com/home
+ignorable_emails:
+    - marketing@nexb.com

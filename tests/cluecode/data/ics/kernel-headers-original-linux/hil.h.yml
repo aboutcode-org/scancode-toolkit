@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2001 Brian S. Julin
+  - Copyright (c) 2001 Brian S. Julin
 holders:
-    - Brian S. Julin
+  - Brian S. Julin
 holders_summary:
-    -   value: Brian S. Julin
-        count: 1
+  - value: Brian S. Julin
+    count: 1

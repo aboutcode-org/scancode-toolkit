@@ -1,0 +1,6 @@
+license_expression: sax-pd
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt

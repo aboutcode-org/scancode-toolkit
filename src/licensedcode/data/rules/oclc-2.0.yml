@@ -1,2 +1,4 @@
 license_expression: oclc-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.oclc.org/research/activities/software/license/v2final.htm

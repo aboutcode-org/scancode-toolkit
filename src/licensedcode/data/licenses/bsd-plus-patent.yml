@@ -4,7 +4,7 @@ name: BSD-2-Clause Plus Patent
 category: Permissive
 owner: OSI - Open Source Initiative
 homepage_url: https://opensource.org/licenses/BSDplusPatent
-notes: |-
+notes: |
     Per the OSI, this license is designed to provide a) a simple permissive
     license; b) that is compatible with the GNU General Public License (GPL),
     version 2; and c) which also has an express patent grant included.

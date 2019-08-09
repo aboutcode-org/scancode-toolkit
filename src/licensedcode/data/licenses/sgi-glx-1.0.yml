@@ -6,3 +6,11 @@ owner: SGI - Silicon Graphics
 homepage_url: http://www.sgi.com/products/software/opensource/glx/glxlicense.txt
 text_urls:
     - http://velib.kyb.mpg.de/docu/GLX.html
+ignorable_copyrights:
+    - (c) 1991-9 Silicon Graphics, Inc.
+ignorable_authors:
+    - Silicon Graphics, Inc.
+ignorable_holders:
+    - Silicon Graphics, Inc.
+ignorable_urls:
+    - http://www.sgi.com/software/opensource/glx/license.html

@@ -8,3 +8,5 @@ text_urls:
     - http://opencontent.org/opl.shtml
 other_urls:
     - http://old.koalateam.com/jackaroo/OPL_1_0.TXT
+ignorable_urls:
+    - http://www.opencontent.org/opl.html

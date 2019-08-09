@@ -6,3 +6,9 @@ owner: RealNetworks
 homepage_url: https://helixcommunity.org/beula/
 text_urls:
     - https://helixcommunity.org/beula/
+ignorable_copyrights:
+    - Copyright (c) 1995-2002 RealNetworks, Inc.
+ignorable_holders:
+    - RealNetworks, Inc.
+ignorable_urls:
+    - http://www.helixcommunity.org/

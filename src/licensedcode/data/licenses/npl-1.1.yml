@@ -10,3 +10,9 @@ text_urls:
 other_urls:
     - http://www.mozilla.org/MPL/NPL/1.1/
     - http://www.mozilla.org/NPL/
+ignorable_copyrights:
+    - Copyright (c) 1998-1999 Netscape Communications Corporation
+ignorable_holders:
+    - Netscape Communications Corporation
+ignorable_urls:
+    - http://www.mozilla.org/NPL/

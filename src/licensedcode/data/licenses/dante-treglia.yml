@@ -3,3 +3,7 @@ short_name: Dante Treglia License
 name: Dante Treglia License
 category: Permissive
 owner: Dante Treglia
+ignorable_copyrights:
+    - Portions copyright (c) Dante Treglia II, 2000
+ignorable_holders:
+    - Dante Treglia II

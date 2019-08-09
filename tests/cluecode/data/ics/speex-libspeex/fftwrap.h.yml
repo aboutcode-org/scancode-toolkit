@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2005 Jean-Marc Valin
+  - Copyright (c) 2005 Jean-Marc Valin
 holders:
-    - Jean-Marc Valin
+  - Jean-Marc Valin
 holders_summary:
-    -   value: Jean-Marc Valin
-        count: 1
+  - value: Jean-Marc Valin
+    count: 1

@@ -3,3 +3,6 @@ short_name: Sun BCL JRE 6
 name: Sun BCL JRE 6
 category: Proprietary Free
 owner: Oracle (Sun)
+ignorable_urls:
+    - http://java.com/data
+    - http://www.sun.com/policies/trademarks

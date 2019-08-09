@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2002 Lawrence E. Rosen.
+  - Copyright (c) 2002 Lawrence E. Rosen
 holders:
-    - Lawrence E. Rosen.
+  - Lawrence E. Rosen
 holders_summary:
-    -   value: Lawrence E. Rosen.
-        count: 1
+  - value: Lawrence E. Rosen
+    count: 1

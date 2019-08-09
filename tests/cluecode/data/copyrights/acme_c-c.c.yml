@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000 ACME, Inc.
+  - Copyright (c) 2000 ACME, Inc.
 holders:
-    - ACME, Inc.
+  - ACME, Inc.
 holders_summary:
-    -   value: ACME, Inc.
-        count: 1
+  - value: ACME, Inc.
+    count: 1

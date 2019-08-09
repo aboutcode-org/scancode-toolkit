@@ -2,3 +2,10 @@ license_expression: apache-2.0 AND mx4j AND zlib AND bzip2-libbzip-2010 AND cpl-
     AND epl-1.0
 is_license_reference: yes
 notes: complex NSIS notices, not a choice. Found in Tomcat
+ignorable_authors:
+    - The Apache Software Foundation (http://www.apache.org/)
+ignorable_urls:
+    - http://mx4j.sourceforge.net/
+    - http://nsis.sourceforge.net/
+    - http://www.apache.org/
+    - http://www.eclipse.org/

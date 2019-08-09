@@ -4,7 +4,6 @@ name: Dom4j License
 category: Permissive
 owner: dom4j
 homepage_url: http://www.dom4j.org/
-spdx_license_key: Plexus
 notes: |
     Per Fedora, this is an Apache 1.1 derived license. Unfortunately, clause 4
     is too broad, making it Free but GPL-incompatible. It does also replace the
@@ -12,6 +11,7 @@ notes: |
     Plexus Classworlds was started in 2002 and dom4j in 2000/2001 hence it has precedence.
     Other projects such as Exolab/Intalio/Castor and JCharts have used the same license.
     Castor is actually the first to use this but dom4j is still commonly used and castor less so.
+spdx_license_key: Plexus
 text_urls:
     - http://www.dom4j.org/dom4j-1.6.1/license.html
     - http://www.dom4j.org/license.html
@@ -23,5 +23,7 @@ other_urls:
     - https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#jCharts_Variant
     - http://openorb.sourceforge.net/license.txt
     - https://confluence.sakaiproject.org/plugins/viewsource/viewpagesrc.action?pageId=28442642
-
-    
+ignorable_urls:
+    - http://www.dom4j.org/
+ignorable_emails:
+    - dom4j-info@metastuff.com

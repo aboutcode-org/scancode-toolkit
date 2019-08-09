@@ -1,0 +1,5 @@
+license_expression: lppl-1.3a
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/lppl-1.3a

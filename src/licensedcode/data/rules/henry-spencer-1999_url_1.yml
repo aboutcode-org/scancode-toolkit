@@ -1,0 +1,5 @@
+license_expression: henry-spencer-1999
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/spencer-99

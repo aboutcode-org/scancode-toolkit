@@ -1,0 +1,8 @@
+/* (PD) 2006 The Bitzi Corporation 
+ * 
+ * 1. Authorship. This work and others bearing the above 
+ * label were created by, or on behalf of, the Bitzi 
+ * Corporation. Often other public domain material by 
+ * other authors is incorporated; this should be clear 
+ * from notations in the source code. If other non- 
+

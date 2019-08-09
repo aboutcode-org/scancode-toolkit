@@ -6,3 +6,7 @@ owner: RealNetworks
 homepage_url: https://helixcommunity.org/content/rcsl
 text_urls:
     - https://helixcommunity.org/content/rcsl
+ignorable_urls:
+    - http://www.helixcommunity.org/
+ignorable_emails:
+    - press@helixcommunity.org

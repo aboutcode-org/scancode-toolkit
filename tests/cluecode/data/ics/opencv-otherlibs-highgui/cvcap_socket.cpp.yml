@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2008, Nils Hasler
+  - Copyright (c) 2008, Nils Hasler
 holders:
-    - Nils Hasler
+  - Nils Hasler
 holders_summary:
-    -   value: Nils Hasler
-        count: 1
+  - value: Nils Hasler
+    count: 1

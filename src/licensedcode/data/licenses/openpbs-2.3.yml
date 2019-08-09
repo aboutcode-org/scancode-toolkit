@@ -8,3 +8,15 @@ text_urls:
     - http://fedoraproject.org/wiki/Licensing/OpenPBS
 other_urls:
     - www.OpenPBS.org
+ignorable_copyrights:
+    - Copyright (c) 1999-2000 Veridian Information Solutions, Inc.
+ignorable_authors:
+    - NASA Ames Research Center, Lawrence Livermore National Laboratory, and Veridian Information
+        Solutions, Inc.
+ignorable_holders:
+    - Veridian Information Solutions, Inc.
+ignorable_urls:
+    - http://www.openpbs.org/
+    - http://www.openpbs.org/credit.html
+ignorable_emails:
+    - sales@OpenPBS.org

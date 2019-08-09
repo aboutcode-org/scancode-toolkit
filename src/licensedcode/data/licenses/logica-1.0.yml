@@ -6,3 +6,7 @@ owner: Logica
 homepage_url: http://opensmpp.logica.com/CommonPart/Download/Download.htm
 text_urls:
     - http://opensmpp.logica.com/CommonPart/Download/Download.htm
+ignorable_copyrights:
+    - Copyright (c) 1996-2001 Logica Mobile Networks Limited
+ignorable_holders:
+    - Logica Mobile Networks Limited

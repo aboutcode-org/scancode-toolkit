@@ -7,3 +7,7 @@ homepage_url: http://www.math.utah.edu/docs/info/elib_1.html
 text_urls:
     - http://www.math.utah.edu/docs/info/elib_1.html#SEC1
 faq_url: http://www.math.utah.edu/docs/info/elib_3.html
+ignorable_copyrights:
+    - Copyright (c) 1992 Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation

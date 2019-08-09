@@ -10,3 +10,11 @@ text_urls:
     - http://www.opensource.apple.com/source/architecture/architecture-229/APPLE_LICENSE?f=text
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Apple_Public_Source_License_1.0
+ignorable_copyrights:
+    - Portions Copyright (c) 1999 Apple Computer, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
+ignorable_urls:
+    - http://www.apple.com/legal/guidelinesfor3rdparties.html
+    - http://www.apple.com/publicsource
+    - http://www.apple.com/publicsource/modifications.html

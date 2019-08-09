@@ -3,3 +3,7 @@ short_name: Service Availability Forum License
 name: Service Availability Forum License
 category: Permissive
 owner: Service Availability Forum
+ignorable_copyrights:
+    - Copyright (c) Service Availability(TM) Forum
+ignorable_holders:
+    - Service Availability(TM) Forum

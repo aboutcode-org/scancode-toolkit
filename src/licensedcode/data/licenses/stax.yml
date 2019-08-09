@@ -4,3 +4,9 @@ name: Stax License
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: https://www.jcp.org/aboutJava/communityprocess/licenses/jsr173/JSR173_Spec_License_Streaming_API_XML-1_3-10_22_13.pdf
+ignorable_copyrights:
+    - (c) 2002, 2003 BEA Systems, Inc.
+ignorable_holders:
+    - BEA Systems, Inc.
+ignorable_urls:
+    - http://www.bea.com/

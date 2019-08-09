@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1995-2000 Corporation for National Research Initiatives
+  - Copyright (c) 1995-2000 Corporation for National Research Initiatives
 holders:
-    - Corporation for National Research Initiatives
+  - Corporation for National Research Initiatives
 holders_summary:
-    -   value: Corporation for National Research Initiatives
-        count: 1
+  - value: Corporation for National Research Initiatives
+    count: 1

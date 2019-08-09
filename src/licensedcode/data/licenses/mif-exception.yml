@@ -11,7 +11,7 @@ other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - http://www.scs.stanford.edu/histar/src/lib/cppsup/exception
     - https://www.threadingbuildingblocks.org/licensing
-standard_notice: |-
+standard_notice: |
     As a special exception, you may use this file as part of a free software
     library without restriction. Specifically, if other files instantiate
     templates or use macros or inline functions from this file, or you compile

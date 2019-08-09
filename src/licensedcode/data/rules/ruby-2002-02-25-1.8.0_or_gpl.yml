@@ -1,3 +1,7 @@
 license_expression: ruby OR gpl-2.0
-notes: https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.0.tar.gz
 is_license_text: yes
+notes: https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.0.tar.gz
+ignorable_authors:
+    - Yukihiro Matsumoto <matz@netlab.jp>
+ignorable_emails:
+    - matz@netlab.jp

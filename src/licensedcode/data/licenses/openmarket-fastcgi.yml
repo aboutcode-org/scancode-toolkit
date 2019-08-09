@@ -6,3 +6,7 @@ owner: OpenMarket
 homepage_url: http://www.fastcgi.com/drupal/node/8
 text_urls:
     - http://www.fastcgi.com/drupal/node/8
+ignorable_copyrights:
+    - copyrighted by Open Market, Inc 'Open Market
+ignorable_holders:
+    - Open Market, Inc 'Open Market

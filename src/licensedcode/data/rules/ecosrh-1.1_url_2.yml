@@ -1,0 +1,5 @@
+license_expression: ecosrh-1.1
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/rhecos-1.1.html

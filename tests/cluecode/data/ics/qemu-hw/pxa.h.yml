@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 Openedhand Ltd.
+  - Copyright (c) 2006 Openedhand Ltd.
 holders:
-    - Openedhand Ltd.
+  - Openedhand Ltd.
 holders_summary:
-    -   value: Openedhand Ltd.
-        count: 1
+  - value: Openedhand Ltd.
+    count: 1

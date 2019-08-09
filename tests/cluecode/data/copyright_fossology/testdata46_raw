@@ -45,7 +45,7 @@ Files with other copyright statement than: <s>Copyright FSF</s>, License GPL
 
 doc/FAQ ("the Bash FAQ")
 
- This document is <s>Copyright 1995-2005 by Chester Ramey.</s>
+ This document is <s>Copyright 1995-2005 by Chester Ramey</s>.
 
  Permission is hereby granted, without written agreement and
  without license or royalty fees, to use, copy, and distribute
@@ -157,7 +157,7 @@ examples/loadables/getconf.c (POSIX.2 getconf utility)
   * POSIX.2 getconf utility
   *
   * Originally <s>Written by:
-  *      J.T. Conklin (jtc@wimsey.com), Winning Strategies, Inc</s>.
+  *      J.T. Conklin (jtc@wimsey.com), Winning Strategies, Inc.</s>
   *
   * Heavily modified for inclusion in bash by
   *      Chet Ramey <chet@po.cwru.edu>
@@ -168,7 +168,7 @@ examples/loadables/cut.c:
 
  /*
   * <s>Copyright (c) 1989, 1993
-  *      The Regents of the University of California.</s>  All rights reserved.
+  *      The Regents of the University of California</s>.  All rights reserved.
   *
   * This code is derived from software contributed to Berkeley by
   * Adam S. Moskowitz of Menlo Consulting and Marciano Pitargue.
@@ -251,7 +251,7 @@ lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
 
  <s>Copyright (c) 1988-2005 Free Software Foundation, Inc.</s>
 
- <s>Authored by Brian Fox and Chet Ramey.</s>
+ <s>Authored by Brian Fox and Chet Ramey</s>.
 
  Permission is granted to process this file through Tex and print the
  results, provided the printed document carries copying permission notice
@@ -275,7 +275,7 @@ lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
 readline/doc/{history,hstech,hsuser}.texi (GNU History Library Manual)
 
  <s>Copyright (c) 1988-2002 Free Software Foundation, Inc.</s>
- <s>Authored by Brian Fox and Chet Ramey.</s>
+ <s>Authored by Brian Fox and Chet Ramey</s>.
 
  Permission is granted to make and distribute verbatim copies of this manual
  provided the copyright notice and this permission notice are preserved on
@@ -299,7 +299,7 @@ readline/doc/{history,hstech,hsuser}.texi (GNU History Library Manual)
 lib/sh/inet_aton.c:
 
  * <s>Copyright (c) 1983, 1990, 1993
- *    The Regents of the University of California.</s>  All rights reserved.
+ *    The Regents of the University of California</s>.  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -329,7 +329,7 @@ lib/sh/inet_aton.c:
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  * -
- * <s>Portions Copyright (c) 1993 by Digital Equipment Corporation.</s>
+ * <s>Portions Copyright (c) 1993 by Digital Equipment Corporation</s>.
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -386,7 +386,7 @@ support/man2html.c
 debian/md5.[ch]
 
 /*
-  <s>Copyright (c) 1999, 2002 Aladdin Enterprises.</s>  All rights reserved.
+  <s>Copyright (c) 1999, 2002 Aladdin Enterprises</s>.  All rights reserved.
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

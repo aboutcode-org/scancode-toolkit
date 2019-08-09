@@ -4,3 +4,12 @@ name: Altova EULA
 category: Commercial
 owner: Altova
 homepage_url: http://www.altova.com/eula.html
+ignorable_copyrights:
+    - Copyright (c) 2007-2011 Altova GmbH (www.altova.com)
+ignorable_holders:
+    - Altova GmbH
+ignorable_urls:
+    - http://www.altova.com/
+    - http://www.altova.com/eula
+    - http://www.altova.com/legal_3rdparty.html
+    - http://www.altova.com/privacy

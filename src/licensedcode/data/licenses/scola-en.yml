@@ -4,3 +4,5 @@ name: Statistics Canada Open Licence Agreement
 category: Proprietary Free
 owner: Minister for Statistics Canada
 homepage_url: https://www.statcan.gc.ca/eng/reference/licence
+ignorable_emails:
+    - information@fip-pcim.gc.ca

@@ -4,3 +4,5 @@ name: sRGB Profile Licensing Agreement
 category: Proprietary Free
 owner: HP - Hewlett Packard
 homepage_url: https://web.archive.org/web/20011024060436/http://www.srgb.com/usingsrgb.html
+ignorable_authors:
+    - prior permission. Hewlett-Packard Company

@@ -1,5 +1,7 @@
 license_expression: gpl-3.0-plus
 is_license_notice: yes
-notes: Gpl 3.0 GCC version
 referenced_filenames:
     - COPYING3
+notes: Gpl 3.0 GCC version
+ignorable_urls:
+    - http://www.gnu.org/licenses/

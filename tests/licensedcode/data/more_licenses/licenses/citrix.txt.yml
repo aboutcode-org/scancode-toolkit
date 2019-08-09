@@ -3,6 +3,7 @@ license_expressions:
   - gpl-1.0-plus
   - bsd-new
   - free-unknown
+  - warranty-disclaimer
   - free-unknown
   - commercial-license
 notes: this is a license from fossology license reference Citrix (CITRIX LICENSE AGREEMENT)

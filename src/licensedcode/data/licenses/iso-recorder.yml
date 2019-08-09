@@ -4,3 +4,5 @@ name: ISO Recorder License
 category: Proprietary Free
 owner: Alex Feinman
 homepage_url: http://isorecorder.alexfeinman.com/v1.htm
+ignorable_emails:
+    - isorecorder@alexfeinman.com

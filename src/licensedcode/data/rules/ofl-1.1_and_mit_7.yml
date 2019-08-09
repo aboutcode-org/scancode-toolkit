@@ -1,0 +1,7 @@
+license_expression: ofl-1.1 AND mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://fontawesome.io/
+    - http://scripts.sil.org/OFL
+    - https://github.com/encharm/Font-Awesome-SVG-PNG

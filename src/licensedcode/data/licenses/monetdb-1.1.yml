@@ -4,3 +4,5 @@ name: MonetDB Public License Version 1.1
 category: Copyleft Limited
 owner: MonetDB
 homepage_url: http://www.monetdb.org/Legal/MonetDBLicense
+ignorable_urls:
+    - http://www.monetdb.org/Legal/MonetDBLicense

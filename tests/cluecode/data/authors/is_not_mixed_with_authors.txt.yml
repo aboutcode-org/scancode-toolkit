@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Nikos Mavrogiannopoulos
+  - Nikos Mavrogiannopoulos
 authors_summary:
-    -   value: Nikos Mavrogiannopoulos
-        count: 1
+  - value: Nikos Mavrogiannopoulos
+    count: 1

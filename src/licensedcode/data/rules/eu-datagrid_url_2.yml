@@ -1,0 +1,5 @@
+license_expression: eu-datagrid
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/eudatagrid.html

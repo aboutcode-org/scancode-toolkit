@@ -19,3 +19,9 @@ other_urls:
     - http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
     - http://www.gnu.org/licenses/old-licenses/library.html
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
+ignorable_copyrights:
+    - Copyright (c) 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

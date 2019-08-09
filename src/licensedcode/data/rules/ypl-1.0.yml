@@ -1,2 +1,4 @@
 license_expression: ypl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.zimbra.com/license/yahoo_public_license_1.0.html

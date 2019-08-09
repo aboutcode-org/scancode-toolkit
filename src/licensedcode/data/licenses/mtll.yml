@@ -4,8 +4,10 @@ name: Matrix Template Library License
 category: Permissive
 owner: Indiana University
 homepage_url: https://fedoraproject.org/wiki/Licensing/Matrix_Template_Library_License
-notes: |-
+notes: |
     Per Fedora, this license was found in the Matrix Template Library. It is
     derived from the Apache Software License v1.1, but it is modified in
     several ways. It is Free, but GPL-incompatible.
 spdx_license_key: MTLL
+ignorable_authors:
+    - permission, please contact Indiana University Advanced Research & Technology

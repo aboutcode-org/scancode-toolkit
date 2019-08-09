@@ -6,4 +6,15 @@ owner: Tanuki Software
 homepage_url: http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
 text_urls:
     - http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
-minimum_coverage: 100
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - Copyright (c) 2001 Silver Egg Technology
+    - Copyright c 2007 Free Software Foundation, Inc. <http://fsf.org/>
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - Silver Egg Technology
+    - the Free Software Foundation
+ignorable_urls:
+    - http://fsf.org/
+    - http://wrapper.tanukisoftware.org/

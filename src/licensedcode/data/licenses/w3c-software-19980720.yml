@@ -5,3 +5,15 @@ category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/copyright-software-19980720.html
 spdx_license_key: W3C-19980720
+ignorable_copyrights:
+    - Copyright (c) 1994-2002 World Wide Web Consortium, (Massachusetts Institute of Technology,
+      Institut National de Recherche en Informatique et en Automatique, Keio University)
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
+      National de Recherche en Informatique et en Automatique, Keio University)
+ignorable_holders:
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+      Recherche en Informatique et en Automatique, Keio University)
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/
+ignorable_emails:
+    - site-policy@w3.org

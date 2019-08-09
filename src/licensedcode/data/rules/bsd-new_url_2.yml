@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/bsd-3-clause.html

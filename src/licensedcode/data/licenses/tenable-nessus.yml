@@ -6,3 +6,10 @@ owner: Tenable
 homepage_url: https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf
 text_urls:
     - https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf
+ignorable_copyrights:
+    - copyrighted by Tenable
+ignorable_holders:
+    - Tenable
+ignorable_urls:
+    - http://www.nessus.org/
+    - http://www.tenable.com/

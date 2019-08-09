@@ -9,3 +9,5 @@ text_urls:
 faq_url: http://terracotta.org/legal/licensing-faq
 other_urls:
     - http://terracotta.org/legal/licensing-overview
+ignorable_urls:
+    - http://www.terracotta.org/TPL

@@ -3,3 +3,11 @@ short_name: LibMib License
 name: LibMib License
 category: Permissive
 owner: MIB Software
+ignorable_copyrights:
+    - Copyright 1998 Forrest J. Cavalier III
+ignorable_holders:
+    - Forrest J. Cavalier III
+ignorable_urls:
+    - http://www.mibsoftware.com/
+    - http://www.mibsoftware.com/libmib/
+    - http://www.opensource.org/

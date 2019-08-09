@@ -5,3 +5,9 @@ category: Permissive
 owner: Stu Nicholls
 other_urls:
     - http://www.stunicholls.com/menu/pro_drop_2.html
+ignorable_copyrights:
+    - Copyright (c) 2005-2007 Stu Nicholls
+ignorable_holders:
+    - Stu Nicholls
+ignorable_urls:
+    - http://www.stunicholls.com/menu/pro_drop_2.html

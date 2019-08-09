@@ -40,7 +40,7 @@ For the mod_mime_magic component:
  * originally posted to comp.sources.unix.  Copyright info for that program
  * is included below as required.
  * ---------------------------------------------------------------------------
- * - <s>Copyright (c) Ian F. Darwin, 1987.</s> <t>Ian F. Darwin.</t>
+ * - <s>Copyright (c) Ian F. Darwin, 1987</s>. <t>Ian F. Darwin.</t>
  *
  * This software is not subject to any license of the American Telephone and
  * Telegraph Company or of the Regents of the University of California.
@@ -273,7 +273,7 @@ For the srclib\apr-util\test\testdbm.c component:
 /* ====================================================================
  * The Apache Software License, Version 1.1
  *
- * <s>Copyright (c) 2000-2002 The Apache Software Foundation.</s>  All rights
+ * <s>Copyright (c) 2000-2002 The Apache Software Foundation</s>.  All rights
  * reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -412,7 +412,7 @@ restrictions:
 
      Regular expression support is provided by the PCRE library package,
      which is open source software, <s>written by Philip Hazel</s>, and <s>copyright
-     by the University of Cambridge, England.</s>
+     by the University of Cambridge, England</s>.
 
    somewhere reasonably visible in your documentation and in any relevant
    files or online help data or similar. A reference to the ftp site for
@@ -443,7 +443,7 @@ For the test\zb.c component:
 /*                          ZeusBench V1.01
 			    ===============
 
-This program is <s>Copyright (c) Zeus Technology Limited 1996.</s>
+This program is <s>Copyright (c) Zeus Technology Limited 1996</s>.
 
 This program may be used and copied freely providing this copyright notice
 is not removed.

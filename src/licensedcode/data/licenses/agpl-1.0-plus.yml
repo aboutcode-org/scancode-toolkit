@@ -4,7 +4,7 @@ name: Affero General Public License 1.0 or later
 category: Copyleft
 owner: Affero
 homepage_url: http://www.affero.org/oagpl.html
-notes: |-
+notes: |
     per SPDX.org Section 9 of this license allows content under this any later
     version grant to be redistributed under the GPL-3.0-or-later. Affero Inc.
     also released an AGPL-2.0 (http://www.affero.org/agpl2.html) to allow

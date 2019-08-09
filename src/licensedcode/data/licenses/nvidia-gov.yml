@@ -3,3 +3,7 @@ short_name: NVIDIA License with Government Qualifications
 name: NVIDIA License with Government Qualifications
 category: Permissive
 owner: NVIDIA
+ignorable_copyrights:
+    - Copyright 1993-2012 NVIDIA Corporation
+ignorable_holders:
+    - NVIDIA Corporation

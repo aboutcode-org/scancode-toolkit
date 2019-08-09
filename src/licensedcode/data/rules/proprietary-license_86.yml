@@ -1,0 +1,7 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1997-1998, OPaC bright ideas, Suscevaz, Switzerland
+ignorable_holders:
+    - OPaC bright ideas, Suscevaz, Switzerland

@@ -8,3 +8,9 @@ text_urls:
     - http://opencontent.org/openpub/
 other_urls:
     - http://www.opencontent.org/openpub/
+ignorable_urls:
+    - http://works.opencontent.org/
+    - http://www.opencontent.org/openpub
+ignorable_emails:
+    - opal-request@opencontent.org
+    - opal@opencontent.org

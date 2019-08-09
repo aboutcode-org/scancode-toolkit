@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) Jan Engelhardt, 2011
+  - Copyright (c) Jan Engelhardt, 2011
 holders:
-    - Jan Engelhardt
+  - Jan Engelhardt
 holders_summary:
-    -   value: Jan Engelhardt
-        count: 1
+  - value: Jan Engelhardt
+    count: 1

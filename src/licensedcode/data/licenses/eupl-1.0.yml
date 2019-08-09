@@ -9,3 +9,7 @@ text_urls:
     - http://ec.europa.eu/idabc/en/document/7330.html
 other_urls:
     - http://ec.europa.eu/idabc/servlets/Doc027f.pdf?id=31096
+ignorable_copyrights:
+    - (c) the European Community 2007
+ignorable_holders:
+    - the European Community

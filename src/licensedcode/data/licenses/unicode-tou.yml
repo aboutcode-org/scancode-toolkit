@@ -5,3 +5,7 @@ category: Proprietary Free
 owner: Unicode Consortium
 homepage_url: http://www.unicode.org/copyright.html
 spdx_license_key: Unicode-TOU
+ignorable_copyrights:
+    - Copyright (c) Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.

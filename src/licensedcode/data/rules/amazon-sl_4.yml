@@ -1,2 +1,6 @@
 license_expression: amazon-sl
 is_license_text: yes
+ignorable_copyrights:
+    - (c) 2008 Amazon.com, Inc. or its affiliates
+ignorable_holders:
+    - Amazon.com, Inc. or its affiliates

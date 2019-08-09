@@ -6,3 +6,10 @@ owner: Splunk
 homepage_url: https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
 text_urls:
     - https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
+ignorable_urls:
+    - http://www.splunk.com/en_us/support-and-services/support-programs.html
+    - https://splunkbase.splunk.com/
+    - https://www.splunk.com/en_us/legal/licensed-capacity.html
+    - https://www.splunk.com/en_us/legal/privacy/privacy-policy.html
+    - https://www.splunk.com/en_us/legal/professional-services-agreement.html
+    - https://www.splunk.com/en_us/legal/splunk-software-support-policy.html

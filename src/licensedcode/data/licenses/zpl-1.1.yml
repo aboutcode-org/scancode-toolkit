@@ -10,3 +10,11 @@ text_urls:
 other_urls:
     - http://old.zope.org/Resources/License/ZPL-1.1
     - http://www.zope.com/
+ignorable_copyrights:
+    - Copyright (c) Zope Corporation
+ignorable_authors:
+    - Zope Corporation
+ignorable_holders:
+    - Zope Corporation
+ignorable_urls:
+    - http://www.zope.com/

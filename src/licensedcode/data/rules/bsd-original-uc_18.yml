@@ -1,3 +1,5 @@
 license_expression: bsd-original-uc
 is_license_notice: yes
 minimum_coverage: 85
+ignorable_authors:
+    - the University of California, Berkeley and its contributors

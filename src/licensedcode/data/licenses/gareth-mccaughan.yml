@@ -6,3 +6,5 @@ owner: Gareth McCaughan
 homepage_url: https://github.com/tonyg/pi-nothing/blob/master/disarm/disarm-0.11.c
 other_urls:
     - http://web.ukonline.co.uk/g.mccaughan/g/software.html
+ignorable_urls:
+    - http://web.ukonline.co.uk/g.mccaughan/g/software.html

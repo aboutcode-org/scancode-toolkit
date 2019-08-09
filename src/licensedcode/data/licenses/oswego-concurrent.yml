@@ -8,3 +8,10 @@ text_urls:
     - http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
     - http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf
 faq_url: http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+ignorable_copyrights:
+    - Copyright (c) 1994-2000 Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+ignorable_urls:
+    - http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+    - http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf

@@ -1,0 +1,4 @@
+license_expression: bsd-new
+is_license_reference: yes
+ignorable_urls:
+    - http://dist.codehaus.org/janino/new_bsd_license.txt

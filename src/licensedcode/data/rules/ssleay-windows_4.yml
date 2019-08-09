@@ -1,3 +1,8 @@
 license_expression: ssleay-windows
 is_license_text: yes
 notes: SSLEAY windows Variant with typos
+ignorable_authors:
+    - Tim Hudson (tjh@mincom.oz.au)
+ignorable_emails:
+    - eay@mincom.oz.au
+    - tjh@mincom.oz.au

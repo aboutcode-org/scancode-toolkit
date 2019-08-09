@@ -1,3 +1,5 @@
 license_expression: here-proprietary
 is_license_tag: yes
 relevance: 100
+ignorable_urls:
+    - https://here.com/

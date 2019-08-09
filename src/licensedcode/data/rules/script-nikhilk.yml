@@ -1,2 +1,4 @@
 license_expression: script-nikhilk
 is_license_reference: yes
+ignorable_urls:
+    - http://www.nikhilk.net/About.aspx

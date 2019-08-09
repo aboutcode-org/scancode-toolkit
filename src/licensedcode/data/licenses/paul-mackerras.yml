@@ -3,5 +3,9 @@ short_name: Paul Mackerras License
 name: Paul Mackerras License
 category: Permissive
 owner: Paul Mackerras
-notes: there is no binaries clause and this is very
- similar to the bsd-ack but there is a different warranty disclaimer
+notes: there is no binaries clause and this is very similar to the bsd-ack but there is a different
+    warranty disclaimer
+ignorable_authors:
+    - Paul Mackerras <paulus@samba.org>
+ignorable_emails:
+    - paulus@samba.org

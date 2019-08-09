@@ -3,6 +3,6 @@ short_name: BSD-Top
 name: BSD-Top
 category: Permissive
 owner: nexB
-notes: |-
+notes: |
     This is a variant composed of clause 1 and 3 of a BSD-Modified and some
     additional conditions on position and content of the notice

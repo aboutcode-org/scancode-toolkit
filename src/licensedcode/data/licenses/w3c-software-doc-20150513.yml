@@ -4,7 +4,7 @@ name: W3C Software and Document (2015-05-13)
 category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-notes: |-
+notes: |
     Previous version was http://www.w3.org/Consortium/Legal/2002/copyright-
     software-20021231 This version makes clear that the license is applicable
     to both software and text, by changing the name and substituting "work" for
@@ -14,3 +14,7 @@ notes: |-
     short notice version at https://www.w3.org/Consortium/Legal/2015/copyright-
     software-short-notice.html
 spdx_license_key: W3C-20150513
+ignorable_copyrights:
+    - Copyright (c) YEAR W3C(r) MIT, ERCIM, Keio
+ignorable_holders:
+    - W3C(r) MIT, ERCIM, Keio

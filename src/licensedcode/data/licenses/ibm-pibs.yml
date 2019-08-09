@@ -7,3 +7,7 @@ homepage_url: http://git.denx.de/?p=u-boot.git;a=blob;f=arch/powerpc/cpu/ppc4xx/
 spdx_license_key: IBM-pibs
 text_urls:
     - http://git.denx.de/?p=u-boot.git;a=blob;f=arch/powerpc/cpu/ppc4xx/miiphy.c;h=297155fdafa064b955e53e9832de93bfb0cfb85b;hb=9fab4bf4cc077c21e43941866f3f2c196f28670d
+ignorable_copyrights:
+    - COPYRIGHT I B M CORPORATION
+ignorable_holders:
+    - I B M CORPORATION

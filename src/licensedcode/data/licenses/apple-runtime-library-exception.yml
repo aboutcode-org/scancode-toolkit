@@ -3,12 +3,12 @@ short_name: Runtime Library Exception to Apache 2.0
 name: Runtime Library Exception to the Apache 2.0 License
 category: Permissive
 owner: Apple
-spdx_license_key: Swift-exception
 homepage_url: https://github.com/apple/swift/blob/master/LICENSE.txt#L205
 is_exception: yes
+spdx_license_key: Swift-exception
 other_urls:
     - https://swift.org/
-standard_notice: |-
+standard_notice: |
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at

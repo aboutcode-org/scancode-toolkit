@@ -4,5 +4,11 @@ name: JDOM License
 category: Permissive
 owner: JDOM
 homepage_url: http://www.jdom.org/docs/faq.html#a0030
-faq_url: http://www.jdom.org/docs/faq.html#a0030
 notes: this based on an Apache 1.1 license
+faq_url: http://www.jdom.org/docs/faq.html#a0030
+ignorable_authors:
+    - Jason Hunter and Brett McLaughlin
+    - the JDOM Project (http://www.jdom.org/)
+ignorable_urls:
+    - http://www.jdom.org/
+    - http://www.jdom.org/images/logos

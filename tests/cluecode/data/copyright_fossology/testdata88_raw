@@ -1,9 +1,9 @@
 This is the Debian prepackaged version of the GNU diffutils package.
 GNU `diff' was <s>written by Mike Haertel, David Hayes, Richard Stallman,
-Len Tower, and Paul Eggert.</s>  Wayne Davison designed and implemented
-the unified output format. GNU `diff3' was <s>written by Randy Smith.</s>
-GNU `sdiff' was <s>written by Thomas Lord.</s>  GNU `cmp' was <s>written by
-Torbjorn Granlund and David MacKenzie.</s>
+Len Tower, and Paul Eggert</s>.  Wayne Davison designed and implemented
+the unified output format. GNU `diff3' was <s>written by Randy Smith</s>.
+GNU `sdiff' was <s>written by Thomas Lord</s>.  GNU `cmp' was <s>written by
+Torbjorn Granlund and David MacKenzie</s>.
 
 The source for this release was obtained from
 

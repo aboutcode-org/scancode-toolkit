@@ -6,7 +6,7 @@ owner: Free Software Foundation (FSF)
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This is part of libio/iostream, providing -*- C++ -*- input/output.
     Copyright (C) 2000 Free Software Foundation
     This file is part of the GNU IO Library. This library is free software; you

@@ -2,3 +2,7 @@ license_expression: bitzi-pd
 is_license_text: yes
 referenced_filenames:
     - COPYING
+ignorable_urls:
+    - http://bitzi.com/publicdomain
+ignorable_emails:
+    - info@bitzi.com

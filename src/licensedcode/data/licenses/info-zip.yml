@@ -7,3 +7,9 @@ homepage_url: http://www.info-zip.org/doc/
 spdx_license_key: Info-ZIP
 text_urls:
     - http://www.info-zip.org/license.html
+ignorable_copyrights:
+    - Copyright (c) 1990-1999 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP.
+ignorable_urls:
+    - ftp://ftp.cdrom.com/pub/infozip/license.html

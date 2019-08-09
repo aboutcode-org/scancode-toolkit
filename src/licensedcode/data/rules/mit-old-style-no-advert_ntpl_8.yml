@@ -1,3 +1,5 @@
 license_expression: mit-old-style-no-advert
 is_license_notice: yes
-
+ignorable_urls:
+    - http://ntp.org/license
+    - http://opensource.org/licenses/ntp-license.php

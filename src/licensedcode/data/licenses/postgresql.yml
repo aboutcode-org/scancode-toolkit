@@ -13,3 +13,9 @@ osi_url: http://www.opensource.org/licenses/postgresql
 other_urls:
     - http://www.opensource.org/licenses/PostgreSQL
     - https://opensource.org/licenses/PostgreSQL
+ignorable_copyrights:
+    - Portions Copyright (c) 1994, The Regents of the University of California
+    - Portions Copyright (c) The PostgreSQL Global Development Group
+ignorable_holders:
+    - The PostgreSQL Global Development Group
+    - The Regents of the University of California

@@ -7,7 +7,7 @@ homepage_url: https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICEN
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or

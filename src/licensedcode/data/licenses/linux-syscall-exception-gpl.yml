@@ -8,7 +8,7 @@ spdx_license_key: Linux-syscall-note
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING
-standard_notice: |-
+standard_notice: |
     NOTE! This copyright does *not* cover user programs that use kernel
     services by normal system calls - this is merely considered normal use
     of the kernel, and does *not* fall under the heading of "derived work".
@@ -29,3 +29,9 @@ standard_notice: |-
     You should have received a copy of the GNU General Public License along
     with this library; see the file COPYING. If not, write to the Free Software
     Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ignorable_copyrights:
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation

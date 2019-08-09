@@ -13,3 +13,9 @@ other_urls:
     - http://wayback.archive.org/web/20060715140826/http://www.risource.org/RPL/RPL-1.0A.shtml
     - http://www.opensource.org/licenses/RSCPL
     - https://opensource.org/licenses/RSCPL
+ignorable_copyrights:
+    - Copyright (c) 1995-1999
+ignorable_authors:
+    - Ricoh Silicon Valley, Inc.
+ignorable_urls:
+    - http://www.risource.org/RPL

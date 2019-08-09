@@ -6,3 +6,12 @@ owner: jrsoftware.org
 homepage_url: http://www.jrsoftware.org/files/is/license.txt
 text_urls:
     - http://www.jrsoftware.org/files/is/license.txt
+ignorable_copyrights:
+    - Copyright (c) 1997-2010 Jordan Russell
+    - Portions Copyright (c) 2000-2010 Martijn Laan
+    - copyrighted by Jordan Russell
+ignorable_holders:
+    - Jordan Russell
+    - Martijn Laan
+ignorable_urls:
+    - http://www.jrsoftware.org/

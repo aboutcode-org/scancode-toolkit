@@ -4,3 +4,5 @@ name: Toronto Region Conservation Authority Open Data Licence 1.0
 category: Free Restricted
 owner: Toronto Region Conservation Authority
 homepage_url: https://trca.ca/datalicense
+ignorable_urls:
+    - https://trca.ca/datalicense

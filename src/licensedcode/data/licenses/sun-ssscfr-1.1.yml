@@ -4,3 +4,5 @@ name: Sun Solaris Source Code (Foundation Release) License 1.1
 category: Copyleft Limited
 owner: Oracle (Sun)
 homepage_url: http://www.mibsoftware.com/librock/librock/license/ssscfr.txt
+ignorable_urls:
+    - http://www.sun.com/solaris/source

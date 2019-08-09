@@ -4,7 +4,7 @@ name: Ruby License
 category: Copyleft Limited
 owner: Ruby
 homepage_url: http://www.ruby-lang.org/en/LICENSE.txt
-notes: |-
+notes: |
     This version of the Ruby license is the latest found in the dual license
     COPYING dated from 2010-09-15 Per SPDX.org, Ruby is disjunctively licensed
     project that allows the choice of this license and another. The other

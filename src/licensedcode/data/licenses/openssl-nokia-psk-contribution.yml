@@ -4,3 +4,6 @@ name: Patent Disclaimer for OpenSSL
 category: Patent License
 owner: Nokia
 is_exception: yes
+ignorable_authors:
+    - Mika Kousa and Pasi Eronen of Nokia Corporation
+    - Nokia Corporation

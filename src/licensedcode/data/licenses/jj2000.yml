@@ -4,3 +4,6 @@ name: JJ2000 License
 category: Free Restricted
 owner: JJ2000 Partners
 homepage_url: https://raw.githubusercontent.com/stain/jai-imageio-jpeg2000/master/LICENSE-JJ2000.txt
+ignorable_authors:
+    - Raphael Grosbois and Diego Santa Cruz (Swiss Federal Institute of Technology-EPFL) Joel
+        Askelof

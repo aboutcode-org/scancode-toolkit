@@ -18,3 +18,5 @@ other_urls:
     - https://www.kernel.org/doc/html/latest/process/kernel-enforcement-statement.html
     - https://www.redhat.com/en/about/press-releases/technology-industry-leaders-join-forces-increase-predictability-open-source-licensing
     - https://www.redhat.com/en/blog/gpl-cooperation-commitment-and-red-hat-projects?source=author&term=26851
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-sa/4.0

@@ -3,3 +3,5 @@ short_name: Manfred Klein Fonts TOS
 name: Manfred Klein Fonts TOS
 category: Free Restricted
 owner: Manfred Klein
+ignorable_authors:
+    - Manfred Klein

@@ -8,3 +8,7 @@ text_urls:
     - http://www.wxwidgets.org/about/licence.htm
 faq_url: http://www.wxwidgets.org/about/newlicen.htm
 minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 1997 Julian Smart, Robert Roebling
+ignorable_holders:
+    - Julian Smart, Robert Roebling

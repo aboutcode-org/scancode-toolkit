@@ -1,0 +1,5 @@
+license_expression: apache-2.0 AND bsd-new AND mit
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://www.scala-lang.org/license.html

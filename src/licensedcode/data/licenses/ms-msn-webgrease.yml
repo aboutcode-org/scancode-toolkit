@@ -4,5 +4,7 @@ name: Microsoft MSN WebGrease License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/msn_webgrease_eula.htm
-minimum_coverage: 90
 notes: also contains some French language terms
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.microsoft.com/exporting

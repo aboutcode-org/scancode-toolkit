@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2009 Red Hat
+  - Copyright (c) 2009 Red Hat
 holders:
-    - Red Hat
+  - Red Hat
 holders_summary:
-    -   value: Red Hat, Inc.
-        count: 1
+  - value: Red Hat, Inc.
+    count: 1

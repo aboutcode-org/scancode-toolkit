@@ -1,2 +1,4 @@
 license_expression: bsd-new
 is_license_tag: yes
+ignorable_urls:
+    - http://jwordnet.svn.sourceforge.net/svnroot/jwordnet/trunk/jwnl/license.txt

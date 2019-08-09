@@ -12,7 +12,7 @@ other_urls:
     - http://www.opensource.org/docs/osd/
     - http://www.redhat.com/software/cygwin/
     - http://www.redhat.com/about/contact/ww/
-standard_notice: |-
+standard_notice: |
     Cygwin is free software. Red Hat, Inc. licenses Cygwin to you under the
     terms of the GNU General Public License as published by the Free Software
     Foundation; you can redistribute it and/or modify it under the terms of

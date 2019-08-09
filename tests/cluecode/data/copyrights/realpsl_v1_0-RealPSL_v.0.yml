@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1995-2002 RealNetworks, Inc.
+  - Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors
 holders:
-    - RealNetworks, Inc.
+  - RealNetworks, Inc. and/or its licensors
 holders_summary:
-    -   value: RealNetworks, Inc.
-        count: 1
+  - value: RealNetworks, Inc. and/or its licensors
+    count: 1

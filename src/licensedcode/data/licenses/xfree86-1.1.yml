@@ -9,3 +9,8 @@ text_urls:
     - http://www.xfree86.org/current/LICENSE4.html
 faq_url: http://www.xfree86.org/current/LICENSE4.html
 minimum_coverage: 70
+ignorable_authors:
+    - The XFree86 Project, Inc (http://www.xfree86.org/)
+    - authorization from The XFree86 Project, Inc.
+ignorable_urls:
+    - http://www.xfree86.org/

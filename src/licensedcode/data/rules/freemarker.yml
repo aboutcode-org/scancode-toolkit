@@ -1,2 +1,4 @@
 license_expression: freemarker
 is_license_reference: yes
+ignorable_urls:
+    - http://freemarker.org/LICENSE.txt

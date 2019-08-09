@@ -7,3 +7,9 @@ homepage_url: http://www.cmu.edu/computing/
 text_urls:
     - http://cyrusimap.org/mediawiki/index.php/Downloads#Licensing
 minimum_coverage: 70
+ignorable_authors:
+    - Computing Services at Carnegie Mellon University (http://www.cmu.edu/computing/)
+ignorable_urls:
+    - http://www.cmu.edu/computing
+ignorable_emails:
+    - tech-transfer@andrew.cmu.edu

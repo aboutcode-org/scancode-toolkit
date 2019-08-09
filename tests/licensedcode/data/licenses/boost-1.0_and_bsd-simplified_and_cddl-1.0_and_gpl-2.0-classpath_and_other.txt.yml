@@ -4,6 +4,7 @@ license_expressions:
   - lgpl-3.0
   - lgpl-3.0
   - unknown
+  - boost-original
   - apache-2.0
   - apache-2.0
   - apache-2.0
@@ -14,48 +15,34 @@ license_expressions:
   - unknown
   - bitstream
   - unknown
-  - unknown
-  - gpl-1.0-plus
-  - proprietary-license
-  - gpl-1.0-plus
-  - font-exception-gpl
-  - standard-ml-nj
+  - liberation-font-exception
   - unknown
   - boost-1.0
   - unknown
   - boost-original
   - unknown
-  - mit-old-style
-  - standard-ml-nj
+  - x11-keith-packard
   - mpl-1.1 OR lgpl-2.1
-  - lgpl-2.1
-  - lgpl-2.1
   - lgpl-2.1
   - mpl-1.1
   - mpl-1.1
   - lgpl-2.1
   - lgpl-2.1
   - unknown
-  - other-permissive
   - curl
   - gpl-1.0
   - gpl-2.0-plus
   - mit
   - lgpl-2.0-plus
-  - lgpl-2.0
-  - lgpl-2.0
   - bsd-new
   - bsd-new
   - gpl-2.0 OR lgpl-2.1 OR mpl-1.1
-  - gpl-2.0
-  - gpl-2.0
   - gpl-2.0
   - gpl-2.0 OR lgpl-2.1 OR mpl-1.1
   - bsd-original
   - bsd-original
   - lgpl-2.0-plus
   - w3c-software-19980720
-  - unknown
   - unknown
   - ijg
   - w3c-software-19980720
@@ -72,26 +59,24 @@ license_expressions:
   - other-permissive
   - apache-2.0
   - unknown
-  - unknown
-  - x11-r75
+  - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
   - gpl-1.0-plus
   - fsf-mit
   - mpl-1.1
   - unknown
-  - openssl
-  - ssleay-windows
+  - openssl-ssleay
   - python
   - lgpl-2.0 OR apache-2.0
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
-  - public-domain AND other-permissive
+  - other-permissive
   - unknown
-  - x11-keith-packard
+  - mit-old-style
   - mpl-1.0
   - mpl-1.0
-  - x11-r75
+  - curl
   - unknown
   - x11-xconsortium
   - mpl-1.1
@@ -101,23 +86,21 @@ license_expressions:
   - other-permissive
   - apache-2.0
   - unknown
-  - unknown
-  - x11-r75
+  - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
   - gpl-1.0-plus
   - fsf-mit
   - mpl-1.1
   - unknown
-  - openssl
-  - ssleay-windows
+  - openssl-ssleay
   - python
   - lgpl-2.0 OR apache-2.0
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
-  - public-domain AND other-permissive
+  - other-permissive
   - unknown
-  - x11-keith-packard
+  - mit-old-style
   - mpl-1.0
   - cddl-1.0 OR gpl-2.0
   - stlport-4.5

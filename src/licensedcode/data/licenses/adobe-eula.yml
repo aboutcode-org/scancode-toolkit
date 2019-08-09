@@ -4,7 +4,9 @@ name: Adobe End User License Agreement
 category: Commercial
 owner: Adobe Systems
 homepage_url: http://www.adobe.com/products/eulas/
-notes: |-
+notes: |
     This is a generic license for a large number of Adobe EULAs that are very
     long and proprietary.
 minimum_coverage: 70
+ignorable_urls:
+    - http://www.adobe.com/products/eulas/

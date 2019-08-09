@@ -13,3 +13,9 @@ text_urls:
 other_urls:
     - http://www.opensource.org/licenses/LPPL-1.3c
     - https://opensource.org/licenses/LPPL-1.3c
+ignorable_copyrights:
+    - Copyright 1999 2002-2008 LaTeX3 Project
+ignorable_holders:
+    - LaTeX3 Project
+ignorable_urls:
+    - http://www.latex-project.org/lppl.txt

@@ -4,3 +4,5 @@ name: LSI Proprietary EULA
 category: Proprietary Free
 owner: LSI Corporation
 homepage_url: http://www.lsi.com/Pages/user/eula.aspx
+ignorable_urls:
+    - http://www.oracle.com/technetwork/java/javase/terms/license/index.html

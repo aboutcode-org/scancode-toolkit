@@ -1,0 +1,5 @@
+license_expression: bsd-zero
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/0bsd

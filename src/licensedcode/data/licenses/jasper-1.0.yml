@@ -3,3 +3,14 @@ short_name: Jasper 1.0
 name: Jasper Reports License 1.0
 category: Permissive
 owner: JasperSoft
+ignorable_copyrights:
+    - Copyright (c) 2001-2003 Teodor Danciu (teodord@hotmail.com)
+ignorable_authors:
+    - Teodor Danciu (http://jasperreports.sourceforge.net)
+    - Teodor Danciu http://jasperreports.sourceforge.net
+ignorable_holders:
+    - Teodor Danciu
+ignorable_urls:
+    - http://jasperreports.sourceforge.net/
+ignorable_emails:
+    - teodord@hotmail.com

@@ -6,3 +6,9 @@ owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/licence.htm
 text_urls:
     - http://www.wxwidgets.org/about/licence.htm
+ignorable_copyrights:
+    - Copyright (c) 1997 Julian Smart, Markus Holzem
+ignorable_holders:
+    - Julian Smart, Markus Holzem
+ignorable_emails:
+    - julian@wxwidgets.org

@@ -6,3 +6,5 @@ owner: Firebird
 homepage_url: http://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
 text_urls:
     - http://www.firebirdsql.org/en/initial-developer-s-public-license-version-1-0/
+ignorable_urls:
+    - http://www.firebirdsql.org/en/initial

@@ -1,2 +1,4 @@
 license_expression: info-zip-2009-01
 is_license_reference: yes
+ignorable_urls:
+    - http://www.info-zip.org/pub/infozip/license.html

@@ -6,3 +6,6 @@ owner: Copyleft Attitude
 homepage_url: http://artlibre.org/licence/lal/en
 text_urls:
     - http://artlibre.org/licence/lal/en
+ignorable_urls:
+    - http://artlibre.org/licence/lal/en/
+    - http://www.artlibre.org/

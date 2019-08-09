@@ -5,3 +5,13 @@ category: Permissive
 owner: MX4J Project
 other_urls:
     - http://mx4j.sourceforge.net
+ignorable_copyrights:
+    - Copyright (c) by the MX4J contributors
+ignorable_authors:
+    - the MX4J project (http://mx4j.sourceforge.net)
+ignorable_holders:
+    - the MX4J contributors
+ignorable_urls:
+    - http://mx4j.sourceforge.net/
+ignorable_emails:
+    - biorn_steedom@users.sourceforge.net

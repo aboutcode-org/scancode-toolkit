@@ -6,3 +6,29 @@ owner: info-zip
 homepage_url: http://www.info-zip.org/
 text_urls:
     - ftp://ftp.info-zip.org/pub/infozip/doc/copying
+ignorable_copyrights:
+    - Copyright (c) 1992 Igor Mandrichenko
+    - Copyright (c) 1994 Greg Roelofs
+    - Copyright (c) 1996 Mike White
+    - Copyright 1989 Samuel H. Smith
+    - copyrighted 1997 by Steve P. Miller
+    - copyrighted by Norbert Pueschel, <pueschel@imsdd.meb.uni-bonn.de>
+ignorable_authors:
+    - many people associated with the Info-ZIP group
+    - the Info-ZIP group
+ignorable_holders:
+    - Greg Roelofs
+    - Igor Mandrichenko
+    - Mike White
+    - Norbert Pueschel
+    - Samuel H. Smith
+    - Steve P. Miller
+ignorable_urls:
+    - ftp://ftp.cdrom.com/pub/infozip/
+    - ftp://ftp.wustl.edu/pub/aminet/util/time/clockdaemon.lha
+    - http://www.cdrom.com/pub/infozip/
+    - http://www.cdrom.com/pub/infozip/zlib/
+ignorable_emails:
+    - 71150.2731@compuserve.com
+    - Zip-Bugs@lists.wku.edu
+    - pueschel@imsdd.meb.uni-bonn.de

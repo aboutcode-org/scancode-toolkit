@@ -1,0 +1,13 @@
+key: issl-2018
+short_name: ISSL 2018
+name: Intel Simplified Software License (Version April 2018)
+category: Free Restricted
+owner: Intel Corporation
+homepage_url: https://software.intel.com/en-us/license/intel-simplified-software-license
+faq_url: https://software.intel.com/en-us/mkl/license-faq
+other_urls:
+    - https://software.intel.com/en-us/articles/end-user-license-agreement
+ignorable_copyrights:
+    - Copyright (c) 2018 Intel Corporation
+ignorable_holders:
+    - Intel Corporation

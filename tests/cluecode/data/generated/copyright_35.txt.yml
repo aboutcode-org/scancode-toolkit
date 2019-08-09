@@ -1,0 +1,11 @@
+what:
+  - holders
+  - copyrights
+  - authors
+authors:
+  - claudio beatrice on 2/21/10
+copyrights:
+  - Copyright 2010
+expected_failures:
+  - authors
+

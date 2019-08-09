@@ -11,3 +11,7 @@ text_urls:
 other_urls:
     - http://www.opensource.org/licenses/LPL-1.02
     - https://opensource.org/licenses/LPL-1.02
+ignorable_copyrights:
+    - Copyright (c) YEAR, ORGANIZATION and others
+ignorable_holders:
+    - YEAR, ORGANIZATION and others

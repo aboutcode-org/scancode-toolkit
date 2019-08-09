@@ -153,7 +153,6 @@ class LicenseIndex(object):
         'msets_by_rid',
 
         'rid_by_hash',
-        'false_positive_rid_by_hash',
         'rules_automaton',
         'fragments_automaton',
         'negative_automaton',
@@ -212,23 +211,21 @@ class LicenseIndex(object):
         # mapping of hash -> single rid for hash match: duplicated rules are not allowed
         self.rid_by_hash = {}
 
-        # mapping of hash -> single false positive rid for hash match
-        self.false_positive_rid_by_hash = {}
-
         # Aho-Corasick automatons for regular and negative rules
         self.rules_automaton = match_aho.get_automaton()
         self.fragments_automaton = USE_AHO_FRAGMENTS and match_aho.get_automaton()
         self.negative_automaton = match_aho.get_automaton()
         self.starts_automaton = USE_RULE_STARTS and match_aho.get_automaton()
 
-        # disjunctive sets of rule ids: regular, negative, false positive, and
-        # things that can only be matched exactly
+        # disjunctive sets of rule ids: regular, negative, false positive
 
         # TODO: consider using intbitset instead
         self.regular_rids = set()
         self.negative_rids = set()
         self.false_positive_rids = set()
-        # these rule ids are for rules that can be matched with a sequence match
+
+        # These rule ids are for rules that can be matched with a sequence
+        # match. Other rules can only be matched exactly
         self.approx_matchable_rids = set()
 
         # if True the index has been optimized and becomes read only:
@@ -333,7 +330,6 @@ class LicenseIndex(object):
 
         # OPTIMIZED: bind frequently used objects to local scope
         rid_by_hash = self.rid_by_hash
-        false_positive_rid_by_hash = self.false_positive_rid_by_hash
         match_hash_index_hash = match_hash.index_hash
         match_set_tids_set_counter = match_set.tids_set_counter
         match_set_multiset_counter = match_set.multiset_counter
@@ -353,6 +349,9 @@ class LicenseIndex(object):
             rule_token_ids = array('h', [])
             tids_by_rid_append(rule_token_ids)
 
+            # A rule is weak if it does not contain at least one legalese word:
+            # we consider all rules to be weak until proven otherwise below.
+            # "weak" rules can only be matched with an automaton.
             is_weak = True
 
             for rts in rule.tokens():
@@ -374,29 +373,33 @@ class LicenseIndex(object):
 
             # classify rules and build disjuncted sets of rids
             if rule.is_negative:
-                # negative rules are matched early and their exactly matched.
-                # Their tokens are removed from the token stream
+                # negative rules are matched early and their tokens are only
+                # exactly matched. When matched as a whole, their tokens are
+                # removed from the token stream
                 negative_rids_add(rid)
                 negative_automaton_add(tids=rule_token_ids, rid=rid)
                 continue
 
+            ####################
+            # populate automaton with the whole rule tokens sequence, for all
+            # RULEs, be they "standard"/regular, weak, false positive or small
+            # (but not negative)
+            ####################
+            rules_automaton_add(tids=rule_token_ids, rid=rid)
+
             if rule.is_false_positive:
-                # false positive rules do not participate in the matches at all
-                # they are used only in post-matching filtering
+                # False positive rules do not participate in the set or sequence
+                # matching at all: they are used for exact matching and in post-
+                # matching filtering
                 false_positive_rids_add(rid)
-                false_positive_rid_by_hash[rule_hash] = rid
-                rule.is_approx_matchable = False
                 continue
 
             # from now on, we have regular rules
             rid_by_hash[rule_hash] = rid
             regular_rids_add(rid)
 
-            if is_weak:
-                # Some rules cannot be matched as a sequence as "weak" rules
-                rule.is_approx_matchable = False
-            else:
-                rule.is_approx_matchable = True
+            # Some rules cannot be matched as a sequence are "weak" rules
+            if not is_weak:
                 approx_matchable_rids_add(rid)
 
                 ####################
@@ -435,7 +438,8 @@ class LicenseIndex(object):
                         rule_length=rule.length)
 
             ####################
-            # build sets and multisets indexes, for all regular rules as we need the thresholds
+            # build sets and multisets indexes, for all regular rules as we need
+            # the thresholds
             ####################
             tids_set, mset = match_set.build_set_and_mset(
                 rule_token_ids, _use_bigrams=USE_BIGRAM_MULTISETS)
@@ -463,12 +467,6 @@ class LicenseIndex(object):
 
             rule.high_length = match_set_multiset_counter(mset_high)
             rule.compute_thresholds()
-
-            ####################
-            # populate automaton with the whole rule tokens sequence, for
-            # all RULEs, be they "standard", weak or small (but not negative
-            ####################
-            rules_automaton_add(tids=rule_token_ids, rid=rid)
 
         ########################################################################
         # Finalize index data structures
@@ -499,7 +497,6 @@ class LicenseIndex(object):
 
         # OPTIMIZED: sparser dicts for faster lookup
         sparsify(self.rid_by_hash)
-        sparsify(self.false_positive_rid_by_hash)
 
         ########################################################################
         # Do some sanity checks
@@ -769,7 +766,8 @@ class LicenseIndex(object):
         return matches
 
     def match(self, location=None, query_string=None, min_score=0,
-              as_expression=False, deadline=sys.maxsize, **kwargs):
+              as_expression=False, deadline=sys.maxsize, _skip_hash_match=False,
+              **kwargs):
         """
         This is the main entry point to match licenses.
 
@@ -782,6 +780,8 @@ class LicenseIndex(object):
 
         `deadline` is a time.time() value in seconds by which the processing should stop
         and return whatever was matched so far.
+
+        `_skip_hash_match` is used only for testing.
         """
         assert 0 <= min_score <= 100
 
@@ -798,10 +798,11 @@ class LicenseIndex(object):
         if not whole_query_run or not whole_query_run.matchables:
             return []
 
-        matches = match_hash.hash_match(self, whole_query_run)
-        if matches:
-            match.set_lines(matches, qry.line_by_pos)
-            return matches
+        if not _skip_hash_match:
+            matches = match_hash.hash_match(self, whole_query_run)
+            if matches:
+                match.set_lines(matches, qry.line_by_pos)
+                return matches
 
         # TODO: add match to degenerated expressions with custom symbols
         if as_expression:

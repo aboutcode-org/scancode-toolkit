@@ -5,3 +5,9 @@ category: Proprietary Free
 owner: VeriSign, Inc.
 other_urls:
     - http://www.verisign.com/repository/CPS
+ignorable_copyrights:
+    - Copyright 1995 VeriSign, Inc.
+ignorable_holders:
+    - VeriSign, Inc.
+ignorable_urls:
+    - http://www.verisign.com/repository/CPS

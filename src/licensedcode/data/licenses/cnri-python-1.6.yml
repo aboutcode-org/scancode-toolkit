@@ -12,3 +12,10 @@ other_urls:
     - http://spdx.org/licenses/CNRI-Python
     - http://www.opensource.org/licenses/CNRI-Python
     - https://opensource.org/licenses/CNRI-Python
+ignorable_copyrights:
+    - Copyright (c) 1995-2000 Corporation for National Research Initiatives
+ignorable_holders:
+    - Corporation for National Research Initiatives
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1012
+    - http://www.python.org/

@@ -3,3 +3,5 @@ is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+ignorable_urls:
+    - https://oss.oracle.com/licenses/CDDL+GPL-1.1

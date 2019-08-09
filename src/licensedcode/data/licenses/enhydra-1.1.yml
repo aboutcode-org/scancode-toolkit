@@ -7,3 +7,16 @@ homepage_url: http://ksoap.objectweb.org/software/license/index.html
 text_urls:
     - http://ksoap.objectweb.org/software/license/index.html
 minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright 1997-2000 Lutris Technologies (http://www.lutris.com)
+    - Copyright Lutris Technologies, Inc.
+ignorable_authors:
+    - Lutris Technologies, Inc.
+ignorable_holders:
+    - Lutris Technologies
+    - Lutris Technologies, Inc.
+ignorable_urls:
+    - http://www.enhydra.org/
+    - http://www.lutris.com/
+ignorable_emails:
+    - info@lutris.com

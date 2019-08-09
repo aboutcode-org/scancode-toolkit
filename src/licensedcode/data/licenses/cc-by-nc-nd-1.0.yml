@@ -10,3 +10,5 @@ text_urls:
 other_urls:
     - http://creativecommons.org/licenses/by-nd-nc/1.0/legalcode
     - https://creativecommons.org/licenses/by-nd-nc/1.0/legalcode
+ignorable_urls:
+    - http://creativecommons.org/

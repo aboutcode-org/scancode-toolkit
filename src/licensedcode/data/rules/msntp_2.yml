@@ -1,2 +1,4 @@
 license_expression: msntp
 is_license_reference: yes
+ignorable_authors:
+    - the University of retain

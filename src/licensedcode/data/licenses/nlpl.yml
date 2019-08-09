@@ -4,7 +4,7 @@ name: No Limit Public License
 category: Public Domain
 owner: Gilles Lamiral
 homepage_url: https://fedoraproject.org/wiki/Licensing/NLPL
-notes: |-
+notes: |
     Per Fedora, there is a certain irony in a Frenchman writing a license that
     isn't wholly applicable in France, due to Moral Rights. But I digress. This
     license is basically the same as the WTFPL (with slightly less profanity).

@@ -3,9 +3,11 @@ short_name: Sencha GPL 3.0 Exception for Development
 name: Sencha Open Source License Exception for Development
 category: Copyleft
 owner: Sencha
-is_exception: yes
 homepage_url: http://www.sencha.com/products/ux-exception.php
 notes: Sencha stopped offering this exception in 2015.
+is_exception: yes
 other_urls:
     - http://web.archive.org/web/20140816133230/http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/
     - http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/
+ignorable_urls:
+    - http://www.sencha.com/license

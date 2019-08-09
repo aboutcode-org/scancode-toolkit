@@ -1,2 +1,4 @@
 license_expression: bsd-no-mod
 is_license_reference: yes
+ignorable_urls:
+    - http://wiki.freespire.org/index.php/Madwifi_License_Agreement

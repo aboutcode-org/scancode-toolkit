@@ -1,0 +1,5 @@
+license_expression: gnu-javamail-exception
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/gnu-javamail-exception

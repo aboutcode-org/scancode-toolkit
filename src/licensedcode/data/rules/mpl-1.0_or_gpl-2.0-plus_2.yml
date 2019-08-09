@@ -1,3 +1,5 @@
 license_expression: mpl-1.0 OR gpl-2.0-plus
 is_license_notice: yes
 notes: notice found in some dual-licensed packages
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

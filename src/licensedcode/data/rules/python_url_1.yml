@@ -1,0 +1,5 @@
+license_expression: python
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/python-2.0

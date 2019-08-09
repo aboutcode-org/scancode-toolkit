@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2004 Makoto Suzuki
+  - Copyright (c) 2004 Makoto Suzuki
 holders:
-    - Makoto Suzuki
+  - Makoto Suzuki
 holders_summary:
-    -   value: Makoto Suzuki
-        count: 1
+  - value: Makoto Suzuki
+    count: 1

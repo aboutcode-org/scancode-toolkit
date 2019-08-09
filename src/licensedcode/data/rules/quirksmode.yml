@@ -1,2 +1,4 @@
 license_expression: quirksmode
 is_license_reference: yes
+ignorable_urls:
+    - http://www.quirksmode.org/about/copyright.html

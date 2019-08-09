@@ -1,2 +1,4 @@
 license_expression: boost-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsl1.0.html

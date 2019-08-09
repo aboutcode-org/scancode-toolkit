@@ -3,3 +3,12 @@ short_name: Bigelow & Holmes Luxi fonts license
 name: Bigelow & Holmes Luxi fonts license
 category: Proprietary Free
 owner: Bigelow & Holmes
+ignorable_copyrights:
+    - copyright (c) 2001 by Bigelow & Holmes Inc.
+    - copyright (c) 2001 by URW++ GmbH.
+ignorable_holders:
+    - Bigelow & Holmes Inc.
+    - URW++ GmbH.
+ignorable_emails:
+    - design@bigelowandholmes.com
+    - info@urwpp.de

@@ -4,3 +4,6 @@ name: Oracle Entitlement 5 plus 15
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-eeplat-419426.html#javamail-1.4.4-oth-JPR
+ignorable_urls:
+    - http://www.java.net/
+    - http://www.sun.com/service/servicelist

@@ -1,2 +1,4 @@
 license_expression: dom4j
 is_license_reference: yes
+ignorable_urls:
+    - http://classworlds.codehaus.org/license.html

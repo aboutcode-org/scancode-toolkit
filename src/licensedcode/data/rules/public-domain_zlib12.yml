@@ -1,2 +1,6 @@
 license_expression: public-domain
 is_license_text: yes
+ignorable_copyrights:
+    - copyrighted 1992 Mark Adler
+ignorable_holders:
+    - Mark Adler

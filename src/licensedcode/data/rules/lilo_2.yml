@@ -1,3 +1,5 @@
 license_expression: lilo
 is_license_reference: yes
 notes: https://launchpad.net/ubuntu/oneiric/+source/rxtx/+copyright
+ignorable_urls:
+    - https://launchpad.net/ubuntu/oneiric/+source/rxtx/+copyright

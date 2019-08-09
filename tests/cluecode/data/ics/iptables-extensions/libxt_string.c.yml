@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2000 Emmanuel Roger <winfield@freegates.be>
+  - Copyright (c) 2000 Emmanuel Roger <winfield@freegates.be>
 holders:
-    - Emmanuel Roger
+  - Emmanuel Roger
 holders_summary:
-    -   value: Emmanuel Roger
-        count: 1
+  - value: Emmanuel Roger
+    count: 1

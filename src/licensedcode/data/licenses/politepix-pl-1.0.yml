@@ -4,3 +4,7 @@ name: Politepix Public License 1.0
 category: Permissive
 owner: Politepix
 homepage_url: https://raw.githubusercontent.com/smkgeekfreak/OpenEarsPlaypen/master/License.txt
+ignorable_urls:
+    - http://cmusphinx.sourceforge.net/
+    - http://www.politepix.com/contact
+    - http://www.politepix.com/openears

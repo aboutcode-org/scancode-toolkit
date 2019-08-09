@@ -1,2 +1,4 @@
 license_expression: oasis-ws-security-spec
 is_license_reference: yes
+ignorable_urls:
+    - http://www.oasis-open.org/org

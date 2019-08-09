@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://dryicons.com/terms/
+    - http://www.iconarchive.com/category/application/aesthetica-2-icons-by-dryicons.html
+    - http://www.iconarchive.com/category/system/refresh-cl-icons-by-tpdkdesign.net.html
+    - http://www.iconarchive.com/icons/tpdkdesign.net/refresh-cl/readme_eng.txt

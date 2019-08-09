@@ -1,0 +1,5 @@
+The TLS parser was made possible due to the work of whom
+book and ssldump program were followed closely.
+
+The complete text of the ssldump license can be found in LICENSE.ssldump,
+despite no code from ssldump is included in .

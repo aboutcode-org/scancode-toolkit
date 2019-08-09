@@ -1,6 +1,7 @@
 what:
-    - copyrights
+  - copyrights
+  - holders
 copyrights:
-    - Copyright (c) Google Inc.
-expected_failures:
-    - copyrights
+  - Copyright (c) & 36 today.year Google Inc.
+holders:
+  - Google Inc.

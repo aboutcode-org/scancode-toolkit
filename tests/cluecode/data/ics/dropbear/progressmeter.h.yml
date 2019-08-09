@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2002 Nils Nordman.
+  - Copyright (c) 2002 Nils Nordman
 holders:
-    - Nils Nordman.
+  - Nils Nordman
 holders_summary:
-    -   value: Nils Nordman.
-        count: 1
+  - value: Nils Nordman
+    count: 1

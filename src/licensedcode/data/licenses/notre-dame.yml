@@ -4,3 +4,9 @@ name: University of Notre Dame License
 category: Permissive
 owner: University of Notre Dame
 homepage_url: https://github.com/RWTH-OS/MP-MPICH/blob/f2ae296477bb9d812fda587221b3419c09f85b4a/MPI-2-C%2B%2B/LICENSE
+ignorable_copyrights:
+    - Copyright 1997-2000, University of Notre Dame
+ignorable_authors:
+    - Jeremy G. Siek, Jeffery M. Squyres, Michael P. McNally, and Andrew Lumsdaine
+ignorable_holders:
+    - University of Notre Dame

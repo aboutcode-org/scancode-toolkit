@@ -7,3 +7,9 @@ homepage_url: http://www.jython.org/license.html
 text_urls:
     - http://www.jython.org/license.html
 faq_url: http://wiki.python.org/jython/JythonFaq/GeneralInfo
+ignorable_copyrights:
+    - Copyright (c) 1996-1999 Corporation for National Research Initiatives
+ignorable_holders:
+    - Corporation for National Research Initiatives
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1006

@@ -1,13 +1,15 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>
-    - Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>
+  - Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>
+    , 1996
+  - Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>
+    , 1996
 holders:
-    - Free Software Foundation, Inc. Gordon Matzigkeit
-    - Free Software Foundation, Inc. Gordon Matzigkeit
+  - Free Software Foundation, Inc. Gordon Matzigkeit
+  - Free Software Foundation, Inc. Gordon Matzigkeit
 holders_summary:
-    -   value: Free Software Foundation, Inc. Gordon Matzigkeit
-        count: 2
+  - value: Free Software Foundation, Inc. Gordon Matzigkeit
+    count: 2

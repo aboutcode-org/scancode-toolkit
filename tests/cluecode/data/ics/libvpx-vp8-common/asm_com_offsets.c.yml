@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2011 The WebM project
+  - Copyright (c) 2011 The WebM project authors
 holders:
-    - The WebM project
+  - The WebM project authors
 holders_summary:
-    -   value: The WebM project
-        count: 1
+  - value: The WebM project authors
+    count: 1

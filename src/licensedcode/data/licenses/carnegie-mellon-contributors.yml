@@ -3,3 +3,5 @@ short_name: Carnegie Mellon Contributors
 name: Carnegie Mellon Contributors License
 category: Permissive
 owner: Carnegie Mellon University
+ignorable_emails:
+    - Software.Distribution@CS.CMU.EDU

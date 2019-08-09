@@ -1,0 +1,5 @@
+license_expression: boost-1.0
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/bsl-1.0.html

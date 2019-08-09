@@ -1,4 +1,4 @@
 license_expressions:
   - proprietary-license AND gpl-2.0
-  - x11-r75
+  - mit
   - intel-bcl

@@ -1,4 +1,6 @@
 license_expression: gpl-2.0
 is_license_notice: yes
-notes: http://oss.sgi.com/projects/GenInfo/NoticeExplan is/was a GPL 2 notice explanantion
- See https://web.archive.org/web/20040427101901/http://oss.sgi.com/projects/GenInfo/NoticeExplan/
+notes: http://oss.sgi.com/projects/GenInfo/NoticeExplan is/was a GPL 2 notice explanantion See
+    https://web.archive.org/web/20040427101901/http://oss.sgi.com/projects/GenInfo/NoticeExplan/
+ignorable_urls:
+    - http://oss.sgi.com/projects/GenInfo/NoticeExplan

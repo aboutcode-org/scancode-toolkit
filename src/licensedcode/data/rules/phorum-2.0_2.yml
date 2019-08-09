@@ -1,2 +1,4 @@
 license_expression: phorum-2.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.phorum.org/license.txt

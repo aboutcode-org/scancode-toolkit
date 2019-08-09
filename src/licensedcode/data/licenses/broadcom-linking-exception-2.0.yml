@@ -4,7 +4,7 @@ name: Broadcom Linking Exception to GPL 2.0
 category: Copyleft Limited
 owner: Broadcom
 is_exception: yes
-standard_notice: |-
+standard_notice: |
     Copyright (c) 2006-2007 Broadcom Corporation
     All Rights Reserved
     Unless you and Broadcom execute a separate written software license

@@ -1,6 +1,6 @@
 license_expression: ruby
 is_license_text: yes
-notes: |-
+notes: |
     https://raw.githubusercontent.com/ruby/ruby/c5a7e3570690f1a6570cc3cb1876f5f77a20fe3c/COPYING
     This replaced the GPL COPYING file with the ruby dual licensing terms
     This came just\ after a short lived modification that lived only for 2 days

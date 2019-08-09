@@ -6,3 +6,12 @@ owner: OpenORB Project
 homepage_url: http://openorb.sourceforge.net/license.txt
 text_urls:
     - http://openorb.sourceforge.net/license.txt
+ignorable_copyrights:
+    - Copyright (c) 2002 The OpenORB Project
+ignorable_authors:
+    - the OpenORB Community Project (http://sourceforge.net/projects/openorb/)
+ignorable_holders:
+    - The OpenORB Project
+ignorable_urls:
+    - http://sourceforge.net/projects/openorb
+    - http://sourceforge.net/projects/openorb/

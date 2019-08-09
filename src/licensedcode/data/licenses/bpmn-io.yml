@@ -4,3 +4,5 @@ name: bpmn.io License
 category: Permissive
 owner: bpmn.io
 homepage_url: http://bpmn.io/license/
+ignorable_urls:
+    - http://bpmn.io/

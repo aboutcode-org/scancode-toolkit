@@ -4,3 +4,9 @@ referenced_filenames:
     - LICENSE.GPL2
     - LICENSE.GPL3
     - GPL_EXCEPTION.txt
+ignorable_urls:
+    - http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+    - http://trolltech.com/products/qt/licenses/licensing/opensource
+    - http://www.trolltech.com/products/qt/gplexception/
+ignorable_emails:
+    - sales@trolltech.com

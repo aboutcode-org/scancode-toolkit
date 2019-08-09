@@ -1,0 +1,51 @@
+License and Download for DWF Toolkit 7
+NOTICE TO USER:
+
+THIS LICENSE AGREEMENT ("AGREEMENT") IS A LEGAL AGREEMENT BETWEEN YOU (EITHER AN INDIVIDUAL OR A SINGLE ENTITY) AND AUTODESK, INC. FOR THE DWF TOOLKIT 7, WHICH INCLUDES COMPUTER SOFTWARE AND MAY INCLUDE ASSOCIATED MEDIA, PRINTED MATERIALS AND ONLINE OR ELECTRONIC DOCUMENTATION ("LICENSED SOFTWARE"). BY INSTALLING THE LICENSED SOFTWARE YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT, DO NOT INSTALL OR USE THE LICENSED SOFTWARE.
+
+1 LICENSE GRANT
+
+1.1 Autodesk grants to you ("Licensee") a perpetual, nontransferable, nonexclusive, royalty-free, limited license to:
+
+1.1.1   (a) Use the Licensed Software for development, research, internal, educational, or commercial purposes; (b) Modify the Licensed Software to create derivative works and applications, including ports; and (c) Compile the Licensed Software, derivative works and applications prepared in accordance with subsection 1.1.1(b) into binary code.
+1.1.2   Reproduce, distribute and sublicense free of charge or for a fee  the Licensed Software in binary code form in conjunction with derivative works or applications created by Licensee or licensed from third parties by Licensee, provided, that: (a) Licensee makes no use of Autodesk’s trademarks, trade names, or trade dress; (b) In the event Licensee makes any modification to the Licensed Software, Licensee must publish the specification for such modifications for use by third party developers and provide Autodesk with a copy thereof; and (c) The Licensee must sublicense the Licensed Software “as is”, without warranty of any kind.
+1.1.3   Reproduce, distribute  and sublicense free of charge to sublicensees the source code of the unmodified Licensed Software, provided that (a) Licensee must state in its sublicenses that the Licensed Software is being distributed pursuant to a license granted by Autodesk, Inc.; (b)The terms of sublicenses granted by Licensee must (i) contain all applicable terms of this Agreement, and (ii) not be broader than the terms of the license granted by this Agreement; (c) Licensee must exactly reproduce Autodesk’s copyright and other proprietary rights notices which accompany the copy of the Licensed Software licensed by Autodesk to Licensee; and (d) Licensee shall conspicuously state in its sublicenses that the Licensed Software is offered “as is”, without warranty of any kind.
+1.1.4   Reproduce, distribute and sublicense the source code of the Licensed Software as modified by Licensee, provided that (a) Licensee must state in its sublicense that the Licensed Software has been modified by Licensee; (b) Licensee must exactly reproduce Autodesk’s copyright and other proprietary rights notices which accompany the copy of the Licensed Software licensed by Autodesk to Licensee; (c) As to the unmodified portions of the Licensed Software, the terms of the sublicenses granted by Licensee must (i) contain all applicable terms of this Agreement, and (ii) not be broader than the terms of the license granted by this Agreement; (d) Licensee must conspicuously state in its sublicenses that the original, unmodified portions of the Licensed Software are offered “as is”, without warranty of any kind; and (e) Licensee must (i) publish the modified Licensed Software to the Worldwide Web, (ii) make available with the modified Licensed Software documentation which describes in detail the modifications which Licensee has made to the Licensed Software, and (iii) provide to Autodesk a copy of the modified Licensed Software and the documentation.
+
+
+1.2 Licensee acquires no right, title, or interest in or to the Licensed Software,
+
+1.3 Licensee shall retain all rights to any independently developed software, such as applications, developed by or for Licensee.
+
+1.4 Autodesk is under no obligation to provide maintenance, support, or upgrades for the Licensed Software.
+2 COPYRIGHTS AND TRADEMARKS
+
+Licensee shall reproduce and apply any copyright or other proprietary rights notices included on or embedded in the Licensed Software to any copies of the Licensed Software or to applications created using the Licensed Software, in any form. Licensee shall have no right to use any Autodesk trademarks, trade names or trade dress absent a separate written agreement between Autodesk and Licensee. Licensee hereby understands and agrees that Autodesk is not granting any rights to Autodesk patents, copyrights, trademarks or trade secret information to Licensee by this Agreement.
+3 FEES
+
+Use of the Licensed Software in accordance with the terms of this Agreement shall not require payment of a license fee.
+
+4 TERM AND TERMINATION
+
+The grant of a perpetual license notwithstanding, Autodesk may immediately terminate this Agreement and revoke the license granted to Licensee upon written notice to Licensee if Licensee fails to comply with any of the terms or conditions of this Agreement. Upon termination of this Agreement, Licensee shall immediately cease using, reproducing and distributing the Licensed Software, the license and rights granted hereunder shall expire, and Licensee shall immediately destroy or return to Autodesk the Licensed Software and all related documentation, materials or copies thereof.
+
+5 DISCLAIMER OF WARRANTY
+
+5.1 The Licensed Software is provided "AS IS" and without any warranty of any kind.
+5.2 AUTODESK DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ARISING FROM A COURSE OF DEALING, USAGE, OR TRADE PRACTICE.
+6 LIMITATION OF LIABILITY
+
+6.1 In no event will Autodesk be liable for any lost revenues, data, or profits, or special, indirect, or consequential damages, even if Autodesk has been advised of the possibility or probability of such damages. Autodesk’s maximum liability for damages shall be limited to the fees, if any, required under Section 3 for the particular Licensed Software which caused the damages.
+6.2 The Licensed Software is not fault-tolerant and is not designed, manufactured, or intended for use or resale as online control equipment in hazardous environments requiring fail-safe performance, such as in the operation of nuclear facilities, aircraft navigation or communication systems, air traffic control, direct life support machines, or weapons systems, in which the failure of the Licensed Software or derived binaries could lead directly to death, personal injury, or severe physical or environmental damage ("High Risk Activities"). Autodesk specifically disclaims any express or implied warranty of fitness for High Risk Activities. Licensee will not knowingly use, distribute, or sublicense the Licensed Software or derived binaries for High Risk Activities and will ensure that its customers and end-users of Licensee's products are provided with a copy of the notice specified in the first sentence of this Section 6.2.
+7 PROPRIETARY INFORMATION
+
+The Licensed Software is the proprietary information of Autodesk, Inc. ("Confidential Information").  Except as permitted by  this Agreement, Licensee shall not disclose Confidential Information and shall use it only for purposes specifically contemplated by this Agreement. This Agreement will not affect any non-disclosure agreement between the parties.
+8 EXPORT
+
+Unless properly authorized by the U.S. Government, Licensee shall not export, re-export or transfer, whether directly or indirectly, the Licensed Software or binary derivative or direct products thereof, to any person or company who is (a) present in or controlled by a legal resident of any proscribed country listed in the U.S. Export Administration Regulations (or any equivalent thereof ), or (b) a person or entity named in the entity lists, denied persons lists or specially designated nationals lists maintained by the U.S. Government.
+9 U.S. GOVERNMENT RESTRICTED RIGHTS
+
+This Licensed Software is provided with RESTRICTED RIGHTS. Use, duplication, or disclosure by the Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software Clause as DFARS 252.227-7013 and FAR 52.227-19 as applicable. Manufacturer is Autodesk, Inc., 111 McInnis Parkway, San Rafael, California 94903.
+10 GOVERNING LAW
+
+Any action related to this Agreement will be governed by California law, excluding choice of law rules.

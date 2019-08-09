@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 1999, 2000 - D.T.Shield.
+  - Copyright 1999, 2000 - D.T.Shield
 holders:
-    - D.T.Shield.
+  - D.T.Shield
 holders_summary:
-    -   value: D.T.Shield.
-        count: 1
+  - value: D.T.Shield
+    count: 1

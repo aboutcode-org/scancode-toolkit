@@ -1,2 +1,4 @@
 license_expression: clear-bsd
 is_license_reference: yes
+ignorable_urls:
+    - http://labs.metacarta.com/license-explanation.html

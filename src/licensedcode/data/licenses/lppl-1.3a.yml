@@ -8,3 +8,9 @@ notes: Per SPDX.org, this license was released 1 Oct 2004
 spdx_license_key: LPPL-1.3a
 text_urls:
     - http://www.latex-project.org/lppl/lppl-1-3a.txt
+ignorable_copyrights:
+    - Copyright 1999 2002-04 LaTeX3 Project
+ignorable_holders:
+    - LaTeX3 Project
+ignorable_urls:
+    - http://www.latex-project.org/lppl.txt

@@ -4,8 +4,14 @@ name: ImageMagick License
 category: Permissive
 owner: ImageMagick
 homepage_url: http://www.imagemagick.org/script/license.php
+notes: this is very close to the Apache 2.0 licecnse that was used as a base.
 spdx_license_key: ImageMagick
 text_urls:
     - http://www.imagemagick.org/script/license.php
 faq_url: http://www.imagemagick.org/script/export.php
-notes: this is very close to the Apache 2.0 licecnse that was used as a base.
+ignorable_copyrights:
+    - Copyright 1999-2009 ImageMagick Studio LLC
+ignorable_holders:
+    - ImageMagick Studio LLC
+ignorable_urls:
+    - http://www.imagemagick.org/www/license.html

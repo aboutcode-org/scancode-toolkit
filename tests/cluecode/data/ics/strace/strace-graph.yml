@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1998 by Richard Braakman <dark@xs4all.nl>
+  - Copyright (c) 1998 by Richard Braakman <dark@xs4all.nl>
 holders:
-    - Richard Braakman
+  - Richard Braakman
 holders_summary:
-    -   value: Richard Braakman
-        count: 1
+  - value: Richard Braakman
+    count: 1

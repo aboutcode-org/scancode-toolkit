@@ -1,2 +1,4 @@
 license_expression: efl-1.0
 is_license_reference: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/ver1_eiffel.php

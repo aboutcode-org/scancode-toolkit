@@ -1,3 +1,6 @@
 license_expression: bsd-new AND google-patent-license-webm
 is_license_notice: yes
 minimum_coverage: 60
+ignorable_urls:
+    - http://www.webmproject.org/license/additional/
+    - http://www.webmproject.org/license/software/

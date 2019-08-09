@@ -1,2 +1,4 @@
 license_expression: tmate
 is_license_reference: yes
+ignorable_urls:
+    - http://svnkit.com/licensing.html

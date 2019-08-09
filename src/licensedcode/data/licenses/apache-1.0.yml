@@ -9,3 +9,9 @@ text_urls:
     - http://www.apache.org/licenses/LICENSE-1.0
 faq_url: http://www.apache.org/foundation/licence-FAQ.html
 minimum_coverage: 80
+ignorable_authors:
+    - the Apache Group
+ignorable_urls:
+    - http://www.apache.org/
+ignorable_emails:
+    - apache@apache.org

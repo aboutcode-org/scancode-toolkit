@@ -1,2 +1,4 @@
 license_expression: agere-sla
 is_license_reference: yes
+ignorable_urls:
+    - http://fedoraproject.org/wiki/Licensing/Agere_LT_Modem_Driver_License

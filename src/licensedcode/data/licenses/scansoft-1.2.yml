@@ -9,3 +9,7 @@ text_urls:
 other_urls:
     - http://en.wikipedia.org/wiki/Nuance_Communications
     - http://www.nuance.com/
+ignorable_copyrights:
+    - Copyright (c) 2000-2003, ScanSoft, Inc.
+ignorable_holders:
+    - ScanSoft, Inc.

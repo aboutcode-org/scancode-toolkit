@@ -1,2 +1,4 @@
 license_expression: freetts
 is_license_reference: yes
+ignorable_urls:
+    - http://freetts.sourceforge.net/license.terms

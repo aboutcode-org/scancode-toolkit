@@ -7,3 +7,9 @@ homepage_url: http://svnkit.com/licensing.html
 spdx_license_key: TMate
 text_urls:
     - http://svnkit.com/license.html
+ignorable_copyrights:
+    - Copyright (c) 2004-2009 TMate Software
+ignorable_holders:
+    - TMate Software
+ignorable_emails:
+    - support@svnkit.com

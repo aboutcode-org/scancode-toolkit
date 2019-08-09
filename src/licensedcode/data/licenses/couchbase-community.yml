@@ -4,3 +4,10 @@ name: Couchbase Community Edition License
 category: Proprietary Free
 owner: Couchbase
 homepage_url: http://www.couchbase.com/download
+ignorable_copyrights:
+    - Copyright 2010 Couchbase, Inc.
+ignorable_holders:
+    - Couchbase, Inc.
+ignorable_urls:
+    - http://couchbase.com/
+    - http://www.couchbase.com/

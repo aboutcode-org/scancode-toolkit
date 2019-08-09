@@ -1,5 +1,7 @@
 license_expression: free-unknown AND other-permissive
 is_license_notice: yes
+minimum_coverage: 90
 referenced_filenames:
     - Copyright.txt
-minimum_coverage: 90
+ignorable_urls:
+    - http://gdcm.sourceforge.net/Copyright.html

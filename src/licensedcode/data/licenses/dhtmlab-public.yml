@@ -3,3 +3,9 @@ short_name: dhtmlab Public License
 name: Dynamic HTML Lab Public License
 category: Permissive
 owner: DHTML Lab
+ignorable_copyrights:
+    - Copyright (c) 2000 internet.com Corp.
+ignorable_holders:
+    - internet.com Corp.
+ignorable_urls:
+    - http://www.dhtmlab.com/

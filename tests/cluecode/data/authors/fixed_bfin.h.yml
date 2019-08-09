@@ -1,8 +1,8 @@
 what:
-    - authors
-    - authors_summary
+  - authors
+  - authors_summary
 authors:
-    - Jean-Marc Valin
+  - Jean-Marc Valin
 authors_summary:
-    -   value: Jean-Marc Valin
-        count: 1
+  - value: Jean-Marc Valin
+    count: 1

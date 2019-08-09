@@ -1,2 +1,4 @@
 license_expression: sun-sissl-1.1
 is_license_reference: yes
+ignorable_urls:
+    - http://www.openoffice.org/licenses/sissl_license.html

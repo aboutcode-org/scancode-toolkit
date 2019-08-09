@@ -7,3 +7,12 @@ homepage_url: https://helixcommunity.org/content/rcsl
 other_urls:
     - http://en.wikipedia.org/wiki/Helix_project
     - http://en.wikipedia.org/wiki/RealNetworks_Community_Source_License
+ignorable_copyrights:
+    - Portions Copyright 1994-2007 (c) RealNetworks, Inc.
+ignorable_holders:
+    - RealNetworks, Inc.
+ignorable_urls:
+    - http://www.helixcommunity.org/
+    - https://www.helixcommunity.org/content/rcsl
+ignorable_emails:
+    - press@helixcommunity.org

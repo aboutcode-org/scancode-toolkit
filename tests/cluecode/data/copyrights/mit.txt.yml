@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2010-2011 by MitSomething <www.url.com>
+  - Copyright 2010-2011 by MitSomething <www.url.com>
 holders:
-    - MitSomething
+  - MitSomething
 holders_summary:
-    -   value: MitSomething
-        count: 1
+  - value: MitSomething
+    count: 1

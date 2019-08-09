@@ -1,3 +1,5 @@
 license_expression: efl-1.0
 is_license_reference: yes
 notes: http://www.eiffel-nice.org/license/forum.txt
+ignorable_urls:
+    - http://www.eiffel-nice.org/license/forum.txt

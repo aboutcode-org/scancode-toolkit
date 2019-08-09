@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH classpath-exception-2.0 OR cddl-1.1
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://javaee.github.io/javamail/LICENSE

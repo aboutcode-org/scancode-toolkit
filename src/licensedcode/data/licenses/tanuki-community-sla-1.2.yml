@@ -5,3 +5,13 @@ category: Copyleft
 owner: Tanuki Software
 homepage_url: http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
 minimum_coverage: 98
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - Copyright (c) 2001 Silver Egg Technology
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - Silver Egg Technology
+    - the Free Software Foundation
+ignorable_urls:
+    - http://wrapper.tanukisoftware.org/

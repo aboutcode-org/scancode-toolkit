@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 2006 Stefan Traby <stefan@hello-penguin.com>
+  - Copyright (c) 2006 Stefan Traby <stefan@hello-penguin.com>
 holders:
-    - Stefan Traby
+  - Stefan Traby
 holders_summary:
-    -   value: Stefan Traby
-        count: 1
+  - value: Stefan Traby
+    count: 1

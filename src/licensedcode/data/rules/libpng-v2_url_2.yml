@@ -1,0 +1,5 @@
+license_expression: libpng-v2
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/libpng-2.0.html

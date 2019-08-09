@@ -8,7 +8,7 @@ is_exception: yes
 spdx_license_key: OpenJDK-assembly-exception-1.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-standard_notice: |-
+standard_notice: |
     OpenJDK Assembly Exception
     The OpenJDK source code made available by Oracle America, Inc. (Oracle) at
     openjdk.java.net ("OpenJDK Code") is distributed under the terms of the GNU
@@ -31,3 +31,6 @@ standard_notice: |-
     with the Classpath exception). If you modify or add to the OpenJDK code,
     that new GPL2 code may still be combined with Designated Exception Modules
     if the new code is made subject to this exception by its copyright holder.
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html

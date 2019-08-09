@@ -1,0 +1,10 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 95
+referenced_filenames:
+    - readme.txt
+ignorable_copyrights:
+    - Copyright (c) Cosmin Truta
+ignorable_holders:
+    - Cosmin Truta

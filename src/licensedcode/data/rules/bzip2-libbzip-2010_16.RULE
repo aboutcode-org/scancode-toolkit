@@ -1,0 +1,8 @@
+This file is part of bzip2/libbzip2, a program and library for
+lossless, block-sorting data compression.
+
+Please read the WARNING, DISCLAIMER and PATENTS sections in the 
+bzlib.h file.
+
+This program is released under the terms of the license contained
+in the file bzlib.h.

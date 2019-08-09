@@ -1,11 +1,12 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - authors
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright 2009 J-Doe.
+  - Copyright 2009 J-Doe
 holders:
-    - J-Doe.
+  - J-Doe
 holders_summary:
-    -   value: J-Doe.
-        count: 1
+  - value: J-Doe
+    count: 1

@@ -1,2 +1,4 @@
 license_expression: epo-osl-2005.1
 is_license_reference: yes
+ignorable_urls:
+    - http://ephx.sourceforge.net/viewlicence.html

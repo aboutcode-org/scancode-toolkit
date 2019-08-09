@@ -6,3 +6,9 @@ owner: SMAIL Project
 homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
 text_urls:
     - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+ignorable_copyrights:
+    - Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+    - Copyright (c) 1992 Ronald S. Karr
+ignorable_holders:
+    - Landon Curt Noll & Ronald S. Karr
+    - Ronald S. Karr

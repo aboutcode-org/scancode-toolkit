@@ -1,2 +1,4 @@
 license_expression: bsd-new
 is_license_tag: yes
+ignorable_urls:
+    - http://asm.objectweb.org/license.html

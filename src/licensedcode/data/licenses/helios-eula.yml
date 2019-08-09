@@ -4,3 +4,5 @@ name: Helios EULA
 category: Commercial
 owner: Helios Software Solutions
 homepage_url: http://www.textpad.com/copyright.html
+ignorable_urls:
+    - http://www.textpad.com/

@@ -7,3 +7,17 @@ homepage_url: http://msdn.microsoft.com/en-us/cc300389.aspx
 text_urls:
     - http://msdn.microsoft.com/en-us/cc300389.aspx
 minimum_coverage: 70
+ignorable_copyrights:
+    - (c) 2013 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
+ignorable_urls:
+    - http://connect.microsoft.com/
+    - http://go.microsoft.com/fwlink/?LinkID=246330
+    - http://go.microsoft.com/fwlink/?LinkId=303819
+    - http://go.microsoft.com/fwlink/?LinkId=309360
+    - http://msdn.microsoft.com/
+    - http://technet.microsoft.com/
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/info/cpyrtInfrg.htm
+    - http://www.visualstudio.com/

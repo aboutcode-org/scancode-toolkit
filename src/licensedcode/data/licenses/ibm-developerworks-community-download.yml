@@ -4,3 +4,5 @@ name: IBM developerWorks Community Download of Content Agreement
 category: Proprietary Free
 owner: IBM
 homepage_url: https://www.ibm.com/developerworks/community/terms/download?lang=en
+ignorable_urls:
+    - http://www.ibm.com/developerworks/exchange

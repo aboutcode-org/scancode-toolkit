@@ -1,6 +1,6 @@
 license_expression: gpl-2.0
 is_license_text: yes
-notes: |-
+notes: |
     This is the next version of the GPL text as published by the FSF.
     Let's call it the GPL 2.0.2
     This variation was published around about the time of the FSF office
@@ -13,3 +13,9 @@ notes: |-
     The corresponding text version at
     http://web.archive.org/web/20050507090312/http://www.fsf.org/copyleft/gpl.txt
     was not updated for a few days.
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

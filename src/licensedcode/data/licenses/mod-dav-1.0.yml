@@ -6,3 +6,13 @@ owner: Gregg Stein
 homepage_url: http://www.webdav.org/mod_dav/
 text_urls:
     - http://www.webdav.org/mod_dav/
+ignorable_copyrights:
+    - Copyright (c) 1998-2001 Greg Stein
+ignorable_authors:
+    - Greg Stein <gstein@lyra.org>
+ignorable_holders:
+    - Greg Stein
+ignorable_urls:
+    - http://www.webdav.org/mod_dav
+ignorable_emails:
+    - gstein@lyra.org

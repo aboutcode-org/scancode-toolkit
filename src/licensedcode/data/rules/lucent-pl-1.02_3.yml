@@ -1,2 +1,4 @@
 license_expression: lucent-pl-1.02
 is_license_notice: yes
+ignorable_urls:
+    - http://plan9.bell-labs.com/plan9dist/license.html

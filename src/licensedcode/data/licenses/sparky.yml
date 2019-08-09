@@ -6,3 +6,9 @@ owner: Regents of the University of California
 homepage_url: http://www.cgl.ucsf.edu/home/sparky/
 text_urls:
     - http://www.cgl.ucsf.edu/home/sparky/sparky-license.html
+ignorable_copyrights:
+    - Copyright (c) 2009, The Regents of the University of California
+ignorable_authors:
+    - the UCSF Resource
+ignorable_holders:
+    - The Regents of the University of California

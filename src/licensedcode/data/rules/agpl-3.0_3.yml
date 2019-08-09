@@ -1,4 +1,6 @@
 license_expression: agpl-3.0
 is_license_reference: yes
-notes: Name and Url combination
 relevance: 100
+notes: Name and Url combination
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/agpl-3.0.html

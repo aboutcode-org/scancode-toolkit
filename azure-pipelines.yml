@@ -12,20 +12,53 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['2.7']
           test_suites:
-              misc: bin/py.test -vvs --reruns=3 --test-suite=all --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode
-              scancode: bin/py.test -vvs --reruns=3 --test-suite=all tests/scancode
-              license_base: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven.py
-              license_main: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseDataDriven
-              license_retro: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseRetrographyDataDriven
-              license_spdx: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseSpdxDataDriven
-              license_tools: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestLicenseToolsDataDriven
-              license_slic: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestSlicDataDriven
-              license_foss: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestFossLicDataDriven
-              license_deb: bin/py.test -n 2 -vvs --test-suite=all tests/licensedcode/test_detection_datadriven.py -k TestDebLicCheckTestsDataDriven
-              license_cache: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/licensedcode/test_zzzz_cache.py
-              extractcode: bin/py.test -n 2 -vvs --test-suite=all tests/extractcode
-              cluecode: bin/py.test -n 2 -vvs --test-suite=all tests/cluecode
-              packagedcode_plugincode: bin/py.test -n 2 -vvs --test-suite=all tests/packagedcode tests/plugincode
+              misc: |
+                bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
+                  --ignore=tests/scancode \
+                  --ignore=tests/packagedcode \
+                  --ignore=tests/plugincode \
+                  --ignore=tests/extractcode \
+                  --ignore=tests/cluecode \
+                  --ignore=tests/licensedcode
+
+              scancode: |
+                bin/py.test -vvs --reruns=3 --test-suite=all \
+                 tests/scancode
+
+              extract_packaged_plugincode: |
+                bin/py.test -vvs --reruns=3 --test-suite=all \
+                 tests/packagedcode tests/plugincode tests/extractcode
+
+              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+
+              license_base: |
+                bin/py.test -n 3 -vvs --test-suite=all \
+                  tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py \
+                  --ignore=tests/licensedcode/test_detection_datadriven.py
+
+              license_main: |
+                bin/py.test -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven.py \
+                  -k TestLicenseDataDriven
+
+              license_retro_spdx: |
+                bin/py.test -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven.py \
+                  -k "TestLicenseRetrographyDataDriven or TestLicenseSpdxDataDriven"
+
+              license_tools_slic: |
+                bin/py.test -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven.py \
+                  -k "TestLicenseToolsDataDriven or TestSlicDataDriven"
+
+              license_foss_deb: |
+                bin/py.test -n 3 -vvs --test-suite=all \
+                  tests/licensedcode/test_detection_datadriven.py \
+                  -k "TestFossLicDataDriven or TestDebLicCheckTestsDataDriven"
+
+              license_cache: |
+                bin/py.test -n 3 --reruns=3 -vvs --test-suite=all \
+                  tests/licensedcode/test_zzzz_cache.py
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -55,6 +88,7 @@ jobs:
               all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
               scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
+
 ################################################################################
 # These jobs are using containers and their own Python 2.7
 ################################################################################
@@ -76,12 +110,14 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suite_label: commoncode and plugincode
+          test_suite_label: ported code
           test_suite: |
-                bin/py.test  -n 2 -vvs tests/commoncode \
-                    tests/typecode \
-                    tests/extractcode \
-                    tests/plugincode 
+            bin/py.test  -n 2 -vvs \
+              tests/commoncode \
+              tests/typecode \
+              tests/extractcode \
+              tests/plugincode 
+
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -207,8 +243,8 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test  -vvs tests\commoncode
               other: |
-                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode 
-              
+                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode
+
 ################################################################################
 # These jobs are using containers and their own Python 3.6
 ################################################################################
@@ -234,22 +270,13 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: commoncode
+          test_suite_label: ported code
           test_suite: |
-                bin/py.test -vvs tests/commoncode 
-
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py36_2
-          container: ubuntu:bionic
-          python_path: python3.6
-          python_version: '3.6'
-          install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: other
-          test_suite: |
-                bin/py.test -vvs tests/typecode \
-                    tests/extractcode \
-                    tests/plugincode 
+            bin/py.test  -n 2 -vvs \
+              tests/commoncode \
+              tests/typecode \
+              tests/extractcode \
+              tests/plugincode 
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:

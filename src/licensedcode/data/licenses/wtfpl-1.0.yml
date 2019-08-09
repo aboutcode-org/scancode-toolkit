@@ -4,7 +4,7 @@ name: WTFPL 1.0
 category: Public Domain
 owner: Sam Hocevar
 homepage_url: https://en.wikipedia.org/wiki/WTFPL#Version_1
-notes: |-
+notes: |
     This license is found in the Windowmaker project with this mention in the
     COPYING.WTFPL file The following artwork were created by Banlu Kemiyatorn
     and are distributed through the license in this file GNUstepGlow.tiff [...
@@ -18,3 +18,7 @@ text_urls:
     - http://hg.windowmaker.info/wmaker/file/0a3a3e370483/COPYING.WTFPL
 other_urls:
     - http://cvs.windowmaker.org/co.php/wm/COPYING.WTFPL
+ignorable_copyrights:
+    - Copyright (c) 2000 Banlu Kemiyatorn
+ignorable_holders:
+    - Banlu Kemiyatorn

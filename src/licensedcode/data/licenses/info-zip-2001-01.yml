@@ -6,3 +6,9 @@ owner: info-zip
 homepage_url: http://www.info-zip.org/
 text_urls:
     - http://web.archive.org/web/20020221003207/http://www.info-zip.org/doc/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 1990-2001 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP.
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html

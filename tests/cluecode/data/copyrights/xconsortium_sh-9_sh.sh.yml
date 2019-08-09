@@ -1,11 +1,11 @@
 what:
-    - copyrights
-    - holders
-    - holders_summary
+  - copyrights
+  - holders
+  - holders_summary
 copyrights:
-    - Copyright (c) 1994 X Consortium
+  - Copyright (c) 1994 X Consortium
 holders:
-    - X Consortium
+  - X Consortium
 holders_summary:
-    -   value: X Consortium
-        count: 1
+  - value: X Consortium
+    count: 1

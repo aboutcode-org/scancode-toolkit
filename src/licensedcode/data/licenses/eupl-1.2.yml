@@ -17,3 +17,7 @@ other_urls:
     - https://opensource.org/licenses/EUPL-1.1
 minimum_coverage: 80
 standard_notice: Licensed under the EUPL
+ignorable_copyrights:
+    - (c) the European Union 2007, 2016
+ignorable_holders:
+    - the European Union

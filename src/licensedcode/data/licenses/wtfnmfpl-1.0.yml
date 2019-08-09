@@ -4,7 +4,7 @@ name: WTFNMFPL-1.0
 category: Permissive
 owner: adversary.org
 homepage_url: https://github.com/adversary-org/wtfnmf
-notes: |-
+notes: |
     The Do What The Fuck You Want To But It's Not My Fault Public License
     (WTFNMFPL or WTFNMFPLv1) is a variation on the Do What The Fuck You Want
     Public License (WTFPL) by Sam Hocevar. Essentially it is the same as the
@@ -15,3 +15,9 @@ notes: |-
     license is free to use by anyone as per the terms of itself.
 text_urls:
     - https://github.com/adversary-org/wtfnmf/blob/master/COPYING.WTFNMFPL
+ignorable_copyrights:
+    - Copyright (c) 2013 Ben McGinnes <ben@adversary.org>
+ignorable_holders:
+    - Ben McGinnes
+ignorable_emails:
+    - ben@adversary.org

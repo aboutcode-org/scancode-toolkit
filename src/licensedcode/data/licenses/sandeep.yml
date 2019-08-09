@@ -4,3 +4,9 @@ name: Sandeep License
 category: Proprietary Free
 owner: Sandeep Gangadharan
 homepage_url: http://www.sivamdesign.com/scripts/
+ignorable_copyrights:
+    - Copyright (c) 2000 - 2014 Sandeep Gangadharan
+ignorable_holders:
+    - Sandeep Gangadharan
+ignorable_urls:
+    - http://www.sivamdesign.com/scripts/
