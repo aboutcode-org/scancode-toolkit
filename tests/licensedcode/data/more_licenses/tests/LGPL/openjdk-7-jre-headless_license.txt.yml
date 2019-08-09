@@ -4,7 +4,8 @@ license_expressions:
   - gpl-2.0 WITH classpath-exception-2.0
   - gpl-2.0
   - agpl-3.0-plus
-  - gpl-2.0 WITH oracle-openjdk-classpath-exception-2.0 AND gpl-2.0 WITH openjdk-assembly-exception-1.0 AND other-copyleft AND other-permissive
+  - gpl-2.0 WITH oracle-openjdk-classpath-exception-2.0 AND gpl-2.0 WITH openjdk-assembly-exception-1.0
+    AND other-copyleft AND other-permissive
   - lgpl-2.0
   - apache-2.0
   - oracle-openjdk-classpath-exception-2.0
@@ -70,10 +71,8 @@ license_expressions:
   - historical
   - warranty-disclaimer
   - x11-xconsortium
-  - mit
-  - unicode
   - x11
-  - x11
+  - x11-keith-packard
   - x11-opengroup
   - x11-keith-packard
   - x11-xconsortium
@@ -111,4 +110,3 @@ license_expressions:
   - gpl-2.0-plus
   - gpl-1.0-plus
   - gpl-2.0
-
