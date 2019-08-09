@@ -34,16 +34,16 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 
+from commoncode import compat
+from commoncode.fileutils import resource_iter
+
 from textcode.analysis import as_unicode
 from textcode.analysis import unicode_text_lines
 from textcode.analysis import numbered_text_lines
-from commoncode.fileutils import resource_iter
-from commoncode import compat
-from commoncode.system import on_linux
-from commoncode.system import py2
 
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 def check_text_lines(result, expected_file, regen=False):
         if regen:
@@ -96,8 +96,7 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/splinefonts/Ambrosia.sfd')
         result = list(l for _, l in numbered_text_lines(test_file))
         expected_file = test_file + '.expected'
-        mode = 'rb' if on_linux and py2 else 'r'
-        expected = open(expected_file, mode).read().splitlines(True)
+        expected = open(expected_file, 'r').read().splitlines(True)
         assert expected == list(result)
 
     def test_numbered_text_lines_handles_jsmap1(self):
@@ -145,7 +144,7 @@ class TestAnalysis(FileBasedTesting):
         assert 2 == len(result)
 
     def test_as_unicode_converts_bytes_to_unicode(self):
-        test_line =  '    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2”.'
+        test_line =  '    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2.'.encode()
         result = as_unicode(test_line)
         assert type(result) == compat.unicode
 

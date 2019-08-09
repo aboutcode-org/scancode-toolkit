@@ -36,6 +36,7 @@ from textcode import markup
 import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
 
+
 class TestMarkup(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

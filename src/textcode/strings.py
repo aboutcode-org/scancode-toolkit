@@ -73,22 +73,22 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
 
 # Extracted text is digit, letters, punctuation and white spaces
 punctuation = re.escape(string.punctuation)
-whitespaces = ' \t\n\r'
-printable = 'A-Za-z0-9' + whitespaces + punctuation
-null_byte = '\x00'
+whitespaces = r' \t\n\r'
+printable = r'A-Za-z0-9' + whitespaces + punctuation
+null_byte = r'\x00'
 
 ascii_strings = re.compile(
     # plain ASCII is a sequence of printable of a minimum length
-      '('
-    + '[' + printable + ']'
-    + '{' + str(MIN_LEN) + ',}'
-    + ')'
+      r'('
+    + r'[' + printable + r']'
+    + r'{' + str(MIN_LEN) + r',}'
+    + r')'
     # or utf-16-le-encoded ASCII is a sequence of ASCII+null byte
-    + '|'
-    + '('
-    + '(?:' + '[' + printable + ']' + null_byte + ')'
-    + '{' + str(MIN_LEN) + ',}'
-    + ')'
+    + r'|'
+    + r'('
+    + r'(?:' + r'[' + printable + r']' + null_byte + r')'
+    + r'{' + str(MIN_LEN) + r',}'
+    + r')'
     ).finditer
 
 
