@@ -115,7 +115,7 @@ class CopyrightTest(object):
         Serialize self to an ordered mapping.
         """
         filtered = [field for field in attr.fields(CopyrightTest)
-                    if b'_file' in field.name]
+                    if '_file' in field.name]
         fields_filter = attr.filters.exclude(*filtered)
         data = attr.asdict(self, filter=fields_filter, dict_factory=OrderedDict)
         return OrderedDict([

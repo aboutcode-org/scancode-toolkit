@@ -119,7 +119,8 @@ jobs:
               tests/extractcode \
               tests/plugincode \
               tests/textcode
-
+            bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+            
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: centos7_py27
@@ -207,11 +208,12 @@ jobs:
           test_suites:
               commoncode: bin/py.test  -vvs tests/commoncode
               other: |
-                 bin/py.test  -vvs tests/typecode \
+                 bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
-                    tests/cluecode \
-                    tests/textcode
+                    tests/typecode \
+                    tests/textcode              
+              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -221,11 +223,12 @@ jobs:
           test_suites:
               commoncode: bin/py.test  -vvs tests/commoncode
               other: |
-                 bin/py.test  -vvs tests/typecode \
+                 bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
-                    tests/cluecode \
-                    tests/textcode
+                    tests/typecode \
+                    tests/textcode                
+              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -235,11 +238,12 @@ jobs:
           test_suites:
               commoncode: bin/py.test  -vvs tests/commoncode
               other: |
-                 bin/py.test  -vvs tests/typecode \
+                 bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
-                    tests/cluecode \
+                    tests/typecode \
                     tests/textcode
+              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -250,7 +254,9 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test  -vvs tests\commoncode
               other: |
-                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode tests\textcode tests\cluecode
+                 Scripts\py.test  -vvs tests\cluecode tests\extractcode tests\plugincode tests\textcode tests\typecode
+              cluecode: Scripts\py.test -n 3 -vvs --test-suite=all tests\cluecode
+   
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -285,7 +291,8 @@ jobs:
               tests/extractcode \
               tests/plugincode \
               tests/textcode
-              tests/cluecode \
+            bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+               
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:

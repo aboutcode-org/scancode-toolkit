@@ -33,7 +33,7 @@ from commoncode.testcase import FileBasedTesting
 
 
 import pytest
-pytestmark = pytest.mark.scanslow
+pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
 
 
 """
