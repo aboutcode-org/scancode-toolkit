@@ -62,7 +62,7 @@ def is_markup(location):
     if location.endswith(extensions):
         return True
 
-    with open(location, 'rb') as f:
+    with open(location, 'r') as f:
         start = f.read(1024)
 
     if start.startswith('<'):

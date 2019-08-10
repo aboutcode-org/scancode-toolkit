@@ -42,6 +42,9 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
 """
 Data-driven Copyright test utilities.
 """

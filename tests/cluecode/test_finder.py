@@ -711,7 +711,7 @@ class TestUrl(FileBasedTesting):
 
     def test_find_urls_does_not_crash_on_mojibake_bytes(self):
         lines = [
-            b'    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2”.',
+            '    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2”.',
         ]
         expected = ['https://tools.ietf.org/html/rfc2821#section-4.1.2']
         result = find_urls_tester(lines)

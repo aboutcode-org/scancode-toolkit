@@ -114,6 +114,7 @@ jobs:
           test_suite: |
             bin/py.test  -n 2 -vvs \
               tests/commoncode \
+              tests/cluecode \
               tests/typecode \
               tests/extractcode \
               tests/plugincode \
@@ -209,6 +210,7 @@ jobs:
                  bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/cluecode \
                     tests/textcode
 
     - template: etc/ci/azure-mac.yml
@@ -222,6 +224,7 @@ jobs:
                  bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/cluecode \
                     tests/textcode
 
     - template: etc/ci/azure-mac.yml
@@ -235,6 +238,7 @@ jobs:
                  bin/py.test  -vvs tests/typecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/cluecode \
                     tests/textcode
 
     - template: etc/ci/azure-win.yml
@@ -246,7 +250,7 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test  -vvs tests\commoncode
               other: |
-                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode tests\textcode
+                 Scripts\py.test  -vvs tests\typecode tests\extractcode tests\plugincode tests\textcode tests\cluecode
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -281,6 +285,7 @@ jobs:
               tests/extractcode \
               tests/plugincode \
               tests/textcode
+              tests/cluecode \
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
