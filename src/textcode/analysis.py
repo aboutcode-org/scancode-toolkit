@@ -36,6 +36,7 @@ import chardet
 
 from commoncode import compat
 from commoncode.system import on_linux
+from commoncode.system import py2
 from textcode import pdf
 from textcode import markup
 from textcode import sfdb
@@ -147,8 +148,8 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if T.is_text:
         numbered_lines = enumerate(unicode_text_lines(location), 1)
         # text with very long lines such minified JS, JS map files or large JSON
-        locale = b'locale' if on_linux else u'locale'
-        package_json = b'package.json' if on_linux else u'package.json'
+        locale = b'locale' if on_linux and py2 else u'locale'
+        package_json = b'package.json' if on_linux and py2 else u'package.json'
 
         if (not location.endswith(package_json)
             and (T.is_text_with_long_lines or T.is_compact_js
@@ -207,7 +208,7 @@ def break_numbered_unicode_text_lines(numbered_lines, split=u'([",\'])', max_len
         if len(line) > max_len:
             # spli then reassemble in more reasonable chunks
             splitted = splitter(line)
-            chunks = (splitted[i:i + chunk_len] for i in xrange(0, len(splitted), chunk_len))
+            chunks = (splitted[i:i + chunk_len] for i in range(0, len(splitted), chunk_len))
             for chunk in chunks:
                 full_chunk = u''.join(chunk)
                 if full_chunk:
@@ -293,9 +294,8 @@ def unicode_text_lines(location):
     contains text. Open the file as binary with universal new lines then try to
     decode each line as Unicode.
     """
-    # FIXME: the U mode is going to be deprecated
-    with open(location, 'rbU') as f:
-        for line in f:
+    with open(location, 'rb') as f:
+        for line in f.read().splitlines(True):
             yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 

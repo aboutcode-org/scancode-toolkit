@@ -1,34 +1,35 @@
-!This program cannot be run in DOS mode.
-$
-OMRichj
-.text
-`.rdata
-@.data
-8MZu
-rlog
-rcsfile
-RSDS
-d:\cvsbin\release builder\cvsnt\winrel\rlog.pdb
-exit
-malloc
-MSVCR70.dll
-_c_exit
-_exit
-_XcptFilter
-_cexit
-__p___initenv
-_amsg_exit
-__getmainargs
-_initterm
-__setusermatherr
-_adjust_fdiv
-__p__commode
-__p__fmode
-__set_app_type
-__dllonexit
-_onexit
-_controlfp
-_except_handler3
-GetModuleHandleA
-KERNEL32.dll
-_spawnvp
+[
+  "!This program cannot be run in DOS mode.\r\r\n$",
+  "OMRichj",
+  ".text",
+  "`.rdata",
+  "@.data",
+  "8MZu",
+  "rlog",
+  "rcsfile",
+  "RSDS",
+  "d:\\cvsbin\\release builder\\cvsnt\\winrel\\rlog.pdb",
+  "exit",
+  "malloc",
+  "MSVCR70.dll",
+  "_c_exit",
+  "_exit",
+  "_XcptFilter",
+  "_cexit",
+  "__p___initenv",
+  "_amsg_exit",
+  "__getmainargs",
+  "_initterm",
+  "__setusermatherr",
+  "_adjust_fdiv",
+  "__p__commode",
+  "__p__fmode",
+  "__set_app_type",
+  "__dllonexit",
+  "_onexit",
+  "_controlfp",
+  "_except_handler3",
+  "GetModuleHandleA",
+  "KERNEL32.dll",
+  "_spawnvp"
+]

@@ -1,1318 +1,1296 @@
-Bs4c
-34c33
-84c33
-cqP1
-4Bge
-jX%5k
-void tcb_t::copy_regs_to_mrs(tcb_t*)
-handle_interrupt
-sys_schedule
-handle_pagefault
-tcb_t* create_root_server(threadid_t, threadid_t, threadid_t, fpage_t, fpage_t, word_t)
-word_t sys_thread_control(threadid_t, threadid_t, threadid_t, threadid_t, threadid_t, threadid_t, word_t)
-void init_root_servers()
-init_tlb
-SYSCALL_CACHE_CONTROL: current=%p control=%lx, space=%t
-SYS_EXCHANGE_REGISTERS: dest=%t, control=0x%x [%c%c%c%c%c%c%c%c%c%c%c], usp=%p, uip=%p, uflags=%p, pager=%t, uhandle=%x
-Not implemented: %s
-%s, line %d
-pistachio/kernel/include/glue/v4-mips64/tcb.h
-IRQ %d
-%s:%d: CPU%d spurious IRQ%d?
-%s:%d: IRQ handler TID is invalid -- halting IRQ%d
-Assertion irq_tcb->get_state().is_halted() failed in file %s, line %d (fn=%p)
-pistachio/kernel/src/api/v4/interrupt.cc
-preemption signalled (irq) for %t
-Assertion !queue_state.is_set(queue_state_t::send) failed in file %s, line %d (fn=%p)
-pistachio/kernel/include/api/v4/tcb.h
-SYS_THREAD_CONTROL for IRQ%d (IRQ=%t, handler=%t)
-Assertion !tcb->queue_state.is_set(queue_state_t::ready) failed in file %s, line %d (fn=%p)
-pistachio/kernel/include/api/v4/schedule.h
-Assertion queue_state.is_set(queue_state_t::send) failed in file %s, line %d (fn=%p)
-system has %d interrupts
-SYS_IPC: current: %t, to_tid: %t, from_tid: %t, tag: 0x%x (label=0x%x, %c%c%c%c, u=%d)
-IPC transfer message: src=%t, dst=%t
-Memory descriptor overflow (max=%d, n=%d)
-[33m%s
-SYS_MAP_CONTROL: space=%t, control=%p (n = %d, %c%c)
-SYS_PROCESSOR_CONTROL (cpu=%d, ifreq=%d, efreq=%d, voltage=%d
-Registering processor %d in KIP (%dMHz, %dMHz)
-total quantum expired for %t
-preemption signalled for %t
-Assertion prio >= 0 && prio <= MAX_PRIO failed in file %s, line %d (fn=%p)
-Assertion tcb->queue_state.is_set(queue_state_t::ready) failed in file %s, line %d (fn=%p)
-pistachio/kernel/src/api/v4/schedule.cc
-Assertion tcb failed in file %s, line %d (fn=%p)
-Assertion max failed in file %s, line %d (fn=%p)
-Assertion tcb != current failed in file %s, line %d (fn=%p)
-timeslice expired for %t
-idle thread started on CPU %d
-SYS_THREAD_SWITCH current=%t, dest=%t
-SYS_SCHEDULE: curr=%t, dest=%t, quantum=%x, timeslice=%x, proc_ctrl=%x, prio=%x
-%s:%d: invalid state (%x)
-Switching to idle thread (CPU %d)
-Assertion !"We shouldn't get here!" failed in file %s, line %d (fn=%p)
-Initializing threading
-kmem_space
-write
-read
-execute
-read/write
-unknown
-%t: user %s pagefault at %p, ip=%p
-kernel access raised user pagefault @ %p, ip=%p, space=%p
-root task accessed kernel space @ %p, ip=%p - deny
-%t: kernel pagefault in space %p @ %p, ip=%p, type=%x
-%s:%d: unhandled pagefault @ %p, %p
-wrong access - unable to recover
-SYS_SPACE_CONTROL: space=%t, control=%p, kip_area=%p, utcb_area=%p
-Assertion group->mem >= size failed in file %s, line %d (fn=%p)
-pistachio/kernel/include/kmemory.h
-Assertion this->space failed in file %s, line %d (fn=%p)
-pistachio/kernel/src/api/v4/thread.cc
-Assertion !this->is_activated() failed in file %s, line %d (fn=%p)
-POLLING
-WAIT_NOTIFY
-RUNNING
-UNKNOWN
-Unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)
-WAIT_XPU_DELTCB
-HALTED
-ABORTED
-WARNING: %s, line %d (fn=%p)
-===> Unresolved unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)
-LCK_WAITING
-LCK_RUNNING
-WAIT_XPU_EXREGS
-WAIT_FOREVER
-Assertion get_utcb() failed in file %s, line %d (fn=%p)
-Assertion this->exists() failed in file %s, line %d (fn=%p)
-Assertion space failed in file %s, line %d (fn=%p)
-Assertion get_saved_partner () == threadid_t::nilthread () failed in file %s, line %d (fn=%p)
-Assertion get_saved_state () == thread_state_t::aborted failed in file %s, line %d (fn=%p)
-Assertion !"Failed to create root server TCB\n" failed in file %s, line %d (fn=%p)
-PANIC in %s, %s, line %d:
-===>
-failed to activate root server
-SYS_THREAD_CONTROL: dest=%t, space=%t, scheduler=%t, pager=%t, utcb=%x
-Initializing root servers
-idle
-root-servers: utcb_area: %p (%dKB), kip_area: %p (%dKB)
-creating root server (%t)
-roottask
-root task not found!
-kmem_alloc (%d [%d%c]), ip: %p
-Assertion (size % KMEM_CHUNKSIZE) == 0 failed in file %s, line %d (fn=%p)
-pistachio/kernel/src/generic/kmemory.cc
-kmem_free (%p, %d [%d%c]), ip: %p
-kmem_init (%p, %p) [%d%c]
-kmem_pgtab
-unmap_fpage (fpg=%p  t_spc=%p)
-map_fpage (fpg=%p  t_spc=%p) : addr=%p, phys=%p  map=%d%cB, sz=%d%cB
-subtree
-single map
-overmapping: taddr=%p tsz=%d%cB (%s)
-FASTPATH_IPC
-EVENT
-INTERRUPT
-SYSCALL_IPC
-SYSCALL_EXCHANGE_REGISTERS
-SYSCALL_SPACE_CONTROL
-SYSCALL_THREAD_CONTROL
-SYSCALL_THREAD_SWITCH
-SYSCALL_SCHEDULE
-SYSCALL_MAP_CONTROL
-SYSCALL_PROCESSOR_CONTROL
-SYSCALL_CACHE_CONTROL
-IPC_TRANSFER
-IPC_MESSAGE_OVERFLOW
-TIMESLICE_EXPIRED
-TOTAL_QUANTUM_EXPIRED
-PREEMPTION_FAULT
-PREEMPTION_SIGNALED
-MAP_FPAGE
-FPAGE_OVERMAP
-FPAGE_UNMAP
-UNWIND
-SYSCALL_THREAD_CONTROL_IRQ
-PAGEFAULT_USER
-PAGEFAULT_KERNEL
-KMEM_ALLOC
-KMEM_FREE
-EXCEPTION_IPC_GENERAL
-EXCEPTION_IPC_SYSCALL
-DISABLED_FPU
-Read k-register
-Write k-register
-pistachio/kernel/src/glue/v4-mips64/exception.cc
-Assertion context->status & ST_KSU failed in file %s, line %d (fn=%p)
-EXCEPTION_IPC_SYSCALL: (%p) IP = %p, v0 = 0x%016lx
-Unable to deliver user exception: no exception handler.
-Unable to deliver user exception: IPC error.
-[1m--- KD# %s ---
-Unhandled User SYSCALL
-[1m--- KD#
-Assertion !(context->cause & CAUSE_BD) failed in file %s, line %d (fn=%p)
-[not mapped]
-Virtual coherency exception (data)
-EXCEPTION_IPC_GENERAL: (%p) exc_no %d, exc_code %016lx, IP = %p
-Cache error in debug mode
-Machine check
-Watchpoint
-MDMX Unusable
-Coprocessor 2 exception
-Floating point exception
-Virtual coherency exception (instruction)
-Trap exception
-Arithmetic overflow
-Coprocessor unavailable
-Illegal instruction
-Breakpoint
-Bus error (data load/store)
-Bus error (instruction fetch)
-Address error (store)
-Address error (load/execute)
-[1m--- KD# Unhandled Exception [
-Finalized CPU %d
-Kernel configuration:
-KTCB area: 0x%lx -> 0x%lx (0x%lx)
-Should never get here!
-Kernel Halted
-L4 Mips: Spurious interrupt %d
-init_arch: MIPS64 using FASTPATH
-exception vector[%d] = %p
-interrupt vector[%d] = %p
-FPU disabled exception:  cur=%p  owner=%p
-kmem_utcb
-kmem_tcb
-Assertion kernel_space failed in file %s, line %d (fn=%p)
-pistachio/kernel/src/glue/v4-mips64/space.cc
-Assertion dummy_tcb failed in file %s, line %d (fn=%p)
-Allocated kernel space of size 0x%x @ %p
-Mapping invalid pagesize (%dKB)
-%dKB mapping @ %p space %p already exists.
-%s:%d: Initialize TLB
--------------------------TLB DUMP-----------------------------
-%2d: [%p] %08lx / %08lx
--------------------------EPC DUMP-----------------------------
-EPC = %16lx
-%c [%16lx] = 0x%08lx
-%s [current]:
-current
-No thread named: %s
-dump kernel interface page
-128K
-256K
-512K
-128M
-256M
-512M
-128G
-256G
-512G
-128T
-256T
-512T
-undefined
-conventional
-reserved
-dedicated
-numa
-global
-Kernel Interface Page:
-%16s %c%c%c%c
-Magic
-%16s 0x%02x.0x%02x
-API version
-litte
-%16s %s-endian, %d-bit
-API flags
-%16s num mrs: %d
-VirtualReg info
-%16s min size: %dKB, alignment: %d, UTCB size: %d
-UTCB area info
-%16s min size: %dKB
-KIP area info
-%16s 0x%p
-Boot info
-%16s schedule precision: %d us
-Clock info
-%16s user base: 0x%03x, system base: 0x%03x, thread bits: %d
-Thread info
-%16s sizes:
-Page info
-, rights: %s%s%s
-Root server:
-%16s ip: 0x%08x,
-root server
-sp: 0x%08x,
-0x%08x:0x%08x
-Kernel descriptor:
-%16s %d.%d
-Kernel ID
-%16s %s %d, %d
-Kernel gen date
-%16s %d.%d.%d
-Kernel version
-Kernel supplier
-%16s %s
-Version string
-Features
-%16s %s
-System call offsets:
-%16s 0x%08x    %17s 0x%08x
-MapControl
-SpaceControl
-ThreadControl
-ProcessorControl
-Lipc
-CacheControl
-ExchangeRegisters
-ThreadSwitch
-Schedule
-Processors %d:
-Proc%3d:       external freq = %dMHz, internal freq = %dMHz
-Memory regions (%d):
-Physical:
-0x%p - 0x%p   %s
-tracebuffer
-bootloader specific
-architecture specific
-<unknown>
-Virtual:
-Memory regions:
-%16s 0x%p - 0x%p
-Main mem
-Reserved mem0
-Reserved mem1
-Dedicated mem0
-Dedicated mem1
-Dedicated mem2
-Dedicated mem3
-Dedicated mem4
-0x%p - 0x%p   %s (%d)
-showqueue
-show scheduling queue
-idle : %t
-present-list fucked???
-*** ERROR ***
-listspaces
-list all address spaces
-showtcbext
-shows thread control block (extended)
-showtcb
-show thread control block
-<noname>
-=== %s == TCB: %p == ID: %p = %p/%p == PRIO: 0x%02x
-UIP: %p   queues: %c%c%c%c%s      wait : %wt:%-wt   space: %p
-USP: %p   tstate: %ws  ready: %w.wt:%-w.wt   pdir : %p
-KSP: %p   sndhd : %-w.wt  send : %w.wt:%-w.wt   pager: %.wt
-total quant:    0x%x us, ts length  :       0x%x us, curr ts: 0x%m us
-resources: %p [
-scheduler: %.wt  send redirector: %.wt  recv redirector: %.wt
-partner: %.wt    saved partner: %.wt      saved state: %s
-WAIT_FE
-WAIT_NF
-LCKRUNN
-LCKWAIT
-HALTED
-user handle:       %p  cop flags:      %02x%s  preempt flags:     %02x [%c]
-exception handler: %t  virtual sender: %t  intended receiver: %t
-incomming notify bits: %p  notify mask:         %p
-last preempted_ip:     %p  preempt_callback_ip: %p
-tcb/tid/name
-mr(%02d):
-Message Tag: %d untyped, label = %x, flags = %c%c%c%c
-Acceptor: %p (%c)
-Error code: %d
-no valid UTCB
-NIL_THRD
-ANY_THRD
-serial
-generic bootinfo
-Generic BootInfo @ %p
-magic:        0x%p
-  version:      %d
-  size:         0x%x
-  num records:  %d
-[%d] Unknown record (type: 0x%x,  version: %d)
-[%d] Multiboot info (version %d):
-  address:   %p
-[%d] Simple executable (version %d):
-  text:      [paddr: %p, vaddr: %p, size: %p]
-  data:      [paddr: %p, vaddr: %p, size: %p]
-  bss:       [paddr: %p, vaddr: %p, size: %p]
-  entry:     %p
-  flags:     %p
-  label:     %p
-  cmdline:   %s
-[%d] Simple module (version %d):
-  start:     %p
-  size:      %p
-  cmdline:   %s
-Doesn't look like a generic bootinfo structure (bootinfo=%p)
-[%d] EFI Tables (version %d):
-  systab:    %p
-  memmap:    [addr: %p, size: 0x%x]
-  memdesc:   [version: 0x%x, size: 0x%x]
-Not a generic bootinfo record (bootinfo=%p).
-Assertion bootinfo_copy failed in file %s, line %d (fn=%p)
-pistachio/kernel/kdb/generic/bootinfo.cc
-console
-Toggle console
-Switch console: %s
-kmem
-kernel memory allocator statistics
-kmem_misc
-Kernel memory statistics:
-  Chunk size  = %d bytes
-  Free chunks = %d (%d%cB)
-Consecutive   Number of
-chunks        matches
-%7d%c      %6d
-Max consecutive chunks: %d
-Kernel memory distribution:
-%16s %6d %cB
-Set = %p,  Entries = %d
-memdump
-dump memory in other space
-dump memory
-wordsize
-change memdump word size
-Memdump wordsize = %d
-%016x
-Continue?
-Continue/Quit
-Dump address
-Space
-(null)
-reset
-reset counters
-disableall
-disable all tracepoints
-enableall
-enable all tracepoints
-disable
-disable tracepoint
-enable
-enable tracepoint
-list
-list tracepoints
-tracepoints
-enable/disable/list tracepoints
-prior
-back to previous menu
-back up to previous menu
-help
-this help message
-Name
-Num  %28s Enb  KDB
-Counter
-%3d   %28s  %c    %c
-%3d - %28s
-List choices
-Tracepoint
-Enter KDB
-Tracepoint %s enabled
-Tracepoint %s disabled
-modeswitch
-change kernel debugger operation mode
-Unknown command: %s
-KDB mode: Command line
-KDB mode: Keystroke
-stats
-config
-KDB configuration
-arch
-architecture specifics
-continue execution
-conf
-%s [0x%lx]:
-ptab
-dump page table
-%p [%p]:%s tree=%p
-kernel
-user
-%p [%p]:%s phys=%p pg=%p %s%3d%cB %c%c%c (%c%c%c) %s
-tid_format
-change output format of thread IDs
-Basic output format
-Global id/Tcb address/Both
-Inline/Separate/Off
-Version field format
-Add separator before <n> lower-most bits of thread number (0-%lu) [0]:
-Special threads in human readable form
-Yes/No
-dumpcp0
-dump cp0 registers
-BadVaddr
-CacheErr
-Cause
-Compare
-Config
-Context
-Count
-EntryHi
-EntryLo0
-EntryLo1
-ErrorEPC
-Index
-LLaddr
-PageMask
-PerfCount
-PRID
-Random
-Status
-TagHi0
-TagLo0
-WatchHi
-WatchLo
-Wired
-XContext
-Dumping Contents of CP0 Registers
-%12s [%2d]  0x%016lx
-%12s [%2d]          0x%08lx
-cpuid
-dump CPUID
-D                 Doubleword every cycle
-DDxDDx            2 Doublewords every 3 cycles
-DDxxDDxx          2 Doublewords every 4 cycles
-DxDxDxDx          2 Doublewords every 4 cycles
-DDxxxDDxxx        2 Doublewords every 5 cycles
-DDxxxxDDxxxx      2 Doublewords every 6 cycles
-DxxDxxDxxDxx      2 Doublewords every 6 cycles
-DDxxxxxxDDxxxxxx  2 Doublewords every 8 cycles
-DxxxDxxxDxxxDxxx  2 Doublewords every 8 cycles
-CPUID:
-unknown CP0_PRID=%8x
-Detected cache: icache = %dk, %d bytes per line, %d way associative
-dcache = %dk, %d bytes per line, %d way associative
-Sibyte SB1, Rev %d
-Data transmit pattern: %s
-System clock is CPU clock divided by %d
-enabled
-disabled
-Master-Checker Mode is %s
-Fast Multiply is %s
-vr4121 rev %d
-unknown
-available
-MIPS16 is %s
-IDT RC64574/2, Rev %d
-R4700, Rev %d.%d
-vr4181 rev %d
-show floating point registers
-findframe
-search for an exception frame
-dumpframe
-show exception frame
-show current user exception frame
-== Stack frame: %p ==
-== STATUS: %8x == CAUSE: %16lx == EPC: %16lx
-at = %16lx, v0 = %16lx, v1 = %16lx, sp = %16lx
-a0 = %16lx, a1 = %16lx, a2 = %16lx, a3 = %16lx
-t0 = %16lx, t1 = %16lx, t2 = %16lx, t3 = %16lx
-t4 = %16lx, t5 = %16lx, t6 = %16lx, t7 = %16lx
-s0 = %16lx, s1 = %16lx, s2 = %16lx, s3 = %16lx
-s4 = %16lx, s5 = %16lx, s6 = %16lx, s7 = %16lx
-t8 = %16lx, t9 = %16lx, s8 = %16lx, gp = %16lx
-ra = %16lx, hi = %16lx, lo = %16lx
-f%d	= %16lx
-FPCSR	= %16lx
-tcb/tid/addr
--- current ASID is %d, CPU %d --
-Reset system
-info
-dump TLB information
-translate
-translate TLB
-dump
-dump hardware TLB
-TLB management
-128k
-256k
-Wthr
-WthrA
-CoEx
-CoCOW
-CoCUW
-Accel
-Index           EntryHi  EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global
-%2d:    %p  %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s
-Index       (virt)   Even Page  (phys)      |      (virt)   Odd Page   (phys)       ASID
-tlb info
-show
-show watch status
-set watch point
-watch
-MIPS Watchpoint
-Phys Address
-Watch read access
-Watch write access
-watch status
-Watch is %s
-Watching physical address: %p for
-write access
-any access
-read access
-NICT
-NICTA::Pistachio - built on May 26 2006 13:19:02 by benno@nofx using gcc version 3.4.3
-SYSCALL_CACHE_CONTROL
-SYSCALL_EXCHANGE_REGISTERS
-unimplemented
-Exhausted ASIDs
-Exhausted ASIDs
-INTERRUPT
-assert
-Exhausted ASIDs
-PREEMPTION_SIGNALED
-assert
-Exhausted ASIDs
-SYSCALL_THREAD_CONTROL_IRQ
-assert
-assert
-SYSCALL_IPC
-IPC_TRANSFER
-assert
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-memdesc overflow
-SYSCALL_MAP_CONTROL
-SYSCALL_PROCESSOR_CONTROL
-TOTAL_QUANTUM_EXPIRED
-PREEMPTION_SIGNALED
-assert
-assert
-assert
-Exhausted ASIDs
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-assert
-assert
-Exhausted ASIDs
-assert
-assert
-PREEMPTION_SIGNALED
-PREEMPTION_SIGNALED
-TIMESLICE_EXPIRED
-SYSCALL_THREAD_SWITCH
-Exhausted ASIDs
-assert
-SYSCALL_SCHEDULE
-assert
-Exhausted ASIDs
-PAGEFAULT_USER
-ktcb write fault
-root kpf
-PAGEFAULT_KERNEL
-unhandled pagefault
-Exhausted ASIDs
-SYSCALL_SPACE_CONTROL
-assert
-assert
-assert
-assert
-UNWIND
-warning
-assert
-assert
-assert
-assert
-assert
-assert
-preemption IPC error
-assert
-panic
-assert
-SYSCALL_THREAD_CONTROL
-unimplemented
-panic
-Unsupported SYSCALL
-Unknown SYSCALL
-:Cache error occured:
-KMEM_ALLOC
-assert
-KMEM_ALLOC
-assert
-KMEM_FREE
-assert
-FPAGE_UNMAP
-assert
-assert
-Exhausted ASIDs
-FPAGE_MAP
-FPAGE_OVERMAP
-Exhausted ASIDs
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-assert
-EXCEPTION_IPC_SYSCALL
-Exhausted ASIDs
-assert
-EXCEPTION_IPC_GENERAL
-Exhausted ASIDs
-assert
-Spurious interrupt
-DISABLED_FPU
-assert
-assert
-invalid page size
-mapping exists
-Exhausted ASIDs
-assert
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-breakin
-assert
-Cx0B
-84Bx
-088b
-34c33
-84c33
-382B
-$cApg
-BqX0
-p4Bx
-.symtab
-.strtab
-.shstrtab
-.text
-.rodata
-.data
-.kdebug
-.sets
-.init
-pistachio/kernel/src/arch/mips64/head.S
-pistachio/kernel/include/glue/v4-mips64/context.h
-pistachio/kernel/include/arch/mips64/mipsregs.h
-pistachio/kernel/include/arch/mips64/regdef.h
-pistachio/kernel/include/arch/mips64/asm.h
-pistachio/kernel/include/l4.h
-pistachio/kernel/include/config.h
-pistachio/kernel/include/glue/v4-mips64/config.h
-pistachio/kernel/include/arch/mips64/page.h
-pistachio/kernel/include/platform/u4600/config.h
-pistachio/kernel/include/api/v4/config.h
-pistachio/kernel/include/types.h
-pistachio/kernel/include/macros.h
-<command line>
-<built-in>
-pistachio/kernel/src/api/v4/cache.cc
-pistachio/kernel/src/api/v4/exregs.cc
-_ZZN5tcb_t16copy_regs_to_mrsEPS_E19__PRETTY_FUNCTION__
-pistachio/kernel/src/api/v4/interrupt.cc
-irq_utcb
-_ZZ16handle_interruptmE12__FUNCTION__
-_Z10irq_threadv
-pistachio/kernel/src/api/v4/ipc.cc
-pistachio/kernel/src/api/v4/kernelinterface.cc
-pistachio/kernel/src/api/v4/map.cc
-pistachio/kernel/src/api/v4/processor.cc
-kiplock
-pistachio/kernel/src/api/v4/schedule.cc
-_Z16init_all_threadsv
-_Z11idle_threadv
-_ZZ12sys_scheduleE12__FUNCTION__
-pistachio/kernel/src/api/v4/space.cc
-__kmem_group_kmem_space
-_ZZN7space_t16handle_pagefaultEPvS0_NS_8access_eEbE12__FUNCTION__
-pistachio/kernel/src/api/v4/thread.cc
-_Z6strcpyPcPKc
-_Z14thread_startupv
-_Z21fake_wait_for_startupP5tcb_t10threadid_t
-_ZZ18create_root_server10threadid_tS_S_7fpage_tS0_mE19__PRETTY_FUNCTION__
-_ZZ18sys_thread_controlE19__PRETTY_FUNCTION__
-_ZZ17init_root_serversvE19__PRETTY_FUNCTION__
-pistachio/kernel/src/glue/v4-mips64/fastpath.S
-build.u4600_iguana/pistachio/pistachio/kernel/include/tcb_layout.h
-build.u4600_iguana/pistachio/pistachio/kernel/include/asmsyms.h
-pistachio/kernel/include/glue/v4-mips64/syscalls.h
-other_exception
-_goto_mips64_l4syscall
-send_path
-ipc_finish
-check_other_tcb
-continue_ipc
-switch_to
-copy_loop
-pistachio/kernel/src/glue/v4-mips64/syscalls.S
-_mips64_l4syscall_return
-pistachio/kernel/src/glue/v4-mips64/traps.S
-CACHE_STR
-XTLB_REFILL_STACK_end
-XTLB_REFILL_STACK
-pistachio/kernel/src/glue/v4-mips64/user.S
-pistachio/kernel/src/arch/mips64/switch.S
-pistachio/kernel/src/generic/lib.cc
-pistachio/kernel/src/generic/kmemory.cc
-pistachio/kernel/src/generic/linear_ptab_walker.cc
-__kmem_group_kmem_pgtab
-pistachio/kernel/src/generic/traceids.cc
-pistachio/kernel/src/glue/v4-mips64/exception.cc
-llval
-_Z7get_regP20mips64_irq_context_tm
-_Z7set_regP20mips64_irq_context_tmm
-pistachio/kernel/src/glue/v4-mips64/init.cc
-_Z17finalize_cpu_initm
-pistachio/kernel/src/glue/v4-mips64/intctrl.cc
-pistachio/kernel/src/glue/v4-mips64/resources.cc
-pistachio/kernel/src/glue/v4-mips64/space.cc
-__kmem_group_kmem_utcb
-__kmem_group_kmem_tcb
-pistachio/kernel/src/glue/v4-mips64/thread.cc
-pistachio/kernel/src/glue/v4-mips64/timer.cc
-pistachio/kernel/src/glue/v4-mips64/tlb.cc
-_ZZ8init_tlbvE12__FUNCTION__
-pistachio/kernel/src/platform/u4600/plat.cc
-pistachio/kernel/kdb/api/v4/input.cc
-_Z7strncmpPKcS0_i
-pistachio/kernel/kdb/api/v4/kernelinterface.cc
-__kdb_root_cmd_dump_kip
-_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE9sizenames
-_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE10monthnames
-_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE8memtypes
-pistachio/kernel/kdb/api/v4/schedule.cc
-__kdb_root_cmd_show_ready
-pistachio/kernel/kdb/api/v4/space.cc
-__kdb_root_cmd_list_spaces
-pistachio/kernel/kdb/api/v4/tcb.cc
-__kdb_root_cmd_show_tcbext
-__kdb_root_cmd_show_tcb
-pistachio/kernel/kdb/api/v4/thread.cc
-pistachio/kernel/kdb/platform/u4600/serial.cc
-_Z11init_serialv
-_Z11getc_serialb
-pistachio/kernel/kdb/platform/u4600/z85230.cc
-zsccbrtc
-_Z10zsccputregP7zsccdevhh
-_Z9zsccflushP7zsccdev
-pistachio/kernel/kdb/generic/init.cc
-pistachio/kernel/kdb/generic/bootinfo.cc
-__kdb_root_cmd_dump_bootinfo
-_ZZN5kdb_t17cmd_dump_bootinfoEP11cmd_group_tE12kip_bootinfo
-pistachio/kernel/kdb/generic/console.cc
-__kdb_config_cmd_toggle_console
-pistachio/kernel/kdb/generic/kmemory.cc
-__kdb_statistics_cmd_kmem_stats
-__kmem_group_kmem_misc
-num_chunks
-pistachio/kernel/kdb/generic/linker_set.cc
-pistachio/kernel/kdb/generic/memdump.cc
-__kdb_root_cmd_memdump_remote
-__kdb_root_cmd_memdump
-__kdb_config_cmd_wordsize
-memdump_wordsize
-kdb_last_dump
-pistachio/kernel/kdb/generic/sprintf.cc
-_Z4putcPPcc
-_Z9print_hexPPcmi
-_Z12print_stringPPcS_i
-_Z9print_decPPcmi
-pistachio/kernel/kdb/generic/tracepoints.cc
-__kdb_tracepoints_cmd_tp_reset
-__kdb_tracepoints_cmd_tp_disable_all
-__kdb_tracepoints_cmd_tp_enable_all
-__kdb_tracepoints_cmd_tp_disable
-__kdb_tracepoints_cmd_tp_enable
-__kdb_tracepoints_cmd_tp_list
-__kdb_root_cmd_tracepoints
-__kdb_tracepoints_cmd__prior
-__kdb_tracepoints_cmd__abort
-__kdb_tracepoints_cmd__help
-_Z15list_tp_choicesv
-pistachio/kernel/kdb/generic/cmd.cc
-__kdb_config_cmd_mode_switch
-_Z7strncmpPcS_i
-_Z14print_cmd_pathP11cmd_group_t
-pistachio/kernel/kdb/generic/entry.cc
-__kdb_root_cmd_statistics
-__kdb_root_cmd_config
-__kdb_root_cmd_arch
-__kdb_root_cmd_go
-__kdb_statistics_cmd__prior
-__kdb_statistics_cmd__abort
-__kdb_statistics_cmd__help
-__kdb_config_cmd__prior
-__kdb_config_cmd__abort
-__kdb_config_cmd__help
-__kdb_arch_cmd__prior
-__kdb_arch_cmd__abort
-__kdb_arch_cmd__help
-__kdb_root_cmd__prior
-__kdb_root_cmd__abort
-__kdb_root_cmd__help
-_ZZN5kdb_t5entryEPvE8kdb_lock
-pistachio/kernel/kdb/generic/input.cc
-_Z14get_key_stringcPKc
-pistachio/kernel/kdb/generic/linear_ptab_dump.cc
-__kdb_root_cmd_dump_ptab
-_ZZN5kdb_t13cmd_dump_ptabEP11cmd_group_tE6spaces
-pistachio/kernel/kdb/generic/print.cc
-pistachio/kernel/kdb/generic/tid_format.cc
-__kdb_config_cmd_tid_format
-pistachio/kernel/kdb/arch/mips64/cp0.cc
-__kdb_arch_cmd_cp0
-regs
-pistachio/kernel/kdb/arch/mips64/cpuid.cc
-__kdb_arch_cmd_cpuid
-_ZZN5kdb_t9cmd_cpuidEP11cmd_group_tE7pattern
-pistachio/kernel/kdb/arch/mips64/frame.cc
-__kdb_root_cmd_dump_fprs
-__kdb_root_cmd_find_frame
-__kdb_root_cmd_dump_frame
-__kdb_root_cmd_dump_current_frame
-pistachio/kernel/kdb/arch/mips64/prepost.cc
-pistachio/kernel/kdb/arch/mips64/reboot.cc
-__kdb_root_cmd_reboot
-pistachio/kernel/kdb/arch/mips64/tlb.cc
-__kdb_mips64_tlb_cmd_tlb_info
-__kdb_mips64_tlb_cmd_mips64_trans
-__kdb_mips64_tlb_cmd_mips64_dum
-__kdb_arch_cmd_mips64_tlb
-__kdb_mips64_tlb_cmd__prior
-__kdb_mips64_tlb_cmd__abort
-__kdb_mips64_tlb_cmd__help
-_ZZN5kdb_t14cmd_mips64_dumEP11cmd_group_tE8pagemask
-_ZZN5kdb_t14cmd_mips64_dumEP11cmd_group_tE5cache
-pistachio/kernel/kdb/arch/mips64/watch.cc
-__kdb_watchpoint_cmd_mips64_wshow
-__kdb_watchpoint_cmd_mips64_wset
-__kdb_arch_cmd_mips64_watch
-__kdb_watchpoint_cmd__prior
-__kdb_watchpoint_cmd__abort
-__kdb_watchpoint_cmd__help
-_mips64_slowpath
-_ZN5tcb_t18send_pagefault_ipcEPvS0_N7space_t8access_eE
-__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd_mips64_wset
-user_thread_switch
-_Z5pzscciPcii
-__tracepoint_SYSCALL_PROCESSOR_CONTROL
-_ZN7space_t4freeEv
-_ZN7space_t4initE7fpage_tS0_
-__setentry_tracepoint_set___tracepoint_KMEM_FREE
-kmem
-_ZN5kdb_t17cmd_tp_enable_allEP11cmd_group_t
-__setentry___kmem_groups___kmem_group_kmem_space
-tracepoint_set
-sys_thread_control
-_Z12print_stringPKcii
-_mips64_interrupt
-_Z9print_hexmiibb
-__tracepoint_FPAGE_UNMAP
-_ZN5kdb_t4postEv
-kdb_consoles
-_ZN5kdb_t4initEv
-printf
-_Z16handle_interruptm
-__tracepoint_FPAGE_MAP
-user_processor_control
-__setentry_tracepoint_set___tracepoint_TOTAL_QUANTUM_EXPIRED
-__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd_mips64_wshow
-__setentry_tracepoint_set___tracepoint_KMEM_ALLOC
-_Z13init_platformm
-_ZN12linker_set_t3getEm
-arch
-__setentry___kdb_group_config___kdb_config_cmd_toggle_console
-_ZN5kdb_t12cmd_show_tcbEP11cmd_group_t
-_ZN5kdb_t6cmd_goEP11cmd_group_t
-_end_text_phys
-_ZN5kdb_t14cmd_tid_formatEP11cmd_group_t
-kdb_current_console
-__setentry___kdb_group_root___kdb_root_cmd_tracepoints
-__setentry___kdb_group_root___kdb_root_cmd_list_spaces
-_ZN7space_t16handle_pagefaultEPvS0_NS_8access_eEb
-_Z7get_hexPKcmS0_
-_Z9print_tidmmmb
-spaces_list_lock
-timer
-_ZN5kdb_t18cmd_toggle_consoleEP11cmd_group_t
-_ZN11scheduler_t5startEt
-_Z17init_kernel_spacev
-__setentry___kdb_group_root___kdb_root_cmd_dump_ptab
-_Z11putc_serialc
-_ZN5tcb_t19is_interrupt_threadEv
-__setentry_tracepoint_set___tracepoint_EXCEPTION_IPC_SYSCALL
-_bootstack_bottom
-plat_cpu_freq
-intctrl
-_Z4putcc
-_ZN9intctrl_t9init_archEv
-bootinfo_copy
-__mips64_extra_vector
-asid_cache
-user_map_control
-_ZN18thread_resources_t4initEP5tcb_t
-__setentry___kdb_group_arch___kdb_arch_cmd__help
-intctrl_t_handle_irq
-__tracepoint_PAGEFAULT_USER
-kernel_version_string
-_ZN5kdb_t12cmd_tp_resetEP11cmd_group_t
-__setentry___kdb_group_root___kdb_root_cmd_dump_bootinfo
-kmem_pgtab
-__setentry___kdb_group_statistics___kdb_statistics_cmd_kmem_stats
-K_TEMP3
-__tracepoint_SYSCALL_IPC
-_start_setlist
-memcpy
-_ZN5kdb_t14cmd_show_readyEP11cmd_group_t
-_ZN11cmd_group_t19interact_by_commandEv
-__mips64_interrupt_fp
-_Z9print_decmic
-sys_processor_control
-__setentry_tracepoint_set___tracepoint_SYSCALL_EXCHANGE_REGISTERS
-__tracepoint_KMEM_FREE
-global_spaces_list
-kmem_tcb
-_ZN5kdb_t12cmd_wordsizeEP11cmd_group_t
-_Z22init_interrupt_threadsv
-__setentry___kdb_group_arch___kdb_arch_cmd_cpuid
-mips64_dump_memory
-sys_cache_control
-tracepoint_count
-_Z9get_framev
-__kdb_group_arch
-_ZN18thread_resources_t4saveEP5tcb_t
-__tracepoint_FPAGE_OVERMAP
-_Z16handle_ipc_errorv
-__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_CONTROL_IRQ
-__setentry___kdb_group_statistics___kdb_statistics_cmd__prior
-_ZN5tcb_t15create_inactiveE10threadid_tS0_
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__prior
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_mips64_dum
-__setentry___kdb_group_root___kdb_root_cmd__prior
-syscall_exception
-mips64_break
-_start_text_phys
-plat_bus_freq
-_ZN18thread_resources_t4loadEP5tcb_t
-_ZN7space_t12allocate_tcbEPv
-_ZN11scheduler_t22handle_timer_interruptEv
-__setentry___kdb_group_statistics___kdb_statistics_cmd__abort
-_ZN13memory_info_t6insertEN9memdesc_t6type_eEmbPvS2_
-__tracepoint_PREEMPTION_FAULT
-__setentry___kdb_group_root___kdb_root_cmd_dump_current_frame
-_Z22redirector_loop_detect10threadid_tS_
-__tracepoint_KMEM_ALLOC
-__setentry___kdb_group_root___kdb_root_cmd__help
-user_schedule
-_mips64_xtlb_miss
-_ZN11cmd_group_t8interactEPS_Pc
-_end_setlist
-_ZN5kdb_t11cmd_memdumpEP11cmd_group_t
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__abort
-trace_names
-_ZN5kdb_t7cmd_cp0EP11cmd_group_t
-_ZN5kdb_t15cmd_tracepointsEP11cmd_group_t
-_ZN5kdb_t10cmd__priorEP11cmd_group_t
-handle_xtlb_miss
-handle_stlb_miss
-_ZN5tcb_t13restore_stateEv
-__setentry___kmem_groups___kmem_group_kmem_pgtab
-_start_text
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_enable
-__setentry___kdb_group_config___kdb_config_cmd__prior
-kdesc
-statistics
-__setentry_tracepoint_set___tracepoint_SYSCALL_SPACE_CONTROL
-__tracepoint_PAGEFAULT_KERNEL
-__mips64_interrupt
-_ZN5kdb_t14cmd_mips64_tlbEP11cmd_group_t
-_ZN7space_t17sync_kernel_spaceEPv
-handle_tlb_mod
-_ZN6kmem_t4initEPvS0_
-_ZN11scheduler_t12current_timeE
-__setentry_tracepoint_set___tracepoint_SYSCALL_PROCESSOR_CONTROL
-_ZN5kdb_t16cmd_mips64_wshowEP11cmd_group_t
-sys_exchange_registers
-_ZN5tcb_t4initE10threadid_t
-__setentry_tracepoint_set___tracepoint_TIMESLICE_EXPIRED
-_end_text
-__tracepoint_TIMESLICE_EXPIRED
-__kdb_group_config
-_Z14init_processortmm
-watchpoint
-mips64_return_from_notify0
-tlb_lock
-__setentry_tracepoint_set___tracepoint_SYSCALL_IPC
-roottask_space
-_mips64_fastpath
-_ZN5tcb_t19check_utcb_locationEm
-__kdb_group_watchpoint
-__setentry___kdb_group_root___kdb_root_cmd_dump_frame
-_ZN7space_t20utcb_to_kernel_spaceEP6utcb_t
-KERNEL_BASE
-_Z17init_root_serversv
-__setentry___kdb_group_arch___kdb_arch_cmd_mips64_tlb
-sys_space_control
-mips64_watch
-_memory_descriptors_size
-__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__prior
-present_list_lock
-kmem_space
-__setentry___kmem_groups___kmem_group_kmem_misc
-_start_sets
-spurious_interrupt
-_ZN11scheduler_t13enqueue_readyEP5tcb_t
-__setentry___kdb_group_arch___kdb_arch_cmd_mips64_watch
-_Z11kdebug_initv
-__setentry___kdb_group_root___kdb_root_cmd_arch
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_enable_all
-_mips64_restore_user
-__setentry_tracepoint_set___tracepoint_FPAGE_MAP
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_tlb_info
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__prior
-_ZN5kdb_t14cmd_tp_disableEP11cmd_group_t
-_mips64_stlb_miss
-__kdb_group_statistics
-fprintf
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__help
-__mips64_xtlb_refill
-sys_map_control
-_ZN18thread_resources_t5purgeEP5tcb_t
-_ZN11cmd_group_t15interact_by_keyEv
-_ZN6kmem_t13alloc_alignedEmmm
-_ZN7space_t7readmemEPvPm
-_ZN5kdb_t12cmd_tlb_infoEP11cmd_group_t
-_Z15mips64_dump_tlbv
-ConfigTable
-K_STACK_BOTTOM
-_ZN11scheduler_t5yieldEP5tcb_t
-startup_system
-_ZN12linker_set_t4nextEv
-__setentry_tracepoint_set___tracepoint_SYSCALL_MAP_CONTROL
-__tracepoint_PREEMPTION_SIGNALED
-_ZN5kdb_t15cmd_list_spacesEP11cmd_group_t
-_Z8dump_tcbP5tcb_t
-__setentry___kdb_group_config___kdb_config_cmd__abort
-__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_SWITCH
-_mips64_l4syscall
-_ZN5kdb_t14cmd_kmem_statsEP11cmd_group_t
-_ZN5kdb_t15cmd_mode_switchEP11cmd_group_t
-kdb_initfuncs
-user_lipc
-_ZN6kmem_t5allocEm
-_ZN5kdb_t10cmd__abortEP11cmd_group_t
-__idle_utcb
-_ZN5kdb_t14cmd_find_frameEP11cmd_group_t
-__kdb_group_tracepoints
-__setentry___kdb_group_config___kdb_config_cmd_tid_format
-_Z10init_hellov
-__setentry___kdb_group_arch___kdb_arch_cmd__abort
-_bootstack_top
-_start
-_ZN7space_t9map_fpageE11phys_desc_t7fpage_t
-_mips64_xtlb_fall_through
-_ZN5kdb_t8cmd_archEP11cmd_group_t
-_mips64_syscall_exception
-scheduler
-_Z18create_root_server10threadid_tS_S_7fpage_tS0_m
-__setentry___kdb_group_root___kdb_root_cmd_show_ready
-_ZN5kdb_t3preEv
-_ZN11scheduler_t4initEb
-__tracepoint_TOTAL_QUANTUM_EXPIRED
-mips64_exception
-__tracepoint_SYSCALL_EXCHANGE_REGISTERS
-_Z11kdb_get_tcbv
-_Z19init_kernel_threadsv
-features_end
-_ZN5tcb_t10save_stateEv
-__tracepoint_SYSCALL_MAP_CONTROL
-__setentry_tracepoint_set___tracepoint_INTERRUPT
-_ZN18thread_resources_t9spill_fpuEP5tcb_t
-__setentry_tracepoint_set___tracepoint_FPAGE_OVERMAP
-_Z12init_consolev
-_Z9get_spacePKc
-_ZN5kdb_t10cmd_rebootEP11cmd_group_t
-root
-__tracepoint_UNWIND
-__setentry___kdb_group_root___kdb_root_cmd_show_tcbext
-dummy_tcb
-__setentry___kdb_group_arch___kdb_arch_cmd__prior
-kmem_misc
-_ZN5tcb_t8activateEPFvvE10threadid_t
-_ZN7space_t10read_fpageE7fpage_tP11phys_desc_tP11perm_desc_t
-_ZN11scheduler_t16find_next_threadEP12prio_queue_t
-kdb_tid_format
-_Z10get_choicePKcS0_c
-_ZN5kdb_t13cmd_dump_ptabEP11cmd_group_t
-processor_resources
-memory_descriptors
-__tracepoint_EXCEPTION_IPC_SYSCALL
-_ZN5kdb_t15cmd_mips64_wsetEP11cmd_group_t
-mips64_illegal
-_ZN5kdb_t5entryEPv
-_Z9init_setsv
-__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_CONTROL
-_ZN12linker_set_t4sizeEv
-__setentry___kdb_group_root___kdb_root_cmd_memdump
-_ZN5kdb_t18cmd_memdump_remoteEP11cmd_group_t
-mips64_return_from_notify1
-memset
-init_cpu
-mips64_cpu_unavail
-__setentry_tracepoint_set___tracepoint_PAGEFAULT_KERNEL
-_ZN6kmem_t4freeEPvm
-K_TEMP0
-__idle_tcb
-__setentry_tracepoint_set___tracepoint_SYSCALL_SCHEDULE
-_ZN18thread_resources_t28mips64_fpu_unavail_exceptionEP5tcb_tP20mips64_irq_context_t
-__setentry___kdb_group_root___kdb_root_cmd_memdump_remote
-_Z9do_printfPKcPv
-__setentry___kdb_group_root___kdb_root_cmd__abort
-__setentry_tracepoint_set___tracepoint_IPC_TRANSFER
-__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__abort
-__setentry___kdb_group_root___kdb_root_cmd_reboot
-__tracepoint_SYSCALL_THREAD_CONTROL_IRQ
-__tracepoint_SYSCALL_SCHEDULE
-__setentry___kdb_group_root___kdb_root_cmd_dump_kip
-__setentry___kmem_groups___kmem_group_kmem_tcb
-_Z13print_hex_sepmiPKc
-__setentry_tracepoint_set___tracepoint_UNWIND
-__setentry_tracepoint_set___tracepoint_SYSCALL_CACHE_CONTROL
-_ZN5kdb_t9cmd_cpuidEP11cmd_group_t
-__setentry___kdb_group_config___kdb_config_cmd__help
-_ZN23kernel_interface_page_t4initEv
-__setentry___kdb_group_config___kdb_config_cmd_mode_switch
-__setentry___kdb_group_root___kdb_root_cmd_config
-sys_schedule
-_ZN11scheduler_t14switch_highestEP5tcb_tS1_
-_ZN5tcb_t19check_utcb_locationEv
-_ZN7timer_t8init_cpuEv
-_ZN5kdb_t16cmd_mips64_transEP11cmd_group_t
-__kmem_groups
-_ZN12linker_set_t5printEv
-global_present_list
-sprintf
-_ZN18thread_resources_t4freeEP5tcb_t
-_ZN5tcb_t10delete_tcbEv
-kernel_space
-user_space_control
-_Z10get_threadPKc
-__mips64_tlb_refill
-__mips64_cache_error
-_Z12kdebug_entryPv
-_memory_descriptors_offset
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_disable
-_ZN5kdb_t15cmd_show_tcbextEP11cmd_group_t
-user_exchange_registers
-interrupt_handlers
-_Z4getcb
-_Z9dump_utcbP5tcb_t
-_mips64_exception
-_ZN13memory_info_t11get_memdescEm
-__setentry___kdb_group_root___kdb_root_cmd_dump_fprs
-__tracepoint_INTERRUPT
-_Z17mips64_dump_frameP20mips64_irq_context_t
-__setentry_tracepoint_set___tracepoint_PREEMPTION_FAULT
-_ZN5tcb_t16migrate_to_spaceEP7space_t
-_Z12memdump_loopP7space_tPv
-_Z24thread_control_interrupt10threadid_tS_
-__setentry___kdb_group_statistics___kdb_statistics_cmd__help
-_ZN5kdb_t18cmd_tp_disable_allEP11cmd_group_t
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_disable_all
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__help
-_ZN5kdb_t13cmd_tp_enableEP11cmd_group_t
-_ZN11scheduler_t16end_of_timesliceEP5tcb_t
-_ZN12linker_set_t5resetEv
-_ZN5kdb_t12cmd_dump_kipEP11cmd_group_t
-_ZN5tcb_t19send_preemption_ipcEm
-processor_descriptors
-_ZN7space_t12map_roottaskEPv
-_ZN5kdb_t13cmd_dump_fprsEP11cmd_group_t
-__kdb_group_root
-mips64_tlb
-_ZN5kdb_t14cmd_mips64_dumEP11cmd_group_t
-_Z12read_cp0_regm
-_ZN7space_t20init_kernel_mappingsEv
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_reset
-init_pageing
-_ZN11scheduler_t18enqueue_ready_headEP5tcb_t
-__tracepoint_SYSCALL_THREAD_CONTROL
-_ZN5kdb_t17cmd_dump_bootinfoEP11cmd_group_t
-__setentry___kdb_group_root___kdb_root_cmd_find_frame
-_ZN5kdb_t14cmd_statisticsEP11cmd_group_t
-_end_sets
-_ZN5kdb_t10cmd_configEP11cmd_group_t
-__tracepoint_SYSCALL_THREAD_SWITCH
-_Z20kdebug_check_breakinv
-K_TEMP1
-K_TEMP4
-__tracepoint_SYSCALL_SPACE_CONTROL
-printf_spin_lock
-__setentry_tracepoint_set___tracepoint_FPAGE_UNMAP
-_ZN7space_t13map_dummy_tcbEPv
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_mips64_trans
-_Z10free_spaceP7space_t
-__setentry_tracepoint_set___tracepoint_DISABLED_FPU
-__setentry_tracepoint_set___tracepoint_PREEMPTION_SIGNALED
-__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__help
-_ZN7timer_t11init_globalEv
-sys_thread_switch
-K_TEMP2
-__tracepoint_SYSCALL_CACHE_CONTROL
-__setentry___kdb_group_root___kdb_root_cmd_go
-_Z8init_tlbv
-__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__abort
-_mips64_tlb_mod
-hw_pgshifts
-__setentry___kmem_groups___kmem_group_kmem_utcb
-_ZN5tcb_t6unwindENS_15unwind_reason_eE
-tracepoints
-_Z9dump_fprsP5tcb_t
-__setentry___kdb_group_root___kdb_root_cmd_show_tcb
-_Z7wbflushv
-_ZN11scheduler_t8scheduleEP5tcb_t
-_ZN7space_t13allocate_utcbEP5tcb_t
-exception_handlers
-__setentry___kdb_group_arch___kdb_arch_cmd_cp0
-__setentry___kdb_group_config___kdb_config_cmd_wordsize
-_ZN18thread_resources_t16mips64_fpu_spillEP5tcb_t
-_ZN5kdb_t14cmd_dump_frameEP11cmd_group_t
-__setentry_tracepoint_set___tracepoint_PAGEFAULT_USER
-_Z7memdumpP7space_tPv
-_ZN7space_t11add_mappingEPvS0_N7pgent_t8pgsize_eEbb
-_ZN7space_t22release_kernel_mappingEPvS0_m
-_Z13thread_returnv
-__kdb_group_mips64_tlb
-user_ipc
-_ZN5kdb_t22cmd_dump_current_frameEP11cmd_group_t
-_ZN5kdb_t9cmd__helpEP11cmd_group_t
-sys_ipc
-init_arch
-_Z14allocate_spacev
-_ZN11scheduler_t21total_quantum_expiredEP5tcb_t
-_ZN5tcb_t20create_kernel_threadE10threadid_tP6utcb_t
-_Z20get_ptab_dump_rangesPPvPmPN7pgent_t8pgsize_eE
-_ZN5tcb_t20create_startup_stackEPFvvE
-_ZN7space_t9arch_freeEv
-_ZN16processor_info_t12get_procdescEm
-_ZN5kdb_t16cmd_mips64_watchEP11cmd_group_t
-__setentry___kdb_group_root___kdb_root_cmd_statistics
-user_thread_control
-_ZN7space_t11unmap_fpageE7fpage_tb
-_ZN9intctrl_t8init_cpuEv
-mips64_return_from_notify2
-_Z11do_scheduleP5tcb_tmmm
-_Z7get_decPKcmS0_
-__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_list
-__tracepoint_IPC_TRANSFER
-tp_list
-user_cache_control
-__tracepoint_DISABLED_FPU
-_mips64_l4sysipc_return
-kmem_utcb
-config
-__setentry_tracepoint_set___tracepoint_EXCEPTION_IPC_GENERAL
-handle_timer_interrupt
-_ZN7space_t14lookup_mappingEPvPP7pgent_tPNS1_8pgsize_eE
-_ZN5kdb_t11cmd_tp_listEP11cmd_group_t
-__tracepoint_EXCEPTION_IPC_GENERAL
+[
+  "Bs4c",
+  "34c33",
+  "84c33",
+  "cqP1",
+  "4Bge",
+  "jX%5k",
+  "void tcb_t::copy_regs_to_mrs(tcb_t*)",
+  "handle_interrupt",
+  "sys_schedule",
+  "handle_pagefault",
+  "tcb_t* create_root_server(threadid_t, threadid_t, threadid_t, fpage_t, fpage_t, word_t)",
+  "word_t sys_thread_control(threadid_t, threadid_t, threadid_t, threadid_t, threadid_t, threadid_t, word_t)",
+  "void init_root_servers()",
+  "init_tlb",
+  "SYSCALL_CACHE_CONTROL: current=%p control=%lx, space=%t",
+  "SYS_EXCHANGE_REGISTERS: dest=%t, control=0x%x [%c%c%c%c%c%c%c%c%c%c%c], usp=%p, uip=%p, uflags=%p, pager=%t, uhandle=%x",
+  "Not implemented: %s\n%s, line %d",
+  "pistachio/kernel/include/glue/v4-mips64/tcb.h",
+  "IRQ %d",
+  "%s:%d: CPU%d spurious IRQ%d?",
+  "%s:%d: IRQ handler TID is invalid -- halting IRQ%d",
+  "Assertion irq_tcb->get_state().is_halted() failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/src/api/v4/interrupt.cc",
+  "preemption signalled (irq) for %t",
+  "Assertion !queue_state.is_set(queue_state_t::send) failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/include/api/v4/tcb.h",
+  "SYS_THREAD_CONTROL for IRQ%d (IRQ=%t, handler=%t)",
+  "Assertion !tcb->queue_state.is_set(queue_state_t::ready) failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/include/api/v4/schedule.h",
+  "Assertion queue_state.is_set(queue_state_t::send) failed in file %s, line %d (fn=%p)",
+  "system has %d interrupts",
+  "SYS_IPC: current: %t, to_tid: %t, from_tid: %t, tag: 0x%x (label=0x%x, %c%c%c%c, u=%d)",
+  "IPC transfer message: src=%t, dst=%t",
+  "Memory descriptor overflow (max=%d, n=%d)",
+  "[33m%s",
+  "SYS_MAP_CONTROL: space=%t, control=%p (n = %d, %c%c)",
+  "SYS_PROCESSOR_CONTROL (cpu=%d, ifreq=%d, efreq=%d, voltage=%d",
+  "Registering processor %d in KIP (%dMHz, %dMHz)",
+  "total quantum expired for %t",
+  "preemption signalled for %t",
+  "Assertion prio >= 0 && prio <= MAX_PRIO failed in file %s, line %d (fn=%p)",
+  "Assertion tcb->queue_state.is_set(queue_state_t::ready) failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/src/api/v4/schedule.cc",
+  "Assertion tcb failed in file %s, line %d (fn=%p)",
+  "Assertion max failed in file %s, line %d (fn=%p)",
+  "Assertion tcb != current failed in file %s, line %d (fn=%p)",
+  "timeslice expired for %t",
+  "idle thread started on CPU %d",
+  "SYS_THREAD_SWITCH current=%t, dest=%t",
+  "SYS_SCHEDULE: curr=%t, dest=%t, quantum=%x, timeslice=%x, proc_ctrl=%x, prio=%x",
+  "%s:%d: invalid state (%x)",
+  "Switching to idle thread (CPU %d)",
+  "Assertion !\"We shouldn't get here!\" failed in file %s, line %d (fn=%p)",
+  "Initializing threading",
+  "kmem_space",
+  "write",
+  "read",
+  "execute",
+  "read/write",
+  "unknown",
+  "%t: user %s pagefault at %p, ip=%p",
+  "kernel access raised user pagefault @ %p, ip=%p, space=%p",
+  "root task accessed kernel space @ %p, ip=%p - deny",
+  "%t: kernel pagefault in space %p @ %p, ip=%p, type=%x",
+  "%s:%d: unhandled pagefault @ %p, %p",
+  "wrong access - unable to recover",
+  "SYS_SPACE_CONTROL: space=%t, control=%p, kip_area=%p, utcb_area=%p",
+  "Assertion group->mem >= size failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/include/kmemory.h",
+  "Assertion this->space failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/src/api/v4/thread.cc",
+  "Assertion !this->is_activated() failed in file %s, line %d (fn=%p)",
+  "POLLING",
+  "WAIT_NOTIFY",
+  "RUNNING",
+  "UNKNOWN",
+  "Unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)",
+  "WAIT_XPU_DELTCB",
+  "HALTED",
+  "ABORTED",
+  "WARNING: %s, line %d (fn=%p)\n===> Unresolved unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)",
+  "LCK_WAITING",
+  "LCK_RUNNING",
+  "WAIT_XPU_EXREGS",
+  "WAIT_FOREVER",
+  "Assertion get_utcb() failed in file %s, line %d (fn=%p)",
+  "Assertion this->exists() failed in file %s, line %d (fn=%p)",
+  "Assertion space failed in file %s, line %d (fn=%p)",
+  "Assertion get_saved_partner () == threadid_t::nilthread () failed in file %s, line %d (fn=%p)",
+  "Assertion get_saved_state () == thread_state_t::aborted failed in file %s, line %d (fn=%p)",
+  "Assertion !\"Failed to create root server TCB\\n\" failed in file %s, line %d (fn=%p)",
+  "PANIC in %s, %s, line %d:\n===>",
+  "failed to activate root server",
+  "SYS_THREAD_CONTROL: dest=%t, space=%t, scheduler=%t, pager=%t, utcb=%x",
+  "Initializing root servers",
+  "idle",
+  "root-servers: utcb_area: %p (%dKB), kip_area: %p (%dKB)",
+  "creating root server (%t)",
+  "roottask",
+  "root task not found!",
+  "kmem_alloc (%d [%d%c]), ip: %p",
+  "Assertion (size % KMEM_CHUNKSIZE) == 0 failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/src/generic/kmemory.cc",
+  "kmem_free (%p, %d [%d%c]), ip: %p",
+  "kmem_init (%p, %p) [%d%c]",
+  "kmem_pgtab",
+  "unmap_fpage (fpg=%p  t_spc=%p)",
+  "map_fpage (fpg=%p  t_spc=%p) : addr=%p, phys=%p  map=%d%cB, sz=%d%cB",
+  "subtree",
+  "single map",
+  "overmapping: taddr=%p tsz=%d%cB (%s)",
+  "FASTPATH_IPC",
+  "EVENT",
+  "INTERRUPT",
+  "SYSCALL_IPC",
+  "SYSCALL_EXCHANGE_REGISTERS",
+  "SYSCALL_SPACE_CONTROL",
+  "SYSCALL_THREAD_CONTROL",
+  "SYSCALL_THREAD_SWITCH",
+  "SYSCALL_SCHEDULE",
+  "SYSCALL_MAP_CONTROL",
+  "SYSCALL_PROCESSOR_CONTROL",
+  "SYSCALL_CACHE_CONTROL",
+  "IPC_TRANSFER",
+  "IPC_MESSAGE_OVERFLOW",
+  "TIMESLICE_EXPIRED",
+  "TOTAL_QUANTUM_EXPIRED",
+  "PREEMPTION_FAULT",
+  "PREEMPTION_SIGNALED",
+  "MAP_FPAGE",
+  "FPAGE_OVERMAP",
+  "FPAGE_UNMAP",
+  "UNWIND",
+  "SYSCALL_THREAD_CONTROL_IRQ",
+  "PAGEFAULT_USER",
+  "PAGEFAULT_KERNEL",
+  "KMEM_ALLOC",
+  "KMEM_FREE",
+  "EXCEPTION_IPC_GENERAL",
+  "EXCEPTION_IPC_SYSCALL",
+  "DISABLED_FPU",
+  "Read k-register",
+  "Write k-register",
+  "pistachio/kernel/src/glue/v4-mips64/exception.cc",
+  "Assertion context->status & ST_KSU failed in file %s, line %d (fn=%p)",
+  "EXCEPTION_IPC_SYSCALL: (%p) IP = %p, v0 = 0x%016lx",
+  "Unable to deliver user exception: no exception handler.",
+  "Unable to deliver user exception: IPC error.",
+  "[1m--- KD# %s ---",
+  "Unhandled User SYSCALL",
+  "[1m--- KD#",
+  "Assertion !(context->cause & CAUSE_BD) failed in file %s, line %d (fn=%p)",
+  "[not mapped]",
+  "Virtual coherency exception (data)",
+  "EXCEPTION_IPC_GENERAL: (%p) exc_no %d, exc_code %016lx, IP = %p",
+  "Cache error in debug mode",
+  "Machine check",
+  "Watchpoint",
+  "MDMX Unusable",
+  "Coprocessor 2 exception",
+  "Floating point exception",
+  "Virtual coherency exception (instruction)",
+  "Trap exception",
+  "Arithmetic overflow",
+  "Coprocessor unavailable",
+  "Illegal instruction",
+  "Breakpoint",
+  "Bus error (data load/store)",
+  "Bus error (instruction fetch)",
+  "Address error (store)",
+  "Address error (load/execute)",
+  "[1m--- KD# Unhandled Exception [",
+  "Finalized CPU %d",
+  "Kernel configuration:",
+  "KTCB area: 0x%lx -> 0x%lx (0x%lx)",
+  "Should never get here!\nKernel Halted",
+  "L4 Mips: Spurious interrupt %d",
+  "init_arch: MIPS64 using FASTPATH",
+  "exception vector[%d] = %p",
+  "interrupt vector[%d] = %p",
+  "FPU disabled exception:  cur=%p  owner=%p",
+  "kmem_utcb",
+  "kmem_tcb",
+  "Assertion kernel_space failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/src/glue/v4-mips64/space.cc",
+  "Assertion dummy_tcb failed in file %s, line %d (fn=%p)",
+  "Allocated kernel space of size 0x%x @ %p",
+  "Mapping invalid pagesize (%dKB)",
+  "%dKB mapping @ %p space %p already exists.",
+  "%s:%d: Initialize TLB",
+  "-------------------------TLB DUMP-----------------------------",
+  "%2d: [%p] %08lx / %08lx",
+  "-------------------------EPC DUMP-----------------------------",
+  "EPC = %16lx",
+  "%c [%16lx] = 0x%08lx",
+  "%s [current]:",
+  "current",
+  "No thread named: %s",
+  "dump kernel interface page",
+  "128K",
+  "256K",
+  "512K",
+  "128M",
+  "256M",
+  "512M",
+  "128G",
+  "256G",
+  "512G",
+  "128T",
+  "256T",
+  "512T",
+  "undefined",
+  "conventional",
+  "reserved",
+  "dedicated",
+  "numa",
+  "global",
+  "Kernel Interface Page:",
+  "%16s %c%c%c%c",
+  "Magic",
+  "%16s 0x%02x.0x%02x",
+  "API version",
+  "litte",
+  "%16s %s-endian, %d-bit",
+  "API flags",
+  "%16s num mrs: %d",
+  "VirtualReg info",
+  "%16s min size: %dKB, alignment: %d, UTCB size: %d",
+  "UTCB area info",
+  "%16s min size: %dKB",
+  "KIP area info",
+  "%16s 0x%p",
+  "Boot info",
+  "%16s schedule precision: %d us",
+  "Clock info",
+  "%16s user base: 0x%03x, system base: 0x%03x, thread bits: %d",
+  "Thread info",
+  "%16s sizes:",
+  "Page info",
+  ", rights: %s%s%s",
+  "Root server:",
+  "%16s ip: 0x%08x,",
+  "root server",
+  "sp: 0x%08x,",
+  "0x%08x:0x%08x",
+  "Kernel descriptor:",
+  "%16s %d.%d",
+  "Kernel ID",
+  "%16s %s %d, %d",
+  "Kernel gen date",
+  "%16s %d.%d.%d",
+  "Kernel version",
+  "Kernel supplier",
+  "%16s %s",
+  "Version string",
+  "Features",
+  "%16s %s",
+  "System call offsets:",
+  "%16s 0x%08x    %17s 0x%08x",
+  "MapControl",
+  "SpaceControl",
+  "ThreadControl",
+  "ProcessorControl",
+  "Lipc",
+  "CacheControl",
+  "ExchangeRegisters",
+  "ThreadSwitch",
+  "Schedule",
+  "Processors %d:",
+  "Proc%3d:       external freq = %dMHz, internal freq = %dMHz",
+  "Memory regions (%d):",
+  "Physical:",
+  "0x%p - 0x%p   %s",
+  "tracebuffer",
+  "bootloader specific",
+  "architecture specific",
+  "<unknown>",
+  "Virtual:",
+  "Memory regions:",
+  "%16s 0x%p - 0x%p",
+  "Main mem",
+  "Reserved mem0",
+  "Reserved mem1",
+  "Dedicated mem0",
+  "Dedicated mem1",
+  "Dedicated mem2",
+  "Dedicated mem3",
+  "Dedicated mem4",
+  "0x%p - 0x%p   %s (%d)",
+  "showqueue",
+  "show scheduling queue",
+  "idle : %t",
+  "present-list fucked???",
+  "*** ERROR ***",
+  "listspaces",
+  "list all address spaces",
+  "showtcbext",
+  "shows thread control block (extended)",
+  "showtcb",
+  "show thread control block",
+  "<noname>",
+  "=== %s == TCB: %p == ID: %p = %p/%p == PRIO: 0x%02x",
+  "UIP: %p   queues: %c%c%c%c%s      wait : %wt:%-wt   space: %p",
+  "USP: %p   tstate: %ws  ready: %w.wt:%-w.wt   pdir : %p",
+  "KSP: %p   sndhd : %-w.wt  send : %w.wt:%-w.wt   pager: %.wt",
+  "total quant:    0x%x us, ts length  :       0x%x us, curr ts: 0x%m us",
+  "resources: %p [",
+  "scheduler: %.wt  send redirector: %.wt  recv redirector: %.wt",
+  "partner: %.wt    saved partner: %.wt      saved state: %s",
+  "WAIT_FE",
+  "WAIT_NF",
+  "LCKRUNN",
+  "LCKWAIT",
+  "HALTED",
+  "user handle:       %p  cop flags:      %02x%s  preempt flags:     %02x [%c]\nexception handler: %t  virtual sender: %t  intended receiver: %t",
+  "incomming notify bits: %p  notify mask:         %p",
+  "last preempted_ip:     %p  preempt_callback_ip: %p",
+  "tcb/tid/name",
+  "mr(%02d):",
+  "Message Tag: %d untyped, label = %x, flags = %c%c%c%c",
+  "Acceptor: %p (%c)",
+  "Error code: %d",
+  "no valid UTCB",
+  "NIL_THRD",
+  "ANY_THRD",
+  "serial",
+  "generic bootinfo",
+  "Generic BootInfo @ %p",
+  "magic:        0x%p\n  version:      %d\n  size:         0x%x\n  num records:  %d",
+  "[%d] Unknown record (type: 0x%x,  version: %d)",
+  "[%d] Multiboot info (version %d):\n  address:   %p",
+  "[%d] Simple executable (version %d):\n  text:      [paddr: %p, vaddr: %p, size: %p]\n  data:      [paddr: %p, vaddr: %p, size: %p]\n  bss:       [paddr: %p, vaddr: %p, size: %p]\n  entry:     %p\n  flags:     %p\n  label:     %p\n  cmdline:   %s",
+  "[%d] Simple module (version %d):\n  start:     %p\n  size:      %p\n  cmdline:   %s",
+  "Doesn't look like a generic bootinfo structure (bootinfo=%p)",
+  "[%d] EFI Tables (version %d):\n  systab:    %p\n  memmap:    [addr: %p, size: 0x%x]\n  memdesc:   [version: 0x%x, size: 0x%x]",
+  "Not a generic bootinfo record (bootinfo=%p).",
+  "Assertion bootinfo_copy failed in file %s, line %d (fn=%p)",
+  "pistachio/kernel/kdb/generic/bootinfo.cc",
+  "console",
+  "Toggle console",
+  "Switch console: %s",
+  "kmem",
+  "kernel memory allocator statistics",
+  "kmem_misc",
+  "Kernel memory statistics:\n  Chunk size  = %d bytes\n  Free chunks = %d (%d%cB)",
+  "Consecutive   Number of",
+  "chunks        matches",
+  "%7d%c      %6d",
+  "Max consecutive chunks: %d",
+  "Kernel memory distribution:",
+  "%16s %6d %cB",
+  "Set = %p,  Entries = %d",
+  "memdump",
+  "dump memory in other space",
+  "dump memory",
+  "wordsize",
+  "change memdump word size",
+  "Memdump wordsize = %d",
+  "%016x",
+  "Continue?",
+  "Continue/Quit",
+  "Dump address",
+  "Space",
+  "(null)",
+  "reset",
+  "reset counters",
+  "disableall",
+  "disable all tracepoints",
+  "enableall",
+  "enable all tracepoints",
+  "disable",
+  "disable tracepoint",
+  "enable",
+  "enable tracepoint",
+  "list",
+  "list tracepoints",
+  "tracepoints",
+  "enable/disable/list tracepoints",
+  "prior",
+  "back to previous menu",
+  "back up to previous menu",
+  "help",
+  "this help message",
+  "Name",
+  "Num  %28s Enb  KDB",
+  "Counter",
+  "%3d   %28s  %c    %c",
+  "%3d - %28s",
+  "List choices",
+  "Tracepoint",
+  "Enter KDB",
+  "Tracepoint %s enabled",
+  "Tracepoint %s disabled",
+  "modeswitch",
+  "change kernel debugger operation mode",
+  "Unknown command: %s",
+  "KDB mode: Command line",
+  "KDB mode: Keystroke",
+  "stats",
+  "config",
+  "KDB configuration",
+  "arch",
+  "architecture specifics",
+  "continue execution",
+  "conf",
+  "%s [0x%lx]:",
+  "ptab",
+  "dump page table",
+  "%p [%p]:%s tree=%p",
+  "kernel",
+  "user",
+  "%p [%p]:%s phys=%p pg=%p %s%3d%cB %c%c%c (%c%c%c) %s",
+  "tid_format",
+  "change output format of thread IDs",
+  "Basic output format",
+  "Global id/Tcb address/Both",
+  "Inline/Separate/Off",
+  "Version field format",
+  "Add separator before <n> lower-most bits of thread number (0-%lu) [0]:",
+  "Special threads in human readable form",
+  "Yes/No",
+  "dumpcp0",
+  "dump cp0 registers",
+  "BadVaddr",
+  "CacheErr",
+  "Cause",
+  "Compare",
+  "Config",
+  "Context",
+  "Count",
+  "EntryHi",
+  "EntryLo0",
+  "EntryLo1",
+  "ErrorEPC",
+  "Index",
+  "LLaddr",
+  "PageMask",
+  "PerfCount",
+  "PRID",
+  "Random",
+  "Status",
+  "TagHi0",
+  "TagLo0",
+  "WatchHi",
+  "WatchLo",
+  "Wired",
+  "XContext",
+  "Dumping Contents of CP0 Registers",
+  "%12s [%2d]  0x%016lx",
+  "%12s [%2d]          0x%08lx",
+  "cpuid",
+  "dump CPUID",
+  "D                 Doubleword every cycle",
+  "DDxDDx            2 Doublewords every 3 cycles",
+  "DDxxDDxx          2 Doublewords every 4 cycles",
+  "DxDxDxDx          2 Doublewords every 4 cycles",
+  "DDxxxDDxxx        2 Doublewords every 5 cycles",
+  "DDxxxxDDxxxx      2 Doublewords every 6 cycles",
+  "DxxDxxDxxDxx      2 Doublewords every 6 cycles",
+  "DDxxxxxxDDxxxxxx  2 Doublewords every 8 cycles",
+  "DxxxDxxxDxxxDxxx  2 Doublewords every 8 cycles",
+  "CPUID:",
+  "unknown CP0_PRID=%8x",
+  "Detected cache: icache = %dk, %d bytes per line, %d way associative",
+  "dcache = %dk, %d bytes per line, %d way associative",
+  "Sibyte SB1, Rev %d",
+  "Data transmit pattern: %s",
+  "System clock is CPU clock divided by %d",
+  "enabled",
+  "disabled",
+  "Master-Checker Mode is %s",
+  "Fast Multiply is %s",
+  "vr4121 rev %d",
+  "unknown",
+  "available",
+  "MIPS16 is %s",
+  "IDT RC64574/2, Rev %d",
+  "R4700, Rev %d.%d",
+  "vr4181 rev %d",
+  "show floating point registers",
+  "findframe",
+  "search for an exception frame",
+  "dumpframe",
+  "show exception frame",
+  "show current user exception frame",
+  "== Stack frame: %p ==",
+  "== STATUS: %8x == CAUSE: %16lx == EPC: %16lx",
+  "at = %16lx, v0 = %16lx, v1 = %16lx, sp = %16lx",
+  "a0 = %16lx, a1 = %16lx, a2 = %16lx, a3 = %16lx",
+  "t0 = %16lx, t1 = %16lx, t2 = %16lx, t3 = %16lx",
+  "t4 = %16lx, t5 = %16lx, t6 = %16lx, t7 = %16lx",
+  "s0 = %16lx, s1 = %16lx, s2 = %16lx, s3 = %16lx",
+  "s4 = %16lx, s5 = %16lx, s6 = %16lx, s7 = %16lx",
+  "t8 = %16lx, t9 = %16lx, s8 = %16lx, gp = %16lx",
+  "ra = %16lx, hi = %16lx, lo = %16lx",
+  "f%d\t= %16lx",
+  "FPCSR\t= %16lx",
+  "tcb/tid/addr",
+  "-- current ASID is %d, CPU %d --",
+  "Reset system",
+  "info",
+  "dump TLB information",
+  "translate",
+  "translate TLB",
+  "dump",
+  "dump hardware TLB",
+  "TLB management",
+  "128k",
+  "256k",
+  "Wthr",
+  "WthrA",
+  "CoEx",
+  "CoCOW",
+  "CoCUW",
+  "Accel",
+  "Index           EntryHi  EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global",
+  "%2d:    %p  %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s",
+  "Index       (virt)   Even Page  (phys)      |      (virt)   Odd Page   (phys)       ASID",
+  "tlb info",
+  "show",
+  "show watch status",
+  "set watch point",
+  "watch",
+  "MIPS Watchpoint",
+  "Phys Address",
+  "Watch read access",
+  "Watch write access",
+  "watch status",
+  "Watch is %s",
+  "Watching physical address: %p for",
+  "write access",
+  "any access",
+  "read access",
+  "NICT",
+  "NICTA::Pistachio - built on May 26 2006 13:19:02 by benno@nofx using gcc version 3.4.3",
+  "SYSCALL_CACHE_CONTROL",
+  "SYSCALL_EXCHANGE_REGISTERS",
+  "unimplemented",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "INTERRUPT",
+  "assert",
+  "Exhausted ASIDs",
+  "PREEMPTION_SIGNALED",
+  "assert",
+  "Exhausted ASIDs",
+  "SYSCALL_THREAD_CONTROL_IRQ",
+  "assert",
+  "assert",
+  "SYSCALL_IPC",
+  "IPC_TRANSFER",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "memdesc overflow",
+  "SYSCALL_MAP_CONTROL",
+  "SYSCALL_PROCESSOR_CONTROL",
+  "TOTAL_QUANTUM_EXPIRED",
+  "PREEMPTION_SIGNALED",
+  "assert",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "assert",
+  "assert",
+  "PREEMPTION_SIGNALED",
+  "PREEMPTION_SIGNALED",
+  "TIMESLICE_EXPIRED",
+  "SYSCALL_THREAD_SWITCH",
+  "Exhausted ASIDs",
+  "assert",
+  "SYSCALL_SCHEDULE",
+  "assert",
+  "Exhausted ASIDs",
+  "PAGEFAULT_USER",
+  "ktcb write fault",
+  "root kpf",
+  "PAGEFAULT_KERNEL",
+  "unhandled pagefault",
+  "Exhausted ASIDs",
+  "SYSCALL_SPACE_CONTROL",
+  "assert",
+  "assert",
+  "assert",
+  "assert",
+  "UNWIND",
+  "warning",
+  "assert",
+  "assert",
+  "assert",
+  "assert",
+  "assert",
+  "assert",
+  "preemption IPC error",
+  "assert",
+  "panic",
+  "assert",
+  "SYSCALL_THREAD_CONTROL",
+  "unimplemented",
+  "panic",
+  "Unsupported SYSCALL",
+  "Unknown SYSCALL",
+  ":Cache error occured:",
+  "KMEM_ALLOC",
+  "assert",
+  "KMEM_ALLOC",
+  "assert",
+  "KMEM_FREE",
+  "assert",
+  "FPAGE_UNMAP",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "FPAGE_MAP",
+  "FPAGE_OVERMAP",
+  "Exhausted ASIDs",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "assert",
+  "EXCEPTION_IPC_SYSCALL",
+  "Exhausted ASIDs",
+  "assert",
+  "EXCEPTION_IPC_GENERAL",
+  "Exhausted ASIDs",
+  "assert",
+  "Spurious interrupt",
+  "DISABLED_FPU",
+  "assert",
+  "assert",
+  "invalid page size",
+  "mapping exists",
+  "Exhausted ASIDs",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "breakin",
+  "assert",
+  "Cx0B",
+  "84Bx",
+  "088b",
+  "34c33",
+  "84c33",
+  "382B",
+  "$cApg",
+  "BqX0",
+  "p4Bx",
+  ".symtab",
+  ".strtab",
+  ".shstrtab",
+  ".text",
+  ".rodata",
+  ".data",
+  ".kdebug",
+  ".sets",
+  ".init",
+  "pistachio/kernel/src/arch/mips64/head.S",
+  "pistachio/kernel/include/glue/v4-mips64/context.h",
+  "pistachio/kernel/include/arch/mips64/mipsregs.h",
+  "pistachio/kernel/include/arch/mips64/regdef.h",
+  "pistachio/kernel/include/arch/mips64/asm.h",
+  "pistachio/kernel/include/l4.h",
+  "pistachio/kernel/include/config.h",
+  "pistachio/kernel/include/glue/v4-mips64/config.h",
+  "pistachio/kernel/include/arch/mips64/page.h",
+  "pistachio/kernel/include/platform/u4600/config.h",
+  "pistachio/kernel/include/api/v4/config.h",
+  "pistachio/kernel/include/types.h",
+  "pistachio/kernel/include/macros.h",
+  "<command line>",
+  "<built-in>",
+  "pistachio/kernel/src/api/v4/cache.cc",
+  "pistachio/kernel/src/api/v4/exregs.cc",
+  "_ZZN5tcb_t16copy_regs_to_mrsEPS_E19__PRETTY_FUNCTION__",
+  "pistachio/kernel/src/api/v4/interrupt.cc",
+  "irq_utcb",
+  "_ZZ16handle_interruptmE12__FUNCTION__",
+  "_Z10irq_threadv",
+  "pistachio/kernel/src/api/v4/ipc.cc",
+  "pistachio/kernel/src/api/v4/kernelinterface.cc",
+  "pistachio/kernel/src/api/v4/map.cc",
+  "pistachio/kernel/src/api/v4/processor.cc",
+  "kiplock",
+  "pistachio/kernel/src/api/v4/schedule.cc",
+  "_Z16init_all_threadsv",
+  "_Z11idle_threadv",
+  "_ZZ12sys_scheduleE12__FUNCTION__",
+  "pistachio/kernel/src/api/v4/space.cc",
+  "__kmem_group_kmem_space",
+  "_ZZN7space_t16handle_pagefaultEPvS0_NS_8access_eEbE12__FUNCTION__",
+  "pistachio/kernel/src/api/v4/thread.cc",
+  "_Z6strcpyPcPKc",
+  "_Z14thread_startupv",
+  "_Z21fake_wait_for_startupP5tcb_t10threadid_t",
+  "_ZZ18create_root_server10threadid_tS_S_7fpage_tS0_mE19__PRETTY_FUNCTION__",
+  "_ZZ18sys_thread_controlE19__PRETTY_FUNCTION__",
+  "_ZZ17init_root_serversvE19__PRETTY_FUNCTION__",
+  "pistachio/kernel/src/glue/v4-mips64/fastpath.S",
+  "build.u4600_iguana/pistachio/pistachio/kernel/include/tcb_layout.h",
+  "build.u4600_iguana/pistachio/pistachio/kernel/include/asmsyms.h",
+  "pistachio/kernel/include/glue/v4-mips64/syscalls.h",
+  "other_exception",
+  "_goto_mips64_l4syscall",
+  "send_path",
+  "ipc_finish",
+  "check_other_tcb",
+  "continue_ipc",
+  "switch_to",
+  "copy_loop",
+  "pistachio/kernel/src/glue/v4-mips64/syscalls.S",
+  "_mips64_l4syscall_return",
+  "pistachio/kernel/src/glue/v4-mips64/traps.S",
+  "CACHE_STR",
+  "XTLB_REFILL_STACK_end",
+  "XTLB_REFILL_STACK",
+  "pistachio/kernel/src/glue/v4-mips64/user.S",
+  "pistachio/kernel/src/arch/mips64/switch.S",
+  "pistachio/kernel/src/generic/lib.cc",
+  "pistachio/kernel/src/generic/kmemory.cc",
+  "pistachio/kernel/src/generic/linear_ptab_walker.cc",
+  "__kmem_group_kmem_pgtab",
+  "pistachio/kernel/src/generic/traceids.cc",
+  "pistachio/kernel/src/glue/v4-mips64/exception.cc",
+  "llval",
+  "_Z7get_regP20mips64_irq_context_tm",
+  "_Z7set_regP20mips64_irq_context_tmm",
+  "pistachio/kernel/src/glue/v4-mips64/init.cc",
+  "_Z17finalize_cpu_initm",
+  "pistachio/kernel/src/glue/v4-mips64/intctrl.cc",
+  "pistachio/kernel/src/glue/v4-mips64/resources.cc",
+  "pistachio/kernel/src/glue/v4-mips64/space.cc",
+  "__kmem_group_kmem_utcb",
+  "__kmem_group_kmem_tcb",
+  "pistachio/kernel/src/glue/v4-mips64/thread.cc",
+  "pistachio/kernel/src/glue/v4-mips64/timer.cc",
+  "pistachio/kernel/src/glue/v4-mips64/tlb.cc",
+  "_ZZ8init_tlbvE12__FUNCTION__",
+  "pistachio/kernel/src/platform/u4600/plat.cc",
+  "pistachio/kernel/kdb/api/v4/input.cc",
+  "_Z7strncmpPKcS0_i",
+  "pistachio/kernel/kdb/api/v4/kernelinterface.cc",
+  "__kdb_root_cmd_dump_kip",
+  "_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE9sizenames",
+  "_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE10monthnames",
+  "_ZZN5kdb_t12cmd_dump_kipEP11cmd_group_tE8memtypes",
+  "pistachio/kernel/kdb/api/v4/schedule.cc",
+  "__kdb_root_cmd_show_ready",
+  "pistachio/kernel/kdb/api/v4/space.cc",
+  "__kdb_root_cmd_list_spaces",
+  "pistachio/kernel/kdb/api/v4/tcb.cc",
+  "__kdb_root_cmd_show_tcbext",
+  "__kdb_root_cmd_show_tcb",
+  "pistachio/kernel/kdb/api/v4/thread.cc",
+  "pistachio/kernel/kdb/platform/u4600/serial.cc",
+  "_Z11init_serialv",
+  "_Z11getc_serialb",
+  "pistachio/kernel/kdb/platform/u4600/z85230.cc",
+  "zsccbrtc",
+  "_Z10zsccputregP7zsccdevhh",
+  "_Z9zsccflushP7zsccdev",
+  "pistachio/kernel/kdb/generic/init.cc",
+  "pistachio/kernel/kdb/generic/bootinfo.cc",
+  "__kdb_root_cmd_dump_bootinfo",
+  "_ZZN5kdb_t17cmd_dump_bootinfoEP11cmd_group_tE12kip_bootinfo",
+  "pistachio/kernel/kdb/generic/console.cc",
+  "__kdb_config_cmd_toggle_console",
+  "pistachio/kernel/kdb/generic/kmemory.cc",
+  "__kdb_statistics_cmd_kmem_stats",
+  "__kmem_group_kmem_misc",
+  "num_chunks",
+  "pistachio/kernel/kdb/generic/linker_set.cc",
+  "pistachio/kernel/kdb/generic/memdump.cc",
+  "__kdb_root_cmd_memdump_remote",
+  "__kdb_root_cmd_memdump",
+  "__kdb_config_cmd_wordsize",
+  "memdump_wordsize",
+  "kdb_last_dump",
+  "pistachio/kernel/kdb/generic/sprintf.cc",
+  "_Z4putcPPcc",
+  "_Z9print_hexPPcmi",
+  "_Z12print_stringPPcS_i",
+  "_Z9print_decPPcmi",
+  "pistachio/kernel/kdb/generic/tracepoints.cc",
+  "__kdb_tracepoints_cmd_tp_reset",
+  "__kdb_tracepoints_cmd_tp_disable_all",
+  "__kdb_tracepoints_cmd_tp_enable_all",
+  "__kdb_tracepoints_cmd_tp_disable",
+  "__kdb_tracepoints_cmd_tp_enable",
+  "__kdb_tracepoints_cmd_tp_list",
+  "__kdb_root_cmd_tracepoints",
+  "__kdb_tracepoints_cmd__prior",
+  "__kdb_tracepoints_cmd__abort",
+  "__kdb_tracepoints_cmd__help",
+  "_Z15list_tp_choicesv",
+  "pistachio/kernel/kdb/generic/cmd.cc",
+  "__kdb_config_cmd_mode_switch",
+  "_Z7strncmpPcS_i",
+  "_Z14print_cmd_pathP11cmd_group_t",
+  "pistachio/kernel/kdb/generic/entry.cc",
+  "__kdb_root_cmd_statistics",
+  "__kdb_root_cmd_config",
+  "__kdb_root_cmd_arch",
+  "__kdb_root_cmd_go",
+  "__kdb_statistics_cmd__prior",
+  "__kdb_statistics_cmd__abort",
+  "__kdb_statistics_cmd__help",
+  "__kdb_config_cmd__prior",
+  "__kdb_config_cmd__abort",
+  "__kdb_config_cmd__help",
+  "__kdb_arch_cmd__prior",
+  "__kdb_arch_cmd__abort",
+  "__kdb_arch_cmd__help",
+  "__kdb_root_cmd__prior",
+  "__kdb_root_cmd__abort",
+  "__kdb_root_cmd__help",
+  "_ZZN5kdb_t5entryEPvE8kdb_lock",
+  "pistachio/kernel/kdb/generic/input.cc",
+  "_Z14get_key_stringcPKc",
+  "pistachio/kernel/kdb/generic/linear_ptab_dump.cc",
+  "__kdb_root_cmd_dump_ptab",
+  "_ZZN5kdb_t13cmd_dump_ptabEP11cmd_group_tE6spaces",
+  "pistachio/kernel/kdb/generic/print.cc",
+  "pistachio/kernel/kdb/generic/tid_format.cc",
+  "__kdb_config_cmd_tid_format",
+  "pistachio/kernel/kdb/arch/mips64/cp0.cc",
+  "__kdb_arch_cmd_cp0",
+  "regs",
+  "pistachio/kernel/kdb/arch/mips64/cpuid.cc",
+  "__kdb_arch_cmd_cpuid",
+  "_ZZN5kdb_t9cmd_cpuidEP11cmd_group_tE7pattern",
+  "pistachio/kernel/kdb/arch/mips64/frame.cc",
+  "__kdb_root_cmd_dump_fprs",
+  "__kdb_root_cmd_find_frame",
+  "__kdb_root_cmd_dump_frame",
+  "__kdb_root_cmd_dump_current_frame",
+  "pistachio/kernel/kdb/arch/mips64/prepost.cc",
+  "pistachio/kernel/kdb/arch/mips64/reboot.cc",
+  "__kdb_root_cmd_reboot",
+  "pistachio/kernel/kdb/arch/mips64/tlb.cc",
+  "__kdb_mips64_tlb_cmd_tlb_info",
+  "__kdb_mips64_tlb_cmd_mips64_trans",
+  "__kdb_mips64_tlb_cmd_mips64_dum",
+  "__kdb_arch_cmd_mips64_tlb",
+  "__kdb_mips64_tlb_cmd__prior",
+  "__kdb_mips64_tlb_cmd__abort",
+  "__kdb_mips64_tlb_cmd__help",
+  "_ZZN5kdb_t14cmd_mips64_dumEP11cmd_group_tE8pagemask",
+  "_ZZN5kdb_t14cmd_mips64_dumEP11cmd_group_tE5cache",
+  "pistachio/kernel/kdb/arch/mips64/watch.cc",
+  "__kdb_watchpoint_cmd_mips64_wshow",
+  "__kdb_watchpoint_cmd_mips64_wset",
+  "__kdb_arch_cmd_mips64_watch",
+  "__kdb_watchpoint_cmd__prior",
+  "__kdb_watchpoint_cmd__abort",
+  "__kdb_watchpoint_cmd__help",
+  "_mips64_slowpath",
+  "_ZN5tcb_t18send_pagefault_ipcEPvS0_N7space_t8access_eE",
+  "__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd_mips64_wset",
+  "user_thread_switch",
+  "_Z5pzscciPcii",
+  "__tracepoint_SYSCALL_PROCESSOR_CONTROL",
+  "_ZN7space_t4freeEv",
+  "_ZN7space_t4initE7fpage_tS0_",
+  "__setentry_tracepoint_set___tracepoint_KMEM_FREE",
+  "kmem",
+  "_ZN5kdb_t17cmd_tp_enable_allEP11cmd_group_t",
+  "__setentry___kmem_groups___kmem_group_kmem_space",
+  "tracepoint_set",
+  "sys_thread_control",
+  "_Z12print_stringPKcii",
+  "_mips64_interrupt",
+  "_Z9print_hexmiibb",
+  "__tracepoint_FPAGE_UNMAP",
+  "_ZN5kdb_t4postEv",
+  "kdb_consoles",
+  "_ZN5kdb_t4initEv",
+  "printf",
+  "_Z16handle_interruptm",
+  "__tracepoint_FPAGE_MAP",
+  "user_processor_control",
+  "__setentry_tracepoint_set___tracepoint_TOTAL_QUANTUM_EXPIRED",
+  "__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd_mips64_wshow",
+  "__setentry_tracepoint_set___tracepoint_KMEM_ALLOC",
+  "_Z13init_platformm",
+  "_ZN12linker_set_t3getEm",
+  "arch",
+  "__setentry___kdb_group_config___kdb_config_cmd_toggle_console",
+  "_ZN5kdb_t12cmd_show_tcbEP11cmd_group_t",
+  "_ZN5kdb_t6cmd_goEP11cmd_group_t",
+  "_end_text_phys",
+  "_ZN5kdb_t14cmd_tid_formatEP11cmd_group_t",
+  "kdb_current_console",
+  "__setentry___kdb_group_root___kdb_root_cmd_tracepoints",
+  "__setentry___kdb_group_root___kdb_root_cmd_list_spaces",
+  "_ZN7space_t16handle_pagefaultEPvS0_NS_8access_eEb",
+  "_Z7get_hexPKcmS0_",
+  "_Z9print_tidmmmb",
+  "spaces_list_lock",
+  "timer",
+  "_ZN5kdb_t18cmd_toggle_consoleEP11cmd_group_t",
+  "_ZN11scheduler_t5startEt",
+  "_Z17init_kernel_spacev",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_ptab",
+  "_Z11putc_serialc",
+  "_ZN5tcb_t19is_interrupt_threadEv",
+  "__setentry_tracepoint_set___tracepoint_EXCEPTION_IPC_SYSCALL",
+  "_bootstack_bottom",
+  "plat_cpu_freq",
+  "intctrl",
+  "_Z4putcc",
+  "_ZN9intctrl_t9init_archEv",
+  "bootinfo_copy",
+  "__mips64_extra_vector",
+  "asid_cache",
+  "user_map_control",
+  "_ZN18thread_resources_t4initEP5tcb_t",
+  "__setentry___kdb_group_arch___kdb_arch_cmd__help",
+  "intctrl_t_handle_irq",
+  "__tracepoint_PAGEFAULT_USER",
+  "kernel_version_string",
+  "_ZN5kdb_t12cmd_tp_resetEP11cmd_group_t",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_bootinfo",
+  "kmem_pgtab",
+  "__setentry___kdb_group_statistics___kdb_statistics_cmd_kmem_stats",
+  "K_TEMP3",
+  "__tracepoint_SYSCALL_IPC",
+  "_start_setlist",
+  "memcpy",
+  "_ZN5kdb_t14cmd_show_readyEP11cmd_group_t",
+  "_ZN11cmd_group_t19interact_by_commandEv",
+  "__mips64_interrupt_fp",
+  "_Z9print_decmic",
+  "sys_processor_control",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_EXCHANGE_REGISTERS",
+  "__tracepoint_KMEM_FREE",
+  "global_spaces_list",
+  "kmem_tcb",
+  "_ZN5kdb_t12cmd_wordsizeEP11cmd_group_t",
+  "_Z22init_interrupt_threadsv",
+  "__setentry___kdb_group_arch___kdb_arch_cmd_cpuid",
+  "mips64_dump_memory",
+  "sys_cache_control",
+  "tracepoint_count",
+  "_Z9get_framev",
+  "__kdb_group_arch",
+  "_ZN18thread_resources_t4saveEP5tcb_t",
+  "__tracepoint_FPAGE_OVERMAP",
+  "_Z16handle_ipc_errorv",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_CONTROL_IRQ",
+  "__setentry___kdb_group_statistics___kdb_statistics_cmd__prior",
+  "_ZN5tcb_t15create_inactiveE10threadid_tS0_",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__prior",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_mips64_dum",
+  "__setentry___kdb_group_root___kdb_root_cmd__prior",
+  "syscall_exception",
+  "mips64_break",
+  "_start_text_phys",
+  "plat_bus_freq",
+  "_ZN18thread_resources_t4loadEP5tcb_t",
+  "_ZN7space_t12allocate_tcbEPv",
+  "_ZN11scheduler_t22handle_timer_interruptEv",
+  "__setentry___kdb_group_statistics___kdb_statistics_cmd__abort",
+  "_ZN13memory_info_t6insertEN9memdesc_t6type_eEmbPvS2_",
+  "__tracepoint_PREEMPTION_FAULT",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_current_frame",
+  "_Z22redirector_loop_detect10threadid_tS_",
+  "__tracepoint_KMEM_ALLOC",
+  "__setentry___kdb_group_root___kdb_root_cmd__help",
+  "user_schedule",
+  "_mips64_xtlb_miss",
+  "_ZN11cmd_group_t8interactEPS_Pc",
+  "_end_setlist",
+  "_ZN5kdb_t11cmd_memdumpEP11cmd_group_t",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__abort",
+  "trace_names",
+  "_ZN5kdb_t7cmd_cp0EP11cmd_group_t",
+  "_ZN5kdb_t15cmd_tracepointsEP11cmd_group_t",
+  "_ZN5kdb_t10cmd__priorEP11cmd_group_t",
+  "handle_xtlb_miss",
+  "handle_stlb_miss",
+  "_ZN5tcb_t13restore_stateEv",
+  "__setentry___kmem_groups___kmem_group_kmem_pgtab",
+  "_start_text",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_enable",
+  "__setentry___kdb_group_config___kdb_config_cmd__prior",
+  "kdesc",
+  "statistics",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_SPACE_CONTROL",
+  "__tracepoint_PAGEFAULT_KERNEL",
+  "__mips64_interrupt",
+  "_ZN5kdb_t14cmd_mips64_tlbEP11cmd_group_t",
+  "_ZN7space_t17sync_kernel_spaceEPv",
+  "handle_tlb_mod",
+  "_ZN6kmem_t4initEPvS0_",
+  "_ZN11scheduler_t12current_timeE",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_PROCESSOR_CONTROL",
+  "_ZN5kdb_t16cmd_mips64_wshowEP11cmd_group_t",
+  "sys_exchange_registers",
+  "_ZN5tcb_t4initE10threadid_t",
+  "__setentry_tracepoint_set___tracepoint_TIMESLICE_EXPIRED",
+  "_end_text",
+  "__tracepoint_TIMESLICE_EXPIRED",
+  "__kdb_group_config",
+  "_Z14init_processortmm",
+  "watchpoint",
+  "mips64_return_from_notify0",
+  "tlb_lock",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_IPC",
+  "roottask_space",
+  "_mips64_fastpath",
+  "_ZN5tcb_t19check_utcb_locationEm",
+  "__kdb_group_watchpoint",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_frame",
+  "_ZN7space_t20utcb_to_kernel_spaceEP6utcb_t",
+  "KERNEL_BASE",
+  "_Z17init_root_serversv",
+  "__setentry___kdb_group_arch___kdb_arch_cmd_mips64_tlb",
+  "sys_space_control",
+  "mips64_watch",
+  "_memory_descriptors_size",
+  "__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__prior",
+  "present_list_lock",
+  "kmem_space",
+  "__setentry___kmem_groups___kmem_group_kmem_misc",
+  "_start_sets",
+  "spurious_interrupt",
+  "_ZN11scheduler_t13enqueue_readyEP5tcb_t",
+  "__setentry___kdb_group_arch___kdb_arch_cmd_mips64_watch",
+  "_Z11kdebug_initv",
+  "__setentry___kdb_group_root___kdb_root_cmd_arch",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_enable_all",
+  "_mips64_restore_user",
+  "__setentry_tracepoint_set___tracepoint_FPAGE_MAP",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_tlb_info",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__prior",
+  "_ZN5kdb_t14cmd_tp_disableEP11cmd_group_t",
+  "_mips64_stlb_miss",
+  "__kdb_group_statistics",
+  "fprintf",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__help",
+  "__mips64_xtlb_refill",
+  "sys_map_control",
+  "_ZN18thread_resources_t5purgeEP5tcb_t",
+  "_ZN11cmd_group_t15interact_by_keyEv",
+  "_ZN6kmem_t13alloc_alignedEmmm",
+  "_ZN7space_t7readmemEPvPm",
+  "_ZN5kdb_t12cmd_tlb_infoEP11cmd_group_t",
+  "_Z15mips64_dump_tlbv",
+  "ConfigTable",
+  "K_STACK_BOTTOM",
+  "_ZN11scheduler_t5yieldEP5tcb_t",
+  "startup_system",
+  "_ZN12linker_set_t4nextEv",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_MAP_CONTROL",
+  "__tracepoint_PREEMPTION_SIGNALED",
+  "_ZN5kdb_t15cmd_list_spacesEP11cmd_group_t",
+  "_Z8dump_tcbP5tcb_t",
+  "__setentry___kdb_group_config___kdb_config_cmd__abort",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_SWITCH",
+  "_mips64_l4syscall",
+  "_ZN5kdb_t14cmd_kmem_statsEP11cmd_group_t",
+  "_ZN5kdb_t15cmd_mode_switchEP11cmd_group_t",
+  "kdb_initfuncs",
+  "user_lipc",
+  "_ZN6kmem_t5allocEm",
+  "_ZN5kdb_t10cmd__abortEP11cmd_group_t",
+  "__idle_utcb",
+  "_ZN5kdb_t14cmd_find_frameEP11cmd_group_t",
+  "__kdb_group_tracepoints",
+  "__setentry___kdb_group_config___kdb_config_cmd_tid_format",
+  "_Z10init_hellov",
+  "__setentry___kdb_group_arch___kdb_arch_cmd__abort",
+  "_bootstack_top",
+  "_start",
+  "_ZN7space_t9map_fpageE11phys_desc_t7fpage_t",
+  "_mips64_xtlb_fall_through",
+  "_ZN5kdb_t8cmd_archEP11cmd_group_t",
+  "_mips64_syscall_exception",
+  "scheduler",
+  "_Z18create_root_server10threadid_tS_S_7fpage_tS0_m",
+  "__setentry___kdb_group_root___kdb_root_cmd_show_ready",
+  "_ZN5kdb_t3preEv",
+  "_ZN11scheduler_t4initEb",
+  "__tracepoint_TOTAL_QUANTUM_EXPIRED",
+  "mips64_exception",
+  "__tracepoint_SYSCALL_EXCHANGE_REGISTERS",
+  "_Z11kdb_get_tcbv",
+  "_Z19init_kernel_threadsv",
+  "features_end",
+  "_ZN5tcb_t10save_stateEv",
+  "__tracepoint_SYSCALL_MAP_CONTROL",
+  "__setentry_tracepoint_set___tracepoint_INTERRUPT",
+  "_ZN18thread_resources_t9spill_fpuEP5tcb_t",
+  "__setentry_tracepoint_set___tracepoint_FPAGE_OVERMAP",
+  "_Z12init_consolev",
+  "_Z9get_spacePKc",
+  "_ZN5kdb_t10cmd_rebootEP11cmd_group_t",
+  "root",
+  "__tracepoint_UNWIND",
+  "__setentry___kdb_group_root___kdb_root_cmd_show_tcbext",
+  "dummy_tcb",
+  "__setentry___kdb_group_arch___kdb_arch_cmd__prior",
+  "kmem_misc",
+  "_ZN5tcb_t8activateEPFvvE10threadid_t",
+  "_ZN7space_t10read_fpageE7fpage_tP11phys_desc_tP11perm_desc_t",
+  "_ZN11scheduler_t16find_next_threadEP12prio_queue_t",
+  "kdb_tid_format",
+  "_Z10get_choicePKcS0_c",
+  "_ZN5kdb_t13cmd_dump_ptabEP11cmd_group_t",
+  "processor_resources",
+  "memory_descriptors",
+  "__tracepoint_EXCEPTION_IPC_SYSCALL",
+  "_ZN5kdb_t15cmd_mips64_wsetEP11cmd_group_t",
+  "mips64_illegal",
+  "_ZN5kdb_t5entryEPv",
+  "_Z9init_setsv",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_THREAD_CONTROL",
+  "_ZN12linker_set_t4sizeEv",
+  "__setentry___kdb_group_root___kdb_root_cmd_memdump",
+  "_ZN5kdb_t18cmd_memdump_remoteEP11cmd_group_t",
+  "mips64_return_from_notify1",
+  "memset",
+  "init_cpu",
+  "mips64_cpu_unavail",
+  "__setentry_tracepoint_set___tracepoint_PAGEFAULT_KERNEL",
+  "_ZN6kmem_t4freeEPvm",
+  "K_TEMP0",
+  "__idle_tcb",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_SCHEDULE",
+  "_ZN18thread_resources_t28mips64_fpu_unavail_exceptionEP5tcb_tP20mips64_irq_context_t",
+  "__setentry___kdb_group_root___kdb_root_cmd_memdump_remote",
+  "_Z9do_printfPKcPv",
+  "__setentry___kdb_group_root___kdb_root_cmd__abort",
+  "__setentry_tracepoint_set___tracepoint_IPC_TRANSFER",
+  "__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__abort",
+  "__setentry___kdb_group_root___kdb_root_cmd_reboot",
+  "__tracepoint_SYSCALL_THREAD_CONTROL_IRQ",
+  "__tracepoint_SYSCALL_SCHEDULE",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_kip",
+  "__setentry___kmem_groups___kmem_group_kmem_tcb",
+  "_Z13print_hex_sepmiPKc",
+  "__setentry_tracepoint_set___tracepoint_UNWIND",
+  "__setentry_tracepoint_set___tracepoint_SYSCALL_CACHE_CONTROL",
+  "_ZN5kdb_t9cmd_cpuidEP11cmd_group_t",
+  "__setentry___kdb_group_config___kdb_config_cmd__help",
+  "_ZN23kernel_interface_page_t4initEv",
+  "__setentry___kdb_group_config___kdb_config_cmd_mode_switch",
+  "__setentry___kdb_group_root___kdb_root_cmd_config",
+  "sys_schedule",
+  "_ZN11scheduler_t14switch_highestEP5tcb_tS1_",
+  "_ZN5tcb_t19check_utcb_locationEv",
+  "_ZN7timer_t8init_cpuEv",
+  "_ZN5kdb_t16cmd_mips64_transEP11cmd_group_t",
+  "__kmem_groups",
+  "_ZN12linker_set_t5printEv",
+  "global_present_list",
+  "sprintf",
+  "_ZN18thread_resources_t4freeEP5tcb_t",
+  "_ZN5tcb_t10delete_tcbEv",
+  "kernel_space",
+  "user_space_control",
+  "_Z10get_threadPKc",
+  "__mips64_tlb_refill",
+  "__mips64_cache_error",
+  "_Z12kdebug_entryPv",
+  "_memory_descriptors_offset",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_disable",
+  "_ZN5kdb_t15cmd_show_tcbextEP11cmd_group_t",
+  "user_exchange_registers",
+  "interrupt_handlers",
+  "_Z4getcb",
+  "_Z9dump_utcbP5tcb_t",
+  "_mips64_exception",
+  "_ZN13memory_info_t11get_memdescEm",
+  "__setentry___kdb_group_root___kdb_root_cmd_dump_fprs",
+  "__tracepoint_INTERRUPT",
+  "_Z17mips64_dump_frameP20mips64_irq_context_t",
+  "__setentry_tracepoint_set___tracepoint_PREEMPTION_FAULT",
+  "_ZN5tcb_t16migrate_to_spaceEP7space_t",
+  "_Z12memdump_loopP7space_tPv",
+  "_Z24thread_control_interrupt10threadid_tS_",
+  "__setentry___kdb_group_statistics___kdb_statistics_cmd__help",
+  "_ZN5kdb_t18cmd_tp_disable_allEP11cmd_group_t",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_disable_all",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd__help",
+  "_ZN5kdb_t13cmd_tp_enableEP11cmd_group_t",
+  "_ZN11scheduler_t16end_of_timesliceEP5tcb_t",
+  "_ZN12linker_set_t5resetEv",
+  "_ZN5kdb_t12cmd_dump_kipEP11cmd_group_t",
+  "_ZN5tcb_t19send_preemption_ipcEm",
+  "processor_descriptors",
+  "_ZN7space_t12map_roottaskEPv",
+  "_ZN5kdb_t13cmd_dump_fprsEP11cmd_group_t",
+  "__kdb_group_root",
+  "mips64_tlb",
+  "_ZN5kdb_t14cmd_mips64_dumEP11cmd_group_t",
+  "_Z12read_cp0_regm",
+  "_ZN7space_t20init_kernel_mappingsEv",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_reset",
+  "init_pageing",
+  "_ZN11scheduler_t18enqueue_ready_headEP5tcb_t",
+  "__tracepoint_SYSCALL_THREAD_CONTROL",
+  "_ZN5kdb_t17cmd_dump_bootinfoEP11cmd_group_t",
+  "__setentry___kdb_group_root___kdb_root_cmd_find_frame",
+  "_ZN5kdb_t14cmd_statisticsEP11cmd_group_t",
+  "_end_sets",
+  "_ZN5kdb_t10cmd_configEP11cmd_group_t",
+  "__tracepoint_SYSCALL_THREAD_SWITCH",
+  "_Z20kdebug_check_breakinv",
+  "K_TEMP1",
+  "K_TEMP4",
+  "__tracepoint_SYSCALL_SPACE_CONTROL",
+  "printf_spin_lock",
+  "__setentry_tracepoint_set___tracepoint_FPAGE_UNMAP",
+  "_ZN7space_t13map_dummy_tcbEPv",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd_mips64_trans",
+  "_Z10free_spaceP7space_t",
+  "__setentry_tracepoint_set___tracepoint_DISABLED_FPU",
+  "__setentry_tracepoint_set___tracepoint_PREEMPTION_SIGNALED",
+  "__setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__help",
+  "_ZN7timer_t11init_globalEv",
+  "sys_thread_switch",
+  "K_TEMP2",
+  "__tracepoint_SYSCALL_CACHE_CONTROL",
+  "__setentry___kdb_group_root___kdb_root_cmd_go",
+  "_Z8init_tlbv",
+  "__setentry___kdb_group_mips64_tlb___kdb_mips64_tlb_cmd__abort",
+  "_mips64_tlb_mod",
+  "hw_pgshifts",
+  "__setentry___kmem_groups___kmem_group_kmem_utcb",
+  "_ZN5tcb_t6unwindENS_15unwind_reason_eE",
+  "tracepoints",
+  "_Z9dump_fprsP5tcb_t",
+  "__setentry___kdb_group_root___kdb_root_cmd_show_tcb",
+  "_Z7wbflushv",
+  "_ZN11scheduler_t8scheduleEP5tcb_t",
+  "_ZN7space_t13allocate_utcbEP5tcb_t",
+  "exception_handlers",
+  "__setentry___kdb_group_arch___kdb_arch_cmd_cp0",
+  "__setentry___kdb_group_config___kdb_config_cmd_wordsize",
+  "_ZN18thread_resources_t16mips64_fpu_spillEP5tcb_t",
+  "_ZN5kdb_t14cmd_dump_frameEP11cmd_group_t",
+  "__setentry_tracepoint_set___tracepoint_PAGEFAULT_USER",
+  "_Z7memdumpP7space_tPv",
+  "_ZN7space_t11add_mappingEPvS0_N7pgent_t8pgsize_eEbb",
+  "_ZN7space_t22release_kernel_mappingEPvS0_m",
+  "_Z13thread_returnv",
+  "__kdb_group_mips64_tlb",
+  "user_ipc",
+  "_ZN5kdb_t22cmd_dump_current_frameEP11cmd_group_t",
+  "_ZN5kdb_t9cmd__helpEP11cmd_group_t",
+  "sys_ipc",
+  "init_arch",
+  "_Z14allocate_spacev",
+  "_ZN11scheduler_t21total_quantum_expiredEP5tcb_t",
+  "_ZN5tcb_t20create_kernel_threadE10threadid_tP6utcb_t",
+  "_Z20get_ptab_dump_rangesPPvPmPN7pgent_t8pgsize_eE",
+  "_ZN5tcb_t20create_startup_stackEPFvvE",
+  "_ZN7space_t9arch_freeEv",
+  "_ZN16processor_info_t12get_procdescEm",
+  "_ZN5kdb_t16cmd_mips64_watchEP11cmd_group_t",
+  "__setentry___kdb_group_root___kdb_root_cmd_statistics",
+  "user_thread_control",
+  "_ZN7space_t11unmap_fpageE7fpage_tb",
+  "_ZN9intctrl_t8init_cpuEv",
+  "mips64_return_from_notify2",
+  "_Z11do_scheduleP5tcb_tmmm",
+  "_Z7get_decPKcmS0_",
+  "__setentry___kdb_group_tracepoints___kdb_tracepoints_cmd_tp_list",
+  "__tracepoint_IPC_TRANSFER",
+  "tp_list",
+  "user_cache_control",
+  "__tracepoint_DISABLED_FPU",
+  "_mips64_l4sysipc_return",
+  "kmem_utcb",
+  "config",
+  "__setentry_tracepoint_set___tracepoint_EXCEPTION_IPC_GENERAL",
+  "handle_timer_interrupt",
+  "_ZN7space_t14lookup_mappingEPvPP7pgent_tPNS1_8pgsize_eE",
+  "_ZN5kdb_t11cmd_tp_listEP11cmd_group_t",
+  "__tracepoint_EXCEPTION_IPC_GENERAL"
+]

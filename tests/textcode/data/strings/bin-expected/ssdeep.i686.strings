@@ -1,715 +1,717 @@
-/lib/ld-linux.so.2
-SuSESuSE
-__gmon_start__
-libc.so.6
-_IO_stdin_used
-exit
-readdir
-fopen
-strncmp
-optind
-strrchr
-__strdup
-perror
-__progname
-closedir
-strncpy
-__lxstat
-putchar
-fgets
-strlen
-memset
-strstr
-__errno_location
-getopt
-stdout
-fputc
-fputs
-fclose
-__strtol_internal
-malloc
-strcat
-realpath
-ftello
-opendir
-sscanf
-optarg
-stderr
-ioctl
-__fxstat
-fileno
-getcwd
-fwrite
-fread
-strchr
-__xstat
-memmove
-strerror
-__libc_start_main
-fseeko
-vfprintf
-snprintf
-free
-program_invocation_short_name
-GLIBC_2.1
-GLIBC_2.3
-GLIBC_2.0
-PTRh
-WVSQ
-WVS1
-%s: Unable to allocate state variable
-%s: Unable to initialize state variable
-%s: Already at maximum verbosity
-%s: Error message display to user correctly
-%s version %s by Jesse Kornblum
-Copyright (C) 2008 ManTech International Corporation
-Usage: %s [-V|h] [-m file] [-vprdsblc] [-t val] [FILES]
--v - Verbose mode. Displays filename as its being processed
--p - Pretty matching mode. Similar to -d but includes all matches
--d - Directory mode, compare all files in a directory
--s - Silent mode; all errors are supressed
--b - Uses only the bare name of files; all path information omitted
--l - Uses relative paths for filenames
--c - Prints output in CSV format
--t - Only displays matches above the given threshold
--m - Match FILES against known hashes in file
--h - Display this help message
--V - Display version number and exit
-Relative paths and bare names are mutually exclusive
-Directory mode and pretty matching are mutallty exclusive
-Error calling generate_filename
-Unknown error in is_absolute_path
-%s: Illegal threshold
--r - Recursive mode
-vhVpdsblct:rm:
-No matching files loaded
-%s: No input files
-%s: Out of memory
-%s: out of memory
-%s: invalid file header
-unable to insert hash
-matches
-%s: internal data structure inconsistency
-ssdeep,1.0--blocksize:hash:hash,filename
-Hashing: %s%s
-Unable to add hash to set of known hashes
-Is a directory
-symlink creates cycle
-%s: Cycle checking failed to register directory.
-%s: Cycle checking failed to unregister directory.
-%s: Attempt to add existing %s in processing_dir
-Table is NULL in done_processing_dir
-%s: Directory %s not found in done_processing_dir
-I do not believe we will get Eddie Van Halen until we have a triumphant video.
-Try `%s -h` for more information.%s
-Unable to shorten filename
-%s: Internal error. Contact developer!
-%s: NULL state passed to print_error_unicode
-%s: NULL state passed to print_error
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-GCC: (GNU) 4.2.1 (SUSE Linux)
-_IO_stdin_used
-main
-lsh_list_init
-match_init
-match_add
-match_load
-match_compare
-match_pretty
-hash_file
-remove_double_dirs
-process_normal
-have_processed_dir
-processing_dir
-done_processing_dir
-my_table
-find_next_comma
-shift_string
-find_comma_separated_string
-find_next_comma_tchar
-shift_string_tchar
-find_comma_separated_string_tchar
-chop_line
-chop_line_tchar
-mm_magic
-my_dirname
-my_basename
-prepare_filename
-sanity_check
-display_filename
-fatal_error
-print_status
-internal_error
-print_error_unicode
-print_error
-fuzzy_hash_buf
-fuzzy_hash_file
-fuzzy_compare
-edit_distn
-find_file_size
-/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S
-/usr/src/packages/BUILD/glibc-2.6.1/csu
-GNU AS 2.17.50
-/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crtn.S
-/usr/src/packages/BUILD/glibc-2.6.1/csu
-GNU AS 2.17.50
-init.c
-/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
-crti.S
-/usr/include
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-main.c
-stdlib.h
-stddef.h
-types.h
-libio.h
-stdio.h
-stdint.h
-main.h
-getopt.h
-ssdeep.h
-yf=Bj
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-match.c
-stddef.h
-types.h
-stdio.h
-libio.h
-stdint.h
-main.h
-ssdeep.h
-=Zk7L
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-engine.c
-stddef.h
-types.h
-stdio.h
-libio.h
-stdint.h
-main.h
-/usr/include/sys
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-dig.c
-stat.h
-stddef.h
-types.h
-libio.h
-stdio.h
-time.h
-stat.h
-stdint.h
-dirent.h
-main.h
-ssdeep.h
-dirent.h
-Rw@8@g@8@
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-cycles.c
-stddef.h
-types.h
-libio.h
-stdio.h
-ssdeep.h
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-helpers.c
-stddef.h
-types.h
-libio.h
-stdio.h
-stdint.h
-main.h
-ssdeep.h
-of28
-of28
-JM+1+?9?
-Kkc?91
-/usr/include/bits
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include
-stdio.h
-stddef.h
-types.h
-stdio.h
-libio.h
-stdarg.h
-stdint.h
-main.h
-ssdeep.h
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-fuzzy.c
-stddef.h
-types.h
-stdio.h
-libio.h
-stdint.h
-9wc0Hhm
-fIuD
-gA7A7ARz
-e=x82
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-edit_dist.c
-stddef.h
-types.h
-libio.h
-stdio.h
-/usr/include/sys
-/usr/lib/gcc/i586-suse-linux/4.2.1/include
-/usr/include/bits
-/usr/include
-find-file-size.c
-stat.h
-stddef.h
-types.h
-stdio.h
-libio.h
-types.h
-time.h
-stat.h
-/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
-crtn.S
-short int
-short unsigned int
-init.c
-_IO_stdin_used
-long long unsigned int
-GNU C 4.2.1 (SUSE Linux)
-unsigned char
-/usr/src/packages/BUILD/glibc-2.6.1/csu
-long long int
-optarg
-known_hashes
-first_file_processed
-usage
-is_absolute_path
-_IO_save_end
-input
-/home/jqbx34/ssdeep-2.0
-main
-_IO_write_ptr
-_flags
-_flags2
-_IO_buf_base
-_markers
-_IO_read_end
-uint8_t
-__base
-bottom
-match_files_loaded
-threshold
-_lock
-strtol
-_cur_column
-argv
-atol
-_sbuf
-_old_offset
-argc
-uint64_t
-_IO_marker
-_shortbuf
-_IO_write_base
-_unused2
-_IO_read_ptr
-_IO_buf_end
-__endptr
-_IO_FILE
-optind
-_next
-__pad1
-__pad2
-__pad3
-__pad4
-__pad5
-initialize_state
-main.c
-_IO_write_end
-__off64_t
-__progname
-lsh_list
-_chain
-__off_t
-count
-process_cmd_line
-_IO_backup_base
-stdin
-__quad_t
-_IO_read_base
-_vtable_offset
-_lsh_node
-_IO_save_base
-_fileno
-__nptr
-generate_filename
-stdout
-_IO_lock_t
-known_file_name
-match_load
-fn_len
-tchar_sz
-match.c
-handle
-score
-match_add
-match_init
-lsh_list_insert
-known_hash
-match_compare
-lsh_list_init
-sum_len
-match_pretty
-my_filename
-engine.c
-fn_length
-stderr
-st_blksize
-file_type
-file_type_helper
-__nlink_t
-__u_quad_t
-lstat
-d_name
-__ino_t
-clean_name
-new_file
-st_blocks
-d_reclen
-is_special_dir
-tv_nsec
-__mode_t
-d_type
-st_gid
-st_mode
-next_dir
-st_nlink
-return_value
-timespec
-chars_found
-st_ino
-DOUBLE_DIR
-current_dir
-__dev_t
-tsize
-link_type
-process_normal
-process_dir
-remove_single_dirs
-__gid_t
-dirent
-dig.c
-should_hash
-should_hash_symlink
-st_mtim
-__path
-d_off
-__blksize_t
-__uid_t
-st_atim
-remove_double_dirs
-tv_sec
-__dirstream
-entry
-__unused4
-__unused5
-__time_t
-st_size
-d_ino
-st_uid
-st_ctim
-st_dev
-__blkcnt_t
-__statbuf
-st_rdev
-remove_double_slash
-dir_table
-temp
-have_processed_dir
-my_table
-cycles.c
-last
-done_processing_dir
-sanity_check
-shift_string_tchar
-find_comma_separated_string_tchar
-new_start
-in_quote
-find_next_comma
-chop_line
-my_basename
-find_comma_separated_string
-shift_string
-mm_magic
-condition
-find_next_comma_tchar
-prepare_filename
-helpers.c
-my_dirname
-chop_line_tchar
-fatal_error
-vprintf
-display_filename
-internal_error
-print_error
-__builtin_va_list
-print_error_unicode
-__gnuc_va_list
-print_status
-result
-fuzzy_compare
-block_size
-score_strings
-ss_destroy
-sum_hash
-bytes_read
-str1
-str2
-window
-ret2
-total_chars
-roll_reset
-score2
-has_common_substring
-done
-ss_engine
-len1
-len2
-uint32_t
-roll_hash
-roll_state
-num_hashes
-fuzzy.c
-buffer
-eliminate_sequences
-buf_len
-filepos
-fuzzy_hash_buf
-_ss_context
-buffer_size
-ss_update
-fuzzy_hash_file
-ss_init
-block_size1
-block_size2
-score1
-from_len
-delete_cost
-index
-edit_dist.c
-to_len
-radix
-edit_distn
-_cswap
-_iswap
-insert_cost
-store
-from
-num_sectors
-find-file-size.c
-find_file_size
-sector_size
-fstat
-.symtab
-.strtab
-.shstrtab
-.interp
-.note.ABI-tag
-.note.SuSE
-.gnu.hash
-.dynsym
-.dynstr
-.gnu.version
-.gnu.version_r
-.rel.dyn
-.rel.plt
-.init
-.text
-.fini
-.rodata
-.eh_frame
-.ctors
-.dtors
-.dynamic
-.got.plt
-.data
-.comment
-.debug_aranges
-.debug_pubnames
-.debug_info
-.debug_abbrev
-.debug_line
-.debug_frame
-.debug_str
-.debug_loc
-.debug_ranges
-init.c
-initfini.c
-crtstuff.c
-__CTOR_LIST__
-__DTOR_LIST__
-__JCR_LIST__
-__do_global_dtors_aux
-completed.6049
-p.6047
-frame_dummy
-__CTOR_END__
-__DTOR_END__
-__FRAME_END__
-__JCR_END__
-__do_global_ctors_aux
-main.c
-match.c
-engine.c
-dig.c
-file_type_helper
-process_dir
-cycles.c
-helpers.c
-fuzzy.c
-ss_destroy
-eliminate_sequences
-roll_reset
-roll_state
-ss_init
-ss_engine
-score_strings
-edit_dist.c
-store.3351
-_iswap
-_cswap
-find-file-size.c
-_GLOBAL_OFFSET_TABLE_
-__init_array_end
-__init_array_start
-_DYNAMIC
-fileno@@GLIBC_2.0
-data_start
-fputs@@GLIBC_2.0
-__errno_location@@GLIBC_2.0
-match_pretty
-chop_line
-strerror@@GLIBC_2.0
-__libc_csu_fini
-_start
-edit_distn
-prepare_filename
-shift_string
-__xstat@@GLIBC_2.0
-__gmon_start__
-_Jv_RegisterClasses
-__lxstat@@GLIBC_2.0
-_fp_hw
-__progname@@GLIBC_2.0
-strchr@@GLIBC_2.0
-_fini
-strncpy@@GLIBC_2.0
-putchar@@GLIBC_2.0
-fgets@@GLIBC_2.0
-my_dirname
-memset@@GLIBC_2.0
-__strtol_internal@@GLIBC_2.0
-__libc_start_main@@GLIBC_2.0
-remove_double_dirs
-strrchr@@GLIBC_2.0
-print_status
-match_init
-match_add
-perror@@GLIBC_2.0
-fuzzy_compare
-fatal_error
-readdir@@GLIBC_2.0
-_IO_stdin_used
-have_processed_dir
-free@@GLIBC_2.0
-optind@@GLIBC_2.0
-processing_dir
-__data_start
-opendir@@GLIBC_2.0
-ioctl@@GLIBC_2.0
-shift_string_tchar
-realpath@@GLIBC_2.3
-fclose@@GLIBC_2.1
-getopt@@GLIBC_2.0
-done_processing_dir
-stderr@@GLIBC_2.0
-strlen@@GLIBC_2.0
-fopen@@GLIBC_2.1
-match_load
-find_comma_separated_string
-__dso_handle
-__libc_csu_init
-printf@@GLIBC_2.0
-chop_line_tchar
-mm_magic
-print_error
-fuzzy_hash_buf
-closedir@@GLIBC_2.0
-fwrite@@GLIBC_2.0
-fprintf@@GLIBC_2.0
-strstr@@GLIBC_2.0
-__bss_start
-malloc@@GLIBC_2.0
-fseeko@@GLIBC_2.1
-match_compare
-display_filename
-find_next_comma
-fputc@@GLIBC_2.0
-hash_file
-memmove@@GLIBC_2.0
-ftello@@GLIBC_2.1
-fuzzy_hash_file
-strcat@@GLIBC_2.0
-getcwd@@GLIBC_2.0
-stdout@@GLIBC_2.0
-puts@@GLIBC_2.0
-process_normal
-sscanf@@GLIBC_2.0
-__fxstat@@GLIBC_2.0
-strncmp@@GLIBC_2.0
-vfprintf@@GLIBC_2.0
-lsh_list_init
-internal_error
-optarg@@GLIBC_2.0
-fread@@GLIBC_2.0
-sanity_check
-_edata
-snprintf@@GLIBC_2.0
-find_next_comma_tchar
-print_error_unicode
-find_file_size
-find_comma_separated_string_tchar
-__strdup@@GLIBC_2.0
-exit@@GLIBC_2.0
-__i686.get_pc_thunk.bx
-my_table
-my_basename
-main
-_init
+[
+  "/lib/ld-linux.so.2",
+  "SuSESuSE",
+  "__gmon_start__",
+  "libc.so.6",
+  "_IO_stdin_used",
+  "exit",
+  "readdir",
+  "fopen",
+  "strncmp",
+  "optind",
+  "strrchr",
+  "__strdup",
+  "perror",
+  "__progname",
+  "closedir",
+  "strncpy",
+  "__lxstat",
+  "putchar",
+  "fgets",
+  "strlen",
+  "memset",
+  "strstr",
+  "__errno_location",
+  "getopt",
+  "stdout",
+  "fputc",
+  "fputs",
+  "fclose",
+  "__strtol_internal",
+  "malloc",
+  "strcat",
+  "realpath",
+  "ftello",
+  "opendir",
+  "sscanf",
+  "optarg",
+  "stderr",
+  "ioctl",
+  "__fxstat",
+  "fileno",
+  "getcwd",
+  "fwrite",
+  "fread",
+  "strchr",
+  "__xstat",
+  "memmove",
+  "strerror",
+  "__libc_start_main",
+  "fseeko",
+  "vfprintf",
+  "snprintf",
+  "free",
+  "program_invocation_short_name",
+  "GLIBC_2.1",
+  "GLIBC_2.3",
+  "GLIBC_2.0",
+  "PTRh",
+  "WVSQ",
+  "WVS1",
+  "%s: Unable to allocate state variable",
+  "%s: Unable to initialize state variable",
+  "%s: Already at maximum verbosity",
+  "%s: Error message display to user correctly",
+  "%s version %s by Jesse Kornblum",
+  "Copyright (C) 2008 ManTech International Corporation",
+  "Usage: %s [-V|h] [-m file] [-vprdsblc] [-t val] [FILES]",
+  "-v - Verbose mode. Displays filename as its being processed",
+  "-p - Pretty matching mode. Similar to -d but includes all matches",
+  "-d - Directory mode, compare all files in a directory",
+  "-s - Silent mode; all errors are supressed",
+  "-b - Uses only the bare name of files; all path information omitted",
+  "-l - Uses relative paths for filenames",
+  "-c - Prints output in CSV format",
+  "-t - Only displays matches above the given threshold",
+  "-m - Match FILES against known hashes in file",
+  "-h - Display this help message",
+  "-V - Display version number and exit",
+  "Relative paths and bare names are mutually exclusive",
+  "Directory mode and pretty matching are mutallty exclusive",
+  "Error calling generate_filename",
+  "Unknown error in is_absolute_path",
+  "%s: Illegal threshold",
+  "-r - Recursive mode",
+  "vhVpdsblct:rm:",
+  "No matching files loaded",
+  "%s: No input files",
+  "%s: Out of memory",
+  "%s: out of memory",
+  "%s: invalid file header",
+  "unable to insert hash",
+  "matches",
+  "%s: internal data structure inconsistency",
+  "ssdeep,1.0--blocksize:hash:hash,filename",
+  "Hashing: %s%s",
+  "Unable to add hash to set of known hashes",
+  "Is a directory",
+  "symlink creates cycle",
+  "%s: Cycle checking failed to register directory.",
+  "%s: Cycle checking failed to unregister directory.",
+  "%s: Attempt to add existing %s in processing_dir",
+  "Table is NULL in done_processing_dir",
+  "%s: Directory %s not found in done_processing_dir",
+  "I do not believe we will get Eddie Van Halen until we have a triumphant video.",
+  "Try `%s -h` for more information.%s",
+  "Unable to shorten filename",
+  "%s: Internal error. Contact developer!",
+  "%s: NULL state passed to print_error_unicode",
+  "%s: NULL state passed to print_error",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "GCC: (GNU) 4.2.1 (SUSE Linux)",
+  "_IO_stdin_used",
+  "main",
+  "lsh_list_init",
+  "match_init",
+  "match_add",
+  "match_load",
+  "match_compare",
+  "match_pretty",
+  "hash_file",
+  "remove_double_dirs",
+  "process_normal",
+  "have_processed_dir",
+  "processing_dir",
+  "done_processing_dir",
+  "my_table",
+  "find_next_comma",
+  "shift_string",
+  "find_comma_separated_string",
+  "find_next_comma_tchar",
+  "shift_string_tchar",
+  "find_comma_separated_string_tchar",
+  "chop_line",
+  "chop_line_tchar",
+  "mm_magic",
+  "my_dirname",
+  "my_basename",
+  "prepare_filename",
+  "sanity_check",
+  "display_filename",
+  "fatal_error",
+  "print_status",
+  "internal_error",
+  "print_error_unicode",
+  "print_error",
+  "fuzzy_hash_buf",
+  "fuzzy_hash_file",
+  "fuzzy_compare",
+  "edit_distn",
+  "find_file_size",
+  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S",
+  "/usr/src/packages/BUILD/glibc-2.6.1/csu",
+  "GNU AS 2.17.50",
+  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crtn.S",
+  "/usr/src/packages/BUILD/glibc-2.6.1/csu",
+  "GNU AS 2.17.50",
+  "init.c",
+  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu",
+  "crti.S",
+  "/usr/include",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "main.c",
+  "stdlib.h",
+  "stddef.h",
+  "types.h",
+  "libio.h",
+  "stdio.h",
+  "stdint.h",
+  "main.h",
+  "getopt.h",
+  "ssdeep.h",
+  "yf=Bj",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "match.c",
+  "stddef.h",
+  "types.h",
+  "stdio.h",
+  "libio.h",
+  "stdint.h",
+  "main.h",
+  "ssdeep.h",
+  "=Zk7L",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "engine.c",
+  "stddef.h",
+  "types.h",
+  "stdio.h",
+  "libio.h",
+  "stdint.h",
+  "main.h",
+  "/usr/include/sys",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "dig.c",
+  "stat.h",
+  "stddef.h",
+  "types.h",
+  "libio.h",
+  "stdio.h",
+  "time.h",
+  "stat.h",
+  "stdint.h",
+  "dirent.h",
+  "main.h",
+  "ssdeep.h",
+  "dirent.h",
+  "Rw@8@g@8@",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "cycles.c",
+  "stddef.h",
+  "types.h",
+  "libio.h",
+  "stdio.h",
+  "ssdeep.h",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "helpers.c",
+  "stddef.h",
+  "types.h",
+  "libio.h",
+  "stdio.h",
+  "stdint.h",
+  "main.h",
+  "ssdeep.h",
+  "of28",
+  "of28",
+  "JM+1+?9?",
+  "Kkc?91",
+  "/usr/include/bits",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include",
+  "stdio.h",
+  "stddef.h",
+  "types.h",
+  "stdio.h",
+  "libio.h",
+  "stdarg.h",
+  "stdint.h",
+  "main.h",
+  "ssdeep.h",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "fuzzy.c",
+  "stddef.h",
+  "types.h",
+  "stdio.h",
+  "libio.h",
+  "stdint.h",
+  "9wc0Hhm",
+  "fIuD",
+  "gA7A7ARz",
+  "e=x82",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "edit_dist.c",
+  "stddef.h",
+  "types.h",
+  "libio.h",
+  "stdio.h",
+  "/usr/include/sys",
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include",
+  "/usr/include/bits",
+  "/usr/include",
+  "find-file-size.c",
+  "stat.h",
+  "stddef.h",
+  "types.h",
+  "stdio.h",
+  "libio.h",
+  "types.h",
+  "time.h",
+  "stat.h",
+  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu",
+  "crtn.S",
+  "short int",
+  "short unsigned int",
+  "init.c",
+  "_IO_stdin_used",
+  "long long unsigned int",
+  "GNU C 4.2.1 (SUSE Linux)",
+  "unsigned char",
+  "/usr/src/packages/BUILD/glibc-2.6.1/csu",
+  "long long int",
+  "optarg",
+  "known_hashes",
+  "first_file_processed",
+  "usage",
+  "is_absolute_path",
+  "_IO_save_end",
+  "input",
+  "/home/jqbx34/ssdeep-2.0",
+  "main",
+  "_IO_write_ptr",
+  "_flags",
+  "_flags2",
+  "_IO_buf_base",
+  "_markers",
+  "_IO_read_end",
+  "uint8_t",
+  "__base",
+  "bottom",
+  "match_files_loaded",
+  "threshold",
+  "_lock",
+  "strtol",
+  "_cur_column",
+  "argv",
+  "atol",
+  "_sbuf",
+  "_old_offset",
+  "argc",
+  "uint64_t",
+  "_IO_marker",
+  "_shortbuf",
+  "_IO_write_base",
+  "_unused2",
+  "_IO_read_ptr",
+  "_IO_buf_end",
+  "__endptr",
+  "_IO_FILE",
+  "optind",
+  "_next",
+  "__pad1",
+  "__pad2",
+  "__pad3",
+  "__pad4",
+  "__pad5",
+  "initialize_state",
+  "main.c",
+  "_IO_write_end",
+  "__off64_t",
+  "__progname",
+  "lsh_list",
+  "_chain",
+  "__off_t",
+  "count",
+  "process_cmd_line",
+  "_IO_backup_base",
+  "stdin",
+  "__quad_t",
+  "_IO_read_base",
+  "_vtable_offset",
+  "_lsh_node",
+  "_IO_save_base",
+  "_fileno",
+  "__nptr",
+  "generate_filename",
+  "stdout",
+  "_IO_lock_t",
+  "known_file_name",
+  "match_load",
+  "fn_len",
+  "tchar_sz",
+  "match.c",
+  "handle",
+  "score",
+  "match_add",
+  "match_init",
+  "lsh_list_insert",
+  "known_hash",
+  "match_compare",
+  "lsh_list_init",
+  "sum_len",
+  "match_pretty",
+  "my_filename",
+  "engine.c",
+  "fn_length",
+  "stderr",
+  "st_blksize",
+  "file_type",
+  "file_type_helper",
+  "__nlink_t",
+  "__u_quad_t",
+  "lstat",
+  "d_name",
+  "__ino_t",
+  "clean_name",
+  "new_file",
+  "st_blocks",
+  "d_reclen",
+  "is_special_dir",
+  "tv_nsec",
+  "__mode_t",
+  "d_type",
+  "st_gid",
+  "st_mode",
+  "next_dir",
+  "st_nlink",
+  "return_value",
+  "timespec",
+  "chars_found",
+  "st_ino",
+  "DOUBLE_DIR",
+  "current_dir",
+  "__dev_t",
+  "tsize",
+  "link_type",
+  "process_normal",
+  "process_dir",
+  "remove_single_dirs",
+  "__gid_t",
+  "dirent",
+  "dig.c",
+  "should_hash",
+  "should_hash_symlink",
+  "st_mtim",
+  "__path",
+  "d_off",
+  "__blksize_t",
+  "__uid_t",
+  "st_atim",
+  "remove_double_dirs",
+  "tv_sec",
+  "__dirstream",
+  "entry",
+  "__unused4",
+  "__unused5",
+  "__time_t",
+  "st_size",
+  "d_ino",
+  "st_uid",
+  "st_ctim",
+  "st_dev",
+  "__blkcnt_t",
+  "__statbuf",
+  "st_rdev",
+  "remove_double_slash",
+  "dir_table",
+  "temp",
+  "have_processed_dir",
+  "my_table",
+  "cycles.c",
+  "last",
+  "done_processing_dir",
+  "sanity_check",
+  "shift_string_tchar",
+  "find_comma_separated_string_tchar",
+  "new_start",
+  "in_quote",
+  "find_next_comma",
+  "chop_line",
+  "my_basename",
+  "find_comma_separated_string",
+  "shift_string",
+  "mm_magic",
+  "condition",
+  "find_next_comma_tchar",
+  "prepare_filename",
+  "helpers.c",
+  "my_dirname",
+  "chop_line_tchar",
+  "fatal_error",
+  "vprintf",
+  "display_filename",
+  "internal_error",
+  "print_error",
+  "__builtin_va_list",
+  "print_error_unicode",
+  "__gnuc_va_list",
+  "print_status",
+  "result",
+  "fuzzy_compare",
+  "block_size",
+  "score_strings",
+  "ss_destroy",
+  "sum_hash",
+  "bytes_read",
+  "str1",
+  "str2",
+  "window",
+  "ret2",
+  "total_chars",
+  "roll_reset",
+  "score2",
+  "has_common_substring",
+  "done",
+  "ss_engine",
+  "len1",
+  "len2",
+  "uint32_t",
+  "roll_hash",
+  "roll_state",
+  "num_hashes",
+  "fuzzy.c",
+  "buffer",
+  "eliminate_sequences",
+  "buf_len",
+  "filepos",
+  "fuzzy_hash_buf",
+  "_ss_context",
+  "buffer_size",
+  "ss_update",
+  "fuzzy_hash_file",
+  "ss_init",
+  "block_size1",
+  "block_size2",
+  "score1",
+  "from_len",
+  "delete_cost",
+  "index",
+  "edit_dist.c",
+  "to_len",
+  "radix",
+  "edit_distn",
+  "_cswap",
+  "_iswap",
+  "insert_cost",
+  "store",
+  "from",
+  "num_sectors",
+  "find-file-size.c",
+  "find_file_size",
+  "sector_size",
+  "fstat",
+  ".symtab",
+  ".strtab",
+  ".shstrtab",
+  ".interp",
+  ".note.ABI-tag",
+  ".note.SuSE",
+  ".gnu.hash",
+  ".dynsym",
+  ".dynstr",
+  ".gnu.version",
+  ".gnu.version_r",
+  ".rel.dyn",
+  ".rel.plt",
+  ".init",
+  ".text",
+  ".fini",
+  ".rodata",
+  ".eh_frame",
+  ".ctors",
+  ".dtors",
+  ".dynamic",
+  ".got.plt",
+  ".data",
+  ".comment",
+  ".debug_aranges",
+  ".debug_pubnames",
+  ".debug_info",
+  ".debug_abbrev",
+  ".debug_line",
+  ".debug_frame",
+  ".debug_str",
+  ".debug_loc",
+  ".debug_ranges",
+  "init.c",
+  "initfini.c",
+  "crtstuff.c",
+  "__CTOR_LIST__",
+  "__DTOR_LIST__",
+  "__JCR_LIST__",
+  "__do_global_dtors_aux",
+  "completed.6049",
+  "p.6047",
+  "frame_dummy",
+  "__CTOR_END__",
+  "__DTOR_END__",
+  "__FRAME_END__",
+  "__JCR_END__",
+  "__do_global_ctors_aux",
+  "main.c",
+  "match.c",
+  "engine.c",
+  "dig.c",
+  "file_type_helper",
+  "process_dir",
+  "cycles.c",
+  "helpers.c",
+  "fuzzy.c",
+  "ss_destroy",
+  "eliminate_sequences",
+  "roll_reset",
+  "roll_state",
+  "ss_init",
+  "ss_engine",
+  "score_strings",
+  "edit_dist.c",
+  "store.3351",
+  "_iswap",
+  "_cswap",
+  "find-file-size.c",
+  "_GLOBAL_OFFSET_TABLE_",
+  "__init_array_end",
+  "__init_array_start",
+  "_DYNAMIC",
+  "fileno@@GLIBC_2.0",
+  "data_start",
+  "fputs@@GLIBC_2.0",
+  "__errno_location@@GLIBC_2.0",
+  "match_pretty",
+  "chop_line",
+  "strerror@@GLIBC_2.0",
+  "__libc_csu_fini",
+  "_start",
+  "edit_distn",
+  "prepare_filename",
+  "shift_string",
+  "__xstat@@GLIBC_2.0",
+  "__gmon_start__",
+  "_Jv_RegisterClasses",
+  "__lxstat@@GLIBC_2.0",
+  "_fp_hw",
+  "__progname@@GLIBC_2.0",
+  "strchr@@GLIBC_2.0",
+  "_fini",
+  "strncpy@@GLIBC_2.0",
+  "putchar@@GLIBC_2.0",
+  "fgets@@GLIBC_2.0",
+  "my_dirname",
+  "memset@@GLIBC_2.0",
+  "__strtol_internal@@GLIBC_2.0",
+  "__libc_start_main@@GLIBC_2.0",
+  "remove_double_dirs",
+  "strrchr@@GLIBC_2.0",
+  "print_status",
+  "match_init",
+  "match_add",
+  "perror@@GLIBC_2.0",
+  "fuzzy_compare",
+  "fatal_error",
+  "readdir@@GLIBC_2.0",
+  "_IO_stdin_used",
+  "have_processed_dir",
+  "free@@GLIBC_2.0",
+  "optind@@GLIBC_2.0",
+  "processing_dir",
+  "__data_start",
+  "opendir@@GLIBC_2.0",
+  "ioctl@@GLIBC_2.0",
+  "shift_string_tchar",
+  "realpath@@GLIBC_2.3",
+  "fclose@@GLIBC_2.1",
+  "getopt@@GLIBC_2.0",
+  "done_processing_dir",
+  "stderr@@GLIBC_2.0",
+  "strlen@@GLIBC_2.0",
+  "fopen@@GLIBC_2.1",
+  "match_load",
+  "find_comma_separated_string",
+  "__dso_handle",
+  "__libc_csu_init",
+  "printf@@GLIBC_2.0",
+  "chop_line_tchar",
+  "mm_magic",
+  "print_error",
+  "fuzzy_hash_buf",
+  "closedir@@GLIBC_2.0",
+  "fwrite@@GLIBC_2.0",
+  "fprintf@@GLIBC_2.0",
+  "strstr@@GLIBC_2.0",
+  "__bss_start",
+  "malloc@@GLIBC_2.0",
+  "fseeko@@GLIBC_2.1",
+  "match_compare",
+  "display_filename",
+  "find_next_comma",
+  "fputc@@GLIBC_2.0",
+  "hash_file",
+  "memmove@@GLIBC_2.0",
+  "ftello@@GLIBC_2.1",
+  "fuzzy_hash_file",
+  "strcat@@GLIBC_2.0",
+  "getcwd@@GLIBC_2.0",
+  "stdout@@GLIBC_2.0",
+  "puts@@GLIBC_2.0",
+  "process_normal",
+  "sscanf@@GLIBC_2.0",
+  "__fxstat@@GLIBC_2.0",
+  "strncmp@@GLIBC_2.0",
+  "vfprintf@@GLIBC_2.0",
+  "lsh_list_init",
+  "internal_error",
+  "optarg@@GLIBC_2.0",
+  "fread@@GLIBC_2.0",
+  "sanity_check",
+  "_edata",
+  "snprintf@@GLIBC_2.0",
+  "find_next_comma_tchar",
+  "print_error_unicode",
+  "find_file_size",
+  "find_comma_separated_string_tchar",
+  "__strdup@@GLIBC_2.0",
+  "exit@@GLIBC_2.0",
+  "__i686.get_pc_thunk.bx",
+  "my_table",
+  "my_basename",
+  "main",
+  "_init"
+]

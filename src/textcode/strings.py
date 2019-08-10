@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import re
 import string
@@ -50,7 +51,7 @@ https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd
 # at least four characters are needed to consider some blob as a good string
 # this is the same default as GNU strings
 MIN_LEN = 4
-
+MIN_LEN_STR = b'4'
 
 def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, min_len=MIN_LEN):
     """
@@ -72,24 +73,26 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
 
 
 # Extracted text is digit, letters, punctuation and white spaces
-punctuation = re.escape(string.punctuation)
-whitespaces = ' \t\n\r'
-printable = 'A-Za-z0-9' + whitespaces + punctuation
-null_byte = '\x00'
+punctuation = re.escape(b"""!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~""")
+whitespaces = b' \\t\\n\\r\t\n\r'
+printable = b'A-Za-z0-9' + whitespaces + punctuation
+null_byte = b'\x00'
 
-ascii_strings = re.compile(
+_ascii_pattern = (
     # plain ASCII is a sequence of printable of a minimum length
-      '('
-    + '[' + printable + ']'
-    + '{' + str(MIN_LEN) + ',}'
-    + ')'
+      b'('
+    + b'[' + printable + b']'
+    + b'{' + MIN_LEN_STR + b',}'
+    + b')'
     # or utf-16-le-encoded ASCII is a sequence of ASCII+null byte
-    + '|'
-    + '('
-    + '(?:' + '[' + printable + ']' + null_byte + ')'
-    + '{' + str(MIN_LEN) + ',}'
-    + ')'
-    ).finditer
+    + b'|'
+    + b'('
+    + b'(?:' + b'[' + printable + b']' + null_byte + b')'
+    + b'{' + MIN_LEN_STR + b',}'
+    + b')'
+)
+
+ascii_strings = re.compile(_ascii_pattern).finditer
 
 
 def strings_from_string(binary_string, clean=False, min_len=0):
@@ -125,7 +128,7 @@ def decode(s):
     """
     Return a decoded unicode string from s or None if the string cannot be decoded.
     """
-    if '\x00' in s:
+    if b'\x00' in s:
         try:
             return s.decode('utf-16-le')
         except UnicodeDecodeError:
@@ -134,7 +137,7 @@ def decode(s):
         return s.decode('ascii')
 
 
-remove_junk = re.compile('[' + punctuation + whitespaces + ']').sub
+remove_junk = re.compile('[' + punctuation.decode('utf-8') + whitespaces.decode('utf-8') + ']').sub
 
 JUNK = frozenset(string.punctuation + string.digits + string.whitespace)
 
@@ -170,7 +173,7 @@ def is_file(s):
     Return True if s looks like a file name.
     Exmaple: dsdsd.dll
     """
-    filename = re.compile('^[\w_\-]+\.\w{1,4}$', re.IGNORECASE).match
+    filename = re.compile('^[\\w_\\-]+\\.\\w{1,4}$', re.IGNORECASE).match
     return filename(s)
 
 
@@ -179,7 +182,7 @@ def is_shared_object(s):
     Return True if s looks like a shared object file.
     Example: librt.so.1
     """
-    so = re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE).match
+    so = re.compile('^[\\w_\\-]+\\.so\\.[0-9]+\\.*.[0-9]*$', re.IGNORECASE).match
     return so(s)
 
 
@@ -189,7 +192,7 @@ def is_posix_path(s):
     Example: /usr/lib/librt.so.1 or /usr/lib
     """
     # TODO: implement me
-    posix = re.compile('^/[\w_\-].*$', re.IGNORECASE).match
+    posix = re.compile('^/[\\w_\\-].*$', re.IGNORECASE).match
     posix(s)
     return False
 
@@ -199,7 +202,7 @@ def is_relative_path(s):
     Return True if s looks like a relative posix path.
     Example: usr/lib/librt.so.1 or ../usr/lib
     """
-    relative = re.compile('^(?:([^/]|\.\.)[\w_\-]+/.*$', re.IGNORECASE).match
+    relative = re.compile('^(?:([^/]|\\.\\.)[\\w_\\-]+/.*$', re.IGNORECASE).match
     return relative(s)
 
 
@@ -208,7 +211,7 @@ def is_win_path(s):
     Return True if s looks like a win path.
     Example: c:\\usr\\lib\\librt.so.1.
     """
-    winpath = re.compile('^[\w_\-]+\.so\.[0-9]+\.*.[0-9]*$', re.IGNORECASE).match
+    winpath = re.compile('^[\\w_\\-]+\\.so\\.[0-9]+\\.*.[0-9]*$', re.IGNORECASE).match
     return winpath(s)
 
 

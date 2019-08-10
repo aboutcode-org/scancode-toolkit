@@ -1,1433 +1,1407 @@
-9B4B
-D$B9H
-Ye$E8p<
-Ye$E8|
-Ye$E7
-Ye$E6
-b$E8p<
-Ad&cp
-w$DV,&1
-w$dV8
-!&dVX&EVd$
-alloc_ipc_bitmap
-tb_switch_buffers
-word_t sys_schedule(threadid_t, word_t, word_t, word_t, word_t, word_t)
-finish_sys_schedule
-word_t sys_ipc(threadid_t, threadid_t)
-handle_interrupt
-void tcb_t::copy_regs_to_mrs(tcb_t*)
-Xhandle_pagefault
-tcb_t* create_root_server(threadid_t, threadid_t, threadid_t, threadid_t, fpage_t, fpage_t, word_t)
-void init_root_servers()
-init_tlb
-void mips64_dump_tlb()
-stack_t* virtual_interrupt(word_t, stack_t*)
-Xword_t read_cp0_reg(word_t)
-static cmd_ret_t kdb_t::cmd_mips64_wset(cmd_group_t*)
-static cmd_ret_t kdb_t::cmd_mips64_wshow(cmd_group_t*)
-%s:%d: Already have CONFIG_MAX_SPACES (%d)
-SYSCALL_IPC_CONTROL: current=%p control=%lx, space=%d
-SYS_MAP_CONTROL: space=%d, control=%p (n = %d, %c%c)
-SYS_PROCESSOR_CONTROL (cpu=%d, ifreq=%d, efreq=%d, voltage=%d
-FASTPATH_IPC
-EVENT
-INTERRUPT
-SYSCALL_IPC
-SYSCALL_EXCHANGE_REGISTERS
-SYSCALL_SPACE_CONTROL
-SYSCALL_THREAD_CONTROL
-SYSCALL_THREAD_SWITCH
-SYSCALL_SCHEDULE
-SYSCALL_MAP_CONTROL
-SYSCALL_PROCESSOR_CONTROL
-SYSCALL_CACHE_CONTROL
-SYSCALL_IPC_CONTROL
-SYSCALL_PLATFORM_CONTROL
-IPC_TRANSFER
-IPC_MESSAGE_OVERFLOW
-TIMESLICE_EXPIRED
-TOTAL_QUANTUM_EXPIRED
-PREEMPTION_FAULT
-PREEMPTION_SIGNALED
-MAP_FPAGE
-FPAGE_OVERMAP
-FPAGE_UNMAP
-FPAGE_READ
-UNWIND
-SYSCALL_THREAD_CONTROL_IRQ
-PAGEFAULT_USER
-PAGEFAULT_KERNEL
-KMEM_ALLOC
-KMEM_FREE
-EXCEPTION_IPC_GENERAL
-EXCEPTION_IPC_SYSCALL
-DISABLED_FPU
-kmem_trace
-Assertion trace_buffer failed in file %s, line %d (fn=%p)
-pistachio/src/tracebuffer.cc
-SYSCALL_CACHE_CONTROL: current=%p control=%lx, space=%ld
-kmem_alloc_aligned (%d bytes), ip=%x
-kmem_alloc_aligned (%d [%d%c]), ip: %p
-kmem_alloc (%d bytes), ip=%x
-kmem_alloc (%d [%d%c]), ip: %p
-kmem_free (%p, %d [%d%c]), ip: %p
-total quantum expired for %t
-preemption signalled for %t
-timeslice expired for %t
-SYS_THREAD_SWITCH current=%t, dest=%t
-SYS_SCHEDULE: curr=%t, dest=%t, quantum=%x, hwtid mask = %08lx, timeslice=%x, domain_ctrl=%x, prio=%x
-%s:%d: invalid state (%x)
-Assertion !"We shouldn't get here!" failed in file %s, line %d (fn=%p)
-pistachio/arch/mips/include/arch/tcb.h
-sys_ipc %t => %t (recvfrom=%t)
-SYS_IPC: current: %t, to_tid: %t, from_tid: %t, tag: 0x%x (label=0x%x, %c%c%c%c, u=%d)
-IPC transfer message: src=%t, dst=%t
-idle
-Assertion !"Scheduler start fell through!!!\n" failed in file %s, line %d (fn=%p)
-pistachio/src/init.cc
-%s:%d: IRQ handler TID is invalid -- halting IRQ%d
-%s:%d: spurious IRQ%d?
-IRQ %d
-irq %d
-preemption signalled (irq) for %t
-SYS_THREAD_CONTROL for IRQ%d (IRQ=%t, handler=%t)
-Assertion this != idle failed in file %s, line %d (fn=%p)
-pistachio/include/tcb.h
-SYS_EXCHANGE_REGISTERS: dest=%t, control=0x%x [%c%c%c%c%c%c%c%c%c%c%c], usp=%p, uip=%p, uflags=%p, uhandle=%x
-sys_exchange_registers (dest=%t, control=%x)
-Not implemented: %s
-%s, line %d
-[33m%s
-kmem_stack
-kmem_space
-kmem_spaceids
-kmem_ipc_control
-Assertion stack_base != 0 failed in file %s, line %d (fn=%p)
-pistachio/src/space.cc
-Assertion get_kip()->space_info.get_num_spaces()-1 failed in file %s, line %d (fn=%p)
-Assertion new_table failed in file %s, line %d (fn=%p)
-%s:%d: unhandled pagefault @ %p, %p
-write
-read
-unknown
-user %s pagefault by %t at %p, ip=%p, ksp=%p
-user page fault at %x (current=%t, ip=%x, access=%x)
-kernel access raised user pagefault @ %p, ip=%p, space=%p, esp = %p
-current tcb = %p
-wrong access - unable to recover
-kernel pagefault in space %p @ %p, ip=%p, type=%x, ksp=%p
-kernel page fault at %x (current=%t, ip=%x, space=%p)
-read/write
-execute
-Assertion !((tcb_t *)tcb_ptr)->exists() failed in file %s, line %d (fn=%p)
-Assertion found failed in file %s, line %d (fn=%p)
-Assertion pgsize == KTCB_PGSIZE failed in file %s, line %d (fn=%p)
-SYS_SPACE_CONTROL: space=%d, control=%p, kip_area=%p, utcb_area=%p, spc_resc=%p
-Assertion !"Error setting up initial mappings" failed in file %s, line %d (fn=%p)
-Assertion j != kip->memory_info.get_num_descriptors() failed in file %s, line %d (fn=%p)
-Assertion !"Unsafe unwind" failed in file %s, line %d (fn=%p)
-pistachio/src/thread.cc
-UNKNOWN
-POLLING
-WAIT_NOTIFY
-WARNING: %s, line %d (fn=%p)
-===> Unresolved unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)
-WAIT_XPU_DELTCB
-HALTED
-ABORTED
-Unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)
-WAIT_FOREVER
-WAIT_XPU_EXREGS
-LCK_RUNNING
-LCK_WAITING
-Assertion this->queue_state.is_set(queue_state_t::ready) == false failed in file %s, line %d (fn=%p)
-Assertion this->exists() failed in file %s, line %d (fn=%p)
-roottask %s pagefault at %p, ip=%p - deny
-Assertion !"Failed to create root server TCB\n" failed in file %s, line %d (fn=%p)
-PANIC in %s, %s, line %d:
-===>
-Failed to map the kernel area
-failed to activate root server
-SYS_THREAD_CONTROL: dest=%t, space=%d, scheduler=%t, pager=%t, except_handler=%t, utcb=%x
-roottask
-root task not found!
-kmem_pgtab
-unmap_fpage (fpg=%p  t_spc=%p)
-map_fpage (fpg=%p  t_spc=%p) : addr=%p, phys=%p (%ld) map=%d%cB, sz=%d%cB
-single map
-subtree
-overmapping: taddr=%p tsz=%d%cB (%s)
-read_fpage (fpg=%p  t_spc=%p)
-kmem_fpu
-FPU disabled exception:  cur=%p  owner=%p
-kmem_utcb
-kmem_tcb
-Mapping invalid pagesize (%dKB)
-%dKB mapping @ %p space %p already exists.
-Assertion r == true failed in file %s, line %d (fn=%p)
-pistachio/arch/mips/src/space.cc
-Assertion alloc failed in file %s, line %d (fn=%p)
-Assertion dummy_tcb failed in file %s, line %d (fn=%p)
-L4 Mips: Spurious interrupt %d
-%s:%d: Initialize TLB
--------------------------TLB DUMP-----------------------------
-pistachio/arch/mips/src/tlb.cc
--------------------------EPC DUMP-----------------------------
-EPC = %16lx
-%c [%16lx] = 0x%08lx
-Unable to deliver user exception: IPC error.
-Read k-register
-Write k-register
-[1m--- KD# Unhandled Exception [
-EXCEPTION_IPC_SYSCALL: (%p) IP = %p, v0 = 0x%016lx
-Unable to deliver user exception: no exception handler.
-[1m--- KD# %s ---
-Unhandled User SYSCALL
-[1m--- KD#
-[not mapped]
-Virtual coherency exception (data)
-Address error (load/execute)
-EXCEPTION_IPC_GENERAL: (%p) exc_no %d, exc_code %016lx, IP = %p
-Watchpoint
-Cache error in debug mode
-Machine check
-MDMX Unusable
-Coprocessor 2 exception
-Floating point exception
-Virtual coherency exception (instruction)
-Trap exception
-Arithmetic overflow
-Coprocessor unavailable
-Illegal instruction
-Breakpoint
-Bus error (data load/store)
-Bus error (instruction fetch)
-Address error (store)
-Assertion !"Please implement me!" failed in file %s, line %d (fn=%p)
-pistachio/arch/mips/src/exception.cc
-pistachio/arch/mips/src/loose_ends.cc
-showqueue
-show scheduling queue
-idle : %t
-present-list is wrong???
-*** ERROR ***
-%s [current]:
-current
-No thread named: %s
-listspaces
-list all address spaces
-USP: %p   tstate: %ws  ready: %w.wt:%-w.wt   pdir : %p
-sndhd : %-w.wt  send : %w.wt:%-w.wt   pager: %.wt
-total quant:    0x%x us, ts length  :       0x%x us, curr ts: 0x%m us
-resources:    %p [
-continuation: %p   preemption_cont: %p
-scheduler: %.wt    exception_handler: %.wt
-partner: %.wt        saved partner: %.wt      saved state: %s
-WAIT_FE
-WAIT_NF
-LCKRUNN
-LCKWAIT
-HALTED
-showtcbext
-shows thread control block (extended)
-showtcb
-show thread control block
-<noname>
-=== %s == TCB: %p == ID: %p = %p/%p == PRIO: 0x%02x
-UIP: %p   queues: %c%c%c%c%s      space: %S
-user handle:          %p  cop flags:           %02x%s    preempt flags: %02x [%c]
-incoming notify bits: %p  notify mask:         %p   virtual sender: %t
-last preempted_ip:    %p  preempt_callback_ip: %p
-tcb/tid/name
-no valid UTCB
-mr(%02d):
-Message Tag: %d untyped, label = %x, flags = %c%c%c
-Acceptor: %p (%c)
-Error code: %d
-NIL_THRD
-ANY_THRD
-%16s %s
-System call offsets:
-%16s 0x%08x    %17s 0x%08x
-MapControl
-SpaceControl
-ThreadControl
-ProcessorControl
-Lipc
-CacheControl
-ExchangeRegisters
-Schedule
-ThreadSwitch
-PlatformControl
-IpcControl
-Processors %d:
-Proc%3d:       external freq = %dMHz, internal freq = %dMHz
-Memory regions (%d):
-Physical:
-0x%p - 0x%p   %s (%d)
-tracebuffer
-<unknown>
-Virtual:
-0x%p - 0x%p   %s
-Interactive
-Command Line Interface
-User Console
-ThreadNames
-SpaceNames
-initial mapping
-architecture specific
-bootloader specific
-dump kernel interface page
-128K
-256K
-512K
-128M
-256M
-512M
-128G
-256G
-512G
-128T
-256T
-512T
-undefined
-conventional
-reserved
-dedicated
-remote
-global
-Kernel Interface Page:
-%16s %c%c%c%c
-Magic
-%16s 0x%02x.0x%02x
-API version
-litte
-%16s %s-endian, %d-bit
-API flags
-Kernel Debugger Features:
-Config:
-%16s num mrs: %d
-VirtualReg info
-%16s min size: %dKB, alignment: %d, UTCB size: %d
-UTCB area info
-%16s min size: %dKB
-KIP area info
-%16s Phys 0x%p:0x%p Virt: 0x%p
-Boot info
-%16s schedule precision: %d us
-Clock info
-%16s user base: 0x%03x, system base: 0x%03x, thread bits: %d
-Thread info
-%16s sizes:
-Page info
-, rights: %s%s%s
-Root server:
-%16s ip: 0x%08x,
-root server
-sp: 0x%08x,
-0x%08x:0x%08x
-Kernel descriptor:
-%16s %d.%d
-Kernel ID
-%16s %s %d, %d
-Kernel gen date
-%16s %d.%d.%d
-Kernel version
-Kernel supplier
-%16s %s
-Version string
-Features
-console
-[%d] Unknown record (type: 0x%x,  version: %d)
-[%d] EFI Tables (version %d):
-  systab:    %p
-  memmap:    [addr: %p, size: 0x%x]
-  memdesc:   [version: 0x%x, size: 0x%x]
-[%d] Multiboot info (version %d):
-  address:   %p
-[%d] Simple executable (version %d):
-  text:      [paddr: %p, vaddr: %p, size: %p]
-  data:      [paddr: %p, vaddr: %p, size: %p]
-  bss:       [paddr: %p, vaddr: %p, size: %p]
-  entry:     %p
-  flags:     %p
-  label:     %p
-  cmdline:   %s
-[%d] Simple ELF (version %d):
-  header:    [paddr: %p]
-  cmdline:   %s
-[%d] Simple module (version %d):
-  start:     %p
-  size:      %p
-  cmdline:   %s
-pistachio/src/kdb/generic/bootinfo.cc
-Not a generic bootinfo record (bootinfo=%p).
-Assertion bootinfo_copy failed in file %s, line %d (fn=%p)
-generic bootinfo
-Generic BootInfo @ %p
-magic:        0x%p
-  version:      %d
-  size:         0x%x
-  num records:  %d
-Toggle console
-Switch console: %s
-kmem
-kernel memory allocator statistics
-kmem_misc
-Kernel memory statistics:
-  Chunk size  = %d bytes
-  Free chunks = %d (%d%cB)
-Consecutive   Number of
-chunks        matches
-%7d%c      %6d
-Max consecutive chunks: %d
-Kernel memory distribution:
-%16s %6d %cB
-Set = %p,  Entries = %d
-dumpphys
-dump physical memory
-memdump
-dump memory in other space
-dump memory
-wordsize
-change memdump word size
-Memdump wordsize = %d
-Continue?
-Continue/Quit
-Dump address
-Space
-(null)
-disable
-disable tracepoints
-enable
-enable tracepoints
-reset
-reset counters
-confall
-configure all tracepoints
-conf
-configure a tracepoint
-list
-list tracepoints
-enable/disable/list tracepoints
-prior
-back to previous menu
-back up to previous menu
-help
-this help message
-enabled
-disabled
-Tracepoints: %s
-Num  %28s Print  KDB
-Name
-Counter
-%3d   %28s  %c      %c
-Tracepoint
-Print
-Enter KDB
-%3d - %28s
-List choices
-modeswitch
-change kernel debugger operation mode
-Unknown command: %s
-KDB mode: Command line
-KDB mode: Keystroke
-stats
-config
-KDB configuration
-arch
-architecture specifics
-continue execution
-%s [0x%lx]:
-ptab
-dump page table
-%p [%p]:%s tree=%p
-kernel
-%p [%p]:%s phys=%p pg=%p %s%3d%cB %c%c%c (%c%c%c) %s
-user
-tid_format
-change output format of thread IDs
-Basic output format
-Global id/Tcb address/Both
-Yes/No
-Special threads in human readable form
-Version field format
-Inline/Separate/Off
-Add separator before <n> lower-most bits of thread number (0-%lu) [0]:
-reset (zero) tracebuffer
-dump
-dump current buffer
-logmask
-change logmask
-show tracebuffer info
-tracebuffer menu
-Invalid trace_buffer (NULL)
-=== Tracebuffer @ %p, magic = %p ===
-version: %8x, bufid:         %8x
-buffers: %8d, active_buffer: %8d
-bufsize: %8d, empty mask     %8x
-logmask: %8x
-buffer %d: offset: %8d,  head: %8d
-Log Mask
-%6d: %9m
-(%d, %d, %d) %s:
-(%d, %d, %d) %s
-(%d, %d, %d) "%s"
-No current active buffer!
--- current ASID is %d, CPU %d --
-show floating point registers
-findframe
-search for an exception frame
-dumpframe
-show exception frame
-show current user exception frame
-== Stack frame: %p ==
-== STATUS: %8x == CAUSE: %8lx == EPC: %8lx
-at = %8lx, v0 = %8lx, v1 = %8lx, sp = %8lx
-a0 = %8lx, a1 = %8lx, a2 = %8lx, a3 = %8lx
-t0 = %8lx, t1 = %8lx, t2 = %8lx, t3 = %8lx
-t4 = %8lx, t5 = %8lx, t6 = %8lx, t7 = %8lx
-s0 = %8lx, s1 = %8lx, s2 = %8lx, s3 = %8lx
-s4 = %8lx, s5 = %8lx, s6 = %8lx, s7 = %8lx
-t8 = %8lx, t9 = %8lx, s8 = %8lx, gp = %8lx
-ra = %8lx, hi = %8lx, lo = %8lx
-f%d	= %16lx
-FPCSR	= %16lx
-Thread does not have FPU resources
-tcb/tid/addr
-dumpcp0
-dump cp0 registers
-BadVaddr
-CacheErr
-Cause
-Compare
-Config
-Context
-EntryHi
-EntryLo0
-EntryLo1
-ErrorEPC
-Index
-LLaddr
-PageMask
-PerfCount
-PRID
-Random
-Status
-TagHi0
-TagLo0
-WatchHi
-WatchLo
-Wired
-XContext
-pistachio/arch/mips/kdb/cp0.cc
-Dumping Contents of CP0 Registers
-%12s [%2d]  0x%016lx
-%12s [%2d]          0x%08lx
-cpuid
-dump CPUID
-D                 Doubleword every cycle
-DDxDDx            2 Doublewords every 3 cycles
-DDxxDDxx          2 Doublewords every 4 cycles
-DxDxDxDx          2 Doublewords every 4 cycles
-DDxxxDDxxx        2 Doublewords every 5 cycles
-DDxxxxDDxxxx      2 Doublewords every 6 cycles
-DxxDxxDxxDxx      2 Doublewords every 6 cycles
-DDxxxxxxDDxxxxxx  2 Doublewords every 8 cycles
-DxxxDxxxDxxxDxxx  2 Doublewords every 8 cycles
-CPUID:
-unknown CP0_PRID=%8x
-Detected cache: icache = %dk, %d bytes per line, %d way associative
-dcache = %dk, %d bytes per line, %d way associative
-Sibyte SB1, Rev %d
-Data transmit pattern: %s
-System clock is CPU clock divided by %d
-disabled
-enabled
-Master-Checker Mode is %s
-Fast Multiply is %s
-R4700, Rev %d.%d
-unknown
-available
-MIPS16 is %s
-IDT RC64574/2, Rev %d
-vr4121 rev %d
-vr4181 rev %d
-Reset system
-dump TLB information
-translate
-translate TLB
-dump hardware TLB
-TLB management
-128k
-256k
-Wthr
-WthrA
-CoEx
-CoCOW
-CoCUW
-Accel
-Index   EntryHi | EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global
-%2d:    %p | %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s
-Even Page               Odd Page
-Index    (virt)    (phys)   |   (virt)    (phys)     size   ASID
-%8lx -> %8lx
-tlb info
-show
-show watch status
-set watch point
-watch
-MIPS Watchpoint
-pistachio/arch/mips/kdb/watch.cc
-watch status
-Watch is %s
-OKL OKL4 - (provider: Open Kernel Labs) built on May 23 2007 17:14:44 using gcc version 3.4.4.
-SYSCALL_IPC_CONTROL
-SYSCALL_MAP_CONTROL
-SYSCALL_PROCESSOR_CONTROL
-assert
-SYSCALL_CACHE_CONTROL
-KMEM_ALLOC
-KMEM_ALLOC
-KMEM_FREE
-TOTAL_QUANTUM_EXPIRED
-PREEMPTION_SIGNALED
-Exhausted ASIDs
-PREEMPTION_SIGNALED
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-TIMESLICE_EXPIRED
-SYSCALL_THREAD_SWITCH
-Exhausted ASIDs
-SYSCALL_SCHEDULE
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-SYSCALL_IPC
-IPC_TRANSFER
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-assert
-INTERRUPT
-Exhausted ASIDs
-PREEMPTION_SIGNALED
-Exhausted ASIDs
-Exhausted ASIDs
-SYSCALL_THREAD_CONTROL_IRQ
-assert
-Exhausted ASIDs
-SYSCALL_EXCHANGE_REGISTERS
-unimplemented
-Exhausted ASIDs
-assert
-assert
-assert
-ktcb write fault
-PAGEFAULT_USER
-unhandled pagefault
-Exhausted ASIDs
-PAGEFAULT_KERNEL
-assert
-assert
-assert
-SYSCALL_SPACE_CONTROL
-assert
-assert
-assert
-warning
-UNWIND
-assert
-assert
-roottask pagefault
-assert
-panic
-panic
-SYSCALL_THREAD_CONTROL
-panic
-FPAGE_UNMAP
-FPAGE_MAP
-FPAGE_OVERMAP
-FPAGE_READ
-DISABLED_FPU
-invalid page size
-mapping exists
-Exhausted ASIDs
-assert
-assert
-assert
-assert
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Exhausted ASIDs
-Spurious interrupt
-unimplemented
-assert
-Exhausted ASIDs
-EXCEPTION_IPC_SYSCALL
-assert
-Exhausted ASIDs
-EXCEPTION_IPC_GENERAL
-assert
-unimplemented
-Syscall came from kernel mode
-Unsupported SYSCALL
-:Cache error occured:
-breakin
-,assert
-unimplemented
-unimplemented
-unimplemented
-j8
-$BP
-$G;l$BG
-$FOd0b
-b4TM
-w&dX4
-&eXH8B
-XT&eXH$
-XH8B
-w&daP
-c020
-PB&bf
-w$Dgh2C
-w$Dgh2C
-xp%kx
-b4BM
-b4BM
-4BNmpb
-__slab_cache_add
-iguana/server/src/slab_cache.c
-thread(%p)
-Client sessions:
-Server sessions:
-memsection(%p)
-session(%p)
-Client: #%ld Server: #%ld
-eas(%p)
-Thread list:
-[31mIguana check state failed!
-Page address[%p]
-<%08lx:%08lx>	%p
-B-tree is empty
-B-tree %p
-Objtable:
-iguana/server/src/objtable.c
-[31m%s:%d %s:
-Failed delete object, <%lx:%lx> shouldn't happen
-objtable_delete
-session_add_buffer
-session_delete
-session_check_state_server
-session_check_state_client
-session->call_buf == NULL
-iguana/server/src/session.c
-session->return_buf == NULL
-Couldn't do upcall
-((void*) (session)) > ((void*) BASE_PAGESIZE)
-((void*) (session->server)) > ((void*) BASE_PAGESIZE)
-((void*) (session->server->owner)) > ((void*) BASE_PAGESIZE)
-is_thread(session->server)
-check server client: %p
-check stat client: %p
-eas_create_thread
-iguana/server/src/eas.c
-Thread control failed. %lx
-!"This shouldn't happen"
-main
-!"Should never reach here"
-iguana/server/src/main.c
-pd_create_thread
-pd_release_clist
-pd_check_state
-pd_create_session
-pd_create_memsection
-pd_setup_callback
-self != NULL
-iguana/server/src/pd.c
-((void*) (self)) > ((void*) BASE_PAGESIZE)
-Owner: %p
-((void*) (&ms->data)) > ((void*) BASE_PAGESIZE)
-((void*) (&td->data)) > ((void*) BASE_PAGESIZE)
-((void*) (&sd->data)) > ((void*) BASE_PAGESIZE)
-((void*) (&pd->data)) > ((void*) BASE_PAGESIZE)
-is_pd(self)
-is_thread(client)
-is_thread(server)
-is_memsection(clist)
-vm != NULL && vm->mem->addr == base
-thread_init
-thread_free
-thread_alloc
-thread_setup
-thread_delete
-thread_raise_exception
-thread_check_state
-thread_list != NULL
-iguana/server/src/thread.c
-r == RFL_SUCCESS
-thread_no > 0
-hash_lookup(l4tid_to_thread, thread->id.raw) == NULL
-Error: %lx
-is_session(sd->data)
-Thread: %p (Valid: %d -- %lx)
-Owner   : %p
-ThreadNo: %ld
-External: %p
-Utcb    : %p
-new_ip && new_sp
-thread: %p client failed: %d
-thread: %p failed: %d
-bi_execute
-iguana/server/src/bootinfo.c
-Boot Info header not found (found 0x%lx @ %p)
-Record %d: Unknown opcode %ld
-Record %d: Bad boot info header found.
-Could not allocate memory for bootinfo buffers.
-Failed to malloc tmp buffer.
-Record %d: Attach to iguana server failed.
-pm->mem->addr == paddr
-Record %d: Mapping failed
-obj_array_size <= total_objects
-free_thread <= total_new_threads
-free_pd <= total_new_pds
-Record %d: Attach failed.
-Record %d: Second header record found.
-Record %d: Invalid PADDR
-Record %d: Thread is already running.
-Record %d: Invalid VADDR
-Record %d: Too many command line arguments supplied.
-Failed to create a thread
-Record %d: Cannot export objects once the environment has been closed.
-Record %d: Cannot export objects once a thread is running.
-Record %d: Failed to create a memsection
-Record %d: Too many caps specified.
-Record %d: Failed to create a PD.
-Record %d: Failed to create a PD. Invalid owner %ld
-pool_init
-pend - pbase + 1 >= 0x1000
-vend - vbase + 1 >= 0x1000
-iguana/server/src/pool.c
-vbase is 0x%lx, vend is 0x%lx
-addr is 0x%lx, vbase is 0x%lx
-addr == vbase
-addr == pbase
-space_init
-space_free
-space_setup
-space_cleanup
-iguana/server/src/space.c
-L4_SpaceNo(space->id) != -1UL
-delete_memsection_from_allocator
-memsection_register_server
-memsection_lookup_phys
-load_page
-memsection_delete
-iguana/server/src/memsection.c
-node
-Memsection: %p
-Owner:  %p
-Extent: <%p:%p>
-self
-%s(%p): UNIMPLEMENTED!
-r_remove
-r_insert
-iguana/server/src/pgtable.c
-write
-execute
-read
-unknown
-security failed
-[31mInvalid %s fault (%lx): %p Thread: %lx Module: %s IP: %p SP: %p
-(unknown module)
-Fault is near stack pointer - possible stack overflow
-Stack trace back:
-[31mOut of memory %s fault (%lx): %p Thread: %lx Module: %s IP: %p SP: %p
-<iguana_server> No memory section
-is_thread(thread)
-iguana/server/src/iguana_server.c
-is_pd(pd)
-set(%lx, %lx)
-ret == 0
-iguana_pd_mypd_impl
-iguana_memsection_set_attributes_impl
-server: error sending IPC reply
-Assertion failed: %s, function %s, file %s, line %d.
-0123456789ABCDEF0123456789abcdef
-bfl_free
-find_first_set
-bfl_is_free
-bfl_alloc_bit
-(val / BITS_PER_LONG) < bfl->len
-libs/bit_fl/src/bit_fl.c
-!"no bit found"
-(bit / BITS_PER_LONG) < bfl->len
-hash_init
-libs/hash/src/hash.c
-(size & (size - 1)) == 0
-tablestruct
-tablestruct->table
-__ %lx: divide by 0 error
-*****************************************
- *  Iguana system, Copyright 1996-2006   *
- *  ERTOS - National ICT Australia       *
- *****************************************
-PANIC: Bootinfo did not initialise correctly
-all bad
-Iguana abort()ed
-ig_naming
-ig_serial
-test
-main
-!"Shouldn't reach here\n"
-iguana/naming/src/naming_server.c
-server: error sending IPC reply
-Assertion failed: %s, function %s, file %s, line %d.
-0123456789ABCDEF0123456789abcdef
-_Exit
-!"We have exited -- shouldn't reach here"
-libs/c/src/sys-iguana/sys_exit.c
-__naming_thread_init
-libs/naming/src/naming.c
-__tls_init_malloc
-tls_buffer
-libs/iguana/src/tls.c
-asynch_buffer
-naming_buffer
-__asynch_thread_init
-asynch_insert
-asynch_check_mask
-libs/iguana/src/asynch.c
-asynch_objects != NULL
-asynch_objects[object->asynch_bit] == NULL
-Error Code: %lx -- %lx
-L4_IpcSucceeded(tag)
-label: %lx
-mask: %lx __sync_bits: %lx syncword: %lx
-!"Received invalid wakeup"
-iguana_cap_set
-iguana_cap_get_slot
-lookup_clist
-libs/iguana/src/cap.c
-IS_VALID_CAP(cap)
-(slot.pos != -1) || (slot.list == NULL)
-!"lookup_clist: Can't find the memsection in clist"
-memsection_delete
-memsection_back_range
-slot.pos < (slot.list->cap_free)
-memsect == slot.list->cap_list[slot.pos].ref.memsection
-libs/iguana/src/memsection.c
-base % l4e_min_pagesize() == 0
-base >= (uintptr_t)memsection_base(ms)
-(end + 1) % l4e_min_pagesize() == 0
-end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1
-Instance: %p -- server: %lx objref: %lx
-session_provide_access
-libs/iguana/src/session.c
-session != NULL
-__ %lx: divide by 0 error
-Thread abort()ed
-device_create_impl
-main
-stream_write_impl
-stream_set_sink_impl
-write_callback
-deferred_work
-buffer != NULL
-iguana/serial/src/main.c
-!"Should reach here\n"
-c_data != NULL
-data != NULL
-key != 0
-Couldn't allocate anymore!!!
-server: error sending IPC reply
-Assertion failed: %s, function %s, file %s, line %d.
-0123456789ABCDEF0123456789abcdef
-_Exit
-!"We have exited -- shouldn't reach here"
-libs/c/src/sys-iguana/sys_exit.c
-L4 kdb
-self->readc == 0
-drivers/drv_l4_kdb/src/main.c
-timer != NULL
-kbd_poll
-read
-poll_thread
-__naming_thread_init
-libs/naming/src/naming.c
-__tls_init_malloc
-tls_buffer
-libs/iguana/src/tls.c
-asynch_buffer
-naming_buffer
-__asynch_thread_init
-asynch_insert
-asynch_check_mask
-libs/iguana/src/asynch.c
-asynch_objects != NULL
-asynch_objects[object->asynch_bit] == NULL
-Error Code: %lx -- %lx
-L4_IpcSucceeded(tag)
-label: %lx
-mask: %lx __sync_bits: %lx syncword: %lx
-!"Received invalid wakeup"
-iguana_cap_set
-iguana_cap_get_slot
-lookup_clist
-libs/iguana/src/cap.c
-IS_VALID_CAP(cap)
-(slot.pos != -1) || (slot.list == NULL)
-!"lookup_clist: Can't find the memsection in clist"
-memsection_delete
-memsection_back_range
-slot.pos < (slot.list->cap_free)
-memsect == slot.list->cap_list[slot.pos].ref.memsection
-libs/iguana/src/memsection.c
-base % l4e_min_pagesize() == 0
-base >= (uintptr_t)memsection_base(ms)
-(end + 1) % l4e_min_pagesize() == 0
-end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1
-Instance: %p -- server: %lx objref: %lx
-session_provide_access
-libs/iguana/src/session.c
-session != NULL
-__ %lx: divide by 0 error
-timer_init
-libs/timer/src/timer.c
-!"Could find ig_timer."
-SESSION()->timer_obj != NULL
-Thread abort()ed
-W,$Thp<
-Xj$Gj
-Xj$Gc
-j4&eh
-+&GnH&%m
-nH&em
-nH&Em
-ol&Em
-nH&em
-rp$Eq
-rp$Eq
-v8&eu
-vd&Eu
-vp&Eu
-bw$$cw$
-wx&eu
-ff4Bfg
-ff4wfg
-yL&eu
-yX&eu
-yd&eu
-_Exit
-!"We have exited -- shouldn't reach here"
-libs/c/src/sys-iguana/sys_exit.c
-Assertion failed: %s, function %s, file %s, line %d.
-0123456789ABCDEF0123456789abcdef
-__naming_thread_init
-libs/naming/src/naming.c
-_fail_unless() called with NULL msg
-libs/check/src/check.c
-Bad status in set_fork_status
-Passed
-Failed to receive test result
-libs/check/src/check_run.c
-checked_setup
-Receive phase
-No Error
-!"Shouldn't get here - Did you leave a send redirector set?"
-Send phase
-Bad print_mode argument to srunner_run_all: %d
-Test Not Run
-None
-unchecked_setup
-Not running excepted test %s
-Bad fork status in SRunner
-Thread Create failed, ErrorCode = %d
-libcheck: Unknown message from %lx
-Thread Delete failed, ErrorCode = %d
-Unknown Error
-IPC send failed - maybe thread was deleted?
-!"Can't run a fork test!\n"
-Exception Occurred
-Null Pointer Dereferenced
-libcheck: exception received from %lx
-libcheck: pagefault received from %lx
-trun_withpager
-srunner_iterate_tcase_tfuns
-createThread
-deleteThread
-malloc of %u bytes failed:
-libs/check/src/check_error.c
-realloc of %u bytes failed:
-No messaging setup
-libs/check/src/check_msg.c
-Couldn't find pipe with key %d
-p->fp != NULL
-Only one nesting of suite runs supported
-Messaging not setup
-setup_pipe
-%s:%d:Bad message type arg
-libs/check/src/check_pack.c
-Error in ppack:
-Error in read_buf:
-Error in upack
-Bad event type received in stdout_lfun
-libs/check/src/check_log.c
-Running suite(s):
-Running suite %s
-Results for all suites run:
-Bad event type received in xml_lfun
-</suite>
-<?xml version="1.0"?>
-<testsuites xmlns="http://check.sourceforge.net/ns">
-%Y-%m-%d %H:%M:%S
-<datetime>%s</datetime>
-<duration>%f</duration>
-</testsuites>
-<suite>
-<title>%s</title>
-Could not open log file %s:
-Could not open xml file %s:
-Error closing log file:
-<test result="%s">
-<path>%s</path>
-<fn>%s:%d</fn>
-<id>%s</id>
-<description>%s</description>
-<message>%s</message>
-</test>
-success
-unset
-failure
-CK_VERBOSITY
-silent
-minimal
-verbose
-%s:%d:%s:%s:%s: %s%s
-(after this point)
-%d%%: Checks: %d, Failures: %d, Errors: %d
-__tls_init_malloc
-tls_buffer
-libs/iguana/src/tls.c
-asynch_buffer
-naming_buffer
-__asynch_thread_init
-asynch_insert
-asynch_check_mask
-libs/iguana/src/asynch.c
-asynch_objects != NULL
-asynch_objects[object->asynch_bit] == NULL
-Error Code: %lx -- %lx
-L4_IpcSucceeded(tag)
-label: %lx
-mask: %lx __sync_bits: %lx syncword: %lx
-!"Received invalid wakeup"
-iguana_cap_set
-iguana_cap_get_slot
-lookup_clist
-libs/iguana/src/cap.c
-IS_VALID_CAP(cap)
-(slot.pos != -1) || (slot.list == NULL)
-!"lookup_clist: Can't find the memsection in clist"
-memsection_delete
-memsection_back_range
-slot.pos < (slot.list->cap_free)
-memsect == slot.list->cap_list[slot.pos].ref.memsection
-libs/iguana/src/memsection.c
-base % l4e_min_pagesize() == 0
-base >= (uintptr_t)memsection_base(ms)
-(end + 1) % l4e_min_pagesize() == 0
-end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1
-Instance: %p -- server: %lx objref: %lx
-session_provide_access
-libs/iguana/src/session.c
-session != NULL
-Iguana tests
-Done create suites...
-THRD0100
-libs/iguana/test/thread_tests.c
-NULL thread returned
-THRD0200
-not right l4 thread ID
-THRD0300
-incorrect thread ref
-THRD0400
-not right iguana thread ID
-THRD0500
-THRD0600
-THRD0700
-THRD1100
-THRD0800
-THRD0900
-THRD1000
-Thread create many
-Created %d threads
-Unable to any threads
-Unable to create thread
-Unable to allocate memory
-!"data mismatch\n"
-THRD1200
-!"error in creating stack\n"
-THRD1300
-Failed to create thread
-SIMPLE TEST COMPLETE
-Assertion 'tids[i].raw != L4_nilthread.raw' failed
-Test %d complete
-COMPLEX TEST COMPLETE
-THRD1400
-COMPLEX TEST 2
-Assertion '(thread_l4tid(rthread[i])).raw != L4_nilthread.raw' failed
-COMPLEX TEST 2 COMPLETE
-Thread tests
-worker
-THRD1200
-test_asynch_get_bit_free_bit
-libs/iguana/test/asynch_tests.c
-invalid bit given
-duplicate bit given
-should be spare bit
-Asynch tests
-CAP0100
-libs/iguana/test/cap_tests.c
-NULL slot returned
-CAP0200
-NULL memory returned
-NULL cap retunred
-CAP0300
-CAP0400
-wrong mem section
-CAP Sections
-EAS0100
-libs/iguana/test/eas_tests.c
-NULL eas returned
-EAS0200
-EAS0300
-NULL eas thread created
-EAS0400
-EAS thread create many
-Created %d EAS threads
-Unable to create any threads
-EAS Sections
-OBJ0100
-libs/iguana/test/obj_tests.c
-NULL obj interface returned
-OBJ Sections
-PD0100
-libs/iguana/test/pd_tests.c
-NULL pd returned
-PD0200
-PD0400
-PD0500
-PD0600
-PD0700
-NULL memsection returned
-error data
-PD0800
-PD0900
-PD1000
-PD1100
-PD1200
-PD1300
-NULL clist returned
-PD1400
-worker_a
-worker_b
-PD1500
-PD1600
-Attaching memsection failed.
-PD1700
-Attaching null memsection succeeded
-Attaching memsection to null PD succeeded
-Attaching null memsection to null PD succeeded
-Attaching PD failed.
-PD1900
-Attaching memsection to deleted PD succeeded.
-PD2000
-PD2100
-PD tests
-worker_a
-worker_b
-POOL0100
-libs/iguana/test/pool_tests.c
-Failed to create the new Physmem
-POOL0200
-Invalid Physmem size
-Failed to map Physmem
-POOL0300
-Invalid Physmem base address
-POOL0400
-pool_alloc_fixed() failed to return error
-POOL0500
-POOL0600
-Pools
-rpd0200_restricted_fn
-rpd0201_helper_fn
-rpd0201_restricted_fn
-RPD0201
-rpd0202_restricted_fn
-synthesise_fault
-rpd0204_restricted_fn
-libs/iguana/test/restricted_pd_tests.c
-Failed to create thread in rpd.
-Failed to create stack in rpd.
-Failed to create clist in rpd.
-RPD0100
-Failed to create restricted pd.
-RPD0101
-Failed to create other pd.
-RPD0102
-RPD0200
-Failed to receive IPC.
-Incorrect tag in message.
-RPD0201
-Failed to create helper pd.
-Received from wrong thread.
-RPD0202
-Failed to create restricted PD.
-setup pd failed in RPD0202.
-received from wrong tid
-wrong label
-rpd0203 should not have restarted here.
-L4_IpcFailed(tag)
-RPD0203
-setup pd failed in RPD0203.
-from.raw == rpd0204_tid_1.raw
-L4_Label(tag) == 0x1
-!L4_IpcSucceeded(tag)
-rpd0204: ipc from restricted pd returned success.
-RPD0204
-rpd0204 setup_pd for restricted returned nonzero.
-Failed to create unrestricted pd.
-rpd0204 setup_pd for unrestriced returned nonzero.
-Couldn't ipc to the restricted pd
-Restricted PD tests
-memsection_delete(ms);
-thread_delete(thread_l4tid(thrd));
-MEMS0100
-libs/iguana/test/memsect_tests.c
-base pointer not-null
-reference not zero
-MEMS0101
-MEMS0200
-MEMS0500
-Memory not zeroed
-MEMS0700
-MEMS0800
-MEMS0900
-memory section corrupt writes
-MEMS1000
-memsection size mismatch
-memsection too small
-create memsection failed
-MEMS1100
-MEMS1200
-not the right mem section
-not the right thread
-MEMS1300
-MEMS1500
-abcdefg123456
-page not mapped correctly
-MEMS1600
-pages not mapped correctly
-MEMS1700
-memsection reference not-zero
-memory access inconsistent
-MEMS1800
-MEMS1900
-MEMS2000
-MEMS2100
-allocate memsection
-MEMS2200
-memory consistency
-MEMS2300
-TESTING MEMORY SECTIONS
-TESTING NORMAL CREATES
-Memory zeroed
-Memory access inconsistent
-Done a lot of creates: %d of %d size total: %d MB
-MEMS2400
-memsection_map() failed to return error
-MEMS2500
-MEMS2501
-MEMS2600
-memsection_unmap() failed to return error
-MEMS2601
-MEMS2602
-MEMS2603
-Failed to unmap Physmem
-MEMS2700
-MEMS2800
-MEMS2900
-Memory Sections
-libs/iguana/test/semaphore_tests.c
-Semaphore was not released
-Semaphore lock did not work
-%lx failed after %d loops
-High priority started
-Low priority thread did not finish or did not run
-High finished
-Priority inversion error : Low priority thread should be executed instead of the medium one
-Medium finished
-Low finished
-SEMAPHORE01
-mutex lock failed, wrong holder
-mutex unlock failed, wrong holder
-SEMAPHORE02
-Priority inversion test
-SEMAPHORE03
-Semaphore test program
-Semaphore tests
-SESS0100
-libs/iguana/test/session_tests.c
-NULL session returned
-SESS0200
-SESS0300
-be in touch!
-SESS0500
-Session Sections
-__ %lx: divide by 0 error
-WARNING: getenv not implemented
-tmp_write
-tmp_buf != NULL
-libs/c/src/sys-iguana/sys_tmpfile.c
-Thread abort()ed
-kernel.text
-kernel.rodata
-kernel.kip
-kernel.data
-kernel.kdebug
-kernel.sets
-kernel.bss
-kernel.kdebug-data
-kernel.init
-iguana_server.text
-iguana_server.rodata
-iguana_server.reginfo
-iguana_server.data
-iguana_server.sbss
-iguana_server.bss
-bootinfo
-ig_naming.text
-ig_naming.rodata
-ig_naming.reginfo
-ig_naming.data
-ig_naming.sbss
-ig_naming.bss
-ig_serial.text
-ig_serial.rodata
-ig_serial.reginfo
-ig_serial.data
-ig_serial.sbss
-ig_serial.bss
-test.text
-test.rodata
-test.reginfo
-test.data
-test.sbss
-test.bss
-.shstrtab
+[
+  "9B4B",
+  "D$B9H",
+  "Ye$E8p<",
+  "Ye$E8|",
+  "Ye$E7",
+  "Ye$E6",
+  "b\r$E8p<",
+  "Ad&cp",
+  "w$DV,&1",
+  "w$dV8",
+  "!&dVX&EVd$",
+  "alloc_ipc_bitmap",
+  "tb_switch_buffers",
+  "word_t sys_schedule(threadid_t, word_t, word_t, word_t, word_t, word_t)",
+  "finish_sys_schedule",
+  "word_t sys_ipc(threadid_t, threadid_t)",
+  "handle_interrupt",
+  "void tcb_t::copy_regs_to_mrs(tcb_t*)",
+  "Xhandle_pagefault",
+  "tcb_t* create_root_server(threadid_t, threadid_t, threadid_t, threadid_t, fpage_t, fpage_t, word_t)",
+  "void init_root_servers()",
+  "init_tlb",
+  "void mips64_dump_tlb()",
+  "stack_t* virtual_interrupt(word_t, stack_t*)",
+  "Xword_t read_cp0_reg(word_t)",
+  "static cmd_ret_t kdb_t::cmd_mips64_wset(cmd_group_t*)",
+  "static cmd_ret_t kdb_t::cmd_mips64_wshow(cmd_group_t*)",
+  "%s:%d: Already have CONFIG_MAX_SPACES (%d)",
+  "SYSCALL_IPC_CONTROL: current=%p control=%lx, space=%d",
+  "SYS_MAP_CONTROL: space=%d, control=%p (n = %d, %c%c)",
+  "SYS_PROCESSOR_CONTROL (cpu=%d, ifreq=%d, efreq=%d, voltage=%d",
+  "FASTPATH_IPC",
+  "EVENT",
+  "INTERRUPT",
+  "SYSCALL_IPC",
+  "SYSCALL_EXCHANGE_REGISTERS",
+  "SYSCALL_SPACE_CONTROL",
+  "SYSCALL_THREAD_CONTROL",
+  "SYSCALL_THREAD_SWITCH",
+  "SYSCALL_SCHEDULE",
+  "SYSCALL_MAP_CONTROL",
+  "SYSCALL_PROCESSOR_CONTROL",
+  "SYSCALL_CACHE_CONTROL",
+  "SYSCALL_IPC_CONTROL",
+  "SYSCALL_PLATFORM_CONTROL",
+  "IPC_TRANSFER",
+  "IPC_MESSAGE_OVERFLOW",
+  "TIMESLICE_EXPIRED",
+  "TOTAL_QUANTUM_EXPIRED",
+  "PREEMPTION_FAULT",
+  "PREEMPTION_SIGNALED",
+  "MAP_FPAGE",
+  "FPAGE_OVERMAP",
+  "FPAGE_UNMAP",
+  "FPAGE_READ",
+  "UNWIND",
+  "SYSCALL_THREAD_CONTROL_IRQ",
+  "PAGEFAULT_USER",
+  "PAGEFAULT_KERNEL",
+  "KMEM_ALLOC",
+  "KMEM_FREE",
+  "EXCEPTION_IPC_GENERAL",
+  "EXCEPTION_IPC_SYSCALL",
+  "DISABLED_FPU",
+  "kmem_trace",
+  "Assertion trace_buffer failed in file %s, line %d (fn=%p)",
+  "pistachio/src/tracebuffer.cc",
+  "SYSCALL_CACHE_CONTROL: current=%p control=%lx, space=%ld",
+  "kmem_alloc_aligned (%d bytes), ip=%x",
+  "kmem_alloc_aligned (%d [%d%c]), ip: %p",
+  "kmem_alloc (%d bytes), ip=%x",
+  "kmem_alloc (%d [%d%c]), ip: %p",
+  "kmem_free (%p, %d [%d%c]), ip: %p",
+  "total quantum expired for %t",
+  "preemption signalled for %t",
+  "timeslice expired for %t",
+  "SYS_THREAD_SWITCH current=%t, dest=%t",
+  "SYS_SCHEDULE: curr=%t, dest=%t, quantum=%x, hwtid mask = %08lx, timeslice=%x, domain_ctrl=%x, prio=%x",
+  "%s:%d: invalid state (%x)",
+  "Assertion !\"We shouldn't get here!\" failed in file %s, line %d (fn=%p)",
+  "pistachio/arch/mips/include/arch/tcb.h",
+  "sys_ipc %t => %t (recvfrom=%t)",
+  "SYS_IPC: current: %t, to_tid: %t, from_tid: %t, tag: 0x%x (label=0x%x, %c%c%c%c, u=%d)",
+  "IPC transfer message: src=%t, dst=%t",
+  "idle",
+  "Assertion !\"Scheduler start fell through!!!\\n\" failed in file %s, line %d (fn=%p)",
+  "pistachio/src/init.cc",
+  "%s:%d: IRQ handler TID is invalid -- halting IRQ%d",
+  "%s:%d: spurious IRQ%d?",
+  "IRQ %d",
+  "irq %d",
+  "preemption signalled (irq) for %t",
+  "SYS_THREAD_CONTROL for IRQ%d (IRQ=%t, handler=%t)",
+  "Assertion this != idle failed in file %s, line %d (fn=%p)",
+  "pistachio/include/tcb.h",
+  "SYS_EXCHANGE_REGISTERS: dest=%t, control=0x%x [%c%c%c%c%c%c%c%c%c%c%c], usp=%p, uip=%p, uflags=%p, uhandle=%x",
+  "sys_exchange_registers (dest=%t, control=%x)",
+  "Not implemented: %s\n%s, line %d",
+  "[33m%s",
+  "kmem_stack",
+  "kmem_space",
+  "kmem_spaceids",
+  "kmem_ipc_control",
+  "Assertion stack_base != 0 failed in file %s, line %d (fn=%p)",
+  "pistachio/src/space.cc",
+  "Assertion get_kip()->space_info.get_num_spaces()-1 failed in file %s, line %d (fn=%p)",
+  "Assertion new_table failed in file %s, line %d (fn=%p)",
+  "%s:%d: unhandled pagefault @ %p, %p",
+  "write",
+  "read",
+  "unknown",
+  "user %s pagefault by %t at %p, ip=%p, ksp=%p",
+  "user page fault at %x (current=%t, ip=%x, access=%x)",
+  "kernel access raised user pagefault @ %p, ip=%p, space=%p, esp = %p",
+  "current tcb = %p",
+  "wrong access - unable to recover",
+  "kernel pagefault in space %p @ %p, ip=%p, type=%x, ksp=%p",
+  "kernel page fault at %x (current=%t, ip=%x, space=%p)",
+  "read/write",
+  "execute",
+  "Assertion !((tcb_t *)tcb_ptr)->exists() failed in file %s, line %d (fn=%p)",
+  "Assertion found failed in file %s, line %d (fn=%p)",
+  "Assertion pgsize == KTCB_PGSIZE failed in file %s, line %d (fn=%p)",
+  "SYS_SPACE_CONTROL: space=%d, control=%p, kip_area=%p, utcb_area=%p, spc_resc=%p",
+  "Assertion !\"Error setting up initial mappings\" failed in file %s, line %d (fn=%p)",
+  "Assertion j != kip->memory_info.get_num_descriptors() failed in file %s, line %d (fn=%p)",
+  "Assertion !\"Unsafe unwind\" failed in file %s, line %d (fn=%p)",
+  "pistachio/src/thread.cc",
+  "UNKNOWN",
+  "POLLING",
+  "WAIT_NOTIFY",
+  "WARNING: %s, line %d (fn=%p)\n===> Unresolved unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)",
+  "WAIT_XPU_DELTCB",
+  "HALTED",
+  "ABORTED",
+  "Unwind: tcb=%t p=%t s=%s (saved: p=%t s=%s)",
+  "WAIT_FOREVER",
+  "WAIT_XPU_EXREGS",
+  "LCK_RUNNING",
+  "LCK_WAITING",
+  "Assertion this->queue_state.is_set(queue_state_t::ready) == false failed in file %s, line %d (fn=%p)",
+  "Assertion this->exists() failed in file %s, line %d (fn=%p)",
+  "roottask %s pagefault at %p, ip=%p - deny",
+  "Assertion !\"Failed to create root server TCB\\n\" failed in file %s, line %d (fn=%p)",
+  "PANIC in %s, %s, line %d:\n===>",
+  "Failed to map the kernel area",
+  "failed to activate root server",
+  "SYS_THREAD_CONTROL: dest=%t, space=%d, scheduler=%t, pager=%t, except_handler=%t, utcb=%x",
+  "roottask",
+  "root task not found!",
+  "kmem_pgtab",
+  "unmap_fpage (fpg=%p  t_spc=%p)",
+  "map_fpage (fpg=%p  t_spc=%p) : addr=%p, phys=%p (%ld) map=%d%cB, sz=%d%cB",
+  "single map",
+  "subtree",
+  "overmapping: taddr=%p tsz=%d%cB (%s)",
+  "read_fpage (fpg=%p  t_spc=%p)",
+  "kmem_fpu",
+  "FPU disabled exception:  cur=%p  owner=%p",
+  "kmem_utcb",
+  "kmem_tcb",
+  "Mapping invalid pagesize (%dKB)",
+  "%dKB mapping @ %p space %p already exists.",
+  "Assertion r == true failed in file %s, line %d (fn=%p)",
+  "pistachio/arch/mips/src/space.cc",
+  "Assertion alloc failed in file %s, line %d (fn=%p)",
+  "Assertion dummy_tcb failed in file %s, line %d (fn=%p)",
+  "L4 Mips: Spurious interrupt %d",
+  "%s:%d: Initialize TLB",
+  "-------------------------TLB DUMP-----------------------------",
+  "pistachio/arch/mips/src/tlb.cc",
+  "-------------------------EPC DUMP-----------------------------",
+  "EPC = %16lx",
+  "%c [%16lx] = 0x%08lx",
+  "Unable to deliver user exception: IPC error.",
+  "Read k-register",
+  "Write k-register",
+  "[1m--- KD# Unhandled Exception [",
+  "EXCEPTION_IPC_SYSCALL: (%p) IP = %p, v0 = 0x%016lx",
+  "Unable to deliver user exception: no exception handler.",
+  "[1m--- KD# %s ---",
+  "Unhandled User SYSCALL",
+  "[1m--- KD#",
+  "[not mapped]",
+  "Virtual coherency exception (data)",
+  "Address error (load/execute)",
+  "EXCEPTION_IPC_GENERAL: (%p) exc_no %d, exc_code %016lx, IP = %p",
+  "Watchpoint",
+  "Cache error in debug mode",
+  "Machine check",
+  "MDMX Unusable",
+  "Coprocessor 2 exception",
+  "Floating point exception",
+  "Virtual coherency exception (instruction)",
+  "Trap exception",
+  "Arithmetic overflow",
+  "Coprocessor unavailable",
+  "Illegal instruction",
+  "Breakpoint",
+  "Bus error (data load/store)",
+  "Bus error (instruction fetch)",
+  "Address error (store)",
+  "Assertion !\"Please implement me!\" failed in file %s, line %d (fn=%p)",
+  "pistachio/arch/mips/src/exception.cc",
+  "pistachio/arch/mips/src/loose_ends.cc",
+  "showqueue",
+  "show scheduling queue",
+  "idle : %t",
+  "present-list is wrong???",
+  "*** ERROR ***",
+  "%s [current]:",
+  "current",
+  "No thread named: %s",
+  "listspaces",
+  "list all address spaces",
+  "USP: %p   tstate: %ws  ready: %w.wt:%-w.wt   pdir : %p",
+  "sndhd : %-w.wt  send : %w.wt:%-w.wt   pager: %.wt",
+  "total quant:    0x%x us, ts length  :       0x%x us, curr ts: 0x%m us",
+  "resources:    %p [",
+  "continuation: %p   preemption_cont: %p",
+  "scheduler: %.wt    exception_handler: %.wt",
+  "partner: %.wt        saved partner: %.wt      saved state: %s",
+  "WAIT_FE",
+  "WAIT_NF",
+  "LCKRUNN",
+  "LCKWAIT",
+  "HALTED",
+  "showtcbext",
+  "shows thread control block (extended)",
+  "showtcb",
+  "show thread control block",
+  "<noname>",
+  "=== %s == TCB: %p == ID: %p = %p/%p == PRIO: 0x%02x",
+  "UIP: %p   queues: %c%c%c%c%s      space: %S",
+  "user handle:          %p  cop flags:           %02x%s    preempt flags: %02x [%c]",
+  "incoming notify bits: %p  notify mask:         %p   virtual sender: %t",
+  "last preempted_ip:    %p  preempt_callback_ip: %p",
+  "tcb/tid/name",
+  "no valid UTCB",
+  "mr(%02d):",
+  "Message Tag: %d untyped, label = %x, flags = %c%c%c",
+  "Acceptor: %p (%c)",
+  "Error code: %d",
+  "NIL_THRD",
+  "ANY_THRD",
+  "%16s %s",
+  "System call offsets:",
+  "%16s 0x%08x    %17s 0x%08x",
+  "MapControl",
+  "SpaceControl",
+  "ThreadControl",
+  "ProcessorControl",
+  "Lipc",
+  "CacheControl",
+  "ExchangeRegisters",
+  "Schedule",
+  "ThreadSwitch",
+  "PlatformControl",
+  "IpcControl",
+  "Processors %d:",
+  "Proc%3d:       external freq = %dMHz, internal freq = %dMHz",
+  "Memory regions (%d):",
+  "Physical:",
+  "0x%p - 0x%p   %s (%d)",
+  "tracebuffer",
+  "<unknown>",
+  "Virtual:",
+  "0x%p - 0x%p   %s",
+  "Interactive",
+  "Command Line Interface",
+  "User Console",
+  "ThreadNames",
+  "SpaceNames",
+  "initial mapping",
+  "architecture specific",
+  "bootloader specific",
+  "dump kernel interface page",
+  "128K",
+  "256K",
+  "512K",
+  "128M",
+  "256M",
+  "512M",
+  "128G",
+  "256G",
+  "512G",
+  "128T",
+  "256T",
+  "512T",
+  "undefined",
+  "conventional",
+  "reserved",
+  "dedicated",
+  "remote",
+  "global",
+  "Kernel Interface Page:",
+  "%16s %c%c%c%c",
+  "Magic",
+  "%16s 0x%02x.0x%02x",
+  "API version",
+  "litte",
+  "%16s %s-endian, %d-bit",
+  "API flags",
+  "Kernel Debugger Features:",
+  "Config:",
+  "%16s num mrs: %d",
+  "VirtualReg info",
+  "%16s min size: %dKB, alignment: %d, UTCB size: %d",
+  "UTCB area info",
+  "%16s min size: %dKB",
+  "KIP area info",
+  "%16s Phys 0x%p:0x%p Virt: 0x%p",
+  "Boot info",
+  "%16s schedule precision: %d us",
+  "Clock info",
+  "%16s user base: 0x%03x, system base: 0x%03x, thread bits: %d",
+  "Thread info",
+  "%16s sizes:",
+  "Page info",
+  ", rights: %s%s%s",
+  "Root server:",
+  "%16s ip: 0x%08x,",
+  "root server",
+  "sp: 0x%08x,",
+  "0x%08x:0x%08x",
+  "Kernel descriptor:",
+  "%16s %d.%d",
+  "Kernel ID",
+  "%16s %s %d, %d",
+  "Kernel gen date",
+  "%16s %d.%d.%d",
+  "Kernel version",
+  "Kernel supplier",
+  "%16s %s",
+  "Version string",
+  "Features",
+  "console",
+  "[%d] Unknown record (type: 0x%x,  version: %d)",
+  "[%d] EFI Tables (version %d):\n  systab:    %p\n  memmap:    [addr: %p, size: 0x%x]\n  memdesc:   [version: 0x%x, size: 0x%x]",
+  "[%d] Multiboot info (version %d):\n  address:   %p",
+  "[%d] Simple executable (version %d):\n  text:      [paddr: %p, vaddr: %p, size: %p]\n  data:      [paddr: %p, vaddr: %p, size: %p]\n  bss:       [paddr: %p, vaddr: %p, size: %p]\n  entry:     %p\n  flags:     %p\n  label:     %p\n  cmdline:   %s",
+  "[%d] Simple ELF (version %d):\n  header:    [paddr: %p]\n  cmdline:   %s",
+  "[%d] Simple module (version %d):\n  start:     %p\n  size:      %p\n  cmdline:   %s",
+  "pistachio/src/kdb/generic/bootinfo.cc",
+  "Not a generic bootinfo record (bootinfo=%p).",
+  "Assertion bootinfo_copy failed in file %s, line %d (fn=%p)",
+  "generic bootinfo",
+  "Generic BootInfo @ %p",
+  "magic:        0x%p\n  version:      %d\n  size:         0x%x\n  num records:  %d",
+  "Toggle console",
+  "Switch console: %s",
+  "kmem",
+  "kernel memory allocator statistics",
+  "kmem_misc",
+  "Kernel memory statistics:\n  Chunk size  = %d bytes\n  Free chunks = %d (%d%cB)",
+  "Consecutive   Number of",
+  "chunks        matches",
+  "%7d%c      %6d",
+  "Max consecutive chunks: %d",
+  "Kernel memory distribution:",
+  "%16s %6d %cB",
+  "Set = %p,  Entries = %d",
+  "dumpphys",
+  "dump physical memory",
+  "memdump",
+  "dump memory in other space",
+  "dump memory",
+  "wordsize",
+  "change memdump word size",
+  "Memdump wordsize = %d",
+  "Continue?",
+  "Continue/Quit",
+  "Dump address",
+  "Space",
+  "(null)",
+  "disable",
+  "disable tracepoints",
+  "enable",
+  "enable tracepoints",
+  "reset",
+  "reset counters",
+  "confall",
+  "configure all tracepoints",
+  "conf",
+  "configure a tracepoint",
+  "list",
+  "list tracepoints",
+  "enable/disable/list tracepoints",
+  "prior",
+  "back to previous menu",
+  "back up to previous menu",
+  "help",
+  "this help message",
+  "enabled",
+  "disabled",
+  "Tracepoints: %s",
+  "Num  %28s Print  KDB",
+  "Name",
+  "Counter",
+  "%3d   %28s  %c      %c",
+  "Tracepoint",
+  "Print",
+  "Enter KDB",
+  "%3d - %28s",
+  "List choices",
+  "modeswitch",
+  "change kernel debugger operation mode",
+  "Unknown command: %s",
+  "KDB mode: Command line",
+  "KDB mode: Keystroke",
+  "stats",
+  "config",
+  "KDB configuration",
+  "arch",
+  "architecture specifics",
+  "continue execution",
+  "%s [0x%lx]:",
+  "ptab",
+  "dump page table",
+  "%p [%p]:%s tree=%p",
+  "kernel",
+  "%p [%p]:%s phys=%p pg=%p %s%3d%cB %c%c%c (%c%c%c) %s",
+  "user",
+  "tid_format",
+  "change output format of thread IDs",
+  "Basic output format",
+  "Global id/Tcb address/Both",
+  "Yes/No",
+  "Special threads in human readable form",
+  "Version field format",
+  "Inline/Separate/Off",
+  "Add separator before <n> lower-most bits of thread number (0-%lu) [0]:",
+  "reset (zero) tracebuffer",
+  "dump",
+  "dump current buffer",
+  "logmask",
+  "change logmask",
+  "show tracebuffer info",
+  "tracebuffer menu",
+  "Invalid trace_buffer (NULL)",
+  "=== Tracebuffer @ %p, magic = %p ===",
+  "version: %8x, bufid:         %8x",
+  "buffers: %8d, active_buffer: %8d",
+  "bufsize: %8d, empty mask     %8x",
+  "logmask: %8x",
+  "buffer %d: offset: %8d,  head: %8d",
+  "Log Mask",
+  "%6d: %9m",
+  "(%d, %d, %d) %s:",
+  "(%d, %d, %d) %s",
+  "(%d, %d, %d) \"%s\"",
+  "No current active buffer!",
+  "-- current ASID is %d, CPU %d --",
+  "show floating point registers",
+  "findframe",
+  "search for an exception frame",
+  "dumpframe",
+  "show exception frame",
+  "show current user exception frame",
+  "== Stack frame: %p ==",
+  "== STATUS: %8x == CAUSE: %8lx == EPC: %8lx",
+  "at = %8lx, v0 = %8lx, v1 = %8lx, sp = %8lx",
+  "a0 = %8lx, a1 = %8lx, a2 = %8lx, a3 = %8lx",
+  "t0 = %8lx, t1 = %8lx, t2 = %8lx, t3 = %8lx",
+  "t4 = %8lx, t5 = %8lx, t6 = %8lx, t7 = %8lx",
+  "s0 = %8lx, s1 = %8lx, s2 = %8lx, s3 = %8lx",
+  "s4 = %8lx, s5 = %8lx, s6 = %8lx, s7 = %8lx",
+  "t8 = %8lx, t9 = %8lx, s8 = %8lx, gp = %8lx",
+  "ra = %8lx, hi = %8lx, lo = %8lx",
+  "f%d\t= %16lx",
+  "FPCSR\t= %16lx",
+  "Thread does not have FPU resources",
+  "tcb/tid/addr",
+  "dumpcp0",
+  "dump cp0 registers",
+  "BadVaddr",
+  "CacheErr",
+  "Cause",
+  "Compare",
+  "Config",
+  "Context",
+  "EntryHi",
+  "EntryLo0",
+  "EntryLo1",
+  "ErrorEPC",
+  "Index",
+  "LLaddr",
+  "PageMask",
+  "PerfCount",
+  "PRID",
+  "Random",
+  "Status",
+  "TagHi0",
+  "TagLo0",
+  "WatchHi",
+  "WatchLo",
+  "Wired",
+  "XContext",
+  "pistachio/arch/mips/kdb/cp0.cc",
+  "Dumping Contents of CP0 Registers",
+  "%12s [%2d]  0x%016lx",
+  "%12s [%2d]          0x%08lx",
+  "cpuid",
+  "dump CPUID",
+  "D                 Doubleword every cycle",
+  "DDxDDx            2 Doublewords every 3 cycles",
+  "DDxxDDxx          2 Doublewords every 4 cycles",
+  "DxDxDxDx          2 Doublewords every 4 cycles",
+  "DDxxxDDxxx        2 Doublewords every 5 cycles",
+  "DDxxxxDDxxxx      2 Doublewords every 6 cycles",
+  "DxxDxxDxxDxx      2 Doublewords every 6 cycles",
+  "DDxxxxxxDDxxxxxx  2 Doublewords every 8 cycles",
+  "DxxxDxxxDxxxDxxx  2 Doublewords every 8 cycles",
+  "CPUID:",
+  "unknown CP0_PRID=%8x",
+  "Detected cache: icache = %dk, %d bytes per line, %d way associative",
+  "dcache = %dk, %d bytes per line, %d way associative",
+  "Sibyte SB1, Rev %d",
+  "Data transmit pattern: %s",
+  "System clock is CPU clock divided by %d",
+  "disabled",
+  "enabled",
+  "Master-Checker Mode is %s",
+  "Fast Multiply is %s",
+  "R4700, Rev %d.%d",
+  "unknown",
+  "available",
+  "MIPS16 is %s",
+  "IDT RC64574/2, Rev %d",
+  "vr4121 rev %d",
+  "vr4181 rev %d",
+  "Reset system",
+  "dump TLB information",
+  "translate",
+  "translate TLB",
+  "dump hardware TLB",
+  "TLB management",
+  "128k",
+  "256k",
+  "Wthr",
+  "WthrA",
+  "CoEx",
+  "CoCOW",
+  "CoCUW",
+  "Accel",
+  "Index   EntryHi | EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global",
+  "%2d:    %p | %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s",
+  "Even Page               Odd Page",
+  "Index    (virt)    (phys)   |   (virt)    (phys)     size   ASID",
+  "%8lx -> %8lx",
+  "tlb info",
+  "show",
+  "show watch status",
+  "set watch point",
+  "watch",
+  "MIPS Watchpoint",
+  "pistachio/arch/mips/kdb/watch.cc",
+  "watch status",
+  "Watch is %s",
+  "OKL OKL4 - (provider: Open Kernel Labs) built on May 23 2007 17:14:44 using gcc version 3.4.4.",
+  "SYSCALL_IPC_CONTROL",
+  "SYSCALL_MAP_CONTROL",
+  "SYSCALL_PROCESSOR_CONTROL",
+  "assert",
+  "SYSCALL_CACHE_CONTROL",
+  "KMEM_ALLOC",
+  "KMEM_ALLOC",
+  "KMEM_FREE",
+  "TOTAL_QUANTUM_EXPIRED",
+  "PREEMPTION_SIGNALED",
+  "Exhausted ASIDs",
+  "PREEMPTION_SIGNALED",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "TIMESLICE_EXPIRED",
+  "SYSCALL_THREAD_SWITCH",
+  "Exhausted ASIDs",
+  "SYSCALL_SCHEDULE",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "SYSCALL_IPC",
+  "IPC_TRANSFER",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "assert",
+  "INTERRUPT",
+  "Exhausted ASIDs",
+  "PREEMPTION_SIGNALED",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "SYSCALL_THREAD_CONTROL_IRQ",
+  "assert",
+  "Exhausted ASIDs",
+  "SYSCALL_EXCHANGE_REGISTERS",
+  "unimplemented",
+  "Exhausted ASIDs",
+  "assert",
+  "assert",
+  "assert",
+  "ktcb write fault",
+  "PAGEFAULT_USER",
+  "unhandled pagefault",
+  "Exhausted ASIDs",
+  "PAGEFAULT_KERNEL",
+  "assert",
+  "assert",
+  "assert",
+  "SYSCALL_SPACE_CONTROL",
+  "assert",
+  "assert",
+  "assert",
+  "warning",
+  "UNWIND",
+  "assert",
+  "assert",
+  "roottask pagefault",
+  "assert",
+  "panic",
+  "panic",
+  "SYSCALL_THREAD_CONTROL",
+  "panic",
+  "FPAGE_UNMAP",
+  "FPAGE_MAP",
+  "FPAGE_OVERMAP",
+  "FPAGE_READ",
+  "DISABLED_FPU",
+  "invalid page size",
+  "mapping exists",
+  "Exhausted ASIDs",
+  "assert",
+  "assert",
+  "assert",
+  "assert",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Exhausted ASIDs",
+  "Spurious interrupt",
+  "unimplemented",
+  "assert",
+  "Exhausted ASIDs",
+  "EXCEPTION_IPC_SYSCALL",
+  "assert",
+  "Exhausted ASIDs",
+  "EXCEPTION_IPC_GENERAL",
+  "assert",
+  "unimplemented",
+  "Syscall came from kernel mode",
+  "Unsupported SYSCALL",
+  ":Cache error occured:",
+  "breakin",
+  ",assert",
+  "unimplemented",
+  "unimplemented",
+  "unimplemented",
+  "j8\n$BP",
+  "$G;l$BG",
+  "$FOd0b",
+  "b4TM",
+  "w&dX4",
+  "&eXH8B",
+  "XT&eXH$",
+  "XH8B",
+  "w&daP",
+  "c020",
+  "PB&bf",
+  "w$Dgh2C",
+  "w$Dgh2C",
+  "xp%kx",
+  "b4BM",
+  "b4BM",
+  "4BNmpb",
+  "__slab_cache_add",
+  "iguana/server/src/slab_cache.c",
+  "thread(%p)",
+  "Client sessions:",
+  "Server sessions:",
+  "memsection(%p)",
+  "session(%p)",
+  "Client: #%ld Server: #%ld",
+  "eas(%p)",
+  "Thread list:",
+  "[31mIguana check state failed!",
+  "Page address[%p]",
+  "<%08lx:%08lx>\t%p",
+  "B-tree is empty",
+  "B-tree %p",
+  "Objtable:",
+  "iguana/server/src/objtable.c",
+  "[31m%s:%d %s:",
+  "Failed delete object, <%lx:%lx> shouldn't happen",
+  "objtable_delete",
+  "session_add_buffer",
+  "session_delete",
+  "session_check_state_server",
+  "session_check_state_client",
+  "session->call_buf == NULL",
+  "iguana/server/src/session.c",
+  "session->return_buf == NULL",
+  "Couldn't do upcall",
+  "((void*) (session)) > ((void*) BASE_PAGESIZE)",
+  "((void*) (session->server)) > ((void*) BASE_PAGESIZE)",
+  "((void*) (session->server->owner)) > ((void*) BASE_PAGESIZE)",
+  "is_thread(session->server)",
+  "check server client: %p",
+  "check stat client: %p",
+  "eas_create_thread",
+  "iguana/server/src/eas.c",
+  "Thread control failed. %lx",
+  "!\"This shouldn't happen\"",
+  "main",
+  "!\"Should never reach here\"",
+  "iguana/server/src/main.c",
+  "pd_create_thread",
+  "pd_release_clist",
+  "pd_check_state",
+  "pd_create_session",
+  "pd_create_memsection",
+  "pd_setup_callback",
+  "self != NULL",
+  "iguana/server/src/pd.c",
+  "((void*) (self)) > ((void*) BASE_PAGESIZE)",
+  "Owner: %p",
+  "((void*) (&ms->data)) > ((void*) BASE_PAGESIZE)",
+  "((void*) (&td->data)) > ((void*) BASE_PAGESIZE)",
+  "((void*) (&sd->data)) > ((void*) BASE_PAGESIZE)",
+  "((void*) (&pd->data)) > ((void*) BASE_PAGESIZE)",
+  "is_pd(self)",
+  "is_thread(client)",
+  "is_thread(server)",
+  "is_memsection(clist)",
+  "vm != NULL && vm->mem->addr == base",
+  "thread_init",
+  "thread_free",
+  "thread_alloc",
+  "thread_setup",
+  "thread_delete",
+  "thread_raise_exception",
+  "thread_check_state",
+  "thread_list != NULL",
+  "iguana/server/src/thread.c",
+  "r == RFL_SUCCESS",
+  "thread_no > 0",
+  "hash_lookup(l4tid_to_thread, thread->id.raw) == NULL",
+  "Error: %lx",
+  "is_session(sd->data)",
+  "Thread: %p (Valid: %d -- %lx)",
+  "Owner   : %p",
+  "ThreadNo: %ld",
+  "External: %p",
+  "Utcb    : %p",
+  "new_ip && new_sp",
+  "thread: %p client failed: %d",
+  "thread: %p failed: %d",
+  "bi_execute",
+  "iguana/server/src/bootinfo.c",
+  "Boot Info header not found (found 0x%lx @ %p)",
+  "Record %d: Unknown opcode %ld",
+  "Record %d: Bad boot info header found.",
+  "Could not allocate memory for bootinfo buffers.",
+  "Failed to malloc tmp buffer.",
+  "Record %d: Attach to iguana server failed.",
+  "pm->mem->addr == paddr",
+  "Record %d: Mapping failed",
+  "obj_array_size <= total_objects",
+  "free_thread <= total_new_threads",
+  "free_pd <= total_new_pds",
+  "Record %d: Attach failed.",
+  "Record %d: Second header record found.",
+  "Record %d: Invalid PADDR",
+  "Record %d: Thread is already running.",
+  "Record %d: Invalid VADDR",
+  "Record %d: Too many command line arguments supplied.",
+  "Failed to create a thread",
+  "Record %d: Cannot export objects once the environment has been closed.",
+  "Record %d: Cannot export objects once a thread is running.",
+  "Record %d: Failed to create a memsection",
+  "Record %d: Too many caps specified.",
+  "Record %d: Failed to create a PD.",
+  "Record %d: Failed to create a PD. Invalid owner %ld",
+  "pool_init",
+  "pend - pbase + 1 >= 0x1000",
+  "vend - vbase + 1 >= 0x1000",
+  "iguana/server/src/pool.c",
+  "vbase is 0x%lx, vend is 0x%lx",
+  "addr is 0x%lx, vbase is 0x%lx",
+  "addr == vbase",
+  "addr == pbase",
+  "space_init",
+  "space_free",
+  "space_setup",
+  "space_cleanup",
+  "iguana/server/src/space.c",
+  "L4_SpaceNo(space->id) != -1UL",
+  "delete_memsection_from_allocator",
+  "memsection_register_server",
+  "memsection_lookup_phys",
+  "load_page",
+  "memsection_delete",
+  "iguana/server/src/memsection.c",
+  "node",
+  "Memsection: %p",
+  "Owner:  %p",
+  "Extent: <%p:%p>",
+  "self",
+  "%s(%p): UNIMPLEMENTED!",
+  "r_remove",
+  "r_insert",
+  "iguana/server/src/pgtable.c",
+  "write",
+  "execute",
+  "read",
+  "unknown",
+  "security failed",
+  "[31mInvalid %s fault (%lx): %p Thread: %lx Module: %s IP: %p SP: %p",
+  "(unknown module)",
+  "Fault is near stack pointer - possible stack overflow",
+  "Stack trace back:",
+  "[31mOut of memory %s fault (%lx): %p Thread: %lx Module: %s IP: %p SP: %p",
+  "<iguana_server> No memory section",
+  "is_thread(thread)",
+  "iguana/server/src/iguana_server.c",
+  "is_pd(pd)",
+  "set(%lx, %lx)",
+  "ret == 0",
+  "iguana_pd_mypd_impl",
+  "iguana_memsection_set_attributes_impl",
+  "server: error sending IPC reply",
+  "Assertion failed: %s, function %s, file %s, line %d.",
+  "0123456789ABCDEF0123456789abcdef",
+  "bfl_free",
+  "find_first_set",
+  "bfl_is_free",
+  "bfl_alloc_bit",
+  "(val / BITS_PER_LONG) < bfl->len",
+  "libs/bit_fl/src/bit_fl.c",
+  "!\"no bit found\"",
+  "(bit / BITS_PER_LONG) < bfl->len",
+  "hash_init",
+  "libs/hash/src/hash.c",
+  "(size & (size - 1)) == 0",
+  "tablestruct",
+  "tablestruct->table",
+  "__ %lx: divide by 0 error",
+  "*****************************************\n *  Iguana system, Copyright 1996-2006   *\n *  ERTOS - National ICT Australia       *\n *****************************************",
+  "PANIC: Bootinfo did not initialise correctly",
+  "all bad",
+  "Iguana abort()ed",
+  "ig_naming",
+  "ig_serial",
+  "test",
+  "main",
+  "!\"Shouldn't reach here\\n\"",
+  "iguana/naming/src/naming_server.c",
+  "server: error sending IPC reply",
+  "Assertion failed: %s, function %s, file %s, line %d.",
+  "0123456789ABCDEF0123456789abcdef",
+  "_Exit",
+  "!\"We have exited -- shouldn't reach here\"",
+  "libs/c/src/sys-iguana/sys_exit.c",
+  "__naming_thread_init",
+  "libs/naming/src/naming.c",
+  "__tls_init_malloc",
+  "tls_buffer",
+  "libs/iguana/src/tls.c",
+  "asynch_buffer",
+  "naming_buffer",
+  "__asynch_thread_init",
+  "asynch_insert",
+  "asynch_check_mask",
+  "libs/iguana/src/asynch.c",
+  "asynch_objects != NULL",
+  "asynch_objects[object->asynch_bit] == NULL",
+  "Error Code: %lx -- %lx",
+  "L4_IpcSucceeded(tag)",
+  "label: %lx",
+  "mask: %lx __sync_bits: %lx syncword: %lx",
+  "!\"Received invalid wakeup\"",
+  "iguana_cap_set",
+  "iguana_cap_get_slot",
+  "lookup_clist",
+  "libs/iguana/src/cap.c",
+  "IS_VALID_CAP(cap)",
+  "(slot.pos != -1) || (slot.list == NULL)",
+  "!\"lookup_clist: Can't find the memsection in clist\"",
+  "memsection_delete",
+  "memsection_back_range",
+  "slot.pos < (slot.list->cap_free)",
+  "memsect == slot.list->cap_list[slot.pos].ref.memsection",
+  "libs/iguana/src/memsection.c",
+  "base % l4e_min_pagesize() == 0",
+  "base >= (uintptr_t)memsection_base(ms)",
+  "(end + 1) % l4e_min_pagesize() == 0",
+  "end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1",
+  "Instance: %p -- server: %lx objref: %lx",
+  "session_provide_access",
+  "libs/iguana/src/session.c",
+  "session != NULL",
+  "__ %lx: divide by 0 error",
+  "Thread abort()ed",
+  "device_create_impl",
+  "main",
+  "stream_write_impl",
+  "stream_set_sink_impl",
+  "write_callback",
+  "deferred_work",
+  "buffer != NULL",
+  "iguana/serial/src/main.c",
+  "!\"Should reach here\\n\"",
+  "c_data != NULL",
+  "data != NULL",
+  "key != 0",
+  "Couldn't allocate anymore!!!",
+  "server: error sending IPC reply",
+  "Assertion failed: %s, function %s, file %s, line %d.",
+  "0123456789ABCDEF0123456789abcdef",
+  "_Exit",
+  "!\"We have exited -- shouldn't reach here\"",
+  "libs/c/src/sys-iguana/sys_exit.c",
+  "L4 kdb",
+  "self->readc == 0",
+  "drivers/drv_l4_kdb/src/main.c",
+  "timer != NULL",
+  "kbd_poll",
+  "read",
+  "poll_thread",
+  "__naming_thread_init",
+  "libs/naming/src/naming.c",
+  "__tls_init_malloc",
+  "tls_buffer",
+  "libs/iguana/src/tls.c",
+  "asynch_buffer",
+  "naming_buffer",
+  "__asynch_thread_init",
+  "asynch_insert",
+  "asynch_check_mask",
+  "libs/iguana/src/asynch.c",
+  "asynch_objects != NULL",
+  "asynch_objects[object->asynch_bit] == NULL",
+  "Error Code: %lx -- %lx",
+  "L4_IpcSucceeded(tag)",
+  "label: %lx",
+  "mask: %lx __sync_bits: %lx syncword: %lx",
+  "!\"Received invalid wakeup\"",
+  "iguana_cap_set",
+  "iguana_cap_get_slot",
+  "lookup_clist",
+  "libs/iguana/src/cap.c",
+  "IS_VALID_CAP(cap)",
+  "(slot.pos != -1) || (slot.list == NULL)",
+  "!\"lookup_clist: Can't find the memsection in clist\"",
+  "memsection_delete",
+  "memsection_back_range",
+  "slot.pos < (slot.list->cap_free)",
+  "memsect == slot.list->cap_list[slot.pos].ref.memsection",
+  "libs/iguana/src/memsection.c",
+  "base % l4e_min_pagesize() == 0",
+  "base >= (uintptr_t)memsection_base(ms)",
+  "(end + 1) % l4e_min_pagesize() == 0",
+  "end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1",
+  "Instance: %p -- server: %lx objref: %lx",
+  "session_provide_access",
+  "libs/iguana/src/session.c",
+  "session != NULL",
+  "__ %lx: divide by 0 error",
+  "timer_init",
+  "libs/timer/src/timer.c",
+  "!\"Could find ig_timer.\"",
+  "SESSION()->timer_obj != NULL",
+  "Thread abort()ed",
+  "W,$Thp<",
+  "Xj$Gj",
+  "Xj$Gc",
+  "j4&eh",
+  "+&GnH&%m",
+  "nH&em",
+  "nH&Em",
+  "ol&Em",
+  "nH&em",
+  "rp$Eq",
+  "rp$Eq",
+  "v8&eu",
+  "vd&Eu",
+  "vp&Eu",
+  "bw$$cw$",
+  "wx&eu",
+  "ff4Bfg",
+  "ff4wfg",
+  "yL&eu",
+  "yX&eu",
+  "yd&eu",
+  "_Exit",
+  "!\"We have exited -- shouldn't reach here\"",
+  "libs/c/src/sys-iguana/sys_exit.c",
+  "Assertion failed: %s, function %s, file %s, line %d.",
+  "0123456789ABCDEF0123456789abcdef",
+  "__naming_thread_init",
+  "libs/naming/src/naming.c",
+  "_fail_unless() called with NULL msg",
+  "libs/check/src/check.c",
+  "Bad status in set_fork_status",
+  "Passed",
+  "Failed to receive test result",
+  "libs/check/src/check_run.c",
+  "checked_setup",
+  "Receive phase",
+  "No Error",
+  "!\"Shouldn't get here - Did you leave a send redirector set?\"",
+  "Send phase",
+  "Bad print_mode argument to srunner_run_all: %d",
+  "Test Not Run",
+  "None",
+  "unchecked_setup",
+  "Not running excepted test %s",
+  "Bad fork status in SRunner",
+  "Thread Create failed, ErrorCode = %d",
+  "libcheck: Unknown message from %lx",
+  "Thread Delete failed, ErrorCode = %d",
+  "Unknown Error",
+  "IPC send failed - maybe thread was deleted?",
+  "!\"Can't run a fork test!\\n\"",
+  "Exception Occurred",
+  "Null Pointer Dereferenced",
+  "libcheck: exception received from %lx",
+  "libcheck: pagefault received from %lx",
+  "trun_withpager",
+  "srunner_iterate_tcase_tfuns",
+  "createThread",
+  "deleteThread",
+  "malloc of %u bytes failed:",
+  "libs/check/src/check_error.c",
+  "realloc of %u bytes failed:",
+  "No messaging setup",
+  "libs/check/src/check_msg.c",
+  "Couldn't find pipe with key %d",
+  "p->fp != NULL",
+  "Only one nesting of suite runs supported",
+  "Messaging not setup",
+  "setup_pipe",
+  "%s:%d:Bad message type arg",
+  "libs/check/src/check_pack.c",
+  "Error in ppack:",
+  "Error in read_buf:",
+  "Error in upack",
+  "Bad event type received in stdout_lfun",
+  "libs/check/src/check_log.c",
+  "Running suite(s):",
+  "Running suite %s",
+  "Results for all suites run:",
+  "Bad event type received in xml_lfun",
+  "</suite>",
+  "<?xml version=\"1.0\"?>",
+  "<testsuites xmlns=\"http://check.sourceforge.net/ns\">",
+  "%Y-%m-%d %H:%M:%S",
+  "<datetime>%s</datetime>",
+  "<duration>%f</duration>",
+  "</testsuites>",
+  "<suite>",
+  "<title>%s</title>",
+  "Could not open log file %s:",
+  "Could not open xml file %s:",
+  "Error closing log file:",
+  "<test result=\"%s\">",
+  "<path>%s</path>",
+  "<fn>%s:%d</fn>",
+  "<id>%s</id>",
+  "<description>%s</description>",
+  "<message>%s</message>",
+  "</test>",
+  "success",
+  "unset",
+  "failure",
+  "CK_VERBOSITY",
+  "silent",
+  "minimal",
+  "verbose",
+  "%s:%d:%s:%s:%s: %s%s",
+  "(after this point)",
+  "%d%%: Checks: %d, Failures: %d, Errors: %d",
+  "__tls_init_malloc",
+  "tls_buffer",
+  "libs/iguana/src/tls.c",
+  "asynch_buffer",
+  "naming_buffer",
+  "__asynch_thread_init",
+  "asynch_insert",
+  "asynch_check_mask",
+  "libs/iguana/src/asynch.c",
+  "asynch_objects != NULL",
+  "asynch_objects[object->asynch_bit] == NULL",
+  "Error Code: %lx -- %lx",
+  "L4_IpcSucceeded(tag)",
+  "label: %lx",
+  "mask: %lx __sync_bits: %lx syncword: %lx",
+  "!\"Received invalid wakeup\"",
+  "iguana_cap_set",
+  "iguana_cap_get_slot",
+  "lookup_clist",
+  "libs/iguana/src/cap.c",
+  "IS_VALID_CAP(cap)",
+  "(slot.pos != -1) || (slot.list == NULL)",
+  "!\"lookup_clist: Can't find the memsection in clist\"",
+  "memsection_delete",
+  "memsection_back_range",
+  "slot.pos < (slot.list->cap_free)",
+  "memsect == slot.list->cap_list[slot.pos].ref.memsection",
+  "libs/iguana/src/memsection.c",
+  "base % l4e_min_pagesize() == 0",
+  "base >= (uintptr_t)memsection_base(ms)",
+  "(end + 1) % l4e_min_pagesize() == 0",
+  "end <= (uintptr_t)memsection_base(ms) + memsection_size(ms) - 1",
+  "Instance: %p -- server: %lx objref: %lx",
+  "session_provide_access",
+  "libs/iguana/src/session.c",
+  "session != NULL",
+  "Iguana tests",
+  "Done create suites...",
+  "THRD0100",
+  "libs/iguana/test/thread_tests.c",
+  "NULL thread returned",
+  "THRD0200",
+  "not right l4 thread ID",
+  "THRD0300",
+  "incorrect thread ref",
+  "THRD0400",
+  "not right iguana thread ID",
+  "THRD0500",
+  "THRD0600",
+  "THRD0700",
+  "THRD1100",
+  "THRD0800",
+  "THRD0900",
+  "THRD1000",
+  "Thread create many",
+  "Created %d threads",
+  "Unable to any threads",
+  "Unable to create thread",
+  "Unable to allocate memory",
+  "!\"data mismatch\\n\"",
+  "THRD1200",
+  "!\"error in creating stack\\n\"",
+  "THRD1300",
+  "Failed to create thread",
+  "SIMPLE TEST COMPLETE",
+  "Assertion 'tids[i].raw != L4_nilthread.raw' failed",
+  "Test %d complete",
+  "COMPLEX TEST COMPLETE",
+  "THRD1400",
+  "COMPLEX TEST 2",
+  "Assertion '(thread_l4tid(rthread[i])).raw != L4_nilthread.raw' failed",
+  "COMPLEX TEST 2 COMPLETE",
+  "Thread tests",
+  "worker",
+  "THRD1200",
+  "test_asynch_get_bit_free_bit",
+  "libs/iguana/test/asynch_tests.c",
+  "invalid bit given",
+  "duplicate bit given",
+  "should be spare bit",
+  "Asynch tests",
+  "CAP0100",
+  "libs/iguana/test/cap_tests.c",
+  "NULL slot returned",
+  "CAP0200",
+  "NULL memory returned",
+  "NULL cap retunred",
+  "CAP0300",
+  "CAP0400",
+  "wrong mem section",
+  "CAP Sections",
+  "EAS0100",
+  "libs/iguana/test/eas_tests.c",
+  "NULL eas returned",
+  "EAS0200",
+  "EAS0300",
+  "NULL eas thread created",
+  "EAS0400",
+  "EAS thread create many",
+  "Created %d EAS threads",
+  "Unable to create any threads",
+  "EAS Sections",
+  "OBJ0100",
+  "libs/iguana/test/obj_tests.c",
+  "NULL obj interface returned",
+  "OBJ Sections",
+  "PD0100",
+  "libs/iguana/test/pd_tests.c",
+  "NULL pd returned",
+  "PD0200",
+  "PD0400",
+  "PD0500",
+  "PD0600",
+  "PD0700",
+  "NULL memsection returned",
+  "error data",
+  "PD0800",
+  "PD0900",
+  "PD1000",
+  "PD1100",
+  "PD1200",
+  "PD1300",
+  "NULL clist returned",
+  "PD1400",
+  "worker_a",
+  "worker_b",
+  "PD1500",
+  "PD1600",
+  "Attaching memsection failed.",
+  "PD1700",
+  "Attaching null memsection succeeded",
+  "Attaching memsection to null PD succeeded",
+  "Attaching null memsection to null PD succeeded",
+  "Attaching PD failed.",
+  "PD1900",
+  "Attaching memsection to deleted PD succeeded.",
+  "PD2000",
+  "PD2100",
+  "PD tests",
+  "worker_a",
+  "worker_b",
+  "POOL0100",
+  "libs/iguana/test/pool_tests.c",
+  "Failed to create the new Physmem",
+  "POOL0200",
+  "Invalid Physmem size",
+  "Failed to map Physmem",
+  "POOL0300",
+  "Invalid Physmem base address",
+  "POOL0400",
+  "pool_alloc_fixed() failed to return error",
+  "POOL0500",
+  "POOL0600",
+  "Pools",
+  "rpd0200_restricted_fn",
+  "rpd0201_helper_fn",
+  "rpd0201_restricted_fn",
+  "RPD0201",
+  "rpd0202_restricted_fn",
+  "synthesise_fault",
+  "rpd0204_restricted_fn",
+  "libs/iguana/test/restricted_pd_tests.c",
+  "Failed to create thread in rpd.",
+  "Failed to create stack in rpd.",
+  "Failed to create clist in rpd.",
+  "RPD0100",
+  "Failed to create restricted pd.",
+  "RPD0101",
+  "Failed to create other pd.",
+  "RPD0102",
+  "RPD0200",
+  "Failed to receive IPC.",
+  "Incorrect tag in message.",
+  "RPD0201",
+  "Failed to create helper pd.",
+  "Received from wrong thread.",
+  "RPD0202",
+  "Failed to create restricted PD.",
+  "setup pd failed in RPD0202.",
+  "received from wrong tid",
+  "wrong label",
+  "rpd0203 should not have restarted here.",
+  "L4_IpcFailed(tag)",
+  "RPD0203",
+  "setup pd failed in RPD0203.",
+  "from.raw == rpd0204_tid_1.raw",
+  "L4_Label(tag) == 0x1",
+  "!L4_IpcSucceeded(tag)",
+  "rpd0204: ipc from restricted pd returned success.",
+  "RPD0204",
+  "rpd0204 setup_pd for restricted returned nonzero.",
+  "Failed to create unrestricted pd.",
+  "rpd0204 setup_pd for unrestriced returned nonzero.",
+  "Couldn't ipc to the restricted pd",
+  "Restricted PD tests",
+  "memsection_delete(ms);",
+  "thread_delete(thread_l4tid(thrd));",
+  "MEMS0100",
+  "libs/iguana/test/memsect_tests.c",
+  "base pointer not-null",
+  "reference not zero",
+  "MEMS0101",
+  "MEMS0200",
+  "MEMS0500",
+  "Memory not zeroed",
+  "MEMS0700",
+  "MEMS0800",
+  "MEMS0900",
+  "memory section corrupt writes",
+  "MEMS1000",
+  "memsection size mismatch",
+  "memsection too small",
+  "create memsection failed",
+  "MEMS1100",
+  "MEMS1200",
+  "not the right mem section",
+  "not the right thread",
+  "MEMS1300",
+  "MEMS1500",
+  "abcdefg123456",
+  "page not mapped correctly",
+  "MEMS1600",
+  "pages not mapped correctly",
+  "MEMS1700",
+  "memsection reference not-zero",
+  "memory access inconsistent",
+  "MEMS1800",
+  "MEMS1900",
+  "MEMS2000",
+  "MEMS2100",
+  "allocate memsection",
+  "MEMS2200",
+  "memory consistency",
+  "MEMS2300",
+  "TESTING MEMORY SECTIONS",
+  "TESTING NORMAL CREATES",
+  "Memory zeroed",
+  "Memory access inconsistent",
+  "Done a lot of creates: %d of %d size total: %d MB",
+  "MEMS2400",
+  "memsection_map() failed to return error",
+  "MEMS2500",
+  "MEMS2501",
+  "MEMS2600",
+  "memsection_unmap() failed to return error",
+  "MEMS2601",
+  "MEMS2602",
+  "MEMS2603",
+  "Failed to unmap Physmem",
+  "MEMS2700",
+  "MEMS2800",
+  "MEMS2900",
+  "Memory Sections",
+  "libs/iguana/test/semaphore_tests.c",
+  "Semaphore was not released",
+  "Semaphore lock did not work",
+  "%lx failed after %d loops",
+  "High priority started",
+  "Low priority thread did not finish or did not run",
+  "High finished",
+  "Priority inversion error : Low priority thread should be executed instead of the medium one",
+  "Medium finished",
+  "Low finished",
+  "SEMAPHORE01",
+  "mutex lock failed, wrong holder",
+  "mutex unlock failed, wrong holder",
+  "SEMAPHORE02",
+  "Priority inversion test",
+  "SEMAPHORE03",
+  "Semaphore test program",
+  "Semaphore tests",
+  "SESS0100",
+  "libs/iguana/test/session_tests.c",
+  "NULL session returned",
+  "SESS0200",
+  "SESS0300",
+  "be in touch!",
+  "SESS0500",
+  "Session Sections",
+  "__ %lx: divide by 0 error",
+  "WARNING: getenv not implemented",
+  "tmp_write",
+  "tmp_buf != NULL",
+  "libs/c/src/sys-iguana/sys_tmpfile.c",
+  "Thread abort()ed",
+  "kernel.text",
+  "kernel.rodata",
+  "kernel.kip",
+  "kernel.data",
+  "kernel.kdebug",
+  "kernel.sets",
+  "kernel.bss",
+  "kernel.kdebug-data",
+  "kernel.init",
+  "iguana_server.text",
+  "iguana_server.rodata",
+  "iguana_server.reginfo",
+  "iguana_server.data",
+  "iguana_server.sbss",
+  "iguana_server.bss",
+  "bootinfo",
+  "ig_naming.text",
+  "ig_naming.rodata",
+  "ig_naming.reginfo",
+  "ig_naming.data",
+  "ig_naming.sbss",
+  "ig_naming.bss",
+  "ig_serial.text",
+  "ig_serial.rodata",
+  "ig_serial.reginfo",
+  "ig_serial.data",
+  "ig_serial.sbss",
+  "ig_serial.bss",
+  "test.text",
+  "test.rodata",
+  "test.reginfo",
+  "test.data",
+  "test.sbss",
+  "test.bss",
+  ".shstrtab"
+]

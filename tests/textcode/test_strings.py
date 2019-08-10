@@ -22,13 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
+import io
+import json
 import os
 
 from commoncode.testcase import FileBasedTesting
-
 from textcode import strings
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestStrings(FileBasedTesting):
@@ -36,14 +42,16 @@ class TestStrings(FileBasedTesting):
 
     def check_file_strings(self, test_file, expected_file, regen=False):
         test_file = self.get_test_loc(test_file)
-        result = u'\n'.join(strings.strings_from_file(test_file))
+        results = list(strings.strings_from_file(test_file))
         expected = self.get_test_loc(expected_file)
         if regen:
-            with open(expected, 'wb') as o:
-                o.write(result)
-        expected = open(expected, 'rb').read()
-        assert expected == result
-        return result
+            with io.open(expected, 'w', encoding='utf-8') as o:
+                o.write(json.dumps(results, indent=2))
+
+        with io.open(expected) as i:
+            expected = json.loads(i.read())
+        assert expected == results
+        return results
 
     def test_clean_string(self):
         assert list(strings.clean_string('aw w we ww '))
@@ -160,9 +168,9 @@ class TestStrings(FileBasedTesting):
         result = self.check_file_strings(test_file, expected_file)
 
         # ascii
-        assert 'publicKeyToken="6595b64144ccf1df"' in result
+        assert any('publicKeyToken="6595b64144ccf1df"' in r for r in result)
         # wide, utf-16-le string
-        assert 'Copyright (c) 1999-2014 Igor Pavlov' in result
+        assert  any('Copyright (c) 1999-2014 Igor Pavlov' in r for r in result)
 
     def test_strings_in_all_bin(self):
         test_dir = self.get_test_loc('strings/bin', copy=True)
