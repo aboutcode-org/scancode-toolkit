@@ -87,6 +87,12 @@ class LicenseScanner(ScanPlugin):
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
+        CommandLineOption(('--origin-license-text',),
+            is_flag=True,
+            required_options=['license'],
+            help='Include the detected licenses matched text without highlighting.',
+            help_group=SCAN_OPTIONS_GROUP),
+
         CommandLineOption(('--license-url-template',),
             default=DEJACODE_LICENSE_URL, show_default=True,
             required_options=['license'],
@@ -121,9 +127,11 @@ class LicenseScanner(ScanPlugin):
 
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
-                    license_diag=False, **kwargs):
+                    license_diag=False, origin_license_text=False,
+                    **kwargs):
 
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
-                       license_url_template=license_url_template)
+                       license_url_template=license_url_template,
+                       include_origin_text=origin_license_text)

@@ -185,6 +185,12 @@ def get_licenses(location, min_score=0, include_text=False,
         if include_text:
             # TODO: handle whole lines with the case of very long lines
             matched_text = match.matched_text(whole_lines=False)
+        if include_origin_text:
+            highlight_not_matched = highlight_matched = u'%s'
+            matched_text = match.matched_text(
+                highlight_matched=highlight_matched,
+                highlight_not_matched=highlight_not_matched,
+                whole_lines=False)
 
         detected_expressions.append(match.rule.license_expression)
 
