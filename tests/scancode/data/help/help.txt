@@ -26,6 +26,9 @@ Options:
                                  than this score. A number between 0 and 100.
                                  [default: 0]
     --license-text               Include the detected licenses matched text.
+    --license-text-diagnostics   In the matched license text, include diagnostic
+                                 highlights surrounding with square brackets []
+                                 parts that are not matched.
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. Curly braces ({}) are replaced by
                                  the license key.  [default: https://enterprise.de

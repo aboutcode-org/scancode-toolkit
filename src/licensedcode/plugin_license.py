@@ -87,10 +87,11 @@ class LicenseScanner(ScanPlugin):
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(('--origin-license-text',),
+        CommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
-            required_options=['license'],
-            help='Include the detected licenses matched text without highlighting.',
+            required_options=['license, license_text'],
+            help='In the matched license text, include diagnostic highlights '
+                 'surrounding with square brackets [] parts that are not matched.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
@@ -126,12 +127,14 @@ class LicenseScanner(ScanPlugin):
         get_index(return_value=False)
 
     def get_scanner(self, license_score=0, license_text=False,
+                    license_text_diagnostics=False,
                     license_url_template=DEJACODE_LICENSE_URL,
-                    license_diag=False, origin_license_text=False,
                     **kwargs):
 
         from scancode.api import get_licenses
-        return partial(get_licenses, min_score=license_score,
-                       include_text=license_text, diag=license_diag,
-                       license_url_template=license_url_template,
-                       include_origin_text=origin_license_text)
+        return partial(get_licenses, 
+            min_score=license_score,
+            include_text=license_text, 
+            license_text_diagnostics=license_text_diagnostics,
+            license_url_template=license_url_template
+        )

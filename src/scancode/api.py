@@ -152,7 +152,8 @@ DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
-def get_licenses(location, min_score=0, include_text=False,
+def get_licenses(location, min_score=0,
+                 include_text=False, include_text_diagnostics=False,
                  license_url_template=DEJACODE_LICENSE_URL,
                  deadline=sys.maxsize, **kwargs):
     """
@@ -180,17 +181,18 @@ def get_licenses(location, min_score=0, include_text=False,
     matches = idx.match(
         location=location, min_score=min_score, deadline=deadline, **kwargs)
 
-    matched_text = None
     for match in matches:
+        matched_text = None
+        # TODO: handle whole lines with the case of very long lines
         if include_text:
-            # TODO: handle whole lines with the case of very long lines
-            matched_text = match.matched_text(whole_lines=False)
-        if include_origin_text:
-            highlight_not_matched = highlight_matched = u'%s'
-            matched_text = match.matched_text(
-                highlight_matched=highlight_matched,
-                highlight_not_matched=highlight_not_matched,
-                whole_lines=False)
+            if include_text_diagnostics:
+                matched_text = match.matched_text(whole_lines=True)
+            else:
+                highlight_not_matched = highlight_matched = u'%s'
+                matched_text = match.matched_text(
+                    highlight_matched=highlight_matched,
+                    highlight_not_matched=highlight_not_matched,
+                    whole_lines=True)
 
         detected_expressions.append(match.rule.license_expression)
 
