@@ -29,15 +29,15 @@ Copyright (c) 2005 Agere Systems Inc.
 LicenseID: LicenseRef-scancode-agere-bsd
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml
 </text>
-ExtractedText: <text>SOFTWARE LICENSE
+ExtractedText: <text> * SOFTWARE LICENSE
  *
  * This software is provided subject to the following terms and conditions,
  * which you should read carefully before using the software.  Using this
  * software indicates your acceptance of these terms and conditions.  If you do
  * not agree with these terms and conditions, do not use the software.
  *
- * [Copyright] © [2005] [Agere] [Systems] [Inc].
- * [All] [rights] [reserved].
+ * Copyright © 2005 Agere Systems Inc.
+ * All rights reserved.
  *
  * Redistribution and use in source or binary forms, with or without
  * modifications, are permitted provided that the following conditions are met:

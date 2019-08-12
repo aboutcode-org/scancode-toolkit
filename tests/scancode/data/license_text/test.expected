@@ -53,7 +53,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 22
           },
-          "matched_text": "license: LGPL-2.1"
+          "matched_text": "foo bar this that license: LGPL-2.1 bar"
         }
       ],
       "license_expressions": [
