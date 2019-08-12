@@ -1,2 +1,5 @@
 license_expression: postgresql
-is_license_notice: yes
+is_license_notice: ye
+referenced_filenames:
+    - LICENSE
+    
