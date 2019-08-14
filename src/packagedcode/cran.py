@@ -79,22 +79,26 @@ def build_package(package_data):
     """
     name = package_data.get('Package')
     if name:
-        
         parties = []
         maintainer = package_data.get('Maintainer')
         if maintainer:
-            if '@' in maintainer and '<' in maintainer:
-                splits = maintainer.strip().strip('>').split('<')
-                name = splits[0].strip()
-                email = splits[1].strip()
-            else:
-                name = maintainer
-                email = ''
+            name, email = get_party_info(maintainer)
             if email or email:
                 parties.append(
                     models.Party(
                         name=name,
                         role='maintainer',
+                        email=email,
+                    )
+                )
+        author = package_data.get('Author')
+        if author:
+            name, email = get_party_info(author)
+            if email or email:
+                parties.append(
+                    models.Party(
+                        name=name,
+                        role='author',
                         email=email,
                     )
                 )
@@ -109,7 +113,7 @@ def build_package(package_data):
 
 def get_yaml_data(location):
     """
-    Parse the yaml file
+    Parse the yaml file and return the metadata in dictionary format.
     """
     yaml_lines = []
     with io.open(location, encoding='utf-8') as loc:
@@ -119,3 +123,15 @@ def get_yaml_data(location):
             yaml_lines.append(line)
     return saneyaml.load('\n'.join(yaml_lines))
     
+def get_party_info(info):
+    """
+    Parse the info and return name, email.
+    """
+    if '@' in info and '<' in info:
+        splits = info.strip().strip('>').split('<')
+        name = splits[0].strip()
+        email = splits[1].strip()
+    else:
+        name = info
+        email = ''
+    return name, email

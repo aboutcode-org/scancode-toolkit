@@ -41,4 +41,4 @@ class TestCran(PackageTester):
         package = cran.parse(test_file)
         expected_loc = self.get_test_loc(
             'cran/codetools/package.json.expected')
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
