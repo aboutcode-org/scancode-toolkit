@@ -79,11 +79,31 @@ def build_package(package_data):
     """
     name = package_data.get('Package')
     if name:
+        
+        parties = []
+        maintainer = package_data.get('Maintainer')
+        if maintainer:
+            if '@' in maintainer and '<' in maintainer:
+                splits = maintainer.strip().strip('>').split('<')
+                name = splits[0].strip()
+                email = splits[1].strip()
+            else:
+                name = maintainer
+                email = ''
+            if email or email:
+                parties.append(
+                    models.Party(
+                        name=name,
+                        role='maintainer',
+                        email=email,
+                    )
+                )
         package = CranPackage(
             name=name,
             version = package_data.get('Version'),
-            description = package_data.get('Description'),
-            declared_license = package_data.get('License')
+            description = package_data.get('Description', '') or package_data.get('Title', ''),
+            declared_license = package_data.get('License'),
+            parties = parties,
         )
         return package
 

@@ -1,14 +1,22 @@
 {
   "type": "cran",
   "namespace": null,
-  "name": "codetools",
+  "name": "Luke Tierney",
   "version": "0.2-16",
   "qualifiers": null,
   "subpath": null,
   "primary_language": null,
   "description": "Code analysis tools for R.",
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": null,
+      "role": "maintainer",
+      "name": "Luke Tierney",
+      "email": "luke-tierney@uiowa.edu",
+      "url": null
+    }
+  ],
   "keywords": [],
   "homepage_url": null,
   "download_url": null,
@@ -28,7 +36,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
-  "purl": "pkg:cran/codetools@0.2-16",
+  "purl": "pkg:cran/Luke%20Tierney@0.2-16",
   "repository_homepage_url": null,
   "repository_download_url": null,
   "api_data_url": null
