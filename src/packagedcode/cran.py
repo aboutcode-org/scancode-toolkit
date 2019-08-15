@@ -31,9 +31,10 @@ import logging
 
 import attr
 
-from packagedcode import models
 from commoncode import saneyaml
 
+from packagedcode import models
+from packageurl import PackageURL
 
 """
 Handle CRAN package.
@@ -104,12 +105,36 @@ def build_package(package_data):
                             email=email,
                         )
                     )
+        package_dependencies = []
+        dependencies = package_data.get('Depends')
+        if dependencies:
+            for dependency in dependencies.split(',\n'):
+                requirement = None
+                for splitter in ('==', '>=',  '<=', '>', '<'):
+                    if splitter in dependency:
+                        splits = dependency.split(splitter)
+                        # Replace the package name and keep the relationship and version
+                        # For example: R (>= 2.1)
+                        requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
+                        dependency = splits[0].strip().strip('(').strip()
+                        break
+                package_dependencies.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='cran', name=dependency).to_string(),
+                        requirement=requirement,
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                    )
+                )
         package = CranPackage(
             name=name,
             version = package_data.get('Version'),
             description = package_data.get('Description', '') or package_data.get('Title', ''),
             declared_license = package_data.get('License'),
             parties = parties,
+            dependencies = package_dependencies,
             #TODO: Let's handle the release date as a Date type
             #release_date = package_data.get('Date/Publication'),
         )
