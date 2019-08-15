@@ -149,7 +149,7 @@ setup(
         'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.5; python_version<"3"',
         'url >= 0.1.4, < 0.1.6',
-        'fingerprints == 0.5.4',
+        'fingerprints >= 0.6.0, < 1.0.0',
 
         # extractcode
         'patch >= 1.15, < 1.20 ',
