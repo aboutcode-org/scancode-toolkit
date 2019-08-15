@@ -57,7 +57,8 @@ from commoncode.system import py2
 try:
     WindowsError  # NOQA
 except NameError:
-    WindowsError = None  # NOQA
+    class WindowsError(Exception):
+        pass
 
 
 import logging
