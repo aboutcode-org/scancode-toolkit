@@ -42,3 +42,10 @@ class TestCran(PackageTester):
         expected_loc = self.get_test_loc(
             'cran/codetools/package.json.expected')
         self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_as_package2(self):
+        test_file = self.get_test_loc('cran/geometry/DESCRIPTION')
+        package = cran.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'cran/geometry/package.json.expected')
+        self.check_package(package, expected_loc, regen=False)

@@ -1,0 +1,92 @@
+{
+  "type": "cran",
+  "namespace": null,
+  "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
+  "version": "0.4.2",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": null,
+  "description": "Makes the 'Qhull' library <http://www.qhull.org>\navailable in R, in a similar manner as in Octave and MATLAB. Qhull\ncomputes convex hulls, Delaunay triangulations, halfspace\nintersections about a point, Voronoi diagrams, furthest-site\nDelaunay triangulations, and furthest-site Voronoi diagrams. It\nruns in 2D, 3D, 4D, and higher dimensions. It implements the\nQuickhull algorithm for computing the convex hull. Qhull does not\nsupport constrained Delaunay triangulations, or mesh generation of\nnon-convex objects, but the package does include some R functions\nthat allow for this.",
+  "release_date": "2019-07-12 14:50:10 UTC",
+  "parties": [
+    {
+      "type": null,
+      "role": "maintainer",
+      "name": "David C. Sterratt",
+      "email": "david.c.sterratt@ed.ac.uk",
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Jean-Romain Roussel [cph, ctb] (wrote tsearch function with QuadTrees)",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "C. B. Barber [cph]",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Kai Habel [cph, aut]",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Raoul Grasman [cph, aut]",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Robert B. Gramacy [cph, aut]",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Pavlo Mozharovskyi [cph, aut]",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "gpl-3.0",
+  "declared_license": "GPL (>= 3)",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:cran/David%20C.%20Sterratt%20%5Bcph%2C%20aut%2C%20cre%5D%0A%28%3Chttps://orcid.org/0000-0001-9092-9099%3E%29@0.4.2",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

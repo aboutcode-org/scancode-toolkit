@@ -1,0 +1,45 @@
+Package: geometry
+License: GPL (>= 3)
+Title: Mesh Generation and Surface Tessellation
+Authors@R: c(
+    person("Jean-Romain", "Roussel" , role=c("cph", "ctb"), comment = "wrote tsearch function with QuadTrees"),
+    person("C. B.", "Barber" , role="cph"), 
+    person("Kai", "Habel", role=c("cph","aut")), 
+    person("Raoul", "Grasman", role=c("cph","aut")),
+    person("Robert B.", "Gramacy", role=c("cph","aut")),
+    person("Pavlo", "Mozharovskyi", role=c("cph","aut")),
+    person("David C.", "Sterratt", role=c("cph","aut","cre"), email="david.c.sterratt@ed.ac.uk", comment=c(ORCID="0000-0001-9092-9099")))
+Description: Makes the 'Qhull' library <http://www.qhull.org>
+    available in R, in a similar manner as in Octave and MATLAB. Qhull
+    computes convex hulls, Delaunay triangulations, halfspace
+    intersections about a point, Voronoi diagrams, furthest-site
+    Delaunay triangulations, and furthest-site Voronoi diagrams. It
+    runs in 2D, 3D, 4D, and higher dimensions. It implements the
+    Quickhull algorithm for computing the convex hull. Qhull does not
+    support constrained Delaunay triangulations, or mesh generation of
+    non-convex objects, but the package does include some R functions
+    that allow for this.
+Version: 0.4.2
+URL: https://davidcsterratt.github.io/geometry
+Date: 2019-07-05
+BugReports: https://github.com/davidcsterratt/geometry/issues
+Depends: R (>= 3.0.0)
+Imports: magic, Rcpp, lpSolve, linprog
+Suggests: spelling, testthat, rgl, R.matlab, tripack
+RoxygenNote: 6.1.1
+LinkingTo: Rcpp, RcppProgress
+Encoding: UTF-8
+Language: en-GB
+NeedsCompilation: yes
+Packaged: 2019-07-12 13:19:00 UTC; sterratt
+Author: Jean-Romain Roussel [cph, ctb] (wrote tsearch function with QuadTrees),
+  C. B. Barber [cph],
+  Kai Habel [cph, aut],
+  Raoul Grasman [cph, aut],
+  Robert B. Gramacy [cph, aut],
+  Pavlo Mozharovskyi [cph, aut],
+  David C. Sterratt [cph, aut, cre]
+    (<https://orcid.org/0000-0001-9092-9099>)
+Maintainer: David C. Sterratt <david.c.sterratt@ed.ac.uk>
+Repository: CRAN
+Date/Publication: 2019-07-12 14:50:10 UTC

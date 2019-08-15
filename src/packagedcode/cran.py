@@ -80,34 +80,38 @@ def build_package(package_data):
     name = package_data.get('Package')
     if name:
         parties = []
-        maintainer = package_data.get('Maintainer')
-        if maintainer:
-            name, email = get_party_info(maintainer)
-            if email or email:
-                parties.append(
-                    models.Party(
-                        name=name,
-                        role='maintainer',
-                        email=email,
+        maintainers = package_data.get('Maintainer')
+        if maintainers:
+            for maintainer in maintainers.split(',\n'):
+                name, email = get_party_info(maintainer)
+                if name or email:
+                    parties.append(
+                        models.Party(
+                            name=name,
+                            role='maintainer',
+                            email=email,
+                        )
                     )
-                )
-        author = package_data.get('Author')
-        if author:
-            name, email = get_party_info(author)
-            if email or email:
-                parties.append(
-                    models.Party(
-                        name=name,
-                        role='author',
-                        email=email,
+        authors = package_data.get('Author')
+        if authors:
+            for author in authors.split(',\n'):
+                name, email = get_party_info(author)
+                if name or email:
+                    parties.append(
+                        models.Party(
+                            name=name,
+                            role='author',
+                            email=email,
+                        )
                     )
-                )
         package = CranPackage(
             name=name,
             version = package_data.get('Version'),
             description = package_data.get('Description', '') or package_data.get('Title', ''),
             declared_license = package_data.get('License'),
             parties = parties,
+            #TODO: Let's handle the release date as a Date type
+            #release_date = package_data.get('Date/Publication'),
         )
         return package
 
@@ -127,11 +131,13 @@ def get_party_info(info):
     """
     Parse the info and return name, email.
     """
+    if not info:
+        return
     if '@' in info and '<' in info:
-        splits = info.strip().strip('>').split('<')
+        splits = info.strip().strip(',').strip('>').split('<')
         name = splits[0].strip()
         email = splits[1].strip()
     else:
         name = info
-        email = ''
+        email = None
     return name, email
