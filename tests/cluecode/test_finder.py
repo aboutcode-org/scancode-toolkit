@@ -37,6 +37,9 @@ from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 def find_emails_tester(lines_or_location, with_lineno=False, unique=True):
     return _find_tester(finder.find_emails, lines_or_location, with_lineno, unique)

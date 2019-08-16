@@ -148,7 +148,8 @@ setup(
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.5; python_version<"3"',
-        'url >= 0.1.4, < 0.1.6',
+        'url >= 0.1.4, < 0.1.6; python_version<"3"',
+        'url >= 0.4.2, < 1.0.0; python_version>="3"',
         'fingerprints >= 0.6.0, < 1.0.0',
 
         # extractcode

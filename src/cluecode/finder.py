@@ -33,9 +33,10 @@ import re
 import ipaddress
 import url as urlpy
 
+from commoncode import compat
+from commoncode.system import py3
 from commoncode.text import toascii
 from cluecode import finder_data
-from commoncode import compat
 from textcode import analysis
 
 
@@ -513,11 +514,11 @@ def url_host_domain(url):
     """
     try:
         parsed = urlpy.parse(url)
-        host = parsed._host
+        host = parsed.host if py3 else parsed._host
         if not host:
             return None, None
         host = host.lower()
-        domain = parsed.pld().lower()
+        domain = parsed.pld.lower() if py3 else parsed.pld().lower()
         return host, domain
     except Exception as e:
         if TRACE:
