@@ -32,6 +32,7 @@ import logging
 import os
 import re
 
+from commoncode.text import as_unicode
 from typecode import get_type
 
 """
@@ -63,7 +64,7 @@ def is_markup(location):
         return True
 
     with open(location, 'rb') as f:
-        start = f.read(1024)
+        start = as_unicode(f.read(1024))
 
     if start.startswith('<'):
         return True

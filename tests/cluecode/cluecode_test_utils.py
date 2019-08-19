@@ -42,6 +42,9 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
 """
 Data-driven Copyright test utilities.
 """
@@ -112,7 +115,7 @@ class CopyrightTest(object):
         Serialize self to an ordered mapping.
         """
         filtered = [field for field in attr.fields(CopyrightTest)
-                    if b'_file' in field.name]
+                    if '_file' in field.name]
         fields_filter = attr.filters.exclude(*filtered)
         data = attr.asdict(self, filter=fields_filter, dict_factory=OrderedDict)
         return OrderedDict([

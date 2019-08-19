@@ -26,16 +26,17 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 import string
 import re
 
 import ipaddress
 import url as urlpy
 
+from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.text import toascii
 from cluecode import finder_data
-from commoncode import compat
 from textcode import analysis
 
 
@@ -90,6 +91,7 @@ def find(location, patterns):
                           'match=%(match)r,\n    line=%(line)r' % locals())
                 yield key, toascii(match), line, lineno
 
+
 def unique_filter(matches):
     """
     Iterate over matches and yield unique matches.
@@ -141,7 +143,7 @@ def build_regex_filter(pattern):
 
 
 def emails_regex():
-    return re.compile(r'\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b', re.IGNORECASE)
+    return re.compile('\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b', re.IGNORECASE)
 
 
 def find_emails(location, unique=True):
@@ -193,8 +195,8 @@ def uninteresting_emails_filter(matches):
 # TODO: consider: http://blog.codinghorror.com/the-problem-with-urls/
 
 
-schemes = 'https?|ftps?|sftp|rsync|ssh|svn|git|hg|https?\+git|https?\+svn|https?\+hg'
-url_body = '[^\s<>\[\]"]'
+schemes = 'https?|ftps?|sftp|rsync|ssh|svn|git|hg|https?\\+git|https?\\+svn|https?\\+hg'
+url_body = '[^\\s<>\\[\\]"]'
 
 
 def urls_regex():
@@ -205,10 +207,10 @@ def urls_regex():
             (?:%(schemes)s)://%(url_body)s+
         |
             # common URLs prefix without schemes
-            (?:www|ftp)\.%(url_body)s+
+            (?:www|ftp)\\.%(url_body)s+
         |
             # git style git@github.com:christophercantu/pipeline.git
-            git\@%(url_body)s+:%(url_body)s+\.git
+            git\\@%(url_body)s+:%(url_body)s+\\.git
 
         )''' % globals()
     , re.UNICODE | re.VERBOSE | re.IGNORECASE)
@@ -362,6 +364,12 @@ def user_pass_cleaning_filter(matches):
         yield key, match, line, lineno
 
 
+DEFAULT_PORTS = {
+    'http': 80,
+    'https': 443
+}
+
+
 def canonical_url(uri):
     """
     Return the canonical representation of a given URI.
@@ -376,21 +384,38 @@ def canonical_url(uri):
         parsed = urlpy.parse(uri)
         if not parsed:
             return
-        if not (getattr(parsed, '_scheme', None) and getattr(parsed, '_host', None)):
-            return
-
-        if TRACE: logger_debug('canonical_url: parsed:', parsed)
+    
+        if py2:
+            if not hasattr(parsed, '_scheme') or not hasattr(parsed, '_host'):
+                raise Exception('a')
+                return
+        else:
+            if not hasattr(parsed, 'scheme') or not hasattr(parsed, 'host'):
+                raise Exception('b')
+        if TRACE: 
+            logger_debug('canonical_url: parsed:', parsed)
+    
         sanitized = parsed.sanitize()
+    
         if TRACE:
             logger_debug('canonical_url: sanitized:', sanitized)
-
+    
         punycoded = sanitized.punycode()
+    
         if TRACE:
             logger_debug('canonical_url: punycoded:', punycoded)
-
-        if punycoded._port == urlpy.PORTS.get(punycoded._scheme, None):
-            punycoded._port = None
-        return punycoded.utf8()
+    
+        if py2:
+            if punycoded._port == DEFAULT_PORTS.get(punycoded._scheme):
+                punycoded._port = None
+        else:
+            if punycoded.port == DEFAULT_PORTS.get(punycoded.scheme):
+                punycoded.port = 0
+        if py2:
+            decoded = punycoded.utf8()
+        else:
+            decoded = punycoded.utf8
+        return decoded.decode('utf-8')
     except Exception as e:
         if TRACE:
             logger_debug('canonical_url: failed for:', uri, 'with:', repr(e))
@@ -414,7 +439,7 @@ def canonical_url_cleaner(matches):
             yield key, match , line, lineno
 
 
-IP_V4_RE = '^(\d{1,3}\.){0,3}\d{1,3}$'
+IP_V4_RE = '^(\\d{1,3}\\.){0,3}\\d{1,3}$'
 
 
 def is_ip_v4(s):
@@ -424,7 +449,7 @@ def is_ip_v4(s):
 IP_V6_RE = (
     '^([0-9a-f]{0,4}:){2,7}[0-9a-f]{0,4}$'
     '|'
-    '^([0-9a-f]{0,4}:){2,6}(\d{1,3}\.){0,3}\d{1,3}$'
+    '^([0-9a-f]{0,4}:){2,6}(\\d{1,3}\\.){0,3}\\d{1,3}$'
 )
 
 
@@ -513,12 +538,11 @@ def url_host_domain(url):
     """
     try:
         parsed = urlpy.parse(url)
-        host = parsed._host
+        host = parsed.host if py3 else parsed._host
         if not host:
             return None, None
-        host = host.lower()
-        domain = parsed.pld().lower()
-        return host, domain
+        domain = parsed.pld if py3 else parsed.pld()
+        return host.lower(), domain.lower()
     except Exception as e:
         if TRACE:
             logger_debug('url_host_domain: failed for:', url, 'with:', repr(e))

@@ -42,12 +42,12 @@ Core configuration globals.
 Note: this module MUST import ONLY from the standard library.
 """
 
-# this exception is not available on posix
+# this exception is not available on POSIX
 try:
-    WindowsError  # noqa
+    WindowsError  # NOQA
 except NameError:
-    WindowsError = None  # NOQA
-
+    class WindowsError(Exception):
+        pass
 
 def _create_dir(location):
     """

@@ -161,12 +161,16 @@ class Text(object):
         self.key = toascii(self.key, translit=True)
 
     def fingerprint(self):
+        key = self.key
+        if not isinstance(key, compat.unicode):
+            key = unidecode(key)
+        fp = fingerprints.generate(key)
+
         if TRACE_TEXT or TRACE_FP:
-            logger_debug('Text.fingerprint:key: ', unidecode(self.key))
+            logger_debug('Text.fingerprint:key: ', repr(self.key))
             logger_debug('Text.fingerprint:fp :    ', fingerprints.generate(unidecode(self.key)))
 
-        self.key = fingerprints.generate(unidecode(self.key))
-
+        self.key = fp
 
 def summarize_copyrights(texts, _detector=CopyrightDetector()):
     """
