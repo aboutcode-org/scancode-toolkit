@@ -247,6 +247,10 @@ class TestMavenMisc(BaseMavenCase):
         proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
         assert 'activiti-image-generator-7-201802-EA-sources.jar-extract' == proot.name
 
+    def test_package_dependency_not_missing(self):
+        test_file = self.get_test_loc('maven2/log4j-pom.xml')
+        self.check_parse_to_package(test_file, regen=False)
+
 
 class TestPomProperties(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
