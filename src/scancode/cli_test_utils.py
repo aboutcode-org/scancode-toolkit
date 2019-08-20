@@ -34,6 +34,7 @@ import os
 
 from commoncode.system import on_linux
 from commoncode.system import on_windows
+from commoncode.system import py2
 from scancode_config import scancode_root_dir
 
 
@@ -48,7 +49,7 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
-    scmd = b'scancode' if on_linux else 'scancode'
+    scmd = b'scancode' if on_linux and py2 else 'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
     rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
 

@@ -60,6 +60,8 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 def test_package_option_detects_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)

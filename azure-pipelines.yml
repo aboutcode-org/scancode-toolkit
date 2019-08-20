@@ -118,6 +118,7 @@ jobs:
               tests/typecode \
               tests/extractcode \
               tests/plugincode \
+              tests/scancode \
               tests/textcode
             bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
             
@@ -211,6 +212,7 @@ jobs:
                  bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/scancode \
                     tests/typecode \
                     tests/textcode              
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
@@ -226,6 +228,7 @@ jobs:
                  bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/scancode \
                     tests/typecode \
                     tests/textcode                
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
@@ -241,6 +244,7 @@ jobs:
                  bin/py.test  -vvs tests/cluecode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/scancode \
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
@@ -254,7 +258,7 @@ jobs:
           test_suites:
               commoncode: Scripts\py.test  -vvs tests\commoncode
               other: |
-                 Scripts\py.test  -vvs tests\cluecode tests\extractcode tests\plugincode tests\textcode tests\typecode
+                 Scripts\py.test  -vvs tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
               cluecode: Scripts\py.test -n 3 -vvs --test-suite=all tests\cluecode
    
 
@@ -290,6 +294,7 @@ jobs:
               tests/typecode \
               tests/extractcode \
               tests/plugincode \
+              tests/scancode \
               tests/textcode
             bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
                
