@@ -30,7 +30,10 @@ from __future__ import print_function
 from array import array
 from collections import Counter
 from collections import defaultdict
-import cPickle
+try:
+    import cPickle
+except ImportError:
+    import pickle as cPickle
 from functools import partial
 from operator import itemgetter
 import pickle
