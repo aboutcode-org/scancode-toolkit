@@ -193,9 +193,11 @@ class Consolidator(PostScanPlugin):
                     resource.save(codebase)
                 consolidated_packages.append(c.to_dict())
             elif isinstance(c, ConsolidatedComponent):
-                if c.consolidation.identifier:
+                consolidation_identifier = c.consolidation.identifier
+                if consolidation_identifier:
                     # Use existing identifier
-                    identifier = c.consolidation.identifier
+                    identifier_counts[consolidation_identifier] += 1
+                    identifier = python_safe_name('{}_{}'.format(consolidation_identifier, identifier_counts[consolidation_identifier]))
                 else:
                     # Create identifier if we don't have one
                     # TODO: Consider adding license expression to be part of name
