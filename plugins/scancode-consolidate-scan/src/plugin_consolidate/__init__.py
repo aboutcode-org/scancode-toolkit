@@ -172,7 +172,7 @@ class Consolidator(PostScanPlugin):
             return
 
         # Process ConsolidatedPackages and ConsolidatedComponents (if needed)
-        # consolidations = combine_license_holders_consolidated_components(consolidations)
+        consolidations = combine_license_holders_consolidated_components(consolidations)
 
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
         codebase.attributes.consolidated_packages = consolidated_packages = []

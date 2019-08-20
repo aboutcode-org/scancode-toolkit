@@ -20,8 +20,19 @@ of is in the Resource's ``consolidated_to`` field.
 Installation
 ============
 
-Activate the ``scancode-toolkit`` virtual environment and then install the consolidation plugin:
+Activate the ``scancode-toolkit`` virtual environment and then install the
+consolidation plugin:
 
 cd <your scancode-toolkit directory>
+
 source bin/activate
+
 pip install -e plugins/scancode-consolidate-scan
+
+
+Usage
+=====
+
+The consolidation plugin is activated using the ``--consolidate`` option. This
+option requres copyrights, info, license, and package scans (``-clip``) active
+as well.
