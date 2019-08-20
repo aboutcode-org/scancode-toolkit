@@ -13,7 +13,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "files_count": 99
+        "files_count": 102
       }
     }
   ],
@@ -1494,6 +1494,24 @@
     },
     {
       "path": "jrecordbind-2.3.4.pom.package.json",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "log4j-pom.xml",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "log4j-pom.xml.json",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "log4j-pom.xml.package.json",
       "type": "file",
       "packages": [],
       "scan_errors": []
