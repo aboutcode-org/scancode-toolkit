@@ -193,7 +193,7 @@ setup(
 
         # packagedcode
         'pefile >= 2018.8.8',
-        'pymaven-patch >= 0.2.4',
+        'pymaven-patch >= 0.2.8',
         'requests >= 2.7.0, < 3.0.0',
         'packageurl-python >= 0.7.0',
         'xmltodict >= 0.11.0',
