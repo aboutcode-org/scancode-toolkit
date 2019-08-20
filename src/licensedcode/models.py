@@ -516,7 +516,7 @@ def check_rules_integrity(rules, licenses_by_key):
             ' '.join(keys) + '\n' +
             'file://' + data_file + '\n' +
             'file://' + data_file.replace('.yml', '.RULE') + '\n'
-        for data_file, keys in invalid_rules.iteritems() if keys)
+        for data_file, keys in invalid_rules.items() if keys)
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 
@@ -534,7 +534,7 @@ def build_rules_from_licenses(licenses):
     Return an iterable of rules built from each license text from a `licenses`
     iterable of license objects.
     """
-    for license_key, license_obj in licenses.iteritems():
+    for license_key, license_obj in licenses.items():
         text_file = join(license_obj.src_dir, license_obj.text_file)
         if exists(text_file):
             minimum_coverage = license_obj.minimum_coverage or 0
@@ -564,7 +564,7 @@ def get_all_spdx_keys(licenses):
     Return an iterable of SPDX license keys collected from a `licenses` iterable
     of license objects.
     """
-    for lic in licenses.viewvalues():
+    for lic in licenses.values():
         for spdx_key in lic.spdx_keys():
             yield spdx_key
 
@@ -1272,12 +1272,12 @@ def _print_rule_stats():
     rules = idx.rules_by_rid
     sizes = Counter(r.length for r in rules)
     print('Top 15 lengths: ', sizes.most_common(15))
-    print('15 smallest lengths: ', sorted(sizes.iteritems(),
+    print('15 smallest lengths: ', sorted(sizes.items(),
                                           key=itemgetter(0))[:15])
 
     high_sizes = Counter(r.high_length for r in rules)
     print('Top 15 high lengths: ', high_sizes.most_common(15))
-    print('15 smallest high lengths: ', sorted(high_sizes.iteritems(),
+    print('15 smallest high lengths: ', sorted(high_sizes.items(),
                                                key=itemgetter(0))[:15])
 
 
