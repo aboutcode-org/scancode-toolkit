@@ -177,12 +177,16 @@ class Consolidator(PostScanPlugin):
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
         codebase.attributes.consolidated_packages = consolidated_packages = []
         codebase.attributes.consolidated_components = consolidated_components = []
+        identifier_counts = Counter()
         for index, c in enumerate(consolidations, start=1):
             # Skip consolidation if it does not have any Resources
             if not c.consolidation.resources:
                 continue
             if isinstance(c, ConsolidatedPackage):
-                identifier = python_safe_name('{}_{}'.format(c.package.purl, index))
+                # We use the purl as the identifier for ConsolidatedPackages
+                purl = c.package.purl
+                identifier_counts[purl] += 1
+                identifier = python_safe_name('{}_{}'.format(purl, identifier_counts[purl]))
                 c.consolidation.identifier = identifier
                 for resource in c.consolidation.resources:
                     resource.consolidated_to.append(identifier)
@@ -191,7 +195,7 @@ class Consolidator(PostScanPlugin):
             elif isinstance(c, ConsolidatedComponent):
                 if c.consolidation.identifier:
                     # Use existing identifier
-                    identifier = python_safe_name('{}_{}'.format(c.consolidation.identifier, index))
+                    identifier = c.consolidation.identifier
                 else:
                     # Create identifier if we don't have one
                     # TODO: Consider adding license expression to be part of name
@@ -201,8 +205,12 @@ class Consolidator(PostScanPlugin):
                     # We do not want the name to be too long
                     holders = holders[:65]
                     if holders:
-                        identifier = python_safe_name('{}_{}'.format(holders, index))
+                        # We use holders as the identifier for ConsolidatedComponents
+                        identifier_counts[holders] += 1
+                        identifier = python_safe_name('{}_{}'.format(holders, identifier_counts[holders]))
                     else:
+                        # If we can't use holders, we use the ConsolidatedComponent's position
+                        # in the list of Consolidations
                         identifier = index
                 c.consolidation.identifier = identifier
                 for resource in c.consolidation.resources:
