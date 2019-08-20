@@ -110,11 +110,19 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
 
 
+
 def is_metadata_json(location):
-    parent_directory = fileutils.parent_directory(location).lower().rstrip(('/', '\\',))
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'metadata.json'
-            and not parent_directory.endswith('dist-info'))
+    """
+    Return True if `location` path is for a Chef metadata.json file.
+    The metadata.json is also used in Python installed packages in a 'dist-info'
+    directory.
+    """
+    return (
+        filetype.is_file(location)
+        and fileutils.file_name(location).lower() == 'metadata.json'
+        and not fileutils.file_name(fileutils.parent_directory(location))
+            .lower().endswith('dist-info')
+    )
 
 
 def is_metadata_rb(location):
