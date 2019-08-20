@@ -26,7 +26,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from functools import partial
 import io
 import json
 import logging
@@ -40,7 +39,6 @@ from pygments.token import Token
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode import ignore
 from packagedcode import models
 
 
@@ -112,9 +110,19 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
 
 
+
 def is_metadata_json(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'metadata.json')
+    """
+    Return True if `location` path is for a Chef metadata.json file.
+    The metadata.json is also used in Python installed packages in a 'dist-info'
+    directory.
+    """
+    return (
+        filetype.is_file(location)
+        and fileutils.file_name(location).lower() == 'metadata.json'
+        and not fileutils.file_name(fileutils.parent_directory(location))
+            .lower().endswith('dist-info')
+    )
 
 
 def is_metadata_rb(location):
