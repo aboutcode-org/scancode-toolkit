@@ -38,6 +38,7 @@ import yg.lockfile  # NOQA
 from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir
 from commoncode import ignore
+from commoncode.system import py3
 
 from scancode_config import scancode_cache_dir
 from scancode_config import scancode_src_dir
@@ -309,7 +310,10 @@ def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
     """
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
     hashable = (pth + str(getmtime(pth)) + str(getsize(pth)) for pth in resources)
-    return md5(''.join(sorted(hashable))).hexdigest()
+    hashable = ''.join(sorted(hashable))
+    if py3:
+        hashable=hashable.encode('utf-8')
+    return md5(hashable).hexdigest()
 
 
 def get_license_cache_paths(cache_dir=scancode_cache_dir):
