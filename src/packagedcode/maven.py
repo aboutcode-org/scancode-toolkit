@@ -33,11 +33,9 @@ import os.path
 from os.path import dirname
 from os.path import join
 from pprint import pformat
-import re
 
 import attr
 import javaproperties
-from license_expression import Licensing
 from lxml import etree
 from packageurl import PackageURL
 from pymaven import artifact
@@ -52,6 +50,7 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
+from pymaven.pom import strip_namespace
 
 
 TRACE = False
@@ -67,18 +66,6 @@ if TRACE:
 Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
-
-
-#monkey patch
-pom.POM_PARSER = POM_PARSER = etree.XMLParser(
-    recover=True,
-    # we keep comments in case there is a license in the comments
-    remove_comments=False,
-    remove_pis=True,
-    remove_blank_text=True,
-    resolve_entities=False
-)
-
 
 @attr.s()
 class MavenPomPackage(models.Package):
@@ -220,7 +207,7 @@ def compute_normalized_license(declared_license):
                 detections = via_name, via_url, via_comments
                 detections = [l for l in detections if l]
                 if detections:
-                    combined_expression =  combine_expressions(detections)
+                    combined_expression = combine_expressions(detections)
                     if combined_expression:
                         detected_licenses.append(combined_expression)
         elif via_url:
@@ -311,10 +298,12 @@ class MavenPom(pom.Pom):
                 xml_text = analysis.unicode_text(location)
         else:
             xml_text = text
-        
+        xml_text = strip_namespace(xml_text)
         xml_text = xml_text.encode('utf-8')
+        if TRACE:
+            logger.debug('MavenPom.__init__: xml_text: {}'.format(xml_text))
 
-        self._pom_data = etree.fromstring(xml_text, parser=POM_PARSER)
+        self._pom_data = etree.fromstring(xml_text, parser=pom.POM_PARSER)
 
         # collect and then remove XML comments from the XML elements tree
         self.comments = self._get_comments()
@@ -330,7 +319,9 @@ class MavenPom(pom.Pom):
             self.model_version = self._get_attribute('pomVersion')
         self.group_id = self._get_attribute('groupId')
         self.artifact_id = self._get_attribute('artifactId')
-        if TRACE: logger.debug('MavenPom.__init__: self.artifact_id: {}'.format(self.artifact_id))
+        if TRACE:
+            logger.debug('MavenPom.__init__: self.artifact_id: {}'.format(self.artifact_id))
+
         self.version = self._get_attribute('version')
         self.classifier = self._get_attribute('classifier')
         self.packaging = self._get_attribute('packaging') or 'jar'
@@ -609,7 +600,7 @@ class MavenPom(pom.Pom):
         return val
 
     def _get_attributes_list(self, xpath, xml=None):
-        """Return a list of text attribute values for a given xpath or empty list."""
+        """Return a list of text attributes for a given xpath or empty list."""
         if xml is None:
             xml = self.pom_data
         attrs = xml.findall(xpath)
@@ -617,7 +608,7 @@ class MavenPom(pom.Pom):
         return [attr.strip() for attr in attrs if attr and attr.strip()]
 
     def _get_comments(self, xml=None):
-        """Return a list of comment text values or an empty list."""
+        """Return a list of comment texts or an empty list."""
         if xml is None:
             xml = self.pom_data
         comments = [c.text for c in xml.xpath('//comment()')]
@@ -877,7 +868,7 @@ def has_basic_pom_attributes(pom):
     return basics
 
 
-def _get_maven_pom(location=None, text=None, check_is_pom=False, extra_properties=None):
+def get_maven_pom(location=None, text=None, check_is_pom=False, extra_properties=None):
     """
     Return a MavenPom object from a POM file at `location` or provided as a
     `text` string.
@@ -1023,7 +1014,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     When resolving the POM, use an optional `extra_properties` mapping
     of name/value pairs to resolve properties.
     """
-    pom = _get_maven_pom(location, text, check_is_pom, extra_properties)
+    pom = get_maven_pom(location, text, check_is_pom, extra_properties)
     if not pom:
         return
 
