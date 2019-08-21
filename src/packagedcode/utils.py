@@ -175,7 +175,7 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
                 type(expressions)))
 
     # Remove duplicate element in the expressions list
-    expressions = OrderedDict((x, True) for x in expressions).keys()
+    expressions = list(OrderedDict((x, True) for x in expressions).keys())
 
     if len(expressions) == 1:
         return expressions[0]
