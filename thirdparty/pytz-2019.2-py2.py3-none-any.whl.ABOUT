@@ -1,3 +1,4 @@
+name: pytz
 about_resource: pytz-2019.2-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/87/76/46d697698a143e05f77bec5a526bf4e56a0be61d63425b68f4ba553b51f2/pytz-2019.2-py2.py3-none-any.whl
 license_expression: mit AND public-domain

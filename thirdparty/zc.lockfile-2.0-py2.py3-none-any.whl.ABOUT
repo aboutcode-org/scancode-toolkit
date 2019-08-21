@@ -1,3 +1,4 @@
+name: zc.lockfile
 about_resource: zc.lockfile-2.0-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/6c/2a/268389776288f0f26c7272c70c36c96dcc0bdb88ab6216ea18e19df1fadd/zc.lockfile-2.0-py2.py3-none-any.whl
 license_expression: zpl-2.1

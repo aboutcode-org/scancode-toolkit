@@ -1,3 +1,4 @@
+name: yg.lockfile
 about_resource: yg.lockfile-2.3-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/39/86/19446e44425d4986e156af8990b399afe19df87bcb83b1e3023623143839/yg.lockfile-2.3-py2.py3-none-any.whl
 license_expression: mit
