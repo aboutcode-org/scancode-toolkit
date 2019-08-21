@@ -272,7 +272,7 @@ def test_scan_works_with_multiple_processes():
     run_scan_click(args)
     res1 = json.loads(open(result_file_1).read())
     res3 = json.loads(open(result_file_3).read())
-    assert sorted(res1['files']) == sorted(res3['files'])
+    assert sorted(res1['files'], key=lambda x: tuple(x.items())) == sorted(res3['files'], key=lambda x: tuple(x.items()))
 
 
 def test_scan_works_with_no_processes_in_threaded_mode():
@@ -289,7 +289,7 @@ def test_scan_works_with_no_processes_in_threaded_mode():
     run_scan_click(args)
     res0 = json.loads(open(result_file_0).read())
     res1 = json.loads(open(result_file_1).read())
-    assert sorted(res0['files']) == sorted(res1['files'])
+    assert sorted(res0['files'], key=lambda x: tuple(x.items())) == sorted(res1['files'], key=lambda x: tuple(x.items()))
 
 
 def test_scan_works_with_no_processes_non_threaded_mode():
@@ -306,7 +306,7 @@ def test_scan_works_with_no_processes_non_threaded_mode():
     run_scan_click(args)
     res0 = json.loads(open(result_file_0).read())
     res1 = json.loads(open(result_file_1).read())
-    assert sorted(res0['files']) == sorted(res1['files'])
+    assert sorted(res0['files'], key=lambda x: tuple(x.items())) == sorted(res1['files'], key=lambda x: tuple(x.items()))
 
 
 def test_scan_works_with_multiple_processes_and_timeouts():
@@ -317,7 +317,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     # not be cached
     import time, random
     for tf in fileutils.resource_iter(test_dir, with_dirs=False):
-        with open(tf, 'ab') as tfh:
+        with open(tf, 'a') as tfh:
             tfh.write(
                 '(c)' + str(time.time()) + repr([random.randint(0, 10 ** 6) for _ in range(10000)]) + '(c)')
 
@@ -762,7 +762,7 @@ def test_get_displayable_summary():
     assert expected == results
 
 
-@pytest.mark.xfail#('weird test with TTY interactions that need to be revisited')
+@pytest.mark.xfail  # ('weird test with TTY interactions that need to be revisited')
 def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     from io import StringIO
     import sys
