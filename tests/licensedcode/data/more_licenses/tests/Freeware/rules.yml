@@ -1,2 +1,3 @@
 license_expressions:
-  - newlib-historical
+  -  other-permissive
+expected_failure: yes
