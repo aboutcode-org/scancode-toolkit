@@ -35,7 +35,10 @@ import attr
 from license_expression import Licensing
 import pytest
 
+from commoncode import compat
 from commoncode import saneyaml
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
@@ -151,7 +154,12 @@ class LicenseTest(object):
     def get_test_method_name(self, prefix='test_detection_'):
         test_file_name = self.test_file_name
         test_name = '{prefix}{test_file_name}'.format(**locals())
-        return text.python_safe_name(test_name)
+        test_name = text.python_safe_name(test_name)
+        if py2 and not isinstance(test_name, bytes):
+            test_name=test_name.encode('utf-8')
+        if py3 and not isinstance(test_name, compat.unicode):
+            test_name=test_name.decode('utf-8')
+        return test_name
 
 
 def build_tests(test_dir, clazz, regen=False):
@@ -188,8 +196,6 @@ def make_test(license_test, regen=False):
     license_test LicenseTest object.
     """
     test_name = license_test.get_test_method_name()
-    if isinstance(test_name, unicode):
-        test_name = test_name.encode('utf-8')
 
     from licensedcode import cache
     from licensedcode.tracing import get_texts
