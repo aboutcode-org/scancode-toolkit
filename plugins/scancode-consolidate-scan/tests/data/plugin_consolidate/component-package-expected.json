@@ -3,13 +3,31 @@
     {
       "tool_name": "scancode-toolkit",
       "options": {
-        "input": "<path>",
-        "--consolidate": true,
+        "input": [
+          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package"
+        ],
         "--copyright": true,
         "--info": true,
-        "--json": "<file>",
+        "--json": "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package.json",
         "--license": true,
         "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--consolidate": true,
+        "--from-json": [
+          true
+        ],
+        "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -22,7 +40,7 @@
   "consolidated_components": [
     {
       "type": "license-holders",
-      "identifier": "the_apache_software_foundation_2",
+      "identifier": "the_apache_software_foundation_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
         "The Apache Software Foundation"
@@ -149,7 +167,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -228,7 +246,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -307,7 +325,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -386,7 +404,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -729,7 +747,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_25.RULE",
+            "identifier": "lead-in_unknown_25.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"

@@ -38,7 +38,7 @@
     },
     {
       "type": "license-holders",
-      "identifier": "the_apache_software_foundation_2",
+      "identifier": "the_apache_software_foundation_1",
       "consolidated_license_expression": "apache-2.0 AND unknown",
       "consolidated_holders": [
         "The Apache Software Foundation"
@@ -80,7 +80,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 4,
       "dirs_count": 2,
@@ -112,7 +112,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 4,
       "dirs_count": 1,
@@ -154,7 +154,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_28.RULE",
+            "identifier": "lead-in_unknown_28.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"
@@ -224,7 +224,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -266,7 +266,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_28.RULE",
+            "identifier": "lead-in_unknown_28.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"
@@ -336,7 +336,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -522,7 +522,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_28.RULE",
+            "identifier": "lead-in_unknown_28.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"
@@ -592,7 +592,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_2"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

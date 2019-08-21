@@ -2,7 +2,7 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.0.2.post1250.904952c36",
+      "tool_version": "3.1.0.post23.71bce0119",
       "options": {
         "input": [
           "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package"
@@ -14,8 +14,8 @@
         "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-07-30T193211.267553",
-      "end_timestamp": "2019-07-30T193215.803227",
+      "start_timestamp": "2019-08-21T011856.816710",
+      "end_timestamp": "2019-08-21T011905.051040",
       "message": null,
       "errors": [],
       "extra_data": {
@@ -91,7 +91,7 @@
       "base_name": "src1",
       "extension": "",
       "size": 56,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
@@ -168,7 +168,7 @@
       "base_name": "src2",
       "extension": "",
       "size": 56,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
@@ -245,7 +245,7 @@
       "base_name": "src3",
       "extension": "",
       "size": 56,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
@@ -322,7 +322,7 @@
       "base_name": "src4",
       "extension": "",
       "size": 34,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "ce82bf2d5d3e79dabf5960159d1e14e46560da63",
       "md5": "5817e002d5c6420ebcd4dfa66e500f10",
       "mime_type": "text/plain",
@@ -467,7 +467,7 @@
       "base_name": "package",
       "extension": ".json",
       "size": 141,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
       "md5": "e10ff141105dc64fbde2dc77c61275db",
       "mime_type": "text/plain",
@@ -544,7 +544,7 @@
       "base_name": "src1",
       "extension": "",
       "size": 56,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "mime_type": "text/plain",
@@ -621,7 +621,7 @@
       "base_name": "src2",
       "extension": "",
       "size": 78,
-      "date": "2019-07-30",
+      "date": "2019-08-02",
       "sha1": "ddbbd1133bac042f1c1bcbd4aa31337756837271",
       "md5": "79cb837ae2b9a134e62b7bf3762b5ddc",
       "mime_type": "text/plain",
@@ -650,7 +650,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_25.RULE",
+            "identifier": "lead-in_unknown_25.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"

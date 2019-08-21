@@ -38,7 +38,7 @@
     },
     {
       "type": "license-holders",
-      "identifier": "oracle_corp__2",
+      "identifier": "oracle_corp__1",
       "consolidated_license_expression": "apache-2.0 AND unknown",
       "consolidated_holders": [
         "Oracle Corp."
@@ -54,7 +54,7 @@
     },
     {
       "type": "license-holders",
-      "identifier": "omega_com_3",
+      "identifier": "omega_com_1",
       "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "consolidated_holders": [
         "omega.com"
@@ -126,7 +126,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "omega_com_3"
+        "omega_com_1"
       ],
       "files_count": 1,
       "dirs_count": 1,
@@ -158,7 +158,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "omega_com_3"
+        "omega_com_1"
       ],
       "files_count": 1,
       "dirs_count": 0,
@@ -270,7 +270,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "omega_com_3"
+        "omega_com_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -476,7 +476,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "oracle_corp__2"
+        "oracle_corp__1"
       ],
       "files_count": 1,
       "dirs_count": 0,
@@ -518,7 +518,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "unknown_28.RULE",
+            "identifier": "lead-in_unknown_28.RULE",
             "license_expression": "unknown",
             "licenses": [
               "unknown"
@@ -588,7 +588,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "oracle_corp__2"
+        "oracle_corp__1"
       ],
       "files_count": 0,
       "dirs_count": 0,

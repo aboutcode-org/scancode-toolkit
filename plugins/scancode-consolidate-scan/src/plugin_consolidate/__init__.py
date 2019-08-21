@@ -439,6 +439,11 @@ def combine_license_holders_consolidated_components(components):
     origin_translation_table = {}
     components_by_holders_license_expression = defaultdict(list)
     for component in components:
+        if (not isinstance(component, ConsolidatedComponent)
+                or (isinstance(component, ConsolidatedComponent) and component.type != 'license-holders')):
+            # Yield the components we don't handle
+            yield component
+            continue
         origin = component.consolidation.core_holders, component.consolidation.core_license_expression
         origin_key = ''.join(component.consolidation.core_holders) + component.consolidation.core_license_expression
         origin_translation_table[origin_key] = origin
