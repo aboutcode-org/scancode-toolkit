@@ -43,6 +43,8 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
+from commoncode.system import py2
+from commoncode.system import py3
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import load_json_result
@@ -61,6 +63,12 @@ a plain subprocess to the same effect.
 """
 
 pytestmark = pytest.mark.scanpy3  # NOQA
+
+
+if py2:
+    read_mode = 'rb'
+if py3:
+    read_mode = 'r'
 
 
 def test_package_option_detects_packages(monkeypatch):
@@ -147,7 +155,7 @@ def test_scan_info_returns_full_root():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, 'rb').read())
+    result_data = json.loads(open(result_file, read_mode).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert 12 == len(file_paths)
     root = fileutils.as_posixpath(test_dir)
@@ -159,7 +167,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_file, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, 'rb').read())
+    result_data = json.loads(open(result_file, read_mode).read())
     files = result_data['files']
     # we have a single file
     assert len(files) == 1
@@ -408,7 +416,12 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     # to test this on Windows at all. Extractcode works fine, but does
     # rename the problematic files.
 
-    test_dir = test_env.extract_test_tar_raw('unicode_fixtures.tar.gz')
+    if on_linux and py2:
+        test_path = b'unicode_fixtures.tar.gz'
+    if py3:
+        test_path = u'unicode_fixtures.tar.gz'
+
+    test_dir = test_env.extract_test_tar_raw(test_path)
     test_dir = fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright', '--package', '--email',
@@ -856,8 +869,8 @@ def test_merge_multiple_scans():
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('resource/virtual_codebase/out.json')
-    with open(expected, 'rb') as f:
+    with open(expected, read_mode) as f:
         expected_files = json.loads(f.read())['files']
-    with open(result_file, 'rb') as f:
+    with open(result_file, read_mode) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
