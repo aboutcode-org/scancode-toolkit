@@ -31,6 +31,7 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+from commoncode.system import py3
 
 from licensedcode import cache
 from licensedcode import index
@@ -40,13 +41,26 @@ from licensedcode.models import Rule
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
 def check_json(expected, results, regen=False):
     if regen:
-        with open(expected, 'wb') as ex:
+        mode = 'w' if py3 else 'wb'
+        with open(expected, mode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
         expected = json.load(ex, object_pairs_hook=OrderedDict)
     assert expected == results
+
+
+def as_sorted_mapping_seq(licenses):
+    """
+    Given a `licenses` iterator of to_dict()'able objects, return a sorted list
+    of these.
+    """
+    return sorted((l.to_dict() for l in licenses), key=lambda x: tuple(x.items()))
 
 
 class TestLicense(FileBasedTesting):
@@ -56,7 +70,7 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
-        results = sorted(l.to_dict() for l in lics.values())
+        results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.load.expected.json')
         check_json(expected, results)
 
@@ -67,7 +81,7 @@ class TestLicense(FileBasedTesting):
             l.dump()
         lics = models.load_licenses(test_dir, with_deprecated=True)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
-        results = sorted(l.to_dict() for l in lics.values())
+        results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.dump.expected.json')
         check_json(expected, results)
 
@@ -80,7 +94,7 @@ class TestLicense(FileBasedTesting):
 
         lics = models.load_licenses(new_dir, with_deprecated=True)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
-        results = sorted(l.to_dict() for l in lics.values())
+        results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.expected.json')
         check_json(expected, results)
 
@@ -93,7 +107,7 @@ class TestLicense(FileBasedTesting):
 
         lics = models.load_licenses(new_dir, with_deprecated=True)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
-        results = sorted(l.to_dict() for l in lics.values())
+        results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses-new-key.expected.json')
         check_json(expected, results)
 
@@ -107,7 +121,7 @@ class TestLicense(FileBasedTesting):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         rules = models.build_rules_from_licenses(lics)
-        results = sorted(r.to_dict() for r in rules)
+        results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/license_rules.expected.json')
         check_json(expected, results)
 
@@ -183,7 +197,7 @@ class TestRule(FileBasedTesting):
 
         def create_test_file(text):
             tf = self.get_temp_file()
-            with open(tf, 'wb') as of:
+            with open(tf, 'w') as of:
                 of.write(text)
             return tf
 
@@ -196,7 +210,7 @@ class TestRule(FileBasedTesting):
         test_dir = self.get_test_loc('models/rules')
         rules = list(models.load_rules(test_dir))
         assert all(isinstance(r, models.Rule) for r in rules)
-        results = sorted(r.to_dict() for r in rules)
+        results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 
@@ -207,7 +221,7 @@ class TestRule(FileBasedTesting):
             r.dump()
 
         rules = list(models.load_rules(test_dir))
-        results = sorted(r.to_dict() for r in rules)
+        results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 

@@ -33,6 +33,9 @@ from licensedcode import legal
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestSpecialFiles(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
