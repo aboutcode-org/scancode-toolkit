@@ -408,7 +408,7 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     # to test this on Windows at all. Extractcode works fine, but does
     # rename the problematic files.
 
-    test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
+    test_dir = test_env.extract_test_tar_raw('unicode_fixtures.tar.gz')
     test_dir = fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright', '--package', '--email',
