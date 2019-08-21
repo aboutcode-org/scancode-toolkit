@@ -29,8 +29,10 @@ from __future__ import unicode_literals
 import os
 
 from packagedcode import cran
-
 from packages_test_utils import PackageTester
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestCran(PackageTester):

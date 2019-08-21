@@ -35,9 +35,14 @@ from unittest.case import expectedFailure
 import saneyaml
 
 from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
@@ -109,7 +114,7 @@ class TestRubyGemMetadata(FileBasedTesting):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
         with open(test_file) as tf:
             metadata = saneyaml.load(tf.read())
-        rubygems.build_rubygem_package(metadata)        
+        rubygems.build_rubygem_package(metadata)
 
 
 def relative_walk(dir_path, extension='.gem'):
@@ -144,11 +149,13 @@ def create_test_function(test_loc, test_name, regen=False):
             expected = json.load(ex, object_pairs_hook=OrderedDict)
         assert expected == package
 
-    # set a proper function name to display in reports and use in discovery
-    # function names are best as bytes
-    if isinstance(test_name, compat.string_types):
+    if py2 and isinstance(test_name, compat.unicode):
         test_name = test_name.encode('utf-8')
+    if py3 and isinstance(test_name, bytes):
+        test_name = test_name.decode('utf-8')
+
     check_rubygem.__name__ = test_name
+
     return check_rubygem
 
 

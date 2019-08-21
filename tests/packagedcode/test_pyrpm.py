@@ -34,8 +34,10 @@ import io
 import os
 
 from commoncode.testcase import FileBasedTesting
-
 from packagedcode import pyrpm
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class RPMTest(FileBasedTesting):

@@ -30,8 +30,10 @@ import os.path
 import saneyaml
 
 from packagedcode import freebsd
-
 from packages_test_utils import PackageTester
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestFreeBSD(PackageTester):

@@ -29,11 +29,12 @@ from __future__ import unicode_literals
 import os
 from collections import OrderedDict
 
+from packages_test_utils import PackageTester
+from packagedcode import conda
 from scancode.resource import Codebase
 
-from packages_test_utils import PackageTester
-
-from packagedcode import conda
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestConda(PackageTester):
@@ -47,7 +48,7 @@ class TestConda(PackageTester):
     def test_get_yaml_data(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_yaml_data(test_file)
-        assert  (u'package', OrderedDict([(u'name', u'abeona'), (u'version', u'0.45.0')]))==results.items()[0]
+        assert  (u'package', OrderedDict([(u'name', u'abeona'), (u'version', u'0.45.0')]))==list(results.items())[0]
 
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')

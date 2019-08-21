@@ -28,10 +28,14 @@ from __future__ import unicode_literals
 
 import os.path
 
+from commoncode.system import py2
+from commoncode.system import py3
 from packagedcode import npm
 from scancode.resource import Codebase
-
 from packages_test_utils import PackageTester
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestNpm(PackageTester):
@@ -143,7 +147,10 @@ class TestNpm(PackageTester):
         try:
             npm.parse(test_file)
         except ValueError as e:
-            assert 'No JSON object could be decoded' in str(e)
+            if py2:
+                assert 'No JSON object could be decoded' in str(e)
+            if py3:
+                assert 'Expecting value: line 60 column 3' in str(e)
 
     def test_parse_keywords(self):
         test_file = self.get_test_loc('npm/keywords/package.json')

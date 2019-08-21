@@ -31,6 +31,9 @@ from unittest import TestCase
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestPackageUtils(TestCase):
 

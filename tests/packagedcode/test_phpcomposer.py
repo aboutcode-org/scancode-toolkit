@@ -29,8 +29,10 @@ from __future__ import unicode_literals
 import os
 
 from packages_test_utils import PackageTester
-
 from packagedcode import phpcomposer
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestPHPcomposer(PackageTester):
