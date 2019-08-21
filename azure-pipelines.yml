@@ -222,11 +222,11 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
+              scancode_nothreads: bin/py.test -vvs tests/scancode
               base: |
                   bin/py.test -n 3 -vvs tests/commoncode \
                     tests/extractcode \
                     tests/plugincode \
-                    tests/scancode \
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs tests/cluecode
@@ -239,11 +239,11 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
+              scancode_nothreads: bin/py.test -vvs tests/scancode
               base: |
                   bin/py.test -n 3 -vvs tests/commoncode \
                     tests/extractcode \
                     tests/plugincode \
-                    tests/scancode \
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs tests/cluecode
@@ -257,10 +257,10 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              base: Scripts\py.test -n 3 -vvs tests\commoncode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
-              cluecode: Scripts\py.test -n 3 -vvs tests\cluecode
-              licensedcode: Scripts\py.test -n 3 -vvs tests\licensedcode
-              packagedcode: Scripts\py.test -n 3 -vvs tests\packagedcode
+              base: Scripts\py.test -vvs tests\commoncode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
+              cluecode: Scripts\py.test -vvs tests\cluecode
+              licensedcode: Scripts\py.test -vvs tests\licensedcode
+              packagedcode: Scripts\py.test -vvs tests\packagedcode
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
