@@ -227,8 +227,10 @@ class FileDrivenTesting(object):
 
             # editors temp file leftovers
             tilde = b'~' if on_linux and py2 else '~'
-            map(os.remove, [path.join(root, file_loc)
-                            for file_loc in files if file_loc.endswith(tilde)])
+            tilde_files = [path.join(root, file_loc) 
+                           for file_loc in files if file_loc.endswith(tilde)]
+            for tf in tilde_files:
+                os.remove(tf)
 
     def __extract(self, test_path, extract_func=None, verbatim=False):
         """
