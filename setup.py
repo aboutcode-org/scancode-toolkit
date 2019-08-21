@@ -221,10 +221,10 @@ setup(
         'unicodecsv',
 
         # ScanCode caching and locking
-        'yg.lockfile >= 2.0.1, < 3.0.0',
+        'yg.lockfile >= 2.3, < 3.0.0',
             # used by yg.lockfile
-            'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
-        'zc.lockfile >= 1.0.0, < 2.0.1',
+            'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
+        'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
     entry_points={
         'console_scripts': [
