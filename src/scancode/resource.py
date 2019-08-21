@@ -1600,7 +1600,7 @@ class VirtualCodebase(Codebase):
             if existing_parent:
                 # We update the empty parent Resouorce we in _get_or_create_parent() with the data
                 # from the scan
-                for k, v in resource_data.iteritems():
+                for k, v in resource_data.items():
                     setattr(existing_parent, k, v)
                 self.save_resource(existing_parent)
             else:
