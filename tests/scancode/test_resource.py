@@ -28,13 +28,15 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from functools import partial
 from os.path import dirname
 from os.path import exists
 from os.path import join
 
-from commoncode import ignore
+import pytest
+
 from commoncode.fileutils import parent_directory
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 
 from scancode.cli_test_utils import load_json_result
@@ -47,6 +49,7 @@ from scancode.resource import VirtualCodebase
 
 class TestCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_walk_defaults(self):
         test_codebase = self.get_test_loc('resource/codebase')
@@ -368,7 +371,10 @@ class TestCodebase(FileBasedTesting):
                 locations.append(os.path.join(top, x))
             for x in files:
                 locations.append(os.path.join(top, x))
-        transcoder = fsencode if on_linux else fsdecode
+        if py2:
+            transcoder = fsencode if on_linux else fsdecode
+        if py3:
+            transcoder = lambda x: x
         locations = [transcoder(p) for p in locations]
         root_location = transcoder(test_dir)
 
@@ -552,6 +558,7 @@ class TestCodebase(FileBasedTesting):
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_codebase_cache_default(self):
         test_codebase = self.get_test_loc('resource/cache2')
@@ -621,6 +628,7 @@ class TestCodebaseCache(FileBasedTesting):
 
 class TestVirtualCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_virtual_codebase_walk_defaults(self):
         test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
@@ -947,6 +955,7 @@ class TestVirtualCodebase(FileBasedTesting):
 
 class TestCodebaseLowestCommonParent(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_lowest_common_parent_on_virtual_codebase(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/lcp.json')
@@ -1023,6 +1032,7 @@ class TestCodebaseLowestCommonParent(FileBasedTesting):
 
 class TestVirtualCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_virtual_codebase_cache_default(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
@@ -1093,7 +1103,7 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
 
 
-class TestVirtualCodebaseCreation(FileBasedTesting):
+class TestVirtualCodebaseCreationFromCli(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_VirtualCodebase_output_with_from_json_is_same_as_original(self):
@@ -1115,9 +1125,15 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
         assert len(results_headers) == len(expected_headers) + 1
 
+
+class TestVirtualCodebaseCreation(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    pytestmark = pytest.mark.scanpy3  # NOQA
+
     def test_VirtualCodebase_can_be_created_from_json_file(self):
         test_file = self.get_test_loc('resource/virtual_codebase/from_file.json')
-        codebase= VirtualCodebase(test_file)
+        codebase = VirtualCodebase(test_file)
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
         assert expected == results
@@ -1147,7 +1163,7 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
               ]
             }
             '''
-        codebase= VirtualCodebase(test_scan)
+        codebase = VirtualCodebase(test_scan)
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
         assert expected == results
@@ -1175,7 +1191,7 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
                 }
               ]
             }
-        codebase= VirtualCodebase(test_scan)
+        codebase = VirtualCodebase(test_scan)
 
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
@@ -1193,7 +1209,7 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
     def test_VirtualCodebase_check_that_already_existing_parent_is_updated_properly(self):
         test_file = self.get_test_loc('resource/virtual_codebase/root-is-not-first-resource.json')
         codebase = VirtualCodebase(test_file)
-        results = sorted(r.to_dict() for r in codebase.walk())
+        results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
             OrderedDict([
                 (u'path', u'samples'),
@@ -1213,9 +1229,9 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
     def test_VirtualCodebase_create_from_multiple_scans(self):
         test_file_1 = self.get_test_loc('resource/virtual_codebase/combine-1.json')
         test_file_2 = self.get_test_loc('resource/virtual_codebase/combine-2.json')
-        input = (test_file_1, test_file_2)
-        codebase = VirtualCodebase(input)
-        results = sorted(r.to_dict() for r in codebase.walk())
+        vinput = (test_file_1, test_file_2)
+        codebase = VirtualCodebase(vinput)
+        results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
             OrderedDict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
             OrderedDict([(u'path', u'virtual_root/samples'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),

@@ -76,6 +76,7 @@ from commoncode.fileutils import splitext_name
 from commoncode import ignore
 from commoncode.system import on_linux
 from commoncode.system import py2
+from commoncode.system import py3
 
 
 """
@@ -689,7 +690,11 @@ class Codebase(object):
                             'in memory: %(resource)r' % resource)
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        with open(cache_location , 'wb') as cached:
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
+        with open(cache_location , mode) as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
