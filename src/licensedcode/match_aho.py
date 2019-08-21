@@ -129,7 +129,8 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
         matches_append(match)
     if TRACE and matches:
         logger_debug(' ##exact_AHO: matches found#')
-        map(print, matches)
+        for m in matches:
+            print(m)
 
     return matches
 
@@ -203,7 +204,8 @@ def match_fragments(idx, query_run):
         idx, query_run, automaton=idx.fragments_automaton, matcher=MATCH_AHO_FRAG)
     if TRACE_FRAG:
         logger_debug('match_fragments')
-        map(print, matches)
+        for m in matches:
+            print(m)
 
     # Discard fragments that have any already matched positions in previous matches
     from licensedcode.match import filter_already_matched_matches

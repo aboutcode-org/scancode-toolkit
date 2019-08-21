@@ -30,6 +30,9 @@ from unittest.case import TestCase
 
 from licensedcode import seq
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestSeq(TestCase):
 

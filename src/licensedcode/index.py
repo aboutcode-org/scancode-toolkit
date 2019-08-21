@@ -274,7 +274,7 @@ class LicenseIndex(object):
         # FIXME: we should start at 1, and ids are become valid unichr values
 
         self.dictionary = dictionary = {
-            ts: tid for tid, ts in enumerate(_legalese)}
+            ts: tid for tid, ts in enumerate(sorted(_legalese))}
         dictionary_get = dictionary.get
 
         self.len_legalese = len_legalese = len(dictionary)
@@ -539,7 +539,8 @@ class LicenseIndex(object):
             match.set_lines(matches, qry.line_by_pos)
 
         if not with_text:
-            map(logger_debug, matches)
+            for m in matches:
+                logger_debug(m)
         else:
             logger_debug(message + ' MATCHED TEXTS')
 

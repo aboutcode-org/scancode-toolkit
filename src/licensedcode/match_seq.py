@@ -29,9 +29,9 @@ from __future__ import print_function
 from time import time
 import sys
 
+from commoncode import compat
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
-from commoncode import compat
 
 
 TRACE = False
@@ -147,7 +147,8 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
 
     if TRACE:
         logger_debug('match_seq: FINAL LicenseMatch(es)')
-        list(map(logger_debug, matches))
+        for m in matches:
+            logger_debug(m)
         logger_debug('\n\n')
 
     return matches

@@ -29,25 +29,25 @@ from __future__ import unicode_literals
 import os
 
 from commoncode.testcase import FileBasedTesting
-
+from licensedcode import cache
 from licensedcode import index
-
+from licensedcode.index import LicenseIndex
 from licensedcode.match import filter_contained_matches
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import LicenseMatch
 from licensedcode.match import merge_matches
+from licensedcode.match import reportable_tokens
 from licensedcode.match import restore_non_overlapping
 from licensedcode.match import tokenize_matched_text
 from licensedcode.match import Token
-
+from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-from licensedcode.match import reportable_tokens
-from licensedcode import models
-from licensedcode.index import LicenseIndex
-from licensedcode import cache
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')

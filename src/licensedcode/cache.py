@@ -32,7 +32,7 @@ from os.path import getsize
 from os.path import join
 import sys
 
-from six import reraise
+import six
 import yg.lockfile  # NOQA
 
 from commoncode.fileutils import resource_iter
@@ -225,7 +225,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
             if has_cache and has_tree_checksum:
                 # if we have a saved cached index
                 # load saved tree_checksum and compare with current tree_checksum
-                with open(checksum_file, 'rb') as etcs:
+                with open(checksum_file, 'r') as etcs:
                     existing_checksum = etcs.read()
                 current_checksum = tree_checksum(tree_base_dir=tree_base_dir)
                 if current_checksum == existing_checksum:
@@ -255,7 +255,7 @@ def get_cached_index(cache_dir=scancode_cache_dir,
                     idx.dump(ifc)
 
             # save the new checksums tree
-            with open(checksum_file, 'wb') as ctcs:
+            with open(checksum_file, 'w') as ctcs:
                 ctcs.write(current_checksum
                            or tree_checksum(tree_base_dir=tree_base_dir))
 
@@ -285,7 +285,10 @@ def load_index(cache_file, use_loads=False):
                 'Please delete "{cache_file}" and retry.\n'
                 'If the problem persists, copy this error message '
                 'and submit a bug report.\n'.format(**locals()))
-            reraise(ex_type, message, ex_traceback)
+            if py3:
+                raise ex_type(message).with_traceback(ex_traceback)
+            else:
+                six.reraise(ex_type, message, ex_traceback)
 
 
 _ignored_from_hash = partial(

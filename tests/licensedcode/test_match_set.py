@@ -32,3 +32,7 @@ from intbitset import intbitset
 
 from licensedcode import match_set
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
