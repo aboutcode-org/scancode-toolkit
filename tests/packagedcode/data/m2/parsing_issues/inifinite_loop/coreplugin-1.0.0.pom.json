@@ -28,7 +28,5 @@
   "distribution_management": {}, 
   "repositories": [], 
   "plugin_repositories": [], 
-  "dependencies": {
-    "compile": []
-  }
+  "dependencies": {}
 }
