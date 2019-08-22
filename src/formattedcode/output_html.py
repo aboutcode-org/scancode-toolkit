@@ -49,6 +49,7 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
+from commoncode.system import py2
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -120,7 +121,7 @@ class CustomTemplateOutput(OutputPlugin):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
 
-        if on_linux:
+        if on_linux and py2:
             custom_template = fsencode(custom_template)
 
         template_loc = custom_template

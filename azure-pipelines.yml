@@ -19,6 +19,7 @@ jobs:
                   --ignore=tests/plugincode \
                   --ignore=tests/extractcode \
                   --ignore=tests/cluecode \
+                  --ignore=tests/formattedcode \
                   --ignore=tests/licensedcode
 
               scancode: |
@@ -30,6 +31,8 @@ jobs:
                  tests/packagedcode tests/plugincode tests/extractcode
 
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+
+              formattedcode: bin/py.test -n 3 -vvs --test-suite=all tests/formattedcode
 
               license_base: |
                 bin/py.test -n 3 -vvs --test-suite=all \
@@ -213,6 +216,7 @@ jobs:
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
@@ -230,6 +234,7 @@ jobs:
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
@@ -247,6 +252,7 @@ jobs:
                     tests/typecode \
                     tests/textcode
               cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
@@ -257,8 +263,9 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              base: Scripts\py.test -vvs tests\commoncode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
+              base: Scripts\py.test -vvs tests\commoncode tests\formattedcode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
               cluecode: Scripts\py.test -vvs tests\cluecode
+              formattedcode: Scripts\py.test -vvs tests\formattedcode
               licensedcode: Scripts\py.test -vvs tests\licensedcode
               packagedcode: Scripts\py.test -vvs tests\packagedcode
 
@@ -291,6 +298,7 @@ jobs:
           test_suite: |
             bin/py.test -n 3 -vvs \
               tests/commoncode \
+              tests/formattedcode \
               tests/typecode \
               tests/extractcode \
               tests/plugincode \
