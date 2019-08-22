@@ -40,7 +40,7 @@ seconds and was interrupted. In this case, the returned `value` is None.
 """
 
 
-class TimeoutError(Exception):
+class TimeoutError(Exception):  # NOQA
     pass
 
 
@@ -50,6 +50,7 @@ TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.
 ERROR_MSG = 'ERROR: Unknown error:\n'
 NO_ERROR = None
 NO_VALUE = None
+
 
 if not on_windows:
     """
@@ -99,7 +100,7 @@ if not on_windows:
         finally:
             setitimer(ITIMER_REAL, 0)
 
-else:
+elif on_windows:
     """
     Run a function in an interruptible thread with a timeout.
     Based on an idea of dano "Dan O'Reilly"
@@ -111,12 +112,22 @@ else:
     from ctypes import py_object
     from ctypes import pythonapi
     from multiprocessing import TimeoutError as MpTimeoutError
-    from Queue import Empty as Queue_Empty
-    from Queue import Queue
+
     try:
-        from thread import start_new_thread
-    except ImportError:
+        # python 3
+        from queue import Empty as Queue_Empty  # NOQA
+        from queue import Queue  # NOQA
+    except:
+        # python 2
+        from Queue import Empty as Queue_Empty  # NOQA
+        from Queue import Queue  # NOQA
+
+    try:
+        # python 3
         from _thread import start_new_thread
+    except ImportError:
+        # python 2
+        from thread import start_new_thread
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
