@@ -77,7 +77,7 @@ def query_lines(location=None, query_string=None, strip=True):
 # Split on whitespace and punctuations: keep only characters and numbers and +
 # when in the middle or end of a word. Keeping the trailing + is important for
 # licenses name such as GPL2+
-query_pattern = '[^_\W]+\+?[^_\W]*'
+query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
@@ -114,7 +114,7 @@ def _query_tokenizer(text, stopwords=STOPWORDS):
 
 # Alternate pattern which is the opposite of query_pattern used for
 # matched text collection
-not_query_pattern = '[_\W\s\+]+[_\W\s]?'
+not_query_pattern = '[_\\W\\s\\+]+[_\\W\\s]?'
 
 # collect tokens and non-token texts in two different groups
 _text_capture_pattern = (

@@ -32,11 +32,13 @@ from __future__ import division
 from __future__ import print_function
 
 from collections import Set
-from commoncode import compat
 from itertools import count
 from itertools import groupby
 
 from intbitset import intbitset
+
+from commoncode import compat
+
 
 """
 Ranges and intervals of integers using bitmaps.
@@ -447,7 +449,7 @@ class Span(Set):
         """
         ints = sorted(set(ints))
         groups = (group for _, group in groupby(ints, lambda group, c=count(): next(c) - group))
-        return map(Span, groups)
+        return [Span(g) for g in groups]
 
     def subspans(self):
         """

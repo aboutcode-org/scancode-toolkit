@@ -33,13 +33,12 @@ import re
 
 from intbitset import intbitset
 
-import typecode
+from commoncode import compat
 from commoncode.text import toascii
-
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-from commoncode import compat
+import typecode
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -560,7 +559,7 @@ def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
     that contain more than threshold in chunks. Return an iterable of lines.
     """
     for line in lines:
-        for i in xrange(0, len(line), threshold):
+        for i in range(0, len(line), threshold):
             yield line[i:i + threshold]
 
 

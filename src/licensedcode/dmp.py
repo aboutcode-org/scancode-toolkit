@@ -279,13 +279,13 @@ class Differ(object):
         k1end = 0
         k2start = 0
         k2end = 0
-        for d in xrange(max_d):
+        for d in range(max_d):
             # Bail out if deadline is reached.
             if time.time() > deadline:
                 break
 
             # Walk the front path one step.
-            for k1 in xrange(-d + k1start, d + 1 - k1end, 2):
+            for k1 in range(-d + k1start, d + 1 - k1end, 2):
                 k1_offset = v_offset + k1
 
                 if k1 == -d or (k1 != d and v1[k1_offset - 1] < v1[k1_offset + 1]):
@@ -321,7 +321,7 @@ class Differ(object):
                             return self.bisect_split(text1, text2, x1, y1, deadline)
 
             # Walk the reverse path one step.
-            for k2 in xrange(-d + k2start, d + 1 - k2end, 2):
+            for k2 in range(-d + k2start, d + 1 - k2end, 2):
                 k2_offset = v_offset + k2
 
                 if k2 == -d or (k2 != d and v2[k2_offset - 1] < v2[k2_offset + 1]):

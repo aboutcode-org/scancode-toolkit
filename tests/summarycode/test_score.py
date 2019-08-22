@@ -31,6 +31,8 @@ import click
 click.disable_unicode_literals_warning = True
 
 from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
 
@@ -71,8 +73,10 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
 
     test_name = 'test_license_clarity_score_%(test_name)s' % locals()
     test_name = python_safe_name(test_name)
-    if isinstance(test_name, compat.unicode):
+    if py2 and isinstance(test_name, compat.unicode):
         test_name = test_name.encode('utf-8')
+    if py3 and isinstance(test_name, bytes):
+        test_name = test_name.decode('utf-8')
 
     closure_test_function.__name__ = test_name
 

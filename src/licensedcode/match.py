@@ -31,12 +31,12 @@ from functools import total_ordering
 
 import attr
 
+from commoncode import compat
 from licensedcode import MAX_DIST
 from licensedcode import query
 from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
-from commoncode import compat
 
 
 """
@@ -750,7 +750,8 @@ def filter_contained_matches(matches):
     if TRACE_FILTER_CONTAINED: print('filter_contained_matches: number of matches to process:', len(matches))
     if TRACE_FILTER_CONTAINED:
         print('filter_contained_matches: initial matches')
-        map(print, matches)
+        for m in matches:
+            print(m)
 
     # compare two matches in the sorted sequence: current and next match we
     # progressively compare a pair and remove next or current
@@ -847,7 +848,8 @@ def filter_overlapping_matches(matches):
     if TRACE_FILTER_OVERLAPPING: print('filter_overlapping_matches: number of matches to process:', len(matches))
     if TRACE_FILTER_OVERLAPPING:
         print('filter_overlapping_matches: initial matches')
-        map(print, matches)
+        for m in matches:
+            print(m)
 
     # compare two matches in the sorted sequence: current and next match we
     # progressively compare a pair and remove next or current
@@ -1283,7 +1285,9 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     """
     if TRACE: logger_debug()
     if TRACE: logger_debug(' #####refine_matches: STARTING matches#', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE_REFINE: 
+        for m in matches:
+            logger_debug(m)
 
     if merge:
         matches = merge_matches(matches)
@@ -1293,9 +1297,13 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     def _log(_matches, _discarded, msg):
         if TRACE: logger_debug('   #####refine_matches: ', msg, '#', len(matches))
-        if TRACE_REFINE: map(logger_debug, _matches)
+        if TRACE_REFINE:
+            for m in matches:
+                logger_debug(m)
         if TRACE: logger_debug('   #####refine_matches: NOT', msg, '#', len(_discarded))
-        if TRACE_REFINE: map(logger_debug, discarded)
+        if TRACE_REFINE:
+            for m in matches:
+                logger_debug(m)
 
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
@@ -1322,7 +1330,9 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     matches = merge_matches(matches)
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE_REFINE: 
+        for m in matches:
+            logger_debug(m)
 
     matches, discarded_contained = filter_contained_matches(matches)
     _log(matches, discarded_contained, 'NON CONTAINED')
@@ -1360,7 +1370,9 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
         matches = merge_matches(matches)
 
     logger_debug('   ##### refine_matches: FINAL MERGED_matches#:', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
+    if TRACE_REFINE:
+        for m in matches:
+            logger_debug(m)
 
     return matches, all_discarded
 

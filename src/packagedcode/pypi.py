@@ -198,12 +198,12 @@ def get_setup_attribute(setup_text, attribute):
     # FIXME: it does not make sense to reread a setup.py once for each attribute
 
     # FIXME: what are these regex doing?
-    values = re.findall('setup\(.*?' + attribute + '\s*=\s*[\"\']{1}.*?\'\s*,', setup_text.replace('\n', ''))
+    values = re.findall('setup\\(.*?' + attribute + '\\s*=\\s*[\"\']{1}.*?\'\\s*,', setup_text.replace('\n', ''))
     if len(values) > 1 or len(values) == 0:
         return
     else:
         values = ''.join(values)
-        attr_value = re.sub('setup\(.*?' + attribute + '\s*=\s*[\"\']{1}', '', values)
+        attr_value = re.sub('setup\(.*?' + attribute + '\\s*=\\s*[\"\']{1}', '', values)
         if attr_value.endswith('\','):
             return attr_value.replace('\',', '')
         else:

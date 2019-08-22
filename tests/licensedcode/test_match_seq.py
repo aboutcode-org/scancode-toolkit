@@ -29,15 +29,15 @@ from __future__ import unicode_literals
 import os
 
 from commoncode.testcase import FileBasedTesting
-
 from licensedcode import index
 from licensedcode.tracing import get_texts
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode import match_seq
-
 from licensedcode_test_utils import mini_legalese  # NOQA
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

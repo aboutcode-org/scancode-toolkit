@@ -227,10 +227,10 @@ class PackageTopAndKeyFilesTagger(PostScanPlugin):
 
                     if TRACE:
                         logger_debug('PackageTopAndKeyFilesTagger: descendants')
-                        for rpath, desc in descendants.iteritems():
+                        for rpath, desc in descendants.items():
                             logger_debug('rpath:', rpath, 'desc:', desc)
 
-                for rpath, desc in descendants.iteritems():
+                for rpath, desc in descendants.items():
                     if extra_root_dirs and get_matches(rpath, extra_root_dirs):
                         if TRACE:
                             logger_debug('PackageTopAndKeyFilesTagger: get_matches for:', rpath, desc)

@@ -27,6 +27,8 @@ from __future__ import unicode_literals
 
 import simplejson
 
+from commoncode.system import py2
+from commoncode.system import py3
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -38,12 +40,29 @@ Output plugin to write scan results as JSON lines.
 """
 
 
+if py2:
+    mode = 'wb'
+    space = b' '
+    comma = b','
+    colon = b':'
+    eol = b'\n'
+    file_key = b'files'
+
+if py3:
+    mode = 'w'
+    space = u' '
+    comma = u','
+    colon = u':'
+    eol = u'\n'
+    file_key = u'files'
+
+
 @output_impl
 class JsonLinesOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--json-lines', 'output_json_lines',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(mode=mode, lazy=True),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',
             help_group=OUTPUT_GROUP,
@@ -55,7 +74,7 @@ class JsonLinesOutput(OutputPlugin):
 
     # TODO: reuse the json output code and merge that in a single plugin
     def process_codebase(self, codebase, output_json_lines, **kwargs):
-        #NOTE: we write as binary, not text
+        # NOTE: we write as binary, not text
         files = self.get_files(codebase, **kwargs)
 
         codebase.add_files_count_to_current_header()
@@ -65,21 +84,21 @@ class JsonLinesOutput(OutputPlugin):
         simplejson_kwargs = dict(
             iterable_as_array=True,
             encoding='utf-8',
-            separators=(b',', b':',)
+            separators=(comma, colon,)
         )
         output_json_lines.write(
             simplejson.dumps(headers, **simplejson_kwargs))
-        output_json_lines.write(b'\n')
+        output_json_lines.write(eol)
 
         for name, value in codebase.attributes.to_dict().items():
             if value:
                 smry = {name: value}
                 output_json_lines.write(
                     simplejson.dumps(smry, **simplejson_kwargs))
-                output_json_lines.write(b'\n')
+                output_json_lines.write(eol)
 
         for scanned_file in files:
-            scanned_file_line = {b'files': [scanned_file]}
+            scanned_file_line = {file_key: [scanned_file]}
             output_json_lines.write(
                 simplejson.dumps(scanned_file_line, **simplejson_kwargs))
-            output_json_lines.write(b'\n')
+            output_json_lines.write(eol)

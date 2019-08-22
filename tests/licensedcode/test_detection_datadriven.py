@@ -34,7 +34,7 @@ import unittest
 from licensedcode_test_utils import build_tests #NOQA
 
 import pytest
-pytestmark = pytest.mark.scanslow
+pytestmark = [pytest.mark.scanslow, pytest.mark.scanpy3]
 
 
 """

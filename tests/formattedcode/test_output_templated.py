@@ -42,7 +42,7 @@ from scancode.resource import VirtualCodebase
 
 
 import pytest
-pytestmark = pytest.mark.scanslow
+pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
 
 
 test_env = FileDrivenTesting()

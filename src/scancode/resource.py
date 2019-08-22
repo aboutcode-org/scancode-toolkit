@@ -75,6 +75,8 @@ from commoncode.fileutils import splitext_name
 
 from commoncode import ignore
 from commoncode.system import on_linux
+from commoncode.system import py2
+from commoncode.system import py3
 
 
 """
@@ -256,7 +258,7 @@ class Codebase(object):
 
         # setup location
         ########################################################################
-        if on_linux:
+        if on_linux and py2:
             location = fsencode(location)
         else:
             location = fsdecode(location)
@@ -357,7 +359,7 @@ class Codebase(object):
         """
         if not self.cache_dir:
             return
-        resid = (b'%08x'if on_linux else '%08x') % rid
+        resid = (b'%08x'if (py2 and on_linux) else '%08x') % rid
         cache_sub_dir, cache_file_name = resid[-2:], resid
         parent = join(self.cache_dir, cache_sub_dir)
         if create and not exists(parent):
@@ -382,7 +384,7 @@ class Codebase(object):
 
         # Resource sub-class to use. Configured with plugin attributes if present
         self.resource_class = attr.make_class(
-            name=b'ScannedResource',
+            name=b'ScannedResource' if py2 else 'ScannedResource',
             attrs=self.resource_attributes or {},
             slots=True,
             # frozen=True,
@@ -688,7 +690,11 @@ class Codebase(object):
                             'in memory: %(resource)r' % resource)
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        with open(cache_location , 'wb') as cached:
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
+        with open(cache_location , mode) as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
@@ -915,7 +921,7 @@ def to_native_path(path):
     """
     if not path:
         return path
-    if on_linux:
+    if on_linux and py2:
         return fsencode(path)
     else:
         return fsdecode(path)
@@ -1029,7 +1035,7 @@ class Resource(object):
 
     @property
     def is_dir(self):
-        #note: we only store is_file
+        # note: we only store is_file
         return not self.is_file
 
     @property
@@ -1210,7 +1216,7 @@ class Resource(object):
         Return a sequence of descendant Resource objects
         (does NOT include self).
         """
-        return list(self.walk(codebase,topdown=True))
+        return list(self.walk(codebase, topdown=True))
 
     def distance(self, codebase):
         """
@@ -1323,7 +1329,7 @@ def get_codebase_cache_dir(temp_dir):
 
     prefix = 'scancode-codebase-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
-    if on_linux:
+    if on_linux and py2:
         cache_dir = fsencode(cache_dir)
     else:
         cache_dir = fsdecode(cache_dir)
@@ -1338,7 +1344,7 @@ class _CodebaseAttributes(object):
 
 def get_codebase_attributes_class(attributes):
     return attr.make_class(
-        name=b'CodebaseAttributes',
+        name=b'CodebaseAttributes' if py2 else u'CodebaseAttributes',
         attrs=attributes or {},
         slots=True,
         bases=(_CodebaseAttributes,)
@@ -1500,7 +1506,7 @@ class VirtualCodebase(Codebase):
 
         # Collect codebase-level attributes and build a class, then load
         ##########################################################
-        standard_cb_attrs = set(['headers', 'files',])
+        standard_cb_attrs = set(['headers', 'files', ])
         all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)
         # We add in the attributes that we collected from the plugins. They come
         # last for now.
@@ -1546,7 +1552,7 @@ class VirtualCodebase(Codebase):
 
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(
-            name=b'ScannedResource',
+            name=b'ScannedResource' if py2 else u'ScannedResource',
             attrs=all_res_attributes or {},
             slots=True,
             # frozen=True,
@@ -1599,7 +1605,7 @@ class VirtualCodebase(Codebase):
             if existing_parent:
                 # We update the empty parent Resouorce we in _get_or_create_parent() with the data
                 # from the scan
-                for k, v in resource_data.iteritems():
+                for k, v in resource_data.items():
                     setattr(existing_parent, k, v)
                 self.save_resource(existing_parent)
             else:

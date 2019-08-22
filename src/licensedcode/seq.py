@@ -175,4 +175,4 @@ def match_blocks(a, b, a_start, a_end, b2j, len_good, matchables=frozenset(), *a
     if k1:
         non_adjacent_append((i1, j1, k1))
 
-    return map(Match._make, non_adjacent)
+    return [Match._make(na) for na in non_adjacent]

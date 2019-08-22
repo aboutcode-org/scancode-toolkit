@@ -29,16 +29,16 @@ from __future__ import unicode_literals
 import os
 
 from commoncode.testcase import FileBasedTesting
-
-from licensedcode.spans import Span
-
 from licensedcode import index
 from licensedcode import match_seq
 from licensedcode import models
 from licensedcode.query import Query
+from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
-
 from licensedcode_test_utils import mini_legalese  # NOQA
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 def MiniLicenseIndex(*args, **kwargs):
@@ -367,7 +367,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Goodbye
 No part of match        '''
         result = idx.match(query_string=querys)
-
+        print('here3')
         assert 1 == len(result)
         match = result[0]
         assert match_seq.MATCH_SEQ == match.matcher

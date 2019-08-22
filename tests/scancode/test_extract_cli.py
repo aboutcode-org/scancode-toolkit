@@ -38,7 +38,12 @@ from commoncode.fileutils import resource_iter
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_windows
+from commoncode.system import py2
 from scancode import extract_cli
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -48,7 +53,7 @@ These CLI tests are dependent on py.test monkeypatch to  ensure we are testing
 the actual command outputs as if using a TTY or not.
 """
 
-EMPTY_STRING = b'' if on_linux else ''
+EMPTY_STRING = b'' if on_linux and py2 else ''
 
 
 def test_extractcode_command_can_take_an_empty_directory(monkeypatch):
@@ -183,7 +188,7 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms(monkeypatc
 def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monkeypatch):
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('unicodearch', copy=True)
-    if on_linux:
+    if on_linux and py2:
         test_dir = fsencode(test_dir)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
@@ -191,8 +196,8 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
 
     assert 'Sanders' in result.output
 
-    uni_arch = b'unicodepath.tgz' if on_linux else 'unicodepath.tgz'
-    uni_path = b'/unicodepath/' if on_linux else '/unicodepath/'
+    uni_arch = b'unicodepath.tgz' if on_linux and py2 else u'unicodepath.tgz'
+    uni_path = b'/unicodepath/' if on_linux and py2 else u'/unicodepath/'
 
     file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith(uni_arch)]
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]
@@ -214,8 +219,8 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
     result = runner.invoke(extract_cli.extractcode, [test_dir])
     assert result.exit_code == 0
 
-    uni_arch = b'unicodepath.tgz' if on_linux else 'unicodepath.tgz'
-    uni_path = b'/unicodepath/' if on_linux else '/unicodepath/'
+    uni_arch = b'unicodepath.tgz' if on_linux and py2 else 'unicodepath.tgz'
+    uni_path = b'/unicodepath/' if on_linux and py2 else '/unicodepath/'
 
     file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith(uni_arch)]
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]

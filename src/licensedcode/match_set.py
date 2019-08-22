@@ -33,10 +33,10 @@ from itertools import groupby
 
 from intbitset import intbitset
 
+from commoncode import compat
 from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
 
-from commoncode import compat
 
 
 """
@@ -56,7 +56,7 @@ a resemblance and containment based on these set intersections that is used as
 vector to rank. This is essentially a traditional IR inverted index approach.
 
 But we also want to return every matches and not just probabilistic top-ranked
-matches based on frequencies as is typically done in a search engine. There2fore
+matches based on frequencies as is typically done in a search engine. Therefore
 we compute the intersection of the query against every rules. This proves more
 efficient than a traditional inverted intersection in part because the queries
 are much larger (1000's of tokens) than a traditional search engine query.

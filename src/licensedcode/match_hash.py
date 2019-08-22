@@ -27,9 +27,11 @@ from __future__ import print_function, absolute_import
 from array import array
 from hashlib import md5
 
-from licensedcode.spans import Span
-from licensedcode.match import LicenseMatch
 from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
+from licensedcode.match import LicenseMatch
+from licensedcode.spans import Span
 
 """
 Matching strategy using hashes to match a whole text chunk at once.
@@ -62,7 +64,11 @@ def tokens_hash(tokens):
     """
     Return a digest binary string computed from a sequence of numeric token ids.
     """
-    return md5(array('h', tokens).tostring()).digest()
+    if py2:
+        as_bytes = array('h', tokens).tostring()
+    if py3:
+        as_bytes = array('h', tokens).tobytes()
+    return md5(as_bytes).digest()
 
 
 def index_hash(rule_tokens):

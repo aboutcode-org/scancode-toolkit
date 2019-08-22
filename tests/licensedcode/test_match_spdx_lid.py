@@ -32,6 +32,7 @@ import json
 import unittest
 
 from license_expression import Licensing
+from license_expression import ExpressionError
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
@@ -43,11 +44,14 @@ from licensedcode.match_spdx_lid import _parse_expression
 from licensedcode.match_spdx_lid import _reparse_invalid_expression
 from licensedcode.match_spdx_lid import clean_text
 from licensedcode.match_spdx_lid import get_expression
+from licensedcode.match_spdx_lid import prepare_text
 from licensedcode.match_spdx_lid import strip_spdx_lid
 from licensedcode import models
 from licensedcode.query import Query
-from licensedcode.match_spdx_lid import prepare_text
-from license_expression import ExpressionError
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

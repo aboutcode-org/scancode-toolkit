@@ -36,21 +36,16 @@ import pytest
 
 from commoncode import compat
 from commoncode import fileutils
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
 from scancode.resource import Codebase
+from packagedcode.maven import get_maven_pom
 
+pytestmark = pytest.mark.scanpy3  # NOQA
 
-def parse_pom(location=None, text=None, check_is_pom=False):
-    """
-    Return a POM mapping from the Maven POM file at location.
-    """
-    from packagedcode.maven import _get_maven_pom
-    pom = _get_maven_pom(location, text, check_is_pom)
-    if not pom:
-        return {}
-    return pom.to_dict()
 
 
 class TestIsPom(testcase.FileBasedTesting):
@@ -87,10 +82,39 @@ class TestIsPom(testcase.FileBasedTesting):
         assert not maven.is_pom(test_file)
 
 
+def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
+    if regen:
+        with open(expected_json_loc, 'wb') as ex:
+            json.dump(results, ex, indent=2)
+
+    with io.open(expected_json_loc, encoding='utf-8') as ex:
+        expected = json.load(ex, object_pairs_hook=OrderedDict)
+
+    results_dump = json.dumps(results, indent=2)
+    expected_dump = json.dumps(expected, indent=2)
+    try:
+        assert expected_dump == results_dump
+    except AssertionError:
+        test_pom_loc = 'file://' + test_pom_loc
+        expected_json_loc = 'file://' + expected_json_loc
+        expected = [test_pom_loc, expected_json_loc, expected_dump]
+        assert '\n'.join(expected) == results_dump
+
+
+def parse_pom(location=None, text=None, check_is_pom=False):
+    """
+    Return a POM mapping from the Maven POM file at location.
+    """
+    pom = get_maven_pom(location, text, check_is_pom)
+    if not pom:
+        return {}
+    return pom.to_dict()
+
+
 class BaseMavenCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_parse_pom(self, test_pom, check_is_pom=False, regen=False):
+    def check_parse_pom(self, test_pom, regen=False):
         """
         Test the parsing of POM at test_pom against an expected JSON
         from the same name with a .json extension.
@@ -98,23 +122,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
         test_pom_loc = self.get_test_loc(test_pom)
         expected_json_loc = test_pom_loc + '.json'
         results = parse_pom(location=test_pom_loc)
-
-        if regen:
-            with open(expected_json_loc, 'wb') as ex:
-                json.dump(results, ex, indent=2)
-
-        with io.open(expected_json_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
-
-        results_dump = json.dumps(results, indent=2)
-        expected_dump = json.dumps(expected, indent=2)
-        try:
-            assert expected_dump == results_dump
-        except AssertionError:
-            test_pom_loc = 'file://' + test_pom_loc
-            expected_json_loc = 'file://' + expected_json_loc
-            expected = [test_pom_loc, expected_json_loc, expected_dump]
-            assert '\n'.join(expected) == results_dump
+        compare_results(results, test_pom_loc, expected_json_loc, regen)
 
     def check_parse_to_package(self, test_pom, regen=False):
         """
@@ -129,23 +137,7 @@ class BaseMavenCase(testcase.FileBasedTesting):
         else:
             package.license_expression = package.compute_normalized_license()
             results = package.to_dict()
-
-        if regen:
-            with open(expected_json_loc, 'wb') as ex:
-                json.dump(results, ex, indent=2)
-
-        with io.open(expected_json_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
-
-        results_dump = json.dumps(results, indent=2)
-        expected_dump = json.dumps(expected, indent=2)
-        try:
-            assert expected_dump == results_dump
-        except AssertionError:
-            test_pom_loc = 'file://' + test_pom_loc
-            expected_json_loc = 'file://' + expected_json_loc
-            expected = [test_pom_loc, expected_json_loc, expected_dump]
-            assert '\n'.join(expected) == results_dump
+        compare_results(results, test_pom_loc, expected_json_loc, regen)
 
 
 class TestMavenMisc(BaseMavenCase):
@@ -155,7 +147,14 @@ class TestMavenMisc(BaseMavenCase):
         test_pom_loc = self.get_test_loc('maven_misc/non-maven.pom')
         results = parse_pom(location=test_pom_loc, check_is_pom=True)
         assert {} == results
-        self.check_parse_pom(test_pom_loc, check_is_pom=False)
+        self.check_parse_pom(test_pom_loc, regen=False)
+
+    def test_MavenPom_simple_creation(self):
+        test_loc = self.get_test_loc('maven_misc/mini-pom.xml')
+        pom = maven.MavenPom(test_loc)
+        assert 'activemq-camel' == pom.artifact_id
+        # note: there has been no parent resolving yet
+        assert None == pom.group_id
 
     def test_pom_dependencies(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
@@ -220,7 +219,7 @@ class TestMavenMisc(BaseMavenCase):
         results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
         assert expected == results
 
-    def test_parse_to_package(self):
+    def test_parse_to_package_base(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         self.check_parse_pom(test_file, regen=False)
 
@@ -502,8 +501,11 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if isinstance(test_name, compat.string_types):
+    if py2 and isinstance(test_name, compat.unicode):
         test_name = test_name.encode('utf-8')
+    if py3 and isinstance(test_name, bytes):
+        test_name = test_name.decode('utf-8')
+
     test_pom.__name__ = test_name
     return test_pom
 

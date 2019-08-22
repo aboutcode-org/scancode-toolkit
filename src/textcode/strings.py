@@ -256,7 +256,7 @@ def is_win_guid(s):
     """
     Return True if s looks like a windows GUID/APPID/CLSID.
     """
-    guid = re.compile('"\{[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}"', re.IGNORECASE).match
+    guid = re.compile('"\\{[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\\}"', re.IGNORECASE).match
     # TODO: implement me
     guid(s)
     return False

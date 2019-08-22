@@ -40,6 +40,9 @@ from scancode import CommandLineOption
 from scancode.cli import ScanCommand
 from scancode.utils import fixed_width_file_name
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestUtils(FileDrivenTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

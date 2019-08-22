@@ -35,13 +35,16 @@ import os
 from time import time
 
 from commoncode.testcase import FileBasedTesting
-
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
+
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

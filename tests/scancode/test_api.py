@@ -29,20 +29,41 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import os
 
-from commoncode.testcase import FileBasedTesting
+import pytest
 
+from commoncode.testcase import FileBasedTesting
 from scancode import api
+
+
+
+class TestPackageAPI(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_get_package_info_works_for_maven_dot_pom(self):
+        test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
+        packages = api.get_package_info(test_file)
+        assert packages['packages'][0]['version'] == '1.3'
+
+    def test_get_package_info_works_for_maven_pom_dot_xml(self):
+        test_file = self.get_test_loc('api/package/pom.xml')
+        packages = api.get_package_info(test_file)
+        assert packages['packages'][0]['version'] == '1.3'
+
 
 
 class TestAPI(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_get_package_info_can_pickle(self):
         test_file = self.get_test_loc('api/package/package.json')
         package = api.get_package_info(test_file)
 
         import pickle
-        import cPickle
+        try:
+            import cPickle
+        except ImportError:
+            import pickle as cPickle
         try:
             _pickled = pickle.dumps(package, pickle.HIGHEST_PROTOCOL)
             _cpickled = cPickle.dumps(package, pickle.HIGHEST_PROTOCOL)
@@ -70,16 +91,6 @@ class TestAPI(FileBasedTesting):
             (u'is_script', False)
         ]
         assert expected == [(k, v) for k, v in info.items() if k != 'date']
-
-    def test_get_package_info_works_for_maven_dot_pom(self):
-        test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
-        packages = api.get_package_info(test_file)
-        assert packages['packages'][0]['version'] == '1.3'
-
-    def test_get_package_info_works_for_maven_pom_dot_xml(self):
-        test_file = self.get_test_loc('api/package/pom.xml')
-        packages = api.get_package_info(test_file)
-        assert packages['packages'][0]['version'] == '1.3'
 
     def test_get_copyrights_include_copyrights_and_authors(self):
         test_file = self.get_test_loc('api/copyright/iproute.c')

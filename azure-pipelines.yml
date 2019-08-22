@@ -19,6 +19,7 @@ jobs:
                   --ignore=tests/plugincode \
                   --ignore=tests/extractcode \
                   --ignore=tests/cluecode \
+                  --ignore=tests/formattedcode \
                   --ignore=tests/licensedcode
 
               scancode: |
@@ -30,6 +31,8 @@ jobs:
                  tests/packagedcode tests/plugincode tests/extractcode
 
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+
+              formattedcode: bin/py.test -n 3 -vvs --test-suite=all tests/formattedcode
 
               license_base: |
                 bin/py.test -n 3 -vvs --test-suite=all \
@@ -100,8 +103,9 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
@@ -110,17 +114,10 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suite_label: ported code
+          test_suite_label: base
           test_suite: |
-            bin/py.test  -n 2 -vvs \
-              tests/commoncode \
-              tests/cluecode \
-              tests/typecode \
-              tests/extractcode \
-              tests/plugincode \
-              tests/textcode
-            bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
-            
+            bin/py.test  -n 3 -vvs
+
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: centos7_py27
@@ -128,8 +125,9 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo yum install -y python python27-devel
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -139,8 +137,9 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -150,8 +149,9 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -163,8 +163,9 @@ jobs:
 #          install_python: |
 #              set -e -x
 #              sudo dnf install -y python2 python2-devel
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
@@ -173,8 +174,9 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: base
+#          test_suite: |
+#            bin/py.test  -n 3 -vvs
 
 ########################################################################
 # RELEASE on 2.7
@@ -206,14 +208,17 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test  -vvs tests/commoncode
-              other: |
-                 bin/py.test  -vvs tests/cluecode \
+              base: |
+                  bin/py.test -n 3 -vvs tests/commoncode \
                     tests/extractcode \
                     tests/plugincode \
+                    tests/scancode \
                     tests/typecode \
-                    tests/textcode              
-              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+                    tests/textcode
+              cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
+              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
+              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -221,14 +226,17 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test  -vvs tests/commoncode
-              other: |
-                 bin/py.test  -vvs tests/cluecode \
+              scancode_nothreads: bin/py.test -vvs tests/scancode
+              base: |
+                  bin/py.test -n 3 -vvs tests/commoncode \
                     tests/extractcode \
                     tests/plugincode \
                     tests/typecode \
-                    tests/textcode                
-              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+                    tests/textcode
+              cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
+              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
+              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -236,14 +244,17 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
-              commoncode: bin/py.test  -vvs tests/commoncode
-              other: |
-                 bin/py.test  -vvs tests/cluecode \
+              scancode_nothreads: bin/py.test -vvs tests/scancode
+              base: |
+                  bin/py.test -n 3 -vvs tests/commoncode \
                     tests/extractcode \
                     tests/plugincode \
                     tests/typecode \
                     tests/textcode
-              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+              cluecode: bin/py.test -n 3 -vvs tests/cluecode
+              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
+              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
+              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -252,11 +263,11 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              commoncode: Scripts\py.test  -vvs tests\commoncode
-              other: |
-                 Scripts\py.test  -vvs tests\cluecode tests\extractcode tests\plugincode tests\textcode tests\typecode
-              cluecode: Scripts\py.test -n 3 -vvs --test-suite=all tests\cluecode
-   
+              base: Scripts\py.test -vvs tests\commoncode tests\formattedcode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
+              cluecode: Scripts\py.test -vvs tests\cluecode
+              formattedcode: Scripts\py.test -vvs tests\formattedcode
+              licensedcode: Scripts\py.test -vvs tests\licensedcode
+              packagedcode: Scripts\py.test -vvs tests\packagedcode
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -285,14 +296,17 @@ jobs:
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
           test_suite_label: ported code
           test_suite: |
-            bin/py.test  -n 2 -vvs \
+            bin/py.test -n 3 -vvs \
               tests/commoncode \
+              tests/formattedcode \
               tests/typecode \
               tests/extractcode \
               tests/plugincode \
-              tests/textcode
-            bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
-               
+              tests/scancode \
+              tests/textcode \
+              tests/cluecode \
+              tests/licensedcode \
+              tests/packagedcode
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:

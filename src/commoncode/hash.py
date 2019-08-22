@@ -58,16 +58,16 @@ def _hash_mod(bitsize, hmodule):
             self.h = msg and hmodule(msg).digest()[:self.digest_size] or None
 
         def digest(self):
-            return self.h
+            return bytes(self.h)
 
         def hexdigest(self):
-            return self.h and binascii.hexlify(self.h)
+            return self.h and binascii.hexlify(self.h).decode('utf-8')
 
         def b64digest(self):
-            return self.h and urlsafe_b64encode(self.h)
+            return self.h and urlsafe_b64encode(self.h).decode('utf-8')
 
         def intdigest(self):
-            return self.h and bin_to_num(self.h)
+            return self.h and int(bin_to_num(self.h))
 
     return hasher
 
@@ -106,16 +106,16 @@ class sha1_git_hasher(object):
         return hashlib.sha1(b'blob ' + bytes(len(msg)) + b'\0' + msg).digest()
 
     def digest(self):
-        return self.h
+        return bytes(self.h)
 
     def hexdigest(self):
-        return self.h and binascii.hexlify(self.h)
+        return self.h and binascii.hexlify(self.h).decode('utf-8')
 
     def b64digest(self):
-        return self.h and urlsafe_b64encode(self.h)
+        return self.h and urlsafe_b64encode(self.h).decode('utf-8')
 
     def intdigest(self):
-        return self.h and bin_to_num(self.h)
+        return self.h and int(bin_to_num(self.h))
 
 
 _hashmodules_by_name = {

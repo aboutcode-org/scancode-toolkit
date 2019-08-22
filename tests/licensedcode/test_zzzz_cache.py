@@ -35,6 +35,9 @@ from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
 from licensedcode.cache import load_index
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -46,31 +49,31 @@ class LicenseIndexCacheTest(FileBasedTesting):
         test_dir = self.get_test_loc('cache/tree', copy=True)
         before = cache.tree_checksum(test_dir)
         # create some new pyc file and a dir
-        with open(os.path.join(test_dir, 'some.pyc'), 'wb') as pyc:
+        with open(os.path.join(test_dir, 'some.pyc'), 'w') as pyc:
             pyc.write('')
         fileutils.create_dir(os.path.join(test_dir, 'some dir'))
 
         after = cache.tree_checksum(test_dir)
         assert before == after
 
-        with open(os.path.join(test_dir, 'some.py'), 'wb') as py:
+        with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before != after
 
         before = after
-        with open(os.path.join(test_dir, 'some.LICENSE'), 'wb') as f:
+        with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before != after
 
         before = after
-        with open(os.path.join(test_dir, 'some.LICENSE~'), 'wb') as f:
+        with open(os.path.join(test_dir, 'some.LICENSE~'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before == after
 
-        with open(os.path.join(test_dir, 'some.LICENSE.swp'), 'wb') as f:
+        with open(os.path.join(test_dir, 'some.LICENSE.swp'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before == after
@@ -79,13 +82,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
         test_dir = self.get_test_loc('cache/tree', copy=True)
         before = cache.tree_checksum(test_dir)
 
-        with open(os.path.join(test_dir, 'some.py'), 'wb') as py:
+        with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before != after
 
         before = after
-        with open(os.path.join(test_dir, 'some.LICENSE'), 'wb') as f:
+        with open(os.path.join(test_dir, 'some.LICENSE'), 'w') as f:
             f.write(' ')
         after = cache.tree_checksum(test_dir)
         assert before != after
@@ -93,11 +96,11 @@ class LicenseIndexCacheTest(FileBasedTesting):
     def test_tree_checksum_is_different_when_file_is_changed(self):
         test_dir = self.get_test_loc('cache/tree', copy=True)
 
-        with open(os.path.join(test_dir, 'some.py'), 'wb') as py:
+        with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' ')
         before = cache.tree_checksum(test_dir)
 
-        with open(os.path.join(test_dir, 'some.py'), 'wb') as py:
+        with open(os.path.join(test_dir, 'some.py'), 'w') as py:
             py.write(' asas')
         after = cache.tree_checksum(test_dir)
         assert before != after
@@ -106,7 +109,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         test_dir = self.get_test_loc('cache/tree', copy=True)
 
         new_file = os.path.join(test_dir, 'some.py')
-        with open(new_file, 'wb') as py:
+        with open(new_file, 'w') as py:
             py.write(' ')
         before = cache.tree_checksum(test_dir)
 
@@ -124,7 +127,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         # now add some file in the mock source tree
         new_file = os.path.join(tree_base_dir, 'some.py')
-        with open(new_file, 'wb') as nf:
+        with open(new_file, 'w') as nf:
             nf.write('somthing')
 
         timeout = 10
@@ -152,7 +155,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         # now add some file in the source tree
         new_file = os.path.join(tree_base_dir, 'some file')
-        with open(new_file, 'wb') as nf:
+        with open(new_file, 'w') as nf:
             nf.write('somthing')
 
         # when check_consistency is False, the index is not rebuild when
@@ -174,7 +177,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
         new_file = os.path.join(tree_base_dir, 'some file.pyc')
-        with open(new_file, 'wb') as nf:
+        with open(new_file, 'w') as nf:
             nf.write('somthing')
 
         # when check_consistency is True, the index is not rebuilt when new
@@ -215,7 +218,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
     def test_load_index_with_corrupted_index(self):
         test_file = self.get_temp_file('test')
-        with open(test_file, 'wb') as tf:
+        with open(test_file, 'w') as tf:
             tf.write('some junk')
         try:
             load_index(test_file)
