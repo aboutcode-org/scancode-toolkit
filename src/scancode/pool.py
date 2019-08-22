@@ -45,7 +45,7 @@ def wrapped(func):
     if func.__name__ != 'wrap':
 
         def wrap(self, timeout=None):
-            return func(self, timeout=timeout or 1000 * 1000 * 1000)
+            return func(self, timeout=timeout or 3600)
 
         return wrap
     else:
