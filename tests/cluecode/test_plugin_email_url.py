@@ -40,6 +40,9 @@ from scancode.cli_test_utils import run_scan_click
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 def test_scan_email():
     test_dir = test_env.get_test_loc('plugin_email_url/files')

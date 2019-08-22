@@ -27,3 +27,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
+
+def test_dummy():
+    pass 

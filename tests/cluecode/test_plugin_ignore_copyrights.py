@@ -33,6 +33,9 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from cluecode.plugin_ignore_copyrights import is_ignored
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestIgnoreCopyrights(FileDrivenTesting):
 
