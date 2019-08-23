@@ -160,7 +160,10 @@ class Consolidator(PostScanPlugin):
     options = [
         CommandLineOption(('--consolidate',),
             is_flag=True, default=False,
-            help='Return a list of consolidated packages and a list of consolidated components',
+            help='Group resources by Packages or license and copyright holder and '
+                 'return those groupings as a list of consolidated packages and '
+                 'a list of consolidated components. '
+                 'This requires the scan to have/be run with the copyright, license, and package options active',
             help_group=POST_SCAN_GROUP
         )
     ]
