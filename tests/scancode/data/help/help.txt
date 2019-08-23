@@ -84,6 +84,8 @@ Options:
                                <pattern>.
 
   post-scan:
+    --consolidate            Return a list of consolidated packages and a list of
+                             consolidated components
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
     --is-license-text        Set the "is_license_text" flag to true for files that
