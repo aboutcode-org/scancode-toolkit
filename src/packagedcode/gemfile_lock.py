@@ -26,8 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
 from collections import namedtuple
 from collections import OrderedDict
+import functools
 import logging
 import re
 
@@ -120,7 +122,7 @@ class GemDependency(namedtuple('GemDependency', 'name version')):
     def __new__(cls, name, version=None):
         return super(GemDependency, cls).__new__(cls, name, version)
 
-
+@functools.total_ordering 
 class Gem(object):
     """
     A Gem can be packaged as .gem, or a source gem either fetched from GIT or
@@ -153,6 +155,12 @@ class Gem(object):
         # a map of direct dependent Gems, keyed by name
         self.dependencies = OrderedDict()
 
+    def __lt__(self,other): 
+        return self.name < other.name  
+
+    def __eq__(self, other): 
+        return other.name == self.name 
+    
     def __repr__(self):
         return ('Gem(name=%(name)r, version=%(version)r, type=%(type)r)' % self.__dict__)
 

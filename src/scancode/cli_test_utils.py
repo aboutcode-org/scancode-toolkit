@@ -147,7 +147,7 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
-        with open(expected_file, 'wb') as reg:
+        with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     expected = load_json_result(expected_file, remove_file_date)

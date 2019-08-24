@@ -124,7 +124,7 @@ def _parse_nuspec(location):
     """
     if not location.endswith('.nuspec'):
         return
-    with open(location) as loc:
+    with open(location , "rb") as loc:
         return  xmltodict.parse(loc)
 
 

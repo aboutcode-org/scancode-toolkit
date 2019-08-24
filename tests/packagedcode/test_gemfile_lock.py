@@ -362,7 +362,7 @@ class TestGemfileLock(FileBasedTesting):
         ]
 
         results = a.to_dict()
-        assert expected == results.items()
+        assert expected == list(results.items())
 
     def test_GemfileLockParser_can_parse_a_flat_list_of_deps(self):
         test_file = 'gemfile_lock/as_deps/Gemfile.lock'
