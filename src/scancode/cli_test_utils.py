@@ -147,7 +147,11 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
-        with open(expected_file, 'wb') as reg:
+        if py2:
+            mode = 'wb'
+        else:
+            mode = 'w'
+        with open(expected_file, mode) as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     expected = load_json_result(expected_file, remove_file_date)
@@ -245,6 +249,10 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
+        if py2:
+            mode = 'wb'
+        else:
+            mode = 'wb'
         with open(expected_file, 'wb') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 

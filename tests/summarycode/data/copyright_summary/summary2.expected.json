@@ -48,26 +48,14 @@
     {
       "path": "scan2",
       "type": "directory",
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
       "path": "scan2/jetty.LICENSE",
       "type": "file",
-      "holders": [
-        {
-          "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
-          "start_line": 44,
-          "end_line": 46
-        },
-        {
-          "value": "Sun Microsystems Inc.",
-          "start_line": 44,
-          "end_line": 46
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",
@@ -76,6 +64,18 @@
         },
         {
           "value": "copyright Sun Microsystems Inc.",
+          "start_line": 44,
+          "end_line": 46
+        }
+      ],
+      "holders": [
+        {
+          "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
+          "start_line": 44,
+          "end_line": 46
+        },
+        {
+          "value": "Sun Microsystems Inc.",
           "start_line": 44,
           "end_line": 46
         }

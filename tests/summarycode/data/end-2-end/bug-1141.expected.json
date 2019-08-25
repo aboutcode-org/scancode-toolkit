@@ -138,8 +138,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -173,8 +173,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -208,8 +208,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -243,8 +243,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -313,8 +313,8 @@
       "license_expressions": [
         "gpl-3.0-plus"
       ],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [
@@ -350,8 +350,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [
@@ -387,8 +387,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -422,8 +422,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -457,8 +457,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "facets": [],
@@ -527,16 +527,16 @@
       "license_expressions": [
         "gpl-2.0-plus"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "Members of the Gmerlin project",
+          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
           "start_line": 4,
           "end_line": 6
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
+          "value": "Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 6
         }
@@ -576,16 +576,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "Members of the Gmerlin project",
+          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 4
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",
+          "value": "Members of the Gmerlin project",
           "start_line": 4,
           "end_line": 4
         }

@@ -49,8 +49,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -82,8 +82,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -150,8 +150,8 @@
       "license_expressions": [
         "mit"
       ],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [
         {
           "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
@@ -189,8 +189,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -257,16 +257,16 @@
       "license_expressions": [
         "mit"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "nexB Inc.",
+          "value": "Copyright (c) 2007 nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "value": "nexB Inc.",
           "start_line": 2,
           "end_line": 2
         }
@@ -302,16 +302,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "nexB Inc.",
+          "value": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "value": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -347,16 +347,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "nexB Inc.",
+          "value": "Copyright (c) 2007 nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2007 nexB Inc.",
+          "value": "nexB Inc.",
           "start_line": 1,
           "end_line": 1
         }

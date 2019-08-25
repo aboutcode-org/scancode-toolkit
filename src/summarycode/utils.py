@@ -72,7 +72,7 @@ def sorted_counter(counter):
 
     def by_count_value(value_count):
         value, count = value_count
-        return -count, value
+        return -count, value is not None, '' if value is None else value
 
     summarized = [OrderedDict([('value', value), ('count', count)])
                   for value, count in sorted(counter.items(), key=by_count_value)]
