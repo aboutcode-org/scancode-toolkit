@@ -35,6 +35,9 @@ from scancode.cli_test_utils import check_json_scan
 from summarycode.classify import set_classification_flags
 from summarycode.classify import FileClassifier
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestClassify(FileDrivenTesting):
 

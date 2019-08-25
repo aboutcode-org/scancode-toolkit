@@ -149,9 +149,8 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     if regen:
         if py2:
             mode = 'wb'
-        else:
+        if py3:
             mode = 'w'
-
         with open(expected_file, mode) as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
@@ -250,7 +249,11 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
-        with open(expected_file, 'wb') as reg:
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
+        with open(expected_file, mode) as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     with io.open(expected_file, encoding='utf-8') as res:

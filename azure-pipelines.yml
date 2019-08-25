@@ -31,7 +31,9 @@ jobs:
                  tests/packagedcode tests/plugincode tests/extractcode
 
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
-
+              
+              summarycode: bin/py.test -n 3 -vvs tests/summarycode
+              
               formattedcode: bin/py.test -n 3 -vvs --test-suite=all tests/formattedcode
 
               license_base: |
@@ -219,6 +221,7 @@ jobs:
               formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
+              summarycode: bin/py.test -n 3 -vvs tests/summarycode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -237,6 +240,7 @@ jobs:
               formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
+              summarycode: bin/py.test -n 3 -vvs tests/summarycode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -255,6 +259,7 @@ jobs:
               formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
+              summarycode: bin/py.test -n 3 -vvs tests/summarycode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -268,6 +273,7 @@ jobs:
               formattedcode: Scripts\py.test -vvs tests\formattedcode
               licensedcode: Scripts\py.test -vvs tests\licensedcode
               packagedcode: Scripts\py.test -vvs tests\packagedcode
+              summarycode: Scripts\py.test -vvs tests\summarycode
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -306,7 +312,8 @@ jobs:
               tests/textcode \
               tests/cluecode \
               tests/licensedcode \
-              tests/packagedcode
+              tests/packagedcode \
+              tests/summarycode
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:

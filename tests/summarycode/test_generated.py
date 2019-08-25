@@ -32,6 +32,9 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from summarycode import generated
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestGeneratedCode(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
