@@ -33,6 +33,9 @@ import shutil
 from commoncode.testcase import FileBasedTesting
 from packagedcode import gemfile_lock
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestGemfileLock(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -302,7 +305,7 @@ class TestGemfileLock(FileBasedTesting):
         e = Gem('e', 'v5')
         f = Gem('f', 'v6')
         g = Gem('g', 'v7')
-
+        
         a.dependencies['b'] = b
         a.dependencies['c'] = c
 

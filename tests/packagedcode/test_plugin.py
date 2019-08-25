@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-from unittest.case import skipIf
 
 from commoncode.system import py3
 from scancode.cli_test_utils import check_json_scan
