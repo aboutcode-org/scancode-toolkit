@@ -222,6 +222,7 @@ jobs:
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
               summarycode: bin/py.test -n 3 -vvs tests/summarycode
+              scancode: bin/py.test -n 3 -vvs tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -241,6 +242,7 @@ jobs:
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
               summarycode: bin/py.test -n 3 -vvs tests/summarycode
+              scancode: bin/py.test -n 3 -vvs tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -260,6 +262,7 @@ jobs:
               licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
               packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
               summarycode: bin/py.test -n 3 -vvs tests/summarycode
+              scancode: bin/py.test -n 3 -vvs tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -274,6 +277,7 @@ jobs:
               licensedcode: Scripts\py.test -vvs tests\licensedcode
               packagedcode: Scripts\py.test -vvs tests\packagedcode
               summarycode: Scripts\py.test -vvs tests\summarycode
+              scancode: Scripts\py.test -vvs tests\scancode
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -313,7 +317,8 @@ jobs:
               tests/cluecode \
               tests/licensedcode \
               tests/packagedcode \
-              tests/summarycode
+              tests/summarycode \
+              tests/scancode
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
