@@ -33,6 +33,9 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.plugin_mark_source import is_source_directory
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestMarkSource(FileDrivenTesting):
 

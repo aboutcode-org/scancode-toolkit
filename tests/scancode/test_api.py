@@ -34,6 +34,7 @@ import pytest
 from commoncode.testcase import FileBasedTesting
 from scancode import api
 
+pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestPackageAPI(FileBasedTesting):

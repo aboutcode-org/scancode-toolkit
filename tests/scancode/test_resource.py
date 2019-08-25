@@ -46,6 +46,9 @@ from scancode.resource import Codebase
 from scancode.resource import get_path
 from scancode.resource import VirtualCodebase
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')

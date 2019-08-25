@@ -43,7 +43,6 @@ import pytest
 pytestmark = pytest.mark.scanpy3  # NOQA
 
 
-
 root_dir = dirname(dirname(dirname(__file__)))
 
 on_linux = str(sys.platform).lower().startswith('linux')

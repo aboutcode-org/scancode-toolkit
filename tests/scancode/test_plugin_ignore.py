@@ -35,6 +35,9 @@ from scancode.cli_test_utils import load_json_result
 from scancode.plugin_ignore import ProcessIgnore
 from scancode.resource import Codebase
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestPluginIgnoreFiles(FileDrivenTesting):
 
