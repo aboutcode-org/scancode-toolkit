@@ -49,6 +49,7 @@ import saneyaml
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
@@ -274,7 +275,11 @@ def parse_setup_py(location):
         return
 
     # FIXME: what if this is unicode text?
-    with open(location, 'rb') as inp:
+    if py2:
+        mode = 'rb'
+    else:
+        mode = 'r'
+    with open(location, mode) as inp:
         setup_text = inp.read()
 
     description = build_description(
@@ -457,7 +462,11 @@ def parse_with_dparse(location):
                          filetypes.pipfile,
                          filetypes.pipfile_lock):
         return
-    with open(location, 'rb') as f:
+    if py2:
+        mode = 'rb'
+    else:
+        mode = 'r'
+    with open(location, mode) as f:
         content = f.read()
         df = dparse.parse(content, file_type=file_name)
         df_dependencies = df.dependencies
