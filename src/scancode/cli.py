@@ -1431,28 +1431,17 @@ def format_size(size):
     Return a human-readable value for the `size` int or float.
 
     For example:
-    >>> format_size(0)
-    u'0 Byte'
-    >>> format_size(1)
-    u'1 Byte'
-    >>> format_size(0.123)
-    u'0.1 Byte'
-    >>> format_size(123)
-    u'123 Bytes'
-    >>> format_size(1023)
-    u'1023 Bytes'
-    >>> format_size(1024)
-    u'1 KB'
-    >>> format_size(2567)
-    u'2.51 KB'
-    >>> format_size(2567000)
-    u'2.45 MB'
-    >>> format_size(1024*1024)
-    u'1 MB'
-    >>> format_size(1024*1024*1024)
-    u'1 GB'
-    >>> format_size(1024*1024*1024*12.3)
-    u'12.30 GB'
+    >>> assert format_size(0) == '0 Byte'
+    >>> assert format_size(1) == '1 Byte'
+    >>> assert format_size(0.123) == '0.1 Byte'
+    >>> assert format_size(123) == '123 Bytes'
+    >>> assert format_size(1023) == '1023 Bytes'
+    >>> assert format_size(1024) == '1 KB'
+    >>> assert format_size(2567) == '2.51 KB'
+    >>> assert format_size(2567000) == '2.45 MB'
+    >>> assert format_size(1024*1024) == '1 MB'
+    >>> assert format_size(1024*1024*1024) == '1 GB'
+    >>> assert format_size(1024*1024*1024*12.3) == '12.30 GB'
     """
     if not size:
         return '0 Byte'

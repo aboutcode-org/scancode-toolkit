@@ -158,16 +158,11 @@ def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     version and a base registry web interface URL.
 
     For example:
-    >>> npm_homepage_url('@invisionag', 'eslint-config-ivx')
-    u'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
-    >>> npm_homepage_url(None, 'angular')
-    u'https://www.npmjs.com/package/angular'
-    >>> npm_homepage_url('', 'angular')
-    u'https://www.npmjs.com/package/angular'
-    >>> npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/')
-    u'https://yarnpkg.com/en/package/angular'
-    >>> npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package')
-    u'https://yarnpkg.com/en/package/@ang/angular'
+    >>> assert npm_homepage_url('@invisionag', 'eslint-config-ivx') == 'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> assert npm_homepage_url(None, 'angular') == 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url('', 'angular') == 'https://www.npmjs.com/package/angular'
+    >>> assert npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/') == 'https://yarnpkg.com/en/package/angular'
+    >>> assert npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package') == 'https://yarnpkg.com/en/package/@ang/angular'
     """
     registry = registry.rstrip('/')
 
@@ -184,12 +179,9 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
     and a base registry URL.
 
     For example:
-    >>> npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4')
-    u'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
-    >>> npm_download_url('', 'angular', '1.6.6')
-    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
-    >>> npm_download_url(None, 'angular', '1.6.6')
-    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4') == 'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> assert npm_download_url('', 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> assert npm_download_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
     """
     registry = registry.rstrip('/')
     if namespace:
@@ -210,12 +202,11 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     applied for scoped npms.
 
     For example:
-    >>> npm_api_url(
+    >>> x = npm_api_url(
     ... '@invisionag', 'eslint-config-ivx', '0.1.4',
     ... 'https://registry.yarnpkg.com')
-    u'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
-    >>> npm_api_url(None, 'angular', '1.6.6')
-    u'https://registry.npmjs.org/angular/1.6.6'
+    >>> assert x == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
     """
     registry = registry.rstrip('/')
     version = version or ''
@@ -699,23 +690,23 @@ def parse_person(person):
     ...   "email": "i@izs.me",
     ...   "url": "http://blog.izs.me"
     ... }
-    >>> parse_person(author)
-    (u'Isaac Z. Schlueter', u'i@izs.me', u'http://blog.izs.me')
-    >>> parse_person('Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)')
-    (u'Barney Rubble', u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
-    >>> parse_person('Barney Rubble <none> (none)')
-    (u'Barney Rubble', None, None)
-    >>> parse_person('Barney Rubble ')
-    (u'Barney Rubble', None, None)
+    >>> p = parse_person(author)
+    >>> assert p == (u'Isaac Z. Schlueter', u'i@izs.me', u'http://blog.izs.me')
+    >>> p = parse_person('Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    >>> assert p == (u'Barney Rubble', u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
+    >>> p = parse_person('Barney Rubble <none> (none)')
+    >>> assert p == (u'Barney Rubble', None, None)
+    >>> p = parse_person('Barney Rubble ')
+    >>> assert p == (u'Barney Rubble', None, None)
     >>> author = {
     ...   "name": "Isaac Z. Schlueter",
     ...   "email": ["i@izs.me", "<jo2@todo.com> "],
     ...   "url": "http://blog.izs.me"
     ... }
-    >>> parse_person(author)
-    (u'Isaac Z. Schlueter', u'i@izs.me\\njo2@todo.com', u'http://blog.izs.me')
-    >>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
-    (None, u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
+    >>> p = parse_person(author)
+    >>> assert p == (u'Isaac Z. Schlueter', u'i@izs.me\\njo2@todo.com', u'http://blog.izs.me')
+    >>> p = parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    >>> assert p == (None, u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
     """
     # TODO: detect if this is a person name or a company name e.g. the type?
 

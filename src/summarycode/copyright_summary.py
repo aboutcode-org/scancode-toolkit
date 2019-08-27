@@ -360,9 +360,9 @@ def strip_prefixes(s, prefixes=prefixes):
     striped from the left. Normalize and strip spaces.
 
     For example:
-    >>> s = u'by AND for the Free Software Foundation'
-    >>> strip_prefixes(s)
-    u'the Free Software Foundation'
+    >>> s = 'by AND for the Free Software Foundation'
+    >>> strip_prefixes(s) == 'the Free Software Foundation'
+    True
     """
     s = s.split()
     while s and s[0].lower().strip().strip('.,') in prefixes:
@@ -382,9 +382,9 @@ def strip_suffixes(s, suffixes=suffixes):
     striped from the right. Normalize and strip spaces.
 
     For example:
-    >>> s = u'RedHat Inc corp'
-    >>> strip_suffixes(s, set(['corp']))
-    u'RedHat Inc'
+    >>> s = 'RedHat Inc corp'
+    >>> strip_suffixes(s, set(['corp'])) == 'RedHat Inc'
+    True
     """
     s = s.split()
     while s and s[-1].lower().strip().strip('.,') in suffixes:
