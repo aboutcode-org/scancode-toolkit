@@ -1016,7 +1016,7 @@ class Resource(object):
     # usefuol afterwards. Be careful when using this not to override
     # keys/valoues that may have been created by some other plugin or
     # process
-    extra_data = attr.ib(default=attr.Factory(dict), repr=False)
+    extra_data = attr.ib(default=attr.Factory(OrderedDict), repr=False)
 
     @property
     def is_root(self):
@@ -1260,7 +1260,7 @@ class Resource(object):
 
         if with_timing:
             res['scan_time'] = self.scan_time or 0
-            res['scan_timings'] = self.scan_timings or {}
+            res['scan_timings'] = self.scan_timings or OrderedDict()
 
         if with_info:
             res['files_count'] = self.files_count
@@ -1345,7 +1345,7 @@ class _CodebaseAttributes(object):
 def get_codebase_attributes_class(attributes):
     return attr.make_class(
         name=b'CodebaseAttributes' if py2 else u'CodebaseAttributes',
-        attrs=attributes or {},
+        attrs=attributes or OrderedDict(),
         slots=True,
         bases=(_CodebaseAttributes,)
     )
@@ -1413,8 +1413,7 @@ class VirtualCodebase(Codebase):
             # to have support for caching at all?
             location = abspath(normpath(expanduser(location)))
             with io.open(location, 'rb') as f:
-                scan_data = json.load(
-                    f, object_pairs_hook=OrderedDict, encoding='utf-8')
+                scan_data = json.load(f, object_pairs_hook=OrderedDict, encoding='utf-8')
             return scan_data
 
     def _get_scan_data(self, location):
@@ -1454,7 +1453,7 @@ class VirtualCodebase(Codebase):
         base_fields = attr.fields(Resource)
         resource_fields = attr.fields(self.resource_class)
         # Create dict of {field: field_default_value} for the dynamically created fields
-        resource_data = {}
+        resource_data = OrderedDict()
         for field in resource_fields:
             if field in base_fields:
                 # We only want the fields that are not part of the base set of fields
@@ -1514,7 +1513,7 @@ class VirtualCodebase(Codebase):
             if name not in all_cb_attributes:
                 all_cb_attributes[name] = plugin_attribute
 
-        cbac = get_codebase_attributes_class(all_cb_attributes or {})
+        cbac = get_codebase_attributes_class(all_cb_attributes or OrderedDict())
         self.attributes = cbac()
 
         # now populate top level codebase attributes
@@ -1553,7 +1552,7 @@ class VirtualCodebase(Codebase):
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(
             name=b'ScannedResource' if py2 else u'ScannedResource',
-            attrs=all_res_attributes or {},
+            attrs=all_res_attributes or OrderedDict(),
             slots=True,
             # frozen=True,
             bases=(Resource,))
@@ -1643,5 +1642,5 @@ def remove_properties_and_basics(resource_data):
     Given a mapping of resource_data attributes to use as "kwargs", return a new
     mapping with the known properties removed.
     """
-    return {k: v for k, v in resource_data.items()
-            if k not in ('type', 'base_name', 'extension', 'path', 'name')}
+    return OrderedDict([(k, v) for k, v in resource_data.items()
+            if k not in ('type', 'base_name', 'extension', 'path', 'name')])

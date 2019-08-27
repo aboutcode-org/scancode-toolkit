@@ -124,9 +124,9 @@ class Godep(object):
         """
         if isinstance(location, string_types):
             with io.open(location, encoding='utf-8') as godep:
-                data = json.load(godep)
+                data = json.load(godep, object_pairs_hook=OrderedDict)
         else:
-            data = json.load(location)
+            data = json.load(location, object_pairs_hook=OrderedDict)
 
         for key, value in data.items():
             name = NAMES.get(key)

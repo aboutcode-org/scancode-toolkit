@@ -385,7 +385,7 @@ class SpdxSource(ExternalLicensesSource):
                     # Skip the old plus licenses. We use them in
                     # ScanCode, but they are deprecated in SPDX.
                     continue
-                details = json.loads(archive.read(path))
+                details = json.loads(archive.read(path), object_pairs_hook=OrderedDict)
                 lic = self.build_license(details, scancode_licenses)
                 if lic:
                     yield lic
