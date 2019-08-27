@@ -31,9 +31,9 @@ jobs:
                  tests/packagedcode tests/plugincode tests/extractcode
 
               cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
-              
+
               summarycode: bin/py.test -n 3 -vvs tests/summarycode
-              
+
               formattedcode: bin/py.test -n 3 -vvs --test-suite=all tests/formattedcode
 
               license_base: |
@@ -210,19 +210,8 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              base: |
-                  bin/py.test -n 3 -vvs tests/commoncode \
-                    tests/extractcode \
-                    tests/plugincode \
-                    tests/scancode \
-                    tests/typecode \
-                    tests/textcode
-              cluecode: bin/py.test -n 3 -vvs tests/cluecode
-              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
-              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
-              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
-              summarycode: bin/py.test -n 3 -vvs tests/summarycode
-              scancode: bin/py.test -n 3 -vvs tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -230,19 +219,8 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
-              scancode_nothreads: bin/py.test -vvs tests/scancode
-              base: |
-                  bin/py.test -n 3 -vvs tests/commoncode \
-                    tests/extractcode \
-                    tests/plugincode \
-                    tests/typecode \
-                    tests/textcode
-              cluecode: bin/py.test -n 3 -vvs tests/cluecode
-              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
-              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
-              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
-              summarycode: bin/py.test -n 3 -vvs tests/summarycode
-              scancode: bin/py.test -n 3 -vvs tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -250,19 +228,8 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
-              scancode_nothreads: bin/py.test -vvs tests/scancode
-              base: |
-                  bin/py.test -n 3 -vvs tests/commoncode \
-                    tests/extractcode \
-                    tests/plugincode \
-                    tests/typecode \
-                    tests/textcode
-              cluecode: bin/py.test -n 3 -vvs tests/cluecode
-              formattedcode: bin/py.test -n 3 -vvs tests/formattedcode
-              licensedcode: bin/py.test -n 3 -vvs tests/licensedcode
-              packagedcode: bin/py.test -n 3 -vvs tests/packagedcode
-              summarycode: bin/py.test -n 3 -vvs tests/summarycode
-              scancode: bin/py.test -n 3 -vvs tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -271,13 +238,9 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              base: Scripts\py.test -vvs tests\commoncode tests\formattedcode tests\cluecode tests\extractcode tests\plugincode tests\scancode tests\textcode tests\typecode
-              cluecode: Scripts\py.test -vvs tests\cluecode
-              formattedcode: Scripts\py.test -vvs tests\formattedcode
-              licensedcode: Scripts\py.test -vvs tests\licensedcode
-              packagedcode: Scripts\py.test -vvs tests\packagedcode
-              summarycode: Scripts\py.test -vvs tests\summarycode
-              scancode: Scripts\py.test -vvs tests\scancode
+              all: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode
+              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -304,21 +267,10 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: ported code
+          test_suite_label: basic tests
           test_suite: |
-            bin/py.test -n 3 -vvs \
-              tests/commoncode \
-              tests/formattedcode \
-              tests/typecode \
-              tests/extractcode \
-              tests/plugincode \
-              tests/scancode \
-              tests/textcode \
-              tests/cluecode \
-              tests/licensedcode \
-              tests/packagedcode \
-              tests/summarycode \
-              tests/scancode
+            bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+            bin/py.test -vvs --reruns=3 tests/scancode
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
