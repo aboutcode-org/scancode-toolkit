@@ -49,11 +49,6 @@ from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
 
 
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
-
 @skipIf(py3, 'Somehow permissions tests do not work OK yet on Python 3')
 class TestPermissionsDeletions(FileBasedTesting):
     """

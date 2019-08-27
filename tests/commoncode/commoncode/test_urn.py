@@ -28,8 +28,6 @@ from unittest import TestCase
 
 from commoncode import urn
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 class URNTestCase(TestCase):
 

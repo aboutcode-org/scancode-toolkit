@@ -31,8 +31,6 @@ import os
 from commoncode import testcase
 import commoncode.date
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestDate(testcase.FileBasedTesting):
 
