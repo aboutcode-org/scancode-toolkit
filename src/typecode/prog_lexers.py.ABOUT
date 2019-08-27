@@ -18,3 +18,4 @@ vcs_url: hg+http://bitbucket.org/birkenfeld/pygments-main
 version: 2.2.0
 
 notes: this is a tiny subset of Pygments to focus on programming languages detection only.
+ The file is originally pygments/lexers/_mapping.py

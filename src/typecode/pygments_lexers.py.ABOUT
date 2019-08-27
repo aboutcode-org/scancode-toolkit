@@ -1,7 +1,7 @@
 about_resource: pygments_lexers.py
 attribute: true
 copyright: Copyright by the Pygments team
-download_url: https://pypi.python.org/packages/02/ee/b6e02dc6529e82b75bb06823ff7d005b141037cb1416b10c6f00fc419dca/Pygments-2.2.0-py2.py3-none-any.whl#md5=ce67fc58b51ffd29a2de8b97fcda274a
+download_url: https://bitbucket.org/birkenfeld/pygments-main/raw/800a6961ec370e55ab134a396fb3e75aff0a512e/pygments/lexers/__init__.py
 homepage_url: http://pygments.org/
 license_expression: bsd-simplified
 licenses:
@@ -15,6 +15,7 @@ owner: Pocoo Team
 owner_url: http://www.pocoo.org/
 track_changes: true
 vcs_url: hg+http://bitbucket.org/birkenfeld/pygments-main
-version: 2.2.0
+version: 2.4.2
 
 notes: this is a tiny subset of Pygments to focus on programming languages detection only.
+ This code comes from pygments-main/pygments/lexers/__init__.py
