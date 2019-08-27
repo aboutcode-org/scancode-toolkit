@@ -19,18 +19,18 @@
     {
       "path": "input",
       "type": "directory",
-      "lkm_clue": [],
+      "lkm_clue": {},
       "scan_errors": []
     },
     {
       "path": "input/audio_manager.c",
       "type": "file",
       "lkm_clue": {
-        "lkm-license": [
-          "GPL"
-        ],
         "lkm-header-include": [
           "include <linux/module.h>"
+        ],
+        "lkm-license": [
+          "GPL"
         ]
       },
       "scan_errors": []

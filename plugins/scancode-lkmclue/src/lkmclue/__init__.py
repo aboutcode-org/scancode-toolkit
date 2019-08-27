@@ -47,7 +47,7 @@ class LKMClueScanner(ScanPlugin):
     Scan lkm-clue information from the resource.
     """
     resource_attributes = OrderedDict(
-        lkm_clue=attr.ib(default=attr.Factory(list), repr=False),
+        lkm_clue=attr.ib(default=attr.Factory(OrderedDict), repr=False),
     )
 
     options = [
@@ -79,6 +79,6 @@ def get_lkm_clues(location, **kwargs):
             clues[type] = clues.get(type).append(clue)
         else:
             clues[type] = [clue]
-    return dict(
+    return OrderedDict(
         lkm_clue=clues,
     )
