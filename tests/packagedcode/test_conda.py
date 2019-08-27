@@ -33,9 +33,6 @@ from packages_test_utils import PackageTester
 from packagedcode import conda
 from scancode.resource import Codebase
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestConda(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -43,12 +40,12 @@ class TestConda(PackageTester):
     def test_parse_get_varialble(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_variables(test_file)
-        assert OrderedDict([(u'version', u'0.45.0'), (u'sha256', u'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f')])==results
+        assert OrderedDict([(u'version', u'0.45.0'), (u'sha256', u'bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f')]) == results
 
     def test_get_yaml_data(self):
         test_file = self.get_test_loc('conda/meta.yaml')
         results = conda.get_yaml_data(test_file)
-        assert  (u'package', OrderedDict([(u'name', u'abeona'), (u'version', u'0.45.0')]))==list(results.items())[0]
+        assert  (u'package', OrderedDict([(u'name', u'abeona'), (u'version', u'0.45.0')])) == list(results.items())[0]
 
     def test_parse(self):
         test_file = self.get_test_loc('conda/meta.yaml')

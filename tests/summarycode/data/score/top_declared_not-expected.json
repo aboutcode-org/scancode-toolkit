@@ -23,7 +23,7 @@
   "license_clarity_score": {
     "score": 0,
     "declared": false,
-    "discovered": 0.0,
+    "discovered": 0,
     "consistency": false,
     "spdx": false,
     "license_texts": false

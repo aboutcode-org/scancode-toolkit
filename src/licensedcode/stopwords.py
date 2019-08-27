@@ -156,7 +156,6 @@ STOPWORDS = frozenset({
 })
 
 
-
 # query breaks
 # in Android generated NOTICE.html files
 breaks = {

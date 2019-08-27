@@ -30,9 +30,6 @@ import os
 from commoncode.testcase import FileBasedTesting
 from extractcode import sevenzip
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestSevenZip(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

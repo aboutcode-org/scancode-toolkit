@@ -43,9 +43,6 @@ from scancode.cli_test_utils import run_scan_click
 Data-driven Score test utilities.
 """
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -70,8 +67,8 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
         run_scan_click(args)
         run_scan_click(args)
         check_json_scan(
-            test_env.get_test_loc(expected_file), 
-            result_file, 
+            test_env.get_test_loc(expected_file),
+            result_file,
             remove_file_date=True,
             regen=regen)
 

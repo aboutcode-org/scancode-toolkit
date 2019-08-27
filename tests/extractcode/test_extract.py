@@ -28,6 +28,8 @@ from __future__ import absolute_import, print_function
 import io
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
@@ -39,9 +41,6 @@ from extractcode import extract
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py3
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestExtract(FileBasedTesting):

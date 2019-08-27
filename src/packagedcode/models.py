@@ -91,7 +91,6 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
 
 
-
 class BaseModel(object):
     """
     Base class for all package models.

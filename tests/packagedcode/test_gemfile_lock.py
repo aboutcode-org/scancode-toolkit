@@ -33,9 +33,6 @@ import shutil
 from commoncode.testcase import FileBasedTesting
 from packagedcode import gemfile_lock
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestGemfileLock(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

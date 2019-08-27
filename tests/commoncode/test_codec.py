@@ -32,9 +32,6 @@ from commoncode.codec import bin_to_num
 from commoncode.codec import num_to_bin
 from commoncode.codec import urlsafe_b64encode_int
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestCodec(TestCase):
 

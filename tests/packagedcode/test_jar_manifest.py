@@ -39,9 +39,6 @@ from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest
 from packagedcode.jar_manifest import get_normalized_package_data
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class BaseParseManifestCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -154,10 +151,10 @@ class TestParseManifestDataDriven(BaseParseManifestCase):
 
 
 build_tests(test_dir='maven_misc/manifest', clazz=TestParseManifestDataDriven,
-            prefix='test_jar_manifest_parse_manifest_', 
+            prefix='test_jar_manifest_parse_manifest_',
             check_parse=True, regen=False)
 
 
 build_tests(test_dir='maven_misc/manifest', clazz=TestParseManifestDataDriven,
-            prefix='test_jar_manifest_get_package_data_', 
+            prefix='test_jar_manifest_get_package_data_',
             check_parse=False, regen=False)

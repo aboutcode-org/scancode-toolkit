@@ -66,7 +66,6 @@ location_provider_spec = HookspecMarker(project_name=project_name)
 location_provider_impl = HookimplMarker(project_name=project_name)
 
 
-
 @location_provider_spec
 class LocationProviderPlugin(object):
     """

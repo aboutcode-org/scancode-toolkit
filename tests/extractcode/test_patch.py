@@ -35,9 +35,6 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.text import as_unicode
 from extractcode import patch
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestIsPatch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

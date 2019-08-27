@@ -150,7 +150,6 @@ class RubyGem(models.Package):
         return ['data.tar.gz-extract', 'metadata.gz-extract']
 
 
-
 def compute_normalized_license(declared_license):
     """
     Return a normalized license expression string detected from a list of
@@ -496,7 +495,7 @@ def get_dependencies(dependencies):
             constraints.append(version_constraint)
 
         # if we have only one version constraint and this is "=" then we are resolved
-        is_resolved =False
+        is_resolved = False
         if constraints and len(constraints) == 1:
             is_resolved = constraint == '='
 
@@ -513,7 +512,6 @@ def get_dependencies(dependencies):
         deps.append(dep)
 
     return deps
-
 
 
 # mapping of {Gem license: scancode license key}

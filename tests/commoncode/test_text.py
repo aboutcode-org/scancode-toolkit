@@ -32,9 +32,6 @@ from commoncode import text
 from commoncode.text import CR, LF
 from commoncode.system import py2
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 def test_lines():
     t = '''This problem is.

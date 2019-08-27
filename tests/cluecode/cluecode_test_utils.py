@@ -42,8 +42,6 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 """
 Data-driven Copyright test utilities.
@@ -246,7 +244,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     test_file = test.test_file
     what = test.what
 
-    tfn = test_file.replace(test_data_dir, '').strip('\/\\')
+    tfn = test_file.replace(test_data_dir, '').strip('\\/\\')
     whats = '_'.join(what)
     test_name = 'test_%(tfn)s_%(index)s' % locals()
     test_name = python_safe_name(test_name)
@@ -268,7 +266,7 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, re
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
     """
-    for i, test in enumerate(sorted(copyright_tests,key=lambda x:x.test_file)):
+    for i, test in enumerate(sorted(copyright_tests, key=lambda x:x.test_file)):
         # closure on the test params
         if test.expected_failures:
             actual_regen = False

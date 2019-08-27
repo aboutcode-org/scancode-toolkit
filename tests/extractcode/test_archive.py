@@ -30,6 +30,8 @@ from __future__ import unicode_literals
 import io
 import os
 
+import pytest
+
 import commoncode.date
 from commoncode import compat
 from commoncode import fileutils
@@ -49,9 +51,6 @@ from extractcode import archive
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 """
@@ -2558,7 +2557,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArch
 
     if py2:
         # The results are not correct but not a problem: we use libarchive for these
-        @pytest.mark.xfail    
+        @pytest.mark.xfail
         def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
             self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')

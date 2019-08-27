@@ -38,9 +38,6 @@ from commoncode.system import on_linux
 from commoncode.system import py2
 from packagedcode import rpm
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestRpmBasics(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

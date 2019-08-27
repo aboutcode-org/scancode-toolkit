@@ -42,9 +42,6 @@ from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -445,7 +442,6 @@ class TestTokenizers(FileBasedTesting):
             expected = json.load(exc_test)
 
         assert expected == result
-
 
 
 class TestNgrams(FileBasedTesting):

@@ -32,9 +32,6 @@ from commoncode.system import py2
 from typecode.entropy import gzip_entropy
 from typecode.entropy import shannon_entropy
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 def check_entropy(data, expected, func=shannon_entropy):
     entro = round(func(data), 2)

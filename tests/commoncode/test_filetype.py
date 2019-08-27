@@ -39,8 +39,6 @@ from commoncode.testcase import FileBasedTesting
 from os.path import join
 from os.path import exists
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TypeTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

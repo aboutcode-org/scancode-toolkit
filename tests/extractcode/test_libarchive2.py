@@ -31,9 +31,6 @@ from commoncode import fileutils
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import BaseArchiveTestCase
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 """
 Minimal smoke tests for libarchive2.

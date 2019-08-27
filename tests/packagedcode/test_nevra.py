@@ -27,9 +27,6 @@ from __future__ import print_function
 
 from packagedcode import nevra
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestNevra():
 

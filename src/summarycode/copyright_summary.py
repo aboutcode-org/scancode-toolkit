@@ -525,7 +525,7 @@ COMMON_NAMES = {
 }
 
 # Remove everything except letters and numbers
-_keep_only_chars = re.compile('[_\W]+', re.UNICODE).sub
+_keep_only_chars = re.compile('[_\\W]+', re.UNICODE).sub # NOQA
 
 
 def keep_only_chars(s):

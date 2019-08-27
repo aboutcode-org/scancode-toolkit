@@ -33,8 +33,6 @@ from packagedcode import cargo
 
 from packages_test_utils import PackageTester
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestCargo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

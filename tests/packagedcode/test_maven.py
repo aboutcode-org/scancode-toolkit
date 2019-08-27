@@ -44,9 +44,6 @@ from packagedcode import maven
 from scancode.resource import Codebase
 from packagedcode.maven import get_maven_pom
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
-
 
 class TestIsPom(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

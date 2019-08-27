@@ -29,12 +29,8 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import os
 
-import pytest
-
 from commoncode.testcase import FileBasedTesting
 from scancode import api
-
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 class TestPackageAPI(FileBasedTesting):
@@ -51,10 +47,8 @@ class TestPackageAPI(FileBasedTesting):
         assert packages['packages'][0]['version'] == '1.3'
 
 
-
 class TestAPI(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_get_package_info_can_pickle(self):
         test_file = self.get_test_loc('api/package/package.json')

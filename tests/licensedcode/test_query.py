@@ -37,9 +37,6 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
