@@ -33,7 +33,6 @@ from attr.validators import in_ as choices  # NOQA
 import typing
 
 
-
 """
 Utilities and helpers for data classes.
 """
