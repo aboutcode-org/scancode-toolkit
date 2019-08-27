@@ -325,28 +325,28 @@ _YEAR_SHORT = (r'('
 
 _YEAR_YEAR = (r'('
               # fixme   v ....the underscore below is suspicious
-    '(19[6-9][0-9][\.,\-]_)+[6-9][0-9]'  # 1960-99
+    '(19[6-9][0-9][\\.,\\-]_)+[6-9][0-9]'  # 1960-99
     '|'
-    '(19[6-9][0-9][\.,\-])+[0-9]'  # 1998-9
+    '(19[6-9][0-9][\\.,\\-])+[0-9]'  # 1998-9
     '|'
-    '(20[0-2][0-9][\.,\-])+[0-2][0-9]'  # 2001-16 or 2012-04
+    '(20[0-2][0-9][\\.,\\-])+[0-2][0-9]'  # 2001-16 or 2012-04
     '|'
-    '(20[0-2][0-9][\.,\-])+[0-9]'  # 2001-4 not 2012
+    '(20[0-2][0-9][\\.,\\-])+[0-9]'  # 2001-4 not 2012
     '|'
-    '(20[0-2][0-9][\.,\-])+20[0-2][0-9]'  # 2001-2012
+    '(20[0-2][0-9][\\.,\\-])+20[0-2][0-9]'  # 2001-2012
 ')')
 
 
 _PUNCT = (r'('
     '['
-        '\W'  # not a word (word includes underscore)
-        '\D'  # not a digit
-        '\_'  # underscore
+        '\\W'  # not a word (word includes underscore)
+        '\\D'  # not a digit
+        '\\_'  # underscore
         'i'  # oddity
-        '\?'
+        '\\?'
     ']'
     '|'
-    '\&nbsp'  # html entity sometimes are double escaped
+    '\\&nbsp'  # html entity sometimes are double escaped
 ')*')  # repeated 0 or more times
 
 
@@ -2747,8 +2747,8 @@ def strip_some_punct(s):
     """
     if s:
         s = s.strip(''','"}{-_:;&@!''')
-        s = s.lstrip('.>)]\/')
-        s = s.rstrip('<([\/')
+        s = s.lstrip('.>)]\\/')
+        s = s.rstrip('<([\\/')
     return s
 
 
@@ -2779,8 +2779,8 @@ def strip_unbalanced_parens(s, parens='()'):
     >>> strip_unbalanced_parens('This )(is a super(c) string)(', '()')
     'This  (is a super(c) string) '
 
-    >>> strip_unbalanced_parens(u'This )(is a super(c) string)(', '()')
-    u'This  (is a super(c) string) '
+    >>> strip_unbalanced_parens('This )(is a super(c) string)(', '()')
+    'This  (is a super(c) string) '
 
     >>> strip_unbalanced_parens('This )(is a super(c) string)(', '()')
     'This  (is a super(c) string) '
@@ -3071,8 +3071,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     If `dedeb` is True, also remove "Debian" <s> </s> markup tags.
     """
     # remove some junk in man pages: \(co
+    line = line.replace(u'\\\\ co', u' ')
     line = line.replace(u'\\ co', u' ')
-    line = line.replace(u'\ co', u' ')
     line = line.replace(u'(co ', u' ')
 
     line = remove_printf_format_codes(u' ', line)
@@ -3101,9 +3101,10 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     line = line.replace(u'&#xa9;', u' (c) ')
     line = line.replace(u'&#XA9;', u' (c) ')
     line = line.replace(u'\xa9', u' (c) ')
-    line = line.replace(u'\XA9', u' (c) ')
+    line = line.replace(u'\\XA9', u' (c) ')
     # \xc2 is a Â
     line = line.replace(u'\xc2', u'')
+    line = line.replace(u'\\xc2', u'')
 
     # not really a dash: an emdash
     line = line.replace(u'–', u'-')

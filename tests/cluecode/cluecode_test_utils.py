@@ -244,7 +244,7 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     test_file = test.test_file
     what = test.what
 
-    tfn = test_file.replace(test_data_dir, '').strip('\/\\')
+    tfn = test_file.replace(test_data_dir, '').strip('\\/\\')
     whats = '_'.join(what)
     test_name = 'test_%(tfn)s_%(index)s' % locals()
     test_name = python_safe_name(test_name)

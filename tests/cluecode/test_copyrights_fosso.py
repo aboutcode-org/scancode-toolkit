@@ -135,7 +135,7 @@ def build_copyright_test_methods_with_fossology_data():
 
         test_method = make_test_func(test_file, expected_file, expected_copyrights)
 
-        tfn = test_file.replace(test_data_dir, '').strip('\/\\')
+        tfn = test_file.replace(test_data_dir, '').strip('\\/\\')
         test_name = 'test_fossology_copyright_%(tfn)s' % locals()
         test_name = python_safe_name(test_name)
         if py2 and isinstance(test_name, compat.unicode):
