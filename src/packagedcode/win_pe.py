@@ -28,22 +28,32 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 from contextlib import closing
-import logging
 
 from ftfy import fix_text
 import pefile
 
+from commoncode import compat
 from commoncode import text
 from typecode import contenttype
 
 
 TRACE = False
-logger = logging.getLogger(__name__)
+
+def logger_debug(*args):
+    pass
 
 if TRACE:
+    import logging
     import sys
+    logger = logging.getLogger(__name__)
+    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(
+            isinstance(a, compat.string_types) and a or repr(a) for a in args))
+
 
 """
 Extract data from windows PE DLLs and executable.
@@ -96,13 +106,13 @@ PE_INFO_KEYSET = set(PE_INFO_KEYS)
 
 def pe_info(location, include_extra_data=False):
     """
-    Return a mapping of common data available for a Windows dll or exe
-    PE (portable executable).
-
-    Return None for non windows PE executables.
+    Return a mapping of common data available for a Windows dll or exe PE
+    (portable executable).
+    Return None for non-Windows PE files.
     Return an empty mapping for PE from which we could not collect data.
-    If include_extra_data is True, also collect extra data found if any, returned
-    as a dictionary under the 'extra_data' key in the returned dict.
+
+    If `include_extra_data` is True, also collect extra data found if any,
+    returned as a dictionary under the 'extra_data' key in the returned mapping.
     """
     if not location:
         return {}
@@ -111,25 +121,30 @@ def pe_info(location, include_extra_data=False):
 
     if not T.is_winexe:
         return {}
+
     # FIXME: WTF: we initialize with empty values, as we must always
     # return something for all values
-    peinf = OrderedDict([(k, None,) for k in PE_INFO_KEYS] + [('extra_data', {},)])
+    result = OrderedDict([(k, None,) for k in PE_INFO_KEYS])
+    result['extra_data'] = OrderedDict()
 
     try:
         with closing(pefile.PE(location)) as pe:
             if not hasattr(pe, 'FileInfo'):
                 # No fileinfo section: we return just empties
-                return peinf
+                return result
 
             # >>> pe.FileInfo: this is a list of list of Structure objects:
             # [[<Structure: [VarFileInfo] >,  <Structure: [StringFileInfo]>]]
             pefi = pe.FileInfo
-            if not pefi or not isinstance(pefi , list):
+            if not pefi or not isinstance(pefi, list):
                 if TRACE:
                     logger.debug('pe_info: not pefi')
-                return peinf
+                return result
 
+            # here we have anon-empty list
             pefi = pefi[0]
+            if TRACE:
+                logger.debug('pe_info: pefi:', pefi)
 
             sfi = [x for x in pefi
                    if type(x) == pefile.Structure
@@ -140,7 +155,7 @@ def pe_info(location, include_extra_data=False):
                 # No stringfileinfo section: we return just empties
                 if TRACE:
                     logger.debug('pe_info: not sfi')
-                return peinf
+                return result
 
             sfi = sfi[0]
 
@@ -148,11 +163,11 @@ def pe_info(location, include_extra_data=False):
                 # No fileinfo.StringTable section: we return just empties
                 if TRACE:
                     logger.debug('pe_info: not StringTable')
-                return peinf
+                return result
 
             strtab = sfi.StringTable
             if not strtab or not isinstance(strtab, list):
-                return peinf
+                return result
 
             strtab = strtab[0]
 
@@ -164,13 +179,14 @@ def pe_info(location, include_extra_data=False):
 
             for k, v in strtab.entries.items():
                 # convert unicode to a safe ASCII representation
+                key = text.as_unicode(k).strip()
                 value = text.as_unicode(v).strip()
                 value = fix_text(value)
-                if k in PE_INFO_KEYSET:
-                    peinf[k] = value
+                if key in PE_INFO_KEYSET:
+                    result[key] = value
                 else:
                     # collect extra_data if any:
-                    peinf['extra_data'][k] = value
+                    result['extra_data'][key] = value
 
     except Exception as e:
         raise
@@ -178,4 +194,6 @@ def pe_info(location, include_extra_data=False):
             logger.debug('pe_info: Failed to collect infos: ' + repr(e))
         # FIXME: return empty for now: this is wrong
 
-    return peinf
+    # the ordering of extra_data is not guaranteed on Python 2 because the dict is not ordered
+    result['extra_data'] = OrderedDict(sorted(result['extra_data'].items()))
+    return result
