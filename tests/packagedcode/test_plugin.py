@@ -146,4 +146,4 @@ class TestPlugins(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/rpm-package-expected.json')
         run_scan_click(['--package','--strip-root','--processes', '-1', test_dir,  '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=True)
+        check_json_scan(expected_file, result_file, regen=False)
