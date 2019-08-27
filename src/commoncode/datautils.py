@@ -29,7 +29,9 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 import attr
+from attr.validators import in_ as choices  # NOQA
 import typing
+
 
 
 """
