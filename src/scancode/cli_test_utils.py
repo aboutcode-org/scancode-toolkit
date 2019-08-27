@@ -219,7 +219,7 @@ def streamline_headers(headers):
     """
     for hle in headers:
         hle.pop('tool_version', None)
-        remove_windows_extra_timeout(hle.get('options', {}))
+        remove_windows_extra_timeout(hle.get('options', OrderedDict()))
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
         streamline_errors(hle['errors'])
@@ -275,7 +275,7 @@ def streamline_jsonlines_scan(scan_result, remove_file_date=False):
     If `remove_file_date` is True, the file.date attribute is removed.
     """
     for result_line in scan_result:
-        headers = result_line.get('headers', {})
+        headers = result_line.get('headers', OrderedDict())
         if headers:
             streamline_headers(headers)
 

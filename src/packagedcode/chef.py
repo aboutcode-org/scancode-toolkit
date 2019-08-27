@@ -213,7 +213,7 @@ def parse(location):
             file_contents = loc.read()
         formatted_file_contents = highlight(
             file_contents, RubyLexer(), ChefMetadataFormatter())
-        package_data = json.loads(formatted_file_contents)
+        package_data = json.loads(formatted_file_contents, object_pairs_hook=OrderedDict)
         return build_package(package_data)
 
 

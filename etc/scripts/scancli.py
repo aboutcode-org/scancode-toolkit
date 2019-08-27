@@ -16,6 +16,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 import json
 from os.path import abspath
 from os.path import dirname
@@ -62,7 +63,7 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
         channel.send(scan_kwargs)  # execute func-call remotely
         results = channel.receive()
         if deserialize:
-            results = json.loads(results)
+            results = json.loads(results, object_pairs_hook=OrderedDict)
         yield results
 
 
