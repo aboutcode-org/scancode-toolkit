@@ -13,7 +13,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode scan plugin to get dwarf info.'''
+desc = '''A ScanCode scan plugin to get Linux lkmclue info.'''
 
 setup(
     name='scancode-lkmclue',
