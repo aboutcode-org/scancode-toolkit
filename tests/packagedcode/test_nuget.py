@@ -32,9 +32,6 @@ from packagedcode import nuget
 
 from packages_test_utils import PackageTester
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestNuget(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

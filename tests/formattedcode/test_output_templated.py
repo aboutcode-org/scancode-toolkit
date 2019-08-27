@@ -41,10 +41,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.resource import VirtualCodebase
 
 
-import pytest
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
-
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -118,7 +114,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     for scanned_file in expected_files:
         exp = expected_template % (scanned_file,)
         exp = r'\s*'.join(exp.split())
-        check = re.findall(exp, results, re.MULTILINE)
+        check = re.findall(exp, results, re.MULTILINE)  # NOQA
         assert check
 
 
@@ -224,8 +220,8 @@ def test_custom_html_output_can_handle_non_ascii_paths():
     custom_template = test_env.get_test_loc('templated/sample-template.html')
 
     args = [
-        '--from-json', test_file, 
-        '--custom-template', custom_template, 
+        '--from-json', test_file,
+        '--custom-template', custom_template,
         '--custom-output', result_file
     ]
     run_scan_click(args)

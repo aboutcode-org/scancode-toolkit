@@ -32,9 +32,6 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestHasFindings(FileDrivenTesting):
 
@@ -51,7 +48,7 @@ class TestHasFindings(FileDrivenTesting):
         test_dir = self.get_test_loc('plugin_only_findings/errors')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')
-        run_scan_click(['-ci', '--only-findings', '--timeout', '0.0001', 
+        run_scan_click(['-ci', '--only-findings', '--timeout', '0.0001',
                         '--json-pp', result_file, test_dir], expected_rc=1)
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 

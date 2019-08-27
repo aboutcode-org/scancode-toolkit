@@ -34,9 +34,6 @@ from packagedcode import npm
 from scancode.resource import Codebase
 from packages_test_utils import PackageTester
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestNpm(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -275,7 +272,7 @@ class TestNpm(PackageTester):
         assert expected == result.vcs_url
 
     def test_npm_get_package_resources(self):
-        test_loc= self.get_test_loc('npm/get_package_resources')
+        test_loc = self.get_test_loc('npm/get_package_resources')
         codebase = Codebase(test_loc)
         root = codebase.root
         expected = [

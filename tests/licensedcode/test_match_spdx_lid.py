@@ -49,9 +49,6 @@ from licensedcode.match_spdx_lid import strip_spdx_lid
 from licensedcode import models
 from licensedcode.query import Query
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -456,7 +453,7 @@ class TestMatchSpdx(FileBasedTesting):
         dic = idx.dictionary
         licenses = cache.get_licenses_db()
         tokens = set(models.get_all_spdx_key_tokens(licenses))
-        keys =set(idx.dictionary)
+        keys = set(idx.dictionary)
         try:
             assert tokens.issubset(keys)
         except:
@@ -464,5 +461,5 @@ class TestMatchSpdx(FileBasedTesting):
                 dic[token]
 
     def test_prepare_text_with_rem(self):
-        assert ''  == prepare_text('')
-        assert 'BSD-2-Clause-Patent'  == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')
+        assert '' == prepare_text('')
+        assert 'BSD-2-Clause-Patent' == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')

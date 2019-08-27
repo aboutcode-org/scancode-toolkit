@@ -31,9 +31,6 @@ from unittest import TestCase
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import normalize_vcs_url
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestPackageUtils(TestCase):
 
@@ -64,7 +61,7 @@ class TestPackageUtils(TestCase):
     def test_normalize_vcs_url_does_not_pad_git_plus(self):
         url = 'git+git://bitbucket.org/vendor/my-private-repo.git'
         result = normalize_vcs_url(url)
-        assert url== result
+        assert url == result
 
     def test_normalize_vcs_url_does_not_pad_git_plus2(self):
         url = 'git+https://github.com/stevepapa/angular2-autosize.git'

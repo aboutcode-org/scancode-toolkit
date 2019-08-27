@@ -29,14 +29,14 @@ from __future__ import unicode_literals
 import os
 from unittest.case import skip
 
-from commoncode.testcase import FileBasedTesting
+import pytest
 
+from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
-import pytest
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+pytestmark = pytest.mark.scanslow
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')

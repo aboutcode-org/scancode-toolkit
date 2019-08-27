@@ -35,9 +35,6 @@ from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
 from licensedcode.cache import load_index
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

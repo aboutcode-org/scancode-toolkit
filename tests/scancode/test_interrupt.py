@@ -34,9 +34,6 @@ import threading
 from commoncode.testcase import FileBasedTesting
 from scancode import interrupt
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 """
 Note that these tests check the active threads count before and after each test to

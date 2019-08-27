@@ -34,9 +34,6 @@ import os
 from commoncode.testcase import FileBasedTesting
 from packagedcode import godeps
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestGodeps(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

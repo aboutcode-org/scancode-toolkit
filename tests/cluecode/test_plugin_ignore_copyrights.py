@@ -33,9 +33,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from cluecode.plugin_ignore_copyrights import is_ignored
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestIgnoreCopyrights(FileDrivenTesting):
 
@@ -45,8 +42,8 @@ class TestIgnoreCopyrights(FileDrivenTesting):
         import re
         patterns = [re.compile('Berkeley'), re.compile('1993.*Californi')]
         test1 = 'The Regents of the University of California.'
-        test2 ='Copyright (c) 1993 The Regents of the University of California.'
-        test3 ='the University of California, Berkeley and its contributors.'
+        test2 = 'Copyright (c) 1993 The Regents of the University of California.'
+        test3 = 'the University of California, Berkeley and its contributors.'
 
         assert not is_ignored(patterns, [test1])
         assert is_ignored(patterns, [test1, test2, test3])

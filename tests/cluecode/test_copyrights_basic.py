@@ -32,9 +32,6 @@ from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights as copyrights_module
 import cluecode_test_utils
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestTextPreparation(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

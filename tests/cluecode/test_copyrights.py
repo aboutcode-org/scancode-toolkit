@@ -27,13 +27,13 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import pytest
+
 from cluecode_test_utils import build_tests
 from cluecode_test_utils import load_copyright_tests
 from commoncode.testcase import FileBasedTesting
 
-
-import pytest
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+pytestmark = pytest.mark.scanslow
 
 
 """

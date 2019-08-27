@@ -43,9 +43,6 @@ from typecode.contenttype import get_type
 from typecode.contenttype import is_data as contenttype_is_data
 from typecode.contenttype import is_standard_include
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
@@ -94,9 +91,9 @@ class TestContentType(FileBasedTesting):
         assert os.path.exists(test_file)
 
         expected = 'PNG image data, 16 x 12, 8-bit/color RGBA, interlaced'
-        
+
         assert expected == get_filetype_file(test_file)
-        
+
         expected = 'image/png'
         assert expected == get_mimetype_file(test_file)
 

@@ -62,8 +62,6 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 if py2:
     read_mode = 'rb'
@@ -496,9 +494,9 @@ def test_scan_can_handle_weird_file_names():
         raise Exception('Not a supported OS?')
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
-@skipIf(on_macos_14_or_higher or (on_windows and py3), 
+@skipIf(on_macos_14_or_higher or (on_windows and py3),
         'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
-        ' Also this fails on Windows and Python 3')
+        ' Also this fails on Windows and Python 3 @Azure')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
@@ -680,7 +678,7 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
 
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+# @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_json_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -693,7 +691,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
     check_timings(expected, file_results)
 
 
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+# @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')

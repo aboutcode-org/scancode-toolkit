@@ -34,9 +34,6 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.resource import Codebase
 from packages_test_utils import PackageTester
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestBuild(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -56,7 +53,7 @@ class TestBuild(PackageTester):
         check_json_scan(expected_file, result_file, regen=False)
 
     def test_build_get_package_resources(self):
-        test_loc= self.get_test_loc('build/get_package_resources')
+        test_loc = self.get_test_loc('build/get_package_resources')
         codebase = Codebase(test_loc)
         root = codebase.root
         expected = [

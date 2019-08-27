@@ -37,9 +37,6 @@ from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese  # NOQA
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 def MiniLicenseIndex(*args, **kwargs):
     return index.LicenseIndex(*args, _legalese=mini_legalese, **kwargs)

@@ -32,9 +32,6 @@ from packagedcode import haxe
 from scancode.resource import Codebase
 from packages_test_utils import PackageTester
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestHaxe(PackageTester):
     test_data_dir = path.join(path.dirname(__file__), 'data')

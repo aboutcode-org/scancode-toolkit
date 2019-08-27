@@ -38,12 +38,6 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
 
-# TODO: port to Python 3
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

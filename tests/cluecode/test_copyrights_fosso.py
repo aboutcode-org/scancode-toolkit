@@ -40,7 +40,7 @@ from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
 
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+pytestmark = pytest.mark.scanslow
 
 
 """
@@ -78,7 +78,7 @@ def build_copyright_test_methods_with_fossology_data():
 
     assert sorted(test_files) == sorted(files_to_test + expected_files)
 
-    copyregex = re.compile('<s>(.*?)</s>', re.DOTALL | re.UNICODE)
+    copyregex = re.compile('<s>(.*?)</s>', re.DOTALL | re.UNICODE)  # NOQA
     for expected_file, test_file in zip(expected_files, files_to_test):
 
         with io.open(expected_file, 'r', encoding='utf-8') as i:
