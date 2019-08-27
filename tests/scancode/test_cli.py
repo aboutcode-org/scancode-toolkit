@@ -62,8 +62,6 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 if py2:
     read_mode = 'rb'
