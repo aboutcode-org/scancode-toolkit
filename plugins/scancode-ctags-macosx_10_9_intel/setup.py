@@ -23,7 +23,7 @@ setup(
     long_description=desc,
     author='nexB',
     author_email='info@aboutcode.org',
-    url='https://github.com/nexB/scancode-toolkit',
+    url='https://github.com/nexB/scancode-toolkit/plugins',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],

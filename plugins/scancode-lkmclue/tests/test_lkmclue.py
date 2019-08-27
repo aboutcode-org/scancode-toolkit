@@ -40,10 +40,10 @@ class TestScanPluginKLMClueScan(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_scancode_with_lkmclue(self):
-        test_dir = self.get_test_loc('klmclue/input')
+        test_dir = self.get_test_loc('lkmclue/input')
         result_file = self.get_temp_file('json')
-        args = ['--lkm-clue', test_dir, '--json', result_file]
+        args = ['--lkmclue', test_dir, '--json', result_file]
         run_scan_click(args)
-        test_loc = self.get_test_loc('klmclue/expected.json')
-        check_json_scan(test_loc, result_file, regen=True)
+        test_loc = self.get_test_loc('lkmclue/expected.json')
+        check_json_scan(test_loc, result_file, regen=False)
         

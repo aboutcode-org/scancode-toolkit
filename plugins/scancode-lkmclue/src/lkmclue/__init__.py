@@ -38,17 +38,20 @@ from scancode import CommandLineOption
 from scancode import SCAN_GROUP
 from typecode import contenttype
 
+from sourcecode import kernel
+
 
 @scan_impl
 class LKMClueScanner(ScanPlugin):
     """
-    Scan lkm-clue information from the resource
+    Scan lkm-clue information from the resource.
     """
     resource_attributes = dict(
-        lkmclue_source_path=attr.ib(default=attr.Factory(list), repr=False))
+        lkm_clue=attr.ib(default=attr.Factory(list), repr=False),
+    )
 
     options = [
-        CommandLineOption(('--lkm-clue',),
+        CommandLineOption(('--lkmclue',),
             is_flag=True, default=False,
             help='Collect LKM module clues and type indicating a possible Linux Kernel Module. (formerly lkm_hint and lkm_line).',
             help_group=SCAN_GROUP,
@@ -66,8 +69,14 @@ def get_lkm_clues(location, **kwargs):
     """
     Return a mapping with lkm_clue_type and lkm_clue
     """
-    type, clue = sourcecode.kernel.find_lkms(resource.location)
+    clues = dict()
+    for type, clue in kernel.find_lkms(location):
+        if not type or not clue:
+            continue
+        if clues.get(type):
+            clues[type] = clues.get(type).append(clue)
+        else:
+            clues[type] = [clue]
     return dict(
-        lkm_clue_type=type,
-        lkm_clue=clue,
+        lkm_clue=clues,
     )
