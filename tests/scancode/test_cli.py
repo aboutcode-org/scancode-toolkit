@@ -364,7 +364,7 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
     result_file = test_env.get_temp_file('json')
 
-    if on_linux:
+    if on_linux and py2:
         test_dir = fsencode(test_dir)
         result_file = fsencode(result_file)
 
@@ -503,7 +503,7 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
 
-    if on_linux:
+    if on_linux and py2:
         test_dir = fsencode(test_dir)
         result_file = fsencode(result_file)
 
