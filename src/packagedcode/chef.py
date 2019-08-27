@@ -110,7 +110,6 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
 
 
-
 def is_metadata_json(location):
     """
     Return True if `location` path is for a Chef metadata.json file.

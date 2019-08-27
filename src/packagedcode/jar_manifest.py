@@ -38,7 +38,6 @@ from packagedcode.maven import parse_scm_connection
 from packagedcode.models import Package
 
 
-
 """
 A JAR/WAR/EAR and OSGi MANIFEST.MF parser and handler.
 See https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html

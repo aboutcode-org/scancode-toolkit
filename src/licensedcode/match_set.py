@@ -38,7 +38,6 @@ from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
 
 
-
 """
 Approximate matching strategies using token sets and multisets.
 

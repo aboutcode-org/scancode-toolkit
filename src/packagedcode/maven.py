@@ -915,7 +915,6 @@ SUPPORTED_PACKAGING = set([
 ])
 
 
-
 def get_dependencies(pom):
     """
     Return a list of Dependent package objects found in a MavenPom `pom` object.
