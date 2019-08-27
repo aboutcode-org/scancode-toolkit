@@ -34,6 +34,9 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.resource import Codebase
 from packages_test_utils import PackageTester
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestBuild(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

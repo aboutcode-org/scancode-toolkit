@@ -35,6 +35,9 @@ from packagedcode.models import Party
 from packagedcode.models import DependentPackage
 from packages_test_utils import PackageTester
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestModels(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -76,7 +79,7 @@ class TestModels(PackageTester):
             ('repository_download_url', None),
             ('api_data_url', None),
         ]
-        assert expected == package.to_dict().items()
+        assert expected == list(package.to_dict().items())
 
     def test_Package_simple(self):
         package = Package(

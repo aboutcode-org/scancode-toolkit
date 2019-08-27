@@ -131,9 +131,10 @@ def is_metadata_rb(location):
 
 
 class ChefMetadataFormatter(Formatter):
+
     def format(self, tokens, outfile):
         """
-        Parse lines from a `metadata.rb` file.
+        Parse lines from a Chef `metadata.rb` file.
 
         For example, a field in `metadata.rb` can look like this:
 
@@ -155,14 +156,22 @@ class ChefMetadataFormatter(Formatter):
         """
         metadata = OrderedDict(depends=OrderedDict())
         line = []
+        identifiers_and_literals = (
+            Token.Name,
+            Token.Name.Builtin,  # NOQA
+            Token.Punctuation,
+            Token.Literal.String.Single,  # NOQA
+            Token.Literal.String.Double  # NOQA
+        )
+        quotes = '"', "'"
+        quoted = lambda x: (x.startswith('"') and x.endswith('"')) or (x.startswith("'") and value.endswith("'"))
+
         for ttype, value in tokens:
             # We don't allow tokens that are just '\"' or '\''
-            if (ttype in (Token.Name, Token.Name.Builtin, Token.Punctuation,
-                    Token.Literal.String.Single, Token.Literal.String.Double,)
-                    and value not in ('"', '\'')):
-                # Some tokens are strings with leading and trailing quotes, so we remove them
-                if ((value.startswith('"') and value.endswith('"')) or
-                        (value.startswith('\'') and value.endswith('\''))):
+            if (ttype in identifiers_and_literals and value not in quotes):
+                # Some tokens are strings with leading and trailing quotes, so
+                # we remove them
+                if quoted(value):
                     value = value[1:-1]
                 line.append(value)
 
@@ -183,7 +192,7 @@ class ChefMetadataFormatter(Formatter):
                     else:
                         dep_name = joined_line
                         requirement = None
-                    metadata[key].update({dep_name: requirement})
+                    metadata[key][dep_name]=requirement
                 else:
                     metadata[key] = joined_line
 
@@ -203,7 +212,8 @@ def parse(location):
     if is_metadata_rb(location):
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
-        formatted_file_contents = highlight(file_contents, RubyLexer(), ChefMetadataFormatter())
+        formatted_file_contents = highlight(
+            file_contents, RubyLexer(), ChefMetadataFormatter())
         package_data = json.loads(formatted_file_contents)
         return build_package(package_data)
 
@@ -233,7 +243,7 @@ def build_package(package_data):
         )
 
     description = package_data.get('description', '') or package_data.get('long_description', '')
-    license = package_data.get('license', '')
+    lic = package_data.get('license', '')
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
@@ -254,8 +264,8 @@ def build_package(package_data):
         name=name,
         version=version,
         parties=parties,
-        description= description.strip() or None,
-        declared_license=license.strip() or None,
+        description=description.strip() or None,
+        declared_license=lic.strip() or None,
         code_view_url=code_view_url.strip() or None,
         bug_tracking_url=bug_tracking_url.strip() or None,
         download_url=chef_download_url(name, version).strip(),
