@@ -82,7 +82,7 @@ def check_csvs(result_file, expected_file,
     expected_fields, expected = load_csv(expected_file)
     assert expected_fields == result_fields
     # then check results line by line for more compact results
-    for exp, res in zip(sorted(expected), sorted(results)):
+    for exp, res in zip(sorted(expected ,key=lambda d: d.items()), sorted(results , key=lambda d: d.items())):
         for ign in ignore_keys:
             exp.pop(ign, None)
             res.pop(ign, None)
@@ -94,10 +94,10 @@ def load_csv(location):
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value).
     """
-    with io.open(location, encoding='utf-8') as csvin:
+    with io.open(location, 'rb') as csvin:
         reader = unicodecsv.DictReader(csvin)
         fields = reader.fieldnames
-        values = sorted(reader)
+        values = sorted(reader, key=lambda d: d.items())
         return fields, values
 
 
