@@ -305,7 +305,7 @@ class TestGemfileLock(FileBasedTesting):
         e = Gem('e', 'v5')
         f = Gem('f', 'v6')
         g = Gem('g', 'v7')
-        
+
         a.dependencies['b'] = b
         a.dependencies['c'] = c
 
