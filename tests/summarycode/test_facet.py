@@ -32,9 +32,6 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestFacet(FileDrivenTesting):
 

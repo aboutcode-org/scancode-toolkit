@@ -110,7 +110,7 @@ def is_good_license(detected_license):
     if not matched:
         return False
 
-    
+
     thresholds = FILTERS[match_type]
 
     # if the scan was not using --license-diag, we may not have these details
@@ -174,7 +174,7 @@ def compute_license_score(codebase):
             scoring_elements[element.name] = bool(element_score)
             element_score = 1 if element_score else 0
         else:
-            scoring_elements[element.name] = round(element_score, 2)
+            scoring_elements[element.name] = round(element_score, 2) or 0
 
         score += int(element_score * element.weight)
         if TRACE:
@@ -182,7 +182,7 @@ def compute_license_score(codebase):
                 'compute_license_score: element:', element, 'element_score: ',
                 element_score, ' new score:', score)
 
-    scoring_elements['score'] = score
+    scoring_elements['score'] = score or 0
     return scoring_elements
 
 
@@ -456,7 +456,8 @@ def get_file_level_license_and_copyright_coverage(codebase):
                      covered_files, 'files_count:', files_count)
 
     if files_count:
-        scoring_element = covered_files / files_count
+        # avoid floats for zero
+        scoring_element = (covered_files / files_count) or 0
 
         if TRACE:
             logger_debug('compute_license_score:scoring_element:', scoring_element)

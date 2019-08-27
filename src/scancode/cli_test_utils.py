@@ -35,6 +35,7 @@ import os
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 from scancode_config import scancode_root_dir
 
 
