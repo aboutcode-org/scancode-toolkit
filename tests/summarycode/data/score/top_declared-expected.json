@@ -23,7 +23,7 @@
   "license_clarity_score": {
     "score": 30,
     "declared": true,
-    "discovered": 0.0,
+    "discovered": 0,
     "consistency": false,
     "spdx": false,
     "license_texts": false
@@ -49,8 +49,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [],
       "holders": [],
+      "copyrights": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -82,8 +82,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [],
       "holders": [],
+      "copyrights": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -115,8 +115,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [],
       "holders": [],
+      "copyrights": [],
       "authors": [],
       "is_legal": false,
       "is_manifest": false,
@@ -183,8 +183,8 @@
       "license_expressions": [
         "mit"
       ],
-      "copyrights": [],
       "holders": [],
+      "copyrights": [],
       "authors": [
         {
           "value": "Alexander Plavinski <alexander.plavinski@invision.de>",
