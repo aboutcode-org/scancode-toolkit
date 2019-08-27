@@ -45,9 +45,10 @@ def run_scan(location, **kwargs):
 
 
 if __name__ == '__channelexec__':
+    from commoncode import compat
     for kwargs in channel:  # NOQA
         # a mapping of kwargs or a location string
-        if isinstance(kwargs, (str, unicode)):
+        if isinstance(kwargs, (str, compat.unicode)):
             channel.send(run_scan(kwargs))  # NOQA
         elif isinstance(kwargs, dict):
             channel.send(run_scan(**kwargs))  # NOQA
