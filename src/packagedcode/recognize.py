@@ -37,6 +37,7 @@ from commoncode.fileutils import file_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import splitext_name
 from commoncode.system import on_linux
+from commoncode.system import py2
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
 
@@ -88,7 +89,7 @@ def recognize_package(location):
     for package_type in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against
         metafiles = package_type.metafiles
-        if on_linux:
+        if on_linux and py2:
             metafiles = (fsencode(m) for m in metafiles)
 
         if any(fnmatch.fnmatchcase(filename, metaf) for metaf in metafiles):
@@ -111,7 +112,7 @@ def recognize_package(location):
         extension_matched = False
         extensions = package_type.extensions
         if extensions:
-            if on_linux:
+            if on_linux and py2:
                 extensions = (fsencode(e) for e in extensions)
 
             extensions = (e.lower() for e in extensions)

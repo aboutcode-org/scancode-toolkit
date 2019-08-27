@@ -35,16 +35,16 @@
   "manifest_path": null,
   "dependencies": [
     {
-      "purl": "pkg:chef/mingw",
-      "requirement": ">= 1.1",
+      "purl": "pkg:chef/seven_zip",
+      "requirement": null,
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false
     },
     {
-      "purl": "pkg:chef/seven_zip",
-      "requirement": null,
+      "purl": "pkg:chef/mingw",
+      "requirement": ">= 1.1",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,

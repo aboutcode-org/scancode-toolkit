@@ -33,6 +33,9 @@ import shutil
 from commoncode.testcase import FileBasedTesting
 from packagedcode import gemfile_lock
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class TestGemfileLock(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -362,7 +365,7 @@ class TestGemfileLock(FileBasedTesting):
         ]
 
         results = a.to_dict()
-        assert expected == results.items()
+        assert expected == list(results.items())
 
     def test_GemfileLockParser_can_parse_a_flat_list_of_deps(self):
         test_file = 'gemfile_lock/as_deps/Gemfile.lock'

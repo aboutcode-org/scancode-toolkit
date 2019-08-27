@@ -31,11 +31,11 @@ import logging
 import sys
 
 import attr
-from attr.validators import in_ as choices
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
 
 from commoncode import compat
+from commoncode.datautils import choices
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
 from commoncode.datautils import Integer

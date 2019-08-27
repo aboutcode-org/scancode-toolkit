@@ -39,6 +39,9 @@ from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest
 from packagedcode.jar_manifest import get_normalized_package_data
 
+import pytest
+pytestmark = pytest.mark.scanpy3  # NOQA
+
 
 class BaseParseManifestCase(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
