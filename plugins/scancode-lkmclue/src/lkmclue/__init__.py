@@ -46,7 +46,7 @@ class LKMClueScanner(ScanPlugin):
     """
     Scan lkm-clue information from the resource.
     """
-    resource_attributes = dict(
+    resource_attributes = OrderedDict(
         lkm_clue=attr.ib(default=attr.Factory(list), repr=False),
     )
 
@@ -67,9 +67,11 @@ class LKMClueScanner(ScanPlugin):
 
 def get_lkm_clues(location, **kwargs):
     """
-    Return a mapping with lkm_clue_type and lkm_clue
+    Return a mapping content 
+        key: lkm_clue_type and 
+        value: list of lkm_clue
     """
-    clues = dict()
+    clues = OrderedDict()
     for type, clue in kernel.find_lkms(location):
         if not type or not clue:
             continue
