@@ -337,12 +337,12 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     if package.files:
         from StringIO import StringIO
         from io import BytesIO
-        
+
         if as_tagvalue:
             spdx_output = StringIO()
         else:
             spdx_output = BytesIO()
-        
+
         write_document(doc, spdx_output, validate=False)
         result = spdx_output.getvalue()
         if as_tagvalue:
