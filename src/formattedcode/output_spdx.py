@@ -296,7 +296,8 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
             output_file.write("<!-- No results for package '{}'. -->\n".format(package.name))
 
     # Remove duplicate licenses from the list for the package.
-    unique_licenses = set(package.licenses_from_files)
+    unique_licenses = {(l.identifier, l.full_name): l for l in package.licenses_from_files}
+    unique_licenses = list(unique_licenses.values())
     if not len(package.licenses_from_files):
         if all_files_have_no_license:
             package.licenses_from_files = [SPDXNone()]
