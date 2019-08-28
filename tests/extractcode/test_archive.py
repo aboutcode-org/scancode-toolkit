@@ -2334,7 +2334,11 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         expected_file = test_file + '_' + expected_suffix + '_' + os_suffix + '.expected'
         import json
         if regen:
-            with open(expected_file, 'wb') as ef:
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with open(expected_file, wmode) as ef:
                 ef.write(json.dumps(extracted, indent=2))
 
         expected = json.loads(open(expected_file).read())

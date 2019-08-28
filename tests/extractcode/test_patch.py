@@ -31,6 +31,8 @@ import json
 import os
 from unittest.case import expectedFailure
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode.text import as_unicode
 from extractcode import patch
@@ -62,7 +64,12 @@ def check_patch(test_file, expected_file, regen=False):
               for s, t, lines in result]
 
     if regen:
-        with io.open(expected_file, 'wb') as regened:
+        if py2:
+            wmode = 'wb'
+        if py3:
+            wmode = 'w'
+
+        with io.open(expected_file, wmode) as regened:
             json.dump(result, regened, indent=2)
     with io.open(expected_file, encoding='utf-8') as expect:
         expected = json.load(expect)

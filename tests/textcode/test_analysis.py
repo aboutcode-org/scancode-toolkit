@@ -36,6 +36,8 @@ from commoncode.testcase import FileBasedTesting
 
 from commoncode import compat
 from commoncode.fileutils import resource_iter
+from commoncode.system import py2
+from commoncode.system import py3
 
 from textcode.analysis import as_unicode
 from textcode.analysis import unicode_text_lines
@@ -44,7 +46,11 @@ from textcode.analysis import numbered_text_lines
 
 def check_text_lines(result, expected_file, regen=False):
         if regen:
-            with open(expected_file, 'wb') as tf:
+            if py2:
+                mode = 'wb'
+            if py3:
+                mode = 'w'
+            with open(expected_file, mode) as tf:
                 json.dump(result, tf, indent=2)
         with open(expected_file, 'rb') as tf:
             expected = json.load(tf)

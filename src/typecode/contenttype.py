@@ -52,12 +52,11 @@ from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode import text
 
+from typecode import entropy
+from typecode import magic2
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
 from typecode.pygments_lexers import get_lexer_for_filename
 from typecode.pygments_lexers import guess_lexer
-
-from typecode import magic2
-from typecode import entropy
 
 
 """

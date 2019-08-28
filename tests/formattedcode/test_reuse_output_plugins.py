@@ -31,6 +31,8 @@ from __future__ import unicode_literals
 import io
 import os
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 
 
@@ -48,13 +50,13 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', binary=False):
 
     result_file = test_env.get_temp_file('reuse')
     op = plugin_class()
+    if py2:
+        mode ='wb'
+    if py3:
+        mode ='w'
 
-    if binary:
-        with io.open(result_file, 'wb') as out:
-            op.process_codebase(cb, out)
-    else:
-        with io.open(result_file, 'w', encoding='utf-8') as out:
-            op.process_codebase(cb, out)
+    with open(result_file, mode) as out:
+        op.process_codebase(cb, out)
 
     with io.open(result_file, 'r', encoding='utf-8') as inp:
         assert 'zlib' in inp.read()
@@ -62,29 +64,29 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', binary=False):
 
 def test_can_call_json_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_json import JsonCompactOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=True)
+    check_plugin(plug, 'reuse/vb.json')
 
 
 def test_can_call_jsonpp_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_json import JsonPrettyOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=True)
+    check_plugin(plug, 'reuse/vb.json')
 
 
 def test_can_call_jsonlines_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_jsonlines import JsonLinesOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=True)
+    check_plugin(plug, 'reuse/vb.json')
 
 
 def test_can_call_spdxtv_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_spdx import SpdxTvOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=True)
+    check_plugin(plug, 'reuse/vb.json')
 
 
 def test_can_call_spdxrdf_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_spdx import SpdxRdfOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=True)
+    check_plugin(plug, 'reuse/vb.json')
 
 
 def test_can_call_html_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_html import  HtmlOutput as plug
-    check_plugin(plug, 'reuse/vb.json', binary=False)
+    check_plugin(plug, 'reuse/vb.json')

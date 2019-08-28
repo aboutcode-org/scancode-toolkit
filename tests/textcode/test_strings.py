@@ -30,6 +30,8 @@ import io
 import json
 import os
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from textcode import strings
 
@@ -42,7 +44,11 @@ class TestStrings(FileBasedTesting):
         results = list(strings.strings_from_file(test_file))
         expected = self.get_test_loc(expected_file)
         if regen:
-            with io.open(expected, 'w', encoding='utf-8') as o:
+            if py2:
+                mode = 'wb'
+            if py3:
+                mode = 'w'
+            with io.open(expected, mode) as o:
                 o.write(json.dumps(results, indent=2))
 
         with io.open(expected) as i:

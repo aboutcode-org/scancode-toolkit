@@ -36,6 +36,7 @@ from commoncode import compat
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import py2
+from commoncode.system import py3
 from packagedcode import rpm
 
 
@@ -156,7 +157,11 @@ class TestRpmBasics(FileBasedTesting):
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        with io.open(expected_file, 'wb') as reg:
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
+        with io.open(expected_file, mode) as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
 
     with io.open(expected_file, encoding='utf-8') as exp:

@@ -705,7 +705,9 @@ class Codebase(object):
         cache_location = self._get_resource_cache_location(rid, create=False)
 
         if TRACE:
-            logger_debug('    Codebase._load_resource: exists:', exists(cache_location), 'cache_location:', cache_location)
+            logger_debug(
+                '    Codebase._load_resource: exists:', exists(cache_location), 
+                'cache_location:', cache_location)
 
         if not exists(cache_location):
             raise ResourceNotInCache(

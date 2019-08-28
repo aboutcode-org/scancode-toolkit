@@ -66,7 +66,11 @@ class TestRubyGemspec(FileBasedTesting):
             pass
 
         if regen:
-            with open(expected_loc, 'wb') as ex:
+            if py2:
+                mode = 'wb'
+            if py3:
+                mode = 'w'
+            with open(expected_loc, mode) as ex:
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='UTF-8') as ex:
             expected = json.load(ex)

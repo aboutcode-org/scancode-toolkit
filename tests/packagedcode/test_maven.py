@@ -45,6 +45,12 @@ from scancode.resource import Codebase
 from packagedcode.maven import get_maven_pom
 
 
+if py2:
+    mode = 'wb'
+if py3:
+    mode = 'w'
+
+
 class TestIsPom(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -81,7 +87,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
     if regen:
-        with open(expected_json_loc, 'wb') as ex:
+        with open(expected_json_loc, mode) as ex:
             json.dump(results, ex, indent=2)
 
     with io.open(expected_json_loc, encoding='utf-8') as ex:
