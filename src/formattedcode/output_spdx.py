@@ -45,6 +45,7 @@ from spdx.utils import SPDXNone
 from spdx.version import Version
 
 from commoncode import compat
+from commoncode.system import py3
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -351,4 +352,6 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
         result = spdx_output.getvalue()
         if as_tagvalue:
             result = result.encode('utf-8')
+        if isinstance(result, bytes) and py3:
+            result = result.decode()
         output_file.write(result)
