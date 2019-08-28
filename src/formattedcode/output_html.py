@@ -327,8 +327,14 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
 
         # write json data
         # FIXME: this should a regular JSON scan format
-        with io.open(join(target_assets_dir, 'data.js'), 'wb') as f:
-            f.write(b'data=')
+        if py2:
+            mode = 'wb'
+            data = b'data='
+        else:
+            mode = 'w'
+            data = 'data'
+        with io.open(join(target_assets_dir, 'data.js'), mode) as f:
+            f.write(data)
             simplejson.dump(results, f, iterable_as_array=True)
 
     except HtmlAppAssetCopyWarning as w:
