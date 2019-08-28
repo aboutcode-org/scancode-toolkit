@@ -1,0 +1,21 @@
+about_resource: singledispatch-3.4.0.3-py2.py3-none-any.whl
+name: singledispatch
+version: 3.4.0.3
+download_url: https://files.pythonhosted.org/packages/c5/10/369f50bcd4621b263927b0a1519987a04383d4a98fb10438042ad410cf88/singledispatch-3.4.0.3-py2.py3-none-any.whl
+description: provides a simple form of generic programming known as single-dispatch generic
+  functions
+homepage_url: https://pypi.org/project/singledispatch/
+notes: This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3
+license_expression: mit
+copyright: Copyright (C) 2013 by Łukasz Langa
+notice_file: singledispatch-3.4.0.3-py2.py3-none-any.whl.NOTICE
+attribute: yes
+owner: Łukasz Langa
+owner_url: https://pypi.org/user/ambv/
+checksum_md5: d633bac187d681455ab065c645be845d
+checksum_sha1: 40b28fb917c06a633711a591915273e8ddd51e5c
+package_url: pkg:pypi/singledispatch@3.4.0.3
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
