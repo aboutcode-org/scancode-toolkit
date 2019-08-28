@@ -36,6 +36,7 @@ from scancode_config import __version__
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import py2
 from formattedcode.output_html import HtmlOutput
 from scancode.cli_test_utils import run_scan_click
 from scancode.resource import VirtualCodebase
@@ -164,7 +165,11 @@ def test_HtmlOutput_process_codebase_fails_with_non_ascii_scanned_paths_and_file
     result_file = test_env.get_temp_file('html')
     ho = HtmlOutput()
     try:
-        with open(result_file, 'wb') as html:
+        if py2:
+            mode = 'wb'
+        else: 
+            mode = 'w'      
+        with open(result_file, mode) as html:
             ho.process_codebase(codebase, html)
         raise Exception('Exception not raised.')
     except Exception as e:

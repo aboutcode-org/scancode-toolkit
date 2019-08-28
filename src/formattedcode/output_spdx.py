@@ -335,7 +335,10 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     # encode to UTF8 bytes.
 
     if package.files:
-        from StringIO import StringIO
+        try:
+            from StringIO import StringIO
+        except ImportError:
+            from io import StringIO   
         from io import BytesIO
 
         if as_tagvalue:
