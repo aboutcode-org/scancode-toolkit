@@ -48,6 +48,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 
 
@@ -122,7 +123,10 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     proc = None
     rc = 100
-    write_mode = 'wb' if py2 else 'w'
+    if py2:
+        write_mode = 'wb'
+    if py3:
+        write_mode = 'w'
     try:
         with open(sop, write_mode) as stdout, open(sep, write_mode) as stderr:
             popen_args = dict(
