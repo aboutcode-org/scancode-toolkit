@@ -72,8 +72,12 @@ jobs:
           python_versions: ['2.7']
           python_architecture: x86
           test_suites:
-              all: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode
+              misc: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode --ignore=tests\formattedcode --ignore=tests\licensedcode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+              formattedcode: Scripts\py.test -n 2 -vvs --reruns=3 tests\formattedcode
+              cluecode: Scripts\py.test -vvs -n 2 --reruns=3 tests\cluecode
+              licensedcode: Scripts\py.test -n 2 -vvs --reruns=3 tests\licensedcode
+
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -238,8 +242,11 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              all: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode
+              misc: Scripts\py.test -n 2 -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode --ignore=tests\formattedcode --ignore=tests\licensedcode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+              formattedcode: Scripts\py.test -n 2 -vvs --reruns=3 tests\formattedcode
+              cluecode: Scripts\py.test -vvs -n 2 --reruns=3 tests\cluecode
+              licensedcode: Scripts\py.test -n 2 -vvs --reruns=3 tests\licensedcode
 
 
 ################################################################################
