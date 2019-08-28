@@ -217,7 +217,7 @@ setup(
         'jinja2 >= 2.7.0, < 3.0.0',
         'MarkupSafe >= 0.23',
         'simplejson',
-        'spdx-tools >= 0.5.4',
+        'spdx-tools >= 0.6.0',
         'unicodecsv',
 
         # ScanCode caching and locking
