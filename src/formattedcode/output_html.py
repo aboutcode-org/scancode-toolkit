@@ -332,7 +332,7 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         if py2:
             mode = 'wb'
             prefix = b'data='
-        else:
+        if py3:
             mode = 'w'
             prefix = u'data='
         with io.open(join(target_assets_dir, 'data.js'), mode) as f:

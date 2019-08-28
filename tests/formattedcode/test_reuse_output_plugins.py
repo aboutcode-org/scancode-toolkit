@@ -40,7 +40,7 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_plugin(plugin_class, test_file='reuse/vb.json', binary=False):
+def check_plugin(plugin_class, test_file='reuse/vb.json', as_text=False):
     # this is the result of this scan:
     # ./scancode -clip --summary --license-clarity-score --summary-key-files
     # --classify  samples/ --json-pp vb.json -n
@@ -54,9 +54,12 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', binary=False):
         mode ='wb'
     if py3:
         mode ='w'
-
-    with open(result_file, mode) as out:
-        op.process_codebase(cb, out)
+    if as_text:
+        with io.open(result_file, 'w') as out:
+            op.process_codebase(cb, out)
+    else:
+        with open(result_file, mode) as out:
+            op.process_codebase(cb, out)
 
     with io.open(result_file, 'r', encoding='utf-8') as inp:
         assert 'zlib' in inp.read()
@@ -89,4 +92,4 @@ def test_can_call_spdxrdf_output_from_regular_code_with_virtualcodebase():
 
 def test_can_call_html_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_html import  HtmlOutput as plug
-    check_plugin(plug, 'reuse/vb.json')
+    check_plugin(plug, 'reuse/vb.json', as_text=True)
