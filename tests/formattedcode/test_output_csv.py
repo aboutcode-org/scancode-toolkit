@@ -60,7 +60,7 @@ def load_scan(json_input):
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        with io.open(expected_file, 'wb') as reg:
+        with io.open(expected_file, 'w', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
     with io.open(expected_file, encoding='utf-8') as exp:
         expected = json.load(exp, object_pairs_hook=OrderedDict)
