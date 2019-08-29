@@ -33,6 +33,12 @@ from os.path import dirname
 from os.path import isdir
 import sys
 
+from io import BytesIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
 from spdx.document import Document
@@ -45,7 +51,7 @@ from spdx.utils import SPDXNone
 from spdx.version import Version
 
 from commoncode import compat
-from commoncode.system import py3
+from commoncode.system import py2
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -126,7 +132,7 @@ class SpdxTvOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--spdx-tv',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
             metavar='FILE',
             help='Write scan output as SPDX Tag/Value to FILE.',
             help_group=OUTPUT_GROUP)
@@ -153,7 +159,7 @@ class SpdxRdfOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--spdx-rdf',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
             metavar='FILE',
             help='Write scan output as SPDX RDF to FILE.',
             help_group=OUTPUT_GROUP)
@@ -292,9 +298,16 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
     if len(package.files) == 0:
         if as_tagvalue:
-            output_file.write("# No results for package '{}'.\n".format(package.name))
+            msg = "# No results for package '{}'.\n".format(package.name)
+            if py2:
+                msg = msg.encode('utf-8')
+            output_file.write(msg)
         else:
-            output_file.write("<!-- No results for package '{}'. -->\n".format(package.name))
+            # rdf
+            msg = "<!-- No results for package '{}'. -->\n".format(package.name)
+            if py2:
+                msg = msg.encode('utf-8')
+            output_file.write(msg)
 
     # Remove duplicate licenses from the list for the package.
     unique_licenses = {(l.identifier, l.full_name): l for l in package.licenses_from_files}
@@ -322,36 +335,36 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     package.license_declared = NoAssert()
     package.conc_lics = NoAssert()
 
-    if as_tagvalue:
-        from spdx.writers.tagvalue import write_document  # NOQA
-    else:
-        from spdx.writers.rdf import write_document  # NOQA
-
     # The spdx-tools write_document returns either:
     # - unicode for tag values
     # - UTF8-encoded bytes for rdf because somehow the rdf and xml
-    #   libraries do the encoding
-    # The file passed by ScanCode for output is always opened in binary
-    # mode and needs to receive UTF8-encoded bytes.
-    # Therefore in one case we do nothing (rdf) and in the other case we
-    # encode to UTF8 bytes.
+    #   libraries do the encoding and do not return text but bytes
+    # The file passed by ScanCode for output is opened in text mode Therefore in
+    # one case we do need to deal with bytes and decode before writing (rdf) and
+    # in the other case we deal with text all the way.
 
     if package.files:
-        try:
-            from StringIO import StringIO
-        except ImportError:
-            from io import StringIO   
-        from io import BytesIO
 
         if as_tagvalue:
+            from spdx.writers.tagvalue import write_document  # NOQA
+        else:
+            from spdx.writers.rdf import write_document  # NOQA
+
+        if as_tagvalue:
+            # unicode text everywhere
             spdx_output = StringIO()
         else:
+            # rdf as utf-encoded bytes on Py2
             spdx_output = BytesIO()
 
         write_document(doc, spdx_output, validate=False)
         result = spdx_output.getvalue()
+
         if as_tagvalue:
-            result = result.encode('utf-8')
-        if isinstance(result, bytes) and py3:
-            result = result.decode()
+            # unicode text everywhere
+            pass
+        else:
+            # rdf as utf-encoded bytes on Py2
+            result = result.decode('utf-8')
+
         output_file.write(result)
