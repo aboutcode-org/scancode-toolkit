@@ -55,7 +55,7 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', as_text=False):
     if py3:
         mode ='w'
     if as_text:
-        with io.open(result_file, 'w') as out:
+        with io.open(result_file, 'w', encoding='utf-8') as out:
             op.process_codebase(cb, out)
     else:
         with open(result_file, mode) as out:
