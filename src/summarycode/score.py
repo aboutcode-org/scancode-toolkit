@@ -32,8 +32,8 @@ from itertools import chain
 
 import attr
 from license_expression import Licensing
+from six import string_types
 
-from commoncode import compat
 from commoncode.datautils import Mapping
 from licensedcode.cache import get_licenses_db
 from licensedcode import models
@@ -61,7 +61,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 """
 A plugin to compute a licensing clarity score as designed in ClearlyDefined

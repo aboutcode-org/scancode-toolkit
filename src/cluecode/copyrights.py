@@ -33,8 +33,9 @@ import re
 import sys
 from time import time
 
+from six import string_types
+
 from cluecode import copyrights_hint
-from commoncode import compat
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
 from textcode import analysis
@@ -61,7 +62,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 """
 Detect and collect copyright statements.

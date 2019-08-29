@@ -39,6 +39,7 @@ try:
 except ImportError:
     from io import StringIO
 
+from six import string_types
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
 from spdx.document import Document
@@ -50,7 +51,6 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from commoncode import compat
 from commoncode.system import py2
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
@@ -76,7 +76,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 """

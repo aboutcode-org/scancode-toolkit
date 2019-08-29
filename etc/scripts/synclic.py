@@ -896,7 +896,7 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
 
             continue
 
-        if (isinstance(scancode_value, compat.string_types) and isinstance(external_value, compat.string_types)):
+        if (isinstance(scancode_value, compat.unicode) and isinstance(external_value, compat.unicode)):
             # keep the stripped and normalized spaces value
             # normalized spaces
             normalized_scancode_value = ' '.join(scancode_value.split())

@@ -31,13 +31,12 @@ from functools import partial
 
 # Python 2 and 3 support
 try:
-        # Python 2
-    import itertools.imap as map
+    import itertools.imap as map  # NOQA
 except ImportError:
-        # Python 3
-        pass
+    pass
 
-from commoncode import compat
+from six import string_types
+
 from plugincode import CodebasePlugin
 from plugincode import PluginManager
 from plugincode import HookimplMarker
@@ -63,7 +62,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 stage = 'output'

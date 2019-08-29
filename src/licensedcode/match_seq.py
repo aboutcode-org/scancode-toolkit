@@ -29,7 +29,8 @@ from __future__ import print_function
 from time import time
 import sys
 
-from commoncode import compat
+from six import string_types
+
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -48,7 +49,7 @@ if TRACE or TRACE2 or TRACE3:
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

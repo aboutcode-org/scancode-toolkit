@@ -31,8 +31,8 @@ from collections import Counter
 from collections import OrderedDict
 
 import attr
+from six import string_types
 
-from commoncode import compat
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -40,6 +40,7 @@ from scancode import POST_SCAN_GROUP
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
+
 
 # Tracing flags
 TRACE = False
@@ -59,7 +60,7 @@ if TRACE or TRACE_LIGHT:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 """
 top_level:

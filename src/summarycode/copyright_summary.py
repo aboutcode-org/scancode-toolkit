@@ -32,6 +32,7 @@ import re
 
 import attr
 import fingerprints
+from six import string_types
 from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
@@ -40,6 +41,7 @@ from commoncode.text import toascii
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
+
 
 # Tracing flags
 TRACE = False
@@ -62,7 +64,7 @@ if TRACE or TRACE_CANO:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 # TODO: keep the original order of statements as much as possible
 

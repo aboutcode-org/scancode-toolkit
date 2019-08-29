@@ -27,11 +27,12 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import attr
+from six import string_types
 import xmltodict
 
 from packagedcode import models
 from packagedcode.utils import build_description
-from commoncode import compat
+
 
 # TODO: add dependencies
 
@@ -56,7 +57,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 @attr.s()

@@ -26,12 +26,12 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from itertools import groupby
 from functools import total_ordering
+from itertools import groupby
 
 import attr
+from six import string_types
 
-from commoncode import compat
 from licensedcode import MAX_DIST
 from licensedcode import query
 from licensedcode.spans import Span
@@ -88,7 +88,7 @@ if (TRACE
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

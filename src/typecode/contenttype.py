@@ -34,24 +34,22 @@ import mimetypes as mimetype_python
 import attr
 from binaryornot.helpers import get_starting_chunk
 from binaryornot.helpers import is_binary_string
-
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFSyntaxError
 from pdfminer.psparser import PSSyntaxError
 from pdfminer.pdfdocument import PDFEncryptionError
 from pdfminer.pdftypes import PDFException
+from six import string_types
 
-from commoncode import compat
-from commoncode import fileutils
 from commoncode import filetype
+from commoncode import fileutils
 from commoncode.datautils import Boolean
 from commoncode.datautils import List
 from commoncode.datautils import String
 from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode import text
-
 from typecode import entropy
 from typecode import magic2
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
@@ -81,7 +79,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 data_dir = os.path.join(os.path.dirname(__file__), 'data')

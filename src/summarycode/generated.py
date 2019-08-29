@@ -29,7 +29,8 @@ from __future__ import unicode_literals
 
 from itertools import islice
 
-from commoncode import compat
+from six import string_types
+
 from commoncode.datautils import Boolean
 from commoncode.text import toascii
 from plugincode.scan import ScanPlugin
@@ -59,7 +60,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 @scan_impl

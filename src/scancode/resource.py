@@ -45,6 +45,7 @@ import sys
 
 import attr
 from intbitset import intbitset
+from six import string_types
 
 try:
     from scancode_config import scancode_temp_dir as temp_dir
@@ -53,7 +54,6 @@ except ImportError:
     import tempfile
     temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
-from commoncode import compat
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
@@ -110,7 +110,7 @@ if TRACE or TRACE_DEEP:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 class ResourceNotInCache(Exception):
