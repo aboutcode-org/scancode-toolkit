@@ -42,6 +42,8 @@ import stat
 import sys
 import tempfile
 
+from six import string_types
+
 try:
     from scancode_config import scancode_temp_dir
 except ImportError:
@@ -75,7 +77,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 # Paths can only be sanely handled as raw bytes on Linux and Python2
