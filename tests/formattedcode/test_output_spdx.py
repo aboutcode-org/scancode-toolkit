@@ -131,7 +131,6 @@ def _sorter(data):
         return repr(data)
 
 
-
 def check_rdf_scan(expected_file, result_file, regen=False):
     """
     Check that expected and result_file are equal.
@@ -141,7 +140,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
     result = load_and_clean_rdf(result_file)
     if regen:
         expected = result
-        with open(expected_file, 'wb') as o:
+        with io.open(expected_file, 'w', encoding='utf-8') as o:
             json.dump(result, o, indent=2)
     else:
         with io.open(expected_file, encoding='utf-8') as i:
