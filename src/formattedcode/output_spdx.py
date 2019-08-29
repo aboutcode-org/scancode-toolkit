@@ -299,15 +299,10 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     if len(package.files) == 0:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
-            if py2:
-                msg = msg.encode('utf-8')
-            output_file.write(msg)
         else:
             # rdf
             msg = "<!-- No results for package '{}'. -->\n".format(package.name)
-            if py2:
-                msg = msg.encode('utf-8')
-            output_file.write(msg)
+        output_file.write(msg)
 
     # Remove duplicate licenses from the list for the package.
     unique_licenses = {(l.identifier, l.full_name): l for l in package.licenses_from_files}
