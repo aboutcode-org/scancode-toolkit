@@ -138,44 +138,6 @@ def test_custom_format_with_custom_filename():
     assert __version__ in results
 
 
-def test_HtmlOutput_process_codebase_fails_with_non_ascii_scanned_paths_and_file_opened_in_binary_mode():
-    test_scan = '''{
-          "scancode_notice": "Generated with ScanCode...",
-          "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
-          "scancode_options": {
-            "input": "han/",
-            "--json-pp": "-"
-          },
-          "scan_start": "2018-11-23T123252.191917",
-          "files_count": 1,
-          "files": [
-            {
-              "path": "han",
-              "type": "directory",
-              "scan_errors": []
-            },
-            {
-              "path": "han/\u636e.svg",
-              "type": "file",
-              "scan_errors": []
-            }
-          ]
-        }'''
-    codebase = VirtualCodebase(test_scan)
-    result_file = test_env.get_temp_file('html')
-    ho = HtmlOutput()
-    try:
-        if py2:
-            mode = 'wb'
-        else: 
-            mode = 'w'      
-        with open(result_file, mode) as html:
-            ho.process_codebase(codebase, html)
-        raise Exception('Exception not raised.')
-    except Exception as e:
-        assert 'UnicodeEncodeError' in str(e)
-
-
 def test_HtmlOutput_process_codebase_does_not_fail_with_non_ascii_scanned_paths_and_file_opened_in_text_mode_with_utf():
     test_scan = '''{
           "scancode_notice": "Generated with ScanCode...",
