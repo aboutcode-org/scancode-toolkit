@@ -33,7 +33,6 @@ import io
 import os
 import re
 
-import pytest
 import xmltodict
 
 from commoncode.testcase import FileDrivenTesting
@@ -86,21 +85,51 @@ def sort_nested(data):
     maptypes = OrderedDict, dict
     coltypes = seqtypes + maptypes
 
+
     if isinstance(data, maptypes):
-        new_data = OrderedDict()
-        for k, v in sorted(data.items()):
+        new_data = []
+        for k, v in data.items():
             if isinstance(v, coltypes):
                 v = sort_nested(v)
-            new_data[k] = v
-        return OrderedDict(sorted(new_data.items()))
+            new_data.append((k, v))
+        return OrderedDict(sorted(new_data, key=_sorter))
 
     elif isinstance(data, seqtypes):
         new_data = []
-        for v in sorted(data):
+        for v in data:
             if isinstance(v, coltypes):
                 v = sort_nested(v)
             new_data.append(v)
-        return sorted(new_data)
+        return sorted(new_data, key=_sorter)
+
+
+def _sorter(data):
+    """
+    Return a tree of tuples (type, items sequence) for each items in a nested
+    data structure composed of mappings and sequences. Used as a sorting key.
+    """
+    seqtypes = list, tuple
+    maptypes = OrderedDict, dict
+    coltypes = seqtypes + maptypes
+
+    if isinstance(data, maptypes):
+        new_data = []
+        for k, v in data.items():
+            if isinstance(v, coltypes):
+                v = _sorter(v)
+            new_data.append((k, v))
+        return repr(tuple(sorted(new_data)))
+
+    elif isinstance(data, seqtypes):
+        new_data = []
+        for v in data:
+            if isinstance(v, coltypes):
+                v = _sorter(v)
+            new_data.append(v)
+        return repr(tuple(sorted(new_data)))
+    else:
+        return repr(data)
+
 
 
 def check_rdf_scan(expected_file, result_file, regen=False):
@@ -165,7 +194,6 @@ def test_spdx_tv_basic():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_known_licenses():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('rdf')
@@ -174,7 +202,6 @@ def test_spdx_rdf_with_known_licenses():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_license_ref():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('rdf')
@@ -183,7 +210,6 @@ def test_spdx_rdf_with_license_ref():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_known_licenses():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('tv')
@@ -192,7 +218,6 @@ def test_spdx_tv_with_known_licenses():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_license_ref():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
@@ -201,7 +226,6 @@ def test_spdx_tv_with_license_ref():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_known_licenses_with_text():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('rdf')
@@ -210,7 +234,6 @@ def test_spdx_rdf_with_known_licenses_with_text():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_license_ref_with_text():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('rdf')
@@ -219,7 +242,6 @@ def test_spdx_rdf_with_license_ref_with_text():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_known_licenses_with_text():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('tv')
@@ -228,7 +250,6 @@ def test_spdx_tv_with_known_licenses_with_text():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_license_ref_with_text():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
@@ -237,7 +258,6 @@ def test_spdx_tv_with_license_ref_with_text():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_tree():
     test_dir = test_env.get_test_loc('spdx/tree/scan')
     result_file = test_env.get_temp_file('tv')
@@ -246,7 +266,6 @@ def test_spdx_tv_tree():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_tree():
     test_dir = test_env.get_test_loc('spdx/tree/scan')
     result_file = test_env.get_temp_file('rdf')
@@ -255,7 +274,6 @@ def test_spdx_rdf_tree():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_unicode_license_text_does_not_fail():
     test_file = test_env.get_test_loc('spdx/unicode/et131x.h')
     result_file = test_env.get_temp_file('tv')
@@ -266,7 +284,6 @@ def test_spdx_tv_with_unicode_license_text_does_not_fail():
     check_tv_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_unicode_license_text_does_not_fail():
     test_file = test_env.get_test_loc('spdx/unicode/et131x.h')
     result_file = test_env.get_temp_file('rdf')
@@ -277,7 +294,6 @@ def test_spdx_rdf_with_unicode_license_text_does_not_fail():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_or_later_license_does_not_fail():
     test_file = test_env.get_test_loc('spdx/or_later/test.java')
     result_file = test_env.get_temp_file('rdf')
@@ -288,7 +304,6 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     check_rdf_scan(expected_file, result_file)
 
 
-@pytest.mark.scanslow
 def test_spdx_tv_with_empty_scan():
     test_file = test_env.get_test_loc('spdx/empty/scan')
     result_file = test_env.get_temp_file('spdx.tv')
@@ -298,7 +313,6 @@ def test_spdx_tv_with_empty_scan():
     check_tv_scan(expected_file, result_file, regen=False)
 
 
-@pytest.mark.scanslow
 def test_spdx_rdf_with_empty_scan():
     test_file = test_env.get_test_loc('spdx/empty/scan')
     result_file = test_env.get_temp_file('spdx.rdf')
@@ -309,7 +323,6 @@ def test_spdx_rdf_with_empty_scan():
     assert expected == results
 
 
-@pytest.mark.scanslow
 def test_output_spdx_rdf_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
@@ -319,7 +332,6 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
     assert 'han/据.svg' in results
 
 
-@pytest.mark.scanslow
 def test_output_spdx_tv_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
