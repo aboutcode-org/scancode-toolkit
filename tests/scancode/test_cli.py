@@ -182,6 +182,7 @@ def test_scan_info_returns_does_not_strip_root_with_single_file():
     check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, remove_file_date=True)
 
 
+@pytest.mark.scanslow
 def test_scan_info_license_copyrights():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -583,6 +584,7 @@ def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stderr
 
 
+@pytest.mark.scanslow
 def test_scan_does_not_report_errors_on_incorrect_package_manifest():
     test_file = test_env.get_test_loc('errors/broken_packages')
     args = ['-pi', '--verbose', '-n', '0', test_file, '--json', '-']
@@ -678,6 +680,7 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
 
+@pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_json_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
@@ -691,6 +694,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
     check_timings(expected, file_results)
 
 
+@pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
@@ -720,6 +724,7 @@ def check_timings(expected, file_results):
             assert timing
 
 
+@pytest.mark.scanslow
 def test_summary_counts_when_using_disk_cache():
     test_file = test_env.get_test_loc('resource/samples')
     result_file = test_env.get_temp_file('json')

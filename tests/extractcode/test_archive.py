@@ -2615,6 +2615,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArch
 
 
 class TestZipSlip(BaseArchiveTestCase):
+    pytestmark = pytest.mark.scanslow
 
     def test_extract_zipslip_zip_posix(self):
         test_file = self.get_test_loc('archive/zipslip/zip-slip.zip')

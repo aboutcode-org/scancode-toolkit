@@ -28,8 +28,9 @@ from __future__ import unicode_literals
 
 import os
 
-from commoncode.testcase import FileBasedTesting
+import pytest
 
+from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import match_aho
@@ -39,7 +40,6 @@ from licensedcode.models import load_rules
 from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
-
 from licensedcode_test_utils import mini_legalese  # NOQA
 
 
@@ -1128,6 +1128,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert 'license=Dual BSD/GPL' == qtext
         assert 'license dual bsd gpl' == itext
 
+    @pytest.mark.scanslow
     def test_match_in_binary_lkms_2(self):
         idx = cache.get_index()
         qloc = self.get_test_loc('positions/eeepc_acpi.ko')
@@ -1141,6 +1142,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         assert 'license=GPL' == qtext
         assert 'license gpl' == itext
 
+    @pytest.mark.scanslow
     def test_match_in_binary_lkms_3(self):
         idx = cache.get_index()
         qloc = self.get_test_loc('positions/wlan_xauth.ko')

@@ -28,6 +28,8 @@ from __future__ import unicode_literals
 from os.path import dirname
 from os.path import join
 
+import pytest
+
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
@@ -37,6 +39,7 @@ class TestHasFindings(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
+    @pytest.mark.scanslow
     def test_scan_only_findings(self):
         test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
         result_file = self.get_temp_file('json')
