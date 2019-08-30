@@ -13,7 +13,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode scan plugin to get Linux lkmclue info.'''
+desc = '''A ScanCode scan plugin to get Linux lkmclue and elf info.'''
 
 setup(
     name='scancode-lkmclue',
@@ -39,7 +39,7 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'lkmclue'
+        'open source', 'scancode', 'lkmclue', 'elf'
     ],
     install_requires=[
         'scancode-toolkit',

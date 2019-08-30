@@ -37,6 +37,7 @@ from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import SCAN_GROUP
 from typecode import contenttype
+
 from elf.elf import Elf
 
 
