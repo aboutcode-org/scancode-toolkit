@@ -1,0 +1,83 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--elf": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 8
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "elf",
+      "type": "directory",
+      "elf_needed_library": [],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/corrupt.o",
+      "type": "file",
+      "elf_needed_library": [],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/expected.json",
+      "type": "file",
+      "elf_needed_library": [],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/malformed_stringtable",
+      "type": "file",
+      "elf_needed_library": [],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/non_elf",
+      "type": "file",
+      "elf_needed_library": [],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/shash.i686",
+      "type": "file",
+      "elf_needed_library": [
+        "libc.so.6"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/ssdeep.i686",
+      "type": "file",
+      "elf_needed_library": [
+        "libc.so.6"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/ssdeep.x86_64",
+      "type": "file",
+      "elf_needed_library": [
+        "libc.so.6"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "elf/strip_stripped",
+      "type": "file",
+      "elf_needed_library": [
+        "libz.so.1",
+        "libc.so.6"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
