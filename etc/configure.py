@@ -263,8 +263,6 @@ def create_virtualenv_py3(std_python, root_dir, tpp_dirs=(), quiet=False):
         print("* Configuring Python ...")
 
     vcmd = [quote(std_python), '-m', 'venv']
-    if quiet:
-        vcmd += ['-qq']
     # we create the virtualenv in the root_dir
     vcmd.append(quote(root_dir))
     call(vcmd, root_dir)
