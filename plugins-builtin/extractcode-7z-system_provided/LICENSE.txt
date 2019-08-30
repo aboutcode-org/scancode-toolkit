@@ -1,0 +1,71 @@
+7-Zip Copyright (C) 1999-2010 Igor Pavlov.
+
+Licenses for files are:
+
+    1) CPP/7zip/Compress/Rar* files:  LGPL-2.1 and unRAR restriction
+    2) the file in CPP/7zip/Crypto/AES files are under LGPL-2.1 and the 
+       Brian Gladman 3-Clause License
+    3) All other files:  LGPL-2.1
+
+  The LGPL-2.1 and unRAR restriction means that you must follow both
+  LGPL-2.1 rules and unRAR restriction rules.
+
+  GNU LGPL information
+  --------------------
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+  unRAR restriction
+  -----------------
+
+    The decompression engine for RAR archives was developed using source
+    code of unRAR program.
+    All copyrights to original unRAR code are owned by Alexander Roshal.
+
+    The license for original unRAR code has the following restriction:
+
+    The unRAR sources cannot be used to re-create the RAR compression
+    algorithm, which is proprietary. Distribution of modified unRAR sources
+    in separate form or as a part of other software is permitted, provided
+    that it is clearly stated in the documentation and source comments that
+    the code may not be used to develop a RAR (WinRAR) compatible archiver.
+
+
+  Brian Gladman 3-Clause License
+  ------------------------------
+
+    Copyright (c) 2001, Dr Brian Gladman
+
+    LICENSE TERMS
+
+    The free distribution and use of this software in both source and binary
+    form is allowed (with or without changes) provided that:
+
+       1. distributions of this source code include the above copyright
+          notice, this list of conditions and the following disclaimer;
+
+       2. distributions in binary form include the above copyright
+          notice, this list of conditions and the following disclaimer
+          in the documentation and/or other associated materials;
+
+       3. the copyright holder's name is not used to endorse products
+          built using this software without specific written permission.
+
+    DISCLAIMER
+
+    This software is provided 'as is' with no explicit or implied warranties
+    in respect of its properties, including, but not limited to, correctness
+    and fitness for purpose.
