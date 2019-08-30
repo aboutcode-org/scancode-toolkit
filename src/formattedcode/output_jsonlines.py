@@ -25,6 +25,8 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 import simplejson
 
 from commoncode.system import py2
@@ -79,7 +81,7 @@ class JsonLinesOutput(OutputPlugin):
 
         codebase.add_files_count_to_current_header()
 
-        headers = dict(headers=codebase.get_headers())
+        headers = OrderedDict(headers=codebase.get_headers())
 
         simplejson_kwargs = dict(
             iterable_as_array=True,

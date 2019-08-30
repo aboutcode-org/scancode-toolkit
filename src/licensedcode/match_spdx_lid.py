@@ -36,8 +36,8 @@ from license_expression import Keyword
 from license_expression import LicenseSymbol
 from license_expression import LicenseWithExceptionSymbol
 from license_expression import Licensing
+from six import string_types
 
-from commoncode import compat
 from licensedcode.match import LicenseMatch
 from licensedcode.models import SpdxRule
 from licensedcode.spans import Span
@@ -63,7 +63,8 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+
 
 MATCH_SPDX_ID = '1-spdx-id'
 
@@ -353,7 +354,7 @@ def clean_text(text):
     from certain leading and trailing punctuations and normalized for spaces.
     """
     text = ' '.join(text.split())
-    punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\]^_`{|}~\t\r\n "
+    punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\\]^_`{|}~\t\r\n "
     # remove significant expression punctuations in wrong spot: leading parens
     # at head and closing parens or + at tail.
     leading_punctuation_spaces = punctuation_spaces + ")+"
@@ -362,7 +363,7 @@ def clean_text(text):
 
 
 # note: LIST, DNL REM can be vomment indicators is a comment indicators
-splitter = re.compile('spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*', re.IGNORECASE).split
+splitter = re.compile('spdx(\\-|\\s)+license(\\-|\\s)+identifier\\s*:?\\s*', re.IGNORECASE).split
 
 def strip_spdx_lid(text):
     """

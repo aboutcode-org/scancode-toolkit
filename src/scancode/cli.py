@@ -52,6 +52,7 @@ import traceback
 
 import click  # NOQA
 click.disable_unicode_literals_warning = True
+from six import string_types
 
 # import early
 from scancode_config import __version__ as scancode_version
@@ -120,7 +121,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 echo_stderr = partial(click.secho, err=True)
@@ -1431,28 +1432,17 @@ def format_size(size):
     Return a human-readable value for the `size` int or float.
 
     For example:
-    >>> format_size(0)
-    u'0 Byte'
-    >>> format_size(1)
-    u'1 Byte'
-    >>> format_size(0.123)
-    u'0.1 Byte'
-    >>> format_size(123)
-    u'123 Bytes'
-    >>> format_size(1023)
-    u'1023 Bytes'
-    >>> format_size(1024)
-    u'1 KB'
-    >>> format_size(2567)
-    u'2.51 KB'
-    >>> format_size(2567000)
-    u'2.45 MB'
-    >>> format_size(1024*1024)
-    u'1 MB'
-    >>> format_size(1024*1024*1024)
-    u'1 GB'
-    >>> format_size(1024*1024*1024*12.3)
-    u'12.30 GB'
+    >>> assert format_size(0) == '0 Byte'
+    >>> assert format_size(1) == '1 Byte'
+    >>> assert format_size(0.123) == '0.1 Byte'
+    >>> assert format_size(123) == '123 Bytes'
+    >>> assert format_size(1023) == '1023 Bytes'
+    >>> assert format_size(1024) == '1 KB'
+    >>> assert format_size(2567) == '2.51 KB'
+    >>> assert format_size(2567000) == '2.45 MB'
+    >>> assert format_size(1024*1024) == '1 MB'
+    >>> assert format_size(1024*1024*1024) == '1 GB'
+    >>> assert format_size(1024*1024*1024*12.3) == '12.30 GB'
     """
     if not size:
         return '0 Byte'
@@ -1525,7 +1515,7 @@ def get_pretty_params(ctx, generic_paths=False):
 
         # coerce to string for non-basic supported types
         if not (value in (True, False, None)
-            or isinstance(value, (str, compat.string_types, bytes, tuple, list, dict, OrderedDict))):
+            or isinstance(value, (str, string_types, bytes, tuple, list, dict, OrderedDict))):
             value = repr(value)
 
         # opts is a list of CLI options as in "--strip-root": the last opt is

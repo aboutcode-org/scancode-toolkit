@@ -32,6 +32,7 @@ import re
 
 import attr
 import fingerprints
+from six import string_types
 from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
@@ -40,6 +41,7 @@ from commoncode.text import toascii
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
+
 
 # Tracing flags
 TRACE = False
@@ -62,7 +64,7 @@ if TRACE or TRACE_CANO:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 # TODO: keep the original order of statements as much as possible
 
@@ -360,9 +362,9 @@ def strip_prefixes(s, prefixes=prefixes):
     striped from the left. Normalize and strip spaces.
 
     For example:
-    >>> s = u'by AND for the Free Software Foundation'
-    >>> strip_prefixes(s)
-    u'the Free Software Foundation'
+    >>> s = 'by AND for the Free Software Foundation'
+    >>> strip_prefixes(s) == 'the Free Software Foundation'
+    True
     """
     s = s.split()
     while s and s[0].lower().strip().strip('.,') in prefixes:
@@ -382,9 +384,9 @@ def strip_suffixes(s, suffixes=suffixes):
     striped from the right. Normalize and strip spaces.
 
     For example:
-    >>> s = u'RedHat Inc corp'
-    >>> strip_suffixes(s, set(['corp']))
-    u'RedHat Inc'
+    >>> s = 'RedHat Inc corp'
+    >>> strip_suffixes(s, set(['corp'])) == 'RedHat Inc'
+    True
     """
     s = s.split()
     while s and s[-1].lower().strip().strip('.,') in suffixes:
@@ -525,7 +527,7 @@ COMMON_NAMES = {
 }
 
 # Remove everything except letters and numbers
-_keep_only_chars = re.compile('[_\W]+', re.UNICODE).sub
+_keep_only_chars = re.compile('[_\\W]+', re.UNICODE).sub # NOQA
 
 
 def keep_only_chars(s):

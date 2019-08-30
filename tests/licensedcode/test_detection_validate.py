@@ -41,9 +41,6 @@ from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import models
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 """
 Validate that each license and rule text is properly detected with exact

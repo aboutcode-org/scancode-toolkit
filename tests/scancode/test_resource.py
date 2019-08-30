@@ -32,8 +32,6 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 
-import pytest
-
 from commoncode.fileutils import parent_directory
 from commoncode.system import py2
 from commoncode.system import py3
@@ -49,7 +47,6 @@ from scancode.resource import VirtualCodebase
 
 class TestCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_walk_defaults(self):
         test_codebase = self.get_test_loc('resource/codebase')
@@ -558,7 +555,7 @@ class TestCodebase(FileBasedTesting):
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
+
 
     def test_codebase_cache_default(self):
         test_codebase = self.get_test_loc('resource/cache2')
@@ -628,7 +625,7 @@ class TestCodebaseCache(FileBasedTesting):
 
 class TestVirtualCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
+
 
     def test_virtual_codebase_walk_defaults(self):
         test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
@@ -955,7 +952,7 @@ class TestVirtualCodebase(FileBasedTesting):
 
 class TestCodebaseLowestCommonParent(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
+
 
     def test_lowest_common_parent_on_virtual_codebase(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/lcp.json')
@@ -1032,7 +1029,7 @@ class TestCodebaseLowestCommonParent(FileBasedTesting):
 
 class TestVirtualCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-    pytestmark = pytest.mark.scanpy3  # NOQA
+
 
     def test_virtual_codebase_cache_default(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
@@ -1128,8 +1125,6 @@ class TestVirtualCodebaseCreationFromCli(FileBasedTesting):
 
 class TestVirtualCodebaseCreation(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-
-    pytestmark = pytest.mark.scanpy3  # NOQA
 
     def test_VirtualCodebase_can_be_created_from_json_file(self):
         test_file = self.get_test_loc('resource/virtual_codebase/from_file.json')

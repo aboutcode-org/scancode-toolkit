@@ -29,11 +29,12 @@ from __future__ import unicode_literals
 
 import re
 
+from six import string_types
+
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
 from scancode import CommandLineOption
 from scancode import OUTPUT_FILTER_GROUP
-from commoncode import compat
 
 
 def logger_debug(*args):
@@ -51,7 +52,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 @output_filter_impl
@@ -89,8 +90,8 @@ class IgnoreCopyrights(OutputFilterPlugin):
         ignored_authors = [re.compile(r) for r in ignore_author]
 
         for resource in codebase.walk():
-            holders = set(c['value'] for c in getattr(resource,'holders', []))
-            authors = set(c['value'] for c in getattr(resource,'authors', []))
+            holders = set(c['value'] for c in getattr(resource, 'holders', []))
+            authors = set(c['value'] for c in getattr(resource, 'authors', []))
             if TRACE:
                 logger_debug('holders:', holders)
                 logger_debug('authors:', authors)

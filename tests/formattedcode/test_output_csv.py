@@ -33,14 +33,14 @@ from collections import OrderedDict
 import json
 import os
 
-import unicodecsv
 import pytest
+import unicodecsv
 
 from commoncode.testcase import FileDrivenTesting
+from formattedcode.output_csv import flatten_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
-from formattedcode.output_csv import flatten_scan
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -61,7 +61,7 @@ def load_scan(json_input):
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        with io.open(expected_file, 'wb') as reg:
+        with io.open(expected_file, 'w', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
     with io.open(expected_file, encoding='utf-8') as exp:
         expected = json.load(exp, object_pairs_hook=OrderedDict)
@@ -82,7 +82,7 @@ def check_csvs(result_file, expected_file,
     expected_fields, expected = load_csv(expected_file)
     assert expected_fields == result_fields
     # then check results line by line for more compact results
-    for exp, res in zip(sorted(expected), sorted(results)):
+    for exp, res in zip(sorted(expected , key=lambda d: d.items()), sorted(results , key=lambda d: d.items())):
         for ign in ignore_keys:
             exp.pop(ign, None)
             res.pop(ign, None)
@@ -94,10 +94,10 @@ def load_csv(location):
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value).
     """
-    with io.open(location, encoding='utf-8') as csvin:
+    with io.open(location, 'rb') as csvin:
         reader = unicodecsv.DictReader(csvin)
         fields = reader.fieldnames
-        values = sorted(reader)
+        values = sorted(reader, key=lambda d: d.items())
         return fields, values
 
 
@@ -117,6 +117,35 @@ def test_flatten_scan_minimal():
     check_json(result, expected_file)
 
 
+@pytest.mark.scanslow
+def test_can_process_live_scan_for_packages_with_root():
+    test_dir = test_env.get_test_loc('csv/packages/scan')
+    result_file = test_env.get_temp_file('csv')
+    args = ['--package', test_dir, '--csv', result_file]
+    run_scan_plain(args)
+    expected_file = test_env.get_test_loc('csv/packages/expected.csv')
+    check_csvs(result_file, expected_file)
+
+
+def test_output_can_handle_non_ascii_paths():
+    test_file = test_env.get_test_loc('unicode.json')
+    result_file = test_env.get_temp_file(extension='csv', file_name='test_csv')
+    run_scan_click(['--from-json', test_file, '--csv', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        results = res.read()
+    assert 'han/据.svg' in results
+
+
+def test_csv_minimal():
+    test_dir = test_env.get_test_loc('csv/srp')
+    result_file = test_env.get_temp_file('csv')
+    expected_file = test_env.get_test_loc('csv/srp.csv')
+    args = ['--copyright', test_dir, '--csv', result_file]
+    run_scan_click(args)
+    check_csvs(result_file, expected_file)
+
+
+@pytest.mark.scanslow
 def test_flatten_scan_full():
     test_json = test_env.get_test_loc('csv/flatten_scan/full.json')
     scan = load_scan(test_json)
@@ -133,6 +162,7 @@ def test_flatten_scan_full():
     check_json(result, expected_file)
 
 
+@pytest.mark.scanslow
 def test_flatten_scan_key_ordering():
     test_json = test_env.get_test_loc('csv/flatten_scan/key_order.json')
     scan = load_scan(test_json)
@@ -149,6 +179,7 @@ def test_flatten_scan_key_ordering():
     check_json(result, expected_file)
 
 
+@pytest.mark.scanslow
 def test_flatten_scan_with_no_keys_does_not_error_out():
     # this scan has no results at all
     test_json = test_env.get_test_loc('csv/flatten_scan/no_keys.json')
@@ -174,6 +205,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
     assert [] == result
 
 
+@pytest.mark.scanslow
 def test_flatten_scan_can_process_package_license_when_license_value_is_null():
     test_json = test_env.get_test_loc('csv/flatten_scan/package_license_value_null.json')
     scan = load_scan(test_json)
@@ -190,15 +222,7 @@ def test_flatten_scan_can_process_package_license_when_license_value_is_null():
     check_json(result, expected_file)
 
 
-def test_csv_minimal():
-    test_dir = test_env.get_test_loc('csv/srp')
-    result_file = test_env.get_temp_file('csv')
-    expected_file = test_env.get_test_loc('csv/srp.csv')
-    args = ['--copyright', test_dir, '--csv', result_file]
-    run_scan_click(args)
-    check_csvs(result_file, expected_file)
-
-
+@pytest.mark.scanslow
 def test_csv_tree():
     test_dir = test_env.get_test_loc('csv/tree/scan')
     result_file = test_env.get_temp_file('csv')
@@ -229,15 +253,6 @@ def test_can_process_live_scan_for_packages_strip_root():
 
 
 @pytest.mark.scanslow
-def test_can_process_live_scan_for_packages_with_root():
-    test_dir = test_env.get_test_loc('csv/packages/scan')
-    result_file = test_env.get_temp_file('csv')
-    args = ['--package', test_dir, '--csv', result_file]
-    run_scan_plain(args)
-    expected_file = test_env.get_test_loc('csv/packages/expected.csv')
-    check_csvs(result_file, expected_file)
-
-
 def test_output_contains_license_expression():
     test_file = test_env.get_test_loc('csv/expressions/scan.json')
     result_file = test_env.get_temp_file('csv')
@@ -247,15 +262,7 @@ def test_output_contains_license_expression():
     check_csvs(result_file, expected_file, regen=False)
 
 
-def test_output_can_handle_non_ascii_paths():
-    test_file = test_env.get_test_loc('unicode.json')
-    result_file = test_env.get_temp_file(extension='csv', file_name='test_csv')
-    run_scan_click(['--from-json', test_file, '--csv', result_file])
-    with io.open(result_file, encoding='utf-8') as res:
-        results = res.read()
-    assert 'han/据.svg' in results
-
-
+@pytest.mark.scanslow
 def test_output_handles_non_standard_data():
     test_file = test_env.get_test_loc('csv/non-standard/identified.json')
     result_file = test_env.get_temp_file('csv')

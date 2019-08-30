@@ -25,14 +25,12 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-def test_plugincode_can_be_imported():
-    import plugincode
-    from plugincode import location_provider
-    from plugincode import output_filter
-    from plugincode import output
-    from plugincode import post_scan
-    from plugincode import pre_scan
-    from plugincode import scan
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
+def test_plugincode_can_be_imported():
+    import plugincode  # NOQA
+    from plugincode import location_provider  # NOQA
+    from plugincode import output_filter  # NOQA
+    from plugincode import output  # NOQA
+    from plugincode import post_scan  # NOQA
+    from plugincode import pre_scan  # NOQA
+    from plugincode import scan  # NOQA

@@ -98,8 +98,7 @@ def haxelib_homepage_url(name, baseurl='https://lib.haxe.org/p/'):
     interface URL.
 
     For example:
-    >>> haxelib_homepage_url('format')
-    u'https://lib.haxe.org/p/format'
+    >>> assert haxelib_homepage_url('format') == u'https://lib.haxe.org/p/format'
     """
     baseurl = baseurl.rstrip('/')
     return '{baseurl}/{name}'.format(**locals())
@@ -111,8 +110,7 @@ def haxelib_download_url(name, version, baseurl='https://lib.haxe.org/p'):
     and a base registry URL.
 
     For example:
-    >>> haxelib_download_url('format', '3.4.1')
-    u'https://lib.haxe.org/p/format/3.4.1/download/'
+    >>> assert haxelib_download_url('format', '3.4.1') == u'https://lib.haxe.org/p/format/3.4.1/download/'
     """
     if name and version:
         baseurl = baseurl.rstrip('/')

@@ -34,8 +34,6 @@ from commoncode import ignore
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 class IgnoreTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -213,6 +211,5 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=True)
         assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=False)
 
-        test_dir_location = self.get_test_loc('ignore')
         assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=True)
         assert not ignore.is_ignored(test_file_location, {'asdf': 'skip'}, {}, skip_special=False)

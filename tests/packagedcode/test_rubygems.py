@@ -41,9 +41,6 @@ from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
 # this is a multiple personality package (Java  and Ruby)
@@ -69,7 +66,11 @@ class TestRubyGemspec(FileBasedTesting):
             pass
 
         if regen:
-            with open(expected_loc, 'wb') as ex:
+            if py2:
+                mode = 'wb'
+            if py3:
+                mode = 'w'
+            with open(expected_loc, mode) as ex:
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='UTF-8') as ex:
             expected = json.load(ex)
@@ -181,6 +182,3 @@ def build_tests(test_dir, clazz, prefix='test_rubygems_parse_', regen=False):
 
 build_tests(test_dir='rubygems/gem', clazz=TestRubyGemsDataDriven,
             prefix='test_get_gem_package_', regen=False)
-
-
-

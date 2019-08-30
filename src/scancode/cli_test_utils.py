@@ -35,7 +35,14 @@ import os
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 from scancode_config import scancode_root_dir
+
+
+if py2:
+    mode = 'wb'
+if py3:
+    mode = 'w'
 
 
 def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
@@ -49,7 +56,10 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
-    scmd = b'scancode' if on_linux and py2 else 'scancode'
+    if on_linux and py2:
+        scmd = b'scancode'
+    else:
+        scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
     rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
 
@@ -147,11 +157,6 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
-        if py2:
-            mode = 'wb'
-        else:
-            mode = 'w'
-
         with open(expected_file, mode) as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
@@ -250,7 +255,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
-        with open(expected_file, 'wb') as reg:
+        with open(expected_file, mode) as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     with io.open(expected_file, encoding='utf-8') as res:

@@ -28,6 +28,8 @@ from __future__ import unicode_literals
 
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -45,9 +47,6 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -1167,6 +1166,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'GPLv2 (']
         assert expected == results
 
+    @pytest.mark.scanslow
     def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
         query_location = self.get_test_loc('matched_text_spdx/query.txt')
         idx = cache.get_index()

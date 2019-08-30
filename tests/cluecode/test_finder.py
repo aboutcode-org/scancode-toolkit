@@ -31,15 +31,14 @@ import os
 import re
 from unittest.case import expectedFailure
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from commoncode import compat
 from commoncode.system import py3
 from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 def find_emails_tester(lines_or_location, with_lineno=False, unique=True):

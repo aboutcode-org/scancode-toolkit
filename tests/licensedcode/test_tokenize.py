@@ -34,6 +34,8 @@ import json
 import os
 from time import time
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
@@ -42,11 +44,15 @@ from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+if py2:
+    mode = 'wb'
+if py3:
+    mode = 'w'
+
 
 
 class TestTokenizers(FileBasedTesting):
@@ -218,8 +224,8 @@ class TestTokenizers(FileBasedTesting):
 
         expected_file = test_file + '.json'
         if regen:
-            with open(expected_file, 'wb') as exc_test:
-                json.dump(result , exc_test)
+            with open(expected_file, mode ) as exc_test:
+                json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
@@ -339,7 +345,7 @@ class TestTokenizers(FileBasedTesting):
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
 
         if regen:
-            with open(expected_file, 'wb') as ex:
+            with open(expected_file, mode ) as ex:
                 json.dump(result, ex, indent=2, separators=(',', ': '))
 
         with io.open(expected_file, encoding='utf-8') as ex:
@@ -384,7 +390,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(list(query_lines(test_file))))
 
         if regen:
-            with open(expected_file, 'wb') as exc_test:
+            with open(expected_file, mode ) as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -400,7 +406,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(list(query_lines(test_file))))
 
         if regen:
-            with open(expected_file, 'wb') as exc_test:
+            with open(expected_file, mode ) as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -419,7 +425,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(tokens))
 
         if regen:
-            with open(expected_file, 'wb') as exc_test:
+            with open(expected_file, mode ) as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -438,14 +444,13 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(tokens))
 
         if regen:
-            with open(expected_file, 'wb') as exc_test:
+            with open(expected_file, mode ) as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
 
         assert expected == result
-
 
 
 class TestNgrams(FileBasedTesting):

@@ -30,6 +30,7 @@ import string
 import re
 
 import ipaddress
+from six import string_types
 import url as urlpy
 
 from commoncode import compat
@@ -60,7 +61,7 @@ if TRACE or TRACE_URL or TRACE_EMAIL:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 """

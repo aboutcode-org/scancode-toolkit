@@ -30,8 +30,8 @@ from __future__ import unicode_literals
 from itertools import chain
 
 import attr
+from six import string_types
 
-from commoncode import compat
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -53,7 +53,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 @post_scan_impl

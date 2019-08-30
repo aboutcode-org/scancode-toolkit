@@ -146,12 +146,12 @@ def parse_person(person):
       "author": "Isaac Z. Schlueter <i@izs.me>"
 
     For example:
-    >>> parse_person('Barney Rubble <b@rubble.com>')
-    (u'Barney Rubble', u'b@rubble.com')
-    >>> parse_person('Barney Rubble')
-    (u'Barney Rubble', None)
-    >>> parse_person('<b@rubble.com>')
-    (None, u'b@rubble.com')
+    >>> p = parse_person('Barney Rubble <b@rubble.com>')
+    >>> assert p == ('Barney Rubble', 'b@rubble.com')
+    >>> p = parse_person('Barney Rubble')
+    >>> assert p == ('Barney Rubble', None)
+    >>> p = parse_person('<b@rubble.com>')
+    >>> assert p == (None, 'b@rubble.com')
     """
 
     parsed = person_parser(person)

@@ -32,11 +32,10 @@ from functools import partial
 from itertools import groupby
 
 from intbitset import intbitset
+from six import string_types
 
-from commoncode import compat
 from commoncode.dict_utils import sparsify
 from licensedcode.tokenize import ngrams
-
 
 
 """
@@ -126,7 +125,7 @@ if (TRACE or TRACE_CANDIDATES or
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 def tids_sets_intersector(qset, iset):

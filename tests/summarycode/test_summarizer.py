@@ -28,10 +28,15 @@ from __future__ import unicode_literals
 from os.path import dirname
 from os.path import join
 
+import pytest
+
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import check_jsonlines_scan
+
+
+pytestmark = pytest.mark.scanslow
 
 
 class TestScanSummary(FileDrivenTesting):
@@ -139,7 +144,6 @@ class TestScanSummary(FileDrivenTesting):
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
-
 
     def test_summary_with_packages_reports_packages_with_files(self):
         test_dir = self.get_test_loc('packages/scan')

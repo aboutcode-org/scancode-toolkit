@@ -37,8 +37,6 @@ years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')([\(\.,\-\)\s]+|$)'
 
 years = re.compile(years).findall
 
-
-
 # Various copyright/copyleft signs tm, r etc: http://en.wikipedia.org/wiki/Copyright_symbol
 # © U+00A9 COPYRIGHT SIGN
 #  decimal: 169

@@ -34,6 +34,8 @@ import unittest
 from license_expression import Licensing
 from license_expression import ExpressionError
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 
@@ -48,9 +50,6 @@ from licensedcode.match_spdx_lid import prepare_text
 from licensedcode.match_spdx_lid import strip_spdx_lid
 from licensedcode import models
 from licensedcode.query import Query
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -91,12 +90,16 @@ def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
         qry = Query(location=test_loc, idx=idx)
         results = [list(l) for l in qry.spdx_lines]
         if regen:
-            with open(expected_loc, 'wb') as ef:
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with open(expected_loc, wmode) as ef:
                 json.dump(results, ef, indent=2)
             expected = results
         else:
             with open(expected_loc, 'rb') as ef:
-                expected = json.load(ef, object_pairs_hook=OrderedDict)
+                expected = json.load(ef, encoding='utf-8', object_pairs_hook=OrderedDict)
 
         assert expected == results
 
@@ -456,7 +459,7 @@ class TestMatchSpdx(FileBasedTesting):
         dic = idx.dictionary
         licenses = cache.get_licenses_db()
         tokens = set(models.get_all_spdx_key_tokens(licenses))
-        keys =set(idx.dictionary)
+        keys = set(idx.dictionary)
         try:
             assert tokens.issubset(keys)
         except:
@@ -464,5 +467,5 @@ class TestMatchSpdx(FileBasedTesting):
                 dic[token]
 
     def test_prepare_text_with_rem(self):
-        assert ''  == prepare_text('')
-        assert 'BSD-2-Clause-Patent'  == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')
+        assert '' == prepare_text('')
+        assert 'BSD-2-Clause-Patent' == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')

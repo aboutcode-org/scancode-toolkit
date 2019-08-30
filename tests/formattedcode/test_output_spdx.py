@@ -49,13 +49,13 @@ def strip_variable_text(rdf_text):
     Return rdf_text stripped from variable parts such as rdf nodeids
     """
 
-    replace_nid = re.compile('rdf:nodeID="[^\"]*"').sub
+    replace_nid = re.compile('rdf:nodeID="[^\\"]*"').sub
     rdf_text = replace_nid('', rdf_text)
 
-    replace_creation = re.compile('<ns1:creationInfo>.*</ns1:creationInfo>', re.DOTALL).sub
+    replace_creation = re.compile('<ns1:creationInfo>.*</ns1:creationInfo>', re.DOTALL).sub  # NOQA
     rdf_text = replace_creation('', rdf_text)
 
-    replace_pcc = re.compile('<ns1:packageVerificationCode>.*</ns1:packageVerificationCode>', re.DOTALL).sub
+    replace_pcc = re.compile('<ns1:packageVerificationCode>.*</ns1:packageVerificationCode>', re.DOTALL).sub  # NOQA
     rdf_text = replace_pcc('', rdf_text)
     return rdf_text
 
@@ -86,21 +86,50 @@ def sort_nested(data):
     maptypes = OrderedDict, dict
     coltypes = seqtypes + maptypes
 
+
     if isinstance(data, maptypes):
-        new_data = OrderedDict()
-        for k, v in sorted(data.items()):
+        new_data = []
+        for k, v in data.items():
             if isinstance(v, coltypes):
                 v = sort_nested(v)
-            new_data[k] = v
-        return OrderedDict(sorted(new_data.items()))
+            new_data.append((k, v))
+        return OrderedDict(sorted(new_data, key=_sorter))
 
     elif isinstance(data, seqtypes):
         new_data = []
-        for v in sorted(data):
+        for v in data:
             if isinstance(v, coltypes):
                 v = sort_nested(v)
             new_data.append(v)
-        return sorted(new_data)
+        return sorted(new_data, key=_sorter)
+
+
+def _sorter(data):
+    """
+    Return a tree of tuples (type, items sequence) for each items in a nested
+    data structure composed of mappings and sequences. Used as a sorting key.
+    """
+    seqtypes = list, tuple
+    maptypes = OrderedDict, dict
+    coltypes = seqtypes + maptypes
+
+    if isinstance(data, maptypes):
+        new_data = []
+        for k, v in data.items():
+            if isinstance(v, coltypes):
+                v = _sorter(v)
+            new_data.append((k, v))
+        return repr(tuple(sorted(new_data)))
+
+    elif isinstance(data, seqtypes):
+        new_data = []
+        for v in data:
+            if isinstance(v, coltypes):
+                v = _sorter(v)
+            new_data.append(v)
+        return repr(tuple(sorted(new_data)))
+    else:
+        return repr(data)
 
 
 def check_rdf_scan(expected_file, result_file, regen=False):
@@ -112,7 +141,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
     result = load_and_clean_rdf(result_file)
     if regen:
         expected = result
-        with open(expected_file, 'wb') as o:
+        with io.open(expected_file, 'w', encoding='utf-8') as o:
             json.dump(result, o, indent=2)
     else:
         with io.open(expected_file, encoding='utf-8') as i:
@@ -319,7 +348,6 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
     assert 'han/据.svg' in results
 
 
-@pytest.mark.scanslow
 def test_output_spdx_tv_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')

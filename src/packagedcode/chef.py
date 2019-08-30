@@ -91,8 +91,8 @@ def chef_download_url(name, version, registry='https://supermarket.chef.io/cookb
     Return an Chef cookbook download url given a name, version, and base registry URL.
 
     For example:
-    >>> chef_download_url('seven_zip', '1.0.4')
-    u'https://supermarket.chef.io/cookbooks/seven_zip/versions/1.0.4/download'
+    >>> c = chef_download_url('seven_zip', '1.0.4')
+    >>> assert c == u'https://supermarket.chef.io/cookbooks/seven_zip/versions/1.0.4/download'
     """
     registry = registry.rstrip('/')
     return '{registry}/{name}/versions/{version}/download'.format(**locals())
@@ -103,12 +103,11 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     Return a package API data URL given a name, version and a base registry URL.
 
     For example:
-    >>> chef_api_url('seven_zip', '1.0.4')
-    u'https://supermarket.chef.io/api/v1/cookbooks/seven_zip/versions/1.0.4'
+    >>> c = chef_api_url('seven_zip', '1.0.4')
+    >>> assert c == u'https://supermarket.chef.io/api/v1/cookbooks/seven_zip/versions/1.0.4'
     """
     registry = registry.rstrip('/')
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
-
 
 
 def is_metadata_json(location):
@@ -192,7 +191,7 @@ class ChefMetadataFormatter(Formatter):
                     else:
                         dep_name = joined_line
                         requirement = None
-                    metadata[key][dep_name]=requirement
+                    metadata[key][dep_name] = requirement
                 else:
                     metadata[key] = joined_line
 
@@ -214,7 +213,7 @@ def parse(location):
             file_contents = loc.read()
         formatted_file_contents = highlight(
             file_contents, RubyLexer(), ChefMetadataFormatter())
-        package_data = json.loads(formatted_file_contents)
+        package_data = json.loads(formatted_file_contents, object_pairs_hook=OrderedDict)
         return build_package(package_data)
 
 

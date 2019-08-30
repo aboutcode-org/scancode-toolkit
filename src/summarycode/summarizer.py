@@ -31,8 +31,8 @@ from collections import Counter
 from collections import OrderedDict
 
 import attr
+from six import string_types
 
-from commoncode import compat
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -40,6 +40,7 @@ from scancode import POST_SCAN_GROUP
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
+
 
 # Tracing flags
 TRACE = False
@@ -59,7 +60,7 @@ if TRACE or TRACE_LIGHT:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 """
 top_level:
@@ -115,7 +116,7 @@ class ScanSummary(PostScanPlugin):
     """
     sort_order = 10
 
-    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
 
     options = [
         CommandLineOption(('--summary',),
@@ -138,10 +139,10 @@ class ScanSummaryWithDetails(PostScanPlugin):
     Summarize a scan at the codebase level and keep file and directory details.
     """
     # mapping of summary data at the codebase level for the whole codebase
-    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
     # store summaries at the file and directory level in this attribute when
     # keep details is True
-    resource_attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    resource_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
     sort_order = 100
 
     options = [
@@ -199,7 +200,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
     if keep_details:
         summary = root.summary
     else:
-        summary = root.extra_data.get('summary', {})
+        summary = root.extra_data.get('summary', OrderedDict())
     codebase.attributes.summary.update(summary)
 
     if TRACE: logger_debug('codebase summary:', summary)
@@ -294,7 +295,7 @@ def summarize_values(values, attribute):
     from summarycode.copyright_summary import summarize_holders
     from summarycode.copyright_summary import summarize_copyrights
 
-    value_summarizers_by_attr = dict(
+    value_summarizers_by_attr = OrderedDict(
         license_expressions=summarize_licenses,
         copyrights=summarize_copyrights,
         holders=summarize_holders,
@@ -312,7 +313,7 @@ class ScanKeyFilesSummary(PostScanPlugin):
     sort_order = 150
 
     # mapping of summary data at the codebase level for key files
-    codebase_attributes = dict(summary_of_key_files=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = OrderedDict(summary_of_key_files=attr.ib(default=attr.Factory(OrderedDict)))
 
     options = [
         CommandLineOption(('--summary-key-files',),
@@ -389,7 +390,7 @@ class ScanByFacetSummary(PostScanPlugin):
     Summarize a scan at the codebase level groupping by facets.
     """
     sort_order = 200
-    codebase_attributes = dict(summary_by_facet=attr.ib(default=attr.Factory(list)))
+    codebase_attributes = OrderedDict(summary_by_facet=attr.ib(default=attr.Factory(list)))
 
     options = [
         CommandLineOption(('--summary-by-facet',),

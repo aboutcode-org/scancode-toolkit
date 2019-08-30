@@ -42,14 +42,6 @@ from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
-
 
 """
 Data-driven tests using expectations stored in YAML files.
@@ -156,9 +148,9 @@ class LicenseTest(object):
         test_name = '{prefix}{test_file_name}'.format(**locals())
         test_name = text.python_safe_name(test_name)
         if py2 and not isinstance(test_name, bytes):
-            test_name=test_name.encode('utf-8')
+            test_name = test_name.encode('utf-8')
         if py3 and not isinstance(test_name, compat.unicode):
-            test_name=test_name.decode('utf-8')
+            test_name = test_name.decode('utf-8')
         return test_name
 
 
@@ -254,13 +246,13 @@ def make_test(license_test, regen=False):
                 ])
             if not matches:
                 failure_trace.extend(['',
-                    '======= NO MATCH ====', 
+                    '======= NO MATCH ====',
                     '======= Not Matched Query Text for:',
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
                     failure_trace.append('file://{test_data_file}'.format(**locals()))
-                
+
             # this assert will always fail and provide a detailed failure trace
             assert '\n'.join(results) == '\n'.join(failure_trace)
 

@@ -30,9 +30,6 @@ from unittest import TestCase
 
 from packagedcode.licensing import get_normalized_expression
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestLicensing(TestCase):
     def test_get_normalized_expression(self):

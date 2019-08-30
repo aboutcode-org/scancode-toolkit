@@ -89,14 +89,14 @@ def query_tokenizer(text, stopwords=STOPWORDS):
     For example::
     >>> list(query_tokenizer(''))
     []
-    >>> list(query_tokenizer('some Text with   spAces! + _ -'))
-    [u'some', u'text', u'with', u'spaces']
+    >>> x = list(query_tokenizer('some Text with   spAces! + _ -'))
+    >>> assert x == ['some', 'text', 'with', 'spaces']
 
-    >>> list(query_tokenizer('{{}some }}Text with   spAces! + _ -'))
-    [u'some', u'text', u'with', u'spaces']
+    >>> x = list(query_tokenizer('{{}some }}Text with   spAces! + _ -'))
+    >>> assert x == ['some', 'text', 'with', 'spaces']
 
-    >>> list(query_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
-    [u'hi', u'some', u'text', u'with', u'noth+', u'ing', u'junk', u'spaces']
+    >>> x = list(query_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
+    >>> assert x == ['hi', 'some', 'text', 'with', 'noth+', 'ing', 'junk', 'spaces']
 
     """
     return _query_tokenizer(text.lower(), stopwords)
@@ -182,7 +182,7 @@ def ngrams(iterable, ngram_length):
     This also works with arrays or tuples:
 
     >>> from array import array
-    >>> list(ngrams(array(b'h', [1,2,3,4,5]), 2))
+    >>> list(ngrams(array('h', [1,2,3,4,5]), 2))
     [(1, 2), (2, 3), (3, 4), (4, 5)]
 
     >>> list(ngrams(tuple([1,2,3,4,5]), 2))
@@ -207,20 +207,20 @@ def select_ngrams(ngrams, with_pos=False):
 
     For example:
     >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
-    [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
+    [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]
 
     Positions can also be included. In this case, tuple of (pos, ngram) are returned:
     >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)], with_pos=True))
-    [(0, (2, 1, 3)), (1, (1, 1, 3)), (3, (2, 6, 1)), (4, (7, 3, 4))]
+    [(0, (2, 1, 3)), (1, (1, 1, 3)), (2, (5, 1, 3)), (3, (2, 6, 1)), (4, (7, 3, 4))]
 
     This works also from a generator:
     >>> list(select_ngrams(x for x in [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
-    [(2, 1, 3), (1, 1, 3), (2, 6, 1), (7, 3, 4)]
+    [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
     last = None
     for pos, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
-        nghs = [crc32(str(ng)) for ng in ngram]
+        nghs = [crc32(str(ng).encode('ascii')) & 0xffffffff for ng in ngram]
         min_hash = min(nghs)
         if with_pos:
             ngram = (pos, ngram,)

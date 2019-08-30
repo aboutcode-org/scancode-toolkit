@@ -82,7 +82,7 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = ('metadata.json', '*setup.py','PKG-INFO', '*.whl', '*.egg')
+    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg')
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
@@ -92,7 +92,7 @@ class PythonPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        package =  parse(location)
+        package = parse(location)
         if not package:
             package = parse2(location)
         return package
@@ -154,7 +154,7 @@ def parse_pkg_info(location):
 
     with io.open(location, encoding='utf-8') as loc:
         infos = saneyaml.load(loc.read())
-    
+
     logger.error(logger)
     if not infos.get('Name'):
         return
@@ -231,7 +231,7 @@ def parse_metadata(location):
         return
 
     with open(location, 'rb') as infs:
-        infos = json.load(infs)
+        infos = json.load(infs, object_pairs_hook=OrderedDict)
 
     extensions = infos.get('extensions')
     if TRACE: logger_debug('parse_metadata: extensions:', extensions)
@@ -352,7 +352,7 @@ def parse2(location):
     is_dir = filetype.is_dir(location)
     if is_dir:
         parser = parse_unpackaged_source
-        package =  parser(location)
+        package = parser(location)
         if package:
             parse_dependencies(location, package)
             return package
@@ -367,7 +367,7 @@ def parse2(location):
         }
         for name, parser in parsers.items():
             if file_name.endswith(name):
-                package =  parser(location)
+                package = parser(location)
                 if package:
                     parent_directory = fileutils.parent_directory(location)
                     parse_dependencies(parent_directory, package)
@@ -435,13 +435,13 @@ def parse_with_pkginfo(pkginfo):
         common_data = dict(
             name=pkginfo.name,
             version=pkginfo.version,
-            description = pkginfo.description,
-            download_url = pkginfo.download_url,
-            homepage_url = pkginfo.home_page,
+            description=pkginfo.description,
+            download_url=pkginfo.download_url,
+            homepage_url=pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
         if pkginfo.license:
-            #TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
+            # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
             package.declared_license = {'license': pkginfo.license}
 
         if pkginfo.maintainer:
@@ -485,7 +485,7 @@ def parse_with_dparse(location):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
-                    requirement = requirement,
+                    requirement=requirement,
                 )
             )
         return package_dependencies
@@ -498,12 +498,12 @@ def build_package(package_data):
     info = package_data.get('info')
     if not info:
         return
-    name=info.get('name')
+    name = info.get('name')
     if not name:
         return
     short_desc = info.get('summary')
     long_desc = info.get('description')
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip() and d.strip()!='UNKNOWN']
+    descriptions = [d for d in (short_desc, long_desc) if d and d.strip() and d.strip() != 'UNKNOWN']
     description = '\n'.join(descriptions)
     common_data = dict(
         name=name,

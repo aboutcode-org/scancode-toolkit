@@ -38,21 +38,15 @@ branches all the tests run: none are skipped.
 """
 
 
-_sys_v0 = sys.version_info[0]
-PY2 = _sys_v0 == 2
-PY3 = _sys_v0 == 3
-
 
 ################################################################################
 # pytest custom markers and CLI options
 ################################################################################
-PORTED_TO_PY3 = 'scanpy3'
 SLOW_TEST = 'scanslow'
 VALIDATION_TEST = 'scanvalidate'
 
 
 def pytest_configure(config):
-    config.addinivalue_line('markers', PORTED_TO_PY3 + ': Mark a ScanCode test as supported on Python 3.')
     config.addinivalue_line('markers', SLOW_TEST + ': Mark a ScanCode test as a slow, long running test.')
     config.addinivalue_line('markers', VALIDATION_TEST + ': Mark a ScanCode test as a validation test, super slow, long running test.')
 
@@ -71,13 +65,7 @@ def pytest_addoption(parser):
         dest='force_py3',
         action='store_true',
         default=False,
-        help='Run all the scancode tests on Python 3, irrespective of their '
-             'markers. If not selected, only the tests marked as compatible '
-             'with Python 3 will run on Python 3. '
-             'Use the @pytest.mark.scanpy3 marker to mark test functions, '
-             'classes or modules that are supported on Python3. '
-             'This marker is there to help with the Python 3 port and will be '
-             'removed in the future.',
+        help='[DEPRECATED and ignored] Python 3 port is completed.',
     )
 
     group.addoption(
@@ -129,15 +117,12 @@ def pytest_addoption(parser):
 @pytest.mark.trylast
 def pytest_collection_modifyitems(config, items):
     test_suite = config.getvalue('test_suite')
-    force_py3 = config.getoption('force_py3')
     changed_only = config.getoption('changed_only')
     base_branch = config.getoption('base_branch')
     dry_run = config.getoption('dry_run')
 
     run_everything = test_suite == 'validate'
     run_slow_test = test_suite in ('all', 'validate')
-
-    is_on_py3 = PY3
 
     tests_to_run = []
     tests_to_skip = []
@@ -156,18 +141,12 @@ def pytest_collection_modifyitems(config, items):
     for item in items:
         is_validate = bool(item.get_closest_marker(VALIDATION_TEST))
         is_slow = bool(item.get_closest_marker(SLOW_TEST))
-        runs_on_py3 = bool(item.get_closest_marker(PORTED_TO_PY3))
-        run_test_on_python3 = runs_on_py3 or force_py3
 
         if is_validate and not run_everything:
             tests_to_skip.append(item)
             continue
 
         if is_slow and not run_slow_test:
-            tests_to_skip.append(item)
-            continue
-
-        if is_on_py3 and not run_test_on_python3:
             tests_to_skip.append(item)
             continue
 

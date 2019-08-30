@@ -36,8 +36,6 @@ from licensedcode.models import load_rules
 from licensedcode import match_seq
 from licensedcode_test_utils import mini_legalese  # NOQA
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

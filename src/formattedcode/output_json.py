@@ -61,7 +61,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 
@@ -118,11 +118,6 @@ class JsonPrettyOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json_pp, **kwargs):
         results = get_results(codebase, as_list=False, **kwargs)
         write_json(results, output_file=output_json_pp, pretty=True)
-
-
-def get_opened_file(output_file):
-    if isinstance(output_file, string_types()):
-        return open(output_file, mode)
 
 
 def write_json(results, output_file, pretty=False, **kwargs):

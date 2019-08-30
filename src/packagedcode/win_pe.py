@@ -31,8 +31,8 @@ from contextlib import closing
 
 from ftfy import fix_text
 import pefile
+from six import string_types
 
-from commoncode import compat
 from commoncode import text
 from typecode import contenttype
 
@@ -52,7 +52,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(
-            isinstance(a, compat.string_types) and a or repr(a) for a in args))
+            isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 """

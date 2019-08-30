@@ -39,10 +39,6 @@ This test suite runs code checks such as:
  - release archives creation
 """
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
-
 
 root_dir = dirname(dirname(dirname(__file__)))
 

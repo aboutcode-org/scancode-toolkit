@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+
 def get_resource_summary(resource, key, as_attribute=False):
     """
     Return the "summary" value as mapping for the `key` summary attribute of a
@@ -40,8 +41,8 @@ def get_resource_summary(resource, key, as_attribute=False):
     if as_attribute:
         summary = resource.summary
     else:
-        summary = resource.extra_data.get('summary', {})
-    summary = summary or {}
+        summary = resource.extra_data.get('summary', OrderedDict())
+    summary = summary or OrderedDict()
     return summary.get(key) or None
 
 
@@ -72,8 +73,9 @@ def sorted_counter(counter):
 
     def by_count_value(value_count):
         value, count = value_count
-        return -count, value
+        return -count, value or ''
 
-    summarized = [OrderedDict([('value', value), ('count', count)])
-                  for value, count in sorted(counter.items(), key=by_count_value)]
+    summarized = [
+        OrderedDict([('value', value), ('count', count)])
+        for value, count in sorted(counter.items(), key=by_count_value)]
     return summarized

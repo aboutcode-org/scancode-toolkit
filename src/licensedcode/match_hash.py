@@ -27,7 +27,8 @@ from __future__ import print_function, absolute_import
 from array import array
 from hashlib import md5
 
-from commoncode import compat
+from six import string_types
+
 from commoncode.system import py2
 from commoncode.system import py3
 from licensedcode.match import LicenseMatch
@@ -47,7 +48,7 @@ if TRACE :
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
     # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logging.basicConfig(stream=sys.stdout)

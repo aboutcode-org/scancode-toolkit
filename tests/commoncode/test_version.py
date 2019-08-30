@@ -29,8 +29,6 @@ import unittest
 
 from commoncode import version
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 class TestVersionHint(unittest.TestCase):
 

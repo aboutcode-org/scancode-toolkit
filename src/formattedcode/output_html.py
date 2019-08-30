@@ -50,6 +50,8 @@ from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
 from commoncode.system import py2
+from commoncode.system import py3
+
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -327,8 +329,14 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
 
         # write json data
         # FIXME: this should a regular JSON scan format
-        with io.open(join(target_assets_dir, 'data.js'), 'wb') as f:
-            f.write(b'data=')
+        if py2:
+            mode = 'wb'
+            prefix = b'data='
+        if py3:
+            mode = 'w'
+            prefix = u'data='
+        with io.open(join(target_assets_dir, 'data.js'), mode) as f:
+            f.write(prefix)
             simplejson.dump(results, f, iterable_as_array=True)
 
     except HtmlAppAssetCopyWarning as w:

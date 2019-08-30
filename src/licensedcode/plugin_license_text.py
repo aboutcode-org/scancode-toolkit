@@ -28,8 +28,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import attr
+from six import string_types
 
-from commoncode import compat
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -46,7 +46,7 @@ if TRACE:
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

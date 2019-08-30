@@ -37,9 +37,6 @@ from packagedcode.models import DependentPackage
 
 from packages_test_utils import PackageTester
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class TestPyPi(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -241,7 +238,7 @@ class TestPyPi(PackageTester):
         package = pypi.parse_setup_py(test_file)
         expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
-        
+
     def test_build_package(self):
         test_file = self.get_test_loc('pypi/vmock/input.json')
         expected_loc = self.get_test_loc('pypi/vmock/expected.json')
@@ -259,7 +256,7 @@ class TestPyPi(PackageTester):
             content = json.loads(json_input)
             package = pypi.build_package(content)
             self.check_package(package, expected_loc, regen=False)
-    
+
     def test_pkginfo_parse_with_unpackaged_source(self):
         test_file = self.get_test_loc('pypi')
         package = pypi.parse_unpackaged_source(test_file)
@@ -284,7 +281,7 @@ class TestPyPi(PackageTester):
         package = pypi.parse2(test_file)
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
-        
+
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)

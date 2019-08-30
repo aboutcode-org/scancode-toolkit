@@ -36,8 +36,6 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -62,7 +60,7 @@ def test_json_compact():
     check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+@pytest.mark.scanslow
 def test_scan_output_does_not_truncate_copyright_json():
     test_dir = test_env.get_test_loc('json/tree/scan/')
     result_file = test_env.get_temp_file('test.json')
@@ -71,7 +69,7 @@ def test_scan_output_does_not_truncate_copyright_json():
     check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+@pytest.mark.scanslow
 def test_scan_output_does_not_truncate_copyright_with_json_to_stdout():
     test_dir = test_env.get_test_loc('json/tree/scan/')
     result_file = test_env.get_temp_file('test.json')
@@ -81,7 +79,7 @@ def test_scan_output_does_not_truncate_copyright_with_json_to_stdout():
     check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
-pytestmark = [pytest.mark.scanpy3, pytest.mark.scanslow]
+@pytest.mark.scanslow
 def test_scan_output_for_timestamp():
     import json
 

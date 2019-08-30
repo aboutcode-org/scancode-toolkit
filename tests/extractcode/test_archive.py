@@ -30,6 +30,8 @@ from __future__ import unicode_literals
 import io
 import os
 
+import pytest
+
 import commoncode.date
 from commoncode import compat
 from commoncode import fileutils
@@ -49,9 +51,6 @@ from extractcode import archive
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 """
@@ -2335,7 +2334,11 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         expected_file = test_file + '_' + expected_suffix + '_' + os_suffix + '.expected'
         import json
         if regen:
-            with open(expected_file, 'wb') as ef:
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with open(expected_file, wmode) as ef:
                 ef.write(json.dumps(extracted, indent=2))
 
         expected = json.loads(open(expected_file).read())
@@ -2558,7 +2561,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArch
 
     if py2:
         # The results are not correct but not a problem: we use libarchive for these
-        @pytest.mark.xfail    
+        @pytest.mark.xfail
         def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
             self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2612,6 +2615,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArch
 
 
 class TestZipSlip(BaseArchiveTestCase):
+    pytestmark = pytest.mark.scanslow
 
     def test_extract_zipslip_zip_posix(self):
         test_file = self.get_test_loc('archive/zipslip/zip-slip.zip')

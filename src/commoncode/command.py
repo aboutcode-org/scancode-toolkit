@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import ctypes
+import io
 import os as _os_module
 from os.path import abspath
 from os.path import exists
@@ -48,6 +49,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 
 
@@ -104,10 +106,14 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
     # temp files for stderr and stdout
     tmp_dir = get_temp_dir(prefix='cmd-')
 
-    stdout = b'stdout' if on_linux and py2 else 'stdout'
-    sop = join(tmp_dir, stdout)
+    if on_linux and py2:
+        stdout = b'stdout'
+        stderr = b'stderr'
+    else:
+        stdout = 'stdout'
+        stderr = 'stderr'
 
-    stderr = b'stderr' if on_linux and py2 else 'stderr'
+    sop = join(tmp_dir, stdout)
     sep = join(tmp_dir, stderr)
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
@@ -122,9 +128,14 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     proc = None
     rc = 100
-    write_mode = 'wb' if py2 else 'w'
+
+    if py2:
+        okwargs = dict(mode='wb')
+    if py3:
+        okwargs = dict(mode='w', encoding='utf-8')
+
     try:
-        with open(sop, write_mode) as stdout, open(sep, write_mode) as stderr:
+        with io.open(sop, **okwargs) as stdout, io.open(sep, **okwargs) as stderr:
             popen_args = dict(
                 cwd=cwd,
                 env=env,

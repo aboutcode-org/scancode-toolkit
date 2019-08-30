@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 import io
 import json
 import os
@@ -33,6 +34,7 @@ import re
 import unicodedata
 
 import chardet
+from six import string_types
 
 from commoncode import compat
 from commoncode.system import on_linux
@@ -67,7 +69,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 def numbered_text_lines(location, demarkup=False, plain_text=False):
@@ -90,7 +92,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if not location:
         return iter([])
 
-    if not isinstance(location, compat.string_types):
+    if not isinstance(location, string_types):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         if TRACE:
@@ -235,7 +237,7 @@ def js_map_sources_lines(location):
     We care only about the presence of these tags for detection: version, sources, sourcesContent.
     """
     with io.open(location, encoding='utf-8') as jsm:
-        content = json.load(jsm)
+        content = json.load(jsm, object_pairs_hook=OrderedDict)
         sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():

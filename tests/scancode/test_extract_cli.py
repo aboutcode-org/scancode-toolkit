@@ -41,9 +41,6 @@ from commoncode.system import on_windows
 from commoncode.system import py2
 from scancode import extract_cli
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

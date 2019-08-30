@@ -28,6 +28,8 @@ from __future__ import unicode_literals
 
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from licensedcode import index
 from licensedcode import match_seq
@@ -36,9 +38,6 @@ from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese  # NOQA
-
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
 
 
 def MiniLicenseIndex(*args, **kwargs):
@@ -205,6 +204,7 @@ class TestIndexing(IndexTesting):
         except AssertionError as e:
             assert u'Duplicate rules' in str(e)
 
+    @pytest.mark.scanslow
     def test_index_does_not_fail_on_rules_with_similar_normalized_names(self):
         rule_dir = self.get_test_loc('index/similar_names/rules')
         lics_dir = self.get_test_loc('index/similar_names/licenses')

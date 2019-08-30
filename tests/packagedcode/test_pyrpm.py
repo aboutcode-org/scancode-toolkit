@@ -36,9 +36,6 @@ import os
 from commoncode.testcase import FileBasedTesting
 from packagedcode import pyrpm
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
 
 class RPMTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

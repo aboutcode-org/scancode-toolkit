@@ -31,6 +31,7 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+from commoncode.system import py2
 from commoncode.system import py3
 
 from licensedcode import cache
@@ -41,13 +42,12 @@ from licensedcode.models import Rule
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-import pytest
-pytestmark = pytest.mark.scanpy3  # NOQA
-
-
 def check_json(expected, results, regen=False):
     if regen:
-        mode = 'w' if py3 else 'wb'
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
         with open(expected, mode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
@@ -471,4 +471,4 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/similar_names')
         rules = list(models.load_rules(rule_dir))
         result = [' '.join(list(r.tokens())[-4:]) for r in  rules]
-        assert not any([r=='rules proprietary 10 rule' for r in result])
+        assert not any([r == 'rules proprietary 10 rule' for r in result])

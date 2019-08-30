@@ -27,21 +27,27 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+
 import click
 click.disable_unicode_literals_warning = True
+import pytest
 
 from commoncode import compat
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
-
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+
+
+pytestmark = pytest.mark.scanslow
+
 
 """
 Data-driven Score test utilities.
 """
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -66,8 +72,8 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
         run_scan_click(args)
         run_scan_click(args)
         check_json_scan(
-            test_env.get_test_loc(expected_file), 
-            result_file, 
+            test_env.get_test_loc(expected_file),
+            result_file,
             remove_file_date=True,
             regen=regen)
 

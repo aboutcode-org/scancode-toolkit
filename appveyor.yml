@@ -1,8 +1,7 @@
 environment:
     matrix:
-        - TEST_SUITE: "py.test -vvs --reruns 3 -n2 --ignore=tests/scancode --ignore=tests/licensedcode/test_zzzz_cache.py"
+        - TEST_SUITE: "py.test -vvs --reruns 3 -n2 --ignore=tests/scancode"
         - TEST_SUITE: "py.test -vvs --reruns 3     tests/scancode"
-        - TEST_SUITE: "py.test -vvs --reruns 3     tests/licensedcode/test_zzzz_cache.py"
 
 install:
     - configure

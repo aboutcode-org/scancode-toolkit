@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+import saneyaml
+from six import string_types
 import unicodecsv
 
 from commoncode import compat
@@ -37,7 +39,6 @@ from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
-from commoncode.compat import string_types
 
 
 # Tracing flags
@@ -57,7 +58,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 
@@ -164,6 +165,8 @@ def flatten_scan(scan, headers):
                         if mrk in ('match_coverage', 'rule_relevance'):
                             # normalize the string representation of this number
                             mrv = '{:.2f}'.format(mrv)
+                        else:
+                            mrv = pretty(mrv)
                         mrk = 'matched_rule__' + mrk
                         lic[mrk] = mrv
                     continue
@@ -220,6 +223,25 @@ def flatten_scan(scan, headers):
             flat = flatten_package(package, path)
             collect_keys(flat, 'package')
             yield flat
+
+
+def pretty(data):
+    """
+    Return a unicode text pretty representation of data (as YAML or else) if
+    data is a sequence or mapping or the data as-is otherwise
+    """
+    if not data:
+        return None
+    seqtypes = list, tuple
+    maptypes = OrderedDict, dict
+    coltypes = seqtypes + maptypes
+    if isinstance(data, seqtypes):
+        if len(data) ==1 and isinstance(data[0], string_types):
+            return data[0].strip()
+    if isinstance(data, coltypes):
+        return saneyaml.dump(
+            data, indent=2, encoding='utf-8').decode('utf-8').strip()
+    return data
 
 
 def get_package_columns(_columns=set()):
@@ -299,7 +321,7 @@ def flatten_package(_package, path, prefix='package__'):
                     if isinstance(component_val, list):
                         component_val = '\n'.join(component_val)
 
-                    if not isinstance(component_val, string_types):
+                    if not isinstance(component_val, compat.unicode):
                         component_val = repr(component_val)
 
                     existing = pack.get(component_new_key) or []
@@ -317,11 +339,11 @@ def flatten_package(_package, path, prefix='package__'):
 
         pack[nk] = ''
 
-        if isinstance(val, compat.string_types):
+        if isinstance(val, compat.unicode):
             pack[nk] = val
         else:
             # Use repr if not a string
             if val:
-                pack[nk] = repr(val)
+                pack[nk] = pretty(val)
 
     return pack

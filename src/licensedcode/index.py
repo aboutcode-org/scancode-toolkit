@@ -47,8 +47,8 @@ except ImportError:
     pass
 
 from intbitset import intbitset
+from six import string_types
 
-from commoncode import compat
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode import SMALL_RULE
@@ -99,7 +99,7 @@ if (TRACE or TRACE_NEGATIVE
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, compat.string_types) and a or repr(a)
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a)
                                      for a in args))
 
 
