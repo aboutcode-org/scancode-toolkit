@@ -49,6 +49,8 @@ setup(
     entry_points={
         'scancode_scan': [
             'scancode-lkmclue = lkmclue:LKMClueScanner',
+            'scancode-elf = elf:ELFScanner',
+
         ],
     }
 
