@@ -2289,6 +2289,7 @@ class TestCbz(BaseArchiveTestCase):
 
 class TestLzip(BaseArchiveTestCase):
 
+    pytestmark = pytest.mark.skipif(on_windows, reason='FIXME: lzip does not work on Windows')
     def test_extract_tarlzip_basic(self):
         test_file = self.get_test_loc('archive/lzip/sample.tar.lz')
         test_dir = self.get_temp_dir()
