@@ -204,6 +204,27 @@ jobs:
             displayName: 'Build installable releases'
 
 
+########################################################################
+# RELEASE on 3.6
+########################################################################
+
+    - job: Build_release_archive
+      pool:
+          vmImage: ubuntu-16.04
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '3.6'
+            displayName: 'Install Python 3.6'
+
+          - script: ./etc/release/release.sh
+            displayName: 'Build installable releases'
+
+
+
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.6
 ################################################################################
