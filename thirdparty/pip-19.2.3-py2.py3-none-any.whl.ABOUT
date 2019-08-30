@@ -1,0 +1,16 @@
+about_resource: pip-19.2.3-py2.py3-none-any.whl
+name: pip
+version: '19.2.3'
+download_url: https://files.pythonhosted.org/packages/30/db/9e38760b32e3e7f40cce46dd5fb107b8c73840df38f0046d8e6514e675a1/pip-19.2.3-py2.py3-none-any.whl#sha256=340a0ba40fdeb16413914c0fcd8e0b4ebb0bf39a900ec80e11c05d836c05103f
+description: A tool for installing and managing Python packages.
+homepage_url: http://www.pip-installer.org
+license_expression: mit AND bsd-new AND lgpl-2.1
+copyright: Copyright (c) 2008-2016 The pip developers (see AUTHORS.txt file)
+notice_url: https://github.com/pypa/pip/blob/master/LICENSE.txt
+redistribute: yes
+attribute: yes
+track_changes: yes
+owner: The pip developers
+owner_url: http://www.pip-installer.org/en/latest/
+checksum_md5: 22874c2949cbaac15a778176c2f0f546
+checksum_sha1: faa853d8d86fdfe4bb3df61e6a93433ca850d09a

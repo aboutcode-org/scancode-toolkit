@@ -1,0 +1,17 @@
+about_resource: wheel-0.33.6-py2.py3-none-any.whl
+name: Wheel
+version: 0.33.6
+download_url: https://files.pythonhosted.org/packages/00/83/b4a77d044e78ad1a45610eb88f745be2fd2c6d658f9798a15e384b7d57c9/wheel-0.33.6-py2.py3-none-any.whl#sha256=f4da1763d3becf2e2cd92a14a7c920f0f00eca30fdde9ea992c836685b9faf28
+description: |
+  A built-package format for Python. A wheel is a ZIP-format archive with a specially formatted filename and the .whl extension. It is designed to contain all the files for a PEP 376 compatible install in a way that is very close to the on-disk format. Many packages will be properly installed with only the "Unpack" step (simply extracting the file onto sys.path), and the unpacked archive preserves enough information to "Spread" (copy data and scripts to their final locations) at any later time.
+
+  The wheel project provides a bdist_wheel command for setuptools (requires setuptools >= 0.8.0). Wheel files can be installed with a newer pip from https://github.com/pypa/pip or with wheel's own command line utility.
+homepage_url: https://bitbucket.org/pypa/wheel
+license_expression: mit
+copyright: copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and contributors.
+attribute: yes
+owner: Python Packaging Authority
+owner_url: https://www.pypa.io/en/latest/
+contact: distutils-sig@python.org
+checksum_md5: dbe2600c72fb2b8c9b2904ce4925d79e
+checksum_sha1: c3ffe2b7a0042db2e769f084ade2810a4684bbcb
