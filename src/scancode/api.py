@@ -160,7 +160,7 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0,
-                 include_text=False, include_text_diagnostics=False,
+                 include_text=False, license_text_diagnostics=False,
                  license_url_template=DEJACODE_LICENSE_URL,
                  deadline=sys.maxsize, **kwargs):
     """
@@ -192,8 +192,8 @@ def get_licenses(location, min_score=0,
         matched_text = None
         # TODO: handle whole lines with the case of very long lines
         if include_text:
-            if include_text_diagnostics:
-                matched_text = match.matched_text(whole_lines=True)
+            if license_text_diagnostics:
+                matched_text = match.matched_text(whole_lines=False)
             else:
                 highlight_not_matched = highlight_matched = u'%s'
                 matched_text = match.matched_text(

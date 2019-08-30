@@ -1,0 +1,182 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--license": true,
+        "--license-text": true,
+        "--license-text-diagnostics": true,
+        "--strip-root": true,
+        "--verbose": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "1-spdx-id",
+            "rule_length": 10,
+            "matched_length": 10,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+        },
+        {
+          "key": "linux-syscall-exception-gpl",
+          "score": 100.0,
+          "name": "Linux Syscall Exception to GPL",
+          "short_name": "Linux Syscall Exception to GPL",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "Linux Foundation",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:linux-syscall-exception-gpl",
+          "spdx_license_key": "Linux-syscall-note",
+          "spdx_url": "https://spdx.org/licenses/Linux-syscall-note",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "1-spdx-id",
+            "rule_length": 10,
+            "matched_length": 10,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+        },
+        {
+          "key": "linux-openib",
+          "score": 100.0,
+          "name": "Linux-OpenIB",
+          "short_name": "Linux-OpenIB",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Linux Foundation",
+          "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
+          "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:linux-openib",
+          "spdx_license_key": "Linux-OpenIB",
+          "spdx_url": "https://spdx.org/licenses/Linux-OpenIB",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "1-spdx-id",
+            "rule_length": 10,
+            "matched_length": 10,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "tocbot.js",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "unlicense",
+          "score": 100.0,
+          "name": "Unlicense",
+          "short_name": "Unlicense",
+          "category": "Public Domain",
+          "is_exception": false,
+          "owner": "Unlicense",
+          "homepage_url": "http://unlicense.org/",
+          "text_url": "http://unlicense.org/",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unlicense",
+          "spdx_license_key": "Unlicense",
+          "spdx_url": "https://spdx.org/licenses/Unlicense",
+          "start_line": 89,
+          "end_line": 89,
+          "matched_rule": {
+            "identifier": "unlicense.LICENSE",
+            "license_expression": "unlicense",
+            "licenses": [
+              "unlicense"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 198,
+            "matched_length": 198,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "This is free and unencumbered software released into the public domain.  *   * Anyone is free to copy, modify, publish, use, compile, sell, or  * distribute this software, either in source code form or as a compiled  * binary, for any purpose, commercial or non-commercial, and by any  * means.  *   * In jurisdictions that recognize copyright laws, the author or authors  * of this software dedicate any and all copyright interest in the  * software to the public domain. We make this dedication for the benefit  * of the public at large and to the detriment of our heirs and  * successors. We intend this dedication to be an overt act of  * relinquishment in perpetuity of all present and future rights to this  * software under copyright law.  *   * THE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND,  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  * OTHER DEALINGS IN THE SOFTWARE.  *   * For more information, please refer to <http://unlicense.org>  *   */  /*"
+        }
+      ],
+      "license_expressions": [
+        "unlicense"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

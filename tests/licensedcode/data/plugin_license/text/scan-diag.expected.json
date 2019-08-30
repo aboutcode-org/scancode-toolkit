@@ -15,7 +15,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "files_count": 1
+        "files_count": 2
       }
     }
   ],
@@ -57,7 +57,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-syscall-exception-gpl",
@@ -92,7 +92,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-openib",
@@ -127,11 +127,54 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         }
       ],
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "short-license",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "fsf-ap",
+          "score": 91.43,
+          "name": "FSF All Permissive License",
+          "short_name": "FSF All Permissive License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:fsf-ap",
+          "spdx_license_key": "FSFAP",
+          "spdx_url": "https://spdx.org/licenses/FSFAP",
+          "start_line": 1,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "fsf-ap.LICENSE",
+            "license_expression": "fsf-ap",
+            "licenses": [
+              "fsf-ap"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 35,
+            "matched_length": 32,
+            "match_coverage": 91.43,
+            "rule_relevance": 100
+          },
+          "matched_text": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
+        }
+      ],
+      "license_expressions": [
+        "fsf-ap"
       ],
       "scan_errors": []
     }
