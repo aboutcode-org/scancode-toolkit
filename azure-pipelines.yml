@@ -1,5 +1,4 @@
 
-
 jobs:
 
 ################################################################################
@@ -15,54 +14,36 @@ jobs:
               misc: |
                 bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
                   --ignore=tests/scancode \
-                  --ignore=tests/packagedcode \
-                  --ignore=tests/plugincode \
-                  --ignore=tests/extractcode \
                   --ignore=tests/cluecode \
                   --ignore=tests/formattedcode \
                   --ignore=tests/licensedcode
 
-              scancode: |
-                bin/py.test -vvs --reruns=3 --test-suite=all \
-                 tests/scancode
+              scancode: bin/py.test --reruns=3 -vvs --test-suite=all tests/scancode
 
-              extract_packaged_plugincode: |
-                bin/py.test -vvs --reruns=3 --test-suite=all \
-                 tests/packagedcode tests/plugincode tests/extractcode
+              cluecode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/cluecode
 
-              cluecode: bin/py.test -n 3 -vvs --test-suite=all tests/cluecode
+              summarycode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/summarycode
 
-              summarycode: bin/py.test -n 3 -vvs tests/summarycode
-
-              formattedcode: bin/py.test -n 3 -vvs --test-suite=all tests/formattedcode
+              formattedcode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/formattedcode
 
               license_base: |
-                bin/py.test -n 3 -vvs --test-suite=all \
-                  tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py \
-                  --ignore=tests/licensedcode/test_detection_datadriven.py
+                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+                  --ignore=tests/licensedcode/test_zzzz_cache.py \
+                  --ignore=tests/licensedcode/test_detection_datadriven.py \
+                  tests/licensedcode
 
               license_main: |
-                bin/py.test -n 3 -vvs --test-suite=all \
+                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven.py \
                   -k TestLicenseDataDriven
 
-              license_retro_spdx: |
-                bin/py.test -n 3 -vvs --test-suite=all \
+              license_retro_spdx_slic: |
+                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven.py \
-                  -k "TestLicenseRetrographyDataDriven or TestLicenseSpdxDataDriven"
-
-              license_tools_slic: |
-                bin/py.test -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven.py \
-                  -k "TestLicenseToolsDataDriven or TestSlicDataDriven"
-
-              license_foss_deb: |
-                bin/py.test -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven.py \
-                  -k "TestFossLicDataDriven or TestDebLicCheckTestsDataDriven"
+                  -k "TestLicenseRetrographyDataDriven or TestLicenseSpdxDataDriven or TestLicenseToolsDataDriven or TestSlicDataDriven or TestFossLicDataDriven or TestDebLicCheckTestsDataDriven"
 
               license_cache: |
-                bin/py.test -n 3 --reruns=3 -vvs --test-suite=all \
+                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py
 
     - template: etc/ci/azure-win.yml
@@ -109,9 +90,8 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
@@ -120,21 +100,19 @@ jobs:
           python_path: python2.7
           python_version: '2.7'
           install_python: sudo apt-get install -y python python-dev
-          test_suite_label: base
-          test_suite: |
-            bin/py.test  -n 3 -vvs
+          test_suite_label: all
+          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: centos7_py27
-#          container: centos:7
-#          python_path: python2.7
-#          python_version: '2.7'
-#          install_python: sudo yum install -y python python27-devel
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
-#
+    - template: etc/ci/azure-container-rpm.yml
+      parameters:
+          job_name: centos7_py27
+          container: centos:7
+          python_path: python2.7
+          python_version: '2.7'
+          install_python: sudo yum install -y python python27-devel
+          test_suite_label: all
+          test_suite: bin/py.test -n 2 -vvs --reruns=3
+
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: manylinux1_py27
@@ -143,9 +121,8 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -155,9 +132,8 @@ jobs:
 #          python_version: '2.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -169,9 +145,8 @@ jobs:
 #          install_python: |
 #              set -e -x
 #              sudo dnf install -y python2 python2-devel
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-deb.yml
 #      parameters:
@@ -180,9 +155,8 @@ jobs:
 #          python_path: python2.7
 #          python_version: '2.7'
 #          install_python: sudo apt-get install -y python python-dev
-#          test_suite_label: base
-#          test_suite: |
-#            bin/py.test  -n 3 -vvs
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
 ########################################################################
 # RELEASE on 2.7
@@ -224,7 +198,6 @@ jobs:
             displayName: 'Build installable releases'
 
 
-
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.6
 ################################################################################
@@ -235,8 +208,7 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -244,8 +216,7 @@ jobs:
           image_name: macos-10.13
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -253,8 +224,7 @@ jobs:
           image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
+              all: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -274,19 +244,19 @@ jobs:
 # These jobs are using containers and their own Python 3.6
 ################################################################################
 
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: ubuntu16_py36
-#          container: ubuntu:xenial
-#          python_path: python3.6
-#          python_version: '3.6'
-#          install_python: |
-#             sudo apt-get -y install software-properties-common
-#             sudo add-apt-repository -y ppa:deadsnakes
-#             sudo apt-get -y update
-#             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+    - template: etc/ci/azure-container-deb.yml
+      parameters:
+          job_name: ubuntu16_py36
+          container: ubuntu:xenial
+          python_path: python3.6
+          python_version: '3.6'
+          install_python: |
+             sudo apt-get -y install software-properties-common
+             sudo add-apt-repository -y ppa:deadsnakes
+             sudo apt-get -y update
+             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
+          test_suite_label: all
+          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
@@ -295,10 +265,8 @@ jobs:
           python_path: python3.6
           python_version: '3.6'
           install_python: sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: basic tests
-          test_suite: |
-            bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-            bin/py.test -vvs --reruns=3 tests/scancode
+          test_suite_label: all
+          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -310,8 +278,8 @@ jobs:
 #              set -e -x
 #              sudo yum install -y epel-release
 #              sudo yum install -y python36 python36-devel python36-virtualenv
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -321,8 +289,8 @@ jobs:
 #          python_version: '3.6'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -332,8 +300,8 @@ jobs:
 #          python_version: '3.6'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 
 ################################################################################
@@ -350,8 +318,8 @@ jobs:
 #          install_python: |
 #              set -e -x
 #              sudo dnf install -y python3 python3-devel python3-virtualenv
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 #
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -361,8 +329,8 @@ jobs:
 #          python_version: '3.7'
 #          install_packages: echo "No extra packages for now"
 #          install_python: echo "Python is pre-installed"
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
 
 ################################################################################
@@ -392,8 +360,8 @@ jobs:
 #            ./configure --enable-optimizations
 #            make -j8
 #            sudo make altinstall
-#          test_suite_label: commoncode
-#          test_suite: bin/pytest -vvs tests/commoncode
+#          test_suite_label: basic tests
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
 
 ################################################################################
