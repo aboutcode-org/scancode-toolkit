@@ -31,9 +31,14 @@ from __future__ import unicode_literals
 import io
 import os
 
+import pytest
+
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
+
+
+pytestmark = pytest.mark.scanslow
 
 
 test_env = FileDrivenTesting()
@@ -55,9 +60,9 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', force_text=False):
             op.process_codebase(cb, out)
     else:
         if py2:
-            mode ='wb'
+            mode = 'wb'
         if py3:
-            mode ='w'
+            mode = 'w'
         with io.open(result_file, mode) as out:
             op.process_codebase(cb, out)
 

@@ -27,17 +27,22 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+
 import click
 click.disable_unicode_literals_warning = True
+import pytest
 
 from commoncode import compat
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
-
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+
+
+pytestmark = pytest.mark.scanslow
+
 
 """
 Data-driven Score test utilities.

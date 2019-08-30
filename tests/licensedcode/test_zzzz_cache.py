@@ -28,6 +28,8 @@ from __future__ import unicode_literals
 
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
 from commoncode import hash
@@ -37,6 +39,8 @@ from licensedcode.cache import load_index
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+pytestmark = pytest.mark.scanslow
 
 
 class LicenseIndexCacheTest(FileBasedTesting):

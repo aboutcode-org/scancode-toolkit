@@ -32,11 +32,12 @@ import io
 import os
 import re
 
+import pytest
+
 from scancode_config import __version__
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
-from commoncode.system import py2
 from formattedcode.output_html import HtmlOutput
 from scancode.cli_test_utils import run_scan_click
 from scancode.resource import VirtualCodebase
@@ -46,6 +47,7 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
+@pytest.mark.scanslow
 def test_paths_are_posix_paths_in_html_app_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
@@ -59,6 +61,7 @@ def test_paths_are_posix_paths_in_html_app_format_output():
     assert __version__ in results
 
 
+@pytest.mark.scanslow
 def test_paths_are_posix_in_html_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file('html')
@@ -68,6 +71,7 @@ def test_paths_are_posix_in_html_format_output():
     assert __version__ in results
 
 
+@pytest.mark.scanslow
 def test_scanned_path_is_present_in_html_app_output():
     test_dir = test_env.get_test_loc('templated/html_app')
     result_file = test_env.get_temp_file('test.html')
@@ -80,6 +84,7 @@ def test_scanned_path_is_present_in_html_app_output():
     assert __version__ in results
 
 
+@pytest.mark.scanslow
 def test_scan_html_output_does_not_truncate_copyright_html():
     test_dir = test_env.get_test_loc('templated/tree/scan/')
     result_file = test_env.get_temp_file('test.html')
@@ -127,6 +132,7 @@ def test_custom_format_with_custom_filename_fails_for_directory():
     assert 'Invalid value for "--custom-template": Path' in result.output
 
 
+@pytest.mark.scanslow
 def test_custom_format_with_custom_filename():
     test_dir = test_env.get_test_loc('templated/simple')
     custom_template = test_env.get_test_loc('templated/sample-template.html')
@@ -138,6 +144,7 @@ def test_custom_format_with_custom_filename():
     assert __version__ in results
 
 
+@pytest.mark.scanslow
 def test_HtmlOutput_process_codebase_does_not_fail_with_non_ascii_scanned_paths_and_file_opened_in_text_mode_with_utf():
     test_scan = '''{
           "scancode_notice": "Generated with ScanCode...",
@@ -181,6 +188,7 @@ def test_html_output_can_handle_non_ascii_paths():
     assert '<td>han/据.svg</td>' in results
 
 
+@pytest.mark.scanslow
 def test_custom_html_output_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('unicode.json')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')

@@ -28,6 +28,8 @@ from __future__ import unicode_literals
 
 import os
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -1164,6 +1166,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'GPLv2 (']
         assert expected == results
 
+    @pytest.mark.scanslow
     def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
         query_location = self.get_test_loc('matched_text_spdx/query.txt')
         idx = cache.get_index()
