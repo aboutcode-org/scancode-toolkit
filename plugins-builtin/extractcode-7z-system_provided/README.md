@@ -1,1 +1,1 @@
-A ScanCode plugin debian clubbed plugin to provide paths to  binary libraries and utilities and their locations.
+A ScanCode debian package clubbed plugin to provide paths to  binary libraries,utilities and their locations.

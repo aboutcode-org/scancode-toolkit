@@ -13,7 +13,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode path provider plugin to provide a prebuilt native sevenzip binary.'''
+desc = '''A ScanCode path provider plugin to provide system package provided sevenzip binary.'''
 
 setup(
     name='extractcode-7z',
