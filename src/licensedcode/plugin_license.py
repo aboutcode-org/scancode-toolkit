@@ -89,9 +89,9 @@ class LicenseScanner(ScanPlugin):
 
         CommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
-            required_options=['license, license_text'],
+            required_options=['license_text'],
             help='In the matched license text, include diagnostic highlights '
-                 'surrounding with square brackets [] parts that are not matched.',
+                 'surrounding with square brackets [] words that are not matched.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
@@ -102,6 +102,8 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-diag',),
+            # not yet supported in Click 6.7 but added in CommandLineOption
+            hidden=True,
             is_flag=True,
             required_options=['license'],
             help='(DEPRECATED: this is always included by default now). '
