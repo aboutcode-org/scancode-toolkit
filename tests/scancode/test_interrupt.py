@@ -66,7 +66,7 @@ class TestInterrupt(FileBasedTesting):
                 sleep(i)
             return 'OK'
 
-        results = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
+        results = interrupt.interruptible(some_long_function, args=(20,), timeout=0.1)
         expected = 'ERROR: Processing interrupted: timeout after 0 seconds.', None
         assert expected == results
 

@@ -221,7 +221,7 @@ def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
     # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001', '--verbose',
+    args = ['-e', '--test-mode', '--timeout', '0.01', '--verbose',
             test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     assert 'ERROR: Processing interrupted: timeout' in result.output
@@ -235,7 +235,7 @@ def test_failing_scan_return_proper_exit_code():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
     # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001',
+    args = ['-e', '--test-mode', '--timeout', '0.1',
             test_file, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
@@ -243,7 +243,7 @@ def test_failing_scan_return_proper_exit_code():
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
-    args = ['--copyright', '--timeout', '0.000001',
+    args = ['--copyright', '--timeout', '0.1',
             test_file, '--html', result_file]
     run_scan_click(args, expected_rc=1)
 
@@ -263,7 +263,7 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
-    args = ['--copyright', '--timeout', '0.000001',
+    args = ['--copyright', '--timeout', '0.1',
             test_file, '--html-app', result_file]
     run_scan_click(args, expected_rc=1)
 
@@ -325,7 +325,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
     # we use a short timeout and a --test-mode --email scan to simulate an error
     args = ['--email', '--processes', '2',
-            '--timeout', '0.00000001',
+            '--timeout', '0.1',
             # this will guarantee that an email scan takes at least one second
             '--test-mode',
             '--strip-root', test_dir, '--json', result_file]
@@ -809,7 +809,7 @@ def test_check_error_count():
     test_dir = test_env.get_test_loc('failing')
     result_file = test_env.get_temp_file('json')
     # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001',
+    args = ['-e', '--test-mode', '--timeout', '0.1',
             test_dir, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     output = result.output

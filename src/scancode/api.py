@@ -113,7 +113,7 @@ def get_emails(location, threshold=50, test_mode=False, **kwargs):
     If test_mode is True, the scan will be slow for testing purpose and pause
     for one second.
     """
-    if test_mode:
+    if True:
         import time
         time.sleep(1)
 
