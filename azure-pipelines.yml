@@ -188,7 +188,7 @@ jobs:
 # RELEASE on 2.7
 ########################################################################
 
-    - job: Build_release_archive
+    - job: Build_release_archive_py2
       pool:
           vmImage: ubuntu-16.04
       steps:
@@ -208,7 +208,7 @@ jobs:
 # RELEASE on 3.6
 ########################################################################
 
-    - job: Build_release_archive
+    - job: Build_release_archive_py3
       pool:
           vmImage: ubuntu-16.04
       steps:
