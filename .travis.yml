@@ -12,10 +12,8 @@ env:
     - PYTESTCOVR="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml"
     - PYTESTBASE="bin/py.test -vvs --reruns 3"
   matrix:
-    - TEST_SUITE="$PYTESTCOVR -n2 --ignore=tests/scancode --ignore=tests/licensedcode/test_zzzz_cache.py"
-    - TEST_SUITE="$PYTESTCOVR tests/licensedcode/test_zzzz_cache.py"
+    - TEST_SUITE="$PYTESTCOVR -n2 --reruns 3 --ignore=tests/scancode
     - TEST_SUITE="$PYTESTCOVR tests/scancode"
-    - TEST_SUITE="./etc/release/release.sh"
 
 
 # Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
@@ -36,17 +34,12 @@ env:
 matrix:
   include:
     - os: osx
-      env: TEST_SUITE="$PYTESTBASE -n2 --ignore=tests/scancode --ignore=tests/licensedcode/test_zzzz_cache.py"
+      env: TEST_SUITE="$PYTESTBASE -n2 --reruns 3 --ignore=tests/scancode"
       language: generic
       python:
       osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTESTBASE tests/scancode"
-      language: generic
-      python:
-      osx_image: xcode7.3
-    - os: osx
-      env: TEST_SUITE="$PYTESTBASE tests/licensedcode/test_zzzz_cache.py"
+      env: TEST_SUITE="$PYTESTBASE --reruns 3 tests/scancode"
       language: generic
       python:
       osx_image: xcode7.3
