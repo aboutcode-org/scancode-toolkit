@@ -1,0 +1,4 @@
+license_expression: gpl-3.0-plus WITH font-exception-gpl
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
