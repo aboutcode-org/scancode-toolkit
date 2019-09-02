@@ -16,3 +16,4 @@ ignorable_urls:
     - http://www.openldap.org/
 ignorable_emails:
     - foundation@openldap.org
+minimum_coverage: 70

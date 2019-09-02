@@ -15,3 +15,4 @@ ignorable_copyrights:
     - Copyright 1998-1999, The OpenLDAP Foundation
 ignorable_holders:
     - The OpenLDAP Foundation
+minimum_coverage: 70

@@ -4,3 +4,4 @@ ignorable_copyrights:
     - Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA
 ignorable_holders:
     - The OpenLDAP Foundation, Redwood City, California, USA
+minimum_coverage: 70

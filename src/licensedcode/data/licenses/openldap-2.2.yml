@@ -14,3 +14,4 @@ ignorable_holders:
     - The OpenLDAP Foundation, Redwood City, California, USA.
 ignorable_urls:
     - http://www.openldap.org/
+minimum_coverage: 70
