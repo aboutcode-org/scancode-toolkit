@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -47,164 +47,152 @@
 
 from __future__ import absolute_import
 
+from collections import OrderedDict
 import datetime
 import json
 import logging
-import os.path
+from os import path
 import sys
 
-from pip._vendor import lockfile
-from pip._vendor.packaging import version as packaging_version
+from packaging import version as packaging_version
+import requests
+from requests.exceptions import ConnectionError
+import yg.lockfile
 
-from pip.compat import total_seconds, WINDOWS
-from pip.index import PyPI
-from pip.locations import USER_CACHE_DIR, running_under_virtualenv
-from pip.utils import ensure_dir, get_installed_version
-from pip.utils.filesystem import check_path_owner
+from scancode_config import scancode_cache_dir
+from scancode_config import __version__ as scancode_version
 
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
 
 
 logger = logging.getLogger(__name__)
+logging.basicConfig(stream=sys.stdout)
+logger.setLevel(logging.WARNING)
 
 
-class VirtualenvSelfCheckState(object):
+def total_seconds(td):
+    if hasattr(td, 'total_seconds'):
+        return td.total_seconds()
+    else:
+        val = td.microseconds + (td.seconds + td.days * 24 * 3600) * 10 ** 6
+        return val / 10 ** 6
+
+
+class VersionCheckState(object):
     def __init__(self):
-        self.statefile_path = os.path.join(sys.prefix, "pip-selfcheck.json")
-
+        self.statefile_path = path.join(
+            scancode_cache_dir, 'scancode-version-check.json')
+        self.lockfile_path = self.statefile_path + '.lockfile'
         # Load the existing state
         try:
             with open(self.statefile_path) as statefile:
                 self.state = json.load(statefile)
-        except (IOError, ValueError):
-            self.state = {}
-
-    def save(self, pypi_version, current_time):
-        # Attempt to write out our version check file
-        with open(self.statefile_path, "w") as statefile:
-            json.dump(
-                {
-                    "last_check": current_time.strftime(SELFCHECK_DATE_FMT),
-                    "pypi_version": pypi_version,
-                },
-                statefile,
-                sort_keys=True,
-                separators=(",", ":")
-            )
-
-
-class GlobalSelfCheckState(object):
-    def __init__(self):
-        self.statefile_path = os.path.join(USER_CACHE_DIR, "selfcheck.json")
-
-        # Load the existing state
-        try:
-            with open(self.statefile_path) as statefile:
-                self.state = json.load(statefile)[sys.prefix]
         except (IOError, ValueError, KeyError):
             self.state = {}
 
-    def save(self, pypi_version, current_time):
-        # Check to make sure that we own the directory
-        if not check_path_owner(os.path.dirname(self.statefile_path)):
-            return
-
-        # Now that we've ensured the directory is owned by this user, we'll go
-        # ahead and make sure that all our directories are created.
-        ensure_dir(os.path.dirname(self.statefile_path))
-
+    def save(self, latest_version, current_time):
         # Attempt to write out our version check file
-        with lockfile.LockFile(self.statefile_path):
-            if os.path.exists(self.statefile_path):
-                with open(self.statefile_path) as statefile:
-                    state = json.load(statefile)
-            else:
-                state = {}
-
-            state[sys.prefix] = {
-                "last_check": current_time.strftime(SELFCHECK_DATE_FMT),
-                "pypi_version": pypi_version,
+        with yg.lockfile.FileLock(self.lockfile_path, timeout=10):
+            state = {
+                'last_check': current_time.strftime(SELFCHECK_DATE_FMT),
+                'latest_version': latest_version,
             }
-
-            with open(self.statefile_path, "w") as statefile:
+            with open(self.statefile_path, 'w') as statefile:
                 json.dump(state, statefile, sort_keys=True,
-                          separators=(",", ":"))
+                          separators=(',', ':'))
 
 
-def load_selfcheck_statefile():
-    if running_under_virtualenv():
-        return VirtualenvSelfCheckState()
-    else:
-        return GlobalSelfCheckState()
-
-
-def pip_version_check(session):
-    """Check for an update for pip.
-
-    Limit the frequency of checks to once per week. State is stored either in
-    the active virtualenv or in the user's USER_CACHE_DIR keyed off the prefix
-    of the pip script path.
+def check_scancode_version(installed_version=scancode_version,
+                           pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit/json',
+                           force=False):
     """
-    installed_version = get_installed_version("pip")
-    if installed_version is None:
-        return
-
-    pip_version = packaging_version.parse(installed_version)
-    pypi_version = None
+    Check for an updated version of scancode-toolkit. Limit the frequency of
+    checks to once per week. State is stored in the scancode_cache_dir. The
+    check is done using python.org Pypi API.
+    """
+    installed_version = packaging_version.parse(installed_version)
+    latest_version = None
+    msg = None
 
     try:
-        state = load_selfcheck_statefile()
+        state = VersionCheckState()
 
         current_time = datetime.datetime.utcnow()
         # Determine if we need to refresh the state
-        if "last_check" in state.state and "pypi_version" in state.state:
+        if ('last_check' in state.state and 'latest_version' in state.state):
             last_check = datetime.datetime.strptime(
-                state.state["last_check"],
+                state.state['last_check'],
                 SELFCHECK_DATE_FMT
             )
-            if total_seconds(current_time - last_check) < 7 * 24 * 60 * 60:
-                pypi_version = state.state["pypi_version"]
+            seconds_since_last_check = total_seconds(current_time - last_check)
+            one_week = 7 * 24 * 60 * 60
+            if seconds_since_last_check < one_week:
+                latest_version = state.state['latest_version']
+
+        if force:
+            latest_version = None
 
         # Refresh the version if we need to or just see if we need to warn
-        if pypi_version is None:
-            resp = session.get(
-                PyPI.pip_json_url,
-                headers={"Accept": "application/json"},
-            )
-            resp.raise_for_status()
-            pypi_version = [
-                v for v in sorted(
-                    list(resp.json()["releases"]),
-                    key=packaging_version.parse,
-                )
-                if not packaging_version.parse(v).is_prerelease
-            ][-1]
+        if latest_version is None:
+            try:
+                latest_version = get_latest_version(pypi_scancode_url)
+                state.save(latest_version, current_time)
+            except Exception:
+                # save an empty version to avoid checking more than once a week
+                state.save(None, current_time)
+                raise
 
-            # save that we've performed a check
-            state.save(pypi_version, current_time)
+        latest_version = packaging_version.parse(latest_version)
 
-        remote_version = packaging_version.parse(pypi_version)
+        outdated_msg = (
+            'You are using ScanCode Toolkit version %s, however the newer '
+            'version %s is available.\nYou should download and install the '
+            'latest version of ScanCode with bug and security fixes and the '
+            'latest license detection data for accurate scanning.\n'
+            'Visit https://github.com/nexB/scancode-toolkit/releases for details.'
+            % (installed_version, latest_version)
+        )
 
-        # Determine if our pypi_version is older
-        if (pip_version < remote_version and
-                pip_version.base_version != remote_version.base_version):
-            # Advise "python -m pip" on Windows to avoid issues
-            # with overwriting pip.exe.
-            if WINDOWS:
-                pip_cmd = "python -m pip"
-            else:
-                pip_cmd = "pip"
-            logger.warning(
-                "You are using pip version %s, however version %s is "
-                "available.\nYou should consider upgrading via the "
-                "'%s install --upgrade pip' command." % (pip_version,
-                                                         pypi_version,
-                                                         pip_cmd)
-            )
+        # Determine if our latest_version is older
+        if (installed_version < latest_version
+        and installed_version.base_version != latest_version.base_version):
+            msg = outdated_msg
+            logger.warning(msg)
+            return msg
 
     except Exception:
-        logger.debug(
-            "There was an error checking the latest version of pip",
-            exc_info=True,
-        )
+        msg = 'There was an error while checking for the latest version of ScanCode'
+        logger.debug(msg, exc_info=True)
+        raise
+
+
+def get_latest_version(pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit/json'):
+    """
+    Fetch `pypi_scancode_url` and return the latest version of scancode as a
+    string. The check is done using python.org Pypi API
+    """
+    requests_args = dict(
+        timeout=10,
+        verify=True,
+        headers={'Accept': 'application/json'},
+    )
+    try:
+        response = requests.get(pypi_scancode_url, **requests_args)
+    except (ConnectionError) as e:
+        logger.debug('get_latest_version: Download failed for %(url)r' % locals())
+        raise
+
+    status = response.status_code
+    if status != 200:
+        msg = 'get_latest_version: Download failed for %(url)r with %(status)r' % locals()
+        logger.debug(msg)
+        raise Exception(msg)
+
+    payload = response.json(object_pairs_hook=OrderedDict)
+    releases = [
+        r for r in payload['releases'] if not packaging_version.parse(r).is_prerelease]
+    releases = sorted(releases, key=packaging_version.parse)
+    latest_version = releases[-1]
+
+    return latest_version

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -21,184 +21,124 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-#
-# This code was in part derived from the pip library:
-# Copyright (c) 2008-2014 The pip developers (see outdated.NOTICE file)
-#
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
-#
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
+from __future__ import unicode_literals
 
-from contextlib import contextmanager
-import datetime
-import os
-import sys
+from unittest import mock
 
-import freezegun
-import pretend
 import pytest
 
-from pip._vendor import lockfile
+from commoncode.system import py3
 from updatecode import outdated
 
 
-@pytest.mark.parametrize(
-    ['stored_time', 'newver', 'check', 'warn'],
-    [
-        ('1970-01-01T10:00:00Z', '2.0', True, True),
-        ('1970-01-01T10:00:00Z', '1.0', True, False),
-        ('1970-01-06T10:00:00Z', '1.0', False, False),
-        ('1970-01-06T10:00:00Z', '2.0', False, True),
-    ]
-)
-def test_pip_version_check(monkeypatch, stored_time, newver, check, warn):
-    monkeypatch.setattr(outdated, 'get_installed_version', lambda name: '1.0')
-
-    resp = pretend.stub(
-        raise_for_status=pretend.call_recorder(lambda: None),
-        json=pretend.call_recorder(lambda: {"releases": {newver: {}}}),
-    )
-    session = pretend.stub(
-        get=pretend.call_recorder(lambda u, headers=None: resp),
-    )
-
-    fake_state = pretend.stub(
-        state={"last_check": stored_time, 'pypi_version': '1.0'},
-        save=pretend.call_recorder(lambda v, t: None),
-    )
-
-    monkeypatch.setattr(
-        outdated, 'load_selfcheck_statefile', lambda: fake_state
-    )
-
-    monkeypatch.setattr(outdated.logger, 'warning',
-                        pretend.call_recorder(lambda s: None))
-    monkeypatch.setattr(outdated.logger, 'debug',
-                        pretend.call_recorder(lambda s, exc_info=None: None))
-
-    with freezegun.freeze_time(
-            "1970-01-09 10:00:00",
-            ignore=[
-                "six.moves",
-                "pip._vendor.six.moves",
-                "pip._vendor.requests.packages.urllib3.packages.six.moves",
-            ]):
-        outdated.pip_version_check(session)
-
-    assert not outdated.logger.debug.calls
-
-    if check:
-        assert session.get.calls == [pretend.call(
-            "https://pypi.python.org/pypi/pip/json",
-            headers={"Accept": "application/json"}
-        )]
-        assert fake_state.save.calls == [
-            pretend.call(newver, datetime.datetime(1970, 1, 9, 10, 00, 00)),
-        ]
-        if warn:
-            assert len(outdated.logger.warning.calls) == 1
-        else:
-            assert len(outdated.logger.warning.calls) == 0
-    else:
-        assert session.get.calls == []
-        assert fake_state.save.calls == []
+pytestmark = pytest.mark.skipif(not py3, reason='Mock is not available as a builtin on py2')
 
 
-def test_virtualenv_state(monkeypatch):
-    CONTENT = '{"last_check": "1970-01-02T11:00:00Z", "pypi_version": "1.0"}'
-    fake_file = pretend.stub(
-        read=pretend.call_recorder(lambda: CONTENT),
-        write=pretend.call_recorder(lambda s: None),
-    )
+def test_get_latest_version():
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '2.2.1': [],
+            '2.9.0b1': [],
+            '2.9.1': [],
+            '3.0.2': [],
+            '2.9.2': [],
+            '2.9.3': [],
+            '2.9.4': [],
+            '3.0.0': [],
+        }
+    }
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
 
-    @pretend.call_recorder
-    @contextmanager
-    def fake_open(filename, mode='r'):
-        yield fake_file
-
-    monkeypatch.setattr(outdated, 'open', fake_open, raising=False)
-
-    monkeypatch.setattr(outdated, 'running_under_virtualenv',
-                        pretend.call_recorder(lambda: True))
-
-    monkeypatch.setattr(sys, 'prefix', 'virtually_env')
-
-    state = outdated.load_selfcheck_statefile()
-    state.save('2.0', datetime.datetime.utcnow())
-
-    assert len(outdated.running_under_virtualenv.calls) == 1
-
-    expected_path = os.path.join('virtually_env', 'pip-selfcheck.json')
-    assert fake_open.calls == [
-        pretend.call(expected_path),
-        pretend.call(expected_path, 'w'),
-    ]
-
-    # json.dumps will call this a number of times
-    assert len(fake_file.write.calls)
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+        result = outdated.get_latest_version()
+        assert '3.0.2' == result
 
 
-def test_global_state(monkeypatch):
-    CONTENT = '''{"pip_prefix": {"last_check": "1970-01-02T11:00:00Z",
-        "pypi_version": "1.0"}}'''
-    fake_file = pretend.stub(
-        read=pretend.call_recorder(lambda: CONTENT),
-        write=pretend.call_recorder(lambda s: None),
-    )
+def test_get_latest_version_fails_on_http_error():
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(status_code=400)
+        with pytest.raises(Exception):
+            outdated.get_latest_version()
 
-    @pretend.call_recorder
-    @contextmanager
-    def fake_open(filename, mode='r'):
-        yield fake_file
 
-    monkeypatch.setattr(outdated, 'open', fake_open, raising=False)
+def test_get_latest_version_ignore_rc_versions():
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '2.2.1': [],
+            '2.9.0rc3': [],
+        }
+    }
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
 
-    @pretend.call_recorder
-    @contextmanager
-    def fake_lock(filename):
-        yield
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+        result = outdated.get_latest_version()
+        assert '2.2.1' == result
 
-    monkeypatch.setattr(outdated, "check_path_owner", lambda p: True)
 
-    monkeypatch.setattr(lockfile, 'LockFile', fake_lock)
-    monkeypatch.setattr(os.path, "exists", lambda p: True)
+def test_check_scancode_version():
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '3.4.1': [],
+            '3.9.0rc3': [],
+        }
+    }
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
 
-    monkeypatch.setattr(outdated, 'running_under_virtualenv',
-                        pretend.call_recorder(lambda: False))
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+        expected = 'You are using ScanCode Toolkit version 3.1.0, however the newer version 3.4.1 is available'
+        result = outdated.check_scancode_version(force=True)
+        assert expected in result
 
-    monkeypatch.setattr(outdated, 'USER_CACHE_DIR', 'cache_dir')
-    monkeypatch.setattr(sys, 'prefix', 'pip_prefix')
 
-    state = outdated.load_selfcheck_statefile()
-    state.save('2.0', datetime.datetime.utcnow())
+def test_check_scancode_version_no_new_version():
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '3.0.1': [],
+            '3.9.0rc3': [],
+        }
+    }
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
 
-    assert len(outdated.running_under_virtualenv.calls) == 1
-
-    expected_path = os.path.join('cache_dir', 'selfcheck.json')
-    assert fake_lock.calls == [pretend.call(expected_path)]
-
-    assert fake_open.calls == [
-        pretend.call(expected_path),
-        pretend.call(expected_path),
-        pretend.call(expected_path, 'w'),
-    ]
-
-    # json.dumps will call this a number of times
-    assert len(fake_file.write.calls)
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+        result = outdated.check_scancode_version(force=True)
+        assert not result
