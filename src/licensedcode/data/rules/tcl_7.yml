@@ -1,0 +1,5 @@
+license_expression: tcl
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.tcl.tk/software/tcltk/license.html
