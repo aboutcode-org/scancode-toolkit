@@ -52,9 +52,10 @@ class LibarchivePaths(LocationProviderPlugin):
 		
 			lib_dir = '/usr/lib64'
 
-		else
+		else:
 			#User defined if installation directory differs
 			lib_dir = '/usr'
+
 		locations = {
 			'extractcode.libarchive.libdir': lib_dir,
 			'extractcode.libarchive.dll': join(lib_dir, 'libarchive.so.13'),
