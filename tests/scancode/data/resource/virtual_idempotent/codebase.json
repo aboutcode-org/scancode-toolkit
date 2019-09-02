@@ -15,7 +15,6 @@
         "--info": true,
         "--json-pp": "scan.json",
         "--license": true,
-        "--license-diag": true,
         "--license-text": true,
         "--package": true,
         "--processes": "3",

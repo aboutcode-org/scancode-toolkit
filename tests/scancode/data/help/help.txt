@@ -19,9 +19,6 @@ Options:
     -u, --url    Scan <input> for urls.
 
   scan options:
-    --license-diag               (DEPRECATED: this is always included by default
-                                 now). Include diagnostic information in license
-                                 scan results.
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
@@ -84,6 +81,12 @@ Options:
                                <pattern>.
 
   post-scan:
+    --consolidate            Group resources by Packages or license and copyright
+                             holder and return those groupings as a list of
+                             consolidated packages and a list of consolidated
+                             components. This requires the scan to have/be run
+                             with the copyright, license, and package options
+                             active
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
     --is-license-text        Set the "is_license_text" flag to true for files that
@@ -120,7 +123,6 @@ Options:
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from an existing JSON scan
-    --timing                 Collect scan timing for each scan/scanned file.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached
@@ -131,10 +133,6 @@ Options:
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and
                         exit.
-    --keep-temp-files   Keep temporary files and show the directory where
-                        temporary files are stored. (By default temporary files
-                        are deleted when a scan is completed.)
-    --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:
     -h, --help       Show this message and exit.

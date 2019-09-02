@@ -318,6 +318,7 @@ def print_options(ctx, param, value):
 
 @click.option('--timing',
     is_flag=True,
+    hidden=True,
     help='Collect scan timing for each scan/scanned file.',
     help_group=CORE_GROUP, sort_order=250, cls=CommandLineOption)
 
@@ -378,6 +379,7 @@ def print_options(ctx, param, value):
     help='Keep temporary files and show the directory where temporary files '
          'are stored. (By default temporary files are deleted when a scan is '
          'completed.)',
+    hidden=True,
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA

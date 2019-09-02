@@ -148,6 +148,10 @@ class CommandLineOption(click.Option):
         _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
         _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
 
+    def get_help_record(self, ctx):
+        if not self.hidden:
+            return click.Option.get_help_record(self, ctx)
+
 
 def validate_option_dependencies(ctx):
     """

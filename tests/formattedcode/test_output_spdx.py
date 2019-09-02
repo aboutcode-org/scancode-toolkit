@@ -290,7 +290,7 @@ def test_spdx_tv_with_unicode_license_text_does_not_fail():
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/unicode/expected.tv')
     args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
-            '--license-diag', test_file, '--spdx-tv', result_file]
+            test_file, '--spdx-tv', result_file]
     run_scan_plain(args)
     check_tv_scan(expected_file, result_file)
 
@@ -301,7 +301,7 @@ def test_spdx_rdf_with_unicode_license_text_does_not_fail():
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/unicode/expected.rdf')
     args = ['--license', '--copyright', '--info', '--strip-root',
-            '--license-text', '--license-diag', test_file, '--spdx-rdf', result_file]
+            '--license-text', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
 
@@ -311,8 +311,8 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     test_file = test_env.get_test_loc('spdx/or_later/test.java')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/or_later/expected.rdf')
-    args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
-            '--license-diag', test_file, '--spdx-rdf', result_file]
+    args = ['--license', '--copyright', '--info', '--strip-root',
+            '--license-text', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
 
