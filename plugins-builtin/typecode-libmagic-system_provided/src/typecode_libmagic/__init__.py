@@ -52,7 +52,7 @@ class LibmagicPaths(LocationProviderPlugin):
 			data_dir = '/usr/share/misc'
 			lib_dir = '/usr/lib64'
 
-		else
+		else:
 			data_dir = '/usr'
 			lib_dir = '/usr'
 
