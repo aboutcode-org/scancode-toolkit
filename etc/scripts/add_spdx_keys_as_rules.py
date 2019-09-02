@@ -27,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
 
+import io
 import os.path
 
 import click
@@ -80,7 +81,7 @@ def add_rule(spdx_text, license_obj):
         raise Exception('Cannot create new SPDX rules text file for {text}. '
                         'File already exists at: {text_file}'.format(**locals()))
 
-    with open(text_file, 'wb') as tf:
+    with io.open(text_file, 'w', encoding='utf-8') as tf:
         tf.write(spdx_text)
 
     rule = Rule(

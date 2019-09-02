@@ -76,6 +76,7 @@ A call using etc/conf/prod would results in these steps if on linux:
 from __future__ import absolute_import
 from __future__ import print_function
 
+import io
 import os
 import shutil
 import stat
@@ -478,7 +479,7 @@ sys.path[:] = [i for i in new if i not in prev] + [i for i in new if i in prev]
 
 '''
     if not os.path.exists(activate_path):
-        with open(activate_path, 'wb') as f:
+        with io.open(activate_path, 'w', encoding='utf-8') as f:
             f.write(activate_this.encode('utf-8'))
     return activate_this
 
