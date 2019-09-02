@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+notes: this is a frankenstein notice since this is a modified GPL seen in GNU libmicrohttpd

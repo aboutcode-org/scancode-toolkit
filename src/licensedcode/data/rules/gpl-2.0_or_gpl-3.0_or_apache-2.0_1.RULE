@@ -1,0 +1,11 @@
+Apache Licensing
+The following modules are licensed under the GNU General Public License (GPL), version 2 or
+3, or the Apache License 2.0.  This means that you can distribute
+derivates of those modules under any combination of one or more of the
+three licenses.
+
+Please note that this licensing applies only to these two modules, and
+not to any other  code.
+
+This package includes the text of all three licenses: COPYING for GPL
+v2, COPYING3 for GPL v3, APACHE-2.0.txt for Apache v2.
