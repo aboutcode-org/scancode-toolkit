@@ -5,7 +5,7 @@ A typical software project often reuses hundreds of third-party packages.
 License and origin information is not always easy to find and not normalized:
 ScanCode discovers and normalizes this data for you.
 
-Why is ScanCode better?
+Why use ScanCode?
 =======================
 
 - As a **standalone command line tool**, ScanCode is **easy to install**, run
@@ -115,7 +115,7 @@ See more command examples::
     ./scancode --examples
 
 
-Archives extraction
+Archive extraction
 ===================
 
 The archives that exist in a codebase must be extracted before running a scan:
