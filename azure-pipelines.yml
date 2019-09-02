@@ -103,16 +103,16 @@ jobs:
           test_suite_label: all
           test_suite: bin/py.test -n 2 -vvs --reruns=3
 
-    - template: etc/ci/azure-container-rpm.yml
-      parameters:
-          job_name: centos7_py27
-          container: centos:7
-          python_path: python2.7
-          python_version: '2.7'
-          install_python: sudo yum install -y python python27-devel
-          test_suite_label: all
-          test_suite: bin/py.test -n 2 -vvs --reruns=3
-
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          job_name: centos7_py27
+#          container: centos:7
+#          python_path: python2.7
+#          python_version: '2.7'
+#          install_python: sudo yum install -y python python27-devel
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
+#
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: manylinux1_py27
