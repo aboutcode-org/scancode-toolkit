@@ -53,7 +53,7 @@ class TestHasFindings(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')
         run_scan_click(['-cie', '--only-findings', '--timeout', '0.1',
                         '--json-pp', result_file, test_dir], expected_rc=1)
-        check_json_scan(expected_file, result_file, remove_file_date=True, regen=True)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_scan_only_findings_with_only_info(self):
         test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
