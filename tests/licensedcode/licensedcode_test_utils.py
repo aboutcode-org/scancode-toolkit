@@ -140,7 +140,7 @@ class LicenseTest(object):
         Dump a representation of self to its YAML data file
         """
         as_yaml = saneyaml.dump(self.to_dict())
-        with io.open(self.data_file, 'wb') as df:
+        with io.open(self.data_file, 'w', encoding='utf-8') as df:
             df.write(as_yaml)
 
     def get_test_method_name(self, prefix='test_detection_'):

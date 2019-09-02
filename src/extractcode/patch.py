@@ -34,6 +34,8 @@ import patch as pythonpatch
 
 from commoncode import paths
 from commoncode import fileutils
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
