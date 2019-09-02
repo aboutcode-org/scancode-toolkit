@@ -483,7 +483,6 @@ def scancode(ctx, input,  # NOQA
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
     """
-
     success = False
     try:
         # Validate CLI UI options dependencies and other CLI-specific inits
@@ -512,6 +511,12 @@ def scancode(ctx, input,  # NOQA
             return_results=False,
             echo_func=echo_stderr,
             *args, **kwargs)
+
+        # check for updates
+        from scancode.outdated import check_scancode_version
+        outdated=check_scancode_version()
+        if outdated:
+            echo_stderr(outdated, fg='yellow')
 
     except click.UsageError as e:
         # this will exit

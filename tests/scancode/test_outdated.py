@@ -32,7 +32,7 @@ from unittest import mock
 import pytest
 
 from commoncode.system import py3
-from updatecode import outdated
+from scancode import outdated
 
 
 pytestmark = pytest.mark.skipif(not py3, reason='Mock is not available as a builtin on py2')

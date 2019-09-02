@@ -67,8 +67,8 @@ SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(stream=sys.stdout)
-logger.setLevel(logging.WARNING)
+# logging.basicConfig(stream=sys.stdout)
+# logger.setLevel(logging.WARNING)
 
 
 def total_seconds(td):
@@ -104,12 +104,13 @@ class VersionCheckState(object):
 
 
 def check_scancode_version(installed_version=scancode_version,
-                           pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit/json',
+                           new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
                            force=False):
     """
-    Check for an updated version of scancode-toolkit. Limit the frequency of
-    checks to once per week. State is stored in the scancode_cache_dir. The
-    check is done using python.org Pypi API.
+    Check for an updated version of scancode-toolkit. Return a message to
+    display if outdated or None. Limit the frequency of checks to once per week.
+    State is stored in the scancode_cache_dir. If `force` is True, redo a PyPI
+    remote check.
     """
     installed_version = packaging_version.parse(installed_version)
     latest_version = None
@@ -136,7 +137,7 @@ def check_scancode_version(installed_version=scancode_version,
         # Refresh the version if we need to or just see if we need to warn
         if latest_version is None:
             try:
-                latest_version = get_latest_version(pypi_scancode_url)
+                latest_version = get_latest_version(new_version_url)
                 state.save(latest_version, current_time)
             except Exception:
                 # save an empty version to avoid checking more than once a week
@@ -145,7 +146,7 @@ def check_scancode_version(installed_version=scancode_version,
 
         latest_version = packaging_version.parse(latest_version)
 
-        outdated_msg = (
+        outdated_msg = ('WARNING: '
             'You are using ScanCode Toolkit version %s, however the newer '
             'version %s is available.\nYou should download and install the '
             'latest version of ScanCode with bug and security fixes and the '
@@ -157,20 +158,17 @@ def check_scancode_version(installed_version=scancode_version,
         # Determine if our latest_version is older
         if (installed_version < latest_version
         and installed_version.base_version != latest_version.base_version):
-            msg = outdated_msg
-            logger.warning(msg)
-            return msg
+            return outdated_msg
 
     except Exception:
         msg = 'There was an error while checking for the latest version of ScanCode'
         logger.debug(msg, exc_info=True)
-        raise
 
 
-def get_latest_version(pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit/json'):
+def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/json'):
     """
-    Fetch `pypi_scancode_url` and return the latest version of scancode as a
-    string. The check is done using python.org Pypi API
+    Fetch `new_version_url` and return the latest version of scancode as a
+    string.
     """
     requests_args = dict(
         timeout=10,
@@ -178,7 +176,7 @@ def get_latest_version(pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit
         headers={'Accept': 'application/json'},
     )
     try:
-        response = requests.get(pypi_scancode_url, **requests_args)
+        response = requests.get(new_version_url, **requests_args)
     except (ConnectionError) as e:
         logger.debug('get_latest_version: Download failed for %(url)r' % locals())
         raise
@@ -189,6 +187,7 @@ def get_latest_version(pypi_scancode_url='https://pypi.org/pypi/scancode-toolkit
         logger.debug(msg)
         raise Exception(msg)
 
+    # The check is done using python.org PyPI API
     payload = response.json(object_pairs_hook=OrderedDict)
     releases = [
         r for r in payload['releases'] if not packaging_version.parse(r).is_prerelease]
