@@ -181,8 +181,8 @@ class TestPermissions(FileBasedTesting):
     def test_copyfile_does_not_keep_permissions(self):
         src_file = self.get_temp_file()
         dest = self.get_temp_dir()
-        with open(src_file, 'wb') as f:
-            f.write(b'')
+        with open(src_file, 'w') as f:
+            f.write(u'')
         try:
             make_non_readable(src_file)
             if on_posix:
