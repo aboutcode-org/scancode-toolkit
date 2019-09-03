@@ -36,6 +36,7 @@ import sys
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from typecode.contenttype import get_type
+from scancode import ScancodeError
 
 
 TRACE = False
@@ -104,7 +105,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     return results
 
 
-def get_emails(location, threshold=50, test_mode=False, **kwargs):
+def get_emails(location, threshold=50, test_slow_mode=False, test_error_mode=False, **kwargs):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
     mappings for emails detected in the file at `location`.
@@ -113,7 +114,10 @@ def get_emails(location, threshold=50, test_mode=False, **kwargs):
     If test_mode is True, the scan will be slow for testing purpose and pause
     for one second.
     """
-    if test_mode:
+    if test_error_mode:
+        raise ScancodeError('Triggered email failure')
+
+    if test_slow_mode:
         import time
         time.sleep(1)
 
@@ -160,7 +164,7 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0,
-                 include_text=False, include_text_diagnostics=False,
+                 include_text=False, license_text_diagnostics=False,
                  license_url_template=DEJACODE_LICENSE_URL,
                  deadline=sys.maxsize, **kwargs):
     """
@@ -192,8 +196,8 @@ def get_licenses(location, min_score=0,
         matched_text = None
         # TODO: handle whole lines with the case of very long lines
         if include_text:
-            if include_text_diagnostics:
-                matched_text = match.matched_text(whole_lines=True)
+            if license_text_diagnostics:
+                matched_text = match.matched_text(whole_lines=False)
             else:
                 highlight_not_matched = highlight_matched = u'%s'
                 matched_text = match.matched_text(

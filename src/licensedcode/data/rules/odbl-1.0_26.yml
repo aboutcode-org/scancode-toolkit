@@ -1,0 +1,9 @@
+license_expression: odbl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - (c) OpenStreetMap contributors
+ignorable_holders:
+    - OpenStreetMap contributors
+ignorable_urls:
+    - https://www.openstreetmap.org/

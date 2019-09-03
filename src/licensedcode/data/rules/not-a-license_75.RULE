@@ -1,0 +1,3 @@
+    # Older versions of Unidecode are licensed under Artistic License;
+    # assume an older version is installed.
+    from unidecode import unidecode as transliterate

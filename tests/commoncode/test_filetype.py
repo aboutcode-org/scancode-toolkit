@@ -149,8 +149,8 @@ class CountTest(FileBasedTesting):
 
     def test_get_file_count_with_single_file(self):
         test_file = self.get_temp_file()
-        with open(test_file, 'wb') as f:
-            f.write(b'')
+        with open(test_file, 'w') as f:
+            f.write(u'')
         assert filetype.is_file(test_file)
         assert 1 == filetype.get_file_count(test_file)
 

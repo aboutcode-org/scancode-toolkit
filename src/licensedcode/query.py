@@ -169,6 +169,7 @@ class Query(object):
         'low_matchables',
         'spdx_lid_token_ids',
         'spdx_lines',
+        'has_long_lines',
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
@@ -187,6 +188,9 @@ class Query(object):
         self.idx = idx
 
         self.line_threshold = line_threshold
+
+        # True if the text is made of very long lines
+        self.has_long_lines = False
 
         # kown token ids array
         self.tokens = []
@@ -440,6 +444,7 @@ class Query(object):
         if self.location:
             ft = typecode.get_type(self.location)
             if ft.is_text_with_long_lines:
+                self.has_long_lines = True
                 tokens_by_line = break_long_lines(tokens_by_line)
 
         for tokens in tokens_by_line:

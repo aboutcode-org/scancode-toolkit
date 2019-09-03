@@ -54,6 +54,42 @@ def test_license_option_reports_license_expressions():
     check_json_scan(test_loc, result_file, regen=False)
 
 
+def test_license_option_reports_license_texts():
+    test_dir = test_env.get_test_loc('plugin_license/text/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/text/scan.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_option_reports_license_texts_diag():
+    test_dir = test_env.get_test_loc('plugin_license/text/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/text/scan-diag.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_option_reports_license_texts_long_lines():
+    test_dir = test_env.get_test_loc('plugin_license/text_long_lines/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/text_long_lines/scan.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
+def test_license_option_reports_license_texts_diag_long_lines():
+    test_dir = test_env.get_test_loc('plugin_license/text_long_lines/scan', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/text_long_lines/scan-diag.expected.json')
+    check_json_scan(test_loc, result_file, regen=False)
+
+
 @pytest.mark.scanslow
 def test_scan_license_with_url_template():
     test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)

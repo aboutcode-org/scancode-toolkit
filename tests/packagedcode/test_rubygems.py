@@ -144,8 +144,13 @@ def create_test_function(test_loc, test_name, regen=False):
         package.license_expression = package.compute_normalized_license()
         package = [package.to_dict()]
         if regen:
-            with open(expected_json_loc, 'wb') as ex:
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with io.open(expected_json_loc, wmode) as ex:
                 json.dump(package, ex, indent=2)
+
         with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
         assert expected == package

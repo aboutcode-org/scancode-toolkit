@@ -28,9 +28,9 @@ from __future__ import division
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import io
 import json
 import os
-from unittest.case import skipIf
 
 import click
 click.disable_unicode_literals_warning = True
@@ -217,11 +217,11 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_tru
     assert 'patchelf.pdf' not in result.output
 
 
-def test_scan_with_errors_always_includes_full_traceback():
+def test_scan_with_timeout_errors():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001', '--verbose',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '--timeout', '0.01', '--verbose',
             test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     assert 'ERROR: Processing interrupted: timeout' in result.output
@@ -231,21 +231,33 @@ def test_scan_with_errors_always_includes_full_traceback():
     assert result_json['headers'][0]['errors']
 
 
-def test_failing_scan_return_proper_exit_code():
+def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001',
+    # we use a short timeout and a --test-error-mode --email scan to simulate an error
+    args = ['-e', '--test-error-mode', '--verbose',
             test_file, '--json', result_file]
+    result = run_scan_click(args, expected_rc=1)
+    assert 'ScancodeError: Triggered email failure' in result.output
+    assert 'patchelf.pdf' in result.output
+    result_json = json.loads(open(result_file).read())
+    assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: emails')
+    assert result_json['headers'][0]['errors']
+
+
+def test_failing_scan_return_proper_exit_code_on_failure():
+    test_file = test_env.get_test_loc('failing/patchelf.pdf')
+    result_file = test_env.get_temp_file('test.json')
+    args = ['-e', '--test-error-mode', test_file, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
 
+@pytest.mark.xfail(py2, reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
-    args = ['--copyright', '--timeout', '0.000001',
-            test_file, '--html', result_file]
-    run_scan_click(args, expected_rc=1)
+    args = ['--copyright', '--timeout', '1', test_file, '--html', result_file]
+    run_scan_click(args)
 
 
 def test_scan_license_should_not_fail_with_output_to_html_and_json():
@@ -260,12 +272,12 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
     assert 'Object of type License is not JSON serializable' not in result.output
 
 
+@pytest.mark.xfail(reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
-    args = ['--copyright', '--timeout', '0.000001',
-            test_file, '--html-app', result_file]
-    run_scan_click(args, expected_rc=1)
+    args = ['--copyright', '--timeout', '1', test_file, '--html-app', result_file]
+    run_scan_click(args)
 
 
 def test_scan_works_with_multiple_processes():
@@ -323,11 +335,11 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
     result_file = test_env.get_temp_file('json')
 
-    # we use a short timeout and a --test-mode --email scan to simulate an error
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
     args = ['--email', '--processes', '2',
-            '--timeout', '0.00000001',
+            '--timeout', '0.01',
             # this will guarantee that an email scan takes at least one second
-            '--test-mode',
+            '--test-slow-mode',
             '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
@@ -397,7 +409,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_quiet():
     assert not result.output
 
 
-@skipIf(on_windows, 'Python tar cannot extract these files on Windows')
+@pytest.mark.skipif(on_windows, reason='Python tar cannot extract these files on Windows')
 def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
 
     # On Windows, Python tar cannot extract these files. Other
@@ -468,7 +480,7 @@ def test_scan_can_return_matched_license_text():
     check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=False)
 
 
-@skipIf(on_windows, 'This test cannot run on windows as these are not legal file names.')
+@pytest.mark.skipif(on_windows, reason='This test cannot run on windows as these are not legal file names.')
 def test_scan_can_handle_weird_file_names():
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
     result_file = test_env.get_temp_file('json')
@@ -486,8 +498,9 @@ def test_scan_can_handle_weird_file_names():
         raise Exception('Not a supported OS?')
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
-@skipIf(on_macos_14_or_higher or (on_windows and py3), 
-        'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
+
+@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3), 
+        reason='Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
         ' Also this fails on Windows and Python 3')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
@@ -529,8 +542,8 @@ def test_scan_can_run_from_other_directory():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '-n', '0', '--timeout', '0.0001',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '-n', '0', '--timeout', '0.0001',
             test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
@@ -541,8 +554,8 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '-n', '2', '--timeout', '0.0001',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '-n', '2', '--timeout', '0.0001',
             test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
@@ -553,8 +566,8 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
 
 def test_scan_logs_errors_messages_verbosely():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--verbose', '-n', '0', '--timeout', '0.0001',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '--verbose', '-n', '0', '--timeout', '0.0001',
             test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
@@ -569,8 +582,8 @@ def test_scan_logs_errors_messages_verbosely():
 
 def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     test_file = test_env.get_test_loc('errors/many_copyrights.c')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--verbose', '-n', '2', '--timeout', '0.0001',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '--verbose', '-n', '2', '--timeout', '0.0001',
             test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Some files failed to scan properly:' in stderr
@@ -653,7 +666,7 @@ def test_scan_cli_help(regen=False):
     expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
     if regen:
-        with open(expected_file, 'wb') as ef:
+        with io.open(expected_file, 'w', encoding='utf-8') as ef:
             ef.write(result.output)
     assert open(expected_file).read() == result.output
 
@@ -690,6 +703,7 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
     assert ('Error: The option --quiet cannot be used together with the '
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
+
 
 @pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
@@ -808,8 +822,8 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
 def test_check_error_count():
     test_dir = test_env.get_test_loc('failing')
     result_file = test_env.get_temp_file('json')
-    # we use a short timeout and a --test-mode --email scan to simulate an error
-    args = ['-e', '--test-mode', '--timeout', '0.000001',
+    # we use a short timeout and a --test-slow-mode --email scan to simulate an error
+    args = ['-e', '--test-slow-mode', '--timeout', '0.1',
             test_dir, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     output = result.output

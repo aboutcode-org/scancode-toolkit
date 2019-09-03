@@ -1,0 +1,5 @@
+license_expression: generic-tos
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.google.com/privacy.html

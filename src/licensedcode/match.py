@@ -548,6 +548,10 @@ class LicenseMatch(object):
             # TODO: should we raise an exception instead???
             # this case should never exist except for tests!
             return u''
+
+        if whole_lines and query.has_long_lines:
+            whole_lines = False
+
         return u''.join(get_full_matched_text(
             self,
             location=query.location,
@@ -1285,7 +1289,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
     """
     if TRACE: logger_debug()
     if TRACE: logger_debug(' #####refine_matches: STARTING matches#', len(matches))
-    if TRACE_REFINE: 
+    if TRACE_REFINE:
         for m in matches:
             logger_debug(m)
 
@@ -1330,7 +1334,7 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 
     matches = merge_matches(matches)
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
-    if TRACE_REFINE: 
+    if TRACE_REFINE:
         for m in matches:
             logger_debug(m)
 
@@ -1556,12 +1560,23 @@ def get_full_matched_text(
         tokens = tokenize_matched_text(
             location, query_string, dictionary=idx.dictionary)
 
+    if TRACE_MATCHED_TEXT:
+        tokens = list(tokens)
+        logger_debug('get_full_matched_text:  tokens:')
+        for t in tokens:
+            print(t)
+
+    tokens = reportable_tokens(
+        tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
 
     if TRACE_MATCHED_TEXT:
         tokens = list(tokens)
-        logger_debug('get_full_matched_text:  tokens:', tokens)
-    tokens = reportable_tokens(
-        tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
+        logger_debug('get_full_matched_text:  reportable_tokens:')
+        for t in tokens:
+            print(t)
+
+    if TRACE_MATCHED_TEXT:
+        logger_debug('get_full_matched_text:  highlight_matched:', highlight_matched, 'highlight_not_matched:', highlight_not_matched)
 
     # Finally yield strings with eventual highlightings
     for token in tokens:

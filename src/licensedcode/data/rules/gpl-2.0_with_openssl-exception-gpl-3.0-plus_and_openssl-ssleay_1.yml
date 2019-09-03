@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH openssl-exception-gpl-3.0-plus AND openssl-ssleay
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.openssl.org/

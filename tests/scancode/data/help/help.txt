@@ -19,16 +19,13 @@ Options:
     -u, --url    Scan <input> for urls.
 
   scan options:
-    --license-diag               (DEPRECATED: this is always included by default
-                                 now). Include diagnostic information in license
-                                 scan results.
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
     --license-text               Include the detected licenses matched text.
     --license-text-diagnostics   In the matched license text, include diagnostic
                                  highlights surrounding with square brackets []
-                                 parts that are not matched.
+                                 words that are not matched.
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. Curly braces ({}) are replaced by
                                  the license key.  [default: https://enterprise.de
@@ -126,7 +123,6 @@ Options:
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from an existing JSON scan
-    --timing                 Collect scan timing for each scan/scanned file.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached
@@ -137,10 +133,6 @@ Options:
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and
                         exit.
-    --keep-temp-files   Keep temporary files and show the directory where
-                        temporary files are stored. (By default temporary files
-                        are deleted when a scan is completed.)
-    --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:
     -h, --help       Show this message and exit.

@@ -1,0 +1,5 @@
+license_expression: bsd-original
+is_license_text: yes
+ignorable_authors:
+    - the University of Maryland
+minimum_coverage: 90

@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import io
 import os
 
 import click
@@ -66,7 +67,6 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
                 '--copyright',
                 '--info',
                 '--classify',
-                '--license-diag',
                 '--license-clarity-score',
                 test_dir, '--json', result_file]
         run_scan_click(args)
@@ -100,9 +100,11 @@ def build_tests(test_base_dir, clazz, regen=False):
         if not os.path.isdir(td_loc):
             continue
         expected_file_loc = td_loc.rstrip('/\\') + '-expected.json'
+
         if regen and not os.path.exists(expected_file_loc):
-            with open(expected_file_loc, 'wb') as o:
-                o.write('')
+            with io.open(expected_file_loc, 'w') as o:
+                o.write(u'')
+
         method, name = make_test_function(
             test_name=td,
             test_dir=td_loc,

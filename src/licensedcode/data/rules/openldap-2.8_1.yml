@@ -1,2 +1,3 @@
 license_expression: openldap-2.8
 is_license_text: yes
+minimum_coverage: 70

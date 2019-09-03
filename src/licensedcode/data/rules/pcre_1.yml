@@ -1,0 +1,11 @@
+license_expression: pcre
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright by the University of Cambridge, England
+ignorable_holders:
+    - the University of Cambridge, England
+ignorable_authors:
+    - Philip Hazel
+ignorable_urls:
+    - ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/

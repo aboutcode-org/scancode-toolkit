@@ -1,0 +1,5 @@
+license_expression: apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt

@@ -64,6 +64,7 @@ if TRACE or TRACE_DEEP:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
+
 """
 Detect and collect copyright statements.
 
@@ -2195,6 +2196,9 @@ grammar = """
 
     # Copyright (c) 2008-1010 Intel Corporation
     COPYRIGHT: {<COPY>  <COPY>  <CD>  <COMPANY>} #rare-cd-not-year
+
+    # Copyright (C) 2005-2006  dann frazier <dannf@dannf.org>
+    COPYRIGHT: {<COPYRIGHT2>  <NN>  <NN>  <EMAIL>} #999991
 
 #######################################
 # Authors

@@ -1,4 +1,6 @@
 license_expressions:
+  - unknown-license-reference
+  - unknown-license-reference
   - proprietary-license
   - proprietary-license
   - proprietary-license
@@ -6,6 +8,7 @@ license_expressions:
   - proprietary-license
   - proprietary-license
   - proprietary-license
+  - generic-tos
   - bsd-original
   - x11-lucent
   - bsd-new
@@ -14,36 +17,31 @@ license_expressions:
   - other-permissive
   - brian-clapper
   - historical
-  - openldap-2.6
-  - openldap-2.0.1
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
+  - bsd-simplified
+  - unknown-license-reference
+  - bsd-2-clause-freebsd
+  - gpl-2.0 WITH gcc-compiler-exception-2.0 AND gpl-2.0 WITH mif-exception
   - gpl-2.0
-  - unknown
-  - gpl-1.0-plus
+  - lgpl-2.0
+  - lgpl-2.0
   - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - mpl-1.1 OR lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
   - lgpl-2.0-plus
   - x11-fsf
   - freetype
+  - unknown-license-reference
   - proprietary-license
   - warranty-disclaimer
+  - unknown-license-reference
   - bsd-new
   - zlib
   - bsd-new
   - brian-gladman-3-clause OR gpl-1.0-plus
   - public-domain
-  - public-domain
-  - public-domain
+  - historical
   - x11
-  - unknown
-  - openldap-2.6
+  - cmu-uc
+  - bsd-new
+  - bsd-new
   - isc
   - json
   - warranty-disclaimer
@@ -51,7 +49,6 @@ license_expressions:
   - x11-tiff
   - x11-lucent
   - mit-old-style-no-advert
-  - openldap-2.6
   - lgpl-2.1-plus OR mpl-1.1 OR gpl-2.0
   - mpl-1.1 OR lgpl-2.0-plus
   - gpl-2.0-plus
@@ -61,13 +58,13 @@ license_expressions:
   - gpl-1.0-plus
   - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
   - gpl-1.0-plus OR lgpl-2.0-plus OR bsd-simplified
-  - openldap-2.1
   - openldap-2.8
   - openssl-ssleay
   - openssl-ssleay
   - openssl-ssleay
   - openssl
-  - openssl-ssleay
+  - proprietary-license
+  - ssleay-windows
   - gpl-1.0-plus
   - bsla
   - unknown
@@ -81,7 +78,7 @@ license_expressions:
   - gpl-1.0-plus
   - public-domain
   - bzip2-libbzip-2010
-  - bzip2-libbzip-2010
+  - apache-1.1
   - sunpro
   - bsd-new
   - unicode-mappings
@@ -91,18 +88,7 @@ license_expressions:
   - x11-xconsortium
   - bsd-simplified
   - libpng
-  - unknown
-  - bsd-new
-  - unknown
-  - gpl-1.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - lgpl-2.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - bsd-new
+  - bsd-new AND lgpl-2.0
   - bsd-new
   - lgpl-2.0
   - bsd-new

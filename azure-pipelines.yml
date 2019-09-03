@@ -15,32 +15,21 @@ jobs:
                 bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
                   --ignore=tests/scancode \
                   --ignore=tests/cluecode \
-                  --ignore=tests/formattedcode \
                   --ignore=tests/licensedcode
 
               scancode: bin/py.test --reruns=3 -vvs --test-suite=all tests/scancode
 
               cluecode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/cluecode
 
-              summarycode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/summarycode
-
-              formattedcode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/formattedcode
-
               license_base: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
                   --ignore=tests/licensedcode/test_zzzz_cache.py \
-                  --ignore=tests/licensedcode/test_detection_datadriven.py \
+                  --ignore=tests/licensedcode/test_detection_datadriven1.py \
                   tests/licensedcode
 
               license_main: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven.py \
-                  -k TestLicenseDataDriven
-
-              license_retro_spdx_slic: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven.py \
-                  -k "TestLicenseRetrographyDataDriven or TestLicenseSpdxDataDriven or TestLicenseToolsDataDriven or TestSlicDataDriven or TestFossLicDataDriven or TestDebLicCheckTestsDataDriven"
+                  tests/licensedcode/test_detection_datadriven1.py
 
               license_cache: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
@@ -53,11 +42,9 @@ jobs:
           python_versions: ['2.7']
           python_architecture: x86
           test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode --ignore=tests\formattedcode --ignore=tests\licensedcode
+              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              formattedcode: Scripts\py.test -vvs --reruns=3 tests\formattedcode
-              cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode
-              licensedcode: Scripts\py.test -vvs --reruns=3 tests\licensedcode
+              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
 
 
     - template: etc/ci/azure-mac.yml
@@ -103,16 +90,16 @@ jobs:
           test_suite_label: all
           test_suite: bin/py.test -n 2 -vvs --reruns=3
 
-    - template: etc/ci/azure-container-rpm.yml
-      parameters:
-          job_name: centos7_py27
-          container: centos:7
-          python_path: python2.7
-          python_version: '2.7'
-          install_python: sudo yum install -y python python27-devel
-          test_suite_label: all
-          test_suite: bin/py.test -n 2 -vvs --reruns=3
-
+#    - template: etc/ci/azure-container-rpm.yml
+#      parameters:
+#          job_name: centos7_py27
+#          container: centos:7
+#          python_path: python2.7
+#          python_version: '2.7'
+#          install_python: sudo yum install -y python python27-devel
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
+#
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
 #          job_name: manylinux1_py27
@@ -233,11 +220,9 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode --ignore=tests\formattedcode --ignore=tests\licensedcode
+              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              formattedcode: Scripts\py.test -vvs --reruns=3 tests\formattedcode
-              cluecode: Scripts\py.test -vvs --reruns=3 tests\cluecode
-              licensedcode: Scripts\py.test -vvs --reruns=3 tests\licensedcode
+              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
 
 
 ################################################################################

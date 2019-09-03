@@ -2,3 +2,4 @@ license_expression: bsd-original
 is_license_text: yes
 ignorable_authors:
     - the and its contributors
+minimum_coverage: 90

@@ -36,6 +36,7 @@ import scancode_config
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
+from commoncode.system import on_windows
 
 # Python 2 and 3 support
 try:
@@ -47,8 +48,16 @@ except ImportError:
 
 import os
 import sys
+from time import sleep
 from time import time
 import traceback
+
+# this exception is not available on posix
+try:
+    WindowsError  # NOQA
+except NameError:
+    class WindowsError(Exception):
+        pass
 
 import click  # NOQA
 click.disable_unicode_literals_warning = True
@@ -318,6 +327,7 @@ def print_options(ctx, param, value):
 
 @click.option('--timing',
     is_flag=True,
+    hidden=True,
     help='Collect scan timing for each scan/scanned file.',
     help_group=CORE_GROUP, sort_order=250, cls=CommandLineOption)
 
@@ -366,6 +376,20 @@ def print_options(ctx, param, value):
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
+@click.option('--test-slow-mode',
+    is_flag=True, default=False,
+    # not yet supported in Click 6.7 but added in CommandLineOption
+    hidden=True,
+    help='Run ScanCode in a special "test slow mode" to ensure that --email scan needs at least one second to complete. Only for testing.',
+    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
+@click.option('--test-error-mode',
+    is_flag=True, default=False,
+    # not yet supported in Click 6.7 but added in CommandLineOption
+    hidden=True,
+    help='Run ScanCode in a special "test error mode" to trigger errors with the --email scan. Only for testing.',
+    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
 @click.option('--print-options',
     is_flag=True,
     expose_value=False,
@@ -378,6 +402,7 @@ def print_options(ctx, param, value):
     help='Keep temporary files and show the directory where temporary files '
          'are stored. (By default temporary files are deleted when a scan is '
          'completed.)',
+    hidden=True,
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
@@ -388,6 +413,8 @@ def scancode(ctx, input,  # NOQA
              timing,
              max_in_memory,
              test_mode,
+             test_slow_mode,
+             test_error_mode,
              keep_temp_files,
              echo_func=echo_stderr,
              *args, **kwargs):
@@ -477,6 +504,8 @@ def scancode(ctx, input,  # NOQA
             quiet=quiet, verbose=verbose,
             timing=timing, max_in_memory=max_in_memory,
             test_mode=test_mode,
+            test_slow_mode=test_slow_mode,
+            test_error_mode=test_error_mode,
             keep_temp_files=keep_temp_files,
             pretty_params=pretty_params,
             # results are saved to file, no need to get them back in a cli context
@@ -511,6 +540,8 @@ def run_scan(
         keep_temp_files=False,
         return_results=True,
         test_mode=False,
+        test_slow_mode=False,
+        test_error_mode=False,
         pretty_params=None,
         *args, **kwargs):
     """
@@ -588,7 +619,9 @@ def run_scan(
         from_json=from_json,
         timing=timing,
         max_in_memory=max_in_memory,
-        test_mode=test_mode
+        test_mode=test_mode,
+        test_slow_mode=test_slow_mode,
+        test_error_mode=test_error_mode,
     )
     kwargs.update(standard_kwargs)
 
@@ -1193,20 +1226,40 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             except KeyboardInterrupt:
                 echo_func('\nAborted with Ctrl+C!', fg='red')
                 success = False
-                if pool:
-                    pool.terminate()
+                terminate_pool(pool)
                 break
 
     finally:
-        if pool:
-            # ensure the pool is really dead to work around a Python 2.7.3 bug:
-            # http://bugs.python.org/issue15101
-            pool.terminate()
+        # ensure the pool is really dead to work around a Python 2.7.3 bug:
+        # http://bugs.python.org/issue15101
+        terminate_pool(pool)
 
         if scans and hasattr(scans, 'render_finish'):
             # hack to avoid using a context manager
             scans.render_finish()
     return success
+
+
+def terminate_pool(pool):
+    """
+    Invoke terminate() on a process pool and deal with possible Windows issues.
+    """
+    if not pool:
+        return
+    if on_windows:
+        terminate_pool_with_backoff(pool)
+    else:
+        pool.terminate()
+
+
+def terminate_pool_with_backoff(pool, number_of_trials=3):
+    # try a few times to terminate, 
+    for trial in range(number_of_trials, 1):
+        try:
+            pool.terminate()
+            break
+        except WindowsError:
+            sleep(trial)
 
 
 def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
