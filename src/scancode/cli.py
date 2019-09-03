@@ -483,7 +483,6 @@ def scancode(ctx, input,  # NOQA
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
     """
-
     success = False
     try:
         # Validate CLI UI options dependencies and other CLI-specific inits
@@ -512,6 +511,12 @@ def scancode(ctx, input,  # NOQA
             return_results=False,
             echo_func=echo_stderr,
             *args, **kwargs)
+
+        # check for updates
+        from scancode.outdated import check_scancode_version
+        outdated = check_scancode_version()
+        if not quiet and outdated:
+            echo_stderr(outdated, fg='yellow')
 
     except click.UsageError as e:
         # this will exit
@@ -1180,7 +1185,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                     location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
                 else:
                     location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
-                    
+
                 if TRACE_DEEP:
                     logger_debug(
                     'scan_codebase: location:', location, 'results:', scan_result)
@@ -1253,7 +1258,7 @@ def terminate_pool(pool):
 
 
 def terminate_pool_with_backoff(pool, number_of_trials=3):
-    # try a few times to terminate, 
+    # try a few times to terminate,
     for trial in range(number_of_trials, 1):
         try:
             pool.terminate()
