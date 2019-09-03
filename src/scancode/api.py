@@ -36,6 +36,7 @@ import sys
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from typecode.contenttype import get_type
+from scancode import ScancodeError
 
 
 TRACE = False
@@ -104,7 +105,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
     return results
 
 
-def get_emails(location, threshold=50, test_mode=False, **kwargs):
+def get_emails(location, threshold=50, test_slow_mode=False, test_error_mode=False, **kwargs):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
     mappings for emails detected in the file at `location`.
@@ -113,7 +114,10 @@ def get_emails(location, threshold=50, test_mode=False, **kwargs):
     If test_mode is True, the scan will be slow for testing purpose and pause
     for one second.
     """
-    if True:
+    if test_error_mode:
+        raise ScancodeError('Triggered email failure')
+
+    if test_slow_mode:
         import time
         time.sleep(1)
 

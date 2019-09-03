@@ -376,6 +376,20 @@ def print_options(ctx, param, value):
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
+@click.option('--test-slow-mode',
+    is_flag=True, default=False,
+    # not yet supported in Click 6.7 but added in CommandLineOption
+    hidden=True,
+    help='Run ScanCode in a special "test slow mode" to ensure that --email scan needs at least one second to complete. Only for testing.',
+    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
+@click.option('--test-error-mode',
+    is_flag=True, default=False,
+    # not yet supported in Click 6.7 but added in CommandLineOption
+    hidden=True,
+    help='Run ScanCode in a special "test error mode" to trigger errors with the --email scan. Only for testing.',
+    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
 @click.option('--print-options',
     is_flag=True,
     expose_value=False,
@@ -399,6 +413,8 @@ def scancode(ctx, input,  # NOQA
              timing,
              max_in_memory,
              test_mode,
+             test_slow_mode,
+             test_error_mode,
              keep_temp_files,
              echo_func=echo_stderr,
              *args, **kwargs):
@@ -488,6 +504,8 @@ def scancode(ctx, input,  # NOQA
             quiet=quiet, verbose=verbose,
             timing=timing, max_in_memory=max_in_memory,
             test_mode=test_mode,
+            test_slow_mode=test_slow_mode,
+            test_error_mode=test_error_mode,
             keep_temp_files=keep_temp_files,
             pretty_params=pretty_params,
             # results are saved to file, no need to get them back in a cli context
@@ -522,6 +540,8 @@ def run_scan(
         keep_temp_files=False,
         return_results=True,
         test_mode=False,
+        test_slow_mode=False,
+        test_error_mode=False,
         pretty_params=None,
         *args, **kwargs):
     """
@@ -599,7 +619,9 @@ def run_scan(
         from_json=from_json,
         timing=timing,
         max_in_memory=max_in_memory,
-        test_mode=test_mode
+        test_mode=test_mode,
+        test_slow_mode=test_slow_mode,
+        test_error_mode=test_error_mode,
     )
     kwargs.update(standard_kwargs)
 

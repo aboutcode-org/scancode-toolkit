@@ -65,6 +65,11 @@ class EmailScanner(ScanPlugin):
     def is_enabled(self, email, **kwargs):
         return email
 
-    def get_scanner(self, max_email=50, test_mode=False, **kwargs):
+    def get_scanner(self, max_email=50, test_slow_mode=False, test_error_mode=False, **kwargs):
         from scancode.api import get_emails
-        return partial(get_emails, threshold=max_email, test_mode=test_mode)
+        return partial(
+            get_emails,
+            threshold=max_email,
+            test_slow_mode=test_slow_mode,
+            test_error_mode=test_error_mode
+        )
