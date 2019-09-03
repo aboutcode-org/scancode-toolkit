@@ -36,6 +36,7 @@ import scancode_config
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
+from commoncode.system import on_windows
 
 # Python 2 and 3 support
 try:
@@ -47,8 +48,16 @@ except ImportError:
 
 import os
 import sys
+from time import sleep
 from time import time
 import traceback
+
+# this exception is not available on posix
+try:
+    WindowsError  # NOQA
+except NameError:
+    class WindowsError(Exception):
+        pass
 
 import click  # NOQA
 click.disable_unicode_literals_warning = True
@@ -1195,20 +1204,40 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             except KeyboardInterrupt:
                 echo_func('\nAborted with Ctrl+C!', fg='red')
                 success = False
-                if pool:
-                    pool.terminate()
+                terminate_pool(pool)
                 break
 
     finally:
-        if pool:
-            # ensure the pool is really dead to work around a Python 2.7.3 bug:
-            # http://bugs.python.org/issue15101
-            pool.terminate()
+        # ensure the pool is really dead to work around a Python 2.7.3 bug:
+        # http://bugs.python.org/issue15101
+        terminate_pool(pool)
 
         if scans and hasattr(scans, 'render_finish'):
             # hack to avoid using a context manager
             scans.render_finish()
     return success
+
+
+def terminate_pool(pool):
+    """
+    Invoke terminate() on a process pool and deal with possible Windows issues.
+    """
+    if not pool:
+        return
+    if on_windows:
+        terminate_pool_with_backoff(pool)
+    else:
+        pool.terminate()
+
+
+def terminate_pool_with_backoff(pool, number_of_trials=3):
+    # try a few times to terminate, 
+    for trial in range(number_of_trials, 1):
+        try:
+            pool.terminate()
+            break
+        except WindowsError:
+            sleep(trial)
 
 
 def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
