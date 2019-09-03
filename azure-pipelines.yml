@@ -15,25 +15,39 @@ jobs:
                 bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
                   --ignore=tests/scancode \
                   --ignore=tests/cluecode \
-                  --ignore=tests/licensedcode
+                  --ignore=tests/licensedcode \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
-              scancode: bin/py.test --reruns=3 -vvs --test-suite=all tests/scancode
+              scancode: |
+                bin/py.test --reruns=3 -vvs --test-suite=all tests/scancode \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
-              cluecode: bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/cluecode
+              cluecode: |
+                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all tests/cluecode \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
               license_base: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
                   --ignore=tests/licensedcode/test_zzzz_cache.py \
                   --ignore=tests/licensedcode/test_detection_datadriven1.py \
-                  tests/licensedcode
+                  tests/licensedcode \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
               license_main: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven1.py
+                  tests/licensedcode/test_detection_datadriven1.py \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
               license_cache: |
                 bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_zzzz_cache.py
+                  tests/licensedcode/test_zzzz_cache.py \
+                  --cov=src --cov-report=term --cov-report=xml
+                bin/codecov --token "$CODECOV_TOKEN"
 
     - template: etc/ci/azure-win.yml
       parameters:
