@@ -75,16 +75,16 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "The Regents of the University of California",
+          "value": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
           "end_line": 23
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 1993 The Regents of the University of California",
+          "value": "The Regents of the University of California",
           "start_line": 22,
           "end_line": 23
         }
@@ -191,16 +191,16 @@
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "Jouni Malinen",
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }
