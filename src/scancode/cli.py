@@ -514,8 +514,8 @@ def scancode(ctx, input,  # NOQA
 
         # check for updates
         from scancode.outdated import check_scancode_version
-        outdated=check_scancode_version()
-        if outdated:
+        outdated = check_scancode_version()
+        if not quiet and outdated:
             echo_stderr(outdated, fg='yellow')
 
     except click.UsageError as e:
@@ -1185,7 +1185,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                     location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
                 else:
                     location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
-                    
+
                 if TRACE_DEEP:
                     logger_debug(
                     'scan_codebase: location:', location, 'results:', scan_result)
@@ -1258,7 +1258,7 @@ def terminate_pool(pool):
 
 
 def terminate_pool_with_backoff(pool, number_of_trials=3):
-    # try a few times to terminate, 
+    # try a few times to terminate,
     for trial in range(number_of_trials, 1):
         try:
             pool.terminate()
