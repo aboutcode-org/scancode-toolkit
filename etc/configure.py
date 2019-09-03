@@ -480,7 +480,7 @@ sys.path[:] = [i for i in new if i not in prev] + [i for i in new if i in prev]
 '''
     if not os.path.exists(activate_path):
         with io.open(activate_path, 'w', encoding='utf-8') as f:
-            f.write(activate_this.encode('utf-8'))
+            f.write(activate_this)
     return activate_this
 
 
