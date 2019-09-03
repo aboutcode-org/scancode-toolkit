@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import unittest
+
 
 import pytest
 
@@ -39,6 +39,7 @@ pytestmark = pytest.mark.skipif(not py3, reason='Mock is not available as a buil
 
 
 def test_get_latest_version():
+    from unittest import mock
     pypi_mock_releases = {
         'releases': {
             '2.0.0': [],
@@ -58,8 +59,8 @@ def test_get_latest_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with unittest.mock.patch('requests.get') as mock_get:
-        mock_get.return_value = unittest.mock.Mock(
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
             json=jget,
             status_code=200
         )
@@ -68,13 +69,15 @@ def test_get_latest_version():
 
 
 def test_get_latest_version_fails_on_http_error():
-    with unittest.mock.patch('requests.get') as mock_get:
-        mock_get.return_value = unittest.mock.Mock(status_code=400)
+    from unittest import mock
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(status_code=400)
         with pytest.raises(Exception):
             outdated.get_latest_version()
 
 
 def test_get_latest_version_ignore_rc_versions():
+    from unittest import mock
     pypi_mock_releases = {
         'releases': {
             '2.0.0': [],
@@ -88,8 +91,8 @@ def test_get_latest_version_ignore_rc_versions():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with unittest.mock.patch('requests.get') as mock_get:
-        mock_get.return_value = unittest.mock.Mock(
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
             json=jget,
             status_code=200
         )
@@ -98,6 +101,7 @@ def test_get_latest_version_ignore_rc_versions():
 
 
 def test_check_scancode_version():
+    from unittest import mock
     pypi_mock_releases = {
         'releases': {
             '2.0.0': [],
@@ -111,8 +115,8 @@ def test_check_scancode_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with unittest.mock.patch('requests.get') as mock_get:
-        mock_get.return_value = unittest.mock.Mock(
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
             json=jget,
             status_code=200
         )
@@ -122,6 +126,7 @@ def test_check_scancode_version():
 
 
 def test_check_scancode_version_no_new_version():
+    from unittest import mock
     pypi_mock_releases = {
         'releases': {
             '2.0.0': [],
@@ -135,8 +140,8 @@ def test_check_scancode_version_no_new_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with unittest.mock.patch('requests.get') as mock_get:
-        mock_get.return_value = unittest.mock.Mock(
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
             json=jget,
             status_code=200
         )
