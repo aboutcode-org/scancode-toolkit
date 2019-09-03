@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from unittest import mock
+import unittest
 
 import pytest
 
@@ -58,8 +58,8 @@ def test_get_latest_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with mock.patch('requests.get') as mock_get:
-        mock_get.return_value = mock.Mock(
+    with unittest.mock.patch('requests.get') as mock_get:
+        mock_get.return_value = unittest.mock.Mock(
             json=jget,
             status_code=200
         )
@@ -68,8 +68,8 @@ def test_get_latest_version():
 
 
 def test_get_latest_version_fails_on_http_error():
-    with mock.patch('requests.get') as mock_get:
-        mock_get.return_value = mock.Mock(status_code=400)
+    with unittest.mock.patch('requests.get') as mock_get:
+        mock_get.return_value = unittest.mock.Mock(status_code=400)
         with pytest.raises(Exception):
             outdated.get_latest_version()
 
@@ -88,8 +88,8 @@ def test_get_latest_version_ignore_rc_versions():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with mock.patch('requests.get') as mock_get:
-        mock_get.return_value = mock.Mock(
+    with unittest.mock.patch('requests.get') as mock_get:
+        mock_get.return_value = unittest.mock.Mock(
             json=jget,
             status_code=200
         )
@@ -111,8 +111,8 @@ def test_check_scancode_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with mock.patch('requests.get') as mock_get:
-        mock_get.return_value = mock.Mock(
+    with unittest.mock.patch('requests.get') as mock_get:
+        mock_get.return_value = unittest.mock.Mock(
             json=jget,
             status_code=200
         )
@@ -135,8 +135,8 @@ def test_check_scancode_version_no_new_version():
     def jget(*args, **kwargs):
         return pypi_mock_releases
 
-    with mock.patch('requests.get') as mock_get:
-        mock_get.return_value = mock.Mock(
+    with unittest.mock.patch('requests.get') as mock_get:
+        mock_get.return_value = unittest.mock.Mock(
             json=jget,
             status_code=200
         )
