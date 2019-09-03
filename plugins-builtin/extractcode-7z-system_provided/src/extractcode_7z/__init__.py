@@ -38,7 +38,6 @@ class SevenzipPaths(LocationProviderPlugin):
 	
 	def get_locations(self):
 	
-        	curr_dir = dirname(abspath(__file__))
 		distribution=platform.linux_distribution()[0]	
 	
 		# List of various major distributions consisting of flavors
