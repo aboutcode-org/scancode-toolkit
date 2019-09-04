@@ -53,7 +53,7 @@ class ELFScanner(ScanPlugin):
     options = [
         CommandLineOption(('--elf',),
             is_flag=True, default=False,
-            help=' Collect the names of shared objects/libraries needed by an Elf binary file.',
+            help='Collect the names of shared objects/libraries needed by an Elf binary file.',
             help_group=SCAN_GROUP,
             sort_order=100),
     ]
