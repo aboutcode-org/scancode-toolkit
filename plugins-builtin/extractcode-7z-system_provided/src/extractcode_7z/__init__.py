@@ -54,7 +54,7 @@ class SevenzipPaths(LocationProviderPlugin):
 			
 			lib_dir = '/usr/libexec/p7zip'
 
-		else
+		else:
 			lib_dir = '/usr'
 
 	        locations = {
