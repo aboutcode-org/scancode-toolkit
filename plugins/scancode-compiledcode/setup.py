@@ -13,7 +13,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode scan plugin to get Linux lkmclue, cpp includes and elf info.'''
+desc = '''A ScanCode scan plugin to get lkmclue, dwarf, cpp includes and elf info.'''
 
 setup(
     name='scancode-compiledcode',
@@ -30,7 +30,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     classifiers=[
-        # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
+        # complete classifier list:
+        # http://pypi.python.org/pypi?%3Aaction=list_classifiers
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
@@ -39,19 +40,20 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'lkmclue', 'elf', 'cpp includes'
+        'open source', 'scancode', 'dwarf', 'lkmclue', 'elf', 'cpp includes'
     ],
     install_requires=[
         'scancode-toolkit',
         'attr',
         'scancode-ctags',
+        'scancode-dwarfdump',
     ],
     entry_points={
         'scancode_scan': [
             'scancode-lkmclue = lkmclue:LKMClueScanner',
             'scancode-elf = elf:ELFScanner',
             'scancode-cppincludes = cppincludes:CPPIncludesScanner',
-
+            'scancode-dwarf = dwarf:DwarfScanner',
         ],
     }
 
