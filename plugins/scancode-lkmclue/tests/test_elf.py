@@ -45,5 +45,5 @@ class TestScanPluginELFScan(FileBasedTesting):
         args = ['--elf', test_dir, '--json', result_file]
         run_scan_click(args)
         test_loc = self.get_test_loc('elf/expected.json')
-        check_json_scan(test_loc, result_file, regen=True)
+        check_json_scan(test_loc, result_file, regen=False)
 

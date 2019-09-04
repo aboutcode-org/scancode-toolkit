@@ -1,0 +1,178 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--cpp-includes": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "cppincludes",
+      "type": "directory",
+      "cpp_includes": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/expected.json",
+      "type": "file",
+      "cpp_includes": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test1.c",
+      "type": "file",
+      "cpp_includes": [
+        "<linux/config.h",
+        "<linux/version.h",
+        "<linux/module.h",
+        "<linux/init.h",
+        "<linux/skbuff.h",
+        "<linux/netdevice.h",
+        "<linux/random.h",
+        "<linux/delay.h",
+        "<linux/cache.h",
+        "<linux/sysctl.h",
+        "<linux/proc_fs.h",
+        "<linux/if_arp.h",
+        "<asm/uaccess.h",
+        "<net80211/if_media.h",
+        "<net80211/ieee80211_var.h",
+        "<net80211/ieee80211_rate.h",
+        "\"if_athvar.h",
+        "\"ah_desc.h",
+        "\"amrr.h",
+        "\"release.h"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test2.c",
+      "type": "file",
+      "cpp_includes": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test3.cpp",
+      "type": "file",
+      "cpp_includes": [
+        "\"stacktrace.h",
+        "<string.h",
+        "<stdio.h",
+        "<unistd.h",
+        "<stdlib.h",
+        "<sys/types.h",
+        "<signal.h",
+        "<sys/wait.h",
+        "<execinfo.h",
+        "\"lhn_defines.h"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test4.c",
+      "type": "file",
+      "cpp_includes": [
+        "<config.h",
+        "<stdlib.h",
+        "<unistd.h",
+        "<string.h",
+        "<strings.h",
+        "<sys/types.h",
+        "<sys/wait.h",
+        "<winsock.h",
+        "<sys/socket.h",
+        "<sys/sockio.h",
+        "<netinet/in.h",
+        "<stdio.h",
+        "<sys/time.h",
+        "<time.h",
+        "<time.h",
+        "<sys/select.h",
+        "<sys/param.h",
+        "<syslog.h",
+        "<sys/ioctl.h",
+        "<net/if.h",
+        "<netdb.h",
+        "<arpa/inet.h",
+        "<fcntl.h",
+        "<process.h",
+        "<signal.h",
+        "<errno.h",
+        "<getopt.h",
+        "\"asn1.h",
+        "\"snmp_api.h",
+        "\"snmp_impl.h",
+        "\"snmp_client.h",
+        "\"mib.h",
+        "\"snmp.h",
+        "\"system.h",
+        "\"version.h",
+        "\"snmptrapd_handlers.h",
+        "\"snmptrapd_log.h",
+        "\"read_config.h",
+        "\"snmp_debug.h",
+        "\"snmp_logging.h",
+        "\"callback.h",
+        "\"snmpusm.h",
+        "\"tools.h",
+        "\"lcd_time.h",
+        "\"transform_oids.h",
+        "\"snmpv3.h",
+        "\"default_store.h",
+        "<sys/resource.h"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test5.c",
+      "type": "file",
+      "cpp_includes": [
+        "<sys/time.h",
+        "<time.h",
+        "<sys/time.h",
+        "<time.h",
+        "<ucd-snmp/ucd-snmp-config.h",
+        "<ucd-snmp/ucd-snmp-includes.h",
+        "<ucd-snmp/ucd-snmp-agent-includes.h",
+        "\"util_funcs.h",
+        "\"diskio.h",
+        "<kstat.h",
+        "<libperfstat.h",
+        "<string.h",
+        "<sys/param.h",
+        "<sys/sysctl.h",
+        "<sys/diskstats.h",
+        "<sys/param.h",
+        "<sys/resource.h",
+        "<sys/dkstat.h",
+        "<devstat.h",
+        "<math.h",
+        "<CoreFoundation/CoreFoundation.h",
+        "<IOKit/IOKitLib.h",
+        "<IOKit/storage/IOBlockStorageDriver.h",
+        "<IOKit/storage/IOMedia.h",
+        "<IOKit/IOBSD.h"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cppincludes/test6.c",
+      "type": "file",
+      "cpp_includes": [
+        "<net80211/ieee80211_var.h",
+        "<net80211/ieee80211_var2.h"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

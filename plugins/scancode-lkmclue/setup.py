@@ -39,7 +39,7 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'lkmclue', 'elf'
+        'open source', 'scancode', 'lkmclue', 'elf', 'cpp includes'
     ],
     install_requires=[
         'scancode-toolkit',
@@ -50,6 +50,7 @@ setup(
         'scancode_scan': [
             'scancode-lkmclue = lkmclue:LKMClueScanner',
             'scancode-elf = elf:ELFScanner',
+            'scancode-cppincludes = cppincludes:CPPIncludesScanner',
 
         ],
     }
