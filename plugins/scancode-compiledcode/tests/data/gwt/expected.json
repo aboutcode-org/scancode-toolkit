@@ -1,0 +1,95 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--gwt": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "gwt",
+      "type": "directory",
+      "gwt": [],
+      "scan_errors": []
+    },
+    {
+      "path": "gwt/expected.json",
+      "type": "file",
+      "gwt": [],
+      "scan_errors": []
+    },
+    {
+      "path": "gwt/gwt.symbolMap",
+      "type": "file",
+      "gwt": [
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "33",
+          "memberName": "",
+          "jsName": "GXT",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": ""
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "33",
+          "memberName": "$clinit",
+          "jsName": "qc",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::$clinit()V"
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "39",
+          "memberName": "BLANK_IMAGE_URL",
+          "jsName": "Nb",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::BLANK_IMAGE_URL"
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "44",
+          "memberName": "IMAGES",
+          "jsName": "Ob",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::IMAGES"
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "180",
+          "memberName": "SSL_SECURE_URL",
+          "jsName": "Pb",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::SSL_SECURE_URL"
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "186",
+          "memberName": "ariaEnabled",
+          "jsName": "Qb",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::ariaEnabled"
+        },
+        {
+          "clean_path": "/Views/zoro/lib/lib/gxt/gxt-2.2.6-gwt22.jar!/com/extjs/gxt/ui/client/GXT.java",
+          "sourceLine": "187",
+          "memberName": "defaultTheme",
+          "jsName": "Rb",
+          "className": "com.extjs.gxt.ui.client.GXT",
+          "jsniIdent": "com.extjs.gxt.ui.client.GXT::defaultTheme"
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}
