@@ -16,7 +16,7 @@ from setuptools import setup
 desc = '''A ScanCode path provider plugin to provide a system package provided libarchive shared library.'''
 
 setup(
-    name='extractcode-libarchive',
+    name='extractcode-libarchive-system-provided',
     version='3.1.3',
     license='bsd-simplified',
     description=desc,
