@@ -16,7 +16,7 @@ from setuptools import setup
 desc = '''A ScanCode path provider plugin to provide a system package provided libmagic binary and database.'''
 
 setup(
-    name='typecode-libmagic',
+    name='typecode-libmagic-system-provided',
     version='5.22.1',
     license='bsd-simplified',
     description=desc,
