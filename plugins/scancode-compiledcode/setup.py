@@ -13,7 +13,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-desc = '''A ScanCode scan plugin to get lkmclue, dwarf, cpp includes and elf info.'''
+desc = '''A ScanCode scan plugin to get lkmclue, dwarf, gwt, cpp includes and elf info.'''
 
 setup(
     name='scancode-compiledcode',
@@ -40,7 +40,7 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        'open source', 'scancode', 'dwarf', 'lkmclue', 'elf', 'cpp includes'
+        'open source', 'scancode', 'dwarf', 'lkmclue', 'elf', 'cpp includes', 'gwt'
     ],
     install_requires=[
         'scancode-toolkit',
@@ -54,6 +54,7 @@ setup(
             'scancode-elf = elf:ELFScanner',
             'scancode-cppincludes = cppincludes:CPPIncludesScanner',
             'scancode-dwarf = dwarf:DwarfScanner',
+            'scancode-gwt = gwt:GWTScanner',
         ],
     }
 
