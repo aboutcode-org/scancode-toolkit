@@ -36,30 +36,31 @@ from plugincode.location_provider import location_provider_impl
 
 class SevenzipPaths(LocationProviderPlugin):
 	
-	def get_locations(self):
-	
-		distribution=platform.linux_distribution()[0]	
-	
-		# List of various major distributions consisting of flavors
+    def get_locations(self):
 
-		debian_based_distro=['Ubuntu','Mint','debian']
+        distribution=platform.linux_distribution()[0]	
 	
-		rpm_based_distro=['Fedora','redhat']
+	# List of various major distributions consisting of flavors
 
-		if distribution in debian_based_distro:
+        debian_based_distro=['Ubuntu','Mint','debian']
+	
+        rpm_based_distro=['Fedora','redhat']
+
+        if distribution in debian_based_distro:
 		
-			lib_dir = '/usr/lib/p7zip'
+            lib_dir = '/usr/lib/p7zip'
 	
-		elif distribution in rpm_based_distro:
+        elif distribution in rpm_based_distro:
 			
-			lib_dir = '/usr/libexec/p7zip'
+            lib_dir = '/usr/libexec/p7zip'
 
-		else:
-			lib_dir = '/usr'
+        else:
 
-	        locations = {
-        	    'extractcode.sevenzip.libdir': lib_dir,
-           	 'extractcode.sevenzip.exe': join(lib_dir, '7z'),
-        	}
+            lib_dir = '/usr'
 
-	        return locations
+        locations = {
+            'extractcode.sevenzip.libdir': lib_dir,
+            'extractcode.sevenzip.exe': join(lib_dir, '7z'),
+        }
+
+        return locations
