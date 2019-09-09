@@ -50,10 +50,13 @@ def load_data(location='00-new-licenses.txt'):
     text = []
     in_data = False
     in_text = False
-    for ln, line in enumerate(lines):
+    last_lines = []
+    for ln, line in enumerate(lines, 1):
+        last_lines.append(': '.join([str(ln), line]))
         if line == '----------------------------------------':
-            if not (ln == 0 or in_text):
-                raise Exception('Invalid structure: #{ln}: {line}'.format(**locals()))
+            if not (ln == 1 or in_text):
+                raise Exception('Invalid structure: #{ln}: {line}\n'.format(**locals()) +
+                                '\n'.join(last_lines[-10:]))
 
             in_data = True
             in_text = True
@@ -65,7 +68,8 @@ def load_data(location='00-new-licenses.txt'):
 
         if line == '---':
             if not in_data:
-                raise Exception('Invalid structure: #{ln}: {line}'.format(**locals()))
+                raise Exception('Invalid structure: #{ln}: {line}\n'.format(**locals()) +
+                                '\n'.join(last_lines[-10:]))
 
             in_data = False
             in_text = True
@@ -146,17 +150,26 @@ def cli(licenses_file):
             continue
 
         # validate YAML syntax
-        parsed = saneyaml.load(rdat)
+        try:
+            parsed = saneyaml.load(rdat)
+        except:
+            print('########################################################')
+            print('Invalid YAML:')
+            print(rdat)
+            print('########################################################')
+            raise
+
         if parsed.get('is_negative'):
-            license_expression = 'not-a-license'
+            base_name = 'not-a-license'
         else:
             _, _, license_expression = data[0].partition(': ')
             license_expression = license_expression.strip()
             if not license_expression:
                 raise Exception('Missing license_expression for text:', rtxt)
             licensing.parse(license_expression, validate=True, simple=True)
+            base_name = license_expression
 
-        base_loc = find_rule_base_loc(license_expression)
+        base_loc = find_rule_base_loc(base_name)
 
         data_file = base_loc + '.yml'
         with io.open(data_file, 'w', encoding='utf-8') as o:
@@ -171,7 +184,7 @@ def cli(licenses_file):
             # cleanup
             os.remove(text_file)
             os.remove(data_file)
-            print('Skipping already added rule with text for:', license_expression)
+            print('Skipping already added rule with text for:', base_name)
         else:
             rules_tokens.add(rule_tokens)
             rule.dump()
