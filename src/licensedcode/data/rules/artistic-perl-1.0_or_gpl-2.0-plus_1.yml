@@ -1,0 +1,5 @@
+license_expression: artistic-perl-1.0 OR gpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 75
+referenced_filenames:
+    - COPYING
