@@ -1,2 +1,4 @@
-license_expression: artistic-2.0 AND bsd-new
+license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
+relevance: 90
 is_license_tag: yes
+
