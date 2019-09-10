@@ -1,0 +1,51 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json": "<file>",
+        "--makedepend": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "makedepend",
+      "type": "directory",
+      "makedepend": {},
+      "scan_errors": []
+    },
+    {
+      "path": "makedepend/addrutil.d",
+      "type": "file",
+      "makedepend": {
+        "addrutil.o": [
+          "/test/ram/../../Common/Src/addrutil.c",
+          "/test/ram/../../Common/Inc/buildmode.h",
+          "/test/ram/../../Common/Inc/dct_types.h",
+          "/test/ram/../../Common/Inc/mostypes.h",
+          "/test/ram/../../Common/Inc/memutil.h",
+          "/test/ram/../../Common/Inc/addrutil.h",
+          "/test/ram/../../Common/Inc/hwdevices.h",
+          "/test/ram/../../Common/Inc/tsic.h",
+          "/test/ram/../../Common/Inc/pltcfg.h",
+          "/test/ram/../../Common/Inc/dct_debug.h"
+        ]
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "makedepend/expected.json",
+      "type": "file",
+      "makedepend": {},
+      "scan_errors": []
+    }
+  ]
+}

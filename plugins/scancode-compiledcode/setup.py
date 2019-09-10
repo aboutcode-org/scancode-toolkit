@@ -55,6 +55,7 @@ setup(
             'scancode-cppincludes = cppincludes:CPPIncludesScanner',
             'scancode-dwarf = dwarf:DwarfScanner',
             'scancode-gwt = gwt:GWTScanner',
+            'scancode-makedepend = makedepend:MakeDependScanner',
         ],
     }
 
