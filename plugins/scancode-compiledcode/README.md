@@ -9,5 +9,6 @@ To start the test case, please run:
    pytest -vvs plugins/scancode-compiledcode/tests/test_cpp_includes.py
    pytest -vvs plugins/scancode-compiledcode/tests/test_dwarf.py
    pytest -vvs plugins/scancode-compiledcode/tests/test_gwt.py
+   pytest -vvs plugins/scancode-compiledcode/tests/test_makedepend.py
    
 Note that in step3, the path depends on your OS versions, please update according to your real os enviroment.
