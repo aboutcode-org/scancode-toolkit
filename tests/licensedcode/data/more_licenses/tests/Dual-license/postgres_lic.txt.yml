@@ -2,22 +2,19 @@ license_expressions:
   - other-permissive
   - postgresql
   - henry-spencer-1999
-  - artistic-2.0 AND bsd-new
-  - artistic-2.0 OR gpl-1.0-plus
+  - tcl
+  - tcl
+  - (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
   - postgresql
   - postgresql
   - bsd-new
-  - unknown-license-reference
-  - bsd-new
-  - unknown-license-reference
   - bsd-new
   - bsd-new
   - bsd-new
-  - unknown-license-reference
   - bsd-new
-  - unknown-license-reference
   - bsd-new
-  - unknown-license-reference
+  - bsd-new
   - other-permissive
   - other-permissive
+  - tcl
   - tcl

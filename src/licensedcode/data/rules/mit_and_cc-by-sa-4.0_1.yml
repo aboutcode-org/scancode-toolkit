@@ -1,0 +1,6 @@
+license_expression: mit AND cc-by-sa-4.0
+is_license_reference: yes
+relevance: 100
+notes: stackoverflow.com is not MIT-licensed
+ignorable_urls:
+    - https://stackoverflow.com/a/2031935/450127
