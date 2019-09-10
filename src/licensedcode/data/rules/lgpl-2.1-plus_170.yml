@@ -1,0 +1,7 @@
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - OPENCV_SOURCE_CODE/3rdparty/ffmpeg/readme.txt
+ignorable_urls:
+    - http://ffmpeg.org/legal.html
