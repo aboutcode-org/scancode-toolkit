@@ -13,7 +13,7 @@ py27_task:
 
         install_script:
                 - sed -i.bak -e 's,pkg+http://pkg.FreeBSD.org/\${ABI}/quarterly,pkg+http://pkg.FreeBSD.org/\${ABI}/latest,' /etc/pkg/FreeBSD.conf
-                - pkg upgrade
+                - pkg upgrade -y
                 - pkg install -y python27 bash libxml2 libxslt
         script:
                 - ./configure
@@ -29,7 +29,7 @@ py36_task:
 
         install_script:
                 - sed -i.bak -e 's,pkg+http://pkg.FreeBSD.org/\${ABI}/quarterly,pkg+http://pkg.FreeBSD.org/\${ABI}/latest,' /etc/pkg/FreeBSD.conf
-                - pkg upgrade
+                - pkg upgrade -y
                 - pkg install -y python36 bash libxml2 libxslt
         script:
                 - ./configure
