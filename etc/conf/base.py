@@ -31,6 +31,8 @@ elif 'win32' in sys_platform:
     os = 'win'
 elif 'darwin' in sys_platform:
     os = 'mac'
+elif 'freebsd' in sys_platform:
+    os = 'freebsd'
 else:
     unsupported(sys_platform)
 
@@ -38,6 +40,7 @@ supported_combos = {
     'linux': ['32', '64'],
     'win': ['32', ],
     'mac': ['64', ],
+    'freebsd': ['32', '64'],
 }
 
 arches = supported_combos[os]
