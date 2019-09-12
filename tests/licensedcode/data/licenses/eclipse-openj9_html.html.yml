@@ -5,8 +5,7 @@ license_expressions:
     AND bsd-new AND mit AND gpl-3.0-plus WITH autoconf-simple-exception
   - epl-2.0 OR apache-2.0
   - bsd-new
-  - unknown
-  - bsd-new
+  - mit
   - bsd-new
   - gpl-3.0-plus WITH autoconf-simple-exception
   - unicode

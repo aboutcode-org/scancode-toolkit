@@ -20,6 +20,7 @@ license_expressions:
   - libpng
   - libpng
   - libpng
+  - libpng
   - bsd-new
   - mit
   - mpl-2.0

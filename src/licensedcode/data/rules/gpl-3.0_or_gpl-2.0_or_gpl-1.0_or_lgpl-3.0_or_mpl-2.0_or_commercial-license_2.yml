@@ -1,0 +1,10 @@
+license_expression: gpl-3.0 OR gpl-2.0 OR gpl-1.0 OR lgpl-3.0 OR mpl-2.0 OR commercial-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://getid3.org/#gCL
+    - http://www.mozilla.org/MPL/2.0/
+    - https://gnu.org/licenses/gpl.html
+    - https://gnu.org/licenses/lgpl.html
+    - https://gnu.org/licenses/old-licenses/gpl-1.0.html
+    - https://gnu.org/licenses/old-licenses/gpl-2.0.html

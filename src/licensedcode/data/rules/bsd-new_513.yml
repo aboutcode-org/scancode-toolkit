@@ -1,0 +1,5 @@
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://opencv.org/license.html

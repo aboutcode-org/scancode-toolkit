@@ -1,0 +1,7 @@
+license_expression: bsd-new
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) Intel Corporation
+ignorable_holders:
+    - Intel Corporation
