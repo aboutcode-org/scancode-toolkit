@@ -128,8 +128,8 @@ def flatten_scan(scan, headers):
     for scanned_file in scan:
         path = scanned_file.pop('path')
 
-        if path.startswith('/'):
-            path = path[1:]
+        # removing any slash at the begening of the path
+        path = path.lstrip('/')
             
         # use a trailing slash for directories
         if scanned_file.get('type') == 'directory' and not path.endswith('/'):
