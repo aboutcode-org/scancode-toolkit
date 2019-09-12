@@ -117,6 +117,22 @@ def test_flatten_scan_minimal():
     check_json(result, expected_file)
 
 
+def test_flatten_scan_can_process_path_with_and_without_leading_slash():
+    test_json = test_env.get_test_loc('csv/flatten_scan/path_with_and_without_leading_slash.json')
+    scan = load_scan(test_json)
+    headers = OrderedDict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+        ])
+    result = list(flatten_scan(scan, headers))
+    expected_file = test_env.get_test_loc('csv/flatten_scan/path_with_and_without_leading_slash.json-expected')
+    check_json(result, expected_file)
+
+    
 @pytest.mark.scanslow
 def test_can_process_live_scan_for_packages_with_root():
     test_dir = test_env.get_test_loc('csv/packages/scan')
