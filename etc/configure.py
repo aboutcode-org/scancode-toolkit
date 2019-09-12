@@ -203,11 +203,13 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
             yield option + quote(path)
 
 
-def create_virtualenv_py2(std_python, root_dir, tpp_dirs=(), quiet=False):
+def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
     """
     Create a virtualenv in `root_dir` using the `std_python` Python
     executable. One of the `tpp_dirs` must contain a vendored virtualenv.py and
     virtualenv dependencies such as setuptools and pip packages.
+    Note: we do not use the bundled Python 3 "venv" because its behavior
+    is not consistent across Linux distro and sometimes pip is not included.
 
     @std_python: Path or name of the Python executable to use.
 
@@ -249,28 +251,6 @@ def quote(s):
     Return a string s enclosed in double quotes.
     """
     return '"{}"'.format(s)
-
-
-def create_virtualenv_py3(std_python, root_dir, tpp_dirs=(), quiet=False):
-    """
-    Create a virtualenv in `root_dir` using the `std_python` Python
-    executable.
-
-    @std_python: Path or name of the Python executable to use.
-
-    @root_dir: directory in which the virtualenv will be created. This is also
-    the root directory for the project and the base directory for vendored
-    components directory paths.
-    """
-    if not quiet:
-        print("* Configuring Python ...")
-
-    vcmd = [quote(std_python), '-m', 'venv']
-    # we create the virtualenv in the root_dir
-    vcmd.append(quote(root_dir))
-    call(vcmd, root_dir)
-    activate(root_dir)
-    run_pip(['pip', 'setuptools', 'virtualenv', 'wheel'], root_dir, tpp_dirs, quiet)
 
 
 def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
@@ -555,17 +535,14 @@ if __name__ == '__main__':
         if not os.path.exists(abs_path):
             if not quiet:
                 print()
-                print('WARNING: Third-party Python libraries directory does not exists:\n'
-                      '  %(path)r: %(abs_path)r\n'
-                      '  Provided by environment variable:\n'
-                      '  set %(envvar)s=%(path)r' % locals())
+                print(
+                    'WARNING: Third-party Python libraries directory does not exists:\n'
+                    '  %(path)r: %(abs_path)r\n'
+                    '  Provided by environment variable:\n'
+                    '  set %(envvar)s=%(path)r' % locals())
                 print()
         else:
             thirdparty_dirs.append(path)
-    if py2:
-        create_virtualenv = create_virtualenv_py2
-    else:
-        create_virtualenv = create_virtualenv_py3
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
