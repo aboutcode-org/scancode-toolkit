@@ -1,49 +1,95 @@
-language: python
-
-python:
-  - 2.7
-  - 3.6
-
-# Use a matrix of TEST_SUITE variables to distribute tests to several machines
-# Use a global PYTEST variable to run all of the tests in a uniform fashion
-# The --cov-report=term option displays coverage in CI logs
-# The --cov-report=xml option is important for codecov.ioTestFossLicDataDriven
-env:
-  global:
-    - PYTESTCOVR="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml"
-    - PYTESTBASE="bin/py.test -vvs --reruns 3"
-  matrix:
-    - TEST_SUITE="$PYTESTCOVR -n2 --ignore=tests/scancode
-    - TEST_SUITE="$PYTESTCOVR tests/scancode"
-
-
-# Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
-# So, you can not simply have the following section in your build matrix:
-# os:
-#   - linux
-#   - osx
-# Instead, you have to include OSX entries into the build matrix manually.
-# In particular, this means specifying the environment variables again.
-
-# The following was adapted from here:
-#   https://docs.travis-ci.com/user/multi-os/
-# Set TEST_SUITE in `env:` so that the `script:` section below works
-# Set `language: generic` to clear `language: python` from above
-# Set `python:` (to empty) to clear it from the travis-ci web interface
-# Set `osx_image: xcode7.3` to pin OSX and Python versions, see here:
-#   https://docs.travis-ci.com/user/osx-ci-environment/
 matrix:
   include:
     - os: osx
-      env: TEST_SUITE="$PYTESTBASE -n2 --ignore=tests/scancode"
+      env: 
+        - PYTHON="3.6.8"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
       language: generic
       python:
-      osx_image: xcode7.3
     - os: osx
-      env: TEST_SUITE="$PYTESTBASE tests/scancode"
+      env: 
+        - PYTHON="3.6.8"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
       language: generic
       python:
-      osx_image: xcode7.3
+
+    - os: osx
+      env: 
+        - PYTHON="2.7.15"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
+      language: generic
+      python:
+    - os: osx
+      env: 
+        - PYTHON="2.7.15"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      language: generic
+      python:
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
+      language: python
+      python: "2.7"
+      dist: xenial
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      language: python
+      python: "2.7"
+      dist: xenial
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
+      language: python
+      python: "2.7"
+      dist: bionic
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      language: python
+      python: "2.7"
+      dist: bionic
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
+      language: python
+      python: "3.6"
+      dist: xenial
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      language: python
+      python: "3.6"
+      dist: xenial
+
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
+      language: python
+      python: "3.6"
+      dist: bionic
+    - os: linux
+      sudo: required
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      language: python
+      python: "3.6"
+      dist: bionic
+
+
+addons:
+  homebrew:
+    packages:
+        - openssl
+        - readline
+        - sqlite3
+        - xz
+        - zlib
+        - pyenv
+    update: true
+
 
 install:
   - ./configure
