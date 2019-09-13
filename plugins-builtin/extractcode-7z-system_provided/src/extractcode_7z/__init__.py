@@ -26,41 +26,39 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 import platform
-from os.path import abspath
-from os.path import dirname
-from os.path import join
+from os import path
 
 from plugincode.location_provider import LocationProviderPlugin
-from plugincode.location_provider import location_provider_impl
 
 
 class SevenzipPaths(LocationProviderPlugin):
-	
+
     def get_locations(self):
+        """
+        Return a mapping of {location key: location} providing the installation
+        locations of the 7zip exe and shared libraries as installed on various
+        Linux distros or on FreeBSD.
+        """
+        mainstream_system = platform.system().lower()
+        if mainstream_system == 'linux':
+            distribution = platform.linux_distribution()[0].lower()
+            debian_based_distro = ['ubuntu', 'mint', 'debian']
+            rpm_based_distro = ['fedora', 'redhat']
 
-        distribution=platform.linux_distribution()[0]	
-	
-	# List of various major distributions consisting of flavors
+            if distribution in debian_based_distro:
+                lib_dir = '/usr/lib/p7zip'
 
-        debian_based_distro=['Ubuntu','Mint','debian']
-	
-        rpm_based_distro=['Fedora','redhat']
+            elif distribution in rpm_based_distro:
+                lib_dir = '/usr/libexec/p7zip'
 
-        if distribution in debian_based_distro:
-		
-            lib_dir = '/usr/lib/p7zip'
-	
-        elif distribution in rpm_based_distro:
-			
-            lib_dir = '/usr/libexec/p7zip'
-
-        else:
-
-            lib_dir = '/usr'
+            else:
+                raise Exception('Unsupported system: {}'.format(distribution))
+        elif mainstream_system == 'freebsd':
+            lib_dir = '/usr/local/libexec/p7zip'
 
         locations = {
             'extractcode.sevenzip.libdir': lib_dir,
-            'extractcode.sevenzip.exe': join(lib_dir, '7z'),
+            'extractcode.sevenzip.exe': path.join(lib_dir, '7z'),
         }
 
         return locations
