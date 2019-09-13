@@ -9,7 +9,7 @@ matrix:
     - os: osx
       env: 
         - PYTHON="3.6.8"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: generic
       python:
 
@@ -73,7 +73,7 @@ matrix:
       dist: bionic
     - os: linux
       sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: python
       python: "3.6"
       dist: bionic
