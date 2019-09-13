@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import attr
+import os.path
 
 import click
 click.disable_unicode_literals_warning = True
@@ -37,6 +38,7 @@ from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import DOC_GROUP
 from scancode import SCAN_GROUP
+from commoncode.fileutils import parent_directory
 
 from packagedcode import PACKAGE_TYPES
 
