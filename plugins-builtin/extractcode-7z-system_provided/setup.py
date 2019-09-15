@@ -16,7 +16,7 @@ from setuptools import setup
 desc = '''A ScanCode path provider plugin to provide system package provided sevenzip binary.'''
 
 setup(
-    name='extractcode-7z',
+    name='extractcode-7z-system-provided',
     version='9.38.2',
     license='lgpl-2.1 and unrar and brian-gladman-3-clause',
     description=desc,
