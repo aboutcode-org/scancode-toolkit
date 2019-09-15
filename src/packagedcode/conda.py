@@ -66,7 +66,7 @@ if TRACE:
 
 @attr.s()
 class CondaPackage(models.Package):
-    metafiles = ('meta.yaml',  'META.yml',)
+    metafiles = ('meta.yaml', 'META.yml',)
     default_type = 'conda'
     default_web_baseurl = None
     default_download_baseurl = 'https://repo.continuum.io/pkgs/free'
@@ -158,7 +158,7 @@ def build_package(package_data):
                 package.description = value
             elif key == 'dev_url' and value:
                 package.vcs_url = value
-                
+
     # Handle the about element
     requirements_element = package_data.get('requirements')
     if requirements_element:
@@ -169,7 +169,7 @@ def build_package(package_data):
                 package_dependencies = []
                 for dependency in value:
                     requirement = None
-                    for splitter in ('==', '>=',  '<=', '>', '<'):
+                    for splitter in ('==', '>=', '<=', '>', '<'):
                         if splitter in dependency:
                             splits = dependency.split(splitter)
                             # Replace the package name and keep the relationship and version
@@ -190,7 +190,7 @@ def build_package(package_data):
                 package.dependencies = package_dependencies
     return package
 
-   
+
 def get_yaml_data(location):
     """
     Get variables and parse the yaml file, replace the variable with the value and return dictionary.
@@ -207,11 +207,11 @@ def get_yaml_data(location):
             # Replace the variable with the value
             if '{{' in line and '}}' in line:
                 for variable, value in variables.items():
-                    line = line.replace('{{ ' + variable + ' }}', value)                        
+                    line = line.replace('{{ ' + variable + ' }}', value)
             yaml_lines.append(line)
     return saneyaml.load('\n'.join(yaml_lines))
-    
-    
+
+
 def get_variables(location):
     """
     Conda yaml will have variables defined at the beginning of the file, the idea is to parse it and return a dictionary of the variable and value

@@ -130,7 +130,7 @@ def flatten_scan(scan, headers):
 
         # removing any slash at the begening of the path
         path = path.lstrip('/')
-            
+
         # use a trailing slash for directories
         if scanned_file.get('type') == 'directory' and not path.endswith('/'):
             path += '/'
@@ -235,7 +235,7 @@ def pretty(data):
     maptypes = OrderedDict, dict
     coltypes = seqtypes + maptypes
     if isinstance(data, seqtypes):
-        if len(data) ==1 and isinstance(data[0], string_types):
+        if len(data) == 1 and isinstance(data[0], string_types):
             return data[0].strip()
     if isinstance(data, coltypes):
         return saneyaml.dump(

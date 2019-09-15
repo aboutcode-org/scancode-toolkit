@@ -30,11 +30,11 @@ import io
 import logging
 
 import attr
-
-from commoncode import saneyaml
+import saneyaml
 
 from packagedcode import models
 from packageurl import PackageURL
+
 
 """
 Handle CRAN package.
@@ -110,7 +110,7 @@ def build_package(package_data):
         if dependencies:
             for dependency in dependencies.split(',\n'):
                 requirement = None
-                for splitter in ('==', '>=',  '<=', '>', '<'):
+                for splitter in ('==', '>=', '<=', '>', '<'):
                     if splitter in dependency:
                         splits = dependency.split(splitter)
                         # Replace the package name and keep the relationship and version
@@ -130,15 +130,16 @@ def build_package(package_data):
                 )
         package = CranPackage(
             name=name,
-            version = package_data.get('Version'),
-            description = package_data.get('Description', '') or package_data.get('Title', ''),
-            declared_license = package_data.get('License'),
-            parties = parties,
-            dependencies = package_dependencies,
-            #TODO: Let's handle the release date as a Date type
-            #release_date = package_data.get('Date/Publication'),
+            version=package_data.get('Version'),
+            description=package_data.get('Description', '') or package_data.get('Title', ''),
+            declared_license=package_data.get('License'),
+            parties=parties,
+            dependencies=package_dependencies,
+            # TODO: Let's handle the release date as a Date type
+            # release_date = package_data.get('Date/Publication'),
         )
         return package
+
 
 def get_yaml_data(location):
     """
@@ -151,7 +152,8 @@ def get_yaml_data(location):
                 continue
             yaml_lines.append(line)
     return saneyaml.load('\n'.join(yaml_lines))
-    
+
+
 def get_party_info(info):
     """
     Parse the info and return name, email.

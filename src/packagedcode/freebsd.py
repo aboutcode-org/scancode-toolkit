@@ -84,17 +84,17 @@ def compute_normalized_license(declared_license):
         return
 
     license_logic = declared_license.get('licenselogic')
-    relation= 'AND'
+    relation = 'AND'
     if license_logic:
         if license_logic == 'or' or license_logic == 'dual':
             relation = 'OR'
-    
+
     detected_licenses = []
     for declared in licenses:
         detected_license = models.compute_normalized_license(declared)
         if detected_license:
             detected_licenses.append(detected_license)
-    
+
     if detected_licenses:
         return combine_expressions(detected_licenses, relation)
 
@@ -185,7 +185,7 @@ def license_mapper(package_data, package):
     declared_license['licenses'] = lics
     if license_logic:
         declared_license['licenselogic'] = license_logic
-        
+
     package.declared_license = declared_license
     return package
 
