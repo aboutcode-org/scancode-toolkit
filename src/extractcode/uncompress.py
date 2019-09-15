@@ -113,7 +113,7 @@ def uncompress_gzip(location, target_dir):
     Uncompress a gzip compressed file at location in the target_dir.
     Return a list warnings messages.
     """
-    
+
     return uncompress(location, target_dir, GzipFileWithTrailing)
 
 

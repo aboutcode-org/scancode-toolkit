@@ -27,12 +27,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import io
-import toml
 import logging
 import re
 
 import attr
+import toml
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -109,7 +108,7 @@ def build_package(package_data):
 
     authors = core_package_data.get('authors')
     parties = list(party_mapper(authors, party_role='author'))
-    
+
     declared_license = core_package_data.get('license')
 
     package = RustCargoCrate(
@@ -117,7 +116,7 @@ def build_package(package_data):
         version=version,
         description=description,
         parties=parties,
-        declared_license = declared_license 
+        declared_license=declared_license
     )
 
     return package
