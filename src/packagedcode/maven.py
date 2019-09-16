@@ -87,7 +87,10 @@ class MavenPomPackage(models.Package):
         if manifest_resource.name.endswith(('pom.xml', '.pom',)):
             # the root is either the parent or further up for poms stored under
             # a META-INF dir
-            package_data = manifest_resource.packages[0]
+            package_data = manifest_resource.package_manifests
+            if not package_data:
+                return manifest_resource
+            package_data = package_data[0]
             package = Package.create(**package_data)
             ns = package.namespace
             name = package.name
@@ -99,8 +102,8 @@ class MavenPomPackage(models.Package):
                         return jar_root_dir
 
             return manifest_resource.parent(codebase)
-        else:
-            return manifest_resource
+
+        return manifest_resource
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return build_url(

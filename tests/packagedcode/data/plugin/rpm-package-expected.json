@@ -21,6 +21,45 @@
     {
       "path": "alfandega-2.0-1.7.3.noarch.rpm",
       "type": "file",
+      "package_manifests": [
+        {
+          "type": "rpm",
+          "namespace": null,
+          "name": "alfandega",
+          "version": "2.0-1.7.3",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": null,
+          "description": "A perl modules for iptables firewall control.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://alfandega.sourceforge.net/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "gpl-1.0-plus",
+          "declared_license": "GPL",
+          "notice_text": null,
+          "manifest_path": "alfandega-2.0-1.7.3.noarch.rpm",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [
+            "pkg:rpm/alfandega@2.0-1.7.3?arch=src"
+          ],
+          "purl": "pkg:rpm/alfandega@2.0-1.7.3",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
       "packages": [
         {
           "type": "rpm",
@@ -48,7 +87,7 @@
           "license_expression": "gpl-1.0-plus",
           "declared_license": "GPL",
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "alfandega-2.0-1.7.3.noarch.rpm",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [

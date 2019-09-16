@@ -60,9 +60,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__ibm_corp__1"
@@ -160,18 +161,6 @@
         "gpl-2.0",
         "gpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        },
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -184,7 +173,20 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__ibm_corp__1"
@@ -282,18 +284,6 @@
         "gpl-2.0",
         "gpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        },
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -306,7 +296,20 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__ibm_corp__1"

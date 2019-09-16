@@ -75,9 +75,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -107,9 +108,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -207,13 +209,6 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -221,7 +216,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -319,13 +322,6 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -333,7 +329,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -363,9 +367,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__1"
@@ -463,13 +468,6 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -477,7 +475,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__1"
@@ -575,13 +581,6 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -589,7 +588,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"

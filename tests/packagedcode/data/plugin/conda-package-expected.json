@@ -21,25 +21,28 @@
     {
       "path": "info",
       "type": "directory",
+      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract",
       "type": "directory",
+      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe",
       "type": "directory",
+      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "info/recipe.tar-extract/recipe/meta.yaml",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "conda",
           "namespace": null,
@@ -66,7 +69,7 @@
           "license_expression": "unknown",
           "declared_license": "Other",
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "info/recipe.tar-extract/recipe/meta.yaml",
           "dependencies": [
             {
               "purl": "pkg:conda/python",
@@ -101,6 +104,7 @@
           "api_data_url": null
         }
       ],
+      "packages": [],
       "scan_errors": []
     }
   ]

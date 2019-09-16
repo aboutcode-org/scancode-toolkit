@@ -91,9 +91,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [],
       "files_count": 3,
@@ -121,9 +122,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "omega_com_1"
@@ -153,9 +155,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "omega_com_1"
@@ -253,13 +256,6 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "omega.com",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) omega.com",
@@ -267,7 +263,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "omega.com",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "omega_com_1"
@@ -297,9 +301,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [],
       "files_count": 2,
@@ -327,9 +332,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__1"
@@ -427,13 +433,6 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -441,7 +440,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "ibm_corp__1"
@@ -471,9 +478,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "oracle_corp__1"
@@ -571,13 +579,6 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "Oracle Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) Oracle Corp.",
@@ -585,7 +586,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "Oracle Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "oracle_corp__1"

@@ -141,6 +141,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -176,6 +177,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -211,6 +213,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -246,6 +249,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -316,6 +320,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [
         "core"
@@ -353,6 +358,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [
         "core"
@@ -390,6 +396,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -425,6 +432,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -460,6 +468,7 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [],
       "is_legal": false,
@@ -542,6 +551,7 @@
         }
       ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [
         "core"
@@ -591,6 +601,7 @@
         }
       ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "facets": [
         "core"
