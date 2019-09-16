@@ -282,12 +282,12 @@ def get_package_info(location, **kwargs):
     try:
         manifest = recognize_package(location)
         if manifest:
-            return dict(packages=[manifest.to_dict()])
+            return dict(package_manifests=[manifest.to_dict()])
     except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))
         pass
-    return dict(packages=[])
+    return dict(package_manifests=[])
 
 
 def get_file_info(location, **kwargs):

@@ -21,7 +21,7 @@
     {
       "path": "Cargo.toml",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "cargo",
           "namespace": null,
@@ -56,7 +56,7 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "Cargo.toml",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -66,6 +66,7 @@
           "api_data_url": "https://crates.io/api/v1/crates/clap"
         }
       ],
+      "packages": [],
       "scan_errors": []
     }
   ]

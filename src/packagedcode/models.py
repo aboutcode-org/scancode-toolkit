@@ -662,7 +662,7 @@ class IvyJar(JavaJar):
     default_type = 'ivy'
     default_primary_language = 'Java'
 
-
+#FIXME: move to bower.py
 @attr.s()
 class BowerPackage(Package):
     metafiles = ('bower.json',)
@@ -715,6 +715,7 @@ class Godep(Package):
         return manifest_resource.parent(codebase)
 
 
+# TODO: enable me
 # @attr.s()
 # class AlpinePackage(Package):
 #     metafiles = ('*.control',)

@@ -3,31 +3,13 @@
     {
       "tool_name": "scancode-toolkit",
       "options": {
-        "input": [
-          "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package"
-        ],
-        "--copyright": true,
-        "--info": true,
-        "--json": "plugins/scancode-consolidate-scan/tests/data/plugin_consolidate/component-package.json",
-        "--license": true,
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
         "input": "<path>",
         "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--package": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -84,7 +66,7 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "manifest_path": "package.json",
+      "manifest_path": "component-package/package/package.json",
       "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
@@ -132,9 +114,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [],
       "files_count": 7,
@@ -162,9 +145,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -229,13 +213,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -243,7 +220,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -308,13 +293,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -322,7 +300,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -387,13 +373,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -401,7 +380,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "the_apache_software_foundation_1"
@@ -466,13 +453,6 @@
       "license_expressions": [
         "lgpl-2.0"
       ],
-      "holders": [
-        {
-          "value": "nexB, Inc.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) nexB, Inc.",
@@ -480,7 +460,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "nexB, Inc.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [],
       "files_count": 0,
@@ -508,9 +496,10 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
+      "package_manifests": [],
       "packages": [
         {
           "type": "npm",
@@ -540,10 +529,14 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "manifest_path": "component-package/package/package.json",
           "dependencies": [],
           "contains_source_code": null,
-          "source_packages": []
+          "source_packages": [],
+          "purl": "pkg:npm/test-package@0.0.1",
+          "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+          "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
         }
       ],
       "consolidated_to": [
@@ -609,13 +602,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software",
@@ -623,7 +609,53 @@
           "end_line": 5
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
       "authors": [],
+      "package_manifests": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "test-package",
+          "version": "0.0.1",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            "apache-2.0"
+          ],
+          "notice_text": null,
+          "manifest_path": "component-package/package/package.json",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:npm/test-package@0.0.1",
+          "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+          "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
+        }
+      ],
       "packages": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
@@ -688,13 +720,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -702,7 +727,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
@@ -800,13 +833,6 @@
         "unknown",
         "gpl-1.0-plus"
       ],
-      "holders": [
-        {
-          "value": "IBM Corp.",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "copyright (c) 2017 IBM Corp.",
@@ -814,7 +840,15 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "IBM Corp.",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
+      "package_manifests": [],
       "packages": [],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"

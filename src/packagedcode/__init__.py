@@ -132,10 +132,20 @@ def get_package_class(scan_data, default=models.Package):
     return ptype_class or default
 
 
-def get_package_instance(scan_data):
-    scan_data.pop('api_data_url', None)
-    scan_data.pop('repository_download_url', None)
-    scan_data.pop('purl', None)
-    scan_data.pop('repository_homepage_url', None)
+_props = frozenset([
+    'api_data_url',
+    'repository_download_url',
+    'purl',
+    'repository_homepage_url']
+)
+
+
+def get_package_instance(scan_data, properties=_props):
+    """
+    Given a `scan_data` native Python mapping representing a Package, return a
+    Package object instance.
+    """
+    # remove computed properties from attributes
+    scan_data = {k: v for k, v in scan_data.items() if k not in properties}
     klas = get_package_class(scan_data)
     return klas(**scan_data)

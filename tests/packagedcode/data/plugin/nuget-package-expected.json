@@ -21,7 +21,7 @@
     {
       "path": "Castle.Core.nuspec",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "nuget",
           "namespace": null,
@@ -63,7 +63,7 @@
           "license_expression": "apache-2.0",
           "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
           "notice_text": null,
-          "manifest_path": null,
+          "manifest_path": "Castle.Core.nuspec",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -73,6 +73,7 @@
           "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json"
         }
       ],
+      "packages": [],
       "scan_errors": []
     }
   ]

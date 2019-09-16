@@ -57,7 +57,7 @@
       "license_expressions": [
         "mit"
       ],
-      "packages": [
+      "package_manifests": [
         {
           "type": "npm",
           "namespace": null,
@@ -129,6 +129,7 @@
           "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
         }
       ],
+      "packages": [],
       "scan_errors": []
     }
   ]

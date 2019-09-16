@@ -80,7 +80,7 @@ class NugetPackage(models.Package):
     def get_package_root(cls, manifest_resource, codebase):
         if manifest_resource.name.endswith('.nupkg'):
             return manifest_resource
-        if manifest_resource.name.endswith(cls.metafiles):
+        if manifest_resource.name.endswith(('[Content_Types].xml', '.nuspec',)):
             return manifest_resource.parent(codebase)
         return manifest_resource
 

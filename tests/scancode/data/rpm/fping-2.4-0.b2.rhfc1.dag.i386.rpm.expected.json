@@ -19,7 +19,7 @@
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
       "type": "file",
-      "packages": [
+      "package_manifests": [
         {
           "type": "rpm",
           "namespace": null,
@@ -66,6 +66,7 @@
           "api_data_url": null
         }
       ],
+      "packages": [],
       "scan_errors": []
     }
   ]
