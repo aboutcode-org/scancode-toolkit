@@ -56,6 +56,8 @@ setup(
             'scancode-dwarf = dwarf:DwarfScanner',
             'scancode-gwt = gwt:GWTScanner',
             'scancode-makedepend = makedepend:MakeDependScanner',
+            'scancode-javaclass = javaclass:JavaClassScanner',
+
         ],
     }
 

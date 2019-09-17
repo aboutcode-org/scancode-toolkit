@@ -1,0 +1,18 @@
+about_resource: .
+
+download_url: http://www.jsnp.net/code/javaclass-latest.tar.gz
+date:2008-10-10
+
+description: A python library for parsing Java class files. 
+ Suitable for performing static analysis on Java programs. Includes 
+ demonstration programs classdiff.py and jardiff.py for comparing API 
+ differences between Java class files and jar files.
+
+dje_license: bsd-new
+
+notes: this has been patched to add support the latest JVM specifications 
+ and fix some bugs.
+ The code was at http://web.archive.org/web/20130911180346/http://www.jsnp.net/code/javaclass-latest.tar.gz
+
+license_text_file: javaclass.LICENSE
+
