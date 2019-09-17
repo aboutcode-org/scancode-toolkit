@@ -1,0 +1,48 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--javaclass": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "javaclass",
+      "type": "directory",
+      "javaclass": {},
+      "scan_errors": []
+    },
+    {
+      "path": "javaclass/ControlPanel.class",
+      "type": "file",
+      "javaclass": {
+        "Version": "Version: 45.3 (1.1)",
+        "Constants Pool": "266",
+        "Methods": [
+          "void ControlPanel(MyTableModel)",
+          "static Class class$(String)",
+          "static void <clinit>()"
+        ],
+        "Class": "org/apache/log4j/chainsaw/ControlPanel",
+        "Super Class": "javax/swing/JPanel"
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "javaclass/expected.json",
+      "type": "file",
+      "javaclass": {},
+      "scan_errors": []
+    }
+  ]
+}
