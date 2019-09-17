@@ -192,8 +192,8 @@ class Consolidator(PostScanPlugin):
         codebase.attributes.consolidated_components = consolidated_components = []
         identifier_counts = Counter()
         for index, c in enumerate(consolidations, start=1):
-            # Skip consolidation if it does not have any Resources
-            if not c.consolidation.resources:
+            # Skip consolidation if it does not have any Files
+            if c.consolidation.files_count == 0:
                 continue
             if isinstance(c, ConsolidatedPackage):
                 # We use the purl as the identifier for ConsolidatedPackages
@@ -338,6 +338,9 @@ def get_license_holders_consolidated_components(codebase):
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
                 holders = tuple(h['value'] for h in child.holders)
+                child.extra_data['license_expression'] = license_expression
+                child.extra_data['holders'] = holders
+                child.save(codebase)
                 if not license_expression or not holders:
                     continue
                 origin = holders, license_expression
@@ -433,10 +436,9 @@ def get_consolidated_component_resources(resource, codebase):
     for r in resource.walk(codebase, topdown=False):
         if r.extra_data.get('in_package_component'):
             continue
-        resource_holders = tuple(h.get('value') for h in r.holders)
         if ((r.is_file
-                and combine_expressions(r.license_expressions) == license_expression
-                and resource_holders == holders)
+                and r.extra_data.get('license_expression', '') == license_expression
+                and r.extra_data.get('holders', tuple()) == holders)
                 or (r.is_dir
                 and r.extra_data.get('origin_summary_license_expression', '') == license_expression
                 and r.extra_data.get('origin_summary_holders', tuple()) == holders)):
@@ -452,8 +454,8 @@ def combine_license_holders_consolidated_components(components):
     origin_translation_table = {}
     components_by_holders_license_expression = defaultdict(list)
     for component in components:
-        if (not isinstance(component, ConsolidatedComponent)
-                or (isinstance(component, ConsolidatedComponent) and component.type != 'license-holders')):
+        is_consolidated_component = isinstance(component, ConsolidatedComponent)
+        if not is_consolidated_component or (is_consolidated_component and component.type != 'license-holders'):
             # Yield the components we don't handle
             yield component
             continue
