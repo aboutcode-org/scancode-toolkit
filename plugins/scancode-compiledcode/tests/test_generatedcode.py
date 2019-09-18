@@ -39,7 +39,7 @@ class TestScanPluginMakedependScan(FileBasedTesting):
 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
     
-    def test_makedepend(self):
+    def test_genrated_code_scan(self):
         test_dir = self.get_test_loc('generatedcode/input')
         result_file = self.get_temp_file('json')
         args = ['--generatedcode', test_dir, '--json', result_file]

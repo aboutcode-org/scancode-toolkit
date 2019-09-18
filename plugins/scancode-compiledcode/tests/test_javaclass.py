@@ -39,7 +39,7 @@ class TestScanPluginJavaClassScan(FileBasedTesting):
 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
     
-    def test_gwt_scan(self):
+    def test_javaclass_scan(self):
         test_dir = self.get_test_loc('javaclass')
         result_file = self.get_temp_file('json')
         args = ['--javaclass', test_dir, '--json', result_file]
