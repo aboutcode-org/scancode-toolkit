@@ -12,5 +12,6 @@ To start the test case, please run:
    pytest -vvs plugins/scancode-compiledcode/tests/test_makedepend.py
    pytest -vvs plugins/scancode-compiledcode/tests/test_javaclass.py
    pytest -vvs plugins/scancode-compiledcode/tests/test_generatedcode.py
+   pytest -vvs plugins/scancode-compiledcode/tests/test_sourcecode.py
    
 Note that in step3, the path depends on your OS versions, please update according to your real os enviroment.

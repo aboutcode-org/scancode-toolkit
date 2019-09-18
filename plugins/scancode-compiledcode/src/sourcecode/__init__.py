@@ -22,3 +22,61 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
+from collections import OrderedDict
+from functools import partial
+from itertools import chain
+
+import attr
+
+from commoncode import fileutils
+from plugincode.scan import ScanPlugin
+from plugincode.scan import scan_impl
+from scancode import CommandLineOption
+from scancode import SCAN_GROUP
+from typecode import contenttype
+
+from sourcecode import kernel
+from sourcecode.metrics import file_lines_count
+
+
+@scan_impl
+class CodeCommentLinesScanner(ScanPlugin):
+    """
+    Scan the number of lines of code and lines of the comments.
+    """
+    resource_attributes = OrderedDict(
+        codelines=attr.ib(default=attr.Factory(int), repr=False),
+        commentlines=attr.ib(default=attr.Factory(int), repr=False),
+
+    )
+
+    options = [
+        CommandLineOption(('--codecommentlines',),
+            is_flag=True, default=False,
+            help='  Scan the number of lines of code and lines of the comments.',
+            help_group=SCAN_GROUP,
+            sort_order=100),
+    ]
+
+    def is_enabled(self, codecommentlines, **kwargs):
+        return codecommentlines
+
+    def get_scanner(self, **kwargs):
+        return get_codecommentlines
+
+
+def get_codecommentlines(location, **kwargs):
+    """
+    Return the cumulative number of lines of code in the whole directory tree
+    at `location`. Use 0 if `location` is not a source file.
+    """
+    codelines = 0
+    commentlines = 0
+    codelines, commentlines = file_lines_count(location)
+    return OrderedDict(
+        codelines=codelines,
+        commentlines=commentlines
+    )
