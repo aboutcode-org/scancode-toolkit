@@ -77,8 +77,10 @@ def scan_javaclass(location, **kwargs):
     """
     Return a mapping content  of a class fie
     """
-    if not location.endswith('.class'):
+    T = contenttype.get_type(location)
+    if not T.is_java_class:
         return
+
     javaclass_data = OrderedDict()
     SHOW_CONSTS = 1
     data = open(location, 'rb').read()
