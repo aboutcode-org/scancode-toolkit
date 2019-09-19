@@ -86,11 +86,12 @@ def scan_javaclass(location, **kwargs):
     data = open(location, 'rb').read()
     f = StringIO(data)
     c = javaclass.Class(f)
-    # print file name
+    
     javaclass_data['Version'] = 'Version: %i.%i (%s)' % ( c.version[1], c.version[0], getJavacVersion(c.version))
 
     if SHOW_CONSTS:
         javaclass_data['Constants Pool'] = str(len(c.constants))
+        constants = []
         for i in range(1, len(c.constants)):
             const = c.constants[i]
 
@@ -99,64 +100,63 @@ def scan_javaclass(location, **kwargs):
             # double and long constants take 2 slots, we must skip the 'None' one
             if not const: continue
 
-
-            sys.stdout.write('  ' + str(i) + '\t')
+            constant_data = OrderedDict()
             if const[0] == CONSTANT_Fieldref:
-                print 'Field\t\t' + str(c.constants[const[1]][1])
+                constant_data['Field'] = str(c.constants[const[1]][1])
 
             elif const[0] == CONSTANT_Methodref:
-                print 'Method\t\t' + str(c.constants[const[1]][1])
+                constant_data['Method'] = str(c.constants[const[1]][1])
 
             elif const[0] == CONSTANT_InterfaceMethodref:
-                print 'InterfaceMethod\t\t' + str(c.constants[const[1]][1])
+                constant_data['InterfaceMethod'] = str(c.constants[const[1]][1])
 
             elif const[0] == CONSTANT_String:
-                print 'String\t\t' + str(const[1])
+                constant_data['String'] =  str(const[1])
+
             elif const[0] == CONSTANT_Float:
-                print 'Float\t\t' + str(const[1])
+                constant_data['Float'] =  str(const[1])
 
             elif const[0] == CONSTANT_Integer:
-                print 'Integer\t\t' + str(const[1])
+                constant_data['Integer'] =  str(const[1])
 
             elif const[0] == CONSTANT_Double:
-                print 'Double\t\t' + str(const[1])
+                constant_data['Double'] =  str(const[1])
 
             elif const[0] == CONSTANT_Long:
-                print 'Long\t\t' + str(const[1])
+                constant_data['Long'] =  str(const[1])
 
             # elif const[0] == CONSTANT_NameAndType:
             #   print 'NameAndType\t\t FIXME!!!'
 
             elif const[0] == CONSTANT_Utf8:
-                print 'Utf8\t\t' + str(const[1])
+                constant_data['Utf8'] =  str(const[1])
 
             elif const[0] == CONSTANT_Class:
-                print 'Class\t\t' + str(c.constants[const[1]][1])
+                constant_data['Class'] =  str(c.constants[const[1]][1])
 
             elif const[0] == CONSTANT_NameAndType:
-                print 'NameAndType\t\t' + str(const[1]) + '\t\t' + str(const[2])
-
+                constant_data['NameAndType'] =  str(const[1]) + ', ' + str(const[2])
             else:
-                print 'Unknown(' + str(const[0]) + ')\t\t' + str(const[1])
+                constant_data['Unknown(' + str(const[0]) + ')'] = str(const[1])
+            
+            constants.append(constant_data)
+        
+        javaclass_data['Constants'] = constants
 
 
-    print 'Attributes: '
-
-    sys.stdout.write('Interfaces: ')
-
-    sys.stdout.write('Access: ' + hex(c.access))
-    sys.stdout.write(' [ ')
+    access =[]
     if c.access & ACC_INTERFACE:
-        sys.stdout.write('Interface ')
+        access.append('Interface ')
     if c.access & ACC_SUPER_OR_SYNCHRONIZED:
-        sys.stdout.write('Superclass ')
+        access.append('Superclass ')
     if c.access & ACC_FINAL:
-        sys.stdout.write('Final ')
+        access.append('Final ')
     if c.access & ACC_PUBLIC:
-        sys.stdout.write('Public ')
+        access.append('Public ')
     if c.access & ACC_ABSTRACT:
-        sys.stdout.write('Abstract ')
-    print ']'
+        access.append('Abstract ')
+    if access:
+        javaclass_data['Access'] = ', '.join(access)
 
     methods = []
     for meth in c.methods:
