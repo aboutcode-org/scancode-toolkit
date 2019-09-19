@@ -45,5 +45,5 @@ class TestScanPluginJavaClassScan(FileBasedTesting):
         args = ['--javaclass', test_dir, '--json', result_file]
         run_scan_click(args)
         test_loc = self.get_test_loc('javaclass/expected.json')
-        check_json_scan(test_loc, result_file, regen=True)
+        check_json_scan(test_loc, result_file, regen=False)
 

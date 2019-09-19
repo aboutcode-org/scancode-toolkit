@@ -91,7 +91,7 @@ def scan_javaclass(location, **kwargs):
 
     if SHOW_CONSTS:
         javaclass_data['Constants Pool'] = str(len(c.constants))
-        constants = []
+        constants = OrderedDict()
         for i in range(1, len(c.constants)):
             const = c.constants[i]
 
@@ -139,7 +139,7 @@ def scan_javaclass(location, **kwargs):
             else:
                 constant_data['Unknown(' + str(const[0]) + ')'] = str(const[1])
             
-            constants.append(constant_data)
+            constants[i] = constant_data
         
         javaclass_data['Constants'] = constants
 
