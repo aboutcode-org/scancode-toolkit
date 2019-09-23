@@ -375,8 +375,10 @@ def get_license_holders_consolidated_components(codebase):
                         continue
                     license_expression = child.extra_data.get('license_expression')
                     holders = child.extra_data.get('holders')
-                    if (license_expression and license_expression != majority_license_expression
-                            and holders and holders != majority_holders):
+                    # If there is a child directory that has a different majority than its parent,
+                    # we report it
+                    if ((license_expression and license_expression != majority_license_expression)
+                            or (holders and holders != majority_holders)):
                         c = create_license_holders_consolidated_component(child, codebase)
                         if c:
                             yield c
