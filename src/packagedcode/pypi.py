@@ -33,6 +33,7 @@ import os
 import re
 import sys
 
+from ast2json import str2json
 import attr
 from six import string_types
 
@@ -266,7 +267,6 @@ def parse_metadata(location):
     return package
 
 
-# FIXME: this is not the way to parse a python script
 def parse_setup_py(location):
     """
     Return a package built from setup.py data.
@@ -282,33 +282,51 @@ def parse_setup_py(location):
     with open(location, mode) as inp:
         setup_text = inp.read()
 
+    setup_args = OrderedDict()
+
+    # Convert the setup.py AST to a dict and get the values from it
+    for statement in str2json(setup_text).get('body', []):
+        statement_value = statement.get('value', {})
+        if statement_value.get('func', {}).get('id', '') == 'setup':
+            for kw in statement_value.get('keywords', []):
+                arg_name = kw['arg']
+                if kw['value']['_type'] == 'Str':
+                    setup_args[arg_name] = kw['value']['s']
+                if kw['value']['_type'] == 'List':
+                    setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts']]
+
     description = build_description(
-        get_setup_attribute(setup_text, 'summary'),
-        get_setup_attribute(setup_text, 'description'))
+        setup_args.get('summary', ''),
+        setup_args.get('description', ''))
 
     parties = []
-    author = get_setup_attribute(setup_text, 'author')
+    author = setup_args.get('author', '')
+    author_email = setup_args.get('author_email', '')
     if author:
         parties.append(
             models.Party(
-            type=models.party_person,
-            name=author, role='author'))
+                type=models.party_person,
+                name=author,
+                email=author_email,
+                role='author'
+            )
+        )
 
     declared_license = OrderedDict()
-    license_setuptext = get_setup_attribute(setup_text, 'license')
+    license_setuptext = setup_args.get('license')
     declared_license['license'] = license_setuptext
 
-    classifiers = get_classifiers(setup_text)
+    classifiers = setup_args.get('classifiers', [])
     license_classifiers = [c for c in classifiers if c.startswith('License')]
     declared_license['classifiers'] = license_classifiers
 
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
     package = PythonPackage(
-        name=get_setup_attribute(setup_text, 'name'),
-        version=get_setup_attribute(setup_text, 'version'),
+        name=setup_args.get('name'),
+        version=setup_args.get('version'),
         description=description or None,
-        homepage_url=get_setup_attribute(setup_text, 'url') or None,
+        homepage_url=setup_args.get('url') or None,
         parties=parties,
         declared_license=declared_license,
         keywords=other_classifiers,
