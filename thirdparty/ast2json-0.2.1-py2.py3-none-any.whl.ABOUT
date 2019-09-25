@@ -1,0 +1,5 @@
+about_resource: ast2json-0.2.1-py2.py3-none-any.whl
+download_url: https://files.pythonhosted.org/packages/bd/36/e169b23043c43ee73b7604932c66cf9afd804a75b7fc2c32509a7ab23e3b/ast2json-0.2.1-py2.py3-none-any.whl
+checksum_md5: 30fd6e27759b188633a9ca675b2f3197
+checksum_sha1: 4f92e13caf9cbbf4a10d8493ca95acf072957f29
+package_url: pkg:pypi/ast2json@0.2.1
