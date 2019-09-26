@@ -6,14 +6,14 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "Python",
-  "description": "A Python module to manipulate NTFS hard links and junctions.\",      long_description=long_description,      classifiers=[        'Intended Audience :: Developers",
+  "description": "A Python module to manipulate NTFS hard links and junctions.",
   "release_date": null,
   "parties": [
     {
       "type": "person",
       "role": "author",
       "name": "Siddharth Agarwal",
-      "email": null,
+      "email": "sid.bugzilla@gmail.com",
       "url": null
     }
   ],

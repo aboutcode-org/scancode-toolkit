@@ -6,14 +6,14 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "Python",
-  "description": "A pure python rpm reader and YUM metadata generator\",      author=\"Stefan Richter\",      author_email=\"stefan@02strich.de\",      url=\"https://github.com/02strich/pyrpm\",      license=\"BSD\",      classifiers=[          'Development Status :: 4 - Beta",
+  "description": "A pure python rpm reader and YUM metadata generator",
   "release_date": null,
   "parties": [
     {
       "type": "person",
       "role": "author",
-      "name": "Stefan Richter\",      author_email=\"stefan@02strich.de\",      url=\"https://github.com/02strich/pyrpm\",      license=\"BSD\",      classifiers=[          'Development Status :: 4 - Beta",
-      "email": null,
+      "name": "Stefan Richter",
+      "email": "stefan@02strich.de",
       "url": null
     }
   ],
@@ -30,7 +30,7 @@
     "Programming Language :: Python :: 3.1",
     "Topic :: Software Development :: Libraries"
   ],
-  "homepage_url": "https://github.com/02strich/pyrpm\",      license=\"BSD\",      classifiers=[          'Development Status :: 4 - Beta",
+  "homepage_url": "https://github.com/02strich/pyrpm",
   "download_url": null,
   "size": null,
   "sha1": null,
@@ -43,7 +43,7 @@
   "copyright": null,
   "license_expression": "unknown AND bsd-new",
   "declared_license": {
-    "license": "BSD\",      classifiers=[          'Development Status :: 4 - Beta",
+    "license": "BSD",
     "classifiers": [
       "License :: OSI Approved :: BSD License"
     ]
