@@ -178,39 +178,6 @@ def parse_pkg_info(location):
     )
     return package
 
-# FIXME: each attribute require reparsing the setup.py: this is nuts!
-
-
-def get_setup_attribute(setup_text, attribute):
-    """
-    Return the the value for an `attribute` if found in the 'setup.py' file at
-    `location` or None.
-
-    For example with this setup.py file:
-    setup(
-        name='requests',
-        version='1.0',
-        )
-    the value 'request' is returned for the attribute 'name'
-    """
-    if not setup_text:
-        return
-
-    # FIXME Use a valid parser for parsing 'setup.py'
-    # FIXME: it does not make sense to reread a setup.py once for each attribute
-
-    # FIXME: what are these regex doing?
-    values = re.findall('setup\\(.*?' + attribute + '\\s*=\\s*[\"\']{1}.*?\'\\s*,', setup_text.replace('\n', ''))
-    if len(values) > 1 or len(values) == 0:
-        return
-    else:
-        values = ''.join(values)
-        attr_value = re.sub('setup\(.*?' + attribute + '\\s*=\\s*[\"\']{1}', '', values)
-        if attr_value.endswith('\','):
-            return attr_value.replace('\',', '')
-        else:
-            return attr_value
-
 
 # FIXME: use proper library for parsing these
 
@@ -287,21 +254,40 @@ def parse_setup_py(location):
     # Convert the setup.py AST to a dict and get the values from it
     for statement in str2json(setup_text).get('body', []):
         statement_value = statement.get('value', {})
-        if statement_value.get('func', {}).get('id', '') == 'setup':
+        # We only care about function calls or assignments to variables named `setup`
+        if ((statement_value.get('func', {}).get('id', '') == 'setup')
+                or (statement_value.get('_type', '') == 'Call'
+                and statement_value.get('func', {}).get('id', '') == 'setup')):
+            # Process the arguments to the setup function
             for kw in statement_value.get('keywords', []):
                 arg_name = kw['arg']
                 if kw['value']['_type'] == 'Str':
                     setup_args[arg_name] = kw['value']['s']
                 if kw['value']['_type'] == 'List':
-                    setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts']]
+                    # We collect the elements of a list if the element is not a function call
+                    setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts'] if elt['_type'] != 'Call']
+
+        # if setup function call is nested in a function
+        if statement.get('_type', '') == 'FunctionDef':
+            for func_statement in statement.get('body', []):
+                if (func_statement.get('value', {}).get('func', {}).get('_type', '') == 'Name'
+                        and func_statement.get('value', {}).get('func', {}).get('id') == 'setup'):
+                    # Process the arguments to the setup function
+                    for kw in func_statement.get('value', {}).get('keywords', []):
+                        arg_name = kw['arg']
+                        if kw['value']['_type'] == 'Str':
+                            setup_args[arg_name] = kw['value']['s']
+                        if kw['value']['_type'] == 'List':
+                            # We collect the elements of a list if the element is not a function call
+                            setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts'] if elt['_type'] != 'Call']
 
     description = build_description(
         setup_args.get('summary', ''),
         setup_args.get('description', ''))
 
     parties = []
-    author = setup_args.get('author', '')
-    author_email = setup_args.get('author_email', '')
+    author = setup_args.get('author')
+    author_email = setup_args.get('author_email')
     if author:
         parties.append(
             models.Party(

@@ -51,13 +51,6 @@ class TestPyPi(PackageTester):
                 'copyright and other interesting facts.') == package.description
         assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
 
-    def test_get_setup_attribute(self):
-        test_file = self.get_test_loc('pypi/setup.py/setup.py')
-        setup_text = open(test_file).read()
-        assert 'scancode-toolkit' == pypi.get_setup_attribute(setup_text, 'name')
-        assert '1.5.0' == pypi.get_setup_attribute(setup_text, 'version')
-        assert 'ScanCode' == pypi.get_setup_attribute(setup_text, 'author')
-
     def test_parse_metadata(self):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')

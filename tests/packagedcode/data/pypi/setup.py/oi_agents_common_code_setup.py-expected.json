@@ -13,7 +13,7 @@
       "type": "person",
       "role": "author",
       "name": "__author__",
-      "email": null,
+      "email": "juga@riseup.net",
       "url": null
     }
   ],
@@ -27,7 +27,7 @@
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Utilities"
   ],
-  "homepage_url": "https://github.com/openintegrity/agents-common-code",
+  "homepage_url": "https://lab.openintegrity.org/agents/agents-common-code",
   "download_url": null,
   "size": null,
   "sha1": null,
