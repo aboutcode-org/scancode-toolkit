@@ -56,7 +56,7 @@ class LibmagicPaths(LocationProviderPlugin):
             else:
                 raise Exception('Unsupported system: {}'.format(distribution))
 
-            lib_dll = path.join(lib_dir, 'libmagic.so.1');
+            lib_dll = path.join(lib_dir, 'libmagic.so');
 
         elif mainstream_system == 'freebsd':
             if path.isdir('/usr/local/'):

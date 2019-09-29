@@ -54,18 +54,14 @@ class LibarchivePaths(LocationProviderPlugin):
             else:
                 raise Exception('Unsupported system: {}'.format(distribution))
 
-            lib_dll = path.join(lib_dir, 'libarchive.so.13')
-
         elif mainstream_system == 'freebsd':
             if path.isdir('/usr/local/'):
-                lib_dir = '/usr/local'
+                lib_dir = '/usr/local/lib'
             else:
-                lib_dir = '/usr'
-
-            lib_dll = path.join(lib_dir, 'lib/libarchive.so')
+                lib_dir = '/usr/lib'
 
         locations = {
             'extractcode.libarchive.libdir': lib_dir,
-            'extractcode.libarchive.dll': lib_dll,
+            'extractcode.libarchive.dll': path.join(lib_dir, 'libarchive.so'),
         }
         return locations
