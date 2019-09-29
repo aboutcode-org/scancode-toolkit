@@ -38,6 +38,7 @@ class LibmagicPaths(LocationProviderPlugin):
         locations of the libmagic shared library as installed on various Linux
         distros or on FreeBSD.
         """
+        system_arch = platform.machine()
         mainstream_system = platform.system().lower()
         if mainstream_system == 'linux':
             distribution = platform.linux_distribution()[0].lower()
@@ -46,7 +47,7 @@ class LibmagicPaths(LocationProviderPlugin):
 
             if distribution in debian_based_distro:
                 data_dir = '/usr/lib/file'
-                lib_dir = '/usr/lib/x86_64-linux-gnu'
+                lib_dir = '/usr/lib/'+system_arch+'-linux-gnu'
 
             elif distribution in rpm_based_distro:
                 data_dir = '/usr/share/misc'

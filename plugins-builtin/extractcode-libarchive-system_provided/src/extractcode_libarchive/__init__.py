@@ -38,6 +38,7 @@ class LibarchivePaths(LocationProviderPlugin):
         locations of the libarchive shared library as installed on various Linux
         distros or on FreeBSD.
         """
+        system_arch = platform.machine()
         mainstream_system = platform.system().lower()
         if mainstream_system == 'linux':
             distribution = platform.linux_distribution()[0].lower()
@@ -45,7 +46,7 @@ class LibarchivePaths(LocationProviderPlugin):
             rpm_based_distro = ['fedora', 'redhat']
 
             if distribution in debian_based_distro:
-                lib_dir = '/usr/lib/x86_64-linux-gnu'
+                lib_dir = '/usr/lib/'+system_arch+'-linux-gnu'
 
             elif distribution in rpm_based_distro:
                 lib_dir = '/usr/lib64'
