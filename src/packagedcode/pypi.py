@@ -93,10 +93,7 @@ class PythonPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        package = parse(location)
-        if not package:
-            package = parse2(location)
-        return package
+        return parse(location)
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
@@ -251,7 +248,7 @@ def parse_setup_py(location):
 
     setup_args = OrderedDict()
 
-    # Convert the setup.py AST to a dict and get the values from it
+    # Parse setup.py file and traverse the AST
     tree = ast.parse(setup_text)
     for statement in tree.body:
         # We only care about function calls or assignments to functions named `setup`
@@ -297,7 +294,7 @@ def parse_setup_py(location):
 
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
-    package = PythonPackage(
+    return PythonPackage(
         name=setup_args.get('name'),
         version=setup_args.get('version'),
         description=description or None,
@@ -306,19 +303,6 @@ def parse_setup_py(location):
         declared_license=declared_license,
         keywords=other_classifiers,
     )
-    return package
-
-
-def get_classifiers(setup_text):
-    """
-    Return a list of classifiers
-    """
-    # FIXME: we are making grossly incorrect assumptions.
-    classifiers = [line for line in setup_text.splitlines(False) if '::' in line]
-
-    # strip spaces/tabs/quotes/commas
-    classifiers = [line.strip('\t \'",;') for line in classifiers]
-    return classifiers
 
 
 def parse(location):
@@ -327,32 +311,17 @@ def parse(location):
     name can be either a 'setup.py', 'metadata.json' or 'PKG-INFO'
     file.
     """
-    file_name = fileutils.file_name(location)
-    parsers = {
-        'setup.py': parse_setup_py,
-        'metadata.json': parse_metadata,
-        'PKG-INFO': parse_pkg_info
-    }
-    parser = parsers.get(file_name)
-    if parser:
-        return parser(location)
-
-
-def parse2(location):
-    """
-    Parse using the pkginfo library according the file types and return package.
-    """
-    is_dir = filetype.is_dir(location)
-    if is_dir:
-        parser = parse_unpackaged_source
-        package = parser(location)
+    if filetype.is_dir(location):
+        package = parse_unpackaged_source(location)
         if package:
             parse_dependencies(location, package)
             return package
     else:
         file_name = fileutils.file_name(location)
         parsers = {
-            'setup.py': parse_unpackaged_source,
+            'setup.py': parse_setup_py,
+            'metadata.json': parse_metadata,
+            'PKG-INFO': parse_pkg_info,
             '.whl': parse_wheel,
             '.egg': parse_egg_binary,
             '.tar.gz': parse_source_distribution,
