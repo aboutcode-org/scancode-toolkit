@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import OrderedDict
+import ast
 import io
 import json
 import logging
@@ -33,7 +34,6 @@ import os
 import re
 import sys
 
-from ast2json import str2json
 import attr
 from six import string_types
 
@@ -252,34 +252,23 @@ def parse_setup_py(location):
     setup_args = OrderedDict()
 
     # Convert the setup.py AST to a dict and get the values from it
-    for statement in str2json(setup_text).get('body', []):
-        statement_value = statement.get('value', {})
-        # We only care about function calls or assignments to variables named `setup`
-        if ((statement_value.get('func', {}).get('id', '') == 'setup')
-                or (statement_value.get('_type', '') == 'Call'
-                and statement_value.get('func', {}).get('id', '') == 'setup')):
+    tree = ast.parse(setup_text)
+    for statement in tree.body:
+        # We only care about function calls or assignments to functions named `setup`
+        if (isinstance(statement, ast.Expr)
+                or isinstance(statement, ast.Call)
+                or isinstance(statement, ast.Assign)
+                and isinstance(statement.value, ast.Call)
+                and isinstance(statement.value.func, ast.Name)
+                and statement.value.func.id == 'setup'):
             # Process the arguments to the setup function
-            for kw in statement_value.get('keywords', []):
-                arg_name = kw['arg']
-                if kw['value']['_type'] == 'Str':
-                    setup_args[arg_name] = kw['value']['s']
-                if kw['value']['_type'] == 'List':
-                    # We collect the elements of a list if the element is not a function call
-                    setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts'] if elt['_type'] != 'Call']
-
-        # if setup function call is nested in a function
-        if statement.get('_type', '') == 'FunctionDef':
-            for func_statement in statement.get('body', []):
-                if (func_statement.get('value', {}).get('func', {}).get('_type', '') == 'Name'
-                        and func_statement.get('value', {}).get('func', {}).get('id') == 'setup'):
-                    # Process the arguments to the setup function
-                    for kw in func_statement.get('value', {}).get('keywords', []):
-                        arg_name = kw['arg']
-                        if kw['value']['_type'] == 'Str':
-                            setup_args[arg_name] = kw['value']['s']
-                        if kw['value']['_type'] == 'List':
-                            # We collect the elements of a list if the element is not a function call
-                            setup_args[arg_name] = [elt['s'] for elt in kw['value']['elts'] if elt['_type'] != 'Call']
+            for kw in statement.value.keywords:
+                arg_name = kw.arg
+                if isinstance(kw.value, ast.Str):
+                    setup_args[arg_name] = kw.value.s
+                if isinstance(kw.value, ast.List):
+                     # We collect the elements of a list if the element is not a function call
+                    setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     description = build_description(
         setup_args.get('summary', ''),
