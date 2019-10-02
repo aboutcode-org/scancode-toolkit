@@ -28,11 +28,13 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import posixpath
 
 import attr
 import click
 click.disable_unicode_literals_warning = True
 
+from commoncode.fileutils import parent_directory
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -41,7 +43,6 @@ from scancode import SCAN_GROUP
 
 from packagedcode import get_package_class
 from packagedcode import PACKAGE_TYPES
-
 
 
 def print_packages(ctx, param, value):
@@ -146,7 +147,38 @@ def set_packages_at_root(resource, codebase):
 
         if not package_root:
             # this can happen if we scan a single resource that is a package manifest
-            return
+            continue
+
+        if package_root == resource:
+            continue
+
+        # here new_package_root != resource:
+
+        # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
+        if package_root.is_root and codebase.strip_root:
+            continue
+
+        # Determine if this package applies to more than just the manifest
+        # file (typically it means the whole parent directory is the
+        # package) and if yes:
+        # 1. fetch this resource
+        # 2. move the package data to this new resource
+        # 3. set the manifest_path if needed.
+        # 4. save.
+
+        # TODO: this is a hack for the ABOUT file Package parser, ABOUT files are kept alongside
+        # the resource its for
+        if package_root.is_file and resource.path.endswith('.ABOUT'):
+            new_manifest_path = posixpath.join(parent_directory(package_root.path), resource.name)
+        else:
+            # here we have a relocated Resource and we compute the manifest path
+            # relative to the new package root
+            # TODO: We should have codebase relative paths for manifests
+            new_package_root_path = package_root.path and package_root.path.strip('/')
+            if new_package_root_path:
+                _, _, new_manifest_path = resource.path.partition(new_package_root_path)
+                # note we could have also deserialized and serialized again instead
+        package_info['manifest_path'] = new_manifest_path.lstrip('/')
 
         package_root.packages.append(package_info)
         codebase.save_resource(package_root)

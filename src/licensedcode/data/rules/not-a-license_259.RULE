@@ -1,0 +1,2 @@
+If LGPL/GPL software can not be supplied with your OpenCV-based product, simply exclude
+ opencv_ffmpeg*.dll from your distribution;

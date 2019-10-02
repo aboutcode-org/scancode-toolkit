@@ -1,0 +1,13 @@
+<cc:License
+   rdf:about="http://creativecommons.org/licenses/by/3.0/">
+  <cc:permits
+     rdf:resource="http://creativecommons.org/ns#Reproduction" />
+  <cc:permits
+     rdf:resource="http://creativecommons.org/ns#Distribution" />
+  <cc:requires
+     rdf:resource="http://creativecommons.org/ns#Notice" />
+  <cc:requires
+     rdf:resource="http://creativecommons.org/ns#Attribution" />
+  <cc:permits
+     rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+</cc:License>

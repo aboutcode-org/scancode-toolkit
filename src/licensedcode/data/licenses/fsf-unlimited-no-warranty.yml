@@ -1,0 +1,9 @@
+key: fsf-unlimited-no-warranty
+short_name: FSF-Unlimited-No-Warranty
+name: FSF Unlimited License (With License Retention) No Warranty
+category: Permissive
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.fsf.org/licensing/licenses/
+text_urls:
+    - http://www.fsf.org/licensing/licenses/
+minimum_coverage: 60

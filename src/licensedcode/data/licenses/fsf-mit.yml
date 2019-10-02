@@ -1,9 +1,0 @@
-key: fsf-mit
-short_name: FSF-MIT
-name: Free Software Foundation - MIT Style License
-category: Permissive
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.fsf.org/licensing/licenses/
-text_urls:
-    - http://www.fsf.org/licensing/licenses/
-minimum_coverage: 60

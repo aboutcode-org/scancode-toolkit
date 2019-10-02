@@ -385,7 +385,7 @@ def canonical_url(uri):
         parsed = urlpy.parse(uri)
         if not parsed:
             return
-    
+
         if py2:
             if not hasattr(parsed, '_scheme') or not hasattr(parsed, '_host'):
                 raise Exception('a')
@@ -393,19 +393,19 @@ def canonical_url(uri):
         else:
             if not hasattr(parsed, 'scheme') or not hasattr(parsed, 'host'):
                 raise Exception('b')
-        if TRACE: 
+        if TRACE:
             logger_debug('canonical_url: parsed:', parsed)
-    
+
         sanitized = parsed.sanitize()
-    
+
         if TRACE:
             logger_debug('canonical_url: sanitized:', sanitized)
-    
+
         punycoded = sanitized.punycode()
-    
+
         if TRACE:
             logger_debug('canonical_url: punycoded:', punycoded)
-    
+
         if py2:
             if punycoded._port == DEFAULT_PORTS.get(punycoded._scheme):
                 punycoded._port = None

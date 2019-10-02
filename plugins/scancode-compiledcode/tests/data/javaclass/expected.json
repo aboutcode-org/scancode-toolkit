@@ -1,0 +1,846 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--javaclass": true,
+        "--json": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 2
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "javaclass",
+      "type": "directory",
+      "javaclass": {},
+      "scan_errors": []
+    },
+    {
+      "path": "javaclass/ControlPanel.class",
+      "type": "file",
+      "javaclass": {
+        "Version": "Version: 45.3 (1.1)",
+        "Constants Pool": "266",
+        "Constants": {
+          "1": {
+            "Method": "203"
+          },
+          "2": {
+            "Class": "java/lang/ClassNotFoundException"
+          },
+          "3": {
+            "Class": "java/lang/NoClassDefFoundError"
+          },
+          "4": {
+            "Method": "205"
+          },
+          "5": {
+            "Method": "126"
+          },
+          "6": {
+            "Method": "202"
+          },
+          "7": {
+            "String": "131"
+          },
+          "8": {
+            "Method": "209"
+          },
+          "9": {
+            "Method": "212"
+          },
+          "10": {
+            "Class": "java/awt/GridBagLayout"
+          },
+          "11": {
+            "Method": "136"
+          },
+          "12": {
+            "Class": "java/awt/GridBagConstraints"
+          },
+          "13": {
+            "Method": "137"
+          },
+          "14": {
+            "Method": "215"
+          },
+          "15": {
+            "Field": "137"
+          },
+          "16": {
+            "Field": "137"
+          },
+          "17": {
+            "Field": "137"
+          },
+          "18": {
+            "Field": "137"
+          },
+          "19": {
+            "Field": "137"
+          },
+          "20": {
+            "Class": "javax/swing/JLabel"
+          },
+          "21": {
+            "String": "146"
+          },
+          "22": {
+            "Method": "145"
+          },
+          "23": {
+            "Method": "136"
+          },
+          "24": {
+            "Method": "215"
+          },
+          "25": {
+            "String": "149"
+          },
+          "26": {
+            "String": "150"
+          },
+          "27": {
+            "String": "151"
+          },
+          "28": {
+            "String": "152"
+          },
+          "29": {
+            "Field": "137"
+          },
+          "30": {
+            "Class": "org/apache/log4j/Level"
+          },
+          "31": {
+            "Field": "154"
+          },
+          "32": {
+            "Field": "154"
+          },
+          "33": {
+            "Field": "154"
+          },
+          "34": {
+            "Field": "154"
+          },
+          "35": {
+            "Field": "154"
+          },
+          "36": {
+            "Field": "154"
+          },
+          "37": {
+            "Class": "javax/swing/JComboBox"
+          },
+          "38": {
+            "Method": "161"
+          },
+          "39": {
+            "Method": "161"
+          },
+          "40": {
+            "Method": "239"
+          },
+          "41": {
+            "Method": "161"
+          },
+          "42": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$1"
+          },
+          "43": {
+            "Method": "167"
+          },
+          "44": {
+            "Method": "161"
+          },
+          "45": {
+            "Field": "137"
+          },
+          "46": {
+            "Class": "javax/swing/JTextField"
+          },
+          "47": {
+            "String": "168"
+          },
+          "48": {
+            "Method": "173"
+          },
+          "49": {
+            "Method": "248"
+          },
+          "50": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$2"
+          },
+          "51": {
+            "Method": "176"
+          },
+          "52": {
+            "InterfaceMethod": "252"
+          },
+          "53": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$3"
+          },
+          "54": {
+            "Method": "180"
+          },
+          "55": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$4"
+          },
+          "56": {
+            "Method": "181"
+          },
+          "57": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$5"
+          },
+          "58": {
+            "Method": "182"
+          },
+          "59": {
+            "Class": "javax/swing/JButton"
+          },
+          "60": {
+            "String": "184"
+          },
+          "61": {
+            "Method": "183"
+          },
+          "62": {
+            "Method": "255"
+          },
+          "63": {
+            "Field": "258"
+          },
+          "64": {
+            "Method": "255"
+          },
+          "65": {
+            "String": "189"
+          },
+          "66": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$6"
+          },
+          "67": {
+            "Method": "190"
+          },
+          "68": {
+            "String": "192"
+          },
+          "69": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel$7"
+          },
+          "70": {
+            "Method": "193"
+          },
+          "71": {
+            "Field": "201"
+          },
+          "72": {
+            "String": "196"
+          },
+          "73": {
+            "Method": "201"
+          },
+          "74": {
+            "Method": "263"
+          },
+          "75": {
+            "Field": "201"
+          },
+          "76": {
+            "Class": "org/apache/log4j/chainsaw/ControlPanel"
+          },
+          "77": {
+            "Class": "javax/swing/JPanel"
+          },
+          "78": {
+            "Utf8": "LOG"
+          },
+          "79": {
+            "Utf8": "Lorg/apache/log4j/Logger;"
+          },
+          "80": {
+            "Utf8": "class$org$apache$log4j$chainsaw$ControlPanel"
+          },
+          "81": {
+            "Utf8": "Ljava/lang/Class;"
+          },
+          "82": {
+            "Utf8": "Synthetic"
+          },
+          "83": {
+            "Utf8": "<init>"
+          },
+          "84": {
+            "Utf8": "(Lorg/apache/log4j/chainsaw/MyTableModel;)V"
+          },
+          "85": {
+            "Utf8": "Code"
+          },
+          "86": {
+            "Utf8": "LineNumberTable"
+          },
+          "87": {
+            "Utf8": "LocalVariableTable"
+          },
+          "88": {
+            "Utf8": "this"
+          },
+          "89": {
+            "Utf8": "Lorg/apache/log4j/chainsaw/ControlPanel;"
+          },
+          "90": {
+            "Utf8": "aModel"
+          },
+          "91": {
+            "Utf8": "Lorg/apache/log4j/chainsaw/MyTableModel;"
+          },
+          "92": {
+            "Utf8": "gridbag"
+          },
+          "93": {
+            "Utf8": "Ljava/awt/GridBagLayout;"
+          },
+          "94": {
+            "Utf8": "c"
+          },
+          "95": {
+            "Utf8": "Ljava/awt/GridBagConstraints;"
+          },
+          "96": {
+            "Utf8": "label"
+          },
+          "97": {
+            "Utf8": "Ljavax/swing/JLabel;"
+          },
+          "98": {
+            "Utf8": "allPriorities"
+          },
+          "99": {
+            "Utf8": "[Lorg/apache/log4j/Level;"
+          },
+          "100": {
+            "Utf8": "priorities"
+          },
+          "101": {
+            "Utf8": "Ljavax/swing/JComboBox;"
+          },
+          "102": {
+            "Utf8": "lowest"
+          },
+          "103": {
+            "Utf8": "Lorg/apache/log4j/Level;"
+          },
+          "104": {
+            "Utf8": "threadField"
+          },
+          "105": {
+            "Utf8": "Ljavax/swing/JTextField;"
+          },
+          "106": {
+            "Utf8": "catField"
+          },
+          "107": {
+            "Utf8": "ndcField"
+          },
+          "108": {
+            "Utf8": "msgField"
+          },
+          "109": {
+            "Utf8": "exitButton"
+          },
+          "110": {
+            "Utf8": "Ljavax/swing/JButton;"
+          },
+          "111": {
+            "Utf8": "clearButton"
+          },
+          "112": {
+            "Utf8": "toggleButton"
+          },
+          "113": {
+            "Utf8": "class$"
+          },
+          "114": {
+            "Utf8": "(Ljava/lang/String;)Ljava/lang/Class;"
+          },
+          "115": {
+            "Utf8": "x1"
+          },
+          "116": {
+            "Utf8": "Ljava/lang/ClassNotFoundException;"
+          },
+          "117": {
+            "Utf8": "x0"
+          },
+          "118": {
+            "Utf8": "Ljava/lang/String;"
+          },
+          "119": {
+            "Utf8": "<clinit>"
+          },
+          "120": {
+            "Utf8": "()V"
+          },
+          "121": {
+            "Utf8": "SourceFile"
+          },
+          "122": {
+            "Utf8": "ControlPanel.java"
+          },
+          "123": {
+            "Class": "java/lang/Class"
+          },
+          "124": {
+            "NameAndType": "204, 114"
+          },
+          "125": {
+            "Utf8": "java/lang/ClassNotFoundException"
+          },
+          "126": {
+            "Utf8": "java/lang/NoClassDefFoundError"
+          },
+          "127": {
+            "Class": "java/lang/Throwable"
+          },
+          "128": {
+            "NameAndType": "206, 207"
+          },
+          "129": {
+            "NameAndType": "83, 208"
+          },
+          "130": {
+            "NameAndType": "83, 120"
+          },
+          "131": {
+            "Utf8": "Controls: "
+          },
+          "132": {
+            "Class": "javax/swing/BorderFactory"
+          },
+          "133": {
+            "NameAndType": "210, 211"
+          },
+          "134": {
+            "Class": "javax/swing/JComponent"
+          },
+          "135": {
+            "NameAndType": "213, 214"
+          },
+          "136": {
+            "Utf8": "java/awt/GridBagLayout"
+          },
+          "137": {
+            "Utf8": "java/awt/GridBagConstraints"
+          },
+          "138": {
+            "Class": "java/awt/Container"
+          },
+          "139": {
+            "NameAndType": "216, 217"
+          },
+          "140": {
+            "NameAndType": "218, 219"
+          },
+          "141": {
+            "NameAndType": "220, 219"
+          },
+          "142": {
+            "NameAndType": "221, 219"
+          },
+          "143": {
+            "NameAndType": "222, 219"
+          },
+          "144": {
+            "NameAndType": "223, 219"
+          },
+          "145": {
+            "Utf8": "javax/swing/JLabel"
+          },
+          "146": {
+            "Utf8": "Filter Level:"
+          },
+          "147": {
+            "NameAndType": "224, 225"
+          },
+          "148": {
+            "NameAndType": "226, 227"
+          },
+          "149": {
+            "Utf8": "Filter Thread:"
+          },
+          "150": {
+            "Utf8": "Filter Logger:"
+          },
+          "151": {
+            "Utf8": "Filter NDC:"
+          },
+          "152": {
+            "Utf8": "Filter Message:"
+          },
+          "153": {
+            "NameAndType": "228, 229"
+          },
+          "154": {
+            "Utf8": "org/apache/log4j/Level"
+          },
+          "155": {
+            "NameAndType": "230, 103"
+          },
+          "156": {
+            "NameAndType": "231, 103"
+          },
+          "157": {
+            "NameAndType": "232, 103"
+          },
+          "158": {
+            "NameAndType": "233, 103"
+          },
+          "159": {
+            "NameAndType": "234, 103"
+          },
+          "160": {
+            "NameAndType": "235, 103"
+          },
+          "161": {
+            "Utf8": "javax/swing/JComboBox"
+          },
+          "162": {
+            "NameAndType": "83, 236"
+          },
+          "163": {
+            "NameAndType": "237, 238"
+          },
+          "164": {
+            "Class": "org/apache/log4j/chainsaw/MyTableModel"
+          },
+          "165": {
+            "NameAndType": "240, 241"
+          },
+          "166": {
+            "NameAndType": "242, 243"
+          },
+          "167": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$1"
+          },
+          "168": {
+            "Utf8": ""
+          },
+          "169": {
+            "Utf8": "InnerClasses"
+          },
+          "170": {
+            "NameAndType": "83, 244"
+          },
+          "171": {
+            "NameAndType": "245, 246"
+          },
+          "172": {
+            "NameAndType": "247, 219"
+          },
+          "173": {
+            "Utf8": "javax/swing/JTextField"
+          },
+          "174": {
+            "Class": "javax/swing/text/JTextComponent"
+          },
+          "175": {
+            "NameAndType": "249, 250"
+          },
+          "176": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$2"
+          },
+          "177": {
+            "NameAndType": "83, 251"
+          },
+          "178": {
+            "Class": "javax/swing/text/Document"
+          },
+          "179": {
+            "NameAndType": "253, 254"
+          },
+          "180": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$3"
+          },
+          "181": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$4"
+          },
+          "182": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$5"
+          },
+          "183": {
+            "Utf8": "javax/swing/JButton"
+          },
+          "184": {
+            "Utf8": "Exit"
+          },
+          "185": {
+            "Class": "javax/swing/AbstractButton"
+          },
+          "186": {
+            "NameAndType": "256, 257"
+          },
+          "187": {
+            "Class": "org/apache/log4j/chainsaw/ExitAction"
+          },
+          "188": {
+            "NameAndType": "259, 260"
+          },
+          "189": {
+            "Utf8": "Clear"
+          },
+          "190": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$6"
+          },
+          "191": {
+            "NameAndType": "83, 261"
+          },
+          "192": {
+            "Utf8": "Pause"
+          },
+          "193": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel$7"
+          },
+          "194": {
+            "NameAndType": "83, 262"
+          },
+          "195": {
+            "NameAndType": "80, 81"
+          },
+          "196": {
+            "Utf8": "org.apache.log4j.chainsaw.ControlPanel"
+          },
+          "197": {
+            "NameAndType": "113, 114"
+          },
+          "198": {
+            "Class": "org/apache/log4j/Logger"
+          },
+          "199": {
+            "NameAndType": "264, 265"
+          },
+          "200": {
+            "NameAndType": "78, 79"
+          },
+          "201": {
+            "Utf8": "org/apache/log4j/chainsaw/ControlPanel"
+          },
+          "202": {
+            "Utf8": "javax/swing/JPanel"
+          },
+          "203": {
+            "Utf8": "java/lang/Class"
+          },
+          "204": {
+            "Utf8": "forName"
+          },
+          "205": {
+            "Utf8": "java/lang/Throwable"
+          },
+          "206": {
+            "Utf8": "getMessage"
+          },
+          "207": {
+            "Utf8": "()Ljava/lang/String;"
+          },
+          "208": {
+            "Utf8": "(Ljava/lang/String;)V"
+          },
+          "209": {
+            "Utf8": "javax/swing/BorderFactory"
+          },
+          "210": {
+            "Utf8": "createTitledBorder"
+          },
+          "211": {
+            "Utf8": "(Ljava/lang/String;)Ljavax/swing/border/TitledBorder;"
+          },
+          "212": {
+            "Utf8": "javax/swing/JComponent"
+          },
+          "213": {
+            "Utf8": "setBorder"
+          },
+          "214": {
+            "Utf8": "(Ljavax/swing/border/Border;)V"
+          },
+          "215": {
+            "Utf8": "java/awt/Container"
+          },
+          "216": {
+            "Utf8": "setLayout"
+          },
+          "217": {
+            "Utf8": "(Ljava/awt/LayoutManager;)V"
+          },
+          "218": {
+            "Utf8": "ipadx"
+          },
+          "219": {
+            "Utf8": "I"
+          },
+          "220": {
+            "Utf8": "ipady"
+          },
+          "221": {
+            "Utf8": "gridx"
+          },
+          "222": {
+            "Utf8": "anchor"
+          },
+          "223": {
+            "Utf8": "gridy"
+          },
+          "224": {
+            "Utf8": "setConstraints"
+          },
+          "225": {
+            "Utf8": "(Ljava/awt/Component;Ljava/awt/GridBagConstraints;)V"
+          },
+          "226": {
+            "Utf8": "add"
+          },
+          "227": {
+            "Utf8": "(Ljava/awt/Component;)Ljava/awt/Component;"
+          },
+          "228": {
+            "Utf8": "weightx"
+          },
+          "229": {
+            "Utf8": "D"
+          },
+          "230": {
+            "Utf8": "FATAL"
+          },
+          "231": {
+            "Utf8": "ERROR"
+          },
+          "232": {
+            "Utf8": "WARN"
+          },
+          "233": {
+            "Utf8": "INFO"
+          },
+          "234": {
+            "Utf8": "DEBUG"
+          },
+          "235": {
+            "Utf8": "TRACE"
+          },
+          "236": {
+            "Utf8": "([Ljava/lang/Object;)V"
+          },
+          "237": {
+            "Utf8": "setSelectedItem"
+          },
+          "238": {
+            "Utf8": "(Ljava/lang/Object;)V"
+          },
+          "239": {
+            "Utf8": "org/apache/log4j/chainsaw/MyTableModel"
+          },
+          "240": {
+            "Utf8": "setPriorityFilter"
+          },
+          "241": {
+            "Utf8": "(Lorg/apache/log4j/Priority;)V"
+          },
+          "242": {
+            "Utf8": "setEditable"
+          },
+          "243": {
+            "Utf8": "(Z)V"
+          },
+          "244": {
+            "Utf8": "(Lorg/apache/log4j/chainsaw/ControlPanel;Lorg/apache/log4j/chainsaw/MyTableModel;Ljavax/swing/JComboBox;)V"
+          },
+          "245": {
+            "Utf8": "addActionListener"
+          },
+          "246": {
+            "Utf8": "(Ljava/awt/event/ActionListener;)V"
+          },
+          "247": {
+            "Utf8": "fill"
+          },
+          "248": {
+            "Utf8": "javax/swing/text/JTextComponent"
+          },
+          "249": {
+            "Utf8": "getDocument"
+          },
+          "250": {
+            "Utf8": "()Ljavax/swing/text/Document;"
+          },
+          "251": {
+            "Utf8": "(Lorg/apache/log4j/chainsaw/ControlPanel;Lorg/apache/log4j/chainsaw/MyTableModel;Ljavax/swing/JTextField;)V"
+          },
+          "252": {
+            "Utf8": "javax/swing/text/Document"
+          },
+          "253": {
+            "Utf8": "addDocumentListener"
+          },
+          "254": {
+            "Utf8": "(Ljavax/swing/event/DocumentListener;)V"
+          },
+          "255": {
+            "Utf8": "javax/swing/AbstractButton"
+          },
+          "256": {
+            "Utf8": "setMnemonic"
+          },
+          "257": {
+            "Utf8": "(C)V"
+          },
+          "258": {
+            "Utf8": "org/apache/log4j/chainsaw/ExitAction"
+          },
+          "259": {
+            "Utf8": "INSTANCE"
+          },
+          "260": {
+            "Utf8": "Lorg/apache/log4j/chainsaw/ExitAction;"
+          },
+          "261": {
+            "Utf8": "(Lorg/apache/log4j/chainsaw/ControlPanel;Lorg/apache/log4j/chainsaw/MyTableModel;)V"
+          },
+          "262": {
+            "Utf8": "(Lorg/apache/log4j/chainsaw/ControlPanel;Lorg/apache/log4j/chainsaw/MyTableModel;Ljavax/swing/JButton;)V"
+          },
+          "263": {
+            "Utf8": "org/apache/log4j/Logger"
+          },
+          "264": {
+            "Utf8": "getLogger"
+          },
+          "265": {
+            "Utf8": "(Ljava/lang/Class;)Lorg/apache/log4j/Logger;"
+          }
+        },
+        "Access": "Superclass ",
+        "Methods": [
+          "void ControlPanel(MyTableModel)",
+          "static Class class$(String)",
+          "static void <clinit>()"
+        ],
+        "Class": "org/apache/log4j/chainsaw/ControlPanel",
+        "Super Class": "javax/swing/JPanel"
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "javaclass/expected.json",
+      "type": "file",
+      "javaclass": {},
+      "scan_errors": []
+    }
+  ]
+}

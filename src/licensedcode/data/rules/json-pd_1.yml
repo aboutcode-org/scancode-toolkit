@@ -1,0 +1,5 @@
+license_expression: json-pd
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.json.org/js.html

@@ -25,39 +25,43 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from os.path import abspath
-from os.path import dirname
-from os.path import join
-
-from plugincode.location_provider import LocationProviderPlugin
-from plugincode.location_provider import location_provider_impl
-
+from os import path
 import platform
 
+from plugincode.location_provider import LocationProviderPlugin
+
+
 class LibarchivePaths(LocationProviderPlugin):
-	def get_locations(self):
-		curr_dir = dirname(abspath(__file__))
-		distribution=platform.linux_distribution()[0]	
-	
-		# List of various major distributions consisting of flavors
-		debian_based_distro=['Ubuntu','Mint','debian']
-	
-		rpm_based_distro=['Fedora','redhat']
+    def get_locations(self):
+        """
+        Return a mapping of {location key: location} providing the installation
+        locations of the libarchive shared library as installed on various Linux
+        distros or on FreeBSD.
+        """
+        system_arch = platform.machine()
+        mainstream_system = platform.system().lower()
+        if mainstream_system == 'linux':
+            distribution = platform.linux_distribution()[0].lower()
+            debian_based_distro = ['ubuntu', 'mint', 'debian']
+            rpm_based_distro = ['fedora', 'redhat']
 
-		if distribution in debian_based_distro:
-		
-			lib_dir = '/usr/lib/x86_64-linux-gnu'
-	
-		elif distribution in rpm_based_distro:
-		
-			lib_dir = '/usr/lib64'
+            if distribution in debian_based_distro:
+                lib_dir = '/usr/lib/'+system_arch+'-linux-gnu'
 
-		else:
-			#User defined if installation directory differs
-			lib_dir = '/usr'
+            elif distribution in rpm_based_distro:
+                lib_dir = '/usr/lib64'
 
-		locations = {
-			'extractcode.libarchive.libdir': lib_dir,
-			'extractcode.libarchive.dll': join(lib_dir, 'libarchive.so.13'),
-		}
-		return locations
+            else:
+                raise Exception('Unsupported system: {}'.format(distribution))
+
+        elif mainstream_system == 'freebsd':
+            if path.isdir('/usr/local/'):
+                lib_dir = '/usr/local/lib'
+            else:
+                lib_dir = '/usr/lib'
+
+        locations = {
+            'extractcode.libarchive.libdir': lib_dir,
+            'extractcode.libarchive.dll': path.join(lib_dir, 'libarchive.so'),
+        }
+        return locations

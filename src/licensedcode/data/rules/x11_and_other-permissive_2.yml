@@ -1,0 +1,9 @@
+license_expression: x11 AND other-permissive
+is_license_text: yes
+relevance: 95
+notes: Per author "This is a modified version of the X11 Licence (commonly known as the MIT
+    licence). The modifications relate to including not only the copyright notice, as per the
+    original X11, but also the authors URL. This is a trivial modification, and does not affect
+    any other part of the licence."
+ignorable_urls:
+    - http://www.twilightuniverse.com/

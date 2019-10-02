@@ -92,7 +92,7 @@ def get_rpm_tags(location, include_desc=False):
     Include the long RPM description value if `include_desc` is True.
     """
     T = typecode.contenttype.get_type(location)
-    
+
     if 'rpm' not in T.filetype_file.lower():
         return
 
@@ -167,7 +167,7 @@ def parse(location):
         epoch = tags.epoch and int(tags.epoch) or None
     except ValueError:
         epoch = None
-    
+
     evr = EVR(
         version=tags.version or None,
         release=tags.release or None,
@@ -207,8 +207,8 @@ def parse(location):
         parties.append(models.Party(name=tags.vendor, role='vendor'))
 
     description = build_description(tags.summary, tags.description)
-        
-    if TRACE: 
+
+    if TRACE:
         data = dict(
             name=name,
             version=evr,
@@ -227,7 +227,7 @@ def parse(location):
         parties=parties,
         declared_license=tags.license or None,
         source_packages=source_packages)
-    if TRACE: 
+    if TRACE:
         logger_debug('parse: created package:\n', package)
 
     return package

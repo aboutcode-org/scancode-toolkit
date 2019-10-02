@@ -95,7 +95,6 @@ class TestConsolidate(FileDrivenTesting):
 
     def test_consolidate_component_package_from_json_can_run_twice(self):
         scan_file = self.get_scan('plugin_consolidate/component-package', cli_options='-clip')
-
         expected_file = self.get_test_loc('plugin_consolidate/component-package-expected.json')
 
         result_file = self.get_temp_file('json')
@@ -161,5 +160,12 @@ class TestConsolidate(FileDrivenTesting):
         scan_loc = self.get_test_loc('plugin_consolidate/component-package-build')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/component-package-build-expected.json')
+        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
+
+    def test_consolidate_report_minority_origin_directory(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
