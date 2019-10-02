@@ -1,0 +1,12 @@
+key: mit-old-style-sparse
+short_name: MIT Old Style Spare
+name: MIT Old Style Spare
+category: Permissive
+owner: Kenneth S. Kundert
+homepage_url: http://sparse.sourceforge.net
+notes:
+ Used in old Sparse versions and a few other places.
+ This is very similar to the mit-old-style.
+ignorable_authors:
+  - the University of California
+

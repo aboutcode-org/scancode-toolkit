@@ -1,0 +1,4 @@
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+notes: See https://github.com/rhuitl/uClinux/blob/master/user/nessus/nessus-plugins/scripts/byte_func.inc
