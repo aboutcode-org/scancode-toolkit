@@ -233,24 +233,6 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_build_package(self):
-        test_file = self.get_test_loc('pypi/vmock/input.json')
-        expected_loc = self.get_test_loc('pypi/vmock/expected.json')
-        with open(test_file) as pypi_json:
-            json_input = pypi_json.read()
-            content = json.loads(json_input)
-            package = pypi.build_package(content)
-            self.check_package(package, expected_loc, regen=False)
-
-    def test_build_package2(self):
-        test_file = self.get_test_loc('pypi/3to2/input.json')
-        expected_loc = self.get_test_loc('pypi/3to2/expected.json')
-        with open(test_file) as pypi_json:
-            json_input = pypi_json.read()
-            content = json.loads(json_input)
-            package = pypi.build_package(content)
-            self.check_package(package, expected_loc, regen=False)
-
     def test_pkginfo_parse_with_unpackaged_source(self):
         test_file = self.get_test_loc('pypi')
         package = pypi.parse_unpackaged_source(test_file)
