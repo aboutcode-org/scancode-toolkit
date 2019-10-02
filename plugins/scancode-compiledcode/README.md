@@ -1,4 +1,13 @@
-A ScanCode scan plugin to find linux source info.
+A ScanCode scan plugin to get lkmclue, dwarf, gwt, cpp includes, code/comments lines generated code and elf info.
+
+--cpp-includes: 
+--dwarf: 
+--elf: 
+--generatedcode:
+--gwt:
+--javaclass:
+--makedepend:
+--codecommentlines:
 
 To start the test case, please run:
 1. ./configure
