@@ -99,136 +99,120 @@ class PythonPackage(models.Package):
         return compute_normalized_license(self.declared_license)
 
 
-def compute_normalized_license(declared_license):
+def parse(location):
     """
-    Return a normalized license expression string detected from a list of
-    declared license items.
+    Return a Package built from parsing a file or directory at 'location'
     """
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    for value in declared_license.values():
-        if not value:
-            continue
-        # The value could be a string or a list
-        if isinstance(value, string_types):
-            detected_license = models.compute_normalized_license(value)
-            if detected_license:
-                detected_licenses.append(detected_license)
-        else:
-            for declared in value:
-                detected_license = models.compute_normalized_license(declared)
-                if detected_license:
-                    detected_licenses.append(detected_license)
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
-
-
-PKG_INFO_ATTRIBUTES = [
-    'Name',
-    'Version',
-    'Author',
-    'Author-email',
-    'License',
-    'Description',
-    'Platform',
-    'Home-page',
-    'Summary'
-]
+    if filetype.is_dir(location):
+        package = parse_unpackaged_source(location)
+        if package:
+            parse_dependencies(location, package)
+            return package
+    else:
+        file_name = fileutils.file_name(location)
+        parsers = {
+            'setup.py': parse_setup_py,
+            'metadata.json': parse_metadata,
+            'PKG-INFO': parse_pkg_info,
+            '.whl': parse_wheel,
+            '.egg': parse_egg_binary,
+            '.tar.gz': parse_source_distribution,
+            '.zip': parse_source_distribution,
+        }
+        for name, parser in parsers.items():
+            if file_name.endswith(name):
+                package = parser(location)
+                if package:
+                    parent_directory = fileutils.parent_directory(location)
+                    parse_dependencies(parent_directory, package)
+                    return package
 
 
-def parse_pkg_info(location):
+def parse_unpackaged_source(location):
     """
-    Return a Package from a a 'PKG-INFO' file at 'location' or None.
+    Passing it the path to the unpacked package, or by passing it the setup.py at the top level.
     """
-    if not location:
-        return
+    unpackaged_dist = None
+    try:
+        unpackaged_dist = UnpackedSDist(location)
+    except ValueError:
+        try:
+            unpackaged_dist = Develop(location)
+        except ValueError:
+            pass
 
-    if not location.endswith('PKG-INFO'):
-        return
-
-    with io.open(location, encoding='utf-8') as loc:
-        infos = saneyaml.load(loc.read())
-
-    logger.error(logger)
-    if not infos.get('Name'):
-        return
-
-    parties = []
-    author = infos.get('Author')
-    if author:
-        parties.append(models.Party(type=models.party_person, name=author, role=''))
-
-    package = PythonPackage(
-        name=infos.get('Name'),
-        version=infos.get('Version'),
-        description=infos.get('Summary') or infos.get('Description'),
-        homepage_url=infos.get('Home-page') or None,
-        # FIXME: this is NOT correct as classifiers can be used for this too
-        declared_license=infos.get('License') or None,
-        # FIXME: what about email?
-        # FIXME: what about maintainers?
-        parties=parties,
-    )
-    return package
+    return parse_with_pkginfo(unpackaged_dist)
 
 
-# FIXME: use proper library for parsing these
+def parse_with_pkginfo(pkginfo):
+    if pkginfo and pkginfo.name:
+        common_data = dict(
+            name=pkginfo.name,
+            version=pkginfo.version,
+            description=pkginfo.description,
+            download_url=pkginfo.download_url,
+            homepage_url=pkginfo.home_page,
+        )
+        package = PythonPackage(**common_data)
+        if pkginfo.license:
+            # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
+            package.declared_license = {'license': pkginfo.license}
 
-def parse_metadata(location):
+        if pkginfo.maintainer:
+            common_data['parties'] = []
+            common_data['parties'].append(models.Party(
+                type=models.party_person, name=pkginfo.maintainer, role='author', email=pkginfo.maintainer_email))
+        return package
+
+
+def parse_dependencies(location, package):
     """
-    Return a Package object from the Python wheel 'metadata.json' file
-    at 'location' or None. Check if the parent directory of 'location'
-    contains both a 'METADATA' and a 'DESCRIPTION.rst' file to ensure
-    this is a proper metadata.json file.
+    Loop all resources from the passing folder location, get the dependencies from the resources and set it to the passing package object.
     """
-    if not location or not location.endswith('metadata.json'):
-        if TRACE: logger_debug('parse_metadata: not metadata.json:', location)
+    for resource_location in os.listdir(location):
+        dependencies = parse_with_dparse(resource_location)
+        if dependencies:
+            package.dependencies = dependencies
+
+
+def parse_with_dparse(location):
+    is_dir = filetype.is_dir(location)
+    if is_dir:
         return
-    parent_dir = fileutils.parent_directory(location)
-    # FIXME: is the absence of these two files a show stopper?
-    paths = [os.path.join(parent_dir, n) for n in ('METADATA', 'DESCRIPTION.rst')]
-    if not all(os.path.exists(p) for p in paths):
-        if TRACE: logger_debug('parse_metadata: not extra paths', paths)
+    file_name = fileutils.file_name(location)
+    if file_name not in (filetypes.requirements_txt,
+                         filetypes.conda_yml,
+                         filetypes.tox_ini,
+                         filetypes.pipfile,
+                         filetypes.pipfile_lock):
         return
-
-    with open(location, 'rb') as infs:
-        infos = json.load(infs, object_pairs_hook=OrderedDict)
-
-    extensions = infos.get('extensions')
-    if TRACE: logger_debug('parse_metadata: extensions:', extensions)
-    details = extensions and extensions.get('python.details')
-    urls = details and details.get('project_urls')
-    homepage_url = urls and urls.get('Home')
-
-    parties = []
-    if TRACE: logger_debug('parse_metadata: contacts:', details.get('contacts'))
-    contacts = details and details.get('contacts') or []
-    for contact in contacts:
-        if TRACE: logger_debug('parse_metadata: contact:', contact)
-        name = contact and contact.get('name')
-        if not name:
-            if TRACE: logger_debug('parse_metadata: no name:', contact)
-            continue
-        parties.append(models.Party(type=models.party_person, name=name, role='contact'))
-
-    description = build_description(
-        infos.get('summary') ,
-        infos.get('description')
-    )
-
-    package = PythonPackage(
-        name=infos.get('name'),
-        version=infos.get('version'),
-        description=description or None,
-        declared_license=infos.get('license') or None,
-        homepage_url=homepage_url or None,
-        parties=parties,
-    )
-    return package
+    if py2:
+        mode = 'rb'
+    else:
+        mode = 'r'
+    with open(location, mode) as f:
+        content = f.read()
+        df = dparse.parse(content, file_type=file_name)
+        df_dependencies = df.dependencies
+        if not df_dependencies:
+            return
+        package_dependencies = []
+        for df_dependency in df_dependencies:
+            specs = df_dependency.specs
+            requirement = None
+            if specs:
+                requirement = str(specs)
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='pypi', name=df_dependency.name).to_string(),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    requirement=requirement,
+                )
+            )
+        return package_dependencies
 
 
 def parse_setup_py(location):
@@ -305,45 +289,110 @@ def parse_setup_py(location):
     )
 
 
-def parse(location):
+# FIXME: use proper library for parsing these
+def parse_metadata(location):
     """
-    Return a Package built from parsing a file at 'location' The file
-    name can be either a 'setup.py', 'metadata.json' or 'PKG-INFO'
-    file.
+    Return a Package object from the Python wheel 'metadata.json' file
+    at 'location' or None. Check if the parent directory of 'location'
+    contains both a 'METADATA' and a 'DESCRIPTION.rst' file to ensure
+    this is a proper metadata.json file.
     """
-    if filetype.is_dir(location):
-        package = parse_unpackaged_source(location)
-        if package:
-            parse_dependencies(location, package)
-            return package
-    else:
-        file_name = fileutils.file_name(location)
-        parsers = {
-            'setup.py': parse_setup_py,
-            'metadata.json': parse_metadata,
-            'PKG-INFO': parse_pkg_info,
-            '.whl': parse_wheel,
-            '.egg': parse_egg_binary,
-            '.tar.gz': parse_source_distribution,
-            '.zip': parse_source_distribution,
-        }
-        for name, parser in parsers.items():
-            if file_name.endswith(name):
-                package = parser(location)
-                if package:
-                    parent_directory = fileutils.parent_directory(location)
-                    parse_dependencies(parent_directory, package)
-                    return package
+    if not location or not location.endswith('metadata.json'):
+        if TRACE: logger_debug('parse_metadata: not metadata.json:', location)
+        return
+    parent_dir = fileutils.parent_directory(location)
+    # FIXME: is the absence of these two files a show stopper?
+    paths = [os.path.join(parent_dir, n) for n in ('METADATA', 'DESCRIPTION.rst')]
+    if not all(os.path.exists(p) for p in paths):
+        if TRACE: logger_debug('parse_metadata: not extra paths', paths)
+        return
+
+    with open(location, 'rb') as infs:
+        infos = json.load(infs, object_pairs_hook=OrderedDict)
+
+    extensions = infos.get('extensions')
+    if TRACE: logger_debug('parse_metadata: extensions:', extensions)
+    details = extensions and extensions.get('python.details')
+    urls = details and details.get('project_urls')
+    homepage_url = urls and urls.get('Home')
+
+    parties = []
+    if TRACE: logger_debug('parse_metadata: contacts:', details.get('contacts'))
+    contacts = details and details.get('contacts') or []
+    for contact in contacts:
+        if TRACE: logger_debug('parse_metadata: contact:', contact)
+        name = contact and contact.get('name')
+        if not name:
+            if TRACE: logger_debug('parse_metadata: no name:', contact)
+            continue
+        parties.append(models.Party(type=models.party_person, name=name, role='contact'))
+
+    description = build_description(
+        infos.get('summary') ,
+        infos.get('description')
+    )
+
+    package = PythonPackage(
+        name=infos.get('name'),
+        version=infos.get('version'),
+        description=description or None,
+        declared_license=infos.get('license') or None,
+        homepage_url=homepage_url or None,
+        parties=parties,
+    )
+    return package
 
 
-def parse_dependencies(location, package):
+def parse_pkg_info(location):
     """
-    Loop all resources from the passing folder location, get the dependencies from the resources and set it to the passing package object.
+    Return a Package from a a 'PKG-INFO' file at 'location' or None.
     """
-    for resource_location in os.listdir(location):
-        dependencies = parse_with_dparse(resource_location)
-        if dependencies:
-            package.dependencies = dependencies
+    if not location:
+        return
+
+    if not location.endswith('PKG-INFO'):
+        return
+
+    with io.open(location, encoding='utf-8') as loc:
+        infos = saneyaml.load(loc.read())
+
+    logger.error(logger)
+    if not infos.get('Name'):
+        return
+
+    parties = []
+    author = infos.get('Author')
+    if author:
+        parties.append(models.Party(type=models.party_person, name=author, role=''))
+
+    package = PythonPackage(
+        name=infos.get('Name'),
+        version=infos.get('Version'),
+        description=infos.get('Summary') or infos.get('Description'),
+        homepage_url=infos.get('Home-page') or None,
+        # FIXME: this is NOT correct as classifiers can be used for this too
+        declared_license=infos.get('License') or None,
+        # FIXME: what about email?
+        # FIXME: what about maintainers?
+        parties=parties,
+    )
+    return package
+
+
+def parse_wheel(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    wheel = Wheel(location)
+    return parse_with_pkginfo(wheel)
+
+
+def parse_egg_binary(location):
+    """
+    Passing wheel file location which is generated via setup.py bdist_wheel.
+    """
+    binary_dist = BDist(location)
+    return parse_with_pkginfo(binary_dist)
 
 
 def parse_source_distribution(location):
@@ -360,159 +409,29 @@ def parse_source_distribution(location):
         return package
 
 
-def parse_unpackaged_source(location):
+def compute_normalized_license(declared_license):
     """
-    Passing it the path to the unpacked package, or by passing it the setup.py at the top level.
+    Return a normalized license expression string detected from a list of
+    declared license items.
     """
-    unpackaged_dist = None
-    try:
-        unpackaged_dist = UnpackedSDist(location)
-    except ValueError:
-        try:
-            unpackaged_dist = Develop(location)
-        except ValueError:
-            pass
-
-    return parse_with_pkginfo(unpackaged_dist)
-
-
-def parse_egg_binary(location):
-    """
-    Passing wheel file location which is generated via setup.py bdist_wheel.
-    """
-    binary_dist = BDist(location)
-    return parse_with_pkginfo(binary_dist)
-
-
-def parse_wheel(location):
-    """
-    Passing wheel file location which is generated via setup.py bdist_wheel.
-    """
-    wheel = Wheel(location)
-    return parse_with_pkginfo(wheel)
-
-
-def parse_with_pkginfo(pkginfo):
-    if pkginfo and pkginfo.name:
-        common_data = dict(
-            name=pkginfo.name,
-            version=pkginfo.version,
-            description=pkginfo.description,
-            download_url=pkginfo.download_url,
-            homepage_url=pkginfo.home_page,
-        )
-        package = PythonPackage(**common_data)
-        if pkginfo.license:
-            # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
-            package.declared_license = {'license': pkginfo.license}
-
-        if pkginfo.maintainer:
-            common_data['parties'] = []
-            common_data['parties'].append(models.Party(
-                type=models.party_person, name=pkginfo.maintainer, role='author', email=pkginfo.maintainer_email))
-        return package
-
-
-def parse_with_dparse(location):
-    is_dir = filetype.is_dir(location)
-    if is_dir:
+    if not declared_license:
         return
-    file_name = fileutils.file_name(location)
-    if file_name not in (filetypes.requirements_txt,
-                         filetypes.conda_yml,
-                         filetypes.tox_ini,
-                         filetypes.pipfile,
-                         filetypes.pipfile_lock):
-        return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as f:
-        content = f.read()
-        df = dparse.parse(content, file_type=file_name)
-        df_dependencies = df.dependencies
-        if not df_dependencies:
-            return
-        package_dependencies = []
-        for df_dependency in df_dependencies:
-            specs = df_dependency.specs
-            requirement = None
-            if specs:
-                requirement = str(specs)
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='pypi', name=df_dependency.name).to_string(),
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    requirement=requirement,
-                )
-            )
-        return package_dependencies
 
+    detected_licenses = []
 
-def build_package(package_data):
-    """
-    Yield Package object from a package_data mapping json file.
-    """
-    info = package_data.get('info')
-    if not info:
-        return
-    name = info.get('name')
-    if not name:
-        return
-    short_desc = info.get('summary')
-    long_desc = info.get('description')
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip() and d.strip() != 'UNKNOWN']
-    description = '\n'.join(descriptions)
-    common_data = dict(
-        name=name,
-        version=info.get('version'),
-        description=description,
-        homepage_url=info.get('home_page'),
-        bug_tracking_url=info.get('bugtrack_url'),
-    )
+    for value in declared_license.values():
+        if not value:
+            continue
+        # The value could be a string or a list
+        if isinstance(value, string_types):
+            detected_license = models.compute_normalized_license(value)
+            if detected_license:
+                detected_licenses.append(detected_license)
+        else:
+            for declared in value:
+                detected_license = models.compute_normalized_license(declared)
+                if detected_license:
+                    detected_licenses.append(detected_license)
 
-    author = info.get('author')
-    email = info.get('author_email')
-    if author or email:
-        parties = common_data.get('parties')
-        if not parties:
-            common_data['parties'] = []
-        common_data['parties'].append(models.Party(
-            type=models.party_person, name=author, role='author', email=email))
-
-    maintainer = info.get('maintainer')
-    email = info.get('maintainer_email')
-    if maintainer or email:
-        parties = common_data.get('parties')
-        if not parties:
-            common_data['parties'] = []
-        common_data['parties'].append(models.Party(
-            type=models.party_person, name=maintainer, role='maintainer', email=email))
-
-    declared_license = OrderedDict()
-    setuptext_licenses = []
-    lic = info.get('license')
-    if lic and lic != 'UNKNOWN':
-        setuptext_licenses.append(lic)
-    declared_license['license'] = setuptext_licenses
-
-    classifiers_licenses = []
-    classifiers = info.get('classifiers')
-    if classifiers and not classifiers_licenses:
-        licenses = [lic for lic in classifiers if lic.lower().startswith('license')]
-        for lic in licenses:
-            classifiers_licenses.append(lic)
-    declared_license['classifiers'] = classifiers_licenses
-
-    common_data['declared_license'] = declared_license
-
-    kw = info.get('keywords')
-    if kw:
-        common_data['keywords'] = [k.strip() for k in kw.split(',') if k.strip()]
-
-    package = PythonPackage(**common_data)
-    return package
+    if detected_licenses:
+        return combine_expressions(detected_licenses)
