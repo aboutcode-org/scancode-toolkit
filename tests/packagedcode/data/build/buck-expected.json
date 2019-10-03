@@ -19,7 +19,12 @@
     {
       "path": "buck",
       "type": "directory",
-      "package_manifests": [],
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "buck/BUCK",
+      "type": "file",
       "packages": [
         {
           "type": "buck",
@@ -47,7 +52,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": "buck/BUCK",
+          "root_path": "buck",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -57,83 +62,41 @@
           "api_data_url": null
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "buck/BUCK",
-      "type": "file",
-      "package_manifests": [
-        {
-          "type": "buck",
-          "namespace": null,
-          "name": "buck",
-          "version": null,
-          "qualifiers": null,
-          "subpath": null,
-          "primary_language": null,
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "manifest_path": "buck/BUCK",
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "purl": "pkg:buck/buck",
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
-        }
-      ],
-      "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir",
       "type": "directory",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir/dir",
       "type": "directory",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir/dir/file1",
       "type": "file",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir/file1",
       "type": "file",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir2",
       "type": "directory",
-      "package_manifests": [],
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "buck/subdir2/BUCK",
+      "type": "file",
       "packages": [
         {
           "type": "buck",
@@ -161,7 +124,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": "buck/subdir2/BUCK",
+          "root_path": "buck/subdir2",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -171,69 +134,23 @@
           "api_data_url": null
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "buck/subdir2/BUCK",
-      "type": "file",
-      "package_manifests": [
-        {
-          "type": "buck",
-          "namespace": null,
-          "name": "subdir2",
-          "version": null,
-          "qualifiers": null,
-          "subpath": null,
-          "primary_language": null,
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "manifest_path": "buck/subdir2/BUCK",
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "purl": "pkg:buck/subdir2",
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
-        }
-      ],
-      "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir2/file2",
       "type": "file",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir2/subdir3",
       "type": "directory",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     },
     {
       "path": "buck/subdir2/subdir3/file2",
       "type": "file",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     }

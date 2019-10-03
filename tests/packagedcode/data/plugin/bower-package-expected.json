@@ -21,7 +21,7 @@
     {
       "path": "bower.json",
       "type": "file",
-      "package_manifests": [
+      "packages": [
         {
           "type": "bower",
           "namespace": null,
@@ -62,7 +62,7 @@
             "MIT"
           ],
           "notice_text": null,
-          "manifest_path": "bower.json",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:bower/get-size",
@@ -97,7 +97,6 @@
           "api_data_url": null
         }
       ],
-      "packages": [],
       "scan_errors": []
     }
   ]

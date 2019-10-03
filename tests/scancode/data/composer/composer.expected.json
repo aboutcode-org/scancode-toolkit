@@ -19,7 +19,7 @@
     {
       "path": "composer.json",
       "type": "file",
-      "package_manifests": [
+      "packages": [
         {
           "type": "composer",
           "namespace": "laravel",
@@ -54,7 +54,7 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:composer/php",
@@ -129,7 +129,6 @@
           "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json"
         }
       ],
-      "packages": [],
       "scan_errors": []
     }
   ]

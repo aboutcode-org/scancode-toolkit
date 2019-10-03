@@ -21,7 +21,7 @@
     {
       "path": "composer.json",
       "type": "file",
-      "package_manifests": [
+      "packages": [
         {
           "type": "composer",
           "namespace": "jandreasn",
@@ -63,7 +63,7 @@
           "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
-          "manifest_path": "composer.json",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:composer/php",
@@ -98,7 +98,6 @@
           "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
         }
       ],
-      "packages": [],
       "scan_errors": []
     }
   ]

@@ -45,7 +45,7 @@
   "license_expression": "unknown",
   "declared_license": "BSD",
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:haxe/tink_core",

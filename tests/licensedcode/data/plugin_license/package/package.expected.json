@@ -57,7 +57,7 @@
       "license_expressions": [
         "mit"
       ],
-      "package_manifests": [
+      "packages": [
         {
           "type": "npm",
           "namespace": null,
@@ -102,7 +102,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:npm/dicer",
@@ -129,7 +129,6 @@
           "api_data_url": "https://registry.npmjs.org/busboy/0.2.14"
         }
       ],
-      "packages": [],
       "scan_errors": []
     }
   ]

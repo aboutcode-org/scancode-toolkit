@@ -21,7 +21,7 @@
     {
       "path": "package.json",
       "type": "file",
-      "package_manifests": [
+      "packages": [
         {
           "type": "npm",
           "namespace": null,
@@ -60,7 +60,7 @@
           "license_expression": null,
           "declared_license": [],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:npm/mocha",
@@ -87,7 +87,6 @@
           "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3"
         }
       ],
-      "packages": [],
       "scan_errors": []
     }
   ]

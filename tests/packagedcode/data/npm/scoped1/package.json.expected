@@ -34,7 +34,7 @@
     "MIT"
   ],
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/%40angular-devkit/build-optimizer",
