@@ -39,7 +39,7 @@
   "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
   "declared_license": "(LGPL-2.1-only or GPL-3.0-or-later)",
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:composer/php",

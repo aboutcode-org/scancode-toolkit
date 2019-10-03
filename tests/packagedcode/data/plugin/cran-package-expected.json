@@ -21,7 +21,6 @@
     {
       "path": "DESCRIPTION",
       "type": "file",
-      "package_manifests": [],
       "packages": [],
       "scan_errors": []
     }

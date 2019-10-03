@@ -87,7 +87,7 @@ class MavenPomPackage(models.Package):
         if manifest_resource.name.endswith(('pom.xml', '.pom',)):
             # the root is either the parent or further up for poms stored under
             # a META-INF dir
-            package_data = manifest_resource.package_manifests
+            package_data = manifest_resource.packages
             if not package_data:
                 return manifest_resource
             package_data = package_data[0]

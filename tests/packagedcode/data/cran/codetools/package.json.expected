@@ -39,7 +39,7 @@
   "license_expression": "gpl-1.0-plus",
   "declared_license": "GPL",
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:cran/R",

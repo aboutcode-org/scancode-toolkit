@@ -28,13 +28,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import posixpath
 
 import attr
 import click
 click.disable_unicode_literals_warning = True
 
-from commoncode.fileutils import parent_directory
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -74,7 +72,6 @@ class PackageScanner(ScanPlugin):
     """
 
     resource_attributes = OrderedDict()
-    resource_attributes['package_manifests'] = attr.ib(default=attr.Factory(list), repr=False)
     resource_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6
@@ -84,7 +81,7 @@ class PackageScanner(ScanPlugin):
     options = [
         CommandLineOption(('-p', '--package',),
             is_flag=True, default=False,
-            help='Scan <input> for package manifests and packages.',
+            help='Scan <input> for package manifests and build scripts.',
             help_group=SCAN_GROUP,
             sort_order=20),
 
@@ -116,73 +113,40 @@ class PackageScanner(ScanPlugin):
             return
 
         for resource in codebase.walk(topdown=False):
-            set_packages_at_root(resource, codebase)
+            set_packages_root(resource, codebase)
 
 
-def set_packages_at_root(resource, codebase):
+def set_packages_root(resource, codebase):
     """
-    Set the packages attribute at the root Resource for a given package manifest
-    that may exist in resource.
+    Set the root_path attribute as the path to the root Resource for a given
+    package package or build script that may exist in a `resource`.
     """
-    # only files can have a manifest
-    if resource.is_root or not resource.is_file:
+    # only files can have a package
+    if not resource.is_file:
         return
-    packages_info = resource.package_manifests
-    if not packages_info:
-        return
-    manifest_path = resource.path
 
-    # NOTE: we are dealing with a single file therefore there should be
-    # only be a single package detected. But some package manifests can
-    # document more than one package at a time such as multiple
-    # arches/platforms for a gempsec or multiple sub package (with
-    # "%package") in an RPM .spec file.
+    packages = resource.packages
+    if not packages:
+        return
+    # NOTE: we are dealing with a single file therefore there should be only be
+    # a single package detected. But some package manifests can document more
+    # than one package at a time such as multiple arches/platforms for a gempsec
+    # or multiple sub package (with "%package") in an RPM .spec file.
+
     modified = False
-    for package_info in packages_info:
-        modified = True
-        package_info['manifest_path'] = manifest_path
-
-        package_class = get_package_class(package_info)
+    for package in packages:
+        package_class = get_package_class(package)
         package_root = package_class.get_package_root(resource, codebase)
-
         if not package_root:
-            # this can happen if we scan a single resource that is a package manifest
+            # this can happen if we scan a single resource that is a package package
             continue
-
-        if package_root == resource:
-            continue
-
-        # here new_package_root != resource:
-
         # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
         if package_root.is_root and codebase.strip_root:
             continue
+        package['root_path'] = package_root.path
+        modified = True
 
-        # Determine if this package applies to more than just the manifest
-        # file (typically it means the whole parent directory is the
-        # package) and if yes:
-        # 1. fetch this resource
-        # 2. move the package data to this new resource
-        # 3. set the manifest_path if needed.
-        # 4. save.
-
-        # TODO: this is a hack for the ABOUT file Package parser, ABOUT files are kept alongside
-        # the resource its for
-        if package_root.is_file and resource.path.endswith('.ABOUT'):
-            new_manifest_path = posixpath.join(parent_directory(package_root.path), resource.name)
-        else:
-            # here we have a relocated Resource and we compute the manifest path
-            # relative to the new package root
-            # TODO: We should have codebase relative paths for manifests
-            new_package_root_path = package_root.path and package_root.path.strip('/')
-            if new_package_root_path:
-                _, _, new_manifest_path = resource.path.partition(new_package_root_path)
-                # note we could have also deserialized and serialized again instead
-        package_info['manifest_path'] = new_manifest_path.lstrip('/')
-
-        package_root.packages.append(package_info)
-        codebase.save_resource(package_root)
     if modified:
-        # we did set the manifest_path
+        # we did set the root_path
         codebase.save_resource(resource)
     return resource

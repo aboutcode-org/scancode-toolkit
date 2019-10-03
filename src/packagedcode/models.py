@@ -447,10 +447,10 @@ class Package(BasePackage):
         label='notice text',
         help='A notice text for this package.')
 
-    manifest_path = String(
-        label='manifest path',
-        help='A relative path to the manifest file if any, such as a '
-             'Maven .pom or a npm package.json.')
+    root_path = String(
+        label='package root path',
+        help='The path to the root of the package documented in this manifest '
+             'if any, such as a Maven .pom or a npm package.json parent directory.')
 
     dependencies = List(
         item_type=DependentPackage,
