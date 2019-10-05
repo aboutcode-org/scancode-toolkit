@@ -1,0 +1,7 @@
+license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/licenses/lgpl-2.1.txt
+    - http://www.mozilla.org/MPL/2.0/index.txt

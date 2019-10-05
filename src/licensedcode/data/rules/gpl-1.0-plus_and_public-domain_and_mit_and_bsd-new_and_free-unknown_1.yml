@@ -1,0 +1,5 @@
+license_expression: gpl-1.0-plus AND public-domain AND mit AND bsd-new AND free-unknown
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - docs/AUTHORS_wiki_commons*
