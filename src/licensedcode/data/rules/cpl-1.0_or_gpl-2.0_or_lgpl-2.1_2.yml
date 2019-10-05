@@ -1,0 +1,8 @@
+license_expression: cpl-1.0 OR gpl-2.0 OR lgpl-2.1
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 60
+ignorable_urls:
+    - http://www-128.ibm.com/developerworks/library/os-cpl.html
+    - http://www.gnu.org/copyleft/gpl.html
+    - http://www.gnu.org/licenses/lgpl.html
