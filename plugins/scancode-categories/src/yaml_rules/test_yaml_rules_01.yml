@@ -1,0 +1,34 @@
+rules:
+
+  - name: cpp_files
+    domain: general
+    extension: .cpp
+    classification: CPP
+    status: core
+
+  - name: cpp_files_01
+    domain: general_01
+    extension: .cpp
+    classification: CPP_01
+    status: core_01
+
+  - name: cpp_files_02
+    domain: general_02
+    extension: one.single.string.cpp
+    classification: CPP_02
+    status: core_02
+
+  - name: cpp_files_03
+    domain: general_03
+    extension:
+      - app
+      - bpp
+      - .cpp
+    classification: CPP_03
+    status: core_03
+
+  - name: cpp_files_04
+    domain: general_04
+    extension: cpp
+    classification: CPP_04
+    status: core_04

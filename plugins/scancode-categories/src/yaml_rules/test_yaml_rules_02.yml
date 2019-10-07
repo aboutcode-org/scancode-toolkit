@@ -1,0 +1,9 @@
+rules:
+
+  - name: cpp_files
+    domain: general
+    extension: .cpp
+    classification: CPP
+    status: core
+    test: (all(extension == resource.extension for extension in [".cpp"]) &
+             any(file_type == resource.file_type for file_type in ["C source, ASCII text"]))
