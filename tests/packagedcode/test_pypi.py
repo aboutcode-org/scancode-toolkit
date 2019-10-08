@@ -58,7 +58,16 @@ class TestPyPi(PackageTester):
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.description
-        assert 'MIT' in package.declared_license
+        assert 'MIT' in package.declared_license['license']
+        assert ['License :: OSI Approved :: MIT License'] == package.declared_license['classifiers']
+        expected_classifiers = [
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 3",
+            "Intended Audience :: Developers",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Utilities"
+        ]
+        assert expected_classifiers == package.keywords
         expected = [
             OrderedDict([
                 ('type', u'person'), ('role', u'contact'),
