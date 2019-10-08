@@ -1,0 +1,9 @@
+license_expression: cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright the project contributors
+ignorable_holders:
+    - the project contributors
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/3.0
