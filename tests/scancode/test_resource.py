@@ -563,6 +563,17 @@ class TestCodebase(FileBasedTesting):
         assert 'MANIFEST.MF' == res.name
         assert 3 == res.distance(codebase)
 
+    def test_skip_files_and_subdirs_of_ignored_dirs(self):
+        test_dir = self.get_test_loc('resource/ignore')
+        codebase = Codebase(test_dir)
+        # The `cvs` directory should not be visited
+        expected = [
+            'ignore',
+            'ignore/file1'
+        ]
+        result = [r.path for r in codebase.walk(topdown=True)]
+        self.assertEqual(expected, result)
+
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
