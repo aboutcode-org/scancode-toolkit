@@ -154,10 +154,22 @@ def parse_with_pkginfo(pkginfo):
             homepage_url=pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
+        declared_license = OrderedDict()
         if pkginfo.license:
             # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
-            package.declared_license = {'license': pkginfo.license}
-
+            declared_license['license'] = pkginfo.license
+        if pkginfo.classifiers:
+            license_classifiers = []
+            other_classifiers = []
+            for classifier in pkginfo.classifiers:
+                if classifier.startswith('License'):
+                    license_classifiers.append(classifier)
+                else:
+                    other_classifiers.append(classifier)
+            declared_license['classifiers'] = license_classifiers
+            package.keywords = other_classifiers
+        if declared_license:
+            package.declared_license = declared_license
         if pkginfo.maintainer:
             common_data['parties'] = []
             common_data['parties'].append(models.Party(
