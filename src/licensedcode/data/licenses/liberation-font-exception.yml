@@ -1,8 +1,8 @@
 key: liberation-font-exception
-short_name: Liberation Font exception to GPL
-name: Liberation Font exception to GPL
-category: Copyleft Limited
-owner: RedHat
+short_name: Liberation Font Exception to GPL 2.0
+name: Liberation Font Exception to GPL 2.0
+category: Copyleft
+owner: Red Hat
 homepage_url: https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
 is_exception: yes
 text_urls:
