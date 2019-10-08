@@ -437,6 +437,10 @@ class Codebase(object):
         # walk proper
         for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
             if skip_ignored(top):
+                # We clear out `dirs` and `files` to prevent `os_walk` from visiting
+                # the files and subdirectories of directories we are ignoring
+                dirs[:] = []
+                files[:] = []
                 continue
             # the parent reference is needed only once in a top-down walk, hence
             # the pop
@@ -706,7 +710,7 @@ class Codebase(object):
 
         if TRACE:
             logger_debug(
-                '    Codebase._load_resource: exists:', exists(cache_location), 
+                '    Codebase._load_resource: exists:', exists(cache_location),
                 'cache_location:', cache_location)
 
         if not exists(cache_location):
