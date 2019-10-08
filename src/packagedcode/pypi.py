@@ -344,13 +344,31 @@ def parse_metadata(location):
         infos.get('description')
     )
 
+    classifiers = infos.get('classifiers')
+    license_classifiers = []
+    other_classifiers = []
+    if classifiers:
+        for classifier in classifiers:
+            if classifier.startswith('License'):
+                license_classifiers.append(classifier)
+            else:
+                other_classifiers.append(classifier)
+
+    declared_license = OrderedDict()
+    license = infos.get('license')
+    if license:
+        declared_license['license'] = license
+    if license_classifiers:
+        declared_license['classifiers'] = license_classifiers
+
     package = PythonPackage(
         name=infos.get('name'),
         version=infos.get('version'),
         description=description or None,
-        declared_license=infos.get('license') or None,
+        declared_license=declared_license or None,
         homepage_url=homepage_url or None,
         parties=parties,
+        keywords=other_classifiers,
     )
     return package
 
