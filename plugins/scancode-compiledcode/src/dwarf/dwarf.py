@@ -116,7 +116,12 @@ class Dwarf(object):
         )
 
         if rc != 0:
-            self.parse_errors.append(open(err).read())
+            error = open(err).read()
+            if error:
+                if 'bin/dwarfdump2' in error:
+                    self.parse_errors.append(error[error.index('bin/dwarfdump2'):])
+                else:
+                     self.parse_errors.append(error)
 
         # loop through each returned line passing control to a handler
         with open(out, 'rb') as lines:
