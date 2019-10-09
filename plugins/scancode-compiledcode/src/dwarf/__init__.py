@@ -25,6 +25,8 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+import os
+
 from collections import OrderedDict
 from functools import partial
 from itertools import chain
@@ -79,7 +81,8 @@ def dwarf_source_path(location):
     Collect unique paths to compiled source code found in Elf binaries DWARF
     sections for D2D.
     """
-    location = location
+    if not os.path.exists(location):
+        return
     T = contenttype.get_type(location)
     if not (T.is_elf or T.is_stripped_elf):
         return
@@ -114,6 +117,10 @@ def get_dwarf1(location):
         # std and original path as separate annotations
         for p in d.original_source_files + d.included_source_files:
             yield p
+        
+        # Show the error in the scan result.
+        for e in d.parse_errors:
+            yield e
 
 
 def get_dwarf2(location):

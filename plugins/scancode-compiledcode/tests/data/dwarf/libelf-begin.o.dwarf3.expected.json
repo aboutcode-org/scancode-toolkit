@@ -2,11 +2,11 @@
   "/home/jqbx34/djcd/libelf-0.8.10/lib/begin.c", 
   "/home/jqbx34/djcd/libelf-0.8.10/lib/libelf.h", 
   "/home/jqbx34/djcd/libelf-0.8.10/lib/private.h", 
-  "/usr/include/ar.h", 
-  "/usr/include/bits/types.h", 
-  "/usr/include/elf.h", 
   "/usr/include/stdint.h", 
+  "/usr/lib/gcc/i586-suse-linux/4.2.1/include/stddef.h", 
+  "/usr/include/bits/types.h", 
   "/usr/include/sys/types.h", 
   "/usr/include/time.h", 
-  "/usr/lib/gcc/i586-suse-linux/4.2.1/include/stddef.h"
+  "/usr/include/elf.h", 
+  "/usr/include/ar.h"
 ]
