@@ -94,11 +94,15 @@ class Dwarf(object):
         self.included_source_files = []
 
         self._files = []
+        
+        self.parse_errors = []
 
         # now parse thyself
         self._parseinfo()
         # and cleanup thyself
         self.cleanup()
+        
+        
 
     def _parseinfo(self):
         """
@@ -112,7 +116,7 @@ class Dwarf(object):
         )
 
         if rc != 0:
-            raise Exception(open(err).read())
+            self.parse_errors.append(open(err).read())
 
         # loop through each returned line passing control to a handler
         with open(out, 'rb') as lines:
