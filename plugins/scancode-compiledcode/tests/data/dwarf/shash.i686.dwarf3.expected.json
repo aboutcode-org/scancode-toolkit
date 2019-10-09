@@ -1,7 +1,7 @@
 [
+  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S", 
   "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crtn.S", 
   "/usr/src/packages/BUILD/glibc-2.6.1/csu/init.c", 
-  "/usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S", 
   "crtstuff.c", 
   "initfini.c", 
   "lookup3.c", 
