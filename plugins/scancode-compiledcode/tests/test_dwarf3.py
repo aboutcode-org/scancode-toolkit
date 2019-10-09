@@ -42,10 +42,14 @@ class TestDwarf3(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def check_dwarf3(self, test_file, expected_file, regen=False):
-        test_loc = self.get_test_loc(test_file)
+        try:
+            test_loc = self.get_test_loc(test_file)
+        except:
+            test_loc = ''
+            # This will be used for the test case which the test file doesn't exist
+            pass
         result = list(dwarf.dwarf_source_path(test_loc))
         expected_loc = self.get_test_loc(expected_file)
-        resut = sorted(result)
         if regen:
             with open(expected_loc, 'wb') as exc:
                 json.dump(result, exc, indent=2, encoding='utf-8')
