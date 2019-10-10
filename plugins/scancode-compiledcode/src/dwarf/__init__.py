@@ -113,14 +113,16 @@ def get_dwarf1(location):
     """
     d = dwarf.Dwarf(location)
     if d:
+        # Show the error in the scan result ahead to make it easy to be catched
+        for e in d.parse_errors:
+            yield e
+
         # Note: we return all paths at once, when we should probably return the
         # std and original path as separate annotations
         for p in d.original_source_files + d.included_source_files:
             yield p
         
-        # Show the error in the scan result.
-        for e in d.parse_errors:
-            yield e
+        
 
 
 def get_dwarf2(location):
