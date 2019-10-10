@@ -28,6 +28,9 @@ from __future__ import unicode_literals
 
 import logging
 
+from collections import defaultdict
+from collections import OrderedDict
+import ast
 import attr
 
 from commoncode import filetype
@@ -101,3 +104,125 @@ class BazelPackage(BaseBuildManifestPackage):
 class BuckPackage(BaseBuildManifestPackage):
     metafiles = ('BUCK',)
     default_type = 'buck'
+
+    @classmethod
+    def recognize(cls, location):
+        if not cls._is_build_manifest(location):
+            return
+        return buck_parse(location)
+
+
+buck_rule_names = [
+    'command_alias',
+    'export_file',
+    'filegroup',
+    'genrule',
+    'http_archive',
+    'http_file',
+    'remote_file',
+    'test_suite',
+    'worker_tool',
+    'zip_file',
+    'android_aar',
+    'android_binary',
+    'android_build_config',
+    'android_instrumentation_apk',
+    'android_instrumentation_test',
+    'android_library',
+    'android_manifest',
+    'android_prebuilt_aar',
+    'android_resource',
+    'apk_genrule',
+    'gen_aidl',
+    'keystore',
+    'ndk_library',
+    'prebuilt_jar',
+    'prebuilt_native_library',
+    'robolectric_test',
+    'cxx_binary',
+    'cxx_library',
+    'cxx_genrule',
+    'cxx_precompiled_header',
+    'cxx_test',
+    'prebuilt_cxx_library',
+    'prebuilt_cxx_library_group',
+    'd_binary',
+    'd_library',
+    'd_test',
+    'go_binary',
+    'go_library',
+    'go_test',
+    'cgo_library',
+    'groovy_library',
+    'halide_library',
+    'haskell_binary',
+    'haskell_library',
+    'prebuilt_haskell_library',
+    'apple_asset_catalog',
+    'apple_binary',
+    'apple_bundle',
+    'apple_library',
+    'apple_package',
+    'apple_resource',
+    'apple_test',
+    'core_data_model',
+    'prebuilt_apple_framework',
+    'java_binary',
+    'java_library',
+    'java_test',
+    'prebuilt_jar',
+    'prebuilt_native_library',
+    'kotlin_library',
+    'kotlin_test',
+    'cxx_lua_extension',
+    'lua_binary',
+    'lua_library',
+    'ocaml_binary',
+    'ocaml_library',
+    'prebuilt_python_library',
+    'python_binary',
+    'python_library',
+    'python_test',
+    'rust_binary',
+    'rust_library',
+    'rust_test',
+    'prebuilt_rust_library',
+    'sh_binary',
+    'sh_test',
+    'csharp_library',
+    'prebuilt_dotnet_library'
+]
+
+
+def buck_parse(location):
+    build_rules = defaultdict(OrderedDict)
+    with open(location, 'rb') as f:
+        tree = ast.parse(f.read())
+    for statement in tree.body:
+        # We only care about function calls or assignments to functions named `setup`
+        if (isinstance(statement, ast.Expr)
+                or isinstance(statement, ast.Call)
+                or isinstance(statement, ast.Assign)
+                and isinstance(statement.value, ast.Call)
+                and isinstance(statement.value.func, ast.Name)
+                and statement.value.func.id in buck_rule_names):
+            rule_name = statement.value.func.id
+            # Process the arguments to the setup function
+            for kw in statement.value.keywords:
+                arg_name = kw.arg
+                if isinstance(kw.value, ast.Str):
+                    build_rules[rule_name][arg_name] = kw.value.s
+                if isinstance(kw.value, ast.List):
+                     # We collect the elements of a list if the element is not a function call
+                    build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
+
+    # Just so we can see what we parsed
+    for rule_name, args in build_rules.items():
+        print(rule_name)
+        for arg_name, value in args.items():
+            print('  {}'.format(arg_name))
+            if isinstance(value, str):
+                print('    {}'.format(value))
+            else:
+                for v in value:
+                    print('    {}'.format(v))
