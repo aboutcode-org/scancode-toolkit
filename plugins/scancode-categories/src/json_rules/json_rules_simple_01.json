@@ -1,0 +1,116 @@
+{
+    "new_rules": [
+        {
+            "rule": "Blueprint files",
+            "domain": "General",
+            "notes": "This is a non-core Blueprint file.",
+            "status": "Non-core Blueprint file",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [".bp"],
+                    "file_type": ["ASCII text"],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": []
+                }
+            ]
+        },
+        {
+            "rule": "C++ files",
+            "domain": "General",
+            "notes": "This is a C++ file.",
+            "status": "Core code",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [".cpp"],
+                    "file_type": ["C source, ASCII text", "C++ source, ASCII text", "ASCII text"],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": ["C++"]
+                }
+            ]
+        },
+        {
+            "rule": "C++ files with .c extension",
+            "domain": "General",
+            "notes": "This is a C++ file with a .c extension.",
+            "status": "Core code",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [".c"],
+                    "file_type": ["C source, ASCII text"],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": ["C++"]
+                }
+            ]
+        },
+        {
+            "rule": "C++ header files",
+            "domain": "General",
+            "notes": "This is a C++ header file, i.e., with a .h extension.",
+            "status": "Core code",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [".h"],
+                    "file_type": ["ASCII text", "C++ source, ASCII text", "C source, ASCII text"],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": ["C++"]
+                }
+            ]
+        },
+        {
+            "rule": "JavaScript map files",
+            "domain": "General",
+            "notes": "This is a non-core JavaScript map file.",
+            "status": "Non-core JavaScript map file",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [".map"],
+                    "file_type": ["ASCII text"],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": []
+                }
+            ]
+        },
+        {
+            "rule": "Test: all empty values",
+            "domain": "General",
+            "notes": "This is an empty value test -- every file (but no directories) should pass.",
+            "status": "Empty value test",
+            "test": [
+                {
+                    "operator": "and",
+                    "extension": [],
+                    "file_type": [],
+                    "mime_type": [],
+                    "name": [],
+                    "programming_language": []
+                }
+            ]
+        },
+        {
+            "rule": "Test: specific file name with OR operator",
+            "domain": "General",
+            "notes": "This is a file name OR test -- it identifies 2 specific files in the libc-bionic archive.",
+            "status": "File name OR test",
+            "test": [
+                {
+                    "operator": "or",
+                    "extension": ["any_value"],
+                    "file_type": ["any_value"],
+                    "mime_type": ["any_value"],
+                    "name": ["scudo.cpp", "exported64.map"],
+                    "programming_language": ["any_value"]
+                }
+            ]
+        }
+    ]
+}
