@@ -112,6 +112,8 @@ class BuckPackage(BaseBuildManifestPackage):
         return buck_parse(location)
 
 
+# TODO: Prune rule names that do not create things we do not care about like
+# `robolectric_test` or `genrule`
 buck_rule_names = [
     'command_alias',
     'export_file',
@@ -199,7 +201,8 @@ def buck_parse(location):
     with open(location, 'rb') as f:
         tree = ast.parse(f.read())
     for statement in tree.body:
-        # We only care about function calls or assignments to functions named `setup`
+        # We only care about function calls or assignments to functions whose
+        # names are in `buck_rule_names`
         if (isinstance(statement, ast.Expr)
                 or isinstance(statement, ast.Call)
                 or isinstance(statement, ast.Assign)
@@ -207,7 +210,7 @@ def buck_parse(location):
                 and isinstance(statement.value.func, ast.Name)
                 and statement.value.func.id in buck_rule_names):
             rule_name = statement.value.func.id
-            # Process the arguments to the setup function
+            # Process the rule arguments
             for kw in statement.value.keywords:
                 arg_name = kw.arg
                 if isinstance(kw.value, ast.Str):
@@ -216,13 +219,15 @@ def buck_parse(location):
                      # We collect the elements of a list if the element is not a function call
                     build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
-    # Just so we can see what we parsed
+    rules_to_return = []
     for rule_name, args in build_rules.items():
-        print(rule_name)
-        for arg_name, value in args.items():
-            print('  {}'.format(arg_name))
-            if isinstance(value, str):
-                print('    {}'.format(value))
-            else:
-                for v in value:
-                    print('    {}'.format(v))
+        name = args.get('name')
+        rules_to_return.append(
+            BuckPackage(
+                name=name or None
+            )
+        )
+
+    # FIXME: We will eventually return the entire list instead of the first one
+    # once the new package changes are in
+    return rules_to_return[0]
