@@ -60,8 +60,15 @@ jobs:
 
               plugins-scancode-fingerprint: |
                 bin/pip install -e plugins/scancode-fingerprint
-                bin/py.test plugins/scancode-fingerprint/tests/
+                bin/py.test -vvs plugins/scancode-fingerprint/tests/
                 bin/codecov --token "$CODECOV_TOKEN"
+
+              plugins-scancode-compiledcode: |
+                bin/pip install -e plugins/scancode-dwarfdump-manylinux1_x86_64
+                bin/pip install -e plugins/scancode-ctags-manylinux1_x86_64
+                bin/pip install -e plugins/scancode-readelf-manylinux1_x86_64
+                bin/pip install -e plugins/scancode-compiledcode
+                bin/py.test -vvs plugins/scancode-compiledcode/tests/
 
     - template: etc/ci/azure-win.yml
       parameters:
