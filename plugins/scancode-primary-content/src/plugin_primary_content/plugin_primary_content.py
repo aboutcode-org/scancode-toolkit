@@ -30,7 +30,6 @@ from __future__ import unicode_literals
 # from collections import OrderedDict
 
 import attr
-# import json
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -69,78 +68,4 @@ class IdentifyContent(PostScanPlugin):
             else:
                 resource.primary_content_type = "???"
 
-        return resource
-
-# ==========================================================
-
-        # ruleset_path = content
-        # with open(ruleset_path) as json_file:
-        #     data = json.load(json_file)
-
-        #     for resource in codebase.walk(topdown=False):
-        #         self.vet_resource(resource, content, data)
-        #         codebase.save_resource(resource)
-
-    # def vet_resource(self, resource, content, data, **kwargs):
-    #     matched_rules = []
-    #     resource.primary_content_type = matched_rules
-    #     #
-    #     for i in data["new_rules"]:
-    #         if resource.type == 'directory':
-    #             resource.primary_content_type = 'directory'
-    #         elif resource.type == 'file':
-    #             for test in i["test"]:
-    #                 # if the test value list is empty, ignore by defining as true
-    #                 if not test["extension"]:
-    #                     extension_test = (0 == 0)
-    #                 else:
-    #                     extension_test = any(extension == resource.extension for extension in test["extension"])
-
-    #                 if not test["file_type"]:
-    #                     file_type_test = (0 == 0)
-    #                 else:
-    #                     file_type_test = any(file_type == resource.file_type for file_type in test["file_type"])
-
-    #                 if not test["mime_type"]:
-    #                     mime_type_test = (0 == 0)
-    #                 else:
-    #                     mime_type_test = any(mime_type == resource.mime_type for mime_type in test["mime_type"])
-
-    #                 if not test["name"]:
-    #                     name_test = (0 == 0)
-    #                 else:
-    #                     name_test = any(name == resource.name for name in test["name"])
-
-    #                 if not test["programming_language"]:
-    #                     programming_language_test = (0 == 0)
-    #                 else:
-    #                     programming_language_test = any(programming_language == resource.programming_language for programming_language in test["programming_language"])
-
-    #                 # define the AND and OR tests
-    #                 and_tests = extension_test & file_type_test & mime_type_test & name_test & programming_language_test
-    #                 or_tests = extension_test | file_type_test | mime_type_test | name_test | programming_language_test
-
-    #                 # check whether operator is AND or OR
-    #                 if test["operator"] == "and":
-    #                     if and_tests:
-    #                         self.create_primary_content_type(i, test, resource, matched_rules)
-    #                 elif test["operator"] == "or":
-    #                     if or_tests:
-    #                         self.create_primary_content_type(i, test, resource, matched_rules)
-
-    #     if not resource.primary_content_type:
-    #         if resource.type == 'directory':
-    #             resource.primary_content_type = 'directory'
-    #         else:
-    #             resource.primary_content_type = "no match"
-
-    #     return resource
-
-    # def create_primary_content_type(self, i, test, resource, matched_rules):
-    #     i = OrderedDict((k, i[k]) for k in ('rule', 'domain', 'notes', 'status', 'test'))
-    #     d2 = OrderedDict((k, test[k]) for k in ('operator', 'extension', 'file_type', 'mime_type', 'name', 'programming_language'))
-    #     i["test"] = d2
-    #     matched_rules.append(i)
-    #     resource.primary_content_type = matched_rules
-
-    #     return resource
+            codebase.save_resource(resource)
