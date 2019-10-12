@@ -1,0 +1,7 @@
+license_expression: (agpl-3.0-plus OR commercial-license) AND proprietary-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - https://www.technation.sucks/license

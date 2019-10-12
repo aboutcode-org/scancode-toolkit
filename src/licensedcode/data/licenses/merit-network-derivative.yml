@@ -62,3 +62,7 @@ standard_notice: |
     * email: aaa-admin@merit.edu
     *
     */
+ignorable_emails:
+  - aaa-admin@merit.edu
+  - aaa-license@merit.edu
+
