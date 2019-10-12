@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import logging
+import os
 
 from collections import defaultdict
 from collections import OrderedDict
@@ -34,8 +35,10 @@ import ast
 import attr
 
 from commoncode import filetype
-from packagedcode import models
 from commoncode import fileutils
+from packagedcode import models
+from packagedcode.utils import combine_expressions
+from scancode.api import get_licenses
 
 
 TRACE = False
@@ -109,7 +112,27 @@ class BuckPackage(BaseBuildManifestPackage):
     def recognize(cls, location):
         if not cls._is_build_manifest(location):
             return
-        return buck_parse(location)
+
+        package = buck_parse(location)
+        license_files = package.extra_data.get('licenses', [])
+        license_expressions = []
+        license_names = []
+        manifest_parent_directory = fileutils.parent_directory(location)
+
+        for license_file in license_files:
+            license_file_path = os.path.join(manifest_parent_directory, license_file)
+            if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
+                licenses = get_licenses(license_file_path)
+                for license, license_expression in zip(licenses.get('licenses', []), licenses.get('license_expressions', [])):
+                    short_name = license.get('short_name')
+                    if short_name:
+                        license_names.append(short_name)
+                    license_expressions.append(license_expression)
+
+        package.declared_license = license_names
+        package.license_expression = combine_expressions(license_expressions)
+
+        return package
 
 
 # TODO: Prune rule names that do not create things we do not care about like
@@ -229,9 +252,9 @@ def buck_parse(location):
         # Can we scan these files and append license info to the package info later?
         licenses = args.get('licenses', [])
         if name:
-            rules_to_return.append(
-                BuckPackage(name=name)
-            )
+            package = BuckPackage(name=name)
+            package.extra_data['licenses'] = licenses
+            rules_to_return.append(package)
 
     if rules_to_return:
         # FIXME: We will eventually return the entire list instead of the first one
