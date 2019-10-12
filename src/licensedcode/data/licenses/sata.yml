@@ -7,3 +7,12 @@ homepage_url: https://github.com/zTrix/sata-license/blob/a72e947589ac80df3a0e586
 other_urls:
     - https://github.com/zTrix/sata-license
     - https://github.com/kongtianyi/sata-license
+ignorable_copyrights:
+  - Copyright (c) 2014
+ignorable_emails:
+  - i@ztrix.me
+  - kongtianyi@foxmail.com
+ignorable_urls:
+  - https://github.com/kongtianyi/sata-license
+  - https://github.com/zTrix/sata-license
+

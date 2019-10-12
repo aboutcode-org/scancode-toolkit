@@ -1,0 +1,7 @@
+license_expression: afl-2.1
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2003-2004 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen
