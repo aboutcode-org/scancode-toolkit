@@ -198,6 +198,8 @@ buck_rule_names = [
 
 def buck_parse(location):
     build_rules = defaultdict(OrderedDict)
+    # Thanks to the BUCK language being a Python DSL, we can use the `ast`
+    # library to parse BUCK files
     with open(location, 'rb') as f:
         tree = ast.parse(f.read())
     for statement in tree.body:
@@ -222,12 +224,16 @@ def buck_parse(location):
     rules_to_return = []
     for rule_name, args in build_rules.items():
         name = args.get('name')
-        rules_to_return.append(
-            BuckPackage(
-                name=name or None
+        # TODO: `licenses` in BUCK rules is a list of file names/relative paths
+        # to files that contain license text
+        # Can we scan these files and append license info to the package info later?
+        licenses = args.get('licenses', [])
+        if name:
+            rules_to_return.append(
+                BuckPackage(name=name)
             )
-        )
 
-    # FIXME: We will eventually return the entire list instead of the first one
-    # once the new package changes are in
-    return rules_to_return[0]
+    if rules_to_return:
+        # FIXME: We will eventually return the entire list instead of the first one
+        # once the new package changes are in
+        return rules_to_return[0]
