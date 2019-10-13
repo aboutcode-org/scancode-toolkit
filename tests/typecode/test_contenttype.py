@@ -282,6 +282,12 @@ class TestContentType(FileBasedTesting):
         assert contains_text(test_file)
         assert '' == get_filetype_pygment(test_file)
 
+    def test_awk_file(self):
+        test_file = self.get_test_loc('contenttype/script/chem.awk')
+        assert is_text(test_file)
+        assert is_script(test_file)
+        assert not is_source(test_file)
+
     def test_win_dll(self):
         test_file = self.get_test_loc('contenttype/binary/windows.dll')
         assert is_binary(test_file)
