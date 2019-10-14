@@ -112,27 +112,7 @@ class BuckPackage(BaseBuildManifestPackage):
     def recognize(cls, location):
         if not cls._is_build_manifest(location):
             return
-
-        package = buck_parse(location)
-        license_files = package.extra_data.get('licenses', [])
-        license_expressions = []
-        license_names = []
-        manifest_parent_directory = fileutils.parent_directory(location)
-
-        for license_file in license_files:
-            license_file_path = os.path.join(manifest_parent_directory, license_file)
-            if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
-                licenses = get_licenses(license_file_path)
-                for license, license_expression in zip(licenses.get('licenses', []), licenses.get('license_expressions', [])):
-                    short_name = license.get('short_name')
-                    if short_name:
-                        license_names.append(short_name)
-                    license_expressions.append(license_expression)
-
-        package.declared_license = license_names
-        package.license_expression = combine_expressions(license_expressions)
-
-        return package
+        return buck_parse(location)
 
 
 # TODO: Prune rule names that do not create things we do not care about like
@@ -245,16 +225,34 @@ def buck_parse(location):
                     build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     rules_to_return = []
+    manifest_parent_directory = fileutils.parent_directory(location)
     for rule_name, args in build_rules.items():
         name = args.get('name')
-        # TODO: `licenses` in BUCK rules is a list of file names/relative paths
-        # to files that contain license text
-        # Can we scan these files and append license info to the package info later?
-        licenses = args.get('licenses', [])
-        if name:
-            package = BuckPackage(name=name)
-            package.extra_data['licenses'] = licenses
-            rules_to_return.append(package)
+        if not name:
+            continue
+        license_files = args.get('licenses', [])
+        license_expressions = []
+        license_names = []
+
+        for license_file in license_files:
+            license_file_path = os.path.join(manifest_parent_directory, license_file)
+            if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
+                licenses = get_licenses(license_file_path)
+                for license, license_expression in zip(
+                        licenses.get('licenses', []),
+                        licenses.get('license_expressions', [])):
+                    short_name = license.get('short_name')
+                    if short_name:
+                        license_names.append(short_name)
+                    license_expressions.append(license_expression)
+
+        rules_to_return.append(
+            BuckPackage(
+                name=name,
+                declared_license=license_names,
+                license_expression=combine_expressions(license_expressions)
+            )
+        )
 
     if rules_to_return:
         # FIXME: We will eventually return the entire list instead of the first one
