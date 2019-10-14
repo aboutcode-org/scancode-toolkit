@@ -469,10 +469,6 @@ class Package(BasePackage):
              'this package. For instance an SRPM is the "source package" for a '
              'binary RPM.')
 
-    extra_data = Mapping(
-        label='extra data',
-        help='A Mapping used for storing arbitrary data')
-
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
             self.type = self.default_type
