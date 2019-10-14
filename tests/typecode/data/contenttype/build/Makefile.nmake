@@ -1,0 +1,35 @@
+
+TARGET = dye
+
+INCLUDE_DIR = .\include
+SOURCE_DIR  = .\src
+BUILD_DIR   = .\build
+
+SOURCES = $(SOURCE_DIR)\dye.c
+
+CC      = cl.exe
+CCFLAGS = /nologo /c /I"$(INCLUDE_DIR)" /D"WIN32" /D"UNICODE" /D"_UNICODE" /analyze- /fp:precise /W4 /WX- /Zc:wchar_t /Zc:inline /Zc:forScope /GS /Gm- /Oy- /TP /UTF-8 /EHsc
+
+LM      = lib.exe
+LMFLAGS = /nologo
+
+MD      = -mkdir
+MDFLAGS =
+
+RD      = -rmdir
+RDFLAGS = /Q /S
+
+all: release debug
+
+release:
+	$(MD) $(MDFLAGS) "$(BUILD_DIR)\$@" 1>nul 2>nul
+	$(CC) $(CCFLAGS) /D"NDEBUG" /Zi /Gy /Gd /MD /O2 /Oi /Fo"$(BUILD_DIR)\$@\\" /Fd"$(BUILD_DIR)\$@\$(TARGET).pdb" $(UCCFLAGS) $(SOURCES)
+	$(LM) $(LMFLAGS) /out:"$(BUILD_DIR)\$@\$(TARGET).lib" $(ULMFLAGS) "$(BUILD_DIR)\$@\dye.obj"
+
+debug:
+	$(MD) $(MDFLAGS) "$(BUILD_DIR)\$@" 1>nul 2>nul
+	$(CC) $(CCFLAGS) /D"DEBUG" /D"_DEBUG" /ZI /JMC /Gd /MDd /Od /TP /Fo"$(BUILD_DIR)\$@\\" /Fd"$(BUILD_DIR)\$@\$(TARGET).pdb" $(UCCFLAGS) $(SOURCES)
+	$(LM) $(LMFLAGS) /out:"$(BUILD_DIR)\$@\$(TARGET).lib" $(ULMFLAGS) "$(BUILD_DIR)\$@\dye.obj"
+
+clean:
+	$(RD) $(RDFLAGS) $(BUILD_DIR) 1>nul 2>nul

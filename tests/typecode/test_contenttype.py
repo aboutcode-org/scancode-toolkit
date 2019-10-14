@@ -50,6 +50,7 @@ get_filetype_pygment = lambda l: get_type(l).filetype_pygment
 get_filetype_file = lambda l: get_type(l).filetype_file
 get_mimetype_file = lambda l: get_type(l).mimetype_file
 
+is_build = lambda l: get_type(l).is_build
 is_text = lambda l: get_type(l).is_text
 is_archive = lambda l: get_type(l).is_archive
 is_compressed = lambda l: get_type(l).is_compressed
@@ -341,8 +342,65 @@ class TestContentType(FileBasedTesting):
         assert not is_source(test_file)
         assert not is_script(test_file)
 
+    def test_build_build_sh(self):
+        test_file = self.get_test_loc('contenttype/build/build.sh')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_cmake(self):
+        test_file = self.get_test_loc('contenttype/build/conan.cmake')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_cmake_in(self):
+        test_file = self.get_test_loc('contenttype/build/KF5ConfigConfig.cmake.in')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_ebuild(self):
+        test_file = self.get_test_loc('contenttype/build/ark-9999.ebuild')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_kbuild(self):
+        test_file = self.get_test_loc('contenttype/build/Kbuild')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_m4(self):
+        test_file = self.get_test_loc('contenttype/build/Dockerfile.m4')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_mak(self):
+        test_file = self.get_test_loc('contenttype/build/Bootstrap.mak')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_make(self):
+        test_file = self.get_test_loc('contenttype/build/example.make')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
     def test_build_makefile(self):
         test_file = self.get_test_loc('contenttype/build/Makefile')
+        assert is_build(test_file)
         assert not is_source(test_file)
         assert not is_script(test_file)
         assert is_text(test_file)
@@ -353,6 +411,7 @@ class TestContentType(FileBasedTesting):
 
     def test_build_makefile_2(self):
         test_file = self.get_test_loc('contenttype/build/Makefile.inc')
+        assert is_build(test_file)
         assert is_text(test_file)
         assert '' == get_filetype_pygment(test_file)
         assert 'makefile script, ascii text, with crlf line terminators' == get_filetype(test_file)
@@ -360,11 +419,47 @@ class TestContentType(FileBasedTesting):
         assert 'makefile script, ASCII text, with CRLF line terminators' == get_filetype_file(test_file)
         assert not is_source(test_file)
 
+    def test_build_makefile_3(self):
+        test_file = self.get_test_loc('contenttype/build/libyaml.makefile')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
     def test_build_ide_makefile(self):
         test_file = self.get_test_loc('contenttype/build/documentation.dsp')
+        assert is_build(test_file)
         assert 'ascii text' == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
         assert not is_source(test_file)
+
+    def test_build_makefile_am(self):
+        test_file = self.get_test_loc('contenttype/build/Makefile.am')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_makefile_in(self):
+        test_file = self.get_test_loc('contenttype/build/Makefile.in')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_mk(self):
+        test_file = self.get_test_loc('contenttype/build/Android.mk')
+        assert is_build(test_file)
+        assert not is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
+    def test_build_nmake(self):
+        test_file = self.get_test_loc('contenttype/build/Makefile.nmake')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
 
     def test_build_java_maven_pom_pom(self):
         test_file = self.get_test_loc('contenttype/build/pom.pom')

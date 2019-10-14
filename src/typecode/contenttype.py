@@ -166,6 +166,7 @@ class Type(object):
         '_is_compact_js',
         '_is_js_map',
         '_is_binary',
+        '_is_build',
         '_is_data',
         '_is_archive',
         '_contains_text',
@@ -205,6 +206,7 @@ class Type(object):
         self._is_compact_js = None
         self._is_js_map = None
         self._is_binary = None
+        self._is_build = None
         self._is_data = None
         self._is_archive = None
         self._contains_text = None
@@ -300,6 +302,21 @@ class Type(object):
             if self.is_file is True:
                 self._is_binary = is_binary(self.location)
         return self._is_binary
+
+    @property
+    def is_build(self):
+        loc = self.location.lower()
+        loc_basename = os.path.basename(os.path.normpath(loc))
+
+        build_exts = u'.am', u'.cmake', u'.cmake.in', u'.dsp', u'.ebuild', u'.m4', u'.mak', u'.make', u'.makefile', u'.mk', u'.nmake'
+        build_names = u'build.sh', u'kbuild', u'makefile', u'makefile.in', u'makefile.inc'
+
+        if loc.endswith(build_exts):
+            return True
+        elif any(x == loc_basename for x in (build_names)):
+            return True
+        else:
+            return False
 
     @property
     def is_text(self):

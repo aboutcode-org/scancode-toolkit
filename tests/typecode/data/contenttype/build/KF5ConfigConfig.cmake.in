@@ -1,0 +1,20 @@
+@PACKAGE_INIT@
+
+# Any changes in this ".cmake" file will be overwritten by CMake, the source is the ".cmake.in" file.
+
+include("${CMAKE_CURRENT_LIST_DIR}/KF5ConfigTargets.cmake")
+@PACKAGE_INCLUDE_QCHTARGETS@
+
+include(CMakeFindDependencyMacro)
+find_dependency(Qt5Xml "@REQUIRED_QT_VERSION@")
+
+if(CMAKE_CROSSCOMPILING AND KF5_HOST_TOOLING)
+    find_file(KCONFIGCOMPILER_PATH KF5Config/KF5ConfigCompilerTargets.cmake
+        PATHS ${KF5_HOST_TOOLING} ${CMAKE_CURRENT_LIST_DIR}
+        NO_DEFAULT_PATH
+        NO_CMAKE_FIND_ROOT_PATH)
+    include("${KCONFIGCOMPILER_PATH}")
+else()
+    include("${CMAKE_CURRENT_LIST_DIR}/KF5ConfigCompilerTargets.cmake")
+endif()
+include("${CMAKE_CURRENT_LIST_DIR}/KF5ConfigMacros.cmake")
