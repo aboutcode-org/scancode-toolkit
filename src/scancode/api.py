@@ -314,6 +314,7 @@ def get_file_info(location, **kwargs):
     result['is_media'] = bool(collector.is_media)
     result['is_source'] = bool(collector.is_source)
     result['is_script'] = bool(collector.is_script)
+    result['is_build'] = bool(collector.is_build)
     return result
 
 

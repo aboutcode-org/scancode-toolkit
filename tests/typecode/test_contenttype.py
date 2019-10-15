@@ -398,6 +398,13 @@ class TestContentType(FileBasedTesting):
         assert not is_script(test_file)
         assert is_text(test_file)
 
+    def test_build_make_bat(self):
+        test_file = self.get_test_loc('contenttype/build/make.bat')
+        assert is_build(test_file)
+        assert is_source(test_file)
+        assert not is_script(test_file)
+        assert is_text(test_file)
+
     def test_build_makefile(self):
         test_file = self.get_test_loc('contenttype/build/Makefile')
         assert is_build(test_file)

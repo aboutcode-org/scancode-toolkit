@@ -56,6 +56,7 @@ class InfoScanner(ScanPlugin):
         ('is_media', attr.ib(default=False, type=bool, repr=False)),
         ('is_source', attr.ib(default=False, type=bool, repr=False)),
         ('is_script', attr.ib(default=False, type=bool, repr=False)),
+        ('is_build', attr.ib(default=False, type=bool, repr=False)),
     ])
 
     sort_order = 0

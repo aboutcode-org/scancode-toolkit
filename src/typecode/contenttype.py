@@ -309,7 +309,7 @@ class Type(object):
         loc_basename = os.path.basename(os.path.normpath(loc))
 
         build_exts = u'.am', u'.cmake', u'.cmake.in', u'.dsp', u'.ebuild', u'.m4', u'.mak', u'.make', u'.makefile', u'.mk', u'.nmake'
-        build_names = u'build.sh', u'kbuild', u'makefile', u'makefile.in', u'makefile.inc'
+        build_names = u'build.sh', u'kbuild', u'make.bat', u'makefile', u'makefile.in', u'makefile.inc'
 
         if loc.endswith(build_exts):
             return True
