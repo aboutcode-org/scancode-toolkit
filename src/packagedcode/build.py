@@ -249,8 +249,8 @@ def buck_parse(location):
         rules_to_return.append(
             BuckPackage(
                 name=name,
-                declared_license=license_names,
-                license_expression=combine_expressions(license_expressions)
+                declared_license=license_names or None,
+                license_expression=combine_expressions(license_expressions) or None
             )
         )
 
