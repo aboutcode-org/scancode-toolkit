@@ -52,6 +52,24 @@ class TestBuild(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
+    def test_buck_parse(self):
+        test_file = self.get_test_loc('build/buck-parse/BUCK')
+        result = build.buck_parse(test_file)
+        expected = build.BuckPackage(
+            name='app'
+        )
+        assert expected == result
+
+    def test_buck_parse_with_license(self):
+        test_file = self.get_test_loc('build/buck-parse/license/BUCK')
+        result = build.buck_parse(test_file)
+        expected = build.BuckPackage(
+            name='app',
+            declared_license=['Apache 2.0'],
+            license_expression='apache-2.0'
+        )
+        assert expected == result
+
     def test_build_get_package_resources(self):
         test_loc = self.get_test_loc('build/get_package_resources')
         codebase = Codebase(test_loc)
