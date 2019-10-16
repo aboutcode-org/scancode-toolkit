@@ -1,0 +1,86 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json-pp": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 6
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "end2end",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/BUCK",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/dir",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/dir/file1",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/file1",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/BUCK",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/file2",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/subdir3",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/subdir3/file2",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    }
+  ]
+}
