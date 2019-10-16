@@ -75,8 +75,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -107,8 +107,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -207,16 +207,16 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "The Apache Software Foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -319,16 +319,16 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "The Apache Software Foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -363,8 +363,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -463,16 +463,16 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "IBM Corp.",
+          "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "value": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
@@ -575,16 +575,16 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "The Apache Software Foundation",
+          "value": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "value": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }

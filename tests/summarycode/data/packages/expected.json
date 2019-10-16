@@ -51,7 +51,7 @@
           }
         ],
         "notice_text": null,
-        "manifest_path": "aopalliance-1.0.pom",
+        "root_path": "scan/aopalliance/aopalliance/1.0",
         "dependencies": [],
         "contains_source_code": null,
         "source_packages": [
@@ -63,8 +63,8 @@
         "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
         "files": [
           {
-            "path": "scan/aopalliance/aopalliance/1.0",
-            "type": "directory"
+            "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+            "type": "file"
           }
         ]
       },
@@ -109,7 +109,7 @@
           "licenselogic": "single"
         },
         "notice_text": null,
-        "manifest_path": "+COMPACT_MANIFEST",
+        "root_path": "scan/freebsd/basic",
         "dependencies": [],
         "contains_source_code": null,
         "source_packages": [],
@@ -119,8 +119,8 @@
         "api_data_url": null,
         "files": [
           {
-            "path": "scan/freebsd/basic",
-            "type": "directory"
+            "path": "scan/freebsd/basic/+COMPACT_MANIFEST",
+            "type": "file"
           }
         ]
       },
@@ -160,7 +160,7 @@
           "MIT"
         ],
         "notice_text": null,
-        "manifest_path": "package.json",
+        "root_path": "scan/scoped1",
         "dependencies": [
           {
             "purl": "pkg:npm/%40angular-devkit/build-optimizer",
@@ -659,8 +659,8 @@
         "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
         "files": [
           {
-            "path": "scan/scoped1",
-            "type": "directory"
+            "path": "scan/scoped1/package.json",
+            "type": "file"
           }
         ]
       }
@@ -688,6 +688,12 @@
     {
       "path": "scan/aopalliance/aopalliance/1.0",
       "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+      "type": "file",
       "packages": [
         {
           "type": "maven",
@@ -722,7 +728,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": "aopalliance-1.0.pom",
+          "root_path": "scan/aopalliance/aopalliance/1.0",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -734,18 +740,12 @@
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
           "files": [
             {
-              "path": "scan/aopalliance/aopalliance/1.0",
-              "type": "directory"
+              "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+              "type": "file"
             }
           ]
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "type": "file",
-      "packages": [],
       "scan_errors": []
     },
     {
@@ -757,6 +757,12 @@
     {
       "path": "scan/freebsd/basic",
       "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/freebsd/basic/+COMPACT_MANIFEST",
+      "type": "file",
       "packages": [
         {
           "type": "freebsd",
@@ -799,7 +805,7 @@
             "licenselogic": "single"
           },
           "notice_text": null,
-          "manifest_path": "+COMPACT_MANIFEST",
+          "root_path": "scan/freebsd/basic",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -809,8 +815,8 @@
           "api_data_url": null,
           "files": [
             {
-              "path": "scan/freebsd/basic",
-              "type": "directory"
+              "path": "scan/freebsd/basic/+COMPACT_MANIFEST",
+              "type": "file"
             }
           ]
         }
@@ -818,14 +824,14 @@
       "scan_errors": []
     },
     {
-      "path": "scan/freebsd/basic/+COMPACT_MANIFEST",
-      "type": "file",
+      "path": "scan/scoped1",
+      "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "scan/scoped1",
-      "type": "directory",
+      "path": "scan/scoped1/package.json",
+      "type": "file",
       "packages": [
         {
           "type": "npm",
@@ -863,7 +869,7 @@
             "MIT"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": "scan/scoped1",
           "dependencies": [
             {
               "purl": "pkg:npm/%40angular-devkit/build-optimizer",
@@ -1362,18 +1368,12 @@
           "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
           "files": [
             {
-              "path": "scan/scoped1",
-              "type": "directory"
+              "path": "scan/scoped1/package.json",
+              "type": "file"
             }
           ]
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "scan/scoped1/package.json",
-      "type": "file",
-      "packages": [],
       "scan_errors": []
     }
   ]

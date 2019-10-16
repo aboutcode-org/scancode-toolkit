@@ -13,7 +13,7 @@
       "type": "person",
       "role": "author",
       "name": "Ian Main",
-      "email": "imain@redhat.com",
+      "email": null,
       "url": null
     }
   ],
@@ -39,7 +39,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "apache-2.0",
+  "license_expression": "unknown AND apache-2.0",
   "declared_license": {
     "license": "Apache Software License",
     "classifiers": [
@@ -47,7 +47,7 @@
     ]
   },
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],

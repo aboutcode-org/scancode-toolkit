@@ -26,18 +26,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-from functools import partial
 import io
 import logging
 
 import attr
+import saneyaml
 from six import string_types
 
 from commoncode import filetype
-from commoncode import ignore
 from packagedcode import models
-import saneyaml
 
 
 TRACE = False
@@ -62,6 +59,7 @@ class AboutPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
+        # FIXME: this should have been already stored with the Package itself as extra_data
         with io.open(manifest_resource.location, encoding='utf-8') as loc:
             package_data = saneyaml.load(loc.read())
         about_resource = package_data.get('about_resource')
@@ -104,7 +102,7 @@ def build_package(package_data):
     homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
     download_url = package_data.get('download_url')
     declared_license = package_data.get('license_expression')
-    copyright = package_data.get('copyright')
+    copyright_statement = package_data.get('copyright')
 
     owner = package_data.get('owner')
     if not isinstance(owner, string_types):
@@ -116,7 +114,7 @@ def build_package(package_data):
         name=name,
         version=version,
         declared_license=declared_license,
-        copyright=copyright,
+        copyright=copyright_statement,
         parties=parties,
         homepage_url=homepage_url,
         download_url=download_url,

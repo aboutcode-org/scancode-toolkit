@@ -79,7 +79,7 @@
             "MIT"
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": "m2r-2.1.0.gem",
           "dependencies": [
             {
               "purl": "pkg:gem/ffi-rzmq",

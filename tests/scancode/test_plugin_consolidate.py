@@ -25,10 +25,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-from os.path import dirname
-from os.path import join
-import json
+from os import path
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
@@ -37,7 +34,13 @@ from scancode.plugin_consolidate import is_majority
 
 
 class TestConsolidate(FileDrivenTesting):
-    test_data_dir = join(dirname(__file__), 'data')
+    test_data_dir = path.join(path.dirname(__file__), 'data')
+
+    def get_scan(self, test_loc, cli_options='-clip'):
+        scan_loc = self.get_test_loc(test_loc)
+        scan_file = self.get_temp_file('json')
+        run_scan_click(['-clip', scan_loc, '--json', scan_file])
+        return scan_file
 
     def test_is_majority_above_threshold(self):
         files_count = 10
@@ -84,19 +87,21 @@ class TestConsolidate(FileDrivenTesting):
 
     def test_consolidate_clear_summary_from_json(self):
         # 75% of the files have the same license expression and holder, so we should have one consolidated component
-        scan_loc = self.get_test_loc('plugin_consolidate/clear-summary.json')
+        scan_file = self.get_scan('plugin_consolidate/clear-summary', cli_options='-clip')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/clear-summary-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--consolidate', '--json', result_file])
+        run_scan_click(['--from-json', scan_file, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
 
     def test_consolidate_component_package_from_json_can_run_twice(self):
-        scan_loc = self.get_test_loc('plugin_consolidate/component-package.json')
-        result_file = self.get_temp_file('json')
+        scan_file = self.get_scan('plugin_consolidate/component-package', cli_options='-clip')
         expected_file = self.get_test_loc('plugin_consolidate/component-package-expected.json')
-        run_scan_click(['--from-json', scan_loc, '--consolidate', '--json', result_file])
+
+        result_file = self.get_temp_file('json')
+        run_scan_click(['--from-json', scan_file, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
 
+        # rerun with result_file from last run
         result_file2 = self.get_temp_file('json')
         run_scan_click(['--from-json', result_file, '--consolidate', '--json', result_file2])
         check_json_scan(expected_file, result_file2, regen=False, remove_file_date=True, ignore_headers=True)
@@ -118,8 +123,8 @@ class TestConsolidate(FileDrivenTesting):
     def test_get_package_resources_on_nested_packages_should_include_manifest(self):
         from packagedcode import get_package_instance
         from scancode.resource import VirtualCodebase
-        scan_loc = self.get_test_loc('plugin_consolidate/nested-npm-packages.json')
-        codebase = VirtualCodebase(scan_loc)
+        scan_file = self.get_scan('plugin_consolidate/nested-packages', cli_options='-p')
+        codebase = VirtualCodebase(scan_file)
         for resource in codebase.walk():
             for package_data in resource.packages:
                 package = get_package_instance(package_data)

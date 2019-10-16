@@ -19,6 +19,12 @@
     {
       "path": "buck",
       "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "buck/BUCK",
+      "type": "file",
       "packages": [
         {
           "type": "buck",
@@ -46,7 +52,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": "BUCK",
+          "root_path": "buck",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -56,12 +62,6 @@
           "api_data_url": null
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "buck/BUCK",
-      "type": "file",
-      "packages": [],
       "scan_errors": []
     },
     {
@@ -91,6 +91,12 @@
     {
       "path": "buck/subdir2",
       "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "buck/subdir2/BUCK",
+      "type": "file",
       "packages": [
         {
           "type": "buck",
@@ -118,7 +124,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": "BUCK",
+          "root_path": "buck/subdir2",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -128,12 +134,6 @@
           "api_data_url": null
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "buck/subdir2/BUCK",
-      "type": "file",
-      "packages": [],
       "scan_errors": []
     },
     {
