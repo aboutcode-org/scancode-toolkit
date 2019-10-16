@@ -46,9 +46,19 @@ import cluecode_test_utils  # NOQA
 
 TRACE = True
 
-def load_data(location='00-new-copyrights.txt'):
+def load_data(location='00-new-copyright-tests.txt'):
     with io.open(location, encoding='utf-8') as o:
-        return [l.strip() for l in o.read().splitlines(False) if l and l.strip()]
+        data = [l.strip() for l in o.read().splitlines(False)]
+    lines = []
+    for line in data:
+        if not line:
+            if lines:
+                yield '\n'.join(lines)
+                lines = []
+        else:
+            lines.append(line)
+    if lines:
+        yield '\n'.join(lines)
 
 
 def find_test_file_loc(test_data_dir):
@@ -81,7 +91,7 @@ def build_dupe_index():
 
 
 @click.command()
-@click.argument('copyrights_file', type=click.Path(), metavar='FILE')
+@click.argument('copyrights_file', type=click.Path(), metavar='FILE', )
 @click.help_option('-h', '--help')
 def cli(copyrights_file):
     """
@@ -102,6 +112,7 @@ def cli(copyrights_file):
     for text in load_data(copyrights_file):
         if text in existing:
             print('Copyright Test skipped, existing:', text)
+            print()
             continue
 
         test_file_loc = find_test_file_loc(test_data_dir)
@@ -131,6 +142,7 @@ def cli(copyrights_file):
         test.dump()
         existing.add(text)
         print('Copyright Test added:', text)
+        print()
 
 
 if __name__ == '__main__':

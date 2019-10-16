@@ -1,0 +1,1 @@
+(a)Download original face detection dataset -> (b)Convert annotation to the PASCAL VOC format -> (c)Create LMDB database with images + annotations for training

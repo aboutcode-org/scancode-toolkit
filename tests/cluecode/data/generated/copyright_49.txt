@@ -1,0 +1,3 @@
+Copyright (c) 2006, Industrial Light & Magic, a division of Lucasfilm
+Entertainment Company Ltd.  Portions contributed and copyright held by
+others as indicated.  All rights reserved.

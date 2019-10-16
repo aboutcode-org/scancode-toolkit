@@ -1,0 +1,4 @@
+* libtiff/{tif_dirinfo.c, tif_dir.h, tif_dir.c, tif_print.c}: Make
+DocumentName, Artist, HostComputer, ImageDescription, Make, Model,
+Copyright, DateTime, PageName, TextureFormat, TextureWrapModes and
+TargetPrinter tags custom.

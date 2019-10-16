@@ -1,0 +1,18 @@
+//COPYRIGHT
+//
+//All contributions by the University of California:
+//Copyright (c) 2014, The Regents of the University of California (Regents)
+//All rights reserved.
+//
+//All other contributions:
+//Copyright (c) 2014, the respective contributors
+//All rights reserved.
+//
+//Caffe uses a shared copyright model: each contributor holds copyright over
+//their contributions to Caffe. The project versioning records all such
+//contribution and copyright details. If a contributor wants to further mark
+//their specific copyright on a particular contribution, they should indicate
+//their copyright solely in the commit message of the change when it is
+//committed.
+//
+//LICENSE

@@ -1,0 +1,8 @@
+what:
+  - holders
+  - copyrights
+  - authors
+copyrights:
+  - Copyright (c) 2013, OpenCV Foundation
+holders:
+  - OpenCV Foundation

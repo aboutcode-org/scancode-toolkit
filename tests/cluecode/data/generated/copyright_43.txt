@@ -1,0 +1,4 @@
+// Copyright (c) 2002-2010, Industrial Light & Magic, a division of Lucas
+// Digital Ltd. LLC
+//
+// All rights reserved.
