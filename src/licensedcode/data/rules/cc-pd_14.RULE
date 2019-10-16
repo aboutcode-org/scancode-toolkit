@@ -1,0 +1,5 @@
+<cc:License rdf:about="http://web.resource.org/cc/PublicDomain">
+   <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+   <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+   <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+ </cc:License>
