@@ -114,6 +114,12 @@ class BuckPackage(BaseBuildManifestPackage):
             return
         return buck_parse(location)
 
+    def compute_normalized_license(self):
+        return compute_normalized_license(
+            self.declared_license,
+            manifest_parent_path=self.extra_data['manifest_parent_path']
+        )
+
 
 # TODO: Prune rule names that do not create things we do not care about like
 # `robolectric_test` or `genrule`
@@ -225,36 +231,38 @@ def buck_parse(location):
                     build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     rules_to_return = []
-    manifest_parent_directory = fileutils.parent_directory(location)
+    manifest_parent_path = fileutils.parent_directory(location)
     for rule_name, args in build_rules.items():
         name = args.get('name')
         if not name:
             continue
         license_files = args.get('licenses', [])
-        license_expressions = []
-        license_names = []
-
-        for license_file in license_files:
-            license_file_path = os.path.join(manifest_parent_directory, license_file)
-            if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
-                licenses = get_licenses(license_file_path)
-                for license, license_expression in zip(
-                        licenses.get('licenses', []),
-                        licenses.get('license_expressions', [])):
-                    short_name = license.get('short_name')
-                    if short_name:
-                        license_names.append(short_name)
-                    license_expressions.append(license_expression)
-
-        rules_to_return.append(
-            BuckPackage(
+        b = BuckPackage(
                 name=name,
-                declared_license=license_names or None,
-                license_expression=combine_expressions(license_expressions) or None
+                declared_license=license_files or None,
             )
-        )
+        b.extra_data['manifest_parent_path'] = manifest_parent_path
+        rules_to_return.append(b)
 
     if rules_to_return:
         # FIXME: We will eventually return the entire list instead of the first one
         # once the new package changes are in
         return rules_to_return[0]
+
+
+def compute_normalized_license(declared_license, manifest_parent_path):
+    """
+    Return a normalized license expression string detected from a list of
+    declared license items.
+    """
+    if not declared_license or not manifest_parent_path:
+        return
+
+    license_expressions = []
+    for license_file in declared_license:
+        license_file_path = os.path.join(manifest_parent_path, license_file)
+        if os.path.exists(license_file_path) and os.path.isfile(license_file_path):
+            licenses = get_licenses(license_file_path)
+            license_expressions.extend(licenses.get('license_expressions', []))
+
+    return combine_expressions(license_expressions)
