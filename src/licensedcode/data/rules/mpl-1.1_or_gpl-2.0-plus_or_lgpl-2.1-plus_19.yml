@@ -1,0 +1,11 @@
+license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright // the Initial Developer
+ignorable_holders:
+    - the Initial Developer
+ignorable_authors:
+    - the Initial Developer
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

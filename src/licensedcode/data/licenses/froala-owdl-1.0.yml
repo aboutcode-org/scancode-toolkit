@@ -1,0 +1,13 @@
+key: froala-owdl-1.0
+short_name: Froala Open Web Design License
+name: Froala Open Web Design License
+category: Proprietary Free
+owner: Froala
+homepage_url: https://github.com/froala/design-blocks/blob/dev/LICENSE
+text_urls:
+    - https://github.com/froala/design-blocks/blob/dev/LICENSE
+notes: based on the OFL 1.1 with a proprietary addition.
+ in 3(a) there are exatr usage restrictions
+ "Neither the Work nor any of its individual components, in Original or Modified
+ Versions, may be .... (ii) used for website or app generators; (iii) used to
+ create templates, themes, and plugins for sale."

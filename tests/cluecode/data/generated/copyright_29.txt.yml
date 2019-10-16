@@ -5,4 +5,9 @@ what:
 copyrights:
   - Created by Samvel Khalatyan, May 28, 2013 Copyright 2013
 holders:
-  - Samvel Khalatyan, May 28
+  - Samvel Khalatyan
+expected_failures:
+  - holders
+  - copyrights
+  - authors
+

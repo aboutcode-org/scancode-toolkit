@@ -1,0 +1,6 @@
+license_expression: apache-2.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.txt
+    - http://www.fsf.org/licensing/licenses/lgpl.txt

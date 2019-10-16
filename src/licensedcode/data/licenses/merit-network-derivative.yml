@@ -1,0 +1,68 @@
+key: merit-network-derivative
+short_name: Merit Network Derivative Works License
+name: Merit Network Derivative Works License
+category: Copyleft
+owner: Merit Network
+homepage_url: http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c
+standard_notice: |
+    /*
+    * Copyright [C] The Regents of the University of Michigan and Merit
+    Network,
+    * Inc. 1992, 1993, 1994, 1995, 1996, 1997, 1998 All Rights Reserved
+    *
+    * Permission to use, copy, and modify this software and its documentation
+    * for any purpose and without fee is hereby granted, provided:
+    *
+    * 1) that the above copyright notice and this permission notice appear in
+    all
+    * copies of the software and derivative works or modified versions thereof,
+    *
+    * 2) that both the copyright notice and this permission and disclaimer
+    notice
+    * appear in all supporting documentation, and
+    *
+    * 3) that all derivative works made from this material are returned to the
+    * Regents of the University of Michigan and Merit Network, Inc. with
+    * permission to copy, to display, to distribute, and to make derivative
+    * works from the provided material in whole or in part for any purpose.
+    *
+    * Users of this code are requested to notify Merit Network, Inc. of such
+    use
+    * by sending email to aaa-admin@merit.edu
+    *
+    * Please also use aaa-admin@merit.edu to inform Merit Network, Inc of any
+    * derivative works.
+    *
+    * Distribution of this software or derivative works or the associated
+    * documentation is not allowed without an additional license.
+    *
+    * Licenses for other uses are available on an individually negotiated
+    * basis. Contact aaa-license@merit.edu for more information.
+    *
+    * THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+    * EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+    * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE REGENTS OF THE
+    * UNIVERSITY OF MICHIGAN AND MERIT NETWORK, INC. DO NOT WARRANT THAT THE
+    * FUNCTIONS CONTAINED IN THE SOFTWARE WILL MEET LICENSEE'S REQUIREMENTS OR
+    * THAT OPERATION WILL BE UNINTERRUPTED OR ERROR FREE. The Regents of the
+    * University of Michigan and Merit Network, Inc. shall not be liable for
+    any
+    * special, indirect, incidental or consequential damages with respect to
+    any
+    * claim by Licensee or any third party arising from use of the software.
+    *
+    * Merit AAA Server Support
+    * Merit Network, Inc.
+    * 4251 Plymouth Road, Suite C.
+    * Ann Arbor, Michigan, USA 48105-2785
+    *
+    * attn: John Vollbrecht
+    * voice: 734-764-9430
+    * fax: 734-647-3185
+    * email: aaa-admin@merit.edu
+    *
+    */
+ignorable_emails:
+  - aaa-admin@merit.edu
+  - aaa-license@merit.edu
+

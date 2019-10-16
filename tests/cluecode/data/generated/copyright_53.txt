@@ -1,0 +1,1 @@
+[assembly: AssemblyCopyright(""Copyright ©  2014"")]

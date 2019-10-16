@@ -1,0 +1,10 @@
+license_expression: gpl-3.0
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - http://www.gnu.org/licenses/
+    - http://www.gnu.org/philosophy/why-not-lgpl.html
