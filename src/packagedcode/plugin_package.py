@@ -105,8 +105,7 @@ class PackageScanner(ScanPlugin):
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Copy package manifest scan information to the proper file or directory
-        level given a package "type".
+        Set the package root given a package "type".
         """
         if codebase.has_single_resource:
             # What if we scanned a single file and we do not have a root proper?
