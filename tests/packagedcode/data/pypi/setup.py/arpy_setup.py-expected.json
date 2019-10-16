@@ -8,7 +8,15 @@
   "primary_language": "Python",
   "description": "Library for accessing \"ar\" files",
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Stanis\u0142aw Pitucha",
+      "email": "viraptor@gmail.com",
+      "url": null
+    }
+  ],
   "keywords": [],
   "homepage_url": "http://bitbucket.org/viraptor/arpy",
   "download_url": null,
@@ -21,9 +29,9 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
+  "license_expression": "bsd-simplified",
   "declared_license": {
-    "license": null,
+    "license": "Simplified BSD",
     "classifiers": []
   },
   "notice_text": null,

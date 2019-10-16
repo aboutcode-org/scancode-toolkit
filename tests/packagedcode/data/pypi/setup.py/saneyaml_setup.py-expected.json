@@ -6,14 +6,14 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "Python",
-  "description": "Dump readable YAML and load safely any YAML preserving '        'ordering and avoiding surprises of type conversions. '        'This library is a PyYaml wrapper with sane behaviour to read and '        'write readable YAML safely, typically when used for configuration.",
+  "description": "Dump readable YAML and load safely any YAML preserving ordering and avoiding surprises of type conversions. This library is a PyYaml wrapper with sane behaviour to read and write readable YAML safely, typically when used for configuration.",
   "release_date": null,
   "parties": [
     {
       "type": "person",
       "role": "author",
       "name": "AboutCode authors and others.",
-      "email": null,
+      "email": "info@nexb.com",
       "url": null
     }
   ],

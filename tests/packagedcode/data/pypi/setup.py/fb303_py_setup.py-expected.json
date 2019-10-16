@@ -8,7 +8,19 @@
   "primary_language": "Python",
   "description": "Python bindings for the Apache Thrift FB303",
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": [
+        "Thrift Developers"
+      ],
+      "email": [
+        "dev@thrift.apache.org"
+      ],
+      "url": null
+    }
+  ],
   "keywords": [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
