@@ -202,7 +202,6 @@ ignores_VCS = {
 
     'CVS': 'Default ignore: CVS artifact',
     '.cvsignore': 'Default ignore: CVS config artifact',
-    '*/RCS': 'Default ignore: CVS artifact',
     '*/SCCS': 'Default ignore: CVS artifact',
 
     '*/_MTN': 'Default ignore: Monotone artifact',
