@@ -29,7 +29,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "unknown",
+  "license_expression": "bsd-simplified",
   "declared_license": {
     "license": "Simplified BSD",
     "classifiers": []
