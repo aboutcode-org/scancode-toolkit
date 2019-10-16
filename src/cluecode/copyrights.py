@@ -993,12 +993,15 @@ patterns = [
     (r'^WPA$', 'NN'),
     (r'^Xalan$', 'NN'),
     (r'^YOUR', 'NN'),
+    (r'^DateTime', 'NN'),
+    (r'^Create$', 'NN'),
 
-    # Date/Day/Month text references
+    # Hours/Date/Day/Month text references
     (r'^am$', 'NN'),
     (r'^pm$', 'NN'),
     (r'^AM$', 'NN'),
     (r'^PM$', 'NN'),
+
     (r'^January$', 'NN'),
     (r'^February$', 'NN'),
     (r'^March$', 'NN'),
@@ -1604,6 +1607,9 @@ grammar = """
     # Kaleb S. KEITHLEY
     NAME: {<NNP> <NNP> <CAPS>} #345
 
+    # Copyright (c) 2006, Industrial Light & Magic
+    NAME: {<NNP> <NNP>  <CC>  <NNP>+} #346
+
     # NAME-YEAR starts or ends with a YEAR range
     NAME-YEAR: {<YR-RANGE> <NNP> <NNP>+} #350
 
@@ -1969,6 +1975,9 @@ grammar = """
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
+
+    # Copyright (c) 2014, 2015, the respective contributors All rights reserved.
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2>  <NN|NNP|CONTRIBUTORS>+  <ALLRIGHTRESERVED>} #2862
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <DASH> <COMPANY>}        #2320
 
@@ -2584,6 +2593,8 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'right',
         'rights',
         'reserved',
+        'held',
+        'by',
     ])
 ))
 

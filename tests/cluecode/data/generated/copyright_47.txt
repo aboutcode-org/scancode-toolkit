@@ -1,0 +1,4 @@
+*  For iOS video I/O
+*  by Xiaochao Yang on 06/15/11 modified from
+*  cap_qtkit.mm for Nicholas Butko for Mac OS version.
+*  Copyright 2011. All rights reserved.

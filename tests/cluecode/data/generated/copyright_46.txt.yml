@@ -1,0 +1,10 @@
+what:
+  - holders
+  - copyrights
+  - authors
+copyrights:
+  - Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
+  - Copyright (c) 2014, 2015, the respective contributors
+holders:
+  - The Regents of the University of California (Regents)
+  - the respective contributors
