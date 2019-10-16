@@ -1,1 +1,0 @@
-A scanCode plugin to provide binaries of readelf command
