@@ -51,13 +51,6 @@ class TestPyPi(PackageTester):
                 'copyright and other interesting facts.') == package.description
         assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
 
-    def test_get_setup_attribute(self):
-        test_file = self.get_test_loc('pypi/setup.py/setup.py')
-        setup_text = open(test_file).read()
-        assert 'scancode-toolkit' == pypi.get_setup_attribute(setup_text, 'name')
-        assert '1.5.0' == pypi.get_setup_attribute(setup_text, 'version')
-        assert 'ScanCode' == pypi.get_setup_attribute(setup_text, 'author')
-
     def test_parse_metadata(self):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')
@@ -65,7 +58,16 @@ class TestPyPi(PackageTester):
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.description
-        assert 'MIT' in package.declared_license
+        assert 'MIT' in package.declared_license['license']
+        assert ['License :: OSI Approved :: MIT License'] == package.declared_license['classifiers']
+        expected_classifiers = [
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 3",
+            "Intended Audience :: Developers",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Utilities"
+        ]
+        assert expected_classifiers == package.keywords
         expected = [
             OrderedDict([
                 ('type', u'person'), ('role', u'contact'),
@@ -165,6 +167,7 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/pipdeptree_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    @expectedFailure
     def test_parse_setup_py_pluggy(self):
         test_file = self.get_test_loc('pypi/setup.py/pluggy_setup.py')
         package = pypi.parse_setup_py(test_file)
@@ -239,24 +242,6 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/xmltodict_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    def test_build_package(self):
-        test_file = self.get_test_loc('pypi/vmock/input.json')
-        expected_loc = self.get_test_loc('pypi/vmock/expected.json')
-        with open(test_file) as pypi_json:
-            json_input = pypi_json.read()
-            content = json.loads(json_input)
-            package = pypi.build_package(content)
-            self.check_package(package, expected_loc, regen=False)
-
-    def test_build_package2(self):
-        test_file = self.get_test_loc('pypi/3to2/input.json')
-        expected_loc = self.get_test_loc('pypi/3to2/expected.json')
-        with open(test_file) as pypi_json:
-            json_input = pypi_json.read()
-            content = json.loads(json_input)
-            package = pypi.build_package(content)
-            self.check_package(package, expected_loc, regen=False)
-
     def test_pkginfo_parse_with_unpackaged_source(self):
         test_file = self.get_test_loc('pypi')
         package = pypi.parse_unpackaged_source(test_file)
@@ -265,7 +250,7 @@ class TestPyPi(PackageTester):
 
     def test_pkginfo_parse_with_unpackaged_source_with_parse_function(self):
         test_file = self.get_test_loc('pypi')
-        package = pypi.parse2(test_file)
+        package = pypi.parse(test_file)
         expected_loc = self.get_test_loc('pypi/unpackage_source_parser-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
@@ -278,7 +263,7 @@ class TestPyPi(PackageTester):
 
     def test_pkginfo_parse_with_wheelfile_with_parse_function(self):
         test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
-        package = pypi.parse2(test_file)
+        package = pypi.parse(test_file)
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
 

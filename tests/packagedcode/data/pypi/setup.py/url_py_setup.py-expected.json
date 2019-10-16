@@ -13,7 +13,7 @@
       "type": "person",
       "role": "author",
       "name": "Dan Lecocq",
-      "email": null,
+      "email": "dan@seomoz.org",
       "url": null
     }
   ],
@@ -21,7 +21,7 @@
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
-    "Topic :: Internet :: WWW/HTTP']"
+    "Topic :: Internet :: WWW/HTTP"
   ],
   "homepage_url": "http://github.com/nexB/url-py",
   "download_url": null,
