@@ -1,0 +1,8 @@
+license_expression: cc-pd
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://web.resource.org/cc/DerivativeWorks
+    - http://web.resource.org/cc/Distribution
+    - http://web.resource.org/cc/PublicDomain
+    - http://web.resource.org/cc/Reproduction
