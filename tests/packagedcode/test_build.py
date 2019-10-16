@@ -65,7 +65,7 @@ class TestBuild(PackageTester):
         result = build.buck_parse(test_file)
         expected = build.BuckPackage(
             name='app',
-            declared_license=['Apache 2.0'],
+            declared_license=['LICENSE'],
             license_expression='apache-2.0'
         )
         assert expected == result
