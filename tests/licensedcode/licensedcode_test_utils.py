@@ -89,12 +89,10 @@ class LicenseTest(object):
             except Exception as e:
                 raise Exception('Failed to read:', 'file://' + self.data_file, e)
 
-        self.license_expressions = data.pop('license_expressions', [])
-
-        self.notes = data.pop('notes', None)
-
-        # True if the test is expected to fail
-        self.expected_failure = data.pop('expected_failure', False)
+            self.license_expressions = data.pop('license_expressions', [])
+            self.notes = data.pop('notes', None)
+            # True if the test is expected to fail
+            self.expected_failure = data.pop('expected_failure', False)
 
         if data:
             raise Exception(
@@ -143,6 +141,14 @@ class LicenseTest(object):
         with io.open(self.data_file, 'w', encoding='utf-8') as df:
             df.write(as_yaml)
 
+    def get_content(self):
+        """
+        Return a byte strings of the test file content.
+        """
+        with open(self.test_file, 'rb') as df:
+            d = df.read()
+        return d
+
     def get_test_method_name(self, prefix='test_detection_'):
         test_file_name = self.test_file_name
         test_name = '{prefix}{test_file_name}'.format(**locals())
@@ -153,6 +159,14 @@ class LicenseTest(object):
             test_name = test_name.decode('utf-8')
         return test_name
 
+    @staticmethod
+    def load_from(test_dir):
+        """
+        Return an iterable of LicenseTest objects loaded from `test_dir`
+        """
+        return [LicenseTest(data_file, test_file)
+                 for data_file, test_file in get_test_file_pairs(test_dir)]
+
 
 def build_tests(test_dir, clazz, regen=False):
     """
@@ -160,8 +174,7 @@ def build_tests(test_dir, clazz, regen=False):
     attach these method to the clazz license test class.
     """
 
-    license_tests = (LicenseTest(data_file, test_file)
-             for data_file, test_file in get_test_file_pairs(test_dir))
+    license_tests = LicenseTest.load_from(test_dir)
 
     # TODO: check that we do not have duplicated tests with same data and text
 
