@@ -145,7 +145,7 @@ class LicenseMatch(object):
          - matcher: a string indicating which matching procedure this match was
            created with. Used for diagnostics, debugging and testing.
 
-         Note that the relationship between is the qspan and ispan is such that:
+         Note that the relationship between the qspan and ispan is such that:
          - they always have the exact same number of items but when sorted each
            value at an index may be different
          - the nth position when sorted by position is such that their token
