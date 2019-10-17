@@ -8,5 +8,6 @@
   "/usr/src/debug/labrea-2.5-stable-1/src/pkt.c", 
   "/usr/src/debug/labrea-2.5-stable-1/src/pkt_handler.c", 
   "/usr/src/debug/labrea-2.5-stable-1/src/strlcpy.c", 
-  "/usr/src/debug/labrea-2.5-stable-1/src/utils.c"
+  "/usr/src/debug/labrea-2.5-stable-1/src/utils.c", 
+  "crtstuff.c"
 ]

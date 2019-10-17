@@ -26,5 +26,6 @@
   "/usr/include/sys/types.h", 
   "/usr/include/time.h", 
   "/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include/stdarg.h", 
-  "/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include/stddef.h"
+  "/usr/lib/gcc/x86_64-redhat-linux/4.1.2/include/stddef.h", 
+  "crtstuff.c"
 ]

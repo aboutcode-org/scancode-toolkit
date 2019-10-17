@@ -47,6 +47,7 @@ setup(
         'attr',
         'scancode-ctags',
         'scancode-dwarfdump',
+        'scancode-readelf',
     ],
     entry_points={
         'scancode_scan': [
@@ -62,6 +63,4 @@ setup(
 
         ],
     }
-
-
 )

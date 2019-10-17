@@ -1,3 +1,4 @@
 [
-  "/usr/src/debug/ImageMagick-6.7.5-6/filters/analyze.c"
+  "/usr/src/debug/ImageMagick-6.7.5-6/filters/analyze.c", 
+  "crtstuff.c"
 ]

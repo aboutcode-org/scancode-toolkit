@@ -42,6 +42,7 @@
   "avlpv.cpp", 
   "buildconfig.cpp", 
   "critsect-generic.cpp", 
+  "crtstuff.c", 
   "env-generic.cpp", 
   "env-posix.cpp", 
   "errmsg.cpp", 
