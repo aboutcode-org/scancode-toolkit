@@ -91,8 +91,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [],
@@ -121,8 +121,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -153,8 +153,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -253,16 +253,16 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "omega.com",
+          "value": "Copyright (c) omega.com",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) omega.com",
+          "value": "omega.com",
           "start_line": 1,
           "end_line": 2
         }
@@ -297,8 +297,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [],
@@ -327,8 +327,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -427,16 +427,16 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "IBM Corp.",
+          "value": "Copyright (c) IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) IBM Corp.",
+          "value": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
@@ -471,8 +471,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "consolidated_to": [
@@ -571,16 +571,16 @@
         "unknown",
         "apache-2.0"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "Oracle Corp.",
+          "value": "Copyright (c) Oracle Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) Oracle Corp.",
+          "value": "Oracle Corp.",
           "start_line": 1,
           "end_line": 2
         }

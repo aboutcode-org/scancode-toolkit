@@ -66,7 +66,7 @@
           "license_expression": "unknown",
           "declared_license": "Other",
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:conda/python",

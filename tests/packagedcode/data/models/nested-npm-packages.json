@@ -53,7 +53,7 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": "package.json",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -109,7 +109,7 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": "package.json",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -159,7 +159,7 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": "package.json",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -215,7 +215,7 @@
             "apache-2.0"
           ],
           "notice_text": null,
-          "manifest_path": "package.json",
+          "root_path": "package.json",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],

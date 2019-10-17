@@ -282,6 +282,7 @@ def get_package_info(location, **kwargs):
     try:
         manifest = recognize_package(location)
         if manifest:
+            # TODO: what if we have more than one package in a manifest?
             return dict(packages=[manifest.to_dict()])
     except Exception as e:
         if TRACE:

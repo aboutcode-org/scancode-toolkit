@@ -66,7 +66,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -122,7 +122,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.ant/ant",
@@ -203,7 +203,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.ant/ant",
@@ -289,7 +289,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -345,7 +345,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -430,7 +430,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -536,7 +536,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/servletapi/servletapi",
@@ -841,7 +841,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/commons-beanutils/commons-beanutils",
@@ -1000,7 +1000,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/log4j/log4j",
@@ -1237,7 +1237,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.maven/maven-artifact",
@@ -1439,7 +1439,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/relaxngDatatype/relaxngDatatype",
@@ -1553,7 +1553,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/ch.qos.logback/logback-core",
@@ -1735,7 +1735,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
@@ -1824,7 +1824,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [
@@ -1934,7 +1934,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit",
@@ -2014,7 +2014,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/aopalliance/aopalliance",
@@ -2606,7 +2606,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/aopalliance/aopalliance",
@@ -2806,7 +2806,7 @@
             }
           ],
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/commons-attributes/commons-attributes-api",
@@ -3047,7 +3047,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/org.mockito/mockito-all",
@@ -3166,7 +3166,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "manifest_path": null,
+          "root_path": null,
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit",
