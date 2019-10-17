@@ -52,7 +52,7 @@ class BuckPackage(BaseBuildManifestPackage):
     def compute_normalized_license(self):
         return compute_normalized_license(
             self.declared_license,
-            manifest_parent_path=self.extra_data['manifest_parent_path']
+            manifest_parent_path=self.root_path
         )
 
 
@@ -166,18 +166,18 @@ def buck_parse(location):
                     build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     rules_to_return = []
-    manifest_parent_path = fileutils.parent_directory(location)
     for rule_name, args in build_rules.items():
         name = args.get('name')
         if not name:
             continue
         license_files = args.get('licenses', [])
-        b = BuckPackage(
+        rules_to_return.append(
+            BuckPackage(
                 name=name,
                 declared_license=license_files or None,
+                root_path=fileutils.parent_directory(location)
             )
-        b.extra_data['manifest_parent_path'] = manifest_parent_path
-        rules_to_return.append(b)
+        )
 
     if rules_to_return:
         # FIXME: We will eventually return the entire list instead of the first one
