@@ -11,7 +11,7 @@
       "message": null,
       "errors": [],
       "extra_data": {
-        "files_count": 6
+        "files_count": 7
       }
     }
   ],
@@ -60,6 +60,50 @@
     },
     {
       "path": "end2end/subdir2/BUCK",
+      "type": "file",
+      "packages": [
+        {
+          "type": "buck",
+          "namespace": null,
+          "name": "bin",
+          "version": null,
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            "LICENSE"
+          ],
+          "notice_text": null,
+          "root_path": "end2end/subdir2",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:buck/bin",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/LICENSE",
       "type": "file",
       "packages": [],
       "scan_errors": []

@@ -43,22 +43,33 @@ class TestBuck(PackageTester):
         expected_file = self.get_test_loc('buck/end2end-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=True)
+        check_json_scan(expected_file, result_file, regen=False)
 
     def test_buck_parse(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
-        result = buck.buck_parse(test_file)
-        expected = buck.BuckPackage(
+        result_package = buck.buck_parse(test_file)
+        expected_package = buck.BuckPackage(
             name='app'
         )
+        result = result_package.to_dict()
+        expected = expected_package.to_dict()
+        # We don't want to compare `root_path`, since the result will always
+        # have a different `root_path` than the expected result
+        result.pop('root_path')
+        expected.pop('root_path')
         assert expected == result
 
     def test_buck_parse_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result = buck.buck_parse(test_file)
-        expected = buck.BuckPackage(
+        result_package = buck.buck_parse(test_file)
+        expected_package = buck.BuckPackage(
             name='app',
             declared_license=['LICENSE'],
-            license_expression='apache-2.0'
         )
+        result = result_package.to_dict()
+        expected = expected_package.to_dict()
+        # We don't want to compare `root_path`, since the result will always
+        # have a different `root_path` than the expected result
+        result.pop('root_path')
+        expected.pop('root_path')
         assert expected == result
