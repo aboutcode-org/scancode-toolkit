@@ -40,16 +40,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -81,16 +81,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -122,16 +122,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -163,8 +163,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
       "files_count": 4,
@@ -192,16 +192,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -233,16 +233,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -274,16 +274,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
@@ -315,16 +315,16 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [
+      "copyrights": [
         {
-          "value": "ACME, Inc.",
+          "value": "Copyright (c) 2000 ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2000 ACME, Inc.",
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }

@@ -36,7 +36,7 @@
   "license_expression": "apache-2.0",
   "declared_license": "apache-2.0",
   "notice_text": "licensed under the apacche 2.0 \nlicense",
-  "manifest_path": "package.json",
+  "root_path": "",
   "dependencies": [
     {
       "purl": "pkg:maven/org.aspectj/aspectjtools",

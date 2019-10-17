@@ -67,7 +67,7 @@ class TestModels(PackageTester):
             ('license_expression', None),
             ('declared_license', None),
             ('notice_text', None),
-            ('manifest_path', None),
+            ('root_path', None),
             ('dependencies', []),
             ('contains_source_code', None),
             ('source_packages', []),
@@ -138,7 +138,7 @@ class TestModels(PackageTester):
             license_expression='apache-2.0',
             declared_license=u'apache-2.0',
             notice_text='licensed under the apacche 2.0 \nlicense',
-            manifest_path='package.json',
+            root_path='',
             dependencies=[
                 DependentPackage(
                   purl='pkg:maven/org.aspectj/aspectjtools',

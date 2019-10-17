@@ -31,7 +31,6 @@ from collections import OrderedDict
 import json
 import os.path
 
-import attr
 import pytest
 
 from commoncode import compat
@@ -42,7 +41,6 @@ from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
 from scancode.resource import Codebase
-from packagedcode.maven import get_maven_pom
 
 
 if py2:
@@ -108,7 +106,7 @@ def parse_pom(location=None, text=None, check_is_pom=False):
     """
     Return a POM mapping from the Maven POM file at location.
     """
-    pom = get_maven_pom(location, text, check_is_pom)
+    pom = maven.get_maven_pom(location, text, check_is_pom)
     if not pom:
         return {}
     return pom.to_dict()
@@ -238,10 +236,9 @@ class TestMavenMisc(BaseMavenCase):
         assert package.to_dict().items() == package2.to_dict().items()
 
     def test_package_root_is_properly_returned_for_metainf_poms(self):
+        from packagedcode.plugin_package import PackageScanner
         test_dir = self.get_test_loc('maven_misc/package_root')
-        resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
-
-        codebase = Codebase(test_dir, resource_attributes=resource_attributes)
+        codebase = Codebase(test_dir, resource_attributes=PackageScanner.resource_attributes)
         manifest_resource = [r for r in codebase.walk() if r.name == 'pom.xml'][0]
         package = maven.MavenPomPackage.recognize(manifest_resource.location)
         manifest_resource.packages.append(package.to_dict())

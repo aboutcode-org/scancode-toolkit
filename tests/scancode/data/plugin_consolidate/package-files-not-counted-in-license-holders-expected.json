@@ -19,7 +19,24 @@
       }
     }
   ],
-  "consolidated_components": [],
+  "consolidated_components": [
+    {
+      "type": "license-holders",
+      "identifier": "the_apache_software_foundation_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 5
+    }
+  ],
   "consolidated_packages": [
     {
       "type": "npm",
@@ -49,7 +66,7 @@
         "apache-2.0"
       ],
       "notice_text": null,
-      "manifest_path": "package.json",
+      "root_path": "package-files-not-counted-in-license-holders/package",
       "dependencies": [],
       "contains_source_code": null,
       "source_packages": [],
@@ -60,18 +77,16 @@
       "identifier": "pkg_npm_test_package_0_0_1_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
-        "The Apache Software",
-        "The Apache Software Foundation"
+        "The Apache Software"
       ],
-      "consolidated_copyright": "Copyright (c) The Apache Software, The Apache Software Foundation",
+      "consolidated_copyright": "Copyright (c) The Apache Software",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
       "other_license_expression": "apache-2.0",
       "other_holders": [
-        "The Apache Software",
-        "The Apache Software Foundation"
+        "The Apache Software"
       ],
-      "files_count": 4
+      "files_count": 1
     }
   ],
   "files": [
@@ -95,11 +110,13 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 6,
       "dirs_count": 1,
       "size_count": 421,
@@ -125,46 +142,12 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
-      "packages": [
-        {
-          "type": "npm",
-          "namespace": null,
-          "name": "test-package",
-          "version": "0.0.1",
-          "qualifiers": null,
-          "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": "apache-2.0",
-          "declared_license": [
-            "apache-2.0"
-          ],
-          "notice_text": null,
-          "manifest_path": "package.json",
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": []
-        }
-      ],
+      "packages": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -226,13 +209,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software",
@@ -240,8 +216,53 @@
           "end_line": 5
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
       "authors": [],
-      "packages": [],
+      "packages": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "test-package",
+          "version": "0.0.1",
+          "qualifiers": null,
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "apache-2.0",
+          "declared_license": [
+            "apache-2.0"
+          ],
+          "notice_text": null,
+          "root_path": "package-files-not-counted-in-license-holders/package",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:npm/test-package@0.0.1",
+          "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+          "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+          "api_data_url": "https://registry.npmjs.org/test-package/0.0.1"
+        }
+      ],
       "consolidated_to": [
         "pkg_npm_test_package_0_0_1_1"
       ],
@@ -305,13 +326,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -319,10 +333,17 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -384,13 +405,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -398,10 +412,17 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -463,13 +484,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -477,10 +491,17 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "pkg_npm_test_package_0_0_1_1"
+        "the_apache_software_foundation_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -542,13 +563,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -556,9 +570,18 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -619,13 +642,6 @@
       "license_expressions": [
         "apache-2.0"
       ],
-      "holders": [
-        {
-          "value": "The Apache Software Foundation",
-          "start_line": 1,
-          "end_line": 2
-        }
-      ],
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -633,9 +649,18 @@
           "end_line": 2
         }
       ],
+      "holders": [
+        {
+          "value": "The Apache Software Foundation",
+          "start_line": 1,
+          "end_line": 2
+        }
+      ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

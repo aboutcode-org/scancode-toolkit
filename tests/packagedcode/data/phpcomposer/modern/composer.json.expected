@@ -24,7 +24,7 @@
   "license_expression": "proprietary",
   "declared_license": "proprietary",
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:composer/php",

@@ -81,7 +81,7 @@
   "license_expression": "gpl-3.0",
   "declared_license": "GPL (>= 3)",
   "notice_text": null,
-  "manifest_path": null,
+  "root_path": null,
   "dependencies": [
     {
       "purl": "pkg:cran/R",
