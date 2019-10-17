@@ -231,11 +231,6 @@ class BasePackage(BaseModel):
         help='Optional extra subpath inside a package and relative to the root '
              'of this package')
 
-    extra_data = Mapping(
-        label='extra data',
-        help='A Mapping where arbitrary data that is related to the Package can be stored '
-    )
-
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
             self.type = self.default_type
