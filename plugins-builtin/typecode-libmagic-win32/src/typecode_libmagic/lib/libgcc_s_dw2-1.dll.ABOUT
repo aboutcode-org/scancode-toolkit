@@ -1,7 +1,7 @@
 about_resource: libgcc_s_dw2-1.dll
 name: GNU gcc
 version: 4.8.1-4
-download_url: 
+download_urls: 
     - https://master.dl.sourceforge.net/project/mingw/MinGW/Base/gcc/Version4/gcc-4.8.1-4/gcc-core-4.8.1-4-mingw32-dll.tar.lzma
     - https://master.dl.sourceforge.net/project/mingw/MinGW/Base/gcc/Version4/gcc-4.8.1-4/gcc-4.8.1-4-mingw32-src.tar.lzma
 notes: see also https://github.com/nexB/scancode-thirdparty-src/ for build instructions

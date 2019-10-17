@@ -1,7 +1,7 @@
 about_resource: libbz2-2.dll
 name: bzip2
 version: 1.0.6
-download_url:
+download_urls:
     - http://bzip.org/1.0.6/bzip2-1.0.6.tar.gz
     - https://master.dl.sourceforge.net/project/mingw/MinGW/Extension/bzip2/bzip2-1.0.6-4/bzip2-1.0.6-4-mingw32-bin.tar.lzma
 
