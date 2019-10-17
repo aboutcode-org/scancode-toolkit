@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import logging
+
 # Import first because this import has monkey-patching side effects
 from scancode.pool import get_pool
 
@@ -483,6 +485,11 @@ def scancode(ctx, input,  # NOQA
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
     """
+    
+    # configure a null root handler ONLY when used as a command line
+    # otherwise no root handler is set 
+    logging.getLogger().addHandler(logging.NullHandler())
+    
     success = False
     try:
         # Validate CLI UI options dependencies and other CLI-specific inits
