@@ -1,7 +1,8 @@
 Source: scancode-toolkit
-Section: unknown
+Section: misc
 Priority: optional
-Maintainer: root <root@40825ee16090>
+Maintainer: Philippe Ombredanne<pombredanne@nexb.com>,
+	    Ayush Jain<aj4ayushjain@gmail.com>
 Build-Depends:  debhelper (>= 11), 
 		dh-python,
 		libxml2-dev,
@@ -51,7 +52,6 @@ Depends: patch,
          python-zc.lockfile,
 	 ${misc:Depends},
 	 ${python:Depends},
-Suggests: python-scancode-toolkit-doc
 Description: ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.(Python 2)
  A typical software project often reuses hundreds of third-party packages. License and origin information is not always easy to find and not normalized: ScanCode discovers and normalizes this data for you.
  Why use ScanCode?
