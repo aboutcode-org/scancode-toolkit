@@ -38,7 +38,7 @@ override_dh_install:
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/yg.lockfile-2.2.2-py2.py3-none-any.whl
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/pdfminer.six-20181108-py2.py3-none-any.whl
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/cattrs-0.9.0-py2.py3-none-any.whl
-
+	rm -rf ./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps/lib/python2.7/site-packages/cattr/vendor
 # If you need to rebuild the Sphinx documentation
 # Add spinxdoc to the dh --with line
 #override_dh_auto_build:
