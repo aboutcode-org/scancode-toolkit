@@ -8,6 +8,12 @@ export PYBUILD_NAME=scancode-toolkit
 %:
 	dh $@ --with python2
 
+override_dh_auto_clean:
+
+	rm -rf src/scancode_toolkit.egg-info
+	rm -rf debian/scancode-toolkit
+	rm -rf build
+	dh_clean
 
 # If you need to rebuild the Sphinx documentation
 # Add spinxdoc to the dh --with line
