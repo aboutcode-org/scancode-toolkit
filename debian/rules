@@ -6,7 +6,7 @@
 export PYBUILD_NAME=scancode-toolkit
 
 %:
-	dh $@ --with python2 --buildsystem=pybuild
+	dh $@ --with python2
 
 
 # If you need to rebuild the Sphinx documentation
