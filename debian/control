@@ -2,15 +2,55 @@ Source: scancode-toolkit
 Section: unknown
 Priority: optional
 Maintainer: root <root@40825ee16090>
-Build-Depends: debhelper (>= 11), dh-python, python, python-setuptools
+Build-Depends:  debhelper (>= 11), 
+		dh-python,
+		libxml2-dev,
+                libxslt1-dev,
+                libbz2-1.0 | bzip2,
+		lsb-release,
+                python-all,
+		python2.7-minimal,
+                python-dev,
+		python-setuptools,
+		xz-utils,
+		zlib1g,
 Standards-Version: 4.1.3
-Homepage: <insert the upstream URL, if relevant>
-X-Python-Version: >= 2.6
-X-Python3-Version: >= 3.2
+Homepage: https://github.com/nexB/scancode-toolkit
 
 Package: python-scancode-toolkit
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: patch,
+	 python(>=2.7),
+         python-attr,
+         python-binaryornot,
+         python-bitarray,
+         python-bs4,
+         python-bz2file,
+         python-chardet,
+         python-click,
+         python-contextlib2,
+         python-html5lib,
+         python-intbitset,
+         python-jinja2,
+         python-lxml,
+         python-markupsafe,
+         python-more-itertools,
+         python-nltk,
+         python-pdfminer,
+         python-pluggy,
+         python-pycryptodome(>=3.4),
+         python-pygments,
+         python-pyjavaproperties,
+         python-requests,
+         python-simplejson,
+         python-six,
+         python-toml,
+         python-unicodecsv,
+         python-xmltodict,
+         python-yaml,
+         python-zc.lockfile,
+	 ${misc:Depends},
+	 ${python:Depends},
 Suggests: python-scancode-toolkit-doc
 Description: <insert up to 60 chars description> (Python 2)
  <insert long description, indented with spaces>
