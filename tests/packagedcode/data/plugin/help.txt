@@ -39,7 +39,7 @@ Package: bower
 
 --------------------------------------------
 Package: buck
-  class: packagedcode.build:BuckPackage
+  class: packagedcode.buck:BuckPackage
   metafiles: BUCK
 
 --------------------------------------------
