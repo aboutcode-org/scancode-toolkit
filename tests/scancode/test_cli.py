@@ -107,6 +107,12 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert 'copyright_acme_c-c.c' in result.output
     assert len(open(result_file).read()) > 10
 
+def test_unwanted_log_warning_message():
+    test_dir = test_env.get_test_loc('unwanted_log_message.txt')
+    result_file = test_env.get_temp_file('json')
+    args = ['-c', '--json-pp', result_file, test_dir]
+    result = run_scan_click(args)
+    assert 'No handlers could be found for logger "bs4.dammit"' not in result.output
 
 def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
