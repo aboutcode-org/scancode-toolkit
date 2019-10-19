@@ -293,14 +293,13 @@ class BasePackage(BaseModel):
         Return an OrderedDict of primitive Python types.
         """
         mapping = attr.asdict(self, dict_factory=OrderedDict)
-        if self.qualifiers:
-            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
-
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()
             mapping['repository_download_url'] = self.repository_download_url()
             mapping['api_data_url'] = self.api_data_url()
+        if self.qualifiers:
+            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
         return mapping
 
     @classmethod
