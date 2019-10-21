@@ -107,28 +107,26 @@ class RubyGem(models.Package):
 
         # an unextracted .gen archive
         if location.endswith('.gem'):
-            return get_gem_package(location)
+            yield get_gem_package(location)
 
         # an extractcode-extracted .gen archive
         if location.endswith('metadata.gz-extract'):
             with open(location, 'rb') as met:
                 metadata = met.read()
             metadata = saneyaml.load(metadata)
-            return build_rubygem_package(metadata)
+            yield build_rubygem_package(metadata)
 
         if location.endswith('.gemspec'):
-            # TODO implement me
-            return
+            # TODO: implement me
+            pass
 
         if location.endswith('Gemfile'):
-            # TODO implement me
-            return
+            # TODO: implement me
+            pass
 
         if location.endswith('Gemfile.lock'):
-            # TODO implement me
-            return
-
-        return
+            # TODO: implement me
+            pass
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return rubygems_homepage_url(self.name, self.version, repo=baseurl)

@@ -69,7 +69,7 @@ class BaseBuildManifestPackage(models.Package):
         # declared_license = None
         # there is are dependencies we could use
         # dependencies = []
-        return cls(
+        yield cls(
             name=name,
             version=version)
 
