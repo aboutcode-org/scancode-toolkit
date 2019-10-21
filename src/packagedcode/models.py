@@ -479,7 +479,7 @@ class Package(BasePackage):
     @classmethod
     def recognize(cls, location):
         """
-        Return a Package object or None given a file location pointing to a
+        Yield a Package object or None given a file location pointing to a
         package archive, manifest or similar.
 
         Sub-classes should override to implement their own package recognition.

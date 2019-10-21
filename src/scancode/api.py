@@ -278,12 +278,9 @@ def get_package_info(location, **kwargs):
     Note that all exceptions are caught if there are any errors while parsing a
     package manifest.
     """
-    from packagedcode.recognize import recognize_package
+    from packagedcode.recognize import recognize_packages
     try:
-        manifest = recognize_package(location)
-        if manifest:
-            # TODO: what if we have more than one package in a manifest?
-            return dict(packages=[manifest.to_dict()])
+        return dict(packages=[manifest.to_dict() for manifest in recognize_packages(location)])
     except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))

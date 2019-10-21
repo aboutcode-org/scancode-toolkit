@@ -36,97 +36,123 @@ from packagedcode import npm
 from packagedcode import cargo
 from packagedcode import phpcomposer
 from packagedcode import rpm
-from packagedcode.recognize import recognize_package
+from packagedcode.recognize import recognize_packages
 from packagedcode import nuget
 
 
 class TestRecognize(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_recognize_package_deb(self):
+    def test_recognize_packages_deb(self):
         test_file = self.get_test_loc('archives/adduser_3.112ubuntu1_all.deb')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, packagedcode.models.DebianPackage)
 
-    def test_recognize_package_rpm(self):
+    def test_recognize_packages_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, rpm.RpmPackage)
 
-    def test_recognize_package_cab(self):
+    def test_recognize_packages_cab(self):
         test_file = self.get_test_loc('archives/basic.cab')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, packagedcode.models.CabPackage)
 
-    def test_recognize_package_rar(self):
+    def test_recognize_packages_rar(self):
         test_file = self.get_test_loc('archives/basic.rar')
-        package = recognize_package(test_file)
-        assert None == package
+        packages = list(recognize_packages(test_file))
+        assert len(packages) == 0
 
-    def test_recognize_package_zip(self):
+    def test_recognize_packages_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
-        package = recognize_package(test_file)
-        assert None == package
+        packages = list(recognize_packages(test_file))
+        assert len(packages) == 0
 
-    def test_recognize_package_gem(self):
+    def test_recognize_packages_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, packagedcode.rubygems.RubyGem)
 
-    def test_recognize_package_jar(self):
+    def test_recognize_packages_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, packagedcode.models.JavaJar)
 
-    def test_recognize_package_iso(self):
+    def test_recognize_packages_iso(self):
         test_file = self.get_test_loc('archives/small.iso')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, packagedcode.models.IsoImagePackage)
 
-    def test_recognize_package_does_not_recognize_plain_tarball(self):
+    def test_recognize_packages_does_not_recognize_plain_tarball(self):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
-        package = recognize_package(test_file)
-        assert None == package
+        packages = list(recognize_packages(test_file))
+        assert len(packages) == 0
 
     def test_recognize_cpan_manifest_as_plain_package(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
         try:
-            recognize_package(test_file)
+            recognize_packages(test_file)
             self.fail('Exception not raised')
         except NotImplementedError:
             pass
 
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, maven.MavenPomPackage)
 
     def test_recognize_maven_pom_xml(self):
         test_file = self.get_test_loc('maven2/pom.xml')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, maven.MavenPomPackage)
 
     def test_recognize_npm(self):
         test_file = self.get_test_loc('recon/package.json')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, npm.NpmPackage)
 
     def test_recognize_cargo(self):
         test_file = self.get_test_loc('recon/Cargo.toml')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, cargo.RustCargoCrate)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, phpcomposer.PHPComposerPackage)
 
     def test_recognize_freebsd(self):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, freebsd.FreeBSDPackage)
 
     def test_recognize_nuget(self):
         test_file = self.get_test_loc('recon/bootstrap.nuspec')
-        package = recognize_package(test_file)
+        packages = list(recognize_packages(test_file))
+        assert len(packages) > 0
+        package = packages[0]
         assert isinstance(package, nuget.NugetPackage)
