@@ -90,6 +90,9 @@ addons:
         - pyenv
     update: true
 
+before_install:
+  - chmod +x ./docs/scripts/sphinx_build_link_check.sh
+  - chmod +x ./docs/scripts/doc8_style_check.sh
 
 install:
   - ./configure
@@ -99,6 +102,9 @@ script:
   # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
   # - echo $TEST_SUITE
   - $TEST_SUITE
+  - cd docs
+  - "./scripts/sphinx_build_link_check.sh"
+  - "./scripts/doc8_style_check.sh"
 
 # Pay attention to both calls below. They will succeed even if there
 # is no coverage information or connection to reporting website fails.

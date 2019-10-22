@@ -221,6 +221,11 @@ setup(
         'spdx-tools >= 0.6.0',
         'unicodecsv',
 
+        # ScanCode Docs
+        'Sphinx',
+        'sphinx_rtd_theme',
+        'doc8',
+
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
             # used by yg.lockfile
