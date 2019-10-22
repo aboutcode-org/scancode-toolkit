@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - CHEF-EULA.md
