@@ -280,7 +280,9 @@ def get_package_info(location, **kwargs):
     """
     from packagedcode.recognize import recognize_packages
     try:
-        return dict(packages=[manifest.to_dict() for manifest in recognize_packages(location)])
+        recognized_packages = recognize_packages(location)
+        if recognized_packages:
+            return dict(packages=[package.to_dict() for package in recognized_packages])
     except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))

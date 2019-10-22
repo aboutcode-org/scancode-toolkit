@@ -66,8 +66,8 @@ Recognize package manifests in files.
 
 def recognize_packages(location):
     """
-    Return a list of Package object if one/several was recognized for this
-    `location` or None. Raises Exceptions on errors.
+    Return a list of Package object if any packages were recognized for this
+    `location`, or None if there were no Packages found. Raises Exceptions on errors.
     """
 
     if not filetype.is_file(location):
