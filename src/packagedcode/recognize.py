@@ -66,8 +66,8 @@ Recognize package manifests in files.
 
 def recognize_packages(location):
     """
-    Return a Package object if one was recognized for this `location` or None.
-    Raises Exceptions on errors.
+    Return a list of Package object if one/several was recognized for this
+    `location` or None. Raises Exceptions on errors.
     """
 
     if not filetype.is_file(location):
@@ -86,6 +86,7 @@ def recognize_packages(location):
                      'pygtype:', T.filetype_pygment,
                      'fname:', filename, 'ext:', extension)
 
+    recognized_packages = []
     for package_type in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against
         metafiles = package_type.metafiles
@@ -99,7 +100,8 @@ def recognize_packages(location):
                     # compute and set a normalized license expression
                     recognized.license_expression = recognized.compute_normalized_license()
                     if TRACE:logger_debug('recognize_packages: recognized.license_expression:', recognized.license_expression)
-                yield recognized
+                recognized_packages.append(recognized)
+            return recognized_packages
 
         type_matched = False
         if package_type.filetypes:
@@ -127,11 +129,12 @@ def recognize_packages(location):
                     if recognized and not recognized.license_expression:
                         recognized.license_expression = recognized.compute_normalized_license()
                     if TRACE: logger_debug('recognize_packages: recognized', recognized)
-                    yield recognized
+                    recognized_packages.append(recognized)
             except NotImplementedError:
                 # build a plain package if recognize is not yet implemented
                 recognized = package_type()
                 if TRACE: logger_debug('recognize_packages: recognized', recognized)
-                yield recognized
+                recognized_packages.append(recognized)
+            return recognized_packages
 
         if TRACE: logger_debug('recognize_packages: no match for type:', package_type)
