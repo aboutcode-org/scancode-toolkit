@@ -27,8 +27,6 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import logging
-
 # Import first because this import has monkey-patching side effects
 from scancode.pool import get_pool
 
@@ -116,7 +114,7 @@ from scancode.utils import progressmanager
 
 
 # Tracing flags
-TRACE = False
+TRACE = True
 TRACE_DEEP = False
 
 
@@ -220,6 +218,11 @@ Try 'scancode --help' for help on options and arguments.'''
 try:
     # IMPORTANT: this discovers, loads and validates all available plugins
     plugin_classes, plugin_options = PluginManager.load_plugins()
+    if TRACE:
+        logger_debug('plugin_options:')
+        for clio in plugin_options:
+            logger_debug('   ', clio)
+            logger_debug('name:', clio.name, 'default:', clio.default )
 except ImportError as e:
     echo_stderr('========================================================================')
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
@@ -555,6 +558,7 @@ def run_scan(
         test_slow_mode=False,
         test_error_mode=False,
         pretty_params=None,
+        plugin_options=plugin_options,
         *args, **kwargs):
     """
     Run a scan on `input` path (or a list of input paths) and return a tuple of
@@ -563,6 +567,10 @@ def run_scan(
     results but as native Python. Raise Exceptions (e.g. ScancodeError) on
     error. See scancode() for arguments details.
     """
+    
+    plugins_option_defaults = {clio.name: clio.default for clio in plugin_options}
+    requested_options = dict(plugins_option_defaults)
+    requested_options.update(kwargs)
 
     if not echo_func:
         def echo_func(*_args, **_kwargs):
@@ -612,15 +620,15 @@ def run_scan(
         # the input list of paths
         included_paths = [as_posixpath(path).rstrip(POSIX_PATH_SEP) for path in input]
         # FIXME: this is a hack as this "include" is from an external plugin!!!1
-        include = list(kwargs.get('include', []) or [])
+        include = list(requested_options.get('include', []) or [])
         include.extend(included_paths)
-        kwargs['include'] = include
+        requested_options['include'] = include
 
         # ... and use the common prefix as our new input
         input = common_prefix  # NOQA
 
-    # build mappings of all kwargs to pass down to plugins
-    standard_kwargs = dict(
+    # build mappings of all options to pass down to plugins
+    standard_options = dict(
         input=input,
         strip_root=strip_root,
         full_root=full_root,
@@ -635,7 +643,7 @@ def run_scan(
         test_slow_mode=test_slow_mode,
         test_error_mode=test_error_mode,
     )
-    kwargs.update(standard_kwargs)
+    requested_options.update(standard_options)
 
     success = True
     results = None
@@ -667,10 +675,10 @@ def run_scan(
                 try:
                     name = plugin_cls.name
                     qname = plugin_cls.qname()
-                    plugin = plugin_cls(**kwargs)
+                    plugin = plugin_cls(**requested_options)
                     is_enabled = False
                     try:
-                        is_enabled = plugin.is_enabled(**kwargs)
+                        is_enabled = plugin.is_enabled(**requested_options)
                     except TypeError as te:
                         if not 'takes exactly' in str(te):
                             raise te
@@ -755,7 +763,7 @@ def run_scan(
                 echo_func(' Setup plugin: %(stage)s:%(name)s...' % locals(),
                             fg='green')
             try:
-                plugin.setup(**kwargs)
+                plugin.setup(**requested_options)
             except:
                 msg = 'ERROR: failed to setup plugin: %(stage)s:%(name)s:' % locals()
                 raise ScancodeError(msg + '\n' + traceback.format_exc())
@@ -773,7 +781,7 @@ def run_scan(
 
         # mapping of {"plugin stage:name": [list of attribute keys]}
         # also available as a kwarg entry for plugin
-        kwargs['resource_attributes_by_plugin'] = resource_attributes_by_plugin = {}
+        requested_options['resource_attributes_by_plugin'] = resource_attributes_by_plugin = {}
         for stage, stage_plugins in enabled_plugins_by_stage.items():
             for plugin in stage_plugins:
                 name = plugin.name
@@ -809,7 +817,7 @@ def run_scan(
 
         # mapping of {"plugin stage:name": [list of attribute keys]}
         # also available as a kwarg entry for plugin
-        kwargs['codebase_attributes_by_plugin'] = codebase_attributes_by_plugin = {}
+        requested_options['codebase_attributes_by_plugin'] = codebase_attributes_by_plugin = {}
         for stage, stage_plugins in enabled_plugins_by_stage.items():
             for plugin in stage_plugins:
                 name = plugin.name
@@ -896,7 +904,7 @@ def run_scan(
             stage='pre-scan', plugins=pre_scan_plugins, codebase=codebase,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
-            quiet=quiet, verbose=verbose, kwargs=kwargs, echo_func=echo_func,
+            quiet=quiet, verbose=verbose, kwargs=requested_options, echo_func=echo_func,
         )
         success = success and pre_scan_success
 
@@ -907,7 +915,7 @@ def run_scan(
         scan_success = run_scanners(
             stage='scan', plugins=scanner_plugins, codebase=codebase,
             processes=processes, timeout=timeout, timing=timeout,
-            quiet=quiet, verbose=verbose, kwargs=kwargs, echo_func=echo_func,
+            quiet=quiet, verbose=verbose, kwargs=requested_options, echo_func=echo_func,
         )
         success = success and scan_success
 
@@ -919,7 +927,7 @@ def run_scan(
         post_scan_success = run_codebase_plugins(
             stage='post-scan', plugins=post_scan_plugins, codebase=codebase,
             stage_msg='Run %(stage)ss...', plugin_msg=' Run %(stage)s: %(name)s...',
-            quiet=quiet, verbose=verbose, kwargs=kwargs, echo_func=echo_func,
+            quiet=quiet, verbose=verbose, kwargs=requested_options, echo_func=echo_func,
         )
         success = success and post_scan_success
 
@@ -931,7 +939,7 @@ def run_scan(
         output_filter_success = run_codebase_plugins(
             stage='output-filter', plugins=output_filter_plugins, codebase=codebase,
             stage_msg='Apply %(stage)ss...', plugin_msg=' Apply %(stage)s: %(name)s...',
-            quiet=quiet, verbose=verbose, kwargs=kwargs, echo_func=echo_func,
+            quiet=quiet, verbose=verbose, kwargs=requested_options, echo_func=echo_func,
         )
         success = success and output_filter_success
 
@@ -959,7 +967,7 @@ def run_scan(
                 stage='output', plugins=output_plugins, codebase=codebase,
                 stage_msg='Save scan results...',
                 plugin_msg=' Save scan results as: %(name)s...',
-                quiet=quiet, verbose=verbose, kwargs=kwargs, echo_func=echo_func,
+                quiet=quiet, verbose=verbose, kwargs=requested_options, echo_func=echo_func,
             )
             success = success and output_success
 
@@ -981,7 +989,7 @@ def run_scan(
         if return_results:
             # the structure is exactly the same as the JSON output
             from formattedcode.output_json import get_results
-            results = get_results(codebase, as_list=True, **kwargs)
+            results = get_results(codebase, as_list=True, **requested_options)
 
     finally:
         # remove temporary files
