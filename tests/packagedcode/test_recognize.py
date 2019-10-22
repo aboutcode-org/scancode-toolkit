@@ -103,7 +103,7 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_cpan_manifest_as_plain_package(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
         try:
-            recognize_packages(test_file)
+            list(recognize_packages(test_file))
             self.fail('Exception not raised')
         except NotImplementedError:
             pass
