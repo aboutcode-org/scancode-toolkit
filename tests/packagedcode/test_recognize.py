@@ -110,7 +110,7 @@ class TestRecognize(FileBasedTesting):
 
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
-        packages = list(recognize_packages(test_file))
+        packages = recognize_packages(test_file)
         assert len(packages) > 0
         package = packages[0]
         assert isinstance(package, maven.MavenPomPackage)
