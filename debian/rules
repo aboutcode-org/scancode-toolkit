@@ -1,0 +1,52 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+export PYBUILD_NAME=scancode-toolkit
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_configure:
+
+override_dh_auto_clean:
+
+	rm -rf src/scancode_toolkit.egg-info
+	rm -rf debian/scancode-toolkit
+	rm -rf build
+	dh_clean
+
+override_dh_install:	
+	dh_install	
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/backports.os*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/boolean.py*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/fingerprints*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/jaraco*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/javaproperties*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/license_expression*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/normality*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/patch*py2*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/packageurl_python*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/publicsuffix2*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/py2_ipaddress*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/pymaven_patch*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/pyahocorasick*mu-linux*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/spdx_tools-0.6.0*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/saneyaml*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/tempora*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/text_unidecode*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/url*py2*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/yg.lockfile*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/pdfminer.six*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/ftfy*py2*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/dparse*py2*.whl
+
+#	rm -rf ./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps/lib/python2.7/site-packages/cattr/vendor
+# If you need to rebuild the Sphinx documentation
+# Add spinxdoc to the dh --with line
+#override_dh_auto_build:
+#	dh_auto_build
+#	PYTHONPATH=. http_proxy='127.0.0.1:9' sphinx-build -N -bhtml        docs/ build/html # HTML generator
+#	PYTHONPATH=. http_proxy='127.0.0.1:9' sphinx-build -N -bman        docs/ build/man # Manpage generator
+
