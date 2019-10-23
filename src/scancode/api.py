@@ -259,6 +259,7 @@ def _licenses_data_from_match(match, matched_text=None,
         matched_rule['is_license_notice'] = match.rule.is_license_notice
         matched_rule['is_license_reference'] = match.rule.is_license_reference
         matched_rule['is_license_tag'] = match.rule.is_license_tag
+        matched_rule['notes'] = match.rule.notes
         matched_rule['matcher'] = match.matcher
         matched_rule['rule_length'] = match.rule.length
         matched_rule['matched_length'] = match.len()
@@ -279,11 +280,11 @@ def get_package_info(location, **kwargs):
     package manifest.
     """
     from packagedcode.recognize import recognize_packages
-    try:
+    from packagedcode.recognize import recognize_packages
+        recognized_packages = recognize_packages(location)
         recognized_packages = recognize_packages(location)
         if recognized_packages:
             return dict(packages=[package.to_dict() for package in recognized_packages])
-    except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))
         pass
