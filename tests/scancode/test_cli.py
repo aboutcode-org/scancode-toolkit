@@ -52,6 +52,7 @@ from scancode.cli_test_utils import load_json_result_from_string
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
+
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -107,12 +108,14 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert 'copyright_acme_c-c.c' in result.output
     assert len(open(result_file).read()) > 10
 
+
 def test_unwanted_log_warning_message():
     test_dir = test_env.get_test_loc('unwanted_log_message.txt')
     result_file = test_env.get_temp_file('json')
     args = ['-c', '--json-pp', result_file, test_dir]
     result = run_scan_click(args)
     assert 'No handlers could be found for logger "bs4.dammit"' not in result.output
+
 
 def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
@@ -121,6 +124,15 @@ def test_license_option_detects_licenses():
     run_scan_click(args)
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
+
+
+def test_can_call_run_scan_as_a_function():
+    from scancode.cli import run_scan
+    test_dir = test_env.get_test_loc('license', copy=True)
+    rc, results = run_scan(test_dir, license=True, copyright=True, return_results=True)
+    assert rc
+    assert len(results['files']) == 2
+    assert not results['headers'][0]['errors']
 
 
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
@@ -505,7 +517,7 @@ def test_scan_can_handle_weird_file_names():
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
-@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3), 
+@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3),
         reason='Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
         ' Also this fails on Windows and Python 3')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
