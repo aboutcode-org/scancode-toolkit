@@ -3,7 +3,7 @@
   "namespace": "com.adobe.ac.samples.bash",
   "name": "bash_flex_app",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "com.adobe.ac.samples.bash bash bash_flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm.",

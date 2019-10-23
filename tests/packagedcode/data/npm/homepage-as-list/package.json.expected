@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "npm-research",
   "version": "0.0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Nice little utility to help you research NPM packages.",

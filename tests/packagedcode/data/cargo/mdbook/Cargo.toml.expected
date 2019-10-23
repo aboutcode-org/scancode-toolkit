@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "mdbook",
   "version": "0.2.4-alpha.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Rust",
   "description": "Create books from markdown files",

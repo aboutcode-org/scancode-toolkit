@@ -4,7 +4,9 @@
     "namespace": null,
     "name": "hiredis",
     "version": "0.6.3",
-    "qualifiers": "platform=java",
+    "qualifiers": {
+      "platform": "java"
+    },
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Ruby wrapper for hiredis (protocol serialization/deserialization and blocking I/O)",

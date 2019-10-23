@@ -3,7 +3,7 @@
   "namespace": "org.dbwebx",
   "name": "tools",
   "version": "0.0.1.SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "org.dbwebx::tools",

@@ -223,6 +223,7 @@ class BasePackage(BaseModel):
     qualifiers = Mapping(
         default=None,
         value_type=str,
+        converter=lambda v: normalize_qualifiers(v, encode=False),
         label='package qualifiers',
         help='Optional mapping of key=value pairs qualifiers for this package')
 
@@ -299,7 +300,7 @@ class BasePackage(BaseModel):
             mapping['repository_download_url'] = self.repository_download_url()
             mapping['api_data_url'] = self.api_data_url()
         if self.qualifiers:
-            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
+            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=False)
         return mapping
 
     @classmethod
@@ -661,7 +662,7 @@ class IvyJar(JavaJar):
     default_type = 'ivy'
     default_primary_language = 'Java'
 
-#FIXME: move to bower.py
+# FIXME: move to bower.py
 @attr.s()
 class BowerPackage(Package):
     metafiles = ('bower.json',)

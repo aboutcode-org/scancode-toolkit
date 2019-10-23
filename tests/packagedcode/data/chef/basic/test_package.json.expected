@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "test",
   "version": "0.01",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Ruby",
   "description": "test package",

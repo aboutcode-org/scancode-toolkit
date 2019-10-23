@@ -3,7 +3,7 @@
   "namespace": "@invisionag",
   "name": "eslint-config-ivx",
   "version": "0.0.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": null,

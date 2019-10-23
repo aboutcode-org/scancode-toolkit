@@ -3,7 +3,7 @@
   "namespace": "ch.qos.logback",
   "name": "logback-access",
   "version": "0.2.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.",

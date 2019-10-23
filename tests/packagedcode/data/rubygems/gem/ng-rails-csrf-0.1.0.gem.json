@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "ng-rails-csrf",
     "version": "0.1.0",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "AngularJS rails gem which you can load into any rails project to make sure CSRF token is used with Angular http requests\nAngularJS for using CSRF token with http requests",

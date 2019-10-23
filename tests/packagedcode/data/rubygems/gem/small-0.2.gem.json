@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "small",
     "version": "0.2",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "A small collection of useful Ruby utilities",

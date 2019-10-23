@@ -3,7 +3,7 @@
   "namespace": "org.webreformatter.wrappers",
   "name": "com.google.gwt.query",
   "version": "0.1.5.SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "com.google.gwt.query",

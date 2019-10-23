@@ -3,7 +3,7 @@
   "namespace": "org.apache.activemq",
   "name": "activemq-camel",
   "version": "5.4.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "ActiveMQ :: Camel\nActiveMQ component for Camel",

@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "packageurl-python",
   "version": "0.8.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "A \"purl\" aka. package URL parser and builder",

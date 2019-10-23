@@ -3,7 +3,7 @@
   "namespace": "au.com.acegi",
   "name": "xml-format-maven-plugin",
   "version": "3.0.6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "XML Format Maven Plugin\nAutomatically formats XML files in a project.",
