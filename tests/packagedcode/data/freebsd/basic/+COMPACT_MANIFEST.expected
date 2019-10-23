@@ -3,7 +3,10 @@
   "namespace": null,
   "name": "dmidecode",
   "version": "2.12",
-  "qualifiers": "arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
+  "qualifiers": {
+    "arch": "freebsd:10:x86:64",
+    "origin": "sysutils/dmidecode"
+  },
   "subpath": null,
   "primary_language": null,
   "description": "Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table\ncontents in a human-readable format. The output contains a description of the\nsystem's hardware components, as well as other useful pieces of information\nsuch as serial numbers and BIOS revision.\n\nWWW: http://www.nongnu.org/dmidecode/",

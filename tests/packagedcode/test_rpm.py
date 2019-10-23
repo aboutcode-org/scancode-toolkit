@@ -51,7 +51,7 @@ class TestRpmBasics(FileBasedTesting):
             ('namespace', None),
             ('name', 'libproxy-bin'),
             ('version', '0.3.0-4.el6_3'),
-            ('qualifiers', None),
+            ('qualifiers', OrderedDict()),
             ('subpath', None),
             ('primary_language', None),
             ('description',

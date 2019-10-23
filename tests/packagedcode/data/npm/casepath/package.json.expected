@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "casesensitivepathswebpackpluginDemo",
   "version": "0.0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "just a simple demo for showing config and how to E2E test",

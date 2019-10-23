@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "react-mobile-navigation-modal",
   "version": "0.1.0-rc.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "React mobile navigation modal.",

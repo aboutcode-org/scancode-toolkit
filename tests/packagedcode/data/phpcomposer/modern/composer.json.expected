@@ -3,7 +3,7 @@
   "namespace": "",
   "name": "integration-hub",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "PHP",
   "description": null,

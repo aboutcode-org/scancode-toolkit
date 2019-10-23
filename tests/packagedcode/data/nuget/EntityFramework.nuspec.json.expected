@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "EntityFramework",
   "version": "6.1.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Entity Framework is Microsoft's recommended data access technology for new applications.",

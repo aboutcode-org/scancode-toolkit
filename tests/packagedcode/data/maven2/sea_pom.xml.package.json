@@ -3,7 +3,7 @@
   "namespace": "no.knowit.seam",
   "name": "root",
   "version": "2.2.0-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "no.knowit.seam : root : 2.2.0-SNAPSHOT\nThe Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.",

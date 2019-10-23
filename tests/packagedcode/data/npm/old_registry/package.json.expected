@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "automatta",
   "version": "0.0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "A powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript.",

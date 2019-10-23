@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "boolean.py",
   "version": "1.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Boolean Algreba",

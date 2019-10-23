@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "abeona",
   "version": "0.45.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "A simple transcriptome assembler based on kallisto and Cortex graphs.",

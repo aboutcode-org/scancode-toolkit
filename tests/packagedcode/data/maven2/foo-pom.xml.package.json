@@ -3,7 +3,7 @@
   "namespace": "com.myco.foo.bar.baz",
   "name": "baz-bar-parent",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

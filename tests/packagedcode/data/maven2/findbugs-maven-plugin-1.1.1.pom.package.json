@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.mojo",
   "name": "findbugs-maven-plugin",
   "version": "1.1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven FindBugs PlugIn\nThis Plug-In generates reports based on the FindBugs Library",

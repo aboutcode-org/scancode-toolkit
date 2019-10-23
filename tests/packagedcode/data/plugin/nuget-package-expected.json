@@ -27,7 +27,7 @@
           "namespace": null,
           "name": "Castle.Core",
           "version": "4.2.1",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": null,
           "description": "Castle Core, including DynamicProxy, Logging Abstractions and DictionaryAdapter",

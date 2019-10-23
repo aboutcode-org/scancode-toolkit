@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "dependabot-omnibus",
     "version": "0.87.15",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Meta-package that depends on all core dependabot-core package managers\nAutomated dependency management for Ruby, JavaScript, Python, PHP, Elixir, Rust, Java, .NET, Elm and Go",

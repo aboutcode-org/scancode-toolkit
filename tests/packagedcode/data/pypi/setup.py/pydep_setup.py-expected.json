@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "pydep",
   "version": "0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "A simple module that will print the dependencies of a python projectUsage: python -m pydep <dir>",

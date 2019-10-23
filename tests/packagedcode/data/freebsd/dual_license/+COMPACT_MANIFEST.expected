@@ -3,7 +3,10 @@
   "namespace": null,
   "name": "rubygem-facets",
   "version": "3.1.0",
-  "qualifiers": "arch=freebsd:10:%2A&origin=devel/rubygem-facets",
+  "qualifiers": {
+    "arch": "freebsd:10:*",
+    "origin": "devel/rubygem-facets"
+  },
   "subpath": null,
   "primary_language": null,
   "description": "Facets is a large collection of core extension methods and module\nadditions for the Ruby programming language. The core extensions\nare unique by virtue of their atomicity. Methods are stored in their\nown files, allowing for highly granular control of requirements.\nThe modules include a variety of useful classes, mixins and\nmicroframeworks, from the Functor to a full-blown SI Units system.\n\nWWW: http://rubyworks.github.io/facets/",

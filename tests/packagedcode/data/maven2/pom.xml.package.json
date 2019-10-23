@@ -3,7 +3,7 @@
   "namespace": "ur.urwerk.test.modules",
   "name": "main",
   "version": "1.0.0-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "ur.urwerk.test.modules:main:pom:1.0.0-SNAPSHOT",
