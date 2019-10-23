@@ -20,7 +20,10 @@ Homepage: https://github.com/nexB/scancode-toolkit
 
 Package: scancode-toolkit
 Architecture: all
-Depends: patch,
+Depends: libarchive13,
+	 libmagic-dev,
+	 libmagic-mgc,
+	 patch,
 	 python(>=2.7),
          python-attr,
          python-binaryornot,
@@ -50,6 +53,7 @@ Depends: patch,
          python-xmltodict,
          python-yaml,
          python-zc.lockfile,
+	 p7zip-full,
 	 ${misc:Depends},
 	 ${python:Depends},
 Description: ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.(Python 2)
