@@ -17,7 +17,7 @@ desc = '''A ScanCode path provider plugin to provide a prebuilt native libmagic 
 
 setup(
     name='typecode-libmagic',
-    version='5.22.1',
+    version='5.22.3',
     license='bsd-simplified AND other-permissive AND other-copyleft',
     description=desc,
     long_description=desc,

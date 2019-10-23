@@ -17,7 +17,7 @@ desc = '''A ScanCode path provider plugin to provide a system package provided l
 
 setup(
     name='extractcode-libarchive-system-provided',
-    version='3.1.3',
+    version='3.1.4',
     license='bsd-simplified',
     description=desc,
     long_description=desc,
