@@ -11,3 +11,4 @@ ignorable_holders:
     - the original author or authors
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
+minimum_coverage: 90
