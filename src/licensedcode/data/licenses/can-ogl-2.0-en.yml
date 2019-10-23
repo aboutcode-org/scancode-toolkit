@@ -4,3 +4,6 @@ name: Open Government Licence Canada 2.0
 category: Permissive
 owner: Canada Government
 homepage_url: https://open.canada.ca/en/open-government-licence-canada
+spdx_license_key: OGL-Canada-2.0
+other_urls:
+    - https://open.canada.ca/en/open-government-licence-canada
