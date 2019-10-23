@@ -36,7 +36,12 @@ import scancode_config
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
-from commoncode.system import on_windows
+import os
+import logging
+import sys
+from time import sleep
+from time import time
+import traceback
 
 # Python 2 and 3 support
 try:
@@ -45,12 +50,6 @@ try:
 except ImportError:
     # Python 3
     pass
-
-import os
-import sys
-from time import sleep
-from time import time
-import traceback
 
 # this exception is not available on posix
 try:
@@ -61,10 +60,8 @@ except NameError:
 
 import click  # NOQA
 click.disable_unicode_literals_warning = True
-from six import string_types
 
-# import early
-from scancode_config import __version__ as scancode_version
+from six import string_types
 
 from commoncode import compat
 from commoncode.fileutils import as_posixpath
@@ -72,6 +69,7 @@ from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.system import py2
+from commoncode.system import on_windows
 from commoncode.system import on_linux
 
 from plugincode import PluginManager
@@ -114,7 +112,7 @@ from scancode.utils import progressmanager
 
 
 # Tracing flags
-TRACE = True
+TRACE = False
 TRACE_DEEP = False
 
 
@@ -123,8 +121,6 @@ def logger_debug(*args):
 
 
 if TRACE or TRACE_DEEP:
-    import logging
-
     logger = logging.getLogger(__name__)
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -146,7 +142,7 @@ def print_examples(ctx, param, value):
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    click.echo('ScanCode version ' + scancode_version)
+    click.echo('ScanCode version ' + scancode_config.__version__)
     ctx.exit()
 
 
@@ -222,7 +218,7 @@ try:
         logger_debug('plugin_options:')
         for clio in plugin_options:
             logger_debug('   ', clio)
-            logger_debug('name:', clio.name, 'default:', clio.default )
+            logger_debug('name:', clio.name, 'default:', clio.default)
 except ImportError as e:
     echo_stderr('========================================================================')
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
@@ -488,11 +484,11 @@ def scancode(ctx, input,  # NOQA
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
     """
-    
+
     # configure a null root handler ONLY when used as a command line
-    # otherwise no root handler is set 
+    # otherwise no root handler is set
     logging.getLogger().addHandler(logging.NullHandler())
-    
+
     success = False
     try:
         # Validate CLI UI options dependencies and other CLI-specific inits
@@ -567,7 +563,7 @@ def run_scan(
     results but as native Python. Raise Exceptions (e.g. ScancodeError) on
     error. See scancode() for arguments details.
     """
-    
+
     plugins_option_defaults = {clio.name: clio.default for clio in plugin_options}
     requested_options = dict(plugins_option_defaults)
     requested_options.update(kwargs)
@@ -882,7 +878,7 @@ def run_scan(
         cle = codebase.get_or_create_current_header()
         cle.start_timestamp = start_timestamp
         cle.tool_name = 'scancode-toolkit'
-        cle.tool_version = scancode_version
+        cle.tool_version = scancode_config.__version__
         cle.notice = notice
         cle.options = pretty_params or {}
 
