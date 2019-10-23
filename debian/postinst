@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this script add the scancode bundled deps folder into site-packages
+set -e
+set -x
+
+echo "/usr/lib/python2.7/dist-packages/scancode-deps/lib/python2.7/site-packages" > sc.pth
+Python_usersite=$(python2.7 -m site --user-site)
+mv sc.pth $Python_usersite
