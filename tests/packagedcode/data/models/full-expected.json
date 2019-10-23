@@ -3,7 +3,10 @@
   "namespace": "fedora",
   "name": "Sample",
   "version": "12.2.3",
-  "qualifiers": "abc=12&this=that",
+  "qualifiers": {
+    "abc": "12",
+    "this": "that"
+  },
   "subpath": "asdasd/asdasd/asdasd/",
   "primary_language": "C/C++",
   "description": "Some package",

@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "haxelib",
   "version": "3.4.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Haxe",
   "description": "The haxelib client",

@@ -3,7 +3,7 @@
   "namespace": "org.modeler",
   "name": "modeler",
   "version": "0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "org.modeler~modeler",

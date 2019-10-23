@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "chartist",
   "version": "0.11.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Simple, responsive charts",

@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "John Doe",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Physics-like animations for pretty particles",

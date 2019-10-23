@@ -3,7 +3,7 @@
   "namespace": "bcel",
   "name": "bcel",
   "version": "5.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

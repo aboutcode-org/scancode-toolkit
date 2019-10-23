@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "pyrpm-02strich",
   "version": "0.5.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "A pure python rpm reader and YUM metadata generator",

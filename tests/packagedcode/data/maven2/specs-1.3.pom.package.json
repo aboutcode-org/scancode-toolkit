@@ -3,7 +3,7 @@
   "namespace": "org.apache.geronimo.specs",
   "name": "specs",
   "version": "1.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Geronimo Specifications\nProvides open-source implementations of Sun specifications.",

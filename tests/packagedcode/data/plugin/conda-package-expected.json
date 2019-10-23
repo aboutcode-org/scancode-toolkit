@@ -45,7 +45,7 @@
           "namespace": null,
           "name": "requests-kerberos",
           "version": "0.8.0",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": null,
           "description": "Kerberos authentication handler for python-requests",

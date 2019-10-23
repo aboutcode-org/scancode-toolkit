@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "mime",
   "version": "1.3.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "A comprehensive library for mime-type mapping",

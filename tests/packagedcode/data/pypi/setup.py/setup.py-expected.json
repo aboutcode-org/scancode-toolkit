@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "scancode-toolkit",
   "version": "1.5.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "ScanCode is a tool to scan code for license, copyright and other interesting facts.",

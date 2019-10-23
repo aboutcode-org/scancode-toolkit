@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "int_time",
     "version": "0.0.2",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Integer Time Class\nA value class for time",

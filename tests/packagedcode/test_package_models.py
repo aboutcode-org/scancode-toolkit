@@ -46,7 +46,7 @@ class TestModels(PackageTester):
             ('namespace', None),
             ('name', u'someAndroidPAcakge'),
             ('version', None),
-            ('qualifiers', None),
+            ('qualifiers', OrderedDict()),
             ('subpath', None),
             ('primary_language', u'Java'),
             ('description', None),
@@ -96,14 +96,33 @@ class TestModels(PackageTester):
         expected_loc = 'models/simple-expected.json'
         self.check_package(package, expected_loc, regen=False)
 
-    def test_Package_model_qualifiers_are_serialized_as_strings(self):
+    def test_Package_model_qualifiers_are_serialized_as_mappings(self):
         package = models.Package(
             type='maven',
             name='this',
             version='23',
             qualifiers=OrderedDict(this='that')
         )
-        assert 'this=that' == package.to_dict()['qualifiers']
+        assert OrderedDict(this='that') == package.to_dict()['qualifiers']
+
+    def test_Package_model_qualifiers_are_kept_as_mappings(self):
+        package = models.Package(
+            type='maven',
+            name='this',
+            version='23',
+            qualifiers=OrderedDict(this='that')
+        )
+        assert OrderedDict(this='that') == package.qualifiers
+
+    def test_Package_model_qualifiers_are_converted_to_mappings(self):
+        package = models.Package(
+            type='maven',
+            name='this',
+            version='23',
+            qualifiers='this=that'
+        )
+        assert OrderedDict(this='that') == package.qualifiers
+
 
     def test_Package_full(self):
         package = Package(

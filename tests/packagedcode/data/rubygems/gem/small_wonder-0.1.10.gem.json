@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "small_wonder",
     "version": "0.1.10",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "A Deployment Tool",

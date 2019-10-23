@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "gyp",
   "version": "0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Generate Your Projects",

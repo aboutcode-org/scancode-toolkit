@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "Sample",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Some package",

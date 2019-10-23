@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "Luke Tierney",
   "version": "0.2-16",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Code analysis tools for R.",

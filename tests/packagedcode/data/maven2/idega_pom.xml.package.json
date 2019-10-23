@@ -3,7 +3,7 @@
   "namespace": "com.idega.block.addon",
   "name": "com.idega.block.contract",
   "version": "4.1.3-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "idegaWeb Contract Block\nContract",

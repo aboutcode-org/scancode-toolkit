@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "xmltodict",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": null,

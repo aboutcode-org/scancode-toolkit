@@ -3,7 +3,7 @@
   "namespace": "narrowspark",
   "name": "framework",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "PHP",
   "description": null,
