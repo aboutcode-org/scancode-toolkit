@@ -41,6 +41,9 @@ override_dh_install:
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/pdfminer.six*.whl
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/ftfy*py2*.whl
 	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/dparse*py2*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/extractcode_7z_system*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/extractcode_libarchive_system*.whl
+	PYTHONUSERBASE=./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps pip install --user --upgrade thirdparty/typecode_libmagic_system*.whl
 
 #	rm -rf ./debian/scancode-toolkit/usr/lib/python2.7/dist-packages/scancode-deps/lib/python2.7/site-packages/cattr/vendor
 # If you need to rebuild the Sphinx documentation
