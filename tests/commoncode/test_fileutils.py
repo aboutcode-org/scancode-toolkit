@@ -43,6 +43,7 @@ from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode.system import py3
+from commoncode.system import py2_with_linux
 from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import make_non_executable
 from commoncode.testcase import make_non_readable
@@ -337,10 +338,10 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        if on_linux and py2:
+        if py2_with_linux:
             test_dir = compat.unicode(test_dir)
         result = list(x[-1] for x in fileutils.walk(test_dir))
-        if on_linux and py2:
+        if py2_with_linux:
             expected = [['2.csv'], ['gru\xcc\x88n.png']]
         else:
             expected = [[u'2.csv'], [u'gru\u0308n.png']]
@@ -378,7 +379,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
+        if not py2_with_linux:
             test_dir = compat.unicode(test_dir)
         result = list(os.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
@@ -472,7 +473,7 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/unicode.zip'
         ]
         assert sorted(expected) == sorted(result)
-        if on_linux and py2:
+        if py2_with_linux:
             assert all(isinstance(p, bytes) for p in result)
         else:
             assert all(isinstance(p, compat.unicode) for p in result)
@@ -500,14 +501,14 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        if on_linux and py2:
+        if py2_with_linux:
             EMPTY_STRING = ''
         else:
             test_dir = compat.unicode(test_dir)
             EMPTY_STRING = u''
 
         result = sorted([p.replace(test_dir, EMPTY_STRING) for p in fileutils.resource_iter(test_dir)])
-        if on_linux and py2:
+        if py2_with_linux:
             expected = [
                 '/2.csv',
                 '/a',
@@ -538,7 +539,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
+        if not py2_with_linux:
             test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
         assert 18 == len(result)
@@ -548,7 +549,7 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
+        if not py2_with_linux:
             test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
