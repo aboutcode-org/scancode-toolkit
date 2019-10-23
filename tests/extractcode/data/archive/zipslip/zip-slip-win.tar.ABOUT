@@ -1,0 +1,5 @@
+name: zip-slip test archives 
+about_resource: zip-slip-win.tar
+date: 2018-06-06
+download_url: https://github.com/snyk/zip-slip-vulnerability/archive/b8f81ac4aa4573b744f3ad7c405a110fa9f8c9ec.zip
+notes: these test data files are for testing path traversal vulnerabilities
