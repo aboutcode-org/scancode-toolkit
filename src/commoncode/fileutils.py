@@ -26,12 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-try:
-    from os import fsencode
-    from os import fsdecode
-except ImportError:
-    from backports.os import fsencode
-    from backports.os import fsdecode  # NOQA
 
 import errno
 import os
@@ -52,8 +46,16 @@ except ImportError:
 from commoncode import compat
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode.system import on_linux
+from commoncode.system import py2_with_linux
 from commoncode.system import py2
+
+if py2_with_linux:
+    from backports.os import fsencode 
+
+try:
+    from os import fsdecode
+except ImportError:
+    from backports.os import fsdecode  # NOQA
 
 # this exception is not available on posix
 try:
@@ -83,7 +85,7 @@ if TRACE:
 # Paths can only be sanely handled as raw bytes on Linux and Python2
 
 
-if on_linux and py2:
+if py2_with_linux:
     PATH_TYPE = bytes
     POSIX_PATH_SEP = b'/'
     WIN_PATH_SEP = b'\\'
@@ -129,7 +131,7 @@ def create_dir(location):
         # may fail on win if the path is too long
         # FIXME: consider using UNC ?\\ paths
 
-        if on_linux and py2:
+        if py2_with_linux:
             location = fsencode(location)
         try:
             os.makedirs(location)
@@ -167,17 +169,14 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
         base_dir = os.getenv('SCANCODE_TMP')
         if not base_dir:
             base_dir = tempfile.gettempdir()
-        else:
-            if on_linux and py2:
-                base_dir = fsencode(base_dir)
-
-    if not os.path.exists(base_dir):
-        create_dir(base_dir)
-
-    if not has_base:
+        elif py2_with_linux:
+            base_dir = fsencode(base_dir)
         prefix = 'scancode-tk-'
 
-    if on_linux and py2:
+    if not os.path.exists(base_dir):
+        create_dir(base_dir)        
+
+    if py2_with_linux:
         prefix = fsencode(prefix)
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
@@ -193,7 +192,7 @@ def prepare_path(pth):
     Return the `pth` path string either as encoded bytes if on Linux and using
     Python 2 or as a unicode/text otherwise.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         if not isinstance(pth, bytes):
             pth = fsencode(pth)
         return pth
@@ -351,7 +350,7 @@ def splitext(path, force_posix=False):
     else:
         base_name, extension = posixpath.splitext(name)
         # handle composed extensions of tar.gz, bz, zx,etc
-        if base_name.endswith(b'.tar' if on_linux and py2 else '.tar'):
+        if base_name.endswith(b'.tar' if py2_with_linux else '.tar'):
             base_name, extension2 = posixpath.splitext(base_name)
             extension = extension2 + extension
     return base_name, extension
@@ -376,7 +375,7 @@ def walk(location, ignored=ignore_nothing):
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         location = fsencode(location)
 
     # TODO: consider using the new "scandir" module for some speed-up.
@@ -421,7 +420,7 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
                     if the location should be ignored.
     :return: an iterable of file and directory locations.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         location = fsencode(location)
     for top, dirs, files in walk(location, ignored):
         if with_dirs:
@@ -448,7 +447,7 @@ def copytree(src, dst):
     This function is similar to and derived from the Python shutil.copytree
     function. See fileutils.py.ABOUT for details.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -497,7 +496,7 @@ def copyfile(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -518,7 +517,7 @@ def copytime(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         src = fsencode(src)
         dst = fsencode(dst)
 
@@ -556,7 +555,7 @@ def chmod(location, flags, recurse=False):
     """
     if not location or not os.path.exists(location):
         return
-    if on_linux and py2:
+    if py2_with_linux:
         location = fsencode(location)
 
     location = os.path.abspath(location)
@@ -586,7 +585,7 @@ def chmod_tree(location, flags):
     """
     Update permissions recursively in a directory tree `location`.
     """
-    if on_linux and py2:
+    if py2_with_linux:
         location = fsencode(location)
     if filetype.is_dir(location):
         for top, dirs, files in walk(location):
@@ -607,7 +606,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     """
     if TRACE:
         logger_debug('_rm_handler:', 'path:', path, 'excinfo:', excinfo)
-    if on_linux and py2:
+    if py2_with_linux:
         path = fsencode(path)
     if function in (os.rmdir, os.listdir):
         try:
@@ -639,7 +638,7 @@ def delete(location, _err_handler=_rm_handler):
     if not location:
         return
 
-    if on_linux and py2:
+    if py2_with_linux:
         location = fsencode(location)
 
     if os.path.exists(location) or filetype.is_broken_link(location):

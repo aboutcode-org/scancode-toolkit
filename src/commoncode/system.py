@@ -109,6 +109,9 @@ py35 = py3 and _sys_v1 == 5
 py36 = py3 and _sys_v1 == 6
 py37 = py3 and _sys_v1 == 7
 
+#these are used together in many places
+py2_with_linux = py2_with_linux
+
 # Do not let Windows error pop up messages with default SetErrorMode
 # See http://msdn.microsoft.com/en-us/library/ms680621(VS100).aspx
 #

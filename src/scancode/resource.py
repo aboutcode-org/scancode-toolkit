@@ -61,6 +61,10 @@ from commoncode.datautils import String
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
 
+from commoncode import ignore
+from commoncode.system import py2
+from commoncode.system import py2_with_linux
+
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
@@ -69,14 +73,15 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
 
-from commoncode import ignore
-from commoncode.system import on_linux
-from commoncode.system import py2
-from commoncode.system import py3
+if py2_with_linux:
+    from commoncode.fileutils import fsencode
+
+
+
+
 
 
 """
@@ -258,7 +263,7 @@ class Codebase(object):
 
         # setup location
         ########################################################################
-        if on_linux and py2:
+        if py2_with_linux:
             location = fsencode(location)
         else:
             location = fsdecode(location)
@@ -359,7 +364,7 @@ class Codebase(object):
         """
         if not self.cache_dir:
             return
-        resid = (b'%08x'if (py2 and on_linux) else '%08x') % rid
+        resid = (b'%08x' if (py2_with_linux) else '%08x') % rid
         cache_sub_dir, cache_file_name = resid[-2:], resid
         parent = join(self.cache_dir, cache_sub_dir)
         if create and not exists(parent):
@@ -696,7 +701,7 @@ class Codebase(object):
         # TODO: consider messagepack or protobuf for compact/faster processing?
         if py2:
             mode = 'wb'
-        if py3:
+        else:
             mode = 'w'
         with open(cache_location , mode) as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
@@ -927,7 +932,7 @@ def to_native_path(path):
     """
     if not path:
         return path
-    if on_linux and py2:
+    if py2_with_linux:
         return fsencode(path)
     else:
         return fsdecode(path)
@@ -1335,7 +1340,7 @@ def get_codebase_cache_dir(temp_dir):
 
     prefix = 'scancode-codebase-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
-    if on_linux and py2:
+    if py2_with_linux:
         cache_dir = fsencode(cache_dir)
     else:
         cache_dir = fsdecode(cache_dir)
