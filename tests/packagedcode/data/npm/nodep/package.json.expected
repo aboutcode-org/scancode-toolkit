@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "etcd-dashboard",
   "version": "0.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": null,

@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "rustup",
   "version": "1.17.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Rust",
   "description": "Manage multiple rust installations with ease",

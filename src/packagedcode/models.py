@@ -223,6 +223,7 @@ class BasePackage(BaseModel):
     qualifiers = Mapping(
         default=None,
         value_type=str,
+        converter=lambda v: normalize_qualifiers(v, encode=False),
         label='package qualifiers',
         help='Optional mapping of key=value pairs qualifiers for this package')
 
@@ -293,14 +294,13 @@ class BasePackage(BaseModel):
         Return an OrderedDict of primitive Python types.
         """
         mapping = attr.asdict(self, dict_factory=OrderedDict)
-        if self.qualifiers:
-            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
-
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()
             mapping['repository_download_url'] = self.repository_download_url()
             mapping['api_data_url'] = self.api_data_url()
+        if self.qualifiers:
+            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=False)
         return mapping
 
     @classmethod
@@ -479,7 +479,7 @@ class Package(BasePackage):
     @classmethod
     def recognize(cls, location):
         """
-        Return a Package object or None given a file location pointing to a
+        Yield one or more Package objects given a file location pointing to a
         package archive, manifest or similar.
 
         Sub-classes should override to implement their own package recognition.
@@ -662,7 +662,7 @@ class IvyJar(JavaJar):
     default_type = 'ivy'
     default_primary_language = 'Java'
 
-#FIXME: move to bower.py
+# FIXME: move to bower.py
 @attr.s()
 class BowerPackage(Package):
     metafiles = ('bower.json',)

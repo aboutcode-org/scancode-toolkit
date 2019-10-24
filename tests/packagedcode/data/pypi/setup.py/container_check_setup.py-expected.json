@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "container-check",
   "version": "1.0.6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Tool for checking and updating rpm based containers.",

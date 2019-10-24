@@ -3,7 +3,7 @@
   "namespace": "fake",
   "name": "fake",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "PHP",
   "description": null,

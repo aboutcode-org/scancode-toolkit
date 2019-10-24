@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "archive-tar-minitar",
     "version": "0.5.2",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Provides POSIX tarchive management from Ruby programs.\nArchive::Tar::Minitar is a pure-Ruby library and command-line utility that provides the ability to deal with POSIX tar(1) archive files. The implementation is based heavily on Mauricio Ferna'ndez's implementation in rpa-base, but has been reorganised to promote reuse in other projects.",

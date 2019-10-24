@@ -3,7 +3,10 @@
   "namespace": null,
   "name": "0d1n",
   "version": "2.3",
-  "qualifiers": "arch=freebsd:10:x86:64&origin=security/0d1n",
+  "qualifiers": {
+    "arch": "freebsd:10:x86:64",
+    "origin": "security/0d1n"
+  },
   "subpath": null,
   "primary_language": null,
   "description": "0d1n is a tool for automating customized attacks against web applications.\nSome of its features:\n\n  - Brute force login names and passwords in authentication forms\n  - Directory disclosure (brute over PATH list and find HTTP status codes)\n  - Tests to find SQL injection and XSS vulnerabilities\n  - Options to load ANTI-CSRF token for each request\n  - Options to use random proxy per request\n\nWWW: https://github.com/CoolerVoid/0d1n",

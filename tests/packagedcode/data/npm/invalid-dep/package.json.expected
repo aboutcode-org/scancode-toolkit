@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "angular2-autosize",
   "version": "1.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Directive that automatically adjusts textarea height to fit content",

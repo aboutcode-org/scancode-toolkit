@@ -3,7 +3,7 @@
   "namespace": "log4j",
   "name": "log4j",
   "version": "1.2.15",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Apache Log4j\nApache Log4j 1.2",

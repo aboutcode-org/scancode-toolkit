@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "publicsuffix",
   "version": "1.1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Get a public suffix for a domain name using the Public Suffix List.",

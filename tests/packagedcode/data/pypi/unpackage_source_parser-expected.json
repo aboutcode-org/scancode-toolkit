@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "TicketImport",
   "version": "0.7a",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": null,

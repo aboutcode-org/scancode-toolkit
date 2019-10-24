@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "mb",
   "version": "2.19.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "mb, a tool to maintain the MirrorBrain database",

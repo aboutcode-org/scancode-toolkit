@@ -3,7 +3,7 @@
   "namespace": "org.apache.geronimo.bundles",
   "name": "axis",
   "version": "1.4_1-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.",

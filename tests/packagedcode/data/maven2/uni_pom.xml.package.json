@@ -3,7 +3,7 @@
   "namespace": "de.fzj.unicore.rcp",
   "name": "eclipseSequencePlugin",
   "version": "0.0.1-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Eclipse Sequence Plugin",

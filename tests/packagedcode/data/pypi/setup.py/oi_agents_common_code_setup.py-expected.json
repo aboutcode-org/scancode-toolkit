@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "agents_common",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Function utils for OII agents",

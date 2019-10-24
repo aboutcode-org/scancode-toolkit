@@ -3,7 +3,5 @@ name: Fossology reference licenses
 version: 3.4.0-78-g625bdf3
 homepage_url: https://github.com/fossology/fossology
 license_expression: gpl-2.0
-
 notes: This set of files is derived from the licenseref.sql
-data file from Fossology nomos 
- fossology/install/licenseref.sql
+ data file from Fossology nomos fossology/install/licenseref.sql

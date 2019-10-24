@@ -1,0 +1,5 @@
+about_resource: illegal.pom.xml
+date: 2017-05-24
+name: malformed test Maven POM
+notes: malformed test Maven POMs from byte-buddy/byte-buddy-maven-plugin/src/test/resources/net/bytebuddy/test/
+download_url: https://github.com/raphw/byte-buddy/archive/838148dd9b735651720094e59f7ce10c1fe7880f.zip

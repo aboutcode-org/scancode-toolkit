@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "thrift_fb303",
   "version": "0.10.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Python bindings for the Apache Thrift FB303",

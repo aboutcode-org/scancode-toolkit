@@ -1036,19 +1036,22 @@ class TestExtract(FileBasedTesting):
         test_dir = self.get_test_loc('extract/zipslip', copy=True)
         expected = [
             'README.md',
-            'origin.ABOUT',
             'zip-slip-win.tar',
             'zip-slip-win.tar-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
             'zip-slip-win.tar-extract/good.txt',
+            'zip-slip-win.tar.ABOUT',
             'zip-slip-win.zip',
             'zip-slip-win.zip-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
             'zip-slip-win.zip-extract/good.txt',
+            'zip-slip-win.zip.ABOUT',
             'zip-slip.tar',
             'zip-slip.tar-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
             'zip-slip.tar-extract/good.txt',
+            'zip-slip.tar.ABOUT',
             'zip-slip.zip',
             'zip-slip.zip-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
-            'zip-slip.zip-extract/good.txt'
+            'zip-slip.zip-extract/good.txt',
+            'zip-slip.zip.ABOUT',
         ]
 
         result = list(extract.extract(test_dir, recurse=True))

@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "interlap",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "interlap: fast, simple interval overlap testing",

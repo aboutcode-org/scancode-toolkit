@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "a_okay",
     "version": "0.1.0",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "A simple controller that just returns if everything is 'a okay'!",

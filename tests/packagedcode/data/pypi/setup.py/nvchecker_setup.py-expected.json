@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "nvchecker",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "New version checker for software",

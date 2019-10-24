@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
   "version": "0.4.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Makes the 'Qhull' library <http://www.qhull.org>\navailable in R, in a similar manner as in Octave and MATLAB. Qhull\ncomputes convex hulls, Delaunay triangulations, halfspace\nintersections about a point, Voronoi diagrams, furthest-site\nDelaunay triangulations, and furthest-site Voronoi diagrams. It\nruns in 2D, 3D, 4D, and higher dimensions. It implements the\nQuickhull algorithm for computing the convex hull. Qhull does not\nsupport constrained Delaunay triangulations, or mesh generation of\nnon-convex objects, but the package does include some R functions\nthat allow for this.",

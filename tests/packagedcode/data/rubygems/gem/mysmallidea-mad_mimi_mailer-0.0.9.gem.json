@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "mysmallidea-mad_mimi_mailer",
     "version": "0.0.9",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Extending ActionMailer::Base for Mad Mimi integration.\nUse Mad Mimi to send beautiful HTML emails using the ActionMailer API.",

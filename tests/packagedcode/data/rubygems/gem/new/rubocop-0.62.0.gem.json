@@ -4,7 +4,7 @@
     "namespace": null,
     "name": "rubocop",
     "version": "0.62.0",
-    "qualifiers": null,
+    "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
     "description": "Automatic Ruby code style checking tool.\n    Automatic Ruby code style checking tool.\n    Aims to enforce the community-driven Ruby Style Guide.\n",

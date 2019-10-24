@@ -1,0 +1,6 @@
+name: bzip2 test archive from Python.org
+about_resource: example-file.csv.tar.bz2
+download_url: http://bugs.python.org/file34230/example-file.csv.bz2
+notes: See also 
+ http://bugs.python.org/issue20781
+ https://pypi.python.org/packages/source/b/bz2file/bz2file-0.98.tar.gz#md5=27d6f711ae0db6cfd1eb37f95621dfb5

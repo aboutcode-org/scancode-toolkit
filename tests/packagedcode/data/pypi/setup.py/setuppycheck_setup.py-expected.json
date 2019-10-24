@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "setuppycheck",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Checks for questionable practices in setup.py files.",

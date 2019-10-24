@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "pipdeptree",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Command line utility to show dependency tree of packages",

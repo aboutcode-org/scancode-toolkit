@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "301",
   "version": "0.1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Ruby",
   "description": "Installs/Configures 301",

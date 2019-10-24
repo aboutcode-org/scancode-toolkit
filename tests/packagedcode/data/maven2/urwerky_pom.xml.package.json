@@ -3,7 +3,7 @@
   "namespace": "ur.urwerk.test",
   "name": "ur.urwerk.test.module-y",
   "version": "1.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "ur.urwerk.test:ur.urwerk.test.module-y:jar:1.0.0",
