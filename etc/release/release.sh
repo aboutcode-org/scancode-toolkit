@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 
 # ScanCode release script
@@ -29,7 +29,7 @@ export CONFIGURE_QUIET=1
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
-bin/python setup.py --quiet release --use-default-version
+bin/python setup.py --quiet --use-default-version clean --all sdist --formats=bztar,zip bdist_wheel
 
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
@@ -55,22 +55,22 @@ function test_scan {
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --json-pp test_scan.json"
+            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --json-pp test_scan.json"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --html test_scan.html"
+            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --csv test_scan.csv"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --html-app test_scan_app.html"
+            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --html test_scan.html"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --spdx-tv test_scan.spdx"
+            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --spdx-tv test_scan.spdx"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
