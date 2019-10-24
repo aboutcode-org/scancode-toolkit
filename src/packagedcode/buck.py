@@ -169,17 +169,26 @@ def buck_parse(location):
             if args:
                 build_rules[rule_name].append(args)
 
-    for rule_name, rule_instances_args in build_rules.items():
-        for args in rule_instances_args:
-            name = args.get('name')
-            if not name:
-                continue
-            license_files = args.get('licenses')
-            yield BuckPackage(
-                name=name,
-                declared_license=license_files,
-                root_path=fileutils.parent_directory(location)
-            )
+    if build_rules:
+        for rule_name, rule_instances_args in build_rules.items():
+            for args in rule_instances_args:
+                name = args.get('name')
+                if not name:
+                    continue
+                license_files = args.get('licenses')
+                yield BuckPackage(
+                    name=name,
+                    declared_license=license_files,
+                    root_path=fileutils.parent_directory(location)
+                )
+    else:
+        # If we don't find anything in the BUCK file, we yield a Package with
+        # the parent directory as the name, like the default implementation of
+        # `recognize()` for `BaseBuildManifestPackage`
+        yield BuckPackage(
+            # we use the parent directory as a name
+            name=fileutils.file_name(fileutils.parent_directory(location))
+        )
 
 
 def compute_normalized_license(declared_license, manifest_parent_path):
