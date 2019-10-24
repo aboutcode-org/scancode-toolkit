@@ -81,7 +81,7 @@ class NpmPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        return parse(location)
+        yield parse(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):

@@ -60,7 +60,7 @@ class JavaArchive(Package):
     @classmethod
     def recognize(cls, location):
         if is_manifest(location):
-            return parse_manifest(location)
+            yield parse_manifest(location)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):

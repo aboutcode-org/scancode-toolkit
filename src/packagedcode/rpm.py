@@ -148,7 +148,7 @@ class RpmPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        return parse(location)
+        yield parse(location)
 
 
 def parse(location):
