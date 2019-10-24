@@ -17,3 +17,13 @@ android_binary(
         ":app-code",
     ],
 )
+
+android_binary(
+    name = "app2",
+    keystore = "//android/keystores:debug",
+    manifest = "src/main/AndroidManifest.xml",
+    package_type = "debug",
+    deps = [
+        ":app-code",
+    ],
+)

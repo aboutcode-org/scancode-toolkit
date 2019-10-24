@@ -47,7 +47,8 @@ class BuckPackage(BaseBuildManifestPackage):
     def recognize(cls, location):
         if not cls._is_build_manifest(location):
             return
-        return buck_parse(location)
+        for package in buck_parse(location):
+            yield package
 
     def compute_normalized_license(self):
         return compute_normalized_license(
@@ -141,7 +142,7 @@ buck_rule_names = [
 
 
 def buck_parse(location):
-    build_rules = defaultdict(OrderedDict)
+    build_rules = defaultdict(list)
     # Thanks to the BUCK language being a Python DSL, we can use the `ast`
     # library to parse BUCK files
     with open(location, 'rb') as f:
@@ -157,32 +158,28 @@ def buck_parse(location):
                 and statement.value.func.id in buck_rule_names):
             rule_name = statement.value.func.id
             # Process the rule arguments
+            args = OrderedDict()
             for kw in statement.value.keywords:
                 arg_name = kw.arg
                 if isinstance(kw.value, ast.Str):
-                    build_rules[rule_name][arg_name] = kw.value.s
+                    args[arg_name] = kw.value.s
                 if isinstance(kw.value, ast.List):
                      # We collect the elements of a list if the element is not a function call
-                    build_rules[rule_name][arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
+                    args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
+            if args:
+                build_rules[rule_name].append(args)
 
-    rules_to_return = []
-    for rule_name, args in build_rules.items():
-        name = args.get('name')
-        if not name:
-            continue
-        license_files = args.get('licenses', [])
-        rules_to_return.append(
-            BuckPackage(
+    for rule_name, rule_instances_args in build_rules.items():
+        for args in rule_instances_args:
+            name = args.get('name')
+            if not name:
+                continue
+            license_files = args.get('licenses')
+            yield BuckPackage(
                 name=name,
-                declared_license=license_files or None,
+                declared_license=license_files,
                 root_path=fileutils.parent_directory(location)
             )
-        )
-
-    if rules_to_return:
-        # FIXME: We will eventually return the entire list instead of the first one
-        # once the new package changes are in
-        return rules_to_return[0]
 
 
 def compute_normalized_license(declared_license, manifest_parent_path):
