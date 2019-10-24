@@ -14,6 +14,7 @@ set -e
 
 for i in `ls plugins-builtin`
   do 
+    echo "Bumping $i"
     pushd plugins-builtin/$i
     bumpversion patch
     popd

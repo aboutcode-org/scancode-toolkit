@@ -17,7 +17,7 @@ desc = '''A ScanCode path provider plugin to provide a prebuilt native sevenzip 
 
 setup(
     name='extractcode_7z',
-    version='9.38.3',
+    version='9.38.4',
     license='lgpl-2.1 and unrar and brian-gladman-3-clause',
     description=desc,
     long_description=desc,
