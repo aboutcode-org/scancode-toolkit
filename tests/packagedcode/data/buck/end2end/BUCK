@@ -1,1 +1,0 @@
-go_binary(name='end2end')
