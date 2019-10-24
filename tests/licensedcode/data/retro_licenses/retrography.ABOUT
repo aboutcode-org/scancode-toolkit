@@ -1,3 +1,4 @@
-about_resources: OS-Licenses-master
+about_resource: OS-Licenses-master
+name: retrography license tests
 license_text_file: retrography.LICENSE
 download_url: https://github.com/retrography/OS-Licenses/archive/07b5d4e0a7889234d76d01d1fdf8f209dc56528c.zip

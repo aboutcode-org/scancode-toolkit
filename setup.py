@@ -16,7 +16,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.1.1'
+version = '3.1.2'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
@@ -148,7 +148,7 @@ setup(
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
-        'py2-ipaddress >= 2.0, <3.5; python_version<"3"',
+        'py2_ipaddress >= 2.0, <3.5; python_version<"3"',
         'url >= 0.1.4, < 0.1.6; python_version<"3"',
         'url >= 0.4.2, < 1.0.0; python_version>="3"',
         'fingerprints >= 0.6.0, < 1.0.0',
@@ -158,13 +158,13 @@ setup(
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98; python_version<"3"',
-        'extractcode-libarchive',
-        'extractcode-7z',
+        'extractcode_libarchive',
+        'extractcode_7z',
 
         # commoncode
         'backports.os == 0.1.1; python_version<"3"',
         'future >= 0.16.0',
-        'text-unidecode >= 1.0, < 2.0',
+        'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
         'path.py',
 
@@ -190,13 +190,13 @@ setup(
         'chardet >= 3.0.0, <4.0.0',
         # note that we use a short version range because we use a simpler lexer list
         'pygments >= 2.2.0, <2.3',
-        'typecode-libmagic',
+        'typecode_libmagic',
 
         # packagedcode
         'pefile >= 2018.8.8',
-        'pymaven-patch >= 0.2.8',
+        'pymaven_patch >= 0.2.8',
         'requests >= 2.7.0, < 3.0.0',
-        'packageurl-python >= 0.7.0',
+        'packageurl_python >= 0.7.0',
         'xmltodict >= 0.11.0',
         'javaproperties >= 0.5',
         'toml >= 0.10.0',
@@ -218,7 +218,7 @@ setup(
         'jinja2 >= 2.7.0, < 3.0.0',
         'MarkupSafe >= 0.23',
         'simplejson',
-        'spdx-tools >= 0.6.0',
+        'spdx_tools >= 0.6.0',
         'unicodecsv',
 
         # ScanCode caching and locking

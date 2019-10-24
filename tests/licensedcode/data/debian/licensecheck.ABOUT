@@ -3,6 +3,6 @@ homepage_url: https://salsa.debian.org/perl-team/modules/packages/licensecheck
 license_expession: gpl-2.0
 version: b83b89ca
 name: licensecheck
-notes: this is the partial content of the t sub-direcory of licensecheck that
+notes: this is the partial content of the sub-direcory of licensecheck that
  contains sevreal test files. It has been modified to support the test framework
  with yml files
