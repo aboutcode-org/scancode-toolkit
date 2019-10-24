@@ -3,3 +3,5 @@ is_license_notice: yes
 ignorable_urls:
     - http://www.eclipse.org/legal/epl-v10.html
     - http://www.opensource.org/licenses/apache2.0.php
+minimum_coverage: 70
+    
