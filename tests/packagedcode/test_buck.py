@@ -47,29 +47,36 @@ class TestBuck(PackageTester):
 
     def test_buck_parse(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
-        result_package = buck.buck_parse(test_file)
-        expected_package = buck.BuckPackage(
-            name='app'
-        )
-        result = result_package.to_dict()
-        expected = expected_package.to_dict()
-        # We don't want to compare `root_path`, since the result will always
-        # have a different `root_path` than the expected result
-        result.pop('root_path')
-        expected.pop('root_path')
-        assert expected == result
+        result_packages = buck.buck_parse(test_file)
+        expected_packages = [
+            buck.BuckPackage(name='app'),
+            buck.BuckPackage(name='app2'),
+        ]
+        compare_package_results(expected_packages, result_packages)
 
     def test_buck_parse_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result_package = buck.buck_parse(test_file)
-        expected_package = buck.BuckPackage(
-            name='app',
-            declared_license=['LICENSE'],
-        )
-        result = result_package.to_dict()
-        expected = expected_package.to_dict()
-        # We don't want to compare `root_path`, since the result will always
-        # have a different `root_path` than the expected result
-        result.pop('root_path')
-        expected.pop('root_path')
-        assert expected == result
+        result_packages = buck.buck_parse(test_file)
+        expected_packages = [
+            buck.BuckPackage(
+                name='app',
+                declared_license=['LICENSE'],
+            )
+        ]
+        compare_package_results(expected_packages, result_packages)
+
+
+def compare_package_results(expected, result):
+    # We don't want to compare `root_path`, since the result will always
+    # have a different `root_path` than the expected result
+    result_packages = []
+    for result_package in result:
+        r = result_package.to_dict()
+        r.pop('root_path')
+        result_packages.append(r)
+    expected_packages = []
+    for expected_package in expected:
+        e = expected_package.to_dict()
+        e.pop('root_path')
+        expected_packages.append(e)
+    assert expected_packages == result_packages
