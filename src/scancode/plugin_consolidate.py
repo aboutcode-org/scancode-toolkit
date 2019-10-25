@@ -246,8 +246,9 @@ def get_consolidated_packages(codebase):
     for resource in codebase.walk(topdown=False):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
+            package_root = package.get_package_root(resource, codebase)
             is_build_file = isinstance(package, BaseBuildManifestPackage)
-            package_resources = list(package.get_package_resources(resource, codebase))
+            package_resources = list(package.get_package_resources(package_root, codebase))
             package_license_expression = package.license_expression
             package_copyright = package.copyright
 
@@ -318,10 +319,13 @@ def get_license_holders_consolidated_components(codebase):
         return
 
     origin_translation_table = {}
+    package_file_count = 0
     for resource in codebase.walk(topdown=False):
         # TODO: Consider facets for later
 
-        if resource.is_file or resource.extra_data.get('in_package_component'):
+        if resource.is_file:
+            if resource.extra_data.get('in_package_component'):
+                package_file_count += 1
             continue
 
         children = resource.children(codebase)
@@ -361,7 +365,8 @@ def get_license_holders_consolidated_components(codebase):
             # TODO: When there is a tie, we need to be explicit and consistent about the tiebreaker
             # TODO: Consider creating two components instead of tiebreaking
             origin_key, top_count = origin_count.most_common(1)[0]
-            if is_majority(top_count, resource.files_count):
+            current_file_only_count = resource.files_count - package_file_count
+            if is_majority(top_count, current_file_only_count):
                 majority_holders, majority_license_expression = origin_translation_table[origin_key]
                 resource.extra_data['license_expression'] = majority_license_expression
                 resource.extra_data['holders'] = majority_holders
