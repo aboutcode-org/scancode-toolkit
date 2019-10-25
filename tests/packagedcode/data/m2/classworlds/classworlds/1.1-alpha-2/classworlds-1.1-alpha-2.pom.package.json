@@ -3,7 +3,7 @@
   "namespace": "classworlds",
   "name": "classworlds",
   "version": "1.1-alpha-2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "classworlds",

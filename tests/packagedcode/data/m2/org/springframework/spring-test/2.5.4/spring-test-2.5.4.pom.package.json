@@ -3,7 +3,7 @@
   "namespace": "org.springframework",
   "name": "spring-test",
   "version": "2.5.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Spring Framework: Test",

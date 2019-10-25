@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.cargo",
   "name": "cargo-parent",
   "version": "4.2-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Cargo",

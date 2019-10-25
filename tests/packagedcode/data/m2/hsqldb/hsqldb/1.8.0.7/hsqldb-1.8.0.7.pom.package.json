@@ -3,7 +3,7 @@
   "namespace": "hsqldb",
   "name": "hsqldb",
   "version": "1.8.0.7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "HSQLDB\nLightweight 100% Java SQL Database Engine",

@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-war-plugin",
   "version": "2.1-alpha-1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven War Plugin",

@@ -3,7 +3,7 @@
   "namespace": "org.apache.myfaces.core",
   "name": "myfaces-core-project",
   "version": "1.1.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Core Project",

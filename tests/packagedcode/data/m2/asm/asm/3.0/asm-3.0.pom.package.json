@@ -3,7 +3,7 @@
   "namespace": "asm",
   "name": "asm",
   "version": "3.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "ASM Core",

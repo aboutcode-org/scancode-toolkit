@@ -3,7 +3,7 @@
   "namespace": "org.mortbay.jetty",
   "name": "jetty",
   "version": "6.1.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Jetty Server\nJetty server core",

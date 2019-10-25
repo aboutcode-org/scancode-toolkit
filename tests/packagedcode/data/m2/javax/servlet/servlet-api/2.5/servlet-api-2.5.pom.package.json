@@ -3,7 +3,7 @@
   "namespace": "javax.servlet",
   "name": "servlet-api",
   "version": "2.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

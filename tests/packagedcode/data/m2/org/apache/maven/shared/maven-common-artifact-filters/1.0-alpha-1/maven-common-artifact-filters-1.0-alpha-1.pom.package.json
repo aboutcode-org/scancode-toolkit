@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "maven-common-artifact-filters",
   "version": "1.0-alpha-1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Common Artifact Filters",

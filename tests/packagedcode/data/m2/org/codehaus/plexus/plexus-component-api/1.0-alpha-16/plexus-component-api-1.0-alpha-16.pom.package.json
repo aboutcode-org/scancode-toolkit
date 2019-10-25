@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus-component-api",
   "version": "1.0-alpha-16",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus Component API",

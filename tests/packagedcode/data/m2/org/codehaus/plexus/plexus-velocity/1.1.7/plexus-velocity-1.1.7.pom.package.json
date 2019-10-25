@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus-velocity",
   "version": "1.1.7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus Velocity Component",

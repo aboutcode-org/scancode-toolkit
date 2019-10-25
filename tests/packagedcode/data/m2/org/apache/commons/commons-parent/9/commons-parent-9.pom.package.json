@@ -3,7 +3,7 @@
   "namespace": "org.apache.commons",
   "name": "commons-parent",
   "version": "9",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Commons Parent",

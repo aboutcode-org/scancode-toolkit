@@ -3,7 +3,7 @@
   "namespace": "org.slf4j",
   "name": "slf4j-api",
   "version": "1.4.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "SLF4J API Module\nThe slf4j API",

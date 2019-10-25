@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus-classworlds",
   "version": "1.2-alpha-6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus Classworlds",

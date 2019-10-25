@@ -3,7 +3,7 @@
   "namespace": "org.jvnet.updatecenter2",
   "name": "pkg",
   "version": "${version}",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Image Packaging System",

@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven",
   "name": "maven-model",
   "version": "2.0.7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Model",

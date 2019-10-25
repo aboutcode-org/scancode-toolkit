@@ -3,7 +3,7 @@
   "namespace": "org.apache.myfaces.maven",
   "name": "myfaces-master",
   "version": "1.0.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Master POM\nThis is a master POM that is meant to be used by the various MyFaces modules.  It contains information that is\n        common to all projects.",

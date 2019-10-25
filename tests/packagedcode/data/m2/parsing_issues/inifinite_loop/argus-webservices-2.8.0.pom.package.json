@@ -3,7 +3,9 @@
   "namespace": "com.salesforce.argus",
   "name": "argus-webservices",
   "version": "${project.version}",
-  "qualifiers": "type=war",
+  "qualifiers": {
+    "type": "war"
+  },
   "subpath": null,
   "primary_language": "Java",
   "description": "ArgusWebServices\nWeb Services for the Argus Production Monitoring Tool.",

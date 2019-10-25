@@ -3,7 +3,7 @@
   "namespace": "org.aspectj",
   "name": "aspectjweaver",
   "version": "1.6.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "AspectJ weaver",

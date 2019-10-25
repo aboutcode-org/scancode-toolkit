@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-antrun-plugin",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven AntRun Plugin\nRuns ant scripts embedded in the POM",

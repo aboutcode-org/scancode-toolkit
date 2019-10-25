@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.cargo",
   "name": "cargo-maven2-plugin",
   "version": "1.0-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Cargo Maven 2 Plugin",

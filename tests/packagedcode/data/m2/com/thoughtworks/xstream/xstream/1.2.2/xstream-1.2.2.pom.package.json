@@ -3,7 +3,7 @@
   "namespace": "com.thoughtworks.xstream",
   "name": "xstream",
   "version": "1.2.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "XStream Core",

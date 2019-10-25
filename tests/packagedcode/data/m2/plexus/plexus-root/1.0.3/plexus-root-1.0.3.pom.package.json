@@ -3,7 +3,7 @@
   "namespace": "plexus",
   "name": "plexus-root",
   "version": "1.0.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus",

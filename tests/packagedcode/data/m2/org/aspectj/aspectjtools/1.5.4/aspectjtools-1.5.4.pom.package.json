@@ -3,7 +3,7 @@
   "namespace": "org.aspectj",
   "name": "aspectjtools",
   "version": "1.5.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "AspectJ tools",

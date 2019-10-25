@@ -3,7 +3,7 @@
   "namespace": "com.github.simondan.ojcms",
   "name": "ojcms-beans",
   "version": "${project.version}",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

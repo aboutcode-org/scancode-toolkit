@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.cargo",
   "name": "cargo-extensions",
   "version": "1.0-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Cargo Extensions",

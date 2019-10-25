@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus",
   "version": "1.0.10",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus",

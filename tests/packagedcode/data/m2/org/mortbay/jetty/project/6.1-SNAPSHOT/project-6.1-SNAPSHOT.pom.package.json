@@ -3,7 +3,7 @@
   "namespace": "org.mortbay.jetty",
   "name": "project",
   "version": "6.1-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Jetty Server Project",

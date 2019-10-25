@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.mojo",
   "name": "native-maven-plugin",
   "version": "1.0-alpha-2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Native Plugin",

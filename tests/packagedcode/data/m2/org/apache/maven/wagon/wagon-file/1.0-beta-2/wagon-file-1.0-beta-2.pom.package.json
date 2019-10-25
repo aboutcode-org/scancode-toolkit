@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.wagon",
   "name": "wagon-file",
   "version": "1.0-beta-2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Wagon File Provider\nWagon that gets and puts artifacts using file system protocol",

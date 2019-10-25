@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "maven-dependency-analyzer",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Dependency Analyzer",
