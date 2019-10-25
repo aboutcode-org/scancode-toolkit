@@ -3,7 +3,7 @@
   "namespace": "org.openqa.selenium.core",
   "name": "selenium-core",
   "version": "0.8.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Selenium Core",

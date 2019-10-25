@@ -3,7 +3,7 @@
   "namespace": "httpunit",
   "name": "httpunit",
   "version": "1.6.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "HttpUnit\nA Java library for the automatic stimulation and testing of web applications.",

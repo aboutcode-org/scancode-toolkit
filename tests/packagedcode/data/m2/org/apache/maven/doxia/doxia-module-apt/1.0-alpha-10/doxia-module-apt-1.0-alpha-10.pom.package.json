@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.doxia",
   "name": "doxia-module-apt",
   "version": "1.0-alpha-10",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia :: APT Module\nA Doxia module for Almost Plain Text source documents.",

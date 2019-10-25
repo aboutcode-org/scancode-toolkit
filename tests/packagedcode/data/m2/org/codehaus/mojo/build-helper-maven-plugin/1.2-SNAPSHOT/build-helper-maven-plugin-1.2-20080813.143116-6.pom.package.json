@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.mojo",
   "name": "build-helper-maven-plugin",
   "version": "1.2-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Build Helper Maven Plugin\nThis plugin contains various small independent goals to assist with Maven build lifecycle",

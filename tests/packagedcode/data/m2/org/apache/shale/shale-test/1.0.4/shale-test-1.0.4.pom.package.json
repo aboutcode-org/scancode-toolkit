@@ -3,7 +3,7 @@
   "namespace": "org.apache.shale",
   "name": "shale-test",
   "version": "1.0.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Shale Test Framework",

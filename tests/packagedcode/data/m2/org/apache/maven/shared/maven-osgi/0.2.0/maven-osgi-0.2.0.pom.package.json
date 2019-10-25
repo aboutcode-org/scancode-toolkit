@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "maven-osgi",
   "version": "0.2.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven OSGi integration\nLibrary for Maven-OSGi integration",

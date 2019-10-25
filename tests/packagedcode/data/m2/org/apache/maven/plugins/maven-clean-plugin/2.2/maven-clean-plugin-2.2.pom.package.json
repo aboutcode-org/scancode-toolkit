@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-clean-plugin",
   "version": "2.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Clean Plugin\nThe Maven Clean Plugin is a plugin that removes files generated at build-time in a project's directory.",

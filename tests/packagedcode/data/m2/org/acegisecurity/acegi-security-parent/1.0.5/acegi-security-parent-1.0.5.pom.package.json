@@ -3,7 +3,7 @@
   "namespace": "org.acegisecurity",
   "name": "acegi-security-parent",
   "version": "1.0.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Acegi Security\nAcegi Security System for Spring",

@@ -3,7 +3,7 @@
   "namespace": "org.testng",
   "name": "testng",
   "version": "5.7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "TestNG\nTestNG is a unit testing framework.",

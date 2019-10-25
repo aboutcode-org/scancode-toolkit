@@ -3,7 +3,7 @@
   "namespace": "org.hibernate",
   "name": "ejb3-persistence",
   "version": "1.0.1.GA",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Java Persistence API",

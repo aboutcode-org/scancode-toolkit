@@ -3,7 +3,7 @@
   "namespace": "org.apache.felix",
   "name": "org.osgi.core",
   "version": "1.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "OSGi R4 Core Bundle\nOSGi Service Platform Release 4 Core Interfaces and Classes.",

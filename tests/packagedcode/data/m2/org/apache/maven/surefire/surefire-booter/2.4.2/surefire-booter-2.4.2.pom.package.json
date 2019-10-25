@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.surefire",
   "name": "surefire-booter",
   "version": "2.4.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "SureFire Booter",

@@ -3,7 +3,7 @@
   "namespace": "commons-collections",
   "name": "commons-collections",
   "version": "3.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Types that extend and augment the Java Collections Framework.",

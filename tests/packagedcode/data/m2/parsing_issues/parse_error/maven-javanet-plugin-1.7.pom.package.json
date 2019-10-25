@@ -3,7 +3,7 @@
   "namespace": "maven-javanet-plugin",
   "name": "maven-javanet-plugin",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven java.net plugin",

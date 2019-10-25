@@ -3,7 +3,7 @@
   "namespace": "org.hibernate",
   "name": "hibernate",
   "version": "3.2.6.ga",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Hibernate\nRelational Persistence for Java",

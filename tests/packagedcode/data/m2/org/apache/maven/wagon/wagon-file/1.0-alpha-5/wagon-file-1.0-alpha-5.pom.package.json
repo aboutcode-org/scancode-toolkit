@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.wagon",
   "name": "wagon-file",
   "version": "1.0-alpha-5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Wagon File Provider\nTools to manage artifacts and deployment",

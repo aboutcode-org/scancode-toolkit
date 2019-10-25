@@ -3,7 +3,7 @@
   "namespace": "org.mortbay.jetty",
   "name": "servlet-api-2.5",
   "version": "6.1.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Servlet Specification 2.5 API",

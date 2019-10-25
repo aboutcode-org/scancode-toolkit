@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "maven-shared-components",
   "version": "7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Shared Components\nMaven shared components",

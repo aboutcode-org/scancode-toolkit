@@ -3,7 +3,7 @@
   "namespace": "com.github.albertoanguita",
   "name": "jacuzzi-database",
   "version": "${version}",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Jacuzzi - Database\nA generic java utilities collection project - extended functionality with ActiveJDBC dependencies",

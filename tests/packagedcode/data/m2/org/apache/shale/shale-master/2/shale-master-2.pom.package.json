@@ -3,7 +3,7 @@
   "namespace": "org.apache.shale",
   "name": "shale-master",
   "version": "2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Apache Shale Framework Master POM\nApache Shale",

@@ -3,7 +3,7 @@
   "namespace": "net.jcip",
   "name": "jcip-annotations",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "\"Java Concurrency in Practice\" book annotations",
