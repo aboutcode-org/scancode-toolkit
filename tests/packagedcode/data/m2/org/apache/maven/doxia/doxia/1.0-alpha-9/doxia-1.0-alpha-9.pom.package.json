@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.doxia",
   "name": "doxia",
   "version": "1.0-alpha-9",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia\nDoxia is a content generation framework that provides powerful techniques for generating static and dynamic content, supporting a variety of markup languages.",

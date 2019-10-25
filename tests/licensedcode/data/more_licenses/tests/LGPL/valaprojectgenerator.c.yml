@@ -17,6 +17,7 @@ license_expressions:
   - lgpl-3.0
   - lgpl-3.0
   - gpl-2.0
+  - gpl-1.0-plus
   - gpl-2.0
   - gpl-2.0
   - lgpl-2.0
@@ -24,6 +25,7 @@ license_expressions:
   - lgpl-2.1
   - lgpl-2.1
   - gpl-3.0
+  - gpl-1.0-plus
   - gpl-3.0
   - gpl-3.0
   - lgpl-3.0

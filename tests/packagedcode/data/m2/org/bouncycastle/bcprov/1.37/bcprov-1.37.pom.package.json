@@ -3,7 +3,7 @@
   "namespace": "org.bouncycastle",
   "name": "bcprov",
   "version": "1.37",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

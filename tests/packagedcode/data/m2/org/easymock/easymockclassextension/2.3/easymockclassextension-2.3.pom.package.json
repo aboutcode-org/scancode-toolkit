@@ -3,7 +3,7 @@
   "namespace": "org.easymock",
   "name": "easymockclassextension",
   "version": "2.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "EasyMock class extension\nThe EasyMock Class Extension allows to generate Mock Objects for classes",

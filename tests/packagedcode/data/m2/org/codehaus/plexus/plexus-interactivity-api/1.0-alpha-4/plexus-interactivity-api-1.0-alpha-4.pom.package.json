@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus-interactivity-api",
   "version": "1.0-alpha-4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Plexus Default Interactivity Handler",

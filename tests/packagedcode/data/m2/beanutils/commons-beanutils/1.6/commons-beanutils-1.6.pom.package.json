@@ -3,7 +3,7 @@
   "namespace": "commons-beanutils",
   "name": "commons-beanutils",
   "version": "1.6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "BeanUtils\nJava Bean Utililities",

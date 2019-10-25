@@ -3,7 +3,7 @@
   "namespace": "javax.transaction",
   "name": "jta",
   "version": "1.0.1B",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

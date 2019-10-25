@@ -3,7 +3,7 @@
   "namespace": "org.apache.geronimo.specs",
   "name": "geronimo-jsp_2.0_spec",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "JSP 2.0",

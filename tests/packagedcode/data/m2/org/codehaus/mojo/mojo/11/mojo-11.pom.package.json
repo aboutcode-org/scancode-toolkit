@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.mojo",
   "name": "mojo",
   "version": "11",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Codehaus Mojo",

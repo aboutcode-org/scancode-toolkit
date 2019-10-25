@@ -3,7 +3,7 @@
   "namespace": "ant",
   "name": "ant-launcher",
   "version": "1.6.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

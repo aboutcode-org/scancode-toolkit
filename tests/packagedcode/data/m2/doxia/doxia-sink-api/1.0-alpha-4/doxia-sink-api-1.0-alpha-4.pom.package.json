@@ -3,7 +3,7 @@
   "namespace": "doxia",
   "name": "doxia-sink-api",
   "version": "1.0-alpha-4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia Core",

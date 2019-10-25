@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-pmd-plugin",
   "version": "2.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven PMD Plugin\nA Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste\n    fragments,\n    as well as being able to fail the build based on these metrics.",

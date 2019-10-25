@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "maven-shared-io",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Shared I/O API\nAPI for I/O support like logging, download or file scanning.",

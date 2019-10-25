@@ -3,7 +3,7 @@
   "namespace": "org.codehaus.plexus",
   "name": "plexus-containers",
   "version": "1.0-alpha-30",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Parent Plexus Container POM",

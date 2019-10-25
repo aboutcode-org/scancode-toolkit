@@ -3,7 +3,7 @@
   "namespace": "velocity",
   "name": "velocity-dep",
   "version": "1.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Velocity\nVelocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.",

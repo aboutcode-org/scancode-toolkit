@@ -3,7 +3,7 @@
   "namespace": "edu.psu.swe.commons",
   "name": "commons-jaxrs",
   "version": "1.22",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Common JAXRS Libraries\nCommon classes to make creating REST services more consistent.",

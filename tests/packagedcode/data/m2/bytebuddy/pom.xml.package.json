@@ -3,7 +3,7 @@
   "namespace": "net.bytebuddy",
   "name": "byte-buddy-parent",
   "version": "1.7.1-SNAPSHOT",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Byte Buddy (parent)\nByte Buddy is a Java library for creating Java classes at run time.\n        The parent artifact contains configuration information that concern all modules.",

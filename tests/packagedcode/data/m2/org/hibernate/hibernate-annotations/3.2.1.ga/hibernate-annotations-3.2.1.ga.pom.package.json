@@ -3,7 +3,7 @@
   "namespace": "org.hibernate",
   "name": "hibernate-annotations",
   "version": "3.2.1.ga",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Hibernate Annotations\nEJB3-style annotations for Hibernate",

@@ -3,7 +3,7 @@
   "namespace": "commons-el",
   "name": "commons-el",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "EL\nJSP 2.0 Expression Language Interpreter Implementation",

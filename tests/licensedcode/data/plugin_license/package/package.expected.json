@@ -63,7 +63,7 @@
           "namespace": null,
           "name": "busboy",
           "version": "0.2.14",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
           "description": "A streaming parser for HTML form data for node.js",

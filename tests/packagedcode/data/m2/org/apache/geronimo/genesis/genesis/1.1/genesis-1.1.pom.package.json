@@ -3,7 +3,7 @@
   "namespace": "org.apache.geronimo.genesis",
   "name": "genesis",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Genesis\nGenesis provides support for Maven2 builds; adding shared configurations\n        and common plugins.",

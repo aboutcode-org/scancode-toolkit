@@ -3,7 +3,7 @@
   "namespace": "org.slf4j",
   "name": "slf4j-log4j12",
   "version": "1.4.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "SLF4J LOG4J-12 Binding\nThe slf4j log4j-12 binding",

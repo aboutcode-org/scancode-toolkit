@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.doxia",
   "name": "doxia-core",
   "version": "1.0-alpha-8",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia Core",

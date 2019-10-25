@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.shared",
   "name": "file-management",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Shared File Management API\nBasic API for lightweight logging",

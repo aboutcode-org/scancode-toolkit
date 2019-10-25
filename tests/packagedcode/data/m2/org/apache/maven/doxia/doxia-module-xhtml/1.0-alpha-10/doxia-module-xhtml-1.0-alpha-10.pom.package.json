@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.doxia",
   "name": "doxia-module-xhtml",
   "version": "1.0-alpha-10",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia :: XHTML Module\nA Doxia module for Xhtml source documents.",

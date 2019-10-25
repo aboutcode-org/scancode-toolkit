@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven",
   "name": "maven-settings",
   "version": "2.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Local Settings Model",

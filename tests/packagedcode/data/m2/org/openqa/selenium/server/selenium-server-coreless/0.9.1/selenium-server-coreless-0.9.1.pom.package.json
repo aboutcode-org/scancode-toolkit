@@ -3,7 +3,7 @@
   "namespace": "org.openqa.selenium.server",
   "name": "selenium-server-coreless",
   "version": "0.9.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Selenium RC Server (Coreless)",

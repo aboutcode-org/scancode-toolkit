@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.wagon",
   "name": "wagon-provider-api",
   "version": "1.0-alpha-6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Wagon API",

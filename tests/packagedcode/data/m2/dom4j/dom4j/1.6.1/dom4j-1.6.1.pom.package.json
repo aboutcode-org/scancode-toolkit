@@ -3,7 +3,7 @@
   "namespace": "dom4j",
   "name": "dom4j",
   "version": "1.6.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "dom4j\ndom4j: the flexible XML framework for Java",

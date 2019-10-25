@@ -3,7 +3,7 @@
   "namespace": "org.hibernate",
   "name": "hibernate-entitymanager",
   "version": "3.3.2.GA",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Hibernate Entitity Manager",

@@ -3,7 +3,7 @@
   "namespace": "org.apache.myfaces.tomahawk",
   "name": "tomahawk-project",
   "version": "1.1.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Tomahawk Project\nApache MyFaces Tomahawk is a sub-project of Apache MyFaces which provides an extensive sets\n  of custom components for use in your JSF-projects. Additionally, Tomahawk includes many custom\n  features helping you to implement JSF-projects more easily.",

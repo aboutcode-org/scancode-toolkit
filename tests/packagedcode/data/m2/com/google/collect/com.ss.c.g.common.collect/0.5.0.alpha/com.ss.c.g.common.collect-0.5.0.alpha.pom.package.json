@@ -3,7 +3,7 @@
   "namespace": "com.google.collect",
   "name": "com.ss.c.g.common.collect",
   "version": "0.5.0.alpha",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,
