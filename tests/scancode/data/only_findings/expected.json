@@ -11,7 +11,7 @@
           "namespace": null,
           "name": null,
           "version": null,
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": null,
           "contains_source_code": null,
