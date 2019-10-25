@@ -221,10 +221,22 @@ setup(
         'spdx-tools >= 0.6.0',
         'unicodecsv',
 
-        # ScanCode Docs
-        'Sphinx',
-        'sphinx_rtd_theme',
-        'doc8',
+        # ScanCode Docs Primary
+        'Sphinx <  2.0; python_version == "2.7"',
+        'Sphinx >= 2.0; python_version > "3"',
+        'sphinx_rtd_theme >= 0.4.3',
+        'doc8 >= 0.8.0',
+
+        # Scancode Docs Requirements
+        'alabaster >= 0.7.12',
+        'Babel >= 2.7.0',
+        'docutils >= 0.11 ; python_version == "2.7"',
+        'docutils >= 0.15.2 ; python_version > "3"',
+        'imagesize >= 1.1.0',
+        'pbr >= 5.4.3',
+        'restructuredtext-lint >= 1.3.0',
+        'snowballstemmer >= 2.0.0',
+        'stevedore >= 1.31.0',
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
