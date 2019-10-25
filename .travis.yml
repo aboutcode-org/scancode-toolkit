@@ -102,6 +102,7 @@ script:
   # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
   # - echo $TEST_SUITE
   - $TEST_SUITE
+  - source bin/activate
   - cd docs
   - "./scripts/sphinx_build_link_check.sh"
   - "./scripts/doc8_style_check.sh"
