@@ -45,13 +45,6 @@ class TestBuild(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
-    def test_end2end_scan_can_detect_buck(self):
-        test_file = self.get_test_loc('build/buck')
-        expected_file = self.get_test_loc('build/buck-expected.json')
-        result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
-
     def test_build_get_package_resources(self):
         test_loc = self.get_test_loc('build/get_package_resources')
         codebase = Codebase(test_loc)

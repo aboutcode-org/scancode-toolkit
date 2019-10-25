@@ -31,8 +31,8 @@ import logging
 import attr
 
 from commoncode import filetype
-from packagedcode import models
 from commoncode import fileutils
+from packagedcode import models
 
 
 TRACE = False
@@ -95,9 +95,3 @@ class AutotoolsPackage(BaseBuildManifestPackage):
 class BazelPackage(BaseBuildManifestPackage):
     metafiles = ('BUILD',)
     default_type = 'bazel'
-
-
-@attr.s()
-class BuckPackage(BaseBuildManifestPackage):
-    metafiles = ('BUCK',)
-    default_type = 'buck'
