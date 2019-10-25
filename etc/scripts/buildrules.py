@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -125,6 +125,17 @@ def rule_exists(text):
         return match.rule.identifier
 
 
+def all_rule_tokens():
+    """
+    Return a set of tuples of tokens, one corresponding to every existing and
+    added rules. Used to avoid duplicates.
+    """
+    rule_tokens = set()
+    for rule in models.get_rules():
+        rule_tokens.add(tuple(rule.tokens()))
+    return rule_tokens
+
+
 def find_rule_base_loc(license_expression):
     """
     Return a new, unique and non-existing base name location suitable to create a new
@@ -166,7 +177,7 @@ def cli(licenses_file):
     """
 
     rules_data = load_data(licenses_file)
-    rules_tokens = set()
+    rules_tokens = all_rule_tokens()
 
     licenses = cache.get_licenses_db()
     licensing = Licensing(licenses.values())
@@ -197,8 +208,8 @@ def cli(licenses_file):
         with io.open(text_file, 'w', encoding='utf-8') as o:
             o.write(rule.text)
 
-        rule = models.Rule(data_file=data_file, text_file=text_file)
-        rule_tokens = tuple(rule.tokens())
+        rulerec = models.Rule(data_file=data_file, text_file=text_file)
+        rule_tokens = tuple(rulerec.tokens())
         if rule_tokens in rules_tokens:
             # cleanup
             os.remove(text_file)
@@ -206,9 +217,9 @@ def cli(licenses_file):
             print('Skipping already added rule with text for:', base_name)
         else:
             rules_tokens.add(rule_tokens)
-            rule.dump()
-            models.update_ignorables(rule, verbose=True)
-            print('Rule added:', rule.identifier)
+            rulerec.dump()
+            models.update_ignorables(rulerec, verbose=True)
+            print('Rule added:', rulerec.identifier)
 
 
 if __name__ == '__main__':
