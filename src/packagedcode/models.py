@@ -500,7 +500,7 @@ class Package(BasePackage):
         of a "xyz.pom" file found inside a JAR META-INF/ directory, the root is
         the JAR itself which may not be the direct parent
 
-        Each package type should subclass as needed. This deafult to return the
+        Each package type should subclass as needed. This default to return the
         same path.
         """
         return manifest_resource
