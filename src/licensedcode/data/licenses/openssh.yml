@@ -7,6 +7,8 @@ homepage_url: https://github.com/openssh/openssh-portable/blob/V_7_3_P1/LICENCE
 notes: composite
 other_urls:
     - http://www.openssh.org/
+    - https://github.com/openssh/openssh-portable/blob/1b11ea7c58cd5c59838b5fa574cd456d6047b2d4/LICENCE#L10
+spdx_license_key: SSH-OpenSSH
 minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California

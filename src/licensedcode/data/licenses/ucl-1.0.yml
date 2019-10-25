@@ -1,6 +1,7 @@
 key: ucl-1.0
 short_name: UCL-1.0
 name: Upstream Compatibility License v1.0
+spdx_license_key: UCL-1.0
 category: Copyleft Limited
 owner: Lawrence Rosen
 homepage_url: https://opensource.org/licenses/UCL-1.0
@@ -15,3 +16,4 @@ ignorable_copyrights:
 ignorable_holders:
     - Lawrence Rosen
     - Nigel Tzeng
+standard_notice: Licensed under the Upstream Compatibility License 1.0

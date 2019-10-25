@@ -4,3 +4,5 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.html
     - http://www.eclipse.org/
     - http://www.eclipse.org/legal/epl-v10.html
+minimum_coverage: 70
+    

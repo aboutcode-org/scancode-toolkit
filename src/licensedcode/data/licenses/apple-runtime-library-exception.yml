@@ -6,6 +6,9 @@ owner: Apple
 homepage_url: https://github.com/apple/swift/blob/master/LICENSE.txt#L205
 is_exception: yes
 spdx_license_key: Swift-exception
+text_urls:
+    - https://github.com/apple/swift-package-manager/blob/7ab2275f447a5eb37497ed63a9340f8a6d1e488b/LICENSE.txt#L205
+    - https://swift.org/LICENSE.txt
 other_urls:
     - https://swift.org/
 standard_notice: |
