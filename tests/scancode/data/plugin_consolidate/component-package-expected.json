@@ -108,18 +108,22 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0",
+      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "consolidated_holders": [
-        "The Apache Software"
+        "IBM Corp.",
+        "The Apache Software",
+        "The Apache Software Foundation"
       ],
-      "consolidated_copyright": "Copyright (c) The Apache Software",
+      "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
-      "other_license_expression": "apache-2.0",
+      "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "other_holders": [
-        "The Apache Software"
+        "IBM Corp.",
+        "The Apache Software",
+        "The Apache Software Foundation"
       ],
-      "files_count": 1
+      "files_count": 3
     }
   ],
   "files": [
@@ -147,7 +151,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "the_apache_software_foundation_1"
+      ],
       "files_count": 7,
       "dirs_count": 2,
       "size_count": 477,
@@ -523,7 +529,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 275,
@@ -717,7 +725,9 @@
       ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -827,7 +837,9 @@
       ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

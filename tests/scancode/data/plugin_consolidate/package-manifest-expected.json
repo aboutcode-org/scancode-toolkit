@@ -93,7 +93,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 78,
