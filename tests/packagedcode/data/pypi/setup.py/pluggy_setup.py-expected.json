@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "pluggy",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "plugin and hook calling mechanisms for python",
