@@ -38,13 +38,6 @@ from packages_test_utils import PackageTester
 class TestBuild(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_end2end_scan_can_detect_bazel(self):
-        test_file = self.get_test_loc('build/bazel')
-        expected_file = self.get_test_loc('build/bazel-expected.json')
-        result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', test_file, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
-
     def test_build_get_package_resources(self):
         test_loc = self.get_test_loc('build/get_package_resources')
         codebase = Codebase(test_loc)
