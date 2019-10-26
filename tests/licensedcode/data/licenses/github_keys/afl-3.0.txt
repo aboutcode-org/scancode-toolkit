@@ -1,0 +1,1 @@
+Academic Free License v3.0
