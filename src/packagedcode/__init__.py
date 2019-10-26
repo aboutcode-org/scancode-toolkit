@@ -41,6 +41,7 @@ from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import bazel
 from packagedcode import buck
 
 
@@ -84,7 +85,7 @@ PACKAGE_TYPES = [
     models.IsoImagePackage,
     models.SquashfsPackage,
     chef.ChefPackage,
-    build.BazelPackage,
+    bazel.BazelPackage,
     buck.BuckPackage,
     build.AutotoolsPackage,
     conda.CondaPackage,

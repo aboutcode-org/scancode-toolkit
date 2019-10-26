@@ -89,9 +89,3 @@ class BaseBuildManifestPackage(models.Package):
 class AutotoolsPackage(BaseBuildManifestPackage):
     metafiles = ('configure', 'configure.ac',)
     default_type = 'autotools'
-
-
-@attr.s()
-class BazelPackage(BaseBuildManifestPackage):
-    metafiles = ('BUILD',)
-    default_type = 'bazel'
