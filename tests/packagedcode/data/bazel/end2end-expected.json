@@ -17,19 +17,19 @@
   ],
   "files": [
     {
-      "path": "bazel",
+      "path": "end2end",
       "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/BUILD",
+      "path": "end2end/BUILD",
       "type": "file",
       "packages": [
         {
           "type": "bazel",
           "namespace": null,
-          "name": "bazel",
+          "name": "end2end",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -52,11 +52,11 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "bazel",
+          "root_path": "end2end",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
-          "purl": "pkg:bazel/bazel",
+          "purl": "pkg:bazel/end2end",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
@@ -65,37 +65,37 @@
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir",
+      "path": "end2end/subdir",
       "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir/dir",
+      "path": "end2end/subdir/dir",
       "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir/dir/file1",
+      "path": "end2end/subdir/dir/file1",
       "type": "file",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir/file1",
+      "path": "end2end/subdir/file1",
       "type": "file",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir2",
+      "path": "end2end/subdir2",
       "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir2/BUILD",
+      "path": "end2end/subdir2/BUILD",
       "type": "file",
       "packages": [
         {
@@ -124,7 +124,7 @@
           "license_expression": null,
           "declared_license": null,
           "notice_text": null,
-          "root_path": "bazel/subdir2",
+          "root_path": "end2end/subdir2",
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
@@ -137,19 +137,19 @@
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir2/file2",
+      "path": "end2end/subdir2/file2",
       "type": "file",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir2/subdir3",
+      "path": "end2end/subdir2/subdir3",
       "type": "directory",
       "packages": [],
       "scan_errors": []
     },
     {
-      "path": "bazel/subdir2/subdir3/file2",
+      "path": "end2end/subdir2/subdir3/file2",
       "type": "file",
       "packages": [],
       "scan_errors": []
