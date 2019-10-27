@@ -1,0 +1,17 @@
+about_resource: imagesize-1.1.0-py2.py3-none-any.whl
+name: imagesize
+version: 1.1.0
+checksum_md5: e2defb5e1f937b87a0ed68868688df21
+checksum_sha1: df96cce25497eaf87b008774f30089077c7f62e1
+package_url: pkg:pypi/imagesize@1.1.0
+download_url: https://files.pythonhosted.org/packages/fc/b6/aef66b4c52a6ad6ac18cf6ebc5731ed06d8c9ae4d3b2d9951f261150be67/imagesize-1.1.0-py2.py3-none-any.whl
+notice_url: https://github.com/shibukawa/imagesize_py/blob/1.1.0/LICENSE.rst
+homepage_url: https://github.com/shibukawa/imagesize_py
+owner_url: https://github.com/shibukawa
+owner: Yoshiki Shibukawa
+contact: yoshiki@shibu.jp
+license_expression: mit
+licenses:
+-   key: mit
+    name: MIT License
+copyright: Copyright © 2016 Yoshiki Shibukawa

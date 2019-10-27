@@ -1,0 +1,17 @@
+about_resource: stevedore-1.31.0-py2.py3-none-any.whl
+name: stevedore
+version: 1.31.0
+checksum_md5: 36bfa229d042fdfcbad6d09af5b2912b
+checksum_sha1: 71a22b4e99f506979c8503657f9a1c8607c6db81
+package_url: pkg:pypi/stevedore@1.31.0
+download_url: https://files.pythonhosted.org/packages/b1/e1/f5ddbd83f60b03f522f173c03e406c1bff8343f0232a292ac96aa633b47a/stevedore-1.31.0-py2.py3-none-any.whl
+notice_url: https://github.com/sphinx-doc/sphinx/blob/v2.2.0/LICENSE
+homepage_url: https://docs.openstack.org/stevedore/latest/
+owner_url: https://openstack.org
+owner: OpenStack
+contact: openstack-discuss@lists.openstack.org
+license_expression:	apache-2.0
+licenses:
+-   key: apache-2.0
+    name: Apache 2.0 License
+copyright: Copyright (c) OpenStack

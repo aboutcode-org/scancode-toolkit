@@ -1,0 +1,17 @@
+about_resource: pbr-5.4.3-py2.py3-none-any.whl
+name: pbr
+version: 5.4.3
+checksum_md5: 6d1d7eb7c367f10dc8a6ee94ff8f1c2c
+checksum_sha1: 36b9e585c533c75739d48e7cec69b66ed2ba45b7
+package_url: pkg:pypi/pbr@5.4.3
+download_url: https://files.pythonhosted.org/packages/46/a4/d5c83831a3452713e4b4f126149bc4fbda170f7cb16a86a00ce57ce0e9ad/pbr-5.4.3-py2.py3-none-any.whl
+notice_url: https://github.com/openstack/pbr/blob/5.4.3/LICENSE
+homepage_url: https://docs.openstack.org/pbr/latest/
+owner_url: https://github.com/openstack/
+owner: OpenStack
+contact: openstack-discuss@lists.openstack.org
+license_expression: apache-2.0
+licenses:
+-   key: apache-2.0
+    name: Apache 2.0 License
+copyright: Copyright (c) OpenStack

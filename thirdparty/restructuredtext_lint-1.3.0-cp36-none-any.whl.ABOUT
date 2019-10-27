@@ -1,0 +1,15 @@
+about_resource: restructuredtext_lint-1.3.0-cp36-none-any.ABOUT
+name: restructuredtext_lint
+version: 1.3.0-cp36
+package_url: pkg:pypi/restructuredtext_lint@1.3.0
+download_url: https://github.com/twolfson/restructuredtext-lint/archive/1.3.0.tar.gz
+notice_url: https://github.com/twolfson/restructuredtext-lint/blob/v1.3.0/LICENSE
+homepage_url: https://github.com/twolfson/restructuredtext-lint/
+owner_url: https://github.com/twolfson/
+owner: Todd Wolfson
+contact: todd@twolfson.com
+license_expression: unlicense
+licenses:
+-   key: unlicense
+    name: The Unlicense
+copyright: Copyright (c) Todd Wolfson 

@@ -1,0 +1,21 @@
+about_resource: Sphinx-1.8.5-py2.py3-none-any.whl
+name: Sphinx
+version: 1.8.5 
+checksum_md5: ec23368cfce52febb348def5cf7e988f
+checksum_sha1: b519aa4248cdf2e6cdc93c5392670c25aab86a2b
+package_url: pkg:pypi/sphinx@1.8.5
+download_url: https://files.pythonhosted.org/packages/7d/66/a4af242b4348b729b9d46ce5db23943ce9bca7da9bbe2ece60dc27f26420/Sphinx-1.8.5-py2.py3-none-any.whl
+notice_url: https://github.com/sphinx-doc/sphinx/blob/v1.8.5/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinx
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-simplified OR bsd-new OR mit
+licenses:
+-   key: bsd-simplified
+    name: BSD-2-Clause
+-   key: bsd-new
+    name: BSD-3-Clause
+-   key: mit
+    name: MIT License
+copyright: Copyright (c) 2007-2019 by the Sphinx team
