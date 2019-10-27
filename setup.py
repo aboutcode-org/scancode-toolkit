@@ -221,7 +221,7 @@ setup(
         'spdx-tools >= 0.6.0',
         'unicodecsv',
 
-        # ScanCode Docs Primary
+        # ScanCode Docs
         'Sphinx <  2.0; python_version == "2.7"',
         'Sphinx >= 2.0; python_version > "3"',
         'sphinx_rtd_theme >= 0.4.3',
