@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_devhelp-1.0.1-py2.py3-none-any.whl
+name: sphinxcontrib_devhelp
+version: 1.0.1
+checksum_md5: 173ea18c7831cd8595c1b02f16e3935b
+checksum_sha1: 40a963edc14bbc5d77d890ec14a186dffabd3b11
+package_url: pkg:pypi/sphinxcontrib-devhelp@1.0.1
+download_url: https://files.pythonhosted.org/packages/b0/a3/fea98741f0b2f2902fbf6c35c8e91b22cd0dd13387291e81d457f9a93066/sphinxcontrib_devhelp-1.0.1-py2.py3-none-any.whl
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-devhelp/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-devhelp/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team
