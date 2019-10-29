@@ -109,11 +109,13 @@ class StarlarkManifestPackage(BaseBuildManifestPackage):
     def recognize(cls, location):
         if not cls._is_build_manifest(location):
             return
-        build_rules = defaultdict(list)
+
         # Thanks to Starlark being a Python dialect, we can use the `ast`
         # library to parse it
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
+
+        build_rules = defaultdict(list)
         for statement in tree.body:
             # We only care about function calls or assignments to functions whose
             # names ends with one of the strings in `rule_types`
@@ -174,3 +176,15 @@ class StarlarkManifestPackage(BaseBuildManifestPackage):
                 license_expressions.extend(licenses.get('license_expressions', []))
 
         return combine_expressions(license_expressions)
+
+
+@attr.s()
+class BazelPackage(StarlarkManifestPackage):
+    metafiles = ('BUILD',)
+    default_type = 'bazel'
+
+
+@attr.s()
+class BuckPackage(StarlarkManifestPackage):
+    metafiles = ('BUCK',)
+    default_type = 'buck'

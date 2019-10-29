@@ -85,8 +85,8 @@ PACKAGE_TYPES = [
     models.IsoImagePackage,
     models.SquashfsPackage,
     chef.ChefPackage,
-    bazel.BazelPackage,
-    buck.BuckPackage,
+    build.BazelPackage,
+    build.BuckPackage,
     build.AutotoolsPackage,
     conda.CondaPackage,
 ]
