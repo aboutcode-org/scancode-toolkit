@@ -64,6 +64,15 @@ class TestBuild(PackageTester):
         results = [r.path for r in build.BaseBuildManifestPackage.get_package_resources(root, codebase)]
         assert expected == results
 
+    def test_BazelPackage_recognize(self):
+        test_file = self.get_test_loc('bazel/parse/BUILD')
+        result_packages = build.BazelPackage.recognize(test_file)
+        expected_packages = [
+            build.BazelPackage(name='hello-greet'),
+            build.BazelPackage(name='hello-world'),
+        ]
+        compare_package_results(expected_packages, result_packages)
+
     def test_BuckPackage_recognize(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
         result_packages = build.BuckPackage.recognize(test_file)

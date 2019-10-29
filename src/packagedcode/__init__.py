@@ -41,8 +41,6 @@ from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
-from packagedcode import bazel
-from packagedcode import buck
 
 
 # Note: the order matters: from the most to the least specific
