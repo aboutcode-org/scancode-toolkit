@@ -29,7 +29,7 @@ Package: axis2
 
 --------------------------------------------
 Package: bazel
-  class: packagedcode.build:BazelPackage
+  class: packagedcode.bazel:BazelPackage
   metafiles: BUILD
 
 --------------------------------------------
