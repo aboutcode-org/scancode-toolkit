@@ -45,18 +45,18 @@ class TestBuck(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
-    def test_buck_parse(self):
+    def test_BuckPackage_recognize(self):
         test_file = self.get_test_loc('buck/parse/BUCK')
-        result_packages = buck.buck_parse(test_file)
+        result_packages = buck.BuckPackage.recognize(test_file)
         expected_packages = [
             buck.BuckPackage(name='app'),
             buck.BuckPackage(name='app2'),
         ]
         compare_package_results(expected_packages, result_packages)
 
-    def test_buck_parse_with_license(self):
+    def test_BuckPackage_recognize_with_license(self):
         test_file = self.get_test_loc('buck/parse/license/BUCK')
-        result_packages = buck.buck_parse(test_file)
+        result_packages = buck.BuckPackage.recognize(test_file)
         expected_packages = [
             buck.BuckPackage(
                 name='app',
