@@ -29,7 +29,7 @@ Package: axis2
 
 --------------------------------------------
 Package: bazel
-  class: packagedcode.bazel:BazelPackage
+  class: packagedcode.build:BazelPackage
   metafiles: BUILD
 
 --------------------------------------------
@@ -39,7 +39,7 @@ Package: bower
 
 --------------------------------------------
 Package: buck
-  class: packagedcode.buck:BuckPackage
+  class: packagedcode.build:BuckPackage
   metafiles: BUCK
 
 --------------------------------------------
