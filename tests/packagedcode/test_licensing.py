@@ -36,6 +36,6 @@ class TestLicensing(TestCase):
         assert 'mit' == get_normalized_expression('mit')
         assert 'apache-2.0 AND unknown' == get_normalized_expression('mit or asasa or Apache-2.0')
         assert 'apache-2.0 AND unknown' == get_normalized_expression('mit or asasa or Apache-2.0')
-        assert 'apache-2.0 AND unknown' == get_normalized_expression('mit asasa or Apache-2.0')
+        assert 'mit OR apache-2.0' == get_normalized_expression('mit asasa or Apache-2.0')
         assert get_normalized_expression('') is None
         assert get_normalized_expression(None) is None
