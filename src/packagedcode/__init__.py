@@ -41,7 +41,6 @@ from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
-from packagedcode import buck
 
 
 # Note: the order matters: from the most to the least specific
@@ -85,7 +84,7 @@ PACKAGE_TYPES = [
     models.SquashfsPackage,
     chef.ChefPackage,
     build.BazelPackage,
-    buck.BuckPackage,
+    build.BuckPackage,
     build.AutotoolsPackage,
     conda.CondaPackage,
 ]
