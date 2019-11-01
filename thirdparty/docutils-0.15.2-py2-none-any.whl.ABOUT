@@ -1,0 +1,17 @@
+about_resource: docutils-0.15.2-py2-none-any.whl
+name: docutils
+version: 0.15.2-py2
+checksum_md5: f662aa234d4a07533f5d1ceae221597a
+checksum_sha1: 8e276524c5a76b03ab98e02908a1d48023f5c573
+package_url: pkg:pypi/docutils@0.15.2
+download_url: https://files.pythonhosted.org/packages/3a/dc/bf2b15d1fa15a6f7a9e77a61b74ecbbae7258558fcda8ffc9a6638a6b327/docutils-0.15.2-py2-none-any.whl
+notice_url: https://github.com/docutils-mirror/docutils/blob/master/licenses/BSD-2-Clause.txt
+homepage_url: http://docutils.sourceforge.net/
+owner_url: https://pypi.org/user/goodger/
+owner: David Goodger
+contact: docutils-develop@lists.sourceforge.net
+license_expression: bsd-simplified
+licenses:
+-   key: bsd-simplified
+    name: BSD-2-Clause
+copyright: Copyright (c) David Goodger

@@ -1,0 +1,17 @@
+about_resource: doc8-0.8.0-py2.py3-none-any.whl
+name: doc8
+version: 0.8.0
+checksum_md5: 0980c7c6e4b06b6e35ba0db2a7cafc21
+checksum_sha1: 99220f4d00158e8bd1156481a7808c5f000e074c
+package_url: pkg:pypi/doc8@0.8.0
+download_url: https://files.pythonhosted.org/packages/d8/39/5427135280657da69b800cebb153f40b5f3209c636659c35a19c8760428a/doc8-0.8.0-py2.py3-none-any.whl
+notice_url: https://github.com/PyCQA/doc8/blob/0.8.0/LICENSE
+homepage_url: https://github.com/PyCQA/doc8
+owner_url: https://github.com/PyCQA
+owner: OpenStack
+contact: openstack-dev@lists.openstack.org
+license_expression: apache-2.0
+licenses:
+-   key: apache-2.0
+    name: Apache 2.0 License
+copyright: Copyright (c) OpenStack

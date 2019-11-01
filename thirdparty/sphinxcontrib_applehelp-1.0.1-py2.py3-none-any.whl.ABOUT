@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_applehelp-1.0.1-py2.py3-none-any.whl
+name: sphinxcontrib_applehelp
+version: 1.0.1
+checksum_md5: 098c7bd28ba940494ffd3bb92c0b55e1
+checksum_sha1: 82f3d93c260a03a6bdc9264b91d45143ba0c184d
+package_url: pkg:pypi/sphinxcontrib-applehelp@1.0.1
+download_url: https://files.pythonhosted.org/packages/13/9a/4428b3114d654cb1cd34d90d5e6fab938d5436f94a571155187ea1dd78b4/sphinxcontrib_applehelp-1.0.1-py2.py3-none-any.whl
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-applehelp/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-applehelp/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team

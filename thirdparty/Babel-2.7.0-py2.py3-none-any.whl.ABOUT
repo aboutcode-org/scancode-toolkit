@@ -1,0 +1,17 @@
+about_resource: Babel-2.7.0-py2.py3-none-any.whl
+name: Babel
+version: 2.7.0
+checksum_md5: b96fe47047fd07bc5797779d903d4fe2
+checksum_sha1: 6145459f9d7a875b10695874588044157cff58be
+package_url: pkg:pypi/babel@2.7.0
+download_url: https://files.pythonhosted.org/packages/2c/60/f2af68eb046c5de5b1fe6dd4743bf42c074f7141fe7b2737d3061533b093/Babel-2.7.0-py2.py3-none-any.whl
+notice_url: https://github.com/babel/babel/blob/master/LICENSE
+homepage_url: http://babel.pocoo.org/en/latest/
+owner_url: https://github.com/babel
+owner:  Armin Ronacher
+contact: armin.ronacher@active-4.com
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2014-present Sebastian McKenzie and other contributors

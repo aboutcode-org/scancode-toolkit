@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+name: sphinxcontrib_jsmath
+vversion: 1.0.1
+download_url: https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+checksum_md5: 4a9dbd97819fa713147472387ebd845d
+checksum_sha1: beff4fc35d13a5f2883bc129f28ac031046195c5
+package_url: pkg:pypi/sphinxcontrib-jsmath@1.0.1
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-jsmath/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-jsmath/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team

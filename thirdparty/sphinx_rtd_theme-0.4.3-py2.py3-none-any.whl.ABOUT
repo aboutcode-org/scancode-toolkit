@@ -1,0 +1,17 @@
+about_resource: sphinx_rtd_theme-0.4.3-py2.py3-none-any.whl
+name: sphinx_rtd_theme
+version: 0.4.3
+checksum_md5: d1d2b14a87e6f2e78e14e9b74432def0
+checksum_sha1: c5cf21f4fd3110c657b983cc5f17d6a5bf33d40d
+package_url: pkg:pypi/sphinx-rtd-theme@0.4.3
+download_url: https://files.pythonhosted.org/packages/60/b4/4df37087a1d36755e3a3bfd2a30263f358d2dea21938240fa02313d45f51/sphinx_rtd_theme-0.4.3-py2.py3-none-any.whl
+notice_url: https://github.com/readthedocs/sphinx_rtd_theme/blob/0.4.3/LICENSE
+homepage_url: https://github.com/readthedocs/sphinx_rtd_theme
+owner_url: https://readthedocs.org/
+owner: Dave Snider, Read the Docs, Inc. & contributors
+contact: dev@readthedocs.org
+license_expression: mit
+licenses:
+-   key: mit
+    name: MIT License
+copyright: Copyright (c) 2013-2018 Dave Snider, Read the Docs, Inc. & contributors

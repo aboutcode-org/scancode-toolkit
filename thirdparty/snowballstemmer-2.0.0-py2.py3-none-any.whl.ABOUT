@@ -1,0 +1,19 @@
+about_resource: snowballstemmer-2.0.0-py2.py3-none-any.whl
+name: snowballstemmer
+version: 2.2.0
+checksum_md5: e5e7ab4d8fe1010d1838d061b22e6ea6
+checksum_sha1: 2a3c44768f4c9af9c644d97ad02710ac59f416ca
+package_url: pkg:pypi/snowballstemmer@2.0.0
+download_url: https://files.pythonhosted.org/packages/7d/4b/cdf1113a0e88b641893b814e9c36f69a6fda28cd88b62c7f0d858cde3166/snowballstemmer-2.0.0-py2.py3-none-any.whl
+notice_url: https://github.com/sphinx-doc/sphinx/blob/v2.2.0/LICENSE
+homepage_url: https://github.com/snowballstem/snowball
+owner_url: https://github.com/snowballstem
+owner:  Snowball Developers
+contact: snowball-discuss@lists.tartarus.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: 
+- Copyright (c) 2001, Dr Martin Porter
+- Copyright (c) 2004,2005, Richard Boulton

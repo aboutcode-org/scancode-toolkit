@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_htmlhelp-1.0.2-py2.py3-none-any.whl
+name: sphinxcontrib_htmlhelp
+version: 1.0.2
+download_url: https://files.pythonhosted.org/packages/e4/35/80a67cc493f4a8a9634ab203a77aaa1b84d79ccb1c02eca72cb084d2c7f7/sphinxcontrib_htmlhelp-1.0.2-py2.py3-none-any.whl
+checksum_md5: 008b2ef1b3bec24c97164721e4e50892
+checksum_sha1: fc1163cfe4915a88144529cdc3e0df400f46671a
+package_url: pkg:pypi/sphinxcontrib-htmlhelp@1.0.2
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-htmlhelp/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-htmlhelp/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team
