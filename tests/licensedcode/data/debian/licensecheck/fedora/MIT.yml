@@ -6,14 +6,13 @@ license_expressions:
   - mit-old-style AND warranty-disclaimer
   - historical
   - postgresql
-  - mit
   - postgresql
   - postgresql
   - cmu-uc
   - standard-ml-nj
   - standard-ml-nj
   - standard-ml-nj
-  - x11-x11r5
+  - wordnet
   - wordnet
   - mit
   - unicode
@@ -41,7 +40,6 @@ license_expressions:
   - gpl-1.0-plus
   - other-permissive
   - unknown
-  - gpl-1.0-plus
   - other-permissive
   - osf-1990
   - other-permissive
