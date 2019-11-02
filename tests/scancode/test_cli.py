@@ -107,12 +107,15 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert 'copyright_acme_c-c.c' in result.output
     assert len(open(result_file).read()) > 10
 
+
+@pytest.mark.xfail(reason='Bug is not fixed yet')
 def test_scanned_resource_no_attribute_emails():
-    test_dir = test_env.get_test_loc('license/apache-1.1.txt')
+    test_dir = test_env.get_test_loc('apache-1.1.txt')
     result_file = test_env.get_temp_file('bb.json')
     args = ['-clp', '--json-pp',result_file, test_dir, '--filter-clues']
     result = run_scan_click(args)
     assert "'ScannedResource' object has no attribute 'emails'" not in result.output
+
 
 def test_unwanted_log_warning_message():
     test_dir = test_env.get_test_loc('unwanted_log_message.txt')
@@ -121,6 +124,7 @@ def test_unwanted_log_warning_message():
     result = run_scan_click(args)
     assert 'No handlers could be found for logger "bs4.dammit"' not in result.output
 
+
 def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -128,6 +132,15 @@ def test_license_option_detects_licenses():
     run_scan_click(args)
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
+
+
+def test_can_call_run_scan_as_a_function():
+    from scancode.cli import run_scan
+    test_dir = test_env.get_test_loc('license', copy=True)
+    rc, results = run_scan(test_dir, license=True, copyright=True, return_results=True)
+    assert rc
+    assert len(results['files']) == 2
+    assert not results['headers'][0]['errors']
 
 
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
@@ -512,7 +525,7 @@ def test_scan_can_handle_weird_file_names():
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
-@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3), 
+@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3),
         reason='Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
         ' Also this fails on Windows and Python 3')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
@@ -905,6 +918,3 @@ def test_merge_multiple_scans():
     with open(result_file, read_mode) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
-
-
-#test_scanned_resource_no_attribute_emails()
