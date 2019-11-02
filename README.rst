@@ -55,8 +55,10 @@ Build and tests status
 Quick Start
 ===========
 
-Install Python 2.7 then download and extract the latest ScanCode release from
+Install Python 3.6.8 then download and extract the latest ScanCode release from
 https://github.com/nexB/scancode-toolkit/releases/ 
+
+Although ScanCode supports Python 2.7 up to 3.6.8, it is recommended to use the latest supported Python version.
 
 Then run ``./scancode -h`` for help.
 
@@ -68,29 +70,29 @@ Pre-requisites:
 
 * On Windows, please follow the `Comprehensive Installation instructions
   <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_.
-  Make sure you use Python 2.7 32 bits from
-  https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
+  Make sure you use Python 3.6.8 32 bits from
+  https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
 
-* On macOS, install Python 2.7 from
-  https://www.python.org/ftp/python/2.7.15/python-2.7.15-macosx10.6.pkg
+* On macOS, install Python 3.6.8 from
+  https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
 
   Next, download and extract the latest ScanCode release from
   https://github.com/nexB/scancode-toolkit/releases/
 
-* On Linux install the Python 2.7 "devel" and these packages using your
+* On Linux install the Python 3.6 "devel" and these packages using your
   distribution package manager:
 
   * On Ubuntu 14, 16 and 18 use:
-    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev bzip2``
+    ``sudo apt-get install python3.6-dev xz-utils zlib1g libxml2-dev libxslt1-dev bzip2``
 
   * On Debian and Debian-based distros use:
-    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev libbz2-1.0``
+    ``sudo apt-get install python3.6-dev xz-utils zlib1g libxml2-dev libxslt1-dev libbz2-1.0``
 
   * On RPM distros use:
-    ``sudo yum install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+    ``sudo yum install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
 
   * On Fedora 22 and later use:
-    ``sudo dnf install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+    ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
 
 * See also the `Comprehensive Installation instructions 
   <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_
