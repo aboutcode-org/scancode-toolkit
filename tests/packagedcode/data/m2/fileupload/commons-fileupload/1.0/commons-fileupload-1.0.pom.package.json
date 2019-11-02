@@ -3,7 +3,7 @@
   "namespace": "commons-fileupload",
   "name": "commons-fileupload",
   "version": "1.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "FileUpload\nThe FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications.",

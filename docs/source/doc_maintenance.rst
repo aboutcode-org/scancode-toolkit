@@ -44,7 +44,8 @@ Now you can build the HTML documents locally::
     cd docs
     make html
 
-Assuming that your Sphinx installation was successful, Sphinx should build a local instance of the documentation .html files::
+Assuming that your Sphinx installation was successful, Sphinx should build a local instance of the
+documentation .html files::
 
     open build/html/index.html
 
@@ -60,7 +61,8 @@ Ensure that you have the latest ScanCode Toolkit files::
     git pull
     git status
 
-Use your favorite text editor to create and modify .rst files to make your documentation improvements.
+Use your favorite text editor to create and modify .rst files to make your documentation
+improvements.
 
 Review your work::
 
@@ -71,7 +73,8 @@ Review your work::
 Share ScanCode Toolkit Document Improvements
 --------------------------------------------
 
-Follow standard git procedures to upload your new and modified files. The following commands are examples::
+Follow standard git procedures to upload your new and modified files. The following commands are
+examples::
 
     git status
     git add source/index.rst
@@ -82,4 +85,5 @@ Follow standard git procedures to upload your new and modified files. The follow
     git push
     git status
 
-The ScanCode Toolkit webhook with ReadTheDocs should rebuild the documentation. You can review your results online.
+The ScanCode Toolkit webhook with ReadTheDocs should rebuild the documentation. You can review your
+results online.

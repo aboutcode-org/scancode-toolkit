@@ -1,0 +1,17 @@
+about_resource: alabaster-0.7.12-py2.py3-none-any.whl
+name: alabaster
+version: 0.7.12
+checksum_md5: 6487fd5054a3eece3a6b96bda83d97b2
+checksum_sha1: 2f921fdec63547d20d171de41bc50916aebf5fd2
+package_url: pkg:pypi/alabaster@0.7.12
+download_url: https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+notice_url: https://github.com/bitprophet/alabaster/blob/0.7.12/LICENSE
+homepage_url: https://github.com/bitprophet/alabaster
+owner_url: https://github.com/bitprophet
+owner: Jeff Forcier
+contact: jeff@bitprophet.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2018 Jeff Forcier

@@ -19,31 +19,14 @@
       }
     }
   ],
-  "consolidated_components": [
-    {
-      "type": "license-holders",
-      "identifier": "the_apache_software_foundation_1",
-      "consolidated_license_expression": "apache-2.0",
-      "consolidated_holders": [
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "The Apache Software Foundation"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    }
-  ],
+  "consolidated_components": [],
   "consolidated_packages": [
     {
       "type": "npm",
       "namespace": null,
       "name": "test-package",
       "version": "0.0.1",
-      "qualifiers": null,
+      "qualifiers": {},
       "subpath": null,
       "primary_language": "JavaScript",
       "description": null,
@@ -76,13 +59,17 @@
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
       "consolidated_license_expression": "apache-2.0",
-      "consolidated_holders": [],
-      "consolidated_copyright": "Copyright (c) ",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
       "other_license_expression": "apache-2.0",
-      "other_holders": [],
-      "files_count": 1
+      "other_holders": [
+        "The Apache Software Foundation"
+      ],
+      "files_count": 4
     }
   ],
   "files": [
@@ -111,7 +98,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -182,7 +169,7 @@
           "namespace": null,
           "name": "test-package",
           "version": "0.0.1",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
           "description": null,
@@ -295,7 +282,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -374,7 +361,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -453,7 +440,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "pkg_npm_test_package_0_0_1_1"
       ],
       "files_count": 0,
       "dirs_count": 0,

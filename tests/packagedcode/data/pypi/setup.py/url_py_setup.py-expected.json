@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "urlpy",
   "version": "0.2.0.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "URL Parsing",

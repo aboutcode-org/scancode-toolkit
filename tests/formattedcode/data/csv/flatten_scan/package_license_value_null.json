@@ -25,7 +25,7 @@
           "namespace": null,
           "name": "cookie-signature",
           "version": "1.0.3",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
           "description": "Sign and unsign cookies",

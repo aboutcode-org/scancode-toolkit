@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "sequelize",
   "version": "3.30.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Multi dialect ORM for Node.JS/io.js",

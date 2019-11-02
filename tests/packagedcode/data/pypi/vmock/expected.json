@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "vmock",
   "version": "0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Advanced Mock library following record and replay approach.",

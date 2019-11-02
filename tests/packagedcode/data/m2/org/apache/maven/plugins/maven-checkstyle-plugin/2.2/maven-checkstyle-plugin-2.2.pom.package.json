@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-checkstyle-plugin",
   "version": "2.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Checkstyle Plugin",

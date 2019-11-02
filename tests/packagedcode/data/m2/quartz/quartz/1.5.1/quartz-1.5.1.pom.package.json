@@ -3,7 +3,7 @@
   "namespace": "quartz",
   "name": "quartz",
   "version": "1.5.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

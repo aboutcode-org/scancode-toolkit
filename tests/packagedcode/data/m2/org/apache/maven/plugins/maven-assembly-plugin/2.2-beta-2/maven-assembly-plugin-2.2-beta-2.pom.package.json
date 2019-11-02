@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.plugins",
   "name": "maven-assembly-plugin",
   "version": "2.2-beta-2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Assembly Plugin",

@@ -3,7 +3,7 @@
   "namespace": "mysql",
   "name": "mysql-connector-java",
   "version": "5.0.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "MySQL java connector",

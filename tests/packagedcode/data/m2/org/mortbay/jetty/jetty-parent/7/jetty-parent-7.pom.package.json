@@ -3,7 +3,7 @@
   "namespace": "org.mortbay.jetty",
   "name": "jetty-parent",
   "version": "7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Jetty :: Administrative Parent",

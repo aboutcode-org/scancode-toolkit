@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "bootstrap",
   "version": "4.0.0-alpha",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": null,
   "description": "Bootstrap CSS\nBootstrap framework in CSS. Includes fonts and JavaScript\nThe most popular front-end framework for developing responsive, mobile first projects on the web.",

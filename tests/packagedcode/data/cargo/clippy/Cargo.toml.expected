@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "clippy",
   "version": "0.0.212",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Rust",
   "description": "A bunch of helpful lints to avoid common pitfalls in Rust",

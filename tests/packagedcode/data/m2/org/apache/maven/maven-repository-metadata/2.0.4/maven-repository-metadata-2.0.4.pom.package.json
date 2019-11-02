@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven",
   "name": "maven-repository-metadata",
   "version": "2.0.4",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Maven Repository Metadata Model\nMaven Plugin Mapping",

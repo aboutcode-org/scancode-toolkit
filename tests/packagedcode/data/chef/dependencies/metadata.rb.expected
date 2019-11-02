@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "build-essential",
   "version": "8.2.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Ruby",
   "description": "Installs C compiler / build tools",

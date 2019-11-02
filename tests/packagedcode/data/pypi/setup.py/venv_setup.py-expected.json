@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "virtualenv",
   "version": null,
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
   "description": "Virtual Python Environment builder",

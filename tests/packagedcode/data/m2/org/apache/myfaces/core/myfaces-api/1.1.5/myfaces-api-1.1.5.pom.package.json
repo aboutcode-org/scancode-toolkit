@@ -3,7 +3,7 @@
   "namespace": "org.apache.myfaces.core",
   "name": "myfaces-api",
   "version": "1.1.5",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "API\nThe MyFaces API Subproject provides a full set of the API interfaces and classes\n    defined in JSR-127 (see also http://www.jcp.org/en/jsr/detail?id=127).",

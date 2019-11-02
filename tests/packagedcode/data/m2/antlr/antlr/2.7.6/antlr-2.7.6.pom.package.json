@@ -3,7 +3,7 @@
   "namespace": "antlr",
   "name": "antlr",
   "version": "2.7.6",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "AntLR",

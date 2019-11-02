@@ -1,46 +1,20 @@
 license_expressions:
   - lgpl-2.1-plus
   - gpl-2.0
-  - gpl-3.0
-  - lgpl-2.0
-  - lgpl-3.0
   - gpl-2.0
-  - gpl-2.0
-  - gpl-2.0
-  - gpl-3.0
-  - gpl-3.0
-  - gpl-3.0
-  - lgpl-2.0
-  - lgpl-2.0
-  - lgpl-2.0
-  - lgpl-3.0
-  - lgpl-3.0
-  - lgpl-3.0
-  - gpl-2.0
-  - gpl-2.0
-  - gpl-2.0
-  - lgpl-2.0
-  - epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
   - lgpl-2.1
   - lgpl-2.1
   - gpl-3.0
   - gpl-3.0
-  - gpl-3.0
   - lgpl-3.0
   - lgpl-3.0
-  - lgpl-3.0
-  - gpl-2.0
   - gpl-1.0-plus
-  - gpl-3.0
+  - gpl-2.0-plus
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus
   - gpl-1.0-plus
-  - lgpl-2.0
-  - lgpl-2.0-plus
-  - lgpl-3.0
-  - lgpl-2.0-plus
   - gpl-2.0-plus
   - gpl-2.0-plus
+  - gpl-3.0-plus
   - lgpl-2.1
-  - mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
   - lgpl-3.0-plus
-  - mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
-  - lgpl-2.0

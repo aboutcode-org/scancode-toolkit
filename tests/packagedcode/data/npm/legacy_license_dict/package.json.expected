@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "grunt-inline-imgsize",
   "version": "0.0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Inject width and height for img tags",

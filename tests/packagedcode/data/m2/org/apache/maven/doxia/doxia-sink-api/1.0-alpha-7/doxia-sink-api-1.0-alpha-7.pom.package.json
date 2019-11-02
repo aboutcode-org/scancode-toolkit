@@ -3,7 +3,7 @@
   "namespace": "org.apache.maven.doxia",
   "name": "doxia-sink-api",
   "version": "1.0-alpha-7",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Doxia Sink API",

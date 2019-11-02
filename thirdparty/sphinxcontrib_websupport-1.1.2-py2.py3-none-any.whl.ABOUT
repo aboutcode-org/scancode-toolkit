@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_websupport-1.1.2-py2.py3-none-any.whl
+name: sphinxcontrib_websupport
+version: 1.1.2
+download_url: https://files.pythonhosted.org/packages/2a/59/d64bda9b7480a84a3569be4dde267c0f6675b255ba63b4c8e84469940457/sphinxcontrib_websupport-1.1.2-py2.py3-none-any.whl
+checksum_md5: 0165a8da088a8579845b86275c4c439d
+checksum_sha1: 15db98942bc5aa229a144336e36cce1ad1e79f9c
+package_url: pkg:pypi/sphinxcontrib-websupport@1.1.2
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-websupport/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-websupport/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team

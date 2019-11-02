@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "npm2aur",
   "version": "0.1.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Sync AUR with NPM packages",

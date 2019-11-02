@@ -3,7 +3,7 @@
   "namespace": "org.apache.geronimo.genesis.config",
   "name": "project-config",
   "version": "1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Genesis Configuration :: Project\nGenesis project-config provides the common project configuration shared\n        by all Apache Geronimo projects.",

@@ -3,7 +3,7 @@
   "namespace": "@ionic",
   "name": "app-scripts",
   "version": "3.0.1-201710301651",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Scripts for Ionic Projects",

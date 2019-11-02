@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "utils-merge",
   "version": "1.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "merge() utility function",

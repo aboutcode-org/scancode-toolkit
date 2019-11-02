@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "lodash.clonedeep",
   "version": "4.3.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "The lodash method `_.cloneDeep` exported as a module.",

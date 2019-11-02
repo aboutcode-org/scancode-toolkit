@@ -3,7 +3,7 @@
   "namespace": "javassist",
   "name": "javassist",
   "version": "3.4.GA",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Javassist\nSimple Java bytecode manipulation",

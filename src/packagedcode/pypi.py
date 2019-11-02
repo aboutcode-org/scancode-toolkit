@@ -93,7 +93,7 @@ class PythonPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        return parse(location)
+        yield parse(location)
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)

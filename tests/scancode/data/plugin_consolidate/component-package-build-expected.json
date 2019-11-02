@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "build",
-      "identifier": "build_1",
+      "identifier": "demo_1",
       "consolidated_license_expression": null,
       "consolidated_holders": [],
       "consolidated_copyright": "Copyright (c) ",
@@ -55,7 +55,7 @@
       "namespace": null,
       "name": "test-package",
       "version": "0.0.1",
-      "qualifiers": null,
+      "qualifiers": {},
       "subpath": null,
       "primary_language": "JavaScript",
       "description": null,
@@ -87,18 +87,22 @@
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
       "identifier": "pkg_npm_test_package_0_0_1_1",
-      "consolidated_license_expression": "apache-2.0",
+      "consolidated_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "consolidated_holders": [
-        "The Apache Software"
+        "IBM Corp.",
+        "The Apache Software",
+        "The Apache Software Foundation"
       ],
-      "consolidated_copyright": "Copyright (c) The Apache Software",
+      "consolidated_copyright": "Copyright (c) IBM Corp., The Apache Software, The Apache Software Foundation",
       "core_license_expression": "apache-2.0",
       "core_holders": [],
-      "other_license_expression": "apache-2.0",
+      "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "other_holders": [
-        "The Apache Software"
+        "IBM Corp.",
+        "The Apache Software",
+        "The Apache Software Foundation"
       ],
-      "files_count": 1
+      "files_count": 3
     }
   ],
   "files": [
@@ -156,7 +160,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "demo_1"
+      ],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 261,
@@ -189,9 +195,9 @@
         {
           "type": "buck",
           "namespace": null,
-          "name": "build",
+          "name": "demo",
           "version": null,
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": null,
           "description": null,
@@ -216,14 +222,14 @@
           "dependencies": [],
           "contains_source_code": null,
           "source_packages": [],
-          "purl": "pkg:buck/build",
+          "purl": "pkg:buck/demo",
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null
         }
       ],
       "consolidated_to": [
-        "build_1"
+        "demo_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -600,7 +606,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 275,
@@ -682,7 +690,7 @@
           "namespace": null,
           "name": "test-package",
           "version": "0.0.1",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "JavaScript",
           "description": null,
@@ -794,7 +802,9 @@
       ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -904,7 +914,9 @@
       ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "pkg_npm_test_package_0_0_1_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

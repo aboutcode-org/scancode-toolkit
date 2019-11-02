@@ -3,7 +3,7 @@
   "namespace": "net.sf.kxml",
   "name": "kxml2",
   "version": "2.2.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "kXML 2\nkXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.",

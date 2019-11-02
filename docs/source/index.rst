@@ -33,7 +33,8 @@ Reference documents describe application concepts in depth.
 Discussion Documents
 ====================
 
-Discussion documents provide insights into integration of the application into your own software development life cycle.
+Discussion documents provide insights into integration of the application into your own software
+development life cycle.
 
 
 Indices and Tables

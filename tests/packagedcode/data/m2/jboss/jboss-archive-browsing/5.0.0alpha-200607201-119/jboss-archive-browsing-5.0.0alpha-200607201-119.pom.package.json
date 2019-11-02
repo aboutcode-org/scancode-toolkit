@@ -3,7 +3,7 @@
   "namespace": "jboss",
   "name": "jboss-archive-browsing",
   "version": "5.0.0alpha-200607201-119",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

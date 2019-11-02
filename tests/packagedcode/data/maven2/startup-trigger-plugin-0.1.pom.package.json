@@ -3,7 +3,7 @@
   "namespace": "org.jvnet.hudson.plugins",
   "name": "startup-trigger-plugin",
   "version": "0.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Startup Trigger",

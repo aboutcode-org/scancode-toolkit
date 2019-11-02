@@ -3,7 +3,7 @@
   "namespace": "net.sourceforge.findbugs",
   "name": "coreplugin",
   "version": "1.0.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Core plugin supports the FindBugs tool",

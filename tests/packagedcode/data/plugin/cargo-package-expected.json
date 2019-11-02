@@ -27,7 +27,7 @@
           "namespace": null,
           "name": "clap",
           "version": "2.32.0",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "Rust",
           "description": "A simple to use, efficient, and full featured  Command Line Argument Parser",

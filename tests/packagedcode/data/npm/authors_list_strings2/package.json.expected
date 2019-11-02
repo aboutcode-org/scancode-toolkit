@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "exif",
   "version": "0.6.0",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "A node.js library to extract Exif metadata from images.",

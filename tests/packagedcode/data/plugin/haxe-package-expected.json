@@ -27,7 +27,7 @@
           "namespace": null,
           "name": "hxsocketio",
           "version": "0.1.0",
-          "qualifiers": null,
+          "qualifiers": {},
           "subpath": null,
           "primary_language": "Haxe",
           "description": "Externs for socket.io",

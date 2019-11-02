@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "rustfmt-nightly",
   "version": "1.0.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Rust",
   "description": "Tool to find and fix Rust formatting issues",

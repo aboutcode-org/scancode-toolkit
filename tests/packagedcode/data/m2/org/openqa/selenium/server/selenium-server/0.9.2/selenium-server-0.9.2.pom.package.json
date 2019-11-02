@@ -3,7 +3,7 @@
   "namespace": "org.openqa.selenium.server",
   "name": "selenium-server",
   "version": "0.9.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Selenium RC Server",

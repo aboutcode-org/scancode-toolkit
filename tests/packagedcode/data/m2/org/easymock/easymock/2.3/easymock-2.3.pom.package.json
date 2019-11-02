@@ -3,7 +3,7 @@
   "namespace": "org.easymock",
   "name": "easymock",
   "version": "2.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "EasyMock\nEasyMock provides Mock Objects for interfaces in JUnit tests by generating them on the fly using Java's proxy mechanism",

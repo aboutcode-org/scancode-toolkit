@@ -1,0 +1,158 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--json-pp": "<file>",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 6
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "end2end",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/BUILD",
+      "type": "file",
+      "packages": [
+        {
+          "type": "bazel",
+          "namespace": null,
+          "name": "end2end",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": "end2end",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:bazel/end2end",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/dir",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/dir/file1",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir/file1",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/BUILD",
+      "type": "file",
+      "packages": [
+        {
+          "type": "bazel",
+          "namespace": null,
+          "name": "subdir2",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": "end2end/subdir2",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:bazel/subdir2",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/file2",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/subdir3",
+      "type": "directory",
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "end2end/subdir2/subdir3/file2",
+      "type": "file",
+      "packages": [],
+      "scan_errors": []
+    }
+  ]
+}

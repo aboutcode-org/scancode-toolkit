@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "selecthxml",
   "version": "0.5.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Haxe",
   "description": "Allows type-safe CSS-style selection on Xml objects.",

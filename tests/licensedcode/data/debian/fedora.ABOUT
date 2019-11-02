@@ -1,14 +1,13 @@
 about_resource: licensecheck/fedora
 homepage_url: https://salsa.debian.org/perl-team/modules/packages/licensecheck
-license_expession: gpl-2.0
+license_expression: gpl-2.0 AND cc-by-sa-3.0
 version: b83b89ca
 name: licensecheck
-license_expression: cc-by-sa-3.0
 
-notes: this is the partial content of the t sub-direcory of licensecheck that
- contains sevreal test files. It has been modified to support the test framework
- with yml files. This fedora directory had this note:
- Texts copied from source view of each of these web pages:
+notes: this is the partial content of the sub-direcory of licensecheck that
+ contains several test files. It has been modified to support the scancode test
+ framework with yml files. The fedora directory had this note
+ Texts copied from source view of each of these web pages
  https://fedoraproject.org/wiki/Licensing:MIT (2016-10-10)
- License (from web page footers): Attribution-Share Alike 3.0 Unported.
+ License (from web page footers) is Attribution-Share Alike 3.0 Unported.
 

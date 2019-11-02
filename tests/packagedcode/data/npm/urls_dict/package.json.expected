@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "jsonp-filter",
   "version": "0.0.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "JSONP filter for express",

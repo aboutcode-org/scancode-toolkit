@@ -3,7 +3,7 @@
   "namespace": "org.ajax4jsf",
   "name": "master",
   "version": "1.1.1",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Ajax for Java Server faces core project",

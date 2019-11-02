@@ -3,7 +3,7 @@
   "namespace": null,
   "name": "grunt-esvm",
   "version": "3.2.8",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "JavaScript",
   "description": "Create elasticsearch clusters from grunt.",

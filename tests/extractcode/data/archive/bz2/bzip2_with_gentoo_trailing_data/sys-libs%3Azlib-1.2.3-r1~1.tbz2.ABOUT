@@ -1,0 +1,4 @@
+about_resource: sys-libs%3Azlib-1.2.3-r1~1.tbz2
+name: a test archive from Gentoo
+download_url: http://bugs.python.org/file32904/sys-libs%3Azlib-1.2.3-r1%7E1.tbz2
+notes: See also http://bugs.python.org/issue19839

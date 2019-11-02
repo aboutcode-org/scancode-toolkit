@@ -4,7 +4,9 @@
     "namespace": null,
     "name": "jaro_winkler",
     "version": "1.5.1",
-    "qualifiers": "platform=java",
+    "qualifiers": {
+      "platform": "java"
+    },
     "subpath": null,
     "primary_language": "Ruby",
     "description": "An implementation of Jaro-Winkler distance algorithm written \\ in C extension which supports any kind of string encoding.\njaro_winkler is an implementation of Jaro-Winkler \\\n  distance algorithm which is written in C extension and will fallback to pure \\\n  Ruby version in platforms other than MRI/KRI like JRuby or Rubinius. Both of \\\n  C and Ruby implementation support any kind of string encoding, such as \\\n  UTF-8, EUC-JP, Big5, etc.",

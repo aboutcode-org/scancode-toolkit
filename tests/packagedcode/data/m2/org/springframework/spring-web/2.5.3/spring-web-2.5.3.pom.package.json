@@ -3,7 +3,7 @@
   "namespace": "org.springframework",
   "name": "spring-web",
   "version": "2.5.3",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": "Spring Framework: Web",

@@ -3,7 +3,7 @@
   "namespace": "javax.persistence",
   "name": "persistence-api",
   "version": "1.0.2",
-  "qualifiers": null,
+  "qualifiers": {},
   "subpath": null,
   "primary_language": "Java",
   "description": null,

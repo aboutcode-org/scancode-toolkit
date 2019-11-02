@@ -4,7 +4,7 @@
     "namespace": null, 
     "name": "m2r", 
     "version": "2.1.0", 
-    "qualifiers": null, 
+    "qualifiers": {}, 
     "subpath": null, 
     "primary_language": "Ruby", 
     "description": "Mongrel2 interface and handler library for Ruby.\nMongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!", 

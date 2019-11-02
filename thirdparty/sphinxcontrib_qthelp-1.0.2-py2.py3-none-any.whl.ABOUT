@@ -1,0 +1,17 @@
+about_resource: sphinxcontrib_qthelp-1.0.2-py2.py3-none-any.whl
+name: sphinxcontrib_qthelp
+version: 1.0.2
+download_url: https://files.pythonhosted.org/packages/ce/5b/4747c3ba98b3a3e21a66faa183d8f79b9ded70e74212a7988d236a6eb78a/sphinxcontrib_qthelp-1.0.2-py2.py3-none-any.whl
+checksum_md5: 471b12b9a612717671627a37ba822b06
+checksum_sha1: decead4e6f3423c24cecedd24147e49b7d0bb55a
+package_url: pkg:pypi/sphinxcontrib-qthelp@1.0.2
+notice_url: https://github.com/sphinx-doc/sphinxcontrib-qthelp/blob/master/LICENSE
+homepage_url: https://github.com/sphinx-doc/sphinxcontrib-qthelp/
+owner_url: https://github.com/birkenfeld
+owner: Georg Brandl
+contact: georg@python.org
+license_expression: bsd-new
+licenses:
+-   key: bsd-new
+    name: BSD-3-Clause
+copyright: Copyright (c) 2007-2019 by the Sphinx team
