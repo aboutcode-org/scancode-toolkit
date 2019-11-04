@@ -55,10 +55,10 @@ Build and tests status
 Quick Start
 ===========
 
-Install Python 3.6.8 then download and extract the latest ScanCode release from
+Install Python 3.6 then download and extract the latest ScanCode release from
 https://github.com/nexB/scancode-toolkit/releases/ 
 
-Although ScanCode supports Python 2.7 up to 3.6.8, it is recommended to use the latest supported Python version.
+Although ScanCode supports Python 2.7 and Python 3.6, it is recommended to use the latest supported Python version.
 
 Then run ``./scancode -h`` for help.
 
