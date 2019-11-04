@@ -28,7 +28,11 @@ author = 'ScanCode-Toolkit.org'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+'sphinx.ext.intersphinx'
 ]
+
+# Temporary Mapping, Once aboutcode.readthedocs.io doesn't have the Scancode docs, this can be changed to the same.
+intersphinx_mapping = {'aboutcode': ('https://sphinx-test-ayan.readthedocs.io/en/aboutcode/', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

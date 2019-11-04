@@ -87,3 +87,7 @@ examples::
 
 The ScanCode Toolkit webhook with ReadTheDocs should rebuild the documentation. You can review your
 results online.
+
+.. Test Intersphinx Link
+
+For more details on Documentation Style Guides refer :ref:`aboutcode:doc_style_guide`.
