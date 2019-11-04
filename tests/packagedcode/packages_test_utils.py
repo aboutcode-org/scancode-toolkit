@@ -43,10 +43,17 @@ class PackageTester(testcase.FileBasedTesting):
         """
         Helper to test a package object against an expected JSON file.
         """
-        expected_loc = self.get_test_loc(expected_loc)
 
         package.license_expression = package.compute_normalized_license()
         results = package.to_dict()
+
+        self.check_json(results, expected_loc, regen)
+
+    def check_json(self, results, expected_loc, regen=False):
+        """
+        Helper to test a result Python native object against an expected JSON file.
+        """
+        expected_loc = self.get_test_loc(expected_loc)
 
         if regen:
             regened_exp_loc = self.get_temp_file()
@@ -69,3 +76,4 @@ class PackageTester(testcase.FileBasedTesting):
             assert expected == results
         except AssertionError:
             assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+
