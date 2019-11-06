@@ -25,16 +25,17 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from packagedcode import build
-from packagedcode import chef
-from packagedcode import models
 from packagedcode import about
+from packagedcode import build
 from packagedcode import bower
+from packagedcode import chef
 from packagedcode import conda
 from packagedcode import cargo
+from packagedcode import debian
 from packagedcode import freebsd
 from packagedcode import haxe
 from packagedcode import maven
+from packagedcode import models
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import phpcomposer
@@ -47,7 +48,7 @@ from packagedcode import rubygems
 # Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
     rpm.RpmPackage,
-    models.DebianPackage,
+    debian.DebianPackage,
 
     models.JavaJar,
     models.JavaEar,

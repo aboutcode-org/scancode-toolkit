@@ -597,15 +597,6 @@ def compute_normalized_license(declared_license):
 
 
 @attr.s()
-class DebianPackage(Package):
-    metafiles = ('*.control',)
-    extensions = ('.deb', '.udeb',)
-    filetypes = ('debian binary package',)
-    mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-    default_type = 'deb'
-
-
-@attr.s()
 class JavaJar(Package):
     metafiles = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
