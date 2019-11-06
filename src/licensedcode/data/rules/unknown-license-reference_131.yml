@@ -1,0 +1,5 @@
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - https://licenses.nuget.org/

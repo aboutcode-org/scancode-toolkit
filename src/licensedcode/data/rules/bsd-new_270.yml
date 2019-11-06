@@ -1,5 +1,6 @@
 license_expression: bsd-new
 is_license_reference: yes
-relevance: 100
+relevance: 99
+notes: in the past this URL was pointing to a bsd-new and now bsd-simplified
 ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php
