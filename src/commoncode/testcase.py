@@ -89,6 +89,7 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     """
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
+    If `exists` is True, raise an error if the file does not exists.
     """
     if on_linux and py2:
         test_path = fsencode(test_path)
@@ -124,11 +125,12 @@ class FileDrivenTesting(object):
     """
     test_data_dir = None
 
-    def get_test_loc(self, test_path, copy=False, debug=False):
+    def get_test_loc(self, test_path, copy=False, debug=False, exists=True):
         """
         Given a `test_path` relative to the self.test_data_dir directory, return the
         location to a test file or directory for this path. Copy to a temp
         test location if `copy` is True.
+        If `exists` is True, raise an error if the file does not exists.
         """
         test_data_dir = self.test_data_dir
         if on_linux and py2:
@@ -140,7 +142,9 @@ class FileDrivenTesting(object):
             caller = inspect.stack()[1][3]
             print('\nself.get_test_loc,%(caller)s,"%(test_path)s"' % locals())
 
-        test_loc = get_test_loc(test_path, test_data_dir, debug=debug)
+        test_loc = get_test_loc(test_path, test_data_dir, debug=debug, exists=exists)
+        if copy and not exists:
+            raise Exception('Illegal argument combinaion: copy=True and exists=False')
         if copy:
             base_name = path.basename(test_loc)
             if filetype.is_file(test_loc):
