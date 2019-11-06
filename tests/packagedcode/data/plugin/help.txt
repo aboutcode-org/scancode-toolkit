@@ -84,9 +84,9 @@ Package: cpan
 
 --------------------------------------------
 Package: deb
-  class: packagedcode.models:DebianPackage
+  class: packagedcode.debian:DebianPackage
   metafiles: *.control
-  extensions: .deb
+  extensions: .deb, .udeb
   filetypes: debian binary package
 
 --------------------------------------------
