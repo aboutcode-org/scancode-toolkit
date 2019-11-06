@@ -111,13 +111,13 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
     # note: the order of the named tuple is the sort order.
     # But for creation we put the rarely used epoch last
-    def __new__(self, version, release=None, epoch=None):
+    def __new__(cls, version, release=None, epoch=None):
         if epoch and epoch.strip() and not epoch.isdigit():
             raise ValueError('Invalid epoch: must be a number or empty.')
         if not version:
             raise ValueError('Version is required: {}'.format(repr(version)))
 
-        return super(EVR, self).__new__(EVR, epoch, version, release)
+        return super(EVR, cls).__new__(EVR, epoch, version, release)
 
     def __str__(self, *args, **kwargs):
         return self.to_string()
