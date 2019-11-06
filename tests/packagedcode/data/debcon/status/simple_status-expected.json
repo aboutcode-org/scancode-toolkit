@@ -50,7 +50,7 @@
     ],
     [
       "Description",
-      "shared libraries for terminal handling\nThe ncurses library routines are a terminal-independent method of\nupdating character screens with reasonable optimization.\n\nThis package contains the shared libraries necessary to run programs\ncompiled with ncurses."
+      "shared libraries for terminal handlingThe ncurses library routines are a terminal-independent method of\nupdating character screens with reasonable optimization.\n\nThis package contains the shared libraries necessary to run programs\ncompiled with ncurses.\n"
     ],
     [
       "Homepage",
@@ -120,7 +120,7 @@
     ],
     [
       "Description",
-      "common error description library\nlibcomerr is an attempt to present a common error-handling mechanism to\nmanipulate the most common form of error code in a fashion that does not\nhave the problems identified with mechanisms commonly in use."
+      "common error description librarylibcomerr is an attempt to present a common error-handling mechanism to\nmanipulate the most common form of error code in a fashion that does not\nhave the problems identified with mechanisms commonly in use.\n"
     ],
     [
       "Homepage",
@@ -190,7 +190,7 @@
     ],
     [
       "Description",
-      "package management runtime library\nThis library provides the common functionality for searching and\nmanaging packages as well as information about packages.\nHigher-level package managers can depend upon this library.\n\nThis includes:\n* retrieval of information about packages from multiple sources\n* retrieval of packages and all dependent packages\nneeded to satisfy a request either through an internal\nsolver or by interfacing with an external one\n* authenticating the sources and validating the retrieved data\n* installation and removal of packages in the system\n* providing different transports to retrieve data over cdrom, ftp,\nhttp(s), rsh as well as an interface to add more transports like\ntor+http(s) (apt-transport-tor)."
+      "package management runtime libraryThis library provides the common functionality for searching and\nmanaging packages as well as information about packages.\nHigher-level package managers can depend upon this library.\n\nThis includes:\n* retrieval of information about packages from multiple sources\n* retrieval of packages and all dependent packages\nneeded to satisfy a request either through an internal\nsolver or by interfacing with an external one\n* authenticating the sources and validating the retrieved data\n* installation and removal of packages in the system\n* providing different transports to retrieve data over cdrom, ftp,\nhttp(s), rsh as well as an interface to add more transports like\ntor+http(s) (apt-transport-tor).\n"
     ],
     [
       "Original-Maintainer",
@@ -244,7 +244,7 @@
     ],
     [
       "Description",
-      "Dynamic library for security auditing\nThe audit-libs package contains the dynamic libraries needed for\napplications to use the audit framework. It is used to monitor systems for\nsecurity related events."
+      "Dynamic library for security auditingThe audit-libs package contains the dynamic libraries needed for\napplications to use the audit framework. It is used to monitor systems for\nsecurity related events.\n"
     ],
     [
       "Homepage",
@@ -334,7 +334,7 @@
     ],
     [
       "Description",
-      "minimal Perl system\nPerl is a scripting language used in many system scripts and utilities.\n\nThis package provides a Perl interpreter and the small subset of the\nstandard run-time library required to perform basic tasks. For a full\nPerl installation, install \"perl\" (and its dependencies, \"perl-modules-5.26\"\nand \"perl-doc\")."
+      "minimal Perl systemPerl is a scripting language used in many system scripts and utilities.\n\nThis package provides a Perl interpreter and the small subset of the\nstandard run-time library required to perform basic tasks. For a full\nPerl installation, install \"perl\" (and its dependencies, \"perl-modules-5.26\"\nand \"perl-doc\").\n"
     ],
     [
       "Homepage",
@@ -392,7 +392,7 @@
     ],
     [
       "Description",
-      "libudev shared library\nThis library provides access to udev device information."
+      "libudev shared libraryThis library provides access to udev device information.\n"
     ],
     [
       "Homepage",

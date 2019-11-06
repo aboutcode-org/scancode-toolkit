@@ -1,0 +1,50 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: rpm-list@lists.rpm.org
+Source: http://rpm.org
+Files-Excluded:
+  doc/librpm/html/*
+
+Files: *
+Copyright: 1995 - 2009, Erik Troan, Marc Ewing
+License: GPL-2+
+
+Files: lib/*
+Copyright: 1995 - 2009, Erik Troan, Marc Ewing
+License: GPL-2+ or LGPL-2+
+
+Files: lib/header.*
+Copyright: 1995-2002 Red Hat Software
+License: LGPL-2+
+
+Files: misc/stpcpy.* misc/stpncpy.* misc/fnmatch.*
+Copyright: 1990 - 2001 Free Software Foundation, Inc.
+License: LGPL-2+
+
+Files: misc/fts.*
+Copyright: 1990, 1993, 1994, The Regents of the University of California
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 4. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+
+Files: debian/*
+Copyright: 2009-2015, Michal Čihař <nijel@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-2'
+ file.
+
+License: LGPL-2+
+ On Debian systems the full text of the GNU Lesser General Public
+ License can be found in the `/usr/share/common-licenses/LGPL-2'
+ file.

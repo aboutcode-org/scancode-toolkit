@@ -1,0 +1,720 @@
+Package: 0ad-data
+Version: 0.0.23.1-1
+Installed-Size: 2044173
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Suggests: 0ad
+Description: Real-time strategy game of ancient warfare (data files)
+Homepage: http://play0ad.com/
+Description-md5: 26581e685027d5ae84824362a4ba59ee
+Tag: role::app-data
+Section: games
+Priority: optional
+Filename: pool/main/0/0ad-data/0ad-data_0.0.23.1-1_all.deb
+Size: 701878080
+MD5sum: 48a0f2d3af77e4cf01638e4429bddbd8
+SHA256: 0fa3fb9ef1999054d041f2425b677312e4d4e7bf43ac499665f7f69a21f8b0a9
+
+Package: 0ad-data-common
+Source: 0ad-data
+Version: 0.0.23.1-1
+Installed-Size: 2423
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Architecture: all
+Replaces: 0ad-data (<< 0.0.12-1~)
+Depends: fonts-dejavu-core | ttf-dejavu-core, fonts-freefont-ttf | ttf-freefont, fonts-texgyre | tex-gyre
+Pre-Depends: dpkg (>= 1.15.6~)
+Suggests: 0ad
+Breaks: 0ad-data (<< 0.0.12-1~)
+Description: Real-time strategy game of ancient warfare (common data files)
+Homepage: http://play0ad.com/
+Description-md5: 8d014b839c4c4e9b6f82c7512d7e3496
+Tag: game::strategy, role::app-data, role::program, use::gameplaying
+Section: games
+Priority: optional
+Filename: pool/main/0/0ad-data/0ad-data-common_0.0.23.1-1_all.deb
+Size: 778012
+MD5sum: a34625f94de9e9455dc5d070273c029c
+SHA256: 14e31a5232b239e236388051b8cb7948037a26694db21d83df4c204a889e0839
+
+Package: 2ping
+Version: 4.3-1
+Installed-Size: 159
+Maintainer: Ryan Finnie <ryan@finnie.org>
+Architecture: all
+Depends: python3:any, python3-pkg-resources, lsb-base (>= 3.0-6)
+Suggests: python3-dnspython, python3-netifaces, python3-crypto
+Description: Ping utility to determine directional packet loss
+Homepage: https://www.finnie.org/software/2ping/
+Description-md5: 2543c220a763445976d1348c5b593743
+Tag: implemented-in::perl, interface::commandline, protocol::ip,
+ role::program, scope::utility, use::analysing, use::measuring,
+ works-with::network-traffic
+Section: net
+Priority: optional
+Filename: pool/main/2/2ping/2ping_4.3-1_all.deb
+Size: 32376
+MD5sum: 842bd65caffae66ae99f29a4d48a65d6
+SHA256: 8e9cbc330a1f6a058f8804cc3e4fa11e43f6dff7b25297554334fa5abaee8fc8
+
+Package: 2vcard
+Version: 0.6-1
+Installed-Size: 53
+Maintainer: Riley Baird <BM-2cVqnDuYbAU5do2DfJTrN7ZbAJ246S4XiX@bitmessage.ch>
+Architecture: all
+Depends: perl
+Description: perl script to convert an addressbook to VCARD file format
+Homepage: http://www.netmeister.org/apps/2vcard/
+Description-md5: 2c96ee919233c4f6128f265ad35ff488
+Tag: implemented-in::perl, role::program, use::converting, works-with::pim
+Section: utils
+Priority: optional
+Filename: pool/main/2/2vcard/2vcard_0.6-1_all.deb
+Size: 14064
+MD5sum: 1a554b8f450644bd871e37c0dba2fc3a
+SHA256: bafdfb9557018063fc32ab7781166a26fa383bf47d2e43e17521bca28396d199
+
+Package: fonts-3270
+Source: 3270font
+Version: 2.0.0-1
+Installed-Size: 465
+Maintainer: Debian Fonts Task Force <debian-fonts@lists.debian.org>
+Architecture: all
+Description: monospaced font based on IBM 3270 terminals
+Multi-Arch: foreign
+Homepage: https://github.com/rbanffy/3270font
+Description-md5: ee5f05e9172509d63dcb4f7ecb71ae03
+Tag: made-of::font, role::data, x11::font
+Section: fonts
+Priority: optional
+Filename: pool/main/3/3270font/fonts-3270_2.0.0-1_all.deb
+Size: 91004
+MD5sum: 81319d562c4d2610981b6a92e058603c
+SHA256: a5de7d3ee3c8539c82df3cfcca8b9fb6f0efa4291d8d07a0037498fc9c6de815
+
+Package: 389-ds
+Source: 389-ds-base
+Version: 1.4.0.21-1
+Installed-Size: 49
+Maintainer: Debian FreeIPA Team <pkg-freeipa-devel@alioth-lists.debian.net>
+Architecture: all
+Depends: 389-ds-base, cockpit-389-ds
+Description: 389 Directory Server suite - metapackage
+Homepage: http://directory.fedoraproject.org
+Description-md5: 72b0f037b5c7bab3e3a681a127817467
+Tag: role::metapackage, security::authentication, system::server
+Section: net
+Priority: optional
+Filename: pool/main/3/389-ds-base/389-ds_1.4.0.21-1_all.deb
+Size: 19612
+MD5sum: 64b98e299df2a2aa59a4114aa0ee0d65
+SHA256: 612d0293f817342e2869e9a10a747ead7d003576273358f811d137822079278b
+
+Package: cockpit-389-ds
+Source: 389-ds-base
+Version: 1.4.0.21-1
+Installed-Size: 15059
+Maintainer: Debian FreeIPA Team <pkg-freeipa-devel@alioth-lists.debian.net>
+Architecture: all
+Depends: cockpit, libjs-bootstrap, libjs-c3, libjs-d3, libjs-jquery-datatables, libjs-jquery-datatables-extensions, libjs-jquery-jstree, libjs-moment, python3, python3-lib389
+Description: Cockpit user interface for 389 Directory Server
+Multi-Arch: foreign
+Homepage: http://directory.fedoraproject.org
+Description-md5: 29c953a4198b73567ac827862c4a3e0f
+Section: net
+Priority: optional
+Filename: pool/main/3/389-ds-base/cockpit-389-ds_1.4.0.21-1_all.deb
+Size: 2612700
+MD5sum: e0fc8b5e7e67026500cf99493506d6ea
+SHA256: 0858632ed05dcd9c2cf4bb1cb44ea0add1cbd25836c5f30c21bac974fbb3d4cc
+
+Package: python3-lib389
+Source: 389-ds-base
+Version: 1.4.0.21-1
+Installed-Size: 1647
+Maintainer: Debian FreeIPA Team <pkg-freeipa-devel@alioth-lists.debian.net>
+Architecture: all
+Replaces: 389-ds-base (<< 1.4.0.18-1~), python-lib389 (<< 1.3.7.8)
+Depends: python3-argcomplete, python3-argparse-manpage, python3-dateutil, python3-ldap, python3-pyasn1, python3-pyasn1-modules, python3-pytest, python3-six, python3:any
+Conflicts: 389-ds-base (<< 1.4.0.18-1~), python-lib389 (<< 1.3.7.8)
+Description: Python3 module for accessing and configuring the 389 Directory Server
+Homepage: http://directory.fedoraproject.org
+Description-md5: 312a10ddcf41c03aed17c8e2759b4410
+Section: net
+Priority: optional
+Filename: pool/main/3/389-ds-base/python3-lib389_1.4.0.21-1_all.deb
+Size: 276080
+MD5sum: f4c27e36f507dae6758e012ee54c15ab
+SHA256: 4010812ba767f9018ef5ec179a99f44afa019bb0ada87bcf8f703e2e7874d56b
+
+Package: 4ti2-doc
+Source: 4ti2
+Version: 1.6.9+ds-1
+Installed-Size: 405
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Architecture: all
+Suggests: 4ti2 (= 1.6.9+ds-1), pdf-viewer
+Description: mathematical tool suite for problems on linear spaces -- user guide
+Multi-Arch: foreign
+Homepage: https://4ti2.github.io/
+Description-md5: 91b1a130272354c0655306a2fe0d9ca3
+Section: doc
+Priority: optional
+Filename: pool/main/4/4ti2/4ti2-doc_1.6.9+ds-1_all.deb
+Size: 346424
+MD5sum: 50fef1fd179e944b3dcd3a5b056b5b7c
+SHA256: 00bbd7dccefd9c4b98613ecf0fb1186c1d941df041afe8a9135e1d03c9cdade6
+
+Package: 7kaa-data
+Source: 7kaa
+Version: 2.15.1+dfsg-1
+Installed-Size: 102553
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Architecture: all
+Recommends: 7kaa
+Description: Seven Kingdoms Ancient Adversaries - game data
+Homepage: http://www.7kfans.com/
+Description-md5: 1a73c20d523b558c525029d969f4827f
+Tag: role::app-data
+Section: games
+Priority: optional
+Filename: pool/main/7/7kaa/7kaa-data_2.15.1+dfsg-1_all.deb
+Size: 30602044
+MD5sum: a7e181d4d0a50f0bba591b0b3aeb5a7d
+SHA256: 8697ba8880795eb98acd2e482e18f6ed9240d887fe6fae2d5c679fe1e085c911
+
+Package: a7xpg-data
+Source: a7xpg
+Version: 0.11.dfsg1-10
+Installed-Size: 3538
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Architecture: all
+Suggests: a7xpg
+Description: chase action game - game data
+Multi-Arch: foreign
+Homepage: http://www.asahi-net.or.jp/~cs8k-cyu/windows/a7xpg_e.html
+Description-md5: 1ab7e6e42cf00b0a9ea4f59b9fbe4717
+Tag: made-of::audio, role::app-data
+Section: games
+Priority: optional
+Filename: pool/main/a/a7xpg/a7xpg-data_0.11.dfsg1-10_all.deb
+Size: 3451500
+MD5sum: 6491be9caf3881286ad0323ce42b869f
+SHA256: d150b4e860a44cbc0b1a24df30aece98c358fb80d58baef8e224d0b9005be0aa
+
+Package: python-aafigure
+Source: aafigure
+Version: 0.5-7
+Installed-Size: 137
+Maintainer: "Super" Nathan Weber <supernathansunshine@gmail.com>
+Architecture: all
+Depends: python:any (<< 2.8), python:any (>= 2.7~)
+Recommends: python-reportlab, python-pil, fonts-liberation | ttf-liberation
+Description: ASCII art to image converter
+Homepage: https://launchpad.net/aafigure
+Description-md5: 881d5554838b3a68b78f911a295fba35
+Tag: implemented-in::python, interface::commandline, role::program,
+ scope::utility, use::converting, works-with-format::pdf,
+ works-with-format::png, works-with-format::svg, works-with::image,
+ works-with::image:raster
+Section: python
+Priority: optional
+Filename: pool/main/a/aafigure/python-aafigure_0.5-7_all.deb
+Size: 37432
+MD5sum: 2be1d185842f1390852242e2981222a5
+SHA256: 9866d9a41b0989f013e9114cb16495326f82f3fab94c6d0f9d00889b12db526e
+
+Package: abacas
+Version: 1.3.1-5
+Installed-Size: 109
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Architecture: all
+Depends: mummer
+Recommends: primer3
+Description: close gaps in genomic alignments from short reads
+Homepage: http://abacas.sourceforge.net/
+Description-md5: 2037379aa4a21c795f2b3f3ba85ac577
+Tag: field::biology, field::biology:bioinformatics, implemented-in::perl,
+ interface::commandline, interface::text-mode, role::program,
+ scope::utility
+Section: science
+Priority: optional
+Filename: pool/main/a/abacas/abacas_1.3.1-5_all.deb
+Size: 24276
+MD5sum: bbea6decdc0f1094c93f91d22b5f5f09
+SHA256: 48d6adfce6ef9667234b05f0bb6b3f6205ac4369ba10d92112f912a2223734f8
+
+Package: abcde
+Version: 2.9.3-1
+Installed-Size: 333
+Maintainer: Steve McIntyre <93sam@debian.org>
+Architecture: all
+Depends: cd-discid, wget, cdparanoia | icedax, vorbis-tools (>= 1.0beta4-1) | lame | flac | speex | musepack-tools | opus-tools, libmusicbrainz-discid-perl, libwebservice-musicbrainz-perl (>= 1.0.4-1.1), sensible-utils
+Recommends: vorbis-tools, libdigest-sha-perl, bsd-mailx, glyrc, imagemagick
+Suggests: eject, distmp3, id3 (>= 0.12), id3v2, eyed3 (<< 0.7~), normalize-audio, vorbisgain, mkcue, mp3gain, atomicparsley
+Description: A Better CD Encoder
+Homepage: https://abcde.einval.com/
+Description-md5: da35113f2508604b50014e0ccf6a31ac
+Tag: hardware::storage, hardware::storage:cd, interface::commandline,
+ role::program, scope::utility, use::converting, use::storing,
+ works-with-format::mp3, works-with-format::oggvorbis,
+ works-with-format::wav, works-with::audio
+Section: sound
+Priority: optional
+Filename: pool/main/a/abcde/abcde_2.9.3-1_all.deb
+Size: 148572
+MD5sum: bb90f4c4aed18633f6aa4ca8d681fa88
+SHA256: e89b6ad571196de93df6311570f10e5b325323b171f4ed26857859cd4be3c0df
+
+Package: abe-data
+Source: abe
+Version: 1.1+dfsg-3
+Installed-Size: 4055
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Architecture: all
+Replaces: abe (<< 1.1+dfsg-2)
+Breaks: abe (<< 1.1+dfsg-2)
+Description: side-scrolling game named "Abe's Amazing Adventure" -- data
+Homepage: http://abe.sourceforge.net/
+Description-md5: 567c8a00faab670558b096d2b6229f5c
+Tag: game::arcade, role::app-data, use::gameplaying
+Section: games
+Priority: optional
+Filename: pool/main/a/abe/abe-data_1.1+dfsg-3_all.deb
+Size: 2869612
+MD5sum: fdb394e4ca8b59798c1ff109b054a20c
+SHA256: 45d4e996ebb9c99d80992639320371306830de8745000b4c322f989713abe7da
+
+Package: libtreelayout-java
+Source: abego-treelayout
+Version: 1.0.3-1
+Installed-Size: 53
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Architecture: all
+Description: Efficient and customizable TreeLayout Algorithm in Java
+Homepage: http://treelayout.sourceforge.net
+Description-md5: f04200bd471127011cce8523e98c4667
+Section: java
+Priority: optional
+Filename: pool/main/a/abego-treelayout/libtreelayout-java_1.0.3-1_all.deb
+Size: 26256
+MD5sum: b57a568353af527665813de2bb493b08
+SHA256: d754cd062a2a0ba7b8a7a9786f087787a37fa90dd7d51109fb295c6a7c132162
+
+Package: abi-compliance-checker
+Version: 2.3-0.2
+Installed-Size: 1315
+Maintainer: Mathieu Malaterre <malat@debian.org>
+Architecture: all
+Depends: build-essential, perl:any
+Recommends: ctags
+Suggests: doc-base, icheck
+Description: tool to compare ABI compatibility of shared C/C++ library versions
+Homepage: http://ispras.linux-foundation.org/index.php/ABI_compliance_checker
+Description-md5: 540b577fa010ac3ef038ebd7b829f7bd
+Tag: devel::testing-qa, implemented-in::perl, role::program, use::checking
+Section: devel
+Priority: optional
+Filename: pool/main/a/abi-compliance-checker/abi-compliance-checker_2.3-0.2_all.deb
+Size: 192608
+MD5sum: 20059f3d0f1e2268f5dc582481489719
+SHA256: 682ac26b7765955487f2123eea68f382e9683b635341cb8c158848c528ffa97c
+
+Package: dh-acc
+Source: abi-compliance-checker
+Version: 2.3-0.2
+Installed-Size: 43
+Maintainer: Mathieu Malaterre <malat@debian.org>
+Architecture: all
+Depends: abi-compliance-checker (= 2.3-0.2), debhelper, perl
+Description: debhelper addon to compare ABI compatibility of shared C/C++ library versions
+Homepage: http://ispras.linux-foundation.org/index.php/ABI_compliance_checker
+Description-md5: 67bf5743ba48724fc6a78e5293422eed
+Section: devel
+Priority: optional
+Filename: pool/main/a/abi-compliance-checker/dh-acc_2.3-0.2_all.deb
+Size: 21300
+MD5sum: 3bf6f6bd0c355f8544e0dd277f07da68
+SHA256: 80819cda1cd4ccf67cbc5e672808eb1a3cd9b40a5d4318618f9533ccccf40772
+
+Package: abi-dumper
+Version: 1.1-1
+Installed-Size: 189
+Maintainer: Mathieu Malaterre <malat@debian.org>
+Architecture: all
+Depends: elfutils, vtable-dumper (>= 1.0), perl:any
+Recommends: abi-compliance-checker (>= 1.99.1)
+Description: tool to dump ABI of an ELF object containing DWARF debug info
+Homepage: https://github.com/lvc/abi-dumper
+Description-md5: e079a4183505a3a5176b367214e82b03
+Section: devel
+Priority: optional
+Filename: pool/main/a/abi-dumper/abi-dumper_1.1-1_all.deb
+Size: 33610
+MD5sum: 0c81fe3bce6c968a29f1665b3f9e9abf
+SHA256: 08150fa289e2bb94d036b7a89f08f7fb18dccdd8e0a1fe1e3a78fecb460dbc58
+
+Package: abi-monitor
+Version: 1.12-2
+Installed-Size: 102
+Maintainer: Peter Spiess-Knafl <dev@spiessknafl.at>
+Architecture: all
+Depends: build-essential, wget, curl, libdata-dump-perl, perl:any
+Suggests: cmake, autotools, meson
+Description: monitor ABI of shared libraries
+Homepage: https://github.com/lvc/abi-monitor
+Description-md5: 4daf4cfacc9cbc30e8feb93f3176e18c
+Section: devel
+Priority: optional
+Filename: pool/main/a/abi-monitor/abi-monitor_1.12-2_all.deb
+Size: 19804
+MD5sum: a06e05cde80ecd8ed28410074f5a1196
+SHA256: f6c03ab1d697a837e9faa48eb75635c2f5940653c57828fa2ec94ae98e07b709
+
+Package: abi-tracker
+Version: 1.11-1
+Installed-Size: 173
+Maintainer: Peter Spiess-Knafl <dev@spiessknafl.at>
+Architecture: all
+Depends: abi-compliance-checker (>= 2.2), abi-dumper (>= 1.1), pkgdiff (>= 1.6.4), rfcdiff (>= 1.41), vtable-dumper (>= 1.1), elfutils, abi-monitor (>= 1.12), perl:any
+Description: visualize ABI changes of a C/C++ library
+Homepage: https://github.com/lvc/abi-tracker
+Description-md5: b3d54c45e5d805d0a1bd4b516d5110fc
+Section: devel
+Priority: optional
+Filename: pool/main/a/abi-tracker/abi-tracker_1.11-1_all.deb
+Size: 31480
+MD5sum: 1879dfc449571961598bca30089d733a
+SHA256: 42e8014f4533c4f2376cc6fde31d1ca664652e2c514cd8b9859075915e6e46ea
+
+Package: abicheck
+Version: 1.2-5
+Installed-Size: 148
+Maintainer: Angel Ramos <seamus@debian.org>
+Architecture: all
+Depends: perl
+Description: binary compatibility checking tool
+Description-md5: a38281f070a37064c10336aabb05a83f
+Tag: devel::buildtools, devel::lang:c, devel::lang:perl, devel::library,
+ devel::testing-qa, implemented-in::c, implemented-in::perl,
+ interface::commandline, role::devel-lib, role::program, scope::utility,
+ use::checking
+Section: devel
+Priority: optional
+Filename: pool/main/a/abicheck/abicheck_1.2-5_all.deb
+Size: 34316
+MD5sum: 164d97cd302fda187a023d34255a9f6a
+SHA256: ace458e0cba4be6c7f33933a95c562b5d570d84b2dedb76d4fcaed7b67b965ad
+
+Package: r-cran-abind
+Source: abind
+Version: 1.4-5-1.2
+Installed-Size: 93
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Architecture: all
+Depends: r-base-core (>= 3.5.0-5), r-api-3.5
+Description: GNU R abind multi-dimensional array combination function
+Description-md5: 37042a2fbff5fc5799359be10b269e00
+Tag: devel::lang:r, devel::library, field::statistics, implemented-in::r,
+ role::app-data, suite::gnu
+Section: gnu-r
+Priority: optional
+Filename: pool/main/a/abind/r-cran-abind_1.4-5-1.2_all.deb
+Size: 64270
+MD5sum: 29793432faa67d85710c0b51b63e9b28
+SHA256: 542704123f69877d46dc5fa2618128e03835d2406b38fe89b850eb87435b0ea7
+
+Package: abinit-data
+Source: abinit
+Version: 8.8.4-2
+Installed-Size: 65428
+Maintainer: Debichem Team <debichem-devel@lists.alioth.debian.org>
+Architecture: all
+Description: package for electronic structure calculations (Data files)
+Homepage: http://www.abinit.org/
+Description-md5: 4578d654ca0897253bccf3e98b9209ae
+Section: doc
+Priority: optional
+Filename: pool/main/a/abinit/abinit-data_8.8.4-2_all.deb
+Size: 16655148
+MD5sum: f211a380e82ce8201a5a6e4f61c31290
+SHA256: bfaafa6add80922763267fc1ee1345f7d24706d808cab7c1b480f847fda9a6cf
+
+Package: abinit-doc
+Source: abinit
+Version: 8.8.4-2
+Installed-Size: 14931
+Maintainer: Debichem Team <debichem-devel@lists.alioth.debian.org>
+Architecture: all
+Description: package for electronic structure calculations (Documentation)
+Homepage: http://www.abinit.org/
+Description-md5: 4edc662ae552484e117ff0d2d74e2f4b
+Tag: made-of::html, made-of::pdf, made-of::tex, role::documentation
+Section: doc
+Priority: optional
+Filename: pool/main/a/abinit/abinit-doc_8.8.4-2_all.deb
+Size: 12268184
+MD5sum: daad127b53ec16c499286b3cd0b91b6f
+SHA256: 1e26705286ea22e3681e99c859da1df2d33220436e6009c5e20d2a5fe636d129
+
+Package: abiword-common
+Source: abiword
+Version: 3.0.2-8
+Installed-Size: 11273
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: all
+Description: efficient, featureful word processor with collaboration -- common files
+Multi-Arch: foreign
+Homepage: http://www.abisource.com/
+Description-md5: 168081fc8391dc5eb8f29d63bb588273
+Tag: interface::graphical, interface::x11, role::app-data, role::program,
+ uitoolkit::gtk, use::editing, use::text-formatting,
+ works-with-format::html, works-with-format::tex, works-with::text,
+ x11::application
+Section: editors
+Priority: optional
+Filename: pool/main/a/abiword/abiword-common_3.0.2-8_all.deb
+Size: 1689484
+MD5sum: 903e5074eaa8244605c1ba55fffbb7a6
+SHA256: e37dfc09aed725a331154ba23472861a301dfc57918eadc0d93037e60e43159d
+
+Package: ableton-link-dev
+Source: ableton-link
+Version: 3.0.2+dfsg-1
+Installed-Size: 356
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Architecture: all
+Depends: libasio-dev
+Description: synchronizes musical applications on multiple devices - development
+Homepage: https://www.ableton.com/en/link/
+Description-md5: 44668d761ce8b5a618686561d8ec307d
+Section: sound
+Priority: optional
+Filename: pool/main/a/ableton-link/ableton-link-dev_3.0.2+dfsg-1_all.deb
+Size: 54156
+MD5sum: 504827e6ae675b2b811f2ca7a1b6d922
+SHA256: 02c57541177ca4f4fe830a806693fbf4d28757d57f3d4261effa399a857983e8
+
+Package: abntex
+Version: 0.9~beta2-5.1
+Installed-Size: 678
+Maintainer: Otavio Salvador <otavio@debian.org>
+Architecture: all
+Depends: dpkg (>= 1.14.18), tex-common (>= 3), texlive-latex-recommended, texlive-lang-portuguese, texlive-fonts-recommended
+Description: LaTeX class for writing documents in ABNT standard
+Description-md5: f24f06318565f68622fece1a9de7960d
+Tag: role::app-data, works-with-format::tex, works-with::text
+Section: tex
+Priority: optional
+Filename: pool/main/a/abntex/abntex_0.9~beta2-5.1_all.deb
+Size: 328514
+MD5sum: 7ba9ea03bfb808e9111e74e0c2340681
+SHA256: 0ec6afff53cdd1b24d4162b39af6fa3bd0e93a1f4f6396c8a7a0acc39e0ec87d
+
+Package: abs-guide
+Version: 10-3
+Installed-Size: 4366
+Maintainer: Sandro Tosi <morph@debian.org>
+Architecture: all
+Recommends: lynx | www-browser
+Description: The Advanced Bash-Scripting Guide
+Homepage: http://www.tldp.org/LDP/abs/html/
+Description-md5: c70e528b8b624e5738bdbd1b89e8b349
+Tag: devel::doc, devel::examples, made-of::html, role::documentation
+Section: doc
+Priority: optional
+Filename: pool/main/a/abs-guide/abs-guide_10-3_all.deb
+Size: 1105596
+MD5sum: 55da82599f3bf97f6a7d945de6ffc981
+SHA256: 428ac7b3758b2944d83d16a232441e4de27531655bd771efc6eaf298bbfc8f2d
+
+Package: accerciser
+Version: 3.22.0-7
+Installed-Size: 6078
+Maintainer: Debian Accessibility Team <pkg-a11y-devel@lists.alioth.debian.org>
+Architecture: all
+Depends: dconf-gsettings-backend | gsettings-backend, python3:any, ipython3 (>= 0.12), gir1.2-atk-1.0, gir1.2-gdkpixbuf-2.0, gir1.2-glib-2.0, gir1.2-gtk-3.0, gir1.2-pango-1.0, gir1.2-rsvg-2.0, gir1.2-wnck-3.0, python3-cairo, python3-gi-cairo, python3-xlib, python3-pyatspi (>= 2.5.2)
+Description: interactive Python accessibility explorer for the GNOME desktop
+Homepage: https://wiki.gnome.org/Apps/Accerciser
+Description-md5: 7806dc55e95ea2b46c6c1541f59644ce
+Tag: implemented-in::python, role::program
+Section: gnome
+Priority: optional
+Filename: pool/main/a/accerciser/accerciser_3.22.0-7_all.deb
+Size: 2898016
+MD5sum: 2fc700ef218657baabe19c157237ec37
+SHA256: e670053e8147d15e8de01b240d463aeb76410106a5e69685559eb88f61803dae
+
+Package: libaccess-modifier-checker-java
+Source: access-modifier-checker
+Version: 1.16-1
+Installed-Size: 91
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Architecture: all
+Depends: libannotation-indexer-java, libasm-java, libmaven3-core-java (>= 3.6.0)
+Recommends: libmetainf-services-java
+Description: Maven plugin for custom access modifier checking
+Homepage: https://github.com/kohsuke/access-modifier
+Description-md5: c39557e91f83d3a1ff5b4a6b03e9f061
+Section: java
+Priority: optional
+Filename: pool/main/a/access-modifier-checker/libaccess-modifier-checker-java_1.16-1_all.deb
+Size: 38464
+MD5sum: ae14a64faad7dfd9fee2ae751b41876b
+SHA256: 19cbc6dcab07909b3e978c3e1f1fb8f3c8464c4eae54771904b1f30dacdb87aa
+
+Package: libaccessodf-java
+Source: accessodf
+Version: 0.1.1~b-1
+Installed-Size: 70
+Maintainer: Sebastian Humenda <shumenda@gmx.de>
+Architecture: all
+Replaces: accessodf (<< 0.1-3)
+Depends: libcommons-collections3-java, libreoffice-java-common, libreoffice-writer
+Breaks: accessodf (<< 0.1-3)
+Description: library for checking accessibility in ODF/ODT documents using Libreoffice
+Homepage: http://sourceforge.net/p/accessodf
+Description-md5: 16adb83e55f4f1244fddc1d9facbdcd7
+Section: java
+Priority: optional
+Filename: pool/main/a/accessodf/libaccessodf-java_0.1.1~b-1_all.deb
+Size: 18498
+MD5sum: a41bf8757898ef24c85fb73cfcd2389e
+SHA256: eb86d50f52563f8f8f2f515f4ceacd57d3f59a6b7fffe644104bf39ce174627e
+
+Package: libaccountsservice-doc
+Source: accountsservice
+Version: 0.6.45-2
+Installed-Size: 233
+Maintainer: Debian freedesktop.org maintainers <pkg-freedesktop-maintainers@lists.alioth.debian.org>
+Architecture: all
+Description: query and manipulate user account information - documentation
+Multi-Arch: foreign
+Homepage: https://www.freedesktop.org/wiki/Software/AccountsService/
+Description-md5: 15ee25a15ef232cbf860503a04604aa7
+Section: doc
+Priority: optional
+Filename: pool/main/a/accountsservice/libaccountsservice-doc_0.6.45-2_all.deb
+Size: 29972
+MD5sum: 6832fad6ca06584407ac824689e16bcd
+SHA256: d3c9782abfe3d9563ab2c3f2674025f3ed38e603f0d961194a5c0d9e92103ccd
+
+Package: gperf-ace
+Source: ace
+Version: 6.4.5+dfsg-1
+Installed-Size: 75
+Maintainer: Debian ACE+TAO maintainers <pkg-ace-devel@lists.alioth.debian.org>
+Architecture: all
+Depends: ace-gperf
+Description: ACE perfect hash function generator (transitional package)
+Homepage: http://www.dre.vanderbilt.edu/~schmidt/ACE.html
+Description-md5: 671a8c45c2c5bed49ebe0d85f0178985
+Tag: implemented-in::c++, interface::commandline, role::dummy, role::program,
+ scope::utility, security::integrity, works-with::text
+Section: devel
+Priority: optional
+Filename: pool/main/a/ace/gperf-ace_6.4.5+dfsg-1_all.deb
+Size: 53768
+MD5sum: a5891262ea4f33894476c497ea9b57de
+SHA256: 4e1f5a8d8134c9597763be54e28761e489091d50c9508a063b2bffd6af07aa76
+
+Package: libace-doc
+Source: ace
+Version: 6.4.5+dfsg-1
+Installed-Size: 102993
+Maintainer: Debian ACE+TAO maintainers <pkg-ace-devel@lists.alioth.debian.org>
+Architecture: all
+Recommends: doc-base
+Suggests: libace-dev
+Description: C++ network programming framework - documentation
+Homepage: http://www.dre.vanderbilt.edu/~schmidt/ACE.html
+Description-md5: 2947be94b6f82b7b2bd595c2dfdac647
+Tag: devel::doc, devel::lang:c++, devel::rpc, role::documentation
+Section: doc
+Priority: optional
+Filename: pool/main/a/ace/libace-doc_6.4.5+dfsg-1_all.deb
+Size: 14317838
+MD5sum: 1799276e58c066281fc08f563d467561
+SHA256: 52e8c2a0405880c07d3593b007385b70b1e563a899a1a692fd40652c99c54612
+
+Package: mpc-ace
+Source: ace
+Version: 6.4.5+dfsg-1
+Installed-Size: 2071
+Maintainer: Debian ACE+TAO maintainers <pkg-ace-devel@lists.alioth.debian.org>
+Architecture: all
+Replaces: libace-dev (= 5.6.3-4)
+Depends: perl:any
+Recommends: make
+Suggests: libace-dev, pkg-config
+Description: makefile, project, and workspace creator
+Homepage: http://www.dre.vanderbilt.edu/~schmidt/ACE.html
+Description-md5: 2546db1431c5863dac20fce3ca730bdf
+Tag: devel::code-generator, implemented-in::perl, interface::commandline,
+ role::program, scope::utility
+Section: devel
+Priority: optional
+Filename: pool/main/a/ace/mpc-ace_6.4.5+dfsg-1_all.deb
+Size: 311272
+MD5sum: c78ce525b6b1eb3c5160390f191c723f
+SHA256: f4e514437f083bb5173f23bf300ccec93fb0dc17e33e9b454751ac2b3ddb40fd
+
+Package: elpa-ace-link
+Source: ace-link
+Version: 0.5.0-2
+Installed-Size: 47
+Maintainer: Debian Emacsen team <debian-emacsen@lists.debian.org>
+Architecture: all
+Depends: elpa-avy (>= 0.4.0), emacsen-common
+Recommends: emacs (>= 46.0)
+Enhances: emacs
+Description: selecting a link to jump to
+Homepage: https://github.com/abo-abo/ace-link
+Description-md5: 7fc76c4730cee50ebbfbdd37ff35ae0e
+Tag: implemented-in::lisp, role::plugin, suite::emacs, works-with::text
+Section: lisp
+Priority: optional
+Filename: pool/main/a/ace-link/elpa-ace-link_0.5.0-2_all.deb
+Size: 7976
+MD5sum: 48990be20084ce6d442daeb9ac8f50fe
+SHA256: e842884c78830b20f63449122c63fb42f19fd8787c2501516bd0763d727ccfab
+
+Package: elpa-ace-popup-menu
+Source: ace-popup-menu
+Version: 0.2.1-2
+Installed-Size: 36
+Maintainer: Debian Emacsen team <debian-emacsen@lists.debian.org>
+Architecture: all
+Depends: elpa-avy-menu (>= 0.1), emacsen-common
+Recommends: emacs (>= 46.0)
+Enhances: emacs
+Description: replace GUI popup menu with something more efficient
+Homepage: https://github.com/mrkkrp/ace-popup-menu
+Description-md5: 44e5243c0d218b6c486929a684656ed6
+Section: lisp
+Priority: optional
+Filename: pool/main/a/ace-popup-menu/elpa-ace-popup-menu_0.2.1-2_all.deb
+Size: 6488
+MD5sum: 8aec069de1190f820104adfe0feae43b
+SHA256: e67321e945497a625d430f4e4f67d667ba006c936ce2a4cb1fb892e8b23f7a7c
+
+Package: elpa-ace-window
+Source: ace-window
+Version: 0.9.0-3
+Installed-Size: 48
+Maintainer: Debian Emacs addons team <pkg-emacsen-addons@lists.alioth.debian.org>
+Architecture: all
+Depends: elpa-avy (>= 0.2.0), emacsen-common
+Recommends: emacs (>= 46.0)
+Enhances: emacs, emacs25
+Description: selecting a window to switch to
+Homepage: https://github.com/abo-abo/ace-window
+Description-md5: 081febda9c0ee3366e7ddacebb7e30aa
+Tag: implemented-in::lisp, role::plugin, suite::emacs, works-with::text
+Section: lisp
+Priority: optional
+Filename: pool/main/a/ace-window/elpa-ace-window_0.9.0-3_all.deb
+Size: 10752
+MD5sum: 0edf162bae2b7f2a35999921b89eb582
+SHA256: e508e28420c18d58e94162fd792eed7061a3db53dd6686ddda4b5e5cf71bf994

@@ -1,0 +1,50 @@
+[
+  [
+    [
+      "Author",
+      "Marcus Sundberg, Andreas Beck <becka@ggi-project.org>"
+    ],
+    [
+      "Download",
+      "http://www.ggi-project.org/ftp/ggi/"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "*"
+    ],
+    [
+      "Copyright",
+      "Copyright (C) 2005\t\t<s>Eric Faurot\t    [eric.faurot@gmail.com]</s>\nCopyright (C) 2004\t\t<s>Peter Ekberg\t[peda@lysator.liu.se]</s>\nCopyright (C) 2004\t\t<s>Christoph Egger</s>\nCopyright (C) 1999\t\t<s>Marcus Sundberg\t[marcus@ggi-project.org]</s>\nCopyright (C) 1998, 1999\t<s>Andreas Beck\t[becka@ggi-project.org]</s>\n"
+    ],
+    [
+      "License",
+      "MITPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the \"Software\"),\nto deal in the Software without restriction, including without limitation\nthe rights to use, copy, modify, merge, publish, distribute, sublicense,\nand/or sell copies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL\nTHE AUTHOR(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "debian/*"
+    ],
+    [
+      "Copyright",
+      "(C) 2008 <s>Bradley Smith <brad@brad-smith.co.uk></s>"
+    ],
+    [
+      "License",
+      "GPL-2+.This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 2 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, write to the Free Software\nFoundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n"
+    ]
+  ],
+  [
+    [
+      "On Debian systems, the complete text of the GNU General Public License",
+      ""
+    ],
+    [
+      "can be found in `/usr/share/common-licenses/GPL-2'.",
+      ""
+    ]
+  ]
+]

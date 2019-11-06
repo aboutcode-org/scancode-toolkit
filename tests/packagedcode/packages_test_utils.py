@@ -53,7 +53,7 @@ class PackageTester(testcase.FileBasedTesting):
         """
         Helper to test a result Python native object against an expected JSON file.
         """
-        expected_loc = self.get_test_loc(expected_loc)
+        expected_loc = self.get_test_loc(expected_loc, exists=not regen)
 
         if regen:
             regened_exp_loc = self.get_temp_file()

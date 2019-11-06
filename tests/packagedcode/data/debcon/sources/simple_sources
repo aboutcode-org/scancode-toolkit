@@ -1,0 +1,1169 @@
+Package: node-webpack-merge
+Binary: node-webpack-merge
+Version: 2.2.0-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>,
+Build-Depends: debhelper, mocha <!nocheck>, node-babel-cli, node-babel-preset-es2015, node-lodash
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 38d0bc63a2ebc3ec5192874170e95f2c 2113 node-webpack-merge_2.2.0-2.dsc
+ 36b5cb49dca451d16e9c711d5edeed56 12077 node-webpack-merge_2.2.0.orig.tar.gz
+ 85f58b1be7d024c02f34fb83173877f4 3724 node-webpack-merge_2.2.0-2.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-webpack-merge
+Vcs-Git: https://salsa.debian.org/js-team/node-webpack-merge.git
+Checksums-Sha256:
+ e96ca8ca00edc0f26ff79710222138c7301b033cdf69e1996638331d206e5279 2113 node-webpack-merge_2.2.0-2.dsc
+ bd343f5bfa16160503eba010230c3f89cd178c8cfd8c08a29bb85908641a522f 12077 node-webpack-merge_2.2.0.orig.tar.gz
+ 5240a5b959aa33b56278ae89586238b3edc6553f2f0f334f4a31f0582de9f250 3724 node-webpack-merge_2.2.0-2.debian.tar.xz
+Homepage: https://github.com/survivejs/webpack-merge
+Package-List: 
+ node-webpack-merge deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-webpack-merge
+Priority: extra
+Section: misc
+
+Package: node-webpack-sources
+Binary: node-webpack-sources
+Version: 1.0.1-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, mocha, node-should, node-source-map (>= 0.5.3), node-source-list-map (>= 1.1.1)
+Architecture: all
+Standards-Version: 4.1.0
+Format: 3.0 (quilt)
+Files:
+ fc2f0e4a2100127c318b33d5d1668e0a 2245 node-webpack-sources_1.0.1-1.dsc
+ 5beb5970c6eb1d356b523d8fe53fc420 25837 node-webpack-sources_1.0.1.orig.tar.gz
+ a1df8d7f73a784eb7532736c20264758 2252 node-webpack-sources_1.0.1-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-webpack-sources.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-webpack-sources.git
+Checksums-Sha256:
+ 02ae72d6dc07660f9d6e09a5e4a1793be7910057bb567bf50fa97d75f5dee1d8 2245 node-webpack-sources_1.0.1-1.dsc
+ c03237965e201861180557ef87aeccff2ed1e74d9e0c6f451896689b41bd44eb 25837 node-webpack-sources_1.0.1.orig.tar.gz
+ d6d86454ff28961a2b8aafc50ca380098676f1a9304af55584a134fbf76e7857 2252 node-webpack-sources_1.0.1-1.debian.tar.xz
+Homepage: https://github.com/webpack/webpack-sources#readme
+Package-List: 
+ node-webpack-sources deb web optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: mocha, node-should
+Directory: pool/main/n/node-webpack-sources
+Priority: optional
+Section: javascript
+
+Package: node-webpack-stats-plugin
+Binary: node-webpack-stats-plugin
+Version: 0.2.1-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 11~), nodejs
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Files:
+ 572ca5436c0ad3d4b1645fc661b6b6d7 2156 node-webpack-stats-plugin_0.2.1-1.dsc
+ db8da7325052ca1c8fdcc9179f03a6aa 62119 node-webpack-stats-plugin_0.2.1.orig.tar.gz
+ 88477361098f04fe2d0a8d1454aac7e6 2216 node-webpack-stats-plugin_0.2.1-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-webpack-stats-plugin
+Vcs-Git: https://salsa.debian.org/js-team/node-webpack-stats-plugin.git
+Checksums-Sha256:
+ b00d3427c1906e107f7d886be9a035b500851233ac88e6b51ef26ec8f2b5b8a8 2156 node-webpack-stats-plugin_0.2.1-1.dsc
+ c01229a6c566fbae3e55f44f15fcae802c8616e2ec94709aef4a56766aea7a66 62119 node-webpack-stats-plugin_0.2.1.orig.tar.gz
+ c6fc2adf205ed861cff77ed3e13992603a103acddefb61f48aa52d5201356e47 2216 node-webpack-stats-plugin_0.2.1-1.debian.tar.xz
+Homepage: https://github.com/FormidableLabs/webpack-stats-plugin#readme
+Package-List: 
+ node-webpack-stats-plugin deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-webpack-stats-plugin
+Priority: extra
+Section: misc
+
+Package: node-websocket
+Binary: libjs-websocket, node-websocket
+Version: 1.0.28-3
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Daniel Pocock <daniel@pocock.pro>
+Build-Depends: debhelper (>= 10.0.0), libnode-dev, node-uglify, node-gyp (>= 3.8.0-2), node-nan (>= 2.0.0), node-tape, node-buffer-equal, node-typedarray-to-buffer, node-debug
+Architecture: any all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 0c015e366ca82146a5c3ee522fe1a101 2286 node-websocket_1.0.28-3.dsc
+ 862ff153cfb7550e0fa3b808ddd450ed 68926 node-websocket_1.0.28.orig.tar.gz
+ 84f1a048a8926ce32fe81b7e45953873 5368 node-websocket_1.0.28-3.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-websocket
+Vcs-Git: https://salsa.debian.org/js-team/node-websocket.git
+Checksums-Sha256:
+ c2d6ce6bcf9c30ac52ea68b879fe29a6297c853f734a9161cf469c1c45713670 2286 node-websocket_1.0.28-3.dsc
+ 09d1e1bd4455e900641fea580b0e1cbca0b3fc052589b497fb864f39f7a12322 68926 node-websocket_1.0.28.orig.tar.gz
+ 44f0b99ca22060ea097776b3f9504cf8585fc79653f6e9702421e8b63be42c30 5368 node-websocket_1.0.28-3.debian.tar.xz
+Homepage: https://github.com/theturtle32/WebSocket-Node
+Package-List: 
+ libjs-websocket deb javascript optional arch=all
+ node-websocket deb javascript optional arch=any
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@
+Directory: pool/main/n/node-websocket
+Priority: optional
+Section: javascript
+
+Package: node-websocket-driver
+Binary: node-websocket-driver
+Version: 0.3.5-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Tim Retout <diocles@debian.org>
+Build-Depends: debhelper (>= 8), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.5
+Format: 3.0 (quilt)
+Files:
+ 599963be8cb112219fdf7563635ec2bf 2108 node-websocket-driver_0.3.5-1.dsc
+ 52acc729a5673ac07c5462c5a2269043 20898 node-websocket-driver_0.3.5.orig.tar.gz
+ 1c318ffce02ffd2d572e0d6fd0807723 2216 node-websocket-driver_0.3.5-1.debian.tar.xz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-websocket-driver.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-websocket-driver.git
+Checksums-Sha256:
+ b1fd3e89794c3fd8da155c3660e48ddf8431e5143cef3e47a72e2572b2c5ce06 2108 node-websocket-driver_0.3.5-1.dsc
+ de49a4281de17a35a0f0375bb97e30ba859bc46d56c23584350b19bc35725a30 20898 node-websocket-driver_0.3.5.orig.tar.gz
+ 3476be572ec1fcff343cc7f0d2a498baa916cbd9750cb74f84c001a02cb37ff4 2216 node-websocket-driver_0.3.5-1.debian.tar.xz
+Homepage: http://github.com/faye/websocket-driver-node
+Package-List: 
+ node-websocket-driver deb web extra arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-websocket-driver
+Priority: optional
+Section: javascript
+
+Package: node-when
+Binary: node-when
+Version: 3.7.8+ds-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Julien Puydt <jpuydt@debian.org>
+Build-Depends: debhelper (>= 11), nodejs
+Architecture: all
+Standards-Version: 4.2.0
+Format: 3.0 (quilt)
+Files:
+ 35005e19679bade297b6ed7f077a4708 1993 node-when_3.7.8+ds-2.dsc
+ cbd533919e13c3ba75e1df4c15a46190 100496 node-when_3.7.8+ds.orig.tar.gz
+ bce1e242a7174805381bc549fc3c4a42 2808 node-when_3.7.8+ds-2.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-when
+Vcs-Git: https://salsa.debian.org/js-team/node-when.git
+Checksums-Sha256:
+ 4d94e82c08cd8ed07a299ea68883535c2a6aa1443f82611b8fc345538e8f263c 1993 node-when_3.7.8+ds-2.dsc
+ 7cb1fbd9a2e26a788c54cf7998b541ececb33d0daff094d6ebd50541bb747039 100496 node-when_3.7.8+ds.orig.tar.gz
+ 2cf5ac69463c70c48963e3b484d0a599a7e29342e5c325f35e72119224280aff 2808 node-when_3.7.8+ds-2.debian.tar.xz
+Homepage: http://cujojs.com
+Package-List: 
+ node-when deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-when
+Priority: extra
+Section: misc
+
+Package: node-which
+Binary: node-which
+Version: 1.3.0-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>
+Build-Depends: debhelper (>= 11~)
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Files:
+ 26b1c67d63cf375dd9705c25318f758a 2010 node-which_1.3.0-2.dsc
+ 4e5508a1caf4db2b59dbba83cd8dd2d3 19280 node-which_1.3.0.orig.tar.gz
+ 877d70e666f29310761e4ec939d285ef 2144 node-which_1.3.0-2.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-which
+Vcs-Git: https://salsa.debian.org/js-team/node-which.git
+Checksums-Sha256:
+ 4004d9551f519e71ed07f61d92ebf7ae6fd4c505bb10e21ee749599aaa01931c 2010 node-which_1.3.0-2.dsc
+ b9f5b6447599adcaa5db0e86899f17e4bc8e20e6a4adebee0d599ee978e68724 19280 node-which_1.3.0.orig.tar.gz
+ 2415492f8583b62107c2eb0ba0852976add2d999829a6ea8590656d597d9a25e 2144 node-which_1.3.0-2.debian.tar.xz
+Homepage: https://github.com/isaacs/node-which
+Package-List: 
+ node-which deb javascript optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: node-mkdirp, node-rimraf, node-tap
+Directory: pool/main/n/node-which
+Priority: source
+Section: javascript
+
+Package: node-which-module
+Binary: node-which-module
+Version: 2.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 4.1.2
+Format: 3.0 (quilt)
+Files:
+ 2f787c853482c8866f141fec0fc8b4bd 2093 node-which-module_2.0.0-1.dsc
+ 10c6e59acd157eabf9126372a17c1ab2 2903 node-which-module_2.0.0.orig.tar.gz
+ a63f7679f02878f273dafa1744088092 1824 node-which-module_2.0.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-which-module.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-which-module.git
+Checksums-Sha256:
+ cc03bc844502e2a80235dfe403b039bb17ea636d642da3312dccda52bdd6360e 2093 node-which-module_2.0.0-1.dsc
+ 60e0f4140269d99169d9811365d79087cdff155da1a1cc0c7aee4aa0d051a636 2903 node-which-module_2.0.0.orig.tar.gz
+ cc0914cab24bed441b03a221f4cdef405bc2bc0c804182e3c5040363925e4990 1824 node-which-module_2.0.0-1.debian.tar.xz
+Homepage: https://github.com/nexdrew/which-module#readme
+Package-List: 
+ node-which-module deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-which-module
+Priority: optional
+Section: javascript
+
+Package: node-wide-align
+Binary: node-wide-align
+Version: 1.1.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Files:
+ 8649d1d223d110360c71e87b22fe662e 2060 node-wide-align_1.1.0-1.dsc
+ e38fabeffa25e625d7607c182f813d17 2386 node-wide-align_1.1.0.orig.tar.gz
+ 4fc8902e01377a541790b25c699e8294 2100 node-wide-align_1.1.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-wide-align.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-wide-align.git
+Checksums-Sha256:
+ 53256ea523e40352dfc0acc394c02a08bd8652bbc81fa7b3b8c2cfe280c1d859 2060 node-wide-align_1.1.0-1.dsc
+ 0c20dedb886436e30a4ffbbc618ad8502618993d767fde7ceb6bf719f70a1212 2386 node-wide-align_1.1.0.orig.tar.gz
+ 389858e46e84ee28b9cda0addaaf2f264c879afb7e7a75e9a00688773281a5a1 2100 node-wide-align_1.1.0-1.debian.tar.xz
+Homepage: https://github.com/iarna/wide-align#readme
+Package-List: 
+ node-wide-align deb web optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-wide-align
+Priority: optional
+Section: javascript
+
+Package: node-widest-line
+Binary: node-widest-line
+Version: 1.2.2-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Tushar Agey <agey.tushar3@gmail.com>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 4.1.1
+Format: 3.0 (quilt)
+Files:
+ 35020fa289be846fa2a482c0b403d9c3 2080 node-widest-line_1.2.2-1.dsc
+ 4b98a1f15dcf6fad412030e55dd8398f 2290 node-widest-line_1.2.2.orig.tar.gz
+ 85f77b6d5cef45bde3671fbbc5f230ca 2152 node-widest-line_1.2.2-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-widest-line.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-widest-line.git
+Checksums-Sha256:
+ 23b8f5b544de0ecb3f0d553afb6d7dfa25ae78e6ffbf7fbfa25e0f7596d201ff 2080 node-widest-line_1.2.2-1.dsc
+ dde0b3b682a1e71897a60b644faf5aef816df5f30ecaaaa33edd63923c90c8af 2290 node-widest-line_1.2.2.orig.tar.gz
+ 4977dbb72b786a1e8b7b15d0258c0c90af48e0e95c8f53226a957c31e0677174 2152 node-widest-line_1.2.2-1.debian.tar.xz
+Homepage: https://github.com/sindresorhus/widest-line
+Package-List: 
+ node-widest-line deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-widest-line
+Priority: optional
+Section: javascript
+
+Package: node-wildemitter
+Binary: node-wildemitter
+Version: 1.2.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: W. Martin Borgert <debacle@debian.org>
+Build-Depends: debhelper (>= 11), nodejs (>= 6), node-colors, node-mustache
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Files:
+ 936931e5061bea44efb1108b10abd8bf 2074 node-wildemitter_1.2.0-1.dsc
+ bfa7c11c994174899ae6f76fc6e8bfba 5118 node-wildemitter_1.2.0.orig.tar.gz
+ 87f5d6210a2d090d41f1a7ea98961864 2580 node-wildemitter_1.2.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-wildemitter
+Vcs-Git: https://salsa.debian.org/js-team/node-wildemitter.git
+Checksums-Sha256:
+ 9d068050e7901444cfa277f1ae53f8476b4ceb7322b5be1d5ad1cbeeef80ad54 2074 node-wildemitter_1.2.0-1.dsc
+ 9a7d26a6cb57228dd3b0f23ff3406d2a6948df51e672023be6cdd2105ae7f14b 5118 node-wildemitter_1.2.0.orig.tar.gz
+ a21962c9462b66121ce937e2f1acb7cfd9f4294aa00f98257a7d18777a4e49fa 2580 node-wildemitter_1.2.0-1.debian.tar.xz
+Homepage: https://github.com/HenrikJoreteg/wildemitter
+Package-List: 
+ node-wildemitter deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-wildemitter
+Priority: extra
+Section: misc
+
+Package: node-window-size
+Binary: window-size
+Version: 0.2.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, node-tap
+Architecture: all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Files:
+ fd2a8b146728f648df0ec3b865ac3752 2070 node-window-size_0.2.0-1.dsc
+ d3f32c8fb11ec83dffed230b7bef28de 4426 node-window-size_0.2.0.orig.tar.gz
+ 40370783b14d6e4299c54c49bc624aa2 2332 node-window-size_0.2.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-window-size.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-window-size.git
+Checksums-Sha256:
+ 6b4c2d36b632ecbf00dceba216f8aa879c648ee43801e542a0b28174e1bcb22b 2070 node-window-size_0.2.0-1.dsc
+ 42a11f88c6294e1a1e810121fe6a4ebc5ed4cc3f5afaf6967620fa84891907b5 4426 node-window-size_0.2.0.orig.tar.gz
+ 0a93abed0b01d60ec73d785fd1fe679867d9b7bd6cd69b3f424fb78bffaf78f2 2332 node-window-size_0.2.0-1.debian.tar.xz
+Homepage: https://github.com/jonschlinkert/window-size
+Package-List: 
+ window-size deb web optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: node-tap
+Directory: pool/main/n/node-window-size
+Priority: optional
+Section: javascript
+
+Package: node-with
+Binary: node-with
+Version: 3.0.0-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Leo Iannacone <l3on@ubuntu.com>
+Build-Depends: debhelper (>= 8), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.5
+Format: 3.0 (quilt)
+Files:
+ 1f3f945b69dd030d30a1f0c9b803b528 1958 node-with_3.0.0-2.dsc
+ 4ac3446d3eda9640b5eea9b9b51931bc 7518 node-with_3.0.0.orig.tar.gz
+ ae7f5198e9ac34d00e5e4bcbf0d04aa7 2036 node-with_3.0.0-2.debian.tar.xz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-with.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-with.git
+Checksums-Sha256:
+ 980208119f60f818c234c057745b5104edea56b07c210e57f1932ef2e78a4b9b 1958 node-with_3.0.0-2.dsc
+ b87b0683c248b88d3829242dd82438a31625200a9797026ec9ab8b7d0596891d 7518 node-with_3.0.0.orig.tar.gz
+ 4c0d6da0bcf780627037d852fac10026ece735c2a8688618ff831c4366d8478d 2036 node-with_3.0.0-2.debian.tar.xz
+Homepage: https://github.com/ForbesLindesay/with
+Package-List: 
+ node-with deb web extra arch=all
+Directory: pool/main/n/node-with
+Priority: optional
+Section: javascript
+
+Package: node-wordwrap
+Binary: node-wordwrap
+Version: 1.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: David Paleino <dapal@debian.org>
+Build-Depends: debhelper (>= 9~), dh-buildinfo
+Architecture: all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Files:
+ ef8e1e24a605de870037bc7cc5386e50 1968 node-wordwrap_1.0.0-1.dsc
+ 6f459e10a9196d7643671da95ac3964c 14591 node-wordwrap_1.0.0.orig.tar.gz
+ eff361f9a97a5dd4aeffd8a275e83270 1996 node-wordwrap_1.0.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/node-wordwrap.git
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/node-wordwrap.git
+Checksums-Sha256:
+ 7a048ab57db6df8efa7895d55d859eeba1fb1117a27dd4e4848cc00e0890a8d4 1968 node-wordwrap_1.0.0-1.dsc
+ 2f02548309dc5c6c4390745f8a73f342945c04fe4a801b834d510ce63213106b 14591 node-wordwrap_1.0.0.orig.tar.gz
+ e015bac78df6b578913a614926d95429b8add6287aaad0f3345024bb349e0545 1996 node-wordwrap_1.0.0-1.debian.tar.xz
+Homepage: https://github.com/substack/node-wordwrap
+Package-List: 
+ node-wordwrap deb web extra arch=all
+Directory: pool/main/n/node-wordwrap
+Priority: source
+Section: javascript
+
+Package: node-wrap-ansi
+Binary: node-wrap-ansi
+Version: 4.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Build-Depends: debhelper (>= 11), nodejs, mocha, node-chalk, node-has-ansi, node-resolve-from, node-strip-ansi (>= 4.0.0), node-string-width (>= 2.1.1)
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Files:
+ 259cce4720403cd6a0355ecb20ab301d 2160 node-wrap-ansi_4.0.0-1.dsc
+ 73db888f7111634f25276fed3d91ccf6 16827 node-wrap-ansi_4.0.0.orig.tar.gz
+ 79cc63216694a0478fd1e4eb1219a5d0 4312 node-wrap-ansi_4.0.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-wrap-ansi
+Vcs-Git: https://salsa.debian.org/js-team/node-wrap-ansi.git
+Checksums-Sha256:
+ 86a3547585c85dd8032f7553a82216870f6d12c3f89f97dd09a704368b41e21c 2160 node-wrap-ansi_4.0.0-1.dsc
+ c50b45088edc268c08c8e9ac79f65628f740d3f67ccda039ac1c938fcdc05bfb 16827 node-wrap-ansi_4.0.0.orig.tar.gz
+ 31301a9ccffc6d13185661f64f4c3301f15f4c69232c289695f0ec72cb654967 4312 node-wrap-ansi_4.0.0-1.debian.tar.xz
+Homepage: https://github.com/chalk/wrap-ansi#readme
+Package-List: 
+ node-wrap-ansi deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-wrap-ansi
+Priority: optional
+Section: javascript
+
+Package: node-wrappy
+Binary: node-wrappy
+Version: 1.0.2-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Thorsten Alteholz <debian@alteholz.de>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.6
+Format: 3.0 (quilt)
+Files:
+ 7165895d25dd1ef28a9bb92cd6a0c2c1 2117 node-wrappy_1.0.2-1.dsc
+ 86cec3f69bcad0517eb009e1799bf986 2338 node-wrappy_1.0.2.orig.tar.gz
+ 5678a4e05556bb9c8a8d2378f0a68278 1960 node-wrappy_1.0.2-1.debian.tar.xz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-wrappy.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-wrappy.git
+Checksums-Sha256:
+ 07d46e4431b31935c9313edc503d08c13691c2c2dcbe2a8c97f745f1e26516ff 2117 node-wrappy_1.0.2-1.dsc
+ b81382832bbc862775b0772ab65e1e0932ccbd23016f013b6ff31b626b05cc0c 2338 node-wrappy_1.0.2.orig.tar.gz
+ af4cfae78f0e5018a8ec4eb2e00199256548a01ec898d0a880ea22581789dfff 1960 node-wrappy_1.0.2-1.debian.tar.xz
+Homepage: https://github.com/npm/wrappy
+Package-List: 
+ node-wrappy deb web extra arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-wrappy
+Priority: optional
+Section: javascript
+
+Package: node-write-file-atomic
+Binary: node-write-file-atomic
+Version: 2.3.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Aarti Kashyap <kaarti.sr@gmail.com>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, node-tap, node-require-inject, node-mkdirp, node-rimraf, node-signal-exit (>= 3.0~), node-imurmurhash (>= 0.1.4~), node-graceful-fs (>= 4.1.11~)
+Architecture: all
+Standards-Version: 4.1.0
+Format: 3.0 (quilt)
+Files:
+ 4575507f40334b6b6bd5637a6d589bbe 2369 node-write-file-atomic_2.3.0-1.dsc
+ 76f9023fbc02ff0bfeadd1e2166d494c 26964 node-write-file-atomic_2.3.0.orig.tar.gz
+ 6bd4a66bc8f7a7800311a7c1b5e27f4e 2008 node-write-file-atomic_2.3.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-write-file-atomic.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-write-file-atomic.git
+Checksums-Sha256:
+ 8a038f098af24e801a7de0afcab4adba17b186c06581d2b2e4e7ab3a4df5c299 2369 node-write-file-atomic_2.3.0-1.dsc
+ ad61fb572d7a641ded1422761f098d0c02ebcb323d42cd728671bb20a76c5a02 26964 node-write-file-atomic_2.3.0.orig.tar.gz
+ b7241aae54420ad3a196f2eea859a542f3ecd2767dcd7a7b1b3d36f58dcddbfa 2008 node-write-file-atomic_2.3.0-1.debian.tar.xz
+Homepage: https://github.com/iarna/write-file-atomic
+Package-List: 
+ node-write-file-atomic deb javascript optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: node-mkdirp, node-require-inject, node-rimraf, node-tap
+Directory: pool/main/n/node-write-file-atomic
+Priority: extra
+Section: misc
+
+Package: node-write-file-promise
+Binary: node-write-file-promise
+Version: 1.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, node-tap
+Architecture: all
+Standards-Version: 4.1.0
+Format: 3.0 (quilt)
+Files:
+ 2f96901be2c025415aa97c276f6d1b36 2204 node-write-file-promise_1.0.0-1.dsc
+ 5f0f332588627763282845ddbd0f58ef 1394 node-write-file-promise_1.0.0.orig.tar.gz
+ 306ca53887c0eaded48f32fe095a50aa 1956 node-write-file-promise_1.0.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-write-file-promise.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-write-file-promise.git
+Checksums-Sha256:
+ 94790ddb19c40e1cd0d4e1f7d372af5ab252949fdb90f228d6cba5c75d8d8976 2204 node-write-file-promise_1.0.0-1.dsc
+ a14543ff685f2882b09cfbb8a53717cb48d32db954f2f527709a75e8ba29bde1 1394 node-write-file-promise_1.0.0.orig.tar.gz
+ f12abf308ef53a9be61778025da32acee12b7b69ee15bec773bfdfc572785dfb 1956 node-write-file-promise_1.0.0-1.debian.tar.xz
+Homepage: https://github.com/piuccio/write-file-promise#readme
+Package-List: 
+ node-write-file-promise deb javascript optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: node-tap
+Directory: pool/main/n/node-write-file-promise
+Priority: extra
+Section: misc
+
+Package: node-ws
+Binary: node-ws
+Version: 1.1.0+ds1.e6ddaae4-5
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Ximin Luo <infinity0@debian.org>, Jérémy Lal <kapouer@melix.org>
+Build-Depends: debhelper (>= 10~), dh-buildinfo, help2man (>= 1.47.1), mocha, nodejs (>= 4.0), libnode-dev, node-commander, node-expect.js, node-nan (>= 2.0.5), node-gyp (>= 3.8.0-2), node-should, node-tinycolor
+Architecture: any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ a130428286d4e68a7034c6108fbb3776 2224 node-ws_1.1.0+ds1.e6ddaae4-5.dsc
+ ec9641e64b054622b7f96e1b7297960b 54352 node-ws_1.1.0+ds1.e6ddaae4.orig.tar.xz
+ 5ef14c711387d44805f87cd32627b23c 10704 node-ws_1.1.0+ds1.e6ddaae4-5.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-ws
+Vcs-Git: https://salsa.debian.org/js-team/node-ws.git
+Checksums-Sha256:
+ 385ed125aa25a7fdc7477c565af22aafc0f1d53dc33b48c185607bc7d1cc96f6 2224 node-ws_1.1.0+ds1.e6ddaae4-5.dsc
+ 9dbfda1ddc52515e515f8d7c48a5c8bf7bce4bc41f9b80fbe6fd67b01c1c3195 54352 node-ws_1.1.0+ds1.e6ddaae4.orig.tar.xz
+ cc4b8a4856e26c2484ac52290ff54714581e34a166667717a109193267540a86 10704 node-ws_1.1.0+ds1.e6ddaae4-5.debian.tar.xz
+Homepage: https://github.com/websockets/ws
+Package-List: 
+ node-ws deb javascript optional arch=any
+Testsuite: autopkgtest
+Directory: pool/main/n/node-ws
+Priority: optional
+Section: javascript
+
+Package: node-xdg-basedir
+Binary: node-xdg-basedir
+Version: 3.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Vinay Desai <desaivinay1997.debian@gmail.com>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 4.1.1
+Format: 3.0 (quilt)
+Files:
+ 58c0eff29c27e4bb74cdd17d79f64917 2089 node-xdg-basedir_3.0.0-1.dsc
+ cbefa3cd2c6bdf9493f50e6c1f455dfa 2764 node-xdg-basedir_3.0.0.orig.tar.gz
+ 54592f8909b3b5a16a59862d939ba22f 2172 node-xdg-basedir_3.0.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-xdg-basedir.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-xdg-basedir.git
+Checksums-Sha256:
+ 0f6104e38859f5fca0098045021db162355d246db6749ad7dc088341ca729e2e 2089 node-xdg-basedir_3.0.0-1.dsc
+ 00f1f5730ddec48efbe29385786fdbb62d28854e692a996480100e2211459e30 2764 node-xdg-basedir_3.0.0.orig.tar.gz
+ 329fc9739a45f1d3c557060999511684059d3695f6bacc427ee7b3264af240df 2172 node-xdg-basedir_3.0.0-1.debian.tar.xz
+Homepage: https://github.com/sindresorhus/xdg-basedir
+Package-List: 
+ node-xdg-basedir deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-xdg-basedir
+Priority: optional
+Section: javascript
+
+Package: node-xml2js
+Binary: node-xml2js
+Version: 0.2.8-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: David Paleino <dapal@debian.org>, Jérémy Lal <kapouer@melix.org>
+Build-Depends: debhelper (>= 8~), dh-buildinfo, coffeescript
+Architecture: all
+Standards-Version: 3.9.4
+Format: 3.0 (quilt)
+Files:
+ ffaa225db0da0ed14aa7eb070cae352b 2029 node-xml2js_0.2.8-1.dsc
+ 42a30c204ec7db559cd0e6813061a0f4 12847 node-xml2js_0.2.8.orig.tar.gz
+ f13ae16b6323ab176d038f695d451c76 2188 node-xml2js_0.2.8-1.debian.tar.gz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/node-xml2js.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/node-xml2js.git
+Checksums-Sha256:
+ 9351ee5edca209586753e087e7d97afb4ce89293f592f9ec76b1d184ed033585 2029 node-xml2js_0.2.8-1.dsc
+ c64e4df6526666d7e29bd8a7dc81eaae44ee359cc82f2f1329ce7c2ed3db10f5 12847 node-xml2js_0.2.8.orig.tar.gz
+ 9d675bd29c4967fcf4aceb2f8537b67a6a84ac4b1bda0c47e18881cf0a95b5ce 2188 node-xml2js_0.2.8-1.debian.tar.gz
+Homepage: https://github.com/Leonidas-from-XIV/node-xml2js
+Package-List: 
+ node-xml2js deb web extra
+Directory: pool/main/n/node-xml2js
+Priority: source
+Section: javascript
+
+Package: node-xmldom
+Binary: node-xmldom
+Version: 0.1.27+ds-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Bastien Roucariès <rouca@debian.org>
+Build-Depends: debhelper (>= 11), dh-buildinfo, nodejs (>= 6)
+Architecture: all
+Standards-Version: 4.1.4
+Format: 3.0 (quilt)
+Files:
+ 937db6cf611debd7879dd69c00b821c5 2049 node-xmldom_0.1.27+ds-1.dsc
+ 08b93aeba07714751807dca73db255a5 77140 node-xmldom_0.1.27+ds.orig.tar.xz
+ 571abb07b2588f10665e48f2b64379e6 2960 node-xmldom_0.1.27+ds-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-xmldom
+Vcs-Git: https://salsa.debian.org/js-team/node-xmldom.git
+Checksums-Sha256:
+ 7ae256c926053f4fc71890ddeb325cd1f3a1d5d43d15030653b16f69340d7f6e 2049 node-xmldom_0.1.27+ds-1.dsc
+ e53ffea0b8c84231017e83c5ad8f1da937ee418dcac874ccb2f53793eb5a37b9 77140 node-xmldom_0.1.27+ds.orig.tar.xz
+ b53cf0cb168c6a675552247c7345e73b414ed33bdd703cb7dc2fd209ec9fb095 2960 node-xmldom_0.1.27+ds-1.debian.tar.xz
+Homepage: https://github.com/jindw/xmldom
+Package-List: 
+ node-xmldom deb javascript optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: nodejs
+Directory: pool/main/n/node-xmldom
+Priority: extra
+Section: misc
+
+Package: node-xmlhttprequest
+Binary: node-xmlhttprequest
+Version: 1.8.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Per Andersson <avtobiff@gmail.com>, Xavier Guimard <yadd@debian.org>
+Build-Depends: debhelper (>= 11~), nodejs, pkg-js-tools
+Architecture: any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 5976159efadbe7d4c71cab00937923a8 2135 node-xmlhttprequest_1.8.0-1.dsc
+ 3dc1d4f65e10823631046ae51391b1ea 10153 node-xmlhttprequest_1.8.0.orig.tar.gz
+ 258ab347ea287899c6d343848b8e9f5e 3508 node-xmlhttprequest_1.8.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-xmlhttprequest
+Vcs-Git: https://salsa.debian.org/js-team/node-xmlhttprequest.git
+Checksums-Sha256:
+ 63fb260b51b7977e77b7fb77965f535412a036de69c1d74be00c3d3ca5d89510 2135 node-xmlhttprequest_1.8.0-1.dsc
+ 5c11240947f73cfd5f2053630b7ea7ad9df79b53a1e02657801c7226041a3e9c 10153 node-xmlhttprequest_1.8.0.orig.tar.gz
+ adc499bc6f3bf14447a0ef3ca1f45042e1b25a6c2b3c7a484ff9863167b41d3c 3508 node-xmlhttprequest_1.8.0-1.debian.tar.xz
+Homepage: https://github.com/driverdan/node-xmlhttprequest
+Package-List: 
+ node-xmlhttprequest deb javascript optional arch=any
+Testsuite: autopkgtest-pkg-nodejs
+Directory: pool/main/n/node-xmlhttprequest
+Priority: optional
+Section: javascript
+
+Package: node-xmlhttprequest-ssl
+Binary: node-xmlhttprequest-ssl
+Version: 1.6.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Thorsten Alteholz <debian@alteholz.de>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.7
+Format: 3.0 (quilt)
+Files:
+ 3f993088e2c05208a649eddb74c35508 2282 node-xmlhttprequest-ssl_1.6.0-1.dsc
+ fe8706d782a7374e9762e214b497ce0e 9443 node-xmlhttprequest-ssl_1.6.0.orig.tar.gz
+ 7d008c6c4fca55e75dc432b5ce770258 2148 node-xmlhttprequest-ssl_1.6.0-1.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=pkg-javascript/node-xmlhttprequest-ssl.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-xmlhttprequest-ssl.git
+Checksums-Sha256:
+ 5a9bddbafe2bb51de35fec819c8114464e5863f60a29505d1cfba5e8fd19eb1d 2282 node-xmlhttprequest-ssl_1.6.0-1.dsc
+ 0f6e6481bd84f83e7f329fab1fb932b4b67813c8948cc677711a4f365736ab25 9443 node-xmlhttprequest-ssl_1.6.0.orig.tar.gz
+ 7cb1bd14db81db74369d62694f1d0f8cd3fc9b7d55915eade369f89ee4396834 2148 node-xmlhttprequest-ssl_1.6.0-1.debian.tar.xz
+Homepage: https://github.com/mjwwit/node-XMLHttpRequest#readme
+Package-List: 
+ node-xmlhttprequest-ssl deb web optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-xmlhttprequest-ssl
+Priority: optional
+Section: javascript
+
+Package: node-xmpp
+Binary: node-node-xmpp
+Version: 0.3.2-4
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>
+Build-Depends: cdbs, licensecheck, debhelper, dh-buildinfo, node-vows, node-ltx, node-inherits, node-node-expat, node-node-stringprep
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 56994afea3062fa0220925bb56f643ad 2094 node-xmpp_0.3.2-4.dsc
+ 5d776b67769ea31d425fd4399f112096 24326 node-xmpp_0.3.2.orig.tar.gz
+ 1a09956aa4cc6cbc9637a3be20a57323 5420 node-xmpp_0.3.2-4.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-xmpp
+Vcs-Git: https://salsa.debian.org/js-team/node-xmpp.git
+Checksums-Sha256:
+ 6179d934ed5bbf8de92b991080bca717cf613ce10d1aadabd454692e5d3a7e66 2094 node-xmpp_0.3.2-4.dsc
+ 7d3f111725096a7e3ae317ad8d502191f46b739bd103b9a0b76c477c0d76aed6 24326 node-xmpp_0.3.2.orig.tar.gz
+ 3b49b39032beab989ed654e00c96e75741757745b8275693344ae746007e5fc3 5420 node-xmpp_0.3.2-4.debian.tar.xz
+Homepage: http://node-xmpp.org/
+Package-List: 
+ node-node-xmpp deb javascript optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@
+Directory: pool/main/n/node-xmpp
+Priority: source
+Section: javascript
+
+Package: node-xoauth2
+Binary: node-xoauth2
+Version: 1.1.0-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Thorsten Alteholz <debian@alteholz.de>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.7
+Format: 3.0 (quilt)
+Files:
+ b75d45860d5ed7c8e501ef93110837a5 2147 node-xoauth2_1.1.0-2.dsc
+ cff2067228ab318bade26d22d3b06438 6577 node-xoauth2_1.1.0.orig.tar.gz
+ cf0d6748409538a9a03ab2c467bf2020 2132 node-xoauth2_1.1.0-2.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=pkg-javascript/node-xoauth2.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-xoauth2.git
+Checksums-Sha256:
+ de99a34e034ae06ae086acf21b633774886b8e0e4bd44b4cb75a7480e0e4f8c3 2147 node-xoauth2_1.1.0-2.dsc
+ fc4270473ed1d8074eb1f252fd06dff500185efb4021c02f849511c1444c3165 6577 node-xoauth2_1.1.0.orig.tar.gz
+ a0cc2b44cb17eaf8781d4eb0fbe25028ce14a192d76117035c35281dc6a3f999 2132 node-xoauth2_1.1.0-2.debian.tar.xz
+Homepage: https://github.com/andris9/xoauth2#readme
+Package-List: 
+ node-xoauth2 deb web extra arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-xoauth2
+Priority: optional
+Section: javascript
+
+Package: node-xtend
+Binary: node-xtend
+Version: 4.0.1-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sarath M S <debian@sarathms.me>
+Build-Depends: debhelper (>= 11~), dh-buildinfo, nodejs, node-tape
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ de0a7965b67bd26c9efdff9e683754b7 2004 node-xtend_4.0.1-2.dsc
+ 83150af6466fa34fbeb2a3df918abd40 2667 node-xtend_4.0.1.orig.tar.gz
+ ac6cd57c35d6f3e308d525e59abe1f22 2704 node-xtend_4.0.1-2.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-xtend
+Vcs-Git: https://salsa.debian.org/js-team/node-xtend.git
+Checksums-Sha256:
+ 60d6b3112d08e7b5a0e486941796a9d8a2c50c939d22f26aa4765576a075a3a9 2004 node-xtend_4.0.1-2.dsc
+ 5e63aaf0481956e36faf7915543416c9df1a5a8a63a21a456c59bd15ad344689 2667 node-xtend_4.0.1.orig.tar.gz
+ f004aa723f1be249794ba6b2129043459d646abd56f1a9cb5b2d661c580e5094 2704 node-xtend_4.0.1-2.debian.tar.xz
+Homepage: https://github.com/Raynos/xtend
+Package-List: 
+ node-xtend deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-xtend
+Priority: optional
+Section: javascript
+
+Package: node-y18n
+Binary: node-y18n
+Version: 3.2.1-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, chai, mocha, node-rimraf (>= 2.5~)
+Architecture: all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Files:
+ c4781da5c38a2d8f3e04f4bdff7a4917 1985 node-y18n_3.2.1-2.dsc
+ 3ace6239c99d1e8cd08cb574e73d948c 5571 node-y18n_3.2.1.orig.tar.gz
+ 225034aebbcdeff7a609f2dd830498a7 1932 node-y18n_3.2.1-2.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-y18n.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-y18n.git
+Checksums-Sha256:
+ 8765c37278c18f3eb4668e4bdf01ac219229222ef597e6ffd9a179b069a03f4b 1985 node-y18n_3.2.1-2.dsc
+ a1cef55eb43c4afef962f3f02a6ddc876f488fbf57968a9ef00f27698409902d 5571 node-y18n_3.2.1.orig.tar.gz
+ 0d78189fa8db8b9bf0af127358337384ef693d9283211f8ed7e32e8e0f00867e 1932 node-y18n_3.2.1-2.debian.tar.xz
+Homepage: https://github.com/yargs/y18n
+Package-List: 
+ node-y18n deb web optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-y18n
+Priority: optional
+Section: javascript
+
+Package: node-yajsml
+Binary: node-yajsml
+Version: 1.1.5+ds-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Xavier Guimard <yadd@debian.org>
+Build-Depends: debhelper (>= 11~), dh-buildinfo, nodejs, pkg-js-tools
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ ad0770f0ed13a57ad48636bab1952116 2041 node-yajsml_1.1.5+ds-1.dsc
+ bd3e0ff54ba04ddec338e56019e38f53 9908 node-yajsml_1.1.5+ds.orig.tar.xz
+ aee8953a68781cb513b93cab05b12043 3032 node-yajsml_1.1.5+ds-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yajsml
+Vcs-Git: https://salsa.debian.org/js-team/node-yajsml.git
+Checksums-Sha256:
+ 922e35ef71872c31a316642fa532a78100cb5b2af49acd35747d16fd8157168a 2041 node-yajsml_1.1.5+ds-1.dsc
+ 76643264d5d2bd6869e40f8e19905a51ec63f8c22f52fd7e0997107cf53f4ba6 9908 node-yajsml_1.1.5+ds.orig.tar.xz
+ 6e666f12785850454f22fae8792833bf1b739583b41fcf3b0e2635ad58e4bd2d 3032 node-yajsml_1.1.5+ds-1.debian.tar.xz
+Homepage: https://github.com/cweider/yajsml
+Package-List: 
+ node-yajsml deb javascript optional arch=all
+Testsuite: autopkgtest, autopkgtest-pkg-nodejs
+Directory: pool/main/n/node-yajsml
+Priority: optional
+Section: javascript
+
+Package: node-yallist
+Binary: node-yallist
+Version: 3.0.3-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 11~), dh-buildinfo, node-tap, nodejs
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 9557dcff0bf6b234b3a1bc5a9e64fe37 2041 node-yallist_3.0.3-1.dsc
+ d0fb8181319a63e974f29b4f925b8137 22361 node-yallist_3.0.3.orig.tar.gz
+ afadbf5b4635633c0b7aadd666cf43c2 2448 node-yallist_3.0.3-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yallist
+Vcs-Git: https://salsa.debian.org/js-team/node-yallist.git
+Checksums-Sha256:
+ 581308536d04d02cd816c3e81636e4710c48a5f146fff8aee4dcc659e37210fb 2041 node-yallist_3.0.3-1.dsc
+ c5a880c646af0d41f9357b48e1d8b45f3c7c5afa67a199874b1ddf5a829a0803 22361 node-yallist_3.0.3.orig.tar.gz
+ e1b99a631461e5b83402a547e1e01271ae5a62164421ceee45c5212c3df6e5bf 2448 node-yallist_3.0.3-1.debian.tar.xz
+Homepage: https://github.com/isaacs/yallist#readme
+Package-List: 
+ node-yallist deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yallist
+Priority: optional
+Section: javascript
+
+Package: node-yamlish
+Binary: node-yamlish
+Version: 0.0.7-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Tim Retout <diocles@debian.org>
+Build-Depends: debhelper (>= 11~), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 1f15149152f5804bfbbd558ebe2ed4bd 2017 node-yamlish_0.0.7-1.dsc
+ a93621bb472e63c38339e6b47c63cdd4 3470 node-yamlish_0.0.7.orig.tar.gz
+ b3463dbb6fce2b8e090e4e01f748be5e 2160 node-yamlish_0.0.7-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yamlish
+Vcs-Git: https://salsa.debian.org/js-team/node-yamlish.git
+Checksums-Sha256:
+ 8cf3c0486a82ee71f4e567325a9bf0b7e39c6f68700e95a9ca245020bdff68d3 2017 node-yamlish_0.0.7-1.dsc
+ 5819a5d521bacba7867017e1aec2bce8dc3583caa14106dec685033cf0667fe8 3470 node-yamlish_0.0.7.orig.tar.gz
+ d59eb35ff80ed89640c4d78d581f8716d0a3de16bcd105dbee0c04e60981e925 2160 node-yamlish_0.0.7-1.debian.tar.xz
+Homepage: https://github.com/isaacs/yamlish
+Package-List: 
+ node-yamlish deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yamlish
+Priority: optional
+Section: javascript
+
+Package: node-yargs
+Binary: node-yargs
+Version: 10.0.3-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper (>= 9), dh-buildinfo, nodejs, mocha, chai, node-es6-promise, node-chalk, node-hashish, node-cpr, node-require-directory (>= 2.1.1), node-get-caller-file (>= 1.0.1), node-set-blocking (>= 2.0.0), node-require-main-filename (>= 1.0.1), node-decamelize (>= 1.1.1), node-string-width (>= 2.0.0), node-cliui (>= 3.2.0), node-which-module (>= 2.0.0), node-os-locale (>= 2.0.0), node-y18n (>= 3.2.1), node-yargs-parser (>= 8.0.0~), node-find-up (>= 2.1.0)
+Architecture: all
+Standards-Version: 4.1.2
+Format: 3.0 (quilt)
+Files:
+ eb3cb4251fe4b42e10dc7db5804b05d5 2423 node-yargs_10.0.3-2.dsc
+ 8f4a10085135aada5817661c5280d83d 318186 node-yargs_10.0.3.orig.tar.gz
+ 26222d7ea7eadba2b2e75ea7574057f2 4012 node-yargs_10.0.3-2.debian.tar.xz
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-javascript/node-yargs.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-javascript/node-yargs.git
+Checksums-Sha256:
+ be8abd5271489f1261ddf220c6040cb7fa2ccb376cf92695f50865ec0311d8ac 2423 node-yargs_10.0.3-2.dsc
+ 6de41db0af6a9f91d97cb2285a809adf55dd0c7938c0fa17460d0ebc9013cfc0 318186 node-yargs_10.0.3.orig.tar.gz
+ 02404b02c1c7c3bbdf18933544703832e8e1c68d9109c2c9b67d7c300c2f1b88 4012 node-yargs_10.0.3-2.debian.tar.xz
+Homepage: http://yargs.js.org/
+Package-List: 
+ node-yargs deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yargs
+Priority: optional
+Section: javascript
+
+Package: node-yargs-parser
+Binary: node-yargs-parser
+Version: 11.1.1-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Build-Depends: debhelper (>= 11~), chai, mocha, node-camelcase, node-decamelize, nodejs
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 1d44d778a22f9fce409cd75558d0bc87 2121 node-yargs-parser_11.1.1-1.dsc
+ c74c89ba63684d778004879242d81cd9 45682 node-yargs-parser_11.1.1.orig.tar.gz
+ ef54b60e9ea686e4bb28bbf0ff936daa 2628 node-yargs-parser_11.1.1-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yargs-parser
+Vcs-Git: https://salsa.debian.org/js-team/node-yargs-parser.git
+Checksums-Sha256:
+ 909bfb936a9ea10f2118a674b2b3f41571b0e328c01136ff93cd5d05ce850e07 2121 node-yargs-parser_11.1.1-1.dsc
+ ae790e6e61affab085fa1601756927ff5641c47e7dbf9df49130eb7388f1b9fa 45682 node-yargs-parser_11.1.1.orig.tar.gz
+ 37b20eaf83ef2c3fe167992d33a8c99cb0de463c5badacf0a0b46cf3e605119f 2628 node-yargs-parser_11.1.1-1.debian.tar.xz
+Homepage: https://github.com/yargs/yargs-parser
+Package-List: 
+ node-yargs-parser deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yargs-parser
+Priority: optional
+Section: javascript
+
+Package: node-yarnpkg
+Binary: yarnpkg
+Version: 1.13.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Build-Depends: debhelper (>= 11), node-marked-man, nodejs, node-babel-core, node-babel-eslint, node-babel-loader, node-babel-plugin-array-includes, node-babel-plugin-transform-builtin-extend, node-babel-plugin-transform-runtime, node-babel-preset-env, node-babel-preset-flow, node-babel-preset-stage-0, node-babylon, node-browserify-zlib, node-builtin-modules, node-execa (>= 0.10.0), node-fancy-log, gulp, node-gulp-babel, node-gulp-newer, node-gulp-plumber, node-gulp-sourcemaps, node-gulp-util, node-minimatch (>= 3.0.4), node-pumpify, node-temp (>= 0.8.3), node-through2 (>= 2.0.3), webpack, node-yargs
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 8cc16eec5ce3dc93ffad61376e57c374 6765 node-yarnpkg_1.13.0-1.dsc
+ 062b5bf0ec117d3afb4b00777bb5a20d 5712 node-yarnpkg_1.13.0.orig-babel-plugin-transform-inline-imports-commonjs.tar.gz
+ 9b17959d2b63862da1a0cc1698795828 2745 node-yarnpkg_1.13.0.orig-decode-uri-component.tar.gz
+ 265b3fde65016c64529bc6b9f3fd5fcb 7892 node-yarnpkg_1.13.0.orig-dnscache.tar.gz
+ 10d3a314f0c9c623a37d6b531d189c7d 2493 node-yarnpkg_1.13.0.orig-gunzip-maybe.tar.gz
+ 68b8f9044ae45e1150d64d1146ba7936 8121 node-yarnpkg_1.13.0.orig-hash-for-dep.tar.gz
+ c2859660a1b68dd693db9dd49d6ddf07 1764 node-yarnpkg_1.13.0.orig-is-deflate.tar.gz
+ 7fadbdfcacb37c8067afad90ddefd141 1463 node-yarnpkg_1.13.0.orig-is-gzip.tar.gz
+ 6a630198ea2064bdb4a18c8a2d2c76f8 3860 node-yarnpkg_1.13.0.orig-normalize-url.tar.gz
+ 2cd2e5da9be56b77f52bda45ab450e70 4837 node-yarnpkg_1.13.0.orig-npm-logical-tree.tar.gz
+ f9100642634b3c40bde3e573116ad5a4 3037 node-yarnpkg_1.13.0.orig-peek-stream.tar.gz
+ b141e3575798784737e35dfef793233a 4856 node-yarnpkg_1.13.0.orig-query-string.tar.gz
+ b342eafe670e52a43c1ded0039a439cf 1532 node-yarnpkg_1.13.0.orig-strict-uri-encode.tar.gz
+ 89545fedbebe71e8d35ce57cdd1353a2 7484 node-yarnpkg_1.13.0.orig-tar-fs.tar.gz
+ 5827a5e57d411a7dc755b6f32b32f9ca 4763 node-yarnpkg_1.13.0.orig-v8-compile-cache.tar.gz
+ 9fea3563c34015e5a6ee817039ed8b16 74383363 node-yarnpkg_1.13.0.orig.tar.gz
+ 47f171c9833b5da81eb3e772a1e5d112 9376 node-yarnpkg_1.13.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yarnpkg
+Vcs-Git: https://salsa.debian.org/js-team/node-yarnpkg.git
+Checksums-Sha256:
+ 4b936afe8dbca89d11132aee58acab7407378916671b28199f1b2d5a885c95a3 6765 node-yarnpkg_1.13.0-1.dsc
+ 08697ea0cf0d0a72df0020737dcf7ae9f71b24158d57cc9dfb2edf3ab7800c50 5712 node-yarnpkg_1.13.0.orig-babel-plugin-transform-inline-imports-commonjs.tar.gz
+ 0a38d889548dc0c8869c8e4b902c61d6acbea1bf79284663ac986b6d72833406 2745 node-yarnpkg_1.13.0.orig-decode-uri-component.tar.gz
+ 5d38c8983e07c30f8e127de58f4b609f0e1a833581841bc4ddf62c3bac755757 7892 node-yarnpkg_1.13.0.orig-dnscache.tar.gz
+ 2afc85b45815c42ab5c2add34ac0e432005c005859ff2c40b6e97d8d608dcf0b 2493 node-yarnpkg_1.13.0.orig-gunzip-maybe.tar.gz
+ 8a3d40788efbd09e1599acfbb7e8d7e02db1cd15a4498d34c38a643c39f24329 8121 node-yarnpkg_1.13.0.orig-hash-for-dep.tar.gz
+ 34c151e3ef8fe3ac33413e550d0a903f02abc547be8de3c06c98536c1eddf2e1 1764 node-yarnpkg_1.13.0.orig-is-deflate.tar.gz
+ 9b9bafe497fe8a91c6678b05b497657d022e4e209819f25ed5c6c96cba044a51 1463 node-yarnpkg_1.13.0.orig-is-gzip.tar.gz
+ 917f7c1592878cc482c0641ba379d6d565b4f7b83504ac349c3136ad98329f30 3860 node-yarnpkg_1.13.0.orig-normalize-url.tar.gz
+ bebc0a7420d21c7b3fcd2cd1a8ca001aa0b04146b1ffd31b6b91dc981d50c6e0 4837 node-yarnpkg_1.13.0.orig-npm-logical-tree.tar.gz
+ 5406f7c5def836a9286dece20b9395a83c98cc23a3f067d808aafb251a0d7641 3037 node-yarnpkg_1.13.0.orig-peek-stream.tar.gz
+ d5a30667940079fa818c845a37708af0534f01c6365258eb7bdb6c34ba9810c9 4856 node-yarnpkg_1.13.0.orig-query-string.tar.gz
+ 84ae7c56b543789d61e07eb94862e2eab984189349870a3ad9d125f0ca5282ca 1532 node-yarnpkg_1.13.0.orig-strict-uri-encode.tar.gz
+ db35f14750dd0e8ce7cd7f870dc10074e8df3a1e4e241bc7ebabeb72a5e67bd2 7484 node-yarnpkg_1.13.0.orig-tar-fs.tar.gz
+ d878f8472a970f0f10c9de63fed8a34eda29c6a53499213fa592775ecd30e8f3 4763 node-yarnpkg_1.13.0.orig-v8-compile-cache.tar.gz
+ 3bb516636ff6bf88fb1fd0423403526e8c56695b3d9ac810f0be1ff4c9fd74c4 74383363 node-yarnpkg_1.13.0.orig.tar.gz
+ d2b17c2da0bb1568a4fa9c8de38737af00baaf5fe8756c9435ab5dc5f05de502 9376 node-yarnpkg_1.13.0-1.debian.tar.xz
+Homepage: https://github.com/yarnpkg/yarn#readme
+Package-List: 
+ yarnpkg deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yarnpkg
+Priority: extra
+Section: misc
+
+Package: node-yauzl
+Binary: node-yauzl
+Version: 2.10.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Xavier Guimard <yadd@debian.org>
+Build-Depends: debhelper (>= 11~), node-buffer-crc32, nodejs, node-pend, node-fd-slicer, node-bl
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ d9565fbccd1b9b15e404a94eafa523fe 2051 node-yauzl_2.10.0-1.dsc
+ 20c51ada7cb7f21aba6bc42b757ab325 40947 node-yauzl_2.10.0.orig.tar.gz
+ 338f17da2f18282faf859e2779f37465 3096 node-yauzl_2.10.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yauzl
+Vcs-Git: https://salsa.debian.org/js-team/node-yauzl.git
+Checksums-Sha256:
+ 20c7b39ec5f2320f49312c96b38e64fc6a8b5d8ac0689d0a12268acf52a1bf9f 2051 node-yauzl_2.10.0-1.dsc
+ 4faee9fc77bb0cea6d066ec9c3914d1117ede92321aefa796aa8775efaedacce 40947 node-yauzl_2.10.0.orig.tar.gz
+ d48a3958254c493bca866509c7f16fb8812accba369d0f9dcad6735cc8db2588 3096 node-yauzl_2.10.0-1.debian.tar.xz
+Homepage: https://github.com/thejoshwolfe/yauzl
+Package-List: 
+ node-yauzl deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yauzl
+Priority: optional
+Section: javascript
+
+Package: node-yazl
+Binary: node-yazl
+Version: 2.0.2-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Andrew Kelley <superjoe30@gmail.com>
+Build-Depends: debhelper (>= 8), dh-buildinfo, node-bl, node-yauzl, node-buffer-crc32, nodejs
+Architecture: all
+Standards-Version: 3.9.6
+Format: 3.0 (quilt)
+Files:
+ aa177c093ccbcf9532cd22923360b28c 2010 node-yazl_2.0.2-1.dsc
+ d16ecf8c12f69df7846f8fee614e76f0 9022 node-yazl_2.0.2.orig.tar.gz
+ 66bb78a67c90540cb53adaf136f6ec0b 2248 node-yazl_2.0.2-1.debian.tar.xz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-yazl.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-yazl.git
+Checksums-Sha256:
+ 40f8042ceb019f52561388cc7f9d0b273b4420821f2ef5030095387a2c1be200 2010 node-yazl_2.0.2-1.dsc
+ 4be00a309bf12df227aa6b442a72d352db4833da3826a94202bb79a8d57eff53 9022 node-yazl_2.0.2.orig.tar.gz
+ 854f290b31352776f7e8babfe5c0c30573cd2b229a2e0e5734232baaa6b95616 2248 node-yazl_2.0.2-1.debian.tar.xz
+Homepage: https://github.com/thejoshwolfe/yazl
+Package-List: 
+ node-yazl deb web extra arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yazl
+Priority: optional
+Section: javascript
+
+Package: node-yn
+Binary: node-yn
+Version: 3.0.0-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Build-Depends: debhelper (>= 11), mocha, nodejs
+Architecture: all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ bf2830eea45b71444b1c35c6366932b9 1968 node-yn_3.0.0-1.dsc
+ 88f5e376a55eb0ddf7cc3e7a180f5ca0 3737 node-yn_3.0.0.orig.tar.gz
+ 168a7ed53c50c831f5cb534853d4c74e 3452 node-yn_3.0.0-1.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-yn
+Vcs-Git: https://salsa.debian.org/js-team/node-yn.git
+Checksums-Sha256:
+ 14ce31f8c9bdac2266d35a1a79e90ae7029c9bbe659cabf484500f1cb5d140b8 1968 node-yn_3.0.0-1.dsc
+ 58dc017265aa4067b8d599aa1e2a4289ef796bbc5ceace92685559c967c2eb9a 3737 node-yn_3.0.0.orig.tar.gz
+ 2b52d57ea022a4c4165aba68fa2ea7e0b22761d23828311dddf43aa472f70c31 3452 node-yn_3.0.0-1.debian.tar.xz
+Homepage: https://github.com/sindresorhus/yn#readme
+Package-List: 
+ node-yn deb javascript optional arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-yn
+Priority: extra
+Section: misc
+
+Package: node-ytdl-core
+Binary: node-ytdl-core
+Version: 0.2.4+dfsg-1
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Andrew Kelley <superjoe30@gmail.com>
+Build-Depends: debhelper (>= 8), dh-buildinfo, nodejs
+Architecture: all
+Standards-Version: 3.9.5
+Format: 3.0 (quilt)
+Files:
+ 004c029fad7fa83598c8593c2fd0426f 2062 node-ytdl-core_0.2.4+dfsg-1.dsc
+ ecbcdac64cc692b56a9e529ef7772d03 8450 node-ytdl-core_0.2.4+dfsg.orig.tar.gz
+ 499371bdcc9761bcfe67ca12921a7ae9 4552 node-ytdl-core_0.2.4+dfsg-1.debian.tar.xz
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-javascript/node-ytdl-core.git
+Vcs-Git: git://anonscm.debian.org/pkg-javascript/node-ytdl-core.git
+Checksums-Sha256:
+ d747397d7806bdeccf1b4062271395cb93048288d8ecf8fc01013edfce9cb4d2 2062 node-ytdl-core_0.2.4+dfsg-1.dsc
+ d262915ce85c49f1fb1a927718dada98e6cfb0533b93b4e53add8973ad8bc9a8 8450 node-ytdl-core_0.2.4+dfsg.orig.tar.gz
+ faf39f6d1ab3c80a664365ffb06061329d7ddf9791c8a576f9b3f3b2825eaa93 4552 node-ytdl-core_0.2.4+dfsg-1.debian.tar.xz
+Homepage: https://github.com/fent/node-ytdl-core
+Package-List: 
+ node-ytdl-core deb web extra arch=all
+Testsuite: autopkgtest
+Directory: pool/main/n/node-ytdl-core
+Priority: optional
+Section: javascript
+
+Package: node-zipfile
+Binary: node-zipfile
+Version: 0.5.12+ds-3
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: David Paleino <dapal@debian.org>, Jérémy Lal <kapouer@melix.org>
+Build-Depends: debhelper (>= 11~), node-gyp (>= 3.8.0-2), node-pre-gyp (>= 0.10.2~), node-nan, libnode-dev, mocha, libzip-dev, pkg-config
+Architecture: any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ 1139619ddce51973eb67c01c00cc0f90 2181 node-zipfile_0.5.12+ds-3.dsc
+ 97cd402d39cf71dec13f2b7801438217 708867 node-zipfile_0.5.12+ds.orig.tar.gz
+ 9cd125a141011ff92df59c161b02bd0f 10084 node-zipfile_0.5.12+ds-3.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/node-zipfile
+Vcs-Git: https://salsa.debian.org/js-team/node-zipfile.git
+Checksums-Sha256:
+ 0cc04c413c31766630c4a5a576955c9a81e3eef295b9cde880404662f5e588ea 2181 node-zipfile_0.5.12+ds-3.dsc
+ c3c846be8f1dd4b6e0a5237c82895b7e9135e68768a4d37b25f4c0797626352f 708867 node-zipfile_0.5.12+ds.orig.tar.gz
+ 72402e7b310e3bd8ab7e4eb14663466555808216c9cabfc515ce49a7b5ede235 10084 node-zipfile_0.5.12+ds-3.debian.tar.xz
+Homepage: https://github.com/springmeyer/node-zipfile
+Package-List: 
+ node-zipfile deb javascript optional arch=any
+Testsuite: autopkgtest
+Directory: pool/main/n/node-zipfile
+Priority: source
+Section: javascript
+
+Package: nodeenv
+Binary: nodeenv
+Version: 0.13.4-1
+Maintainer: Chris Kuehl <ckuehl@ocf.berkeley.edu>
+Build-Depends: debhelper (>= 9), dh-python, python3-all, python3-pkg-resources, python3-pkginfo, python3-setuptools
+Architecture: all
+Standards-Version: 3.9.6
+Format: 3.0 (quilt)
+Files:
+ 7e1e59a9914ba04a25349755b041a965 1876 nodeenv_0.13.4-1.dsc
+ e15692223492309280fd9bf7146e11e4 27106 nodeenv_0.13.4.orig.tar.gz
+ 5ad696bdf5e4bb027b9d41aa0569b946 3352 nodeenv_0.13.4-1.debian.tar.xz
+Vcs-Browser: https://github.com/chriskuehl/nodeenv
+Vcs-Git: https://github.com/chriskuehl/nodeenv.git
+Checksums-Sha256:
+ aa556a673c10e7f37fdc592cafa8ca1bba2921cd5520c856d894ae9be3601d0b 1876 nodeenv_0.13.4-1.dsc
+ 5fab25b4947160d4520600c9ab955210f645a0bd36bb58b4cc66e8a2a39b0cb2 27106 nodeenv_0.13.4.orig.tar.gz
+ cb8ce39bdcfa75a7a70d833b6ff2afbaa880983e36e5fa2ab1465aad637cb8d1 3352 nodeenv_0.13.4-1.debian.tar.xz
+Homepage: https://ekalinin.github.io/nodeenv/
+Package-List: 
+ nodeenv deb utils extra arch=all
+Directory: pool/main/n/nodeenv
+Priority: optional
+Section: misc
+
+Package: nodejs
+Binary: libnode-dev, nodejs, libnode64, nodejs-doc
+Version: 10.15.2~dfsg-2
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>, Jonas Smedegaard <dr@jones.dk>
+Build-Depends: cdbs, debhelper (>= 9.20160114), dh-buildinfo, pkg-config, bash-completion, libkvm-dev [kfreebsd-any], gyp (>= 0.1~svn1773), openssl (>= 1.1.1~), zlib1g-dev, libicu-dev, libc-ares-dev (>= 1.14~), libnghttp2-dev (>= 1.34.0~), curl, procps, node-acorn, ca-certificates, python, libssl-dev (>= 1.1.1~), libuv1-dev (>= 1.20.0~)
+Build-Depends-Indep: node-js-yaml, node-marked
+Architecture: amd64 arm64 armhf i386 kfreebsd-i386 kfreebsd-amd64 mips mips64el mips64r6el mipsel ppc64 ppc64el s390x all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ a0bd5f1dc4d2109ffdd346d10bb1cb2b 3036 nodejs_10.15.2~dfsg-2.dsc
+ 4edb1c2f3f4173b1057fc8989a19ccee 15220500 nodejs_10.15.2~dfsg.orig.tar.xz
+ 2d967bfeb5d30e73400cd9fa2d98571e 97460 nodejs_10.15.2~dfsg-2.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/js-team/nodejs/tree/master-10.x
+Vcs-Git: https://salsa.debian.org/js-team/nodejs.git -b master-10.x
+Checksums-Sha256:
+ 8079471b96be42536a0151f349d2f270d50b204f7e49862b291e2fbd4edea47e 3036 nodejs_10.15.2~dfsg-2.dsc
+ effa1cd44e59d59b934f36e3340c330e83afeae11f4ef520da32bc974218595e 15220500 nodejs_10.15.2~dfsg.orig.tar.xz
+ 911d51a02db68d527f3bb0158ebfeb27b173a382a48865267c46db39ef435ac7 97460 nodejs_10.15.2~dfsg-2.debian.tar.xz
+Homepage: http://nodejs.org/
+Package-List: 
+ libnode-dev deb libdevel optional arch=amd64,arm64,armhf,i386,kfreebsd-i386,kfreebsd-amd64,mips,mips64el,mips64r6el,mipsel,ppc64,ppc64el,s390x
+ libnode64 deb libs optional arch=amd64,arm64,armhf,i386,kfreebsd-i386,kfreebsd-amd64,mips,mips64el,mips64r6el,mipsel,ppc64,ppc64el,s390x
+ nodejs deb javascript optional arch=amd64,arm64,armhf,i386,kfreebsd-i386,kfreebsd-amd64,mips,mips64el,mips64r6el,mipsel,ppc64,ppc64el,s390x
+ nodejs-doc deb doc optional arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: build-essential, ca-certificates, cdbs, curl, procps, python
+Directory: pool/main/n/nodejs
+Priority: source
+Section: web
+
+Package: nodm
+Binary: nodm
+Version: 0.13-5
+Maintainer: Mike Gabriel <sunweaver@debian.org>
+Uploaders: Joachim Breitner <nomeata@debian.org>, Enrico Zini <enrico@debian.org>,
+Build-Depends: debhelper-compat (= 12), dpkg-dev (>= 1.16.1.1), autoconf, automake, help2man, libpam0g-dev, libx11-dev, pkg-config, po-debconf
+Architecture: linux-any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Files:
+ b62943f0d31c475e8dd105993f775c33 2000 nodm_0.13-5.dsc
+ 8fc0a12e183fa945a851af831d14b92c 47011 nodm_0.13.orig.tar.gz
+ 6d819af13cf7c15bc5a5796fb777679c 31856 nodm_0.13-5.debian.tar.xz
+Vcs-Browser: https://salsa.debian.org/debian/nodm/
+Vcs-Git: https://salsa.debian.org/debian/nodm.git
+Checksums-Sha256:
+ bbc289fd04e3ce074c7fb0e5f6409d38b45d0ebb1f8ac1923df5c47c73a0dc6c 2000 nodm_0.13-5.dsc
+ ef11667ae82846801a9633df36c20f632cc03319bb1da35f062ac0f950771273 47011 nodm_0.13.orig.tar.gz
+ 3060ed5cc3c7c6a9ea05eedfd98487c759ff074d70522bcfc514e430061ec90d 31856 nodm_0.13-5.debian.tar.xz
+Homepage: https://github.com/spanezz/nodm/
+Package-List: 
+ nodm deb misc optional arch=linux-any
+Directory: pool/main/n/nodm
+Priority: source
+Section: misc

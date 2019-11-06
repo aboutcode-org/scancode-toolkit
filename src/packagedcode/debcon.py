@@ -26,36 +26,44 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 import io
 
 
 """
-Parse debian control and copyright files.
+Utilities to parse Debian-style control files aka deb822
+See https://salsa.debian.org/dpkg-team/dpkg/blob/0c9dc4493715ff3b37262528055943c52fdfb99c/man/deb822.man
 """
 
 
 def paragraphs(location):
     """
     Yield paragraphs from a Debian control file at `location`.
-    Each paragram is a list of name/value tuples.
+    Each paragraph is a list of name/value tuples.
+    PGP signatures are skipped/ignored
     """
     paragraph = []
     name = None
     value = ''
+    is_signed = False
+    in_signature = False
+    in_message = False
+    is_signature_start_end = False
     with io.open(location, encoding='utf-8') as df:
         for ln, line in enumerate(df, 1):
             stripped = line.strip()
             is_empty = not stripped
             is_continuation = line.startswith((' ', '\t',))
             is_empty_continuation = is_continuation and stripped.startswith('.')
-
             if is_empty:
                 if name:
+                    # accumulate and reset
                     paragraph.append((name, value,))
                     name = None
                     value = ''
 
                 if paragraph:
+                    # yield and reset
                     yield paragraph
                     paragraph = []
                 continue
@@ -64,13 +72,14 @@ def paragraphs(location):
                 if is_empty_continuation:
                     value += '\n'
                 else:
-                    value += '\n' + stripped
+                    value += stripped + '\n'
                 continue
 
             if value and not name:
-                raise Exception('Invalid data structure at line: {}: {}'.format(ln, line))
+                raise Exception('Invalid data structure at line: {}: {}. \n    value: {}'.format(ln, line, value))
 
             if name:
+                # accumulate and reset
                 paragraph.append((name, value,))
                 name = None
                 value = ''
@@ -83,5 +92,60 @@ def paragraphs(location):
             if value and not name:
                 raise Exception('Invalid data structure at line: {}: {}'.format(ln, line))
 
+    if name:
+        paragraph.append((name, value,))
+
     if paragraph:
         yield paragraph
+
+
+def to_dict(paragraph, duplicates_as_list=False, lower=True):
+    """
+    Return an ordered mapping built from a Debian `paragraph` list of name/value
+    pairs.
+
+    If `duplicates_as_list` is True, the values of a field name that occurs
+    multiple times are converted to a list. Otherwise, raise an Exception when a
+    field appears more than once in a paragraph.
+
+    If `lower` is True, field names are normalized to lower-case. Note that
+    Debian 822 field names are case-insensitive.
+    """
+    mapping = OrderedDict()
+    for name, value in paragraph:
+        lowered = name.lower()
+        if lower:
+            name = lowered
+        name = name.strip()
+        value = value.strip()
+        name_exists = name in mapping
+        if name_exists:
+            if duplicates_as_list:
+                existing_value = mapping(name)
+                if not isinstance(existing_value, (list, tuple)):
+                    existing_value = [existing_value, value]
+                else:
+                    existing_value.append(value)
+            else:
+                raise Exception('Invalid duplicate name: {}, with value: {}'.format(name, value,))
+        else:
+            mapping[name] = value
+    return mapping
+
+
+def fold(value):
+    """
+    Return a folded `value` string.
+    """
+    if not value:
+        return value
+    return ''.join(value.split())
+
+
+def line_separated(value):
+    """
+    Return a list of values from a `value` string using line delimiters.
+    """
+    if not value:
+        return []
+    return [v.strip() for v in value.splitlines(False) if v]

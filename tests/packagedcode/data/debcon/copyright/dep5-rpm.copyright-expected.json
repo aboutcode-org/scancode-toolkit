@@ -1,0 +1,116 @@
+[
+  [
+    [
+      "Format",
+      "https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/"
+    ],
+    [
+      "Upstream-Contact",
+      "rpm-list@lists.rpm.org"
+    ],
+    [
+      "Source",
+      "http://rpm.org"
+    ],
+    [
+      "Files-Excluded",
+      "doc/librpm/html/*\n"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "*"
+    ],
+    [
+      "Copyright",
+      "1995 - 2009, Erik Troan, Marc Ewing"
+    ],
+    [
+      "License",
+      "GPL-2+"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "lib/*"
+    ],
+    [
+      "Copyright",
+      "1995 - 2009, Erik Troan, Marc Ewing"
+    ],
+    [
+      "License",
+      "GPL-2+ or LGPL-2+"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "lib/header.*"
+    ],
+    [
+      "Copyright",
+      "1995-2002 Red Hat Software"
+    ],
+    [
+      "License",
+      "LGPL-2+"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "misc/stpcpy.* misc/stpncpy.* misc/fnmatch.*"
+    ],
+    [
+      "Copyright",
+      "1990 - 2001 Free Software Foundation, Inc."
+    ],
+    [
+      "License",
+      "LGPL-2+"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "misc/fts.*"
+    ],
+    [
+      "Copyright",
+      "1990, 1993, 1994, The Regents of the University of California"
+    ],
+    [
+      "License",
+      "BSD-3-clauseRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n4. Neither the name of the University nor the names of its contributors\nmay be used to endorse or promote products derived from this software\nwithout specific prior written permission.\n"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "debian/*"
+    ],
+    [
+      "Copyright",
+      "2009-2015, Michal \u010ciha\u0159 <nijel@debian.org>"
+    ],
+    [
+      "License",
+      "GPL-2+"
+    ]
+  ],
+  [
+    [
+      "License",
+      "GPL-2+On Debian systems the full text of the GNU General Public\nLicense can be found in the `/usr/share/common-licenses/GPL-2'\nfile.\n"
+    ]
+  ],
+  [
+    [
+      "License",
+      "LGPL-2+On Debian systems the full text of the GNU Lesser General Public\nLicense can be found in the `/usr/share/common-licenses/LGPL-2'\nfile.\n"
+    ]
+  ]
+]

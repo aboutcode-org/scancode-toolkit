@@ -1,0 +1,64 @@
+[
+  [
+    [
+      "Format",
+      "https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/"
+    ],
+    [
+      "Upstream-Name",
+      "b43-fwcutter"
+    ],
+    [
+      "Source",
+      "http://linuxwireless.org/en/users/Drivers/b43"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "*"
+    ],
+    [
+      "Copyright",
+      "2005-2011 Martin Langer <martin-langer@gmx.de>2005-2014 Michael Buesch <m@bues.ch>\n2005-2011 Alex Beregszaszi <alex@fsn.hu>\n"
+    ],
+    [
+      "License",
+      "BSD-2-Clause"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "debian/*"
+    ],
+    [
+      "Copyright",
+      "2006 Rene Engelhard <rene@debian.org>2011 Fabrizio Regalli <fabreg@fabreg.it>\n2013 Daniel Echeverry <epsilon77@gmail.com>\n"
+    ],
+    [
+      "License",
+      "BSD-2-Clause"
+    ]
+  ],
+  [
+    [
+      "License",
+      "BSD-2-ClauseRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above\ncopyright notice, this list of conditions and the following\ndisclaimer in the documentation and/or other materials provided\nwith the distribution.\n\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\nWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\nEVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+    ]
+  ],
+  [
+    [
+      "Files",
+      "md5.c md5.h"
+    ],
+    [
+      "Copyright",
+      "1993 Colin Plumb"
+    ],
+    [
+      "License",
+      "public-domainThis code implements the MD5 message-digest algorithm.\nThe algorithm is due to Ron Rivest.    This code was\nwritten by Colin Plumb in 1993, no copyright is claimed.\nThis code is in the public domain; do with it what you wish.\n"
+    ]
+  ]
+]
