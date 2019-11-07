@@ -1,5 +1,5 @@
 ### Description
-Please leave a brief discription of the bug or feature request:
+Please leave a brief description of the bug or feature request:
 * if reporting a bug, tell us how to reproduce the issue.
 
 ### System configuration
