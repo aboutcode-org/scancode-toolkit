@@ -8,8 +8,6 @@ Guide
    :maxdepth: 2
 
    license
-   help
-   doc_maintenance
 
 
 Tutorial Documents
