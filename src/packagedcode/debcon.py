@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import io
 
-
 """
 Utilities to parse Debian-style control files aka deb822
 See https://salsa.debian.org/dpkg-team/dpkg/blob/0c9dc4493715ff3b37262528055943c52fdfb99c/man/deb822.man
@@ -45,10 +44,6 @@ def paragraphs(location):
     paragraph = []
     name = None
     value = ''
-    is_signed = False
-    in_signature = False
-    in_message = False
-    is_signature_start_end = False
     with io.open(location, encoding='utf-8') as df:
         for ln, line in enumerate(df, 1):
             stripped = line.strip()
