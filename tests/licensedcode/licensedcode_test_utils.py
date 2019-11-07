@@ -226,9 +226,7 @@ def make_test(license_test, regen=False):
             license_test.dump()
             return
 
-        try:
-            assert expected_expressions == detected_expressions
-        except:
+        if expected_expressions != detected_expressions:
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full match details
             results = expected_expressions + ['======================', '']
