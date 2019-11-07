@@ -1,0 +1,5 @@
+license_expression: unlicense
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - https://unlicense.org/
