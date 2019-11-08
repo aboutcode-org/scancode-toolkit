@@ -1,0 +1,6 @@
+license_expression: unicode
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 90
+ignorable_urls:
+    - http://unicode.org/versions/Unicode5.0.0/
