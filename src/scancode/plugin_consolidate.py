@@ -366,6 +366,8 @@ def get_license_holders_consolidated_components(codebase):
             # TODO: Consider creating two components instead of tiebreaking
             origin_key, top_count = origin_count.most_common(1)[0]
             current_file_only_count = resource.files_count - package_file_count
+            if not current_file_only_count:
+                continue
             if is_majority(top_count, current_file_only_count):
                 majority_holders, majority_license_expression = origin_translation_table[origin_key]
                 resource.extra_data['license_expression'] = majority_license_expression
