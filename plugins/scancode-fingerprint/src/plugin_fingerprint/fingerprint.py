@@ -25,8 +25,10 @@
 import binascii
 from bitarray import bitarray
 from bitarray import bitdiff
-from licensedcode.tokenize import ngrams
 import hashlib
+
+from commoncode.text import toascii
+from licensedcode.tokenize import ngrams
 
 HASH_LENGTH = 128
 SHINGLE_LENGTH = 3
@@ -103,6 +105,9 @@ class Simhash:
         """
         Modify weighted list wrt to shingle
         """
+        # convert other encodings to ascii. See #1690.
+        shingle = toascii(shingle)
+        
         hash = hashlib.md5(shingle.encode()).digest()
         result = self.bitarray_from_bytes(hash)
 
