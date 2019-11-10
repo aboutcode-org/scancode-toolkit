@@ -33,7 +33,8 @@ Continuous testing runs on GitHub workflows:
 The authors
 -----------
 
-Pygments is maintained by **Georg Brandl**, e-mail address *georg*\ *@*\ *python.org*.
+Pygments is maintained by **Georg Brandl**, e-mail address *georg*\ *@*\ *python.org*
+and **Matthäus Chajdas**.
 
 Many lexers and fixes have been contributed by **Armin Ronacher**, the rest of
 the `Pocoo <http://dev.pocoo.org/>`_ team and **Tim Hatch**.
