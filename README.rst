@@ -21,14 +21,14 @@ Documentation
 Development
 -----------
 
-... takes place on `Bitbucket
-<https://bitbucket.org/birkenfeld/pygments-main>`_, where the Mercurial
+... takes place on `GitHub
+<https://github.com/pygments/pygments>`_, where the Git
 repository, tickets and pull requests can be viewed.
 
-Continuous testing runs on drone.io:
+Continuous testing runs on GitHub workflows:
 
-.. image:: https://drone.io/bitbucket.org/birkenfeld/pygments-main/status.png
-   :target: https://drone.io/bitbucket.org/birkenfeld/pygments-main
+.. image:: https://github.com/pygments/pygments/workflows/Pygments/badge.svg
+   :target: https://github.com/pygments/pygments/actions?query=workflow%3APygments
 
 The authors
 -----------
