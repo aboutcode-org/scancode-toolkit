@@ -1,0 +1,9 @@
+about_resource: debapt.py
+name: camarabuntu apt.py
+version: 60ed598
+download_url: https://github.com/rory/camarabuntu/blob/60ed5982bbdf7d342e4f3888a8d59e9169036bea/bin/apt.py
+license_expression: cc0-1.0
+notes: Rory McCann https://github.com/rory made this available under Public Domain CC0-1.0
+ per https://github.com/rory/camarabuntu/issues/1#issuecomment-552501895
+ On Mon, Nov 11, 2019 at 4:56 PM Rory wrote this
+ > wow this is old! Consider that file under Public Domain (aka CC-zero)
