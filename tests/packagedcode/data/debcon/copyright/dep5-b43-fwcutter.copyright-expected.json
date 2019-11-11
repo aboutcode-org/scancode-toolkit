@@ -20,7 +20,7 @@
     ],
     [
       "Copyright",
-      "2005-2011 Martin Langer <martin-langer@gmx.de>2005-2014 Michael Buesch <m@bues.ch>\n2005-2011 Alex Beregszaszi <alex@fsn.hu>\n"
+      "2005-2011 Martin Langer <martin-langer@gmx.de>\n       2005-2014 Michael Buesch <m@bues.ch>\n       2005-2011 Alex Beregszaszi <alex@fsn.hu>"
     ],
     [
       "License",
@@ -34,7 +34,7 @@
     ],
     [
       "Copyright",
-      "2006 Rene Engelhard <rene@debian.org>2011 Fabrizio Regalli <fabreg@fabreg.it>\n2013 Daniel Echeverry <epsilon77@gmail.com>\n"
+      "2006 Rene Engelhard <rene@debian.org>\n           2011 Fabrizio Regalli <fabreg@fabreg.it>\n       2013 Daniel Echeverry <epsilon77@gmail.com>"
     ],
     [
       "License",
@@ -44,7 +44,7 @@
   [
     [
       "License",
-      "BSD-2-ClauseRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above\ncopyright notice, this list of conditions and the following\ndisclaimer in the documentation and/or other materials provided\nwith the distribution.\n\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\nWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\nEVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+      "BSD-2-Clause\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n  1. Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the following disclaimer.\n  2. Redistributions in binary form must reproduce the above\n  copyright notice, this list of conditions and the following\n  disclaimer in the documentation and/or other materials provided\n  with the distribution.\n .\n THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED\n WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n DISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY\n DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\n OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
     ]
   ],
   [
@@ -58,7 +58,7 @@
     ],
     [
       "License",
-      "public-domainThis code implements the MD5 message-digest algorithm.\nThe algorithm is due to Ron Rivest.    This code was\nwritten by Colin Plumb in 1993, no copyright is claimed.\nThis code is in the public domain; do with it what you wish.\n"
+      "public-domain\n This code implements the MD5 message-digest algorithm.\n The algorithm is due to Ron Rivest.    This code was\n written by Colin Plumb in 1993, no copyright is claimed.\n This code is in the public domain; do with it what you wish."
     ]
   ]
 ]

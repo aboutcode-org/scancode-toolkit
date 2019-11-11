@@ -14,7 +14,7 @@
     ],
     [
       "Files-Excluded",
-      "doc/librpm/html/*\n"
+      "\n  doc/librpm/html/*"
     ]
   ],
   [
@@ -84,7 +84,7 @@
     ],
     [
       "License",
-      "BSD-3-clauseRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n4. Neither the name of the University nor the names of its contributors\nmay be used to endorse or promote products derived from this software\nwithout specific prior written permission.\n"
+      "BSD-3-clause\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in the\n    documentation and/or other materials provided with the distribution.\n 4. Neither the name of the University nor the names of its contributors\n    may be used to endorse or promote products derived from this software\n    without specific prior written permission."
     ]
   ],
   [
@@ -104,13 +104,13 @@
   [
     [
       "License",
-      "GPL-2+On Debian systems the full text of the GNU General Public\nLicense can be found in the `/usr/share/common-licenses/GPL-2'\nfile.\n"
+      "GPL-2+\n On Debian systems the full text of the GNU General Public\n License can be found in the `/usr/share/common-licenses/GPL-2'\n file."
     ]
   ],
   [
     [
       "License",
-      "LGPL-2+On Debian systems the full text of the GNU Lesser General Public\nLicense can be found in the `/usr/share/common-licenses/LGPL-2'\nfile.\n"
+      "LGPL-2+\n On Debian systems the full text of the GNU Lesser General Public\n License can be found in the `/usr/share/common-licenses/LGPL-2'\n file."
     ]
   ]
 ]

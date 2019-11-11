@@ -1,0 +1,134 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: Matt Johnston <matt@ucc.asn.au>
+Source: https://matt.ucc.asn.au/dropbear/
+
+Files: *
+Copyright: Â© 2002-2015 Matt Johnston <matt@ucc.asn.au>
+           Â© 2004 Mihnea Stoenescu
+License: MIT
+
+Files: libtomcrypt/* libtommath/*
+Copyright: Tom St Denis
+License: public-domain
+ Tom St Denis's licence is as follows:
+ .
+ This software is public domain.  As should all quality software be.
+
+Files: sshpty.c sshpty.h
+Copyright: Â© 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+License: OpenSSH
+
+Files: atomicio.c atomicio.h loginrec.c loginrec.h progressmeter.c progressmeter.h
+Copyright: Â© 1995,1999 Theo de Raadt
+           Â© Andre Lucas
+           Â© 2003 Nils Nordman
+License: BSD-2-clause
+
+Files: curve25519-donna.c
+Copyright: Â© 2008, Google Inc.
+License: BSD-3-clause
+
+Files: compat.c dbutil.c
+Copyright: Â© 2002,2003 Matt Johnston <matt@ucc.asn.au>
+           Â© 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+           Â© 1990, 1993 The Regents of the University of California
+License: MIT and BSD-3-clause
+
+Files: scp.c scpmisc.c scpmisc.h
+Copyright: Â© 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+           Â© 1999 Theo de Raadt
+           Â© Aaron Campbell
+           Â© 1983, 1990, 1992, 1993, 1995 The Regents of the University of California
+License: OpenSSH and BSD-2-clause and BSD-3-clause
+
+Files: debian/*
+Copyright: Grahame Bowland <grahame.angrygoats.net>
+           Matt Johnston <matt@ucc.asn.au>
+           Gerrit Pape <pape@smarden.org>
+           Guilhem Moulin <guilhem@debian.org>
+License: MIT
+
+Files: debian/initramfs/*
+Copyright: Â© 2009  <debian@x.ray.net>
+           Â© 2015  Guilhem Moulin <guilhem@debian.org>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ The full text of version 2 of the GPL is distributed in
+ /usr/share/common-licenses/GPL-2 on Debian systems.
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+ EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors may be
+    used to endorse or promote products derived from this software without
+    specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: OpenSSH
+ Tatu Ylonen's original licence is as follows:
+ .
+ As far as I am concerned, the code I have written for this software can be
+ used freely for any purpose.  Any derived versions of this software must be
+ clearly marked as such, and if the derived work is incompatible with the
+ protocol description in the RFC file, it must be called by a name other than
+ "ssh" or "Secure Shell".

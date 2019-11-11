@@ -50,7 +50,7 @@
     ],
     [
       "Description",
-      "shared libraries for terminal handlingThe ncurses library routines are a terminal-independent method of\nupdating character screens with reasonable optimization.\n\nThis package contains the shared libraries necessary to run programs\ncompiled with ncurses.\n"
+      "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses."
     ],
     [
       "Homepage",
@@ -120,7 +120,7 @@
     ],
     [
       "Description",
-      "common error description librarylibcomerr is an attempt to present a common error-handling mechanism to\nmanipulate the most common form of error code in a fashion that does not\nhave the problems identified with mechanisms commonly in use.\n"
+      "common error description library\n libcomerr is an attempt to present a common error-handling mechanism to\n manipulate the most common form of error code in a fashion that does not\n have the problems identified with mechanisms commonly in use."
     ],
     [
       "Homepage",
@@ -190,7 +190,7 @@
     ],
     [
       "Description",
-      "package management runtime libraryThis library provides the common functionality for searching and\nmanaging packages as well as information about packages.\nHigher-level package managers can depend upon this library.\n\nThis includes:\n* retrieval of information about packages from multiple sources\n* retrieval of packages and all dependent packages\nneeded to satisfy a request either through an internal\nsolver or by interfacing with an external one\n* authenticating the sources and validating the retrieved data\n* installation and removal of packages in the system\n* providing different transports to retrieve data over cdrom, ftp,\nhttp(s), rsh as well as an interface to add more transports like\ntor+http(s) (apt-transport-tor).\n"
+      "package management runtime library\n This library provides the common functionality for searching and\n managing packages as well as information about packages.\n Higher-level package managers can depend upon this library.\n .\n This includes:\n  * retrieval of information about packages from multiple sources\n  * retrieval of packages and all dependent packages\n    needed to satisfy a request either through an internal\n    solver or by interfacing with an external one\n  * authenticating the sources and validating the retrieved data\n  * installation and removal of packages in the system\n  * providing different transports to retrieve data over cdrom, ftp,\n    http(s), rsh as well as an interface to add more transports like\n    tor+http(s) (apt-transport-tor)."
     ],
     [
       "Original-Maintainer",
@@ -244,7 +244,7 @@
     ],
     [
       "Description",
-      "Dynamic library for security auditingThe audit-libs package contains the dynamic libraries needed for\napplications to use the audit framework. It is used to monitor systems for\nsecurity related events.\n"
+      "Dynamic library for security auditing\n The audit-libs package contains the dynamic libraries needed for\n applications to use the audit framework. It is used to monitor systems for\n security related events."
     ],
     [
       "Homepage",
@@ -315,34 +315,6 @@
     [
       "Breaks",
       "amanda-common (<< 1:3.3.9-2), autoconf2.13 (<< 2.13-45), backuppc (<< 3.3.1-2), debconf (<< 1.5.61), dh-haskell (<< 0.3), intltool (<< 0.51.0-4), libalien-wxwidgets-perl (<< 0.65+dfsg-2), libanyevent-perl (<< 7.070-2), libcommon-sense-perl (<< 3.72-2~), libe"
-    ],
-    [
-      "xception-class-perl (<< 1.42), libfile-path-perl (<< 2.12.01), libfile-spec-perl (<< 3.6700), libfile-temp-perl (<< 0.2304), libgtk2-perl-doc (<< 2",
-      "1.2491-4), libio-socket-ip-perl (<< 0.38), libjcode-perl (<< 2.13-3), libmarc-charset-perl (<< 1.2), libsbuild-perl (<"
-    ],
-    [
-      "< 0.67.0-1), libscalar-list-utils-perl (<< 1",
-      "1.46.02), libsocket-perl (<< 2.020.03), libxsloader-perl (<< 0.27), mailagent (<< 1:3.1-81-2), pdl (<< 1:2.007-4), perl (<< 5.26.1~), perl-modules (<< 5.26.1~), slic3r (<< 1.2.9+dfsg-6.1), slic3r-prusa (<< 1.37.0+dfsg-1.1"
-    ],
-    [
-      "), texinfo (<< 6.1.0.dfsg.1-8)",
-      ""
-    ],
-    [
-      "Conflicts",
-      "defoma (<< 0.11.12), doc-base (<< 0.10.3), mono-gac (<< 2.10.8.1-3), safe-rm (<< 0.8), update-inetd (<< 4.41)"
-    ],
-    [
-      "Description",
-      "minimal Perl systemPerl is a scripting language used in many system scripts and utilities.\n\nThis package provides a Perl interpreter and the small subset of the\nstandard run-time library required to perform basic tasks. For a full\nPerl installation, install \"perl\" (and its dependencies, \"perl-modules-5.26\"\nand \"perl-doc\").\n"
-    ],
-    [
-      "Homepage",
-      "http://dev.perl.org/perl5/"
-    ],
-    [
-      "Original-Maintainer",
-      "Niko Tyni <ntyni@debian.org>"
     ]
   ],
   [
@@ -392,7 +364,7 @@
     ],
     [
       "Description",
-      "libudev shared libraryThis library provides access to udev device information.\n"
+      "libudev shared library\n This library provides access to udev device information."
     ],
     [
       "Homepage",

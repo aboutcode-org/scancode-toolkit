@@ -198,7 +198,7 @@
     ],
     [
       "Tag",
-      "implemented-in::perl, interface::commandline, protocol::ip,role::program, scope::utility, use::analysing, use::measuring,\nworks-with::network-traffic\n"
+      "implemented-in::perl, interface::commandline, protocol::ip,\n role::program, scope::utility, use::analysing, use::measuring,\n works-with::network-traffic"
     ],
     [
       "Section",
@@ -836,7 +836,7 @@
     ],
     [
       "Tag",
-      "implemented-in::python, interface::commandline, role::program,scope::utility, use::converting, works-with-format::pdf,\nworks-with-format::png, works-with-format::svg, works-with::image,\nworks-with::image:raster\n"
+      "implemented-in::python, interface::commandline, role::program,\n scope::utility, use::converting, works-with-format::pdf,\n works-with-format::png, works-with-format::svg, works-with::image,\n works-with::image:raster"
     ],
     [
       "Section",
@@ -906,7 +906,7 @@
     ],
     [
       "Tag",
-      "field::biology, field::biology:bioinformatics, implemented-in::perl,interface::commandline, interface::text-mode, role::program,\nscope::utility\n"
+      "field::biology, field::biology:bioinformatics, implemented-in::perl,\n interface::commandline, interface::text-mode, role::program,\n scope::utility"
     ],
     [
       "Section",
@@ -980,7 +980,7 @@
     ],
     [
       "Tag",
-      "hardware::storage, hardware::storage:cd, interface::commandline,role::program, scope::utility, use::converting, use::storing,\nworks-with-format::mp3, works-with-format::oggvorbis,\nworks-with-format::wav, works-with::audio\n"
+      "hardware::storage, hardware::storage:cd, interface::commandline,\n role::program, scope::utility, use::converting, use::storing,\n works-with-format::mp3, works-with-format::oggvorbis,\n works-with-format::wav, works-with::audio"
     ],
     [
       "Section",
@@ -1512,7 +1512,7 @@
     ],
     [
       "Tag",
-      "devel::buildtools, devel::lang:c, devel::lang:perl, devel::library,devel::testing-qa, implemented-in::c, implemented-in::perl,\ninterface::commandline, role::devel-lib, role::program, scope::utility,\nuse::checking\n"
+      "devel::buildtools, devel::lang:c, devel::lang:perl, devel::library,\n devel::testing-qa, implemented-in::c, implemented-in::perl,\n interface::commandline, role::devel-lib, role::program, scope::utility,\n use::checking"
     ],
     [
       "Section",
@@ -1578,7 +1578,7 @@
     ],
     [
       "Tag",
-      "devel::lang:r, devel::library, field::statistics, implemented-in::r,role::app-data, suite::gnu\n"
+      "devel::lang:r, devel::library, field::statistics, implemented-in::r,\n role::app-data, suite::gnu"
     ],
     [
       "Section",
@@ -1776,7 +1776,7 @@
     ],
     [
       "Tag",
-      "interface::graphical, interface::x11, role::app-data, role::program,uitoolkit::gtk, use::editing, use::text-formatting,\nworks-with-format::html, works-with-format::tex, works-with::text,\nx11::application\n"
+      "interface::graphical, interface::x11, role::app-data, role::program,\n uitoolkit::gtk, use::editing, use::text-formatting,\n works-with-format::html, works-with-format::tex, works-with::text,\n x11::application"
     ],
     [
       "Section",
@@ -2316,7 +2316,7 @@
     ],
     [
       "Tag",
-      "implemented-in::c++, interface::commandline, role::dummy, role::program,scope::utility, security::integrity, works-with::text\n"
+      "implemented-in::c++, interface::commandline, role::dummy, role::program,\n scope::utility, security::integrity, works-with::text"
     ],
     [
       "Section",
@@ -2472,7 +2472,7 @@
     ],
     [
       "Tag",
-      "devel::code-generator, implemented-in::perl, interface::commandline,role::program, scope::utility\n"
+      "devel::code-generator, implemented-in::perl, interface::commandline,\n role::program, scope::utility"
     ],
     [
       "Section",
