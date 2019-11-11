@@ -27,71 +27,43 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import email
 import io
 
+from packagedcode import desig
+
 """
-Utilities to parse Debian-style control files aka deb822
+Utilities to parse Debian-style control files aka. deb822 format.
 See https://salsa.debian.org/dpkg-team/dpkg/blob/0c9dc4493715ff3b37262528055943c52fdfb99c/man/deb822.man
 """
 
 
-def paragraphs(location):
+def get_paragraphs(location):
     """
     Yield paragraphs from a Debian control file at `location`.
-    Each paragraph is a list of name/value tuples.
-    PGP signatures are skipped/ignored
+    Each paragraph is a list of (name, value) tuples.
     """
-    paragraph = []
-    name = None
-    value = ''
     with io.open(location, encoding='utf-8') as df:
-        for ln, line in enumerate(df, 1):
-            stripped = line.strip()
-            is_empty = not stripped
-            is_continuation = line.startswith((' ', '\t',))
-            is_empty_continuation = is_continuation and stripped.startswith('.')
-            if is_empty:
-                if name:
-                    # accumulate and reset
-                    paragraph.append((name, value,))
-                    name = None
-                    value = ''
+        paragraphs = [p for p in df.read().split('\n\n') if p]
 
-                if paragraph:
-                    # yield and reset
-                    yield paragraph
-                    paragraph = []
-                continue
+    for para in paragraphs:
+        parsed = get_paragraph(para)
+        if parsed:
+            yield parsed
 
-            if is_continuation:
-                if is_empty_continuation:
-                    value += '\n'
-                else:
-                    value += stripped + '\n'
-                continue
 
-            if value and not name:
-                raise Exception('Invalid data structure at line: {}: {}. \n    value: {}'.format(ln, line, value))
-
-            if name:
-                # accumulate and reset
-                paragraph.append((name, value,))
-                name = None
-                value = ''
-
-            # here we have a new field:
-            name, _, value = stripped.partition(':')
-            name = name.strip()
-            value = value.strip()
-
-            if value and not name:
-                raise Exception('Invalid data structure at line: {}: {}'.format(ln, line))
-
-    if name:
-        paragraph.append((name, value,))
-
-    if paragraph:
-        yield paragraph
+def get_paragraph(text, remove_pgp_signature=False):
+    """
+    Return a parsed paragraph from `text` as a list of (name, value) tuples.
+    Optionally remove a wrapping PGP signature if `remove_pgp_signature` is True.
+    """
+    if not text:
+        return []
+    if remove_pgp_signature:
+        text = desig.unsign(text)
+    mls = email.message_from_string(text)
+    #assert not mls.get_payload()
+    return list(mls.items())
 
 
 def to_dict(paragraph, duplicates_as_list=False, lower=True):

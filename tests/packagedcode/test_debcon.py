@@ -36,29 +36,26 @@ class TestDebcon(PackageTester):
     test_data_dir = path.join(path.dirname(__file__), 'data')
 
     def test_get_paragraph__from_status(self):
+        test_file = self.get_test_loc('debcon/status/one_status')
+        expected_loc = 'debcon/status/one_status-expected.json'
+        results = list(debcon.get_paragraph(test_file))
+        self.check_json(results, expected_loc, regen=False)
+
+    def test_get_paragraphs__from_status(self):
         test_file = self.get_test_loc('debcon/status/simple_status')
         expected_loc = 'debcon/status/simple_status-expected.json'
-        results = list(debcon.get_paragraph(test_file))
-        self.check_json(results, expected_loc, regen=False)
-
         results = list(debcon.get_paragraphs(test_file))
         self.check_json(results, expected_loc, regen=False)
 
-    def test_get_paragraph__from_sources(self):
+    def test_get_paragraphs__from_sources(self):
         test_file = self.get_test_loc('debcon/sources/simple_sources')
         expected_loc = 'debcon/sources/simple_sources-expected.json'
-        results = list(debcon.get_paragraph(test_file))
-        self.check_json(results, expected_loc, regen=False)
-
         results = list(debcon.get_paragraphs(test_file))
         self.check_json(results, expected_loc, regen=False)
 
-    def test_get_paragraph__from_packages(self):
+    def test_get_paragraphs__from_packages(self):
         test_file = self.get_test_loc('debcon/packages/simple_packages')
         expected_loc = 'debcon/packages/simple_packages-expected.json'
-        results = list(debcon.get_paragraph(test_file))
-        self.check_json(results, expected_loc, regen=False)
-
         results = list(debcon.get_paragraphs(test_file))
         self.check_json(results, expected_loc, regen=False)
 
@@ -79,3 +76,14 @@ class TestDebcon(PackageTester):
         expected_loc = 'debcon/copyright/dropbear.copyright-expected.json'
         results = list(debcon.get_paragraphs(test_file))
         self.check_json(results, expected_loc, regen=False)
+
+    def test_get_paragraph__signed_from_dsc(self):
+        test_file = self.get_test_loc('debcon/dsc/zlib_1.2.11.dfsg-1.dsc')
+        expected_loc = 'debcon/dsc/zlib_1.2.11.dfsg-1.dsc-expected.json'
+        results = list(debcon.get_paragraph(test_file, remove_pgp_signature=True))
+        self.check_json(results, expected_loc, regen=False)
+
+    def test_get_paragraph__signed_from_dsc_crash_if_not_removed(self):
+        test_file = self.get_test_loc('debcon/dsc/zlib_1.2.11.dfsg-1.dsc')
+        results = list(debcon.get_paragraph(test_file, remove_pgp_signature=False))
+        assert [] == results
