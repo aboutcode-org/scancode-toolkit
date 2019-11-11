@@ -2,7 +2,7 @@ about_resource: desig.py
 name: PGPpy-armor_regex
 version: e2893da
 download_url: https://raw.githubusercontent.com/SecurityInnovation/PGPy/e2893da8b2f5ce0694257caddd8d852aece546ff/pgpy/types.py
-license: bsd-new
+license_expression: bsd-new
 license_text_file: desig.py.LICENSE
 
 notes: The __armor_regex is copied from this file
