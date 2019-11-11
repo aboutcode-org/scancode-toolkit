@@ -37,6 +37,7 @@ from licensedcode import query
 from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
+from licensedcode.tokenize import query_tokenizer
 
 
 """
@@ -532,7 +533,7 @@ class LicenseMatch(object):
 
     # FIXME: this should be done for all the matches found in a given scanned
     # location at once to avoid reprocessing many times the original text
-    def matched_text(self, whole_lines=False,
+    def matched_text(self, whole_lines=False, highlight=True,
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]',
                      _usecache=True):
         """
@@ -558,6 +559,7 @@ class LicenseMatch(object):
             query_string=query.query_string,
             idx=query.idx,
             whole_lines=whole_lines,
+            highlight=highlight,
             highlight_matched=highlight_matched,
             highlight_not_matched=highlight_not_matched, _usecache=_usecache)
         ).rstrip()
@@ -1384,7 +1386,8 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
 @attr.s(slots=True, frozen=True)
 class Token(object):
     """
-    Used to represent a token in collected matched texts and SPDX identifiers.
+    Used to represent a token in collected query-side matched texts and SPDX
+    identifiers.
     """
     # original text value for this token.
     value = attr.ib()
@@ -1392,7 +1395,7 @@ class Token(object):
     line_num = attr.ib()
     # absolute position for known tokens, zero-based. -1 for unknown tokens
     pos = attr.ib(default=-1)
-    # False if this is punctuation
+    # False if this is punctuation or spaces
     is_text = attr.ib(default=False)
     # True if part of a match
     is_matched = attr.ib(default=False)
@@ -1405,6 +1408,8 @@ def tokenize_matched_text(location, query_string, dictionary, _cache={}):
     Return a list of Token objects with pos and line number collected from the
     file at `location` or the `query_string` string. `dictionary` is the index
     mapping of tokens to token ids.
+
+    NOTE: the _cache={} arg IS A GLOBAL by design.
     """
     key = location, query_string
     cached = _cache.get(key)
@@ -1425,26 +1430,52 @@ def _tokenize_matched_text(location, query_string, dictionary):
     """
     pos = -1
     for line_num, line in query.query_lines(location, query_string, strip=False):
+        if TRACE_MATCHED_TEXT_DETAILS:
+            logger_debug('  _tokenize_matched_text:',
+                'line_num:', line_num,
+                'line:', line)
+
         for is_text, token_str in matched_query_text_tokenizer(line):
-            known = token_str.lower() in dictionary
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('     is_text:', is_text, 'token_str:', repr(token_str))
+            known = False
+            if token_str and token_str.strip():
+                # we retokenzie using the query tokenize
+                tokenized = list(query_tokenizer(token_str))
+                if tokenized:
+                    assert len(tokenized) == 1, repr((is_text, token_str, tokenized))
+                    tokenized = tokenized[0]
+                    known = tokenized in dictionary
+
             if known:
                 pos += 1
                 p = pos
             else:
                 p = -1
-            yield Token(
+
+            tok = Token(
                 value=token_str,
                 line_num=line_num,
                 is_text=is_text,
                 is_known=known,
                 pos=p)
 
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('     token:', tok)
+            yield tok
+
 
 def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
     """
-    Yield Tokens from an iterable of `tokens` that are inside a `match_qspan`
-    matched Span starting at `start_line` and ending at `end_line`. Known
-    matched tokens are tagged as is_matched=True.
+    Yield Tokens from a `tokens` iterable of Token objects (built from a query-
+    side scanned file or string) that are inside a `match_qspan` matched Span
+    starting at `start_line` and ending at `end_line`. If whole_lines is True,
+    also yield unmatched Tokens that are before and after the match and on the
+    first and last line of a match (unless the lines are very long text lines or
+    the match is from binary content.)
+
+    As a side effect, known matched tokens are tagged as is_matched=True if they
+    are matched.
 
     If `whole_lines` is True, any token within matched lines range is included.
     Otherwise, a token is included if its position is within the matched
@@ -1475,7 +1506,12 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
             tok = attr.evolve(tok, is_matched=True)
             is_included = True
             if TRACE_MATCHED_TEXT_DETAILS:
-                logger_debug('  tok.is_matched = True')
+                logger_debug('  tok.is_matched = True', 'match_qspan:', match_qspan)
+        else:
+            if TRACE_MATCHED_TEXT_DETAILS:
+                logger_debug('  unmatched token: tok.is_matched = False',
+                             'match_qspan:', match_qspan,
+                             'tok.pos in match_qspan:', tok.pos in match_qspan)
 
         if whole_lines:
             # we only work on matched lines so no need to test further
@@ -1527,7 +1563,7 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
 def get_full_matched_text(
         match, location=None, query_string=None, idx=None,
         whole_lines=False,
-        highlight_matched=u'%s', highlight_not_matched=u'[%s]',
+        highlight=True, highlight_matched=u'%s', highlight_not_matched=u'[%s]',
         stopwords=STOPWORDS, _usecache=True):
     """
     Yield unicode strings corresponding to the full matched query text
@@ -1541,11 +1577,11 @@ def get_full_matched_text(
     matched line and the end of the last matched lines are also included in the
     returned text.
 
-    Each token is interpolated for "highlighting" and emphasis with the
-    `highlight_matched` format string for matched tokens or to the
-    `highlight_not_matched` for tokens not matched. The default is to enclose an
-    unmatched token sequence in [] square brackets. Punctuation is not
-    highlighted.
+    If `highlight` is True, each token is formatted for "highlighting" and
+    emphasis with the `highlight_matched` format string for matched tokens or to
+    the `highlight_not_matched` for tokens not matched. The default is to
+    enclose an unmatched token sequence in [] square brackets. Punctuation is
+    not highlighted.
     """
     if TRACE_MATCHED_TEXT:
         logger_debug('get_full_matched_text:  match:', match)
@@ -1564,7 +1600,7 @@ def get_full_matched_text(
         tokens = list(tokens)
         logger_debug('get_full_matched_text:  tokens:')
         for t in tokens:
-            print(t)
+            print('    ', t)
 
     tokens = reportable_tokens(
         tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
@@ -1576,16 +1612,21 @@ def get_full_matched_text(
             print(t)
 
     if TRACE_MATCHED_TEXT:
-        logger_debug('get_full_matched_text:  highlight_matched:', highlight_matched, 'highlight_not_matched:', highlight_not_matched)
+        logger_debug(
+            'get_full_matched_text:  highlight_matched:', highlight_matched,
+            'highlight_not_matched:', highlight_not_matched)
 
     # Finally yield strings with eventual highlightings
     for token in tokens:
         val = token.value
-        if token.is_text and val.lower() not in stopwords:
-            if token.is_matched:
-                yield highlight_matched % val
-            else:
-                yield highlight_not_matched % val
-        else:
-            # we do not highlight punctuation..
+        if not highlight:
             yield val
+        else:
+            if token.is_text and val.lower() not in stopwords:
+                if token.is_matched:
+                    yield highlight_matched % val
+                else:
+                    yield highlight_not_matched % val
+            else:
+                # we do not highlight punctuation..
+                yield val
