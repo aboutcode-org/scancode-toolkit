@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -131,9 +132,17 @@ class TestFingerprint(FileBasedTesting):
         result = simhash.hex_digest()
         assert result == '7f43e1b18f9c0e705fcf28007bc41754'
 
-    def test_hex_digest3(self):
+    def test_hex_digest4(self):
         simhash = Simhash()
         assert simhash.hex_digest() == None
+
+    # Ensure non-ascii characters are handled properly. See #1690.
+    def test_hex_digest_non_ascii(self):
+        simhash = Simhash()
+        simhash.update('Copyright (c) Mário Morgado')
+
+        result = simhash.hex_digest()
+        assert result == '01010040c1300a05ce41804024000001'
 
     def test_update(self):
         simhash = Simhash()
@@ -151,6 +160,14 @@ class TestFingerprint(FileBasedTesting):
 
         simhash.update('this will get added too!')
         expected = bitarray('00000010000000000011110010100000101000001111100000000001010110000110101110111000100000110101000000010100100000000010110011010010')
+        assert simhash.generate_fingerprint() == expected
+    
+    # Ensure non-ascii characters are handled properly. See #1690.
+    def test_generate_fingerprint_non_ascii(self):
+        simhash = Simhash()
+        simhash.update('Copyright (c) Mário Morgado')
+
+        expected = bitarray('00000001000000010000000001000000110000010011000000001010000001011100111001000001100000000100000000100100000000000000000000000001')
         assert simhash.generate_fingerprint() == expected
 
     def test_similarity_matching1(self):
