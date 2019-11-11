@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -911,8 +912,18 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
-        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
+        matched_text = u''.join(
+            get_full_matched_text(match, query_string=querys, idx=idx, _usecache=False))
         assert expected == matched_text
+
+        expected_nh = u"""Copyright 2003 (C) James. All Rights Reserved.
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. """
+        matched_text_nh = u''.join(
+            get_full_matched_text(
+                match, query_string=querys, idx=idx, _usecache=False, highlight=False))
+        assert expected_nh == matched_text_nh
 
         expected_origin_text = u"""Copyright 2003 (C) James. All Rights Reserved.
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
@@ -1173,3 +1184,34 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
         expected = ['BSD-2-Clause-Patent']
         assert expected == results
+
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_query(self):
+        idx = cache.get_index()
+        querys_with_diacritic_unicode = 'İ license MIT'
+        result = idx.match(query_string=querys_with_diacritic_unicode)
+        assert 1 == len(result)
+        match = result[0]
+        expected = 'license MIT'
+        matched_text = match.matched_text(_usecache=False,)
+        assert expected == matched_text
+
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_file(self):
+        idx = cache.get_index()
+        file_with_diacritic_unicode_location = self.get_test_loc('match/unicode_text/main3.js')
+        result = idx.match(location=file_with_diacritic_unicode_location)
+        assert 1 == len(result)
+        match = result[0]
+        expected = 'license MIT'
+        matched_text = match.matched_text(_usecache=False)
+        assert expected == matched_text
+
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_query_whole_lines(self):
+        idx = cache.get_index()
+        querys_with_diacritic_unicode = 'İ license MIT'
+        result = idx.match(query_string=querys_with_diacritic_unicode)
+        assert 1 == len(result)
+        match = result[0]
+        expected = '[İ] license MIT'
+        matched_text = match.matched_text(_usecache=False, whole_lines=True)
+        assert expected == matched_text
+
