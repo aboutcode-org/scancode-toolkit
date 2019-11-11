@@ -26,16 +26,16 @@ class StaticReader:
         )
 
     @cached_property
-    def tree(self):
-        return ast.parse(self.path.read_text(encoding='utf8')).body
+    def tree(self) -> tuple:
+        return tuple(ast.parse(self.path.read_text(encoding='utf8')).body)
 
     @cached_property
     def call(self) -> Optional[ast.Call]:
         return self._get_call(self.tree)
 
     @cached_property
-    def body(self) -> list:
-        return list(self._get_body(self.tree))
+    def body(self) -> tuple:
+        return tuple(self._get_body(self.tree))
 
     @classmethod
     def _get_body(cls, elements):
