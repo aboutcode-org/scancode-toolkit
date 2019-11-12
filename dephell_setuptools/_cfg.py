@@ -1,7 +1,35 @@
+from copy import deepcopy
 from configparser import ConfigParser
 from typing import Dict, List, Optional, Union
 
+from setuptools.config import ConfigOptionsHandler, ConfigMetadataHandler
+
 from ._base import BaseReader
+
+
+DEFAULT = dict(
+    author_email=None,
+    author=None,
+    classifiers=None,
+    description=None,
+    download_url=None,
+    extras_require=None,
+    install_requires=None,
+    keywords=None,
+    license=None,
+    long_description=None,
+    maintainer_email=None,
+    maintainer=None,
+    metadata_version=None,
+    name=None,
+    obsoletes=None,
+    package_dir=None,
+    platforms=None,
+    provides=None,
+    requires=None,
+    url=None,
+    version=None,
+)
 
 
 class CfgReader(BaseReader):
@@ -16,44 +44,17 @@ class CfgReader(BaseReader):
         parser = ConfigParser()
         parser.read(str(path))
 
-        name = None
-        version = None
-        if parser.has_option('metadata', 'name'):
-            name = parser.get('metadata', 'name')
+        options = deepcopy(parser._sections)
+        for section, content in options.items():
+            for k, v in content.items():
+                options[section][k] = ('', v)
 
-        if parser.has_option('metadata', 'version'):
-            version = parser.get('metadata', 'version')
+        container = type('container', (), DEFAULT.copy())()
+        ConfigOptionsHandler(container, options).parse()
+        ConfigMetadataHandler(container, options).parse()
 
-        install_requires = []
-        extras_require = {}
-        python_requires = None
-        if parser.has_section('options'):
-            if parser.has_option('options', 'install_requires'):
-                for dep in parser.get('options', 'install_requires').split('\n'):
-                    dep = dep.strip()
-                    if not dep:
-                        continue
-
-                    install_requires.append(dep)
-
-            if parser.has_option('options', 'python_requires'):
-                python_requires = parser.get('options', 'python_requires')
-
-        if parser.has_section('options.extras_require'):
-            for group in parser.options('options.extras_require'):
-                extras_require[group] = []
-                deps = parser.get('options.extras_require', group)
-                for dep in deps.split('\n'):
-                    dep = dep.strip()
-                    if not dep:
-                        continue
-
-                    extras_require[group].append(dep)
-
-        return dict(
-            name=name,
-            version=version,
-            install_requires=install_requires,
-            extras_require=extras_require,
-            python_requires=python_requires,
-        )
+        result = dict()
+        for k, v in vars(container).items():
+            if v is not None:
+                result[k] = v
+        return result
