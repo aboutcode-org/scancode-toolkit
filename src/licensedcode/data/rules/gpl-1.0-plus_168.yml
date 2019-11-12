@@ -1,0 +1,5 @@
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.txt

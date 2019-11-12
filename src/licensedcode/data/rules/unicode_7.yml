@@ -1,0 +1,7 @@
+license_expression: unicode
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE-UNICODE
+ignorable_urls:
+    - http://www.unicode.org/copyright.html#License

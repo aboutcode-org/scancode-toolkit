@@ -1,0 +1,6 @@
+license_expression: mit OR gpl-2.0-plus OR lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+referenced_filenames:
+    - license.txt

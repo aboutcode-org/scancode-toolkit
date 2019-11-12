@@ -1,5 +1,5 @@
 license_expression: openssl-ssleay OR bsd-new
 is_license_notice: yes
-minimum_coverage: 80
+minimum_coverage: 85
 ignorable_urls:
     - https://www.openssl.org/source/license.html

@@ -1,0 +1,6 @@
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/PyCQA/astroid/blob/master/COPYING.LESSER
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html

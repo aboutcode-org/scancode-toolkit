@@ -137,7 +137,7 @@ def matched_query_text_tokenizer(text):
     - True if the string is a text token or False if this is not
       (such as punctuation, spaces, etc).
     - the corresponding string.
-    This is used to reconstruct the matched query text accurately.
+    This is used to reconstruct the matched query text for reporting.
     """
     if not text:
         return
@@ -146,8 +146,13 @@ def matched_query_text_tokenizer(text):
             mgd = match.groupdict()
             token = mgd.get('token')
             punct = mgd.get('punct')
-            if token or punct:
-                yield (True, token) if token else (False, punct)
+            if token:
+                yield True, token
+            elif punct:
+                yield False, punct
+            else:
+                # this should never happen
+                raise Exception('Internal error in matched_query_text_tokenizer')
 
 
 def ngrams(iterable, ngram_length):

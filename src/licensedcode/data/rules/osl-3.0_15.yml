@@ -1,0 +1,5 @@
+license_expression: osl-3.0
+relevance: 100
+is_license_reference: yes
+ignorable_urls:
+    - https://opensource.org/licenses/OSL-3.0
