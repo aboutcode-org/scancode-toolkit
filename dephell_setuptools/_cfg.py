@@ -7,8 +7,14 @@ from ._base import BaseReader
 class CfgReader(BaseReader):
     @property
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
+        path = self.path
+        if path.name == 'setup.py':
+            path = path.parent / 'setup.cfg'
+            if not path.exists():
+                raise FileNotFoundError(str(path))
+
         parser = ConfigParser()
-        parser.read(str(self.path))
+        parser.read(str(path))
 
         name = None
         version = None

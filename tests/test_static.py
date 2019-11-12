@@ -15,8 +15,8 @@ def test_sqlalchemy():
     path = Path(__file__).parent / 'setups' / 'sqlalchemy.py'
     actual = StaticReader(path).content
     assert actual['name'] == 'SQLAlchemy'
-    assert actual['version'] is None
-    assert actual['install_requires'] == []
+    assert 'version' not in actual
+    assert 'install_requires' not in actual
 
     extras = {
         'mysql': ['mysqlclient'],
@@ -34,8 +34,8 @@ def test_sqlalchemy():
 def test_requests():
     path = Path(__file__).parent / 'setups' / 'requests.py'
     actual = StaticReader(path).content
-    assert actual['name'] is None
-    assert actual['version'] is None
+    assert 'name' not in actual
+    assert 'version' not in actual
 
     requires = [
         'chardet>=3.0.2,<3.1.0',

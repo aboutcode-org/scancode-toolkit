@@ -1,5 +1,5 @@
 import ast
-from typing import Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 from ._cached_property import cached_property
 from ._base import BaseReader
@@ -10,24 +10,7 @@ class StaticReader(BaseReader):
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
         if not self.call:
             return None
-
-        result = dict()
-
-        result.update(dict(
-            name=self._find_single_string('name'),
-            version=self._find_single_string('version'),
-            python_requires=self._find_single_string('python_requires'),
-
-            install_requires=self._find_install_requires(),
-            extras_require=self._find_extras_require(),
-        ))
-
-        for keyword in self.call.keywords:
-            value = self._node_to_value(keyword.value)
-            if value is None:
-                continue
-            result[keyword.arg] = value
-        return result
+        return self._get_call_kwargs(self.call)
 
     @cached_property
     def tree(self) -> tuple:
@@ -65,114 +48,6 @@ class StaticReader(BaseReader):
             return element
         return None
 
-    def _find_install_requires(self):
-        install_requires = []
-
-        kwargs = self._find_call_kwargs(self.call)
-
-        if kwargs is None or not isinstance(kwargs, ast.Name):
-            return install_requires
-
-        variable = self._find_variable_in_body(self.body, kwargs.id)
-        if not isinstance(variable, (ast.Dict, ast.Call)):
-            return install_requires
-
-        if isinstance(variable, ast.Call):
-            if not isinstance(variable.func, ast.Name):
-                return install_requires
-
-            if variable.func.id != 'dict':
-                return install_requires
-
-            value = self._find_in_call(variable, 'install_requires')
-        else:
-            value = self._find_in_dict(variable, 'install_requires')
-
-        if value is None:
-            return install_requires
-        return self._node_to_value(value)
-
-    def _find_extras_require(self):
-        extras_require = {}
-
-        kwargs = self._find_call_kwargs(self.call)
-
-        if kwargs is None or not isinstance(kwargs, ast.Name):
-            return extras_require
-
-        variable = self._find_variable_in_body(self.body, kwargs.id)
-        if not isinstance(variable, (ast.Dict, ast.Call)):
-            return extras_require
-
-        if isinstance(variable, ast.Call):
-            if not isinstance(variable.func, ast.Name):
-                return extras_require
-
-            if variable.func.id != 'dict':
-                return extras_require
-
-            value = self._find_in_call(variable, 'extras_require')
-        else:
-            value = self._find_in_dict(variable, 'extras_require')
-
-        if value is None:
-            return extras_require
-
-        return self._node_to_value(value)
-
-    def _find_single_string(self, name: str):
-        # Trying to find in kwargs
-        kwargs = self._find_call_kwargs(self.call)
-
-        if kwargs is None or not isinstance(kwargs, ast.Name):
-            return
-
-        variable = self._find_variable_in_body(self.body, kwargs.id)
-        if not isinstance(variable, (ast.Dict, ast.Call)):
-            return
-
-        if isinstance(variable, ast.Call):
-            if not isinstance(variable.func, ast.Name):
-                return
-
-            if variable.func.id != 'dict':
-                return
-
-            value = self._find_in_call(variable, name)
-        else:
-            value = self._find_in_dict(variable, name)
-
-        return self._node_to_value(value)
-
-    def _find_in_call(self, call, name):
-        for keyword in call.keywords:
-            if keyword.arg == name:
-                return keyword.value
-        return None
-
-    def _find_call_kwargs(self, call):
-        for keyword in reversed(call.keywords):
-            if keyword.arg is None:
-                return keyword.value
-        return None
-
-    def _find_variable_in_body(self, body, name):
-        for elem in body:
-            if not isinstance(elem, ast.Assign):
-                continue
-            for target in elem.targets:
-                if not isinstance(target, ast.Name):
-                    continue
-                if target.id == name:
-                    return elem.value
-        return None
-
-    def _find_in_dict(self, dict_, name):
-        for key, val in zip(dict_.keys, dict_.values):
-            if isinstance(key, ast.Str) and key.s == name:
-                return val
-        return None
-
     def _node_to_value(self, node):
         if node is None:
             return None
@@ -196,4 +71,37 @@ class StaticReader(BaseReader):
             if variable is not None:
                 return self._node_to_value(variable)
 
+        if isinstance(node, ast.Call):
+            if not isinstance(node.func, ast.Name):
+                return None
+            if node.func.id != 'dict':
+                return None
+            return self._get_call_kwargs(node)
         return None
+
+    def _find_variable_in_body(self, body, name):
+        for elem in body:
+            if not isinstance(elem, ast.Assign):
+                continue
+            for target in elem.targets:
+                if not isinstance(target, ast.Name):
+                    continue
+                if target.id == name:
+                    return elem.value
+        return None
+
+    def _get_call_kwargs(self, node: ast.Call) -> Dict[str, Any]:
+        result = dict()
+        for keyword in node.keywords:
+            # dict unpacking
+            if keyword.arg is None:
+                value = self._node_to_value(keyword.value)
+                if isinstance(value, dict):
+                    result.update(value)
+                continue
+            # keyword argument
+            value = self._node_to_value(keyword.value)
+            if value is None:
+                continue
+            result[keyword.arg] = value
+        return result
