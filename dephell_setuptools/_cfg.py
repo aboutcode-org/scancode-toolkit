@@ -1,14 +1,10 @@
 from configparser import ConfigParser
-from pathlib import Path
 from typing import Dict, List, Optional, Union
 
+from ._base import BaseReader
 
-class CfgReader:
-    def __init__(self, path: Union[str, Path]):
-        if isinstance(path, str):
-            path = Path(path)
-        self.path = path
 
+class CfgReader(BaseReader):
     @property
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
         parser = ConfigParser()

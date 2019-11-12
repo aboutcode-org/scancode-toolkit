@@ -1,16 +1,11 @@
 import ast
-from pathlib import Path
 from typing import Dict, List, Optional, Union
 
 from ._cached_property import cached_property
+from ._base import BaseReader
 
 
-class StaticReader:
-    def __init__(self, path: Union[str, Path]):
-        if isinstance(path, str):
-            path = Path(path)
-        self.path = path
-
+class StaticReader(BaseReader):
     @cached_property
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
         if not self.call:
