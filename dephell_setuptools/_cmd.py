@@ -31,10 +31,17 @@ class CommandReader(BaseReader):
                 self.path.name,
                 '-q',
                 '--command-packages', 'dephell_setuptools',
-                'json',
+                'distutils_cmd',
                 '-o', output_json.name,
             ]
-            result = subprocess.run(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            result = subprocess.run(
+                cmd,
+                stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                env={'PYTHONPATH': str(Path(__file__).parent.parent)},
+            )
+            print(result.stderr.decode())
+            print(result.stdout.decode())
             if result.returncode != 0:
                 return None
 
@@ -49,8 +56,18 @@ class JSONCommand(Command):
     description = 'extract package metadata'
     user_options = [('output=', 'o', 'output for metadata json')]
 
+    _exclude = {
+        '_tmp_extras_require',
+        'option_dict',
+        'cmdclass',
+        'metadata',
+        'cmdline_options',
+        'command_class',
+        'command_obj',
+    }
+
     def initialize_options(self):
-        self.output = sys.stdout
+        self.output = None
 
     def finalize_options(self):
         pass
@@ -59,13 +76,17 @@ class JSONCommand(Command):
         data = dict()
 
         # attributes
-        for key, value in vars(self.distribution):
-            if type(data[key]).__name__ == 'dict_items':
-                value = list(data[key])
-            if key == 'entry_points' and isinstance(data[key], dict):
+        for key, value in vars(self.distribution).items():
+            if key.startswith('get_'):
+                continue
+            if key in self._exclude:
+                continue
+            if key == 'entry_points' and isinstance(value, dict):
                 for k, v in value.items():
                     if isinstance(v, set):
                         value[k] = list(v)
+            if value in ('UNKNOWN', None, ['UNKNOWN']):
+                continue
             data[key] = value
 
         # methods
@@ -73,6 +94,12 @@ class JSONCommand(Command):
             if not func_name.startswith('get_'):
                 continue
             name = func_name[4:]
-            data[name] = getattr(self.distribution, func_name)()
+            if name in self._exclude:
+                continue
+            value = getattr(self.distribution, func_name)()
+            if value in ('UNKNOWN', None, ['UNKNOWN']):
+                continue
+            data[name] = value
 
-        print(json.dumps(data), file=self.output)
+        with open(self.output, 'w') as stream:
+            print(json.dumps(data), file=stream)
