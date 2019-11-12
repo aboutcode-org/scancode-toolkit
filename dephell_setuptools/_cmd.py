@@ -41,8 +41,6 @@ class CommandReader(BaseReader):
                 stdout=subprocess.PIPE,
                 env={'PYTHONPATH': str(Path(__file__).parent.parent)},
             )
-            print(result.stderr.decode())
-            print(result.stdout.decode())
             if result.returncode != 0:
                 return None
 
