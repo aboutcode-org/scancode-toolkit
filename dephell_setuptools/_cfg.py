@@ -5,31 +5,7 @@ from typing import Dict, List, Optional, Union
 from setuptools.config import ConfigOptionsHandler, ConfigMetadataHandler
 
 from ._base import BaseReader
-
-
-DEFAULT = dict(
-    author_email=None,
-    author=None,
-    classifiers=None,
-    description=None,
-    download_url=None,
-    extras_require=None,
-    install_requires=None,
-    keywords=None,
-    license=None,
-    long_description=None,
-    maintainer_email=None,
-    maintainer=None,
-    metadata_version=None,
-    name=None,
-    obsoletes=None,
-    package_dir=None,
-    platforms=None,
-    provides=None,
-    requires=None,
-    url=None,
-    version=None,
-)
+from ._constants import FIELDS
 
 
 class CfgReader(BaseReader):
@@ -49,7 +25,7 @@ class CfgReader(BaseReader):
             for k, v in content.items():
                 options[section][k] = ('', v)
 
-        container = type('container', (), DEFAULT.copy())()
+        container = type('container', (), dict.fromkeys(FIELDS))()
         ConfigOptionsHandler(container, options).parse()
         ConfigMetadataHandler(container, options).parse()
 

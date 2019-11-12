@@ -8,6 +8,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 from ._base import BaseReader
+from ._constants import FIELDS
 
 
 @contextmanager
@@ -56,16 +57,6 @@ class JSONCommand(Command):
     description = 'extract package metadata'
     user_options = [('output=', 'o', 'output for metadata json')]
 
-    _exclude = {
-        '_tmp_extras_require',
-        'option_dict',
-        'cmdclass',
-        'metadata',
-        'cmdline_options',
-        'command_class',
-        'command_obj',
-    }
-
     def initialize_options(self):
         self.output = None
 
@@ -77,9 +68,7 @@ class JSONCommand(Command):
 
         # attributes
         for key, value in vars(self.distribution).items():
-            if key.startswith('get_'):
-                continue
-            if key in self._exclude:
+            if key not in FIELDS:
                 continue
             if key == 'entry_points' and isinstance(value, dict):
                 for k, v in value.items():
@@ -94,7 +83,7 @@ class JSONCommand(Command):
             if not func_name.startswith('get_'):
                 continue
             name = func_name[4:]
-            if name in self._exclude:
+            if name not in FIELDS:
                 continue
             value = getattr(self.distribution, func_name)()
             if value in ('UNKNOWN', None, ['UNKNOWN']):

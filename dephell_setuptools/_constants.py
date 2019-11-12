@@ -1,0 +1,30 @@
+
+
+# https://setuptools.readthedocs.io/en/latest/setuptools.html#metadata
+FIELDS = {
+    'author_email',
+    'author',
+    'classifiers',
+    'description',
+    'download_url',
+    'extras_require',
+    'install_requires',
+    'keywords',
+    'license_file',
+    'license',
+    'long_description_content_type',
+    'long_description',
+    'maintainer_email',
+    'maintainer',
+    'metadata_version',
+    'name',
+    'obsoletes',
+    'package_dir',
+    'platforms',
+    'project_urls',
+    'provides',
+    'provides',
+    'requires',
+    'url',
+    'version',
+}
