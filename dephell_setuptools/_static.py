@@ -82,18 +82,7 @@ class StaticReader(BaseReader):
 
         if value is None:
             return install_requires
-
-        if isinstance(value, ast.List):
-            for el in value.elts:
-                install_requires.append(el.s)
-        elif isinstance(value, ast.Name):
-            variable = self._find_variable_in_body(self.body, value.id)
-
-            if variable is not None and isinstance(variable, ast.List):
-                for el in variable.elts:
-                    install_requires.append(el.s)
-
-        return install_requires
+        return self._node_to_value(value)
 
     def _find_extras_require(self):
         extras_require = {}
@@ -122,27 +111,7 @@ class StaticReader(BaseReader):
         if value is None:
             return extras_require
 
-        if isinstance(value, ast.Dict):
-            for key, val in zip(value.keys, value.values):
-                if isinstance(val, ast.Name):
-                    val = self._find_variable_in_body(self.body, val.id)
-
-                if isinstance(val, ast.List):
-                    extras_require[key.s] = [e.s for e in val.elts]
-        elif isinstance(value, ast.Name):
-            variable = self._find_variable_in_body(self.body, value.id)
-
-            if variable is None or not isinstance(variable, ast.Dict):
-                return extras_require
-
-            for key, val in zip(variable.keys, variable.values):
-                if isinstance(val, ast.Name):
-                    val = self._find_variable_in_body(self.body, val.id)
-
-                if isinstance(val, ast.List):
-                    extras_require[key.s] = [e.s for e in val.elts]
-
-        return extras_require
+        return self._node_to_value(value)
 
     def _find_single_string(self, name: str):
         value = self._find_in_call(self.call, name)
@@ -168,16 +137,7 @@ class StaticReader(BaseReader):
             else:
                 value = self._find_in_dict(variable, name)
 
-        if value is None:
-            return
-
-        if isinstance(value, ast.Str):
-            return value.s
-        if isinstance(value, ast.Name):
-            variable = self._find_variable_in_body(self.body, value.id)
-            if variable is not None and isinstance(variable, ast.Str):
-                return variable.s
-        return None
+        return self._node_to_value(value)
 
     def _find_in_call(self, call, name):
         for keyword in call.keywords:
@@ -206,4 +166,29 @@ class StaticReader(BaseReader):
         for key, val in zip(dict_.keys, dict_.values):
             if isinstance(key, ast.Str) and key.s == name:
                 return val
+        return None
+
+    def _node_to_value(self, node):
+        if node is None:
+            return None
+        if isinstance(node, ast.Constant):
+            return node.value
+        if isinstance(node, ast.Str):
+            return node.s
+        if isinstance(node, ast.Num):
+            return node.n
+
+        if isinstance(node, ast.List):
+            return [self._node_to_value(subnode) for subnode in node.elts]
+        if isinstance(node, ast.Dict):
+            result = dict()
+            for key, value in zip(node.keys, node.values):
+                result[self._node_to_value(key)] = self._node_to_value(value)
+            return result
+
+        if isinstance(node, ast.Name):
+            variable = self._find_variable_in_body(self.body, node.id)
+            if variable is not None:
+                return self._node_to_value(variable)
+
         return None
