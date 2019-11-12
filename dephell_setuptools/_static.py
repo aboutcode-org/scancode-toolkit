@@ -11,14 +11,23 @@ class StaticReader(BaseReader):
         if not self.call:
             return None
 
-        return dict(
+        result = dict()
+
+        result.update(dict(
             name=self._find_single_string('name'),
             version=self._find_single_string('version'),
             python_requires=self._find_single_string('python_requires'),
 
             install_requires=self._find_install_requires(),
             extras_require=self._find_extras_require(),
-        )
+        ))
+
+        for keyword in self.call.keywords:
+            value = self._node_to_value(keyword.value)
+            if value is None:
+                continue
+            result[keyword.arg] = value
+        return result
 
     @cached_property
     def tree(self) -> tuple:
@@ -58,27 +67,26 @@ class StaticReader(BaseReader):
 
     def _find_install_requires(self):
         install_requires = []
-        value = self._find_in_call(self.call, 'install_requires')
-        if value is None:
-            kwargs = self._find_call_kwargs(self.call)
 
-            if kwargs is None or not isinstance(kwargs, ast.Name):
+        kwargs = self._find_call_kwargs(self.call)
+
+        if kwargs is None or not isinstance(kwargs, ast.Name):
+            return install_requires
+
+        variable = self._find_variable_in_body(self.body, kwargs.id)
+        if not isinstance(variable, (ast.Dict, ast.Call)):
+            return install_requires
+
+        if isinstance(variable, ast.Call):
+            if not isinstance(variable.func, ast.Name):
                 return install_requires
 
-            variable = self._find_variable_in_body(self.body, kwargs.id)
-            if not isinstance(variable, (ast.Dict, ast.Call)):
+            if variable.func.id != 'dict':
                 return install_requires
 
-            if isinstance(variable, ast.Call):
-                if not isinstance(variable.func, ast.Name):
-                    return install_requires
-
-                if variable.func.id != 'dict':
-                    return install_requires
-
-                value = self._find_in_call(variable, 'install_requires')
-            else:
-                value = self._find_in_dict(variable, 'install_requires')
+            value = self._find_in_call(variable, 'install_requires')
+        else:
+            value = self._find_in_dict(variable, 'install_requires')
 
         if value is None:
             return install_requires
@@ -86,27 +94,26 @@ class StaticReader(BaseReader):
 
     def _find_extras_require(self):
         extras_require = {}
-        value = self._find_in_call(self.call, 'extras_require')
-        if value is None:
-            kwargs = self._find_call_kwargs(self.call)
 
-            if kwargs is None or not isinstance(kwargs, ast.Name):
+        kwargs = self._find_call_kwargs(self.call)
+
+        if kwargs is None or not isinstance(kwargs, ast.Name):
+            return extras_require
+
+        variable = self._find_variable_in_body(self.body, kwargs.id)
+        if not isinstance(variable, (ast.Dict, ast.Call)):
+            return extras_require
+
+        if isinstance(variable, ast.Call):
+            if not isinstance(variable.func, ast.Name):
                 return extras_require
 
-            variable = self._find_variable_in_body(self.body, kwargs.id)
-            if not isinstance(variable, (ast.Dict, ast.Call)):
+            if variable.func.id != 'dict':
                 return extras_require
 
-            if isinstance(variable, ast.Call):
-                if not isinstance(variable.func, ast.Name):
-                    return extras_require
-
-                if variable.func.id != 'dict':
-                    return extras_require
-
-                value = self._find_in_call(variable, 'extras_require')
-            else:
-                value = self._find_in_dict(variable, 'extras_require')
+            value = self._find_in_call(variable, 'extras_require')
+        else:
+            value = self._find_in_dict(variable, 'extras_require')
 
         if value is None:
             return extras_require
@@ -114,28 +121,26 @@ class StaticReader(BaseReader):
         return self._node_to_value(value)
 
     def _find_single_string(self, name: str):
-        value = self._find_in_call(self.call, name)
-        if value is None:
-            # Trying to find in kwargs
-            kwargs = self._find_call_kwargs(self.call)
+        # Trying to find in kwargs
+        kwargs = self._find_call_kwargs(self.call)
 
-            if kwargs is None or not isinstance(kwargs, ast.Name):
+        if kwargs is None or not isinstance(kwargs, ast.Name):
+            return
+
+        variable = self._find_variable_in_body(self.body, kwargs.id)
+        if not isinstance(variable, (ast.Dict, ast.Call)):
+            return
+
+        if isinstance(variable, ast.Call):
+            if not isinstance(variable.func, ast.Name):
                 return
 
-            variable = self._find_variable_in_body(self.body, kwargs.id)
-            if not isinstance(variable, (ast.Dict, ast.Call)):
+            if variable.func.id != 'dict':
                 return
 
-            if isinstance(variable, ast.Call):
-                if not isinstance(variable.func, ast.Name):
-                    return
-
-                if variable.func.id != 'dict':
-                    return
-
-                value = self._find_in_call(variable, name)
-            else:
-                value = self._find_in_dict(variable, name)
+            value = self._find_in_call(variable, name)
+        else:
+            value = self._find_in_dict(variable, name)
 
         return self._node_to_value(value)
 
