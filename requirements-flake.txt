@@ -12,5 +12,4 @@ flake8-mutable          # https://github.com/ebeweber/flake8-mutable
 flake8-pep3101          # https://github.com/gforcada/flake8-pep3101
 flake8-quotes           # https://github.com/zheller/flake8-quotes
 flake8-tidy-imports     # https://github.com/adamchainz/flake8-tidy-imports
-flake8-variables-names  # https://github.com/best-doctor/flake8-variables-names
 pep8-naming             # https://github.com/PyCQA/pep8-naming
