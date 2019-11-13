@@ -54,8 +54,9 @@ class StaticReader(BaseReader):
     def _node_to_value(self, node):
         if node is None:
             return None
-        if isinstance(node, ast.Constant):
-            return node.value
+        if hasattr(ast, 'Constant'):
+            if isinstance(node, ast.Constant):
+                return node.value
         if isinstance(node, ast.Str):
             return node.s
         if isinstance(node, ast.Num):
