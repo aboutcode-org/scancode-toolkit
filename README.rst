@@ -84,6 +84,7 @@ Pre-requisites:
 
   * On Ubuntu 14, 16 and 18 use:
     ``sudo apt-get install python3.6-dev xz-utils zlib1g libxml2-dev libxslt1-dev bzip2``
+    You may need to install Python PPA repository: https://askubuntu.com/a/865569
 
   * On Debian and Debian-based distros use:
     ``sudo apt-get install python3.6-dev xz-utils zlib1g libxml2-dev libxslt1-dev libbz2-1.0``
