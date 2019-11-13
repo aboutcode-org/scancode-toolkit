@@ -1,3 +1,4 @@
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
+notes: qmail license is confusing an therefore reported as proprietary for now
