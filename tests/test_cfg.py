@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from dephell_setuptools._cfg import CfgReader
+from dephell_setuptools import CfgReader
 
 
 def test_cfg():

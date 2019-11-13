@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from dephell_setuptools._static import StaticReader
+from dephell_setuptools import StaticReader
 
 
 def test_unpack_kwargs():
