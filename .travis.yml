@@ -5,6 +5,11 @@
 language: python
 dist: xenial
 
+# do not run Travis for PR's twice (as for push and as for PR)
+branches:
+  only:
+    - master
+
 before_install:
   # show a little bit more information about environment
   - sudo apt-get install -y tree
