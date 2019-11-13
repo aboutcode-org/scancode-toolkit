@@ -1,8 +1,10 @@
+# built-in
 import ast
 from typing import Any, Dict, List, Optional, Union
 
-from ._cached_property import cached_property
+# app
 from ._base import BaseReader
+from ._cached_property import cached_property
 
 
 class StaticReader(BaseReader):

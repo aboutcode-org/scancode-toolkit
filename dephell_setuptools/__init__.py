@@ -1,5 +1,6 @@
 """Read metainfo from setup.py
 """
+# app
 from ._cfg import CfgReader
 from ._cmd import CommandReader
 from ._constants import FIELDS

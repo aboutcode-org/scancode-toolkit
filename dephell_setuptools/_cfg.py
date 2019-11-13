@@ -1,10 +1,13 @@
-from copy import deepcopy
+# built-in
 from configparser import ConfigParser
+from copy import deepcopy
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 
-from setuptools.config import ConfigOptionsHandler, ConfigMetadataHandler
+# external
+from setuptools.config import ConfigMetadataHandler, ConfigOptionsHandler
 
+# app
 from ._base import BaseReader
 from ._constants import FIELDS
 

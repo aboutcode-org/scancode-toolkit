@@ -1,6 +1,8 @@
+# built-in
 import json
 import sys
 
+# app
 from ._manager import read_setup
 
 
