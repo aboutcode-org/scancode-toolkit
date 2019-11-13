@@ -14,4 +14,5 @@ class PkgInfoReader(BaseReader):
         result = subprocess.run(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         if result.returncode != 0:
             return None
-        return json.loads(result.stdout.decode())
+        content = json.loads(result.stdout.decode())
+        return self._clean(content)

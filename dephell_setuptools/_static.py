@@ -10,7 +10,8 @@ class StaticReader(BaseReader):
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
         if not self.call:
             return None
-        return self._get_call_kwargs(self.call)
+        result = self._get_call_kwargs(self.call)
+        return self._clean(result)
 
     @cached_property
     def tree(self) -> tuple:

@@ -24,28 +24,29 @@ def cd(path: Path):
 class CommandReader(BaseReader):
     @property
     def content(self):
+        # generate a temporary json file which contains the metadata
+        output_json = NamedTemporaryFile()
+        cmd = [
+            sys.executable,
+            self.path.name,
+            '-q',
+            '--command-packages', 'dephell_setuptools',
+            'distutils_cmd',
+            '-o', output_json.name,
+        ]
         with cd(self.path.parent):
-            # generate a temporary json file which contains the metadata
-            output_json = NamedTemporaryFile()
-            cmd = [
-                sys.executable,
-                self.path.name,
-                '-q',
-                '--command-packages', 'dephell_setuptools',
-                'distutils_cmd',
-                '-o', output_json.name,
-            ]
             result = subprocess.run(
                 cmd,
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 env={'PYTHONPATH': str(Path(__file__).parent.parent)},
             )
-            if result.returncode != 0:
-                return None
+        if result.returncode != 0:
+            return None
 
-            with open(output_json.name) as stream:
-                return json.load(stream)
+        with open(output_json.name) as stream:
+            result = json.load(stream)
+        return self._clean(result)
 
 
 class JSONCommand(Command):

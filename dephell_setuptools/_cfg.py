@@ -1,5 +1,6 @@
 from copy import deepcopy
 from configparser import ConfigParser
+from pathlib import Path
 from typing import Dict, List, Optional, Union
 
 from setuptools.config import ConfigOptionsHandler, ConfigMetadataHandler
@@ -9,6 +10,9 @@ from ._constants import FIELDS
 
 
 class CfgReader(BaseReader):
+    def __init__(self, path: Union[str, Path]):
+        self.path = self._normalize_path(path, default_name='setup.cfg')
+
     @property
     def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
         path = self.path
@@ -29,8 +33,4 @@ class CfgReader(BaseReader):
         ConfigOptionsHandler(container, options).parse()
         ConfigMetadataHandler(container, options).parse()
 
-        result = dict()
-        for k, v in vars(container).items():
-            if v is not None:
-                result[k] = v
-        return result
+        return self._clean(vars(container))
