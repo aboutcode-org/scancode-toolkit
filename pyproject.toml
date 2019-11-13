@@ -16,7 +16,7 @@ command = "flake8"
 # -- FLIT -- #
 
 [tool.flit.metadata]
-module="flakehell"
+module="dephell_setuptools"
 author="Gram (@orsinium)"
 author-email="master_fess@mail.ru"
 home-page="https://github.com/dephell/dephell_setuptools"

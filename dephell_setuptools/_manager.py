@@ -1,6 +1,6 @@
 from logging import getLogger
 from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any, Callable, Iterable, Union
 
 from ._cfg import CfgReader
 from ._cmd import CommandReader
@@ -18,7 +18,7 @@ ALL_READERS = (
 
 
 def read_setup(*,
-               path: Path,
+               path: Union[str, Path],
                error_handler: Callable[[Exception], Any] = logger.exception,
                readers: Iterable = ALL_READERS):
     result = dict()
