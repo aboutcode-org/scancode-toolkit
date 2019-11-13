@@ -1,8 +1,10 @@
+# built-in
 import ast
 from typing import Any, Dict, List, Optional, Union
 
-from ._cached_property import cached_property
+# app
 from ._base import BaseReader
+from ._cached_property import cached_property
 
 
 class StaticReader(BaseReader):
@@ -52,8 +54,9 @@ class StaticReader(BaseReader):
     def _node_to_value(self, node):
         if node is None:
             return None
-        if isinstance(node, ast.Constant):
-            return node.value
+        if hasattr(ast, 'Constant'):
+            if isinstance(node, ast.Constant):
+                return node.value
         if isinstance(node, ast.Str):
             return node.s
         if isinstance(node, ast.Num):

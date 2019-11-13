@@ -1,0 +1,45 @@
+[tool.dephell.main]
+from = {format = "flit", path = "pyproject.toml"}
+to = {format = "setuppy", path = "setup.py"}
+
+[tool.dephell.pytest]
+from = {format = "flit", path = "pyproject.toml"}
+envs = ["main", "dev"]
+tests = ["tests"]
+command = "python -m pytest tests/"
+
+[tool.dephell.flake8]
+from = {format = "pip", path = "requirements-flake.txt"}
+python = ">=3.6"
+command = "flake8"
+
+# -- FLIT -- #
+
+[tool.flit.metadata]
+module="dephell_setuptools"
+author="Gram (@orsinium)"
+author-email="master_fess@mail.ru"
+home-page="https://github.com/dephell/dephell_setuptools"
+requires-python=">=3.5"
+requires=[
+    "setuptools",
+]
+description-file="README.md"
+classifiers=[
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.flit.metadata.requires-extra]
+dev = [
+    "pkginfo",
+    "pytest",
+]
