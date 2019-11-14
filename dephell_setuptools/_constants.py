@@ -5,6 +5,7 @@ FIELDS = {
     'author_email',
     'author',
     'classifiers',
+    'dependency_links',
     'description',
     'download_url',
     'extras_require',

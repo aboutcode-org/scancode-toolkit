@@ -46,7 +46,7 @@ class CommandReader(BaseReader):
                 env={'PYTHONPATH': str(Path(__file__).parent.parent)},
             )
         if result.returncode != 0:
-            raise RuntimeError(result.stderr.decode().split('\n')[-1])
+            raise RuntimeError(result.stderr.decode().strip().split('\n')[-1])
 
         with open(output_json.name) as stream:
             content = json.load(stream)
