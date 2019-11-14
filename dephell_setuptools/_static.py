@@ -1,6 +1,6 @@
 # built-in
 import ast
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, Optional
 
 # app
 from ._base import BaseReader
@@ -9,9 +9,9 @@ from ._cached_property import cached_property
 
 class StaticReader(BaseReader):
     @cached_property
-    def content(self) -> Optional[Dict[str, Union[List, Dict]]]:
+    def content(self) -> Dict[str, Any]:
         if not self.call:
-            return None
+            raise LookupError('cannot find setup()')
         result = self._get_call_kwargs(self.call)
         return self._clean(result)
 

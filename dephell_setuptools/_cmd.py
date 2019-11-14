@@ -7,9 +7,11 @@ from contextlib import contextmanager
 from distutils.core import Command
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from typing import Any, Dict
 
 # app
 from ._base import BaseReader
+from ._cached_property import cached_property
 from ._constants import FIELDS
 
 
@@ -24,8 +26,8 @@ def cd(path: Path):
 
 
 class CommandReader(BaseReader):
-    @property
-    def content(self):
+    @cached_property
+    def content(self) -> Dict[str, Any]:
         # generate a temporary json file which contains the metadata
         output_json = NamedTemporaryFile()
         cmd = [
@@ -44,11 +46,11 @@ class CommandReader(BaseReader):
                 env={'PYTHONPATH': str(Path(__file__).parent.parent)},
             )
         if result.returncode != 0:
-            return None
+            raise RuntimeError(result.stderr.decode().split('\n')[-1])
 
         with open(output_json.name) as stream:
-            result = json.load(stream)
-        return self._clean(result)
+            content = json.load(stream)
+        return self._clean(content)
 
 
 class JSONCommand(Command):

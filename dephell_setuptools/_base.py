@@ -1,8 +1,9 @@
 # built-in
 from pathlib import Path
-from typing import Union
+from typing import Any, Dict, Union
 
 # app
+from ._cached_property import cached_property
 from ._constants import FIELDS
 
 
@@ -21,7 +22,7 @@ class BaseReader:
         return path
 
     @staticmethod
-    def _clean(data: dict):
+    def _clean(data: Dict[str, Any]) -> Dict[str, Any]:
         result = dict()
         for k, v in data.items():
             if k not in FIELDS:
@@ -37,3 +38,7 @@ class BaseReader:
             result['keywords'] = sum((kw.split() for kw in result['keywords']), [])
 
         return result
+
+    @cached_property
+    def content(self) -> Dict[str, Any]:
+        raise NotImplementedError

@@ -13,7 +13,11 @@ from = {format = "pip", path = "requirements-flake.txt"}
 python = ">=3.6"
 command = "flake8"
 
-# -- FLIT -- #
+[tool.dephell.typing]
+from = {format = "flit", path = "pyproject.toml"}
+envs = ["main", "dev"]
+command = "mypy --ignore-missing-imports --allow-redefinition dephell_setuptools"
+
 
 [tool.flit.metadata]
 module="dephell_setuptools"
@@ -40,6 +44,7 @@ classifiers=[
 
 [tool.flit.metadata.requires-extra]
 dev = [
+    "mypy",
     "pkginfo",
     "pytest",
 ]
