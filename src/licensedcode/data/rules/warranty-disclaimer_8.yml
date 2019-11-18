@@ -1,3 +1,5 @@
 license_expression: warranty-disclaimer
 is_license_notice: yes
-notes: found in AgentPP/AngentPro an SNPM commercial product
+notes: found in AgentPP/AngentPro an SNMP commercial product
+minimum_coverage: 80
+

@@ -72,13 +72,15 @@ license_expressions:
   - warranty-disclaimer
   - x11-xconsortium
   - x11
+  - mit-no-advert-export-control
   - x11-keith-packard
   - x11-opengroup
   - x11-keith-packard
   - x11-xconsortium
   - x11-xconsortium
   - x11-keith-packard
-  - xfree86-1.0
+  - unknown
+  - mit
   - unknown
   - free-unknown
   - zlib

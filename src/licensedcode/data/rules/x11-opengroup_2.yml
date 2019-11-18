@@ -1,0 +1,7 @@
+license_expression: x11-opengroup
+is_license_text: yes
+relevance: 90
+minimum_coverage: 90
+notes: truncated text
+ignorable_authors:
+    - authorization from The Open Group
