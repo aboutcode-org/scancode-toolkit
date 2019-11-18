@@ -96,16 +96,6 @@ def read(*names, **kwargs):
     ).read()
 
 
-# Accept Python3, but only when running setup.py. Released wheels should be for
-# Python 2 only until we completed the Python3 port
-if py2:
-    python_requires= '>=2.7,<3'
-elif py3:
-    python_requires= '>=3.6'
-else:
-    raise Exception('Unsupported Python version.')
-
-
 setup(
     name='scancode-toolkit',
     version=get_version(),
@@ -137,7 +127,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires=python_requires,
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
