@@ -12,7 +12,7 @@ homepage_url: https://github.com/nexB/license-expression
 license_expression: apache-2.0
 license_file: apache-2.0.LICENSE
 name: license-expression
-notice_file: license_expression-1.0-py2.py3-none-any.whl.NOTICE
+notice_file: license_expression-1.2-py2.py3-none-any.whl.NOTICE
 notice_url: https://github.com/nexB/license-expression/blob/master/NOTICE
 owner: nexB
 owner_url: http://www.nexb.com/
