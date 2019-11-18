@@ -1,0 +1,19 @@
+license_expression: openssl-ssleay
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - Copyright (c) 1998-2016 The OpenSSL Project
+ignorable_holders:
+    - Eric Young
+    - The OpenSSL Project
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+    - Tim Hudson (tjh@cryptsoft.com)
+    - the OpenSSL Project
+ignorable_urls:
+    - http://www.openssl.org/
+ignorable_emails:
+    - eay@cryptsoft.com
+    - openssl-core@openssl.org
+    - tjh@cryptsoft.com

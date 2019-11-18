@@ -1,0 +1,5 @@
+license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

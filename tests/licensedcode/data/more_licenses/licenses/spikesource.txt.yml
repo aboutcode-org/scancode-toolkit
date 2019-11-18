@@ -2,5 +2,6 @@ license_expressions:
   - unknown-license-reference
   - unknown
   - warranty-disclaimer
+  - bsd-source-code
   - unknown
 notes: this is a license from fossology license reference Spikesource (Spikesource EULA) http://www.spikesource.com/terms-of-service/

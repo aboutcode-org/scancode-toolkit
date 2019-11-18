@@ -1,2 +1,4 @@
-license_expression: isc
-is_license_notice: yes
+license_expression: x11-keith-packard
+is_license_text: yes
+relevance: 95
+notes: there are some minor variations onthe reference text

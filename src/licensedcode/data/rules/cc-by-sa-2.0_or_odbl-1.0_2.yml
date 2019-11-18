@@ -1,0 +1,6 @@
+license_expression: cc-by-sa-2.0 OR odbl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-sa/2.0/
+    - https://www.opendatacommons.org/licenses/odbl/

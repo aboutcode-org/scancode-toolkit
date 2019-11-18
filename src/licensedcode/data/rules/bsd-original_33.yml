@@ -1,0 +1,5 @@
+license_expression: bsd-original
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - the NetBSD Foundation and its contributors
