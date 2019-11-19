@@ -247,6 +247,8 @@ def get_consolidated_packages(codebase):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
             package_root = package.get_package_root(resource, codebase)
+            package_root.extra_data['package_root'] = True
+            package_root.save(codebase)
             is_build_file = isinstance(package, BaseBuildManifestPackage)
             package_resources = list(package.get_package_resources(package_root, codebase))
             package_license_expression = package.license_expression
@@ -370,6 +372,7 @@ def get_license_holders_consolidated_components(codebase):
                 majority_holders, majority_license_expression = origin_translation_table[origin_key]
                 resource.extra_data['license_expression'] = majority_license_expression
                 resource.extra_data['holders'] = majority_holders
+                resource.extra_data['majority'] = True
                 resource.save(codebase)
 
                 # Create consolidated components for a child that has a majority
@@ -386,6 +389,8 @@ def get_license_holders_consolidated_components(codebase):
                             or (holders and holders != majority_holders)):
                         c = create_license_holders_consolidated_component(child, codebase)
                         if c:
+                            child.extra_data['majority'] = True
+                            child.save(codebase)
                             yield c
             else:
                 # If there is no majority, we see if any of our child directories had majorities
@@ -395,11 +400,15 @@ def get_license_holders_consolidated_components(codebase):
                         continue
                     c = create_license_holders_consolidated_component(child, codebase)
                     if c:
+                        child.extra_data['majority'] = True
+                        child.save(codebase)
                         yield c
 
     # Yield a Component for root if there is a majority
     c = create_license_holders_consolidated_component(root, codebase)
     if c:
+        root.extra_data['majority'] = True
+        root.save(codebase)
         yield c
 
 
