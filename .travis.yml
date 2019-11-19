@@ -82,13 +82,8 @@ matrix:
 addons:
   homebrew:
     packages:
-        - openssl
-        - readline
-        - sqlite3
-        - xz
-        - zlib
         - pyenv
-    update: true
+    update: false
 
 before_install:
   - chmod +x ./docs/scripts/sphinx_build_link_check.sh
