@@ -73,7 +73,12 @@ from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
 
-from commoncode import ignore
+from commoncode.ignore import ignores_Linux
+from commoncode.ignore import ignores_MacOSX
+from commoncode.ignore import ignores_VCS
+from commoncode.ignore import ignores_Windows
+from commoncode.ignore import is_ignored
+
 from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode.system import py3
@@ -398,7 +403,12 @@ class Codebase(object):
 
         def skip_ignored(_loc):
             """Always ignore VCS and some special filetypes."""
-            ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
+            ignored = partial(
+                is_ignored,
+                ignores=dict(
+                    ignores_VCS.items() + ignores_Linux.items() + ignores_MacOSX.items() + ignores_Windows.items()
+                )
+            )
 
             if TRACE_DEEP:
                 logger_debug()

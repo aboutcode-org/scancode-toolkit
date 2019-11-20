@@ -111,7 +111,9 @@ ignores_Windows = {
 
 ignores_Linux = {
     '.directory': 'Default ignore: KDE artifact',
-    '.Trash-*': 'Default ignore: Linux/Gome/KDE artifact',
+    '.Trash-*': 'Default ignore: Linux/Gnome/KDE artifact',
+    '/dev/*': 'Default ignore: Linux device files',
+    '/sys/*': 'Default ignore: Linux device files',
 }
 
 ignores_IDEs = {
