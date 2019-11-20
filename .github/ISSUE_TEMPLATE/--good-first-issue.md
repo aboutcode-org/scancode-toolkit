@@ -1,16 +1,16 @@
 ---
-name: "Good First Issue"
-about: An easy Issue for contributors new to Scancode Toolkit
+name: "Solving a Good First Issue"
+about: Issue based guide for new contributors to solve a "Good First Issue"
 title: ''
-labels: 'first issue solving'  
+labels: 'solving good first issue'  
 assignees: ''
 
 ---
 
 <!-- Don't edit the text. -->
 
-Hi, this is a [good first issue](https://github.com/nexB/scancode-toolkit/labels/good%20first%20issue).
-This means it's recommended for people who **haven't contributed to our codebase before**.
+A [good first issue](https://github.com/nexB/scancode-toolkit/labels/good%20first%20issue)
+means it's recommended for people who **haven't contributed to our codebase before**.
 If you've solved a good first issue and want to help with more, you are welocome too!
 
 If that's you, we're interested in helping you take the first step and can answer questions and
