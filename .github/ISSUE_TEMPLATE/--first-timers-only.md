@@ -1,6 +1,6 @@
 ---
 name: "First Timers Only issue"
-about: Open a First Timers Only issue for someone
+about: Issue based guide for new OSS contributors to solve a very easy Issue
 title: ''
 labels: 'first timers only'
 assignees: ''
@@ -20,8 +20,8 @@ docs.
 
 ### A first-timer's Issue
 
-Hi, this is a [first-timers-only issue](https://github.com/nexB/scancode-toolkit/labels/%20first%20timers%20only).
-This means we've worked to make it more legible to folks who either **haven't contributed to our codebase before,
+A [first-timers-only issue](https://github.com/nexB/scancode-toolkit/labels/%20first%20timers%20only)
+means we've worked to make it more legible to folks who either **haven't contributed to our codebase before,
 or even folks who haven't contributed to open source before**. 
 
 If that's you, we're interested in helping you take the first step and can answer questions and

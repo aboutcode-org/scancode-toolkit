@@ -24,16 +24,6 @@ Markdown Styling - https://commonmark.org/help/
 
 <!-- Exact Commands -->
 
-### Select Category
-<!-- Which of this label correctly describe your Bug Report -->
-
--  Installation Fails []
--  Scan Fails []
--  License/Copyright not Detected []
--  Output Fails []
--  Documentation Bug []
--  Other []
-
 ### System configuration
 
 > For bug reports, it really helps us to know:
