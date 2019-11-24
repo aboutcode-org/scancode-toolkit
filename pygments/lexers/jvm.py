@@ -50,7 +50,7 @@ class JavaLexer(RegexLexer):
             (r'((?:(?:[^\W\d]|\$)[\w.\[\]$<>]*\s+)+?)'  # return arguments
              r'((?:[^\W\d]|\$)[\w$]*)'                  # method name
              r'(\s*)(\()',                              # signature start
-             bygroups(using(this), Name.Function, Text, Operator)),
+             bygroups(using(this), Name.Function, Text, Punctuation)),
             (r'@[^\W\d][\w.]*', Name.Decorator),
             (r'(abstract|const|enum|extends|final|implements|native|private|'
              r'protected|public|static|strictfp|super|synchronized|throws|'
@@ -67,7 +67,8 @@ class JavaLexer(RegexLexer):
              'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
-            (r'(\.)((?:[^\W\d]|\$)[\w$]*)', bygroups(Operator, Name.Attribute)),
+            (r'(\.)((?:[^\W\d]|\$)[\w$]*)', bygroups(Punctuation,
+                                                     Name.Attribute)),
             (r'^\s*([^\W\d]|\$)[\w$]*:', Name.Label),
             (r'([^\W\d]|\$)[\w$]*', Name),
             (r'([0-9][0-9_]*\.([0-9][0-9_]*)?|'
@@ -82,7 +83,8 @@ class JavaLexer(RegexLexer):
             (r'0[bB][01][01_]*[lL]?', Number.Bin),
             (r'0[0-7_]+[lL]?', Number.Oct),
             (r'0|[1-9][0-9_]*[lL]?', Number.Integer),
-            (r'[~^*!%&\[\](){}<>|+=:;,./?-]', Operator),
+            (r'[~^*!%&\[\]<>|+=/?-]', Operator),
+            (r'[{}();:.,]', Punctuation),
             (r'\n', Text)
         ],
         'class': [
