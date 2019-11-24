@@ -61,6 +61,8 @@ class JavaLexer(RegexLexer):
             (r'(true|false|null)\b', Keyword.Constant),
             (r'(class|interface)(\s+)', bygroups(Keyword.Declaration, Text),
              'class'),
+            (r'(var)(\s+)', bygroups(Keyword.Declaration, Text),
+             'var'),
             (r'(import(?:\s+static)?)(\s+)', bygroups(Keyword.Namespace, Text),
              'import'),
             (r'"(\\\\|\\"|[^"])*"', String),
@@ -85,6 +87,9 @@ class JavaLexer(RegexLexer):
         ],
         'class': [
             (r'([^\W\d]|\$)[\w$]*', Name.Class, '#pop')
+        ],
+        'var': [
+            (r'([^\W\d]|\$)[\w$]*', Name, '#pop')
         ],
         'import': [
             (r'[\w.]+\*?', Name.Namespace, '#pop')
