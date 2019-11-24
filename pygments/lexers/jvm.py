@@ -111,7 +111,7 @@ class AspectJLexer(JavaLexer):
     filenames = ['*.aj']
     mimetypes = ['text/x-aspectj']
 
-    aj_keywords = set((
+    aj_keywords = {
         'aspect', 'pointcut', 'privileged', 'call', 'execution',
         'initialization', 'preinitialization', 'handler', 'get', 'set',
         'staticinitialization', 'target', 'args', 'within', 'withincode',
@@ -121,9 +121,9 @@ class AspectJLexer(JavaLexer):
         'thisJoinPointStaticPart', 'thisEnclosingJoinPointStaticPart',
         'issingleton', 'perthis', 'pertarget', 'percflow', 'percflowbelow',
         'pertypewithin', 'lock', 'unlock', 'thisAspectInstance'
-    ))
-    aj_inter_type = set(('parents:', 'warning:', 'error:', 'soft:', 'precedence:'))
-    aj_inter_type_annotation = set(('@type', '@method', '@constructor', '@field'))
+    }
+    aj_inter_type = {'parents:', 'warning:', 'error:', 'soft:', 'precedence:'}
+    aj_inter_type_annotation = {'@type', '@method', '@constructor', '@field'}
 
     def get_tokens_unprocessed(self, text):
         for index, token, value in JavaLexer.get_tokens_unprocessed(self, text):
