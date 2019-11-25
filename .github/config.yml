@@ -1,0 +1,25 @@
+# Configuration for welcome - https://github.com/behaviorbot/welcome
+
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: |
+  Thanks for opening your first issue! 👍🎉😄⚡️
+  This space is protected by our [Code of Conduct](https://github.com/nexB/scancode-toolkit/blob/develop/CODE_OF_CONDUCT.rst) - and we're here to help.
+  Do join our [Gitter channel](https://gitter.im/aboutcode-org/discuss) for more discussions. 
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: |
+ Thanks for opening this pull request! 👍🎉😄⚡️
+ This space is protected by our [Code of Conduct](https://github.com/nexB/scancode-toolkit/blob/develop/CODE_OF_CONDUCT.rst) - and we're here to help.
+ Also please refer [Contributing related documentation](https://scancode-toolkit.readthedocs.io/en/latest/contribute/) for more help! 💿
+ 
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: |
+ Congrats on merging your first pull request! 👍🎉😄⚡️
+ Now that you've completed this, you can help on more [Good First Issues](https://github.com/nexB/scancode-toolkit/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+
+# It is recommend to include as many gifs and emojis as possible
