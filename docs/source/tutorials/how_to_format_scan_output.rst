@@ -7,7 +7,7 @@ A basic overview of formatting Scancode Output is presented here.
 
 More information on :ref:`cli_output_format`.
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 JSON
 ----
@@ -23,7 +23,7 @@ The following commands will output scan results in a formatted json file:
 
 To compare the JSON output in different formats refer :ref:`comparing_json`.
 
-.. include::  /scancode-toolkit/rst_snippets/stdout.rst
+.. include::  /rst_snippets/stdout.rst
 
 HTML
 ----
@@ -41,4 +41,4 @@ For more details on the HTML output format refer :ref:`output_html`.
 
     The ``--html-app`` option has been deprecated, use Scancode Workbench instead.
 
-.. include::  /scancode-toolkit/rst_snippets/custom_output_format.rst
+.. include::  /rst_snippets/custom_output_format.rst

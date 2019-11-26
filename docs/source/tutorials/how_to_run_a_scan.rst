@@ -48,7 +48,7 @@ Looking into Files
 As mentioned previously, we are going to perform the scan on the ``samples`` directory distributed
 by default with Scancode Toolkit. Here's the directory structure and respective files:
 
-.. image::  /scancode-toolkit/tutorials/data/files_sample.png
+.. image::  /tutorials/data/files_sample.png
 
 We notice here that the sample files contain a package ``zlib.tar.gz``. So we have to extract the
 archive before running the scan, to also scan the files inside this package.
@@ -62,7 +62,7 @@ To extract the packages inside ``samples`` directory::
 
 This extracts the zlib.tar.gz package:
 
-.. image::  /scancode-toolkit/rst_snippets/data/extractcode.png
+.. image::  /rst_snippets/data/extractcode.png
 
 .. note::
 
@@ -128,4 +128,4 @@ A Progress report is shown::
       total: 31.14s
     Removing temporary files...done.
 
-.. include::  /scancode-toolkit/rst_snippets/other_imp_doc.rst
+.. include::  /rst_snippets/other_imp_doc.rst

@@ -18,32 +18,32 @@ There's also another section for ``extractcode`` options.
 The order of the sections and all their options is the same as in the :ref:'cli_help_text',
 available in the command line.
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 .. _cli_basic:
 
-.. include::  /scancode-toolkit/rst_snippets/basic_options.rst
+.. include::  /rst_snippets/basic_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/extract.rst
+.. include::  /rst_snippets/extract.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/core_options.rst
+.. include::  /rst_snippets/core_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/output_format_options.rst
+.. include::  /rst_snippets/output_format_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/output_control_options.rst
+.. include::  /rst_snippets/output_control_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/pre_scan_options.rst
+.. include::  /rst_snippets/pre_scan_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/post_scan_options.rst
+.. include::  /rst_snippets/post_scan_options.rst

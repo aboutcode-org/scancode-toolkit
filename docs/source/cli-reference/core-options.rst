@@ -3,11 +3,11 @@
 
 .. _cli_core:
 
-.. include::  /scancode-toolkit/rst_snippets/core_options.rst
+.. include::  /rst_snippets/core_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 ----
 

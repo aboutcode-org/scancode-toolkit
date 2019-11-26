@@ -95,4 +95,4 @@ systems in every industry.
 
 Thank you for giving ScanCode a try!
 
-.. include::  /scancode-toolkit/rst_snippets/other_imp_doc.rst
+.. include::  /rst_snippets/other_imp_doc.rst

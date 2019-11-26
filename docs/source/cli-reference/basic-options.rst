@@ -1,11 +1,11 @@
 `Basic` Options
 ===============
 
-.. include::  /scancode-toolkit/rst_snippets/basic_options.rst
+.. include::  /rst_snippets/basic_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 ----
 

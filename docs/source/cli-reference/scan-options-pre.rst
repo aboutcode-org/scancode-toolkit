@@ -3,11 +3,11 @@
 Pre-Scan Options
 ================
 
-.. include::  /scancode-toolkit/rst_snippets/pre_scan_options.rst
+.. include::  /rst_snippets/pre_scan_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 ----
 
@@ -122,7 +122,7 @@ Pre-Scan Options
             "dev"
           ],
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/pre_facet_core.rst
+    .. include::  /rst_snippets/note_snippets/pre_facet_core.rst
 
     For each facet, the ``--facet`` option precedes the ``<facet>=<pattern>`` argument. For specifying
     multiple facets, this whole part is repeated, including the ``--facet`` option.

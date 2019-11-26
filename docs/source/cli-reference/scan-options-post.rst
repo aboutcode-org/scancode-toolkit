@@ -5,15 +5,15 @@ Post-Scan Options
 
 Post-Scan options activate their respective post-scan plugins which execute the task.
 
-.. include:: /scancode-toolkit/rst_snippets/post_scan_options.rst
+.. include:: /rst_snippets/post_scan_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 To see all plugins available via command line help, use ``--plugins``.
 
-.. include:: /scancode-toolkit/rst_snippets/note_snippets/post_scan_plugins.rst
+.. include::  /rst_snippets/note_snippets/post_scan_plugins.rst
 
 ----
 
@@ -177,7 +177,7 @@ To see all plugins available via command line help, use ``--plugins``.
     Note that the license objects for each detected license in the files already has "is_license_text"
     attributes by default, but not the file objects. They only have this attribute if the plugin is used.
 
-    .. include:: /scancode-toolkit/rst_snippets/warning_snippets/post_is_license_text.rst
+    .. include:: /rst_snippets/warning_snippets/post_is_license_text.rst
 
 ----
 
@@ -249,13 +249,13 @@ To see all plugins available via command line help, use ``--plugins``.
             icon: icon-ok-circle
 
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/post_lic_pol_key.rst
+    .. include::  /rst_snippets/note_snippets/post_lic_pol_key.rst
 
     Applying License Policies during a ScanCode scan, using the ``--license-policy`` Plugin::
 
         scancode -clipeu --json-pp output.json samples --license-policy policy-file.yml
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/post_lic_pol_notsub.rst
+    .. include::  /rst_snippets/note_snippets/post_lic_pol_notsub.rst
 
     This adds to every file/directory an object "license_policy", having as further attributes under it
     the fields as specified in the .YAML file. Here according to our example .YAML file, the attributes
@@ -449,7 +449,7 @@ To see all plugins available via command line help, use ``--plugins``.
 
         scancode -clieu --json-pp output.json samples --summary --facet dev="*.java" --facet dev="*.c" --summary-by-facet
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/pre_facet_core.rst
+    .. include::  /rst_snippets/note_snippets/pre_facet_core.rst
 
     ..
         [ToDo] Remove this Warning when Issue solved.
@@ -578,7 +578,7 @@ To see all plugins available via command line help, use ``--plugins``.
           },
         ],
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/post_summary_facet.rst
+    .. include::  /rst_snippets/note_snippets/post_summary_facet.rst
 
     For users who want to know :ref:`what_is_a_facet`.
 
@@ -677,7 +677,7 @@ To see all plugins available via command line help, use ``--plugins``.
 
         scancode -clpieu --json-pp output.json samples --summary-with-details
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/post_summary_details.rst
+    .. include::  /rst_snippets/note_snippets/post_summary_details.rst
 
     A sample file object in the scan results (a directory level summary of ``samples/arch``) is
     structured as follows::

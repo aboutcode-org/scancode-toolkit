@@ -17,4 +17,4 @@ Usage:
 
    extractcode [OPTIONS] <input>
 
-.. include::  /scancode-toolkit/rst_snippets/extract.rst
+.. include::  /rst_snippets/extract.rst

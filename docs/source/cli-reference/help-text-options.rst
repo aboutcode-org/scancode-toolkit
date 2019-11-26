@@ -6,7 +6,7 @@ from the command line itself. These are two options are ``--help`` and ``--examp
 very helpful if you need a quick glance of the options or use cases. Or it can be useful when you
 can't access, the more elaborate online documentation.
 
-.. include::  /scancode-toolkit/rst_snippets/doc_help.rst
+.. include::  /rst_snippets/doc_help.rst
 
 .. _cli_help_text:
 
@@ -24,7 +24,7 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --help
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 The Following Help Text is displayed, i.e. This is the help text for Scancode Version 3.1.1 ::
 
@@ -231,7 +231,7 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --examples
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 The Following Text is displayed, i.e. This is the examples for Scancode Version 3.1.1 ::
 
@@ -305,7 +305,7 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --plugins
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 .. note::
 
