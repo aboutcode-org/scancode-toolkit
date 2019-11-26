@@ -39,7 +39,7 @@ The basic usage in case of a download and configure installation (on Linux/MacOS
 
     path/to/scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
 
-.. include::  /scancode-toolkit/rst_snippets/tip_snippets/synopsis_quickstart.rst
+.. include::  /rst_snippets/tip_snippets/synopsis_quickstart.rst
 
 Here Scancode scans the <SCAN INPUT> file or directory for license, origin and packages and saves
 results to FILE(s) using one or more output format option. Error and progress are printed to
@@ -49,7 +49,7 @@ To scan the ``samples`` directory distributed with ScanCode-Toolkit, the command
 
    scancode -clpieu --json-pp path/to/output.json path/to/samples
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_output_format.rst
+.. include::  /rst_snippets/note_snippets/synopsis_output_format.rst
 
 Alternatively, in case of download and configure installations, where ``path/to/scancode`` is used
 (the path from root of file system) we can go into the scancode directory
@@ -97,7 +97,7 @@ is JSON. If ``--json`` is used, the entire file being in one line, without white
 The following example scans will show you how to run a scan with each of the result formats. For
 the scans, we will use the ``samples`` directory provided with the ScanCode Toolkit.
 
-.. include::  /scancode-toolkit/rst_snippets/tip_snippets/stdout.rst
+.. include::  /rst_snippets/tip_snippets/stdout.rst
 
 JSON file output
 ^^^^^^^^^^^^^^^^
@@ -296,4 +296,4 @@ file. When the scan is done, open ``samples.html`` in your web browser.
 .. image:: data/scancode-toolkit-static-html1.png
 .. image:: data/scancode-toolkit-static-html2.png
 
-.. include::  /scancode-toolkit/rst_snippets/other_imp_doc.rst
+.. include::  /rst_snippets/other_imp_doc.rst

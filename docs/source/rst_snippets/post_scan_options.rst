@@ -26,7 +26,7 @@ All "Post-Scan" Options
 
                          Sub-Option of - ``--info`` and ``--license-text``.
 
-.. include:: /scancode-toolkit/rst_snippets/warning_snippets/post_is_license_text.rst
+.. include::  /rst_snippets/warning_snippets/post_is_license_text.rst
 
 --license-clarity-score  Compute a summary license clarity score at
                          the codebase level.

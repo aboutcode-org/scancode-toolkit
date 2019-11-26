@@ -31,8 +31,10 @@ extensions = [
 'sphinx.ext.intersphinx'
 ]
 
-# Temporary Mapping, Once aboutcode.readthedocs.io doesn't have the Scancode docs, this can be changed to the same.
-intersphinx_mapping = {'aboutcode': ('https://sphinx-test-ayan.readthedocs.io/en/aboutcode/', None)}
+# This points to aboutcode.readthedocs.io
+# In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
+# Link was created at commit - https://github.com/nexB/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
+intersphinx_mapping = {'aboutcode': ('https://aboutcode.readthedocs.io/en/latest/', None)}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

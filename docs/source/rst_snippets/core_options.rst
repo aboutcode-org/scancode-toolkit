@@ -24,4 +24,4 @@ All "Core" Scan Options
                          and disable on-disk caching. Use -1 to use
                          only on-disk caching.  [Default: 10000]
 
-.. include:: /scancode-toolkit/rst_snippets/note_snippets/core_indep.rst
+.. include::  /rst_snippets/note_snippets/core_indep.rst

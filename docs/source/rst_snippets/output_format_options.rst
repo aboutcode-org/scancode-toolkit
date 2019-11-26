@@ -31,4 +31,4 @@ All Scan Output Options
 --html-app FILE         Write scan output as a mini HTML
                         application to FILE.
 
-.. include::  /scancode-toolkit/rst_snippets/warning_snippets/output_htmlapp_dep.rst
+.. include::  /rst_snippets/warning_snippets/output_htmlapp_dep.rst

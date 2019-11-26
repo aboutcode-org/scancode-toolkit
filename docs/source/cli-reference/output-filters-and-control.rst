@@ -3,11 +3,11 @@
 Controlling Scancode Output and Filters
 =======================================
 
-.. include::  /scancode-toolkit/rst_snippets/output_control_options.rst
+.. include::  /rst_snippets/output_control_options.rst
 
 ----
 
-.. include::  /scancode-toolkit/rst_snippets/note_snippets/synopsis_install_quickstart.rst
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 ----
 
@@ -43,7 +43,7 @@ Controlling Scancode Output and Filters
 
         "path": "JGroups/LICENSE"
 
-    .. include::  /scancode-toolkit/rst_snippets/note_snippets/control_strip_full_root.rst
+    .. include::  /rst_snippets/note_snippets/control_strip_full_root.rst
 
 ----
 
@@ -61,7 +61,7 @@ Controlling Scancode Output and Filters
 
     More information on :ref:`glob_pattern_matching`.
 
-    .. include::  /scancode-toolkit/rst_snippets/warning_snippets/control_ignore_author_copyright.rst
+    .. include::  /rst_snippets/warning_snippets/control_ignore_author_copyright.rst
 
 ----
 

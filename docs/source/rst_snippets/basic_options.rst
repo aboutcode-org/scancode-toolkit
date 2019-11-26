@@ -53,7 +53,7 @@ documenting a program's options. For example:
 
                              - ``--mark-source``
 
-.. include:: /scancode-toolkit/rst_snippets/note_snippets/basic_clpieu.rst
+.. include::  /rst_snippets/note_snippets/basic_clpieu.rst
 
 --generated                  Classify automatically generated code files with a flag.
 

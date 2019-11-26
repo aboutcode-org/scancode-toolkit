@@ -13,7 +13,7 @@ To extract the packages in the ``samples`` directory
 
 This extracts the zlib.tar.gz package:
 
-.. image::  /scancode-toolkit/rst_snippets/data/extractcode.png
+.. image::  /rst_snippets/data/extractcode.png
 
 .. _cli_extract:
 

@@ -80,7 +80,7 @@ Refer :ref:`workbench_views` for more information on Visualization.
 
 The dashboard has a general overview.
 
-.. image:: /scancode-toolkit/tutorials/data/workbench_dashboard.png
+.. image::  /tutorials/data/workbench_dashboard.png
 
 There are 3 principal views (They appear in the same order in the GIFs):
 
@@ -88,7 +88,7 @@ There are 3 principal views (They appear in the same order in the GIFs):
 - Table View,
 - Components Summary View.
 
-.. image:: /scancode-toolkit/tutorials/data/views_sample.gif
+.. image::  /tutorials/data/views_sample.gif
 
 Filters
 ^^^^^^^
@@ -96,7 +96,7 @@ Filters
 You can also click any file/directory on the file list located on the right, to filter the results
 such that it only contains results from that File/Directory.
 
-.. image:: /scancode-toolkit/tutorials/data/filter_sample.gif
+.. image::  /tutorials/data/filter_sample.gif
 
 Components
 ^^^^^^^^^^
@@ -111,4 +111,4 @@ In the table view,
 #. A pop-up opens with fields, make necessary edits and Save.
 #. Go to the Component Summary View to see the Component.
 
-.. image:: /scancode-toolkit/tutorials/data/components_sample.gif
+.. image::  /tutorials/data/components_sample.gif
