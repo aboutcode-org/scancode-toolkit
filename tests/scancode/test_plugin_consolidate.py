@@ -25,12 +25,17 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 from os import path
+
+import attr
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode.plugin_consolidate import Consolidator
 from scancode.plugin_consolidate import is_majority
+from scancode.resource import VirtualCodebase
 
 
 class TestConsolidate(FileDrivenTesting):
@@ -169,3 +174,22 @@ class TestConsolidate(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
+
+    def test_consolidate_check_for_package_root_and_majority(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/majority_and_package_root.json')
+        resource_attributes = dict(
+            consolidated_to=attr.ib(default=attr.Factory(list))
+        )
+        codebase_attributes = OrderedDict(
+            consolidated_components=attr.ib(default=attr.Factory(list)),
+            consolidated_packages=attr.ib(default=attr.Factory(list))
+        )
+        vc = VirtualCodebase(scan_loc, resource_attributes=resource_attributes, codebase_attributes=codebase_attributes)
+        Consolidator().process_codebase(vc)
+        for resource in vc.walk(topdown=True):
+            if resource.is_file:
+                continue
+            if resource.name == 'build' or resource.name == 'package':
+                assert resource.extra_data.get('package_root')
+            if resource.name == 'component':
+                assert resource.extra_data.get('majority')
