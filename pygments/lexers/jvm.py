@@ -271,8 +271,7 @@ class ScalaLexer(RegexLexer):
             # method names
             (r'(class|trait|object)(\s+)', bygroups(Keyword, Text), 'class'),
             (r'[^\S\n]+', Text),
-            (r'//.*?\n', Comment.Single),
-            (r'/\*', Comment.Multiline, 'comment'),
+            include('comments'),
             (u'@%s' % idrest, Name.Decorator),
             (u'(abstract|ca(?:se|tch)|d(?:ef|o)|e(?:lse|xtends)|'
              u'f(?:inal(?:ly)?|or(?:Some)?)|i(?:f|mplicit)|'
@@ -307,15 +306,16 @@ class ScalaLexer(RegexLexer):
         ],
         'class': [
             (u'(%s|%s|`[^`]+`)(\\s*)(\\[)' % (idrest, op),
-             bygroups(Name.Class, Text, Operator), 'typeparam'),
+             bygroups(Name.Class, Text, Operator), ('#pop', 'typeparam')),
             (r'\s+', Text),
+            include('comments'),
             (r'\{', Operator, '#pop'),
             (r'\(', Operator, '#pop'),
-            (r'//.*?\n', Comment.Single, '#pop'),
             (u'%s|%s|`[^`]+`' % (idrest, op), Name.Class, '#pop'),
         ],
         'type': [
             (r'\s+', Text),
+            include('comments'),
             (r'<[%:]|>:|[#_]|forSome|type', Keyword),
             (u'([,);}]|=>|=|\u21d2)(\\s*)', bygroups(Operator, Text), '#pop'),
             (r'[({]', Operator, '#push'),
@@ -325,15 +325,20 @@ class ScalaLexer(RegexLexer):
             (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)$' %
              (idrest, op, idrest, op),
              bygroups(Keyword.Type, Text), '#pop'),
-            (r'//.*?\n', Comment.Single, '#pop'),
             (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
         ],
         'typeparam': [
-            (r'[\s,]+', Text),
+            (r'\s+', Text),
+            include('comments'),
+            (r',+', Punctuation),
             (u'<[%:]|=>|>:|[#_\u21D2]|forSome|type', Keyword),
             (r'([\])}])', Operator, '#pop'),
             (r'[(\[{]', Operator, '#push'),
             (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
+        ],
+        'comments': [
+            (r'//.*?\n', Comment.Single),
+            (r'/\*', Comment.Multiline, 'comment'),
         ],
         'comment': [
             (r'[^/*]+', Comment.Multiline),
