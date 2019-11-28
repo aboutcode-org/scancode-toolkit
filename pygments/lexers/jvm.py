@@ -316,7 +316,7 @@ class ScalaLexer(RegexLexer):
         'type': [
             (r'\s+', Text),
             include('comments'),
-            (r'<[%:]|>:|[#_]|forSome|type', Keyword),
+            (r'<[%:]|>:|[#_]|forSome|\btype\b', Keyword),
             (u'([,);}]|=>|=|\u21d2)(\\s*)', bygroups(Operator, Text), '#pop'),
             (r'[({]', Operator, '#push'),
             (u'((?:%s|%s|`[^`]+`)(?:\\.(?:%s|%s|`[^`]+`))*)(\\s*)(\\[)' %
@@ -331,7 +331,7 @@ class ScalaLexer(RegexLexer):
             (r'\s+', Text),
             include('comments'),
             (r',+', Punctuation),
-            (u'<[%:]|=>|>:|[#_\u21D2]|forSome|type', Keyword),
+            (u'<[%:]|=>|>:|[#_\u21D2]|forSome|\btype\b', Keyword),
             (r'([\])}])', Operator, '#pop'),
             (r'[(\[{]', Operator, '#push'),
             (u'\\.|%s|%s|`[^`]+`' % (idrest, op), Keyword.Type)
