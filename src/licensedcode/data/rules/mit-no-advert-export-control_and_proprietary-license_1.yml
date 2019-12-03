@@ -1,0 +1,9 @@
+license_expression: mit-no-advert-export-control AND proprietary-license
+is_license_text: yes
+relevance: 100
+notes: this is a modified mit-no-advert-export-control with extra extensive notification requirements
+    reported as proprietary-license. It is found in kerberos for a section related to "Portions
+    of the implementation of the Fortuna-like PRNG are subject to the following notice" and
+    with "Copyright (C) 1994 by the University of Southern California"
+ignorable_authors:
+    - the University of Southern California

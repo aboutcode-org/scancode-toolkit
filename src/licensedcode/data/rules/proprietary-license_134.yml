@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+notes: qmail license notice was originally a source of many confusions. djb later dedicated
+    qmail to the public domain.

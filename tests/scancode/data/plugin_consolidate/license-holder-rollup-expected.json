@@ -218,7 +218,7 @@
         },
         {
           "key": "gpl-2.0",
-          "score": 80.0,
+          "score": 100.0,
           "name": "GNU General Public License 2.0",
           "short_name": "GPL 2.0",
           "category": "Copyleft",
@@ -232,7 +232,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "gpl-2.0_52.RULE",
+            "identifier": "gpl-2.0_840.RULE",
             "license_expression": "gpl-2.0",
             "licenses": [
               "gpl-2.0"
@@ -245,7 +245,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 80.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -392,7 +392,7 @@
         },
         {
           "key": "gpl-2.0",
-          "score": 80.0,
+          "score": 100.0,
           "name": "GNU General Public License 2.0",
           "short_name": "GPL 2.0",
           "category": "Copyleft",
@@ -406,7 +406,7 @@
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "gpl-2.0_52.RULE",
+            "identifier": "gpl-2.0_840.RULE",
             "license_expression": "gpl-2.0",
             "licenses": [
               "gpl-2.0"
@@ -419,7 +419,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 80.0
+            "rule_relevance": 100.0
           }
         }
       ],

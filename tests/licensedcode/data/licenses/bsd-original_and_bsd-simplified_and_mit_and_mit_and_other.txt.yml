@@ -4,11 +4,9 @@ license_expressions:
   - x11-opengroup
   - unicode-mappings
   - bsd-2-clause-netbsd
-  - bsd-simplified
-  - robert-hubley
+  - bsd-axis
   - mit
   - mit
-  - bsd-new
   - bsd-original-uc
   - x11-opengroup
   - mit

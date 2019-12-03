@@ -1,0 +1,5 @@
+Of course you have to respect the GNU Library General Public
+License which covers the use of the GNU `gettext' library.  This means
+in particular that even non-free programs can use `libintl' as a shared
+library, whereas only free software can use `libintl' as a static
+library or use modified versions of `libintl'.
