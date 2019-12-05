@@ -1,12 +1,15 @@
 ================
 ScanCode toolkit
 ================
+
 A typical software project often reuses hundreds of third-party packages.
 License and origin information is not always easy to find and not normalized:
 ScanCode discovers and normalizes this data for you.
 
+Read more about ScanCode here: `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
 Why use ScanCode?
-=======================
+=================
 
 - As a **standalone command line tool**, ScanCode is **easy to install**, run
   and embed in your CI/CD processing pipeline. It runs on **Windows, macOS and Linux**.
@@ -51,6 +54,14 @@ Build and tests status
 |Develop| |devel-cov|  | |devel-posix|   | |devel-win|  |
 +-------+--------------+-----------------+--------------+
 
+Documentation Build
+-------------------
+
++--------+--------------+
+|Version | **RTD Build**|
++========+==============+
+| Latest | |docs-rtd|   |
++--------+--------------+
 
 Quick Start
 ===========
@@ -116,7 +127,7 @@ See more command examples::
 
 
 Archive extraction
-===================
+==================
 
 The archives that exist in a codebase must be extracted before running a scan:
 ScanCode does not extract files from tarballs, zip files, etc. as part of the
@@ -192,3 +203,7 @@ the third-party code used in ScanCode for more details.
 .. |devel-win| image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr/branch/develop?png=true
     :target: https://ci.appveyor.com/project/nexB/scancode-toolkit
     :alt: Windows Develop branch tests status
+
+.. |docs-rtd| image:: https://readthedocs.org/projects/scancode-toolkit/badge/?version=latest
+    :target: https://scancode-toolkit.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
