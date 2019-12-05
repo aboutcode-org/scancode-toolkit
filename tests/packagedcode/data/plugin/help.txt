@@ -68,8 +68,8 @@ Package: chrome
 --------------------------------------------
 Package: composer
   class: packagedcode.phpcomposer:PHPComposerPackage
-  metafiles: composer.json
-  filetypes: .json
+  metafiles: composer.json, composer.lock
+  filetypes: .json, .lock
 
 --------------------------------------------
 Package: conda
