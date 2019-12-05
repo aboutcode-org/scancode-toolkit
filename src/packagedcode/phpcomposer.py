@@ -34,6 +34,7 @@ import logging
 import sys
 
 import attr
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
@@ -69,8 +70,12 @@ if TRACE:
 
 @attr.s()
 class PHPComposerPackage(models.Package):
-    metafiles = ('composer.json',)
-    filetypes = ('.json',)
+    metafiles = (
+        'composer.json',
+        'composer.lock',
+        'installed.json',
+    )
+    filetypes = ('.json', '.lock')
     mimetypes = ('application/json',)
     default_type = 'composer'
     default_primary_language = 'PHP'
@@ -80,7 +85,8 @@ class PHPComposerPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        for package in parse(location):
+            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -135,6 +141,10 @@ def is_phpcomposer_json(location):
     return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json')
 
 
+def is_phpcomposer_lock(location):
+    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock')
+
+
 def parse(location):
     """
     Return a Package object from a composer.json file or None.
@@ -142,16 +152,19 @@ def parse(location):
     composer.lock format (allare closely related of course but have important
     (even if minor) differences.
     """
-    if not is_phpcomposer_json(location):
-        return
+    is_json = is_phpcomposer_json(location)
+    is_lock = is_phpcomposer_lock(location)
+    if is_json or is_lock:
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        if is_json:
+            yield build_package_from_json(package_data)
+        if is_lock:
+            for package in build_package_from_lock(package_data):
+                yield package
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    return build_package(package_data)
-
-
-def build_package(package_data):
+def build_package_from_json(package_data):
     """
     Return a composer Package object from a package data mapping or None.
     """
@@ -336,3 +349,57 @@ def parse_person(persons):
                 url and url.strip('() '))
     else:
         raise ValueError('Incorrect PHP composer persons: %(persons)r' % locals())
+
+
+def build_package_from_lock(package_data):
+    """
+    Yield a composer Package object from a package data mapping that originated
+    from a composer.lock file
+    """
+    packages = package_data.get('packages', [])
+    packages_dev = package_data.get('packages-dev', [])
+    for package in packages + packages_dev:
+        dependencies = []
+        for dep, req in package.get('require', {}).items():
+            dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='composer', name=dep).to_string(),
+                    scope='require',
+                    requirement=req,
+                    is_runtime=True,
+                    is_optional=False,
+                )
+            )
+
+        for dep, req in package.get('require-dev', {}).items():
+            dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='composer', name=dep).to_string(),
+                    scope='require-dev',
+                    requirement=req,
+                    is_runtime=False,
+                    is_optional=True,
+                )
+            )
+
+        parties = []
+        for author in package.get('authors', []):
+            parties.append(
+                models.Party(
+                    name=author.get('name'),
+                    role='author',
+                    email=author.get('email'),
+                )
+            )
+
+        yield PHPComposerPackage(
+            name=package.get('name'),
+            version=package.get('version'),
+            download_url=package.get('dist', {}).get('url'),
+            declared_license=package.get('license'),
+            homepage_url=package.get('homepage'),
+            description=package.get('description'),
+            keywords=package.get('keywords'),
+            dependencies=dependencies,
+            parties=parties,
+        )
