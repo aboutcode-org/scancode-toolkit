@@ -1,0 +1,109 @@
+{
+  "type": "composer",
+  "namespace": null,
+  "name": "doctrine/cache",
+  "version": "v1.6.2",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "PHP",
+  "description": "Caching library offering an object-oriented API for many cache backends",
+  "release_date": null,
+  "parties": [
+    {
+      "type": null,
+      "role": "author",
+      "name": "Roman Borschel",
+      "email": "roman@code-factory.org",
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Benjamin Eberlei",
+      "email": "kontakt@beberlei.de",
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Guilherme Blanco",
+      "email": "guilhermeblanco@gmail.com",
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Jonathan Wage",
+      "email": "jonwage@gmail.com",
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "author",
+      "name": "Johannes Schmitt",
+      "email": "schmittjoh@gmail.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "cache",
+    "caching"
+  ],
+  "homepage_url": "http://www.doctrine-project.org",
+  "download_url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "mit",
+  "declared_license": [
+    "MIT"
+  ],
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:composer/php",
+      "requirement": "~5.5|~7.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/phpunit/phpunit",
+      "requirement": "~4.8|~5.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/predis/predis",
+      "requirement": "~1.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/satooshi/php-coveralls",
+      "requirement": "~0.6",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:composer/doctrine/cache@v1.6.2",
+  "repository_homepage_url": "https://packagist.org/packages/doctrine/cache",
+  "repository_download_url": null,
+  "api_data_url": "https://packagist.org/p/packages/doctrine/cache.json"
+}

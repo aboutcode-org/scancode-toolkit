@@ -73,7 +73,6 @@ class PHPComposerPackage(models.Package):
     metafiles = (
         'composer.json',
         'composer.lock',
-        'installed.json',
     )
     filetypes = ('.json', '.lock')
     mimetypes = ('application/json',)
@@ -93,10 +92,16 @@ class PHPComposerPackage(models.Package):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+        if self.namespace:
+            return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+        else:
+            return '{}/packages/{}'.format(baseurl, self.name)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+        if self.namespace:
+            return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+        else:
+            return '{}/packages/{}.json'.format(baseurl, self.name)
 
     def compute_normalized_license(self):
         """
@@ -356,9 +361,8 @@ def build_package_from_lock(package_data):
     Yield a composer Package object from a package data mapping that originated
     from a composer.lock file
     """
-    packages = package_data.get('packages', [])
-    packages_dev = package_data.get('packages-dev', [])
-    for package in packages + packages_dev:
+    packages = package_data.get('packages', []) + package_data.get('packages-dev', [])
+    for package in packages:
         dependencies = []
         for dep, req in package.get('require', {}).items():
             dependencies.append(
