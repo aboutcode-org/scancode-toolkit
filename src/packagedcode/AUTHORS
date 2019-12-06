@@ -61,13 +61,16 @@ Other contributors, listed alphabetically, are:
 * Carlos Galdino -- Elixir and Elixir Console lexers
 * Michael Galloy -- IDL lexer
 * Naveen Garg -- Autohotkey lexer
+* Simon Garnotel -- FreeFem++ lexer
 * Laurent Gautier -- R/S lexer
 * Alex Gaynor -- PyPy log lexer
 * Richard Gerkin -- Igor Pro lexer
 * Alain Gilbert -- TypeScript lexer
 * Alex Gilding -- BlitzBasic lexer
+* GitHub, Inc -- DASM16, Augeas, TOML, and Slash lexers
 * Bertrand Goetzmann -- Groovy lexer
 * Krzysiek Goj -- Scala lexer
+* Rostyslav Golda -- FloScript lexer
 * Andrey Golovizin -- BibTeX lexers
 * Matt Good -- Genshi, Cheetah lexers
 * Michał Górny -- vim modeline support
@@ -101,6 +104,7 @@ Other contributors, listed alphabetically, are:
 * Dennis Kaarsemaker -- sources.list lexer
 * Dmitri Kabak -- Inferno Limbo lexer
 * Igor Kalnitsky -- vhdl lexer
+* Colin Kennedy - USD lexer
 * Alexander Kit -- MaskJS lexer
 * Pekka Klärck -- Robot Framework lexer
 * Gerwin Klein -- Isabelle lexer
@@ -221,9 +225,5 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
-* Rostyslav Golda -- FloScript lexer
-* GitHub, Inc -- DASM16, Augeas, TOML, and Slash lexers
-* Simon Garnotel -- FreeFem++ lexer
-* Colin Kennedy - USD lexer
 
 Many thanks for all contributions!
