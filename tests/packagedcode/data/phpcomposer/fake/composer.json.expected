@@ -1,75 +1,77 @@
-{
-  "type": "composer",
-  "namespace": "fake",
-  "name": "fake",
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "PHP",
-  "description": null,
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Hi",
-      "email": null,
-      "url": null
-    },
-    {
-      "type": "person",
-      "role": "vendor",
-      "name": "fake",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "http://github.com/fake/fake",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
-  "declared_license": "(LGPL-2.1-only or GPL-3.0-or-later)",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:composer/php",
-      "requirement": ">=5.6.0",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/phpunit/phpunit",
-      "requirement": "^5.6",
-      "scope": "require-dev",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/squizlabs/php_codesniffer",
-      "requirement": "^2.7",
-      "scope": "require-dev",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "purl": "pkg:composer/fake/fake",
-  "repository_homepage_url": "https://packagist.org/packages/fake/fake",
-  "repository_download_url": null,
-  "api_data_url": "https://packagist.org/p/packages/fake/fake.json"
-}
+[
+  {
+    "type": "composer",
+    "namespace": "fake",
+    "name": "fake",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "PHP",
+    "description": null,
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Hi",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "fake",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://github.com/fake/fake",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
+    "declared_license": "(LGPL-2.1-only or GPL-3.0-or-later)",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:composer/php",
+        "requirement": ">=5.6.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/phpunit/phpunit",
+        "requirement": "^5.6",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "requirement": "^2.7",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:composer/fake/fake",
+    "repository_homepage_url": "https://packagist.org/packages/fake/fake",
+    "repository_download_url": null,
+    "api_data_url": "https://packagist.org/p/packages/fake/fake.json"
+  }
+]
