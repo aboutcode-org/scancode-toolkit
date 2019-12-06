@@ -143,30 +143,30 @@ def compute_normalized_license(declared_license):
 
 
 def is_phpcomposer_json(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json')
+    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
 
 
 def is_phpcomposer_lock(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock')
+    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
 
 
 def parse(location):
     """
-    Return a Package object from a composer.json file or None.
-    Note that this is NOT exactly the packagist .json format and this is NOT the
-    composer.lock format (allare closely related of course but have important
-    (even if minor) differences.
+    Yield Package objects from a composer.json or composer.lock file. Note that
+    this is NOT exactly the packagist .json format (all are closely related of
+    course but have important (even if minor) differences.
     """
-    is_json = is_phpcomposer_json(location)
-    is_lock = is_phpcomposer_lock(location)
-    if is_json or is_lock:
+    if is_phpcomposer_json(location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
-        if is_json:
-            yield build_package_from_json(package_data)
-        if is_lock:
-            for package in build_package_from_lock(package_data):
-                yield package
+        yield build_package_from_json(package_data)
+
+    elif is_phpcomposer_lock(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+
+        for package in build_package_from_lock(package_data):
+            yield package
 
 
 def build_package_from_json(package_data):
@@ -358,7 +358,7 @@ def parse_person(persons):
 
 def build_package_from_lock(package_data):
     """
-    Yield a composer Package object from a package data mapping that originated
+    Yield composer Package objects from a package data mapping that originated
     from a composer.lock file
     """
     packages = package_data.get('packages', []) + package_data.get('packages-dev', [])
@@ -372,6 +372,7 @@ def build_package_from_lock(package_data):
                     requirement=req,
                     is_runtime=True,
                     is_optional=False,
+                    is_resolved=True,
                 )
             )
 
