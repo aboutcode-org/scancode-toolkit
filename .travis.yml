@@ -78,6 +78,16 @@ matrix:
       python: "3.6"
       dist: bionic
 
+    - os: linux
+      sudo: required
+      script: 
+        - source bin/activate
+        - cd docs
+        - ./scripts/sphinx_build_link_check.sh
+        - ./scripts/doc8_style_check.sh
+      language: python
+      python: "3.6"
+      dist: bionic
 
 addons:
   homebrew:
@@ -102,11 +112,6 @@ script:
   # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
   # - echo $TEST_SUITE
   - $TEST_SUITE
-  # Documentation Test Scripts
-  - source bin/activate
-  - cd docs
-  - "./scripts/sphinx_build_link_check.sh"
-  - "./scripts/doc8_style_check.sh"
 
 # Pay attention to both calls below. They will succeed even if there
 # is no coverage information or connection to reporting website fails.
