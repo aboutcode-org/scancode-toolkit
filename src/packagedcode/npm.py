@@ -70,7 +70,11 @@ if TRACE:
 @attr.s()
 class NpmPackage(models.Package):
     # TODO: add new lock files and yarn lock files
-    metafiles = ('package.json', 'npm-shrinkwrap.json')
+    metafiles = (
+        'package.json',
+        'npm-shrinkwrap.json',
+        'package-lock.json'
+    )
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
     default_type = 'npm'
@@ -227,22 +231,34 @@ def is_package_json(location):
             and fileutils.file_name(location).lower() == 'package.json')
 
 
-def is_node_modules(location):
+def is_package_lock(location):
+    return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'package-lock.json')
+
+
+def is_npm_shrinkwrap(location):
     return (filetype.is_dir(location)
-            and fileutils.file_name(location).lower() == 'node_modules')
+            and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
 
 
 def parse(location):
     """
     Return a Package object from a package.json file or None.
     """
-    if not is_package_json(location):
-        return
+    if is_package_json(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        return build_package(package_data)
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+    if is_package_lock(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        return build_package_from_lockfile(package_data)
 
-    return build_package(package_data)
+    if is_npm_shrinkwrap(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        return build_package_from_shrinkwrap(package_data)
 
 
 def build_package(package_data):
@@ -792,3 +808,58 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
+
+
+def build_package_from_lockfile(package_data):
+    """
+    Return a `NpmPackage` from a parsed package-lock.json file
+    """
+    dependencies = []
+    for dependency, values in package_data.get('dependencies', {}).items():
+        resolved_version = values.get('version')
+        dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='npm', name=dependency, version=resolved_version).to_string(),
+                name=dependency,
+                resolved_version=resolved_version,
+                is_runtime=True,
+                is_resolved=True,
+            )
+        )
+
+    return NpmPackage(
+            name=package_data.get('name'),
+            version=package_data.get('version'),
+            dependencies=dependencies,
+    )
+
+
+def build_package_from_shrinkwrap(package_data):
+    """
+    Return a `NpmPackage` from a parsed npm-shrinkwrap.json file
+    """
+    dependencies = []
+    for dependency, values in package_data.get('dependencies', {}).items():
+        resolved_version = values.get('version')
+        split_requirement = values.get('from', '').rsplit('@')
+        if len(split_requirement) == 2:
+            # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
+            _, requirement = split_requirement
+        else:
+            requirement = None
+        dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='npm', name=dependency, version=resolved_version).to_string(),
+                name=dependency,
+                resolved_version=resolved_version,
+                requirement=requirement,
+                is_runtime=True,
+                is_resolved=True,
+            )
+        )
+
+    return NpmPackage(
+            name=package_data.get('name'),
+            version=package_data.get('version'),
+            dependencies=dependencies,
+    )
