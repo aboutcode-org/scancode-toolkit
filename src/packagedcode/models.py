@@ -325,6 +325,11 @@ class DependentPackage(BaseModel):
         label='Dependent package URL',
         help='A compact purl package URL')
 
+    resolved_version = String(
+        repr=True,
+        label='dependent package version',
+        help='A string representing the resolved version of a Package')
+
     requirement = String(
         repr=True,
         label='dependent package version requirement',
