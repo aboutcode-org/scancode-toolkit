@@ -164,8 +164,7 @@ def parse(location):
     elif is_phpcomposer_lock(location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
-
-        for package in build_package_from_lock(package_data):
+        for package in build_packages_from_lock(package_data):
             yield package
 
 
@@ -223,7 +222,8 @@ def build_package_from_json(package_data):
         ('conflict', partial(_deps_mapper, scope='conflict', is_runtime=True, is_optional=True)),
         ('replace', partial(_deps_mapper, scope='replace', is_runtime=True, is_optional=True)),
         ('suggest', partial(_deps_mapper, scope='suggest', is_runtime=True, is_optional=True)),
-
+        ('source', source_mapper),
+        ('dist', dist_mapper)
     ]
 
     for source, func in field_mappers:
@@ -281,6 +281,34 @@ def support_mapper(support, package):
     # TODO: there are many other information we ignore for now
     package.bug_tracking_url = support.get('issues') or None
     package.code_view_url = support.get('source') or None
+    return package
+
+
+def source_mapper(source, package):
+    """
+    Add vcs_url from source tag, if present. Typically only present in
+    composer.lock
+    """
+    tool = source.get('type')
+    if not tool:
+        return package
+    url = source.get('url')
+    if not url:
+        return package
+    version = source.get('reference')
+    package.vcs_url = '{tool}+{url}@{version}'.format(**locals())
+    return package
+
+
+def dist_mapper(dist, package):
+    """
+    Add download_url from source tag, if present. Typically only present in
+    composer.lock
+    """
+    url = dist.get('url')
+    if not url:
+        return package
+    package.download_url = url
     return package
 
 
@@ -356,55 +384,25 @@ def parse_person(persons):
         raise ValueError('Incorrect PHP composer persons: %(persons)r' % locals())
 
 
-def build_package_from_lock(package_data):
+def build_dep_package(package, scope, is_runtime, is_optional):
+    return models.DependentPackage(
+        purl=package.purl,
+        scope=scope,
+        is_runtime=is_runtime,
+        is_optional=is_optional,
+        is_resolved=True,
+    )
+
+
+def build_packages_from_lock(package_data):
     """
     Yield composer Package objects from a package data mapping that originated
     from a composer.lock file
     """
-    packages = package_data.get('packages', []) + package_data.get('packages-dev', [])
-    for package in packages:
-        dependencies = []
-        for dep, req in package.get('require', {}).items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='composer', name=dep).to_string(),
-                    scope='require',
-                    requirement=req,
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=True,
-                )
-            )
-
-        for dep, req in package.get('require-dev', {}).items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='composer', name=dep).to_string(),
-                    scope='require-dev',
-                    requirement=req,
-                    is_runtime=False,
-                    is_optional=True,
-                )
-            )
-
-        parties = []
-        for author in package.get('authors', []):
-            parties.append(
-                models.Party(
-                    name=author.get('name'),
-                    role='author',
-                    email=author.get('email'),
-                )
-            )
-
-        yield PHPComposerPackage(
-            name=package.get('name'),
-            version=package.get('version'),
-            download_url=package.get('dist', {}).get('url'),
-            declared_license=package.get('license'),
-            homepage_url=package.get('homepage'),
-            description=package.get('description'),
-            keywords=package.get('keywords'),
-            dependencies=dependencies,
-            parties=parties,
-        )
+    packages = [build_package_from_json(p) for p in package_data.get('packages', [])]
+    packages_dev = [build_package_from_json(p) for p in package_data.get('packages-dev', [])]
+    required_deps = [build_dep_package(p, scope='require', is_runtime=True, is_optional=False) for p in packages]
+    required_dev_deps = [build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True) for p in packages_dev]
+    yield PHPComposerPackage(dependencies=required_deps + required_dev_deps)
+    for package in packages + packages_dev:
+        yield package

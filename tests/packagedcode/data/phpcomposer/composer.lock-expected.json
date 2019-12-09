@@ -2,54 +2,334 @@
   {
     "type": "composer",
     "namespace": null,
-    "name": "doctrine/cache",
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "PHP",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:composer/doctrine/cache@v1.6.2",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/cache-subscriber@0.2.0",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/guzzle@5.3.3",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/ringphp@1.1.1",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/streams@3.0.0",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/prestashop/circuit-breaker@v3.0.0",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/react/promise@v2.7.1",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/css-selector@v3.4.31",
+        "requirement": null,
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/composer/semver@1.5.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/composer/xdebug-handler@1.3.3",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/doctrine/annotations@v1.4.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/doctrine/lexer@1.0.2",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/friendsofphp/php-cs-fixer@v2.15.3",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/paragonie/random_compat@v2.0.18",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/php-cs-fixer/diff@v1.3.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/prestashop/php-coding-standards@dev-master",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/psr/log@1.1.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/squizlabs/php_codesniffer@3.4.2",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/console@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/debug@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/event-dispatcher@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/filesystem@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/finder@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/options-resolver@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-ctype@v1.12.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-mbstring@v1.12.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-php70@v1.12.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-php72@v1.12.0",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/process@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      },
+      {
+        "purl": "pkg:composer/symfony/stopwatch@v3.4.31",
+        "requirement": null,
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": null,
+    "repository_homepage_url": "https://packagist.org/packages/None",
+    "repository_download_url": null,
+    "api_data_url": "https://packagist.org/p/packages/None.json"
+  },
+  {
+    "type": "composer",
+    "namespace": "doctrine",
+    "name": "cache",
     "version": "v1.6.2",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Caching library offering an object-oriented API for many cache backends",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Roman Borschel",
         "email": "roman@code-factory.org",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Benjamin Eberlei",
         "email": "kontakt@beberlei.de",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Guilherme Blanco",
         "email": "guilhermeblanco@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Jonathan Wage",
         "email": "jonwage@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Johannes Schmitt",
         "email": "schmittjoh@gmail.com",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "doctrine",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "cache",
-      "caching"
-    ],
+    "keywords": [],
     "homepage_url": "http://www.doctrine-project.org",
     "download_url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
     "size": null,
@@ -59,7 +339,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/doctrine/cache.git@eb152c5100571c7a45470ff2a35095ab3f3b900b",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -74,7 +354,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -99,6 +379,14 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/doctrine/common",
+        "requirement": ">2.2,<2.4",
+        "scope": "conflict",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -110,27 +398,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "guzzlehttp/cache-subscriber",
+    "namespace": "guzzlehttp",
+    "name": "cache-subscriber",
     "version": "0.2.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Guzzle HTTP cache subscriber",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Michael Dowling",
         "email": "mtdowling@gmail.com",
+        "url": "https://github.com/mtdowling"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "guzzlehttp",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "Guzzle",
-      "cache"
-    ],
+    "keywords": [],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/cache-subscriber/zipball/8c766ba399e4c46383e3eaa220201be62abd101e",
     "size": null,
@@ -140,7 +432,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/guzzle/cache-subscriber.git@8c766ba399e4c46383e3eaa220201be62abd101e",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -155,7 +447,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/guzzlehttp/guzzle",
@@ -163,7 +455,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -171,7 +463,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -191,32 +483,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "guzzlehttp/guzzle",
+    "namespace": "guzzlehttp",
+    "name": "guzzle",
     "version": "5.3.3",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Michael Dowling",
         "email": "mtdowling@gmail.com",
+        "url": "https://github.com/mtdowling"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "guzzlehttp",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "client",
-      "curl",
-      "framework",
-      "http",
-      "http client",
-      "rest",
-      "web service"
-    ],
+    "keywords": [],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/guzzle/zipball/93bbdb30d59be6cd9839495306c65f2907370eb9",
     "size": null,
@@ -226,7 +517,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/guzzle/guzzle.git@93bbdb30d59be6cd9839495306c65f2907370eb9",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -241,7 +532,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -249,7 +540,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/react/promise",
@@ -257,7 +548,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-curl",
@@ -285,24 +576,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "guzzlehttp/ringphp",
+    "namespace": "guzzlehttp",
+    "name": "ringphp",
     "version": "1.1.1",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Michael Dowling",
         "email": "mtdowling@gmail.com",
+        "url": "https://github.com/mtdowling"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "guzzlehttp",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/guzzle/RingPHP/zipball/5e2a174052995663dd68e6b5ad838afd47dd615b",
     "size": null,
@@ -312,7 +610,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/guzzle/RingPHP.git@5e2a174052995663dd68e6b5ad838afd47dd615b",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -327,7 +625,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -335,7 +633,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/react/promise",
@@ -343,7 +641,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-curl",
@@ -360,6 +658,14 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-curl",
+        "requirement": "Guzzle will use specific adapters if cURL is present",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -371,27 +677,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "guzzlehttp/streams",
+    "namespace": "guzzlehttp",
+    "name": "streams",
     "version": "3.0.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Provides a simple abstraction over streams of data",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Michael Dowling",
         "email": "mtdowling@gmail.com",
+        "url": "https://github.com/mtdowling"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "guzzlehttp",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "Guzzle",
-      "stream"
-    ],
+    "keywords": [],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
     "size": null,
@@ -401,7 +711,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/guzzle/streams.git@47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -416,7 +726,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -436,31 +746,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "prestashop/circuit-breaker",
+    "namespace": "prestashop",
+    "name": "circuit-breaker",
     "version": "v3.0.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "A circuit breaker implementation for PHP",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "PrestaShop SA",
         "email": "contact@prestashop.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "PrestaShop Community",
+        "email": null,
+        "url": "http://contributors.prestashop.com/"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "prestashop",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/PrestaShop/circuit-breaker/zipball/8764540d470b533c9484534343688733bc363f77",
     "size": null,
@@ -470,7 +787,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/PrestaShop/circuit-breaker.git@8764540d470b533c9484534343688733bc363f77",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -485,7 +802,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -493,7 +810,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/doctrine/cache",
@@ -550,6 +867,38 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/doctrine/cache",
+        "requirement": "Allows use of Doctrine Cache adapters to store transactions",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-apcu",
+        "requirement": "Allows use of APCu adapter (performant) to store transactions",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/guzzlehttp/cache-subscriber",
+        "requirement": "Allow use of Guzzle cache (use dev-master for most recent changes)",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/cache",
+        "requirement": "Allows use of Symfony Cache adapters to store transactions",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -561,27 +910,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "react/promise",
+    "namespace": "react",
+    "name": "promise",
     "version": "v2.7.1",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Jan Sorgalla",
         "email": "jsorgalla@gmail.com",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "react",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "promise",
-      "promises"
-    ],
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
     "size": null,
@@ -591,7 +944,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/reactphp/promise.git@31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -606,7 +959,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -626,38 +979,45 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/css-selector",
+    "namespace": "symfony",
+    "name": "css-selector",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony CssSelector Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Jean-Fran\u00e7ois Simon",
         "email": "jeanfrancois.simon@sensiolabs.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/css-selector/zipball/e18c5c4b35e7f17513448a25d02f7af34a4bdb41",
     "size": null,
@@ -667,7 +1027,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/css-selector.git@e18c5c4b35e7f17513448a25d02f7af34a4bdb41",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -682,7 +1042,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -694,43 +1054,45 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "composer/semver",
+    "namespace": "composer",
+    "name": "semver",
     "version": "1.5.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Semver library that offers utilities, version constraint parsing and validation.",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Nils Adermann",
         "email": "naderman@naderman.de",
-        "url": null
+        "url": "http://www.naderman.de"
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Jordi Boggiano",
         "email": "j.boggiano@seld.be",
-        "url": null
+        "url": "http://seld.be"
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Rob Bast",
         "email": "rob.bast@gmail.com",
+        "url": "http://robbast.nl"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "composer",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "semantic",
-      "semver",
-      "validation",
-      "versioning"
-    ],
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/composer/semver/zipball/46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
     "size": null,
@@ -740,7 +1102,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/composer/semver.git@46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -755,7 +1117,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -783,27 +1145,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "composer/xdebug-handler",
+    "namespace": "composer",
+    "name": "xdebug-handler",
     "version": "1.3.3",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Restarts a process without xdebug.",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "John Stevenson",
         "email": "john-stevenson@blueyonder.co.uk",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "composer",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "Xdebug",
-      "performance"
-    ],
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/composer/xdebug-handler/zipball/46867cbf8ca9fb8d60c506895449eb799db1184f",
     "size": null,
@@ -813,7 +1179,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/composer/xdebug-handler.git@46867cbf8ca9fb8d60c506895449eb799db1184f",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -828,7 +1194,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -836,7 +1202,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -856,56 +1222,59 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "doctrine/annotations",
+    "namespace": "doctrine",
+    "name": "annotations",
     "version": "v1.4.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Docblock Annotations Parser",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Roman Borschel",
         "email": "roman@code-factory.org",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Benjamin Eberlei",
         "email": "kontakt@beberlei.de",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Guilherme Blanco",
         "email": "guilhermeblanco@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Jonathan Wage",
         "email": "jonwage@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Johannes Schmitt",
         "email": "schmittjoh@gmail.com",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "doctrine",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "annotations",
-      "docblock",
-      "parser"
-    ],
+    "keywords": [],
     "homepage_url": "http://www.doctrine-project.org",
     "download_url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
     "size": null,
@@ -915,7 +1284,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/doctrine/annotations.git@54cacc9b81758b14e3ce750f205a393d52339e97",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -930,7 +1299,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -938,7 +1307,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/doctrine/cache",
@@ -966,44 +1335,45 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "doctrine/lexer",
+    "namespace": "doctrine",
+    "name": "lexer",
     "version": "1.0.2",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Roman Borschel",
         "email": "roman@code-factory.org",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Guilherme Blanco",
         "email": "guilhermeblanco@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Johannes Schmitt",
         "email": "schmittjoh@gmail.com",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "doctrine",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "annotations",
-      "docblock",
-      "lexer",
-      "parser",
-      "php"
-    ],
+    "keywords": [],
     "homepage_url": "https://www.doctrine-project.org/projects/lexer.html",
     "download_url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
     "size": null,
@@ -1013,7 +1383,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/doctrine/lexer.git@1febd6c3ef84253d7c815bed85fc622ad207a9f8",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1028,7 +1398,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1048,31 +1418,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "friendsofphp/php-cs-fixer",
+    "namespace": "friendsofphp",
+    "name": "php-cs-fixer",
     "version": "v2.15.3",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "A tool to automatically fix PHP code style",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Dariusz Rumi\u0144ski",
         "email": "dariusz.ruminski@gmail.com",
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "friendsofphp",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/705490b0f282f21017d73561e9498d2b622ee34c",
     "size": null,
@@ -1082,7 +1459,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/FriendsOfPHP/PHP-CS-Fixer.git@705490b0f282f21017d73561e9498d2b622ee34c",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1097,7 +1474,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/composer/xdebug-handler",
@@ -1105,7 +1482,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/doctrine/annotations",
@@ -1113,7 +1490,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-json",
@@ -1121,7 +1498,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
@@ -1129,7 +1506,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -1137,7 +1514,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php-cs-fixer/diff",
@@ -1145,7 +1522,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/console",
@@ -1153,7 +1530,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
@@ -1161,7 +1538,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
@@ -1169,7 +1546,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/finder",
@@ -1177,7 +1554,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/options-resolver",
@@ -1185,7 +1562,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php70",
@@ -1193,7 +1570,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php72",
@@ -1201,7 +1578,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/process",
@@ -1209,7 +1586,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/stopwatch",
@@ -1217,7 +1594,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/johnkary/phpunit-speedtrap",
@@ -1314,6 +1691,38 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-mbstring",
+        "requirement": "For handling non-UTF8 characters in cache signature.",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-isidenticalstring",
+        "requirement": "For IsIdenticalString constraint.",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-xmlmatchesxsd",
+        "requirement": "For XmlMatchesXsd constraint.",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/polyfill-mbstring",
+        "requirement": "When enabling `ext-mbstring` is not possible.",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -1325,29 +1734,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "paragonie/random_compat",
+    "namespace": "paragonie",
+    "name": "random_compat",
     "version": "v2.0.18",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Paragon Initiative Enterprises",
         "email": "security@paragonie.com",
+        "url": "https://paragonie.com"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "paragonie",
+        "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "csprng",
-      "polyfill",
-      "pseudorandom",
-      "random"
-    ],
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
     "size": null,
@@ -1357,7 +1768,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/paragonie/random_compat.git@0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1372,13 +1783,21 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
         "requirement": "4.*|5.*",
         "scope": "require-dev",
         "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-libsodium",
+        "requirement": "Provides a modern crypto API that can be used to generate random bytes.",
+        "scope": "suggest",
+        "is_runtime": true,
         "is_optional": true,
         "is_resolved": false
       }
@@ -1392,40 +1811,45 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "php-cs-fixer/diff",
+    "namespace": "php-cs-fixer",
+    "name": "diff",
     "version": "v1.3.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "sebastian/diff v2 backport support for PHP5.6",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Kore Nordmann",
         "email": "mail@kore-nordmann.de",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Sebastian Bergmann",
         "email": "sebastian@phpunit.de",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "SpacePossum",
         "email": null,
         "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "php-cs-fixer",
+        "email": null,
+        "url": null
       }
     ],
-    "keywords": [
-      "diff"
-    ],
+    "keywords": [],
     "homepage_url": "https://github.com/PHP-CS-Fixer",
     "download_url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/78bb099e9c16361126c86ce82ec4405ebab8e756",
     "size": null,
@@ -1435,7 +1859,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/PHP-CS-Fixer/diff.git@78bb099e9c16361126c86ce82ec4405ebab8e756",
     "copyright": null,
     "license_expression": "bsd-new",
     "declared_license": [
@@ -1450,7 +1874,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1478,16 +1902,24 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "prestashop/php-coding-standards",
+    "namespace": "prestashop",
+    "name": "php-coding-standards",
     "version": "dev-master",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "PrestaShop coding standards",
+    "description": null,
     "release_date": null,
-    "parties": [],
-    "keywords": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "prestashop",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/PrestaShop/php-coding-standards/zipball/b36d09439147e45c1a7d007b9361367ae92167dd",
     "size": null,
@@ -1497,7 +1929,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/PrestaShop/php-coding-standards.git@b36d09439147e45c1a7d007b9361367ae92167dd",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1512,7 +1944,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -1520,7 +1952,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
@@ -1528,7 +1960,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/console",
@@ -1536,7 +1968,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
@@ -1544,7 +1976,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -1556,28 +1988,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "psr/log",
+    "namespace": "psr",
+    "name": "log",
     "version": "1.1.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Common interface for logging libraries",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "PHP-FIG",
+        "email": null,
+        "url": "http://www.php-fig.org/"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "psr",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "log",
-      "psr",
-      "psr-3"
-    ],
+    "keywords": [],
     "homepage_url": "https://github.com/php-fig/log",
     "download_url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
     "size": null,
@@ -1587,7 +2022,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/php-fig/log.git@6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1602,7 +2037,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -1614,27 +2049,31 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "squizlabs/php_codesniffer",
+    "namespace": "squizlabs",
+    "name": "php_codesniffer",
     "version": "3.4.2",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
-        "role": "author",
+        "type": "person",
+        "role": "lead",
         "name": "Greg Sherwood",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "squizlabs",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "phpcs",
-      "standards"
-    ],
+    "keywords": [],
     "homepage_url": "https://github.com/squizlabs/PHP_CodeSniffer",
     "download_url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
     "size": null,
@@ -1644,7 +2083,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/squizlabs/PHP_CodeSniffer.git@b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
     "copyright": null,
     "license_expression": "bsd-new",
     "declared_license": [
@@ -1659,7 +2098,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
@@ -1667,7 +2106,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/ext-xmlwriter",
@@ -1675,7 +2114,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -1683,7 +2122,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
@@ -1703,31 +2142,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/console",
+    "namespace": "symfony",
+    "name": "console",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Console Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/console/zipball/4510f04e70344d70952566e4262a0b11df39cb10",
     "size": null,
@@ -1737,7 +2183,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/console.git@4510f04e70344d70952566e4262a0b11df39cb10",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1752,7 +2198,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/debug",
@@ -1760,7 +2206,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring",
@@ -1768,7 +2214,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -1817,6 +2263,62 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/psr/log-implementation",
+        "requirement": "1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/dependency-injection",
+        "requirement": "<3.4",
+        "scope": "conflict",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/process",
+        "requirement": "<3.3",
+        "scope": "conflict",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/psr/log",
+        "requirement": "For using the console logger",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/event-dispatcher",
+        "requirement": "",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/lock",
+        "requirement": "",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/process",
+        "requirement": "",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -1828,31 +2330,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/debug",
+    "namespace": "symfony",
+    "name": "debug",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Debug Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/debug/zipball/0b600300918780001e2821db77bc28b677794486",
     "size": null,
@@ -1862,7 +2371,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/debug.git@0b600300918780001e2821db77bc28b677794486",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1877,7 +2386,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -1885,13 +2394,21 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/http-kernel",
+        "requirement": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2",
+        "scope": "conflict",
+        "is_runtime": true,
         "is_optional": true,
         "is_resolved": false
       }
@@ -1905,31 +2422,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/event-dispatcher",
+    "namespace": "symfony",
+    "name": "event-dispatcher",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony EventDispatcher Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/3e922c4c3430b9de624e8a285dada5e61e230959",
     "size": null,
@@ -1939,7 +2463,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/event-dispatcher.git@3e922c4c3430b9de624e8a285dada5e61e230959",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -1954,7 +2478,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/psr/log",
@@ -1995,6 +2519,30 @@
         "is_runtime": false,
         "is_optional": true,
         "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/dependency-injection",
+        "requirement": "<3.3",
+        "scope": "conflict",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/dependency-injection",
+        "requirement": "",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/symfony/http-kernel",
+        "requirement": "",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2006,31 +2554,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/filesystem",
+    "namespace": "symfony",
+    "name": "filesystem",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Filesystem Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/filesystem/zipball/00e3a6ddd723b8bcfe4f2a1b6f82b98eeeb51516",
     "size": null,
@@ -2040,7 +2595,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/filesystem.git@00e3a6ddd723b8bcfe4f2a1b6f82b98eeeb51516",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2055,7 +2610,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/symfony/polyfill-ctype",
@@ -2063,7 +2618,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2075,31 +2630,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/finder",
+    "namespace": "symfony",
+    "name": "finder",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Finder Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/finder/zipball/1fcad80b440abcd1451767349906b6f9d3961d37",
     "size": null,
@@ -2109,7 +2671,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/finder.git@1fcad80b440abcd1451767349906b6f9d3961d37",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2124,7 +2686,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2136,35 +2698,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/options-resolver",
+    "namespace": "symfony",
+    "name": "options-resolver",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony OptionsResolver Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "config",
-      "configuration",
-      "options"
-    ],
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/options-resolver/zipball/a7c00586a9ef70acf0f17085e51c399bf9620e03",
     "size": null,
@@ -2174,7 +2739,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/options-resolver.git@a7c00586a9ef70acf0f17085e51c399bf9620e03",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2189,7 +2754,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2201,36 +2766,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/polyfill-ctype",
+    "namespace": "symfony",
+    "name": "polyfill-ctype",
     "version": "v1.12.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony polyfill for ctype functions",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Gert de Pagter",
         "email": "BackEndTea@gmail.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "compatibility",
-      "ctype",
-      "polyfill",
-      "portable"
-    ],
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
     "size": null,
@@ -2240,7 +2807,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/polyfill-ctype.git@550ebaac289296ce228a706d0867afc34687e3f4",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2255,7 +2822,15 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-ctype",
+        "requirement": "For best performance",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2267,37 +2842,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/polyfill-mbstring",
+    "namespace": "symfony",
+    "name": "polyfill-mbstring",
     "version": "v1.12.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony polyfill for the Mbstring extension",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Nicolas Grekas",
         "email": "p@tchwork.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "compatibility",
-      "mbstring",
-      "polyfill",
-      "portable",
-      "shim"
-    ],
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
     "size": null,
@@ -2307,7 +2883,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/polyfill-mbstring.git@b42a2f66e8f1b15ccf25652c3424265923eb4f17",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2322,7 +2898,15 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/ext-mbstring",
+        "requirement": "For best performance",
+        "scope": "suggest",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2334,36 +2918,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/polyfill-php70",
+    "namespace": "symfony",
+    "name": "polyfill-php70",
     "version": "v1.12.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Nicolas Grekas",
         "email": "p@tchwork.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "compatibility",
-      "polyfill",
-      "portable",
-      "shim"
-    ],
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/54b4c428a0054e254223797d2713c31e08610831",
     "size": null,
@@ -2373,7 +2959,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/polyfill-php70.git@54b4c428a0054e254223797d2713c31e08610831",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2388,7 +2974,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
         "purl": "pkg:composer/php",
@@ -2396,7 +2982,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2408,36 +2994,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/polyfill-php72",
+    "namespace": "symfony",
+    "name": "polyfill-php72",
     "version": "v1.12.0",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Nicolas Grekas",
         "email": "p@tchwork.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": [
-      "compatibility",
-      "polyfill",
-      "portable",
-      "shim"
-    ],
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/04ce3335667451138df4307d6a9b61565560199e",
     "size": null,
@@ -2447,7 +3035,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/polyfill-php72.git@04ce3335667451138df4307d6a9b61565560199e",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2462,7 +3050,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2474,31 +3062,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/process",
+    "namespace": "symfony",
+    "name": "process",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Process Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/process/zipball/d822cb654000a95b7855362c0d5b127f6a6d8baa",
     "size": null,
@@ -2508,7 +3103,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/process.git@d822cb654000a95b7855362c0d5b127f6a6d8baa",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2523,7 +3118,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
@@ -2535,31 +3130,38 @@
   },
   {
     "type": "composer",
-    "namespace": null,
-    "name": "symfony/stopwatch",
+    "namespace": "symfony",
+    "name": "stopwatch",
     "version": "v3.4.31",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "PHP",
-    "description": "Symfony Stopwatch Component",
+    "description": null,
     "release_date": null,
     "parties": [
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Fabien Potencier",
         "email": "fabien@symfony.com",
         "url": null
       },
       {
-        "type": null,
+        "type": "person",
         "role": "author",
         "name": "Symfony Community",
+        "email": null,
+        "url": "https://symfony.com/contributors"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "symfony",
         "email": null,
         "url": null
       }
     ],
-    "keywords": null,
+    "keywords": [],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/stopwatch/zipball/c0c27e38f8accb452f830a4ec8e8ac94b6ec864a",
     "size": null,
@@ -2569,7 +3171,7 @@
     "sha512": null,
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": null,
+    "vcs_url": "git+https://github.com/symfony/stopwatch.git@c0c27e38f8accb452f830a4ec8e8ac94b6ec864a",
     "copyright": null,
     "license_expression": "mit",
     "declared_license": [
@@ -2584,7 +3186,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
