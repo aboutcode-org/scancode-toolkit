@@ -323,12 +323,8 @@ class DependentPackage(BaseModel):
     purl = String(
         repr=True,
         label='Dependent package URL',
-        help='A compact purl package URL')
-
-    resolved_version = String(
-        repr=True,
-        label='dependent package version',
-        help='A string representing the resolved version of a Package')
+        help='A compact purl package URL. Typically when there is an unresolved requirement, there is no version. '
+             'If the dependency is resolved, the version should be added to the purl')
 
     requirement = String(
         repr=True,
