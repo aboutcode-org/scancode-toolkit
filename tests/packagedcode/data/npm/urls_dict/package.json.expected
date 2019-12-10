@@ -1,62 +1,64 @@
-{
-  "type": "npm",
-  "namespace": null,
-  "name": "jsonp-filter",
-  "version": "0.0.3",
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "JavaScript",
-  "description": "JSONP filter for express",
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Stephen Veerman",
-      "email": "sveerman@postmedia.com",
-      "url": null
-    }
-  ],
-  "keywords": [
-    "coffeescript",
-    "express",
-    "json",
-    "jsonp"
-  ],
-  "homepage_url": "https://github.com/Postmedia/jsonp-filter",
-  "download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": "git://github.com/Postmedia/jsonp-filter",
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE"
-    }
-  ],
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:npm/styout",
-      "requirement": ">= 0.6.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "purl": "pkg:npm/jsonp-filter@0.0.3",
-  "repository_homepage_url": "https://www.npmjs.com/package/jsonp-filter",
-  "repository_download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
-  "api_data_url": "https://registry.npmjs.org/jsonp-filter/0.0.3"
-}
+[
+  {
+    "type": "npm",
+    "namespace": null,
+    "name": "jsonp-filter",
+    "version": "0.0.3",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": "JSONP filter for express",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Stephen Veerman",
+        "email": "sveerman@postmedia.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "coffeescript",
+      "express",
+      "json",
+      "jsonp"
+    ],
+    "homepage_url": "https://github.com/Postmedia/jsonp-filter",
+    "download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "git://github.com/Postmedia/jsonp-filter",
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": [
+      {
+        "type": "MIT",
+        "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE"
+      }
+    ],
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:npm/styout",
+        "requirement": ">= 0.6.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:npm/jsonp-filter@0.0.3",
+    "repository_homepage_url": "https://www.npmjs.com/package/jsonp-filter",
+    "repository_download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
+    "api_data_url": "https://registry.npmjs.org/jsonp-filter/0.0.3"
+  }
+]
