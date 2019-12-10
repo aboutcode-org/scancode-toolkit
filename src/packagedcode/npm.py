@@ -85,7 +85,8 @@ class NpmPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        for package in parse(location):
+            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -237,7 +238,7 @@ def is_package_lock(location):
 
 
 def is_npm_shrinkwrap(location):
-    return (filetype.is_dir(location)
+    return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
 
 
@@ -248,17 +249,14 @@ def parse(location):
     if is_package_json(location):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
-        return build_package(package_data)
+        yield build_package(package_data)
 
-    if is_package_lock(location):
+    if is_package_lock(location) or is_npm_shrinkwrap(location):
+        print(location)
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
-        return build_package_from_lockfile(package_data)
-
-    if is_npm_shrinkwrap(location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
-        return build_package_from_shrinkwrap(package_data)
+        for package in build_packages_from_lockfile(package_data):
+            yield package
 
 
 def build_package(package_data):
@@ -810,56 +808,115 @@ def keywords_mapper(keywords, package):
     return package
 
 
-def build_package_from_lockfile(package_data):
+def build_packages_from_lockfile(package_data):
     """
-    Return a `NpmPackage` from a parsed package-lock.json file
+    Return a `NpmPackage` from a parsed package-lock.json or npm-shrinkwrap.json
+    file
     """
-    dependencies = []
+    packages = []
+    dev_packages = []
     for dependency, values in package_data.get('dependencies', {}).items():
-        resolved_version = values.get('version')
-        dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(type='npm', name=dependency, version=resolved_version).to_string(),
-                name=dependency,
-                resolved_version=resolved_version,
-                is_runtime=True,
-                is_resolved=True,
-            )
-        )
+        is_dev = values.get('dev', False)
+        dep_deps = []
 
-    return NpmPackage(
-            name=package_data.get('name'),
-            version=package_data.get('version'),
-            dependencies=dependencies,
-    )
+        # Handle the case where an entry in `dependencies` from a
+        # package-lock.json file has `requires`
+        for dep, dep_req in values.get('requires', {}).items():
+            if is_dev:
+                dep_deps.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='npm',
+                            name=dep,
+                            version=dep_req
+                        ).to_string(),
+                        scope='requires-dev',
+                        requirement=dep_req,
+                        is_runtime=False,
+                        is_optional=True,
+                        is_resolved=True,
+                    )
+                )
+            else:
+                dep_deps.append(
+                    models.DependentPackage(
+                        purl=PackageURL(
+                            type='npm',
+                            name=dependency,
+                            version=dep_req
+                        ).to_string(),
+                        scope='requires',
+                        requirement=dep_req,
+                        is_runtime=True,
+                        is_optional=False,
+                        is_resolved=True,
+                    )
+                )
 
-
-def build_package_from_shrinkwrap(package_data):
-    """
-    Return a `NpmPackage` from a parsed npm-shrinkwrap.json file
-    """
-    dependencies = []
-    for dependency, values in package_data.get('dependencies', {}).items():
-        resolved_version = values.get('version')
-        split_requirement = values.get('from', '').rsplit('@')
-        if len(split_requirement) == 2:
-            # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
-            _, requirement = split_requirement
-        else:
+        # Handle the case where an entry in `dependencies` from a
+        # npm-shrinkwrap.json file has `dependencies`
+        for dep, dep_values in values.get('dependencies', {}).items():
+            dep_version = dep_values.get('version')
             requirement = None
-        dependencies.append(
+            split_requirement = dep_values.get('from', '').rsplit('@')
+            if len(split_requirement) == 2:
+                # requirement is in the form of "abbrev@>=1.0.0 <2.0.0", so we just want what is right of @
+                _, requirement = split_requirement
+            dep_deps.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='npm',
+                        name=dep,
+                        version=dep_version,
+                    ).to_string(),
+                    scope='dependencies',
+                    requirement=requirement,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+
+        p = NpmPackage(
+            name=dependency,
+            version=values.get('version'),
+            download_url=values.get('resolved'),
+            dependencies=dep_deps,
+        )
+        if is_dev:
+            dev_packages.append(p)
+        else:
+            packages.append(p)
+
+    package_deps = []
+    for package in packages:
+        package_deps.append(
             models.DependentPackage(
-                purl=PackageURL(type='npm', name=dependency, version=resolved_version).to_string(),
-                name=dependency,
-                resolved_version=resolved_version,
-                requirement=requirement,
+                purl=package.purl,
+                scope='dependencies',
                 is_runtime=True,
+                is_optional=False,
                 is_resolved=True,
             )
         )
 
-    return NpmPackage(
-            name=package_data.get('name'),
-            version=package_data.get('version'),
-            dependencies=dependencies,
+    dev_package_deps = []
+    for dev_package in dev_packages:
+        dev_package_deps.append(
+            models.DependentPackage(
+                purl=dev_package.purl,
+                scope='dependencies-dev',
+                is_runtime=False,
+                is_optional=True,
+                is_resolved=True,
+            )
+        )
+
+    yield NpmPackage(
+        name=package_data.get('name'),
+        version=package_data.get('version'),
+        dependencies=package_deps + dev_package_deps,
     )
+
+    for package in packages + dev_packages:
+        yield package
