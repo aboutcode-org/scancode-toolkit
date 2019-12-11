@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
 import io
@@ -73,7 +74,8 @@ class NpmPackage(models.Package):
     metafiles = (
         'package.json',
         'npm-shrinkwrap.json',
-        'package-lock.json'
+        'package-lock.json',
+        'yarn.lock',
     )
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
@@ -242,6 +244,11 @@ def is_npm_shrinkwrap(location):
             and fileutils.file_name(location).lower() == 'npm-shrinkwrap.json')
 
 
+def is_yarn_lock(location):
+    return (filetype.is_file(location)
+            and fileutils.file_name(location).lower() == 'yarn.lock')
+
+
 def parse(location):
     """
     Return a Package object from a package.json file or None.
@@ -252,11 +259,15 @@ def parse(location):
         yield build_package(package_data)
 
     if is_package_lock(location) or is_npm_shrinkwrap(location):
-        print(location)
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc, object_pairs_hook=OrderedDict)
         for package in build_packages_from_lockfile(package_data):
             yield package
+
+    if is_yarn_lock(location):
+        with io.open(location, encoding='utf-8') as loc:
+            for package in build_packages_from_yarn_lock(loc):
+                yield package
 
 
 def build_package(package_data):
@@ -810,7 +821,7 @@ def keywords_mapper(keywords, package):
 
 def build_packages_from_lockfile(package_data):
     """
-    Return a `NpmPackage` from a parsed package-lock.json or npm-shrinkwrap.json
+    Yield `NpmPackage`s from a parsed package-lock.json or npm-shrinkwrap.json
     file
     """
     packages = []
@@ -822,14 +833,11 @@ def build_packages_from_lockfile(package_data):
         # Handle the case where an entry in `dependencies` from a
         # package-lock.json file has `requires`
         for dep, dep_req in values.get('requires', {}).items():
+            purl = PackageURL(type='npm', name=dep, version=dep_req).to_string()
             if is_dev:
                 dep_deps.append(
                     models.DependentPackage(
-                        purl=PackageURL(
-                            type='npm',
-                            name=dep,
-                            version=dep_req
-                        ).to_string(),
+                        purl=purl,
                         scope='requires-dev',
                         requirement=dep_req,
                         is_runtime=False,
@@ -840,11 +848,7 @@ def build_packages_from_lockfile(package_data):
             else:
                 dep_deps.append(
                     models.DependentPackage(
-                        purl=PackageURL(
-                            type='npm',
-                            name=dependency,
-                            version=dep_req
-                        ).to_string(),
+                        purl=purl,
                         scope='requires',
                         requirement=dep_req,
                         is_runtime=True,
@@ -919,4 +923,120 @@ def build_packages_from_lockfile(package_data):
     )
 
     for package in packages + dev_packages:
+        yield package
+
+
+def build_packages_from_yarn_lock(yarn_lock_lines):
+    """
+    Yield `NpmPackage`s from a list of lines of a yarn.lock file
+    """
+    packages = []
+    package_data = {}
+    prev_line = None
+    dependencies = False
+    for line in yarn_lock_lines:
+        line = line.strip()
+        if not line or line.startswith('#'):
+            # A blank line that follows an "un-blank" line signifies a space
+            # between dependencies in yarn.lock. When we reach this point, we should
+            # stop and create an NpmPackage with the data we collected so far
+            if prev_line:
+                deps = []
+                for dep, req in package_data.get('dependencies', []):
+                    deps.append(
+                        models.DependentPackage(
+                            purl=PackageURL(type='npm', name=dep).to_string(),
+                            scope='dependencies',
+                            requirement=req,
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=True,
+                        )
+                    )
+                packages.append(
+                    NpmPackage(
+                        name=package_data.get('name'),
+                        version=package_data.get('version'),
+                        download_url=package_data.get('download_url'),
+                        dependencies=deps
+                    )
+                )
+                package_data = {}
+            if dependencies:
+                dependencies = False
+            continue
+
+        # Get name and requirements of dependency
+        split_line_for_name_req = line.split(',')
+        if len(split_line_for_name_req) > 1:
+            # If there is more than one dependency requirement on a line
+            dep_names_and_reqs = defaultdict(list)
+            for segment in split_line_for_name_req:
+                segment = segment.strip()
+                dep_name_and_req = segment.rsplit('@')
+                dep, req = dep_name_and_req
+
+                # Clean up dependency name and requirement strings
+                dep = dep.strip().replace('\"', '')
+                req = req.replace(':', '')
+
+                dep_names_and_reqs[dep].append(req)
+
+            # We should only have one key `dep_names_and_reqs`
+            if len(dep_names_and_reqs.keys()) == 1:
+                dep, req = dep_names_and_reqs.items()[0]
+                package_data['name'] = dep
+                package_data['requirement'] = ', '.join(req)
+        else:
+            # If there is only a single dependency requirement for a dependency
+            dep_name_and_req = line.rsplit('@')
+            if len(dep_name_and_req) == 2:
+                dep, req = dep_name_and_req
+                package_data['name'] = dep
+                package_data['requirement'] = req[:-1]
+
+        split_line = line.split()
+        if len(split_line) == 2:
+            k, v = split_line
+            v = v[1:-1]
+            if split_line[0] == 'version':
+                package_data['version'] = v
+            if split_line[0] == 'resolved':
+                package_data['download_url'] = v
+            if dependencies:
+                if 'dependencies' in package_data:
+                    package_data['dependencies'].append((k, v))
+                else:
+                    package_data['dependencies'] = [(k, v)]
+
+        # If the current line we are looking at is exactly 'dependencies:', then
+        # the following lines will be dependencies of the dependency we are
+        # currently looking at, so we set this flag to know that we should
+        # append the following line to the dependencies list of the current
+        # dependency until the flag is set to False
+        if line == 'dependencies:':
+            dependencies = True
+
+        # We keep track of the previous line for the moments we reach a blank
+        # line, so we know to create a new NpmPackage
+        prev_line = line
+
+    packages_dependencies = []
+    for package in packages:
+        packages_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='npm',
+                    name=package.name,
+                    version=package.version
+                ).to_string(),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+
+    yield NpmPackage(dependencies=packages_dependencies)
+    for package in packages:
         yield package

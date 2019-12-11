@@ -241,6 +241,8 @@ class BasePackage(BaseModel):
         """
         Return a compact purl package URL string.
         """
+        if not self.name:
+            return
         return PackageURL(
             self.type, self.namespace, self.name, self.version,
             self.qualifiers, self.subpath).to_string()
