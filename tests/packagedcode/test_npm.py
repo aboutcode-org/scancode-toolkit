@@ -263,6 +263,13 @@ class TestNpm(PackageTester):
         packages = npm.parse(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
+    def test_parse_yarn_lock(self):
+        test_file = self.get_test_loc('npm/yarn-lock/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/yarn.lock-expected')
+        packages = npm.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
     def test_vcs_repository_mapper(self):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
