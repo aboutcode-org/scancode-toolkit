@@ -184,7 +184,7 @@ Package: msi
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:NpmPackage
-  metafiles: package.json, npm-shrinkwrap.json
+  metafiles: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
   filetypes: .tgz
 
 --------------------------------------------

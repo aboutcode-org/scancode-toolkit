@@ -931,7 +931,8 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
     Yield `NpmPackage`s from a list of lines of a yarn.lock file
     """
     packages = []
-    package_data = {}
+    packages_reqs = []
+    current_package_data = {}
     prev_line = None
     dependencies = False
     for line in yarn_lock_lines:
@@ -942,7 +943,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
             # stop and create an NpmPackage with the data we collected so far
             if prev_line:
                 deps = []
-                for dep, req in package_data.get('dependencies', []):
+                for dep, req in current_package_data.get('dependencies', []):
                     deps.append(
                         models.DependentPackage(
                             purl=PackageURL(type='npm', name=dep).to_string(),
@@ -955,13 +956,14 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     )
                 packages.append(
                     NpmPackage(
-                        name=package_data.get('name'),
-                        version=package_data.get('version'),
-                        download_url=package_data.get('download_url'),
+                        name=current_package_data.get('name'),
+                        version=current_package_data.get('version'),
+                        download_url=current_package_data.get('download_url'),
                         dependencies=deps
                     )
                 )
-                package_data = {}
+                packages_reqs.append(current_package_data.get('requirement'))
+                current_package_data = {}
             if dependencies:
                 dependencies = False
             continue
@@ -969,7 +971,9 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
         # Get name and requirements of dependency
         split_line_for_name_req = line.split(',')
         if len(split_line_for_name_req) > 1:
-            # If there is more than one dependency requirement on a line
+            # If there is more than one dependency requirement on a line, we
+            # append the requirement to a list in a dict where the key to the
+            # list is the dependency name
             dep_names_and_reqs = defaultdict(list)
             for segment in split_line_for_name_req:
                 segment = segment.strip()
@@ -982,32 +986,36 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
 
                 dep_names_and_reqs[dep].append(req)
 
-            # We should only have one key `dep_names_and_reqs`
+            # We should only have one key `dep_names_and_reqs`, where it is the
+            # current dependency we are looking at
             if len(dep_names_and_reqs.keys()) == 1:
-                dep, req = dep_names_and_reqs.items()[0]
-                package_data['name'] = dep
-                package_data['requirement'] = ', '.join(req)
+                dep, req = list(dep_names_and_reqs.items())[0]
+                current_package_data['name'] = dep
+                current_package_data['requirement'] = ', '.join(req)
         else:
             # If there is only a single dependency requirement for a dependency
             dep_name_and_req = line.rsplit('@')
             if len(dep_name_and_req) == 2:
                 dep, req = dep_name_and_req
-                package_data['name'] = dep
-                package_data['requirement'] = req[:-1]
+                current_package_data['name'] = dep
+                current_package_data['requirement'] = req[:-1]
 
+        # See if the follwing lines are key-value pairs we want to collect data
+        # from. These lines are in the form of `key`\ \"`value`\"
         split_line = line.split()
         if len(split_line) == 2:
             k, v = split_line
+            # Remove leading and following quotation marks on values
             v = v[1:-1]
-            if split_line[0] == 'version':
-                package_data['version'] = v
-            if split_line[0] == 'resolved':
-                package_data['download_url'] = v
+            if k == 'version':
+                current_package_data['version'] = v
+            if k == 'resolved':
+                current_package_data['download_url'] = v
             if dependencies:
-                if 'dependencies' in package_data:
-                    package_data['dependencies'].append((k, v))
+                if 'dependencies' in current_package_data:
+                    current_package_data['dependencies'].append((k, v))
                 else:
-                    package_data['dependencies'] = [(k, v)]
+                    current_package_data['dependencies'] = [(k, v)]
 
         # If the current line we are looking at is exactly 'dependencies:', then
         # the following lines will be dependencies of the dependency we are
@@ -1022,7 +1030,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
         prev_line = line
 
     packages_dependencies = []
-    for package in packages:
+    for package, requirement in zip(packages, packages_reqs):
         packages_dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(
@@ -1030,6 +1038,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     name=package.name,
                     version=package.version
                 ).to_string(),
+                requirement=requirement,
                 scope='dependencies',
                 is_runtime=True,
                 is_optional=False,
