@@ -43,6 +43,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
+from summarycode import copyright_summary
 
 
 # Tracing flags
@@ -98,7 +99,9 @@ class Consolidation(object):
             combined_license_expression = combine_expressions(license_expressions_to_combine)
             if combined_license_expression:
                 self.consolidated_license_expression = str(Licensing().parse(combined_license_expression).simplify())
-        self.consolidated_holders = sorted(set(list(self.core_holders) + list(self.other_holders)))
+        self.core_holders = [h.original for h in self.core_holders]
+        self.other_holders = [h.original for h in self.other_holders]
+        self.consolidated_holders = sorted(set(self.core_holders + self.other_holders))
         # TODO: Verify and test that we are generating detectable copyrights
         self.consolidated_copyright = 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
@@ -214,8 +217,8 @@ class Consolidator(PostScanPlugin):
                 else:
                     # Create identifier if we don't have one
                     # TODO: Consider adding license expression to be part of name
-                    holders = '_'.join(c.consolidation.core_holders)
-                    other_holders = '_'.join(c.consolidation.other_holders)
+                    holders = '_'.join(h.key for h in c.consolidation.core_holders)
+                    other_holders = '_'.join(h.key for h in c.consolidation.other_holders)
                     holders = holders or other_holders
                     # We do not want the name to be too long
                     holders = holders[:65]
@@ -247,6 +250,8 @@ def get_consolidated_packages(codebase):
         for package_data in resource.packages:
             package = get_package_instance(package_data)
             package_root = package.get_package_root(resource, codebase)
+            package_root.extra_data['package_root'] = True
+            package_root.save(codebase)
             is_build_file = isinstance(package, BaseBuildManifestPackage)
             package_resources = list(package.get_package_resources(package_root, codebase))
             package_license_expression = package.license_expression
@@ -258,6 +263,7 @@ def get_consolidated_packages(codebase):
                 for _, holder, _, _ in CopyrightDetector().detect(numbered_lines,
                         copyrights=False, holders=True, authors=False, include_years=False):
                     package_holders.append(holder)
+            package_holders = process_holders(package_holders)
 
             discovered_license_expressions = []
             discovered_holders = []
@@ -273,11 +279,10 @@ def get_consolidated_packages(codebase):
                     continue
                 discovered_license_expressions.append(package_resource_license_expression)
                 discovered_holders.extend(h.get('value') for h in package_resource_holders)
+            discovered_holders = process_holders(discovered_holders)
 
             # Remove NoneTypes from discovered licenses
             discovered_license_expressions = [lic for lic in discovered_license_expressions if lic]
-            # Remove NoneTypes from discovered holders
-            discovered_holders = [holder for holder in discovered_holders if holder]
 
             combined_discovered_license_expression = combine_expressions(discovered_license_expressions)
             if combined_discovered_license_expression:
@@ -287,9 +292,9 @@ def get_consolidated_packages(codebase):
 
             c = Consolidation(
                 core_license_expression=package_license_expression,
-                core_holders=sorted(set(package_holders)),
+                core_holders=[h for h, _ in copyright_summary.cluster(package_holders)],
                 other_license_expression=simplified_discovered_license_expression,
-                other_holders=sorted(set(discovered_holders)),
+                other_holders=[h for h, _ in copyright_summary.cluster(discovered_holders)],
                 files_count=sum(1 for package_resource in package_resources if package_resource.is_file),
                 resources=package_resources,
             )
@@ -304,6 +309,30 @@ def get_consolidated_packages(codebase):
                     package=package,
                     consolidation=c
                 )
+
+
+def process_holders(holders):
+    holders = [copyright_summary.Text(key=holder, original=holder) for holder in holders]
+
+    for holder in holders:
+        holder.normalize()
+
+    holders = list(copyright_summary.filter_junk(holders))
+
+    for holder in holders:
+        holder.normalize()
+
+    # keep non-empties
+    holders = list(holder for holder in holders if holder.key)
+
+    # convert to plain ASCII, then fingerprint
+    for holder in holders:
+        holder.transliterate()
+        holder.fingerprint()
+
+    # keep non-empties
+    holders = list(holder for holder in holders if holder.key)
+    return holders
 
 
 def get_license_holders_consolidated_components(codebase):
@@ -341,14 +370,19 @@ def get_license_holders_consolidated_components(codebase):
                 continue
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
-                holders = tuple(h['value'] for h in child.holders)
+                holders = process_holders(h['value'] for h in child.holders)
                 child.extra_data['license_expression'] = license_expression
                 child.extra_data['holders'] = holders
                 child.save(codebase)
+
+                # TODO: Consider grouping on holders only
                 if not license_expression or not holders:
                     continue
                 origin = holders, license_expression
-                origin_key = ''.join(holders) + license_expression
+                # TODO: Try to split apart all the holders and do combinations
+                # of holders and expressions? (COMBINATORIAL EXPLOSION)
+                # TODO: use cluster()
+                origin_key = ''.join(holder.key for holder in holders) + license_expression
                 origin_translation_table[origin_key] = origin
                 origin_count[origin_key] += 1
             else:
@@ -370,23 +404,29 @@ def get_license_holders_consolidated_components(codebase):
                 majority_holders, majority_license_expression = origin_translation_table[origin_key]
                 resource.extra_data['license_expression'] = majority_license_expression
                 resource.extra_data['holders'] = majority_holders
+                resource.extra_data['majority'] = True
                 resource.save(codebase)
+                # Yield any time we have a majority
+                c = create_license_holders_consolidated_component(resource, codebase)
+                yield c
 
-                # Create consolidated components for a child that has a majority
-                # that is different than the one we have now
-                for child in children:
-                    # We are only looking at directories so we can summarize to them
-                    if not child.is_dir:
-                        continue
-                    license_expression = child.extra_data.get('license_expression')
-                    holders = child.extra_data.get('holders')
-                    # If there is a child directory that has a different majority than its parent,
-                    # we report it
-                    if ((license_expression and license_expression != majority_license_expression)
-                            or (holders and holders != majority_holders)):
-                        c = create_license_holders_consolidated_component(child, codebase)
-                        if c:
-                            yield c
+                # # Create consolidated components for a child that has a majority
+                # # that is different than the one we have now
+                # for child in children:
+                #     # We are only looking at directories so we can summarize to them
+                #     if not child.is_dir:
+                #         continue
+                #     license_expression = child.extra_data.get('license_expression')
+                #     holders = child.extra_data.get('holders')
+                #     # If there is a child directory that has a different majority than its parent,
+                #     # we report it
+                #     if ((license_expression and license_expression != majority_license_expression)
+                #             or (holders and holders != majority_holders)):
+                #         c = create_license_holders_consolidated_component(child, codebase)
+                #         if c:
+                #             child.extra_data['majority'] = True
+                #             child.save(codebase)
+                #             yield c
             else:
                 # If there is no majority, we see if any of our child directories had majorities
                 for child in children:
@@ -395,11 +435,15 @@ def get_license_holders_consolidated_components(codebase):
                         continue
                     c = create_license_holders_consolidated_component(child, codebase)
                     if c:
+                        child.extra_data['majority'] = True
+                        child.save(codebase)
                         yield c
 
     # Yield a Component for root if there is a majority
     c = create_license_holders_consolidated_component(root, codebase)
     if c:
+        root.extra_data['majority'] = True
+        root.save(codebase)
         yield c
 
 
@@ -470,7 +514,7 @@ def combine_license_holders_consolidated_components(components):
             yield component
             continue
         origin = component.consolidation.core_holders, component.consolidation.core_license_expression
-        origin_key = ''.join(component.consolidation.core_holders) + component.consolidation.core_license_expression
+        origin_key = ''.join(h.key for h in component.consolidation.core_holders) + component.consolidation.core_license_expression
         origin_translation_table[origin_key] = origin
         components_by_holders_license_expression[origin_key].append(component)
 
