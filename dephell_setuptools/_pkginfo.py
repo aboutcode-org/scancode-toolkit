@@ -17,6 +17,15 @@ class PkgInfoReader(BaseReader):
         cmd = ['pkginfo', '--json', str(self.path)]
         result = subprocess.run(cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         if result.returncode != 0:
-            raise RuntimeError(result.stderr.decode().split('\n')[-1])
-        content = json.loads(result.stdout.decode())
+            msg_lines = result.stderr.decode().rstrip().split('\n')
+            raise RuntimeError(msg_lines[-1] if msg_lines else 'Unknown error')
+        stdout = result.stdout.decode()
+        if not stdout:
+            return {}
+
+        try:
+            content = json.loads(stdout)
+        except json.decoder.JSONDecodeError:
+            return {}
+
         return self._clean(content)
