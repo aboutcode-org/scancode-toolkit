@@ -337,138 +337,54 @@ def process_holders(holders):
 
 def get_license_holders_consolidated_components(codebase):
     """
-    Yield a ConsolidatedComponent for each directory where 75% or more of the files have the
-    same license expression and copyright holders
+    Yield a ConsolidatedComponent for every directory if there are files with
+    both license and copyright detected in them
     """
-    # TODO: Create Consolidated Components for the 25% or less of files that
-    # aren't part of the majority
-    # TODO: Take license score into account
     root = codebase.root
     if root.extra_data.get('in_package_component'):
         return
 
-    origin_translation_table = {}
-    package_file_count = 0
     for resource in codebase.walk(topdown=False):
-        # TODO: Consider facets for later
-
-        if resource.is_file:
-            if resource.extra_data.get('in_package_component'):
-                package_file_count += 1
+        if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
 
         children = resource.children(codebase)
         if not children:
             continue
 
-        # Collect license expression and holders count for stat-based summarization
-        origin_count = Counter()
-        # TODO: Consider license match coverage and license score when consolidating things on licenses
-        # We may consolidate things by a weakly-matched license
+        origins = {}
         for child in children:
-            if child.extra_data.get('in_package_component'):
+            if (child.extra_data.get('in_package_component')
+                    or (not child.license_expressions and not child.holders)):
                 continue
             if child.is_file:
                 license_expression = combine_expressions(child.license_expressions)
                 holders = process_holders(h['value'] for h in child.holders)
                 child.extra_data['license_expression'] = license_expression
-                child.extra_data['holders'] = holders
+                child.extra_data['normalized_holders'] = holders
                 child.save(codebase)
 
-                # TODO: Consider grouping on holders only
                 if not license_expression or not holders:
                     continue
+
                 origin = holders, license_expression
-                # TODO: Try to split apart all the holders and do combinations
-                # of holders and expressions? (COMBINATORIAL EXPLOSION)
-                # TODO: use cluster()
                 origin_key = ''.join(holder.key for holder in holders) + license_expression
-                origin_translation_table[origin_key] = origin
-                origin_count[origin_key] += 1
-            else:
-                # We are in a subdirectory
-                child_origin_count = child.extra_data.get('origin_count', {})
-                if not child_origin_count:
-                    continue
-                origin_count.update(child_origin_count)
+                origins[origin_key] = origin
 
-        if origin_count:
-            resource.extra_data['origin_count'] = origin_count
-            resource.save(codebase)
+        resource.extra_data['majority'] = True
+        resource.save(codebase)
 
-            # TODO: When there is a tie, we need to be explicit and consistent about the tiebreaker
-            # TODO: Consider creating two components instead of tiebreaking
-            origin_key, top_count = origin_count.most_common(1)[0]
-            current_file_only_count = resource.files_count - package_file_count
-            if is_majority(top_count, current_file_only_count):
-                majority_holders, majority_license_expression = origin_translation_table[origin_key]
-                resource.extra_data['license_expression'] = majority_license_expression
-                resource.extra_data['holders'] = majority_holders
-                resource.extra_data['majority'] = True
-                resource.save(codebase)
-                # Yield any time we have a majority
-                c = create_license_holders_consolidated_component(resource, codebase)
-                yield c
-
-                # # Create consolidated components for a child that has a majority
-                # # that is different than the one we have now
-                # for child in children:
-                #     # We are only looking at directories so we can summarize to them
-                #     if not child.is_dir:
-                #         continue
-                #     license_expression = child.extra_data.get('license_expression')
-                #     holders = child.extra_data.get('holders')
-                #     # If there is a child directory that has a different majority than its parent,
-                #     # we report it
-                #     if ((license_expression and license_expression != majority_license_expression)
-                #             or (holders and holders != majority_holders)):
-                #         c = create_license_holders_consolidated_component(child, codebase)
-                #         if c:
-                #             child.extra_data['majority'] = True
-                #             child.save(codebase)
-                #             yield c
-            else:
-                # If there is no majority, we see if any of our child directories had majorities
-                for child in children:
-                    # Again, we are only looking at directories so we can summarize to them
-                    if not child.is_dir:
-                        continue
-                    c = create_license_holders_consolidated_component(child, codebase)
-                    if c:
-                        child.extra_data['majority'] = True
-                        child.save(codebase)
-                        yield c
-
-    # Yield a Component for root if there is a majority
-    c = create_license_holders_consolidated_component(root, codebase)
-    if c:
-        root.extra_data['majority'] = True
-        root.save(codebase)
-        yield c
+        for c in create_license_holders_consolidated_components(resource, codebase, origins):
+            yield c
 
 
-def is_majority(count, files_count):
-    """
-    Return True if `count` divided by `files_count` is greater than or equal to
-    `threshold`
-    """
-    # TODO: Increase this and test with real codebases
-    threshold = 0.75
-    return count / files_count >= threshold
-
-
-def create_license_holders_consolidated_component(resource, codebase):
+def create_license_holders_consolidated_components(resource, codebase, origins):
     """
     Return a ConsolidatedComponent for `resource` if it can be summarized on license
     expression and holders
     """
-    # We only want to create ConsolidatedComponents from directory Resources
-    if not resource.is_dir:
-        return
-    license_expression = resource.extra_data.get('license_expression')
-    holders = resource.extra_data.get('holders')
-    if license_expression and holders:
-        component_resources = get_consolidated_component_resources(resource, codebase)
+    for _, (holders, license_expression) in origins.items():
+        component_resources = get_consolidated_component_resources(resource, codebase, license_expression, holders)
         if component_resources:
             c = Consolidation(
                 core_license_expression=license_expression,
@@ -476,26 +392,22 @@ def create_license_holders_consolidated_component(resource, codebase):
                 files_count=sum(1 for component_resource in component_resources if component_resource.is_file),
                 resources=component_resources,
             )
-            return ConsolidatedComponent(
+            yield ConsolidatedComponent(
                 type='license-holders',
                 consolidation=c
             )
 
 
-def get_consolidated_component_resources(resource, codebase):
+def get_consolidated_component_resources(resource, codebase, license_expression, holders):
     """
     Return a list of resources to be used to create a ConsolidatedComponent from `resource`
     """
-    license_expression = resource.extra_data.get('license_expression')
-    holders = resource.extra_data.get('holders')
-    if not license_expression and holders:
-        return
     resources = [] if resource.extra_data.get('in_package_component') else [resource]
     for r in resource.walk(codebase, topdown=False):
         if r.extra_data.get('in_package_component'):
             continue
-        if (r.extra_data.get('license_expression', '') == license_expression
-                and r.extra_data.get('holders', tuple()) == holders):
+        if (resource.extra_data.get('license_expression', '') != license_expression
+                and r.extra_data.get('normalized_holders', []) == holders):
             resources.append(r)
     return resources
 
