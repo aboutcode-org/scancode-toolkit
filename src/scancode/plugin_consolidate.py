@@ -354,10 +354,11 @@ def get_license_holders_consolidated_components(codebase):
 
         origins = {}
         for child in children:
-            if (child.extra_data.get('in_package_component')
-                    or (not child.license_expressions and not child.holders)):
+            if child.extra_data.get('in_package_component'):
                 continue
             if child.is_file:
+                if not child.license_expressions and not child.holders:
+                    continue
                 license_expression = combine_expressions(child.license_expressions)
                 holders = process_holders(h['value'] for h in child.holders)
                 child.extra_data['license_expression'] = license_expression
@@ -370,12 +371,23 @@ def get_license_holders_consolidated_components(codebase):
                 origin = holders, license_expression
                 origin_key = ''.join(holder.key for holder in holders) + license_expression
                 origins[origin_key] = origin
+            if child.is_dir:
+                for child_origin_key, child_origin in child.extra_data.get('origins', {}).items():
+                    if child_origin_key in origins:
+                        continue
+                    for c in create_license_holders_consolidated_components(child, codebase, {child_origin_key:child_origin}):
+                        child.extra_data['majority'] = True
+                        child.save(codebase)
+                        yield c
 
-        resource.extra_data['majority'] = True
-        resource.save(codebase)
+        if origins:
+            resource.extra_data['origins'] = origins
+            resource.save(codebase)
 
-        for c in create_license_holders_consolidated_components(resource, codebase, origins):
-            yield c
+    for c in create_license_holders_consolidated_components(root, codebase, root.extra_data.get('origins', {})):
+        root.extra_data['majority'] = True
+        root.save(codebase)
+        yield c
 
 
 def create_license_holders_consolidated_components(resource, codebase, origins):
