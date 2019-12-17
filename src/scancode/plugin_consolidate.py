@@ -357,10 +357,12 @@ def get_license_holders_consolidated_components(codebase):
             if child.extra_data.get('in_package_component'):
                 continue
             if child.is_file:
-                if not child.license_expressions and not child.holders:
+                if not child.license_expressions or not child.holders:
                     continue
                 license_expression = combine_expressions(child.license_expressions)
                 holders = process_holders(h['value'] for h in child.holders)
+                if not license_expression or not holders:
+                    continue
                 child.extra_data['license_expression'] = license_expression
                 child.extra_data['normalized_holders'] = holders
                 child.save(codebase)
@@ -418,7 +420,7 @@ def get_consolidated_component_resources(resource, codebase, license_expression,
     for r in resource.walk(codebase, topdown=False):
         if r.extra_data.get('in_package_component'):
             continue
-        if (resource.extra_data.get('license_expression', '') != license_expression
+        if (r.extra_data.get('license_expression', '') == license_expression
                 and r.extra_data.get('normalized_holders', []) == holders):
             resources.append(r)
     return resources
