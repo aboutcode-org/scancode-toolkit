@@ -359,16 +359,23 @@ def get_license_holders_consolidated_components(codebase):
             if child.is_file:
                 if not child.license_expressions or not child.holders:
                     continue
+
                 license_expression = combine_expressions(child.license_expressions)
                 holders = process_holders(h['value'] for h in child.holders)
-                if not license_expression or not holders:
-                    continue
-                child.extra_data['license_expression'] = license_expression
-                child.extra_data['normalized_holders'] = holders
-                child.save(codebase)
 
                 if not license_expression or not holders:
                     continue
+
+                # Dedupe holders
+                d = {}
+                for holder in holders:
+                    if holder.key not in d:
+                        d[holder.key] = holder
+                holders = [holder for _, holder in d.items()]
+
+                child.extra_data['license_expression'] = license_expression
+                child.extra_data['normalized_holders'] = holders
+                child.save(codebase)
 
                 origin = holders, license_expression
                 origin_key = ''.join(holder.key for holder in holders) + license_expression
