@@ -966,21 +966,19 @@
     },
     {
       "type": "license-holders",
-      "identifier": "inc_oracle_theodore_tso_1",
-      "consolidated_license_expression": "gpl-1.0-plus",
+      "identifier": "kaz_kylheku_1",
+      "consolidated_license_expression": "other-permissive",
       "consolidated_holders": [
-        "Oracle, Inc.",
-        "Theodore Ts'o"
+        "Kaz Kylheku"
       ],
-      "consolidated_copyright": "Copyright (c) Oracle, Inc., Theodore Ts'o",
-      "core_license_expression": "gpl-1.0-plus",
+      "consolidated_copyright": "Copyright (c) Kaz Kylheku",
+      "core_license_expression": "other-permissive",
       "core_holders": [
-        "Oracle, Inc.",
-        "Theodore Ts'o"
+        "Kaz Kylheku"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "license-holders",
@@ -1376,19 +1374,21 @@
     },
     {
       "type": "license-holders",
-      "identifier": "kaz_kylheku_1",
-      "consolidated_license_expression": "other-permissive",
+      "identifier": "inc_oracle_theodore_tso_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
       "consolidated_holders": [
-        "Kaz Kylheku"
+        "Oracle, Inc.",
+        "Theodore Ts'o"
       ],
-      "consolidated_copyright": "Copyright (c) Kaz Kylheku",
-      "core_license_expression": "other-permissive",
+      "consolidated_copyright": "Copyright (c) Oracle, Inc., Theodore Ts'o",
+      "core_license_expression": "gpl-1.0-plus",
       "core_holders": [
-        "Kaz Kylheku"
+        "Oracle, Inc.",
+        "Theodore Ts'o"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 1
     },
     {
       "type": "license-holders",

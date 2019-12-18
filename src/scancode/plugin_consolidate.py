@@ -373,18 +373,18 @@ def get_license_holders_consolidated_components(codebase):
                         d[holder.key] = holder
                 holders = [holder for _, holder in d.items()]
 
-                child.extra_data['license_expression'] = license_expression
+                child.extra_data['normalized_license_expression'] = license_expression
                 child.extra_data['normalized_holders'] = holders
                 child.save(codebase)
 
                 origin = holders, license_expression
-                origin_key = ''.join(holder.key for holder in holders) + license_expression
+                origin_key = '_'.join(tuple(holder.key for holder in holders) + (license_expression,))
                 origins[origin_key] = origin
             if child.is_dir:
                 for child_origin_key, child_origin in child.extra_data.get('origins', {}).items():
                     if child_origin_key in origins:
                         continue
-                    for c in create_license_holders_consolidated_components(child, codebase, {child_origin_key:child_origin}):
+                    for c in create_license_holders_consolidated_components(child, codebase, {child_origin_key: child_origin}):
                         child.extra_data['majority'] = True
                         child.save(codebase)
                         yield c
@@ -410,7 +410,7 @@ def create_license_holders_consolidated_components(resource, codebase, origins):
             c = Consolidation(
                 core_license_expression=license_expression,
                 core_holders=holders,
-                files_count=sum(1 for component_resource in component_resources if component_resource.is_file),
+                files_count=len([component_resource for component_resource in component_resources if component_resource.is_file]),
                 resources=component_resources,
             )
             yield ConsolidatedComponent(
@@ -427,7 +427,7 @@ def get_consolidated_component_resources(resource, codebase, license_expression,
     for r in resource.walk(codebase, topdown=False):
         if r.extra_data.get('in_package_component'):
             continue
-        if (r.extra_data.get('license_expression', '') == license_expression
+        if (r.extra_data.get('normalized_license_expression', '') == license_expression
                 and r.extra_data.get('normalized_holders', []) == holders):
             resources.append(r)
     return resources
@@ -459,7 +459,7 @@ def combine_license_holders_consolidated_components(components):
         c = Consolidation(
             core_license_expression=component_license_expression,
             core_holders=component_holders,
-            files_count=sum(1 for component_resource in component_resources if component_resource.is_file),
+            files_count=len([component_resource for component_resource in component_resources if component_resource.is_file]),
             resources=component_resources,
         )
         yield ConsolidatedComponent(
