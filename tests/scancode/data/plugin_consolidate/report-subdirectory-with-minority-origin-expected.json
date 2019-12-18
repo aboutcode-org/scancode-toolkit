@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "license-holders",
-      "identifier": "omega_corp__1",
+      "identifier": "corp_omega_1",
       "consolidated_license_expression": "mit",
       "consolidated_holders": [
         "Omega Corp."
@@ -38,7 +38,7 @@
     },
     {
       "type": "license-holders",
-      "identifier": "ibm_corp__1",
+      "identifier": "corp_ibm_1",
       "consolidated_license_expression": "mit",
       "consolidated_holders": [
         "IBM Corp."
@@ -80,7 +80,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 4,
       "dirs_count": 1,
@@ -159,7 +159,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -238,7 +238,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -317,7 +317,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -349,7 +349,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "omega_corp__1"
+        "corp_omega_1"
       ],
       "files_count": 1,
       "dirs_count": 0,
@@ -428,7 +428,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "omega_corp__1"
+        "corp_omega_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
