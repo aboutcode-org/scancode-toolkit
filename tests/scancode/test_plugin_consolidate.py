@@ -30,7 +30,6 @@ from os import path
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
-from scancode.plugin_consolidate import is_majority
 
 
 class TestConsolidate(FileDrivenTesting):
@@ -41,32 +40,6 @@ class TestConsolidate(FileDrivenTesting):
         scan_file = self.get_temp_file('json')
         run_scan_click(['-clip', scan_loc, '--json', scan_file])
         return scan_file
-
-    def test_is_majority_above_threshold(self):
-        files_count = 10
-        src_count = 8
-        assert is_majority(src_count, files_count)
-
-    def test_is_majority_below_threshold(self):
-        files_count = 10
-        src_count = 7
-        assert not is_majority(src_count, files_count)
-
-    def test_consolidate_clear_summary(self):
-        # 75% of the files have the same license expression and holder, so we should have one consolidated component
-        scan_loc = self.get_test_loc('plugin_consolidate/clear-summary')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_consolidate/clear-summary-expected.json')
-        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
-
-    def test_consolidate_no_summary(self):
-        # 50% of the files have the same license expression and holder, so no consolidated component should be created
-        scan_loc = self.get_test_loc('plugin_consolidate/no-summary')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_consolidate/no-summary-expected.json')
-        run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
 
     def test_consolidate_package(self):
         scan_loc = self.get_test_loc('plugin_consolidate/package')
@@ -84,14 +57,6 @@ class TestConsolidate(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_consolidate/package-files-not-counted-in-license-holders-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True)
-
-    def test_consolidate_clear_summary_from_json(self):
-        # 75% of the files have the same license expression and holder, so we should have one consolidated component
-        scan_file = self.get_scan('plugin_consolidate/clear-summary', cli_options='-clip')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_consolidate/clear-summary-expected.json')
-        run_scan_click(['--from-json', scan_file, '--consolidate', '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
 
     def test_consolidate_component_package_from_json_can_run_twice(self):
         scan_file = self.get_scan('plugin_consolidate/component-package', cli_options='-clip')
@@ -168,4 +133,18 @@ class TestConsolidate(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/report-subdirectory-with-minority-origin-expected.json')
         run_scan_click(['-clip', scan_loc, '--consolidate', '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
+
+    def test_consolidate_zlib(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/zlib.json')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/zlib-expected.json')
+        run_scan_click(['--from-json', scan_loc, '--consolidate', '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)
+
+    def test_consolidate_e2fsprogs(self):
+        scan_loc = self.get_test_loc('plugin_consolidate/e2fsprogs.json')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_consolidate/e2fsprogs-expected.json')
+        run_scan_click(['--from-json', scan_loc, '--consolidate', '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False, remove_file_date=True, ignore_headers=True)

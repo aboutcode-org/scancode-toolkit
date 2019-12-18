@@ -34,7 +34,7 @@
     },
     {
       "type": "license-holders",
-      "identifier": "the_apache_software_foundation_1",
+      "identifier": "apache_foundation_software_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
         "The Apache Software Foundation"
@@ -47,6 +47,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 3
+    },
+    {
+      "type": "license-holders",
+      "identifier": "inc_nexb_1",
+      "consolidated_license_expression": "lgpl-2.0",
+      "consolidated_holders": [
+        "nexB, Inc."
+      ],
+      "consolidated_copyright": "Copyright (c) nexB, Inc.",
+      "core_license_expression": "lgpl-2.0",
+      "core_holders": [
+        "nexB, Inc."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     }
   ],
   "consolidated_packages": [
@@ -98,8 +114,8 @@
       "core_holders": [],
       "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "other_holders": [
-        "IBM Corp.",
         "The Apache Software",
+        "IBM Corp.",
         "The Apache Software Foundation"
       ],
       "files_count": 3
@@ -261,7 +277,8 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "apache_foundation_software_1",
+        "inc_nexb_1"
       ],
       "files_count": 4,
       "dirs_count": 0,
@@ -340,7 +357,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -419,7 +436,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -498,7 +515,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "the_apache_software_foundation_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -576,7 +593,9 @@
       ],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "inc_nexb_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

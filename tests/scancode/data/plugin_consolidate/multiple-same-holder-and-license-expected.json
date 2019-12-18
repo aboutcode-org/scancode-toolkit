@@ -22,7 +22,7 @@
   "consolidated_components": [
     {
       "type": "license-holders",
-      "identifier": "ibm_corp__ibm_corp__1",
+      "identifier": "corp_ibm_1",
       "consolidated_license_expression": "gpl-2.0",
       "consolidated_holders": [
         "IBM Corp."
@@ -30,7 +30,6 @@
       "consolidated_copyright": "Copyright (c) IBM Corp.",
       "core_license_expression": "gpl-2.0",
       "core_holders": [
-        "IBM Corp.",
         "IBM Corp."
       ],
       "other_license_expression": null,
@@ -65,7 +64,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 2,
       "dirs_count": 0,
@@ -187,7 +186,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -309,7 +308,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "ibm_corp__ibm_corp__1"
+        "corp_ibm_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
