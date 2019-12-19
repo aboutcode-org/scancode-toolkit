@@ -188,7 +188,8 @@ class Consolidator(PostScanPlugin):
             return
 
         # Process ConsolidatedPackages and ConsolidatedComponents (if needed)
-        consolidations = combine_license_holders_consolidated_components(consolidations)
+        #consolidations = combine_license_holders_consolidated_components(consolidations)
+        consolidations = group_license_holders_consolidated_components_by_holders(consolidations)
 
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
         codebase.attributes.consolidated_packages = consolidated_packages = []
@@ -458,6 +459,45 @@ def combine_license_holders_consolidated_components(components):
         component_holders, component_license_expression = origin_translation_table[origin_key]
         c = Consolidation(
             core_license_expression=component_license_expression,
+            core_holders=component_holders,
+            files_count=len([component_resource for component_resource in component_resources if component_resource.is_file]),
+            resources=component_resources,
+        )
+        yield ConsolidatedComponent(
+            type='license-holders',
+            consolidation=c,
+        )
+
+
+def group_license_holders_consolidated_components_by_holders(components):
+    """
+    Combine ConsolidatedComponents with the same holders into a single
+    ConsolidatedComponent
+    """
+    components_by_holders = defaultdict(list)
+    for component in components:
+        is_consolidated_component = isinstance(component, ConsolidatedComponent)
+        if not is_consolidated_component or (is_consolidated_component and component.type != 'license-holders'):
+            # Yield the components we don't handle
+            yield component
+            continue
+        holder_key = '_'.join(h.key for h in component.consolidation.core_holders)
+        components_by_holders[holder_key].append(component)
+
+    for holder_key, components in components_by_holders.items():
+        component_license_expressions = []
+        component_holders = {}
+        component_resources = []
+        for component in components:
+            for holder in component.consolidation.core_holders:
+                if holder.key not in component_holders:
+                    component_holders[holder.key] = holder
+            component_license_expressions.append(component.consolidation.core_license_expression)
+            component_resources.extend(component.consolidation.resources)
+        component_holders = [holder for _, holder in component_holders.items()]
+
+        c = Consolidation(
+            core_license_expression=combine_expressions(component_license_expressions),
             core_holders=component_holders,
             files_count=len([component_resource for component_resource in component_resources if component_resource.is_file]),
             resources=component_resources,
