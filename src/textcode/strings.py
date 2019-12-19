@@ -202,7 +202,7 @@ def is_relative_path(s):
     Return True if s looks like a relative posix path.
     Example: usr/lib/librt.so.1 or ../usr/lib
     """
-    relative = re.compile('^(?:([^/]|\\.\\.)[\\w_\\-]+/.*$', re.IGNORECASE).match
+    relative = re.compile('^(?:([^/]|\\.\\.)[\\w_\\-]+/.*$)', re.IGNORECASE).match
     return relative(s)
 
 
