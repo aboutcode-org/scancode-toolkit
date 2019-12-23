@@ -137,7 +137,8 @@ class License(object):
     spdx_license_key = __attrib(default=None)
     # list of other keys, such as deprecated ones
     other_spdx_license_keys = __attrib(default=attr.Factory(list))
-
+    # OSI License Key
+    osi_license_key = __attrib(default=None)
     # Various URLs for info
     text_urls = __attrib(default=attr.Factory(list))
     osi_url = __attrib(default=None)
