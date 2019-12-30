@@ -1,17 +1,16 @@
 .. _cpp_includes_plugin:
 
-CPP Include Plugin
-==================
+CPP Includes Plugin
+===================
 
-This plugin allows users to collect #includes statements in C/C++ files.
+This plugin allows users to collect the #includes statements in C/C++ files.
 
 Using the Plugin
 ----------------
 
-User will need to use the ``--cpp-includes`` option.
+User needs to use the ``--cpp-includes`` option.
 
-The following command will run the ``--cpp-includes`` option to collect all the 
-#include statements from C/C++ files::
+The following command will collect the #includes statements from C/C++ files.::
 
   $ scancode --cpp-includes /path/to/codebase/ --json-pp ~/path/to/scan-output.json
 
