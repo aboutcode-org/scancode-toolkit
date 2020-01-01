@@ -27,3 +27,4 @@ ignorable_holders:
 ignorable_urls:
     - https://fsf.org/
     - https://www.gnu.org/licenses/
+osi_license_key: AGPL-3.0

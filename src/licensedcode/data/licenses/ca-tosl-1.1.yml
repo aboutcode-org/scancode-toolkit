@@ -16,3 +16,4 @@ ignorable_urls:
     - http://www.ca.com/catrdmrk.htm
 ignorable_emails:
     - opensource@ca.com
+osi_license_key: CATOSL-1.1

@@ -14,3 +14,4 @@ other_urls:
     - https://opensource.org/licenses/CUA-OPL-1.0
 ignorable_urls:
     - http://cuaoffice.sourceforge.net/
+osi_license_key: CUA-OPL-1.0

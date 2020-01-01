@@ -19,3 +19,4 @@ ignorable_holders:
 ignorable_urls:
     - http://hdl.handle.net/1895.22/1012
     - http://www.python.org/
+osi_license_key: CNRI-Python

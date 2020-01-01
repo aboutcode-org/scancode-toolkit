@@ -19,3 +19,4 @@ ignorable_holders:
 ignorable_urls:
     - http://www.apple.com/legal/guidelinesfor3rdparties.html
     - http://www.opensource.apple.com/apsl/
+osi_license_key: APSL-2.0
