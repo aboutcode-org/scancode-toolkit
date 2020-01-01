@@ -28,11 +28,11 @@ def add_osi_key(obj: "OSI License Object"):
     osi_key = obj['id']
     if not result:
         return None
-    mapped_license = licenses[result] # license object from Scancode 
-    # modify this license to have an OSI Key
-    # mapped_icense.osi_license_key = osi_key
-    # throws attribute error
-    
+    mapped_license = licenses[result] # license object from Scancode
+    print(mapped_license.key)
+    licenses_path = "src/licensedcode/data/licenses/"
+    file_to_modify = open(licenses_path + mapped_license.key + ".yml", "a")
+    file_to_modify.write("osi_license_key: " + osi_key)
 
 def add_osi_keys():
     """

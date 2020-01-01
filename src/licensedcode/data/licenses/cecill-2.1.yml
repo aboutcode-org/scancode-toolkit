@@ -15,3 +15,4 @@ other_urls:
     - http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.html
 ignorable_urls:
     - http://www.cecill.info/index.en.html
+osi_license_key: CECILL-2.1

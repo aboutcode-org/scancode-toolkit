@@ -17,3 +17,4 @@ other_urls:
     - https://opensource.org/licenses/SPL-1.0
 ignorable_urls:
     - http://www.sun.com/
+osi_license_key: SPL-1.0

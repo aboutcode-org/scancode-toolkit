@@ -24,3 +24,4 @@ ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:
     - apache@apache.org
+osi_license_key: Apache-1.1

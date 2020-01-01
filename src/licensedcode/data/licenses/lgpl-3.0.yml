@@ -27,3 +27,4 @@ ignorable_holders:
 ignorable_urls:
     - https://fsf.org/
 
+osi_license_key: LGPL-3.0
