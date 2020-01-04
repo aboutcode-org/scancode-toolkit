@@ -32,7 +32,7 @@ Other contributors, listed alphabetically, are:
 * Sébastien Bigaret -- QVT Operational lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
-* Stéphane Blondon -- SGF lexer
+* Stéphane Blondon -- SGF and Sieve lexers
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
 * Martijn Braam -- Kernel log lexer
