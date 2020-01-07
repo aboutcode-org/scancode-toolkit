@@ -21,7 +21,7 @@
   ],
   "consolidated_components": [
     {
-      "type": "license-holders",
+      "type": "holders",
       "identifier": "apache_foundation_software_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
