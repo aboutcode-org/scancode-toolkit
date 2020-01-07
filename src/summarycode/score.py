@@ -566,10 +566,11 @@ full_text = ScoringElement(
     scorer=has_full_text_for_all_licenses,
     weight=15)
 
+
 # not used for now
-unkown = ScoringElement(
+unknown = ScoringElement(
     is_binary=True,
-    name='unkown',
+    name='unknown',
     scorer=has_unkown_licenses,
     weight=15)
 
