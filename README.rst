@@ -2,7 +2,7 @@ Welcome to Pygments
 ===================
 
 This is the source of Pygments.  It is a **generic syntax highlighter** written
-in Python that supports over 300 languages and text formats, for use in code
+in Python that supports over 500 languages and text formats, for use in code
 hosting, forums, wikis or other applications that need to prettify source code.
 
 Installing
@@ -14,7 +14,7 @@ or ``python setup.py install`` to install from a checkout.
 Documentation
 -------------
 
-... can be found online at http://pygments.org/ or created with Sphinx by ::
+... can be found online at https://pygments.org/ or created with Sphinx by ::
 
    cd doc
    make html
@@ -37,7 +37,7 @@ Pygments is maintained by **Georg Brandl**, e-mail address *georg*\ *@*\ *python
 and **Matthäus Chajdas**.
 
 Many lexers and fixes have been contributed by **Armin Ronacher**, the rest of
-the `Pocoo <http://dev.pocoo.org/>`_ team and **Tim Hatch**.
+the `Pocoo <https://dev.pocoo.org/>`_ team and **Tim Hatch**.
 
 The code is distributed under the BSD 2-clause license.  Contributors making pull
 requests must agree that they are able and willing to put their contributions
