@@ -365,12 +365,12 @@ def ignore_nothing(_):
     return False
 
 
-def walk(location, ignored=ignore_nothing):
+def walk(location, ignored=None):
     """
     Walk location returning the same tuples as os.walk but with a different
     behavior:
      - always walk top-down, breadth-first.
-     - always ignore and never follow symlinks, .
+     - always ignore and never follow symlinks,
      - always ignore special files (FIFOs, etc.)
      - optionally ignore files and directories by invoking the `ignored`
        callable on files and directories returning True if it should be ignored.
@@ -380,10 +380,11 @@ def walk(location, ignored=ignore_nothing):
         location = fsencode(location)
 
     # TODO: consider using the new "scandir" module for some speed-up.
-    if TRACE:
-        ign = ignored(location)
-        logger_debug('walk: ignored:', location, ign)
-    if ignored(location):
+
+    is_ignored = ignored(location) if ignored else False
+    if is_ignored:
+        if TRACE:
+            logger_debug('walk: ignored:', location, is_ignored)
         return
 
     if filetype.is_file(location) :
@@ -395,9 +396,9 @@ def walk(location, ignored=ignore_nothing):
         # TODO: consider using scandir
         for name in os.listdir(location):
             loc = os.path.join(location, name)
-            if filetype.is_special(loc) or ignored(loc):
+            if filetype.is_special(loc) or (ignored and ignored(loc)):
                 if TRACE:
-                    ign = ignored(loc)
+                    ign = ignored and ignored(loc)
                     logger_debug('walk: ignored:', loc, ign)
                 continue
             # special files and symlinks are always ignored
