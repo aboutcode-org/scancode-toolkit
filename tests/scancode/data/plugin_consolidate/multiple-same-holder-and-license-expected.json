@@ -21,7 +21,7 @@
   ],
   "consolidated_components": [
     {
-      "type": "license-holders",
+      "type": "holders",
       "identifier": "corp_ibm_1",
       "consolidated_license_expression": "gpl-2.0",
       "consolidated_holders": [

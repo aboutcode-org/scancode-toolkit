@@ -37,23 +37,7 @@
   ],
   "consolidated_components": [
     {
-      "type": "license-holders",
-      "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0",
-      "consolidated_holders": [
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "The Apache Software Foundation"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    },
-    {
-      "type": "license-holders",
+      "type": "holders",
       "identifier": "inc_nexb_1",
       "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
@@ -67,6 +51,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "apache_foundation_software_1",
+      "consolidated_license_expression": "apache-2.0",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
+      "core_license_expression": "apache-2.0",
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
     }
   ],
   "consolidated_packages": [

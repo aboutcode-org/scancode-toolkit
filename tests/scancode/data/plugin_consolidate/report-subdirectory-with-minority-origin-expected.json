@@ -21,7 +21,7 @@
   ],
   "consolidated_components": [
     {
-      "type": "license-holders",
+      "type": "holders",
       "identifier": "corp_omega_1",
       "consolidated_license_expression": "mit",
       "consolidated_holders": [
@@ -37,7 +37,7 @@
       "files_count": 1
     },
     {
-      "type": "license-holders",
+      "type": "holders",
       "identifier": "corp_ibm_1",
       "consolidated_license_expression": "mit",
       "consolidated_holders": [
