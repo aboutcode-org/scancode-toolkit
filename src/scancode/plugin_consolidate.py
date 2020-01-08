@@ -295,7 +295,7 @@ def get_consolidated_packages(codebase):
                 core_holders=[h for h, _ in copyright_summary.cluster(package_holders)],
                 other_license_expression=simplified_discovered_license_expression,
                 other_holders=[h for h, _ in copyright_summary.cluster(discovered_holders)],
-                files_count=sum(1 for package_resource in package_resources if package_resource.is_file),
+                files_count=len([package_resource for package_resource in package_resources if package_resource.is_file]),
                 resources=package_resources,
             )
             if is_build_file:
@@ -344,6 +344,7 @@ def get_holders_consolidated_components(codebase):
     if root.extra_data.get('in_package_component'):
         return
 
+    all_holders = OrderedDict()
     for resource in codebase.walk(topdown=False):
         if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
@@ -384,47 +385,40 @@ def get_holders_consolidated_components(codebase):
                         current_holders[key] = holder
 
             if child.is_dir:
-                lookup, child_holders_rids = child.extra_data.get('holders', ({}, {}))
-                for key, rids in child_holders_rids.items():
-                    if key in current_holders:
-                        continue
-                    rids.append(child.rid)
-                    holder = lookup[key]
-                    resources = [codebase.get_resource(rid) for rid in rids]
-                    license_expressions = []
-                    for r in resources:
-                        normalized_license_expression = r.extra_data.get('normalized_license_expression')
-                        if normalized_license_expression:
-                            license_expressions.append(normalized_license_expression)
-                    child.extra_data['majority'] = True
-                    child.save(codebase)
-                    c = Consolidation(
-                        core_license_expression=combine_expressions(license_expressions),
-                        core_holders=[holder],
-                        files_count=len(resources),
-                        resources=resources,
-                    )
-                    yield ConsolidatedComponent(
-                        type='holders',
-                        consolidation=c
-                    )
+                for c in yield_consolidated_components(child, codebase, all_holders):
+                    # only core holders are set
+                    core_consolidation_holders = c.consolidation.core_holders or []
+                    for holder in core_consolidation_holders:
+                        if holder.key not in current_holders:
+                            yield c
 
         if current_holders and current_holders_rids:
-            resource.extra_data['holders'] = current_holders, current_holders_rids
+            resource.extra_data['holders'] = current_holders_rids
             resource.save(codebase)
+            all_holders.update(current_holders)
 
-    lookup, root_holders_rids = root.extra_data.get('holders', ({}, {}))
-    for key, rids in root_holders_rids.items():
-        rids.append(root.rid)
-        holder = lookup[key]
+    for c in yield_consolidated_components(root, codebase, all_holders):
+        yield c
+
+
+def yield_consolidated_components(resource, codebase, lookup_table):
+    """
+    Yield ConsolidatedComponents for every holder-grouped set of RIDs for a given resource
+    """
+    resource_holders_rids = resource.extra_data.get('holders', {})
+    for key, rids in resource_holders_rids.items():
+        # We add the rid of the directory resource we are yielding ConsolidatedComponents at
+        # so we can properly report a consolidation at this directory
+        rids.append(resource.rid)
+        holder = lookup_table[key]
         resources = [codebase.get_resource(rid) for rid in rids]
         license_expressions = []
         for r in resources:
             normalized_license_expression = r.extra_data.get('normalized_license_expression')
             if normalized_license_expression:
                 license_expressions.append(normalized_license_expression)
-        root.extra_data['majority'] = True
-        root.save(codebase)
+        resource.extra_data['majority'] = True
+        resource.save(codebase)
         c = Consolidation(
             core_license_expression=combine_expressions(license_expressions),
             core_holders=[holder],

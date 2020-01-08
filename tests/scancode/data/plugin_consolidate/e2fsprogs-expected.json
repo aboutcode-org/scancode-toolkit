@@ -223,12 +223,12 @@
       "identifier": "institute_massachusetts_of_technology_1",
       "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0 AND mit-old-style-no-advert AND mit-with-modification-obligations",
       "consolidated_holders": [
-        "Massachusetts Institute of Technology"
+        "the Massachusetts Institute of Technology"
       ],
-      "consolidated_copyright": "Copyright (c) Massachusetts Institute of Technology",
+      "consolidated_copyright": "Copyright (c) the Massachusetts Institute of Technology",
       "core_license_expression": "mit-old-style-no-advert AND ((lgpl-2.0 AND mit-with-modification-obligations) AND (gpl-1.0-plus AND mit-with-modification-obligations))",
       "core_holders": [
-        "Massachusetts Institute of Technology"
+        "the Massachusetts Institute of Technology"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -1087,12 +1087,12 @@
       "identifier": "board_information_institute_massachusetts_of_processing_student_t_1",
       "consolidated_license_expression": "bsd-new AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert AND unknown",
       "consolidated_holders": [
-        "Student Information Processing Board of the Massachusetts Institute of Technology"
+        "the Student Information Processing Board of the Massachusetts Institute of Technology"
       ],
-      "consolidated_copyright": "Copyright (c) Student Information Processing Board of the Massachusetts Institute of Technology",
+      "consolidated_copyright": "Copyright (c) the Student Information Processing Board of the Massachusetts Institute of Technology",
       "core_license_expression": "((mit-old-style-no-advert AND unknown) AND mit-old-style-no-advert) AND mit-old-style-no-advert AND (((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND mit-old-style-no-advert)",
       "core_holders": [
-        "Student Information Processing Board of the Massachusetts Institute of Technology"
+        "the Student Information Processing Board of the Massachusetts Institute of Technology"
       ],
       "other_license_expression": null,
       "other_holders": [],
