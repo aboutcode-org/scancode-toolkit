@@ -137,10 +137,8 @@ class Consolidator(PostScanPlugin):
     packages for different types of codebase summarization.
 
     A consolidated component is a group of Resources that have the same origin.
-    Currently, consolidated components are created by grouping Resources that have
-    the same license expression and copyright holders and the files that contain
-    this license expression and copyright holders combination make up 75% or more of
-    the files in the directory where they are found.
+    Currently, a ConsolidatedComponent is created for each detected copyright holder
+    in a codebase and contains resources that have that particular copyright holder.
 
     A consolidated package is a detected package in the scanned codebase that has
     been enhanced with data about other licenses and holders found within it.
