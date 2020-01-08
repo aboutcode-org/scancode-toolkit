@@ -104,7 +104,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -168,7 +168,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 4
     },
     {
       "type": "holders",
@@ -223,16 +223,16 @@
       "identifier": "institute_massachusetts_of_technology_1",
       "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0 AND mit-old-style-no-advert AND mit-with-modification-obligations",
       "consolidated_holders": [
-        "the Massachusetts Institute of Technology"
+        "Massachusetts Institute of Technology"
       ],
-      "consolidated_copyright": "Copyright (c) the Massachusetts Institute of Technology",
+      "consolidated_copyright": "Copyright (c) Massachusetts Institute of Technology",
       "core_license_expression": "mit-old-style-no-advert AND ((lgpl-2.0 AND mit-with-modification-obligations) AND (gpl-1.0-plus AND mit-with-modification-obligations))",
       "core_holders": [
-        "the Massachusetts Institute of Technology"
+        "Massachusetts Institute of Technology"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 4
+      "files_count": 6
     },
     {
       "type": "holders",
@@ -268,19 +268,35 @@
     },
     {
       "type": "holders",
-      "identifier": "android_open_project_source_1",
-      "consolidated_license_expression": "apache-2.0",
+      "identifier": "james_remnant_scott_1",
+      "consolidated_license_expression": "fsf-unlimited AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND lgpl-2.0-plus",
       "consolidated_holders": [
-        "The Android Open Source Project"
+        "Scott James Remnant"
       ],
-      "consolidated_copyright": "Copyright (c) The Android Open Source Project",
-      "core_license_expression": "apache-2.0",
+      "consolidated_copyright": "Copyright (c) Scott James Remnant",
+      "core_license_expression": "fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0",
       "core_holders": [
-        "The Android Open Source Project"
+        "Scott James Remnant"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "dienes_klee_1",
+      "consolidated_license_expression": "bsd-new AND gpl-1.0-plus AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert",
+      "consolidated_holders": [
+        "Klee Dienes"
+      ],
+      "consolidated_copyright": "Copyright (c) Klee Dienes",
+      "core_license_expression": "((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0)",
+      "core_holders": [
+        "Klee Dienes"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -408,7 +424,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -444,6 +460,22 @@
     },
     {
       "type": "holders",
+      "identifier": "board_information_institute_massachusetts_of_processing_student_t_1",
+      "consolidated_license_expression": null,
+      "consolidated_holders": [
+        "Massachusetts Institute of Technology, Student Information Processing Board"
+      ],
+      "consolidated_copyright": "Copyright (c) Massachusetts Institute of Technology, Student Information Processing Board",
+      "core_license_expression": null,
+      "core_holders": [
+        "Massachusetts Institute of Technology, Student Information Processing Board"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
       "identifier": "andrey_shedel_1",
       "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
@@ -453,6 +485,22 @@
       "core_license_expression": "lgpl-2.0",
       "core_holders": [
         "Andrey Shedel"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "ltd_nec_software_tohoku_1",
+      "consolidated_license_expression": null,
+      "consolidated_holders": [
+        "NEC Software Tohoku, Ltd."
+      ],
+      "consolidated_copyright": "Copyright (c) NEC Software Tohoku, Ltd.",
+      "core_license_expression": null,
+      "core_holders": [
+        "NEC Software Tohoku, Ltd."
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -648,7 +696,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 14
     },
     {
       "type": "holders",
@@ -684,19 +732,19 @@
     },
     {
       "type": "holders",
-      "identifier": "hocevar_sam_1",
-      "consolidated_license_expression": "gpl-2.0 AND lgpl-2.0 AND public-domain",
+      "identifier": "oracle_1",
+      "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0",
       "consolidated_holders": [
-        "Sam Hocevar"
+        "Oracle"
       ],
-      "consolidated_copyright": "Copyright (c) Sam Hocevar",
-      "core_license_expression": "(public-domain AND gpl-2.0) AND lgpl-2.0",
+      "consolidated_copyright": "Copyright (c) Oracle",
+      "core_license_expression": "lgpl-2.0 AND gpl-1.0-plus AND (lgpl-2.0 AND gpl-1.0-plus) AND gpl-2.0-plus",
       "core_holders": [
-        "Sam Hocevar"
+        "Oracle"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 13
     },
     {
       "type": "holders",
@@ -733,12 +781,12 @@
     {
       "type": "holders",
       "identifier": "linus_torvalds_1",
-      "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0",
+      "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
         "Linus Torvalds"
       ],
       "consolidated_copyright": "Copyright (c) Linus Torvalds",
-      "core_license_expression": "gpl-1.0-plus AND lgpl-2.0",
+      "core_license_expression": "lgpl-2.0",
       "core_holders": [
         "Linus Torvalds"
       ],
@@ -780,31 +828,31 @@
     },
     {
       "type": "holders",
-      "identifier": "dienes_klee_1",
-      "consolidated_license_expression": "bsd-new AND gpl-1.0-plus AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert",
+      "identifier": "android_open_project_source_1",
+      "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
-        "Klee Dienes"
+        "The Android Open Source Project"
       ],
-      "consolidated_copyright": "Copyright (c) Klee Dienes",
-      "core_license_expression": "((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0)",
+      "consolidated_copyright": "Copyright (c) The Android Open Source Project",
+      "core_license_expression": "apache-2.0",
       "core_holders": [
-        "Klee Dienes"
+        "The Android Open Source Project"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 3
+      "files_count": 2
     },
     {
       "type": "holders",
-      "identifier": "james_remnant_scott_1",
-      "consolidated_license_expression": "fsf-unlimited AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND lgpl-2.0-plus",
+      "identifier": "alte_regensburger_strasse_ulrich_windl_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Scott James Remnant"
+        "Ulrich Windl ALte Regensburger Strasse"
       ],
-      "consolidated_copyright": "Copyright (c) Scott James Remnant",
-      "core_license_expression": "fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0",
+      "consolidated_copyright": "Copyright (c) Ulrich Windl ALte Regensburger Strasse",
+      "core_license_expression": null,
       "core_holders": [
-        "Scott James Remnant"
+        "Ulrich Windl ALte Regensburger Strasse"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -984,7 +1032,23 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "card_laboratoire_remy_1",
+      "consolidated_license_expression": null,
+      "consolidated_holders": [
+        "Remy Card Laboratoire"
+      ],
+      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire",
+      "core_license_expression": null,
+      "core_holders": [
+        "Remy Card Laboratoire"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -1052,19 +1116,19 @@
     },
     {
       "type": "holders",
-      "identifier": "oracle_1",
-      "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0",
+      "identifier": "hocevar_sam_1",
+      "consolidated_license_expression": "gpl-2.0 AND lgpl-2.0 AND public-domain",
       "consolidated_holders": [
-        "Oracle"
+        "Sam Hocevar"
       ],
-      "consolidated_copyright": "Copyright (c) Oracle",
-      "core_license_expression": "lgpl-2.0 AND gpl-1.0-plus AND (lgpl-2.0 AND gpl-1.0-plus) AND gpl-2.0-plus",
+      "consolidated_copyright": "Copyright (c) Sam Hocevar",
+      "core_license_expression": "(public-domain AND gpl-2.0) AND lgpl-2.0",
       "core_holders": [
-        "Oracle"
+        "Sam Hocevar"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 12
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -1084,7 +1148,7 @@
     },
     {
       "type": "holders",
-      "identifier": "board_information_institute_massachusetts_of_processing_student_t_1",
+      "identifier": "board_information_institute_massachusetts_of_processing_student_t_2",
       "consolidated_license_expression": "bsd-new AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert AND unknown",
       "consolidated_holders": [
         "the Student Information Processing Board of the Massachusetts Institute of Technology"
@@ -1096,7 +1160,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 7
+      "files_count": 8
     }
   ],
   "consolidated_packages": [],
@@ -1332,7 +1396,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "android_open_project_source_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -5086,6 +5152,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
+        "alte_regensburger_strasse_ulrich_windl_1",
         "google_inc_1",
         "graphics_inc_silicon_1",
         "hat_inc_red_1"
@@ -5246,9 +5313,7 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [
-        "android_open_project_source_1"
-      ],
+      "consolidated_to": [],
       "files_count": 15,
       "dirs_count": 0,
       "size_count": 45420,
@@ -5665,9 +5730,7 @@
           "end_line": 8
         }
       ],
-      "consolidated_to": [
-        "android_open_project_source_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -5877,7 +5940,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "alte_regensburger_strasse_ulrich_windl_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -6603,7 +6668,7 @@
       "consolidated_to": [
         "alcove_1",
         "andries_brouwer_1",
-        "board_information_institute_massachusetts_of_processing_student_t_1",
+        "board_information_institute_massachusetts_of_processing_student_t_2",
         "dienes_klee_1",
         "dirson_yann_1",
         "michael_nonweiler_1"
@@ -7993,7 +8058,7 @@
       ],
       "consolidated_to": [
         "alcove_1",
-        "board_information_institute_massachusetts_of_processing_student_t_1",
+        "board_information_institute_massachusetts_of_processing_student_t_2",
         "dienes_klee_1",
         "dirson_yann_1",
         "michael_nonweiler_1"
@@ -9322,7 +9387,7 @@
       ],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -9613,7 +9678,7 @@
       ],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -19388,7 +19453,9 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "gadi_oxman_1"
+        "card_laboratoire_remy_1",
+        "gadi_oxman_1",
+        "linus_torvalds_1"
       ],
       "files_count": 23,
       "dirs_count": 1,
@@ -19641,7 +19708,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -19685,7 +19754,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -19729,7 +19800,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -19762,8 +19835,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "blaise_card_institut_laboratoire_masi_pascal_remy_1",
-        "linus_torvalds_1"
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1"
       ],
       "files_count": 3,
       "dirs_count": 0,
@@ -19875,8 +19947,7 @@
       ],
       "urls": [],
       "consolidated_to": [
-        "blaise_card_institut_laboratoire_masi_pascal_remy_1",
-        "linus_torvalds_1"
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -19942,7 +20013,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20053,8 +20126,7 @@
       ],
       "urls": [],
       "consolidated_to": [
-        "blaise_card_institut_laboratoire_masi_pascal_remy_1",
-        "linus_torvalds_1"
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -20115,7 +20187,10 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "card_laboratoire_remy_1",
+        "linus_torvalds_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20159,7 +20234,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20273,7 +20350,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20317,7 +20396,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20452,7 +20533,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20496,7 +20579,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20540,7 +20625,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20584,7 +20671,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20628,7 +20717,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20672,7 +20763,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -20722,7 +20815,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gadi_oxman_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -32391,6 +32486,7 @@
       "urls": [],
       "consolidated_to": [
         "board_information_institute_massachusetts_of_processing_student_t_1",
+        "board_information_institute_massachusetts_of_processing_student_t_2",
         "california_of_regents_the_university_1",
         "foundation_free_inc_software_1",
         "hogskolan_institute_kungliga_of_royal_stockholm_sweden_technology_1"
@@ -32514,7 +32610,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "board_information_institute_massachusetts_of_processing_student_t_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -32631,7 +32729,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "board_information_institute_massachusetts_of_processing_student_t_2"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -32825,7 +32925,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -32961,7 +33061,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "board_information_institute_massachusetts_of_processing_student_t_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -33073,7 +33175,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -33154,7 +33256,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -33465,7 +33567,8 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "carnegie_mellon_university_1"
+        "carnegie_mellon_university_1",
+        "institute_massachusetts_of_technology_1"
       ],
       "files_count": 18,
       "dirs_count": 0,
@@ -33638,7 +33741,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "institute_massachusetts_of_technology_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -33746,7 +33851,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "institute_massachusetts_of_technology_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -34443,6 +34550,7 @@
         "andrew_tridgell_1",
         "andrey_shedel_1",
         "ben_gardner_1",
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1",
         "cluster_1",
         "collabora_ltd_1",
         "corp_ibm_1",
@@ -34457,6 +34565,7 @@
         "hocevar_sam_1",
         "inc_vmware_1",
         "inc_whamcloud_1",
+        "linus_torvalds_1",
         "liu_zheng_1",
         "oracle_1",
         "paul_russell_rusty_1",
@@ -37834,7 +37943,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "andreas_gruenbacher_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -37894,7 +38005,10 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "blaise_card_institut_laboratoire_masi_pascal_remy_1",
+        "linus_torvalds_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -38648,7 +38762,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "cluster_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -45648,7 +45764,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1",
+        "board_information_institute_massachusetts_of_processing_student_t_2",
         "institute_massachusetts_of_technology_1"
       ],
       "files_count": 29,
@@ -46470,7 +46586,7 @@
       "emails": [],
       "urls": [],
       "consolidated_to": [
-        "board_information_institute_massachusetts_of_processing_student_t_1"
+        "board_information_institute_massachusetts_of_processing_student_t_2"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -51162,8 +51278,10 @@
         "blaise_card_curie_et_institut_laboratoire_marie_masi_pascal_pierr_1",
         "card_remy_1",
         "corp_ibm_1",
+        "google_inc_1",
         "inc_microsystems_sun_1",
         "linus_torvalds_1",
+        "ltd_nec_software_tohoku_1",
         "oracle_1",
         "robert_yang_1"
       ],
@@ -52508,7 +52626,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "oracle_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -53323,7 +53443,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "google_inc_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -53433,7 +53555,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "ltd_nec_software_tohoku_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
