@@ -84,35 +84,35 @@
     },
     {
       "type": "holders",
-      "identifier": "info_zip_1",
-      "consolidated_license_expression": "info-zip-2009-01",
+      "identifier": "gilles_vollant_1",
+      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
       "consolidated_holders": [
-        "Info-ZIP."
+        "Gilles Vollant"
       ],
-      "consolidated_copyright": "Copyright (c) Info-ZIP.",
-      "core_license_expression": "info-zip-2009-01",
+      "consolidated_copyright": "Copyright (c) Gilles Vollant",
+      "core_license_expression": "zlib AND info-zip-2009-01",
       "core_holders": [
-        "Info-ZIP."
+        "Gilles Vollant"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 12
     },
     {
       "type": "holders",
-      "identifier": "anisimkov_dmitriy_1",
-      "consolidated_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "identifier": "adler_mark_1",
+      "consolidated_license_expression": "zlib",
       "consolidated_holders": [
-        "Dmitriy Anisimkov"
+        "Mark Adler"
       ],
-      "consolidated_copyright": "Copyright (c) Dmitriy Anisimkov",
-      "core_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "consolidated_copyright": "Copyright (c) Mark Adler",
+      "core_license_expression": "zlib",
       "core_holders": [
-        "Dmitriy Anisimkov"
+        "Mark Adler"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 10
+      "files_count": 28
     },
     {
       "type": "holders",
@@ -132,38 +132,6 @@
     },
     {
       "type": "holders",
-      "identifier": "gailly_jean_loup_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Jean-loup Gailly"
-      ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Jean-loup Gailly"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 5
-    },
-    {
-      "type": "holders",
-      "identifier": "brian_raiter_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Brian Raiter"
-      ],
-      "consolidated_copyright": "Copyright (c) Brian Raiter",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Brian Raiter"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 2
-    },
-    {
-      "type": "holders",
       "identifier": "even_gilles_mathias_rouault_svensson_vollant_1",
       "consolidated_license_expression": "info-zip-2009-01",
       "consolidated_holders": [
@@ -177,22 +145,6 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "jacques_nomssi_nzali_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Jacques Nomssi Nzali"
-      ],
-      "consolidated_copyright": "Copyright (c) Jacques Nomssi Nzali",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Jacques Nomssi Nzali"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 2
     },
     {
       "type": "holders",
@@ -212,19 +164,19 @@
     },
     {
       "type": "holders",
-      "identifier": "adler_and_gailly_jean_loup_mark_1",
-      "consolidated_license_expression": "zlib",
+      "identifier": "andreas_kleinert_r_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Jean-loup Gailly and Mark Adler"
+        "Andreas R. Kleinert"
       ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly and Mark Adler",
-      "core_license_expression": "zlib",
+      "consolidated_copyright": "Copyright (c) Andreas R. Kleinert",
+      "core_license_expression": null,
       "core_holders": [
-        "Jean-loup Gailly and Mark Adler"
+        "Andreas R. Kleinert"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 6
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -240,19 +192,19 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 4
     },
     {
       "type": "holders",
-      "identifier": "deutsch_l_peter_1",
-      "consolidated_license_expression": "peter-deutsch-document",
+      "identifier": "borland_corp_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "L. Peter Deutsch"
+        "Borland Corp."
       ],
-      "consolidated_copyright": "Copyright (c) L. Peter Deutsch",
-      "core_license_expression": "peter-deutsch-document",
+      "consolidated_copyright": "Copyright (c) Borland Corp.",
+      "core_license_expression": null,
       "core_holders": [
-        "L. Peter Deutsch"
+        "Borland Corp."
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -276,6 +228,86 @@
     },
     {
       "type": "holders",
+      "identifier": "adler_and_gailly_jean_loup_mark_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Jean-loup Gailly and Mark Adler"
+      ],
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly and Mark Adler",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Jean-loup Gailly and Mark Adler"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 6
+    },
+    {
+      "type": "holders",
+      "identifier": "jacques_nomssi_nzali_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Jacques Nomssi Nzali"
+      ],
+      "consolidated_copyright": "Copyright (c) Jacques Nomssi Nzali",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Jacques Nomssi Nzali"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "anisimkov_dmitriy_1",
+      "consolidated_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "consolidated_holders": [
+        "Dmitriy Anisimkov"
+      ],
+      "consolidated_copyright": "Copyright (c) Dmitriy Anisimkov",
+      "core_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "core_holders": [
+        "Dmitriy Anisimkov"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 10
+    },
+    {
+      "type": "holders",
+      "identifier": "gailly_jean_loup_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Jean-loup Gailly"
+      ],
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Jean-loup Gailly"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 5
+    },
+    {
+      "type": "holders",
+      "identifier": "anderson_chris_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Chris Anderson"
+      ],
+      "consolidated_copyright": "Copyright (c) Chris Anderson",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Chris Anderson"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 4
+    },
+    {
+      "type": "holders",
       "identifier": "mathias_svensson_1",
       "consolidated_license_expression": "info-zip-2009-01 AND zlib",
       "consolidated_holders": [
@@ -288,39 +320,87 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
+      "files_count": 10
+    },
+    {
+      "type": "holders",
+      "identifier": "ahvenlampi_gailly_jean_loup_osma_1",
+      "consolidated_license_expression": null,
+      "consolidated_holders": [
+        "Jean-loup Gailly Osma Ahvenlampi"
+      ],
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly Osma Ahvenlampi",
+      "core_license_expression": null,
+      "core_holders": [
+        "Jean-loup Gailly Osma Ahvenlampi"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "cosmin_truta_1",
+      "consolidated_license_expression": "unknown-license-reference AND zlib",
+      "consolidated_holders": [
+        "Cosmin Truta"
+      ],
+      "consolidated_copyright": "Copyright (c) Cosmin Truta",
+      "core_license_expression": "zlib AND unknown-license-reference",
+      "core_holders": [
+        "Cosmin Truta"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
       "files_count": 3
     },
     {
       "type": "holders",
-      "identifier": "gilles_vollant_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "identifier": "info_zip_1",
+      "consolidated_license_expression": "info-zip-2009-01",
       "consolidated_holders": [
-        "Gilles Vollant"
+        "Info-ZIP."
       ],
-      "consolidated_copyright": "Copyright (c) Gilles Vollant",
-      "core_license_expression": "zlib AND info-zip-2009-01",
+      "consolidated_copyright": "Copyright (c) Info-ZIP.",
+      "core_license_expression": "info-zip-2009-01",
       "core_holders": [
-        "Gilles Vollant"
+        "Info-ZIP."
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 4
+      "files_count": 1
     },
     {
       "type": "holders",
-      "identifier": "adler_mark_1",
+      "identifier": "brian_raiter_1",
       "consolidated_license_expression": "zlib",
       "consolidated_holders": [
-        "Mark Adler"
+        "Brian Raiter"
       ],
-      "consolidated_copyright": "Copyright (c) Mark Adler",
+      "consolidated_copyright": "Copyright (c) Brian Raiter",
       "core_license_expression": "zlib",
       "core_holders": [
-        "Mark Adler"
+        "Brian Raiter"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 28
+      "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "deutsch_l_peter_1",
+      "consolidated_license_expression": "peter-deutsch-document",
+      "consolidated_holders": [
+        "L. Peter Deutsch"
+      ],
+      "consolidated_copyright": "Copyright (c) L. Peter Deutsch",
+      "core_license_expression": "peter-deutsch-document",
+      "core_holders": [
+        "L. Peter Deutsch"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -343,48 +423,16 @@
       "identifier": "adler_gailly_jean_loup_mark_1",
       "consolidated_license_expression": "zlib",
       "consolidated_holders": [
-        "Jean-loup Gailly, Mark Adler"
+        "Jean-loup Gailly & Mark Adler"
       ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly, Mark Adler",
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly & Mark Adler",
       "core_license_expression": "zlib",
       "core_holders": [
-        "Jean-loup Gailly, Mark Adler"
+        "Jean-loup Gailly & Mark Adler"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 7
-    },
-    {
-      "type": "holders",
-      "identifier": "cosmin_truta_1",
-      "consolidated_license_expression": "unknown-license-reference AND zlib",
-      "consolidated_holders": [
-        "Cosmin Truta"
-      ],
-      "consolidated_copyright": "Copyright (c) Cosmin Truta",
-      "core_license_expression": "zlib AND unknown-license-reference",
-      "core_holders": [
-        "Cosmin Truta"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    },
-    {
-      "type": "holders",
-      "identifier": "anderson_chris_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Chris Anderson"
-      ],
-      "consolidated_copyright": "Copyright (c) Chris Anderson",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Chris Anderson"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 4
+      "files_count": 12
     }
   ],
   "consolidated_packages": [],
@@ -1103,7 +1151,10 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "ahvenlampi_gailly_jean_loup_osma_1",
+        "andreas_kleinert_r_1"
+      ],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 3828,
@@ -1147,7 +1198,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "andreas_kleinert_r_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -1197,7 +1250,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "ahvenlampi_gailly_jean_loup_osma_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3503,7 +3558,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "borland_corp_1"
+      ],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 21459,
@@ -3559,7 +3616,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "borland_corp_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3641,7 +3700,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "borland_corp_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7388,6 +7449,7 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7455,6 +7517,8 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7522,6 +7586,8 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7589,6 +7655,8 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7656,6 +7724,8 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7778,6 +7848,9 @@
         }
       ],
       "consolidated_to": [
+        "even_rouault_1",
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -7973,6 +8046,9 @@
         }
       ],
       "consolidated_to": [
+        "even_rouault_1",
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -8533,6 +8609,8 @@
         }
       ],
       "consolidated_to": [
+        "gilles_vollant_1",
+        "mathias_svensson_1",
         "minizip_1"
       ],
       "files_count": 0,
@@ -9793,7 +9871,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 15,
       "dirs_count": 0,
       "size_count": 181885,
@@ -10093,7 +10173,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -10317,7 +10399,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 171316,
@@ -10489,7 +10573,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -10649,7 +10735,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 169549,
@@ -10821,7 +10909,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -10981,7 +11071,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 169547,
@@ -11153,7 +11245,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -11313,7 +11407,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 9,
       "dirs_count": 0,
       "size_count": 123961,
@@ -11485,7 +11581,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

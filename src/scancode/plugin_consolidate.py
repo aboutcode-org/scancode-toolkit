@@ -357,30 +357,35 @@ def get_holders_consolidated_components(codebase):
             if child.extra_data.get('in_package_component'):
                 continue
             if child.is_file:
-                if not child.license_expressions or not child.holders:
+                if not child.license_expressions and not child.holders:
                     continue
 
-                license_expression = combine_expressions(child.license_expressions)
-                holders = process_holders(h['value'] for h in child.holders)
+                if child.license_expressions:
+                    license_expression = combine_expressions(child.license_expressions)
+                    if license_expression:
+                        child.extra_data['normalized_license_expression'] = license_expression
+                        child.save(codebase)
 
-                if not license_expression or not holders:
-                    continue
+                if child.holders:
+                    holders = process_holders(h['value'] for h in child.holders)
+                    if holders:
+                        # Dedupe holders
+                        d = {}
+                        for holder in holders:
+                            if holder.key not in d:
+                                d[holder.key] = holder
+                        holders = [holder for _, holder in d.items()]
 
-                # Dedupe holders
-                d = {}
-                for holder in holders:
-                    if holder.key not in d:
-                        d[holder.key] = holder
-                holders = [holder for _, holder in d.items()]
-                child.extra_data['normalized_license_expression'] = license_expression
-                child.extra_data['normalized_holders'] = holders
-                child.save(codebase)
+                        # Add child RID to holder -> RID mapping
+                        for holder in holders:
+                            key = holder.key
+                            current_holders_rids[key].append(child.rid)
+                            if key not in current_holders:
+                                current_holders[key] = holder
 
-                for holder in holders:
-                    key = holder.key
-                    current_holders_rids[key].append(child.rid)
-                    if key not in current_holders:
-                        current_holders[key] = holder
+                        # Add holder -> RID mapping to dir Resource
+                        child.extra_data['normalized_holders'] = holders
+                        child.save(codebase)
 
             if child.is_dir:
                 for c in yield_consolidated_components(child, codebase, all_holders):
@@ -452,7 +457,9 @@ def group_holders_consolidated_components(components):
             for holder in component.consolidation.core_holders:
                 if holder.key not in component_holders:
                     component_holders[holder.key] = holder
-            component_license_expressions.append(component.consolidation.core_license_expression)
+            core_license_expression = component.consolidation.core_license_expression
+            if core_license_expression:
+                component_license_expressions.append(core_license_expression)
             component_resources.extend(component.consolidation.resources)
         component_holders = [holder for _, holder in component_holders.items()]
 
