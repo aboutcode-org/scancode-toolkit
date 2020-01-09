@@ -34,7 +34,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -50,7 +50,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -66,7 +66,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     }
   ],
   "consolidated_packages": [],
@@ -95,7 +95,11 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "corp_ibm_1",
+        "corp_oracle_1",
+        "omegacom_1"
+      ],
       "files_count": 3,
       "dirs_count": 5,
       "size_count": 144,
@@ -125,7 +129,9 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "omegacom_1"
+      ],
       "files_count": 1,
       "dirs_count": 1,
       "size_count": 46,
@@ -299,7 +305,10 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "corp_ibm_1",
+        "corp_oracle_1"
+      ],
       "files_count": 2,
       "dirs_count": 2,
       "size_count": 98,
