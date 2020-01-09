@@ -133,6 +133,7 @@
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
+      "percentage_of_license_text": 76.92,
       "scan_errors": []
     },
     {
@@ -176,6 +177,7 @@
       "license_expressions": [
         "fsf-ap"
       ],
+      "percentage_of_license_text": 91.43,
       "scan_errors": []
     }
   ]

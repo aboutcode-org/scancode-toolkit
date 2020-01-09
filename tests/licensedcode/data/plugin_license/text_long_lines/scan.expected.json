@@ -132,6 +132,7 @@
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
+      "percentage_of_license_text": 76.92,
       "scan_errors": []
     },
     {
@@ -175,6 +176,7 @@
       "license_expressions": [
         "unlicense"
       ],
+      "percentage_of_license_text": 5.27,
       "scan_errors": []
     }
   ]
