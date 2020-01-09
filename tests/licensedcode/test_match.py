@@ -1085,6 +1085,25 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == result
 
+    def test_tokenize_matched_text_does_not_crash_on_turkish_unicode(self):
+        querys = u'İrəli'
+        result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
+
+        expected = [
+            Token(value='i', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value='rəli', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
+        ]
+        assert expected == result
+
+    def test_tokenize_matched_text_behaves_like_query_tokenizer_on_turkish_unicode(self):
+        from licensedcode.tokenize import query_tokenizer
+        querys = u'İrəli'
+        matched_text_result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
+        matched_text_result = [t.value for t in matched_text_result]
+        query_tokenizer_result = list(query_tokenizer(querys))
+
+        assert matched_text_result == query_tokenizer_result
+
     def test_reportable_tokens_filter_tokens_does_not_strip_last_token_value(self):
         tokens = [
             Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
@@ -1215,3 +1234,40 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False, whole_lines=True)
         assert expected == matched_text
 
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_with_diacritic_in_rules(self):
+        rule_dir = self.get_test_loc('match/turkish_unicode/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_loc = self.get_test_loc('match/turkish_unicode/query')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=False, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = [
+            'Licensed under the Apache License, Version 2.0\r\nnext_label=irəli',
+            'İ license MIT',
+            'İ license MIT',
+            'Licensed under the Apache License, Version 2.0\r\nnext_label=irəli',
+            'lİcense mit'
+        ]
+
+        assert expected == matched_texts
+
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
+        idx = cache.get_index()
+        query_loc = self.get_test_loc('match/turkish_unicode/query')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=False, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = [
+            'Licensed under the Apache License, Version 2.0',
+            'license MIT',
+            'license MIT',
+            'Licensed under the Apache License, Version 2.0'
+        ]
+
+        assert expected == matched_texts
