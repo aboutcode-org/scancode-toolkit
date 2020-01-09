@@ -2,8 +2,9 @@ what:
   - holders
   - copyrights
   - authors
+copyrights:
+  - Copyright (c) All Rights Are Reserved. Chungjungwon . Iotacoffee.Com
+holders:
+  - Chungjungwon . Iotacoffee.Com
 expected_failures:
   - holders
-  - copyrights
-  - authors
-  

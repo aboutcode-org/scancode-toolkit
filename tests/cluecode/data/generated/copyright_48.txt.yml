@@ -4,7 +4,3 @@ what:
   - authors
 copyrights:
   - Copyright 2012
-expected_failures:
-  - holders
-  - copyrights
-  - authors
