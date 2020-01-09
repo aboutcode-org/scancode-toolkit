@@ -342,7 +342,6 @@ def get_holders_consolidated_components(codebase):
     if root.extra_data.get('in_package_component'):
         return
 
-    all_holders = OrderedDict()
     for resource in codebase.walk(topdown=False):
         if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
@@ -351,8 +350,7 @@ def get_holders_consolidated_components(codebase):
         if not children:
             continue
 
-        current_holders_rids = defaultdict(list)
-        current_holders = OrderedDict()
+        current_holders = set()
         for child in children:
             if child.extra_data.get('in_package_component'):
                 continue
@@ -376,56 +374,54 @@ def get_holders_consolidated_components(codebase):
                                 d[holder.key] = holder
                         holders = [holder for _, holder in d.items()]
 
-                        # Add child RID to holder -> RID mapping
+                        # Keep track of holders found in this immediate directory
                         for holder in holders:
-                            key = holder.key
-                            current_holders_rids[key].append(child.rid)
-                            if key not in current_holders:
-                                current_holders[key] = holder
+                            if holder.key not in current_holders:
+                                current_holders.add(holder.key)
 
-                        # Add holder -> RID mapping to dir Resource
                         child.extra_data['normalized_holders'] = holders
                         child.save(codebase)
 
             if child.is_dir:
-                for c in yield_consolidated_components(child, codebase, all_holders):
+                for c in yield_consolidated_components(child, codebase):
                     # only core holders are set
                     core_consolidation_holders = c.consolidation.core_holders or []
                     for holder in core_consolidation_holders:
                         if holder.key not in current_holders:
                             yield c
 
-        if current_holders and current_holders_rids:
-            resource.extra_data['holders'] = current_holders_rids
-            resource.save(codebase)
-            all_holders.update(current_holders)
-
-    for c in yield_consolidated_components(root, codebase, all_holders):
+    for c in yield_consolidated_components(root, codebase):
         yield c
 
 
-def yield_consolidated_components(resource, codebase, lookup_table):
+def yield_consolidated_components(resource, codebase):
     """
     Yield ConsolidatedComponents for every holder-grouped set of RIDs for a given resource
     """
-    resource_holders_rids = resource.extra_data.get('holders', {})
-    for key, rids in resource_holders_rids.items():
-        # We add the rid of the directory resource we are yielding ConsolidatedComponents at
-        # so we can properly report a consolidation at this directory
-        rids.append(resource.rid)
-        holder = lookup_table[key]
-        resources = [codebase.get_resource(rid) for rid in rids]
+    resources_by_holders = defaultdict(list)
+    holder_lookup_table = {}
+    for r in resource.walk(codebase):
+        for holder in r.extra_data.get('normalized_holders', []):
+            holder_key = holder.key
+            resources_by_holders[holder_key].append(r)
+            if holder_key not in holder_lookup_table:
+                holder_lookup_table[holder_key] = holder
+
+    for key, resources in resources_by_holders.items():
         license_expressions = []
         for r in resources:
             normalized_license_expression = r.extra_data.get('normalized_license_expression')
             if normalized_license_expression:
                 license_expressions.append(normalized_license_expression)
+        # We add the current directory Resource we are currently at to the set
+        # of resources that have this particular key
+        resources.append(resource)
         resource.extra_data['majority'] = True
         resource.save(codebase)
         c = Consolidation(
             core_license_expression=combine_expressions(license_expressions),
-            core_holders=[holder],
-            files_count=len(resources),
+            core_holders=[holder_lookup_table[key]],
+            files_count=len([r for r in resources if r.is_file]),
             resources=resources,
         )
         yield ConsolidatedComponent(
@@ -466,7 +462,7 @@ def group_holders_consolidated_components(components):
         c = Consolidation(
             core_license_expression=combine_expressions(component_license_expressions),
             core_holders=component_holders,
-            files_count=len([component_resource for component_resource in component_resources if component_resource.is_file]),
+            files_count=len([r for r in component_resources if r.is_file]),
             resources=component_resources,
         )
         yield ConsolidatedComponent(

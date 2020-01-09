@@ -34,7 +34,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -80,7 +80,8 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "corp_ibm_1"
+        "corp_ibm_1",
+        "corp_omega_1"
       ],
       "files_count": 4,
       "dirs_count": 1,

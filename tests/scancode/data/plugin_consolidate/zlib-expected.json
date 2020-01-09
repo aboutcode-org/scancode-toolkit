@@ -80,7 +80,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -96,23 +96,23 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 12
+      "files_count": 36
     },
     {
       "type": "holders",
       "identifier": "adler_mark_1",
-      "consolidated_license_expression": "zlib",
+      "consolidated_license_expression": "public-domain AND zlib",
       "consolidated_holders": [
         "Mark Adler"
       ],
       "consolidated_copyright": "Copyright (c) Mark Adler",
-      "core_license_expression": "zlib",
+      "core_license_expression": "zlib AND (zlib AND public-domain)",
       "core_holders": [
         "Mark Adler"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 28
+      "files_count": 51
     },
     {
       "type": "holders",
@@ -128,7 +128,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -144,7 +144,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -160,7 +160,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 3
+      "files_count": 9
     },
     {
       "type": "holders",
@@ -176,7 +176,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -192,7 +192,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 4
+      "files_count": 12
     },
     {
       "type": "holders",
@@ -208,7 +208,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 6
     },
     {
       "type": "holders",
@@ -224,7 +224,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -240,7 +240,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 6
+      "files_count": 9
     },
     {
       "type": "holders",
@@ -256,7 +256,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 6
     },
     {
       "type": "holders",
@@ -272,7 +272,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 10
+      "files_count": 30
     },
     {
       "type": "holders",
@@ -288,7 +288,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 5
+      "files_count": 13
     },
     {
       "type": "holders",
@@ -304,7 +304,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 4
+      "files_count": 12
     },
     {
       "type": "holders",
@@ -320,7 +320,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 10
+      "files_count": 30
     },
     {
       "type": "holders",
@@ -336,7 +336,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
@@ -352,7 +352,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 3
+      "files_count": 9
     },
     {
       "type": "holders",
@@ -368,7 +368,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -384,7 +384,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 6
     },
     {
       "type": "holders",
@@ -400,7 +400,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 4
     },
     {
       "type": "holders",
@@ -416,7 +416,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 30
     },
     {
       "type": "holders",
@@ -432,7 +432,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 12
+      "files_count": 24
     }
   ],
   "consolidated_packages": [],
@@ -467,7 +467,26 @@
         "adler_and_gailly_jean_loup_mark_1",
         "adler_gailly_jean_loup_mark_1",
         "adler_mark_1",
-        "gailly_jean_loup_1"
+        "advanced_as_christian_computing_michelsen_research_1",
+        "ahvenlampi_gailly_jean_loup_osma_1",
+        "and_brian_gailly_gilles_jean_loup_raiter_vollant_1",
+        "and_deutsch_gailly_jean_l_loup_peter_1",
+        "anderson_chris_1",
+        "andreas_kleinert_r_1",
+        "anisimkov_dmitriy_1",
+        "bob_dellaca_1",
+        "borland_corp_1",
+        "brian_raiter_1",
+        "cosmin_truta_1",
+        "deutsch_l_peter_1",
+        "even_gilles_mathias_rouault_svensson_vollant_1",
+        "even_rouault_1",
+        "gailly_jean_loup_1",
+        "gilles_vollant_1",
+        "henrik_ravn_1",
+        "info_zip_1",
+        "jacques_nomssi_nzali_1",
+        "mathias_svensson_1"
       ],
       "files_count": 253,
       "dirs_count": 39,
@@ -1413,7 +1432,23 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "advanced_as_christian_computing_michelsen_research_1",
+        "and_brian_gailly_gilles_jean_loup_raiter_vollant_1",
+        "anderson_chris_1",
+        "anisimkov_dmitriy_1",
+        "bob_dellaca_1",
+        "borland_corp_1",
+        "brian_raiter_1",
+        "cosmin_truta_1",
+        "even_gilles_mathias_rouault_svensson_vollant_1",
+        "even_rouault_1",
+        "gilles_vollant_1",
+        "henrik_ravn_1",
+        "info_zip_1",
+        "jacques_nomssi_nzali_1",
+        "mathias_svensson_1"
+      ],
       "files_count": 159,
       "dirs_count": 26,
       "size_count": 1749228,
@@ -3940,7 +3975,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4025,7 +4062,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4110,7 +4149,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4195,7 +4236,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4280,7 +4323,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4365,7 +4410,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4482,7 +4529,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4567,7 +4616,9 @@
           "end_line": 5
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4657,7 +4708,9 @@
           "end_line": 20
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "henrik_ravn_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -9790,7 +9843,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 52,
       "dirs_count": 5,
       "size_count": 819367,
@@ -12656,7 +12711,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -12812,7 +12869,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -12907,7 +12966,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -12992,7 +13053,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -13071,7 +13134,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -13156,7 +13221,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -13245,7 +13312,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -13391,7 +13460,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -14597,7 +14668,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -14676,7 +14749,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -14959,7 +15034,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -15392,7 +15469,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -15616,7 +15695,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -15695,7 +15776,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -15780,7 +15863,9 @@
         }
       ],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -16300,7 +16385,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "gailly_jean_loup_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -16344,7 +16431,9 @@
       "packages": [],
       "emails": [],
       "urls": [],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_and_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -16466,7 +16555,9 @@
           "end_line": 19
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_and_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -16580,7 +16671,9 @@
           "end_line": 33
         }
       ],
-      "consolidated_to": [],
+      "consolidated_to": [
+        "adler_gailly_jean_loup_mark_1"
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
