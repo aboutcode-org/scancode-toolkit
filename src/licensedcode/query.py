@@ -243,6 +243,16 @@ class Query(object):
         self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_legalese])
         self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_legalese])
 
+    def tokens_length(self, with_unknown=False):
+        """
+        Return the length in tokens of this query.
+        Include unknown tokens if with_unknown is True.
+        """
+        length = len(self.tokens)
+        if with_unknown:
+            length += sum(self.unknowns_by_pos.values())
+        return length
+
     def whole_query_run(self):
         """
         Return a query run built from the whole range of query tokens.
@@ -747,8 +757,8 @@ class QueryRun(object):
         def tokens_string(tks, sort=False):
             "Return a string from a token id seq"
             tks = ('None' if tid is None else tokens_by_tid[tid] for tid in tks)
-            ascii = partial(toascii, translit=True)
-            tks = map(ascii, tks)
+            asciifier = partial(toascii, translit=True)
+            tks = map(asciifier, tks)
             if sort:
                 tks = sorted(tks)
             return ' '.join(tks)

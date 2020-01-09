@@ -40,6 +40,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "is_license_text": false,
       "files_count": 5,
       "dirs_count": 0,
@@ -102,6 +103,7 @@
       "license_expressions": [
         "apache-1.0"
       ],
+      "percentage_of_license_text": 96.08,
       "is_license_text": true,
       "files_count": 0,
       "dirs_count": 0,
@@ -164,6 +166,7 @@
       "license_expressions": [
         "apache-1.0"
       ],
+      "percentage_of_license_text": 40.98,
       "is_license_text": false,
       "files_count": 0,
       "dirs_count": 0,
@@ -260,6 +263,7 @@
         "ja-sig",
         "apache-2.0"
       ],
+      "percentage_of_license_text": 91.69,
       "is_license_text": true,
       "files_count": 0,
       "dirs_count": 0,
@@ -318,7 +322,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-syscall-exception-gpl",
@@ -353,7 +357,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-openib",
@@ -388,13 +392,14 @@
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         }
       ],
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
-      "is_license_text": true,
+      "percentage_of_license_text": 76.92,
+      "is_license_text": false,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -490,6 +495,7 @@
         "ja-sig",
         "apache-2.0"
       ],
+      "percentage_of_license_text": 30.71,
       "is_license_text": false,
       "files_count": 0,
       "dirs_count": 0,

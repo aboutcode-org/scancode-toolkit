@@ -93,6 +93,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -160,6 +161,7 @@
       "license_expressions": [
         "apache-2.0"
       ],
+      "percentage_of_license_text": 36.36,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -265,6 +267,7 @@
       "license_expressions": [
         "apache-2.0"
       ],
+      "percentage_of_license_text": 33.33,
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -344,6 +347,7 @@
       "license_expressions": [
         "apache-2.0"
       ],
+      "percentage_of_license_text": 33.33,
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
@@ -423,6 +427,7 @@
       "license_expressions": [
         "apache-2.0"
       ],
+      "percentage_of_license_text": 33.33,
       "copyrights": [
         {
           "value": "Copyright (c) The Apache Software Foundation",
