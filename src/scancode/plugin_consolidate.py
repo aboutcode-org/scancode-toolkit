@@ -338,20 +338,16 @@ def get_holders_consolidated_components(codebase):
     Yield a ConsolidatedComponent for every directory if there are files with
     both license and copyright detected in them
     """
-    root = codebase.root
-    if root.extra_data.get('in_package_component'):
+    if codebase.root.extra_data.get('in_package_component'):
         return
 
+    # Process license expressions and holders on Resources
     for resource in codebase.walk(topdown=False):
         if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
 
-        children = resource.children(codebase)
-        if not children:
-            continue
-
         current_holders = set()
-        for child in children:
+        for child in resource.children(codebase):
             if child.extra_data.get('in_package_component'):
                 continue
             if child.is_file:
@@ -382,52 +378,62 @@ def get_holders_consolidated_components(codebase):
                         child.extra_data['normalized_holders'] = holders
                         child.save(codebase)
 
-            if child.is_dir:
-                for c in yield_consolidated_components(child, codebase):
-                    # only core holders are set
-                    core_consolidation_holders = c.consolidation.core_holders or []
-                    for holder in core_consolidation_holders:
-                        if holder.key not in current_holders:
-                            yield c
+        if current_holders:
+            # Save a list of detected holders found in the immediate directory
+            resource.extra_data['current_holders'] = current_holders
+            resource.save(codebase)
 
-    for c in yield_consolidated_components(root, codebase):
-        yield c
+    # Track which directories we should consolidate Resources at
+    common_holder_ancestors = {}
+    for resource in codebase.walk(topdown=True):
+        if resource.is_file or resource.extra_data.get('in_package_component'):
+            continue
+        current_holders = resource.extra_data.get('current_holders', set())
+        for holder in current_holders:
+            if holder not in common_holder_ancestors:
+                common_holder_ancestors[holder] = resource
+
+    # Consolidate Resources
+    for holder_key, ancestor in common_holder_ancestors.items():
+        for c in yield_consolidated_components(ancestor, codebase, holder_key):
+            yield c
 
 
-def yield_consolidated_components(resource, codebase):
+def yield_consolidated_components(resource, codebase, holder_key):
     """
-    Yield ConsolidatedComponents for every holder-grouped set of RIDs for a given resource
+    Yield ConsolidatedComponents for every holder-grouped set of RIDs for a
+    given resource and holder key
     """
-    resources_by_holders = defaultdict(list)
-    holder_lookup_table = {}
+    license_expressions = []
+    holder = None
+    resources = []
     for r in resource.walk(codebase):
-        for holder in r.extra_data.get('normalized_holders', []):
-            holder_key = holder.key
-            resources_by_holders[holder_key].append(r)
-            if holder_key not in holder_lookup_table:
-                holder_lookup_table[holder_key] = holder
-
-    for key, resources in resources_by_holders.items():
-        license_expressions = []
-        for r in resources:
+        for normalized_holder in r.extra_data.get('normalized_holders', []):
+            if not (normalized_holder.key == holder_key):
+                continue
             normalized_license_expression = r.extra_data.get('normalized_license_expression')
             if normalized_license_expression:
                 license_expressions.append(normalized_license_expression)
-        # We add the current directory Resource we are currently at to the set
-        # of resources that have this particular key
-        resources.append(resource)
-        resource.extra_data['majority'] = True
-        resource.save(codebase)
-        c = Consolidation(
-            core_license_expression=combine_expressions(license_expressions),
-            core_holders=[holder_lookup_table[key]],
-            files_count=len([r for r in resources if r.is_file]),
-            resources=resources,
-        )
-        yield ConsolidatedComponent(
-            type='holders',
-            consolidation=c
-        )
+            if not holder:
+                holder = normalized_holder
+            resources.append(r)
+
+    # We add the current directory Resource we are currently at to the set
+    # of resources that have this particular key
+    resources.append(resource)
+    resource.extra_data['majority'] = True
+    resource.save(codebase)
+
+    c = Consolidation(
+        core_license_expression=combine_expressions(license_expressions),
+        core_holders=[holder],
+        files_count=len([r for r in resources if r.is_file]),
+        resources=resources,
+    )
+    yield ConsolidatedComponent(
+        type='holders',
+        consolidation=c
+    )
 
 
 def group_holders_consolidated_components(components):

@@ -34,7 +34,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 6
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -50,7 +50,7 @@
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 3
+      "files_count": 1
     }
   ],
   "consolidated_packages": [],
@@ -79,10 +79,7 @@
       "holders": [],
       "authors": [],
       "packages": [],
-      "consolidated_to": [
-        "apache_foundation_software_1",
-        "corp_ibm_1"
-      ],
+      "consolidated_to": [],
       "files_count": 4,
       "dirs_count": 2,
       "size_count": 256,
@@ -113,8 +110,7 @@
       "authors": [],
       "packages": [],
       "consolidated_to": [
-        "apache_foundation_software_1",
-        "corp_ibm_1"
+        "apache_foundation_software_1"
       ],
       "files_count": 4,
       "dirs_count": 1,
