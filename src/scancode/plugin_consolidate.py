@@ -339,40 +339,41 @@ def get_holders_consolidated_components(codebase):
 
     # Process license expressions and holders on Resources
     for resource in codebase.walk(topdown=False):
+        # Each Resource we are processing is a directory
         if resource.is_file or resource.extra_data.get('in_package_component'):
             continue
 
         current_holders = set()
         for child in resource.children(codebase):
-            if child.extra_data.get('in_package_component'):
+            # Each child we are processing is a file
+            if (child.is_dir
+                    or child.extra_data.get('in_package_component')
+                    or (not child.license_expressions and not child.holders)):
                 continue
-            if child.is_file:
-                if not child.license_expressions and not child.holders:
-                    continue
 
-                if child.license_expressions:
-                    license_expression = combine_expressions(child.license_expressions)
-                    if license_expression:
-                        child.extra_data['normalized_license_expression'] = license_expression
-                        child.save(codebase)
+            if child.license_expressions:
+                license_expression = combine_expressions(child.license_expressions)
+                if license_expression:
+                    child.extra_data['normalized_license_expression'] = license_expression
+                    child.save(codebase)
 
-                if child.holders:
-                    holders = process_holders(h['value'] for h in child.holders)
-                    if holders:
-                        # Dedupe holders
-                        d = {}
-                        for holder in holders:
-                            if holder.key not in d:
-                                d[holder.key] = holder
-                        holders = [holder for _, holder in d.items()]
+            if child.holders:
+                holders = process_holders(h['value'] for h in child.holders)
+                if holders:
+                    # Dedupe holders
+                    d = {}
+                    for holder in holders:
+                        if holder.key not in d:
+                            d[holder.key] = holder
+                    holders = [holder for _, holder in d.items()]
 
-                        # Keep track of holders found in this immediate directory
-                        for holder in holders:
-                            if holder.key not in current_holders:
-                                current_holders.add(holder.key)
+                    # Keep track of holders found in this immediate directory
+                    for holder in holders:
+                        if holder.key not in current_holders:
+                            current_holders.add(holder.key)
 
-                        child.extra_data['normalized_holders'] = holders
-                        child.save(codebase)
+                    child.extra_data['normalized_holders'] = holders
+                    child.save(codebase)
 
         if current_holders:
             # Save a list of detected holders found in the immediate directory
