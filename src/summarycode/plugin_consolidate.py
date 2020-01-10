@@ -334,7 +334,9 @@ def get_holders_consolidated_components(codebase):
     if codebase.root.extra_data.get('in_package_component'):
         return
 
-    # Process license expressions and holders on Resources
+    # Step 1: Normalize license expressions and holders on file Resources and
+    # save a list of holder keys that were detected in the immediate directory
+    # on directory resources
     for resource in codebase.walk(topdown=False):
         # Each Resource we are processing is a directory
         if resource.is_file or resource.extra_data.get('in_package_component'):
@@ -377,7 +379,10 @@ def get_holders_consolidated_components(codebase):
             resource.extra_data['current_holders'] = current_holders
             resource.save(codebase)
 
-    # Track which directories we should consolidate Resources at
+    # Step 2: Track which directories we should consolidate Resources at by
+    # going top-down through the Codebase and creating a mapping of holder key
+    # -> directory resource, where the resource is the highest common ancestor
+    # for a holder
     common_holder_ancestors = {}
     for resource in codebase.walk(topdown=True):
         current_holders = resource.extra_data.get('current_holders', set())
@@ -385,13 +390,13 @@ def get_holders_consolidated_components(codebase):
             if holder not in common_holder_ancestors:
                 common_holder_ancestors[holder] = resource
 
-    # Consolidate Resources
+    # Step 3: Consolidate Resources at the common holder ancestors that we discovered
     for holder_key, ancestor in common_holder_ancestors.items():
-        for c in yield_consolidated_components(ancestor, codebase, holder_key):
+        for c in create_consolidated_components(ancestor, codebase, holder_key):
             yield c
 
 
-def yield_consolidated_components(resource, codebase, holder_key):
+def create_consolidated_components(resource, codebase, holder_key):
     """
     Yield ConsolidatedComponents for every holder-grouped set of RIDs for a
     given resource and holder key
