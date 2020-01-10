@@ -185,6 +185,9 @@ class Consolidator(PostScanPlugin):
         if not consolidations:
             return
 
+        # Sort consolidations by holders for consistent ordering before enumeration
+        consolidations = sorted(consolidations, key=lambda c: '_'.join(h.key for h in c.consolidation.core_holders))
+
         # Add ConsolidatedPackages and ConsolidatedComponents to top-level codebase attributes
         codebase.attributes.consolidated_packages = consolidated_packages = []
         codebase.attributes.consolidated_components = consolidated_components = []
@@ -283,9 +286,11 @@ def get_consolidated_packages(codebase):
 
             c = Consolidation(
                 core_license_expression=package_license_expression,
-                core_holders=[h for h, _ in copyright_summary.cluster(package_holders)],
+                # Sort holders by holder key
+                core_holders=[h for h, _ in sorted(copyright_summary.cluster(package_holders), key=lambda t: t[0].key)],
                 other_license_expression=simplified_discovered_license_expression,
-                other_holders=[h for h, _ in copyright_summary.cluster(discovered_holders)],
+                # Sort holders by holder key
+                other_holders=[h for h, _ in sorted(copyright_summary.cluster(discovered_holders), key=lambda t: t[0].key)],
                 files_count=len([package_resource for package_resource in package_resources if package_resource.is_file]),
                 resources=package_resources,
             )

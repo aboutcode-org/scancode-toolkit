@@ -22,15 +22,15 @@
   "consolidated_components": [
     {
       "type": "holders",
-      "identifier": "omegacom_1",
+      "identifier": "corp_ibm_1",
       "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "consolidated_holders": [
-        "omega.com"
+        "IBM Corp."
       ],
-      "consolidated_copyright": "Copyright (c) omega.com",
+      "consolidated_copyright": "Copyright (c) IBM Corp.",
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "core_holders": [
-        "omega.com"
+        "IBM Corp."
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -54,15 +54,15 @@
     },
     {
       "type": "holders",
-      "identifier": "corp_ibm_1",
+      "identifier": "omegacom_1",
       "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "consolidated_holders": [
-        "IBM Corp."
+        "omega.com"
       ],
-      "consolidated_copyright": "Copyright (c) IBM Corp.",
+      "consolidated_copyright": "Copyright (c) omega.com",
       "core_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "core_holders": [
-        "IBM Corp."
+        "omega.com"
       ],
       "other_license_expression": null,
       "other_holders": [],

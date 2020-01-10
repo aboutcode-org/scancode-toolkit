@@ -34,22 +34,6 @@
     },
     {
       "type": "holders",
-      "identifier": "inc_nexb_1",
-      "consolidated_license_expression": "lgpl-2.0",
-      "consolidated_holders": [
-        "nexB, Inc."
-      ],
-      "consolidated_copyright": "Copyright (c) nexB, Inc.",
-      "core_license_expression": "lgpl-2.0",
-      "core_holders": [
-        "nexB, Inc."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
       "identifier": "apache_foundation_software_1",
       "consolidated_license_expression": "apache-2.0",
       "consolidated_holders": [
@@ -63,6 +47,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "inc_nexb_1",
+      "consolidated_license_expression": "lgpl-2.0",
+      "consolidated_holders": [
+        "nexB, Inc."
+      ],
+      "consolidated_copyright": "Copyright (c) nexB, Inc.",
+      "core_license_expression": "lgpl-2.0",
+      "core_holders": [
+        "nexB, Inc."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     }
   ],
   "consolidated_packages": [
@@ -114,9 +114,9 @@
       "core_holders": [],
       "other_license_expression": "apache-2.0 AND gpl-1.0-plus AND unknown",
       "other_holders": [
+        "The Apache Software Foundation",
         "The Apache Software",
-        "IBM Corp.",
-        "The Apache Software Foundation"
+        "IBM Corp."
       ],
       "files_count": 3
     }
