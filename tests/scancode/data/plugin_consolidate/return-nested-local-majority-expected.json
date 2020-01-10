@@ -22,22 +22,6 @@
   "consolidated_components": [
     {
       "type": "holders",
-      "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0 AND unknown",
-      "consolidated_holders": [
-        "The Apache Software Foundation"
-      ],
-      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "unknown AND apache-2.0",
-      "core_holders": [
-        "The Apache Software Foundation"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    },
-    {
-      "type": "holders",
       "identifier": "corp_ibm_1",
       "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "consolidated_holders": [
@@ -51,6 +35,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "apache_foundation_software_1",
+      "consolidated_license_expression": "apache-2.0 AND unknown",
+      "consolidated_holders": [
+        "The Apache Software Foundation"
+      ],
+      "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
+      "core_license_expression": "unknown AND apache-2.0",
+      "core_holders": [
+        "The Apache Software Foundation"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
     }
   ],
   "consolidated_packages": [],

@@ -44,19 +44,19 @@
   "consolidated_components": [
     {
       "type": "holders",
-      "identifier": "hat_red_software_1",
-      "consolidated_license_expression": "gpl-2.0-plus",
+      "identifier": "beattie_david_1",
+      "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
-        "Red Hat Software"
+        "David Beattie"
       ],
-      "consolidated_copyright": "Copyright (c) Red Hat Software",
-      "core_license_expression": "gpl-2.0-plus",
+      "consolidated_copyright": "Copyright (c) David Beattie",
+      "core_license_expression": "lgpl-2.0",
       "core_holders": [
-        "Red Hat Software"
+        "David Beattie"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -76,35 +76,19 @@
     },
     {
       "type": "holders",
-      "identifier": "foundation_inc_software_1",
-      "consolidated_license_expression": "lgpl-2.0-plus",
+      "identifier": "blaise_card_curie_et_institut_laboratoire_marie_masi_pascal_pierr_1",
+      "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
-        "Software Foundation, Inc."
+        "Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie"
       ],
-      "consolidated_copyright": "Copyright (c) Software Foundation, Inc.",
-      "core_license_expression": "lgpl-2.0-plus",
+      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie",
+      "core_license_expression": "lgpl-2.0",
       "core_holders": [
-        "Software Foundation, Inc."
+        "Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "andreas_dilger_1",
-      "consolidated_license_expression": "gpl-2.0-plus",
-      "consolidated_holders": [
-        "Andreas Dilger"
-      ],
-      "consolidated_copyright": "Copyright (c) Andreas Dilger",
-      "core_license_expression": "gpl-2.0-plus",
-      "core_holders": [
-        "Andreas Dilger"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 2
+      "files_count": 13
     },
     {
       "type": "holders",
@@ -172,19 +156,19 @@
     },
     {
       "type": "holders",
-      "identifier": "blaise_card_institut_laboratoire_masi_pascal_remy_1",
+      "identifier": "card_remy_1",
       "consolidated_license_expression": "gpl-1.0-plus",
       "consolidated_holders": [
-        "Remy Card Laboratoire MASI - Institut Blaise Pascal"
+        "Remy Card"
       ],
-      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire MASI - Institut Blaise Pascal",
+      "consolidated_copyright": "Copyright (c) Remy Card",
       "core_license_expression": "gpl-1.0-plus",
       "core_holders": [
-        "Remy Card Laboratoire MASI - Institut Blaise Pascal"
+        "Remy Card"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 3
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -220,6 +204,22 @@
     },
     {
       "type": "holders",
+      "identifier": "andrea_arcangeli_1",
+      "consolidated_license_expression": "gpl-2.0-plus",
+      "consolidated_holders": [
+        "Andrea Arcangeli"
+      ],
+      "consolidated_copyright": "Copyright (c) Andrea Arcangeli",
+      "core_license_expression": "gpl-2.0-plus",
+      "core_holders": [
+        "Andrea Arcangeli"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
       "identifier": "institute_massachusetts_of_technology_1",
       "consolidated_license_expression": null,
       "consolidated_holders": [
@@ -233,6 +233,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "david_woodhouse_1",
+      "consolidated_license_expression": "gpl-2.0-plus",
+      "consolidated_holders": [
+        "David Woodhouse"
+      ],
+      "consolidated_copyright": "Copyright (c) David Woodhouse",
+      "core_license_expression": "gpl-2.0-plus",
+      "core_holders": [
+        "David Woodhouse"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -252,31 +268,31 @@
     },
     {
       "type": "holders",
-      "identifier": "beattie_david_1",
-      "consolidated_license_expression": "lgpl-2.0",
+      "identifier": "hat_red_software_1",
+      "consolidated_license_expression": "gpl-2.0-plus",
       "consolidated_holders": [
-        "David Beattie"
+        "Red Hat Software"
       ],
-      "consolidated_copyright": "Copyright (c) David Beattie",
-      "core_license_expression": "lgpl-2.0",
+      "consolidated_copyright": "Copyright (c) Red Hat Software",
+      "core_license_expression": "gpl-2.0-plus",
       "core_holders": [
-        "David Beattie"
+        "Red Hat Software"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
-      "identifier": "alte_regensburger_strasse_ulrich_windl_1",
-      "consolidated_license_expression": null,
+      "identifier": "james_remnant_scott_1",
+      "consolidated_license_expression": "fsf-unlimited AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND lgpl-2.0-plus",
       "consolidated_holders": [
-        "Ulrich Windl ALte Regensburger Strasse"
+        "Scott James Remnant"
       ],
-      "consolidated_copyright": "Copyright (c) Ulrich Windl ALte Regensburger Strasse",
-      "core_license_expression": null,
+      "consolidated_copyright": "Copyright (c) Scott James Remnant",
+      "core_license_expression": "fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0",
       "core_holders": [
-        "Ulrich Windl ALte Regensburger Strasse"
+        "Scott James Remnant"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -316,6 +332,22 @@
     },
     {
       "type": "holders",
+      "identifier": "inc_vmware_1",
+      "consolidated_license_expression": "lgpl-2.0",
+      "consolidated_holders": [
+        "VMware, Inc."
+      ],
+      "consolidated_copyright": "Copyright (c) VMware, Inc.",
+      "core_license_expression": "lgpl-2.0",
+      "core_holders": [
+        "VMware, Inc."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
       "identifier": "graphics_inc_silicon_1",
       "consolidated_license_expression": "gpl-1.0-plus AND gpl-2.0 AND patent-disclaimer",
       "consolidated_holders": [
@@ -348,15 +380,15 @@
     },
     {
       "type": "holders",
-      "identifier": "corp_intel_1",
-      "consolidated_license_expression": "lgpl-2.0",
+      "identifier": "foundation_free_inc_michel_robitaille_software_1",
+      "consolidated_license_expression": "free-unknown",
       "consolidated_holders": [
-        "Intel Corporation"
+        "Free Software Foundation, Inc. Michel Robitaille"
       ],
-      "consolidated_copyright": "Copyright (c) Intel Corporation",
-      "core_license_expression": "lgpl-2.0",
+      "consolidated_copyright": "Copyright (c) Free Software Foundation, Inc. Michel Robitaille",
+      "core_license_expression": "free-unknown",
       "core_holders": [
-        "Intel Corporation"
+        "Free Software Foundation, Inc. Michel Robitaille"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -412,6 +444,22 @@
     },
     {
       "type": "holders",
+      "identifier": "google_inc_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
+      "consolidated_holders": [
+        "Google, Inc."
+      ],
+      "consolidated_copyright": "Copyright (c) Google, Inc.",
+      "core_license_expression": "gpl-1.0-plus",
+      "core_holders": [
+        "Google, Inc."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
       "identifier": "inc_whamcloud_1",
       "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
@@ -428,15 +476,15 @@
     },
     {
       "type": "holders",
-      "identifier": "google_inc_1",
-      "consolidated_license_expression": "gpl-1.0-plus",
+      "identifier": "kay_sievers_1",
+      "consolidated_license_expression": "lgpl-2.1-plus",
       "consolidated_holders": [
-        "Google, Inc."
+        "Kay Sievers"
       ],
-      "consolidated_copyright": "Copyright (c) Google, Inc.",
-      "core_license_expression": "gpl-1.0-plus",
+      "consolidated_copyright": "Copyright (c) Kay Sievers",
+      "core_license_expression": "lgpl-2.1-plus",
       "core_holders": [
-        "Google, Inc."
+        "Kay Sievers"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -556,22 +604,6 @@
     },
     {
       "type": "holders",
-      "identifier": "kay_sievers_1",
-      "consolidated_license_expression": "lgpl-2.1-plus",
-      "consolidated_holders": [
-        "Kay Sievers"
-      ],
-      "consolidated_copyright": "Copyright (c) Kay Sievers",
-      "core_license_expression": "lgpl-2.1-plus",
-      "core_holders": [
-        "Kay Sievers"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
       "identifier": "inc_oracle_1",
       "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0",
       "consolidated_holders": [
@@ -636,15 +668,15 @@
     },
     {
       "type": "holders",
-      "identifier": "foundation_free_inc_michel_robitaille_software_1",
-      "consolidated_license_expression": "free-unknown",
+      "identifier": "andrew_esh_1",
+      "consolidated_license_expression": "gpl-2.0-plus",
       "consolidated_holders": [
-        "Free Software Foundation, Inc. Michel Robitaille"
+        "Andrew Esh"
       ],
-      "consolidated_copyright": "Copyright (c) Free Software Foundation, Inc. Michel Robitaille",
-      "core_license_expression": "free-unknown",
+      "consolidated_copyright": "Copyright (c) Andrew Esh",
+      "core_license_expression": "gpl-2.0-plus",
       "core_holders": [
-        "Free Software Foundation, Inc. Michel Robitaille"
+        "Andrew Esh"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -700,6 +732,22 @@
     },
     {
       "type": "holders",
+      "identifier": "robert_yang_1",
+      "consolidated_license_expression": "lgpl-2.0",
+      "consolidated_holders": [
+        "Robert Yang"
+      ],
+      "consolidated_copyright": "Copyright (c) Robert Yang",
+      "core_license_expression": "lgpl-2.0",
+      "core_holders": [
+        "Robert Yang"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
       "identifier": "liu_zheng_1",
       "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
@@ -716,15 +764,15 @@
     },
     {
       "type": "holders",
-      "identifier": "oracle_1",
-      "consolidated_license_expression": "gpl-1.0-plus",
+      "identifier": "hocevar_sam_1",
+      "consolidated_license_expression": "gpl-2.0 AND lgpl-2.0 AND public-domain",
       "consolidated_holders": [
-        "Oracle"
+        "Sam Hocevar"
       ],
-      "consolidated_copyright": "Copyright (c) Oracle",
-      "core_license_expression": "gpl-1.0-plus",
+      "consolidated_copyright": "Copyright (c) Sam Hocevar",
+      "core_license_expression": "(public-domain AND gpl-2.0) AND lgpl-2.0",
       "core_holders": [
-        "Oracle"
+        "Sam Hocevar"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -732,35 +780,19 @@
     },
     {
       "type": "holders",
-      "identifier": "linus_torvalds_1",
-      "consolidated_license_expression": "gpl-1.0-plus",
+      "identifier": "and_inc_powerquest_theodore_tso_1",
+      "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0",
       "consolidated_holders": [
-        "Linus Torvalds"
+        "Theodore Ts'o and PowerQuest, Inc."
       ],
-      "consolidated_copyright": "Copyright (c) Linus Torvalds",
-      "core_license_expression": "gpl-1.0-plus",
+      "consolidated_copyright": "Copyright (c) Theodore Ts'o and PowerQuest, Inc.",
+      "core_license_expression": "lgpl-2.0 AND gpl-1.0-plus",
       "core_holders": [
-        "Linus Torvalds"
+        "Theodore Ts'o and PowerQuest, Inc."
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 4
-    },
-    {
-      "type": "holders",
-      "identifier": "hogskolan_institute_kungliga_of_royal_stockholm_sweden_technology_1",
-      "consolidated_license_expression": "bsd-new",
-      "consolidated_holders": [
-        "Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)"
-      ],
-      "consolidated_copyright": "Copyright (c) Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)",
-      "core_license_expression": "bsd-new",
-      "core_holders": [
-        "Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
+      "files_count": 7
     },
     {
       "type": "holders",
@@ -780,19 +812,19 @@
     },
     {
       "type": "holders",
-      "identifier": "inc_vmware_1",
-      "consolidated_license_expression": "lgpl-2.0",
+      "identifier": "linus_torvalds_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
       "consolidated_holders": [
-        "VMware, Inc."
+        "Linus Torvalds"
       ],
-      "consolidated_copyright": "Copyright (c) VMware, Inc.",
-      "core_license_expression": "lgpl-2.0",
+      "consolidated_copyright": "Copyright (c) Linus Torvalds",
+      "core_license_expression": "gpl-1.0-plus",
       "core_holders": [
-        "VMware, Inc."
+        "Linus Torvalds"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 4
     },
     {
       "type": "holders",
@@ -844,15 +876,15 @@
     },
     {
       "type": "holders",
-      "identifier": "james_remnant_scott_1",
-      "consolidated_license_expression": "fsf-unlimited AND fsf-unlimited-no-warranty AND gpl-1.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND lgpl-2.0-plus",
+      "identifier": "alte_regensburger_strasse_ulrich_windl_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Scott James Remnant"
+        "Ulrich Windl ALte Regensburger Strasse"
       ],
-      "consolidated_copyright": "Copyright (c) Scott James Remnant",
-      "core_license_expression": "fsf-unlimited-no-warranty AND fsf-unlimited AND (gpl-1.0-plus AND lgpl-2.0-plus) AND gpl-2.0-plus WITH autoconf-simple-exception-2.0",
+      "consolidated_copyright": "Copyright (c) Ulrich Windl ALte Regensburger Strasse",
+      "core_license_expression": null,
       "core_holders": [
-        "Scott James Remnant"
+        "Ulrich Windl ALte Regensburger Strasse"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -860,19 +892,19 @@
     },
     {
       "type": "holders",
-      "identifier": "andrea_arcangeli_1",
-      "consolidated_license_expression": "gpl-2.0-plus",
+      "identifier": "corp_intel_1",
+      "consolidated_license_expression": "lgpl-2.0",
       "consolidated_holders": [
-        "Andrea Arcangeli"
+        "Intel Corporation"
       ],
-      "consolidated_copyright": "Copyright (c) Andrea Arcangeli",
-      "core_license_expression": "gpl-2.0-plus",
+      "consolidated_copyright": "Copyright (c) Intel Corporation",
+      "core_license_expression": "lgpl-2.0",
       "core_holders": [
-        "Andrea Arcangeli"
+        "Intel Corporation"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 2
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -892,35 +924,35 @@
     },
     {
       "type": "holders",
-      "identifier": "david_woodhouse_1",
-      "consolidated_license_expression": "gpl-2.0-plus",
+      "identifier": "dirson_yann_1",
+      "consolidated_license_expression": "bsd-new AND gpl-1.0-plus AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert",
       "consolidated_holders": [
-        "David Woodhouse"
+        "Yann Dirson"
       ],
-      "consolidated_copyright": "Copyright (c) David Woodhouse",
-      "core_license_expression": "gpl-2.0-plus",
+      "consolidated_copyright": "Copyright (c) Yann Dirson",
+      "core_license_expression": "((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0)",
       "core_holders": [
-        "David Woodhouse"
+        "Yann Dirson"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "hogskolan_institute_kungliga_of_royal_stockholm_sweden_technology_1",
+      "consolidated_license_expression": "bsd-new",
+      "consolidated_holders": [
+        "Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)"
+      ],
+      "consolidated_copyright": "Copyright (c) Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)",
+      "core_license_expression": "bsd-new",
+      "core_holders": [
+        "Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)"
       ],
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "and_inc_powerquest_theodore_tso_1",
-      "consolidated_license_expression": "gpl-1.0-plus AND lgpl-2.0",
-      "consolidated_holders": [
-        "Theodore Ts'o and PowerQuest, Inc."
-      ],
-      "consolidated_copyright": "Copyright (c) Theodore Ts'o and PowerQuest, Inc.",
-      "core_license_expression": "lgpl-2.0 AND gpl-1.0-plus",
-      "core_holders": [
-        "Theodore Ts'o and PowerQuest, Inc."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 7
     },
     {
       "type": "holders",
@@ -956,19 +988,19 @@
     },
     {
       "type": "holders",
-      "identifier": "blaise_card_curie_et_institut_laboratoire_marie_masi_pascal_pierr_1",
-      "consolidated_license_expression": "lgpl-2.0",
+      "identifier": "foundation_inc_software_1",
+      "consolidated_license_expression": "lgpl-2.0-plus",
       "consolidated_holders": [
-        "Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie"
+        "Software Foundation, Inc."
       ],
-      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie",
-      "core_license_expression": "lgpl-2.0",
+      "consolidated_copyright": "Copyright (c) Software Foundation, Inc.",
+      "core_license_expression": "lgpl-2.0-plus",
       "core_holders": [
-        "Remy Card Laboratoire MASI, Institut Blaise Pascal Universite Pierre et Marie Curie"
+        "Software Foundation, Inc."
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 13
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -988,51 +1020,19 @@
     },
     {
       "type": "holders",
-      "identifier": "card_laboratoire_remy_1",
-      "consolidated_license_expression": null,
-      "consolidated_holders": [
-        "Remy Card Laboratoire"
-      ],
-      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire",
-      "core_license_expression": null,
-      "core_holders": [
-        "Remy Card Laboratoire"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "card_remy_1",
+      "identifier": "blaise_card_institut_laboratoire_masi_pascal_remy_1",
       "consolidated_license_expression": "gpl-1.0-plus",
       "consolidated_holders": [
-        "Remy Card"
+        "Remy Card Laboratoire MASI - Institut Blaise Pascal"
       ],
-      "consolidated_copyright": "Copyright (c) Remy Card",
+      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire MASI - Institut Blaise Pascal",
       "core_license_expression": "gpl-1.0-plus",
       "core_holders": [
-        "Remy Card"
+        "Remy Card Laboratoire MASI - Institut Blaise Pascal"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "robert_yang_1",
-      "consolidated_license_expression": "lgpl-2.0",
-      "consolidated_holders": [
-        "Robert Yang"
-      ],
-      "consolidated_copyright": "Copyright (c) Robert Yang",
-      "core_license_expression": "lgpl-2.0",
-      "core_holders": [
-        "Robert Yang"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
+      "files_count": 3
     },
     {
       "type": "holders",
@@ -1049,6 +1049,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "card_laboratoire_remy_1",
+      "consolidated_license_expression": null,
+      "consolidated_holders": [
+        "Remy Card Laboratoire"
+      ],
+      "consolidated_copyright": "Copyright (c) Remy Card Laboratoire",
+      "core_license_expression": null,
+      "core_holders": [
+        "Remy Card Laboratoire"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     },
     {
       "type": "holders",
@@ -1084,47 +1100,31 @@
     },
     {
       "type": "holders",
-      "identifier": "andrew_esh_1",
+      "identifier": "andreas_dilger_1",
       "consolidated_license_expression": "gpl-2.0-plus",
       "consolidated_holders": [
-        "Andrew Esh"
+        "Andreas Dilger"
       ],
-      "consolidated_copyright": "Copyright (c) Andrew Esh",
+      "consolidated_copyright": "Copyright (c) Andreas Dilger",
       "core_license_expression": "gpl-2.0-plus",
       "core_holders": [
-        "Andrew Esh"
+        "Andreas Dilger"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 2
     },
     {
       "type": "holders",
-      "identifier": "dirson_yann_1",
-      "consolidated_license_expression": "bsd-new AND gpl-1.0-plus AND gpl-2.0 AND lgpl-2.0 AND mit-old-style-no-advert",
+      "identifier": "oracle_1",
+      "consolidated_license_expression": "gpl-1.0-plus",
       "consolidated_holders": [
-        "Yann Dirson"
+        "Oracle"
       ],
-      "consolidated_copyright": "Copyright (c) Yann Dirson",
-      "core_license_expression": "((gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert) AND mit-old-style-no-advert AND bsd-new) AND (gpl-1.0-plus AND gpl-2.0)",
+      "consolidated_copyright": "Copyright (c) Oracle",
+      "core_license_expression": "gpl-1.0-plus",
       "core_holders": [
-        "Yann Dirson"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 3
-    },
-    {
-      "type": "holders",
-      "identifier": "hocevar_sam_1",
-      "consolidated_license_expression": "gpl-2.0 AND lgpl-2.0 AND public-domain",
-      "consolidated_holders": [
-        "Sam Hocevar"
-      ],
-      "consolidated_copyright": "Copyright (c) Sam Hocevar",
-      "core_license_expression": "(public-domain AND gpl-2.0) AND lgpl-2.0",
-      "core_holders": [
-        "Sam Hocevar"
+        "Oracle"
       ],
       "other_license_expression": null,
       "other_holders": [],
