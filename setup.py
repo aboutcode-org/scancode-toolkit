@@ -293,7 +293,7 @@ setup(
             'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
             'is-license-text = licensedcode.plugin_license_text:IsLicenseText',
             'filter-clues = cluecode.plugin_filter_clues:RedundantCluesFilter',
-            'consolidate = scancode.plugin_consolidate:Consolidator',
+            'consolidate = summarycode.plugin_consolidate:Consolidator',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed
