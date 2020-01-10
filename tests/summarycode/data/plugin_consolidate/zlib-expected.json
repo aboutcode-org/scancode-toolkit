@@ -58,45 +58,45 @@
       "core_holders": [],
       "other_license_expression": "info-zip-2009-01 AND zlib",
       "other_holders": [
-        "Info-ZIP.",
-        "Mathias Svensson",
-        "Even Rouault",
         "Gilles Vollant, Even Rouault, Mathias Svensson",
-        "Gilles Vollant"
+        "Even Rouault",
+        "Gilles Vollant",
+        "Info-ZIP.",
+        "Mathias Svensson"
       ],
       "files_count": 22
     },
     {
       "type": "holders",
-      "identifier": "advanced_as_christian_computing_michelsen_research_1",
-      "consolidated_license_expression": "mit-old-style",
+      "identifier": "adler_and_gailly_jean_loup_mark_1",
+      "consolidated_license_expression": "zlib",
       "consolidated_holders": [
-        "Christian Michelsen Research AS Advanced Computing"
+        "Jean-loup Gailly and Mark Adler"
       ],
-      "consolidated_copyright": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-      "core_license_expression": "mit-old-style",
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly and Mark Adler",
+      "core_license_expression": "zlib",
       "core_holders": [
-        "Christian Michelsen Research AS Advanced Computing"
+        "Jean-loup Gailly and Mark Adler"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 1
+      "files_count": 8
     },
     {
       "type": "holders",
-      "identifier": "gilles_vollant_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "identifier": "adler_gailly_jean_loup_mark_1",
+      "consolidated_license_expression": "zlib",
       "consolidated_holders": [
-        "Gilles Vollant"
+        "Jean-loup Gailly, Mark Adler"
       ],
-      "consolidated_copyright": "Copyright (c) Gilles Vollant",
-      "core_license_expression": "zlib AND info-zip-2009-01",
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly, Mark Adler",
+      "core_license_expression": "zlib",
       "core_holders": [
-        "Gilles Vollant"
+        "Jean-loup Gailly, Mark Adler"
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 12
+      "files_count": 14
     },
     {
       "type": "holders",
@@ -116,15 +116,15 @@
     },
     {
       "type": "holders",
-      "identifier": "bob_dellaca_1",
-      "consolidated_license_expression": "zlib",
+      "identifier": "advanced_as_christian_computing_michelsen_research_1",
+      "consolidated_license_expression": "mit-old-style",
       "consolidated_holders": [
-        "Bob Dellaca"
+        "Christian Michelsen Research AS Advanced Computing"
       ],
-      "consolidated_copyright": "Copyright (c) Bob Dellaca",
-      "core_license_expression": "zlib",
+      "consolidated_copyright": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+      "core_license_expression": "mit-old-style",
       "core_holders": [
-        "Bob Dellaca"
+        "Christian Michelsen Research AS Advanced Computing"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -132,15 +132,15 @@
     },
     {
       "type": "holders",
-      "identifier": "even_gilles_mathias_rouault_svensson_vollant_1",
-      "consolidated_license_expression": "info-zip-2009-01",
+      "identifier": "ahvenlampi_gailly_jean_loup_osma_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Gilles Vollant, Even Rouault, Mathias Svensson"
+        "Jean-loup Gailly Osma Ahvenlampi"
       ],
-      "consolidated_copyright": "Copyright (c) Gilles Vollant, Even Rouault, Mathias Svensson",
-      "core_license_expression": "info-zip-2009-01",
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly Osma Ahvenlampi",
+      "core_license_expression": null,
       "core_holders": [
-        "Gilles Vollant, Even Rouault, Mathias Svensson"
+        "Jean-loup Gailly Osma Ahvenlampi"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -164,54 +164,6 @@
     },
     {
       "type": "holders",
-      "identifier": "andreas_kleinert_r_1",
-      "consolidated_license_expression": null,
-      "consolidated_holders": [
-        "Andreas R. Kleinert"
-      ],
-      "consolidated_copyright": "Copyright (c) Andreas R. Kleinert",
-      "core_license_expression": null,
-      "core_holders": [
-        "Andreas R. Kleinert"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "even_rouault_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
-      "consolidated_holders": [
-        "Even Rouault"
-      ],
-      "consolidated_copyright": "Copyright (c) Even Rouault",
-      "core_license_expression": "info-zip-2009-01 AND zlib",
-      "core_holders": [
-        "Even Rouault"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 4
-    },
-    {
-      "type": "holders",
-      "identifier": "borland_corp_1",
-      "consolidated_license_expression": null,
-      "consolidated_holders": [
-        "Borland Corp."
-      ],
-      "consolidated_copyright": "Copyright (c) Borland Corp.",
-      "core_license_expression": null,
-      "core_holders": [
-        "Borland Corp."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 2
-    },
-    {
-      "type": "holders",
       "identifier": "and_deutsch_gailly_jean_l_loup_peter_1",
       "consolidated_license_expression": "peter-deutsch-document",
       "consolidated_holders": [
@@ -225,70 +177,6 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "adler_and_gailly_jean_loup_mark_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Jean-loup Gailly and Mark Adler"
-      ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly and Mark Adler",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Jean-loup Gailly and Mark Adler"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 8
-    },
-    {
-      "type": "holders",
-      "identifier": "jacques_nomssi_nzali_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Jacques Nomssi Nzali"
-      ],
-      "consolidated_copyright": "Copyright (c) Jacques Nomssi Nzali",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Jacques Nomssi Nzali"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 2
-    },
-    {
-      "type": "holders",
-      "identifier": "anisimkov_dmitriy_1",
-      "consolidated_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "consolidated_holders": [
-        "Dmitriy Anisimkov"
-      ],
-      "consolidated_copyright": "Copyright (c) Dmitriy Anisimkov",
-      "core_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "core_holders": [
-        "Dmitriy Anisimkov"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 10
-    },
-    {
-      "type": "holders",
-      "identifier": "gailly_jean_loup_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Jean-loup Gailly"
-      ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Jean-loup Gailly"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 11
     },
     {
       "type": "holders",
@@ -308,15 +196,31 @@
     },
     {
       "type": "holders",
-      "identifier": "mathias_svensson_1",
-      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "identifier": "andreas_kleinert_r_1",
+      "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Mathias Svensson"
+        "Andreas R. Kleinert"
       ],
-      "consolidated_copyright": "Copyright (c) Mathias Svensson",
-      "core_license_expression": "info-zip-2009-01 AND zlib",
+      "consolidated_copyright": "Copyright (c) Andreas R. Kleinert",
+      "core_license_expression": null,
       "core_holders": [
-        "Mathias Svensson"
+        "Andreas R. Kleinert"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "anisimkov_dmitriy_1",
+      "consolidated_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "consolidated_holders": [
+        "Dmitriy Anisimkov"
+      ],
+      "consolidated_copyright": "Copyright (c) Dmitriy Anisimkov",
+      "core_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "core_holders": [
+        "Dmitriy Anisimkov"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -324,15 +228,47 @@
     },
     {
       "type": "holders",
-      "identifier": "ahvenlampi_gailly_jean_loup_osma_1",
+      "identifier": "bob_dellaca_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Bob Dellaca"
+      ],
+      "consolidated_copyright": "Copyright (c) Bob Dellaca",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Bob Dellaca"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "borland_corp_1",
       "consolidated_license_expression": null,
       "consolidated_holders": [
-        "Jean-loup Gailly Osma Ahvenlampi"
+        "Borland Corp."
       ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly Osma Ahvenlampi",
+      "consolidated_copyright": "Copyright (c) Borland Corp.",
       "core_license_expression": null,
       "core_holders": [
-        "Jean-loup Gailly Osma Ahvenlampi"
+        "Borland Corp."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "brian_raiter_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Brian Raiter"
+      ],
+      "consolidated_copyright": "Copyright (c) Brian Raiter",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Brian Raiter"
       ],
       "other_license_expression": null,
       "other_holders": [],
@@ -356,38 +292,6 @@
     },
     {
       "type": "holders",
-      "identifier": "info_zip_1",
-      "consolidated_license_expression": "info-zip-2009-01",
-      "consolidated_holders": [
-        "Info-ZIP."
-      ],
-      "consolidated_copyright": "Copyright (c) Info-ZIP.",
-      "core_license_expression": "info-zip-2009-01",
-      "core_holders": [
-        "Info-ZIP."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
-      "identifier": "brian_raiter_1",
-      "consolidated_license_expression": "zlib",
-      "consolidated_holders": [
-        "Brian Raiter"
-      ],
-      "consolidated_copyright": "Copyright (c) Brian Raiter",
-      "core_license_expression": "zlib",
-      "core_holders": [
-        "Brian Raiter"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
       "identifier": "deutsch_l_peter_1",
       "consolidated_license_expression": "peter-deutsch-document",
       "consolidated_holders": [
@@ -401,6 +305,70 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "even_gilles_mathias_rouault_svensson_vollant_1",
+      "consolidated_license_expression": "info-zip-2009-01",
+      "consolidated_holders": [
+        "Gilles Vollant, Even Rouault, Mathias Svensson"
+      ],
+      "consolidated_copyright": "Copyright (c) Gilles Vollant, Even Rouault, Mathias Svensson",
+      "core_license_expression": "info-zip-2009-01",
+      "core_holders": [
+        "Gilles Vollant, Even Rouault, Mathias Svensson"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "even_rouault_1",
+      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "consolidated_holders": [
+        "Even Rouault"
+      ],
+      "consolidated_copyright": "Copyright (c) Even Rouault",
+      "core_license_expression": "info-zip-2009-01 AND zlib",
+      "core_holders": [
+        "Even Rouault"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 4
+    },
+    {
+      "type": "holders",
+      "identifier": "gailly_jean_loup_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Jean-loup Gailly"
+      ],
+      "consolidated_copyright": "Copyright (c) Jean-loup Gailly",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Jean-loup Gailly"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 11
+    },
+    {
+      "type": "holders",
+      "identifier": "gilles_vollant_1",
+      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "consolidated_holders": [
+        "Gilles Vollant"
+      ],
+      "consolidated_copyright": "Copyright (c) Gilles Vollant",
+      "core_license_expression": "zlib AND info-zip-2009-01",
+      "core_holders": [
+        "Gilles Vollant"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 12
     },
     {
       "type": "holders",
@@ -420,19 +388,51 @@
     },
     {
       "type": "holders",
-      "identifier": "adler_gailly_jean_loup_mark_1",
-      "consolidated_license_expression": "zlib",
+      "identifier": "info_zip_1",
+      "consolidated_license_expression": "info-zip-2009-01",
       "consolidated_holders": [
-        "Jean-loup Gailly, Mark Adler"
+        "Info-ZIP."
       ],
-      "consolidated_copyright": "Copyright (c) Jean-loup Gailly, Mark Adler",
-      "core_license_expression": "zlib",
+      "consolidated_copyright": "Copyright (c) Info-ZIP.",
+      "core_license_expression": "info-zip-2009-01",
       "core_holders": [
-        "Jean-loup Gailly, Mark Adler"
+        "Info-ZIP."
       ],
       "other_license_expression": null,
       "other_holders": [],
-      "files_count": 14
+      "files_count": 1
+    },
+    {
+      "type": "holders",
+      "identifier": "jacques_nomssi_nzali_1",
+      "consolidated_license_expression": "zlib",
+      "consolidated_holders": [
+        "Jacques Nomssi Nzali"
+      ],
+      "consolidated_copyright": "Copyright (c) Jacques Nomssi Nzali",
+      "core_license_expression": "zlib",
+      "core_holders": [
+        "Jacques Nomssi Nzali"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 2
+    },
+    {
+      "type": "holders",
+      "identifier": "mathias_svensson_1",
+      "consolidated_license_expression": "info-zip-2009-01 AND zlib",
+      "consolidated_holders": [
+        "Mathias Svensson"
+      ],
+      "consolidated_copyright": "Copyright (c) Mathias Svensson",
+      "core_license_expression": "info-zip-2009-01 AND zlib",
+      "core_holders": [
+        "Mathias Svensson"
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 10
     }
   ],
   "consolidated_packages": [],

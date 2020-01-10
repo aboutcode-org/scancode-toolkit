@@ -22,22 +22,6 @@
   "consolidated_components": [
     {
       "type": "holders",
-      "identifier": "corp_omega_1",
-      "consolidated_license_expression": "mit",
-      "consolidated_holders": [
-        "Omega Corp."
-      ],
-      "consolidated_copyright": "Copyright (c) Omega Corp.",
-      "core_license_expression": "mit",
-      "core_holders": [
-        "Omega Corp."
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
       "identifier": "corp_ibm_1",
       "consolidated_license_expression": "mit",
       "consolidated_holders": [
@@ -51,6 +35,22 @@
       "other_license_expression": null,
       "other_holders": [],
       "files_count": 3
+    },
+    {
+      "type": "holders",
+      "identifier": "corp_omega_1",
+      "consolidated_license_expression": "mit",
+      "consolidated_holders": [
+        "Omega Corp."
+      ],
+      "consolidated_copyright": "Copyright (c) Omega Corp.",
+      "core_license_expression": "mit",
+      "core_holders": [
+        "Omega Corp."
+      ],
+      "other_license_expression": null,
+      "other_holders": [],
+      "files_count": 1
     }
   ],
   "consolidated_packages": [],
