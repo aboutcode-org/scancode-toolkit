@@ -270,17 +270,13 @@ def get_consolidated_packages(codebase):
                     # If a resource is part of a package Component, then it cannot be part of any other type of Component
                     package_resource.extra_data['in_package_component'] = True
                     package_resource.save(codebase)
-
-                package_resource_license_expression = combine_expressions(package_resource.license_expressions)
-                package_resource_holders = package_resource.holders
-                if not package_resource_license_expression and not package_resource_holders:
-                    continue
-                discovered_license_expressions.append(package_resource_license_expression)
-                discovered_holders.extend(h.get('value') for h in package_resource_holders)
+                if package_resource.license_expressions:
+                    package_resource_license_expression = combine_expressions(package_resource.license_expressions)
+                    if package_resource_license_expression:
+                        discovered_license_expressions.append(package_resource_license_expression)
+                if package_resource.holders:
+                    discovered_holders.extend(h.get('value') for h in package_resource.holders)
             discovered_holders = process_holders(discovered_holders)
-
-            # Remove NoneTypes from discovered licenses
-            discovered_license_expressions = [lic for lic in discovered_license_expressions if lic]
 
             combined_discovered_license_expression = combine_expressions(discovered_license_expressions)
             if combined_discovered_license_expression:
