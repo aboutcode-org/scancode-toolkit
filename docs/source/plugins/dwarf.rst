@@ -3,13 +3,13 @@
 Dwarf Plugin
 ============
 
-This plugin allows users to collect source code path/name from compilation 
-units found in ELF DWARFs.
+This plugin allows users to collect source code path/name from compilation units found in
+ELF DWARFs.
 
 Specification
 -------------
 
-This plugin will only work with non-stripped ELFs with debug symbols. 
+This plugin will only work with non-stripped ELFs with debug symbols.
 
 Using the Plugin
 ----------------
