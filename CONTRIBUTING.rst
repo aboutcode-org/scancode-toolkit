@@ -99,7 +99,7 @@ To set up ScanCode for local development:
 
     git clone https://github.com/your_name_here/scancode-toolkit.git
 
-   See also GitHub docs dor `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ 
+   See also GitHub docs for `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ 
    or `HTTPS <https://help.github.com/articles/which-remote-url-should-i-use/#cloning-with-https-urls-recommended>`_
     
    If you want to change the connection type, do following
