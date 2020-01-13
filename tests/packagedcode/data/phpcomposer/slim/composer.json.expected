@@ -1,136 +1,138 @@
-{
-  "type": "composer",
-  "namespace": "slim",
-  "name": "slim",
-  "version": null,
-  "qualifiers": {},
-  "subpath": null,
-  "primary_language": "PHP",
-  "description": null,
-  "release_date": null,
-  "parties": [
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Josh Lockhart",
-      "email": "hello@joshlockhart.com",
-      "url": "https://joshlockhart.com"
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Andrew Smith",
-      "email": "a.smith@silentworks.co.uk",
-      "url": "http://silentworks.co.uk"
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Rob Allen",
-      "email": "rob@akrabat.com",
-      "url": "http://akrabat.com"
-    },
-    {
-      "type": "person",
-      "role": "author",
-      "name": "Gabriel Manricks",
-      "email": "gmanricks@me.com",
-      "url": "http://gabrielmanricks.com"
-    },
-    {
-      "type": "person",
-      "role": "vendor",
-      "name": "slim",
-      "email": null,
-      "url": null
-    }
-  ],
-  "keywords": [],
-  "homepage_url": "https://slimframework.com",
-  "download_url": null,
-  "size": null,
-  "sha1": null,
-  "md5": null,
-  "sha256": null,
-  "sha512": null,
-  "bug_tracking_url": null,
-  "code_view_url": null,
-  "vcs_url": null,
-  "copyright": null,
-  "license_expression": "mit",
-  "declared_license": "MIT",
-  "notice_text": null,
-  "root_path": null,
-  "dependencies": [
-    {
-      "purl": "pkg:composer/php",
-      "requirement": ">=5.5.0",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/pimple/pimple",
-      "requirement": "^3.0",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/psr/http-message",
-      "requirement": "^1.0",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/nikic/fast-route",
-      "requirement": "^1.0",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/container-interop/container-interop",
-      "requirement": "^1.1",
-      "scope": "require",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/squizlabs/php_codesniffer",
-      "requirement": "^2.5",
-      "scope": "require-dev",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/phpunit/phpunit",
-      "requirement": "^4.0",
-      "scope": "require-dev",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:composer/psr/http-message-implementation",
-      "requirement": "1.0",
-      "scope": "provide",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    }
-  ],
-  "contains_source_code": null,
-  "source_packages": [],
-  "purl": "pkg:composer/slim/slim",
-  "repository_homepage_url": "https://packagist.org/packages/slim/slim",
-  "repository_download_url": null,
-  "api_data_url": "https://packagist.org/p/packages/slim/slim.json"
-}
+[
+  {
+    "type": "composer",
+    "namespace": "slim",
+    "name": "slim",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "PHP",
+    "description": null,
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Josh Lockhart",
+        "email": "hello@joshlockhart.com",
+        "url": "https://joshlockhart.com"
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Andrew Smith",
+        "email": "a.smith@silentworks.co.uk",
+        "url": "http://silentworks.co.uk"
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Rob Allen",
+        "email": "rob@akrabat.com",
+        "url": "http://akrabat.com"
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Gabriel Manricks",
+        "email": "gmanricks@me.com",
+        "url": "http://gabrielmanricks.com"
+      },
+      {
+        "type": "person",
+        "role": "vendor",
+        "name": "slim",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://slimframework.com",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": "MIT",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:composer/php",
+        "requirement": ">=5.5.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/pimple/pimple",
+        "requirement": "^3.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/psr/http-message",
+        "requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/nikic/fast-route",
+        "requirement": "^1.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/container-interop/container-interop",
+        "requirement": "^1.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "requirement": "^2.5",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/phpunit/phpunit",
+        "requirement": "^4.0",
+        "scope": "require-dev",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:composer/psr/http-message-implementation",
+        "requirement": "1.0",
+        "scope": "provide",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:composer/slim/slim",
+    "repository_homepage_url": "https://packagist.org/packages/slim/slim",
+    "repository_download_url": null,
+    "api_data_url": "https://packagist.org/p/packages/slim/slim.json"
+  }
+]
