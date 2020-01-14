@@ -1,6 +1,6 @@
-import urllib.request
-import licensedcode.index
 import json
+import licensedcode.index
+import urllib.request
 from licensedcode.cache import get_index
 from licensedcode.models import load_licenses
 
@@ -33,6 +33,7 @@ def add_osi_key(obj: "OSI License Object"):
     licenses_path = "src/licensedcode/data/licenses/" # licenses directory
     file_to_modify = open(licenses_path + mapped_license.key + ".yml", "a")
     file_to_modify.write("osi_license_key: " + osi_key)
+    file_to_modify.write("\n")
 
 
 def add_osi_keys():
