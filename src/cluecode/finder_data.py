@@ -34,7 +34,14 @@ def set_from_text(text):
 
 
 JUNK_EMAILS = set_from_text(u'''
-    test@test.com
+    testuser
+    trialuser
+    sampleuser
+    trial.com
+    sample.com
+    other.com
+    something.com
+    some.com
     exmaple.com
     example.com
     example.net
@@ -50,6 +57,10 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     example.net
     example.org
     test.com
+    something.com
+    some.com
+    anything.com
+    any.com
     schemas.android.com
     1.2.3.4
     yimg.com
@@ -200,6 +211,7 @@ JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
    .png
    .jpg
    .gif
+   .jpeg
 ''')))
 
 
@@ -227,6 +239,9 @@ classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SU
 
 
 def classify_url(url):
+    '''
+    Return False if `url` found to be a candidate for a spam url. Return True otherwise.
+    '''
     if not url:
         return False
     u = url.lower().strip('/')
