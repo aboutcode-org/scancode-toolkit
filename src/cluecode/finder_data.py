@@ -37,11 +37,6 @@ JUNK_EMAILS = set_from_text(u'''
     testuser
     trialuser
     sampleuser
-    trial.com
-    sample.com
-    other.com
-    something.com
-    some.com
     exmaple.com
     example.com
     example.net
@@ -56,11 +51,6 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     example.com
     example.net
     example.org
-    test.com
-    something.com
-    some.com
-    anything.com
-    any.com
     schemas.android.com
     1.2.3.4
     yimg.com
@@ -72,6 +62,19 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
 
 JUNK_IPS = set_from_text(u'''
     1.2.3.4
+''')
+
+JUNK_EXACT_DOMAINS = set_from_text(u'''
+    test.com
+    something.com
+    some.com
+    anything.com
+    any.com
+    trial.com
+    sample.com
+    other.com
+    something.com
+    some.com
 ''')
 
 JUNK_URLS = set_from_text(u'''
@@ -215,7 +218,7 @@ JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
 ''')))
 
 
-def classify(s, data_set, suffixes=None):
+def classify(s, data_set, suffixes=None, exact_match=None):
     """
     Return True or some classification string value that evaluates to True if
     the data in string s is not junk. Return False if the data in string s is
@@ -224,6 +227,11 @@ def classify(s, data_set, suffixes=None):
     if not s:
         return False
     s = s.lower().strip('/')
+    # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
+    if '@' in s and exact_match:
+        email_domain = s.split('@')
+        if any(d in email_domain for d in exact_match):
+            return False
     if any(d in s for d in data_set):
         return False
     if suffixes and s.endswith(suffixes):
@@ -235,7 +243,7 @@ classify_ip = partial(classify, data_set=JUNK_IPS)
 
 classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES)
+classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES, exact_match=JUNK_EXACT_DOMAINS)
 
 
 def classify_url(url):
