@@ -335,6 +335,7 @@ def _deps_mapper(deps, package, scope, is_runtime=False, is_optional=False):
         purl = models.PackageURL(type='composer', namespace=ns, name=name).to_string()
         dep = models.DependentPackage(
             purl=purl,
+            package_version=None,
             requirement=requirement,
             scope=scope,
             is_runtime=is_runtime,
@@ -387,6 +388,7 @@ def parse_person(persons):
 def build_dep_package(package, scope, is_runtime, is_optional):
     return models.DependentPackage(
         purl=package.purl,
+        package_version=None,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,

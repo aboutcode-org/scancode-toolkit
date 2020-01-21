@@ -122,6 +122,7 @@ def build_package(package_data):
                     models.DependentPackage(
                         purl=PackageURL(
                             type='cran', name=dependency).to_string(),
+                        package_version=None,
                         requirement=requirement,
                         scope='dependencies',
                         is_runtime=True,

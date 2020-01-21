@@ -664,6 +664,7 @@ def deps_mapper(deps, package, field_name):
             dependency_attributes = npm_dependency_scopes_attributes.get(field_name, dict())
             dep = models.DependentPackage(
                 purl=purl,
+                package_version=None,
                 scope=field_name,
                 requirement=requirement,
                 **dependency_attributes
@@ -838,6 +839,7 @@ def build_packages_from_lockfile(package_data):
                 dep_deps.append(
                     models.DependentPackage(
                         purl=purl,
+                        package_version=dep_req,
                         scope='requires-dev',
                         requirement=dep_req,
                         is_runtime=False,
@@ -849,6 +851,7 @@ def build_packages_from_lockfile(package_data):
                 dep_deps.append(
                     models.DependentPackage(
                         purl=purl,
+                        package_version=dep_req,
                         scope='requires',
                         requirement=dep_req,
                         is_runtime=True,
@@ -873,6 +876,7 @@ def build_packages_from_lockfile(package_data):
                         name=dep,
                         version=dep_version,
                     ).to_string(),
+                    package_version=dep_version,
                     scope='dependencies',
                     requirement=requirement,
                     is_runtime=True,
@@ -897,6 +901,7 @@ def build_packages_from_lockfile(package_data):
         package_deps.append(
             models.DependentPackage(
                 purl=package.purl,
+                package_version=package.version,
                 scope='dependencies',
                 is_runtime=True,
                 is_optional=False,
@@ -909,6 +914,7 @@ def build_packages_from_lockfile(package_data):
         dev_package_deps.append(
             models.DependentPackage(
                 purl=dev_package.purl,
+                package_version=dev_package.version,
                 scope='dependencies-dev',
                 is_runtime=False,
                 is_optional=True,
@@ -947,6 +953,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     deps.append(
                         models.DependentPackage(
                             purl=PackageURL(type='npm', name=dep).to_string(),
+                            package_version=current_package_data.get('version'),
                             scope='dependencies',
                             requirement=req,
                             is_runtime=True,
@@ -1038,6 +1045,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     name=package.name,
                     version=package.version
                 ).to_string(),
+                package_version=package.version,
                 requirement=requirement,
                 scope='dependencies',
                 is_runtime=True,

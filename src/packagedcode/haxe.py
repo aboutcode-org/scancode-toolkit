@@ -178,7 +178,7 @@ def build_package(package_data):
             name=dep_name,
             version=dep_version
         ).to_string()
-        dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
+        dep = models.DependentPackage(purl=dep_purl, package_version=dep_version, is_resolved=is_resolved,)
         package.dependencies.append(dep)
 
     return package

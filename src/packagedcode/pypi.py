@@ -218,6 +218,7 @@ def parse_with_dparse(location):
                 models.DependentPackage(
                     purl=PackageURL(
                         type='pypi', name=df_dependency.name).to_string(),
+                    package_version=None,
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,

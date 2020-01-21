@@ -960,6 +960,7 @@ def get_dependencies(pom):
                 is_runtime = True
             dep_pack = models.DependentPackage(
                 purl=str(dep_id),
+                package_version=None,
                 requirement=dversion,
                 scope=scope,
                 is_runtime=is_runtime,

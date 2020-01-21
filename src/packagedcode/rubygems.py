@@ -501,6 +501,7 @@ def get_dependencies(dependencies):
 
         dep = models.DependentPackage(
             purl=RubyGem.create(name=name).purl,
+            package_version=None,
             requirement=version_constraint or None,
             scope=scope,
             is_runtime=is_runtime,

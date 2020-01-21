@@ -140,6 +140,7 @@ def build_package(package_data):
         dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(type='bower', name=dep_name).to_string(),
+                package_version=None,
                 scope='dependencies',
                 requirement=requirement,
                 is_runtime=True,
@@ -152,6 +153,7 @@ def build_package(package_data):
         dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(type='bower', name=dep_name).to_string(),
+                package_version=None,
                 scope='devDependencies',
                 requirement=requirement,
                 is_runtime=False,
