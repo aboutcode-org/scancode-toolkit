@@ -36,6 +36,7 @@
   "dependencies": [
     {
       "purl": "pkg:chef/nodejs",
+      "package_version": null,
       "requirement": null,
       "scope": "dependencies",
       "is_runtime": true,

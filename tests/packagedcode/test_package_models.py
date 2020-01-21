@@ -161,6 +161,7 @@ class TestModels(PackageTester):
             dependencies=[
                 DependentPackage(
                   purl='pkg:maven/org.aspectj/aspectjtools',
+                  package_version=None,
                   requirement='1.5.4',
                   scope='relocation',
                   is_runtime=True,
@@ -169,6 +170,7 @@ class TestModels(PackageTester):
                 ),
                 DependentPackage(
                   purl='pkg:maven/org.aspectj/aspectjruntime',
+                  package_version=None,
                   requirement='1.5.4-release',
                   scope='runtime',
                   is_runtime=True,

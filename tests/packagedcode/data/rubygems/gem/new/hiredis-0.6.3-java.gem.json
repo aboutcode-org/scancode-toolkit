@@ -41,6 +41,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/rake",
+        "package_version": null,
         "requirement": "= 10.0",
         "scope": "development",
         "is_runtime": false,
@@ -49,6 +50,7 @@
       },
       {
         "purl": "pkg:gem/rake-compiler",
+        "package_version": null,
         "requirement": "~> 0.7.1",
         "scope": "development",
         "is_runtime": false,
@@ -57,6 +59,7 @@
       },
       {
         "purl": "pkg:gem/minitest",
+        "package_version": null,
         "requirement": "~> 5.5.1",
         "scope": "development",
         "is_runtime": false,

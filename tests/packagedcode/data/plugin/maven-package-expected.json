@@ -126,6 +126,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.ant/ant",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -134,6 +135,7 @@
             },
             {
               "purl": "pkg:maven/javax.media/jai-core",
+              "package_version": null,
               "requirement": "1.1.2_01",
               "scope": "provided",
               "is_runtime": true,
@@ -142,6 +144,7 @@
             },
             {
               "purl": "pkg:maven/jai/jai-codec",
+              "package_version": null,
               "requirement": "1.1.2.1",
               "scope": "provided",
               "is_runtime": true,
@@ -207,6 +210,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.ant/ant",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -215,6 +219,7 @@
             },
             {
               "purl": "pkg:maven/com.jcraft/jsch",
+              "package_version": null,
               "requirement": "0.1.29",
               "scope": "compile",
               "is_runtime": true,
@@ -540,6 +545,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/servletapi/servletapi",
+              "package_version": null,
               "requirement": "2.3",
               "scope": "provided",
               "is_runtime": true,
@@ -548,6 +554,7 @@
             },
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "test",
               "is_runtime": false,
@@ -845,6 +852,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/commons-beanutils/commons-beanutils",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -853,6 +861,7 @@
             },
             {
               "purl": "pkg:maven/commons-digester/commons-digester",
+              "package_version": null,
               "requirement": "1.6",
               "scope": "compile",
               "is_runtime": true,
@@ -861,6 +870,7 @@
             },
             {
               "purl": "pkg:maven/commons-logging/commons-logging",
+              "package_version": null,
               "requirement": "1.0.4",
               "scope": "compile",
               "is_runtime": true,
@@ -869,6 +879,7 @@
             },
             {
               "purl": "pkg:maven/oro/oro",
+              "package_version": null,
               "requirement": "2.0.8",
               "scope": "compile",
               "is_runtime": true,
@@ -877,6 +888,7 @@
             },
             {
               "purl": "pkg:maven/xml-apis/xml-apis",
+              "package_version": null,
               "requirement": "2.0.2",
               "scope": "compile",
               "is_runtime": true,
@@ -885,6 +897,7 @@
             },
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "test",
               "is_runtime": false,
@@ -1004,6 +1017,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/log4j/log4j",
+              "package_version": null,
               "requirement": "1.2.8",
               "scope": "compile",
               "is_runtime": true,
@@ -1012,6 +1026,7 @@
             },
             {
               "purl": "pkg:maven/servletapi/servletapi",
+              "package_version": null,
               "requirement": "2.3",
               "scope": "compile",
               "is_runtime": true,
@@ -1020,6 +1035,7 @@
             },
             {
               "purl": "pkg:maven/struts/struts",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1028,6 +1044,7 @@
             },
             {
               "purl": "pkg:maven/commons-configuration/commons-configuration",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1036,6 +1053,7 @@
             },
             {
               "purl": "pkg:maven/commons-collections/commons-collections",
+              "package_version": null,
               "requirement": "3.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1044,6 +1062,7 @@
             },
             {
               "purl": "pkg:maven/commons-lang/commons-lang",
+              "package_version": null,
               "requirement": "2.0",
               "scope": "compile",
               "is_runtime": true,
@@ -1052,6 +1071,7 @@
             },
             {
               "purl": "pkg:maven/dom4j/dom4j",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -1060,6 +1080,7 @@
             },
             {
               "purl": "pkg:maven/commons-logging/commons-logging",
+              "package_version": null,
               "requirement": "1.0.4",
               "scope": "compile",
               "is_runtime": true,
@@ -1068,6 +1089,7 @@
             },
             {
               "purl": "pkg:maven/commons-digester/commons-digester",
+              "package_version": null,
               "requirement": "1.6",
               "scope": "compile",
               "is_runtime": true,
@@ -1076,6 +1098,7 @@
             },
             {
               "purl": "pkg:maven/xerces/xerces",
+              "package_version": null,
               "requirement": "2.2.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1084,6 +1107,7 @@
             },
             {
               "purl": "pkg:maven/xml-apis/xml-apis",
+              "package_version": null,
               "requirement": "2.0.2",
               "scope": "compile",
               "is_runtime": true,
@@ -1092,6 +1116,7 @@
             },
             {
               "purl": "pkg:maven/xdoclet/xdoclet",
+              "package_version": null,
               "requirement": "1.2.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1100,6 +1125,7 @@
             },
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1108,6 +1134,7 @@
             },
             {
               "purl": "pkg:maven/commons-beanutils/commons-beanutils-core",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -1116,6 +1143,7 @@
             },
             {
               "purl": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -1124,6 +1152,7 @@
             },
             {
               "purl": "pkg:maven/xdoclet/xdoclet-web-module",
+              "package_version": null,
               "requirement": "1.2.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1132,6 +1161,7 @@
             },
             {
               "purl": "pkg:maven/mx4j/mx4j-jmx",
+              "package_version": null,
               "requirement": "2.1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1140,6 +1170,7 @@
             },
             {
               "purl": "pkg:maven/mx4j/mx4j-impl",
+              "package_version": null,
               "requirement": "2.1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -1241,6 +1272,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.maven/maven-artifact",
+              "package_version": null,
               "requirement": "2.0.4",
               "scope": "compile",
               "is_runtime": true,
@@ -1249,6 +1281,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl",
+              "package_version": null,
               "requirement": "2.0.4",
               "scope": "compile",
               "is_runtime": true,
@@ -1257,6 +1290,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api",
+              "package_version": null,
               "requirement": "2.0.4",
               "scope": "compile",
               "is_runtime": true,
@@ -1265,6 +1299,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
+              "package_version": null,
               "requirement": "1.0-alpha-8",
               "scope": "compile",
               "is_runtime": true,
@@ -1273,6 +1308,7 @@
             },
             {
               "purl": "pkg:maven/net.sourceforge.findbugs/findbugs",
+              "package_version": null,
               "requirement": "1.2.0",
               "scope": "compile",
               "is_runtime": true,
@@ -1443,6 +1479,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/relaxngDatatype/relaxngDatatype",
+              "package_version": null,
               "requirement": "20020414",
               "scope": "compile",
               "is_runtime": true,
@@ -1451,6 +1488,7 @@
             },
             {
               "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl",
+              "package_version": null,
               "requirement": "2.1.11",
               "scope": "compile",
               "is_runtime": true,
@@ -1459,6 +1497,7 @@
             },
             {
               "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc",
+              "package_version": null,
               "requirement": "2.1.11",
               "scope": "compile",
               "is_runtime": true,
@@ -1467,6 +1506,7 @@
             },
             {
               "purl": "pkg:maven/com.sun.xsom/xsom",
+              "package_version": null,
               "requirement": "20081112",
               "scope": "compile",
               "is_runtime": true,
@@ -1557,6 +1597,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/ch.qos.logback/logback-core",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -1565,6 +1606,7 @@
             },
             {
               "purl": "pkg:maven/tomcat/catalina",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -1573,6 +1615,7 @@
             },
             {
               "purl": "pkg:maven/org.mortbay.jetty/jetty",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -1581,6 +1624,7 @@
             },
             {
               "purl": "pkg:maven/com.caucho/resin",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -1589,6 +1633,7 @@
             },
             {
               "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -1739,6 +1784,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+              "package_version": null,
               "requirement": "1.0-alpha-7",
               "scope": "compile",
               "is_runtime": true,
@@ -1747,6 +1793,7 @@
             },
             {
               "purl": "pkg:maven/classworlds/classworlds",
+              "package_version": null,
               "requirement": "1.1-alpha-2",
               "scope": "compile",
               "is_runtime": true,
@@ -1755,6 +1802,7 @@
             },
             {
               "purl": "pkg:maven/plexus/plexus-utils",
+              "package_version": null,
               "requirement": "1.0.2",
               "scope": "compile",
               "is_runtime": true,
@@ -1763,6 +1811,7 @@
             },
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "test",
               "is_runtime": false,
@@ -1938,6 +1987,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "test",
               "is_runtime": false,
@@ -2018,6 +2068,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/aopalliance/aopalliance",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2026,6 +2077,7 @@
             },
             {
               "purl": "pkg:maven/asm/asm",
+              "package_version": null,
               "requirement": "2.2.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2034,6 +2086,7 @@
             },
             {
               "purl": "pkg:maven/asm/asm-commons",
+              "package_version": null,
               "requirement": "2.2.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2042,6 +2095,7 @@
             },
             {
               "purl": "pkg:maven/asm/asm-util",
+              "package_version": null,
               "requirement": "2.2.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2050,6 +2104,7 @@
             },
             {
               "purl": "pkg:maven/aspectj/aspectjrt",
+              "package_version": null,
               "requirement": "1.5.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2058,6 +2113,7 @@
             },
             {
               "purl": "pkg:maven/aspectj/aspectjweaver",
+              "package_version": null,
               "requirement": "1.5.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2066,6 +2122,7 @@
             },
             {
               "purl": "pkg:maven/backport-util-concurrent/backport-util-concurrent",
+              "package_version": null,
               "requirement": "3.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2074,6 +2131,7 @@
             },
             {
               "purl": "pkg:maven/c3p0/c3p0",
+              "package_version": null,
               "requirement": "0.9.1.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2082,6 +2140,7 @@
             },
             {
               "purl": "pkg:maven/cglib/cglib-nodep",
+              "package_version": null,
               "requirement": "2.1_3",
               "scope": "compile",
               "is_runtime": true,
@@ -2090,6 +2149,7 @@
             },
             {
               "purl": "pkg:maven/commons-attributes/commons-attributes-api",
+              "package_version": null,
               "requirement": "2.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2098,6 +2158,7 @@
             },
             {
               "purl": "pkg:maven/commons-attributes/commons-attributes-compiler",
+              "package_version": null,
               "requirement": "2.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2106,6 +2167,7 @@
             },
             {
               "purl": "pkg:maven/commons-beanutils/commons-beanutils",
+              "package_version": null,
               "requirement": "1.7.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2114,6 +2176,7 @@
             },
             {
               "purl": "pkg:maven/commons-collections/commons-collections",
+              "package_version": null,
               "requirement": "3.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2122,6 +2185,7 @@
             },
             {
               "purl": "pkg:maven/commons-dbcp/commons-dbcp",
+              "package_version": null,
               "requirement": "1.2.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2130,6 +2194,7 @@
             },
             {
               "purl": "pkg:maven/commons-fileupload/commons-fileupload",
+              "package_version": null,
               "requirement": "1.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2138,6 +2203,7 @@
             },
             {
               "purl": "pkg:maven/commons-httpclient/commons-httpclient",
+              "package_version": null,
               "requirement": "3.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2146,6 +2212,7 @@
             },
             {
               "purl": "pkg:maven/commons-logging/commons-logging",
+              "package_version": null,
               "requirement": "1.1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2154,6 +2221,7 @@
             },
             {
               "purl": "pkg:maven/commons-pool/commons-pool",
+              "package_version": null,
               "requirement": "1.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2162,6 +2230,7 @@
             },
             {
               "purl": "pkg:maven/com.bea.wlplatform/commonj-twm",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2170,6 +2239,7 @@
             },
             {
               "purl": "pkg:maven/com.experlog/xapool",
+              "package_version": null,
               "requirement": "1.5.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2178,6 +2248,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap",
+              "package_version": null,
               "requirement": "2.3.0.677",
               "scope": "compile",
               "is_runtime": true,
@@ -2186,6 +2257,7 @@
             },
             {
               "purl": "pkg:maven/com.jamonapi/jamon",
+              "package_version": null,
               "requirement": "2.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2194,6 +2266,7 @@
             },
             {
               "purl": "pkg:maven/com.lowagie/itext",
+              "package_version": null,
               "requirement": "2.0.7",
               "scope": "compile",
               "is_runtime": true,
@@ -2202,6 +2275,7 @@
             },
             {
               "purl": "pkg:maven/com.oracle.toplink/toplink",
+              "package_version": null,
               "requirement": "10.1.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2210,6 +2284,7 @@
             },
             {
               "purl": "pkg:maven/com.oracle/toplink-essentials",
+              "package_version": null,
               "requirement": "2.41",
               "scope": "compile",
               "is_runtime": true,
@@ -2218,6 +2293,7 @@
             },
             {
               "purl": "pkg:maven/com.oracle/oc4j",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2226,6 +2302,7 @@
             },
             {
               "purl": "pkg:maven/freemarker/freemarker",
+              "package_version": null,
               "requirement": "2.3.12",
               "scope": "compile",
               "is_runtime": true,
@@ -2234,6 +2311,7 @@
             },
             {
               "purl": "pkg:maven/groovy/groovy",
+              "package_version": null,
               "requirement": "1.5.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2242,6 +2320,7 @@
             },
             {
               "purl": "pkg:maven/hessian/hessian",
+              "package_version": null,
               "requirement": "3.1.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2250,6 +2329,7 @@
             },
             {
               "purl": "pkg:maven/jasperreports/jasperreports",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2258,6 +2338,7 @@
             },
             {
               "purl": "pkg:maven/jexcelapi/jxl",
+              "package_version": null,
               "requirement": "2.6.6",
               "scope": "compile",
               "is_runtime": true,
@@ -2266,6 +2347,7 @@
             },
             {
               "purl": "pkg:maven/jotm/jotm",
+              "package_version": null,
               "requirement": "2.0.10",
               "scope": "compile",
               "is_runtime": true,
@@ -2274,6 +2356,7 @@
             },
             {
               "purl": "pkg:maven/jruby/jruby-bin",
+              "package_version": null,
               "requirement": "1.0.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2282,6 +2365,7 @@
             },
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": "3.8.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2290,6 +2374,7 @@
             },
             {
               "purl": "pkg:maven/log4j/log4j",
+              "package_version": null,
               "requirement": "1.2.15",
               "scope": "compile",
               "is_runtime": true,
@@ -2298,6 +2383,7 @@
             },
             {
               "purl": "pkg:maven/net.sf.ehcache/ehcache",
+              "package_version": null,
               "requirement": "1.4.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2306,6 +2392,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.axis/axis",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2314,6 +2401,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-api",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2322,6 +2410,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-core",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2330,6 +2419,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-jsp",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2338,6 +2428,7 @@
             },
             {
               "purl": "pkg:maven/org.beanshell/bsh",
+              "package_version": null,
               "requirement": "2.0b4",
               "scope": "compile",
               "is_runtime": true,
@@ -2346,6 +2437,7 @@
             },
             {
               "purl": "pkg:maven/org.hibernate/hibernate",
+              "package_version": null,
               "requirement": "3.2.6.ga",
               "scope": "compile",
               "is_runtime": true,
@@ -2354,6 +2446,7 @@
             },
             {
               "purl": "pkg:maven/org.hibernate/hibernate-entitymanager",
+              "package_version": null,
               "requirement": "3.3.2.ga",
               "scope": "compile",
               "is_runtime": true,
@@ -2362,6 +2455,7 @@
             },
             {
               "purl": "pkg:maven/poi/poi",
+              "package_version": null,
               "requirement": "3.0.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2370,6 +2464,7 @@
             },
             {
               "purl": "pkg:maven/opensymphony/quartz-all",
+              "package_version": null,
               "requirement": "1.6.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2378,6 +2473,7 @@
             },
             {
               "purl": "pkg:maven/struts/struts",
+              "package_version": null,
               "requirement": "1.2.9",
               "scope": "compile",
               "is_runtime": true,
@@ -2386,6 +2482,7 @@
             },
             {
               "purl": "pkg:maven/taglibs/standard",
+              "package_version": null,
               "requirement": "1.1.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2394,6 +2491,7 @@
             },
             {
               "purl": "pkg:maven/tomcat/catalina",
+              "package_version": null,
               "requirement": "5.5.23",
               "scope": "compile",
               "is_runtime": true,
@@ -2402,6 +2500,7 @@
             },
             {
               "purl": "pkg:maven/velocity/velocity",
+              "package_version": null,
               "requirement": "1.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2410,6 +2509,7 @@
             },
             {
               "purl": "pkg:maven/velocity-tools/velocity-tools-generic",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2418,6 +2518,7 @@
             },
             {
               "purl": "pkg:maven/velocity-tools/velocity-tools-view",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2426,6 +2527,7 @@
             },
             {
               "purl": "pkg:maven/javax.activation/activation",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "provided",
               "is_runtime": true,
@@ -2434,6 +2536,7 @@
             },
             {
               "purl": "pkg:maven/javax.ejb/ejb",
+              "package_version": null,
               "requirement": "3.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2442,6 +2545,7 @@
             },
             {
               "purl": "pkg:maven/javax.faces/jsf-api",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "provided",
               "is_runtime": true,
@@ -2450,6 +2554,7 @@
             },
             {
               "purl": "pkg:maven/javax.jdo/jdo2-api",
+              "package_version": null,
               "requirement": "2.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2458,6 +2563,7 @@
             },
             {
               "purl": "pkg:maven/javax.jms/jms",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "provided",
               "is_runtime": true,
@@ -2466,6 +2572,7 @@
             },
             {
               "purl": "pkg:maven/javax.mail/mail",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "provided",
               "is_runtime": true,
@@ -2474,6 +2581,7 @@
             },
             {
               "purl": "pkg:maven/javax.persistence/persistence-api",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2482,6 +2590,7 @@
             },
             {
               "purl": "pkg:maven/javax.portlet/portlet-api",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2490,6 +2599,7 @@
             },
             {
               "purl": "pkg:maven/javax.resource/connector-api",
+              "package_version": null,
               "requirement": "1.5",
               "scope": "provided",
               "is_runtime": true,
@@ -2498,6 +2608,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/jsp-api",
+              "package_version": null,
               "requirement": "2.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2506,6 +2617,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/jstl",
+              "package_version": null,
               "requirement": "1.1.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2514,6 +2626,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/servlet-api",
+              "package_version": null,
               "requirement": "2.4",
               "scope": "provided",
               "is_runtime": true,
@@ -2522,6 +2635,7 @@
             },
             {
               "purl": "pkg:maven/javax.transaction/jta",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "provided",
               "is_runtime": true,
@@ -2530,6 +2644,7 @@
             },
             {
               "purl": "pkg:maven/javax.xml/jaxrpc-api",
+              "package_version": null,
               "requirement": "1.1",
               "scope": "provided",
               "is_runtime": true,
@@ -2610,6 +2725,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/aopalliance/aopalliance",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2618,6 +2734,7 @@
             },
             {
               "purl": "pkg:maven/commons-logging/commons-logging",
+              "package_version": null,
               "requirement": "1.1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2626,6 +2743,7 @@
             },
             {
               "purl": "pkg:maven/com.oracle/toplink-essentials",
+              "package_version": null,
               "requirement": "2.41",
               "scope": "compile",
               "is_runtime": true,
@@ -2634,6 +2752,7 @@
             },
             {
               "purl": "pkg:maven/com.oracle.toplink/toplink",
+              "package_version": null,
               "requirement": "10.1.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2642,6 +2761,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.ibatis/ibatis-sqlmap",
+              "package_version": null,
               "requirement": "2.3.0",
               "scope": "compile",
               "is_runtime": true,
@@ -2650,6 +2770,7 @@
             },
             {
               "purl": "pkg:maven/org.hibernate/hibernate",
+              "package_version": null,
               "requirement": "3.2.6.ga",
               "scope": "compile",
               "is_runtime": true,
@@ -2658,6 +2779,7 @@
             },
             {
               "purl": "pkg:maven/org.hibernate/hibernate-entitymanager",
+              "package_version": null,
               "requirement": "3.3.1.ga",
               "scope": "compile",
               "is_runtime": true,
@@ -2666,6 +2788,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-aop",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2674,6 +2797,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-beans",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2682,6 +2806,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-context",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2690,6 +2815,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-core",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2698,6 +2824,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-jdbc",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2706,6 +2833,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-tx",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2714,6 +2842,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-web",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2722,6 +2851,7 @@
             },
             {
               "purl": "pkg:maven/javax.jdo/jdo2-api",
+              "package_version": null,
               "requirement": "2.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2730,6 +2860,7 @@
             },
             {
               "purl": "pkg:maven/javax.persistence/persistence-api",
+              "package_version": null,
               "requirement": "1.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2810,6 +2941,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/commons-attributes/commons-attributes-api",
+              "package_version": null,
               "requirement": "2.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2818,6 +2950,7 @@
             },
             {
               "purl": "pkg:maven/commons-attributes/commons-attributes-compiler",
+              "package_version": null,
               "requirement": "2.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2826,6 +2959,7 @@
             },
             {
               "purl": "pkg:maven/commons-logging/commons-logging",
+              "package_version": null,
               "requirement": "1.1.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2834,6 +2968,7 @@
             },
             {
               "purl": "pkg:maven/com.lowagie/itext",
+              "package_version": null,
               "requirement": "2.0.7",
               "scope": "compile",
               "is_runtime": true,
@@ -2842,6 +2977,7 @@
             },
             {
               "purl": "pkg:maven/freemarker/freemarker",
+              "package_version": null,
               "requirement": "2.3.12",
               "scope": "compile",
               "is_runtime": true,
@@ -2850,6 +2986,7 @@
             },
             {
               "purl": "pkg:maven/jasperreports/jasperreports",
+              "package_version": null,
               "requirement": "2.0.2",
               "scope": "compile",
               "is_runtime": true,
@@ -2858,6 +2995,7 @@
             },
             {
               "purl": "pkg:maven/jexcelapi/jxl",
+              "package_version": null,
               "requirement": "2.6.6",
               "scope": "compile",
               "is_runtime": true,
@@ -2866,6 +3004,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-api",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2874,6 +3013,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-core",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2882,6 +3022,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.tiles/tiles-jsp",
+              "package_version": null,
               "requirement": "2.0.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2890,6 +3031,7 @@
             },
             {
               "purl": "pkg:maven/poi/poi",
+              "package_version": null,
               "requirement": "3.0.1",
               "scope": "compile",
               "is_runtime": true,
@@ -2898,6 +3040,7 @@
             },
             {
               "purl": "pkg:maven/velocity/velocity",
+              "package_version": null,
               "requirement": "1.5",
               "scope": "compile",
               "is_runtime": true,
@@ -2906,6 +3049,7 @@
             },
             {
               "purl": "pkg:maven/velocity-tools/velocity-tools-generic",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2914,6 +3058,7 @@
             },
             {
               "purl": "pkg:maven/velocity-tools/velocity-tools-view",
+              "package_version": null,
               "requirement": "1.4",
               "scope": "compile",
               "is_runtime": true,
@@ -2922,6 +3067,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-beans",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2930,6 +3076,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-context",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2938,6 +3085,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-context-support",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2946,6 +3094,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-core",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2954,6 +3103,7 @@
             },
             {
               "purl": "pkg:maven/org.springframework/spring-web",
+              "package_version": null,
               "requirement": "2.5.3",
               "scope": "compile",
               "is_runtime": true,
@@ -2962,6 +3112,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/jsp-api",
+              "package_version": null,
               "requirement": "2.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2970,6 +3121,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/jstl",
+              "package_version": null,
               "requirement": "1.1.0",
               "scope": "provided",
               "is_runtime": true,
@@ -2978,6 +3130,7 @@
             },
             {
               "purl": "pkg:maven/javax.servlet/servlet-api",
+              "package_version": null,
               "requirement": "2.4",
               "scope": "provided",
               "is_runtime": true,
@@ -3051,6 +3204,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/org.mockito/mockito-all",
+              "package_version": null,
               "requirement": "1.8.1",
               "scope": "test",
               "is_runtime": false,
@@ -3170,6 +3324,7 @@
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3178,6 +3333,7 @@
             },
             {
               "purl": "pkg:maven/org.hamcrest/hamcrest-core",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3186,6 +3342,7 @@
             },
             {
               "purl": "pkg:maven/org.mockito/mockito-core",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3194,6 +3351,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3202,6 +3360,7 @@
             },
             {
               "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3210,6 +3369,7 @@
             },
             {
               "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+              "package_version": null,
               "requirement": null,
               "scope": "compile",
               "is_runtime": true,
@@ -3218,6 +3378,7 @@
             },
             {
               "purl": "pkg:maven/org.dom4j/dom4j",
+              "package_version": null,
               "requirement": "2.0.1",
               "scope": "compile",
               "is_runtime": true,

@@ -67,6 +67,7 @@
           "dependencies": [
             {
               "purl": "pkg:composer/php",
+              "package_version": null,
               "requirement": ">=5.6.0",
               "scope": "require",
               "is_runtime": true,
@@ -75,6 +76,7 @@
             },
             {
               "purl": "pkg:composer/phpunit/phpunit",
+              "package_version": null,
               "requirement": "^5.6",
               "scope": "require-dev",
               "is_runtime": false,
@@ -83,6 +85,7 @@
             },
             {
               "purl": "pkg:composer/squizlabs/php_codesniffer",
+              "package_version": null,
               "requirement": "^2.7",
               "scope": "require-dev",
               "is_runtime": false,

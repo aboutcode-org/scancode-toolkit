@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.axis/axis",
+      "package_version": null,
       "requirement": "1.4",
       "scope": "compile",
       "is_runtime": true,

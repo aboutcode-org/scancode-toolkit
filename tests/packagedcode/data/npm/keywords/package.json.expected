@@ -63,6 +63,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/lodash._baseclone",
+        "package_version": null,
         "requirement": "~4.5.0",
         "scope": "dependencies",
         "is_runtime": true,

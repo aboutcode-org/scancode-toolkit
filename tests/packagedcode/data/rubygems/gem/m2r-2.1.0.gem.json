@@ -60,6 +60,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/ffi-rzmq",
+        "package_version": null,
         "requirement": ">= 1.0.1",
         "scope": "runtime",
         "is_runtime": true,
@@ -68,6 +69,7 @@
       },
       {
         "purl": "pkg:gem/ffi",
+        "package_version": null,
         "requirement": ">= 1.0.0",
         "scope": "runtime",
         "is_runtime": true,
@@ -76,6 +78,7 @@
       },
       {
         "purl": "pkg:gem/multi_json",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -84,6 +87,7 @@
       },
       {
         "purl": "pkg:gem/tnetstring",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -92,6 +96,7 @@
       },
       {
         "purl": "pkg:gem/rack",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,
@@ -100,6 +105,7 @@
       },
       {
         "purl": "pkg:gem/rake",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,
@@ -108,6 +114,7 @@
       },
       {
         "purl": "pkg:gem/minitest",
+        "package_version": null,
         "requirement": "= 3.2.0",
         "scope": "development",
         "is_runtime": false,
@@ -116,6 +123,7 @@
       },
       {
         "purl": "pkg:gem/mocha",
+        "package_version": null,
         "requirement": ">= 0.14.0",
         "scope": "development",
         "is_runtime": false,
@@ -124,6 +132,7 @@
       },
       {
         "purl": "pkg:gem/bbq",
+        "package_version": null,
         "requirement": "= 0.0.4",
         "scope": "development",
         "is_runtime": false,
@@ -132,6 +141,7 @@
       },
       {
         "purl": "pkg:gem/capybara-mechanize",
+        "package_version": null,
         "requirement": "= 0.3.0",
         "scope": "development",
         "is_runtime": false,
@@ -140,6 +150,7 @@
       },
       {
         "purl": "pkg:gem/activesupport",
+        "package_version": null,
         "requirement": "~> 3.2.7",
         "scope": "development",
         "is_runtime": false,
@@ -148,6 +159,7 @@
       },
       {
         "purl": "pkg:gem/yard",
+        "package_version": null,
         "requirement": "~> 0.8.2",
         "scope": "development",
         "is_runtime": false,
@@ -156,6 +168,7 @@
       },
       {
         "purl": "pkg:gem/kramdown",
+        "package_version": null,
         "requirement": "~> 0.13.7",
         "scope": "development",
         "is_runtime": false,

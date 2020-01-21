@@ -44,6 +44,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/mocha",
+        "package_version": null,
         "requirement": "1.x.x",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -52,6 +53,7 @@
       },
       {
         "purl": "pkg:npm/chai",
+        "package_version": null,
         "requirement": "1.x.x",
         "scope": "devDependencies",
         "is_runtime": false,

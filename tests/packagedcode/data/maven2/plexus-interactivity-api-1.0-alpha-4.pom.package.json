@@ -113,6 +113,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default",
+      "package_version": null,
       "requirement": "1.0-alpha-7",
       "scope": "compile",
       "is_runtime": true,
@@ -121,6 +122,7 @@
     },
     {
       "purl": "pkg:maven/classworlds/classworlds",
+      "package_version": null,
       "requirement": "1.1-alpha-2",
       "scope": "compile",
       "is_runtime": true,
@@ -129,6 +131,7 @@
     },
     {
       "purl": "pkg:maven/plexus/plexus-utils",
+      "package_version": null,
       "requirement": "1.0.2",
       "scope": "compile",
       "is_runtime": true,
@@ -137,6 +140,7 @@
     },
     {
       "purl": "pkg:maven/junit/junit",
+      "package_version": null,
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,

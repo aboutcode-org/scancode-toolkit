@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.ant/ant",
+      "package_version": null,
       "requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": true,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:maven/javax.media/jai-core",
+      "package_version": null,
       "requirement": "1.1.2_01",
       "scope": "provided",
       "is_runtime": true,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:maven/jai/jai-codec",
+      "package_version": null,
       "requirement": "1.1.2.1",
       "scope": "provided",
       "is_runtime": true,

@@ -52,6 +52,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/assemble-dox",
+        "package_version": null,
         "requirement": "0.0.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -60,6 +61,7 @@
       },
       {
         "purl": "pkg:npm/grunt",
+        "package_version": null,
         "requirement": "^1.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -68,6 +70,7 @@
       },
       {
         "purl": "pkg:npm/grunt-assemble",
+        "package_version": null,
         "requirement": "^0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -76,6 +79,7 @@
       },
       {
         "purl": "pkg:npm/grunt-concurrent",
+        "package_version": null,
         "requirement": "^2.3.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -84,6 +88,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-clean",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -92,6 +97,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-concat",
+        "package_version": null,
         "requirement": "^1.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -100,6 +106,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-connect",
+        "package_version": null,
         "requirement": "^1.0.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -108,6 +115,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-copy",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -116,6 +124,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-cssmin",
+        "package_version": null,
         "requirement": "^1.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -124,6 +133,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-htmlmin",
+        "package_version": null,
         "requirement": "^1.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -132,6 +142,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-imagemin",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -140,6 +151,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-jasmine",
+        "package_version": null,
         "requirement": "^1.0.3",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -148,6 +160,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-jshint",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -156,6 +169,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-uglify",
+        "package_version": null,
         "requirement": "^1.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -164,6 +178,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-watch",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -172,6 +187,7 @@
       },
       {
         "purl": "pkg:npm/grunt-critical",
+        "package_version": null,
         "requirement": "^0.2.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -180,6 +196,7 @@
       },
       {
         "purl": "pkg:npm/grunt-newer",
+        "package_version": null,
         "requirement": "^1.1.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -188,6 +205,7 @@
       },
       {
         "purl": "pkg:npm/grunt-sass",
+        "package_version": null,
         "requirement": "^1.1.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -196,6 +214,7 @@
       },
       {
         "purl": "pkg:npm/grunt-svgmin",
+        "package_version": null,
         "requirement": "^3.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -204,6 +223,7 @@
       },
       {
         "purl": "pkg:npm/grunt-template",
+        "package_version": null,
         "requirement": "^0.2.3",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -212,6 +232,7 @@
       },
       {
         "purl": "pkg:npm/grunt-umd",
+        "package_version": null,
         "requirement": "^2.3.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -220,6 +241,7 @@
       },
       {
         "purl": "pkg:npm/grunt-usemin",
+        "package_version": null,
         "requirement": "^3.1.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -228,6 +250,7 @@
       },
       {
         "purl": "pkg:npm/handlebars-helpers",
+        "package_version": null,
         "requirement": "^0.6.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -236,6 +259,7 @@
       },
       {
         "purl": "pkg:npm/jasmine-jquery",
+        "package_version": null,
         "requirement": "^2.1.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -244,6 +268,7 @@
       },
       {
         "purl": "pkg:npm/jquery",
+        "package_version": null,
         "requirement": "^3.0.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -252,6 +277,7 @@
       },
       {
         "purl": "pkg:npm/jshint-stylish",
+        "package_version": null,
         "requirement": "^2.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -260,6 +286,7 @@
       },
       {
         "purl": "pkg:npm/load-grunt-config",
+        "package_version": null,
         "requirement": "^0.19.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -268,6 +295,7 @@
       },
       {
         "purl": "pkg:npm/lodash",
+        "package_version": null,
         "requirement": "^4.13.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -276,6 +304,7 @@
       },
       {
         "purl": "pkg:npm/seed-random",
+        "package_version": null,
         "requirement": "^2.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -284,6 +313,7 @@
       },
       {
         "purl": "pkg:npm/time-grunt",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "devDependencies",
         "is_runtime": false,

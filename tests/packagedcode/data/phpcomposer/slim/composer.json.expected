@@ -65,6 +65,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.5.0",
         "scope": "require",
         "is_runtime": true,
@@ -73,6 +74,7 @@
       },
       {
         "purl": "pkg:composer/pimple/pimple",
+        "package_version": null,
         "requirement": "^3.0",
         "scope": "require",
         "is_runtime": true,
@@ -81,6 +83,7 @@
       },
       {
         "purl": "pkg:composer/psr/http-message",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -89,6 +92,7 @@
       },
       {
         "purl": "pkg:composer/nikic/fast-route",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -97,6 +101,7 @@
       },
       {
         "purl": "pkg:composer/container-interop/container-interop",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require",
         "is_runtime": true,
@@ -105,6 +110,7 @@
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "package_version": null,
         "requirement": "^2.5",
         "scope": "require-dev",
         "is_runtime": false,
@@ -113,6 +119,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -121,6 +128,7 @@
       },
       {
         "purl": "pkg:composer/psr/http-message-implementation",
+        "package_version": null,
         "requirement": "1.0",
         "scope": "provide",
         "is_runtime": true,

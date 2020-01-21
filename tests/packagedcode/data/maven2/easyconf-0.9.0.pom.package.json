@@ -64,6 +64,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/log4j/log4j",
+      "package_version": null,
       "requirement": "1.2.8",
       "scope": "compile",
       "is_runtime": true,
@@ -72,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/servletapi/servletapi",
+      "package_version": null,
       "requirement": "2.3",
       "scope": "compile",
       "is_runtime": true,
@@ -80,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/struts/struts",
+      "package_version": null,
       "requirement": "1.1",
       "scope": "compile",
       "is_runtime": true,
@@ -88,6 +91,7 @@
     },
     {
       "purl": "pkg:maven/commons-configuration/commons-configuration",
+      "package_version": null,
       "requirement": "1.1",
       "scope": "compile",
       "is_runtime": true,
@@ -96,6 +100,7 @@
     },
     {
       "purl": "pkg:maven/commons-collections/commons-collections",
+      "package_version": null,
       "requirement": "3.1",
       "scope": "compile",
       "is_runtime": true,
@@ -104,6 +109,7 @@
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang",
+      "package_version": null,
       "requirement": "2.0",
       "scope": "compile",
       "is_runtime": true,
@@ -112,6 +118,7 @@
     },
     {
       "purl": "pkg:maven/dom4j/dom4j",
+      "package_version": null,
       "requirement": "1.4",
       "scope": "compile",
       "is_runtime": true,
@@ -120,6 +127,7 @@
     },
     {
       "purl": "pkg:maven/commons-logging/commons-logging",
+      "package_version": null,
       "requirement": "1.0.4",
       "scope": "compile",
       "is_runtime": true,
@@ -128,6 +136,7 @@
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester",
+      "package_version": null,
       "requirement": "1.6",
       "scope": "compile",
       "is_runtime": true,
@@ -136,6 +145,7 @@
     },
     {
       "purl": "pkg:maven/xerces/xerces",
+      "package_version": null,
       "requirement": "2.2.1",
       "scope": "compile",
       "is_runtime": true,
@@ -144,6 +154,7 @@
     },
     {
       "purl": "pkg:maven/xml-apis/xml-apis",
+      "package_version": null,
       "requirement": "2.0.2",
       "scope": "compile",
       "is_runtime": true,
@@ -152,6 +163,7 @@
     },
     {
       "purl": "pkg:maven/xdoclet/xdoclet",
+      "package_version": null,
       "requirement": "1.2.1",
       "scope": "compile",
       "is_runtime": true,
@@ -160,6 +172,7 @@
     },
     {
       "purl": "pkg:maven/junit/junit",
+      "package_version": null,
       "requirement": "3.8.1",
       "scope": "compile",
       "is_runtime": true,
@@ -168,6 +181,7 @@
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils-core",
+      "package_version": null,
       "requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": true,
@@ -176,6 +190,7 @@
     },
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections",
+      "package_version": null,
       "requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": true,
@@ -184,6 +199,7 @@
     },
     {
       "purl": "pkg:maven/xdoclet/xdoclet-web-module",
+      "package_version": null,
       "requirement": "1.2.1",
       "scope": "compile",
       "is_runtime": true,
@@ -192,6 +208,7 @@
     },
     {
       "purl": "pkg:maven/mx4j/mx4j-jmx",
+      "package_version": null,
       "requirement": "2.1.1",
       "scope": "compile",
       "is_runtime": true,
@@ -200,6 +217,7 @@
     },
     {
       "purl": "pkg:maven/mx4j/mx4j-impl",
+      "package_version": null,
       "requirement": "2.1.1",
       "scope": "compile",
       "is_runtime": true,

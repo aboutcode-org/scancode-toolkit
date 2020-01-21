@@ -37,6 +37,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/sprockets",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -45,6 +46,7 @@
       },
       {
         "purl": "pkg:gem/rake",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,
@@ -53,6 +55,7 @@
       },
       {
         "purl": "pkg:gem/rspec",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,
@@ -61,6 +64,7 @@
       },
       {
         "purl": "pkg:gem/mocha",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,
@@ -69,6 +73,7 @@
       },
       {
         "purl": "pkg:gem/fakefs",
+        "package_version": null,
         "requirement": null,
         "scope": "development",
         "is_runtime": false,

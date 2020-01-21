@@ -29,6 +29,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/doctrine/cache@v1.6.2",
+        "package_version": "v1.6.2",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -37,6 +38,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/cache-subscriber@0.2.0",
+        "package_version": "0.2.0",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -45,6 +47,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/guzzle@5.3.3",
+        "package_version": "5.3.3",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -53,6 +56,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/ringphp@1.1.1",
+        "package_version": "1.1.1",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -61,6 +65,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/streams@3.0.0",
+        "package_version": "3.0.0",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -69,6 +74,7 @@
       },
       {
         "purl": "pkg:composer/prestashop/circuit-breaker@v3.0.0",
+        "package_version": "v3.0.0",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -77,6 +83,7 @@
       },
       {
         "purl": "pkg:composer/react/promise@v2.7.1",
+        "package_version": "v2.7.1",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -85,6 +92,7 @@
       },
       {
         "purl": "pkg:composer/symfony/css-selector@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require",
         "is_runtime": true,
@@ -93,6 +101,7 @@
       },
       {
         "purl": "pkg:composer/composer/semver@1.5.0",
+        "package_version": "1.5.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -101,6 +110,7 @@
       },
       {
         "purl": "pkg:composer/composer/xdebug-handler@1.3.3",
+        "package_version": "1.3.3",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -109,6 +119,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/annotations@v1.4.0",
+        "package_version": "v1.4.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -117,6 +128,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/lexer@1.0.2",
+        "package_version": "1.0.2",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -125,6 +137,7 @@
       },
       {
         "purl": "pkg:composer/friendsofphp/php-cs-fixer@v2.15.3",
+        "package_version": "v2.15.3",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -133,6 +146,7 @@
       },
       {
         "purl": "pkg:composer/paragonie/random_compat@v2.0.18",
+        "package_version": "v2.0.18",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -141,6 +155,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/diff@v1.3.0",
+        "package_version": "v1.3.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -149,6 +164,7 @@
       },
       {
         "purl": "pkg:composer/prestashop/php-coding-standards@dev-master",
+        "package_version": "dev-master",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -157,6 +173,7 @@
       },
       {
         "purl": "pkg:composer/psr/log@1.1.0",
+        "package_version": "1.1.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -165,6 +182,7 @@
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer@3.4.2",
+        "package_version": "3.4.2",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -173,6 +191,7 @@
       },
       {
         "purl": "pkg:composer/symfony/console@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -181,6 +200,7 @@
       },
       {
         "purl": "pkg:composer/symfony/debug@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -189,6 +209,7 @@
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -197,6 +218,7 @@
       },
       {
         "purl": "pkg:composer/symfony/filesystem@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -205,6 +227,7 @@
       },
       {
         "purl": "pkg:composer/symfony/finder@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -213,6 +236,7 @@
       },
       {
         "purl": "pkg:composer/symfony/options-resolver@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -221,6 +245,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-ctype@v1.12.0",
+        "package_version": "v1.12.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -229,6 +254,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring@v1.12.0",
+        "package_version": "v1.12.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -237,6 +263,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php70@v1.12.0",
+        "package_version": "v1.12.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -245,6 +272,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php72@v1.12.0",
+        "package_version": "v1.12.0",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -253,6 +281,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -261,6 +290,7 @@
       },
       {
         "purl": "pkg:composer/symfony/stopwatch@v3.4.31",
+        "package_version": "v3.4.31",
         "requirement": null,
         "scope": "require-dev",
         "is_runtime": false,
@@ -350,6 +380,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "~5.5|~7.0",
         "scope": "require",
         "is_runtime": true,
@@ -358,6 +389,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "~4.8|~5.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -366,6 +398,7 @@
       },
       {
         "purl": "pkg:composer/predis/predis",
+        "package_version": null,
         "requirement": "~1.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -374,6 +407,7 @@
       },
       {
         "purl": "pkg:composer/satooshi/php-coveralls",
+        "package_version": null,
         "requirement": "~0.6",
         "scope": "require-dev",
         "is_runtime": false,
@@ -382,6 +416,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/common",
+        "package_version": null,
         "requirement": ">2.2,<2.4",
         "scope": "conflict",
         "is_runtime": true,
@@ -443,6 +478,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/doctrine/cache",
+        "package_version": null,
         "requirement": "~1.3",
         "scope": "require",
         "is_runtime": true,
@@ -451,6 +487,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/guzzle",
+        "package_version": null,
         "requirement": "~5.0",
         "scope": "require",
         "is_runtime": true,
@@ -459,6 +496,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -467,6 +505,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -528,6 +567,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/guzzlehttp/ringphp",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require",
         "is_runtime": true,
@@ -536,6 +576,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -544,6 +585,7 @@
       },
       {
         "purl": "pkg:composer/react/promise",
+        "package_version": null,
         "requirement": "^2.2",
         "scope": "require",
         "is_runtime": true,
@@ -552,6 +594,7 @@
       },
       {
         "purl": "pkg:composer/ext-curl",
+        "package_version": null,
         "requirement": "*",
         "scope": "require-dev",
         "is_runtime": false,
@@ -560,6 +603,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -621,6 +665,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/guzzlehttp/streams",
+        "package_version": null,
         "requirement": "~3.0",
         "scope": "require",
         "is_runtime": true,
@@ -629,6 +674,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -637,6 +683,7 @@
       },
       {
         "purl": "pkg:composer/react/promise",
+        "package_version": null,
         "requirement": "~2.0",
         "scope": "require",
         "is_runtime": true,
@@ -645,6 +692,7 @@
       },
       {
         "purl": "pkg:composer/ext-curl",
+        "package_version": null,
         "requirement": "*",
         "scope": "require-dev",
         "is_runtime": false,
@@ -653,6 +701,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -661,6 +710,7 @@
       },
       {
         "purl": "pkg:composer/ext-curl",
+        "package_version": null,
         "requirement": "Guzzle will use specific adapters if cURL is present",
         "scope": "suggest",
         "is_runtime": true,
@@ -722,6 +772,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -730,6 +781,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -798,6 +850,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/guzzlehttp/guzzle",
+        "package_version": null,
         "requirement": "^5",
         "scope": "require",
         "is_runtime": true,
@@ -806,6 +859,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.6",
         "scope": "require",
         "is_runtime": true,
@@ -814,6 +868,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/cache",
+        "package_version": null,
         "requirement": "^1.6.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -822,6 +877,7 @@
       },
       {
         "purl": "pkg:composer/friendsofphp/php-cs-fixer",
+        "package_version": null,
         "requirement": "^2.12",
         "scope": "require-dev",
         "is_runtime": false,
@@ -830,6 +886,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^5.7.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -838,6 +895,7 @@
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "package_version": null,
         "requirement": "3.*",
         "scope": "require-dev",
         "is_runtime": false,
@@ -846,6 +904,7 @@
       },
       {
         "purl": "pkg:composer/symfony/cache",
+        "package_version": null,
         "requirement": "^3.4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -854,6 +913,7 @@
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
+        "package_version": null,
         "requirement": "^3.4",
         "scope": "require-dev",
         "is_runtime": false,
@@ -862,6 +922,7 @@
       },
       {
         "purl": "pkg:composer/vimeo/psalm",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require-dev",
         "is_runtime": false,
@@ -870,6 +931,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/cache",
+        "package_version": null,
         "requirement": "Allows use of Doctrine Cache adapters to store transactions",
         "scope": "suggest",
         "is_runtime": true,
@@ -878,6 +940,7 @@
       },
       {
         "purl": "pkg:composer/ext-apcu",
+        "package_version": null,
         "requirement": "Allows use of APCu adapter (performant) to store transactions",
         "scope": "suggest",
         "is_runtime": true,
@@ -886,6 +949,7 @@
       },
       {
         "purl": "pkg:composer/guzzlehttp/cache-subscriber",
+        "package_version": null,
         "requirement": "Allow use of Guzzle cache (use dev-master for most recent changes)",
         "scope": "suggest",
         "is_runtime": true,
@@ -894,6 +958,7 @@
       },
       {
         "purl": "pkg:composer/symfony/cache",
+        "package_version": null,
         "requirement": "Allows use of Symfony Cache adapters to store transactions",
         "scope": "suggest",
         "is_runtime": true,
@@ -955,6 +1020,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -963,6 +1029,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "~4.8",
         "scope": "require-dev",
         "is_runtime": false,
@@ -998,7 +1065,7 @@
       {
         "type": "person",
         "role": "author",
-        "name": "Jean-Fran\u00e7ois Simon",
+        "name": "Jean-François Simon",
         "email": "jeanfrancois.simon@sensiolabs.com",
         "url": null
       },
@@ -1038,6 +1105,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -1113,6 +1181,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.3.2 || ^7.0",
         "scope": "require",
         "is_runtime": true,
@@ -1121,6 +1190,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.5 || ^5.0.5",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1129,6 +1199,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit-mock-objects",
+        "package_version": null,
         "requirement": "2.3.0 || ^3.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1190,6 +1261,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.3.2 || ^7.0",
         "scope": "require",
         "is_runtime": true,
@@ -1198,6 +1270,7 @@
       },
       {
         "purl": "pkg:composer/psr/log",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -1206,6 +1279,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.8.35 || ^5.7 || ^6.5",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1295,6 +1369,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/doctrine/lexer",
+        "package_version": null,
         "requirement": "1.*",
         "scope": "require",
         "is_runtime": true,
@@ -1303,6 +1378,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.6 || ^7.0",
         "scope": "require",
         "is_runtime": true,
@@ -1311,6 +1387,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/cache",
+        "package_version": null,
         "requirement": "1.*",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1319,6 +1396,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^5.7",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1394,6 +1472,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.2",
         "scope": "require",
         "is_runtime": true,
@@ -1402,6 +1481,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.5",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1437,7 +1517,7 @@
       {
         "type": "person",
         "role": "author",
-        "name": "Dariusz Rumi\u0144ski",
+        "name": "Dariusz Rumiński",
         "email": "dariusz.ruminski@gmail.com",
         "url": null
       },
@@ -1470,6 +1550,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/composer/semver",
+        "package_version": null,
         "requirement": "^1.4",
         "scope": "require",
         "is_runtime": true,
@@ -1478,6 +1559,7 @@
       },
       {
         "purl": "pkg:composer/composer/xdebug-handler",
+        "package_version": null,
         "requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
@@ -1486,6 +1568,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/annotations",
+        "package_version": null,
         "requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
@@ -1494,6 +1577,7 @@
       },
       {
         "purl": "pkg:composer/ext-json",
+        "package_version": null,
         "requirement": "*",
         "scope": "require",
         "is_runtime": true,
@@ -1502,6 +1586,7 @@
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
+        "package_version": null,
         "requirement": "*",
         "scope": "require",
         "is_runtime": true,
@@ -1510,6 +1595,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.6 || ^7.0",
         "scope": "require",
         "is_runtime": true,
@@ -1518,6 +1604,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/diff",
+        "package_version": null,
         "requirement": "^1.3",
         "scope": "require",
         "is_runtime": true,
@@ -1526,6 +1613,7 @@
       },
       {
         "purl": "pkg:composer/symfony/console",
+        "package_version": null,
         "requirement": "^3.4.17 || ^4.1.6",
         "scope": "require",
         "is_runtime": true,
@@ -1534,6 +1622,7 @@
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1542,6 +1631,7 @@
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1550,6 +1640,7 @@
       },
       {
         "purl": "pkg:composer/symfony/finder",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1558,6 +1649,7 @@
       },
       {
         "purl": "pkg:composer/symfony/options-resolver",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1566,6 +1658,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php70",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -1574,6 +1667,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-php72",
+        "package_version": null,
         "requirement": "^1.4",
         "scope": "require",
         "is_runtime": true,
@@ -1582,6 +1676,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1590,6 +1685,7 @@
       },
       {
         "purl": "pkg:composer/symfony/stopwatch",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1598,6 +1694,7 @@
       },
       {
         "purl": "pkg:composer/johnkary/phpunit-speedtrap",
+        "package_version": null,
         "requirement": "^1.1 || ^2.0 || ^3.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1606,6 +1703,7 @@
       },
       {
         "purl": "pkg:composer/justinrainbow/json-schema",
+        "package_version": null,
         "requirement": "^5.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1614,6 +1712,7 @@
       },
       {
         "purl": "pkg:composer/keradus/cli-executor",
+        "package_version": null,
         "requirement": "^1.2",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1622,6 +1721,7 @@
       },
       {
         "purl": "pkg:composer/mikey179/vfsstream",
+        "package_version": null,
         "requirement": "^1.6",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1630,6 +1730,7 @@
       },
       {
         "purl": "pkg:composer/php-coveralls/php-coveralls",
+        "package_version": null,
         "requirement": "^2.1",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1638,6 +1739,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/accessible-object",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1646,6 +1748,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-isidenticalstring",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1654,6 +1757,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-xmlmatchesxsd",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1662,6 +1766,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^5.7.27 || ^6.5.14 || ^7.1",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1670,6 +1775,7 @@
       },
       {
         "purl": "pkg:composer/phpunitgoodpractices/traits",
+        "package_version": null,
         "requirement": "^1.8",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1678,6 +1784,7 @@
       },
       {
         "purl": "pkg:composer/symfony/phpunit-bridge",
+        "package_version": null,
         "requirement": "^4.3",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1686,6 +1793,7 @@
       },
       {
         "purl": "pkg:composer/symfony/yaml",
+        "package_version": null,
         "requirement": "^3.0 || ^4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1694,6 +1802,7 @@
       },
       {
         "purl": "pkg:composer/ext-mbstring",
+        "package_version": null,
         "requirement": "For handling non-UTF8 characters in cache signature.",
         "scope": "suggest",
         "is_runtime": true,
@@ -1702,6 +1811,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-isidenticalstring",
+        "package_version": null,
         "requirement": "For IsIdenticalString constraint.",
         "scope": "suggest",
         "is_runtime": true,
@@ -1710,6 +1820,7 @@
       },
       {
         "purl": "pkg:composer/php-cs-fixer/phpunit-constraint-xmlmatchesxsd",
+        "package_version": null,
         "requirement": "For XmlMatchesXsd constraint.",
         "scope": "suggest",
         "is_runtime": true,
@@ -1718,6 +1829,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring",
+        "package_version": null,
         "requirement": "When enabling `ext-mbstring` is not possible.",
         "scope": "suggest",
         "is_runtime": true,
@@ -1779,6 +1891,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.2.0",
         "scope": "require",
         "is_runtime": true,
@@ -1787,6 +1900,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "4.*|5.*",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1795,6 +1909,7 @@
       },
       {
         "purl": "pkg:composer/ext-libsodium",
+        "package_version": null,
         "requirement": "Provides a modern crypto API that can be used to generate random bytes.",
         "scope": "suggest",
         "is_runtime": true,
@@ -1870,6 +1985,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.6 || ^7.0",
         "scope": "require",
         "is_runtime": true,
@@ -1878,6 +1994,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^5.7.23 || ^6.4.3",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1886,6 +2003,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process",
+        "package_version": null,
         "requirement": "^3.3",
         "scope": "require-dev",
         "is_runtime": false,
@@ -1940,6 +2058,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/friendsofphp/php-cs-fixer",
+        "package_version": null,
         "requirement": "^2.14",
         "scope": "require",
         "is_runtime": true,
@@ -1948,6 +2067,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.6.0",
         "scope": "require",
         "is_runtime": true,
@@ -1956,6 +2076,7 @@
       },
       {
         "purl": "pkg:composer/squizlabs/php_codesniffer",
+        "package_version": null,
         "requirement": "^3.4",
         "scope": "require",
         "is_runtime": true,
@@ -1964,6 +2085,7 @@
       },
       {
         "purl": "pkg:composer/symfony/console",
+        "package_version": null,
         "requirement": "~3.2 || ~4.0",
         "scope": "require",
         "is_runtime": true,
@@ -1972,6 +2094,7 @@
       },
       {
         "purl": "pkg:composer/symfony/filesystem",
+        "package_version": null,
         "requirement": "~3.2 || ~4.0",
         "scope": "require",
         "is_runtime": true,
@@ -2033,6 +2156,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.0",
         "scope": "require",
         "is_runtime": true,
@@ -2094,6 +2218,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/ext-simplexml",
+        "package_version": null,
         "requirement": "*",
         "scope": "require",
         "is_runtime": true,
@@ -2102,6 +2227,7 @@
       },
       {
         "purl": "pkg:composer/ext-tokenizer",
+        "package_version": null,
         "requirement": "*",
         "scope": "require",
         "is_runtime": true,
@@ -2110,6 +2236,7 @@
       },
       {
         "purl": "pkg:composer/ext-xmlwriter",
+        "package_version": null,
         "requirement": "*",
         "scope": "require",
         "is_runtime": true,
@@ -2118,6 +2245,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.4.0",
         "scope": "require",
         "is_runtime": true,
@@ -2126,6 +2254,7 @@
       },
       {
         "purl": "pkg:composer/phpunit/phpunit",
+        "package_version": null,
         "requirement": "^4.0 || ^5.0 || ^6.0 || ^7.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2194,6 +2323,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2202,6 +2332,7 @@
       },
       {
         "purl": "pkg:composer/symfony/debug",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require",
         "is_runtime": true,
@@ -2210,6 +2341,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-mbstring",
+        "package_version": null,
         "requirement": "~1.0",
         "scope": "require",
         "is_runtime": true,
@@ -2218,6 +2350,7 @@
       },
       {
         "purl": "pkg:composer/psr/log",
+        "package_version": null,
         "requirement": "~1.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2226,6 +2359,7 @@
       },
       {
         "purl": "pkg:composer/symfony/config",
+        "package_version": null,
         "requirement": "~3.3|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2234,6 +2368,7 @@
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
+        "package_version": null,
         "requirement": "~3.4|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2242,6 +2377,7 @@
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2250,6 +2386,7 @@
       },
       {
         "purl": "pkg:composer/symfony/lock",
+        "package_version": null,
         "requirement": "~3.4|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2258,6 +2395,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process",
+        "package_version": null,
         "requirement": "~3.3|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2266,6 +2404,7 @@
       },
       {
         "purl": "pkg:composer/psr/log-implementation",
+        "package_version": null,
         "requirement": "1.0",
         "scope": "provide",
         "is_runtime": true,
@@ -2274,6 +2413,7 @@
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
+        "package_version": null,
         "requirement": "<3.4",
         "scope": "conflict",
         "is_runtime": true,
@@ -2282,6 +2422,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process",
+        "package_version": null,
         "requirement": "<3.3",
         "scope": "conflict",
         "is_runtime": true,
@@ -2290,6 +2431,7 @@
       },
       {
         "purl": "pkg:composer/psr/log",
+        "package_version": null,
         "requirement": "For using the console logger",
         "scope": "suggest",
         "is_runtime": true,
@@ -2298,6 +2440,7 @@
       },
       {
         "purl": "pkg:composer/symfony/event-dispatcher",
+        "package_version": null,
         "requirement": "",
         "scope": "suggest",
         "is_runtime": true,
@@ -2306,6 +2449,7 @@
       },
       {
         "purl": "pkg:composer/symfony/lock",
+        "package_version": null,
         "requirement": "",
         "scope": "suggest",
         "is_runtime": true,
@@ -2314,6 +2458,7 @@
       },
       {
         "purl": "pkg:composer/symfony/process",
+        "package_version": null,
         "requirement": "",
         "scope": "suggest",
         "is_runtime": true,
@@ -2382,6 +2527,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2390,6 +2536,7 @@
       },
       {
         "purl": "pkg:composer/psr/log",
+        "package_version": null,
         "requirement": "~1.0",
         "scope": "require",
         "is_runtime": true,
@@ -2398,6 +2545,7 @@
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2406,6 +2554,7 @@
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
+        "package_version": null,
         "requirement": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2",
         "scope": "conflict",
         "is_runtime": true,
@@ -2474,6 +2623,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2482,6 +2632,7 @@
       },
       {
         "purl": "pkg:composer/psr/log",
+        "package_version": null,
         "requirement": "~1.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2490,6 +2641,7 @@
       },
       {
         "purl": "pkg:composer/symfony/config",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2498,6 +2650,7 @@
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
+        "package_version": null,
         "requirement": "~3.3|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2506,6 +2659,7 @@
       },
       {
         "purl": "pkg:composer/symfony/expression-language",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2514,6 +2668,7 @@
       },
       {
         "purl": "pkg:composer/symfony/stopwatch",
+        "package_version": null,
         "requirement": "~2.8|~3.0|~4.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -2522,6 +2677,7 @@
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
+        "package_version": null,
         "requirement": "<3.3",
         "scope": "conflict",
         "is_runtime": true,
@@ -2530,6 +2686,7 @@
       },
       {
         "purl": "pkg:composer/symfony/dependency-injection",
+        "package_version": null,
         "requirement": "",
         "scope": "suggest",
         "is_runtime": true,
@@ -2538,6 +2695,7 @@
       },
       {
         "purl": "pkg:composer/symfony/http-kernel",
+        "package_version": null,
         "requirement": "",
         "scope": "suggest",
         "is_runtime": true,
@@ -2606,6 +2764,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2614,6 +2773,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-ctype",
+        "package_version": null,
         "requirement": "~1.8",
         "scope": "require",
         "is_runtime": true,
@@ -2682,6 +2842,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2750,6 +2911,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -2818,6 +2980,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.3",
         "scope": "require",
         "is_runtime": true,
@@ -2826,6 +2989,7 @@
       },
       {
         "purl": "pkg:composer/ext-ctype",
+        "package_version": null,
         "requirement": "For best performance",
         "scope": "suggest",
         "is_runtime": true,
@@ -2894,6 +3058,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.3",
         "scope": "require",
         "is_runtime": true,
@@ -2902,6 +3067,7 @@
       },
       {
         "purl": "pkg:composer/ext-mbstring",
+        "package_version": null,
         "requirement": "For best performance",
         "scope": "suggest",
         "is_runtime": true,
@@ -2970,6 +3136,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/paragonie/random_compat",
+        "package_version": null,
         "requirement": "~1.0|~2.0|~9.99",
         "scope": "require",
         "is_runtime": true,
@@ -2978,6 +3145,7 @@
       },
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.3",
         "scope": "require",
         "is_runtime": true,
@@ -3046,6 +3214,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": ">=5.3.3",
         "scope": "require",
         "is_runtime": true,
@@ -3114,6 +3283,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,
@@ -3182,6 +3352,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "^5.5.9|>=7.0.8",
         "scope": "require",
         "is_runtime": true,

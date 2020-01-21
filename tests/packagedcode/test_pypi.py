@@ -270,5 +270,5 @@ class TestPyPi(PackageTester):
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl=u'pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies'),
-                DependentPackage(purl=u'pkg:pypi/requests', requirement='==2.7.0', scope='dependencies')] == dependencies
+        assert [DependentPackage(purl=u'pkg:pypi/lxml', package_version=None, requirement='==3.4.4', scope='dependencies'),
+                DependentPackage(purl=u'pkg:pypi/requests', package_version=None, requirement='==2.7.0', scope='dependencies')] == dependencies

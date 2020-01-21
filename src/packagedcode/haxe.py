@@ -172,6 +172,8 @@ def build_package(package_data):
 
     for dep_name, dep_version in package_data.get('dependencies', {}).items():
         dep_version = dep_version and dep_version.strip()
+        if dep_version == "":
+            dep_version = None
         is_resolved = bool(dep_version)
         dep_purl = PackageURL(
             type='haxe',

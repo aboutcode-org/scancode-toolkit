@@ -49,6 +49,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/imagesize",
+        "package_version": null,
         "requirement": "~1.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -57,6 +58,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-jshint",
+        "package_version": null,
         "requirement": "~0.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -65,6 +67,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-nodeunit",
+        "package_version": null,
         "requirement": "~0.1.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -73,6 +76,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-clean",
+        "package_version": null,
         "requirement": "~0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -81,6 +85,7 @@
       },
       {
         "purl": "pkg:npm/grunt",
+        "package_version": null,
         "requirement": "~0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -89,6 +94,7 @@
       },
       {
         "purl": "pkg:npm/grunt-contrib-copy",
+        "package_version": null,
         "requirement": "~0.4.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -97,6 +103,7 @@
       },
       {
         "purl": "pkg:npm/grunt",
+        "package_version": null,
         "requirement": "~0.4.0",
         "scope": "peerDependencies",
         "is_runtime": true,

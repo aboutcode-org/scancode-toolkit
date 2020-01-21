@@ -37,6 +37,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/mixlib-config",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -45,6 +46,7 @@
       },
       {
         "purl": "pkg:gem/mixlib-cli",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -53,6 +55,7 @@
       },
       {
         "purl": "pkg:gem/mixlib-log",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -61,6 +64,7 @@
       },
       {
         "purl": "pkg:gem/excon",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -69,6 +73,7 @@
       },
       {
         "purl": "pkg:gem/yajl-ruby",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -77,6 +82,7 @@
       },
       {
         "purl": "pkg:gem/chef",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -85,6 +91,7 @@
       },
       {
         "purl": "pkg:gem/highline",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -93,6 +100,7 @@
       },
       {
         "purl": "pkg:gem/salticid",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -101,6 +109,7 @@
       },
       {
         "purl": "pkg:gem/net-ssh",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -109,6 +118,7 @@
       },
       {
         "purl": "pkg:gem/net-scp",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,
@@ -117,6 +127,7 @@
       },
       {
         "purl": "pkg:gem/colorize",
+        "package_version": null,
         "requirement": null,
         "scope": "runtime",
         "is_runtime": true,

@@ -953,7 +953,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     deps.append(
                         models.DependentPackage(
                             purl=PackageURL(type='npm', name=dep).to_string(),
-                            package_version=current_package_data.get('version'),
+                            package_version=None,
                             scope='dependencies',
                             requirement=req,
                             is_runtime=True,

@@ -388,7 +388,7 @@ def parse_person(persons):
 def build_dep_package(package, scope, is_runtime, is_optional):
     return models.DependentPackage(
         purl=package.purl,
-        package_version=None,
+        package_version=package.version,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,

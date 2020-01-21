@@ -47,6 +47,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/styout",
+        "package_version": null,
         "requirement": ">= 0.6.0",
         "scope": "dependencies",
         "is_runtime": true,

@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",
+      "package_version": null,
       "requirement": "${flex-mojos.version}",
       "scope": "test",
       "is_runtime": false,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit",
+      "package_version": null,
       "requirement": "${flexUnit.version}",
       "scope": "test",
       "is_runtime": false,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional",
+      "package_version": null,
       "requirement": "${flexUnit.version}",
       "scope": "test",
       "is_runtime": false,
@@ -52,6 +55,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config",
+      "package_version": null,
       "requirement": "1.0-SNAPSHOT",
       "scope": "provided",
       "is_runtime": true,
@@ -60,6 +64,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects",
+      "package_version": null,
       "requirement": "1.0-SNAPSHOT",
       "scope": "internal",
       "is_runtime": true,
@@ -68,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.flex/compiler",
+      "package_version": null,
       "requirement": "${flex.sdk.version}",
       "scope": "compile",
       "is_runtime": true,
@@ -76,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.flex.framework/flex-framework",
+      "package_version": null,
       "requirement": "${flex.sdk.version}",
       "scope": "compile",
       "is_runtime": true,
@@ -84,6 +91,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm",
+      "package_version": null,
       "requirement": "${cairngorm.version}",
       "scope": "compile",
       "is_runtime": true,
@@ -92,6 +100,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise",
+      "package_version": null,
       "requirement": "${cairngorm.version}",
       "scope": "compile",
       "is_runtime": true,
@@ -100,6 +109,7 @@
     },
     {
       "purl": "pkg:maven/com.adobe.lcds/fds",
+      "package_version": null,
       "requirement": "${lcds.version}",
       "scope": "compile",
       "is_runtime": true,

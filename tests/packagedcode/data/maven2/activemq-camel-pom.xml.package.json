@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/commons-logging/commons-logging-api",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-jms",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-core",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -52,6 +55,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-pool",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -60,6 +64,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -68,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.activemq/activemq-core",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,
@@ -76,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-core",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,
@@ -84,6 +91,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.camel/camel-spring",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,
@@ -92,6 +100,7 @@
     },
     {
       "purl": "pkg:maven/org.springframework/spring-test",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,
@@ -100,6 +109,7 @@
     },
     {
       "purl": "pkg:maven/junit/junit",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,
@@ -108,6 +118,7 @@
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-all",
+      "package_version": null,
       "requirement": null,
       "scope": "test",
       "is_runtime": false,

@@ -43,6 +43,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/relaxngDatatype/relaxngDatatype",
+      "package_version": null,
       "requirement": "20020414",
       "scope": "compile",
       "is_runtime": true,
@@ -51,6 +52,7 @@
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl",
+      "package_version": null,
       "requirement": "2.1.11",
       "scope": "compile",
       "is_runtime": true,
@@ -59,6 +61,7 @@
     },
     {
       "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc",
+      "package_version": null,
       "requirement": "2.1.11",
       "scope": "compile",
       "is_runtime": true,
@@ -67,6 +70,7 @@
     },
     {
       "purl": "pkg:maven/com.sun.xsom/xsom",
+      "package_version": null,
       "requirement": "20081112",
       "scope": "compile",
       "is_runtime": true,

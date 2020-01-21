@@ -43,6 +43,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/com.myco.foo/common-dependencies",
+      "package_version": null,
       "requirement": "1.1",
       "scope": "import",
       "is_runtime": true,
@@ -51,6 +52,7 @@
     },
     {
       "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies",
+      "package_version": null,
       "requirement": "1.4.2.RELEASE",
       "scope": "import",
       "is_runtime": true,
@@ -59,6 +61,7 @@
     },
     {
       "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies",
+      "package_version": null,
       "requirement": "Camden.SR5",
       "scope": "import",
       "is_runtime": true,

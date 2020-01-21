@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit",
+      "package_version": null,
       "requirement": "3.8.1",
       "scope": "test",
       "is_runtime": false,

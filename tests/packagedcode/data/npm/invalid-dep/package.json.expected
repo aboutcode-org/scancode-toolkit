@@ -48,6 +48,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/typescript",
+        "package_version": null,
         "requirement": "^1.7.3",
         "scope": "devDependencies",
         "is_runtime": false,

@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:chef/test%20dependency",
+      "package_version": null,
       "requirement": "0.01",
       "scope": "dependencies",
       "is_runtime": true,

@@ -85,6 +85,7 @@
   "dependencies": [
     {
       "purl": "pkg:cran/R",
+      "package_version": null,
       "requirement": ">= 3.0.0",
       "scope": "dependencies",
       "is_runtime": true,

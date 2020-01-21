@@ -42,6 +42,7 @@
   "dependencies": [
     {
       "purl": "pkg:bower/get-size",
+      "package_version": null,
       "requirement": "~1.2.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -50,6 +51,7 @@
     },
     {
       "purl": "pkg:bower/eventEmitter",
+      "package_version": null,
       "requirement": "~4.2.11",
       "scope": "dependencies",
       "is_runtime": true,
@@ -58,6 +60,7 @@
     },
     {
       "purl": "pkg:bower/qunit",
+      "package_version": null,
       "requirement": "~1.16.0",
       "scope": "devDependencies",
       "is_runtime": false,

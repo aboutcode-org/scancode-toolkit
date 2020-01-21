@@ -64,6 +64,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact",
+      "package_version": null,
       "requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": true,
@@ -72,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl",
+      "package_version": null,
       "requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": true,
@@ -80,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api",
+      "package_version": null,
       "requirement": "2.0.4",
       "scope": "compile",
       "is_runtime": true,
@@ -88,6 +91,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core",
+      "package_version": null,
       "requirement": "1.0-alpha-8",
       "scope": "compile",
       "is_runtime": true,
@@ -96,6 +100,7 @@
     },
     {
       "purl": "pkg:maven/net.sourceforge.findbugs/findbugs",
+      "package_version": null,
       "requirement": "1.2.0",
       "scope": "compile",
       "is_runtime": true,

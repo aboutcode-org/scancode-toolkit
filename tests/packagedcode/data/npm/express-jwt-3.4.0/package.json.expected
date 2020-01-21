@@ -53,6 +53,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/async",
+        "package_version": null,
         "requirement": "^1.5.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -61,6 +62,7 @@
       },
       {
         "purl": "pkg:npm/express-unless",
+        "package_version": null,
         "requirement": "^0.3.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -69,6 +71,7 @@
       },
       {
         "purl": "pkg:npm/jsonwebtoken",
+        "package_version": null,
         "requirement": "^5.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -77,6 +80,7 @@
       },
       {
         "purl": "pkg:npm/lodash.set",
+        "package_version": null,
         "requirement": "^4.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -85,6 +89,7 @@
       },
       {
         "purl": "pkg:npm/mocha",
+        "package_version": null,
         "requirement": "1.x.x",
         "scope": "devDependencies",
         "is_runtime": false,

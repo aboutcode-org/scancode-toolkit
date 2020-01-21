@@ -45,6 +45,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/bluebird",
+        "package_version": null,
         "requirement": "^2.9.30",
         "scope": "dependencies",
         "is_runtime": true,
@@ -53,6 +54,7 @@
       },
       {
         "purl": "pkg:npm/cli-color",
+        "package_version": null,
         "requirement": "~0.3.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -61,6 +63,7 @@
       },
       {
         "purl": "pkg:npm/cli-table",
+        "package_version": null,
         "requirement": "~0.3.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -69,6 +72,7 @@
       },
       {
         "purl": "pkg:npm/libesvm",
+        "package_version": null,
         "requirement": "^3.8.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -77,6 +81,7 @@
       },
       {
         "purl": "pkg:npm/lodash",
+        "package_version": null,
         "requirement": "^3.9.3",
         "scope": "dependencies",
         "is_runtime": true,
@@ -85,6 +90,7 @@
       },
       {
         "purl": "pkg:npm/moment",
+        "package_version": null,
         "requirement": "^2.10.3",
         "scope": "dependencies",
         "is_runtime": true,
@@ -93,6 +99,7 @@
       },
       {
         "purl": "pkg:npm/wreck",
+        "package_version": null,
         "requirement": "^5.6.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -101,6 +108,7 @@
       },
       {
         "purl": "pkg:npm/grunt",
+        "package_version": null,
         "requirement": ">=0.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -109,6 +117,7 @@
       },
       {
         "purl": "pkg:npm/load-grunt-config",
+        "package_version": null,
         "requirement": "~0.19.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -117,6 +126,7 @@
       },
       {
         "purl": "pkg:npm/grunt",
+        "package_version": null,
         "requirement": ">=0.4.0",
         "scope": "peerDependencies",
         "is_runtime": true,

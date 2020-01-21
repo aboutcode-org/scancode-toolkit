@@ -70,6 +70,7 @@
           "dependencies": [
             {
               "purl": "pkg:conda/python",
+              "package_version": null,
               "requirement": null,
               "scope": "dependencies",
               "is_runtime": true,
@@ -78,6 +79,7 @@
             },
             {
               "purl": "pkg:conda/requests",
+              "package_version": null,
               "requirement": ">=1.1.0",
               "scope": "dependencies",
               "is_runtime": true,
@@ -86,6 +88,7 @@
             },
             {
               "purl": "pkg:conda/pykerberos",
+              "package_version": null,
               "requirement": ">=1.1.8,<2.0.0",
               "scope": "dependencies",
               "is_runtime": true,

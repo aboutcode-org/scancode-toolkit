@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:conda/mccortex",
+      "package_version": null,
       "requirement": "==1.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:conda/nextflow",
+      "package_version": null,
       "requirement": "==19.01.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:conda/cortexpy",
+      "package_version": null,
       "requirement": "==0.45.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -52,6 +55,7 @@
     },
     {
       "purl": "pkg:conda/kallisto",
+      "package_version": null,
       "requirement": "==0.44.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -60,6 +64,7 @@
     },
     {
       "purl": "pkg:conda/bwa",
+      "package_version": null,
       "requirement": null,
       "scope": "dependencies",
       "is_runtime": true,
@@ -68,6 +73,7 @@
     },
     {
       "purl": "pkg:conda/pandas",
+      "package_version": null,
       "requirement": null,
       "scope": "dependencies",
       "is_runtime": true,
@@ -76,6 +82,7 @@
     },
     {
       "purl": "pkg:conda/progressbar2",
+      "package_version": null,
       "requirement": null,
       "scope": "dependencies",
       "is_runtime": true,
@@ -84,6 +91,7 @@
     },
     {
       "purl": "pkg:conda/python",
+      "package_version": null,
       "requirement": ">=3.6",
       "scope": "dependencies",
       "is_runtime": true,

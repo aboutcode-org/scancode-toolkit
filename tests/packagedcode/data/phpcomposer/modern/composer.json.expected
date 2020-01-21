@@ -29,6 +29,7 @@
     "dependencies": [
       {
         "purl": "pkg:composer/php",
+        "package_version": null,
         "requirement": "7.1.*",
         "scope": "require",
         "is_runtime": true,
@@ -37,6 +38,7 @@
       },
       {
         "purl": "pkg:composer/symfony/symfony",
+        "package_version": null,
         "requirement": "3.2.*",
         "scope": "require",
         "is_runtime": true,
@@ -45,6 +47,7 @@
       },
       {
         "purl": "pkg:composer/sensio/distribution-bundle",
+        "package_version": null,
         "requirement": "^5.0",
         "scope": "require",
         "is_runtime": true,
@@ -53,6 +56,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/orm",
+        "package_version": null,
         "requirement": "^2.5",
         "scope": "require",
         "is_runtime": true,
@@ -61,6 +65,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-bundle",
+        "package_version": null,
         "requirement": "^1.6",
         "scope": "require",
         "is_runtime": true,
@@ -69,6 +74,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-cache-bundle",
+        "package_version": null,
         "requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
@@ -77,6 +83,7 @@
       },
       {
         "purl": "pkg:composer/symfony/swiftmailer-bundle",
+        "package_version": null,
         "requirement": "^2.3.10",
         "scope": "require",
         "is_runtime": true,
@@ -85,6 +92,7 @@
       },
       {
         "purl": "pkg:composer/symfony/monolog-bundle",
+        "package_version": null,
         "requirement": "^3.0.2",
         "scope": "require",
         "is_runtime": true,
@@ -93,6 +101,7 @@
       },
       {
         "purl": "pkg:composer/symfony/polyfill-apcu",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -101,6 +110,7 @@
       },
       {
         "purl": "pkg:composer/sensio/framework-extra-bundle",
+        "package_version": null,
         "requirement": "^3.0.2",
         "scope": "require",
         "is_runtime": true,
@@ -109,6 +119,7 @@
       },
       {
         "purl": "pkg:composer/incenteev/composer-parameter-handler",
+        "package_version": null,
         "requirement": "^2.0",
         "scope": "require",
         "is_runtime": true,
@@ -117,6 +128,7 @@
       },
       {
         "purl": "pkg:composer/twig/twig",
+        "package_version": null,
         "requirement": "^1.0||^2.0",
         "scope": "require",
         "is_runtime": true,
@@ -125,6 +137,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-migrations-bundle",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -133,6 +146,7 @@
       },
       {
         "purl": "pkg:composer/greenlion/php-sql-parser",
+        "package_version": null,
         "requirement": "^4.1",
         "scope": "require",
         "is_runtime": true,
@@ -141,6 +155,7 @@
       },
       {
         "purl": "pkg:composer/eightpoints/guzzle-bundle",
+        "package_version": null,
         "requirement": "^5.3",
         "scope": "require",
         "is_runtime": true,
@@ -149,6 +164,7 @@
       },
       {
         "purl": "pkg:composer/jms/serializer-bundle",
+        "package_version": null,
         "requirement": "^1.1",
         "scope": "require",
         "is_runtime": true,
@@ -157,6 +173,7 @@
       },
       {
         "purl": "pkg:composer/friendsofsymfony/rest-bundle",
+        "package_version": null,
         "requirement": "^2.1",
         "scope": "require",
         "is_runtime": true,
@@ -165,6 +182,7 @@
       },
       {
         "purl": "pkg:composer/nelmio/api-doc-bundle",
+        "package_version": null,
         "requirement": "^2.13",
         "scope": "require",
         "is_runtime": true,
@@ -173,6 +191,7 @@
       },
       {
         "purl": "pkg:composer/snc/redis-bundle",
+        "package_version": null,
         "requirement": "^2.0",
         "scope": "require",
         "is_runtime": true,
@@ -181,6 +200,7 @@
       },
       {
         "purl": "pkg:composer/predis/predis",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -189,6 +209,7 @@
       },
       {
         "purl": "pkg:composer/paragonie/halite",
+        "package_version": null,
         "requirement": "^3.2",
         "scope": "require",
         "is_runtime": true,
@@ -197,6 +218,7 @@
       },
       {
         "purl": "pkg:composer/knplabs/knp-paginator-bundle",
+        "package_version": null,
         "requirement": "^2.5",
         "scope": "require",
         "is_runtime": true,
@@ -205,6 +227,7 @@
       },
       {
         "purl": "pkg:composer/egeloen/base64-file-bundle",
+        "package_version": null,
         "requirement": "^1.0",
         "scope": "require",
         "is_runtime": true,
@@ -213,6 +236,7 @@
       },
       {
         "purl": "pkg:composer/liip/imagine-bundle",
+        "package_version": null,
         "requirement": "^1.7",
         "scope": "require",
         "is_runtime": true,
@@ -221,6 +245,7 @@
       },
       {
         "purl": "pkg:composer/sonata-project/admin-bundle",
+        "package_version": null,
         "requirement": "^3.17",
         "scope": "require",
         "is_runtime": true,
@@ -229,6 +254,7 @@
       },
       {
         "purl": "pkg:composer/sonata-project/doctrine-orm-admin-bundle",
+        "package_version": null,
         "requirement": "^3.1",
         "scope": "require",
         "is_runtime": true,
@@ -237,6 +263,7 @@
       },
       {
         "purl": "pkg:composer/doctrine/doctrine-fixtures-bundle",
+        "package_version": null,
         "requirement": "^2.3",
         "scope": "require",
         "is_runtime": true,
@@ -245,6 +272,7 @@
       },
       {
         "purl": "pkg:composer/php-amqplib/rabbitmq-bundle",
+        "package_version": null,
         "requirement": "^1.12",
         "scope": "require",
         "is_runtime": true,
@@ -253,6 +281,7 @@
       },
       {
         "purl": "pkg:composer/mtdowling/cron-expression",
+        "package_version": null,
         "requirement": "^1.2",
         "scope": "require",
         "is_runtime": true,
@@ -261,6 +290,7 @@
       },
       {
         "purl": "pkg:composer/sensio/generator-bundle",
+        "package_version": null,
         "requirement": "^3.0",
         "scope": "require-dev",
         "is_runtime": false,
@@ -269,6 +299,7 @@
       },
       {
         "purl": "pkg:composer/symfony/phpunit-bridge",
+        "package_version": null,
         "requirement": "^3.2",
         "scope": "require-dev",
         "is_runtime": false,

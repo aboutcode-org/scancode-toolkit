@@ -64,6 +64,7 @@
           "dependencies": [
             {
               "purl": "pkg:npm/mocha",
+              "package_version": null,
               "requirement": "*",
               "scope": "devDependencies",
               "is_runtime": false,
@@ -72,6 +73,7 @@
             },
             {
               "purl": "pkg:npm/should",
+              "package_version": null,
               "requirement": "*",
               "scope": "devDependencies",
               "is_runtime": false,

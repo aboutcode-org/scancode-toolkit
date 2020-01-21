@@ -36,6 +36,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.mockito/mockito-all",
+      "package_version": null,
       "requirement": "1.8.1",
       "scope": "test",
       "is_runtime": false,

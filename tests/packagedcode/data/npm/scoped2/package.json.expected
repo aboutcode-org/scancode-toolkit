@@ -39,6 +39,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/babel-eslint",
+        "package_version": null,
         "requirement": "^7.2.3",
         "scope": "dependencies",
         "is_runtime": true,
@@ -47,6 +48,7 @@
       },
       {
         "purl": "pkg:npm/eslint-config-airbnb",
+        "package_version": null,
         "requirement": "^15.0.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -55,6 +57,7 @@
       },
       {
         "purl": "pkg:npm/eslint-config-prettier",
+        "package_version": null,
         "requirement": "^2.3.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -63,6 +66,7 @@
       },
       {
         "purl": "pkg:npm/eslint-plugin-flowtype",
+        "package_version": null,
         "requirement": "^2.34.1",
         "scope": "dependencies",
         "is_runtime": true,
@@ -71,6 +75,7 @@
       },
       {
         "purl": "pkg:npm/eslint-plugin-import",
+        "package_version": null,
         "requirement": "^2.6.1",
         "scope": "dependencies",
         "is_runtime": true,
@@ -79,6 +84,7 @@
       },
       {
         "purl": "pkg:npm/eslint-plugin-jsx-a11y",
+        "package_version": null,
         "requirement": "^5.1.1",
         "scope": "dependencies",
         "is_runtime": true,
@@ -87,6 +93,7 @@
       },
       {
         "purl": "pkg:npm/eslint-plugin-prettier",
+        "package_version": null,
         "requirement": "^2.1.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -95,6 +102,7 @@
       },
       {
         "purl": "pkg:npm/eslint-plugin-react",
+        "package_version": null,
         "requirement": "^7.1.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -103,6 +111,7 @@
       },
       {
         "purl": "pkg:npm/eslint",
+        "package_version": null,
         "requirement": "^3.19.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -111,6 +120,7 @@
       },
       {
         "purl": "pkg:npm/prettier",
+        "package_version": null,
         "requirement": "^1.5.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -119,6 +129,7 @@
       },
       {
         "purl": "pkg:npm/eslint",
+        "package_version": null,
         "requirement": "^3.19.0",
         "scope": "peerDependencies",
         "is_runtime": true,
@@ -127,6 +138,7 @@
       },
       {
         "purl": "pkg:npm/prettier",
+        "package_version": null,
         "requirement": "^1.5.2",
         "scope": "peerDependencies",
         "is_runtime": true,

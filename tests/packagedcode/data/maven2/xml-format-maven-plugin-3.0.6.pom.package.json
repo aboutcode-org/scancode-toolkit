@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:maven/org.hamcrest/hamcrest-core",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:maven/org.mockito/mockito-core",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -52,6 +55,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.maven/maven-plugin-api",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -60,6 +64,7 @@
     },
     {
       "purl": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -68,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",
+      "package_version": null,
       "requirement": null,
       "scope": "compile",
       "is_runtime": true,
@@ -76,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/org.dom4j/dom4j",
+      "package_version": null,
       "requirement": "2.0.1",
       "scope": "compile",
       "is_runtime": true,

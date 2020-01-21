@@ -76,6 +76,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/bluebird",
+        "package_version": null,
         "requirement": "^3.3.4",
         "scope": "dependencies",
         "is_runtime": true,
@@ -84,6 +85,7 @@
       },
       {
         "purl": "pkg:npm/depd",
+        "package_version": null,
         "requirement": "^1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -92,6 +94,7 @@
       },
       {
         "purl": "pkg:npm/dottie",
+        "package_version": null,
         "requirement": "^1.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -100,6 +103,7 @@
       },
       {
         "purl": "pkg:npm/generic-pool",
+        "package_version": null,
         "requirement": "2.4.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -108,6 +112,7 @@
       },
       {
         "purl": "pkg:npm/inflection",
+        "package_version": null,
         "requirement": "^1.6.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -116,6 +121,7 @@
       },
       {
         "purl": "pkg:npm/lodash",
+        "package_version": null,
         "requirement": "4.12.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -124,6 +130,7 @@
       },
       {
         "purl": "pkg:npm/moment",
+        "package_version": null,
         "requirement": "^2.13.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -132,6 +139,7 @@
       },
       {
         "purl": "pkg:npm/moment-timezone",
+        "package_version": null,
         "requirement": "^0.5.4",
         "scope": "dependencies",
         "is_runtime": true,
@@ -140,6 +148,7 @@
       },
       {
         "purl": "pkg:npm/retry-as-promised",
+        "package_version": null,
         "requirement": "^2.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -148,6 +157,7 @@
       },
       {
         "purl": "pkg:npm/semver",
+        "package_version": null,
         "requirement": "^5.0.1",
         "scope": "dependencies",
         "is_runtime": true,
@@ -156,6 +166,7 @@
       },
       {
         "purl": "pkg:npm/shimmer",
+        "package_version": null,
         "requirement": "1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -164,6 +175,7 @@
       },
       {
         "purl": "pkg:npm/terraformer-wkt-parser",
+        "package_version": null,
         "requirement": "^1.1.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -172,6 +184,7 @@
       },
       {
         "purl": "pkg:npm/toposort-class",
+        "package_version": null,
         "requirement": "^1.0.1",
         "scope": "dependencies",
         "is_runtime": true,
@@ -180,6 +193,7 @@
       },
       {
         "purl": "pkg:npm/uuid",
+        "package_version": null,
         "requirement": "^3.0.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -188,6 +202,7 @@
       },
       {
         "purl": "pkg:npm/validator",
+        "package_version": null,
         "requirement": "^5.2.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -196,6 +211,7 @@
       },
       {
         "purl": "pkg:npm/wkx",
+        "package_version": null,
         "requirement": "0.2.0",
         "scope": "dependencies",
         "is_runtime": true,
@@ -204,6 +220,7 @@
       },
       {
         "purl": "pkg:npm/chai",
+        "package_version": null,
         "requirement": "^3.5.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -212,6 +229,7 @@
       },
       {
         "purl": "pkg:npm/chai-as-promised",
+        "package_version": null,
         "requirement": "^5.1.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -220,6 +238,7 @@
       },
       {
         "purl": "pkg:npm/chai-datetime",
+        "package_version": null,
         "requirement": "^1.4.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -228,6 +247,7 @@
       },
       {
         "purl": "pkg:npm/chai-spies",
+        "package_version": null,
         "requirement": "^0.7.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -236,6 +256,7 @@
       },
       {
         "purl": "pkg:npm/commander",
+        "package_version": null,
         "requirement": "^2.6.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -244,6 +265,7 @@
       },
       {
         "purl": "pkg:npm/continuation-local-storage",
+        "package_version": null,
         "requirement": "^3.1.4",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -252,6 +274,7 @@
       },
       {
         "purl": "pkg:npm/cross-env",
+        "package_version": null,
         "requirement": "^2.0.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -260,6 +283,7 @@
       },
       {
         "purl": "pkg:npm/dox",
+        "package_version": null,
         "requirement": "~0.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -268,6 +292,7 @@
       },
       {
         "purl": "pkg:npm/git",
+        "package_version": null,
         "requirement": "^0.1.5",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -276,6 +301,7 @@
       },
       {
         "purl": "pkg:npm/hints",
+        "package_version": null,
         "requirement": "^0.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -284,6 +310,7 @@
       },
       {
         "purl": "pkg:npm/istanbul",
+        "package_version": null,
         "requirement": "^0.4.3",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -292,6 +319,7 @@
       },
       {
         "purl": "pkg:npm/jshint",
+        "package_version": null,
         "requirement": "^2.9.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -300,6 +328,7 @@
       },
       {
         "purl": "pkg:npm/lcov-result-merger",
+        "package_version": null,
         "requirement": "^1.2.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -308,6 +337,7 @@
       },
       {
         "purl": "pkg:npm/mocha",
+        "package_version": null,
         "requirement": "^2.4.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -316,6 +346,7 @@
       },
       {
         "purl": "pkg:npm/mysql",
+        "package_version": null,
         "requirement": "~2.10.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -324,6 +355,7 @@
       },
       {
         "purl": "pkg:npm/pg",
+        "package_version": null,
         "requirement": "^4.4.6",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -332,6 +364,7 @@
       },
       {
         "purl": "pkg:npm/pg-hstore",
+        "package_version": null,
         "requirement": "^2.3.1",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -340,6 +373,7 @@
       },
       {
         "purl": "pkg:npm/pg-native",
+        "package_version": null,
         "requirement": "^1.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -348,6 +382,7 @@
       },
       {
         "purl": "pkg:npm/pg-types",
+        "package_version": null,
         "requirement": "^1.11.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -356,6 +391,7 @@
       },
       {
         "purl": "pkg:npm/rimraf",
+        "package_version": null,
         "requirement": "^2.5.4",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -364,6 +400,7 @@
       },
       {
         "purl": "pkg:npm/sinon",
+        "package_version": null,
         "requirement": "^1.17.4",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -372,6 +409,7 @@
       },
       {
         "purl": "pkg:npm/sinon-chai",
+        "package_version": null,
         "requirement": "^2.8.0",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -380,6 +418,7 @@
       },
       {
         "purl": "pkg:npm/sqlite3",
+        "package_version": null,
         "requirement": "^3.1.4",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -388,6 +427,7 @@
       },
       {
         "purl": "pkg:npm/tedious",
+        "package_version": null,
         "requirement": "^1.13.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -396,6 +436,7 @@
       },
       {
         "purl": "pkg:npm/uuid-validate",
+        "package_version": null,
         "requirement": "^0.0.2",
         "scope": "devDependencies",
         "is_runtime": false,
@@ -404,6 +445,7 @@
       },
       {
         "purl": "pkg:npm/watchr",
+        "package_version": null,
         "requirement": "~2.4.11",
         "scope": "devDependencies",
         "is_runtime": false,

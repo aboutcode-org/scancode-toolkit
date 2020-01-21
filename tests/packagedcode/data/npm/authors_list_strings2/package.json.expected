@@ -51,6 +51,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/debug",
+        "package_version": null,
         "requirement": "^2.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -59,6 +60,7 @@
       },
       {
         "purl": "pkg:npm/mocha",
+        "package_version": null,
         "requirement": "^2.4",
         "scope": "devDependencies",
         "is_runtime": false,

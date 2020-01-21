@@ -46,6 +46,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/activesupport",
+        "package_version": null,
         "requirement": ">= 3.2, < 6.0",
         "scope": "runtime",
         "is_runtime": true,
@@ -54,6 +55,7 @@
       },
       {
         "purl": "pkg:gem/devise",
+        "package_version": null,
         "requirement": "~> 4",
         "scope": "runtime",
         "is_runtime": true,
@@ -62,6 +64,7 @@
       },
       {
         "purl": "pkg:gem/bundler",
+        "package_version": null,
         "requirement": "~> 1.11",
         "scope": "development",
         "is_runtime": false,
@@ -70,6 +73,7 @@
       },
       {
         "purl": "pkg:gem/rake",
+        "package_version": null,
         "requirement": "~> 10.0",
         "scope": "development",
         "is_runtime": false,
@@ -78,6 +82,7 @@
       },
       {
         "purl": "pkg:gem/rspec-rails",
+        "package_version": null,
         "requirement": "~> 3.0",
         "scope": "development",
         "is_runtime": false,
@@ -86,6 +91,7 @@
       },
       {
         "purl": "pkg:gem/rails",
+        "package_version": null,
         "requirement": ">= 3.2, < 6.0",
         "scope": "development",
         "is_runtime": false,
@@ -94,6 +100,7 @@
       },
       {
         "purl": "pkg:gem/guard",
+        "package_version": null,
         "requirement": "~> 2.13",
         "scope": "development",
         "is_runtime": false,
@@ -102,6 +109,7 @@
       },
       {
         "purl": "pkg:gem/byebug",
+        "package_version": null,
         "requirement": "~> 5.0",
         "scope": "development",
         "is_runtime": false,
@@ -110,6 +118,7 @@
       },
       {
         "purl": "pkg:gem/guard-rspec",
+        "package_version": null,
         "requirement": "~> 4.6",
         "scope": "development",
         "is_runtime": false,
@@ -118,6 +127,7 @@
       },
       {
         "purl": "pkg:gem/jasmine",
+        "package_version": null,
         "requirement": "~> 2.4",
         "scope": "development",
         "is_runtime": false,

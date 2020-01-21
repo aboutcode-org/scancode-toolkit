@@ -39,6 +39,7 @@
     "dependencies": [
       {
         "purl": "pkg:gem/dependabot-cargo",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -47,6 +48,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-core",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -55,6 +57,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-docker",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -63,6 +66,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-elm",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -71,6 +75,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-git_submodules",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -79,6 +84,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-go_modules",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -87,6 +93,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-gradle",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -95,6 +102,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-maven",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -103,6 +111,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-nuget",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -111,6 +120,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-python",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,
@@ -119,6 +129,7 @@
       },
       {
         "purl": "pkg:gem/dependabot-terraform",
+        "package_version": null,
         "requirement": "= 0.87.15",
         "scope": "runtime",
         "is_runtime": true,

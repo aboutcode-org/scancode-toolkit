@@ -28,6 +28,7 @@
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.ant/ant",
+      "package_version": null,
       "requirement": "1.7.0",
       "scope": "compile",
       "is_runtime": true,
@@ -36,6 +37,7 @@
     },
     {
       "purl": "pkg:maven/commons-lang/commons-lang",
+      "package_version": null,
       "requirement": "2.0",
       "scope": "compile",
       "is_runtime": true,
@@ -44,6 +46,7 @@
     },
     {
       "purl": "pkg:maven/commons-digester/commons-digester",
+      "package_version": null,
       "requirement": "2.0",
       "scope": "compile",
       "is_runtime": true,
@@ -52,6 +55,7 @@
     },
     {
       "purl": "pkg:maven/dom4j/dom4j",
+      "package_version": null,
       "requirement": "1.6.1",
       "scope": "compile",
       "is_runtime": true,
@@ -60,6 +64,7 @@
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations",
+      "package_version": null,
       "requirement": "3.4.0.GA",
       "scope": "compile",
       "is_runtime": true,
@@ -68,6 +73,7 @@
     },
     {
       "purl": "pkg:maven/org.hibernate/hibernate-entitymanager",
+      "package_version": null,
       "requirement": "3.4.0.GA",
       "scope": "compile",
       "is_runtime": true,
@@ -76,6 +82,7 @@
     },
     {
       "purl": "pkg:maven/org.hibernate/ejb3-persistence",
+      "package_version": null,
       "requirement": "3.3.2.Beta1",
       "scope": "compile",
       "is_runtime": true,
@@ -84,6 +91,7 @@
     },
     {
       "purl": "pkg:maven/org.slf4j/slf4j-jcl",
+      "package_version": null,
       "requirement": "1.4.2",
       "scope": "compile",
       "is_runtime": true,
@@ -92,6 +100,7 @@
     },
     {
       "purl": "pkg:maven/postgresql/postgresql",
+      "package_version": null,
       "requirement": "8.3-603.jdbc4",
       "scope": "compile",
       "is_runtime": true,

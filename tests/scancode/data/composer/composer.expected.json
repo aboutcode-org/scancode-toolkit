@@ -58,6 +58,7 @@
           "dependencies": [
             {
               "purl": "pkg:composer/php",
+              "package_version": null,
               "requirement": ">=7.0.0",
               "scope": "require",
               "is_runtime": true,
@@ -66,6 +67,7 @@
             },
             {
               "purl": "pkg:composer/fideloper/proxy",
+              "package_version": null,
               "requirement": "~3.3",
               "scope": "require",
               "is_runtime": true,
@@ -74,6 +76,7 @@
             },
             {
               "purl": "pkg:composer/laravel/framework",
+              "package_version": null,
               "requirement": "5.5.*",
               "scope": "require",
               "is_runtime": true,
@@ -82,6 +85,7 @@
             },
             {
               "purl": "pkg:composer/laravel/tinker",
+              "package_version": null,
               "requirement": "~1.0",
               "scope": "require",
               "is_runtime": true,
@@ -90,6 +94,7 @@
             },
             {
               "purl": "pkg:composer/filp/whoops",
+              "package_version": null,
               "requirement": "~2.0",
               "scope": "require-dev",
               "is_runtime": false,
@@ -98,6 +103,7 @@
             },
             {
               "purl": "pkg:composer/fzaninotto/faker",
+              "package_version": null,
               "requirement": "~1.4",
               "scope": "require-dev",
               "is_runtime": false,
@@ -106,6 +112,7 @@
             },
             {
               "purl": "pkg:composer/mockery/mockery",
+              "package_version": null,
               "requirement": "0.9.*",
               "scope": "require-dev",
               "is_runtime": false,
@@ -114,6 +121,7 @@
             },
             {
               "purl": "pkg:composer/phpunit/phpunit",
+              "package_version": null,
               "requirement": "~6.0",
               "scope": "require-dev",
               "is_runtime": false,

@@ -29,6 +29,7 @@
     "dependencies": [
       {
         "purl": "pkg:npm/jszip",
+        "package_version": null,
         "requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
@@ -37,6 +38,7 @@
       },
       {
         "purl": "pkg:npm/mkdirp",
+        "package_version": null,
         "requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
@@ -45,6 +47,7 @@
       },
       {
         "purl": "pkg:npm/semver",
+        "package_version": null,
         "requirement": null,
         "scope": "bundledDependencies",
         "is_runtime": true,
