@@ -5,20 +5,19 @@ There are 3 main ways you can install ScanCode.
 
 - :ref:`app_install`
 
-    The recommended method for installing ScanCode is Downloading the latest release, as an
+    The recommended method for installing ScanCode is Downloading the latest release as an
     application and then configure and use directly. This is easy because no knowledge of pip/git
     or other developer tools is necessary.
-
-- :ref:`pip_install`
-
-    The fastest way to install ScanCode as a python package, using ``pip``. You can also install
-    ScanCode by compiling it from source or by Downloading and Configuring the
-    latest release from GitHub.
 
 - :ref:`source_code_install`
 
     You can download/clone the source code repository via git/GitHub and then run a configure script
     to install ScanCode.
+
+- :ref:`pip_install`
+
+    To use ScanCode as a library in your application, you can install it via ``pip``. This is
+    recommended for developers/users familiar with Package managers/virtualenv.
 
 ----
 
@@ -50,7 +49,7 @@ ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
 
 .. Note::
 
-    ScanCode currently doesn't support Python 3.7.x or 3.8.x, though support will be added soon.
+    ScanCode currently doesn't support versions above Python 3.6.x, though support will be added soon.
 
 - **On Linux**:
 
@@ -235,39 +234,6 @@ Un-installation
 
 ----
 
-.. _pip_install:
-
-Installation as a library: via ``pip``
---------------------------------------
-
-ScanCode can be easily installed using ``pip``. The steps are:
-
-#. Create a Python 3.6 Virtual Environment::
-
-    virtualenv -p /usr/bin/python3.6 venv-scancode
-
-For more information on Python virtualenv, visit this `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
-
-#. Activate the Virtual Environment you just created::
-
-    source venv-scancode/bin/activate
-
-#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
-
-.. NOTE::
-
-    If you use Python 2.7, scancode-toolkit Version 3.0.2 is installed by default. For Python 3
-    the latest version of Scancode Toolkit is installed by default. Requesting a specific version
-    through ``pip install`` for Python 3 will give Errors if the Version isn't 3.1.x or later.
-
-.. WARNING::
-
-    Python 3.7.x and 3.8.x is not supported yet.
-
-To uninstall, run ``pip uninstall scancode-toolkit``.
-
-----
-
 .. _source_code_install:
 
 Installation from Source Code: Git Clone
@@ -324,6 +290,39 @@ On Windows:
 - run instead ``configure``
 
 Now you are ready to use the freshly configured scancode-toolkit.
+
+----
+
+.. _pip_install:
+
+Installation as a library: via ``pip``
+--------------------------------------
+
+ScanCode can be installed using ``pip``, the default Python Package Manager. The steps are:
+
+#. Create a Python 3.6 Virtual Environment::
+
+    virtualenv -p /usr/bin/python3.6 venv-scancode
+
+For more information on Python virtualenv, visit this `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
+
+#. Activate the Virtual Environment you just created::
+
+    source venv-scancode/bin/activate
+
+#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
+
+.. NOTE::
+
+    If you use Python 2.7, scancode-toolkit Version 3.0.2 is installed by default. For Python 3
+    the latest version of Scancode Toolkit is installed by default. Requesting a specific version
+    through ``pip install`` for Python 3 will give Errors if the Version isn't 3.1.x or later.
+
+.. WARNING::
+
+    Python 3.7.x and 3.8.x is not supported yet.
+
+To uninstall, run ``pip uninstall scancode-toolkit``.
 
 ----
 

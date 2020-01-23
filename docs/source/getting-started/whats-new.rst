@@ -66,7 +66,8 @@ other languages. And as Scancode has users in more than 100 languages, this is a
 Better install Support
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Now, Downloading ScanCode as an Application is the recommended install method, across all platforms.
-This greatly simplifies the install process, and is much easier for all users. Developers familiar with
-package managers can also download ScanCode as a library, via ``pip`` or configure from the source. All
-these methods are properly documented, across all platforms and scenarios.
+Now, Downloading ScanCode as an Application is the recommended install method, across all
+platforms. This greatly simplifies the install process, and is much easier for all users.
+Developers familiar with package managers can also download ScanCode as a library, via ``pip``
+or configure from the source. All these methods are properly documented, across all platforms
+and scenarios.

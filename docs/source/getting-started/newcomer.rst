@@ -16,7 +16,7 @@ Table of Contents
     - :ref:`newcomer_before`
     - :ref:`newcomer_install`
     - :ref:`newcomer_scan_codebase`
-    - :ref:`newcomer_use_scancode_better`
+    - :ref:`newcomer_scancode_tips`
     - :ref:`newcomer_all_tutorials`
     - :ref:`newcomer_whats_new`
 
@@ -48,7 +48,7 @@ determine their license, copyrights and other information, according to your req
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
    installing Scancode and performing a basic scan, and subsequently visualize the results.
 
-#. The :ref:`newcomer_use_scancode_better` section helps you customize the scan according to your
+#. The :ref:`newcomer_scancode_tips` section helps you customize the scan according to your
    requirements, and better understand the advanced features you can use.
 
 #. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and How To's
@@ -66,11 +66,11 @@ Scancode-Toolkit can be installed in 3 different methods.
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
    installing Scancode and performing a basic scan, and subsequently visualize the results.
 
-#. The :ref:`newcomer_use_scancode_better` section helps you customize the scan according to your
+#. The :ref:`newcomer_scancode_tips` section helps you customize the scan according to your
    requirements, and better understand the advanced features you can use.
 
-#. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and How To's
-   with a brief descrip
+#. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and
+   How To's with a brief description.
 
 
 .. _newcomer_before:
@@ -120,7 +120,7 @@ Once you are all set up with Scancode Toolkit, i.e. Running ``scancode -h`` show
    `Scancode Workbench <https://github.com/nexB/scancode-workbench>`_. Follow this tutorial :ref:`how_to_visualize_scan_results`
    to visualize the scan results.
 
-.. _newcomer_use_scancode_better:
+.. _newcomer_scancode_tips:
 
 Use ScanCode Better
 ^^^^^^^^^^^^^^^^^^^
