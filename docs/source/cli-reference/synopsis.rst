@@ -19,8 +19,8 @@ Installation
 ------------
 
 Scancode-Toolkit installation can be done by downloading ScanCode as an application, which
-is recommended generally. For users familiar with ``pip``, ScanCode is also available and can be
-installed from ``pip``, the default Python Package Manager. Refer the following sections for
+is recommended generally. For users who wish to use ScanCode as a library, it can be
+installed via ``pip``, the default Python Package Manager. Refer the following sections for
 detailed Instructions on the each of the Installation Methods.
 
 - :ref:`app_install`
