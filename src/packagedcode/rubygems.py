@@ -178,6 +178,8 @@ def rubygems_homepage_url(name, version, repo='https://rubygems.org/gems'):
     For instance: https://rubygems.org/gems/mocha/versions/1.7.0 or
     https://rubygems.org/gems/mocha
     """
+    if not name:
+        return
     repo = repo.rstrip('/')
     if version:
         version = version.strip().strip('/')
@@ -194,6 +196,8 @@ def rubygems_download_url(name, version, platform=None, repo='https://rubygems.o
 
     For example: https://rubygems.org/downloads/mocha-1.7.0.gem
     """
+    if not name or not version:
+        return
     repo = repo.rstrip('/')
     name = name.strip().strip('/')
     version = version.strip().strip('/')
@@ -733,6 +737,9 @@ class GemSpec(object):
 
 
 def build_packages_from_gemfile_lock(gemfile_lock):
+    """
+    Yield RubyGem Packages from a given GemfileLockParser `gemfile_lock`
+    """
     package_dependencies = []
     for _, gem in gemfile_lock.all_gems.items():
         package_dependencies.append(
@@ -761,6 +768,7 @@ def build_packages_from_gemfile_lock(gemfile_lock):
                         version=dep.version
                     ).to_string(),
                     requirement=', '.join(dep.requirements),
+                    scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
                     is_resolved=True,
