@@ -1,30 +1,32 @@
 Comprehensive Installation
 ==========================
 
-The fastest way to install Scancode-Toolkit is by using ``pip``. You can also install
-ScanCode-Toolkit by compiling it from source or by Downloading and Configuring the
-latest release from GitHub.
+There are 3 main ways you can install ScanCode.
+
+- :ref:`app_install`
+
+    The recommended method for installing ScanCode is Downloading the latest release, as an
+    application and then configure and use directly. This is easy because no knowledge of pip/git
+    or other developer tools is necessary.
 
 - :ref:`pip_install`
-- :ref:`latest_release_download_install`
-- :ref:`source_configure_install`
 
-.. NOTE::
+    The fastest way to install ScanCode as a python package, using ``pip``. You can also install
+    ScanCode by compiling it from source or by Downloading and Configuring the
+    latest release from GitHub.
 
-    After ``pip install``, you can perform a scan using only::
+- :ref:`source_code_install`
 
-        scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
+    You can download/clone the source code repository via git/GitHub and then run a configure script
+    to install ScanCode.
 
-    This is unlike other install methods where path to scancode is provided by using
-    ``path/to/scancode``, or by using ``./scancode`` inside the Scancode install directory.
-
----
+----
 
 Before Installing
 -----------------
 
 ScanCode requires either Python 3.6.x or Python 2.7.x and is tested on Linux, Mac, and Windows.
-Make sure Python 2.7 or Python 3.6 is installed first.
+Make sure Python 3.6 or Python 2.7 is installed first.
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
@@ -44,86 +46,82 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.6 or a Python 2.7 interpreter.
+ScanCode needs a Python 3.6 (*highly recommended*) or a Python 2.7 interpreter.
 
 .. Note::
 
-    ScanCode currently doesn't support Python 3.7.x, though support will be added soon.
+    ScanCode currently doesn't support Python 3.7.x or 3.8.x, though support will be added soon.
 
-- On Linux: Use your package manager to install ``python2.7`` or ``python3.6``. If they are not
-  available from your package manager, you must compile it from sources. For instance, visit
-  https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6 for instructions
-  to compile Python 2.7 from sources on Centos.
+- **On Linux**:
 
-- On Ubuntu 12.04, 14.04 and 16.04, you will need to install these packages first:
-  ``python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+    Use your package manager to install ``python3.6`` (*Recommended*) or ``python2.7``.
 
-- On Debian and Debian-based distros you will need to install these packages first:
-  ``python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+    For ubuntu, it is ``sudo apt install python3.6-dev``
 
-- On RPM-based distros, you will need to install these packages first:
-  ``python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+    - On Ubuntu 14, 16 and 18, run:
+      ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+
+    - On Debian and Debian-based distros run:
+      ``sudo apt-get install python3.6-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+
+    - On RPM-based distros run:
+      ``sudo yum install python3.6-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+
+    - On Fedora 22 and later run:
+      ``sudo dnf install python3.6-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+
+    If they are not available from your package manager, you must compile it from sources.
+    For instance, visit this `wiki <https://github.com/dejacode/about-code-tool/wiki/BuildingPython27OnCentos6>`_
+    for instructions to compile Python 2.7 from sources on Centos.
+
+    To install Python 2.7 instead, replace ``python3.6-dev`` with ``python-dev`` (or ``devel``)
+    according to your specific platform.
+
+- **On Mac**:
+
+    Download and install Python from this url:
+
+    - Python 3.6.8 (*recommended*): https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
+    - Python 2.7.17 : https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.6.pkg
 
 - **On Windows**:
 
-    Use the Python 2.7 32-bit (e.g. The Windows x86 MSI installer) for X86 regardless of whether
-    you run Windows on 32-bit or 64-bit. DO NOT USE Python X86_64 installer even if you run 64 bit
-    Windows. Download Python from this url:
-    https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi
+    Download and install Python from this url:
 
-    Install Python on the c: drive and use all default installer options (scancode will try to find
-    python just in c:\python27\python.exe). See the Windows installation section for more
-    installation details.
+    - Python 3.6.8 (*recommended*): https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
 
-.. Note::
+        Add python to PATH, as ScanCode uses the python from PATH. The last Python you install
+        registers itself in the environment is the default, if you select the "Add to PATH" option
+        while installing.
 
-    64-bit Python interpreters (x86) are currently not supported by Scancode for Python 2.7 in
-    Windows. Use 32-bit Python isntead, even with 64-bit Windows.
+    - Python 2.7.17 : https://www.python.org/ftp/python/2.7.17/python-2.7.17.msi
 
-- On Mac: Download and install Python from this url:
-  https://www.python.org/ftp/python/2.7.13/python-2.7.13-macosx10.6.pkg
+        Install Python on the c: drive and use all default installer options (ScanCode will try to
+        find python just in c:python27python.exe).
+
+    .. Note::
+
+      64-bit Python interpreters (x86-64) are currently not supported by Scancode for Python 3.6/2.7
+      in Windows. Use 32-bit Python instead, even with 64-bit Windows. For Python 2.7, use the
+      32 bit MSI installer linked above.
+
+    See the :ref:`windows_app_install` section for more installation details.
 
 .. WARNING::
 
     Do not use Unicode, non-ASCII in your installation Path if you are using a Python 2.7 interpreter.
 
----
+.. Note::
 
-.. _pip_install:
+    ScanCode comes with packaged with all dependencies, and so apart from downloading it as an
+    application, only Python has to be downloaded and installed separately.
 
-Installation by ``pip``
------------------------
+----
 
-Scancode Toolkit can be easily installed using ``pip``. The steps are:
+.. _app_install:
 
-#. Create a Python 2.7 or Python 3.6 Virtual Environment::
-
-    virtualenv -p /usr/bin/python3.6 venv-scancode
-
-#. Activate the Virtual Environment you just created::
-
-    source venv-scancode/bin/activate
-
-#. Run ``pip install scancode-toolkit`` to Install Scancode.
-
-.. NOTE::
-
-    If you use Python 2.7, scancode-toolkit Version 3.0.2 is installed by default. For Python 3
-    the latest version of Scancode Toolkit is installed by default.
-
-.. WARNING::
-
-    Requesting a specific version through ``pip install`` for Python 3 will give Errors if the
-    Version isn't 3.1.x or later.
-
-To uninstall, run ``pip uninstall scancode-toolkit``.
-
----
-
-.. _latest_release_download_install:
-
-Download and Configure latest Release
--------------------------------------
+Installation as an Application: Downloading Releases
+----------------------------------------------------
 
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +141,7 @@ For ``.tar.bz2`` archive::
 
     tar -xvf scancode-toolkit-3.1.1.tar.bz2
 
-Or Right Click and select "Extract Here".
+Or, Right Click and select "Extract Here".
 
 Check whether the :ref:`install_prerequisites` are installed. Open a terminal in the extracted
 directory and run::
@@ -151,6 +149,8 @@ directory and run::
     ./scancode --help
 
 This will configure ScanCode and display the command line :ref:`cli_help_text`.
+
+.. _windows_app_install:
 
 Installation on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -191,12 +191,10 @@ Installation on Windows
 
 - A new 'cmd.exe' window ('Command Prompt' on Windows 10) pops up.
 
-- In this window (aka a 'command prompt'), type the following (i.e., 'cd' followed by a space)::
+- In this window (aka a 'command prompt'), type 'cd' followed by a space and then Right-click in
+  this window and select Paste. This will paste the path where you extracted ScanCode::
 
-    cd
-
-- Right-click in this window and select Paste.
-  This will paste the path where you extracted ScanCode.
+    cd path/to/extracted_ScanCode
 
 - Press Enter.
 
@@ -209,9 +207,25 @@ Installation on Windows
 
 - Press enter. This will configure your ScanCode installation.
 
-- Several messages are displayed followed by the scancode command help.
+- Several messages are displayed followed by the ScanCode command help.
 
 - The installation is complete.
+
+This uses the default Python present in the PATH environment variable i.e. the last Python
+installed registers itself in the environment is the default. You can also use the ``configure``
+script to explicitly provide the Python path to ScanCode.
+
+- Follow the Instructions above till changing the current location of your command prompt to the
+  root directory where ScanCode is installed.
+
+- Run this command with the path to Python Executable::
+
+    configure --python path/to/python
+
+- You can also use ``path`` instead of ``path/to/python`` to use the python from PATH environment
+  variable. More information is available at the `configure <https://github.com/nexB/scancode-toolkit/blob/develop/configure.bat>`_ script (L6-L15).
+
+- Now you can run ``scancode -h`` to display the Help Text, and here the installation is complete.
 
 Un-installation
 ^^^^^^^^^^^^^^^
@@ -219,25 +233,61 @@ Un-installation
 - Delete the directory in which you extracted ScanCode.
 - Delete any temporary files created in your system temp directory under a ScanCode directory.
 
----
+----
 
-.. _source_configure_install:
+.. _pip_install:
 
-Build From Source
------------------
+Installation as a library: via ``pip``
+--------------------------------------
+
+ScanCode can be easily installed using ``pip``. The steps are:
+
+#. Create a Python 3.6 Virtual Environment::
+
+    virtualenv -p /usr/bin/python3.6 venv-scancode
+
+For more information on Python virtualenv, visit this `page <https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv>`_.
+
+#. Activate the Virtual Environment you just created::
+
+    source venv-scancode/bin/activate
+
+#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
+
+.. NOTE::
+
+    If you use Python 2.7, scancode-toolkit Version 3.0.2 is installed by default. For Python 3
+    the latest version of Scancode Toolkit is installed by default. Requesting a specific version
+    through ``pip install`` for Python 3 will give Errors if the Version isn't 3.1.x or later.
+
+.. WARNING::
+
+    Python 3.7.x and 3.8.x is not supported yet.
+
+To uninstall, run ``pip uninstall scancode-toolkit``.
+
+----
+
+.. _source_code_install:
+
+Installation from Source Code: Git Clone
+----------------------------------------
 
 You can also download the Scancode Toolkit Source Code and build from it yourself. This is how you
 would want to do it if:
 
-- You are Adding new patches to Scancode and want to test it.
-- You want to test a specific Version/Checkpoint/Branch from the VCS
+- You are Adding new patches to Scancode and want to test it. So you build ScanCode locally
+  with your added changes.
 
+- You want to test a specific Version/Checkpoint/Branch from the VCS.
 
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you don't have the ScanCode Toolkit Source Code downloaded, get it from it's official Repository
-(Downloaded as a .zip file) or run the following::
+If you don't have the ScanCode Toolkit Source Code downloaded, get it from its
+`official Repository <https://github.com/nexB/scancode-toolkit/>`_ (Downloaded as a .zip file)
+
+Or you can run the following if you have `Git <https://git-scm.com/>`_ installed::
 
     git clone https://github.com/nexB/scancode-toolkit.git
     cd scancode-toolkit
@@ -250,7 +300,7 @@ using the following command::
 Here, ``master`` branch has the latest release of Scancode-Toolkit. You can also check out to any
 of the following:
 
-- Branches (Locally created or already present)
+- Branches (Locally created or already present) [Example - ``master``, ``develop`` etc]
 - Tags (essentially Version Numbers) [Example - ``v3.1.1``, ``v3.1.0`` etc]
 - Commits (use the shortened commit hash) [Example - ``4502055``, ``f276398`` etc]
 
@@ -261,12 +311,68 @@ ScanCode use the Configure scripts to install a virtualenv, install required pac
 as pip requirements and more configure tasks such that ScanCode can be installed in a
 self-contained way with no network connectivity required.
 
-Open a terminal, clone the scancode-toolkit repository, cd to the clone directory and run::
+On Linux/Mac:
 
-    ./configure
+- Open a terminal
+- cd to the clone directory
+- run ``./configure``
 
-On Windows open a command prompt, cd to the clone directory and run instead::
+On Windows:
 
-    configure
+- open a command prompt
+- cd to the clone directory
+- run instead ``configure``
 
 Now you are ready to use the freshly configured scancode-toolkit.
+
+----
+
+.. _commands_variation:
+
+Commands Variation
+------------------
+
+The commands to run ScanCode varies for:
+
+- Different Installation Methods
+- OS used
+
+The two types of commands are:
+
+- ``scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>``
+- ``path/to/scancode OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>``
+
+In the second case, ``./scancode`` is used if already in the directory.
+
+These variations are summed up in the following table:
+
+.. list-table::
+    :widths: 10 5 10 50
+    :header-rows: 1
+
+    * - Installation Methods
+      - Application Install
+      - Pip Install
+      - Install from Source Code
+
+    * - Linux
+      - `./scancode`
+      - `scancode`
+      - `./scancode`
+
+    * - Mac
+      - `./scancode`
+      - `scancode`
+      - `./scancode`
+
+    * - Windows
+      - `scancode`
+      - `scancode`
+      - `scancode`
+
+To sum it up, ``scancode`` is used in these two cases:
+
+- If ``pip`` install is used.
+- If the OS is Windows.
+
+In all other cases, ``./scancode`` is used.
