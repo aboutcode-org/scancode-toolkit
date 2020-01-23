@@ -1,3 +1,5 @@
+.. _new_to_scancode:
+
 Are you new to Scancode-Toolkit?
 ================================
 
@@ -12,6 +14,7 @@ Table of Contents
 #. :ref:`newcomer_try_scancode`
 
     - :ref:`newcomer_before`
+    - :ref:`newcomer_install`
     - :ref:`newcomer_scan_codebase`
     - :ref:`newcomer_use_scancode_better`
     - :ref:`newcomer_all_tutorials`
@@ -42,7 +45,7 @@ Try ScanCode Toolkit
 This section is about using the Scancode-Toolkit, i.e. Performing a scan on a codebase/files to
 determine their license, copyrights and other information, according to your requirements.
 
-#. The :ref:` newcomer_scan_codebase` section helps you with configuring your virtual environment,
+#. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
    installing Scancode and performing a basic scan, and subsequently visualize the results.
 
 #. The :ref:`newcomer_use_scancode_better` section helps you customize the scan according to your
@@ -50,6 +53,25 @@ determine their license, copyrights and other information, according to your req
 
 #. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and How To's
    with a brief description on what they help you to achieve.
+
+.. _newcomer_install:
+
+Installing ScanCode
+-------------------
+
+Scancode-Toolkit can be installed in 3 different methods.
+
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
+
+#. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
+   installing Scancode and performing a basic scan, and subsequently visualize the results.
+
+#. The :ref:`newcomer_use_scancode_better` section helps you customize the scan according to your
+   requirements, and better understand the advanced features you can use.
+
+#. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and How To's
+   with a brief descrip
+
 
 .. _newcomer_before:
 
@@ -59,10 +81,14 @@ Before you start using Scancode
 #. You need to make sure :ref:`install_prerequisites` are installed, and a `virtualenv <https://docs.python-guide.org/dev/virtualenvs/>`_
    is created.
 
-#. Now you can either run ``pip install scancode-toolkit`` like that in the
-   :ref:`pip_install` documentation, or follow the instructions for the
-   :ref:`latest_release_download_install` method. Alternatively, you can also
-   :ref:`source_configure_install`.
+:ref:`app_install`
+:ref:`pip_install`
+:ref:`source_code_install`
+
+
+#. Now you can either follow the instructions for the recommended :ref:`app_install` method ,
+   or run ``pip install scancode-toolkit`` like that in the :ref:`pip_install` documentation.
+   Alternatively, you can also :ref:`source_code_install`.
 
 #. Run ``scancode -h`` to make sure Scancode was installed properly.
    If this shows any Error, refer the `Common Installation Errors Issue <https://github.com/nexB/scancode-toolkit/issues/1837>`_
@@ -130,7 +156,7 @@ ScanCode Versions
 #. Refer :ref:`whats_new_this_release` to know more about the latest release.
 #. You can also refer the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
 #. If you want to use/test a specific version of Scancode Toolkit, you can follow the instructions
-   in :ref:`source_configure_install` docs.
+   in :ref:`source_code_install` docs.
 
 ----
 
