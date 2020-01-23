@@ -12,7 +12,7 @@ Why use ScanCode?
 =================
 
 - As a **standalone command line tool**, ScanCode is **easy to install**, run
-  and embed in your CI/CD processing pipeline. It runs on **Windows, macOS and Linux**.
+  and embed in your CI/CD processing pipeline. It runs on **Windows, MacOS and Linux**.
 
 - ScanCode is **used by several projects and organizations** such as the `Eclipse
   Foundation <https://www.eclipse.org>`_, `OpenEmbedded.org <https://www.openembedded.org>`_,
@@ -40,8 +40,9 @@ Why use ScanCode?
 
 - ScanCode is heavily **tested** with an automated test suite of over **8000 tests**.
 
-See our roadmap for upcoming features:
-https://github.com/nexB/scancode-toolkit/wiki/Roadmap
+- ScanCode has extensive and updated Documentation help for users.
+
+See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_ for upcoming features.
 
 Build and tests status
 ======================
@@ -63,68 +64,111 @@ Documentation Build
 | Latest | |docs-rtd|   |
 +--------+--------------+
 
-Quick Start
-===========
 
-Install Python 2.7 then download and extract the latest ScanCode release from
-https://github.com/nexB/scancode-toolkit/releases/ 
+Documentation
+=============
 
-Then run ``./scancode -h`` for help.
+The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
+If you are new to Scancode, start `here <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/newcomer.html>`_.
+
+Other Important Documentation Pages:
+
+- A `Synopsis <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/synopsis.html>`_ of ScanCode Command Line Options
+- Tutorials on `How to Run a Scan <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_run_a_scan.html>`_ and `How to Visualize Scan results <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_visualize_scan_results.html>`_
+- An exhaustive List of `All Available Options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_
+- Documentation on `Contributing to Code Development <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_dev.html>`_
+- Documentation on `Plugin Architecture <https://scancode-toolkit.readthedocs.io/en/latest/plugins/plugin_arch.html>`_
+- `FAQ <https://scancode-toolkit.readthedocs.io/en/latest/misc/faq.html>`_
+
+See also https://aboutcode.org for related companion projects and tools.
 
 
 Installation
 ============
 
-Pre-requisites:
+There are 3 main ways you can `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
-* On Windows, please follow the `Comprehensive Installation instructions
-  <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_.
-  Make sure you use Python 2.7 32 bits from
-  https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
+- Installation as an Application: Downloading Releases (Recommended)
+- Installation as a library: via pip
+- Installation from Source Code: Git Clone
 
-* On macOS, install Python 2.7 from
-  https://www.python.org/ftp/python/2.7.15/python-2.7.15-macosx10.6.pkg
+Prerequisites
+-------------
 
-  Next, download and extract the latest ScanCode release from
-  https://github.com/nexB/scancode-toolkit/releases/
+Before installing ScanCode make sure you've installed the prerequisites properly. This mainly
+refers to installing the required Python interpreter (Python 3.6 is recommended).
 
-* On Linux install the Python 2.7 "devel" and these packages using your
-  distribution package manager:
+- For Linux(Ubuntu): ``sudo apt install python3.6-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+- For MacOS: Install Python 3.6.8 from https://www.python.org/ftp/python/3.6.8/python-3.6.8-macosx10.6.pkg
+- For Windows: Install Python 3.6.8 from https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe
 
-  * On Ubuntu 14, 16 and 18 use:
-    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev bzip2``
+Refer `Prerequisites <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites>`_ for detailed information on all different platforms and Python Versions.
 
-  * On Debian and Debian-based distros use:
-    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev libbz2-1.0``
+Installation as an Application : Downloading Releases
+-----------------------------------------------------
 
-  * On RPM distros use:
-    ``sudo yum install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+#. Download and extract the latest ScanCode release from https://github.com/nexB/scancode-toolkit/releases/
 
-  * On Fedora 22 and later use:
-    ``sudo dnf install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
+#. Open a terminal window and then `cd` to the extracted ScanCode directory. 
 
-* See also the `Comprehensive Installation instructions 
-  <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_
-  for additional instructions.
+#. Run this command to self-configure and display the help-text.
+
+    - Linux/Mac : ``./scancode --help``
+    - Windows : ``scancode --help``
+
+Installation as a library: via pip
+----------------------------------
+
+#. Create a Python 3.6 Virtual Environment and activate the same::
+
+    virtualenv -p /usr/bin/python3.6 venv-scancode && source venv-scancode/bin/activate
+
+#. Run ``pip install scancode-toolkit`` 
+
+Installation from Source Code: Git Clone
+----------------------------------------
+
+#. Download the Source Code or Use Git Clone::
+
+    git clone https://github.com/nexB/scancode-toolkit.git
+    cd scancode-toolkit
+
+#. You can jump to any checkpoint/Branch/Commit using the following command::
+
+    git checkout master
+
+#. Run the Configure Script
+
+  - On Linux/Mac: ``./configure``
+  - On Windows: ``configure``
 
 
-Next, download and extract the latest ScanCode release from
-https://github.com/nexB/scancode-toolkit/releases/
+Note the `Commands will vary <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#commands-variation>`_ across different Installation methods and Platforms.
+
+If this displays the `Help Text <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/help-text-options.html#help-text>`_, you are all set to start using ScanCode.
 
 
-Open a terminal window and then `cd` to the extracted ScanCode directory and run
-this command to display help. ScanCode will self-configure if needed::
+Quick Start
+===========
 
-    ./scancode --help
+Note the `Commands Variation <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#commands-variation>`_ across Installation methods and Platforms.
 
 You can run an example scan printed on screen as JSON::
 
     ./scancode -clip --json-pp - samples
 
+Follow the `How to Run a Scan <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_run_a_scan.html>`_ Tutorial
+to perform a basic scan on the ``samples`` directory distributed by default with Scancode.
+
 See more command examples::
 
     ./scancode --examples
 
+Refer `How to set what will be detected in Scan <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_set_what_will_be_detected_in_a_scan.html>`_
+and `How to specify Scancode Output Format <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_format_scan_output.html>`_ for more information.
+
+You can also refer to `Command Line Options Synopsis <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/synopsis.html>`_ and an exhaustive List of `All Available Options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_.
 
 Archive extraction
 ==================
@@ -137,14 +181,7 @@ the mytar.tar.bz2-extract directory::
 
     ./extractcode mytar.tar.bz2
 
-
-Documentation & FAQ
-===================
-
-https://github.com/nexB/scancode-toolkit/wiki
-
-See also https://aboutcode.org for related companion projects and tools.
-
+Refer `All Extractcode Options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html#all-extractcode-options>`_ and `How To Extract Archives <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_extract_archives.html>`_ for more information.
 
 Support
 =======
@@ -162,6 +199,7 @@ For discussions and chats, we have:
   You can use your favorite IRC client or use the web chat at
   https://webchat.freenode.net/
 
+* a Gitter channel to discuss Documentation at https://gitter.im/aboutcode-org/gsod-season-of-docs
 
 Source code and downloads
 =========================
