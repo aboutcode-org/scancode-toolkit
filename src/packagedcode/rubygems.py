@@ -34,12 +34,14 @@ from os.path import expanduser
 
 import attr
 import saneyaml
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import fileutils
 from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
+from packagedcode.gemfile_lock import GemfileLockParser
 from packagedcode.utils import combine_expressions
 
 
@@ -125,8 +127,9 @@ class RubyGem(models.Package):
             pass
 
         if location.endswith('Gemfile.lock'):
-            # TODO: implement me
-            pass
+            gemfile_lock = GemfileLockParser(location)
+            for package in build_packages_from_gemfile_lock(gemfile_lock):
+                yield package
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return rubygems_homepage_url(self.name, self.version, repo=baseurl)
@@ -727,3 +730,44 @@ class GemSpec(object):
                 if TRACE:
                     logger.warning('WARNING: {}: no license mapping for: "{}"'.format(self.filename, lic))
         return mapped_licenses
+
+
+def build_packages_from_gemfile_lock(gemfile_lock):
+    package_dependencies = []
+    for _, gem in gemfile_lock.all_gems.items():
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='gem',
+                    name=gem.name,
+                    version=gem.version
+                ).to_string(),
+                requirement=', '.join(gem.requirements),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+    yield RubyGem(dependencies=package_dependencies)
+    for _, gem in gemfile_lock.all_gems.items():
+        deps = []
+        for dep_name, dep in gem.dependencies.items():
+            deps.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=dep.name,
+                        version=dep.version
+                    ).to_string(),
+                    requirement=', '.join(dep.requirements),
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+        yield RubyGem(
+            name=gem.name,
+            version=gem.version,
+            dependencies=deps
+        )
