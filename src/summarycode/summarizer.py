@@ -301,6 +301,7 @@ def summarize_values(values, attribute):
         holders=summarize_holders,
         authors=summarize_holders,
         programming_language=summarize_languages,
+        packages=summarize_packages,
     )
     return value_summarizers_by_attr[attribute](values)
 
@@ -502,11 +503,29 @@ def package_summarizer(resource, children, keep_details=False):
         logger_debug('package_summarizer: for:', resource,
                      'packages are:', packs)
 
+    package_purls = []
+    for package in packages:        
+        if package.get("purl", False):
+            package_purls.append(package["purl"])
+
     # Collect direct children packages summary
     for child in children:
         child_summaries = get_resource_summary(child, key='packages', as_attribute=False) or []
-        packages.extend(child_summaries)
-
+        for child_summary in child_summaries:
+            values = [child_summary['value']] * child_summary['count']
+            package_purls.extend(values)
+ 
     # summarize proper
-    set_resource_summary(resource, key='packages', value=packages, as_attribute=False)
-    return packages
+    packages_counter = summarize_licenses(package_purls)
+    summarized = sorted_counter(packages_counter)
+    set_resource_summary(resource, key="packages", value=summarized, as_attribute=keep_details)
+
+    return summarized
+    
+
+def summarize_packages(package_purls):
+    """
+    Given a list of package purls, return a mapping of {expression: count
+    of occurences}
+    """
+    return Counter(package_purls)
