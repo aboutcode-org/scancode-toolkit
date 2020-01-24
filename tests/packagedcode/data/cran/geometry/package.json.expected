@@ -1,7 +1,7 @@
 {
   "type": "cran",
   "namespace": null,
-  "name": "David C. Sterratt [cph, aut, cre]\n(<https://orcid.org/0000-0001-9092-9099>)",
+  "name": "geometry",
   "version": "0.4.2",
   "qualifiers": {},
   "subpath": null,
@@ -94,8 +94,8 @@
   ],
   "contains_source_code": null,
   "source_packages": [],
-  "purl": "pkg:cran/David%20C.%20Sterratt%20%5Bcph%2C%20aut%2C%20cre%5D%0A%28%3Chttps://orcid.org/0000-0001-9092-9099%3E%29@0.4.2",
-  "repository_homepage_url": null,
+  "purl": "pkg:cran/geometry@0.4.2",
+  "repository_homepage_url": "https://cran.r-project.org/package=geometry",
   "repository_download_url": null,
   "api_data_url": null
 }
