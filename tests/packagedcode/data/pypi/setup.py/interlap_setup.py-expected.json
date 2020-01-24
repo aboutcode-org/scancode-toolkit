@@ -54,6 +54,6 @@
   "source_packages": [],
   "purl": "pkg:pypi/interlap",
   "repository_homepage_url": "https://pypi.org/project/interlap",
-  "repository_download_url": "https://pypi.io/packages/source/i/interlap/interlap-None.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/interlap/None/json"
+  "repository_download_url": null,
+  "api_data_url": "http://pypi.python.org/pypi/interlap/json"
 }

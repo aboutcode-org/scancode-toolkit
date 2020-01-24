@@ -50,6 +50,6 @@
   "source_packages": [],
   "purl": "pkg:pypi/ntfsutils",
   "repository_homepage_url": "https://pypi.org/project/ntfsutils",
-  "repository_download_url": "https://pypi.io/packages/source/n/ntfsutils/ntfsutils-None.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/ntfsutils/None/json"
+  "repository_download_url": null,
+  "api_data_url": "http://pypi.python.org/pypi/ntfsutils/json"
 }

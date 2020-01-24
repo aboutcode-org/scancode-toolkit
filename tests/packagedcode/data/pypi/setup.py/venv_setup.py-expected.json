@@ -53,6 +53,6 @@
   "source_packages": [],
   "purl": "pkg:pypi/virtualenv",
   "repository_homepage_url": "https://pypi.org/project/virtualenv",
-  "repository_download_url": "https://pypi.io/packages/source/v/virtualenv/virtualenv-None.tar.gz",
-  "api_data_url": "http://pypi.python.org/pypi/virtualenv/None/json"
+  "repository_download_url": null,
+  "api_data_url": "http://pypi.python.org/pypi/virtualenv/json"
 }
