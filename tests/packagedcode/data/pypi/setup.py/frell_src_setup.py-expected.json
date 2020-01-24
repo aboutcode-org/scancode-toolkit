@@ -1,0 +1,46 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "@NAME@",
+  "version": null,
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "Python module @MODULE@",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Brett Smith",
+      "email": "bc.smith@sas.com",
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": "apache-2.0",
+  "declared_license": {
+    "license": "Apache License 2.0",
+    "classifiers": []
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/%40name%40",
+  "repository_homepage_url": "https://pypi.org/project/@NAME@",
+  "repository_download_url": "https://pypi.io/packages/source/@/@NAME@/@NAME@-None.tar.gz",
+  "api_data_url": "http://pypi.python.org/pypi/@NAME@/None/json"
+}

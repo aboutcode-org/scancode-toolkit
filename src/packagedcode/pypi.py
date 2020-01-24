@@ -87,9 +87,9 @@ class PythonPackage(models.Package):
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
-    default_web_baseurl = None
-    default_download_baseurl = None
-    default_api_baseurl = None
+    default_web_baseurl = 'https://pypi.org'
+    default_download_baseurl = 'https://pypi.io/packages/source'
+    default_api_baseurl = 'http://pypi.python.org/pypi'
 
     @classmethod
     def recognize(cls, location):
@@ -97,6 +97,15 @@ class PythonPackage(models.Package):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return '{}/project/{}'.format(baseurl, self.name)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        return '{baseurl}/{name[0]}/{name}/{name}-{version}.tar.gz'.format(baseurl=baseurl, name=self.name, version=self.version)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        return '{}/{}/{}/json'.format(baseurl, self.name, self.version)
 
 
 def parse(location):

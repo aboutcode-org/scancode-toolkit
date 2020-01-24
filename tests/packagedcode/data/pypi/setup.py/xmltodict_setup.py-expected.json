@@ -50,7 +50,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/xmltodict",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
+  "repository_homepage_url": "https://pypi.org/project/xmltodict",
+  "repository_download_url": "https://pypi.io/packages/source/x/xmltodict/xmltodict-None.tar.gz",
+  "api_data_url": "http://pypi.python.org/pypi/xmltodict/None/json"
 }

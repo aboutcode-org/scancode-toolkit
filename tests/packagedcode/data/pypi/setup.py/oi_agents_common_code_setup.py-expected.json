@@ -51,7 +51,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/agents-common",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
+  "repository_homepage_url": "https://pypi.org/project/agents_common",
+  "repository_download_url": "https://pypi.io/packages/source/a/agents_common/agents_common-None.tar.gz",
+  "api_data_url": "http://pypi.python.org/pypi/agents_common/None/json"
 }
