@@ -93,9 +93,9 @@ refers to installing the required Python interpreter (Python 3.6 is recommended)
 
 There are 3 main ways you can `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
-- `Installation as an Application: Downloading Releases <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#download-and-configure-latest-release>`_ *(Recommended)*
-- `Installation as a library: via pip <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-by-pip>`_
-- `Installation from Source Code: Git Clone <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#build-from-source>`_
+- `Installation as an Application: Downloading Releases <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-as-an-application-downloading-releases>`_ *(Recommended)*
+- `Installation from Source Code: Git Clone <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-from-source-code-git-clone>`_
+- `Installation as a library: via pip <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#pip-install>`_
 
 Quick Start
 ===========
