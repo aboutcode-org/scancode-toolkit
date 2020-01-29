@@ -21,3 +21,4 @@ ignorable_urls:
     - http://www.vovida.org/
 ignorable_emails:
     - vocal@vovida.org
+osi_license_key: VSL-1.0
