@@ -9,7 +9,7 @@ Quick Summary
 -------------
 
 - Version - 3.1.1
-- Tag - "v.3.1.1"
+- Tag - ``v.3.1.1``
 - Date - 5th September 2019
 - Type - Pre-Release
 - Comments - Release v3.1.1 which the release candidate 2 of 3.1.x
@@ -55,13 +55,6 @@ deprecated hereafter. The new documentation has improved support in terms of:
 
 This results in a much better documentation experience in Users and even contributors.
 
-``pip install`` Support
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Now, ``pip install`` is the recommended install method, across all platforms. This greatly
-simplifies the install process, and is much faster and easier than the Download and Configure
-method, for non-developer users.
-
 Python 3 Support
 ^^^^^^^^^^^^^^^^
 
@@ -69,3 +62,12 @@ Python 3 is now officially supported by Scancode-Toolkit.
 
 This also means improved Unicode support, so it's easy to translate strings from Unicode to
 other languages. And as Scancode has users in more than 100 languages, this is a major improvement.
+
+Better install Support
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Now, Downloading ScanCode as an Application is the recommended install method, across all
+platforms. This greatly simplifies the install process, and is much easier for all users.
+Developers familiar with package managers can also download ScanCode as a library, via ``pip``
+or configure from the source. All these methods are properly documented, across all platforms
+and scenarios.

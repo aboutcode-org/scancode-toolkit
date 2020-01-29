@@ -56,6 +56,7 @@ For other questions, discussions, and chats, we have:
 
 - a mailing list at `sourceforge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
 
+- a Gitter channel to discuss Documentation at https://gitter.im/aboutcode-org/gsod-season-of-docs
 
 Bug reports
 ===========
@@ -77,10 +78,16 @@ When `reporting a bug`__ please include:
 Documentation improvements
 ==========================
 
-Documentation can come in the form of wiki pages, docstrings, blog posts,
-articles, etc. Even a minor typo fix is welcomed. 
-See also extra documentation on the `Wiki <https://github.com/nexB/scancode-toolkit/wiki>`_.
+Documentation can come in the form of new documentation pages/sections, tutorials/how-to documents,
+any other general upgrades, etc. Even a minor typo fix is welcomed. 
 
+If something is missing in the documentation or if you found some part confusing,
+please file an issue with your suggestions for improvement. Use the “Documentation Improvement”
+template. Your help and contributions makes ScanCode docs better, we love hearing from you!
+
+The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
+If you want to contribute to Scancode Dcoumentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html>`_ helpful.
 
 Development
 ===========
