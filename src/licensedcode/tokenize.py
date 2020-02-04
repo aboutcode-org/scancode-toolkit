@@ -37,9 +37,11 @@ except ImportError:
     # Python 3
     pass
 
+from binascii import crc32
 import re
-from zlib import crc32
 
+from commoncode.system import py2
+from commoncode.system import py3
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
@@ -225,7 +227,14 @@ def select_ngrams(ngrams, with_pos=False):
     last = None
     for pos, ngram in enumerate(ngrams):
         # FIXME: use a proper hash
-        nghs = [crc32(str(ng).encode('ascii')) & 0xffffffff for ng in ngram]
+        nghs = []
+        for ng in ngram:
+            if ((py2 and isinstance(ng, basestring))
+                    or (py3 and isinstance(ng, str))):
+                ng = bytearray(ng, encoding='utf-8')
+            else:
+                ng = bytearray(ng)
+            nghs.append(crc32(ng) & 0xffffffff)
         min_hash = min(nghs)
         if with_pos:
             ngram = (pos, ngram,)
