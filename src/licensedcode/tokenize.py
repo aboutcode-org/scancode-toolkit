@@ -233,7 +233,7 @@ def select_ngrams(ngrams, with_pos=False):
                     or (py3 and isinstance(ng, str))):
                 ng = bytearray(ng, encoding='utf-8')
             else:
-                ng = bytearray(ng)
+                ng = bytearray(str(ng).encode('utf-8'))
             nghs.append(crc32(ng) & 0xffffffff)
         min_hash = min(nghs)
         if with_pos:
