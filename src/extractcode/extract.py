@@ -97,7 +97,7 @@ An ExtractEvent contains data about an archive extraction progress:
 ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, kinds=extractcode.default_kinds, recurse=False):
+def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -116,10 +116,26 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
     archives If `recurse` is false, then do not extract further an already
     extracted archive identified by the corresponding extract suffix location.
 
+    If `replace_originals` is True, the archives will be extracted in place.
+
     Note that while the original file system is walked top-down, breadth-first,
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
+    events = list(extract_files(location, kinds, recurse))
+    if replace_originals:
+        for xevent in reversed(events):
+            if xevent.done:
+                source = xevent.source
+                target = xevent.target
+                if TRACE:
+                    logger.debug('extract:replace_originals: replace %(source)r by %(target)r' % locals())
+                fileutils.delete(source)
+                fileutils.copytree(target, source)
+                fileutils.delete(target)
+    return events
+
+def extract_files(location, kinds=extractcode.default_kinds, recurse=False):
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
