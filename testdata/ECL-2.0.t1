@@ -1,6 +1,6 @@
 # BUG: Why did we find a URL inside the ECL-2.0 match?
 100%
-ECL-2.0 100.0% 0,11214
+ECL-2.0 100.0% 0,$
 Apache-2.0 100.0% 365,403 URL
 
 Educational Community License Version 2.0, April 2007
