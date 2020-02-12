@@ -1,0 +1,25 @@
+The testdata files in this directory start with a header, terminated by a blank line,
+and then contain the test input. By convention, the files are named Kind.tN
+where Kind describes the test (the license name for a single license), and
+N is a sequence number.
+
+The header starts with any number of comment lines beginning with #,
+which are ignored.
+
+It is followed by an optional line specifying the set of licenses to test against:
+
+	set <name list>
+
+The valid names are defined in license_test.go.
+
+After that optional line comes the expected Coverage result, in the form:
+
+	90.5%
+	BSD 98.9% 1234,4567 [URL]
+
+That is, the first line is the Percent field and the subsequent lines are
+the list of Match entries. Each Match contains the license Name, Percent,
+Start, and End offsets. As a special case, the End offset can be written as "$"
+if it extends to the end of the file. If IsURL is true, the line ends with the
+literal field "URL". Otherwise that field is omitted.
+
