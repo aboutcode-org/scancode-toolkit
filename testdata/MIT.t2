@@ -1,6 +1,6 @@
 # This notice appears in go/src/runtime/vlrt.go.
-90.9%
-MIT 100.0% 124,$
+81.3%
+MIT 100.0% 328,$
 
 // Inferno's libkern/vlrt-arm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/default/libkern/vlrt-arm.c
