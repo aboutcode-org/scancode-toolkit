@@ -1,7 +1,6 @@
 # Make sure we detect CommonsClause addition.
-82.1%
+80.9%
 Apache-2.0-Header 86.7% 126,648
-Apache-2.0 100.0% 236,274 URL
 CommonsClause 100.0% 683,1397
 
 Copyright 2018 Go Gopher.
