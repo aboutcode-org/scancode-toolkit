@@ -116,7 +116,8 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
     archives If `recurse` is false, then do not extract further an already
     extracted archive identified by the corresponding extract suffix location.
 
-    If `replace_originals` is True, the archives will be extracted in place.
+    If `replace_originals` is True, the extracted archives are replaced by the
+    extracted content.
 
     Note that while the original file system is walked top-down, breadth-first,
     if recurse and a nested archive is found, it is extracted to full depth
