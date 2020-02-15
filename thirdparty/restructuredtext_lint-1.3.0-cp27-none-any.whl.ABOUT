@@ -3,7 +3,7 @@ name: restructuredtext_lint
 version: 1.3.0-cp27
 package_url: pkg:pypi/restructuredtext_lint@1.3.0
 download_url: https://github.com/twolfson/restructuredtext-lint/archive/1.3.0.tar.gz
-notice_url: https://github.com/twolfson/restructuredtext-lint/blob/v1.3.0/LICENSE
+notice_url: https://github.com/twolfson/restructuredtext-lint/blob/1.3.0/UNLICENSE
 homepage_url: https://github.com/twolfson/restructuredtext-lint/
 owner_url: https://github.com/twolfson/
 owner: Todd Wolfson
