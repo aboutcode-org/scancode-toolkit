@@ -20,7 +20,7 @@ docs.
 
 ### A first-timer's Issue
 
-A [first-timers-only issue](https://github.com/nexB/scancode-toolkit/labels/%20first%20timers%20only)
+A [first-timers-only issue](https://github.com/nexB/scancode-toolkit/labels/first%20timers%20only)
 means we've worked to make it more legible to folks who either **haven't contributed to our codebase before,
 or even folks who haven't contributed to open source before**. 
 
@@ -63,7 +63,7 @@ If this happens to you, don't sweat it! Grab another open issue.
 easily see if someone's already started on it. 
 
 👥- **If someone seems stuck, offer them some help!** Otherwise,
-[take a look at some other issues you can help with](https://github.com/nexB/scancode-toolkit/labels/%20first%20timers%20only).
+[take a look at some other issues you can help with](https://github.com/nexB/scancode-toolkit/labels/20first%20timers%20only).
 Thanks!
 
 ### 🤔❓ Questions?
@@ -92,7 +92,7 @@ This task list makes it easier for the maintainers to track your Progress, so up
 
 - [ ] **Review Guidelines** Check out our Code of Conduct and Contributing Guidelines before you start working. 
 
-- [ ] **Refer Documentation** Refer [docuementation](https://aboutcode.readthedocs.io/en/latest/scancode-toolkit/contribute/contrib_doc.html)
+- [ ] **Refer Documentation** Refer [docuementation](https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html)
   for more help on the contribution process and to understand our Sphinx and reStructuredText built
   documentation generation better.
 
