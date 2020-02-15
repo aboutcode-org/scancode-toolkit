@@ -89,6 +89,17 @@ matrix:
       python: "3.6"
       dist: bionic
 
+    - os: linux
+      sudo: required
+      before_install:
+        - gem install awesome_bot
+      script:
+        - awesome_bot .github/*.md --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot .github/ISSUE_TEMPLATE/*.md --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot *.rst --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot */**/*.md --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot */*.ABOUT --allow-redirect --allow-dupe --skip-save-results
+
 addons:
   homebrew:
     packages:
