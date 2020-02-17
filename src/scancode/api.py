@@ -312,7 +312,7 @@ def get_file_info(location, **kwargs):
     return result
 
 
-def extract_archives(location, recurse=True):
+def extract_archives(location, recurse=True, replace_originals=False):
     """
     Yield ExtractEvent while extracting archive(s) and compressed files at
     `location`. If `recurse` is True, extract nested archives-in-archives
@@ -323,5 +323,5 @@ def extract_archives(location, recurse=True):
     """
     from extractcode.extract import extract
     from extractcode import default_kinds
-    for xevent in extract(location, kinds=default_kinds, recurse=recurse):
+    for xevent in extract(location, kinds=default_kinds, recurse=recurse, replace_originals=replace_originals):
         yield xevent

@@ -238,6 +238,55 @@ class TestExtract(FileBasedTesting):
         check_no_error(result)
         check_files(test_dir, expected)
 
+    def test_extract_tree_recursive_replace_originals(self):
+        expected = (
+            'a/a.txt',
+            'a/a.tar.gz/a/b/a.txt',
+            'a/a.tar.gz/a/b/b.txt',
+            'a/a.tar.gz/a/c/c.txt',
+            'b/a.txt',
+            'b/b.tar.gz/b/.svn/all-wcprops',
+            'b/b.tar.gz/b/.svn/entries',
+            'b/b.tar.gz/b/.svn/format',
+            'b/b.tar.gz/b/a/a.txt',
+            'b/b.tar.gz/b/a/.svn/all-wcprops',
+            'b/b.tar.gz/b/a/.svn/entries',
+            'b/b.tar.gz/b/a/.svn/format',
+            'b/b.tar.gz/b/a/.svn/prop-base/a.tar.gz.svn-base',
+            'b/b.tar.gz/b/a/.svn/text-base/a.tar.gz.svn-base',
+            'b/b.tar.gz/b/a/.svn/text-base/a.txt.svn-base',
+            'b/b.tar.gz/b/a/a.tar.gz/a/b/a.txt',
+            'b/b.tar.gz/b/a/a.tar.gz/a/b/b.txt',
+            'b/b.tar.gz/b/a/a.tar.gz/a/c/c.txt',
+            'b/b.tar.gz/b/b/a.txt',
+            'b/b.tar.gz/b/b/.svn/all-wcprops',
+            'b/b.tar.gz/b/b/.svn/entries',
+            'b/b.tar.gz/b/b/.svn/format',
+            'b/b.tar.gz/b/b/.svn/text-base/a.txt.svn-base',
+            'b/b.tar.gz/b/c/a.txt',
+            'b/b.tar.gz/b/c/.svn/all-wcprops',
+            'b/b.tar.gz/b/c/.svn/entries',
+            'b/b.tar.gz/b/c/.svn/format',
+            'b/b.tar.gz/b/c/.svn/prop-base/a.tar.gz.svn-base',
+            'b/b.tar.gz/b/c/.svn/text-base/a.tar.gz.svn-base',
+            'b/b.tar.gz/b/c/.svn/text-base/a.txt.svn-base',
+            'b/b.tar.gz/b/c/a.tar.gz/a/b/a.txt',
+            'b/b.tar.gz/b/c/a.tar.gz/a/b/b.txt',
+            'b/b.tar.gz/b/c/a.tar.gz/a/c/c.txt',
+            'c/a.txt',
+            'c/a.tar.gz/a/b/a.txt',
+            'c/a.tar.gz/a/b/b.txt',
+            'c/a.tar.gz/a/c/c.txt',
+        )
+        test_dir = self.get_test_loc('extract/tree', copy=True)
+        result = list(extract.extract(test_dir, recurse=True, replace_originals=True))
+        check_no_error(result)
+        check_files(test_dir, expected)
+        # again
+        result = list(extract.extract(test_dir, recurse=True))
+        check_no_error(result)
+        check_files(test_dir, expected)
+
     def test_extract_tree_shallow_then_recursive(self):
         shallow = (
             'a/a.tar.gz',
