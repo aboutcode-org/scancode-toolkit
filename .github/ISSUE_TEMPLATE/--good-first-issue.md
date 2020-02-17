@@ -63,7 +63,7 @@ Make sure all these boxes are checked before your pull request (PR) is ready to 
 - [ ] 📝 **Code your Solution**
 
 - [ ] 📝 **Run the tests locally**
-  Refer [Documentation](https://aboutcode.readthedocs.io/en/latest/scancode-toolkit/contribute/contrib_dev.html#running-tests)
+  Refer [Documentation](https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_dev.html#running-tests)
 
 - [ ] 💾 **Commit and Push** your changes. Do check out this documentation on 
   [writing good commit messages](https://aboutcode.readthedocs.io/en/latest/aboutcode-docs/writing_good_commit_messages.html) 

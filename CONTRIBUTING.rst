@@ -5,8 +5,8 @@ Contributing
 Contributions are welcome and appreciated!
 Every little bit helps, and credit will always be given.
 
-.. _issue : https://github.com/nexB/scancode-toolkit/issue
-__ issue_
+.. _issues : https://github.com/nexB/scancode-toolkit/issues
+__ issues_
 
 If you are new to ScanCode and want to find easy tickets to work on,
 check `easy issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
