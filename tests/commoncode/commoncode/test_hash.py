@@ -26,7 +26,6 @@ from __future__ import absolute_import, print_function
 
 from collections import OrderedDict
 import os
-from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 
@@ -39,9 +38,6 @@ from commoncode.hash import sha256
 from commoncode.hash import sha512
 from commoncode.hash import sha1_git
 from commoncode.hash import multi_checksums
-
-from commoncode.system import py2
-from commoncode.system import py3
 
 
 class TestHash(FileBasedTesting):
@@ -130,8 +126,7 @@ class TestHash(FileBasedTesting):
         ])
         assert expected == result
 
-    @skipIf(not py2, 'Python 2 only')
-    def test_multi_checksums_shattered1_py2(self):
+    def test_multi_checksums_shattered1(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
         expected = OrderedDict([
             ('md5', 'ee4aa52b139d925f8d8884402b0a750c'),
@@ -143,20 +138,7 @@ class TestHash(FileBasedTesting):
         result = multi_checksums(test_file)
         assert expected == result
 
-    @skipIf(not py3, 'Python 3 only')
-    def test_multi_checksums_shattered1_py3(self):
-        test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
-        expected = OrderedDict([
-            ('md5', u'ee4aa52b139d925f8d8884402b0a750c'),
-            ('sha1', u'38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
-            ('sha256', u'2bb787a73e37352f92383abe7e2902936d1059ad9f1ba6daaa9c1e58ee6970d0'),
-            ('sha512', u'3c19b2cbcf72f7f5b252ea31677b8f2323d6119e49bcc0fb55931d00132385f1e749bb24cbd68c04ac826ae8421802825d3587fe185abf709669bb9693f6b416'),
-            ('sha1_git', u'fa4f3f9e4f90e773f54cafe43e68721bdf064ec9')])
-        result = multi_checksums(test_file)
-        assert expected == result
-
-    @skipIf(not py2, 'Python 2 only')
-    def test_multi_checksums_shattered2_py2(self):
+    def test_multi_checksums_shattered2(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
         expected = OrderedDict([
             ('md5', '5bd9d8cabc46041579a311230539b8d1'),
@@ -169,29 +151,20 @@ class TestHash(FileBasedTesting):
         result = multi_checksums(test_file)
         assert expected == result
 
-    @skipIf(not py3, 'Python 3 only')
-    def test_multi_checksums_shattered2_py3(self):
-        test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
-        expected = OrderedDict([
-            ('md5', u'5bd9d8cabc46041579a311230539b8d1'),
-            ('sha1', u'38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
-            ('sha256', u'd4488775d29bdef7993367d541064dbdda50d383f89f0aa13a6ff2e0894ba5ff'),
-            ('sha512', u'f39a04842e4b28e04558496beb7cb84654ded9c00b2f873c3ef64f9dfdbc760cd0273b816858ba5b203c0dd71af8b65d6a0c1032e00e48ace0b4705eedcc1bab'),
-            # Note: this is not the same as the sha1_git for shattered-1.pdf ;)
-            ('sha1_git', u'e26f56db9a9f901c4a2e1605adf2bcd1814acce6')])
-        result = multi_checksums(test_file)
-        assert expected == result
-
-    @skipIf(not py2, 'Python 2 only')
-    def test_sha1_git_checksum_py2(self):
-        test_file = self.get_test_loc('hash/dir1/a.png')
-        # test that we match the git hash-object
-        # tests/commoncode/data/hash/dir1/a.png output as of git 1.9.1
-        assert sha1_git(test_file) == '5f212358671a3ada8794cb14fb5227f596447a8c'
-
-    @skipIf(not py3, 'Python 3 only')
-    def test_sha1_git_checksum_py3(self):
-        test_file = self.get_test_loc('hash/dir1/a.png')
-        # test that we match the git hash-object
-        # tests/commoncode/data/hash/dir1/a.png output as of git 1.9.1
-        assert sha1_git(test_file) == u'dc5cf08c02e39872d8048c8e600524a02affc7e1'
+    def test_sha1_git_checksum(self):
+        # scancode-toolkit/tests/commoncode/data/hash$ for f in `find . -type f` ; do echo -n "$f ";git hash-object --literally $f; done
+        tests = [t for t in '''
+        hash/dir1/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
+        hash/dir1/a.png 5f212358671a3ada8794cb14fb5227f596447a8c
+        hash/sha1-collision/shattered-1.pdf ba9aaa145ccd24ef760cf31c74d8f7ca1a2e47b0
+        hash/sha1-collision/shattered-2.pdf.ABOUT b332179480cc839f856652be34e1232309d3c077
+        hash/sha1-collision/shattered-1.pdf.ABOUT 56a0048f5639b2d14b02f06d26d5c849fba2bc13
+        hash/sha1-collision/shattered-2.pdf b621eeccd5c7edac9b7dcba35a8d5afd075e24f2
+        hash/dir2/dos.txt 0d2d3a69833f1ebcbf420875cfbc93f132bc8a0b
+        hash/dir2/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
+        '''.splitlines() if t.strip()]
+        for test in tests:
+            test_file, expected_sha1_git = test.split()
+            test_file = self.get_test_loc(test_file)
+            # test that we match the git hash-object
+            assert expected_sha1_git == sha1_git(test_file)
