@@ -103,7 +103,7 @@ class sha1_git_hasher(object):
         self.h = msg and self._compute(msg) or None
 
     def _compute(self, msg):
-        return hashlib.sha1(b'blob ' + bytes(len(msg)) + b'\0' + msg).digest()
+        return hashlib.sha1(b'blob ' + str(len(msg)).encode('ascii') + b'\0' + msg).digest()
 
     def digest(self):
         return bytes(self.h)
