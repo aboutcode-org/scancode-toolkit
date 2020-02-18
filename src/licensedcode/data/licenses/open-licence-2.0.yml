@@ -1,0 +1,10 @@
+key: open-licence-2.0
+short_name: Open Licence 1.0
+name: Open Licence 2.0
+category: Unspecified
+owner: Etalab
+homepage_url: https://github.com/etalab/licence-ouverte
+text_urls:
+    - https://github.com/etalab/licence-ouverte/blob/master/open-licence.md
+ignorable_urls:
+    - http://www.data.gouv.fr/fr/datasets/xxx/
