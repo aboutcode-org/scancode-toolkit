@@ -182,6 +182,23 @@ class TestEmail(FileBasedTesting):
         result = find_emails_tester(test_file)
         assert expected == result
 
+    def test_emails_for_ignored_hosts(self):
+        """
+        Add tests for ignored_hosts filter, for email domain hosts.
+        """
+        test_string = '''
+        Perhaps an email host that should be ignored from ignored_hosts
+        would be of the form <abc@something.com>. Another possible
+        domain name that the filter should be ignored would probably be
+        <xyz@any.com>. However, an email such as <efg@many.org> should
+        not be filtered as spam.
+        '''.splitlines(False)
+        expected = [
+            u'efg@many.org'
+        ]
+        result = find_emails_tester(test_string, with_lineno=False)
+        assert expected == result
+
 
 class TestUrl(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

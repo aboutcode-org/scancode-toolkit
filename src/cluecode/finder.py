@@ -160,7 +160,7 @@ def find_emails(location, unique=True):
         for r in matches:
             logger_debug('find_emails: match:', r)
 
-    filters = (junk_email_domains_filter,)
+    filters = (junk_email_domains_filter, uninteresting_emails_filter)
     if unique:
         filters += (unique_filter,)
     matches = apply_filters(matches, *filters)

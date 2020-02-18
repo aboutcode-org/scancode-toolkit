@@ -34,6 +34,7 @@ def set_from_text(text):
 
 
 JUNK_EMAILS = set_from_text(u'''
+    test@test.com
     testuser
     trialuser
     sampleuser
@@ -51,6 +52,7 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     example.com
     example.net
     example.org
+    test.com
     schemas.android.com
     1.2.3.4
     yimg.com
@@ -64,7 +66,8 @@ JUNK_IPS = set_from_text(u'''
     1.2.3.4
 ''')
 
-JUNK_EXACT_DOMAINS = set_from_text(u'''
+# Check for domain to be exactly one of below mentioned
+JUNK_EXACT_DOMAIN_NAMES = set_from_text(u'''
     test.com
     something.com
     some.com
@@ -218,19 +221,19 @@ JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
 ''')))
 
 
-def classify(s, data_set, suffixes=None, exact_match=None):
+def classify(s, data_set, suffixes=None, ignored_hosts=None):
     """
     Return True or some classification string value that evaluates to True if
     the data in string s is not junk. Return False if the data in string s is
-    classified as 'junk' or uninteresting.
+    classified as 'junk' or uninteresting. Return False is domain is in `ignored_hosts`.
     """
     if not s:
         return False
     s = s.lower().strip('/')
     # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
-    if '@' in s and exact_match:
-        email_domain = s.split('@')
-        if any(d in email_domain for d in exact_match):
+    if '@' in s and ignored_hosts:
+        host_name = s.rpartition('@')[-1]
+        if any(d == host_name for d in ignored_hosts):
             return False
     if any(d in s for d in data_set):
         return False
@@ -243,13 +246,13 @@ classify_ip = partial(classify, data_set=JUNK_IPS)
 
 classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES, exact_match=JUNK_EXACT_DOMAINS)
+classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES, ignored_hosts=JUNK_EXACT_DOMAIN_NAMES)
 
 
 def classify_url(url):
-    '''
+    """
     Return False if `url` found to be a candidate for a spam url. Return True otherwise.
-    '''
+    """
     if not url:
         return False
     u = url.lower().strip('/')
