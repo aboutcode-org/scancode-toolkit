@@ -6,3 +6,7 @@ owner: Coraline Ada Ehmke
 homepage_url: https://firstdonoharm.dev/
 text_urls:
     - https://firstdonoharm.dev/version/1/2/license.txt
+ignorable_urls:
+  - https://ethicalsource.dev/
+  - https://www.un.org/en/universal-declaration-human-rights
+
