@@ -388,15 +388,16 @@ def get_holders_consolidated_components(codebase):
     # going top-down through the Codebase and creating a mapping of holder key
     # -> directory resource, where the resource is the highest common ancestor
     # for a holder
-    common_holder_ancestors = {}
+    common_holder_ancestors_rids = {}
     for resource in codebase.walk(topdown=True):
         current_holders = resource.extra_data.get('current_holders', set())
         for holder in current_holders:
-            if holder not in common_holder_ancestors:
-                common_holder_ancestors[holder] = resource
+            if holder not in common_holder_ancestors_rids:
+                common_holder_ancestors_rids[holder] = resource.rid
 
     # Step 3: Consolidate Resources at the common holder ancestors that we discovered
-    for holder_key, ancestor in common_holder_ancestors.items():
+    for holder_key, ancestor_rid in common_holder_ancestors_rids.items():
+        ancestor = codebase.get_resource(ancestor_rid)
         for c in create_consolidated_components(ancestor, codebase, holder_key):
             yield c
 
