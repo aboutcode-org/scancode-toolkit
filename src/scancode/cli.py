@@ -949,8 +949,11 @@ def run_scan(
         codebase.counters['final:files_count'] = files_count
         codebase.counters['final:dirs_count'] = dirs_count
         codebase.counters['final:size_count'] = size_count
+        
+        processing_end = time()
 
         cle.end_timestamp = time2tstamp()
+        cle.time_taken = str(processing_end - processing_start)
         # collect these once as they are use in the headers and in the displayed summary
         errors = collect_errors(codebase, verbose)
         cle.errors = errors
