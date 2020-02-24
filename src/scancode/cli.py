@@ -69,6 +69,7 @@ from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.system import on_windows
 from commoncode.system import on_linux
 
@@ -676,7 +677,8 @@ def run_scan(
                     try:
                         is_enabled = plugin.is_enabled(**requested_options)
                     except TypeError as te:
-                        if not 'takes exactly' in str(te):
+                        if (py2 and not 'takes exactly' in str(te)
+                                or py3 and not 'required positional argument' in str(te)):
                             raise te
                     if is_enabled:
                         stage_plugins.append(plugin)
