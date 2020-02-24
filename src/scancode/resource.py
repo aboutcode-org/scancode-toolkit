@@ -133,6 +133,7 @@ class Header(object):
     notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this header.')
     end_timestamp = String(help='End timestamp for this header.')
+    time_taken = String(help='Time taken for the scanning process to complete.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
     extra_data = Mapping(help='Mapping of extra key/values for this tool.')
@@ -153,6 +154,7 @@ class Header(object):
             'notice',
             'start_timestamp',
             'end_timestamp',
+            'time_taken',
             'message',
             'errors',
             'extra_data',
