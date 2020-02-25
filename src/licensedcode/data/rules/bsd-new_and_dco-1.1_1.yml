@@ -1,0 +1,5 @@
+license_expression: bsd-new AND dco-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://developercertificate.org/

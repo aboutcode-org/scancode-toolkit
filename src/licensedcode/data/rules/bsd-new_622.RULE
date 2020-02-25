@@ -1,0 +1,6 @@
+the project has chosen to use only the BSD
+license option for future distribution. As such, the GPL v2 license
+option is no longer used and the contributions are not required to be
+licensed until GPL v2. In case of most files in hostap.git, "under the
+open source license indicated in the file" means that the contribution
+is licensed under the modified BSD license (see below).
