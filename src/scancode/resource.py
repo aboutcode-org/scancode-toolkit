@@ -1420,7 +1420,8 @@ class VirtualCodebase(Codebase):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000):
+                 max_in_memory=10000,
+                 depth=-1):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
@@ -1435,6 +1436,7 @@ class VirtualCodebase(Codebase):
 
         scan_data = self._get_scan_data(location)
         self._populate(scan_data)
+        self.depth = depth # Not used. Ignored
 
     def _get_scan_data_helper(self, location):
         """
