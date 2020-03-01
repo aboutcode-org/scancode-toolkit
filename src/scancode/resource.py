@@ -187,6 +187,7 @@ class Codebase(object):
         'original_location',
         'full_root',
         'strip_root',
+        'depth',
         'location',
         'has_single_resource',
         'resource_attributes',
@@ -219,7 +220,7 @@ class Codebase(object):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000):
+                 max_in_memory=10000, depth=-1):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
@@ -249,6 +250,7 @@ class Codebase(object):
         self.original_location = location
         self.full_root = full_root
         self.strip_root = strip_root
+        self.depth = depth
 
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
@@ -434,19 +436,45 @@ class Codebase(object):
         # not keep parents already walked and we walk topdown.
         parent_by_loc = {root.location: root}
 
+
+        def _walk(max_depth):
+            """Walk through the root_directory recursively upto max_depth nested subdirectories
+            and build the Resource tree. max_depth should be positive or -1 for walking through
+            maximum available nesting levels."""
+
+            # If depth is limited 
+            if max_depth >= 0: 
+                # Note down the directory separator and the depth of root directory
+                # This helps us calculate the depth of nested directories to eliminate
+                # the ones we do not want
+                dir_sep = os.path.sep 
+                root_dir_depth = root.location.count(dir_sep)
+
+            # Default behaviour. current_depth is always less than max_depth so that 
+            # os_walk keeps running. When max_depth is limited, the current_depth is
+            # changed in each iteration and compared with max_depth
+            current_depth = -2
+
+            for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
+                # If depth is limited
+                if max_depth >= 0:
+                    current_depth = top.count(dir_sep) - root_dir_depth
+
+                if skip_ignored(top) or current_depth >= max_depth:
+                    # we clear out `dirs` and `files` to prevent `os_walk` from visiting
+                    # the files and subdirectories of directories we are ignoring or 
+                    # are not in the specified nesting level
+                    dirs[:] = []
+                    files[:] = []
+                    continue
+                # the parent reference is needed only once in a top-down walk, hence
+                # the pop
+                parent = parent_by_loc.pop(top)
+                create_resources(files, top, parent, _is_file=True)
+                create_resources(dirs, top, parent, _is_file=False)
+
         # walk proper
-        for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
-            if skip_ignored(top):
-                # We clear out `dirs` and `files` to prevent `os_walk` from visiting
-                # the files and subdirectories of directories we are ignoring
-                dirs[:] = []
-                files[:] = []
-                continue
-            # the parent reference is needed only once in a top-down walk, hence
-            # the pop
-            parent = parent_by_loc.pop(top)
-            create_resources(files, top, parent, _is_file=True)
-            create_resources(dirs, top, parent, _is_file=False)
+        _walk(self.depth)
 
     def _create_root_resource(self):
         """
