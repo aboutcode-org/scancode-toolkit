@@ -409,7 +409,7 @@ def print_options(ctx, param, value):
 @click.option('--depth',
     type=int, default=-1,
     help='Scan upto depth level of nesting. Negative for maximum depth.'
-         '[default: -1 (for maximum depth)',
+         '[default: -1 (for maximum depth)]',
     help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
