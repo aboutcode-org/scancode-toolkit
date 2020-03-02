@@ -97,7 +97,7 @@ An ExtractEvent contains data about an archive extraction progress:
 ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
+def extract(location, ignored_extensions, kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -123,7 +123,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
-    events = list(extract_files(location, kinds, recurse))
+    events = list(extract_files(location, ignored_extensions, kinds, recurse))
     if replace_originals:
         for xevent in reversed(events):
             if xevent.done:
@@ -136,7 +136,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
                 fileutils.delete(target)
     return events
 
-def extract_files(location, kinds=extractcode.default_kinds, recurse=False):
+def extract_files(location, ignored_extensions, kinds=extractcode.default_kinds, recurse=False):
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
@@ -160,7 +160,7 @@ def extract_files(location, kinds=extractcode.default_kinds, recurse=False):
                     logger.debug('extract:walk not recurse: skipped  file: %(loc)r' % locals())
                 continue
 
-            if not archive.should_extract(loc, kinds):
+            if not archive.should_extract(loc, ignored_extensions, kinds):
                 if TRACE:
                     logger.debug('extract:walk: skipped file: not should_extract: %(loc)r' % locals())
                 continue
@@ -176,7 +176,7 @@ def extract_files(location, kinds=extractcode.default_kinds, recurse=False):
             if recurse:
                 if TRACE:
                     logger.debug('extract:walk: recursing on target: %(target)r' % locals())
-                for xevent in extract(target, kinds, recurse):
+                for xevent in extract(target, ignored_extensions, kinds, recurse):
                     if TRACE:
                         logger.debug('extract:walk:recurse:extraction event: %(xevent)r' % locals())
                     yield xevent

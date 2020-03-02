@@ -103,12 +103,17 @@ def can_extract(location):
         return True
 
 
-def should_extract(location, kinds):
+def should_extract(location, ignored_extensions, kinds):
     """
     Return True if this location should be extracted based on the provided
     kinds
     """
     location = os.path.abspath(os.path.expanduser(location))
+    shouldIgnore = False
+    for extension in ignored_extensions:
+        if(location.endswith(extension)):
+            shouldIgnore = True
+            break
     if get_extractor(location, kinds):
         return True
 
