@@ -574,6 +574,76 @@ class TestCodebase(FileBasedTesting):
         result = [r.path for r in codebase.walk(topdown=True)]
         self.assertEqual(expected, result)
 
+    def test_specify_depth_0(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        codebase = Codebase(test_codebase, depth=0)
+        results = list(codebase.walk())
+        expected = [
+            ('deeply_nested', False),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_specify_depth_1(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        codebase = Codebase(test_codebase, depth=1)
+        results = list(codebase.walk())
+        expected = [
+            ('deeply_nested', False),
+                ('level1_dir1', False),
+                ('level1_dir2', False),
+                ('level1_file1', True),
+                ('level1_file2', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_specify_depth_2(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        codebase = Codebase(test_codebase, depth=2)
+        results = list(codebase.walk())
+
+        expected = [
+            ('deeply_nested', False),
+                ('level1_file1', True),
+                ('level1_file2', True),
+                ('level1_dir1', False),
+                    ('level2_dir1', False),
+                    ('level2_file1', True),
+                    ('level2_file2', True),
+                ('level1_dir2', False),
+                    ('level2_dir2', False),
+                    ('level2_dir3', False),
+                    ('level2_file3', True),
+                    ('level2_file4', True),
+                    ('level2_file5', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_specify_depth_3(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        codebase = Codebase(test_codebase, depth=3)
+        results = list(codebase.walk())
+
+        expected = [
+            ('deeply_nested', False),
+                ('level1_file1', True),
+                ('level1_file2', True),
+                ('level1_dir1', False),
+                    ('level2_file1', True),
+                    ('level2_file2', True),
+                    ('level2_dir1', False),
+                        ('level3_dir1', False),
+                        ('level3_file1', True),
+                        ('level3_file2', True),
+                ('level1_dir2', False),
+                    ('level2_dir2', False),
+                    ('level2_file3', True),
+                    ('level2_file4', True),
+                    ('level2_file5', True),
+                    ('level2_dir3', False),
+                        ('level3_file3', True),
+                        ('level3_file4', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
