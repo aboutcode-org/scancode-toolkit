@@ -93,6 +93,16 @@ matrix:
       python: "3.6"
       dist: bionic
 
+    - os: linux
+      sudo: required
+      script: 
+        # This checks .ABOUT file links using `about check`
+        - source bin/activate
+        - ./bin/about check thirdparty/
+      language: python
+      python: "3.6"
+      dist: bionic
+
     # Refer https://github.com/dkhamsing/awesome_bot#command-line for more info.
     - os: linux
       sudo: required
@@ -106,16 +116,8 @@ matrix:
         - awesome_bot *.rst --allow-redirect --allow-dupe --skip-save-results
         # This checks for broken links inside README.md files of plugins/plugins-builtin folders.
         - awesome_bot */**/*.md --allow-redirect --allow-dupe --skip-save-results
-
-    - os: linux
-      sudo: required
-      script: 
-        # This checks .ABOUT file links using `about check`
-        - source bin/activate
-        - ./bin/about check thirdparty/
-      language: python
-      python: "3.6"
-      dist: bionic
+        # This checks for broken links inside Thirdparty .ABOUT files
+        - awesome_bot */*.ABOUT --allow-redirect --allow-dupe --skip-save-results
 
 addons:
   homebrew:
