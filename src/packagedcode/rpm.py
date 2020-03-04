@@ -35,7 +35,7 @@ from six import string_types
 
 from packagedcode import models
 from packagedcode import nevra
-from packagedcode.pyrpm import RPM
+from packagedcode.pyrpm import rpm
 from packagedcode.utils import build_description
 import typecode.contenttype
 
