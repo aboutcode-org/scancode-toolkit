@@ -34,6 +34,7 @@ from collections import OrderedDict
 import attr
 
 from cluecode.copyrights import CopyrightDetector
+from commoncode.system import py3
 from commoncode.text import python_safe_name
 from license_expression import Licensing
 from packagedcode import get_package_instance
@@ -44,6 +45,10 @@ from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 from summarycode import copyright_summary
+
+
+if py3:
+    unicode = str
 
 
 # Tracing flags
@@ -391,8 +396,7 @@ def get_holders_consolidated_components(codebase):
     # holders we have already created a consolidation for.
     has_been_consolidated = set()
     for resource in codebase.walk(topdown=True):
-        current_holders = resource.extra_data.get('current_holders', set())
-        for holder in current_holders:
+        for holder in resource.extra_data.get('current_holders', set()):
             if holder in has_been_consolidated:
                 continue
             has_been_consolidated.add(holder)
