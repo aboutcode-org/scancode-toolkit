@@ -187,7 +187,7 @@ class Codebase(object):
         'original_location',
         'full_root',
         'strip_root',
-        'depth',
+        'max_depth',
         'location',
         'has_single_resource',
         'resource_attributes',
@@ -220,7 +220,7 @@ class Codebase(object):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000, depth=-1):
+                 max_in_memory=10000, max_depth=-1):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
@@ -250,7 +250,7 @@ class Codebase(object):
         self.original_location = location
         self.full_root = full_root
         self.strip_root = strip_root
-        self.depth = depth
+        self.max_depth = max_depth
 
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
@@ -437,7 +437,7 @@ class Codebase(object):
         parent_by_loc = {root.location: root}
 
 
-        def _walk(max_depth):
+        def _walk():
             """Walk through the root_directory recursively upto max_depth nested subdirectories
             and build the Resource tree. max_depth should be positive or -1 for walking through
             maximum available nesting levels."""
@@ -452,10 +452,10 @@ class Codebase(object):
 
             for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
                 # If depth is limited
-                if max_depth >= 0:
+                if self.max_depth >= 0:
                     current_depth = top.count(os.path.sep) - root_dir_depth
 
-                if skip_ignored(top) or current_depth >= max_depth:
+                if skip_ignored(top) or current_depth >= self.max_depth:
                     # we clear out `dirs` and `files` to prevent `os_walk` from visiting
                     # the files and subdirectories of directories we are ignoring or 
                     # are not in the specified nesting level
@@ -469,7 +469,7 @@ class Codebase(object):
                 create_resources(dirs, top, parent, _is_file=False)
 
         # walk proper
-        _walk(self.depth)
+        _walk()
 
     def _create_root_resource(self):
         """
@@ -1416,7 +1416,7 @@ class VirtualCodebase(Codebase):
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
                  max_in_memory=10000,
-                 depth=-1):
+                 *args, **kwargs):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
@@ -1431,7 +1431,6 @@ class VirtualCodebase(Codebase):
 
         scan_data = self._get_scan_data(location)
         self._populate(scan_data)
-        self.depth = depth # Not used. Ignored
 
     def _get_scan_data_helper(self, location):
         """

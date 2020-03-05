@@ -576,7 +576,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_specify_depth_0(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
-        codebase = Codebase(test_codebase, depth=0)
+        codebase = Codebase(test_codebase, max_depth=0)
         results = list(codebase.walk())
         expected = [
             ('deeply_nested', False),
@@ -585,7 +585,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_specify_depth_1(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
-        codebase = Codebase(test_codebase, depth=1)
+        codebase = Codebase(test_codebase, max_depth=1)
         results = list(codebase.walk())
         expected = [
             ('deeply_nested', False),
@@ -598,7 +598,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_specify_depth_2(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
-        codebase = Codebase(test_codebase, depth=2)
+        codebase = Codebase(test_codebase, max_depth=2)
         results = list(codebase.walk())
 
         expected = [
@@ -619,7 +619,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_specify_depth_3(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
-        codebase = Codebase(test_codebase, depth=3)
+        codebase = Codebase(test_codebase, max_depth=3)
         results = list(codebase.walk())
 
         expected = [

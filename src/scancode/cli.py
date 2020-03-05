@@ -406,16 +406,16 @@ def print_options(ctx, param, value):
     hidden=True,
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
-@click.option('--depth',
-    type=int, default=-1,
-    help='Scan upto depth level of nesting. Negative for maximum depth.'
-         '[default: -1 (for maximum depth)]',
+@click.option('--max-depth',
+    type=int, default=-1, show_default=False, metavar='N',
+    help='For each <input> given on the command line, scan at most N levels '
+        'of directories. A negative value means no limit and is the default.',
     help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
-             quiet, verbose, depth,
+             quiet, verbose, max_depth,
              from_json,
              timing,
              max_in_memory,
@@ -512,7 +512,7 @@ def scancode(ctx, input,  # NOQA
             from_json=from_json,
             strip_root=strip_root, full_root=full_root,
             processes=processes, timeout=timeout,
-            quiet=quiet, verbose=verbose, depth=depth,
+            quiet=quiet, verbose=verbose, max_depth=max_depth,
             timing=timing, max_in_memory=max_in_memory,
             test_mode=test_mode,
             test_slow_mode=test_slow_mode,
@@ -552,7 +552,7 @@ def run_scan(
         timeout=120,
         quiet=True,
         verbose=False,
-        depth=-1,
+        max_depth=-1,
         echo_func=None,
         timing=False,
         keep_temp_files=False,
@@ -876,7 +876,7 @@ def run_scan(
                 full_root=full_root,
                 strip_root=strip_root,
                 max_in_memory=max_in_memory,
-                depth=depth
+                max_depth=max_depth
             )
         except:
             msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
