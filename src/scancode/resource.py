@@ -442,13 +442,8 @@ class Codebase(object):
             and build the Resource tree. max_depth should be positive or -1 for walking through
             maximum available nesting levels."""
 
-            # If depth is limited 
-            if max_depth >= 0: 
-                # Note down the directory separator and the depth of root directory
-                # This helps us calculate the depth of nested directories to eliminate
-                # the ones we do not want
-                dir_sep = os.path.sep 
-                root_dir_depth = root.location.count(dir_sep)
+            # Find root directory depth using path separator's count
+            root_dir_depth = root.location.count(os.path.sep)
 
             # Default behaviour. current_depth is always less than max_depth so that 
             # os_walk keeps running. When max_depth is limited, the current_depth is
@@ -458,7 +453,7 @@ class Codebase(object):
             for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
                 # If depth is limited
                 if max_depth >= 0:
-                    current_depth = top.count(dir_sep) - root_dir_depth
+                    current_depth = top.count(os.path.sep) - root_dir_depth
 
                 if skip_ignored(top) or current_depth >= max_depth:
                     # we clear out `dirs` and `files` to prevent `os_walk` from visiting
