@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Outputs:
+ - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
+
+
 v3.0.2 (2019-02-15)
 -------------------
 
