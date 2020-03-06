@@ -117,7 +117,7 @@ matrix:
         # This checks for broken links inside README.md files of plugins/plugins-builtin folders.
         - awesome_bot */**/*.md --allow-redirect --allow-dupe --skip-save-results
         # This checks for broken links inside Thirdparty .ABOUT files
-        - awesome_bot */*.ABOUT --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot thirdparty/*.ABOUT --allow-redirect --allow-dupe --skip-save-results
 
 addons:
   homebrew:
