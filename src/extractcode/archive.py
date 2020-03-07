@@ -104,7 +104,7 @@ def can_extract(location):
         return True
 
 
-def should_extract(location, ignored_extensions, kinds):
+def should_extract(location, kinds, ignored_extensions=()):
     """
     Return True if this location should be extracted based on the provided
     kinds

@@ -97,7 +97,7 @@ An ExtractEvent contains data about an archive extraction progress:
 ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, ignored_extensions, kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
+def extract(location, ignored_extensions=(), kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -136,7 +136,7 @@ def extract(location, ignored_extensions, kinds=extractcode.default_kinds, recur
                 fileutils.delete(target)
     return events
 
-def extract_files(location, ignored_extensions, kinds=extractcode.default_kinds, recurse=False):
+def extract_files(location, ignored_extensions=(), kinds=extractcode.default_kinds, recurse=False):
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
@@ -160,7 +160,7 @@ def extract_files(location, ignored_extensions, kinds=extractcode.default_kinds,
                     logger.debug('extract:walk not recurse: skipped  file: %(loc)r' % locals())
                 continue
 
-            if not archive.should_extract(loc, ignored_extensions, kinds):
+            if not archive.should_extract(loc, kinds, ignored_extensions):
                 if TRACE:
                     logger.debug('extract:walk: skipped file: not should_extract: %(loc)r' % locals())
                 continue
