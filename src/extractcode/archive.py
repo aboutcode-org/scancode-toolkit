@@ -36,6 +36,7 @@ from commoncode import filetype
 from commoncode import functional
 from commoncode.system import on_linux
 from commoncode.system import py2
+from commoncode.ignore import is_ignored
 
 from typecode import contenttype
 
@@ -109,12 +110,9 @@ def should_extract(location, ignored_extensions, kinds):
     kinds
     """
     location = os.path.abspath(os.path.expanduser(location))
-    shouldIgnore = False
-    for extension in ignored_extensions:
-        if(location.endswith(extension)):
-            shouldIgnore = True
-            break
-    if get_extractor(location, kinds):
+    ignored_extensions = {extension : 'User ignore: Supplied by --ignore' for extension in ignored_extensions}
+    shouldIgnore = is_ignored(location, ignored_extensions)
+    if get_extractor(location, kinds) and not shouldIgnore:
         return True
 
 
