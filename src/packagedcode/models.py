@@ -384,10 +384,10 @@ class Package(BasePackage):
         label='parties',
         help='A list of parties such as a person, project or organization.')
 
-    keywords = List(
+    classifiers = List(
         item_type=str,
-        label='keywords',
-        help='A list of keywords.')
+        label='classifiers',
+        help='A list of classifiers.')
 
     homepage_url = String(
         label='homepage URL',

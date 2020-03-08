@@ -302,7 +302,7 @@ def parse_setup_py(location):
         download_url=download_url or None,
         parties=parties,
         declared_license=declared_license,
-        keywords=other_classifiers,
+        classifiers=other_classifiers,
     )
 
 
