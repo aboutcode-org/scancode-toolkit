@@ -384,6 +384,11 @@ class Package(BasePackage):
         label='parties',
         help='A list of parties such as a person, project or organization.')
 
+    keywords = List(
+        item_type=str,
+        label='keywords',
+        help='A list of keywords.')
+
     classifiers = List(
         item_type=str,
         label='classifiers',
