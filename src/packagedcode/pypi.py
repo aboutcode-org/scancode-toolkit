@@ -282,6 +282,8 @@ def parse_setup_py(location):
             )
         )
 
+    download_url = setup_args.get('download_url')
+
     declared_license = OrderedDict()
     license_setuptext = setup_args.get('license')
     declared_license['license'] = license_setuptext
@@ -297,6 +299,7 @@ def parse_setup_py(location):
         version=setup_args.get('version'),
         description=description or None,
         homepage_url=setup_args.get('url') or None,
+        download_url=download_url or None,
         parties=parties,
         declared_license=declared_license,
         keywords=other_classifiers,
