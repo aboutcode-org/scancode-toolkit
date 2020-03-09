@@ -5605,7 +5605,7 @@
       "licenses": [
         {
           "key": "boost-1.0",
-          "score": 92.59,
+          "score": 100.0,
           "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
@@ -5619,7 +5619,7 @@
           "start_line": 4,
           "end_line": 5,
           "matched_rule": {
-            "identifier": "boost-1.0_1.RULE",
+            "identifier": "boost-1.0_21.RULE",
             "license_expression": "boost-1.0",
             "licenses": [
               "boost-1.0"
@@ -5628,10 +5628,10 @@
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
-            "matcher": "3-seq",
-            "rule_length": 27,
-            "matched_length": 25,
-            "match_coverage": 92.59,
+            "matcher": "2-aho",
+            "rule_length": 32,
+            "matched_length": 32,
+            "match_coverage": 100.0,
             "rule_relevance": 100.0
           }
         }
