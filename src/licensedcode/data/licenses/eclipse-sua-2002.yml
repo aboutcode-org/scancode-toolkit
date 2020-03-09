@@ -4,3 +4,6 @@ name: Eclipse Foundation Software User Agreement 2002
 category: Unstated License
 owner: Eclipse Foundation
 homepage_url: https://web.archive.org/web/20020914103136/http://eclipse.org/
+ignorable_urls:
+  - http://www.eclipse.org/legal/cpl-v10.html
+
