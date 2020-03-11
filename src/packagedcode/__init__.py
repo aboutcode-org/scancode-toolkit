@@ -41,6 +41,7 @@ from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import gemspec
 
 
 # Note: the order matters: from the most to the least specific
@@ -57,6 +58,7 @@ PACKAGE_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
+    gemspec.GemSpec,
     about.AboutPackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
@@ -66,7 +68,7 @@ PACKAGE_TYPES = [
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
     models.CpanModule,
-    rubygems.RubyGem,
+    #rubygems.RubyGem,
     models.AndroidApp,
     models.AndroidLibrary,
     models.MozillaExtension,
