@@ -1,5 +1,7 @@
 key: minecraft-mod
 name: Minecraft Mod License
 short_name: Minecraft Mod License 
-category: Public
+category: Proprietary Free
 notes: A license intended for minecraft mods, which, among other things, requires the end-user to own a legal copy of Minecraft. Should not be used on things that aren't minecraft mods (for that matter, probably shouldn't be used at all).
+owner: unspecified
+homepage_url: https://bdew.net/

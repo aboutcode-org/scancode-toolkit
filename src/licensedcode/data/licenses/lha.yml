@@ -1,5 +1,7 @@
 key: lha
 name: LHA
 short_name: lha
-category: Permissive
+category: Proprietary Free
 notes: An antiquated license originally in Japanese with bizarre requirements and vague wording.
+owner: Yooichi Tagawa
+homepage_url: http://www.copyleftlicense.com/licenses/lha-license-version-10/view.php
