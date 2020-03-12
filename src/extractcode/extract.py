@@ -97,7 +97,7 @@ An ExtractEvent contains data about an archive extraction progress:
 ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, ignored_extensions=(), kinds=extractcode.default_kinds, recurse=False, replace_originals=False):
+def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_originals=False, ignored_extensions=()):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -123,7 +123,7 @@ def extract(location, ignored_extensions=(), kinds=extractcode.default_kinds, re
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
-    events = list(extract_files(location, ignored_extensions, kinds, recurse))
+    events = list(extract_files(location=location, kinds=kinds, recurse=recurse, ignored_extensions=ignored_extensions))
     if replace_originals:
         for xevent in reversed(events):
             if xevent.done:
@@ -136,7 +136,7 @@ def extract(location, ignored_extensions=(), kinds=extractcode.default_kinds, re
                 fileutils.delete(target)
     return events
 
-def extract_files(location, ignored_extensions=(), kinds=extractcode.default_kinds, recurse=False):
+def extract_files(location, kinds=extractcode.default_kinds, recurse=False, ignored_extensions=()):
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
@@ -176,7 +176,7 @@ def extract_files(location, ignored_extensions=(), kinds=extractcode.default_kin
             if recurse:
                 if TRACE:
                     logger.debug('extract:walk: recursing on target: %(target)r' % locals())
-                for xevent in extract(target, ignored_extensions, kinds, recurse):
+                for xevent in extract(location=target, kinds=kinds, recurse=recurse, ignored_extensions=ignored_extensions):
                     if TRACE:
                         logger.debug('extract:walk:recurse:extraction event: %(xevent)r' % locals())
                     yield xevent

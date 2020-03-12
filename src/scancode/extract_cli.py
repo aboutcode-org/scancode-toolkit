@@ -95,7 +95,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.help_option('-h', '--help')
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
-def extractcode(ctx, input, ignore, verbose, quiet, shallow, replace_originals, *args, **kwargs):  # NOQA
+def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, ignore, *args, **kwargs):  # NOQA
     """extract archives and compressed files found in the <input> file or directory tree.
 
     Use this command before scanning proper as an <input> preparation step.
@@ -159,7 +159,7 @@ def extractcode(ctx, input, ignore, verbose, quiet, shallow, replace_originals, 
 
     extract_results = []
     has_extract_errors = False
-    extractibles = extract_archives(abs_location, ignore, recurse=not shallow, replace_originals=replace_originals)
+    extractibles = extract_archives(location=abs_location, recurse=not shallow, replace_originals=replace_originals, ignored_extensions=ignore)
 
     if not quiet:
         echo_stderr('Extracting archives...', fg='green')
