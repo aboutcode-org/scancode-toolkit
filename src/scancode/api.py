@@ -312,7 +312,7 @@ def get_file_info(location, **kwargs):
     return result
 
 
-def extract_archives(location, recurse=True, replace_originals=False, ignored_extensions = ()):
+def extract_archives(location, recurse=True, replace_originals=False, ignored_extensions=()):
     """
     Yield ExtractEvent while extracting archive(s) and compressed files at
     `location`. If `recurse` is True, extract nested archives-in-archives
