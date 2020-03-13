@@ -389,11 +389,6 @@ class Package(BasePackage):
         label='keywords',
         help='A list of keywords.')
 
-    classifiers = List(
-        item_type=str,
-        label='classifiers',
-        help='A list of classifiers.')
-
     homepage_url = String(
         label='homepage URL',
         help='URL to the homepage for this package.')
