@@ -71,9 +71,9 @@ if TRACE:
 @attr.s()
 class RubyGem(models.Package):
     metafiles = ('metadata.gz-extract', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
-    filetypes = ('.tar', 'tar archive','.gemspec',)
+    filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
-    extensions = ('.gem','.gemspec',)
+    extensions = ('.gem',)
     default_type = 'gem'
     default_primary_language = 'Ruby'
     default_web_baseurl = 'https://rubygems.org/gems/'
@@ -104,7 +104,6 @@ class RubyGem(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        print("rohit potter")
         # an unextracted .gen archive
         if location.endswith('.gem'):
             yield get_gem_package(location)
