@@ -86,7 +86,7 @@ def is_opam(location):
 
 def parse(location):
     """
-    Return a Package object from a Cargo.toml file or None.
+    Return a Package object from a .opam file or None.
     """
     if not is_opam(location):
         return
