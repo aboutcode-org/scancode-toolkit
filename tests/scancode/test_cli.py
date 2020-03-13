@@ -52,6 +52,7 @@ from scancode.cli_test_utils import load_json_result_from_string
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
+
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -110,7 +111,7 @@ def test_verbose_option_with_copyrights(monkeypatch):
 
 @pytest.mark.xfail(reason='Bug is not fixed yet')
 def test_scanned_resource_no_attribute_emails():
-    test_dir = test_env.get_test_loc('apache-1.1.txt')
+    test_dir = test_env.get_test_loc('license/apache-1.1.txt')
     result_file = test_env.get_temp_file('bb.json')
     args = ['-clp', '--json-pp',result_file, test_dir, '--filter-clues']
     result = run_scan_click(args)
