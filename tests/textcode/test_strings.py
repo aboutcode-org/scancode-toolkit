@@ -182,3 +182,12 @@ class TestStrings(FileBasedTesting):
             test_file = os.path.join(test_dir, tf)
             expected_file = os.path.join(expec_dir, tf + '.strings')
             self.check_file_strings(test_file, expected_file)
+
+    def test_is_relative_path(self):
+        # Win Path
+        path = "c:\\usr\\lib\\librt.so.1."
+        self.assertFalse(strings.is_relative_path(path))
+
+        # Relative Posix Path
+        path = "usr/lib/librt.so.1"
+        self.assertTrue(strings.is_relative_path(path))

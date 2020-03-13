@@ -1,0 +1,3 @@
+I hereby place the qmail package (in particular, qmail-1.03.tar.gz, with MD5 checksum 622f65f982e380dbe86e6574f3abcb7c) into the public domain. You are free to modify the package, distribute modified versions, etc.
+
+This does not mean that modifications are encouraged! Please take time to ensure that your distribution of qmail supports exactly the same interface as everyone else's. In particular, if you move files, please set up symbolic links from the original locations, so that you don't frivolously break scripts that work everywhere else.

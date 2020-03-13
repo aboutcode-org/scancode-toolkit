@@ -722,6 +722,14 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
 
+def test_scan_valid_duration_field_in_json_output_headers():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result_file = test_env.get_temp_file('results.json')
+    args = ['--json', result_file, test_file]
+    run_scan_click(args)
+    with open(result_file) as result:
+        headers = json.loads(result.read())['headers']
+    assert headers[0]['duration'] >= 0
 
 @pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')

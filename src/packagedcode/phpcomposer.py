@@ -34,6 +34,7 @@ import logging
 import sys
 
 import attr
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
@@ -69,8 +70,11 @@ if TRACE:
 
 @attr.s()
 class PHPComposerPackage(models.Package):
-    metafiles = ('composer.json',)
-    filetypes = ('.json',)
+    metafiles = (
+        'composer.json',
+        'composer.lock',
+    )
+    filetypes = ('.json', '.lock')
     mimetypes = ('application/json',)
     default_type = 'composer'
     default_primary_language = 'PHP'
@@ -80,17 +84,24 @@ class PHPComposerPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        yield parse(location)
+        for package in parse(location):
+            yield package
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+        if self.namespace:
+            return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+        else:
+            return '{}/packages/{}'.format(baseurl, self.name)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+        if self.namespace:
+            return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+        else:
+            return '{}/packages/{}.json'.format(baseurl, self.name)
 
     def compute_normalized_license(self):
         """
@@ -132,26 +143,32 @@ def compute_normalized_license(declared_license):
 
 
 def is_phpcomposer_json(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json')
+    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json'
+
+
+def is_phpcomposer_lock(location):
+    return filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.lock'
 
 
 def parse(location):
     """
-    Return a Package object from a composer.json file or None.
-    Note that this is NOT exactly the packagist .json format and this is NOT the
-    composer.lock format (allare closely related of course but have important
-    (even if minor) differences.
+    Yield Package objects from a composer.json or composer.lock file. Note that
+    this is NOT exactly the packagist .json format (all are closely related of
+    course but have important (even if minor) differences.
     """
-    if not is_phpcomposer_json(location):
-        return
+    if is_phpcomposer_json(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        yield build_package_from_json(package_data)
 
-    with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+    elif is_phpcomposer_lock(location):
+        with io.open(location, encoding='utf-8') as loc:
+            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        for package in build_packages_from_lock(package_data):
+            yield package
 
-    return build_package(package_data)
 
-
-def build_package(package_data):
+def build_package_from_json(package_data):
     """
     Return a composer Package object from a package data mapping or None.
     """
@@ -205,7 +222,8 @@ def build_package(package_data):
         ('conflict', partial(_deps_mapper, scope='conflict', is_runtime=True, is_optional=True)),
         ('replace', partial(_deps_mapper, scope='replace', is_runtime=True, is_optional=True)),
         ('suggest', partial(_deps_mapper, scope='suggest', is_runtime=True, is_optional=True)),
-
+        ('source', source_mapper),
+        ('dist', dist_mapper)
     ]
 
     for source, func in field_mappers:
@@ -263,6 +281,34 @@ def support_mapper(support, package):
     # TODO: there are many other information we ignore for now
     package.bug_tracking_url = support.get('issues') or None
     package.code_view_url = support.get('source') or None
+    return package
+
+
+def source_mapper(source, package):
+    """
+    Add vcs_url from source tag, if present. Typically only present in
+    composer.lock
+    """
+    tool = source.get('type')
+    if not tool:
+        return package
+    url = source.get('url')
+    if not url:
+        return package
+    version = source.get('reference')
+    package.vcs_url = '{tool}+{url}@{version}'.format(**locals())
+    return package
+
+
+def dist_mapper(dist, package):
+    """
+    Add download_url from source tag, if present. Typically only present in
+    composer.lock
+    """
+    url = dist.get('url')
+    if not url:
+        return package
+    package.download_url = url
     return package
 
 
@@ -336,3 +382,27 @@ def parse_person(persons):
                 url and url.strip('() '))
     else:
         raise ValueError('Incorrect PHP composer persons: %(persons)r' % locals())
+
+
+def build_dep_package(package, scope, is_runtime, is_optional):
+    return models.DependentPackage(
+        purl=package.purl,
+        scope=scope,
+        is_runtime=is_runtime,
+        is_optional=is_optional,
+        is_resolved=True,
+    )
+
+
+def build_packages_from_lock(package_data):
+    """
+    Yield composer Package objects from a package data mapping that originated
+    from a composer.lock file
+    """
+    packages = [build_package_from_json(p) for p in package_data.get('packages', [])]
+    packages_dev = [build_package_from_json(p) for p in package_data.get('packages-dev', [])]
+    required_deps = [build_dep_package(p, scope='require', is_runtime=True, is_optional=False) for p in packages]
+    required_dev_deps = [build_dep_package(p, scope='require-dev', is_runtime=False, is_optional=True) for p in packages_dev]
+    yield PHPComposerPackage(dependencies=required_deps + required_dev_deps)
+    for package in packages + packages_dev:
+        yield package

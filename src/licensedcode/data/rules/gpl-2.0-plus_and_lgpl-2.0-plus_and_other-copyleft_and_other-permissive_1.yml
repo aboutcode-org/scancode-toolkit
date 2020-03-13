@@ -1,0 +1,11 @@
+license_expression: gpl-2.0-plus AND lgpl-2.0-plus AND other-copyleft AND other-permissive
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING
+    - COPYING.LIB
+ignorable_copyrights:
+    - copyright by the Free Software Foundation, Inc.
+ignorable_holders:
+    - the Free Software Foundation, Inc.

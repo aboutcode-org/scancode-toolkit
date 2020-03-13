@@ -241,6 +241,8 @@ class BasePackage(BaseModel):
         """
         Return a compact purl package URL string.
         """
+        if not self.name:
+            return
         return PackageURL(
             self.type, self.namespace, self.name, self.version,
             self.qualifiers, self.subpath).to_string()
@@ -323,7 +325,8 @@ class DependentPackage(BaseModel):
     purl = String(
         repr=True,
         label='Dependent package URL',
-        help='A compact purl package URL')
+        help='A compact purl package URL. Typically when there is an unresolved requirement, there is no version. '
+             'If the dependency is resolved, the version should be added to the purl')
 
     requirement = String(
         repr=True,

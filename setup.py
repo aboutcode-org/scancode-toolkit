@@ -211,6 +211,12 @@ setup(
         'spdx_tools >= 0.6.0',
         'unicodecsv',
 
+        # ScanCode Docs
+        'Sphinx <  2.0; python_version == "2.7"',
+        'Sphinx >= 2.0; python_version > "3"',
+        'sphinx_rtd_theme >= 0.4.3',
+        'doc8 >= 0.8.0',
+
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
             # used by yg.lockfile
@@ -277,7 +283,7 @@ setup(
             'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
             'is-license-text = licensedcode.plugin_license_text:IsLicenseText',
             'filter-clues = cluecode.plugin_filter_clues:RedundantCluesFilter',
-            'consolidate = scancode.plugin_consolidate:Consolidator',
+            'consolidate = summarycode.plugin_consolidate:Consolidator',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed

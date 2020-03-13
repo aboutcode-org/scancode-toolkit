@@ -22,7 +22,7 @@ licenses:
     name: Mozilla Public License 2.0
 name: publicsuffix2
 notice_file: publicsuffix2-2.20180921-py2.py3-none-any.whl.NOTICE
-notice_url: https://github.com/nexB/python-publicsuffix2/blob/develop/publicsuffix.LICENSE
+notice_url: https://github.com/nexB/python-publicsuffix2/blob/develop/src/publicsuffix2/mpl-2.0.LICENSE
 owner: nexB
 owner_url: http://www.nexb.com/
 redistribute: true

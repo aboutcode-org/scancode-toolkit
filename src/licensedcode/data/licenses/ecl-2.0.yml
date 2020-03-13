@@ -21,3 +21,4 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
     - http://www.osedu.org/licenses/
     - http://www.osedu.org/licenses/ECL-2.0
+osi_license_key: ECL-2.0

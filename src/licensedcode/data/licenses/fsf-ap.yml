@@ -15,3 +15,4 @@ other_urls:
     - http://www.gnu.org/software/autoconf-archive/ax_lib_readline.html
     - https://fedoraproject.org/wiki/Licensing/FSFAP
     - https://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
+minimum_coverage: 85

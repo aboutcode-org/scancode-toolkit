@@ -48,37 +48,21 @@ license_expressions:
   - ijg
   - x11-tiff
   - x11-lucent
-  - mit-old-style-no-advert
+  - mit-no-advert-export-control
   - lgpl-2.1-plus OR mpl-1.1 OR gpl-2.0
-  - mpl-1.1 OR lgpl-2.0-plus
-  - gpl-2.0-plus
-  - gpl-2.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
+  - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
   - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
   - gpl-1.0-plus OR lgpl-2.0-plus OR bsd-simplified
   - openldap-2.8
   - openssl-ssleay
-  - openssl-ssleay
-  - openssl-ssleay
-  - openssl
-  - proprietary-license
-  - ssleay-windows
-  - gpl-1.0-plus
+  - other-permissive
   - bsla
-  - unknown
+  - libpng
   - mit
-  - unknown
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
-  - gpl-1.0-plus
+  - gpl-2.0-plus OR bsd-new
   - public-domain
   - bzip2-libbzip-2010
-  - apache-1.1
+  - bsd-new
   - sunpro
   - bsd-new
   - unicode-mappings

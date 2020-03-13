@@ -227,6 +227,7 @@ def streamline_headers(headers):
         remove_windows_extra_timeout(hle.get('options', {}))
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
+        hle.pop('duration', None)
         streamline_errors(hle['errors'])
 
 

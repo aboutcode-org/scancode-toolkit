@@ -1,0 +1,6 @@
+license_expression: warranty-disclaimer AND unknown-license-reference
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - COPYING.LIB
