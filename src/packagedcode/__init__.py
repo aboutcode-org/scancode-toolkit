@@ -32,6 +32,7 @@ from packagedcode import about
 from packagedcode import bower
 from packagedcode import conda
 from packagedcode import cargo
+from packagedcode import ocaml
 from packagedcode import freebsd
 from packagedcode import haxe
 from packagedcode import maven
@@ -62,6 +63,7 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
+    ocaml.OpamPackageManager,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
