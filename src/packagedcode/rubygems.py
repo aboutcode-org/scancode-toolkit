@@ -34,7 +34,6 @@ from os.path import expanduser
 
 import attr
 import saneyaml
-import gemfileparser
 from six import string_types
 
 from commoncode import fileutils
@@ -119,8 +118,7 @@ class RubyGem(models.Package):
 
         if location.endswith('.gemspec'):
             # TODO: implement me
-            #pass
-            yield parse_gemspec(location)
+            pass
 
         if location.endswith('Gemfile'):
             # TODO: implement me
@@ -554,17 +552,7 @@ LICENSES_MAPPING = {
 
 ################################################################################
 def parse_gemspec(location):
-    """
-    Return a RubyGem Package built from the .gemspec file at `location` or None.
-    """
-    if not location.endswith('.gemspec'):
-        return
-
-    #metadata = get_gem_metadata(location)
-    metadata = gemfileparser.GemFileParser(location)
-    parser = metadata.parse()
-    return GemSpec(parser)
-    #raise NotImplementedError
+    raise NotImplementedError
 
 
 def get_gemspec_data(location):
@@ -582,104 +570,6 @@ def get_gemspec_data(location):
     spec.update(raw_spec)
     spec = normalize(spec)
     return spec
-
-def build_gemspec_package(gem_data, download_url=None, package_url=None):
-    """
-    Return a Package built from a Gem `gem_data` mapping or None.
-    The `gem_data can come from a .gemspec or .gem/gem_data.
-    Optionally use the provided `download_url` and `purl` strings.
-    """
-    if not gem_data:
-        return
-
-    name = gem_data.get('name')
-
-    short_desc = gem_data.get('summary') or ''
-    long_desc = gem_data.get('description') or ''
-    if long_desc == short_desc:
-        long_desc = None
-    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
-    description = '\n'.join(descriptions)
-
-    # Since the gem spec doc is not clear https://guides.rubygems.org
-    # /specification-reference/#licenseo, we will treat a list of licenses and a
-    # conjunction for now (e.g. AND)
-    license = gem_data.get('license')
-    licenses = gem_data.get('licenses')
-    declared_license = licenses_mapper(license, licenses)
-
-    package = RubyGem(
-        name=name,
-        description=description,
-        homepage_url=gem_data.get('homepage'),
-        download_url=download_url,
-        declared_license=declared_license
-    )
-
-    #data = GemSpec(package)
-
-    # we can have one singular or a plural list of authors
-    authors = gem_data.get('authors') or []
-    # or a string of coma-sperated authors (in the Rubygems API)
-    if isinstance(authors, str):
-        authors = [a.strip() for a in authors.split(',') if a.strip()]
-    authors.append(gem_data.get('author') or '')
-    for author in authors:
-        if author and author.strip():
-            party = models.Party(name=author, role='author')
-            package.parties.append(party)
-
-    # TODO: we have a email that is either a string or a list of string
-
-
-    # there are two levels of nesting
-    version1 = gem_data.get('version') or {}
-    version = version1.get('version') or None
-    package.version = version
-
-    metadata = gem_data.get('metadata') or {}
-    if metadata:
-        homepage_url = metadata.get('homepage_uri')
-        if homepage_url:
-            if not package.homepage_url:
-                package.homepage_url = homepage_url
-            elif package.homepage_url == homepage_url:
-                pass
-            else:
-                # we have both and one is wrong.
-                # we prefer the existing one from the metadata
-                pass
-
-        package.bug_tracking_url = metadata.get('bug_tracking_uri')
-
-        source_code_url = metadata.get('source_code_uri')
-        if source_code_url:
-            package.code_view_url = source_code_url
-            # TODO: infer purl and add purl to package.source_packages
-
-        # not used for now
-        #   "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
-        #   "wiki_uri"          => "https://example.com/user/bestgemever/wiki"
-        #   "mailing_list_uri"  => "https://groups.example.com/bestgemever",
-        #   "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
-
-    platform = gem_data.get('platform')
-    if platform != 'ruby':
-        qualifiers = dict(platform=platform)
-        if not package.qualifiers:
-            package.qualifiers = {}
-
-        package.qualifiers.update(qualifiers)
-
-    package.dependencies = get_dependencies(gem_data.get('dependencies'))
-
-    if not package.download_url:
-        package.download_url = package.repository_download_url()
-
-    if not package.homepage_url:
-        package.homepage_url = package.repository_homepage_url()
-
-
 
 def spec_defaults():
     """
