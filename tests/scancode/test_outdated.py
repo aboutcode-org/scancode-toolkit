@@ -149,3 +149,27 @@ def test_check_scancode_version_no_new_version():
         )
         result = outdated.check_scancode_version(force=True)
         assert not result
+
+
+def test_check_scancode_version_local_git_version():
+    from unittest import mock
+    pypi_mock_releases = {
+        'releases': {
+            '2.0.0': [],
+            '2.0.0rc3': [],
+            '2.0.1': [],
+            '2.1.0': [],
+            '3.0.1': [],
+            '3.1.2': [],
+        }
+    }
+    def jget(*args, **kwargs):
+        return pypi_mock_releases
+
+    with mock.patch('requests.get') as mock_get:
+        mock_get.return_value = mock.Mock(
+            json=jget,
+            status_code=200
+        )
+        result = outdated.check_scancode_version(installed_version='3.1.2.post351.850399bc3', force=True)
+        assert not result

@@ -34,6 +34,7 @@ from collections import OrderedDict
 import attr
 
 from cluecode.copyrights import CopyrightDetector
+from commoncode.system import py3
 from commoncode.text import python_safe_name
 from license_expression import Licensing
 from packagedcode import get_package_instance
@@ -44,6 +45,10 @@ from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 from summarycode import copyright_summary
+
+
+if py3:
+    unicode = str
 
 
 # Tracing flags
@@ -384,21 +389,19 @@ def get_holders_consolidated_components(codebase):
             resource.extra_data['current_holders'] = current_holders
             resource.save(codebase)
 
-    # Step 2: Track which directories we should consolidate Resources at by
-    # going top-down through the Codebase and creating a mapping of holder key
-    # -> directory resource, where the resource is the highest common ancestor
-    # for a holder
-    common_holder_ancestors = {}
+    # Step 2: Walk the codebase top-down and create consolidated_components along the way.
+    # By going top-down, we ensure that the highest-most Resource is used as the common
+    # ancestor for a given holder.
+    # We populate the `has_been_consolidated` set with the holder key to keep track of which
+    # holders we have already created a consolidation for.
+    has_been_consolidated = set()
     for resource in codebase.walk(topdown=True):
-        current_holders = resource.extra_data.get('current_holders', set())
-        for holder in current_holders:
-            if holder not in common_holder_ancestors:
-                common_holder_ancestors[holder] = resource
-
-    # Step 3: Consolidate Resources at the common holder ancestors that we discovered
-    for holder_key, ancestor in common_holder_ancestors.items():
-        for c in create_consolidated_components(ancestor, codebase, holder_key):
-            yield c
+        for holder in resource.extra_data.get('current_holders', set()):
+            if holder in has_been_consolidated:
+                continue
+            has_been_consolidated.add(holder)
+            for c in create_consolidated_components(resource, codebase, holder):
+                yield c
 
 
 def create_consolidated_components(resource, codebase, holder_key):
