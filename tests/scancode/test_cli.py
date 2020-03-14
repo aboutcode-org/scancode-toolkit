@@ -111,7 +111,7 @@ def test_verbose_option_with_copyrights(monkeypatch):
 
 @pytest.mark.xfail(reason='Bug is not fixed yet')
 def test_scanned_resource_no_attribute_emails():
-    test_dir = test_env.get_test_loc('license/apache-1.1.txt')
+    test_dir = test_env.get_test_loc('attribute_error_data/apache-1.1.txt')
     result_file = test_env.get_temp_file('bb.json')
     args = ['-clp', '--json-pp',result_file, test_dir, '--filter-clues']
     result = run_scan_click(args)
