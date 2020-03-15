@@ -75,6 +75,7 @@ class TestAPI(FileBasedTesting):
             (u'size', 0),
             (u'sha1', None),
             (u'md5', None),
+            (u'sha256', None),
             (u'mime_type', u'inode/x-empty'),
             (u'file_type', u'empty'),
             (u'programming_language', None),
