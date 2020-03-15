@@ -35,9 +35,6 @@ def set_from_text(text):
 
 JUNK_EMAILS = set_from_text(u'''
     test@test.com
-    testuser
-    trialuser
-    sampleuser
     exmaple.com
     example.com
     example.net
@@ -232,7 +229,7 @@ def classify(s, data_set, suffixes=None, ignored_hosts=None):
     s = s.lower().strip('/')
     # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
     if '@' in s and ignored_hosts:
-        host_name = s.rpartition('@')[-1]
+        _name, _at, host_name = s.rpartition('@')
         if any(d == host_name for d in ignored_hosts):
             return False
     if any(d in s for d in data_set):
@@ -250,9 +247,6 @@ classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SU
 
 
 def classify_url(url):
-    """
-    Return False if `url` found to be a candidate for a spam url. Return True otherwise.
-    """
     if not url:
         return False
     u = url.lower().strip('/')

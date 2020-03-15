@@ -155,6 +155,16 @@ def check_scancode_version(installed_version=scancode_version,
             % (installed_version, latest_version)
         )
 
+        # Our git version string is not PEP 440 compliant, and thus improperly parsed via
+        # most 3rd party version parsers. We handle this case by pulling out the "base"
+        # release version by split()-ting on "post".
+        # 
+        # For example, "3.1.2.post351.850399ba3" becomes "3.1.2"
+        if isinstance(installed_version, packaging_version.LegacyVersion):
+            installed_version = installed_version.split('post')
+            installed_version = installed_version[0]
+            installed_version = packaging_version.parse(installed_version)
+
         # Determine if our latest_version is older
         if (installed_version < latest_version
         and installed_version.base_version != latest_version.base_version):

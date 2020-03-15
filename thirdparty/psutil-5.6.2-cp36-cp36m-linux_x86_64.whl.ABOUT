@@ -1,7 +1,7 @@
 about_resource: psutil-5.6.2-cp36-cp36m-linux_x86_64.whl
 name: psutil
 version: 5.6.2
-download_url: https://github.com/nexB/scancode-toolkit/raw/295-tests-and-setup/thirdparty/psutil-5.6.2-cp36-cp36m-linux_x86_64.whl
+download_url: https://github.com/nexB/scancode-toolkit/blob/develop/thirdparty/psutil-5.6.2-cp36-cp36m-linux_x86_64.whl
 description: Cross-platform lib for process and system monitoring in Python
 homepage_url: https://github.com/giampaolo/psutil
 license_expression: bsd-new

@@ -1,21 +1,23 @@
 ScanCode Toolkit Documentation
 ==============================
 
-Guide
------
+Welcome to ScanCode Toolkit Documentation!
+
+If you are new to ScanCode Toolkit, start here:
 
 .. toctree::
    :maxdepth: 2
 
-   getting-started/index
-   cli-reference/index
-   plugins/index
-   tutorials/index
-   how-to-guides/index
-   explanations/index
-   contribute/index
-   misc/index
-   license
+   getting-started/newcomer
+
+Here's a list of more Documentation Pages:
+
+- A :ref:`cli_synopsis` of ScanCode Command Line Options
+- Tutorials on :ref:`how_to_run_a_scan` and :ref:`how_to_visualize_scan_results`
+- An exhaustive List of :ref:`cli_list_options`
+- Documentation on :ref:`contrib_code_dev`
+- Documentation on :ref:`plugin_arch`
+- :ref:`faq`
 
 ----
 
@@ -25,12 +27,24 @@ Getting Started
 .. toctree::
    :maxdepth: 2
 
-   getting-started/newcomer
+   getting-started/index
 
 ----
 
-Tutorial Documents
-------------------
+Command Line Options Reference
+------------------------------
+
+Reference documents describe the Command Line options, and application concepts in depth.
+
+.. toctree::
+   :maxdepth: 2
+
+   cli-reference/index
+
+----
+
+Tutorials
+---------
 
 Tutorial documents provide specific instructions to help you get started.
 
@@ -53,17 +67,35 @@ How-To documents explain how to accomplish specific tasks.
 
 ----
 
-Reference Documents
--------------------
-
-Reference documents describe the Command Line options, and application concepts in depth.
+Contribute To ScanCode
+----------------------
 
 .. toctree::
    :maxdepth: 2
 
-   cli-reference/index
+   contribute/index
 
 ----
+
+Plugins Documentation
+---------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   plugins/index
+
+----
+
+Miscellaneous Documents
+-----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   misc/index
+   license
+
 
 Discussion Documents
 --------------------

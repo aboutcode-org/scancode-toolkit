@@ -25,3 +25,4 @@ ignorable_holders:
 ignorable_urls:
     - http://purl.oclc.org/oclc/research/ORPL
     - http://www.oclc.org/oclc/research
+osi_license_key: OCLC-2.0

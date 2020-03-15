@@ -78,16 +78,46 @@ matrix:
       python: "3.6"
       dist: bionic
 
+    # Refer https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html#continuous-integration
     - os: linux
       sudo: required
       script: 
         - source bin/activate
         - cd docs
+        # This script tests the Sphinx Documentation build
+        # Also checks for broken links in the documentation
         - ./scripts/sphinx_build_link_check.sh
+        # This script checks for documentation style errors
         - ./scripts/doc8_style_check.sh
       language: python
       python: "3.6"
       dist: bionic
+
+    - os: linux
+      sudo: required
+      script: 
+        # This checks .ABOUT file links using `about check`
+        - source bin/activate
+        - ./bin/about check thirdparty/
+      language: python
+      python: "3.6"
+      dist: bionic
+
+    # Refer https://github.com/dkhamsing/awesome_bot#command-line for more info.
+    - os: linux
+      sudo: required
+      before_install:
+        - gem install awesome_bot
+      script:
+        # These check for broken links inside .md files used for GitHub templates
+        - awesome_bot .github/*.md --allow-redirect --allow-dupe --skip-save-results
+        - awesome_bot .github/ISSUE_TEMPLATE/*.md --allow-redirect --allow-dupe --skip-save-results
+        # This checks for broken links inside .rst files at Project Root, like README.rst
+        - awesome_bot *.rst --allow-redirect --allow-dupe --skip-save-results
+        # This checks for broken links inside README.md files of plugins/plugins-builtin folders.
+        - awesome_bot */**/*.md --allow-redirect --allow-dupe --skip-save-results
+        # This checks for broken links inside Thirdparty .ABOUT files
+        - awesome_bot thirdparty/*.ABOUT --allow-redirect --allow-dupe --skip-save-results
 
 addons:
   homebrew:

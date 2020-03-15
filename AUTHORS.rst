@@ -16,3 +16,6 @@ The following organizations or individuals have contributed to ScanCode:
 - Tushar Mittal @techytushar
 - Martin Petkov @MartinPetkov
 - Mrinal Paliwal @mriiinal
+- Mankaran Singh @MankaranSingh
+- Ravi Jain @JRavi2
+- Gaurang Rao @Gaupeng

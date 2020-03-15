@@ -5,6 +5,13 @@
 
 set -e
 
+if [[ "$OS" == "Windows_NT" ]]; then
+    echo "You seem to be running on Windows under Cygwin / MSYS(2), like e.g. Git for Windows Bash. This script does"
+    echo "not properly work in this scenario. As a Windows user, please run 'configure.bat' from a regular command"
+    echo "prompt instead."
+    exit 1
+fi
+
 ################################
 # change these variables to customize this script locally
 ################################

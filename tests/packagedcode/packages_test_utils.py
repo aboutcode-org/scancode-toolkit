@@ -69,3 +69,34 @@ class PackageTester(testcase.FileBasedTesting):
             assert expected == results
         except AssertionError:
             assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+
+    def check_packages(self, packages, expected_loc, regen=False):
+        """
+        Helper to test multiple package objects against an expected JSON file.
+        """
+        expected_loc = self.get_test_loc(expected_loc)
+
+        results = []
+        for package in packages:
+            package.license_expression = package.compute_normalized_license()
+            results.append(package.to_dict())
+
+        if regen:
+            regened_exp_loc = self.get_temp_file()
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with open(regened_exp_loc, wmode) as ex:
+                json.dump(results, ex, indent=2, separators=(',', ': '))
+
+            expected_dir = os.path.dirname(expected_loc)
+            if not os.path.exists(expected_dir):
+                os.makedirs(expected_dir)
+            shutil.copy(regened_exp_loc, expected_loc)
+
+        with open(expected_loc, 'rb') as ex:
+            expected_packages = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+
+        for expected_package, result in zip(expected_packages, results):
+            assert expected_package == result

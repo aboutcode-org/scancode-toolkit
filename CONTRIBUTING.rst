@@ -5,8 +5,8 @@ Contributing
 Contributions are welcome and appreciated!
 Every little bit helps, and credit will always be given.
 
-.. _issue : https://github.com/nexB/scancode-toolkit/issue
-__ issue_
+.. _issues : https://github.com/nexB/scancode-toolkit/issues
+__ issues_
 
 If you are new to ScanCode and want to find easy tickets to work on,
 check `easy issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
@@ -56,6 +56,7 @@ For other questions, discussions, and chats, we have:
 
 - a mailing list at `sourceforge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
 
+- a Gitter channel to discuss Documentation at https://gitter.im/aboutcode-org/gsod-season-of-docs
 
 Bug reports
 ===========
@@ -77,10 +78,16 @@ When `reporting a bug`__ please include:
 Documentation improvements
 ==========================
 
-Documentation can come in the form of wiki pages, docstrings, blog posts,
-articles, etc. Even a minor typo fix is welcomed. 
-See also extra documentation on the `Wiki <https://github.com/nexB/scancode-toolkit/wiki>`_.
+Documentation can come in the form of new documentation pages/sections, tutorials/how-to documents,
+any other general upgrades, etc. Even a minor typo fix is welcomed. 
 
+If something is missing in the documentation or if you found some part confusing,
+please file an issue with your suggestions for improvement. Use the “Documentation Improvement”
+template. Your help and contributions makes ScanCode docs better, we love hearing from you!
+
+The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
+If you want to contribute to Scancode Dcoumentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html>`_ helpful.
 
 Development
 ===========
@@ -99,7 +106,7 @@ To set up ScanCode for local development:
 
     git clone https://github.com/your_name_here/scancode-toolkit.git
 
-   See also GitHub docs dor `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ 
+   See also GitHub docs for `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ 
    or `HTTPS <https://help.github.com/articles/which-remote-url-should-i-use/#cloning-with-https-urls-recommended>`_
     
    If you want to change the connection type, do following
