@@ -207,6 +207,12 @@ Package: pypi
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
+Package: opam
+  class: packagedcode.ocaml:OpamPackageManager
+  metafiles: *.opam
+  extensions: .opam
+
+--------------------------------------------
 Package: rpm
   class: packagedcode.rpm:RpmPackage
   metafiles: *.spec
