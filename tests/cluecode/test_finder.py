@@ -190,7 +190,7 @@ class TestEmail(FileBasedTesting):
         <xyz@any.com>. However, an email such as <efg@many.org> should
         not be filtered as spam.
         Adding more test cases, how about <abc@example.com> or a slightly
-        more complicated email such as <compli@subdomain.other.com>.
+        more different email such as <diff@xyz@other.com>.
         '''.splitlines(False)
         expected = [
             u'efg@many.org'
