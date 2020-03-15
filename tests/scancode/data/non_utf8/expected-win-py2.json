@@ -482,6 +482,7 @@
       "is_source": false,
       "is_text": true,
       "md5": null,
+      "sha256": null,
       "mime_type": "inode/x-empty",
       "name": "non_utf8_decodable_\u00ff",
       "path": "non_unicode/non_utf8_decodable_\u00ff",
