@@ -32,12 +32,12 @@ from packagedcode import about
 from packagedcode import bower
 from packagedcode import conda
 from packagedcode import cargo
-from packagedcode import ocaml
 from packagedcode import freebsd
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
+from packagedcode import ocaml
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
