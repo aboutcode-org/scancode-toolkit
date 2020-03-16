@@ -111,7 +111,6 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/fb303_py_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    @expectedFailure
     def test_parse_setup_py_frell_src(self):
         # setup.py is a temaplte with @vars
         test_file = self.get_test_loc('pypi/setup.py/frell_src_setup.py')

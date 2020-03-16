@@ -280,6 +280,10 @@ def parse_setup_py(location):
                      # We collect the elements of a list if the element is not a function call
                     setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
+    package_name = setup_args.get('name')
+    if not package_name:
+        return
+
     description = build_description(
         setup_args.get('summary', ''),
         setup_args.get('description', ''))
@@ -308,7 +312,7 @@ def parse_setup_py(location):
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
     return PythonPackage(
-        name=setup_args.get('name'),
+        name=package_name,
         version=setup_args.get('version'),
         description=description or None,
         homepage_url=setup_args.get('url') or None,
