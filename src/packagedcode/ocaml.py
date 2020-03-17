@@ -1,5 +1,5 @@
 
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,7 +31,6 @@ import logging
 import re
 
 import attr
-import opam
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -91,7 +90,7 @@ def parse(location):
     if not is_opam(location):
         return
 
-    package_data = opam.load(location)
+    package_data = load(location)
     return build_package(package_data)
 
 
@@ -100,8 +99,8 @@ def build_package(package_data):
     Return a Pacakge object from a package data mapping or None.
     """
 
-    version = opam.getversion(package_data)
-    #maintainer = opam.getmaintainer(package_data)
+    version = getversion(package_data)
+    #maintainer = getmaintainer(package_data)
 
     package = OpamPackageManager(
         version=version,
@@ -110,3 +109,29 @@ def build_package(package_data):
 
     return package
 
+def load(file_name):
+    file_data = []
+    with open(file_name) as f:
+        file_data = [line.rstrip('\n') for line in f]
+    return file_data        
+
+def getversion(the_list):
+    for individual in the_list:
+        if 'opam-version' in individual:
+            version=individual.split('"')
+            return version[1]
+
+def getmaintainer(the_list):
+    for individual in the_list:
+        if 'maintainer' in individual:
+            version=individual.split('"')
+            return version[1]
+
+def getsynopsis(the_list):
+    for individual in the_list:
+        if 'synopsis' in individual:
+            version=individual.split('"')
+            return version[1]
+
+
+    

@@ -202,7 +202,6 @@ setup(
         'toml >= 0.10.0',
         'pkginfo >= 1.5.0.1',
         'dparse >= 0.4.1',
-        'opam >==1.0.5',
 
         # used to fix mojibake in Windows PE
         'ftfy <  5.0.0; python_version == "2.7"',
