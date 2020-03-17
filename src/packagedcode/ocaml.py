@@ -31,7 +31,7 @@ import logging
 import re
 
 import attr
-
+import opam
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
@@ -90,7 +90,7 @@ def parse(location):
     if not is_opam(location):
         return
 
-    package_data = load(location)
+    package_data = opam.load(location)
     return build_package(package_data)
 
 
@@ -99,7 +99,7 @@ def build_package(package_data):
     Return a Pacakge object from a package data mapping or None.
     """
 
-    version = getversion(package_data)
+    version = opam.getversion(package_data)
     #maintainer = getmaintainer(package_data)
 
     package = OpamPackageManager(
@@ -109,6 +109,7 @@ def build_package(package_data):
 
     return package
 
+"""
 def load(file_name):
     file_data = []
     with open(file_name) as f:
@@ -132,6 +133,6 @@ def getsynopsis(the_list):
         if 'synopsis' in individual:
             version=individual.split('"')
             return version[1]
-
+"""
 
     
