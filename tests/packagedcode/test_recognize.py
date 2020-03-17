@@ -34,6 +34,7 @@ from packagedcode import freebsd
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import cargo
+from packagedcode import ocaml
 from packagedcode import phpcomposer
 from packagedcode import rpm
 from packagedcode.recognize import recognize_packages
@@ -125,6 +126,12 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_packages(test_file)
         assert packages
         assert isinstance(packages[0], cargo.RustCargoCrate)
+
+    def test_recognize_ocaml(self):
+        test_file = self.get_test_loc('recon/ocaml-variants.opam')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], ocaml.OpamPackageManager)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')
