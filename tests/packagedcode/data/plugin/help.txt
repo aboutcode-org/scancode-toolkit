@@ -201,6 +201,12 @@ Package: nuget
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
+Package: opam
+  class: packagedcode.ocaml:OpamPackageManager
+  metafiles: *.opam
+  extensions: .opam
+
+--------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
   metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg
