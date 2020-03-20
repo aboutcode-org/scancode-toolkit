@@ -111,8 +111,9 @@ def build_package(package_data):
 
 def load(file_name):
     file_data = []
-    with open(file_name) as f:
+    with open(file_name, 'rb') as f:
         file_data = [line.rstrip('\n') for line in f]
+    print(file_data)
     return file_data        
 def getversion(the_list):
     for individual in the_list:
