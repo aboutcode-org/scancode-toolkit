@@ -47,3 +47,9 @@ class TestOcaml(PackageTester):
         expected_loc = self.get_test_loc('ocaml/mirage/mirage.opam.expected')
         package = ocaml.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_js_of_ocaml(self):
+        test_file = self.get_test_loc('ocaml/js_of_ocaml/js_of_ocaml.opam')
+        expected_loc = self.get_test_loc('ocaml/js_of_ocaml/js_of_ocaml.opam.expected')
+        package = ocaml.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
