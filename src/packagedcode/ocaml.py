@@ -30,7 +30,9 @@ import logging
 import re
 
 import attr
+import io
 
+from commoncode.fileutils import py2
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
@@ -102,7 +104,7 @@ def build_package(package_data):
     #maintainer = getmaintainer(package_data)
 
     package = OpamPackageManager(
-        version=version,
+        version=version or None,
         #maintainer=maintainer
     )
 
@@ -111,9 +113,8 @@ def build_package(package_data):
 
 def load(file_name):
     file_data = []
-    with open(file_name, 'rb') as f:
+    with io.open(file_name, "r", encoding="utf-8") as f:
         file_data = [line.rstrip('\n') for line in f]
-    print(file_data)
     return file_data        
 def getversion(the_list):
     for individual in the_list:
