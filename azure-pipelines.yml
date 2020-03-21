@@ -83,8 +83,8 @@ jobs:
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: macos1013_py27
-          image_name: macos-10.13
+          job_name: macos1014_py27
+          image_name: macos-10.14
           python_versions: ['2.7']
           test_suites:
               all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
@@ -92,12 +92,12 @@ jobs:
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: macos1014_py27
-          image_name: macos-10.14
+          job_name: macos1015_py27
+          image_name: macos-10.15
           python_versions: ['2.7']
           test_suites:
               all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
+              scancode: bin/py.test -vvs --reruns=3 tests/scancode          
 
 
 ################################################################################
@@ -236,19 +236,19 @@ jobs:
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: macos_1013_py36
-          image_name: macos-10.13
+          job_name: macos1014_py36
+          image_name: macos-10.14
           python_versions: ['3.6']
           test_suites:
               all: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: macos1014_py36
-          image_name: macos-10.14
+          job_name: macos1015_py36
+          image_name: macos-10.15
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3
+              all: bin/py.test -n 2 -vvs --reruns=3          
 
     - template: etc/ci/azure-win.yml
       parameters:
