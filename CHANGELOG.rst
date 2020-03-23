@@ -4,6 +4,8 @@ Changelog
 Outputs:
  - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
 
+OS support:
+ - Add 10.15 macOS tests to azure-pipelines
 
 v3.0.2 (2019-02-15)
 -------------------
