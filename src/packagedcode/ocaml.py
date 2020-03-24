@@ -100,8 +100,8 @@ def build_package(package_data):
     Return a Pacakge object from a package data mapping or None.
     """
 
-    version = getversion(package_data)
-    #maintainer = getmaintainer(package_data)
+    version = get_version(package_data)
+    #maintainer = get_maintainer(package_data)
 
     package = OpamPackageManager(
         version=version or None,
@@ -118,22 +118,22 @@ def load(file_name):
     return file_data      
 
 
-def getversion(the_list):
-    for individual in the_list:
+def get_version(file_data):
+    for individual in file_data:
         if 'opam-version' in individual:
             version=individual.split('"')
             return version[1]
 
 
-def getmaintainer(the_list):
-    for individual in the_list:
+def get_maintainer(file_data):
+    for individual in file_data:
         if 'maintainer' in individual:
-            version=individual.split('"')
-            return version[1]
+            maintainer=individual.split('"')
+            return maintainer[1]
 
             
-def getsynopsis(the_list):
-    for individual in the_list:
+def get_synopsis(file_data):
+    for individual in file_data:
         if 'synopsis' in individual:
-            version=individual.split('"')
-            return version[1]
+            synopsis=individual.split('"')
+            return synopsis[1]
