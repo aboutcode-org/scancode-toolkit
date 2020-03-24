@@ -1969,6 +1969,9 @@ grammar = """
     # Copyright (c) 2017 Contributors et.al.
     COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
 
+    #Copyright (c) 2020 Contributors as noted in the AUTHORS file
+    COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <NN>* <IN>? <NN>* <CAPS|AUTHS|ATH> <JUNK> }
+
     # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
     COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2290
 
