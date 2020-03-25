@@ -101,11 +101,11 @@ def build_package(package_data):
     """
 
     version = get_version(package_data)
-    #maintainer = get_maintainer(package_data)
+    # maintainer = get_maintainer(package_data)
 
     package = OpamPackageManager(
         version=version or None,
-        #maintainer=maintainer
+        # maintainer=maintainer
     )
 
     return package
@@ -115,25 +115,25 @@ def load(file_name):
     file_data = []
     with io.open(file_name, "r", encoding="utf-8") as f:
         file_data = [line.rstrip('\n') for line in f]
-    return file_data      
+    return file_data
 
 
 def get_version(file_data):
     for individual in file_data:
         if 'opam-version' in individual:
-            version=individual.split('"')
+            version = individual.split('"')
             return version[1]
 
 
 def get_maintainer(file_data):
     for individual in file_data:
         if 'maintainer' in individual:
-            maintainer=individual.split('"')
+            maintainer = individual.split('"')
             return maintainer[1]
 
-            
+
 def get_synopsis(file_data):
     for individual in file_data:
         if 'synopsis' in individual:
-            synopsis=individual.split('"')
+            synopsis = individual.split('"')
             return synopsis[1]
