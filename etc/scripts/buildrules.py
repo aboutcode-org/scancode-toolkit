@@ -218,8 +218,8 @@ def cli(licenses_file):
         else:
             rules_tokens.add(rule_tokens)
             rulerec.dump()
-            models.update_ignorables(rulerec, verbose=True)
-            print('Rule added:', rulerec.identifier)
+            models.update_ignorables(rulerec, verbose=False)
+            print('Rule added:', 'file://' + rulerec.data_file, '\n', 'file://' + rulerec.text_file,)
 
 
 if __name__ == '__main__':
