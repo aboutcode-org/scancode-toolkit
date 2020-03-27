@@ -14,6 +14,6 @@ other_urls:
     - https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
     - https://ohwr.org/project/cernohl/wikis/uploads/0be6f561d2b4a686c5765c74be32daf9/CERN_OHL_rationale.pdf
 ignorable_copyrights:
-    - copyright CERN.
+    - copyright CERN 2020
 ignorable_holders:
-    - CERN.
+    - CERN

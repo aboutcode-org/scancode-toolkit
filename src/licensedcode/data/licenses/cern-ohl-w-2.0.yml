@@ -13,6 +13,6 @@ other_urls:
     - https://cern-ohl.web.cern.ch/
     - https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
 ignorable_copyrights:
-    - copyright CERN.
+    - copyright CERN 2020
 ignorable_holders:
-    - CERN.
+    - CERN
