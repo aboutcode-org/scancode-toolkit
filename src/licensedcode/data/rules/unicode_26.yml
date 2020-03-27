@@ -1,0 +1,9 @@
+license_expression: unicode
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1991-2017 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - https://www.unicode.org/copyright.html
