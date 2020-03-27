@@ -1,0 +1,8 @@
+license_expression: lgpl-3.0 OR commercial-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COMM-LICENSE
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl-3.0.html
+    - https://sidekiq.org/products/pro.html
