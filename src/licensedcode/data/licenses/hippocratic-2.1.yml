@@ -1,0 +1,15 @@
+key: hippocratic-2.1
+short_name: Hippocratic License 2.1
+name: Hippocratic License Version 2.1
+category: Proprietary Free
+owner: Coraline Ada Ehmke
+homepage_url: https://firstdonoharm.dev/
+text_urls:
+    - https://firstdonoharm.dev/version/2/1/license.md
+    - https://firstdonoharm.dev/version/2/1/license.html
+ignorable_urls:
+  - https://ethicalsource.dev/
+  - https://firstdonoharm.dev/
+  - https://www.un.org/en/universal-declaration-human-rights
+  - https://www.unglobalcompact.org/what-is-gc/mission/principles
+
