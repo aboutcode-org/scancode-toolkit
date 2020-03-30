@@ -184,12 +184,15 @@ def cli(licenses_file):
 
     print()
     for rule in rules_data:
+        is_negative = rule.data.get('is_negative')
+        is_false_positive = rule.data.get('is_false_positive')
         existing = rule_exists(rule.text)
         if existing:
-            print('Skipping existing rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
-            continue
+            if not is_negative:
+                print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
+                continue
 
-        if rule.data.get('is_negative'):
+        if is_negative:
             base_name = 'not-a-license'
         else:
             license_expression = rule.data.get('license_expression')
@@ -197,6 +200,8 @@ def cli(licenses_file):
                 raise Exception('Missing license_expression for text:', rule)
             licensing.parse(license_expression, validate=True, simple=True)
             base_name = license_expression
+            if is_false_positive:
+                base_name = 'false-positive_' + base_name
 
         base_loc = find_rule_base_loc(base_name)
 
