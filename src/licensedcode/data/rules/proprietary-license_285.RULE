@@ -1,0 +1,29 @@
+LEGAL:        This code is placed into the public domain, hence requires 
+               no license or runtime fees.  However this code is copyright by 
+               CRYPTOCard.  CRYPTOCard grants anyone who may wish to use, modify 
+               or redistribute this code privileges to do so, provided the user 
+               agrees to the following three(3) rules: 
+ 
+               1)Any Applications, (ie exes which make use of this 
+               Object...), for-profit or non-profit, 
+               must acknowledge the author of this Object(ie. 
+               MD5 Implementation provided by Greg Carter, CRYPTOCard 
+               Corporation) somewhere in the accompanying Application 
+               documentation(ie AboutBox, HelpFile, readme...).  NO runtime 
+               or licensing fees are required! 
+ 
+               2)Any Developer Component(ie Delphi Component, Visual Basic VBX, 
+               DLL) derived from this software must acknowledge that it is 
+               derived from "Crypto Object Pascal Implementation Originated by 
+               Greg Carter, CRYPTOCard Corporation 1996". Also all efforts should 
+               be made to point out any changes from the original. 
+               !!!!!Further, any Developer Components based on this code 
+               *MAY NOT* be sold for profit.  This Object was placed into the 
+               public domain, and therefore any derived components should 
+               also.!!!!! 
+ 
+               3)CRYPTOCard Corporation makes no representations concerning this 
+               software or the suitability of this software for any particular 
+               purpose. It is provided "as is" without express or implied 
+               warranty of any kind. CRYPTOCard accepts no liability from any 
+               loss or damage as a result of using this software.

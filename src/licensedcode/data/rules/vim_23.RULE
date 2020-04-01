@@ -1,0 +1,11 @@
+COPYING
+
+Vim is Charityware.  You can use and copy it as much as you like, but you are
+encouraged to make a donation to help orphans in Uganda.  Please read the file
+"runtime/doc/uganda.txt" for details (do ":help uganda" inside Vim).
+
+Summary of the license: There are no restrictions on using or distributing an
+unmodified copy of Vim.  Parts of Vim may also be distributed, but the license
+text must always be included.  For modified versions a few restrictions apply.
+The license is GPL compatible, you may compile Vim with GPL libraries and
+distribute it.
