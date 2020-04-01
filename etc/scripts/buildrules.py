@@ -187,11 +187,10 @@ def cli(licenses_file):
         is_negative = rule.data.get('is_negative')
         is_false_positive = rule.data.get('is_false_positive')
         existing = rule_exists(rule.text)
-        if existing:
-            if not is_negative:
-                print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
-                continue
-
+        if existing and not is_negative:
+            print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
+            continue
+        
         if is_negative:
             base_name = 'not-a-license'
         else:
