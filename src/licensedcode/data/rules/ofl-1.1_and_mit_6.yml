@@ -1,4 +1,5 @@
 license_expression: ofl-1.1 AND mit
+relevance: 100
 is_license_tag: yes
 ignorable_urls:
     - http://fontawesome.io/
