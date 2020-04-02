@@ -9,7 +9,4 @@ text_urls:
     - https://firstdonoharm.dev/version/2/1/license.html
 ignorable_urls:
   - https://ethicalsource.dev/
-  - https://firstdonoharm.dev/
-  - https://www.un.org/en/universal-declaration-human-rights
-  - https://www.unglobalcompact.org/what-is-gc/mission/principles
 
