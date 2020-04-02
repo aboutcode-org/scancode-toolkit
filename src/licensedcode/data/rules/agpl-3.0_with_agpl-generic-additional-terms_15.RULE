@@ -1,0 +1,4 @@
+The main ogon codebase is licensed under the GNU Affero General Public
+License version 3 ("AGPL") and the "ogon Core AGPL Exceptions".
+In addition some components may be licensed under the "ogon Library AGPL
+Exceptions". See individual source files for details.

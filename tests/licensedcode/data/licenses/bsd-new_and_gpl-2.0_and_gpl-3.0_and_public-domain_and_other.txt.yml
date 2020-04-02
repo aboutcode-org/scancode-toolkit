@@ -1,7 +1,8 @@
 license_expressions:
   - gpl-2.0
-  - gpl-1.0-plus
-  - unknown
+  - gpl-2.0
+  - gpl-2.0
+  - free-unknown
   - free-unknown
   - gpl-2.0
   - unknown
@@ -17,7 +18,7 @@ license_expressions:
   - unknown
   - gpl-1.0-plus
   - gpl-2.0
-  - gpl-1.0-plus
+  - gpl-2.0
   - gpl-1.0-plus
   - gpl-1.0-plus
   - gpl-1.0-plus

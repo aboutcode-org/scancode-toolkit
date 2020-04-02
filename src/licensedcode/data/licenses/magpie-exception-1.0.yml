@@ -1,0 +1,7 @@
+key: magpie-exception-1.0
+short_name: MAgPIE Exception to AGPL 3.0
+name: MAgPIE License Exception to AGPL 3.0
+category: Copyleft
+owner: MAgPIE
+homepage_url: https://github.com/magpiemodel/magpie/blob/master/LICENSE
+is_exception: yes

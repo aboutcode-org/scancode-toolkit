@@ -1,0 +1,8 @@
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE_EXCEPTION
+ignorable_urls:
+    - http://www.affero.org/oagf.html
+    - http://www.gnu.org/licenses/agpl-3.0.html

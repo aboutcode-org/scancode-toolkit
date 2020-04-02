@@ -1,0 +1,10 @@
+key: dune-exception
+short_name: DUNE exception to the GPL
+name: DUNE exception to the GPL
+category: Copyleft Limited
+owner: DUNE Project
+homepage_url: https://dune-project.org/about/license/
+is_exception: yes
+text_urls:
+    - https://github.com/dune-project/dune-common/blob/master/LICENSE.md
+

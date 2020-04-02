@@ -1,0 +1,6 @@
+license_expression: etalab-2.0
+is_license_notice: yes
+relevance: 100
+notes: language is fr
+ignorable_urls:
+    - https://www.etalab.gouv.fr/licence-ouverte-open-licence

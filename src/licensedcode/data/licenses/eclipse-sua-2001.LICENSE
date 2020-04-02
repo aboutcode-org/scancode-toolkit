@@ -1,0 +1,15 @@
+Eclipse.org Software User Agreement
+
+1st November, 2001
+
+ECLIPSE.ORG MAKES AVAILABLE SOFTWARE, DOCUMENTATION, INFORMATION AND/OR OTHER MATERIALS FOR OPEN SOURCE PROJECTS (COLLECTIVELY "CONTENT").  USE OF THE CONTENT IS GOVERNED BY THE TERMS AND CONDITIONS OF THIS AGREEMENT AND/OR THE TERMS AND CONDITIONS OF LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW.  BY USING THE CONTENT, YOU AGREE THAT YOUR USE OF THE CONTENT IS GOVERNED BY THIS AGREEMENT AND/OR THE TERMS AND CONDITIONS OF ANY APPLICABLE LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW.  IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT AND THE TERMS AND CONDITIONS OF ANY APPLICABLE LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW, THEN YOU MAY NOT USE THE CONTENT.
+
+Unless otherwise indicated, all Content made available by Eclipse.org is provided to you under the terms and conditions of the Common Public License Version 0.5.  For purposes of the Common Public License, "Program" will mean the Content.
+
+Content includes, but is not limited to, source code, object code, documentation and other files maintained in the Eclipse.org CVS repository ("Repository") and subsequently released as project builds ("Builds").
+
+Content as files may contain portions distributed under different license agreements and/or notices. Details about these license agreements and notices are contained in "about.html" files ("Abouts"). Abouts are located in the Repository in the root directory for each CVS module. Abouts in Builds may be in the program root directory and plug-in directories. Such Abouts govern your use of the associated software in that directory, not the Common Public License.
+
+You must agree to the terms and conditions of the Common Public License Version 0.5 and all Abouts contained in any Content and any other terms and conditions that are provided with the Content, if any.
+
+Content may contain encryption software. The country in which you are currently may have restrictions on the import, possession, and use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check the country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.

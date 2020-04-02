@@ -1,0 +1,17 @@
+the project used an extended version of the DCO
+that included the identical items (a) through (d) from DCO 1.1 and an
+additional item (e):
+
+(e) The contribution can be licensed under the modified BSD license
+    as shown below even in case of files that are currently licensed
+    under other terms.
+
+This was used during the period when some of the files included the old
+license terms. Acceptance of this extended DCO version was indicated
+with a Signed-hostap tag in the commit message. This additional item (e)
+was used to collect explicit approval to license the contribution with
+only the modified BSD license (see below), i.e., without the GPL v2
+option. This was done to allow simpler licensing terms to be used in the
+future. It should be noted that the modified BSD license is compatible
+with GNU GPL and as such, this possible move to simpler licensing option
+does not prevent use of this software in GPL projects.

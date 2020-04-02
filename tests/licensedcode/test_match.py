@@ -1172,10 +1172,19 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = [
             'This source code is licensed under both the Apache 2.0 license '
             '(found in the\n#  LICENSE',
+
             'This source code is licensed under [both] [the] [Apache] [2].[0] license '
             '(found in the\n#  LICENSE file in the root directory of this source tree)',
-            'GPLv2 (']
+
+            'GPLv2 ('
+        ]
         assert expected == results
+
+#  This source code is licensed under both the Apache 2.0 license (found in the
+#  LICENSE file in the root directory of this source tree) and the GPLv2 (found
+#  in the COPYING file in the root directory of this source tree).
+#  You may select, at your option, one of the above-listed licenses
+
 
     @pytest.mark.scanslow
     def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):

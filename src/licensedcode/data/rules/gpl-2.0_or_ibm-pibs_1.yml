@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 OR ibm-pibs
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - COPYRIGHT I B M CORPORATION 1995
+ignorable_holders:
+    - I B M CORPORATION

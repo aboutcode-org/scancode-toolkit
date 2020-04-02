@@ -200,17 +200,17 @@ OLD_SPDX_EXCEPTION_LICENSES_SUBS = None
 def get_old_expressions_subs_table(licensing):
     global OLD_SPDX_EXCEPTION_LICENSES_SUBS
     if not OLD_SPDX_EXCEPTION_LICENSES_SUBS:
-        #
+        # this is mapping an OLD SPDX id to a new SPDX expression
         EXPRESSSIONS_BY_OLD_SPDX_IDS = {k.lower(): v.lower() for k, v in {
-            'eCos-2.0': 'gpl-2.0-or-later WITH ecos-exception-2.0',
-            'GPL-2.0-with-autoconf-exception': 'gpl-2.0-only WITH autoconf-exception-2.0',
-            'GPL-2.0-with-bison-exception': 'gpl-2.0-only WITH bison-exception-2.2',
-            'GPL-2.0-with-classpath-exception': 'gpl-2.0-only WITH classpath-exception-2.0',
-            'GPL-2.0-with-font-exception': 'gpl-2.0-only WITH font-exception-2.0',
-            'GPL-2.0-with-GCC-exception': 'gpl-2.0-only WITH gcc-exception-2.0',
-            'GPL-3.0-with-autoconf-exception': 'gpl-3.0-only WITH autoconf-exception-3.0',
-            'GPL-3.0-with-GCC-exception': 'gpl-3.0-only WITH gcc-exception-3.1',
-            'wxWindows': 'lgpl-2.0-or-later WITH wxwindows-exception-3.1',
+            'eCos-2.0': 'GPL-2.0-or-later WITH eCos-exception-2.0',
+            'GPL-2.0-with-autoconf-exception': 'GPL-2.0-only WITH Autoconf-exception-2.0',
+            'GPL-2.0-with-bison-exception': 'GPL-2.0-only WITH Bison-exception-2.2',
+            'GPL-2.0-with-classpath-exception': 'GPL-2.0-only WITH Classpath-exception-2.0',
+            'GPL-2.0-with-font-exception': 'GPL-2.0-only WITH Font-exception-2.0',
+            'GPL-2.0-with-GCC-exception': 'GPL-2.0-only WITH GCC-exception-2.0',
+            'GPL-3.0-with-autoconf-exception': 'GPL-3.0-only WITH Autoconf-exception-3.0',
+            'GPL-3.0-with-GCC-exception': 'GPL-3.0-only WITH GCC-exception-3.1',
+            'wxWindows': 'LGPL-2.0-or-later WITH  WxWindows-exception-3.1',
         }.items()}
 
         OLD_SPDX_EXCEPTION_LICENSES_SUBS = {

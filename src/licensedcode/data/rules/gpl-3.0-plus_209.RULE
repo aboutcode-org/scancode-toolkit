@@ -1,0 +1,22 @@
+*  This file was produced by an AutoOpts template.  AutoOpts is a
+ *  copyrighted work.  This source file is not encumbered by AutoOpts
+ *  licensing, but is provided under the licensing terms chosen by the
+ *  genshellopt author or copyright holder.  AutoOpts is licensed under
+ *  the terms of the LGPL.  The redistributable library (``libopts'') is
+ *  licensed under the terms of either the LGPL or, at the users discretion,
+ *  the BSD license.  See the AutoOpts and/or libopts sources for details.
+ *
+ * This source file is copyrighted and licensed under the following terms:
+ *
+ * genshellopt is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * genshellopt is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License along
+ * with this program.  If not, see <http://www.gnu.org/licenses/>.

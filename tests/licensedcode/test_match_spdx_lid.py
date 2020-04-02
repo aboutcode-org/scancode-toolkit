@@ -469,3 +469,24 @@ class TestMatchSpdx(FileBasedTesting):
     def test_prepare_text_with_rem(self):
         assert '' == prepare_text('')
         assert 'BSD-2-Clause-Patent' == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')
+
+    def test_get_expression_works_for_legacy_deprecated_old_spdx_symbols(self):
+        exp_by_old = {
+            'eCos-2.0': 'gpl-2.0-plus WITH ecos-exception-2.0',
+            'GPL-2.0-with-autoconf-exception': 'gpl-2.0 WITH autoconf-exception-2.0',
+            'GPL-2.0-with-bison-exception': 'gpl-2.0 WITH bison-exception-2.2',
+            'GPL-2.0-with-classpath-exception': 'gpl-2.0 WITH classpath-exception-2.0',
+            'GPL-2.0-with-font-exception': 'gpl-2.0 WITH font-exception-gpl',
+            'GPL-2.0-with-GCC-exception': 'gpl-2.0 WITH gcc-linking-exception-2.0',
+            'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
+            'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
+            'wxWindows': 'lgpl-2.0-plus WITH wxwindows-exception-3.1',
+        }
+        licensing = Licensing()
+        symbols_by_spdx = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+
+        for test, expected in exp_by_old.items():
+            result = get_expression(
+                test, licensing, symbols_by_spdx, unknown_symbol).render()
+            assert expected == result

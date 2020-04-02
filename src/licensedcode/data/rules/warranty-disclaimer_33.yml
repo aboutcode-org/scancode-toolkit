@@ -1,0 +1,5 @@
+license_expression: warranty-disclaimer
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 80
+notes: See https://github.com/google/js-green-licenses/blob/27a0ccd3be190d598c8d7dcf6eb102d87615d2f1/README.md
