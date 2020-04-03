@@ -1111,3 +1111,18 @@ class TestExtract(FileBasedTesting):
 
         warns = [r.warnings for r in result if r.warnings]
         assert [] == warns
+
+    def test_extract_ignore(self):
+        test_dir = self.get_test_loc('extract/ignore', copy=True)
+        expected = [
+            'a.zip',
+            'a.zip-extract/a.txt',
+            'a.zip-extract/b.zip',
+            'a.zip-extract/b.zip-extract/b.txt',
+            'a.zip-extract/c.tar',
+            'b.tar'
+        ]
+        from extractcode import default_kinds
+        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('*tar',)))
+        check_no_error(result)
+        check_files(test_dir, expected)
