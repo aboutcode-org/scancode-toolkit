@@ -936,13 +936,53 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
     prev_line = None
     dependencies = False
     for line in yarn_lock_lines:
-        line = line.strip()
-        if not line or line.startswith('#'):
-            # A blank line that follows an "un-blank" line signifies a space
-            # between dependencies in yarn.lock. When we reach this point, we should
-            # stop and create an NpmPackage with the data we collected so far
-            if prev_line:
-                deps = []
+        # Check if this is not an empty line or comment
+        if line.strip() and not line.startswith('#'):
+            if line.startswith(' '):
+                if not dependencies:
+                    if line.strip().startswith('version'):
+                        current_package_data['version'] = line.partition('version')[2].strip().strip('\"')
+                    elif line.strip().startswith('resolved'):
+                        current_package_data['download_url'] = line.partition('resolved')[2].strip().strip('\"')
+                    elif line.strip().startswith('dependencies'):
+                        dependencies = True
+                    else:
+                        continue
+                else:
+                    split_line = line.strip().split()
+                    if len(split_line) == 2:
+                        k, v = split_line
+                        # Remove leading and following quotation marks on values
+                        v = v[1:-1]
+                        if 'dependencies' in current_package_data:
+                            current_package_data['dependencies'].append((k, v))
+                        else:
+                            current_package_data['dependencies'] = [(k, v)]
+            else:
+                dependencies = False
+                # Clean up dependency name and requirement strings
+                line = line.strip().replace('\"', '').replace(':', '')
+                split_line_for_name_req = line.split(',')
+                dep_names_and_reqs = defaultdict(list)
+                for segment in split_line_for_name_req:
+                    segment = segment.strip()
+                    dep_name_and_req = segment.rsplit('@', 1)
+                    dep, req = dep_name_and_req
+                    dep_names_and_reqs[dep].append(req)
+                # We should only have one key `dep_names_and_reqs`, where it is the
+                # current dependency we are looking at
+                if len(dep_names_and_reqs.keys()) == 1:
+                    dep, req = list(dep_names_and_reqs.items())[0]
+                    if '@' in dep and '/' in dep:
+                        namespace, name = dep.split('/')
+                        current_package_data['namespace'] = namespace
+                        current_package_data['name'] = name
+                    else:
+                        current_package_data['name'] = dep
+                    current_package_data['requirement'] = ', '.join(req)
+        else:
+            deps = []
+            if current_package_data:
                 for dep, req in current_package_data.get('dependencies', []):
                     deps.append(
                         models.DependentPackage(
@@ -956,6 +996,7 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                     )
                 packages.append(
                     NpmPackage(
+                        namespace=current_package_data.get('namespace'),
                         name=current_package_data.get('name'),
                         version=current_package_data.get('version'),
                         download_url=current_package_data.get('download_url'),
@@ -964,70 +1005,30 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
                 )
                 packages_reqs.append(current_package_data.get('requirement'))
                 current_package_data = {}
-            if dependencies:
-                dependencies = False
-            continue
 
-        # Get name and requirements of dependency
-        split_line_for_name_req = line.split(',')
-        if len(split_line_for_name_req) > 1:
-            # If there is more than one dependency requirement on a line, we
-            # append the requirement to a list in a dict where the key to the
-            # list is the dependency name
-            dep_names_and_reqs = defaultdict(list)
-            for segment in split_line_for_name_req:
-                segment = segment.strip()
-                dep_name_and_req = segment.rsplit('@')
-                dep, req = dep_name_and_req
-
-                # Clean up dependency name and requirement strings
-                dep = dep.strip().replace('\"', '')
-                req = req.replace(':', '')
-
-                dep_names_and_reqs[dep].append(req)
-
-            # We should only have one key `dep_names_and_reqs`, where it is the
-            # current dependency we are looking at
-            if len(dep_names_and_reqs.keys()) == 1:
-                dep, req = list(dep_names_and_reqs.items())[0]
-                current_package_data['name'] = dep
-                current_package_data['requirement'] = ', '.join(req)
-        else:
-            # If there is only a single dependency requirement for a dependency
-            dep_name_and_req = line.rsplit('@')
-            if len(dep_name_and_req) == 2:
-                dep, req = dep_name_and_req
-                current_package_data['name'] = dep
-                current_package_data['requirement'] = req[:-1]
-
-        # See if the follwing lines are key-value pairs we want to collect data
-        # from. These lines are in the form of `key`\ \"`value`\"
-        split_line = line.split()
-        if len(split_line) == 2:
-            k, v = split_line
-            # Remove leading and following quotation marks on values
-            v = v[1:-1]
-            if k == 'version':
-                current_package_data['version'] = v
-            if k == 'resolved':
-                current_package_data['download_url'] = v
-            if dependencies:
-                if 'dependencies' in current_package_data:
-                    current_package_data['dependencies'].append((k, v))
-                else:
-                    current_package_data['dependencies'] = [(k, v)]
-
-        # If the current line we are looking at is exactly 'dependencies:', then
-        # the following lines will be dependencies of the dependency we are
-        # currently looking at, so we set this flag to know that we should
-        # append the following line to the dependencies list of the current
-        # dependency until the flag is set to False
-        if line == 'dependencies:':
-            dependencies = True
-
-        # We keep track of the previous line for the moments we reach a blank
-        # line, so we know to create a new NpmPackage
-        prev_line = line
+    # Add the last element if it's not already added
+    if current_package_data:
+        for dep, req in current_package_data.get('dependencies', []):
+            deps.append(
+                models.DependentPackage(
+                    purl=PackageURL(type='npm', name=dep).to_string(),
+                    scope='dependencies',
+                    requirement=req,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+        packages.append(
+            NpmPackage(
+                namespace=current_package_data.get('namespace'),
+                name=current_package_data.get('name'),
+                version=current_package_data.get('version'),
+                download_url=current_package_data.get('download_url'),
+                dependencies=deps
+            )
+        )
+        packages_reqs.append(current_package_data.get('requirement'))
 
     packages_dependencies = []
     for package, requirement in zip(packages, packages_reqs):
