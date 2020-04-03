@@ -40,7 +40,6 @@ from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
-from packages_test_utils import PackageTester
 
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
@@ -184,16 +183,6 @@ def build_tests(test_dir, clazz, prefix='test_rubygems_parse_', regen=False):
         test_method = create_test_function(test_pom_loc, test_name, regen=regen)
         # attach that method to the class
         setattr(clazz, test_name, test_method)
-
-
-class TestRubyGemfileLock(PackageTester):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-    def test_ruby_gemfile_lock_as_dict(self):
-        test_file = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock')
-        expected_loc = self.get_test_loc('rubygems/gemfile-lock/Gemfile.lock.expected')
-        packages = rubygems.RubyGem.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
 
 
 build_tests(test_dir='rubygems/gem', clazz=TestRubyGemsDataDriven,

@@ -37,7 +37,7 @@ crafted regex):
   a grammar; it has a few thousand tests.
 - licenses and copyrights are detected in texts and binaries
 
-Licensecheck (available here for reference: /https://metacpan.org/pod/App::Licensecheck )
+Licensecheck (available here for reference: /https://metacpan.org/release/App-Licensecheck )
 is a Perl script using hand-crafted regex patterns to find typical copyright statements and
 about 50 common licenses. There are about 50 license detection tests.
 
