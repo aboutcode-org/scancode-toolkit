@@ -1,0 +1,8 @@
+key: hippocratic-2.1
+short_name: Hippocratic License 2.1
+name: The Hippocratic License 2.1
+category: Proprietary Free
+owner: Coraline Ada Ehmke
+homepage_url: https://firstdonoharm.dev/
+ignorable_urls:
+  - https://ethicalsource.dev

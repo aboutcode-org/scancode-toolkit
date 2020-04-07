@@ -1,0 +1,8 @@
+key: cnpl-4.0
+short_name: CNPL 4.0
+name: Cooperative Non-Violent Public License v4
+category: Proprietary Free
+owner: Thufie
+homepage_url: https://thufie.lain.haus/NPL.html
+ignorable_urls:
+    - https://thufie.lain.haus/NPL.html
