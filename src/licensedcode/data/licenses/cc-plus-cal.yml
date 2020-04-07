@@ -8,5 +8,5 @@ ignorable_urls:
     - https://creativecommons.org/choose/
     - https://wiki.creativecommons.org/wiki/CCPlus
 ignorable_authors:
-    - Corporate Accountability Lab NFP (“CAL”)
+    - Corporate Accountability Lab NFP
 
