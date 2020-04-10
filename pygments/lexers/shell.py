@@ -20,7 +20,8 @@ from pygments.util import shebang_matches
 
 __all__ = ['BashLexer', 'BashSessionLexer', 'TcshLexer', 'BatchLexer',
            'SlurmBashLexer', 'MSDOSSessionLexer', 'PowerShellLexer',
-           'PowerShellSessionLexer', 'TcshSessionLexer', 'FishShellLexer']
+           'PowerShellSessionLexer', 'TcshSessionLexer', 'FishShellLexer',
+           'ExeclineLexer']
 
 line_re = re.compile('.*?\n')
 
@@ -847,3 +848,63 @@ class FishShellLexer(RegexLexer):
             include('root'),
         ],
     }
+
+class ExeclineLexer(RegexLexer):
+    """
+    Lexer for Laurent Bercot's execline language
+    (https://skarnet.org/software/execline).
+
+    .. versionadded:: 2.7
+    """
+
+    name = 'execline'
+    aliases = ['execline']
+    filenames = ['*.exec']
+
+    tokens = {
+        'root': [
+            include('basic'),
+            include('data'),
+            include('interp')
+        ],
+        'interp': [
+            (r'\$\{', String.Interpol, 'curly'),
+            (r'\$[\w@#]+', Name.Variable),  # user variable
+            (r'\$', Text),
+        ],
+        'basic': [
+            (r'\b(background|backtick|cd|define|dollarat|elgetopt|'
+             r'elgetpositionals|elglob|emptyenv|envfile|exec|execlineb|'
+             r'exit|export|fdblock|fdclose|fdmove|fdreserve|fdswap|'
+             r'forbacktickx|foreground|forstdin|forx|getcwd|getpid|heredoc|'
+             r'homeof|if|ifelse|ifte|ifthenelse|importas|loopwhilex|'
+             r'multidefine|multisubstitute|pipeline|piperw|posix-cd|'
+             r'redirfd|runblock|shift|trap|tryexec|umask|unexport|wait|'
+             r'withstdinas)\b', Name.Builtin),
+            (r'\A#!.+\n', Comment.Hashbang),
+            (r'#.*\n', Comment.Single),
+            (r'[{}]', Operator)
+        ],
+        'data': [
+            (r'(?s)"(\\.|[^"\\$])*"', String.Double),
+            (r'"', String.Double, 'string'),
+            (r'\s+', Text),
+            (r'[^\s{}$"\\]+', Text)
+        ],
+        'string': [
+            (r'"', String.Double, '#pop'),
+            (r'(?s)(\\\\|\\.|[^"\\$])+', String.Double),
+            include('interp'),
+        ],
+        'curly': [
+            (r'\}', String.Interpol, '#pop'),
+            (r'[\w#@]+', Name.Variable),
+            include('root')
+        ]
+
+    }
+
+    def analyse_text(text):
+        if shebang_matches(text, r'execlineb'):
+            return 1
+
