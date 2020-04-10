@@ -162,7 +162,7 @@ License
 =======
 
 * Apache-2.0 with an acknowledgement required to accompany the scan output.
-* Public domain CC-0 for reference datasets.
+* Public domain CC0-1.0 for reference datasets.
 * Multiple licenses (GPL2/3, LGPL, MIT, BSD, etc.) for third-party components.
 
 See the NOTICE file and the .ABOUT files that document the origin and license of
