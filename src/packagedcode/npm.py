@@ -1,5 +1,5 @@
 
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018-2020 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -829,7 +829,11 @@ def build_packages_from_lockfile(package_data):
     for dependency, values in package_data.get('dependencies', {}).items():
         is_dev = values.get('dev', False)
         dep_deps = []
-
+        namespace = None
+        name = dependency
+        if '/' in dependency:
+            namespace = dependency.partition('/')[0]
+            name = dependency.partition('/')[2]
         # Handle the case where an entry in `dependencies` from a
         # package-lock.json file has `requires`
         for dep, dep_req in values.get('requires', {}).items():
@@ -882,7 +886,8 @@ def build_packages_from_lockfile(package_data):
             )
 
         p = NpmPackage(
-            name=dependency,
+            namespace=namespace,
+            name=name,
             version=values.get('version'),
             download_url=values.get('resolved'),
             dependencies=dep_deps,
