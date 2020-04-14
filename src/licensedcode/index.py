@@ -842,13 +842,13 @@ class LicenseIndex(object):
         for matcher, include_low, matcher_name in matchers:
             if TRACE:
                 logger_debug()
-                logger_debug('matching with matcher:', matcher)
+                logger_debug('matching with matcher:', matcher_name)
 
             matched = matcher(qry, matched_qspans=already_matched_qspans,
                               existing_matches=matches, deadline=deadline)
             if TRACE:
                 self.debug_matches(
-                    matches=matched, message='matched with: '+matcher_name,
+                    matches=matched, message='matched with: ' + matcher_name,
                     location=location, query_string=query_string)  # , with_text, query)
 
             matched = match.merge_matches(matched)
