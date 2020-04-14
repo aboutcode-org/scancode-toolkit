@@ -832,8 +832,7 @@ def build_packages_from_lockfile(package_data):
         namespace = None
         name = dependency
         if '/' in dependency:
-            namespace = dependency.partition('/')[0]
-            name = dependency.partition('/')[2]
+            namespace, _slash, name = dependency.partition('/')
         # Handle the case where an entry in `dependencies` from a
         # package-lock.json file has `requires`
         for dep, dep_req in values.get('requires', {}).items():
