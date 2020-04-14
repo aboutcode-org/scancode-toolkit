@@ -5,9 +5,13 @@ category: Permissive
 owner: COSCL - China Open Source Cloud League
 homepage_url: https://license.coscl.org.cn/MulanPSL2
 text_urls:
-    - https://license.coscl.org.cn/MulanPSL2
+  - https://license.coscl.org.cn/MulanPSL2
 ignorable_urls:
-    - http://license.coscl.org.cn/MulanPSL2
+  - http://license.coscl.org.cn/MulanPSL2
+ignorable_copyrights:
+  - copyright holder Software Name
+ignorable_holders:
+  - Software Name
 notes: there is also a Chinese version of this text.
 standard_notice: |
     [Software Name] is licensed under Mulan PSL v2.
