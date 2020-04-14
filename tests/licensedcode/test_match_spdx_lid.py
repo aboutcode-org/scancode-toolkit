@@ -47,7 +47,8 @@ from licensedcode.match_spdx_lid import _reparse_invalid_expression
 from licensedcode.match_spdx_lid import clean_text
 from licensedcode.match_spdx_lid import get_expression
 from licensedcode.match_spdx_lid import prepare_text
-from licensedcode.match_spdx_lid import strip_spdx_lid
+from licensedcode.match_spdx_lid import split_spdx_lid
+from licensedcode.match_spdx_lid import _split_spdx_lid
 from licensedcode import models
 from licensedcode.query import Query
 
@@ -71,10 +72,9 @@ From uboot: the first two lines are patch-like:
 
         qry = Query(query_string=querys, idx=idx)
         expected = [
-            (u'(BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)', 3, 15),
-            (u'EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0', 19, 34),
-            (u'GPL-2.0+ BSD-2-Clause', 48, 53)
-        ]
+            ('SPDX-License-Identifier:  (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',  0,  15),
+            ('SPDX-License-Identifier:  EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',16,  34),
+            ('SPDX-License-Identifier:      GPL-2.0+ BSD-2-Clause', 45, 53)]
 
         assert expected == qry.spdx_lines
 
@@ -196,46 +196,82 @@ class TestMatchSpdx(FileBasedTesting):
             '// SPDX-License-Identifier: GPL-2.0+',
             '/* SPDX-License-Identifier: GPL-2.0+ */',
             '* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause )',
-            '(/ SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)',
+            '(/ SPDX-Licence--Identifier: (GPL-2.0 OR BSD-3-Clause)',
             '// SPDX-License-Identifier: LGPL-2.1+',
             '+SPDX-License-Identifier:    GPL-2.0+',
             '* SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause',
-            '// SPDX License Identifier LGPL-2.1+',
+            '// SPDX Licence Identifier LGPL-2.1+',
         ]
 
         expected = [
-            '(BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',
-            'BSD-3-Clause',
-            'BSD-3-Clause',
-            'BSD-3-Clause',
-            'GPL-1.0+ WITH Linux-syscall-note',
-            'GPL-2.0+',
-            'GPL-2.0',
-            'GPL-2.0',
-            'GPL-2.0',
-            'GPL-2.0',
-            'GPL-2.0+',
-            'GPL-2.0+',
-            '(GPL-2.0+ OR BSD-3-Clause )',
-            '(GPL-2.0 OR BSD-3-Clause)',
-            'LGPL-2.1+',
-            'GPL-2.0+',
-            'GPL-2.0+ BSD-2-Clause',
-            'LGPL-2.1+'
+            ('SPDX-License-Identifier:', '(BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)'),
+            ('SPDX-License-Identifier:', 'BSD-3-Clause'),
+            ('SPDX-License-Identifier:', 'BSD-3-Clause'),
+            ('SPDX-License-Identifier:', 'BSD-3-Clause'),
+            ('SPDX-License-Identifier:', 'GPL-1.0+ WITH Linux-syscall-note'),
+            ('SPDX-License-Identifier:', 'GPL-2.0+'),
+            ('SPDX-License-Identifier:', 'GPL-2.0'),
+            ('SPDX-License-Identifier:', 'GPL-2.0'),
+            ('SPDX-License-Identifier:', 'GPL-2.0'),
+            ('SPDX-License-Identifier:', 'GPL-2.0'),
+            ('SPDX-License-Identifier:', 'GPL-2.0+'),
+            ('SPDX-License-Identifier:', 'GPL-2.0+'),
+            ('SPDX-License-Identifier:', '(GPL-2.0+ OR BSD-3-Clause )'),
+            ('SPDX-Licence--Identifier:', '(GPL-2.0 OR BSD-3-Clause)'),
+            ('SPDX-License-Identifier:', 'LGPL-2.1+'),
+            ('SPDX-License-Identifier:', 'GPL-2.0+'),
+            ('SPDX-License-Identifier:', 'GPL-2.0+ BSD-2-Clause'),
+            ('SPDX Licence Identifier', 'LGPL-2.1+')
         ]
         results = [prepare_text(test) for test in tests]
         assert expected == results
 
-    def test_strip_spdx_lid(self):
+    def test_prepare_text_with_rem(self):
+        assert (None, '') == prepare_text('')
+        assert ('SPDX-License-Identifier:', 'BSD-2-Clause-Patent') == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')
+
+    def test_split_spdx_lid(self):
         test = [
             'SPDX  License   Identifier  : BSD-3-Clause',
             'SPDX-License-Identifier  : BSD-3-Clause',
             'spdx-license- identifier  : BSD-3-Clause',
             ' SPDX License--Identifier: BSD-3-Clause',
             'SPDX-License-Identifier : BSD-3-Clause',
+            'SPDx-Licence-Identifier : BSD-3-Clause',
+            'SPD-Licence-Identifier : BSD-3-Clause',
         ]
-        results = [strip_spdx_lid(l) for l in test]
-        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause', 'BSD-3-Clause']
+        results = [split_spdx_lid(l) for l in test]
+        expected = [
+            ('SPDX  License   Identifier  : ', 'BSD-3-Clause'),
+            ('SPDX-License-Identifier  : ', 'BSD-3-Clause'),
+            ('spdx-license- identifier  : ', 'BSD-3-Clause'),
+            ('SPDX License--Identifier: ', 'BSD-3-Clause'),
+            ('SPDX-License-Identifier : ', 'BSD-3-Clause'),
+            ('SPDx-Licence-Identifier : ', 'BSD-3-Clause'),
+            (None, 'SPD-Licence-Identifier : BSD-3-Clause'),
+        ]
+        assert expected == results
+
+    def test__split_spdx_lid(self):
+        test = [
+            'REM DNL SPDX  License   Identifier  : BSD-3-Clause',
+            'SPDX-License-Identifier  : BSD-3-Clause',
+            'spdx-license- identifier  : BSD-3-Clause',
+            ' SPDX License--Identifier: BSD-3-Clause',
+            ' SPDX Licence--Identifier: BSD-3-Clause',
+            'SPDX-License-Identifier : BSD-3-Clause',
+            'SPDX-License-Identifer : BSD-3-Clause',
+        ]
+        results = [_split_spdx_lid(l) for l in test]
+        expected = [
+            ['REM DNL ', 'SPDX  License   Identifier  : ', 'BSD-3-Clause'],
+            ['', 'SPDX-License-Identifier  : ', 'BSD-3-Clause'],
+            ['', 'spdx-license- identifier  : ', 'BSD-3-Clause'],
+            [' ', 'SPDX License--Identifier: ', 'BSD-3-Clause'],
+            [' ', 'SPDX Licence--Identifier: ', 'BSD-3-Clause'],
+            ['', 'SPDX-License-Identifier : ', 'BSD-3-Clause'],
+            ['SPDX-License-Identifer : BSD-3-Clause'],
+        ]
         assert expected == results
 
     def test_get_expression_quoted(self):
@@ -466,10 +502,6 @@ class TestMatchSpdx(FileBasedTesting):
             for token in tokens:
                 dic[token]
 
-    def test_prepare_text_with_rem(self):
-        assert '' == prepare_text('')
-        assert 'BSD-2-Clause-Patent' == prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent')
-
     def test_get_expression_works_for_legacy_deprecated_old_spdx_symbols(self):
         exp_by_old = {
             'eCos-2.0': 'gpl-2.0-plus WITH ecos-exception-2.0',
@@ -490,3 +522,19 @@ class TestMatchSpdx(FileBasedTesting):
             result = get_expression(
                 test, licensing, symbols_by_spdx, unknown_symbol).render()
             assert expected == result
+
+    def test_spdx_match_contains_spdx_prefix(self):
+        from licensedcode import index
+        from licensedcode import tracing
+        rule_dir = self.get_test_loc('spdx/rules-overlap/rules')
+        lics_dir = self.get_test_loc('spdx/rules-overlap/licenses')
+        idx = index.LicenseIndex(models.get_rules(lics_dir, rule_dir))
+        querys = 'SPDX-license-identifier: BSD-3-Clause-No-Nuclear-Warranty'
+        matches = idx.match(query_string=querys)
+        assert 1 == len(matches)
+        match = matches[0]
+        qtext, itext = tracing.get_texts(match)
+        expected_qtext = 'SPDX-license-identifier: BSD-3-Clause-No-Nuclear-Warranty'
+        assert expected_qtext == qtext
+        expected_itext = 'spdx license identifier bsd 3 clause no nuclear warranty'
+        assert expected_itext == itext
