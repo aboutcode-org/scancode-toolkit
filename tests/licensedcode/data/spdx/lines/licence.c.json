@@ -1,0 +1,37 @@
+[
+  [
+    "SPDX-Licence-Identifier:  GPL-2.0+",
+    0,
+    5
+  ],
+  [
+    "SPDX-Licence-Identifier:  GPL-2.0",
+    6,
+    11
+  ],
+  [
+    "SPDX-Licence-Identifier:  GPL-2.0+",
+    12,
+    17
+  ],
+  [
+    "SPDX-Licence-Identifier:     GPL-2.0+",
+    18,
+    23
+  ],
+  [
+    "SPDX-Licence-Identifier:  BSD-3-Clause",
+    24,
+    29
+  ],
+  [
+    "SPDX-Licence-Identifier:  EUPL-1.2",
+    30,
+    35
+  ],
+  [
+    "SPDX-Licence-Identifier:  LGPL-2.1+ The author added a static linking exception, see License.txt.",
+    36,
+    50
+  ]
+]
