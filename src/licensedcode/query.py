@@ -389,7 +389,7 @@ class Query(object):
                 # keep the line, start/end known pos for SPDX matching
                 spdx_prefix, spdx_expression = split_spdx_lid(line)
                 spdx_text = ' '.join([spdx_prefix or '', spdx_expression])
-                spdx_start_known_pos = line_first_known_pos + spdx_start_offset - 1
+                spdx_start_known_pos = line_first_known_pos + spdx_start_offset
 
                 if spdx_start_known_pos <= line_last_known_pos:
                     self.spdx_lines.append((spdx_text, spdx_start_known_pos, line_last_known_pos))
