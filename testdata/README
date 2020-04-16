@@ -6,12 +6,6 @@ N is a sequence number.
 The header starts with any number of comment lines beginning with #,
 which are ignored.
 
-It is followed by an optional line specifying the set of licenses to test against:
-
-	set <name list>
-
-The valid names are defined in license_test.go.
-
 After that optional line comes the expected Coverage result, in the form:
 
 	90.5%
@@ -22,4 +16,28 @@ the list of Match entries. Each Match contains the license Name, Percent,
 Start, and End offsets. As a special case, the End offset can be written as "$"
 if it extends to the end of the file. If IsURL is true, the line ends with the
 literal field "URL". Otherwise that field is omitted.
+
+After that stanza comes an optional additional expected Coverage result,
+for use with the Scan function. It looks the same but starts with a line
+that says "scan":
+
+	scan
+	100%
+	BSD 100% 0,$
+
+If the Scan stanza is omitted, the Scan function is expected to find nothing.
+
+As a special case, if the Cover and Scan results are the same:
+
+	100%
+	BSD 100% 0,$
+	scan
+	100%
+	BSD 100% 0,$
+
+this can be shortened to
+
+	cover+scan
+	100%
+	BSD 100% 0,$
 
