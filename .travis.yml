@@ -84,10 +84,9 @@ matrix:
       script: 
         - source bin/activate
         - cd docs
-        # This script tests the Sphinx Documentation build
-        # Also checks for broken links in the documentation
-        - ./scripts/sphinx_build_link_check.sh
-        # This script checks for documentation style errors
+        # Check that the Sphinx Documentation build minimally
+        - sphinx-build -E source build
+        # Check for documentation style errors
         - ./scripts/doc8_style_check.sh
       language: python
       python: "3.6"

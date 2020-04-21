@@ -1,0 +1,3 @@
+license_expressions:
+  - gpl-2.0
+notes: the English way to spell licence is a typo in the reference. It should have been SPDX-License-Identifier

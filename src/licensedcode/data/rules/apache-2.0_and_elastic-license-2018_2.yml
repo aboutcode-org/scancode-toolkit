@@ -1,0 +1,6 @@
+license_expression: apache-2.0 AND elastic-license-2018
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - APACHE-LICENSE-2.0.txt
+    - ELASTIC-LICENSE.txt

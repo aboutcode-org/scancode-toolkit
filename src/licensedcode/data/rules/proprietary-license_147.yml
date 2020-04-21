@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 55
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - https://aka.ms/getsource
+    - https://go.microsoft.com/fwlink/?LinkId=528096&clcid=0x409

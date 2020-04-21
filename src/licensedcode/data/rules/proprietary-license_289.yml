@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.paratype.ru/

@@ -4,28 +4,12 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
+        "--consolidate": true,
         "--copyright": true,
         "--info": true,
         "--json": "<file>",
         "--license": true,
         "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -210,7 +194,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -237,7 +221,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -289,7 +273,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -316,7 +300,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -368,7 +352,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -395,7 +379,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -675,7 +659,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -702,7 +686,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],

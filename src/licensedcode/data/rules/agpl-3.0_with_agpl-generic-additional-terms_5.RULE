@@ -1,0 +1,55 @@
+AGPL with Openlabs Exception License
+
+Version 1, June 2013, 26th
+
+Copyright © 2013 Openlabs <http://openlabs.co.in>
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+
+This version of the "AGPL with Openlabs Exception License" 
+incorporates the terms and conditions of version 3 of the 
+GNU Affero General Public License, supplemented by the 
+additional permissions listed below.
+
+0. Additional Definitions.
+
+As used herein, “this License” refers to version 1 of the 
+"AGPL with Openlabs Exception License", and the “GNU AGPL”
+refers to version 3 of the GNU Affero General Public License.
+
+As defined in the GNU AGPL, "The Program" refers to any 
+copyrightable work licensed under this License. In the context 
+of this License, the Program refers to itsbroken (not the broken
+nature of OpenERP itself) including all its components.
+
+1. Exception to section 13 of the GNU AGPL.
+
+Notwithstanding other provisions of the GNU AGPL License, you 
+may run, modify or extend the Program (i.e. make covered work),
+without having to offer all users an opportunity to receive the 
+Corresponding Source of your version, provided that all of the 
+following conditions are met:
+
+  * You have tweeted atleast once with the #sorryopenerp tag 
+    (Frequent bugs in Open ERP will push you in the right 
+    direction)
+  * You have visited the Tryton website atleast once.
+  * You believe that code without test is broken code, (like 
+    Hollywood is incomplete without Julia Roberts)
+  * You do not use OpenERP or any modules with the "OpenERP 
+    AGPL + Private Use License"
+
+If any of the above conditions are not met, this section does 
+not apply anymore, and the original terms of the GNU AGPL 
+License apply, in particular section 13.
+
+If the Program specifies that a proxy can decide which future
+versions of the "AGPL with Openlabs Exception License" can be 
+used, that proxy's public statement of acceptance of a version
+permanently authorizes you to choose that version for the Program.
+
+Later license versions may give you additional or different 
+permissions. However, no additional obligations are imposed on 
+any author or copyright holder as a result of your choosing to 
+follow a later version.

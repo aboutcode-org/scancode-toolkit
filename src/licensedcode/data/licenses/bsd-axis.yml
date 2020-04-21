@@ -4,3 +4,5 @@ name: BSD-Axis
 category: Permissive
 owner: Axis Communications
 notes: This is a variant composed of clause 1 and 3 of a BSD-Modified found in the Linux kernel
+ This is now replaced by the bsd-source-code license.
+is_deprecated: yes

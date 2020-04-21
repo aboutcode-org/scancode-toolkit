@@ -1,0 +1,9 @@
+license_expression: cups
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE.txt
+notes: newer versions are Apache-licensed
+ignorable_urls:
+    - http://www.cups.org/

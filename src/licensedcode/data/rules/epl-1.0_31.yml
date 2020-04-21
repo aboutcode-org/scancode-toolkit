@@ -1,0 +1,6 @@
+license_expression: epl-1.0
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - third_party/testdata/eclipse_license.txt

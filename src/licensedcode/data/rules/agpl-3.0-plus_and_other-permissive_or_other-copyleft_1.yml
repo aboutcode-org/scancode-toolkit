@@ -1,0 +1,4 @@
+license_expression: agpl-3.0-plus AND (other-permissive OR other-copyleft)
+is_license_reference: yes
+relevance: 99
+notes: a weak reference to other licenses compatible with the AGPL

@@ -313,8 +313,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
@@ -348,8 +348,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
@@ -383,8 +383,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },

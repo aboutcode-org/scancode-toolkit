@@ -1,0 +1,8 @@
+binaries use Qt
+(http://www.trolltech.com) which is released under GPL for X11.
+
+binaries are released under the GPL, with the added exception
+that we also give permission to link this program with the Qt
+non-commercial edition, and distribute the resulting executable,
+without including the source code for the Qt non-commercial edition in
+the source distribution.

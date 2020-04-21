@@ -1,0 +1,12 @@
+license_expression: (gpl-2.0-plus OR commercial-license) AND unknown-license-reference
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - (c) 2006-2020 Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar
+ignorable_holders:
+    - Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.html
+ignorable_emails:
+    - dev@sqlmap.org
+    - sales@sqlmap.org

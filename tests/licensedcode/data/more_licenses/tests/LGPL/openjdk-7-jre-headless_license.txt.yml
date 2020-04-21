@@ -26,14 +26,14 @@ license_expressions:
   - npl-1.1
   - mpl-1.1
   - khronos
+  - apache-2.0
   - apache-1.1
   - apache-1.1
-  - public-domain
-  - sax-pd
-  - sax-pd
-  - sax-pd
   - apache-1.1
-  - proprietary-license
+  - apache-1.1
+  - standard-ml-nj
+  - sax-pd
+  - bzip2-libbzip-2010
   - bzip2-libbzip-2010
   - bsd-new
   - libpng
@@ -43,6 +43,7 @@ license_expressions:
   - apache-2.0
   - x11
   - unknown
+  - unicode
   - bzip2-libbzip-2010
   - mit
   - unknown
@@ -72,7 +73,6 @@ license_expressions:
   - warranty-disclaimer
   - x11-xconsortium
   - x11
-  - mit-no-advert-export-control
   - x11-keith-packard
   - x11-opengroup
   - x11-keith-packard
@@ -88,8 +88,7 @@ license_expressions:
   - apache-1.1
   - public-domain
   - zlib
-  - gpl-2.0-plus
-  - gpl-1.0-plus
+  - gpl-2.0-plus AND other-permissive AND other-copyleft
   - mozilla-gc
   - gpl-1.0-plus AND other-permissive AND other-copyleft
   - mit

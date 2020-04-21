@@ -1,0 +1,5 @@
+license_expression: polyform-small-business-1.0.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://polyformproject.org/licenses/small-business/1.0.0

@@ -1,0 +1,57 @@
+*   LICENSE:
+ *   This program is free software: you can redistribute it
+ *   and/or modify it under the terms of the GNU Affero
+ *   General Public License as published by the Free Software
+ *   Foundation, either version 3 of the License, or (at your
+ *   option) any later version.
+ *
+ *   ADDITIONAL PERMISSION under the GNU Affero GPL version 3
+ *   section 7: (This paragraph applies only to the LAGPLv3
+ *   components listed above.) If you modify this Program, or
+ *   any covered work, by linking or combining it with other
+ *   code, such other code is not for that reason alone subject
+ *   to any of the requirements of the GNU Affero GPL version 3.
+ *   (==> This means if you are only using the OT API, then you
+ *   don't have to open-source your code--only your changes to
+ *   Open-Transactions itself must be open source. Similar to
+ *   LGPLv3, except it applies to software-as-a-service, not
+ *   just to distributing binaries.)
+ *
+ *   Extra WAIVER for OpenSSL, Lucre, and all other libraries
+ *   used by Open Transactions: This program is released under
+ *   the AGPL with the additional exemption that compiling,
+ *   linking, and/or using OpenSSL is allowed. The same is true
+ *   for any other open source libraries included in this
+ *   project: complete waiver from the AGPL is hereby granted to
+ *   compile, link, and/or use them with Open-Transactions,
+ *   according to their own terms, as long as the rest of the
+ *   Open-Transactions terms remain respected, with regard to
+ *   the Open-Transactions code itself.
+ *
+ *   Lucre License:
+ *   This code is also "dual-license", meaning that Ben Lau-
+ *   rie's license must also be included and respected, since
+ *   the code for Lucre is also included with Open Transactions.
+ *   See Open-Transactions/src/otlib/lucre/LUCRE_LICENSE.txt
+ *   The Laurie requirements are light, but if there is any
+ *   problem with his license, simply remove the Lucre code.
+ *   Although there are no other blind token algorithms in Open
+ *   Transactions (yet. credlib is coming), the other functions
+ *   will continue to operate.
+ *   See Lucre on Github:  https://github.com/benlaurie/lucre
+
+ *   You should have received a copy of the GNU Affero General
+ *   Public License along with this program.  If not, see:
+ *   http://www.gnu.org/licenses/
+ *
+ *   If you would like to use this software outside of the free
+ *   software license, please contact FellowTraveler.
+ *   (Unfortunately many will run anonymously and untraceably,
+ *   so who could really stop them?)
+ *
+ *   DISCLAIMER:
+ *   This program is distributed in the hope that it will be
+ *   useful, but WITHOUT ANY WARRANTY; without even the implied
+ *   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ *   PURPOSE.  See the GNU Affero General Public License for
+ *   more details.
