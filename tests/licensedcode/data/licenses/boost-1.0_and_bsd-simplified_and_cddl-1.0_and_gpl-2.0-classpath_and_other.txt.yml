@@ -3,7 +3,7 @@ license_expressions:
   - lgpl-3.0
   - lgpl-3.0
   - lgpl-3.0
-  - unknown
+  - unknown-license-reference
   - boost-original
   - apache-2.0
   - apache-2.0
@@ -12,15 +12,15 @@ license_expressions:
   - spl-1.0
   - lgpl-2.0-plus
   - bsd-new
-  - unknown
+  - unknown-license-reference
   - bitstream
-  - unknown
+  - unknown-license-reference
   - liberation-font-exception
-  - unknown
+  - unknown-license-reference
   - boost-1.0
-  - unknown
+  - unknown-license-reference
   - boost-original
-  - unknown
+  - unknown-license-reference
   - x11-keith-packard
   - mpl-1.1 OR lgpl-2.1
   - lgpl-2.1
@@ -28,7 +28,7 @@ license_expressions:
   - mpl-1.1
   - lgpl-2.1
   - lgpl-2.1
-  - unknown
+  - unknown-license-reference
   - curl
   - gpl-1.0
   - gpl-2.0-plus
@@ -43,63 +43,63 @@ license_expressions:
   - bsd-original
   - lgpl-2.0-plus
   - w3c-software-19980720
-  - unknown
+  - unknown-license-reference
   - ijg
   - w3c-software-19980720
   - lgpl-2.0-plus
   - bsd-new
   - bsd-new
   - w3c-software-19980720
-  - unknown
+  - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - unknown
+  - unknown-license-reference
   - x11-xconsortium
   - lgpl-2.1
   - other-permissive
   - apache-2.0
-  - unknown
+  - unknown-license-reference
   - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
   - gpl-1.0-plus
   - fsf-unlimited-no-warranty
   - mpl-1.1
-  - unknown
+  - unknown-license-reference
   - openssl-ssleay
   - python
   - lgpl-2.0 OR apache-2.0
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
   - other-permissive
-  - unknown
+  - unknown-license-reference
   - mit-old-style
   - mpl-1.0
   - mpl-1.0
   - curl
-  - unknown
+  - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - unknown
+  - unknown-license-reference
   - x11-xconsortium
   - lgpl-2.1
   - other-permissive
   - apache-2.0
-  - unknown
+  - unknown-license-reference
   - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
   - gpl-1.0-plus
   - fsf-unlimited-no-warranty
   - mpl-1.1
-  - unknown
+  - unknown-license-reference
   - openssl-ssleay
   - python
   - lgpl-2.0 OR apache-2.0
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
   - other-permissive
-  - unknown
+  - unknown-license-reference
   - mit-old-style
   - mpl-1.0
   - cddl-1.0 OR gpl-2.0

@@ -1,0 +1,15 @@
+key: bsd-new
+short_name: BSD-3-Clause
+name: BSD-3-Clause
+category: Permissive
+owner: Regents of the University of California
+homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: BSD-3-Clause
+text_urls:
+    - http://www.opensource.org/licenses/BSD-3-Clause
+osi_url: http://www.opensource.org/licenses/BSD-3-Clause
+other_urls:
+    - http://framework.zend.com/license/new-bsd
+    - https://opensource.org/licenses/BSD-3-Clause
+osi_license_key: BSD-3
