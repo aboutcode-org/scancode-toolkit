@@ -137,7 +137,7 @@ def flatten_scan(scan, headers):
 
         errors = scanned_file.pop('scan_errors', [])
 
-        file_info = OrderedDict(Resource=path)
+        file_info = OrderedDict(path=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, (list, dict))))
@@ -148,12 +148,12 @@ def flatten_scan(scan, headers):
         yield file_info
 
         for lic_exp in scanned_file.get('license_expressions', []):
-            inf = OrderedDict(Resource=path, license_expression=lic_exp)
+            inf = OrderedDict(path=path, license_expression=lic_exp)
             collect_keys(inf, 'license_expression')
             yield inf
 
         for licensing in scanned_file.get('licenses', []):
-            lic = OrderedDict(Resource=path)
+            lic = OrderedDict(path=path)
             for k, val in licensing.items():
                 # do not include matched text for now.
                 if k == 'matched_text':
@@ -183,7 +183,7 @@ def flatten_scan(scan, headers):
             yield lic
 
         for copyr in scanned_file.get('copyrights', []):
-            inf = OrderedDict(Resource=path)
+            inf = OrderedDict(path=path)
             inf['copyright'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -191,7 +191,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('holders', []):
-            inf = OrderedDict(Resource=path)
+            inf = OrderedDict(path=path)
             inf['copyright_holder'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -199,7 +199,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('authors', []):
-            inf = OrderedDict(Resource=path)
+            inf = OrderedDict(path=path)
             inf['author'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -207,13 +207,13 @@ def flatten_scan(scan, headers):
             yield inf
 
         for email in scanned_file.get('emails', []):
-            email_info = OrderedDict(Resource=path)
+            email_info = OrderedDict(path=path)
             email_info.update(email)
             collect_keys(email_info, 'email')
             yield email_info
 
         for url in scanned_file.get('urls', []):
-            url_info = OrderedDict(Resource=path)
+            url_info = OrderedDict(path=path)
             url_info.update(url)
             collect_keys(url_info, 'url')
             yield url_info
@@ -286,7 +286,7 @@ def flatten_package(_package, path, prefix='package__'):
 
     package_columns = get_package_columns()
 
-    pack = OrderedDict(Resource=path)
+    pack = OrderedDict(path=path)
     for k, val in _package.items():
         if k not in package_columns:
             continue
