@@ -8,8 +8,6 @@ graft docs
 graft tests
 graft plugins-builtin
 
-prune src/scancode_toolkit.egg-info
-
 include .bumpversion.cfg
 include .coveragerc
 include .gitattributes
@@ -28,10 +26,8 @@ include conftest.py
 include CONTRIBUTING.rst
 include extractcode
 include extractcode.bat
-include ISSUE_TEMPLATE.md
 include MANIFEST.in
 include NOTICE
-include pyvenv.cfg
 include README.rst
 include scancode
 include scancode-toolkit.ABOUT
