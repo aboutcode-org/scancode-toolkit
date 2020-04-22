@@ -1,0 +1,7 @@
+license_expression: epl-1.0 AND bsd-new
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - license/third_party/testdata/eclipse_license.txt
+    - license/third_party/testdata/eclipse_distribution_license.txt

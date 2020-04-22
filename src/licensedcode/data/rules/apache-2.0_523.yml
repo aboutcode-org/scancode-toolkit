@@ -1,0 +1,7 @@
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_authors:
+    - The Apache Software Foundation (http://www.apache.org/)
+ignorable_urls:
+    - http://www.apache.org/

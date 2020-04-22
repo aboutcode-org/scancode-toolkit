@@ -576,6 +576,7 @@ def get_essential_spdx_tokens():
     """
     yield 'spdx'
     yield 'license'
+    yield 'licence'
     yield 'identifier'
     yield 'licenseref'
 
@@ -1256,6 +1257,8 @@ class SpdxRule(Rule):
         self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False
+        self.relevance =100
+        self.has_stored_relevance = True
 
     def load(self):
         raise NotImplementedError

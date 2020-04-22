@@ -564,10 +564,10 @@ class LicenseIndex(object):
         if from_spdx_id_lines:
             qrs_and_texts = query.spdx_lid_query_runs_and_text()
         else:
-            # if we are not specifically looking at a single SPDX-Licene-
-            # identifier line, then use the whole query run with the whole text
-            # note this can only work for small texts or this will make the
-            # experssion parser choke
+            # If we are not specifically looking at a single SPDX-Licene-
+            # identifier line, then use the whole query run with the whole text.
+            # Note this can only work for small texts or this will likely make
+            # the expression parser choke if you feed it large texts
             query_lines = [ln for _, ln
                 in tokenize.query_lines(query.location, query.query_string)]
             qrs_and_texts = query.whole_query_run(), u'\n'.join(query_lines)
@@ -827,28 +827,28 @@ class LicenseIndex(object):
         matches = []
 
         if USE_AHO_FRAGMENTS:
-            approx = (self.get_fragments_matches, False)
+            approx = self.get_fragments_matches
         else:
-            approx = (self.get_approximate_matches, False)
+            approx = self.get_approximate_matches
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
-            (self.get_spdx_id_matches, True),
-            (self.get_exact_matches, False),
-            approx
+            (self.get_spdx_id_matches, True, 'spdx_lid'),
+            (self.get_exact_matches, False, 'aho'),
+            (approx, False, 'seq'),
         ]
 
         already_matched_qspans = []
-        for matcher, include_low in matchers:
+        for matcher, include_low, matcher_name in matchers:
             if TRACE:
                 logger_debug()
-                logger_debug('matching with matcher:', matcher)
+                logger_debug('matching with matcher:', matcher_name)
 
             matched = matcher(qry, matched_qspans=already_matched_qspans,
                               existing_matches=matches, deadline=deadline)
             if TRACE:
                 self.debug_matches(
-                    matches=matched, message='matched',
+                    matches=matched, message='matched with: ' + matcher_name,
                     location=location, query_string=query_string)  # , with_text, query)
 
             matched = match.merge_matches(matched)

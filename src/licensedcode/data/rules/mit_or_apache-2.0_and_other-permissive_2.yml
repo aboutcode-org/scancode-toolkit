@@ -1,0 +1,4 @@
+license_expression: (mit OR apache-2.0) AND other-permissive
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 100

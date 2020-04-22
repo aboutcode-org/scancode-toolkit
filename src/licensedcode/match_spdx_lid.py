@@ -45,6 +45,17 @@ from licensedcode.spans import Span
 """
 Matching strategy for license expressions and "SPDX-License-Identifier:"
 expression tags.
+The matching aproach is a tad different:
+
+First, we do not run this matcher against whoel queries. Instead the matchable
+text is collected during the query processing as Query.spdx_lines for any line
+that starts withs these tokens ['spdx', 'license', 'identifier'] or ['spdx',
+'licence', 'identifier'] begining with the first, second or third token position
+in a line.
+
+Then the words after "SPDX-license-identifier" are parsed as if theyr were an
+SPDX license expression (with a few extra symbols and/or deprecated symbols
+added to the list of license keys.
 """
 
 # Tracing flags
@@ -84,31 +95,13 @@ def spdx_id_match(idx, query_run, text):
     symbols_by_spdx = get_spdx_symbols()
     unknown_symbol = get_unknown_spdx_symbol()
 
-    expression = get_expression(text, licensing, symbols_by_spdx, unknown_symbol)
+    _prefix, exp_text = prepare_text(text)
+    expression = get_expression(exp_text, licensing, symbols_by_spdx, unknown_symbol)
     expression_str = expression.render()
-
-    if TRACE:
-        logger_debug('spdx_id_match: expression:', repr(expression_str))
-
-    # how many known or unknown-spdx symbols occurence do we have?
-    known_syms = 0
-    unknown_syms = 0
-    for sym in licensing.license_symbols(expression, unique=False, decompose=True):
-        if sym == unknown_symbol:
-            unknown_syms += 1
-        else:
-            known_syms += 1
 
     match_len = len(query_run)
     match_start = query_run.start
     matched_tokens = query_run.tokens
-
-    if TRACE:
-        logger_debug('spdx_id_match: matched_tokens: 1:',
-                     matched_tokens, [idx.tokens_by_tid[tid] for tid in matched_tokens])
-
-    cleaned = clean_text(text).lower()
-    if TRACE: logger_debug('spdx_id_match: cleaned :', cleaned)
 
     # build synthetic rule
     # TODO: ensure that all the SPDX license keys are known symbols
@@ -117,15 +110,11 @@ def spdx_id_match(idx, query_run, text):
         # FIXME: for now we are putting the original query text as a
         # rule text: this is likely incorrect when it comes to properly
         # computing the known and unknowns and high and lows for this rule.
-        # alternatively we could use the expression string, padded with
+        # Alternatively we could use the expression string, padded with
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=text,
         length=match_len)
-
-    if TRACE:
-        logger_debug('spdx_id_match: synthetic rule:', rule.relevance)
-        logger_debug('spdx_id_match: synthetic rule:', rule)
 
     # build match from parsed expression
     # collect match start and end: e.g. the whole text
@@ -142,9 +131,6 @@ def spdx_id_match(idx, query_run, text):
         query_run_start=match_start,
         matcher=MATCH_SPDX_ID, query=query_run.query
     )
-
-    if TRACE:
-        logger_debug('spdx_id_match: match found:', match)
     return match
 
 
@@ -157,34 +143,21 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
     other error happens somehow, this function returns instead a bare
     expression made of only "unknown-spdx" symbol.
     """
-    text = prepare_text(text)
+    _prefix, text = prepare_text(text)
     if not text:
         return
-
-    if TRACE:
-        logger_debug('get_expression:text:', text)
     expression = None
     try:
         expression = _parse_expression(text, licensing, spdx_symbols, unknown_symbol)
-        if TRACE:
-            logger_debug('get_expression:1:', expression)
     except Exception:
-        if TRACE: logger_debug('get_expression:failed1:')
-
         try:
             # try to parse again using a lenient recovering parsing process
             # such as for plain space or comma-separated list of licenses (e.g. UBoot)
             expression = _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol)
-            if TRACE:
-                logger_debug('get_expression:2:', expression)
         except Exception:
-            if TRACE:
-                logger_debug('get_expression:3: failing')
             pass
 
     if expression is None:
-        if TRACE:
-            logger_debug('get_expression: EMPTY')
         expression = unknown_symbol
     return expression
 
@@ -200,17 +173,17 @@ OLD_SPDX_EXCEPTION_LICENSES_SUBS = None
 def get_old_expressions_subs_table(licensing):
     global OLD_SPDX_EXCEPTION_LICENSES_SUBS
     if not OLD_SPDX_EXCEPTION_LICENSES_SUBS:
-        #
+        # this is mapping an OLD SPDX id to a new SPDX expression
         EXPRESSSIONS_BY_OLD_SPDX_IDS = {k.lower(): v.lower() for k, v in {
-            'eCos-2.0': 'gpl-2.0-or-later WITH ecos-exception-2.0',
-            'GPL-2.0-with-autoconf-exception': 'gpl-2.0-only WITH autoconf-exception-2.0',
-            'GPL-2.0-with-bison-exception': 'gpl-2.0-only WITH bison-exception-2.2',
-            'GPL-2.0-with-classpath-exception': 'gpl-2.0-only WITH classpath-exception-2.0',
-            'GPL-2.0-with-font-exception': 'gpl-2.0-only WITH font-exception-2.0',
-            'GPL-2.0-with-GCC-exception': 'gpl-2.0-only WITH gcc-exception-2.0',
-            'GPL-3.0-with-autoconf-exception': 'gpl-3.0-only WITH autoconf-exception-3.0',
-            'GPL-3.0-with-GCC-exception': 'gpl-3.0-only WITH gcc-exception-3.1',
-            'wxWindows': 'lgpl-2.0-or-later WITH wxwindows-exception-3.1',
+            'eCos-2.0': 'GPL-2.0-or-later WITH eCos-exception-2.0',
+            'GPL-2.0-with-autoconf-exception': 'GPL-2.0-only WITH Autoconf-exception-2.0',
+            'GPL-2.0-with-bison-exception': 'GPL-2.0-only WITH Bison-exception-2.2',
+            'GPL-2.0-with-classpath-exception': 'GPL-2.0-only WITH Classpath-exception-2.0',
+            'GPL-2.0-with-font-exception': 'GPL-2.0-only WITH Font-exception-2.0',
+            'GPL-2.0-with-GCC-exception': 'GPL-2.0-only WITH GCC-exception-2.0',
+            'GPL-3.0-with-autoconf-exception': 'GPL-3.0-only WITH Autoconf-exception-3.0',
+            'GPL-3.0-with-GCC-exception': 'GPL-3.0-only WITH GCC-exception-3.1',
+            'wxWindows': 'LGPL-2.0-or-later WITH  WxWindows-exception-3.1',
         }.items()}
 
         OLD_SPDX_EXCEPTION_LICENSES_SUBS = {
@@ -233,17 +206,11 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     expression = licensing.parse(text, simple=True)
 
     if expression is None:
-        if TRACE: logger_debug(' #_parse_expression: parsed: EMPTY')
         return
-    if TRACE:
-        logger_debug(' #_parse_expression: parsed:', repr(expression.render()))
 
     # substitute old SPDX symbols with new ones if any
     old_expressions_subs = get_old_expressions_subs_table(licensing)
     updated = expression.subs(old_expressions_subs)
-
-    if TRACE:
-        logger_debug(' #_parse_expression: updated:', repr(updated.render()))
 
     # collect known symbols and build substitution table: replace known symbols
     # with a symbol wrapping a known license and unkown symbols with the
@@ -261,22 +228,11 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
                 _get_matching_symbol(symbol.exception_symbol)
             )
 
-            if TRACE:
-                logger_debug('  ##_parse_expression: new_with:', new_with)
-
             symbols_table[symbol] = new_with
         else:
             symbols_table[symbol] = _get_matching_symbol(symbol)
 
-    if TRACE:
-        from pprint import pformat
-        logger_debug('  ##_parse_expression: symbols_table:', '\n', pformat(symbols_table))
-
     symbolized = updated.subs(symbols_table)
-
-    if TRACE:
-        logger_debug('  ##_parse_expression: symbolized:', repr(symbolized.render()))
-
     return symbolized
 
 
@@ -341,11 +297,14 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
 
 def prepare_text(text):
     """
-    Return a text suitable for SPDX license identifier detection stripped from
-    leading and trailing punctuations, normalized for spaces and without an
-    SPDX-License-Identifier prefix.
+    Return a 2-tuple of (`prefix`, `expression_text`) built from `text` where the
+    `expression_text` is prepared to be suitable for SPDX license identifier
+    detection stripped from leading and trailing punctuations, normalized for
+    spaces and separateed from an SPDX-License-Identifier `prefix`.
     """
-    return clean_text(strip_spdx_lid(text))
+    prefix, expression = split_spdx_lid(text)
+    prefix = prefix.strip() if prefix is not None else prefix
+    return prefix, clean_text(expression)
 
 
 def clean_text(text):
@@ -362,12 +321,24 @@ def clean_text(text):
     return text.lstrip(leading_punctuation_spaces).rstrip(trailng_punctuation_spaces)
 
 
-# note: LIST, DNL REM can be vomment indicators is a comment indicators
-splitter = re.compile('spdx(\\-|\\s)+license(\\-|\\s)+identifier\\s*:?\\s*', re.IGNORECASE).split
+_split_spdx_lid = re.compile(
+    '(spdx(?:\\-|\\s)+licen(?:s|c)e(?:\\-|\\s)+identifier\\s*:?\\s*)',
+    re.IGNORECASE).split
 
-def strip_spdx_lid(text):
+
+def split_spdx_lid(text):
     """
-    Return a text striped from the a leading "SPDX license identifier" if any.
-    We split on "SPDX license identifier" and get the last item
+    Split text if it contains an "SPDX license identifier". Return a 2-tuple if
+    if there is an SPDX license identifier where the first item contains the
+    "SPDX license identifier" text proper and the second item contains the
+    remainder of the line (expected to be a license expression). Otherwise
+    return a 2-tuple where the first item is None and the second item contains the
+    orignal text.
     """
-    return splitter(text)[-1]
+    segments = _split_spdx_lid(text)
+    expression = segments[-1]
+    if len(segments) > 1:
+        return segments[-2], expression
+    else:
+        return None, text
+

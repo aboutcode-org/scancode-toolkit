@@ -1,0 +1,9 @@
+project licensed under the terms of
+the AGPL license - `The GNU Affero General Public License v3.0
+<http://www.gnu.org/licenses/agpl-3.0.html>`_ with the Additional Permissions
+described in `LICENSE_EXCEPTION <./LICENSE_EXCEPTION>`_
+
+You can more read about AGPL at `AGPL FAQ <http://www.affero.org/oagf.html>`_
+This package license scheme follows to GCC Runtime library licensing. If you use
+Linux already, probably this package license, should not bring anything new to
+your stack.

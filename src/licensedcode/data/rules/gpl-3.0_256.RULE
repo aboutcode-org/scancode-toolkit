@@ -1,0 +1,3 @@
+The smbclient library is under the GPL v3, to combine it with FFmpeg,
+the options `--enable-gpl` and `--enable-version3` have to be passed to
+configure to upgrade FFmpeg to the GPL v3.

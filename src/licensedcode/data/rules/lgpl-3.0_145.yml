@@ -1,0 +1,6 @@
+license_expression: lgpl-3.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - https://www.obj-sys.com/open/lgpl3.html

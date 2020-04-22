@@ -1,0 +1,9 @@
+license_expression: postgresql
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Portions Copyright (c) 1994, The Regents of the University of California
+    - Portions Copyright (c) 1996-2015, PostgreSQL Global Development Group
+ignorable_holders:
+    - PostgreSQL Global Development Group
+    - The Regents of the University of California
