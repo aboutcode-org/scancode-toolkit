@@ -1,6 +1,6 @@
 [
     {
-        "Resource": "srp/",
+        "path": "srp/",
         "type": "directory",
         "name": "srp",
         "base_name": "srp",
@@ -24,7 +24,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "srp/build.info",
+        "path": "srp/build.info",
         "type": "file",
         "name": "build.info",
         "base_name": "build",
@@ -48,7 +48,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "srp/srp_lib.c",
+        "path": "srp/srp_lib.c",
         "type": "file",
         "name": "srp_lib.c",
         "base_name": "srp_lib",
@@ -72,7 +72,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "srp/srp_vfy.c",
+        "path": "srp/srp_vfy.c",
         "type": "file",
         "name": "srp_vfy.c",
         "base_name": "srp_vfy",

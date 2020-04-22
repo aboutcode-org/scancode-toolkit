@@ -1,6 +1,6 @@
 [
     {
-        "Resource": "package.json",
+        "path": "package.json",
         "type": "file",
         "name": "package.json",
         "base_name": "package",
@@ -24,7 +24,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "package.json",
+        "path": "package.json",
         "package__type": "npm",
         "package__namespace": "",
         "package__name": "cookie-signature",

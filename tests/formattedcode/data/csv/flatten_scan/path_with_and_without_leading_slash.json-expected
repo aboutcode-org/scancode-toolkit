@@ -1,6 +1,6 @@
 [
     {
-        "Resource": "samples/",
+        "path": "samples/",
         "type": "directory",
         "name": "samples",
         "base_name": "samples",
@@ -24,7 +24,7 @@
         "scan_errors": ""
     },
     {
-        "Resource": "samples/arch/",
+        "path": "samples/arch/",
         "type": "directory",
         "name": "arch",
         "base_name": "arch",
