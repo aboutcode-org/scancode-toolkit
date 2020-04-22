@@ -84,6 +84,7 @@ matrix:
       script: 
         - source bin/activate
         - cd docs
+        - pip install -r requirements-doc.txt
         # Check that the Sphinx Documentation build minimally
         - sphinx-build -E source build
         # Check for documentation style errors

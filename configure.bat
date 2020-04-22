@@ -28,6 +28,12 @@ set DEFAULT_PYTHON=C:\Python27\python.exe
 
 @rem # default configurations for dev
 set "CONF_DEFAULT=etc/conf/dev"
+
+@rem # default thirdparty dist for dev
+if ""%CONF_DEFAULT%""==""etc/conf/dev"" (
+    set TPP_DIR_DEV="thirdparty/dev"
+)
+
 @rem #################################
 
 set CFG_ROOT_DIR=%~dp0

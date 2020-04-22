@@ -4,7 +4,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import io
 from glob import glob
 from os.path import basename
 from os.path import dirname
@@ -90,9 +89,10 @@ def get_git_version():
 
 
 def read(*names, **kwargs):
-    return io.open(
-        join(dirname(__file__), *names),
-        encoding=kwargs.get('encoding', 'utf8')
+    import os
+    return open(
+        os.path.join(os.path.dirname(__file__), *names),
+        #encoding=kwargs.get('encoding', 'utf8')
     ).read()
 
 
@@ -156,7 +156,6 @@ setup(
         'future >= 0.16.0',
         'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
-        'path.py',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
@@ -206,16 +205,9 @@ setup(
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
-        'MarkupSafe >= 0.23',
         'simplejson',
         'spdx_tools >= 0.6.0',
         'unicodecsv',
-
-        # ScanCode Docs
-        'Sphinx <  2.0; python_version == "2.7"',
-        'Sphinx >= 2.0; python_version > "3"',
-        'sphinx_rtd_theme >= 0.4.3',
-        'doc8 >= 0.8.0',
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
@@ -223,6 +215,7 @@ setup(
             'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
+    
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
