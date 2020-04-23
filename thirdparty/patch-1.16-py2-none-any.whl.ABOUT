@@ -10,3 +10,4 @@ license_file: patch.LICENSE
 homepage_url: https://github.com/techtonik/python-patch/
 copyright: Copyright (c) anatoly techtonik
 author: anatoly techtonik <techtonik@gmail.com>
+notice_file: patch-1.16.zip.NOTICE
