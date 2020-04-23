@@ -254,6 +254,7 @@ def _licenses_data_from_match(match, matched_text=None,
         matched_rule['is_license_notice'] = match.rule.is_license_notice
         matched_rule['is_license_reference'] = match.rule.is_license_reference
         matched_rule['is_license_tag'] = match.rule.is_license_tag
+        matched_rule['notes'] = match.rule.notes
         matched_rule['matcher'] = match.matcher
         matched_rule['rule_length'] = match.rule.length
         matched_rule['matched_length'] = match.len()
