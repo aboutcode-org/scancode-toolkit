@@ -1,3 +1,5 @@
+name: attrs
+version: 19.3.0
 about_resource: attrs-19.3.0-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/a2/db/4313ab3be961f7a763066401fb77f7748373b6094076ae2bda2806988af6/attrs-19.3.0-py2.py3-none-any.whl
 license_expression: mit
