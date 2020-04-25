@@ -262,7 +262,7 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     requirements = []
     for req_file in requirement_files:
         req_loc = os.path.join(root_dir, req_file)
-        requirements.extend(['--requirement' , quote(req_loc)])
+        requirements.extend(['--requirement', quote(req_loc)])
     run_pip(requirements, root_dir, tpp_dirs, quiet)
 
 
