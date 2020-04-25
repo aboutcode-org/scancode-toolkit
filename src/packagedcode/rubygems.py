@@ -390,12 +390,13 @@ def licenses_mapper(lic, lics):
     `lics` licenses values found in a package.
     """
     declared_licenses = []
-    if license:
+    if lic:
         declared_licenses.append(str(license).strip())
-    if licenses:
-        for lic in licenses:
-            if lic and lic.strip():
-                declared_licenses.append(lic.strip())
+    if lics:
+        for lic in lics:
+            lic = lic.strip()
+            if lic:
+                declared_licenses.append(lic)
     return declared_licenses
 
 
