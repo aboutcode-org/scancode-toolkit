@@ -133,22 +133,26 @@ TRACE = False
 
 def call(cmd, root_dir):
     """
-    Run a `cmd` command (as a list of args) with all env vars.
+    Run the `cmd` command (as a list of args) with all env vars using `root_dir`
+    as the current working directory.
     """
     cmd = ' '.join(cmd)
     if TRACE:
         print('\n===> About to run command:\n%(cmd)s\n' % locals())
-    try:
-        subprocess.check_output(
-            cmd, 
-            shell=True, 
-            env=dict(os.environ), 
-            cwd=root_dir,
-            stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError as cpe:
-        print('Failed ro run command: {}'.format(cmd))
-        print(cpe.output)
-        raise
+        try:
+            subprocess.check_output(
+                cmd,
+                shell=True,
+                env=dict(os.environ),
+                cwd=root_dir,
+                stderr=subprocess.STDOUT)
+        except subprocess.CalledProcessError as cpe:
+            print('Failed ro run command: {}'.format(cmd))
+            print(cpe.output)
+            raise
+        return
+
+    subprocess.check_call(cmd, shell=True, env=dict(os.environ), cwd=root_dir)
 
 
 def find_pycache(root_dir):
@@ -175,9 +179,9 @@ def clean(root_dir):
         build
         bin
         lib
+        lib64
         Lib
         Lib64
-        lib64
         include
         Include
         tcl
@@ -218,9 +222,9 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
 
 def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
     """
-    Create a virtualenv in `root_dir` using the `std_python` Python
-    executable. One of the `tpp_dirs` must contain a vendored virtualenv.py and
-    virtualenv dependencies such as setuptools and pip packages.
+    Create a virtualenv in `root_dir` using the `std_python` Python executable.
+    One of the `tpp_dirs` must contain a bundled virtualenv.pyz Python app.
+
     Note: we do not use the bundled Python 3 "venv" because its behavior
     is not consistent across Linux distro and sometimes pip is not included.
 
@@ -236,20 +240,20 @@ def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
     """
     if not quiet:
         print("* Configuring Python ...")
-    # search virtualenv.py in the tpp_dirs. keep the first found
-    venv_py = None
+    # search the virtualenv.pyz app in the tpp_dirs. keep the first found
+    venv_pyz = None
     for tpd in tpp_dirs:
-        venv = os.path.join(root_dir, tpd, 'virtualenv.py')
+        venv = os.path.join(root_dir, tpd, 'virtualenv.pyz')
         if os.path.exists(venv):
-            venv_py = venv
+            venv_pyz = venv
             break
 
-    # error out if venv_py not found
-    if not venv_py:
+    # error out if venv_pyz not found
+    if not venv_pyz:
         print("Configuration Error ... aborting.")
         exit(1)
 
-    vcmd = [quote(std_python), quote(venv_py), '--never-download']
+    vcmd = [quote(std_python), quote(venv_pyz), '--never-download']
     if quiet:
         vcmd += ['-qq']
     # third parties may be in more than one directory
@@ -552,9 +556,9 @@ if __name__ == '__main__':
     if not os.path.exists(configured_python):
         create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=quiet)
     activate(root_dir)
-
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
     run_scripts(configs, root_dir, configured_python, quiet=quiet)
+
     if not quiet:
         print("* Configuration completed.")
         print()
