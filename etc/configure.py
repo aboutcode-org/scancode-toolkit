@@ -123,7 +123,9 @@ python_scripts = tuple(p + '.py' for p in platform_names + base)
 shell_scripts = tuple(p + '.sh' for p in platform_names)
 if on_win:
     shell_scripts = ('win.bat',)
-
+    bin_dir_name = 'Scripts'
+else:
+    bin_dir_name = 'bin'
 
 # set to True to trace command line executaion
 TRACE = False
@@ -136,7 +138,17 @@ def call(cmd, root_dir):
     cmd = ' '.join(cmd)
     if TRACE:
         print('\n===> About to run command:\n%(cmd)s\n' % locals())
-    subprocess.check_call(cmd, shell=True, env=dict(os.environ), cwd=root_dir)
+    try:
+        subprocess.check_output(
+            cmd, 
+            shell=True, 
+            env=dict(os.environ), 
+            cwd=root_dir,
+            stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as cpe:
+        print('Failed ro run command: {}'.format(cmd))
+        print(cpe.output)
+        raise
 
 
 def find_pycache(root_dir):
@@ -146,11 +158,12 @@ def find_pycache(root_dir):
     """
     for top, dirs, _files in os.walk(root_dir):
         for d in dirs:
-            if d == '__pycache__':
-                dir_path = os.path.join(top, d)
-                dir_path = dir_path.replace(root_dir, '', 1)
-                dir_path = dir_path.strip(os.path.sep)
-                yield dir_path
+            if d != '__pycache__':
+                continue
+            dir_path = os.path.join(top, d)
+            dir_path = dir_path.replace(root_dir, '', 1)
+            dir_path = dir_path.strip(os.path.sep)
+            yield dir_path
 
 
 def clean(root_dir):
@@ -274,10 +287,10 @@ def run_pip(requirements, root_dir, tpp_dirs, quiet=False):
     if not quiet:
         print("* Installing components ...")
     if on_win:
-        configured_python = quote(os.path.join(root_dir, 'Scripts', 'python.exe'))
+        configured_python = quote(os.path.join(root_dir, bin_dir_name, 'python.exe'))
         base_cmd = [configured_python, '-m', 'pip']
     else:
-        configured_pip = quote(os.path.join(root_dir, 'bin', 'pip'))
+        configured_pip = quote(os.path.join(root_dir, bin_dir_name, 'pip'))
         base_cmd = [configured_pip]
     pcmd = base_cmd + [
         'install',
@@ -374,8 +387,7 @@ def activate(root_dir):
     """
     Activate a virtualenv in the current process.
     """
-    binname = 'Scripts' if on_win else 'bin'
-    bin_dir = os.path.join(root_dir, binname)
+    bin_dir = os.path.join(root_dir, bin_dir_name)
     activate_this = os.path.join(bin_dir, 'activate_this.py')
     # TODO: we could use it as is and not write then read from disk?
     activate_this_script = save_activate_this_py_script(activate_this)
@@ -491,21 +503,13 @@ if __name__ == '__main__':
             sys.exit(1)
 
     sys.path.insert(0, root_dir)
-    bin_dir = os.path.join(root_dir, 'bin')
+    bin_dir = os.path.join(root_dir, bin_dir_name)
     standard_python = sys.executable
 
     if on_win:
         configured_python = os.path.join(bin_dir, 'python.exe')
-        scripts_dir = os.path.join(root_dir, 'Scripts')
-        bin_dir = os.path.join(root_dir, 'bin')
-        if not os.path.exists(scripts_dir):
-            os.makedirs(scripts_dir)
-        if not os.path.exists(bin_dir):
-            cmd = ('mklink /J "%(bin_dir)s" "%(scripts_dir)s"' % locals()).split()
-            call(cmd, root_dir)
     else:
         configured_python = os.path.join(bin_dir, 'python')
-        scripts_dir = bin_dir
 
     # Get requested configuration paths to collect components and scripts later
     configs = []

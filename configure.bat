@@ -31,7 +31,7 @@ set "CONF_DEFAULT=etc/conf/dev"
 
 @rem # default thirdparty dist for dev
 if ""%CONF_DEFAULT%""==""etc/conf/dev"" (
-    set TPP_DIR_DEV="thirdparty/dev"
+    set TPP_DIR_DEV=thirdparty/dev
 )
 
 @rem #################################
@@ -42,8 +42,8 @@ set CONFIGURED_PYTHON=%CFG_ROOT_DIR%Scripts\python.exe
 
 set "CFG_CMD_LINE_ARGS= "
 
-python --version
-python -c "import sys;print(sys.executable)"
+@rem python --version
+@rem python -c "import sys;print(sys.executable)"
 
 
 @rem parse command line options and arguments 
