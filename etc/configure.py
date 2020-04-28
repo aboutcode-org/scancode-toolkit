@@ -3,10 +3,13 @@
 # Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
-This script is a configuration helper to select pip requirement files to install
-and python and shell configuration scripts to execute based on provided config
-directories paths arguments and the operating system platform. To use, create
-a configuration directory tree that contains any of these:
+This script is a configuration helper to configure a Python environment and
+select which pip requirement files to install and which python or shell scripts
+to execute based on provided configuration directories paths arguments and the
+operating system platform. Everything is done inside in a virtual isolated
+environment.
+
+To use, create a configuration directory tree that contains any of these:
 
 * Requirements files named with this convention:
  - requirements_base.txt contains common requirements installed on all platforms.
