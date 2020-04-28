@@ -1,8 +1,8 @@
-Copyright (c) 2015 nexB Inc.
-This code is based on Tomaž Šolc fork of David Wilson code originally at
+Copyright (c) nexB Inc.
+This code is based on Tomaz Solc fork of David Wilson code originally at
 https://www.tablix.org/~avian/git/publicsuffix.git
  
-Copyright (c) 2014 Tomaž Šolc <tomaz.solc@tablix.org>
+Copyright (c) 2014 Tomaz Solc <tomaz.solc@tablix.org>
   
 Python module included in this distribution is based on the code downloaded
 from http://code.google.com/p/python-public-suffix-list/, which is
