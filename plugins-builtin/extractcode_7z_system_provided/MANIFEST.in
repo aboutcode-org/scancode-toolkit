@@ -4,7 +4,7 @@ include setup.py
 include setup.cfg
 include .gitignore
 include LICENSE.txt
-include README.md
+include README.rst
 include MANIFEST.in
 
 global-exclude *.py[co] __pycache__ *.*~
