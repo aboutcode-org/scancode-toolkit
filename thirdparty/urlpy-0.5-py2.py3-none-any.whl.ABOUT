@@ -1,3 +1,5 @@
+name: urlpy
+version: 0.5
 about_resource: urlpy-0.5-py2.py3-none-any.whl
 download_url: https://files.pythonhosted.org/packages/23/f0/43a8013e888f435c619f82b485ef8cf9fddfcceea7806d824b28d5ef8f76/urlpy-0.5-py2.py3-none-any.whl
 homepage_url: https://github.com/nexB/urlpy
