@@ -79,25 +79,27 @@ if exist "%CONFIGURED_PYTHON%" (
     if not ""%1""==""--clean"" (
         @rem we do not want to use the configured Python in clean... it will be deleted
         set PYTHON_EXECUTABLE=%CONFIGURED_PYTHON%
-        goto run
+        goto check
     )
 )
 
 if ""%PROVIDED_PYTHON%""==""path"" (
     @rem use a bare python available in the PATH
     set PYTHON_EXECUTABLE=python
-    goto run
+    goto check
 )
 
 if exist "%PROVIDED_PYTHON%" (
     set PYTHON_EXECUTABLE=%PROVIDED_PYTHON%
-    goto run
+    goto check
 )
 
 if exist %DEFAULT_PYTHON% (
     set PYTHON_EXECUTABLE=%DEFAULT_PYTHON%
-    goto run
+    goto check
 )
+
+:check
 
 if not exist "%PYTHON_EXECUTABLE%" (
     echo * Unable to find an installation of Python.
