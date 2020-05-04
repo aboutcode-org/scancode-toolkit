@@ -11,7 +11,11 @@ from subprocess import check_call
 import pkg_resources
 import glob
 import optparse
-from html import escape
+
+try:
+    from html import escape
+except ImportError:
+    from cgi import escape
 
 try:
     import wheel as _; _
