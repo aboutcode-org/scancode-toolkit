@@ -28,11 +28,11 @@ Link to Specific Scancode-Toolkit Documentation Page from http://scancode-toolki
 ### Select Category
 <!-- Which of this label correctly describe your Bug Report -->
 
--  Inconsistency []
--  New Section Request []
--  General Improvement []
--  Typo/Mistakes []
--  Other []
+-  [ ] Inconsistency
+-  [ ] New Section Request
+-  [ ] General Improvement
+-  [ ] Typo/Mistakes
+-  [ ] Other
 
 <!-- 
 Your help makes ScanCode Toolkit better! We *deeply* appreciate your help in improving ScanCode Toolkit.
