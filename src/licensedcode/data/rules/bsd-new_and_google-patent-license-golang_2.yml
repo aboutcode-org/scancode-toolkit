@@ -1,0 +1,7 @@
+license_expression: bsd-new AND google-patent-license-golang
+is_license_notice: yes
+relevance: 99
+notes: the patent grant refers to Polymer rather than Golang but is otherwise the same.
+ignorable_urls:
+    - http://polymer.github.io/LICENSE.txt
+    - http://polymer.github.io/PATENTS.txt

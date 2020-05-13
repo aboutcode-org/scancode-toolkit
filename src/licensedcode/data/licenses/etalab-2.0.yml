@@ -1,0 +1,12 @@
+key: etalab-2.0
+short_name: Etalab Open Licence 1.0
+name: Etalab Open Licence 2.0
+category: Permissive
+owner: Etalab
+homepage_url: https://github.com/etalab/licence-ouverte
+text_urls:
+    - https://github.com/etalab/licence-ouverte/blob/master/open-licence.md
+ignorable_urls:
+    - http://www.data.gouv.fr/fr/datasets/xxx
+notes: there is also a French version
+spdx_license_key: etalab-2.0

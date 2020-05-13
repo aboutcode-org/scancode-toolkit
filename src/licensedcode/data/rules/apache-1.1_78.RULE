@@ -1,0 +1,39 @@
+* Redistribution and use in source and binary forms, withor without
+  * modification, are permitted provided that the followingconditions
+  * are met:
+  *
+  * 1. Redistributions of source code must retain the abovecopyright
+  *    notice, this list of conditions and the followingdisclaimer.
+  *
+  * 2. Redistributions in binary form must reproduce theabove copyright
+  *    notice, this list of conditions and the followingdisclaimer in
+  *    the documentation and/or other materials providedwith the
+  *    distribution.
+  *
+  * 3. The end-user documentation included with theredistribution,
+  *    if any, must include the following acknowledgment:
+  *       "This product includes software developed by the 
+  *        Apache Software Foundation (http://www.apache.org/)."
+  *    Alternately, this acknowledgment may appear in thesoftware itself,
+  *    if and wherever such third-party acknowledgmentsnormally appear.
+  *
+  * 4. The names "Apache" and "Apache Software Foundation"and 
+  *    "Apache BCEL" must not be used to endorse or promoteproducts 
+  *    derived from this software without prior writtenpermission. For 
+  *    written permission, please contact apache@apache.org.                      *
+  * 5. Products derived from this software may not be called"Apache",
+  *    "Apache BCEL", nor may "Apache" appear in their name,without 
+  *    prior written permission of the Apache SoftwareFoundation.
+  *
+  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED ORIMPLIED
+  * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIEDWARRANTIES
+  * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSEARE
+  * DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWAREFOUNDATION OR
+  * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,INCIDENTAL,
+  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,BUT NOT
+  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF
+  * USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVERCAUSED AND
+  * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICTLIABILITY,
+  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING INANY WAY OUT
+  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THEPOSSIBILITY OF
+  * SUCH DAMAGE.

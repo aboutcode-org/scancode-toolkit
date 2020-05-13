@@ -4,7 +4,7 @@ license_expressions:
   - x11-opengroup
   - unicode-mappings
   - bsd-2-clause-netbsd
-  - bsd-axis
+  - bsd-source-code
   - mit
   - mit
   - bsd-original-uc

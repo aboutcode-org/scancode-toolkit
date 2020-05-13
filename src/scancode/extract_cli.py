@@ -132,7 +132,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, *args, *
         has_warnings = False
         has_errors = False
         summary = []
-        for xev in extract_results:
+        for xev in extract_result_with_errors:
             has_errors = has_errors or bool(xev.errors)
             has_warnings = has_warnings or bool(xev.warnings)
             source = fileutils.as_posixpath(xev.source)
@@ -156,9 +156,11 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, *args, *
     len_base_path = len(abs_location)
     base_is_dir = filetype.is_dir(abs_location)
 
-    extract_results = []
+    extract_result_with_errors = []
+    unique_extract_events_with_errors = set()
     has_extract_errors = False
-    extractibles = extract_archives(abs_location, recurse=not shallow, replace_originals=replace_originals)
+    extractibles = extract_archives(
+        abs_location, recurse=not shallow, replace_originals=replace_originals)
 
     if not quiet:
         echo_stderr('Extracting archives...', fg='green')
@@ -168,14 +170,14 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, *args, *
             for xev in extraction_events:
                 if xev.done and (xev.warnings or xev.errors):
                     has_extract_errors = has_extract_errors or xev.errors
-                    extract_results.append(xev)
-
+                    if repr(xev) not in unique_extract_events_with_errors:
+                        extract_result_with_errors.append(xev)
+                        unique_extract_events_with_errors.add(repr(xev))
         display_extract_summary()
     else:
         for xev in extractibles:
             if xev.done and (xev.warnings or xev.errors):
                 has_extract_errors = has_extract_errors or xev.errors
-                extract_results.append(xev)
 
     rc = 1 if has_extract_errors else 0
     ctx.exit(rc)

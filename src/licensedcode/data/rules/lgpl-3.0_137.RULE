@@ -1,0 +1,2 @@
+When combining them with FFmpeg, use the configure option `--enable-version3` to
+upgrade FFmpeg to the LGPL v3.

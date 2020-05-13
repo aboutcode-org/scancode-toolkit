@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 WITH openssl-exception-gpl-3.0-plus AND unknown
+is_license_notice: yes
+relevance: 100
+notes: the GPL impact interpretation is uncommon and short of a legal analysis is reported as
+    an extra unknown license
+ignorable_urls:
+    - http://www.openssl.org/

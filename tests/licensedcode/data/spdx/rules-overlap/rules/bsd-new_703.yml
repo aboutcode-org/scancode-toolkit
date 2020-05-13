@@ -1,0 +1,4 @@
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+notes: This is a variant that eschews the dash in SPDX-license-identifier

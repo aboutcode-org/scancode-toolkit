@@ -24,7 +24,7 @@
       "licenses": [
         {
           "key": "lgpl-2.1",
-          "score": 22.0,
+          "score": 100.0,
           "name": "GNU Lesser General Public License 2.1",
           "short_name": "LGPL 2.1",
           "category": "Copyleft Limited",
@@ -45,13 +45,13 @@
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
             "matcher": "2-aho",
             "rule_length": 4,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "rule_relevance": 22
+            "rule_relevance": 100.0
           },
           "matched_text": "foo bar this that license: LGPL-2.1 bar"
         }

@@ -1,0 +1,5 @@
+license_expression: sendmail
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.sendmail.com/pdfs/open_source/sendmail_license.pdf

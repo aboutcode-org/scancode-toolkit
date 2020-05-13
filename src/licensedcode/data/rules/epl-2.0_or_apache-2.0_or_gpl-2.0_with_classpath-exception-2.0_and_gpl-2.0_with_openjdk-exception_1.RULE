@@ -1,0 +1,23 @@
+license this program and the accompanying materials are made available under the
+terms of the eclipse public license 2 which accompanies this distribution and is
+available at https://www.eclipse.org/legal/epl-2.0/ or the apache license version 2 0 which accompanies this
+distribution and is available at https://www.apache.org/licenses/LICENSE-2.0. 
+This source code may
+also be made available under the following secondary licenses when the
+conditions for such availability set forth in the eclipse public license v 2 0
+are satisfied gnu general public license version 2 with the gnu classpath
+exception 1 and gnu general public license version 2 with the openjdk assembly
+exception 2 
+
+1 https://www.gnu.org/software/classpath/license.html 
+2 http://openjdk.java.net/legal/assembly-exception.html
+SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+
+ifyou did not receive this content directly from the eclipse foundation the
+content is being redistributed by another party redistributor and different
+terms and conditions may apply to your use of any object code in the content
+check the redistributor license that was provided with the content if no such
+license exists contact the redistributor unless otherwise indicated below the
+terms and conditions of the epl <and> <apache> <license> <2> <0> still apply to
+any source code in the content and such source code may be obtained at 
+https://www.eclipse.org https://www.eclipse.org
