@@ -51,6 +51,7 @@ from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode import text
+import contextlib
 
 
 """
@@ -227,8 +228,8 @@ def load_shared_library(dll_path, lib_dir):
     """
     Return the loaded shared library object from the dll_path and adding `lib_dir` to the path.
     """
-    # add lib path to the front of the PATH env var
-    update_path_environment(lib_dir)
+    # add lib path to the front of the PATH env var and create DY/LD_LIBRARY_PATH vars
+    update_path_env_vars(lib_dir)
 
     if not exists(dll_path):
         raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
@@ -243,10 +244,24 @@ def load_shared_library(dll_path, lib_dir):
             dll_path = fsdecode(dll_path)
 
     lib = ctypes.CDLL(dll_path)
+
     if lib and lib._name:
         return lib
 
     raise ImportError('Failed to load shared library with ctypes: %(dll_path)r and lib_dir:  %(lib_dir)r' % locals())
+
+
+@contextlib.contextmanager
+def pushd(path):
+    """
+    Context manager to change the current working directory to `path`.
+    """
+    original_cwd = _os_module.getcwd()
+    try:
+        _os_module.chdir(path)
+        yield _os_module.getcwd()
+    finally:
+        _os_module.chdir(original_cwd)
 
 
 if py2:
@@ -313,3 +328,21 @@ def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_
         # at this stage new_path_env is unicode on all OSes on Py3
         # and on Py2:  bytes on Linux and unicode elsewhere
         _os_module.environ[_path_env_var] = new_path_env
+
+
+def update_path_env_vars(lib_dir):
+    """
+    Add `lib_dir` to the PATH, LD_LIBRARY_PATH and DYLD_LIBRARY_PATH variables.
+    """
+    if py2:
+        LD_LIBRARY_PATH = b'LD_LIBRARY_PATH'
+        DYLD_LIBRARY_PATH = b'DYLD_LIBRARY_PATH'
+    else:
+        LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
+        DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
+
+    update_path_environment(lib_dir)
+    update_path_environment(lib_dir, _path_env_var=LD_LIBRARY_PATH)
+    update_path_environment(lib_dir, _path_env_var=DYLD_LIBRARY_PATH)
+
+
