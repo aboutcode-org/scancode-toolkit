@@ -37,10 +37,10 @@ from commoncode  import command
 from commoncode.system import on_windows
 from commoncode.system import py3
 from commoncode import text
+
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
-from plugincode.location_provider import get_location
 
 
 """
@@ -73,7 +73,7 @@ sevenzip_errors = [
 UNKNOWN_ERROR = 'Unknown extraction error'
 
 
-def get_7z_errors(stdout):
+def get_7z_errors(stdout, stderr):
     """
     Return error messages extracted from a 7zip command output stdout string.
     This maps errors found in stdout to error message.
@@ -84,10 +84,19 @@ def get_7z_errors(stdout):
 
     find_7z_errors = re.compile('^Error:(.*)$', re.MULTILINE | re.DOTALL).findall
 
+    stdlow = stderr.lower()
+    for err, msg in sevenzip_errors:
+        if err in stdlow:
+            return msg
+
     stdlow = stdout.lower()
     for err, msg in sevenzip_errors:
         if err in stdlow:
             return msg
+
+    file_errors = find_7z_errors(stderr)
+    if file_errors:
+        return ' '.join(file_errors.strip('"\' ')).strip()
 
     file_errors = find_7z_errors(stdout)
     if file_errors:
@@ -138,6 +147,18 @@ def is_rar(location):
     from typecode import contenttype
     T = contenttype.get_type(location)
     return T.filetype_file.lower().startswith('rar archive')
+
+
+def get_bin_locations():
+    """
+    Return a tuple of (lib_dir, cmd_loc) for 7zip loaded from plugin-provided path.
+    """
+    from plugincode.location_provider import get_location
+
+    # get paths from plugins
+    lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
+    cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
+    return lib_dir, cmd_loc
 
 
 def extract(location, target_dir, arch_type='*'):
@@ -201,8 +222,7 @@ def extract(location, target_dir, arch_type='*'):
         password
     ]
 
-    lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
-    cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
+    lib_dir, cmd_loc = get_bin_locations()
 
     ex_args = dict(
         cmd_loc=cmd_loc,
@@ -221,7 +241,7 @@ def extract(location, target_dir, arch_type='*'):
     if rc != 0:
         if TRACE:
             logger.debug('extract: failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
-        error = get_7z_errors(stdout) or UNKNOWN_ERROR
+        error = get_7z_errors(stdout, stderr) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
     extractcode.remove_backslashes_and_dotdots(abs_target_dir)
@@ -273,8 +293,7 @@ def list_entries(location, arch_type='*'):
         password,
     ]
 
-    lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
-    cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
+    lib_dir, cmd_loc = get_bin_locations()
 
     rc, stdout, stderr = command.execute2(
         cmd_loc=cmd_loc,
@@ -288,7 +307,7 @@ def list_entries(location, arch_type='*'):
 
     if rc != 0:
         # FIXME: this test is useless
-        _error = get_7z_errors(stdout) or UNKNOWN_ERROR
+        _error = get_7z_errors(stdout, stderr) or UNKNOWN_ERROR
 
     # the listing was produced as UTF on windows to avoid damaging binary
     # paths in console outputs

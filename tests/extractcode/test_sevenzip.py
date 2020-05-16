@@ -44,7 +44,7 @@ Extracting  a.txt     CRC Failed in encrypted file. Wrong password?
 
 Sub items Errors: 1
 '''
-            result = sevenzip.get_7z_errors(test)
+            result = sevenzip.get_7z_errors(test, test)
             expected = 'Password protected archive, unable to extract'
             assert expected == result
 

@@ -50,13 +50,16 @@ from commoncode import text
 import extractcode
 from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
-from plugincode.location_provider import get_location
 
 
 logger = logging.getLogger(__name__)
 
 TRACE = False
-# logging.basicConfig(level=logging.TRACE)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 """
 libarchive2 is a minimal and specialized wrapper around a vendored libarchive archive
@@ -95,9 +98,10 @@ EXTRACTCODE_LIBARCHIVE_DLL = 'extractcode.libarchive.dll'
 
 def load_lib():
     """
-    Return the loaded libarchive shared library object from plugin provided or
-    default "vendored" paths.
+    Return the loaded libarchive shared library object from plugin-provided path.
     """
+    from plugincode.location_provider import get_location
+
     # get paths from plugins
     dll = get_location(EXTRACTCODE_LIBARCHIVE_DLL)
     libdir = get_location(EXTRACTCODE_LIBARCHIVE_LIBDIR)
@@ -445,16 +449,15 @@ class ArchiveException(ExtractError):
             self.rc = rc
             self.errno = archive_struct and errno(archive_struct) or None
             msg = archive_struct and err_msg(archive_struct) or ''
-            self.msg = msg and text.as_unicode(msg) or None
+            self.msg = msg and text.as_unicode(msg) or 'Unknown error'
             self.func = archive_func and archive_func.__name__ or None
-
+            
     def __str__(self):
         if TRACE:
-            msg = (u'%(msg)s: in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
-                    'root_ex=%(root_ex)s')
+            msg = (u'%(msg)r: in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
+                    'root_ex=%(root_ex)r')
             return msg % self.__dict__
-
-        return self.msg
+        return self.msg or ''
 
 
 class ArchiveWarning(ArchiveException):

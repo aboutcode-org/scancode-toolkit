@@ -27,24 +27,25 @@ from __future__ import absolute_import, print_function
 
 import io
 import os
+from types import GeneratorType
 
 import pytest
 
-from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
-
-import extractcode
-from extractcode_assert_utils import check_files
-from extractcode_assert_utils import check_no_error
-from extractcode import extract
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py3
-from types import GeneratorType
+from commoncode.testcase import FileBasedTesting
+
+import extractcode
+from extractcode import extract
+from extractcode_assert_utils import check_files
+from extractcode_assert_utils import check_no_error
+from extractcode_assert_utils import BaseArchiveTestCase
 
 
-class TestExtract(FileBasedTesting):
+class TestExtract(BaseArchiveTestCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_extract_file_function(self):
@@ -386,27 +387,17 @@ class TestExtract(FileBasedTesting):
     def test_uncompress_corrupted_archive_with_zlib(self):
         from extractcode import archive
         import zlib
-        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
-        target_dir = self.get_temp_dir()
-        try:
-            list(archive.uncompress_gzip(test_dir, target_dir))
-            raise Exception('no error raised')
-        except zlib.error as e:
-            assert str(e).startswith('Error -3 while decompressing')
+        test_file = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        test_dir = self.get_temp_dir()
+        expected = Exception('Error -3 while decompressing')
+        self.assertRaisesInstance(expected, archive.uncompress_gzip, test_file, test_dir)
 
     def test_uncompress_corrupted_archive_with_libarchive(self):
         from extractcode import libarchive2
-        from commoncode import compat
-        test_dir = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
-        target_dir = self.get_temp_dir()
-        try:
-            list(libarchive2.extract(test_dir, target_dir))
-            raise Exception('no error raised')
-        except libarchive2.ArchiveError as e:
-            emsg = str(e)
-            assert 'gzip decompression failed' == emsg
-            if py3:
-                assert isinstance(emsg, compat.unicode)
+        test_file = self.get_test_loc('extract/corrupted/a.tar.gz', copy=True)
+        test_dir = self.get_temp_dir()
+        expected = Exception('gzip decompression failed')
+        self.assertRaisesInstance(expected, libarchive2.extract, test_file, test_dir)
 
     @pytest.mark.skipif(py3 and not on_linux, reason='Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_linux(self):
@@ -418,8 +409,8 @@ class TestExtract(FileBasedTesting):
         check_files(test_dir, expected)
         assert len(result) == 2
         result = result[1]
-        errs = ['gzip decompression failed']
-        assert errs == result.errors
+        assert len(result.errors) == 1
+        assert result.errors[0].startswith('gzip decompression failed')
         assert not result.warnings
 
     @pytest.mark.skipif(py3 and on_linux, reason='Expectations are different on Windows and macOS')
@@ -652,53 +643,10 @@ class TestExtract(FileBasedTesting):
         warns = [r.warnings for r in result if r.warnings]
         assert [] == warns
 
-    # FIXME: create test
-    @pytest.mark.xfail
-    def test_extract_with_kinds(self):
-        assert False
-
-    @pytest.mark.xfail
     def test_extract_directory_of_windows_ar_archives(self):
-        # this does not pass yet with libarchive and fails too with 7z
         test_dir = self.get_test_loc('extract/ar_tree/winlib', copy=True)
         result = list(extract.extract(test_dir, recurse=True))
         expected = [
-            'freetype.lib',
-            'freetype.lib-extract/1.txt',
-            'freetype.lib-extract/2.txt',
-            'freetype.lib-extract/objs/debug_mt/autofit.obj',
-            'freetype.lib-extract/objs/debug_mt/bdf.obj',
-            'freetype.lib-extract/objs/debug_mt/cff.obj',
-            'freetype.lib-extract/objs/debug_mt/ftbase.obj',
-            'freetype.lib-extract/objs/debug_mt/ftbbox.obj',
-            'freetype.lib-extract/objs/debug_mt/ftbitmap.obj',
-            'freetype.lib-extract/objs/debug_mt/ftcache.obj',
-            'freetype.lib-extract/objs/debug_mt/ftdebug.obj',
-            'freetype.lib-extract/objs/debug_mt/ftgasp.obj',
-            'freetype.lib-extract/objs/debug_mt/ftglyph.obj',
-            'freetype.lib-extract/objs/debug_mt/ftgzip.obj',
-            'freetype.lib-extract/objs/debug_mt/ftinit.obj',
-            'freetype.lib-extract/objs/debug_mt/ftlzw.obj',
-            'freetype.lib-extract/objs/debug_mt/ftmm.obj',
-            'freetype.lib-extract/objs/debug_mt/ftpfr.obj',
-            'freetype.lib-extract/objs/debug_mt/ftstroke.obj',
-            'freetype.lib-extract/objs/debug_mt/ftsynth.obj',
-            'freetype.lib-extract/objs/debug_mt/ftsystem.obj',
-            'freetype.lib-extract/objs/debug_mt/fttype1.obj',
-            'freetype.lib-extract/objs/debug_mt/ftwinfnt.obj',
-            'freetype.lib-extract/objs/debug_mt/pcf.obj',
-            'freetype.lib-extract/objs/debug_mt/pfr.obj',
-            'freetype.lib-extract/objs/debug_mt/psaux.obj',
-            'freetype.lib-extract/objs/debug_mt/pshinter.obj',
-            'freetype.lib-extract/objs/debug_mt/psmodule.obj',
-            'freetype.lib-extract/objs/debug_mt/raster.obj',
-            'freetype.lib-extract/objs/debug_mt/sfnt.obj',
-            'freetype.lib-extract/objs/debug_mt/smooth.obj',
-            'freetype.lib-extract/objs/debug_mt/truetype.obj',
-            'freetype.lib-extract/objs/debug_mt/type1.obj',
-            'freetype.lib-extract/objs/debug_mt/type1cid.obj',
-            'freetype.lib-extract/objs/debug_mt/type42.obj',
-            'freetype.lib-extract/objs/debug_mt/winfnt.obj',
             'gsdll32.lib',
             'gsdll32.lib-extract/1.GSDLL32.dll',
             'gsdll32.lib-extract/1.txt',
@@ -737,162 +685,6 @@ class TestExtract(FileBasedTesting):
             'htmlhelp.lib-extract/1.txt',
             'htmlhelp.lib-extract/2.txt',
             'htmlhelp.lib-extract/release/init.obj',
-            'libmysql.lib',
-            'libmysql.lib-extract/1.LIBMYSQL.dll',
-            'libmysql.lib-extract/1.txt',
-            'libmysql.lib-extract/10.LIBMYSQL.dll',
-            'libmysql.lib-extract/100.LIBMYSQL.dll',
-            'libmysql.lib-extract/101.LIBMYSQL.dll',
-            'libmysql.lib-extract/102.LIBMYSQL.dll',
-            'libmysql.lib-extract/103.LIBMYSQL.dll',
-            'libmysql.lib-extract/104.LIBMYSQL.dll',
-            'libmysql.lib-extract/105.LIBMYSQL.dll',
-            'libmysql.lib-extract/106.LIBMYSQL.dll',
-            'libmysql.lib-extract/107.LIBMYSQL.dll',
-            'libmysql.lib-extract/108.LIBMYSQL.dll',
-            'libmysql.lib-extract/109.LIBMYSQL.dll',
-            'libmysql.lib-extract/11.LIBMYSQL.dll',
-            'libmysql.lib-extract/110.LIBMYSQL.dll',
-            'libmysql.lib-extract/111.LIBMYSQL.dll',
-            'libmysql.lib-extract/112.LIBMYSQL.dll',
-            'libmysql.lib-extract/113.LIBMYSQL.dll',
-            'libmysql.lib-extract/114.LIBMYSQL.dll',
-            'libmysql.lib-extract/115.LIBMYSQL.dll',
-            'libmysql.lib-extract/116.LIBMYSQL.dll',
-            'libmysql.lib-extract/117.LIBMYSQL.dll',
-            'libmysql.lib-extract/118.LIBMYSQL.dll',
-            'libmysql.lib-extract/119.LIBMYSQL.dll',
-            'libmysql.lib-extract/12.LIBMYSQL.dll',
-            'libmysql.lib-extract/120.LIBMYSQL.dll',
-            'libmysql.lib-extract/121.LIBMYSQL.dll',
-            'libmysql.lib-extract/122.LIBMYSQL.dll',
-            'libmysql.lib-extract/123.LIBMYSQL.dll',
-            'libmysql.lib-extract/124.LIBMYSQL.dll',
-            'libmysql.lib-extract/125.LIBMYSQL.dll',
-            'libmysql.lib-extract/126.LIBMYSQL.dll',
-            'libmysql.lib-extract/127.LIBMYSQL.dll',
-            'libmysql.lib-extract/128.LIBMYSQL.dll',
-            'libmysql.lib-extract/129.LIBMYSQL.dll',
-            'libmysql.lib-extract/13.LIBMYSQL.dll',
-            'libmysql.lib-extract/130.LIBMYSQL.dll',
-            'libmysql.lib-extract/131.LIBMYSQL.dll',
-            'libmysql.lib-extract/132.LIBMYSQL.dll',
-            'libmysql.lib-extract/133.LIBMYSQL.dll',
-            'libmysql.lib-extract/134.LIBMYSQL.dll',
-            'libmysql.lib-extract/135.LIBMYSQL.dll',
-            'libmysql.lib-extract/136.LIBMYSQL.dll',
-            'libmysql.lib-extract/137.LIBMYSQL.dll',
-            'libmysql.lib-extract/138.LIBMYSQL.dll',
-            'libmysql.lib-extract/139.LIBMYSQL.dll',
-            'libmysql.lib-extract/14.LIBMYSQL.dll',
-            'libmysql.lib-extract/140.LIBMYSQL.dll',
-            'libmysql.lib-extract/141.LIBMYSQL.dll',
-            'libmysql.lib-extract/142.LIBMYSQL.dll',
-            'libmysql.lib-extract/143.LIBMYSQL.dll',
-            'libmysql.lib-extract/144.LIBMYSQL.dll',
-            'libmysql.lib-extract/145.LIBMYSQL.dll',
-            'libmysql.lib-extract/146.LIBMYSQL.dll',
-            'libmysql.lib-extract/147.LIBMYSQL.dll',
-            'libmysql.lib-extract/148.LIBMYSQL.dll',
-            'libmysql.lib-extract/149.LIBMYSQL.dll',
-            'libmysql.lib-extract/15.LIBMYSQL.dll',
-            'libmysql.lib-extract/150.LIBMYSQL.dll',
-            'libmysql.lib-extract/151.LIBMYSQL.dll',
-            'libmysql.lib-extract/152.LIBMYSQL.dll',
-            'libmysql.lib-extract/153.LIBMYSQL.dll',
-            'libmysql.lib-extract/16.LIBMYSQL.dll',
-            'libmysql.lib-extract/17.LIBMYSQL.dll',
-            'libmysql.lib-extract/18.LIBMYSQL.dll',
-            'libmysql.lib-extract/19.LIBMYSQL.dll',
-            'libmysql.lib-extract/2.LIBMYSQL.dll',
-            'libmysql.lib-extract/2.txt',
-            'libmysql.lib-extract/20.LIBMYSQL.dll',
-            'libmysql.lib-extract/21.LIBMYSQL.dll',
-            'libmysql.lib-extract/22.LIBMYSQL.dll',
-            'libmysql.lib-extract/23.LIBMYSQL.dll',
-            'libmysql.lib-extract/24.LIBMYSQL.dll',
-            'libmysql.lib-extract/25.LIBMYSQL.dll',
-            'libmysql.lib-extract/26.LIBMYSQL.dll',
-            'libmysql.lib-extract/27.LIBMYSQL.dll',
-            'libmysql.lib-extract/28.LIBMYSQL.dll',
-            'libmysql.lib-extract/29.LIBMYSQL.dll',
-            'libmysql.lib-extract/3.LIBMYSQL.dll',
-            'libmysql.lib-extract/30.LIBMYSQL.dll',
-            'libmysql.lib-extract/31.LIBMYSQL.dll',
-            'libmysql.lib-extract/32.LIBMYSQL.dll',
-            'libmysql.lib-extract/33.LIBMYSQL.dll',
-            'libmysql.lib-extract/34.LIBMYSQL.dll',
-            'libmysql.lib-extract/35.LIBMYSQL.dll',
-            'libmysql.lib-extract/36.LIBMYSQL.dll',
-            'libmysql.lib-extract/37.LIBMYSQL.dll',
-            'libmysql.lib-extract/38.LIBMYSQL.dll',
-            'libmysql.lib-extract/39.LIBMYSQL.dll',
-            'libmysql.lib-extract/4.LIBMYSQL.dll',
-            'libmysql.lib-extract/40.LIBMYSQL.dll',
-            'libmysql.lib-extract/41.LIBMYSQL.dll',
-            'libmysql.lib-extract/42.LIBMYSQL.dll',
-            'libmysql.lib-extract/43.LIBMYSQL.dll',
-            'libmysql.lib-extract/44.LIBMYSQL.dll',
-            'libmysql.lib-extract/45.LIBMYSQL.dll',
-            'libmysql.lib-extract/46.LIBMYSQL.dll',
-            'libmysql.lib-extract/47.LIBMYSQL.dll',
-            'libmysql.lib-extract/48.LIBMYSQL.dll',
-            'libmysql.lib-extract/49.LIBMYSQL.dll',
-            'libmysql.lib-extract/5.LIBMYSQL.dll',
-            'libmysql.lib-extract/50.LIBMYSQL.dll',
-            'libmysql.lib-extract/51.LIBMYSQL.dll',
-            'libmysql.lib-extract/52.LIBMYSQL.dll',
-            'libmysql.lib-extract/53.LIBMYSQL.dll',
-            'libmysql.lib-extract/54.LIBMYSQL.dll',
-            'libmysql.lib-extract/55.LIBMYSQL.dll',
-            'libmysql.lib-extract/56.LIBMYSQL.dll',
-            'libmysql.lib-extract/57.LIBMYSQL.dll',
-            'libmysql.lib-extract/58.LIBMYSQL.dll',
-            'libmysql.lib-extract/59.LIBMYSQL.dll',
-            'libmysql.lib-extract/6.LIBMYSQL.dll',
-            'libmysql.lib-extract/60.LIBMYSQL.dll',
-            'libmysql.lib-extract/61.LIBMYSQL.dll',
-            'libmysql.lib-extract/62.LIBMYSQL.dll',
-            'libmysql.lib-extract/63.LIBMYSQL.dll',
-            'libmysql.lib-extract/64.LIBMYSQL.dll',
-            'libmysql.lib-extract/65.LIBMYSQL.dll',
-            'libmysql.lib-extract/66.LIBMYSQL.dll',
-            'libmysql.lib-extract/67.LIBMYSQL.dll',
-            'libmysql.lib-extract/68.LIBMYSQL.dll',
-            'libmysql.lib-extract/69.LIBMYSQL.dll',
-            'libmysql.lib-extract/7.LIBMYSQL.dll',
-            'libmysql.lib-extract/70.LIBMYSQL.dll',
-            'libmysql.lib-extract/71.LIBMYSQL.dll',
-            'libmysql.lib-extract/72.LIBMYSQL.dll',
-            'libmysql.lib-extract/73.LIBMYSQL.dll',
-            'libmysql.lib-extract/74.LIBMYSQL.dll',
-            'libmysql.lib-extract/75.LIBMYSQL.dll',
-            'libmysql.lib-extract/76.LIBMYSQL.dll',
-            'libmysql.lib-extract/77.LIBMYSQL.dll',
-            'libmysql.lib-extract/78.LIBMYSQL.dll',
-            'libmysql.lib-extract/79.LIBMYSQL.dll',
-            'libmysql.lib-extract/8.LIBMYSQL.dll',
-            'libmysql.lib-extract/80.LIBMYSQL.dll',
-            'libmysql.lib-extract/81.LIBMYSQL.dll',
-            'libmysql.lib-extract/82.LIBMYSQL.dll',
-            'libmysql.lib-extract/83.LIBMYSQL.dll',
-            'libmysql.lib-extract/84.LIBMYSQL.dll',
-            'libmysql.lib-extract/85.LIBMYSQL.dll',
-            'libmysql.lib-extract/86.LIBMYSQL.dll',
-            'libmysql.lib-extract/87.LIBMYSQL.dll',
-            'libmysql.lib-extract/88.LIBMYSQL.dll',
-            'libmysql.lib-extract/89.LIBMYSQL.dll',
-            'libmysql.lib-extract/9.LIBMYSQL.dll',
-            'libmysql.lib-extract/90.LIBMYSQL.dll',
-            'libmysql.lib-extract/91.LIBMYSQL.dll',
-            'libmysql.lib-extract/92.LIBMYSQL.dll',
-            'libmysql.lib-extract/93.LIBMYSQL.dll',
-            'libmysql.lib-extract/94.LIBMYSQL.dll',
-            'libmysql.lib-extract/95.LIBMYSQL.dll',
-            'libmysql.lib-extract/96.LIBMYSQL.dll',
-            'libmysql.lib-extract/97.LIBMYSQL.dll',
-            'libmysql.lib-extract/98.LIBMYSQL.dll',
-            'libmysql.lib-extract/99.LIBMYSQL.dll',
             'php4embed.lib',
             'php4embed.lib-extract/1.txt',
             'php4embed.lib-extract/2.txt',
@@ -910,13 +702,14 @@ class TestExtract(FileBasedTesting):
             'zlib.lib-extract/2.txt',
             'zlib.lib-extract/2.zlib.pyd',
             'zlib.lib-extract/3.zlib.pyd',
-            'zlib.lib-extract/4.zlib.pyd'
-        ]
+            'zlib.lib-extract/4.zlib.pyd']
+
         check_files(test_dir, expected)
         check_no_error(result)
 
-    def test_extract_nested_arch_with_corrupted_compressed_should_extract_inner_archives_only_once(self):
-        test_file = self.get_test_loc('extract/nested_not_compressed/nested_with_not_compressed_gz_file.tgz', copy=True)
+    def test_extract_nested_arch_with_corruption_should_extract_inner_archives_only_once(self):
+        test_file = self.get_test_loc(
+            'extract/nested_not_compressed/nested_with_not_compressed_gz_file.tgz', copy=True)
         expected = [
             'nested_with_not_compressed_gz_file.tgz',
             'nested_with_not_compressed_gz_file.tgz-extract/top/file',
