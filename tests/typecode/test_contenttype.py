@@ -33,7 +33,6 @@ from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
-from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import py2
 
@@ -175,7 +174,8 @@ class TestContentType(FileBasedTesting):
 
     def test_debian_package(self):
         test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
-        assert 'debian binary package (format 2.0)' == get_filetype(test_file)
+        expected = 'debian binary package (format 2.0), with control.tar.gz, data compression gz'
+        assert expected == get_filetype(test_file)
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
@@ -201,7 +201,7 @@ class TestContentType(FileBasedTesting):
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_crashing(self):
         test_file = self.get_test_loc('contenttype/archive/crashing-squashfs')
-        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version')
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -210,7 +210,7 @@ class TestContentType(FileBasedTesting):
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_gz(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-gz.sqs')
-        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version')
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -219,7 +219,7 @@ class TestContentType(FileBasedTesting):
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_lzo(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-lzo.sqs')
-        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version')
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -228,7 +228,7 @@ class TestContentType(FileBasedTesting):
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
     def test_archive_squashfs_xz(self):
         test_file = self.get_test_loc('contenttype/archive/sqfs-xz.sqs')
-        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
+        assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version')
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -248,7 +248,7 @@ class TestContentType(FileBasedTesting):
         assert not is_source(test_file)
         assert not is_text(test_file)
         assert '' == get_filetype_pygment(test_file)
-        assert 'application/x-gzip' == get_mimetype_file(test_file)
+        assert 'application/gzip' == get_mimetype_file(test_file)
         assert get_filetype(test_file).startswith('gzip compressed data')
         assert is_archive(test_file)
         assert is_compressed(test_file)
@@ -363,7 +363,7 @@ class TestContentType(FileBasedTesting):
     def test_build_java_maven_pom_pom(self):
         test_file = self.get_test_loc('contenttype/build/pom.pom')
         assert '' == get_filetype_pygment(test_file)
-        assert 'xml document text' == get_filetype(test_file)
+        assert 'xml 1.0 document, ascii text' == get_filetype(test_file)
         assert not is_source(test_file)
 
     def test_build_java_maven_pom_xml(self):
@@ -381,7 +381,7 @@ class TestContentType(FileBasedTesting):
     def test_certificate(self):
         test_file = self.get_test_loc('contenttype/certificate/CERTIFICATE')
         assert is_binary(test_file)
-        assert 'data' == get_filetype(test_file)
+        assert get_filetype(test_file).startswith('apple diskcopy 4.2 image')
         assert '' == get_filetype_pygment(test_file)
 
     def test_code_assembly(self):
@@ -478,9 +478,7 @@ class TestContentType(FileBasedTesting):
     def test_code_cpp_mixed_case_2(self):
         test_file = self.get_test_loc('contenttype/code/cpp/string.CPP')
 
-        expected = 'c source, ascii text'
-        if on_mac:
-            expected = 'c++ source, ascii text'
+        expected = 'c++ source, ascii text'
 
         assert expected == get_filetype(test_file)
         assert 'C++' == get_filetype_pygment(test_file)
@@ -521,7 +519,7 @@ class TestContentType(FileBasedTesting):
     def test_code_java_1(self):
         test_file = self.get_test_loc('contenttype/code/java/contenttype.java')
         assert not is_binary(test_file)
-        assert 'ascii text' == get_filetype(test_file)
+        assert 'java source, ascii text' == get_filetype(test_file)
         assert 'Java' == get_filetype_pygment(test_file)
 
     def test_code_java_non_ascii(self):
@@ -535,18 +533,22 @@ class TestContentType(FileBasedTesting):
 
     def test_code_java_3(self):
         test_file = self.get_test_loc('contenttype/code/java/Appender.java')
-        assert 'ascii text' == get_filetype(test_file)
+        assert 'java source, ascii text' == get_filetype(test_file)
         assert 'Java' == get_filetype_pygment(test_file)
 
     def test_code_java_jad(self):
         test_file = self.get_test_loc('contenttype/code/java/CommonViewerSiteFactory.jad')
-        assert 'ascii text' == get_filetype(test_file)
-        # FIXME: should this be Java code?
-        assert 'Python' == get_filetype_pygment(test_file)
+        assert 'java source, ascii text' == get_filetype(test_file)
+
+    @expectedFailure
+    def test_code_java_jad_pygment(self):
+        test_file = self.get_test_loc('contenttype/code/java/CommonViewerSiteFactory.jad')
+        # This should this be Java code?
+        assert 'Java' == get_filetype_pygment(test_file)
 
     def test_code_java_mixed_case(self):
         test_file = self.get_test_loc('contenttype/code/java/Logger.JAVA')
-        assert 'ascii text' == get_filetype(test_file)
+        assert 'java source, ascii text' == get_filetype(test_file)
         assert 'Java' == get_filetype_pygment(test_file)
 
     def test_code_js(self):
@@ -588,14 +590,21 @@ class TestContentType(FileBasedTesting):
     def test_compiled_elf_exe_32bits(self):
         test_file = self.get_test_loc('contenttype/compiled/linux/i686-shash')
         assert is_binary(test_file)
-        assert 'elf 32-bit lsb executable, intel 80386, version 1 (sysv), dynamically linked, interpreter /lib/ld-linux.so.2, for gnu/linux 2.6.4, not stripped' == get_filetype(self.get_test_loc(u'contenttype/compiled/linux/i686-shash'))
+        expected = (
+            'elf 32-bit lsb executable, intel 80386, version 1 (sysv), '
+            'dynamically linked, interpreter /lib/ld-linux.so.2, '
+            'for gnu/linux 2.6.4, with debug_info, not stripped')
+        assert expected == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
 
     def test_compiled_elf_exe_64bits(self):
         test_file = self.get_test_loc('contenttype/compiled/linux/x86_64-shash')
         assert is_binary(test_file)
-        assert 'elf 64-bit lsb executable, x86-64, version 1 (sysv), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for gnu/linux 2.6.9, not stripped' == get_filetype(self.get_test_loc(u'contenttype/compiled/linux/x86_64-shash'))
         assert '' == get_filetype_pygment(test_file)
+        assert (
+            'elf 64-bit lsb executable, x86-64, version 1 (sysv), '
+            'dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, '
+            'for gnu/linux 2.6.9, not stripped') == get_filetype(test_file)
 
     def test_compiled_elf_so(self):
         test_file = self.get_test_loc(u'contenttype/compiled/linux/libssl.so.0.9.7')
@@ -603,14 +612,15 @@ class TestContentType(FileBasedTesting):
         assert not is_text(test_file)
         assert '' == get_filetype_pygment(test_file)
         assert 'application/x-sharedlib' == get_mimetype_file(test_file)
-        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, stripped' == get_filetype(test_file)
-        assert 'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped' == get_filetype_file(test_file)
+        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), statically linked, stripped' == get_filetype(test_file)
+        assert 'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), statically linked, stripped' == get_filetype_file(test_file)
         assert '' == get_filetype_pygment(test_file)
 
     def test_compiled_elf_so_2(self):
         test_file = self.get_test_loc('contenttype/compiled/linux/libnetsnmpagent.so.5')
         assert not is_source(test_file)
-        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, not stripped' == get_filetype(test_file)
+        expected = 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), statically linked, with debug_info, not stripped'
+        assert expected == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
 
     def test_compiled_flash(self):
@@ -701,7 +711,7 @@ class TestContentType(FileBasedTesting):
     def test_debug_win_pdb(self):
         test_file = self.get_test_loc('contenttype/debug/QTMovieWin.pdb')
         assert is_binary(test_file)
-        assert 'msvc program database ver \\004' == get_filetype(test_file)
+        assert 'msvc program database ver 7.00, 1024*843 bytes' == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
 
     def test_doc_html(self):
@@ -827,7 +837,7 @@ class TestContentType(FileBasedTesting):
     def test_doc_postscript_eps(self):
         test_file = self.get_test_loc('contenttype/doc/postscript/Image1.eps')
         assert is_binary(test_file)
-        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert 'image/x-eps' == get_mimetype_file(test_file)
         assert get_filetype_file(test_file).startswith('DOS EPS Binary File Postscript')
 
     def test_doc_xml(self):
@@ -838,12 +848,12 @@ class TestContentType(FileBasedTesting):
     def test_doc_xml_2(self):
         test_file = self.get_test_loc('contenttype/doc/xml/some.xml')
         assert not is_binary(test_file)
-        assert 'xml document text' == get_filetype(test_file)
+        assert 'xml 1.0 document, ascii text, with crlf line terminators' == get_filetype(test_file)
 
     def test_doc_xml_3(self):
         test_file = self.get_test_loc('contenttype/doc/xml/somespring.xml')
         assert not is_binary(test_file)
-        assert 'xml document text' == get_filetype(test_file)
+        assert 'xml xxx document, ascii text, with crlf line terminators' == get_filetype(test_file)
 
     def test_media_audio_aif(self):
         test_file = self.get_test_loc('contenttype/media/a.aif')
@@ -889,12 +899,14 @@ class TestContentType(FileBasedTesting):
 
     def test_media_image_bmp_2(self):
         test_file = self.get_test_loc('contenttype/media/TBarLrge.bmp')
-        assert 'pc bitmap, windows 3.x format, 400 x 32 x 4' == get_filetype(test_file)
+        expected = 'pc bitmap, windows 3.x format, 400 x 32 x 4, image size 6400, resolution 4730 x 4720 px/m, cbsize 6518, bits offset 118'
+        assert expected == get_filetype(test_file)
         assert not contains_text(test_file)
 
     def test_media_image_bmp_3(self):
         test_file = self.get_test_loc('contenttype/media/TBarMedm.bmp')
-        assert 'pc bitmap, windows 3.x format, 210 x 16 x 4' == get_filetype(test_file)
+        expected = 'pc bitmap, windows 3.x format, 210 x 16 x 4, image size 1728, cbsize 1846, bits offset 118'
+        assert expected == get_filetype(test_file)
         assert not contains_text(test_file)
 
     def test_media_image_dib(self):
@@ -926,7 +938,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/Image1.img')
         assert is_binary(test_file)
         assert get_filetype_file(test_file).startswith('GEM Image data')
-        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        assert 'image/x-gem' == get_mimetype_file(test_file)
         assert not get_mimetype_python(test_file)
         assert is_media(test_file)
         assert not is_text(test_file)
@@ -1015,10 +1027,10 @@ class TestContentType(FileBasedTesting):
         assert not is_source(test_file)
         assert contains_text(test_file)
 
-    def test_media_image_tgg(self):
+    def test_media_image_tga(self):
         test_file = self.get_test_loc('contenttype/media/Image1.tga')
-        assert is_media(test_file)
-        assert is_binary(test_file)
+        assert is_media(test_file), repr(get_type(test_file))
+        assert is_binary(test_file), repr(get_type(test_file))
         assert not contains_text(test_file)
 
     def test_media_image_tif(self):
@@ -1104,7 +1116,8 @@ class TestContentType(FileBasedTesting):
 
     def test_package_debian(self):
         test_file = self.get_test_loc('contenttype/package/wget-el_0.5.0-8_all.deb')
-        assert 'debian binary package (format 2.0)' == get_filetype(test_file)
+        expected = 'debian binary package (format 2.0), with control.tar.gz, data compression gz'
+        assert expected == get_filetype(test_file)
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert not contains_text(test_file)
