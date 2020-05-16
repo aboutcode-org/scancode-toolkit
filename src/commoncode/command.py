@@ -27,12 +27,10 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import ctypes
+import contextlib
 import io
-import os as _os_module
-from os.path import abspath
-from os.path import exists
-from os.path import dirname
-from os.path import join
+import os
+from os import path
 
 import logging
 import signal
@@ -51,7 +49,6 @@ from commoncode.system import on_windows
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode import text
-import contextlib
 
 
 """
@@ -81,7 +78,16 @@ if TRACE:
 
 
 # current directory is the root dir of this library
-curr_dir = dirname(dirname(abspath(__file__)))
+curr_dir = path.dirname(path.dirname(path.abspath(__file__)))
+
+
+if py2:
+    LD_LIBRARY_PATH = b'LD_LIBRARY_PATH'
+    DYLD_LIBRARY_PATH = b'DYLD_LIBRARY_PATH'
+else:
+    LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
+    DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
+
 
 
 def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
@@ -114,8 +120,8 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
         stdout = 'stdout'
         stderr = 'stderr'
 
-    sop = join(tmp_dir, stdout)
-    sep = join(tmp_dir, stderr)
+    sop = path.join(tmp_dir, stdout)
+    sep = path.join(tmp_dir, stderr)
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
     # though we can execute commands that just happen to be in the path
@@ -137,20 +143,21 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
 
     try:
         with io.open(sop, **okwargs) as stdout, io.open(sep, **okwargs) as stderr:
-            popen_args = dict(
-                cwd=cwd,
-                env=env,
-                stdout=stdout,
-                stderr=stderr,
-                shell=shell,
-                # -1 defaults bufsize to system bufsize
-                bufsize=-1,
-                universal_newlines=True
-            )
+            with pushd(lib_dir):
+                popen_args = dict(
+                    cwd=cwd,
+                    env=env,
+                    stdout=stdout,
+                    stderr=stderr,
+                    shell=shell,
+                    # -1 defaults bufsize to system bufsize
+                    bufsize=-1,
+                    universal_newlines=True
+                )
 
-            proc = subprocess.Popen(full_cmd, **popen_args)
-            stdout, stderr = proc.communicate()
-            rc = proc.returncode if proc else 0
+                proc = subprocess.Popen(full_cmd, **popen_args)
+                stdout, stderr = proc.communicate()
+                rc = proc.returncode if proc else 0
 
     finally:
         close(proc)
@@ -178,9 +185,9 @@ def get_env(base_vars=None, lib_dir=None):
     if lib_dir and on_posix:
         path_var = '%(lib_dir)s' % locals()
         # on Linux/posix
-        env_vars['LD_LIBRARY_PATH'] = path_var
-        # on Mac
-        env_vars['DYLD_LIBRARY_PATH'] = path_var
+        env_vars.update(get_updated_path_env_var(new_path=path_var, env_var=LD_LIBRARY_PATH))
+        # on Mac, though LD_LIBRARY_PATH should work too
+        env_vars.update(get_updated_path_env_var(new_path=path_var, env_var=DYLD_LIBRARY_PATH))
 
     if py2:
         # ensure that we use bytes on py2 and unicode on py3
@@ -228,22 +235,34 @@ def load_shared_library(dll_path, lib_dir):
     """
     Return the loaded shared library object from the dll_path and adding `lib_dir` to the path.
     """
-    # add lib path to the front of the PATH env var and create DY/LD_LIBRARY_PATH vars
-    update_path_env_vars(lib_dir)
 
-    if not exists(dll_path):
+    if not path.exists(dll_path):
         raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
+
+    if lib_dir and not path.exists(lib_dir):
+        raise ImportError('Shared library "lib_dir" does not exists: %(lib_dir)r' % locals())
 
     if on_linux and py2:
         # bytes only there ...
         if not isinstance(dll_path, bytes):
             dll_path = fsencode(dll_path)
+
     else:
         # ... unicode everywhere else
         if not isinstance(dll_path, compat.unicode):
             dll_path = fsdecode(dll_path)
 
-    lib = ctypes.CDLL(dll_path)
+    try:
+        with pushd(lib_dir):
+            lib = ctypes.CDLL(dll_path)
+    except OSError as e:
+        from pprint import pformat
+        msgs = tuple([
+            'ctypes.CDLL(dll_path): {}'.format(dll_path),
+            'os.environ:\n{}'.format(pformat(dict(os.environ))),
+        ])
+        e.args = tuple(e.args + msgs)
+        raise
 
     if lib and lib._name:
         return lib
@@ -256,12 +275,12 @@ def pushd(path):
     """
     Context manager to change the current working directory to `path`.
     """
-    original_cwd = _os_module.getcwd()
+    original_cwd = os.getcwd()
     try:
-        _os_module.chdir(path)
-        yield _os_module.getcwd()
+        os.chdir(path)
+        yield os.getcwd()
     finally:
-        _os_module.chdir(original_cwd)
+        os.chdir(original_cwd)
 
 
 if py2:
@@ -270,79 +289,64 @@ else:
     PATH_ENV_VAR = 'PATH'
 
 
-def update_path_environment(new_path, _os_module=_os_module, _path_env_var=PATH_ENV_VAR, _path_env_sep=PATH_ENV_SEP):
+def get_updated_path_env_var(new_path, env_var=PATH_ENV_VAR, _path_env_sep=PATH_ENV_SEP):
     """
-    Update the PATH environment variable by adding `new_path` to the front
-    of PATH if `new_path` is not alreday in the PATH.
+    Return an mapping of (name: value} with an updated value for the `env_var`
+    environment variable by adding `new_path` to the front of that variable if
+    it exists and `new_path` is not already part of it.
     """
-    # note: _os_module is used to facilitate mock testing using an
+    # note: os is used to facilitate mock testing using an
     # object with a sep string attribute and an environ mapping
     # attribute
 
     if not new_path:
-        return
+        return {env_var: os.environ[env_var]}
 
     new_path = new_path.strip()
     if not new_path:
-        return
+        return {env_var: os.environ[env_var]}
 
-    path_env = _os_module.environ.get(_path_env_var)
+    existing_path_env = os.environ.get(env_var)
 
-    if not path_env:
+    if not existing_path_env:
         # this is quite unlikely to ever happen, but here for safety
-        path_env = EMPTY_STRING
+        existing_path_env = EMPTY_STRING
 
     # ensure we use unicode or bytes depending on OSes
     # TODO: deal also with Python versions
     if on_linux and py2:
         # bytes ...
         new_path = fsencode(new_path)
-        path_env = fsencode(path_env)
+        existing_path_env = fsencode(existing_path_env)
     else:
         # ... and unicode otherwise
         new_path = fsdecode(new_path)
-        path_env = fsdecode(path_env)
+        existing_path_env = fsdecode(existing_path_env)
 
-    try:
-        path_elements = path_env.split(_path_env_sep)
-    except:
-        raise Exception(repr((path_env, _path_env_sep)))
+    path_elements = [p.strip() for p in existing_path_env.split(_path_env_sep) if p.strip()]
 
     # add lib path to the front of the PATH env var
     # this will use bytes on Linux and unicode elsewhere
-    if new_path not in path_elements:
-        if not path_env:
-            new_path_env = new_path
-        else:
-            new_path_env = _path_env_sep.join([new_path, path_env])
+    if not path_elements:
+        new_path_env = new_path
 
-        if py2:
-            # always use bytes for env vars...
-            if isinstance(new_path_env, compat.unicode):
-                new_path_env = fsencode(new_path_env)
-        else:
-            # ... else use unicode
-            if not isinstance(new_path_env, compat.unicode):
-                new_path_env = fsdecode(new_path_env)
+    elif new_path not in path_elements:
+        path_elements.insert(0, new_path)
+        new_path_env = _path_env_sep.join(path_elements)
 
-        # at this stage new_path_env is unicode on all OSes on Py3
-        # and on Py2:  bytes on Linux and unicode elsewhere
-        _os_module.environ[_path_env_var] = new_path_env
-
-
-def update_path_env_vars(lib_dir):
-    """
-    Add `lib_dir` to the PATH, LD_LIBRARY_PATH and DYLD_LIBRARY_PATH variables.
-    """
-    if py2:
-        LD_LIBRARY_PATH = b'LD_LIBRARY_PATH'
-        DYLD_LIBRARY_PATH = b'DYLD_LIBRARY_PATH'
     else:
-        LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
-        DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
+        new_path_env = existing_path_env
 
-    update_path_environment(lib_dir)
-    update_path_environment(lib_dir, _path_env_var=LD_LIBRARY_PATH)
-    update_path_environment(lib_dir, _path_env_var=DYLD_LIBRARY_PATH)
+    if py2:
+        # always use bytes for env vars...
+        if isinstance(new_path_env, compat.unicode):
+            new_path_env = fsencode(new_path_env)
+    else:
+        # ... else use unicode
+        if not isinstance(new_path_env, compat.unicode):
+            new_path_env = fsdecode(new_path_env)
 
+    # at this stage new_path_env is unicode on all OSes on Py3
+    # and on Py2 it is bytes on Linux and unicode elsewhere
+    return {env_var: new_path_env}
 
