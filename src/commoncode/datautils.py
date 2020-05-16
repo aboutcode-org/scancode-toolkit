@@ -43,7 +43,7 @@ LABEL_METADATA = '__field_label'
 
 
 def attribute(default=attr.NOTHING, validator=None,
-              repr=False, cmp=True,  # NOQA
+              repr=False, eq=True, order=True,  # NOQA
               init=True, type=None, converter=None,  # NOQA
               help=None, label=None, metadata=None,):  # NOQA
     """
@@ -58,12 +58,19 @@ def attribute(default=attr.NOTHING, validator=None,
         metadata[LABEL_METADATA] = label
 
     return attr.attrib(
-        default=default, validator=validator, repr=repr, cmp=cmp, init=init,
-        metadata=metadata, type=type, converter=converter
+        default=default,
+        validator=validator,
+        repr=repr,
+        eq=eq,
+        order=order,
+        init=init,
+        metadata=metadata,
+        type=type,
+        converter=converter
     )
 
 
-def Boolean(default=False, validator=None, repr=False, cmp=True,  # NOQA
+def Boolean(default=False, validator=None, repr=False, eq=True, order=True,  # NOQA
             converter=None, label=None, help=None,):  # NOQA
     """
     A boolean attribute.
@@ -72,7 +79,8 @@ def Boolean(default=False, validator=None, repr=False, cmp=True,  # NOQA
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=bool,
         converter=converter,
@@ -81,7 +89,7 @@ def Boolean(default=False, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
-def TriBoolean(default=None, validator=None, repr=False, cmp=True,  # NOQA
+def TriBoolean(default=None, validator=None, repr=False, eq=True, order=True,  # NOQA
             converter=None, label=None, help=None,):  # NOQA
     """
     A tri-boolean attribute with possible values of None, True and False.
@@ -90,7 +98,8 @@ def TriBoolean(default=None, validator=None, repr=False, cmp=True,  # NOQA
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=bool,
         converter=converter,
@@ -99,7 +108,7 @@ def TriBoolean(default=None, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
-def String(default=None, validator=None, repr=False, cmp=True,  # NOQA
+def String(default=None, validator=None, repr=False, eq=True, order=True,  # NOQA
            converter=None, label=None, help=None,):  # NOQA
     """
     A string attribute.
@@ -107,7 +116,9 @@ def String(default=None, validator=None, repr=False, cmp=True,  # NOQA
     return attribute(
         default=default,
         validator=validator,
-        repr=repr, cmp=cmp,
+        repr=repr,
+        eq=eq,
+        order=order,
         init=True,
         type=str,
         converter=converter,
@@ -116,7 +127,7 @@ def String(default=None, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
-def Integer(default=0, validator=None, repr=False, cmp=True,  # NOQA
+def Integer(default=0, validator=None, repr=False, eq=True, order=True,  # NOQA
             converter=None, label=None, help=None,):  # NOQA
     """
     An integer attribute.
@@ -126,7 +137,8 @@ def Integer(default=0, validator=None, repr=False, cmp=True,  # NOQA
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=int,
         converter=converter,
@@ -135,7 +147,7 @@ def Integer(default=0, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
-def Float(default=0.0, validator=None, repr=False, cmp=True,  # NOQA
+def Float(default=0.0, validator=None, repr=False, eq=True, order=True,  # NOQA
           converter=None, label=None, help=None,):  # NOQA
     """
     A float attribute.
@@ -144,7 +156,8 @@ def Float(default=0.0, validator=None, repr=False, cmp=True,  # NOQA
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=float,
         converter=converter,
@@ -153,7 +166,8 @@ def Float(default=0.0, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
-def List(item_type=typing.Any, default=attr.NOTHING, validator=None, repr=False, cmp=True,  # NOQA
+def List(item_type=typing.Any, default=attr.NOTHING, validator=None,
+         repr=False, eq=True, order=True,  # NOQA
          converter=None, label=None, help=None,):  # NOQA
     """
     A list attribute: the optional item_type defines the type of items it stores.
@@ -165,7 +179,8 @@ def List(item_type=typing.Any, default=attr.NOTHING, validator=None, repr=False,
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=typing.List[item_type],
         converter=converter,
@@ -174,7 +189,8 @@ def List(item_type=typing.Any, default=attr.NOTHING, validator=None, repr=False,
     )
 
 
-def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None, repr=False, cmp=True,  # NOQA
+def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None,
+            repr=False, eq=True, order=True,  # NOQA
             converter=None, help=None, label=None):  # NOQA
     """
     A mapping attribute: the optional value_type defines the type of values it
@@ -190,7 +206,8 @@ def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None, repr=Fa
         default=default,
         validator=validator,
         repr=repr,
-        cmp=cmp,
+        eq=eq,
+        order=order,
         init=True,
         type=typing.Dict[str, value_type],
         converter=converter,
@@ -203,10 +220,19 @@ def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None, repr=Fa
 # FIXME: add proper support for dates!!!
 ##################################################
 
-def Date(default=None, validator=None, repr=False, cmp=True,  # NOQA
+def Date(default=None, validator=None, repr=False, eq=True, order=True,  # NOQA
            converter=None, label=None, help=None,):  # NOQA
     """
     A date attribute. It always serializes to an ISO date string.
     Behavior is TBD and for now this is exactly a string.
     """
-    return String(default, validator, repr, cmp, converter, label, help)
+    return String(
+        default=default,
+        validator=validator,
+        repr=repr,
+        eq=eq,
+        order=order,
+        converter=converter,
+        help=help,
+        label=label,
+    )
