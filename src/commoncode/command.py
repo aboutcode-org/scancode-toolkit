@@ -82,12 +82,13 @@ curr_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
 
 if py2:
+    PATH_ENV_VAR = b'PATH'
     LD_LIBRARY_PATH = b'LD_LIBRARY_PATH'
     DYLD_LIBRARY_PATH = b'DYLD_LIBRARY_PATH'
 else:
+    PATH_ENV_VAR = 'PATH'
     LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
     DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
-
 
 
 def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
@@ -183,11 +184,15 @@ def get_env(base_vars=None, lib_dir=None):
 
     # Create and add LD environment variables
     if lib_dir and on_posix:
-        path_var = '%(lib_dir)s' % locals()
+        new_path = '%(lib_dir)s' % locals()
         # on Linux/posix
-        env_vars.update(get_updated_path_env_var(new_path=path_var, env_var=LD_LIBRARY_PATH))
+        ld_lib_path = os.environ.get(LD_LIBRARY_PATH)
+        env_vars.update(
+            {LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
         # on Mac, though LD_LIBRARY_PATH should work too
-        env_vars.update(get_updated_path_env_var(new_path=path_var, env_var=DYLD_LIBRARY_PATH))
+        dyld_lib_path = os.environ.get(DYLD_LIBRARY_PATH)
+        env_vars.update(
+            {DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
 
     if py2:
         # ensure that we use bytes on py2 and unicode on py3
@@ -276,6 +281,8 @@ def pushd(path):
     Context manager to change the current working directory to `path`.
     """
     original_cwd = os.getcwd()
+    if not path:
+        path = original_cwd
     try:
         os.chdir(path)
         yield os.getcwd()
@@ -283,70 +290,54 @@ def pushd(path):
         os.chdir(original_cwd)
 
 
-if py2:
-    PATH_ENV_VAR = b'PATH'
-else:
-    PATH_ENV_VAR = 'PATH'
-
-
-def get_updated_path_env_var(new_path, env_var=PATH_ENV_VAR, _path_env_sep=PATH_ENV_SEP):
+def update_path_var(existing_path_var, new_path, pathsep=PATH_ENV_SEP):
     """
-    Return an mapping of (name: value} with an updated value for the `env_var`
-    environment variable by adding `new_path` to the front of that variable if
-    it exists and `new_path` is not already part of it.
+    Return an updated value for the `existing_path_var` PATH-like environment
+    variable value  by adding `new_path` to the front of that variable if
+    `new_path` is not already part of this PATH-like variable.
     """
-    # note: os is used to facilitate mock testing using an
-    # object with a sep string attribute and an environ mapping
-    # attribute
-
     if not new_path:
-        return {env_var: os.environ[env_var]}
+        return existing_path_var
 
-    new_path = new_path.strip()
-    if not new_path:
-        return {env_var: os.environ[env_var]}
-
-    existing_path_env = os.environ.get(env_var)
-
-    if not existing_path_env:
-        # this is quite unlikely to ever happen, but here for safety
-        existing_path_env = EMPTY_STRING
+    existing_path_var = existing_path_var or EMPTY_STRING
 
     # ensure we use unicode or bytes depending on OSes
     # TODO: deal also with Python versions
     if on_linux and py2:
         # bytes ...
+        existing_path_var = fsencode(existing_path_var)
         new_path = fsencode(new_path)
-        existing_path_env = fsencode(existing_path_env)
+        pathsep = fsencode(pathsep)
     else:
         # ... and unicode otherwise
+        existing_path_var = fsdecode(existing_path_var)
         new_path = fsdecode(new_path)
-        existing_path_env = fsdecode(existing_path_env)
+        pathsep = fsdecode(pathsep)
 
-    path_elements = [p.strip() for p in existing_path_env.split(_path_env_sep) if p.strip()]
+    path_elements = existing_path_var.split(pathsep)
 
-    # add lib path to the front of the PATH env var
-    # this will use bytes on Linux and unicode elsewhere
     if not path_elements:
-        new_path_env = new_path
+        updated_path_var = new_path
 
     elif new_path not in path_elements:
+        # add new path to the front of the PATH env var
         path_elements.insert(0, new_path)
-        new_path_env = _path_env_sep.join(path_elements)
+        updated_path_var = pathsep.join(path_elements)
 
     else:
-        new_path_env = existing_path_env
+        # new path is already in PATH, change nothing
+        updated_path_var = existing_path_var
 
     if py2:
         # always use bytes for env vars...
-        if isinstance(new_path_env, compat.unicode):
-            new_path_env = fsencode(new_path_env)
+        if isinstance(updated_path_var, compat.unicode):
+            updated_path_var = fsencode(updated_path_var)
     else:
         # ... else use unicode
-        if not isinstance(new_path_env, compat.unicode):
-            new_path_env = fsdecode(new_path_env)
+        if not isinstance(updated_path_var, compat.unicode):
+            updated_path_var = fsdecode(updated_path_var)
 
     # at this stage new_path_env is unicode on all OSes on Py3
     # and on Py2 it is bytes on Linux and unicode elsewhere
-    return {env_var: new_path_env}
+    return updated_path_var
 
