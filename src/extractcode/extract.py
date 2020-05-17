@@ -113,7 +113,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
        is True.
 
     If `recurse` is True, extract recursively archives nested inside other
-    archives If `recurse` is false, then do not extract further an already
+    archives. If `recurse` is false, then do not extract further an already
     extracted archive identified by the corresponding extract suffix location.
 
     If `replace_originals` is True, the extracted archives are replaced by the
@@ -123,9 +123,16 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
     if recurse and a nested archive is found, it is extracted to full depth
     first before resuming the file system walk.
     """
-    events = list(extract_files(location=location, kinds=kinds, recurse=recurse, ignored_extensions=ignored_extensions))
+    processed_events = []
+    processed_events_append = processed_events.append
+    for event in extract_files(location, kinds, recurse, ignored_extensions):
+        yield event
+        if replace_originals:
+            processed_events_append(event)
+
+    # move files around
     if replace_originals:
-        for xevent in reversed(events):
+        for xevent in reversed(processed_events):
             if xevent.done:
                 source = xevent.source
                 target = xevent.target
@@ -134,12 +141,22 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
                 fileutils.delete(source)
                 fileutils.copytree(target, source)
                 fileutils.delete(target)
-    return events
+
 
 def extract_files(location, kinds=extractcode.default_kinds, recurse=False, ignored_extensions=()):
+    """
+    Extract the files found at `location`.
+
+    Extract only archives of a kind listed in the `kinds` kind tuple.
+
+    If `recurse` is True, extract recursively archives nested inside other
+    archives. If `recurse` is false, then do not extract further an already
+    extracted archive identified by the corresponding extract suffix location.
+    """
     ignored = partial(ignore.is_ignored, ignores=ignore.default_ignores, unignores={})
     if TRACE:
         logger.debug('extract:start: %(location)r  recurse: %(recurse)r\n' % locals())
+
     abs_location = abspath(expanduser(location))
     for top, dirs, files in fileutils.walk(abs_location, ignored):
         if TRACE:
@@ -192,8 +209,8 @@ def extract_file(location, target, kinds=extractcode.default_kinds, verbose=Fals
     extractor = archive.get_extractor(location, kinds)
     if TRACE:
         logger.debug('extract_file: extractor: for: %(location)r with kinds: %(kinds)r : ' % locals()
-                     + getattr(extractor, '__module__', '')
-                     + '.' + getattr(extractor, '__name__', ''))
+                     +getattr(extractor, '__module__', '')
+                     +'.' + getattr(extractor, '__name__', ''))
     if extractor:
         yield ExtractEvent(location, target, done=False, warnings=[], errors=[])
         try:

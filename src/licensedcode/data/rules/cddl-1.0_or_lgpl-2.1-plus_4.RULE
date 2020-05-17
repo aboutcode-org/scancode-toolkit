@@ -1,0 +1,12 @@
+<licenses>
+        <license>
+            <name>CDDL, v1.0</name>
+            <url>http://www.opensource.org/licenses/cddl1.php</url>
+            <distribution>repo</distribution>
+        </license>
+        <license>
+            <name>LGPL, v2.1 or later</name>
+            <url>http://www.opensource.org/licenses/lgpl-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>

@@ -1,0 +1,16 @@
+license_expression: freetype
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg
+    - copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg
+ignorable_holders:
+    - David Turner, Robert Wilhelm, and Werner Lemberg
+ignorable_urls:
+    - http://www.freetype.org/
+ignorable_emails:
+    - david.turner@freetype.org
+    - devel@freetype.org
+    - freetype@freetype.org
+    - robert.wilhelm@freetype.org
+    - werner.lemberg@freetype.org

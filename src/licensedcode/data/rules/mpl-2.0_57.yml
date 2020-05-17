@@ -1,0 +1,6 @@
+license_expression: mpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0/
+    - https://publicsuffix.org/list/effective_tld_names.dat

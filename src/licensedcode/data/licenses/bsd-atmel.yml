@@ -1,0 +1,8 @@
+key: bsd-atmel
+short_name: BSD Atmel License
+name: BSD Atmel License
+category: Permissive
+owner: Atmel
+homepage_url: https://github.com/atmelcorp/atmel-software-package/blob/d11d2a558fb5bd017aa15a9a78fb237ab972f29c/LICENSE.md
+minimum_coverage: 90
+notes: this is a bsd with clause 1 and 3

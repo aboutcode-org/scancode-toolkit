@@ -1,0 +1,4 @@
+license_expression: lgpl-2.0 AND unknown-license-reference
+is_license_tag: yes
+relevance: 100
+notes: the license refrence is not 100% clear but is typically the libwebsockets-exception

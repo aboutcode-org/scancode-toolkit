@@ -41,6 +41,7 @@ from extractcode import extract
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from commoncode.system import py3
+from types import GeneratorType
 
 
 class TestExtract(FileBasedTesting):
@@ -1111,7 +1112,13 @@ class TestExtract(FileBasedTesting):
 
         warns = [r.warnings for r in result if r.warnings]
         assert [] == warns
-
+        
+    def test_extract_always_returns_a_generator_and_not_a_list(self):
+        # a test for #1996 to ensure that progress is displayed "progressively"
+        test_dir = self.get_test_loc('extract/generator', copy=True)
+        result = extract.extract(test_dir)
+        assert isinstance(result, GeneratorType)
+    
     def test_extract_ignore(self):
         test_dir = self.get_test_loc('extract/ignore', copy=True)
         expected = [

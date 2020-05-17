@@ -1,0 +1,108 @@
+TQ-Systems Software License Agreement Version 1.0.2
+
+It is permitted to copy and distribute this document true to word.
+
+The software license is bound to the use of the TQ-Systems hardware.
+The software is classified as product-specific software.
+The software is provided exclusively in machine-readable form (binary or 
+object code).
+
+§1 Scope of Use and Usage Period
+  1. The rights to the TQ software - in particular the copyright and 
+     additional industrial property rights - shall remain exclusively 
+     with TQ even if the software has been modified by you or your 
+     company.
+     You are prohibited from using this Software in any way other than 
+     as described in the following provisions of this Agreement.
+  2. The ordinary, non-exclusive right to use the Software shall only 
+     apply in direct connection with the Product Hardware. Product 
+     hardware means that the hardware has been produced by TQ or a 
+     company affiliated with TQ and that the software has been developed 
+     specifically for that hardware.
+     You are prohibited from using the software developed by us on 
+     hardware products from third parties.
+     Any transfer to third parties is bound by the provisions of this 
+     Agreement.
+  3. You are obliged to report every activity to TQ in writing, with the 
+     exception of those actions which, according to the conditions of 
+     the Copyright Act (UrhG), do not require the release of the rights 
+     holder.
+     Outside the scope of the cases specified in the Copyright Act 
+     (UrhG), you are not entitled to modify, reverse engineer or 
+     translate the software.
+     If our software as a work uses software parts of third parties and  
+     therefore paragraph 1, subparagraph 3. contradicts license 
+     conditions applicable to these software parts of third parties, we 
+     additionally grant you the right to obtain permission to modify our 
+     software in binary form for your own use only and to carry out 
+     reverse engineering for the purpose of debugging these 
+     modifications. You may not distribute the modified version to third 
+     parties in any format.
+  4. Any use of the software that goes beyond the scope of the previous 
+     provisions requires our written consent.
+  5. We reserve the right to assert claims for damages.
+  6. You are only entitled to sub-license the software in connection 
+     with the product hardware.
+  7. In the event of sub-licensing, you must also ensure that no 
+     additional rights to the Software are granted to sublicensees other 
+     than those granted to you under these License Terms.
+  8. If you transfer your rights to the Software to any third party, you 
+     must destroy any untransferred copies of the Software.
+
+§2 Warranty; Liability
+  1. We expressly point out that it is not possible according to the 
+     state of the art to develop more complex software in such a way 
+     that an error-free function is guaranteed under all application 
+     conditions. We therefore only guarantee that the delivered software 
+     is suitable for contractual use in accordance with the description 
+     created or accepted by us.
+  2. In case of larger and comprehensible deviations of the software 
+     functionality from the product description or specification, we are 
+     entitled to either refund the purchase price paid by you, or a 
+     subsequent performance in the form of a repair within the framework 
+     of a reasonable period or to arrange for a replacement delivery of 
+     the Product.
+     In the event of significant and reproducible deviations in the 
+     functionality of the software from the product description or 
+     specification, we shall be entitled, at our discretion, either to 
+     refund the purchase price paid by you or to subsequent performance 
+     within a reasonable period of time by way of repair or new 
+     delivery. If, within the framework of the supplementary performance 
+     chosen by us, we are unable to eliminate the considerable 
+     deviations in the functionality of the software that have occurred 
+     within a reasonable period by providing a defect-free update or 
+     upgrade of the software or to circumvent them in such a way that 
+     you are able to use the software in accordance with the contract, 
+     you may claim a reduction in the agreed remuneration or withdraw 
+     from the contract. Any further claims are excluded to the extent 
+     permitted by law.
+  3. We do not warrant for minor deviations in the functionality of the 
+     software from the product description or specification.
+  4. The warranty period is one (1) year, unless longer periods are 
+     required by law. It begins with the acceptance of the software by 
+     you or - if a formal acceptance is not planned or does not take 
+     place - at the latest two (2) weeks after delivery or actual 
+     transfer.
+  5. We do not warrant or assume any liability beyond the scope of use 
+     described in paragraph 1 with respect to the proper selection, 
+     application and use of the Software. This applies in particular to 
+     improper use, in particular the use of incompatible hardware or 
+     software, modifications or extensions to the software made 
+     independently by or at your instigation, the culpable omission of 
+     regular data backup and other cases of incorrect or negligent 
+     handling by you. 
+     If you use the software outside these license terms, all warranty 
+     and liability claims are void. The aforementioned warranty or 
+     liability limitations shall not apply in cases of injury to life, 
+     limb or health, in cases of liability falling within the scope of 
+     the Product Liability Act, insofar as the software lacks a property 
+     or quality expressly warranted by us or we are at fault in the form 
+     of intent or gross negligence.
+
+§3. Additional conditions
+  1. Copies must contain a literal copy of this document.
+  2. TQ-Systems may revise this License from time to time.
+     Each Revision is identified by a Version number.
+     You may either use this Software within the scope of this version 
+     or the license or under the conditions of a later Revision of the 
+     license.

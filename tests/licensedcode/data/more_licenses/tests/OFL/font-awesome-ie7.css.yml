@@ -1,5 +1,2 @@
 license_expressions:
-  - ofl-1.1
-  - mit
-  - cc-by-3.0
-  - cc-by-sa-3.0
+  - ofl-1.1 AND mit AND cc-by-3.0

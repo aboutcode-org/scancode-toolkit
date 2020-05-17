@@ -1,0 +1,5 @@
+license_expression: gfdl-1.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/fdl.html

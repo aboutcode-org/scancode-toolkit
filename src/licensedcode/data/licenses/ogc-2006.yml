@@ -1,0 +1,15 @@
+key: ogc-2006
+short_name: OGC Software Notice 2006
+name: OGC Software Notice 2006
+category: Permissive
+owner: Open Geospatial Consortium
+homepage_url: https://www.ogc.org/ogc/software
+other_urls:
+    - http://www.opengeospatial.org/ogc/legal
+ignorable_copyrights:
+    - Copyright (c) Open Geospatial Consortium, Inc.
+ignorable_holders:
+    - Open Geospatial Consortium, Inc.
+ignorable_urls:
+    - http://www.opengeospatial.org/ogc/legal
+

@@ -1,0 +1,11 @@
+license_expression: zend-2.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1999-2006 Zend Technologies Ltd.
+ignorable_holders:
+    - Zend Technologies Ltd.
+ignorable_urls:
+    - http://www.zend.com/
+ignorable_emails:
+    - license@zend.com
