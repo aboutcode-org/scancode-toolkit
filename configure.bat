@@ -75,7 +75,7 @@ if ""%1""==""--python"" (
 @rem Pick a Python interpreter
 :python
 
-if exist "%CONFIGURED_PYTHON%" (
+if exist ""%CONFIGURED_PYTHON%"" (
     if not ""%1""==""--clean"" (
         @rem we do not want to use the configured Python in clean... it will be deleted
         set PYTHON_EXECUTABLE=%CONFIGURED_PYTHON%
@@ -89,19 +89,19 @@ if ""%PROVIDED_PYTHON%""==""path"" (
     goto check
 )
 
-if exist "%PROVIDED_PYTHON%" (
+if exist ""%PROVIDED_PYTHON%"" (
     set PYTHON_EXECUTABLE=%PROVIDED_PYTHON%
     goto check
 )
 
-if exist %DEFAULT_PYTHON% (
+if exist ""%DEFAULT_PYTHON%"" (
     set PYTHON_EXECUTABLE=%DEFAULT_PYTHON%
     goto check
 )
 
 :check
 
-if not exist "%PYTHON_EXECUTABLE%" (
+if not exist ""%PYTHON_EXECUTABLE%"" (
     echo * Unable to find an installation of Python.
     exit /b 1
 )
