@@ -1066,6 +1066,12 @@ class Resource(object):
     def extension(self, value):
         pass
 
+    @property
+    def extracted_from(self):
+        archive_path, sep, _ = self.path.rpartition('-extract')
+        if sep == '-extract':
+            return archive_path
+
     @classmethod
     def get(cls, codebase, rid):
         """
