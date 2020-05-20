@@ -108,6 +108,9 @@ if not exist ""%PYTHON_EXECUTABLE%"" (
 
 :run
 
+@rem without this things may not always work on Windows 10, but this makes things slower
+set PYTHONDONTWRITEBYTECODE=1
+
 call ""%PYTHON_EXECUTABLE%"" "%CFG_ROOT_DIR%etc\configure.py" %CFG_CMD_LINE_ARGS%
 
 @rem Return a proper return code on failure
