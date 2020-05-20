@@ -52,6 +52,7 @@ from extractcode import archive
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
+from extractcode.libarchive2 import ArchiveError
 
 
 """
@@ -2206,6 +2207,38 @@ class TestLzip(BaseArchiveTestCase):
         assert ['dfsdfsdfsdfsdfsdfsd_'] == os.listdir(test_dir)
 
 
+class TestLz4(BaseArchiveTestCase):
+
+    def test_extract_tarlz4_basic(self):
+        test_file = self.get_test_loc('archive/lz4/sample.tar.lz4')
+        test_dir = self.get_temp_dir()
+        archive.extract_tar(test_file, test_dir)
+        result = os.path.join(test_dir, 'tst')
+        assert ['empty', 'some'] == sorted(os.listdir(result))
+
+    def test_uncompress_lz4_basic(self):
+        test_file = self.get_test_loc('archive/lz4/some.lz4')
+        test_dir = self.get_temp_dir()
+        archive.extract_lzip(test_file, test_dir)
+        assert ['dfsdfsdfsdfsdfsdfsd_'] == os.listdir(test_dir)
+
+
+class TestZstd(BaseArchiveTestCase):
+
+    def test_extract_tarzstd_basic(self):
+        test_file = self.get_test_loc('archive/zstd/sample.tar.zst')
+        test_dir = self.get_temp_dir()
+        archive.extract_tar(test_file, test_dir)
+        result = os.path.join(test_dir, 'tst')
+        assert ['empty', 'some'] == sorted(os.listdir(result))
+
+    def test_uncompress_lzip_basic(self):
+        test_file = self.get_test_loc('archive/zstd/some.zst')
+        test_dir = self.get_temp_dir()
+        archive.extract_lzip(test_file, test_dir)
+        assert ['dfsdfsdfsdfsdfsdfsd_'] == os.listdir(test_dir)
+
+
 ################################################################################
 # Note: The following series of test is not easy to grasp but unicode archives
 # on multiple OS are hard to tests. So we have one test class for each
@@ -2338,8 +2371,11 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows(ExtractArchi
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = [u'None: \nIncorrect file header signature']
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
+        try:
+            self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+            self.fail('Exception not raised.')
+        except ArchiveError as ae:
+            assert str(ae).startswith('Incorrect file header signature')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')

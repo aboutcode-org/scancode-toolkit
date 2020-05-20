@@ -411,7 +411,7 @@ extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
 extract_deb = libarchive2.extract
-# sevenzip is best for windows lib formats and works fine otherwise. libarchive works on standard ar formats. 
+# sevenzip is best for windows lib formats and works fine otherwise. libarchive works on standard ar formats.
 extract_ar = functional.partial(extract_with_fallback, extractor1=sevenzip.extract, extractor2=libarchive2.extract)
 
 extract_msi = sevenzip.extract
@@ -426,6 +426,8 @@ extract_zip = functional.partial(extract_with_fallback, extractor1=libarchive2.e
 extract_springboot = functional.partial(try_to_extract, extractor=extract_zip)
 
 extract_lzip = libarchive2.extract
+extract_zstd = libarchive2.extract
+extract_lz4 = libarchive2.extract
 
 extract_iso = sevenzip.extract
 extract_rar = libarchive2.extract
@@ -663,10 +665,30 @@ TarLzipHandler = Handler(
     name='Tar lzip',
     filetypes=('lzip compressed',),
     mimetypes=('application/x-lzip',) ,
-    extensions=('.tar.lz','.tar.lzip',),
+    extensions=('.tar.lz', '.tar.lzip',),
     kind=regular_nested,
     extractors=[extract_lzip, extract_tar],
     strict=False
+)
+
+TarZstdHandler = Handler(
+    name='Tar zstd',
+    filetypes=('zstandard compressed',),
+    mimetypes=('application/x-zstd',) ,
+    extensions=('.tar.zst', '.tar.zstd',),
+    kind=regular_nested,
+    extractors=[extract_zstd, extract_tar],
+    strict=True
+)
+
+TarLz4Handler = Handler(
+    name='Tar lz4',
+    filetypes=('lz4 compressed',),
+    mimetypes=('application/x-lz4',) ,
+    extensions=('.tar.lz4',),
+    kind=regular_nested,
+    extractors=[extract_lz4, extract_tar],
+    strict=True
 )
 
 # https://wiki.openwrt.org/doc/techref/opkg: ipk
@@ -699,6 +721,26 @@ LzipHandler = Handler(
     extensions=('.lzip',),
     kind=regular,
     extractors=[extract_lzip],
+    strict=False
+)
+
+ZstdHandler = Handler(
+    name='zstd',
+    filetypes=('zstandard compressed',),
+    mimetypes=('application/x-zstd',) ,
+    extensions=('.tar.zst', '.tar.zstd',),
+    kind=regular_nested,
+    extractors=[extract_zstd],
+    strict=False
+)
+
+Lz4Handler = Handler(
+    name='lz4',
+    filetypes=('lz4 compressed',),
+    mimetypes=('application/x-lz4',) ,
+    extensions=('.lz4',),
+    kind=regular_nested,
+    extractors=[extract_lz4],
     strict=False
 )
 
@@ -1000,12 +1042,18 @@ archive_handlers = [
     TarXzHandler,
     TarLzmaHandler,
     TarGzipHandler,
+    TarLzipHandler,
+    TarLz4Handler,
+    TarZstdHandler,
     DiaDocHandler,
     GraffleDocHandler,
     SvgGzDocHandler,
     GzipHandler,
     BzipHandler,
     TarBzipHandler,
+    LzipHandler,
+    Lz4Handler,
+    ZstdHandler,
     RarHandler,
     CabHandler,
     MsiInstallerHandler,
