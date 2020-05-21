@@ -517,12 +517,7 @@ def test_scan_can_handle_weird_file_names():
 
     # Some info vary on each OS
     # See https://github.com/nexB/scancode-toolkit/issues/438 for details
-    if on_linux:
-        expected = 'weird_file_name/expected-linux.json'
-    elif on_mac:
-        expected = 'weird_file_name/expected-mac.json'
-    else:
-        raise Exception('Not a supported OS?')
+    expected = 'weird_file_name/expected-posix.json'
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
