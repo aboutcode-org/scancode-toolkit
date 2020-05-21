@@ -900,13 +900,13 @@ class TestContentType(FileBasedTesting):
     def test_media_image_bmp_2(self):
         test_file = self.get_test_loc('contenttype/media/TBarLrge.bmp')
         expected = 'pc bitmap, windows 3.x format, 400 x 32 x 4'
-        assert expected == get_filetype(test_file).startswith(expected)
+        assert get_filetype(test_file).startswith(expected)
         assert not contains_text(test_file)
 
     def test_media_image_bmp_3(self):
         test_file = self.get_test_loc('contenttype/media/TBarMedm.bmp')
         expected = 'pc bitmap, windows 3.x format, 210 x 16 x 4'
-        assert expected == get_filetype(test_file).startswith(expected)
+        assert get_filetype(test_file).startswith(expected)
         assert not contains_text(test_file)
 
     def test_media_image_dib(self):
