@@ -57,6 +57,8 @@ def os_arch():
 #
 current_os, current_arch = os_arch()
 on_windows = current_os == 'win'
+on_windows_32 = on_windows and current_arch == '32'
+on_windows_64 = on_windows and current_arch == '64'
 on_mac = current_os == 'mac'
 on_linux = current_os == 'linux'
 on_freebsd = current_os == 'freebsd'
