@@ -2252,9 +2252,9 @@ class TestZstd(BaseArchiveTestCase):
 
 class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
 
-    check_only_warnings = False
-
-    def check_extract(self, test_function, test_file, expected_suffix, expected_warnings=None, regen=False):
+    def check_extract_weird_names(
+            self, test_function, test_file, expected_suffix, expected_warnings=None,
+            regen=False, check_warnings=True, check_only_warnings=False):
         """
         Run the extraction `test_function` on `test_file` checking that the paths
         listed in the `test_file.excepted` file exist in the extracted target
@@ -2266,10 +2266,10 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         warnings = test_function(test_file, test_dir)
 
-        # shortcut if check of warnings are requested
-        if self.check_only_warnings and expected_warnings is not None:
+        if check_warnings and expected_warnings is not None:
             assert sorted(expected_warnings) == sorted(warnings)
-            return
+            if check_only_warnings:
+                return
 
         len_test_dir = len(test_dir)
         extracted = sorted(path[len_test_dir:] for path in fileutils.resource_iter(test_dir, with_dirs=False))
@@ -2298,276 +2298,237 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
         assert expected == extracted
 
 
-@pytest.mark.skipif(not on_linux, reason='Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
+@pytest.mark.skipif(on_windows, reason='Run only on POSIX because of specific test expectations.')
+class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnPosix(ExtractArchiveWithIllegalFilenamesTestCase):
 
-    def test_extract_7zip_with_weird_filenames_with_libarchive(self):
+    def test_extract_7zip_with_weird_filenames_with_libarchive_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_ar_with_weird_filenames_with_libarchive(self):
+    def test_extract_ar_with_weird_filenames_with_libarchive_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         test_dir = self.get_temp_dir()
         expected = Exception('Incorrect file header signature')
         self.assertRaisesInstance(expected, libarchive2.extract, test_file, test_dir)
 
-    def test_extract_cpio_with_weird_filenames_with_libarchive(self):
+    def test_extract_cpio_with_weird_filenames_with_libarchive_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_tar_with_weird_filenames_with_libarchive(self):
+    def test_extract_tar_with_weird_filenames_with_libarchive_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_zip_with_weird_filenames_with_libarchive(self):
+    def test_extract_zip_with_weird_filenames_with_libarchive_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
-
-
-@pytest.mark.skipif(not on_linux, reason='Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux):
-    check_only_warnings = True
-
-
-@pytest.mark.skipif(not on_mac, reason='Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
-
-    def test_extract_7zip_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
-
-    def test_extract_ar_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['None: \nIncorrect file header signature']
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
-
-    def test_extract_cpio_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
-
-    def test_extract_tar_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
-
-    def test_extract_zip_with_weird_filenames_with_libarchive(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
-
-
-@pytest.mark.skipif(not on_mac, reason='Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMacWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac):
-    check_only_warnings = True
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
 
 @pytest.mark.skipif(not on_windows, reason='Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
 
-    def test_extract_7zip_with_weird_filenames_with_libarchive(self):
+    def test_extract_7zip_with_weird_filenames_with_libarchive_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_ar_with_weird_filenames_with_libarchive(self):
+    def test_extract_ar_with_weird_filenames_with_libarchive_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         try:
-            self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+            self.check_extract_weird_names(
+                libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
             self.fail('Exception not raised.')
         except ArchiveError as ae:
             assert str(ae).startswith('Incorrect file header signature')
 
-    def test_extract_cpio_with_weird_filenames_with_libarchive(self):
+    def test_extract_cpio_with_weird_filenames_with_libarchive_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_tar_with_weird_filenames_with_libarchive(self):
+    def test_extract_tar_with_weird_filenames_with_libarchive_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
-    def test_extract_zip_with_weird_filenames_with_libarchive(self):
+    def test_extract_zip_with_weird_filenames_with_libarchive_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
+        self.check_extract_weird_names(
+            libarchive2.extract, test_file, expected_warnings=[], expected_suffix='libarch')
 
 
-@pytest.mark.skipif(not on_windows, reason='Run only on Windows because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindowsWarnings(TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows):
-    check_only_warnings = True
+@pytest.mark.skipif(on_windows, reason='Run only on POSIX because of specific test expectations.')
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnPosix(ExtractArchiveWithIllegalFilenamesTestCase):
 
-
-@pytest.mark.skipif(not on_linux, reason='Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
-
-    def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+    def test_extract_7zip_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_ar_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+    def test_extract_cpio_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
+    def test_extract_iso_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
     @pytest.mark.xfail  # not a problem: we now use libarchive for these
-    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_rar_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_tar_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+    def test_extract_zip_with_weird_filenames_with_sevenzip_posix(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-
-@pytest.mark.skipif(not on_linux, reason='Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux):
-    check_only_warnings = True
-
-
-@pytest.mark.skipif(not on_mac, reason='Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = True
-
-    def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    def test_extract_ar_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    @pytest.mark.xfail
-    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
-
-@pytest.mark.xfail
-@pytest.mark.skipif(not on_mac, reason='Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings):
-    check_only_warnings = False
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
 @pytest.mark.skipif(not on_windows, reason='Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
 
-    def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+    def test_extract_7zip_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
     @pytest.mark.xfail  # not a problem: we use libarchive for these
-    def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_ar_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
     @pytest.mark.xfail  # not a problem: we use libarchive for these
-    def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+    def test_extract_cpio_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
-    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
+    def test_extract_iso_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
     @pytest.mark.xfail  # not a problem: we use libarchive for these
-    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_rar_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
-    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_tar_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
     @pytest.mark.xfail  # not a problem: we use libarchive for these
-    def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+    def test_extract_zip_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=False, check_only_warnings=False)
 
 
 @pytest.mark.skipif(not on_windows, reason='Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = True
 
     if py2:
         # The results are not correct but not a problem: we use libarchive for these
         @pytest.mark.xfail
-        def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+        def test_extract_7zip_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
     else:
-        def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
+        def test_extract_7zip_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
     if py2:
         @pytest.mark.xfail  # not a problem: we use libarchive for these
-        def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+        def test_extract_ar_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
     else:
-        def test_extract_ar_with_weird_filenames_with_sevenzip(self):
+        def test_extract_ar_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
-
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
     if py2:
         @pytest.mark.xfail  # not a problem: we use libarchive for these
-        def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+        def test_extract_cpio_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
     else:
-        def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
+        def test_extract_cpio_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
 
-    def test_extract_iso_with_weird_filenames_with_sevenzip(self):
+    def test_extract_iso_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=True, check_only_warnings=True)
+
 
     @pytest.mark.xfail  # not a problem: we use libarchive for these
-    def test_extract_rar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_rar_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=True, check_only_warnings=True)
 
-    def test_extract_tar_with_weird_filenames_with_sevenzip(self):
+    def test_extract_tar_with_weird_filenames_with_sevenzip_win(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+        self.check_extract_weird_names(
+            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+            check_warnings=True, check_only_warnings=True)
 
     if py2:
         @pytest.mark.xfail  # not a problem: we use libarchive for these
-        def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+        def test_extract_zip_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
+
     else:
-        def test_extract_zip_with_weird_filenames_with_sevenzip(self):
+        def test_extract_zip_with_weird_filenames_with_sevenzip_win(self):
             test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
-            self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            self.check_extract_weird_names(
+                sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip',
+                check_warnings=True, check_only_warnings=True)
 
 
 class TestZipSlip(BaseArchiveTestCase):
