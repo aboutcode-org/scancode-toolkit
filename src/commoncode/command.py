@@ -129,7 +129,8 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     shell = True if on_windows else False
 
     if log:
-        logger.debug(
+        printer = logger.debug if TRACE else lambda x: print(x)
+        printer(
             'Executing command %(cmd_loc)r as:\n%(full_cmd)r\nwith: env=%(env)r\n'
             'shell=%(shell)r\ncwd=%(cwd)r\nstdout=%(sop)r\nstderr=%(sep)r'
             % locals())

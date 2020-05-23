@@ -35,6 +35,7 @@ import re
 
 from commoncode  import command
 from commoncode.system import is_case_sensitive_fs
+from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
 from commoncode.system import py3
@@ -163,7 +164,7 @@ def get_bin_locations():
     return lib_dir, cmd_loc
 
 
-def extract(location, target_dir, arch_type='*'):
+def extract(location, target_dir, arch_type='*', log=on_mac):
     """
     Extract all files from a 7zip-supported archive file at location in the
     target_dir directory. Return a list of warning messages.
@@ -240,6 +241,7 @@ def extract(location, target_dir, arch_type='*'):
         lib_dir=lib_dir,
         cwd=abs_target_dir,
         env=timezone,
+        log=log
     )
 
     if TRACE:
