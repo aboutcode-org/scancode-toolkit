@@ -73,7 +73,7 @@ del os_arch
 
 def is_on_macos_14_or_higher():
     """
-    Return True if the current OS is macPS 14 or higher.
+    Return True if the current OS is macOS 14 or higher.
     It uses APFS by default and has a different behavior wrt. unicode and
     filesystem encodings.
     """
@@ -86,6 +86,28 @@ def is_on_macos_14_or_higher():
 on_macos_14_or_higher = is_on_macos_14_or_higher()
 
 del is_on_macos_14_or_higher
+
+
+def has_case_sensitive_fs():
+    """
+    Return True if the current FS is case sensitive.
+
+    Windows is not case sensitive, and while older macOS HPFS+ were POSIX and
+    case sensitive by default, newer macOS use APFS which is no longer case
+    sensitive by default.
+    
+    From https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
+        How does Apple File System handle filenames?
+        APFS accepts only valid UTF-8 encoded filenames for creation, and preserves
+        both case and normalization of the filename on disk in all variants. APFS,
+        like HFS+, is case-sensitive on iOS and is available in case-sensitive and
+        case-insensitive variants on macOS, with case-insensitive being the default.
+    """
+    return os.path.exists(__file__.upper())
+
+
+is_case_sensitive_fs = has_case_sensitive_fs()
+
 
 #
 # Shared library file extensions
