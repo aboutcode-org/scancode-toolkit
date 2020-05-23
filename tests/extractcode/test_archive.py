@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 
 import io
 import os
-from unittest.case import expectedFailure
 
 import pytest
 
@@ -2025,7 +2024,6 @@ class TestDia(BaseArchiveTestCase):
         self.assertExceptionContains('invalid distance too far back',
             archive.uncompress_gzip, test_file, test_dir)
 
-#     @expectedFailure('Fails with latest binaries. Dia are not critical though.')
     def test_extract_can_get_extractor_and_uncompress_dia_files(self):
         test_file = self.get_test_loc('archive/dia/guess/infoset-doc.dia')
         test_dir = self.get_temp_dir()
