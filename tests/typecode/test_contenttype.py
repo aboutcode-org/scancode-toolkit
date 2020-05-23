@@ -851,10 +851,16 @@ class TestContentType(FileBasedTesting):
             get_filetype_file=get_filetype_file(test_file),
             get_mimetype_file=get_mimetype_file(test_file),
         )
-        expected = dict(
-            get_filetype_file='DOS EPS Binary File Postscript starts at byte 32 length 466 TIFF starts at byte 498 length 11890',
-            get_mimetype_file='image/x-eps',
-        )
+        if on_windows:
+            expected = dict(
+                get_filetype_file='DOS EPS Binary File Postscript starts at byte 32 length 466 TIFF starts at byte 498 length 11890',
+                get_mimetype_file='application/octet-stream',
+            )
+        else:
+            expected = dict(
+                get_filetype_file='DOS EPS Binary File Postscript starts at byte 32 length 466 TIFF starts at byte 498 length 11890',
+                get_mimetype_file='image/x-eps',
+            )
         assert expected == results
 
     def test_doc_xml(self):
