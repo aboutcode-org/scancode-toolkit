@@ -91,7 +91,7 @@ else:
     DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
 
 
-def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
+def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, log=TRACE):
     """
     Run a `cmd_loc` command with the `args` arguments list and return the return
     code, the stdout and stderr.
@@ -128,10 +128,10 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
     # though we can execute commands that just happen to be in the path
     shell = True if on_windows else False
 
-    if TRACE:
+    if log:
         logger.debug(
-            'Executing command %(cmd_loc)r as %(full_cmd)r with: env=%(env)r, '
-            'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
+            'Executing command %(cmd_loc)r as:\n%(full_cmd)r\nwith: env=%(env)r\n'
+            'shell=%(shell)r\ncwd=%(cwd)r\nstdout=%(sop)r\nstderr=%(sep)r'
             % locals())
 
     proc = None
