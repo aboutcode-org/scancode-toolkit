@@ -841,13 +841,21 @@ class TestContentType(FileBasedTesting):
         assert not is_binary(test_file)
         assert not is_media(test_file)
 
-    @pytest.mark.xfail(on_windows_64, reason='Somehow we have incorrect results on win63 with libmagic 5.38: '
-       'application/octet-stream instead of EPS')
+    #@pytest.mark.xfail(on_windows or on_mac, reason='Somehow we have incorrect results on win63 with libmagic 5.38: '
+    #   'application/octet-stream instead of EPS')
     def test_doc_postscript_eps(self):
         test_file = self.get_test_loc('contenttype/doc/postscript/Image1.eps')
         assert is_binary(test_file)
-        assert 'image/x-eps' == get_mimetype_file(test_file)
-        assert get_filetype_file(test_file).startswith('DOS EPS Binary File Postscript')
+
+        results = dict(
+            get_filetype_file=get_filetype_file(test_file),
+            get_mimetype_file=get_mimetype_file(test_file),
+        )
+        expected = dict(
+            get_filetype_file='DOS EPS Binary File Postscript starts at byte 32 length 466 TIFF starts at byte 498 length 11890',
+            get_mimetype_file='image/x-eps',
+        )
+        assert expected == results
 
     def test_doc_xml(self):
         test_file = self.get_test_loc('contenttype/doc/xml/simple.xml')
