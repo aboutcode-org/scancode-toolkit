@@ -35,6 +35,7 @@ import re
 
 from commoncode  import command
 from commoncode.system import is_case_sensitive_fs
+from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
 from commoncode.system import py3
 from commoncode import text
@@ -203,10 +204,10 @@ def extract(location, target_dir, arch_type='*'):
     # -ssc-    Set case-insensitive mode. It's default for Windows systems.
     # historically, this was not needed on macOS, but now APFS is case
     # insentitive as a default
-    if is_case_sensitive_fs:
-        case_sensitive = '-ssc'
-    else:
+    if on_windows or on_macos_14_or_higher or not is_case_sensitive_fs:
         case_sensitive = '-ssc-'
+    else:
+        case_sensitive = '-ssc'
 
     # These does not work well with p7zip for now:
     # - force any console output to be UTF-8 encoded
