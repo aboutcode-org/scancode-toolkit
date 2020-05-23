@@ -34,6 +34,7 @@ from pprint import pprint
 import re
 
 from commoncode  import command
+from commoncode.system import is_case_sensitive_fs
 from commoncode.system import on_windows
 from commoncode.system import py3
 from commoncode import text
@@ -197,10 +198,17 @@ def extract(location, target_dir, arch_type='*'):
     # renaming may not behave the same way on all OSes in particular Mac and Windows
     auto_rename_dupe_names = '-aou'
 
-    # These things do not work well with p7zip for now:
-    # - ensure that we treat the FS as case insensitive even if it is
-    #   this ensure we have consistent names across OSes
-    #   case_insensitive = '-ssc-'
+    # Ensure that we treat the FS as case insensitive if that's what it is
+    # -ssc    Set case-sensitive mode. It's default for Posix/Linux systems.
+    # -ssc-    Set case-insensitive mode. It's default for Windows systems.
+    # historically, this was not needed on macOS, but now APFS is case
+    # insentitive as a default
+    if is_case_sensitive_fs:
+        case_sensitive = '-ssc'
+    else:
+        case_sensitive = '-ssc-'
+
+    # These does not work well with p7zip for now:
     # - force any console output to be UTF-8 encoded
     #   TODO: add this may be for a UTF output on Windows only
     #   output_as_utf = '-sccUTF-8'
@@ -216,6 +224,7 @@ def extract(location, target_dir, arch_type='*'):
     args = [
         extract,
         yes_to_all,
+        case_sensitive,
         auto_rename_dupe_names,
         arch_type,
         abs_location,
