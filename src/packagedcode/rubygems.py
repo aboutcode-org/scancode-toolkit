@@ -204,7 +204,7 @@ def rubygems_download_url(name, version, platform=None, repo='https://rubygems.o
     name = name.strip().strip('/')
     version = version.strip().strip('/')
     version_plat = version
-    if platform  and platform != 'ruby':
+    if platform and platform != 'ruby':
         version_plat = '{version}-{platform}'.format(**locals())
     return '{repo}/{name}-{version_plat}.gem'.format(**locals())
 
@@ -256,7 +256,6 @@ def get_gem_metadata(location):
         warnings = archive.extract_tar(abs_location, extract_loc) or []
         if warnings:
             raise Exception('Failed to extract RubyGem .gem file.\n' + '\n'.join(warnings))
-
 
         # The gzipped metadata is the second level of archive.
         metadata = os.path.join(extract_loc, 'metadata')
@@ -333,7 +332,6 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     if date and len(date) >= 10:
         date = date[:10]
         package.release_date = date[:10]
-
 
     # there are two levels of nesting
     version1 = gem_data.get('version') or {}
@@ -608,7 +606,6 @@ def spec_defaults():
     }
 
 
-
 # known gem fields. other are ignored
 known_fields = [
     'platform',
@@ -653,15 +650,15 @@ def normalize(gem_data, known_fields=known_fields):
 
 # defaults fields of .gemspec file
 data_dic = {
-    "name" : None,
-    "version" : None,
-    "authors" : None,
-    "email" : None,
-    "summary" : None,
-    "description" : None,
-    "homepage" : None,
-    "license" : None,
-    "dependencies" : None
+    "name": None,
+    "version": None,
+    "authors": None,
+    "email": None,
+    "summary": None,
+    "description": None,
+    "homepage": None,
+    "license": None,
+    "dependencies": None
     }
 
 
@@ -682,7 +679,7 @@ def parse_spec(location):
                 name = individual.split('"')
             elif "'" in individual:
                 name = individual.split("'")
-            data_dic.update({'name' : name[1]})
+            data_dic.update({'name': name[1]})
 
         # update the value of author
         if 'authors' in individual:
@@ -696,7 +693,7 @@ def parse_spec(location):
                 authors = authors[1].strip('[]').replace('"', '')
             elif "'" in individual:
                 authors = authors[1].strip('[]').replace("'", "")
-            data_dic.update({'authors' : authors})
+            data_dic.update({'authors': authors})
 
         # update the value of email
         if 'email' in individual:
@@ -705,7 +702,7 @@ def parse_spec(location):
                 email = email[1].strip('[]').replace('"', '')
             elif "'" in individual:
                 email = email[1].strip('[]').replace("'", "")
-            data_dic.update({'email' : email})
+            data_dic.update({'email': email})
 
         # update the value of summary
         if 'summary' in individual:
@@ -713,7 +710,7 @@ def parse_spec(location):
                 summary = individual.split('"')
             elif "'" in individual:
                 summary = individual.split("'")
-            data_dic.update({'summary' : summary[1]})
+            data_dic.update({'summary': summary[1]})
 
         # update the value of description
         if 'description' in individual:
@@ -721,7 +718,7 @@ def parse_spec(location):
                 description = individual.split('"')
             elif "'" in individual:
                 description = individual.split("'")
-            data_dic.update({'description' : description[1]})
+            data_dic.update({'description': description[1]})
 
         # update the value of homepage
         if 'homepage' in individual:
@@ -729,7 +726,7 @@ def parse_spec(location):
                 homepage = individual.split('"')
             elif "'" in individual:
                 homepage = individual.split("'")
-            data_dic.update({'homepage' : homepage[1]})
+            data_dic.update({'homepage': homepage[1]})
 
         # update the value of license
         if 'license' in individual:
@@ -737,14 +734,14 @@ def parse_spec(location):
                 license = individual.split('"')
             elif "'" in individual:
                 license = individual.split("'")
-            data_dic.update({'license' : license[1]})
+            data_dic.update({'license': license[1]})
 
         # update the value of dependencies
-        if 'dependency' in  individual:
+        if 'dependency' in individual:
             dependency = individual.split("'")
             dependencies.append(dependency[1])
 
-    data_dic.update({'dependencies' : dependencies})
+    data_dic.update({'dependencies': dependencies})
 
     return data_dic
 
