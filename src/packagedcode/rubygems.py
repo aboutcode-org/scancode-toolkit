@@ -32,6 +32,7 @@ import os
 from os.path import abspath
 from os.path import expanduser
 
+import io
 import attr
 import saneyaml
 from packageurl import PackageURL
@@ -120,7 +121,8 @@ class RubyGem(models.Package):
 
         if location.endswith('.gemspec'):
             # TODO: implement me
-            pass
+            gemspec_data = parse_spec(location)
+            yield build_packages_from_gemspec(gemspec_data)
 
         if location.endswith('Gemfile'):
             # TODO: implement me
@@ -558,6 +560,7 @@ LICENSES_MAPPING = {
 
 
 ################################################################################
+
 def parse_gemspec(location):
     raise NotImplementedError
 
@@ -605,6 +608,7 @@ def spec_defaults():
     }
 
 
+
 # known gem fields. other are ignored
 known_fields = [
     'platform',
@@ -647,93 +651,133 @@ def normalize(gem_data, known_fields=known_fields):
     )
 
 
+# defaults fields of .gemspec file
+data_dic = {
+    "name" : None,
+    "version" : None,
+    "authors" : None,
+    "email" : None,
+    "summary" : None,
+    "description" : None,
+    "homepage" : None,
+    "license" : None,
+    "dependencies" : None
+    }
+
+
 def parse_spec(location):
-    pass
-
-
-class GemSpec(object):
     """
-    Represent a Gem specification.
+    Returns a dictionary which containing .gemspec file data.
     """
+    file_data = []
+    with io.open(location, "r", encoding="utf-8") as f:
+        file_data = [line.rstrip('\n') for line in f]
 
-    # TODO: Check if we should use 'summary' instead of description
-    def __init__(self, location):
-        """
-        Initialize from the gem spec or gem file at location.
-        """
-        spec = parse_spec(location)
-        self.location = location
-        self.description = spec.get('description')
-        self.summary = spec.get('summary')
-        self.author = spec.get('author')
-        self.authors = spec.get('authors')
-        # can be a list
-        self.email = spec.get('email')
+    dependencies = []
+
+    for individual in file_data:
+        # update the value of name
+        if 'name' in individual:
+            if '"' in individual:
+                name = individual.split('"')
+            elif "'" in individual:
+                name = individual.split("'")
+            data_dic.update({'name' : name[1]})
+
+        # update the value of author
+        if 'authors' in individual:
+            # >>> s = 's.authors = ["abc", "pqr", "xyz"]'
+            # >>> result = s.split('= ')
+            # ['s.authors ', '["abc", "pqr", "xyz"]']
+            # >>> result[1].strip('[]')
+            # '"abc", "pqr", "xyz"'
+            authors = individual.split('= ')
+            if '"' in individual:
+                authors = authors[1].strip('[]').replace('"', '')
+            elif "'" in individual:
+                authors = authors[1].strip('[]').replace("'", "")
+            data_dic.update({'authors' : authors})
+
+        # update the value of email
+        if 'email' in individual:
+            email = individual.split('= ')
+            if '"' in individual:
+                email = email[1].strip('[]').replace('"', '')
+            elif "'" in individual:
+                email = email[1].strip('[]').replace("'", "")
+            data_dic.update({'email' : email})
+
+        # update the value of summary
+        if 'summary' in individual:
+            if '"' in individual:
+                summary = individual.split('"')
+            elif "'" in individual:
+                summary = individual.split("'")
+            data_dic.update({'summary' : summary[1]})
+
+        # update the value of description
+        if 'description' in individual:
+            if '"' in individual:
+                description = individual.split('"')
+            elif "'" in individual:
+                description = individual.split("'")
+            data_dic.update({'description' : description[1]})
+
+        # update the value of homepage
+        if 'homepage' in individual:
+            if '"' in individual:
+                homepage = individual.split('"')
+            elif "'" in individual:
+                homepage = individual.split("'")
+            data_dic.update({'homepage' : homepage[1]})
+
+        # update the value of license
+        if 'license' in individual:
+            if '"' in individual:
+                license = individual.split('"')
+            elif "'" in individual:
+                license = individual.split("'")
+            data_dic.update({'license' : license[1]})
+
+        # update the value of dependencies
+        if 'dependency' in  individual:
+            dependency = individual.split("'")
+            dependencies.append(dependency[1])
+
+    data_dic.update({'dependencies' : dependencies})
+
+    return data_dic
 
 
-        self.spec['licenses'] = self.map_licenses()
-        self.make_unique()
+def build_packages_from_gemspec(gemspec_data):
+    """
+    Yield RubyGem Packages from gemspec.
+    """
+    name = gemspec_data.get('name')
+    description = gemspec_data.get('description')
+    homepage_url = gemspec_data.get('homepage')
+    package = RubyGem(
+        name=name,
+        description=description,
+        homepage_url=homepage_url
+    )
+    package.dependencies = gemspec_data.get('dependencies')
 
-    def __str__(self):
-        return '<{}: {}>'.format(self.__class__.__name__, self.location)
+    authors = gemspec_data.get('authors') or []
+    email = gemspec_data.get('email') or []
 
-    def make_unique(self):
-        """
-        Ensure that lists in the spec only contain unique values.
-        """
-        new_spec = {}
-        for key, value in self.spec.items:
-            if isinstance(value, list):
-                newlist = []
-                for item in value:
-                    if item not in newlist:
-                        newlist.append(item)
-                new_spec[key] = newlist
-            else:
-                new_spec[key] = value
-        return new_spec
+    parties = []
+    if authors:
+        parties.append(
+            models.Party(
+                name=authors,
+                email=email,
+                role='author'
+            )
+        )
+    package.parties = parties
 
-    def get_description(self):
-        """
-        Using 'description' over 'summary' unless summary contains
-        more data.
-        See http://guides.rubygems.org/specification-reference/
-        Note that it is common to see this is spec files: s.description = s.summary
-        """
-        description = self.spec.get('description', '')
-        summary = self.spec.get('summary', '')
-
-        content = description
-        # FIXME: we should join these.
-        if len(summary) > len(description):
-            content = summary
-
-        content = ' '.join(content.split())
-        return content.strip()
-
-    def get_email(self):
-        """
-        Join the list of emails as a comma-separated string.
-        """
-        email = self.spec.get('email', u'')
-        if isinstance(email, list):
-            email = u', '.join(email)
-        return email
-
-    def map_licenses(self):
-        licenses = self.spec.get('licenses', [])
-        if not isinstance(licenses, list):
-            licenses = [licenses]
-
-        mapped_licenses = []
-        for lic in licenses:
-            mapped_license = LICENSES_MAPPING.get(lic, None)
-            if mapped_license:
-                mapped_licenses.append(mapped_license)
-            else:
-                if TRACE:
-                    logger.warning('WARNING: {}: no license mapping for: "{}"'.format(self.filename, lic))
-        return mapped_licenses
+    return package
 
 
 def build_packages_from_gemfile_lock(gemfile_lock):
