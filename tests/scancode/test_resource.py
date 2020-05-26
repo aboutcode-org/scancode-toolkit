@@ -1257,3 +1257,38 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
             OrderedDict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
         ]
         assert expected == results
+
+
+class TestResource(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_Resource_extracted_to_extracted_from(self):
+        test_file = self.get_test_loc('resource/resource/test-extracted-from-to.json')
+        codebase = VirtualCodebase(location=test_file)
+        results = []
+        for r in codebase.walk(topdown=True):
+            extracted_to = r.extracted_to(codebase)
+            extracted_from = r.extracted_from(codebase)
+
+            extracted_to_path = ''
+            if extracted_to:
+                extracted_to_path = extracted_to.path
+
+            extracted_from_path = ''
+            if extracted_from:
+                extracted_from_path = extracted_from.path
+            results.append((r.path, extracted_to_path, extracted_from_path))
+
+        expected = [
+            ('test', '', ''),
+            ('test/c', '', ''),
+            ('test/foo.tar.gz', 'test/foo.tar.gz-extract', ''),
+            ('test/foo.tar.gz-extract', '', 'test/foo.tar.gz'),
+            ('test/foo.tar.gz-extract/foo', '', 'test/foo.tar.gz'),
+            ('test/foo.tar.gz-extract/foo/a', '', 'test/foo.tar.gz'),
+            ('test/foo.tar.gz-extract/foo/bar.tar.gz', 'test/foo.tar.gz-extract/foo/bar.tar.gz-extract', 'test/foo.tar.gz'),
+            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz'),
+            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz'),
+            ('test/foo.tar.gz-extract/foo/bar.tar.gz-extract/bar/b', '', 'test/foo.tar.gz-extract/foo/bar.tar.gz')
+        ]
+        assert expected == results
