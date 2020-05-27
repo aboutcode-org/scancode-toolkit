@@ -676,8 +676,10 @@ def parse_spec(location):
         # update the value of name
         if 'name' in individual:
             if '"' in individual:
+                # if string is like: 'spec.name = "name"'
                 name = individual.split('"')
             elif "'" in individual:
+                # if string is like: "spec.name = 'name'"
                 name = individual.split("'")
             data_dic.update({'name': name[1]})
 
