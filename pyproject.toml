@@ -1,6 +1,7 @@
 [tool.dephell.main]
 from = {format = "flit", path = "pyproject.toml"}
 to = {format = "setuppy", path = "setup.py"}
+tag = "v."
 
 [tool.dephell.pytest]
 from = {format = "flit", path = "pyproject.toml"}
@@ -22,7 +23,7 @@ command = "mypy --ignore-missing-imports --allow-redefinition dephell_setuptools
 [tool.flit.metadata]
 module="dephell_setuptools"
 author="Gram (@orsinium)"
-author-email="master_fess@mail.ru"
+author-email="gram@orsinium.dev"
 home-page="https://github.com/dephell/dephell_setuptools"
 requires-python=">=3.5"
 requires=[
