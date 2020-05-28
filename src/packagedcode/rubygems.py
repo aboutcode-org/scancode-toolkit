@@ -674,14 +674,17 @@ def parse_spec(location):
 
     for individual in file_data:
         # update the value of name
-        if 'name' in individual:
-            if '"' in individual:
-                # if string is like: 'spec.name = "name"'
-                name = individual.split('"')
-            elif "'" in individual:
-                # if string is like: "spec.name = 'name'"
-                name = individual.split("'")
-            data_dic.update({'name': name[1]})
+        if 'name' in individual and 'basename' not in individual:
+            # >>> s = 'spec.name = "abc"'
+            # >>> name = s.split('= ')
+            # >>> name
+            # ['spec.name ', '"abc"']
+            # >>> name = name[1].strip('\'"')
+            # >>> name
+            # abc
+            name = individual.split('= ')
+            name = name[1].strip('\'"')
+            data_dic.update({'name' : name})
 
         # update the value of author
         if 'authors' in individual:
@@ -691,59 +694,45 @@ def parse_spec(location):
             # >>> result[1].strip('[]')
             # '"abc", "pqr", "xyz"'
             authors = individual.split('= ')
-            if '"' in individual:
-                authors = authors[1].strip('[]').replace('"', '')
-            elif "'" in individual:
-                authors = authors[1].strip('[]').replace("'", "")
-            data_dic.update({'authors': authors})
+            authors = authors[1].strip('[]').replace('"', '')
+            data_dic.update({'authors' : authors})
 
         # update the value of email
         if 'email' in individual:
             email = individual.split('= ')
-            if '"' in individual:
-                email = email[1].strip('[]').replace('"', '')
-            elif "'" in individual:
-                email = email[1].strip('[]').replace("'", "")
-            data_dic.update({'email': email})
+            email = email[1].strip('[]').replace('"', '')
+            data_dic.update({'email' : email})
 
         # update the value of summary
         if 'summary' in individual:
-            if '"' in individual:
-                summary = individual.split('"')
-            elif "'" in individual:
-                summary = individual.split("'")
-            data_dic.update({'summary': summary[1]})
+            summary = individual.split('= ')
+            summary = summary[1].strip('\'"')
+            data_dic.update({'summary' : summary})
 
         # update the value of description
         if 'description' in individual:
-            if '"' in individual:
-                description = individual.split('"')
-            elif "'" in individual:
-                description = individual.split("'")
-            data_dic.update({'description': description[1]})
+            description = individual.split('= ')
+            description = description[1].strip('\'"')
+            data_dic.update({'description' : description})
 
         # update the value of homepage
         if 'homepage' in individual:
-            if '"' in individual:
-                homepage = individual.split('"')
-            elif "'" in individual:
-                homepage = individual.split("'")
-            data_dic.update({'homepage': homepage[1]})
+            homepage = individual.split('= ')
+            homepage = homepage[1].strip('\'"')
+            data_dic.update({'homepage' : homepage})
 
         # update the value of license
         if 'license' in individual:
-            if '"' in individual:
-                license = individual.split('"')
-            elif "'" in individual:
-                license = individual.split("'")
-            data_dic.update({'license': license[1]})
+            license = individual.split('= ')
+            license = license[1].strip('\'\'""')
+            data_dic.update({'license' : license})
 
         # update the value of dependencies
-        if 'dependency' in individual:
+        if 'dependency' in  individual:
             dependency = individual.split("'")
             dependencies.append(dependency[1])
 
-    data_dic.update({'dependencies': dependencies})
+    data_dic.update({'dependencies' : dependencies})
 
     return data_dic
 
