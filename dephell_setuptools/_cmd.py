@@ -61,8 +61,11 @@ class CommandReader(BaseReader):
                 )
             if result.returncode != 0:
                 raise RuntimeError('Command {!r} failed in {} with RC={}: {}'.format(
-                    cmd, os.getcwd(), result.returncode,
-                    result.stderr.decode('utf-8').strip().split('\n')[-1]))
+                    cmd,
+                    os.getcwd(),
+                    result.returncode,
+                    result.stderr.decode('utf-8').strip().split('\n')[-1],
+                ))
 
             with output_json.open() as stream:
                 content = json.load(stream)
