@@ -9,7 +9,7 @@ from ._pkginfo import PkgInfoReader
 from ._static import StaticReader
 
 
-__version__ = '0.2.3'
+__version__ = '0.2.4'
 
 
 __all__ = [
