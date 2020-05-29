@@ -648,29 +648,28 @@ def normalize(gem_data, known_fields=known_fields):
     )
 
 
-# defaults fields of .gemspec file
-data_dic = {
-    "name": None,
-    "version": None,
-    "authors": None,
-    "email": None,
-    "summary": None,
-    "description": None,
-    "homepage": None,
-    "license": None,
-    "dependencies": None
-    }
-
-
 def parse_spec(location):
     """
     Returns a dictionary which containing .gemspec file data.
     """
     file_data = []
     with io.open(location, "r", encoding="utf-8") as f:
-        file_data = [line.rstrip('\n') for line in f]
+        file_data = f.read().splitlines()
 
     dependencies = []
+
+    # defaults fields of .gemspec file
+    gemspec_data = {
+        "name": None,
+        "version": None,
+        "authors": None,
+        "email": None,
+        "summary": None,
+        "description": None,
+        "homepage": None,
+        "license": None,
+        "dependencies": None
+        }
 
     for individual in file_data:
         # update the value of name
@@ -684,7 +683,7 @@ def parse_spec(location):
             # abc
             name = individual.split('= ')
             name = name[1].strip('\'"')
-            data_dic.update({'name' : name})
+            gemspec_data['name'] = name
 
         # update the value of author
         if 'authors' in individual:
@@ -695,46 +694,47 @@ def parse_spec(location):
             # '"abc", "pqr", "xyz"'
             authors = individual.split('= ')
             authors = authors[1].strip('[]').replace('"', '')
-            data_dic.update({'authors' : authors})
+            gemspec_data['authors'] = authors
 
         # update the value of email
         if 'email' in individual:
             email = individual.split('= ')
             email = email[1].strip('[]').replace('"', '')
-            data_dic.update({'email' : email})
+            gemspec_data['email'] = email
 
         # update the value of summary
         if 'summary' in individual:
             summary = individual.split('= ')
             summary = summary[1].strip('\'"')
-            data_dic.update({'summary' : summary})
+            gemspec_data['summary'] = summary
 
         # update the value of description
         if 'description' in individual:
             description = individual.split('= ')
             description = description[1].strip('\'"')
-            data_dic.update({'description' : description})
+            gemspec_data['description'] = description
 
         # update the value of homepage
         if 'homepage' in individual:
             homepage = individual.split('= ')
             homepage = homepage[1].strip('\'"')
-            data_dic.update({'homepage' : homepage})
+            gemspec_data['homepage'] = homepage
 
         # update the value of license
         if 'license' in individual:
             license = individual.split('= ')
-            license = license[1].strip('\'\'""')
-            data_dic.update({'license' : license})
+            license = license[1].strip('\'"')
+            gemspec_data['license'] = license
 
         # update the value of dependencies
         if 'dependency' in  individual:
             dependency = individual.split("'")
             dependencies.append(dependency[1])
 
-    data_dic.update({'dependencies' : dependencies})
+    # stores dependencies list into dictionary
+    gemspec_data['dependencies'] = dependencies
 
-    return data_dic
+    return gemspec_data
 
 
 def build_packages_from_gemspec(gemspec_data):
