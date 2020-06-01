@@ -33,6 +33,7 @@ from os.path import abspath
 from os.path import expanduser
 
 import io
+import re
 import attr
 import saneyaml
 from packageurl import PackageURL
@@ -678,11 +679,11 @@ def parse_spec(location):
             # >>> name = s.split('= ')
             # >>> name
             # ['spec.name ', '"abc"']
-            # >>> name = name[1].strip('\'"')
+            # >>> name = name[1].strip('\'"%q{}')
             # >>> name
             # abc
             name = individual.split('= ')
-            name = name[1].strip('\'"')
+            name = name[1].strip('\'"%q{}')
             gemspec_data['name'] = name
 
         # update the value of author
@@ -693,42 +694,46 @@ def parse_spec(location):
             # >>> result[1].strip('[]')
             # '"abc", "pqr", "xyz"'
             authors = individual.split('= ')
-            authors = authors[1].strip('[]').replace('"', '')
+            authors = authors[1].strip('[]%q{}').replace('"', '')
             gemspec_data['authors'] = authors
 
         # update the value of email
         if 'email' in individual:
             email = individual.split('= ')
-            email = email[1].strip('[]').replace('"', '')
+            email = email[1].strip('[]%q{}').replace('"', '')
             gemspec_data['email'] = email
 
         # update the value of summary
         if 'summary' in individual:
             summary = individual.split('= ')
-            summary = summary[1].strip('\'"')
+            summary = summary[1].strip('\'"%q{}')
             gemspec_data['summary'] = summary
 
         # update the value of description
         if 'description' in individual:
             description = individual.split('= ')
-            description = description[1].strip('\'"')
+            description = description[1].strip('\'"%q{}')
             gemspec_data['description'] = description
 
         # update the value of homepage
         if 'homepage' in individual:
             homepage = individual.split('= ')
-            homepage = homepage[1].strip('\'"')
+            homepage = homepage[1].strip('\'"%q{}')
             gemspec_data['homepage'] = homepage
 
         # update the value of license
         if 'license' in individual:
             license = individual.split('= ')
-            license = license[1].strip('\'"')
+            license = license[1].strip('\'"%q{}')
             gemspec_data['license'] = license
 
         # update the value of dependencies
         if 'dependency' in  individual:
-            dependency = individual.split("'")
+            # >>> s = 's.add_runtime_dependency(%q<mechanize>, [">= 0"])'
+            # >>> d = re.split("'|<|>", s)
+            # >>> d
+            # ['s.add_runtime_dependency(%q', 'mechanize', ', ["', '= 0"])']
+            dependency = re.split("'|<|>", individual)
             dependencies.append(dependency[1])
 
     # stores dependencies list into dictionary
