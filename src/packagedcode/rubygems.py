@@ -716,7 +716,7 @@ def parse_spec(location):
             gemspec_data['description'] = description
 
         # update the value of homepage
-        if 'homepage' in individual:
+        if 'homepage' in individual and 'homepage_uri' not in individual:
             homepage = individual.split('= ')
             homepage = homepage[1].strip('\'"%q{}')
             gemspec_data['homepage'] = homepage
@@ -733,7 +733,7 @@ def parse_spec(location):
             # >>> d = re.split("'|<|>", s)
             # >>> d
             # ['s.add_runtime_dependency(%q', 'mechanize', ', ["', '= 0"])']
-            dependency = re.split("'|<|>", individual)
+            dependency = re.split("'|\"|<|>", individual)
             dependencies.append(dependency[1])
 
     # stores dependencies list into dictionary
