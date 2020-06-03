@@ -69,6 +69,12 @@ class TestRubyGemspec(PackageTester):
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
+    def test_rubygems_github_gemspec(self):
+        test_file = self.get_test_loc('rubygems/gemspec/github.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/github.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
     def test_rubygems_mecabruby_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/mecab-ruby.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/mecab-ruby.expected.json')
@@ -78,12 +84,6 @@ class TestRubyGemspec(PackageTester):
     def test_rubygems_gemspec_parser(self):
         test_file = self.get_test_loc('rubygems/gemspec/parser.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/parser.expected.json')
-        packages = rubygems.RubyGem.recognize(test_file)
-        self.check_packages(packages, expected_loc, regen=False)
-
-    def test_rubygems_rubocop_gemspec(self):
-        test_file = self.get_test_loc('rubygems/gemspec/rubocop.gemspec')
-        expected_loc = self.get_test_loc('rubygems/gemspec/rubocop.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 

@@ -126,6 +126,12 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], cargo.RustCargoCrate)
 
+    def test_recognize_gemspec(self):
+        test_file = self.get_test_loc('recon/github.gemspec')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], packagedcode.rubygems.RubyGem)
+
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')
         packages = recognize_packages(test_file)
