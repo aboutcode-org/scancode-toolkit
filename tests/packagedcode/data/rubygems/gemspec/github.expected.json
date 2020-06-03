@@ -2,24 +2,24 @@
   {
     "type": "gem",
     "namespace": null,
-    "name": "rubocop",
+    "name": "github",
     "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
-    "description": "Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.",
+    "description": "The official `github` command line helper for simplifying your GitHub experience.",
     "release_date": null,
     "parties": [
       {
         "type": null,
         "role": "author",
-        "name": "'Bozhidar Batsov', 'Jonas Arvidsson', 'Yuji Nakayama'",
-        "email": "'rubocop@googlegroups.com'",
+        "name": "'Chris Wanstrath', 'Kevin Ballard', 'Scott Chacon', 'Dr Nic Williams'",
+        "email": "drnicwilliams@gmail.com",
         "url": null
       }
     ],
     "keywords": [],
-    "homepage_url": "https://github.com/rubocop-hq/rubocop",
+    "homepage_url": "https://github.com/defunkt/github-gem",
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -35,21 +35,20 @@
     "notice_text": null,
     "root_path": null,
     "dependencies": [
-      "jaro_winkler",
-      "parallel",
-      "parser",
-      "powerpack",
-      "rainbow",
-      "ruby-progressbar",
-      "unicode-display_width",
-      "bundler",
-      "rack"
+      "text-hyphen",
+      "text-format",
+      "highline",
+      "json_pure",
+      "launchy",
+      "rake",
+      "rspec",
+      "activerecord"
     ],
     "contains_source_code": null,
     "source_packages": [],
-    "purl": "pkg:gem/rubocop",
-    "repository_homepage_url": "https://rubygems.org/gems/rubocop",
+    "purl": "pkg:gem/github",
+    "repository_homepage_url": "https://rubygems.org/gems/github",
     "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/rubocop.json"
+    "api_data_url": "https://rubygems.org/api/v1/versions/github.json"
   }
 ]
