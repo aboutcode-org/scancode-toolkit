@@ -193,6 +193,7 @@ setup(
         'typecode_libmagic',
 
         # packagedcode
+        'debut >= 0.9.4',
         'pefile >= 2018.8.8',
         'pymaven_patch >= 0.2.8',
         'requests >= 2.7.0, < 3.0.0',
