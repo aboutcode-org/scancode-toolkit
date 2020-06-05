@@ -115,6 +115,18 @@ class DebianPackage(models.Package):
                 return copyright_loc
 
 
+def get_installed_packages(root_dir, distro='debian'):
+    """
+    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files` 
+    (path, md5sum) tuples.
+    """
+    base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
+    base_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
+    
+    for package in parse_status_file(base_status_file_loc, distro=distro):
+            yield package, list(package.get_list_of_installed_files(base_info_dir))
+
+
 def is_debian_status_file(location):
     return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == 'status')
@@ -154,7 +166,7 @@ def build_package(package_data, distro='debian'):
         ('package', 'name'),
         ('version', 'version'),
         ('maintainer', 'maintainer'),
-        ('multi-arch', 'multi-arch'),
+        ('multi-arch', 'multi_arch'),
     ]
 
     for source, target in plain_fields:

@@ -11,8 +11,18 @@
     "primary_language": null,
     "description": "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses.",
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
     "homepage_url": "https://invisible-island.net/ncurses/",
     "download_url": null,
     "size": "283",
@@ -30,7 +40,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/ncurses"
+    ],
     "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -48,8 +60,18 @@
     "primary_language": null,
     "description": "common error description library\n libcomerr is an attempt to present a common error-handling mechanism to\n manipulate the most common form of error code in a fashion that does not\n have the problems identified with mechanisms commonly in use.",
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
     "homepage_url": "http://e2fsprogs.sourceforge.net",
     "download_url": null,
     "size": "87",
@@ -67,7 +89,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/e2fsprogs"
+    ],
     "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -85,8 +109,18 @@
     "primary_language": null,
     "description": "package management runtime library\n This library provides the common functionality for searching and\n managing packages as well as information about packages.\n Higher-level package managers can depend upon this library.\n .\n This includes:\n  * retrieval of information about packages from multiple sources\n  * retrieval of packages and all dependent packages\n    needed to satisfy a request either through an internal\n    solver or by interfacing with an external one\n  * authenticating the sources and validating the retrieved data\n  * installation and removal of packages in the system\n  * providing different transports to retrieve data over cdrom, ftp,\n    http(s), rsh as well as an interface to add more transports like\n    tor+http(s) (apt-transport-tor).",
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
     "homepage_url": null,
     "download_url": null,
     "size": "3139",
@@ -104,7 +138,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/apt"
+    ],
     "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -122,8 +158,18 @@
     "primary_language": null,
     "description": "Dynamic library for security auditing\n The audit-libs package contains the dynamic libraries needed for\n applications to use the audit framework. It is used to monitor systems for\n security related events.",
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
     "homepage_url": "https://people.redhat.com/sgrubb/audit/",
     "download_url": null,
     "size": "147",
@@ -141,7 +187,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/audit"
+    ],
     "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -159,8 +207,18 @@
     "primary_language": null,
     "description": null,
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "perl"
+    ],
     "homepage_url": null,
     "download_url": null,
     "size": "7826",
@@ -178,7 +236,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/perl"
+    ],
     "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -196,8 +256,18 @@
     "primary_language": null,
     "description": "libudev shared library\n This library provides access to udev device information.",
     "release_date": null,
-    "parties": [],
-    "keywords": [],
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
     "homepage_url": "https://www.freedesktop.org/wiki/Software/systemd",
     "download_url": null,
     "size": "227",
@@ -215,7 +285,9 @@
     "root_path": null,
     "dependencies": [],
     "contains_source_code": null,
-    "source_packages": [],
+    "source_packages": [
+      "pkg:deb/ubuntu/systemd"
+    ],
     "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64",
     "repository_homepage_url": null,
     "repository_download_url": null,

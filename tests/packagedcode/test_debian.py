@@ -34,6 +34,19 @@ from packagedcode import debian
 from packages_test_utils import PackageTester
 
 
+class TestDebianPackageGetInstalledPackages(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_basic_rootfs(self):
+        test_rootfs = self.get_test_loc('debian/basic-rootfs/')
+
+        for package, installed_files in debian.get_installed_packages(test_rootfs):
+            assert isinstance(package, debian.DebianPackage)
+            assert isinstance(installed_files, list)
+            for installed_file in installed_files:
+                assert isinstance(installed_file, tuple)
+
+
 class TestDebian(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -47,12 +60,33 @@ class TestDebian(PackageTester):
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        self.check_packages(packages, expected_loc, regen=False)
+        self.check_packages(packages, expected_loc, regen=True)
+
+    def test_parse_end_to_end(self):
+        test_file = self.get_test_loc('debian/end-to-end/status')
+        test_info_dir = self.get_test_loc('debian/end-to-end/')
+
+        packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
+        assert 1 == len(packages)
+
+        test_package = packages[0]
+
+        expected = [
+            ('lib/x86_64-linux-gnu/libncurses.so.5.9', '23c8a935fa4fc7290d55cc5df3ef56b1'),
+            ('usr/lib/x86_64-linux-gnu/libform.so.5.9', '98b70f283324e89db5787a018a54adf4'),
+            ('usr/lib/x86_64-linux-gnu/libmenu.so.5.9', 'e3a0f5154928da2da234920343ac14b2'),
+            ('usr/lib/x86_64-linux-gnu/libpanel.so.5.9', 'a927e7d76753bb85f5a784b653d337d2')
+        ]
+
+        resources = list(test_package.get_list_of_installed_files(test_info_dir))
+
+        assert 4 == len(resources)
+        assert expected == resources
 
 
 class TestDebianGetListOfInstalledFiles(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-    
+
     def test_multi_arch_is_same(self):
         test_info_dir = self.get_test_loc('debian/same-multi-arch')
 
