@@ -1,0 +1,179 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.2",
+      "options": {
+        "input": [
+          "mecab-ruby.gemspec"
+        ],
+        "--copyright": true,
+        "--email": true,
+        "--info": true,
+        "--json-pp": "temp.json",
+        "--license": true,
+        "--package": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-06-07T005144.744122",
+      "end_timestamp": "2020-06-07T005148.866070",
+      "duration": 4.121968746185303,
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "mecab-ruby.gemspec",
+      "type": "file",
+      "name": "mecab-ruby.gemspec",
+      "base_name": "mecab-ruby",
+      "extension": ".gemspec",
+      "size": 519,
+      "date": "2020-06-03",
+      "sha1": "ee48a551dc655442c5931a7d0c0a48ebef41348d",
+      "md5": "1e80d9430fcc2d418c064dfa2a189704",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Ruby",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-1.0-plus",
+          "score": 90.0,
+          "name": "GNU General Public License 1.0 or later",
+          "short_name": "GPL 1.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+          "spdx_license_key": "GPL-1.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
+          "start_line": 9,
+          "end_line": 9,
+          "matched_rule": {
+            "identifier": "gpl_copying_gpl.RULE",
+            "license_expression": "gpl-1.0-plus",
+            "licenses": [
+              "gpl-1.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          }
+        },
+        {
+          "key": "lgpl-2.0-plus",
+          "score": 5.0,
+          "name": "GNU Library General Public License 2.0 or later",
+          "short_name": "LGPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+          "spdx_license_key": "LGPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "start_line": 9,
+          "end_line": 9,
+          "matched_rule": {
+            "identifier": "lgpl_bare_single_word.RULE",
+            "license_expression": "lgpl-2.0-plus",
+            "licenses": [
+              "lgpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 5
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-1.0-plus",
+        "lgpl-2.0-plus"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "mecab-ruby",
+          "version": "0.99",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Ruby bindings for MeCab, a morphological analyzer.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://mecab.sourceforge.net/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:gem/mecab-ruby@0.99",
+          "repository_homepage_url": "https://rubygems.org/gems/mecab-ruby/versions/0.99",
+          "repository_download_url": "https://rubygems.org/downloads/mecab-ruby-0.99.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/mecab-ruby/versions/0.99.json"
+        }
+      ],
+      "emails": [
+        {
+          "email": "taku@chasen.org",
+          "start_line": 7,
+          "end_line": 7
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://mecab.sourceforge.net/",
+          "start_line": 13,
+          "end_line": 13
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

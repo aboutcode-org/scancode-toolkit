@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "mecab-ruby",
-    "version": null,
+    "version": "0.99",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",

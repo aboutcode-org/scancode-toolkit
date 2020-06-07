@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "mysmallidea-address_standardization",
-    "version": null,
+    "version": "0.4.1",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
@@ -35,21 +35,36 @@
     "notice_text": null,
     "root_path": null,
     "dependencies": [
-      "mechanize",
-      "mcmire-context",
-      "mcmire-matchy",
-      "mechanize",
-      "mcmire-context",
-      "mcmire-matchy",
-      "mechanize",
-      "mcmire-context",
-      "mcmire-matchy"
+      {
+        "purl": "pkg:gem/mechanize",
+        "requirement": ">= 0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/mcmire-context",
+        "requirement": ">= 0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/mcmire-matchy",
+        "requirement": ">= 0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
     ],
     "contains_source_code": null,
     "source_packages": [],
-    "purl": "pkg:gem/mysmallidea-address_standardization",
-    "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-address_standardization",
-    "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/mysmallidea-address_standardization.json"
+    "purl": "pkg:gem/mysmallidea-address_standardization@0.4.1",
+    "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-address_standardization/versions/0.4.1",
+    "repository_download_url": "https://rubygems.org/downloads/mysmallidea-address_standardization-0.4.1.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/mysmallidea-address_standardization/versions/0.4.1.json"
   }
 ]

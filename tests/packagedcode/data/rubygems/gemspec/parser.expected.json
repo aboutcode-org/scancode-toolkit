@@ -3,11 +3,11 @@
     "type": "gem",
     "namespace": null,
     "name": "parser",
-    "version": null,
+    "version": "Parser::VERSION",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
-    "description": "spec.description",
+    "description": "A Ruby parser written in pure Ruby.",
     "release_date": null,
     "parties": [
       {
@@ -35,22 +35,92 @@
     "notice_text": null,
     "root_path": null,
     "dependencies": [
-      "ast",
-      "bundler",
-      "rake",
-      "racc",
-      "cliver",
-      "yard",
-      "kramdown",
-      "minitest",
-      "simplecov",
-      "gauntlet"
+      {
+        "purl": "pkg:gem/ast",
+        "requirement": "~> 2.4.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/bundler",
+        "requirement": ">= 1.15",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rake",
+        "requirement": "~> 13.0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/racc",
+        "requirement": "= 1.4.15",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/cliver",
+        "requirement": "~> 0.3.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/yard",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/kramdown",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/minitest",
+        "requirement": "~> 5.10",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/simplecov",
+        "requirement": "~> 0.15.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/gauntlet",
+        "requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
     ],
     "contains_source_code": null,
     "source_packages": [],
-    "purl": "pkg:gem/parser",
-    "repository_homepage_url": "https://rubygems.org/gems/parser",
-    "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/parser.json"
+    "purl": "pkg:gem/parser@Parser::VERSION",
+    "repository_homepage_url": "https://rubygems.org/gems/parser/versions/Parser::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/parser-Parser::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/parser/versions/Parser::VERSION.json"
   }
 ]
