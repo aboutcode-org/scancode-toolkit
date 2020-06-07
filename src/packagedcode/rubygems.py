@@ -657,7 +657,7 @@ def parse_spec(location):
     with io.open(location, "r", encoding="utf-8") as f:
         file_data = f.read().splitlines()
 
-    dependencies = []
+    dependencies = {}
 
     # defaults fields of .gemspec file
     gemspec_data = {
@@ -674,7 +674,7 @@ def parse_spec(location):
 
     for individual in file_data:
         # update the value of name
-        if 'name' in individual and 'basename' not in individual:
+        if '.name ' in individual and 'basename' not in individual:
             # >>> s = 'spec.name = "abc"'
             # >>> name = s.split('= ')
             # >>> name
@@ -685,9 +685,16 @@ def parse_spec(location):
             name = individual.split('= ')
             name = name[1].strip('\'"%q{}')
             gemspec_data['name'] = name
+            continue
+        
+        if '.version ' in individual:
+            version = individual.split('= ')
+            version = version[1].strip('\'"%q{}')
+            gemspec_data['version'] = version
+            continue
 
         # update the value of author
-        if 'authors' in individual:
+        if '.authors ' in individual:
             # >>> s = 's.authors = ["abc", "pqr", "xyz"]'
             # >>> result = s.split('= ')
             # ['s.authors ', '["abc", "pqr", "xyz"]']
@@ -696,45 +703,64 @@ def parse_spec(location):
             authors = individual.split('= ')
             authors = authors[1].strip('[]%q{}').replace('"', '')
             gemspec_data['authors'] = authors
+            continue
 
         # update the value of email
-        if 'email' in individual:
+        if '.email ' in individual:
             email = individual.split('= ')
             email = email[1].strip('[]%q{}').replace('"', '')
             gemspec_data['email'] = email
+            continue
 
         # update the value of summary
-        if 'summary' in individual:
+        if '.summary ' in individual:
             summary = individual.split('= ')
             summary = summary[1].strip('\'"%q{}')
             gemspec_data['summary'] = summary
+            continue
 
         # update the value of description
-        if 'description' in individual:
+        if '.description ' in individual:
             description = individual.split('= ')
             description = description[1].strip('\'"%q{}')
             gemspec_data['description'] = description
+            continue
 
         # update the value of homepage
-        if 'homepage' in individual and 'homepage_uri' not in individual:
+        if '.homepage ' in individual and 'homepage_uri' not in individual:
             homepage = individual.split('= ')
             homepage = homepage[1].strip('\'"%q{}')
             gemspec_data['homepage'] = homepage
+            continue
 
         # update the value of license
-        if 'license' in individual:
+        if '.license ' in individual:
             license = individual.split('= ')
             license = license[1].strip('\'"%q{}')
             gemspec_data['license'] = license
+            continue
 
         # update the value of dependencies
         if 'dependency' in  individual:
+            dep_version = individual
+            # >>> s = 's.add_runtime_dependency(%q<mechanize>, [">= 0"])'
+            # >>> z = re.split(", ", s)
+            # >>> z = z[1].strip("\"'[]()")
+            # >>> z
+            # '>= 0'
+            dep_version = re.split(", ", dep_version)
+            try:
+                dep_version = dep_version[1].strip(" \"'[]()")
+            except IndexError:
+                dep_version = None
+
             # >>> s = 's.add_runtime_dependency(%q<mechanize>, [">= 0"])'
             # >>> d = re.split("'|<|>", s)
             # >>> d
             # ['s.add_runtime_dependency(%q', 'mechanize', ', ["', '= 0"])']
             dependency = re.split("'|\"|<|>", individual)
-            dependencies.append(dependency[1])
+            dependencies[dependency[1]] = dep_version
+            continue
 
     # stores dependencies list into dictionary
     gemspec_data['dependencies'] = dependencies
@@ -747,14 +773,16 @@ def build_packages_from_gemspec(gemspec_data):
     Yield RubyGem Packages from gemspec.
     """
     name = gemspec_data.get('name')
+    version = gemspec_data.get('version')
     description = gemspec_data.get('description')
     homepage_url = gemspec_data.get('homepage')
     package = RubyGem(
         name=name,
+        version=version,
         description=description,
         homepage_url=homepage_url
     )
-    package.dependencies = gemspec_data.get('dependencies')
+    # package.dependencies = gemspec_data.get('dependencies')
 
     authors = gemspec_data.get('authors') or []
     email = gemspec_data.get('email') or []
@@ -770,6 +798,22 @@ def build_packages_from_gemspec(gemspec_data):
         )
     package.parties = parties
 
+    dependencies = gemspec_data.get('dependencies')
+    if not dependencies:
+        return
+    package_dependencies = []
+    for dep_name, dep_version in dependencies.items():
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='gem', name=dep_name).to_string(),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                requirement=dep_version,
+            )
+        )
+    package.dependencies=package_dependencies
     return package
 
 
