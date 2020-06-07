@@ -560,27 +560,6 @@ LICENSES_MAPPING = {
 
 ################################################################################
 
-def parse_gemspec(location):
-    raise NotImplementedError
-
-
-def get_gemspec_data(location):
-    """
-    Return a mapping of Gem data from parsing a .gemspec  file.
-    """
-    if not location.endswith('.gemspec'):
-        return
-
-    spec = spec_defaults()
-    raw_spec = parse_gemspec(location)
-    if TRACE:
-        keys = raw_spec.keys()
-        logger.debug('\nRubygems spec keys for %(gemfile)r:\n%(keys)r' % locals())
-    spec.update(raw_spec)
-    spec = normalize(spec)
-    return spec
-
-
 def spec_defaults():
     """
     Return a mapping with spec attribute defaults to ensure that the
@@ -657,7 +636,7 @@ def parse_spec(location):
     with io.open(location, "r", encoding="utf-8") as f:
         file_data = f.read().splitlines()
 
-    dependencies = {}
+    dependencies = OrderedDict()
 
     # defaults fields of .gemspec file
     gemspec_data = {
