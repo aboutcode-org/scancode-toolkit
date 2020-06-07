@@ -763,6 +763,8 @@ def parse_spec(location):
             continue
 
     # stores dependencies list into dictionary
+    if not dependencies:
+        dependencies = None
     gemspec_data['dependencies'] = dependencies
 
     return gemspec_data
@@ -799,20 +801,19 @@ def build_packages_from_gemspec(gemspec_data):
     package.parties = parties
 
     dependencies = gemspec_data.get('dependencies')
-    if not dependencies:
-        return
     package_dependencies = []
-    for dep_name, dep_version in dependencies.items():
-        package_dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(
-                    type='gem', name=dep_name).to_string(),
-                scope='dependencies',
-                is_runtime=True,
-                is_optional=False,
-                requirement=dep_version,
+    if dependencies:
+        for dep_name, dep_version in dependencies.items():
+            package_dependencies.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem', name=dep_name).to_string(),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    requirement=dep_version,
+                )
             )
-        )
     package.dependencies=package_dependencies
     return package
 
