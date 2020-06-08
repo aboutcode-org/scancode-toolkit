@@ -75,7 +75,8 @@ class DebianPackage(models.Package):
 
     def get_list_of_installed_files(self, info_dir):
         """
-        Given a info_dir path, yeild a list of tuples of path + md5 values.
+        Given a info_dir path, return
+        a list of tuples of path + md5 values.
         """
         # Multi-Arch can be: foreign, same, allowed or empty
         # We only need to adjust the md5sum path in the case of `same`
@@ -85,6 +86,12 @@ class DebianPackage(models.Package):
             arch = ''
 
         package_md5sum = '{}{}.md5sums'.format(self.name, arch)
+        md5sum_file = os.path.join(info_dir, package_md5sum)
+
+        if not os.path.exists(md5sum_file):
+            return []
+
+        installed_files = []
         with open(os.path.join(info_dir, package_md5sum)) as info_file:
             for line in info_file:
                 line = line.strip()
@@ -92,7 +99,9 @@ class DebianPackage(models.Package):
                     continue
 
                 md5sum, _, path = line.partition(' ')
-                yield path.strip(), md5sum.strip()
+                installed_files.append((path.strip(), md5sum.strip()))
+
+            return installed_files
 
     def get_copyright_file_path(self, root_dir):
         """
@@ -122,7 +131,7 @@ def get_installed_packages(root_dir, distro='debian'):
     base_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
 
     for package in parse_status_file(base_status_file_loc, distro=distro):
-        yield package, list(package.get_list_of_installed_files(base_info_dir))
+        yield package, package.get_list_of_installed_files(base_info_dir)
 
 
 def is_debian_status_file(location):

@@ -78,7 +78,7 @@ class TestDebian(PackageTester):
             ('usr/lib/x86_64-linux-gnu/libpanel.so.5.9', 'a927e7d76753bb85f5a784b653d337d2')
         ]
 
-        resources = list(test_package.get_list_of_installed_files(test_info_dir))
+        resources = test_package.get_list_of_installed_files(test_info_dir)
 
         assert 4 == len(resources)
         assert expected == resources
@@ -86,6 +86,17 @@ class TestDebian(PackageTester):
 
 class TestDebianGetListOfInstalledFiles(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_missing_md5sum_file(self):
+        test_info_dir = self.get_test_loc('debian/missing-md5sum-file')
+
+        test_pkg = debian.DebianPackage(
+            name='libatk-adaptor',
+            multi_arch='same',
+            qualifiers={'arch':'amd64'}
+        )
+
+        assert [] == test_pkg.get_list_of_installed_files(test_info_dir)
 
     def test_multi_arch_is_same(self):
         test_info_dir = self.get_test_loc('debian/same-multi-arch')
@@ -105,7 +116,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
              ('usr/share/doc/libatk-adaptor/copyright', '971e4b2093741db8c51d263cd5c3ee48'),
         ]
 
-        results = list(test_pkg.get_list_of_installed_files(test_info_dir))
+        results = test_pkg.get_list_of_installed_files(test_info_dir)
 
         assert 6 == len(results)
         assert expected == results
@@ -136,7 +147,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
           ('usr/share/fonts/truetype/abyssinica/AbyssinicaSIL-R.ttf', '9e3d4310af3892a739ba7b1189c44dca'),
         ]
         
-        results = list(test_pkg.get_list_of_installed_files(test_info_dir))
+        results = test_pkg.get_list_of_installed_files(test_info_dir)
 
         assert 14 == len(results)
         assert expected == results
@@ -156,7 +167,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             ('usr/share/doc/mokutil/copyright', '24dd593b630976a785b4c5ed097bbd96'),
             ('usr/share/man/man1/mokutil.1.gz', 'b608675058a943d834129b6972b8509a'),
         ]
-        results = list(test_pkg.get_list_of_installed_files(test_info_dir))
+        results = test_pkg.get_list_of_installed_files(test_info_dir)
 
         assert 5 == len(results)
         assert expected == results
