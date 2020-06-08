@@ -31,9 +31,9 @@ import logging
 import os
 
 import attr
-from six import string_types
 from debut import debcon
 from packageurl import PackageURL
+from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -73,7 +73,6 @@ class DebianPackage(models.Package):
 
         return data
 
-
     def get_list_of_installed_files(self, info_dir):
         """
         Given a info_dir path, yeild a list of tuples of path + md5 values.
@@ -95,7 +94,6 @@ class DebianPackage(models.Package):
                 md5sum, _, path = line.partition(' ')
                 yield path.strip(), md5sum.strip()
 
-
     def get_copyright_file_path(self, root_dir):
         """
         Given a root_dir path to a filesystem root, return the path to a copyright file
@@ -106,7 +104,7 @@ class DebianPackage(models.Package):
         # name.
         candidate_names = [self.name]
         candidate_names.extend(PackageURL.from_string(sp).name for sp in self.source_packages)
-    
+
         copyright_file = os.path.join(root_dir, 'usr/share/doc/{}/copyright')
 
         for name in candidate_names:
@@ -117,14 +115,14 @@ class DebianPackage(models.Package):
 
 def get_installed_packages(root_dir, distro='debian'):
     """
-    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files` 
+    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
     (path, md5sum) tuples.
     """
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
     base_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
-    
+
     for package in parse_status_file(base_status_file_loc, distro=distro):
-            yield package, list(package.get_list_of_installed_files(base_info_dir))
+        yield package, list(package.get_list_of_installed_files(base_info_dir))
 
 
 def is_debian_status_file(location):
@@ -145,7 +143,7 @@ def parse_status_file(location, distro='debian'):
 
 def build_package(package_data, distro='debian'):
     """
-    Return a Package object from a package_data mapping (from a dpkg status file) 
+    Return a Package object from a package_data mapping (from a dpkg status file)
     or None.
     """
     # construct the package
@@ -183,16 +181,15 @@ def build_package(package_data, distro='debian'):
     field_mappers = [
         ('section', keywords_mapper),
         ('source', source_packages_mapper),
-        #('depends', dependency_mapper),
+        # ('depends', dependency_mapper),
     ]
-
 
     for source, func in field_mappers:
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
             func(value, package)
-    
+
     # parties_mapper() need mutiple fields:
     parties_mapper(package_data, package)
 
@@ -221,6 +218,7 @@ def source_packages_mapper(source, package):
 
     return package
 
+
 def parties_mapper(package_data, package):
     """
     add
@@ -232,7 +230,7 @@ def parties_mapper(package_data, package):
 
     if maintainer:
         parties.append(models.Party(role='maintainer', name=maintainer))
-    
+
     if orig_maintainer:
         parties.append(models.Party(role='original_maintainer', name=orig_maintainer))
 
