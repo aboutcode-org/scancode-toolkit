@@ -86,6 +86,9 @@ def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_li
     treat the "name" as a license declaration. The text is used for detection
     and cross-reference with the declaration.
     """
+    if not copyright_file:
+        return None, None, None
+
     declared_license, detected_license, copyrights = parse_structured_copyright_file(
         copyright_file=copyright_file,
         skip_debian_packaging=skip_debian_packaging,
@@ -105,14 +108,15 @@ def copyright_detector(location):
     Return lists of detected copyrights, authors and holders
     in file at location.
     """
-    from cluecode.copyrights import detect_copyrights
-    copyrights = []
-    copyrights_append = copyrights.append
+    if location:
+        from cluecode.copyrights import detect_copyrights
+        copyrights = []
+        copyrights_append = copyrights.append
 
-    for dtype, value, _start, _end in detect_copyrights(location):
-        if dtype == 'copyrights':
-            copyrights_append(value)
-    return copyrights
+        for dtype, value, _start, _end in detect_copyrights(location):
+            if dtype == 'copyrights':
+                copyrights_append(value)
+        return copyrights
 
 
 def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
@@ -122,6 +126,9 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
     treat the "name" as a license declaration. The text is used for detection
     and cross-reference with the declaration.
     """
+    if not copyright_file:
+        return None, None, None
+
     deco = DebianCopyright.from_file(copyright_file)
 
     declared_licenses = []
