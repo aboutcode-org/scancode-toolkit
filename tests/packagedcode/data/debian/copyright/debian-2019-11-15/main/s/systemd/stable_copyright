@@ -1,0 +1,195 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: systemd
+Upstream-Contact: systemd-devel@lists.freedesktop.org
+Source: https://www.freedesktop.org/wiki/Software/systemd/
+
+Files: *
+Copyright: 2008-2015 Kay Sievers <kay@vrfy.org>
+           2010-2015 Lennart Poettering
+           2012-2015 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+           2013-2015 Tom Gundersen <teg@jklm.no>
+           2013-2015 Daniel Mack
+           2010-2015 Harald Hoyer
+           2013-2015 David Herrmann
+           2013, 2014 Thomas H.P. Andersen
+           2013, 2014 Daniel Buch
+           2014 Susant Sahani
+           2009-2015 Intel Corporation
+           2000, 2005 Red Hat, Inc.
+           2009 Alan Jenkins <alan-jenkins@tuffmail.co.uk>
+           2010 ProFUSION embedded systems
+           2010 Maarten Lankhorst
+           1995-2004 Miquel van Smoorenburg
+           1999 Tom Tromey
+           2011 Michal Schmidt
+           2012 B. Poettering
+           2012 Holger Hans Peter Freyther
+           2012 Dan Walsh
+           2012 Roberto Sassu
+           2013 David Strauss
+           2013 Marius Vollmer
+           2013 Jan Janssen
+           2013 Simon Peeters
+License: LGPL-2.1+
+
+Files: src/basic/siphash24.h
+       src/basic/siphash24.c
+Copyright: 2012 Jean-Philippe Aumasson <jeanphilippe.aumasson@gmail.com>
+           2012 Daniel J. Bernstein <djb@cr.yp.to>
+License: CC0-1.0
+
+Files: src/basic/securebits.h
+Copyright: Linus Torvalds <torvalds@athlon.transmeta.com>
+License: GPL-2
+
+Files: src/basic/ioprio.h
+Copyright: Jens Axboe <axboe@suse.de>
+License: GPL-2
+
+Files: src/shared/linux/auto_dev-ioctl.h
+Copyright: 2008 Red Hat, Inc.
+           2008 Ian Kent <raven@themaw.net>
+License: GPL-2+
+
+Files: src/basic/sparse-endian.h
+Copyright: 2012 Josh Triplett <josh@joshtriplett.org>
+License: Expat
+
+Files: src/journal/lookup3.c
+       src/journal/lookup3.h
+Copyright: none
+License: public-domain
+ You can use this free for any purpose. It's in the public domain. It has no
+ warranty.
+
+Files: src/udev/*
+Copyright: 2003-2012 Kay Sievers <kay@vrfy.org>
+           2003-2004 Greg Kroah-Hartman <greg@kroah.com>
+           2004 Chris Friesen <chris_friesen@sympatico.ca>
+           2004, 2009, 2010 David Zeuthen <david@fubar.dk>
+           2005, 2006 SUSE Linux Products GmbH
+           2003 IBM Corp.
+           2007 Hannes Reinecke <hare@suse.de>
+           2009 Canonical Ltd.
+           2009 Scott James Remnant <scott@netsplit.com>
+           2009 Martin Pitt <martin.pitt@ubuntu.com>
+           2009 Piter Punk <piterpunk@slackware.com>
+           2009, 2010 Lennart Poettering
+           2009 Filippo Argiolas <filippo.argiolas@gmail.com>
+           2010 Maxim Levitsky
+           2011 ProFUSION embedded systems
+           2011 Karel Zak <kzak@redhat.com>
+           2014 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+           2014 David Herrmann <dh.herrmann@gmail.com>
+           2014 Carlos Garnacho <carlosg@gnome.org>
+License: GPL-2+
+
+Files: src/udev/udev-ctrl.c
+       src/udev/udevadm-hwdb.c
+       src/udev/udev-builtin.c
+       src/udev/udev-builtin-net_id.c
+       src/udev/udev-builtin-net_setup_link.c
+       src/udev/udev-builtin-hwdb.c
+       src/udev/udev-builtin-btrfs.c
+       src/udev/udev-builtin-keyboard.c
+       src/udev/net/link-config.h
+       src/udev/net/link-config.c
+       src/udev/net/ethtool-util.c
+       src/udev/net/ethtool-util.h
+Copyright: 2007-2013 Kay Sievers <kay@vrfy.org>
+           2013 Tom Gundersen <teg@jklm.no>
+License: LGPL-2.1+
+
+Files: src/udev/scsi_id/scsi.h
+Copyright: 2003 IBM Corp.
+License: GPL-2
+
+Files: debian/*
+Copyright: 2010-2013 Tollef Fog Heen <tfheen@debian.org>
+           2013-2018 Michael Biebl <biebl@debian.org>
+           2013 Michael Stapelberg <stapelberg@debian.org>
+License: LGPL-2.1+
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ IN THE SOFTWARE.
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian and systems the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2`
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+
+License: LGPL-2.1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License along
+ with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
+
+License: CC0-1.0
+ To the extent possible under law, the author(s) have dedicated all copyright
+ and related and neighboring rights to this software to the public domain
+ worldwide. This software is distributed without any warranty.
+ .
+ You should have received a copy of the CC0 Public Domain Dedication along with
+ this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+ .
+ On Debian systems, the complete text of the CC0 1.0 Universal license can be
+ found in ‘/usr/share/common-licenses/CC0-1.0’.

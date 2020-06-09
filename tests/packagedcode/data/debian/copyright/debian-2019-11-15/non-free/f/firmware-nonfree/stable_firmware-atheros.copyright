@@ -1,0 +1,248 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: linux-firmware
+Upstream-Contact: linux-firmware@kernel.org
+Source: https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+
+Files: ar3k/*, ar5523.bin, ar7010.fw, ar7010_1_1.fw, ar9271.fw, ath3k-1.fw,
+ ath6k/*/*/*, htc_7010.fw, htc_9271.fw
+Copyright: 2008-2010, Atheros Communications, Inc.
+License: Binary redistribution (Atheros)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ .
+ * Neither the name of Atheros Communications, Inc. nor the names of
+   its suppliers may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+ .
+ * No reverse engineering, decompilation, or disassembly of this
+   software is permitted.
+ .
+ Limited patent license.  Atheros Communications, Inc. grants a
+ world-wide, royalty-free, non-exclusive license under patents it
+ now or hereafter owns or controls to make, have made, use, import,
+ offer to sell and sell ("Utilize") this software, but solely to
+ the extent that any such patent is necessary to Utilize the software
+ in conjunction with an Atheros Chipset. The patent license shall not
+ apply to any other combinations which include this software. No
+ hardware per se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: ath9k_htc/htc_7010-1.4.0.fw, ath9k_htc/htc_9271-1.4.0.fw
+Copyright: 1998-2002, Red Hat, Inc.
+           2002, Gary Thomas
+           2002-2005, Sam Leffler, Errno Consulting
+           2002-2013, Qualcomm Atheros, Inc.
+           2013, Tensilica Inc.
+License: Open ath9k HTC firmware
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted (subject to the limitations in the
+ disclaimer below) provided that the following conditions are met:
+ .
+  * Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ .
+  * Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the
+    distribution.
+ .
+  * Neither the name of Qualcomm Atheros nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+ .
+ NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+ GRANTED BY THIS LICENSE.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+ HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .
+ Redistribution and use in source and binary forms are permitted
+ provided that the following conditions are met:
+ 1. The materials contained herein are unmodified and are used
+    unmodified.
+ 2. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following NO
+    ''WARRANTY'' disclaimer below (''Disclaimer''), without
+    modification.
+ 3. Redistributions in binary form must reproduce at minimum a
+    disclaimer similar to the Disclaimer below and any redistribution
+    must be conditioned upon including a substantially similar
+    Disclaimer requirement for further binary redistribution.
+ 4. Neither the names of the above-listed copyright holders nor the
+    names of any contributors may be used to endorse or promote
+    product derived from this software without specific prior written
+    permission.
+ .
+ NO WARRANTY
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT,
+ MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+ FOR SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+ USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGES.
+ .
+ eCos is free software; you can redistribute it and/or modify it under
+ the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 or (at your option) any later version.
+ .
+ As a special exception, if other files instantiate templates or use macros
+ or inline functions from this file, or you compile this file and link it
+ with other works to produce a work based on this file, this file does not
+ by itself cause the resulting work to be covered by the GNU General Public
+ License. However the source code for this file must still be made available
+ in accordance with section (3) of the GNU General Public License.
+ .
+ This exception does not invalidate any other reasons why a work based on
+ this file might be covered by the GNU General Public License.
+ .
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Files: ath10k/QCA*/hw*/firmware-[45].bin
+Copyright: 1986, Gary S. Brown
+           1988, 1990-1991, 1993, The Regents of the University of California
+           1998, The NetBSD Foundation, Inc.
+           1998, Todd C. Miller
+           1998-2002, Red Hat, Inc.
+           1999-2006, Tensilica Inc.
+           2000-2001, Aaron D. Gifford
+           2002, Gary Thomas
+           2002-2004, Sam Leffler, Errno Consulting
+           2002-2013, Jouni Malinen
+           2003-2006, Marcus Geelnard
+           2006-2007, 2012-2013, Atheros Communications Inc.
+           2010-2011, embWiSe Technologies
+           2011, The FreeBSD Foundation
+           2011, Qualcomm Technologies, Inc.
+           2011-2015, Qualcomm Atheros, Inc.
+           2013, Synopsys, Inc.
+License: Binary redistribution (Qualcomm Atheros)
+
+Files: ath10k/QCA*/hw*/firmware-6.bin
+Copyright: 1988, 1990-1991, 1993, The Regents of the University of California
+           1998, The NetBSD Foundation, Inc.
+           2000-2001, Aaron D. Gifford
+           2002-2004, Sam Leffler, Errno Consulting
+           2002-2013, Jouni Malinen
+           2003-2006, Marcus Geelnard
+           2006-2007, 2012-2013, Atheros Communications Inc.
+           2010-2011, embWiSe Technologies
+           2011, The FreeBSD Foundation
+           2011, Qualcomm Technologies, Inc.
+           2011-2012, 2014-2015, Qualcomm Atheros, Inc.
+           2015-2016, The Android Open Source Project
+License: Binary redistribution (Qualcomm Atheros)
+
+Files: ath10k/QCA*/hw*/board.bin qca/nvm_*.bin qca/rampatch_*.bin
+Copyright: 2015, Qualcomm Atheros, Inc.
+License: Binary redistribution (Qualcomm Atheros)
+
+License: Binary redistribution (Qualcomm Atheros)
+ All rights reserved.
+ .
+ Redistribution. Reproduction and redistribution in binary form, without
+ modification, for use solely in conjunction with a Qualcomm Atheros, Inc.
+ chipset, is permitted provided that the following conditions are met:
+ .
+   • Redistributions must reproduce the above copyright notice and the following
+     disclaimer in the documentation and/or other materials provided with the
+     distribution.
+ .
+   • Neither the name of Qualcomm Atheros, Inc. nor the names of its suppliers
+     may be used to endorse or promote products derived from this Software
+     without specific prior written permission.
+ .
+   • No reverse engineering, decompilation, or disassembly of this Software is
+     permitted.
+ .
+ Limited patent license. Qualcomm Atheros, Inc. (“Licensor”) grants you
+ (“Licensee”) a limited, worldwide, royalty-free, non-exclusive license under
+ the Patents to make, have made, use, import, offer to sell and sell the
+ Software. No hardware per se is licensed hereunder.
+ The term “Patents” as used in this agreement means only those patents or patent
+ applications owned solely and exclusively by Licensor as of the date of
+ Licensor’s submission of the Software and any patents deriving priority (i.e.,
+ having a first effective filing date) therefrom. The term “Software” as used in
+ this agreement means the firmware image submitted by Licensor, under the terms
+ of this license, to git://git.kernel.org/pub/scm/linux/kernel/git/firmware/
+ linux-firmware.git.
+ Notwithstanding anything to the contrary herein, Licensor does not grant and
+ Licensee does not receive, by virtue of this agreement or the Licensor’s
+ submission of any Software, any license or other rights under any patent or
+ patent application owned by any affiliate of Licensor or any other entity
+ (other than Licensor), whether expressly, impliedly, by virtue of estoppel or
+ exhaustion, or otherwise.
+ .
+ DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

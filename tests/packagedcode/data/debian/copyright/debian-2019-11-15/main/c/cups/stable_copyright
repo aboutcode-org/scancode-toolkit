@@ -1,0 +1,188 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: CUPS
+Upstream-Contact: Michael Sweet <msweet@apple.com>
+Source: https://cups.org/software.php
+
+Files: *
+Copyright: 2007-2015, Apple Inc.
+License: GPL-2.0 with AOSDL exception
+
+Files: cups/* filter/*
+Copyright: 2007-2013, Apple Inc.
+License: LGPL-2.0 with AOSDL exception
+
+Files: cups/md5-private.h
+  cups/md5.c
+Copyright: 2007-2014, Apple Inc
+  2005, Easy Software Products
+  1999, Aladdin Enterprises.
+License: Zlib
+
+Files: scheduler/colorman.c
+Copyright: 2011, Red Hat, Inc
+ 2007-2014, Apple Inc
+ 1997-2007, Easy Software Products
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+   Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ .
+   Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: GPL-2.0 with AOSDL exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, version 2 of the License.
+ .
+ The full text of the GPL is distributed as in
+ /usr/share/common-licenses/GPL-2 on Debian systems.
+ .
+ In addition, as the copyright holder of CUPS, Apple Inc. grants
+ the following special exception:
+ .
+      1. Apple Operating System Development License Exception;
+ .
+ 	a. Software that is developed by any person or entity
+ 	   for an Apple Operating System ("Apple OS-Developed
+ 	   Software"), including but not limited to Apple and
+ 	   third party printer drivers, filters, and backends
+ 	   for an Apple Operating System, that is linked to the
+ 	   CUPS imaging library or based on any sample filters
+ 	   or backends provided with CUPS shall not be
+ 	   considered to be a derivative work or collective work
+ 	   based on the CUPS program and is exempt from the
+ 	   mandatory source code release clauses of the GNU GPL.
+ 	   You may therefore distribute linked combinations of
+ 	   the CUPS imaging library with Apple OS-Developed
+ 	   Software without releasing the source code of the
+ 	   Apple OS-Developed Software. You may also use sample
+ 	   filters and backends provided with CUPS to develop
+ 	   Apple OS-Developed Software without releasing the
+ 	   source code of the Apple OS-Developed Software.
+ .
+ 	b. An Apple Operating System means any operating system
+ 	   software developed and/or marketed by Apple Computer,
+ 	   Inc., including but not limited to all existing
+ 	   releases and versions of Apple's Darwin, Mac OS X,
+ 	   and Mac OS X Server products and all follow-on
+ 	   releases and future versions thereof.
+ .
+ 	c. This exception is only available for Apple
+ 	   OS-Developed Software and does not apply to software
+ 	   that is distributed for use on other operating
+ 	   systems.
+ .
+ 	d. All CUPS software that falls under this license
+ 	   exception have the following text at the top of each
+ 	   source file:
+ .
+ 	     This file is subject to the Apple OS-Developed
+ 	     Software exception.
+ .
+      2. OpenSSL Toolkit License Exception;
+ .
+ 	a. Apple Inc. explicitly allows the compilation and
+ 	   distribution of the CUPS software with the OpenSSL
+ 	   Toolkit.
+ .
+ No developer is required to provide these exceptions in a
+ derived work.
+
+License: LGPL-2.0 with AOSDL exception
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Library General Public License as published
+ by the Free Software Foundation, version 2 of the License.
+ .
+ The full text of the LGPL is distributed as in
+ /usr/share/common-licenses/LGPL-2 on Debian systems.
+ .
+ In addition, as the copyright holder of CUPS, Apple Inc. grants
+ the following special exception:
+ .
+      1. Apple Operating System Development License Exception;
+ .
+ 	a. Software that is developed by any person or entity
+ 	   for an Apple Operating System ("Apple OS-Developed
+ 	   Software"), including but not limited to Apple and
+ 	   third party printer drivers, filters, and backends
+ 	   for an Apple Operating System, that is linked to the
+ 	   CUPS imaging library or based on any sample filters
+ 	   or backends provided with CUPS shall not be
+ 	   considered to be a derivative work or collective work
+ 	   based on the CUPS program and is exempt from the
+ 	   mandatory source code release clauses of the GNU GPL.
+ 	   You may therefore distribute linked combinations of
+ 	   the CUPS imaging library with Apple OS-Developed
+ 	   Software without releasing the source code of the
+ 	   Apple OS-Developed Software. You may also use sample
+ 	   filters and backends provided with CUPS to develop
+ 	   Apple OS-Developed Software without releasing the
+ 	   source code of the Apple OS-Developed Software.
+ .
+ 	b. An Apple Operating System means any operating system
+ 	   software developed and/or marketed by Apple Computer,
+ 	   Inc., including but not limited to all existing
+ 	   releases and versions of Apple's Darwin, Mac OS X,
+ 	   and Mac OS X Server products and all follow-on
+ 	   releases and future versions thereof.
+ .
+ 	c. This exception is only available for Apple
+ 	   OS-Developed Software and does not apply to software
+ 	   that is distributed for use on other operating
+ 	   systems.
+ .
+ 	d. All CUPS software that falls under this license
+ 	   exception have the following text at the top of each
+ 	   source file:
+ .
+ 	     This file is subject to the Apple OS-Developed
+ 	     Software exception.
+ .
+      2. OpenSSL Toolkit License Exception;
+ .
+ 	a. Apple Inc. explicitly allows the compilation and
+ 	   distribution of the CUPS software with the OpenSSL
+ 	   Toolkit.
+ .
+ No developer is required to provide these exceptions in a
+ derived work.
+
+License: Zlib
+ The zlib License
+ .
+ This software is provided 'as-is', without any express or implied
+ warranty. In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+   1. The origin of this software must not be misrepresented; you must
+      not claim that you wrote the original software. If you use this
+      software in a product, an acknowledgment in the product
+      documentation would be appreciated but is not required.
+ .
+   2. Altered source versions must be plainly marked as such, and must
+      not be misrepresented as being the original software.
+ .
+   3. This notice may not be removed or altered from any source
+      distribution.

@@ -1,0 +1,466 @@
+This package was downloaded from:
+
+    <http://www.openldap.org/>
+
+The upstream distribution has been repackaged to remove the RFCs and
+Internet-Drafts included in the upstream distribution, since the Internet
+Society license does not meet the Debian Free Software Guidelines.  The
+schema files that contain verbatim text from RFCs or Internet-Drafts have
+similarly been removed and are replaced during the package build with
+versions stripped of the literal RFC or Internet-Draft text.
+
+Copyright:
+
+Copyright 1998-2016 The OpenLDAP Foundation
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted only as authorized by the OpenLDAP
+Public License.
+
+A copy of this license is available in the file LICENSE in the
+top-level directory of the distribution or, alternatively, at
+<http://www.OpenLDAP.org/license.html>.
+
+OpenLDAP is a registered trademark of the OpenLDAP Foundation.
+
+Individual files and/or contributed packages may be copyright by
+other parties and/or subject to additional restrictions.
+
+This work is derived from the University of Michigan LDAP v3.3
+distribution.  Information concerning this software is available
+at <http://www.umich.edu/~dirsvcs/ldap/ldap.html>.
+
+This work also contains materials derived from public sources.
+
+Additional information about OpenLDAP can be obtained at
+<http://www.openldap.org/>.
+
+---
+
+The OpenLDAP Public License
+  Version 2.8, 17 August 2003
+
+Redistribution and use of this software and associated documentation
+("Software"), with or without modification, are permitted provided
+that the following conditions are met:
+
+1. Redistributions in source form must retain copyright statements
+   and notices,
+
+2. Redistributions in binary form must reproduce applicable copyright
+   statements and notices, this list of conditions, and the following
+   disclaimer in the documentation and/or other materials provided
+   with the distribution, and
+
+3. Redistributions must contain a verbatim copy of this document.
+
+The OpenLDAP Foundation may revise this license from time to time.
+Each revision is distinguished by a version number.  You may use
+this Software under terms of this license revision or under the
+terms of any subsequent revision of the license.
+
+THIS SOFTWARE IS PROVIDED BY THE OPENLDAP FOUNDATION AND ITS
+CONTRIBUTORS ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT
+SHALL THE OPENLDAP FOUNDATION, ITS CONTRIBUTORS, OR THE AUTHOR(S)
+OR OWNER(S) OF THE SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+The names of the authors and copyright holders must not be used in
+advertising or otherwise to promote the sale, use or other dealing
+in this Software without specific, written prior permission.  Title
+to copyright in this Software shall at all times remain with copyright
+holders.
+
+---
+Noted above is that various files can be copyrighted individually.
+The licenses found in the OpenLDAP tree are as follows:
+
+CRL
+-----------------------------------
+# Copyright 1999 Computing Research Labs, New Mexico State University
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+# THE COMPUTING RESEARCH LAB OR NEW MEXICO STATE UNIVERSITY BE LIABLE FOR ANY
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+# THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-----------------------------------
+
+
+FSF
+-----------------------------------
+# Copyright (C) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+-----------------------------------
+
+
+HC
+-----------------------------------
+ * Permission is granted to anyone to use this software for any purpose
+ * on any computer system, and to alter it and redistribute it, subject
+ * to the following restrictions:
+ *
+ * 1. The author is not responsible for the consequences of use of this
+ *    software, no matter how awful, even if they arise from flaws in it.
+ *
+ * 2. The origin of this software must not be misrepresented, either by
+ *    explicit claim or by omission.  Since few users ever read sources,
+ *    credits should appear in the documentation.
+ *
+ * 3. Altered versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.  Since few users
+ *    ever read sources, credits should appear in the
+ *    documentation.
+ *
+ * 4. This notice may not be removed or altered.
+
+-----------------------------------
+
+
+IBM
+-----------------------------------
+ * Portions Copyright (c) 1995 by International Business Machines, Inc.
+ *
+ * International Business Machines, Inc. (hereinafter called IBM) grants
+ * permission under its copyrights to use, copy, modify, and distribute this
+ * Software with or without fee, provided that the above copyright notice and
+ * all paragraphs of this notice appear in all copies, and that the name of IBM
+ * not be used in connection with the marketing of any product incorporating
+ * the Software or modifications thereof, without specific, written prior
+ * permission.
+ *
+ * To the extent it has a right to do so, IBM grants an immunity from suit
+ * under its patents, if any, for the use, sale or manufacture of products to
+ * the extent that such products are used for performing Domain Name System
+ * dynamic updates in TCP/IP networks by means of the Software.  No immunity is
+ * granted for any product per se or for any other function of any product.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
+ * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
+ * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
+ * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
+ * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+-----------------------------------
+
+
+IS
+-----------------------------------
+# Full Copyright Statement
+# 
+#    Copyright (C) The Internet Society (1999).  All Rights Reserved.
+# 
+#    This document and translations of it may be copied and furnished to
+#    others, and derivative works that comment on or otherwise explain it
+#    or assist in its implementation may be prepared, copied, published
+#    and distributed, in whole or in part, without restriction of any
+#    kind, provided that the above copyright notice and this paragraph are
+#    included on all such copies and derivative works.  However, this
+#    document itself may not be modified in any way, such as by removing
+#    the copyright notice or references to the Internet Society or other
+#    Internet organizations, except as needed for the purpose of
+#    developing Internet standards in which case the procedures for
+#    copyrights defined in the Internet Standards process must be
+#    followed, or as required to translate it into languages other than
+#    English.
+# 
+#    The limited permissions granted above are perpetual and will not be
+#    revoked by the Internet Society or its successors or assigns.
+# 
+#    This document and the information contained herein is provided on an
+#    "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+#    TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+This license was present in the copies of several schema files and one
+LDIF file as distributed upstream.  The relevant content has been removed
+except where it is purely functional (descriptions of an LDAP schema).
+The copyright notice has been retained with a clarifying comment.  The
+provisions in the above license that prohibit modification therefore
+should no longer apply to any files distributed with the Debian package.
+
+Several files in libraries/libldap also reference this license as the
+copyright on ABNF sequences embedded as comments in those files.  These
+too are purely functional interface specifications distributed as part of
+the LDAP protocol standard and do not contain creative work such as
+free-form text.
+-----------------------------------
+
+
+ISC
+-----------------------------------
+ * Copyright (c) 1996, 1998 by Internet Software Consortium.
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND INTERNET SOFTWARE CONSORTIUM DISCLAIMS
+ * ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL INTERNET SOFTWARE
+ * CONSORTIUM BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+ * SOFTWARE.
+
+-----------------------------------
+
+
+JC
+-----------------------------------
+ * This software is not subject to any license of Silicon Graphics 
+ * Inc. or Purdue University.
+ *
+ * Redistribution and use in source and binary forms are permitted
+ * without restriction or fee of any kind as long as this notice
+ * is preserved.
+
+The following is additional information from Juan C. Gomez on how 
+this license is to be interpreted:
+-----
+Local-Date: Fri, 06 Jun 2003 13:18:52 -0400
+Date: Fri, 6 Jun 2003 10:18:52 -0700
+From: Juan Gomez <juang@us.ibm.com>
+To: Stephen Frost <sfrost@debian.org>
+X-Mailer: Lotus Notes Release 5.0.2a (Intl) 23 November 1999
+Subject: Re: Juan C. Gomez license in OpenLDAP Source
+
+Stephen,
+
+"There is no restriction on modifications and derived works" on the work I
+did for the openldap server as long as this is consistent with the openldap
+license. Please forward this email to Kurt so he does the appropriate
+changes to the files to reflect this.
+
+
+Regards, Juan                                                                                       
+-----------------------------------
+
+
+MA
+-----------------------------------
+ * Copyright (c) 2000, Mark Adamson, Carnegie Mellon.  All rights reserved.
+ * This software is not subject to any license of Carnegie Mellon University.
+ *
+ * Redistribution and use in source and binary forms are permitted without 
+ * restriction or fee of any kind as long as this notice is preserved.
+ *
+ * The name "Carnegie Mellon" must not be used to endorse or promote
+ * products derived from this software without prior written permission.
+
+The following is additional information from Mark Adamson on how this license
+is to be interpreted:
+------
+Local-Date: Thu, 05 Jun 2003 16:53:32 -0400
+Date: Thu, 5 Jun 2003 16:53:32 -0400 (EDT)
+From: Mark Adamson <adamson@andrew.cmu.edu>
+To: Stephen Frost <sfrost@debian.org>
+Subject: Re: Mark Adamson license in OpenLDAP source
+
+Hi Stephen,
+
+  I don't see how this conflicts with the Debian FSG. The first statement
+in the copyright pertaining to CMU say only that we don't license out the
+software.  The second mention denies the right to say things like,
+"Now! Powered by software from Carnegie Mellon!"   There is no restriction
+on modifications and derived works.
+
+-Mark
+------
+-----------------------------------
+
+
+MIT
+-----------------------------------
+# Copyright 1991 by the Massachusetts Institute of Technology
+#
+# Permission to use, copy, modify, distribute, and sell this software and its
+# documentation for any purpose is hereby granted without fee, provided that
+# the above copyright notice appear in all copies and that both that
+# copyright notice and this permission notice appear in supporting
+# documentation, and that the name of M.I.T. not be used in advertising or
+# publicity pertaining to distribution of the software without specific,
+# written prior permission.  M.I.T. makes no representations about the
+# suitability of this software for any purpose.  It is provided "as is"
+# without express or implied warranty.
+
+-----------------------------------
+
+
+OL2
+-----------------------------------
+Copyright 1999-2001 The OpenLDAP Foundation, Redwood City,
+California, USA.  All Rights Reserved.  Permission to copy and
+distribute verbatim copies of this document is granted.
+-----------------------------------
+
+
+PM
+-----------------------------------
+ * Copyright (C) 2000 Pierangelo Masarati, <ando@sys-net.it>
+ * All rights reserved.
+ *
+ * Permission is granted to anyone to use this software for any purpose
+ * on any computer system, and to alter it and redistribute it, subject
+ * to the following restrictions:
+ *
+ * 1. The author is not responsible for the consequences of use of this
+ * software, no matter how awful, even if they arise from flaws in it.
+ *
+ * 2. The origin of this software must not be misrepresented, either by
+ * explicit claim or by omission.  Since few users ever read sources,
+ * credits should appear in the documentation.
+ *
+ * 3. Altered versions must be plainly marked as such, and must not be
+ * misrepresented as being the original software.  Since few users
+ * ever read sources, credits should appear in the documentation.
+ *
+ * 4. This notice may not be removed or altered.
+ *
+-----------------------------------
+
+
+PM2
+-----------------------------------
+ * Redistribution and use in source and binary forms are permitted only
+ * as authorized by the OpenLDAP Public License.  A copy of this
+ * license is available at http://www.OpenLDAP.org/license.html or
+ * in file LICENSE in the top-level directory of the distribution.
+-----------------------------------
+
+
+UoC
+-----------------------------------
+ * Redistribution and use in source and binary forms are permitted
+ * provided that the above copyright notice and this paragraph are
+ * duplicated in all such forms and that any documentation,
+ * advertising materials, and other materials related to such
+ * distribution and use acknowledge that the software was developed
+ * by the University of California, Berkeley.  The name of the
+ * University may not be used to endorse or promote products derived
+ * from this software without specific prior written permission.
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+ * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+NOTE: The Regents have since retroactively removed the advertising
+clause from above.
+
+-----------------------------------
+
+
+UoC2
+-----------------------------------
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *      This product includes software developed by the University of
+ *      California, Berkeley and its contributors.
+ * 4. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+
+NOTE: The Regents have since retroactively removed the advertising
+clause from above.
+See:
+ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+
+-----------------------------------
+
+
+UoM
+-----------------------------------
+ * Redistribution and use in source and binary forms are permitted
+ * provided that this notice is preserved and that due credit is given
+ * to the University of Michigan at Ann Arbor. The name of the University
+ * may not be used to endorse or promote products derived from this
+ * software without specific prior written permission. This software
+ * is provided ``as is'' without express or implied warranty.
+---
+After discussing this license with the OpenLDAP Foundation we received
+clarification on it:
+---
+
+  * To: Stephen Frost <sfrost@snowman.net>
+  * Subject: Re: OpenLDAP Licenseing issues
+  * From: "Kurt D. Zeilenga" <Kurt@OpenLDAP.org>
+  * Date: Wed, 28 May 2003 10:55:44 -0700
+  * Cc: Steve Langasek <vorlon@netexpress.net>,debian-legal@lists.debian.org, openldap-devel@OpenLDAP.org
+  * In-reply-to: <20030528162613.GB8524@ns.snowman.net>
+  * Message-id: <5.2.0.9.0.20030528094229.02924780@127.0.0.1>
+  * Old-return-path: <Kurt@OpenLDAP.org>
+
+Steven,
+
+The OpenLDAP Foundation believes it the Regents' statement grants a
+license to redistribute derived works and is confident that the University,
+who is quite aware of our actions (as they actively participate in them),
+does not consider our actions to infringe on their rights.  You are
+welcomed to your opinions. I suggest, however, that before you rely
+on your or other people's opinions (including ours), that you consult
+with a lawyer familiar with applicable law and the particulars of your
+situation.
+
+The Foundation sees no reason for it to expend its limited resources
+seeking clarifications which it believes are unnecessary.  You are,
+of course, welcomed to expend time and energy seeking clarifications
+you think are necessary.  I suggest you contact University's general
+counsel office (http://www.umich.edu/~vpgc/).
+
+Regards, Kurt
+-----------------------------------
+
+
