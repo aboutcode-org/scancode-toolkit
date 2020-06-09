@@ -32,9 +32,9 @@ import os
 from os.path import abspath
 from os.path import expanduser
 
+import attr
 import io
 import re
-import attr
 import saneyaml
 from packageurl import PackageURL
 from six import string_types
@@ -121,7 +121,6 @@ class RubyGem(models.Package):
             yield build_rubygem_package(metadata)
 
         if location.endswith('.gemspec'):
-            # TODO: implement me
             gemspec_data = parse_spec(location)
             yield build_packages_from_gemspec(gemspec_data)
 
@@ -256,7 +255,7 @@ def get_gem_metadata(location):
         abs_location = abspath(expanduser(location))
         warnings = archive.extract_tar(abs_location, extract_loc) or []
         if warnings:
-            raise Exception('Failed to extract RubyGem .gem file.\n' + '\n'.join(warnings))
+            raise Exception('Failed to extract RubyGem .gem file: ' + ', '.join(warnings))
 
         # The gzipped metadata is the second level of archive.
         metadata = os.path.join(extract_loc, 'metadata')
@@ -270,7 +269,7 @@ def get_gem_metadata(location):
         elif os.path.exists(metadata_gz):
             content, warnings = get_gz_compressed_file_content(metadata_gz)
             if warnings:
-                raise Exception('Failed to extract RubyGem .gem/metadata.gz file.\n' + '\n'.join(warnings))
+                raise Exception('Failed to extract RubyGem .gem/metadata.gz file: ' + ', '.join(warnings))
 
         else:
             raise Exception('No gem metadata found in RubyGem .gem file.')
@@ -630,7 +629,7 @@ def normalize(gem_data, known_fields=known_fields):
 
 def parse_spec(location):
     """
-    Returns a dictionary which containing .gemspec file data.
+    Returns a dictionary containing .gemspec file data.
     """
     file_data = []
     with io.open(location, "r", encoding="utf-8") as f:
@@ -751,7 +750,7 @@ def parse_spec(location):
 
 def build_packages_from_gemspec(gemspec_data):
     """
-    Yield RubyGem Packages from gemspec.
+    Return a package built from gemspec.
     """
     name = gemspec_data.get('name')
     version = gemspec_data.get('version')
