@@ -67,6 +67,9 @@ class InstalledFile(object):
         help='MD5 checksum for this file in hexadecimal',
         repr=True)
 
+    def to_dict(self, **kwargs):
+        return attr.asdict(self)
+
 
 @attr.s()
 class DebianPackage(models.Package):
@@ -85,14 +88,20 @@ class DebianPackage(models.Package):
         label='installed files',
         help='List of files installed by this package.')
 
-    def to_dict(self, **kwargs):
+    def to_dict(self, _detailed=False, **kwargs):
         data = models.Package.to_dict(self, **kwargs)
-
-        #################################################
-        # remove temporary fields
-        data.pop('multi_arch', None)
-        data.pop('installed_files', None)
-        #################################################
+        if _detailed:
+            #################################################
+            # remove temporary fields
+            data['multi_arch'] = self.multi_arch
+            data['installed_files'] = [istf.to_dict() for istf in (self.installed_files or [])]
+            #################################################
+        else:
+            #################################################
+            # remove temporary fields
+            data.pop('multi_arch', None)
+            data.pop('installed_files', None)
+            #################################################
 
         return data
 
@@ -156,16 +165,21 @@ class DebianPackage(models.Package):
                 return copyright_loc
 
 
-def get_installed_packages(root_dir, distro='debian'):
+def get_installed_packages(root_dir, distro='debian', detect_licenses=False):
     """
     Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
     (path, md5sum) tuples.
     """
+    # guard from recursive import
+    from packagedcode import debian_copyright
+
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
     var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
 
     for package in parse_status_file(base_status_file_loc, distro=distro):
         package.populate_installed_files(var_lib_dpkg_info_dir)
+        if detect_licenses:
+            debian_copyright.get_and_set_package_licenses_and_copyrights(package, root_dir)
         yield package
 
 

@@ -30,7 +30,8 @@ import io
 import logging
 from os import path
 
-from debut.copyright import DebianCopyright, CatchAllParagraph
+from debut.copyright import DebianCopyright
+from debut.copyright import CatchAllParagraph
 from debut.copyright import CopyrightFilesParagraph
 from debut.copyright import CopyrightHeaderParagraph
 from license_expression import Licensing

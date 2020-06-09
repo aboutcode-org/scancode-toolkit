@@ -26,10 +26,26 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import json
 import os.path
 
 from packagedcode import debian
 from packages_test_utils import PackageTester
+
+
+def check_expected(result, expected, regen=False):
+    """
+    Check equality between a result collection and an expected JSON file.
+    Regen the expected file if regen is True.
+    """
+    if regen:
+        with open(expected, 'w') as ex:
+            ex.write(json.dumps(result, indent=2))
+
+    with open(expected) as ex:
+        expected = json.loads(ex.read())
+
+    assert expected == result
 
 
 class TestDebianPackageGetInstalledPackages(PackageTester):
@@ -37,12 +53,17 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
 
     def test_basic_rootfs(self):
         test_rootfs = self.get_test_loc('debian/basic-rootfs/')
+        result = [package.to_dict(_detailed=True)
+            for package in debian.get_installed_packages(test_rootfs)]
+        expected = self.get_test_loc('debian/basic-rootfs-expected.json')
+        check_expected(result, expected, regen=False)
 
-        for package in debian.get_installed_packages(test_rootfs):
-            assert isinstance(package, debian.DebianPackage)
-            assert isinstance(package.installed_files, list)
-            for installed_file in package.installed_files:
-                assert isinstance(installed_file, debian.InstalledFile)
+    def test_basic_rootfs_with_licenses_and_copyrights(self):
+        test_rootfs = self.get_test_loc('debian/basic-rootfs/')
+        result = [package.to_dict(_detailed=True)
+            for package in debian.get_installed_packages(test_rootfs, detect_licenses=True)]
+        expected = self.get_test_loc('debian/basic-rootfs-with-licenses-expected.json')
+        check_expected(result, expected, regen=False)
 
 
 class TestDebian(PackageTester):

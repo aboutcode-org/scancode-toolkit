@@ -18,3 +18,22 @@ Description: shared libraries for terminal handling
  compiled with ncurses.
 Homepage: https://invisible-island.net/ncurses/
 Original-Maintainer: Craig Small <csmall@debian.org>
+
+Package: libndp0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 41
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libndp
+Version: 1.4-2ubuntu0.16.04.1
+Depends: libc6 (>= 2.15)
+Description: Library for Neighbor Discovery Protocol
+ libndp is a library for the IPv6 Neighbor Discovery Protocol (NDP).  It
+ contains functions for building and parsing NDP messages, and provides
+ a high-level interface for sending and receiving NDP messages on a
+ network interface.
+Homepage: http://libndp.org
+Original-Maintainer: Andrew Ayer <agwa@andrewayer.name>
