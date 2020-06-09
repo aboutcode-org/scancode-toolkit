@@ -37,6 +37,7 @@ from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.datautils import List
 from commoncode.datautils import String
 from packagedcode import models
 
@@ -55,6 +56,19 @@ if TRACE:
 
 
 @attr.s()
+class InstalledFile(object):
+    path = String(
+        label='Path of this installed file',
+        help='The path of this installed file in a rootfs.',
+        repr=True)
+
+    md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this file in hexadecimal',
+        repr=True)
+
+
+@attr.s()
 class DebianPackage(models.Package):
     metafiles = ('*.control',)
     extensions = ('.deb',)
@@ -66,18 +80,35 @@ class DebianPackage(models.Package):
         label='Multi-Arch',
         help='Multi-Arch value from status file')
 
+    installed_files = List(
+        item_type=InstalledFile,
+        label='installed files',
+        help='List of files installed by this package.')
+
     def to_dict(self, **kwargs):
         data = models.Package.to_dict(self, **kwargs)
-        if 'multi_arch' in data:
-            data.pop('multi_arch')
+
+        #################################################
+        # remove temporary fields
+        data.pop('multi_arch', None)
+        data.pop('installed_files', None)
+        #################################################
 
         return data
 
-    def get_list_of_installed_files(self, info_dir):
+    def populate_installed_files(self, var_lib_dpkg_info_dir):
         """
-        Given a info_dir path, return
-        a list of tuples of path + md5 values.
+        Populate the installed_file  attribute given a `var_lib_dpkg_info_dir`
+        path to a Debian /var/lib/dpkg/info directory.
         """
+        self.installed_files = self.get_list_of_installed_files(var_lib_dpkg_info_dir)
+
+    def get_list_of_installed_files(self, var_lib_dpkg_info_dir):
+        """
+        Return a list of InstalledFile given a `var_lib_dpkg_info_dir` path to a
+        Debian /var/lib/dpkg/info directory.
+        """
+
         # Multi-Arch can be: foreign, same, allowed or empty
         # We only need to adjust the md5sum path in the case of `same`
         if self.multi_arch == 'same':
@@ -86,22 +117,25 @@ class DebianPackage(models.Package):
             arch = ''
 
         package_md5sum = '{}{}.md5sums'.format(self.name, arch)
-        md5sum_file = os.path.join(info_dir, package_md5sum)
+        md5sum_file = os.path.join(var_lib_dpkg_info_dir, package_md5sum)
 
         if not os.path.exists(md5sum_file):
             return []
 
         installed_files = []
-        with open(os.path.join(info_dir, package_md5sum)) as info_file:
+        with open(md5sum_file) as info_file:
             for line in info_file:
                 line = line.strip()
                 if not line:
                     continue
 
                 md5sum, _, path = line.partition(' ')
-                installed_files.append((path.strip(), md5sum.strip()))
+                # we strip as there could be more than one space
+                installed_file = InstalledFile(
+                    path=path.strip(), md5=md5sum.strip())
+                installed_files.append(installed_file)
 
-            return installed_files
+        return installed_files
 
     def get_copyright_file_path(self, root_dir):
         """
@@ -128,10 +162,11 @@ def get_installed_packages(root_dir, distro='debian'):
     (path, md5sum) tuples.
     """
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
-    base_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
+    var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
 
     for package in parse_status_file(base_status_file_loc, distro=distro):
-        yield package, package.get_list_of_installed_files(base_info_dir)
+        package.populate_installed_files(var_lib_dpkg_info_dir)
+        yield package
 
 
 def is_debian_status_file(location):
@@ -160,10 +195,9 @@ def build_package(package_data, distro='debian'):
     package.namespace = distro
 
     # add debian-specific package 'qualifiers'
-    qualifiers = OrderedDict([
+    package.qualifiers = OrderedDict([
         ('arch', package_data.get('architecture')),
     ])
-    package.qualifiers = qualifiers
 
     # mapping of top level `status` file items to the Package object field name
     plain_fields = [
