@@ -28,8 +28,6 @@ from __future__ import unicode_literals
 
 import os.path
 
-import pytest
-
 from packagedcode import debian
 from packages_test_utils import PackageTester
 
@@ -40,11 +38,11 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
     def test_basic_rootfs(self):
         test_rootfs = self.get_test_loc('debian/basic-rootfs/')
 
-        for package, installed_files in debian.get_installed_packages(test_rootfs):
+        for package in debian.get_installed_packages(test_rootfs):
             assert isinstance(package, debian.DebianPackage)
-            assert isinstance(installed_files, list)
-            for installed_file in installed_files:
-                assert isinstance(installed_file, tuple)
+            assert isinstance(package.installed_files, list)
+            for installed_file in package.installed_files:
+                assert isinstance(installed_file, debian.InstalledFile)
 
 
 class TestDebian(PackageTester):
@@ -60,7 +58,13 @@ class TestDebian(PackageTester):
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
-        self.check_packages(packages, expected_loc, regen=True)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_parse_status_file_perl_error(self):
+        test_file = self.get_test_loc('debian/mini-status/status')
+        expected_loc = self.get_test_loc('debian/mini-status/status.expected')
+        packages = list(debian.parse_status_file(test_file, distro='debian'))
+        self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_end_to_end(self):
         test_file = self.get_test_loc('debian/end-to-end/status')
@@ -72,10 +76,10 @@ class TestDebian(PackageTester):
         test_package = packages[0]
 
         expected = [
-            ('lib/x86_64-linux-gnu/libncurses.so.5.9', '23c8a935fa4fc7290d55cc5df3ef56b1'),
-            ('usr/lib/x86_64-linux-gnu/libform.so.5.9', '98b70f283324e89db5787a018a54adf4'),
-            ('usr/lib/x86_64-linux-gnu/libmenu.so.5.9', 'e3a0f5154928da2da234920343ac14b2'),
-            ('usr/lib/x86_64-linux-gnu/libpanel.so.5.9', 'a927e7d76753bb85f5a784b653d337d2')
+            debian.InstalledFile('lib/x86_64-linux-gnu/libncurses.so.5.9', '23c8a935fa4fc7290d55cc5df3ef56b1'),
+            debian.InstalledFile('usr/lib/x86_64-linux-gnu/libform.so.5.9', '98b70f283324e89db5787a018a54adf4'),
+            debian.InstalledFile('usr/lib/x86_64-linux-gnu/libmenu.so.5.9', 'e3a0f5154928da2da234920343ac14b2'),
+            debian.InstalledFile('usr/lib/x86_64-linux-gnu/libpanel.so.5.9', 'a927e7d76753bb85f5a784b653d337d2')
         ]
 
         resources = test_package.get_list_of_installed_files(test_info_dir)
@@ -108,19 +112,19 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         )
 
         expected = [
-             ('usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop', '34900bd11562f427776ed2c05ba6002d'),
-             ('usr/lib/unity-settings-daemon-1.0/gtk-modules/at-spi2-atk.desktop', '34900bd11562f427776ed2c05ba6002d'),
-             ('usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so', '6ddbc10b64afe708945c3b1497714aaa'),
-             ('usr/share/doc/libatk-adaptor/NEWS.gz', '3a24add33624132b6b3b4c2ed08a4394'),
-             ('usr/share/doc/libatk-adaptor/README', '452c2e9db46c9ac92a10e700d116b120'),
-             ('usr/share/doc/libatk-adaptor/copyright', '971e4b2093741db8c51d263cd5c3ee48'),
+             debian.InstalledFile('usr/lib/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop', '34900bd11562f427776ed2c05ba6002d'),
+             debian.InstalledFile('usr/lib/unity-settings-daemon-1.0/gtk-modules/at-spi2-atk.desktop', '34900bd11562f427776ed2c05ba6002d'),
+             debian.InstalledFile('usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so', '6ddbc10b64afe708945c3b1497714aaa'),
+             debian.InstalledFile('usr/share/doc/libatk-adaptor/NEWS.gz', '3a24add33624132b6b3b4c2ed08a4394'),
+             debian.InstalledFile('usr/share/doc/libatk-adaptor/README', '452c2e9db46c9ac92a10e700d116b120'),
+             debian.InstalledFile('usr/share/doc/libatk-adaptor/copyright', '971e4b2093741db8c51d263cd5c3ee48'),
         ]
 
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
         assert 6 == len(results)
         assert expected == results
-        
+
     def test_multi_arch_is_foreign(self):
         test_info_dir = self.get_test_loc('debian/foreign-multi-arch')
 
@@ -131,22 +135,22 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         )
 
         expected = [
-          ('usr/share/bug/fonts-sil-abyssinica/presubj', '7faf213b3c06e818b9976cc2ae5af51a'),
-          ('usr/share/bug/fonts-sil-abyssinica/script',  '672370efca8bffa183e2828907e0365d'),
-          ('usr/share/doc/fonts-sil-abyssinica/OFL-FAQ.txt.gz', 'ea72ae1d2ba5471ef54b132c79b1a03b'),
-          ('usr/share/doc/fonts-sil-abyssinica/README.Debian', 'f497d6bfc7ca4d423d703fabb7ff2e4c'),
-          ('usr/share/doc/fonts-sil-abyssinica/changelog.Debian.gz', '7f81bc6ed7506b95af01b5eef76662bb'),
-          ('usr/share/doc/fonts-sil-abyssinica/copyright', '13d9a840b6db71f7060670be0aafa953'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.odt', '0e4a5ad6839067740e81a3e1244b0b16'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.pdf.gz', '8fee9c92ecd425c71217418b8370c5ae'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILOpenTypeFontFeatures.pdf.gz', '2cc8cbe21730258dd03a465e045066cc'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeSample.pdf.gz', '40948ce7d8e4b1ba1c7043ec8926edf9'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeTunerGuide.pdf.gz', '36ca1d62ca7365216e8bda952d2461e6'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/DOCUMENTATION.txt', '491295c116dbcb74bcad2d78a56aedbe'),
-          ('usr/share/doc/fonts-sil-abyssinica/documentation/SILEthiopicPrivateUseAreaBlock.pdf.gz', 'bea5aeeb76a15c2c1b8189d1b2437b31'),
-          ('usr/share/fonts/truetype/abyssinica/AbyssinicaSIL-R.ttf', '9e3d4310af3892a739ba7b1189c44dca'),
+            debian.InstalledFile('usr/share/bug/fonts-sil-abyssinica/presubj', '7faf213b3c06e818b9976cc2ae5af51a'),
+            debian.InstalledFile('usr/share/bug/fonts-sil-abyssinica/script', '672370efca8bffa183e2828907e0365d'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/OFL-FAQ.txt.gz', 'ea72ae1d2ba5471ef54b132c79b1a03b'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/README.Debian', 'f497d6bfc7ca4d423d703fabb7ff2e4c'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/changelog.Debian.gz', '7f81bc6ed7506b95af01b5eef76662bb'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/copyright', '13d9a840b6db71f7060670be0aafa953'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.odt', '0e4a5ad6839067740e81a3e1244b0b16'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILGraphiteFontFeatures.pdf.gz', '8fee9c92ecd425c71217418b8370c5ae'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILOpenTypeFontFeatures.pdf.gz', '2cc8cbe21730258dd03a465e045066cc'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeSample.pdf.gz', '40948ce7d8e4b1ba1c7043ec8926edf9'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/AbyssinicaSILTypeTunerGuide.pdf.gz', '36ca1d62ca7365216e8bda952d2461e6'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/DOCUMENTATION.txt', '491295c116dbcb74bcad2d78a56aedbe'),
+            debian.InstalledFile('usr/share/doc/fonts-sil-abyssinica/documentation/SILEthiopicPrivateUseAreaBlock.pdf.gz', 'bea5aeeb76a15c2c1b8189d1b2437b31'),
+            debian.InstalledFile('usr/share/fonts/truetype/abyssinica/AbyssinicaSIL-R.ttf', '9e3d4310af3892a739ba7b1189c44dca'),
         ]
-        
+
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 
         assert 14 == len(results)
@@ -161,11 +165,11 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
         )
 
         expected = [
-            ('usr/bin/mokutil', '7a1a2629613d260e43dabc793bebdf19'),
-            ('usr/share/bash-completion/completions/mokutil', '9086049384eaf0360dca4371ca50acbf'),
-            ('usr/share/doc/mokutil/changelog.Debian.gz', 'b3f4bb874bd61e4609823993857b9c17'),
-            ('usr/share/doc/mokutil/copyright', '24dd593b630976a785b4c5ed097bbd96'),
-            ('usr/share/man/man1/mokutil.1.gz', 'b608675058a943d834129b6972b8509a'),
+            debian.InstalledFile('usr/bin/mokutil', '7a1a2629613d260e43dabc793bebdf19'),
+            debian.InstalledFile('usr/share/bash-completion/completions/mokutil', '9086049384eaf0360dca4371ca50acbf'),
+            debian.InstalledFile('usr/share/doc/mokutil/changelog.Debian.gz', 'b3f4bb874bd61e4609823993857b9c17'),
+            debian.InstalledFile('usr/share/doc/mokutil/copyright', '24dd593b630976a785b4c5ed097bbd96'),
+            debian.InstalledFile('usr/share/man/man1/mokutil.1.gz', 'b608675058a943d834129b6972b8509a'),
         ]
         results = test_pkg.get_list_of_installed_files(test_info_dir)
 

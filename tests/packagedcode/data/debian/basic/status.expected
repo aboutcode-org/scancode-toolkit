@@ -205,7 +205,7 @@
     },
     "subpath": null,
     "primary_language": null,
-    "description": null,
+    "description": "minimal Perl system\n Perl is a scripting language used in many system scripts and utilities.\n .\n This package provides a Perl interpreter and the small subset of the\n standard run-time library required to perform basic tasks. For a full\n Perl installation, install \"perl\" (and its dependencies, \"perl-modules-5.26\"\n and \"perl-doc\").",
     "release_date": null,
     "parties": [
       {
@@ -219,7 +219,7 @@
     "keywords": [
       "perl"
     ],
-    "homepage_url": null,
+    "homepage_url": "http://dev.perl.org/perl5/",
     "download_url": null,
     "size": "7826",
     "sha1": null,

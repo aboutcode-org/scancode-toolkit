@@ -103,10 +103,7 @@ Replaces: libfile-path-perl (<< 2.12.01), libfile-temp-perl (<< 0.2304), libio-s
 Provides: libfile-path-perl, libfile-temp-perl, libio-socket-ip-perl, libscalar-list-utils-perl, libsocket-perl, libxsloader-perl, perlapi-5.26.0, perlapi-5.26.1
 Pre-Depends: libc6 (>= 2.23), dpkg (>= 1.17.17)
 Suggests: perl
-Breaks: amanda-common (<< 1:3.3.9-2), autoconf2.13 (<< 2.13-45), backuppc (<< 3.3.1-2), debconf (<< 1.5.61), dh-haskell (<< 0.3), intltool (<< 0.51.0-4), libalien-wxwidgets-perl (<< 0.65+dfsg-2), libanyevent-perl (<< 7.070-2), libcommon-sense-perl (<< 3.72-2~), libe
-xception-class-perl (<< 1.42), libfile-path-perl (<< 2.12.01), libfile-spec-perl (<< 3.6700), libfile-temp-perl (<< 0.2304), libgtk2-perl-doc (<< 2:1.2491-4), libio-socket-ip-perl (<< 0.38), libjcode-perl (<< 2.13-3), libmarc-charset-perl (<< 1.2), libsbuild-perl (<
-< 0.67.0-1), libscalar-list-utils-perl (<< 1:1.46.02), libsocket-perl (<< 2.020.03), libxsloader-perl (<< 0.27), mailagent (<< 1:3.1-81-2), pdl (<< 1:2.007-4), perl (<< 5.26.1~), perl-modules (<< 5.26.1~), slic3r (<< 1.2.9+dfsg-6.1), slic3r-prusa (<< 1.37.0+dfsg-1.1
-), texinfo (<< 6.1.0.dfsg.1-8)
+Breaks: amanda-common (<< 1:3.3.9-2), autoconf2.13 (<< 2.13-45), backuppc (<< 3.3.1-2), debconf (<< 1.5.61), dh-haskell (<< 0.3), intltool (<< 0.51.0-4), libalien-wxwidgets-perl (<< 0.65+dfsg-2), libanyevent-perl (<< 7.070-2), libcommon-sense-perl (<< 3.72-2~), libexception-class-perl (<< 1.42), libfile-path-perl (<< 2.12.01), libfile-spec-perl (<< 3.6700), libfile-temp-perl (<< 0.2304), libgtk2-perl-doc (<< 2:1.2491-4), libio-socket-ip-perl (<< 0.38), libjcode-perl (<< 2.13-3), libmarc-charset-perl (<< 1.2), libsbuild-perl (<< 0.67.0-1), libscalar-list-utils-perl (<< 1:1.46.02), libsocket-perl (<< 2.020.03), libxsloader-perl (<< 0.27), mailagent (<< 1:3.1-81-2), pdl (<< 1:2.007-4), perl (<< 5.26.1~), perl-modules (<< 5.26.1~), slic3r (<< 1.2.9+dfsg-6.1), slic3r-prusa (<< 1.37.0+dfsg-1.1), texinfo (<< 6.1.0.dfsg.1-8)
 Conflicts: defoma (<< 0.11.12), doc-base (<< 0.10.3), mono-gac (<< 2.10.8.1-3), safe-rm (<< 0.8), update-inetd (<< 4.41)
 Description: minimal Perl system
  Perl is a scripting language used in many system scripts and utilities.
