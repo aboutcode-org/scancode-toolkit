@@ -39,6 +39,7 @@ from license_expression import Licensing
 from packagedcode.debian import DebianPackage
 from packagedcode.models import compute_normalized_license
 from packagedcode.licensing import get_normalized_expression
+import textcode
 
 """
 Detect licenses in Debian copyright files. Can handle dep-5 machine-readable
@@ -79,6 +80,42 @@ def get_and_set_package_licenses_and_copyrights(package, root_dir):
 
 
 def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
+    """
+    Return a tuple of (declared license, detected license_expression, copyrights) strings computed
+    from the `copyright_file` location. For each copyright file paragraph we
+    treat the "name" as a license declaration. The text is used for detection
+    and cross-reference with the declaration.
+    """
+    declared_license, detected_license, copyrights = parse_structured_copyright_file(
+        copyright_file=copyright_file,
+        skip_debian_packaging=skip_debian_packaging,
+        simplify_licenses=simplify_licenses)
+
+    if not detected_license or detected_license == 'unknown':
+        text = textcode.analysis.unicode_text(copyright_file)
+        detected_license = get_normalized_expression(text, try_as_expression=False)
+    if not copyrights:
+        copyrights = '\n'.join(copyright_detector(copyright_file))
+
+    return declared_license, detected_license, copyrights
+
+
+def copyright_detector(location):
+    """
+    Return lists of detected copyrights, authors and holders
+    in file at location.
+    """
+    from cluecode.copyrights import detect_copyrights
+    copyrights = []
+    copyrights_append = copyrights.append
+
+    for dtype, value, _start, _end in detect_copyrights(location):
+        if dtype == 'copyrights':
+            copyrights_append(value)
+    return copyrights
+
+
+def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
     """
     Return a tuple of (declared license, detected license_expression, copyrights) strings computed
     from the `copyright_file` location. For each copyright file paragraph we
