@@ -635,8 +635,6 @@ def parse_spec(location):
     with io.open(location, "r", encoding="utf-8") as f:
         file_data = f.read().splitlines()
 
-    dependencies = OrderedDict()
-
     # defaults fields of .gemspec file
     gemspec_data = {
         "name": None,
@@ -649,6 +647,8 @@ def parse_spec(location):
         "license": None,
         "dependencies": None
         }
+
+    dependencies = OrderedDict()
 
     for individual in file_data:
         # update the value of name
@@ -663,13 +663,12 @@ def parse_spec(location):
             name = individual.split('= ')
             name = name[1].strip('\'"%q{}')
             gemspec_data['name'] = name
-            continue
-        
+
+        # update the value of version
         if '.version ' in individual:
             version = individual.split('= ')
             version = version[1].strip('\'"%q{}')
             gemspec_data['version'] = version
-            continue
 
         # update the value of author
         if '.authors ' in individual:
@@ -681,42 +680,36 @@ def parse_spec(location):
             authors = individual.split('= ')
             authors = authors[1].strip('[]%q{}').replace('"', '')
             gemspec_data['authors'] = authors
-            continue
 
         # update the value of email
         if '.email ' in individual:
             email = individual.split('= ')
             email = email[1].strip('[]%q{}').replace('"', '')
             gemspec_data['email'] = email
-            continue
 
         # update the value of summary
         if '.summary ' in individual:
             summary = individual.split('= ')
             summary = summary[1].strip('\'"%q{}')
             gemspec_data['summary'] = summary
-            continue
 
         # update the value of description
         if '.description ' in individual:
             description = individual.split('= ')
             description = description[1].strip('\'"%q{}')
             gemspec_data['description'] = description
-            continue
 
         # update the value of homepage
         if '.homepage ' in individual and 'homepage_uri' not in individual:
             homepage = individual.split('= ')
             homepage = homepage[1].strip('\'"%q{}')
             gemspec_data['homepage'] = homepage
-            continue
 
         # update the value of license
         if '.license ' in individual:
             license = individual.split('= ')
             license = license[1].strip('\'"%q{}')
             gemspec_data['license'] = license
-            continue
 
         # update the value of dependencies
         if 'dependency' in  individual:
@@ -738,11 +731,8 @@ def parse_spec(location):
             # ['s.add_runtime_dependency(%q', 'mechanize', ', ["', '= 0"])']
             dependency = re.split("'|\"|<|>", individual)
             dependencies[dependency[1]] = dep_version
-            continue
 
     # stores dependencies list into dictionary
-    if not dependencies:
-        dependencies = None
     gemspec_data['dependencies'] = dependencies
 
     return gemspec_data
@@ -756,17 +746,9 @@ def build_packages_from_gemspec(gemspec_data):
     version = gemspec_data.get('version')
     description = gemspec_data.get('description')
     homepage_url = gemspec_data.get('homepage')
-    package = RubyGem(
-        name=name,
-        version=version,
-        description=description,
-        homepage_url=homepage_url
-    )
-    # package.dependencies = gemspec_data.get('dependencies')
 
     authors = gemspec_data.get('authors') or []
     email = gemspec_data.get('email') or []
-
     parties = []
     if authors:
         parties.append(
@@ -776,7 +758,7 @@ def build_packages_from_gemspec(gemspec_data):
                 role='author'
             )
         )
-    package.parties = parties
+    #package.parties = parties
 
     dependencies = gemspec_data.get('dependencies')
     package_dependencies = []
@@ -792,7 +774,16 @@ def build_packages_from_gemspec(gemspec_data):
                     requirement=dep_version,
                 )
             )
-    package.dependencies=package_dependencies
+    #package.dependencies=package_dependencies
+
+    package = RubyGem(
+        name=name,
+        version=version,
+        description=description,
+        homepage_url=homepage_url,
+        parties = parties,
+        dependencies=package_dependencies
+    )
     return package
 
 
