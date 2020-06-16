@@ -270,13 +270,15 @@ def parse_setup_py(location):
     parties = []
     author = setup_args.get('author')
     author_email = setup_args.get('author_email')
+    homepage_url = setup_args.get('url')
     if author:
         parties.append(
             models.Party(
                 type=models.party_person,
                 name=author,
                 email=author_email,
-                role='author'
+                role='author',
+                url=homepage_url
             )
         )
 
