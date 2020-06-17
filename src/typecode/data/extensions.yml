@@ -1,0 +1,2500 @@
+'.1':
+- Roff
+- Roff Manpage
+.1in:
+- Roff
+- Roff Manpage
+.1m:
+- Roff
+- Roff Manpage
+.1x:
+- Roff
+- Roff Manpage
+'.2':
+- Roff
+- Roff Manpage
+'.3':
+- Roff
+- Roff Manpage
+.3in:
+- Roff
+- Roff Manpage
+.3m:
+- Roff
+- Roff Manpage
+.3p:
+- Roff
+- Roff Manpage
+.3pm:
+- Roff
+- Roff Manpage
+.3qt:
+- Roff
+- Roff Manpage
+.3x:
+- Roff
+- Roff Manpage
+'.4':
+- Roff
+- Roff Manpage
+.4dm:
+- 4D
+.4th:
+- Forth
+'.5':
+- Roff
+- Roff Manpage
+'.6':
+- Roff
+- Roff Manpage
+.6pl:
+- Raku
+.6pm:
+- Raku
+'.7':
+- Roff
+- Roff Manpage
+'.8':
+- Roff
+- Roff Manpage
+.8xk:
+- TI Program
+.8xk.txt:
+- TI Program
+.8xp:
+- TI Program
+.8xp.txt:
+- TI Program
+'.9':
+- Roff
+- Roff Manpage
+.E:
+- E
+.JSON-tmLanguage:
+- JSON
+.ML:
+- Standard ML
+.OutJob:
+- Altium Designer
+.PcbDoc:
+- Altium Designer
+.PrjPCB:
+- Altium Designer
+.SchDoc:
+- Altium Designer
+._coffee:
+- CoffeeScript
+._js:
+- JavaScript
+._ls:
+- LiveScript
+.a51:
+- Assembly
+.abap:
+- ABAP
+.abnf:
+- ABNF
+.ada:
+- Ada
+.adb:
+- Ada
+.adml:
+- XML
+.admx:
+- XML
+.ado:
+- Stata
+.adoc:
+- AsciiDoc
+.adp:
+- Tcl
+.ads:
+- Ada
+.afm:
+- Adobe Font Metrics
+.agc:
+- Apollo Guidance Computer
+.agda:
+- Agda
+.ahk:
+- AutoHotkey
+.ahkl:
+- AutoHotkey
+.aj:
+- AspectJ
+.al:
+- Perl
+.als:
+- Alloy
+.ampl:
+- AMPL
+.angelscript:
+- AngelScript
+.anim:
+- Unity3D Asset
+.ant:
+- XML
+.apacheconf:
+- ApacheConf
+.apib:
+- API Blueprint
+.apl:
+- APL
+.app.src:
+- Erlang
+.applescript:
+- AppleScript
+.arc:
+- Arc
+.arpa:
+- DNS Zone
+.as:
+- ActionScript
+- AngelScript
+.asax:
+- ASP
+.asc:
+- AGS Script
+- AsciiDoc
+- Public Key
+.asciidoc:
+- AsciiDoc
+.ascx:
+- ASP
+.asd:
+- Common Lisp
+.ash:
+- AGS Script
+.ashx:
+- ASP
+.asm:
+- Assembly
+- Motorola 68K Assembly
+.asmx:
+- ASP
+.asn:
+- ASN.1
+.asn1:
+- ASN.1
+.asp:
+- ASP
+.aspx:
+- ASP
+.asset:
+- Unity3D Asset
+.asy:
+- Asymptote
+- LTspice Symbol
+.au3:
+- AutoIt
+.aug:
+- Augeas
+.auk:
+- Awk
+.aux:
+- TeX
+.avsc:
+- JSON
+.aw:
+- PHP
+.awk:
+- Awk
+.axd:
+- ASP
+.axi:
+- NetLinx
+.axi.erb:
+- NetLinx+ERB
+.axml:
+- XML
+.axs:
+- NetLinx
+.axs.erb:
+- NetLinx+ERB
+.b:
+- Brainfuck
+- Limbo
+.bal:
+- Ballerina
+.bas:
+- VBA
+.bash:
+- Shell
+.bat:
+- Batchfile
+.bats:
+- Shell
+.bb:
+- BitBake
+- BlitzBasic
+.bbx:
+- TeX
+.bdf:
+- Glyph Bitmap Distribution Format
+.bdy:
+- PLSQL
+.befunge:
+- Befunge
+.bf:
+- Brainfuck
+- HyPhy
+.bib:
+- BibTeX
+.bibtex:
+- BibTeX
+.bison:
+- Bison
+.blade:
+- Blade
+.blade.php:
+- Blade
+.bmx:
+- BlitzMax
+.bones:
+- JavaScript
+.boo:
+- Boo
+.boot:
+- Clojure
+.brd:
+- Eagle
+- KiCad Legacy Layout
+.bro:
+- Zeek
+.brs:
+- Brightscript
+.bsl:
+- 1C Enterprise
+.bsv:
+- Bluespec
+.builder:
+- Ruby
+.builds:
+- XML
+.bzl:
+- Starlark
+.c:
+- C
+.c++:
+- C++
+.c++-objdump:
+- Cpp-ObjDump
+.c++objdump:
+- Cpp-ObjDump
+.c-objdump:
+- C-ObjDump
+.cabal:
+- Cabal Config
+.cake:
+- C#
+- CoffeeScript
+.capnp:
+- Cap'n Proto
+.cats:
+- C
+.cbl:
+- COBOL
+.cbx:
+- TeX
+.cc:
+- C++
+.ccp:
+- COBOL
+.ccproj:
+- XML
+.ccxml:
+- XML
+.cdf:
+- Mathematica
+.ceylon:
+- Ceylon
+.cfc:
+- ColdFusion CFC
+.cfg:
+- HAProxy
+- INI
+.cfm:
+- ColdFusion
+.cfml:
+- ColdFusion
+.cgi:
+- Perl
+- Python
+- Shell
+.cginc:
+- HLSL
+.ch:
+- Charity
+- xBase
+.chem:
+- Pic
+.chpl:
+- Chapel
+.chs:
+- C2hs Haskell
+.cirru:
+- Cirru
+.cjs:
+- JavaScript
+.cjsx:
+- CoffeeScript
+.ck:
+- ChucK
+.cl:
+- Common Lisp
+- Cool
+- OpenCL
+.cl2:
+- Clojure
+.click:
+- Click
+.clixml:
+- XML
+.clj:
+- Clojure
+.cljc:
+- Clojure
+.cljs:
+- Clojure
+.cljs.hl:
+- Clojure
+.cljscm:
+- Clojure
+.cljx:
+- Clojure
+.clp:
+- CLIPS
+.cls:
+- Apex
+- ObjectScript
+- OpenEdge ABL
+- TeX
+- VBA
+.clw:
+- Clarion
+.cmake:
+- CMake
+.cmake.in:
+- CMake
+.cmd:
+- Batchfile
+.cnc:
+- G-code
+.cob:
+- COBOL
+.cobol:
+- COBOL
+.cocci:
+- SmPL
+.coffee:
+- CoffeeScript
+.com:
+- DIGITAL Command Language
+.command:
+- Shell
+.conll:
+- CoNLL-U
+.conllu:
+- CoNLL-U
+.coq:
+- Coq
+.cp:
+- C++
+- Component Pascal
+.cpp:
+- C++
+.cpp-objdump:
+- Cpp-ObjDump
+.cppobjdump:
+- Cpp-ObjDump
+.cproject:
+- XML
+.cps:
+- Component Pascal
+.cpy:
+- COBOL
+.cql:
+- SQL
+.cr:
+- Crystal
+.creole:
+- Creole
+.cs:
+- C#
+- Smalltalk
+.cscfg:
+- XML
+.csd:
+- Csound Document
+.csdef:
+- XML
+.csh:
+- Tcsh
+.cshtml:
+- HTML+Razor
+.csl:
+- XML
+.cson:
+- CSON
+.csproj:
+- XML
+.css:
+- CSS
+.csv:
+- CSV
+.csx:
+- C#
+.ct:
+- XML
+.ctp:
+- PHP
+.cu:
+- Cuda
+.cuh:
+- Cuda
+.cw:
+- Redcode
+.cwl:
+- Common Workflow Language
+.cxx:
+- C++
+.cxx-objdump:
+- Cpp-ObjDump
+.cy:
+- Cycript
+.d:
+- D
+- DTrace
+- Makefile
+.d-objdump:
+- D-ObjDump
+.dae:
+- COLLADA
+.darcspatch:
+- Darcs Patch
+.dart:
+- Dart
+.dats:
+- ATS
+.db2:
+- SQLPL
+.dcl:
+- Clean
+.ddl:
+- PLSQL
+- SQL
+.decls:
+- BlitzBasic
+.depproj:
+- XML
+.desktop:
+- desktop
+.desktop.in:
+- desktop
+.dfm:
+- Pascal
+.dfy:
+- Dafny
+.dhall:
+- Dhall
+.di:
+- D
+.diff:
+- Diff
+.dircolors:
+- dircolors
+.dita:
+- XML
+.ditamap:
+- XML
+.ditaval:
+- XML
+.djs:
+- Dogescript
+.dll.config:
+- XML
+.dlm:
+- IDL
+.dm:
+- DM
+.do:
+- Stata
+.dockerfile:
+- Dockerfile
+.dof:
+- INI
+.doh:
+- Stata
+.dot:
+- Graphviz (DOT)
+.dotsettings:
+- XML
+.dpatch:
+- Darcs Patch
+.dpr:
+- Pascal
+.druby:
+- Mirah
+.dsp:
+- Faust
+- Microsoft Developer Studio Project
+.dtx:
+- TeX
+.duby:
+- Mirah
+.dwl:
+- DataWeave
+.dyalog:
+- APL
+.dyl:
+- Dylan
+.dylan:
+- Dylan
+.e:
+- Eiffel
+.eam.fs:
+- Formatted
+.eb:
+- Easybuild
+.ebnf:
+- EBNF
+.ebuild:
+- Gentoo Ebuild
+.ec:
+- eC
+.ecl:
+- ECL
+- ECLiPSe
+.eclass:
+- Gentoo Eclass
+.eclxml:
+- ECL
+.ecr:
+- HTML+ECR
+.edc:
+- Edje Data Collection
+.edn:
+- edn
+.eex:
+- HTML+EEX
+.eh:
+- eC
+.ejs:
+- EJS
+.el:
+- Emacs Lisp
+.eliom:
+- OCaml
+.eliomi:
+- OCaml
+.elm:
+- Elm
+.em:
+- EmberScript
+.emacs:
+- Emacs Lisp
+.emacs.desktop:
+- Emacs Lisp
+.emberscript:
+- EmberScript
+.eml:
+- EML
+.epj:
+- Ecere Projects
+.eps:
+- PostScript
+.epsi:
+- PostScript
+.eq:
+- EQ
+.erb:
+- HTML+ERB
+.erb.deface:
+- HTML+ERB
+.erl:
+- Erlang
+.es:
+- Erlang
+- JavaScript
+.es6:
+- JavaScript
+.escript:
+- Erlang
+.ex:
+- Elixir
+.exs:
+- Elixir
+.eye:
+- Ruby
+.f:
+- Filebench WML
+- Forth
+- Fortran
+.f03:
+- Fortran Free Form
+.f08:
+- Fortran Free Form
+.f77:
+- Fortran
+.f90:
+- Fortran Free Form
+.f95:
+- Fortran Free Form
+.factor:
+- Factor
+.fan:
+- Fantom
+.fancypack:
+- Fancy
+.fcgi:
+- Lua
+- PHP
+- Perl
+- Python
+- Ruby
+- Shell
+.fea:
+- OpenType Feature File
+.feature:
+- Gherkin
+.filters:
+- XML
+.fish:
+- fish
+.flex:
+- JFlex
+.flf:
+- FIGlet Font
+.flux:
+- FLUX
+.fnc:
+- PLSQL
+.for:
+- Formatted
+- Forth
+- Fortran
+.forth:
+- Forth
+.fp:
+- GLSL
+.fpp:
+- Fortran
+.fr:
+- Forth
+- Frege
+- Text
+.frag:
+- GLSL
+- JavaScript
+.frg:
+- GLSL
+.frm:
+- VBA
+.frt:
+- Forth
+.frx:
+- VBA
+.fs:
+- F#
+- Filterscript
+- Forth
+- GLSL
+.fsh:
+- GLSL
+.fshader:
+- GLSL
+.fsi:
+- F#
+.fsproj:
+- XML
+.fst:
+- F*
+.fsx:
+- F#
+.fth:
+- Forth
+.ftl:
+- FreeMarker
+.fun:
+- Standard ML
+.fut:
+- Futhark
+.fx:
+- FLUX
+- HLSL
+.fxh:
+- HLSL
+.fxml:
+- XML
+.fy:
+- Fancy
+.g:
+- G-code
+- GAP
+.g4:
+- ANTLR
+.gaml:
+- GAML
+.gap:
+- GAP
+.gawk:
+- Awk
+.gbl:
+- Gerber Image
+.gbo:
+- Gerber Image
+.gbp:
+- Gerber Image
+.gbr:
+- Gerber Image
+.gbs:
+- Gerber Image
+.gco:
+- G-code
+.gcode:
+- G-code
+.gd:
+- GAP
+- GDScript
+.gdb:
+- GDB
+.gdbinit:
+- GDB
+.ged:
+- GEDCOM
+.gemspec:
+- Ruby
+.geo:
+- GLSL
+.geojson:
+- JSON
+.geom:
+- GLSL
+.gf:
+- Grammatical Framework
+.gi:
+- GAP
+.gitconfig:
+- Git Config
+.gitignore:
+- Ignore List
+.gko:
+- Gerber Image
+.glade:
+- XML
+.glf:
+- Glyph
+.glsl:
+- GLSL
+.glslf:
+- GLSL
+.glslv:
+- GLSL
+.gltf:
+- JSON
+.gml:
+- Game Maker Language
+- Gerber Image
+- Graph Modeling Language
+- XML
+.gms:
+- GAMS
+.gmx:
+- XML
+.gn:
+- GN
+.gni:
+- GN
+.gnu:
+- Gnuplot
+.gnuplot:
+- Gnuplot
+.go:
+- Go
+.god:
+- Ruby
+.golo:
+- Golo
+.gp:
+- Gnuplot
+.gpb:
+- Gerber Image
+.gpt:
+- Gerber Image
+.gql:
+- GraphQL
+.grace:
+- Grace
+.gradle:
+- Gradle
+.graphql:
+- GraphQL
+.graphqls:
+- GraphQL
+.groovy:
+- Groovy
+.grt:
+- Groovy
+.grxml:
+- XML
+.gs:
+- GLSL
+- Genie
+- Gosu
+- JavaScript
+.gshader:
+- GLSL
+.gsp:
+- Groovy Server Pages
+.gst:
+- Gosu
+.gsx:
+- Gosu
+.gtl:
+- Gerber Image
+.gto:
+- Gerber Image
+.gtp:
+- Gerber Image
+.gtpl:
+- Groovy
+.gts:
+- Gerber Image
+.gv:
+- Graphviz (DOT)
+.gvy:
+- Groovy
+.gyp:
+- Python
+.gypi:
+- Python
+.h:
+- C
+- C++
+- Objective-C
+.h++:
+- C++
+.hack:
+- Hack
+.haml:
+- Haml
+.haml.deface:
+- Haml
+.handlebars:
+- Handlebars
+.har:
+- JSON
+.hats:
+- ATS
+.hb:
+- Harbour
+.hbs:
+- Handlebars
+.hc:
+- HolyC
+.hcl:
+- HCL
+.hh:
+- C++
+- Hack
+.hhi:
+- Hack
+.hic:
+- Clojure
+.hlean:
+- Lean
+.hlsl:
+- HLSL
+.hlsli:
+- HLSL
+.hpp:
+- C++
+.hqf:
+- SQF
+.hql:
+- HiveQL
+.hrl:
+- Erlang
+.hs:
+- Haskell
+.hs-boot:
+- Haskell
+.hsc:
+- Haskell
+.htm:
+- HTML
+.html:
+- HTML
+.html.hl:
+- HTML
+.http:
+- HTTP
+.hx:
+- Haxe
+.hxml:
+- HXML
+.hxsl:
+- Haxe
+.hxx:
+- C++
+.hy:
+- Hy
+.i:
+- Assembly
+- Motorola 68K Assembly
+- SWIG
+.i3:
+- Modula-3
+.i7x:
+- Inform 7
+.ice:
+- JSON
+- Slice
+.iced:
+- CoffeeScript
+.icl:
+- Clean
+.idc:
+- C
+.idr:
+- Idris
+.ig:
+- Modula-3
+.ihlp:
+- Stata
+.ijs:
+- J
+.ik:
+- Ioke
+.ily:
+- LilyPond
+.iml:
+- XML
+.inc:
+- Assembly
+- C++
+- HTML
+- Motorola 68K Assembly
+- NASL
+- PHP
+- POV-Ray SDL
+- Pascal
+- Pawn
+- SQL
+- SourcePawn
+.ini:
+- INI
+.inl:
+- C++
+.ino:
+- C++
+.ins:
+- TeX
+.intr:
+- Dylan
+.io:
+- Io
+.iol:
+- Jolie
+.ipf:
+- IGOR Pro
+.ipp:
+- C++
+.ipynb:
+- Jupyter Notebook
+.irclog:
+- IRC log
+.isl:
+- Inno Setup
+.iss:
+- Inno Setup
+.iuml:
+- PlantUML
+.ivy:
+- XML
+.j:
+- Jasmin
+- Objective-J
+.jade:
+- Pug
+.jake:
+- JavaScript
+.java:
+- Java
+.jbuilder:
+- Ruby
+.jelly:
+- XML
+.jflex:
+- JFlex
+.jinja:
+- HTML+Django
+.jinja2:
+- HTML+Django
+.jison:
+- Jison
+.jisonlex:
+- Jison Lex
+.jl:
+- Julia
+.jq:
+- JSONiq
+.js:
+- JavaScript
+.js.erb:
+- JavaScript+ERB
+.jsb:
+- JavaScript
+.jscad:
+- JavaScript
+.jsfl:
+- JavaScript
+.jsm:
+- JavaScript
+.json:
+- JSON
+.json5:
+- JSON5
+.jsonc:
+- JSON with Comments
+.jsonl:
+- JSON
+.jsonld:
+- JSONLD
+.jsonnet:
+- Jsonnet
+.jsp:
+- Java Server Pages
+.jsproj:
+- XML
+.jss:
+- JavaScript
+.jsx:
+- JSX
+.kicad_mod:
+- KiCad Layout
+.kicad_pcb:
+- KiCad Layout
+.kicad_wks:
+- KiCad Layout
+.kid:
+- Genshi
+.kit:
+- Kit
+.kml:
+- XML
+.kojo:
+- Scala
+.krl:
+- KRL
+.ksh:
+- Shell
+.kt:
+- Kotlin
+.ktm:
+- Kotlin
+.kts:
+- Kotlin
+.l:
+- Common Lisp
+- Lex
+- PicoLisp
+- Roff
+.lagda:
+- Literate Agda
+.las:
+- Lasso
+.lasso:
+- Lasso
+.lasso8:
+- Lasso
+.lasso9:
+- Lasso
+.latte:
+- Latte
+.launch:
+- XML
+.lbx:
+- TeX
+.ld:
+- Linker Script
+.lds:
+- Linker Script
+.lean:
+- Lean
+.lektorproject:
+- INI
+.less:
+- Less
+.lex:
+- Lex
+.lfe:
+- LFE
+.lgt:
+- Logtalk
+.lhs:
+- Literate Haskell
+.libsonnet:
+- Jsonnet
+.lid:
+- Dylan
+.lidr:
+- Idris
+.liquid:
+- Liquid
+.lisp:
+- Common Lisp
+- NewLisp
+.litcoffee:
+- Literate CoffeeScript
+.ll:
+- LLVM
+.lmi:
+- Python
+.logtalk:
+- Logtalk
+.lol:
+- LOLCODE
+.lookml:
+- LookML
+.lpr:
+- Pascal
+.ls:
+- LiveScript
+- LoomScript
+.lsl:
+- LSL
+.lslp:
+- LSL
+.lsp:
+- Common Lisp
+- NewLisp
+.ltx:
+- TeX
+.lua:
+- Lua
+.lvproj:
+- LabVIEW
+.ly:
+- LilyPond
+.m:
+- Limbo
+- M
+- MATLAB
+- MUF
+- Mathematica
+- Mercury
+- Objective-C
+.m2:
+- Macaulay2
+.m3:
+- Modula-3
+.m4:
+- M4
+- M4Sugar
+.ma:
+- Mathematica
+.mak:
+- Makefile
+.make:
+- Makefile
+.mako:
+- Mako
+.man:
+- Roff
+- Roff Manpage
+.mao:
+- Mako
+.markdown:
+- Markdown
+.marko:
+- Marko
+.mask:
+- Mask
+- Unity3D Asset
+.mat:
+- Unity3D Asset
+.mata:
+- Stata
+.matah:
+- Stata
+.mathematica:
+- Mathematica
+.matlab:
+- MATLAB
+.mawk:
+- Awk
+.maxhelp:
+- Max
+.maxpat:
+- Max
+.maxproj:
+- Max
+.mbox:
+- EML
+.mcfunction:
+- mcfunction
+.mcmeta:
+- JSON
+.mcr:
+- MAXScript
+.md:
+- GCC Machine Description
+- Markdown
+.mdoc:
+- Roff
+- Roff Manpage
+.mdown:
+- Markdown
+.mdpolicy:
+- XML
+.mdwn:
+- Markdown
+.mdx:
+- Markdown
+.me:
+- Roff
+.mediawiki:
+- MediaWiki
+.meta:
+- Unity3D Asset
+.metal:
+- Metal
+.mg:
+- Modula-3
+.minid:
+- MiniD
+.mir:
+- YAML
+.mirah:
+- Mirah
+.mjml:
+- XML
+.mjs:
+- JavaScript
+.mk:
+- Makefile
+.mkd:
+- Markdown
+.mkdn:
+- Markdown
+.mkdown:
+- Markdown
+.mkfile:
+- Makefile
+.mkii:
+- TeX
+.mkiv:
+- TeX
+.mkvi:
+- TeX
+.ml:
+- OCaml
+.ml4:
+- OCaml
+.mli:
+- OCaml
+.mlir:
+- MLIR
+.mll:
+- OCaml
+.mly:
+- OCaml
+.mm:
+- Objective-C++
+- XML
+.mmk:
+- Module Management System
+.mms:
+- Module Management System
+.mo:
+- Modelica
+.mod:
+- AMPL
+- Linux Kernel Module
+- Modula-2
+- XML
+.model.lkml:
+- LookML
+.monkey:
+- Monkey
+.monkey2:
+- Monkey
+.moo:
+- Mercury
+- Moocode
+.moon:
+- MoonScript
+.mq4:
+- MQL4
+.mq5:
+- MQL5
+.mqh:
+- MQL4
+- MQL5
+.mrc:
+- mIRC Script
+.ms:
+- MAXScript
+- Roff
+- Unix Assembly
+.mspec:
+- Ruby
+.mss:
+- CartoCSS
+.mt:
+- Mathematica
+.mtl:
+- Wavefront Material
+.mtml:
+- MTML
+.mu:
+- mupad
+.mud:
+- ZIL
+.muf:
+- MUF
+.mumps:
+- M
+.muse:
+- Muse
+.mustache:
+- HTML+Django
+.mxml:
+- XML
+.mxt:
+- Max
+.mysql:
+- SQL
+.myt:
+- Myghty
+.n:
+- Nemerle
+- Roff
+.nanorc:
+- nanorc
+.nasl:
+- NASL
+.nasm:
+- Assembly
+.natvis:
+- XML
+.nawk:
+- Awk
+.nb:
+- Mathematica
+- Text
+.nbp:
+- Mathematica
+.nc:
+- nesC
+.ncl:
+- NCL
+- Text
+- XML
+.ndproj:
+- XML
+.ne:
+- Nearley
+.nearley:
+- Nearley
+.neon:
+- NEON
+.nf:
+- Nextflow
+.nginxconf:
+- Nginx
+.ni:
+- Inform 7
+.nim:
+- Nim
+.nim.cfg:
+- Nim
+.nimble:
+- Nim
+.nimrod:
+- Nim
+.nims:
+- Nim
+.ninja:
+- Ninja
+.nit:
+- Nit
+.nix:
+- Nix
+.njk:
+- HTML+Django
+.njs:
+- JavaScript
+.nl:
+- NL
+- NewLisp
+.nlogo:
+- NetLogo
+.no:
+- Text
+.nproj:
+- XML
+.nqp:
+- Raku
+.nr:
+- Roff
+.nse:
+- Lua
+.nsh:
+- NSIS
+.nsi:
+- NSIS
+.nu:
+- Nu
+.numpy:
+- NumPy
+.numpyw:
+- NumPy
+.numsc:
+- NumPy
+.nuspec:
+- XML
+.nut:
+- Squirrel
+.ny:
+- Common Lisp
+.obj:
+- Wavefront Object
+.objdump:
+- ObjDump
+.odd:
+- XML
+.odin:
+- Object Data Instance Notation
+- Odin
+.ol:
+- Jolie
+.omgrofl:
+- Omgrofl
+.ooc:
+- ooc
+.opa:
+- Opa
+.opal:
+- Opal
+.opencl:
+- OpenCL
+.orc:
+- Csound
+.org:
+- Org
+.os:
+- 1C Enterprise
+.osm:
+- XML
+.owl:
+- Web Ontology Language
+.ox:
+- Ox
+.oxh:
+- Ox
+.oxo:
+- Ox
+.oxygene:
+- Oxygene
+.oz:
+- Oz
+.p:
+- Gnuplot
+- OpenEdge ABL
+.p4:
+- P4
+.p6:
+- Raku
+.p6l:
+- Raku
+.p6m:
+- Raku
+.p8:
+- Lua
+.pac:
+- JavaScript
+.pan:
+- Pan
+.parrot:
+- Parrot
+.pas:
+- Pascal
+.pascal:
+- Pascal
+.pasm:
+- Parrot Assembly
+.pat:
+- Max
+.patch:
+- Diff
+.pb:
+- PureBasic
+.pbi:
+- PureBasic
+.pbt:
+- PowerBuilder
+.pck:
+- PLSQL
+.pcss:
+- PostCSS
+.pd:
+- Pure Data
+.pd_lua:
+- Lua
+.pde:
+- Processing
+.pep:
+- Pep8
+.perl:
+- Perl
+.pfa:
+- PostScript
+.pgsql:
+- PLpgSQL
+.ph:
+- Perl
+.php:
+- Hack
+- PHP
+.php3:
+- PHP
+.php4:
+- PHP
+.php5:
+- PHP
+.phps:
+- PHP
+.phpt:
+- PHP
+.phtml:
+- HTML+PHP
+.pic:
+- Pic
+.pig:
+- PigLatin
+.pike:
+- Pike
+.pir:
+- Parrot Internal Representation
+.pkb:
+- PLSQL
+.pkgproj:
+- XML
+.pkl:
+- Pickle
+.pks:
+- PLSQL
+.pl:
+- Perl
+- Prolog
+- Raku
+.pl6:
+- Raku
+.plantuml:
+- PlantUML
+.plb:
+- PLSQL
+.plist:
+- OpenStep Property List
+- XML Property List
+.plot:
+- Gnuplot
+.pls:
+- PLSQL
+.plsql:
+- PLSQL
+.plt:
+- Gnuplot
+.pluginspec:
+- Ruby
+- XML
+.plx:
+- Perl
+.pm:
+- Perl
+- Raku
+- X PixMap
+.pm6:
+- Raku
+.pmod:
+- Pike
+.po:
+- Gettext Catalog
+.pod:
+- Pod
+- Pod 6
+.pod6:
+- Pod 6
+.podsl:
+- Common Lisp
+.podspec:
+- Ruby
+.pogo:
+- PogoScript
+.pony:
+- Pony
+.postcss:
+- PostCSS
+.pot:
+- Gettext Catalog
+.pov:
+- POV-Ray SDL
+.pp:
+- Pascal
+- Puppet
+.pprx:
+- REXX
+.prc:
+- PLSQL
+- SQL
+.prefab:
+- Unity3D Asset
+.prefs:
+- INI
+.prg:
+- xBase
+.pri:
+- QMake
+.prisma:
+- Prisma
+.pro:
+- IDL
+- INI
+- Proguard
+- Prolog
+- QMake
+.proj:
+- XML
+.prolog:
+- Prolog
+.properties:
+- INI
+- Java Properties
+.props:
+- XML
+.proto:
+- Protocol Buffer
+.prw:
+- xBase
+.ps:
+- PostScript
+.ps1:
+- PowerShell
+.ps1xml:
+- XML
+.psc:
+- Papyrus
+.psc1:
+- XML
+.psd1:
+- PowerShell
+.psgi:
+- Perl
+.psm1:
+- PowerShell
+.pt:
+- XML
+.pub:
+- Public Key
+.pug:
+- Pug
+.puml:
+- PlantUML
+.purs:
+- PureScript
+.pwn:
+- Pawn
+.pxd:
+- Cython
+.pxi:
+- Cython
+.py:
+- Python
+.py3:
+- Python
+.pyde:
+- Python
+.pyi:
+- Python
+.pyp:
+- Python
+.pyt:
+- Python
+.pytb:
+- Python traceback
+.pyw:
+- Python
+.pyx:
+- Cython
+.q:
+- HiveQL
+- q
+.qasm:
+- OpenQASM
+.qbs:
+- QML
+.ql:
+- CodeQL
+.qll:
+- CodeQL
+.qml:
+- QML
+.r:
+- R
+- Rebol
+.r2:
+- Rebol
+.r3:
+- Rebol
+.rabl:
+- Ruby
+.rake:
+- Ruby
+.raml:
+- RAML
+.raw:
+- Raw token data
+.razor:
+- HTML+Razor
+.rb:
+- Ruby
+.rbbas:
+- REALbasic
+.rbfrm:
+- REALbasic
+.rbi:
+- Ruby
+.rbmnu:
+- REALbasic
+.rbres:
+- REALbasic
+.rbtbar:
+- REALbasic
+.rbuild:
+- Ruby
+.rbuistate:
+- REALbasic
+.rbw:
+- Ruby
+.rbx:
+- Ruby
+.rbxs:
+- Lua
+.rd:
+- R
+.rdf:
+- XML
+.rdoc:
+- RDoc
+.re:
+- C++
+- Reason
+.reb:
+- Rebol
+.rebol:
+- Rebol
+.red:
+- Red
+.reds:
+- Red
+.reek:
+- YAML
+.reg:
+- Windows Registry Entries
+.regex:
+- Regular Expression
+.regexp:
+- Regular Expression
+.rego:
+- Open Policy Agent
+.rei:
+- Reason
+.rest:
+- reStructuredText
+.rest.txt:
+- reStructuredText
+.resx:
+- XML
+.rex:
+- REXX
+.rexx:
+- REXX
+.rg:
+- Rouge
+.rhtml:
+- RHTML
+.ring:
+- Ring
+.riot:
+- Riot
+.rkt:
+- Racket
+.rktd:
+- Racket
+.rktl:
+- Racket
+.rl:
+- Ragel
+.rmd:
+- RMarkdown
+.rnh:
+- RUNOFF
+.rno:
+- RUNOFF
+- Roff
+.robot:
+- RobotFramework
+.rockspec:
+- Lua
+.roff:
+- Roff
+.ronn:
+- Markdown
+.rpy:
+- Python
+- Ren'Py
+.rq:
+- SPARQL
+.rs:
+- RenderScript
+- Rust
+.rs.in:
+- Rust
+.rsc:
+- Rascal
+.rsh:
+- RenderScript
+.rss:
+- XML
+.rst:
+- reStructuredText
+.rst.txt:
+- reStructuredText
+.rsx:
+- R
+.rtf:
+- Rich Text Format
+.ru:
+- Ruby
+.ruby:
+- Ruby
+.rviz:
+- YAML
+.s:
+- Motorola 68K Assembly
+- Unix Assembly
+.sage:
+- Sage
+.sagews:
+- Sage
+.sas:
+- SAS
+.sass:
+- Sass
+.sats:
+- ATS
+.sbt:
+- Scala
+.sc:
+- Scala
+- SuperCollider
+.scad:
+- OpenSCAD
+.scala:
+- Scala
+.scaml:
+- Scaml
+.scd:
+- SuperCollider
+.sce:
+- Scilab
+.sch:
+- Eagle
+- KiCad Schematic
+- Scheme
+- XML
+.sci:
+- Scilab
+.scm:
+- Scheme
+.sco:
+- Csound Score
+.scpt:
+- AppleScript
+.scrbl:
+- Racket
+.scss:
+- SCSS
+.scxml:
+- XML
+.sed:
+- sed
+.self:
+- Self
+.sexp:
+- Common Lisp
+.sfd:
+- Spline Font Database
+.sfproj:
+- XML
+.sh:
+- Shell
+.sh-session:
+- ShellSession
+.sh.in:
+- Shell
+.shader:
+- GLSL
+- ShaderLab
+.shen:
+- Shen
+.shproj:
+- XML
+.sieve:
+- Sieve
+.sig:
+- Standard ML
+.sj:
+- Objective-J
+.sjs:
+- JavaScript
+.sl:
+- Slash
+.sld:
+- Scheme
+.slim:
+- Slim
+.sls:
+- SaltStack
+- Scheme
+.sma:
+- Pawn
+.smali:
+- Smali
+.smk:
+- Python
+.sml:
+- Standard ML
+.smt:
+- SMT
+.smt2:
+- SMT
+.snip:
+- Vim Snippet
+.snippet:
+- Vim Snippet
+.snippets:
+- Vim Snippet
+.soy:
+- Closure Templates
+.sp:
+- SourcePawn
+.sparql:
+- SPARQL
+.spc:
+- PLSQL
+.spec:
+- Python
+- RPM Spec
+- Ruby
+.spin:
+- Propeller Spin
+.sps:
+- Scheme
+.sqf:
+- SQF
+.sql:
+- PLSQL
+- PLpgSQL
+- SQL
+- SQLPL
+- TSQL
+.sra:
+- PowerBuilder
+.srdf:
+- XML
+.srt:
+- SRecode Template
+- SubRip Text
+.sru:
+- PowerBuilder
+.srw:
+- PowerBuilder
+.ss:
+- Scheme
+.ssjs:
+- JavaScript
+.sss:
+- SugarSS
+.st:
+- HTML
+- Smalltalk
+.stTheme:
+- XML Property List
+.stan:
+- Stan
+.sthlp:
+- Stata
+.ston:
+- STON
+.storyboard:
+- XML
+.sty:
+- TeX
+.styl:
+- Stylus
+.sublime-build:
+- JSON with Comments
+.sublime-commands:
+- JSON with Comments
+.sublime-completions:
+- JSON with Comments
+.sublime-keymap:
+- JSON with Comments
+.sublime-macro:
+- JSON with Comments
+.sublime-menu:
+- JSON with Comments
+.sublime-mousemap:
+- JSON with Comments
+.sublime-project:
+- JSON with Comments
+.sublime-settings:
+- JSON with Comments
+.sublime-snippet:
+- XML
+.sublime-syntax:
+- YAML
+.sublime-theme:
+- JSON with Comments
+.sublime-workspace:
+- JSON with Comments
+.sublime_metrics:
+- JSON with Comments
+.sublime_session:
+- JSON with Comments
+.sv:
+- SystemVerilog
+.svelte:
+- Svelte
+.svg:
+- SVG
+.svh:
+- SystemVerilog
+.swift:
+- Swift
+.syntax:
+- YAML
+.t:
+- Perl
+- Raku
+- Terra
+- Turing
+.tab:
+- SQL
+.tac:
+- Python
+.targets:
+- XML
+.tcc:
+- C++
+.tcl:
+- Tcl
+.tcsh:
+- Tcsh
+.tea:
+- Tea
+.tesc:
+- GLSL
+.tese:
+- GLSL
+.tex:
+- TeX
+.texi:
+- Texinfo
+.texinfo:
+- Texinfo
+.textile:
+- Textile
+.tf:
+- HCL
+.tfstate:
+- JSON
+.tfstate.backup:
+- JSON
+.tfvars:
+- HCL
+.thor:
+- Ruby
+.thrift:
+- Thrift
+.thy:
+- Isabelle
+.tl:
+- Type Language
+.tla:
+- TLA
+.tm:
+- Tcl
+.tmCommand:
+- XML Property List
+.tmLanguage:
+- XML Property List
+.tmPreferences:
+- XML Property List
+.tmSnippet:
+- XML Property List
+.tmTheme:
+- XML Property List
+.tmac:
+- Roff
+.tml:
+- XML
+.tmux:
+- Shell
+.toc:
+- TeX
+- World of Warcraft Addon Data
+.toml:
+- TOML
+.tool:
+- Shell
+.topojson:
+- JSON
+.tpb:
+- PLSQL
+.tpl:
+- Smarty
+.tpp:
+- C++
+.tps:
+- PLSQL
+.trg:
+- PLSQL
+.ts:
+- TypeScript
+- XML
+.tst:
+- GAP
+- Scilab
+.tsx:
+- TSX
+- XML
+.ttl:
+- Turtle
+.tu:
+- Turing
+.twig:
+- Twig
+.txi:
+- Texinfo
+.txl:
+- TXL
+.txt:
+- Text
+.uc:
+- UnrealScript
+.udf:
+- SQL
+.udo:
+- Csound
+.ui:
+- XML
+.unity:
+- Unity3D Asset
+.uno:
+- Uno
+.upc:
+- Unified Parallel C
+.ur:
+- UrWeb
+.urdf:
+- XML
+.urs:
+- UrWeb
+.ux:
+- XML
+.v:
+- Coq
+- V
+- Verilog
+.vala:
+- Vala
+.vapi:
+- Vala
+.vark:
+- Gosu
+.vb:
+- Visual Basic .NET
+.vba:
+- VBA
+- Vim script
+.vbhtml:
+- Visual Basic .NET
+.vbproj:
+- XML
+.vbs:
+- VBScript
+.vcl:
+- VCL
+.vcxproj:
+- XML
+.veo:
+- Verilog
+.vert:
+- GLSL
+.vh:
+- SystemVerilog
+.vhd:
+- VHDL
+.vhdl:
+- VHDL
+.vhf:
+- VHDL
+.vhi:
+- VHDL
+.vho:
+- VHDL
+.vhost:
+- ApacheConf
+- Nginx
+.vhs:
+- VHDL
+.vht:
+- VHDL
+.vhw:
+- VHDL
+.view.lkml:
+- LookML
+.vim:
+- Vim script
+.viw:
+- SQL
+.vmb:
+- Vim script
+.volt:
+- Volt
+.vrx:
+- GLSL
+.vsh:
+- GLSL
+.vshader:
+- GLSL
+.vsixmanifest:
+- XML
+.vssettings:
+- XML
+.vstemplate:
+- XML
+.vtt:
+- WebVTT
+.vue:
+- Vue
+.vw:
+- PLSQL
+.vxml:
+- XML
+.w:
+- CWeb
+- OpenEdge ABL
+.wast:
+- WebAssembly
+.wat:
+- WebAssembly
+.watchr:
+- Ruby
+.wdl:
+- wdl
+.webapp:
+- JSON
+.webidl:
+- WebIDL
+.webmanifest:
+- JSON
+.weechatlog:
+- IRC log
+.wiki:
+- MediaWiki
+.wisp:
+- wisp
+.wixproj:
+- XML
+.wl:
+- Mathematica
+.wlk:
+- Wollok
+.wlt:
+- Mathematica
+.wlua:
+- Lua
+.workbook:
+- Markdown
+.workflow:
+- HCL
+- XML
+.wsdl:
+- XML
+.wsf:
+- XML
+.wsgi:
+- Python
+.wxi:
+- XML
+.wxl:
+- XML
+.wxs:
+- XML
+.x:
+- DirectX 3D File
+- Linker Script
+- Logos
+- RPC
+.x10:
+- X10
+.x3d:
+- XML
+.x68:
+- Motorola 68K Assembly
+.xacro:
+- XML
+.xaml:
+- XML
+.xbm:
+- X BitMap
+.xc:
+- XC
+.xht:
+- HTML
+.xhtml:
+- HTML
+.xi:
+- Logos
+.xib:
+- XML
+.xlf:
+- XML
+.xliff:
+- XML
+.xm:
+- Logos
+.xmi:
+- XML
+.xml:
+- XML
+.xml.dist:
+- XML
+.xojo_code:
+- Xojo
+.xojo_menu:
+- Xojo
+.xojo_report:
+- Xojo
+.xojo_script:
+- Xojo
+.xojo_toolbar:
+- Xojo
+.xojo_window:
+- Xojo
+.xpl:
+- XProc
+.xpm:
+- X PixMap
+.xproc:
+- XProc
+.xproj:
+- XML
+.xpy:
+- Python
+.xq:
+- XQuery
+.xql:
+- XQuery
+.xqm:
+- XQuery
+.xquery:
+- XQuery
+.xqy:
+- XQuery
+.xrl:
+- Erlang
+.xs:
+- XS
+.xsd:
+- XML
+.xsjs:
+- JavaScript
+.xsjslib:
+- JavaScript
+.xsl:
+- XSLT
+.xslt:
+- XSLT
+.xsp-config:
+- XPages
+.xsp.metadata:
+- XPages
+.xspec:
+- XML
+.xtend:
+- Xtend
+.xul:
+- XML
+.xzap:
+- ZAP
+.y:
+- Yacc
+.yacc:
+- Yacc
+.yaml:
+- YAML
+.yaml-tmlanguage:
+- YAML
+.yaml.sed:
+- YAML
+.yang:
+- YANG
+.yap:
+- Prolog
+.yar:
+- YARA
+.yara:
+- YARA
+.yasnippet:
+- YASnippet
+.yml:
+- YAML
+.yml.mysql:
+- YAML
+.yrl:
+- Erlang
+.yy:
+- JSON
+- Yacc
+.yyp:
+- JSON
+.zap:
+- ZAP
+.zcml:
+- XML
+.zeek:
+- Zeek
+.zep:
+- Zephir
+.zig:
+- Zig
+.zil:
+- ZIL
+.zimpl:
+- Zimpl
+.zmpl:
+- Zimpl
+.zone:
+- DNS Zone
+.zpl:
+- Zimpl
+.zs:
+- ZenScript
+.zsh:
+- Shell

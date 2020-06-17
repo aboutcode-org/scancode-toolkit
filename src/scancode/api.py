@@ -303,6 +303,7 @@ def get_file_info(location, **kwargs):
     result['mime_type'] = collector.mimetype_file or None
     result['file_type'] = collector.filetype_file or None
     result['programming_language'] = collector.programming_language or None
+    result['programming_language_from_ext'] = collector.programming_language_from_ext or None
     result['is_binary'] = bool(collector.is_binary)
     result['is_text'] = bool(collector.is_text)
     result['is_archive'] = bool(collector.is_archive)

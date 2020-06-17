@@ -50,6 +50,7 @@ class InfoScanner(ScanPlugin):
         ('mime_type', attr.ib(default=None, repr=False)),
         ('file_type', attr.ib(default=None, repr=False)),
         ('programming_language', attr.ib(default=None, repr=False)),
+        ('programming_language_from_ext', attr.ib(default=None, repr=False)),
         ('is_binary', attr.ib(default=False, type=bool, repr=False)),
         ('is_text', attr.ib(default=False, type=bool, repr=False)),
         ('is_archive', attr.ib(default=False, type=bool, repr=False)),
