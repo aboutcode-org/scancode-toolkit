@@ -34,7 +34,6 @@ import posixpath
 import pprint
 import re
 from re import MULTILINE  # NOQA
-import shlex
 
 import attr
 
@@ -52,9 +51,16 @@ import extractcode
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
 
+if py3:
+    from shlex import quote as shlex_quote
+else:
+    from pipes import quote as shlex_quote
+
+
 """
 Low level support for p/7zip-based archive extraction.
 """
+
 
 logger = logging.getLogger(__name__)
 
@@ -304,7 +310,7 @@ def build_7z_extract_command(
     ]
 
     if single_entry:
-        args += [shlex.quote(single_entry.path)]
+        args += [shlex_quote(single_entry.path)]
 
     lib_dir, cmd_loc = get_bin_locations()
 
@@ -675,7 +681,13 @@ def parse_7z_listing(location, utf=False):
 
         lines = path_block.splitlines(False)
         # thfirst line is the Path line
-        path = lines.pop(0).strip()
+        path_line = lines.pop(0).strip()
+        if 'Path =' in path_line:
+            _, _, path= path_line.partition('Path =')
+            path = path.lstrip()
+        else:
+            path = path_line
+
         second = lines[0]
 
         if equal_sep not in second:

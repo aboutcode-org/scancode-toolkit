@@ -50,15 +50,18 @@ class TestSevenZip(FileBasedTesting):
             with open(expected_loc, wmode) as ex:
                 json.dump(results, ex, indent=2, separators=(',', ':'))
 
-        oph = OrderedDict if py2 else dict
+        # oph = OrderedDict if py2 else dict
 
         with open(expected_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8', object_pairs_hook=oph)
+            expected = json.load(ex, encoding='utf-8', object_pairs_hook=dict)
 
         try:
             assert expected == results
         except AssertionError:
-            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+            if isinstance(results, dict):
+                expected = expected.items()
+                results = results.items()
+            assert json.dumps(sorted(expected), indent=2) == json.dumps(sorted(results), indent=2)
 
     def test_get_7z_errors_password_protected(self):
             test = '''
