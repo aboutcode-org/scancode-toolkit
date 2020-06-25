@@ -25,6 +25,8 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+from collections import OrderedDict
+import json
 import os
 import ntpath
 import posixpath
@@ -34,7 +36,8 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_windows
-
+from commoncode.system import py2
+from commoncode.system import py3
 
 """
 Shared archiving test utils.
@@ -45,7 +48,23 @@ def check_size(expected_size, location):
     assert expected_size == os.stat(location).st_size
 
 
-def check_files(test_dir, expected):
+def check_results_with_expected_json(results, expected_loc, regen=False):
+    if regen:
+        if py2:
+            wmode = 'wb'
+        if py3:
+            wmode = 'w'
+        with open(expected_loc, wmode) as ex:
+            json.dump(results, ex, indent=2, separators=(',', ':'))
+    with open(expected_loc, 'rb') as ex:
+        expected = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+    try:
+        assert expected == results
+    except AssertionError:
+        assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
+
+
+def check_files(test_dir, expected, regen=False):
     """
     Walk test_dir.
     Check that all dirs are readable.
@@ -68,7 +87,30 @@ def check_files(test_dir, expected):
             path = path.replace(test_dir_path, '').strip('/')
             result.append(path)
 
-    assert sorted(expected) == sorted(result)
+    expected_is_json_file = False
+    if not isinstance(expected, (list, tuple)) and expected.endswith('.json'):
+        expected_is_json_file = True
+        # this is a path to a JSON file
+        if regen:
+            wmode = 'wb' if py2 else 'w'
+            with open(expected, wmode) as ex:
+                json.dump(result, ex, indent=2, separators=(',', ':'))
+        else:
+            with open(expected, 'rb') as ex:
+                expected_content = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+    else:
+        expected_content = expected
+
+    expected_content = sorted(expected_content)
+    result = sorted(result)
+    try:
+        assert expected_content == result
+    except AssertionError:
+        files = [
+            'test_dir: file://{}'.format(test_dir),
+            'expected: file://{}'.format(expected if expected_is_json_file else ''),
+        ] 
+        assert files + expected_content == result
 
     for location in locs:
         assert filetype.is_file(location)
@@ -130,7 +172,6 @@ def to_posix(path):
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-
     def check_get_extractors(self, test_file, expected, kinds=()):
         from extractcode import archive
 
@@ -149,7 +190,6 @@ class BaseArchiveTestCase(FileBasedTesting):
         msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
                'with fe:%(fe)r, em:%(em)s' % locals())
         assert expected == extractors, msg
-
 
     def assertRaisesInstance(self, excInstance, callableObj, *args, **kwargs):
         """

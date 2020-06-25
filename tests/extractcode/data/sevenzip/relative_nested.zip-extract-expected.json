@@ -1,0 +1,18 @@
+[
+  "/a_parent_folder.txt",
+  "/sub/",
+  "/sub/sub/",
+  "/sub/sub/sub/",
+  "/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt",
+  "/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt",
+  "/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt"
+]

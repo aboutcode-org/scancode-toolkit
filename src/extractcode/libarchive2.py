@@ -30,6 +30,7 @@ from __future__ import unicode_literals
 from functools import partial
 import locale
 import logging
+import mmap
 import os
 
 from ctypes import c_char_p, c_wchar_p
@@ -38,6 +39,8 @@ from ctypes import c_size_t, c_ssize_t
 from ctypes import c_void_p
 from ctypes import POINTER
 from ctypes import create_string_buffer
+
+import attr
 
 from commoncode import command
 from commoncode import compat
@@ -51,12 +54,12 @@ import extractcode
 from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
 
-
 logger = logging.getLogger(__name__)
 
 TRACE = False
+TRACE_DEEP = False
 
-if TRACE:
+if TRACE or TRACE_DEEP:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -112,6 +115,7 @@ def set_env_with_tz():
     # NOTE: this is important to avoid timezone differences
     os.environ['TZ'] = 'UTC'
 
+
 set_env_with_tz()
 
 # NOTE: this is important to avoid locale-specific errors on various OS
@@ -121,10 +125,10 @@ locale.setlocale(locale.LC_ALL, '')
 libarchive = load_lib()
 
 
-def extract(location, target_dir):
+def extract(location, target_dir, skip_symlinks=True):
     """
     Extract files from a libarchive-supported archive file at `location` in the
-    `target_dir`.
+    `target_dir` directory. `skip_symlinks` by default.
     Return a list of warning messages if any or an empty list.
     Raise Exceptions on errors.
     """
@@ -133,11 +137,20 @@ def extract(location, target_dir):
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
     warnings = []
+
     set_env_with_tz()
 
     for entry in list_entries(abs_location):
+        logger.debug('processing entry: {}'.format(entry))
+        if not entry:
+            continue
 
-        if entry and entry.warnings:
+        if entry.is_empty():
+            if TRACE:
+                logger.debug('Skipping empty: {}'.format(entry))
+            continue
+
+        if entry.warnings:
             if not entry.is_empty():
                 entry_path = entry.path
                 msgs = ['%(entry_path)r: ' % locals()]
@@ -153,12 +166,23 @@ def extract(location, target_dir):
             if msgs not in warnings:
                 warnings.append(msgs)
 
-        if not entry.is_empty():
-            if not (entry.isdir or entry.isfile):
-                # skip special files and links
-                # TODO: this could be made an argument
-                continue
-            _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
+            if TRACE:
+                logger.debug('\n'.join(msgs))
+
+        if not (entry.isdir or entry.isfile):
+            # skip special files and links
+            if TRACE:
+                logger.debug('skipping: {}'.format(entry))
+
+            if entry.issym and not skip_symlinks:
+                raise NotImplemented('extraction of symlinks with libarchive is not yet implemented.')
+            continue
+
+        if TRACE:
+            logger.debug('  writing.....')
+
+        _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
+
     return warnings
 
 
@@ -277,67 +301,76 @@ class Archive(object):
         return self.iter()
 
 
-# FIXME: use attrs and slots.
+@attr.attrs
 class Entry(object):
     """
-    Represent an Archive entry which is either a file or a directory.
+    Represent an Archive entry.
 
-    The attribute names are loosely based on the stdlib module tarfile.Tarfile class
-    attributes. Some attributes are not handled on purpose because they are never
-    used: things such as modes/perms/users/groups are never restored by design to
-    ensure extracted files are readable/writable and owned by the extracting user.
+    The attribute names are loosely based on the stdlib module tarfile.Tarfile
+    class attributes. Some attributes are not handled on purpose because they
+    are never used: things such as modes/perms/users/groups are never restored
+    by design to ensure extracted files are readable/writable and owned by the
+    extracting user.
     """
-    # TODO: users and groups may have some value for origin determination?
+    # TODO: re-check if users and groups may have some value for origin determination?
 
-    def __init__(self, archive, entry_struct):
-        self.archive = archive
-        self.entry_struct = entry_struct
+    # an archive object
+    archive = attr.ib(repr=False)
+    entry_struct = attr.ib(default=None, repr=False)
+    # all paths are byte strings not unicode
+    path = attr.ib(default=None)
+    # bytes
+    size = attr.ib(default=0)
+    isfile = attr.ib(default=False)
+    isdir = attr.ib(default=False)
+    isspecial = attr.ib(default=False)
+    issym = attr.ib(default=False)
+    symlink_path = attr.ib(default=None)
 
-        self.filetype = None
-        self.isfile = None
-        self.isdir = None
-        self.isblk = None
-        self.ischr = None
-        self.isfifo = None
-        self.issock = None
-        self.isspecial = None
+    islnk = attr.ib(default=False)
+    hardlink_path = attr.ib(default=None)
 
-        # bytes
-        self.size = None
-        # sec since epoch
-        self.time = None
+    isblk = attr.ib(default=False, repr=False)
+    ischr = attr.ib(default=False, repr=False)
+    isfifo = attr.ib(default=False, repr=False)
+    issock = attr.ib(default=False, repr=False)
 
-        # all paths are byte strings not unicode
-        self.path = None
+    # sec since epoch
+    time = attr.ib(default=None, repr=False)
 
-        self.issym = None
-        self.symlink_path = None
+    # list of strings
+    warnings = attr.ib(default=attr.Factory(list), repr=False)
 
-        self.islnk = None
-        self.hardlink_path = None
+    def __attrs_post_init__(self, *args, **kwargs):
+        if not self.entry_struct:
+            return
 
-        # list of strings
-        self.warnings = []
-
-        if self.entry_struct:
-            self.filetype = entry_type(self.entry_struct)
-            self.isfile = self.filetype & AE_IFMT == AE_IFREG
-            self.isdir = self.filetype & AE_IFMT == AE_IFDIR
-            self.isblk = self.filetype & AE_IFMT == AE_IFBLK
-            self.ischr = self.filetype & AE_IFMT == AE_IFCHR
-            self.isfifo = self.filetype & AE_IFMT == AE_IFIFO
-            self.issock = self.filetype & AE_IFMT == AE_IFSOCK
+        filetype = entry_type(self.entry_struct)
+        if filetype:
+            self.isfile = filetype & AE_IFMT == AE_IFREG
+            self.isdir = filetype & AE_IFMT == AE_IFDIR
+            self.isblk = filetype & AE_IFMT == AE_IFBLK
+            self.ischr = filetype & AE_IFMT == AE_IFCHR
+            self.isfifo = filetype & AE_IFMT == AE_IFIFO
+            self.issock = filetype & AE_IFMT == AE_IFSOCK
             self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
-            self.size = entry_size(self.entry_struct) or 0
-            self.time = entry_time(self.entry_struct) or 0
-            self.path = self.get_path(entry_path, entry_path_w)
-            self.issym = self.filetype & AE_IFMT == AE_IFLNK
-            # FIXME: could there be cases with link path and symlink is False?
-            if self.issym:
-                self.symlink_path = self.get_path(symlink_path, symlink_path_w)
-            self.hardlink_path = self.get_path(hardlink_path, hardlink_path_w)
-            # hardlinks do not have a filetype: we test the path instead
-            self.islnk = bool(self.hardlink_path)
+        else:
+            # on some windows ar lib entries there is no type. This is a bug
+            # we use isfile then
+            self.isfile = True
+
+        self.size = entry_size(self.entry_struct) or 0
+        self.time = entry_time(self.entry_struct) or 0
+        self.path = self.get_path(entry_path, entry_path_w)
+        self.issym = filetype & AE_IFMT == AE_IFLNK
+
+        # FIXME: could there be cases with link path and symlink is False?
+        if self.issym:
+            self.symlink_path = self.get_path(symlink_path, symlink_path_w)
+
+        self.hardlink_path = self.get_path(hardlink_path, hardlink_path_w)
+        # hardlinks do not have a filetype: we test the path instead
+        self.islnk = bool(self.hardlink_path)
 
     def is_empty(self):
         return not self.archive or not self.entry_struct
@@ -365,7 +398,7 @@ class Entry(object):
 
         return path
 
-    def write(self, target_dir, transform_path=lambda x: x):
+    def write(self, target_dir, transform_path=lambda x: x, skip_links=True):
         """
         Write entry to a file or directory saved relatively to the `target_dir` and
         return the path where the file or directory was written or None if nothing
@@ -374,11 +407,24 @@ class Entry(object):
         transliterating non-portable characters or other path transformations.
         The default is a no-op lambda.
         """
+        if TRACE:
+            logger.debug('writing entry: {}'.format(self))
+
         if not self.archive.archive_struct:
             raise ArchiveErrorIllegalOperationOnClosedArchive()
         # skip links and special files
         if not (self.isfile or self.isdir):
             return
+
+        if skip_links and self.issym:
+            return
+
+        if skip_links and self.issym:
+            return
+        if not skip_links and self.issym:
+            raise NotImplemented(
+                'extraction of sym links with librarchive is not yet implemented.')
+
         abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
         # TODO: return some warning when original path has been transformed
         clean_path = transform_path(self.path)
@@ -390,47 +436,39 @@ class Entry(object):
             return dir_path
 
         # note: here isfile=True
-        try:
-            # create parent directories if needed
-            target_path = os.path.join(abs_target_dir, clean_path)
-            parent_path = os.path.dirname(target_path)
+        # create parent directories if needed
+        target_path = os.path.join(abs_target_dir, clean_path)
+        parent_path = os.path.dirname(target_path)
 
-            # TODO: also rename directories to a new name if needed segment by segment
-            fileutils.create_dir(parent_path)
+        # TODO: also rename directories to a new name if needed segment by segment
+        fileutils.create_dir(parent_path)
 
-            # TODO: return some warning when original path has been renamed?
-            unique_path = extractcode.new_name(target_path, is_dir=False)
+        # TODO: return some warning when original path has been renamed?
+        unique_path = extractcode.new_name(target_path, is_dir=False)
+        if TRACE:
+            logger.debug('path: \ntarget_path: {}\nunique_path: {}'.format(target_path, unique_path))
 
-            chunk_len = 10240
-            sbuffer = create_string_buffer(chunk_len)
-            with open(unique_path, 'wb') as target:
-                chunk_size = 1
-                while chunk_size:
-                    chunk_size = read_entry_data(
-                        self.archive.archive_struct, sbuffer, chunk_len)
-                    data = sbuffer.raw[0:chunk_size]
-                    target.write(data)
-            os.utime(unique_path, (self.time, self.time))
-            return target_path
+        with open(unique_path, 'wb') as target:
+            for content in self.get_content():
+                if TRACE_DEEP:
+                    logger.debug('    chunk: {}'.format(repr(content)))
+                target.write(content)
 
-        except ArchiveWarning as aw:
-            msg = aw.args and '\n'.join(aw.args) or 'No message provided.'
-            if msg not in self.warnings:
-                self.warnings.append(msg)
-            return target_path
+        os.utime(unique_path, (self.time, self.time))
 
-    def __repr__(self):
-        return (
-            'Entry('
-                'path=%(path)r, '
-                'size=%(size)r, '
-                'isfile=%(isfile)r, '
-                'isdir=%(isdir)r,'
-                'islnk=%(islnk)r, '
-                'issym=%(issym)r, '
-                'isspecial=%(isspecial)r'
-            ')'
-        ) % self.__dict__
+        return target_path
+
+    def get_content(self):
+        """
+        Yield the content of this archive as bytes.
+        """
+        chunk_len = mmap.PAGESIZE
+        sbuffer = create_string_buffer(chunk_len)
+        archive_struct = self.archive.archive_struct
+        red_len = 1
+        while red_len:
+            red_len = read_entry_data(archive_struct, sbuffer, chunk_len)
+            yield sbuffer.raw[0:red_len]
 
 
 class ArchiveException(ExtractError):
@@ -451,7 +489,7 @@ class ArchiveException(ExtractError):
             msg = archive_struct and err_msg(archive_struct) or ''
             self.msg = msg and text.as_unicode(msg) or 'Unknown error'
             self.func = archive_func and archive_func.__name__ or None
-            
+
     def __str__(self):
         if TRACE:
             msg = (u'%(msg)r: in function %(func)r with rc=%(rc)r, errno=%(errno)r, '
@@ -486,7 +524,6 @@ class ArchiveErrorPasswordProtected(ArchiveException, ExtractErrorPasswordProtec
 
 class ArchiveErrorIllegalOperationOnClosedArchive(ArchiveException):
     pass
-
 
 #################################################
 # ctypes defintion of the interface to libarchive
@@ -538,7 +575,6 @@ AE_IFDIR = 0o0040000  # Directory
 AE_IFIFO = 0o0010000  # Named pipe (fifo)
 
 AE_IFMT = 0o0170000  # Format mask
-
 
 #####################################
 # libarchive C functions declarations

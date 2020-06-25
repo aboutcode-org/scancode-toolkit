@@ -631,6 +631,8 @@ class TestExtract(BaseArchiveTestCase):
             't.tgz-extract/0-REGTYPE',
             't.tgz-extract/0-REGTYPE-TEXT',
             't.tgz-extract/0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155',
+            # we skip links but not hardlinks
+            't.tgz-extract/1-LNKTYPE',
             't.tgz-extract/S-SPARSE',
             't.tgz-extract/S-SPARSE-WITH-NULLS',
         ]
@@ -646,65 +648,8 @@ class TestExtract(BaseArchiveTestCase):
     def test_extract_directory_of_windows_ar_archives(self):
         test_dir = self.get_test_loc('extract/ar_tree/winlib', copy=True)
         result = list(extract.extract(test_dir, recurse=True))
-        expected = [
-            'gsdll32.lib',
-            'gsdll32.lib-extract/1.GSDLL32.dll',
-            'gsdll32.lib-extract/1.txt',
-            'gsdll32.lib-extract/10.GSDLL32.dll',
-            'gsdll32.lib-extract/11.GSDLL32.dll',
-            'gsdll32.lib-extract/12.GSDLL32.dll',
-            'gsdll32.lib-extract/13.GSDLL32.dll',
-            'gsdll32.lib-extract/14.GSDLL32.dll',
-            'gsdll32.lib-extract/15.GSDLL32.dll',
-            'gsdll32.lib-extract/16.GSDLL32.dll',
-            'gsdll32.lib-extract/17.GSDLL32.dll',
-            'gsdll32.lib-extract/18.GSDLL32.dll',
-            'gsdll32.lib-extract/19.GSDLL32.dll',
-            'gsdll32.lib-extract/2.GSDLL32.dll',
-            'gsdll32.lib-extract/2.txt',
-            'gsdll32.lib-extract/20.GSDLL32.dll',
-            'gsdll32.lib-extract/21.GSDLL32.dll',
-            'gsdll32.lib-extract/22.GSDLL32.dll',
-            'gsdll32.lib-extract/23.GSDLL32.dll',
-            'gsdll32.lib-extract/24.GSDLL32.dll',
-            'gsdll32.lib-extract/25.GSDLL32.dll',
-            'gsdll32.lib-extract/26.GSDLL32.dll',
-            'gsdll32.lib-extract/27.GSDLL32.dll',
-            'gsdll32.lib-extract/28.GSDLL32.dll',
-            'gsdll32.lib-extract/29.GSDLL32.dll',
-            'gsdll32.lib-extract/3.GSDLL32.dll',
-            'gsdll32.lib-extract/30.GSDLL32.dll',
-            'gsdll32.lib-extract/31.GSDLL32.dll',
-            'gsdll32.lib-extract/4.GSDLL32.dll',
-            'gsdll32.lib-extract/5.GSDLL32.dll',
-            'gsdll32.lib-extract/6.GSDLL32.dll',
-            'gsdll32.lib-extract/7.GSDLL32.dll',
-            'gsdll32.lib-extract/8.GSDLL32.dll',
-            'gsdll32.lib-extract/9.GSDLL32.dll',
-            'htmlhelp.lib',
-            'htmlhelp.lib-extract/1.txt',
-            'htmlhelp.lib-extract/2.txt',
-            'htmlhelp.lib-extract/release/init.obj',
-            'php4embed.lib',
-            'php4embed.lib-extract/1.txt',
-            'php4embed.lib-extract/2.txt',
-            'php4embed.lib-extract/Release_TS/php_embed.obj',
-            'pyexpat.lib',
-            'pyexpat.lib-extract/1.pyexpat.pyd',
-            'pyexpat.lib-extract/1.txt',
-            'pyexpat.lib-extract/2.pyexpat.pyd',
-            'pyexpat.lib-extract/2.txt',
-            'pyexpat.lib-extract/3.pyexpat.pyd',
-            'pyexpat.lib-extract/4.pyexpat.pyd',
-            'zlib.lib',
-            'zlib.lib-extract/1.txt',
-            'zlib.lib-extract/1.zlib.pyd',
-            'zlib.lib-extract/2.txt',
-            'zlib.lib-extract/2.zlib.pyd',
-            'zlib.lib-extract/3.zlib.pyd',
-            'zlib.lib-extract/4.zlib.pyd']
-
-        check_files(test_dir, expected)
+        expected = self.get_test_loc('extract/ar_tree/winlib-expected.json')
+        check_files(test_dir, expected, regen=False)
         check_no_error(result)
 
     def test_extract_nested_arch_with_corruption_should_extract_inner_archives_only_once(self):

@@ -350,12 +350,13 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 
 def extract_with_fallback(location, target_dir, extractor1, extractor2):
     """
-    Extract archive at `location` to `target_dir` trying first `extractor1` function.
-    If extract fails, attempt extraction again with the `extractor2` function.
+    Extract archive at `location` to `target_dir` trying first the primary
+    `extractor1` function. If extract fails with this function, attempt
+    extraction again with the fallback `extractor2` function.
     Return a list of warning messages. Raise exceptions on errors.
 
-    Note: there are a few cases where the primary extractor for a type may fail and
-    a secondary extractor will succeed.
+    Note: there are a few cases where the primary extractor for a type may fail
+    and a fallback extractor will succeed.
     """
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = compat.unicode(os.path.abspath(os.path.expanduser(target_dir)))
@@ -411,8 +412,9 @@ extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
 extract_deb = libarchive2.extract
+
 # sevenzip is best for windows lib formats and works fine otherwise. libarchive works on standard ar formats.
-extract_ar = functional.partial(extract_with_fallback, extractor1=sevenzip.extract, extractor2=libarchive2.extract)
+extract_ar = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
 extract_msi = sevenzip.extract
 extract_cpio = libarchive2.extract

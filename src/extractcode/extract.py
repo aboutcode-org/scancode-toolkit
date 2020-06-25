@@ -185,6 +185,8 @@ def extract_files(location, kinds=extractcode.default_kinds, recurse=False):
             target = join(abspath(top), extractcode.get_extraction_path(loc))
             if TRACE:
                 logger.debug('extract:target: %(target)r' % locals())
+
+            # extract proper
             for xevent in extract_file(loc, target, kinds):
                 if TRACE:
                     logger.debug('extract:walk:extraction event: %(xevent)r' % locals())
@@ -208,9 +210,12 @@ def extract_file(location, target, kinds=extractcode.default_kinds, verbose=Fals
     errors = []
     extractor = archive.get_extractor(location, kinds)
     if TRACE:
-        logger.debug('extract_file: extractor: for: %(location)r with kinds: %(kinds)r : ' % locals()
-                     +getattr(extractor, '__module__', '')
-                     +'.' + getattr(extractor, '__name__', ''))
+        emodule = getattr(extractor, '__module__', '')
+        ename =getattr(extractor, '__name__', '')
+        logger.debug(
+            'extract_file: extractor: for: {location} with kinds: {kinds}: {emodule}.{ename}'
+            .format(**locals()))
+
     if extractor:
         yield ExtractEvent(location, target, done=False, warnings=[], errors=[])
         try:
