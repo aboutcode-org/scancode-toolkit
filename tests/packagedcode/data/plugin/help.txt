@@ -201,6 +201,12 @@ Package: nuget
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
+Package: pods
+  class: packagedcode.podspec:PodspecPackage
+  metafiles: *.podspec
+  extensions: .podspec
+
+--------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
   metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg

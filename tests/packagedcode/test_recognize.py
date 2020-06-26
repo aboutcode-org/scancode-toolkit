@@ -35,6 +35,7 @@ from packagedcode import maven
 from packagedcode import npm
 from packagedcode import cargo
 from packagedcode import phpcomposer
+from packagedcode import podspec
 from packagedcode import rpm
 from packagedcode.recognize import recognize_packages
 from packagedcode import nuget
@@ -125,6 +126,12 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_packages(test_file)
         assert packages
         assert isinstance(packages[0], cargo.RustCargoCrate)
+
+    def test_recognize_podspec(self):
+        test_file = self.get_test_loc('recon/SwiftLib.podspec')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], podspec.PodspecPackage)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')

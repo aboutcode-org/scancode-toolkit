@@ -137,6 +137,13 @@ class TestPlugins(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
+    def test_package_command_scan_podspec(self):
+        test_dir = self.get_test_loc('podspec/package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/podspec-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
     def test_package_command_scan_rubygems(self):
         test_dir = self.get_test_loc('rubygems/package')
         result_file = self.get_temp_file('json')
