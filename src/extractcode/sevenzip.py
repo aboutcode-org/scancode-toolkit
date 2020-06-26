@@ -30,10 +30,8 @@ from collections import defaultdict
 import io
 import logging
 import os
-import posixpath
 import pprint
 import re
-from re import MULTILINE  # NOQA
 
 import attr
 
@@ -96,8 +94,9 @@ def get_7z_errors(stdout, stderr):
     # FIXME: we should use only one pass over stdout for errors and warnings
     if not stdout or not stdout.strip():
         return
-
-    find_7z_errors = re.compile('^Error:(.*)$', MULTILINE | re.DOTALL).findall
+    
+    # ERROR: Can not create symbolic link : A required privilege is not held by the client. : .\2-SYMTYPE
+    find_7z_errors = re.compile('^Error:(.*)$', re.MULTILINE | re.DOTALL | re.IGNORECASE).findall
 
     stdlow = stderr.lower()
     for err, msg in sevenzip_errors:
@@ -360,7 +359,7 @@ def extract_file_by_file(location, target_dir, arch_type='*', log=on_mac, skip_s
         else:
             raise Exception(ent.to_dict())
 
-        parent, filename = posixpath.split(pth)
+        parent, filename = os.path.split(pth)
         filenames_by_parent_dir[parent].append(filename)
 
     need_by_file = any(
