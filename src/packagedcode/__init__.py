@@ -38,6 +38,7 @@ from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import phpcomposer
+from packagedcode import podspec
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
@@ -62,6 +63,7 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
+    podspec.PodspecPackage,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
