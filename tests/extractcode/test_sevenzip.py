@@ -25,14 +25,15 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from collections import OrderedDict
 import os
 import json
 import posixpath
+from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import py2
 from commoncode.system import py3
+from commoncode.system import on_windows
 from commoncode import fileutils
 from extractcode import sevenzip
 from extractcode import ExtractErrorFailedToExtract
@@ -50,18 +51,9 @@ class TestSevenZip(FileBasedTesting):
             with open(expected_loc, wmode) as ex:
                 json.dump(results, ex, indent=2, separators=(',', ':'))
 
-        # oph = OrderedDict if py2 else dict
-
         with open(expected_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8', object_pairs_hook=dict)
-
-        try:
-            assert expected == results
-        except AssertionError:
-            if isinstance(results, dict):
-                expected = expected.items()
-                results = results.items()
-            assert json.dumps(sorted(expected), indent=2) == json.dumps(sorted(results), indent=2)
+            expected = json.load(ex, encoding='utf-8')
+        assert expected == results
 
     def test_get_7z_errors_password_protected(self):
             test = '''
@@ -117,103 +109,6 @@ Compressed: 7674
         result = sevenzip.list_extracted_7z_files(test)
         assert expected == result
 
-    def test_list_entries_of_special_tar(self):
-        test_loc = self.get_test_loc('sevenzip/special.tar')
-        expected_loc = test_loc + '-entries-expected.json'
-        entries, errors = sevenzip.list_entries(test_loc)
-        entries = [e.to_dict(full=True) for e in entries]
-        errors = errors or []
-        results = entries + errors
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
-
-    def test_extract_file_of_special_tar(self):
-        test_loc = self.get_test_loc('sevenzip/special.tar')
-        target_dir = self.get_temp_dir()
-
-        errs = sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-
-        expected_errors = []
-        assert expected_errors == errs
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
-
-    def test_list_entries_with_weird_names_7z(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.7z')
-        expected_loc = test_loc + '-entries-expected.json'
-        entries, errors = sevenzip.list_entries(test_loc)
-        entries = [e.to_dict(full=True) for e in entries]
-        errors = errors or []
-        results = entries + errors
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
-
-    def test_extract_file_by_file_with_weird_names_7z(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.7z')
-        target_dir = self.get_temp_dir()
-
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_err_loc = test_loc + '-extract-errors-expected.json'
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
-
-    def check_parse_7z_listing(self, test_loc, expected_loc, results=None, regen=False):
-        if not results:
-            results = [e.to_dict(full=True) for e in sevenzip.parse_7z_listing(location=test_loc, utf=True)]
-
-        self.check_results_with_expected_json(
-            results=results, expected_loc=expected_loc, regen=regen)
-
-    def test_parse_7z_listing_01(self):
-        test_loc = self.get_test_loc('sevenzip/listings/cpio_relative.cpio.linux')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_02(self):
-        test_loc = self.get_test_loc('sevenzip/listings/cpio_relative.cpio.win')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_03(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.7z_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_04(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.ar_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_05(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.cpio_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_06(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.iso_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_07(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.rar_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_08(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.tar_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
-    def test_parse_7z_listing_09(self):
-        test_loc = self.get_test_loc('sevenzip/listings/weird_names.zip_7zip_linux_listing.data')
-        expected_loc = test_loc + '-expected.json'
-        self.check_parse_7z_listing(test_loc, expected_loc, regen=False)
-
     def collect_extracted_path(self, test_dir):
         result = []
         td = fileutils.as_posixpath(test_dir)
@@ -228,7 +123,7 @@ Compressed: 7674
         result = sorted(result)
         return result
 
-    def test_extract_1(self):
+    def test_extract_of_tar_with_aboslute_path(self):
         test_loc = self.get_test_loc('sevenzip/absolute_path.tar')
         target_dir = self.get_temp_dir()
         sevenzip.extract(test_loc, target_dir, file_by_file=False, log=False)
@@ -236,84 +131,127 @@ Compressed: 7674
         results = self.collect_extracted_path(target_dir)
         self.check_results_with_expected_json(results, expected_loc, regen=False)
 
-    def test_extract_file_by_file_1(self):
-        test_loc = self.get_test_loc('sevenzip/absolute_path.tar')
+
+class TestSevenZipListEntries(TestSevenZip):
+
+    @skipIf(on_windows, 'Windows file-by-file extracton is not working well')
+    def test_list_entries_of_special_tar(self):
+        test_loc = self.get_test_loc('sevenzip/special.tar')
+        expected_loc = test_loc + '-entries-expected.json'
+        entries, errors = sevenzip.list_entries(test_loc)
+        entries = [e.to_dict(full=True) for e in entries]
+        errors = errors or []
+        results = entries + errors
+        self.check_results_with_expected_json(results, expected_loc, regen=False)
+
+    @skipIf(not on_windows, 'Windows file-by-file extracton is not working well')
+    def test_list_entries_of_special_tar_win(self):
+        test_loc = self.get_test_loc('sevenzip/special.tar')
+        expected_loc = test_loc + '-entries-expected-win.json'
+        entries, errors = sevenzip.list_entries(test_loc)
+        entries = [e.to_dict(full=True) for e in entries]
+        errors = errors or []
+        results = entries + errors
+        self.check_results_with_expected_json(results, expected_loc, regen=False)
+
+    @skipIf(on_windows, 'Windows file-by-file extracton is not working well')
+    def test_list_entries_with_weird_names_7z(self):
+        test_loc = self.get_test_loc('sevenzip/weird_names.7z')
+        expected_loc = test_loc + '-entries-expected.json'
+        entries, errors = sevenzip.list_entries(test_loc)
+        entries = [e.to_dict(full=True) for e in entries]
+        errors = errors or []
+        results = entries + errors
+        self.check_results_with_expected_json(results, expected_loc, regen=False)
+
+    @skipIf(not on_windows, 'Windows file-by-file extracton is not working well')
+    def test_list_entries_with_weird_names_7z_win(self):
+        test_loc = self.get_test_loc('sevenzip/weird_names.7z')
+        expected_loc = test_loc + '-entries-expected-win.json'
+        entries, errors = sevenzip.list_entries(test_loc)
+        entries = [e.to_dict(full=True) for e in entries]
+        errors = errors or []
+        results = entries + errors
+        self.check_results_with_expected_json(results, expected_loc, regen=False)
+
+
+class TestSevenParseListing(TestSevenZip):
+
+    def check_parse_7z_listing(self, test_loc, regen=False):
+        test_loc = self.get_test_loc(test_loc)
+        results = [e.to_dict(full=True) for e in sevenzip.parse_7z_listing(location=test_loc, utf=True)]
+        expected_loc = test_loc + '-expected.json'
+        self.check_results_with_expected_json(
+            results=results, expected_loc=expected_loc, regen=regen)
+
+    def test_parse_7z_listing_01(self):
+        self.check_parse_7z_listing('sevenzip/listings/cpio_relative.cpio.linux', regen=False)
+
+    def test_parse_7z_listing_02(self):
+        self.check_parse_7z_listing('sevenzip/listings/cpio_relative.cpio.win', regen=False)
+
+    def test_parse_7z_listing_03(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.7z_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_04(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.ar_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_05(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.cpio_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_06(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.iso_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_07(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.rar_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_08(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.tar_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_09(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names.zip_7zip_linux_listing.data', regen=False)
+
+
+class TestSevenZipFileByFile(TestSevenZip):
+
+    def check_extract_file_by_file(self, test_file):
+        """
+        This test uses a different expected JSON file on Linux
+        """
+        test_loc = self.get_test_loc(test_file)
         target_dir = self.get_temp_dir()
+        suffix = '-win' if on_windows else ''
         try:
             sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
         except ExtractErrorFailedToExtract as e:
-            expected_errors = ()
-            assert expected_errors == e.args
+            expected_err_loc = test_loc + '-extract-errors-expected' + suffix + '.json'
 
-        expected_loc = test_loc + '-extract-expected.json'
+            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
+
+        expected_loc = test_loc + '-extract-expected' + suffix + '.json'
         results = self.collect_extracted_path(target_dir)
         self.check_results_with_expected_json(results, expected_loc, regen=False)
 
-    def test_extract_file_by_file_2(self):
-        test_loc = self.get_test_loc('sevenzip/relative_nested.zip')
-        target_dir = self.get_temp_dir()
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_errors = ()
-            assert expected_errors == e.args
+    def test_extract_file_by_file_of_tar_with_absolute_path(self):
+        self.check_extract_file_by_file('sevenzip/absolute_path.tar')
 
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+    def test_extract_file_by_file_of_nested_zip(self):
+        self.check_extract_file_by_file('sevenzip/relative_nested.zip')
+
+    def test_extract_file_by_file_of_special_tar(self):
+        self.check_extract_file_by_file('sevenzip/special.tar')
+
+    def test_extract_file_by_file_with_weird_names_7z(self):
+        self.check_extract_file_by_file('sevenzip/weird_names.7z')
 
     def test_extract_file_by_file_weird_names_zip(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.zip')
-        target_dir = self.get_temp_dir()
-
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_err_loc = test_loc + '-extract-errors-expected.json'
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_extract_file_by_file('sevenzip/weird_names.zip')
 
     def test_extract_file_by_file_weird_names_ar(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.ar')
-        target_dir = self.get_temp_dir()
-
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_err_loc = test_loc + '-extract-errors-expected.json'
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_extract_file_by_file('sevenzip/weird_names.ar')
 
     def test_extract_file_by_file_weird_names_cpio(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.cpio')
-        target_dir = self.get_temp_dir()
-
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_err_loc = test_loc + '-extract-errors-expected.json'
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_extract_file_by_file('sevenzip/weird_names.cpio')
 
     def test_extract_file_by_file_weird_names_tar(self):
-        test_loc = self.get_test_loc('sevenzip/weird_names.tar')
-        target_dir = self.get_temp_dir()
-
-        try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
-        except ExtractErrorFailedToExtract as e:
-            expected_err_loc = test_loc + '-extract-errors-expected.json'
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
-
-        expected_loc = test_loc + '-extract-expected.json'
-        results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_extract_file_by_file('sevenzip/weird_names.tar')

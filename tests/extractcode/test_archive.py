@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 
 import io
 import os
+from unittest.case import skipIf
 
 import pytest
 
@@ -1503,7 +1504,7 @@ class TestCpio(BaseArchiveTestCase):
     def test_extract_cpio_broken_7z(self):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
         test_dir = self.get_temp_dir()
-        self.assertRaisesInstance(Exception('Unknown extraction error'), sevenzip.extract, test_file, test_dir)
+        self.assertRaisesInstance(Exception('CRC Failed : elfinfo-1.0.tar'), sevenzip.extract, test_file, test_dir)
 
     def test_extract_cpio_broken2(self):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
@@ -1610,7 +1611,7 @@ class TestRpm(BaseArchiveTestCase):
     def test_extract_rpm_broken(self):
         test_file = self.get_test_loc('archive/rpm/broken.rpm')
         test_dir = self.get_temp_dir()
-        expected = Exception('Unknown extraction error')
+        expected = Exception('CRC Failed : broken')
         self.assertRaisesInstance(expected, archive.extract_rpm,
                                   test_file, test_dir)
 
@@ -1816,19 +1817,19 @@ class TestSevenZip(BaseArchiveTestCase):
     def test_extract_7z_with_broken_archive_with7z(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        msg = 'Unknown extraction error'
-        self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), sevenzip.extract, test_file, test_dir)
+        msg = 'There are data after the end of archive'
+        self.assertExceptionContains(msg, sevenzip.extract, test_file, test_dir)
 
     def test_extract_7z_with_broken_archive_does_not_fail_when_using_fallback(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        msg = 'Unknown extraction error'
-        self.assertRaisesInstance(ExtractErrorFailedToExtract(msg), archive.extract_7z, test_file, test_dir)
+        msg = 'There are data after the end of archive'
+        self.assertExceptionContains(msg, archive.extract_7z, test_file, test_dir)
 
     def test_extract_7z_with_non_existing_archive(self):
         test_file = 'archive/7z/I_DO_NOT_EXIST.zip'
         test_dir = self.get_temp_dir()
-        msg = 'Unknown extraction error'
+        msg = 'The system cannot find the path specified'
         self.assertExceptionContains(msg, sevenzip.extract, test_file, test_dir)
 
     def test_extract_7z_with_invalid_path_using_7z(self):

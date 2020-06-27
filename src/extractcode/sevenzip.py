@@ -110,11 +110,11 @@ def get_7z_errors(stdout, stderr):
 
     file_errors = find_7z_errors(stderr)
     if file_errors:
-        return ' '.join(file_errors.strip('"\' ')).strip()
+        return ' '.join(fe.strip('"\' ') for fe in file_errors).strip()
 
     file_errors = find_7z_errors(stdout)
     if file_errors:
-        return ' '.join(file_errors.strip('"\' ')).strip()
+        return ' '.join(fe.strip('"\' ') for fe in file_errors).strip()
 
 
 def get_7z_warnings(stdout):
@@ -196,12 +196,20 @@ def extract(location, target_dir, arch_type='*', file_by_file=on_mac, log=on_mac
     None.
     """
     assert location
-    assert target_dir
     abs_location = os.path.abspath(os.path.expanduser(location))
-    abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
-
+    if not os.path.exists(abs_location):
+        raise ExtractErrorFailedToExtract(
+            'The system cannot find the path specified: {}'.format(repr(abs_location)))
+        
     if is_rar(location):
-        raise ExtractErrorFailedToExtract('RAR extraction disactivated')
+        raise ExtractErrorFailedToExtract(
+            'RAR extraction disactivated: {}'.format(repr(location)))
+
+    assert target_dir
+    abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
+    if not os.path.exists(abs_target_dir):
+        raise ExtractErrorFailedToExtract(
+            'The system cannot find the target path specified: {}'.format(repr(target_dir)))
 
     extractor = extract_file_by_file if file_by_file else extract_all_files_at_once
     return extractor(
@@ -633,7 +641,7 @@ def parse_7z_listing(location, utf=False):
         print(text)
         print('--------------------------------------')
 
-    header_tail = re.split(header_sep, text, flags=MULTILINE)
+    header_tail = re.split(header_sep, text, flags=re.MULTILINE)
     if len(header_tail) != 2:
         # we more than one a header, confusion entails.
         raise ExtractWarningIncorrectEntry(
@@ -645,7 +653,7 @@ def parse_7z_listing(location, utf=False):
 
     # FIXME: do something with header and footer?
     _header, body = header_tail
-    body_and_footer = re.split(body_sep, body, flags=MULTILINE)
+    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)
     no_footer = len(body_and_footer) == 1
     multiple_footers = len(body_and_footer) > 2
     _footer = empty
@@ -665,7 +673,7 @@ def parse_7z_listing(location, utf=False):
         print(body)
 
     path_blocks = [pb.strip() for pb in
-        re.split(path_block_sep, body, flags=MULTILINE) if pb and pb.strip()]
+        re.split(path_block_sep, body, flags=re.MULTILINE) if pb and pb.strip()]
 
     if TRACE_DEEP:
         logger.debug('parse_7z_listing: path_blocks:')
