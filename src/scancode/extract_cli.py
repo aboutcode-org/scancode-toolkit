@@ -36,7 +36,6 @@ from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode.text import toascii
-from commoncode.system import on_macos_14_or_higher
 
 from scancode_config import __version__
 from scancode.api import extract_archives
@@ -45,18 +44,6 @@ from scancode import utils
 
 
 echo_stderr = partial(click.secho, err=True)
-
-
-def print_macos_warning(quiet=False):
-    if not quiet and on_macos_14_or_higher:
-        echo_stderr('!!! WARNING !!!'
-            'You are running a version of macOS that is using the APFS '
-            'filesystem.  To avoid incorrect and misleading archive extraction '
-            'you should ensure that the disk that contains the files to extract '
-            'has been formatted to be case-sensitive for file names by using the '
-            '"APFS (Case-sensitive)" format when creating the filesystem with Diskutil. '
-            'Otherwise it is possible that some archive that contain mixed-case '
-            'names may not be correctly extracted.')
 
 
 def print_version(ctx, param, value):
@@ -114,7 +101,6 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, *args, *
     Archives found inside an extracted archive are extracted recursively.
     Extraction is done in-place in a directory named '-extract' side-by-side with an archive.
     """
-    print_macos_warning(quiet)
 
     abs_location = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
 
@@ -194,7 +180,6 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, *args, *
                 has_extract_errors = has_extract_errors or xev.errors
 
     rc = 1 if has_extract_errors else 0
-    print_macos_warning(quiet)
     ctx.exit(rc)
 
 
