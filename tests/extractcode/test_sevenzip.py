@@ -42,7 +42,7 @@ from extractcode import ExtractErrorFailedToExtract
 class TestSevenZip(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_results_with_expected_json(self, results, expected_loc, regen=False):
+    def check_results_with_expected_json(self, results, expected_loc, clean_dates=False, regen=False):
         if regen:
             if py2:
                 wmode = 'wb'
@@ -53,7 +53,19 @@ class TestSevenZip(FileBasedTesting):
 
         with open(expected_loc, 'rb') as ex:
             expected = json.load(ex, encoding='utf-8')
+        if clean_dates:
+            if isinstance(results, list):
+                self.clean_dates(results)
+                self.clean_dates(expected)
+
         assert expected == results
+
+    def clean_dates(self, results):
+        if isinstance(results, list):
+            for res in results:
+                # remove time from date/time stamp
+                if 'date' in res:
+                    res['date'] = res['date'].partition(' ')[0]
 
     def test_get_7z_errors_password_protected(self):
             test = '''
@@ -152,7 +164,7 @@ class TestSevenZipListEntries(TestSevenZip):
         entries = [e.to_dict(full=True) for e in entries]
         errors = errors or []
         results = entries + errors
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_results_with_expected_json(results, expected_loc, clean_dates=True, regen=False)
 
     @skipIf(on_windows, 'Windows file-by-file extracton is not working well')
     def test_list_entries_with_weird_names_7z(self):
@@ -172,7 +184,7 @@ class TestSevenZipListEntries(TestSevenZip):
         entries = [e.to_dict(full=True) for e in entries]
         errors = errors or []
         results = entries + errors
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_results_with_expected_json(results, expected_loc, clean_dates=True, regen=False)
 
 
 class TestSevenParseListing(TestSevenZip):
