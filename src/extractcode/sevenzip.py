@@ -94,9 +94,9 @@ def get_7z_errors(stdout, stderr):
     # FIXME: we should use only one pass over stdout for errors and warnings
     if not stdout or not stdout.strip():
         return
-    
+
     # ERROR: Can not create symbolic link : A required privilege is not held by the client. : .\2-SYMTYPE
-    find_7z_errors = re.compile('^Error:(.*)$', re.MULTILINE | re.DOTALL | re.IGNORECASE).findall
+    find_7z_errors = re.compile('^Error:(.*)$', re.MULTILINE | re.DOTALL | re.IGNORECASE).findall  # NOQA
 
     stdlow = stderr.lower()
     for err, msg in sevenzip_errors:
@@ -153,7 +153,7 @@ def list_extracted_7z_files(stdout):
         static const char *kExtractingString =  "Extracting  ";
     """
     # FIXME: handle Unicode paths with 7zip command line flags
-    get_file_list = re.compile('Extracting  ' + '(.*)$', re.M).findall
+    get_file_list = re.compile('Extracting  ' + '(.*)$', re.MULTILINE).findall  # NOQA
     return get_file_list(stdout)
 
 
@@ -180,8 +180,7 @@ def get_bin_locations():
     return lib_dir, cmd_loc
 
 
-def extract(location, target_dir, arch_type='*', file_by_file=on_mac, log=on_mac,
-            skip_symlinks=True):
+def extract(location, target_dir, arch_type='*', file_by_file=on_mac, skip_symlinks=True):
     """
     Extract all files from a 7zip-supported archive file at location in the
     target_dir directory. `skip_symlinks` by default.
@@ -200,7 +199,7 @@ def extract(location, target_dir, arch_type='*', file_by_file=on_mac, log=on_mac
     if not os.path.exists(abs_location):
         raise ExtractErrorFailedToExtract(
             'The system cannot find the path specified: {}'.format(repr(abs_location)))
-        
+
     if is_rar(location):
         raise ExtractErrorFailedToExtract(
             'RAR extraction disactivated: {}'.format(repr(location)))
@@ -213,11 +212,13 @@ def extract(location, target_dir, arch_type='*', file_by_file=on_mac, log=on_mac
 
     extractor = extract_file_by_file if file_by_file else extract_all_files_at_once
     return extractor(
-        location=abs_location, target_dir=abs_target_dir, arch_type=arch_type,
-        log=log, skip_symlinks=skip_symlinks)
+        location=abs_location,
+        target_dir=abs_target_dir,
+        arch_type=arch_type,
+        skip_symlinks=skip_symlinks)
 
 
-def extract_all_files_at_once(location, target_dir, arch_type='*', log=on_mac, skip_symlinks=True):
+def extract_all_files_at_once(location, target_dir, arch_type='*', skip_symlinks=True):
     """
     Extract all files from a 7zip-supported archive file at `location` in the
     `target_dir` directory.
@@ -234,7 +235,7 @@ def extract_all_files_at_once(location, target_dir, arch_type='*', log=on_mac, s
     # note: there are some issues with the extraction of debian .deb ar files
     # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
     ex_args = build_7z_extract_command(
-        location=location, target_dir=target_dir, arch_type=arch_type, log=log)
+        location=location, target_dir=target_dir, arch_type=arch_type)
 
     rc, stdout, stderr = command.execute2(**ex_args)
 
@@ -251,8 +252,7 @@ def extract_all_files_at_once(location, target_dir, arch_type='*', log=on_mac, s
     return convert_warnings_to_list(get_7z_warnings(stdout))
 
 
-def build_7z_extract_command(
-        location, target_dir, single_entry=None, arch_type='*', log=on_mac):
+def build_7z_extract_command(location, target_dir, single_entry=None, arch_type='*'):
     """
     Return a mapping of 7z command line aguments to extract the archive at
     `location` to `target_dir`.
@@ -327,7 +327,6 @@ def build_7z_extract_command(
         lib_dir=lib_dir,
         cwd=target_dir,
         env=timezone,
-        log=log
     )
 
     if TRACE:
@@ -337,7 +336,7 @@ def build_7z_extract_command(
     return ex_args
 
 
-def extract_file_by_file(location, target_dir, arch_type='*', log=on_mac, skip_symlinks=True):
+def extract_file_by_file(location, target_dir, arch_type='*', skip_symlinks=True):
     """
     Extract all files using a one-by-one process from a 7zip-supported archive
     file at location in the `target_dir` directory.
@@ -354,30 +353,23 @@ def extract_file_by_file(location, target_dir, arch_type='*', log=on_mac, skip_s
     entries, errors_msgs = list_entries(location, arch_type)
     entries = list(entries)
 
-    # determine if we need a one-by-one approach:
-    # we have files that are in the same dir and have the same name when the case is ignored
+    # Determine if we need a one-by-one approach: technically the aproach is to
+    # check if we have files that are in the same dir and have the same name
+    # when the case is ignored. We take a simpler approach: we check if all
+    # paths are unique when we ignore the case: for that we only check that the
+    # length of two paths sets are the same: one set as-is and the other
+    # lowercased.
 
-    filenames_by_parent_dir = defaultdict(list)
-    for ent in entries:
-        if skip_symlinks and ent.is_symlink:
-            continue
-        pth = ent.path
-        if pth:
-            pth = pth.rstrip('/')
-        else:
-            raise Exception(ent.to_dict())
-
-        parent, filename = os.path.split(pth)
-        filenames_by_parent_dir[parent].append(filename)
-
-    need_by_file = any(
-        len(fns) != len(set(fns))
-        for fns in filenames_by_parent_dir.values())
+    paths_as_is = set(e.path for e in entries)
+    paths_no_case = set(p.lower() for p in paths_as_is)
+    need_by_file = len(paths_as_is) != len(paths_no_case)
 
     if not need_by_file:
         # use regular extract
         return extract_all_files_at_once(
-            location=location, target_dir=target_dir, arch_type=arch_type, log=log)
+            location=location,
+            target_dir=target_dir,
+            arch_type=arch_type)
 
     # now we are extracting one file at a time. this is a tad painful because we
     # are dealing with a full command execution at each time.
@@ -398,7 +390,6 @@ def extract_file_by_file(location, target_dir, arch_type='*', log=on_mac, skip_s
             target_dir=tmp_extract_dir,
             single_entry=entry,
             arch_type=arch_type,
-            log=log
         )
         rc, stdout, stderr = command.execute2(**ex_args)
 
@@ -441,7 +432,7 @@ def extract_file_by_file(location, target_dir, arch_type='*', log=on_mac, skip_s
         if TRACE:
             logger.debug('extract: unique_target_file_loc: from {} to {}'.format(
                 target_file_loc, unique_target_file_loc))
-            
+
         if os.path.isfile(source_file_loc):
             fileutils.copyfile(source_file_loc, unique_target_file_loc)
         else:
@@ -629,7 +620,7 @@ def parse_7z_listing(location, utf=False):
             header_sep = b'\n----------\n'
             empty = b''
             body_sep = b'\n\n\n'
-            path_block_sep = b'\n\nPath ='
+            path_block_sep = b'Path ='
             msg_sep = b':'
             equal_sep = b'='
             errror_line_starters = b'Open Warning:', b'Errors:', b'Warnings:'
@@ -641,7 +632,7 @@ def parse_7z_listing(location, utf=False):
         print(text)
         print('--------------------------------------')
 
-    header_tail = re.split(header_sep, text, flags=re.MULTILINE)
+    header_tail = re.split(header_sep, text, flags=re.MULTILINE)  # NOQA
     if len(header_tail) != 2:
         # we more than one a header, confusion entails.
         raise ExtractWarningIncorrectEntry(
@@ -653,7 +644,7 @@ def parse_7z_listing(location, utf=False):
 
     # FIXME: do something with header and footer?
     _header, body = header_tail
-    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)
+    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)  # NOQA
     no_footer = len(body_and_footer) == 1
     multiple_footers = len(body_and_footer) > 2
     _footer = empty
@@ -673,7 +664,7 @@ def parse_7z_listing(location, utf=False):
         print(body)
 
     path_blocks = [pb.strip() for pb in
-        re.split(path_block_sep, body, flags=re.MULTILINE) if pb and pb.strip()]
+        re.split(path_block_sep, body, flags=re.MULTILINE) if pb and pb.strip()]  # NOQA
 
     if TRACE_DEEP:
         logger.debug('parse_7z_listing: path_blocks:')
@@ -687,10 +678,15 @@ def parse_7z_listing(location, utf=False):
         infos = {}
 
         lines = path_block.splitlines(False)
-        # thfirst line is the Path line
+
+        if len(lines) == 1:
+            # a temp macOS debug statement
+            raise Exception(text)
+
+        # the first line is the Path line
         path_line = lines.pop(0).strip()
         if 'Path =' in path_line:
-            _, _, path= path_line.partition('Path =')
+            _, _, path = path_line.partition('Path =')
             path = path.lstrip()
         else:
             path = path_line

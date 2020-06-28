@@ -138,7 +138,7 @@ Compressed: 7674
     def test_extract_of_tar_with_aboslute_path(self):
         test_loc = self.get_test_loc('sevenzip/absolute_path.tar')
         target_dir = self.get_temp_dir()
-        sevenzip.extract(test_loc, target_dir, file_by_file=False, log=False)
+        sevenzip.extract(test_loc, target_dir, file_by_file=False)
         expected_loc = test_loc + '-extract-expected.json'
         results = self.collect_extracted_path(target_dir)
         self.check_results_with_expected_json(results, expected_loc, regen=False)
@@ -226,7 +226,7 @@ class TestSevenParseListing(TestSevenZip):
 
 class TestSevenZipFileByFile(TestSevenZip):
 
-    def check_extract_file_by_file(self, test_file):
+    def check_extract_file_by_file(self, test_file, regen=False):
         """
         This test uses a different expected JSON file on Linux
         """
@@ -234,36 +234,37 @@ class TestSevenZipFileByFile(TestSevenZip):
         target_dir = self.get_temp_dir()
         suffix = '-win' if on_windows else ''
         try:
-            sevenzip.extract_file_by_file(test_loc, target_dir, log=False)
+            sevenzip.extract_file_by_file(test_loc, target_dir)
         except ExtractErrorFailedToExtract as e:
+            # this fails on some Windows 10 installs and not some others
+            # based on symlinks creation permissions
             expected_err_loc = test_loc + '-extract-errors-expected' + suffix + '.json'
-
-            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=False)
+            self.check_results_with_expected_json(e.args[0], expected_err_loc, regen=regen)
 
         expected_loc = test_loc + '-extract-expected' + suffix + '.json'
         results = self.collect_extracted_path(target_dir)
-        self.check_results_with_expected_json(results, expected_loc, regen=False)
+        self.check_results_with_expected_json(results, expected_loc, regen=regen)
 
     def test_extract_file_by_file_of_tar_with_absolute_path(self):
-        self.check_extract_file_by_file('sevenzip/absolute_path.tar')
+        self.check_extract_file_by_file('sevenzip/absolute_path.tar', regen=False)
 
     def test_extract_file_by_file_of_nested_zip(self):
-        self.check_extract_file_by_file('sevenzip/relative_nested.zip')
+        self.check_extract_file_by_file('sevenzip/relative_nested.zip', regen=False)
 
     def test_extract_file_by_file_of_special_tar(self):
-        self.check_extract_file_by_file('sevenzip/special.tar')
+        self.check_extract_file_by_file('sevenzip/special.tar', regen=False)
 
     def test_extract_file_by_file_with_weird_names_7z(self):
-        self.check_extract_file_by_file('sevenzip/weird_names.7z')
+        self.check_extract_file_by_file('sevenzip/weird_names.7z', regen=False)
 
     def test_extract_file_by_file_weird_names_zip(self):
-        self.check_extract_file_by_file('sevenzip/weird_names.zip')
+        self.check_extract_file_by_file('sevenzip/weird_names.zip', regen=False)
 
     def test_extract_file_by_file_weird_names_ar(self):
-        self.check_extract_file_by_file('sevenzip/weird_names.ar')
+        self.check_extract_file_by_file('sevenzip/weird_names.ar', regen=False)
 
     def test_extract_file_by_file_weird_names_cpio(self):
-        self.check_extract_file_by_file('sevenzip/weird_names.cpio')
+        self.check_extract_file_by_file('sevenzip/weird_names.cpio', regen=False)
 
     def test_extract_file_by_file_weird_names_tar(self):
-        self.check_extract_file_by_file('sevenzip/weird_names.tar')
+        self.check_extract_file_by_file('sevenzip/weird_names.tar', regen=False)
