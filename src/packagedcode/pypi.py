@@ -83,7 +83,7 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg')
+    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg', '*requirements*.txt', '*requirements*.in')
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
@@ -112,6 +112,8 @@ def parse(location):
         file_name = fileutils.file_name(location)
         parsers = {
             'setup.py': parse_setup_py,
+            'requirements.txt': parse_requirements_txt,
+            'requirements.in': parse_requirements_txt,
             'metadata.json': parse_metadata,
             'PKG-INFO': parse_pkg_info,
             '.whl': parse_wheel,
@@ -187,11 +189,25 @@ def parse_dependencies(location, package):
             package.dependencies = dependencies
 
 
+def file_type(file_name):
+    """
+    Return a renamed filename.
+    """
+    req_file_types = ('.txt', '.in')
+    if file_name.endswith(req_file_types):
+        file_name = 'requirements.txt'
+
+    return file_name
+
+
 def parse_with_dparse(location):
     is_dir = filetype.is_dir(location)
     if is_dir:
         return
     file_name = fileutils.file_name(location)
+
+    file_name = file_type(file_name)
+
     if file_name not in (filetypes.requirements_txt,
                          filetypes.conda_yml,
                          filetypes.tox_ini,
@@ -211,9 +227,12 @@ def parse_with_dparse(location):
         package_dependencies = []
         for df_dependency in df_dependencies:
             specs = df_dependency.specs
+            is_resolved = False
             requirement = None
             if specs:
                 requirement = str(specs)
+                if '==' in requirement:
+                    is_resolved = True
             package_dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -221,10 +240,19 @@ def parse_with_dparse(location):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
-                    requirement=requirement,
+                    is_resolved=is_resolved,
+                    requirement=requirement
                 )
             )
         return package_dependencies
+
+
+def parse_requirements_txt(location):
+    """
+    Return a package built from requirements.txt.
+    """
+    package_dependencies = parse_with_dparse(location)
+    return PythonPackage(dependencies=package_dependencies)
 
 
 def parse_setup_py(location):
