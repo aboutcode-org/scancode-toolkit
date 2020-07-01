@@ -1,0 +1,55 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 110 bytes (1 KiB)
+
+Listing archive: tests/extractcode/data/archive/cbr/t.cbr
+
+--
+Path = tests/extractcode/data/archive/cbr/t.cbr
+Type = Rar
+Physical Size = 110
+Solid = -
+Blocks = 2
+Multivolume = -
+Volumes = 1
+
+----------
+Path = t/t.txt
+Folder = -
+Size = 2
+Packed Size = 11
+Modified = 2010-02-19 07:48:58
+Created = 
+Accessed = 
+Attributes = 
+Encrypted = -
+Solid = -
+Commented = -
+Split Before = -
+Split After = -
+CRC = 3224B088
+Host OS = Unix
+Method = m3:17
+Version = 29
+
+Path = t
+Folder = +
+Size = 0
+Packed Size = 0
+Modified = 2010-02-19 07:49:56
+Created = 
+Accessed = 
+Attributes = D
+Encrypted = -
+Solid = -
+Commented = -
+Split Before = -
+Split After = -
+CRC = 00000000
+Host OS = Unix
+Method = m0
+Version = 20
+

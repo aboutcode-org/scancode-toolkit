@@ -196,32 +196,71 @@ class TestSevenParseListing(TestSevenZip):
         self.check_results_with_expected_json(
             results=results, expected_loc=expected_loc, regen=regen)
 
-    def test_parse_7z_listing_01(self):
+    def test_parse_7z_listing_cpio_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/cpio_relative.cpio.linux', regen=False)
 
-    def test_parse_7z_listing_02(self):
+    def test_parse_7z_listing_cpio_from_win(self):
         self.check_parse_7z_listing('sevenzip/listings/cpio_relative.cpio.win', regen=False)
 
-    def test_parse_7z_listing_03(self):
+    def test_parse_7z_listing_7z_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.7z_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_04(self):
+    def test_parse_7z_listing_7z_from_win(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.ar_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_05(self):
+    def test_parse_7z_listing_cpio_weird_names_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.cpio_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_06(self):
+    def test_parse_7z_listing_iso_weird_names_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.iso_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_07(self):
+    def test_parse_7z_listing_rar_weird_names_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.rar_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_08(self):
+    def test_parse_7z_listing_tar_weird_names_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.tar_7zip_linux_listing.data', regen=False)
 
-    def test_parse_7z_listing_09(self):
+    def test_parse_7z_listing_zip_weird_names_from_linux(self):
         self.check_parse_7z_listing('sevenzip/listings/weird_names.zip_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_z_from_mac(self):
+        self.check_parse_7z_listing('sevenzip/listings/single_file.z.mac', regen=False)
+
+    def test_parse_7z_listing_tarz_from_mac(self):
+        self.check_parse_7z_listing('sevenzip/listings/single_file.tarz.mac', regen=False)
+
+    def test_parse_7z_listing_shar_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/demo-spring-boot.sh.listing', regen=False)
+
+    def test_parse_7z_listing_svgz_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/insert-emptyframe.svgz.listing', regen=False)
+
+    def test_parse_7z_listing_rpm_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.rpm.listing', regen=False)
+
+    def test_parse_7z_listing_tbz_broken_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/tarred_bzipped_broken.tar.bz2.listing', regen=False)
+
+    def test_parse_7z_listing_tbz_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/tarred_bzipped.tar.bz2.listing', regen=False)
+
+    def test_parse_7z_listing_txz_from_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/texlive-core-patches-20.tar.xz.listing', regen=False)
+
+    def test_parse_7z_listing_deb_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/adduser_3.113+nmu3ubuntu3_all.deb-linux.listing', regen=False)
+
+    def test_parse_7z_listing_special_tar_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/special.tar-linux.listing', regen=False)
+
+    def test_parse_7z_listing_cbr_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/t.cbr-linux.listing', regen=False)
+
+    def test_parse_7z_listing_weird_names_7zip_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/weird_names-mini.7z_7zip_linux_listing.data', regen=False)
+
+    def test_parse_7z_listing_xar_linux(self):
+        self.check_parse_7z_listing('sevenzip/listings/xar-1.4.xar-linux.listing', regen=False)
 
 
 class TestSevenZipFileByFile(TestSevenZip):

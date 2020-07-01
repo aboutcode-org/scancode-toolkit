@@ -1,0 +1,14 @@
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 573683 bytes (561 KiB)
+
+Listing archive: /Users/runner/runners/2.170.1/work/1/s/tests/extractcode/data/archive/Z/tkWWW-0.11.tar.Z
+
+--
+Path = /Users/runner/runners/2.170.1/work/1/s/tests/extractcode/data/archive/Z/tkWWW-0.11.tar.Z
+Type = Z
+
+----------
+Packed Size = 573683   

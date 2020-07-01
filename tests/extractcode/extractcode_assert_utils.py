@@ -95,6 +95,7 @@ def check_files(test_dir, expected, regen=False):
             wmode = 'wb' if py2 else 'w'
             with open(expected, wmode) as ex:
                 json.dump(result, ex, indent=2, separators=(',', ':'))
+            expected_content = result
         else:
             with open(expected, 'rb') as ex:
                 expected_content = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
@@ -103,13 +104,14 @@ def check_files(test_dir, expected, regen=False):
 
     expected_content = sorted(expected_content)
     result = sorted(result)
+
     try:
         assert expected_content == result
     except AssertionError:
         files = [
             'test_dir: file://{}'.format(test_dir),
             'expected: file://{}'.format(expected if expected_is_json_file else ''),
-        ] 
+        ]
         assert files + expected_content == result
 
     for location in locs:

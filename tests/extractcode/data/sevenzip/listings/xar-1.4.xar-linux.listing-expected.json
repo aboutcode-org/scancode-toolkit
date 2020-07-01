@@ -1,8 +1,86 @@
 [
   {
-    "path":"\\:.1.gz",
-    "size":"40",
-    "date":"2016-12-28 20:30:58",
+    "path":"xar-1.4",
+    "size":"",
+    "date":"2006-02-24 01:49:58",
+    "is_file":false,
+    "is_dir":true,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/.cvsignore",
+    "size":"90",
+    "date":"2005-06-28 21:55:48",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/cfghdrs.stamp.in",
+    "size":"6",
+    "date":"2005-06-28 21:55:48",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/cfgoutputs.stamp.in",
+    "size":"6",
+    "date":"2005-06-28 21:55:48",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/config.guess",
+    "size":"43499",
+    "date":"2005-08-29 17:54:58",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/config.sub",
+    "size":"31743",
+    "date":"2005-08-29 17:54:58",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/configure",
+    "size":"231226",
+    "date":"2006-02-24 01:49:15",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -13,11 +91,24 @@
     "errors":[]
   },
   {
-    "path":"COM9",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/configure.ac",
+    "size":"8560",
+    "date":"2006-02-24 01:49:04",
     "is_file":true,
     "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/include",
+    "size":"",
+    "date":"2006-02-24 01:49:58",
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
@@ -26,9 +117,9 @@
     "errors":[]
   },
   {
-    "path":"ab*.t*",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/include/.cvsignore",
+    "size":"15",
+    "date":"2005-06-28 21:55:49",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -39,9 +130,9 @@
     "errors":[]
   },
   {
-    "path":"some file",
-    "size":"38",
-    "date":"2016-12-21 11:15:56",
+    "path":"xar-1.4/include/config.h.in",
+    "size":"524",
+    "date":"2005-09-11 19:43:44",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -52,9 +143,9 @@
     "errors":[]
   },
   {
-    "path":"[\\:*.1",
-    "size":"20",
-    "date":"2016-12-28 20:32:55",
+    "path":"xar-1.4/include/xar.h.in",
+    "size":"6053",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -65,9 +156,9 @@
     "errors":[]
   },
   {
-    "path":"lpt8.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/INSTALL",
+    "size":"4155",
+    "date":"2005-06-29 19:05:24",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -78,11 +169,24 @@
     "errors":[]
   },
   {
-    "path":"lpt1.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/install-sh",
+    "size":"5585",
+    "date":"2005-04-06 23:16:54",
     "is_file":true,
     "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/lib",
+    "size":"",
+    "date":"2006-02-24 01:49:58",
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
@@ -91,9 +195,9 @@
     "errors":[]
   },
   {
-    "path":"COM9.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/.cvsignore",
+    "size":"36",
+    "date":"2005-06-28 21:55:50",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -104,9 +208,9 @@
     "errors":[]
   },
   {
-    "path":"CON",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/appledouble.h",
+    "size":"3395",
+    "date":"2005-04-25 04:44:10",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -117,9 +221,9 @@
     "errors":[]
   },
   {
-    "path":"com8.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/archive.c",
+    "size":"26665",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -130,9 +234,9 @@
     "errors":[]
   },
   {
-    "path":"lpt2.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/archive.h",
+    "size":"3645",
+    "date":"2005-10-09 01:03:18",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -143,9 +247,9 @@
     "errors":[]
   },
   {
-    "path":"NUL.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/arcmod.c",
+    "size":"3292",
+    "date":"2005-09-22 17:43:53",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -156,9 +260,9 @@
     "errors":[]
   },
   {
-    "path":"con",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/arcmod.h",
+    "size":"2104",
+    "date":"2005-04-06 23:16:57",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -169,9 +273,9 @@
     "errors":[]
   },
   {
-    "path":"some\"file",
-    "size":"39",
-    "date":"2016-12-21 11:15:56",
+    "path":"xar-1.4/lib/asprintf.h",
+    "size":"2728",
+    "date":"2005-06-28 21:55:50",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -182,9 +286,9 @@
     "errors":[]
   },
   {
-    "path":"COM7",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/b64.c",
+    "size":"7108",
+    "date":"2006-02-23 17:38:00",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -195,9 +299,9 @@
     "errors":[]
   },
   {
-    "path":"com1.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/b64.h",
+    "size":"322",
+    "date":"2005-04-18 20:56:07",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -208,9 +312,9 @@
     "errors":[]
   },
   {
-    "path":"lpt3.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/bzxar.c",
+    "size":"4954",
+    "date":"2006-02-10 23:20:48",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -221,9 +325,9 @@
     "errors":[]
   },
   {
-    "path":"COM4",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/bzxar.h",
+    "size":"2009",
+    "date":"2005-04-29 17:08:38",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -234,9 +338,9 @@
     "errors":[]
   },
   {
-    "path":"lpt9.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/darwinattr.c",
+    "size":"13800",
+    "date":"2006-02-23 00:22:00",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -247,9 +351,9 @@
     "errors":[]
   },
   {
-    "path":"PRN.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/darwinattr.h",
+    "size":"411",
+    "date":"2005-04-25 05:57:00",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -260,9 +364,9 @@
     "errors":[]
   },
   {
-    "path":"nul.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/data.c",
+    "size":"3093",
+    "date":"2006-01-13 05:55:21",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -273,9 +377,9 @@
     "errors":[]
   },
   {
-    "path":"lpt4.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/data.h",
+    "size":"312",
+    "date":"2005-04-22 18:18:41",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -286,9 +390,9 @@
     "errors":[]
   },
   {
-    "path":"COM1.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/err.c",
+    "size":"2739",
+    "date":"2005-04-23 17:50:17",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -299,9 +403,9 @@
     "errors":[]
   },
   {
-    "path":"lpt5.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/ext2.c",
+    "size":"7010",
+    "date":"2005-06-28 21:55:50",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -312,9 +416,9 @@
     "errors":[]
   },
   {
-    "path":"ab\\.t\\",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/lib/ext2.h",
+    "size":"346",
+    "date":"2005-04-19 16:15:51",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -325,9 +429,9 @@
     "errors":[]
   },
   {
-    "path":"NUL",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/fbsdattr.c",
+    "size":"6527",
+    "date":"2005-09-21 19:52:08",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -338,9 +442,9 @@
     "errors":[]
   },
   {
-    "path":"prn.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/fbsdattr.h",
+    "size":"332",
+    "date":"2005-04-20 00:01:48",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -351,9 +455,9 @@
     "errors":[]
   },
   {
-    "path":"nul",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/filetree.c",
+    "size":"27297",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -364,9 +468,9 @@
     "errors":[]
   },
   {
-    "path":"LPT5.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/filetree.h",
+    "size":"3508",
+    "date":"2005-08-15 20:15:30",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -377,9 +481,9 @@
     "errors":[]
   },
   {
-    "path":"some\\\"file",
-    "size":"21",
-    "date":"2016-12-21 11:15:56",
+    "path":"xar-1.4/lib/io.c",
+    "size":"11306",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -390,9 +494,9 @@
     "errors":[]
   },
   {
-    "path":"ab\t.t",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/lib/io.h",
+    "size":"2737",
+    "date":"2005-04-22 18:01:04",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -403,9 +507,9 @@
     "errors":[]
   },
   {
-    "path":"lpt6.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/linuxattr.c",
+    "size":"6010",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -416,9 +520,9 @@
     "errors":[]
   },
   {
-    "path":"COM8",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/linuxattr.h",
+    "size":"337",
+    "date":"2005-04-18 20:56:07",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -429,9 +533,9 @@
     "errors":[]
   },
   {
-    "path":"ab\n.t",
-    "size":0,
-    "date":null,
+    "path":"xar-1.4/lib/macho.c",
+    "size":"4198",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -442,9 +546,9 @@
     "errors":[]
   },
   {
-    "path":"lpt7.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/macho.h",
+    "size":"633",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -455,9 +559,9 @@
     "errors":[]
   },
   {
-    "path":"com4.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/Makefile.inc.in",
+    "size":"3781",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -468,9 +572,9 @@
     "errors":[]
   },
   {
-    "path":"COM3",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/md5.c",
+    "size":"2991",
+    "date":"2006-02-15 19:47:29",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -481,9 +585,9 @@
     "errors":[]
   },
   {
-    "path":"LPT9",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/md5.h",
+    "size":"1997",
+    "date":"2005-04-22 18:01:04",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -494,9 +598,9 @@
     "errors":[]
   },
   {
-    "path":"LPT8",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/script.c",
+    "size":"834",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -507,9 +611,9 @@
     "errors":[]
   },
   {
-    "path":"LPT7",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/script.h",
+    "size":"220",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -520,9 +624,9 @@
     "errors":[]
   },
   {
-    "path":"com2.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/stat.c",
+    "size":"13438",
+    "date":"2006-01-13 05:55:21",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -533,9 +637,9 @@
     "errors":[]
   },
   {
-    "path":"ab\n.t",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/lib/stat.h",
+    "size":"1912",
+    "date":"2005-04-06 23:16:57",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -546,9 +650,9 @@
     "errors":[]
   },
   {
-    "path":"COM5",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/subdoc.c",
+    "size":"6055",
+    "date":"2005-09-21 19:52:08",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -559,9 +663,9 @@
     "errors":[]
   },
   {
-    "path":"LPT1.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/subdoc.h",
+    "size":"2361",
+    "date":"2005-08-17 20:36:38",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -572,9 +676,9 @@
     "errors":[]
   },
   {
-    "path":"some 'file",
-    "size":"20",
-    "date":"2016-12-21 11:15:56",
+    "path":"xar-1.4/lib/util.c",
+    "size":"3857",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -585,9 +689,9 @@
     "errors":[]
   },
   {
-    "path":"com3.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/util.h",
+    "size":"1959",
+    "date":"2006-02-21 00:44:09",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -598,9 +702,9 @@
     "errors":[]
   },
   {
-    "path":"LPT5",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/zxar.c",
+    "size":"4724",
+    "date":"2005-10-08 22:52:15",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -611,9 +715,9 @@
     "errors":[]
   },
   {
-    "path":"LPT2.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/lib/zxar.h",
+    "size":"2006",
+    "date":"2005-04-22 18:01:04",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -624,9 +728,9 @@
     "errors":[]
   },
   {
-    "path":"CON.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/LICENSE",
+    "size":"1627",
+    "date":"2005-04-11 20:22:51",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -637,11 +741,24 @@
     "errors":[]
   },
   {
-    "path":"ab:.t:",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/Makefile.in",
+    "size":"2156",
+    "date":"2006-02-21 00:44:08",
     "is_file":true,
     "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/src",
+    "size":"",
+    "date":"2006-02-24 01:49:58",
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
@@ -650,9 +767,9 @@
     "errors":[]
   },
   {
-    "path":"com6.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/src/.cvsignore",
+    "size":"26",
+    "date":"2005-06-28 21:55:51",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -663,9 +780,9 @@
     "errors":[]
   },
   {
-    "path":"LPT4",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/src/Makefile.inc.in",
+    "size":"1545",
+    "date":"2006-01-10 02:51:36",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -676,9 +793,9 @@
     "errors":[]
   },
   {
-    "path":"com5.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/src/xar.1",
+    "size":"3508",
+    "date":"2006-02-24 01:55:02",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -689,11 +806,24 @@
     "errors":[]
   },
   {
-    "path":"LPT3.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/src/xar.c",
+    "size":"19868",
+    "date":"2006-02-15 18:51:38",
     "is_file":true,
     "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"xar-1.4/test",
+    "size":"",
+    "date":"2006-02-24 01:42:52",
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
@@ -702,9 +832,9 @@
     "errors":[]
   },
   {
-    "path":"ab<.t<",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/test/attr",
+    "size":"1681",
+    "date":"2005-10-08 22:52:16",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -715,9 +845,9 @@
     "errors":[]
   },
   {
-    "path":"LPT6",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/checksums",
+    "size":"2299",
+    "date":"2005-10-08 19:04:32",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -728,9 +858,9 @@
     "errors":[]
   },
   {
-    "path":"con.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/compression",
+    "size":"1740",
+    "date":"2005-10-08 19:04:32",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -741,9 +871,9 @@
     "errors":[]
   },
   {
-    "path":"LPT4.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/data",
+    "size":"3364",
+    "date":"2005-10-08 22:52:16",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -754,9 +884,9 @@
     "errors":[]
   },
   {
-    "path":"LPT3",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/data.xsl",
+    "size":"234",
+    "date":"2005-10-08 22:52:16",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -767,9 +897,9 @@
     "errors":[]
   },
   {
-    "path":"LPT2",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/functions",
+    "size":"987",
+    "date":"2005-10-08 19:04:32",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -780,9 +910,9 @@
     "errors":[]
   },
   {
-    "path":"LPT1",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/hardlink",
+    "size":"662",
+    "date":"2005-10-08 19:04:32",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -793,9 +923,9 @@
     "errors":[]
   },
   {
-    "path":"ab>.t>",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/test/heap",
+    "size":"1636",
+    "date":"2005-10-11 16:54:34",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -806,9 +936,9 @@
     "errors":[]
   },
   {
-    "path":"COM2.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/heap1.xsl",
+    "size":"498",
+    "date":"2005-10-11 16:54:34",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -819,9 +949,9 @@
     "errors":[]
   },
   {
-    "path":"LPT7.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/test/validate.c",
+    "size":"3654",
+    "date":"2005-10-08 22:52:16",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -832,9 +962,9 @@
     "errors":[]
   },
   {
-    "path":"ab?.t?",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "path":"xar-1.4/TODO",
+    "size":"97",
+    "date":"2005-08-29 23:26:45",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -845,9 +975,9 @@
     "errors":[]
   },
   {
-    "path":"com7.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"xar-1.4/xar.spec",
+    "size":"2176",
+    "date":"2006-02-24 01:42:08",
     "is_file":true,
     "is_dir":false,
     "is_special":false,
@@ -858,9 +988,9 @@
     "errors":[]
   },
   {
-    "path":"COM3.txt",
-    "size":"1",
-    "date":"2017-01-03 12:35:05",
+    "path":"[TOC].xml",
+    "size":"48412",
+    "date":"",
     "is_file":true,
     "is_dir":false,
     "is_special":false,

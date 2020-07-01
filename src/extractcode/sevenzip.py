@@ -54,18 +54,17 @@ if py3:
 else:
     from pipes import quote as shlex_quote
 
-
 """
 Low level support for p/7zip-based archive extraction.
 """
-
 
 logger = logging.getLogger(__name__)
 
 TRACE = False
 TRACE_DEEP = False
+TRACE_ENTRIES = False
 
-if TRACE or TRACE_DEEP:
+if TRACE or TRACE_DEEP or TRACE_ENTRIES:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -518,45 +517,6 @@ def list_entries(location, arch_type='*'):
     return parse_7z_listing(stdout, utf), error_messages
 
 
-def as_entry(infos):
-    """
-    Return an Entry built from a 7zip path listing data in the `infos` mapping.
-    """
-    is_symlink = False
-    is_hardlink = False
-    link_target = None
-
-    sl = infos.get('Symbolic Link')
-
-    if sl:
-        is_symlink = True
-        link_target = sl
-
-    hl = infos.get('Hard Link')
-    if hl:
-        is_hardlink = True
-        link_target = hl
-
-    if sl and hl:
-        from pprint import pformat
-        raise ExtractWarningIncorrectEntry(
-            'A symlink cannot be also a hardlink: {}'.format(pformat(infos)))
-
-    is_dir = infos.get('Folder', False) == '+'
-
-    e = Entry(
-        path=infos.get('Path'),
-        size=infos.get('Size', 0),
-        date=infos.get('Modified', None),
-        is_dir=is_dir,
-        is_file=not is_dir,
-        is_symlink=is_symlink,
-        is_hardlink=is_hardlink,
-        link_target=link_target,
-    )
-    return e
-
-
 def parse_7z_listing(location, utf=False):
     """
     Return a list Entry objects from parsing a long format 7zip listing from a
@@ -567,16 +527,18 @@ def parse_7z_listing(location, utf=False):
 
     The 7zip -slt format looks like this:
 
+    1. a header with:
     - copyright and version details
     - '--' line
         - archive header info, varying based on the archive types and subtype
               - lines of key=value pairs
-              - Errors: followed by one or more message lines
-              - Warnings: followed by one or more message lines
-              - Open Warning: : followed by one or more message lines
-        - sometimes a '---' line
+              - ERRORS: followed by one or more message lines
+              - WARNINGS: followed by one or more message lines
     - blank line
-    - '----------' line
+
+    2. blocks of path aka. entry data, one for each path with:
+
+    - '----------' line once as the indicator of path blocks starting
     - for each archive member:
       - lines of either
           - key = value pairs, with a possible twist that the Path may
@@ -585,31 +547,27 @@ def parse_7z_listing(location, utf=False):
           - Warnings: followed by one or more message lines
           - Open Warning: : followed by one or more message lines
       - blank line
-    - two blank lines
+
+    3. a footer
+    - blank line
     - footer sometimes with lines with summary stats
         such as Warnings: 1 Errors: 1
     - a line with two or more dashes or an empty line
+
+    We ignore the header and footer in a listing.
     """
 
     if utf or py3:
         # read to unicode
         with io.open(location, 'r', encoding='utf-8') as listing:
             text = listing.read()
-            if TRACE_DEEP:
-                print('=====================================================')
-                print(text)
-                print('=====================================================')
-
             text = text.replace(u'\r\n', u'\n')
 
-            header_sep = u'\n----------\n'
-            empty = u''
-            body_sep = u'\n\n\n'
-            path_block_sep = u'Path ='
-            msg_sep = u':'
-            equal_sep = u'='
-            errror_line_starters = 'Open Warning:', 'Errors:', 'Warnings:'
-            line_sep = u'\n'
+        end_of_header = u'----------\n'
+        path_key = u'Path'
+        kv_sep = u'='
+        path_blocks_sep = u'\n\n'
+        line_sep = u'\n'
 
     else:
         # read to bytes
@@ -617,14 +575,11 @@ def parse_7z_listing(location, utf=False):
             text = listing.read()
             text = text.replace(b'\r\n', b'\n')
 
-            header_sep = b'\n----------\n'
-            empty = b''
-            body_sep = b'\n\n\n'
-            path_block_sep = b'Path ='
-            msg_sep = b':'
-            equal_sep = b'='
-            errror_line_starters = b'Open Warning:', b'Errors:', b'Warnings:'
-            line_sep = b'\n'
+        end_of_header = b'----------\n'
+        path_key = b'Path'
+        kv_sep = b'='
+        path_blocks_sep = b'\n\n'
+        line_sep = b'\n'
 
     if TRACE:
         logger.debug('parse_7z_listing: initial text: type: ' + repr(type(text)))
@@ -632,115 +587,54 @@ def parse_7z_listing(location, utf=False):
         print(text)
         print('--------------------------------------')
 
-    header_tail = re.split(header_sep, text, flags=re.MULTILINE)  # NOQA
-    if len(header_tail) != 2:
-        # we more than one a header, confusion entails.
-        raise ExtractWarningIncorrectEntry(
-            'Incorrect 7zip listing with multiple headers: {}'.format(repr(header_tail)))
+    # for now we ignore the header
+    _header, _, paths = text.rpartition(end_of_header)
 
-    if len(header_tail) == 1:
+    if not paths:
         # we have only a header, likely an error condition or an empty archive
         return []
 
-    # FIXME: do something with header and footer?
-    _header, body = header_tail
-    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)  # NOQA
-    no_footer = len(body_and_footer) == 1
-    multiple_footers = len(body_and_footer) > 2
-    _footer = empty
+    # each block representing one path or file:
+    # - starts with a "Path = <some/path>" key/value
+    # - continues with key = value pairs each on a single line
+    #   (unless there is a \n in file name which is an error condition)
+    # - ends with an empty line
+    # then we have a global footer
 
-    if no_footer:
-        body = body_and_footer[0]
-    elif multiple_footers:
-        raise ExtractWarningIncorrectEntry(
-            'Incorrect 7zip listing with multiple footers: {}'.format(repr(body_and_footer)))
-    else:
-        body, _footer == body_and_footer
+    path_blocks = [pb for pb in paths.split(path_blocks_sep) if pb and path_key in pb]
 
     entries = []
 
-    if TRACE:
-        logger.debug('parse_7z_listing: body:')
-        print(body)
-
-    path_blocks = [pb.strip() for pb in
-        re.split(path_block_sep, body, flags=re.MULTILINE) if pb and pb.strip()]  # NOQA
-
-    if TRACE_DEEP:
-        logger.debug('parse_7z_listing: path_blocks:')
-        pprint.pprint(path_blocks)
-
     for path_block in path_blocks:
-        if TRACE:
-            logger.debug('parse_7z_listing: path_block: {}'.format(path_block))
+        # we ignore empty lines as well as lines that do not contain a key
+        lines = [line.strip() for line in path_block.splitlines(False) if line.strip()]
+        if not lines:
+            continue
+        # we have a weird case of path with line returns in the file name
+        # we concatenate these in the first Path line
+        while len(lines) > 1 and lines[0].startswith(path_key) and kv_sep not in lines[1]:
+            first_line = lines[0]
+            second_line = lines.pop(1)
+            first_line = line_sep.join([first_line, second_line])
+            lines[0] = first_line
+        
+        dangling_lines = [line  for line in lines if kv_sep not in line]
+        entry_errors = []
+        if dangling_lines:
+            emsg = 'Invalid 7z listing path block missing "=" as key/value separator: {}'.format(repr(path_block))
+            entry_errors.append(emsg)
 
-        errors = []
-        infos = {}
+        entry_attributes = {}
+        key_lines = [line  for line in lines if kv_sep in line]
+        for line in key_lines:
+            k, _, v = line.partition(kv_sep)
+            k = k.strip()
+            v = v.strip()
+            entry_attributes[k] = v
 
-        lines = path_block.splitlines(False)
+        entries.append(Entry.from_dict(infos=entry_attributes, errors=entry_errors))
 
-        if len(lines) == 1:
-            # a temp macOS debug statement
-            raise Exception(text)
-
-        # the first line is the Path line
-        path_line = lines.pop(0).strip()
-        if 'Path =' in path_line:
-            _, _, path = path_line.partition('Path =')
-            path = path.lstrip()
-        else:
-            path = path_line
-
-        second = lines[0]
-
-        if equal_sep not in second:
-            # the path contain line breaks and the next line continues the name
-            path = line_sep.join([path, second])
-            lines.pop(0)
-
-        infos['Path'] = path
-
-        is_err = False
-
-        # process the remainining non-path lines
-        for line in lines:
-            if TRACE_DEEP:
-                logger.debug('parse_7z_listing: line: "{}"'.format(line))
-
-            line = line.strip()
-
-            if not line:
-                continue
-
-            if line.startswith(errror_line_starters):
-                is_err = True
-                messages = line.split(msg_sep, 1)
-                errors.append(messages)
-                continue
-
-            if equal_sep not in line and is_err:
-                # not a key = value line, an error message
-                errors.append(line)
-                continue
-
-            parts = line.split(equal_sep, 1)
-
-            if len(parts) != 2:
-                raise ExtractWarningIncorrectEntry(
-                    'Incorrect 7zip listing line with no key=value: {}'.format(repr(line)))
-
-            is_err = False
-            key, value = parts
-            key = key.strip()
-            value = value.strip()
-            assert key not in infos, 'Duplicate keys in 7zip listing'
-            infos[key] = value or empty
-
-        if infos:
-            entr = as_entry(infos)
-            entries.append(entr)
-
-    if TRACE_DEEP:
+    if TRACE_ENTRIES:
         logger.debug('parse_7z_listing: entries# {}\n'.format(len(entries)))
         for entry in entries:
             logger.debug('    ' + repr(entry.to_dict()))
@@ -777,12 +671,9 @@ class Entry(object):
     link_target = attr.ib(default=None)
     errors = attr.ib(default=attr.Factory(list))
 
-    def parent(self):
-        return posixpath.dirname(self.path.rstrip('/'))
-
     def to_dict(self, full=False):
         data = attr.asdict(self)
-        data.pop('errors', None)
+        #data.pop('errors', None)
         if not full:
             data.pop('date', None)
         return data
@@ -795,3 +686,56 @@ class Entry(object):
 
     def is_empty(self):
         return not self.size
+
+    @classmethod
+    def from_dict(cls, infos, errors=None):
+        """
+        Return an Entry built from a 7zip path listing data in the `infos` mapping.
+        """
+        is_symlink = False
+        is_hardlink = False
+        link_target = None
+
+        sl = infos.get('Symbolic Link')
+
+        if sl:
+            is_symlink = True
+            link_target = sl
+
+        hl = infos.get('Hard Link')
+        if hl:
+            is_hardlink = True
+            link_target = hl
+
+        if sl and hl:
+            from pprint import pformat
+            raise ExtractWarningIncorrectEntry(
+                'A symlink cannot be also a hardlink: {}'.format(pformat(infos)))
+
+        # depending on the type of arhcive the file vs dir flags are in
+        # diiferent attributes :|
+        is_dir = (
+            # in some listings we have this: Mode = drwxrwxr-x
+            infos.get('Mode', '').lower().startswith('d')
+            or
+            # in cpio and a few more we have a Folder attrib
+            infos.get('Folder', '').startswith('+')
+            or
+            # in 7z listing we have this: Attributes = D_ drwxrwxr-x
+            infos.get('Attributes', '').lower().startswith('d_')
+        ) or False
+
+        is_file = not is_dir
+
+        e = cls(
+            path=infos.get('Path'),
+            size=infos.get('Size', 0),
+            date=infos.get('Modified', None),
+            is_dir=is_dir,
+            is_file=is_file,
+            is_symlink=is_symlink,
+            is_hardlink=is_hardlink,
+            link_target=link_target,
+            errors=errors or [],
+        )
+        return e

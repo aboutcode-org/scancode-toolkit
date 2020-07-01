@@ -9,7 +9,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder",
@@ -21,7 +22,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder\\3folder",
@@ -33,7 +35,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder\\3folder\\cpio_relative.cpio",
@@ -45,7 +48,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder\\3folder\\relative_file",
@@ -57,7 +61,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder\\3folder\\relative_file~",
@@ -69,7 +74,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\2folder\\relative_file",
@@ -81,7 +87,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"..\\..\\relative_file",
@@ -93,6 +100,7 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   }
 ]

@@ -17,6 +17,5 @@
   "weird_names/winchr/ab>.t>":"Empty archive or incorrect arguments",
   "weird_names/winchr/ab?.t?":"Empty archive or incorrect arguments",
   "weird_names/winchr/ab\\.t\\":"Empty archive or incorrect arguments",
-  "weird_names/winchr/ab|.t|":"Empty archive or incorrect arguments",
-  "weird_names/man\\1":"Empty archive or incorrect arguments"
+  "weird_names/winchr/ab|.t|":"Empty archive or incorrect arguments"
 }
