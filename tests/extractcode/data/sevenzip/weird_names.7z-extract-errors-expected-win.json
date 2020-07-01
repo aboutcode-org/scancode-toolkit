@@ -106,8 +106,5 @@
   "weird_names\\winchr\\ab>.t>":"No file name extracted.",
   "weird_names\\winchr\\ab?.t?":"Empty archive or incorrect arguments",
   "weird_names\\winchr\\ab\\.t\\":"Empty archive or incorrect arguments",
-  "weird_names\\winchr\\ab|.t|":"Unknown extraction error",
-  "weird_names\\winchr":"Empty archive or incorrect arguments",
-  "weird_names\\win":"Empty archive or incorrect arguments",
-  "weird_names\\man\\1":"Empty archive or incorrect arguments"
+  "weird_names\\winchr\\ab|.t|":"Unknown extraction error"
 }

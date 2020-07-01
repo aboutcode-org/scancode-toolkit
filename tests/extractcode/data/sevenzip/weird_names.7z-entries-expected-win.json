@@ -9,7 +9,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\aux",
@@ -21,7 +22,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM1",
@@ -33,7 +35,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com1",
@@ -45,7 +48,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM2",
@@ -57,7 +61,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com2",
@@ -69,7 +74,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM3",
@@ -81,7 +87,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com3",
@@ -93,7 +100,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM4",
@@ -105,7 +113,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com4",
@@ -117,7 +126,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com5",
@@ -129,7 +139,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM5",
@@ -141,7 +152,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM6",
@@ -153,7 +165,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com6",
@@ -165,7 +178,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM7",
@@ -177,7 +191,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com7",
@@ -189,7 +204,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM8",
@@ -201,7 +217,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com8",
@@ -213,7 +230,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM9",
@@ -225,7 +243,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com9",
@@ -237,7 +256,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\con",
@@ -249,7 +269,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\CON",
@@ -261,7 +282,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT1",
@@ -273,7 +295,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt1",
@@ -285,7 +308,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT2",
@@ -297,7 +321,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt2",
@@ -309,7 +334,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt3",
@@ -321,7 +347,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT3",
@@ -333,7 +360,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt4",
@@ -345,7 +373,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT4",
@@ -357,7 +386,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt5",
@@ -369,7 +399,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT5",
@@ -381,7 +412,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt6",
@@ -393,7 +425,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT6",
@@ -405,7 +438,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT7",
@@ -417,7 +451,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt7",
@@ -429,7 +464,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT8",
@@ -441,7 +477,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt8",
@@ -453,7 +490,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT9",
@@ -465,7 +503,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt9",
@@ -477,7 +516,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\nul",
@@ -489,7 +529,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\NUL",
@@ -501,7 +542,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\prn",
@@ -513,7 +555,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\PRN",
@@ -525,7 +568,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\some 'file",
@@ -537,7 +581,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\some file",
@@ -549,7 +594,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\some \\file",
@@ -561,7 +607,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\some\"file",
@@ -573,7 +620,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\some\\\"file",
@@ -585,7 +633,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1\\..1.gz",
@@ -597,7 +646,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1\\[.1.gz",
@@ -609,7 +659,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1\\\\:.1.gz",
@@ -621,7 +672,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\aux.txt",
@@ -633,7 +685,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\AUX.txt",
@@ -645,7 +698,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM1.txt",
@@ -657,7 +711,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com1.txt",
@@ -669,7 +724,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com2.txt",
@@ -681,7 +737,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM2.txt",
@@ -693,7 +750,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com3.txt",
@@ -705,7 +763,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM3.txt",
@@ -717,7 +776,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM4.txt",
@@ -729,7 +789,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com4.txt",
@@ -741,7 +802,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM5.txt",
@@ -753,7 +815,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com5.txt",
@@ -765,7 +828,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM6.txt",
@@ -777,7 +841,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com6.txt",
@@ -789,7 +854,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM7.txt",
@@ -801,7 +867,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com7.txt",
@@ -813,7 +880,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM8.txt",
@@ -825,7 +893,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com8.txt",
@@ -837,7 +906,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\COM9.txt",
@@ -849,7 +919,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\com9.txt",
@@ -861,7 +932,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\con.txt",
@@ -873,7 +945,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\CON.txt",
@@ -885,7 +958,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt1.txt",
@@ -897,7 +971,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT1.txt",
@@ -909,7 +984,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt2.txt",
@@ -921,7 +997,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT2.txt",
@@ -933,7 +1010,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt3.txt",
@@ -945,7 +1023,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT3.txt",
@@ -957,7 +1036,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt4.txt",
@@ -969,7 +1049,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT4.txt",
@@ -981,7 +1062,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt5.txt",
@@ -993,7 +1075,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT5.txt",
@@ -1005,7 +1088,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT6.txt",
@@ -1017,7 +1101,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt6.txt",
@@ -1029,7 +1114,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT7.txt",
@@ -1041,7 +1127,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt7.txt",
@@ -1053,7 +1140,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT8.txt",
@@ -1065,7 +1153,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt8.txt",
@@ -1077,7 +1166,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\LPT9.txt",
@@ -1089,7 +1179,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\lpt9.txt",
@@ -1101,7 +1192,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\NUL.txt",
@@ -1113,7 +1205,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\nul.txt",
@@ -1125,7 +1218,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\PRN.txt",
@@ -1137,7 +1231,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win\\prn.txt",
@@ -1149,7 +1244,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1\\:\\.1",
@@ -1161,7 +1257,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1\\[\\:*.1",
@@ -1173,7 +1270,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab\t.t",
@@ -1185,31 +1283,34 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab\n.t",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "size":0,
+    "date":null,
     "is_file":true,
     "is_dir":false,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab\n.t",
-    "size":"1",
-    "date":"2017-01-03 12:38:03",
+    "size":0,
+    "date":null,
     "is_file":true,
     "is_dir":false,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab\".t\"",
@@ -1221,7 +1322,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab*.t*",
@@ -1233,7 +1335,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab:.t:",
@@ -1245,7 +1348,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab<.t<",
@@ -1257,7 +1361,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab>.t>",
@@ -1269,7 +1374,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab?.t?",
@@ -1281,7 +1387,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab\\.t\\",
@@ -1293,7 +1400,8 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr\\ab|.t|",
@@ -1305,54 +1413,59 @@
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\winchr",
     "size":"0",
     "date":"2017-01-03 12:38:03",
-    "is_file":true,
-    "is_dir":false,
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\win",
     "size":"0",
     "date":"2017-01-03 12:35:05",
-    "is_file":true,
-    "is_dir":false,
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names\\man\\1",
     "size":"0",
     "date":"2016-12-28 20:35:29",
-    "is_file":true,
-    "is_dir":false,
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   },
   {
     "path":"weird_names",
     "size":"0",
     "date":"2017-01-03 12:46:20",
-    "is_file":true,
-    "is_dir":false,
+    "is_file":false,
+    "is_dir":true,
     "is_special":false,
     "is_hardlink":false,
     "is_symlink":false,
     "is_broken_link":false,
-    "link_target":null
+    "link_target":null,
+    "errors":[]
   }
 ]

@@ -64,8 +64,9 @@ class TestSevenZip(FileBasedTesting):
         if isinstance(results, list):
             for res in results:
                 # remove time from date/time stamp
-                if 'date' in res:
-                    res['date'] = res['date'].partition(' ')[0]
+                dt = res.get('date') or None
+                if dt:
+                    res['date'] = dt.partition(' ')[0]
 
     def test_get_7z_errors_password_protected(self):
             test = '''
