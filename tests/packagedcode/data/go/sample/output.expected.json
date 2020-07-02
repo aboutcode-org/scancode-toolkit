@@ -1,0 +1,101 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.2",
+      "options": {
+        "input": [
+          "go.mod"
+        ],
+        "--json-pp": "output.expected.json",
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-06-29T015258.034475",
+      "end_timestamp": "2020-06-29T015259.003571",
+      "duration": 0.9691345691680908,
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "go.mod",
+      "type": "file",
+      "packages": [
+        {
+          "type": "gopkg",
+          "namespace": null,
+          "name": "repr",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Go",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://github.com/alecthomas/sample",
+          "download_url": "https://github.com/alecthomas/sample/archive/master.zip",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/alecthomas/sample",
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [
+            {
+              "purl": "pkg:gopkg/go-spew@v1.1.1",
+              "requirement": "v1.1.1",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:gopkg/testify@v1.4.0",
+              "requirement": "v1.4.0",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:gopkg/testify@v1.4.0",
+              "requirement": "v1.4.0",
+              "scope": "exclude",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            },
+            {
+              "purl": "pkg:gopkg/repr@v0.0.0",
+              "requirement": "v0.0.0",
+              "scope": "exclude",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true
+            }
+          ],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:gopkg/repr",
+          "repository_homepage_url": "https://github.com/alecthomas/sample",
+          "repository_download_url": "https://github.com/alecthomas/sample/archive/master.zip",
+          "api_data_url": null
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}

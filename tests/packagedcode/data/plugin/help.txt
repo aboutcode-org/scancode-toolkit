@@ -115,6 +115,11 @@ Package: gem
   filetypes: .tar, tar archive
 
 --------------------------------------------
+Package: gopkg
+  class: packagedcode.golang:GolangPackage
+  metafiles: go.mod
+
+--------------------------------------------
 Package: haxe
   class: packagedcode.haxe:HaxePackage
   metafiles: haxelib.json
