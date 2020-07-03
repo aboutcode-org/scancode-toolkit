@@ -1821,19 +1821,13 @@ class TestSevenZip(BaseArchiveTestCase):
     def test_extract_7z_with_broken_archive_with7z(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        if on_mac:
-            msg = 'Incorrect 7zip listing with multiple headers'
-        else:
-            msg = 'There are data after the end of archive'
+        msg = 'There are data after the end of archive'
         self.assertExceptionContains(msg, sevenzip.extract, test_file, test_dir)
 
     def test_extract_7z_with_broken_archive_does_not_fail_when_using_fallback(self):
         test_file = self.get_test_loc('archive/7z/corrupted7z.7z')
         test_dir = self.get_temp_dir()
-        if on_mac:
-            msg = 'Incorrect 7zip listing with multiple headers'
-        else:
-            msg = 'There are data after the end of archive'
+        msg = 'There are data after the end of archive'
         self.assertExceptionContains(msg, archive.extract_7z, test_file, test_dir)
 
     def test_extract_7z_with_non_existing_archive(self):
@@ -2450,26 +2444,25 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
     def test_extract_7zip_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         expected_exception = {
-            "weird_names/some 'file": 'Empty archive or incorrect arguments',
-            'weird_names/some file': 'Empty archive or incorrect arguments',
-            'weird_names/some \\file': 'Empty archive or incorrect arguments',
-            'weird_names/some"file': 'Empty archive or incorrect arguments',
-            'weird_names/some\\"file': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1/..1.gz': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1/[.1.gz': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1/\\:.1.gz': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1/:\\.1': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1/[\\:*.1': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab\t.t': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab\n.t': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab".t"': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab*.t*': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab<.t<': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab>.t>': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab?.t?': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab\\.t\\': 'Empty archive or incorrect arguments',
-            'weird_names/winchr/ab|.t|': 'Empty archive or incorrect arguments',
-            'weird_names/man\\1': 'Empty archive or incorrect arguments'
+            'weird_names/man\\1/..1.gz': u'Empty archive or incorrect arguments',
+            'weird_names/man\\1/:\\.1': u'Empty archive or incorrect arguments',
+            'weird_names/man\\1/[.1.gz': u'Empty archive or incorrect arguments',
+            'weird_names/man\\1/[\\:*.1': u'Empty archive or incorrect arguments',
+            'weird_names/man\\1/\\:.1.gz': u'Empty archive or incorrect arguments',
+            "weird_names/some 'file": u'Empty archive or incorrect arguments',
+            'weird_names/some \\file': u'Empty archive or incorrect arguments',
+            'weird_names/some file': u'Empty archive or incorrect arguments',
+            'weird_names/some"file': u'Empty archive or incorrect arguments',
+            'weird_names/some\\"file': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab\t.t': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab\n.t': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab".t"': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab*.t*': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab<.t<': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab>.t>': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab?.t?': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab\\.t\\': u'Empty archive or incorrect arguments',
+            'weird_names/winchr/ab|.t|': u'Empty archive or incorrect arguments',
         }
 
         self.check_extract_weird_names(
@@ -2477,7 +2470,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
     def test_extract_ar_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
@@ -2502,7 +2495,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
     def test_extract_cpio_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
@@ -2533,19 +2526,23 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
     @pytest.mark.xfail
     def test_extract_rar_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract_weird_names(
-            sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
+            sevenzip.extract,
+            test_file,
+            expected_warnings=[],
+            expected_suffix='7zip',
+            regen=False)
 
     def test_extract_iso_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         expected_exception = {
             'weird_names/man_1/[.1.gz': 'Empty archive or incorrect arguments',
-            'weird_names/man_1/[___.1': 'Empty archive or incorrect arguments', 
+            'weird_names/man_1/[___.1': 'Empty archive or incorrect arguments',
             "weird_names/some 'file": 'Empty archive or incorrect arguments',
             'weird_names/some _file': 'Empty archive or incorrect arguments',
             'weird_names/some file': 'Empty archive or incorrect arguments',
@@ -2562,7 +2559,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
     def test_extract_tar_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
@@ -2593,7 +2590,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
     def test_extract_zip_with_weird_filenames_with_sevenzip_macos(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
@@ -2624,7 +2621,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWith
             test_file,
             expected_warnings=[],
             expected_suffix='7zip',
-            expected_exception=expected_exception)
+            expected_exception=expected_exception, regen=False)
 
 
 @pytest.mark.skipif(not on_windows, reason='Run only on Windows because of specific test expectations.')
