@@ -148,13 +148,13 @@ def build_package(podspec_data):
 
 
 person_parser = re.compile(
-    r'^(?P<name>[a-zA-Z0-9\s]+)'
+    r'^(?P<name>[\w\s(),-_.,]+)'
     r'=>'
     r'(?P<email>[\S+]+$)'
 ).match
 
 person_parser_only_name = re.compile(
-    r'^(?P<name>[a-zA-Z0-9\s]+)'
+    r'^(?P<name>[\w\s(),-_.,]+)'
 ).match
 
 
