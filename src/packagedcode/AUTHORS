@@ -56,7 +56,7 @@ Other contributors, listed alphabetically, are:
 * Sven Efftinge -- Xtend lexer
 * Artem Egorkine -- terminal256 formatter
 * Matthew Fernandez -- CAmkES lexer
-* Paweł Fertyk -- GDScript lexer
+* Paweł Fertyk -- GDScript lexer, HTML formatter improvements
 * Michael Ficarra -- CPSA lexer
 * James H. Fisher -- PostScript lexer
 * William S. Fulton -- SWIG lexer
