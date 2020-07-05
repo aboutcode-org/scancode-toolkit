@@ -20,4 +20,4 @@ build: off
 
 test_script:
     - python -c "import sys;print(sys.getdefaultencoding())"
-    - cmd: "configure --python %PYTHON%\\python.exe && Scripts\pytest -vvs --reruns 3 tests/scancode"
+    - cmd: "configure --python %PYTHON%\\python.exe && Scripts\\pytest -vvs --reruns 3 tests\\scancode"
