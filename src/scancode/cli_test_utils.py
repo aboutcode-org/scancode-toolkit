@@ -237,6 +237,8 @@ def streamline_headers(headers):
         hle.pop('start_timestamp', None)
         hle.pop('end_timestamp', None)
         hle.pop('duration', None)
+        header= hle.get('options', {})
+        header.pop('--verbose', None)
         streamline_errors(hle['errors'])
 
 
