@@ -1,11 +1,12 @@
+
+################################################################################
+# We use Travis to run minimal smoke tests suites on Pythons 2.7 and 3.6
+# on macOS and Linux
+# We also run the documentation build and the ABOUT file checks
+################################################################################
+
 matrix:
   include:
-    - os: osx
-      env: 
-        - PYTHON="3.6.8"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: generic
-      python:
     - os: osx
       env: 
         - PYTHON="3.6.8"
@@ -16,48 +17,24 @@ matrix:
     - os: osx
       env: 
         - PYTHON="2.7.15"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: generic
-      python:
-    - os: osx
-      env: 
-        - PYTHON="2.7.15"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: generic
       python:
 
     - os: linux
       sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: python
-      python: "2.7"
-      dist: xenial
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: python
       python: "2.7"
       dist: xenial
 
     - os: linux
       sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: python
-      python: "2.7"
-      dist: bionic
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml tests/scancode"
+      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: python
       python: "2.7"
       dist: bionic
 
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: python
-      python: "3.6"
-      dist: xenial
     - os: linux
       sudo: required
       env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
@@ -65,12 +42,6 @@ matrix:
       python: "3.6"
       dist: xenial
 
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 --cov=src --cov-report=term --cov-report=xml -n2 --ignore=tests/scancode"
-      language: python
-      python: "3.6"
-      dist: bionic
     - os: linux
       sudo: required
       env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
@@ -99,6 +70,9 @@ matrix:
         # This checks .ABOUT file links using `about check`
         - source bin/activate
         - ./bin/about check thirdparty/
+        - ./bin/about check src/
+        - ./bin/about check etc/
+        - ./bin/about check scancode-toolkit.ABOUT
       language: python
       python: "3.6"
       dist: bionic
@@ -114,8 +88,6 @@ matrix:
         - awesome_bot .github/ISSUE_TEMPLATE/*.md --allow-redirect --allow-dupe --skip-save-results
         # This checks for broken links inside .rst files at Project Root, like README.rst
         - awesome_bot *.rst --allow-redirect --allow-dupe --skip-save-results
-        # This checks for broken links inside README.md files of plugins/plugins-builtin folders.
-        - awesome_bot */**/*.md --allow-redirect --allow-dupe --skip-save-results
         # This checks for broken links inside Thirdparty .ABOUT files
         - awesome_bot thirdparty/*.ABOUT --allow-redirect --allow-dupe --skip-save-results
 
@@ -142,11 +114,6 @@ script:
   # - ./bin/py.test -n 2 -vvs --cov=src tests/scancode
   # - echo $TEST_SUITE
   - $TEST_SUITE
-
-# Pay attention to both calls below. They will succeed even if there
-# is no coverage information or connection to reporting website fails.
-after_success:
-  - ./bin/codecov
 
 notifications:
   irc:
