@@ -31,7 +31,6 @@ import io
 import json
 import logging
 import os
-import re
 import sys
 
 import attr
@@ -55,6 +54,14 @@ from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 from packageurl import PackageURL
+
+try:
+    # Python 2
+    unicode = unicode  # NOQA
+
+except NameError:  # pragma: nocover
+    # Python 3
+    unicode = str  # NOQA
 
 
 """
@@ -260,7 +267,7 @@ def parse_setup_py(location):
                 if isinstance(kw.value, ast.Str):
                     setup_args[arg_name] = kw.value.s
                 if isinstance(kw.value, ast.List):
-                     # We collect the elements of a list if the element is not a function call
+                    # We collect the elements of a list if the element is not a function call
                     setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     description = build_description(
@@ -357,9 +364,9 @@ def parse_metadata(location):
                 other_classifiers.append(classifier)
 
     declared_license = OrderedDict()
-    license = infos.get('license')
-    if license:
-        declared_license['license'] = license
+    lic = infos.get('license')
+    if lic:
+        declared_license['license'] = lic
     if license_classifiers:
         declared_license['classifiers'] = license_classifiers
 
@@ -443,15 +450,24 @@ def parse_source_distribution(location):
 
 def compute_normalized_license(declared_license):
     """
-    Return a normalized license expression string detected from a list of
+    Return a normalized license expression string detected from a mapping or list of
     declared license items.
     """
     if not declared_license:
         return
 
+    if isinstance(declared_license, dict):
+        values = list(declared_license.values())
+    elif isinstance(declared_license, list):
+        values = list(declared_license)
+    elif isinstance(declared_license, (str, unicode,)):
+        values = [declared_license]
+    else:
+        return
+
     detected_licenses = []
 
-    for value in declared_license.values():
+    for value in values:
         if not value:
             continue
         # The value could be a string or a list
@@ -460,6 +476,7 @@ def compute_normalized_license(declared_license):
             if detected_license:
                 detected_licenses.append(detected_license)
         else:
+            # this is a list
             for declared in value:
                 detected_license = models.compute_normalized_license(declared)
                 if detected_license:

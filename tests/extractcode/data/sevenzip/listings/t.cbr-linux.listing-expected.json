@@ -1,0 +1,28 @@
+[
+  {
+    "path":"t/t.txt",
+    "size":"2",
+    "date":"2010-02-19 07:48:58",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  },
+  {
+    "path":"t",
+    "size":"0",
+    "date":"2010-02-19 07:49:56",
+    "is_file":false,
+    "is_dir":true,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  }
+]

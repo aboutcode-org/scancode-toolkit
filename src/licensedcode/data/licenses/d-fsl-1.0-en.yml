@@ -20,6 +20,5 @@ ignorable_holders:
     - Ministry of Science and Research, State of North-Rhine Westphalia
 ignorable_urls:
     - http://www.d-fsl.org/
-    - http://www.d/
     - http://www.fsf.org/licenses/gpl
     - http://www.ifross.de/

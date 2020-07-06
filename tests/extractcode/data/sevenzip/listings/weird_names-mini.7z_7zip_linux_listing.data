@@ -1,0 +1,181 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 799 bytes (1 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.7z
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.7z
+Type = 7z
+Physical Size = 799
+Headers Size = 657
+Method = LZMA:16
+Solid = +
+Blocks = 1
+
+----------
+Path = weird_names/man\1/[\:*.1
+Size = 20
+Packed Size = 
+Modified = 2016-12-28 20:32:55
+Attributes = A_ -rw-r--r--
+CRC = C7CF087F
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab	.t	
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab
+.t
+
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab.t
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab".t"
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab*.t*
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab:.t:
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab<.t<
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab>.t>
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab?.t?
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab\.t\
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr/ab|.t|
+Size = 1
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+Attributes = A_ -rw-rw-r--
+CRC = 1C630B12
+Encrypted = -
+Method = LZMA:16
+Block = 0
+
+Path = weird_names/winchr
+Size = 0
+Packed Size = 0
+Modified = 2017-01-03 12:38:03
+Attributes = D_ drwxrwxr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = weird_names/win
+Size = 0
+Packed Size = 0
+Modified = 2017-01-03 12:35:05
+Attributes = D_ drwxrwxr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = weird_names/man\1
+Size = 0
+Packed Size = 0
+Modified = 2016-12-28 20:35:29
+Attributes = D_ drwxrwxr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+
+Path = weird_names
+Size = 0
+Packed Size = 0
+Modified = 2017-01-03 12:46:20
+Attributes = D_ drwxrwxr-x
+CRC = 
+Encrypted = -
+Method = 
+Block = 
+

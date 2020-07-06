@@ -301,9 +301,9 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     # Since the gem spec doc is not clear https://guides.rubygems.org
     # /specification-reference/#licenseo, we will treat a list of licenses and a
     # conjunction for now (e.g. AND)
-    license = gem_data.get('license')
+    lic = gem_data.get('license')
     licenses = gem_data.get('licenses')
-    declared_license = licenses_mapper(license, licenses)
+    declared_license = licenses_mapper(lic, licenses)
 
     package = RubyGem(
         name=name,
@@ -384,18 +384,19 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     return package
 
 
-def licenses_mapper(license, licenses):
+def licenses_mapper(lic, lics):
     """
-    Return declared_licenses list based on the `license` and
-    `licenses` values found in a package.
+    Return a `declared_licenses` list based on the `lic` license and
+    `lics` licenses values found in a package.
     """
     declared_licenses = []
-    if license:
+    if lic:
         declared_licenses.append(str(license).strip())
-    if licenses:
-        for lic in licenses:
-            if lic and lic.strip():
-                declared_licenses.append(lic.strip())
+    if lics:
+        for lic in lics:
+            lic = lic.strip()
+            if lic:
+                declared_licenses.append(lic)
     return declared_licenses
 
 
@@ -756,10 +757,12 @@ def build_packages_from_gemfile_lock(gemfile_lock):
                 is_resolved=True,
             )
         )
+
     yield RubyGem(dependencies=package_dependencies)
+
     for _, gem in gemfile_lock.all_gems.items():
         deps = []
-        for dep_name, dep in gem.dependencies.items():
+        for _dep_name, dep in gem.dependencies.items():
             deps.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -774,6 +777,7 @@ def build_packages_from_gemfile_lock(gemfile_lock):
                     is_resolved=True,
                 )
             )
+
         yield RubyGem(
             name=gem.name,
             version=gem.version,
