@@ -40,15 +40,15 @@ abandoned
 academia-sinicai-xml-now	
 academia_sinica_xml_now	
 academic	
-academic-2.0	
-academic-2.0 or lgpl-2+	
-academic-2.1	
-academic free license 2.1	
+academic-2.0	afl-2.0
+academic-2.0 or lgpl-2+	afl-2.0 OR lgpl-2.0-plus
+academic-2.1	afl-2.1
+academic free license 2.1	afl-2.1
 academic free license 2.1 (apache-2.0) and revised bsd	
 academic free license >= 2.1, modified bsd license	
-academic free license version 3.0	
+academic free license version 3.0	afl-3.0
 academic or lgpl-2+	
-academics-only	
+academics-only	proprietary
 ac-bsd	
 ac-cxx-license	
 ac.earth	
@@ -8827,16 +8827,16 @@ zope-2.0
 zope-2.1	
 zope public license 2.1	
 zope public license (zpl) version 2.1	
-zpl-1.0	
-zpl-2	
-zpl 2.0	
-zpl-2.0	
-zpl 2.1	
-zpl-2.1	
+zpl-1.0	zpl-1.0
+zpl-2	zpl-2.0
+zpl 2.0	zpl-2.0
+zpl-2.0	zpl-2.0
+zpl 2.1	zpl-2.1
+zpl-2.1	zpl-2.1
 zpl 2.1 or public-domain	
 zpl-2 and expat	
 zpl-like	
 zpu-bsd	
 zpu-freebsd	
 zsh	
-一般利用者向けipaフォント使用許諾契約書（エンド・ユーザ・ライセンス）	
+一般利用者向けipaフォント使用許諾契約書（エンド・ユーザ・ライセンス）	ipa-font
