@@ -135,6 +135,13 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
     detected_licenses = []
     copyrights = []
 
+#     debug on Python3
+#     try:
+#         deco = fix_copyright(deco)
+#     except Exception as e:
+#         # debug issues
+#         raise Exception(copyright_file) from e
+
     deco = fix_copyright(deco)
 
     licensing = Licensing()
@@ -240,7 +247,18 @@ def is_debian_packaging(paragraph):
     """
     return (
         isinstance(paragraph, CopyrightFilesParagraph)
-        and paragraph.files == 'debian/*'
+        and paragraph.files == ['debian/*']
+    )
+
+
+def is_primary_license_paragraph(paragraph):
+    """
+    Return True if the `paragraph` is a CopyrightFilesParagraph that contains
+    the primary license.
+    """
+    return (
+        isinstance(paragraph, CopyrightFilesParagraph)
+        and paragraph.files == ['*']
     )
 
 
@@ -253,11 +271,11 @@ def fix_copyright(debian_copyright):
     for paragraph in debian_copyright.paragraphs:
         if not hasattr(paragraph, 'license'):
             continue
-
-        if not paragraph.license:
+        plicense = paragraph.license 
+        if not plicense:
             continue
 
-        license_name = paragraph.license.name
+        license_name = plicense.name
         if not license_name:
             continue
 
@@ -280,13 +298,13 @@ def fix_copyright(debian_copyright):
             'gnu lesser general public license 2.1 as published by the',
         )
         if license_name_low.startswith(NOT_A_LICENSE_NAME):
-            text = license.text
+            text = plicense.text
             if text:
                 text = '\n'.join([license_name, text])
             else:
                 text = license_name
-            license.name = None
-            license.text = text
+            paragraph.license.name = None
+            paragraph.license.text = text
 
     return debian_copyright
 
