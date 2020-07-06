@@ -28,28 +28,28 @@
     "root_path": null,
     "dependencies": [
       {
-        "purl": "pkg:gopkg/repr@v0.0.0-20181024024818-d37bc2a10ba1",
+        "purl": "pkg:gopkg/repr",
         "requirement": "v0.0.0-20181024024818-d37bc2a10ba1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/go-spew@v1.1.1",
+        "purl": "pkg:gopkg/go-spew",
         "requirement": "v1.1.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/testify@v1.4.0",
+        "purl": "pkg:gopkg/testify",
         "requirement": "v1.4.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,

@@ -28,44 +28,44 @@
     "root_path": null,
     "dependencies": [
       {
-        "purl": "pkg:gopkg/template@v0.0.0-20160405071501-a0175ee3bccc",
+        "purl": "pkg:gopkg/template",
         "requirement": "v0.0.0-20160405071501-a0175ee3bccc",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/units@v0.0.0-20151022065526-2efee857e7cf",
+        "purl": "pkg:gopkg/units",
         "requirement": "v0.0.0-20151022065526-2efee857e7cf",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/go-spew@v1.1.1",
+        "purl": "pkg:gopkg/go-spew",
         "requirement": "v1.1.1",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/go-difflib@v1.0.0",
+        "purl": "pkg:gopkg/go-difflib",
         "requirement": "v1.0.0",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       },
       {
-        "purl": "pkg:gopkg/testify@v1.2.2",
+        "purl": "pkg:gopkg/testify",
         "requirement": "v1.2.2",
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true
+        "is_resolved": false
       }
     ],
     "contains_source_code": null,
