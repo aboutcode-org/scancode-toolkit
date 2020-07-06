@@ -88,8 +88,6 @@ matrix:
         - awesome_bot .github/ISSUE_TEMPLATE/*.md --allow-redirect --allow-dupe --skip-save-results
         # This checks for broken links inside .rst files at Project Root, like README.rst
         - awesome_bot *.rst --allow-redirect --allow-dupe --skip-save-results
-        # This checks for broken links inside Thirdparty .ABOUT files
-        - awesome_bot thirdparty/*.ABOUT --allow-redirect --allow-dupe --skip-save-results
 
 addons:
   homebrew:
