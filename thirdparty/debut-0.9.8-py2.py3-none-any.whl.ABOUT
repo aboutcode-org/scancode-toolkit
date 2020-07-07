@@ -1,0 +1,7 @@
+about_resource: debut-0.9.8-py2.py3-none-any.whl
+name: debut
+version: 0.9.8
+download_url: https://files.pythonhosted.org/packages/44/c3/b63fe5a167e4b8317d2bc7a3eb5d75123607e9fb53f0652e2bc8e61cd3e5/debut-0.9.8-py2.py3-none-any.whl
+checksum_md5: 37a77e6af0fa65d2263a0d8a045d2aed
+checksum_sha1: 93610195d1a513fbc2b7534dc5d50b76d727685a
+package_url: pkg:pypi/debut@0.9.8
