@@ -36,21 +36,13 @@ import re
 import subprocess
 
 
-os.chdir(os.pardir) #go to etc
-os.chdir(os.pardir)  # go to scancode-toolkit
-cwd = os.getcwd()
-print("Current working directory:", cwd) 
-fp = open("requirements.txt", "wb")
-fp.close()
-
-
 def is_package_exist_with_hashes(package_name,hash_of_file):
     """ Check if any line in the file contains package with same hashes """
     # Open the file in read only mode
-    line_with_hash = package_name + " \\" + "\n" + "    --hash=sha256:"+ hash_of_file
-    with open("requirements.txt", 'r') as read_obj:
+    line_with_hash = "{} \\\n    --hash=sha256:{}".format(package_name,hash_of_file)
+    with open('requirements.txt') as file:
         # Read all lines in the file one by one
-        for line in read_obj:
+        for line in file:
             # For each line, check if line contains the package with same hashes
             if line_with_hash in line:
                 return True
@@ -59,10 +51,10 @@ def is_package_exist_with_hashes(package_name,hash_of_file):
 def is_package_exist_without_hashes(package_name):
     """ Check if any line in the file contains package without same hash """
     # Open the file in read only mode
-    line_with_hash = package_name + " \\" + "\n" 
-    with open("requirements.txt", 'r') as read_obj:
+    line_with_hash = "{} \\\n".format(package_name) 
+    with open('requirements.txt') as file:
         # Read all lines in the file one by one
-        for line in read_obj:
+        for line in file:
             # For each line, check if line contains the string
             if line_with_hash in line:
                 return True
@@ -70,22 +62,22 @@ def is_package_exist_without_hashes(package_name):
 
 
 def add_package(package_name,hash_of_file):
-    with open("requirements.txt", "a") as file_object:
+    with open('requirements.txt', 'a') as file:
     # Append package with hashes at the end of file
-        line = package_name + " \\" + "\n" + "    --hash=sha256:"+ hash_of_file + " \n"
-        file_object.write(line)
+        line = "{} \\\n    --hash=sha256:{}\n".format(package_name,hash_of_file)
+        file.write(line)
 
 def append_requirement_file(package_name,hash_of_file):
     if is_package_exist_with_hashes(package_name,hash_of_file):
         return
     else:
-        inputfile = open("requirements.txt", 'r').readlines()
-        write_file = open("requirements.txt",'w')
+        inputfile = open('requirements.txt').readlines()
+        write_file = open('requirements.txt','w')
         for line in inputfile:
             write_file.write(line)
-            lion= package_name + " \\" + "\n"
-            if lion in line:
-                new_line = "    --hash=sha256:"+ hash_of_file + " \\"        
+            current_line = "{} \\\n".format(package_name)
+            if current_line in line:
+                new_line = "    --hash=sha256:{} \\".format(hash_of_file)        
                 write_file.write(new_line + "\n") 
         write_file.close()
         
@@ -108,10 +100,14 @@ def hash_of_file(path):
     return hash.hexdigest()
 
 def main():
+    os.chdir(os.pardir) #go to etc
+    os.chdir(os.pardir)  # go to scancode-toolkit
+    cwd = os.getcwd()
+    print("Current working directory:", cwd) 
+    fp= open('requirements.txt','w') #Create empty file because it must exits before opening the file in read mode.
     for subdir, dirs, files in os.walk(cwd+"/thirdparty"):
         for filename in files:
             filepath = subdir + os.sep + filename
-            print(filename)
             if filepath.endswith(".whl") and (fnmatch.fnmatchcase(filename, "*py3*") or fnmatch.fnmatchcase(filename, "*cp36*")):
                 name = filename.split('-')[0]
                 version = filename.split('-')[1]
@@ -133,6 +129,7 @@ def main():
                 if is_package_exist_without_hashes(package_name):
                     append_requirement_file(package_name,hs)       
                 else: add_package(package_name,hs)
+    fp.close()
 
 if __name__ == '__main__':
     main()
