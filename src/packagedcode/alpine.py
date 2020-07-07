@@ -34,7 +34,7 @@ from packagedcode import models
 @attr.s()
 class AlpinePackage(models.Package):
     extensions = ('.apk',)
-    default_type = 'alp'
+    default_type = 'alpine'
 
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
@@ -80,5 +80,5 @@ def parse_alpine_installed_file(location):
     if not is_alpine_installed_file(location):
         return
 
-    for alpine_pkg_data in debcon.get_paragraphs_data_from_file(location):
+    for alpine_pkg_data in debcon.get_paragraphs_data_from_file(location, preserve_keys_case=True):
         yield build_package(alpine_pkg_data)
