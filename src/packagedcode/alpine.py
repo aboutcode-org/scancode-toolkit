@@ -22,6 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+import os
+
 import attr
 from debut import debcon
 from six import string_types
@@ -82,3 +84,14 @@ def parse_alpine_installed_file(location):
 
     for alpine_pkg_data in debcon.get_paragraphs_data_from_file(location, preserve_keys_case=True):
         yield build_package(alpine_pkg_data)
+
+
+def get_installed_packages(root_dir):
+    """
+    Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
+    (path, md5sum) tuples.
+    """
+    installed_file_loc = os.path.join(root_dir, 'lib/apk/db/installed')
+
+    for package in parse_alpine_installed_file(installed_file_loc):
+        yield package
