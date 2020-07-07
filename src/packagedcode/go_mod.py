@@ -111,7 +111,7 @@ class GoMod(object):
 
     def parse_gomod(self, location):
         """
-        Return a dictionary contains all the important go.mod file data.
+        Return a dictionary containing all the important go.mod file data.
         """
         with io.open(location, encoding='utf-8', closefd=True) as data:
             lines = data.readlines()
