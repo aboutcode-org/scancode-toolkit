@@ -505,6 +505,19 @@ class MavenPom(pom.Pom):
                 resolved_deps.append(((group, artifact, version,), required))
             self._dependencies[scope] = resolved_deps
 
+        for (group, artifact), (version, scope, optional) in self.dependency_management.items():
+            group = self._replace_properties(group, properties)
+            artifact = self._replace_properties(artifact, properties)
+            version = self._replace_properties(version, properties)
+            required = not optional
+            resolved_dep = (group, artifact, version,), required
+            if scope in self.dependencies:
+                scope_deps = self._dependencies[scope]
+                # TODO: Check we don't insert duplicates
+                scope_deps.append(resolved_dep)
+            else:
+                self._dependencies[scope] = [resolved_dep]
+
         if TRACE:
             logger.debug('MavenPom.resolve: artifactId after resolve: {}'.format(self.artifact_id))
 
