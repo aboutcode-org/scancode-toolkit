@@ -86,7 +86,7 @@ def parse_alpine_installed_file(location):
         yield build_package(alpine_pkg_data)
 
 
-def get_installed_packages(root_dir):
+def get_installed_packages(root_dir, **kwargs):
     """
     Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
     (path, md5sum) tuples.
