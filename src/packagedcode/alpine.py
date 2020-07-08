@@ -30,13 +30,20 @@ from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
+from commoncode.datautils import List
 from packagedcode import models
+from packagedcode.debian import InstalledFile
 
 
 @attr.s()
 class AlpinePackage(models.Package):
     extensions = ('.apk',)
     default_type = 'alpine'
+
+    installed_files = List(
+        item_type=InstalledFile,
+        label='installed files',
+        help='List of files installed by this package.')
 
     def compute_normalized_license(self):
         return models.compute_normalized_license(self.declared_license)
