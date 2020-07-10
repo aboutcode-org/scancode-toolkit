@@ -191,7 +191,7 @@ def parse_dependencies(location, package):
 
 def file_type(file_name):
     """
-    Return a renamed filename.
+    Return a type of dependency file.
     """
     req_file_types = ('.txt', '.in')
     if file_name.endswith(req_file_types):
