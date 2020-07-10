@@ -28,9 +28,10 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 import os
-import pytest
 from unittest.case import skipIf
 from unittest.case import expectedFailure
+
+import pytest
 
 from commoncode.system import on_windows
 from packagedcode.models import DependentPackage
@@ -310,6 +311,12 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/sample7/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_with_dparse(self):
+        test_file = self.get_test_loc('pypi/dparse/requirements.txt')
+        dependencies = pypi.parse_with_dparse(test_file)
+        assert [DependentPackage(purl='pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+
 
 FILENAME_LIST = [
     'requirements.txt',
@@ -329,5 +336,5 @@ FILENAME_LIST = [
 class TestFiletype(object):
     @pytest.mark.parametrize('filename', FILENAME_LIST)
     def test_file_type(self, filename):
-        filename = pypi.file_type(filename)
+        filename = pypi.get_dependency_type(filename)
         assert filename == 'requirements.txt'

@@ -189,15 +189,18 @@ def parse_dependencies(location, package):
             package.dependencies = dependencies
 
 
-def file_type(file_name):
-    """
-    Return a type of dependency file.
-    """
-    req_file_types = ('.txt', '.in')
-    if file_name.endswith(req_file_types):
-        file_name = 'requirements.txt'
+dependency_type_by_extensions = {
+    ('.txt', '.in'): 'requirements.txt',
+}
 
-    return file_name
+
+def get_dependency_type(file_name, dependency_type_by_extensions=dependency_type_by_extensions):
+    """
+    Return the type of a dependency as a string or None given a `file_name` string.
+    """
+    for extensions, dependency_type in dependency_type_by_extensions.items():
+        if file_name.endswith(extensions):
+            return dependency_type
 
 
 def parse_with_dparse(location):
@@ -206,7 +209,7 @@ def parse_with_dparse(location):
         return
     file_name = fileutils.file_name(location)
 
-    file_name = file_type(file_name)
+    file_name = get_dependency_type(file_name)
 
     if file_name not in (filetypes.requirements_txt,
                          filetypes.conda_yml,
@@ -288,7 +291,7 @@ def parse_setup_py(location):
                 if isinstance(kw.value, ast.Str):
                     setup_args[arg_name] = kw.value.s
                 if isinstance(kw.value, ast.List):
-                     # We collect the elements of a list if the element is not a function call
+                    # We collect the elements of a list if the element is not a function call
                     setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     description = build_description(
@@ -370,7 +373,7 @@ def parse_metadata(location):
         parties.append(models.Party(type=models.party_person, name=name, role='contact'))
 
     description = build_description(
-        infos.get('summary') ,
+        infos.get('summary'),
         infos.get('description')
     )
 
