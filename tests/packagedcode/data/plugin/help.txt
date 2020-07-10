@@ -115,7 +115,7 @@ Package: gem
   filetypes: .tar, tar archive
 
 --------------------------------------------
-Package: gopkg
+Package: golang
   class: packagedcode.golang:GolangPackage
   metafiles: go.mod
 

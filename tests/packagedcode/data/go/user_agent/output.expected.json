@@ -1,6 +1,6 @@
 [
   {
-    "type": "gopkg",
+    "type": "golang",
     "namespace": null,
     "name": "user_agent",
     "version": null,
@@ -11,15 +11,15 @@
     "release_date": null,
     "parties": [],
     "keywords": [],
-    "homepage_url": "https://github.com/mssola/user_agent",
-    "download_url": "https://github.com/mssola/user_agent/archive/master.zip",
+    "homepage_url": "https://pkg.go.dev/github.com/mssola/user_agent",
+    "download_url": null,
     "size": null,
     "sha1": null,
     "md5": null,
     "sha256": null,
     "sha512": null,
     "bug_tracking_url": null,
-    "code_view_url": "https://github.com/mssola/user_agent",
+    "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
     "license_expression": null,
@@ -29,9 +29,9 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
-    "purl": "pkg:gopkg/user_agent",
-    "repository_homepage_url": "https://github.com/mssola/user_agent",
-    "repository_download_url": "https://github.com/mssola/user_agent/archive/master.zip",
+    "purl": "pkg:golang/user_agent",
+    "repository_homepage_url": "https://pkg.go.dev/github.com/mssola/user_agent",
+    "repository_download_url": null,
     "api_data_url": null
   }
 ]

@@ -43,6 +43,20 @@ from packagedcode import models
 """
 Handle Go packages including go.mod and go.sum files.
 """
+"""
+Sample go.mod file:
+module github.com/alecthomas/participle
+require (
+	github.com/alecthomas/repr v0.0.0-20181024024818-d37bc2a10ba1
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/stretchr/testify v1.4.0
+)
+go 1.13
+"""
+
+# TODO:
+# go.mod file does not contain version number.
+# valid download url need version number
 
 TRACE = False
 
@@ -57,9 +71,9 @@ if TRACE:
 @attr.s()
 class GolangPackage(models.Package):
     metafiles = ('go.mod',)
-    default_type = 'gopkg'
+    default_type = 'golang'
     default_primary_language = 'Go'
-    default_web_baseurl = None
+    default_web_baseurl = 'https://pkg.go.dev'
     default_download_baseurl = None
     default_api_baseurl = None
 
@@ -77,56 +91,49 @@ class GolangPackage(models.Package):
     def repository_homepage_url(self):
         return self.homepage_url
 
-    def repository_download_url(self):
-        return self.download_url
-
 
 def build_gomod_package(gomod_data):
     """
     Return a Package object from a go.mod file or None.
     """
-    name = gomod_data.get('name')
-    homepage_url = "https://{}".format(gomod_data.get('module'))  
-    download_url = "https://{}/archive/master.zip".format(gomod_data.get('module')) 
 
     package_dependencies = []
-    require = gomod_data.get('require')
-    if require:
-        for name, version in require:
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='gopkg',
-                        name=name
-                    ).to_string(),
-                    requirement=version,
-                    scope='require',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=False,
-                )
+    require = gomod_data.get('require') or []
+    for name, version in require:
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='golang',
+                    name=name
+                ).to_string(),
+                requirement=version,
+                scope='require',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=False,
             )
-    exclude = gomod_data.get('exclude')
-    if exclude:
-        for name, version in exclude:
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='gopkg',
-                        name=name
-                    ).to_string(),
-                    requirement=version,
-                    scope='exclude',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=False,
-                )
+        )
+    exclude = gomod_data.get('exclude') or []
+    for name, version in exclude:
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='golang',
+                    name=name
+                ).to_string(),
+                requirement=version,
+                scope='exclude',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=False,
             )
+        )
+
+    name = gomod_data.get('name')
+    homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
 
     return GolangPackage(
         name=name,
         homepage_url=homepage_url,
-        download_url=download_url,
-        code_view_url=homepage_url,
         dependencies=package_dependencies
     )
