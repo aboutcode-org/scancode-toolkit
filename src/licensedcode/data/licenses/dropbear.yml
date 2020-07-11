@@ -5,7 +5,7 @@ category: Permissive
 owner: Dropbear
 homepage_url: https://matt.ucc.asn.au/dropbear/dropbear.html
 notes: composite
-minimum_coverage: 680
+minimum_coverage: 80
 ignorable_copyrights:
     - (c) 2004 Mihnea Stoenescu
     - (c) Todd C. Miller
