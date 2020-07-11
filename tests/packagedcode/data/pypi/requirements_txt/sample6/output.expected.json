@@ -35,7 +35,7 @@
       "is_resolved": false
     },
     {
-      "purl": "pkg:pypi/pygments",
+      "purl": "pkg:pypi/pygments@2.2.0",
       "requirement": "==2.2.0",
       "scope": "dependencies",
       "is_runtime": true,

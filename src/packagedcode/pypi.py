@@ -209,9 +209,9 @@ def parse_with_dparse(location):
         return
     file_name = fileutils.file_name(location)
 
-    file_name = get_dependency_type(file_name)
+    dependency_type = get_dependency_type(file_name)
 
-    if file_name not in (filetypes.requirements_txt,
+    if dependency_type not in (filetypes.requirements_txt,
                          filetypes.conda_yml,
                          filetypes.tox_ini,
                          filetypes.pipfile,
@@ -223,31 +223,43 @@ def parse_with_dparse(location):
         mode = 'r'
     with open(location, mode) as f:
         content = f.read()
-        df = dparse.parse(content, file_type=file_name)
-        df_dependencies = df.dependencies
-        if not df_dependencies:
-            return
-        package_dependencies = []
-        for df_dependency in df_dependencies:
-            specs = df_dependency.specs
-            is_resolved = False
-            requirement = None
-            if specs:
-                requirement = str(specs)
-                if '==' in requirement:
-                    is_resolved = True
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='pypi', name=df_dependency.name).to_string(),
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_resolved=is_resolved,
-                    requirement=requirement
-                )
+        
+    df = dparse.parse(content, file_type=dependency_type)
+    df_dependencies = df.dependencies
+
+    if not df_dependencies:
+        return
+
+    package_dependencies = []
+    for df_dependency in df_dependencies:
+        specs = list(df_dependency.specs._specs)
+        is_resolved = False
+        requirement = None
+        purl = PackageURL(
+            type='pypi',
+            name=df_dependency.name
+        ).to_string()
+        if specs:
+            requirement = specs[0]
+            if specs[0].operator == '==':
+                is_resolved = True
+                purl = PackageURL(
+                    type='pypi',
+                    name=df_dependency.name,
+                    version=specs[0].version
+                ).to_string()
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=purl,
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=is_resolved,
+                requirement=requirement
             )
-        return package_dependencies
+        )
+
+    return package_dependencies
 
 
 def parse_requirements_txt(location):

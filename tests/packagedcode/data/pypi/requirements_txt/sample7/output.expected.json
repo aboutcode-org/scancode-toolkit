@@ -27,7 +27,7 @@
   "root_path": null,
   "dependencies": [
     {
-      "purl": "pkg:pypi/aiohttp",
+      "purl": "pkg:pypi/aiohttp@3.6.2",
       "requirement": "==3.6.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -35,7 +35,7 @@
       "is_resolved": true
     },
     {
-      "purl": "pkg:pypi/async-timeout",
+      "purl": "pkg:pypi/async-timeout@3.0.1",
       "requirement": "==3.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -43,7 +43,7 @@
       "is_resolved": true
     },
     {
-      "purl": "pkg:pypi/attrs",
+      "purl": "pkg:pypi/attrs@19.3.0",
       "requirement": "==19.3.0",
       "scope": "dependencies",
       "is_runtime": true,

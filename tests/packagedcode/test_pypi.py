@@ -314,8 +314,8 @@ class TestPyPi(PackageTester):
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl='pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies', is_resolved=True),
-                DependentPackage(purl='pkg:pypi/requests', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+        assert [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
 
 
 FILENAME_LIST = [
