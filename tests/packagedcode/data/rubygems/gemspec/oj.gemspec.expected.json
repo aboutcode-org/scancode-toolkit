@@ -14,6 +14,13 @@
         "type": "person",
         "role": "author",
         "name": "Peter Ohler",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
         "email": "peter@ohler.com",
         "url": null
       }

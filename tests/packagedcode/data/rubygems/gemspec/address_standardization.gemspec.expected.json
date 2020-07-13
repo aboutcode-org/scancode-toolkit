@@ -1,70 +1,83 @@
-[
-  {
-    "type": "gem",
-    "namespace": null,
-    "name": "mysmallidea-address_standardization",
-    "version": "0.4.1",
-    "qualifiers": {},
-    "subpath": null,
-    "primary_language": "Ruby",
-    "description": "A tiny Ruby library to quickly standardize a postal address",
-    "release_date": null,
-    "parties": [
-      {
-        "type": "person",
-        "role": "author",
-        "name": "Elliot Winkler",
-        "email": "elliot.winkler@gmail.com",
-        "url": null
-      }
-    ],
-    "keywords": [],
-    "homepage_url": "http://github.com/mcmire/address_standardization",
-    "download_url": null,
-    "size": null,
-    "sha1": null,
-    "md5": null,
-    "sha256": null,
-    "sha512": null,
-    "bug_tracking_url": null,
-    "code_view_url": null,
-    "vcs_url": null,
-    "copyright": null,
-    "license_expression": null,
-    "declared_license": null,
-    "notice_text": null,
-    "root_path": null,
-    "dependencies": [
-      {
-        "purl": "pkg:gem/mechanize",
-        "requirement": ">= 0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.2",
+      "options": {
+        "input": [
+          "address_standardization.gemspec"
+        ],
+        "--json-pp": "address_standardization.gemspec.expected.json",
+        "--package": true
       },
-      {
-        "purl": "pkg:gem/mcmire-context",
-        "requirement": ">= 0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
-      },
-      {
-        "purl": "pkg:gem/mcmire-matchy",
-        "requirement": ">= 0",
-        "scope": "dependencies",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-07-13T085108.178525",
+      "end_timestamp": "2020-07-13T085109.146371",
+      "duration": 0.9678757190704346,
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
       }
-    ],
-    "contains_source_code": null,
-    "source_packages": [],
-    "purl": "pkg:gem/mysmallidea-address_standardization@0.4.1",
-    "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-address_standardization/versions/0.4.1",
-    "repository_download_url": "https://rubygems.org/downloads/mysmallidea-address_standardization-0.4.1.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/mysmallidea-address_standardization/versions/0.4.1.json"
-  }
-]
+    }
+  ],
+  "files": [
+    {
+      "path": "address_standardization.gemspec",
+      "type": "file",
+      "packages": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "mysmallidea-address_standardization",
+          "version": "0.4.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "A tiny Ruby library to quickly standardize a postal address",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Elliot Winkler",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "email",
+              "name": null,
+              "email": "elliot.winkler@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://github.com/mcmire/address_standardization",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": null,
+          "declared_license": null,
+          "notice_text": null,
+          "root_path": null,
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:gem/mysmallidea-address_standardization@0.4.1",
+          "repository_homepage_url": "https://rubygems.org/gems/mysmallidea-address_standardization/versions/0.4.1",
+          "repository_download_url": "https://rubygems.org/downloads/mysmallidea-address_standardization-0.4.1.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/mysmallidea-address_standardization/versions/0.4.1.json"
+        }
+      ],
+      "scan_errors": []
+    }
+  ]
+}

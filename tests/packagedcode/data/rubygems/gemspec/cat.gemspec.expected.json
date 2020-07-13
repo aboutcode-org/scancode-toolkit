@@ -14,6 +14,13 @@
         "type": "person",
         "role": "author",
         "name": "\u84bc\u6642\u5f26\u4e5f",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
         "email": "elct9620@frost.tw",
         "url": null
       }
