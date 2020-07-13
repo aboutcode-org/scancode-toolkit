@@ -31,6 +31,8 @@ import os
 from unittest.case import skipIf
 from unittest.case import expectedFailure
 
+import pytest
+
 from commoncode.system import on_windows
 from packagedcode.models import DependentPackage
 from packagedcode import pypi
@@ -267,8 +269,72 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_requirements_txt_sample1(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample1/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample1/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample2(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample2/sample-requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample2/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample3(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample3/requirements-dev.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample3/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample4(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample4/requirements.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample4/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample5(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample5/requirements-test.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample5/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample6(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample6/requirements-dev.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample6/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample7(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample7/requirements-test.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample7/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl=u'pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies'),
-                DependentPackage(purl=u'pkg:pypi/requests', requirement='==2.7.0', scope='dependencies')] == dependencies
+        assert [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+
+
+FILENAME_LIST = [
+    'requirements.txt',
+    'sample-requirements.txt',
+    'requirements-test.txt',
+    'sample-requirements-test.txt',
+    'requirements-dev.txt',
+    'sample-requirements-dev.txt',
+    'requirements.in',
+    'sample-requirements.in',
+    'requirements-test.in',
+    'sample-requirements-test.in',
+    'requirements-dev.in',
+    'sample-requirements-dev.in'
+]
+
+class TestFiletype(object):
+    @pytest.mark.parametrize('filename', FILENAME_LIST)
+    def test_file_type(self, filename):
+        filename = pypi.get_dependency_type(filename)
+        assert filename == 'requirements.txt'
