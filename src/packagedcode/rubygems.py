@@ -646,16 +646,7 @@ def build_packages_from_gemspec(location):
 
     author = gemspec_data.get('author') or []
     email = gemspec_data.get('email') or []
-    parties = []
-    if author:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                name=','.join(author),
-                email=','.join(email),
-                role='author'
-            )
-        )
+    parties = list(party_mapper(author, email))
 
     package = RubyGem(
         name=name,
@@ -685,6 +676,23 @@ def build_packages_from_gemspec(location):
     package.dependencies = package_dependencies
 
     return package
+
+
+def party_mapper(author, email):
+    """
+    Yields a Party object with author and email.
+    """
+    for person in author:
+        yield models.Party(
+            type=models.party_person,
+            name=person,
+            role='author')
+
+    for person in email:
+        yield models.Party(
+            type=models.party_person,
+            email=person,
+            role='email')
 
 
 def build_packages_from_gemfile_lock(gemfile_lock):

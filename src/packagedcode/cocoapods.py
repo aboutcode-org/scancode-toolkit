@@ -109,27 +109,17 @@ def build_package(podspec_data):
     description = podspec_data.get('description')
     homepage_url = podspec_data.get('homepage_url')
     source = podspec_data.get('source')
-    authors = podspec_data.get('author') or None
+    authors = podspec_data.get('author') or []
 
     author_names = []
     author_email = []
-    if authors:
-        for split_author in authors:
-            split_author = split_author.strip()
-            author, email = parse_person(split_author)
-            author_names.append(author)
-            author_email.append(email)
+    for split_author in authors:
+        split_author = split_author.strip()
+        author, email = parse_person(split_author)
+        author_names.append(author)
+        author_email.append(email)
 
-    parties = []
-    if authors:
-        parties.append(
-            models.Party(
-                type=models.party_person,
-                name=', '.join(author_names),
-                email=', '.join(author_email),
-                role='author'
-            )
-        )
+    parties = list(party_mapper(author_names, author_email))
 
     if len(summary) > len(description):
         description = summary
@@ -144,7 +134,25 @@ def build_package(podspec_data):
         homepage_url=homepage_url,
         parties=parties
     )
+
     return package
+
+
+def party_mapper(author, email):
+    """
+    Yields a Party object with author and email.
+    """
+    for person in author:
+        yield models.Party(
+            type=models.party_person,
+            name=person,
+            role='author')
+
+    for person in email:
+        yield models.Party(
+            type=models.party_person,
+            email=person,
+            role='email')
 
 
 person_parser = re.compile(
