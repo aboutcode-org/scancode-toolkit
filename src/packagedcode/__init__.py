@@ -25,16 +25,17 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from packagedcode import build
-from packagedcode import chef
-from packagedcode import models
 from packagedcode import about
 from packagedcode import bower
-from packagedcode import conda
+from packagedcode import build
 from packagedcode import cargo
+from packagedcode import chef
+from packagedcode import conda
+from packagedcode import cocoapods
 from packagedcode import freebsd
 from packagedcode import haxe
 from packagedcode import maven
+from packagedcode import models
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import phpcomposer
@@ -62,6 +63,7 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
+    cocoapods.CocoapodsPackage,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
