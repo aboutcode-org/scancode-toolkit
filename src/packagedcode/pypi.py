@@ -223,7 +223,7 @@ def parse_with_dparse(location):
         mode = 'r'
     with open(location, mode) as f:
         content = f.read()
-        
+
     df = dparse.parse(content, file_type=dependency_type)
     df_dependencies = df.dependencies
 
@@ -240,14 +240,17 @@ def parse_with_dparse(location):
             name=df_dependency.name
         ).to_string()
         if specs:
-            requirement = specs[0]
-            if specs[0].operator == '==':
-                is_resolved = True
-                purl = PackageURL(
-                    type='pypi',
-                    name=df_dependency.name,
-                    version=specs[0].version
-                ).to_string()
+            requirement = str(df_dependency.specs)
+            for spec in specs:
+                operator = spec.operator
+                version = spec.version
+                if any(operator == element for element in ('==', '===')):
+                    is_resolved = True
+                    purl = PackageURL(
+                        type='pypi',
+                        name=df_dependency.name,
+                        version=version
+                    ).to_string()
         package_dependencies.append(
             models.DependentPackage(
                 purl=purl,
