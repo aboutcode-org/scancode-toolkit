@@ -203,7 +203,7 @@ Package: nuget
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in
+  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
