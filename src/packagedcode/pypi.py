@@ -90,7 +90,7 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg', '*requirements*.txt', '*requirements*.in')
+    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg', '*requirements*.txt', '*requirements*.in', '*Pipfile.lock')
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
@@ -119,8 +119,9 @@ def parse(location):
         file_name = fileutils.file_name(location)
         parsers = {
             'setup.py': parse_setup_py,
-            'requirements.txt': parse_requirements_txt,
-            'requirements.in': parse_requirements_txt,
+            'requirements.txt': parse_dependency_file,
+            'requirements.in': parse_dependency_file,
+            'Pipfile.lock': parse_dependency_file,
             'metadata.json': parse_metadata,
             'PKG-INFO': parse_pkg_info,
             '.whl': parse_wheel,
@@ -198,6 +199,7 @@ def parse_dependencies(location, package):
 
 dependency_type_by_extensions = {
     ('.txt', '.in'): 'requirements.txt',
+    ('Pipfile.lock'): 'Pipfile.lock',
 }
 
 
@@ -272,9 +274,9 @@ def parse_with_dparse(location):
     return package_dependencies
 
 
-def parse_requirements_txt(location):
+def parse_dependency_file(location):
     """
-    Return a package built from requirements.txt.
+    Return a package built from Python dependency files.
     """
     package_dependencies = parse_with_dparse(location)
     return PythonPackage(dependencies=package_dependencies)
