@@ -1119,17 +1119,58 @@ class TestExtract(FileBasedTesting):
         result = extract.extract(test_dir)
         assert isinstance(result, GeneratorType)
     
-    def test_extract_ignore(self):
+    def test_extract_ignore_file(self):
         test_dir = self.get_test_loc('extract/ignore', copy=True)
         expected = [
-            'a.zip',
-            'a.zip-extract/a.txt',
-            'a.zip-extract/b.zip',
-            'a.zip-extract/b.zip-extract/b.txt',
-            'a.zip-extract/c.tar',
-            'b.tar'
+            'alpha.zip',
+            'beta.tar',
+            'beta.tar-extract/a.txt',
+            'beta.tar-extract/b.txt',
+            'beta.tar-extract/c.txt',
+            'gamma/gamma.zip',
+            'gamma/gamma.zip-extract/c.txt'
         ]
         from extractcode import default_kinds
-        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('*tar',)))
+        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('alpha.zip',)))
+        check_no_error(result)
+        check_files(test_dir, expected)
+
+    def test_extract_ignore_directory(self):
+        test_dir = self.get_test_loc('extract/ignore', copy=True)
+        expected = [
+            'alpha.zip',
+            'alpha.zip-extract/a.txt',
+            'alpha.zip-extract/beta.zip',
+            'alpha.zip-extract/beta.zip-extract/b.txt',
+            'alpha.zip-extract/gamma.tar',
+            'alpha.zip-extract/gamma.tar-extract/c.txt',
+            'beta.tar',
+            'beta.tar-extract/a.txt',
+            'beta.tar-extract/b.txt',
+            'beta.tar-extract/c.txt',
+            'gamma/gamma.zip',
+        ]
+        from extractcode import default_kinds
+        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('gamma',)))
+        check_no_error(result)
+        check_files(test_dir, expected)
+
+    def test_extract_ignore_pattern(self):
+        test_dir = self.get_test_loc('extract/ignore', copy=True)
+        expected = [
+            'alpha.zip',
+            'alpha.zip-extract/a.txt',
+            'alpha.zip-extract/beta.zip',
+            'alpha.zip-extract/gamma.tar',
+            'alpha.zip-extract/gamma.tar-extract/c.txt',
+            'beta.tar',
+            'beta.tar-extract/a.txt',
+            'beta.tar-extract/b.txt',
+            'beta.tar-extract/c.txt',
+            'gamma/gamma.zip',
+            'gamma/gamma.zip-extract/c.txt'
+        ]
+        from extractcode import default_kinds
+        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('b*.zip',)))
         check_no_error(result)
         check_files(test_dir, expected)
