@@ -90,7 +90,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.option('--quiet', is_flag=True, default=False, help='Do not print any summary or progress message.')
 @click.option('--shallow', is_flag=True, default=False, help='Do not extract recursively nested archives (e.g. not archives in archives).')
 @click.option('--replace-originals', is_flag=True, default=False, help='Replace extracted archives by the extracted content.')
-@click.option('--ignore', default=[], multiple=True, help='Ignore files with a particular extension')
+@click.option('--ignore', default=[], multiple=True, help='Ignore files/directories following a glob-pattern.')
 
 @click.help_option('-h', '--help')
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
