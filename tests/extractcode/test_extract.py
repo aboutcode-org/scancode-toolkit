@@ -1131,7 +1131,7 @@ class TestExtract(FileBasedTesting):
             'gamma/gamma.zip-extract/c.txt'
         ]
         from extractcode import default_kinds
-        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('alpha.zip',)))
+        result = list(extract.extract(test_dir, recurse=True, ignore_pattern=('alpha.zip',)))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -1151,7 +1151,7 @@ class TestExtract(FileBasedTesting):
             'gamma/gamma.zip',
         ]
         from extractcode import default_kinds
-        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('gamma',)))
+        result = list(extract.extract(test_dir, recurse=True, ignore_pattern=('gamma',)))
         check_no_error(result)
         check_files(test_dir, expected)
 
@@ -1171,6 +1171,6 @@ class TestExtract(FileBasedTesting):
             'gamma/gamma.zip-extract/c.txt'
         ]
         from extractcode import default_kinds
-        result = list(extract.extract(test_dir, recurse=True, ignored_extensions=('b*.zip',)))
+        result = list(extract.extract(test_dir, recurse=True, ignore_pattern=('b*.zip',)))
         check_no_error(result)
         check_files(test_dir, expected)

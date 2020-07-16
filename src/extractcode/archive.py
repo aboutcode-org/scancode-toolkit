@@ -104,14 +104,14 @@ def can_extract(location):
         return True
 
 
-def should_extract(location, kinds, ignored_extensions=()):
+def should_extract(location, kinds, ignore_pattern=()):
     """
     Return True if this location should be extracted based on the provided
     kinds
     """
     location = os.path.abspath(os.path.expanduser(location))
-    ignored_extensions = {extension : 'User ignore: Supplied by --ignore' for extension in ignored_extensions}
-    should_ignore = is_ignored(location, ignored_extensions)
+    ignore_pattern = {extension : 'User ignore: Supplied by --ignore' for extension in ignore_pattern}
+    should_ignore = is_ignored(location, ignore_pattern)
     if get_extractor(location, kinds) and not should_ignore:
         return True
 

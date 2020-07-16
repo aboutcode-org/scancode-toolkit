@@ -162,7 +162,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, ignore, 
     has_extract_errors = False
     
     extractibles = extract_archives(
-        abs_location, recurse=not shallow, replace_originals=replace_originals, ignored_extensions=ignore)
+        abs_location, recurse=not shallow, replace_originals=replace_originals, ignore_pattern=ignore)
 
     if not quiet:
         echo_stderr('Extracting archives...', fg='green')
