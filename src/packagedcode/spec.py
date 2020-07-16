@@ -33,11 +33,12 @@ import logging
 import os
 import re
 
-from gemfileparser import GemfileParser
+from gemfileparser2 import GemfileParser
 
 """
 Handle Cocoapods(.podspec) and Ruby(.gemspec) files.
 """
+
 
 TRACE = False
 
@@ -49,80 +50,104 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
 
-def parse_spec(location):
+class Spec():
+    parse_name = re.compile(r'.*\.name(\s*)=(?P<name>.*)')
+    parse_version = re.compile(r'.*\.version(\s*)=(?P<version>.*)')
+    parse_license = re.compile(r'.*\.license(\s*)=(?P<license>.*)')
+    parse_summary = re.compile(r'.*\.summary(\s*)=(?P<summary>.*)')
+    parse_description = re.compile(r'.*\.description(\s*)=(?P<description>.*)')
+    parse_homepage = re.compile(r'.*\.homepage(\s*)=(?P<homepage>.*)')
+    parse_source = re.compile(r'.*\.source(\s*)=(?P<source>.*)')
+
+    def parse_spec(self, location):
+        """
+        Return dictionary contains podspec or gemspec file data.
+        """
+        with io.open(location, encoding='utf-8', closefd=True) as data:
+            lines = data.readlines()
+
+        spec_data = {}
+
+        for line in lines:
+            line = pre_process(line)
+            match = self.parse_name.match(line)
+            if match:
+                name = match.group('name')
+                spec_data['name'] = get_stripped_data(name)
+            match = self.parse_version.match(line)
+            if match:
+                version = match.group('version')
+                spec_data['version'] = get_stripped_data(version)
+            match = self.parse_license.match(line)
+            if match:
+                license_value = match.group('license')
+                spec_data['license'] = get_stripped_data(license_value)
+            match = self.parse_summary.match(line)
+            if match:
+                summary = match.group('summary')
+                spec_data['summary'] = get_stripped_data(summary)
+            match = self.parse_homepage.match(line)
+            if match:
+                homepage = match.group('homepage')
+                spec_data['homepage_url'] = get_stripped_data(homepage)
+            match = self.parse_source.match(line)
+            if match:
+                source = re.sub(r'/*.*source.*?>', '', line)
+                stripped_source = re.sub(r',.*', '', source)
+                spec_data['source'] = get_stripped_data(stripped_source)
+            match = self.parse_description.match(line)
+            if match:
+                if location.endswith('.gemspec'):
+                    # FIXME: description can be in single or multi-lines
+                    # There are many different ways to write description.
+                    description = match.group('description')
+                    spec_data['description'] = get_stripped_data(description)
+                else:
+                    spec_data['description'] = get_description(location)
+            if '.email' in line:
+                _key, _sep, value = line.rpartition('=')
+                stripped_emails = get_stripped_data(value)
+                stripped_emails = stripped_emails.strip()
+                stripped_emails = stripped_emails.split(',')
+                spec_data['email'] = stripped_emails
+            elif '.author' in line:
+                authors = re.sub(r'/*.*author.*?=', '', line)
+                stripped_authors = get_stripped_data(authors)
+                stripped_authors = re.sub(r'(\s*=>\s*)', '=>', stripped_authors)
+                stripped_authors = stripped_authors.strip()
+                stripped_authors = stripped_authors.split(',')
+                spec_data['author'] = stripped_authors
+
+        parser = GemfileParser(location)
+        deps = parser.parse()
+        dependencies = OrderedDict()
+        for key in deps:
+            depends = deps.get(key, []) or []
+            for dep in depends:
+                    dependencies[dep.name] = dep.requirement
+        spec_data['dependencies'] = dependencies
+
+        return spec_data
+
+
+def pre_process(line):
     """
-    Return dictionary contains podspec or gemspec file data.
-    """
-    with io.open(location, encoding='utf-8', closefd=True) as data:
-        lines = data.readlines()
-
-    spec_data = {}
-
-    for line in lines:
-        if '.name' in line:
-            name = line.rpartition('=')
-            spec_data['name'] = get_stripped_data(name[2])
-        elif '.version' in line and '.version.' not in line:
-            version = line.rpartition('=')
-            spec_data['version'] = get_stripped_data(version[2])
-        elif '.license' in line:
-            license_type = line.rpartition('=')
-            spec_data['license'] = get_stripped_data(license_type[2])
-        elif '.email' in line:
-            emails = line.rpartition('=')
-            stripped_emails = get_stripped_data(emails[2])
-            stripped_emails = stripped_emails.strip()
-            stripped_emails = stripped_emails.split(',')
-            spec_data['email'] = stripped_emails
-        elif '.author' in line:
-            authors = re.sub(r'/*.*author.*?=', '', line)
-            stripped_authors = get_stripped_data(authors)
-            stripped_authors = stripped_authors.replace(' => ', "=>")
-            stripped_authors = stripped_authors.strip()
-            stripped_authors = stripped_authors.split(',')
-            spec_data['author'] = stripped_authors
-        elif '.summary' in line:
-            summary = line.rpartition('=')
-            spec_data['summary'] = get_stripped_data(summary[2])
-        elif '.description' in line:
-            if location.endswith('.gemspec'):
-                # FIXME: description can be in single or multi-lines
-                # There are many different ways to write description.
-                desc = line.rpartition('=')
-                spec_data['description'] = get_stripped_data(desc[2])
-            else:
-                spec_data['description'] = get_description(line)
-        elif '.homepage' in line:
-            homepage_url = line.rpartition('=')
-            spec_data['homepage_url'] = get_stripped_data(homepage_url[2])
-        elif '.source' in line and '.source_files' not in line:
-            source = re.sub(r'/*.*source.*?>', '', line)
-            stripped_source = re.sub(r',.*', '', source)
-            spec_data['source'] = get_stripped_data(stripped_source)
-
-    parser = GemfileParser(location)
-    deps = parser.parse()
-    dependencies = OrderedDict()
-    for key in deps:
-        depends = deps.get(key, []) or []
-        for dep in depends:
-                dependencies[dep.name] = dep.requirement.split(',')
-    spec_data['dependencies'] = dependencies
-
-    return spec_data
-
-
-def get_stripped_data(line):
-    """
-    Return line after removing unnecessary special character and space.
+    Return line after comments and space.
     """
     if '#' in line:
         line = line[:line.index('#')]
     stripped_data = line.strip()
-    for strippable in ("'",'"', '{', '}', '[', ']', '%q',):
-        stripped_data = stripped_data.replace(strippable, '')
 
-    return stripped_data.strip()
+    return stripped_data
+
+def get_stripped_data(data):
+    """
+    Return data after removing unnecessary special character
+    """
+    for strippable in ("'",'"', '{', '}', '[', ']', '%q',):
+        data = data.replace(strippable, '')
+
+    return data.strip()
 
 
 def get_description(location):

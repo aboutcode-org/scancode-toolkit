@@ -35,7 +35,7 @@ from commoncode.fileutils import py2
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from packagedcode import spec
+from packagedcode.spec import Spec
 
 
 """
@@ -44,8 +44,6 @@ including .podspec, Podfile and Podfile.lock files.
 See https://cocoapods.org
 """
 
-# TODO: implementation to get dependency data using gemsfileparser
-# Check: https://gitlab.com/balasankarc/gemfileparser
 # TODO: override the license detection to detect declared_license correctly.
 
 
@@ -94,7 +92,8 @@ def parse(location):
     if not is_podspec(location):
         return
 
-    podspec_data = spec.parse_spec(location)
+    podspec_object = Spec()
+    podspec_data = podspec_object.parse_spec(location)
     return build_package(podspec_data)
 
 
@@ -113,16 +112,14 @@ def build_package(podspec_data):
 
     author_names = []
     author_email = []
-    for split_author in authors:
-        split_author = split_author.strip()
-        author, email = parse_person(split_author)
-        author_names.append(author)
-        author_email.append(email)
+    if authors:
+        for split_author in authors:
+            split_author = split_author.strip()
+            author, email = parse_person(split_author)
+            author_names.append(author)
+            author_email.append(email)
 
     parties = list(party_mapper(author_names, author_email))
-
-    if len(summary) > len(description):
-        description = summary
 
     package = CocoapodsPackage(
         name=name,

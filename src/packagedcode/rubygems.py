@@ -42,7 +42,7 @@ from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
 from packagedcode.gemfile_lock import GemfileLockParser
-from packagedcode import spec
+from packagedcode.spec import Spec
 from packagedcode.utils import combine_expressions
 
 
@@ -630,7 +630,8 @@ def build_packages_from_gemspec(location):
     """
     Return RubyGem Package from gemspec file.
     """
-    gemspec_data = spec.parse_spec(location)
+    gemspec_object = Spec()
+    gemspec_data = gemspec_object.parse_spec(location)
     
     name = gemspec_data.get('name')
     version = gemspec_data.get('version')
