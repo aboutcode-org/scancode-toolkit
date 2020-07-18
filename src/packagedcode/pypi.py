@@ -119,9 +119,9 @@ def parse(location):
         file_name = fileutils.file_name(location)
         parsers = {
             'setup.py': parse_setup_py,
-            'requirements.txt': parse_dependency_file,
-            'requirements.in': parse_dependency_file,
-            'Pipfile.lock': parse_dependency_file,
+            'requirements.txt': parse_requirements_txt,
+            'requirements.in': parse_requirements_txt,
+            'Pipfile.lock': parse_pipfile_lock,
             'metadata.json': parse_metadata,
             'PKG-INFO': parse_pkg_info,
             '.whl': parse_wheel,
@@ -274,12 +274,37 @@ def parse_with_dparse(location):
     return package_dependencies
 
 
-def parse_dependency_file(location):
+def parse_requirements_txt(location):
     """
-    Return a package built from Python dependency files.
+    Return a package built from Python requirements.txt files.
     """
     package_dependencies = parse_with_dparse(location)
     return PythonPackage(dependencies=package_dependencies)
+
+
+def parse_pipfile_lock(location):
+    """
+    Return package built from Python Pipfile.lock files.
+    """
+    with open('Pipfile.lock', 'r') as f:
+        content = f.read()
+
+    try:
+        data = json.loads(content, object_pairs_hook=OrderedDict)
+    except json.decoder.JSONDecodeError:
+        data = {}
+
+    sha256 = None
+    if '_meta' in data:
+        for name, meta in data['_meta'].items():
+            if name=='hash':
+                sha256 = meta.get('sha256')
+
+    package_dependencies = parse_with_dparse(location)
+    return PythonPackage(
+        sha256=sha256,
+        dependencies=package_dependencies
+    )
 
 
 def parse_setup_py(location):
