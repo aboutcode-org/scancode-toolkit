@@ -286,7 +286,7 @@ def parse_pipfile_lock(location):
     """
     Return package built from Python Pipfile.lock files.
     """
-    with open('Pipfile.lock', 'r') as f:
+    with open(location, 'r') as f:
         content = f.read()
 
     try:
