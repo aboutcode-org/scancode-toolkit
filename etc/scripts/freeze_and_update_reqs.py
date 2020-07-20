@@ -36,6 +36,9 @@ import subprocess
 import shutil
 import sys
 
+python_version = str(sys.version_info[0]) + str(sys.version_info[1])
+py_abi = "{0}cp{1}{0}".format("*", python_version)
+
 
 def generate_req_text(input_dir, output_file=False, package_name=False):
     """
@@ -47,7 +50,7 @@ def generate_req_text(input_dir, output_file=False, package_name=False):
         files
         for files in thirdparty
         if fnmatch.fnmatchcase(files, "*py3*")
-        or fnmatch.fnmatchcase(files, "*cp36*")
+        or fnmatch.fnmatchcase(files, py_abi)
         or (
             fnmatch.fnmatchcase(files, "*tar.gz*")
             and not fnmatch.fnmatchcase(files, "*py2-ipaddress-3.4.1.tar.gz*")
