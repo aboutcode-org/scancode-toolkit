@@ -57,6 +57,7 @@ go 1.13
 # TODO:
 # go.mod file does not contain version number.
 # valid download url need version number
+# CHECK: https://forum.golangbridge.org/t/url-to-download-package/19811
 
 TRACE = False
 
@@ -96,7 +97,6 @@ def build_gomod_package(gomod_data):
     """
     Return a Package object from a go.mod file or None.
     """
-
     package_dependencies = []
     require = gomod_data.get('require') or []
     for namespace, name, version in require:
@@ -114,6 +114,7 @@ def build_gomod_package(gomod_data):
                 is_resolved=False,
             )
         )
+
     exclude = gomod_data.get('exclude') or []
     for namespace, name, version in exclude:
         package_dependencies.append(
