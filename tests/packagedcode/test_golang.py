@@ -38,31 +38,31 @@ class TestGolang(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_kingpin(self):
-        test_file = self.get_test_loc('go/kingpin/go.mod')
-        expected_loc = self.get_test_loc('go/kingpin/output.expected.json')
+        test_file = self.get_test_loc('golang/kingpin/go.mod')
+        expected_loc = self.get_test_loc('golang/kingpin/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_participle(self):
-        test_file = self.get_test_loc('go/participle/go.mod')
-        expected_loc = self.get_test_loc('go/participle/output.expected.json')
+        test_file = self.get_test_loc('golang/participle/go.mod')
+        expected_loc = self.get_test_loc('golang/participle/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_sample(self):
-        test_file = self.get_test_loc('go/sample/go.mod')
-        expected_loc = self.get_test_loc('go/sample/output.expected.json')
+        test_file = self.get_test_loc('golang/sample/go.mod')
+        expected_loc = self.get_test_loc('golang/sample/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_uap_go(self):
-        test_file = self.get_test_loc('go/uap-go/go.mod')
-        expected_loc = self.get_test_loc('go/uap-go/output.expected.json')
+        test_file = self.get_test_loc('golang/uap-go/go.mod')
+        expected_loc = self.get_test_loc('golang/uap-go/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
     def test_parse_user_agent(self):
-        test_file = self.get_test_loc('go/user_agent/go.mod')
-        expected_loc = self.get_test_loc('go/user_agent/output.expected.json')
+        test_file = self.get_test_loc('golang/user_agent/go.mod')
+        expected_loc = self.get_test_loc('golang/user_agent/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
