@@ -99,11 +99,12 @@ def build_gomod_package(gomod_data):
 
     package_dependencies = []
     require = gomod_data.get('require') or []
-    for name, version in require:
+    for namespace, name, version in require:
         package_dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(
                     type='golang',
+                    namespace=namespace,
                     name=name
                 ).to_string(),
                 requirement=version,
@@ -114,11 +115,12 @@ def build_gomod_package(gomod_data):
             )
         )
     exclude = gomod_data.get('exclude') or []
-    for name, version in exclude:
+    for namespace, name, version in exclude:
         package_dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(
                     type='golang',
+                    namespace=namespace,
                     name=name
                 ).to_string(),
                 requirement=version,
@@ -130,10 +132,12 @@ def build_gomod_package(gomod_data):
         )
 
     name = gomod_data.get('name')
+    namespace = gomod_data.get('namespace')
     homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
 
     return GolangPackage(
         name=name,
+        namespace=namespace,
         homepage_url=homepage_url,
         dependencies=package_dependencies
     )

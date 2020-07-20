@@ -56,6 +56,41 @@ require (
 
 """
 
+"""
+module is in the form
+module github.com/alecthomas/participle
+
+For example:
+>>> ob = GoMod()
+>>> p = ob.parse_module('module github.com/alecthomas/participle')
+>>> assert p.group('module') == ('github.com/alecthomas/participle')
+
+require or exclude can be in the form
+require github.com/davecgh/go-spew v1.1.1
+or
+exclude github.com/davecgh/go-spew v1.1.1
+or
+github.com/davecgh/go-spew v1.1.1
+
+For example:
+>>> ob = GoMod()
+
+>>> p = ob.parse_require('require github.com/davecgh/go-spew v1.1.1')
+>>> assert p.group('namespace') == ('github.com/davecgh')
+>>> assert p.group('name') == ('go-spew')
+>>> assert p.group('version') == ('v1.1.1')
+
+>>> p = ob.parse_exclude('exclude github.com/davecgh/go-spew v1.1.1')
+>>> assert p.group('namespace') == ('github.com/davecgh')
+>>> assert p.group('name') == ('go-spew')
+>>> assert p.group('version') == ('v1.1.1')
+
+>>> p = ob.parse_dep_link('github.com/davecgh/go-spew v1.1.1')
+>>> assert p.group('namespace') == ('github.com/davecgh')
+>>> assert p.group('name') == ('go-spew')
+>>> assert p.group('version') == ('v1.1.1')
+"""
+
 
 TRACE = False
 
@@ -76,28 +111,36 @@ class GoMod(object):
     ).match
 
     parse_module_name = re.compile(
-        r'^module\s.*/'
+        r'^module(\s)*'
+        r'(?P<namespace>(.*))'
+        r'/'
         r'(?P<name>[^\s]*)'
     ).match
 
     parse_require = re.compile(
-        r'^require\s'
-        r'.*/(?P<name>[^\s]*)'
+        r'^require(\s)*'
+        r'(?P<namespace>(.*))'
+        r'/'
+        r'(?P<name>[^\s]*)'
         r'\s'
-        r'(?P<version>[a-z].*)'
+        r'(?P<version>(.*))'
     ).match
 
     parse_exclude = re.compile(
-        r'^exclude\s'
-        r'.*/(?P<name>[^\s]*)'
+        r'^exclude(\s)*'
+        r'(?P<namespace>(.*))'
+        r'/'
+        r'(?P<name>[^\s]*)'
         r'\s'
-        r'(?P<version>[a-z].*)'
+        r'(?P<version>(.*))'
     ).match
 
     parse_dep_link = re.compile(
-        r'^.*/(?P<name>[^\s]*)'
+        r'(?P<namespace>(.*))'
+        r'/'
+        r'(?P<name>[^\s]*)'
         r'\s'
-        r'(?P<version>[a-z].*)'
+        r'(?P<version>(.*))'
     ).match
 
     def preprocess(self, line):
@@ -129,16 +172,17 @@ class GoMod(object):
             parsed_module_name = self.parse_module_name(line)
             if parsed_module_name:
                 gomod_data['name'] = parsed_module_name.group('name')
+                gomod_data['namespace'] = parsed_module_name.group('namespace')
                 
             parsed_require = self.parse_require(line)
             if parsed_require:
-                line_req = [parsed_require.group('name'), parsed_require.group('version')]
+                line_req = [parsed_require.group('namespace'), parsed_require.group('name'), parsed_require.group('version')]
                 require.append(line_req)
 
             parsed_exclude = self.parse_exclude(line)
             if parsed_exclude:
-                line_req = [parsed_exclude.group('name'), parsed_exclude.group('version')]
-                exclude.append(line_req)
+                line_exclude = [parsed_exclude.group('namespace'), parsed_exclude.group('name'), parsed_exclude.group('version')]
+                exclude.append(line_exclude)
 
             if 'require' in line and '(' in line:
                 for req in lines[i+1:]:
@@ -147,7 +191,7 @@ class GoMod(object):
                         break
                     parsed_dep_link = self.parse_dep_link(req)
                     if parsed_dep_link:
-                        line_req = [parsed_dep_link.group('name'), parsed_dep_link.group('version')]
+                        line_req = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
                         require.append(line_req)
 
             if 'exclude' in line and '(' in line:
@@ -157,43 +201,10 @@ class GoMod(object):
                         break
                     parsed_dep_link = self.parse_dep_link(exc)
                     if parsed_dep_link:
-                        line_exclude = [parsed_dep_link.group('name'), parsed_dep_link.group('version')]
+                        line_exclude = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
                         exclude.append(line_exclude)
 
         gomod_data['require'] = require
         gomod_data['exclude'] = exclude
 
         return gomod_data
-
-
-"""
-module is in the form
-module github.com/alecthomas/participle
-
-For example:
->>> ob = GoMod()
->>> p = ob.parse_module('module github.com/alecthomas/participle')
->>> assert p.group('module') == ('github.com/alecthomas/participle')
-
-require or exclude can be in the form
-require github.com/davecgh/go-spew v1.1.1
-or
-exclude github.com/davecgh/go-spew v1.1.1
-or
-github.com/davecgh/go-spew v1.1.1
-
-For example:
->>> ob = GoMod()
-
->>> p = ob.parse_require('require github.com/davecgh/go-spew v1.1.1')
->>> assert p.group('name') == ('go-spew')
->>> assert p.group('version') == ('v1.1.1')
-
->>> p = ob.parse_exclude('exclude github.com/davecgh/go-spew v1.1.1')
->>> assert p.group('name') == ('go-spew')
->>> assert p.group('version') == ('v1.1.1')
-
->>> p = ob.parse_dep_link('github.com/davecgh/go-spew v1.1.1')
->>> assert p.group('name') == ('go-spew')
->>> assert p.group('version') == ('v1.1.1')
-"""
