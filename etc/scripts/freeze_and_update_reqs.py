@@ -29,8 +29,6 @@ from __future__ import print_function
 import argparse
 import fnmatch
 from commoncode.fileutils import resource_iter
-from pip._internal.network.session import PipSession
-from pip._internal.req import parse_requirements
 import os
 import subprocess
 import shutil
