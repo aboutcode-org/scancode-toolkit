@@ -276,7 +276,7 @@ def parse_with_dparse(location):
 
 def parse_requirements_txt(location):
     """
-    Return a package built from Python requirements.txt files.
+    Return a PythonPackage built from a Python requirements.txt files at location.
     """
     package_dependencies = parse_with_dparse(location)
     return PythonPackage(dependencies=package_dependencies)
@@ -284,15 +284,12 @@ def parse_requirements_txt(location):
 
 def parse_pipfile_lock(location):
     """
-    Return package built from Python Pipfile.lock files.
+    Return a PythonPackage built from a Python Pipfile.lock file at location.
     """
-    with open(location, 'r') as f:
+    with open(location) as f:
         content = f.read()
 
-    try:
-        data = json.loads(content, object_pairs_hook=OrderedDict)
-    except json.decoder.JSONDecodeError:
-        data = {}
+    data = json.loads(content, object_pairs_hook=OrderedDict)
 
     sha256 = None
     if '_meta' in data:
@@ -309,7 +306,7 @@ def parse_pipfile_lock(location):
 
 def parse_setup_py(location):
     """
-    Return a package built from setup.py data.
+    Return a PythonPackage built from setup.py data.
     """
     if not location or not location.endswith('setup.py'):
         return
@@ -457,7 +454,7 @@ def parse_metadata(location):
 
 def parse_pkg_info(location):
     """
-    Return a Package from a a 'PKG-INFO' file at 'location' or None.
+    Return a PythonPackage from a a 'PKG-INFO' file at 'location' or None.
     """
     if not location:
         return
