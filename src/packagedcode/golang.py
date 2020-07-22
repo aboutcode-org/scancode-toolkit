@@ -89,9 +89,8 @@ class GolangPackage(models.Package):
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
-    def repository_homepage_url(self):
-        return self.homepage_url
-
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
 
 def build_gomod_package(gomod_data):
     """
