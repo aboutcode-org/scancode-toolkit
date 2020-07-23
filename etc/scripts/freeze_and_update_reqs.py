@@ -38,11 +38,12 @@ python_version = str(sys.version_info[0]) + str(sys.version_info[1])
 py_abi = "{0}cp{1}{0}".format("*", python_version)
 
 
-def generate_req_text(input_dir, output_file=False, package_name=False):
+def generate_req_text(input_dir, output_file=None, package_name=None):
     """
-    Generate a requirement.txt file of all dependencies present in thirdparty.
+    Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
+    If a `package_name` is provided it will be updated to its latest version.
     """
-    thirdparty = list(resource_iter(input_dir, with_dirs=False))
+    thirdparty = resource_iter(input_dir, with_dirs=False)
     # FIXME this code is for py 3.6 and later we will update for all version
     dependencies = [
         files
@@ -91,27 +92,27 @@ freeze_and_update_reqs.py \\
 
     parser.add_argument(
         "--deps_directory",
-        help="Required: Thirdparty Dependencies directory to be archived. ",
+        help="Required: Thirdparty Dependencies directory to be archived.",
         type=str,
         required=True,
     )
 
     parser.add_argument(
         "--output",
-        help="Output file name. Required if more than one input file is given. Will be derived from input file otherwise. ",
+        help="Output file name. Required if more than one input file is given. Will be derived from input file otherwise.",
         type=str,
         default="requirements.txt",
     )
 
     parser.add_argument(
         "--upgrade",
-        help="Upgrade all dependencies to new version. ",
+        help="Upgrade all dependencies to new version.",
         action="store_true",
     )
 
     parser.add_argument(
         "--upgrade_package",
-        help="Specify particular packages to upgrade. ",
+        help="Specify particular packages to upgrade.",
         type=str,
         default=None,
     )
