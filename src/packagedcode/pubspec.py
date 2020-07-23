@@ -139,7 +139,7 @@ def build_package(pubspec_data):
                                     """
                                     need to specify the type
                                     """
-                                    type='',
+                                    type='pubspec',
                                             name=dep_name).toString(),
                                             scope='dependencies',
                                             is_runtime=True,
