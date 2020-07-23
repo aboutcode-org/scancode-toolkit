@@ -30,17 +30,32 @@ import argparse
 from commoncode.system import on_windows
 import os
 from shutil import make_archive
+import subprocess
 import sys
 
 
-def generate_os_archive(input_dir, output):
+def generate_os_archive(links, requirement, output_file):
     """
     Generate an archive for dependencies for specific OS and
     given version of python by taking directory as an input.
     """
-
-    root_dir = os.path.expanduser(os.path.join("~", input_dir))
-    output_dir = os.path.expanduser(os.path.join("~", output))
+    subprocess.run(
+        [
+            "pip",
+            "download",
+            "--verbose",
+            "--no-cache-dir",
+            "--no-index",
+            "--find-links",
+            links,
+            "-r",
+            requirement,
+            "--dest",
+            "my_deps",
+        ]
+    )
+    root_dir = os.path.abspath("my_deps")
+    output_dir = os.path.abspath(output_file)
     if on_windows:
         make_archive(output_dir, "zip", root_dir)
     else:
@@ -51,22 +66,30 @@ def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
         description="""Creates a archive for specific OS and specific python.
 EXAMPLE:
-generate_OS_archive.py \\
-  --input scancode-toolkit/thirdparty \\
-  --output Desktop/macOS_py36 \\
+deps_archive.py \\
+  --input thirdparty \\
+  --r requirements.txt
+  --output_file macOS_py36 \\
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        "--input",
-        help="Required: Thirdparty Dependencies directory to be archived.",
+        "--find_links",
+        help="Required: A url or path to an html file, then parse for links to archives. If a local path or file://url that's a directory, then look for archives in the directory listing",
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--output",
+        "--req",
+        help="A requirement_file with hashes",
+        type=str,
+        default="requirements.txt",
+    )
+
+    parser.add_argument(
+        "--output_file",
         help="Required: The Generated archive file name without extension.",
         type=str,
         required=True,
@@ -74,9 +97,10 @@ generate_OS_archive.py \\
 
     args = parser.parse_args()
 
-    input_dir = args.input
-    output = args.output
-    generate_os_archive(input_dir, output)
+    link = args.find_links
+    req = args.req
+    output = args.output_file
+    generate_os_archive(link, req, output)
 
 
 def main() -> None:
