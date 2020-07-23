@@ -30,15 +30,15 @@ import argparse
 import fnmatch
 from commoncode.fileutils import resource_iter
 import os
-import subprocess
-import shutil
+from subprocess import run
+from shutil import copy, rmtree
 import sys
 
 python_version = str(sys.version_info[0]) + str(sys.version_info[1])
 py_abi = "{0}cp{1}{0}".format("*", python_version)
 
 
-def generate_req_text(input_dir, output_file, package_name):
+def generate_req_text(input_dir, req_file, package_name, upgrade):
     """
     Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
     If a `package_name` is provided it will be updated to its latest version.
@@ -57,8 +57,8 @@ def generate_req_text(input_dir, output_file, package_name):
     if not (os.path.isdir("temp dir")):
         os.mkdir("temp dir")
     for deps in dependencies:
-        shutil.copy(deps, "temp dir")
-    subprocess.run(
+        copy(deps, "temp dir")
+    run(
         [
             "pip-compile",
             "--generate-hashes",
@@ -66,15 +66,16 @@ def generate_req_text(input_dir, output_file, package_name):
             "temp dir",
             "--upgrade",
             "--output-file",
-            output_file,
+            req_file,
             "--verbose",
+            "--allow-unsafe",
             "--upgrade-package",
             "package_name",
             "--pip-args",
             "--no-index",
         ]
     )
-    shutil.rmtree("temp dir")
+    rmtree("temp dir")
 
 
 def main_with_args(args: str) -> None:
@@ -98,10 +99,10 @@ freeze_and_update_reqs.py \\
     )
 
     parser.add_argument(
-        "--output",
-        help="Output file name. Required if more than one input file is given. Will be derived from input file otherwise.",
+        "--requirement",
+        help="Requirement file name. Required if more than one input file is given. Will be derived from input file otherwise.",
         type=str,
-        default="requirements.txt",
+        required=True,
     )
 
     parser.add_argument(
@@ -120,10 +121,10 @@ freeze_and_update_reqs.py \\
     args = parser.parse_args()
 
     tpdir = args.deps_directory
-    output_file = args.output
+    requirement_file = args.requirement
     package_name = args.upgrade_package
-    upgrade = args.upgrade or None
-    generate_req_text(tpdir, output_file, package_name)
+    upgrade = args.upgrade or False
+    generate_req_text(tpdir, requirement_file, package_name, upgrade)
 
 
 def main() -> None:
