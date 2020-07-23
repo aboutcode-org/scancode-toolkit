@@ -38,13 +38,12 @@ python_version = str(sys.version_info[0]) + str(sys.version_info[1])
 py_abi = "{0}cp{1}{0}".format("*", python_version)
 
 
-def generate_req_text(input_dir, output_file=None, package_name=None):
+def generate_req_text(input_dir, output_file, package_name):
     """
     Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
     If a `package_name` is provided it will be updated to its latest version.
     """
     thirdparty = resource_iter(input_dir, with_dirs=False)
-    # FIXME this code is for py 3.6 and later we will update for all version
     dependencies = [
         files
         for files in thirdparty
@@ -55,16 +54,16 @@ def generate_req_text(input_dir, output_file=None, package_name=None):
             and not fnmatch.fnmatchcase(files, "*py2-ipaddress-3.4.1.tar.gz*")
         )
     ]
-    if not (os.path.isdir("required_deps")):
-        os.mkdir("required_deps")
+    if not (os.path.isdir("temp dir")):
+        os.mkdir("temp dir")
     for deps in dependencies:
-        shutil.copy(deps, "required_deps")
+        shutil.copy(deps, "temp dir")
     subprocess.run(
         [
             "pip-compile",
             "--generate-hashes",
             "--find-links",
-            "required_deps",
+            "temp dir",
             "--upgrade",
             "--output-file",
             output_file,
@@ -75,12 +74,13 @@ def generate_req_text(input_dir, output_file=None, package_name=None):
             "--no-index",
         ]
     )
-    shutil.rmtree("required_deps")
+    shutil.rmtree("temp dir")
 
 
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
-        description="""Creates a archive for specific OS and specific python.
+        description="""Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
+    If a `package_name` is provided it will be updated to its latest version.
 EXAMPLE:
 freeze_and_update_reqs.py \\
   --deps_directory DEPS_DIRECTORY \\
