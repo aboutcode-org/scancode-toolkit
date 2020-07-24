@@ -59,21 +59,13 @@ class PubspecPackage(models.Package):
     default_type = 'pubspec'
     default_primary_language = 'dart'
     default_web_baseurl = 'https://dart.dev/tools/pub/pubspec
-    default_download_baseurl = 'https://dart.dev/tools/pub/pubspec'
-    default_api_baseurl = 'https://dart.dev/tools/pub/pubspec'
 
     @classmethod
     def recognize(cls, location):
         yield parse(location)
 
-    def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/pods/{}'.format(baseurl, self.name)
-
-    def repository_download_url(self):
-        return '{}/archive/{}.zip'.format(self.homepage_url, self.version)
-
-    def api_data_url(self):
-        return self.homepage_url
+   """ def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return baseurl"""
 
 
 """
