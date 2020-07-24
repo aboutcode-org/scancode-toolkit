@@ -70,7 +70,7 @@ def generate_req_text(input_dir, req_file, package_name, upgrade):
             "--verbose",
             "--allow-unsafe",
             "--upgrade-package",
-            "package_name",
+             package_name,
             "--pip-args",
             "--no-index",
         ]
