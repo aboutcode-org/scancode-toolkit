@@ -27,103 +27,100 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import argparse
-import fnmatch
-from commoncode.fileutils import resource_iter
+from fnmatch import fnmatchcase
 import os
 from subprocess import run
 from shutil import copy, rmtree
 import sys
+import tempfile
+
+from commoncode.fileutils import resource_iter
 
 python_version = str(sys.version_info[0]) + str(sys.version_info[1])
-py_abi = "{0}cp{1}{0}".format("*", python_version)
+py_abi = '{0}cp{1}{0}'.format('*', python_version)
 
 
-def generate_req_text(input_dir, req_file, package_name, upgrade):
+def generate_req_text(find_links, req_file, package_name=None, upgrade=False):
     """
-    Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
-    If a `package_name` is provided it will be updated to its latest version.
+    Generate a requirement file at `req_file` of all dependencies wheels and 
+    sdists present in the `input_dir` directory.If a `package_name` is provided 
+    it will be updated to its latest version.
     """
-    thirdparty = resource_iter(input_dir, with_dirs=False)
+    thirdparty = resource_iter(find_links, with_dirs=False)
     dependencies = [
         files
         for files in thirdparty
-        if fnmatch.fnmatchcase(files, '*py3*')
-        or fnmatch.fnmatchcase(files, py_abi)
+        if fnmatchcase(files, '*py3*')
+        or fnmatchcase(files, py_abi)
         or (
-            fnmatch.fnmatchcase(files, '*tar.gz*')
-            and not fnmatch.fnmatchcase(files, '*py2-ipaddress-3.4.1.tar.gz*')
+            fnmatchcase(files, '*tar.gz*')
+            and not fnmatchcase(files, '*py2-ipaddress-3.4.1.tar.gz*')
         )
     ]
-    if not (os.path.isdir('temp dir')):
-        os.mkdir('temp dir')
-    for deps in dependencies:
-        copy(deps, 'temp dir')
-    pip_args = [
-        'pip-compile',
-        '--generate-hashes',
-        '--find-links',
-        'temp dir',
-        '--output-file',
-        req_file,
-        '--allow-unsafe',
-        '--pip-args',
-        '--no-index',
-    ]
-    if upgrade:
-        pip_args.append('--upgrade')
-    if package_name:
-        pip_args.extend(['--upgrade-package', package_name])
-    run(pip_args)
-    rmtree('temp dir')
+    with tempfile.TemporaryDirectory() as temp_dir:
+        for deps in dependencies:
+            copy(deps, temp_dir)
+        pip_args = [
+            'pip-compile',
+            '--generate-hashes',
+            '--find-links',
+            temp_dir,
+            '--output-file',
+            req_file,
+            '--allow-unsafe',
+            '--pip-args',
+            '--no-index',
+        ]
+        if upgrade:
+            pip_args.append('--upgrade')
+        if package_name:
+            pip_args.extend(['--upgrade-package', package_name])
+        run(pip_args)
 
 
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
-        description="""Generate a requirement file at `output_file`(by default requirements.txt) of all dependencies wheels and sdists present in the `input_dir` directory.
-    If a `package_name` is provided it will be updated to its latest version.
-EXAMPLE:
-freeze_and_update_reqs.py \\
-  --deps_directory DEPS_DIRECTORY \\
-  --output OUTPUT \\
-  --upgrade_package PACKAGE_NAME \\
-""",
+        description="""Generate a requirement file at `req_file` of all dependencies wheels 
+and sdists present in the `input_dir` directory.If a `package_name` is 
+provided it will be updated to its latest version.
+        """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        '--deps_directory',
-        help='Required: Thirdparty Dependencies directory to be archived.',
+        '--find-links',
+        help='Required: Look for archives in this directory or on this HTML page',
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--requirement',
-        help='Requirement file name. Required if more than one input file is given. Will be derived from input file otherwise.',
+        help='Required: Requirement file name.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--upgrade',
-        help='Upgrade all dependencies to new version.',
+        help='Optional: Try to upgrade all dependencies to their latest versions',
         action='store_true',
     )
 
     parser.add_argument(
-        '--upgrade_package',
-        help='Specify particular packages to upgrade.',
+        '--upgrade-package',
+        help='Optional: Specify particular packages to upgrade.',
         type=str,
         default=None,
     )
 
     args = parser.parse_args()
 
-    tpdir = args.deps_directory
-    requirement_file = args.requirement
-    package_name = args.upgrade_package
+    find_links = args.find_links
+    requirement = args.requirement
+    upgrade_package = args.upgrade_package or None
     upgrade = args.upgrade or False
-    generate_req_text(tpdir, requirement_file, package_name, upgrade)
+    generate_req_text(find_links, requirement, upgrade_package, upgrade)
 
 
 def main() -> None:
