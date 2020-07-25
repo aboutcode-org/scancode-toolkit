@@ -311,6 +311,36 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/sample7/output.expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_pipfile_lock_sample1(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample1/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample1/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample2(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample2/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample2/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample3(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample3/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample3/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample4(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample4/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample4/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample5(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample5/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample5/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
@@ -319,22 +349,23 @@ class TestPyPi(PackageTester):
 
 
 FILENAME_LIST = [
-    'requirements.txt',
-    'sample-requirements.txt',
-    'requirements-test.txt',
-    'sample-requirements-test.txt',
-    'requirements-dev.txt',
-    'sample-requirements-dev.txt',
-    'requirements.in',
-    'sample-requirements.in',
-    'requirements-test.in',
-    'sample-requirements-test.in',
-    'requirements-dev.in',
-    'sample-requirements-dev.in'
+    ('requirements.txt', 'requirements.txt'),
+    ('sample-requirements.txt', 'requirements.txt'),
+    ('requirements-test.txt', 'requirements.txt'),
+    ('sample-requirements-test.txt', 'requirements.txt'),
+    ('requirements-dev.txt', 'requirements.txt'),
+    ('sample-requirements-dev.txt', 'requirements.txt'),
+    ('requirements.in', 'requirements.txt'),
+    ('sample-requirements.in', 'requirements.txt'),
+    ('requirements-test.in', 'requirements.txt'),
+    ('sample-requirements-test.in', 'requirements.txt'),
+    ('requirements-dev.in', 'requirements.txt'),
+    ('sample-requirements-dev.in', 'requirements.txt'),
+    ('Pipfile.lock', 'Pipfile.lock')
 ]
 
 class TestFiletype(object):
-    @pytest.mark.parametrize('filename', FILENAME_LIST)
-    def test_file_type(self, filename):
+    @pytest.mark.parametrize('filename, expected_filename', FILENAME_LIST)
+    def test_file_type(self, filename, expected_filename):
         filename = pypi.get_dependency_type(filename)
-        assert filename == 'requirements.txt'
+        assert filename == expected_filename
