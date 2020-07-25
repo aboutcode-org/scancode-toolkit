@@ -47,35 +47,34 @@ def generate_req_text(input_dir, req_file, package_name, upgrade):
     dependencies = [
         files
         for files in thirdparty
-        if fnmatch.fnmatchcase(files, "*py3*")
+        if fnmatch.fnmatchcase(files, '*py3*')
         or fnmatch.fnmatchcase(files, py_abi)
         or (
-            fnmatch.fnmatchcase(files, "*tar.gz*")
-            and not fnmatch.fnmatchcase(files, "*py2-ipaddress-3.4.1.tar.gz*")
+            fnmatch.fnmatchcase(files, '*tar.gz*')
+            and not fnmatch.fnmatchcase(files, '*py2-ipaddress-3.4.1.tar.gz*')
         )
     ]
-    if not (os.path.isdir("temp dir")):
-        os.mkdir("temp dir")
+    if not (os.path.isdir('temp dir')):
+        os.mkdir('temp dir')
     for deps in dependencies:
-        copy(deps, "temp dir")
-    run(
-        [
-            "pip-compile",
-            "--generate-hashes",
-            "--find-links",
-            "temp dir",
-            "--upgrade",
-            "--output-file",
-            req_file,
-            "--verbose",
-            "--allow-unsafe",
-            "--upgrade-package",
-             package_name,
-            "--pip-args",
-            "--no-index",
-        ]
-    )
-    rmtree("temp dir")
+        copy(deps, 'temp dir')
+    pip_args = [
+        'pip-compile',
+        '--generate-hashes',
+        '--find-links',
+        'temp dir',
+        '--output-file',
+        req_file,
+        '--allow-unsafe',
+        '--pip-args',
+        '--no-index',
+    ]
+    if upgrade:
+        pip_args.append('--upgrade')
+    if package_name:
+        pip_args.extend(['--upgrade-package', package_name])
+    run(pip_args)
+    rmtree('temp dir')
 
 
 def main_with_args(args: str) -> None:
@@ -92,28 +91,28 @@ freeze_and_update_reqs.py \\
     )
 
     parser.add_argument(
-        "--deps_directory",
-        help="Required: Thirdparty Dependencies directory to be archived.",
+        '--deps_directory',
+        help='Required: Thirdparty Dependencies directory to be archived.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--requirement",
-        help="Requirement file name. Required if more than one input file is given. Will be derived from input file otherwise.",
+        '--requirement',
+        help='Requirement file name. Required if more than one input file is given. Will be derived from input file otherwise.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--upgrade",
-        help="Upgrade all dependencies to new version.",
-        action="store_true",
+        '--upgrade',
+        help='Upgrade all dependencies to new version.',
+        action='store_true',
     )
 
     parser.add_argument(
-        "--upgrade_package",
-        help="Specify particular packages to upgrade.",
+        '--upgrade_package',
+        help='Specify particular packages to upgrade.',
         type=str,
         default=None,
     )
@@ -131,5 +130,5 @@ def main() -> None:
     main_with_args(sys.argv[1:])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
