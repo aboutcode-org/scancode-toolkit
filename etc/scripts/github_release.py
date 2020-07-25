@@ -28,13 +28,13 @@ from __future__ import print_function
 
 import argparse
 from commoncode.fileutils import resource_iter
-import fnmatch
+from fnmatch import fnmatchcase
 import os
-import subprocess
+from subprocess import run
 import sys
 
 python_version = str(sys.version_info[0]) + str(sys.version_info[1])
-py_abi = "{0}cp{1}{0}".format("*", python_version)
+py_abi = '{0}cp{1}{0}'.format('*', python_version)
 
 
 def release_asset(token, tag, repo, body, user, limit, asset_dir):
@@ -43,37 +43,36 @@ def release_asset(token, tag, repo, body, user, limit, asset_dir):
     given directory.
     """
 
-    os.environ["GITHUB_TOKEN"] = token
+    os.environ['GITHUB_TOKEN'] = token
     thirdparty = list(resource_iter(asset_dir, with_dirs=False))
     dependencies = [
         files
         for files in thirdparty
-        if fnmatch.fnmatchcase(files, "*py3*")
-        or fnmatch.fnmatchcase(files, py_abi)
+        if fnmatchcase(files, '*py3*')
+        or fnmatchcase(files, py_abi)
         or (
-            fnmatch.fnmatchcase(files, "*tar.gz*")
-            and not fnmatch.fnmatchcase(files, "*py2-ipaddress-3.4.1.tar.gz*")
+            fnmatchcase(files, '*tar.gz*')
+            and not fnmatchcase(files, '*py2-ipaddress-3.4.1.tar.gz*')
         )
     ]
     for deps in dependencies:
-        subprocess.run(
-            [
-                "python3",
-                "-m",
-                "github_release_retry.github_release_retry",
-                "--user",
-                user,
-                "--repo",
-                repo,
-                "--tag_name",
-                tag,
-                "--body_string",
-                body,
-                "--retry_limit",
-                limit,
-                deps,
-            ]
-        )
+        github_args = [
+            'python3',
+            '-m',
+            'github_release_retry.github_release_retry',
+            '--user',
+            user,
+            '--repo',
+            repo,
+            '--tag_name',
+            tag,
+            '--body_string',
+            body,
+            '--retry_limit',
+            limit,
+            deps,
+        ]
+        run(github_args)
 
 
 def main_with_args(args: str) -> None:
@@ -81,8 +80,9 @@ def main_with_args(args: str) -> None:
         description="""Creates a GitHub release (if it does not already exist) and uploads files to the release.
 Please pass the GITHUB_TOKEN as an argument.
 EXAMPLE:
-github-release-asset \\
+github-release.py \\
   --user Abhishek-Dev09 \\
+  --token XXXXXXXXXXXXX \\
   --repo thirdparty \\
   --tag_name v1.0 \\
   --body_string "Python 3.6 wheels" \\
@@ -92,48 +92,49 @@ github-release-asset \\
     )
 
     parser.add_argument(
-        "--user",
-        help="Required: The GitHub username or organization name in which the repo resides.",
+        '--user',
+        help='Required: The GitHub username or organization name in which the repo resides.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--token",
-        help="Required: The Github token is required to acess the repository where you want to upload.",
+        '--token',
+        help='Required: The Github token is required to acess the repository where you want to upload.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--repo",
-        help="Required: The GitHub repo name in which to make the release.",
+        '--repo',
+        help='Required: The GitHub repo name in which to make the release.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--tag_name",
-        help="Required: The name of the tag to create or use.",
+        '--tag_name',
+        help='Required: The name of the tag to create or use.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--body_string",
-        help="Required (or use --body_file): Text describing the release. Ignored if the release already exists.",
+        '--body_string',
+        help='Required : Text describing the release. Ignored if the release already exists.',
         type=str,
+        required=True,
     )
 
     parser.add_argument(
-        "--retry_limit",
-        help="The number of times to retry creating/getting the release and/or uploading each file.",
+        '--retry_limit',
+        help='The number of times to retry creating/getting the release and/or uploading each file.',
         type=str,
-        default="10",
+        default='10',
     )
 
     parser.add_argument(
-        "--files", type=str, help="The files to upload to the release.",
+        '--files', type=str, help='The files to upload to the release.',
     )
 
     args = parser.parse_args()
@@ -153,5 +154,5 @@ def main() -> None:
     main_with_args(sys.argv[1:])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

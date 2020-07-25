@@ -30,7 +30,7 @@ import argparse
 from commoncode.system import on_windows
 import os
 from shutil import make_archive
-import subprocess
+from subprocess import run
 import sys
 
 
@@ -39,27 +39,26 @@ def generate_os_archive(links, requirement, output_file):
     Generate an archive for dependencies for specific OS and
     given version of python by taking directory as an input.
     """
-    subprocess.run(
-        [
-            "pip",
-            "download",
-            "--verbose",
-            "--no-cache-dir",
-            "--no-index",
-            "--find-links",
+    pip_agrs =[
+            'pip',
+            'download',
+            '--verbose',
+            '--no-cache-dir',
+            '--no-index',
+            '--find-links',
             links,
-            "-r",
+            '-r',
             requirement,
-            "--dest",
-            "my_deps",
+            '--dest',
+            'my_deps',
         ]
-    )
-    root_dir = os.path.abspath("my_deps")
+    run(pip_agrs)
+    root_dir = os.path.abspath('my_deps')
     output_dir = os.path.abspath(output_file)
     if on_windows:
-        make_archive(output_dir, "zip", root_dir)
+        make_archive(output_dir, 'zip', root_dir)
     else:
-        make_archive(output_dir, "gztar", root_dir)
+        make_archive(output_dir, 'gztar', root_dir)
 
 
 def main_with_args(args: str) -> None:
@@ -68,29 +67,29 @@ def main_with_args(args: str) -> None:
 EXAMPLE:
 deps_archive.py \\
   --input thirdparty \\
-  --r requirements.txt
+  --req requirements.txt
   --output_file macOS_py36 \\
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        "--find_links",
+        '--find_links',
         help="Required: A url or path to an html file, then parse for links to archives. If a local path or file://url that's a directory, then look for archives in the directory listing",
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        "--req",
-        help="A requirement_file with hashes",
+        '--req',
+        help='A requirement_file with hashes',
         type=str,
-        default="requirements.txt",
+        required=True,
     )
 
     parser.add_argument(
-        "--output_file",
-        help="Required: The Generated archive file name without extension.",
+        '--output_file',
+        help='Required: The Generated archive file name without extension.',
         type=str,
         required=True,
     )
@@ -107,5 +106,5 @@ def main() -> None:
     main_with_args(sys.argv[1:])
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
