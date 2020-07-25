@@ -3,6 +3,9 @@
 # It also drops "OR CONTRIBUTORS" from the end, just before "BE LIABLE", hence only 99.0% of a BSD-3-Clause.
 100%
 BSD-3-Clause 99.0% 0,$
+scan
+100%
+BSD-3-Clause 100% 0,$
 
 Copyright © 2015, Go Gopher and The Go Authors. All rights reserved.
 
