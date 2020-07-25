@@ -24,7 +24,7 @@ Why use ScanCode?
   and more both in **source code** and **binary** files.
 
 - ScanCode provides the **most accurate license detection engine** and does a
-  full comparison (also known as, different or red line comparison) between a database of license texts
+  full comparison (also known as, diff or red line comparison) between a database of license texts
   and your code instead of relying only on regex patterns or probabilistic
   search, edit distance or machine learning.
 
