@@ -1,0 +1,23 @@
+# "As well as the file ..."
+# Example: https://github.com/stellar/stellar-core
+100%
+Apache-2.0-Header 100% 0,$
+scan
+100%
+Apache-2.0 100% 0,$
+
+Copyright 2014, 2015 Go Gopher Foundation and contributors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+As well as the file LICENSE-APACHE.txt adjacent to this file.
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

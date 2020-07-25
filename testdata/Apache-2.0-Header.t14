@@ -1,0 +1,24 @@
+# Example: https://github.com/donnemartin/saws
+100.0%
+Apache-2.0 100.0% 451,489 URL
+Apache-2.0-Header 42.7% 554,$
+scan
+68.8%
+Apache-2.0 100% 225,$
+
+I am providing code and resources in this repository to you under an open source
+license.  Because this is my personal repository, the license you receive to my
+code and resources is from me and not my employer (Go Gopher).
+
+Copyright 2015 Go Gopher Worker. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License"). You
+may not use this file except in compliance with the License. A copy of
+the License is Xlocated at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+or in the "license" file accompanying this file. This file is
+distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ANY KIND, either express or implied. See the License for the specific
+language governing permissions and limitations under the License.
