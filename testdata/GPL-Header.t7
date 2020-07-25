@@ -1,0 +1,29 @@
+# Dropped "in the hope that it will be useful". ☺
+# Example: https://github.com/0xd4d/de4dot
+66.4%
+GPL-Header 80.4% 204,741
+scan
+79.1%
+GPL-2.0 100% 0,741
+
+***************************************************************************
+** Copyright (C) Go Gopher
+**
+** This file is part of the ZGOPHER real-time data compression library.
+**
+** The ZGOPHER library is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License as
+** published by the Free Software Foundation; either version 2 of
+** the License, or (at your option) any later version.
+**
+** The ZGOPHER library is distributed WITHOUT ANY WARRANTY;
+** without even the implied warranty of MERCHANTABILITY or
+** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+** License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with the ZGOPHER library; see the file GPL.TXT.
+** If not, write to the Free Software Foundation, Inc.,
+** 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+**
+***************************************************************************
