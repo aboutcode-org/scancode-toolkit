@@ -27,127 +27,138 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import argparse
-from fnmatch import fnmatchcase
+from pathlib import Path
 import os
-from subprocess import run
 import sys
+
+from github_release_retry import github_release_retry as grr
 
 from commoncode.fileutils import resource_iter
 
-python_version = str(sys.version_info[0]) + str(sys.version_info[1])
-py_abi = '{0}cp{1}{0}'.format('*', python_version)
+
+"""
+Create GitHUb releases and upload  files there.
+This depends on the `github_release_retry` utility
+https://github.com/google/github-release-retry
+"""
 
 
-def release_asset(token, tag, repo, body_string, user, retry_limit, asset_dir):
+def create_or_update_release_and_upload_directory(
+        user,
+        repo,
+        tag_name,
+        token,
+        directory,
+        retry_limit=10,
+        description=None
+):
     """
-    Release .whl,.ABOUT,.NOTICE,.LICENSE to github repository(repo) from asset_directory.
-    It takes user and token as credential and tag_name,body_string for description of 
-    release. By default retry_limit is 10.
+    Create or update a GitHub release at https://github.com/<user>/<repo> for
+    `tag_name` tag using the optional `description` for this release.
+    Use the provided `token` as a GitHub token for API calls authentication.
+    Upload all files found in the `directory` tree to that GitHub release.
+    Retry API calls up to `retry_limit` time to work around instability the
+    GitHub API.
     """
 
-    os.environ['GITHUB_TOKEN'] = token
-    thirdparty = list(resource_iter(asset_dir, with_dirs=False))
-    dependencies = [
-        files
-        for files in thirdparty
-        if fnmatchcase(files, '*py3*')
-        or fnmatchcase(files, py_abi)
-        or (
-            fnmatchcase(files, '*tar.gz*')
-            and not fnmatchcase(files, '*py2-ipaddress-3.4.1.tar.gz*')
-        )
-    ]
-    for deps in dependencies:
-        github_args = [
-            'python3',
-            '-m',
-            'github_release_retry.github_release_retry',
-            '--user',
-            user,
-            '--repo',
-            repo,
-            '--tag_name',
-            tag,
-            '--body_string',
-            body_string,
-            '--retry_limit',
-            retry_limit,
-            deps
-        ]
-        run(github_args)
+    api = grr.GithubApi(
+        github_api_url='https://api.github.com',
+        user=user,
+        repo=repo,
+        token=token,
+        retry_limit=retry_limit,
+    )
+    release = grr.Release(tag_name=tag_name, body=description)
+    files = [Path(r) for r in resource_iter(directory, with_dirs=False)]
+    grr.make_release(api, release, files)
 
 
-def main_with_args(args: str) -> None:
+def main_with_args(args):
     parser = argparse.ArgumentParser(
-        description="""Creates a GitHub release (if it does not already exist) and uploads files to the release.
-Please pass the GITHUB_TOKEN as an argument.
-""",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description=(
+            'Create (or update) a GitHub release and upload all the '
+            'files of DIRECTORY to that release.'
+        ),
     )
 
     parser.add_argument(
         '--user',
-        help='Required: The GitHub username or organization name in which the repo resides.',
-        type=str,
-        required=True,
-    )
-
-    parser.add_argument(
-        '--token',
-        help='Required: The Github token is required to acess the repository where you want to upload.',
+        help='The GitHub username or organization in which the repository resides.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--repo',
-        help='Required: The GitHub repo name in which to make the release.',
+        help=' The GitHub repository name in which to create the release.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--tag-name',
-        help='Required: The name of the tag to create or use.',
+        help='The name of the tag to create (or re-use) for this release.',
         type=str,
         required=True,
-    )
-
-    parser.add_argument(
-        '--body-string',
-        help='Required : Text describing the release. Ignored if the release already exists.',
-        type=str,
-        required=True,
-    )
-
-    parser.add_argument(
-        '--retry-limit',
-        help='The number of times to retry creating/getting the release and/or uploading each file.',
-        type=str,
-        default='10',
     )
 
     parser.add_argument(
         '--directory',
-         help='Required: The directory that contains files to upload to the release.',
+         help='The directory that contains files to upload to the release.',
          type=str,
          required=True,
     )
 
+    TOKEN_HELP = (
+            'The Github personal acess token is used to authenticate API calls. '
+            'Required unless you set the GITHUB_TOKEN environment variable as an alternative. '
+            'See for details: https://github.com/settings/tokens and '
+            'https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token'
+        )
+
+    parser.add_argument(
+        '--token',
+        help=TOKEN_HELP,
+        type=str,
+        required=False,
+    )
+
+    parser.add_argument(
+        '--description',
+        help='Text description for the release. Ignored if the release exists.',
+        type=str,
+        required=False,
+    )
+
+    parser.add_argument(
+        '--retry_limit',
+        help=(
+            'Number of retries when making failing GitHub API calls. '
+            'Retrying helps work around transient failures of the GitHub API.'
+        ),
+        type=int,
+        default=10,
+    )
+
     args = parser.parse_args()
+    token = args.token or os.environ.get('GITHUB_TOKEN', None)
+    if not token:
+        print('--token required option is missing.')
+        print(TOKEN_HELP)
+        sys.exit(1)
 
-    token = args.token
-    tag_name = args.tag_name
-    repo = args.repo
-    body_string = args.body_string
-    user = args.user
-    retry_limit = args.retry_limit
-    directory = args.directory
+    create_or_update_release_and_upload_directory(
+        user=args.user,
+        repo=args.repo,
+        tag_name=args.tag_name,
+        description=args.description,
+        retry_limit=args.retry_limit,
+        token=token,
+        directory=args.directory,
+    )
 
-    release_asset(token, tag_name, repo, body_string, user, retry_limit, directory)
 
-
-def main() -> None:
+def main():
     main_with_args(sys.argv[1:])
 
 
