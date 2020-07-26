@@ -65,29 +65,26 @@ def generate_os_archive(links, requirement, archive_name):
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
         description="""Generate an archive as `archive_name.tar.gz` and `archive_name` directory 
-that contains wheels and sdist for specific OS and python by taking links, 
-requirement as an input.
-""",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
+            that contains wheels and sdist for specific OS and python.""",
     )
 
     parser.add_argument(
         '--find-links',
-        help="Required: A url or path to an html file, then parse for links to archives. If a local path or file://url that's a directory, then look for archives in the directory listing",
+        help="A directory or URL where to find packages. See pip help for details.",
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--requirement',
-        help='Required: A requirement_file with hashes',
+        help='An existing requirement file (with hashes) listing required packages.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
         '--archive-name',
-        help='Required: The Generated archive file name without extension.',
+        help='Path to the archive file base name to create (without extension).',
         type=str,
         required=True,
     )
