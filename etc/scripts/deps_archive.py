@@ -27,17 +27,17 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import argparse
-from commoncode.system import on_windows
 import os
 from shutil import make_archive
 from subprocess import run
 import sys
 
+from commoncode.system import on_windows
 
 def generate_os_archive(links, requirement, output_file):
     """
-    Generate an archive for dependencies for specific OS and
-    given version of python by taking directory as an input.
+    Generate an archive as an outtput_file for specific OS 
+    and python by taking links, requirement_file as an input.
     """
     pip_agrs =[
             'pip',
@@ -64,31 +64,26 @@ def generate_os_archive(links, requirement, output_file):
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
         description="""Creates a archive for specific OS and specific python.
-EXAMPLE:
-deps_archive.py \\
-  --input thirdparty \\
-  --req requirements.txt
-  --output_file macOS_py36 \\
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
     parser.add_argument(
-        '--find_links',
+        '--find-links',
         help="Required: A url or path to an html file, then parse for links to archives. If a local path or file://url that's a directory, then look for archives in the directory listing",
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        '--req',
-        help='A requirement_file with hashes',
+        '--requirement',
+        help='Required: A requirement_file with hashes',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        '--output_file',
+        '--output-filename',
         help='Required: The Generated archive file name without extension.',
         type=str,
         required=True,
@@ -96,10 +91,10 @@ deps_archive.py \\
 
     args = parser.parse_args()
 
-    link = args.find_links
-    req = args.req
-    output = args.output_file
-    generate_os_archive(link, req, output)
+    find_links = args.find_links
+    requirement = args.requirement
+    output_filename = args.output_filename
+    generate_os_archive(find_links, requirement, output_filename)
 
 
 def main() -> None:

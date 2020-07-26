@@ -27,20 +27,22 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import argparse
-from commoncode.fileutils import resource_iter
 from fnmatch import fnmatchcase
 import os
 from subprocess import run
 import sys
 
+from commoncode.fileutils import resource_iter
+
 python_version = str(sys.version_info[0]) + str(sys.version_info[1])
 py_abi = '{0}cp{1}{0}'.format('*', python_version)
 
 
-def release_asset(token, tag, repo, body, user, limit, asset_dir):
+def release_asset(token, tag, repo, body_string, user, retry_limit, asset_dir):
     """
-    Release .whl,.ABOUT,.NOTICE,.LICENSE to github repository from 
-    given directory.
+    Release .whl,.ABOUT,.NOTICE,.LICENSE to github repository(repo) from asset_directory.
+    It takes user and token as credential and tag_name,body_string for description of 
+    release. By default retry_limit is 10.
     """
 
     os.environ['GITHUB_TOKEN'] = token
@@ -67,10 +69,10 @@ def release_asset(token, tag, repo, body, user, limit, asset_dir):
             '--tag_name',
             tag,
             '--body_string',
-            body,
+            body_string,
             '--retry_limit',
-            limit,
-            deps,
+            retry_limit,
+            deps
         ]
         run(github_args)
 
@@ -79,14 +81,6 @@ def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
         description="""Creates a GitHub release (if it does not already exist) and uploads files to the release.
 Please pass the GITHUB_TOKEN as an argument.
-EXAMPLE:
-github-release.py \\
-  --user Abhishek-Dev09 \\
-  --token XXXXXXXXXXXXX \\
-  --repo thirdparty \\
-  --tag_name v1.0 \\
-  --body_string "Python 3.6 wheels" \\
-  hello-world.zip RELEASE_NOTES.txt
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -113,41 +107,44 @@ github-release.py \\
     )
 
     parser.add_argument(
-        '--tag_name',
+        '--tag-name',
         help='Required: The name of the tag to create or use.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        '--body_string',
+        '--body-string',
         help='Required : Text describing the release. Ignored if the release already exists.',
         type=str,
         required=True,
     )
 
     parser.add_argument(
-        '--retry_limit',
+        '--retry-limit',
         help='The number of times to retry creating/getting the release and/or uploading each file.',
         type=str,
         default='10',
     )
 
     parser.add_argument(
-        '--files', type=str, help='The files to upload to the release.',
+        '--directory',
+         help='Required: The directory that contains files to upload to the release.',
+         type=str,
+         required=True,
     )
 
     args = parser.parse_args()
 
     token = args.token
-    tag = args.tag_name
+    tag_name = args.tag_name
     repo = args.repo
-    body = args.body_string
+    body_string = args.body_string
     user = args.user
-    limit = args.retry_limit
-    deps_dir = args.files
+    retry_limit = args.retry_limit
+    directory = args.directory
 
-    release_asset(token, tag, repo, body, user, limit, deps_dir)
+    release_asset(token, tag_name, repo, body_string, user, retry_limit, directory)
 
 
 def main() -> None:
