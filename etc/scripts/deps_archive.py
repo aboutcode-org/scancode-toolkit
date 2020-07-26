@@ -34,10 +34,11 @@ import sys
 
 from commoncode.system import on_windows
 
-def generate_os_archive(links, requirement, output_file):
+def generate_os_archive(links, requirement, archive_name):
     """
-    Generate an archive as an outtput_file for specific OS 
-    and python by taking links, requirement_file as an input.
+    Generate an archive as `archive_name.tar.gz` and `archive_name` directory 
+    that contains wheels and sdist for specific OS and python by taking links, 
+    requirement as an input.
     """
     pip_agrs =[
             'pip',
@@ -50,11 +51,11 @@ def generate_os_archive(links, requirement, output_file):
             '-r',
             requirement,
             '--dest',
-            'my_deps',
+            archive_name,
         ]
     run(pip_agrs)
-    root_dir = os.path.abspath('my_deps')
-    output_dir = os.path.abspath(output_file)
+    root_dir = os.path.abspath(archive_name)
+    output_dir = os.path.abspath(archive_name)
     if on_windows:
         make_archive(output_dir, 'zip', root_dir)
     else:
@@ -63,7 +64,9 @@ def generate_os_archive(links, requirement, output_file):
 
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
-        description="""Creates a archive for specific OS and specific python.
+        description="""Generate an archive as `archive_name.tar.gz` and `archive_name` directory 
+that contains wheels and sdist for specific OS and python by taking links, 
+requirement as an input.
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -83,7 +86,7 @@ def main_with_args(args: str) -> None:
     )
 
     parser.add_argument(
-        '--output-filename',
+        '--archive-name',
         help='Required: The Generated archive file name without extension.',
         type=str,
         required=True,
@@ -93,8 +96,8 @@ def main_with_args(args: str) -> None:
 
     find_links = args.find_links
     requirement = args.requirement
-    output_filename = args.output_filename
-    generate_os_archive(find_links, requirement, output_filename)
+    archive_name = args.archive_name
+    generate_os_archive(find_links, requirement, archive_name)
 
 
 def main() -> None:
