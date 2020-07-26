@@ -1,5 +1,5 @@
 license_expression: unicode
-is_license_notice: text
+is_license_text: yes
 ignorable_copyrights:
     - Copyright (c) Unicode, Inc.
 ignorable_holders:
