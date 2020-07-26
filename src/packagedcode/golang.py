@@ -134,10 +134,12 @@ def build_gomod_package(gomod_data):
     name = gomod_data.get('name')
     namespace = gomod_data.get('namespace')
     homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
+    vcs_url = 'https://{}.git'.format(gomod_data.get('module'))
 
     return GolangPackage(
         name=name,
         namespace=namespace,
+        vcs_url=vcs_url,
         homepage_url=homepage_url,
         dependencies=package_dependencies
     )
