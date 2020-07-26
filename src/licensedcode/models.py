@@ -1103,7 +1103,7 @@ class Rule(object):
         "relevance" attribute or computed base on the rule length here using
         this approach:
 
-        - a false positive or a negative rule has a relevance of zero.
+        - a false positive or a negative rule has a relevance of 100.
         - a rule of length equal to or larger than a threshold has a 100 relevance
         - a rule of length smaller than a threshold has a relevance of
           100/threshold, rounded down.
