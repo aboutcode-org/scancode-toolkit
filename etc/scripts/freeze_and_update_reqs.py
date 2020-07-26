@@ -29,8 +29,8 @@ from __future__ import print_function
 import argparse
 from fnmatch import fnmatchcase
 import os
+from shutil import copy
 from subprocess import run
-from shutil import copy, rmtree
 import sys
 import tempfile
 
@@ -42,9 +42,10 @@ py_abi = '{0}cp{1}{0}'.format('*', python_version)
 
 def generate_req_text(find_links, req_file, package_name=None, upgrade=False):
     """
-    Generate a requirement file at `req_file` of all dependencies wheels and 
-    sdists present in the `input_dir` directory.If a `package_name` is provided 
-    it will be updated to its latest version.
+    Generate a requirement file as `req_file` of all dependencies wheels and 
+    sdists present at the find_links.If a `package_name` is provided it will 
+    be updated to its latest version and if upgrade option is called,it will 
+    be updated all the wheels to the latest version.
     """
     thirdparty = resource_iter(find_links, with_dirs=False)
     dependencies = [
@@ -80,9 +81,10 @@ def generate_req_text(find_links, req_file, package_name=None, upgrade=False):
 
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
-        description="""Generate a requirement file at `req_file` of all dependencies wheels 
-and sdists present in the `input_dir` directory.If a `package_name` is 
-provided it will be updated to its latest version.
+        description="""Generate a requirement file as `requirement` of all dependencies wheels and 
+sdists present at the find_links.If a `upgrade-package` option is called it 
+will update provided `package_name` to its latest version and if upgrade 
+option is called,it will be update all the wheels/sdist to the latest version.
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
