@@ -43,16 +43,6 @@ from packagedcode import models
 """
 Handle Go packages including go.mod and go.sum files.
 """
-"""
-Sample go.mod file:
-module github.com/alecthomas/participle
-require (
-	github.com/alecthomas/repr v0.0.0-20181024024818-d37bc2a10ba1
-	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/stretchr/testify v1.4.0
-)
-go 1.13
-"""
 
 # TODO:
 # go.mod file does not contain version number.
@@ -134,10 +124,12 @@ def build_gomod_package(gomod_data):
     name = gomod_data.get('name')
     namespace = gomod_data.get('namespace')
     homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
+    vcs_url = 'https://{}.git'.format(gomod_data.get('module'))
 
     return GolangPackage(
         name=name,
         namespace=namespace,
+        vcs_url=vcs_url,
         homepage_url=homepage_url,
         dependencies=package_dependencies
     )
