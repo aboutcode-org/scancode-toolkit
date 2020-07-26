@@ -1,0 +1,48 @@
+OGON CORE AGPL EXCEPTIONS
+Version 1.0, 1 May 2016
+
+The ogon Core AGPL Exceptions are additional permissions under
+section 7 of the GNU Affero General Public License version 3 ("AGPLv3").
+They apply to a given source file that bears the following notice placed by
+the copyright holders of that file:
+
+    Under the GNU Affero General Public License version 3 section 7 the
+    copyright holders grant the additional permissions set forth in the
+    ogon Core AGPL Exceptions version 1 as published by
+    Thincast Technologies GmbH.
+
+If you modify any files with these exceptions, you may extend these exceptions
+to your version of the file(s), but you are not obligated to do so.
+If you do not wish to do so, delete this statement from your version.
+
+0. Definitions
+
+"ogon" means ogon software licensed under version 3 or any later version
+of the GNU Affero General Public License ("AGPL"), or a work based on such
+software and licensed under the AGPL.
+
+"OpenSSL" means OpenSSL toolkit software distributed by the OpenSSL Project
+and licensed under the OpenSSL Licenses, or a work based on such software and
+licensed under the OpenSSL Licenses.
+
+"OpenSSL Licenses" means the OpenSSL License and Original SSLeay License under
+which the OpenSSL Project distributes the OpenSSL toolkit software, as those
+licenses appear in the file LICENSE-OPENSSL.
+
+1. OpenSSL Exception
+
+Permission is hereby granted to copy, modify, propagate, and distribute a work
+formed by combining OpenSSL with ogon, or a work derivative of such a
+combination, even if such copying, modification, propagation, or distribution
+would otherwise violate the terms of the AGPL. You must comply with the AGPL
+in all respects for all of the code used other than OpenSSL.
+
+2. No-Communication Exception
+
+If you modify ogon and the covered work has no means of communicating an
+offer to provide the corresponding source to the users interacting with it
+remotely through a computer network, you may comply with this requirement set
+forth in section 13 of the GNU Affero General Public License version 3 by
+making the corresponding source for your version available for anyone to
+copy, free of charge, through a publicly available network server or other
+readily accessible means.

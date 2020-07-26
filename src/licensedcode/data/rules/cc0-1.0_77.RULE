@@ -1,0 +1,12 @@
+## Code templates and generated code
+
+The included source code for
+any executable code that Styrene generates,
+and any associated scripting,
+is hereby gifted into the public domain
+using a Creative Commons [CC0 1.0][cc0] Public Domain Dedication.
+This covers all the extras that Styrene builds into your app bundle.
+In other words, this exception lets you distribute or use the bundle
+without any possible infingement against our licenses.
+
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/

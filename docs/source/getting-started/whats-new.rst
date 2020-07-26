@@ -49,7 +49,7 @@ deprecated hereafter. The new documentation has improved support in terms of:
 #. Consistent with the Latest Version
 #. Command Line Interface Reference
 #. Getting Started Support for Newcomers
-#. Restructured to fit into the recommended `4 Category Doc Format <https://www.divio.com/blog/documentation/>`_
+#. Restructured to fit into the recommended `4 Category Doc Format <https://docs.divio.com/en/latest/>`_
 #. Updated Tutorials/How To's
 #. Updated Plugin Support
 

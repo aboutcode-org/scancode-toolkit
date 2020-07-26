@@ -308,7 +308,7 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
             for tarinfo in tarinfos:
                 if tar_can_extract(tarinfo, verbatim):
                     if not verbatim:
-                        tarinfo.mode = 0o700
+                        tarinfo.mode = 0o755
                     to_extract.append(tarinfo)
             tar.extractall(target_dir, members=to_extract)
         finally:

@@ -497,8 +497,18 @@ class Type(object):
 
         if any(m in mt for m in mimes) or any(t in ft for t in types):
             return True
+
+        if on_linux and py2:
+            tga_ext = b'.tga'
         else:
-            return False
+            tga_ext = u'.tga'
+
+        if ft == 'data' and mt=='application/octet-stream' and self.location.lower().endswith(tga_ext):
+            # there is a regression in libmagic 5.38 https://bugs.astron.com/view.php?id=161
+            # this is a targe image
+            return True
+
+        return False
 
     @property
     def is_media_with_meta(self):

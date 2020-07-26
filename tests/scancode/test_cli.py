@@ -109,6 +109,15 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
+@pytest.mark.xfail(reason='Bug is not fixed yet')
+def test_scanned_resource_no_attribute_emails():
+    test_dir = test_env.get_test_loc('attribute_error_data/apache-1.1.txt')
+    result_file = test_env.get_temp_file('bb.json')
+    args = ['-clp', '--json-pp',result_file, test_dir, '--filter-clues']
+    result = run_scan_click(args)
+    assert "'ScannedResource' object has no attribute 'emails'" not in result.output
+
+
 def test_unwanted_log_warning_message():
     test_dir = test_env.get_test_loc('unwanted_log_message.txt')
     result_file = test_env.get_temp_file('json')
@@ -508,12 +517,7 @@ def test_scan_can_handle_weird_file_names():
 
     # Some info vary on each OS
     # See https://github.com/nexB/scancode-toolkit/issues/438 for details
-    if on_linux:
-        expected = 'weird_file_name/expected-linux.json'
-    elif on_mac:
-        expected = 'weird_file_name/expected-mac.json'
-    else:
-        raise Exception('Not a supported OS?')
+    expected = 'weird_file_name/expected-posix.json'
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
@@ -722,6 +726,14 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
 
+def test_scan_valid_duration_field_in_json_output_headers():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result_file = test_env.get_temp_file('results.json')
+    args = ['--json', result_file, test_file]
+    run_scan_click(args)
+    with open(result_file) as result:
+        headers = json.loads(result.read())['headers']
+    assert headers[0]['duration'] >= 0
 
 @pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')

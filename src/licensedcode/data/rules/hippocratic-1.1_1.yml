@@ -1,0 +1,6 @@
+license_expression: hippocratic-1.1
+is_license_text: yes
+relevance: 99
+minimum_coverage: 60
+ignorable_urls:
+    - https://www.un.org/en/universal-declaration-human-rights

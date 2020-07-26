@@ -1,0 +1,30 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 30726 bytes (31 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/rpm/extract_once/libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.rpm
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/rpm/extract_once/libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.rpm
+Type = Rpm
+Physical Size = 30726
+Headers Size = 5154
+CPU = i586
+Host OS = linux
+Created = 2009-09-20 17:17:56
+----
+Path = libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.cpio.lzma
+Size = 25572
+Created = 2009-09-20 17:17:56
+--
+Path = libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.cpio.lzma
+Type = lzma
+
+----------
+Size = 
+Packed Size = 
+Method = LZMA:22
+

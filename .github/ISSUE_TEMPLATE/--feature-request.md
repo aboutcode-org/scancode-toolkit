@@ -25,13 +25,13 @@ Make Sure you've checked out
 ## Select Category
 <!-- Which of this label correctly describe your feature Request -->
 
--  Enhancement []
--  Add License/Copyright []
--  Scan Feature []
--  Packaging []
--  Documentation []
--  Expand Support []
--  Other []
+-  [ ] Enhancement
+-  [ ] Add License/Copyright
+-  [ ] Scan Feature
+-  [ ] Packaging
+-  [ ] Documentation
+-  [ ] Expand Support
+-  [ ] Other
 
 ## **Describe the Update**
 <!-- What feature is requested. -->

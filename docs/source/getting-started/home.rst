@@ -20,7 +20,7 @@ ScanCode tries to address this issue by offering:
 - Your choice of JSON or other output formats (SPDX, HTML, CSV) for integration with other tools
 - ScanCode workbench for Visualization
 - Well-tested, easy to hack, and well-documented code
-- Release of the code and reference data under attribution licenses (Apache 2.0 and CC-BY-1.0)
+- Release of the code and reference data under attribution licenses (Apache 2.0 and CC0-1.0)
 - Plugin System for easily adding new Functionality to Scans.
 - Python 3 Unicode Capabilities for better supporting users from 100+ languages.
 - Extensive Documentation Support.

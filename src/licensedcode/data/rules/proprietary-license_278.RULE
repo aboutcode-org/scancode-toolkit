@@ -1,0 +1,10 @@
+All use of the Original Code (GIPS iLBC, and code provided by GIPS as part of any related IETF Standard or draft standard) is
+subject to the complete Global IP Solutions iLBC Public License, IETF Standard, Limited Commercial Use (the (“License”). By
+accessing the Original Code You agree to the License terms. PLEASE SEE THE COMPLETE LICENSE BELOW FOR
+ADDITIONAL TERMS. In general:
+- Personal, non-commercial use is generally permitted.
+- Commercialization is permitted with certain limitations; for example, to ensure that every iLBC decoder can decode
+every iLBC-encoded payload, commercial “Deployment” must comply with the applicable IETF Standard/draft, and the
+format of the bitstream may not be modified.
+- You are provided no warranty or support, and all liability is disclaimed.
+- You must register this license with GIPS prior to any commercial Deployment.

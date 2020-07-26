@@ -1,0 +1,6 @@
+license_expression: polyform-small-business-1.0.0 OR polyform-free-trial-1.0.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://polyformproject.org/licenses/free-trial/1.0.0
+    - https://polyformproject.org/licenses/small-business/1.0.0

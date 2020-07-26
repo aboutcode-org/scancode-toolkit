@@ -1,0 +1,6 @@
+license_expression: bsd-source-code
+is_license_text: yes
+relevance: 95
+minimum_coverage: 95
+referenced_filenames:
+    - LICENSE

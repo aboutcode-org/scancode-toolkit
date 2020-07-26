@@ -1,0 +1,6 @@
+license_expression: gpl-2.0-plus OR commercial-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING

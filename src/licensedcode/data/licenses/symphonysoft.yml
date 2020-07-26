@@ -1,0 +1,13 @@
+key: symphonysoft
+short_name: Symphonysoft
+name: Symphonysoft License
+category: Permissive
+owner: Symphonysoft
+text_urls:
+    - https://github.com/codehaus/mule-git/blob/master/tags/mule-1.0/LICENSE.txt
+notes: Symphonesoft was a predecessor to Mulesoft. This is similar to the Apache 1.0.
+ignorable_urls:
+    - http://www.symphonysoft.com/
+ignorable_authors:
+  - SymphonySoft Limited (http://www.symphonysoft.com)
+

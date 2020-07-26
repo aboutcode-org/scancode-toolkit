@@ -1,0 +1,6 @@
+license_expression: npl-1.1
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - license/third_party/rhino_LICENSE.txt

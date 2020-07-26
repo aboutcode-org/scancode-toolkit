@@ -1,0 +1,5 @@
+license_expression: afl-2.1 OR bsd-new
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://dojotoolkit.org/license

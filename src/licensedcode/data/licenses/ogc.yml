@@ -3,5 +3,7 @@ short_name: OGC Software Notice
 name: OGC Software Notice
 category: Permissive
 owner: Open Geospatial Consortium
+homepage_url: https://www.ogc.org/ogc/software
 other_urls:
     - http://www.opengeospatial.org/ogc/legal
+

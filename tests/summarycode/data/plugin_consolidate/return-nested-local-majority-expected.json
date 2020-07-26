@@ -170,7 +170,7 @@
         },
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -197,7 +197,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -282,7 +282,7 @@
         },
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -309,7 +309,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -538,7 +538,7 @@
         },
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -565,7 +565,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],

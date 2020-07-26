@@ -1,0 +1,28 @@
+MAgPIE LICENSE EXCEPTION
+                             Version 1.0
+
+This MAgPIE Exception ("Exception") is an additional permission under
+section 7 of the GNU Affero General Public License, version 3 (AGPL-3.0). It
+applies to a given file that bears a notice placed by the copyright holder
+of the file stating that the file is governed by AGPL-3.0 along with this
+Exception.
+
+Grant of Additional Permissions.
+
+1.
+In the event that you are required by any provision of the AGPL-3.0 to
+provide or make available the Corresponding Source of the Program as defined
+under section 1 of the AGPL-3.0, you are exempt from this obligation to the
+extent that the definition of Corresponding Source would also cover solver
+libraries or other components of the General Algebraic Modeling System
+(GAMS) required to run the Program.
+
+2.
+In the event that you convey the Program and the Program is linked with
+libraries written for the R software environment ("R Libraries"), you are
+not required to license these R Libraries under the AGPL-3-0 (or a
+compatible license), provided the R Libraries are licensed under a Free and
+Open Source license ("FOSS License"). A FOSS license is a license that meets
+both the Open Source Definition of the Open Source Initaitive and the Free
+Software Definition of the Free Software Foundation in its respective most
+current form.

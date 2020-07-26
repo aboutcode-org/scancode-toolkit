@@ -576,6 +576,7 @@ def get_essential_spdx_tokens():
     """
     yield 'spdx'
     yield 'license'
+    yield 'licence'
     yield 'identifier'
     yield 'licenseref'
 
@@ -1102,7 +1103,7 @@ class Rule(object):
         "relevance" attribute or computed base on the rule length here using
         this approach:
 
-        - a false positive or a negative rule has a relevance of zero.
+        - a false positive or a negative rule has a relevance of 100.
         - a rule of length equal to or larger than a threshold has a 100 relevance
         - a rule of length smaller than a threshold has a relevance of
           100/threshold, rounded down.
@@ -1256,6 +1257,8 @@ class SpdxRule(Rule):
         self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False
+        self.relevance =100
+        self.has_stored_relevance = True
 
     def load(self):
         raise NotImplementedError

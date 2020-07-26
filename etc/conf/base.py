@@ -38,7 +38,7 @@ else:
 
 supported_combos = {
     'linux': ['32', '64'],
-    'win': ['32', ],
+    'win': ['32', '64'],
     'mac': ['64', ],
     'freebsd': ['32', '64'],
 }
