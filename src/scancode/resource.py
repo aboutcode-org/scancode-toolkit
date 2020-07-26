@@ -120,6 +120,39 @@ class ResourceNotInCache(Exception):
 class UnknownResource(Exception):
     pass
 
+def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_handler=lambda:None):
+    """ Generator that walks the `root_location` directory recursively upto `max_depth` of 
+    nested subdirectories and yields a (top, dirs, files) tuple at each step. 
+
+    Arguments: 
+       - root_location: Absolute path for the directory to be walked
+       - max_depth: Positive integer for fixed depth limit. negative for no limit
+       - skip_ignored: Function that returns boolean indicating whether to ignore searching files
+                      in the current location. No ignoring by default
+       - error_handler: Error handler callback. No action taken by default.
+    """
+
+    # Find root directory depth using path separator's count
+    root_dir_depth = root_location.count(os.path.sep)
+
+    # Default behaviour. current_depth is always less than max_depth so that 
+    # os_walk keeps running. When max_depth is limited, the current_depth is
+    # changed in each iteration and compared with max_depth
+    current_depth = -2
+
+    for top, dirs, files in os_walk(root_location, topdown=True, onerror=error_handler):
+        # If depth is limited
+        if max_depth >= 0:
+            current_depth = top.count(os.path.sep) - root_dir_depth
+
+        if skip_ignored(top) or current_depth >= max_depth:
+            # we clear out `dirs` and `files` to prevent `os_walk` from visiting
+            # the files and subdirectories of directories we are ignoring or 
+            # are not in the specified nesting level
+            dirs[:] = []
+            files[:] = []
+            continue
+        yield (top, dirs, files)
 
 @attr.s(slots=True)
 class Header(object):
@@ -437,40 +470,12 @@ class Codebase(object):
         # not keep parents already walked and we walk topdown.
         parent_by_loc = {root.location: root}
 
-
-        def _walk():
-            """Walk through the root_directory recursively upto max_depth nested subdirectories
-            and build the Resource tree. max_depth should be positive or -1 for walking through
-            maximum available nesting levels."""
-
-            # Find root directory depth using path separator's count
-            root_dir_depth = root.location.count(os.path.sep)
-
-            # Default behaviour. current_depth is always less than max_depth so that 
-            # os_walk keeps running. When max_depth is limited, the current_depth is
-            # changed in each iteration and compared with max_depth
-            current_depth = -2
-
-            for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
-                # If depth is limited
-                if self.max_depth >= 0:
-                    current_depth = top.count(os.path.sep) - root_dir_depth
-
-                if skip_ignored(top) or current_depth >= self.max_depth:
-                    # we clear out `dirs` and `files` to prevent `os_walk` from visiting
-                    # the files and subdirectories of directories we are ignoring or 
-                    # are not in the specified nesting level
-                    dirs[:] = []
-                    files[:] = []
-                    continue
-                # the parent reference is needed only once in a top-down walk, hence
-                # the pop
+        # Walk over the directory and build the resource tree
+        for (top, dirs, files) in depth_walk(root.location, self.max_depth, skip_ignored, err):
                 parent = parent_by_loc.pop(top)
                 create_resources(files, top, parent, _is_file=True)
                 create_resources(dirs, top, parent, _is_file=False)
 
-        # walk proper
-        _walk()
 
     def _create_root_resource(self):
         """

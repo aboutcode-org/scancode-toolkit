@@ -45,6 +45,7 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.resource import Codebase
 from scancode.resource import get_path
 from scancode.resource import VirtualCodebase
+from scancode.resource import depth_walk
 
 
 class TestCodebase(FileBasedTesting):
@@ -573,6 +574,53 @@ class TestCodebase(FileBasedTesting):
         ]
         result = [r.path for r in codebase.walk(topdown=True)]
         self.assertEqual(expected, result)
+        
+    def test_depth_walk_with_depth_0(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        results = list(depth_walk(test_codebase, 0))
+        result_dirs = [i for j in results for i in j[1]]
+        result_files = [i for j in results for i in j[2]]
+        expected_files = []
+        expected_dirs = []
+        self.assertEqual(result_dirs, expected_dirs)
+        self.assertEqual(result_files, expected_files)
+
+    def test_depth_walk_with_depth_1(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        results = list(depth_walk(test_codebase, 1))
+        result_dirs = [i for j in results for i in j[1]]
+        result_files = [i for j in results for i in j[2]]
+        expected_files = ['level1_file1', 'level1_file2']
+        expected_dirs = ['level1_dir1', 'level1_dir2']
+        self.assertEqual(result_dirs, expected_dirs)
+        self.assertEqual(result_files, expected_files)
+
+    def test_depth_walk_with_depth_2(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        results = list(depth_walk(test_codebase, 2))
+        result_dirs = [i for j in results for i in j[1]]
+        result_files = [i for j in results for i in j[2]]
+        expected_files = ['level1_file1', 'level1_file2', 'level2_file2', 
+                          'level2_file1', 'level2_file3', 'level2_file4', 
+                          'level2_file5']
+        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 
+                         'level2_dir3']
+        self.assertEqual(result_dirs, expected_dirs)
+        self.assertEqual(result_files, expected_files)
+
+    def test_depth_walk_with_depth_3(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        results = list(depth_walk(test_codebase, 3))
+        result_dirs = [i for j in results for i in j[1]]
+        result_files = [i for j in results for i in j[2]]
+        expected_files = ['level1_file1', 'level1_file2', 'level2_file2', 
+                          'level2_file1', 'level3_file2', 'level3_file1', 
+                          'level2_file3', 'level2_file4', 'level2_file5', 
+                          'level3_file4', 'level3_file3']
+        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 
+                         'level3_dir1', 'level2_dir3']
+        self.assertEqual(result_dirs, expected_dirs)
+        self.assertEqual(result_files, expected_files)
 
     def test_specify_depth_0(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
