@@ -959,6 +959,7 @@ def run_scan(
         codebase.counters['final:size_count'] = size_count
 
         cle.end_timestamp = time2tstamp()
+        cle.duration = time() - processing_start
         # collect these once as they are use in the headers and in the displayed summary
         errors = collect_errors(codebase, verbose)
         cle.errors = errors
