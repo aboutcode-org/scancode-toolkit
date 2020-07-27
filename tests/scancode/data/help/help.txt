@@ -115,8 +115,8 @@ Options:
 
   core:
     --max-depth N            For each <input> given on the command line, scan at
-                             most N levels of directories. A negative value means
-                             no limit and is the default.
+                             most N levels of directories. A negative value or 0
+                             means no limit. 0 is the default
     --timeout <secs>         Stop an unfinished file scan after a timeout in
                              seconds.  [default: 120 seconds]
     -n, --processes INT      Set the number of parallel processes to use. Disable

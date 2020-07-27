@@ -577,13 +577,14 @@ class TestCodebase(FileBasedTesting):
         
     def test_depth_walk_with_depth_0(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
-        results = list(depth_walk(test_codebase, 0))
-        result_dirs = [i for j in results for i in j[1]]
-        result_files = [i for j in results for i in j[2]]
-        expected_files = []
-        expected_dirs = []
-        self.assertEqual(result_dirs, expected_dirs)
-        self.assertEqual(result_files, expected_files)
+        results_zero = list(depth_walk(test_codebase, 0))
+        results_neg = list(depth_walk(test_codebase, -1))
+        result_zero_dirs = [i for j in results_zero for i in j[1]]
+        result_zero_files = [i for j in results_zero for i in j[2]]
+        result_neg_dirs = [i for j in results_neg for i in j[1]]
+        result_neg_files = [i for j in results_neg for i in j[2]]
+        self.assertEqual(result_neg_dirs, result_zero_dirs)
+        self.assertEqual(result_neg_files, result_zero_files)
 
     def test_depth_walk_with_depth_1(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
@@ -621,15 +622,6 @@ class TestCodebase(FileBasedTesting):
                          'level3_dir1', 'level2_dir3'].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
-
-    def test_specify_depth_0(self):
-        test_codebase = self.get_test_loc('resource/deeply_nested')
-        codebase = Codebase(test_codebase, max_depth=0)
-        results = list(codebase.walk())
-        expected = [
-            ('deeply_nested', False),
-        ]
-        assert expected == [(r.name, r.is_file) for r in results]
 
     def test_specify_depth_1(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')

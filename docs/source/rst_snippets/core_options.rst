@@ -27,6 +27,6 @@ All "Core" Scan Options
 --max-depth INTEGER      Maximum nesting of subdirectories to scan.
                          Positive value indicates a fixed depth of scan
                          while a negative value means no depth limit.
-                         [Default: -1]
+                         [Default: 0]
 
 .. include::  /rst_snippets/note_snippets/core_indep.rst

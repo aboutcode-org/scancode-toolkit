@@ -135,9 +135,12 @@ Comparing Progress Message Options
     Some INTEGER values of the ``--max-depth INTEGER`` option:
 
     - **4**     - Scan only upto 4 levels of subdirectories
-    - **-1**    - Default, Scan upto maximum levels of subdirectories (no depth limit)
-    - **0**     - No files are scanned at all
+    - **0**     - Default, Scan upto maximum levels of subdirectories (no depth limit)
+    - **-1**    - Same effect as when set to 0
 
     An example usage::
 
         scancode -clieu --json-pp results.json samples --max-depth 3
+
+    This would scan the file ``samples/levelone/leveltwo/file`` but ignore
+    ``samples/levelone/leveltwo/levelthree/file``

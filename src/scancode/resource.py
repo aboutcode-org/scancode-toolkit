@@ -142,7 +142,7 @@ def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_han
 
     for top, dirs, files in os_walk(root_location, topdown=True, onerror=error_handler):
         # If depth is limited
-        if max_depth >= 0:
+        if max_depth > 0:
             current_depth = top.count(os.path.sep) - root_dir_depth
 
         if skip_ignored(top) or current_depth >= max_depth:
@@ -255,7 +255,7 @@ class Codebase(object):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000, max_depth=-1):
+                 max_in_memory=10000, max_depth=0):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
@@ -283,7 +283,7 @@ class Codebase(object):
         no memory is used and 0 means unlimited memory is used.
 
         `max_depth` is the maximum level of nesting of subdirectories that the 
-        scan will go.
+        scan will go. A value of 0 or negative means no limit.
         """
         self.original_location = location
         self.full_root = full_root

@@ -407,9 +407,9 @@ def print_options(ctx, param, value):
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 @click.option('--max-depth',
-    type=int, default=-1, show_default=False, metavar='N',
+    type=int, default=0, show_default=False, metavar='N',
     help='For each <input> given on the command line, scan at most N levels '
-        'of directories. A negative value means no limit and is the default.',
+        'of directories. A negative value or 0 means no limit. 0 is the default',
     help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
@@ -552,7 +552,7 @@ def run_scan(
         timeout=120,
         quiet=True,
         verbose=False,
-        max_depth=-1,
+        max_depth=0,
         echo_func=None,
         timing=False,
         keep_temp_files=False,
