@@ -122,7 +122,12 @@ option is called,it will be update all the wheels/sdist to the latest version.
     requirement = args.requirement
     upgrade_package = args.upgrade_package or None
     upgrade = args.upgrade or False
-    generate_req_text(find_links, requirement, upgrade_package, upgrade)
+    generate_req_text(
+        find_links=find_links,
+        requirement=requirement,
+        upgrade_package=upgrade_package,
+        upgrade=upgrade,
+    )
 
 
 def main() -> None:
