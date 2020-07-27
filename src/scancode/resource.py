@@ -187,6 +187,7 @@ class Header(object):
             'notice',
             'start_timestamp',
             'end_timestamp',
+            'duration',
             'message',
             'errors',
             'extra_data',
@@ -432,8 +433,8 @@ class Codebase(object):
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
-                +traceback.format_exc())
+                'ERROR: cannot populate codebase: {}\n'.format(_error)
+                + traceback.format_exc())
 
         def skip_ignored(_loc):
             """Always ignore VCS and some special filetypes."""
