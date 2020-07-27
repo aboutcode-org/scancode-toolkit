@@ -2,8 +2,9 @@
 74.6%
 Apache-2.0-Short 99% 448,9577
 scan
-74.5%
+96.3%
 Apache-2.0 100% 419,9579
+MS-PL 100% 9587,$
 
 Go Gopher is intended to be used in both open-source and commercial environments. To allow its use in as many
 situations as possible, Go Gopher is dual-licensed. You may choose to use Go Gopher under either the Apache License,
