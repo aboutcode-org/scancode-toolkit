@@ -280,6 +280,9 @@ class Codebase(object):
         `max_in_memory` is the maximum number of Resource instances to keep in
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
+
+        `max_depth` is the maximum level of nesting of subdirectories that the 
+        scan will go.
         """
         self.original_location = location
         self.full_root = full_root
@@ -1426,6 +1429,9 @@ class VirtualCodebase(Codebase):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
+
+        `max_depth`, if passed, will be ignored as VirtualCodebase will 
+        be using the depth of the original scan.
         """
         self._setup_essentials(temp_dir, max_in_memory)
 
