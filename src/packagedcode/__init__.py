@@ -43,7 +43,7 @@ from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import pubspec
 
-
+#
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
