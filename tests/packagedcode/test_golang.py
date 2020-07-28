@@ -37,32 +37,62 @@ from packages_test_utils import PackageTester
 class TestGolang(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_kingpin(self):
-        test_file = self.get_test_loc('golang/kingpin/go.mod')
-        expected_loc = self.get_test_loc('golang/kingpin/output.expected.json')
+    def test_parse_gomod_kingpin(self):
+        test_file = self.get_test_loc('golang/gomod/kingpin/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/kingpin/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_parse_participle(self):
-        test_file = self.get_test_loc('golang/participle/go.mod')
-        expected_loc = self.get_test_loc('golang/participle/output.expected.json')
+    def test_parse_gomod_participle(self):
+        test_file = self.get_test_loc('golang/gomod/participle/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/participle/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_parse_sample(self):
-        test_file = self.get_test_loc('golang/sample/go.mod')
-        expected_loc = self.get_test_loc('golang/sample/output.expected.json')
+    def test_parse_gomod_sample(self):
+        test_file = self.get_test_loc('golang/gomod/sample/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/sample/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_parse_uap_go(self):
-        test_file = self.get_test_loc('golang/uap-go/go.mod')
-        expected_loc = self.get_test_loc('golang/uap-go/output.expected.json')
+    def test_parse_gomod_uap_go(self):
+        test_file = self.get_test_loc('golang/gomod/uap-go/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/uap-go/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
-    def test_parse_user_agent(self):
-        test_file = self.get_test_loc('golang/user_agent/go.mod')
-        expected_loc = self.get_test_loc('golang/user_agent/output.expected.json')
+    def test_parse_gomod_user_agent(self):
+        test_file = self.get_test_loc('golang/gomod/user_agent/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/user_agent/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample1(self):
+        test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample1/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample2(self):
+        test_file = self.get_test_loc('golang/gosum/sample2/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample2/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample3(self):
+        test_file = self.get_test_loc('golang/gosum/sample3/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample3/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample4(self):
+        test_file = self.get_test_loc('golang/gosum/sample4/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample4/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample5(self):
+        test_file = self.get_test_loc('golang/gosum/sample5/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample5/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
