@@ -1,4 +1,5 @@
 license_expression: odbl-1.0
+minimum_coverage: 80
 is_license_reference: yes
 ignorable_urls:
     - https://img.shields.io/badge/License-ODbL-brightgreen.svg

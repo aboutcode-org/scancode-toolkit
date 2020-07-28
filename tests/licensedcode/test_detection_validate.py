@@ -109,6 +109,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         data_file = rule.data_file
         if not data_file:
             data_file = rule.text_file.replace('.LICENSE', '.yml')
+        text_file = rule.text_file
         # On failure, we compare againto get additional failure details such as
         # a clickable text_file path
         failure_trace = ['======= TEST ====']

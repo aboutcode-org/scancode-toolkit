@@ -1,0 +1,5 @@
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://img.shields.io/badge/license-MIT-blue.svg

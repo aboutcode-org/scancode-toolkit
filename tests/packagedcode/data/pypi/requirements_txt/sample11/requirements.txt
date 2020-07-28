@@ -1,0 +1,2 @@
+MyPackage[PDF]==3.0
+Fizzy [foo, bar]

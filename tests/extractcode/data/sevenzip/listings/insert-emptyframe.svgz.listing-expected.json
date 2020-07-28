@@ -1,0 +1,15 @@
+[
+  {
+    "path":"insert-emptyframe",
+    "size":"13061",
+    "date":"",
+    "is_file":true,
+    "is_dir":false,
+    "is_special":false,
+    "is_hardlink":false,
+    "is_symlink":false,
+    "is_broken_link":false,
+    "link_target":null,
+    "errors":[]
+  }
+]

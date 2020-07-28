@@ -8,6 +8,7 @@ license_expressions:
   - proprietary-license
   - proprietary-license
   - proprietary-license
+  - proprietary-license
   - generic-tos
   - bsd-original
   - x11-lucent
@@ -30,7 +31,11 @@ license_expressions:
   - freetype
   - unknown-license-reference
   - proprietary-license
+  - proprietary-license
+  - proprietary-license
   - warranty-disclaimer
+  - proprietary-license
+  - unknown-license-reference
   - unknown-license-reference
   - bsd-new
   - zlib

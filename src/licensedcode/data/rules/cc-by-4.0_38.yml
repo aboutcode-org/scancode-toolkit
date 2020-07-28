@@ -1,0 +1,6 @@
+license_expression: cc-by-4.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0/
+    - https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg

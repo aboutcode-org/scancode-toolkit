@@ -1,0 +1,6 @@
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - https://github.com/elastic/elasticsearch-perl/blob/master/LICENSE.txt

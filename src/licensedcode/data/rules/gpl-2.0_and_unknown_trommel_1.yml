@@ -1,5 +1,5 @@
 license_expression: gpl-2.0 AND unknown
-is_license_reference: text
+is_license_text: yes
 relevance: 95
 minimum_coverage: 95
 notes: this is a modified GPL text

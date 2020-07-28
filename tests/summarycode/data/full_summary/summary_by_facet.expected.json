@@ -1362,7 +1362,7 @@
       "licenses": [
         {
           "key": "cc0-1.0",
-          "score": 97.48,
+          "score": 97.97,
           "name": "Creative Commons CC0 1.0 Universal",
           "short_name": "CC0-1.0",
           "category": "Public Domain",
@@ -1376,7 +1376,7 @@
           "start_line": 1,
           "end_line": 98,
           "matched_rule": {
-            "identifier": "cc0-1.0_20.RULE",
+            "identifier": "cc0-1.0_85.RULE",
             "license_expression": "cc0-1.0",
             "licenses": [
               "cc0-1.0"
@@ -1386,10 +1386,10 @@
             "is_license_reference": false,
             "is_license_tag": false,
             "matcher": "3-seq",
-            "rule_length": 992,
+            "rule_length": 987,
             "matched_length": 967,
-            "match_coverage": 97.48,
-            "rule_relevance": 100
+            "match_coverage": 97.97,
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -1416,8 +1416,8 @@
       "size": 37904,
       "sha1": "dfc6c1274bd31b47d5cc482af0c0dad9d30eccaa",
       "md5": "62b51527599b11b32361699c75b05683",
-      "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
       "programming_language": null,
       "is_binary": false,
       "is_text": true,
@@ -1976,7 +1976,7 @@
       "licenses": [
         {
           "key": "boost-1.0",
-          "score": 92.59,
+          "score": 100.0,
           "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
@@ -1990,7 +1990,7 @@
           "start_line": 4,
           "end_line": 5,
           "matched_rule": {
-            "identifier": "boost-1.0_1.RULE",
+            "identifier": "boost-1.0_21.RULE",
             "license_expression": "boost-1.0",
             "licenses": [
               "boost-1.0"
@@ -1999,10 +1999,10 @@
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
-            "matcher": "3-seq",
-            "rule_length": 27,
-            "matched_length": 25,
-            "match_coverage": 92.59,
+            "matcher": "2-aho",
+            "rule_length": 32,
+            "matched_length": 32,
+            "match_coverage": 100.0,
             "rule_relevance": 100.0
           }
         }

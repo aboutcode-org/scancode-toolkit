@@ -4,7 +4,6 @@ license_expressions:
   - bsd-new
   - bsd-new
   - apache-2.0
+  - unknown-license-reference
   - ms-pl
-notes: somehow we should get a full bsd-new text detected. But this only works when we increase
-  the number of candidates OR we decrease the number of empties between two query runs to get
-  more query runs.
+

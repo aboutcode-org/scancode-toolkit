@@ -1,0 +1,863 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 157467 bytes (154 KiB)
+
+Listing archive: tests/extractcode/data/archive/xar/xar-1.4.xar
+
+--
+Path = tests/extractcode/data/archive/xar/xar-1.4.xar
+Type = Xar
+Physical Size = 157467
+Headers Size = 6152
+
+----------
+Path = xar-1.4
+Size = 
+Packed Size = 
+Modified = 2006-02-24 01:49:58
+Created = 2006-02-24 01:49:58
+Accessed = 2006-02-24 01:55:12
+Mode = drwxrwxr-x
+User = bbraun
+Group = wheel
+Method = 
+
+Path = xar-1.4/.cvsignore
+Size = 90
+Packed Size = 81
+Modified = 2005-06-28 21:55:48
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/cfghdrs.stamp.in
+Size = 6
+Packed Size = 15
+Modified = 2005-06-28 21:55:48
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/cfgoutputs.stamp.in
+Size = 6
+Packed Size = 15
+Modified = 2005-06-28 21:55:48
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/config.guess
+Size = 43499
+Packed Size = 13600
+Modified = 2005-08-29 17:54:58
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/config.sub
+Size = 31743
+Packed Size = 9510
+Modified = 2005-08-29 17:54:58
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/configure
+Size = 231226
+Packed Size = 38010
+Modified = 2006-02-24 01:49:15
+Created = 2006-02-24 01:49:15
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/configure.ac
+Size = 8560
+Packed Size = 2820
+Modified = 2006-02-24 01:49:04
+Created = 2006-02-24 01:49:04
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/include
+Size = 
+Packed Size = 
+Modified = 2006-02-24 01:49:58
+Created = 2006-02-24 01:49:58
+Accessed = 2006-02-24 01:55:12
+Mode = drwxrwxr-x
+User = bbraun
+Group = wheel
+Method = 
+
+Path = xar-1.4/include/.cvsignore
+Size = 15
+Packed Size = 23
+Modified = 2005-06-28 21:55:49
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/include/config.h.in
+Size = 524
+Packed Size = 163
+Modified = 2005-09-11 19:43:44
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/include/xar.h.in
+Size = 6053
+Packed Size = 2163
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/INSTALL
+Size = 4155
+Packed Size = 1465
+Modified = 2005-06-29 19:05:24
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/install-sh
+Size = 5585
+Packed Size = 2253
+Modified = 2005-04-06 23:16:54
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib
+Size = 
+Packed Size = 
+Modified = 2006-02-24 01:49:58
+Created = 2006-02-24 01:49:58
+Accessed = 2006-02-24 01:55:12
+Mode = drwxrwxr-x
+User = bbraun
+Group = wheel
+Method = 
+
+Path = xar-1.4/lib/.cvsignore
+Size = 36
+Packed Size = 44
+Modified = 2005-06-28 21:55:50
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/appledouble.h
+Size = 3395
+Packed Size = 1370
+Modified = 2005-04-25 04:44:10
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/archive.c
+Size = 26665
+Packed Size = 8028
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/archive.h
+Size = 3645
+Packed Size = 1663
+Modified = 2005-10-09 01:03:18
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/arcmod.c
+Size = 3292
+Packed Size = 1333
+Modified = 2005-09-22 17:43:53
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/arcmod.h
+Size = 2104
+Packed Size = 1029
+Modified = 2005-04-06 23:16:57
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/asprintf.h
+Size = 2728
+Packed Size = 1136
+Modified = 2005-06-28 21:55:50
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/b64.c
+Size = 7108
+Packed Size = 2420
+Modified = 2006-02-23 17:38:00
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/b64.h
+Size = 322
+Packed Size = 198
+Modified = 2005-04-18 20:56:07
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/bzxar.c
+Size = 4954
+Packed Size = 1839
+Modified = 2006-02-10 23:20:48
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/bzxar.h
+Size = 2009
+Packed Size = 981
+Modified = 2005-04-29 17:08:38
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/darwinattr.c
+Size = 13800
+Packed Size = 3970
+Modified = 2006-02-23 00:22:00
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/darwinattr.h
+Size = 411
+Packed Size = 226
+Modified = 2005-04-25 05:57:00
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/data.c
+Size = 3093
+Packed Size = 1100
+Modified = 2006-01-13 05:55:21
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/data.h
+Size = 312
+Packed Size = 198
+Modified = 2005-04-22 18:18:41
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/err.c
+Size = 2739
+Packed Size = 1229
+Modified = 2005-04-23 17:50:17
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/ext2.c
+Size = 7010
+Packed Size = 2203
+Modified = 2005-06-28 21:55:50
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/ext2.h
+Size = 346
+Packed Size = 219
+Modified = 2005-04-19 16:15:51
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/fbsdattr.c
+Size = 6527
+Packed Size = 2642
+Modified = 2005-09-21 19:52:08
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/fbsdattr.h
+Size = 332
+Packed Size = 206
+Modified = 2005-04-20 00:01:48
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/filetree.c
+Size = 27297
+Packed Size = 6729
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/filetree.h
+Size = 3508
+Packed Size = 1328
+Modified = 2005-08-15 20:15:30
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/io.c
+Size = 11306
+Packed Size = 3391
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/io.h
+Size = 2737
+Packed Size = 1137
+Modified = 2005-04-22 18:01:04
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/linuxattr.c
+Size = 6010
+Packed Size = 2328
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/linuxattr.h
+Size = 337
+Packed Size = 211
+Modified = 2005-04-18 20:56:07
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/macho.c
+Size = 4198
+Packed Size = 1408
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/macho.h
+Size = 633
+Packed Size = 271
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/Makefile.inc.in
+Size = 3781
+Packed Size = 1101
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/md5.c
+Size = 2991
+Packed Size = 909
+Modified = 2006-02-15 19:47:29
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/md5.h
+Size = 1997
+Packed Size = 982
+Modified = 2005-04-22 18:01:04
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/script.c
+Size = 834
+Packed Size = 416
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/script.h
+Size = 220
+Packed Size = 142
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/stat.c
+Size = 13438
+Packed Size = 3919
+Modified = 2006-01-13 05:55:21
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/stat.h
+Size = 1912
+Packed Size = 970
+Modified = 2005-04-06 23:16:57
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/subdoc.c
+Size = 6055
+Packed Size = 2219
+Modified = 2005-09-21 19:52:08
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/subdoc.h
+Size = 2361
+Packed Size = 1152
+Modified = 2005-08-17 20:36:38
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/util.c
+Size = 3857
+Packed Size = 1718
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/util.h
+Size = 1959
+Packed Size = 1024
+Modified = 2006-02-21 00:44:09
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/zxar.c
+Size = 4724
+Packed Size = 1811
+Modified = 2005-10-08 22:52:15
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/lib/zxar.h
+Size = 2006
+Packed Size = 981
+Modified = 2005-04-22 18:01:04
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/LICENSE
+Size = 1627
+Packed Size = 855
+Modified = 2005-04-11 20:22:51
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/Makefile.in
+Size = 2156
+Packed Size = 767
+Modified = 2006-02-21 00:44:08
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/src
+Size = 
+Packed Size = 
+Modified = 2006-02-24 01:49:58
+Created = 2006-02-24 01:49:58
+Accessed = 2006-02-24 01:55:12
+Mode = drwxrwxr-x
+User = bbraun
+Group = wheel
+Method = 
+
+Path = xar-1.4/src/.cvsignore
+Size = 26
+Packed Size = 32
+Modified = 2005-06-28 21:55:51
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/src/Makefile.inc.in
+Size = 1545
+Packed Size = 608
+Modified = 2006-01-10 02:51:36
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/src/xar.1
+Size = 3508
+Packed Size = 1564
+Modified = 2006-02-24 01:55:02
+Created = 2006-02-24 01:55:02
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/src/xar.c
+Size = 19868
+Packed Size = 5546
+Modified = 2006-02-15 18:51:38
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test
+Size = 
+Packed Size = 
+Modified = 2006-02-24 01:42:52
+Created = 2006-02-24 01:42:52
+Accessed = 2006-02-24 01:55:12
+Mode = drwxrwxr-x
+User = bbraun
+Group = wheel
+Method = 
+
+Path = xar-1.4/test/attr
+Size = 1681
+Packed Size = 419
+Modified = 2005-10-08 22:52:16
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/checksums
+Size = 2299
+Packed Size = 487
+Modified = 2005-10-08 19:04:32
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/compression
+Size = 1740
+Packed Size = 278
+Modified = 2005-10-08 19:04:32
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/data
+Size = 3364
+Packed Size = 502
+Modified = 2005-10-08 22:52:16
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/data.xsl
+Size = 234
+Packed Size = 181
+Modified = 2005-10-08 22:52:16
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/functions
+Size = 987
+Packed Size = 405
+Modified = 2005-10-08 19:04:32
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/hardlink
+Size = 662
+Packed Size = 269
+Modified = 2005-10-08 19:04:32
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/heap
+Size = 1636
+Packed Size = 478
+Modified = 2005-10-11 16:54:34
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rwxrwxr-x
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/heap1.xsl
+Size = 498
+Packed Size = 266
+Modified = 2005-10-11 16:54:34
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/test/validate.c
+Size = 3654
+Packed Size = 1284
+Modified = 2005-10-08 22:52:16
+Created = 2006-02-24 01:42:39
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/TODO
+Size = 97
+Packed Size = 99
+Modified = 2005-08-29 23:26:45
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = xar-1.4/xar.spec
+Size = 2176
+Packed Size = 956
+Modified = 2006-02-24 01:42:08
+Created = 2006-02-24 01:42:38
+Accessed = 2006-02-24 01:55:12
+Mode = -rw-rw-r--
+User = bbraun
+Group = wheel
+Method = zlib
+
+Path = [TOC].xml
+Size = 48412
+Packed Size = 48412
+Modified = 
+Created = 
+Accessed = 
+Mode = 
+User = 
+Group = 
+Method = 
+

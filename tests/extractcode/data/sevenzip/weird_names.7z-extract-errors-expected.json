@@ -1,0 +1,21 @@
+{
+  "weird_names/some 'file":"Empty archive or incorrect arguments",
+  "weird_names/some file":"Empty archive or incorrect arguments",
+  "weird_names/some \\file":"Empty archive or incorrect arguments",
+  "weird_names/some\"file":"Empty archive or incorrect arguments",
+  "weird_names/some\\\"file":"Empty archive or incorrect arguments",
+  "weird_names/man\\1/..1.gz":"Empty archive or incorrect arguments",
+  "weird_names/man\\1/[.1.gz":"Empty archive or incorrect arguments",
+  "weird_names/man\\1/\\:.1.gz":"Empty archive or incorrect arguments",
+  "weird_names/man\\1/:\\.1":"Empty archive or incorrect arguments",
+  "weird_names/man\\1/[\\:*.1":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab\t.t":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab\n.t":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab\".t\"":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab*.t*":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab<.t<":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab>.t>":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab?.t?":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab\\.t\\":"Empty archive or incorrect arguments",
+  "weird_names/winchr/ab|.t|":"Empty archive or incorrect arguments"
+}

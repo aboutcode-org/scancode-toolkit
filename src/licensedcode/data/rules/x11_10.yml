@@ -1,0 +1,5 @@
+license_expression: x11
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - modules/analysis/icu/lib/icu4j-LICENSE-BSD_LIKE.txt

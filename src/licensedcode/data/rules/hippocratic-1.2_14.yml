@@ -1,0 +1,5 @@
+license_expression: hippocratic-1.2
+is_license_notice: yes
+relevance: 99
+ignorable_urls:
+    - https://firstdonoharm.dev/version/1/2/license.html

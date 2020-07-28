@@ -1,0 +1,13 @@
+license_expression: eclipse-sua-2017
+is_license_text: yes
+relevance: 100
+minimum_coverage: 97
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - https://www.eclipse.org/equinox/p2/repository_packaging.html
+    - https://www.eclipse.org/legal/cpl-v10.html
+    - https://www.eclipse.org/legal/epl-2.0
+    - https://www.eclipse.org/licenses/edl-v1.0.html
+    - https://www.eclipse.org/licenses/edl-v10.html

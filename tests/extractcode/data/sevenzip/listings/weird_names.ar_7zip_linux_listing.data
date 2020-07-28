@@ -1,0 +1,492 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 7051 bytes (7 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.ar
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.ar
+Type = Ar
+WARNINGS:
+There are data after the end of archive
+Physical Size = 4330
+Tail Size = 2721
+SubType = ar
+
+----------
+Path = \:.1.gz
+Size = 40
+Modified = 2016-12-28 20:30:58
+Mode = -rw-r--r--
+User = 1000
+Group = 1000
+
+Path = COM9
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab*.t*
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = some file
+Size = 38
+Modified = 2016-12-21 11:15:56
+Mode = -rwxrwxr-x
+User = 1000
+Group = 1000
+
+Path = [\:*.1
+Size = 20
+Modified = 2016-12-28 20:32:55
+Mode = -rw-r--r--
+User = 1000
+Group = 1000
+
+Path = lpt8.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt1.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM9.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = CON
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com8.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt2.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = NUL.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = con
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = some"file
+Size = 39
+Modified = 2016-12-21 11:15:56
+Mode = -rwxrwxr-x
+User = 1000
+Group = 1000
+
+Path = COM7
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com1.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt3.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM4
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt9.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = PRN.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = nul.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt4.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM1.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt5.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab\.t\
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = NUL
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = prn.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = nul
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT5.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = some\"file
+Size = 21
+Modified = 2016-12-21 11:15:56
+Mode = -rwxrwxr-x
+User = 1000
+Group = 1000
+
+Path = ab	.t	
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt6.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM8
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab
+.t
+
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = lpt7.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com4.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM3
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT9
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT8
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT7
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com2.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab.t
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM5
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT1.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = some 'file
+Size = 20
+Modified = 2016-12-21 11:15:56
+Mode = -rwxrwxr-x
+User = 1000
+Group = 1000
+
+Path = com3.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT5
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT2.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = CON.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab:.t:
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com6.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT4
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com5.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT3.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab<.t<
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT6
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = con.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT4.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT3
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT2
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT1
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab>.t>
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM2.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = LPT7.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = ab?.t?
+Size = 1
+Modified = 2017-01-03 12:38:03
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = com7.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+Path = COM3.txt
+Size = 1
+Modified = 2017-01-03 12:35:05
+Mode = -rw-rw-r--
+User = 1000
+Group = 1000
+
+
+Warnings: 1

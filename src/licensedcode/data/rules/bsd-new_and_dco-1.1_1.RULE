@@ -1,0 +1,13 @@
+This software is distributed under a permissive open source license to
+allow it to be used in any projects, whether open source or proprietary.
+Contributions to the project are welcome and it is important to maintain
+clear record of contributions and terms under which they are licensed.
+To help with this, following procedure is used to allow acceptance and
+recording of the terms.
+
+All contributions are expected to be licensed under the modified BSD
+license (see below). Acknowledgment of the terms is tracked through
+inclusion of Signed-off-by tag in the contributions at the end of the
+commit log message. This tag indicates that the contributor agrees with
+the Developer Certificate of Origin (DCO) version 1.1 terms (see below;
+also available from http://developercertificate.org/).

@@ -165,8 +165,8 @@
       "size": 141,
       "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
       "md5": "e10ff141105dc64fbde2dc77c61275db",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
       "programming_language": null,
       "is_binary": false,
       "is_text": true,
@@ -294,7 +294,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -321,7 +321,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -373,7 +373,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -400,7 +400,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -452,7 +452,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -479,7 +479,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -531,7 +531,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -558,7 +558,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
@@ -610,7 +610,7 @@
       "licenses": [
         {
           "key": "apache-2.0",
-          "score": 50.0,
+          "score": 100.0,
           "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
@@ -637,7 +637,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 100.0
           }
         }
       ],
