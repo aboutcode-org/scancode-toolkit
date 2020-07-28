@@ -1,0 +1,8 @@
+license_expression: ofl-1.1 AND mit AND cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/by/3.0/
+    - http://fontawesome.io/
+    - http://opensource.org/licenses/mit-license.html
+    - http://scripts.sil.org/OFL

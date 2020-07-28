@@ -2,5 +2,5 @@ license_expression: ekioh
 is_license_notice: yes
 notes: this text is an MIT without a condition, only a disclaimer from https://kryogenix.org/code/browser/licence.html
 ignorable_urls:
-  - http://www.kry/
+  - http://www.kryogenix.org/code/browser/licence.html
 

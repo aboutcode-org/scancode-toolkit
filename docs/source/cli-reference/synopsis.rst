@@ -18,28 +18,30 @@ Toolkit Command Line Interface in the following sections:
 Installation
 ------------
 
-Scancode-Toolkit installation can be installed from ``pip``, the default Python Package Manager.
-However, there are more ways to perform an installation, and refer the following sections for
+Scancode-Toolkit installation can be done by downloading ScanCode as an application, which
+is recommended generally. For users who wish to use ScanCode as a library, it can be
+installed via ``pip``, the default Python Package Manager. Refer the following sections for
 detailed Instructions on the each of the Installation Methods.
 
+- :ref:`app_install`
 - :ref:`pip_install`
-- :ref:`latest_release_download_install`
-- :ref:`source_configure_install`
+- :ref:`source_code_install`
 
 .. _synopsis_quickstart:
 
 Quickstart
 ----------
 
-The basic command to perform a scan, if Scancode is installed from ``pip``::
-
-    scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
-
-The basic usage in case of a download and configure installation (on Linux/MacOS) is::
+The basic command to perform a scan, in case of a download and configure installation
+(on Linux/MacOS) is::
 
     path/to/scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
 
-.. include::  /rst_snippets/tip_snippets/synopsis_quickstart.rst
+The basic usage, if Scancode is installed from ``pip``, or in Windows::
+
+    scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
+
+.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 Here Scancode scans the <SCAN INPUT> file or directory for license, origin and packages and saves
 results to FILE(s) using one or more output format option. Error and progress are printed to
@@ -64,10 +66,12 @@ While a scan using absolute paths from the file system root will look like::
     home/ayansm/software/scancode-toolkit-3.1.1/scancode -clpieu --json-pp home/ayansm/scan_scan_results/output.json home/ayansm/codebases/samples/
 
 Commands similar to ``scancode --clpi --json-pp output.json samples`` will be used as examples
-throughout the documentation. Here we are inside the ``virtualenv`` where Scancode-Toolkit was
-installed by ``pip``, and the default ``samples`` folder is being scanned, which is distributed
-by default with Scancode-Toolkit.
+throughout the documentation.
 
+- Here we are inside the ``virtualenv`` where Scancode-Toolkit is configured.
+
+- And the default ``samples`` folder is being scanned, which is distributed by default with
+  Scancode-Toolkit.
 
 .. _scancode_cli_options:
 

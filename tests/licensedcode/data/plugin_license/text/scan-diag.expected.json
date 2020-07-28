@@ -52,12 +52,12 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-syscall-exception-gpl",
@@ -87,12 +87,12 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         },
         {
           "key": "linux-openib",
@@ -122,12 +122,12 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           },
-          "matched_text": "GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
         }
       ],
       "license_expressions": [

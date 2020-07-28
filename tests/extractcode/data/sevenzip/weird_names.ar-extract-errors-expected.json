@@ -1,0 +1,15 @@
+{
+  "\\:.1.gz":"Empty archive or incorrect arguments",
+  "ab*.t*":"Empty archive or incorrect arguments",
+  "some file":"Empty archive or incorrect arguments",
+  "[\\:*.1":"Empty archive or incorrect arguments",
+  "some\"file":"Empty archive or incorrect arguments",
+  "ab\\.t\\":"Empty archive or incorrect arguments",
+  "some\\\"file":"Empty archive or incorrect arguments",
+  "ab\t.t":"Empty archive or incorrect arguments",
+  "ab\n.t":"Empty archive or incorrect arguments",
+  "some 'file":"Empty archive or incorrect arguments",
+  "ab<.t<":"Empty archive or incorrect arguments",
+  "ab>.t>":"Empty archive or incorrect arguments",
+  "ab?.t?":"Empty archive or incorrect arguments"
+}

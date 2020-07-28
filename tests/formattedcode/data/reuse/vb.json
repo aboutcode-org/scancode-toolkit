@@ -454,7 +454,7 @@
       "date": "2017-10-26",
       "sha1": "576f0ccfe534d7f5ff5d6400078d3c6586de3abd",
       "md5": "20b2370751abfc08bb3556c1d8114b5a",
-      "mime_type": "application/x-gzip",
+      "mime_type": "application/gzip",
       "file_type": "gzip compressed data, last modified: Wed Jul 15 09:08:19 2015, from Unix",
       "programming_language": null,
       "is_binary": true,

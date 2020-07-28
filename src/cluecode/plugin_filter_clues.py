@@ -110,7 +110,7 @@ def filter_ignorable_resource_clues(resource, rules_by_id):
         return resource
 
 
-@attr.s(slots=True, frozen=True, cmp=True)
+@attr.s(slots=True, frozen=True, eq=True, order=True)
 class Ignorable(object):
     # a frozenset of matched line numbers
     lines_range = attr.ib()
@@ -119,7 +119,7 @@ class Ignorable(object):
     value = attr.ib()
 
 
-@attr.s(slots=True, frozen=True, cmp=True)
+@attr.s(slots=True, frozen=True, eq=True, order=True)
 class Ignorables(object):
     copyrights = attr.ib(default=attr.Factory(frozenset))
     holders = attr.ib(default=attr.Factory(frozenset))
@@ -128,7 +128,7 @@ class Ignorables(object):
     emails = attr.ib(default=attr.Factory(frozenset))
 
 
-@attr.s(slots=True, frozen=True, cmp=True)
+@attr.s(slots=True, frozen=True, eq=True, order=True)
 class Detections(object):
     copyrights = attr.ib(default=attr.Factory(list))
     holders = attr.ib(default=attr.Factory(list))

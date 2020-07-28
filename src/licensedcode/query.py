@@ -88,14 +88,13 @@ TRACE = False
 TRACE_QR = False
 TRACE_QR_BREAK = False
 TRACE_REPR = False
-TRACE_SPDX = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_SPDX:
+if TRACE or TRACE_QR or TRACE_QR_BREAK:
     import logging
     import sys
 
@@ -198,8 +197,9 @@ class Query(object):
         # index of known position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of "known positions" (yes really!) -> number of unknown
-        # tokens after that pos. For unknowns at the start, the pos is -1
+        # index of "known positions" (yes really!) to number of unknown tokens
+        # after that known position. For unknowns at the start, the position is
+        # using the magic -1 key
         self.unknowns_by_pos = defaultdict(int)
 
         # Span of "known positions" (yes really!) followed by unknown
@@ -215,12 +215,13 @@ class Query(object):
         # a line for SPDX id matching
         # note: this will not match anything if the index is not proper
         dic_get = idx.dictionary.get
-        self.spdx_lid_token_ids = [
-            dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
-
-        if None in self.spdx_lid_token_ids:
-            # we cannot do matching... this is only during testing
-            self.spdx_lid_token_ids = None
+        # None, None None this is mostly a possible issue in test mode
+        self.spdx_lid_token_ids = [x for x in
+            [[dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')],
+            # Even though it is technically NOT valid, this Enlish seplling
+            # happens in the wild
+            [dic_get(u'spdx'), dic_get(u'licence'), dic_get(u'identifier')], ]
+        if x != [None, None, None]]
 
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifier. This is to support the
@@ -258,8 +259,6 @@ class Query(object):
         """
         for spdx_text, start, end in self.spdx_lines:
             qr = QueryRun(query=self, start=start, end=end)
-            if TRACE_SPDX:
-                logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  spdx_text:', spdx_text)
             yield qr, spdx_text
 
     def subtract(self, qspan):
@@ -307,78 +306,93 @@ class Query(object):
         query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
         `shorts_and_digits_pos` and `spdx_lines` as a side effect.
         """
-        from licensedcode.match_spdx_lid import strip_spdx_lid
+        from licensedcode.match_spdx_lid import split_spdx_lid
 
         # bind frequently called functions to local scope
         tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
+
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
-
         # absolute position in a query, including all known and unknown tokens
         abs_pos = -1
 
         # absolute position in a query, including only known tokens
         known_pos = -1
 
+        # flag ifset to True when we have found the first known token globally
+        # across all query lines
         started = False
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
-        do_collect_spdx_lines = spdx_lid_token_ids is not None
+
         if TRACE:
             logger_debug('tokens_by_line: query lines')
-            for line_num, line  in query_lines(self.location, self.query_string):
+            for line_num, line in query_lines(self.location, self.query_string):
                 logger_debug(' ', line_num, ':', line)
 
-        for line_num, line  in query_lines(self.location, self.query_string):
+        for line_num, line in query_lines(self.location, self.query_string):
+            # keep track of tokens in a line
             line_tokens = []
             line_tokens_append = line_tokens.append
-            line_start_known_pos = None
+            line_first_known_pos = None
 
             # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
                 tid = dic_get(token)
+
                 if tid is not None:
+                    # this is a known token
                     known_pos += 1
                     started = True
                     line_by_pos_append(line_num)
                     if len(token) == 1 or token.isdigit():
                         self_shorts_and_digits_pos_add(known_pos)
-                    if line_start_known_pos is None:
-                        line_start_known_pos = known_pos
+                    if line_first_known_pos is None:
+                        line_first_known_pos = known_pos
                 else:
-                    # we have not yet started
                     if not started:
+                        # If we have not yet started globally, then all tokens
+                        # seen so far are unknowns and we keep a count of them
+                        # in the magic "-1" position.
                         self_unknowns_by_pos[-1] += 1
                     else:
+                        # here we have a new unknwon token positioned right after
+                        # the current known_pos
                         self_unknowns_by_pos[known_pos] += 1
                         unknowns_pos_add(known_pos)
+
                 line_tokens_append(tid)
 
-            line_end_known_pos = known_pos
-            # this works ONLY if the line starts with SPDX or we have one word
-            # (such as a comment indicator DNL, REM etc.) and an SPDX id)
-            if do_collect_spdx_lines:
+            # last known token position in the current line
+            line_last_known_pos = known_pos
+
+            # ONLY collect as SPDX a line that starts with SPDX License
+            # Identifier. There are cases where this prefix does not start as
+            # the firt tokens such as when we have one or two words (such as a
+            # comment indicator DNL, REM etc.) that start the line and then and
+            # an SPDX license identifier.
+            spdx_start_offset = None
+            if line_tokens[:3] in spdx_lid_token_ids:
                 spdx_start_offset = 0
-                if line_tokens[:3] == spdx_lid_token_ids:
-                    spdx_start_offset = 3
-                elif line_tokens[1:4] == spdx_lid_token_ids:
-                    spdx_start_offset = 4
-                elif line_tokens[2:5] == spdx_lid_token_ids:
-                    spdx_start_offset = 5
-                if spdx_start_offset:
-                    # keep the line, start/end known pos for SPDX matching
-                    spdx_text = strip_spdx_lid(line)
-                    spdx_start_known_pos = line_start_known_pos + spdx_start_offset
-                    if TRACE_SPDX:
-                        logger_debug('tokens_by_line: spdx-line:', (spdx_text, spdx_start_known_pos, line_end_known_pos))
-                    if spdx_start_known_pos <= line_end_known_pos:
-                        self.spdx_lines.append((spdx_text, spdx_start_known_pos, line_end_known_pos))
+            elif line_tokens[1:4] in spdx_lid_token_ids:
+                spdx_start_offset = 1
+            elif line_tokens[2:5] in spdx_lid_token_ids:
+                spdx_start_offset = 2
+
+            if spdx_start_offset is not None:
+                # keep the line, start/end known pos for SPDX matching
+                spdx_prefix, spdx_expression = split_spdx_lid(line)
+                spdx_text = ' '.join([spdx_prefix or '', spdx_expression])
+                spdx_start_known_pos = line_first_known_pos + spdx_start_offset
+
+                if spdx_start_known_pos <= line_last_known_pos:
+                    self.spdx_lines.append((spdx_text, spdx_start_known_pos, line_last_known_pos))
 
             yield line_tokens
 
@@ -747,8 +761,8 @@ class QueryRun(object):
         def tokens_string(tks, sort=False):
             "Return a string from a token id seq"
             tks = ('None' if tid is None else tokens_by_tid[tid] for tid in tks)
-            ascii = partial(toascii, translit=True)
-            tks = map(ascii, tks)
+            ascii_text = partial(toascii, translit=True)
+            tks = map(ascii_text, tks)
             if sort:
                 tks = sorted(tks)
             return ' '.join(tks)

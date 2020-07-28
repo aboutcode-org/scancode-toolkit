@@ -31,7 +31,6 @@ import io
 import json
 import logging
 import os
-import re
 import sys
 
 import attr
@@ -55,6 +54,14 @@ from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 from packageurl import PackageURL
+
+try:
+    # Python 2
+    unicode = unicode  # NOQA
+
+except NameError:  # pragma: nocover
+    # Python 3
+    unicode = str  # NOQA
 
 
 """
@@ -83,7 +90,7 @@ if TRACE:
 
 @attr.s()
 class PythonPackage(models.Package):
-    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg')
+    metafiles = ('metadata.json', '*setup.py', 'PKG-INFO', '*.whl', '*.egg', '*requirements*.txt', '*requirements*.in', '*Pipfile.lock')
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
@@ -129,6 +136,9 @@ def parse(location):
         file_name = fileutils.file_name(location)
         parsers = {
             'setup.py': parse_setup_py,
+            'requirements.txt': parse_requirements_txt,
+            'requirements.in': parse_requirements_txt,
+            'Pipfile.lock': parse_pipfile_lock,
             'metadata.json': parse_metadata,
             'PKG-INFO': parse_pkg_info,
             '.whl': parse_wheel,
@@ -204,12 +214,30 @@ def parse_dependencies(location, package):
             package.dependencies = dependencies
 
 
+dependency_type_by_extensions = {
+    ('.txt', '.in'): 'requirements.txt',
+    ('Pipfile.lock'): 'Pipfile.lock',
+}
+
+
+def get_dependency_type(file_name, dependency_type_by_extensions=dependency_type_by_extensions):
+    """
+    Return the type of a dependency as a string or None given a `file_name` string.
+    """
+    for extensions, dependency_type in dependency_type_by_extensions.items():
+        if file_name.endswith(extensions):
+            return dependency_type
+
+
 def parse_with_dparse(location):
     is_dir = filetype.is_dir(location)
     if is_dir:
         return
     file_name = fileutils.file_name(location)
-    if file_name not in (filetypes.requirements_txt,
+
+    dependency_type = get_dependency_type(file_name)
+
+    if dependency_type not in (filetypes.requirements_txt,
                          filetypes.conda_yml,
                          filetypes.tox_ini,
                          filetypes.pipfile,
@@ -221,32 +249,81 @@ def parse_with_dparse(location):
         mode = 'r'
     with open(location, mode) as f:
         content = f.read()
-        df = dparse.parse(content, file_type=file_name)
-        df_dependencies = df.dependencies
-        if not df_dependencies:
-            return
-        package_dependencies = []
-        for df_dependency in df_dependencies:
-            specs = df_dependency.specs
-            requirement = None
-            if specs:
-                requirement = str(specs)
-            package_dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(
-                        type='pypi', name=df_dependency.name).to_string(),
-                    scope='dependencies',
-                    is_runtime=True,
-                    is_optional=False,
-                    requirement=requirement,
-                )
+
+    df = dparse.parse(content, file_type=dependency_type)
+    df_dependencies = df.dependencies
+
+    if not df_dependencies:
+        return
+
+    package_dependencies = []
+    for df_dependency in df_dependencies:
+        specs = list(df_dependency.specs._specs)
+        is_resolved = False
+        requirement = None
+        purl = PackageURL(
+            type='pypi',
+            name=df_dependency.name
+        ).to_string()
+        if specs:
+            requirement = str(df_dependency.specs)
+            for spec in specs:
+                operator = spec.operator
+                version = spec.version
+                if any(operator == element for element in ('==', '===')):
+                    is_resolved = True
+                    purl = PackageURL(
+                        type='pypi',
+                        name=df_dependency.name,
+                        version=version
+                    ).to_string()
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=purl,
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=is_resolved,
+                requirement=requirement
             )
-        return package_dependencies
+        )
+
+    return package_dependencies
+
+
+def parse_requirements_txt(location):
+    """
+    Return a PythonPackage built from a Python requirements.txt files at location.
+    """
+    package_dependencies = parse_with_dparse(location)
+    return PythonPackage(dependencies=package_dependencies)
+
+
+def parse_pipfile_lock(location):
+    """
+    Return a PythonPackage built from a Python Pipfile.lock file at location.
+    """
+    with open(location) as f:
+        content = f.read()
+
+    data = json.loads(content, object_pairs_hook=OrderedDict)
+
+    sha256 = None
+    if '_meta' in data:
+        for name, meta in data['_meta'].items():
+            if name=='hash':
+                sha256 = meta.get('sha256')
+
+    package_dependencies = parse_with_dparse(location)
+    return PythonPackage(
+        sha256=sha256,
+        dependencies=package_dependencies
+    )
 
 
 def parse_setup_py(location):
     """
-    Return a package built from setup.py data.
+    Return a PythonPackage built from setup.py data.
     """
     if not location or not location.endswith('setup.py'):
         return
@@ -277,7 +354,7 @@ def parse_setup_py(location):
                 if isinstance(kw.value, ast.Str):
                     setup_args[arg_name] = kw.value.s
                 if isinstance(kw.value, ast.List):
-                     # We collect the elements of a list if the element is not a function call
+                    # We collect the elements of a list if the element is not a function call
                     setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
     package_name = setup_args.get('name')
@@ -291,13 +368,15 @@ def parse_setup_py(location):
     parties = []
     author = setup_args.get('author')
     author_email = setup_args.get('author_email')
+    homepage_url = setup_args.get('url')
     if author:
         parties.append(
             models.Party(
                 type=models.party_person,
                 name=author,
                 email=author_email,
-                role='author'
+                role='author',
+                url=homepage_url
             )
         )
 
@@ -361,7 +440,7 @@ def parse_metadata(location):
         parties.append(models.Party(type=models.party_person, name=name, role='contact'))
 
     description = build_description(
-        infos.get('summary') ,
+        infos.get('summary'),
         infos.get('description')
     )
 
@@ -376,9 +455,9 @@ def parse_metadata(location):
                 other_classifiers.append(classifier)
 
     declared_license = OrderedDict()
-    license = infos.get('license')
-    if license:
-        declared_license['license'] = license
+    lic = infos.get('license')
+    if lic:
+        declared_license['license'] = lic
     if license_classifiers:
         declared_license['classifiers'] = license_classifiers
 
@@ -396,7 +475,7 @@ def parse_metadata(location):
 
 def parse_pkg_info(location):
     """
-    Return a Package from a a 'PKG-INFO' file at 'location' or None.
+    Return a PythonPackage from a a 'PKG-INFO' file at 'location' or None.
     """
     if not location:
         return
@@ -462,15 +541,24 @@ def parse_source_distribution(location):
 
 def compute_normalized_license(declared_license):
     """
-    Return a normalized license expression string detected from a list of
+    Return a normalized license expression string detected from a mapping or list of
     declared license items.
     """
     if not declared_license:
         return
 
+    if isinstance(declared_license, dict):
+        values = list(declared_license.values())
+    elif isinstance(declared_license, list):
+        values = list(declared_license)
+    elif isinstance(declared_license, (str, unicode,)):
+        values = [declared_license]
+    else:
+        return
+
     detected_licenses = []
 
-    for value in declared_license.values():
+    for value in values:
         if not value:
             continue
         # The value could be a string or a list
@@ -479,6 +567,7 @@ def compute_normalized_license(declared_license):
             if detected_license:
                 detected_licenses.append(detected_license)
         else:
+            # this is a list
             for declared in value:
                 detected_license = models.compute_normalized_license(declared)
                 if detected_license:

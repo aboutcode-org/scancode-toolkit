@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH gpl-generic-additional-terms AND mit-old-style-no-advert
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.OpenSSL

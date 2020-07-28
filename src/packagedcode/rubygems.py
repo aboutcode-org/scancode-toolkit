@@ -34,12 +34,14 @@ from os.path import expanduser
 
 import attr
 import saneyaml
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import fileutils
 from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
+from packagedcode.gemfile_lock import GemfileLockParser
 from packagedcode.utils import combine_expressions
 
 
@@ -125,8 +127,9 @@ class RubyGem(models.Package):
             pass
 
         if location.endswith('Gemfile.lock'):
-            # TODO: implement me
-            pass
+            gemfile_lock = GemfileLockParser(location)
+            for package in build_packages_from_gemfile_lock(gemfile_lock):
+                yield package
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return rubygems_homepage_url(self.name, self.version, repo=baseurl)
@@ -175,6 +178,8 @@ def rubygems_homepage_url(name, version, repo='https://rubygems.org/gems'):
     For instance: https://rubygems.org/gems/mocha/versions/1.7.0 or
     https://rubygems.org/gems/mocha
     """
+    if not name:
+        return
     repo = repo.rstrip('/')
     if version:
         version = version.strip().strip('/')
@@ -191,6 +196,8 @@ def rubygems_download_url(name, version, platform=None, repo='https://rubygems.o
 
     For example: https://rubygems.org/downloads/mocha-1.7.0.gem
     """
+    if not name or not version:
+        return
     repo = repo.rstrip('/')
     name = name.strip().strip('/')
     version = version.strip().strip('/')
@@ -294,9 +301,9 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     # Since the gem spec doc is not clear https://guides.rubygems.org
     # /specification-reference/#licenseo, we will treat a list of licenses and a
     # conjunction for now (e.g. AND)
-    license = gem_data.get('license')
+    lic = gem_data.get('license')
     licenses = gem_data.get('licenses')
-    declared_license = licenses_mapper(license, licenses)
+    declared_license = licenses_mapper(lic, licenses)
 
     package = RubyGem(
         name=name,
@@ -377,18 +384,19 @@ def build_rubygem_package(gem_data, download_url=None, package_url=None):
     return package
 
 
-def licenses_mapper(license, licenses):
+def licenses_mapper(lic, lics):
     """
-    Return declared_licenses list based on the `license` and
-    `licenses` values found in a package.
+    Return a `declared_licenses` list based on the `lic` license and
+    `lics` licenses values found in a package.
     """
     declared_licenses = []
-    if license:
+    if lic:
         declared_licenses.append(str(license).strip())
-    if licenses:
-        for lic in licenses:
-            if lic and lic.strip():
-                declared_licenses.append(lic.strip())
+    if lics:
+        for lic in lics:
+            lic = lic.strip()
+            if lic:
+                declared_licenses.append(lic)
     return declared_licenses
 
 
@@ -727,3 +735,51 @@ class GemSpec(object):
                 if TRACE:
                     logger.warning('WARNING: {}: no license mapping for: "{}"'.format(self.filename, lic))
         return mapped_licenses
+
+
+def build_packages_from_gemfile_lock(gemfile_lock):
+    """
+    Yield RubyGem Packages from a given GemfileLockParser `gemfile_lock`
+    """
+    package_dependencies = []
+    for _, gem in gemfile_lock.all_gems.items():
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='gem',
+                    name=gem.name,
+                    version=gem.version
+                ).to_string(),
+                requirement=', '.join(gem.requirements),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+
+    yield RubyGem(dependencies=package_dependencies)
+
+    for _, gem in gemfile_lock.all_gems.items():
+        deps = []
+        for _dep_name, dep in gem.dependencies.items():
+            deps.append(
+                models.DependentPackage(
+                    purl=PackageURL(
+                        type='gem',
+                        name=dep.name,
+                        version=dep.version
+                    ).to_string(),
+                    requirement=', '.join(dep.requirements),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                )
+            )
+
+        yield RubyGem(
+            name=gem.name,
+            version=gem.version,
+            dependencies=deps
+        )

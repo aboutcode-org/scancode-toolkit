@@ -8,9 +8,27 @@
   "primary_language": "Python",
   "description": null,
   "release_date": null,
-  "parties": [],
-  "keywords": [],
-  "homepage_url": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Holger Krekel",
+      "email": null,
+      "url": "https://github.com/pytest-dev/pluggy"
+    }
+  ],
+  "keywords": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS :: MacOS X",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities'] + [",
+    "('Programming Language :: Python :: %s' % x) for x in"
+  ],
+  "homepage_url": "https://github.com/pytest-dev/pluggy",
   "download_url": null,
   "size": null,
   "sha1": null,

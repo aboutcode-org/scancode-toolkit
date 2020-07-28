@@ -22,3 +22,4 @@ other_urls:
     - https://opensource.org/licenses/MPL-1.0
 ignorable_urls:
     - http://www.mozilla.org/MPL/
+osi_license_key: MPL-1.0

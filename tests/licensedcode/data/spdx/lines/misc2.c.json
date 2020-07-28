@@ -1,47 +1,47 @@
 [
   [
-    "MIT", 
-    5, 
+    "SPDX-License-Identifier:  MIT",
+    2,
     5
-  ], 
+  ],
   [
-    "MIT", 
-    17, 
+    "SPDX-License-Identifier:  MIT",
+    14,
     17
-  ], 
+  ],
   [
-    "BSD-3-Clause", 
-    84, 
+    "SPDX-License-Identifier:     BSD-3-Clause",
+    81,
     86
-  ], 
+  ],
   [
-    "MIT", 
-    102, 
+    "SPDX-License-Identifier:  MIT",
+    99,
     102
-  ], 
+  ],
   [
-    "BSD-2-Clause", 
-    125, 
+    "SPDX-License-Identifier:  BSD-2-Clause",
+    122,
     127
-  ], 
+  ],
   [
-    "MIT", 
-    139, 
+    "SPDX-License-Identifier:  MIT",
+    136,
     139
-  ], 
+  ],
   [
-    "LGPL-3.0+", 
-    148, 
+    "SPDX-License-Identifier:  LGPL-3.0+",
+    145,
     150
-  ], 
+  ],
   [
-    "AGPL-3.0", 
-    161, 
+    "SPDX-License-Identifier:  AGPL-3.0",
+    158,
     163
-  ], 
+  ],
   [
-    "Apache-2.0", 
-    173, 
+    "SPDX-License-Identifier:  Apache-2.0",
+    170,
     175
   ]
 ]

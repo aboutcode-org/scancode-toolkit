@@ -1,0 +1,6 @@
+license_expression: w3c-software-19980720
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD
+    - http://www.w3.org/Consortium/Legal/copyright-software-19980720

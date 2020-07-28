@@ -33,7 +33,51 @@
     {
       "path": "PKG-INFO",
       "type": "file",
-      "packages": [],
+      "packages": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "TicketImport",
+          "version": "0.7a",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Import CSV and Excel files",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "",
+              "name": "Francois Granade",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://nexb.com",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "unknown",
+          "declared_license": "BSD",
+          "notice_text": null,
+          "root_path": "PKG-INFO",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:pypi/ticketimport@0.7a",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -172,7 +216,7 @@
               "role": "author",
               "name": "Stanis\u0142aw Pitucha",
               "email": "viraptor@gmail.com",
-              "url": null
+              "url": "http://bitbucket.org/viraptor/arpy"
             }
           ],
           "keywords": [],

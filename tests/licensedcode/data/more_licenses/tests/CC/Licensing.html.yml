@@ -1,16 +1,11 @@
 license_expressions:
-  - gpl-1.0-plus
+  - cc-by-3.0 OR gpl-2.0
   - cc-by-3.0
-  - unknown
+  - cc-by-4.0 OR cc-by-3.0
+  - cc-by-3.0 AND gpl-2.0
   - cc-by-3.0
-  - gpl-1.0-plus
-  - cc-by-3.0
-  - unknown
+  - other-permissive
   - gpl-2.0
-  - gpl-1.0-plus
-  - unknown
   - gpl-2.0
-  - gpl-3.0-plus
   - gpl-2.0
-  - gpl-3.0-plus
-  - unknown
+  - other-permissive

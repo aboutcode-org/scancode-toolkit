@@ -1,0 +1,11 @@
+license_expression: apache-1.1
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+notes: a damaged text seen in OpenJDK notices
+ignorable_authors:
+    - the Apache Software Foundation (http://www.apache.org/)
+ignorable_urls:
+    - http://www.apache.org/
+ignorable_emails:
+    - apache@apache.org

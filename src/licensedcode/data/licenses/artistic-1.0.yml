@@ -16,3 +16,4 @@ other_urls:
     - https://opensource.org/licenses/Artistic-1.0
 ignorable_urls:
     - http://ftp.uu.net/
+osi_license_key: Artistic-1.0

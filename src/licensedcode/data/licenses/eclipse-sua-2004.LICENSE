@@ -1,0 +1,37 @@
+Eclipse.org Software User Agreement
+
+15th June, 2004
+Usage Of Content
+
+ECLIPSE.ORG MAKES AVAILABLE SOFTWARE, DOCUMENTATION, INFORMATION AND/OR OTHER MATERIALS FOR OPEN SOURCE PROJECTS (COLLECTIVELY "CONTENT"). USE OF THE CONTENT IS GOVERNED BY THE TERMS AND CONDITIONS OF THIS AGREEMENT AND/OR THE TERMS AND CONDITIONS OF LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW. BY USING THE CONTENT, YOU AGREE THAT YOUR USE OF THE CONTENT IS GOVERNED BY THIS AGREEMENT AND/OR THE TERMS AND CONDITIONS OF ANY APPLICABLE LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW. IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT AND THE TERMS AND CONDITIONS OF ANY APPLICABLE LICENSE AGREEMENTS OR NOTICES INDICATED OR REFERENCED BELOW, THEN YOU MAY NOT USE THE CONTENT.
+Applicable Licenses
+
+Unless otherwise indicated, all Content made available by Eclipse.org is provided to you under the terms and conditions of the Common Public License Version 1.0 ("CPL"). A copy of the CPL is provided with this Content and is also available at http://www.eclipse.org/legal/cpl-v10.html. For purposes of the CPL, "Program" will mean the Content.
+
+Content includes, but is not limited to, source code, object code, documentation and other files maintained in the Eclipse.org CVS repository ("Repository") in CVS modules ("Modules") and made available as downloadable archives ("Downloads").
+
+Content may be apportioned into plug-ins ("Plug-ins"), plug-in fragments ("Fragments"), and features ("Features"). A Feature is a bundle of one or more Plug-ins and/or Fragments and associated material. Files named "feature.xml" may contain a list of the names and version numbers of the Plug-ins and/or Fragments associated with a Feature. Plug-ins and Fragments are located in directories named "plugins" and Features are located in directories named "features".
+
+Features may also include other Features ("Included Features"). Files named "feature.xml" may contain a list of the names and version numbers of Included Features.
+
+The terms and conditions governing Plug-ins and Fragments should be contained in files named "about.html" ("Abouts"). The terms and conditions governing Features and Included Features should be contained in files named "license.html" ("Feature Licenses"). Abouts and Feature Licenses may be located in any directory of a Download or Module including, but not limited to the following locations:
+
+    The top-level (root) directory
+    Plug-in and Fragment directories
+    Subdirectories of the directory named "src" of certain Plug-ins
+    Feature directories
+
+Note: if a Feature made available by Eclipse.org is installed using the Eclipse Update Manager, you must agree to a license ("Feature Update License") during the installation process. If the Feature contains Included Features, the Feature Update License should either provide you with the terms and conditions governing the Included Features or inform you where you can locate them. Feature Update Licenses may be found in the "license" property of files named "feature.properties". Such Abouts, Feature Licenses and Feature Update Licenses contain the terms and conditions (or references to such terms and conditions) that govern your use of the associated Content in that directory.
+
+THE ABOUTS, FEATURE LICENSES AND FEATURE UPDATE LICENSES MAY REFER TO THE CPL OR OTHER LICENSE AGREEMENTS, NOTICES OR TERMS AND CONDITIONS. SOME OF THESE OTHER LICENSE AGREEMENTS MAY INCLUDE (BUT ARE NOT LIMITED TO):
+
+    Eclipse Public License Version 1.0 (available at http://www.eclipse.org/legal/epl-v10.html)
+    Apache Software License 1.1 (available at http://www.apache.org/licenses/LICENSE)
+    IBM Public License 1.0 (available at http://oss.software.ibm.com/developerworks/opensource/license10.html)
+    Metro Link Public License 1.00 (available at http://www.opengroup.org/openmotif/supporters/metrolink/license.html)
+    Mozilla Public License Version 1.1 (available at http://www.mozilla.org/MPL/MPL-1.1.html)
+
+IT IS YOUR OBLIGATION TO READ AND ACCEPT ALL SUCH TERMS AND CONDITIONS PRIOR TO USE OF THE CONTENT. If no About, Feature License or Feature Update License is provided, please contact Eclipse.org to determine what terms and conditions govern that particular Content.
+Cryptography
+
+Content may contain encryption software. The country in which you are currently may have restrictions on the import, possession, and use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check the country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.

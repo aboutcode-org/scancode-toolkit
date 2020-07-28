@@ -1,0 +1,7 @@
+license_expression: dco-1.1
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2004, 2006 The Linux Foundation and its contributors
+ignorable_holders:
+    - The Linux Foundation and its contributors

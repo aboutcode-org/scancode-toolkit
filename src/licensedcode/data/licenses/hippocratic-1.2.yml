@@ -1,0 +1,12 @@
+key: hippocratic-1.2
+short_name: Hippocratic License 1.2
+name: The Hippocratic License 1.2
+category: Proprietary Free
+owner: Coraline Ada Ehmke
+homepage_url: https://firstdonoharm.dev/
+text_urls:
+    - https://firstdonoharm.dev/version/1/2/license.txt
+ignorable_urls:
+  - https://ethicalsource.dev/
+  - https://www.un.org/en/universal-declaration-human-rights
+

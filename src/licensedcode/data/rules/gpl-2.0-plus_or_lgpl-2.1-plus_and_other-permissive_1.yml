@@ -1,0 +1,6 @@
+license_expression: (gpl-2.0-plus OR lgpl-2.1-plus) AND other-permissive
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.GPL
+    - LICENSE.LGPL

@@ -24,3 +24,4 @@ ignorable_urls:
     - http://www.eu-datagrid.org/
 ignorable_emails:
     - hep-project-grid-edg-license@cern.ch
+osi_license_key: EUDatagrid

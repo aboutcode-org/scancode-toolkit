@@ -1,0 +1,15 @@
+AutoOpts is available under any one of two licenses.  The license
+ in use must be one of these two and the choice is under the control
+ of the user of the license.
+
+  The GNU Lesser General Public License, version 3 or later
+     See the files "COPYING.lgplv3" and "COPYING.gplv3"
+
+  The Modified Berkeley Software Distribution License
+     See the file "COPYING.mbsd"
+
+ These files have the following md5sums:
+
+ 43b91e8ca915626ed3818ffb1b71248b pkg/libopts/COPYING.gplv3
+ 06a1a2e4760c90ea5e1dad8dfaac4d39 pkg/libopts/COPYING.lgplv3
+ 66a5cedaf62c4b2637025f049f9b826f pkg/libopts/COPYING.mbsd
