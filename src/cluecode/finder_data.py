@@ -221,16 +221,18 @@ JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
 def classify(s, data_set, suffixes=None, ignored_hosts=None):
     """
     Return True or some classification string value that evaluates to True if
-    the data in string s is not junk. Return False if the data in string s is
-    classified as 'junk' or uninteresting. Return False is domain is in `ignored_hosts`.
+    the data in string `s` is not junk. Return False if the data in string `s` is
+    classified as 'junk' or uninteresting. Use `data_set` set of junk strings,
+    `suffixes` optional set of junk suffixes, and `ignored_hosts` set of junk
+    email host names for classification.
     """
     if not s:
         return False
     s = s.lower().strip('/')
     # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
-    if '@' in s and ignored_hosts:
+    if ignored_hosts and '@' in s:
         _name, _at, host_name = s.rpartition('@')
-        if any(d == host_name for d in ignored_hosts):
+        if host_name in ignored_hosts:
             return False
     if any(d in s for d in data_set):
         return False
@@ -241,9 +243,18 @@ def classify(s, data_set, suffixes=None, ignored_hosts=None):
 
 classify_ip = partial(classify, data_set=JUNK_IPS)
 
-classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
+classify_host = partial(
+    classify,
+    data_set=JUNK_HOSTS_AND_DOMAINS,
+    suffixes=JUNK_DOMAIN_SUFFIXES,
+)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES, ignored_hosts=JUNK_EXACT_DOMAIN_NAMES)
+classify_email = partial(
+    classify,
+    data_set=JUNK_EMAILS,
+    suffixes=JUNK_DOMAIN_SUFFIXES,
+    ignored_hosts=JUNK_EXACT_DOMAIN_NAMES,
+)
 
 
 def classify_url(url):
