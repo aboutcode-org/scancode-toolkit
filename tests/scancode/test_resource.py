@@ -578,7 +578,7 @@ class TestCodebase(FileBasedTesting):
     def test_depth_walk_with_depth_0(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
         results_zero = list(depth_walk(test_codebase, 0))
-        results_neg = list(depth_walk(test_codebase, -1))
+        results_neg = list(depth_walk(test_codebase, float("inf")))
         result_zero_dirs = [i for j in results_zero for i in j[1]]
         result_zero_files = [i for j in results_zero for i in j[2]]
         result_neg_dirs = [i for j in results_neg for i in j[1]]
