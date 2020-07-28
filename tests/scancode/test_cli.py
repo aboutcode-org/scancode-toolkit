@@ -113,7 +113,7 @@ def test_verbose_option_with_copyrights(monkeypatch):
 def test_scanned_resource_no_attribute_emails():
     test_dir = test_env.get_test_loc('attribute_error_data/apache-1.1.txt')
     result_file = test_env.get_temp_file('bb.json')
-    args = ['-clp', '--json-pp',result_file, test_dir, '--filter-clues']
+    args = ['-clp', '--json-pp', result_file, test_dir, '--filter-clues']
     result = run_scan_click(args)
     assert "'ScannedResource' object has no attribute 'emails'" not in result.output
 
@@ -165,14 +165,16 @@ def test_scan_info_does_collect_info():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
+    expected = test_env.get_test_loc('info/basic.expected.json')
+    check_json_scan(expected, result_file, regen=False)
 
 
 def test_scan_info_does_collect_info_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
     run_scan_click(['--info', test_dir, '--json', result_file])
-    check_json_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file)
+    expected = test_env.get_test_loc('info/basic.rooted.expected.json')
+    check_json_scan(expected, result_file, regen=False)
 
 
 def test_scan_info_returns_full_root():
@@ -206,7 +208,8 @@ def test_scan_info_returns_does_not_strip_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--strip-root', test_file, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, remove_file_date=True)
+    expected = test_env.get_test_loc('single/iproute.expected.json')
+    check_json_scan(expected, result_file, remove_file_date=True, regen=False)
 
 
 @pytest.mark.scanslow
@@ -223,7 +226,8 @@ def test_scan_noinfo_license_copyrights_with_root():
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--url', '--license', '--copyright', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file, regen=False)
+    expected = test_env.get_test_loc('info/all.rooted.expected.json')
+    check_json_scan(expected, result_file, regen=False)
 
 
 def test_scan_email_url_info():
@@ -231,7 +235,8 @@ def test_scan_email_url_info():
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--url', '--info', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
+    expected = test_env.get_test_loc('info/email_url_info.expected.json')
+    check_json_scan(expected, result_file, regen=False)
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_trucking_with_json():
@@ -239,7 +244,8 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_tru
     result_file = test_env.get_temp_file('test.json')
     args = ['--copyright', '--strip-root', test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=0)
-    check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, regen=False)
+    expected = test_env.get_test_loc('failing/patchelf.expected.json')
+    check_json_scan(expected, result_file, regen=False)
     assert 'Some files failed to scan' not in result.output
     assert 'patchelf.pdf' not in result.output
 
@@ -726,6 +732,7 @@ def test_scan_errors_out_with_conflicting_verbosity_options():
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
 
+
 def test_scan_valid_duration_field_in_json_output_headers():
     test_file = test_env.get_test_loc('license_text/test.txt')
     result_file = test_env.get_temp_file('results.json')
@@ -734,6 +741,7 @@ def test_scan_valid_duration_field_in_json_output_headers():
     with open(result_file) as result:
         headers = json.loads(result.read())['headers']
     assert headers[0]['duration'] >= 0
+
 
 @pytest.mark.scanslow
 @pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
