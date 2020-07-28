@@ -1,0 +1,28 @@
+about_resource: click-7.1.2-py2.py3-none-any.whl
+name: click
+version: 7.1.2
+download_url: https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl#md5=b4233221cacc473acd422a1d54ff4c41
+description: A simple wrapper around optparse for powerful command line utilities.
+homepage_url: http://click.pocoo.org/
+notes: |
+  contact: armin.ronacher@active-4.com
+  vcs_tool: git
+  vcs_repository: https://github.com/pallets/click.git
+license_expression: bsd-new AND python
+copyright: Copyright (c) 2014 by Armin Ronacher.
+notice_file: click-7.1.2-py2.py3-none-any.whl.NOTICE
+attribute: yes
+track_changes: yes
+owner: Armin Ronacher
+owner_url: http://lucumr.pocoo.org/about/
+contact: armin.ronacher@active-4.com
+checksum_md5: 4de489e31c57834a21b8be7111dab613
+checksum_sha1: 2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13
+package_url: pkg:pypi/click@7.1.2
+licenses:
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE
+  - key: python
+    name: Python Software Foundation License v2
+    file: python.LICENSE

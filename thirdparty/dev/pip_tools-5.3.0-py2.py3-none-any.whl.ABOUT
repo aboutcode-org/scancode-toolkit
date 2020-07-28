@@ -1,0 +1,15 @@
+about_resource: pip_tools-5.3.0-py2.py3-none-any.whl 
+name: pip-tools
+version: '5.3.0'
+download_url: https://files.pythonhosted.org/packages/5e/8d/c37230a7cf9e26cf5e3d48cc20a42b33e3614667777520c0b08b4c32b753/pip_tools-5.3.0-py2.py3-none-any.whl
+description: A set of command line tools to help you keep your pip-based packages fresh, even when you’ve pinned them.
+homepage_url: https://pypi.org/project/pip-tools/5.3.0/
+license_expression: BSD License (BSD)
+copyright: Copyright (c) Python Packaging Authority
+attribute: yes
+track_changes: yes
+owner: jazzband
+owner_url: https://pypi.org/user/jazzband/
+contact: me@nvie.com
+checksum_md5: b4daec48486975084e8956dcfda21c84
+checksum_sha1: 1c971e38643400ec6d0f6d528c7585d25855078c0af639806f00c4cb87455adf

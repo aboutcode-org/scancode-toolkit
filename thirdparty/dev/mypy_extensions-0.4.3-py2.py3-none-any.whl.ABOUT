@@ -1,0 +1,13 @@
+about_resource: mypy_extensions-0.4.3-py2.py3-none-any.whl
+checksum_md5: b9c790261bc8932c80b5938c69e5b65f
+checksum_sha1: 090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d
+copyright: Copyright (c)  The mypy developers
+description: The “mypy_extensions” module defines experimental extensions to the standard “typing” module that are supported by the mypy typechecker.
+download_url: https://files.pythonhosted.org/packages/5c/eb/975c7c080f3223a5cdaff09612f3a5221e4ba534f7039db34c35d95fa6a5/mypy_extensions-0.4.3-py2.py3-none-any.whl
+homepage_url: https://github.com/python/mypy_extensions
+license_expression: MIT License (MIT License)
+name: mypy-extensions
+license_file: mit.LICENSE
+owner: The mypy developers
+owner_url: https://github.com/python
+version: 0.4.3

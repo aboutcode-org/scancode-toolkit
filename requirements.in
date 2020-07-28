@@ -10,7 +10,7 @@ boolean.py==3.7
 bumpversion==0.5.4.dev0
 certifi==2020.6.20
 chardet==3.0.4
-Click==7.0
+Click==7.1.2
 codecov==2.0.15
 colorama==0.3.9
 contextlib2==0.5.5
@@ -68,7 +68,6 @@ PyYAML==3.12
 rdflib==4.2.1
 requests==2.24.0
 saneyaml==0.1
--e git+https://github.com/Abhishek-Dev09/scancode-toolkit.git@7036274c2e1ffad6084cb0e95178ace857880c61#egg=scancode_toolkit
 simplejson==3.15.0
 six==1.12.0
 sortedcontainers==2.0.5

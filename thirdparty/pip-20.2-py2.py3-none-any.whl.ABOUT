@@ -1,0 +1,16 @@
+about_resource: pip-20.2-py2.py3-none-any.whl
+name: pip
+version: '20.2'
+download_url: https://files.pythonhosted.org/packages/36/74/38c2410d688ac7b48afa07d413674afc1f903c1c1f854de51dc8eb2367a5/pip-20.2-py2.py3-none-any.whl#sha256=d75f1fc98262dabf74656245c509213a5d0f52137e40e8f8ed5cc256ddd02923
+description: A tool for installing and managing Python packages.
+homepage_url: http://www.pip-installer.org
+license_expression: mit AND bsd-new AND lgpl-2.1
+copyright: Copyright (c) 2008-2016 The pip developers (see AUTHORS.txt file)
+notice_url: https://github.com/pypa/pip/blob/master/LICENSE.txt
+redistribute: yes
+attribute: yes
+track_changes: yes
+owner: The pip developers
+owner_url: http://www.pip-installer.org/en/latest/
+checksum_md5: 11ea34a66db5572c0ac09e599648622b
+checksum_sha1: d75f1fc98262dabf74656245c509213a5d0f52137e40e8f8ed5cc256ddd02923	

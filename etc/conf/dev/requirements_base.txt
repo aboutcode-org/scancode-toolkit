@@ -11,3 +11,5 @@ coverage
 pytest-cov
 codecov
 pytest-rerunfailures
+pip-tools
+github-release-retry
