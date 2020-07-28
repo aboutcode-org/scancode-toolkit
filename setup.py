@@ -196,7 +196,7 @@ setup(
         'ftfy>=  5.0.0; python_version > "3"',
 
         # scancode
-        'click >= 7.0.0, < 8.0.0',
+        'click >= 6.0.0, < 8.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >=18.1',
