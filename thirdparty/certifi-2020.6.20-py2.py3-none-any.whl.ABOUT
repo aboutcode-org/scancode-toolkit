@@ -1,0 +1,18 @@
+about_resource: certifi-2020.6.20-py2.py3-none-any.whl
+checksum_md5: 9a4c30d65c718cc2217f1e457ca6dc4c
+checksum_sha1: 8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41
+contact: me@kennethreitz.com
+copyright: Kenneth Reitz
+description: Certifi is a carefully curated collection of Root Certificates for validating
+  the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+  It has been extracted from the Requests project.
+download_url: https://files.pythonhosted.org/packages/5e/c4/6c4fe722df5343c33226f0b4e0bb042e4dc13483228b4718baf286f86d87/certifi-2020.6.20-py2.py3-none-any.whl#sha256=8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41
+homepage_url: https://certifi.io/en/latest/
+license_expression: mpl-2.0
+name: certifi
+notice_url: https://certifi.io/en/latest/
+notice_file: certifi-2020.6.20-py2.py3-none-any.whl.NOTICE
+license_file: mpl-2.0.LICENSE
+owner: Kenneth Reitz
+owner_url: https://github.com/kennethreitz
+version: 2018.4.16

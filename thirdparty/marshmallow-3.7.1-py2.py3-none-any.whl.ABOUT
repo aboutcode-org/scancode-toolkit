@@ -1,0 +1,13 @@
+name: marshmallow
+about_resource: marshmallow-3.7.1-py2.py3-none-any.whl
+download_url: https://files.pythonhosted.org/packages/a6/11/f824483fcfc4164d733c0a242cc01f7e3b153561500a6a69bba217c9f0f6/marshmallow-3.7.1-py2.py3-none-any.whl
+license_expression: mit
+copyright: Copyright (c) Open Collective
+attribute: yes
+checksum_md5: b699ca290659f99cfa172bb3bf06066b
+checksum_sha1: 67bf4cae9d3275b3fc74bd7ff88a7c98ee8c57c94b251a67b031dc293ecc4b76
+package_url: pkg:pypi.org/project/marshmallow
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

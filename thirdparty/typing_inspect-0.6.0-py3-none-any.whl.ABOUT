@@ -1,0 +1,13 @@
+name: typing-inspect
+version: 0.6.0
+about_resource: typing_inspect-0.6.0-py3-none-any.whl
+download_url: https://files.pythonhosted.org/packages/42/1c/66402db44184904a2f14722d317a4da0b5c8c78acfc3faf74362566635c5/typing_inspect-0.6.0-py3-none-any.whl
+license_expression: mit
+attribute: yes
+checksum_md5: 57b63db1962cd1ec5d2301ce9426079a
+checksum_sha1: 3b98390df4d999a28cf5b35d8b333425af5da2ece8a4ea9e98f71e7591347b4f
+package_url: https://pypi.org/project/typing-inspect/
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

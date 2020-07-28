@@ -1,0 +1,7 @@
+about_resource: idna-2.10-py2.py3-none-any.whl
+name: idna
+version: 2.10
+download_url: https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl#md5=8f7d13f63706aa265d31ffedc8aa3053
+license_expression: OSI Approved :: BSD License
+owner:  Kim Davies
+home_url: https://github.com/kjd/idna

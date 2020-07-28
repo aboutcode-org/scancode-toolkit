@@ -196,7 +196,7 @@ setup(
         'ftfy>=  5.0.0; python_version > "3"',
 
         # scancode
-        'click >= 6.0.0, < 7.0.0',
+        'click >= 7.0.0, < 8.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >=18.1',
@@ -213,6 +213,10 @@ setup(
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
+
+        #for packaging and uploading
+        'pip-tools >=5.3.0, < 6.0.0',
+        'github-release-retry >=1.0.6, < 2.0.0',
     ],
     
     entry_points={
