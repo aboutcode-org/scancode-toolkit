@@ -37,6 +37,7 @@ from packageurl import PackageURL
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode.go_mod import GoMod
+from packagedcode.go_sum import GoSum
 from packagedcode import models
 
 
@@ -61,7 +62,7 @@ if TRACE:
 
 @attr.s()
 class GolangPackage(models.Package):
-    metafiles = ('go.mod',)
+    metafiles = ('go.mod', 'go.sum')
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
@@ -70,10 +71,13 @@ class GolangPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        if fileutils.file_name(location).lower() == 'go.mod':
-            gomod_obj = GoMod()
-            gomod_data = gomod_obj.parse_gomod(location)
+        filename = fileutils.file_name(location).lower()
+        if filename == 'go.mod':
+            gomod_data = GoMod.parse_gomod(location)
             yield build_gomod_package(gomod_data)
+        elif filename == 'go.sum':
+            gosum_data = GoSum.parse_gosum(location)
+            yield build_gosum_package(gosum_data)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -81,6 +85,7 @@ class GolangPackage(models.Package):
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
+
 
 def build_gomod_package(gomod_data):
     """
@@ -133,3 +138,28 @@ def build_gomod_package(gomod_data):
         homepage_url=homepage_url,
         dependencies=package_dependencies
     )
+
+
+def build_gosum_package(gosum_data):
+    """
+    Return a Package object from a go.sum file.
+    """
+    package_dependencies = []
+    for namespace, name, version in gosum_data:
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='golang',
+                    namespace=namespace,
+                    name=name,
+                    version=version
+                ).to_string(),
+                requirement=version,
+                scope='dependency',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+
+    return GolangPackage(dependencies=package_dependencies)
