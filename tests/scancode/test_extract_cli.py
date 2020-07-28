@@ -248,6 +248,25 @@ def test_extractcode_command_can_extract_shallow(monkeypatch):
     ]
     assert sorted(expected) == sorted(file_result)
 
+def test_extractcode_command_can_ignore(monkeypatch):
+    monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
+    test_dir = test_env.get_test_loc('extract_ignore', copy=True)
+    if on_linux:
+        test_dir = fsencode(test_dir)
+    runner = CliRunner()
+    result = runner.invoke(extract_cli.extractcode, ['--ignore', '*.tar', test_dir])
+    assert result.exit_code == 0
+
+    file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith('a.tar') or not f.endswith('b.tar')]
+    file_result = [EMPTY_STRING.join(f.partition('/a.zip-extract/')[1:]) for f in file_result]
+    file_result = [f for f in file_result if f]
+    expected = [
+        '/a.zip-extract/a.txt',
+        '/a.zip-extract/b.zip',
+        '/a.zip-extract/b.zip-extract/b.txt',
+        '/a.zip-extract/c.tar',
+    ]
+    assert sorted(expected) == sorted(file_result)
 
 @pytest.mark.skipif(on_windows, reason='FIXME: this test fails on Windows until we have support for long file names.')
 def test_extractcode_command_can_extract_nuget(monkeypatch):
