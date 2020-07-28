@@ -34,6 +34,7 @@ from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode import functional
+from commoncode.ignore import is_ignored
 from commoncode.system import on_linux
 from commoncode.system import py2
 
@@ -103,13 +104,15 @@ def can_extract(location):
         return True
 
 
-def should_extract(location, kinds):
+def should_extract(location, kinds, ignore_pattern=()):
     """
     Return True if this location should be extracted based on the provided
     kinds
     """
     location = os.path.abspath(os.path.expanduser(location))
-    if get_extractor(location, kinds):
+    ignore_pattern = {extension : 'User ignore: Supplied by --ignore' for extension in ignore_pattern}
+    should_ignore = is_ignored(location, ignore_pattern)
+    if get_extractor(location, kinds) and not should_ignore:
         return True
 
 
