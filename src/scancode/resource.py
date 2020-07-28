@@ -121,14 +121,17 @@ class UnknownResource(Exception):
     pass
 
 def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_handler=lambda:None):
-    """ Generator that walks the `root_location` directory recursively upto `max_depth` of 
-    nested subdirectories and yields a (top, dirs, files) tuple at each step. 
+    """
+    Yield a (top, dirs, files) tuple at each step of walking the `root_location` directory
+    recursively up to `max_depth` path segments extending from the `root_location`.
+    The behaviour is similar of `os.walk`.
 
     Arguments: 
-       - root_location: Absolute path for the directory to be walked
-       - max_depth: Positive integer for fixed depth limit. negative for no limit
-       - skip_ignored: Function that returns boolean indicating whether to ignore searching files
-                      in the current location. No ignoring by default
+       - root_location: Absolute, normalized path for the directory to be walked
+       - max_depth: positive integer for fixed depth limit. 0 for no limit.
+       - skip_ignored: Callback function that takes `top` as argument and returns a boolean
+                       indicating whether to ignore files in that location. No ignoring
+                       by default.
        - error_handler: Error handler callback. No action taken by default.
     """
 

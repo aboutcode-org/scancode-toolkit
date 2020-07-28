@@ -343,6 +343,13 @@ def print_options(ctx, param, value):
     'Use -1 to use only on-disk caching.',
     help_group=CORE_GROUP, sort_order=300, cls=CommandLineOption)
 
+@click.option('--max-depth',
+    type=int, default=0, show_default=False,
+    help='Maximum nesting depth of subdirectories to scan. '
+        'Descend at most INTEGER levels of directories below and including '
+        'the starting directory. Use 0 for no scan depth limit.',
+    help_group=CORE_GROUP, sort_order=301, cls=CommandLineOption)
+
 @click.help_option('-h', '--help',
     help_group=DOC_GROUP, sort_order=10, cls=CommandLineOption)
 
@@ -405,12 +412,6 @@ def print_options(ctx, param, value):
          'completed.)',
     hidden=True,
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
-
-@click.option('--max-depth',
-    type=int, default=0, show_default=False, metavar='N',
-    help='For each <input> given on the command line, scan at most N levels '
-        'of directories. A negative value or 0 means no limit. 0 is the default',
-    help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
