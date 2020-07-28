@@ -126,17 +126,12 @@ Comparing Progress Message Options
 ----------------------------------
 
     Normally, the scan takes place upto the maximum level of nesting of directories possible. But
-    using the ``--max-depth`` option, the depth of the scan can be limited. This can reduce the time
-    taken for the scan when deeper directories are not relevant.
+    using the ``--max-depth`` option, you can specify the maximum level of directories to scan,
+    including and below the root location. This can reduce the time taken for the scan when deeper
+    directories are not relevant.
 
     Note that the ``--max-depth`` option will be ignored if you are scanning from a JSON file using
     the ``--from-json`` option. In that case, the original depth is used.
-
-    Some INTEGER values of the ``--max-depth INTEGER`` option:
-
-    - **4**     - Scan only upto 4 levels of subdirectories
-    - **0**     - Default, Scan upto maximum levels of subdirectories (no depth limit)
-    - **-1**    - Same effect as when set to 0
 
     An example usage::
 

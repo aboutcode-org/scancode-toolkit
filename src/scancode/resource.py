@@ -138,17 +138,12 @@ def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_han
     # Find root directory depth using path separator's count
     root_dir_depth = root_location.count(os.path.sep)
 
-    # Default behaviour. current_depth is always less than max_depth so that 
-    # os_walk keeps running. When max_depth is limited, the current_depth is
-    # changed in each iteration and compared with max_depth
-    current_depth = -2
-
     for top, dirs, files in os_walk(root_location, topdown=True, onerror=error_handler):
-        # If depth is limited
-        if max_depth > 0:
+        # If depth is limited (non-zero)
+        if max_depth:
             current_depth = top.count(os.path.sep) - root_dir_depth
 
-        if skip_ignored(top) or current_depth >= max_depth:
+        if skip_ignored(top) or (max_depth and current_depth >= max_depth):
             # we clear out `dirs` and `files` to prevent `os_walk` from visiting
             # the files and subdirectories of directories we are ignoring or 
             # are not in the specified nesting level
@@ -285,8 +280,8 @@ class Codebase(object):
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
 
-        `max_depth` is the maximum level of nesting of subdirectories that the 
-        scan will go. A value of 0 or negative means no limit.
+        `max_depth` is the maximum depth of subdirectories to descend below and 
+        including `location`.
         """
         self.original_location = location
         self.full_root = full_root

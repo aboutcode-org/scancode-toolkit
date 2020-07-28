@@ -877,7 +877,7 @@ def run_scan(
                 full_root=full_root,
                 strip_root=strip_root,
                 max_in_memory=max_in_memory,
-                max_depth=max_depth
+                max_depth=max_depth,
             )
         except:
             msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
