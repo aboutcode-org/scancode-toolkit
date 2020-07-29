@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) 2002-2020 Pivotal, Inc.
+holders:
+  - Pivotal, Inc.
+holders_summary:
+  - value: Pivotal, Inc.
+    count: 1
