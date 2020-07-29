@@ -2,6 +2,5 @@ key: nice
 name: Nice License
 short_name: Nice License
 category: Proprietary Free
-notes: You can only use the software if you properly document your public API. No definition for "negligent" documentation is provided
+notes: From https://github.com/ErikMcClure/bad-licenses
 owner: unspecified
-homepage_url: not available

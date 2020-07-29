@@ -2,6 +2,5 @@ key: pftus-1.1
 name: Protected Free To Use Software License
 short_name: PFTUS-license
 category: Proprietary Free
-notes: A truly bizarre "open-source" license with a litany of baffling restrictions, like not allowing anyone to redistribute binaries, ever, for any reason.
+notes: From https://github.com/ErikMcClure/bad-licenses
 owner: unspecified
-homepage_url: not available

@@ -2,6 +2,5 @@ key: passive-aggressive
 name: Passive-Aggressive License
 short_name: Passive-Aggressive License
 category: Proprietary Free
-notes: A license that allows you to copy, modify, or distribute the source code or compiled binaries, but doesn't let you run the program.
+notes: From https://github.com/ErikMcClure/bad-licenses
 owner: unspecified
-homepage_url: not available
