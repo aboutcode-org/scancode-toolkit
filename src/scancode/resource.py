@@ -120,7 +120,21 @@ class ResourceNotInCache(Exception):
 class UnknownResource(Exception):
     pass
 
-def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_handler=lambda:None):
+
+def skip_ignored(_loc):
+    """Always ignore VCS and some special filetypes."""
+    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
+
+    if TRACE_DEEP:
+        logger_debug()
+        logger_debug('Codebase.populate: walk: ignored loc:', _loc,
+                     'ignored:', ignored(_loc),
+                     'is_special:', is_special(_loc))
+
+    return is_special(_loc) or ignored(_loc)
+
+
+def depth_walk(root_location, max_depth, error_handler=lambda:None):
     """
     Yield a (top, dirs, files) tuple at each step of walking the `root_location` directory
     recursively up to `max_depth` path segments extending from the `root_location`.
@@ -134,6 +148,9 @@ def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_han
                        by default.
        - error_handler: Error handler callback. No action taken by default.
     """
+
+    if max_depth < 0:
+        raise Exception("ERROR: `max_depth` must be a positive integer or 0.")
 
     # Find root directory depth using path separator's count
     root_dir_depth = root_location.count(os.path.sep)
@@ -151,6 +168,7 @@ def depth_walk(root_location, max_depth, skip_ignored=lambda x: False, error_han
             files[:] = []
             continue
         yield (top, dirs, files)
+
 
 @attr.s(slots=True)
 class Header(object):
@@ -434,18 +452,6 @@ class Codebase(object):
                 'ERROR: cannot populate codebase: {}\n'.format(_error)
                 + traceback.format_exc())
 
-        def skip_ignored(_loc):
-            """Always ignore VCS and some special filetypes."""
-            ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
-
-            if TRACE_DEEP:
-                logger_debug()
-                logger_debug('Codebase.populate: walk: ignored loc:', _loc,
-                             'ignored:', ignored(_loc),
-                             'is_special:', is_special(_loc))
-
-            return is_special(_loc) or ignored(_loc)
-
         def create_resources(_seq, _top, _parent, _is_file):
             """Create Resources of parent from a seq of files or directories."""
             _seq.sort(key=lambda p: (p.lower(), p))
@@ -473,7 +479,7 @@ class Codebase(object):
         parent_by_loc = {root.location: root}
 
         # Walk over the directory and build the resource tree
-        for (top, dirs, files) in depth_walk(root.location, self.max_depth, skip_ignored, err):
+        for (top, dirs, files) in depth_walk(root.location, self.max_depth, err):
                 parent = parent_by_loc.pop(top)
                 create_resources(files, top, parent, _is_file=True)
                 create_resources(dirs, top, parent, _is_file=False)

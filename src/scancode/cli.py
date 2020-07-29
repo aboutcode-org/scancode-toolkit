@@ -266,6 +266,10 @@ def print_options(ctx, param, value):
     click.echo('')
     ctx.exit()
 
+def validate_depth(ctx, param, value):
+    if value < 0:
+        raise click.BadParameter("max-depth needs to be a positive integer or 0")
+    return value
 
 @click.command(name='scancode',
     epilog=epilog_text,
@@ -344,7 +348,7 @@ def print_options(ctx, param, value):
     help_group=CORE_GROUP, sort_order=300, cls=CommandLineOption)
 
 @click.option('--max-depth',
-    type=int, default=0, show_default=False,
+    type=int, default=0, show_default=False, callback=validate_depth,
     help='Maximum nesting depth of subdirectories to scan. '
         'Descend at most INTEGER levels of directories below and including '
         'the starting directory. Use 0 for no scan depth limit.',

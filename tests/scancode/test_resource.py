@@ -575,6 +575,11 @@ class TestCodebase(FileBasedTesting):
         result = [r.path for r in codebase.walk(topdown=True)]
         self.assertEqual(expected, result)
         
+    def test_depth_negative_fails(self):
+        test_codebase = self.get_test_loc('resource/deeply_nested')
+        with self.assertRaises(Exception):
+            next(depth_walk(test_codebase, -1))
+
     def test_depth_walk_with_depth_0(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
         results_zero = list(depth_walk(test_codebase, 0))
