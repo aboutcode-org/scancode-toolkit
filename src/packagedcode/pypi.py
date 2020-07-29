@@ -94,9 +94,9 @@ class PythonPackage(models.Package):
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
     default_type = 'pypi'
     default_primary_language = 'Python'
-    default_web_baseurl = None
-    default_download_baseurl = None
-    default_api_baseurl = None
+    default_web_baseurl = 'https://pypi.org'
+    default_download_baseurl = 'https://pypi.io/packages/source'
+    default_api_baseurl = 'http://pypi.python.org/pypi'
 
     @classmethod
     def recognize(cls, location):
@@ -104,6 +104,23 @@ class PythonPackage(models.Package):
 
     def compute_normalized_license(self):
         return compute_normalized_license(self.declared_license)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        if not self.name:
+            return
+        return '{}/project/{}'.format(baseurl, self.name)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        if not self.name or not self.version:
+            return
+        return '{baseurl}/{name[0]}/{name}/{name}-{version}.tar.gz'.format(baseurl=baseurl, name=self.name, version=self.version)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        if not self.name:
+            return
+        if not self.version:
+            return '{}/{}/json'.format(baseurl, self.name)
+        return '{}/{}/{}/json'.format(baseurl, self.name, self.version)
 
 
 def parse(location):
@@ -340,6 +357,10 @@ def parse_setup_py(location):
                     # We collect the elements of a list if the element is not a function call
                     setup_args[arg_name] = [elt.s for elt in kw.value.elts if not isinstance(elt, ast.Call)]
 
+    package_name = setup_args.get('name')
+    if not package_name:
+        return
+
     description = build_description(
         setup_args.get('summary', ''),
         setup_args.get('description', ''))
@@ -370,7 +391,7 @@ def parse_setup_py(location):
     other_classifiers = [c for c in classifiers if not c.startswith('License')]
 
     return PythonPackage(
-        name=setup_args.get('name'),
+        name=package_name,
         version=setup_args.get('version'),
         description=description or None,
         homepage_url=setup_args.get('url') or None,
