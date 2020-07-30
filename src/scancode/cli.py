@@ -266,6 +266,10 @@ def print_options(ctx, param, value):
     click.echo('')
     ctx.exit()
 
+def validate_depth(ctx, param, value):
+    if value < 0:
+        raise click.BadParameter("max-depth needs to be a positive integer or 0")
+    return value
 
 @click.command(name='scancode',
     epilog=epilog_text,
@@ -343,6 +347,13 @@ def print_options(ctx, param, value):
     'Use -1 to use only on-disk caching.',
     help_group=CORE_GROUP, sort_order=300, cls=CommandLineOption)
 
+@click.option('--max-depth',
+    type=int, default=0, show_default=False, callback=validate_depth,
+    help='Maximum nesting depth of subdirectories to scan. '
+        'Descend at most INTEGER levels of directories below and including '
+        'the starting directory. Use 0 for no scan depth limit.',
+    help_group=CORE_GROUP, sort_order=301, cls=CommandLineOption)
+
 @click.help_option('-h', '--help',
     help_group=DOC_GROUP, sort_order=10, cls=CommandLineOption)
 
@@ -409,7 +420,7 @@ def print_options(ctx, param, value):
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
-             quiet, verbose,
+             quiet, verbose, max_depth,
              from_json,
              timing,
              max_in_memory,
@@ -506,7 +517,7 @@ def scancode(ctx, input,  # NOQA
             from_json=from_json,
             strip_root=strip_root, full_root=full_root,
             processes=processes, timeout=timeout,
-            quiet=quiet, verbose=verbose,
+            quiet=quiet, verbose=verbose, max_depth=max_depth,
             timing=timing, max_in_memory=max_in_memory,
             test_mode=test_mode,
             test_slow_mode=test_slow_mode,
@@ -546,6 +557,7 @@ def run_scan(
         timeout=120,
         quiet=True,
         verbose=False,
+        max_depth=0,
         echo_func=None,
         timing=False,
         keep_temp_files=False,
@@ -868,7 +880,8 @@ def run_scan(
                 codebase_attributes=codebase_attributes,
                 full_root=full_root,
                 strip_root=strip_root,
-                max_in_memory=max_in_memory
+                max_in_memory=max_in_memory,
+                max_depth=max_depth,
             )
         except:
             msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
