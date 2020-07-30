@@ -1,0 +1,8 @@
+key: yolo-1.0
+name: YOLO License v1
+short_name: YOLO License v1
+category: Proprietary Free
+notes: From https://github.com/ErikMcClure/bad-licenses
+owner: Joseph Redmon
+text_urls:
+    - https://github.com/shizukachan/darknet-nnpack/blob/master/LICENSE.v1
