@@ -1,5 +1,4 @@
-
-# All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -35,26 +34,20 @@ import attr
 
 
 """
-https://blog.golang.org/using-go-modules
+This modules handles go.sum files from Go.
+See https://blog.golang.org/using-go-modules for details
 
-For example:
-
-golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c h1:qgOY6WgZO...
-golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c/go.mod h1:Nq...
-rsc.io/quote v1.5.2 h1:w5fcysjrx7yqtD/aO+QwRjYZOKnaM9Uh2b40tElTs3...
-rsc.io/quote v1.5.2/go.mod h1:LzX7hefJvL54yjefDEDHNONDjII0t9xZLPX...
-rsc.io/sampler v1.3.0 h1:7uVkIFmeBqHfdjD+gZwtXXI+RODJ2Wc4O7MPEh/Q...
-rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9...
-
-"""
-
-"""
-go.sum file contains certain things in 2 formats.
+A go.sum file contains pinned Go modules checksums of two styles:
 
 For example:
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 
+... where the line with /go.mod is for a check of that go.mod file 
+and the other line contains a dirhash for that path as documented as
+https://pkg.go.dev/golang.org/x/mod/sumdb/dirhash
+
+Here are some example of usage of this module::
 
 >>> ob = GoSum()
 >>> p = ob.parse_dep_type2('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
