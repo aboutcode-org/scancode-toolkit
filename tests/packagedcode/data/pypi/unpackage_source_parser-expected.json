@@ -31,7 +31,7 @@
   "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:pypi/ticketimport@0.7a",
-  "repository_homepage_url": null,
-  "repository_download_url": null,
-  "api_data_url": null
+  "repository_homepage_url": "https://pypi.org/project/TicketImport",
+  "repository_download_url": "https://pypi.io/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
+  "api_data_url": "http://pypi.python.org/pypi/TicketImport/0.7a/json"
 }

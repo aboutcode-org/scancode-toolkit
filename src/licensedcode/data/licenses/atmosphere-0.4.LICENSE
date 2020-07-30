@@ -1,0 +1,106 @@
+
+Atmosphere Software License Version 0.4
+Preamble
+
+Software developers cannot ignore the impact of networked computation on the global climate crisis. The energy demands of the global economy exceed the current production of renewable energy. While software development has the potential to make economic activity far more efficient, fossil fuel's high subsidies and disastrous social costs mean that improvements to software often give their users the ability to optimize for financial profit at the expense of the environment, by increasing their fossil fuel extraction and polluting activities. This rebound effect has been worsened by the rise of cryptocurrency, which has made it possible to monetize computation roughly in proportion to the amount of energy consumed. Computation, energy, economics, and ecology are now locked in a harmful cycle. The purpose of the Atmosphere License is to let developers push back against this cycle, supporting environmental sustainabiliy by creating code that increases the relative economic value of renewable energy.
+
+Developers often release their software under open licenses out of a charitable impulse to help users accomplish their tasks more easily. The Atmosphere License acknowledges that if a contribution to open source helps its users to worsen the climate crisis and endanger the ecosystem that everyone depends on to survive, then the contribution is not effective altruism. The pursuit of open source software users' freedom must respect the physical safety of all stakeholders, including the users and the developers themselves.
+
+The precise terms and conditions for copying, distribution and modification follow.
+TERMS AND CONDITIONS
+0. Scope
+
+This License applies to any program or other work which contains a notice placed by the copyright holder saying it may be distributed under the terms of this Atmosphere License. The "Program", below, refers to any such program or work, and a "work based on the Program" means either the Program or any derivative work under copyright law: that is to say, a work containing the Program or a portion of it, either verbatim or with modifications and/or translated into another language. (Hereinafter, translation is included without limitation in the term "modification".) Each licensee is addressed as "you".
+
+Activities other than copying, distribution and modification are not covered by this License; they are outside its scope. The act of running the Program is not restricted, and the output from the Program is covered only if its contents constitute a work based on the Program (independent of having been made by running the Program). Whether that is true depends on what the Program does.
+1. Verbatim Copies
+
+You may copy and distribute verbatim copies of the Program's source code as you receive it, in any medium, provided that you conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this License and to the absence of any warranty; and give any other recipients of the Program a copy of this License along with the Program.
+
+You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee.
+2. Modified Copies
+
+You may modify your copy or copies of the Program or any portion of it, thus forming a work based on the Program, and copy and distribute such modifications or work under the terms of Section 1 above, provided that each time you do so you also meet all of these conditions:
+
+    a. You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.
+    b. You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License.
+    c. If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this License. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)
+    d. You must divest from all Disqualifying Assets as listed in Section 3.
+    e. You must comply with any Obligations to Remote Users as defined below.
+
+These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works. But when you distribute the same sections as part of a whole which is a work based on the Program, the distribution of the whole must be on the terms of this License, whose permissions for other licensees extend to the entire whole, and thus to each and every part regardless of who wrote it.
+
+Thus, it is not the intent of this section to claim rights or contest your rights to work written entirely by you; rather, the intent is to exercise the right to control the distribution of derivative or collective works based on the Program.
+
+In addition, mere aggregation of another work not based on the Program with the Program (or with a work based on the Program) on a volume of a storage or distribution medium does not bring the other work under the scope of this License.
+2.1. Obligations to Remote Users
+
+Notwithstanding any other provision of this License, you may allow users to interact with your modified version remotely through a computer network only if you meet the following Obligations to Remote Users:
+
+    a. your modified version of the Program must prominently offer all users interacting with it remotely through a computer network an opportunity to receive the Corresponding Source of your version by providing access to the Corresponding Source from a network server at no charge, through some standard or customary means of facilitating copying of software.
+
+3. Divestment
+
+"Divestment" of an asset means relinquishing all ownership interest in the asset, all profit rights in the asset, or right to control the asset, through sale or other disposal of the asset, or placing the asset under a conservation easement or other effective legal restriction, valid for at least three years, barring use of the asset for the activities that caused it to qualify as a "Disqualifying Asset".
+
+"Disqualifying Assets" subject to Divestment under the terms of this License include "Disqualifying Investments" and "Disqualifying Facilities".
+
+A "Disqualifying Investment" is any investment exceeding $10,000 in value in a company, agency, or entity that operates any Disqualifying Facility or has a majority ownership interest or majority profit rights in any Disqualifying Facility. A Disqualifying Investment may take the form of direct ownership, shares, commingled mutual funds containing shares, or corporate bonds.
+
+    a. If you have the right to determine whether a Disqualifying Investment should be held in a fund for the benefit of others, such as a pension fund, endowment, or insurance fund, then you have a "right to control" the Disqualifying Investment for purposes of determining your obligation to divest.
+
+"Disqualifying Facilities" include any of the following:
+
+    a. any coal mine or any coal extraction operations.
+    b. any oil or natural gas wells or extraction operations.
+    c. any coal, oil, or natural gas processing facility.
+    d. any pipeline longer than 10 kilometers used for fossil fuel transportation.
+
+4. Source Code
+
+You may copy and distribute the Program (or a work based on it, under Sections 2 and 3) in object code or executable form under the terms of the Sections above provided that you also do one of the following:
+
+    a. Accompany it with the complete corresponding machine-readable source code, which must be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange; or,
+    b. Accompany it with a written offer, valid for at least three years, to give any third party, for a charge no more than your cost of physically performing source distribution, a complete machine-readable copy of the corresponding source code, to be distributed under the terms of Sections 1 and 2 above on a medium customarily used for software interchange; or,
+    c. Accompany it with the information you received as to the offer to distribute corresponding source code. (This alternative is allowed only for noncommercial distribution and only if you received the program in object code or executable form with such an offer, in accord with Subsection b above.) The source code for a work means the preferred form of the work for making modifications to it. For an executable work, complete source code means all the source code for all modules it contains, plus any associated interface definition files, plus the scripts used to control compilation and installation of the executable. However, as a special exception, the source code distributed need not include anything that is normally distributed (in either source or binary form) with the major components (compiler, kernel, and so on) of the operating system on which the executable runs, unless that component itself accompanies the executable.
+
+If distribution of executable or object code is made by offering access to copy from a designated place, then offering equivalent access to copy the source code from the same place counts as distribution of the source code, even though third parties are not compelled to copy the source along with the object code.
+5. Termination
+
+You may not copy, modify, sublicense, or distribute the Program except as expressly provided under this License. Any attempt otherwise to copy, modify, sublicense or distribute the Program is void, and will automatically terminate your rights under this License. However, parties who have received copies, or rights, from you under this License will not have their licenses terminated so long as such parties remain in full compliance.
+
+However, if you cease all violation of this License, then your license from a particular copyright holder is reinstated (a) provisionally, unless and until the copyright holder explicitly and finally terminates your license, and (b) permanently, if the copyright holder fails to notify you of the violation by some reasonable means prior to 60 days after the cessation.
+
+Moreover, your license from a particular copyright holder is reinstated permanently if the copyright holder notifies you of the violation by some reasonable means, this is the first time you have received notice of violation of this License (for any work) from that copyright holder, and you cure the violation prior to 30 days after your receipt of the notice.
+6. Acceptance
+
+You are not required to accept this License, since you have not signed it. However, nothing else grants you permission to modify or distribute the Program or its derivative works. These actions are prohibited by law if you do not accept this License. Therefore, by modifying or distributing the Program (or any work based on the Program), you indicate your acceptance of this License to do so, and all its terms and conditions for copying, distributing or modifying the Program or works based on it.
+7. Additional Terms
+
+Each time you redistribute the Program (or any work based on the Program), the recipient automatically receives a license from the original licensor to copy, distribute or modify the Program subject to these terms and conditions.
+
+If the original license omitted any of the optional provisions regarding Privacy of Remote Users, Deforestation, Nonrenewable Power Generation, Civilian Internment, or For-Profit Prisons, you may add one or more of those provisions to the license as additional terms when conveying modified versions of the Program. However, you may not add the "Offset for Renewable Investments" provision.
+
+You may also subject parts of the Program to restrictions derived from the Apache License Version 2.0, regarding matters such as patent termination and indemnification, if those parts of the Program were previously licensed under the Apache License. This is necessary to stay in compliance with the Apache License when relicensing under the Atmosphere License. To do this, add the phrase "subject to restrictions in Apache License Version 2.0" to the boilerplate Atmosphere License notices for your Program, or for the files or other parts of the Program that were covered by the Apache License.
+
+You may not impose any further restrictions on the recipients' exercise of the rights granted herein. You are not responsible for enforcing compliance by third parties to this License.
+8. Inconsistent Conditions
+
+If, as a consequence of a court judgment or allegation of patent infringement or for any other reason (not limited to patent issues), conditions are imposed on you (whether by court order, agreement or otherwise) that contradict the conditions of this License, they do not excuse you from the conditions of this License. If you cannot distribute so as to satisfy simultaneously your obligations under this License and any other pertinent obligations, then as a consequence you may not distribute the Program at all. For example, if a patent license would not permit royalty-free redistribution of the Program by all those who receive copies directly or indirectly through you, then the only way you could satisfy both it and this License would be to refrain entirely from distribution of the Program.
+
+If any portion of this section is held invalid or unenforceable under any particular circumstance, the balance of the section is intended to apply and the section as a whole is intended to apply in other circumstances.
+
+It is not the purpose of this section to induce you to infringe any patents or other property right claims or to contest validity of any such claims; this section has the sole purpose of protecting the integrity of the free and ethical software distribution system, which is implemented by public license practices. An author/donor distributes software through that system in reliance on consistent application of that system; it is up to the author/donor to decide if he or she is willing to distribute software through any other system and a licensee cannot impose that choice.
+9. Permission from Authors
+
+If you wish to incorporate parts of the Program into other programs whose distribution conditions are different, or if you wish to distribute modified versions of the Program or offer users Remote Network Interaction with a modified version of the Program without divesting from Disqualifying Assets, write to the author(s) to ask for permission to do so under the terms of a different license.
+10. No Warranty
+
+Because the program is licensed free of charge, there is no warranty for the program, to the extent permitted by applicable law. Except when otherwise stated in writing the copyright holders and/or other parties provide the program "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program is with you. Should the program prove defective, you assume the cost of all necessary servicing, repair or correction.
+11. No Liability
+
+In no event unless required by applicable law or agreed to in writing will any copyright holder, or any other party who may modify and/or redistribute the program as permitted above, be liable to you for damages, including any general, special, incidental or consequential damages arising out of the use or inability to use the program (including but not limited to loss of data or data being rendered inaccurate or losses sustained by you or third parties or a failure of the program to operate with any other programs), even if such holder or other party has been advised of the possibility of such damages.
+12. No Trademark Waiver
+
+Trademark rights are not licensed under this public license.
+END OF TERMS AND CONDITIONS

@@ -4,45 +4,12 @@
       "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
+        "--consolidate": true,
         "--copyright": true,
         "--info": true,
         "--json": "<file>",
         "--license": true,
         "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 7
-      }
-    },
-    {
-      "tool_name": "scancode-toolkit",
-      "options": {
-        "input": "<path>",
-        "--consolidate": true,
-        "--from-json": [
-          true
-        ],
-        "--json": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -152,6 +119,7 @@
       "size": 0,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -182,6 +150,7 @@
       "size": 0,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -215,6 +184,7 @@
       "size": 56,
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
+      "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -294,6 +264,7 @@
       "size": 56,
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
+      "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -373,6 +344,7 @@
       "size": 56,
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
+      "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -452,6 +424,7 @@
       "size": 34,
       "sha1": "ce82bf2d5d3e79dabf5960159d1e14e46560da63",
       "md5": "5817e002d5c6420ebcd4dfa66e500f10",
+      "sha256": "8fa2aa5fc071cf3b0b8569fefe3360133c1958589453cbd5bc4e9f0b05e5d837",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -531,6 +504,7 @@
       "size": 0,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -563,6 +537,7 @@
       "size": 141,
       "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
       "md5": "e10ff141105dc64fbde2dc77c61275db",
+      "sha256": "96af7c1cf3144e8a70972e2fac9f34d6ff884ee01206066b1304f08c71053297",
       "mime_type": "application/json",
       "file_type": "JSON data",
       "programming_language": null,
@@ -680,6 +655,7 @@
       "size": 56,
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
+      "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -759,6 +735,7 @@
       "size": 78,
       "sha1": "ddbbd1133bac042f1c1bcbd4aa31337756837271",
       "md5": "79cb837ae2b9a134e62b7bf3762b5ddc",
+      "sha256": "034be33c6cc3945c5a9a88d87ccbbd4e63bde2b58b1246752586dc9b0fc47c76",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,

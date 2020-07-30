@@ -1,0 +1,2 @@
+novcs+http://example.com#egg=a
+svn+http://example.com#egg

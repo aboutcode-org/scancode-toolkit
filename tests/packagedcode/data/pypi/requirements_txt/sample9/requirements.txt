@@ -1,0 +1,6 @@
+--extra-index-url=http://dist.pinaxproject.com/dev/
+
+Babel==0.9.6
+-e git+https://github.com/crateio/crate.web.git#egg=crate.web
+django-uuidfield==0.2
+-e git+https://github.com/dstufft/jutils.git#egg=jutils

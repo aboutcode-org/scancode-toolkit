@@ -1,0 +1,22 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 2835 bytes (3 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/svgz/insert-emptyframe.svgz
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/svgz/insert-emptyframe.svgz
+Type = gzip
+Headers Size = 10
+
+----------
+Path = insert-emptyframe
+Size = 13061
+Packed Size = 2835
+Modified = 
+Host OS = FAT
+CRC = E75A8CD2
+

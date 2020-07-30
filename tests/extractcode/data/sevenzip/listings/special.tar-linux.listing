@@ -1,0 +1,127 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 112640 bytes (110 KiB)
+
+Listing archive: tests/extractcode/data/sevenzip/special.tar
+
+--
+Path = tests/extractcode/data/sevenzip/special.tar
+Type = tar
+Physical Size = 112640
+Headers Size = 10752
+Code Page = UTF-8
+
+----------
+Path = 0-REGTYPE
+Folder = -
+Size = 3765
+Packed Size = 4096
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = 0-REGTYPE-TEXT
+Folder = -
+Size = 19941
+Packed Size = 19968
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = 0-REGTYPE-VEEEERY_LONG_NAME_____________________________________________________________________________________________________________________155
+Folder = -
+Size = 3765
+Packed Size = 4096
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = 1-LNKTYPE
+Folder = -
+Size = 0
+Packed Size = 0
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 0-REGTYPE
+
+Path = 2-SYMTYPE
+Folder = -
+Size = 17
+Packed Size = 0
+Modified = 2004-07-21 15:09:21
+Mode = 0rwxrwxrwx
+User = tarfile
+Group = tarfile
+Symbolic Link = testtar/0-REGTYPE
+Hard Link = 
+
+Path = 3-CHRTYPE
+Folder = -
+Size = 0
+Packed Size = 0
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = 5-DIRTYPE
+Folder = +
+Size = 0
+Packed Size = 0
+Modified = 2004-07-21 15:09:21
+Mode = 0rwxr-xr-x
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = 6-FIFOTYPE
+Folder = -
+Size = 0
+Packed Size = 0
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = S-SPARSE
+Folder = -
+Size = 49152
+Packed Size = 24576
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+
+Path = S-SPARSE-WITH-NULLS
+Folder = -
+Size = 49152
+Packed Size = 49152
+Modified = 2004-07-21 15:09:21
+Mode = 0rw-r--r--
+User = tarfile
+Group = tarfile
+Symbolic Link = 
+Hard Link = 
+

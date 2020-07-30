@@ -1,3 +1,9 @@
+
+################################################################################
+# We use Azure to run the full tests suites on Pythons 2.7 and 3.6
+# on Windows (32 and 64), macOS and Linux (64 various distro)
+################################################################################
+
 jobs:
 
 ################################################################################
@@ -63,6 +69,17 @@ jobs:
           image_name: vs2017-win2016
           python_versions: ['2.7']
           python_architecture: x86
+          test_suites:
+              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
+              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: Win2016_64_py27
+          image_name: vs2017-win2016
+          python_versions: ['2.7']
+          python_architecture: x64
           test_suites:
               misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
@@ -225,6 +242,17 @@ jobs:
               scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
               lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
 
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: Win2016_64_py36
+          image_name: vs2017-win2016
+          python_versions: ['3.6']
+          python_architecture: x64
+          test_suites:
+              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
+              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
+
 
 ################################################################################
 # These jobs are using containers and their own Python 3.6
@@ -348,19 +376,3 @@ jobs:
 #            sudo make altinstall
 #          test_suite_label: basic tests
 #          test_suite: bin/py.test -n 2 -vvs --reruns=3
-
-
-################################################################################
-# Misc: we do not support yet Windows 64
-################################################################################
-
-# 
-#    - template: etc/ci/azure-win.yml
-#      parameters:
-#          job_name: Win2016_64
-#          image_name: vs2017-win2016
-#          python_versions: ['2.7', '3.6']
-#          python_architecture: x64
-#          test_suites:
-#              all: Scripts\py.test -n 2 -vvs --ignore=tests\scancode
-#              scancode: Scripts\py.test -vvs tests\scancode

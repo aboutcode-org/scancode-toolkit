@@ -24,4 +24,9 @@ All "Core" Scan Options
                          and disable on-disk caching. Use -1 to use
                          only on-disk caching.  [Default: 10000]
 
+--max-depth INTEGER      Descend at most INTEGER levels of directories
+                         including and below the starting point. INTEGER
+                         must be positive or zero for no limit.
+                         [Default: 0]
+
 .. include::  /rst_snippets/note_snippets/core_indep.rst
