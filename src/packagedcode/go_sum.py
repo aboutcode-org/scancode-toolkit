@@ -34,7 +34,7 @@ import attr
 from packageurl import PackageURL
 
 """
-This modules handles go.sum files from Go.
+This module handles go.sum files from Go.
 See https://blog.golang.org/using-go-modules for details
 
 A go.sum file contains pinned Go modules checksums of two styles:
@@ -114,7 +114,7 @@ parse_dep_type2 = re.compile(
 
 def parse_gosum(location):
     """
-    Return a list containing all the go.sum dependency data.
+    Return a list of GoSum from parsing the go.sum file at `location`.
     """
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()

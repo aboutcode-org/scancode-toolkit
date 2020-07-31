@@ -86,7 +86,6 @@ class GolangPackage(models.Package):
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         if self.namespace and self.name:
             return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
-        return None
 
 
 def build_gomod_package(gomod):
