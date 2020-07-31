@@ -122,12 +122,12 @@ def parse_gosum(location):
         if not parsed_dep:
             parsed_dep = parse_dep_type2(line)
 
-        p = GoSum(parsed_dep.group('namespace').strip(),
+        dep_obj = GoSum(parsed_dep.group('namespace').strip(),
                 parsed_dep.group('name').strip(),
                 parsed_dep.group('version').strip()
             )
 
-        if p not in gosum_data:
-            gosum_data.append(p)
+        if dep_obj not in gosum_data:
+            gosum_data.append(dep_obj)
 
     return gosum_data
