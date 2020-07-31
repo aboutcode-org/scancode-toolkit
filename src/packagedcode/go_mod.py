@@ -143,7 +143,8 @@ class GoMod(object):
         r'(?P<version>(.*))'
     ).match
 
-    def preprocess(self, line):
+    @classmethod
+    def preprocess(cls, line):
         """
         Return line string after removing commented portion and excess spaces.
         """
@@ -152,7 +153,8 @@ class GoMod(object):
         line = line.strip()
         return line
 
-    def parse_gomod(self, location):
+    @classmethod
+    def parse_gomod(cls, location):
         """
         Return a dictionary containing all the important go.mod file data.
         """
@@ -164,42 +166,42 @@ class GoMod(object):
         exclude = []
 
         for i, line in enumerate(lines):
-            line = self.preprocess(line)
-            parsed_module = self.parse_module(line)
+            line = cls.preprocess(line)
+            parsed_module = cls.parse_module(line)
             if parsed_module:
                 gomod_data['module'] = parsed_module.group('module')
 
-            parsed_module_name = self.parse_module_name(line)
+            parsed_module_name = cls.parse_module_name(line)
             if parsed_module_name:
                 gomod_data['name'] = parsed_module_name.group('name')
                 gomod_data['namespace'] = parsed_module_name.group('namespace')
                 
-            parsed_require = self.parse_require(line)
+            parsed_require = cls.parse_require(line)
             if parsed_require:
                 line_req = [parsed_require.group('namespace'), parsed_require.group('name'), parsed_require.group('version')]
                 require.append(line_req)
 
-            parsed_exclude = self.parse_exclude(line)
+            parsed_exclude = cls.parse_exclude(line)
             if parsed_exclude:
                 line_exclude = [parsed_exclude.group('namespace'), parsed_exclude.group('name'), parsed_exclude.group('version')]
                 exclude.append(line_exclude)
 
             if 'require' in line and '(' in line:
                 for req in lines[i+1:]:
-                    req = self.preprocess(req)
+                    req = cls.preprocess(req)
                     if ')' in req:
                         break
-                    parsed_dep_link = self.parse_dep_link(req)
+                    parsed_dep_link = cls.parse_dep_link(req)
                     if parsed_dep_link:
                         line_req = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
                         require.append(line_req)
 
             if 'exclude' in line and '(' in line:
                 for exc in lines[i+1:]:
-                    exc = self.preprocess(exc)
+                    exc = cls.preprocess(exc)
                     if ')' in exc:
                         break
-                    parsed_dep_link = self.parse_dep_link(exc)
+                    parsed_dep_link = cls.parse_dep_link(exc)
                     if parsed_dep_link:
                         line_exclude = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
                         exclude.append(line_exclude)
