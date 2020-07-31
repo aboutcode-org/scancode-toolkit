@@ -73,8 +73,8 @@ class GolangPackage(models.Package):
     def recognize(cls, location):
         filename = fileutils.file_name(location).lower()
         if filename == 'go.mod':
-            gomods = GoMod.parse_gomod(location)
-            yield build_gomod_package(gomods)
+            gomod = GoMod.parse_gomod(location)
+            yield build_gomod_package(gomod)
         elif filename == 'go.sum':
             gosums = go_sum.parse_gosum(location)
             yield build_gosum_package(gosums)
@@ -89,12 +89,12 @@ class GolangPackage(models.Package):
         return None
 
 
-def build_gomod_package(gomod_data):
+def build_gomod_package(gomod):
     """
     Return a Package object from a go.mod file or None.
     """
     package_dependencies = []
-    require = gomod_data.get('require') or []
+    require = gomod.get('require') or []
     for namespace, name, version in require:
         package_dependencies.append(
             models.DependentPackage(
@@ -111,7 +111,7 @@ def build_gomod_package(gomod_data):
             )
         )
 
-    exclude = gomod_data.get('exclude') or []
+    exclude = gomod.get('exclude') or []
     for namespace, name, version in exclude:
         package_dependencies.append(
             models.DependentPackage(
@@ -128,10 +128,10 @@ def build_gomod_package(gomod_data):
             )
         )
 
-    name = gomod_data.get('name')
-    namespace = gomod_data.get('namespace')
-    homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
-    vcs_url = 'https://{}.git'.format(gomod_data.get('module'))
+    name = gomod.get('name')
+    namespace = gomod.get('namespace')
+    homepage_url = 'https://pkg.go.dev/{}'.format(gomod.get('module'))
+    vcs_url = 'https://{}.git'.format(gomod.get('module'))
 
     return GolangPackage(
         name=name,
@@ -147,11 +147,11 @@ def build_gosum_package(gosums):
     Return a Package object from a go.sum file.
     """
     package_dependencies = []
-    for obj in gosums:
+    for gosum in gosums:
         package_dependencies.append(
             models.DependentPackage(
-                purl=obj.purl,
-                requirement=obj.version,
+                purl=gosum.purl,
+                requirement=gosum.version,
                 scope='dependency',
                 is_runtime=True,
                 is_optional=False,
