@@ -31,7 +31,7 @@ import logging
 import re
 
 import attr
-
+from packageurl import PackageURL
 
 """
 This modules handles go.sum files from Go.
@@ -79,10 +79,14 @@ class GoSum(object):
     name = attr.ib(default=None)
     version = attr.ib(default=None)
 
-    def __init__(self, namespace, name, version):
-        self.namespace = namespace
-        self.name = name
-        self.version = version
+    @property
+    def purl(self):
+        return PackageURL(
+                    type='golang',
+                    namespace=self.namespace,
+                    name=self.name,
+                    version=self.version
+                ).to_string()
 
 # Regex expressions to parse different types of dependency
 # dep_type1 example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....

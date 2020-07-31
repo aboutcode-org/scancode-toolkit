@@ -73,18 +73,20 @@ class GolangPackage(models.Package):
     def recognize(cls, location):
         filename = fileutils.file_name(location).lower()
         if filename == 'go.mod':
-            gomod_data = GoMod.parse_gomod(location)
-            yield build_gomod_package(gomod_data)
+            gomods = GoMod.parse_gomod(location)
+            yield build_gomod_package(gomods)
         elif filename == 'go.sum':
-            gosum_objs = go_sum.parse_gosum(location)
-            yield build_gosum_package(gosum_objs)
+            gosums = go_sum.parse_gosum(location)
+            yield build_gosum_package(gosums)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
+        if self.namespace and self.name:
+            return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
+        return None
 
 
 def build_gomod_package(gomod_data):
@@ -140,20 +142,15 @@ def build_gomod_package(gomod_data):
     )
 
 
-def build_gosum_package(gosum_objs):
+def build_gosum_package(gosums):
     """
     Return a Package object from a go.sum file.
     """
     package_dependencies = []
-    for obj in gosum_objs:
+    for obj in gosums:
         package_dependencies.append(
             models.DependentPackage(
-                purl=PackageURL(
-                    type='golang',
-                    namespace=obj.namespace,
-                    name=obj.name,
-                    version=obj.version
-                ).to_string(),
+                purl=obj.purl,
                 requirement=obj.version,
                 scope='dependency',
                 is_runtime=True,
