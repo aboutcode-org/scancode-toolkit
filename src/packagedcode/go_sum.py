@@ -115,19 +115,20 @@ def parse_gosum(location):
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()
 
-    gosum_data = []
+    gosums = []
 
     for line in lines:
         parsed_dep = parse_dep_type1(line)
         if not parsed_dep:
             parsed_dep = parse_dep_type2(line)
 
-        dep_obj = GoSum(parsed_dep.group('namespace').strip(),
-                parsed_dep.group('name').strip(),
-                parsed_dep.group('version').strip()
+        dep_obj = GoSum(
+                namespace=parsed_dep.group('namespace').strip(),
+                name=parsed_dep.group('name').strip(),
+                version=parsed_dep.group('version').strip()
             )
 
-        if dep_obj not in gosum_data:
-            gosum_data.append(dep_obj)
+        if dep_obj not in gosums:
+            gosums.append(dep_obj)
 
-    return gosum_data
+    return gosums
