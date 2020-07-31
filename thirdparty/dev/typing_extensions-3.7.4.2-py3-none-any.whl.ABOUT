@@ -1,8 +1,0 @@
-about_resource: typing_extensions-3.7.4.2-py3-none-any.whl
-name: typing-extensions
-version: 3.7.4.2
-home_url: https://github.com/python/typing/blob/master/typing_extensions
-download_url: https://files.pythonhosted.org/packages/0c/0e/3f026d0645d699e7320b59952146d56ad7c374e9cd72cd16e7c74e657a0f/typing_extensions-3.7.4.2-py3-none-any.whl#md5=800bf9c0ee2a28f610a6b7c0c266e85d
-owner: Guido van Rossum
-copyright: Copyright (c) 2020, Python Software Foundation License
-license_expression: Python Software Foundation License

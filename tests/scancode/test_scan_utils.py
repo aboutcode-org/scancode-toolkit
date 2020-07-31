@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+import unittest
 
 import click
 click.disable_unicode_literals_warning = True
@@ -41,9 +42,10 @@ from scancode.cli import ScanCommand
 from scancode.utils import fixed_width_file_name
 
 
-class TestUtils(FileDrivenTesting):
+class TestUtils(FileDrivenTesting, unittest.TestCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    @unittest.expectedFailure
     def test_click_progressbar_with_labels(self):
 
         # test related to https://github.com/mitsuhiko/click/issues/406

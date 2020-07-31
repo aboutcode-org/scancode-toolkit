@@ -22,18 +22,23 @@ Options:
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
+
     --license-text               Include the detected licenses matched text.
     --license-text-diagnostics   In the matched license text, include diagnostic
                                  highlights surrounding with square brackets []
                                  words that are not matched.
+
     --license-url-template TEXT  Set the template URL used for the license
                                  reference URLs. Curly braces ({}) are replaced by
                                  the license key.  [default: https://enterprise.de
                                  jacode.com/urn/urn:dje:license:{}]
+
     --max-email INT              Report only up to INT emails found in a file. Use
                                  0 for no limit.  [default: 50]
+
     --max-url INT                Report only up to INT urls found in a file. Use 0
                                  for no limit.  [default: 50]
+
 
   output formats:
     --json FILE             Write scan output as compact JSON to FILE.
@@ -43,11 +48,13 @@ Options:
     --html FILE             Write scan output as HTML to FILE.
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
+
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
     --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
                             Write scan output as a mini HTML application to FILE.
+
 
   output filters:
     --ignore-author <pattern>       Ignore a file (and all its findings) if an
@@ -55,16 +62,19 @@ Options:
                                     regular expression. Note that this will ignore
                                     a file even if it has other findings such as a
                                     license or errors.
+
     --ignore-copyright-holder <pattern>
                                     Ignore a file (and all its findings) if a
                                     copyright holder contains a match to the
                                     <pattern> regular expression. Note that this
                                     will ignore a file even if it has other
                                     scanned data such as a license or errors.
+
     --only-findings                 Only return files or directories with findings
                                     for the requested scans. Files and directories
                                     without findings are omitted (file information
                                     is not treated as findings).
+
 
   output control:
     --full-root   Report full, absolute paths.
@@ -72,13 +82,16 @@ Options:
                   always include the last directory segment of the scanned path
                   such that all paths have a common root directory.
 
+
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
     --include <pattern>        Include files matching <pattern>.
     --classify                 Classify files with flags telling if the file is a
                                legal, or readme or test file, etc.
+
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
+
 
   post-scan:
     --consolidate            Group resources by Packages or license and copyright
@@ -87,41 +100,54 @@ Options:
                              components. This requires the scan to have/be run
                              with the copyright, license, and package options
                              active
+
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
+
     --is-license-text        Set the "is_license_text" flag to true for files that
                              contain mostly license texts and notices (e.g over
                              90% of the content). [EXPERIMENTAL]
+
     --license-clarity-score  Compute a summary license clarity score at the
                              codebase level.
+
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
+
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
                              directory as a new source_file_counts attribute
+
     --summary                Summarize license, copyright and other scans at the
                              codebase level.
+
     --summary-by-facet       Summarize license, copyright and other scans and
                              group the results by facet.
+
     --summary-key-files      Summarize license, copyright and other scans for key,
                              top-level files. Key files are top-level codebase
                              files such as COPYING, README and package manifests
                              as reported by the --classify option "is_legal",
                              "is_readme", "is_manifest" and "is_top_level" flags.
+
     --summary-with-details   Summarize license, copyright and other scans at the
                              codebase level, keeping intermediate details at the
                              file and directory level.
 
+
   core:
     --timeout <secs>         Stop an unfinished file scan after a timeout in
                              seconds.  [default: 120 seconds]
+
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if
                              -1. [default: 1]
+
     --quiet                  Do not print summary or progress.
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
+
     --from-json              Load codebase from an existing JSON scan
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
@@ -130,9 +156,11 @@ Options:
                              memory and disable on-disk caching. Use -1 to use
                              only on-disk caching.  [default: 10000]
 
+                             
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and
                         exit.
+
 
   documentation:
     -h, --help       Show this message and exit.
