@@ -34,6 +34,7 @@ from packagedcode import bower
 from packagedcode import conda
 from packagedcode import cargo
 from packagedcode import freebsd
+from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
@@ -74,6 +75,7 @@ PACKAGE_TYPES = [
     models.ChromeExtension,
     models.IOSApp,
     pypi.PythonPackage,
+    golang.GolangPackage,
     models.CabPackage,
     models.MsiInstallerPackage,
     models.InstallShieldPackage,

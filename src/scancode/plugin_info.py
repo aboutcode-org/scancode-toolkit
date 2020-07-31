@@ -47,6 +47,7 @@ class InfoScanner(ScanPlugin):
         ('date', attr.ib(default=None, repr=False)),
         ('sha1', attr.ib(default=None, repr=False)),
         ('md5', attr.ib(default=None, repr=False)),
+        ('sha256', attr.ib(default=None, repr=False)),
         ('mime_type', attr.ib(default=None, repr=False)),
         ('file_type', attr.ib(default=None, repr=False)),
         ('programming_language', attr.ib(default=None, repr=False)),

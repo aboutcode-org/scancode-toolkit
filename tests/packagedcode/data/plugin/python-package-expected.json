@@ -33,7 +33,51 @@
     {
       "path": "PKG-INFO",
       "type": "file",
-      "packages": [],
+      "packages": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "TicketImport",
+          "version": "0.7a",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Import CSV and Excel files",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "",
+              "name": "Francois Granade",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://nexb.com",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "license_expression": "unknown",
+          "declared_license": "BSD",
+          "notice_text": null,
+          "root_path": "PKG-INFO",
+          "dependencies": [],
+          "contains_source_code": null,
+          "source_packages": [],
+          "purl": "pkg:pypi/ticketimport@0.7a",
+          "repository_homepage_url": "https://pypi.org/project/TicketImport",
+          "repository_download_url": "https://pypi.io/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
+          "api_data_url": "http://pypi.python.org/pypi/TicketImport/0.7a/json"
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -84,9 +128,9 @@
           "contains_source_code": null,
           "source_packages": [],
           "purl": "pkg:pypi/atomicwrites@1.2.1",
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
+          "repository_homepage_url": "https://pypi.org/project/atomicwrites",
+          "repository_download_url": "https://pypi.io/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
+          "api_data_url": "http://pypi.python.org/pypi/atomicwrites/1.2.1/json"
         }
       ],
       "scan_errors": []
@@ -145,9 +189,9 @@
           "contains_source_code": null,
           "source_packages": [],
           "purl": "pkg:pypi/six@1.10.0",
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
+          "repository_homepage_url": "https://pypi.org/project/six",
+          "repository_download_url": "https://pypi.io/packages/source/s/six/six-1.10.0.tar.gz",
+          "api_data_url": "http://pypi.python.org/pypi/six/1.10.0/json"
         }
       ],
       "scan_errors": []
@@ -172,7 +216,7 @@
               "role": "author",
               "name": "Stanis\u0142aw Pitucha",
               "email": "viraptor@gmail.com",
-              "url": null
+              "url": "http://bitbucket.org/viraptor/arpy"
             }
           ],
           "keywords": [],
@@ -198,9 +242,9 @@
           "contains_source_code": null,
           "source_packages": [],
           "purl": "pkg:pypi/arpy@0.1.1",
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null
+          "repository_homepage_url": "https://pypi.org/project/arpy",
+          "repository_download_url": "https://pypi.io/packages/source/a/arpy/arpy-0.1.1.tar.gz",
+          "api_data_url": "http://pypi.python.org/pypi/arpy/0.1.1/json"
         }
       ],
       "scan_errors": []

@@ -1,0 +1,17 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 216 bytes (1 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/tbz/tarred_bzipped.tar.bz2
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/tbz/tarred_bzipped.tar.bz2
+Type = bzip2
+
+----------
+Size = 
+Packed Size = 
+

@@ -20,6 +20,12 @@ export TPP_DIR="thirdparty"
 
 # default configurations for dev
 CONF_DEFAULT="etc/conf/dev"
+
+if [[ "$CONF_DEFAULT" == "etc/conf/dev" ]]; then
+    export TPP_DIR_DEV="thirdparty/dev"
+fi
+
+
 #################################
 
 CFG_CMD_LINE_ARGS="$@"

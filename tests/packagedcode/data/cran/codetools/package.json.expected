@@ -1,7 +1,7 @@
 {
   "type": "cran",
   "namespace": null,
-  "name": "Luke Tierney",
+  "name": "codetools",
   "version": "0.2-16",
   "qualifiers": {},
   "subpath": null,
@@ -52,8 +52,8 @@
   ],
   "contains_source_code": null,
   "source_packages": [],
-  "purl": "pkg:cran/Luke%20Tierney@0.2-16",
-  "repository_homepage_url": null,
+  "purl": "pkg:cran/codetools@0.2-16",
+  "repository_homepage_url": "https://cran.r-project.org/package=codetools",
   "repository_download_url": null,
   "api_data_url": null
 }

@@ -29,6 +29,7 @@
       "date": null,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -40,8 +41,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 6,
       "dirs_count": 4,
@@ -58,6 +59,7 @@
       "date": "2015-06-19",
       "sha1": "94f059d6478d5f460e79b6b948a7fa9849d4dfdc",
       "md5": "15240737ec72b9e88b485a663bd045f9",
+      "sha256": "ddd09be9e5ed46b2678d8f16967a9e3e05cada8ffdfdc929c25956a969dc6513",
       "mime_type": "application/octet-stream",
       "file_type": "data",
       "programming_language": null,
@@ -69,8 +71,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -87,6 +89,7 @@
       "date": null,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -98,8 +101,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 2,
       "dirs_count": 1,
@@ -116,6 +119,7 @@
       "date": "2015-06-19",
       "sha1": "b655d4fc48e19910b9ab7a7102a8c051a39818f1",
       "md5": "393e789f4e4b2be93a46d0619380b445",
+      "sha256": "21fa169818161ad0f263d74c6b570dd3d29b98bb85191a63d1a14ea246688d3d",
       "mime_type": "application/x-tar",
       "file_type": "POSIX tar archive (GNU)",
       "programming_language": null,
@@ -127,8 +131,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -145,6 +149,7 @@
       "date": null,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -156,8 +161,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -174,6 +179,7 @@
       "date": "2015-06-19",
       "sha1": "03cfd28bb49d1dab105dcce1663630be1ddd821a",
       "md5": "b2b073a64e4d568ce7b641c1857a7116",
+      "sha256": "06a9c5bd0503aa2149a628f8de5013ba9be8aaeed620ada00fab52c146266946",
       "mime_type": "audio/x-aiff",
       "file_type": "IFF data, AIFF audio",
       "programming_language": null,
@@ -185,8 +191,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -203,6 +209,7 @@
       "date": null,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -214,8 +221,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 2,
       "dirs_count": 1,
@@ -232,6 +239,7 @@
       "date": null,
       "sha1": null,
       "md5": null,
+      "sha256": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -243,8 +251,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 2,
       "dirs_count": 0,
@@ -261,6 +269,7 @@
       "date": "2015-06-19",
       "sha1": "99f20eafc7b7e1c8e21bced55c8cdd05339bec77",
       "md5": "e1c66adaf6b8aa90e348668ac4869a61",
+      "sha256": "230de4eee886fa5ac0b056242ee0a9e90ac1d2fa425b14219902a9839fb4d59e",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text, with CRLF line terminators",
       "programming_language": "GAS",
@@ -307,16 +316,16 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "The Regents of the University of California",
+          "value": "Copyright (c) 1993 The Regents of the University of California",
           "start_line": 22,
           "end_line": 23
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 1993 The Regents of the University of California",
+          "value": "The Regents of the University of California",
           "start_line": 22,
           "end_line": 23
         }
@@ -343,6 +352,7 @@
       "date": "2015-06-19",
       "sha1": "4d567dc15d2117445389edfb64ced872329bceaa",
       "md5": "107dd38273ab10ce12058a3c8977e4ee",
+      "sha256": "d33295b8bb95bf8ca2d4817d19efa37478b74ff02f21d243c9e80d32a973142a",
       "mime_type": "text/plain",
       "file_type": "ASCII text, with CRLF line terminators",
       "programming_language": null,
@@ -354,8 +364,8 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "holders": [],
       "copyrights": [],
+      "holders": [],
       "authors": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -372,6 +382,7 @@
       "date": "2015-06-19",
       "sha1": "35017ed9762bdc9d16054a40ceefdda8b362083a",
       "md5": "8d0a3b3fe1c96a49af2a66040193291b",
+      "sha256": "c6f6fb075abb1414982b4aaea37093d9120ce28fea1484ca7e275c262ec09b1c",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
       "programming_language": "C++",
@@ -452,16 +463,16 @@
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
-      "holders": [
+      "copyrights": [
         {
-          "value": "Jouni Malinen",
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }
       ],
-      "copyrights": [
+      "holders": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }

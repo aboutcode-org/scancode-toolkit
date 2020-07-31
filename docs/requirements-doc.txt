@@ -1,0 +1,13 @@
+alabaster==0.7.12
+Babel==2.7.0
+doc8==0.8.0
+docutils==0.15.2
+restructuredtext-lint==1.3.0
+Sphinx==2.2.0
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.1
+sphinxcontrib-devhelp==1.0.1
+sphinxcontrib-htmlhelp==1.0.2
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.2
+sphinxcontrib-serializinghtml==1.1.3
