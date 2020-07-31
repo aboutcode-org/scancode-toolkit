@@ -49,14 +49,13 @@ https://pkg.go.dev/golang.org/x/mod/sumdb/dirhash
 
 Here are some example of usage of this module::
 
->>> ob = GoSum()
->>> p = ob.parse_dep_type2('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
+>>> p = parse_dep_type2('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
 >>> assert p.group('namespace') == ('github.com/BurntSushi')
 >>> assert p.group('name') == ('toml')
 >>> assert p.group('version') == ('v0.3.1')
 >>> assert p.group('checksum') == ('WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
 
->>> p = ob.parse_dep_type1('github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=')
+>>> p = parse_dep_type1('github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=')
 >>> assert p.group('namespace') == ('github.com/BurntSushi')
 >>> assert p.group('name') == ('toml')
 >>> assert p.group('version') == ('v0.3.1')
@@ -76,51 +75,59 @@ if TRACE:
 
 @attr.s()
 class GoSum(object):
-    # Regex expressions to parse different types of dependency
-    # dep_type1 example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....
-    parse_dep_type1 = re.compile(
-        r'(?P<namespace>(.*))'
-        r'\/'
-        r'(?P<name>[^\s]*)'
-        r'(\s)*'
-        r'(?P<version>(.*))'
-        r'/go.mod(\s)*h1:'
-        r'(?P<checksum>(.*))'
-    ).match
+    namespace = attr.ib(default=None)
+    name = attr.ib(default=None)
+    version = attr.ib(default=None)
 
-    # dep_type2 example: github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCN....
-    parse_dep_type2 = re.compile(
-        r'(?P<namespace>(.*))'
-        r'/'
-        r'(?P<name>[^\s]*)'
-        r'(\s)*'
-        r'(?P<version>(.*))'
-        r'(\s)*h1:'
-        r'(?P<checksum>(.*))'
-    ).match
+    def __init__(self, namespace, name, version):
+        self.namespace = namespace
+        self.name = name
+        self.version = version
 
-    @classmethod
-    def parse_gosum(cls, location):
-        """
-        Return a list containing all the go.sum dependency data.
-        """
-        with io.open(location, encoding='utf-8', closefd=True) as data:
-            lines = data.readlines()
+# Regex expressions to parse different types of dependency
+# dep_type1 example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....
+parse_dep_type1 = re.compile(
+    r'(?P<namespace>(.*))'
+    r'\/'
+    r'(?P<name>[^\s]*)'
+    r'(\s)*'
+    r'(?P<version>(.*))'
+    r'/go.mod(\s)*h1:'
+    r'(?P<checksum>(.*))'
+).match
 
-        gosum_data = []
+# dep_type2 example: github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCN....
+parse_dep_type2 = re.compile(
+    r'(?P<namespace>(.*))'
+    r'/'
+    r'(?P<name>[^\s]*)'
+    r'(\s)*'
+    r'(?P<version>(.*))'
+    r'(\s)*h1:'
+    r'(?P<checksum>(.*))'
+).match
 
-        for line in lines:
-            parsed_dep = cls.parse_dep_type1(line)
-            if not parsed_dep:
-                parsed_dep = cls.parse_dep_type2(line)
 
-            dep_data = [parsed_dep.group('namespace').strip(),
-                    parsed_dep.group('name').strip(),
-                    parsed_dep.group('version').strip()]
+def parse_gosum(location):
+    """
+    Return a list containing all the go.sum dependency data.
+    """
+    with io.open(location, encoding='utf-8', closefd=True) as data:
+        lines = data.readlines()
 
-            gosum_data.append(dep_data)
+    gosum_data = []
 
-        gosum_data.sort()
-        gosum_data = list(gosum_data for gosum_data, _ in itertools.groupby(gosum_data))
+    for line in lines:
+        parsed_dep = parse_dep_type1(line)
+        if not parsed_dep:
+            parsed_dep = parse_dep_type2(line)
 
-        return gosum_data
+        p = GoSum(parsed_dep.group('namespace').strip(),
+                parsed_dep.group('name').strip(),
+                parsed_dep.group('version').strip()
+            )
+
+        if p not in gosum_data:
+            gosum_data.append(p)
+
+    return gosum_data

@@ -37,7 +37,7 @@ from packageurl import PackageURL
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode.go_mod import GoMod
-from packagedcode.go_sum import GoSum
+from packagedcode import go_sum
 from packagedcode import models
 
 
@@ -76,8 +76,8 @@ class GolangPackage(models.Package):
             gomod_data = GoMod.parse_gomod(location)
             yield build_gomod_package(gomod_data)
         elif filename == 'go.sum':
-            gosum_data = GoSum.parse_gosum(location)
-            yield build_gosum_package(gosum_data)
+            gosum_objs = go_sum.parse_gosum(location)
+            yield build_gosum_package(gosum_objs)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -140,21 +140,21 @@ def build_gomod_package(gomod_data):
     )
 
 
-def build_gosum_package(gosum_data):
+def build_gosum_package(gosum_objs):
     """
     Return a Package object from a go.sum file.
     """
     package_dependencies = []
-    for namespace, name, version in gosum_data:
+    for obj in gosum_objs:
         package_dependencies.append(
             models.DependentPackage(
                 purl=PackageURL(
                     type='golang',
-                    namespace=namespace,
-                    name=name,
-                    version=version
+                    namespace=obj.namespace,
+                    name=obj.name,
+                    version=obj.version
                 ).to_string(),
-                requirement=version,
+                requirement=obj.version,
                 scope='dependency',
                 is_runtime=True,
                 is_optional=False,
