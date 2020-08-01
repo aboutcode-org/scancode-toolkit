@@ -37,7 +37,6 @@ from packageurl import PackageURL
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import go_mod
-from packagedcode import go_sum
 from packagedcode import models
 
 
