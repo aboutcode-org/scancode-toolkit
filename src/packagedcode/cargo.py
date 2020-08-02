@@ -31,6 +31,7 @@ import logging
 import re
 
 import attr
+from packageurl import PackageURL
 import toml
 
 from commoncode import filetype
@@ -54,7 +55,7 @@ if TRACE:
 
 @attr.s()
 class RustCargoCrate(models.Package):
-    metafiles = ('Cargo.toml',)
+    metafiles = ('Cargo.toml', 'Cargo.lock')
     default_type = 'cargo'
     default_primary_language = 'Rust'
     default_web_baseurl = 'https://crates.io'
@@ -70,33 +71,46 @@ class RustCargoCrate(models.Package):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/crates/{}'.format(baseurl, self.name)
+        if self.name:
+            return '{}/crates/{}'.format(baseurl, self.name)
+        return None
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
+        if self.name and self.version:
+            return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
+        return None
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        return '{}/crates/{}'.format(baseurl, self.name)
+        if self.name:
+            return '{}/crates/{}'.format(baseurl, self.name)
+        return None
 
 
 def is_cargo_toml(location):
     return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.toml')
 
 
+def is_cargo_lock(location):
+    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.lock')
+
+
 def parse(location):
     """
-    Return a Package object from a Cargo.toml file or None.
+    Return a Package object from a Cargo.toml/Cargo.lock file or None.
     """
-    if not is_cargo_toml(location):
+    if not is_cargo_toml(location) and not is_cargo_lock(location):
         return
 
     package_data = toml.load(location, _dict=OrderedDict)
-    return build_package(package_data)
+    if is_cargo_toml(location):
+        return build_cargo_toml_package(package_data)
+    elif is_cargo_lock(location):
+        return build_cargo_lock_package(package_data)
 
 
-def build_package(package_data):
+def build_cargo_toml_package(package_data):
     """
-    Return a Pacakge object from a package data mapping or None.
+    Return a Package object from a Cargo.toml package data mapping or None.
     """
 
     core_package_data = package_data.get('package', {})
@@ -179,3 +193,29 @@ person_parser = re.compile(
 person_parser_no_name = re.compile(
     r'(?P<email><([^>]+)>)?'
 ).match
+
+
+def build_cargo_lock_package(package_data):
+    """
+    Return a Package object from a Cargo.lock package data mapping or None.
+    """
+
+    package_dependencies = []
+    core_package_data = package_data.get('package', {})
+    for dep in core_package_data:
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='crates',
+                    name=dep.get('name'),
+                    version=dep.get('version')
+                ).to_string(),
+                requirement=dep.get('version'),
+                scope='dependency',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+    
+    return RustCargoCrate(dependencies=package_dependencies)
