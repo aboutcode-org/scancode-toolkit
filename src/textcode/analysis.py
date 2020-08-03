@@ -112,6 +112,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
         logger_debug('numbered_text_lines: T.is_text_with_long_lines:', T.is_text_with_long_lines)
         logger_debug('numbered_text_lines: T.is_binary:', T.is_binary)
 
+    # TODO: we should have a command line to force digging inside binaries
     if not T.contains_text:
         return iter([])
 
