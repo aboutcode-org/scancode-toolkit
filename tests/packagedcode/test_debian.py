@@ -32,20 +32,23 @@ from packagedcode import debian
 from packagedcode import models
 from packages_test_utils import PackageTester
 from packages_test_utils import check_result_equals_expected_json
+from unittest.case import skipIf
+from commoncode.system import on_windows
 
 
+@skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
 class TestDebianPackageGetInstalledPackages(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_basic_rootfs(self):
-        test_rootfs = self.get_test_loc('debian/basic-rootfs/')
+        test_rootfs = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         result = [package.to_dict(_detailed=True)
             for package in debian.get_installed_packages(test_rootfs)]
         expected = self.get_test_loc('debian/basic-rootfs-expected.json')
         check_result_equals_expected_json(result, expected, regen=False)
 
     def test_basic_rootfs_with_licenses_and_copyrights(self):
-        test_rootfs = self.get_test_loc('debian/basic-rootfs/')
+        test_rootfs = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         result = [package.to_dict(_detailed=True)
             for package in debian.get_installed_packages(test_rootfs, detect_licenses=True)]
         expected = self.get_test_loc('debian/basic-rootfs-with-licenses-expected.json')
