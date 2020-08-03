@@ -41,6 +41,7 @@ from commoncode.datautils import List
 from commoncode.datautils import String
 from packagedcode import models
 
+
 """
 Handle Debian packages.
 """
@@ -56,22 +57,6 @@ if TRACE:
 
 
 @attr.s()
-class InstalledFile(object):
-    path = String(
-        label='Path of this installed file',
-        help='The path of this installed file in a rootfs.',
-        repr=True)
-
-    md5 = String(
-        label='MD5 checksum',
-        help='MD5 checksum for this file in hexadecimal',
-        repr=True)
-
-    def to_dict(self, **kwargs):
-        return attr.asdict(self)
-
-
-@attr.s()
 class DebianPackage(models.Package):
     metafiles = ('*.control',)
     extensions = ('.deb',)
@@ -84,7 +69,7 @@ class DebianPackage(models.Package):
         help='Multi-Arch value from status file')
 
     installed_files = List(
-        item_type=InstalledFile,
+        item_type=models.PackageFile,
         label='installed files',
         help='List of files installed by this package.')
 
@@ -115,7 +100,8 @@ class DebianPackage(models.Package):
     def get_list_of_installed_files(self, var_lib_dpkg_info_dir):
         """
         Return a list of InstalledFile given a `var_lib_dpkg_info_dir` path to a
-        Debian /var/lib/dpkg/info directory.
+        Debian /var/lib/dpkg/info directory where <package>.list and/or
+        <package>.md5sums files can be found for a package name.
         """
 
         # Multi-Arch can be: foreign, same, allowed or empty
@@ -140,7 +126,7 @@ class DebianPackage(models.Package):
 
                 md5sum, _, path = line.partition(' ')
                 # we strip as there could be more than one space
-                installed_file = InstalledFile(
+                installed_file = models.PackageFile(
                     path=path.strip(), md5=md5sum.strip())
                 installed_files.append(installed_file)
 

@@ -105,7 +105,7 @@ class BaseModel(object):
     @classmethod
     def create(cls, ignore_unknown=True, **kwargs):
         """
-        Return a object built from kwargs.
+        Return an object built from kwargs.
         Optionally `ignore_unknown` attributes provided in `kwargs`.
         """
         if ignore_unknown:
@@ -592,6 +592,37 @@ def compute_normalized_license(declared_license):
         # FIXME: add logging
         # we never fail just for this
         return 'unknown'
+
+
+@attr.s()
+class PackageFile(BaseModel):
+    """
+    A file that belongs to a package.
+    """
+
+    path = String(
+        label='Path of this installed file',
+        help='The path of this installed file either relative to a rootfs '
+            '(typical for system packages) or a path in this scan (typical for '
+             'application packages).',
+        repr=True,
+    )
+
+    sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this file in hexadecimal')
+
+    md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this file in hexadecimal')
+
+    sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this file in hexadecimal')
+
+    sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this file in hexadecimal')
 
 
 # Package types
