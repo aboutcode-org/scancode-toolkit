@@ -37,7 +37,7 @@ from debut.copyright import CopyrightHeaderParagraph
 from license_expression import Licensing
 
 from packagedcode.debian import DebianPackage
-from packagedcode.models import compute_normalized_license
+from packagedcode import models
 from packagedcode.licensing import get_normalized_expression
 import textcode
 
@@ -212,11 +212,10 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
 
 def detect_declared_license(declared):
     """
-    Return a tuple of (declared license, detected license expression) from a declared license.
-    Both can be None.
+    Return a tuple of (declared license, detected license expression) from a
+    declared license. Both can be None.
     """
-    # there are few odd cases of license fileds starting with a colon
-    declared = declared and declared.strip(': \t')
+    declared = normalize_and_cleanup_declared_license(declared)
     if not declared:
         return None, None
 
@@ -225,16 +224,28 @@ def detect_declared_license(declared):
     if detected:
         return declared, detected
 
-    detected = compute_normalized_license(declared)
+    detected = models.compute_normalized_license(declared)
     return declared, detected
+
+
+def normalize_and_cleanup_declared_license(declared):
+    """
+    Return a cleaned and normalized declared license.
+    """
+    declared = declared or ''
+    # there are few odd cases of license fileds starting with a colon or #
+    declared = declared.strip(': \t#')
+    # normalize spaces
+    declared = ' '.join(declared.split())
+    return declared
 
 
 def detect_using_name_mapping(declared):
     """
     Return a license expression detected from a declared_license.
     """
-    declared_low = declared.lower()
-    detected = get_declared_to_detected().get(declared_low)
+    declared = declared.lower()
+    detected = get_declared_to_detected().get(declared)
     if detected:
         licensing = Licensing()
         return str(licensing.parse(detected, simple=True))
@@ -271,7 +282,7 @@ def fix_copyright(debian_copyright):
     for paragraph in debian_copyright.paragraphs:
         if not hasattr(paragraph, 'license'):
             continue
-        plicense = paragraph.license 
+        plicense = paragraph.license
         if not plicense:
             continue
 
@@ -280,8 +291,9 @@ def fix_copyright(debian_copyright):
             continue
 
         if license_name.startswith('200'):
-            # 2005 Sergio Costas
-            # 2006-2010 by The HDF Group.
+            # these are copyrights and not actual licenses, such as:
+            # - 2005 Sergio Costas
+            # - 2006-2010 by The HDF Group.
 
             if isinstance(paragraph, (CopyrightHeaderParagraph, CopyrightFilesParagraph)):
                 pcs = paragraph.copyright.statements or []
@@ -331,6 +343,9 @@ def get_declared_to_detected(data_file=None):
         data_file = path.join(path.dirname(__file__), 'debian_licenses.txt')
     with io.open(data_file, encoding='utf-8') as df:
         for line in df:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
             decl, _, detect = line.strip().partition('\t')
             if detect and detect.strip():
                 decl = decl.strip()
