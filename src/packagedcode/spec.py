@@ -33,7 +33,7 @@ import logging
 import os
 import re
 
-from gemfileparser2 import GemfileParser
+from gemfileparser import GemfileParser
 
 """
 Handle Cocoapods(.podspec) and Ruby(.gemspec) files.
