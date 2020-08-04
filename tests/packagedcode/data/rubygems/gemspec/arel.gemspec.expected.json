@@ -1,125 +1,111 @@
-{
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "tool_version": "3.1.2",
-      "options": {
-        "input": [
-          "arel.gemspec"
-        ],
-        "--json-pp": "arel.gemspec.expected.json",
-        "--package": true
+[
+  {
+    "type": "gem",
+    "namespace": null,
+    "name": "arel",
+    "version": "2.0.7.beta.20110429111451",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "Arel is a SQL AST manager for Ruby. It",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Aaron Patterson",
+        "email": null,
+        "url": null
       },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2020-07-13T090028.882395",
-      "end_timestamp": "2020-07-13T090029.862287",
-      "duration": 0.979931116104126,
-      "message": null,
-      "errors": [],
-      "extra_data": {
-        "files_count": 1
+      {
+        "type": "person",
+        "role": "author",
+        "name": " Bryan Halmkamp",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": " Emilio Tagua",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": " Nick Kallen",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": "aaron@tenderlovemaking.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": " bryan@brynary.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": " miloops@gmail.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": " nick@example.org",
+        "url": null
       }
-    }
-  ],
-  "files": [
-    {
-      "path": "arel.gemspec",
-      "type": "file",
-      "packages": [
-        {
-          "type": "gem",
-          "namespace": null,
-          "name": "arel",
-          "version": "2.0.7.beta.20110429111451",
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "Ruby",
-          "description": "Arel is a SQL AST manager for Ruby. It",
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Aaron Patterson",
-              "email": null,
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "author",
-              "name": " Bryan Halmkamp",
-              "email": null,
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "author",
-              "name": " Emilio Tagua",
-              "email": null,
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "author",
-              "name": " Nick Kallen",
-              "email": null,
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "email",
-              "name": null,
-              "email": "aaron@tenderlovemaking.com",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "email",
-              "name": null,
-              "email": " bryan@brynary.com",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "email",
-              "name": null,
-              "email": " miloops@gmail.com",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "email",
-              "name": null,
-              "email": " nick@example.org",
-              "url": null
-            }
-          ],
-          "keywords": [],
-          "homepage_url": "http://github.com/rails/arel",
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
-          "notice_text": null,
-          "root_path": null,
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": [],
-          "purl": "pkg:gem/arel@2.0.7.beta.20110429111451",
-          "repository_homepage_url": "https://rubygems.org/gems/arel/versions/2.0.7.beta.20110429111451",
-          "repository_download_url": "https://rubygems.org/downloads/arel-2.0.7.beta.20110429111451.gem",
-          "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/2.0.7.beta.20110429111451.json"
-        }
-      ],
-      "scan_errors": []
-    }
-  ]
-}
+    ],
+    "keywords": [],
+    "homepage_url": "http://github.com/rails/arel",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:gem/minitest",
+        "requirement": ">= 2.0.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/hoe",
+        "requirement": ">= 2.9.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:gem/arel@2.0.7.beta.20110429111451",
+    "repository_homepage_url": "https://rubygems.org/gems/arel/versions/2.0.7.beta.20110429111451",
+    "repository_download_url": "https://rubygems.org/downloads/arel-2.0.7.beta.20110429111451.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/arel/versions/2.0.7.beta.20110429111451.json"
+  }
+]
