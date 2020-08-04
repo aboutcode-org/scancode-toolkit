@@ -51,17 +51,13 @@ from packages_test_utils import PackageTester
 class TestRubyGemspec(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    @expectedFailure
     def test_rubygems_can_parse_gemspec_address_standardization_gemspec(self):
-        # FAILURE: dependency not in format as required in gemfilparser
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
-    @expectedFailure
     def test_rubygems_can_parse_gemspec_arel_gemspec(self):
-        # FAILURE: dependency not in format as required in gemfilparser
         test_file = self.get_test_loc('rubygems/gemspec/arel.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/arel.gemspec.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
@@ -73,9 +69,7 @@ class TestRubyGemspec(PackageTester):
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
-    @expectedFailure
     def test_rubygems_github_gemspec(self):
-        # FAILURE: dependency not in format as required in gemfilparser
         test_file = self.get_test_loc('rubygems/gemspec/github.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/github.gemspec.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
@@ -93,17 +87,13 @@ class TestRubyGemspec(PackageTester):
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
-    @expectedFailure
     def test_rubygems_rubocop_gemspec(self):
-        # FAILURE: dependency not in format as required in gemfilparser
         test_file = self.get_test_loc('rubygems/gemspec/rubocop.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/rubocop.gemspec.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
         self.check_packages(packages, expected_loc, regen=False)
 
-    @expectedFailure
     def test_rubygems_with_variables_gemspec(self):
-        # FAILURE: dependency not in format as required in gemfilparser
         test_file = self.get_test_loc('rubygems/gemspec/with_variables.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/with_variables.gemspec.expected.json')
         packages = rubygems.RubyGem.recognize(test_file)
