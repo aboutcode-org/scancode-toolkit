@@ -1,0 +1,17 @@
+151c5933546d90b0c6de9ba305d62f0e  usr/sbin/update-passwd
+eee0dc6a097ceaab6fd938092bc4b86c  usr/share/base-passwd/group.master
+47f32e500f784c3a1793aa2aa6fc5c31  usr/share/base-passwd/passwd.master
+cdac90d3d3ef8d60e4bc0eb73efa68d7  usr/share/doc-base/users-and-groups
+504775da5bdbb321fcb9f47562a45b57  usr/share/doc/base-passwd/README
+1c6403ff29b43b43a67bbc75bd9576b3  usr/share/doc/base-passwd/changelog.gz
+8eb6cd60f247ab06801038c6daf03f05  usr/share/doc/base-passwd/copyright
+4bfe6b64d2007e5cf366a124bacb55b1  usr/share/doc/base-passwd/users-and-groups.html
+d8e20ac4dd13bb84d0fdfd203aa9b1dc  usr/share/doc/base-passwd/users-and-groups.txt.gz
+8dc658a3a1b2fe714b45d245439bca24  usr/share/lintian/overrides/base-passwd
+1a3f08c04ae471580efcde9ea0936369  usr/share/man/de/man8/update-passwd.8.gz
+5ccedf3c81ac83de429e982ab2b07cdf  usr/share/man/es/man8/update-passwd.8.gz
+bbf6c14f5296de0a6752d5972137d28f  usr/share/man/fr/man8/update-passwd.8.gz
+084c4f1c22b6d3fbf086fa8fce013dff  usr/share/man/ja/man8/update-passwd.8.gz
+b4b1ebf4b0260cb3a4d19e5b733e4479  usr/share/man/man8/update-passwd.8.gz
+011317bc9fdf4d1be3fa6a6b6851fcd2  usr/share/man/pl/man8/update-passwd.8.gz
+977fb42cbcfa775d302b5ca4955c328c  usr/share/man/ru/man8/update-passwd.8.gz

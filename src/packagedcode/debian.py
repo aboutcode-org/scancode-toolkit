@@ -102,6 +102,8 @@ class DebianPackage(models.Package):
         Return a list of InstalledFile given a `var_lib_dpkg_info_dir` path to a
         Debian /var/lib/dpkg/info directory where <package>.list and/or
         <package>.md5sums files can be found for a package name.
+        We first use the .md5sums file and switch to the .list file otherwise.
+        The .list files also contains directories.
         """
 
         # Multi-Arch can be: foreign, same, allowed or empty
@@ -114,21 +116,46 @@ class DebianPackage(models.Package):
         package_md5sum = '{}{}.md5sums'.format(self.name, arch)
         md5sum_file = os.path.join(var_lib_dpkg_info_dir, package_md5sum)
 
-        if not os.path.exists(md5sum_file):
+        package_list = '{}{}.list'.format(self.name, arch)
+        list_file = os.path.join(var_lib_dpkg_info_dir, package_list)
+
+        has_md5 = os.path.exists(md5sum_file)
+        has_list = os.path.exists(list_file)
+
+        if not (has_md5 or has_list):
             return []
 
         installed_files = []
-        with open(md5sum_file) as info_file:
+        directories = set()
+        listing = md5sum_file if has_md5 else list_file
+        with open(listing) as info_file:
             for line in info_file:
                 line = line.strip()
                 if not line:
                     continue
+                if has_md5:
+                    md5sum, _, path = line.partition(' ')
+                    md5sum = md5sum.strip()
+                else:
+                    md5sum = None
+                    path = line
 
-                md5sum, _, path = line.partition(' ')
-                # we strip as there could be more than one space
-                installed_file = models.PackageFile(
-                    path=path.strip(), md5=md5sum.strip())
+                path=path.strip()
+                if not path.startswith('/'):
+                    path = '/' + path
+
+                # we ignore dirs in general, and we ignore these that would
+                # be created a plain dir when we can
+                if path in ignored_root_dirs:
+                    continue
+                
+                installed_file = models.PackageFile(path=path,md5=md5sum)
+
                 installed_files.append(installed_file)
+                directories.add(os.path.dirname(path))
+
+        # skip directories when possible
+        installed_files = [f for f in installed_files if f.path not in directories]
 
         return installed_files
 
@@ -280,3 +307,52 @@ def parties_mapper(package_data, package):
     package.parties = parties
 
     return package
+
+
+ignored_root_dirs = {
+    '/.',
+    '/bin',
+    '/boot',
+    '/cdrom',
+    '/dev',
+    '/etc',
+    '/etc/skel',
+    '/home',
+    '/lib',
+    '/lib32',
+    '/lib64',
+    '/lost+found',
+    '/mnt',
+    '/media',
+    '/opt',
+    '/proc',
+    '/root',
+    '/run',
+    '/usr',
+    '/sbin',
+    '/snap',
+    '/sys',
+    '/tmp',
+    '/usr',
+    '/usr/games',
+    '/usr/include',
+    '/usr/sbin',
+    '/usr/share/info',
+    '/usr/share/man',
+    '/usr/share/misc',
+    '/usr/src',
+
+    '/var',
+    '/var/backups',
+    '/var/cache',
+    '/var/lib/dpkg',
+    '/var/lib/misc',
+    '/var/local',
+    '/var/lock',
+    '/var/log',
+    '/var/opt',
+    '/var/run',
+    '/var/spool',
+    '/var/tmp',
+    '/var/lib',
+}
