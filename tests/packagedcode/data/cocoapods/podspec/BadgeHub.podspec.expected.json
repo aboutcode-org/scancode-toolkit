@@ -13,6 +13,13 @@
       "type": "person",
       "role": "author",
       "name": "jogendra",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "email",
+      "name": null,
       "email": "imjog24@gmail.com",
       "url": null
     }
@@ -27,7 +34,7 @@
   "sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
-  "vcs_url": ":git => https://github.com/jogendra/BadgeHub.git, :tag => s.version.to_s",
+  "vcs_url": "https://github.com/jogendra/BadgeHub.git",
   "copyright": null,
   "license_expression": "mit AND unknown",
   "declared_license": ":type => MIT, :file => LICENSE",
@@ -36,10 +43,10 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
-    ":git => https://github.com/jogendra/BadgeHub.git, :tag => s.version.to_s"
+    "https://github.com/jogendra/BadgeHub.git"
   ],
   "purl": "pkg:pods/BadgeHub@0.1.1",
   "repository_homepage_url": "https://cocoapods.org/pods/BadgeHub",
   "repository_download_url": "https://github.com/jogendra/BadgeHub/archive/0.1.1.zip",
-  "api_data_url": "https://github.com/jogendra/BadgeHub"
+  "api_data_url": null
 }

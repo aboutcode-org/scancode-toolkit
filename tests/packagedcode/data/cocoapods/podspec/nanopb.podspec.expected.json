@@ -13,6 +13,13 @@
       "type": "person",
       "role": "author",
       "name": "Petteri Aimonen",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "email",
+      "name": null,
       "email": "jpa@nanopb.mail.kapsi.fi",
       "url": null
     }
@@ -27,7 +34,7 @@
   "sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
-  "vcs_url": ":git => https://github.com/nanopb/nanopb.git, :tag => 0.3.9.5",
+  "vcs_url": "https://github.com/nanopb/nanopb.git",
   "copyright": null,
   "license_expression": "unknown",
   "declared_license": ":type => zlib, :file => LICENSE.txt",
@@ -36,10 +43,10 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
-    ":git => https://github.com/nanopb/nanopb.git, :tag => 0.3.9.5"
+    "https://github.com/nanopb/nanopb.git"
   ],
   "purl": "pkg:pods/nanopb@1.30905.0",
   "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
   "repository_download_url": "https://github.com/nanopb/nanopb/archive/1.30905.0.zip",
-  "api_data_url": "https://github.com/nanopb/nanopb"
+  "api_data_url": null
 }

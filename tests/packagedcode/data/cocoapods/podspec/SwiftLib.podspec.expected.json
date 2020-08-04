@@ -13,6 +13,13 @@
       "type": "person",
       "role": "author",
       "name": "alizainprasla",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "email",
+      "name": null,
       "email": "alizainprasla@gmail.com",
       "url": null
     }
@@ -27,7 +34,7 @@
   "sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
-  "vcs_url": ":git => https://github.com/alizainprasla/swiftlib.git, :tag =>",
+  "vcs_url": "https://github.com/alizainprasla/swiftlib.git",
   "copyright": null,
   "license_expression": "mit AND unknown",
   "declared_license": ":type => MIT, :file => LICENSE",
@@ -36,10 +43,10 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [
-    ":git => https://github.com/alizainprasla/swiftlib.git, :tag =>"
+    "https://github.com/alizainprasla/swiftlib.git"
   ],
   "purl": "pkg:pods/SwiftLib@0.0.1",
   "repository_homepage_url": "https://cocoapods.org/pods/SwiftLib",
   "repository_download_url": "https://github.com/alizainprasla/swiftlib/archive/0.0.1.zip",
-  "api_data_url": "https://github.com/alizainprasla/swiftlib"
+  "api_data_url": null
 }
