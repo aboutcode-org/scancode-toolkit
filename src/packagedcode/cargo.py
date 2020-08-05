@@ -71,19 +71,19 @@ class RustCargoCrate(models.Package):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.name:
-            return '{}/crates/{}'.format(baseurl, self.name)
-        return None
+        if not self.name:
+            return None
+        return '{}/crates/{}'.format(baseurl, self.name)
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        if self.name and self.version:
-            return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
-        return None
+        if not self.name and not self.version:
+            return None
+        return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        if self.name:
-            return '{}/crates/{}'.format(baseurl, self.name)
-        return None
+        if not self.name:
+            return None
+        return '{}/crates/{}'.format(baseurl, self.name)
 
 
 def is_cargo_toml(location):
