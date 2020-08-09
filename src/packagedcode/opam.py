@@ -115,7 +115,9 @@ def build_opam_package(package_data):
     vcs_url = package_data.get('dev-repo')
     summary = package_data.get('synopsis')
     description = package_data.get('description')
-    if summary and description:
+    if summary:
+        description = summary
+    elif summary and description:
         if len(summary) > len(description):
             description = summary
     
