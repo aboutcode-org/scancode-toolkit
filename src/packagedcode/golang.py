@@ -37,6 +37,7 @@ from packageurl import PackageURL
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode.go_mod import GoMod
+from packagedcode import go_sum
 from packagedcode import models
 
 
@@ -61,7 +62,7 @@ if TRACE:
 
 @attr.s()
 class GolangPackage(models.Package):
-    metafiles = ('go.mod',)
+    metafiles = ('go.mod', 'go.sum')
     default_type = 'golang'
     default_primary_language = 'Go'
     default_web_baseurl = 'https://pkg.go.dev'
@@ -70,24 +71,29 @@ class GolangPackage(models.Package):
 
     @classmethod
     def recognize(cls, location):
-        if fileutils.file_name(location).lower() == 'go.mod':
-            gomod_obj = GoMod()
-            gomod_data = gomod_obj.parse_gomod(location)
-            yield build_gomod_package(gomod_data)
+        filename = fileutils.file_name(location).lower()
+        if filename == 'go.mod':
+            gomod = GoMod.parse_gomod(location)
+            yield build_gomod_package(gomod)
+        elif filename == 'go.sum':
+            gosums = go_sum.parse_gosum(location)
+            yield build_gosum_package(gosums)
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
+        if self.namespace and self.name:
+            return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
 
-def build_gomod_package(gomod_data):
+
+def build_gomod_package(gomod):
     """
     Return a Package object from a go.mod file or None.
     """
     package_dependencies = []
-    require = gomod_data.get('require') or []
+    require = gomod.get('require') or []
     for namespace, name, version in require:
         package_dependencies.append(
             models.DependentPackage(
@@ -104,7 +110,7 @@ def build_gomod_package(gomod_data):
             )
         )
 
-    exclude = gomod_data.get('exclude') or []
+    exclude = gomod.get('exclude') or []
     for namespace, name, version in exclude:
         package_dependencies.append(
             models.DependentPackage(
@@ -121,10 +127,10 @@ def build_gomod_package(gomod_data):
             )
         )
 
-    name = gomod_data.get('name')
-    namespace = gomod_data.get('namespace')
-    homepage_url = 'https://pkg.go.dev/{}'.format(gomod_data.get('module'))
-    vcs_url = 'https://{}.git'.format(gomod_data.get('module'))
+    name = gomod.get('name')
+    namespace = gomod.get('namespace')
+    homepage_url = 'https://pkg.go.dev/{}'.format(gomod.get('module'))
+    vcs_url = 'https://{}.git'.format(gomod.get('module'))
 
     return GolangPackage(
         name=name,
@@ -133,3 +139,23 @@ def build_gomod_package(gomod_data):
         homepage_url=homepage_url,
         dependencies=package_dependencies
     )
+
+
+def build_gosum_package(gosums):
+    """
+    Return a Package object from a go.sum file.
+    """
+    package_dependencies = []
+    for gosum in gosums:
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=gosum.purl,
+                requirement=gosum.version,
+                scope='dependency',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+            )
+        )
+
+    return GolangPackage(dependencies=package_dependencies)

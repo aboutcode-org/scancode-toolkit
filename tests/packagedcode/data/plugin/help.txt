@@ -117,7 +117,7 @@ Package: gem
 --------------------------------------------
 Package: golang
   class: packagedcode.golang:GolangPackage
-  metafiles: go.mod
+  metafiles: go.mod, go.sum
 
 --------------------------------------------
 Package: haxe
