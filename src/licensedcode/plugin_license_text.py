@@ -74,7 +74,9 @@ class IsLicenseText(PostScanPlugin):
             is_flag=True, default=False,
             required_options=['info', 'license_text'],
             help='Set the "is_license_text" flag to true for files that contain '
-                 'mostly license texts and notices (e.g over 90% of the content). [EXPERIMENTAL]',
+                 'mostly license texts and notices (e.g over 90% of the content).'
+                 '[DEPRECATED] this is now built-in in the --license-text option '
+                 'with  a "percentage_of_license_text" attribute.',
             help_group=POST_SCAN_GROUP)
     ]
 
@@ -83,7 +85,7 @@ class IsLicenseText(PostScanPlugin):
 
     def process_codebase(self, codebase, is_license_text, **kwargs):
         """
-        Set the `is_license_text` to True for files taht contain over 90% of
+        Set the `is_license_text` to True for files that contain over 90% of
         detected license texts.
         """
 
@@ -91,15 +93,19 @@ class IsLicenseText(PostScanPlugin):
             if not resource.is_text:
                 continue
             # keep unique texts/line ranges since we repeat this for each matched licenses
-            license_texts = set(
-                (lic['matched_text'], lic['start_line'], lic['end_line'],
-                 lic.get('matched_rule', {}).get('match_coverage', 0))
-                for lic in resource.licenses)
-            # use coverage to skew the actual matched length
+            license_texts = set()
+            for lic in resource.licenses:
+                print(resource.path, flush=True)
+                license_texts.add(
+                    (lic.get('matched_text'), 
+                     lic.get('start_line', 0), 
+                     lic.get('end_line',0),
+                     lic.get('matched_rule', {}).get('match_coverage', 0))
+                )
+                
+            # use coverage to weight and estimate of the the actual matched length
             license_texts_size = 0
             for txt, _, _, cov in license_texts:
-                # these are the meta characters used t mark non matched parts
-                txt = txt.replace('[', '').replace(']', '')
                 license_texts_size += len(txt) * (cov / 100)
             if TRACE:
                 logger_debug(

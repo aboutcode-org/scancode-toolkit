@@ -63,6 +63,7 @@ class LicenseScanner(ScanPlugin):
     resource_attributes = OrderedDict([
         ('licenses', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
+        ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
     sort_order = 2

@@ -35,8 +35,8 @@ import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
-from typecode.contenttype import get_type
 from scancode import ScancodeError
+from typecode.contenttype import get_type
 
 
 TRACE = False
@@ -180,10 +180,15 @@ def get_licenses(location, min_score=0,
     means that all license matches are returned. Otherwise, matches with a score
     below `minimum_score` are returned.
 
-    if `include_text` is True, matched text is included in the returned
-    `licenses` data.
+    If `include_text` is True, matched text is included in the returned
+    `licenses` data as well as a file-level `percentage_of_license_text` percentage to
+    indicate the overall proportion of detected license text and license notice
+    words in the file. This is used to determine if a file contains mostly
+    licensing information.
     """
     from licensedcode import cache
+    from licensedcode.spans import Span
+
     idx = cache.get_index()
 
     detected_licenses = []
@@ -192,34 +197,51 @@ def get_licenses(location, min_score=0,
     matches = idx.match(
         location=location, min_score=min_score, deadline=deadline, **kwargs)
 
+    qspans = []
+    match = None
     for match in matches:
-        matched_text = None
-        if include_text:
-            if license_text_diagnostics:
-                matched_text = match.matched_text(whole_lines=False, highlight=True)
-            else:
-                matched_text = match.matched_text(whole_lines=True, highlight=False)
+        qspans.append(match.qspan)
 
         detected_expressions.append(match.rule.license_expression)
 
         detected_licenses.extend(
-            _licenses_data_from_match(match, matched_text, license_url_template)
+            _licenses_data_from_match(
+                match=match,
+                include_text=include_text,
+                license_text_diagnostics=license_text_diagnostics,
+                license_url_template=license_url_template)
         )
+
+    percentage_of_license_text = 0
+    if match:
+        # we need at least one match to compute a license_coverage
+        matched_tokens_length = len(Span().union(*qspans))
+        query_tokens_length = match.query.tokens_length(with_unknown=True)
+        percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
     return OrderedDict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
+        ('percentage_of_license_text', percentage_of_license_text),
     ])
 
 
-def _licenses_data_from_match(match, matched_text=None,
-                              license_url_template=DEJACODE_LICENSE_URL):
+def _licenses_data_from_match(
+        match, include_text=False, license_text_diagnostics=False,
+        license_url_template=DEJACODE_LICENSE_URL):
     """
     Return a list of "licenses" scan data built from a license match.
     Used directly only internally for testing.
     """
     from licensedcode import cache
     licenses = cache.get_licenses_db()
+
+    matched_text = None
+    if include_text:
+        if license_text_diagnostics:
+            matched_text = match.matched_text(whole_lines=False, highlight=True)
+        else:
+            matched_text = match.matched_text(whole_lines=True, highlight=False)
 
     detected_licenses = []
     for license_key in match.rule.license_keys():
@@ -260,7 +282,7 @@ def _licenses_data_from_match(match, matched_text=None,
         matched_rule['match_coverage'] = match.coverage()
         matched_rule['rule_relevance'] = match.rule.relevance
         # FIXME: for sanity this should always be included?????
-        if matched_text:
+        if include_text:
             result['matched_text'] = matched_text
     return detected_licenses
 

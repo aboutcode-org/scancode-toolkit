@@ -277,6 +277,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -350,6 +351,7 @@
         "license_expressions": [
           "cc0-1.0"
         ],
+        "percentage_of_license_text": 100.0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -423,6 +425,7 @@
         "license_expressions": [
           "artistic-2.0"
         ],
+        "percentage_of_license_text": 0.07,
         "copyrights": [],
         "holders": [],
         "authors": [
@@ -467,6 +470,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -505,6 +509,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -578,6 +583,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 42.86,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -663,6 +669,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 69.57,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -748,6 +755,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 20.34,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -798,6 +806,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -836,6 +845,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -909,6 +919,7 @@
         "license_expressions": [
           "lgpl-2.1-plus"
         ],
+        "percentage_of_license_text": 79.62,
         "copyrights": [
           {
             "value": "Copyright 2005, JBoss Inc., and individual contributors",
@@ -994,6 +1005,7 @@
         "license_expressions": [
           "cc-by-2.5"
         ],
+        "percentage_of_license_text": 19.72,
         "copyrights": [
           {
             "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
@@ -1085,6 +1097,7 @@
         "license_expressions": [
           "lgpl-2.1-plus"
         ],
+        "percentage_of_license_text": 78.62,
         "copyrights": [
           {
             "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -1135,6 +1148,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [
@@ -1179,6 +1193,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [
@@ -1258,6 +1273,7 @@
         "license_expressions": [
           "lgpl-2.1-plus"
         ],
+        "percentage_of_license_text": 78.12,
         "copyrights": [
           {
             "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
@@ -1308,6 +1324,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [
@@ -1352,6 +1369,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -1425,6 +1443,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 42.86,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -1510,6 +1529,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 40.0,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1595,6 +1615,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 50.0,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
@@ -1680,6 +1701,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 84.21,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1765,6 +1787,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 37.5,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
@@ -1850,6 +1873,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 20.34,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -1900,6 +1924,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -2007,6 +2032,7 @@
         "license_expressions": [
           "gpl-2.0-plus WITH ada-linking-exception"
         ],
+        "percentage_of_license_text": 94.12,
         "copyrights": [
           {
             "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
@@ -2057,6 +2083,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -2095,6 +2122,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [
           {
             "value": "Copyright (c) 2004 by Henrik Ravn",
@@ -2180,6 +2208,7 @@
         "license_expressions": [
           "boost-1.0"
         ],
+        "percentage_of_license_text": 88.89,
         "copyrights": [
           {
             "value": "Copyright Henrik Ravn 2004",
@@ -2230,6 +2259,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -2303,6 +2333,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 50.38,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -2359,6 +2390,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -2432,6 +2464,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 44.44,
         "copyrights": [
           {
             "value": "Copyright (c) 1995-2008 Mark Adler",
@@ -2517,6 +2550,7 @@
         "license_expressions": [
           "zlib"
         ],
+        "percentage_of_license_text": 50.0,
         "copyrights": [
           {
             "value": "Copyright (c) 2003 Mark Adler",
@@ -2567,6 +2601,7 @@
         "is_script": false,
         "licenses": [],
         "license_expressions": [],
+        "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -2640,6 +2675,7 @@
         "license_expressions": [
           "mit-old-style"
         ],
+        "percentage_of_license_text": 79.78,
         "copyrights": [
           {
             "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",

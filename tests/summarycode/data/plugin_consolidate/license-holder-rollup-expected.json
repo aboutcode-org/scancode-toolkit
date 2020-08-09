@@ -92,6 +92,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -123,6 +124,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -154,6 +156,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -255,6 +258,7 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
+      "percentage_of_license_text": 44.44,
       "copyrights": [
         {
           "value": "Copyright (c) omega.com",
@@ -300,6 +304,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -331,6 +336,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -432,6 +438,7 @@
         "gpl-1.0-plus",
         "gpl-2.0"
       ],
+      "percentage_of_license_text": 44.44,
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -477,6 +484,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -578,6 +586,7 @@
         "unknown",
         "apache-2.0"
       ],
+      "percentage_of_license_text": 55.56,
       "copyrights": [
         {
           "value": "Copyright (c) Oracle Corp.",
