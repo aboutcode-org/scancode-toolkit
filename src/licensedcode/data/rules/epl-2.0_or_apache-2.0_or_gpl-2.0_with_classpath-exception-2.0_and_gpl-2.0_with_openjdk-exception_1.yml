@@ -1,0 +1,10 @@
+license_expression: epl-2.0 OR apache-2.0 OR (gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0
+    WITH openjdk-exception)
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://openjdk.java.net/legal/assembly-exception.html
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://www.eclipse.org/
+    - https://www.eclipse.org/legal/epl-2.0/
+    - https://www.gnu.org/software/classpath/license.html

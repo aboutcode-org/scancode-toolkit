@@ -1,0 +1,4 @@
+license_expression: generic-cla OR hdf5
+is_license_notice: yes
+relevance: 80
+notes: this is essentially the CLA section of the hdf5 license

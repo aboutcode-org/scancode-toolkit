@@ -3,3 +3,5 @@ is_license_text: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+minimum_coverage: 60
+

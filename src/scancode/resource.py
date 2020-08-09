@@ -121,6 +121,55 @@ class UnknownResource(Exception):
     pass
 
 
+def skip_ignored(_loc):
+    """Always ignore VCS and some special filetypes."""
+    ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
+
+    if TRACE_DEEP:
+        logger_debug()
+        logger_debug('Codebase.populate: walk: ignored loc:', _loc,
+                     'ignored:', ignored(_loc),
+                     'is_special:', is_special(_loc))
+
+    return is_special(_loc) or ignored(_loc)
+
+
+def depth_walk(root_location, max_depth, error_handler=lambda:None):
+    """
+    Yield a (top, dirs, files) tuple at each step of walking the `root_location` directory
+    recursively up to `max_depth` path segments extending from the `root_location`.
+    The behaviour is similar of `os.walk`.
+
+    Arguments: 
+       - root_location: Absolute, normalized path for the directory to be walked
+       - max_depth: positive integer for fixed depth limit. 0 for no limit.
+       - skip_ignored: Callback function that takes `top` as argument and returns a boolean
+                       indicating whether to ignore files in that location. No ignoring
+                       by default.
+       - error_handler: Error handler callback. No action taken by default.
+    """
+
+    if max_depth < 0:
+        raise Exception("ERROR: `max_depth` must be a positive integer or 0.")
+
+    # Find root directory depth using path separator's count
+    root_dir_depth = root_location.count(os.path.sep)
+
+    for top, dirs, files in os_walk(root_location, topdown=True, onerror=error_handler):
+        # If depth is limited (non-zero)
+        if max_depth:
+            current_depth = top.count(os.path.sep) - root_dir_depth
+
+        if skip_ignored(top) or (max_depth and current_depth >= max_depth):
+            # we clear out `dirs` and `files` to prevent `os_walk` from visiting
+            # the files and subdirectories of directories we are ignoring or 
+            # are not in the specified nesting level
+            dirs[:] = []
+            files[:] = []
+            continue
+        yield (top, dirs, files)
+
+
 @attr.s(slots=True)
 class Header(object):
     """
@@ -133,6 +182,7 @@ class Header(object):
     notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this header.')
     end_timestamp = String(help='End timestamp for this header.')
+    duration = String(help='Scan duration in seconds.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
     extra_data = Mapping(help='Mapping of extra key/values for this tool.')
@@ -153,6 +203,7 @@ class Header(object):
             'notice',
             'start_timestamp',
             'end_timestamp',
+            'duration',
             'message',
             'errors',
             'extra_data',
@@ -187,6 +238,7 @@ class Codebase(object):
         'original_location',
         'full_root',
         'strip_root',
+        'max_depth',
         'location',
         'has_single_resource',
         'resource_attributes',
@@ -219,7 +271,7 @@ class Codebase(object):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000):
+                 max_in_memory=10000, max_depth=0):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
@@ -245,10 +297,14 @@ class Codebase(object):
         `max_in_memory` is the maximum number of Resource instances to keep in
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
+
+        `max_depth` is the maximum depth of subdirectories to descend below and 
+        including `location`.
         """
         self.original_location = location
         self.full_root = full_root
         self.strip_root = strip_root
+        self.max_depth = max_depth
 
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
@@ -393,20 +449,8 @@ class Codebase(object):
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
-                +traceback.format_exc())
-
-        def skip_ignored(_loc):
-            """Always ignore VCS and some special filetypes."""
-            ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
-
-            if TRACE_DEEP:
-                logger_debug()
-                logger_debug('Codebase.populate: walk: ignored loc:', _loc,
-                             'ignored:', ignored(_loc),
-                             'is_special:', is_special(_loc))
-
-            return is_special(_loc) or ignored(_loc)
+                'ERROR: cannot populate codebase: {}\n'.format(_error)
+                + traceback.format_exc())
 
         def create_resources(_seq, _top, _parent, _is_file):
             """Create Resources of parent from a seq of files or directories."""
@@ -434,19 +478,12 @@ class Codebase(object):
         # not keep parents already walked and we walk topdown.
         parent_by_loc = {root.location: root}
 
-        # walk proper
-        for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
-            if skip_ignored(top):
-                # We clear out `dirs` and `files` to prevent `os_walk` from visiting
-                # the files and subdirectories of directories we are ignoring
-                dirs[:] = []
-                files[:] = []
-                continue
-            # the parent reference is needed only once in a top-down walk, hence
-            # the pop
-            parent = parent_by_loc.pop(top)
-            create_resources(files, top, parent, _is_file=True)
-            create_resources(dirs, top, parent, _is_file=False)
+        # Walk over the directory and build the resource tree
+        for (top, dirs, files) in depth_walk(root.location, self.max_depth, err):
+                parent = parent_by_loc.pop(top)
+                create_resources(files, top, parent, _is_file=True)
+                create_resources(dirs, top, parent, _is_file=False)
+
 
     def _create_root_resource(self):
         """
@@ -1392,10 +1429,14 @@ class VirtualCodebase(Codebase):
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=temp_dir,
-                 max_in_memory=10000):
+                 max_in_memory=10000,
+                 *args, **kwargs):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
+
+        `max_depth`, if passed, will be ignored as VirtualCodebase will 
+        be using the depth of the original scan.
         """
         self._setup_essentials(temp_dir, max_in_memory)
 

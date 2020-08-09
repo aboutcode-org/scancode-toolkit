@@ -1,0 +1,120 @@
+The software available for download here is made available to you pursuant to
+this Commercial Free License Agreement ("Agreement") by and between MuleSoft,
+Inc. ("MuleSoft") and the party ("User") that accepts these terms by
+downloading and using the MuleSoft proprietary software code and related
+documentation MuleSoft may make available at no additional cost (the "Free
+Software").  This Agreement shall govern User's initial download of the
+applicable Free Software, as well as any future updates to such Free Software
+that MuleSoft may deliver.
+
+1.  License Grant; Restrictions.  Subject to the terms of this Agreement,
+MuleSoft grants to User a royalty-free, non-transferable, non-sublicensable,
+non-exclusive, and (absent a breach) perpetual license to use the Free
+Software for User's own internal business operations.  In the exercise of this
+license, User shall not (and shall not allow any third party or Affiliate to)
+remove any copyright or other proprietary notices contained in the Free
+Software.  User shall defend MuleSoft against any third party claim that any
+modification or derivative work made by User to the Free Software infringes
+such third party's patent or copyright (but only to the extent that such
+alleged infringement would not have existed but for such modification or the
+creation of such derivative work), and indemnify MuleSoft from the resulting
+costs and damages awarded against MuleSoft; provided that MuleSoft notifies
+User promptly in writing of such claim, grants User sole control over the
+defense and settlement thereof, and reasonably cooperates with User's request
+for assistance.
+
+2.  Ownership.  Except for the limited license granted in Section 1, MuleSoft
+and its suppliers have and will retain all right, title and interest in and to
+the Free Software (including, without limitation, all patent, copyright, trade
+secret and other intellectual property rights) and all copies, modifications
+and derivative works thereof created by MuleSoft.
+
+3.  Term of Agreement; Termination; Survival.  This Agreement is effective as
+of the date of User's acceptance as described above and shall be perpetual,
+provided that MuleSoft may terminate this Agreement if User fails to cure any
+material breach within thirty (30) days after written notice of such breach.
+Termination is not an exclusive remedy.  Upon termination, User shall cease
+using the Free Software.  Sections 2-6 and the negative covenant in Section 1
+shall survive termination.
+
+4.  WARRANTY DISCLAIMER.  THE FREE SOFTWARE AND ALL RELATED documentation, IF
+ANY, ARE AND WILL BE PROVIDED "AS IS" WITHOUT EXPRESS OR IMPLIED WARRANTY OF
+ANY KIND.  WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, MULESOFT DOES NOT
+WARRANT THAT THE FREE SOFTWARE WILL OPERATE UNINTERRUPTED OR THAT IT WILL BE
+FREE FROM DEFECTS OR THAT IT IS DESIGNED TO MEET User'S BUSINESS REQUIREMENTS,
+AND MULESOFT OFFERS NO IMPLIED WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS
+FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT.
+
+5.  Limitation of Remedies and Damages.  MULESOFT SHALL NOT BE LIABLE FOR ANY
+DIRECT OR INDIRECT DAMAGES OF ANY KIND ARISING UNDER OR RELATED TO THIS
+AGREEMENT.  THE CATEGORIES OF PRECLUDED DAMAGES INCLUDE WITHOUT LIMITATION
+LOST DATA, INTERRUPTION OF BUSINESS, OR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+CONSEQUENTIAL DAMAGES OF ANY KIND (INCLUDING LOST PROFITS), REGARDLESS OF THE
+FORM OF ACTION, WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT
+LIABILITY OR OTHERWISE, EVEN IF INFORMED OF THE POSSIBILITY OF SUCH DAMAGES IN
+ADVANCE.  The allocation of risk under this Section 5 is a material inducement
+to MuleSoft's entering into this Agreement.
+
+6.  General.
+
+6.1 Severability. If any provision of this Agreement is adjudged by any court
+of competent jurisdiction to be unenforceable or invalid, that provision shall
+be limited to the minimum extent necessary so that this Agreement shall
+otherwise remain in effect.
+
+6.2 Governing Law; Jurisdiction and Venue. This Agreement shall be governed by
+the laws of the State of California and the U.S. without regard to conflicts
+of laws provisions. The jurisdiction and venue for actions related to this
+Agreement shall be the state and federal courts in San Francisco, California,
+and the parties irrevocably consent to the same.
+
+6.3 Entire Agreement. This Agreement is the complete and exclusive statement
+of the mutual understanding of the parties and supersedes and cancels all
+previous written and oral agreements and communications relating to its
+subject matter.  No modification or amendment of this Agreement shall be
+binding, unless executed in writing by an authorized representative of each
+party to this Agreement. No waiver will be implied from conduct or failure to
+enforce or exercise rights under this Agreement, nor will any waiver be
+effective unless in a writing signed by a duly authorized representative on
+behalf of the party claimed to have waived
+
+6.4 Audit Rights.  User will maintain accurate records as to its use of the
+Free Software as authorized by this Agreement during the term hereof and for
+at least two (2) years from the termination of this Agreement.  MuleSoft, or
+persons designated by MuleSoft, will, at any time during the period when User
+is obliged to maintain such records, be entitled to audit such records and to
+ascertain completeness and accuracy, in order to verify that the Free Software
+is being used by User in accordance with the terms of this Agreement.  Any
+such audit will be performed at MuleSoft's expense, provided, however, that
+User shall promptly reimburse MuleSoft for the cost of such audit and any
+applicable fees if such audit reveals a breach of this Agreement.
+
+6.5 Government End-Users.  The Free Software is deemed to be "commercial
+computer software" and "commercial computer software documentation",
+respectively, pursuant to DFAR Section 227.7202 and FAR Section 12.212(b), as
+applicable.  Any use, modification, reproduction, release, performing,
+displaying or disclosing of the Free Software by the U.S. Government shall be
+governed solely by the terms of this Agreement.  This product was developed at
+private expense. All other use is prohibited.
+
+6.6 Export Compliance. User may not export or re-export the Free Software
+except in compliance with the United States Export Administration Act and the
+related rules and regulations and similar non-U.S. government restrictions, if
+applicable.  User acknowledges that the Free Software is subject to export
+restrictions by the U.S. government and import restrictions by certain foreign
+governments. User shall not and shall not allow any third-party to remove or
+export from the United States or allow the export or re-export of any part of
+the Free Software or any direct product thereof: (i) into (or to a national or
+resident of) any embargoed or terrorist-supporting country; (ii) to anyone on
+the U.S. Commerce Department's Table of Denial Orders or U.S. Treasury
+Department's list of Specially Designated Nationals; (iii) to any country to
+which such export or re-export is restricted or prohibited, or as to which the
+United States government or any agency thereof requires an export license or
+other governmental approval at the time of export or re-export without first
+obtaining such license or approval; or (iv) otherwise violate any export or
+import restrictions, laws or regulations of any U.S. or foreign authority.
+User agrees to the foregoing and warrants that it is not located in, under the
+control of, or a national or resident of any such prohibited country or on any
+such prohibited party list and the Free Software is not being used for the
+design or development of nuclear, chemical, or biological weapons or missile
+technology, or for terrorist activity.

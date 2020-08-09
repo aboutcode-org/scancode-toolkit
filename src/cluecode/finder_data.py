@@ -63,6 +63,20 @@ JUNK_IPS = set_from_text(u'''
     1.2.3.4
 ''')
 
+# Check for domain to be exactly one of below mentioned
+JUNK_EXACT_DOMAIN_NAMES = set_from_text(u'''
+    test.com
+    something.com
+    some.com
+    anything.com
+    any.com
+    trial.com
+    sample.com
+    other.com
+    something.com
+    some.com
+''')
+
 JUNK_URLS = set_from_text(u'''
     http://www.adobe.com/2006/mxml
     http://www.w3.org/1999/XSL/Transform
@@ -200,18 +214,26 @@ JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
    .png
    .jpg
    .gif
+   .jpeg
 ''')))
 
 
-def classify(s, data_set, suffixes=None):
+def classify(s, data_set, suffixes=None, ignored_hosts=None):
     """
     Return True or some classification string value that evaluates to True if
-    the data in string s is not junk. Return False if the data in string s is
-    classified as 'junk' or uninteresting.
+    the data in string `s` is not junk. Return False if the data in string `s` is
+    classified as 'junk' or uninteresting. Use `data_set` set of junk strings,
+    `suffixes` optional set of junk suffixes, and `ignored_hosts` set of junk
+    email host names for classification.
     """
     if not s:
         return False
     s = s.lower().strip('/')
+    # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
+    if ignored_hosts and '@' in s:
+        _name, _at, host_name = s.rpartition('@')
+        if host_name in ignored_hosts:
+            return False
     if any(d in s for d in data_set):
         return False
     if suffixes and s.endswith(suffixes):
@@ -221,9 +243,18 @@ def classify(s, data_set, suffixes=None):
 
 classify_ip = partial(classify, data_set=JUNK_IPS)
 
-classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
+classify_host = partial(
+    classify,
+    data_set=JUNK_HOSTS_AND_DOMAINS,
+    suffixes=JUNK_DOMAIN_SUFFIXES,
+)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES)
+classify_email = partial(
+    classify,
+    data_set=JUNK_EMAILS,
+    suffixes=JUNK_DOMAIN_SUFFIXES,
+    ignored_hosts=JUNK_EXACT_DOMAIN_NAMES,
+)
 
 
 def classify_url(url):

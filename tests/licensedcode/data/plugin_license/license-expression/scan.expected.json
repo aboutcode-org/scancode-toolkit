@@ -6,8 +6,7 @@
         "input": "<path>",
         "--json": "<file>",
         "--license": true,
-        "--strip-root": true,
-        "--verbose": true
+        "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -93,8 +92,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
@@ -127,8 +126,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
@@ -161,8 +160,8 @@
             "is_license_reference": false,
             "is_license_tag": true,
             "matcher": "1-spdx-id",
-            "rule_length": 10,
-            "matched_length": 10,
+            "rule_length": 13,
+            "matched_length": 13,
             "match_coverage": 100.0,
             "rule_relevance": 100
           }
@@ -171,7 +170,7 @@
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
-      "percentage_of_license_text": 76.92,
+      "percentage_of_license_text": 100.0,
       "scan_errors": []
     }
   ]

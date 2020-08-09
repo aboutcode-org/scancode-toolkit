@@ -131,6 +131,10 @@ Options:
                              on-disk rather than in memory. Use 0 to use unlimited
                              memory and disable on-disk caching. Use -1 to use
                              only on-disk caching.  [default: 10000]
+    --max-depth INTEGER      Maximum nesting depth of subdirectories to scan.
+                             Descend at most INTEGER levels of directories below
+                             and including the starting directory. Use 0 for no
+                             scan depth limit.
 
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and

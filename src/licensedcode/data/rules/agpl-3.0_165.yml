@@ -1,0 +1,7 @@
+license_expression: agpl-3.0
+is_license_tag: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright GNU Affero General
+ignorable_holders:
+    - GNU Affero General

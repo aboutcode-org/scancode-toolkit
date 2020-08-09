@@ -18,3 +18,4 @@ ignorable_holders:
     - Sybase, Inc.
 ignorable_urls:
     - http://www.sybase.com/developer/opensource
+osi_license_key: Watcom-1.0

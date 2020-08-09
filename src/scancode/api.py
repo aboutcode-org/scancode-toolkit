@@ -317,9 +317,10 @@ def get_file_info(location, **kwargs):
     result['date'] = get_last_modified_date(location) or None
     result['size'] = getsize(location) or 0
 
-    sha1, md5 = multi_checksums(location, ('sha1', 'md5',)).values()
+    sha1, md5, sha256 = multi_checksums(location, ('sha1', 'md5', 'sha256')).values()
     result['sha1'] = sha1
     result['md5'] = md5
+    result['sha256'] = sha256
 
     collector = get_type(location)
     result['mime_type'] = collector.mimetype_file or None
@@ -334,7 +335,7 @@ def get_file_info(location, **kwargs):
     return result
 
 
-def extract_archives(location, recurse=True):
+def extract_archives(location, recurse=True, replace_originals=False, ignore_pattern=()):
     """
     Yield ExtractEvent while extracting archive(s) and compressed files at
     `location`. If `recurse` is True, extract nested archives-in-archives
@@ -345,5 +346,5 @@ def extract_archives(location, recurse=True):
     """
     from extractcode.extract import extract
     from extractcode import default_kinds
-    for xevent in extract(location, kinds=default_kinds, recurse=recurse):
+    for xevent in extract(location=location, kinds=default_kinds, recurse=recurse, replace_originals=replace_originals, ignore_pattern=ignore_pattern):
         yield xevent

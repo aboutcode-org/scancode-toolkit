@@ -1,0 +1,10 @@
+license_expression: unknown-license-reference AND apache-2.0 AND proprietary-license
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE
+notes: there are several license versions including Sleepycat, AGPL and lately Apache or commercial
+    See https://www.oracle.com/downloads/licenses/berkeleydb-jeoslicense.html for the latest
+    Apache license Download is only possible with a user login.
+ignorable_urls:
+    - http://www.oracle.com/technetwork/database/database-technologies/berkeleydb/downloads/index.html

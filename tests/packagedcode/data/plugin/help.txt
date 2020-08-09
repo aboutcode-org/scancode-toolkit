@@ -68,8 +68,8 @@ Package: chrome
 --------------------------------------------
 Package: composer
   class: packagedcode.phpcomposer:PHPComposerPackage
-  metafiles: composer.json
-  filetypes: .json
+  metafiles: composer.json, composer.lock
+  filetypes: .json, .lock
 
 --------------------------------------------
 Package: conda
@@ -113,6 +113,11 @@ Package: gem
   metafiles: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
   extensions: .gem
   filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: golang
+  class: packagedcode.golang:GolangPackage
+  metafiles: go.mod, go.sum
 
 --------------------------------------------
 Package: haxe
@@ -184,7 +189,7 @@ Package: msi
 --------------------------------------------
 Package: npm
   class: packagedcode.npm:NpmPackage
-  metafiles: package.json, npm-shrinkwrap.json
+  metafiles: package.json, npm-shrinkwrap.json, package-lock.json, yarn.lock
   filetypes: .tgz
 
 --------------------------------------------
@@ -203,7 +208,7 @@ Package: nuget
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg
+  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------

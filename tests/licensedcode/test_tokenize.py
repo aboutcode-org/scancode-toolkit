@@ -39,6 +39,7 @@ from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
+from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
@@ -515,6 +516,11 @@ class TestNgrams(FileBasedTesting):
 
         assert expected == result
 
+    def test_select_ngrams_with_unicode_inputs(self):
+        result = list(select_ngrams(x for x in [('b', 'ä', 'c'), ('ä', 'ä', 'c'), ('e', 'ä', 'c'), ('b', 'f', 'ä'), ('g', 'c', 'd')]))
+        expected = [('b', 'ä', 'c'), ('ä', 'ä', 'c'), ('e', 'ä', 'c'), ('b', 'f', 'ä'), ('g', 'c', 'd')]
+        assert expected == result
+
 
 class MatchedTextTokenizer(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -630,7 +636,6 @@ class MatchedTextTokenizer(FileBasedTesting):
         result_as_text = u''.join(itertools.chain.from_iterable(
             [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
-
 
     def test_matched_query_text_tokenizer_and_query_tokenizer_should_yield_the_same_texts(self):
         text = u'''Redistribution+ ;and use in! + 2003 source and +binary forms,

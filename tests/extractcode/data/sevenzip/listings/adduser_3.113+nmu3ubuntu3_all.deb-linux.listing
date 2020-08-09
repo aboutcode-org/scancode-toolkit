@@ -1,0 +1,32 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 169360 bytes (166 KiB)
+
+Listing archive: tests/extractcode/data/archive/deb/adduser_3.113+nmu3ubuntu3_all.deb
+
+--
+Path = tests/extractcode/data/archive/deb/adduser_3.113+nmu3ubuntu3_all.deb
+Type = Ar
+Physical Size = 169360
+SubType = deb
+----
+Path = data.tar.gz
+Size = 158441
+Modified = 2013-11-07 16:14:58
+Mode = -rw-r--r--
+--
+Path = data.tar.gz
+Type = gzip
+Headers Size = 10
+
+----------
+Path = data.tar
+Size = 337920
+Packed Size = 158441
+Modified = 
+Host OS = Unix
+CRC = 04401B9F
+

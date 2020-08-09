@@ -1191,9 +1191,12 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = [
             'This source code is licensed under both the Apache 2.0 license '
             '(found in the\n#  LICENSE',
+
             'This source code is licensed under [both] [the] [Apache] [2].[0] license '
             '(found in the\n#  LICENSE file in the root directory of this source tree)',
-            'GPLv2 (']
+
+            'GPLv2 ('
+        ]
         assert expected == results
 
     @pytest.mark.scanslow
@@ -1201,7 +1204,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         query_location = self.get_test_loc('matched_text_spdx/query.txt')
         idx = cache.get_index()
         results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
-        expected = ['BSD-2-Clause-Patent']
+        expected = ['SPDX-License-Identifier: BSD-2-Clause-Patent']
         assert expected == results
 
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_query(self):

@@ -4,7 +4,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import io
 from glob import glob
 from os.path import basename
 from os.path import dirname
@@ -90,20 +89,11 @@ def get_git_version():
 
 
 def read(*names, **kwargs):
-    return io.open(
-        join(dirname(__file__), *names),
-        encoding=kwargs.get('encoding', 'utf8')
+    import os
+    return open(
+        os.path.join(os.path.dirname(__file__), *names),
+        #encoding=kwargs.get('encoding', 'utf8')
     ).read()
-
-
-# Accept Python3, but only when running setup.py. Released wheels should be for
-# Python 2 only until we completed the Python3 port
-if py2:
-    python_requires= '>=2.7,<3'
-elif py3:
-    python_requires= '>=3.6'
-else:
-    raise Exception('Unsupported Python version.')
 
 
 setup(
@@ -137,7 +127,7 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires=python_requires,
+    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
@@ -147,10 +137,9 @@ setup(
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'publicsuffix2',
         'py2_ipaddress >= 2.0, <3.5; python_version<"3"',
-        'url >= 0.1.4, < 0.1.6; python_version<"3"',
-        'url >= 0.4.2, < 1.0.0; python_version>="3"',
+        'urlpy',
+        'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
 
         # extractcode
@@ -166,7 +155,6 @@ setup(
         'future >= 0.16.0',
         'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
-        'path.py',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
@@ -211,21 +199,14 @@ setup(
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=18.1, < 20.0',
+        'attrs >=18.1',
         'typing >=3.6, < 3.7',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
-        'MarkupSafe >= 0.23',
         'simplejson',
         'spdx_tools >= 0.6.0',
         'unicodecsv',
-
-        # ScanCode Docs
-        'Sphinx <  2.0; python_version == "2.7"',
-        'Sphinx >= 2.0; python_version > "3"',
-        'sphinx_rtd_theme >= 0.4.3',
-        'doc8 >= 0.8.0',
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
@@ -233,6 +214,7 @@ setup(
             'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
+    
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
@@ -293,7 +275,7 @@ setup(
             'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
             'is-license-text = licensedcode.plugin_license_text:IsLicenseText',
             'filter-clues = cluecode.plugin_filter_clues:RedundantCluesFilter',
-            'consolidate = scancode.plugin_consolidate:Consolidator',
+            'consolidate = summarycode.plugin_consolidate:Consolidator',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed

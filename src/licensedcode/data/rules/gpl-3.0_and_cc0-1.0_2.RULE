@@ -1,0 +1,6 @@
+## Licenses
+
+Styrene’s code is licensed as follows:
+
+* [GPLv3](COPYING) or later for the tool itself.
+* [CC0][cc0] for code templates and generated code inside bundles.

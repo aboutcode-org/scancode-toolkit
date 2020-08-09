@@ -72,18 +72,19 @@ class TestAPI(FileBasedTesting):
         test_dir = self.get_test_loc('api/info/test.txt')
         info = api.get_file_info(test_dir)
         expected = [
-            (u'size', 0),
-            (u'sha1', None),
-            (u'md5', None),
-            (u'mime_type', u'inode/x-empty'),
-            (u'file_type', u'empty'),
-            (u'programming_language', None),
-            (u'is_binary', False),
-            (u'is_text', True),
-            (u'is_archive', False),
-            (u'is_media', False),
-            (u'is_source', False),
-            (u'is_script', False)
+            ('size', 0),
+            ('sha1', None),
+            ('md5', None),
+            ('sha256', None),
+            ('mime_type', 'inode/x-empty'),
+            ('file_type', 'empty'),
+            ('programming_language', None),
+            ('is_binary', False),
+            ('is_text', True),
+            ('is_archive', False),
+            ('is_media', False),
+            ('is_source', False),
+            ('is_script', False)
         ]
         assert expected == [(k, v) for k, v in info.items() if k != 'date']
 

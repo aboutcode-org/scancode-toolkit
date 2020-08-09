@@ -119,3 +119,23 @@ Comparing Progress Message Options
     An example usage::
 
         scancode -clieu --json-pp sample.json samples --max-in-memory -1
+
+----
+
+``--max_depth`` Option
+----------------------------------
+
+    Normally, the scan takes place upto the maximum level of nesting of directories possible. But
+    using the ``--max-depth`` option, you can specify the maximum level of directories to scan,
+    including and below the root location. This can reduce the time taken for the scan when deeper
+    directories are not relevant.
+
+    Note that the ``--max-depth`` option will be ignored if you are scanning from a JSON file using
+    the ``--from-json`` option. In that case, the original depth is used.
+
+    An example usage::
+
+        scancode -clieu --json-pp results.json samples --max-depth 3
+
+    This would scan the file ``samples/levelone/leveltwo/file`` but ignore
+    ``samples/levelone/leveltwo/levelthree/file``
