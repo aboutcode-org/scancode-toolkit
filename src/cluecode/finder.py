@@ -72,7 +72,7 @@ Optionally apply filters to pattern matches.
 def find(location, patterns):
     """
     Yield match and matched lines for patterns found in file at location as a
-    tuple of (key, found text, text line). Pattern is list of tuples (key,
+    tuple of (key, found text, text line). `patterns` is a list of tuples (key,
     compiled regex).
 
     Note: the location can be a list of lines for testing convenience.
