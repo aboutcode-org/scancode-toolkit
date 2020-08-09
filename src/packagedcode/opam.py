@@ -1,5 +1,5 @@
 
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -55,10 +55,11 @@ if TRACE:
 
 @attr.s()
 class OpamPackage(models.Package):
-    metafiles = ('*.opam')
+    metafiles = ('*.opam', 'opam')
+    extensions = ('.opam',)
     default_type = 'opam'
     default_primary_language = 'Ocaml'
-    default_web_baseurl = 'https://pkg.go.dev'
+    default_web_baseurl = 'https://opam.ocaml.org/packages'
     default_download_baseurl = None
     default_api_baseurl = None
 
@@ -71,12 +72,12 @@ class OpamPackage(models.Package):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if self.namespace and self.name:
-            return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
+        if self.name:
+            return '{}/{}'.format(baseurl, self.name)
 
 
 def is_opam(location):
-    if location.endswith('.opam'):
+    if location.endswith('.opam') or (filetype.is_file(location) and fileutils.file_name(location).lower() == 'opam'):
         return True
     return False
 
@@ -98,7 +99,7 @@ def build_opam_package(package_data):
     for dep in deps:
         package_dependencies.append(
             models.DependentPackage(
-                purl=dep.purl(),
+                purl=dep.purl,
                 requirement=dep.version,
                 scope='dependency',
                 is_runtime=True,
@@ -112,11 +113,11 @@ def build_opam_package(package_data):
     authors = package_data.get('authors') or []
     homepage_url = package_data.get('homepage')
     vcs_url = package_data.get('dev-repo')
-    license = package_data.get('license')
     summary = package_data.get('synopsis')
     description = package_data.get('description')
-    if len(summary) > len(description):
-        description = summary
+    if summary and description:
+        if len(summary) > len(description):
+            description = summary
     
     parties = []
     for author in authors:
@@ -139,15 +140,16 @@ def build_opam_package(package_data):
             )
         )
 
-    return OpamPackage(
-        name=name,
+    package = OpamPackage(
+        name=name or None,
         vcs_url=vcs_url or None,
-        license=license.split() or None,
         homepage_url=homepage_url,
         description=description,
         parties=parties,
         dependencies=package_dependencies
     )
+
+    return package
 
 
 @attr.s()
@@ -193,18 +195,21 @@ def parse_opam(location):
             key = parsed_line.group('key').strip()
             value = parsed_line.group('value').strip()
             if 'maintainer' == key:
-                stripped_val = value.strip('["]')
+                stripped_val = value.strip('["] ')
                 stripped_val = stripped_val.split('" "')
                 opam_data[key] = stripped_val
                 continue
             if 'authors' == key:
-                for authors in lines[i+1:]:
-                    value += ' ' + authors.strip()
-                    if ']' in authors:
-                        break
-                stripped_val = value.strip('["]')
-                stripped_val = stripped_val.split('" "')
-                opam_data[key] = stripped_val
+                if '[' in line:
+                    for authors in lines[i+1:]:
+                        value += ' ' + authors.strip()
+                        if ']' in authors:
+                            break
+                    value = value.strip('["] ')
+                else:
+                    value = get_stripped_data(value)   
+                value = value.split('" "')
+                opam_data[key] = value
                 continue
             if 'depends' == key:
                 value = []
@@ -223,9 +228,9 @@ def parse_opam(location):
             if 'description' == key:
                 value = ''
                 for cont in lines[i+1:]:
+                    value += ' ' + cont.strip()
                     if '"""' in cont:
                         break
-                    value += ' ' + cont.strip()
 
             opam_data[key] = get_stripped_data(value)
 
@@ -236,11 +241,7 @@ def get_stripped_data(data):
     """
     Return data after removing unnecessary special character
     """
-    if '["' in data:
-        for strippable in ('["', '"]',):
-            data = data.replace(strippable, '')
-    else:
-        for strippable in ("'", '"', '[', ']',):
-            data = data.replace(strippable, '')
+    for strippable in ("'", '"', '[', ']',):
+        data = data.replace(strippable, '')
 
     return data.strip()
