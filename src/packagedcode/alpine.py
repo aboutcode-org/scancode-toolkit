@@ -76,7 +76,9 @@ def get_installed_packages(root_dir, **kwargs):
     Given a directory to a rootfs, yield a AlpinePackage and a list of `installed_files`
     (path, md5sum) tuples.
     """
-    installed_file_loc = os.path.join(root_dir, 'lib/apk/db/installed')
+    installed_file_loc = path.join(root_dir, 'lib/apk/db/installed')
+    if not path.exists(installed_file_loc):
+        return
     for package in parse_alpine_installed_db(installed_file_loc):
         yield package
 
@@ -90,6 +92,8 @@ def parse_alpine_installed_db(location):
     Note: http://uk.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz are
     also in the same format as an installed database.
     """
+    if not path.exists(location):
+        return
 
     with open(location, 'rb') as f:
         installed = as_unicode(f.read())
