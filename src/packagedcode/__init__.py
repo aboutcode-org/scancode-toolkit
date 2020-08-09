@@ -38,7 +38,6 @@ from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
-from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
@@ -76,7 +75,6 @@ PACKAGE_TYPES = [
     models.IOSApp,
     pypi.PythonPackage,
     golang.GolangPackage,
-    opam.OpamPackage,
     models.CabPackage,
     models.MsiInstallerPackage,
     models.InstallShieldPackage,
