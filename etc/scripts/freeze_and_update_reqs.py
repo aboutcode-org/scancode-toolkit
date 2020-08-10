@@ -124,8 +124,8 @@ option is called,it will be update all the wheels/sdist to the latest version.
     upgrade = args.upgrade or False
     generate_req_text(
         find_links=find_links,
-        requirement=requirement,
-        upgrade_package=upgrade_package,
+        req_file=requirement,
+        package_name=upgrade_package,
         upgrade=upgrade,
     )
 
