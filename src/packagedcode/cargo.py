@@ -71,41 +71,27 @@ class RustCargoCrate(models.Package):
         return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
-        if not self.name:
-            return None
-        return '{}/crates/{}'.format(baseurl, self.name)
+        if self.name:
+            return '{}/crates/{}'.format(baseurl, self.name)
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        if not self.name and not self.version:
-            return None
-        return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
+        if self.name and self.version:
+            return '{}/crates/{}/{}/download'.format(baseurl, self.name, self.version)
 
     def api_data_url(self, baseurl=default_api_baseurl):
-        if not self.name:
-            return None
-        return '{}/crates/{}'.format(baseurl, self.name)
-
-
-def is_cargo_toml(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.toml')
-
-
-def is_cargo_lock(location):
-    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'cargo.lock')
+        if self.name:
+            return '{}/crates/{}'.format(baseurl, self.name)
 
 
 def parse(location):
     """
     Return a Package object from a Cargo.toml/Cargo.lock file or None.
     """
-    if not is_cargo_toml(location) and not is_cargo_lock(location):
-        return
-
-    package_data = toml.load(location, _dict=OrderedDict)
-    if is_cargo_toml(location):
-        return build_cargo_toml_package(package_data)
-    elif is_cargo_lock(location):
-        return build_cargo_lock_package(package_data)
+    handlers = {'cargo.toml': build_cargo_toml_package, 'cargo.lock': build_cargo_lock_package}
+    filename = filetype.is_file(location) and fileutils.file_name(location).lower()
+    handler = handlers.get(filename)
+    if handler:
+        return handler(toml.load(location, _dict=OrderedDict))
 
 
 def build_cargo_toml_package(package_data):
@@ -201,7 +187,7 @@ def build_cargo_lock_package(package_data):
     """
 
     package_dependencies = []
-    core_package_data = package_data.get('package', {})
+    core_package_data = package_data.get('package', [])
     for dep in core_package_data:
         package_dependencies.append(
             models.DependentPackage(
