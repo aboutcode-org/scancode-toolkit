@@ -1,5 +1,5 @@
 
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -85,13 +85,13 @@ class RustCargoCrate(models.Package):
 
 def parse(location):
     """
-    Return a Package object from a Cargo.toml/Cargo.lock file or None.
+    Return a Package object from a Cargo.toml/Cargo.lock file.
     """
     handlers = {'cargo.toml': build_cargo_toml_package, 'cargo.lock': build_cargo_lock_package}
     filename = filetype.is_file(location) and fileutils.file_name(location).lower()
     handler = handlers.get(filename)
     if handler:
-        return handler(toml.load(location, _dict=OrderedDict))
+        return handler and handler(toml.load(location, _dict=OrderedDict))
 
 
 def build_cargo_toml_package(package_data):
