@@ -51,7 +51,7 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:RustCargoCrate
-  metafiles: Cargo.toml
+  metafiles: Cargo.toml, Cargo.lock
 
 --------------------------------------------
 Package: chef
