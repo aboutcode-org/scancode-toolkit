@@ -49,6 +49,8 @@ class GoModules(object):
     name = attr.ib(default=None)
     version = attr.ib(default=None)
     module = attr.ib(default=None)
+    require = attr.ib(default=None)
+    exclude = attr.ib(default=None)
 
     @property
     def purl_gosum(self):
@@ -182,7 +184,7 @@ def parse_gomod(location):
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()
 
-    gomods = {}
+    gomods = GoModules()
     require = []
     exclude = []
 
@@ -190,12 +192,12 @@ def parse_gomod(location):
         line = preprocess(line)
         parsed_module = parse_module(line)
         if parsed_module:
-            gomods['module'] = parsed_module.group('module')
+            gomods.module = parsed_module.group('module')
 
         parsed_module_name = parse_module_name(line)
         if parsed_module_name:
-            gomods['name'] = parsed_module_name.group('name')
-            gomods['namespace'] = parsed_module_name.group('namespace')
+            gomods.name = parsed_module_name.group('name')
+            gomods.namespace = parsed_module_name.group('namespace')
 
         parsed_require = parse_require(line)
         if parsed_require:
@@ -243,8 +245,8 @@ def parse_gomod(location):
                         )
                     )
 
-    gomods['require'] = require
-    gomods['exclude'] = exclude
+    gomods.require = require
+    gomods.exclude = exclude
 
     return gomods
 

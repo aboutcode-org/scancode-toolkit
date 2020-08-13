@@ -92,7 +92,7 @@ def build_gomod_package(gomods):
     Return a Package object from a go.mod file or None.
     """
     package_dependencies = []
-    require = gomods.get('require') or []
+    require = gomods.require or []
     for gomod in require:
         package_dependencies.append(
             models.DependentPackage(
@@ -105,7 +105,7 @@ def build_gomod_package(gomods):
             )
         )
 
-    exclude = gomods.get('exclude') or []
+    exclude = gomods.exclude or []
     for gomod in exclude:
         package_dependencies.append(
             models.DependentPackage(
@@ -118,10 +118,10 @@ def build_gomod_package(gomods):
             )
         )
 
-    name = gomods.get('name')
-    namespace = gomods.get('namespace')
-    homepage_url = 'https://pkg.go.dev/{}'.format(gomods.get('module'))
-    vcs_url = 'https://{}.git'.format(gomods.get('module'))
+    name = gomods.name
+    namespace = gomods.namespace
+    homepage_url = 'https://pkg.go.dev/{}'.format(gomods.module)
+    vcs_url = 'https://{}.git'.format(gomods.module)
 
     return GolangPackage(
         name=name,
