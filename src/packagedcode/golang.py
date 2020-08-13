@@ -120,8 +120,8 @@ def build_gomod_package(gomods):
 
     name = gomods.name
     namespace = gomods.namespace
-    homepage_url = 'https://pkg.go.dev/{}'.format(gomods.module)
-    vcs_url = 'https://{}.git'.format(gomods.module)
+    homepage_url = 'https://pkg.go.dev/{}/{}'.format(gomods.namespace, gomods.name)
+    vcs_url = 'https://{}/{}.git'.format(gomods.namespace, gomods.name)
 
     return GolangPackage(
         name=name,
