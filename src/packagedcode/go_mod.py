@@ -44,7 +44,7 @@ if TRACE:
 
 
 @attr.s()
-class GoModules(object):
+class GoModule(object):
     namespace = attr.ib(default=None)
     name = attr.ib(default=None)
     version = attr.ib(default=None)
@@ -52,21 +52,15 @@ class GoModules(object):
     require = attr.ib(default=None)
     exclude = attr.ib(default=None)
 
-    @property
-    def purl_gosum(self):
+    def purl(self, include_version=True):
+        version = None
+        if include_version:
+            version = self.version
         return PackageURL(
                     type='golang',
                     namespace=self.namespace,
                     name=self.name,
-                    version=self.version
-                ).to_string()
-
-    @property
-    def purl_gomod(self):
-        return PackageURL(
-                    type='golang',
-                    namespace=self.namespace,
-                    name=self.name
+                    version=version
                 ).to_string()
 
 
@@ -184,7 +178,7 @@ def parse_gomod(location):
     with io.open(location, encoding='utf-8', closefd=True) as data:
         lines = data.readlines()
 
-    gomods = GoModules()
+    gomods = GoModule()
     require = []
     exclude = []
 
@@ -201,7 +195,7 @@ def parse_gomod(location):
 
         parsed_require = parse_require(line)
         if parsed_require:
-            require.append(GoModules(
+            require.append(GoModule(
                     namespace=parsed_require.group('namespace'),
                     name=parsed_require.group('name'),
                     version=parsed_require.group('version')
@@ -210,7 +204,7 @@ def parse_gomod(location):
 
         parsed_exclude = parse_exclude(line)
         if parsed_exclude:
-            exclude.append(GoModules(
+            exclude.append(GoModule(
                     namespace=parsed_exclude.group('namespace'),
                     name=parsed_exclude.group('name'),
                     version=parsed_exclude.group('version')
@@ -224,7 +218,7 @@ def parse_gomod(location):
                     break
                 parsed_dep_link = parse_dep_link(req)
                 if parsed_dep_link:
-                    require.append(GoModules(
+                    require.append(GoModule(
                             namespace=parsed_dep_link.group('namespace'),
                             name=parsed_dep_link.group('name'),
                             version=parsed_dep_link.group('version')
@@ -238,7 +232,7 @@ def parse_gomod(location):
                     break
                 parsed_dep_link = parse_dep_link(exc)
                 if parsed_dep_link:
-                    exclude.append(GoModules(
+                    exclude.append(GoModule(
                             namespace=parsed_dep_link.group('namespace'),
                             name=parsed_dep_link.group('name'),
                             version=parsed_dep_link.group('version')
@@ -319,7 +313,7 @@ def parse_gosum(location):
         if not parsed_dep:
             parsed_dep = parse_dep_type2(line)
 
-        dep_obj = GoModules(
+        dep_obj = GoModule(
                 namespace=parsed_dep.group('namespace').strip(),
                 name=parsed_dep.group('name').strip(),
                 version=parsed_dep.group('version').strip()
