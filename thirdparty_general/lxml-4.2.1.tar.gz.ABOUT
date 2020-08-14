@@ -1,0 +1,32 @@
+about_resource: lxml-4.2.1.tar.gz
+attribute: true
+checksum_md5: c266d9062e23b08f66426979a2b36f51
+checksum_sha1: 5ac888d5957f74298fb6daf74778bd91812f7571
+copyright: Copyright (c) 2004 Infrae.
+description: lxml is the most feature-rich and easy-to-use library for processing
+    XML and HTML in the Python language.
+download_url: https://files.pythonhosted.org/packages/e8/5d/98f56e274bdf17f2e0d9016d1788ca80d26d8987dcd5e1d9416d86ee0625/lxml-4.2.1.tar.gz
+homepage_url: http://lxml.de/
+license_expression: bsd-new AND (mit AND gpl-2.0-plus AND zpl-2.0 AND zlib)
+licenses:
+-   file: bsd-new.LICENSE
+    key: bsd-new
+    name: BSD-3-Clause
+-   file: gpl-2.0-plus.LICENSE
+    key: gpl-2.0-plus
+    name: GNU General Public License 2.0 or later
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+-   file: zlib.LICENSE
+    key: zlib
+    name: ZLIB License
+-   file: zpl-2.0.LICENSE
+    key: zpl-2.0
+    name: Zope Public License 2.0
+name: LXML
+notice_file: lxml-4.2.1.tar.gz.NOTICE
+owner: Infrae
+redistribute: true
+track_changes: true
+version: 4.2.1

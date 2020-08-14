@@ -217,10 +217,13 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
     list of `paths` to directories.
     """
     for path in paths:
-        if not os.path.isabs(path):
-            path = os.path.join(root_dir, path)
-        if os.path.exists(path):
-            yield option + quote(path)
+        if path.startswith('https'):
+            yield option + '"{}"'.format(path)
+        else:        
+            if not os.path.isabs(path):
+                path = os.path.join(root_dir, path)
+            if os.path.exists(path):
+                yield option + quote(path)
 
 
 def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
@@ -246,6 +249,8 @@ def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
     # search the virtualenv.pyz app in the tpp_dirs. keep the first found
     venv_pyz = None
     for tpd in tpp_dirs:
+        if tpd.startswith('https'):
+            continue
         venv = os.path.join(root_dir, tpd, 'virtualenv.pyz')
         if os.path.exists(venv):
             venv_pyz = venv
@@ -283,6 +288,15 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     for req_file in requirement_files:
         req_loc = os.path.join(root_dir, req_file)
         requirements.extend(['--requirement', quote(req_loc)])
+    run_pip(requirements, root_dir, tpp_dirs, quiet)
+
+
+def install_local_package(root_dir, tpp_dirs, quiet=False):
+    """
+    Install the current local package with pip,
+    using the vendored components in `tpp_dirs`.
+    """
+    requirements = ['--editable', '.']
     run_pip(requirements, root_dir, tpp_dirs, quiet)
 
 
@@ -540,26 +554,30 @@ if __name__ == '__main__':
     for envvar, path in os.environ.items():
         if not envvar.startswith('TPP_DIR'):
             continue
-        abs_path = path
-        if not os.path.isabs(path):
-            abs_path = os.path.join(root_dir, path)
-        if not os.path.exists(abs_path):
-            if not quiet:
-                print()
-                print(
-                    'WARNING: Third-party Python libraries directory does not exists:\n'
-                    '  %(path)r: %(abs_path)r\n'
-                    '  Provided by environment variable:\n'
-                    '  set %(envvar)s=%(path)r' % locals())
-                print()
-        else:
+        if path.startswith('https'):
             thirdparty_dirs.append(path)
+        else:        
+            abs_path = path
+            if not os.path.isabs(path):
+                abs_path = os.path.join(root_dir, path)
+            if not os.path.exists(abs_path):
+                if not quiet:
+                    print()
+                    print(
+                        'WARNING: Third-party Python libraries directory does not exists:\n'
+                        '  %(path)r: %(abs_path)r\n'
+                        '  Provided by environment variable:\n'
+                        '  set %(envvar)s=%(path)r' % locals())
+                    print()
+            else:
+                thirdparty_dirs.append(path)
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
         create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=quiet)
     activate(root_dir)
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
+    install_local_package(root_dir, thirdparty_dirs, quiet=quiet)
     run_scripts(configs, root_dir, configured_python, quiet=quiet)
 
     if not quiet:
