@@ -10,104 +10,104 @@ jobs:
 # These jobs are using VMs and Azure-provided Pythons 2.7
 ################################################################################
 
-    - template: etc/ci/azure-linux.yml
-      parameters:
-          job_name: vm_ubuntu16_py27
-          image_name: ubuntu-16.04
-          python_versions: ['2.7']
-          test_suites:
-              misc: |
-                bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
-                  --ignore=tests/scancode \
-                  --ignore=tests/cluecode \
-                  --ignore=tests/licensedcode \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
+#    - template: etc/ci/azure-linux.yml
+#      parameters:
+#          job_name: vm_ubuntu16_py27
+#          image_name: ubuntu-16.04
+#          python_versions: ['2.7']
+#          test_suites:
+#              misc: |
+#                bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
+#                  --ignore=tests/scancode \
+#                  --ignore=tests/cluecode \
+#                  --ignore=tests/licensedcode \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
+#
+#              scancode: |
+#                bin/py.test --reruns=3 -vvs --test-suite=all \
+#                  tests/scancode \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
+#
+#              cluecode: |
+#                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+#                  tests/cluecode \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
+#
+#              license_base: |
+#               bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+#                  --ignore=tests/licensedcode/test_zzzz_cache.py \
+#                  --ignore=tests/licensedcode/test_detection_datadriven1.py \
+#                  --ignore=tests/licensedcode/test_detection_datadriven2.py \
+#                  tests/licensedcode \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
+#
+#              license_datadriven1: |
+#                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+#                  tests/licensedcode/test_detection_datadriven1.py \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
 
-              scancode: |
-                bin/py.test --reruns=3 -vvs --test-suite=all \
-                  tests/scancode \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
+#              license_datadriven2: |
+#                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+#                  tests/licensedcode/test_detection_datadriven2.py \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
 
-              cluecode: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/cluecode \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
+#              license_cache: |
+#                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
+#                  tests/licensedcode/test_zzzz_cache.py \
+#                  --cov=src --cov-report=term --cov-report=xml
+#                bin/codecov --token "$CODECOV_TOKEN"
 
-              license_base: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  --ignore=tests/licensedcode/test_zzzz_cache.py \
-                  --ignore=tests/licensedcode/test_detection_datadriven1.py \
-                  --ignore=tests/licensedcode/test_detection_datadriven2.py \
-                  tests/licensedcode \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
+#    - template: etc/ci/azure-win.yml
+#      parameters:
+#          job_name: Win2016_32_py27
+#          image_name: vs2017-win2016
+#          python_versions: ['2.7']
+#          python_architecture: x86
+#          test_suites:
+#              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
+#              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+#              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
 
-              license_datadriven1: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven1.py \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
+#    - template: etc/ci/azure-win.yml
+#      parameters:
+#          job_name: Win2016_64_py27
+#          image_name: vs2017-win2016
+#          python_versions: ['2.7']
+#          python_architecture: x64
+#          test_suites:
+#              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
+#              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
+#              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
 
-              license_datadriven2: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_detection_datadriven2.py \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
-
-              license_cache: |
-                bin/py.test -n 2 --reruns=3 -vvs --test-suite=all \
-                  tests/licensedcode/test_zzzz_cache.py \
-                  --cov=src --cov-report=term --cov-report=xml
-                bin/codecov --token "$CODECOV_TOKEN"
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: Win2016_32_py27
-          image_name: vs2017-win2016
-          python_versions: ['2.7']
-          python_architecture: x86
-          test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
-              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: Win2016_64_py27
-          image_name: vs2017-win2016
-          python_versions: ['2.7']
-          python_architecture: x64
-          test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
-              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
-
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos1015_py27
-          image_name: macos-10.15
-          python_versions: ['2.7']
-          test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
+#    - template: etc/ci/azure-mac.yml
+#      parameters:
+#          job_name: macos1015_py27
+#          image_name: macos-10.15
+#          python_versions: ['2.7']
+#          test_suites:
+#              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
+#              scancode: bin/py.test -vvs --reruns=3 tests/scancode
 
 
 ################################################################################
 # These jobs are using containers and their own Python 2.7
 ################################################################################
 
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py27
-          container: 'ubuntu:bionic'
-          python_path: python2.7
-          python_version: '2.7'
-          install_python: sudo apt-get install -y python python-dev
-          test_suite_label: all
-          test_suite: bin/py.test -n 2 -vvs --reruns=3
+#    - template: etc/ci/azure-container-deb.yml
+#      parameters:
+#          job_name: ubuntu18_py27
+#          container: 'ubuntu:bionic'
+#          python_path: python2.7
+#          python_version: '2.7'
+#          install_python: sudo apt-get install -y python python-dev
+#          test_suite_label: all
+#          test_suite: bin/py.test -n 2 -vvs --reruns=3
 
 #    - template: etc/ci/azure-container-rpm.yml
 #      parameters:
@@ -169,23 +169,23 @@ jobs:
 # RELEASE on 2.7. Also check that we can pip install
 ########################################################################
 
-    - job: Build_release_archive_py2
-      pool:
-          vmImage: ubuntu-16.04
-      steps:
-          - checkout: self
-            fetchDepth: 10
+#    - job: Build_release_archive_py2
+#      pool:
+#          vmImage: ubuntu-16.04
+#      steps:
+#          - checkout: self
+#            fetchDepth: 10
 
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '2.7'
-            displayName: 'Install Python 2.7'
+#          - task: UsePythonVersion@0
+#            inputs:
+#                versionSpec: '2.7'
+#            displayName: 'Install Python 2.7'
 
-          - script: ./etc/release/release.sh
-            displayName: 'Build installable releases'
+#          - script: ./etc/release/release.sh
+#            displayName: 'Build installable releases'
 
-          - script: ./etc/release/pip-install2.sh
-            displayName: 'Test pip installation'
+#          - script: ./etc/release/pip-install2.sh
+#            displayName: 'Test pip installation'
 
 
 ########################################################################
