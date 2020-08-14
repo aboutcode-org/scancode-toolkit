@@ -208,7 +208,7 @@ Package: nuget
 --------------------------------------------
 Package: opam
   class: packagedcode.opam:OpamPackage
-  metafiles: *.opam, opam
+  metafiles: *opam
   extensions: .opam
 
 --------------------------------------------

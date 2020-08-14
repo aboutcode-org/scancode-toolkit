@@ -55,7 +55,7 @@ if TRACE:
 
 @attr.s()
 class OpamPackage(models.Package):
-    metafiles = ('*.opam', 'opam')
+    metafiles = ('*opam',)
     extensions = ('.opam',)
     default_type = 'opam'
     default_primary_language = 'Ocaml'
@@ -77,12 +77,14 @@ class OpamPackage(models.Package):
 
 
 def is_opam(location):
-    if location.endswith('.opam') or (filetype.is_file(location) and fileutils.file_name(location).lower() == 'opam'):
+    if location.endswith('opam'):
         return True
-    return False
 
 
 def parse(location):
+    """
+    Return a Package object from a opam file or None.
+    """
     if not is_opam(location):
         return
 
@@ -92,7 +94,7 @@ def parse(location):
 
 def build_opam_package(package_data):
     """
-    Return a Package object from a opam file or None.
+    Return a Package from a opam file or None.
     """
     package_dependencies = []
     deps = package_data.get('depends') or []
@@ -153,6 +155,54 @@ def build_opam_package(package_data):
 
     return package
 
+"""
+Example:- 
+
+Sample opam file(sample3.opam):
+opam-version: "2.0"
+version: "4.11.0+trunk"
+synopsis: "OCaml development version"
+depends: [
+  "ocaml" {= "4.11.0" & post}
+  "base-unix" {post}
+]
+conflict-class: "ocaml-core-compiler"
+flags: compiler
+setenv: CAML_LD_LIBRARY_PATH = "%{lib}%/stublibs"
+build: [
+  ["./configure" "--prefix=%{prefix}%"]
+  [make "-j%{jobs}%"]
+]
+install: [make "install"]
+maintainer: "caml-list@inria.fr"
+homepage: "https://github.com/ocaml/ocaml/"
+bug-reports: "https://github.com/ocaml/ocaml/issues"
+authors: [
+  "Xavier Leroy"
+  "Damien Doligez"
+  "Alain Frisch"
+  "Jacques Garrigue"
+] 
+
+>>> p = parse_opam('sample3.opam')
+>>> for k, v in p.items():
+>>>     print(k, v)
+
+Output:
+opam-version 2.0
+version 4.11.0+trunk
+synopsis OCaml development version
+depends [Opam(name='ocaml', version='= 4.11.0 & post'), Opam(name='base-unix', version='post')]
+conflict-class ocaml-core-compiler
+flags compiler
+setenv CAML_LD_LIBRARY_PATH = %{lib}%/stublibs
+build 
+install make install
+maintainer ['caml-list@inria.fr']
+homepage https://github.com/ocaml/ocaml/
+bug-reports https://github.com/ocaml/ocaml/issues
+authors ['Xavier Leroy', 'Damien Doligez', 'Alain Frisch', 'Jacques Garrigue']
+"""
 
 @attr.s()
 class Opam(object):
@@ -181,6 +231,16 @@ parse_dep = re.compile(
     r'(?P<version>(.*))'
 ).match
 
+"""
+Example:
+>>> p = parse_file_line('authors: "BAP Team"')
+>>> assert p.group('key') == ('authors')
+>>> assert p.group('value') == ('"BAP Team"')
+
+>>> p = parse_dep('"bap-std" {= "1.0.0"}')
+>>> assert p.group('name') == ('bap-std')
+>>> assert p.group('version') == ('{= "1.0.0"}')
+"""
 
 def parse_opam(location):
     """
@@ -202,7 +262,7 @@ def parse_opam(location):
                 opam_data[key] = stripped_val
                 continue
             if 'authors' == key:
-                if '[' in line:
+                if '[' in line: # If authors are present in multiple lines
                     for authors in lines[i+1:]:
                         value += ' ' + authors.strip()
                         if ']' in authors:
@@ -213,7 +273,7 @@ def parse_opam(location):
                 value = value.split('" "')
                 opam_data[key] = value
                 continue
-            if 'depends' == key:
+            if 'depends' == key: # Get multiline dependencies
                 value = []
                 for dep in lines[i+1:]:
                     if ']' in dep:
@@ -227,7 +287,7 @@ def parse_opam(location):
                         )
                 opam_data[key] = value
                 continue
-            if 'description' == key:
+            if 'description' == key: # Get multiline description
                 value = ''
                 for cont in lines[i+1:]:
                     value += ' ' + cont.strip()
@@ -241,7 +301,7 @@ def parse_opam(location):
 
 def get_stripped_data(data):
     """
-    Return data after removing unnecessary special character
+    Return data after removing unnecessary special character.
     """
     for strippable in ("'", '"', '[', ']',):
         data = data.replace(strippable, '')
