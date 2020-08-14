@@ -213,6 +213,13 @@ setup(
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
+        
+        #Fix Me later
+        'pytest',
+        'pytest-xdist',
+        'pytest-rerunfailures',
+        'pytest-forked',
+        'pytest-cov',
     ],
     
     entry_points={

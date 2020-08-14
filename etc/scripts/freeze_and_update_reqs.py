@@ -69,6 +69,7 @@ def generate_req_text(find_links, req_file, package_name=None, upgrade=False):
             '--output-file',
             req_file,
             '--allow-unsafe',
+            '--no-emit-find-links',
             '--pip-args',
             '--no-index',
         ]

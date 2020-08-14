@@ -31,7 +31,7 @@ set "CONF_DEFAULT=etc/conf"
 @rem # default thirdparty dist for dev
 if ""%CONF_DEFAULT%""==""etc/conf"" (
     @rem # set "TPP_DIR_DEV=thirdparty/dev"
-    set TPP_DIR_links="https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0"
+    set "TPP_DIR_links=https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0"
 )
 
 @rem # default supported version for Python 3 
