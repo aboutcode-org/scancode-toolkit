@@ -28,7 +28,6 @@ from __future__ import print_function
 
 import argparse
 import os
-from shutil import make_archive
 from subprocess import run
 import sys
 
@@ -54,12 +53,6 @@ def generate_os_archive(links, requirement, archive_name):
             archive_name,
         ]
     run(pip_agrs)
-    root_dir = os.path.abspath(archive_name)
-    output_dir = os.path.abspath(archive_name)
-    if on_windows:
-        make_archive(output_dir, 'zip', root_dir)
-    else:
-        make_archive(output_dir, 'gztar', root_dir)
 
 
 def main_with_args(args: str) -> None:
