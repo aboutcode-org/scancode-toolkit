@@ -56,6 +56,7 @@ from typecode import magic2
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
 from typecode.pygments_lexers import get_lexer_for_filename
 from typecode.pygments_lexers import guess_lexer
+from typecode.language_classifier import classify_language
 
 
 """
@@ -84,7 +85,7 @@ if TRACE:
 
 
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
-extension_file_location = os.path.join(data_dir, "extensions.yml")
+extension_file_location = os.path.join(data_dir, "language_extensions.yml")
 
 # Extensions and correspoding programming languages
 with open(extension_file_location, 'r') as stream:
@@ -306,8 +307,12 @@ class Type(object):
         if self._language_extension is None:
             if self.is_text and not self.is_media:
                 filename, file_extension = os.path.splitext(self.location)
-                language = extensions.get(file_extension, '')
-                if language and not file_extension.endswith('.json'):
+                languages = extensions.get(file_extension, '')
+                if languages and not file_extension.endswith('.json'):
+                    if len(languages) > 1:
+                        language = classify_language(self.location, languages)
+                    else:
+                        language = languages[0]
                     self._language_extension = language
         return self._language_extension
 
