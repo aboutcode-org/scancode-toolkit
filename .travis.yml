@@ -10,7 +10,7 @@ matrix:
     # Run minimal test suite
     - os: osx
       env: 
-        - PYTHON="3.6.8"
+        - PYTHON: "3.6.8"
         - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: generic
       python:
@@ -70,7 +70,7 @@ matrix:
       sudo: required
       script: 
         - source bin/activate
-        - ./bin/about check thirdparty/
+        - ./bin/about check thirdparty_general/
         - ./bin/about check src/
         - ./bin/about check etc/
         - ./bin/about check scancode-toolkit.ABOUT
