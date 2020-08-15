@@ -15,26 +15,26 @@ matrix:
       language: generic
       python:
 
-    - os: osx
-      env: 
-        - PYTHON="2.7.15"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-      language: generic
-      python:
+#    - os: osx
+#      env: 
+#        - PYTHON="2.7.15"
+#        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+#      language: generic
+#      python:
 
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-      language: python
-      python: "2.7"
-      dist: xenial
+#    - os: linux
+#      sudo: required
+#      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+#      language: python
+#      python: "2.7"
+#      dist: xenial
 
-    - os: linux
-      sudo: required
-      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-      language: python
-      python: "2.7"
-      dist: bionic
+#    - os: linux
+#      sudo: required
+#      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+#      language: python
+#      python: "2.7"
+#      dist: bionic
 
     - os: linux
       sudo: required

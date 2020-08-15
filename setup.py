@@ -216,7 +216,14 @@ setup(
         
         #Fix Me later
         'pytest',
+        'aboutcode-toolkit',
+        'apipkg',
+        'py',
+        'colorama',
+        'execnet',
         'pytest-xdist',
+        'bumpversion',
+        'coverage',
         'pytest-rerunfailures',
         'pytest-forked',
         'pytest-cov',
