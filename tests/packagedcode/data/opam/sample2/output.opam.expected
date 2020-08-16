@@ -18,7 +18,7 @@
     },
     {
       "type": "person",
-      "role": "email",
+      "role": "maintainer",
       "name": null,
       "email": "dev@ocsigen.org",
       "url": null
@@ -32,7 +32,7 @@
   "md5": null,
   "sha256": null,
   "sha512": null,
-  "bug_tracking_url": null,
+  "bug_tracking_url": "https://github.com/ocsigen/js_of_ocaml/issues",
   "code_view_url": null,
   "vcs_url": "git+https://github.com/ocsigen/js_of_ocaml.git",
   "copyright": null,

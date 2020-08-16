@@ -32,7 +32,7 @@
     },
     {
       "type": "person",
-      "role": "email",
+      "role": "maintainer",
       "name": null,
       "email": "kaustuv@chaudhuri.info",
       "url": null
@@ -50,8 +50,8 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "license_expression": "gpl-3.0",
+  "declared_license": "GPL-3.0-only",
   "notice_text": null,
   "root_path": null,
   "dependencies": [

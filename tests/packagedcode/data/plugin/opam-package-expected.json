@@ -77,7 +77,7 @@
             },
             {
               "type": "person",
-              "role": "email",
+              "role": "maintainer",
               "name": null,
               "email": "caml-list@inria.fr",
               "url": null
@@ -91,7 +91,7 @@
           "md5": null,
           "sha256": null,
           "sha512": null,
-          "bug_tracking_url": null,
+          "bug_tracking_url": "https://github.com/ocaml/ocaml/issues",
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,

@@ -81,14 +81,14 @@
     },
     {
       "type": "person",
-      "role": "email",
+      "role": "maintainer",
       "name": null,
       "email": "anil@recoil.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "email",
+      "role": "maintainer",
       "name": null,
       "email": "thomas@gazagnaire.org",
       "url": null
@@ -102,12 +102,12 @@
   "md5": null,
   "sha256": null,
   "sha512": null,
-  "bug_tracking_url": null,
+  "bug_tracking_url": "https://github.com/mirage/mirage/issues/",
   "code_view_url": null,
   "vcs_url": "git+https://github.com/mirage/mirage.git",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "license_expression": "isc",
+  "declared_license": "ISC",
   "notice_text": null,
   "root_path": null,
   "dependencies": [

@@ -25,7 +25,7 @@
     },
     {
       "type": "person",
-      "role": "email",
+      "role": "maintainer",
       "name": null,
       "email": "Christophe.Troestler@umons.ac.be",
       "url": null
@@ -39,12 +39,12 @@
   "md5": null,
   "sha256": null,
   "sha512": null,
-  "bug_tracking_url": null,
+  "bug_tracking_url": "https://github.com/Chris00/ANSITerminal/issues",
   "code_view_url": null,
   "vcs_url": "git+https://github.com/Chris00/ANSITerminal.git",
   "copyright": null,
-  "license_expression": null,
-  "declared_license": null,
+  "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+  "declared_license": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
   "notice_text": null,
   "root_path": null,
   "dependencies": [
