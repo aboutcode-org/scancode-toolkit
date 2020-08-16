@@ -111,10 +111,10 @@ def build_opam_package(package_data):
         )
 
     name = package_data.get('name')
-    maintainers = package_data.get('maintainer') or []
-    authors = package_data.get('authors') or []
     homepage_url = package_data.get('homepage')
     vcs_url = package_data.get('dev-repo')
+    bug_tracking_url = package_data.get('bug-reports')
+    declared_license = package_data.get('license')
     summary = package_data.get('synopsis')
     description = package_data.get('description')
     if summary:
@@ -122,32 +122,33 @@ def build_opam_package(package_data):
     elif summary and description:
         if len(summary) > len(description):
             description = summary
-    
+
     parties = []
+    authors = package_data.get('authors') or []
     for author in authors:
         parties.append(
             models.Party(
                 type=models.party_person,
                 name=author,
-                email=None,
                 role='author'
             )
         )
-    
+    maintainers = package_data.get('maintainer') or []
     for maintainer in maintainers:
         parties.append(
             models.Party(
                 type=models.party_person,
-                name=None,
                 email=maintainer,
-                role='email'
+                role='maintainer'
             )
         )
 
     package = OpamPackage(
-        name=name or None,
-        vcs_url=vcs_url or None,
+        name=name,
+        vcs_url=vcs_url,
         homepage_url=homepage_url,
+        bug_tracking_url=bug_tracking_url,
+        declared_license=declared_license,
         description=description,
         parties=parties,
         dependencies=package_dependencies
@@ -244,9 +245,9 @@ Example:
 
 def parse_opam(location):
     """
-    Return a dictionary containing all the opam data.
+    Return a mapping of package data collected from the opam OCaml package manifest file at `location`.
     """
-    with io.open(location, encoding='utf-8', closefd=True) as data:
+    with io.open(location, encoding='utf-8') as data:
         lines = data.readlines()
 
     opam_data = {}
@@ -256,12 +257,20 @@ def parse_opam(location):
         if parsed_line:
             key = parsed_line.group('key').strip()
             value = parsed_line.group('value').strip()
-            if 'maintainer' == key:
+            if key == 'description': # Get multiline description
+                value = ''
+                for cont in lines[i+1:]:
+                    value += ' ' + cont.strip()
+                    if '"""' in cont:
+                        break
+
+            opam_data[key] = clean_data(value)
+
+            if key == 'maintainer':
                 stripped_val = value.strip('["] ')
                 stripped_val = stripped_val.split('" "')
                 opam_data[key] = stripped_val
-                continue
-            if 'authors' == key:
+            elif key == 'authors':
                 if '[' in line: # If authors are present in multiple lines
                     for authors in lines[i+1:]:
                         value += ' ' + authors.strip()
@@ -269,11 +278,10 @@ def parse_opam(location):
                             break
                     value = value.strip('["] ')
                 else:
-                    value = get_stripped_data(value)   
+                    value = clean_data(value)   
                 value = value.split('" "')
                 opam_data[key] = value
-                continue
-            if 'depends' == key: # Get multiline dependencies
+            elif key == 'depends': # Get multiline dependencies
                 value = []
                 for dep in lines[i+1:]:
                     if ']' in dep:
@@ -286,20 +294,11 @@ def parse_opam(location):
                             )
                         )
                 opam_data[key] = value
-                continue
-            if 'description' == key: # Get multiline description
-                value = ''
-                for cont in lines[i+1:]:
-                    value += ' ' + cont.strip()
-                    if '"""' in cont:
-                        break
-
-            opam_data[key] = get_stripped_data(value)
 
     return opam_data
 
 
-def get_stripped_data(data):
+def clean_data(data):
     """
     Return data after removing unnecessary special character.
     """
