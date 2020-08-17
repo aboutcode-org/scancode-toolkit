@@ -77,8 +77,7 @@ class OpamPackage(models.Package):
 
 
 def is_opam(location):
-    if location.endswith('opam'):
-        return True
+    return location.endswith('opam')
 
 
 def parse(location):
@@ -112,9 +111,14 @@ def build_opam_package(package_data):
 
     name = package_data.get('name')
     homepage_url = package_data.get('homepage')
+    download_url = package_data.get('src')
     vcs_url = package_data.get('dev-repo')
     bug_tracking_url = package_data.get('bug-reports')
     declared_license = package_data.get('license')
+    sha1 = package_data.get('sha1')
+    md5 = package_data.get('md5')
+    sha256 = package_data.get('sha256')
+    sha512 = package_data.get('sha512')
     summary = package_data.get('synopsis')
     description = package_data.get('description')
     if summary:
@@ -147,6 +151,11 @@ def build_opam_package(package_data):
         name=name,
         vcs_url=vcs_url,
         homepage_url=homepage_url,
+        download_url=download_url,
+        sha1=sha1,
+        md5=md5,
+        sha256=sha256,
+        sha512=sha512,
         bug_tracking_url=bug_tracking_url,
         declared_license=declared_license,
         description=description,
@@ -225,6 +234,12 @@ parse_file_line = re.compile(
     r'(?P<value>(.*))'
 ).match
 
+parse_checksum = re.compile(
+    r'(?P<key>^(.+?))'
+    r'\='
+    r'(?P<value>(.*))'
+).match
+
 parse_dep = re.compile(
     r'^\s*\"'
     r'(?P<name>[A-z0-9\-]*)'
@@ -294,6 +309,27 @@ def parse_opam(location):
                             )
                         )
                 opam_data[key] = value
+            elif key == 'src': # Get multiline src
+                if not value:
+                    value = lines[i+1].strip()
+                opam_data[key] = clean_data(value)
+            elif key == 'checksum': # Get checksums
+                if '[' in line:
+                    for checksum in lines[i+1:]:
+                        checksum = checksum.strip('" ')
+                        if ']' in checksum:
+                            break
+                        parsed_checksum = parse_checksum(checksum)
+                        key = clean_data(parsed_checksum.group('key').strip())
+                        value = clean_data(parsed_checksum.group('value').strip())
+                        opam_data[key] = value
+                else:
+                    value = value.strip('" ')
+                    parsed_checksum = parse_checksum(value)
+                    if parsed_checksum:
+                        key = clean_data(parsed_checksum.group('key').strip())
+                        value = clean_data(parsed_checksum.group('value').strip())
+                        opam_data[key] = value
 
     return opam_data
 
