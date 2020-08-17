@@ -47,9 +47,6 @@ on_linux = str(sys.platform).lower().startswith('linux')
 
 @unittest.skipIf(not on_linux, 'Check about files only on one OS')
 class TestCheckAboutFiles(unittest.TestCase):
-    def test_about_files_thirdparty(self):
-        subprocess.check_output('bin/about check thirdparty_general/'.split(), cwd=root_dir)
-
     def test_about_files_src(self):
         subprocess.check_output('bin/about check src/'.split(), cwd=root_dir)
 

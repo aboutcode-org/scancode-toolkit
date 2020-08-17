@@ -38,21 +38,15 @@ from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
 from commoncode.system import on_linux
-from commoncode.system import py2
 
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
 
-if on_linux and py2:
-    POSIX_PATH_SEP = b'/'
-    WIN_PATH_SEP = b'\\'
-    EMPTY_STRING = b''
-else:
-    POSIX_PATH_SEP = u'/'
-    WIN_PATH_SEP = u'\\'
-    EMPTY_STRING = u''
+POSIX_PATH_SEP = u'/'
+WIN_PATH_SEP = u'\\'
+EMPTY_STRING = u''
 
 #
 # Build OS-portable and safer paths

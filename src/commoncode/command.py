@@ -46,8 +46,6 @@ from commoncode.fileutils import get_temp_dir
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 
 
@@ -81,14 +79,9 @@ if TRACE:
 curr_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
 
-if py2:
-    PATH_ENV_VAR = b'PATH'
-    LD_LIBRARY_PATH = b'LD_LIBRARY_PATH'
-    DYLD_LIBRARY_PATH = b'DYLD_LIBRARY_PATH'
-else:
-    PATH_ENV_VAR = 'PATH'
-    LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
-    DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
+PATH_ENV_VAR = 'PATH'
+LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
+DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
 
 
 def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, log=TRACE):
@@ -114,12 +107,8 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     # temp files for stderr and stdout
     tmp_dir = get_temp_dir(prefix='cmd-')
 
-    if on_linux and py2:
-        stdout = b'stdout'
-        stderr = b'stderr'
-    else:
-        stdout = 'stdout'
-        stderr = 'stderr'
+    stdout = 'stdout'
+    stderr = 'stderr'
 
     sop = path.join(tmp_dir, stdout)
     sep = path.join(tmp_dir, stderr)
@@ -138,10 +127,7 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     proc = None
     rc = 100
 
-    if py2:
-        okwargs = dict(mode='wb')
-    if py3:
-        okwargs = dict(mode='w', encoding='utf-8')
+    okwargs = dict(mode='w', encoding='utf-8')
 
     try:
         with io.open(sop, **okwargs) as stdout, io.open(sep, **okwargs) as stderr:
@@ -195,13 +181,7 @@ def get_env(base_vars=None, lib_dir=None):
         env_vars.update(
             {DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
 
-    if py2:
-        # ensure that we use bytes on py2 and unicode on py3
-        def to_bytes(s):
-            return s if isinstance(s, bytes) else s.encode('utf-8')
-        env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
-    else:
-        env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
+    env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
 
     return env_vars
 
@@ -248,15 +228,8 @@ def load_shared_library(dll_path, lib_dir):
     if lib_dir and not path.exists(lib_dir):
         raise ImportError('Shared library "lib_dir" does not exists: %(lib_dir)r' % locals())
 
-    if on_linux and py2:
-        # bytes only there ...
-        if not isinstance(dll_path, bytes):
-            dll_path = fsencode(dll_path)
-
-    else:
-        # ... unicode everywhere else
-        if not isinstance(dll_path, compat.unicode):
-            dll_path = fsdecode(dll_path)
+    if not isinstance(dll_path, compat.unicode):
+        dll_path = fsdecode(dll_path)
 
     try:
         with pushd(lib_dir):
@@ -304,16 +277,10 @@ def update_path_var(existing_path_var, new_path, pathsep=PATH_ENV_SEP):
 
     # ensure we use unicode or bytes depending on OSes
     # TODO: deal also with Python versions
-    if on_linux and py2:
-        # bytes ...
-        existing_path_var = fsencode(existing_path_var)
-        new_path = fsencode(new_path)
-        pathsep = fsencode(pathsep)
-    else:
-        # ... and unicode otherwise
-        existing_path_var = fsdecode(existing_path_var)
-        new_path = fsdecode(new_path)
-        pathsep = fsdecode(pathsep)
+    # ... and unicode otherwise
+    existing_path_var = fsdecode(existing_path_var)
+    new_path = fsdecode(new_path)
+    pathsep = fsdecode(pathsep)
 
     path_elements = existing_path_var.split(pathsep)
 
@@ -329,14 +296,9 @@ def update_path_var(existing_path_var, new_path, pathsep=PATH_ENV_SEP):
         # new path is already in PATH, change nothing
         updated_path_var = existing_path_var
 
-    if py2:
-        # always use bytes for env vars...
-        if isinstance(updated_path_var, compat.unicode):
-            updated_path_var = fsencode(updated_path_var)
-    else:
-        # ... else use unicode
-        if not isinstance(updated_path_var, compat.unicode):
-            updated_path_var = fsdecode(updated_path_var)
+    # ... else use unicode
+    if not isinstance(updated_path_var, compat.unicode):
+        updated_path_var = fsdecode(updated_path_var)
 
     # at this stage new_path_env is unicode on all OSes on Py3
     # and on Py2 it is bytes on Linux and unicode elsewhere

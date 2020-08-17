@@ -30,7 +30,6 @@ from __future__ import unicode_literals
 from commoncode import compat
 from commoncode import text
 from commoncode.text import CR, LF
-from commoncode.system import py2
 
 
 def test_lines():
@@ -56,10 +55,7 @@ def test_foldcase():
 
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    if py2:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', '\xc2', '\xc2', 'just']
-    else:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
+    expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
     assert expected == text.nopunctuation(test).split()
 
     test = 'This problem is about: sequence-bunching\n\n just \n'

@@ -9,11 +9,11 @@ matrix:
   include:
     # Run minimal test suite
     - os: osx
-      env: 
-        - PYTHON_VERSION=3.6.8
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+      osx_image: xcode10
       language: generic
-      python:
+      env: 
+        - PYTHON=36
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
 
 #    - os: osx
 #      env: 
@@ -70,7 +70,6 @@ matrix:
       sudo: required
       script: 
         - source bin/activate
-        - ./bin/about check thirdparty_general/
         - ./bin/about check src/
         - ./bin/about check etc/
         - ./bin/about check scancode-toolkit.ABOUT
@@ -93,8 +92,20 @@ before_install:
   - chmod +x ./docs/scripts/sphinx_build_link_check.sh
   - chmod +x ./docs/scripts/doc8_style_check.sh
 
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci;
+    source ./macports-ci install;
+    fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    yes | sudo port install python$PYTHON;
+    yes | sudo port install py$PYTHON-pip;
+    sudo port select --set python3 python$PYTHON;
+    sudo port select --set pip pip$PYTHON;
+    export PATH=$PATH:/Users/travis/Library/Python/$PYTHON/bin;
+    fi
+
 install:
-  - ./configure
+  - PYTHON_EXE=python3 ./configure
 
 script:
   # If debugging, use a subset of tests to wait less:

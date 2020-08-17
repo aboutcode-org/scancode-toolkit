@@ -39,7 +39,7 @@ def generate_os_archive(links, requirement, archive_name):
     that contains wheels and sdist for specific OS and python by taking links, 
     requirement as an input.
     """
-    pip_agrs =[
+    pip_args =[
             'pip',
             'download',
             '--verbose',
@@ -52,7 +52,7 @@ def generate_os_archive(links, requirement, archive_name):
             '--dest',
             archive_name,
         ]
-    run(pip_agrs)
+    run(pip_args)
 
 
 def main_with_args(args: str) -> None:

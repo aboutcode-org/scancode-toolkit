@@ -27,7 +27,6 @@ from __future__ import absolute_import, print_function
 from unittest import TestCase
 
 from commoncode import paths
-from commoncode.system import py2
 
 
 class TestPortablePath(TestCase):
@@ -88,10 +87,7 @@ class TestPortablePath(TestCase):
         assert expected == test
 
     def test_safe_path_posix_style_chinese_char(self):
-        if py2:
-            test = paths.safe_path('/includes/webform.compon\xd2\xaants.inc/')
-        else:
-            test = paths.safe_path(b'/includes/webform.compon\xd2\xaants.inc/')
+        test = paths.safe_path(b'/includes/webform.compon\xd2\xaants.inc/')
         expected = 'includes/webform.componS_nts.inc'
         assert expected == test
 

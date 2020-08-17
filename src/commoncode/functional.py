@@ -28,9 +28,6 @@ import functools
 from types import GeneratorType
 from array import array
 
-from commoncode.system import py2
-
-
 def flatten(seq):
     """
     Flatten recursively a sequence and all its sub-sequences that can be tuples,
@@ -54,10 +51,7 @@ def flatten(seq):
     Version: Id: util.py,v 1.22 2005/12/16 00:08:21 erwin Exp erwin
     """
     r = []
-    if py2:
-        generators = GeneratorType, xrange
-    else:
-        generators = GeneratorType, range
+    generators = GeneratorType, range
 
     for x in seq:
         if isinstance(x, (list, tuple)):

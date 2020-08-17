@@ -46,7 +46,6 @@ from commoncode import filetype
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
-from commoncode.system import py2
 
 
 # a base test dir specific to a given test run
@@ -56,16 +55,10 @@ test_run_temp_dir = None
 # set to 1 to see the slow tests
 timing_threshold = sys.maxsize
 
-if on_linux and py2:
-    POSIX_PATH_SEP = b'/'
-    WIN_PATH_SEP = b'\\'
-    EMPTY_STRING = b''
-    DOT = b'.'
-else:
-    POSIX_PATH_SEP = u'/'
-    WIN_PATH_SEP = u'\\'
-    EMPTY_STRING = u''
-    DOT = u'.'
+POSIX_PATH_SEP = u'/'
+WIN_PATH_SEP = u'\\'
+EMPTY_STRING = u''
+DOT = u'.'
 
 if on_windows:
     OS_PATH_SEP = WIN_PATH_SEP
@@ -77,8 +70,6 @@ def to_os_native_path(path):
     """
     Normalize a path to use the native OS path separator.
     """
-    if on_linux and py2:
-        path = fsencode(path)
     path = path.replace(POSIX_PATH_SEP, OS_PATH_SEP)
     path = path.replace(WIN_PATH_SEP, OS_PATH_SEP)
     path = path.rstrip(OS_PATH_SEP)
@@ -90,10 +81,6 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
     """
-    if on_linux and py2:
-        test_path = fsencode(test_path)
-        test_data_dir = fsencode(test_data_dir)
-
     if debug:
         import inspect
         caller = inspect.stack()[1][3]
@@ -131,9 +118,6 @@ class FileDrivenTesting(object):
         test location if `copy` is True.
         """
         test_data_dir = self.test_data_dir
-        if on_linux and py2:
-            test_path = fsencode(test_path)
-            test_data_dir = fsencode(test_data_dir)
 
         if debug:
             import inspect
@@ -166,11 +150,6 @@ class FileDrivenTesting(object):
         if extension is None:
             extension = '.txt'
 
-        if on_linux and py2:
-            extension = fsencode(extension)
-            dir_name = fsencode(dir_name)
-            file_name = fsencode(file_name)
-
         if extension and not extension.startswith(DOT):
                 extension = DOT + extension
 
@@ -194,8 +173,6 @@ class FileDrivenTesting(object):
             # now we add a space in the path for testing path with spaces
             test_run_temp_dir = fileutils.get_temp_dir(
                 base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
-        if on_linux and py2:
-            test_run_temp_dir = fsencode(test_run_temp_dir)
 
         test_run_temp_subdir = fileutils.get_temp_dir(
             base_dir=test_run_temp_dir, prefix='')
@@ -212,10 +189,6 @@ class FileDrivenTesting(object):
         Remove some version control directories and some temp editor files.
         """
         vcses = ('CVS', '.svn', '.git', '.hg')
-        if on_linux and py2:
-            vcses = tuple(fsencode(p) for p in vcses)
-            test_dir = fsencode(test_dir)
-
         for root, dirs, files in os.walk(test_dir):
             for vcs_dir in vcses:
                 if vcs_dir in dirs:
@@ -226,7 +199,7 @@ class FileDrivenTesting(object):
                     shutil.rmtree(path.join(root, vcs_dir), False)
 
             # editors temp file leftovers
-            tilde = b'~' if on_linux and py2 else '~'
+            tilde = '~'
             tilde_files = [path.join(root, file_loc) 
                            for file_loc in files if file_loc.endswith(tilde)]
             for tf in tilde_files:
@@ -240,15 +213,10 @@ class FileDrivenTesting(object):
         If `verbatim` is True preserve the permissions.
         """
         assert test_path and test_path != ''
-        if on_linux and py2:
-            test_path = fsencode(test_path)
         test_path = to_os_native_path(test_path)
         target_path = path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
-        if on_linux and py2:
-            target_dir = fsencode(target_dir)
-            original_archive = fsencode(original_archive)
         extract_func(original_archive, target_dir,
                      verbatim=verbatim)
         return target_dir
@@ -274,10 +242,6 @@ def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     Raw simplified extract for certain really weird paths and file
     names.
     """
-    if to_bytes and py2:
-        # use bytes for paths on ALL OSes (though this may fail on macOS)
-        target_dir = fsencode(target_dir)
-        test_path = fsencode(test_path)
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
@@ -296,8 +260,6 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     # always for using bytes for paths on all OSses... tar seems to use bytes internally
     # and get confused otherwise
     location = fsencode(location)
-    if on_linux and py2:
-        target_dir = fsencode(target_dir)
 
     with open(location, 'rb') as input_tar:
         tar = None
@@ -323,10 +285,6 @@ def extract_zip(location, target_dir, *args, **kwargs):
     if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
-    if on_linux and py2:
-        location = fsencode(location)
-        target_dir = fsencode(target_dir)
-
     with zipfile.ZipFile(location) as zipf:
         for info in zipf.infolist():
             name = info.filename
@@ -349,10 +307,6 @@ def extract_zip_raw(location, target_dir, *args, **kwargs):
     """
     if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
-
-    if on_linux and py2:
-        location = fsencode(location)
-        target_dir = fsencode(target_dir)
 
     with zipfile.ZipFile(location) as zipf:
         zipf.extractall(path=target_dir)

@@ -51,6 +51,7 @@ def num_to_bin(num):
 
     return num.to_bytes((num.bit_length() + 7) // 8, 'big')
 
+
 def bin_to_num(binstr):
     """
     Convert a big endian byte-ordered binary string to an integer or long.
