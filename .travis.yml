@@ -10,7 +10,7 @@ matrix:
     # Run minimal test suite
     - os: osx
       env: 
-        - PYTHON: "3.6.8"
+        - PYTHON_VERSION=3.6.8
         - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: generic
       python:
