@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Ocaml",
-  "description": "Basic control of ANSI compliant terminals and the windows shell.",
+  "description": "Basic control of ANSI compliant terminals and the windows shell",
   "release_date": null,
   "parties": [
     {
@@ -27,16 +27,16 @@
       "type": "person",
       "role": "maintainer",
       "name": null,
-      "email": "Christophe.Troestler@umons.ac.be",
+      "email": "Christophe Troestler <Christophe.Troestler@umons.ac.be>",
       "url": null
     }
   ],
   "keywords": [],
   "homepage_url": "https://github.com/Chris00/ANSITerminal",
-  "download_url": "https://download.ocamlcore.org/ansiterminal/ansiterminal/0.6.2/ANSITerminal-0.6.2.tar.gz",
+  "download_url": "https://github.com/Chris00/ANSITerminal/releases/download/0.8/ANSITerminal-0.8.tbz",
   "size": null,
   "sha1": null,
-  "md5": "b7a7b7cce64eabf224d05ed9f2b9d471",
+  "md5": "b3fc33f17823e85c86a4d9cf4498c40e",
   "sha256": null,
   "sha512": null,
   "bug_tracking_url": "https://github.com/Chris00/ANSITerminal/issues",
@@ -50,7 +50,23 @@
   "dependencies": [
     {
       "purl": "pkg:opam/ocaml",
-      "requirement": "< 4.05.0",
+      "requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:opam/jbuilder",
+      "requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:opam/base-bytes",
+      "requirement": "",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
@@ -59,22 +75,6 @@
     {
       "purl": "pkg:opam/base-unix",
       "requirement": "",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlbuild",
-      "requirement": "build",
-      "scope": "dependency",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false
-    },
-    {
-      "purl": "pkg:opam/ocamlfind",
-      "requirement": "build",
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
