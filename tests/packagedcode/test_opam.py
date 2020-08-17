@@ -67,11 +67,33 @@ class TestOcaml(PackageTester):
         package = opam.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
+    def test_parse_sample6(self):
+        test_file = self.get_test_loc('opam/sample6/sample6.opam')
+        expected_loc = self.get_test_loc('opam/sample6/output.opam.expected')
+        package = opam.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_sample7(self):
+        test_file = self.get_test_loc('opam/sample7/sample7.opam')
+        expected_loc = self.get_test_loc('opam/sample7/output.opam.expected')
+        package = opam.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_sample8(self):
+        test_file = self.get_test_loc('opam/sample8/opam')
+        expected_loc = self.get_test_loc('opam/sample8/output.opam.expected')
+        package = opam.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
 
 
 FILE_LINE = [
     ('authors: "BAP Team"', ('authors', '"BAP Team"')),
     ('homepage: "https://github.com/BinaryAnalysisPlatform/bap/"', ('homepage', '"https://github.com/BinaryAnalysisPlatform/bap/"'))
+]
+
+CHECKSUM_LINE = [
+    ('md5=b7a7b7cce64eabf224d05ed9f2b9d471', ('md5', 'b7a7b7cce64eabf224d05ed9f2b9d471')),
+    ('md5=86d48dc11dd66adac6daadbecb5f6888', ('md5', '86d48dc11dd66adac6daadbecb5f6888'))
 ]
 
 DEP_LINE = [
@@ -81,6 +103,7 @@ DEP_LINE = [
     ('"bitstring" {< "3.0.0"}', ('bitstring', '{< "3.0.0"}'))
 ]
 
+
 class TestRegex(object):
     @pytest.mark.parametrize('line, expected_data', FILE_LINE)
     def test_parse_file_line(self, line, expected_data):
@@ -89,9 +112,29 @@ class TestRegex(object):
         key, value = line_information.get('key'), line_information.get('value')
         assert (key, value) == expected_data
 
+    @pytest.mark.parametrize('checksum, expected_data', CHECKSUM_LINE)
+    def test_parse_checksum(self, checksum, expected_data):
+        parsed_checksum = opam.parse_checksum(checksum)
+        checksum_information = parsed_checksum.groupdict()
+        key, value = checksum_information.get('key'), checksum_information.get('value')
+        assert (key, value) == expected_data
+
     @pytest.mark.parametrize('dep, expected_data', DEP_LINE)
     def test_parse_dep(self, dep, expected_data):
         parsed_dep = opam.parse_dep(dep)
         dep_information = parsed_dep.groupdict()
         name, version = dep_information.get('name'), dep_information.get('version')
         assert (name, version) == expected_data
+
+
+LINE = [
+    ('"caml-list@inria.fr"', 'caml-list@inria.fr'),
+    ('[make "install"]', 'make install')
+]
+
+
+class TestFunction(object):
+    @pytest.mark.parametrize('line, expected_data', LINE)
+    def test_parse_file_line(self, line, expected_data):
+        stripped_line = opam.clean_data(line)
+        assert stripped_line == expected_data
