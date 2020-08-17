@@ -61,7 +61,7 @@ class OpamPackage(models.Package):
     default_primary_language = 'Ocaml'
     default_web_baseurl = 'https://opam.ocaml.org/packages'
     default_download_baseurl = None
-    default_api_baseurl = None
+    default_api_baseurl = 'https://github.com/ocaml/opam-repository/blob/master/packages'
 
     @classmethod
     def recognize(cls, location):
@@ -75,6 +75,10 @@ class OpamPackage(models.Package):
         if self.name:
             return '{}/{}'.format(baseurl, self.name)
 
+    def api_data_url(self, baseurl=default_api_baseurl):
+        if self.name and self.version:
+            return '{}/{}/{}.{}/opam'.format(baseurl, self.name, self.name, self.version)
+
 
 def is_opam(location):
     return location.endswith('opam')
@@ -87,16 +91,16 @@ def parse(location):
     if not is_opam(location):
         return
 
-    package_data = parse_opam(location)
-    return build_opam_package(package_data)
+    opams = parse_opam(location)
+    return build_opam_package(opams)
 
 
-def build_opam_package(package_data):
+def build_opam_package(opams):
     """
     Return a Package from a opam file or None.
     """
     package_dependencies = []
-    deps = package_data.get('depends') or []
+    deps = opams.get('depends') or []
     for dep in deps:
         package_dependencies.append(
             models.DependentPackage(
@@ -109,18 +113,19 @@ def build_opam_package(package_data):
             )
         )
 
-    name = package_data.get('name')
-    homepage_url = package_data.get('homepage')
-    download_url = package_data.get('src')
-    vcs_url = package_data.get('dev-repo')
-    bug_tracking_url = package_data.get('bug-reports')
-    declared_license = package_data.get('license')
-    sha1 = package_data.get('sha1')
-    md5 = package_data.get('md5')
-    sha256 = package_data.get('sha256')
-    sha512 = package_data.get('sha512')
-    summary = package_data.get('synopsis')
-    description = package_data.get('description')
+    name = opams.get('name')
+    version = opams.get('version')
+    homepage_url = opams.get('homepage')
+    download_url = opams.get('src')
+    vcs_url = opams.get('dev-repo')
+    bug_tracking_url = opams.get('bug-reports')
+    declared_license = opams.get('license')
+    sha1 = opams.get('sha1')
+    md5 = opams.get('md5')
+    sha256 = opams.get('sha256')
+    sha512 = opams.get('sha512')
+    summary = opams.get('synopsis')
+    description = opams.get('description')
     if summary:
         description = summary
     elif summary and description:
@@ -128,7 +133,7 @@ def build_opam_package(package_data):
             description = summary
 
     parties = []
-    authors = package_data.get('authors') or []
+    authors = opams.get('authors') or []
     for author in authors:
         parties.append(
             models.Party(
@@ -137,7 +142,7 @@ def build_opam_package(package_data):
                 role='author'
             )
         )
-    maintainers = package_data.get('maintainer') or []
+    maintainers = opams.get('maintainer') or []
     for maintainer in maintainers:
         parties.append(
             models.Party(
@@ -149,6 +154,7 @@ def build_opam_package(package_data):
 
     package = OpamPackage(
         name=name,
+        version=version,
         vcs_url=vcs_url,
         homepage_url=homepage_url,
         download_url=download_url,
@@ -252,6 +258,10 @@ Example:
 >>> p = parse_file_line('authors: "BAP Team"')
 >>> assert p.group('key') == ('authors')
 >>> assert p.group('value') == ('"BAP Team"')
+
+>>> p = parse_file_line('md5=b7a7b7cce64eabf224d05ed9f2b9d471')
+>>> assert p.group('key') == ('md5')
+>>> assert p.group('value') == ('b7a7b7cce64eabf224d05ed9f2b9d471')
 
 >>> p = parse_dep('"bap-std" {= "1.0.0"}')
 >>> assert p.group('name') == ('bap-std')
