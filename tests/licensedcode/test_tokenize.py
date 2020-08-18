@@ -34,8 +34,6 @@ import json
 import os
 from time import time
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
@@ -49,10 +47,7 @@ from licensedcode.tokenize import word_splitter
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
+mode = 'w'
 
 
 

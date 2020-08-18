@@ -35,8 +35,6 @@ from unittest.case import expectedFailure
 import saneyaml
 
 from commoncode import compat
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
@@ -67,10 +65,7 @@ class TestRubyGemspec(FileBasedTesting):
             pass
 
         if regen:
-            if py2:
-                mode = 'wb'
-            if py3:
-                mode = 'w'
+            mode = 'w'
             with open(expected_loc, mode) as ex:
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='UTF-8') as ex:
@@ -145,10 +140,7 @@ def create_test_function(test_loc, test_name, regen=False):
         package.license_expression = package.compute_normalized_license()
         package = [package.to_dict()]
         if regen:
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
+            wmode = 'w'
             with io.open(expected_json_loc, wmode) as ex:
                 json.dump(package, ex, indent=2)
 
@@ -156,9 +148,7 @@ def create_test_function(test_loc, test_name, regen=False):
             expected = json.load(ex, object_pairs_hook=OrderedDict)
         assert expected == package
 
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
     check_rubygem.__name__ = test_name

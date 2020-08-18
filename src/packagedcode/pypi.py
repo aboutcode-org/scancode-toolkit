@@ -49,7 +49,6 @@ import saneyaml
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
@@ -243,10 +242,7 @@ def parse_with_dparse(location):
                          filetypes.pipfile,
                          filetypes.pipfile_lock):
         return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
+    mode = 'r'
     with open(location, mode) as f:
         content = f.read()
 
@@ -329,10 +325,7 @@ def parse_setup_py(location):
         return
 
     # FIXME: what if this is unicode text?
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
+    mode = 'r'
     with open(location, mode) as inp:
         setup_text = inp.read()
 

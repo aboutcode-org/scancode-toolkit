@@ -32,18 +32,13 @@ import json
 import os.path
 
 from commoncode import compat
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest
 from packagedcode.jar_manifest import get_normalized_package_data
 
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
+mode = 'w'
 
 
 class BaseParseManifestCase(testcase.FileBasedTesting):
@@ -124,9 +119,7 @@ def create_test_function(test_manifest_loc, test_name, check_parse=True, regen=F
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
     test_manifest.__name__ = test_name
     return test_manifest

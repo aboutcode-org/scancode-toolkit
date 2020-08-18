@@ -35,15 +35,10 @@ import time
 
 from commoncode.system import on_linux
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from scancode_config import scancode_root_dir
 
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
+mode = 'w'
 
 
 def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
@@ -57,10 +52,7 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
-    if on_linux and py2:
-        scmd = b'scancode'
-    else:
-        scmd = u'scancode'
+    scmd = u'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
     rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
 

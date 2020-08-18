@@ -29,8 +29,6 @@ from hashlib import md5
 
 from six import string_types
 
-from commoncode.system import py2
-from commoncode.system import py3
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -65,10 +63,7 @@ def tokens_hash(tokens):
     """
     Return a digest binary string computed from a sequence of numeric token ids.
     """
-    if py2:
-        as_bytes = array('h', tokens).tostring()
-    if py3:
-        as_bytes = array('h', tokens).tobytes()
+    as_bytes = array('h', tokens).tobytes()
     return md5(as_bytes).digest()
 
 
