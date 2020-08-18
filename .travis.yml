@@ -1,6 +1,6 @@
 
 ################################################################################
-# We use Travis to run minimal smoke tests suites on Pythons 2.7 and 3.6
+# We use Travis to run minimal smoke tests suites on Pythons 3.6
 # on macOS and Linux
 # We also run the documentation build and the ABOUT file checks
 ################################################################################
@@ -14,27 +14,6 @@ matrix:
       env: 
         - PYTHON=36
         - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-
-#    - os: osx
-#      env: 
-#        - PYTHON="2.7.15"
-#        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-#      language: generic
-#      python:
-
-#    - os: linux
-#      sudo: required
-#      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-#      language: python
-#      python: "2.7"
-#      dist: xenial
-
-#    - os: linux
-#      sudo: required
-#      env: TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
-#      language: python
-#      python: "2.7"
-#      dist: bionic
 
     - os: linux
       sudo: required

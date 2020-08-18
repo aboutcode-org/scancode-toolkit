@@ -119,7 +119,6 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
@@ -127,17 +126,15 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
+    python_requires='!=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
     install_requires=[
         # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
         # See https://github.com/nexB/scancode-toolkit/issues/1463
-        'more_itertools <  6.0.0; python_version == "2.7"',
         # end hack
 
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'py2_ipaddress >= 2.0, <3.5; python_version<"3"',
         'urlpy',
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
@@ -145,13 +142,10 @@ setup(
         # extractcode
         'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98; python_version<"3"',
         'extractcode_libarchive',
         'extractcode_7z',
 
         # commoncode
-        'backports.os == 0.1.1; python_version<"3"',
         'future >= 0.16.0',
         'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
@@ -192,8 +186,7 @@ setup(
         'dparse >= 0.4.1',
 
         # used to fix mojibake in Windows PE
-        'ftfy <  5.0.0; python_version == "2.7"',
-        'ftfy>=  5.0.0; python_version > "3"',
+        'ftfy>=  5.0.0',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
