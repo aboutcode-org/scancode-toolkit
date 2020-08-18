@@ -68,7 +68,6 @@ from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
-from commoncode.system import py2
 from commoncode.system import on_windows
 from commoncode.system import on_linux
 
@@ -590,10 +589,7 @@ def run_scan(
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
-        if on_linux and py2:
-            assert isinstance(input, bytes)
-        else:
-            assert isinstance(input, compat.unicode)
+        assert isinstance(input, compat.unicode)
 
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
@@ -1206,10 +1202,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
         while True:
             try:
-                if py2:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
-                else:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
+                location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
 
                 if TRACE_DEEP:
                     logger_debug(

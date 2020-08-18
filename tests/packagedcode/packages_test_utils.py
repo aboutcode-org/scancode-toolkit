@@ -31,8 +31,6 @@ import os.path
 import json
 import shutil
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import testcase
 
 
@@ -50,10 +48,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
+            wmode = 'w'
             with open(regened_exp_loc, wmode) as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
@@ -83,10 +78,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
+            wmode = 'w'
             with open(regened_exp_loc, wmode) as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 

@@ -75,8 +75,6 @@ from commoncode.fileutils import splitext_name
 
 from commoncode import ignore
 from commoncode.system import on_linux
-from commoncode.system import py2
-from commoncode.system import py3
 
 
 """
@@ -314,10 +312,7 @@ class Codebase(object):
 
         # setup location
         ########################################################################
-        if on_linux and py2:
-            location = fsencode(location)
-        else:
-            location = fsdecode(location)
+        location = fsdecode(location)
 
         location = abspath(normpath(expanduser(location)))
         location = location.rstrip(POSIX_PATH_SEP).rstrip(WIN_PATH_SEP)
@@ -415,7 +410,7 @@ class Codebase(object):
         """
         if not self.cache_dir:
             return
-        resid = (b'%08x'if (py2 and on_linux) else '%08x') % rid
+        resid = ('%08x') % rid
         cache_sub_dir, cache_file_name = resid[-2:], resid
         parent = join(self.cache_dir, cache_sub_dir)
         if create and not exists(parent):
@@ -440,7 +435,7 @@ class Codebase(object):
 
         # Resource sub-class to use. Configured with plugin attributes if present
         self.resource_class = attr.make_class(
-            name=b'ScannedResource' if py2 else 'ScannedResource',
+            name='ScannedResource',
             attrs=self.resource_attributes or {},
             slots=True,
             # frozen=True,
@@ -731,10 +726,7 @@ class Codebase(object):
                             'in memory: %(resource)r' % resource)
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        if py2:
-            mode = 'wb'
-        if py3:
-            mode = 'w'
+        mode = 'w'
         with open(cache_location , mode) as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
@@ -964,10 +956,7 @@ def to_native_path(path):
     """
     if not path:
         return path
-    if on_linux and py2:
-        return fsencode(path)
-    else:
-        return fsdecode(path)
+    return fsdecode(path)
 
 
 def to_decoded_posix_path(path):
@@ -1372,10 +1361,7 @@ def get_codebase_cache_dir(temp_dir):
 
     prefix = 'scancode-codebase-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
-    if on_linux and py2:
-        cache_dir = fsencode(cache_dir)
-    else:
-        cache_dir = fsdecode(cache_dir)
+    cache_dir = fsdecode(cache_dir)
     return cache_dir
 
 
@@ -1387,7 +1373,7 @@ class _CodebaseAttributes(object):
 
 def get_codebase_attributes_class(attributes):
     return attr.make_class(
-        name=b'CodebaseAttributes' if py2 else u'CodebaseAttributes',
+        name=u'CodebaseAttributes',
         attrs=attributes or OrderedDict(),
         slots=True,
         bases=(_CodebaseAttributes,)
@@ -1598,7 +1584,7 @@ class VirtualCodebase(Codebase):
 
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(
-            name=b'ScannedResource' if py2 else u'ScannedResource',
+            name=u'ScannedResource',
             attrs=all_res_attributes or OrderedDict(),
             slots=True,
             # frozen=True,
