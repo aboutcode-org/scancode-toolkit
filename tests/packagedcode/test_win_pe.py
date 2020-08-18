@@ -31,6 +31,8 @@ import io
 import json
 import os
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from packagedcode import win_pe
 
@@ -41,7 +43,10 @@ class TestWinPe(FileBasedTesting):
     def check_win_pe(self, test_file, expected_file, regen=False):
         result = win_pe.pe_info(test_file, include_extra_data=True)
         if regen:
-            mode = 'w'
+            if py2:
+                mode = 'wb'
+            if py3:
+                mode = 'w'
             with open(expected_file, mode) as out:
                 json.dump(result, out, indent=2)
 

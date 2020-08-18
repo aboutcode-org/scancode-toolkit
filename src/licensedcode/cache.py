@@ -38,6 +38,7 @@ import yg.lockfile  # NOQA
 from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir
 from commoncode import ignore
+from commoncode.system import py3
 
 from scancode_config import scancode_cache_dir
 from scancode_config import scancode_src_dir
@@ -284,7 +285,10 @@ def load_index(cache_file, use_loads=False):
                 'Please delete "{cache_file}" and retry.\n'
                 'If the problem persists, copy this error message '
                 'and submit a bug report.\n'.format(**locals()))
-            raise ex_type(message).with_traceback(ex_traceback)
+            if py3:
+                raise ex_type(message).with_traceback(ex_traceback)
+            else:
+                six.reraise(ex_type, message, ex_traceback)
 
 
 _ignored_from_hash = partial(
@@ -310,7 +314,8 @@ def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
     hashable = (pth + str(getmtime(pth)) + str(getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
-    hashable=hashable.encode('utf-8')
+    if py3:
+        hashable=hashable.encode('utf-8')
     return md5(hashable).hexdigest()
 
 

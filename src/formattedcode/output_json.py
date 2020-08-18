@@ -31,6 +31,8 @@ import simplejson
 from six import string_types
 
 from commoncode import compat
+from commoncode.system import py2
+from commoncode.system import py3
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -63,11 +65,19 @@ if TRACE:
                                      and a or repr(a) for a in args))
 
 
-mode = 'w'
-space = u' '
-comma = u','
-colon = u':'
-eol = u'\n'
+if py2:
+    mode = 'wb'
+    space = b' '
+    comma = b','
+    colon = b':'
+    eol = b'\n'
+
+if py3:
+    mode = 'w'
+    space = u' '
+    comma = u','
+    colon = u':'
+    eol = u'\n'
 
 
 @output_impl

@@ -31,6 +31,8 @@ import json
 import os
 
 from commoncode.testcase import FileBasedTesting
+from commoncode.system import py2
+from commoncode.system import py3
 
 from licensedcode import cache
 from licensedcode import index
@@ -42,7 +44,10 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 def check_json(expected, results, regen=False):
     if regen:
-        mode = 'w'
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
         with open(expected, mode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:

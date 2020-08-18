@@ -40,6 +40,8 @@ except ImportError:
 from binascii import crc32
 import re
 
+from commoncode.system import py2
+from commoncode.system import py3
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
@@ -227,7 +229,8 @@ def select_ngrams(ngrams, with_pos=False):
         # FIXME: use a proper hash
         nghs = []
         for ng in ngram:
-            if isinstance(ng, str):
+            if ((py2 and isinstance(ng, basestring))
+                    or (py3 and isinstance(ng, str))):
                 ng = bytearray(ng, encoding='utf-8')
             else:
                 ng = bytearray(str(ng).encode('utf-8'))

@@ -49,6 +49,8 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
+from commoncode.system import py2
+from commoncode.system import py3
 
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
@@ -120,6 +122,10 @@ class CustomTemplateOutput(OutputPlugin):
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
+
+        if on_linux and py2:
+            custom_template = fsencode(custom_template)
+
         template_loc = custom_template
         output_file = custom_output
         write_templated(output_file, results, version, template_loc)
@@ -323,8 +329,12 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
 
         # write json data
         # FIXME: this should a regular JSON scan format
-        mode = 'w'
-        prefix = u'data='
+        if py2:
+            mode = 'wb'
+            prefix = b'data='
+        if py3:
+            mode = 'w'
+            prefix = u'data='
         with io.open(join(target_assets_dir, 'data.js'), mode) as f:
             f.write(prefix)
             simplejson.dump(results, f, iterable_as_array=True)

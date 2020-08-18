@@ -34,6 +34,8 @@ import unittest
 from license_expression import Licensing
 from license_expression import ExpressionError
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 
@@ -88,7 +90,10 @@ def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
         qry = Query(location=test_loc, idx=idx)
         results = [list(l) for l in qry.spdx_lines]
         if regen:
-            wmode = 'w'
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
             with open(expected_loc, wmode) as ef:
                 json.dump(results, ef, indent=2)
             expected = results

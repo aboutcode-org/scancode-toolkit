@@ -37,6 +37,7 @@ import pytest
 import cluecode.copyrights
 from commoncode import compat
 from commoncode import saneyaml
+from commoncode.system import py2
 from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
@@ -247,6 +248,11 @@ def make_copyright_test_functions(test, index, test_data_dir=test_env.test_data_
     whats = '_'.join(what)
     test_name = 'test_%(tfn)s_%(index)s' % locals()
     test_name = python_safe_name(test_name)
+
+    # onPython2 we need a plain non-unicode string
+    if py2 and isinstance(test_name, compat.unicode):
+        test_name = test_name.encode('utf-8')
+
     closure_test_function.__name__ = test_name
 
     if test.expected_failures:

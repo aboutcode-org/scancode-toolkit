@@ -131,7 +131,7 @@ else:
     bin_dir_name = 'bin'
 
 # set to True to trace command line executaion
-TRACE = True
+TRACE = False
 
 
 def call(cmd, root_dir):

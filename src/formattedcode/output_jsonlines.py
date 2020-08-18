@@ -29,6 +29,8 @@ from collections import OrderedDict
 
 import simplejson
 
+from commoncode.system import py2
+from commoncode.system import py3
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -40,12 +42,21 @@ Output plugin to write scan results as JSON lines.
 """
 
 
-mode = 'w'
-space = u' '
-comma = u','
-colon = u':'
-eol = u'\n'
-file_key = u'files'
+if py2:
+    mode = 'wb'
+    space = b' '
+    comma = b','
+    colon = b':'
+    eol = b'\n'
+    file_key = b'files'
+
+if py3:
+    mode = 'w'
+    space = u' '
+    comma = u','
+    colon = u':'
+    eol = u'\n'
+    file_key = u'files'
 
 
 @output_impl

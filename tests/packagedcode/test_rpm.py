@@ -35,6 +35,8 @@ import os
 from commoncode import compat
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
+from commoncode.system import py2
+from commoncode.system import py3
 from packagedcode import rpm
 
 
@@ -155,7 +157,10 @@ class TestRpmBasics(FileBasedTesting):
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        mode = 'w'
+        if py2:
+            mode = 'wb'
+        if py3:
+            mode = 'w'
         with io.open(expected_file, mode) as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
 
@@ -168,7 +173,7 @@ class TestRpmTags(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def check_rpm_tags(self, test_file):
-        suffix = '-expected.json'
+        suffix = b'-expected.json' if on_linux and py2 else '-expected.json'
         expected_file = test_file + suffix
         result = rpm.get_rpm_tags(test_file)._asdict()
         check_json(result, expected_file, regen=False)

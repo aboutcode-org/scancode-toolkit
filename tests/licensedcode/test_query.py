@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 import os
 
 from commoncode.testcase import FileBasedTesting
+from commoncode.system import py2
+from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
@@ -563,21 +565,40 @@ class TestQueryWithMultipleRuns(IndexTesting):
         query_doc = self.get_test_loc('query/runs/query.txt')
         q = Query(location=query_doc, idx=idx, line_threshold=4)
         result = [qr.to_dict() for qr in q.query_runs]
-        expected = [
-            {u'end': 0, u'start': 0, u'tokens': u'inc'},
-            {u'end': 121, u'start': 1,
-                u'tokens': (
-                u'this library is free software you can redistribute it and or modify '
-                u'it under the terms of the gnu library general public license as '
-                u'published by the free software foundation either version 2 of the '
-                u'license or at your option any later version this library is '
-                u'distributed in the hope that it will be useful but without any '
-                u'warranty without even the implied warranty of merchantability or '
-                u'fitness for particular purpose see the gnu library general public '
-                u'license for more details you should have received copy of the gnu '
-                u'library general public license along with this library see the file '
-                u'copying lib if not write to the free software foundation inc 51 '
-                u'franklin street fifth floor boston ma 02110 1301 usa')
+        if py2:
+            expected = [
+                {b'end': 0, b'start': 0, b'tokens': u'inc'},
+                {b'end': 121, b'start': 1,
+                 b'tokens': (
+                    u'this library is free software you can redistribute it and or modify '
+                    u'it under the terms of the gnu library general public license as '
+                    u'published by the free software foundation either version 2 of the '
+                    u'license or at your option any later version this library is '
+                    u'distributed in the hope that it will be useful but without any '
+                    u'warranty without even the implied warranty of merchantability or '
+                    u'fitness for particular purpose see the gnu library general public '
+                    u'license for more details you should have received copy of the gnu '
+                    u'library general public license along with this library see the file '
+                    u'copying lib if not write to the free software foundation inc 51 '
+                    u'franklin street fifth floor boston ma 02110 1301 usa')
+                 }
+            ]
+        if py3:
+            expected = [
+                {u'end': 0, u'start': 0, u'tokens': u'inc'},
+                {u'end': 121, u'start': 1,
+                 u'tokens': (
+                    u'this library is free software you can redistribute it and or modify '
+                    u'it under the terms of the gnu library general public license as '
+                    u'published by the free software foundation either version 2 of the '
+                    u'license or at your option any later version this library is '
+                    u'distributed in the hope that it will be useful but without any '
+                    u'warranty without even the implied warranty of merchantability or '
+                    u'fitness for particular purpose see the gnu library general public '
+                    u'license for more details you should have received copy of the gnu '
+                    u'library general public license along with this library see the file '
+                    u'copying lib if not write to the free software foundation inc 51 '
+                    u'franklin street fifth floor boston ma 02110 1301 usa')
                  }
             ]
 
@@ -655,12 +676,20 @@ class TestQueryWithMultipleRuns(IndexTesting):
         qry = Query(query_string=qs, idx=idx)
         result = [qr.to_dict() for qr in qry.query_runs]
         # FIXME: we should not even have a query run for things that are all digits
-        expected = [
-            {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
-            {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
-            {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
-            {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
-        ]
+        if py2:
+            expected = [
+                {b'end': 5, b'start': 0, b'tokens': u'1 80 0 256 1568 1953'},
+                {b'end': 12, b'start': 6, b'tokens': u'406 1151 1 429 368 634 8'},
+                {b'end': 17, b'start': 13, b'tokens': u'1955 724 2 932 234'},
+                {b'end': 20, b'start': 18, b'tokens': u'694 634 110'},
+            ]
+        if py3:
+            expected = [
+                {u'end': 5, u'start': 0, u'tokens': u'1 80 0 256 1568 1953'},
+                {u'end': 12, u'start': 6, u'tokens': u'406 1151 1 429 368 634 8'},
+                {u'end': 17, u'start': 13, u'tokens': u'1955 724 2 932 234'},
+                {u'end': 20, u'start': 18, u'tokens': u'694 634 110'},
+            ]
         assert expected == result
 
         assert not any(qr.is_matchable() for qr in qry.query_runs)

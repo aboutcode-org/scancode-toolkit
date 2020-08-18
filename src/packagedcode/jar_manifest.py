@@ -32,6 +32,7 @@ import re
 import attr
 
 from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import py2
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.maven import parse_scm_connection
 from packagedcode.models import Package
@@ -81,7 +82,10 @@ def parse_manifest(location):
     """
     Return a Manifest parsed from the file at `location` or None if this
     cannot be parsed.         """
-    mode = 'r'
+    if py2:
+        mode = 'rb'
+    else:
+        mode = 'r'
     with open(location, mode) as manifest:
         return parse_manifest_data(manifest.read())
 

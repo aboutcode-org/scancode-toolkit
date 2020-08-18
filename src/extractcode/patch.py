@@ -34,6 +34,8 @@ import patch as pythonpatch
 
 from commoncode import paths
 from commoncode import fileutils
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode import text
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
@@ -91,8 +93,12 @@ def extract(location, target_dir):
 
         # write the location proper, with a suffix extension to avoid
         # recursive extraction
-        mode = 'w'
-        eol = u'\n'
+        if py2:
+            mode = 'wb'
+            eol = b'\n'
+        if py3:
+            mode = 'w'
+            eol = u'\n'
         subfile_path = base_subfile_path + extractcode.EXTRACT_SUFFIX
         with open(subfile_path, mode) as subfile:
             subfile.write(eol.join(text))

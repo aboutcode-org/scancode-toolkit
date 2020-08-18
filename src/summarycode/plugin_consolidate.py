@@ -34,6 +34,7 @@ from collections import OrderedDict
 import attr
 
 from cluecode.copyrights import CopyrightDetector
+from commoncode.system import py3
 from commoncode.text import python_safe_name
 from license_expression import Licensing
 from packagedcode import get_package_instance
@@ -46,7 +47,8 @@ from scancode import POST_SCAN_GROUP
 from summarycode import copyright_summary
 
 
-unicode = str
+if py3:
+    unicode = str
 
 
 # Tracing flags

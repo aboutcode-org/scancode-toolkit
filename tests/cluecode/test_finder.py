@@ -35,6 +35,7 @@ import pytest
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import compat
+from commoncode.system import py3
 from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
@@ -692,6 +693,18 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result in ([test] , [test + u'/'])
 
+    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
+    def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalidPpy2(self):
+        # set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
+            http://www.foo.bar./
+            ftps://foo.bar/
+        '''
+        for test in urls.split():
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert result in ([test] , [test + u'/'])
+
+    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_are_still_detected_and_normalized(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -701,6 +714,7 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert [test] == result
 
+    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
     def test_invalid_urls_are_not_detected(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -722,6 +736,7 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result, test
 
+    @pytest.mark.skipif(py3, reason='url-cpp behaves differently')
     def test_misc_invalid_urls_that_should_not_be_detected_2(self):
         # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''

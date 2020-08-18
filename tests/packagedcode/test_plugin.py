@@ -30,6 +30,8 @@ import os
 from unittest.case import skipIf
 
 from commoncode.system import on_windows
+from commoncode.system import py2
+from commoncode.system import py3
 from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
@@ -42,7 +44,10 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/help.txt')
         result = run_scan_click(['--list-packages'])
         if regen:
-            wmode = 'w'
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
             with open(expected_file, wmode) as ef:
                 ef.write(result.output)
         assert open(expected_file).read() == result.output

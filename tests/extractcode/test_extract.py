@@ -35,6 +35,7 @@ from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.system import on_linux
 from commoncode.system import on_windows
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 
 import extractcode
@@ -398,7 +399,7 @@ class TestExtract(BaseArchiveTestCase):
         expected = Exception('gzip decompression failed')
         self.assertRaisesInstance(expected, libarchive2.extract, test_file, test_dir)
 
-    @pytest.mark.skipif(not on_linux, reason='Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and not on_linux, reason='Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_linux(self):
         expected = (
             'a.tar.gz',
@@ -412,7 +413,7 @@ class TestExtract(BaseArchiveTestCase):
         assert result.errors[0].startswith('gzip decompression failed')
         assert not result.warnings
 
-    @pytest.mark.skipif(on_linux, reason='Expectations are different on Windows and macOS')
+    @pytest.mark.skipif(py3 and on_linux, reason='Expectations are different on Windows and macOS')
     def test_extract_tree_with_corrupted_archives_mac_win(self):
         expected = (
             'a.tar.gz',

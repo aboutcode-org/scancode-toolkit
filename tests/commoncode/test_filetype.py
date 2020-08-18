@@ -33,6 +33,7 @@ from commoncode.testcase import make_non_writable
 from commoncode import filetype
 from commoncode.system import on_posix
 from commoncode.system import on_windows
+from commoncode.system import py3
 from commoncode import fileutils
 from commoncode.testcase import FileBasedTesting
 from os.path import join
@@ -78,7 +79,7 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         try:
             assert sorted(expected) == sorted(results)
         except Exception as e:
-            if on_windows:
+            if on_windows and py3:
                 # On some Windows symlinkes are detected OK (Windows 10?) but not in Windows 7
                 expected += [ ('2-SYMTYPE', 'l') ]
                 assert sorted(expected) == sorted(results)

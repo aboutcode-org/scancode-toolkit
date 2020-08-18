@@ -36,6 +36,8 @@ import saneyaml
 from commoncode import compat
 from commoncode.functional import flatten
 from commoncode import text
+from commoncode.system import py2
+from commoncode.system import py3
 from licensedcode import cache
 from licensedcode import models
 
@@ -54,7 +56,9 @@ def make_validation_test(rule, test_name):
     """
     Build and return a test function closing on tests arguments.
     """
-    if isinstance(test_name, bytes):
+    if py2 and isinstance(test_name, compat.unicode):
+        test_name = test_name.encode('utf-8')
+    if py3 and isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
     if rule.is_negative or rule.is_false_positive:

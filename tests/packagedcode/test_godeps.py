@@ -31,6 +31,8 @@ import io
 import json
 import os
 
+from commoncode.system import py2
+from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from packagedcode import godeps
 
@@ -81,7 +83,10 @@ class TestGodeps(FileBasedTesting):
         results = godeps.parse(location=test_loc)
         expected_loc = self.get_test_loc(expected_file)
         if regen:
-            wmode = 'w'
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
             with open(expected_loc, wmode) as ex:
                 json.dump(results, ex, indent=2)
         with io.open(expected_loc, encoding='utf-8') as ex:
