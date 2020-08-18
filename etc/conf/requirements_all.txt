@@ -46,7 +46,9 @@ extractcode-7z==16.2.4.1 \
     --hash=sha256:a24094c606fc2a974f84c5293cd7f704c1866383ba0450465b80fc1d4e10f3d7 \
     # via scancode-toolkit (setup.py)
 extractcode-libarchive==3.4.2.1 \
+    --hash=sha256:558fad3098e5285ac7784a5bbf8463425e2bbb3d4218458b0b2ea53b34e3ff88 \
     --hash=sha256:83fb3f9a101adbf2ea8ce046d13634c2cfd1e7297a33e55feb790cad9844fda5 \
+    --hash=sha256:9922f30ce882e21e830ba39f81d9f052b09ee08365807b3f11284036c4a1f1eb \
     --hash=sha256:dc41439b863ccf1f9ed092c870e5537aafa227c23d90bd335382a17e5de9343b \
     # via scancode-toolkit (setup.py)
 fingerprints==0.6.5.1 \
@@ -205,7 +207,9 @@ toml==0.10.0 \
     # via scancode-toolkit (setup.py)
 typecode-libmagic==5.38.1 \
     --hash=sha256:434ab7d8dcc9a1de5137dab1e0e3dc2959502815e30c0fd9920f3d3b58ca39dc \
+    --hash=sha256:4bfb17fbb8ef035f03ca79d32daa1e05ca13bcc45e56fd7ccda52f496101d6eb \
     --hash=sha256:5bc822547d9537cc67e8bb7472eaf7d02ae172f72f22162e743ec3548974c226 \
+    --hash=sha256:f85edf1175ae8d9f26fdf972a66598db0afb88aae4f7f4fa0ef1477091f0f02b \
     # via scancode-toolkit (setup.py)
 typing==3.6.4 \
     --hash=sha256:3a887b021a77b292e151afb75323dea88a7bc1b3dfa92176cff8e44c8b68bddf \
