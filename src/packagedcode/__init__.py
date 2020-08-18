@@ -38,6 +38,7 @@ from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
+from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
@@ -63,6 +64,7 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
+    opam.OpamPackage,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
