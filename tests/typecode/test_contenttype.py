@@ -37,7 +37,6 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.system import on_windows_64
-from commoncode.system import py2
 
 from typecode.contenttype import get_filetype
 from typecode.contenttype import get_pygments_lexer
@@ -102,9 +101,6 @@ class TestContentType(FileBasedTesting):
     @skipIf(not on_linux, 'Windows and macOS have some issues with some non-unicode paths')
     def test_filetype_file_on_unicode_file_name2(self):
         zip_file_name = 'contenttype/unicode/unicode2.zip'
-        if py2:
-            zip_file_name = zip_file_name.encode('utf-8')
-
         test_zip = self.extract_test_zip(zip_file_name)
         test_dir = os.path.join(test_zip, 'a')
         f = [f for f in os.listdir(test_dir) if f.startswith('g')][0]

@@ -46,8 +46,6 @@ from commoncode import command
 from commoncode import compat
 from commoncode import fileutils
 from commoncode import paths
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 
 import extractcode
@@ -388,12 +386,7 @@ class Entry(object):
         if not path:
             path = func_w(self.entry_struct)
 
-        if py2 and isinstance(path, compat.unicode):
-            # FIXME: encoding MAY fail if the encoding is NOT UTF-8!
-            # .... should we transliterate there?
-            path = path.encode('utf-8')
-
-        if py3 and not isinstance(path, compat.unicode):
+        if not isinstance(path, compat.unicode):
             path = text.as_unicode(path)
 
         return path

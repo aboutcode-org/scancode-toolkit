@@ -28,7 +28,6 @@ from __future__ import division
 from functools import partial
 import unittest
 
-from commoncode.system import py2
 from typecode.entropy import gzip_entropy
 from typecode.entropy import shannon_entropy
 
@@ -48,12 +47,7 @@ class TestEntropy(unittest.TestCase):
         # https://github.com/UniquePassive/randcam/blob/9ebf7678f58427910b1a2b99704169dd467d47e1/tests/tests.py#L20
         # http://rosettacode.org/wiki/Entropy#Python
         check = partial(check_entropy, func=shannon_entropy)
-
-        if py2:
-            check(b''.join(map(chr, range(256))), 8.0)
-        else:
-            check(bytes(list(range(256))), 8.0)
-
+        check(bytes(list(range(256))), 8.0)
         check('', 0.0)
         check('0', 0.0)
         check(b'\x00' * 1024, 0.0)
@@ -83,11 +77,7 @@ class TestEntropy(unittest.TestCase):
 
     def test_gz_entropy(self):
         check = partial(check_entropy, func=gzip_entropy)
-        if py2:
-            check(b''.join(map(chr, range(256))), 1.04)
-        else:
-            check(bytes(list(range(256))), 1.04)
-
+        check(bytes(list(range(256))), 1.04)
         check('', 0.0)
         check('0', 9.0)
         check(b'\x00' * 1024, 0.02)

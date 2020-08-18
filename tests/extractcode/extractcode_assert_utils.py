@@ -36,8 +36,6 @@ from commoncode import filetype
 from commoncode import fileutils
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 
 """
 Shared archiving test utils.
@@ -50,10 +48,7 @@ def check_size(expected_size, location):
 
 def check_results_with_expected_json(results, expected_loc, regen=False):
     if regen:
-        if py2:
-            wmode = 'wb'
-        if py3:
-            wmode = 'w'
+        wmode = 'w'
         with open(expected_loc, wmode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ':'))
     with open(expected_loc, 'rb') as ex:
@@ -92,7 +87,7 @@ def check_files(test_dir, expected, regen=False):
         expected_is_json_file = True
         # this is a path to a JSON file
         if regen:
-            wmode = 'wb' if py2 else 'w'
+            wmode = 'w'
             with open(expected, wmode) as ex:
                 json.dump(result, ex, indent=2, separators=(',', ':'))
             expected_content = result

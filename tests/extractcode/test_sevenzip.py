@@ -31,8 +31,6 @@ import posixpath
 from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.system import on_windows
 from commoncode import fileutils
 from extractcode import sevenzip
@@ -44,10 +42,7 @@ class TestSevenZip(FileBasedTesting):
 
     def check_results_with_expected_json(self, results, expected_loc, clean_dates=False, regen=False):
         if regen:
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
+            wmode = 'w'
             with open(expected_loc, wmode) as ex:
                 json.dump(results, ex, indent=2, separators=(',', ':'))
 

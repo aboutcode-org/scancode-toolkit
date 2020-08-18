@@ -48,7 +48,6 @@ from commoncode.datautils import Boolean
 from commoncode.datautils import List
 from commoncode.datautils import String
 from commoncode.system import on_linux
-from commoncode.system import py2
 from commoncode import text
 from typecode import entropy
 from typecode import magic2
@@ -330,12 +329,8 @@ class Type(object):
         """
         if self._is_compact_js is None:
             # FIXME: when moving to Python 3
-            if on_linux and py2:
-                extensions = (b'.min.js', b'.typeface.json',)
-                json_ext = b'.json'
-            else:
-                extensions = (u'.min.js', u'.typeface.json',)
-                json_ext = u'.json'
+            extensions = (u'.min.js', u'.typeface.json',)
+            json_ext = u'.json'
 
             self._is_compact_js = (
                 self.is_js_map
@@ -357,8 +352,6 @@ class Type(object):
         if self._is_js_map is None:
             # FIXME: when moving to Python 3
             extensions = '.js.map', '.css.map',
-            if on_linux and py2:
-                extensions = as_bytes(extensions)
 
             self._is_js_map = (
                 self.is_text is True
@@ -379,10 +372,7 @@ class Type(object):
 
         ft = self.filetype_file.lower()
         can_extract = bool(archive.can_extract(self.location))
-        if on_linux and py2:
-            docx_ext = b'x'
-        else:
-            docx_ext = u'x'
+        docx_ext = u'x'
 
         if self.is_text:
             self._is_archive = False
@@ -408,8 +398,6 @@ class Type(object):
         # FIXME: add open office extensions
 
         msoffice_exts = u'.doc', u'.docx', u'.xlsx', u'.xlsx', u'.ppt', u'.pptx'
-        if on_linux and py2:
-            msoffice_exts = as_bytes(msoffice_exts)
         if loc.endswith(msoffice_exts):
             return True
         else:
@@ -424,12 +412,7 @@ class Type(object):
         ft = self.filetype_file.lower()
         loc = self.location.lower()
         package_archive_extensions = u'.jar', u'.war', u'.ear', u'.zip', '.whl', '.egg'
-        if on_linux and py2:
-            package_archive_extensions = as_bytes(package_archive_extensions)
-        if on_linux and py2:
-            gem_extension = b'.gem'
-        else:
-            gem_extension = u'.gem'
+        gem_extension = u'.gem'
 
         # FIXME: this is grossly under specified and is missing many packages
         if ('debian binary package' in ft
@@ -448,10 +431,7 @@ class Type(object):
         """
         ft = self.filetype_file.lower()
 
-        if on_linux and py2:
-            docx_ext = b'x'
-        else:
-            docx_ext = u'x'
+        docx_ext = u'x'
 
         if (not self.is_text
         and (
@@ -498,10 +478,7 @@ class Type(object):
         if any(m in mt for m in mimes) or any(t in ft for t in types):
             return True
 
-        if on_linux and py2:
-            tga_ext = b'.tga'
-        else:
-            tga_ext = u'.tga'
+        tga_ext = u'.tga'
 
         if ft == 'data' and mt=='application/octet-stream' and self.location.lower().endswith(tga_ext):
             # there is a regression in libmagic 5.38 https://bugs.astron.com/view.php?id=161
@@ -562,10 +539,7 @@ class Type(object):
         Return True if a file possibly contains some text.
         """
         if self._contains_text is None:
-            if on_linux and py2:
-                svg_ext = b'.svg'
-            else:
-                svg_ext = u'.svg'
+            svg_ext = u'.svg'
 
             if not self.is_file:
                 self._contains_text = False
@@ -645,8 +619,6 @@ class Type(object):
             '.rst', '.rest', '.txt', '.md',
             # This one is actually not handled by Pygments. There are probably more.
             '.log')
-        if on_linux and py2:
-            PLAIN_TEXT_EXTENSIONS = as_bytes(PLAIN_TEXT_EXTENSIONS)
 
         if self.location.endswith(PLAIN_TEXT_EXTENSIONS):
             return False
@@ -669,8 +641,6 @@ class Type(object):
         C_EXTENSIONS = set(
             ['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
             '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
-        if on_linux and py2:
-            C_EXTENSIONS = set(as_bytes(C_EXTENSIONS))
 
         ext = fileutils.file_extension(self.location)
         if self.is_text is True and ext.lower() in C_EXTENSIONS:
@@ -730,9 +700,9 @@ class Type(object):
         if self.is_file is True:
             name = fileutils.file_name(self.location)
 
-            if (fnmatch.fnmatch(name, b'*.java' if on_linux and py2 else u'*.java')
-             or fnmatch.fnmatch(name, b'*.aj' if on_linux and py2 else u'*.aj')
-             or fnmatch.fnmatch(name, b'*.ajt' if on_linux and py2 else u'*.ajt')):
+            if (fnmatch.fnmatch(name, u'*.java')
+             or fnmatch.fnmatch(name, u'*.aj')
+             or fnmatch.fnmatch(name, u'*.ajt')):
                 return True
             else:
                 return False
@@ -746,7 +716,7 @@ class Type(object):
         """
         if self.is_file is True:
             name = fileutils.file_name(self.location)
-            if fnmatch.fnmatch(name, b'*?.class' if on_linux and py2 else u'*?.class'):
+            if fnmatch.fnmatch(name, u'*?.class'):
                 return True
             else:
                 return False
@@ -769,8 +739,7 @@ DATA_TYPE_DEFINITIONS = tuple([
         name='MySQL ARCHIVE Storage Engine data files',
         filetypes=('mysql table definition file',),
         extensions=
-            (b'.arm', b'.arz', b'.arn',) if on_linux and py2
-            else (u'.arm', u'.arz', u'.arn',),
+            (u'.arm', u'.arz', u'.arn',),
     ),
 ])
 
@@ -779,9 +748,6 @@ def is_data(location, definitions=DATA_TYPE_DEFINITIONS):
     """
     Return True isthe file at `location` is a data file.
     """
-    if on_linux and py2:
-        location = fileutils.fsencode(location)
-
     if not filetype.is_file(location):
         return False
 
@@ -882,9 +848,6 @@ def is_binary(location):
     known_extensions = (
         '.pyc', '.pgm', '.mp3', '.mp4', '.mpeg', '.mpg', '.emf',
         '.pgm', '.pbm', '.ppm')
-    if on_linux and py2:
-        known_extensions = as_bytes(known_extensions)
-
     if location.endswith(known_extensions):
         return True
     return is_binary_string(get_starting_chunk(location))

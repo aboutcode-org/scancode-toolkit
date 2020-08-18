@@ -49,10 +49,7 @@ import extractcode
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
 
-if py3:
-    from shlex import quote as shlex_quote
-else:
-    from pipes import quote as shlex_quote
+from shlex import quote as shlex_quote
 
 """
 Low level support for p/7zip-based archive extraction.
@@ -556,30 +553,16 @@ def parse_7z_listing(location, utf=False):
 
     We ignore the header and footer in a listing.
     """
+    # read to unicode
+    with io.open(location, 'r', encoding='utf-8') as listing:
+        text = listing.read()
+        text = text.replace(u'\r\n', u'\n')
 
-    if utf or py3:
-        # read to unicode
-        with io.open(location, 'r', encoding='utf-8') as listing:
-            text = listing.read()
-            text = text.replace(u'\r\n', u'\n')
-
-        end_of_header = u'----------\n'
-        path_key = u'Path'
-        kv_sep = u'='
-        path_blocks_sep = u'\n\n'
-        line_sep = u'\n'
-
-    else:
-        # read to bytes
-        with io.open(location, 'rb') as listing:
-            text = listing.read()
-            text = text.replace(b'\r\n', b'\n')
-
-        end_of_header = b'----------\n'
-        path_key = b'Path'
-        kv_sep = b'='
-        path_blocks_sep = b'\n\n'
-        line_sep = b'\n'
+    end_of_header = u'----------\n'
+    path_key = u'Path'
+    kv_sep = u'='
+    path_blocks_sep = u'\n\n'
+    line_sep = u'\n'
 
     if TRACE:
         logger.debug('parse_7z_listing: initial text: type: ' + repr(type(text)))
