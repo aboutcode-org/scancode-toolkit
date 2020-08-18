@@ -124,13 +124,13 @@ def build_opam_package(opams):
     md5 = opams.get('md5')
     sha256 = opams.get('sha256')
     sha512 = opams.get('sha512')
-    summary = opams.get('synopsis')
-    description = opams.get('description')
-    if summary:
-        description = summary
-    elif summary and description:
-        if len(summary) > len(description):
-            description = summary
+
+    short_desc = opams.get('synopsis') or ''
+    long_desc = opams.get('description') or ''
+    if long_desc == short_desc:
+        long_desc = None
+    descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
+    description = '\n'.join(descriptions)
 
     parties = []
     authors = opams.get('authors') or []

@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Ocaml",
-  "description": "Basic control of ANSI compliant terminals and the windows shell",
+  "description": "Basic control of ANSI compliant terminals and the windows shell\nANSITerminal is a module allowing to use the colors and cursor movements on ANSI terminals. It also works on the windows shell (but this part is currently work in progress).",
   "release_date": null,
   "parties": [
     {
