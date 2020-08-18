@@ -35,8 +35,6 @@ import pytest
 
 import cluecode_test_utils
 from commoncode import compat
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
 
@@ -138,9 +136,7 @@ def build_copyright_test_methods_with_fossology_data():
         tfn = test_file.replace(test_data_dir, '').strip('\\/\\')
         test_name = 'test_fossology_copyright_%(tfn)s' % locals()
         test_name = python_safe_name(test_name)
-        if py2 and isinstance(test_name, compat.unicode):
-            test_name = test_name.encode('utf-8')
-        if py3 and not isinstance(test_name, compat.unicode):
+        if not isinstance(test_name, compat.unicode):
             test_name = test_name.decode('utf-8')
 
         test_method.__name__ = test_name
