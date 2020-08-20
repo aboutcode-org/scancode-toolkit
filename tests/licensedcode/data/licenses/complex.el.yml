@@ -8,7 +8,7 @@ license_expressions:
   - gpl-3.0-plus
   - agpl-3.0-plus
   - lgpl-3.0-plus
-  - bsd-2-clause-freebsd
+  - bsd-2-clause-views
   - bsd-new
   - public-domain
   - proprietary-license

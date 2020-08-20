@@ -411,7 +411,7 @@ class SpdxSource(ExternalLicensesSource):
                 'lgpl-2.0', 'lgpl-2.1', 'lgpl-3.0',
                 'agpl-1.0', 'agpl-2.0', 'agpl-3.0',
                 'gfdl-1.1', 'gfdl-1.2', 'gfdl-1.3',
-                'nokia-qt-exception-1.1', ]):
+                'nokia-qt-exception-1.1', 'bzip2-1.0.5']):
             return
 
         deprecated = mapping.get('isDeprecatedLicenseId', False)
@@ -424,6 +424,8 @@ class SpdxSource(ExternalLicensesSource):
                 # 'gfdl-1.1+', 'gfdl-1.2+', 'gfdl-1.3+'
                 # 'agpl-3.0+'
                 deprecated = False
+
+        # TODO: handle other_spdx_license_keys in license yaml files.
 
         other_urls = mapping.get('seeAlso', [])
         other_urls = (o for o in other_urls if o)

@@ -20,7 +20,7 @@ license_expressions:
   - historical
   - bsd-simplified
   - unknown-license-reference
-  - bsd-2-clause-freebsd
+  - bsd-2-clause-views
   - gpl-2.0 WITH gcc-compiler-exception-2.0 AND gpl-2.0 WITH mif-exception
   - gpl-2.0
   - lgpl-2.0

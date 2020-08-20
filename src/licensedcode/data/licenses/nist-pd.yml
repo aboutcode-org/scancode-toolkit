@@ -4,5 +4,10 @@ name: NIST Public Domain Notice
 category: Public Domain
 owner: NIST
 homepage_url: https://github.com/usnistgov/jsip/blob/master/README#L122
+spdx_license_key: NIST-PD
+text_urls:
+    - https://github.com/tcheneau/Routing/blob/f09f46fcfe636107f22f2c98348188a65a135d98/README.md#conditions-of-use
+    - https://github.com/tcheneau/simpleRPL/blob/e645e69e38dd4e3ccfeceb2db8cba05b7c2e0cd3/LICENSE.txt
 other_urls:
+    - https://github.com/tcheneau/Routing/blob/f09f46fcfe636107f22f2c98348188a65a135d98/README.md
     - https://github.com/usnistgov/jsip

@@ -1,5 +1,7 @@
 key: bsd-2-clause-freebsd
 short_name: BSD-2-Clause-FreeBSD
+is_deprecated: yes
+notes: This license was deprecated because BSD-2-Clause-Views has been added, as a more generalized version; and because FreeBSD project community members have indicated that the final sentence is not part of that project's code license.
 name: BSD-2-Clause-FreeBSD License
 category: Permissive
 owner: FreeBSD
