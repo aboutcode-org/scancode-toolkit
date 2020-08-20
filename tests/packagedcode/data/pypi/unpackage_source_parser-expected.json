@@ -6,9 +6,17 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
-  "description": null,
+  "description": "Import CSV and Excel files",
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Francois Granade",
+      "email": "fg@nexb.com",
+      "url": null
+    }
+  ],
   "keywords": [],
   "homepage_url": "http://nexb.com",
   "download_url": null,
