@@ -31,18 +31,14 @@ import os
 from subprocess import run
 import sys
 
-from commoncode.system import on_windows
-
-def generate_os_archive(links, requirement, archive_name):
+def download_req_tools(links, requirement, dir_name):
     """
-    Generate an archive as `archive_name.tar.gz` and `archive_name` directory 
-    that contains wheels and sdist for specific OS and python by taking links, 
-    requirement as an input.
+    Download all dependencies into dir_name as per 
+    OS/arch/python by taking links,requirement as an input.
     """
     pip_args =[
             'pip',
             'download',
-            '--verbose',
             '--no-cache-dir',
             '--no-index',
             '--find-links',
@@ -50,15 +46,16 @@ def generate_os_archive(links, requirement, archive_name):
             '-r',
             requirement,
             '--dest',
-            archive_name,
+            dir_name,
         ]
     run(pip_args)
 
 
 def main_with_args(args: str) -> None:
     parser = argparse.ArgumentParser(
-        description="""Generate an archive as `archive_name.tar.gz` and `archive_name` directory 
-            that contains wheels and sdist for specific OS and python.""",
+        description="""Download all dependencies into directory
+    (for instance thirdparty directory) as per OS/arch/python by 
+    taking links,requirement as an input.""",
     )
 
     parser.add_argument(
@@ -76,8 +73,8 @@ def main_with_args(args: str) -> None:
     )
 
     parser.add_argument(
-        '--archive-name',
-        help='Path to the archive file base name to create (without extension).',
+        '--dest',
+        help='Download packages into given directory(Destination)',
         type=str,
         required=True,
     )
@@ -86,8 +83,8 @@ def main_with_args(args: str) -> None:
 
     find_links = args.find_links
     requirement = args.requirement
-    archive_name = args.archive_name
-    generate_os_archive(find_links, requirement, archive_name)
+    dest = args.dest
+    download_req_tools(find_links, requirement, dest)
 
 
 def main() -> None:
