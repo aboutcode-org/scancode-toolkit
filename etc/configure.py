@@ -12,9 +12,9 @@ environment.
 To use, create a configuration directory tree that contains any of these:
 
 * Requirements files named with this convention:
- - requirements_base.txt contains common requirements installed on all platforms.
- - requirements_win.txt, requirements_linux.txt, requirements_mac.txt and
-   requirements_posix.txt are os-specific requirements.
+ - requirements-py36_base.txt contains common requirements installed on all platforms.
+ - requirements-py36_win.txt, requirements-py36_linux.txt, requirements-py36_mac.txt and
+   requirements-py36_posix.txt are os-specific requirements.
 
 * Python scripts files named with this convention:
  - base.py is a common script executed on all os before os-specific scripts.
@@ -46,15 +46,15 @@ specific ones.
 
 For example a tree could be looking like this:
     etc/conf
-        requirements_base.txt : base pip requirements for all platforms
-        requirements_linux.txt : linux-only pip requirements
+        requirements-py36_base.txt : base pip requirements for all platforms
+        requirements-py36_linux.txt : linux-only pip requirements
         base.py : base config script for all platforms
         win.py : windows-only config script
         posix.sh: posix-only shell script
 
     etc/conf/prod
         requirements_base.txt : base pip requirements for all platforms
-        requirements_win.txt : Windows-only pip requirements
+        requirements-py36_win.txt : Windows-only pip requirements
         linux.sh : linux-only script
         base.py : base config script for all platforms
         mac.py : mac-only config script
@@ -62,10 +62,10 @@ For example a tree could be looking like this:
 A call using etc/conf/prod would results in these steps if on linux:
 1. Create a virtualenv
 2. Run pip install with
-    etc/conf/requirements_base.txt
-    etc/conf/requirements_linux.txt
+    etc/conf/requirements-py36_base.txt
+    etc/conf/requirements-py36_linux.txt
     etc/conf/prod/requirements_base.txt
-    (etc/conf/prod/requirements_win.txt is skipped on linux)
+    (etc/conf/prod/requirements-py36_win.txt is skipped on linux)
 3. Run these Python scripts:
     etc/conf/base.py
     (etc/conf/win.py is skipped on linux)
@@ -104,10 +104,16 @@ else:
     platform_names = tuple()
 
 
+if sys.version_info < (3, 6):
+    raise Exception('Python 2.7 is not supported!')
+
+
 # Python versions
 _sys_v0 = sys.version_info[0]
+_sys_v1 = sys.version_info[1]
 py2 = _sys_v0 == 2
 py3 = _sys_v0 == 3
+python_version = str(_sys_v0) + str(_sys_v1)
 
 
 # common file basenames for requirements and scripts
@@ -115,7 +121,7 @@ base = ('base',)
 
 # known full file names with txt extension for requirements
 # base is always last
-requirement_filenames = tuple('requirements_' + p + '.txt' for p in platform_names + base)
+requirement_filenames = tuple('requirements-' + 'py' + python_version + '_' + p + '.txt' for p in platform_names + base)
 
 # known full file names with py extensions for scripts
 # base is always last
