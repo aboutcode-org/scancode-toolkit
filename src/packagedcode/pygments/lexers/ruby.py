@@ -109,16 +109,17 @@ class RubyLexer(ExtendedRegexLexer):
             (r'\:@{0,2}[a-zA-Z_]\w*[!?]?', String.Symbol),
             (words(RUBY_OPERATORS, prefix=r'\:@{0,2}'), String.Symbol),
             (r":'(\\\\|\\'|[^'])*'", String.Symbol),
-            (r"'(\\\\|\\'|[^'])*'", String.Single),
             (r':"', String.Symbol, 'simple-sym'),
             (r'([a-zA-Z_]\w*)(:)(?!:)',
              bygroups(String.Symbol, Punctuation)),  # Since Ruby 1.9
-            (r'"', String.Double, 'simple-string'),
+            (r'"', String.Double, 'simple-string-double'),
+            (r"'", String.Single, 'simple-string-single'),
             (r'(?<!\.)`', String.Backtick, 'simple-backtick'),
         ]
 
-        # double-quoted string and symbol
-        for name, ttype, end in ('string', String.Double, '"'), \
+        # quoted string and symbol
+        for name, ttype, end in ('string-double', String.Double, '"'), \
+                                ('string-single', String.Single, "'"),\
                                 ('sym', String.Symbol, '"'), \
                                 ('backtick', String.Backtick, '`'):
             states['simple-'+name] = [
