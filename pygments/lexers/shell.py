@@ -172,7 +172,7 @@ class ShellSessionBaseLexer(Lexer):
                 curcode += line
                 backslash_continuation = curcode.endswith('\\\n')
                 continue
-            
+
             venv_match = self._venv.match(line)
             if venv_match:
                 venv = venv_match.group(1)
@@ -773,7 +773,7 @@ class PowerShellSessionLexer(ShellSessionBaseLexer):
     mimetypes = []
 
     _innerLexerCls = PowerShellLexer
-    _ps1rgx = re.compile(r'^((?:\[[^]]+\]: )?PS [^>]+> ?)(.*\n?)')
+    _ps1rgx = re.compile(r'^((?:\[[^]]+\]: )?PS[^>]*> ?)(.*\n?)')
     _ps2 = '>> '
 
 
@@ -907,4 +907,3 @@ class ExeclineLexer(RegexLexer):
     def analyse_text(text):
         if shebang_matches(text, r'execlineb'):
             return 1
-
