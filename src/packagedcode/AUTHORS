@@ -155,6 +155,7 @@ Other contributors, listed alphabetically, are:
 * Nam T. Nguyen -- Monokai style
 * Jesper Noehr -- HTML formatter "anchorlinenos"
 * Mike Nolta -- Julia lexer
+* Avery Nortonsmith -- Pointless lexer
 * Jonas Obrist -- BBCode lexer
 * Edward O'Callaghan -- Cryptol lexer
 * David Oliva -- Rebol lexer
