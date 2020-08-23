@@ -58,6 +58,10 @@ echo "  RELEASE: Building release archives..."
 # build a zip and tar.bz2
 bin/python setup.py --quiet --use-default-version clean --all sdist --formats=bztar,zip bdist_wheel #--plat-name "$platform" --python-tag "$python_version"
 
+#rename release archive as per os/arch/python
+for f in dist/scancode-toolkit*.tar.bz2; do mv "$f" "${f%*.*.*}-"$python_version"_"$platform".tar.bz2"; done
+for f in dist/scancode-toolkit*.zip; do mv "$f" "${f%*.*}-"$python_version"_"$platform".zip"; done
+
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
 
