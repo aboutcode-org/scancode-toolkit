@@ -127,32 +127,51 @@ class DebianPackage(models.Package):
 
         installed_files = []
         directories = set()
-        listing = md5sum_file if has_md5 else list_file
-        with open(listing) as info_file:
-            for line in info_file:
-                line = line.strip()
-                if not line:
-                    continue
-                if has_md5:
+        if has_md5:
+            with open(md5sum_file) as info_file:
+                for line in info_file:
+                    line = line.strip()
+                    if not line:
+                        continue
                     md5sum, _, path = line.partition(' ')
                     md5sum = md5sum.strip()
-                else:
+
+                    path = path.strip()
+                    if not path.startswith('/'):
+                        path = '/' + path
+
+                    # we ignore dirs in general, and we ignore these that would
+                    # be created a plain dir when we can
+                    if path in ignored_root_dirs:
+                        continue
+
+                    installed_file = models.PackageFile(path=path, md5=md5sum)
+
+                    installed_files.append(installed_file)
+                    directories.add(os.path.dirname(path))
+
+        elif has_list:
+            with open(list_file) as info_file:
+                for line in info_file:
+                    line = line.strip()
+                    if not line:
+                        continue
                     md5sum = None
                     path = line
 
-                path=path.strip()
-                if not path.startswith('/'):
-                    path = '/' + path
+                    path = path.strip()
+                    if not path.startswith('/'):
+                        path = '/' + path
 
-                # we ignore dirs in general, and we ignore these that would
-                # be created a plain dir when we can
-                if path in ignored_root_dirs:
-                    continue
-                
-                installed_file = models.PackageFile(path=path,md5=md5sum)
+                    # we ignore dirs in general, and we ignore these that would
+                    # be created a plain dir when we can
+                    if path in ignored_root_dirs:
+                        continue
 
-                installed_files.append(installed_file)
-                directories.add(os.path.dirname(path))
+                    installed_file = models.PackageFile(path=path, md5=md5sum)
+                    if installed_file not in installed_files:
+                        installed_files.append(installed_file)
+                    directories.add(os.path.dirname(path))
 
         # skip directories when possible
         installed_files = [f for f in installed_files if f.path not in directories]
