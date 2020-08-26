@@ -73,7 +73,7 @@ before_install:
   - chmod +x ./docs/scripts/doc8_style_check.sh
 
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    curl -LO https://raw.githubusercontent.com/GiovanniBussi/macports-ci/master/macports-ci;
+    curl -LO https://raw.githubusercontent.com/nexB/macports-ci/master/macports-ci;
     source ./macports-ci install;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then

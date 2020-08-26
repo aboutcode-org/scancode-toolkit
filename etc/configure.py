@@ -105,7 +105,7 @@ else:
 
 
 if sys.version_info < (3, 6):
-    raise Exception('Python 2.7 is not supported!')
+    raise Exception('Only Python 3.6 and above are supported!')
 
 
 # Python versions
