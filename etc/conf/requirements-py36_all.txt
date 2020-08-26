@@ -54,8 +54,9 @@ extractcode-libarchive==3.4.2.1 \
 fingerprints==0.6.5.1 \
     --hash=sha256:a80555655fc249f103369792d8ea1bd5870434b0a10d3a92ade6ad3e908fe4aa \
     # via scancode-toolkit (setup.py)
-ftfy==5.5.1 \
-    --hash=sha256:84a1614190173bb447ac9d581e50185c6aa35b538754b6bedaba0cc0f83d8e80 \
+ftfy==4.4.3 \
+    --hash=sha256:061fbc1bf511673cb271ee1022ac17beedd5b169e4f4c3fd5b5e90b5b883dbdc \
+    --hash=sha256:3c0066db64a98436e751e56414f03f1cdea54f29364c0632c141c36cca6a5d94 \
     # via scancode-toolkit (setup.py)
 future==0.16.0 \
     --hash=sha256:c132ffad1ed08491003ee07fcdc6fab43fa99b02560ad4cdff8e52a141a79bfb \
