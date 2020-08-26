@@ -130,6 +130,13 @@ class TestPlugins(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
+    def test_package_command_scan_opam(self):
+        test_dir = self.get_test_loc('opam/package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/opam-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
     def test_package_command_scan_phpcomposer(self):
         test_dir = self.get_test_loc('phpcomposer/package')
         result_file = self.get_temp_file('json')

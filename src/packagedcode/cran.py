@@ -56,6 +56,7 @@ if TRACE:
 class CranPackage(models.Package):
     metafiles = ('DESCRIPTION',)
     default_type = 'cran'
+    default_web_baseurl = 'https://cran.r-project.org/package='
 
     @classmethod
     def recognize(cls, location):
@@ -64,6 +65,9 @@ class CranPackage(models.Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return '{}{}'.format(baseurl, self.name)
 
 
 def parse(location):
@@ -84,25 +88,25 @@ def build_package(package_data):
         maintainers = package_data.get('Maintainer')
         if maintainers:
             for maintainer in maintainers.split(',\n'):
-                name, email = get_party_info(maintainer)
-                if name or email:
+                maintainer_name, maintainer_email = get_party_info(maintainer)
+                if maintainer_name or maintainer_email:
                     parties.append(
                         models.Party(
-                            name=name,
+                            name=maintainer_name,
                             role='maintainer',
-                            email=email,
+                            email=maintainer_email,
                         )
                     )
         authors = package_data.get('Author')
         if authors:
             for author in authors.split(',\n'):
-                name, email = get_party_info(author)
-                if name or email:
+                author_name, author_email = get_party_info(author)
+                if author_name or author_email:
                     parties.append(
                         models.Party(
-                            name=name,
+                            name=author_name,
                             role='author',
-                            email=email,
+                            email=author_email,
                         )
                     )
         package_dependencies = []

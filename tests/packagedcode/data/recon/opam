@@ -1,0 +1,47 @@
+opam-version: "2.0"
+name: "bap"
+version: "0.9.1"
+maintainer: "Ivan Gotovchits <ivg@ieee.org>"
+authors: "BAP Team"
+homepage: "https://github.com/BinaryAnalysisPlatform/bap/"
+bug-reports: "https://github.com/BinaryAnalysisPlatform/bap/issues"
+dev-repo: "git://github.com/BinaryAnalysisPlatform/bap/"
+license: "MIT"
+build: [
+  ["./configure" "--prefix=%{prefix}%" "--with-cxx=`which clang++`"]
+  [make]
+]
+install: [make "install"]
+remove: [
+  ["ocamlfind" "remove" "bap"]
+  ["ocamlfind" "remove" "core_lwt"]
+]
+
+depends: [
+  "ocaml" {= "4.01.0" }
+  "base-unix"
+  "bitstring"
+  "cmdliner"
+  "cohttp" {= "0.15.0"}
+  "core_kernel" {= "111.28.0"}
+  "ezjsonm" {= "0.4.0"}
+  "faillib"
+  "lwt"
+  "oasis" {build & >= "0.4.0" & < "0.4.7"}
+  "re"
+  "uri" {= "1.7.2"}
+  "zarith"
+  "ocamlbuild" {build}
+]
+synopsis: "Binary Analysis Platform"
+description: """
+BAP library provides basic facilities for performing binary
+analysis using OCaml, Python or other languages.
+
+BAP uses LLVM library as a disassembling backend, and provide facilities to
+parse files in ELF and DWARF formats."""
+flags: light-uninstall
+url {
+  src: "https://github.com/BinaryAnalysisPlatform/bap/archive/v0.9.1.tar.gz"
+  checksum: "md5=f0e9d067bceb7a9d01eced6668de214c"
+}

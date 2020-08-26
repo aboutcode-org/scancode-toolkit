@@ -182,6 +182,22 @@ class TestEmail(FileBasedTesting):
         result = find_emails_tester(test_file)
         assert expected == result
 
+    def test_emails_for_ignored_hosts(self):
+        test_string = '''
+        Perhaps an email host that should be ignored from ignored_hosts
+        would be of the form <abc@something.com>. Another possible
+        domain name that the filter should be ignored would probably be
+        <xyz@any.com>. However, an email such as <efg@many.org> should
+        not be filtered as spam.
+        Adding more test cases, how about <abc@example.com> or a slightly
+        more different email such as <diff@xyz@other.com>.
+        '''.splitlines(False)
+        expected = [
+            u'efg@many.org'
+        ]
+        result = find_emails_tester(test_string, with_lineno=False)
+        assert expected == result
+
 
 class TestUrl(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -693,12 +709,21 @@ class TestUrl(FileBasedTesting):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
             http://www.foo.bar./
+        '''
+        for test in urls.split():
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test] == result
+
+    @pytest.mark.skipif(not py3, reason='url-cpp behaves differently')
+    def test_invalid_urls_are_not_detected(self):
+        # set of non URLs from https://mathiasbynens.be/demo/url-regex
+        urls = u'''
             http://1.1.1.1.1
             http://-error-.invalid/
         '''
         for test in urls.split():
-            result = [val.replace('.', '') for val, _ln in finder.find_urls([test])]
-            assert result in ([test.replace('.', '')] , [test.replace('.', '') + u'/'])
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [] == result
 
     def test_misc_invalid_urls_that_should_not_be_detected(self):
         # At least per this set of non URLs from https://mathiasbynens.be/demo/url-regex

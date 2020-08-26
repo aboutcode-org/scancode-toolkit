@@ -31,6 +31,8 @@ import os
 from unittest.case import skipIf
 from unittest.case import expectedFailure
 
+import pytest
+
 from commoncode.system import on_windows
 from packagedcode.models import DependentPackage
 from packagedcode import pypi
@@ -111,7 +113,6 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/setup.py/fb303_py_setup.py-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
-    @expectedFailure
     def test_parse_setup_py_frell_src(self):
         # setup.py is a temaplte with @vars
         test_file = self.get_test_loc('pypi/setup.py/frell_src_setup.py')
@@ -267,8 +268,189 @@ class TestPyPi(PackageTester):
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
 
+    def test_requirements_txt_sample1(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample1/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample1/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample2(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample2/sample-requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample2/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample3(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample3/requirements-dev.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample3/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample4(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample4/requirements.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample4/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample5(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample5/requirements-test.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample5/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample6(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample6/requirements-dev.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample6/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample7(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample7/requirements-test.in')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample7/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample8(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample8/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample8/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample9(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample9/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample9/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample10(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample10/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample10/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample11(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample11/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample11/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    @expectedFailure
+    def test_requirements_txt_sample12(self):
+        # FAILURE: dparse library wrongly detect the dependencies
+        test_file = self.get_test_loc('pypi/requirements_txt/sample12/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample12/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample13(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample13/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample13/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample14(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample14/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample14/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample15(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample15/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample15/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample16(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample16/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample16/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample17(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample17/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample17/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample18(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample18/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample18/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample19(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample19/requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample19/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample20(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample20/vcs_git_extras_require_requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample20/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_requirements_txt_sample21(self):
+        test_file = self.get_test_loc('pypi/requirements_txt/sample21/vcs_git_requirements.txt')
+        package = pypi.parse_requirements_txt(test_file)
+        expected_loc = self.get_test_loc('pypi/requirements_txt/sample21/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample1(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample1/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample1/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample2(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample2/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample2/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample3(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample3/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample3/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample4(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample4/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample4/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_pipfile_lock_sample5(self):
+        test_file = self.get_test_loc('pypi/pipfile.lock/sample5/Pipfile.lock')
+        package = pypi.parse_pipfile_lock(test_file)
+        expected_loc = self.get_test_loc('pypi/pipfile.lock/sample5/output.expected.json')
+        self.check_package(package, expected_loc, regen=False)
+
     def test_parse_with_dparse(self):
         test_file = self.get_test_loc('pypi/dparse/requirements.txt')
         dependencies = pypi.parse_with_dparse(test_file)
-        assert [DependentPackage(purl=u'pkg:pypi/lxml', requirement='==3.4.4', scope='dependencies'),
-                DependentPackage(purl=u'pkg:pypi/requests', requirement='==2.7.0', scope='dependencies')] == dependencies
+        assert [DependentPackage(purl='pkg:pypi/lxml@3.4.4', requirement='==3.4.4', scope='dependencies', is_resolved=True),
+                DependentPackage(purl='pkg:pypi/requests@2.7.0', requirement='==2.7.0', scope='dependencies', is_resolved=True)] == dependencies
+
+
+FILENAME_LIST = [
+    ('requirements.txt', 'requirements.txt'),
+    ('sample-requirements.txt', 'requirements.txt'),
+    ('requirements-test.txt', 'requirements.txt'),
+    ('sample-requirements-test.txt', 'requirements.txt'),
+    ('requirements-dev.txt', 'requirements.txt'),
+    ('sample-requirements-dev.txt', 'requirements.txt'),
+    ('requirements.in', 'requirements.txt'),
+    ('sample-requirements.in', 'requirements.txt'),
+    ('requirements-test.in', 'requirements.txt'),
+    ('sample-requirements-test.in', 'requirements.txt'),
+    ('requirements-dev.in', 'requirements.txt'),
+    ('sample-requirements-dev.in', 'requirements.txt'),
+    ('Pipfile.lock', 'Pipfile.lock')
+]
+
+class TestFiletype(object):
+    @pytest.mark.parametrize('filename, expected_filename', FILENAME_LIST)
+    def test_file_type(self, filename, expected_filename):
+        filename = pypi.get_dependency_type(filename)
+        assert filename == expected_filename

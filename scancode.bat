@@ -33,4 +33,7 @@ if %errorlevel% neq 0 (
 )
 
 :scancode
+@rem without this things may not always work on Windows 10, but this makes things slower
+set PYTHONDONTWRITEBYTECODE=1
+
 "%SCANCODE_ROOT_DIR%Scripts\scancode" %SCANCODE_CMD_LINE_ARGS%

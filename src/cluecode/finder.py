@@ -31,10 +31,9 @@ import re
 
 import ipaddress
 from six import string_types
-import url as urlpy
+import urlpy
 
 from commoncode import compat
-from commoncode.system import py2
 from commoncode.system import py3
 from commoncode.text import toascii
 from cluecode import finder_data
@@ -83,7 +82,7 @@ def find(location, patterns):
         loc = pformat(location)
         logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
-    for lineno, line in analysis.numbered_text_lines(location):
+    for lineno, line in analysis.numbered_text_lines(location, demarkup=False):
         for key, pattern in patterns:
             for match in pattern.findall(line):
 
@@ -160,7 +159,7 @@ def find_emails(location, unique=True):
         for r in matches:
             logger_debug('find_emails: match:', r)
 
-    filters = (junk_email_domains_filter,)
+    filters = (junk_email_domains_filter, uninteresting_emails_filter)
     if unique:
         filters += (unique_filter,)
     matches = apply_filters(matches, *filters)
@@ -385,14 +384,6 @@ def canonical_url(uri):
         parsed = urlpy.parse(uri)
         if not parsed:
             return
-
-        if py2:
-            if not hasattr(parsed, '_scheme') or not hasattr(parsed, '_host'):
-                raise Exception('a')
-                return
-        else:
-            if not hasattr(parsed, 'scheme') or not hasattr(parsed, 'host'):
-                raise Exception('b')
         if TRACE:
             logger_debug('canonical_url: parsed:', parsed)
 
@@ -406,17 +397,12 @@ def canonical_url(uri):
         if TRACE:
             logger_debug('canonical_url: punycoded:', punycoded)
 
-        if py2:
-            if punycoded._port == DEFAULT_PORTS.get(punycoded._scheme):
-                punycoded._port = None
-        else:
-            if punycoded.port == DEFAULT_PORTS.get(punycoded.scheme):
-                punycoded.port = 0
-        if py2:
-            decoded = punycoded.utf8()
-        else:
-            decoded = punycoded.utf8
-        return decoded.decode('utf-8')
+        deport = punycoded.remove_default_port()
+
+        if TRACE:
+            logger_debug('canonical_url: deport:', deport)
+
+        return str(sanitized)
     except Exception as e:
         if TRACE:
             logger_debug('canonical_url: failed for:', uri, 'with:', repr(e))
@@ -539,10 +525,10 @@ def url_host_domain(url):
     """
     try:
         parsed = urlpy.parse(url)
-        host = parsed.host if py3 else parsed._host
+        host = parsed.host
         if not host:
             return None, None
-        domain = parsed.pld if py3 else parsed.pld()
+        domain = parsed.pld
         return host.lower(), domain.lower()
     except Exception as e:
         if TRACE:

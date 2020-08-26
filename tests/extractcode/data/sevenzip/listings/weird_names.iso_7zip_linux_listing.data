@@ -1,0 +1,695 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 624640 bytes (610 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.iso
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/weird_names/weird_names.iso
+Type = Iso
+Physical Size = 624640
+Created = 2017-01-03 12:41:46
+Modified = 2017-01-03 12:41:46
+
+----------
+Path = weird_names
+Folder = +
+Size = 
+Packed Size = 
+Modified = 2017-01-03 12:35:22
+
+Path = weird_names/man_1
+Folder = +
+Size = 
+Packed Size = 
+Modified = 2016-12-28 20:35:29
+
+Path = weird_names/man_1/..1.gz
+Folder = -
+Size = 40
+Packed Size = 40
+Modified = 2016-12-28 20:30:58
+
+Path = weird_names/man_1/[.1.gz
+Folder = -
+Size = 40
+Packed Size = 40
+Modified = 2016-12-28 20:30:58
+
+Path = weird_names/man_1/[___.1
+Folder = -
+Size = 20
+Packed Size = 20
+Modified = 2016-12-28 20:32:55
+
+Path = weird_names/man_1/__.1
+Folder = -
+Size = 20
+Packed Size = 20
+Modified = 2016-12-28 20:32:55
+
+Path = weird_names/man_1/__.1.gz
+Folder = -
+Size = 40
+Packed Size = 40
+Modified = 2016-12-28 20:30:58
+
+Path = weird_names/some 'file
+Folder = -
+Size = 20
+Packed Size = 20
+Modified = 2016-12-21 11:15:56
+
+Path = weird_names/some _file
+Folder = -
+Size = 21
+Packed Size = 21
+Modified = 2016-12-21 11:15:56
+
+Path = weird_names/some file
+Folder = -
+Size = 38
+Packed Size = 38
+Modified = 2016-12-21 11:15:56
+
+Path = weird_names/some"file
+Folder = -
+Size = 39
+Packed Size = 39
+Modified = 2016-12-21 11:15:56
+
+Path = weird_names/some_"file
+Folder = -
+Size = 21
+Packed Size = 21
+Modified = 2016-12-21 11:15:56
+
+Path = weird_names/win
+Folder = +
+Size = 
+Packed Size = 
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/AUX
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/AUX.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM1
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM1.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM2
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM2.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM3
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM3.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM4
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM4.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM5
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM5.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM6
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM6.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM7
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM7.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM8
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM8.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM9
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/COM9.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/CON
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/CON.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT1
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT1.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT2
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT2.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT3
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT3.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT4
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT4.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT5
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT5.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT6
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT6.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT7
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT7.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT8
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT8.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT9
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/LPT9.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/NUL
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/NUL.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/PRN
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/PRN.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/aux
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/aux.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com1
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com1.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com2
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com2.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com3
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com3.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com4
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com4.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com5
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com5.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com6
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com6.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com7
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com7.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com8
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com8.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com9
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/com9.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/con
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/con.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt1
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt1.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt2
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt2.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt3
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt3.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt4
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt4.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt5
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt5.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt6
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt6.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt7
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt7.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt8
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt8.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt9
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/lpt9.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/nul
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/nul.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/prn
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/win/prn.txt
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:35:05
+
+Path = weird_names/winchr
+Folder = +
+Size = 
+Packed Size = 
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab".t"
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab<.t<
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab>.t>
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_000.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_001.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_002.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_003.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_004.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab_005.t_
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+
+Path = weird_names/winchr/ab|.t|
+Folder = -
+Size = 1
+Packed Size = 1
+Modified = 2017-01-03 12:38:03
+

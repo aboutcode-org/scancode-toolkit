@@ -1,12 +1,12 @@
 {
   "type": "pypi",
   "namespace": null,
-  "name": "pluggy",
+  "name": null,
   "version": null,
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Python",
-  "description": "plugin and hook calling mechanisms for python",
+  "description": null,
   "release_date": null,
   "parties": [
     {
@@ -39,19 +39,17 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "mit",
+  "license_expression": null,
   "declared_license": {
-    "license": "MIT license",
-    "classifiers": [
-      "License :: OSI Approved :: MIT License"
-    ]
+    "license": null,
+    "classifiers": []
   },
   "notice_text": null,
   "root_path": null,
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
-  "purl": "pkg:pypi/pluggy",
+  "purl": null,
   "repository_homepage_url": null,
   "repository_download_url": null,
   "api_data_url": null

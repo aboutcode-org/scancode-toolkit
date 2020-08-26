@@ -34,6 +34,7 @@ from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode import functional
+from commoncode.ignore import is_ignored
 from commoncode.system import on_linux
 from commoncode.system import py2
 
@@ -103,13 +104,15 @@ def can_extract(location):
         return True
 
 
-def should_extract(location, kinds):
+def should_extract(location, kinds, ignore_pattern=()):
     """
     Return True if this location should be extracted based on the provided
     kinds
     """
     location = os.path.abspath(os.path.expanduser(location))
-    if get_extractor(location, kinds):
+    ignore_pattern = {extension : 'User ignore: Supplied by --ignore' for extension in ignore_pattern}
+    should_ignore = is_ignored(location, ignore_pattern)
+    if get_extractor(location, kinds) and not should_ignore:
         return True
 
 
@@ -350,12 +353,13 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 
 def extract_with_fallback(location, target_dir, extractor1, extractor2):
     """
-    Extract archive at `location` to `target_dir` trying first `extractor1` function.
-    If extract fails, attempt extraction again with the `extractor2` function.
+    Extract archive at `location` to `target_dir` trying first the primary
+    `extractor1` function. If extract fails with this function, attempt
+    extraction again with the fallback `extractor2` function.
     Return a list of warning messages. Raise exceptions on errors.
 
-    Note: there are a few cases where the primary extractor for a type may fail and
-    a secondary extractor will succeed.
+    Note: there are a few cases where the primary extractor for a type may fail
+    and a fallback extractor will succeed.
     """
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = compat.unicode(os.path.abspath(os.path.expanduser(target_dir)))
@@ -411,7 +415,10 @@ extract_tar = libarchive2.extract
 extract_patch = patch.extract
 
 extract_deb = libarchive2.extract
-extract_ar = libarchive2.extract
+
+# sevenzip is best for windows lib formats and works fine otherwise. libarchive works on standard ar formats.
+extract_ar = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+
 extract_msi = sevenzip.extract
 extract_cpio = libarchive2.extract
 
@@ -424,6 +431,8 @@ extract_zip = functional.partial(extract_with_fallback, extractor1=libarchive2.e
 extract_springboot = functional.partial(try_to_extract, extractor=extract_zip)
 
 extract_lzip = libarchive2.extract
+extract_zstd = libarchive2.extract
+extract_lz4 = libarchive2.extract
 
 extract_iso = sevenzip.extract
 extract_rar = libarchive2.extract
@@ -457,7 +466,7 @@ RubyGemHandler = Handler(
     extensions=('.gem',),
     kind=package,
     extractors=[extract_tar],
-    strict=False
+    strict=True
 )
 
 ZipHandler = Handler(
@@ -650,7 +659,7 @@ TarLzmaHandler = Handler(
 TarGzipHandler = Handler(
     name='Tar gzip',
     filetypes=('gzip compressed',),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.tgz', '.tar.gz', '.tar.gzip', '.targz', '.targzip', '.tgzip',),
     kind=regular_nested,
     extractors=[extract_tar],
@@ -661,10 +670,30 @@ TarLzipHandler = Handler(
     name='Tar lzip',
     filetypes=('lzip compressed',),
     mimetypes=('application/x-lzip',) ,
-    extensions=('.tar.lz',),
+    extensions=('.tar.lz', '.tar.lzip',),
     kind=regular_nested,
     extractors=[extract_lzip, extract_tar],
     strict=False
+)
+
+TarZstdHandler = Handler(
+    name='Tar zstd',
+    filetypes=('zstandard compressed',),
+    mimetypes=('application/x-zstd',) ,
+    extensions=('.tar.zst', '.tar.zstd',),
+    kind=regular_nested,
+    extractors=[extract_zstd, extract_tar],
+    strict=True
+)
+
+TarLz4Handler = Handler(
+    name='Tar lz4',
+    filetypes=('lz4 compressed',),
+    mimetypes=('application/x-lz4',) ,
+    extensions=('.tar.lz4',),
+    kind=regular_nested,
+    extractors=[extract_lz4, extract_tar],
+    strict=True
 )
 
 # https://wiki.openwrt.org/doc/techref/opkg: ipk
@@ -673,7 +702,7 @@ TarLzipHandler = Handler(
 OpkgHandler = Handler(
     name='OPKG package',
     filetypes=('gzip compressed',),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.ipk',),
     kind=regular_nested,
     extractors=[extract_tar],
@@ -683,7 +712,7 @@ OpkgHandler = Handler(
 GzipHandler = Handler(
     name='Gzip',
     filetypes=('gzip compressed', 'gzip compressed data'),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.gz', '.gzip', '.wmz', '.arz',),
     kind=regular,
     extractors=[uncompress_gzip],
@@ -700,10 +729,30 @@ LzipHandler = Handler(
     strict=False
 )
 
+ZstdHandler = Handler(
+    name='zstd',
+    filetypes=('zstandard compressed',),
+    mimetypes=('application/x-zstd',) ,
+    extensions=('.tar.zst', '.tar.zstd',),
+    kind=regular_nested,
+    extractors=[extract_zstd],
+    strict=False
+)
+
+Lz4Handler = Handler(
+    name='lz4',
+    filetypes=('lz4 compressed',),
+    mimetypes=('application/x-lz4',) ,
+    extensions=('.lz4',),
+    kind=regular_nested,
+    extractors=[extract_lz4],
+    strict=False
+)
+
 DiaDocHandler = Handler(
     name='Dia diagram doc',
     filetypes=('gzip compressed',),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.dia',),
     kind=docs,
     extractors=[uncompress_gzip],
@@ -713,7 +762,7 @@ DiaDocHandler = Handler(
 GraffleDocHandler = Handler(
     name='Graffle diagram doc',
     filetypes=('gzip compressed',),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.graffle',),
     kind=docs,
     extractors=[uncompress_gzip],
@@ -723,7 +772,7 @@ GraffleDocHandler = Handler(
 SvgGzDocHandler = Handler(
     name='SVG Compressed doc',
     filetypes=('gzip compressed',),
-    mimetypes=('application/x-gzip',),
+    mimetypes=('application/gzip',),
     extensions=('.svgz',),
     kind=docs,
     extractors=[uncompress_gzip],
@@ -838,7 +887,7 @@ StaticLibHandler = Handler(
 DebHandler = Handler(
     name='Debian package',
     filetypes=('debian binary package',),
-    mimetypes=('application/x-archive', 'application/vnd.debian.binary-package',),
+    mimetypes=('application/vnd.debian.binary-package', 'application/x-archive',),
     extensions=('.deb', '.udeb',),
     kind=package,
     extractors=[extract_deb],
@@ -938,7 +987,7 @@ ApplePkgHandler = Handler(
 XarHandler = Handler(
     name='Xar archive v1',
     filetypes=('xar archive',),
-    mimetypes=('application/octet-stream',),
+    mimetypes=('application/octet-stream', 'application/x-xar',),
     extensions=('.xar',),
     kind=package,
     extractors=[extract_xarpkg],
@@ -998,12 +1047,18 @@ archive_handlers = [
     TarXzHandler,
     TarLzmaHandler,
     TarGzipHandler,
+    TarLzipHandler,
+    TarLz4Handler,
+    TarZstdHandler,
     DiaDocHandler,
     GraffleDocHandler,
     SvgGzDocHandler,
     GzipHandler,
     BzipHandler,
     TarBzipHandler,
+    LzipHandler,
+    Lz4Handler,
+    ZstdHandler,
     RarHandler,
     CabHandler,
     MsiInstallerHandler,

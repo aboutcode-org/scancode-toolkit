@@ -33,11 +33,13 @@ from packagedcode import chef
 from packagedcode import conda
 from packagedcode import cocoapods
 from packagedcode import freebsd
+from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import models
 from packagedcode import npm
 from packagedcode import nuget
+from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
@@ -64,6 +66,7 @@ PACKAGE_TYPES = [
     haxe.HaxePackage,
     cargo.RustCargoCrate,
     cocoapods.CocoapodsPackage,
+    opam.OpamPackage,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
@@ -75,6 +78,7 @@ PACKAGE_TYPES = [
     models.ChromeExtension,
     models.IOSApp,
     pypi.PythonPackage,
+    golang.GolangPackage,
     models.CabPackage,
     models.MsiInstallerPackage,
     models.InstallShieldPackage,

@@ -1,0 +1,4 @@
+-e git+https://github.com/davidfischer/requirements-parser.git#egg=requirements
+Django >=1.5, <1.6
+numpy
+DocParser [PDF]

@@ -1,0 +1,43 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,8 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 1499 bytes (2 KiB)
+
+Listing archive: /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/shar/demo-spring-boot.sh
+
+--
+Path = /home/pombreda/w421/scancode-toolkit/tests/extractcode/data/archive/shar/demo-spring-boot.sh
+Type = zip
+ERRORS:
+Headers Error
+Unconfirmed start of archive
+WARNINGS:
+Headers Error
+There are data after the end of archive
+Offset = 716
+Physical Size = 30
+Tail Size = 753
+
+----------
+Path = demo-spring-boot
+Folder = -
+Size = 2
+Packed Size = 0
+Modified = 
+Created = 
+Accessed = 
+Attributes = 
+Encrypted = -
+Comment = 
+CRC = 4ABDBFEF
+Method = Deflate
+Host OS = FAT
+Version = 10
+Volume Index = 0
+
+
+Warnings: 1
+
+Errors: 1

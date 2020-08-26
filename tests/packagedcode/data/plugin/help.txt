@@ -51,7 +51,7 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:RustCargoCrate
-  metafiles: Cargo.toml
+  metafiles: Cargo.toml, Cargo.lock
 
 --------------------------------------------
 Package: chef
@@ -113,6 +113,11 @@ Package: gem
   metafiles: metadata.gz-extract, *.gemspec, Gemfile, Gemfile.lock
   extensions: .gem
   filetypes: .tar, tar archive
+
+--------------------------------------------
+Package: golang
+  class: packagedcode.golang:GolangPackage
+  metafiles: go.mod, go.sum
 
 --------------------------------------------
 Package: haxe
@@ -201,6 +206,12 @@ Package: nuget
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
+Package: opam
+  class: packagedcode.opam:OpamPackage
+  metafiles: *opam
+  extensions: .opam
+
+--------------------------------------------
 Package: pods
   class: packagedcode.cocoapods:CocoapodsPackage
   metafiles: *.podspec
@@ -209,7 +220,7 @@ Package: pods
 --------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
-  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg
+  metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
   extensions: .egg, .whl, .pyz, .pex
 
 --------------------------------------------
