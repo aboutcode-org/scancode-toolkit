@@ -12,9 +12,9 @@ environment.
 To use, create a configuration directory tree that contains any of these:
 
 * Requirements files named with this convention:
- - requirements_base.txt contains common requirements installed on all platforms.
- - requirements_win.txt, requirements_linux.txt, requirements_mac.txt and
-   requirements_posix.txt are os-specific requirements.
+ - requirements-py36_base.txt contains common requirements installed on all platforms.
+ - requirements-py36_win.txt, requirements-py36_linux.txt, requirements-py36_mac.txt and
+   requirements-py36_posix.txt are os-specific requirements.
 
 * Python scripts files named with this convention:
  - base.py is a common script executed on all os before os-specific scripts.
@@ -46,15 +46,15 @@ specific ones.
 
 For example a tree could be looking like this:
     etc/conf
-        requirements_base.txt : base pip requirements for all platforms
-        requirements_linux.txt : linux-only pip requirements
+        requirements-py36_base.txt : base pip requirements for all platforms
+        requirements-py36_linux.txt : linux-only pip requirements
         base.py : base config script for all platforms
         win.py : windows-only config script
         posix.sh: posix-only shell script
 
     etc/conf/prod
         requirements_base.txt : base pip requirements for all platforms
-        requirements_win.txt : Windows-only pip requirements
+        requirements-py36_win.txt : Windows-only pip requirements
         linux.sh : linux-only script
         base.py : base config script for all platforms
         mac.py : mac-only config script
@@ -62,10 +62,10 @@ For example a tree could be looking like this:
 A call using etc/conf/prod would results in these steps if on linux:
 1. Create a virtualenv
 2. Run pip install with
-    etc/conf/requirements_base.txt
-    etc/conf/requirements_linux.txt
+    etc/conf/requirements-py36_base.txt
+    etc/conf/requirements-py36_linux.txt
     etc/conf/prod/requirements_base.txt
-    (etc/conf/prod/requirements_win.txt is skipped on linux)
+    (etc/conf/prod/requirements-py36_win.txt is skipped on linux)
 3. Run these Python scripts:
     etc/conf/base.py
     (etc/conf/win.py is skipped on linux)
@@ -104,10 +104,16 @@ else:
     platform_names = tuple()
 
 
+if sys.version_info < (3, 6):
+    raise Exception('Python 2.7 is not supported!')
+
+
 # Python versions
 _sys_v0 = sys.version_info[0]
+_sys_v1 = sys.version_info[1]
 py2 = _sys_v0 == 2
 py3 = _sys_v0 == 3
+python_version = str(_sys_v0) + str(_sys_v1)
 
 
 # common file basenames for requirements and scripts
@@ -115,7 +121,7 @@ base = ('base',)
 
 # known full file names with txt extension for requirements
 # base is always last
-requirement_filenames = tuple('requirements_' + p + '.txt' for p in platform_names + base)
+requirement_filenames = tuple('requirements-' + 'py' + python_version + '_' + p + '.txt' for p in platform_names + base)
 
 # known full file names with py extensions for scripts
 # base is always last
@@ -217,10 +223,13 @@ def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
     list of `paths` to directories.
     """
     for path in paths:
-        if not os.path.isabs(path):
-            path = os.path.join(root_dir, path)
-        if os.path.exists(path):
-            yield option + quote(path)
+        if path.startswith('https'):
+            yield option + '"{}"'.format(path)
+        else:        
+            if not os.path.isabs(path):
+                path = os.path.join(root_dir, path)
+            if os.path.exists(path):
+                yield option + quote(path)
 
 
 def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
@@ -246,6 +255,8 @@ def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
     # search the virtualenv.pyz app in the tpp_dirs. keep the first found
     venv_pyz = None
     for tpd in tpp_dirs:
+        if tpd.startswith('https'):
+            continue
         venv = os.path.join(root_dir, tpd, 'virtualenv.pyz')
         if os.path.exists(venv):
             venv_pyz = venv
@@ -261,6 +272,9 @@ def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
         vcmd += ['-qq']
     # third parties may be in more than one directory
     vcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir))
+    # Window doesn't support link as extra-search-dir
+    if on_win:
+        vcmd.pop()
     # we create the virtualenv in the root_dir
     vcmd.append(quote(root_dir))
     call(vcmd, root_dir)
@@ -283,6 +297,15 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     for req_file in requirement_files:
         req_loc = os.path.join(root_dir, req_file)
         requirements.extend(['--requirement', quote(req_loc)])
+    run_pip(requirements, root_dir, tpp_dirs, quiet)
+
+
+def install_local_package(root_dir, tpp_dirs, quiet=False):
+    """
+    Install the current local package with pip,
+    using the vendored components in `tpp_dirs`.
+    """
+    requirements = ['--editable', '.']
     run_pip(requirements, root_dir, tpp_dirs, quiet)
 
 
@@ -540,26 +563,30 @@ if __name__ == '__main__':
     for envvar, path in os.environ.items():
         if not envvar.startswith('TPP_DIR'):
             continue
-        abs_path = path
-        if not os.path.isabs(path):
-            abs_path = os.path.join(root_dir, path)
-        if not os.path.exists(abs_path):
-            if not quiet:
-                print()
-                print(
-                    'WARNING: Third-party Python libraries directory does not exists:\n'
-                    '  %(path)r: %(abs_path)r\n'
-                    '  Provided by environment variable:\n'
-                    '  set %(envvar)s=%(path)r' % locals())
-                print()
-        else:
+        if path.startswith('https'):
             thirdparty_dirs.append(path)
+        else:        
+            abs_path = path
+            if not os.path.isabs(path):
+                abs_path = os.path.join(root_dir, path)
+            if not os.path.exists(abs_path):
+                if not quiet:
+                    print()
+                    print(
+                        'WARNING: Third-party Python libraries directory does not exists:\n'
+                        '  %(path)r: %(abs_path)r\n'
+                        '  Provided by environment variable:\n'
+                        '  set %(envvar)s=%(path)r' % locals())
+                    print()
+            else:
+                thirdparty_dirs.append(path)
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
         create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=quiet)
     activate(root_dir)
     install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
+    install_local_package(root_dir, thirdparty_dirs, quiet=quiet)
     run_scripts(configs, root_dir, configured_python, quiet=quiet)
 
     if not quiet:

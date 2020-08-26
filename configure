@@ -19,10 +19,11 @@ fi
 export TPP_DIR="thirdparty"
 
 # default configurations for dev
-CONF_DEFAULT="etc/conf/dev"
+CONF_DEFAULT="etc/conf" 
 
-if [[ "$CONF_DEFAULT" == "etc/conf/dev" ]]; then
-    export TPP_DIR_DEV="thirdparty/dev"
+if [[ "$CONF_DEFAULT" == "etc/conf" ]]; then
+    #export TPP_DIR_DEV="thirdparty/dev"
+    export TPP_DIR_links="https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0"
 fi
 
 
