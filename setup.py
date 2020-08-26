@@ -137,7 +137,7 @@ setup(
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'py2_ipaddress >= 2.0, <3.5; python_version<"3"',
+        'py2_ipaddress >= 2.0, <3.5; python_version < "3"',
         'urlpy',
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
@@ -146,12 +146,12 @@ setup(
         'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98; python_version<"3"',
+        'bz2file >= 0.98; python_version < "3"',
         'extractcode_libarchive',
         'extractcode_7z',
 
         # commoncode
-        'backports.os == 0.1.1; python_version<"3"',
+        'backports.os == 0.1.1; python_version < "3"',
         'future >= 0.16.0',
         'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
@@ -192,8 +192,8 @@ setup(
         'dparse >= 0.4.1',
 
         # used to fix mojibake in Windows PE
-        'ftfy <  5.0.0; python_version == "2.7"',
-        'ftfy>=  5.0.0; python_version > "3"',
+        # for now we use the evrsion that works on both Python 2 and 3
+        'ftfy <  5.0.0',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
@@ -210,8 +210,8 @@ setup(
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
-            # used by yg.lockfile
-            'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
+        # used by yg.lockfile
+        'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
     
