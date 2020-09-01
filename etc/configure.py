@@ -264,17 +264,12 @@ def create_virtualenv(std_python, root_dir, tpp_dirs=(), quiet=False):
 
     # error out if venv_pyz not found
     if not venv_pyz:
-        print("Configuration Error ... aborting.")
+        print("Configuration Error: Unable to find virtualenv.pyz ... aborting.")
         exit(1)
 
     vcmd = [quote(std_python), quote(venv_pyz), '--never-download']
     if quiet:
         vcmd += ['-qq']
-    # third parties may be in more than one directory
-    vcmd.extend(build_pip_dirs_args(tpp_dirs, root_dir))
-    # Window doesn't support link as extra-search-dir
-    if on_win:
-        vcmd.pop()
     # we create the virtualenv in the root_dir
     vcmd.append(quote(root_dir))
     call(vcmd, root_dir)
