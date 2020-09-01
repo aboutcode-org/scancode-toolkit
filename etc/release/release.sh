@@ -13,6 +13,8 @@ set -x
 
 echo "###  BUILDING ScanCode release ###"
 
+PYPI_REPO=https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0
+
 echo "  RELEASE: Cleaning previous release archives, then setup and config: "
 rm -rf dist/ build/
 
@@ -29,12 +31,13 @@ cp etc/release/MANIFEST.in.release MANIFEST.in
 python_version=`python -c "import sys;t='py{v[0]}{v[1]}'.format(v=list(sys.version_info[:2]));sys.stdout.write(t)";`
 
 # download all dependencies as per OS/arch/python 
-python3 etc/scripts/deps_download.py --find-links https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0 --requirement etc/conf/requirements-"$python_version"_all.txt --dest thirdparty
+python3 etc/scripts/deps_download.py --find-links $PYPI_REPO --requirement etc/conf/requirements-"$python_version"_all.txt --dest thirdparty
 
 if [ "$(uname -s)" == "Darwin" ]; then
     platform="mac"        
 elif [ "$(uname -s)" == "Linux" ]; then
     platform="linux" 
+# FIXME: This may only works on azure not elsewhere
 elif [ "$(uname -s)" == "MINGW32_NT" ]; then
     platform="win32"
 elif [ "$(uname -s)" == "MINGW64_NT" ]; then
@@ -56,16 +59,24 @@ python etc/scripts/freeze_and_update_reqs.py --find-links thirdparty --requireme
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
-bin/python setup.py --quiet --use-default-version clean --all sdist --formats=bztar,zip bdist_wheel #--plat-name "$platform" --python-tag "$python_version"
+bin/python setup.py --quiet --use-default-version clean --all sdist --formats=bztar,zip bdist_wheel
 
-#rename release archive as per os/arch/python
-for f in dist/scancode-toolkit*.tar.bz2; do mv "$f" "${f%*.*.*}-"$python_version"_"$platform".tar.bz2"; done
-for f in dist/scancode-toolkit*.zip; do mv "$f" "${f%*.*}-"$python_version"_"$platform".zip"; done
+# rename release archive as per os/arch/python
+# See https://unix.stackexchange.com/questions/121570/rename-multiples-files-using-bash-scripting
+for f in dist/scancode-toolkit*.tar.bz2
+    do
+        mv "$f" "${f%*.*.*}-"$python_version"_"$platform".tar.bz2"
+    done
+
+for f in dist/scancode-toolkit*.zip
+    do
+        mv "$f" "${f%*.*}-"$python_version"_"$platform".zip"
+    done
 
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
 
-#restore thirdparty
+# restore thirdparty
 rm -rf thirdparty
 mv thirdparty_dev thirdparty
 
