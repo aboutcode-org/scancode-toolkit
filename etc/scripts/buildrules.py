@@ -162,9 +162,11 @@ def find_rule_base_loc(license_expression):
 @click.help_option('-h', '--help')
 def cli(licenses_file):
     """
-    Create rules from a structured text file
+    Create rules from a text file with delimited blocks of metadata and texts.
 
-    For instance:
+    As an example a file would contains one of more blocks such as this:
+
+\b
         ----------------------------------------
         license_expression: lgpl-2.1
         relevance: 100
