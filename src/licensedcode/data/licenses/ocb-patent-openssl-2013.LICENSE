@@ -1,0 +1,14 @@
+Patent License for OpenSSL
+1. Definitions
+1.1 " Licensor" means Phillip Rogaway. orOne Shields Avenue, Davis, CA 95616-8562.
+1.2 " Licensed Patents" means any patent that claims priority to United States Patent Application No. 09/918 ,615 entitled "Method and Apparatus for Facilitating Efficient Authenticated Encryption," and any utili ty, divisional, provisional, continuation, continuat ions in part, reexami nation , reissue, or foreign counterpart patents that may issue with respect to the aforesaid patent application. This includes, but is not limited to, Uni ted States Patent No. 7,046,802; United States Palen I No. 7,200,227; United States Patent No. 7,949, 129; United States Patent No.8 ,321 ,675; and any patent that issues out or Uni ted States Patent Application No. 13/669, 114.
+1.3 " Use in OpenSSL" means using, making, copying, modifying, distribu ting, having made, importing or having imported any program, software, or computer system containing or based upon the OpenSSL toolkit, but does not include any imp lementation of the Licensed Patents that is unrelated to the OpenSSL toolkit.
+1.4 "Licensee" means the OpenSSL Software Foundation, at 1829 Mount Ephraim Road, Adamstown , MD 21710, its affiliates, assignees. or sllccessors in interest, or anyone using, making, copying, modifying, di stributing, having made, importing, or having imported any program, software, or computer system including or based upon the OpenSSL toolkit, or their customers, supp liers, importers, manufacturers, distributors, or insurers.
+2, Grant of License
+2.1 Licensor hereby grants to Licensee a perpetual, worldwide, non-exclusive, nontransferable, non-sublicenseable, no-charge, royalty-free, irrevocab le license to Use in OpenSSL any invention claimed in the Licensed Patents.
+3. Disclaimer
+3. 1 LICENSEE'S USE OF THE LICENSED PATENTS IS AT LICENSEE'S OWN RISK AND UNLESS REQUIRED BY APPLICABLE LAW, LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNfNG THE LICENSED PATENTS OR ANY PRODUCT EMBODYING ANY LICENSED PATENT, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDfNG, WITHOUT LIM ITATION, WARRANTIES OF TITLE, MERCHANTIB ILlTY, FITNESS FOR A PARTICULAR PURPOSE, OR NON INFRfNGEMENT. fN NO EVENT W ILL LICENSOR BE LIABLE FOR ANY CLA IM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM OR RELAT ED TO ANY USE OF THE LICENSED PATENTS, INCLUD ING, WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR SPECIAL DAMAGES, EVEN IF LICENSOR HAS BEEN ADV ISED OF THE POSSIBILITY OF SUCH DAMAGES PRIOR TO SUCH AN OCCURRENCE.
+Dated: November 13, 2013
+Phillip Rogaway
+

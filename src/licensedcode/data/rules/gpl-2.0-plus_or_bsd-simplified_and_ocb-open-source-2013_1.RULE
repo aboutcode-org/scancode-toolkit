@@ -1,0 +1,10 @@
+The BSD license is (almost?) strictly more permissive, but the
+additionally licensing under the GPL allows us to use OCB 2.0 code
+royalty-free (at least, if OCB 2.0's creator Phil Rogaway has anything
+to say about it).  Note that if you redistribute SJCL under a license
+other than the GPL, you or your users may need to pay patent licensing
+fees for OCB 2.0.
+
+There may be patents which apply to SJCL other than Phil Rogaway's OCB
+patents.  We suggest that you consult legal counsel before using SJCL
+in a commercial project.

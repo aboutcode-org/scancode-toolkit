@@ -1,0 +1,13 @@
+SJCL used to be in the public domain.  Now it's:
+
+This is for liability reasons.  (Speaking of which, SJCL comes with NO
+WARRANTY WHATSOEVER, express or implied, to the limit of applicable
+law.)
+
+SJCL is dual-licensed under the GNU GPL version 2.0 or higher, and a
+2-clause BSD license.  You may use SJCL under the terms of either of
+these licenses.  For your convenience, the GPL versions 2.0 and 3.0
+and the 2-clause BSD license are included here.  Additionally, you may
+serve "crunched" copies of sjcl (i.e. those with comments removed,
+and other transformations to reduce code size) without any copyright
+notice.
