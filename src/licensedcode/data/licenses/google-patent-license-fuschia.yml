@@ -5,3 +5,6 @@ category: Patent License
 owner: Google
 homepage_url: https://github.com/flutter/flutter/blob/master/PATENTS
 faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia
+is_deprecated: yes
+notes: there was a typo in the license name and key and this is now replaced by
+ google-patent-license-fuchsia 
