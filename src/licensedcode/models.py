@@ -75,15 +75,14 @@ FOSS_CATEGORIES = set([
     'Patent License',
     'Permissive',
     'Public Domain',
-    'Source-available',
-    'Free Restricted',
 ])
 
 
 OTHER_CATEGORIES = set([
     'Commercial',
-    'Free Restricted',
     'Proprietary Free',
+    'Free Restricted',
+    'Source-available',
     'Unstated License',
 ])
 
