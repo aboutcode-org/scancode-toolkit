@@ -1,0 +1,6 @@
+license_expression: lgpl-3.0-plus OR apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.LGPL
+    - LICENSE.APACHE
