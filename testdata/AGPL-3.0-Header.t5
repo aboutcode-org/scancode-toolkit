@@ -1,9 +1,6 @@
 # Example: https://github.com/robertdavidgraham/masscan
-77.0%
-AGPL-Header 67.0% 81,488
-scan
 100%
-AGPL-3.0-Only 100% 0,$
+AGPL-3.0-Only 0,$
 
 Copyright (c) 2013 Go Gopher
 

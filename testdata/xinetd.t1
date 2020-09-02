@@ -1,7 +1,5 @@
-0%
-scan
 100%
-xinetd 100% 0,$
+xinetd 0,$
 
 ORIGINAL LICENSE: This software is (c) Copyright 1992 by Panagiotis Tsirigotis
 

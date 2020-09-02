@@ -1,9 +1,7 @@
 # Different copyright years for the "conspicuous location"
 # Example: https://github.com/acl-dev/acl
-0%
-scan
 100%
-IPL-1.0 100% 0,$
+IPL-1.0 0,$
 
 IBM Public License Version 1.0
 

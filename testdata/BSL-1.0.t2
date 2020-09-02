@@ -1,10 +1,7 @@
 # missing "and accompanying documentation" and "(the "Software")"
 # Example: https://github.com/ctessum/go.clipper
 100%
-BSL-1.0 95.7% 0,$
-scan
-100%
-BSL-1.0 100.0% 0,$
+BSL-1.0 0,$
 
 Boost Software License - Version 1.0 - August 17th, 2003
 

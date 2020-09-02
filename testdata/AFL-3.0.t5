@@ -1,10 +1,7 @@
 # Sub-paragraphs 1 2 3 ... instead of a b c...
 # Example: https://github.com/magento/magento2
-90.7%
-OSL-3.0 90.8% 1042,$
-scan
 100%
-AFL-3.0 100% 0,$
+AFL-3.0 0,$
 
 Academic Free License ("AFL") v. 3.0
 

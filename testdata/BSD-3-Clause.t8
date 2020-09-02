@@ -1,10 +1,7 @@
 # Mid-word line breaks, like "docume ntation" and "C ONSEQUENTIAL".
 # Example: https://github.com/LaiFeng-Android/SopCastComponent
-68%
-BSD-3-Clause 65.5% 479,1459
-scan
 100%
-BSD-3-Clause 100% 0,$
+BSD-3-Clause 0,$
 
 Copyright (c) 2017, Go Gopher
 All rights reserved.

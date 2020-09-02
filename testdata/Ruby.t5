@@ -1,9 +1,7 @@
 # Ruby s/binaries/executables/
 # Example: https://github.com/defunkt/unicorn
-0%
-scan
 100%
-Ruby 100% 0,$
+Ruby 0,$
 
   1. You may make and give away verbatim copies of the source form of the
      software without restriction, provided that you duplicate all of the

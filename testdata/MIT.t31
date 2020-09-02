@@ -1,10 +1,7 @@
 # MIT with s/the following/all/ conditions.
 # Example: https://github.com/socketio/socket.io-client-cpp
 100%
-MIT 98.8% 0,$
-scan
-100%
-MIT 100% 0,$
+MIT 0,$
 
 Copyright (c) 2015, Go Gopher.
 All rights reserved.

@@ -2,10 +2,7 @@
 # "in this position and unchanged"
 # Example: https://github.com/libarchive/libarchive
 100%
-BSD-2-Clause 95.7% 0,$
-scan
-100%
-BSD-2-Clause 100% 0,$
+BSD-2-Clause 0,$
 
 Copyright (c) 2003-2018 Go Gopher
 All rights reserved.

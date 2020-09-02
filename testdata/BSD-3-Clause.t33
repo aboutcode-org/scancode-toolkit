@@ -1,10 +1,7 @@
 # "two paragraphs of" and alternate disclaimer wording.
 # Example: https://github.com/chipsalliance/rocket-chip LICENSE.jtag
-56.1%
-BSD-3-Clause 42.9% 0,830
-scan
 100%
-BSD-3-Clause 100% 0,$
+BSD-3-Clause 0,$
 
 Copyright (c) 2016 The Regents of the University of
 California (Regents). All Rights Reserved.  Redistribution and use in

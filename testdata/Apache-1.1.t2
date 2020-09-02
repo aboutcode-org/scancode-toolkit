@@ -1,11 +1,7 @@
 # "please contact the Go Gopher"
 # Example: https://github.com/SecureAuthCorp/impacket
-68.8%
-BSD-3-Clause 40.9% 19,1064
-BSD-2-Clause 52.7% 1438,2114
-scan
 100%
-Apache-1.1 100% 0,$
+Apache-1.1 0,$
 
 Apache License 1.1 Copyright (c) 2000 The Apache Software Foundation. All
 rights reserved.

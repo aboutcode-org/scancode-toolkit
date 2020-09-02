@@ -1,7 +1,5 @@
-0%
-scan
 100%
-dvipdfm 100% 0,$
+dvipdfm 0,$
 
 A modified version of this file may be distributed, but it should be distributed
 with a *different* name. Changed files must be distributed *together with

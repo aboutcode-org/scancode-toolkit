@@ -1,16 +1,5 @@
-90.1%
-BSD-0-Clause 41.0% 997,1253
-BSD-3-Clause 99.5% 1335,2862
-BSD-3-Clause 97.5% 2962,4390
-BSD-3-Clause 99.5% 4458,6270
-BSD-3-Clause 99.5% 6331,7806
-BSD-3-Clause 99.5% 7869,9478
-BSD-3-Clause 97.5% 9558,11071
-BSD-3-Clause 96.1% 11127,12582
-BSD-3-Clause 99.5% 12649,$
-scan
 100%
-Net-SNMP 100% 0,$
+Net-SNMP 0,$
 
 ---- Part 1: CMU/UCD copyright notice: (BSD like) ----- Copyright 1989, 1991,
 1992 by Carnegie Mellon University

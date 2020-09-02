@@ -1,10 +1,7 @@
 # "is met" instead of "are met"
 # Example: https://github.com/tsavola/pointer
 100%
-BSD-2-Clause 75.3% 0,$
-scan
-100%
-BSD-1-Clause 100% 0,$
+BSD-1-Clause 0,$
 
 Copyright (c) Go Gopher.
 

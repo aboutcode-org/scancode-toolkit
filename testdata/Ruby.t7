@@ -1,9 +1,7 @@
 # Specifics after condition 4.
 # Example: https://github.com/evanphx/json (v1.4.3 COPYING)
-0%
-scan
 91.2%
-Ruby 100% 194,$
+Ruby 194,$
 
 Ruby is copyrighted free software by Yukihiro Matsumoto <matz@netlab.co.jp>.
 You can redistribute it and/or modify it under either the terms of the GPL

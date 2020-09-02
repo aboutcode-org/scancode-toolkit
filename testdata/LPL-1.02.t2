@@ -1,8 +1,6 @@
 # https://swtch.com/plan9port
-0%
-scan
 100%
-LPL-1.02 100% 0,$
+LPL-1.02 0,$
 
 Copyright © 2000-2009 Lucent Technologies.  All Rights Reserved.
 Portions Copyright © 2001-2008 Russ Cox

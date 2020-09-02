@@ -1,11 +1,8 @@
 # "two paragraphs of disclaimer" with other changes
 # TODO: Not sure what kind of license this is
 # Example: https://github.com/chipsalliance/rocket-chip
-56.1%
-BSD-3-Clause 42.9% 0,830
-scan
 100%
-BSD-3-Clause 100.0% 0,$
+BSD-3-Clause 0,$
 
 Copyright (c) 2016 The Regents of the University of
 California (Regents). All Rights Reserved.  Redistribution and use in

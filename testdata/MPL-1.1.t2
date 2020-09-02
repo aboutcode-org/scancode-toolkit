@@ -1,11 +1,8 @@
 # HTMLified MPL-1.1
 # Example: https://github.com/jboss-javassist/javassist
-1.6%
-Apache-2.0-Header 65.3% 24026,24402
-scan
 94.9%
-MPL-1.1 100.0% 257,23913
-MPL-1.1 100.0% 23962,24451
+MPL-1.1 257,23913
+MPL-1.1 23962,24451
 
 <HTML>
 <HEAD>

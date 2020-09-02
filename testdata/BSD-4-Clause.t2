@@ -1,9 +1,6 @@
 # BUG: cover says it's BSD-3-Clause!
 100%
-BSD-3-Clause 98% 0,$
-scan
-100%
-BSD-4-Clause 100% 0,$
+BSD-4-Clause 0,$
 
 /*-
  * Copyright (c) 1990, 1993

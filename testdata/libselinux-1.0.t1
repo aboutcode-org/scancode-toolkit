@@ -1,7 +1,5 @@
-0%
-scan
 100%
-libselinux-1.0 100% 0,$
+libselinux-1.0 0,$
 
 This library (libselinux) is public domain software, i.e. not copyrighted.
 

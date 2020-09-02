@@ -1,10 +1,7 @@
 # Alternate MPL-2.0 header like the Apache 2.0 header
 # Example: https://github.com/fauna/faunadb-go
-78.6%
-Apache-2.0-Header 78.7% 128,$
-scan
 100%
-MPL-2.0 100% 0,$
+MPL-2.0 0,$
 
 Copyright 2017 Go Gopher
 
