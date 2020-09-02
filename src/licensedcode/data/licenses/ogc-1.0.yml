@@ -5,3 +5,10 @@ category: Permissive
 owner: Open Geospatial Consortium
 homepage_url: https://www.ogc.org/ogc/software/1.0
 spdx_license_key: OGC-1.0
+ignorable_copyrights:
+  - Copyright (c) Open Geospatial Consortium, Inc.
+ignorable_holders:
+  - Open Geospatial Consortium, Inc.
+ignorable_urls:
+  - http://www.ogc.org/ogc/legal
+

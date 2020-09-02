@@ -6,3 +6,6 @@ owner: Thufie
 homepage_url: https://thufie.lain.haus/NPL.html
 ignorable_urls:
     - https://thufie.lain.haus/NPL.html
+ignorable_authors:
+  - the Web Service
+

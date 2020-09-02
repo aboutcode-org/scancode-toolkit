@@ -8,12 +8,12 @@ faq_url: https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs
 other_urls:
     - https://www.oracle.com/technetwork/java/javase/terms/oaa.html
     - https://www.oracle.com/downloads/licenses/javase-license1.html
-
 ignorable_urls:
-    - https://www.oracle.com/technetwork/java/javase/documentation/
-    - https://docs.oracle.com/en/java
-    - https://java.com/oaa
     - http://oracle.com/contracts
-    - https://oss.oracle.com/sources/
     - http://www.oracle.com/goto/opensourcecode
     - http://www.oracle.com/privacy
+    - https://docs.oracle.com/en/java
+    - https://java.com/oaa
+    - https://oss.oracle.com/sources/
+    - https://www.oracle.com/technetwork/java/javase/documentation/
+

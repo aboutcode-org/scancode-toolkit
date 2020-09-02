@@ -8,5 +8,6 @@ is_exception: yes
 ignorable_authors:
     - Corporate Accountability Lab NFP
 ignorable_urls:
-    - https://creativecommons.org/choose/
+    - https://creativecommons.org/choose
     - https://wiki.creativecommons.org/wiki/CCPlus
+
