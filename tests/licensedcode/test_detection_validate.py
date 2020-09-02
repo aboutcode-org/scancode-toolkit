@@ -62,9 +62,12 @@ def make_validation_test(rule, test_name):
         test_name = test_name.decode('utf-8')
 
     if rule.is_negative or rule.is_false_positive:
+
         def closure_test_function(*args, **kwargs):
             check_special_rule_can_be_detected(rule)
+
     else:
+
         def closure_test_function(*args, **kwargs):
             check_rule_or_license_can_be_self_detected_exactly(rule)
             check_ignorable_clues(rule)
@@ -140,7 +143,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         assert '\n'.join(expected) == '\n'.join(failure_trace)
 
 
-def check_ignorable_clues(rule):
+def check_ignorable_clues(rule, regen=False):
     """
     Validate that all ignorable clues defined in a `rule` Rule object are
     properly detected in that rule text file.
@@ -168,6 +171,13 @@ def check_ignorable_clues(rule):
         detections = sorted(set(chain(*(detected.values() for detected in detections))))
         results['ignorable_' + what] = detections
 
+    results = OrderedDict([(k, v) for k, v in sorted(results.items()) if v])
+
+    if regen:
+        for k, v in results.items():
+            setattr(rule, k, v)
+        rule.dump()
+
     # collect ignorables
     expected = OrderedDict([
         ('ignorable_copyrights', rule.ignorable_copyrights or []),
@@ -177,7 +187,6 @@ def check_ignorable_clues(rule):
         ('ignorable_emails', rule.ignorable_emails or []),
     ])
 
-    results = OrderedDict([(k, v) for k, v in sorted(results.items()) if v])
     expected = OrderedDict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
