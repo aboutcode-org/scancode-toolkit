@@ -1,7 +1,7 @@
 key: lha
-name: LHA
 short_name: lha
-category: Proprietary Free
-notes: From https://github.com/ErikMcClure/bad-licenses
+name: LHA
+category: Free Restricted
 owner: Yooichi Tagawa
 homepage_url: http://www.copyleftlicense.com/licenses/lha-license-version-10/view.php
+notes: From https://github.com/ErikMcClure/bad-licenses

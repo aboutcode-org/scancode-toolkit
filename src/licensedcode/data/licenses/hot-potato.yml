@@ -1,6 +1,6 @@
 key: hot-potato
-name: Hot Potato
 short_name: Hot Potato License
-category: Proprietary Free
-notes: From https://github.com/ErikMcClure/bad-licenses
+name: Hot Potato
+category: Permissive
 owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
