@@ -1,0 +1,8 @@
+license_expression: mpl-1.1 OR gpl-2.0 OR apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE-MPL-RabbitMQ
+    - LICENSE-GPL2
+    - LICENSE-APACHE2
+notes: See https://github.com/rabbitmq/rabbitmq-java-client/blob/master/LICENSE

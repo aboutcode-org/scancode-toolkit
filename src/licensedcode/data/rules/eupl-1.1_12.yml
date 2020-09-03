@@ -1,0 +1,5 @@
+license_expression: eupl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://ec.europa.eu/idabc/eupl.html
