@@ -212,6 +212,12 @@ Package: opam
   extensions: .opam
 
 --------------------------------------------
+Package: pods
+  class: packagedcode.cocoapods:CocoapodsPackage
+  metafiles: *.podspec
+  extensions: .podspec
+
+--------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
   metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock

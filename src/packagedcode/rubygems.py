@@ -42,6 +42,7 @@ from extractcode import archive
 from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
 from packagedcode.gemfile_lock import GemfileLockParser
+from packagedcode.spec import Spec
 from packagedcode.utils import combine_expressions
 
 
@@ -119,8 +120,7 @@ class RubyGem(models.Package):
             yield build_rubygem_package(metadata)
 
         if location.endswith('.gemspec'):
-            # TODO: implement me
-            pass
+            yield build_packages_from_gemspec(location)
 
         if location.endswith('Gemfile'):
             # TODO: implement me
@@ -559,27 +559,6 @@ LICENSES_MAPPING = {
 
 
 ################################################################################
-def parse_gemspec(location):
-    raise NotImplementedError
-
-
-def get_gemspec_data(location):
-    """
-    Return a mapping of Gem data from parsing a .gemspec  file.
-    """
-    if not location.endswith('.gemspec'):
-        return
-
-    spec = spec_defaults()
-    raw_spec = parse_gemspec(location)
-    if TRACE:
-        keys = raw_spec.keys()
-        logger.debug('\nRubygems spec keys for %(gemfile)r:\n%(keys)r' % locals())
-    spec.update(raw_spec)
-    spec = normalize(spec)
-    return spec
-
-
 def spec_defaults():
     """
     Return a mapping with spec attribute defaults to ensure that the
@@ -648,93 +627,74 @@ def normalize(gem_data, known_fields=known_fields):
     )
 
 
-def parse_spec(location):
-    pass
-
-
-class GemSpec(object):
+def build_packages_from_gemspec(location):
     """
-    Represent a Gem specification.
+    Return RubyGem Package from gemspec file.
     """
+    gemspec_object = Spec()
+    gemspec_data = gemspec_object.parse_spec(location)
+    
+    name = gemspec_data.get('name')
+    version = gemspec_data.get('version')
+    homepage_url = gemspec_data.get('homepage_url')
+    summary = gemspec_data.get('summary')
+    description = gemspec_data.get('description')
+    if len(summary) > len(description):
+        description = summary
 
-    # TODO: Check if we should use 'summary' instead of description
-    def __init__(self, location):
-        """
-        Initialize from the gem spec or gem file at location.
-        """
-        spec = parse_spec(location)
-        self.location = location
-        self.description = spec.get('description')
-        self.summary = spec.get('summary')
-        self.author = spec.get('author')
-        self.authors = spec.get('authors')
-        # can be a list
-        self.email = spec.get('email')
+    declared_license = gemspec_data.get('license')
+    if declared_license:
+        declared_license = declared_license.split(',')
+
+    author = gemspec_data.get('author') or []
+    email = gemspec_data.get('email') or []
+    parties = list(party_mapper(author, email))
+
+    package = RubyGem(
+        name=name,
+        version=version,
+        parties=parties,
+        homepage_url=homepage_url,
+        description=description,
+        declared_license=declared_license
+    )
+
+    dependencies = gemspec_data.get('dependencies', {}) or {}
+    package_dependencies = []
+    for name, version in dependencies.items():
+        package_dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(
+                    type='gem',
+                    name=name
+                ).to_string(),
+                requirement=', '.join(version),
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=False,
+            )
+        )
+    package.dependencies = package_dependencies
+
+    return package
 
 
-        self.spec['licenses'] = self.map_licenses()
-        self.make_unique()
+def party_mapper(author, email):
+    """
+    Yields a Party object with author and email.
+    """
+    for person in author:
+        yield models.Party(
+            type=models.party_person,
+            name=person,
+            role='author')
 
-    def __str__(self):
-        return '<{}: {}>'.format(self.__class__.__name__, self.location)
-
-    def make_unique(self):
-        """
-        Ensure that lists in the spec only contain unique values.
-        """
-        new_spec = {}
-        for key, value in self.spec.items:
-            if isinstance(value, list):
-                newlist = []
-                for item in value:
-                    if item not in newlist:
-                        newlist.append(item)
-                new_spec[key] = newlist
-            else:
-                new_spec[key] = value
-        return new_spec
-
-    def get_description(self):
-        """
-        Using 'description' over 'summary' unless summary contains
-        more data.
-        See http://guides.rubygems.org/specification-reference/
-        Note that it is common to see this is spec files: s.description = s.summary
-        """
-        description = self.spec.get('description', '')
-        summary = self.spec.get('summary', '')
-
-        content = description
-        # FIXME: we should join these.
-        if len(summary) > len(description):
-            content = summary
-
-        content = ' '.join(content.split())
-        return content.strip()
-
-    def get_email(self):
-        """
-        Join the list of emails as a comma-separated string.
-        """
-        email = self.spec.get('email', u'')
-        if isinstance(email, list):
-            email = u', '.join(email)
-        return email
-
-    def map_licenses(self):
-        licenses = self.spec.get('licenses', [])
-        if not isinstance(licenses, list):
-            licenses = [licenses]
-
-        mapped_licenses = []
-        for lic in licenses:
-            mapped_license = LICENSES_MAPPING.get(lic, None)
-            if mapped_license:
-                mapped_licenses.append(mapped_license)
-            else:
-                if TRACE:
-                    logger.warning('WARNING: {}: no license mapping for: "{}"'.format(self.filename, lic))
-        return mapped_licenses
+    for person in email:
+        yield models.Party(
+            type=models.party_person,
+            email=person,
+            role='email')
 
 
 def build_packages_from_gemfile_lock(gemfile_lock):

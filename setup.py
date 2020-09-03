@@ -188,6 +188,7 @@ setup(
         'xmltodict >= 0.11.0',
         'javaproperties >= 0.5',
         'toml >= 0.10.0',
+        'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
         'dparse >= 0.4.1',
 
