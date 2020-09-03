@@ -61,6 +61,10 @@ ftfy==4.4.3 \
 future==0.16.0 \
     --hash=sha256:c132ffad1ed08491003ee07fcdc6fab43fa99b02560ad4cdff8e52a141a79bfb \
     # via pefile, scancode-toolkit (setup.py)
+gemfileparser==0.8.0 \
+    --hash=sha256:839592e49ea3fd985cec003ef58f8e77009a69ed7644a0c0acc94cf6dd9b8d6e \
+    --hash=sha256:aed669b729c1f850308d1c373fe425d0c1ce768fa5bdac593e05715c64e2bffc \
+    # via scancode-toolkit (setup.py)    
 html5lib==0.999999999 \
     --hash=sha256:b8934484cf22f1db684c0fae27569a0db404d0208d20163fbf51cc537245d008 \
     # via scancode-toolkit (setup.py)
