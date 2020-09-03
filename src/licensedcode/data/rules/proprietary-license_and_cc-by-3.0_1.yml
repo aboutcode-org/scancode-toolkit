@@ -1,0 +1,12 @@
+license_expression: proprietary-license AND cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - (c) Qualys, Inc.
+ignorable_holders:
+    - Qualys, Inc.
+ignorable_urls:
+    - http://cre-ativecommons.org/licenses/by/3.0/us
+    - http://en.wikipedia.org/wiki/Robots_Exclusion_Standard
+    - http://www.ssllabs.com/
+    - https://www.qualys.com/privacy.We
