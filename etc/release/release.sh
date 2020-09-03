@@ -54,7 +54,7 @@ export CONFIGURE_QUIET=1
 # create requirements files as per OS/arch/python
 source bin/activate
 pip install -r etc/scripts/req_tools.txt
-python etc/scripts/freeze_and_update_reqs.py --find-links thirdparty --requirement etc/conf/requirement-"$python_version"_"$platform".txt
+python etc/scripts/freeze_and_update_reqs.py --find-links thirdparty --requirement etc/conf/requirements-"$python_version"_"$platform".txt
 
 echo "  RELEASE: Building release archives..."
 
