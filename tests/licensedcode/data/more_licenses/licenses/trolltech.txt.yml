@@ -1,5 +1,4 @@
 license_expressions:
-  - trolltech-gpl-exception-1.2
-  - gpl-1.0-plus
+  - trolltech-gpl-exception-1.1
 notes: this is a license from fossology license reference Trolltech (Trolltech GPL Exception
   1.1) http://doc.trolltech.com/4.3/license-gpl-exceptions.html

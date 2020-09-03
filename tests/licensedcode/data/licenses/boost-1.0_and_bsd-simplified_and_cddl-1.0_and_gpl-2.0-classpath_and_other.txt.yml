@@ -53,12 +53,10 @@ license_expressions:
   - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - unknown-license-reference
-  - x11-xconsortium
+  - x11-xconsortium_veillard
   - lgpl-2.1
   - other-permissive
   - apache-2.0
-  - unknown-license-reference
   - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
@@ -72,20 +70,15 @@ license_expressions:
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
   - other-permissive
-  - unknown-license-reference
-  - mit-old-style
+  - other-permissive
   - mpl-1.0
-  - mpl-1.0
-  - curl
   - unknown-license-reference
   - x11-xconsortium
   - mpl-1.1
-  - unknown-license-reference
-  - x11-xconsortium
+  - x11-xconsortium_veillard
   - lgpl-2.1
   - other-permissive
   - apache-2.0
-  - unknown-license-reference
   - khronos
   - lgpl-2.1
   - lgpl-2.0-plus
@@ -99,8 +92,7 @@ license_expressions:
   - lgpl-3.0
   - mpl-1.1 OR gpl-2.0 OR lgpl-2.0
   - other-permissive
-  - unknown-license-reference
-  - mit-old-style
+  - other-permissive
   - mpl-1.0
   - cddl-1.0 OR gpl-2.0
   - stlport-4.5
