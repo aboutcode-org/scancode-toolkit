@@ -1,0 +1,6 @@
+license_expression: pddl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opendatacommons.org/licenses/pddl/1.0
+    - https://opendatacommons.org/licenses/pddl/
