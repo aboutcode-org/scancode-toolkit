@@ -1,0 +1,8 @@
+license_expression: psf-2.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2001-2019, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Python Software
+        Foundation
+ignorable_holders:
+    - Python Software Foundation
