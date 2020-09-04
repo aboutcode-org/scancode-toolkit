@@ -1,0 +1,32 @@
+/*
+Copyright 2019 The Vitess Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+
+/*
+Copyright 2019 The Vitess Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+
+
+#!/bin/bash
+
+# Copyright 2020 The Vitess Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+
+
+approve changes to the governance model and manage the copyrights within the project outputs.
+
+
+// controller is created by Engine. Members are initialized upfront.
+
+
+
+# This is an example script that stops the instance started by vtgate-up.sh.
+
+
+Contributors engage with the project through the issue tracker,
+
+
+In fact, committers have no more authority over the project than contributors. While committership indicates a valued member of the community who has demonstrated a healthy respect

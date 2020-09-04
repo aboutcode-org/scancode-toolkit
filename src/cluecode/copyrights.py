@@ -621,6 +621,7 @@ patterns = [
     (r'^Updates$', 'JUNK'),
     (r'^Record-keeping$', 'JUNK'),
     (r'^Privacy$', 'JUNK'),
+    (r'^within$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
@@ -669,6 +670,7 @@ patterns = [
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'JUNK'),
+    (r'^file\.$', 'JUNK'),
 
     # junk when HOLDER(S): typically used in disclaimers instead
     (r'^HOLDER\(S\)$', 'JUNK'),
@@ -750,6 +752,7 @@ patterns = [
     (r'^CONTRIBUTORS?[,\.]?$', 'JUNK'),
     (r'^OTHERS?[,\.]?$', 'JUNK'),
     (r'^Contributors?\:[,\.]?$', 'JUNK'),
+    (r'^Version$', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -986,7 +989,6 @@ patterns = [
     (r'^VALUE$', 'NN'),
     (r'^Various', 'NN'),
     (r'^Vendor', 'NN'),
-    (r'^Version', 'NN'),
     (r'^VIEW$', 'NN'),
     (r'^Visit', 'NN'),
     (r'^Website', 'NN'),
@@ -998,6 +1000,8 @@ patterns = [
     (r'^YOUR', 'NN'),
     (r'^DateTime', 'NN'),
     (r'^Create$', 'NN'),
+    (r'^Engine\.$', 'NN'),
+    (r'^While$', 'NN'),
 
     # Hours/Date/Day/Month text references
     (r'^am$', 'NN'),
@@ -1419,6 +1423,8 @@ patterns = [
     (r'^<([a-zA-Z]+[a-zA-Z\.]){3,}$', 'EMAIL_START'),
     (r'^[a-zA-Z\.]{2,}>$', 'EMAIL_END'),
 
+    # a .sh shell scripts is NOT an email.
+    (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct.
     (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
 
@@ -1707,7 +1713,7 @@ grammar = """
     # and other contributors
     NAME: {<CC> <NN>? <CONTRIBUTORS>}        #644
 
-    NAME: {<NNP|CAPS>+ <AUTHS|CONTRIBUTORS>}        #660
+    NAME: {<NNP|CAPS>+ <AUTHS|AUTHDOT|CONTRIBUTORS>}        #660
 
     NAME: {<VAN|OF> <NAME>}        #680
     NAME: {<NAME-YEAR> <COMP|COMPANY>}        #690
@@ -1973,7 +1979,17 @@ grammar = """
     COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
 
     # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
-    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2290
+    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2278
+
+    # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
+    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2279
+
+    # Copyright (c) 2004, The Codehaus
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
+
+    # Copyright (c) 2017 odahcam
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>} #22791
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>} #22792
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
