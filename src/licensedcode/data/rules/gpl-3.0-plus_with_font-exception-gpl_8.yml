@@ -1,0 +1,5 @@
+license_expression: gpl-3.0-plus WITH font-exception-gpl
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://savannah.gnu.org/projects/freefont/
