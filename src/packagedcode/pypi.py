@@ -140,7 +140,7 @@ def parse(location):
             'requirements.in': parse_requirements_txt,
             'Pipfile.lock': parse_pipfile_lock,
             'metadata.json': parse_metadata,
-            'PKG-INFO': parse_pkg_info,
+            'PKG-INFO': parse_unpackaged_source,
             '.whl': parse_wheel,
             '.egg': parse_egg_binary,
             '.tar.gz': parse_source_distribution,
@@ -173,10 +173,13 @@ def parse_unpackaged_source(location):
 
 def parse_with_pkginfo(pkginfo):
     if pkginfo and pkginfo.name:
+        description = pkginfo.description
+        if not description:
+            description = pkginfo.summary
         common_data = dict(
             name=pkginfo.name,
             version=pkginfo.version,
-            description=pkginfo.description,
+            description=description,
             download_url=pkginfo.download_url,
             homepage_url=pkginfo.home_page,
         )
@@ -197,10 +200,11 @@ def parse_with_pkginfo(pkginfo):
             package.keywords = other_classifiers
         if declared_license:
             package.declared_license = declared_license
-        if pkginfo.maintainer:
-            common_data['parties'] = []
-            common_data['parties'].append(models.Party(
-                type=models.party_person, name=pkginfo.maintainer, role='author', email=pkginfo.maintainer_email))
+        if pkginfo.author_email:
+            parties = []
+            parties.append(models.Party(
+                type=models.party_person, name=pkginfo.author, role='author', email=pkginfo.author_email))
+            package.parties = parties
         return package
 
 

@@ -30,6 +30,7 @@ from collections import OrderedDict
 import io
 import json
 import os
+import pytest
 from unittest.case import expectedFailure
 
 import saneyaml
@@ -47,66 +48,57 @@ from packages_test_utils import PackageTester
 # this is a multiple personality package (Java  and Ruby)
 # see also https://rubygems.org/downloads/jaro_winkler-1.5.1-java.gem
 
-# NOTE: this needs to be implemented first
-@expectedFailure
-class TestRubyGemspec(FileBasedTesting):
+@pytest.mark.skipif(py2, reason='Does not pass on Python2')
+class TestRubyGemspec(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_gemspec(self, test_loc, expected_loc, regen=False):
-        test_loc = self.get_test_loc(test_loc)
-        expected_loc = self.get_test_loc(expected_loc)
-        results = rubygems.get_gemspec_data(test_loc)
-
-        try:
-            # fix absolute paths for testing
-            rel_path = results['loaded_from']
-            rel_path = [p for p in rel_path.split('/') if p]
-            rel_path = '/'.join(rel_path[-2:])
-            results['loaded_from'] = rel_path
-        except:
-            pass
-
-        if regen:
-            if py2:
-                mode = 'wb'
-            if py3:
-                mode = 'w'
-            with open(expected_loc, mode) as ex:
-                json.dump(results, ex, indent=2)
-        with io.open(expected_loc, encoding='UTF-8') as ex:
-            expected = json.load(ex)
-
-        assert sorted(expected.items()) == sorted(results.items())
-
     def test_rubygems_can_parse_gemspec_address_standardization_gemspec(self):
-        self.check_gemspec(
-            'rubygems/gemspec/address_standardization.gemspec',
-            'rubygems/gemspec/address_standardization.gemspec.expected.json')
+        test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
     def test_rubygems_can_parse_gemspec_arel_gemspec(self):
-        self.check_gemspec(
-            'rubygems/gemspec/arel.gemspec',
-            'rubygems/gemspec/arel.gemspec.expected.json')
+        test_file = self.get_test_loc('rubygems/gemspec/arel.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/arel.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
-    def test_rubygems_modern_gemspec(self):
-        self.check_gemspec(
-            'rubygems/gemspec/cat.gemspec',
-            'rubygems/gemspec/cat.gemspec.expected.json')
+    def test_rubygems_cat_gemspec(self):
+        test_file = self.get_test_loc('rubygems/gemspec/cat.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/cat.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_rubygems_github_gemspec(self):
+        test_file = self.get_test_loc('rubygems/gemspec/github.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/github.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
+
+    def test_rubygems_mecab_ruby_gemspec(self):
+        test_file = self.get_test_loc('rubygems/gemspec/mecab-ruby.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/mecab-ruby.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
     def test_rubygems_oj_gemspec(self):
-        self.check_gemspec(
-            'rubygems/gemspec/oj.gemspec',
-            'rubygems/gemspec/oj.gemspec.expected.json')
+        test_file = self.get_test_loc('rubygems/gemspec/oj.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/oj.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
     def test_rubygems_rubocop_gemspec(self):
-        self.check_gemspec(
-            'rubygems/gemspec/rubocop.gemspec',
-            'rubygems/gemspec/rubocop.gemspec.expected.json')
+        test_file = self.get_test_loc('rubygems/gemspec/rubocop.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/rubocop.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
-    def test_rubygems_gemspec_with_variables(self):
-        self.check_gemspec(
-            'rubygems/gemspec/with_variables.gemspec',
-            'rubygems/gemspec/with_variables.gemspec.expected.json')
+    def test_rubygems_with_variables_gemspec(self):
+        test_file = self.get_test_loc('rubygems/gemspec/with_variables.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/with_variables.gemspec.expected.json')
+        packages = rubygems.RubyGem.recognize(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
 
 class TestRubyGemMetadata(FileBasedTesting):

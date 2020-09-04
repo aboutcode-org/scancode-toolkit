@@ -51,7 +51,7 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:RustCargoCrate
-  metafiles: Cargo.toml
+  metafiles: Cargo.toml, Cargo.lock
 
 --------------------------------------------
 Package: chef
@@ -204,6 +204,18 @@ Package: nuget
   metafiles: [Content_Types].xml, *.nuspec
   extensions: .nupkg
   filetypes: zip archive, microsoft ooxml
+
+--------------------------------------------
+Package: opam
+  class: packagedcode.opam:OpamPackage
+  metafiles: *opam
+  extensions: .opam
+
+--------------------------------------------
+Package: pods
+  class: packagedcode.cocoapods:CocoapodsPackage
+  metafiles: *.podspec
+  extensions: .podspec
 
 --------------------------------------------
 Package: pypi

@@ -1,5 +1,4 @@
-
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,10 +30,44 @@ import logging
 import re
 
 import attr
+from packageurl import PackageURL
 
 
+TRACE = False
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+
+@attr.s()
+class GoModule(object):
+    namespace = attr.ib(default=None)
+    name = attr.ib(default=None)
+    version = attr.ib(default=None)
+    module = attr.ib(default=None)
+    require = attr.ib(default=None)
+    exclude = attr.ib(default=None)
+
+    def purl(self, include_version=True):
+        version = None
+        if include_version:
+            version = self.version
+        return PackageURL(
+                    type='golang',
+                    namespace=self.namespace,
+                    name=self.name,
+                    version=version
+                ).to_string()
+
+
+#######################################################################################
 """
-https://golang.org/ref/mod#go.mod-files
+This part handles go.mod files from Go.
+See https://golang.org/ref/mod#go.mod-files for details
 
 For example:
 
@@ -61,8 +94,7 @@ module is in the form
 module github.com/alecthomas/participle
 
 For example:
->>> ob = GoMod()
->>> p = ob.parse_module('module github.com/alecthomas/participle')
+>>> p = parse_module('module github.com/alecthomas/participle')
 >>> assert p.group('module') == ('github.com/alecthomas/participle')
 
 require or exclude can be in the form
@@ -73,140 +105,183 @@ or
 github.com/davecgh/go-spew v1.1.1
 
 For example:
->>> ob = GoMod()
-
->>> p = ob.parse_require('require github.com/davecgh/go-spew v1.1.1')
+>>> p = parse_dep_link('require github.com/davecgh/go-spew v1.1.1')
 >>> assert p.group('namespace') == ('github.com/davecgh')
 >>> assert p.group('name') == ('go-spew')
 >>> assert p.group('version') == ('v1.1.1')
 
->>> p = ob.parse_exclude('exclude github.com/davecgh/go-spew v1.1.1')
+>>> p = parse_dep_link('exclude github.com/davecgh/go-spew v1.1.1')
 >>> assert p.group('namespace') == ('github.com/davecgh')
 >>> assert p.group('name') == ('go-spew')
 >>> assert p.group('version') == ('v1.1.1')
 
->>> p = ob.parse_dep_link('github.com/davecgh/go-spew v1.1.1')
+>>> p = parse_dep_link('github.com/davecgh/go-spew v1.1.1')
 >>> assert p.group('namespace') == ('github.com/davecgh')
 >>> assert p.group('name') == ('go-spew')
 >>> assert p.group('version') == ('v1.1.1')
 """
 
+# Regex expressions to parse different types of go.mod file dependency
+parse_module_name = re.compile(
+    r'^module\s*'
+    r'(?P<namespace>[^\s]*)'
+    r'\/'
+    r'(?P<name>[^\s]*)\s*'
+).match
 
-TRACE = False
+parse_dep_link = re.compile(
+    r'.*?(\s)*'
+    r'(?P<namespace>[^\s]*)'
+    r'\/'
+    r'(?P<name>[^\s]*)'
+    r'\s*'
+    r'(?P<version>[^\s]*)\s*'
+).match
 
-logger = logging.getLogger(__name__)
 
-if TRACE:
-    import sys
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+def preprocess(line):
+    """
+    Return line string after removing commented portion and excess spaces.
+    """
+    if "//" in line:
+        line = line[:line.index('//')]
+    line = line.strip()
+    return line
 
 
-@attr.s()
-class GoMod(object):
-    # Regex expressions to parse different types of dependency
-    parse_module = re.compile(
-        r'^module\s'
-        r'(?P<module>[a-z].*)'
-    ).match
+def parse_gomod(location):
+    """
+    Return a dictionary containing all the important go.mod file data.
+    """
+    with io.open(location, encoding='utf-8', closefd=True) as data:
+        lines = data.readlines()
 
-    parse_module_name = re.compile(
-        r'^module(\s)*'
-        r'(?P<namespace>(.*))'
-        r'/'
-        r'(?P<name>[^\s]*)'
-    ).match
+    gomods = GoModule()
+    require = []
+    exclude = []
 
-    parse_require = re.compile(
-        r'^require(\s)*'
-        r'(?P<namespace>(.*))'
-        r'/'
-        r'(?P<name>[^\s]*)'
-        r'\s'
-        r'(?P<version>(.*))'
-    ).match
+    for i, line in enumerate(lines):
+        line = preprocess(line)
 
-    parse_exclude = re.compile(
-        r'^exclude(\s)*'
-        r'(?P<namespace>(.*))'
-        r'/'
-        r'(?P<name>[^\s]*)'
-        r'\s'
-        r'(?P<version>(.*))'
-    ).match
+        parsed_module_name = parse_module_name(line)
+        if parsed_module_name:
+            gomods.name = parsed_module_name.group('name')
+            gomods.namespace = parsed_module_name.group('namespace')
 
-    parse_dep_link = re.compile(
-        r'(?P<namespace>(.*))'
-        r'/'
-        r'(?P<name>[^\s]*)'
-        r'\s'
-        r'(?P<version>(.*))'
-    ).match
+        if 'require' in line and '(' in line:
+            for req in lines[i+1:]:
+                req = preprocess(req)
+                if ')' in req:
+                    break
+                parsed_dep_link = parse_dep_link(req)
+                if parsed_dep_link:
+                    require.append(GoModule(
+                            namespace=parsed_dep_link.group('namespace'),
+                            name=parsed_dep_link.group('name'),
+                            version=parsed_dep_link.group('version')
+                        )
+                    )
+            continue
 
-    @classmethod
-    def preprocess(cls, line):
-        """
-        Return line string after removing commented portion and excess spaces.
-        """
-        if "//" in line:
-            line = line[:line.index('//')]
-        line = line.strip()
-        return line
+        if 'exclude' in line and '(' in line:
+            for exc in lines[i+1:]:
+                exc = preprocess(exc)
+                if ')' in exc:
+                    break
+                parsed_dep_link = parse_dep_link(exc)
+                if parsed_dep_link:
+                    exclude.append(GoModule(
+                            namespace=parsed_dep_link.group('namespace'),
+                            name=parsed_dep_link.group('name'),
+                            version=parsed_dep_link.group('version')
+                        )
+                    )
+            continue
 
-    @classmethod
-    def parse_gomod(cls, location):
-        """
-        Return a dictionary containing all the important go.mod file data.
-        """
-        with io.open(location, encoding='utf-8', closefd=True) as data:
-            lines = data.readlines()
+        parsed_dep = parse_dep_link(line)
+        if 'require' in line:
+            require.append(GoModule(
+                    namespace=parsed_dep.group('namespace'),
+                    name=parsed_dep.group('name'),
+                    version=parsed_dep.group('version')
+                )
+            )
+            continue
 
-        gomod_data = {}
-        require = []
-        exclude = []
+        if 'exclude' in line:
+            exclude.append(GoModule(
+                    namespace=parsed_dep.group('namespace'),
+                    name=parsed_dep.group('name'),
+                    version=parsed_dep.group('version')
+                )
+            )
+            continue
 
-        for i, line in enumerate(lines):
-            line = cls.preprocess(line)
-            parsed_module = cls.parse_module(line)
-            if parsed_module:
-                gomod_data['module'] = parsed_module.group('module')
+    gomods.require = require
+    gomods.exclude = exclude
 
-            parsed_module_name = cls.parse_module_name(line)
-            if parsed_module_name:
-                gomod_data['name'] = parsed_module_name.group('name')
-                gomod_data['namespace'] = parsed_module_name.group('namespace')
-                
-            parsed_require = cls.parse_require(line)
-            if parsed_require:
-                line_req = [parsed_require.group('namespace'), parsed_require.group('name'), parsed_require.group('version')]
-                require.append(line_req)
+    return gomods
 
-            parsed_exclude = cls.parse_exclude(line)
-            if parsed_exclude:
-                line_exclude = [parsed_exclude.group('namespace'), parsed_exclude.group('name'), parsed_exclude.group('version')]
-                exclude.append(line_exclude)
 
-            if 'require' in line and '(' in line:
-                for req in lines[i+1:]:
-                    req = cls.preprocess(req)
-                    if ')' in req:
-                        break
-                    parsed_dep_link = cls.parse_dep_link(req)
-                    if parsed_dep_link:
-                        line_req = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
-                        require.append(line_req)
+#######################################################################################
+"""
+This part handles go.sum files from Go.
+See https://blog.golang.org/using-go-modules for details
 
-            if 'exclude' in line and '(' in line:
-                for exc in lines[i+1:]:
-                    exc = cls.preprocess(exc)
-                    if ')' in exc:
-                        break
-                    parsed_dep_link = cls.parse_dep_link(exc)
-                    if parsed_dep_link:
-                        line_exclude = [parsed_dep_link.group('namespace'), parsed_dep_link.group('name'), parsed_dep_link.group('version')]
-                        exclude.append(line_exclude)
+A go.sum file contains pinned Go modules checksums of two styles:
 
-        gomod_data['require'] = require
-        gomod_data['exclude'] = exclude
+For example:
+github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
+github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 
-        return gomod_data
+... where the line with /go.mod is for a check of that go.mod file 
+and the other line contains a dirhash for that path as documented as
+https://pkg.go.dev/golang.org/x/mod/sumdb/dirhash
+
+Here are some example of usage of this module::
+
+>>> p = get_dependency('github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
+>>> assert p.group('namespace') == ('github.com/BurntSushi')
+>>> assert p.group('name') == ('toml')
+>>> assert p.group('version') == ('v0.3.1')
+>>> assert p.group('checksum') == ('WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
+"""
+
+# Regex expressions to parse go.sum file dependency
+# dep example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....
+get_dependency = re.compile(
+    r'(?P<namespace>[^\s]*)'
+    r'\/'
+    r'(?P<name>[^\s]*)'
+    r'\s*'
+    r'(?P<version>[^\s]*)'
+    r'\s*'
+    r'h1:(?P<checksum>[^\s]*)\s*'
+).match
+
+
+def parse_gosum(location):
+    """
+    Return a list of GoSum from parsing the go.sum file at `location`.
+    """
+    with io.open(location, encoding='utf-8', closefd=True) as data:
+        lines = data.readlines()
+
+    gosums = []
+
+    for line in lines:
+        line = line.replace('/go.mod', '')
+        parsed_dep = get_dependency(line)
+
+        dep = GoModule(
+                namespace=parsed_dep.group('namespace'),
+                name=parsed_dep.group('name'),
+                version=parsed_dep.group('version')
+            )
+
+        if dep in gosums:
+            continue
+
+        gosums.append(dep)
+
+    return gosums

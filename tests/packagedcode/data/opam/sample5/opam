@@ -1,0 +1,34 @@
+opam-version: "2.0"
+name: "bap-elf"
+version: "1.0.0"
+maintainer: "Ivan Gotovchits <ivg@ieee.org>"
+authors: "BAP Team"
+homepage: "https://github.com/BinaryAnalysisPlatform/bap/"
+bug-reports: "https://github.com/BinaryAnalysisPlatform/bap/issues"
+dev-repo: "git://github.com/BinaryAnalysisPlatform/bap/"
+license: "MIT"
+build: [
+  ["./configure" "--prefix=%{prefix}%" "--enable-elf"]
+  [make]
+]
+
+install: [[make "install"]]
+
+remove: [
+        ["ocamlfind" "remove" "bap-elf"]
+        ["ocamlfind" "remove" "bap-plugin-elf_loader"]
+        ["bapbundle" "remove" "elf_loader.plugin"]
+]
+
+depends: [
+  "ocaml"
+  "bap-std" {= "1.0.0"}
+  "bap-dwarf" {= "1.0.0"}
+  "camlp4"
+  "bitstring" {< "3.0.0"}
+]
+synopsis: "BAP ELF parser and loader written in native OCaml"
+url {
+  src: "https://github.com/BinaryAnalysisPlatform/bap/archive/v1.0.0.tar.gz"
+  checksum: "md5=07dce66dd871e448652d8885283c6631"
+}

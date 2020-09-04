@@ -11,10 +11,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.2.0'
   s.authors = ['Bozhidar Batsov', 'Jonas Arvidsson', 'Yuji Nakayama']
-  s.description = <<-DESCRIPTION
-    Automatic Ruby code style checking tool.
-    Aims to enforce the community-driven Ruby Style Guide.
-  DESCRIPTION
+  s.description = "Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide."
 
   s.email = 'rubocop@googlegroups.com'
   s.files = `git ls-files assets bin config lib LICENSE.txt README.md`

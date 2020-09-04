@@ -1,0 +1,52 @@
+{
+  "type": "pods",
+  "namespace": null,
+  "name": "BadgeHub",
+  "version": "0.1.1",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Objective-C",
+  "description": " Make any UIView a full fledged animated notification center. It is a way to quickly add a notification badge icon to a UIView. It make very easy to add badge to any view.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "jogendra",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "email",
+      "name": null,
+      "email": "imjog24@gmail.com",
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "https://github.com/jogendra/BadgeHub",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": "https://github.com/jogendra/BadgeHub.git",
+  "copyright": null,
+  "license_expression": "mit AND unknown",
+  "declared_license": ":type => MIT, :file => LICENSE",
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [
+    "https://github.com/jogendra/BadgeHub.git"
+  ],
+  "purl": "pkg:pods/BadgeHub@0.1.1",
+  "repository_homepage_url": "https://cocoapods.org/pods/BadgeHub",
+  "repository_download_url": "https://github.com/jogendra/BadgeHub/archive/0.1.1.zip",
+  "api_data_url": null
+}
