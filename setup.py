@@ -78,7 +78,7 @@ def get_git_version():
     from subprocess import check_output, STDOUT
     # this may fail with exceptions
     cmd = 'git', 'describe', '--tags', '--long', '--dirty',
-    version = check_output(cmd, stderr=STDOUT).strip()
+    version = check_output(cmd, stderr=STDOUT).strip().decode('utf-8')
     dirty = version.endswith('-dirty')
     tag, distance, commit = version.split('-')[:3]
     # lower tag and strip V prefix in tags
@@ -88,14 +88,6 @@ def get_git_version():
     return tag, int(distance), commit, dirty
 
 
-def read(*names, **kwargs):
-    import os
-    return open(
-        os.path.join(os.path.dirname(__file__), *names),
-        #encoding=kwargs.get('encoding', 'utf8')
-    ).read()
-
-
 setup(
     name='scancode-toolkit',
     version=get_version(),
@@ -103,7 +95,7 @@ setup(
     description=
         'ScanCode is a tool to scan code for license, copyright, package '
         'and their documented dependencies and other interesting facts.',
-    long_description=read('README.rst'),
+    long_description=open(join(dirname(__file__), 'README.rst')).read(),
     author='ScanCode',
     author_email='info@aboutcode.org',
     url='https://github.com/nexB/scancode-toolkit',
