@@ -1,0 +1,372 @@
+LICENCE AND SERVICES AGREEMENT
+
+READ CAREFULLY: 
+
+THE LICENSOR LICENSES THE SOFTWARE AND OTHER MATERIALS ONLY ON THE CONDITION THAT 
+THE LICENSEE (you as the end user) ACCEPTS ALL OF THE TERMS CONTAINED OR REFERENCED 
+WITHIN THIS AGREEMENT.
+
+By selecting "I accept" when registering for a licence at www.ReversePoco.co.uk, you accept and 
+agree to this Agreement. You may not accept this Agreement on behalf of another person unless you 
+are above the age of 18 and acting on behalf of a minor as their parent or guardian. 
+If you 'the Licensee' do not accept this Agreement DO NOT SELECT "I ACCEPT" AND DO CONTINUE 
+WITH YOUR PURCHASE OR USE OF A LICENSE FOR USE OF THE REVERSE POCO MATERIALS.
+
+1. Licence
+
+    1.1 Licence Grant  
+        If you accept and continue to abide by the conditions in this agreement and pay any applicable fees, 
+        REVERSE POCO grants you a non-exclusive, non-transferable and limited licence to use the licensed 
+        Material in its source code form (not as object code, an executable or a fully compiled software 
+        program).
+
+    1.2 Upgrades  
+        The Licensee agrees to comply with such terms in accordance with the applicable licence use and 
+        such terms as modified from time to time which are a part of and incorporated by reference into this 
+        Agreement.  The Licensee acknowledges that REVERSE POCO may require a further acceptance of 
+        such terms as a condition to receiving or accessing upgraded versions.
+
+    1.3 Versions
+        Previous versions of the Materials have been produced under and is subject to the Apache Licence 
+        version 2.0 which can be found at http://www.apache.org/licenses. All portions of the Material 
+        which are subject to the sub-licence, are clearly indicted within the code. 
+
+2. License Limitations and Prohibitions
+
+    2.1 Limitations and Exclusions
+       
+        2.1.1   Unauthorised Activities 
+        The parties acknowledge and agree that, notwithstanding anything contrary to this Agreement 
+        whether expressly stated, implied or otherwise, no licence is granted outside of this Agreement.
+        This Agreement expressly excludes any right to:
+            (a) use Excluded Materials; 
+            (b) access any REVERSE POCO Materials that the Licensee acquired unlawfully 
+                or in violation of this Agreement; 
+            (c) Install or access the Licensed Materials beyond the applicable licensed term 
+                whether a fixed term or relationship program period or term or outside the 
+                scope of the applicable Licence type or Permitted Number;
+            (d) Install the Licensed Materials on any computer other than a computer 
+                owned, leased or controlled by the Licensee, unless otherwise authorized in 
+                writing by REVERSE POCO; 
+            (e) distribute, rent, loan, lease, sell, sublicense, transfer or otherwise provide all 
+                or any portion of the REVERSE POCO Materials to any person or entity 
+                except as expressly set forth in this Agreement or as expressly authorized in 
+                writing by REVERSE POCO;
+            (f) provide or make available any features or functionality of the REVERSE 
+                POCO Materials to any other person or entity whether or not over a network 
+                and whether or not on a hosted basis;
+
+        2.1.2 Effect of Unauthorized Use
+        The Licensee will not engage in and will not permit or assist any third party to engage in any of the 
+        uses or activities prohibited or inconsistent with the limitations described in this Agreement.  Any 
+        such unauthorised use or installation or access to the Licensed Materials outside of the provisions of 
+        this Agreement will constitute an infringement of REVERSE POCO's intellectual property rights as 
+        well as a breach of this Agreement.  The Licensee will notify REVERSE POCO promptly of any such 
+        unauthorized uses or other unauthorized installation or access.
+
+    2.2 Integration and Recognition 
+    The Materials are designed to be installed into Microsoft Visual Studio. The Licensee will then use 
+    the Materials to generate entity framework mapping code. If the Licensee creates any programs in 
+    this manner for distribution using a non-commercial (Academic / Trial) licence, then the Licensee is 
+    required to make a prominent reference in such program to the use of the licenced Material. 
+
+3. All Rights Reserved
+
+    3.1
+    REVERSE POCO and its licensors retain title to and ownership of all other rights with respect to the 
+    REVERSE POCO Materials and all copies thereof, including but without limitation, any related 
+    copyrights, trademarks, trade secrets, patents, and other intellectual property rights.  The Licensee 
+    has only the limited licences granted with respect to the Licensed Materials expressly set forth in this 
+    Agreement. The Licensee has no other rights either implied or otherwise.  
+
+    3.2 
+    The Licensee acknowledges and agrees that the REVERSE POCO Materials are licensed, not sold, and 
+    that rights to install and access the Licensed Materials are acquired only under the Licence from 
+    REVERSE POCO. 
+
+    3.3
+    The structure and organisation of software included in the REVERSE POCO Materials, such as any 
+    source code or similar Materials relating to such software, any API information and development 
+    Materials and any other Licensed Materials identified as confidential or proprietary are valuable 
+    trade secrets of REVERSE POCO. The Materials may only be used for the Licensee's own authorised 
+    internal use and the Licensee may not distribute, disclose or otherwise provide the Materials to third 
+    parties except as integrated into a program developed by the Licensee and with clear recognition of 
+    this Licence pursuant to 2.2 above. 
+
+4. Limited Warranty and Disclaimers 
+
+    4.1 Limited Warranty
+    REVERSE POCO warrants that, as of the date on which the Licensed Materials are delivered to the 
+    Licensee and for ninety (90) days thereafter (or as otherwise agreed) ("The Warranty Period") the 
+    Licensed Materials will provide the general features and functions described in the projects GitHub 
+    wiki page "Full control over the generated code". REVERSE POCO's entire liability and Licensee's 
+    exclusive remedy during the Warranty Period ("Limited Warranty") will be, with the exception of any 
+    statutory warranty or remedy that cannot be excluded or limited under law, at REVERSE POCO's 
+    option to: 
+        (i) attempt to correct or work around any errors or defects; or 
+        (ii) refund the licence fees, if any, paid by Licensee and terminate this 
+             Agreement or the licence specific to such Licensed Materials. Such refund is 
+             subject to the return, during the Warranty Period, of the REVERSE POCO 
+             Materials, with a copy of Licensee's Licence Identification. 
+
+    THE LIMITED WARRANTY SET FORTH IN THIS SECTION GIVES THE LICENSEE SPECIFIC LEGAL RIGHTS.  
+    THE LICENSEE MAY HAVE ADDITIONAL LEGAL RIGHTS UNDER LAW WHICH VARY FROM JURISDICTION 
+    TO JURISDICTION. REVERSE POCO DOES NOT SEEK TO LIMIT THE LICENSEE'S WARRANTY RIGHTS TO 
+    ANY EXTENT NOT PERMITTED BY LAW.
+
+    4.2 Disclaimer
+    EXCEPT FOR THE EXPRESS LIMITED WARRANTY PROVIDED IN SECTION 5.1 (LIMITED WARRANTY), 
+    AND TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, REVERSE POCO AND ITS 
+    SUPPLIERS MAKE, AND LICENSEE RECEIVES, NO WARRANTIES, REPRESENTATIONS, OR CONDITIONS 
+    OF ANY KIND, EXPRESS OR IMPLIED (INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES 
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT, OR 
+    WARRANTIES OTHERWISE IMPLIED BY STATUTE OR FROM A COURSE OF DEALING OR USAGE OF 
+    TRADE) WITH RESPECT TO ANY REVERSE POCO MATERIALS, RELATIONSHIP PROGRAMS, OR SERVICES 
+    (PURSUANT TO A RELATIONSHIP PROGRAM OR OTHERWISE).  ANY STATEMENTS OR 
+    REPRESENTATIONS ABOUT THE REVERSE POCO MATERIALS, RELATIONSHIP PROGRAMS OR SERVICES 
+    AND THEIR FEATURES OR FUNCTIONALITY IN THE LICENSED MATERIALS OR ANY COMMUNICATION 
+    WITH LICENSEE ARE FOR INFORMATION PURPOSES ONLY, AND DO NOT CONSTITUTE A WARRANTY, 
+    REPRESENTATION, OR CONDITION.  WITHOUT LIMITING THE FOREGOING, REVERSE POCO DOES NOT 
+    WARRANT:  (a) THAT THE OPERATION OR OUTPUT OF THE LICENSED MATERIALS OR SERVICES WILL 
+    BE UNINTERRUPTED, ERROR-FREE, SECURE, ACCURATE, RELIABLE, OR COMPLETE, WHETHER OR NOT 
+    UNDER A RELATIONSHIP PROGRAM OR SUPPORT BY REVERSE POCO OR ANY THIRD PARTY; (b) THAT 
+    ERRORS WILL BE CORRECTED BY REVERSE POCO OR ANY THIRD PARTY; OR (c) THAT REVERSE POCO 
+    OR ANY THIRD PARTY WILL RESOLVE ANY PARTICULAR SUPPORT REQUEST OR THAT SUCH 
+    RESOLUTION WILL MEET LICENSEE'S REQUIREMENTS OR EXPECTATIONS.  NOTHING IN THE 
+    FOREGOING RESTRICTS THE EFFECT OF WARRANTIES OR CONDITIONS WHICH MAY BE IMPLIED BY 
+    LAW WHICH CANNOT BE EXCLUDED, RESTRICTED OR MODIFIED NOTWITHSTANDING A 
+    CONTRACTUAL RESTRICTION TO THE CONTRARY.
+
+5. Warnings
+
+    5.1 Functionality Limitations
+
+        5.1.1
+        The Licensed Materials and services (except for Licensed Materials designed for non-commercial 
+        use, such as REVERSE POCO Materials designed to be used for household or other non-consumer 
+        purposes or licensed only for purposes of educational or individual learning) are commercial 
+        professional tools intended to be used by trained professionals only.  
+
+        5.1.2
+        Particularly in the case of commercial professional use, the Licensed Materials are not a substitute 
+        for the Licensee's professional judgment or independent testing. The Licensed Materials are 
+        intended only to assist Licensee with creating Entity Framework mapping code within a software 
+        development environment and is not a substitute for Licensee's own knowledge, skills, development 
+        and testing responsibilities within the program or programs Licensee develops using the Licenced 
+        Materials.
+
+        5.1.3
+        Due to the large variety of potential applications for the Licensed Materials, the Licensed Materials 
+        have not been tested in all situations under which they may be used.  REVERSE POCO will not be 
+        liable whatsoever for the results obtained through use of the Licensed Materials.  Persons using the 
+        Licensed Materials are responsible for their supervision, management, control and any products or 
+        results. This responsibility includes, without limitation, the determination of appropriate uses for the 
+        Licensed Materials and the selection of the Licensed Materials and other computer programs and 
+        Materials to help achieve the intended results.
+
+        5.1.4
+        Persons using the Licensed Materials are also responsible for establishing the adequacy of 
+        independent procedures for testing the reliability, accuracy, completeness and other characteristics 
+        of any output of the Licensed Materials, without limitation, any Entity Framework mapping code 
+        created with the assistance of the Licensed Materials.  The Licensee further acknowledges and 
+        agrees that the Licensed Materials form part of Licensee's total unique program development to 
+        deliver specific functionality and that the Licensed Materials provided by REVERSE POCO may not 
+        achieve the results the Licensee desires within the Licensee's program.
+
+    5.2 Access to Licence Material
+
+        5.2.1
+        The Licence Material can be downloaded through the Microsoft Marketplace as a tool available to 
+        use within Microsoft Visual Studio. You must then go to www.ReversePoco.co.uk to purchase a 
+        licence to use the Licenced Material. Once the Licence Material has been authorised for use by the 
+        Licensee, a Licence file will be provided via email to an email address provided by the Licensee. In 
+        addition, the Licence file will also be made available for download from the website for the duration 
+        for which it is valid. The licence file will be read and checked each time the Reverse Generator is run.
+
+        5.2.2 Disabled Access 
+        LICENSEE ACKNOWLEDGES AND AGREES THAT INSTALLATION OF AND ACCESS TO 
+        LICENSED MATERIALS MAY BE DISABLED BY THE ACTIVATION, SECURITY, AND TECHNICAL 
+        PROTECTION MECHANISMS IF LICENSEE TRIES TO TRANSFER ALL OR A PART OF THE 
+        LICENSED MATERIALS TO ANOTHER COMPUTER, IF LICENSEE TAMPERS WITH THE 
+        TECHNICAL PROTECTION MECHANISMS OR DATE-SETTING MECHANISMS ON A COMPUTER 
+        OR IN THE LICENSED MATERIALS, IF LICENSEE USES THE LICENSED MATERIALS PAST AN 
+        APPLICABLE RELATIONSHIP PROGRAM PERIOD OR FIXED TERM, OR IF LICENSEE 
+        UNDERTAKES CERTAIN OTHER ACTIONS THAT AFFECT THE SECURITY MODE OR UNDER 
+        OTHER CIRCUMSTANCES AND THAT, IN ANY SUCH EVENT, LICENSEE'S ACCESS TO LICENSEE'S 
+        WORK PRODUCT AND OTHER DATA MAY BE AFFECTED.  MORE INFORMATION IS CONTAINED 
+        IN THE APPLICABLE LICENSED MATERIALS OR AVAILABLE FROM REVERSE POCO ON 
+        REQUEST.
+
+6. Limitations of Liability 
+
+    6.1       
+    REVERSE POCO HAS NO LIABILITY (DIRECTLY OR INDIRECTLY) FOR ANY INCIDENTAL, SPECIAL, 
+    INDIRECT, CONSEQUENTIAL OR PUNITIVE DAMAGES; FOR LOSS OF PROFITS, USE, REVENUE, OR 
+    DATA; OR FOR BUSINESS INTERRUPTION (REGARDLESS OF THE LEGAL THEORY FOR SEEKING SUCH 
+    DAMAGES OR OTHER LIABILITY).  IN ADDITION, THE LIABILITY OF REVERSE POCO AND ITS SUPPLIERS 
+    ARISING OUT OF OR RELATING TO ANY REVERSE POCO MATERIALS WILL NOT EXCEED THE AMOUNT 
+    PAID OR PAYABLE BY LICENSEE FOR SUCH REVERSE POCO MATERIALS. 
+
+    6.2 Application and Basis for Limitations
+    THE LIMITATIONS OF LIABILITY IN THIS SECTION 6 (LIMITATIONS OF LIABILITY) WILL APPLY TO THE 
+    MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW TO ANY DAMAGES OR OTHER LIABILITY, 
+    HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, WHETHER DERIVED FROM 
+    CONTRACT, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE, EVEN IF 
+    REVERSE POCO HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LIABILITY AND REGARDLESS OF 
+    WHETHER THE LIMITED REMEDIES AVAILABLE HEREUNDER FAIL OF THEIR ESSENTIAL PURPOSE.  
+    ALSO, LICENSEE AGREES THAT THE LICENSE CHARGED BY REVERSE POCO AND PAID BY LICENSEE ARE 
+    BASED ON AND REFLECTIVE OF THE ALLOCATION OF RISK CONTEMPLATED BY THIS SECTION 6 
+    (LIMITATIONS OF LIABILITY) AND THAT THE LIABILITY LIMITATIONS IN THIS SECTION 6 (LIMITATIONS 
+    OF LIABILITY) ARE AN ESSENTIAL ELEMENT OF THE AGREEMENT BETWEEN THE PARTIES.
+
+7. Licence Types
+
+    7.1 Individual commercial licence 
+    If a Licensee is granted an individual licence for the material, then the Licensee may only use the 
+    licence key provided to them and not allow access to or permit the use of such access key to any 
+    other individuals. Licensee may install additional copies of the Licence Materials as needed on 
+    multiple computers or servers provided the Licence Material in its stand-alone form is accessed only 
+    by the Licensee, this does not restrict the Licensee from integrating the Licenced Material into its 
+    own developed programs and distributing those programs in compliance with section 2.
+
+    7.2 Academic / Non-Commercial Licence
+    If a Licensee is granted an Academic / Non-Commercial Licence for the material, then the Licensee 
+    may only use the licence key provided to them and not allow access to or permit the use of such 
+    access key to any other individuals. Any use of the Licence Material must be used for Academic / 
+    Non-Commercial purposes only. No programs developed utilised under this licence type maybe 
+    distributed for any reason other than Academic / Non-Commercial purposes.
+
+    7.3 Evaluation, Demonstration or Trial
+    If a Licensee is granted an "evaluation" "demonstration" "trial" licence for the material then the
+    Licensee may install a single, primary copy of the Licence Materials on one computer or server and
+    allow access to the primary copy of the licence material solely by the Licensee. Licensee may install
+    one copy of the Licenced Material on a single computer or server accessible only by the Licensee. The
+    Licenced Material may be used solely for the Licensee's personal use such as evaluation of the
+    Licensed Material. This licensed type will be for a fixed term based on the determination of REVERSE
+    POCO or if no such term as specified, the term is seven (7) days from installation or as otherwise
+    authorised in writing by REVERSE POCO.
+
+8. Term and Termination
+
+    8.1 Term, Termination or Suspension
+    Each licence under this Agreement, with respect to each specific set of Licensed Materials covered 
+    by this Agreement, will become effective as of the latest to occur of:
+        (a) this Agreement becoming effective; or 
+        (b) payment by Licensee of the applicable fees, excluding licences (such as 
+            academic / trial licences) where no fees are required; or
+        (c) delivery of the specific Licensed Materials.
+
+    8.2
+    Either REVERSE POCO or the Licensee may terminate this Agreement relating to the Licensed 
+    Materials if the other party is in breach of this Agreement and fails to cure such breach within ten 
+    (10) days after written notice of the breach.
+    However, if the Licensee is in breach of sections 1 or 2 of this Agreement, REVERSE POCO may 
+    terminate this Agreement or Licence of the Licensed Materials immediately upon written notice of 
+    the breach.
+
+    8.3
+    In addition, REVERSE POCO may, as an alternative to termination, suspend the Licensee's licence as 
+    to the Licensed Materials relating to the Licensed Materials, or any other obligations or Licensee 
+    rights under this Agreement (or under other terms, if any, relating to Materials associated with the 
+    Licensed Materials), if Licensee fails to make a payment to REVERSE POCO or otherwise fails to 
+    comply with the provisions of this Agreement or other terms relating to any such license. 
+
+    8.4
+    REVERSE POCO may also terminate this Agreement if the Licensee becomes subject to bankruptcy 
+    proceedings, becomes insolvent, or makes an arrangement with the Licensee's creditors.  This 
+    Agreement will terminate automatically without further notice or action by REVERSE POCO if the 
+    Licensee goes into liquidation.  
+
+    8.5
+    The Licensee acknowledges and agrees that REVERSE POCO may assign or sub-contract any of its 
+    rights or obligations under this Agreement.
+    
+    8.6
+    Upon termination or expiration of this Agreement, the licences granted hereunder will terminate.  
+    Upon termination or expiration of any licence granted to the Licensee, the Licensee must cease all 
+    use of REVERSE POCO's Materials to which such licence applies and Uninstall all copies of the 
+    REVERSE POCO's Materials.
+    At REVERSE POCO's request, the Licensee agrees to destroy or return to REVERSE POCO.
+    REVERSE POCO reserves the right to require the Licensee to show satisfactory proof that all copies of 
+    the REVERSE POCO Materials have been uninstalled, destroyed or returned to REVERSE POCO.  
+
+9. General Provisions
+
+    9.1 Notices in connection with this Agreement by either party will be in writing and will 
+    be sent by electronic mail, postal service, or a delivery service.  
+
+    9.2 Notices from REVERSE POCO to the Licensee will be effective: 
+        (a) in the case of notices by email, one (1) day after sending to the email 
+            address provided to REVERSE POCO, or 
+        (b) in the case of notices by mail or delivery service, five (5) days after sending 
+            by regular post or delivery service to the address provided to REVERSE 
+            POCO.  The Licensee hereby consents to service of process being affected on 
+            the Licensee by registered mail sent to the address set forth on the 
+            Licensee's Customer Information Form (or, if no Customer Information Form 
+            has been provided, the Licensee's last address known by REVERSE POCO) if 
+            so permitted by applicable law.
+
+    9.3 Notices from the Licensee to REVERSE POCO will be effective:
+        (a) in the case of notices by email, one (1) day after sending to (and receipt by 
+            REVERSE POCO at) admin@reversepoco.co.uk, or 
+        (b)  in the case of notices by mail or delivery service, when received by REVERSE POCO.
+
+    9.4 This Agreement shall be governed by and construed in accordance with the law of
+        England and Wales. The exclusive jurisdiction for resolving any disputes that arise out of this 
+        Agreement, shall be subject to the exclusive jurisdiction of England and Wales.
+
+    9.5 Exceptions to Prohibitions. The prohibitions contained in this Agreement will not 
+        apply where and to the extent applicable by law does not allow such prohibitions to 
+        be enforced. The Licensee may have other rights under the laws of the state or 
+        country within the Territory where the Licensed Materials are acquired, and this 
+        Agreement does not change the Licensee's rights under the laws of such state or 
+        country if and to the extent the laws of such state or country do not permit this 
+        Agreement to do so. The Licensee will bear the burden of proof to demonstrate that 
+        applicable law does not allow 
+            (a) the enforcement of such prohibitions; or 
+            (b) this Agreement to change particular rights in a state or country (and 
+                that Licensee has not exceeded the bounds of the unenforceable 
+                prohibitions and unchangeable rights).
+
+    9.6 If and to the extent any provision of this Agreement is held illegal, invalid, or 
+    unenforceable in whole or in part under applicable law, such provision or such 
+    portion thereof will be ineffective as to the jurisdiction in which it is illegal, invalid, 
+    or unenforceable to the extent of its illegality, invalidity, or unenforceability and will 
+    be deemed modified to the extent necessary to conform to applicable law so as to 
+    give the maximum effect to the intent of the parties.  The illegality, invalidity, or 
+    unenforceability of such provision in that jurisdiction will not in any way affect the 
+    legality, validity, or enforceability of such provision or any other provision of this 
+    Agreement in any other jurisdiction.
+
+    9.7 No term or provision of this Agreement will be considered waived and no breach 
+    excused, unless such waiver is in writing signed on behalf of the party against which 
+    the waiver is asserted.  No waiver (whether express or implied) will constitute 
+    consent to, waiver of, or excuse of any other, different, or subsequent breach.
+
+    9.8 The English language version of this Agreement is legally binding in case of any 
+    inconsistencies between the English version and any translations.  
+
+    9.9 Ambiguities in this Agreement will not be construed against the drafter.
+
+    9.10 REVERSE POCO will not be liable for any loss, damage or penalty resulting from 
+    delays or failures in performance resulting from acts of God, supplier delay 'act of 
+    law' or other causes beyond REVERSE POCO reasonable control.
+
+    9.11 This Agreement constitutes the entire agreement between the parties and merge 
+    and supersede any prior or contemporaneous agreements, discussions, 
+    communications, agreements, representations, warranties, advertising or 
+    understandings with respect to the subject matter hereof, except that particular 
+    REVERSE POCO Materials may be subject to additional or different terms associated 
+    with such REVERSE POCO Materials.  
+
+    9.12 The parties acknowledge that, in entering into this Agreement, they are not relying 
+    on any agreements, discussions, communications, representations, warranties, 
+    advertising or understandings other than as expressly set forth in this Agreement.  
+
+    9.13 In the event of a conflict between this Agreement and any other terms of REVERSE 
+    POCO, the other terms will apply.  Terms stipulated by the Licensee in any 
+    communication by the Licensee which purport to vary this Agreement, or such other 
+    terms will be void and of no effect unless agreed in a writing signed by an authorized 
+    representative of REVERSE POCO. Any other modifications to this Agreement will 
+    also be invalid unless agreed to in a writing signed by an authorized representative 
+    of REVERSE POCO.
