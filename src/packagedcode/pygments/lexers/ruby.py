@@ -328,11 +328,11 @@ class RubyLexer(ExtendedRegexLexer):
         ],
         'funcname': [
             (r'\(', Punctuation, 'defexpr'),
-            (r'(?:([a-zA-Z_]\w*)(\.))?'  # optional scope name, like "self."
+            ('(?:([a-zA-Z_]\\w*)(\\.))?'  # optional scope name, like "self."
              '('
                 '[a-zA-Z\u0080-\uffff][a-zA-Z0-9_\u0080-\uffff]*[!?=]?'  # method name
                 '|!=|!~|=~|\\*\\*?|[-+!~]@?|[/%&|^]|<=>|<[<=]?|>[>=]?|===?'  # or operator override
-                r'|\[\]=?'  # or element reference/assignment override
+                '|\\[\\]=?'  # or element reference/assignment override
                 '|`'  # or the undocumented backtick override
              ')',
              bygroups(Name.Class, Operator, Name.Function), '#pop'),
