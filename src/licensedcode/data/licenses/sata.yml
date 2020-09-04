@@ -8,10 +8,13 @@ other_urls:
     - https://github.com/zTrix/sata-license
     - https://github.com/kongtianyi/sata-license
 ignorable_copyrights:
-    - Copyright (c) 2014
+    - Copyright (c) 2014 zTrix(i@ztrix.me)
 ignorable_urls:
     - https://github.com/kongtianyi/sata-license
     - https://github.com/zTrix/sata-license
 ignorable_emails:
     - i@ztrix.me
     - kongtianyi@foxmail.com
+ignorable_holders:
+  - zTrix(i@ztrix.me)
+

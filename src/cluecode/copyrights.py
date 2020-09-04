@@ -451,8 +451,8 @@ patterns = [
     # such as in (1)(ii)(OCT
     (r'^.*\(.*\).*\(.*\).*$', 'JUNK'),
 
-    # parens such as (1) or (a) is a sign of junk
-    (r'^\([abdefghi\d]|ii|iii\)$', 'JUNK'),
+    # parens such as (1) or (a) is a sign of junk but of course NOT (c)
+    (r'^\(([abdefghi\d]|ii|iii)\)$', 'JUNK'),
 
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
