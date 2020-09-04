@@ -208,8 +208,10 @@ jobs:
             displayName: 'Build installable releases'
 
           - script: ./etc/release/pip-install.sh
-            displayName: 'Test pip installation'
+            displayName: 'Test pip wheel installation'
 
+          - script: ./etc/release/pip-install-editable.sh
+            displayName: 'Test pip editable installation'
 
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.6
