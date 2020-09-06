@@ -138,7 +138,7 @@ Other contributors, listed alphabetically, are:
 * Stephen McKamey -- Duel/JBST lexer
 * Brian McKenna -- F# lexer
 * Charles McLaughlin -- Puppet lexer
-* Kurt McKee -- Tera Term macro lexer, PostgreSQL updates
+* Kurt McKee -- Tera Term macro lexer, PostgreSQL updates, MySQL overhaul
 * Lukas Meuser -- BBCode formatter, Lua lexer
 * Cat Miller -- Pig lexer
 * Paul Miller -- LiveScript lexer
