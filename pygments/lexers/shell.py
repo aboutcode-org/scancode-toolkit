@@ -250,14 +250,14 @@ class BatchLexer(RegexLexer):
     _nl = r'\n\x1a'
     _punct = r'&<>|'
     _ws = r'\t\v\f\r ,;=\xa0'
+    _nlws = r'\s\x1a\xa0,;='
     _space = r'(?:(?:(?:\^[%s])?[%s])+)' % (_nl, _ws)
     _keyword_terminator = (r'(?=(?:\^[%s]?)?[%s+./:[\\\]]|[%s%s(])' %
                            (_nl, _ws, _nl, _punct))
     _token_terminator = r'(?=\^?[%s]|[%s%s])' % (_ws, _punct, _nl)
     _start_label = r'((?:(?<=^[^:])|^[^:]?)[%s]*)(:)' % _ws
-    _label = r'(?:(?:[^%s%s%s+:^]|\^[%s]?[\w\W])*)' % (_nl, _punct, _ws, _nl)
-    _label_compound = (r'(?:(?:[^%s%s%s+:^)]|\^[%s]?[^)])*)' %
-                       (_nl, _punct, _ws, _nl))
+    _label = r'(?:(?:[^%s%s+:^]|\^[%s]?[\w\W])*)' % (_nlws, _punct, _nl)
+    _label_compound = r'(?:(?:[^%s%s+:^)]|\^[%s]?[^)])*)' % (_nlws, _punct, _nl)
     _number = r'(?:-?(?:0[0-7]+|0x[\da-f]+|\d+)%s)' % _token_terminator
     _opword = r'(?:equ|geq|gtr|leq|lss|neq)'
     _string = r'(?:"[^%s"]*(?:"|(?=[%s])))' % (_nl, _nl)
@@ -267,9 +267,8 @@ class BatchLexer(RegexLexer):
                  r'(?:\^?![^!:%s]+(?::(?:~(?:-?\d+)?(?:,(?:-?\d+)?)?|(?:'
                  r'[^!%s^]|\^[^!%s])[^=%s]*=(?:[^!%s^]|\^[^!%s])*)?)?\^?!))' %
                  (_nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl, _nl))
-    _core_token = r'(?:(?:(?:\^[%s]?)?[^"%s%s%s])+)' % (_nl, _nl, _punct, _ws)
-    _core_token_compound = r'(?:(?:(?:\^[%s]?)?[^"%s%s%s)])+)' % (_nl, _nl,
-                                                                  _punct, _ws)
+    _core_token = r'(?:(?:(?:\^[%s]?)?[^"%s%s])+)' % (_nl, _nlws, _punct)
+    _core_token_compound = r'(?:(?:(?:\^[%s]?)?[^"%s%s)])+)' % (_nl, _nlws, _punct)
     _token = r'(?:[%s]+|%s)' % (_punct, _core_token)
     _token_compound = r'(?:[%s]+|%s)' % (_punct, _core_token_compound)
     _stoken = (r'(?:[%s]+|(?:%s|%s|%s)+)' %
@@ -380,7 +379,8 @@ class BatchLexer(RegexLexer):
         return state
 
     def _make_arithmetic_state(compound, _nl=_nl, _punct=_punct,
-                               _string=_string, _variable=_variable, _ws=_ws):
+                               _string=_string, _variable=_variable,
+                               _ws=_ws, _nlws=_nlws):
         op = r'=+\-*/!~'
         state = []
         if compound:
@@ -391,8 +391,8 @@ class BatchLexer(RegexLexer):
             (r'\d+', Number.Integer),
             (r'[(),]+', Punctuation),
             (r'([%s]|%%|\^\^)+' % op, Operator),
-            (r'(%s|%s|(\^[%s]?)?[^()%s%%^"%s%s%s]|\^[%s%s]?%s)+' %
-             (_string, _variable, _nl, op, _nl, _punct, _ws, _nl, _ws,
+            (r'(%s|%s|(\^[%s]?)?[^()%s%%\^"%s%s]|\^[%s]?%s)+' %
+             (_string, _variable, _nl, op, _nlws, _punct, _nlws,
               r'[^)]' if compound else r'[\w\W]'),
              using(this, state='variable')),
             (r'(?=[\x00|&])', Text, '#pop'),
@@ -426,15 +426,15 @@ class BatchLexer(RegexLexer):
                              _core_token_compound=_core_token_compound,
                              _nl=_nl, _punct=_punct, _stoken=_stoken,
                              _string=_string, _space=_space,
-                             _variable=_variable, _ws=_ws):
+                             _variable=_variable, _nlws=_nlws):
         stoken_compound = (r'(?:[%s]+|(?:%s|%s|%s)+)' %
                            (_punct, _string, _variable, _core_token_compound))
         return [
-            (r'((?:(?<=[%s%s])\d)?)(>>?&|<&)([%s%s]*)(\d)' %
-             (_nl, _ws, _nl, _ws),
+            (r'((?:(?<=[%s])\d)?)(>>?&|<&)([%s]*)(\d)' %
+             (_nlws, _nlws),
              bygroups(Number.Integer, Punctuation, Text, Number.Integer)),
-            (r'((?:(?<=[%s%s])(?<!\^[%s])\d)?)(>>?|<)(%s?%s)' %
-             (_nl, _ws, _nl, _space, stoken_compound if compound else _stoken),
+            (r'((?:(?<=[%s])(?<!\^[%s])\d)?)(>>?|<)(%s?%s)' %
+             (_nlws, _nl, _space, stoken_compound if compound else _stoken),
              bygroups(Number.Integer, Punctuation, using(this, state='text')))
         ]
 
@@ -473,7 +473,7 @@ class BatchLexer(RegexLexer):
         'text': [
             (r'"', String.Double, 'string'),
             include('variable-or-escape'),
-            (r'[^"%%^%s%s%s\d)]+|.' % (_nl, _punct, _ws), Text)
+            (r'[^"%%^%s%s\d)]+|.' % (_nlws, _punct), Text)
         ],
         'variable': [
             (r'"', String.Double, 'string'),
@@ -494,13 +494,13 @@ class BatchLexer(RegexLexer):
             include('follow')
         ],
         'for/f': [
-            (r'(")((?:%s|[^"])*?")([%s%s]*)(\))' % (_variable, _nl, _ws),
+            (r'(")((?:%s|[^"])*?")([%s]*)(\))' % (_variable, _nlws),
              bygroups(String.Double, using(this, state='string'), Text,
                       Punctuation)),
             (r'"', String.Double, ('#pop', 'for2', 'string')),
-            (r"('(?:%%%%|%s|[\w\W])*?')([%s%s]*)(\))" % (_variable, _nl, _ws),
+            (r"('(?:%%%%|%s|[\w\W])*?')([%s]*)(\))" % (_variable, _nlws),
              bygroups(using(this, state='sqstring'), Text, Punctuation)),
-            (r'(`(?:%%%%|%s|[\w\W])*?`)([%s%s]*)(\))' % (_variable, _nl, _ws),
+            (r'(`(?:%%%%|%s|[\w\W])*?`)([%s]*)(\))' % (_variable, _nlws),
              bygroups(using(this, state='bqstring'), Text, Punctuation)),
             include('for2')
         ],
