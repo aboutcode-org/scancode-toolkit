@@ -467,8 +467,7 @@ class GosuTemplateLexer(Lexer):
     def get_tokens_unprocessed(self, text):
         lexer = GosuLexer()
         stack = ['templateText']
-        for item in lexer.get_tokens_unprocessed(text, stack):
-            yield item
+        yield from lexer.get_tokens_unprocessed(text, stack)
 
 
 class GroovyLexer(RegexLexer):
