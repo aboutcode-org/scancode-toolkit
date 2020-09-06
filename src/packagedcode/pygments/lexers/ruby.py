@@ -58,8 +58,7 @@ class RubyLexer(ExtendedRegexLexer):
         ctx.pos = match.start(5)
         ctx.end = match.end(5)
         # this may find other heredocs
-        for i, t, v in self.get_tokens_unprocessed(context=ctx):
-            yield i, t, v
+        yield from self.get_tokens_unprocessed(context=ctx)
         ctx.pos = match.end()
 
         if outermost:
@@ -422,16 +421,14 @@ class RubyConsoleLexer(Lexer):
                 curcode += line[end:]
             else:
                 if curcode:
-                    for item in do_insertions(
-                            insertions, rblexer.get_tokens_unprocessed(curcode)):
-                        yield item
+                    yield from do_insertions(
+                        insertions, rblexer.get_tokens_unprocessed(curcode))
                     curcode = ''
                     insertions = []
                 yield match.start(), Generic.Output, line
         if curcode:
-            for item in do_insertions(
-                    insertions, rblexer.get_tokens_unprocessed(curcode)):
-                yield item
+            yield from do_insertions(
+                insertions, rblexer.get_tokens_unprocessed(curcode))
 
 
 class FancyLexer(RegexLexer):
