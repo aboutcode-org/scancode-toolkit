@@ -240,28 +240,8 @@ def js_map_sources_lines(location):
         sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():
-                yield line
-'''
->>> from textcode.analysis import *
->>> l=u'is designed to give them the heads up that they need, BEFORE the\x00\x00\x00\x00\x00\x00'
->>> as_unicode(l)
-'is designed to give them the heads up that they need, BEFORE the      '
->>> l=b'is designed to give them the heads up that they need, BEFORE the\x00\x00\x00\x00\x00\x00'
->>> as_unicode(l)
-'is designed to give them the heads up that they need, BEFORE the      '
->>> foo=list(numbered_text_lines('ReadMe.txt'))[-1][1][:10]
-DEBUG:textcode.analysis:numbered_text_lines: T.filetype_file: ASCII text
-DEBUG:textcode.analysis:numbered_text_lines: T.is_text_with_long_lines: False
-DEBUG:textcode.analysis:numbered_text_lines: T.is_binary: False
->>> foo
-'is designe'
->>> foo=list(numbered_text_lines('ReadMe.txt'))[-1][1]
-DEBUG:textcode.analysis:numbered_text_lines: T.filetype_file: ASCII text
-DEBUG:textcode.analysis:numbered_text_lines: T.is_text_with_long_lines: False
-DEBUG:textcode.analysis:numbered_text_lines: T.is_binary: False
->>> foo
-'is designed to give them the heads up that they need, BEFORE the                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                '''
-                
+                yield line               
+
 
 def as_unicode(line):
     """
