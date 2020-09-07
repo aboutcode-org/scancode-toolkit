@@ -1,0 +1,15 @@
+key: font-alias
+short_name: font-alias License
+name: font-alias License
+category: Permissive
+owner: X.Org
+text_urls:
+    - https://www.x.org/releases/individual/font/font-alias-1.0.3.tar.bz2
+standard_notice: |
+    Copyright (C) 1994-95 Cronyx Ltd.
+    Author: Serge Vakulenko, <vak@cronyx.ru>
+    This software may be used, modified, copied, distributed, and sold,
+    in both source and binary form provided that the above copyright
+    and these terms are retained. Under no circumstances is the author
+    responsible for the proper functioning of this software, nor does
+    the author assume any responsibility for damages incurred with its use.

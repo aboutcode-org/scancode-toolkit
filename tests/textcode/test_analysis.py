@@ -155,3 +155,21 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/verify.go')
         for _lineno, line in numbered_text_lines(test_file):
             assert type(line) == compat.unicode
+
+    def test_unicode_text_lines_replaces_null_bytes_with_space(self):
+        test_file = self.get_test_loc('analysis/text-with-trailing-null-bytes.txt')
+        result = list(unicode_text_lines(test_file))
+        expected_file = self.get_test_loc('analysis/text-with-trailing-null-bytes.txt.expected')
+        check_text_lines(result, expected_file, regen=False)
+
+    def test_as_unicode_from_bytes_replaces_null_bytes_with_space(self):
+        test = b'\x00is designed to give them, \x00BEFORE the\x00\x00\x00\x00\x00\x00'
+        result = as_unicode(test)
+        expected = ' is designed to give them,  BEFORE the      '
+        assert expected == result
+
+    def test_as_unicode_from_unicode_replaces_null_bytes_with_space(self):
+        test = '\x00is designed to give them, \x00BEFORE the\x00\x00\x00\x00\x00\x00'
+        result = as_unicode(test)
+        expected = ' is designed to give them,  BEFORE the      '
+        assert expected == result

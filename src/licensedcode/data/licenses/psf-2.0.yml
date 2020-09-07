@@ -1,0 +1,12 @@
+key: psf-2.0
+short_name: PSF-2.0
+name: PSF-2.0
+category: Permissive
+owner: Python Software Foundation (PSF)
+homepage_url: https://opensource.org/licenses/Python-2.0
+spdx_license_key: PSF-2.0
+ignorable_copyrights:
+  - Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation
+ignorable_holders:
+  - Python Software Foundation
+

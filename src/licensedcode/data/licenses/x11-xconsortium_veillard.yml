@@ -1,0 +1,10 @@
+key: x11-xconsortium_veillard
+short_name: X11-Style (X Consortium Veillard)
+name: X11-Style (X Consortium Veillard)
+category: Permissive
+owner: Daniel Veillard
+standard_notice: |
+    Except where otherwise noted in the source code (e.g. the files hash.c,
+    list.c and the trio files, which are covered by a similar licence but
+    with different Copyright notices) all the files are:
+    Copyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.

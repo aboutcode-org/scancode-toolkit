@@ -1,0 +1,11 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: http://dotween.demigiant.com/license.php https://github.com/RyanMallett/UltraCowboyMelee/blob/2fea8a585364215ddbfa0f49e1c2677a5262a005/Assets/Demigiant/DemiLib/LICENSE.md
+    https://github.com/haramako/tcg/blob/65ceba83cdee07a5698c8d8360534325150379d4/Data/Other/License.txt
+    https://assets.ctfassets.net/bl73eiperqoo/4ras1egZiUcmkuASkw8oCA/2ab1b5139f735333d078ad3a32bff309/Tonandi_Open_Source_Notices.txt
+    http://metagames.gg/licenses
+ignorable_copyrights:
+    - Copyright Holder Daniele Giardini
+ignorable_holders:
+    - Daniele Giardini

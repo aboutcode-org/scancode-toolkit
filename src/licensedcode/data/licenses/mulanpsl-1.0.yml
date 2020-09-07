@@ -1,0 +1,18 @@
+key: mulanpsl-1.0
+short_name: Mulan PSL v1
+name: Mulan Permissive Software License, Version 1
+category: Permissive
+owner: COSCI
+homepage_url: https://license.coscl.org.cn/MulanPSL/
+spdx_license_key: MulanPSL-1.0
+text_urls:
+    - https://github.com/yuwenlong/longphp/blob/25dfb70cc2a466dc4bb55ba30901cbce08d164b5/LICENSE
+ignorable_copyrights:
+  - Copyright (c) 2019 name
+  - copyright holder Software Name
+ignorable_holders:
+  - Software Name
+  - name
+ignorable_urls:
+  - http://license.coscl.org.cn/MulanPSL
+

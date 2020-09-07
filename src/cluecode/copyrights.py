@@ -451,6 +451,9 @@ patterns = [
     # such as in (1)(ii)(OCT
     (r'^.*\(.*\).*\(.*\).*$', 'JUNK'),
 
+    # parens such as (1) or (a) is a sign of junk but of course NOT (c)
+    (r'^\(([abdefghi\d]|ii|iii)\)$', 'JUNK'),
+
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
     (r'^OU=?$', 'JUNK'),
@@ -502,7 +505,8 @@ patterns = [
     (r'^[Rr]eleased?$', 'JUNK'),
     (r'^[Cc]opyrighting$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
-
+    (r'^such$', 'JUNK'),
+    (r'^[Aa]ssignments?[.,]?$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
     (r'^[Ss]tring$', 'JUNK'),
     (r'^Implementation-Vendor$', 'JUNK'),
@@ -618,6 +622,7 @@ patterns = [
     (r'^Updates$', 'JUNK'),
     (r'^Record-keeping$', 'JUNK'),
     (r'^Privacy$', 'JUNK'),
+    (r'^within$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
@@ -666,6 +671,7 @@ patterns = [
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'JUNK'),
+    (r'^file\.$', 'JUNK'),
 
     # junk when HOLDER(S): typically used in disclaimers instead
     (r'^HOLDER\(S\)$', 'JUNK'),
@@ -739,6 +745,8 @@ patterns = [
     (r'^GA$', 'JUNK'),
     (r'^unzip$', 'JUNK'),
     (r'^EULA', 'JUNK'),
+    (r'^Terms?[.,]?$', 'JUNK'),
+    (r'^Non-Assertion$', 'JUNK'),
 
     # this is not Copr.
     (r'^Coproduct,?[,\.]?$$', 'JUNK'),
@@ -747,6 +755,7 @@ patterns = [
     (r'^CONTRIBUTORS?[,\.]?$', 'JUNK'),
     (r'^OTHERS?[,\.]?$', 'JUNK'),
     (r'^Contributors?\:[,\.]?$', 'JUNK'),
+    (r'^Version$', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -846,6 +855,7 @@ patterns = [
     (r'^GPL\'d', 'NN'),
     (r'^Gnome$', 'NN'),
     (r'^GnuPG$', 'NN'),
+    (r'^Government.', 'NNP'),
     (r'^Government', 'NN'),
     (r'^Grants?\.?,?$', 'NN'),
     (r'^Header', 'NN'),
@@ -946,6 +956,7 @@ patterns = [
     (r'^Section', 'NN'),
     (r'^Send$', 'NN'),
     (r'^Separa', 'NN'),
+    (r'^Service$', 'NN'),
     (r'^Several$', 'NN'),
     (r'^SIGN$', 'NN'),
     (r'^Site\.?$', 'NN'),
@@ -983,7 +994,6 @@ patterns = [
     (r'^VALUE$', 'NN'),
     (r'^Various', 'NN'),
     (r'^Vendor', 'NN'),
-    (r'^Version', 'NN'),
     (r'^VIEW$', 'NN'),
     (r'^Visit', 'NN'),
     (r'^Website', 'NN'),
@@ -993,8 +1003,11 @@ patterns = [
     (r'^WPA$', 'NN'),
     (r'^Xalan$', 'NN'),
     (r'^YOUR', 'NN'),
+    (r'^Your', 'NN'),
     (r'^DateTime', 'NN'),
     (r'^Create$', 'NN'),
+    (r'^Engine\.$', 'NN'),
+    (r'^While$', 'NN'),
 
     # Hours/Date/Day/Month text references
     (r'^am$', 'NN'),
@@ -1091,9 +1104,14 @@ patterns = [
     (r'werken$', 'NNP'),
     (r'various\.?$', 'NNP'),
 
+    # treat Attributable as proper noun as it is seen in Author tags such as in:
+    # @author not attributable
+    (r'^[Aa]ttributable$', 'NNP'),
+
     # rarer caps
     # EPFL-LRC/ICA
     (r'^[A-Z]{3,6}-[A-Z]{3,6}/[A-Z]{3,6}', 'NNP'),
+
 
     ############################################################################
     # Named entities: companies, groups, universities, etc
@@ -1220,6 +1238,9 @@ patterns = [
 
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
     (r'^contributors,$', 'CONTRIBUTORS'),
+
+    (r'^Contributor[,.]?$', 'NN'),
+    (r'^Licensor[,.]?$', 'NN'),
 
     # same for developed, etc...
     (r'^[Cc]oded$', 'AUTH2'),
@@ -1416,6 +1437,8 @@ patterns = [
     (r'^<([a-zA-Z]+[a-zA-Z\.]){3,}$', 'EMAIL_START'),
     (r'^[a-zA-Z\.]{2,}>$', 'EMAIL_END'),
 
+    # a .sh shell scripts is NOT an email.
+    (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct.
     (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
 
@@ -1704,7 +1727,7 @@ grammar = """
     # and other contributors
     NAME: {<CC> <NN>? <CONTRIBUTORS>}        #644
 
-    NAME: {<NNP|CAPS>+ <AUTHS|CONTRIBUTORS>}        #660
+    NAME: {<NNP|CAPS>+ <AUTHS|AUTHDOT|CONTRIBUTORS>}        #660
 
     NAME: {<VAN|OF> <NAME>}        #680
     NAME: {<NAME-YEAR> <COMP|COMPANY>}        #690
@@ -1970,7 +1993,17 @@ grammar = """
     COPYRIGHT: { <COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
 
     # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
-    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2290
+    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2278
+
+    # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
+    COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2279
+
+    # Copyright (c) 2004, The Codehaus
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
+
+    # Copyright (c) 2017 odahcam
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>} #22791
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>} #22792
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -2036,6 +2069,7 @@ grammar = """
     # Copyright 2008 TJ <linux@tjworld.net>
     COPYRIGHT: {<COPYRIGHT2> <EMAIL>}       #2636
 
+    # Copyright RUSS DILL Russ <Russ.Dill@asu.edu>
     COPYRIGHT: {<COPYRIGHT> <CAPS> <NAME-EMAIL>}       #2637
 
     # maintainer Norbert Tretkowski <nobse@debian.org> 2005-04-16
@@ -2137,7 +2171,7 @@ grammar = """
     COPYRIGHT: {<COMPANY> <ALLRIGHTRESERVED> <COPYRIGHT2>} #3030
 
     # Copyright (c) 2000 United States Government as represented by the Secretary of the Navy. All rights reserved.
-    COPYRIGHT: {<COPYRIGHT> <NN> <NN> <NN> <BY> <NN> <NAME> <ALLRIGHTRESERVED>} #3035
+    COPYRIGHT: {<COPYRIGHT> <NN> <NN> <NN|NNP> <BY> <NN> <NAME> <ALLRIGHTRESERVED>} #3035
 
     # Copyright (c) 2007-2008, Y Giridhar Appaji Nag <giridhar@appaji.net>
     COPYRIGHT: {<COPYRIGHT> <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+} #3040
@@ -2209,6 +2243,9 @@ grammar = """
     # Copyright (C) 2005-2006  dann frazier <dannf@dannf.org>
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NN>  <EMAIL>} #999991
 
+    # Copyright (c) 2008 Intel Corporation / Qualcomm Inc.
+    COPYRIGHT: {<COPYRIGHT>  <DASH>  <COMPANY>} #copydash-co
+
 #######################################
 # Authors
 #######################################
@@ -2252,13 +2289,22 @@ grammar = """
     # developed by the XML DB Initiative http//www.xmldb.org
     AUTHOR: {<AUTH2> <COMPANY>} #2645-7
 
+    # Author not attributable
+    AUTHOR: {<AUTH>  <NN>  <NNP>} #not attributable
+
+    # author (Panagiotis Tsirigotis)
+    AUTHOR: {<AUTH>  <NNP><NNP>+} #author Foo Bar
+
+
 #######################################
-# Mixed AUTHORS and COPYRIGHTS
+# Mixed AUTHOR and COPYRIGHT
 #######################################
 
     # Compounded statements usings authors
-    # found in some rare cases with a long list of authors.
-    COPYRIGHT: {<COPY> <BY> <AUTHOR>+ <YR-RANGE>*}        #2800
+
+    # Copyright by Daniel K. Gebhart
+    # Also found in some rare cases with a long list of authors.
+    COPYRIGHT: {<COPY> <BY>? <AUTHOR>+  <YR-RANGE>*}        #2800-1
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
@@ -2312,6 +2358,7 @@ def refine_copyright(c):
     c = strip_balanced_edge_parens(c)
     c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
     c = strip_trailing_period(c)
+    c = c.strip("'")
     return c.strip()
 
 
@@ -2334,8 +2381,6 @@ def refine_holder(h):
     h = h.strip()
     h = strip_trailing_period(h)
     h = h.strip()
-    h = strip_balanced_edge_parens(h)
-    h = h.strip()
     if h and h.lower() not in HOLDERS_JUNK:
         return h
 
@@ -2351,6 +2396,10 @@ def refine_author(a):
     a = a.strip()
     a = strip_trailing_period(a)
     a = a.strip()
+    a = strip_balanced_edge_parens(a)
+    a = a.strip()
+    a = refine_names(a, prefixes=AUTHORS_PREFIXES)
+    a = a.strip()
     if a and a.lower() not in AUTHORS_JUNK:
         return a
 
@@ -2364,6 +2413,8 @@ def refine_names(s, prefixes):
     s = strip_leading_numbers(s)
     s = strip_all_unbalanced_parens(s)
     s = strip_some_punct(s)
+    s = s.strip()
+    s = strip_balanced_edge_parens(s)
     s = s.strip()
     s = strip_prefixes(s, prefixes)
     s = s.strip()
@@ -2543,6 +2594,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'author\'',
         'authors,',
         'authorship',
+        'or',
     ])
 ))
 
@@ -2561,6 +2613,11 @@ AUTHORS_JUNK = frozenset([
     'company',
     'contributing project',
     'its author',
+    'gnomovision',
+    'would',
+    'may',
+    'attributions',
+    'the',
 ])
 
 ################################################################################

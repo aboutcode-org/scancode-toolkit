@@ -1,6 +1,6 @@
 key: mulanpsl-1.0-en
 short_name: Mulan PSL v1.0 (En)
-spdx_license_key: MulanPSL-1.0
+#spdx_license_key: MulanPSL-1.0
 name: Mulan Permissive Software License, Version 1 (English)
 category: Permissive
 owner: COSCL - China Open Source Cloud League
@@ -10,10 +10,11 @@ text_urls:
 ignorable_urls:
     - http://license.coscl.org.cn/MulanPSL
 ignorable_copyrights:
-  - Copyright (c) 2019
+  - Copyright (c) 2019 name
   - copyright holder Software Name
 ignorable_holders:
   - Software Name
+  - name
 other_urls:
     - https://github.com/yuwenlong/longphp/blob/25dfb70cc2a466dc4bb55ba30901cbce08d164b5/LICENSE
 notes: there is also a Chinese version of this text.

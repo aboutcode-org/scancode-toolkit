@@ -1,0 +1,4 @@
+license_expression: mit AND other-permissive AND other-copyleft
+is_license_notice: yes
+relevance: 100
+notes: failrly complex notice https://github.com/rpm-software-management/spec-cleaner/blob/5237cce86ae5113474720da60a73ee8ab4d37d53/spec_cleaner/rpmcopyright.py#L46

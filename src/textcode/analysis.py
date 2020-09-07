@@ -99,7 +99,6 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
             logger_debug('numbered_text_lines:', 'location is not a file')
         return enumerate(iter(location), 1)
 
-
     if plain_text:
         if TRACE:
             logger_debug('numbered_text_lines:', 'plain_text')
@@ -242,7 +241,7 @@ def js_map_sources_lines(location):
         sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():
-                yield line
+                yield line               
 
 
 def as_unicode(line):
@@ -255,7 +254,8 @@ def as_unicode(line):
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
     if isinstance(line, compat.unicode):
-        return line
+        return remove_null_bytes(line)
+
     try:
         s = line.decode('UTF-8')
     except UnicodeDecodeError:
@@ -278,7 +278,18 @@ def as_unicode(line):
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
                     s = strings.string_from_string(s)
-    return s
+    return remove_null_bytes(s)
+
+
+def remove_null_bytes(s):
+    """
+    Return a string replacing by a space all null bytes.
+
+    There are some rare cases where we can have binary strings that are not
+    caught early when detecting a file type, but only late at the line level.
+    This help catch most of these cases.
+    """
+    return s.replace('\x00', ' ')
 
 
 def remove_verbatim_cr_lf_tab_chars(s):

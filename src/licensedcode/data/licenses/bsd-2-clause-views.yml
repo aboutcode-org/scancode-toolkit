@@ -1,0 +1,17 @@
+key: bsd-2-clause-views
+short_name: BSD-2-Clause-Views
+name: BSD 2-Clause with views sentence
+category: Permissive
+owner: FreeBSD
+homepage_url: https://www.freebsd.org/copyright/freebsd-license.html
+spdx_license_key: BSD-2-Clause-Views
+other_spdx_license_keys:
+    - BSD-2-Clause-FreeBSD
+text_urls:
+    - https://github.com/protegeproject/protege/blob/master/license.txt
+other_urls:
+    - http://www.freebsd.org/copyright/freebsd-license.html
+    - https://people.freebsd.org/~ivoras/wine/patch-wine-nvidia.sh
+standard_notice: |
+    The FreeBSD Copyright
+    Copyright 1992-2020 The FreeBSD Project.

@@ -8,7 +8,7 @@ spdx_license_key: TAPR-OHL-1.0
 other_urls:
     - https://www.tapr.org/OHL
 ignorable_copyrights:
-    - Copyright 2007 TAPR
+    - Copyright 2007 TAPR - http://www.tapr.org/OHL
 ignorable_holders:
     - TAPR
 ignorable_urls:

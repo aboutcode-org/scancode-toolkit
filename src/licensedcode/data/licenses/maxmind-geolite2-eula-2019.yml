@@ -1,0 +1,17 @@
+key: maxmind-geolite2-eula-2019
+short_name: MaxMind GeoLite2 EULA 2019
+name: MaxMind GeoLite2 End User License Agreement 2019
+category: Copyleft
+owner: MaxMind
+homepage_url: https://www.maxmind.com/en/geolite2/eula
+ignorable_authors:
+  - the USA Department of Commerce
+  - the USA Department of State. Specifically
+  - the USA Treasury Department's Office of Foreign Assets Control, and the International Traffic
+    in Arms Regulations
+ignorable_emails:
+  - legal@maxmind.com
+ignorable_urls:
+  - http://www.maxmind.com/
+  - https://www.maxmind.com/
+

@@ -1,0 +1,12 @@
+key: shl-2.1
+short_name: Solderpad Hardware License v2.1
+name: Solderpad Hardware License v2.1
+category: Permissive
+owner: SolderPad
+homepage_url: https://solderpad.org/licenses/SHL-2.1/
+is_exception: yes
+spdx_license_key: SHL-2.1
+ignorable_urls:
+  - http://apache.org/licenses/LICENSE-2.0
+  - https://solderpad.org/licenses/SHL-2.1/
+

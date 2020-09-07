@@ -1,0 +1,5 @@
+license_expression: apache-2.0 WITH llvm-exception
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://llvm.org/LICENSE.txt

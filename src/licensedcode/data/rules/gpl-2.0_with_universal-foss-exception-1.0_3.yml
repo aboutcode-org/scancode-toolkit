@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH universal-foss-exception-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://oss.oracle.com/licenses/universal-foss-exception

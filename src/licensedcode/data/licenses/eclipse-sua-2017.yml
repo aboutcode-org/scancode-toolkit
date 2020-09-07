@@ -1,7 +1,7 @@
 key: eclipse-sua-2017
 short_name: Eclipse Foundation Software User Agreement 2017
 name: Eclipse Foundation Software User Agreement 2017
-category: Unstated License
+category: Copyleft
 owner: Eclipse Foundation
 homepage_url: https://www.eclipse.org/legal/epl/notice.php
 text_urls:
@@ -15,4 +15,3 @@ ignorable_urls:
     - http://www.eclipse.org/legal/epl-v10.html
     - http://www.eclipse.org/licenses/edl-v1.0.html
     - http://www.mozilla.org/MPL/MPL-1.1.html
-

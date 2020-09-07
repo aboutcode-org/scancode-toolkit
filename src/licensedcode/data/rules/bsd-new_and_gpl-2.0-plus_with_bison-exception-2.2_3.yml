@@ -1,0 +1,10 @@
+license_expression: bsd-new AND gpl-2.0-plus WITH bison-exception-2.2
+is_license_notice: yes
+minimum_coverage: 99
+referenced_filenames:
+    - Copyright.txt
+ignorable_copyrights:
+    - Copyright (c) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free Software
+        Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.

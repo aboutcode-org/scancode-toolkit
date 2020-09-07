@@ -1,0 +1,9 @@
+key: intel-sample-source-code-2015
+short_name: Intel Sample Source Code 2015
+name: Intel Sample Source Code License Agreement 2015
+category: Proprietary Free
+owner: Intel Corporation
+homepage_url: https://software.intel.com/protected-download/267270/734854
+ignorable_urls:
+  - http://www.intel.com/content/www/us/en/legal/export-compliance.html
+

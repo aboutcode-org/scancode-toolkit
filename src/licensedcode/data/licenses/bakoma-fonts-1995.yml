@@ -1,0 +1,19 @@
+key: bakoma-fonts-1995
+short_name: BaKoMa Fonts Licence 1995
+name: BaKoMa Fonts Licence 1995
+category: Unstated License
+owner: Unspecified
+homepage_url: http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma
+text_urls:
+    - http://ctan.cs.uu.nl/fonts/cm/ps-type1/bakoma/LICENCE
+    - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma/LICENCE
+ignorable_copyrights:
+  - Copyright (c) 1994, 1995, Basil K. Malyshev
+ignorable_emails:
+  - bakoma@mail.ru
+  - malyshev@mail.ihep.ru
+ignorable_holders:
+  - Basil K. Malyshev
+ignorable_urls:
+  - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma
+

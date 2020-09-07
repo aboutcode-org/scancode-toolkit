@@ -1,0 +1,10 @@
+license_expression: commercial-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 2015-2020 Rocket.Chat Technologies Corp.
+ignorable_holders:
+    - Rocket.Chat Technologies Corp.
+ignorable_urls:
+    - https://rocket.chat/terms

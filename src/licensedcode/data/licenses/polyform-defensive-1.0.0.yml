@@ -1,0 +1,13 @@
+key: polyform-defensive-1.0.0
+short_name: PolyForm Defensive License 1.0.0
+name: PolyForm Defensive License 1.0.0
+category: Source-available
+owner: Polyform
+homepage_url: https://polyformproject.org/licenses/defensive-licenses/1.0.0/
+ignorable_copyrights:
+  - Copyright Yoyodyne, Inc. (http://example.com)
+ignorable_holders:
+  - Yoyodyne, Inc.
+ignorable_urls:
+  - https://polyformproject.org/licenses/defensive/1.0.0
+

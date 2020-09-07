@@ -1,0 +1,10 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: from https://trustedcomputinggroup.org/wp-content/uploads/TCG_TPM2_r1p59_Part4_SuppRoutines_code_pub.pdf
+ignorable_copyrights:
+    - Copyright Licenses Trusted Computing Group
+ignorable_holders:
+    - Licenses Trusted Computing Group
+ignorable_emails:
+    - admin@trustedcomputinggroup.org

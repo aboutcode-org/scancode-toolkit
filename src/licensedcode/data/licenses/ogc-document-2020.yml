@@ -1,0 +1,16 @@
+key: ogc-document-2020
+short_name: OGC Document Notice 2020
+name: OGC Document Notice 2020
+category: Proprietary Free
+owner: Open Geospatial Consortium
+homepage_url: https://www.ogc.org/ogc/Document
+other_urls:
+    - http://www.opengeospatial.org/ogc/legal
+faq_url: https://www.ogc.org/ogc/legalfaq
+ignorable_copyrights:
+  - Copyright (c) Open Geospatial Consortium, Inc.
+ignorable_holders:
+  - Open Geospatial Consortium, Inc.
+ignorable_urls:
+  - http://www.opengeospatial.org/ogc/document
+

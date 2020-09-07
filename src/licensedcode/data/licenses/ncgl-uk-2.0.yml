@@ -1,0 +1,10 @@
+key: ncgl-uk-2.0
+short_name: Non-Commercial Government Licence
+name: Non-Commercial Government Licence
+category: Free Restricted
+owner: U.K. National Archives
+homepage_url: http://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/
+spdx_license_key: NCGL-UK-2.0
+other_urls:
+    - http://www.nationalarchives.gov.uk/doc/non-commercial-government-licence-cymraeg/version/2/
+    - https://github.com/spdx/license-list-XML/blob/master/src/Apache-2.0.xml

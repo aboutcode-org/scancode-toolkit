@@ -1,0 +1,7 @@
+license_expression: (gpl-2.0 OR apache-2.0) AND bsd-new
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - LICENSE.Apache
+    - LICENSE

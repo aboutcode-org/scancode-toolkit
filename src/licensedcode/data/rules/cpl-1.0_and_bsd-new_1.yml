@@ -1,0 +1,6 @@
+license_expression: cpl-1.0 AND bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://hamcrest.org/JavaHamcrest
+    - http://www.junit.org/license

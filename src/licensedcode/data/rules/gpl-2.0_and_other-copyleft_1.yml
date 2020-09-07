@@ -1,0 +1,9 @@
+license_expression: gpl-2.0 AND other-copyleft
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2020 Don HO <don.h@free.fr>
+ignorable_holders:
+    - Don HO
+ignorable_emails:
+    - don.h@free.fr

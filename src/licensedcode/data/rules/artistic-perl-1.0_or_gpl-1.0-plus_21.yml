@@ -1,0 +1,6 @@
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://perldoc.perl.org/perlartistic.html
+    - http://www.gnu.org/licenses/gpl.html

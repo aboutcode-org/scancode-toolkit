@@ -1,0 +1,82 @@
+GNU Affero General Public License version 3 – for LinShare software
+License and Additional Terms for LinShare software
+LinShare is an Free and Open source filesharing software, part of the LinPKI software suite. LinShare
+and the LinShare software Programs are distributed under the GNU Affero GPL v3 License terms, with
+Additional Terms pursuant to Section 7 of said license.
+These Additional Terms are not intended to be taken as a change of heart by Linagora over the
+principles of free software and open source distribution, as Linagora strongly believes in free software
+and open source distribution, since it warrants an easy and reasonable access to software innovation to
+large user communities, and is highly committed to supporting free software and open source whenever
+possible.
+Linagora wishes its paternity over LinShare to be acknowledged, regardless of its present or later use,
+modification, distribution and/or evolutions. Accordingly, these terms aim at preserving Linagora
+moral rights over LinShare.
+We have taken care of not affecting product copying, improvements or deploying. It is our conviction
+that the community will not be affected by these terms, the ultimate goal of which is to ensure the
+sustainability of free and open source software by supporting R&D and improving the visibility of
+Linagora as a free and open source software publisher, while encouraging others to agree with our
+common ideals.
+Pursuant to this license, you are therefore free to use the software and modify it according to the GNU
+Affero General Public License version 3, provided that you comply with its requirements, notably:
+– indicating, in a clear and unambiguous manner, that the software is a modification of original
+code;
+– retaining Appropriate Legal Notices in the source code and the user interface;
+– keeping any modifications of the software under the terms of the GNU Affero General Public
+License version 3, including its Additional Terms pursuant to its section 7, subsections (b), (c)
+and (e).
+Following are the applicable Additional Terms for use of LinShare software pursuant to section 7,
+subsections (b), (c) and (e) of the GNU Affero General Public License version 3.
+Additional Terms applicable for LinShare software
+The following additional terms are applicable to the use, modification and distribution of LinShare
+software:
+1. Notices and Attribution:
+If the source or the object code of the LinShare software Program, either under its original version or a 
+version modified by You, provides any user interface (web, command-line, or other), or sends any e-
+mail (or any other asynchronous message), then this user interface must display Appropriate Legal
+Notices, as required under Section 5 of the GNU Affero General Public License version 3.
+In accordance with Section 7 and subsection (b) of the GNU Affero General Public License version 3,
+these Appropriate Legal Notices consist in the interface display of the “LinShareTM” trademark/logo,
+the interface display of the "Libre & Free" mention, and the interface display of the “You are using the
+Free and Open Source version of LinShareTM, powered by Linagora © 2009–2020. Contribute to
+Linshare R&D by subscribing to an Enterprise offer!”. The latter notice must also be displayed in any
+asynchronous message sent with the Program, for example e-mails which will contain this notice in
+their footer. Retaining these Appropriate Legal Notices in any and all Free and Open Source versions
+of LinShare and LinShare software Programs is mandatory notwhistanding any other terms and
+conditions.
+If the original or modified LinShare software Program does not include any interface, or if the interface
+display of the Appropriate Legal Notices is not feasible for technical reasons, execution of the Program
+should display whenever possible the notices “LinShare (tm)”, "Libre & Free", as well as the “You are
+using the Free and Open Source of LinShare (tm), powered by Linagora (c) 2009–2020. Contribute to
+Linshare R&D by subscribing to an Enterprise offer!”. The latter notice should also be present in any
+aynchronous message sent with the Program (such as in the footer of e-mails).
+This notice can be translated and replaced by any notice of exactly identical meaning and exactly
+identical layout in another language according to localization of the software, provided such notice
+clearly displays the words “LinShare” and “Linagora”.
+Regardless of the notice language, the word “LinShare” must be a clickable hypertext link that leads
+directly to the Internet URL http://www.linshare.org/, and the word “Linagora” must be a clickable
+hypertext link that lead directly to the Internet URL http://www.linagora.com/.
+The trademark must appear as a clearly legible logo. Any Appropriate Legal Notice text must appear as
+a clearly legible text in the interface. The footer must appear as a clearly legible sentence in the e-mails
+sent with the Program.
+2. Use of the LinShare and Linagora trademarks and logos
+LinShareTM and LinagoraTM are registered trademarks of Linagora.
+Pursuant to Section 7, subsections (c) and (e) of the GNU Affero General Public License version 3, this
+license allows limited use of these trademarks under the following terms:
+All Linagora trademarks, including LinShareTM and LinagoraTM logos shall be used by the licensees
+and sublicensees for the sole purpose of complying with the present Additional Terms to the GNU
+Affero General Public License version 3, excluding any other purpose without written consent obtained
+from Linagora.
+Using these trademarks without the (TM) trademark notice symbol, removing these trademarks from
+the software, modifying these trademarks in any manner except proportional scaling (under the proviso
+that such scaling keeps the trademark clearly legible), or using these trademarks to promote any 
+products or services commercially, or on product packaging, websites, books, documentation or any
+other publication without a written, signed agreement with Linagora is strictly prohibited, and
+constitutes an infringement of Linagora intellectual property rights over these trademarks.
+Using these trademarks in a way harmful, damaging or detrimental to the value of the LinShare brand
+or any other Linagora trademarks, integrity, image, reputation, and/or goodwill, as determined by
+Linagora, is also strictly prohibited, and constitutes an infringement of Linagora intellectual property
+rights over these trademarks as well.
+Please report any possible violation of the GNU Affero General Public License version 3, any
+violation of the hereabove Additional Terms, any infringement and/or misuse of any LinShare or
+Linagora trademarks and/or a violation of the aforementioned Trademark Policy at
+<info@linagora.com>.

@@ -1,0 +1,6 @@
+license_expression: proprietary-license AND cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/3.0/us/
+    - https://www.ssllabs.com/downloads/Qualys_SSL_Labs_Terms_of_Use.pdf
