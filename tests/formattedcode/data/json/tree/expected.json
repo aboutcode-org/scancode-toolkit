@@ -41,6 +41,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -83,6 +84,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -125,6 +127,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -167,6 +170,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -197,6 +201,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -239,6 +244,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -281,6 +287,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",
@@ -323,6 +330,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2000 ACME, Inc.",

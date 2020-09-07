@@ -36,6 +36,7 @@ except ImportError:
     import pickle as cPickle
 from functools import partial
 from operator import itemgetter
+import os
 import pickle
 import sys
 from time import time
@@ -74,7 +75,7 @@ matching is delegated to other modules that implement a matching strategy.
 """
 
 # Tracing flags
-TRACE = False
+TRACE = False or os.environ.get('SCANCODE_DEBUG_LICENSE', False)
 TRACE_NEGATIVE = False
 TRACE_APPROX = False
 TRACE_APPROX_CANDIDATES = False
@@ -794,7 +795,8 @@ class LicenseIndex(object):
 
         qry = query.build_query(location, query_string, idx=self,
             text_line_threshold=15, bin_line_threshold=50)
-
+        if TRACE:
+            logger_debug('match: for:', location, 'query:', qry)
         if not qry:
             return []
 

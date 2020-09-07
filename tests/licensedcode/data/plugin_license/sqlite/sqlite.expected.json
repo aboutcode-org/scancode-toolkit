@@ -22,6 +22,7 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -4655,6 +4656,7 @@
         "blessing",
         "blessing"
       ],
+      "percentage_of_license_text": 36.67,
       "scan_errors": []
     }
   ]

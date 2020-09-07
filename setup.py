@@ -181,6 +181,7 @@ setup(
         'typecode_libmagic',
 
         # packagedcode
+        'debut >= 0.9.4',
         'pefile >= 2018.8.8',
         'pymaven_patch >= 0.2.8',
         'requests >= 2.7.0, < 3.0.0',
@@ -190,21 +191,22 @@ setup(
         'toml >= 0.10.0',
         'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
-        'dparse >= 0.4.1',
+        'dparse2',
 
         # used to fix mojibake in Windows PE
         # for now we use the evrsion that works on both Python 2 and 3
         'ftfy <  5.0.0',
 
         # scancode
-        'click >= 6.0.0, < 7.0.0',
+        'click >= 6.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=18.1, !=20.1.0',
+        'attrs >= 18.1, !=20.1.0',
         'typing >=3.6, < 3.7',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
+        'MarkupSafe >= 0.23',
         'simplejson',
         'spdx_tools >= 0.6.0',
         'unicodecsv',

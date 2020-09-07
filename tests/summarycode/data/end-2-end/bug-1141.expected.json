@@ -139,6 +139,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -175,6 +176,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -211,6 +213,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -247,6 +250,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -318,6 +322,7 @@
       "license_expressions": [
         "gpl-3.0-plus"
       ],
+      "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -356,6 +361,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -394,6 +400,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -430,6 +437,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -466,6 +474,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -537,6 +546,7 @@
       "license_expressions": [
         "gpl-2.0-plus"
       ],
+      "percentage_of_license_text": 80.95,
       "copyrights": [
         {
           "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
@@ -587,6 +597,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",

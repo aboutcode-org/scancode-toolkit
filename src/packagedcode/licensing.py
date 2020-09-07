@@ -65,13 +65,14 @@ def matches_have_unknown(matches, licensing):
             return True
 
 
-def get_normalized_expression(query_string):
+def get_normalized_expression(query_string, try_as_expression=True):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
-    manifests.
-    Return None if there is the `query_string` is empty. Return "unknown" as a
-    license expression if there is a `query_string` but nothing was detected.
+    manifests. If `try_as_expression` is True try frst to parse this as a
+    license_expression. Return None if there is the `query_string` is empty.
+    Return "unknown" as a license expression if there is a `query_string` but
+    nothing was detected.
     """
     if not query_string or not query_string.strip():
         return
@@ -86,15 +87,19 @@ def get_normalized_expression(query_string):
     # we match twice in a cascade: as an expression, then as plain text if we
     # did not succeed.
     matches = None
-    try:
-        matched_as_expression = True
-        matches = idx.match(query_string=query_string, as_expression=True)
-        if matches_have_unknown(matches, licensing):
-            # rematch also if we have unknowns
+    if try_as_expression:
+        try:
+            matched_as_expression = True
+            matches = idx.match(query_string=query_string, as_expression=True)
+            if matches_have_unknown(matches, licensing):
+                # rematch also if we have unknowns
+                matched_as_expression = False
+                matches = idx.match(query_string=query_string, as_expression=False)
+    
+        except Exception:
             matched_as_expression = False
             matches = idx.match(query_string=query_string, as_expression=False)
-
-    except Exception:
+    else:
         matched_as_expression = False
         matches = idx.match(query_string=query_string, as_expression=False)
 

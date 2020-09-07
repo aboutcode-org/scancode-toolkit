@@ -1,0 +1,911 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: linux-firmware
+Upstream-Contact: linux-firmware@kernel.org
+Source: https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+
+Files: 3com/typhoon.bin
+Copyright: 1999-2004, 3Com Corporation
+License: BSD (3Com)
+ All Rights Reserved.
+ .
+ Redistribution and use in source and binary forms of the 3c990img.h
+ microcode software are permitted provided that the following conditions
+ are met:
+ 1. Redistribution of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistribution in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of 3Com may not be used to endorse or promote products
+    derived from this software without specific prior written permission
+ .
+ THIS SOFTWARE IS PROVIDED BY 3COM ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ USER ACKNOWLEDGES AND AGREES THAT PURCHASE OR USE OF THE 3c990img.h
+ MICROCODE SOFTWARE WILL NOT CREATE OR GIVE GROUNDS FOR A LICENSE BY
+ IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL PROPERTY RIGHTS
+ (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
+ EMBODIED IN ANY OTHER 3COM HARDWARE OR SOFTWARE EITHER SOLELY OR IN
+ COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
+
+Files: advansys/*
+Copyright: 1995-2000, Advanced System Products, Inc.
+           2000-2001, ConnectCom Solutions, Inc.
+License: Permissive (Advansys)
+ All Rights Reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that redistributions of source
+ code retain the above copyright notice and this comment without
+ modification.
+
+Files: agere_ap_fw.bin, agere_sta_fw.bin
+Copyright: 1994-1995, AT&T
+           1996-2000, Lucent Technologies
+           2001-2004, Agere Systems Inc.
+License: BSD (Agere)
+ This software is provided subject to the following terms and conditions,
+ which you should read carefully before using the software.  Using this
+ software indicates your acceptance of these terms and conditions.  If you do
+ not agree with these terms and conditions, do not use the software.
+ .
+ All rights reserved.
+ .
+ Redistribution and use in source or binary forms, with or without
+ modifications, are permitted provided that the following conditions are met:
+ .
+ . Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following Disclaimer as comments in the code as
+    well as in the documentation and/or other materials provided with the
+    distribution.
+ .
+ . Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following Disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ . Neither the name of Agere Systems Inc. nor the names of the contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ Disclaimer
+ .
+ THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, INFRINGEMENT AND THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  ANY
+ USE, MODIFICATION OR DISTRIBUTION OF THIS SOFTWARE IS SOLELY AT THE USERS OWN
+ RISK. IN NO EVENT SHALL AGERE SYSTEMS INC. OR CONTRIBUTORS BE LIABLE FOR ANY
+ DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+Files: as102_data?_st.hex
+Copyright: 2010, Abilis Systems Sarl
+License: Binary redistribution (Abilis)
+ Permission to use, copy, modify, and/or distribute this software for
+ any purpose with or without fee is hereby granted, provided that the
+ above copyright notice and this permission notice appear in all
+ copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+Files: ctefx.bin, ctspeq.bin
+Copyright: 2012, Creative Technology Ltd
+License: Binary redistribution (Creative)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Creative Technology Ltd or its affiliates ("CTL")
+   nor the names of its suppliers may be used to endorse or promote
+   products derived from this software without specific prior written
+   permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   (or any part thereof) is permitted.
+ .
+ Limited patent license. CTL grants a limited, world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but strictly only to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not be
+ applicable, to any other combinations which include this software.
+ No hardware per se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+ .
+ NO OTHER RIGHTS GRANTED. USER HEREBY ACKNOWLEDGES AND AGREES THAT USE OF
+ THIS SOFTWARE SHALL NOT CREATE OR GIVE GROUNDS FOR A LICENSE BY
+ IMPLICATION, ESTOPPEL, OR OTHERWISE TO ANY INTELLECTUAL PROPERTY RIGHTS
+ (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
+ EMBODIED IN ANY OTHER CTL HARDWARE OR SOFTWARE WHETHER SOLELY OR IN
+ COMBINATION WITH THIS SOFTWARE.
+
+Files: cxgb3/ael*.bin
+Copyright: 2007-2009, NetLogic Microsystems, Inc.
+License: Binary redistribution
+ Permission is hereby granted for the distribution of this firmware
+ data in hexadecimal or equivalent format, provided this copyright
+ notice is accompanying it.
+
+Files: cxgb3/t3*.bin
+Copyright: 2003-2009, Chelsio, Inc.
+License: BSD 2-clause
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or
+ without modification, are permitted provided that the following
+ conditions are met:
+ .
+  - Redistributions of source code must retain the above
+    copyright notice, this list of conditions and the following
+    disclaimer.
+ .
+  - Redistributions in binary form must reproduce the above
+    copyright notice, this list of conditions and the following
+    disclaimer in the documentation and/or other materials
+    provided with the distribution.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+Files: cxgb4/*.bin, cxgb4/*.cld
+Copyright: 2011-2013, Chelsio Communications
+License: Binary redistribution (Chelsio)
+ All rights reserved.
+ .
+ Redistribution and use in binary form, without modification, are
+ permitted provided that the following conditions are met:
+ .
+ 1. Redistribution in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+ 2. The name of Chelsio Communications may not be used to endorse or
+    promote products derived from this software without specific prior
+    written permission.
+ 3. Reverse engineering, decompilation, or disassembly of this
+    firmware is not permitted.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: dabusb/*
+Copyright: 1999, BayCom GmbH
+License: Permissive (BayCom)
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that redistributions of source
+ code retain the above copyright notice and this comment without
+ modification.
+
+Files: dvb-fe-xc*
+Copyright: 2009, Xceive Corporation <info@xceive.com>
+License: Binary redistribution (Xceive)
+ Permission to use, copy, modify, and/or distribute this software, only
+ for use with Xceive ICs, for any purpose with or without fee is hereby
+ granted, provided that the above copyright notice and this permission
+ notice appear in all source code copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files: dvb-usb-dib0700-1.20.fw
+Copyright: 2009, DiBcom
+License: Binary redistribution (DiBcom)
+ Permission to use, copy, modify, and/or distribute this software for
+ any purpose with or without fee is hereby granted, provided that the
+ above copyright notice and this permission notice appear in all
+ copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+Files: dvb-usb-it9135*
+Copyright: 2014, ITE Tech. Inc.
+License: Binary redistribution (ITEtech)
+ Permission to use, copy, modify, and/or distribute this software for
+ any purpose with or without fee is hereby granted, provided that the
+ above copyright notice and this permission notice appear in all
+ copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE
+ AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+Files: dvb-usb-terratec-h5-drxk.fw
+Copyright: Terratec
+License: Binary redistribution (Terratec)
+ TERRATEC grants permission to use and redistribute these firmware
+ files for use with TERRATEC devices, but not as part of the Linux
+ kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License.
+ .
+ These firmware files are distributed in the hope that they will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Files: e100/*
+Copyright: 1999-2001, Intel Corporation
+License: BSD (Intel)
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+  1. Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+ .
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation
+     and/or other materials provided with the distribution.
+ .
+  3. Neither the name of Intel Corporation nor the names of its contributors
+     may be used to endorse or promote products derived from this software
+     without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS''
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: ene-ub6250/*
+Copyright: 2011, ENE Technology Inc.
+License: Binary redistribution (ENE)
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
+ WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT
+ SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+ CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+ NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+ WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files: f2255usb.bin, go7007/s2250-?.fw
+Copyright: Sensoray
+License: Redistributable (Sensoray)
+ Sensoray grants permission to use and redistribute these firmware
+ files for use with Sensoray devices, but not as a part of the Linux
+ kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License.
+ These firmware files are distributed in the hope that they will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Files: go7007/*
+Copyright: Micronas
+License: Redistributable (Micronas)
+ The firmware files included in the firmware/ directory may be freely
+ redistributed only in conjunction with this document [LICENCE.go7007];
+ but modification, tampering and reverse engineering are prohibited.
+ .
+ MICRONAS USA, INC., MAKES NO WARRANTIES TO ANY PERSON OR ENTITY WITH
+ RESPECT TO THE SOFTWARE OR ANY DERIVATIVES THEREOF OR ANY SERVICES OR
+ LICENSES AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION
+ WARRANTIES OF MERCHANTABILITY, SUPPORT, AND FITNESS FOR A PARTICULAR
+ PURPOSE AND NON-INFRINGEMENT.
+
+Files: hfi1_*
+Copyright: 2015, Intel Corporation
+License: Binary redistribution (Intel, narrower patent license)
+ All rights reserved.
+ .
+ Redistribution.
+ .
+ Redistribution and use in binary form, without modification, are permitted
+ provided that the following conditions are met:
+ *    Redistributions must reproduce the above copyright notice and the
+      following disclaimer in the documentation and/or other materials provided
+      with the distribution.
+ *    Neither the name of Intel Corporation nor the names of its suppliers may
+      be used to endorse or promote products derived from this software without
+      specific prior written permission.
+ *    No reverse engineering, decompilation, or disassembly of this software is
+      permitted.
+ .
+ Limited patent license.
+ .
+ Intel Corporation grants a world-wide, royalty-free, non-exclusive license
+ under patents it now or hereafter owns or controls to make, have made, use,
+ import, offer to sell and sell (“Utilize”) this software, but solely to the
+ extent that any such patent is necessary to Utilize the software alone. The
+ patent license shall not apply to any combinations which include this software.
+ No hardware per se is licensed hereunder.
+ .
+ DISCLAIMER.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: i915/* debian/config/misc-nonfree/i915/*
+Copyright: 2015, Intel Corporation
+License: Binary redistribution (Intel)
+
+Files: imx/sdma/*
+Copyright: 2017, NXP
+License: Binary redistribution (NXP)
+ All rights reserved.
+ .
+ Redistribution. Reproduction and redistribution in binary form, without
+ modification, for use solely in conjunction with a NXP
+ chipset, is permitted provided that the following conditions are met:
+ .
+   . Redistributions must reproduce the above copyright notice and the following
+     disclaimer in the documentation and/or other materials provided with the
+     distribution.
+ .
+   . Neither the name of NXP nor the names of its suppliers
+     may be used to endorse or promote products derived from this Software
+     without specific prior written permission.
+ .
+   . No reverse engineering, decompilation, or disassembly of this Software is
+     permitted.
+ .
+ Limited patent license. NXP (.Licensor.) grants you
+ (.Licensee.) a limited, worldwide, royalty-free, non-exclusive license under
+ the Patents to make, have made, use, import, offer to sell and sell the
+ Software. No hardware per se is licensed hereunder.
+ The term .Patents. as used in this agreement means only those patents or patent
+ applications owned solely and exclusively by Licensor as of the date of
+ Licensor.s submission of the Software and any patents deriving priority (i.e.,
+ having a first effective filing date) therefrom. The term .Software. as used in
+ this agreement means the firmware image submitted by Licensor, under the terms
+ of this license, to git://git.kernel.org/pub/scm/linux/kernel/git/firmware/
+ linux-firmware.git.
+ Notwithstanding anything to the contrary herein, Licensor does not grant and
+ Licensee does not receive, by virtue of this agreement or the Licensor's
+ submission of any Software, any license or other rights under any patent or
+ patent application owned by any affiliate of Licensor or any other entity
+ (other than Licensor), whether expressly, impliedly, by virtue of estoppel or
+ exhaustion, or otherwise.
+ .
+ DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+ THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: kaweth/*
+Copyright: 1999, Kawasaki LSI.
+License: BSD 4-clause (Kawasaki LSI)
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. All advertising materials mentioning features or use of this software
+    must display the following acknowledgement:
+ 	This product includes software developed by Kawasaki LSI.
+ 4. Neither the name of the company nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY KAWASAKI LSI ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED.  IN NO EVENT SHALL KAWASAKI LSI BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+
+Files: matrox/*
+Copyright: 1999, Matrox Graphics Inc.
+License: Binary redistribution (Matrox)
+ All Rights Reserved.
+ .
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the "Software"),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the Software, and to permit persons to whom the
+ Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ MATROX GRAPHICS INC., OR ANY OTHER CONTRIBUTORS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Files: moxa/*.fw
+Copyright: Moxa Inc.
+License: Binary redistribution (Moxa)
+ The software accompanying this license statement (the “Software”)
+ is the property of Moxa Inc. (the “Moxa”), and is protected by
+ United States and International Copyright Laws and International
+ treaty provisions. No ownership rights are granted by this
+ Agreement or possession of the Software. Therefore, you must treat
+ the Licensed Software like any other copyrighted material. Your
+ rights and obligations in its use are described as follows:
+ .
+ 1. You may freely redistribute this software under this license.
+ 2. You may freely download and use this software on Moxa's device.
+ 3. You may not modify or attempt to reverse engineer the software, or
+    make any attempt to change or even examine the source code of the
+    software.
+ 4. You may not re-license or sub-license the software to any person or
+    business, using any other license.
+ 5. Moxa(r) is worldwide registered trademark.
+
+Files: mt76*.bin
+Copyright: 2013, Ralink, A MediaTek Company
+License: Binary redistribution (MediaTek)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Ralink Technology Corporation nor the names of its
+   suppliers may be used to endorse or promote products derived from this
+   software without specific prior written permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license. Ralink Technology Corporation grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+Files: mts_*.fw
+Copyright: 2005, Multi-Tech Systems, Inc.
+License: Binary redistribution (MTS)
+ All firmware components are redistributable in binary form.
+
+Files: nvidia/*
+Copyright: 2014-2017, NVIDIA Corporation
+License: License For Customer Use of NVIDIA Software
+ IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of
+ NVIDIA Software ("LICENSE") is the agreement which governs use of
+ the software of NVIDIA Corporation and its subsidiaries ("NVIDIA")
+ downloadable herefrom, including computer software and associated
+ printed materials ("SOFTWARE").  By downloading, installing, copying,
+ or otherwise using the SOFTWARE, you agree to be bound by the terms
+ of this LICENSE.  If you do not agree to the terms of this LICENSE,
+ do not download the SOFTWARE.
+ .
+ RECITALS
+ .
+ Use of NVIDIA's products requires three elements: the SOFTWARE, the
+ hardware, and a personal computer. The SOFTWARE is protected by copyright
+ laws and international copyright treaties, as well as other intellectual
+ property laws and treaties.  The SOFTWARE may be protected by various
+ patents, and is not sold, and instead is only licensed for use, strictly
+ in accordance with this document.  The hardware is protected by various
+ patents, and is sold, but this agreement does not cover that sale, since
+ it may not necessarily be sold as a package with the SOFTWARE.  This
+ agreement sets forth the terms and conditions of the SOFTWARE LICENSE only.
+ .
+ 1.  DEFINITIONS
+ .
+ 1.1  Customer.  Customer means the entity or individual that
+ downloads or otherwise obtains the SOFTWARE.
+ .
+ 2.  GRANT OF LICENSE
+ .
+ 2.1  Rights and Limitations of Grant.  NVIDIA hereby grants Customer
+ the following non-exclusive, non-transferable right to use the
+ SOFTWARE, with the following limitations:
+ .
+ 2.1.1  Rights.  Customer may install and use multiple copies of the
+ SOFTWARE on a shared computer or concurrently on different computers,
+ and make multiple back-up copies of the SOFTWARE, solely for Customer's
+ use within Customer's Enterprise. "Enterprise" shall mean individual use
+ by Customer or any legal entity (such as a corporation or university)
+ and the subsidiaries it owns by more than fifty percent (50%).
+ .
+ 2.1.2  Open Source Exception.  Notwithstanding the foregoing terms
+ of Section 2.1.1, SOFTWARE may be copied and redistributed solely for
+ use on operating systems distributed under the terms of an OSI-approved
+ open source license as listed by the Open Source Initiative at
+ http://opensource.org, provided that the binary files thereof are not
+ modified, and Customer provides a copy of this license with the SOFTWARE.
+ .
+ 2.1.3  Limitations.
+ .
+ No Reverse Engineering.  Customer may not reverse engineer,
+ decompile, or disassemble the SOFTWARE, nor attempt in any other
+ manner to obtain the source code.
+ .
+ Usage. SOFTWARE is licensed only for use with microprocessor(s) which have
+ been (i) designed by NVIDIA and (ii) either (a) sold by or (b) licensed by
+ NVIDIA. Customer shall not use SOFTWARE in conjunction with, nor cause
+ SOFTWARE to be executed by, any other microprocessor.
+ .
+ No Translation. Customer shall not translate SOFTWARE, nor cause or permit
+ SOFTWARE to be translated, from the architecture or language in which it is
+ originally provided by NVIDIA, into any other architecture or language.
+ .
+ No Rental.  Customer may not rent or lease the SOFTWARE to someone
+ else.
+ .
+ 3.  TERMINATION
+ .
+ This LICENSE will automatically terminate if Customer fails to
+ comply with any of the terms and conditions hereof.  In such event,
+ Customer must destroy all copies of the SOFTWARE and all of its
+ component parts.
+ .
+ Defensive Suspension.  If Customer commences or participates in any legal
+ proceeding against NVIDIA, then NVIDIA may, in its sole discretion,
+ suspend or terminate all license grants and any other rights provided
+ under this LICENSE during the pendency of such legal proceedings.
+ .
+ 4.  COPYRIGHT
+ .
+ All title and copyrights in and to the SOFTWARE (including but
+ not limited to all images, photographs, animations, video, audio,
+ music, text, and other information incorporated into the SOFTWARE),
+ the accompanying printed materials, and any copies of the SOFTWARE,
+ are owned by NVIDIA, or its suppliers.  The SOFTWARE is protected
+ by copyright laws and international treaty provisions.  Accordingly,
+ Customer is required to treat the SOFTWARE like any other copyrighted
+ material, except as otherwise allowed pursuant to this LICENSE
+ and that it may make one copy of the SOFTWARE solely for backup or
+ archive purposes.
+ .
+ 5.  APPLICABLE LAW
+ .
+ This agreement shall be deemed to have been made in, and shall be
+ construed pursuant to, the laws of the State of California.
+ .
+ 6.  DISCLAIMER OF WARRANTIES AND LIMITATION ON LIABILITY
+ .
+ 6.1  No Warranties.  TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+ LAW, THE SOFTWARE IS PROVIDED "AS IS" AND NVIDIA AND ITS SUPPLIERS
+ DISCLAIM ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT
+ NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE.
+ .
+ 6.2  No Liability for Consequential Damages.  TO THE MAXIMUM
+ EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL NVIDIA OR
+ ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR
+ CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION,
+ DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS
+ OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT
+ OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF NVIDIA HAS
+ BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ .
+ 7.  MISCELLANEOUS
+ .
+ The United Nations Convention on Contracts for the International
+ Sale of Goods is specifically disclaimed.  If any provision of this
+ LICENSE is inconsistent with, or cannot be fully enforced under,
+ the law, such provision will be construed as limited to the extent
+ necessary to be consistent with and fully enforceable under the law.
+ This agreement is the final, complete and exclusive agreement between
+ the parties relating to the subject matter hereof, and supersedes
+ all prior or contemporaneous understandings and agreements relating
+ to such subject matter, whether oral or written.  Customer agrees
+ that it will not ship, transfer or export the SOFTWARE into any
+ country, or use the SOFTWARE in any manner, prohibited by the
+ United States Bureau of Export Administration or any export laws,
+ restrictions or regulations.  This LICENSE may only be modified in
+ writing signed by an authorized officer of NVIDIA.
+
+Files: qat_*.bin
+Copyright: 2014, Intel Corporation.
+License: Binary redistribution (Intel)
+
+Files: rockchip/dptx.bin
+Copyright: 2016, Fuzhou Rockchip Electronics Co.Ltd
+License: Binary redistribution (Rockchip)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ .
+ * Neither the name of Fuzhou Rockchip Electronics Co.Ltd, its products
+   nor the names of its suppliers may be used to endorse or promote products
+   derived from this Software without specific prior written permission.
+ .
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license. Fuzhou Rockchip Electronics Co.Ltd grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+Files: rp2.fw
+Copyright: 2013, Comtrol Corporation
+License: Binary redistribution (Comtrol)
+ Comtrol grants permission to use and redistribute these firmware
+ files for use with Comtrol devices, but not as part of the Linux
+ kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License.
+ .
+ These firmware files are distributed in the hope that they will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Files: rt*.bin
+Copyright: 2007, Ralink Technology Corporation
+License: Binary redistribution (Ralink)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Ralink Technology Corporation nor the names of its
+   suppliers may be used to endorse or promote products derived from this
+   software without specific prior written permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license. Ralink Technology Corporation grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.
+
+Files: tehuti/bdx.bin
+Copyright: 2007, Tehuti Networks Ltd.
+License: Binary redistribution
+ Permission is hereby granted for the distribution of this firmware
+ data in hexadecimal or equivalent format, provided this copyright
+ notice is accompanying it.
+
+Files: tigon/tg3*.bin
+Copyright: 2000-2003, Broadcom Corporation.
+License: Binary redistribution
+ Permission is hereby granted for the distribution of this firmware
+ data in hexadecimal or equivalent format, provided this copyright
+ notice is accompanying it.
+
+Files: ueagle-atm/*
+Copyright: 2006, Ikanos Communications, Inc.
+License: BSD (Ikanos)
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following
+ conditions are met:
+ .
+ * Redistribution of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ .
+ * Redistribution in binary form must reproduce the above
+ copyright notice, this list of conditions and the following
+ disclaimer in the documentation and/or other materials provided
+ with the distribution.
+ .
+ * The name of Ikanos Corporation may not be used to endorse
+   or promote products derived from this source code without specific
+   prior written consent of Ikanos Corporation.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ USER ACKNOWLEDGES AND AGREES THAT THE PURCHASE OR USE OF THIS
+ SOFTWARE WILL NOT CREATE OR GIVE GROUNDS FOR A LICENSE BY
+ IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL PROPERTY
+ RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER
+ PROPRIETARY RIGHT) EMBODIED IN ANY OTHER IKANOS HARDWARE OR SOFTWARE
+ EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
+
+Files: v4l-cx*.fw
+License: Binary redistribution (Conexant)
+ Conexant grants permission to use and redistribute these firmware
+ files for use with Conexant devices, but not as a part of the Linux
+ kernel or in any other form which would require these files themselves
+ to be covered by the terms of the GNU General Public License.
+ These firmware files are distributed in the hope that they will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+License: Binary redistribution (Intel)
+ All rights reserved.
+ .
+ Redistribution.  Redistribution and use in binary form, without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions must reproduce the above copyright notice and the
+   following disclaimer in the documentation and/or other materials
+   provided with the distribution.
+ * Neither the name of Intel Corporation nor the names of its suppliers
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+ * No reverse engineering, decompilation, or disassembly of this software
+   is permitted.
+ .
+ Limited patent license.  Intel Corporation grants a world-wide,
+ royalty-free, non-exclusive license under patents it now or hereafter
+ owns or controls to make, have made, use, import, offer to sell and
+ sell ("Utilize") this software, but solely to the extent that any
+ such patent is necessary to Utilize the software alone, or in
+ combination with an operating system licensed under an approved Open
+ Source license as listed by the Open Source Initiative at
+ http://opensource.org/licenses.  The patent license shall not apply to
+ any other combinations which include this software.  No hardware per
+ se is licensed hereunder.
+ .
+ DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+ BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+ FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+ DAMAGE.

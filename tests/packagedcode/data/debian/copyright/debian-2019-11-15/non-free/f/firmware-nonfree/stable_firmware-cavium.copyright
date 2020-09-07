@@ -1,0 +1,63 @@
+The binary firmware may be downloaded from
+https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+
+Copyright © 2015, Cavium, Inc. All rights reserved.
+
+Software License Agreement
+
+ANY USE, REPRODUCTION, OR DISTRIBUTION OF THE ACCOMPANYING BINARY SOFTWARE
+CONSTITUTES LICENSEEE'S ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.
+
+Licensed Software. Subject to the terms and conditions of this Agreement,
+Cavium, Inc. ("Cavium") grants to Licensee a worldwide, non-exclusive, and
+royalty-free license to use, reproduce, and distribute the binary software in
+its complete and unmodified form as provided by Cavium.
+
+Restrictions. Licensee must reproduce the Cavium copyright notice above with
+each binary software copy. Licensee must not reverse engineer, decompile,
+disassemble or modify in any way the binary software. Licensee must not use
+the binary software in violation of any applicable law or regulation. This
+Agreement shall automatically terminate upon Licensee's breach of any term or
+condition of this Agreement in which case, Licensee shall destroy all copies of
+the binary software.
+
+Warranty Disclaimer.  THE LICENSED SOFTWARE IS OFFERED "AS IS," AND CAVIUM
+GRANTS AND LICENSEE RECEIVES NO WARRANTIES OF ANY KIND, WHETHER EXPRESS,
+IMPLIED, STATUTORY, OR BY COURSE OF COMMUNICATION OR DEALING WITH LICENSEE, OR
+OTHERWISE.  CAVIUM AND ITS LICENSORS SPECIFICALLY DISCLAIM ANY IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, OR
+NONINFRINGEMENT OF THIRD PARTY RIGHTS, CONCERNING THE LICENSED SOFTWARE,
+DERIVATIVE WORKS, OR ANY DOCUMENTATION PROVIDED WITH THE FOREGOING.  WITHOUT
+LIMITING THE GENERALITY OF THE FOREGOING, CAVIUM DOES NOT WARRANT THAT THE
+LICENSED SOFTWARE IS ERROR-FREE OR WILL OPERATE WITHOUT INTERRUPTION, AND
+CAVIUM GRANTS NO WARRANTY REGARDING ITS USE OR THE RESULTS THEREFROM, INCLUDING
+ITS CORRECTNESS, ACCURACY, OR RELIABILITY.
+
+Limitation of Liability. IN NO EVENT WILL LICENSEE, CAVIUM, OR ANY OF CAVIUM'S
+LICENSORS HAVE ANY LIABILITY HEREUNDER FOR ANY INDIRECT, SPECIAL, OR
+CONSEQUENTIAL DAMAGES, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+FOR BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, ARISING OUT
+OF THIS AGREEMENT, INCLUDING DAMAGES FOR LOSS OF PROFITS, OR THE COST OF
+PROCUREMENT OF SUBSTITUTE GOODS, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+Export and Import Laws.  Licensee acknowledges and agrees that the Licensed
+Software (including technical data and related technology) may be controlled by
+the export control laws, rules, regulations, restrictions and national security
+controls of the United States and other applicable foreign agencies (the
+"Export Controls"), and agrees not export or re-export, or allow the export or
+re-export of export-controlled the Licensed Software (including technical data
+and related technology) or any copy, portion or direct product of the foregoing
+in violation of the Export Controls. Licensee hereby represents that
+(i) Licensee is not an entity or person to whom provision of the Licensed
+Software (including technical data and related technology) is restricted or
+prohibited by the Export Controls; and (ii) Licensee will not export, re-export
+or otherwise transfer the export-controlled Licensed Software (including
+technical data and related technology) in violation of U.S. sanction programs
+or export control regulations to (a) any country, or  national or resident of
+any country, subject to a United States trade embargo, (b) any person or entity
+to whom shipment is restricted or prohibited by the Export Controls, or
+(c) anyone who is engaged in activities related to the design, development,
+production, or use of nuclear materials, nuclear facilities, nuclear weapons,
+missiles or chemical or biological weapons.
+

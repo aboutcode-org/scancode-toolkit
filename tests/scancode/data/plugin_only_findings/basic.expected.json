@@ -76,6 +76,7 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
+      "percentage_of_license_text": 4.83,
       "copyrights": [
         {
           "value": "Copyright (c) 1993 The Regents of the University of California",
@@ -193,6 +194,7 @@
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
+      "percentage_of_license_text": 19.01,
       "copyrights": [
         {
           "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",

@@ -30,6 +30,7 @@ from packagedcode import bower
 from packagedcode import build
 from packagedcode import cargo
 from packagedcode import chef
+from packagedcode import debian
 from packagedcode import conda
 from packagedcode import cocoapods
 from packagedcode import freebsd
@@ -50,7 +51,7 @@ from packagedcode import rubygems
 # Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
     rpm.RpmPackage,
-    models.DebianPackage,
+    debian.DebianPackage,
 
     models.JavaJar,
     models.JavaEar,

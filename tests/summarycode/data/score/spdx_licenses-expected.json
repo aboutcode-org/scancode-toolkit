@@ -49,6 +49,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -83,6 +84,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -152,6 +154,7 @@
       "license_expressions": [
         "mit"
       ],
+      "percentage_of_license_text": 1.83,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -192,6 +195,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -261,6 +265,7 @@
       "license_expressions": [
         "mit"
       ],
+      "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -330,6 +335,7 @@
       "license_expressions": [
         "apache-2.0"
       ],
+      "percentage_of_license_text": 66.67,
       "copyrights": [],
       "holders": [],
       "authors": [],

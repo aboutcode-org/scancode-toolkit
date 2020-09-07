@@ -1,0 +1,101 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Xfig
+Source: https://sourceforge.net/projects/mcj/files/fig2dev-3.2.7a.tar.xz
+ http://p3f.gmxhome.de/fig2mpdf/fig2mpdf-1.2.tar.gz
+
+Files: *
+Copyright:
+ Copyright (c) 1991-1999 by Micah Beck
+ Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul
+ Parts Copyright (c) 1988 by Conrad Kwok
+ Parts Copyright (c) 1988 by Frank Schmuck
+ Parts Copyright (c) 1989-2016 by Brian V. Smith
+ Parts Copyright (c) 1992 by Herbert Bauer and  B. Raichle
+ Parts Copyright (c) 1992 by Uri Blumenthal, IBM
+ Parts Copyright (c) 1993-2002 by Anthony Starks
+ Parts Copyright (c) 1994-2002 by Thomas Merz
+ Parts Copyright (c) 1995 by C. Blanc and C. Schlick
+ Parts Copyright (c) 1998 by Mike Markowski
+ Parts Copyright (c) 1988 by Frank Schmuck
+ Parts Copyright (c) 1999 by Philippe Bekaert
+ Parts Copyright (c) 1999 by T. Sato
+ Parts Copyright (c) 2001 by Michael Schrick
+ Parts Copyright (c) 2002 by Christian Gollwitzer (auriocus)
+ Parts Copyright (c) 2002-2006 by Martin Kroeker
+ Parts Copyright (c) 2004-2008 by Eugene Ressler
+ Parts Copyright (c) 2014-2018 by Thomas Loimer
+License: xfig
+ Any party obtaining a copy of these files is granted, free of charge, a
+ full and unrestricted irrevocable, world-wide, paid up, royalty-free,
+ nonexclusive right and license to deal in this software and documentation
+ files (the "Software"), including without limitation the rights to use,
+ copy, modify, merge, publish distribute, sublicense and/or sell copies of
+ the Software, and to permit persons who receive copies from any such
+ party to do so, with the only requirement being that the above copyright
+ and this permission notice remain intact.
+
+Files: debian/*
+Copyright:
+ 1999-2018 Roland Rosenfeld <roland@debian.org>
+ 2010 Steve Langasek <vorlon@debian.org>
+ 1998-1999 Edward Betts <edward@debian.org>
+ 1997-1998 Enrique Zanardi <ezanardi@molec1.dfis.ull.es
+ 1998 Christian Meder <meder@isr.uni-stuttgart.de>
+ 1998 Paul Slootman <paul@debian.org>
+ 1997 joost witteveen <joostje@debian.org>
+License: GPL-2+
+
+Files: debian/patches/14_fig2mpdf.patch debian/patches/15_fig2mpdf-doc.patch fig2mpdf/*
+Copyright:
+ Copyright (C) 2006 Michael Pfeiffer -- p3fff@web.de
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 or 3 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+Files: fig2dev/dev/readxbm.c
+Copyright:
+ Copyright, 1987, Massachusetts Institute of Technology
+License: MIT
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that
+ the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation, and that the name of M.I.T. not be used in advertising or
+ publicity pertaining to distribution of the software without specific,
+ written prior permission.  M.I.T. makes no representations about the
+ suitability of this software for any purpose.  It is provided "as is"
+ without express or implied warranty.
+
+Files: fig2dev/lib/realloc.c
+Copyright:
+ Copyright (C) 1997, 2003-2004, 2006-2007, 2009-2015 Free Software Foundation, Inc.
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.

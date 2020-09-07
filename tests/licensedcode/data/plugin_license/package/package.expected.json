@@ -57,6 +57,7 @@
       "license_expressions": [
         "mit"
       ],
+      "percentage_of_license_text": 4.05,
       "packages": [
         {
           "type": "npm",
