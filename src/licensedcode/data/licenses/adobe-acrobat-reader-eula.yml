@@ -5,7 +5,5 @@ category: Proprietary Free
 owner: Adobe Systems
 other_urls:
     - http://www.adobe.com/products/reader/distribution.html
-ignorable_authors:
-    - agreement, such as the Adobe Systems Incorporated
 ignorable_urls:
     - http://www.adobe.com/

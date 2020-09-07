@@ -1,0 +1,14 @@
+key: glwtpl
+short_name: GLWTPL
+name: Good Luck With That Public License
+category: Permissive
+owner: Unspecified
+homepage_url: https://github.com/me-shaon/GLWTPL/blob/master/LICENSE
+spdx_license_key: GLWTPL
+other_urls:
+    - https://github.com/me-shaon/GLWTPL/commit/da5f6bc734095efbacb442c0b31e33a65b9d6e85
+ignorable_copyrights:
+  - Copyright (c) Everyone
+ignorable_holders:
+  - Everyone
+

@@ -1,0 +1,9 @@
+key: mysql-linking-exception-2018
+short_name: MySQL linking exception 2018
+name: MySQL linking exception 2018
+category: Copyleft Limited
+owner: Oracle Corporation
+homepage_url: https://raw.githubusercontent.com/mysql/mysql-server/8.0/include/mysql.h
+is_exception: yes
+notes: this exception started showing up in all MySQL headers with MySQL 8.0 in 2018
+ See https://github.com/mysql/mysql-server/commit/c019b26f951a6ace68629c731933c2dfaae2239c

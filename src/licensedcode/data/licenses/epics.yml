@@ -4,5 +4,8 @@ name: EPICS Open License
 category: Permissive
 owner: Argonne National Laboratory
 homepage_url: http://www.aps.anl.gov/epics/license/open.php
+spdx_license_key: EPICS
 text_urls:
     - http://www.aps.anl.gov/epics/license/open.php
+other_urls:
+    - https://epics.anl.gov/license/open.php

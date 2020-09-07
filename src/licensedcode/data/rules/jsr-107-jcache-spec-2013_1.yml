@@ -1,0 +1,5 @@
+license_expression: jsr-107-jcache-spec-2013
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://raw.github.com/jsr107/jsr107spec/master/LICENSE.txt

@@ -1,0 +1,21 @@
+key: efsl-1.0
+short_name: EFSL 1.0
+name: Eclipse Foundation Specification License - v1.0
+category: Proprietary Free
+owner: Eclipse Foundation
+homepage_url: https://www.eclipse.org/legal/efsl.php
+text_urls:
+    - https://www.eclipse.org/legal/efsl.php
+faq_url: http://www.eclipse.org/legal/eplfaq.php
+other_urls:
+    - https://www.eclipse.org/legal/epl-2.0
+    - https://www.opensource.org/licenses/EPL-2.0
+ignorable_copyrights:
+  - COPYRIGHT HOLDERS AND THE ECLIPSE FOUNDATION
+  - Copyright (c) Eclipse Foundation
+  - Copyright (c) Eclipse Foundation, Inc.
+ignorable_holders:
+  - Eclipse Foundation
+  - Eclipse Foundation, Inc.
+  - THE ECLIPSE FOUNDATION
+

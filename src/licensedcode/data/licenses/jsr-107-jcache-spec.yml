@@ -9,3 +9,6 @@ ignorable_copyrights:
     - Copyright 2015 Oracle America, Inc. and Greg Luck
 ignorable_holders:
     - Oracle America, Inc. and Greg Luck
+notes: the license for the API has since changed in 2016 to Apache-2.0
+ after several intermediate changes. See https://github.com/jsr107/jsr107spec/commits/master/LICENSE.txt
+ for details. This is an old spec license likely still current.

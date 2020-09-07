@@ -1,0 +1,14 @@
+key: fftpack-2004
+short_name: FFTPACK License 2004
+name: FFTPACK License 2004
+category: Permissive
+owner: NCAR
+homepage_url: https://github.com/marton78/pffft/blob/master/pffft.c
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/issues/1978
+standard_notice: |
+    http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html
+    Copyright (c) 2004 the University Corporation for Atmospheric
+    Research ("UCAR"). All rights reserved. Developed by NCAR's
+    Computational and Information Systems Laboratory, UCAR,
+    www.cisl.ucar.edu.

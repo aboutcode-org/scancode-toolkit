@@ -1,0 +1,8 @@
+This package was first put together by Bruce Perens <Bruce@Pixar.com>,
+from his own sources.
+
+The GNU Public Licenses in /usr/share/common-licenses were taken from
+ftp.gnu.org and are copyrighted by the Free Software Foundation, Inc.
+
+The Artistic License in /usr/share/common-licenses is the one coming
+from Perl and its SPDX name is "Artistic License 1.0 (Perl)".

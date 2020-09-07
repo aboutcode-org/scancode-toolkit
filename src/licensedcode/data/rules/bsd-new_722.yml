@@ -1,0 +1,6 @@
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE
+notes: See https://github.com/nexB/scancode-toolkit/issues/2171

@@ -1,0 +1,13 @@
+key: cal-1.0-combined-work-exception
+short_name: CAL-1.0-Combined-Work-Exception
+name: Cryptographic Autonomy License 1.0 (Combined Work Exception)
+category: Copyleft Limited
+owner: Holochain
+homepage_url: https://opensource.org/licenses/CAL-1.0
+spdx_license_key: CAL-1.0-Combined-Work-Exception
+other_urls:
+    - http://cryptographicautonomylicense.com/license-text.html
+standard_notice: |
+    SPDX-License-Identifier: CAL-1.0-Combined-Work-Exception
+    Licensed under the Cryptographic Autonomy License version 1.0, with
+    Combined Work Exception

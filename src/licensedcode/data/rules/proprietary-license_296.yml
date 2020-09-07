@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: see https://raw.githubusercontent.com/PrefectHQ/prefect/master/LICENSE-PREFECT
+ignorable_urls:
+    - https://www.prefect.io/legal/prefect-community-license

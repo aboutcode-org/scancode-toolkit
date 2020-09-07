@@ -1,0 +1,73 @@
+key: nvidia-cuda-supplement-2020
+short_name: CUDA Toolkit Supplement to SLA for NVIDIA SDKs
+name: CUDA Toolkit Supplement to SLA for NVIDIA SDKs
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://docs.nvidia.com/cuda/eula/index.html#cuda-toolkit-supplement-license-agreement
+ignorable_authors:
+  - Ahmad Abdelfattah (ahmad.ahmad@kaust.edu.sa) David Keyes (david.keyes@kaust.edu.sa)
+  - Ahmad M. Abdelfattah, David Keyes, and Hatem Ltaief
+  - D. E. Shaw Research
+  - Davide Barbieri
+  - IMPACT Group, University of Illinois, http://impact.crhc.illinois.edu
+  - Jonathan Hogg
+  - Li-Wen Chang
+  - Mutsuo Saito and Makoto Matsumoto
+  - Norbert Juffa
+  - Vasily Volkov
+  - the University of Tennessee
+ignorable_copyrights:
+  - (c) Copyright 2013 King Abdullah University of Science and Technology
+  - Copyright (c) 1997-2012 University of Cambridge
+  - Copyright (c) 2003-2010 University of Illinois at Urbana-Champaign
+  - Copyright (c) 2007-2009, Regents of the University of California
+  - Copyright (c) 2007-2012, Google Inc.
+  - Copyright (c) 2008-2009 Davide Barbieri University of Rome Tor Vergata
+  - Copyright (c) 2009, 2010 Mutsuo Saito, Makoto Matsumoto and Hiroshima University
+  - Copyright (c) 2009-2012 Zoltan Herczeg
+  - Copyright (c) 2010 The University of Tennessee
+  - Copyright (c) 2010-2012 Zoltan Herczeg
+  - Copyright (c) 2011 Mutsuo Saito, Makoto Matsumoto, Hiroshima University and University of
+    Tokyo
+  - Copyright (c) 2011-2013, Yann Collet
+  - Copyright (c) 2012, The Science and Technology Facilities Council
+  - Copyright (c) 2012, University of Illinois
+  - Copyright (c) 2015-2017, Norbert Juffa
+  - Copyright (c) 2016 OpenAI (http://openai.com), 2016 Google Inc.
+  - Copyright (c) Microsoft Corporation
+  - Copyright 2010-2011, D. E. Shaw Research
+ignorable_emails:
+  - ahmad.ahmad@kaust.edu.sa
+  - david.keyes@kaust.edu.sa
+  - hatem.ltaief@kaust.edu.sa
+  - nvidia-compute-license-questions@nvidia.com
+  - oss-requests@nvidia.com
+ignorable_holders:
+  - D. E. Shaw Research
+  - Davide Barbieri University of Rome Tor Vergata
+  - Google Inc.
+  - King Abdullah University of Science and Technology
+  - Microsoft Corporation
+  - Mutsuo Saito, Makoto Matsumoto and Hiroshima University
+  - Mutsuo Saito, Makoto Matsumoto, Hiroshima University and University of Tokyo
+  - Norbert Juffa
+  - OpenAI Google Inc.
+  - Regents of the University of California
+  - The Science and Technology Facilities Council
+  - The University of Tennessee
+  - University of Cambridge
+  - University of Illinois
+  - University of Illinois at Urbana-Champaign
+  - Yann Collet
+  - Zoltan Herczeg
+ignorable_urls:
+  - http://impact.crhc.illinois.edu/
+  - http://llvm.org/
+  - http://openai.com/
+  - http://www.apache.org/licenses/LICENSE-2.0.html
+  - http://www.eclipse.org/
+  - http://www.eclipse.org/legal/epl-v10.html
+  - http://www.gnu.org/licenses/gpl.txt
+  - http://www.opensource.org/licenses/bsd-license.php
+  - https://github.com/openai/openai-gemm/blob/master/LICENSE
+

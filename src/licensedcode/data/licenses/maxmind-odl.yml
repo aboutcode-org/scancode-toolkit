@@ -1,8 +1,8 @@
 key: maxmind-odl
-short_name: Maxmind Open Data License
-name: Maxmind Open Data License
+short_name: MaxMind Open Data License
+name: MaxMind Open Data License
 category: Free Restricted
-owner: Maxmind
+owner: MaxMind
 homepage_url: https://geolite.maxmind.com/download/geoip/database/LICENSE.txt
 notes: This license is mostly the same as a bsd-original (or rather a bsd-simplified with an
     advertizing clause)

@@ -1,0 +1,16 @@
+key: mulanpsl-2.0
+short_name: Mulan PSL v2
+name: Mulan Permissive Software License, Version 2
+category: Permissive
+owner: COSCI
+homepage_url: https://license.coscl.org.cn/MulanPSL2/
+spdx_license_key: MulanPSL-2.0
+ignorable_copyrights:
+  - Copyright (c) Zhong Guo Kai Yuan Yun Lian Meng Jing ICPBei
+  - copyright holder Software Name
+ignorable_holders:
+  - Software Name
+  - Zhong Guo Kai Yuan Yun Lian Meng Jing ICPBei
+ignorable_urls:
+  - http://license.coscl.org.cn/MulanPSL2
+

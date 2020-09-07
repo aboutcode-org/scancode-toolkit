@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 OR epl-1.0
+is_license_notice: yes
+relevance: 100
+notes: Comments about Eclipse's own license are ignored as they do not describe the license
+    of the code here
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/epl-v10.php

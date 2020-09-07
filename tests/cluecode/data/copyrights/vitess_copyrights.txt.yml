@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright 2019 The Vitess Authors
+  - Copyright 2019 The Vitess Authors
+  - Copyright 2020 The Vitess Authors
+holders:
+  - The Vitess Authors
+  - The Vitess Authors
+  - The Vitess Authors
+holders_summary:
+  - value: The Vitess Authors
+    count: 3

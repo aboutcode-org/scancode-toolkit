@@ -1,0 +1,15 @@
+key: cal-1.0
+short_name: CAL-1.0
+name: Cryptographic Autonomy License 1.0
+category: Copyleft
+owner: Holochain
+homepage_url: https://opensource.org/licenses/CAL-1.0
+spdx_license_key: CAL-1.0
+other_urls:
+    - http://cryptographicautonomylicense.com/license-text.html
+standard_notice: |
+    This Cryptographic Autonomy License (the “License”) applies to any Work
+    whose owner has marked it with any of the following notices, or a similar
+    demonstration of intent:
+    SPDX-License-Identifier: CAL-1.0
+    Licensed under the Cryptographic Autonomy License version 1.0

@@ -1,0 +1,6 @@
+license_expression: lgpl-2.0-plus WITH fltk-exception-lgpl-2.0
+is_license_tag: yes
+relevance: 100
+notes: See https://www.fltk.org/COPYING.php
+ignorable_urls:
+    - http://www.fltk.org/COPYING.php

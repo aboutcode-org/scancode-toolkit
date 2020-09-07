@@ -1,0 +1,7 @@
+license_expression: nist-pd
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - https://www.copyright.gov/help/faq-definitions.html#public_domain
+    - https://www.copyright.gov/title17/92chap1.html#105
+    - https://www.nist.gov/

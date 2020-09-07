@@ -5,6 +5,6 @@ name: bzip2 License
 category: Permissive
 owner: bzip
 homepage_url: http://bzip.org/1.0.5/bzip2-manual-1.0.5.html
-# spdx_license_key: bzip2-1.0.5
+notes: formerly under spdx_license_key bzip2-1.0.5. See bzip2-libbzip-2010 for replacement
 other_urls:
     - http://www.bzip.org/

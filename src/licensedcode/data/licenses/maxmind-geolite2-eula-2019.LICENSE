@@ -1,0 +1,97 @@
+GeoLite2 End User License Agreement
+Revised on December 20, 2019 
+
+By downloading or using our GeoLite2 Database, you are accepting and agreeing to the terms and conditions set forth in this GeoLite2 End User License Agreement (this "Agreement").
+
+MaxMind, Inc. ("MaxMind"), a Delaware Corporation,  offers a line of free databases that provide geographic information and other data associated with specific Internet protocol addresses (each a "GeoLite2 Database" and collectively the "GeoLite2 Databases"). The data available through the GeoLite2 Databases is referred to in this Agreement as the "GeoLite2 Data".  The term “Services” as used in this Agreement means the Geolite2 Databases and the GeoLite2 Data available at GeoLite2 Free Downloadable Databases on the MaxMind website, www.maxmind.com (the "Website").
+
+ADDITIONAL POLICIES, TERMS AND CONDITIONS.
+
+The following policies are incorporated into this Agreement by reference and provide additional terms and conditions incorporated herein by this reference and/or related to the use of the Website:
+
+Creative Commons Corporation Attribution-ShareAlike 4.0 International License (the “Creative Commons License”)
+MaxMind Data Processing Addendum (“DPA”)
+MaxMind Privacy Policy (“PP”)
+MaxMind Website Terms of Use (“WT”)
+This Agreement controls in the event of any conflict with the above-referenced documents.  Thereafter, for any conflicts among the above 4 documents, the priority and precedence of interpretation is DPA, PP, WT and Creative Commons License.
+
+OTHER DATABASES AND PRODUCTS.
+
+This Agreement does not apply to your use of any databases or products offered by MaxMind other than the Services. If you use other MaxMind databases or products, additional or other terms and conditions shall apply to your use of such databases and products, and you agree to pay all applicable charges.
+
+LIMITED GRANT OF RIGHTS.
+
+Subject to the terms and conditions of this Agreement, to the extent the Services contain any copyrightable elements those copyrightable elements are governed by the Creative Commons License.  You must provide attribution of your use to MaxMind (an example of attribution: “This product includes GeoLite2 data created by MaxMind, available from <a href="https://www.maxmind.com">https://www.maxmind.com</a>“).
+
+In addition and if you are using the Services for internal use, subject to the terms and conditions of this Agreement, MaxMind also hereby grants you a non-exclusive, non-transferable limited license to access and use the Services for your own internal business purposes.
+
+With respect to either or both of the above licenses, (i) you agree to use the Services only in a manner that is consistent with applicable laws and (ii) you may not remove or obscure any copyright notice or other notice or terms of use contained in the Services.
+
+NO USE OF GEOLITE2 DATA FOR FCRA PURPOSES.
+
+The parties understand and agree that MaxMind is not a consumer reporting agency as defined by the Fair Credit Reporting Act, 15 U.S.C. §1681 et seq. ("FCRA"), and that the Services do not constitute "consumer reports" as defined in the FCRA. You agree that you will not use the Services to determine any consumer's eligibility for any product or service to be used by a consumer for personal, family, or household purposes. You also agree that you will not use the Services (i) as a factor in establishing a consumer's eligibility for credit, (ii) as a factor in establishing a consumer's eligibility for insurance, (iii) for employment purposes, (iv) in connection with a determination of an individual's eligibility for a license or other benefit granted by a governmental authority, or (v) in connection with any permissible purpose as defined by the FCRA.
+
+ACCURACY EXPECTATION: NO USE OF GEOLITE2 DATA FOR IDENTIFYING SPECIFIC HOUSEHOLDS OR INDIVIDUALS. 
+
+Due to the nature of geolocation technology and other factors beyond its control, MaxMind cannot and does not guarantee the accuracy of the GeoLite2 Data. The GeoLite2 Databases contain only the geographic data available and the availability of such data is not consistent for all regions. Furthermore, none of the GeoLite2 Data reliably identifies any geographic level or division more precise than the zip code or postal code associated with an IP address. Accordingly, it is imperative that you and your end users not rely on the GeoLite2 Data to identify a specific household, individual,  or street address. You acknowledge the foregoing limitation of the GeoLite2 Data and agree represent and warrant that you will not use or encourage others to use the GeoLite2 Data for the purpose of identifying or locating a specific household, individual,  or street address.
+
+ADDITIONAL RESTRICTIONS.
+
+Disclosure of Services.  Except as explicitly permitted by the Creative Commons License, you will not disclose the Services to any third party or after notifying MaxMind of the anticipated disclosure and obtaining MaxMind’s prior written consent to the disclosure. To the extent you disclose the Services to a third party as permitted by this Agreement, you will impose upon the third party the same or substantially similar contractual duties imposed on you  and the rights provided to MaxMind as in this Agreement, including those in LIMITED GRANT OF RIGHTS, ADDITIONAL RESTRICTIONS, and DATA PROCESSING and, where not inconsistent with the other terms of this Agreement, as in the Creative Commons License.  You are responsible for the acts or omissions of any third parties with which you share the Services.
+Security of the Services. You will maintain reasonable and appropriate technical and organizational measures for the protection of the security, confidentiality, and integrity of the Services (including protection against unauthorized or unlawful processing and against accidental or unlawful destruction, loss, or alteration or damage, unauthorized disclosure of, or access to, such data). In the event you discover a data incident involving the Services, you shall promptly notify MaxMind and fully cooperate with MaxMind, at your own expense, in remediating the incident.
+Destructions of GeoLite2 Database and GeoLite2 Data. From time to time, MaxMind will release an updated version of the GeoLite2 Databases, and you agree to promptly use the updated version of the GeoLite2 Databases. You shall cease use of and destroy (i) any old versions of the Services within thirty (30) days following the release of the updated GeoLite2 Databases; and (ii) all Services immediately upon termination of the license under this Agreement. Upon request, you shall provide MaxMind with written confirmation of such destruction.
+Provision of Data to MaxMind. The Services provided by MaxMind under this Agreement do not require MaxMind to process Personal Information on behalf of Licensee. Licensee shall not provide any Personal Information to MaxMind nor cause MaxMind to process any Personal Information on its behalf.
+
+INDEMNIFICATION.
+
+You will indemnify and hold MaxMind and its affiliates harmless from and against any and all claims, causes of action, liabilities, penalties, costs or expenses (including reasonable attorney’s fees) incurred by MaxMind or any affiliate thereof as a result of your breach of any of the terms of this Agreement.
+
+FEES.
+
+The Services are made available to you free of charge. MaxMind reserves the right to stop offering the Services free of charge at any time, and charge for future updates to the Services.
+
+CHANGES TO THE AGREEMENT/TERMINATION.
+
+(a) MaxMind may amend this Agreement at any time. Any such amendment(s) shall be binding and effective upon the earlier of (i) the date that is thirty (30) days after the posting of the amended Agreement on the Website or (ii) the date that MaxMind provides notice to you of the amended Agreement. You may immediately terminate this Agreement upon written notice to MaxMind if a change is unacceptable to you. Your continued use of the Services following notice to you of a change shall constitute your acceptance of the change.
+
+(b) This Agreement shall terminate immediately if, within the reasonable judgment of MaxMind, you materially breach any material term or condition of this Agreement and fail to remedy the breach within ten (10) days of receipt of written notice thereof stating MaxMind's intent to terminate upon non-cure of the breach. Your failure to comply with the Restrictions on Use is a breach of a material term of this Agreement.
+
+NO CONSEQUENTIAL DAMAGES/LIMITATION ON LIABILITY.
+
+Under no circumstances, including negligence, shall MaxMind or any related party or supplier be liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, revenue, or data, that are directly or indirectly related to the use of or the inability to access and use the Services, whether in an action in contract, tort, product liability, strict liability, statute, or otherwise, even if MaxMind has been advised of the possibility of those damages. The total liability of MaxMind, in connection with a loss or damages arising hereunder (an "Occurrence") is limited to the greater of $100 or the lowest amount permitted by applicable law.
+
+NO WARRANTIES/AVAILABILITY.
+
+MaxMind furnishes the Services on an as-is, as-available basis. MaxMind makes no warranty, express or implied, with respect to their capability, accuracy, or completeness. All warranties of any type, express or implied, including the warranties of merchantability, fitness for a particular purpose, and non-infringement of third party rights are expressly disclaimed. Furthermore, since the availability of Services offered through the Website is dependent upon many factors beyond MaxMind's control, MaxMind does not guarantee uninterrupted availability of any such Services. Any such Services may be inoperative and/or unavailable due to technical difficulties or for maintenance purposes, at any time and without notice. While MaxMind does not warrant that the MaxMind Website is free of harmful components, MaxMind shall make commercially reasonable efforts to maintain the Website free of viruses and malicious code.
+
+GOVERNING LAW.
+
+This Agreement shall be governed and interpreted pursuant to the laws of the Commonwealth of Massachusetts, applicable to contracts made and to be performed wholly in Massachusetts, without regard to principles of conflicts of laws. You specifically consent to personal jurisdiction in Massachusetts in connection with any dispute between you and MaxMind arising out of this Agreement. You agree that the exclusive venue for any dispute hereunder shall be in the state and federal courts in Boston, Massachusetts. This Agreement shall be construed and interpreted in English, and any translation hereof to a language other than English shall be for convenience only.
+
+NOTICES.
+
+Notices given under this Agreement shall be in writing and sent by facsimile, email, or by first class mail or equivalent. MaxMind shall direct notice to you at the email address or physical mailing address you provided in the registration process. You shall direct notice to MaxMind at the following address:
+
+MaxMind, Inc.
+14 Spring Street, Suite 3
+Waltham, MA 02451
+U.S.A.
+Email: legal@maxmind.com
+
+Either party may change its notice contact information at any time by giving notice of the new contact information as provided in this section.
+
+COMPLETE AGREEMENT.
+
+This Agreement (which includes the policies, terms and conditions referenced above and incorporated herein) represents the entire agreement between you and MaxMind with respect to the subject matter hereof and supersedes all previous representations, understandings, or agreements, oral and written, between the parties regarding the subject matter hereof.  The headings contained in this Agreement are for convenience only and shall not govern its interpretation.
+
+ASSIGNMENT.
+
+You may not assign this Agreement without MaxMind's prior written consent. MaxMind may assign its rights and obligations under this Agreement without your consent.
+
+SEVERABILITY.
+
+Should any provision of this Agreement be held void, invalid, or inoperative, such decision shall not affect any other provision hereof, and the remainder of this Agreement shall be effective as though such void, invalid, or inoperative provision had not been contained herein.
+
+COMPLIANCE WITH LAW.
+
+Notwithstanding any provisions of this Agreement to the contrary, you shall in performance of this Agreement comply with all applicable laws, executive orders, regulations ordinances and rules of all governments (“Applicable Laws”), including all applicable export and re-export control laws and regulations, such as the Export Administration Regulations (“EAR”) maintained by the USA Department of Commerce, trade and economic sanctions maintained by the USA Treasury Department’s Office of Foreign Assets Control, and the International Traffic in Arms Regulations (“ITAR”) maintained by the USA Department of State.  Specifically, and without limitation, you agree that you shall not, directly or indirectly, sell, export, re-export, transfer, divert, or otherwise dispose of any Services (including products derived from or based on such Services) to any destination, entity, or person prohibited by the laws or regulations of the USA, without obtaining prior authorization from the competent government authorities as required by those laws and regulations.

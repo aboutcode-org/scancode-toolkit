@@ -1,11 +1,7 @@
-license_expression: public-domain AND proprietary-license
+license_expression: public-domain AND gutenberg-2020
 is_license_text: yes
 relevance: 100
 minimum_coverage: 80
-ignorable_copyrights:
-    - (c) (3) educational corporation
-ignorable_holders:
-    - (3) educational corporation
 ignorable_urls:
     - http://gutenberg.net/license
     - http://pglaf.org/

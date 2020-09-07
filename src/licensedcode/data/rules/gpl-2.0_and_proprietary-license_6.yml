@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 AND proprietary-license
+is_license_reference: yes
+relevance: 90
+notes: formerly at https://github.com/drwetter/testssl.sh/blob/3.0.1/Readme.md#license
+ignorable_urls:
+    - https://testssl.sh/LICENSE.txt

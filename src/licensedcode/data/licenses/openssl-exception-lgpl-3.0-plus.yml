@@ -8,15 +8,15 @@ is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-3.0.txt
 standard_notice: |
-    psycopg2 and the LGPL
-    psycopg2 is free software: you can redistribute it and/or modify it under
+    This is free software: you can redistribute it and/or modify it under
     the terms of the GNU Lesser General Public License as published by the Free
     Software Foundation, either version 3 of the License, or (at your option)
     any later version.
-    psycopg2 is distributed in the hope that it will be useful, but WITHOUT ANY
+    This is distributed in the hope that it will be useful, but WITHOUT ANY
     WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
     FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
     more details.
+
     In addition, as a special exception, the copyright holders give permission
     to link this program with the OpenSSL library (or with modified versions of
     OpenSSL that use the same license as OpenSSL), and distribute linked
@@ -28,22 +28,6 @@ standard_notice: |
     this exception statement from your version. If you delete this exception
     statement from all source files in the program, then also delete it here.
     You should have received a copy of the GNU Lesser General Public License
-    along with psycopg2 (see the doc directory.) If not, see
+    along with this (see the doc directory.) If not, see
     http://www.gnu.org/licenses/.
-    Alternative licenses
-    If you prefer you can use the Zope Database Adapter ZPsycopgDA (i.e., every
-    file inside the ZPsycopgDA directory) user the ZPL license as published on
-    the Zope web site.
-    Also, the following BSD-like license applies (at your option) to the files
-    following the pattern psycopg/adapter*.{h,c} and
-    psycopg/microprotocol*.{h,c}:
-    Permission is granted to anyone to use this software for any purpose,
-    including commercial applications, and to alter it and redistribute it
-    freely, subject to the following restrictions:
-    The origin of this software must not be misrepresented; you must not claim
-    that you wrote the original software. If you use this software in a
-    product, an acknowledgment in the product documentation would be
-    appreciated but is not required.
-    Altered source versions must be plainly marked as such, and must not be
-    misrepresented as being the original software.
-    This notice may not be removed or altered from any source distribution.
+
