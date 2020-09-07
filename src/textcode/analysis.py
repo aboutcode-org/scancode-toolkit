@@ -99,7 +99,6 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
             logger_debug('numbered_text_lines:', 'location is not a file')
         return enumerate(iter(location), 1)
 
-
     if plain_text:
         if TRACE:
             logger_debug('numbered_text_lines:', 'plain_text')
@@ -242,7 +241,27 @@ def js_map_sources_lines(location):
         for entry in sources:
             for line in entry.splitlines():
                 yield line
-
+'''
+>>> from textcode.analysis import *
+>>> l=u'is designed to give them the heads up that they need, BEFORE the\x00\x00\x00\x00\x00\x00'
+>>> as_unicode(l)
+'is designed to give them the heads up that they need, BEFORE the      '
+>>> l=b'is designed to give them the heads up that they need, BEFORE the\x00\x00\x00\x00\x00\x00'
+>>> as_unicode(l)
+'is designed to give them the heads up that they need, BEFORE the      '
+>>> foo=list(numbered_text_lines('ReadMe.txt'))[-1][1][:10]
+DEBUG:textcode.analysis:numbered_text_lines: T.filetype_file: ASCII text
+DEBUG:textcode.analysis:numbered_text_lines: T.is_text_with_long_lines: False
+DEBUG:textcode.analysis:numbered_text_lines: T.is_binary: False
+>>> foo
+'is designe'
+>>> foo=list(numbered_text_lines('ReadMe.txt'))[-1][1]
+DEBUG:textcode.analysis:numbered_text_lines: T.filetype_file: ASCII text
+DEBUG:textcode.analysis:numbered_text_lines: T.is_text_with_long_lines: False
+DEBUG:textcode.analysis:numbered_text_lines: T.is_binary: False
+>>> foo
+'is designed to give them the heads up that they need, BEFORE the                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                '''
+                
 
 def as_unicode(line):
     """
@@ -254,7 +273,8 @@ def as_unicode(line):
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
     if isinstance(line, compat.unicode):
-        return line
+        return remove_null_bytes(line)
+
     try:
         s = line.decode('UTF-8')
     except UnicodeDecodeError:
@@ -277,7 +297,18 @@ def as_unicode(line):
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
                     s = strings.string_from_string(s)
-    return s
+    return remove_null_bytes(s)
+
+
+def remove_null_bytes(s):
+    """
+    Return a string replacing by a space all null bytes.
+
+    There are some rare cases where we can have binary strings that are not
+    caught early when detecting a file type, but only late at the line level.
+    This help catch most of these cases.
+    """
+    return s.replace('\x00', ' ')
 
 
 def remove_verbatim_cr_lf_tab_chars(s):
