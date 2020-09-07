@@ -13,3 +13,6 @@ ignorable_holders:
     - Panagiotis Tsirigotis
     - Rob Braun
     - Steve Grubb
+ignorable_authors:
+  - Panagiotis Tsirigotis
+

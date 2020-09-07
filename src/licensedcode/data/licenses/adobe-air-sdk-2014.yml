@@ -7,8 +7,6 @@ homepage_url: http://www.adobe.com/products/air/sdk-eula.html
 other_urls:
     - www.adobe.com/go/redistributeairsdk
     - http://www.adobe.com/products/air/sdk-agreement.html
-ignorable_authors:
-    - agreement, such as the Adobe Systems Incorporated
 ignorable_urls:
     - http://www.adobe.com/go/air_developer_privacy
     - http://www.adobe.com/go/redistributeairsdk
