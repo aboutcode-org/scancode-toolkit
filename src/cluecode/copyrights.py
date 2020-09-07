@@ -788,6 +788,7 @@ patterns = [
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
     (r'^Added', 'NN'),
+    (r'^Are', 'NN'),
     (r'^Additional$', 'NN'),
     (r'^AGPL.?$', 'NN'),
     (r'^Agreements?\.?$', 'NN'),
@@ -1445,7 +1446,7 @@ patterns = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|info|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions: there are so main TLD these days!
     # URL wrapped in () or <>
     (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
@@ -1505,8 +1506,9 @@ grammar = """
 # All/No/Some Rights Reserved
 #######################################
 
-    # All/No/Some Rights Reserved
-    ALLRIGHTRESERVED: { <NNP|NN|CAPS> <RIGHT> <RESERVED>}  #allrightsreserved
+    # All/No/Some Rights Reserved OR  All Rights Are Reserved
+    ALLRIGHTRESERVED: { <NNP|NN|CAPS> <RIGHT> <NNP|NN|CAPS>? <RESERVED>}  #allrightsreserved
+
 
 #######################################
 # COMPOSITE emails
@@ -2243,6 +2245,9 @@ grammar = """
     # Copyright (C) 2005-2006  dann frazier <dannf@dannf.org>
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NN>  <EMAIL>} #999991
 
+    # URL-like at the start
+    COPYRIGHT: {<COMPANY>  <YR-RANGE>  <COPY>+  <ALLRIGHTRESERVED>} #999992
+
     # Copyright (c) 2008 Intel Corporation / Qualcomm Inc.
     COPYRIGHT: {<COPYRIGHT>  <DASH>  <COMPANY>} #copydash-co
 
@@ -2330,6 +2335,7 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
     COPYRIGHT: {<COPY|NAME-COPY><COPY|NAME-COPY>}        #999990
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <ALLRIGHTRESERVED>}        #99900111
 
 """
 
