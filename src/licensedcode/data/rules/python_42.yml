@@ -1,0 +1,5 @@
+license_expression: python
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/python/cpython/blob/81574b80e92554adf75c13fa42415beb8be383cb/LICENSE
