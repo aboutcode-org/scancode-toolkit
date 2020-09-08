@@ -1,11 +1,122 @@
 Changelog
 =========
 
-Outputs:
- - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
 
-OS support:
- - Add 10.15 macOS tests to azure-pipelines
+v3.2.0rc1 (2020-09-08)
+----------------------
+
+ - Improve copyright detection #2140
+ - Add new license rules for "bad" licenses #1899 @viragumathe5
+ - Improve copyright detection @WizardOhio24
+ - Improve tests @hanif-ali
+ - Add and improve support for package manifest for #2080 Go, Ruby gem gemspec, Cocoapod podspec, opam, Python PKG-INFO - Rohit Potter @rpotter12
+ - Add and improve support for package lockfiles for Pipfile.lock, requirements.tx, Cargo.lock - Rohit Potter @rpotter12
+ - Add new --max-depth option to limit sca depth - Hanif Ali @hanif-ali
+ - Add initial Debian packaging - @aj4ayushjain
+ - Add new documentation web site and documentation generation system 
+ - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
+ - Rework packaging and third-party support handling: Create new scripts and
+   process to provision, install and manage third-party dependencies - Abhishek Kumar @Abhishek-Dev09
+ - Improve CSV output and fix manifest path bug #1718 Aditya Viki8 
+ - Add new documentation, as well as tools and process. Ayan Sinha Mahapatra
+ - Add new license detection rules - Ayan Sinha Mahapatra
+ - Improve license detection #1999 - Bryan Sutula
+ - Correct CC0 license #1984 - Carmen Bianca Bakker
+ - Add documentation for the usage of `cpp_includes` plugin - Chin Yeung Li
+ - Improve andling of npm package-lock.json #1993 - Chin Yeung Li
+ - Add new license detection rules - Gaupeng
+ - Improve documentation - Issei Horie
+ - Improve consolidation plugin - Jono Yang @JonoYang
+ - Improve Python wheels detection #1749 - Jono Yang @JonoYang
+ - Add support for BUCK and Bazel build scripts #1678 - Jono Yang @JonoYang
+ - Improve handing of ignores #1748 - Jono Yang @JonoYang
+ - Improved package models #1773 #1532 #1678 #1771 #1791 #1220 - Jono Yang @JonoYang
+ - Parse package lock files for Composer #1850, Yarn #1220, Gemfile.lock #1885 - Jono Yang @JonoYang
+ - Add parser for Alpine 'installed' file #2061 - Jono Yang @JonoYang
+ - Add support for Debian packagesinstalled files  #2058 - Jono Yang @JonoYang
+ - Add new licenses -@Pratikrocks
+ - Improve support for DWARF, ELF and C++ include plugins #1712 #1752#1762 - Li Ha @licodeli
+ - Add support for parsing java class files #1712 #1726- Li Ha @licodeli
+ - Add new license detection rules - @MankaranSingh
+ - Add new duration field to JSON output #1937 - @MankaranSingh
+ - Add new rule for GPL historical note #1794 - Martin Petkov
+ - Add --replace-originals flag to extractcode -Maximilian Huber
+ - Improve Documentation - Michael Herzog
+ - Add new checksum type for sha256 - Nitish @nitish81299
+ - Improve documentation - Philippe Ombredanne
+ - Add new license detection rules and improve detection #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
+ - Add new license detection rules and improve detection #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911 
+ - Add new license detection rules and improve detection #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
+ - Allow to call "run_scan" as a function #1780 
+ - Update license data to SPDX 3.7 #1789
+ - Collect matched license text correctly including with Turkish diacritics #1872
+ - Detect SPDX license identifiers #2007
+ - Add Windows 64 as supported platform #616
+ - Add and improve support for archive with lzip, lz4 and zstd #245 #2044 #2045
+ - Detect licenses in debian copyright files #2058
+ - Improve copyright detections #2140
+ - Improve FSF, unicode and Perl license detection - Qingmin Duanmu
+ - Add COSLi and ethical licenses - Ravi @JRavi2
+ - Add tests for extract.py and extract_cli.py - Ravi @JRavi2
+ - Add a new copyright to grammar - Richard Menzies
+ - Fix external URLs in documentation - Ritiek Malhotra
+ - Improve doc - Rohit Potter
+ - Correct configure on Windows and improve doc - Sebastian Schuberth
+ - Improve license detection. Add tests for #1758 and #1691- Shankhadeep Dey
+ - Improve tests of utility code - Shivam Chauhan
+ - Improve tests and documentation - Shivam Sandbhor @sbs2001
+ - Add new hippocratic license #1739 - Shivam Sandbhor
+ - Add new and improved licenses - Steven Esser @majurg
+ - Improve test suite - Steven Esser @majurg
+ - Improve fingerprint plugin #1690 - Steven Esser @majurg
+ - Add support for Debian packages #2058  - Steven Esser @majurg
+ - Improve FreeBSD support - @aj4ayushjain
+ - Add new plugins to get native code from install packages - @aj4ayushjain
+ - Fix license name and data - Thomas Steenbergen
+ - Improve runtime support for FreeBSD #1695  @knobix
+ - Update macOS image on azure pipeline @TG1999
+ - Improve documentation - @Vinay0001     
+ 
+ 
+
+v3.1.1 (2019-09-04)
+-------------------
+
+Major new feature:
+
+ - Complete port to Python 3.6+ #295 @Abhishek-Dev09
+
+New features:
+
+ - Improve package manifest support for #1643 RPMs, #1628 Cran, Python #1600, Maven #1649 Chef #1600 @licodeli @JonoYang
+ - Add plugin to collect ELF and LKM clues #1685 @licodeli
+ - Add runtime support for FreeBSD #1695  @knobix
+ - Add support to extract lzip archives #245 #989
+ - Add new consolidation plugin #1686 @JonoYang
+
+Other features and fixes:
+
+ - Improve license detection #1700 #1704 #1701
+ - Improve copyright detection #1672
+ - Improve handling of plugins for native binaries @aj4ayushjain
+ - Add CODE OF CONDUCT @inishchith
+ - Fix extractcode error #749
+ - Add new version notification #111 #1688 @jdaguil 
+
+
+v3.1.0 (2019-08-12)
+-------------------
+
+ - Add partial suport for Python 3.6+ #295 @Abhishek-Dev09
+ - Add plugin to collect dwarf references #1167 @licodeli
+ - Add fingerprint plugin #1651 @arnav-mandal1234
+ - Add summary and consolidation plugin #1673
+ - Improve license detection #1606 #1659 #1675 
+ - Improve copyright detection #1672
+ - Add owned files to package manifests #1554 @JonoYang
+ - Improve package manifest support for Conda #1147, Bower and Python @licodeli
+ - Add an option to include the original matched license text #1668 #260 @LemoShi
+
 
 v3.0.2 (2019-02-15)
 -------------------
