@@ -123,4 +123,4 @@ build_tests(
     test_dir='debian/copyright/debian-2019-11-15',
     prefix='test_debian_copyright_',
     clazz=TestDebianCopyrightLicenseDetection,
-    regen=True)
+    regen=False)
