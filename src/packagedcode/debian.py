@@ -224,6 +224,8 @@ def parse_status_file(location, distro='debian'):
     """
     Yield Debian Package objects from a dpkg `status` file or None.
     """
+    if not os.path.exists(location):
+        raise FileNotFoundError('[Errno 2] No such file or directory: {}'.format(repr(location)))
     if not is_debian_status_file(location):
         return
 
