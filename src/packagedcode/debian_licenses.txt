@@ -301,7 +301,7 @@ apache-2.0 or bsd-2-clause or bsd-3-clause or expat or isc or unicode or x11 or 
 apache-2.0 or bsd-2-clause or bsd-3-clause or isc or unicode or x11 or zlib/libpng or public-domain	
 apache-2.0 or bsd-2-clause or bsd-3-clause or isc or x11 or zlib/libpng or public-domain	
 apache-2.0 or bsd-2-clause or expat	
-apache-2.0 or bsd-2-clause or lgpl-2.1+	
+apache-2.0 or bsd-2-clause or lgpl-2.1+	apache-2.0 OR bsd-simplified OR lgpl-2.1-plus
 apache-2.0 or bsd-2-clause or lgpl-2.1+ or cddl-1.1 or gpl-2 with classpath exception	
 apache-2.0 or bsd-3-clause	
 apache-2.0 or bsd-3-clause~google	
@@ -550,10 +550,10 @@ as-is
 as-is+gpl-2+	
 as-is-i	
 as-is-ii	
-asl2	
-asl-2	
-asl-2.0	
-aslv2	
+asl2	apache-2.0
+asl-2	apache-2.0
+asl-2.0	apache-2.0
+aslv2	apache-2.0
 asm is licensed under bsd license.	
 asn1js-license	
 as the jquery jqtouch plugin: mit	
