@@ -1789,7 +1789,8 @@ grammar = """
     NAME: {<BY> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1000
 
     # NetGroup, Politecnico di Torino (Italy)
-    COMPANY: {<NNP> <COMPANY> <NN|NNP>}        #1030
+    # Chinese Service Center for Scholarly Exchange
+    COMPANY: {<NNP> <COMPANY> <NN|NNP> <NAME>?}        #1030
 
     # Arizona Board of Regents (University of Arizona)
     NAME: {<COMPANY> <OF> <NN|NNP>}        #1060
