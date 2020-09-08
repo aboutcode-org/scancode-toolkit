@@ -28,9 +28,10 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-
+from unittest import skipIf
 import pytest
 
+from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -1085,6 +1086,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == result
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_does_not_crash_on_turkish_unicode(self):
         querys = u'İrəli'
         result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
@@ -1095,6 +1097,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
         assert expected == result
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_behaves_like_query_tokenizer_on_turkish_unicode(self):
         from licensedcode.tokenize import query_tokenizer
         querys = u'İrəli'
@@ -1237,6 +1240,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False, whole_lines=True)
         assert expected == matched_text
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_with_diacritic_in_rules(self):
         rule_dir = self.get_test_loc('match/turkish_unicode/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
@@ -1257,6 +1261,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == matched_texts
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
         idx = cache.get_index()
         query_loc = self.get_test_loc('match/turkish_unicode/query')

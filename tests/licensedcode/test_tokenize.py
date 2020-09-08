@@ -33,6 +33,7 @@ import itertools
 import json
 import os
 from time import time
+from unittest.case import skipIf
 
 from commoncode.system import py2
 from commoncode.system import py3
@@ -53,7 +54,6 @@ if py2:
     mode = 'wb'
 if py3:
     mode = 'w'
-
 
 
 class TestTokenizers(FileBasedTesting):
@@ -637,6 +637,7 @@ class MatchedTextTokenizer(FileBasedTesting):
             [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_query_text_tokenizer_and_query_tokenizer_should_yield_the_same_texts(self):
         text = u'''Redistribution+ ;and use in! + 2003 source and +binary forms,
         ()with or without modifi+cation, are permitted with İrəli .\t\n
