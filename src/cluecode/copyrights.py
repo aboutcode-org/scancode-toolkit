@@ -787,8 +787,8 @@ patterns = [
 
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
-    (r'^Added', 'NN'),
-    (r'^Are', 'NN'),
+    (r'^Added$', 'NN'),
+    (r'^Are$', 'NN'),
     (r'^Additional$', 'NN'),
     (r'^AGPL.?$', 'NN'),
     (r'^Agreements?\.?$', 'NN'),
