@@ -95,7 +95,6 @@ class IsLicenseText(PostScanPlugin):
             # keep unique texts/line ranges since we repeat this for each matched licenses
             license_texts = set()
             for lic in resource.licenses:
-                print(resource.path, flush=True)
                 license_texts.add(
                     (lic.get('matched_text'), 
                      lic.get('start_line', 0), 
