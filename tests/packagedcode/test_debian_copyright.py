@@ -29,25 +29,20 @@ from __future__ import unicode_literals
 import json
 from os import path
 from os import walk
+from unittest.case import skipIf
 
-from commoncode import compat
 from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 from packagedcode import debian_copyright
 
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
 
-
-def check_expected(result, expected_loc, regen=False):
+def check_expected(test_loc, expected_loc, regen=False):
     """
-    Check equality between a result collection and an expected JSON file.
-    Regen the expected file if regen is True.
+    Check copyright parsing of `test_loc` location against an expected JSON file
+    at `expected_loc` location. Regen the expected file if `regen` is True.
     """
+    result = list(debian_copyright.parse_copyright_file(test_loc))
     if regen:
         with open(expected_loc, 'w') as ex:
             ex.write(json.dumps(result, indent=2))
@@ -55,7 +50,14 @@ def check_expected(result, expected_loc, regen=False):
     with open(expected_loc) as ex:
         expected = json.loads(ex.read())
 
-    assert expected == result
+    if expected != result:
+
+        expected = [
+            ('copyright file', 'file://' + test_loc),
+            ('expected file', 'file://' + expected_loc),
+        ] + expected
+
+        assert expected == result
 
 
 def relative_walk(dir_path):
@@ -79,35 +81,29 @@ def create_test_function(test_loc, expected_loc, test_name, regen=False):
 
     # closure on the test params
     def test_func(self):
-        result = list(debian_copyright.parse_copyright_file(test_loc))
-        check_expected(result, expected_loc, regen=regen)
+        check_expected(test_loc, expected_loc, regen=regen)
 
     # set a proper function name to display in reports and use in discovery
-    # function names are best as bytes
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
     test_func.__name__ = test_name
     return test_func
 
 
-def build_tests(test_dir, expected_dir, clazz, prefix='test_', regen=False):
+def build_tests(test_dir, clazz, prefix='test_', regen=False):
     """
-    Dynamically build test methods for each POMs in `test_dir`  and
+    Dynamically build test methods for each copyright file in `test_dir` and
     attach the test method to the `clazz` class.
-    If check_parse_pom is True, test the POM parsing; otherwise, test Package creation
     """
     test_data_dir = path.join(path.dirname(__file__), 'data')
     test_dir_loc = path.join(test_data_dir, test_dir)
-    expected_dir_loc = path.join(test_data_dir, expected_dir)
 
     # loop through all items and attach a test method to our test class
     for test_file in relative_walk(test_dir_loc):
         test_name = prefix + text.python_safe_name(test_file)
         test_loc = path.join(test_dir_loc, test_file)
-        expected_loc = path.join(expected_dir_loc, test_file)
+        expected_loc = test_loc + '.expected.json'
 
         test_method = create_test_function(
             test_loc=test_loc,
@@ -117,6 +113,7 @@ def build_tests(test_dir, expected_dir, clazz, prefix='test_', regen=False):
         setattr(clazz, test_name, test_method)
 
 
+@skipIf(py2, 'Only on Python3')
 class TestDebianCopyrightLicenseDetection(FileBasedTesting):
     # pytestmark = pytest.mark.scanslow
     test_data_dir = path.join(path.dirname(__file__), 'data')
@@ -124,18 +121,6 @@ class TestDebianCopyrightLicenseDetection(FileBasedTesting):
 
 build_tests(
     test_dir='debian/copyright/debian-2019-11-15',
-    expected_dir='debian/copyright/debian-2019-11-15-expected',
     prefix='test_debian_copyright_',
     clazz=TestDebianCopyrightLicenseDetection,
-    regen=False)
-
-# class TestDebianCopyrightInstalledOnUbuntuLicenseDetection(FileBasedTesting):
-#     # pytestmark = pytest.mark.scanslow
-#     test_data_dir = path.join(path.dirname(__file__), 'data')
-#
-# build_tests(
-#     test_dir = 'debian/copyright/ubuntu-installed',
-#     expected_dir = 'debian/copyright/ubuntu-installed-expected',
-#     prefix='test_ubuntu_copyright_',
-#     clazz=TestDebianCopyrightInstalledOnUbuntuLicenseDetection,
-#     regen=True)
+    regen=True)
