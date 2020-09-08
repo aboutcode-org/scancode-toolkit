@@ -92,14 +92,14 @@ def parse_copyright_file(copyright_file, skip_debian_packaging=True, simplify_li
     declared_license, detected_license, copyrights = parse_structured_copyright_file(
         copyright_file=copyright_file,
         skip_debian_packaging=skip_debian_packaging,
-        simplify_licenses=simplify_licenses)
+        simplify_licenses=simplify_licenses,
+    )
 
     if not detected_license or detected_license == 'unknown':
         text = textcode.analysis.unicode_text(copyright_file)
         detected_license = get_normalized_expression(text, try_as_expression=False)
     if not copyrights:
         copyrights = '\n'.join(copyright_detector(copyright_file))
-
     return declared_license, detected_license, copyrights
 
 
@@ -119,12 +119,25 @@ def copyright_detector(location):
         return copyrights
 
 
-def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, simplify_licenses=True):
+def parse_structured_copyright_file(
+    copyright_file,
+    skip_debian_packaging=True,
+    simplify_licenses=True,
+    unique=True,
+):
     """
-    Return a tuple of (declared license, detected license_expression, copyrights) strings computed
-    from the `copyright_file` location. For each copyright file paragraph we
-    treat the "name" as a license declaration. The text is used for detection
-    and cross-reference with the declaration.
+    Return a tuple of (declared license, detected license_expression,
+    copyrights) strings computed from the `copyright_file` location. For each
+    copyright file paragraph we treat the "name" as a license declaration. The
+    text is used for detection and cross-reference with the declaration.
+
+    If `skip_debian_packaging` is True, the Debian packaging license --if
+    detected-- is skipped.
+
+    If `simplify_licenses` is True the license expressions are simplified.
+
+    If `unique` is True, repeated copyrights, detected or declared licenses are
+    ignore, and only unique detections are returne.
     """
     if not copyright_file:
         return None, None, None
@@ -134,13 +147,6 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
     declared_licenses = []
     detected_licenses = []
     copyrights = []
-
-#     debug on Python3
-#     try:
-#         deco = fix_copyright(deco)
-#     except Exception as e:
-#         # debug issues
-#         raise Exception(copyright_file) from e
 
     deco = fix_copyright(deco)
 
@@ -154,10 +160,13 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
 
         if isinstance(paragraph, (CopyrightHeaderParagraph, CopyrightFilesParagraph)):
             pcs = paragraph.copyright.statements or []
-            # avoid repeats
             for p in pcs:
                 p = p.dumps()
-                if p not in copyrights:
+                # avoid repeats
+                if unique:
+                    if p not in copyrights:
+                        copyrights.append(p)
+                else:
                     copyrights.append(p)
 
         if isinstance(paragraph, CatchAllParagraph):
@@ -174,9 +183,13 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
 
             declared, detected = detect_declared_license(plicense.name)
             # avoid repeats
-            if declared and declared not in declared_licenses:
+            if unique:
+                if declared and declared not in declared_licenses:
+                    declared_licenses.append(declared)
+                if detected and detected not in detected_licenses:
+                    detected_licenses.append(detected)
+            else:
                 declared_licenses.append(declared)
-            if detected and detected not in detected_licenses:
                 detected_licenses.append(detected)
 
             # also detect in text
@@ -185,7 +198,11 @@ def parse_structured_copyright_file(copyright_file, skip_debian_packaging=True, 
                 detected = get_normalized_expression(text, try_as_expression=False)
                 if not detected:
                     detected = 'unknown'
-                if detected not in detected_licenses:
+                # avoid repeats
+                if unique:
+                    if detected not in detected_licenses:
+                        detected_licenses.append(detected)
+                else:
                     detected_licenses.append(detected)
 
     declared_license = '\n'.join(declared_licenses)
