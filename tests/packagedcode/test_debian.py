@@ -76,9 +76,11 @@ class TestDebian(PackageTester):
         packages = list(debian.parse_status_file(test_file, distro='debian'))
         self.check_packages(packages, expected_loc, regen=False)
 
+    @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_parse_end_to_end(self):
-        test_file = self.get_test_loc('debian/end-to-end/status')
-        test_info_dir = self.get_test_loc('debian/end-to-end/')
+        test_dir = self.extract_test_tar('debian/end-to-end.tgz')
+        test_info_dir = os.path.join(test_dir, 'end-to-end')
+        test_file = os.path.join(test_info_dir, 'status')
 
         packages = list(debian.parse_status_file(test_file, distro='ubuntu'))
         assert 1 == len(packages)
@@ -120,8 +122,10 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         assert [] == test_pkg.get_list_of_installed_files(test_info_dir)
 
+    @skipIf(on_windows, 'File names cannot contain colons on Windows')
     def test_multi_arch_is_same(self):
-        test_info_dir = self.get_test_loc('debian/same-multi-arch')
+        test_dir = self.extract_test_tar('debian/same-multi-arch.tgz')
+        test_info_dir = os.path.join(test_dir, 'same-multi-arch')
 
         test_pkg = debian.DebianPackage(
             name='libatk-adaptor',
