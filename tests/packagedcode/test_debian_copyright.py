@@ -98,6 +98,8 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
     """
     test_data_dir = path.join(path.dirname(__file__), 'data')
     test_dir_loc = path.join(test_data_dir, test_dir)
+    if py2:
+        return
 
     # loop through all items and attach a test method to our test class
     for test_file in relative_walk(test_dir_loc):
