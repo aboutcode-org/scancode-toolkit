@@ -197,16 +197,20 @@ class DebianPackage(models.Package):
                 return copyright_loc
 
 
-def get_installed_packages(root_dir, distro='debian', detect_licenses=False):
+def get_installed_packages(root_dir, distro='debian', detect_licenses=False, **kwargs):
     """
     Given a directory to a rootfs, yield a DebianPackage and a list of `installed_files`
     (path, md5sum) tuples.
     """
-    # guard from recursive import
-    from packagedcode import debian_copyright
 
     base_status_file_loc = os.path.join(root_dir, 'var/lib/dpkg/status')
+    if not os.path.exists(base_status_file_loc):
+        return
+
     var_lib_dpkg_info_dir = os.path.join(root_dir, 'var/lib/dpkg/info/')
+
+    # guard from recursive import
+    from packagedcode import debian_copyright
 
     for package in parse_status_file(base_status_file_loc, distro=distro):
         package.populate_installed_files(var_lib_dpkg_info_dir)
