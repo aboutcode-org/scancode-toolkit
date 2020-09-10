@@ -3,4 +3,5 @@ short_name: Synopsys MIT License
 name: Synopsys MIT License
 category: Permissive
 owner: Synopsys
+spdx_license_key: LicenseRef-scancode-synopsys-mit
 minimum_coverage: 80

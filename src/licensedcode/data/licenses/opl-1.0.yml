@@ -4,6 +4,7 @@ name: OpenContent Public License v1.0
 category: Copyleft Limited
 owner: OpenContent
 homepage_url: http://opencontent.org/opl.shtml
+spdx_license_key: LicenseRef-scancode-opl-1.0
 text_urls:
     - http://opencontent.org/opl.shtml
 other_urls:

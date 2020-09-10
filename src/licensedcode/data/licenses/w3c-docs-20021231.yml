@@ -4,12 +4,12 @@ name: W3C Document License (2002-12-31)
 category: Free Restricted
 owner: W3C - World Wide Web Consortium
 homepage_url: http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
+spdx_license_key: LicenseRef-scancode-w3c-docs-20021231
 ignorable_copyrights:
-  - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, European
-    Research Consortium for Informatics and Mathematics, Keio University, Beihang)
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, European
+        Research Consortium for Informatics and Mathematics, Keio University, Beihang)
 ignorable_holders:
-  - World Wide Web Consortium, (Massachusetts Institute of Technology, European Research Consortium
-    for Informatics and Mathematics, Keio University, Beihang)
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, European Research Consortium
+        for Informatics and Mathematics, Keio University, Beihang)
 ignorable_urls:
-  - http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
-
+    - http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231

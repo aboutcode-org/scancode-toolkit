@@ -3,5 +3,6 @@ short_name: MIT with Specification Disclaimer
 name: MIT with Specification Disclaimer
 category: Permissive
 owner: Xerox PARC
+spdx_license_key: LicenseRef-scancode-mit-specification-disclaimer
 other_urls:
     - http://archive.apache.org/dist/commons/jcs/source/jcs-1.3-src.tar.gz

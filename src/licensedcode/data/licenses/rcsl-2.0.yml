@@ -4,6 +4,7 @@ name: RealNetworks Community Source License v2.0
 category: Proprietary Free
 owner: RealNetworks
 homepage_url: https://helixcommunity.org/content/rcsl
+spdx_license_key: LicenseRef-scancode-rcsl-2.0
 text_urls:
     - https://helixcommunity.org/content/rcsl
 ignorable_urls:

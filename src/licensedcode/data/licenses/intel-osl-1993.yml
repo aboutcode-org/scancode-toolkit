@@ -3,3 +3,4 @@ short_name: Intel OSL 1993
 name: Intel Open Source License 1993
 category: Permissive
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-osl-1993

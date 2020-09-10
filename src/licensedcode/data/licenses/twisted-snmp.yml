@@ -3,5 +3,6 @@ short_name: TwistedSNMP License
 name: TwistedSNMP License
 category: Permissive
 owner: TwistedSNMP
+spdx_license_key: LicenseRef-scancode-twisted-snmp
 other_urls:
     - http://comments.gmane.org/gmane.linux.debian.devel.legal/25899

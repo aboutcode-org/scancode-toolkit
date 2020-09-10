@@ -4,5 +4,6 @@ name: DSTC Public License (DPL) v1.1
 category: Copyleft Limited
 owner: DIFI
 homepage_url: http://begrep.difi.no/SikkerDigitalPost/xsd/xs3p/LICENSE.html
+spdx_license_key: LicenseRef-scancode-dpl-1.1
 other_urls:
     - https://en.wikipedia.org/wiki/Distributed_Systems_Technology_Centre

@@ -4,3 +4,4 @@ name: Fabien Tassin License
 category: Permissive
 owner: Fabien Tassin
 homepage_url: http://search.cpan.org/~ftassin/SNMP-MIB-Compiler-0.06/lib/SNMP/MIB/Compiler.pm#COPYRIGHT
+spdx_license_key: LicenseRef-scancode-fabien-tassin

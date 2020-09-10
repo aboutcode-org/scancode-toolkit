@@ -3,5 +3,6 @@ short_name: ASMUS License
 name: ASMUS License
 category: Permissive
 owner: ASMUS, Inc.
+spdx_license_key: LicenseRef-scancode-asmus
 other_urls:
     - http://home.ix.netcom.com/~asmus-inc/index.html

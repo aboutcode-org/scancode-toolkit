@@ -3,4 +3,5 @@ short_name: Developing Nations 2.0
 name: Developing Nations 2.0
 category: Proprietary Free
 owner: Creative Commons
-homepage_url: https://creativecommons.org/licenses/devnations/2.0/ 
+homepage_url: https://creativecommons.org/licenses/devnations/2.0/
+spdx_license_key: LicenseRef-scancode-cc-devnations-2.0

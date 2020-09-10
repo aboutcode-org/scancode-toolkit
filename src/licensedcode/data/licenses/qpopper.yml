@@ -4,6 +4,7 @@ name: Qpopper License
 category: Permissive
 owner: Qualcomm
 homepage_url: http://www.eudora.com/products/unsupported/qpopper/license.html
+spdx_license_key: LicenseRef-scancode-qpopper
 text_urls:
     - http://www.eudora.com/products/unsupported/qpopper/license.html
 ignorable_copyrights:

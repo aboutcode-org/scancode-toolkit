@@ -4,5 +4,6 @@ name: WS-Trust Specification
 category: Permissive
 owner: W3C - World Wide Web Consortium
 homepage_url: https://en.wikipedia.org/wiki/WS-Trust
+spdx_license_key: LicenseRef-scancode-ws-trust-specification
 other_urls:
     - http://central.maven.org/maven2/org/apache/wss4j/wss4j-ws-security-stax/2.1.5/wss4j-ws-security-stax-2.1.5.jar

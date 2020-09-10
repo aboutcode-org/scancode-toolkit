@@ -4,6 +4,7 @@ name: Info-Zip License 2007-03
 category: Permissive
 owner: info-zip
 homepage_url: http://www.info-zip.org/
+spdx_license_key: LicenseRef-scancode-info-zip-2007-03
 text_urls:
     - http://www.info-zip.org/doc/LICENSE.20070302
 ignorable_copyrights:

@@ -4,5 +4,6 @@ name: Classic VB License
 category: Permissive
 owner: Karl Peterson
 homepage_url: http://vb.mvps.org/license.asp
+spdx_license_key: LicenseRef-scancode-classic-vb
 text_urls:
     - http://vb.mvps.org/license.asp

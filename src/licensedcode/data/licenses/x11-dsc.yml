@@ -3,6 +3,7 @@ short_name: X11-Style (DSC Technologies)
 name: X11-Style (DSC Technologies)
 category: Permissive
 owner: Alcatel-Lucent
+spdx_license_key: LicenseRef-scancode-x11-dsc
 minimum_coverage: 90
 ignorable_copyrights:
     - Copyright 1997 DSC Technologies Corporation

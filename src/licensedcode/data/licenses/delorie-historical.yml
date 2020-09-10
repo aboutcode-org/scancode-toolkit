@@ -5,3 +5,4 @@ category: Permissive
 owner: DJ Delorie
 notes: this is a short historical permissive license seen in the newlib C library. This is close
     to a bsla text.
+spdx_license_key: LicenseRef-scancode-delorie-historical

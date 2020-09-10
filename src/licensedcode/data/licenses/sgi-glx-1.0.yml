@@ -4,6 +4,7 @@ name: SGI GLX Public License v1.0
 category: Permissive
 owner: SGI - Silicon Graphics
 homepage_url: http://www.sgi.com/products/software/opensource/glx/glxlicense.txt
+spdx_license_key: LicenseRef-scancode-sgi-glx-1.0
 text_urls:
     - http://velib.kyb.mpg.de/docu/GLX.html
 ignorable_copyrights:

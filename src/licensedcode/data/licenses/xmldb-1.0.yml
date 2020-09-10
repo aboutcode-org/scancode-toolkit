@@ -4,6 +4,7 @@ name: XML:DB Initiative Software License 1.0
 category: Permissive
 owner: XMLDB
 homepage_url: http://xmldb-org.sourceforge.net/index.html
+spdx_license_key: LicenseRef-scancode-xmldb-1.0
 text_urls:
     - http://xmldb-org.sourceforge.net/legal.html
 faq_url: http://xmldb-org.sourceforge.net/faqs.html

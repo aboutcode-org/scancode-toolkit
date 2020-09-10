@@ -4,6 +4,7 @@ name: Free Art License 1.3
 category: Permissive
 owner: Copyleft Attitude
 homepage_url: http://artlibre.org/licence/lal/en
+spdx_license_key: LicenseRef-scancode-free-art-1.3
 text_urls:
     - http://artlibre.org/licence/lal/en
 ignorable_urls:

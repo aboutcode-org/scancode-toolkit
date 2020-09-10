@@ -7,3 +7,4 @@ homepage_url: https://github.com/ofiwg/libfabric/blob/master/include/linux/rdpmc
 notes: |
     This license is a custom variation on the BSD simplified seen in
     libfabric.
+spdx_license_key: LicenseRef-scancode-bsd-simplified-intel

@@ -5,6 +5,7 @@ category: Permissive
 owner: SGI - Silicon Graphics
 homepage_url: http://www.hboehm.info/crcalc/COPYRIGHT.txt
 notes: this is included in Android and is a rather unique text
+spdx_license_key: LicenseRef-scancode-crcalc
 text_urls:
     - http://www.hboehm.info/crcalc/COPYRIGHT.txt
     - http://www.hboehm.info/new_crcalc/COPYRIGHT.txt

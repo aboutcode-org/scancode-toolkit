@@ -4,6 +4,7 @@ name: Redis Source Available License Agreement 1.0
 category: Source-available
 owner: Redis Labs
 homepage_url: https://github.com/RedisLabsModules/RedisGraph/blob/v1.0.14/LICENSE
+spdx_license_key: LicenseRef-scancode-redis-source-available-1.0
 faq_url: https://redislabs.com/community/licenses/
 other_urls:
     - https://techcrunch.com/2019/02/21/redis-labs-changes-its-open-source-license-again/

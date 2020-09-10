@@ -5,3 +5,4 @@ category: Unstated License
 owner: James Newton-King
 homepage_url: https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c86341036078ed2f4e241b907b816d/CONTRIBUTING.md
 notes: this is a CLA
+spdx_license_key: LicenseRef-scancode-newton-king-cla

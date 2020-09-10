@@ -3,5 +3,6 @@ short_name: Manfred Klein Fonts TOS
 name: Manfred Klein Fonts TOS
 category: Free Restricted
 owner: Manfred Klein
+spdx_license_key: LicenseRef-scancode-manfred-klein-fonts-tos
 ignorable_authors:
     - Manfred Klein

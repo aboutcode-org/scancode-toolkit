@@ -4,6 +4,7 @@ name: Microsoft Kinect for Windows SDK License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx
+spdx_license_key: LicenseRef-scancode-ms-kinext-win-sdk
 other_urls:
     - https://web.archive.org/web/20130326115230/https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx
     - http://go.microsoft.com/fwlink/?LinkID=236061

@@ -3,6 +3,7 @@ short_name: 4Suite 1.1
 name: 4Suite License v1.1
 category: Permissive
 owner: Fourthought, Inc.
+spdx_license_key: LicenseRef-scancode-4suite-1.1
 ignorable_copyrights:
     - Copyright (c) 2000 Fourthought, Inc.
     - Copyright (c) 2000 The Apache Software Foundation

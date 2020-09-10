@@ -4,6 +4,7 @@ name: Sandeep License
 category: Proprietary Free
 owner: Sandeep Gangadharan
 homepage_url: http://www.sivamdesign.com/scripts/
+spdx_license_key: LicenseRef-scancode-sandeep
 ignorable_copyrights:
     - Copyright (c) 2000 - 2014 Sandeep Gangadharan
 ignorable_holders:

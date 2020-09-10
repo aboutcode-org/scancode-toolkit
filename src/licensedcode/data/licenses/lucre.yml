@@ -6,6 +6,7 @@ owner: Ben Laurie
 homepage_url: https://github.com/benlaurie/lucre/blob/master/LICENCE
 notes: |
     This is mostly similar to the OpenSSL license.
+spdx_license_key: LicenseRef-scancode-lucre
 minimum_coverage: 50
 ignorable_authors:
     - Ben Laurie

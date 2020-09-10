@@ -4,6 +4,7 @@ name: JGraph License
 category: Permissive
 owner: JGraph
 homepage_url: http://www.jgraph.com/jgraphdownload.html
+spdx_license_key: LicenseRef-scancode-jgraph
 other_urls:
     - http://www.jgraph.com/jgraphdownload.html
 minimum_coverage: 70

@@ -3,3 +3,4 @@ short_name: LZMA SDK Public Domain
 name: LZMA SDK Public Domain
 category: Public Domain
 owner: Igor Pavlov
+spdx_license_key: LicenseRef-scancode-lzma-sdk-pd

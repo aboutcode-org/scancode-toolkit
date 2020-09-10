@@ -4,6 +4,7 @@ name: IrfanView EULA
 category: Commercial
 owner: Irfan Skiljan
 homepage_url: http://www.irfanview.com/eula.htm
+spdx_license_key: LicenseRef-scancode-irfanview-eula
 ignorable_copyrights:
     - Copyright (c) 2016 by Irfan Skiljan, Wiener Neustadt, Austria
 ignorable_holders:

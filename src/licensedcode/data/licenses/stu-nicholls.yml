@@ -3,6 +3,7 @@ short_name: Stu Nicholls License
 name: Stu Nicholls License
 category: Permissive
 owner: Stu Nicholls
+spdx_license_key: LicenseRef-scancode-stu-nicholls
 other_urls:
     - http://www.stunicholls.com/menu/pro_drop_2.html
 ignorable_copyrights:

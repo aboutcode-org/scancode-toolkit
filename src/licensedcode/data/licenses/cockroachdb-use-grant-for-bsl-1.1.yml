@@ -5,6 +5,7 @@ category: Source-available
 owner: Cockroachlabs
 homepage_url: https://github.com/cockroachdb/cockroach/blob/8acfe8ffd0028ce1d81a9b1148f7e9ba2673bf95/licenses/BSL.txt
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-cockroachdb-use-grant-for-bsl-1.1
 faq_url: https://www.cockroachlabs.com/blog/oss-relicensing-cockroachdb/
 ignorable_copyrights:
     - (c) 2019 Cockroach Labs, Inc.

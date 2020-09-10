@@ -3,5 +3,6 @@ short_name: Cavium Targeted Hardware License
 name: Cavium Targeted Hardware License
 category: Free Restricted
 owner: Cavium
+spdx_license_key: LicenseRef-scancode-cavium-targeted-hardware
 ignorable_authors:
     - Cavium Networks

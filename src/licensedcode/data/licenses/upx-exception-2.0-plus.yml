@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: UPX
 homepage_url: https://github.com/upx/upx/blob/master/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-upx-exception-2.0-plus
 other_urls:
     - http://wildsau.idv.uni-linz.ac.at/mfx/upx.html
     - http://www.nexus.hu/upx

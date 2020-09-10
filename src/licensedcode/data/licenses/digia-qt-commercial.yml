@@ -5,6 +5,7 @@ category: Commercial
 owner: Digia
 homepage_url: http://qt.digia.com/licensing
 notes: Qt is available under a choice of licenses, one is commercial
+spdx_license_key: LicenseRef-scancode-digia-qt-commercial
 ignorable_urls:
     - http://qt.digia.com/contact-us
     - http://qt.digia.com/licensing

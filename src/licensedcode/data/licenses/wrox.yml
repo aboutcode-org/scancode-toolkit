@@ -4,6 +4,7 @@ name: Wrox Press License
 category: Permissive
 owner: Wiley
 homepage_url: http://www.wrox.com/WileyCDA/Section/Wrox-Download-Code-FAQ.id-106010.html#terms
+spdx_license_key: LicenseRef-scancode-wrox
 text_urls:
     - http://www.wrox.com/WileyCDA/Section/Wrox-Download-Code-FAQ.id-106010.html#terms
 minimum_coverage: 30

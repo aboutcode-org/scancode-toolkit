@@ -7,6 +7,7 @@ homepage_url: http://www.kmonos.net/nysl/index.en.html
 notes: |
     the original version is in Japanese but we track the English text only for
     now
+spdx_license_key: LicenseRef-scancode-nysl-0.9982
 text_urls:
     - https://raw.githubusercontent.com/uasi/license-templates/0f48d7532fb4cc9c26fc6093db680e0601bf5738/LICENSE.NYSL.txt
 faq_url: http://www.kmonos.net/nysl/readme.html

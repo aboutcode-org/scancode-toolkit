@@ -3,6 +3,7 @@ short_name: Zapatec Calendar License
 name: Zapatec DHTML Javascript Calendar License Agreement
 category: Commercial
 owner: Zapatec
+spdx_license_key: LicenseRef-scancode-zapatec-calendar
 text_urls:
     - http://www.kean.edu/~cpd/calendar/zapatec/zpcal/doc/license.html
 minimum_coverage: 90

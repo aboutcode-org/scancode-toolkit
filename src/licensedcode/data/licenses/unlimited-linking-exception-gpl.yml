@@ -5,3 +5,4 @@ category: Copyleft
 owner: Free Software Foundation (FSF)
 notes: this is a rare variant of an LGPL exception foudn in glibc
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-unlimited-linking-exception-gpl

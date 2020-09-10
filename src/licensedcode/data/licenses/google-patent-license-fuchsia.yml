@@ -4,6 +4,7 @@ name: Google Patent License for Fuchsia
 category: Patent License
 owner: Google
 homepage_url: https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/PATENTS
+spdx_license_key: LicenseRef-scancode-google-patent-license-fuchsia
 faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia
 other_urls:
     - https://github.com/flutter/flutter/blob/master/PATENTS

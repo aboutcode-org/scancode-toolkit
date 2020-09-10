@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: RRDtool Project
 homepage_url: https://raw.github.com/oetiker/rrdtool-1.x/master/COPYRIGHT
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-rrdtool-floss-exception-2.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 ignorable_urls:

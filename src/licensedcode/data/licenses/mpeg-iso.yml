@@ -3,6 +3,7 @@ short_name: MPEG-2 NBC MPEG-4 Audio ISO
 name: MPEG-2 NBC MPEG-4 Audio ISO License
 category: Permissive
 owner: ISO - International Organization for Standardization
+spdx_license_key: LicenseRef-scancode-mpeg-iso
 text_urls:
     - http://faac.cvs.sourceforge.net/viewvc/faac/faad/libfaad/config.c
 ignorable_copyrights:

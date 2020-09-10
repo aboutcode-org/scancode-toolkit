@@ -4,6 +4,7 @@ name: Microsoft Patent Promise for .NET Libraries and Runtime Components
 category: Patent License
 owner: Microsoft
 homepage_url: https://github.com/dotnet/corefx/blob/master/PATENTS.TXT
+spdx_license_key: LicenseRef-scancode-ms-patent-promise
 other_urls:
     - https://techcrunch.com/2016/11/16/google-signs-on-to-the-net-foundation-and-samsung-brings-net-support-to-tizen/
 ignorable_urls:

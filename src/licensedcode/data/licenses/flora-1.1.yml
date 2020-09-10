@@ -4,6 +4,7 @@ name: Flora License v1.1
 category: Permissive
 owner: Tizen Association
 notes: there was a version 1.0 before https://web.archive.org/web/20130224120957/http://floralicense.org:80/license/
+spdx_license_key: LicenseRef-scancode-flora-1.1
 other_urls:
     - https://github.com/lirriel/first1/blob/123928934e4231c75d63d1a222b2dfedca7308cc/AlarmUI/NOTICE
     - https://github.com/search?q=%22Flora+License+%22&type=Code
