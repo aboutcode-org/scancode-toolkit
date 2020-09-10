@@ -802,6 +802,13 @@ class Rule(object):
 
     has_computed_thresholds = attr.ib(default=False, repr=False)
 
+    def spdx_license_expression(self, licensing=None):
+        if not licensing:
+            from licensedcode.cache import get_licensing
+            licensing = get_licensing()
+        parsed = licensing.parse(self.license_expression)
+        return parsed.render(template='{symbol.spdx_license_key}')
+
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
 

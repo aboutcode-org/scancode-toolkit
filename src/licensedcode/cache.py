@@ -92,6 +92,37 @@ def get_licenses_db(licenses_data_dir=None, _test_mode=False):
     return _LICENSES_BY_KEY
 
 
+# global in-memory cache of Licensing object built from all active licenses
+_LICENSING = {}
+
+
+def get_licensing(_test_licenses=None):
+    """
+    Return and cache a license_expression.Licensing objet built from the all the
+    licenses.
+    """
+    global _LICENSING
+    if not _LICENSING or _test_licenses:
+
+        if _test_licenses:
+            licenses = _test_licenses
+        else:
+            licenses = get_licenses_db()
+
+        from license_expression import LicenseSymbolLike
+        from license_expression import Licensing
+
+        licensing = Licensing((LicenseSymbolLike(lic) for lic in licenses.values()))
+
+        if _test_licenses:
+            # Do not cache when testing
+            return licensing
+
+        _LICENSING = licensing
+
+    return _LICENSING
+
+
 # global in-memory cache for the unknown license symbol
 _UNKNOWN_SPDX_SYMBOL = None
 
@@ -129,14 +160,14 @@ _LICENSE_SYMBOLS_BY_SPDX_KEY = None
 
 def get_spdx_symbols(_test_licenses=None):
     """
-    Return a mapping of (SPDX LicenseSymbol -> lowercased SPDX license key-> key}
+    Return a mapping of {lowercased SPDX license key: LicenseSymbolLike} where
+    LicenseSymbolLike wraps a License object
 
     Note: the `_test_licenses` arg is a mapping of key: license used for testing
     instead of the standard license db.
     """
     global _LICENSE_SYMBOLS_BY_SPDX_KEY
     if not _LICENSE_SYMBOLS_BY_SPDX_KEY or _test_licenses:
-        from license_expression import LicenseSymbol
         from license_expression import LicenseSymbolLike
         symbols_by_spdx_key = {}
 
@@ -314,7 +345,7 @@ def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
     hashable = (pth + str(getmtime(pth)) + str(getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
     if py3:
-        hashable=hashable.encode('utf-8')
+        hashable = hashable.encode('utf-8')
     return md5(hashable).hexdigest()
 
 
