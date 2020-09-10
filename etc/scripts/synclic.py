@@ -112,6 +112,8 @@ def get_licenses_by_spdx_key(licenses, include_other=False):
     """
     by_spdx = {}
     for lic in licenses:
+        if not lic.spdx_license_key:
+            raise ValueError('Missing SPDX license key for {}'.format(lic.key))
         if not (lic.spdx_license_key or lic.other_spdx_license_keys):
             continue
 

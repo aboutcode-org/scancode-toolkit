@@ -398,6 +398,9 @@ class License(object):
             # SPDX consistency
             if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
+            else:
+                # SPDX license key is now mandatory
+                error('No SPDX license key')
             for oslk in lic.other_spdx_license_keys:
                 by_spdx_key[oslk].append(key)
 
@@ -456,17 +459,27 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     licenses = {}
     used_files = set()
-    all_files = set(resource_iter(licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
+    all_files = set(resource_iter(
+        licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
+    missing_spdx = []
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
             lic = License(key, licenses_data_dir)
+            if not lic.is_deprecated and not lic.spdx_license_key:
+                # SPDX license key is now mandatory
+                missing_spdx.append(key)
             used_files.add(data_file)
             if exists(lic.text_file):
                 used_files.add(lic.text_file)
             if not with_deprecated and lic.is_deprecated:
                 continue
             licenses[key] = lic
+
+    if missing_spdx:
+        keys = ', '.join(missing_spdx)
+        raise Exception('Missing SPDX license keys for:'.format(keys))
+
 
     dangling = all_files.difference(used_files)
     if dangling:
