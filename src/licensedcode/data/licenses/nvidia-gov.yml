@@ -3,6 +3,7 @@ short_name: NVIDIA License with Government Qualifications
 name: NVIDIA License with Government Qualifications
 category: Permissive
 owner: NVIDIA
+spdx_license_key: LicenseRef-scancode-nvidia-gov
 ignorable_copyrights:
     - Copyright 1993-2012 NVIDIA Corporation
 ignorable_holders:

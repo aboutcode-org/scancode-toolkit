@@ -4,3 +4,4 @@ name: QLogic Firmware License
 category: Proprietary Free
 owner: QLogic
 homepage_url: https://github.com/wkennington/linux-firmware/blob/master/LICENCE.qla2xxx
+spdx_license_key: LicenseRef-scancode-qlogic-firmware

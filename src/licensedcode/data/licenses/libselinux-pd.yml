@@ -4,5 +4,6 @@ name: libselinux License
 category: Public Domain
 owner: SELinux Project
 homepage_url: http://userspace.selinuxproject.org/trac/browser/libselinux/LICENSE
+spdx_license_key: LicenseRef-scancode-libselinux-pd
 text_urls:
     - https://github.com/SELinuxProject/selinux/blob/master/libselinux/LICENSE

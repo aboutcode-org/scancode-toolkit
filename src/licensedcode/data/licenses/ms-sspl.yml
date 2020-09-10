@@ -3,3 +3,4 @@ short_name: SS-PL
 name: Microsoft Shared Source Permissive License
 category: Permissive
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-sspl

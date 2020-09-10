@@ -4,6 +4,7 @@ name: X11-Style (Realmode)
 category: Permissive
 owner: XFree86 Project, Inc
 notes: a composite of x11-keith-packard and other license comments
+spdx_license_key: LicenseRef-scancode-x11-realmode
 minimum_coverage: 85
 ignorable_emails:
     - KendallB@scitechsoft.com

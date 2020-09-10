@@ -3,6 +3,7 @@ short_name: Intel Royalty Free License
 name: Intel Royalty Free License
 category: Permissive
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-royalty-free
 minimum_coverage: 60
 ignorable_authors:
     - Intel Corporation

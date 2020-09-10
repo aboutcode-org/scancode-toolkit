@@ -4,6 +4,7 @@ name: GNU Elib General Public License
 category: Copyleft
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.math.utah.edu/docs/info/elib_1.html
+spdx_license_key: LicenseRef-scancode-elib-gpl
 text_urls:
     - http://www.math.utah.edu/docs/info/elib_1.html#SEC1
 faq_url: http://www.math.utah.edu/docs/info/elib_3.html

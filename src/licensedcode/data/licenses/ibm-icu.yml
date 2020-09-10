@@ -5,6 +5,7 @@ category: Permissive
 owner: IBM
 homepage_url: http://source.icu-project.org/repos/icu/icu/trunk/license.html
 notes: composite of x11 licenses and others
+spdx_license_key: LicenseRef-scancode-ibm-icu
 text_urls:
     - http://icu-project.org/repos/icu/icu/trunk/license.html
 minimum_coverage: 85

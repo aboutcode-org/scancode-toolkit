@@ -3,6 +3,7 @@ short_name: MX4J License 1.0
 name: MX4J License 1.0
 category: Permissive
 owner: MX4J Project
+spdx_license_key: LicenseRef-scancode-mx4j
 other_urls:
     - http://mx4j.sourceforge.net
 ignorable_copyrights:

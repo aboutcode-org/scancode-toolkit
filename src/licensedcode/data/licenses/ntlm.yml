@@ -3,6 +3,7 @@ short_name: NTLM License
 name: NTLM License
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-ntlm
 minimum_coverage: 15
 ignorable_copyrights:
     - Copyright (c) 1997 Eric S. Raymond

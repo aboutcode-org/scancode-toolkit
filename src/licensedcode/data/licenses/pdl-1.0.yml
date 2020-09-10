@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: Apache Software Foundation
 homepage_url: https://www.openoffice.org/licenses/PDL.html
 notes: this is a derivative of the MPL used in legacy OpenOffice.
+spdx_license_key: LicenseRef-scancode-pdl-1.0
 other_urls:
     - https://www.openoffice.org/licenses/PDL.rtf
     - https://www.openoffice.org/licenses/pdl.pdf

@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: INRIA
 homepage_url: http://para.inria.fr/~maranget/hevea/distri/LICENSE
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-inria-linking-exception
 other_urls:
     - http://para.inria.fr/~maranget/hevea/distri/hevea-2.32.tar.gz
 standard_notice: |

@@ -4,5 +4,6 @@ name: Adaptec Downloadable Software License
 category: Proprietary Free
 owner: Adaptec
 homepage_url: https://github.com/gooselinux/aic94xx-firmware/blob/master/LICENSE.aic94xx
+spdx_license_key: LicenseRef-scancode-adaptec-downloadable
 other_urls:
     - https://lists.fedoraproject.org/pipermail/scm-commits/2010-March/408246.html

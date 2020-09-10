@@ -4,4 +4,5 @@ name: Protobuf License
 category: Permissive
 owner: Google
 homepage_url: http://protobuf.googlecode.com/svn/trunk/COPYING.txt
+spdx_license_key: LicenseRef-scancode-protobuf
 minimum_coverage: 90

@@ -4,3 +4,4 @@ name: OpenSSL exception to MongoDB SSPL
 category: Copyleft
 owner: MongoDB
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-exception-mongodb-sspl

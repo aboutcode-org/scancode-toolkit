@@ -3,6 +3,7 @@ short_name: Matt Gallagher Attribution License
 name: Matt Gallagher Attribution License
 category: Permissive
 owner: Matt Gallagher
+spdx_license_key: LicenseRef-scancode-matt-gallagher-attribution
 text_urls:
     - https://gist.github.com/wiliams-xu/508933756ca83c49a865
     - https://github.com/DJBen/Werewolves-of-Millers-Hollows-For-Host/blob/master/Werewolf/ReorderingTableView/ATSDragToReorderTableViewController.h

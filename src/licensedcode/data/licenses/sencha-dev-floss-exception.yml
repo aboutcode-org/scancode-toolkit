@@ -6,6 +6,7 @@ owner: Sencha
 homepage_url: http://www.sencha.com/products/ux-exception.php
 notes: Sencha stopped offering this exception in 2015.
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-sencha-dev-floss-exception
 other_urls:
     - http://web.archive.org/web/20140816133230/http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/
     - http://www.sencha.com/legal/open-source-faq/open-source-license-exception-for-development/

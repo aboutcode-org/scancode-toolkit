@@ -4,6 +4,7 @@ name: HP Software EULA
 category: Proprietary Free
 owner: HP - Hewlett Packard
 homepage_url: http://h20000.www2.hp.com/bizsupport/TechSupport/softwareLicense.jsp?lang=en&cc=us&prodSeriesId=3219717&prodTypeId=0
+spdx_license_key: LicenseRef-scancode-hp-software-eula
 text_urls:
     - http://h20000.www2.hp.com/bizsupport/TechSupport/softwareLicense.jsp?lang=en&cc=us&prodSeriesId=3219717&prodTypeId=0
 ignorable_urls:

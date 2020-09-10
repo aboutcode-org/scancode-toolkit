@@ -5,3 +5,4 @@ category: Copyleft Limited
 owner: Unspecified
 notes: this is typically seen with the LGPL but is not L/GPL specific
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-independent-module-linking-exception

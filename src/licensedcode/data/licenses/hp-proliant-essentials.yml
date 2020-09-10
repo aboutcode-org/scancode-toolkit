@@ -4,6 +4,7 @@ name: hp-proliant-essentials EULA
 category: Commercial
 owner: HP - Hewlett Packard
 homepage_url: http://www.calculate-linux.org/packages/licenses/hp-proliant-essentials
+spdx_license_key: LicenseRef-scancode-hp-proliant-essentials
 ignorable_copyrights:
     - copyrighted by Hewlett-Packard Development Company, L.P., HP's intellectual property management
         company

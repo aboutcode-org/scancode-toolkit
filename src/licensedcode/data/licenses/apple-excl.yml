@@ -3,3 +3,4 @@ short_name: Apple Example Code License
 name: Apple Example Code License
 category: Permissive
 owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-excl

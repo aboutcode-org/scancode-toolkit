@@ -3,5 +3,6 @@ short_name: ITU-T License
 name: ITU-T License
 category: Free Restricted
 owner: ITU - International Telecommunications Union
+spdx_license_key: LicenseRef-scancode-itu-t
 ignorable_urls:
     - http://www.itu.int/ipr

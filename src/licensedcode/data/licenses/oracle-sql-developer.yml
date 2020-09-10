@@ -4,6 +4,7 @@ name: Oracle SQL Developer License Terms
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html
+spdx_license_key: LicenseRef-scancode-oracle-sql-developer
 minimum_coverage: 50
 ignorable_authors:
     - the OTN Program

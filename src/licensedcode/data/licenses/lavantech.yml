@@ -4,6 +4,7 @@ name: LavanTech License
 category: Commercial
 owner: LavanTech
 homepage_url: http://www.lavantech.com/license.shtml
+spdx_license_key: LicenseRef-scancode-lavantech
 text_urls:
     - http://www.lavantech.com/license.shtml
 ignorable_urls:

@@ -3,5 +3,6 @@ short_name: MS Sysinternals SLA
 name: Microsoft Sysinternals Software License Terms
 category: Commercial
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-sysinternals-sla
 ignorable_urls:
     - http://www.microsoft.com/exporting

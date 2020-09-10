@@ -5,6 +5,7 @@ category: Permissive
 owner: MakeHuman Project
 homepage_url: http://www.makehuman.org/index.php
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-make-human-exception
 text_urls:
     - http://www.makehuman.org/license.php
 ignorable_urls:

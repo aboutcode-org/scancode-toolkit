@@ -3,4 +3,5 @@ short_name: Philippe De Muyter License
 name: Philippe De Muyter License
 category: Permissive
 owner: Unspecified
+spdx_license_key: LicenseRef-scancode-philippe-de-muyter
 minimum_coverage: 50

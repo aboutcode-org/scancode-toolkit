@@ -4,5 +4,6 @@ name: OSGi Specification License Version 2.0
 category: Proprietary Free
 owner: OSGi Alliance
 homepage_url: https://www.osgi.org/developer/specifications/licensing/
+spdx_license_key: LicenseRef-scancode-osgi-spec-2.0
 ignorable_urls:
     - http://www.osgi.org/

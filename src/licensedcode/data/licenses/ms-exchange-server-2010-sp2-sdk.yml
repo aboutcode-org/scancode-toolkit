@@ -4,5 +4,6 @@ name: Microsoft Exchange Server 2010 SP2 Web Services SDK
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://msdn.microsoft.com/en-US/library/dd877074(v=exchg.140)
+spdx_license_key: LicenseRef-scancode-ms-exchange-server-2010-sp2-sdk
 ignorable_urls:
     - http://www.microsoft.com/exporting

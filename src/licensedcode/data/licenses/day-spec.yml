@@ -4,6 +4,7 @@ name: Day Specification License
 category: Proprietary Free
 owner: Day Management AG
 homepage_url: http://www.day.com/maven/jsr170/jars/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-day-spec
 text_urls:
     - http://www.day.com/maven/jsr170/jars/LICENSE.txt
     - http://www.day.com/maven/jsr170/licenses/day-spec-license.htm

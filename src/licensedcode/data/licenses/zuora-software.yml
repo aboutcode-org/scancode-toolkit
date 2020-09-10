@@ -4,3 +4,4 @@ name: Zuora Software License
 category: Permissive
 owner: Zuora
 homepage_url: https://github.com/zuora/rest-java-client/blob/legacy/LICENSE
+spdx_license_key: LicenseRef-scancode-zuora-software

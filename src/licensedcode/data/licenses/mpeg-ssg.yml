@@ -4,3 +4,4 @@ name: MPEG SSG License
 category: Permissive
 owner: MSSG - MPEG Software Simulation Group
 homepage_url: http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html
+spdx_license_key: LicenseRef-scancode-mpeg-ssg

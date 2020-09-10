@@ -3,4 +3,5 @@ short_name: University of Michigan OSL
 name: University of Michigan Open Source License
 category: Permissive
 owner: University of Michigan
+spdx_license_key: LicenseRef-scancode-michigan-disclaimer
 minimum_coverage: 70

@@ -4,6 +4,7 @@ name: wxWidgets Licence
 category: Permissive
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/licence.htm
+spdx_license_key: LicenseRef-scancode-wxwidgets
 text_urls:
     - http://www.wxwidgets.org/about/licence.htm
 ignorable_copyrights:

@@ -4,6 +4,7 @@ name: OpenPBS Software License v2.3
 category: Copyleft Limited
 owner: Fedora
 homepage_url: http://fedoraproject.org/wiki/Licensing/OpenPBS
+spdx_license_key: LicenseRef-scancode-openpbs-2.3
 text_urls:
     - http://fedoraproject.org/wiki/Licensing/OpenPBS
 other_urls:

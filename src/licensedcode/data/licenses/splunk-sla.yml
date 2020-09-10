@@ -4,6 +4,7 @@ name: Splunk Software License Agreement
 category: Commercial
 owner: Splunk
 homepage_url: https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
+spdx_license_key: LicenseRef-scancode-splunk-sla
 text_urls:
     - https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
 ignorable_urls:

@@ -4,6 +4,7 @@ name: Adobe Flex 4 SDK Software License Agreement
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: https://wwwimages2.adobe.com/content/dam/acom/en/legal/licenses-terms/pdf/Adobe%20Flex%20SDK_4.0.pdf
+spdx_license_key: LicenseRef-scancode-adobe-flex-4-sdk
 text_urls:
     - https://wwwimages2.adobe.com/content/dam/acom/en/legal/licenses-terms/pdf/Adobe%20Flex%20SDK_4.5.pdf
 ignorable_urls:

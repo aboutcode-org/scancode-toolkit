@@ -4,5 +4,6 @@ name: Creative Commons Attribution Non-Commercial No Derivatives License 2.0 Aus
 category: Source-available
 owner: Creative Commons
 homepage_url: https://creativecommons.org/licenses/by-nc-nd/2.0/au/
+spdx_license_key: LicenseRef-scancode-cc-by-nc-nd-2.0-au
 text_urls:
     - https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode.au

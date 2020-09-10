@@ -4,6 +4,7 @@ name: OTN Early Adopter Development License Agreement
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/technetwork/licenses/ea-license-noexhibits-1938914.html
+spdx_license_key: LicenseRef-scancode-otn-early-adopter-development
 text_urls:
     - http://www.oracle.com/technetwork/licenses/ea-license-noexhibits-1938914.html
 ignorable_authors:

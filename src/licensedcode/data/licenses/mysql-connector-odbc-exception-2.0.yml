@@ -4,6 +4,7 @@ name: MySQL Connector ODBC exception to GPL 2.0
 category: Copyleft Limited
 owner: Oracle Corporation
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-mysql-connector-odbc-exception-2.0
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 standard_notice: |

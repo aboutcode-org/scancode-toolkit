@@ -4,6 +4,7 @@ name: FFTPACK License 2004
 category: Permissive
 owner: NCAR
 homepage_url: https://github.com/marton78/pffft/blob/master/pffft.c
+spdx_license_key: LicenseRef-scancode-fftpack-2004
 other_urls:
     - https://github.com/nexB/scancode-toolkit/issues/1978
 standard_notice: |

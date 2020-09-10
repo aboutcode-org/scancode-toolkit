@@ -3,6 +3,7 @@ short_name: Sun Java Web Services Developer Pack 1.6
 name: Sun Java Web Services Developer Pack 1.6
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-java-web-services-dev-pack-1.6
 ignorable_urls:
     - http://www.java.sun.com/jdk/index.html
     - http://www.sun.com/policies/trademarks

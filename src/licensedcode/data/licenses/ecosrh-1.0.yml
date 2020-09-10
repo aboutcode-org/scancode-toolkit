@@ -8,6 +8,7 @@ notes: |
     this predates the 1.1 version that Red Hat created when they acquired
     Cygnus but since the terms are similar we used the same license key as this
     is also a rare license.
+spdx_license_key: LicenseRef-scancode-ecosrh-1.0
 text_urls:
     - http://web.archive.org/web/19990224105519/http://sourceware.cygnus.com/ecos/license-overview.html
     - http://sourceware.cygnus.com/ecos/license-overview.html

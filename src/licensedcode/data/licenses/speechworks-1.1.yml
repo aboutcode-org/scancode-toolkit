@@ -4,6 +4,7 @@ name: SpeechWorks Public License v1.1
 category: Permissive
 owner: Nuance Communications
 homepage_url: http://www.speech.cs.cmu.edu/openvxi/OpenVXI_1_4/License.txt
+spdx_license_key: LicenseRef-scancode-speechworks-1.1
 text_urls:
     - http://www.speech.cs.cmu.edu/openvxi/OpenVXI_1_4/License.txt
 other_urls:

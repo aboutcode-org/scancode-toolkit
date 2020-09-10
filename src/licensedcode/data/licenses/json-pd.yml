@@ -4,6 +4,7 @@ name: JSON Public Domain Notice
 category: Public Domain
 owner: JSON.org
 homepage_url: http://www.json.org/js.html
+spdx_license_key: LicenseRef-scancode-json-pd
 faq_url: http://www.json.org/js.html
 other_urls:
     - http://javascript.crockford.com/jsmin.html
