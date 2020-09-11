@@ -27,13 +27,14 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os.path
+from unittest.case import skipIf
 
+from commoncode.system import py2
+from commoncode.system import on_windows
 from packagedcode import debian
 from packagedcode import models
 from packages_test_utils import PackageTester
 from packages_test_utils import check_result_equals_expected_json
-from unittest.case import skipIf
-from commoncode.system import on_windows
 
 
 @skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
@@ -54,6 +55,11 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         expected = self.get_test_loc('debian/basic-rootfs-with-licenses-expected.json')
         check_result_equals_expected_json(result, expected, regen=False)
 
+    def test_get_installed_packages_should_not_fail_on_rootfs_without_installed_debian_packages(self):
+        test_rootfs = self.get_temp_dir()
+        result = list(debian.get_installed_packages(test_rootfs))
+        assert [] == result
+
 
 class TestDebian(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -62,6 +68,15 @@ class TestDebian(PackageTester):
         test_file = self.get_test_loc('debian/not-a-status-file')
         test_packages = list(debian.parse_status_file(test_file))
         assert [] == test_packages
+
+    @skipIf(py2, 'FileNotFoundError is not defined on Python2')
+    def test_parse_status_file_non_existing_file(self):
+        test_file = os.path.join(self.get_test_loc('debian'), 'foobarbaz')
+        try:
+            list(debian.parse_status_file(test_file))
+            self.fail('FileNotFoundError not raised')
+        except FileNotFoundError:
+            pass
 
     def test_parse_status_file_basic(self):
         test_file = self.get_test_loc('debian/basic/status')
