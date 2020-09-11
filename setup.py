@@ -313,6 +313,7 @@ setup(
             'csv = formattedcode.output_csv:CsvOutput',
             'jsonlines = formattedcode.output_jsonlines:JsonLinesOutput',
             'template = formattedcode.output_html:CustomTemplateOutput',
+            'yaml = formattedcode.output_yaml:YamlOutput',
         ],
     },
 )
