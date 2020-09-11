@@ -1279,3 +1279,17 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
 
         assert expected == matched_texts
+
+    def test_matched_text_ignores_whole_lines_in_binary(self):
+        rule_dir = self.get_test_loc('match/binary_text/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_loc = self.get_test_loc('match/binary_text/gosu')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=True, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = ['license: GPL-3 (']
+
+        assert expected == matched_texts
