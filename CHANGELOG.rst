@@ -2,6 +2,15 @@ Changelog
 =========
 
 
+v3.2.1rc2 (2020-09-11)
+----------------------
+
+Minor bug fixes:
+
+ - Do not fail if Debian status is missing #2224
+ - Report correct detected license text in binary #2226 #2227
+
+
 v3.2.0rc1 (2020-09-08)
 ----------------------
 
