@@ -277,12 +277,8 @@ def parse_gosum(location):
         line = line.replace('/go.mod', '')
         parsed_dep = get_dependency(line)
 
-        name = parsed_dep.group('name')
-        namespace = ''
-        if '/' in name:
-            dep_name = name_parser(name)
-            namespace = dep_name.group('namespace')
-            name = dep_name.group('name')
+        ns_name = parsed_dep.group('name')
+        namespace, _, name = ns_name.rpartition('/')
 
         dep = GoModule(
                 namespace=namespace,
