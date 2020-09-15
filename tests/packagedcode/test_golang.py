@@ -96,3 +96,9 @@ class TestGolang(PackageTester):
         expected_loc = self.get_test_loc('golang/gosum/sample5/output.expected.json')
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
+
+    def test_parse_gosum_sample6(self):
+        test_file = self.get_test_loc('golang/gosum/sample6/go.sum')
+        expected_loc = self.get_test_loc('golang/gosum/sample6/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
