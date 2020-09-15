@@ -250,13 +250,17 @@ Here are some example of usage of this module::
 # Regex expressions to parse go.sum file dependency
 # dep example: github.com/BurntSushi/toml v0.3.1 h1:WXkYY....
 get_dependency = re.compile(
-    r'(?P<namespace>[^\s]*)'
-    r'\/'
     r'(?P<name>[^\s]*)'
     r'\s*'
     r'(?P<version>[^\s]*)'
     r'\s*'
     r'h1:(?P<checksum>[^\s]*)\s*'
+).match
+
+name_parser = re.compile(
+    r'(?P<namespace>[^\s]*)'
+    r'\/'
+    r'(?P<name>[^\s]*)'
 ).match
 
 
@@ -273,9 +277,16 @@ def parse_gosum(location):
         line = line.replace('/go.mod', '')
         parsed_dep = get_dependency(line)
 
+        name = parsed_dep.group('name')
+        namespace = ''
+        if '/' in name:
+            dep_name = name_parser(name)
+            namespace = dep_name.group('namespace')
+            name = dep_name.group('name')
+
         dep = GoModule(
-                namespace=parsed_dep.group('namespace'),
-                name=parsed_dep.group('name'),
+                namespace=namespace,
+                name=name,
                 version=parsed_dep.group('version')
             )
 
