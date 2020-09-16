@@ -123,17 +123,15 @@ For example:
 
 # Regex expressions to parse different types of go.mod file dependency
 parse_module_name = re.compile(
-    r'^module\s*'
-    r'(?P<namespace>[^\s]*)'
-    r'\/'
-    r'(?P<name>[^\s]*)\s*'
+    r'(?P<type>[^\s]*)'
+    r'(\s)*'
+    r'(?P<ns_name>[^\s]*)'
+    r'\s*(?P<version>[^\s]*)\s*'
 ).match
 
 parse_dep_link = re.compile(
     r'.*?(\s)*'
-    r'(?P<namespace>[^\s]*)'
-    r'\/'
-    r'(?P<name>[^\s]*)'
+    r'(?P<ns_name>[^\s]*)'
     r'\s*'
     r'(?P<version>[^\s]*)\s*'
 ).match
@@ -165,8 +163,12 @@ def parse_gomod(location):
 
         parsed_module_name = parse_module_name(line)
         if parsed_module_name:
-            gomods.name = parsed_module_name.group('name')
-            gomods.namespace = parsed_module_name.group('namespace')
+            ns_name = parsed_module_name.group('ns_name')
+            namespace, _, name = ns_name.rpartition('/')
+
+        if 'module' in line:
+            gomods.namespace = namespace
+            gomods.name = name
 
         if 'require' in line and '(' in line:
             for req in lines[i+1:]:
@@ -174,10 +176,12 @@ def parse_gomod(location):
                 if ')' in req:
                     break
                 parsed_dep_link = parse_dep_link(req)
+                ns_name = parsed_dep_link.group('ns_name')
+                namespace, _, name = ns_name.rpartition('/')
                 if parsed_dep_link:
                     require.append(GoModule(
-                            namespace=parsed_dep_link.group('namespace'),
-                            name=parsed_dep_link.group('name'),
+                            namespace=namespace,
+                            name=name,
                             version=parsed_dep_link.group('version')
                         )
                     )
@@ -189,30 +193,31 @@ def parse_gomod(location):
                 if ')' in exc:
                     break
                 parsed_dep_link = parse_dep_link(exc)
+                ns_name = parsed_dep_link.group('ns_name')
+                namespace, _, name = ns_name.rpartition('/')
                 if parsed_dep_link:
                     exclude.append(GoModule(
-                            namespace=parsed_dep_link.group('namespace'),
-                            name=parsed_dep_link.group('name'),
+                            namespace=namespace,
+                            name=name,
                             version=parsed_dep_link.group('version')
                         )
                     )
             continue
 
-        parsed_dep = parse_dep_link(line)
         if 'require' in line:
             require.append(GoModule(
-                    namespace=parsed_dep.group('namespace'),
-                    name=parsed_dep.group('name'),
-                    version=parsed_dep.group('version')
+                    namespace=namespace,
+                    name=name,
+                    version=parsed_module_name.group('version')
                 )
             )
             continue
 
         if 'exclude' in line:
             exclude.append(GoModule(
-                    namespace=parsed_dep.group('namespace'),
-                    name=parsed_dep.group('name'),
-                    version=parsed_dep.group('version')
+                    namespace=namespace,
+                    name=name,
+                    version=parsed_module_name.group('version')
                 )
             )
             continue
