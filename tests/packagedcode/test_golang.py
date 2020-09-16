@@ -43,6 +43,12 @@ class TestGolang(PackageTester):
         package = golang.GolangPackage.recognize(test_file)
         self.check_packages(package, expected_loc, regen=False)
 
+    def test_parse_gomod_opencensus(self):
+        test_file = self.get_test_loc('golang/gomod/opencensus-service/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/opencensus-service/output.expected.json')
+        package = golang.GolangPackage.recognize(test_file)
+        self.check_packages(package, expected_loc, regen=False)
+
     def test_parse_gomod_participle(self):
         test_file = self.get_test_loc('golang/gomod/participle/go.mod')
         expected_loc = self.get_test_loc('golang/gomod/participle/output.expected.json')
