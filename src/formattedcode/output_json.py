@@ -30,13 +30,12 @@ from collections import OrderedDict
 import simplejson
 from six import string_types
 
-from commoncode import compat
 from commoncode.system import py2
 from commoncode.system import py3
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import PluggableCommandLineOption
-from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 

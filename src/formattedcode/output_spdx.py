@@ -51,10 +51,10 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import PluggableCommandLineOption
-from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 

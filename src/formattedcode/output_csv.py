@@ -34,10 +34,10 @@ from six import string_types
 import unicodecsv
 
 from commoncode import compat
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import PluggableCommandLineOption
-from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 

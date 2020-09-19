@@ -40,6 +40,7 @@ from os.path import join
 import click
 import simplejson
 
+from commoncode import compat
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
@@ -51,13 +52,11 @@ from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode.system import py3
-
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import PluggableCommandLineOption
-from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
-from commoncode import compat
 
 """
 Output plugins to write scan results using templates such as HTML.

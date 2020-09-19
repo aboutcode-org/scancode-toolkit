@@ -275,24 +275,6 @@ def _validate_option_dependencies(ctx, param, value,
             raise click.UsageError(msg)
 
 
-class FileOptionType(click.File):
-    """
-    A click.File subclass that ensures that a file name is not set to an
-    existing option parameter to avoid mistakes.
-    """
-
-    def convert(self, value, param, ctx):
-        known_opts = set(chain.from_iterable(
-            p.opts for p in ctx.command.params if isinstance(p, click.Option)))
-        if value in known_opts:
-            self.fail(
-                'Illegal file name conflicting with an option name: %s. '
-                'Use the special "-" file name to print results on screen/stdout.'
-                % (click.types.filename_to_ui(value),
-            ), param, ctx)
-        return click.File.convert(self, value, param, ctx)
-
-
 info_text = '''
 ScanCode scans code and other files for origin and license.
 Visit https://github.com/nexB/scancode-toolkit/ for support and download.
