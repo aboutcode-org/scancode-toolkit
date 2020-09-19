@@ -49,6 +49,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import ctypes
+import os
 
 from commoncode import command
 from commoncode import compat
@@ -88,7 +89,6 @@ DETECT_TYPE = MAGIC_NONE
 DETECT_MIME = MAGIC_NONE | MAGIC_MIME
 DETECT_ENC = MAGIC_NONE | MAGIC_MIME | MAGIC_MIME_ENCODING
 
-
 # keys for plugin-provided locations
 TYPECODE_LIBMAGIC_LIBDIR = 'typecode.libmagic.libdir'
 TYPECODE_LIBMAGIC_DLL = 'typecode.libmagic.dll'
@@ -103,6 +103,12 @@ def load_lib():
     # get paths from plugins
     dll = get_location(TYPECODE_LIBMAGIC_DLL)
     libdir = get_location(TYPECODE_LIBMAGIC_LIBDIR)
+    if not (dll and libdir) or not os.path.isfile(dll) or not os.path.isdir(libdir):
+        raise Exception(
+            'CRITICAL: libmagic DLL and is magic database are not installed. '
+            'Unable to continue: you need to install a valid typecode-libmagic '
+            'plugin with a valid and proper libmagic and magic DB available.'
+    )
     return command.load_shared_library(dll, libdir)
 
 
