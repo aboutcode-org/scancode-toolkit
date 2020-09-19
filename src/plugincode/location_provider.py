@@ -29,7 +29,7 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 import logging
-from os.path import exists
+from os import path
 import sys
 
 from pluggy import PluginManager as PluggyPluginManager
@@ -54,6 +54,7 @@ logger = logging.getLogger(__name__)
 # uncomment to enable logging locally
 # logging.basicConfig(stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
+
 
 def logger_debug(*args):
     return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
@@ -154,31 +155,36 @@ class ProvidedLocationError(Exception):
     pass
 
 
-def get_location(location_key, _available_locations={}):
+def get_location(location_key, _cached_locations={}):
     """
     Return the location for a `location_key` if available from plugins or None.
     """
-    if not _available_locations:
+    if not _cached_locations:
         location_provider_plugins.setup()
+
         unknown_locations = {}
+
         for k, plugin_class in location_provider_plugins.plugin_classes.items():
             pc = plugin_class()
             provided_locs = pc.get_locations() or {}
             for loc_key, location in provided_locs.items():
-                if not exists(location):
+                if not path.exists(location):
                     unknown_locations[loc_key] = location
 
-                if loc_key in _available_locations:
-                    existing = _available_locations[loc_key]
-                    msg = 'Duplicate location key provided: {loc_key}: new: {location}, existing:{existing}'
+                if loc_key in _cached_locations:
+                    existing = _cached_locations[loc_key]
+                    msg = (
+                        'Duplicate location key provided: {loc_key}: '
+                        'new: {location}, existing:{existing}'
+                    )
                     msg = msg.format(**locals())
                     raise ProvidedLocationError(msg)
 
-                _available_locations[loc_key] = location
+                _cached_locations[loc_key] = location
 
         if unknown_locations:
             msg = 'Non-existing locations provided:\n:'
             msg += '\n'.join('key:{}, loc: {}'.format(k, l) for k, l in unknown_locations.items())
             raise ProvidedLocationError(msg)
 
-    return _available_locations.get(location_key)
+    return _cached_locations.get(location_key)

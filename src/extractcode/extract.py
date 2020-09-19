@@ -97,7 +97,13 @@ An ExtractEvent contains data about an archive extraction progress:
 ExtractEvent = namedtuple('ExtractEvent', 'source target done warnings errors')
 
 
-def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_originals=False, ignore_pattern=()):
+def extract(
+    location,
+    kinds=extractcode.default_kinds,
+    recurse=False,
+    replace_originals=False,
+    ignore_pattern=(),
+):
     """
     Walk and extract any archives found at `location` (either a file or
     directory). Extract only archives of a kind listed in the `kinds` kind tuple.
@@ -143,7 +149,12 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False, replace_or
                 fileutils.delete(target)
 
 
-def extract_files(location, kinds=extractcode.default_kinds, recurse=False, ignore_pattern=()):
+def extract_files(
+    location,
+    kinds=extractcode.default_kinds,
+    recurse=False,
+    ignore_pattern=(),
+):
     """
     Extract the files found at `location`.
 
@@ -170,6 +181,7 @@ def extract_files(location, kinds=extractcode.default_kinds, recurse=False, igno
                     dirs.remove(d)
             if TRACE:
                 logger.debug('extract:walk: not recurse: removed dirs:' + repr(drs.symmetric_difference(set(dirs))))
+
         for f in files:
             loc = join(top, f)
             if not recurse and extractcode.is_extraction_path(loc):
@@ -195,13 +207,23 @@ def extract_files(location, kinds=extractcode.default_kinds, recurse=False, igno
             if recurse:
                 if TRACE:
                     logger.debug('extract:walk: recursing on target: %(target)r' % locals())
-                for xevent in extract(location=target, kinds=kinds, recurse=recurse, ignore_pattern=ignore_pattern):
+                for xevent in extract(
+                    location=target,
+                    kinds=kinds,
+                    recurse=recurse,
+                    ignore_pattern=ignore_pattern,
+                ):
                     if TRACE:
                         logger.debug('extract:walk:recurse:extraction event: %(xevent)r' % locals())
                     yield xevent
 
 
-def extract_file(location, target, kinds=extractcode.default_kinds, verbose=False):
+def extract_file(
+    location, 
+    target, 
+    kinds=extractcode.default_kinds, 
+    verbose=False,
+):
     """
     Extract a single archive at `location` in the `target` directory if it is
     of a kind supported in the `kinds` kind tuple.
@@ -211,7 +233,7 @@ def extract_file(location, target, kinds=extractcode.default_kinds, verbose=Fals
     extractor = archive.get_extractor(location, kinds)
     if TRACE:
         emodule = getattr(extractor, '__module__', '')
-        ename =getattr(extractor, '__name__', '')
+        ename = getattr(extractor, '__name__', '')
         logger.debug(
             'extract_file: extractor: for: {location} with kinds: {kinds}: {emodule}.{ename}'
             .format(**locals()))
