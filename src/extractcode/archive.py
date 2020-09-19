@@ -102,6 +102,8 @@ def can_extract(location):
     handlers = list(get_handlers(location))
     if handlers:
         return True
+    else:
+        return False
 
 
 def should_extract(location, kinds, ignore_pattern=()):
