@@ -1,0 +1,15 @@
+{
+  "files_count": 2,
+  "files": [
+    {
+      "path": "thirdparty",
+      "type": "directory",
+      "summary": []
+    },
+    {
+      "path": "thirdparty/example.zip",
+      "type": "file",
+      "summary": []
+    }
+  ]
+}
