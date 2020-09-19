@@ -41,13 +41,11 @@ from unittest import TestCase as TestCaseClass
 import zipfile
 
 from commoncode import fileutils
-from commoncode.fileutils import fsencode
 from commoncode import filetype
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py2
-
 
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
@@ -78,7 +76,7 @@ def to_os_native_path(path):
     Normalize a path to use the native OS path separator.
     """
     if on_linux and py2:
-        path = fsencode(path)
+        path = fileutils.fsencode(path)
     path = path.replace(POSIX_PATH_SEP, OS_PATH_SEP)
     path = path.replace(WIN_PATH_SEP, OS_PATH_SEP)
     path = path.rstrip(OS_PATH_SEP)
@@ -91,8 +89,8 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     location to a test file or directory for this path. No copy is done.
     """
     if on_linux and py2:
-        test_path = fsencode(test_path)
-        test_data_dir = fsencode(test_data_dir)
+        test_path = fileutils.fsencode(test_path)
+        test_data_dir = fileutils.fsencode(test_data_dir)
 
     if debug:
         import inspect
@@ -132,8 +130,8 @@ class FileDrivenTesting(object):
         """
         test_data_dir = self.test_data_dir
         if on_linux and py2:
-            test_path = fsencode(test_path)
-            test_data_dir = fsencode(test_data_dir)
+            test_path = fileutils.fsencode(test_path)
+            test_data_dir = fileutils.fsencode(test_data_dir)
 
         if debug:
             import inspect
@@ -167,9 +165,9 @@ class FileDrivenTesting(object):
             extension = '.txt'
 
         if on_linux and py2:
-            extension = fsencode(extension)
-            dir_name = fsencode(dir_name)
-            file_name = fsencode(file_name)
+            extension = fileutils.fsencode(extension)
+            dir_name = fileutils.fsencode(dir_name)
+            file_name = fileutils.fsencode(file_name)
 
         if extension and not extension.startswith(DOT):
                 extension = DOT + extension
@@ -189,13 +187,13 @@ class FileDrivenTesting(object):
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
         if not test_run_temp_dir:
-            from scancode_config import scancode_root_dir
-            test_tmp_root_dir = path.join(scancode_root_dir, 'tmp')
+            import tempfile
+            test_tmp_root_dir = tempfile.gettempdir()
             # now we add a space in the path for testing path with spaces
             test_run_temp_dir = fileutils.get_temp_dir(
                 base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
         if on_linux and py2:
-            test_run_temp_dir = fsencode(test_run_temp_dir)
+            test_run_temp_dir = fileutils.fsencode(test_run_temp_dir)
 
         test_run_temp_subdir = fileutils.get_temp_dir(
             base_dir=test_run_temp_dir, prefix='')
@@ -213,8 +211,8 @@ class FileDrivenTesting(object):
         """
         vcses = ('CVS', '.svn', '.git', '.hg')
         if on_linux and py2:
-            vcses = tuple(fsencode(p) for p in vcses)
-            test_dir = fsencode(test_dir)
+            vcses = tuple(fileutils.fsencode(p) for p in vcses)
+            test_dir = fileutils.fsencode(test_dir)
 
         for root, dirs, files in os.walk(test_dir):
             for vcs_dir in vcses:
@@ -227,7 +225,7 @@ class FileDrivenTesting(object):
 
             # editors temp file leftovers
             tilde = b'~' if on_linux and py2 else '~'
-            tilde_files = [path.join(root, file_loc) 
+            tilde_files = [path.join(root, file_loc)
                            for file_loc in files if file_loc.endswith(tilde)]
             for tf in tilde_files:
                 os.remove(tf)
@@ -241,14 +239,14 @@ class FileDrivenTesting(object):
         """
         assert test_path and test_path != ''
         if on_linux and py2:
-            test_path = fsencode(test_path)
+            test_path = fileutils.fsencode(test_path)
         test_path = to_os_native_path(test_path)
         target_path = path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
         if on_linux and py2:
-            target_dir = fsencode(target_dir)
-            original_archive = fsencode(original_archive)
+            target_dir = fileutils.fsencode(target_dir)
+            original_archive = fileutils.fsencode(original_archive)
         extract_func(original_archive, target_dir,
                      verbatim=verbatim)
         return target_dir
@@ -276,8 +274,8 @@ def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     """
     if to_bytes and py2:
         # use bytes for paths on ALL OSes (though this may fail on macOS)
-        target_dir = fsencode(target_dir)
-        test_path = fsencode(test_path)
+        target_dir = fileutils.fsencode(target_dir)
+        test_path = fileutils.fsencode(test_path)
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
@@ -295,9 +293,9 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     """
     # always for using bytes for paths on all OSses... tar seems to use bytes internally
     # and get confused otherwise
-    location = fsencode(location)
+    location = fileutils.fsencode(location)
     if on_linux and py2:
-        target_dir = fsencode(target_dir)
+        target_dir = fileutils.fsencode(target_dir)
 
     with open(location, 'rb') as input_tar:
         tar = None
@@ -324,8 +322,8 @@ def extract_zip(location, target_dir, *args, **kwargs):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
     if on_linux and py2:
-        location = fsencode(location)
-        target_dir = fsencode(target_dir)
+        location = fileutils.fsencode(location)
+        target_dir = fileutils.fsencode(target_dir)
 
     with zipfile.ZipFile(location) as zipf:
         for info in zipf.infolist():
@@ -351,8 +349,8 @@ def extract_zip_raw(location, target_dir, *args, **kwargs):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
     if on_linux and py2:
-        location = fsencode(location)
-        target_dir = fsencode(target_dir)
+        location = fileutils.fsencode(location)
+        target_dir = fileutils.fsencode(target_dir)
 
     with zipfile.ZipFile(location) as zipf:
         zipf.extractall(path=target_dir)
