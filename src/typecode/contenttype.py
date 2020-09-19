@@ -51,6 +51,7 @@ from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode import text
 from typecode import entropy
+from typecode import extractible
 from typecode import magic2
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
 from typecode.pygments_lexers import get_lexer_for_filename
@@ -375,10 +376,8 @@ class Type(object):
             return self._is_archive
         self._is_archive = False
 
-        from extractcode import archive
 
         ft = self.filetype_file.lower()
-        can_extract = bool(archive.can_extract(self.location))
         if on_linux and py2:
             docx_ext = b'x'
         else:
@@ -392,10 +391,10 @@ class Type(object):
 
         elif (self.is_compressed
             or 'archive' in ft
-            or can_extract
             or self.is_package
             or self.is_filesystem
             or (self.is_office_doc and self.location.endswith(docx_ext))
+            or extractible.can_extract(self.location)
             # FIXME: is this really correct???
             or '(zip)' in ft):
                 self._is_archive = True
