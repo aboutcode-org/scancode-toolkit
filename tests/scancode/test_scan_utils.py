@@ -36,7 +36,7 @@ from click.termui import progressbar
 from click.testing import CliRunner
 
 from commoncode.testcase import FileDrivenTesting
-from scancode import PluggableCommandLineOption
+from plugincode import PluggableCommandLineOption
 from scancode.cli import ScanCommand
 from scancode.utils import fixed_width_file_name
 
@@ -138,7 +138,7 @@ class TestHelpGroups(FileDrivenTesting):
 
         runner = CliRunner()
         result = runner.invoke(scan, ['--help'])
-        from scancode import MISC_GROUP
+        from plugincode import MISC_GROUP
         assert MISC_GROUP in result.output
         assert  '--opt   Help text for option' in result.output
 
@@ -152,11 +152,11 @@ class TestHelpGroups(FileDrivenTesting):
 
         runner = CliRunner()
         result = runner.invoke(scan, ['--help'])
-        from scancode import MISC_GROUP
+        from plugincode import MISC_GROUP
         assert MISC_GROUP + ':\n    --opt   Help text for option\n' in result.output
 
     def test_scan_help_with_group(self):
-        from scancode import CORE_GROUP
+        from plugincode import CORE_GROUP
 
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, help='Help text for option',

@@ -35,8 +35,8 @@ from six import string_types
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import POST_SCAN_GROUP
+from plugincode import PluggableCommandLineOption
+from plugincode import POST_SCAN_GROUP
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary

@@ -36,8 +36,8 @@ import attr
 from commoncode import saneyaml
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import POST_SCAN_GROUP
+from plugincode import PluggableCommandLineOption
+from plugincode import POST_SCAN_GROUP
 
 
 @post_scan_impl

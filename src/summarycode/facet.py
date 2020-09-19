@@ -34,8 +34,8 @@ from six import string_types
 from commoncode.fileset import get_matches as get_fileset_matches
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import PRE_SCAN_GROUP
+from plugincode import PluggableCommandLineOption
+from plugincode import PRE_SCAN_GROUP
 
 # Tracing flag
 TRACE = False

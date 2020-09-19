@@ -31,10 +31,10 @@ from collections import OrderedDict
 
 import attr
 
+from plugincode import PluggableCommandLineOption
+from plugincode import SCAN_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import SCAN_GROUP
 
 
 @scan_impl

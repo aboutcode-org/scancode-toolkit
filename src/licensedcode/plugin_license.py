@@ -32,12 +32,12 @@ from functools import partial
 
 import attr
 
+from plugincode import PluggableCommandLineOption
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import MISC_GROUP
-from scancode import SCAN_OPTIONS_GROUP
-from scancode import SCAN_GROUP
+from plugincode import MISC_GROUP
+from plugincode import SCAN_OPTIONS_GROUP
+from plugincode import SCAN_GROUP
 from scancode.api import DEJACODE_LICENSE_URL
 
 

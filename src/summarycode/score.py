@@ -39,8 +39,8 @@ from licensedcode.cache import get_licenses_db
 from licensedcode import models
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import POST_SCAN_GROUP
+from plugincode import PluggableCommandLineOption
+from plugincode import POST_SCAN_GROUP
 from summarycode import facet
 
 

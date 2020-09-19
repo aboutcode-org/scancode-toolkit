@@ -31,10 +31,10 @@ import re
 
 from six import string_types
 
+from plugincode import PluggableCommandLineOption
+from plugincode import OUTPUT_FILTER_GROUP
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
-from scancode import PluggableCommandLineOption
-from scancode import OUTPUT_FILTER_GROUP
 
 
 def logger_debug(*args):

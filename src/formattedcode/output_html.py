@@ -53,10 +53,10 @@ from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode.system import py3
 from formattedcode import FileOptionType
+from plugincode import PluggableCommandLineOption
+from plugincode import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import PluggableCommandLineOption
-from scancode import OUTPUT_GROUP
 
 """
 Output plugins to write scan results using templates such as HTML.

@@ -27,8 +27,8 @@ from __future__ import unicode_literals
 
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
-from scancode import PluggableCommandLineOption
-from scancode import OUTPUT_FILTER_GROUP
+from plugincode import PluggableCommandLineOption
+from plugincode import OUTPUT_FILTER_GROUP
 
 
 @output_filter_impl

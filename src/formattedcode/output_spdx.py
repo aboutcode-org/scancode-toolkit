@@ -52,10 +52,10 @@ from spdx.utils import SPDXNone
 from spdx.version import Version
 
 from formattedcode import FileOptionType
+from plugincode import OUTPUT_GROUP
+from plugincode import PluggableCommandLineOption
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import PluggableCommandLineOption
-from scancode import OUTPUT_GROUP
 
 
 # Tracing flags

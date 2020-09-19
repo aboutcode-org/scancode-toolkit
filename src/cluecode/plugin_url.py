@@ -31,11 +31,11 @@ from functools import partial
 
 import attr
 
+from plugincode import PluggableCommandLineOption
+from plugincode import OTHER_SCAN_GROUP
+from plugincode import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import PluggableCommandLineOption
-from scancode import OTHER_SCAN_GROUP
-from scancode import SCAN_OPTIONS_GROUP
 
 
 @scan_impl
