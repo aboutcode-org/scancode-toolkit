@@ -36,7 +36,7 @@ from click.termui import progressbar
 from click.testing import CliRunner
 
 from commoncode.testcase import FileDrivenTesting
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode.cli import ScanCommand
 from scancode.utils import fixed_width_file_name
 
@@ -146,7 +146,7 @@ class TestHelpGroups(FileDrivenTesting):
 
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, sort_order=10,
-                      help='Help text for option', cls=CommandLineOption)
+                      help='Help text for option', cls=PluggableCommandLineOption)
         def scan(opt):
             pass
 
@@ -160,7 +160,7 @@ class TestHelpGroups(FileDrivenTesting):
 
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, help='Help text for option',
-                      help_group=CORE_GROUP, cls=CommandLineOption)
+                      help_group=CORE_GROUP, cls=PluggableCommandLineOption)
         def scan(opt):
             pass
 

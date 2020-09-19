@@ -33,7 +33,7 @@ import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OTHER_SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
 
@@ -48,12 +48,12 @@ class EmailScanner(ScanPlugin):
     sort_order = 8
 
     options = [
-        CommandLineOption(('-e', '--email',),
+        PluggableCommandLineOption(('-e', '--email',),
             is_flag=True, default=False,
             help='Scan <input> for emails.',
             help_group=OTHER_SCAN_GROUP),
 
-        CommandLineOption(('--max-email',),
+        PluggableCommandLineOption(('--max-email',),
             type=int, default=50,
             metavar='INT',
             show_default=True,

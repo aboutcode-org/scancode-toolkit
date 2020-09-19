@@ -42,7 +42,7 @@ from packagedcode.build import BaseBuildManifestPackage
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import POST_SCAN_GROUP
 from summarycode import copyright_summary
 
@@ -164,7 +164,7 @@ class Consolidator(PostScanPlugin):
     sort_order = 8
 
     options = [
-        CommandLineOption(('--consolidate',),
+        PluggableCommandLineOption(('--consolidate',),
             is_flag=True, default=False,
             help='Group resources by Packages or license and copyright holder and '
                  'return those groupings as a list of consolidated packages and '

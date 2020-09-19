@@ -27,7 +27,7 @@ from __future__ import unicode_literals
 
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OUTPUT_FILTER_GROUP
 
 
@@ -38,7 +38,7 @@ class OnlyFindings(OutputFilterPlugin):
     """
 
     options = [
-        CommandLineOption(('--only-findings',), is_flag=True,
+        PluggableCommandLineOption(('--only-findings',), is_flag=True,
             help='Only return files or directories with findings for the '
                  'requested scans. Files and directories without findings are '
                  'omitted (file information is not treated as findings).',

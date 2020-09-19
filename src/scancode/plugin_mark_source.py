@@ -31,7 +31,7 @@ import attr
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import POST_SCAN_GROUP
 
 
@@ -48,7 +48,7 @@ class MarkSource(PostScanPlugin):
     sort_order = 8
 
     options = [
-        CommandLineOption(('--mark-source',),
+        PluggableCommandLineOption(('--mark-source',),
             is_flag=True, default=False,
             required_options=['info'],
             help='Set the "is_source" to true for directories that contain '

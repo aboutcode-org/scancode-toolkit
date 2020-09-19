@@ -34,7 +34,7 @@ from six import string_types
 from commoncode.fileset import get_matches as get_fileset_matches
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import PRE_SCAN_GROUP
 
 # Tracing flag
@@ -129,7 +129,7 @@ class AddFacet(PreScanPlugin):
     sort_order = 20
 
     options = [
-        CommandLineOption(('--facet',),
+        PluggableCommandLineOption(('--facet',),
            multiple=True,
            metavar='<facet>=<pattern>',
            callback=validate_facets,

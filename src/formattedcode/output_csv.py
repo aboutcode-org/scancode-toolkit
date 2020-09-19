@@ -36,7 +36,7 @@ import unicodecsv
 from commoncode import compat
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
@@ -66,7 +66,7 @@ if TRACE:
 class CsvOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--csv',),
+        PluggableCommandLineOption(('--csv',),
             type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',

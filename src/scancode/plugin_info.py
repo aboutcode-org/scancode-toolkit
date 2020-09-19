@@ -33,7 +33,7 @@ import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OTHER_SCAN_GROUP
 
 
@@ -62,7 +62,7 @@ class InfoScanner(ScanPlugin):
     sort_order = 0
 
     options = [
-        CommandLineOption(('-i', '--info'),
+        PluggableCommandLineOption(('-i', '--info'),
             is_flag=True, default=False,
             help='Scan <input> for file information (size, checksums, etc).',
             help_group=OTHER_SCAN_GROUP, sort_order=10

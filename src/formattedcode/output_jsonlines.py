@@ -33,7 +33,7 @@ from commoncode.system import py2
 from commoncode.system import py3
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
@@ -63,7 +63,7 @@ if py3:
 class JsonLinesOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json-lines', 'output_json_lines',),
+        PluggableCommandLineOption(('--json-lines', 'output_json_lines',),
             type=FileOptionType(mode=mode, lazy=True),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',

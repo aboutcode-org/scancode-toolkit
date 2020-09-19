@@ -33,7 +33,7 @@ import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import SCAN_GROUP
 
 
@@ -52,7 +52,7 @@ class CopyrightScanner(ScanPlugin):
     sort_order = 4
 
     options = [
-        CommandLineOption(('-c', '--copyright',),
+        PluggableCommandLineOption(('-c', '--copyright',),
             is_flag=True, default=False,
             help='Scan <input> for copyrights.',
             help_group=SCAN_GROUP,

@@ -33,7 +33,7 @@ from six import string_types
 
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OUTPUT_FILTER_GROUP
 
 
@@ -63,7 +63,7 @@ class IgnoreCopyrights(OutputFilterPlugin):
     """
 
     options = [
-        CommandLineOption(('--ignore-copyright-holder',),
+        PluggableCommandLineOption(('--ignore-copyright-holder',),
                multiple=True,
                metavar='<pattern>',
                help='Ignore a file (and all its findings) if a copyright holder '
@@ -71,7 +71,7 @@ class IgnoreCopyrights(OutputFilterPlugin):
                'Note that this will ignore a file even if it has other scanned '
                'data such as a license or errors.',
                help_group=OUTPUT_FILTER_GROUP),
-        CommandLineOption(
+        PluggableCommandLineOption(
             ('--ignore-author',),
             multiple=True,
             metavar='<pattern>',

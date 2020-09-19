@@ -35,7 +35,7 @@ click.disable_unicode_literals_warning = True
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import DOC_GROUP
 from scancode import SCAN_GROUP
 
@@ -79,13 +79,13 @@ class PackageScanner(ScanPlugin):
     required_plugins = ['scan:licenses', ]
 
     options = [
-        CommandLineOption(('-p', '--package',),
+        PluggableCommandLineOption(('-p', '--package',),
             is_flag=True, default=False,
             help='Scan <input> for package manifests and build scripts.',
             help_group=SCAN_GROUP,
             sort_order=20),
 
-        CommandLineOption(
+        PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True, is_eager=True,
             callback=print_packages,

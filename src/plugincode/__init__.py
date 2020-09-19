@@ -35,6 +35,11 @@ from pluggy import HookspecMarker
 from pluggy import PluginManager as PluggyPluginManager
 
 
+
+class PlugincodeError(Exception):
+    """Base exception for plugincode errors"""
+
+
 class BasePlugin(object):
     """
     A base class for all ScanCode plugins.
@@ -61,7 +66,7 @@ class BasePlugin(object):
     # is determined by the sort_order then the plugin name
     resource_attributes = OrderedDict()
 
-    # List of CommandLineOption CLI options for this plugin.
+    # List of PluggableCommandLineOption CLI options for this plugin.
     # Subclasses should set this as needed
     options = []
 
@@ -189,9 +194,8 @@ class PluginManager(object):
         for stage, manager in cls.managers.items():
             mgr_setup = manager.setup()
             if not mgr_setup:
-                from scancode import ScancodeError
-                msg = 'Cannot load ScanCode plugins for stage: %(stage)s' % locals()
-                raise ScancodeError(msg)
+                msg = 'Cannot load plugins for stage: %(stage)s' % locals()
+                raise PlugincodeError(msg)
             mplugin_classes, mplugin_options = mgr_setup
             plugin_classes.extend(mplugin_classes)
             plugin_options.extend(mplugin_options)
@@ -203,7 +207,7 @@ class PluginManager(object):
         all plugin classes).
 
         Load and validate available plugins for this PluginManager from its
-        assigned `entrypoint`. Raise a ScancodeError if a plugin is not valid such
+        assigned `entrypoint`. Raise a PlugincodeError if a plugin is not valid such
         that when it does not subcclass the manager `plugin_base_class`.
         Must be called once to setup the plugins of this manager.
         """
@@ -211,7 +215,7 @@ class PluginManager(object):
             return
 
         # FIXME: this should be part of the plugincode tree
-        from scancode import CommandLineOption
+        from scancode import PluggableCommandLineOption
 
         entrypoint = self.entrypoint
         try:
@@ -228,18 +232,16 @@ class PluginManager(object):
             if not issubclass(plugin_class, self.plugin_base_class):
                 qname = '%(stage)s:%(name)s' % locals()
                 plugin_base_class = self.plugin_base_class
-                from scancode import ScancodeError #NOQA
-                raise ScancodeError(
+                raise PlugincodeError(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())
 
             for option in plugin_class.options:
-                if not isinstance(option, CommandLineOption):
+                if not isinstance(option, PluggableCommandLineOption):
                     qname = '%(stage)s:%(name)s' % locals()
                     oname = option.name
-                    clin = CommandLineOption
-                    from scancode import ScancodeError #NOQA
-                    raise ScancodeError(
+                    clin = PluggableCommandLineOption
+                    raise PlugincodeError(
                         'Invalid plugin: %(qname)r: option %(oname)r '
                         'must extend %(clin)r.' % locals())
                 plugin_options.append(option)

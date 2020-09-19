@@ -96,7 +96,7 @@ from scancode import POST_SCAN_GROUP
 from scancode import PRE_SCAN_GROUP
 from scancode import SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import notice
 from scancode import print_about
 from scancode import Scanner
@@ -162,7 +162,7 @@ Try 'scancode --help' for help on options and arguments.'''
                  plugin_options=()):
         """
         Create a new ScanCommand using the `plugin_options` list of
-        CommandLineOption instances.
+        PluggableCommandLineOption instances.
         """
 
         super(ScanCommand, self).__init__(name, context_settings, callback,
@@ -289,52 +289,52 @@ def validate_depth(ctx, param, value):
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
          'that all paths have a common root directory.',
-    help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
+    help_group=OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--full-root',
     is_flag=True,
     conflicting_options=['strip_root'],
     help='Report full, absolute paths.',
-    help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
+    help_group=OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('-n', '--processes',
     type=int, default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
          'Disable parallel processing if 0. Also disable threading if -1. [default: 1]',
-    help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--timeout',
     type=float, default=DEFAULT_TIMEOUT,
     metavar='<secs>',
     help='Stop an unfinished file scan after a timeout in seconds.  '
          '[default: %d seconds]' % DEFAULT_TIMEOUT,
-    help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--quiet',
     is_flag=True,
     conflicting_options=['verbose'],
     help='Do not print summary or progress.',
-    help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--verbose',
     is_flag=True,
     conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
          'Print verbose scan counters.',
-    help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--from-json',
     is_flag=True,
     multiple=True,
     help='Load codebase from an existing JSON scan',
-    help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
 
 @click.option('--timing',
     is_flag=True,
     hidden=True,
     help='Collect scan timing for each scan/scanned file.',
-    help_group=CORE_GROUP, sort_order=250, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 
 @click.option('--max-in-memory',
     type=int, default=10000,
@@ -345,69 +345,69 @@ def validate_depth(ctx, param, value):
     'number are cached on-disk rather than in memory. '
     'Use 0 to use unlimited memory and disable on-disk caching. '
     'Use -1 to use only on-disk caching.',
-    help_group=CORE_GROUP, sort_order=300, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=300, cls=PluggableCommandLineOption)
 
 @click.option('--max-depth',
     type=int, default=0, show_default=False, callback=validate_depth,
     help='Maximum nesting depth of subdirectories to scan. '
         'Descend at most INTEGER levels of directories below and including '
         'the starting directory. Use 0 for no scan depth limit.',
-    help_group=CORE_GROUP, sort_order=301, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=301, cls=PluggableCommandLineOption)
 
 @click.help_option('-h', '--help',
-    help_group=DOC_GROUP, sort_order=10, cls=CommandLineOption)
+    help_group=DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--about',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_about,
     help='Show information about ScanCode and licensing and exit.',
-    help_group=DOC_GROUP, sort_order=20, cls=CommandLineOption)
+    help_group=DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--version',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_version,
     help='Show the version and exit.',
-    help_group=DOC_GROUP, sort_order=20, cls=CommandLineOption)
+    help_group=DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--examples',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_examples,
     help=('Show command examples and exit.'),
-    help_group=DOC_GROUP, sort_order=50, cls=CommandLineOption)
+    help_group=DOC_GROUP, sort_order=50, cls=PluggableCommandLineOption)
 
 @click.option('--plugins',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_plugins,
     help='Show the list of available ScanCode plugins and exit.',
-    help_group=DOC_GROUP, cls=CommandLineOption)
+    help_group=DOC_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--test-mode',
     is_flag=True, default=False,
-    # not yet supported in Click 6.7 but added in CommandLineOption
+    # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
-    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+    help_group=MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--test-slow-mode',
     is_flag=True, default=False,
-    # not yet supported in Click 6.7 but added in CommandLineOption
+    # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test slow mode" to ensure that --email scan needs at least one second to complete. Only for testing.',
-    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+    help_group=MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--test-error-mode',
     is_flag=True, default=False,
-    # not yet supported in Click 6.7 but added in CommandLineOption
+    # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test error mode" to trigger errors with the --email scan. Only for testing.',
-    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+    help_group=MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--print-options',
     is_flag=True,
     expose_value=False,
     callback=print_options,
     help='Show the list of selected options and exit.',
-    help_group=DOC_GROUP, cls=CommandLineOption)
+    help_group=DOC_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--keep-temp-files',
     is_flag=True, default=False,
@@ -415,7 +415,7 @@ def validate_depth(ctx, param, value):
          'are stored. (By default temporary files are deleted when a scan is '
          'completed.)',
     hidden=True,
-    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+    help_group=MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,

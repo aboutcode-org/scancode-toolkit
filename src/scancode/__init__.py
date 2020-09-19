@@ -90,10 +90,11 @@ CORE_GROUP = 'core'
 Scanner = namedtuple('Scanner', 'name function')
 
 
-class CommandLineOption(click.Option):
+class PluggableCommandLineOption(click.Option):
     """
     An option with extra args and attributes to control CLI help options
     grouping, co-required and conflicting options (e.g. mutually exclusive).
+    This option is also pluggable e.g. providable by a plugin.
     """
 
     # args are from Click 6.7
@@ -119,7 +120,7 @@ class CommandLineOption(click.Option):
                  hidden=False,
                  **attrs):
 
-        super(CommandLineOption, self).__init__(param_decls, show_default,
+        super(PluggableCommandLineOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
                      multiple, count, allow_from_autoenv,
@@ -138,7 +139,7 @@ class CommandLineOption(click.Option):
         required_options = self.required_options
         conflicting_options = self.conflicting_options
 
-        return ('CommandLineOption<name=%(name)r, '
+        return ('PluggableCommandLineOption<name=%(name)r, '
                 'required_options=%(required_options)r, conflicting_options=%(conflicting_options)r>' % locals())
 
     def validate_dependencies(self, ctx, value):
@@ -155,7 +156,7 @@ class CommandLineOption(click.Option):
 
 def validate_option_dependencies(ctx):
     """
-    Validate all CommandLineOption dependencies in the `ctx` Click context.
+    Validate all PluggableCommandLineOption dependencies in the `ctx` Click context.
     Ignore eager flags.
     """
     values = ctx.params
@@ -167,7 +168,7 @@ def validate_option_dependencies(ctx):
     for param in ctx.command.params:
         if param.is_eager:
             continue
-        if not isinstance(param, CommandLineOption):
+        if not isinstance(param, PluggableCommandLineOption):
             if TRACE:
                 logger_debug('  validate_option_dependencies: skip param:', param)
             continue

@@ -53,7 +53,7 @@ from spdx.version import Version
 
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
@@ -130,7 +130,7 @@ def get_licenses_by_spdx_key(licenses):
 class SpdxTvOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--spdx-tv',),
+        PluggableCommandLineOption(('--spdx-tv',),
             type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
             metavar='FILE',
             help='Write scan output as SPDX Tag/Value to FILE.',
@@ -157,7 +157,7 @@ class SpdxTvOutput(OutputPlugin):
 class SpdxRdfOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--spdx-rdf',),
+        PluggableCommandLineOption(('--spdx-rdf',),
             type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
             metavar='FILE',
             help='Write scan output as SPDX RDF to FILE.',

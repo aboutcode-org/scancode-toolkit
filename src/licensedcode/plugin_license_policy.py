@@ -36,7 +36,7 @@ import attr
 from commoncode import saneyaml
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import POST_SCAN_GROUP
 
 
@@ -52,7 +52,7 @@ class LicensePolicy(PostScanPlugin):
     sort_order = 9
 
     options = [
-        CommandLineOption(('--license-policy',),
+        PluggableCommandLineOption(('--license-policy',),
             multiple=False,
             metavar='FILE',
             help='Load a License Policy file and apply it to the scan at the '

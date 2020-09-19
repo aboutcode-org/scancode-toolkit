@@ -35,7 +35,7 @@ from commoncode.datautils import Boolean
 from commoncode.text import toascii
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OTHER_SCAN_GROUP
 import typecode.contenttype
 
@@ -74,7 +74,7 @@ class GeneratedCodeDetector(ScanPlugin):
     sort_order = 50
 
     options = [
-        CommandLineOption(('--generated',),
+        PluggableCommandLineOption(('--generated',),
             is_flag=True, default=False,
             help='Classify automatically generated code files with a flag.',
             help_group=OTHER_SCAN_GROUP,

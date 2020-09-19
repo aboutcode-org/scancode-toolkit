@@ -37,7 +37,7 @@ from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import PRE_SCAN_GROUP
 
 """
@@ -122,7 +122,7 @@ class FileClassifier(PreScanPlugin):
     sort_order = 50
 
     options = [
-        CommandLineOption(('--classify',),
+        PluggableCommandLineOption(('--classify',),
             is_flag=True, default=False,
             help='Classify files with flags telling if the file is a legal, '
                  'or readme or test file, etc.',

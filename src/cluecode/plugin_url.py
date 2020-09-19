@@ -33,7 +33,7 @@ import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
+from scancode import PluggableCommandLineOption
 from scancode import OTHER_SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
 
@@ -49,12 +49,12 @@ class UrlScanner(ScanPlugin):
     sort_order = 10
 
     options = [
-        CommandLineOption(('-u', '--url',),
+        PluggableCommandLineOption(('-u', '--url',),
             is_flag=True, default=False,
             help='Scan <input> for urls.',
             help_group=OTHER_SCAN_GROUP),
 
-        CommandLineOption(('--max-url',),
+        PluggableCommandLineOption(('--max-url',),
             type=int, default=50,
             metavar='INT',
             required_options=['url'],
