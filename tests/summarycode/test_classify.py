@@ -29,7 +29,7 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from summarycode.classify import set_classification_flags

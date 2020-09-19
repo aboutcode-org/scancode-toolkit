@@ -29,7 +29,7 @@ from __future__ import unicode_literals
 from os import path
 
 from packagedcode import haxe
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 from packages_test_utils import PackageTester
 
 

@@ -805,7 +805,7 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
 
 def test_get_displayable_summary():
     from scancode.cli import get_displayable_summary
-    from scancode.resource import Codebase
+    from commoncode.resource import Codebase
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('resource/client')
@@ -836,7 +836,7 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     import sys
 
     from scancode.cli import display_summary
-    from scancode.resource import Codebase
+    from commoncode.resource import Codebase
 
     # Set up test codebase
     test_codebase = test_env.get_test_loc('resource/client')

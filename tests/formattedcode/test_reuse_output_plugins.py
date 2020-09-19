@@ -50,7 +50,8 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', force_text=False):
     # ./scancode -clip --summary --license-clarity-score --summary-key-files
     # --classify  samples/ --json-pp vb.json -n
     test_file = test_env.get_test_loc(test_file)
-    from scancode.resource import VirtualCodebase
+    from commoncode.resource import VirtualCodebase
+
     cb = VirtualCodebase(test_file)
 
     result_file = test_env.get_temp_file('reuse')

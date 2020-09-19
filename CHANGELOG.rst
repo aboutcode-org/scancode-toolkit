@@ -2,6 +2,15 @@ Changelog
 =========
 
 
+v3.2.2rc3 (2020-09-21)
+----------------------
+
+Internal code changes:
+
+ - Ensure commoncode ccan become a standalone package #2233
+ - 
+
+
 v3.2.1rc2 (2020-09-11)
 ----------------------
 

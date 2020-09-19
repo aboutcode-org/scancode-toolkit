@@ -68,6 +68,8 @@ from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
+from commoncode.resource import Codebase
+from commoncode.resource import VirtualCodebase
 from commoncode.system import py2
 from commoncode.system import on_windows
 from commoncode.system import on_linux
@@ -104,8 +106,6 @@ from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
-from scancode.resource import Codebase
-from scancode.resource import VirtualCodebase
 from scancode.utils import BaseCommand
 from scancode.utils import path_progress_message
 from scancode.utils import progressmanager
