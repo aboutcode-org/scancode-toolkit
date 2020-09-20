@@ -1305,7 +1305,7 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
         result_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings-expected.json')
         codebase = VirtualCodebase(test_file)
-        expected_scan = json.load(open(expected_file))
+        expected_scan = json.load(open(result_file))
         results = sorted(r.path for r in codebase.walk())
         expected = sorted(r.get('path') for r in expected_scan['files'])
         assert expected == results
