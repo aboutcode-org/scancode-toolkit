@@ -243,7 +243,7 @@ def extract_file(
         try:
             # extract first to a temp directory: if there is an error,  the
             # extracted files will not be moved to target
-            tmp_tgt = fileutils.get_temp_dir(prefix='scancode-extract-')
+            tmp_tgt = fileutils.get_temp_dir(prefix='extractcode-extract-')
             abs_location = abspath(expanduser(location))
             warns = extractor(abs_location, tmp_tgt) or []
             warnings.extend(warns)
