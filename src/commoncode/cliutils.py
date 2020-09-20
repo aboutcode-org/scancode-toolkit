@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 import click
 click.disable_unicode_literals_warning = True
 from click.utils import echo
@@ -37,10 +39,11 @@ from commoncode import compat
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
 from commoncode.text import toascii
+import plugincode
 
 
 """
-Command line UI utilities for help and and progress reporting.
+Command line UI utilities for improved options, help and progress reporting.
 """
 
 
@@ -68,6 +71,81 @@ class BaseCommand(click.Command):
         return click.Command.main(self, args=args, prog_name=self.name,
                                   complete_var=complete_var,
                                   standalone_mode=standalone_mode, **extra)
+
+
+
+class GroupedHelpCommand(BaseCommand):
+    """
+    A command class that is aware of pluggable options that provides enhanced
+    help where each option is grouped by group in the help.
+    """
+
+    short_usage_help = '''
+Try the '--help' option for help on options and arguments.'''
+
+    def __init__(self, name, context_settings=None, callback=None, params=None,
+                 help=None,  # NOQA
+                 epilog=None, short_help=None,
+                 options_metavar='[OPTIONS]', add_help_option=True,
+                 plugin_options=()):
+        """
+        Create a new GroupedHelpCommand using the `plugin_options` list of
+        PluggableCommandLineOption instances.
+        """
+
+        super(GroupedHelpCommand, self).__init__(
+            name, 
+            context_settings, 
+            callback,
+            params, 
+            help, 
+            epilog, 
+            short_help, 
+            options_metavar, 
+            add_help_option,
+        )
+
+        # this makes the options "known" to the command
+        self.params.extend(plugin_options)
+
+    def format_options(self, ctx, formatter):
+        """
+        Overridden from click.Command to write all options into the formatter in
+        help_groups they belong to. If a group is not specified, add the option
+        to MISC_GROUP group.
+        """
+        # this mapping defines the CLI help presentation order
+        help_groups = OrderedDict([
+            (plugincode.SCAN_GROUP, []),
+            (plugincode.OTHER_SCAN_GROUP, []),
+            (plugincode.SCAN_OPTIONS_GROUP, []),
+            (plugincode.OUTPUT_GROUP, []),
+            (plugincode.OUTPUT_FILTER_GROUP, []),
+            (plugincode.OUTPUT_CONTROL_GROUP, []),
+            (plugincode.PRE_SCAN_GROUP, []),
+            (plugincode.POST_SCAN_GROUP, []),
+            (plugincode.CORE_GROUP, []),
+            (plugincode.MISC_GROUP, []),
+            (plugincode.DOC_GROUP, []),
+        ])
+
+        for param in self.get_params(ctx):
+            # Get the list of option's name and help text
+            help_record = param.get_help_record(ctx)
+            if not help_record:
+                continue
+            # organize options by group
+            help_group = getattr(param, 'help_group', plugincode.MISC_GROUP)
+            sort_order = getattr(param, 'sort_order', 100)
+            help_groups[help_group].append((sort_order, help_record))
+
+        with formatter.section('Options'):
+            for group, help_records in help_groups.items():
+                if not help_records:
+                    continue
+                with formatter.section(group):
+                    sorted_records = [hr for _, hr in sorted(help_records)]
+                    formatter.write_dl(sorted_records)
 
 
 class EnhancedProgressBar(ProgressBar):
