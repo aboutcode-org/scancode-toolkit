@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import json
 from os.path import dirname
 from os.path import exists
 from os.path import join
@@ -38,10 +39,6 @@ from commoncode.fileutils import parent_directory
 from commoncode.system import py2
 from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
-
-from scancode.cli_test_utils import load_json_result
-from scancode.cli_test_utils import run_scan_click
-
 from commoncode.resource import Codebase
 from commoncode.resource import get_path
 from commoncode.resource import VirtualCodebase
@@ -1235,29 +1232,6 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
 
 
-class TestVirtualCodebaseCreationFromCli(FileBasedTesting):
-    test_data_dir = join(dirname(__file__), 'data')
-
-    def test_VirtualCodebase_output_with_from_json_is_same_as_original(self):
-        import json
-
-        test_file = self.get_test_loc('resource/virtual_idempotent/codebase.json')
-        result_file = self.get_temp_file('json')
-        args = ['--from-json', test_file, '--json-pp', result_file]
-        run_scan_click(args)
-        expected = load_json_result(test_file, remove_file_date=True)
-        results = load_json_result(result_file, remove_file_date=True)
-
-        expected.pop('summary', None)
-        results.pop('summary', None)
-
-        expected_headers = expected.pop('headers', [])
-        results_headers = results.pop('headers', [])
-
-        assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
-        assert len(results_headers) == len(expected_headers) + 1
-
-
 class TestVirtualCodebaseCreation(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
@@ -1331,7 +1305,7 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
         result_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings-expected.json')
         codebase = VirtualCodebase(test_file)
-        expected_scan = load_json_result(result_file, remove_file_date=True)
+        expected_scan = json.load(open(expected_file))
         results = sorted(r.path for r in codebase.walk())
         expected = sorted(r.get('path') for r in expected_scan['files'])
         assert expected == results

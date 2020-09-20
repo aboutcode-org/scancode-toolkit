@@ -930,3 +930,21 @@ def test_merge_multiple_scans():
     with open(result_file, read_mode) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
+
+
+def test_VirtualCodebase_output_with_from_json_is_same_as_original():
+    test_file = test_env.get_test_loc('virtual_idempotent/codebase.json')
+    result_file = test_env.get_temp_file('json')
+    args = ['--from-json', test_file, '--json-pp', result_file]
+    run_scan_click(args)
+    expected = load_json_result(test_file, remove_file_date=True)
+    results = load_json_result(result_file, remove_file_date=True)
+
+    expected.pop('summary', None)
+    results.pop('summary', None)
+
+    expected_headers = expected.pop('headers', [])
+    results_headers = results.pop('headers', [])
+
+    assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
+    assert len(results_headers) == len(expected_headers) + 1
