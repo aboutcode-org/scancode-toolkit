@@ -37,8 +37,8 @@ from click.testing import CliRunner
 
 from commoncode.testcase import FileDrivenTesting
 from commoncode.cliutils import fixed_width_file_name
+from commoncode.cliutils import GroupedHelpCommand
 from plugincode import PluggableCommandLineOption
-from scancode.cli import GroupedHelpCommand
 
 
 class TestUtils(FileDrivenTesting):
