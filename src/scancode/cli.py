@@ -63,7 +63,7 @@ click.disable_unicode_literals_warning = True
 
 from six import string_types
 
-from commoncode.cliutils import BaseCommand
+from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode import compat
@@ -134,69 +134,9 @@ def print_version(ctx, param, value):
     ctx.exit()
 
 
-class ScanCommand(BaseCommand):
-    """
-    A command class that is aware of ScanCode options that provides enhanced
-    help where each option is grouped by group.
-    """
-
+class ScancodeCommand(GroupedHelpCommand):
     short_usage_help = '''
-Try 'scancode --help' for help on options and arguments.'''
-
-    def __init__(self, name, context_settings=None, callback=None, params=None,
-                 help=None,  # NOQA
-                 epilog=None, short_help=None,
-                 options_metavar='[OPTIONS]', add_help_option=True,
-                 plugin_options=()):
-        """
-        Create a new ScanCommand using the `plugin_options` list of
-        PluggableCommandLineOption instances.
-        """
-
-        super(ScanCommand, self).__init__(name, context_settings, callback,
-             params, help, epilog, short_help, options_metavar, add_help_option)
-
-        # this makes the options "known" to the command
-        self.params.extend(plugin_options)
-
-    def format_options(self, ctx, formatter):
-        """
-        Overridden from click.Command to write all options into the formatter in
-        help_groups they belong to. If a group is not specified, add the option
-        to MISC_GROUP group.
-        """
-        # this mapping defines the CLI help presentation order
-        help_groups = OrderedDict([
-            (plugincode.SCAN_GROUP, []),
-            (plugincode.OTHER_SCAN_GROUP, []),
-            (plugincode.SCAN_OPTIONS_GROUP, []),
-            (plugincode.OUTPUT_GROUP, []),
-            (plugincode.OUTPUT_FILTER_GROUP, []),
-            (plugincode.OUTPUT_CONTROL_GROUP, []),
-            (plugincode.PRE_SCAN_GROUP, []),
-            (plugincode.POST_SCAN_GROUP, []),
-            (plugincode.CORE_GROUP, []),
-            (plugincode.MISC_GROUP, []),
-            (plugincode.DOC_GROUP, []),
-        ])
-
-        for param in self.get_params(ctx):
-            # Get the list of option's name and help text
-            help_record = param.get_help_record(ctx)
-            if not help_record:
-                continue
-            # organize options by group
-            help_group = getattr(param, 'help_group', plugincode.MISC_GROUP)
-            sort_order = getattr(param, 'sort_order', 100)
-            help_groups[help_group].append((sort_order, help_record))
-
-        with formatter.section('Options'):
-            for group, help_records in help_groups.items():
-                if not help_records:
-                    continue
-                with formatter.section(group):
-                    sorted_records = [help_record for _, help_record in sorted(help_records)]
-                    formatter.write_dl(sorted_records)
+Try the 'scancode --help' option for help on options and arguments.'''
 
 
 try:
@@ -261,7 +201,7 @@ def validate_depth(ctx, param, value):
 
 @click.command(name='scancode',
     epilog=epilog_text,
-    cls=ScanCommand,
+    cls=ScancodeCommand,
     plugin_options=plugin_options)
 
 @click.pass_context
