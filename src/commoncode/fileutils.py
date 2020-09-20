@@ -45,9 +45,9 @@ import tempfile
 from six import string_types
 
 try:
-    from scancode_config import scancode_temp_dir
+    from scancode_config import scancode_temp_dir as _base_temp_dir
 except ImportError:
-    scancode_temp_dir = None
+    _base_temp_dir = None
 
 from commoncode import compat
 from commoncode import filetype
@@ -152,7 +152,7 @@ def create_dir(location):
                 raise
 
 
-def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
+def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
     """
     Return the path to a new existing unique temporary directory, created under
     the `base_dir` base directory using the `prefix` prefix.

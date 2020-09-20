@@ -52,12 +52,13 @@ from commoncode import text
 
 
 """
-Minimal wrapper for executing external commands in sub-processes. The approach
-is unconventionally relying on vendoring scripts or pre-built executable
-binary command rather than relying on OS-provided binaries.
+Wrapper for executing external commands in sub-processes. The approach is
+unconventionally relying on vendoring scripts or pre-built executable binary
+commands rather than relying on OS-provided binaries (though using OS-provided
+binaries is possible.)
 
 While this could seem contrived at first this approach ensures that:
- - a distributed scancode package is self-contained
+ - a distributed whole application is self-contained
  - a non technical user does not have any extra installation to do, in
    particular there is no compilation needed at installation time.
  - we have few dependencies on the OS.

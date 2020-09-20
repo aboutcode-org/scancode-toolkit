@@ -58,8 +58,10 @@ def is_ignore_file(location):
     """
     Return True if the location is an ignore file.
     """
-    return (filetype.is_file(location)
-            and fileutils.file_name(location) == '.scancodeignore')
+    return (
+        filetype.is_file(location)
+        and fileutils.file_name(location) == '.scancodeignore'
+    )
 
 
 def get_ignores(location, include_defaults=True):
