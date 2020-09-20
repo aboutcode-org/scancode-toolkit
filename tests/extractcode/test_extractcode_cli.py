@@ -96,7 +96,7 @@ def test_extractcode_command_always_shows_something_if_not_using_a_tty_verbose_o
 
 def test_extractcode_command_works_with_relative_paths(monkeypatch):
     # The setup is a tad complex because we want to have a relative dir
-    # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+    # to the base dir where we run tests from, i.e. the git checkout  dir
     # To use relative paths, we use our tmp dir at the root of the code tree
     from os.path import dirname, join, abspath
     from  commoncode import fileutils
@@ -105,15 +105,15 @@ def test_extractcode_command_works_with_relative_paths(monkeypatch):
     import shutil
 
     try:
-        scancode_root = dirname(dirname(dirname(__file__)))
-        scancode_tmp = join(scancode_root, 'tmp')
-        fileutils.create_dir(scancode_tmp)
-        scancode_root_abs = abspath(scancode_root)
-        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        project_root = dirname(dirname(dirname(__file__)))
+        project_tmp = join(project_root, 'tmp')
+        fileutils.create_dir(project_tmp)
+        project_root_abs = abspath(project_root)
+        test_src_dir = tempfile.mkdtemp(dir=project_tmp).replace(project_root_abs, '').strip('\\/')
         test_file = test_env.get_test_loc('cli/extract_relative_path/basic.zip')
         shutil.copy(test_file, test_src_dir)
         test_src_file = join(test_src_dir, 'basic.zip')
-        test_tgt_dir = join(scancode_root, test_src_file) + extractcode.EXTRACT_SUFFIX
+        test_tgt_dir = join(project_root, test_src_file) + extractcode.EXTRACT_SUFFIX
 
         runner = CliRunner()
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
@@ -131,7 +131,7 @@ def test_extractcode_command_works_with_relative_paths(monkeypatch):
 
 def test_extractcode_command_works_with_relative_paths_verbose(monkeypatch):
     # The setup is a tad complex because we want to have a relative dir
-    # to the base dir where we run tests from, ie the scancode-toolkit/ dir
+    # to the base dir where we run tests from, i.e. the git checkout dir
     # To use relative paths, we use our tmp dir at the root of the code tree
     from os.path import dirname, join, abspath
     from  commoncode import fileutils
@@ -139,11 +139,11 @@ def test_extractcode_command_works_with_relative_paths_verbose(monkeypatch):
     import shutil
 
     try:
-        scancode_root = dirname(dirname(dirname(__file__)))
-        scancode_tmp = join(scancode_root, 'tmp')
-        fileutils.create_dir(scancode_tmp)
-        scancode_root_abs = abspath(scancode_root)
-        test_src_dir = tempfile.mkdtemp(dir=scancode_tmp).replace(scancode_root_abs, '').strip('\\/')
+        project_root = dirname(dirname(dirname(__file__)))
+        project_tmp = join(project_root, 'tmp')
+        fileutils.create_dir(project_tmp)
+        project_root_abs = abspath(project_root)
+        test_src_dir = tempfile.mkdtemp(dir=project_tmp).replace(project_root_abs, '').strip('\\/')
         test_file = test_env.get_test_loc('cli/extract_relative_path/basic.zip')
         shutil.copy(test_file, test_src_dir)
         test_src_file = join(test_src_dir, 'basic.zip')
