@@ -37,8 +37,8 @@ from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from plugincode import PluggableCommandLineOption
-from plugincode import PRE_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import PRE_SCAN_GROUP
 
 """
 Tag files as "key" or important and top-level files.

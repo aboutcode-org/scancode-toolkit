@@ -31,8 +31,8 @@ from collections import OrderedDict
 
 import attr
 
-from plugincode import PluggableCommandLineOption
-from plugincode import SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import SCAN_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 

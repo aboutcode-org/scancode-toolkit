@@ -30,8 +30,8 @@ from functools import partial
 from commoncode.fileset import is_included
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
-from plugincode import PluggableCommandLineOption
-from plugincode import PRE_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import PRE_SCAN_GROUP
 from commoncode import compat
 
 

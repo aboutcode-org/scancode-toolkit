@@ -31,8 +31,8 @@ import attr
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from plugincode import PluggableCommandLineOption
-from plugincode import POST_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 
 
 @post_scan_impl

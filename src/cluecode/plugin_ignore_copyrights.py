@@ -31,8 +31,8 @@ import re
 
 from six import string_types
 
-from plugincode import PluggableCommandLineOption
-from plugincode import OUTPUT_FILTER_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_FILTER_GROUP
 from plugincode.output_filter import OutputFilterPlugin
 from plugincode.output_filter import output_filter_impl
 

@@ -37,8 +37,8 @@ from commoncode import compat
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from plugincode import PluggableCommandLineOption
-from plugincode import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
 
 
 # Tracing flags

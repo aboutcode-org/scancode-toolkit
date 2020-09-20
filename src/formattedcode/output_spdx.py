@@ -52,8 +52,8 @@ from spdx.utils import SPDXNone
 from spdx.version import Version
 
 from formattedcode import FileOptionType
-from plugincode import OUTPUT_GROUP
-from plugincode import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 

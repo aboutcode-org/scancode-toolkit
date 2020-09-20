@@ -63,9 +63,11 @@ click.disable_unicode_literals_warning = True
 
 from six import string_types
 
+from commoncode import cliutils
 from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
+from commoncode.cliutils import PluggableCommandLineOption
 from commoncode import compat
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
@@ -78,14 +80,12 @@ from commoncode.system import on_windows
 from commoncode.system import on_linux
 
 # these are important to register plugin managers
-import plugincode
 from plugincode import PluginManager
 from plugincode import pre_scan
 from plugincode import scan
 from plugincode import post_scan
 from plugincode import output_filter
 from plugincode import output
-from plugincode import PluggableCommandLineOption
 
 from scancode import ScancodeError
 from scancode import ScancodeCliUsageError
@@ -217,52 +217,52 @@ def validate_depth(ctx, param, value):
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
          'that all paths have a common root directory.',
-    help_group=plugincode.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
+    help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--full-root',
     is_flag=True,
     conflicting_options=['strip_root'],
     help='Report full, absolute paths.',
-    help_group=plugincode.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
+    help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('-n', '--processes',
     type=int, default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
          'Disable parallel processing if 0. Also disable threading if -1. [default: 1]',
-    help_group=plugincode.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--timeout',
     type=float, default=DEFAULT_TIMEOUT,
     metavar='<secs>',
     help='Stop an unfinished file scan after a timeout in seconds.  '
          '[default: %d seconds]' % DEFAULT_TIMEOUT,
-    help_group=plugincode.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--quiet',
     is_flag=True,
     conflicting_options=['verbose'],
     help='Do not print summary or progress.',
-    help_group=plugincode.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--verbose',
     is_flag=True,
     conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
          'Print verbose scan counters.',
-    help_group=plugincode.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--from-json',
     is_flag=True,
     multiple=True,
     help='Load codebase from an existing JSON scan',
-    help_group=plugincode.CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
 
 @click.option('--timing',
     is_flag=True,
     hidden=True,
     help='Collect scan timing for each scan/scanned file.',
-    help_group=plugincode.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 
 @click.option('--max-in-memory',
     type=int, default=10000,
@@ -273,69 +273,69 @@ def validate_depth(ctx, param, value):
     'number are cached on-disk rather than in memory. '
     'Use 0 to use unlimited memory and disable on-disk caching. '
     'Use -1 to use only on-disk caching.',
-    help_group=plugincode.CORE_GROUP, sort_order=300, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=300, cls=PluggableCommandLineOption)
 
 @click.option('--max-depth',
     type=int, default=0, show_default=False, callback=validate_depth,
     help='Maximum nesting depth of subdirectories to scan. '
         'Descend at most INTEGER levels of directories below and including '
         'the starting directory. Use 0 for no scan depth limit.',
-    help_group=plugincode.CORE_GROUP, sort_order=301, cls=PluggableCommandLineOption)
+    help_group=cliutils.CORE_GROUP, sort_order=301, cls=PluggableCommandLineOption)
 
 @click.help_option('-h', '--help',
-    help_group=plugincode.DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--about',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_about,
     help='Show information about ScanCode and licensing and exit.',
-    help_group=plugincode.DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--version',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_version,
     help='Show the version and exit.',
-    help_group=plugincode.DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('--examples',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_examples,
     help=('Show command examples and exit.'),
-    help_group=plugincode.DOC_GROUP, sort_order=50, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, sort_order=50, cls=PluggableCommandLineOption)
 
 @click.option('--plugins',
     is_flag=True, is_eager=True, expose_value=False,
     callback=print_plugins,
     help='Show the list of available ScanCode plugins and exit.',
-    help_group=plugincode.DOC_GROUP, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--test-mode',
     is_flag=True, default=False,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
-    help_group=plugincode.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+    help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--test-slow-mode',
     is_flag=True, default=False,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test slow mode" to ensure that --email scan needs at least one second to complete. Only for testing.',
-    help_group=plugincode.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+    help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--test-error-mode',
     is_flag=True, default=False,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help='Run ScanCode in a special "test error mode" to trigger errors with the --email scan. Only for testing.',
-    help_group=plugincode.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+    help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option('--print-options',
     is_flag=True,
     expose_value=False,
     callback=print_options,
     help='Show the list of selected options and exit.',
-    help_group=plugincode.DOC_GROUP, cls=PluggableCommandLineOption)
+    help_group=cliutils.DOC_GROUP, cls=PluggableCommandLineOption)
 
 @click.option('--keep-temp-files',
     is_flag=True, default=False,
@@ -343,7 +343,7 @@ def validate_depth(ctx, param, value):
          'are stored. (By default temporary files are deleted when a scan is '
          'completed.)',
     hidden=True,
-    help_group=plugincode.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+    help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
@@ -436,7 +436,7 @@ def scancode(ctx, input,  # NOQA
             for co in sorted(ctx.params.items()):
                 logger_debug('  scancode: ctx.params:', co)
 
-        plugincode.validate_option_dependencies(ctx)
+        cliutils.validate_option_dependencies(ctx)
         pretty_params = get_pretty_params(ctx, generic_paths=test_mode)
 
         # run proper

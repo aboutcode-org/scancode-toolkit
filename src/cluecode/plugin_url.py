@@ -31,9 +31,9 @@ from functools import partial
 
 import attr
 
-from plugincode import PluggableCommandLineOption
-from plugincode import OTHER_SCAN_GROUP
-from plugincode import SCAN_OPTIONS_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OTHER_SCAN_GROUP
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 

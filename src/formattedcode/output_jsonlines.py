@@ -32,8 +32,8 @@ import simplejson
 from commoncode.system import py2
 from commoncode.system import py3
 from formattedcode import FileOptionType
-from plugincode import OUTPUT_GROUP
-from plugincode import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 

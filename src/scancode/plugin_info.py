@@ -33,8 +33,8 @@ import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from plugincode import PluggableCommandLineOption
-from plugincode import OTHER_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OTHER_SCAN_GROUP
 
 
 @scan_impl

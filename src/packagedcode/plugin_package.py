@@ -35,9 +35,9 @@ click.disable_unicode_literals_warning = True
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from plugincode import PluggableCommandLineOption
-from plugincode import DOC_GROUP
-from plugincode import SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import DOC_GROUP
+from commoncode.cliutils import SCAN_GROUP
 
 from packagedcode import get_package_class
 from packagedcode import PACKAGE_TYPES
