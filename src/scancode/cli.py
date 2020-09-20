@@ -63,6 +63,9 @@ click.disable_unicode_literals_warning = True
 
 from six import string_types
 
+from commoncode.cliutils import BaseCommand
+from commoncode.cliutils import path_progress_message
+from commoncode.cliutils import progressmanager
 from commoncode import compat
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
@@ -94,9 +97,6 @@ from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
-from scancode.utils import BaseCommand
-from scancode.utils import path_progress_message
-from scancode.utils import progressmanager
 
 
 # Tracing flags

@@ -40,7 +40,7 @@ from commoncode.text import toascii
 from scancode_config import __version__
 from scancode.api import extract_archives
 from scancode import print_about
-from scancode import utils
+from commoncode import cliutils
 
 
 echo_stderr = partial(click.secho, err=True)
@@ -76,7 +76,7 @@ Extract a single archive. Files are extracted in the directory
 '''
 
 
-class ExtractCommand(utils.BaseCommand):
+class ExtractCommand(cliutils.BaseCommand):
     short_usage_help = '''
 Try 'extractcode --help' for help on options and arguments.'''
 
@@ -166,7 +166,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, ignore, 
 
     if not quiet:
         echo_stderr('Extracting archives...', fg='green')
-        with utils.progressmanager(extractibles,
+        with cliutils.progressmanager(extractibles,
             item_show_func=extract_event, verbose=verbose) as extraction_events:
 
             for xev in extraction_events:
