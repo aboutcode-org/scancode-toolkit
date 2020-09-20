@@ -333,18 +333,3 @@ def get_file_info(location, **kwargs):
     result['is_source'] = bool(collector.is_source)
     result['is_script'] = bool(collector.is_script)
     return result
-
-
-def extract_archives(location, recurse=True, replace_originals=False, ignore_pattern=()):
-    """
-    Yield ExtractEvent while extracting archive(s) and compressed files at
-    `location`. If `recurse` is True, extract nested archives-in-archives
-    recursively.
-    Archives and compressed files are extracted in a directory named
-    "<file_name>-extract" created in the same directory as the archive.
-    Note: this API is returning an iterable and NOT a sequence.
-    """
-    from extractcode.extract import extract
-    from extractcode import default_kinds
-    for xevent in extract(location=location, kinds=default_kinds, recurse=recurse, replace_originals=replace_originals, ignore_pattern=ignore_pattern):
-        yield xevent

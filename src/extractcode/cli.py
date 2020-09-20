@@ -27,20 +27,21 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from functools import partial
-import os
+from os import path
 
 import click
 click.disable_unicode_literals_warning = True
 
+from commoncode import cliutils
 from commoncode import compat
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode.text import toascii
 
-from scancode_config import __version__
-from scancode.api import extract_archives
-from scancode import print_about
-from commoncode import cliutils
+from extractcode.api import extract_archives
+
+
+__version__ = '2020.09.21'
 
 
 echo_stderr = partial(click.secho, err=True)
@@ -49,7 +50,37 @@ echo_stderr = partial(click.secho, err=True)
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    echo_stderr('ScanCode extractcode version ' + __version__)
+    echo_stderr('ExtractCode version ' + __version__)
+    ctx.exit()
+
+info_text = '''
+ExtractCode is a mostly universal archive and compressed files extractor, with 
+a particular focus on code archives.
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
+'''
+
+notice_path = path.join(path.abspath(path.dirname(__file__)), 'NOTICE')
+notice_text = open(notice_path).read()
+
+delimiter = '\n\n\n'
+[notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
+extra_notice_text = delimiter + extra_notice_text
+
+delimiter = '\n\n  '
+[notice_text, acknowledgment_text] = notice_text.split(delimiter, 1)
+acknowledgment_text = delimiter + acknowledgment_text
+
+notice = acknowledgment_text.strip().replace('  ', '')
+
+
+def print_about(ctx, param, value):
+    """
+    Click callback to print a notice.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+    click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
     ctx.exit()
 
 
@@ -93,17 +124,17 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.option('--ignore', default=[], multiple=True, help='Ignore files/directories following a glob-pattern.')
 
 @click.help_option('-h', '--help')
-@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
+@click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ExtractCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 def extractcode(ctx, input, verbose, quiet, shallow, replace_originals, ignore, *args, **kwargs):  # NOQA
     """extract archives and compressed files found in the <input> file or directory tree.
 
-    Use this command before scanning proper as an <input> preparation step.
     Archives found inside an extracted archive are extracted recursively.
-    Extraction is done in-place in a directory named '-extract' side-by-side with an archive.
+    Extraction for each archive is done in-place in a new directory named 
+    '<archive file name>-extract' created side-by-side with an archive.
     """
 
-    abs_location = fileutils.as_posixpath(os.path.abspath(os.path.expanduser(input)))
+    abs_location = fileutils.as_posixpath(path.abspath(path.expanduser(input)))
 
     def extract_event(item):
         """

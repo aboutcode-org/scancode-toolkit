@@ -56,8 +56,6 @@ Scan a directory for licenses and copyrights. Save scan results to an
 HTML file:
 
     scancode --license --copyright --html scancode_result.html samples/zlib
-
-To extract archives, see the 'extractcode' command instead.
 '''
 
 epilog_text = '''Examples (use --examples for more):

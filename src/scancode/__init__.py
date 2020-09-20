@@ -29,12 +29,7 @@ from __future__ import unicode_literals
 
 from collections import namedtuple
 from itertools import chain
-from os.path import dirname
-from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
-from os.path import join
-from os.path import exists
+from os import path
 
 import click
 from click.types import BoolParamType
@@ -81,7 +76,7 @@ Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 '''
 
-notice_path = join(abspath(dirname(__file__)), 'NOTICE')
+notice_path = path.join(path.abspath(path.dirname(__file__)), 'NOTICE')
 notice_text = open(notice_path).read()
 
 delimiter = '\n\n\n'
