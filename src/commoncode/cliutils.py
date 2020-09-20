@@ -28,18 +28,40 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import sys
 
 import click
 click.disable_unicode_literals_warning = True
 from click.utils import echo
 from click.termui import style
+from click.types import BoolParamType
+# FIXME: this is NOT API 
 from click._termui_impl import ProgressBar
+from six import string_types
 
 from commoncode import compat
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
 from commoncode.text import toascii
-import plugincode
+
+
+# Tracing flags
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, string_types)
+                                     and a or repr(a) for a in args))
 
 
 """
@@ -116,17 +138,17 @@ Try the '--help' option for help on options and arguments.'''
         """
         # this mapping defines the CLI help presentation order
         help_groups = OrderedDict([
-            (plugincode.SCAN_GROUP, []),
-            (plugincode.OTHER_SCAN_GROUP, []),
-            (plugincode.SCAN_OPTIONS_GROUP, []),
-            (plugincode.OUTPUT_GROUP, []),
-            (plugincode.OUTPUT_FILTER_GROUP, []),
-            (plugincode.OUTPUT_CONTROL_GROUP, []),
-            (plugincode.PRE_SCAN_GROUP, []),
-            (plugincode.POST_SCAN_GROUP, []),
-            (plugincode.CORE_GROUP, []),
-            (plugincode.MISC_GROUP, []),
-            (plugincode.DOC_GROUP, []),
+            (SCAN_GROUP, []),
+            (OTHER_SCAN_GROUP, []),
+            (SCAN_OPTIONS_GROUP, []),
+            (OUTPUT_GROUP, []),
+            (OUTPUT_FILTER_GROUP, []),
+            (OUTPUT_CONTROL_GROUP, []),
+            (PRE_SCAN_GROUP, []),
+            (POST_SCAN_GROUP, []),
+            (CORE_GROUP, []),
+            (MISC_GROUP, []),
+            (DOC_GROUP, []),
         ])
 
         for param in self.get_params(ctx):
@@ -135,7 +157,7 @@ Try the '--help' option for help on options and arguments.'''
             if not help_record:
                 continue
             # organize options by group
-            help_group = getattr(param, 'help_group', plugincode.MISC_GROUP)
+            help_group = getattr(param, 'help_group', MISC_GROUP)
             sort_order = getattr(param, 'sort_order', 100)
             help_groups[help_group].append((sort_order, help_record))
 
@@ -312,3 +334,213 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
 
     color = 'red' if errors else 'green'
     return style(prefix) + style(progress_line, fg=color)
+
+
+
+# CLI help groups
+SCAN_GROUP = 'primary scans'
+SCAN_OPTIONS_GROUP = 'scan options'
+OTHER_SCAN_GROUP = 'other scans'
+OUTPUT_GROUP = 'output formats'
+OUTPUT_CONTROL_GROUP = 'output control'
+OUTPUT_FILTER_GROUP = 'output filters'
+PRE_SCAN_GROUP = 'pre-scan'
+POST_SCAN_GROUP = 'post-scan'
+MISC_GROUP = 'miscellaneous'
+DOC_GROUP = 'documentation'
+CORE_GROUP = 'core'
+
+
+class PluggableCommandLineOption(click.Option):
+    """
+    An option with extra args and attributes to control CLI help options
+    grouping, co-required and conflicting options (e.g. mutually exclusive).
+    This option is also pluggable e.g. providable by a plugin.
+    """
+
+    # args are from Click 6.7
+    def __init__(
+        self,
+        param_decls=None,
+        show_default=False,
+        prompt=False,
+        confirmation_prompt=False,
+        hide_input=False,
+        is_flag=None,
+        flag_value=None,
+        multiple=False,
+        count=False,
+        allow_from_autoenv=True,
+        type=None,  # NOQA
+        help=None,  # NOQA
+        # custom additions #
+        # a string that set the CLI help group for this option
+        help_group=MISC_GROUP,
+        # a relative sort order number (integer or float) for this
+        # option within a help group: the sort is by increasing
+        # sort_order then by option declaration.
+        sort_order=100,
+        # a sequence of other option name strings that this option
+        # requires to be set
+        required_options=(),
+        # a sequence of other option name strings that this option
+        # conflicts with if they are set
+        conflicting_options=(),
+        # a flag set to True if this option should be hidden from the CLI help
+        hidden=False,
+        **attrs,
+    ):
+
+        super(PluggableCommandLineOption, self).__init__(param_decls, show_default,
+                     prompt, confirmation_prompt,
+                     hide_input, is_flag, flag_value,
+                     multiple, count, allow_from_autoenv,
+                     type, help, **attrs)
+
+        self.help_group = help_group
+        self.sort_order = sort_order
+        self.required_options = required_options
+        self.conflicting_options = conflicting_options
+        self.hidden = hidden
+
+    def __repr__(self, *args, **kwargs):
+        name = self.name
+        opt = self.opts[-1]
+        help_group = self.help_group
+        required_options = self.required_options
+        conflicting_options = self.conflicting_options
+
+        return ('PluggableCommandLineOption<name=%(name)r, '
+                'required_options=%(required_options)r, conflicting_options=%(conflicting_options)r>' % locals())
+
+    def validate_dependencies(self, ctx, value):
+        """
+        Validate `value` against declared `required_options` or `conflicting_options` dependencies.
+        """
+        _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
+        _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
+
+    def get_help_record(self, ctx):
+        if not self.hidden:
+            return click.Option.get_help_record(self, ctx)
+
+
+def validate_option_dependencies(ctx):
+    """
+    Validate all PluggableCommandLineOption dependencies in the `ctx` Click context.
+    Ignore eager flags.
+    """
+    values = ctx.params
+    if TRACE:
+        logger_debug('validate_option_dependencies: values:')
+        for va in sorted(values.items()):
+            logger_debug('  ', va)
+
+    for param in ctx.command.params:
+        if param.is_eager:
+            continue
+        if not isinstance(param, PluggableCommandLineOption):
+            if TRACE:
+                logger_debug('  validate_option_dependencies: skip param:', param)
+            continue
+        value = values.get(param.name)
+        if TRACE:
+            logger_debug('  validate_option_dependencies: param:', param, 'value:', value)
+        param.validate_dependencies(ctx, value)
+
+
+def _validate_option_dependencies(ctx, param, value,
+                                  other_option_names, required=False):
+    """
+    Validate the `other_option_names` option dependencies and return a
+    UsageError if the `param` `value` is set to a not-None non-default value and
+    if:
+    - `required` is True and the `other_option_names` options are not set with a
+       not-None value in the `ctx` context.
+    - `required` is False and any of the `other_option_names` options are set
+       with a not-None, non-default value in the `ctx` context.
+    """
+    if not other_option_names:
+        return
+
+    def _is_set(_value, _param):
+        if _param.type in (bool, BoolParamType):
+            return _value
+
+        if _param.multiple:
+            empty = (_value and len(_value) == 0) or not _value
+        else:
+            empty = _value is None
+
+        return bool(not empty and _value != _param.default)
+
+    is_set = _is_set(value, param)
+
+    if TRACE:
+        logger_debug()
+        logger_debug('Checking param:', param)
+        logger_debug('  value:', value, 'is_set:' , is_set)
+
+    if not is_set:
+        return
+
+    oparams_by_name = {oparam.name: oparam for oparam in ctx.command.params}
+    oparams = []
+    missing_onames = []
+
+    for oname in other_option_names:
+        oparam = oparams_by_name.get(oname)
+        if not oparam:
+            missing_onames.append(oparam)
+        else:
+            oparams.append(oparam)
+
+    if TRACE:
+        logger_debug()
+        logger_debug('  Available other params:')
+        for oparam in oparams:
+            logger_debug('    other param:', oparam)
+            logger_debug('      value:', ctx.params.get(oparam.name))
+        if required:
+            logger_debug('    missing names:', missing_onames)
+
+    if required and missing_onames:
+        opt = param.opts[-1]
+        oopts = [oparam.opts[-1] for oparam in oparams]
+        omopts = ['--' + oname.replace('_', '-') for oname in missing_onames]
+        oopts.extend(omopts)
+        oopts = ', '.join(oopts)
+        msg = ('The option %(opt)s requires the option(s) %(all_opts)s.'
+               'and is missing %(omopts)s. '
+               'You must set all of these options if you use this option.' % locals())
+        raise click.UsageError(msg)
+
+    if TRACE:
+        logger_debug()
+        logger_debug('  Checking other params:')
+
+    opt = param.opts[-1]
+
+    for oparam in oparams:
+        ovalue = ctx.params.get(oparam.name)
+        ois_set = _is_set(ovalue, oparam)
+
+        if TRACE:
+            logger_debug('    Checking oparam:', oparam)
+            logger_debug('      value:', ovalue, 'ois_set:' , ois_set)
+
+        # by convention the last opt is the long form
+        oopt = oparam.opts[-1]
+        oopts = ', '.join(oparam.opts[-1] for oparam in oparams)
+        all_opts = '%(opt)s and %(oopts)s' % locals()
+        if required and not ois_set:
+            msg = ('The option %(opt)s requires the option(s) %(oopts)s '
+                   'and is missing %(oopt)s. '
+                   'You must set all of these options if you use this option.' % locals())
+            raise click.UsageError(msg)
+
+        if not required  and ois_set:
+            msg = ('The option %(opt)s cannot be used together with the %(oopts)s option(s) '
+                   'and %(oopt)s is used. '
+                   'You can set only one of these options at a time.' % locals())
+            raise click.UsageError(msg)
