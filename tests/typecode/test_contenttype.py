@@ -976,6 +976,11 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert not contains_text(test_file)
 
+    @pytest.mark.xfail(
+        reason='This test potentially fails when typecode uses an older version of libmagic due to differences in file type detection. '
+               'This can happen in the case where the system-provided libmagic is used. '
+               'The failure is not serious.'
+    )
     def test_media_image_img(self):
         # FIXME: .img files are more complex
         test_file = self.get_test_loc('contenttype/media/Image1.img')
@@ -1082,6 +1087,11 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert not contains_text(test_file)
 
+    @pytest.mark.xfail(
+        reason='This test potentially fails when typecode uses an older version of libmagic due to differences in file type detection. '
+               'This can happen in the case where the system-provided libmagic is used. '
+               'The failure is not serious.'
+    )
     def test_media_image_windows_metafile(self):
         test_file = self.get_test_loc('contenttype/media/Image1.emf')
         assert 'application/octet-stream' == get_mimetype_file(test_file)
@@ -1202,6 +1212,11 @@ class TestContentType(FileBasedTesting):
         assert is_archive(test_file)
         assert not contains_text(test_file)
 
+    @pytest.mark.xfail(
+        reason='This test potentially fails when typecode uses an older version of libmagic due to differences in file type detection. '
+               'This can happen in the case where the system-provided libmagic is used. '
+               'The failure is not serious.'
+    )
     def test_package_rpm(self):
         test_file = self.get_test_loc('contenttype/package/wget-1.11.4-3.fc11.i586.rpm')
         assert 'rpm v3.0 bin i386/x86_64' == get_filetype(test_file)
