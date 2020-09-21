@@ -388,14 +388,14 @@ class PluggableCommandLineOption(click.Option):
         conflicting_options=(),
         # a flag set to True if this option should be hidden from the CLI help
         hidden=False,
-        **attrs,
+        **kwargs
     ):
 
         super(PluggableCommandLineOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
                      multiple, count, allow_from_autoenv,
-                     type, help, **attrs)
+                     type, help, **kwargs)
 
         self.help_group = help_group
         self.sort_order = sort_order
