@@ -68,6 +68,7 @@ While this could seem contrived at first this approach ensures that:
    For instance this applies to tools such as 7z, binutils and file.
 """
 
+
 logger = logging.getLogger(__name__)
 
 TRACE = False
@@ -77,10 +78,8 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
 # current directory is the root dir of this library
 curr_dir = path.dirname(path.dirname(path.abspath(__file__)))
-
 
 if py2:
     PATH_ENV_VAR = b'PATH'
@@ -100,11 +99,11 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
     To avoid RAM exhaustion, always write stdout and stderr streams to files.
 
     If `to_files` is False, return the content of stderr and stdout as ASCII
-    strings. Otherwise, return the locations to the stderr and stdout
-    temporary files.
+    strings. Otherwise, return the locations to the stderr and stdout temporary
+    files.
 
-    Run the command using the `cwd` current working directory with an
-    `env` dict of environment variables.
+    Run the command using the `cwd` current working directory with an `env` dict
+    of environment variables.
     """
     assert cmd_loc
     full_cmd = [cmd_loc] + (args or [])
@@ -155,7 +154,7 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False, lo
                     shell=shell,
                     # -1 defaults bufsize to system bufsize
                     bufsize=-1,
-                    universal_newlines=True
+                    universal_newlines=True,
                 )
 
                 proc = subprocess.Popen(full_cmd, **popen_args)
@@ -197,9 +196,11 @@ def get_env(base_vars=None, lib_dir=None):
             {DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
 
     if py2:
+
         # ensure that we use bytes on py2 and unicode on py3
         def to_bytes(s):
             return s if isinstance(s, bytes) else s.encode('utf-8')
+
         env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
     else:
         env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
@@ -240,7 +241,8 @@ def close(proc):
 
 def load_shared_library(dll_path, lib_dir):
     """
-    Return the loaded shared library object from the dll_path and adding `lib_dir` to the path.
+    Return the loaded shared library object from the dll_path and adding
+    `lib_dir` to the path.
     """
 
     if not path.exists(dll_path):
@@ -264,17 +266,22 @@ def load_shared_library(dll_path, lib_dir):
             lib = ctypes.CDLL(dll_path)
     except OSError as e:
         from pprint import pformat
+        import traceback
         msgs = tuple([
             'ctypes.CDLL(dll_path): {}'.format(dll_path),
+            'lib_dir: {}'.format(lib_dir),
             'os.environ:\n{}'.format(pformat(dict(os.environ))),
+            traceback.format_exc(),
         ])
         e.args = tuple(e.args + msgs)
-        raise
+        raise e
 
     if lib and lib._name:
         return lib
 
-    raise ImportError('Failed to load shared library with ctypes: %(dll_path)r and lib_dir:  %(lib_dir)r' % locals())
+    raise ImportError(
+        'Failed to load shared library with ctypes: %(dll_path)r and lib_dir: '
+        '%(lib_dir)r' % locals())
 
 
 @contextlib.contextmanager
@@ -342,4 +349,3 @@ def update_path_var(existing_path_var, new_path, pathsep=PATH_ENV_SEP):
     # at this stage new_path_env is unicode on all OSes on Py3
     # and on Py2 it is bytes on Linux and unicode elsewhere
     return updated_path_var
-
