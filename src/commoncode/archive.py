@@ -30,6 +30,7 @@ from __future__ import unicode_literals
 from functools import partial
 import os
 from os import path
+import gzip
 import tarfile
 import zipfile
 
@@ -155,3 +156,13 @@ def tar_can_extract(tarinfo, verbatim):
 
     if include and not exclude:
         return True
+
+
+def get_gz_compressed_file_content(location):
+    """
+    Uncompress a compressed file at `location` and return its content as a byte
+    string. Raise Exceptions on errors.
+    """
+    with gzip.GzipFile(location, 'rb') as compressed:
+        content = compressed.read()
+    return content
