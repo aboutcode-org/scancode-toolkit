@@ -29,16 +29,13 @@ from __future__ import unicode_literals
 
 from collections import defaultdict
 import filecmp
-from functools import partial
 from itertools import chain
 import os
 from os import path
 import shutil
 import stat
 import sys
-import tarfile
 from unittest import TestCase as TestCaseClass
-import zipfile
 
 from commoncode import fileutils
 from commoncode import filetype
@@ -46,6 +43,12 @@ from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py2
+from commoncode.archive import extract_tar
+from commoncode.archive import extract_tar_raw
+from commoncode.archive import extract_tar_uni
+from commoncode.archive import extract_zip
+from commoncode.archive import extract_zip_raw
+from commoncode.archive import tar_can_extract  # NOQA
 
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
@@ -265,116 +268,6 @@ class FileDrivenTesting(object):
 
     def extract_test_tar_unicode(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_tar_uni)
-
-
-def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
-    """
-    Raw simplified extract for certain really weird paths and file
-    names.
-    """
-    if to_bytes and py2:
-        # use bytes for paths on ALL OSes (though this may fail on macOS)
-        target_dir = fileutils.fsencode(target_dir)
-        test_path = fileutils.fsencode(test_path)
-    tar = tarfile.open(test_path)
-    tar.extractall(path=target_dir)
-    tar.close()
-
-
-extract_tar_raw = partial(_extract_tar_raw, to_bytes=True)
-
-extract_tar_uni = partial(_extract_tar_raw, to_bytes=False)
-
-
-def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
-    """
-    Extract a tar archive at location in the target_dir directory.
-    If `verbatim` is True preserve the permissions.
-    """
-    # always for using bytes for paths on all OSses... tar seems to use bytes internally
-    # and get confused otherwise
-    location = fileutils.fsencode(location)
-    if on_linux and py2:
-        target_dir = fileutils.fsencode(target_dir)
-
-    with open(location, 'rb') as input_tar:
-        tar = None
-        try:
-            tar = tarfile.open(fileobj=input_tar)
-            tarinfos = tar.getmembers()
-            to_extract = []
-            for tarinfo in tarinfos:
-                if tar_can_extract(tarinfo, verbatim):
-                    if not verbatim:
-                        tarinfo.mode = 0o755
-                    to_extract.append(tarinfo)
-            tar.extractall(target_dir, members=to_extract)
-        finally:
-            if tar:
-                tar.close()
-
-
-def extract_zip(location, target_dir, *args, **kwargs):
-    """
-    Extract a zip archive file at location in the target_dir directory.
-    """
-    if not path.isfile(location) and zipfile.is_zipfile(location):
-        raise Exception('Incorrect zip file %(location)r' % locals())
-
-    if on_linux and py2:
-        location = fileutils.fsencode(location)
-        target_dir = fileutils.fsencode(target_dir)
-
-    with zipfile.ZipFile(location) as zipf:
-        for info in zipf.infolist():
-            name = info.filename
-            content = zipf.read(name)
-            target = path.join(target_dir, name)
-            if not path.exists(path.dirname(target)):
-                os.makedirs(path.dirname(target))
-            if not content and target.endswith(path.sep):
-                if not path.exists(target):
-                    os.makedirs(target)
-            if not path.exists(target):
-                with open(target, 'wb') as f:
-                    f.write(content)
-
-
-def extract_zip_raw(location, target_dir, *args, **kwargs):
-    """
-    Extract a zip archive file at location in the target_dir directory.
-    Use the builtin extractall function
-    """
-    if not path.isfile(location) and zipfile.is_zipfile(location):
-        raise Exception('Incorrect zip file %(location)r' % locals())
-
-    if on_linux and py2:
-        location = fileutils.fsencode(location)
-        target_dir = fileutils.fsencode(target_dir)
-
-    with zipfile.ZipFile(location) as zipf:
-        zipf.extractall(path=target_dir)
-
-
-def tar_can_extract(tarinfo, verbatim):
-    """
-    Return True if a tar member can be extracted to handle OS specifics.
-    If verbatim is True, always return True.
-    """
-    if tarinfo.ischr():
-        # never extract char devices
-        return False
-
-    if verbatim:
-        # extract all on all OSse
-        return True
-
-    # FIXME: not sure hard links are working OK on Windows
-    include = tarinfo.type in tarfile.SUPPORTED_TYPES
-    exclude = tarinfo.isdev() or (on_windows and tarinfo.issym())
-
-    if include and not exclude:
-        return True
 
 
 class FileBasedTesting(TestCaseClass, FileDrivenTesting):
