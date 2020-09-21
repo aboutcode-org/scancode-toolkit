@@ -30,6 +30,7 @@ from functools import partial
 import gzip
 import logging
 import os
+import shutil
 
 try:
     # These imports add support for multistream BZ2 files
@@ -68,7 +69,7 @@ def uncompress(location, target_dir, decompressor, suffix=EXTRACT_SUFFIX):
     target_location = os.path.join(target_dir, os.path.basename(location) + suffix)
     if os.path.exists(target_location):
         fileutils.delete(target_location)
-    os.rename(tmp_loc, target_location)
+    shutil.move(tmp_loc, target_location)
     return warnings
 
 
