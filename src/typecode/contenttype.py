@@ -377,9 +377,9 @@ class Type(object):
 
         self._is_archive = False
         if on_linux and py2:
-            docx_type_end = b''2007+''
+            docx_type_end = b'2007+'
         else:
-            docx_type_end = u''2007+''
+            docx_type_end = u'2007+'
 
         ft = self.filetype_file.lower()
 
