@@ -32,12 +32,12 @@ from functools import partial
 
 import attr
 
+from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
-from scancode import MISC_GROUP
-from scancode import SCAN_OPTIONS_GROUP
-from scancode import SCAN_GROUP
+from commoncode.cliutils import MISC_GROUP
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
+from commoncode.cliutils import SCAN_GROUP
 from scancode.api import DEJACODE_LICENSE_URL
 
 
@@ -69,41 +69,41 @@ class LicenseScanner(ScanPlugin):
     sort_order = 2
 
     options = [
-        CommandLineOption(('-l', '--license'),
+        PluggableCommandLineOption(('-l', '--license'),
             is_flag=True,
             help='Scan <input> for licenses.',
             help_group=SCAN_GROUP,
             sort_order=10),
 
-        CommandLineOption(('--license-score',),
+        PluggableCommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
             required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(('--license-text',),
+        PluggableCommandLineOption(('--license-text',),
             is_flag=True,
             required_options=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(('--license-text-diagnostics',),
+        PluggableCommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
             required_options=['license_text'],
             help='In the matched license text, include diagnostic highlights '
                  'surrounding with square brackets [] words that are not matched.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(('--license-url-template',),
+        PluggableCommandLineOption(('--license-url-template',),
             default=DEJACODE_LICENSE_URL, show_default=True,
             required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(('--license-diag',),
-            # not yet supported in Click 6.7 but added in CommandLineOption
+        PluggableCommandLineOption(('--license-diag',),
+            # not yet supported in Click 6.7 but added in PluggableCommandLineOption
             hidden=True,
             is_flag=True,
             required_options=['license'],
@@ -111,7 +111,7 @@ class LicenseScanner(ScanPlugin):
             'Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        CommandLineOption(
+        PluggableCommandLineOption(
             ('--reindex-licenses',),
             is_flag=True, is_eager=True,
             callback=reindex_licenses,

@@ -37,10 +37,10 @@ import pytest
 from scancode_config import __version__
 
 from commoncode import fileutils
+from commoncode.resource import VirtualCodebase
 from commoncode.testcase import FileDrivenTesting
 from formattedcode.output_html import HtmlOutput
 from scancode.cli_test_utils import run_scan_click
-from scancode.resource import VirtualCodebase
 
 
 test_env = FileDrivenTesting()

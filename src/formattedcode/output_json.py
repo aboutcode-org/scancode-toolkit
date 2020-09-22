@@ -30,14 +30,13 @@ from collections import OrderedDict
 import simplejson
 from six import string_types
 
-from commoncode import compat
 from commoncode.system import py2
 from commoncode.system import py3
+from formattedcode import FileOptionType
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
-from scancode import FileOptionType
-from scancode import OUTPUT_GROUP
 
 
 """
@@ -84,7 +83,7 @@ if py3:
 class JsonCompactOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json', 'output_json',),
+        PluggableCommandLineOption(('--json', 'output_json',),
             type=FileOptionType(mode=mode, lazy=True),
             metavar='FILE',
             help='Write scan output as compact JSON to FILE.',
@@ -104,7 +103,7 @@ class JsonCompactOutput(OutputPlugin):
 class JsonPrettyOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json-pp', 'output_json_pp',),
+        PluggableCommandLineOption(('--json-pp', 'output_json_pp',),
             type=FileOptionType(mode=mode, lazy=True),
             metavar='FILE',
             help='Write scan output as pretty-printed JSON to FILE.',

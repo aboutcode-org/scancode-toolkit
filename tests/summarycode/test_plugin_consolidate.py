@@ -87,7 +87,7 @@ class TestConsolidate(FileDrivenTesting):
 
     def test_get_package_resources_on_nested_packages_should_include_manifest(self):
         from packagedcode import get_package_instance
-        from scancode.resource import VirtualCodebase
+        from commoncode.resource import VirtualCodebase
         scan_file = self.get_scan('plugin_consolidate/nested-packages', cli_options='-p')
         codebase = VirtualCodebase(scan_file)
         for resource in codebase.walk():

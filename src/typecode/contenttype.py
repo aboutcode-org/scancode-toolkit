@@ -51,6 +51,7 @@ from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode import text
 from typecode import entropy
+from typecode import extractible
 from typecode import magic2
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
 from typecode.pygments_lexers import get_lexer_for_filename
@@ -373,46 +374,55 @@ class Type(object):
         """
         if self._is_archive is not None:
             return self._is_archive
-        self._is_archive = False
 
-        from extractcode import archive
+        self._is_archive = False
+        if on_linux and py2:
+            docx_type_end = b'2007+'
+        else:
+            docx_type_end = u'2007+'
 
         ft = self.filetype_file.lower()
-        can_extract = bool(archive.can_extract(self.location))
-        if on_linux and py2:
-            docx_ext = b'x'
-        else:
-            docx_ext = u'x'
 
         if self.is_text:
             self._is_archive = False
-
-        elif self.filetype_file.lower().startswith('gem image data'):
+        elif ft.startswith('gem image data'):
             self._is_archive = False
-
-        elif (self.is_compressed
-            or 'archive' in ft
-            or can_extract
-            or self.is_package
-            or self.is_filesystem
-            or (self.is_office_doc and self.location.endswith(docx_ext))
+        elif self.is_compressed:
+            self._is_archive = True
+        elif 'archive' in ft:
+            self._is_archive = True
+        elif  self.is_package:
+            self._is_archive = True
+        elif self.is_filesystem:
+            self._is_archive = True
+        elif self.is_office_doc and ft.endswith(docx_type_end):
+            self._is_archive = True
+        elif '(zip)' in ft:
             # FIXME: is this really correct???
-            or '(zip)' in ft):
-                self._is_archive = True
+            self._is_archive = True
+        elif extractible.can_extract(self.location):
+            self._is_archive = True
 
         return self._is_archive
 
     @property
     def is_office_doc(self):
         loc = self.location.lower()
-        # FIXME: add open office extensions
+        # FIXME: add open office extensions and other extensions for other docs
+        msoffice_exts = (
+            u'.doc', u'.docx',
+            u'.xlsx', u'.xlsx',
+            u'.ppt', u'.pptx',
+        )
 
-        msoffice_exts = u'.doc', u'.docx', u'.xlsx', u'.xlsx', u'.ppt', u'.pptx'
         if on_linux and py2:
             msoffice_exts = as_bytes(msoffice_exts)
         if loc.endswith(msoffice_exts):
             return True
         else:
+            ft = self.filetype_file.lower()
+            if ft.startswith('microsoft') and ft.endswith('2007+'):
+                return True
             return False
 
     @property
@@ -503,7 +513,7 @@ class Type(object):
         else:
             tga_ext = u'.tga'
 
-        if ft == 'data' and mt=='application/octet-stream' and self.location.lower().endswith(tga_ext):
+        if ft == 'data' and mt == 'application/octet-stream' and self.location.lower().endswith(tga_ext):
             # there is a regression in libmagic 5.38 https://bugs.astron.com/view.php?id=161
             # this is a targe image
             return True

@@ -33,7 +33,7 @@ from commoncode.fileset import is_included
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import load_json_result
 from scancode.plugin_ignore import ProcessIgnore
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 
 
 class TestPluginIgnoreFiles(FileDrivenTesting):

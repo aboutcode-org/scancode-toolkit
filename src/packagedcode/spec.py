@@ -26,11 +26,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import csv
-import glob
 import io
 import logging
-import os
 import re
 
 from gemfileparser import GemfileParser

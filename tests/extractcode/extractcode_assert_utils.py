@@ -183,9 +183,6 @@ class BaseArchiveTestCase(FileBasedTesting):
         else:
             extractors = archive.get_extractors(test_loc)
 
-        # import typecode
-        # ft = 'TODO' or typecode.contenttype.get_type(test_loc).filetype_file
-        # mt = 'TODO' or typecode.contenttype.get_type(test_loc).mimetype_file
         fe = fileutils.file_extension(test_loc).lower()
         em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
 

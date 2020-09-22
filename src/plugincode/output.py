@@ -37,11 +37,11 @@ except ImportError:
 
 from six import string_types
 
+from commoncode.resource import Resource
 from plugincode import CodebasePlugin
 from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
-from scancode.resource import Resource
 
 
 # Tracing flags

@@ -36,7 +36,6 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from commoncode.system import on_windows_64
 from commoncode.system import py2
 
 from typecode.contenttype import get_filetype
@@ -44,7 +43,6 @@ from typecode.contenttype import get_pygments_lexer
 from typecode.contenttype import get_type
 from typecode.contenttype import is_data as contenttype_is_data
 from typecode.contenttype import is_standard_include
-
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
@@ -195,6 +193,33 @@ class TestContentType(FileBasedTesting):
     def test_archive_gz(self):
         test_file = self.get_test_loc('contenttype/archive/file_4.26-1.diff.gz')
         assert get_filetype(test_file).startswith('gzip compressed data')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+
+    def test_archive_tar_xz(self):
+        test_file = self.get_test_loc('contenttype/archive/test.tar.xz')
+        assert get_filetype(test_file).startswith('xz compressed data')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+
+    def test_archive_tar_lzma(self):
+        test_file = self.get_test_loc('contenttype/archive/test.tar.lzma')
+        assert get_filetype(test_file).startswith('lzma compressed data')
+        assert is_binary(test_file)
+        assert is_archive(test_file)
+        assert is_compressed(test_file)
+        assert not contains_text(test_file)
+        assert '' == get_filetype_pygment(test_file)
+
+    def test_archive_zip(self):
+        test_file = self.get_test_loc('contenttype/archive/test.zip')
+        assert get_filetype(test_file).startswith('zip archive data')
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
@@ -750,17 +775,17 @@ class TestContentType(FileBasedTesting):
         assert not is_binary(test_file)
         assert 'HTML' == get_pygments_lexer(test_file).name
 
-    def test_doc_office_word(self):
+    def test_doc_office_word_docx_2007_without_extension(self):
         test_file = self.get_test_loc('contenttype/doc/office/document')
-        assert not is_archive(test_file)
+        assert is_archive(test_file)
         assert 'microsoft word 2007+' == get_filetype(test_file)
 
-    def test_doc_office_word_2(self):
+    def test_doc_office_word_docx_2007_with_incorrect_extension(self):
         test_file = self.get_test_loc('contenttype/doc/office/document.doc')
-        assert not is_archive(test_file)
+        assert is_archive(test_file)
         assert 'microsoft word 2007+' == get_filetype(test_file)
 
-    def test_doc_office_word_3(self):
+    def test_doc_office_msword_ole(self):
         test_file = self.get_test_loc('contenttype/doc/office/word.doc')
         assert not is_special(test_file)
         assert '' == get_filetype_pygment(test_file)
@@ -768,18 +793,10 @@ class TestContentType(FileBasedTesting):
         assert get_filetype(test_file).startswith('composite document file v2 document')
         assert get_filetype_file(test_file).startswith('Composite Document File V2 Document')
 
-    def test_docx_office_word(self):
+    def test_doc_office_word_docx_2007(self):
         test_file = self.get_test_loc('contenttype/doc/office/word.docx')
         assert 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' == get_mimetype_file(test_file)
         assert 'microsoft word 2007+' == get_filetype(test_file)
-        assert is_archive(test_file)
-        assert is_compressed(test_file)
-        assert not contains_text(test_file)
-
-    def test_pptx_office_is_archive(self):
-        test_file = self.get_test_loc('contenttype/doc/office/power.pptx')
-        assert 'application/vnd.openxmlformats-officedocument.presentationml.presentation' == get_mimetype_file(test_file)
-        assert 'microsoft powerpoint 2007+' == get_filetype(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -795,10 +812,14 @@ class TestContentType(FileBasedTesting):
     def test_doc_office_excel_xls(self):
         test_file = self.get_test_loc('contenttype/doc/office/excel.xls')
         assert 'application/vnd.ms-excel' == get_mimetype_file(test_file)
+        ft = get_filetype(test_file)
+        assert ft.startswith('composite document file v2 document')
+        assert 'microsoft excel' in ft
 
-    def test_doc_office_powerpoint_pptx(self):
+    def test_doc_office_pptx_is_archive(self):
         test_file = self.get_test_loc('contenttype/doc/office/power.pptx')
         assert 'application/vnd.openxmlformats-officedocument.presentationml.presentation' == get_mimetype_file(test_file)
+        assert 'microsoft powerpoint 2007+' == get_filetype(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
         assert not contains_text(test_file)
@@ -806,12 +827,18 @@ class TestContentType(FileBasedTesting):
     def test_doc_office_powerpoint_ppt(self):
         test_file = self.get_test_loc('contenttype/doc/office/power.ppt')
         assert 'application/vnd.ms-powerpoint' == get_mimetype_file(test_file)
+        ft = get_filetype(test_file)
+        assert ft.startswith('composite document file v2 document')
+        assert 'microsoft office powerpoint' in ft
 
     def test_doc_office_visio(self):
         test_file = self.get_test_loc('contenttype/doc/office/Glitch-ERD.vsd')
         assert 'application/vnd.ms-office' == get_mimetype_file(test_file)
         assert not is_text(test_file)
         assert is_binary(test_file)
+        ft = get_filetype(test_file)
+        assert ft.startswith('composite document file v2 document')
+        assert 'microsoft visio' in ft
 
     def test_doc_pdf_1(self):
         test_file = self.get_test_loc('contenttype/doc/pdf/a.pdf')
@@ -841,7 +868,7 @@ class TestContentType(FileBasedTesting):
         assert not is_binary(test_file)
         assert not is_media(test_file)
 
-    #@pytest.mark.xfail(on_windows or on_mac, reason='Somehow we have incorrect results on win63 with libmagic 5.38: '
+    # @pytest.mark.xfail(on_windows or on_mac, reason='Somehow we have incorrect results on win63 with libmagic 5.38: '
     #   'application/octet-stream instead of EPS')
     def test_doc_postscript_eps(self):
         test_file = self.get_test_loc('contenttype/doc/postscript/Image1.eps')

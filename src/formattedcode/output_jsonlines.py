@@ -31,11 +31,11 @@ import simplejson
 
 from commoncode.system import py2
 from commoncode.system import py3
-from plugincode.output import output_impl
+from formattedcode import FileOptionType
+from commoncode.cliutils import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
-from scancode import FileOptionType
-from scancode import OUTPUT_GROUP
+from plugincode.output import output_impl
 
 """
 Output plugin to write scan results as JSON lines.
@@ -63,7 +63,7 @@ if py3:
 class JsonLinesOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json-lines', 'output_json_lines',),
+        PluggableCommandLineOption(('--json-lines', 'output_json_lines',),
             type=FileOptionType(mode=mode, lazy=True),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',

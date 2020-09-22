@@ -37,9 +37,8 @@ import saneyaml
 from packageurl import PackageURL
 from six import string_types
 
+from commoncode import archive
 from commoncode import fileutils
-from extractcode import archive
-from extractcode.uncompress import get_gz_compressed_file_content
 from packagedcode import models
 from packagedcode.gemfile_lock import GemfileLockParser
 from packagedcode.spec import Spec
@@ -251,10 +250,7 @@ def get_gem_metadata(location):
         # Extract first level of tar archive
         extract_loc = fileutils.get_temp_dir(prefix='scancode-extract-')
         abs_location = abspath(expanduser(location))
-        warnings = archive.extract_tar(abs_location, extract_loc) or []
-        if warnings:
-            raise Exception('Failed to extract RubyGem .gem file.\n' + '\n'.join(warnings))
-
+        archive.extract_tar(abs_location, extract_loc)
 
         # The gzipped metadata is the second level of archive.
         metadata = os.path.join(extract_loc, 'metadata')
@@ -266,9 +262,7 @@ def get_gem_metadata(location):
                 content = met.read()
 
         elif os.path.exists(metadata_gz):
-            content, warnings = get_gz_compressed_file_content(metadata_gz)
-            if warnings:
-                raise Exception('Failed to extract RubyGem .gem/metadata.gz file.\n' + '\n'.join(warnings))
+            content= archive.get_gz_compressed_file_content(metadata_gz)
 
         else:
             raise Exception('No gem metadata found in RubyGem .gem file.')

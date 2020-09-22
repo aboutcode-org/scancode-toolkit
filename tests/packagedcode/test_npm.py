@@ -31,7 +31,7 @@ import os.path
 from commoncode.system import py2
 from commoncode.system import py3
 from packagedcode import npm
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 from packages_test_utils import PackageTester
 
 

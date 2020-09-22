@@ -30,9 +30,36 @@ from collections import defaultdict
 from collections import OrderedDict
 import sys
 
+import click
+from click.types import BoolParamType
 from pluggy import HookimplMarker
 from pluggy import HookspecMarker
 from pluggy import PluginManager as PluggyPluginManager
+from six import string_types
+
+from commoncode import cliutils
+
+# Tracing flags
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, string_types)
+                                     and a or repr(a) for a in args))
+
+
+class PlugincodeError(Exception):
+    """Base exception for plugincode errors"""
 
 
 class BasePlugin(object):
@@ -61,7 +88,7 @@ class BasePlugin(object):
     # is determined by the sort_order then the plugin name
     resource_attributes = OrderedDict()
 
-    # List of CommandLineOption CLI options for this plugin.
+    # List of PluggableCommandLineOption CLI options for this plugin.
     # Subclasses should set this as needed
     options = []
 
@@ -72,7 +99,7 @@ class BasePlugin(object):
     required_plugins = []
 
     # A list of Codebase attribute name strings that this plugin need to
-    # be able to run. 
+    # be able to run.
     # A ScanCode run will fail with an error if these attributes are not
     # provided either as part of the scan data if resuing an existing scan or by
     # another plugin.
@@ -87,7 +114,7 @@ class BasePlugin(object):
     # Subclasses should set this as needed.
     required_resource_attributes = []
 
-    # A relative sort order number (integer or float). 
+    # A relative sort order number (integer or float).
     # This is used to compute the order in which a plugin runs before
     # another plugin in a given stage
     # This is also used in scan results, results from scanners are sorted by
@@ -189,9 +216,8 @@ class PluginManager(object):
         for stage, manager in cls.managers.items():
             mgr_setup = manager.setup()
             if not mgr_setup:
-                from scancode import ScancodeError
-                msg = 'Cannot load ScanCode plugins for stage: %(stage)s' % locals()
-                raise ScancodeError(msg)
+                msg = 'Cannot load plugins for stage: %(stage)s' % locals()
+                raise PlugincodeError(msg)
             mplugin_classes, mplugin_options = mgr_setup
             plugin_classes.extend(mplugin_classes)
             plugin_options.extend(mplugin_options)
@@ -203,15 +229,12 @@ class PluginManager(object):
         all plugin classes).
 
         Load and validate available plugins for this PluginManager from its
-        assigned `entrypoint`. Raise a ScancodeError if a plugin is not valid such
+        assigned `entrypoint`. Raise a PlugincodeError if a plugin is not valid such
         that when it does not subcclass the manager `plugin_base_class`.
         Must be called once to setup the plugins of this manager.
         """
         if self.initialized:
             return
-
-        # FIXME: this should be part of the plugincode tree
-        from scancode import CommandLineOption
 
         entrypoint = self.entrypoint
         try:
@@ -228,18 +251,16 @@ class PluginManager(object):
             if not issubclass(plugin_class, self.plugin_base_class):
                 qname = '%(stage)s:%(name)s' % locals()
                 plugin_base_class = self.plugin_base_class
-                from scancode import ScancodeError #NOQA
-                raise ScancodeError(
+                raise PlugincodeError(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())
 
             for option in plugin_class.options:
-                if not isinstance(option, CommandLineOption):
+                if not isinstance(option, cliutils.PluggableCommandLineOption):
                     qname = '%(stage)s:%(name)s' % locals()
                     oname = option.name
-                    clin = CommandLineOption
-                    from scancode import ScancodeError #NOQA
-                    raise ScancodeError(
+                    clin = cliutils.PluggableCommandLineOption
+                    raise PlugincodeError(
                         'Invalid plugin: %(qname)r: option %(oname)r '
                         'must extend %(clin)r.' % locals())
                 plugin_options.append(option)

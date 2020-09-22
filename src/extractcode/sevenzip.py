@@ -50,9 +50,10 @@ from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
 
 if py3:
-    from shlex import quote as shlex_quote
+    from shlex import quote as shlex_quote  # NOQA
 else:
-    from pipes import quote as shlex_quote
+    from pipes import quote as shlex_quote  # NOQA
+
 
 """
 Low level support for p/7zip-based archive extraction.
@@ -375,7 +376,7 @@ def extract_file_by_file(location, target_dir, arch_type='*', skip_symlinks=True
 
     errors = {}
     warnings = {}
-    tmp_dir = fileutils.get_temp_dir(prefix='scancode-7zip-')
+    tmp_dir = fileutils.get_temp_dir(prefix='extractcode-extract-')
     for i, entry in enumerate(entries):
 
         if not entry.is_file:
@@ -617,7 +618,7 @@ def parse_7z_listing(location, utf=False):
             second_line = lines.pop(1)
             first_line = line_sep.join([first_line, second_line])
             lines[0] = first_line
-        
+
         dangling_lines = [line  for line in lines if kv_sep not in line]
         entry_errors = []
         if dangling_lines:
@@ -673,7 +674,7 @@ class Entry(object):
 
     def to_dict(self, full=False):
         data = attr.asdict(self)
-        #data.pop('errors', None)
+        # data.pop('errors', None)
         if not full:
             data.pop('date', None)
         return data

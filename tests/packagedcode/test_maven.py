@@ -40,7 +40,7 @@ from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 
 
 if py2:

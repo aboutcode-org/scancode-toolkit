@@ -32,10 +32,10 @@ from itertools import chain
 import attr
 from six import string_types
 
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
 
 
 def logger_debug(*args):
@@ -65,7 +65,7 @@ class RedundantCluesFilter(PostScanPlugin):
     sort_order = 1
 
     options = [
-        CommandLineOption(('--filter-clues',),
+        PluggableCommandLineOption(('--filter-clues',),
             is_flag=True, default=False,
             help='Filter redundant duplicated clues already contained in '
                  'detected license and copyright texts and notices.',

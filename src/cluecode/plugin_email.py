@@ -31,11 +31,11 @@ from functools import partial
 
 import attr
 
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
-from scancode import OTHER_SCAN_GROUP
-from scancode import SCAN_OPTIONS_GROUP
+from commoncode.cliutils import OTHER_SCAN_GROUP
 
 
 @scan_impl
@@ -48,12 +48,12 @@ class EmailScanner(ScanPlugin):
     sort_order = 8
 
     options = [
-        CommandLineOption(('-e', '--email',),
+        PluggableCommandLineOption(('-e', '--email',),
             is_flag=True, default=False,
             help='Scan <input> for emails.',
             help_group=OTHER_SCAN_GROUP),
 
-        CommandLineOption(('--max-email',),
+        PluggableCommandLineOption(('--max-email',),
             type=int, default=50,
             metavar='INT',
             show_default=True,

@@ -32,8 +32,8 @@ from six import string_types
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 
 
 # Set to True to enable debug tracing
@@ -70,7 +70,7 @@ class IsLicenseText(PostScanPlugin):
     sort_order = 80
 
     options = [
-        CommandLineOption(('--is-license-text',),
+        PluggableCommandLineOption(('--is-license-text',),
             is_flag=True, default=False,
             required_options=['info', 'license_text'],
             help='Set the "is_license_text" flag to true for files that contain '

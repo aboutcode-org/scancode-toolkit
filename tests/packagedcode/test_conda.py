@@ -31,7 +31,7 @@ from collections import OrderedDict
 
 from packages_test_utils import PackageTester
 from packagedcode import conda
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 
 
 class TestConda(PackageTester):

@@ -789,7 +789,7 @@ def check_timings(expected, file_results):
 
 @pytest.mark.scanslow
 def test_summary_counts_when_using_disk_cache():
-    test_file = test_env.get_test_loc('resource/samples')
+    test_file = test_env.get_test_loc('summaries/counts')
     result_file = test_env.get_temp_file('json')
     args = ['--info', '-n', '-1', '--max-in-memory', '-1', test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=0)
@@ -797,7 +797,7 @@ def test_summary_counts_when_using_disk_cache():
 
 
 def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files():
-    test_file = test_env.get_test_loc('resource/client')
+    test_file = test_env.get_test_loc('summaries/client')
     result_file = test_env.get_temp_file('json')
     args = ['--info', '-n', '-1', '--ignore', '*.gif', '--max-in-memory=1', test_file, '--json', result_file]
     run_scan_click(args, expected_rc=0)
@@ -805,10 +805,10 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
 
 def test_get_displayable_summary():
     from scancode.cli import get_displayable_summary
-    from scancode.resource import Codebase
+    from commoncode.resource import Codebase
 
     # Set up test codebase
-    test_codebase = test_env.get_test_loc('resource/client')
+    test_codebase = test_env.get_test_loc('summaries/client')
     codebase = Codebase(test_codebase, strip_root=True)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
@@ -836,10 +836,10 @@ def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     import sys
 
     from scancode.cli import display_summary
-    from scancode.resource import Codebase
+    from commoncode.resource import Codebase
 
     # Set up test codebase
-    test_codebase = test_env.get_test_loc('resource/client')
+    test_codebase = test_env.get_test_loc('summaries/client')
     codebase = Codebase(test_codebase, strip_root=True)
     codebase.timings['scan'] = 0
     scan_names = 'foo, bar, baz'
@@ -919,14 +919,32 @@ def test_scan_errors_out_without_an_input_path():
 
 
 def test_merge_multiple_scans():
-    test_file_1 = test_env.get_test_loc('resource/virtual_codebase/sample.json')
-    test_file_2 = test_env.get_test_loc('resource/virtual_codebase/thirdparty.json')
+    test_file_1 = test_env.get_test_loc('merge_scans/sample.json')
+    test_file_2 = test_env.get_test_loc('merge_scans/thirdparty.json')
     result_file = test_env.get_temp_file('json')
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
-    expected = test_env.get_test_loc('resource/virtual_codebase/out.json')
+    expected = test_env.get_test_loc('merge_scans/expected.json')
     with open(expected, read_mode) as f:
         expected_files = json.loads(f.read())['files']
     with open(result_file, read_mode) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
+
+
+def test_VirtualCodebase_output_with_from_json_is_same_as_original():
+    test_file = test_env.get_test_loc('virtual_idempotent/codebase.json')
+    result_file = test_env.get_temp_file('json')
+    args = ['--from-json', test_file, '--json-pp', result_file]
+    run_scan_click(args)
+    expected = load_json_result(test_file, remove_file_date=True)
+    results = load_json_result(result_file, remove_file_date=True)
+
+    expected.pop('summary', None)
+    results.pop('summary', None)
+
+    expected_headers = expected.pop('headers', [])
+    results_headers = results.pop('headers', [])
+
+    assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
+    assert len(results_headers) == len(expected_headers) + 1

@@ -40,6 +40,7 @@ from os.path import join
 import click
 import simplejson
 
+from commoncode import compat
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
@@ -51,13 +52,11 @@ from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
 from commoncode.system import py2
 from commoncode.system import py3
-
+from formattedcode import FileOptionType
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
-from scancode import FileOptionType
-from scancode import OUTPUT_GROUP
-from commoncode import compat
 
 """
 Output plugins to write scan results using templates such as HTML.
@@ -73,7 +72,7 @@ TEMPLATES_DIR = join(dirname(__file__), 'templates')
 class HtmlOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--html',),
+        PluggableCommandLineOption(('--html',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as HTML to FILE.',
@@ -96,7 +95,7 @@ class HtmlOutput(OutputPlugin):
 class CustomTemplateOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--custom-output',),
+        PluggableCommandLineOption(('--custom-output',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             required_options=['custom_template'],
             metavar='FILE',
@@ -105,7 +104,7 @@ class CustomTemplateOutput(OutputPlugin):
             help_group=OUTPUT_GROUP,
             sort_order=60),
 
-        CommandLineOption(('--custom-template',),
+        PluggableCommandLineOption(('--custom-template',),
             type=click.Path(
                 exists=True, file_okay=True, dir_okay=False,
                 readable=True, path_type=PATH_TYPE),
@@ -250,7 +249,7 @@ class HtmlAppOutput(OutputPlugin):
     Write scan output as a mini HTML application.
     """
     options = [
-        CommandLineOption(('--html-app',),
+        PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='(DEPRECATED: use the ScanCode Workbench app instead ) '
