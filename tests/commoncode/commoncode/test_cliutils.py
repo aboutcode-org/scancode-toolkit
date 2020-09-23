@@ -60,7 +60,6 @@ class TestUtils(FileDrivenTesting):
         result = runner.invoke(mycli)
         assert result.exit_code == 0
         expected = '''Start
-xyz
 End
 '''
         assert expected == result.output
