@@ -1,3 +1,4 @@
-A Simple Python Project Skeleton
-================================
-Note: configure script requires src/ directory to run correctly.
+commoncode
+==========
+A set of common functions and utilities for handling various things like paths, dates,
+files and hashes
