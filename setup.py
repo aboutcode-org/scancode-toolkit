@@ -178,6 +178,7 @@ setup(
         'pycryptodome >= 3.4',
 
         # typecode
+        'typecode',
         'binaryornot >= 0.4.0',
         'chardet >= 3.0.0, <4.0.0',
         # note that we use a short version range because we use a simpler lexer list
