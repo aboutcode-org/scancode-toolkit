@@ -67,7 +67,7 @@ archive_handlers = [
     zipfile.is_zipfile,
     tarfile.is_tarfile,
     is_gzipfile,
-    is_gzipfile,
+    is_bz2file,
     is_lzmafile
 ]
 
