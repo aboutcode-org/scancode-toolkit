@@ -157,6 +157,9 @@ setup(
         'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
 
+        # plugincode
+        'plugincode',
+
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
@@ -218,7 +221,7 @@ setup(
         'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
-    
+
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
