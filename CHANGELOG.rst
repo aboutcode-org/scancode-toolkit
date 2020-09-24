@@ -1,5 +1,5 @@
 Release notes
 -------------
-### Version 0.0.1
+### Version 20.09
 
-*xxxx-xx-xx* -- Initial release.
+*2020-09-24* -- Initial release.
