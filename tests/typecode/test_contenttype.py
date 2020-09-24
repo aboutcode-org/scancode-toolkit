@@ -36,6 +36,7 @@ from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
+from commoncode.system import on_windows_64
 from commoncode.system import py2
 
 from typecode.contenttype import get_filetype
@@ -43,6 +44,7 @@ from typecode.contenttype import get_pygments_lexer
 from typecode.contenttype import get_type
 from typecode.contenttype import is_data as contenttype_is_data
 from typecode.contenttype import is_standard_include
+
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
