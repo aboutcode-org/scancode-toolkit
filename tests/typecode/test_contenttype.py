@@ -759,7 +759,7 @@ class TestContentType(FileBasedTesting):
         assert 'python 2.5 byte-compiled' == get_filetype(test_file4)
         assert not is_source(test_file4)
         assert not is_text(test_file4)
-        assert 'application/octet-stream' == get_mimetype_file(test_file4)
+        assert get_mimetype_file(test_file4) in expected_mime
         assert '' == get_filetype_pygment(test_file4)
 
     def test_compiled_win_dll(self):
