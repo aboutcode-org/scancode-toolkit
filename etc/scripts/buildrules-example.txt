@@ -1,0 +1,199 @@
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------

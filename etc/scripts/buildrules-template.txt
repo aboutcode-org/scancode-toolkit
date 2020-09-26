@@ -1,0 +1,17 @@
+----------------------------------------
+license_expression: mit
+relevance: 100
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.mit
+---
+provided under the MIT license (see COPYING.mit).
+----------------------------------------
+license_expression: gpl-2.0
+relevance: 100
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE-CODE
+---
+The source code is provided under the GNU GPL license version 2. (see LICENSE-CODE)
+----------------------------------------
