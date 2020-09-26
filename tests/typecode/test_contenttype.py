@@ -44,6 +44,7 @@ from typecode.contenttype import get_type
 from typecode.contenttype import is_data as contenttype_is_data
 from typecode.contenttype import is_standard_include
 
+
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
 get_filetype_pygment = lambda l: get_type(l).filetype_pygment
@@ -175,8 +176,13 @@ class TestContentType(FileBasedTesting):
 
     def test_debian_package(self):
         test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
-        expected = 'debian binary package (format 2.0), with control.tar.gz, data compression gz'
-        assert expected == get_filetype(test_file)
+        expected = (
+            # libmagic 5.38
+            'debian binary package (format 2.0), with control.tar.gz, data compression gz',
+            # libmagic 5.2x
+            'debian binary package (format 2.0)',
+        )
+        assert get_filetype(test_file).startswith(expected)
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert is_compressed(test_file)
@@ -185,7 +191,14 @@ class TestContentType(FileBasedTesting):
 
     def test_package_json(self):
         test_file = self.get_test_loc('contenttype/package/package.json')
-        assert 'ascii text, with very long lines' == get_filetype(test_file)
+        expected = (
+            'ascii text, with very long lines',
+            # libmagic 5.39+
+            'json data',
+        )
+
+        assert get_filetype(test_file) in expected
+        assert is_text(test_file)
         assert not is_binary(test_file)
         assert '' == get_filetype_pygment(test_file)
         assert not is_source(test_file)
@@ -409,7 +422,14 @@ class TestContentType(FileBasedTesting):
     def test_certificate(self):
         test_file = self.get_test_loc('contenttype/certificate/CERTIFICATE')
         assert is_binary(test_file)
-        assert get_filetype(test_file).startswith('apple diskcopy 4.2 image')
+        # assert not is_archive(test_file)
+        expected = (
+            # libmagic 5.38
+            'apple diskcopy 4.2 image',
+            # libmagic 5.25
+            'data',
+        )
+        assert get_filetype(test_file).startswith(expected)
         assert '' == get_filetype_pygment(test_file)
 
     def test_code_assembly(self):
@@ -422,7 +442,13 @@ class TestContentType(FileBasedTesting):
 
     def test_code_c_1(self):
         test_file = self.get_test_loc('contenttype/code/c/c_code.c')
-        assert 'ti-xx graphing calculator (flash)' == get_filetype(test_file)
+        expected = (
+            # incorrect p to libmagic 5.38
+            'ti-xx graphing calculator (flash)',
+            # correct in libmagic 5.39+
+            'c source, ascii text',
+        )
+        assert get_filetype(test_file) in expected
         assert 'C++' == get_filetype_pygment(test_file)
         assert is_source(test_file)
         assert is_text(test_file)
@@ -472,7 +498,13 @@ class TestContentType(FileBasedTesting):
 
     def test_code_c_7(self):
         test_file = self.get_test_loc('contenttype/code/c/some.c')
-        assert 'ti-xx graphing calculator (flash)' == get_filetype(test_file)
+        expected = (
+            # incorrect p to libmagic 5.38
+            'ti-xx graphing calculator (flash)',
+            # correct in libmagic 5.39+
+            'c source, ascii text',
+        )
+        assert get_filetype(test_file) in expected
         assert is_source(test_file)
         assert 'C++' == get_filetype_pygment(test_file)
 
@@ -597,7 +629,12 @@ class TestContentType(FileBasedTesting):
         assert is_text(test_file)
         assert 'Python' == get_filetype_pygment(test_file)
         assert 'python script, ascii text executable' == get_filetype(test_file)
-        assert 'text/x-python' == get_mimetype_file(test_file)
+        expected = (
+            'text/x-python',
+            # new in libmagic 5.39
+            'text/x-script.python',
+        )
+        assert get_mimetype_file(test_file) in expected
         assert get_filetype_file(test_file).startswith('Python script')
 
     def test_code_python_3(self):
@@ -640,15 +677,26 @@ class TestContentType(FileBasedTesting):
         assert not is_text(test_file)
         assert '' == get_filetype_pygment(test_file)
         assert 'application/x-sharedlib' == get_mimetype_file(test_file)
-        assert 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), statically linked, stripped' == get_filetype(test_file)
-        assert 'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), statically linked, stripped' == get_filetype_file(test_file)
+        expected = (
+            # correct with libmagic 5.38 and 5.39
+            'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), statically linked, stripped',
+            # incorrect with libmagic 5.2x
+            'ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked, stripped',
+        )
+        assert get_filetype_file(test_file) in expected
+        assert get_filetype(test_file) in [t.lower() for t in expected]
         assert '' == get_filetype_pygment(test_file)
 
     def test_compiled_elf_so_2(self):
         test_file = self.get_test_loc('contenttype/compiled/linux/libnetsnmpagent.so.5')
         assert not is_source(test_file)
-        expected = 'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), statically linked, with debug_info, not stripped'
-        assert expected == get_filetype(test_file)
+        expected = (
+            # correct with libmagic 5.38 and 5.39
+            'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), statically linked, with debug_info, not stripped',
+            # incorrect with libmagic 5.2x
+            'elf 32-bit lsb shared object, intel 80386, version 1 (sysv), dynamically linked, with debug_info, not stripped',
+        )
+        assert get_filetype(test_file) in expected
         assert '' == get_filetype_pygment(test_file)
 
     def test_compiled_flash(self):
@@ -669,14 +717,15 @@ class TestContentType(FileBasedTesting):
         assert 'data' == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
 
-    @pytest.mark.xfail(on_mac, reason='Somehow we get really weird results on macOS with libmagic 5.38: '
+    @pytest.mark.xfail(
+        on_mac or on_windows, reason='Somehow we get really weird results on macOS with libmagic 5.38 and mac, win32 on libmagic 5.39: '
        '[64-bit architecture=6893422] [64-bit architecture=6649701] [architecture=1075809] [architecture=3959150] [architecture=768]')
     def test_compiled_java_classfile_1(self):
         test_file = self.get_test_loc('contenttype/compiled/java/CommonViewerSiteFactory.class')
         assert 'compiled java class data, version 46.0 (java 1.2)' == get_filetype(test_file)
         assert '' == get_filetype_pygment(test_file)
 
-    @pytest.mark.xfail(on_mac, reason='Somehow we get really weird results on macOS with libmagic 5.38: '
+    @pytest.mark.xfail(on_mac or on_windows, reason='Somehow we get really weird results on macOS with libmagic 5.38 and mac, win32 on libmagic 5.39: '
        '[64-bit architecture=6893422] [64-bit architecture=6649701] [architecture=1075809] [architecture=3959150] [architecture=768]')
     def test_compiled_java_classfile_2(self):
         test_file = self.get_test_loc('contenttype/compiled/java/old.class')
@@ -690,7 +739,12 @@ class TestContentType(FileBasedTesting):
         assert 'python 2.5 byte-compiled' == get_filetype(test_file)
         assert not is_source(test_file)
         assert not is_text(test_file)
-        assert 'application/octet-stream' == get_mimetype_file(test_file)
+        expected_mime = (
+            'application/octet-stream',
+            # libmagic 5.39
+            'text/x-bytecode.python',
+        )
+        assert get_mimetype_file(test_file) in expected_mime
         assert '' == get_filetype_pygment(test_file)
 
         test_file2 = os.path.join(test_dir, 'contenttype.pyc')
@@ -705,7 +759,7 @@ class TestContentType(FileBasedTesting):
         assert 'python 2.5 byte-compiled' == get_filetype(test_file4)
         assert not is_source(test_file4)
         assert not is_text(test_file4)
-        assert 'application/octet-stream' == get_mimetype_file(test_file4)
+        assert get_mimetype_file(test_file4) in expected_mime
         assert '' == get_filetype_pygment(test_file4)
 
     def test_compiled_win_dll(self):
@@ -984,11 +1038,16 @@ class TestContentType(FileBasedTesting):
         assert not contains_text(test_file)
 
     def test_media_image_img(self):
-        # FIXME: .img files are more complex
         test_file = self.get_test_loc('contenttype/media/Image1.img')
         assert is_binary(test_file)
         assert get_filetype_file(test_file).startswith('GEM Image data')
-        assert 'image/x-gem' == get_mimetype_file(test_file)
+        expected = (
+            # libmagic 5.3.8
+            'image/x-gem',
+            # libmagic 5.2x
+            'application/octet-stream',
+        )
+        assert get_mimetype_file(test_file) in expected
         assert not get_mimetype_python(test_file)
         assert is_media(test_file)
         assert not is_text(test_file)
@@ -1166,8 +1225,13 @@ class TestContentType(FileBasedTesting):
 
     def test_package_debian(self):
         test_file = self.get_test_loc('contenttype/package/wget-el_0.5.0-8_all.deb')
-        expected = 'debian binary package (format 2.0), with control.tar.gz, data compression gz'
-        assert expected == get_filetype(test_file)
+        expected = (
+            # libmagic 5.38
+            'debian binary package (format 2.0), with control.tar.gz, data compression gz',
+            # libmagic 5.2x
+            'debian binary package (format 2.0)',
+        )
+        assert get_filetype(test_file) in expected
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert not contains_text(test_file)
