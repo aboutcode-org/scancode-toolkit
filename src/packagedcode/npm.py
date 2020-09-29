@@ -26,9 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import base64
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
+import hashlib
 import io
 import json
 import logging
@@ -577,7 +579,7 @@ def dist_mapper(dist, package):
         algo, _, b64value = integrity.partition('-')
         assert 'sha512' == algo
         algo = algo.lower()
-        sha512 = b64value.decode('base64').encode('hex')
+        sha512 = hashlib.sha512(base64.b64decode(b64value)).hexdigest()
         package.sha512 = sha512
 
     sha1 = dist.get('shasum')
