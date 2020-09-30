@@ -26,6 +26,6 @@ Update an existing project
     cd my-existing-project
     git remote add skeleton git@github.com:nexB/skeleton
     git fetch skeleton
-    git merge skeleton --allow-unrelated-histories
+    git merge skeleton/main --allow-unrelated-histories
 
 This is also the workflow to use when updating the skeleton files in any given repository.
