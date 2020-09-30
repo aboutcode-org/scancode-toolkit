@@ -1,13 +1,19 @@
 Comprehensive Installation
 ==========================
 
-There are 3 main ways you can install ScanCode.
+There are 4 main ways you can install ScanCode.
 
 - :ref:`app_install`
 
     The recommended method for installing ScanCode is Downloading the latest release as an
     application and then configure and use directly. This is easy because no knowledge of pip/git
     or other developer tools is necessary.
+
+- :ref:`docker_install`
+
+    An alternative to installing the latest Scancode Toolkit release natively is to build 
+    a Docker image from the included Dockerfile. This is easy because the only prerequisite 
+    is a working Docker installation.
 
 - :ref:`source_code_install`
 
@@ -231,6 +237,51 @@ Un-installation
 
 - Delete the directory in which you extracted ScanCode.
 - Delete any temporary files created in your system temp directory under a ScanCode directory.
+
+----
+
+.. _docker_install:
+
+Installation via Docker: 
+------------------------
+
+You can install Scancode Toolkit by building a Docker image from the included Dockerfile.
+
+Download the ScanCode-Toolkit Source Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Either download the Source Code for one of the releases ( :ref:`app_install` ) and unzip it.
+- Or git clone the latest ( :ref:`source_code_install` ) Source Code.
+
+
+Build the Docker image
+^^^^^^^^^^^^^^^^^^^^^^
+
+The ``docker build`` command needs to run in the directory of the source code, 
+make sure to ``cd`` into the correct directory.
+
+    cd scancode-toolkit
+    docker build -t scancode-toolkit .
+
+Run using Docker
+^^^^^^^^^^^^^^^^
+
+The docker image will forward all arguments it receives directly to the ``scancode`` command. 
+
+Display help:
+
+    docker run scancode-toolkit --help
+
+Mount current working directory and run scan on mounted folder:
+
+    docker run -v $PWD/:/project scancode-toolkit -clpeui --json-pp /project/result.json /project
+
+This will mount your current working from the host into ``/project`` in the container 
+and then scan the contents. The output ``result.json`` will be written back to your 
+corrent working directory on the host. 
+
+Note that the parameters *before* ``scancode-toolkit`` are used for docker, 
+those after will be forwarded to scancode.
 
 ----
 
