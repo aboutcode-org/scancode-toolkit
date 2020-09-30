@@ -1,5 +1,5 @@
 
-# Copyright (c) 2018-2020 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,7 +30,6 @@ import base64
 from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
-import hashlib
 import io
 import json
 import logging
@@ -579,8 +578,14 @@ def dist_mapper(dist, package):
         algo, _, b64value = integrity.partition('-')
         algo = algo.lower()
         assert 'sha512' == algo
-        sha512 = base64.b64decode(b64value).hex()
+
+        decoded_b64value = base64.b64decode(b64value)
+        if type(decoded_b64value) == str:
+            sha512 = decoded_b64value.encode('hex')
+        elif type(decoded_b64value) == bytes:
+            sha512 = decoded_b64value.hex()
         package.sha512 = sha512
+        
 
     sha1 = dist.get('shasum')
     if sha1:
