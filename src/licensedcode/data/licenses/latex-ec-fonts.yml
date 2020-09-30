@@ -1,0 +1,8 @@
+key: latex-ec-fonts
+shortname: latex-ec-fonts
+name: Copyright notice to the ec fonts
+category: Proprietary Free
+homepage_url: http://dante.ctan.org
+text_urls:
+    - http://dante.ctan.org/tex-archive/fonts/ec/src/copyrite.txt
+  
