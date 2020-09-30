@@ -25,7 +25,7 @@
     "sha1": "d35a0754c8587b0502874e3636cf0f19565d09b7",
     "md5": null,
     "sha256": null,
-    "sha512": "45cc0a4edb678010e331eceb847236729ce6c9a940f24053a4ab2b5544d418b47abe1d78eadbace27b16f5a61926b55ec3fd63165c50d5eb1e45f78e10275b63",
+    "sha512": "8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03",
     "bug_tracking_url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
     "code_view_url": null,
     "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",

@@ -577,9 +577,9 @@ def dist_mapper(dist, package):
     integrity = dist.get('integrity') or None
     if integrity:
         algo, _, b64value = integrity.partition('-')
-        assert 'sha512' == algo
         algo = algo.lower()
-        sha512 = hashlib.sha512(base64.b64decode(b64value)).hexdigest()
+        assert 'sha512' == algo
+        sha512 = base64.b64decode(b64value).hex()
         package.sha512 = sha512
 
     sha1 = dist.get('shasum')
