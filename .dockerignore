@@ -7,3 +7,8 @@ Dockerfile
 .github/
 .gitattributes
 .gitignore 
+
+# Ignore other directories that are not required in the image
+tests/
+docs/
+samples/

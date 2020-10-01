@@ -36,8 +36,8 @@ COPY . scancode-toolkit
 # Set workdir
 WORKDIR scancode-toolkit
 
-# Run scancode once for configuration
-RUN ./scancode --help 
+# Run scancode once for initial configuration, with --reindex-licenses to create the base license index
+RUN ./scancode --reindex-licenses
 
 # Add scancode to path
 ENV PATH=$HOME/scancode-toolkit:$PATH
