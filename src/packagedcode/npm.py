@@ -38,6 +38,7 @@ import re
 import attr
 from packageurl import PackageURL
 from six import string_types
+from six import binary_type
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -580,9 +581,9 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
 
         decoded_b64value = base64.b64decode(b64value)
-        if type(decoded_b64value) == str:
+        if isinstance(decoded_b64value, string_types):
             sha512 = decoded_b64value.encode('hex')
-        elif type(decoded_b64value) == bytes:
+        elif isinstance(decoded_b64value, binary_type):
             sha512 = decoded_b64value.hex()
         package.sha512 = sha512
         
