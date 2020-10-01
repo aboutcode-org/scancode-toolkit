@@ -21,4 +21,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Gaurang Rao @Gaupeng
 - Tushar Goel @TG1999
 - Richard Menzies @WizardOhio24
-
+- Daniel Eder @daniel-eder
