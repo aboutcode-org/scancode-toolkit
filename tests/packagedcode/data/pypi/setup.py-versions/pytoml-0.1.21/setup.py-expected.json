@@ -1,0 +1,56 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "pytoml",
+  "version": "0.1.21",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "A parser for TOML-0.4.0",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Martin Vejn\u00e1r",
+      "email": "vejnar.martin@gmail.com",
+      "url": "https://github.com/avakar/pytoml"
+    }
+  ],
+  "keywords": [
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Software Development :: Libraries"
+  ],
+  "homepage_url": "https://github.com/avakar/pytoml",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": {
+    "license": "MIT",
+    "classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pytoml@0.1.21",
+  "repository_homepage_url": "https://pypi.org/project/pytoml",
+  "repository_download_url": "https://pypi.io/packages/source/p/pytoml/pytoml-0.1.21.tar.gz",
+  "api_data_url": "http://pypi.python.org/pypi/pytoml/0.1.21/json"
+}

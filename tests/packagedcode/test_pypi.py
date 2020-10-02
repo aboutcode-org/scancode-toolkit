@@ -30,10 +30,13 @@ from collections import OrderedDict
 import os
 from unittest.case import skipIf
 from unittest.case import expectedFailure
+import json
 
 import pytest
 
 from commoncode.system import on_windows
+from commoncode.system import py2
+from commoncode.system import py3
 from packagedcode.models import DependentPackage
 from packagedcode import pypi
 from packages_test_utils import PackageTester
@@ -88,7 +91,7 @@ class TestPyPi(PackageTester):
         expected = [OrderedDict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
         assert expected == [p.to_dict() for p in package.parties]
 
-    @skipIf(on_windows, 'somehow this fails on Windows')
+    @skipIf(on_windows, 'Somehow this fails on Windows')
     def test_parse_setup_py_arpy(self):
         test_file = self.get_test_loc('pypi/setup.py/arpy_setup.py')
         package = pypi.parse_setup_py(test_file)
@@ -260,7 +263,6 @@ class TestPyPi(PackageTester):
         package = pypi.parse_wheel(test_file)
         expected_loc = self.get_test_loc('pypi/wheel/parse-wheel-expected.json')
         self.check_package(package, expected_loc, regen=False)
-
 
     def test_pkginfo_parse_with_wheelfile_with_parse_function(self):
         test_file = self.get_test_loc('pypi/wheel/atomicwrites-1.2.1-py2.py3-none-any.whl')
@@ -449,8 +451,57 @@ FILENAME_LIST = [
     ('Pipfile.lock', 'Pipfile.lock')
 ]
 
+
 class TestFiletype(object):
+
     @pytest.mark.parametrize('filename, expected_filename', FILENAME_LIST)
     def test_file_type(self, filename, expected_filename):
         filename = pypi.get_dependency_type(filename)
         assert filename == expected_filename
+
+
+def get_setup_test_files(test_dir):
+    """
+    Yield tuples of (setup.py file, expected JSON file) from a test data
+    `test_dir` directory.
+    """
+    for top, _, files in os.walk(test_dir):
+        for tfile in files:
+            if tfile != 'setup.py':
+                continue
+            test_loc = os.path.join(top, tfile)
+            expected_loc = test_loc + '-expected.json'
+            yield test_loc, expected_loc
+
+
+class TestSetupPyVersions(object):
+    test_data_dir = os.path.abspath(os.path.join(
+        os.path.dirname(__file__),
+        'data',
+        'setup.py-versions',
+    ))
+
+    @pytest.mark.parametrize('test_loc, expected_loc', list(get_setup_test_files(test_data_dir)))
+    def test_parse_setup_py_with_computed_versions(self, test_loc, expected_loc, regen=False):
+        package = pypi.parse_setup_py(test_loc)
+        if package:
+            results = package.to_dict()
+        else:
+            results = {}
+
+        if regen:
+            if py2:
+                wmode = 'wb'
+            if py3:
+                wmode = 'w'
+            with open(expected_loc, wmode) as ex:
+                json.dump(results, ex, indent=2, separators=(',', ': '))
+
+        with open(expected_loc, 'rb') as ex:
+            expected = json.load(
+                ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+
+        try:
+            assert expected == results
+        except AssertionError:
+            assert json.dumps(expected, indent=2) == json.dumps(results, indent=2)
