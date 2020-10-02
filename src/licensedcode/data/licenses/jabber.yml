@@ -1,9 +1,0 @@
-key: jabber
-short_name: jabber
-name: Jabber Open Source License
-category: Proprietary Free
-owner: Jabber.Com, Inc.
-homepage_url: https://www.cisco.com/c/en/us/about/corporate-strategy-office/acquisitions/jabberinc.html
-text_urls:
-    - https://opensource.org/licenses/jabberpl#:~:text=This%20Jabber%20Open%20Source%20License,License%20is%20a%20Licensed%20Product.
-notes: Jabber has ceased to use or recommend this license

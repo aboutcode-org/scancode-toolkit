@@ -1,8 +1,0 @@
-key: lua
-short_name: Lua License
-name: Lua License
-category: Permissive
-owner: Lua.org, PUC-Rio 
-homepage_url: https://www.lua.org/
-text_urls:
-    - https://www.lua.org/license.html
