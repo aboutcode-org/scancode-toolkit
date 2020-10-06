@@ -175,13 +175,10 @@ setup(
         'six',
         'pdfminer.six >= 20170720',
         'pycryptodome >= 3.4',
+        'chardet >= 3.0.0, <4.0.0',
 
         # typecode
         'typecode',
-        'binaryornot >= 0.4.0',
-        'chardet >= 3.0.0, <4.0.0',
-        # note that we use a short version range because we use a simpler lexer list
-        'pygments >= 2.2.0, <2.3',
         'typecode_libmagic',
 
         # packagedcode
@@ -196,6 +193,7 @@ setup(
         'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
         'dparse2',
+        'pygments',
 
         # used to fix mojibake in Windows PE
         # for now we use the evrsion that works on both Python 2 and 3

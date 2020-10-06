@@ -1,0 +1,15 @@
+about_resource: Pygments-2.7.1-py3-none-any.whl
+name: pygments
+version: 2.7.1
+download_url: https://files.pythonhosted.org/packages/d7/72/49a7db1b245c13d0e38cfdc96c1adf6e3bd16a7a0dceb7b25faa6612353b/Pygments-2.7.1-py3-none-any.whl
+homepage_url: https://pygments.org/
+license_expression: bsd-simplified
+copyright: Copyright (c) the Pygments team
+attribute: yes
+checksum_md5: ac2ef50fd1ece4c6df9a070e34728c0b
+checksum_sha1: 7d0504c6d1f0cb30d44491f8f7b477186281db4e
+package_url: pkg:pypi/pygments@2.7.1
+licenses:
+  - key: bsd-simplified
+    name: BSD-2-Clause
+    file: bsd-simplified.LICENSE
