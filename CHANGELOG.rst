@@ -1,6 +1,6 @@
 Release notes
 -------------
-### Upcoming Version
+### Version 20.10.08
 
 *2020-10-08* -- Add support for both python 2 + 3
 *2020-10-08* -- Add CI support for python 2 + 3
