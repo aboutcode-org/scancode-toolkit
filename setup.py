@@ -180,6 +180,7 @@ setup(
         # typecode
         'typecode',
         'typecode_libmagic',
+        'pygments >= 2.4.2, <2.5.1',
 
         # packagedcode
         'debut >= 0.9.4',
@@ -193,7 +194,6 @@ setup(
         'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
         'dparse2',
-        'pygments',
 
         # used to fix mojibake in Windows PE
         # for now we use the evrsion that works on both Python 2 and 3

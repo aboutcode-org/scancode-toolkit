@@ -64,16 +64,16 @@ license_expressions:
   - mit-no-advert-export-control
   - unknown
   - mit
-  - x11-keith-packard
+  - historical
   - unicode
   - historical
-  - x11 AND other-permissive
+  - x11
   - mit
   - historical
   - warranty-disclaimer
   - x11-xconsortium
   - x11
-  - x11-keith-packard
+  - historical
   - x11-opengroup
   - x11-keith-packard
   - x11-xconsortium
