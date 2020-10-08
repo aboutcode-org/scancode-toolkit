@@ -1,0 +1,93 @@
+Software License
+
+Welcome to Yahoo! software (the "Yahoo! Software"). By clicking the "I Agree" button below, you agree to these software license terms (the "Software License") that supplement the Yahoo! Terms of Service ("TOS") below, also located at http://info.yahoo.com/legal/us/yahoo/utos/utos-173.html. If you disagree with any of the terms below, Yahoo! does not grant you a license to use the Yahoo! Software; click the "I Disagree" or "Cancel" button to exit the installer.
+
+Information collected through Yahoo! Software by Yahoo! is subject to the full Yahoo! Privacy Policy: http://info.yahoo.com/privacy/us/yahoo/. To find out more about setting your preferences and the information collected by the Yahoo! Software and used by Yahoo!, go to: http://info.yahoo.com/privacy/us/yahoo/toolbar/details.html.
+
+Yahoo! reserves the right to update and change, from time to time, this Software License and all documents incorporated by reference. You can always find the most recent version of this Software License at http://info.yahoo.com/legal/us/yahoo/toolbar/tbeula/tbeula-282.html. Yahoo! may change this Software License by posting a new version without notice to you. Use of the Yahoo! Software after such change constitutes acceptance of such changes.
+
+Licensed Uses and Restrictions.
+
+By accepting the terms of this Agreement, you represent to Yahoo! Inc. and its affiliates (collectively, "Yahoo!") that you are at least 18 years old. The Yahoo! Software applications, documentation, and local computer files installed or utilized by the installer application (collectively, the "Yahoo! Software") are owned by Yahoo!, or Yahoo!''s licensors and content and data providers ("Yahoo! Licensors"), and are licensed to you on a worldwide (except as limited below), non-exclusive, non-sublicenseable basis on the terms and conditions set forth herein. This Software License defines legal use of the Yahoo! Software, all updates, revisions, substitutions, and any copies of the Yahoo! Software made by or for you. All rights not expressly granted to you are reserved by Yahoo! or their respective owners.
+
+YOU MAY install and personally use the Yahoo! Software and any updates provided by Yahoo! (in its sole discretion) in object code form on a personal computer owned or controlled by you and may use the Yahoo! Software for your own noncommercial use or benefit. Your license to the Yahoo! Software under this Software License continues until it is terminated by either party. You may terminate the Software License by discontinuing use of all or any of the Yahoo! Software and by destroying all your copies of the applicable Yahoo! Software. To uninstall the Yahoo! Software, you may use the standard Microsoft Windows “Add/Remove Programs” menu in either the My Computer/Control Panel option or the Settings/Control Panel option. Once you access the Microsoft Windows Control Panel option, select “Add/Remove Programs”, and then the name of the Yahoo! Software. The Yahoo! Software will be uninstalled and will no longer be visible when you restart Internet Explorer. This Software License terminates automatically if you violate any term of this Software License, Yahoo! publicly posts a written notice of termination on Yahoo!''s web site, or Yahoo! sends a written notice of termination to you.
+
+YOU MAY NOT:
+
+(i) decompile, reverse engineer, disassemble, modify, rent, lease, loan, distribute, or create derivative works (as defined by the U.S. Copyright Act) or improvements (as defined by U.S. patent law) from the Yahoo! Software or any portion thereof.
+
+(ii) incorporate the Yahoo! Software into any computer chip or the firmware of a computing device manufactured by or for you.
+
+(iii) use the Yahoo! Software in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with TOS or this Software License.
+
+(iv) you may not use the Yahoo! Software to operate nuclear facilities, life support, or other mission critical application where human life or property may be at stake. You understand that the Yahoo! Software is not designed for such purposes and that its failure in such cases could lead to death, personal injury, or severe property or environmental damage for which Yahoo! is not responsible.
+
+(v) use, or export the Yahoo! Software in violation of applicable U.S. laws or regulations.
+
+(vi) sell, lease, loan, distribute, transfer, or sublicense the Yahoo! Software or access thereto or derive income from the use or provision of the Yahoo! Software, whether for direct commercial or monetary gain or otherwise, without Yahoo!''s prior, express, written permission.
+
+Ownership and Relationship of Parties; Support.
+
+The Yahoo! Software is protected by copyrights, trademarks, service marks, international treaties, and/or other proprietary rights and laws of the U.S. and other countries. You agree to abide by all applicable proprietary rights laws and other laws, as well as any additional copyright notices or restrictions contained in this Software License and in the TOS. Yahoo! and Yahoo!''s Licensors own all rights, title, and interest in and to their applicable contributions to the Yahoo! Software. This Software License grants you no right, title, or interest in any intellectual property owned or licensed by Yahoo!, including (but not limited to) the Yahoo! Software and Yahoo! trademarks, and creates no relationship between yourself and Yahoo!''s Licensors, or between you and Yahoo! other than that of Yahoo! to licensee.
+
+The Yahoo! Software and its components contain software licensed from Yahoo! Licensors ("Licensor Software"). The Licensor Software enables the Yahoo! Software to perform certain functions, including, without limitation, access proprietary data on third -party data servers. You agree that you will use the Yahoo! Software, and any data accessed through the Yahoo! Software, for your own personal non-commercial use only. You agree not to assign, copy, transfer, or transmit the Yahoo! Software, or any data obtained through the Yahoo! Software, to any third party. Your license to use the Yahoo! Software, its components, and any third -party data, will terminate if you violate these restrictions. If your license terminates, you agree to cease any and all use of the Yahoo! Software, its components, and any third -party data. All rights in any third -party data, any third -party software, and any third -party data servers, including all ownership rights are reserved and remain with the respective third parties. You agree that these third parties may enforce their rights under this Agreement against you directly in their own name.
+
+Yahoo! may elect to provide you with customer support and/or software upgrades, enhancements, or modifications for the Yahoo! Software (collectively, "Support"), in its sole discretion, and may terminate such Support at any time without notice to you. Yahoo! may change, suspend, or discontinue any aspect of the Yahoo! Software at any time, including the availability of any Yahoo! Software feature, database, or content. Yahoo! may also impose limits on certain features and services or restrict your access to parts or all of the Yahoo! Software or the Yahoo! web site without notice or liability. Additionally, in order to enhance the security of the Yahoo! Software or to fix bugs, from time to time, Yahoo! may automatically download and install updates to the Yahoo! Software with or without prior notification.
+
+Yahoo! Search Protection Auto-Updater.
+
+If you installed Yahoo! Search Protection, from time to time, Yahoo! may automatically download and install the latest version of Yahoo! Search Protection without prior notification. Visit the Privacy Module to turn off or change your settings for this feature and find out more.
+
+Fees and Payments.
+
+Also Yahoo! reserves the right to charge fees for future use of or access to the Yahoo! Software or the Yahoo! services and web sites (collectively, "Yahoo! Software Services") in Yahoo!''s sole discretion. If Yahoo! decides to charge for the Yahoo! Software Services, such charges will be disclosed to you prior.
+
+Disclaimer of Warranties by Yahoo!.
+
+USE OF THE YAHOO! SOFTWARE AND ANY DATA ACCESSED THROUGH THE YAHOO! SOFTWARE (SUCH AS STOCK QUOTES, MARKET INFORMATION, NEWS, OR OTHER INFORMATION) IS AT YOUR SOLE RISK. THEY ARE PROVIDED "AS IS."
+
+ANY MATERIAL OR SERVICE DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE YAHOO! SOFTWARE (SUCH AS ANY ANTI-SPYWARE FEATURE) IS DONE AT YOUR OWN DISCRETION AND RISK, AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD AND/OR USE OF ANY SUCH MATERIAL OR SERVICE.
+
+YAHOO!, ITS OFFICERS, DIRECTORS, EMPLOYEES, CONTRACTORS, AGENTS, AFFILIATES, AND ASSIGNS (COLLECTIVELY, "YAHOO! ENTITIES") AND YAHOO! LICENSORS DO NOT REPRESENT THAT THE YAHOO! SOFTWARE OR ANY DATA ACCESSED THEREFROM IS APPROPRIATE OR AVAILABLE FOR USE OUTSIDE THE UNITED STATES.
+
+THE YAHOO! ENTITIES AND YAHOO! LICENSORS EXPRESSLY DISCLAIM ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, RELATING TO THE YAHOO! SOFTWARE AND ANY DATA ACCESSED THEREFROM, OR THE ACCURACY, TIMELINESS, COMPLETENESS, OR ADEQUACY OF THE YAHOO! SOFTWARE AND ANY DATA ACCESSED THEREFROM, INCLUDING THE IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+THE YAHOO! SOFTWARE IS NOT DESIGNED, INTENDED OR LICENSED FOR USE IN HAZARDOUS ENVIRONMENTS REQUIRING FAIL-SAFE CONTROLS, INCLUDING WITHOUT LIMITATION, THE DESIGN, CONSTRUCTION, MAINTENANCE OR OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, AND LIFE SUPPORT OR WEAPONS SYSTEMS. YAHOO! SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR SUCH PURPOSES.
+
+IF THE YAHOO! SOFTWARE OR ANY DATA ACCESSED THEREFROM PROVES DEFECTIVE, YOU (AND NOT THE YAHOO! ENTITIES OR THE YAHOO! LICENSORS) ASSUME THE ENTIRE COST OF ALL REPAIR OR INJURY OF ANY KIND, EVEN IF THE YAHOO! ENTITIES OR YAHOO! LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH A DEFECT OR DAMAGES. SOME JURISDICTIONS DO NOT ALLOW RESTRICTIONS ON IMPLIED WARRANTIES SO SOME OF THESE LIMITATIONS MAY NOT APPLY TO YOU.
+
+Limitation of Liability.
+
+THE YAHOO! ENTITIES AND YAHOO! LICENSORS WILL NOT BE LIABLE TO YOU FOR CLAIMS AND LIABILITIES OF ANY KIND ARISING OUT OF OR IN ANY WAY RELATED TO THE USE OF THE YAHOO! SOFTWARE BY YOURSELF OR BY THIRD PARTIES, TO THE USE OR NON-USE OF ANY BROKERAGE FIRM OR DEALER, OR TO THE SALE OR PURCHASE OF ANY SECURITY, WHETHER SUCH CLAIMS AND LIABILITIES ARE BASED ON ANY LEGAL OR EQUITABLE THEORY.
+
+THE YAHOO! ENTITIES AND YAHOO! LICENSORS ARE NOT LIABLE TO YOU FOR ANY AND ALL DIRECT, INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATED TO ANY THIRD -PARTY SOFTWARE, ANY DATA ACCESSED THROUGH THE YAHOO! SOFTWARE, YOUR USE OR INABILITY TO USE OR ACCESS THE YAHOO!
+
+SOFTWARE, OR ANY DATA PROVIDED THROUGH THE YAHOO! SOFTWARE, WHETHER SUCH DAMAGE CLAIMS ARE BROUGHT UNDER ANY THEORY OF LAW OR EQUITY. DAMAGES EXCLUDED BY THIS CLAUSE INCLUDE, WITHOUT LIMITATION, THOSE FOR LOSS OF BUSINESS PROFITS, INJURY TO PERSON OR PROPERTY, BUSINESS INTERRUPTION, LOSS OF BUSINESS OR PERSONAL INFORMATION. SOME JURISDICTIONS DO NOT ALLOW LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES SO THIS RESTRICTION MAY NOT APPLY TO YOU.
+
+INFORMATION PROVIDED THROUGH THE YAHOO! SOFTWARE, INCLUDING STOCK QUOTES, ANALYSIS, MARKET INFORMATION, NEWS, AND FINANCIAL DATA, MAY BE DELAYED, INACCURATE, OR CONTAIN ERRORS OR OMISSIONS, AND THE YAHOO! ENTITIES AND YAHOO! LICENSORS WILL HAVE NO LIABILITY WITH RESPECT THERETO. YAHOO! MAY CHANGE OR DISCONTINUE ANY ASPECT OR FEATURE OF THE YAHOO! SOFTWARE OR THE USE OF ALL OR ANY FEATURES OR TECHNOLOGY IN THE YAHOO! SOFTWARE AT ANY TIME WITHOUT PRIOR NOTICE TO YOU, INCLUDING, BUT NOT LIMITED TO, CONTENT, HOURS OF AVAILABILITY.
+
+Indemnification.
+
+You agree to indemnify and hold the Yahoo! Entities harmless from any claim or demand, including reasonable attorneys'' fees, made by any third party in connection with or arising out of your use of the Yahoo! Software, your violation of any terms or conditions of this Software License, your violation of applicable laws, or your violation of any rights of another person or entity.
+
+Government End Users.
+
+If the Yahoo! Software and related documentation are supplied to or purchased by or on behalf of the United States Government, then the Yahoo! Software is deemed to be "commercial software" as that term is used in the Federal Acquisition Regulation system. Rights of the United States shall not exceed the minimum rights set forth in FAR 52.227- 19 for "restricted computer software." All other terms and conditions of this Software License apply.
+
+Controlling Law.
+
+This Software License and the relationship between you and Yahoo! is governed by the laws of the State of California without regard to its conflict of law provisions. You and Yahoo! agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California. The United Nations Convention on the International Sale of Goods does not apply to this Software License.
+
+No General Waiver; Severability.
+
+The failure of Yahoo! to exercise or enforce any right or provision of this Software License shall not constitute a waiver of such right or provision. If any provision of this Software License is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties'' intentions as reflected in the provision, and the other provisions of this Software License remain in full force and effect.
+
+Complete Agreement.
+
+This Software License and the TOS constitute the entire understanding between the parties respecting use of the Yahoo! Software, superseding all prior agreements between you and Yahoo!. In the event of any conflict between the terms and conditions of this Software License and those in the TOS, the terms and conditions of this Software License will control, except to the extent that the TOS impose additional restrictions and liabilities on your actions. In the event of a conflict between the terms of this Software License and the TOS, this Software License will control to the extent of such conflict.
+
+Surviving Provisions.
+
+Sections 1.b, 2, and 4 through 12, will survive any termination of this Agreement.
+
+Version date: February 4, 2009

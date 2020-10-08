@@ -36,6 +36,7 @@ from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
+from licenses_test_utils import check_result_equals_expected_json
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -802,3 +803,11 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
+
+    def test_Query_tokens_by_line_behaves_the_same_on_python_2_and_python_3(self):
+        location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
+        idx = cache.get_index()
+        query = Query(location, idx=idx)
+        results = list(query.tokens_by_line())
+        expected = self.get_test_loc('query/query_lines/yahoo-eula.txt.json')
+        check_result_equals_expected_json(results, expected, regen=False)

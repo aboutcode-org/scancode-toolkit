@@ -152,6 +152,7 @@ setup(
 
         # commoncode
         'commoncode >= 20.09',
+        'backports.os == 0.1.1; python_version < "3"',
 
         'future >= 0.16.0',
         'saneyaml',
@@ -179,8 +180,6 @@ setup(
 
         # typecode
         'typecode',
-        'typecode_libmagic',
-        'pygments >= 2.4.2, <2.5.1',
 
         # packagedcode
         'debut >= 0.9.4',
@@ -194,6 +193,7 @@ setup(
         'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
         'dparse2',
+        'pygments >= 2.4.2, <2.5.1',
 
         # used to fix mojibake in Windows PE
         # for now we use the evrsion that works on both Python 2 and 3
@@ -219,6 +219,10 @@ setup(
         'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
+
+    extras_require={
+        'full': ['typecode_libmagic',],
+    },
 
     entry_points={
         'console_scripts': [
