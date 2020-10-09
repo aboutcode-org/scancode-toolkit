@@ -168,7 +168,7 @@
       "license_expressions": [
         "apache-1.0"
       ],
-      "percentage_of_license_text": 40.98,
+      "percentage_of_license_text": 40.97,
       "is_license_text": false,
       "files_count": 0,
       "dirs_count": 0,
@@ -266,7 +266,7 @@
         "ja-sig",
         "apache-2.0"
       ],
-      "percentage_of_license_text": 91.69,
+      "percentage_of_license_text": 91.68,
       "is_license_text": true,
       "files_count": 0,
       "dirs_count": 0,
@@ -500,7 +500,7 @@
         "ja-sig",
         "apache-2.0"
       ],
-      "percentage_of_license_text": 30.71,
+      "percentage_of_license_text": 30.7,
       "is_license_text": false,
       "files_count": 0,
       "dirs_count": 0,

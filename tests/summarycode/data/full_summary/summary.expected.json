@@ -3198,7 +3198,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
-      "percentage_of_license_text": 79.62,
+      "percentage_of_license_text": 79.61,
       "copyrights": [
         {
           "value": "Copyright 2005, JBoss Inc., and individual contributors",
@@ -3276,7 +3276,7 @@
       "license_expressions": [
         "cc-by-2.5"
       ],
-      "percentage_of_license_text": 19.72,
+      "percentage_of_license_text": 19.71,
       "copyrights": [
         {
           "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
@@ -3360,7 +3360,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
-      "percentage_of_license_text": 78.62,
+      "percentage_of_license_text": 78.61,
       "copyrights": [
         {
           "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -3512,7 +3512,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
-      "percentage_of_license_text": 78.13,
+      "percentage_of_license_text": 78.12,
       "copyrights": [
         {
           "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
@@ -3689,7 +3689,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 42.86,
+      "percentage_of_license_text": 42.85,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -3767,7 +3767,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 69.57,
+      "percentage_of_license_text": 69.56,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -3845,7 +3845,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 20.34,
+      "percentage_of_license_text": 20.33,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -7001,7 +7001,7 @@
       "license_expressions": [
         "gpl-2.0-plus WITH ada-linking-exception"
       ],
-      "percentage_of_license_text": 94.12,
+      "percentage_of_license_text": 94.11,
       "copyrights": [
         {
           "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
@@ -7079,7 +7079,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 42.86,
+      "percentage_of_license_text": 42.85,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -7387,7 +7387,7 @@
       "license_expressions": [
         "boost-1.0"
       ],
-      "percentage_of_license_text": 88.89,
+      "percentage_of_license_text": 88.88,
       "copyrights": [
         {
           "value": "Copyright Henrik Ravn 2004",
@@ -7798,7 +7798,7 @@
       "license_expressions": [
         "mit-old-style"
       ],
-      "percentage_of_license_text": 79.78,
+      "percentage_of_license_text": 79.77,
       "copyrights": [
         {
           "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
@@ -8032,7 +8032,7 @@
       "license_expressions": [
         "zlib"
       ],
-      "percentage_of_license_text": 20.34,
+      "percentage_of_license_text": 20.33,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
