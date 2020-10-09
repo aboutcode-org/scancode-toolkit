@@ -808,6 +808,9 @@ class TestQueryWithFullIndex(FileBasedTesting):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()
         query = Query(location, idx=idx)
-        results = list(query.tokens_by_line())
+        tbl = list(query.tokens_by_line())
+        # inject the actual token string for sanity
+        tbt = idx.tokens_by_tid
+        results = [[[i, i and tbt[i] or i] for i in line] for line in tbl]
         expected = self.get_test_loc('query/query_lines/yahoo-eula.txt.json')
         check_result_equals_expected_json(results, expected, regen=False)
