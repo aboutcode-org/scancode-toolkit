@@ -28,8 +28,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from decimal import Decimal
-from decimal import ROUND_DOWN
 from itertools import islice
 from os.path import getsize
 import logging
@@ -219,9 +217,7 @@ def get_licenses(location, min_score=0,
         # we need at least one match to compute a license_coverage
         matched_tokens_length = len(Span().union(*qspans))
         query_tokens_length = match.query.tokens_length(with_unknown=True)
-        percentage_of_license_text = Decimal((matched_tokens_length / query_tokens_length) * 100)
-        # Round up `percentage_of_license_text` to the hundredths place
-        percentage_of_license_text = percentage_of_license_text.quantize(Decimal('.01'), rounding=ROUND_DOWN)
+        percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
     return OrderedDict([
         ('licenses', detected_licenses),
