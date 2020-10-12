@@ -8,6 +8,7 @@
 #
 
 from packagedcode import about
+from packagedcode import bitbake
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import cargo
@@ -45,6 +46,7 @@ PACKAGE_TYPES = [
     models.Axis2Mar,
 
     about.AboutPackage,
+    bitbake.BitbakePackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
