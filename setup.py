@@ -227,7 +227,6 @@ setup(
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
-            'extractcode = extractcode.cli:extractcode',
         ],
 
         # scancode_pre_scan is the entry point for pre_scan plugins executed
