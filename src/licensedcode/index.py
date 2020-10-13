@@ -282,9 +282,11 @@ class LicenseIndex(object):
         highest_tid = len_legalese - 1
 
         # Add SPDX key tokens to the dictionary
-        # these are always treated as non-legalese
+        # these are always treated as non-legalese. This may seem weird
+        # but they are detected in expressions alright and some of their
+        # tokens exist as rules too (e.g. GPL)
         ########################################################################
-        for sts in _spdx_tokens:
+        for sts in sorted(_spdx_tokens):
             stid = dictionary_get(sts)
             if stid is None:
                 # we have a never yet seen token, so we assign a new tokenid
@@ -296,10 +298,13 @@ class LicenseIndex(object):
         sparsify(dictionary)
 
         self.rules_by_rid = rules_by_rid = list(rules)
+        # ensure that rules are sorted
+        rules_by_rid.sort()
         len_rules = len(rules_by_rid)
 
         # create index data structures
-        # OPTIMIZATION: bind frequently used methods to the local scope for index structures
+        # OPTIMIZATION: bind frequently used methods to the local scope for
+        # index structures
         ########################################################################
         tids_by_rid_append = self.tids_by_rid.append
 
