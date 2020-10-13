@@ -142,14 +142,6 @@ setup(
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
 
-        # extractcode
-        'patch >= 1.15, < 1.20 ',
-        # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98; python_version < "3"',
-        'extractcode_libarchive',
-        'extractcode_7z',
-
         # commoncode
         'commoncode >= 20.09',
         'backports.os == 0.1.1; python_version < "3"',
@@ -221,7 +213,12 @@ setup(
     ],
 
     extras_require={
-        'full': ['typecode_libmagic',],
+        'full': [
+            'extractcode',
+            'extractcode_7z',
+            'extractcode_libarchive',
+            'typecode_libmagic',
+        ],
     },
 
     entry_points={
