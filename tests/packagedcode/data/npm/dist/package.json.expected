@@ -1,0 +1,88 @@
+[
+  {
+    "type": "npm",
+    "namespace": null,
+    "name": "angular-compare-validator",
+    "version": "0.1.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": "Angular form validation directive to compare two inputs",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "georgdangl",
+        "email": "npm@dan.gl",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+    "download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+    "size": null,
+    "sha1": "d35a0754c8587b0502874e3636cf0f19565d09b7",
+    "md5": null,
+    "sha256": null,
+    "sha512": "8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03",
+    "bug_tracking_url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
+    "code_view_url": null,
+    "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",
+    "copyright": null,
+    "license_expression": "mit",
+    "declared_license": [
+      "MIT"
+    ],
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:npm/%40angular/core",
+        "requirement": ">=2.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:npm/%40angular/forms",
+        "requirement": ">=2.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:npm/%40angular/common",
+        "requirement": ">=2.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:npm/rxjs",
+        "requirement": ">=5.0.0-beta.12",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:npm/zone.js",
+        "requirement": ">=0.6.21",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:npm/angular-compare-validator@0.1.1",
+    "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
+    "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+    "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1"
+  }
+]
