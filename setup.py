@@ -142,19 +142,15 @@ setup(
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
 
-        # extractcode
-        'patch >= 1.15, < 1.20 ',
-        # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98; python_version < "3"',
-        'extractcode_libarchive',
-        'extractcode_7z',
-
         # commoncode
+        'commoncode >= 20.09',
         'backports.os == 0.1.1; python_version < "3"',
+
         'future >= 0.16.0',
-        'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
+
+        # plugincode
+        'plugincode',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
@@ -172,13 +168,10 @@ setup(
         'six',
         'pdfminer.six >= 20170720',
         'pycryptodome >= 3.4',
+        'chardet >= 3.0.0, <4.0.0',
 
         # typecode
-        'binaryornot >= 0.4.0',
-        'chardet >= 3.0.0, <4.0.0',
-        # note that we use a short version range because we use a simpler lexer list
-        'pygments >= 2.2.0, <2.3',
-        'typecode_libmagic',
+        'typecode',
 
         # packagedcode
         'debut >= 0.9.4',
@@ -192,6 +185,7 @@ setup(
         'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
         'dparse2',
+        'pygments >= 2.4.2, <2.5.1',
 
         # used to fix mojibake in Windows PE
         # for now we use the evrsion that works on both Python 2 and 3
@@ -217,11 +211,19 @@ setup(
         'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
-    
+
+    extras_require={
+        'full': [
+            'extractcode',
+            'extractcode_7z',
+            'extractcode_libarchive',
+            'typecode_libmagic',
+        ],
+    },
+
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
-            'extractcode = extractcode.cli:extractcode',
         ],
 
         # scancode_pre_scan is the entry point for pre_scan plugins executed
