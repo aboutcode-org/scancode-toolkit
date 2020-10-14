@@ -90,6 +90,7 @@ Other contributors, listed alphabetically, are:
 * Justin Hendrick -- ParaSail lexer
 * Jordi Gutiérrez Hermoso -- Octave lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
+* Ken Hilton -- Typographic Number Theory and Arrow lexers
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
 * Doug Hogan -- Mscgen lexer
