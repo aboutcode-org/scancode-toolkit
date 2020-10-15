@@ -140,7 +140,7 @@ setup(
         'py2_ipaddress >= 2.0, <3.5; python_version < "3"',
         'urlpy',
         'publicsuffix2',
-        'fingerprints >= 0.6.0, < 1.0.0',
+        'fingerprints >= 0.6.0',
 
         # commoncode
         'commoncode >= 20.09',
