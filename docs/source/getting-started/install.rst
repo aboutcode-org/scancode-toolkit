@@ -11,8 +11,8 @@ There are 4 main ways you can install ScanCode.
 
 - :ref:`docker_install`
 
-    An alternative to installing the latest Scancode Toolkit release natively is to build 
-    a Docker image from the included Dockerfile. This is easy because the only prerequisite 
+    An alternative to installing the latest Scancode Toolkit release natively is to build
+    a Docker image from the included Dockerfile. This is easy because the only prerequisite
     is a working Docker installation.
 
 - :ref:`source_code_install`
@@ -242,7 +242,7 @@ Un-installation
 
 .. _docker_install:
 
-Installation via Docker: 
+Installation via Docker:
 ------------------------
 
 You can install Scancode Toolkit by building a Docker image from the included Dockerfile.
@@ -257,7 +257,7 @@ Download the ScanCode-Toolkit Source Code
 Build the Docker image
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The ``docker build`` command needs to run in the directory of the source code, 
+The ``docker build`` command needs to run in the directory of the source code,
 make sure to ``cd`` into the correct directory.
 
     cd scancode-toolkit
@@ -266,7 +266,7 @@ make sure to ``cd`` into the correct directory.
 Run using Docker
 ^^^^^^^^^^^^^^^^
 
-The docker image will forward all arguments it receives directly to the ``scancode`` command. 
+The docker image will forward all arguments it receives directly to the ``scancode`` command.
 
 Display help:
 
@@ -276,11 +276,11 @@ Mount current working directory and run scan on mounted folder:
 
     docker run -v $PWD/:/project scancode-toolkit -clpeui --json-pp /project/result.json /project
 
-This will mount your current working from the host into ``/project`` in the container 
-and then scan the contents. The output ``result.json`` will be written back to your 
-corrent working directory on the host. 
+This will mount your current working from the host into ``/project`` in the container
+and then scan the contents. The output ``result.json`` will be written back to your
+corrent working directory on the host.
 
-Note that the parameters *before* ``scancode-toolkit`` are used for docker, 
+Note that the parameters *before* ``scancode-toolkit`` are used for docker,
 those after will be forwarded to scancode.
 
 ----
