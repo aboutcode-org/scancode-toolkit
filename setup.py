@@ -15,7 +15,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.2.3.rc3'
+version = '3.2.4.rc3'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
@@ -119,7 +119,6 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
         'Topic :: Utilities',
     ],
@@ -127,24 +126,17 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
+    python_requires='>2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
     install_requires=[
-        # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
-        # See https://github.com/nexB/scancode-toolkit/issues/1463
-        'more_itertools <  6.0.0; python_version == "2.7"',
-        # end hack
-
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'py2_ipaddress >= 2.0, <3.5; python_version < "3"',
         'urlpy',
         'publicsuffix2',
         'fingerprints >= 0.6.0',
 
         # commoncode
         'commoncode >= 20.09',
-        'backports.os == 0.1.1; python_version < "3"',
 
         'future >= 0.16.0',
         'saneyaml',
