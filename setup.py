@@ -192,7 +192,8 @@ setup(
         'ftfy <  5.0.0',
 
         # scancode
-        'click >= 6.0.0',
+        # Click 7.0 is broken https://github.com/pallets/click/issues/1125
+        'click >= 6.7, !=7.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >= 18.1, !=20.1.0',
