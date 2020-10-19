@@ -197,7 +197,7 @@ def prepare_path(pth):
         if not isinstance(pth, bytes):
             pth = fsencode(pth)
         return pth
-    else:    
+    else:
         if not isinstance(pth, compat.unicode):
             return fsdecode(pth)
     return pth
@@ -365,12 +365,12 @@ def ignore_nothing(_):
     return False
 
 
-def walk(location, ignored=None):
+def walk(location, ignored=None, allow_symlinks=False):
     """
     Walk location returning the same tuples as os.walk but with a different
     behavior:
      - always walk top-down, breadth-first.
-     - always ignore and never follow symlinks,
+     - always ignore and never follow symlinks (unless `allow_symlinks` is True),
      - always ignore special files (FIFOs, etc.)
      - optionally ignore files and directories by invoking the `ignored`
        callable on files and directories returning True if it should be ignored.
@@ -387,33 +387,38 @@ def walk(location, ignored=None):
             logger_debug('walk: ignored:', location, is_ignored)
         return
 
-    if filetype.is_file(location) :
+    if filetype.is_file(location, allow_symlinks=allow_symlinks) :
         yield parent_directory(location), [], [file_name(location)]
 
-    elif filetype.is_dir(location):
+    elif filetype.is_dir(location, allow_symlinks=allow_symlinks):
         dirs = []
         files = []
         # TODO: consider using scandir
         for name in os.listdir(location):
             loc = os.path.join(location, name)
             if filetype.is_special(loc) or (ignored and ignored(loc)):
-                if TRACE:
-                    ign = ignored and ignored(loc)
-                    logger_debug('walk: ignored:', loc, ign)
-                continue
+                if (allow_symlinks
+                        and filetype.is_link(loc)
+                        and not filetype.is_broken_link(location)):
+                    pass
+                else:
+                    if TRACE:
+                        ign = ignored and ignored(loc)
+                        logger_debug('walk: ignored:', loc, ign)
+                    continue
             # special files and symlinks are always ignored
-            if filetype.is_dir(loc):
+            if filetype.is_dir(loc, allow_symlinks=allow_symlinks):
                 dirs.append(name)
-            elif filetype.is_file(loc):
+            elif filetype.is_file(loc, allow_symlinks=allow_symlinks):
                 files.append(name)
         yield location, dirs, files
 
         for dr in dirs:
-            for tripple in walk(os.path.join(location, dr), ignored):
+            for tripple in walk(os.path.join(location, dr), ignored, allow_symlinks=allow_symlinks):
                 yield tripple
 
 
-def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
+def resource_iter(location, ignored=ignore_nothing, with_dirs=True, allow_symlinks=False):
     """
     Return an iterable of paths at `location` recursively.
 
@@ -424,7 +429,7 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
     """
     if on_linux and py2:
         location = fsencode(location)
-    for top, dirs, files in walk(location, ignored):
+    for top, dirs, files in walk(location, ignored, allow_symlinks=allow_symlinks):
         if with_dirs:
             for d in dirs:
                 yield os.path.join(top, d)
