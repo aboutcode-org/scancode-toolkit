@@ -209,3 +209,25 @@ class CountTest(FileBasedTesting):
         for test_file, count in tests:
             result = filetype.get_file_count(os.path.join(test_dir, test_file))
             assert count == result
+
+
+def SymlinkTest(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    @skipIf(on_windows, 'os.symlink does not work on Windows')
+    def test_is_file(self):
+        test_file = self.get_test_loc('symlink/test', copy=True)
+        temp_dir = fileutils.get_temp_dir()
+        test_link = join(temp_dir, 'test-link')
+        os.symlink(test_file, test_link)
+        assert filetype.is_file(test_link, allow_symlinks=True)
+        assert not filetype.is_file(test_link, allow_symlinks=False)
+
+    @skipIf(on_windows, 'os.symlink does not work on Windows')
+    def test_is_dir(self):
+        test_dir = self.get_test_loc('symlink', copy=True)
+        temp_dir = fileutils.get_temp_dir()
+        test_link = join(temp_dir, 'test-dir-link')
+        os.symlink(test_dir, test_link)
+        assert filetype.is_dir(test_link, allow_symlinks=True)
+        assert not filetype.is_dir(test_link, allow_symlinks=False)

@@ -384,6 +384,20 @@ class TestFileUtilsWalk(FileBasedTesting):
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
 
+    @skipIf(on_windows, 'os.symlink does not work on Windows')
+    def test_walk_on_symlinks(self):
+        test_dir = self.get_test_loc('symlink', copy=True)
+        temp_dir = fileutils.get_temp_dir()
+        test_link = join(temp_dir, 'test-dir-link')
+        os.symlink(test_dir, test_link)
+        results = list(fileutils.walk(test_link, allow_symlinks=True))
+        assert len(results) == 1
+        top, dirs, files = results[0]
+        top = os.path.basename(top)
+        assert 'test-dir-link' == top
+        assert [] == dirs
+        assert ['test'] == files
+
 
 class TestFileUtilsIter(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
