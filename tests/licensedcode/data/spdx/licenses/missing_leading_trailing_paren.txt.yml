@@ -1,0 +1,5 @@
+license_expressions:
+  - gpl-2.0 OR mit
+  - gpl-2.0 OR mit
+  - (gpl-2.0 AND mit) AND unknown-spdx
+  

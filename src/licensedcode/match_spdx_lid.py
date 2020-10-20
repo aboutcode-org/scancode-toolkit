@@ -170,6 +170,7 @@ def get_expression(text, licensing, spdx_symbols, unknown_symbol):
 # expression.
 OLD_SPDX_EXCEPTION_LICENSES_SUBS = None
 
+
 def get_old_expressions_subs_table(licensing):
     global OLD_SPDX_EXCEPTION_LICENSES_SUBS
     if not OLD_SPDX_EXCEPTION_LICENSES_SUBS:
@@ -314,11 +315,19 @@ def clean_text(text):
     """
     text = ' '.join(text.split())
     punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\\]^_`{|}~\t\r\n "
-    # remove significant expression punctuations in wrong spot: leading parens
-    # at head and closing parens or + at tail.
+    # remove significant expression punctuations in wrong spot: closing parens
+    # at head and opening parens or + at tail.
     leading_punctuation_spaces = punctuation_spaces + ")+"
     trailng_punctuation_spaces = punctuation_spaces + "("
-    return text.lstrip(leading_punctuation_spaces).rstrip(trailng_punctuation_spaces)
+    text = text.lstrip(leading_punctuation_spaces).rstrip(trailng_punctuation_spaces)
+    # try to fix some common cases of leading and trailing missing parense
+    open_parens_count = text.count('(')
+    close_parens_count = text.count(')')
+    if open_parens_count == 1 and not close_parens_count:
+        text = text.replace('(', ' ')
+    elif close_parens_count == 1 and not open_parens_count:
+        text = text.replace(')', ' ')
+    return ' '.join(text.split())
 
 
 _split_spdx_lid = re.compile(
