@@ -1,0 +1,5 @@
+license_expression: gpl-2.0-plus WITH classpath-exception-2.0
+is_license_notice: yes
+notes: this is a gplv2 reference
+referenced_filenames:
+    - LIBGCJ_LICENSE
