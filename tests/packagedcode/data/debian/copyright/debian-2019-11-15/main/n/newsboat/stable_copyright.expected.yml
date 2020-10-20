@@ -1,0 +1,14 @@
+- |
+  MIT/Expat
+  Boost-1.0
+  GPL-2+
+  GPL-2
+- boost-1.0 AND gpl-2.0 AND gpl-2.0-plus AND mit AND unknown
+- |
+  2015-2018, Alexander Batischev <eual.jp@gmail.com>
+  2006-2010, Andreas Krennmair <ak@synflood.at>
+  2013-2018, Niels Lohmann <http://nlohmann.me>
+  2018, Two Blue Cubes Ltd
+  1990-2004, Hanspeter Moessenboeck, University of Linz
+  2016-2018, Nikos Tsipinakis <nikos@tsipinakis.com>,
+  2007-2014, Nico Golde <nion@debian.org>

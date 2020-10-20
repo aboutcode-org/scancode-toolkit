@@ -1,0 +1,77 @@
+- |
+  GPL-2 with OpenSSL exception
+  GPL-2+
+  GPL-2+ with Autoconf exception
+  GPL-3+ with Autoconf exception
+  GPL-2+ with Libtool exception
+  LGPL-2+ with Libtool exception
+  LGPL-2.1
+  LGPL-2.1 and BSD-3-clause
+  Expat
+  BSD-2-clause
+  BSD-3-clause
+  Zlib
+  ISC
+  permissive~1
+  permissive~2
+  permissive~3
+  permissive~4
+  permissive
+  nsis-bzip2
+  public-domain~1
+  public-domain~2
+  public-domain~3
+  LZW
+  public-domain
+  Apache-2.0 with GPL exception
+- apache-2.0 AND autoconf-simple-exception AND autoconf-simple-exception-2.0 AND bsd-new AND
+  bsd-simplified AND bzip2-libbzip-2010 AND fsf-ap AND fsf-free AND fsf-unlimited AND fsf-unlimited-no-warranty
+  AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
+  AND gpl-3.0 AND gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus WITH
+  libtool-exception-2.0 AND isc AND lgpl-2.0-plus AND lgpl-2.1 AND libtool-exception-2.0 AND
+  mit AND openssl-exception-gpl-3.0-plus AND public-domain AND unknown AND x11-tiff AND zlib
+- |
+  2014, 2017-2018 Cisco and/or its affiliates
+  2002-2013, Tomasz Kojm <tkojm@clamav.net>
+  2004 Trog <trog@uncon.org>
+  2006, Everton da Silva Marques <everton.marques@gmail.com>
+  2006, Sensory Networks, Inc
+  2007-2013, Sourcefire, Inc.
+  2014, Cisco Systems, Inc.
+  2004, Stephen Gran <sgran@debian.org>
+  1992-2013, Free Software Foundation, Inc.
+  1996-2011, Free Software Foundation, Inc.
+  1998-2001, 2004-2010, Free Software Foundation, Inc
+  2003-2004 Stuart Caie
+  1990, 1993-1994, The Regents of the University of California.
+  1994-2015, Free Software Foundation, Inc.
+  1994, X Consortium
+  1997, 2000-2002, 2006, Benjamin Sittler
+  2009-2010, Sourcefire, Inc.
+  1986-1995, Ian F. Darwin
+  2008-2010, Sourcefire, Inc.
+  1991-1993, The Regents of the University of California.
+  1992-1994, Henry Spencer
+  1992-1994, The Regents of the University of California.
+  2001, Opaque Industries
+  2002-2007, Igor Kogan
+  2005, Wang Zhen
+  1995-2005, Jean-loup Gailly
+  1995-2005, Mark Adler
+  1999-2007, Nullsoft and Contributors
+  1995-1998, Jean-loup Gailly
+  1998, Todd C. Miller <Todd.Miller@courtesan.com>
+  1992-1996, 1998-2012, Free Software Foundation, Inc.
+  1994-2011, Free Software Foundation, Inc.
+  1999, 2003, 2011, Free Software Foundation, Inc.
+  2008, Bruce Korb <bkorb@gnu.org>
+  1996-2006, Julian Seward <jseward@bzip.org>
+  1985, John Gilmore
+  Tom St Denis <tomstdenis@gmail.com>
+  2008-2010, Igor Pavlov
+  1988-1997 Sam Leffler
+  1991-1997 Silicon Graphics, Inc
+  2016 Cisco and/or its affiliates. All rights reserved.
+  Public Domain
+  Copyright (C) 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
+  Copyright (c) 2013. The YARA Authors. All Rights Reserved.

@@ -1,0 +1,89 @@
+- |
+  AGPL-3+
+  BSD-3-Clause~Adobe
+  LGPL-2.1
+  FTL
+  GPL
+  AGPL-3+ with font exception
+  GAP~configure
+  GPL-2+
+  ZLIB
+  BSD-3-Clause
+  Expat~SunSoft with SunSoft exception
+  Expat
+  public-domain
+  Apache-2.0
+  ISC
+  Expat~Ghostgum
+  NTP~Open
+  other
+  NTP~Lucent
+  NTP~WSU
+  GPL-3+
+  AGPL-3
+  GPL-2
+  Expat~SunSoft
+- agpl-3.0 AND agpl-3.0-plus AND apache-2.0 AND bsd-new AND freetype AND fsf-free AND gpl-1.0-plus
+  AND gpl-1.0-plus WITH ps-or-pdf-font-exception-20170817 AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus
+  AND isc AND lgpl-2.1 AND libpbm AND mit AND other-permissive AND public-domain AND sunsoft
+  AND unknown AND x11-lucent AND x11-opengroup AND zlib
+- |
+  1986, Eric Gisin
+  1989, Berthold K.P. Horn
+  1990-2019, Artifex Software, Inc.
+  1991, Apple Computer, Inc
+  1991-1994, Free Software Foundation, Inc.
+  1994, Thomas Merz <tm@pdflib.com>
+  1995-1996, Yves Arrouye <yves.arrouye@usa.net>
+  1998, Ivan Schreter
+  2001, gs-cjk project
+  2001, Taiji Yamada <taiji@aihara.co.jp>
+  2001-2004, Raph Levien <raph@acm.org>
+  2003-2004, Hewlett-Packard Development Company, LP
+  1990-2015, Adobe Systems Incorporated
+  2003-2018, Artifex Software
+  1996-2003, Martin Lottermoser
+  1996-1998, David Turner
+  1996-1998, Robert Wilhelm
+  1996-1998, Werner Lemberg
+  2001-2019, Artifex Software, Inc.
+  1989-1994,1998-1999, Aladdin Enterprises
+  1989-1993,1995-1997, Aladdin Enterprises
+  1997,2003,2006, (URW)++ Design & Development
+  1998-2000, Norihito Ohmori
+  1992-2012, Free Software Foundation, Inc
+  1993-2006, Easy Software Products
+  1989, 2000 Aladdin Enterprises, Menlo Park, CA
+  2000-2002, Gergely Szász <szaszg@hu.inter.net>
+  1999-2018, Artifex Software, Inc.
+  2000-2001, Aaron D. Gifford
+  2006-2007, Christophe Devine
+  1994-1996, SunSoft, Inc
+  2003-2004, AXE, Inc.
+  None (Public Domain)
+  2000-2015, The Apache Software Foundation
+  2005-2008, The Android Open Source Project
+  1995, Yves Arrouye
+  1998, Todd C. Miller <Todd.Miller@courtesan.com>
+  2001-2005, Easy Software Products
+  2007, Artifex Software, Inc.
+  1999, Aladdin Enterprises, Menlo Park, CA
+  2000, Rene Harsch <rene@harsch.net>
+  1996-1998, Uli Wortmann <uliw@erdw.ethz.ch>
+  2000, Hewlett-Packard Company
+  2000, Daniel Gordini (dgordin@tin.it)
+  2000, Nelson H. F. Beebe <beebe@ieee.org>
+  2004-2006, Ghostgum Software Pty Ltd
+  2003-2006, AXE Inc
+  2006, Canon Inc
+  2006, Free Standards Group
+  2006, Fuji Xerox Printing Systems Co., Ltd
+  1996-1998, Geoffrey Keating
+  1999-2000, EPSON SOFTWARE DEVELOPMENT LABORATORY, INC.
+  2000-2006,2009, SEIKO EPSON CORPORATION
+  1998, Lucent Technologies
+  1992, Washington State University.
+  1997, Anthony Shipman
+  2004-2009, Masayuki Hatta (mhatta) <mhatta@debian.org>
+  2009-2019, Jonas Smedegaard <dr@jones.dk>
+  2010, Kenshi Muto <kmuto@debian.org>

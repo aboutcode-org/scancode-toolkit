@@ -1,0 +1,150 @@
+- |
+  GPL-2-Asterisk
+  FSFUL
+  GPL-2+ with Autoconf exception
+  MIT
+  GPL-2
+  None
+  BSD-4-Clause-UC
+  GSM
+  BSD-3-Clause~Xiph
+  BSD-3-Clause
+  BSD-4-Clause~NetBSD
+  GPL-2+
+  public-domain
+  Unrestricted~author
+  Expat and GPL-2-Asterisk
+  Unrestricted~app_curl
+  BSD-4-Clause-UC and ISC and GPL-2-Asterisk
+  GPL-3+ with bison exception
+  BSD-3-Clause~IETF
+  WOL and GPL-2-Asterisk
+  LGPL-2.1 or GPL-2-Asterisk
+  ISC
+  BSD-4-Clause~Clapper
+  LGPL-2.1
+  Expat~disclaimer
+  Expat
+  WOL
+- autoconf-simple-exception-2.0 AND bison-exception-2.2 AND brian-clapper AND bsd-new AND bsd-original
+  AND bsd-original-uc AND ekioh AND fsf-free AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND
+  gpl-3.0-plus AND isc AND lgpl-2.1 AND mit AND mit-old-style-no-advert AND other-permissive
+  AND public-domain AND tu-berlin AND unknown AND wol
+- |
+  1999-2006, Brett Bryant <bbryant@digium.com>
+  1999-2006, Mark Spencer <markster@digium.com>
+  1999-2006, Oleksiy Krivoshey <oleksiyk@gmail.com>
+  1999-2006, Russell Bryant <russelb@clemson.edu>
+  1999-2006, Thorsten Lockert <tholo@trollphone.org>
+  1999-2010, Anthony Minessale II <anthmct@yahoo.com>
+  1999-2010, Kevin P. Fleming <kpfleming@digium.com>
+  1999-2016, Digium, Inc.
+  2001,2005, Steve Underwood <steveu@coppice.org>
+  2002, Pauline Middelink <middelink@polyware.nl>
+  2002,2004, Christos Ricudis <ricudis@itc.auth.gr>
+  2003, Jefferson Noxon <jeff@debian.org>
+  2003, Paul Bagyenda <bagyenda@dsmagic.com>
+  2003,2005-2007, Tilghman Lesher
+  2003-2006, Aheeva Technology
+  2003-2012, Matthew D. Hardeman <mhardemn@papersoft.com>
+  2004, Constantine Filin <cf@intermedia.net>
+  2004, The Internet Society
+  2004-2005, Holger Schurig <hs4233@mail.mn-solutions.de>
+  2004-2005, Horizon Wimba, Inc.
+  2004-2005, inAccess Networks
+  2004-2005, Steve Rodgers <hwstar@rodgers.sdcoxmail.com>
+  2004-2006, Andy Powell
+  2004-2006, Ben Kramer <ben@voicetronix.com.au>
+  2004-2006, Christian Richter <crich@beronet.com>
+  2005, Attractel OOD
+  2005, Jeff Ollie
+  2005, Joseph Benden <joe@thrallingpenguin.com>
+  2005, Joshua Colp <jcolp@digium.com>
+  2005, Mikael Magnusson <mikma@users.sourceforge.net>
+  2005,2009, Olle E. Johansson <oej@edvina.net>
+  2005, Oxymium sarl
+  2005-2006, Claude Patry
+  2005-2006, Kevin P. Fleming <kpfleming@digium.com>
+  2005-2007, Cedric Hans <cedric.hans@mlkj.net>
+  2005-2007, Sven Slezak <sunny@mezzo.net>
+  2005-2008,2012, Russell Bryant <russell@digium.com>
+  2006, Martin Portmann <map@infinitum.ch>
+  2006, Proformatique
+  2006, Sergey Basmanov <sergey_basmanov@mail.ru>
+  2006, Voop as
+  2007, Redfish Solutions
+  2007-2008, Luigi Rizzo
+  2007-2008, Marta Carbone
+  2007-2008, Sergio Fadda
+  2007-2008, Trinity College Computing Center
+  2008, Gary Cook
+  2008, Roberto Casas <roberto.casas@diaple.com>
+  2008, Sean Bright <sean.bright@gmail.com>
+  2008, Steve Murphy <murf@digium.com>
+  2008-2009, Eliel C. Sardanons (LU1ALY) <eliels@gmail.com>
+  2009, Attila Domjan <attila.domjan.hu@gmail.com>
+  2009, malleable, LLC.
+  2009, Mark Michelson <mmmichelson@digium.com>
+  2010, Precise Networks, Inc. <http://precisenetworksinc.com/>
+  2011-2012, Terry Wilson <twilson@digium.com>
+  2012, David M. Lee, II <dlee@digium.com>
+  2012, Matt Jordan <mjordan@digium.com>
+  2013-2016, Fairview 5 Engineering, LLC.
+  2014, Jonathan R. Rose <jrose@digium.com>
+  2014, Kinsey Moore <kmoore@digium.com>
+  2014-2015, Richard Mudgett <rmudgett@digium.com>
+  2015, Alexander Traud <pabstraud@compuserve.com>
+  2015-2016, 2016, CFWare, LLC
+  1992-1996,1998-2012, Free Software Foundation, Inc.
+  1996-1997, 1999-2000, 2002-2005, Free Software Foundation, Inc.
+  1991, the Massachusetts Institute of Technology
+  1999-2014, Digium, Inc.
+  2004-2005, Christian Richter <crich@beronet.com>
+  2005, Steve Underwood
+  2007-2008, Dmitry Andrianov <asterisk@dima.spb.ru>
+  1999,2002, Linux Support Services, LLC.
+  1999, Mark Spencer
+  2008,2015, Digium, Inc.
+  None
+  1989-1994, The Regents of the University of California.
+  2004-2005, Objective Systems, Inc.
+  2005, Page Iberica, S.A.
+  1992-1996, Carsten Bormann <cabo@cs.tu-berlin.de>
+  1992-1996, Jutta Degener <jutta@cs.tu-berlin.de>
+  1999, Stanley J. Brooks <stabro@megsinet.net>
+  2002-2003,2007-2008, Jean-Marc Valin
+  2008, Thorvald Natvig
+  1998 Todd C. Miller <Todd.Miller@courtesan.com>
+  2007-2008, Jean-Marc Valin
+  1997-2001, The NetBSD Foundation, Inc.
+  2005, 2007-2008, Tzafrir Cohen <tzafrir.cohen@xorcom.com>
+  Mark Roberts <mark@manumark.de>
+  Michael Labuschke <michael@labuschke.de>
+  2003-2006, Tilghman Lesher
+  2005-2006, BJ Weschke <bweschke@btwtech.com>
+  2006, Digium, Inc.
+  2006, Philipp Dunkel <philipp.dunkel@ebox.at>
+  1999, - 2010, Digium, Inc.
+  2001, Simon Tatham.
+  2015, Diederik de Groot <dddegroot@users.sf.net>
+  2004-2006, Tilghman Lesher
+  1983, 1989, 1993, The Regents of the University of California
+  1993, Digital Equipment Corporation
+  1999-2006, Thorsten Lockert
+  1989,1993, The Regents of the University of California.
+  1999, The NetBSD Foundation, Inc.
+  1984, 1989-1990, 2000-2011, Free Software Foundation, Inc.
+  2011 IETF Trust and the persons identified as authors of the code.
+  1995,1996,1997 by Michael Hipp
+  1999-2009, Stephan M. Bernsee <smb@dspdimension.com>
+  2010, Digium, Inc.
+  2004, Steve Underwood <steveu@coppice.org>
+  1997 Todd C. Miller <Todd.Miller@courtesan.com>
+  1999-2006, Digium, Inc.
+  2004 Darren Tucker
+  1995-2002, Brian M. Clapper
+  2004-2005, Horizon Wimba, Inc
+  on this file is disclaimed to Digium for inclusion in Asterisk
+  2005-2008, Sam Stephenson
+  2007, Russell Bryant <russell@digium.com>
+  2014, Lorenzo Miniero

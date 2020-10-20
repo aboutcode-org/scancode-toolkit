@@ -1,0 +1,40 @@
+- |
+  Go
+  X11
+  FreeBSD
+  MPEG
+  noderivs
+  Apache-2.0
+  BSD-2-clause-svgpan
+  CC-BY-3.0
+  BSD-3-clause
+- apache-2.0 AND bsd-new AND bsd-simplified AND cc-by-3.0 AND freetype AND freetype-patent AND
+  google-patent-license-golang AND mit AND mpeg-ssg AND multics AND unknown AND x11-xconsortium
+- |
+  © 2009, 2010, The Go Authors. All rights reserved.
+  © 1994-1999 Lucent Technologies Inc. All rights reserved.
+  Portions © 1997-1999 Vita Nuova Limited
+  Portions © 2000-2007 Vita Nuova Holdings Limited (www.vitanuova.com)
+  Portions © 2001-2007 Russ Cox. All rights reserved.
+  Portions © 2004,2006 Bruce Ellis
+  Portions © 1995-2007 C H Forsyth (forsyth@terzarima.net)
+  Revisions © 2000-2007 Lucent Technologies Inc. and others
+  Portions © 2009 The Go Authors. All rights reserved.
+  © 2009, The Go Authors. All rights reserved.
+  © 1996-1998 John D. Polstra. All rights reserved.
+  © 2001 David E. O'Brien
+  © 2009, 2011 The Go Authors. All rights reserved.
+  Based on code © 1984, 1987, 1989, 1992, 2000 by Stephen L. Moshier
+  © 2010 The Go Authors. All rights reserved.
+  Based on code © 1993 by Sun Microsystems, Inc. All rights reserved.
+  © 1996, MPEG Software Simulation Group. All Rights Reserved.
+  © Willem van Schaik, 1999
+  2014, 2016 Google Inc.
+  2009-2017 Andrea Leofreddi <a.leofreddi@itcharm.com>
+  Renée French
+  2012 The Chromium Authors
+  2010 Ivan Wong <ivanwyc@gmail.com>
+  2010 Ondřej Surý <ondrej@debian.org>
+  2012 Michael Stapelberg <stapelberg@debian.org>
+  2014 Canonical Ltd
+  2014 Tianon Gravi <tianon@debian.org>

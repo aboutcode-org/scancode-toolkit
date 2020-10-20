@@ -1,0 +1,46 @@
+- |
+  LGPL-2.1
+  MIT
+  Beerware
+  public-domain-solardiz
+  BSD-3-Clause
+  Unicode-DFS-2015
+  Apache-2.0
+  BSD-2-Clause
+  Apache-2.0 or LGPL-2.1
+  GPL-2+
+- apache-2.0 AND beerware AND bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.1
+  AND lgpl-2.1-plus AND mit AND public-domain AND unicode AND unicode-dfs-2015 AND unknown
+- |
+  (c) 2001-2018 Dovecot authors
+  (c) 2004-2006 Andrey Panin <pazke@donpac.ru>
+  (c) 2005 Jelmer Vernooij <jelmer@samba.org>
+  (c) 2011-2016 Florian Zeitz <florob@babelmonkeys.de>
+  (c) 2007 Dmitry Butskoy <dmitry@butskoy.name>
+  (C) 2006 Simon L Jackson
+  (c) 2015-2017 Dovecot Oy
+  Poul-Henning Kamp <phk@login.dknet.dk>
+  (c) Copyright 1997-2005 Simon Tatham
+  N/A
+  Copyright (C) 1995, 1996, 1997, and 1998 WIDE Project.
+  Copyright (C) 2005, 2007 Olivier Gay <olivier.gay@a3.epfl.ch>
+  (c) 2016-2017 Josef 'Jeff' Sipek <jeffpc@josefsipek.net>
+  (c) 2004 Andrey Panin <pazke@donpac.ru>
+  (c) 2003 Joshua Goodall <joshua@roughtrade.net>
+  (c) 2005 Vaclav Haisman <v.haisman@sh.cvut.cz>
+  Copyright (C) 1991-2007 Unicode, Inc.
+  Copyright (c) 2001, Dr Martin Porter
+  Copyright (c) 2002, Richard Boulton.
+  Apache Software Foundation
+  (c) 2005, Jacques Savoy.
+  Copyright 2010 Lennart Poettering
+  (C) 2003-2006 Ben van Klinken and the CLucene Team
+  (c) 2006-2016 Jaldhar H. Vyas <jaldhar@debian.org>
+  (c) 2006-2009 Fabio Tranchitella <kobold@debian.org>
+  (c) 2008-2009 Joel Johnson <mrjoel@lixil.net>
+  (c) 2009-2012 Marco Nenciarini <mnencia@debian.org>
+  (c) 2011-2013 Micah Anderson <micah@debian.org>
+  (c) 2014-2015 Jelmer Vernooij <jelmer@debian.org>
+  (c) 2016-2018 Apollon Oikonomopoulos <apoikos@debian.org>
+  (c) 2002-2018 Stephan Bosch <stephan@rename-it.nl>
+  (c) 2002-2018 Dovecot authors

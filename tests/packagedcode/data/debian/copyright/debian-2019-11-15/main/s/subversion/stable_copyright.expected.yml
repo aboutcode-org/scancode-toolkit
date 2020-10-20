@@ -1,0 +1,43 @@
+- |
+  Apache-2.0
+  BSD-3-clause or Apache-2.0
+  Utfwidth
+  BSD-3-clause
+  Svnwrap
+  GPL-2+
+  GPL-3+
+  AFL-3
+  Expat and Unicode
+  BSD-2-clause
+  Expat
+  Unicode
+- afl-3.0 AND apache-2.0 AND bsd-new AND bsd-simplified AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0
+  AND gpl-3.0-plus AND mit AND other-copyleft AND other-permissive AND unicode AND unknown AND
+  x11-adobe-dec
+- |
+  Apache Software Foundation
+  2007 Max Bowsher
+  2005 Greg Stein
+  2007 David Glasser
+  2003, 2004, 2005 Edgewall Software
+  2003, 2004, 2005 Jonas Borgström <jonas@edgewall.com>
+  2005 Christopher Lenz <cmlenz@gmx.de>
+  2007 Markus Kuhn
+  2008-2014 Vinay Sajip
+  2006 Peter Samuelson
+  2004, 2005, 2006 Simon Perreault
+  2005,2006 Blair Zajac <blair@orcaware.com>
+  2002-2009 Stefan Reichoer
+  2006-2010 Virtutech AB
+  2010 Intel
+  2008,2009 by Robert Millan
+  2009 by Peter Samuelson
+  2002,2003,2004,2005,2006,2007,2009 Dolby. All rights reserved.
+  2014-2015 Steven G. Johnson, Jiahao Chen, Tony Kelman, Jonas Fonseca, and other contributors listed in the git history
+  2009, 2013 Public Software Group e. V., Berlin, Germany
+  1991-2007 Unicode, Inc.
+  2011-2016, Yann Collet
+  2006-2008 Christophe Devine
+  2009 Paul Bakker <polarssl_maintainer at polarssl dot org>
+  2010-2013, Peter Noordhuis <pcnoordhuis at gmail dot com>
+  2010-2014, Salvatore Sanfilippo <anitrez at gmail dot com>

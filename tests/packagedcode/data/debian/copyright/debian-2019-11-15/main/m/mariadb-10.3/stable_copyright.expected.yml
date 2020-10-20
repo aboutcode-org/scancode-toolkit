@@ -1,0 +1,210 @@
+- |
+  GPL-2
+  GPL-2+
+  GPL-verbatim
+  public-domain
+  BSD-3-clause
+  LGPL-2.1+
+  BSD-2-clause
+  LGPL-2
+  unlimited-free-doc
+  LGPL
+  GPL-2 and BSD-2-clause
+  zlib/libpng
+  GPL-3+-with-bison-exception
+  GPL-2+-with-bison-exception
+  SWsoft
+  GPL-2 or Artistic
+  GPL-3+
+  MIT/X11
+  Artistic
+- artistic-perl-1.0 AND bsd-new AND bsd-simplified AND fsf-free AND gpl-1.0-plus AND gpl-2.0
+  AND gpl-2.0-plus AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus AND gpl-3.0-plus
+  WITH bison-exception-2.2 AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1-plus AND mit AND public-domain
+  AND stlport-4.5 AND unknown AND wtfpl-1.0 AND x11-xconsortium AND zlib
+- |
+  2000-2016, Oracle and/or its affiliates. All rights reserved.
+  2008-2013 Monty Program AB
+  2008-2014 SkySQL Ab
+  2013-2016 MariaDB Corporation
+  2012-2016 MariaDB Foundation
+  1997-1998, Scott Hanson <shanson@debian.org>
+  1997 Christian Schwarz <schwarz@debian.org>
+  1999-2007, 2009, Christian Hammers <ch@debian.org>
+  2000-2001, Christopher C. Chimelis <chris@debian.org>
+  2001 Matthew Wilcox <willy@debian.org>
+  2005-2007, Sean Finney <seanius@debian.org>
+  2006 Adam Conrad <adconrad@0c3.net>
+  2007-2011, Norbert Tretkowski <norbert@tretkowski.de>
+  2007-2008, Monty Taylor <mordred@inaugust.com>
+  2008 Devin Carraway <devin@debian.org>
+  2008 Steffen Joeris <white@debian.org>
+  2009 Canonical Ltd
+  2010 Xavier Oswald <xoswald@debian.org>
+  2011 Clint Byrum <clint@ubuntu.com>
+  2011 Ondřej Surý <ondrej@debian.org>
+  2012 Nicholas Bamber <nicholas@periapt.co.uk>
+  2013,2016 Kristian Nielsen <knielsen@askmonty.org>
+  2013-2016 Otto Kekäläinen <otto@seravo.fi>
+  2014 Julien Muchembled <jm@jmuchemb.eu>
+  2014 Tobias Frost <tobi@coldtobi.de>
+  2015 Andreas Beckmann <anbe@debian.org>
+  2015-2016 Arnaud Fontaine <arnau@debian.org>
+  2015-2016 Daniel Black <daniel.black@openquery.com.au>
+  2015 Israel Tsadok <itsadok@gmail.com>
+  2015 Jan Wagner <waja@cyconet.org>
+  2015 Jean Weisbuch <jean@phpnet.org>
+  2015 Olaf van der Spek <olafvdspek@gmail.com>
+  2015-2106 Robie Basak <robie.basak@canonical.com>
+  2016 Axel Beckert <abe@debian.org>
+  2016 Dieter Adriaenssens <dieter.adriaenssens@gmail.com>
+  2016 Ian Gilfillan <ian@mariadb.org>
+  2016 James Cowgill <jcowgill@debian.org>
+  2016 Paul Gevers <elbrus@debian.org>
+  2016 Samuel Thibault <sthibault@debian.org>
+  2016 Vicențiu Ciorbaru <vicentiu@mariadb.org>
+  2010 Sergei Golubchik and Monty Program Ab
+  2006-2008 Daniel Nichter <public@codenode.com>
+  2012-2015 Jean Weisbuch
+  UNKNOWN
+  1979-2009 MySQL AB
+  1995-2010 Sun Microsystems Inc
+  1994-1997,2000-2014 Oracle and/or its affiliates
+  2010 Kristian Nielsen
+  2012 MariaDB Services
+  2013 MariaDB Foundation
+  2010,2013 Sergei Golubchik
+  1985,1995,2008-2011,2012-2014 Monty Program AB
+  2008-2014 SykSQL Ab
+  1993-2014 Olivier Bertrand
+  2008-2014 Kentoku Shiba
+  2013 Sergey Vojtovich and MariaDB Foundation
+  2006 MySQL AB & MySQL Finland AB & TCX DataKonsult AB
+  2012 Michael Widenius
+  2010-2011 DeNA Co.,Ltd.
+  2011 Kentoku SHIBA
+  1989, 1991 Free Software Foundation, Inc
+  2006-2008 MySQL AB
+  2008-2009 Sun Microsystems, Inc
+  2009, 2013, Monty Program Ab
+  none
+  2013, Spaempresarial - Brazil, Roberto Spadim
+  2008, Roland Bouman
+  2011 Kristian Nielsen and Monty Program Ab
+  2010,2011,2013 Monty Program Ab
+  2011,2012 Oleksandr Byelkin
+  2011,2012 Kristian Nielsen and Monty Program Ab
+  2002 MySQL AB
+  2003-2007 MySQL AB
+  2009-2013, Monty Program Ab
+  2000,2003 TXT DataKonsult Ab & Monty Program Ab
+  2009-2011, Monty Program Ab
+  2000 TXT DataKonsult Ab & Monty Program Ab
+  Richard A. O'Keefe
+  2007-2013 Arjen G Lentz & Antony T Curtis for Open Query
+  2000-2006 MySQL AB
+  2004-2012 Olivier Bertrand
+  1994-1996, 1999-2002, 2004-2006, Free Software Foundation, Inc.
+  2004, 2007, 2011, Oracle and/or its affiliates
+  2000, 2001, 2010, 2011, Oracle and/or its affiliates
+  Sergei A. Golubchik
+  2000 MySQL AB & MySQL Finland AB & TCX DataKonsult AB
+  1994-2011 Sergei A. Golubchik
+  1996 Michael Widenius
+  1994-2014 Oracle and/or its affiliates
+  2008-2009 Google Inc
+  2009 Sun Microsystems, Inc
+  2009 Percona Inc
+  2013, 2014 SkySQL Ab
+  2012 Facebook Inc
+  2008 Sun AB
+  2006 MySQL Finland AB
+  2006 TCX DataKonsult AB
+  2003-2008 MySQL AB
+  2007-2008 Michael Widenius
+  2007 Guilhem Bichot
+  2006 Sergei A. Golubchik
+  2007 Sanja Belkin
+  2006 Ramil Kalimullin
+  2006 Alexey Botchkov
+  2008-2011 Monty Program Ab
+  2004-2008 MySQL AB & MySQL Finland AB & TCX DataKonsult AB
+  2009, 2010 Facebook, Inc.
+  2011 Oracle and/or its affiliates.
+  2008 Google Inc
+  2008-2009 Percona Inc
+  2001-2014 Andrew Aksyonoff
+  2008-2014 Sphinx Technologies Inc
+  1987-2006 Free Software Foundation Inc
+  2000-2007 MySQL AB
+  2000-2013 Oracle and/or its affiliates
+  2009 Sun Microsystems Inc
+  2010 Kristian Nielsen and Monty Program AB
+  1995-2005 Jean-loup Gailly
+  1995-2005 Mark Adler
+  2000-2002 Innobase Oy & MySQL AB
+  2000,2002-2007 MySQL AB
+  Ramil Kalimullin
+  2000,2002,2005-2011 Oracle and/or its affiliates
+  tommy@valley.ne.jp
+  1996 Abandoned TCX DataKonsult AB & Monty Program KB & Detron HB
+  1984,1989-1990,2000-2011 Free Software Foundation, Inc.
+  1995-2009 Innobase Oy.
+  1984,1989-1990,2000-2004 Free Software Foundation Inc.
+  1984, 1989-1990, 2000-2006 Free Software Foundation, Inc.
+  Richard A. O'Keefe.
+  1998 Abandoned Irena Pancirov - Irnet Snc
+  1987 Abandoned Fred Fish
+  2008-2009 Sun Microsystems Inc
+  2010 DeNA Co.,Ltd.
+  2015 Shuang Qiu
+  2015 Robbie Harwood
+  2002-2012 eperi GmbH
+  2011-2015 Kouhei Sutou <kou@clear-code.com>
+  2011-2013 Kentoku SHIBA
+  2010 Tetsuro IKEDA
+  2014 Kenji Maruyama <mmmaru777@gmail.com>
+  2014-2015 Naoya Murakami <naoya@createfield.com>
+  2009-2015 Brazil
+  2008-2015 Kentoku Shiba
+  1997-2016 University of Cambridge
+  2003-2014 Google Inc
+  2009-2016 Zoltan Herczeg
+  2006-2011,2013 Oracle and/or its affiliates
+  2009, 2010 Sun Microsystems, Inc
+  2006,2007 MySQL AB
+  2006, 2014, Oracle and/or its affiliates
+  2013 Alexey Botchkov and SkySQL Ab
+  2002-2010 Oracle and/or its affiliates.
+  2001 Jan Pazdziora
+  1998 Theppitak Karoonboonyanan <thep@links.nectec.or.th>
+  1989-1991 Samphan Raruenrom <samphan@thai.com>
+  2000-2010 Oracle and/or its affiliates.
+  2003 Sathit Jittanupat
+  2001 Korakot Chaovavanich <korakot@iname.com> and
+  1998-1999 Pruet Boonma <pruet@eng.cmu.ac.th>
+  2000-2010 MySQL AB & Innobase Oy.
+  2007-2012 Oracle and/or its affiliates.
+  1991,2000-2001 Lucent Technologies
+  2000-2002,2005-2008 MySQL AB
+  2000 SWsoft company
+  1998 Abandoned TCX DataKonsult AB & Monty Program KB & Detron HB
+  1997, Yves.Carlier@rug.ac.be
+  2006-2009, Baron Schwartz <baron@xaprb.com>
+  1996, 1999, 2001 MySQL AB
+  2007 Antony T Curtis
+  2008-2009 Patrick Galbraith
+  2006-2015 Percona and/or its affiliates
+  1987-2009 Free Software Foundation, Inc.
+  1992,1993 Jean-loup Gailly
+  Andrew Dudman
+  Lasse Collin
+  2006 Timo Lindfors
+  1996 Fran,cois Pinard <pinard@iro.umontreal.ca>
+  1996 Gordon Matzigkeit
+  2007 Steven G. Johnson <stevenj@alum.mit.edu>
+  1989-1994,1996-1999,2001,2003,2004 Free Software Foundation, Inc.
+  Copyright (C) 1994 X Consortium
+  2005-2011 Google Inc.
+  2015 Daniel Black
+  2008-2015 Codership Oy <http://www.codership.com>

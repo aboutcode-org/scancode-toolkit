@@ -1,0 +1,46 @@
+- |
+  LGPL-2.1+
+  This source code is a product of Sun Microsystems, Inc. and is provided
+  GPL-2+
+  You are allowed to use this source code in any open source or closed
+  Permission is hereby granted, free of charge, to any person
+  LGPL-2+
+- bloomberg-blpapi AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1
+  AND lgpl-2.1-plus AND lgpl-3.0 AND mit AND other-permissive AND sun-rpc AND unknown AND warranty-disclaimer
+- |
+  Copyright (C) 2004-2009 Lennart Poettering
+  Copyright (C) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright (C) 2001 Chris Bagwell
+  Copyright 2006 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright (C)1994,96,97,98,99,2000,2001,2004 Free Software Foundation, Inc.
+  Copyright (C) 1999 Tom Tromey
+  Copyright (C) 2000 Red Hat, Inc.
+  Copyright (C) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
+  Copyright (C) 2008-2009 Joao Paulo Rechi Vita
+  Copyright (C) 2004-2005 Henryk Ploetz <henryk@ploetzli.ch>
+  Copyright (C) 2005-2006 Brad Midgley <bmidgley@xmission.com>
+  Copyright 2009 Tanu Kaskinen
+  Copyright (C) DFS Deutsche Flugsicherung (2004). All Rights Reserved.
+  Copyright 2006-2008 Lennart Poettering
+  Copyright (C) 2009 Colin Guthrie
+  Copyright 2006 Lennart Poettering
+  Copyright 2006 Shams E. King
+  Copyright (C) 2008 Colin Guthrie
+  Copyright 2006 Diego Petteno
+  Copyright 2005-2007 Lennart Poettering
+  Copyright (C) Kungliga Tekniska Hogskolan
+  Copyright 2009 Colin Guthrie
+  Copyright 2011 Colin Guthrie
+  Copyright 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB
+  Copyright 2009 Finn Thain
+  Copyright 2010 Intel Corporation
+  Contributor: Pierre-Louis Bossart <pierre-louis.bossart@intel.com>
+  Copyright 2009 (C) Lennart Poettering
+  Copyright (C) 2006-2008 Lennart Poettering
+  Copyright (C) 2008 Nokia Corporation
+  Copyright (C) 2008 Lennart Poettering
+  Copyright 2006-2009 Sjoerd Simons <sjoerd@debian.org>
+  Copyright 2006-2008 CJ van den Berg <cj@vdbonline.com>
+  Copyright 2004-2006 Lennart Poettering
+  Copyright 2009 Wim Taymans <wim.taymans@collabora.co.uk>
+  2009 Jason Newton <nevion@gmail.com>

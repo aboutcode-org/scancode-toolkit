@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import json
 from os import path
 from os import walk
 from unittest.case import skipIf
@@ -34,6 +33,8 @@ from unittest.case import skipIf
 from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
+import saneyaml
+
 from packagedcode import debian_copyright
 
 
@@ -42,20 +43,21 @@ def check_expected(test_loc, expected_loc, regen=False):
     Check copyright parsing of `test_loc` location against an expected JSON file
     at `expected_loc` location. Regen the expected file if `regen` is True.
     """
-    result = list(debian_copyright.parse_copyright_file(test_loc))
+    result = saneyaml.dump(list(debian_copyright.parse_copyright_file(test_loc)))
     if regen:
         with open(expected_loc, 'w') as ex:
-            ex.write(json.dumps(result, indent=2))
+            ex.write(result)
 
     with open(expected_loc) as ex:
-        expected = json.loads(ex.read())
+        expected = ex.read()
 
     if expected != result:
 
-        expected = [
-            ('copyright file', 'file://' + test_loc),
-            ('expected file', 'file://' + expected_loc),
-        ] + expected
+        expected = '\n'.join([
+            'file://' + test_loc,
+            'file://' + expected_loc,
+            expected
+        ])
 
         assert expected == result
 
@@ -66,7 +68,7 @@ def relative_walk(dir_path):
     """
     for base_dir, _dirs, files in walk(dir_path):
         for file_name in files:
-            if file_name.endswith('.json'):
+            if file_name.endswith('.yml'):
                 continue
             file_path = path.join(base_dir, file_name)
             file_path = file_path.replace(dir_path, '', 1)
@@ -105,7 +107,7 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
     for test_file in relative_walk(test_dir_loc):
         test_name = prefix + text.python_safe_name(test_file)
         test_loc = path.join(test_dir_loc, test_file)
-        expected_loc = test_loc + '.expected.json'
+        expected_loc = test_loc + '.expected.yml'
 
         test_method = create_test_function(
             test_loc=test_loc,
