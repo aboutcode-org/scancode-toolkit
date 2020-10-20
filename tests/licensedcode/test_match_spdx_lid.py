@@ -538,3 +538,17 @@ class TestMatchSpdx(FileBasedTesting):
         assert expected_qtext == qtext
         expected_itext = 'spdx license identifier bsd 3 clause no nuclear warranty'
         assert expected_itext == itext
+
+    def test_get_expression_does_not_fail_on_empty(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = 'SPDX-License-Identifier: '
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert None == expression
+
+    def test_Index_match_does_not_fail_on_empty(self):
+        idx = cache.get_index()
+        matches = list(idx.match(query_string='SPDX-License-Identifier: '))
+        assert not matches
+

@@ -585,8 +585,9 @@ class LicenseIndex(object):
                 continue
             spdx_match = match_spdx_lid.spdx_id_match(
                 self, query_run, detectable_text)
-            query_run.subtract(spdx_match.qspan)
-            matches.append(spdx_match)
+            if spdx_match:
+                query_run.subtract(spdx_match.qspan)
+                matches.append(spdx_match)
 
         return matches
 
