@@ -384,6 +384,20 @@ class TestFileUtilsWalk(FileBasedTesting):
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
 
+    @skipIf(on_windows, 'os.symlink does not work on Windows')
+    def test_walk_on_symlinks(self):
+        test_dir = self.get_test_loc('symlink/walk', copy=True)
+        temp_dir = fileutils.get_temp_dir()
+        test_link = join(temp_dir, 'test-dir-link')
+        os.symlink(test_dir, test_link)
+        results = list(fileutils.walk(test_link, follow_symlinks=True))
+        results = [(os.path.basename(top), dirs, files) for top, dirs, files in results]
+        expected = [
+            ('test-dir-link', ['dir'], ['a']),
+            ('dir', [], ['b'])
+        ]
+        assert expected == results
+
 
 class TestFileUtilsIter(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -552,6 +566,19 @@ class TestFileUtilsIter(FileBasedTesting):
             test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
+
+    def test_resource_iter_follow_symlinks(self):
+        test_dir = self.get_test_loc('symlink/walk', copy=True)
+        temp_dir = fileutils.get_temp_dir()
+        test_link = join(temp_dir, 'test-dir-link')
+        os.symlink(test_dir, test_link)
+        result = [os.path.basename(f) for f in fileutils.resource_iter(test_dir, follow_symlinks=True)]
+        expected = [
+            'dir',
+            'a',
+            'b'
+        ]
+        assert sorted(expected) == sorted(result)
 
 
 class TestBaseName(FileBasedTesting):
