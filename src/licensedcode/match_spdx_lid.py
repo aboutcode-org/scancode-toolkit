@@ -97,7 +97,7 @@ def spdx_id_match(idx, query_run, text):
 
     _prefix, exp_text = prepare_text(text)
     expression = get_expression(exp_text, licensing, symbols_by_spdx, unknown_symbol)
-    if not expression:
+    if expression is None:
         return
     expression_str = expression.render()
 
