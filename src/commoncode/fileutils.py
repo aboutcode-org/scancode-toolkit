@@ -375,6 +375,9 @@ def walk(location, ignored=None, allow_symlinks=False):
      - optionally ignore files and directories by invoking the `ignored`
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
+
+    If `allow_symlinks` is True, then symlinks will not be ignored and be
+    collected like regular files and directories
     """
     if on_linux and py2:
         location = fsencode(location)
