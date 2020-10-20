@@ -841,8 +841,8 @@ class LicenseIndex(object):
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
-            (self.get_spdx_id_matches, True, 'spdx_lid'),
             (self.get_exact_matches, False, 'aho'),
+            (self.get_spdx_id_matches, True, 'spdx_lid'),
             (approx, False, 'seq'),
         ]
 
