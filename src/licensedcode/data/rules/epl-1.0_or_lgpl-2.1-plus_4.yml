@@ -1,0 +1,7 @@
+license_expression: epl-1.0 OR lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+notes: found in sat4j
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/epl-v10.php
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
