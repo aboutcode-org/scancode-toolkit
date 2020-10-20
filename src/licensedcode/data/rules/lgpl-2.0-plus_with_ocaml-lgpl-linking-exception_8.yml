@@ -1,0 +1,6 @@
+license_expression: lgpl-2.0-plus WITH ocaml-lgpl-linking-exception
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - COPYING
+notes: it has a few extra permissions

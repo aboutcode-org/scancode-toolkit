@@ -1,0 +1,4 @@
+The usage of the MIT license probably makes filter-repo compatible with
+everything, but just in case, these files can also be used under whatever
+open source license[1] that git.git or libgit2 use now or in the future
+(currently GPL[2] and GPL-with-linking-exception).

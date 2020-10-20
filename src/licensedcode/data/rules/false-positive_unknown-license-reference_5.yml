@@ -1,0 +1,5 @@
+license_expression: unknown-license-reference
+is_false_positive: yes
+is_license_reference: yes
+relevance: 100
+notes: Seen in libmagic
