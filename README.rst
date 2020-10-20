@@ -11,30 +11,30 @@ Read more about ScanCode here: `scancode-toolkit.readthedocs.io <https://scancod
 Why use ScanCode?
 =================
 
-- As a **standalone command line tool**, ScanCode is **easy to install**, run
-  and embed in your CI/CD processing pipeline. It runs on **Windows, macOS and Linux**.
+- As a **standalone command-line tool**, ScanCode is **easy to install**, run,
+  and embed in your CI/CD processing pipeline. It runs on **Windows, macOS, and Linux**.
 
 - ScanCode is **used by several projects and organizations** such as the `Eclipse
   Foundation <https://www.eclipse.org>`_, `OpenEmbedded.org <https://www.openembedded.org>`_,
-  the `FSF <https://www.fsf.org>`_, `OSS Review Toolkit <http://oss-review-toolkit.org>`_, 
+  the `FSF <https://www.fsf.org>`_, `OSS Review Toolkit <http://oss-review-toolkit.org>`_,
   `ClearlyDefined.io <https://clearlydefined.io/>`_,
   `RedHat Fabric8 analytics <https://github.com/fabric8-analytics>`_ and many more.
 
-- ScanCode detects licenses, copyrights, package manifests and direct dependencies
+- ScanCode detects licenses, copyrights, package manifests, and direct dependencies
   and more both in **source code** and **binary** files.
 
 - ScanCode provides the **most accurate license detection engine** and does a
   full comparison (also known as diff or red line comparison) between a database of license texts
   and your code instead of relying only on regex patterns or probabilistic
-  search, edit distance or machine learning.
+  search, edit distance, or machine learning.
 
 - Written in Python, ScanCode is **easy to extend with plugins** to contribute new
-  and improved scanners, data summarization, package manifest parsers and new
+  and improved scanners, data summarization, package manifest parsers, and new
   outputs.
 
-- You can save your scan results as **JSON, HTML, CSV or SPDX**. And you can use the
+- You can save your scan results as **JSON, HTML, CSV, or SPDX**. And you can use the
   companion `ScanCode workbench GUI app <https://github.com/nexB/scancode-workbench>`_
-  to review and display scan results, statistics and graphics.
+  to review and display scan results, statistics, and graphics.
 
 - ScanCode is **actively maintained**, has a **growing community of users**.
 
@@ -143,7 +143,7 @@ For discussions and chats, we have:
 * an official Gitter channel for web-based chats at https://gitter.im/aboutcode-org/discuss
   Gitter is also accessible via an IRC bridge at https://irc.gitter.im/
 
-* an official `#aboutcode` IRC channel on freenode (server chat.freenode.net). 
+* an official `#aboutcode` IRC channel on freenode (server chat.freenode.net).
   This channel receives build and commit notifications and can be a tad noisy.
   You can use your favorite IRC client or use the web chat at
   https://webchat.freenode.net/
@@ -177,7 +177,7 @@ the third-party code used in ScanCode for more details.
     :target: https://codecov.io/gh/nexB/scancode-toolkit/branch/develop
     :alt: Develop branch test coverage (Linux)
 
-.. |master-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master 
+.. |master-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=master
     :target: https://travis-ci.org/nexB/scancode-toolkit
     :alt: Linux Master branch tests status
 .. |devel-posix| image:: https://api.travis-ci.org/nexB/scancode-toolkit.png?branch=develop
