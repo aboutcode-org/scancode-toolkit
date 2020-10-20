@@ -1,16 +1,11 @@
 key: openssl-exception-gpl-2.0
-short_name: OpenSSL exception to GPL 2.0
-name: OpenSSL exception to GPL 2.0
+short_name: OpenSSL exception to GPL
+name: OpenSSL exception to GPL
 category: Copyleft Limited
 owner: OpenSSL
-homepage_url: http://www.openssl.org/source/license.html
+notes: this is typically used with GPL 2.0 but sometimes seen with GPL 3.0
 is_exception: yes
-text_urls:
-    - http://www.openssl.org/source/license.html
-    - http://www.gnu.org/licenses/gpl-2.0.txt
 faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
-other_urls:
-    - http://people.gnome.org/~markmc/openssl-and-the-gpl.html
 standard_notice: |
     The OpenSSL License is not compatible with the GPL, since it contains the
     following two clauses:
