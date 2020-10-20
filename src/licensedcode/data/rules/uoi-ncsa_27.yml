@@ -1,2 +1,5 @@
 license_expression: uoi-ncsa
-is_license_tag: yes
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 80
+

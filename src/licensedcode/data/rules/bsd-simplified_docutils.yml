@@ -1,2 +1,5 @@
 license_expression: bsd-simplified
-is_license_reference: yes
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+
