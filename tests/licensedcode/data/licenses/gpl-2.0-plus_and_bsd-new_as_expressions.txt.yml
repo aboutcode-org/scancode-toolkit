@@ -1,2 +1,3 @@
-license_expression: gpl-2.0 AND bsd-new
+license_expressions:
+    - gpl-2.0 AND bsd-new
 notes: this is missing an operator and the GPL 2.0+ key has a space
