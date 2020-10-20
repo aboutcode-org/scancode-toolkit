@@ -220,8 +220,8 @@ def SymlinkTest(FileBasedTesting):
         temp_dir = fileutils.get_temp_dir()
         test_link = join(temp_dir, 'test-link')
         os.symlink(test_file, test_link)
-        assert filetype.is_file(test_link, allow_symlinks=True)
-        assert not filetype.is_file(test_link, allow_symlinks=False)
+        assert filetype.is_file(test_link, follow_symlinks=True)
+        assert not filetype.is_file(test_link, follow_symlinks=False)
 
     @skipIf(on_windows, 'os.symlink does not work on Windows')
     def test_is_dir(self):
@@ -229,5 +229,5 @@ def SymlinkTest(FileBasedTesting):
         temp_dir = fileutils.get_temp_dir()
         test_link = join(temp_dir, 'test-dir-link')
         os.symlink(test_dir, test_link)
-        assert filetype.is_dir(test_link, allow_symlinks=True)
-        assert not filetype.is_dir(test_link, allow_symlinks=False)
+        assert filetype.is_dir(test_link, follow_symlinks=True)
+        assert not filetype.is_dir(test_link, follow_symlinks=False)
