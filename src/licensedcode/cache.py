@@ -30,9 +30,7 @@ from os.path import exists
 from os.path import getmtime
 from os.path import getsize
 from os.path import join
-import sys
 
-import six
 import yg.lockfile  # NOQA
 
 from commoncode.fileutils import resource_iter
@@ -278,17 +276,18 @@ def load_index(cache_file, use_loads=False):
                 return LicenseIndex.loads(ifc.read())
             else:
                 return LicenseIndex.load(ifc)
-        except:
-            ex_type, ex_msg, ex_traceback = sys.exc_info()
-            message = (str(ex_msg) +
-                '\nERROR: Failed to load license cache (the file may be corrupted ?).\n'
+        except Exception as e:
+            import traceback
+            msg =(
+                '\n'
+                'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
                 'Please delete "{cache_file}" and retry.\n'
                 'If the problem persists, copy this error message '
-                'and submit a bug report.\n'.format(**locals()))
-            if py3:
-                raise ex_type(message).with_traceback(ex_traceback)
-            else:
-                six.reraise(ex_type, message, ex_traceback)
+                'and submit a bug report.\n'.format(**locals())
+            )
+            msg += '\n' + traceback.format_exc()
+            raise Exception(msg)
+
 
 
 _ignored_from_hash = partial(
