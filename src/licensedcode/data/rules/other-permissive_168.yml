@@ -2,3 +2,5 @@ license_expression: other-permissive
 is_license_notice: yes
 relevance: 100
 notes: Modeled after zlib
+minimum_coverage: 50
+

@@ -15,7 +15,7 @@ license_expressions:
   - bsd-new
   - carnegie-mellon-contributors
   - paul-mackerras-binary
-  - other-permissive
+  - cmu-computing-services
   - brian-clapper
   - historical
   - bsd-simplified
@@ -60,6 +60,8 @@ license_expressions:
   - gpl-1.0-plus OR lgpl-2.0-plus OR bsd-simplified
   - openldap-2.8
   - openssl-ssleay
+  - osf-1990
+  - cmu-uc
   - other-permissive
   - bsla
   - libpng

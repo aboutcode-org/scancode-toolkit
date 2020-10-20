@@ -1,9 +1,0 @@
-license_expression: other-permissive
-is_license_text: yes
-relevance: 100
-ignorable_authors:
-    - Computing Services at Carnegie Mellon University (http://www.cmu.edu/computing/)
-ignorable_urls:
-    - http://www.cmu.edu/computing
-ignorable_emails:
-    - tech-transfer@andrew.cmu.edu

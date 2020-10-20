@@ -4,7 +4,7 @@ license_expressions:
   - public-domain
   - zlib
   - mit
-  - cc-by-sa-3.0
+  - cc-by-3.0
   - apache-2.0
   - apache-2.0
   - bsd-new
@@ -71,7 +71,7 @@ license_expressions:
   - bsd-new
   - boost-1.0
   - boost-1.0
-  - cc-by-sa-3.0
+  - cc-by-3.0
   - cc-by-3.0
   - curl
   - curl
