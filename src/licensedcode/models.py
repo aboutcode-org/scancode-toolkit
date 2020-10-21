@@ -456,7 +456,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     licenses = {}
     used_files = set()
-    all_files = set(resource_iter(licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False, allow_symlinks=True))
+    all_files = set(resource_iter(licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False, follow_symlinks=True))
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
