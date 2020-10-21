@@ -473,6 +473,9 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
         msg = 'Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
         msg += '\n'.join('file://{}'.format(f) for f in sorted(dangling))
         raise Exception(msg)
+    if not licenses:
+        msg = 'No licenses were loaded. Check to see if the license data files are available at "{}".'.format(licenses_data_dir)
+        raise Exception(msg)
     return licenses
 
 
