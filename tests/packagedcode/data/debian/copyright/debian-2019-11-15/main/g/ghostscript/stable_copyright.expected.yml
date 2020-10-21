@@ -23,8 +23,8 @@
   AGPL-3
   GPL-2
   Expat~SunSoft
-- agpl-3.0 AND agpl-3.0-plus AND apache-2.0 AND bsd-new AND freetype AND fsf-free AND gpl-1.0-plus
-  AND gpl-1.0-plus WITH ps-or-pdf-font-exception-20170817 AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus
+- agpl-3.0 AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND agpl-3.0-plus AND apache-2.0
+  AND bsd-new AND freetype AND fsf-free AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus
   AND isc AND lgpl-2.1 AND libpbm AND mit AND other-permissive AND public-domain AND sunsoft
   AND unknown AND x11-lucent AND x11-opengroup AND zlib
 - |

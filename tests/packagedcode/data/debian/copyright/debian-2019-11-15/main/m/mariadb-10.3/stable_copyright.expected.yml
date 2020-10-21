@@ -20,8 +20,8 @@
   Artistic
 - artistic-perl-1.0 AND bsd-new AND bsd-simplified AND fsf-free AND gpl-1.0-plus AND gpl-2.0
   AND gpl-2.0-plus AND gpl-2.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus AND gpl-3.0-plus
-  WITH bison-exception-2.2 AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1-plus AND mit AND public-domain
-  AND stlport-4.5 AND unknown AND wtfpl-1.0 AND x11-xconsortium AND zlib
+  WITH bison-exception-2.2 AND lgpl-2.0 AND lgpl-2.0-plus AND lgpl-2.1-plus AND mit AND other-copyleft
+  AND public-domain AND stlport-4.5 AND unknown AND x11-xconsortium AND zlib
 - |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB

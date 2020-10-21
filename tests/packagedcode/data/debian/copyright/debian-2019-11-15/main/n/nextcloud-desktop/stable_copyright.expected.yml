@@ -11,8 +11,8 @@
   GPL-3 or LGPL-2.1
   GPL-3
 - apache-2.0 AND boost-1.0 AND bsd-new AND cc-by-3.0 AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus
-  AND gpl-3.0 AND ijg AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND public-domain AND unknown AND
-  warranty-disclaimer
+  AND gpl-3.0 AND ijg AND lgpl-2.1 AND lgpl-2.1-plus AND mit AND other-copyleft AND public-domain
+  AND public-domain-disclaimer AND unknown
 - |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>
