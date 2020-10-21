@@ -104,6 +104,10 @@ if (TRACE or TRACE_NEGATIVE
                                      for a in args))
 
 
+# This is the Pickle protocol we use, which was added in Python 3.4.
+PICKLE_PROTOCOL = 4
+
+
 ############################## Feature SWITCHES ################################
 ########## Ngram fragments detection
 USE_AHO_FRAGMENTS = False
@@ -991,7 +995,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        pickled = pickler.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
+        pickled = pickler.dumps(self, protocol=PICKLE_PROTOCOL)
 
         # NB: this is making the usage of cPickle possible... as a weird workaround.
         # the gain from dumping using cPickle is not as big with this optimize
@@ -1009,7 +1013,7 @@ class LicenseIndex(object):
         # here cPickle fails when we load it back. Pickle is slower to write but
         # works when we read with cPickle :|
         pickler = cPickle if fast else pickle
-        return pickler.dump(self, fn, protocol=cPickle.HIGHEST_PROTOCOL)
+        return pickler.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):
