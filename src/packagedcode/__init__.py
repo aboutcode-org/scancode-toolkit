@@ -45,6 +45,7 @@ from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import win_pe
 
 
 # Note: the order matters: from the most to the least specific
@@ -94,7 +95,9 @@ PACKAGE_TYPES = [
     build.BuckPackage,
     build.AutotoolsPackage,
     conda.CondaPackage,
+    win_pe.WindowsExecutable,
 ]
+
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 

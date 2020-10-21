@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -37,11 +37,17 @@ from commoncode.testcase import FileBasedTesting
 from packagedcode import win_pe
 
 
-class TestWinPe(FileBasedTesting):
+class TestWinPePeInfo(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_win_pe(self, test_file, expected_file, regen=False):
-        result = win_pe.pe_info(test_file, include_extra_data=True)
+    expected_file_suffix = '.expected.json'
+
+    def get_results(self, test_file):
+        return win_pe.pe_info(test_file)
+
+    def check_win_pe(self, test_file, regen=False):
+        expected_file = test_file + self.expected_file_suffix
+        result = self.get_results(test_file)
         if regen:
             if py2:
                 mode = 'wb'
@@ -99,3 +105,12 @@ class TestWinPe(FileBasedTesting):
         test_file = self.get_test_loc('win_pe/Moq.Silverlight.dll')
         expected_file = self.get_test_loc('win_pe/Moq.Silverlight.dll.expected.json')
         self.check_win_pe(test_file, expected_file)
+
+
+class TestWinPeParseToPackage(TestWinPePeInfo):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    expected_file_suffix = '.package-expected.json'
+
+    def get_results(self, test_file):
+        return win_pe.parse(test_file).to_dict()
