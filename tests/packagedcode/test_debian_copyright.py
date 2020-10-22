@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import io
 from os import path
 from os import walk
 from unittest.case import skipIf
@@ -45,10 +46,10 @@ def check_expected(test_loc, expected_loc, regen=False):
     """
     result = saneyaml.dump(list(debian_copyright.parse_copyright_file(test_loc)))
     if regen:
-        with open(expected_loc, 'w') as ex:
-            ex.write(result)
+        with io.open(expected_loc, 'w', encoding='utf-8') as reg:
+            reg.write(result)
 
-    with open(expected_loc) as ex:
+    with io.open(expected_loc, encoding='utf-8') as ex:
         expected = ex.read()
 
     if expected != result:
