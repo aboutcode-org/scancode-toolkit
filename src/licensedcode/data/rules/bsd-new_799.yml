@@ -1,0 +1,6 @@
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+notes: in https://repo1.maven.org/maven2/net/zetetic/android-database-sqlcipher/
+ignorable_urls:
+    - https://www.zetetic.net/sqlcipher/license/

@@ -1,6 +1,6 @@
 license_expression: cecill-2.0
 is_license_reference: yes
 only_known_words: yes
-relevance: 50
+relevance: 95 
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id

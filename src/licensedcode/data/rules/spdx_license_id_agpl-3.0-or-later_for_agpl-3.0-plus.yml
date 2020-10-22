@@ -1,6 +1,6 @@
 license_expression: agpl-3.0-plus
 is_license_reference: yes
 only_known_words: yes
-relevance: 90
+relevance: 100 
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
