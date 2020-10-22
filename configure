@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+#
+
+set -e
+#set -x
+
+# source this script for a basic setup and configuration for local development
+
+CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+
+if [[ "$1" == "--clean" ]]; then
+    rm -rf "$CONFIGURE_ROOT_DIR/tmp"
+    exit
+fi
+
+
+if [[ "$PYTHON_EXE" == "" ]]; then
+    PYTHON_EXE=python3
+fi
+
+
+function setup {
+    # create a virtualenv on Python
+    mkdir -p $CONFIGURE_ROOT_DIR/tmp
+    wget -O $CONFIGURE_ROOT_DIR/tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
+    $PYTHON_EXE $CONFIGURE_ROOT_DIR/tmp/virtualenv.pyz $CONFIGURE_ROOT_DIR/tmp
+    source $CONFIGURE_ROOT_DIR/tmp/bin/activate
+    $CONFIGURE_ROOT_DIR/tmp/bin/pip install --upgrade pip virtualenv setuptools wheel
+}
+
+
+setup
+
+$CONFIGURE_ROOT_DIR/tmp/bin/pip install -e .[testing]
+
+if [ -f "$CONFIGURE_ROOT_DIR/tmp/bin/activate" ]; then
+    source "$CONFIGURE_ROOT_DIR/tmp/bin/activate"
+fi
+
+set +e
