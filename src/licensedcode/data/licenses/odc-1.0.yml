@@ -4,6 +4,8 @@ name: Open Data Commons Attribution License
 category: Copyleft
 owner: Open Data Commons
 homepage_url: https://opendatacommons.org/
-spdx_license_key: LicenseRef-scancode-odc-1.0
+spdx_license_key: ODC-By-1.0
+other_spdx_license_keys:
+	LicenseRef-scancode-odc-1.0
 text_urls:
     - http://www.opendatacommons.org/licenses/by/1.0/
