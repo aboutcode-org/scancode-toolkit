@@ -1,7 +1,7 @@
 key: ecfonts-1.0
 shortname: latex-ec-fonts
 name: Copyright notice to the ec fonts
-category: Proprietary Free
+category: Permissive
 homepage_url: http://dante.ctan.org
 text_urls:
     - http://dante.ctan.org/tex-archive/fonts/ec/src/copyrite.txt
