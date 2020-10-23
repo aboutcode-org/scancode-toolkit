@@ -1,8 +1,3 @@
-# Unusual (but fine) disclaimer.
-# Example: https://github.com/github/codeql-go
-100%
-Apache-2.0 0,$
-
 Copyright (c) Go Gopher and other contributors. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use

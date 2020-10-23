@@ -1,0 +1,8 @@
+license_expressions:
+  - agpl-3.0-plus
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/AGPL-3.0.t3
+  originally expected to be detected as AGPL-3.0-or-later
+  with coverage of 100.0
+  missing "(at your option)"

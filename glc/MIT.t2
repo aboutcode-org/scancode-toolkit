@@ -1,7 +1,3 @@
-# This notice appears in go/src/runtime/vlrt.go.
-91.2%
-MIT 113,$
-
 // Inferno's libkern/vlrt-arm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/default/libkern/vlrt-arm.c
 //

@@ -1,0 +1,7 @@
+license_expressions:
+  - shl-0.51
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/SHL-0.51.t1
+  originally expected to be detected as SHL-0.51
+  with coverage of 100.0

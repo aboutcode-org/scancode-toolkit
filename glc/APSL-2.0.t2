@@ -1,8 +1,3 @@
-# "Apple Computer Inc" instead of "Apple Inc"
-# Example: https://github.com/apple/darwin-xnu
-100%
-APSL-2.0 0,$
-
 APPLE PUBLIC SOURCE LICENSE
 
 Version 2.0 - August 6, 2003 Please read this License carefully before downloading

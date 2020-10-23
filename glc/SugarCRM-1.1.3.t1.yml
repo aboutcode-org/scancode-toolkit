@@ -1,0 +1,7 @@
+license_expressions:
+  - sugarcrm-1.1.3
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/SugarCRM-1.1.3.t1
+  originally expected to be detected as SugarCRM-1.1.3
+  with coverage of 100.0

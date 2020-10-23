@@ -1,0 +1,7 @@
+license_expressions:
+  - openssl-ssleay
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/OpenSSL.t1
+  originally expected to be detected as OpenSSL
+  with coverage of 93.2

@@ -1,8 +1,3 @@
-# "The name of the author may not be used"
-# Example: https://github.com/ianlancetaylor/libbacktrace
-100%
-BSD-3-Clause 0,$
-
  Copyright (C) 2012-2016 Go Gopher.
 
  Redistribution and use in source and binary forms, with or without

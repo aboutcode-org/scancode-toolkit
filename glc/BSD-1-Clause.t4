@@ -1,8 +1,3 @@
-# "this condition" instead of "this list of conditions"
-# Example: github.com/tsavola/pointer
-100%
-BSD-1-Clause 0,$
-
 Copyright (c) 2015, Go Gopher
 All rights reserved.
 

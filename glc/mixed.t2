@@ -1,9 +1,3 @@
-# Make sure we detect CommonsClause addition.
-54.3%
-Apache-2.0 0,87
-Apache-2.0 236,278 URL
-CommonsClause 683,1399
-
 Copyright 2018 Go Gopher.
 
 Licensed under the Apache License, Version 2.0 (the "License") and the Commons

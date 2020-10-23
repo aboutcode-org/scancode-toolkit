@@ -1,0 +1,7 @@
+license_expressions:
+  - php-3.01
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/PHP-3.01.t2
+  originally expected to be detected as PHP-3.01
+  with coverage of 100.0

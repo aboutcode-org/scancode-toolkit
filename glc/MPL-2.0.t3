@@ -1,8 +1,3 @@
-# Alternate MPL-2.0 header like the Apache 2.0 header
-# Example: https://github.com/fauna/faunadb-go
-100%
-MPL-2.0 0,$
-
 Copyright 2017 Go Gopher
 
 Licensed under the Mozilla Public License, Version 2.0 (the "License"); you may

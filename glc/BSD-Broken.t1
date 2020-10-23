@@ -1,10 +1,3 @@
-# BSD-3-Clause with the middle clause removed.
-# Observed in github.com/keybase/client@v0.0.0-20181106163034-dc1b0e00ee4e
-# in the file shared/react-native/ios/CocoaLumberjack/LICENSE.txt.
-# Should not be recognized as BSD-3-Clause nor BSD-2-Clause.
-97.5%
-BSD-Source-Code 42,$
-
 Software License Agreement (BSD License)
 
 Copyright (c) 2010-2016, Go Gopher

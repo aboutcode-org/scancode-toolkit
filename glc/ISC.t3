@@ -1,8 +1,3 @@
-# This is missing the copyright lines, which used to make the blank loop
-# in license.go infinite loop.
-100%
-ISC 0,$
-
 ISC License
 
 Permission to use, copy, modify, and distribute this software for any

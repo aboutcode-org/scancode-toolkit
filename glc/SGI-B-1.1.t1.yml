@@ -1,0 +1,7 @@
+license_expressions:
+  - sgi-freeb-1.1
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/SGI-B-1.1.t1
+  originally expected to be detected as SGI-B-1.1
+  with coverage of 99.1

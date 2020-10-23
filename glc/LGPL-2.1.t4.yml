@@ -1,0 +1,8 @@
+license_expressions:
+  - lgpl-2.1
+notes: |
+  License test derived from a file of the BSD-licensed repository at:
+  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/LGPL-2.1.t4
+  originally expected to be detected as LGPL-2.1
+  with coverage of 100.0
+  Deleted the "[This is the first ... hence the version number 2.1]" block.
