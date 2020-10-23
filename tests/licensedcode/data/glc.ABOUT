@@ -1,4 +1,4 @@
-about_resource: .
+about_resource: glc
 purl: pkg:github/google/licensecheck@0.3.1#testdata
 namespace: google
 name: licensecheck
