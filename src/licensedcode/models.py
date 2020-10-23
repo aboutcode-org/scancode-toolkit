@@ -478,7 +478,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 
     if missing_spdx:
         keys = ', '.join(missing_spdx)
-        raise Exception('Missing SPDX license keys for:'.format(keys))
+        raise Exception('Missing SPDX license keys for: {}'.format(keys))
 
 
     dangling = all_files.difference(used_files)
