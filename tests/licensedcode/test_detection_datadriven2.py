@@ -107,10 +107,17 @@ build_tests(
     clazz=TestDebLicCheckTestsDataDriven, regen=False)
 
 
-
 class TestGeneratedDataDriven(unittest.TestCase):
     pass
 
 build_tests(
     join(TEST_DIR, 'generated'),
     clazz=TestGeneratedDataDriven, regen=False)
+
+
+class TestGlcDataDriven(unittest.TestCase):
+    pass
+
+build_tests(
+    join(TEST_DIR, 'glc'),
+    clazz=TestGlcDataDriven, regen=False)
