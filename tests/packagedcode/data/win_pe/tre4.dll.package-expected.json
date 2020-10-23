@@ -1,0 +1,47 @@
+{
+  "type": "winexe",
+  "namespace": null,
+  "name": "Tre",
+  "version": "0.7.5.3276",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Tre4: Posix compliant regular expression library",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "organization",
+      "role": "author",
+      "name": "GnuWin32 <http://gnuwin32.sourceforge.net>",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "http://laurikari.net/tre",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": "\u00a9 2008 Ville Laurikari <vl@iki.fi>",
+  "license_expression": null,
+  "declared_license": {
+    "LegalCopyright": "\u00a9 2008 Ville Laurikari <vl@iki.fi>",
+    "LegalTrademarks": "GnuWin32\u00ae, Tre\u00ae, tre4\u00ae",
+    "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License; see www.gnu.org/copyleft/gpl.html."
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:winexe/Tre@0.7.5.3276",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

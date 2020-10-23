@@ -248,3 +248,9 @@ Package: war
   extensions: .war
   filetypes: java archive , zip archive
 
+--------------------------------------------
+Package: winexe
+  class: packagedcode.win_pe:WindowsExecutable
+  extensions: .exe, .dll
+  filetypes: pe32, for ms windows
+

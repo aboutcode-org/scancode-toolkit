@@ -31,6 +31,7 @@ from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
+import os
 import sys
 
 from commoncode.filetype import get_last_modified_date
@@ -287,6 +288,9 @@ def _licenses_data_from_match(
     return detected_licenses
 
 
+SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
+
+
 def get_package_info(location, **kwargs):
     """
     Return a mapping of package manifest information detected in the
@@ -303,7 +307,13 @@ def get_package_info(location, **kwargs):
     except Exception as e:
         if TRACE:
             logger.error('get_package_info: {}: Exception: {}'.format(location, e))
-        pass
+
+        if SCANCODE_DEBUG_PACKAGE_API:
+            raise
+        else:
+            # attention: we are swallowing ALL exceptions here!
+            pass
+
     return dict(packages=[])
 
 

@@ -304,7 +304,7 @@
       "sha256": "c6f6fb075abb1414982b4aaea37093d9120ce28fea1484ca7e275c262ec09b1c",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,

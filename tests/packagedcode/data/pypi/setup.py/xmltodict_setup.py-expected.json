@@ -8,7 +8,15 @@
   "primary_language": "Python",
   "description": null,
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": null,
+      "email": "martinblech@gmail.com",
+      "url": "https://github.com/martinblech/xmltodict"
+    }
+  ],
   "keywords": [
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",

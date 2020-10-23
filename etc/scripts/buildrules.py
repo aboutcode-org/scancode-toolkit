@@ -41,6 +41,39 @@ from licensedcode import models
 from licensedcode import match_hash
 
 
+"""
+A script to generate license detection rules from a simple text data file.
+
+Note that the .yml data files are validated and the script will report
+errors and stop if a rule data is not valid.
+
+Typicaly validation errors include:
+- missing license expressions
+- unknown license keys
+- presence of multiple is_license_xxx: flags (only one is allowed)
+
+The file buildrules-template.txt is an template of this data file.
+The file buildrules-exmaples.txt is an example of this data file.
+This file contains one or more block of data such as:
+
+ ----------------------------------------
+ license_expression: foo OR bar
+ relevance: 100
+ is_license_notice: yes
+ ---
+ This is licensed under a choice of foo or bar.
+ ----------------------------------------
+
+The first section (before ---) contains the data in valid YAML that
+will be saved in the rule's .yml file.
+
+The second section (after ---) contains the rule text saved in the
+the .RULE text file.
+
+If a RULE already exists, it is skipped.
+"""
+
+
 @attr.attrs(slots=True)
 class LicenseRule(object):
     data = attr.ib()
