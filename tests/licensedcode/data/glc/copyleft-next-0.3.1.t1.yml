@@ -1,7 +1,0 @@
-license_expressions:
-  - copyleft-next-0.3.1
-notes: |
-  License test derived from a file of the BSD-licensed repository at:
-  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/copyleft-next-0.3.1.t1
-  originally expected to be detected as copyleft-next-0.3.1
-  with coverage of 100.0

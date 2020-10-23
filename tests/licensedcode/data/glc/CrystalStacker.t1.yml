@@ -1,7 +1,0 @@
-license_expressions:
-  - crystal-stacker
-notes: |
-  License test derived from a file of the BSD-licensed repository at:
-  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/CrystalStacker.t1
-  originally expected to be detected as CrystalStacker
-  with coverage of 100.0

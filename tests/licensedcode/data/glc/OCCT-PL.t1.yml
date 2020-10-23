@@ -1,7 +1,0 @@
-license_expressions:
-  - occt-pl
-notes: |
-  License test derived from a file of the BSD-licensed repository at:
-  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/OCCT-PL.t1
-  originally expected to be detected as OCCT-PL
-  with coverage of 100.0

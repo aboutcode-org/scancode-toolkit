@@ -1,7 +1,0 @@
-license_expressions:
-  - tcl
-notes: |
-  License test derived from a file of the BSD-licensed repository at:
-  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/TCL.t1
-  originally expected to be detected as TCL
-  with coverage of 100.0

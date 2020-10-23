@@ -1,9 +1,0 @@
-license_expressions:
-  - isc
-notes: |
-  License test derived from a file of the BSD-licensed repository at:
-  https://raw.githubusercontent.com/google/licensecheck/v0.3.1/testdata/HPND.t4
-  originally expected to be detected as ISC
-  with coverage of 100.0
-  https://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-  (But it's really ISC.)
