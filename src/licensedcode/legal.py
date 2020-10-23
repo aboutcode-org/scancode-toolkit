@@ -33,9 +33,21 @@ Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
 special_names = (
-    'COPYING', 'COPYRIGHT', 'NOTICE',
-    'LICENSE', 'LICENCE', 'LICENSING', 'LICENCING',
-    'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT',
+    'COPYING',
+    'COPYLEFT',
+    'COPYRIGHT',
+    'NOTICE',
+    'LICENSE',
+    'LICENCE',
+    'LICENSES',
+    'LICENCES',
+    'LICENSING',
+    'LICENCING',
+    'UNLICENSE',
+    'LEGAL',
+    'EULA',
+    'AGREEMENT',
+    'ABOUT',
     'COMMITMENT'
 )
 
@@ -47,20 +59,24 @@ def is_special_legal_file(location):
     """
     Return an indication that a file may be a "special" legal-like file.
     """
-    file_base_name = fileutils.file_base_name(location).lower()
-    file_extension = fileutils.file_extension(location).lower()
+    file_base_name = fileutils.file_base_name(location)
+    file_base_name_lower = file_base_name.lower()
+    file_extension = fileutils.file_extension(location)
+    file_extension_lower = file_extension.lower()
 
-    if (any(special_name == file_base_name
-            or special_name == file_extension
+    if (
+        any(special_name in file_base_name or special_name in file_extension
+            for special_name in special_names)
+        or
+        any(special_name_lower == file_base_name_lower or special_name_lower == file_extension_lower
             for special_name in special_names_lower)
-     or any(special_name in file_base_name
-            or special_name in file_extension
-            for special_name in special_names)):
+    ):
         return 'yes'
 
     elif any(special_name in file_base_name
-             or special_name in file_extension
-            for special_name in special_names_lower):
+            or special_name in file_extension
+            for special_name in special_names_lower
+    ):
         return 'maybe'
     else:
         # return False for now?
