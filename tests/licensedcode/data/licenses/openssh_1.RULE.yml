@@ -1,5 +1,5 @@
 license_expressions:
-  - tatu-ylonen
+  - openssh
   - gary-s-brown
   - other-permissive
   - bsd-new
