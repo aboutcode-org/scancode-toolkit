@@ -1,3 +1,4 @@
 license_expression: apache-2.0
+only_known_words: yes
 is_license_reference: yes
 relevance: 100
