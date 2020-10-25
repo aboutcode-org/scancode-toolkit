@@ -137,6 +137,7 @@ class TestLicense(FileBasedTesting):
         lics = models.load_licenses(test_dir)
         errors, warnings, infos = models.License.validate(
             lics, no_dupe_urls=True, verbose=True)
+
         expected_errors = {
             'GLOBAL': [
                 'Duplicate texts in multiple licenses:apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
@@ -146,18 +147,22 @@ class TestLicense(FileBasedTesting):
                 'No short name',
                 'No name',
                 'No category',
-                'No owner'],
+                'No owner',
+                'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
                 'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
-                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License'],
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
+                'No SPDX license key'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
                 'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
-                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License']
+                'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
+                'No SPDX license key'],
         }
 
         assert expected_errors == errors
+
         expected_warnings = {
             'gpl-1.0': [
                 'Some empty text_urls values',
