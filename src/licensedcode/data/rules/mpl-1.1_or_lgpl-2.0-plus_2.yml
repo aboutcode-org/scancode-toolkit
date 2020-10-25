@@ -1,5 +1,5 @@
 license_expression: mpl-1.1 OR lgpl-2.0-plus
 is_license_notice: yes
+minimum_coverage: 80
 ignorable_urls:
     - http://www.mozilla.org/MPL/
-minimum_coverage: 80

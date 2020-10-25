@@ -1,7 +1,7 @@
 license_expression: other-permissive
 is_license_text: yes
-minimum_coverage: 80
 relevance: 100
+minimum_coverage: 80
 notes: Per Fedora, this "Cheusov variant" of the MIT "does not give explicit permission to redistribute
     unmodified copies, however, since it does give permission to "copy" unmodifed copies, we
     are interpreting it that way. Also, since it does grant explicit permission to redistribute

@@ -1,6 +1,6 @@
 license_expression: gpl-2.0 WITH classpath-exception-2.0 AND cc0-1.0
-minimum_coverage: 80
 is_license_notice: yes
+minimum_coverage: 80
 referenced_filenames:
     - LICENSE
 ignorable_authors:
