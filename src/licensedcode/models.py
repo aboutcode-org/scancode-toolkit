@@ -103,8 +103,8 @@ class License(object):
 
     __attrib = partial(attr.ib, repr=False)
 
-    # unique key: lower case ASCII characters, digits, underscore and dots.
-    key = attr.ib(default=None, repr=True)
+    # mandatory and unique key: lower case ASCII characters, digits, underscore and dots.
+    key = attr.ib(repr=True)
 
     src_dir = __attrib(default=licenses_data_dir)
 
@@ -188,7 +188,7 @@ class License(object):
         else:
             key = self.key
 
-        newl = License(key, target_dir)
+        newl = License(key=key, src_dir=target_dir)
 
         # copy fields
         excluded_fields = ('key', 'src_dir', 'data_file', 'text_file',)
@@ -461,25 +461,16 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     used_files = set()
     all_files = set(resource_iter(
         licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
-    missing_spdx = []
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
-            lic = License(key, licenses_data_dir)
-            if not lic.is_deprecated and not lic.spdx_license_key:
-                # SPDX license key is now mandatory
-                missing_spdx.append(key)
+            lic = License(key=key, src_dir=licenses_data_dir)
             used_files.add(data_file)
             if exists(lic.text_file):
                 used_files.add(lic.text_file)
             if not with_deprecated and lic.is_deprecated:
                 continue
             licenses[key] = lic
-
-    if missing_spdx:
-        keys = ', '.join(missing_spdx)
-        raise Exception('Missing SPDX license keys for: {}'.format(keys))
-
 
     dangling = all_files.difference(used_files)
     if dangling:
