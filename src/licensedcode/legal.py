@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -51,7 +51,6 @@ special_names = (
     'COMMITMENT'
 )
 
-
 special_names_lower = tuple(x.lower() for x in special_names)
 
 
@@ -64,19 +63,28 @@ def is_special_legal_file(location):
     file_extension = fileutils.file_extension(location)
     file_extension_lower = file_extension.lower()
 
-    if (
-        any(special_name in file_base_name or special_name in file_extension
-            for special_name in special_names)
-        or
-        any(special_name_lower == file_base_name_lower or special_name_lower == file_extension_lower
-            for special_name in special_names_lower)
-    ):
+    name_contains_special = any(
+        special_name in file_base_name or
+        special_name in file_extension
+            for special_name in special_names
+    )
+
+    name_lower_is_special = any(
+        special_name_lower == file_base_name_lower or
+        special_name_lower == file_extension_lower
+            for special_name_lower in special_names_lower
+    )
+
+    name_lower_contains_special = any(
+        special_name_lower in file_base_name_lower or
+        special_name_lower in file_extension_lower
+            for special_name_lower in special_names_lower
+    )
+
+    if name_contains_special or name_lower_is_special:
         return 'yes'
 
-    elif any(special_name in file_base_name
-            or special_name in file_extension
-            for special_name in special_names_lower
-    ):
+    elif name_lower_contains_special:
         return 'maybe'
     else:
         # return False for now?
