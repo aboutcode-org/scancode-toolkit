@@ -245,7 +245,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
                 spdx_id = file_license.get('spdx_license_key')
                 if not spdx_id:
                     spdx_id = 'LicenseRef-scancode-' + license_key
-                is_license_ref = spdx_id.lower.startswith('licenseref-')
+                is_license_ref = spdx_id.lower().startswith('licenseref-')
 
                 if not is_license_ref:
                     spdx_license = License.from_identifier(spdx_id)
