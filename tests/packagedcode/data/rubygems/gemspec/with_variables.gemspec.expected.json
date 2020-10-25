@@ -1,125 +1,125 @@
 [
   {
-	"type": "gem",
-	"namespace": null,
-	"name": "ProviderDSL::GemDescription::NAME",
-	"version": "ProviderDSL::GemDescription::VERSION",
-	"qualifiers": {},
-	"subpath": null,
-	"primary_language": "Ruby",
-	"description": "See the project home page for more information",
-	"release_date": null,
-	"parties": [
-	{
-	  "type": "person",
-	  "role": "author",
-	  "name": "ProviderDSL::GemDescription::AUTHORS",
-	  "email": null,
-	  "url": null
-	},
-	{
-	  "type": "person",
-	  "role": "email",
-	  "name": null,
-	  "email": "ProviderDSL::GemDescription::EMAIL",
-	  "url": null
-	}
-	],
-	"keywords": [],
-	"homepage_url": "ProviderDSL::GemDescription::PAGE",
-	"download_url": null,
-	"size": null,
-	"sha1": null,
-	"md5": null,
-	"sha256": null,
-	"sha512": null,
-	"bug_tracking_url": null,
-	"code_view_url": null,
-	"vcs_url": null,
-	"copyright": null,
-	"license_expression": null,
-	"declared_license": null,
-	"notice_text": null,
-	"root_path": null,
-	"dependencies": [
-	{
-	  "purl": "pkg:gem/rake",
-	  "requirement": "~> 11.3",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rubocop",
-	  "requirement": "~> 0.44.1",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rspec",
-	  "requirement": "~> 3.5",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/rspec-mocks",
-	  "requirement": "~> 3.5",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/ipaddress",
-	  "requirement": "~> 0.8.3",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/gandi",
-	  "requirement": "~> 3.3, >= 3.3.27",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/gcloud",
-	  "requirement": "~> 0.21.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/google-cloud-error_reporting",
-	  "requirement": "~> 0.21.0",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	},
-	{
-	  "purl": "pkg:gem/map",
-	  "requirement": "~> 6.6",
-	  "scope": "dependencies",
-	  "is_runtime": true,
-	  "is_optional": false,
-	  "is_resolved": false
-	}
-	],
-	"contains_source_code": null,
-	"source_packages": [],
-	"purl": "pkg:gem/ProviderDSL::GemDescription::NAME@ProviderDSL::GemDescription::VERSION",
-	"repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION",
-	"repository_download_url": "https://rubygems.org/downloads/ProviderDSL::GemDescription::NAME-ProviderDSL::GemDescription::VERSION.gem",
-	"api_data_url": "https://rubygems.org/api/v2/rubygems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION.json"
+    "type": "gem",
+    "namespace": null,
+    "name": "ProviderDSL::GemDescription::NAME",
+    "version": "ProviderDSL::GemDescription::VERSION",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "See the project home page for more information",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "ProviderDSL::GemDescription::AUTHORS",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "email",
+        "name": null,
+        "email": "ProviderDSL::GemDescription::EMAIL",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "ProviderDSL::GemDescription::PAGE",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "license_expression": null,
+    "declared_license": null,
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [
+      {
+        "purl": "pkg:gem/rake",
+        "requirement": "~> 11.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rubocop",
+        "requirement": "~> 0.44.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rspec",
+        "requirement": "~> 3.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/rspec-mocks",
+        "requirement": "~> 3.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/ipaddress",
+        "requirement": "~> 0.8.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/gandi",
+        "requirement": "~> 3.3, >= 3.3.27",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/gcloud",
+        "requirement": "~> 0.21.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/google-cloud-error_reporting",
+        "requirement": "~> 0.21.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      },
+      {
+        "purl": "pkg:gem/map",
+        "requirement": "~> 6.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false
+      }
+    ],
+    "contains_source_code": null,
+    "source_packages": [],
+    "purl": "pkg:gem/ProviderDSL::GemDescription::NAME@ProviderDSL::GemDescription::VERSION",
+    "repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/ProviderDSL::GemDescription::NAME-ProviderDSL::GemDescription::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION.json"
   }
 ]
