@@ -106,7 +106,9 @@ license_expressions:
   - mit
   - gpl-2.0-plus
   - gpl-2.0-plus
-notes: This tests behaves differently between Python 2 and Python 3 due to differences in rounding causing different license match candidates to be selected for the license sequence matcher
-  The expectations here are for Python 3 and the test is expected to fail on Python 2, but is marked to fail everywhere
-  When the Python 3 migration is complete, the expected failure should be removed.
 expected_failure: yes
+notes: This tests behaves differently between Python 2 and Python 3 due to differences in rounding
+  causing different license match candidates to be selected for the license sequence matcher
+  The expectations here are for Python 3 and the test is expected to fail on Python 2, but is
+  marked to fail everywhere When the Python 3 migration is complete, the expected failure should
+  be removed.
