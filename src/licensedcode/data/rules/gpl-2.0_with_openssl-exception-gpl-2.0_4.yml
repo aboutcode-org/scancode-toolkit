@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 99
+notes: Seen inhttps://joinup.ec.europa.eu/svn/lesoll/trunk/italc/lib/src/dsa_key.cpp The text
+    is not exactly the same but modifications are minor.

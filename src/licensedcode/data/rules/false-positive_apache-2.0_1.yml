@@ -1,0 +1,6 @@
+license_expression: apache-2.0
+is_false_positive: yes
+is_license_reference: yes
+only_known_words: yes
+relevance: 100
+notes: A mention of a license and not a license
