@@ -1,4 +1,6 @@
 license_expressions:
+  - apache-2.0 OR ms-pl
+  - apache-2.0
   - ms-pl
 notes: |
   License test derived from a file of the BSD-licensed repository at:
