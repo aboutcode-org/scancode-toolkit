@@ -1,6 +1,6 @@
 # This is a skeleton Travis CI config file that provides a starting point for adding CI
 # to a Python project. Since we primarily develop in python3, this skeleton config file
-# will be specific to that language. 
+# will be specific to that language.
 #
 # See https://config.travis-ci.com/ for a full list of configuration options.
 
@@ -18,4 +18,4 @@ python:
 install: ./configure
 
 # Scripts to run at script stage
-script: bin/pytest
+script: tmp/bin/pytest

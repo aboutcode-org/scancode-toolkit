@@ -1,0 +1,45 @@
+
+################################################################################
+# We use Azure to run the full tests suites on Python 3.6
+# on Windows (32 and 64), macOS and Linux (64 various distro)
+################################################################################
+
+jobs:
+
+################################################################################
+# These jobs are using VMs and Azure-provided Python 3.6
+################################################################################
+
+    - template: etc/ci/azure-linux.yml
+      parameters:
+          job_name: vm_ubuntu16_py36
+          image_name: ubuntu-16.04
+          python_versions: ['3.6']
+          test_suites:
+              all: bin/py.test -n 2 -vvs --reruns=3
+
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos1015_py36
+          image_name: macos-10.15
+          python_versions: ['3.6']
+          test_suites:
+              all: bin/py.test -n 2 -vvs --reruns=3
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: Win2016_32_py36
+          image_name: vs2017-win2016
+          python_versions: ['3.6']
+          python_architecture: x86
+          test_suites:
+              all: Scripts\py.test -vvs --reruns=3
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: Win2016_64_py36
+          image_name: vs2017-win2016
+          python_versions: ['3.6']
+          python_architecture: x64
+          test_suites:
+              misc: Scripts\py.test -vvs --reruns=3
