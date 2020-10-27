@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v20.x (next)
+------------
+
+ - Adopt calendar versioning for scancode version numbers
+
+
 v3.2.3 (2020-10-27)
 -------------------
 

@@ -15,90 +15,20 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.2.3'
-
-#### Small hack to force using a plain version number if the option
-#### --plain-version is passed to setup.py
-
-USE_DEFAULT_VERSION = False
-try:
-    sys.argv.remove('--use-default-version')
-    USE_DEFAULT_VERSION = True
-except ValueError:
-    pass
-####
-
-
-_sys_v0 = sys.version_info[0]
-py2 = _sys_v0 == 2
-py3 = _sys_v0 == 3
-
-
-def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
-                use_default=USE_DEFAULT_VERSION):
-    """
-    Return a version collected from git if possible or fall back to an
-    hard-coded default version otherwise. If `use_default` is True,
-    always use the default version.
-    """
-    if use_default:
-        return default
-    try:
-        tag, distance, commit, dirty = get_git_version()
-        if not distance and not dirty:
-            # we are from a clean Git tag: use tag
-            return tag
-
-        distance = 'post{}'.format(distance)
-        if dirty:
-            time_stamp = get_time_stamp()
-            dirty = '.dirty.' + get_time_stamp()
-        else:
-            dirty = ''
-
-        return template.format(**locals())
-    except:
-        # no git data: use default version
-        return default
-
-
-def get_time_stamp():
-    """
-    Return a numeric UTC time stamp without microseconds.
-    """
-    from datetime import datetime
-    return (datetime.isoformat(datetime.utcnow()).split('.')[0]
-            .replace('T', '').replace(':', '').replace('-', ''))
-
-
-def get_git_version():
-    """
-    Return version parts from Git or raise an exception.
-    """
-    from subprocess import check_output, STDOUT
-    # this may fail with exceptions
-    cmd = 'git', 'describe', '--tags', '--long', '--dirty',
-    version = check_output(cmd, stderr=STDOUT).strip()
-    dirty = version.endswith('-dirty')
-    tag, distance, commit = version.split('-')[:3]
-    # lower tag and strip V prefix in tags
-    tag = tag.lower().lstrip('v ').strip()
-    # strip leading g from git describe commit
-    commit = commit.lstrip('g').strip()
-    return tag, int(distance), commit, dirty
+version = '20.10.27'
 
 
 def read(*names, **kwargs):
     import os
     return open(
         os.path.join(os.path.dirname(__file__), *names),
-        #encoding=kwargs.get('encoding', 'utf8')
+        # encoding=kwargs.get('encoding', 'utf8')
     ).read()
 
 
 setup(
     name='scancode-toolkit',
-    version=get_version(),
+    version=version,
     license='Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others',
     description=
         'ScanCode is a tool to scan code for license, copyright, package '
@@ -119,32 +49,27 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Utilities',
     ],
     keywords=[
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4',
+    python_requires='>=3.6.*, <4',
     install_requires=[
-        # Hack to support pip 8 (for those poor sods forced to use ubuntu 16.04's system pip)
-        # See https://github.com/nexB/scancode-toolkit/issues/1463
-        'more_itertools <  6.0.0; python_version == "2.7"',
-        # end hack
 
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'py2_ipaddress >= 2.0, <3.5; python_version < "3"',
         'urlpy',
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
 
         # commoncode
         'commoncode >= 20.09',
-        'backports.os == 0.1.1; python_version < "3"',
 
         'future >= 0.16.0',
         'saneyaml',
@@ -209,7 +134,10 @@ setup(
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
         # used by yg.lockfile
-        'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
+        'contextlib2',
+        'pytz',
+        'tempora',
+        'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
 
