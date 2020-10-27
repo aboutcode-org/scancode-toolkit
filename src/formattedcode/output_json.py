@@ -119,7 +119,7 @@ class JsonPrettyOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json_pp, **kwargs):
         # results = get_results(codebase, as_list=False, **kwargs)
         # write_json(results, output_file=output_json_pp, pretty=True)
-        write_results(codebase, output_file=output_json_pp, pretty=True)
+        write_results(codebase, output_file=output_json_pp, pretty=True, **kwargs)
 
 
 def write_json(results, output_file, pretty=False, **kwargs):
@@ -174,25 +174,30 @@ def get_results(codebase, as_list=False, **kwargs):
     return results
 
 
-def write_results(codebase, output_file, pretty=False):
+def write_results(codebase, output_file, pretty=False, **kwargs):
     """
     Write headers, files, and other attributes from `codebase` to `output_file`
 
     Enable JSON indentation if `pretty` is True
     """
     # Set indentation for JSON output if `pretty` is True
-    kwargs = dict()
+    # We use a separate dict for jsonstream kwargs since we are passing
+    # this function's kwargs as arguments to OutputPlugin.get_files()
+    jsonstreams_kwargs = dict()
     if pretty:
-        kwargs['indent'] = 2
+        jsonstreams_kwargs['indent'] = 2
+
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     if isinstance(output_file, string_types):
         output_file = open(output_file, mode)
+
     # Write JSON to `output_file`
-    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **kwargs) as s:
+    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs) as s:
         # Write headers
         with s.subarray('headers') as headers:
             codebase.add_files_count_to_current_header()
-            headers.iterwrite(codebase.get_headers())
+            codebase_headers = codebase.get_headers()
+            headers.iterwrite(codebase_headers)
         # Write attributes
         if codebase.attributes:
             for k, v in codebase.attributes.to_dict().items():
