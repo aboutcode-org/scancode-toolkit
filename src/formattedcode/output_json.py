@@ -27,6 +27,7 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+import jsonstreams
 import simplejson
 from six import string_types
 
@@ -95,8 +96,9 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        results = get_results(codebase, as_list=False, **kwargs)
-        write_json(results, output_file=output_json, pretty=False)
+        # results = get_results(codebase, as_list=False, **kwargs)
+        # write_json(results, output_file=output_json, pretty=False)
+        write_results(codebase, output_file=output_json, pretty=False)
 
 
 @output_impl
@@ -115,8 +117,9 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        results = get_results(codebase, as_list=False, **kwargs)
-        write_json(results, output_file=output_json_pp, pretty=True)
+        # results = get_results(codebase, as_list=False, **kwargs)
+        # write_json(results, output_file=output_json_pp, pretty=True)
+        write_results(codebase, output_file=output_json_pp, pretty=True)
 
 
 def write_json(results, output_file, pretty=False, **kwargs):
@@ -170,3 +173,20 @@ def get_results(codebase, as_list=False, **kwargs):
 
     return results
 
+
+def write_results(codebase, output_file, pretty=False):
+    kwargs = dict()
+    if pretty:
+        kwargs['indent'] = 2
+    if isinstance(output_file, string_types):
+        output_file = open(output_file, mode)
+    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **kwargs) as s:
+        with s.subarray('headers') as headers:
+            codebase.add_files_count_to_current_header()
+            headers.iterwrite(codebase.get_headers())
+        if codebase.attributes:
+            for k, v in codebase.attributes.to_dict().items():
+                with s.subarray(k) as attribute:
+                    attribute.iterwrite(v)
+        with s.subarray('files') as files:
+            files.iterwrite(OutputPlugin.get_files(codebase, **kwargs))

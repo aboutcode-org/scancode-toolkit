@@ -1,0 +1,7 @@
+about_resource: jsonstreams-0.4.3-py2.py3-none-any.whl
+name: jsonstreams
+version: 0.4.3
+download_url: https://files.pythonhosted.org/packages/2f/cd/0c8c387d1cbc396fb0653a5e6a76ff845869b3f8580e8e13b53ca6b2f4df/jsonstreams-0.4.3-py2.py3-none-any.whl
+checksum_md5: e5b50b998ef3250d0e53391c3e5ebb79
+checksum_sha1: 01fef7688528aa74f9a4c7508517bae6923158a5
+package_url: pkg:pypi/jsonstreams@0.4.3
