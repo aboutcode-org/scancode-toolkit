@@ -12,8 +12,8 @@ jobs:
 
     - template: etc/ci/azure-linux.yml
       parameters:
-          job_name: vm_ubuntu16_py36
-          image_name: ubuntu-16.04
+          job_name: ubuntu18_py36
+          image_name: ubuntu-18.04
           python_versions: ['3.6']
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
@@ -28,8 +28,8 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: Win2016_32_py36
-          image_name: vs2017-win2016
+          job_name: win2019_32_py36
+          image_name: windows-2019
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
@@ -37,9 +37,9 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: Win2016_64_py36
-          image_name: vs2017-win2016
+          job_name: win2019_64_py36
+          image_name: windows-2019
           python_versions: ['3.6']
           python_architecture: x64
           test_suites:
-              misc: tmp\Scripts\pytest -vvs
+              all: tmp\Scripts\pytest -vvs
