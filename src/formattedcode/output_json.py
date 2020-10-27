@@ -175,18 +175,31 @@ def get_results(codebase, as_list=False, **kwargs):
 
 
 def write_results(codebase, output_file, pretty=False):
+    """
+    Write headers, files, and other attributes from `codebase` to `output_file`
+
+    Enable JSON indentation if `pretty` is True
+    """
+    # Set indentation for JSON output if `pretty` is True
     kwargs = dict()
     if pretty:
         kwargs['indent'] = 2
+    # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     if isinstance(output_file, string_types):
         output_file = open(output_file, mode)
+    # Write JSON to `output_file`
     with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **kwargs) as s:
+        # Write headers
         with s.subarray('headers') as headers:
             codebase.add_files_count_to_current_header()
             headers.iterwrite(codebase.get_headers())
+        # Write attributes
         if codebase.attributes:
             for k, v in codebase.attributes.to_dict().items():
+                # TODO: Are all codebase attributes lists?
                 with s.subarray(k) as attribute:
                     attribute.iterwrite(v)
+        # Write files
         with s.subarray('files') as files:
-            files.iterwrite(OutputPlugin.get_files(codebase, **kwargs))
+            codebase_files = OutputPlugin.get_files(codebase, **kwargs)
+            files.iterwrite(codebase_files)
