@@ -1,20 +1,45 @@
 
 ################################################################################
-# We use Azure to run the full tests suites on Pythons 2.7 and 3.6
+# We use Azure to run the full tests suites on Python 3.6
 # on Windows (32 and 64), macOS and Linux (64 various distro)
 ################################################################################
 
 jobs:
 
+########################################################################
+# RELEASE on 3.6. Also check that we can pip install
+########################################################################
+
+    - job: Build_release_archive_py3
+      pool:
+          vmImage: ubuntu-16.04
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '3.6'
+            displayName: 'Install Python 3.6'
+
+          - script: ./etc/release/release.sh
+            displayName: 'Build installable releases'
+
+          - script: ./etc/release/pip-install.sh
+            displayName: 'Test pip wheel installation'
+
+          - script: ./etc/release/pip-install-editable.sh
+            displayName: 'Test pip editable installation'
+
 ################################################################################
-# These jobs are using VMs and Azure-provided Pythons 2.7
+# These jobs are using VMs and Azure-provided Pythons 3.6
 ################################################################################
 
     - template: etc/ci/azure-linux.yml
       parameters:
-          job_name: vm_ubuntu16_py27
+          job_name: vm_ubuntu16_py36
           image_name: ubuntu-16.04
-          python_versions: ['2.7']
+          python_versions: ['3.6']
           test_suites:
               misc: |
                 bin/py.test -n 2 -vvs --reruns=3 --test-suite=all \
@@ -62,168 +87,6 @@ jobs:
                   tests/licensedcode/test_zzzz_cache.py \
                   --cov=src --cov-report=term --cov-report=xml
                 bin/codecov --token "$CODECOV_TOKEN"
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: Win2016_32_py27
-          image_name: vs2017-win2016
-          python_versions: ['2.7']
-          python_architecture: x86
-          test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
-              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: Win2016_64_py27
-          image_name: vs2017-win2016
-          python_versions: ['2.7']
-          python_architecture: x64
-          test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
-              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
-
-    - template: etc/ci/azure-mac.yml
-      parameters:
-          job_name: macos1015_py27
-          image_name: macos-10.15
-          python_versions: ['2.7']
-          test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3 --ignore=tests/scancode
-              scancode: bin/py.test -vvs --reruns=3 tests/scancode
-
-
-################################################################################
-# These jobs are using containers and their own Python 2.7
-################################################################################
-
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
-          job_name: ubuntu18_py27
-          container: 'ubuntu:bionic'
-          python_path: python2.7
-          python_version: '2.7'
-          install_python: sudo apt-get install -y python python-dev
-          test_suite_label: all
-          test_suite: bin/py.test -n 2 -vvs --reruns=3
-
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: centos7_py27
-#          container: centos:7
-#          python_path: python2.7
-#          python_version: '2.7'
-#          install_python: sudo yum install -y python python27-devel
-#          test_suite_label: all
-#          test_suite: bin/py.test -n 2 -vvs --reruns=3
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux1_py27
-#          container: quay.io/pypa/manylinux1_x86_64:latest
-#          python_path: /opt/python/cp27-cp27mu/bin/python
-#          python_version: '2.7'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: all
-#          test_suite: bin/py.test -n 2 -vvs --reruns=3
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: manylinux2010_py27
-#          container: quay.io/pypa/manylinux2010_x86_64:latest
-#          python_path: /opt/python/cp27-cp27mu/bin/python
-#          python_version: '2.7'
-#          install_packages: echo "No extra packages for now"
-#          install_python: echo "Python is pre-installed"
-#          test_suite_label: all
-#          test_suite: bin/py.test -n 2 -vvs --reruns=3
-#
-#    - template: etc/ci/azure-container-rpm.yml
-#      parameters:
-#          job_name: fedora30_py27
-#          container: fedora:30
-#          package_manager: dnf
-#          python_path: python2.7
-#          python_version: '2.7'
-#          install_python: |
-#              set -e -x
-#              sudo dnf install -y python2 python2-devel
-#          test_suite_label: all
-#          test_suite: bin/py.test -n 2 -vvs --reruns=3
-#
-#    - template: etc/ci/azure-container-deb.yml
-#      parameters:
-#          job_name: debian9_py27
-#          container: debian:stretch
-#          python_path: python2.7
-#          python_version: '2.7'
-#          install_python: sudo apt-get install -y python python-dev
-#          test_suite_label: all
-#          test_suite: bin/py.test -n 2 -vvs --reruns=3
-
-
-########################################################################
-# RELEASE on 2.7. Also check that we can pip install
-########################################################################
-
-    - job: Build_release_archive_py2
-      pool:
-          vmImage: ubuntu-16.04
-      steps:
-          - checkout: self
-            fetchDepth: 10
-
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '2.7'
-            displayName: 'Install Python 2.7'
-
-          - script: ./etc/release/release.sh
-            displayName: 'Build installable releases'
-
-          - script: ./etc/release/pip-install2.sh
-            displayName: 'Test pip installation'
-
-
-########################################################################
-# RELEASE on 3.6. Also check that we can pip install
-########################################################################
-
-    - job: Build_release_archive_py3
-      pool:
-          vmImage: ubuntu-16.04
-      steps:
-          - checkout: self
-            fetchDepth: 10
-
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '3.6'
-            displayName: 'Install Python 3.6'
-
-          - script: ./etc/release/release.sh
-            displayName: 'Build installable releases'
-
-          - script: ./etc/release/pip-install.sh
-            displayName: 'Test pip wheel installation'
-
-          - script: ./etc/release/pip-install-editable.sh
-            displayName: 'Test pip editable installation'
-
-################################################################################
-# These jobs are using VMs and Azure-provided Pythons 3.6
-################################################################################
-
-    - template: etc/ci/azure-linux.yml
-      parameters:
-          job_name: vm_ubuntu16_py36
-          image_name: ubuntu-16.04
-          python_versions: ['3.6']
-          test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3
 
     - template: etc/ci/azure-mac.yml
       parameters:
