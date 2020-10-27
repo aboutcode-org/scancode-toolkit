@@ -16,7 +16,7 @@ jobs:
           image_name: ubuntu-16.04
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3
+              all: tmp/bin/pytest -n 2 -vvs
 
     - template: etc/ci/azure-mac.yml
       parameters:
@@ -24,7 +24,7 @@ jobs:
           image_name: macos-10.15
           python_versions: ['3.6']
           test_suites:
-              all: bin/py.test -n 2 -vvs --reruns=3
+              all: tmp/bin/pytest -n 2 -vvs
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -33,7 +33,7 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x86
           test_suites:
-              all: Scripts\py.test -vvs --reruns=3
+              all: tmp\Scripts\pytest -vvs
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -42,4 +42,4 @@ jobs:
           python_versions: ['3.6']
           python_architecture: x64
           test_suites:
-              misc: Scripts\py.test -vvs --reruns=3
+              misc: tmp\Scripts\pytest -vvs
