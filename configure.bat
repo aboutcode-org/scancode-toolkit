@@ -21,6 +21,7 @@ set CFG_ROOT_DIR=%~dp0
 set CONFIGURED_PYTHON=%CFG_ROOT_DIR%tmp\Scripts\python.exe
 set PYTHON_EXECUTABLE=
 
+
 @rem parse command line options and arguments
 :collectopts
 if "%1" EQU "--help" (goto cli_help)
@@ -89,7 +90,7 @@ call curl -o "%CFG_ROOT_DIR%tmp\virtualenv.pyz" https://bootstrap.pypa.io/virtua
 call %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%tmp\virtualenv.pyz" "%CFG_ROOT_DIR%tmp"
 call "%CFG_ROOT_DIR%tmp\Scripts\activate"
 call "%CFG_ROOT_DIR%tmp\Scripts\pip" install --upgrade pip virtualenv setuptools wheel
-
+call "%CFG_ROOT_DIR%tmp\Scripts\pip" install -e .[testing]
 
 @rem Return a proper return code on failure
 if %ERRORLEVEL% neq 0 (
