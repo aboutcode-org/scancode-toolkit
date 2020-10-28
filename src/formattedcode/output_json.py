@@ -96,8 +96,6 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        # results = get_results(codebase, as_list=False, **kwargs)
-        # write_json(results, output_file=output_json, pretty=False)
         write_results(codebase, output_file=output_json, pretty=False, **kwargs)
 
 
@@ -117,61 +115,7 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        # results = get_results(codebase, as_list=False, **kwargs)
-        # write_json(results, output_file=output_json_pp, pretty=True)
         write_results(codebase, output_file=output_json_pp, pretty=True, **kwargs)
-
-
-def write_json(results, output_file, pretty=False, **kwargs):
-    """
-    Write `results` to the `output_file` opened file-like object.
-    """
-    # NOTE: we write as encoded, binary bytes, not as unicode, decoded text on py2
-    kwargs = dict(iterable_as_array=True, encoding='utf-8')
-    if pretty:
-        kwargs.update(dict(indent=2 * space))
-    else:
-        kwargs.update(dict(separators=(comma, colon,)))
-
-    close_of = False
-
-
-    try:
-        if isinstance(output_file, string_types):
-            output_file = open(output_file, mode)
-            close_of = True
-        output_file.write(simplejson.dumps(results, **kwargs))
-        output_file.write(eol)
-    finally:
-        if close_of:
-            output_file.close()
-
-
-def get_results(codebase, as_list=False, **kwargs):
-    """
-    Return an ordered mapping of scan results collected from a `codebase`.
-    if `as_list` consume the "files" iterator in a list sequence.
-    """
-
-    codebase.add_files_count_to_current_header()
-    results = OrderedDict([('headers', codebase.get_headers()), ])
-
-    # add codebase toplevel attributes such as summaries
-    if codebase.attributes:
-        results.update(codebase.attributes.to_dict())
-
-    files = OutputPlugin.get_files(codebase, **kwargs)
-    if as_list:
-        files = list(files)
-    results['files'] = files
-
-    if TRACE:
-        logger_debug('get_results: files')
-        files = list(files)
-        from pprint import pformat
-        logger_debug(pformat(files))
-
-    return results
 
 
 def write_results(codebase, output_file, pretty=False, **kwargs):
@@ -189,21 +133,47 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
         jsonstreams_kwargs['pretty'] = True
 
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
+    close_stream = False
     if isinstance(output_file, string_types):
         output_file = open(output_file, mode)
+        close_stream = True
 
-    # Write JSON to `output_file`
-    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs) as s:
-        # Write headers
-        codebase.add_files_count_to_current_header()
-        codebase_headers = codebase.get_headers()
-        s.write('headers', codebase_headers)
+    # Begin writing JSON to `output_file`
+    s = jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs)
 
-        # Write attributes
-        if codebase.attributes:
-            for attribute_key, attribute_value in codebase.attributes.to_dict().items():
-                s.write(attribute_key, attribute_value)
+    # Write headers
+    codebase.add_files_count_to_current_header()
+    codebase_headers = codebase.get_headers()
+    s.write('headers', codebase_headers)
 
-        # Write files
-        codebase_files = OutputPlugin.get_files(codebase, **kwargs)
-        s.write('files', codebase_files)
+    # Write attributes
+    if codebase.attributes:
+        for attribute_key, attribute_value in codebase.attributes.to_dict().items():
+            s.write(attribute_key, attribute_value)
+
+    # Write files
+    codebase_files = OutputPlugin.get_files(codebase, **kwargs)
+    s.write('files', codebase_files)
+
+    # FIXME: This is a hack. The final `}` of the json is written when the
+    # jsonstreams.Stream.close() method is run. In some cases, we keep the json
+    # file descriptor open and close it later, after we have left the
+    # jsonstreams context and the output json plugin, so the final `}` is never
+    # written and we cannot parse the results.
+    #
+    # The jsonstreams.Stream.close() method consists of two method calls,
+    # - self.__inst.close()
+    # - self.__fd.close()
+    #
+    # self.__inst.close() closes the written json object by writing the final
+    # `}` to the file
+    #
+    # self.__fd.close() just closes the file descriptor
+    #
+    # To finish writing the json and keep the file open, we manually call
+    # s._Stream__inst.close() (_Stream__inst is the same as __inst, for some
+    # reason it is called _Stream__inst on the instantiated Stream object)
+    if not close_stream:
+        s._Stream__inst.close()
+    else:
+        s.close()
