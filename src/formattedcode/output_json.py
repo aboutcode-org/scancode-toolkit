@@ -25,10 +25,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-
 import jsonstreams
-import simplejson
 from six import string_types
 
 from commoncode.system import py2
