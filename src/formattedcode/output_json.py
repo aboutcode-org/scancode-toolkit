@@ -98,7 +98,7 @@ class JsonCompactOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json, **kwargs):
         # results = get_results(codebase, as_list=False, **kwargs)
         # write_json(results, output_file=output_json, pretty=False)
-        write_results(codebase, output_file=output_json, pretty=False)
+        write_results(codebase, output_file=output_json, pretty=False, **kwargs)
 
 
 @output_impl
@@ -195,17 +195,15 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
     # Write JSON to `output_file`
     with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs) as s:
         # Write headers
-        with s.subarray('headers') as headers:
-            codebase.add_files_count_to_current_header()
-            codebase_headers = codebase.get_headers()
-            headers.iterwrite(codebase_headers)
+        codebase.add_files_count_to_current_header()
+        codebase_headers = codebase.get_headers()
+        s.write('headers', codebase_headers)
+
         # Write attributes
         if codebase.attributes:
-            for k, v in codebase.attributes.to_dict().items():
-                # TODO: Are all codebase attributes lists?
-                with s.subarray(k) as attribute:
-                    attribute.iterwrite(v)
+            for attribute_key, attribute_value in codebase.attributes.to_dict().items():
+                s.write(attribute_key, attribute_value)
+
         # Write files
-        with s.subarray('files') as files:
-            codebase_files = OutputPlugin.get_files(codebase, **kwargs)
-            files.iterwrite(codebase_files)
+        codebase_files = OutputPlugin.get_files(codebase, **kwargs)
+        s.write('files', codebase_files)
