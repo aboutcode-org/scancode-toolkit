@@ -186,6 +186,7 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
     jsonstreams_kwargs = dict()
     if pretty:
         jsonstreams_kwargs['indent'] = 2
+        jsonstreams_kwargs['pretty'] = True
 
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     if isinstance(output_file, string_types):
