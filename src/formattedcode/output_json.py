@@ -124,53 +124,59 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
     # Set indentation for JSON output if `pretty` is True
     # We use a separate dict for jsonstream kwargs since we are passing
     # this function's kwargs as arguments to OutputPlugin.get_files()
-    jsonstreams_kwargs = dict()
     if pretty:
-        jsonstreams_kwargs['indent'] = 2
-        jsonstreams_kwargs['pretty'] = True
+        jsonstreams_kwargs = dict(indent=2, pretty=True)
+    else:
+        jsonstreams_kwargs = dict()
 
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     close_stream = False
-    if isinstance(output_file, string_types):
-        output_file = open(output_file, mode)
-        close_stream = True
+    s = None
+    try:
+        if isinstance(output_file, string_types):
+            output_file = open(output_file, mode)
+            close_stream = True
 
-    # Begin writing JSON to `output_file`
-    s = jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs)
+        # Begin writing JSON to `output_file`
+        s = jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs)
 
-    # Write headers
-    codebase.add_files_count_to_current_header()
-    codebase_headers = codebase.get_headers()
-    s.write('headers', codebase_headers)
+        # Write headers
+        codebase.add_files_count_to_current_header()
+        codebase_headers = codebase.get_headers()
+        s.write('headers', codebase_headers)
 
-    # Write attributes
-    if codebase.attributes:
-        for attribute_key, attribute_value in codebase.attributes.to_dict().items():
-            s.write(attribute_key, attribute_value)
+        # Write attributes
+        if codebase.attributes:
+            for attribute_key, attribute_value in codebase.attributes.to_dict().items():
+                s.write(attribute_key, attribute_value)
 
-    # Write files
-    codebase_files = OutputPlugin.get_files(codebase, **kwargs)
-    s.write('files', codebase_files)
+        # Write files
+        codebase_files = OutputPlugin.get_files(codebase, **kwargs)
+        s.write('files', codebase_files)
 
-    # FIXME: This is a hack. The final `}` of the json is written when the
-    # jsonstreams.Stream.close() method is run. In some cases, we keep the json
-    # file descriptor open and close it later, after we have left the
-    # jsonstreams context and the output json plugin, so the final `}` is never
-    # written and we cannot parse the results.
-    #
-    # The jsonstreams.Stream.close() method consists of two method calls,
-    # - self.__inst.close()
-    # - self.__fd.close()
-    #
-    # self.__inst.close() closes the written json object by writing the final
-    # `}` to the file
-    #
-    # self.__fd.close() just closes the file descriptor
-    #
-    # To finish writing the json and keep the file open, we manually call
-    # s._Stream__inst.close() (_Stream__inst is the same as __inst, for some
-    # reason it is called _Stream__inst on the instantiated Stream object)
-    if not close_stream:
-        s._Stream__inst.close()
-    else:
-        s.close()
+    finally:
+        # FIXME: This is a hack. The final `}` of the json is written when the
+        # jsonstreams.Stream.close() method is run. In some cases, we keep the json
+        # file descriptor open and close it later, after we have left the
+        # jsonstreams context and the output json plugin, so the final `}` is never
+        # written and we cannot parse the results.
+        #
+        # The jsonstreams.Stream.close() method consists of two method calls,
+        # - self.__inst.close()
+        # - self.__fd.close()
+        #
+        # self.__inst.close() closes the written json object by writing the final
+        # `}` to the file
+        #
+        # self.__fd.close() just closes the file descriptor
+        #
+        # To finish writing the json and keep the file open, we manually call
+        # s._Stream__inst.close() (_Stream__inst is the same as __inst, for some
+        # reason it is called _Stream__inst on the instantiated Stream object)
+        if s:
+            if not close_stream:
+                s._Stream__inst.close()
+                s._Stream__fd.flush()
+            else:
+                s._Stream__fd.flush()
+                s.close()
