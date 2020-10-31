@@ -1,0 +1,4 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: this looks like a BSD-like license but this is strongly proprietary See https://github.com/Safecast/TTProto/blob/d66a002deafc57022467ed491340fd1c82924896/LICENSE

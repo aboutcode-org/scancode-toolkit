@@ -1,0 +1,6 @@
+license_expression: gpl-1.0-plus AND bsd-new
+is_license_notice: yes
+relevance: 100
+notes: See https://www.agner.org/random/randomc.zip
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html

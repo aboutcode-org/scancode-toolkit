@@ -1,0 +1,4 @@
+license_expression: bsd-x11
+is_license_text: yes
+relevance: 100
+notes: See https://github.com/mirror/newlib-cygwin/blob/3752ab804bda1cbb38b5da91db8cf14f8bdefa2f/winsup/testsuite/winsup.api/msgtest.c
