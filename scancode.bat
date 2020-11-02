@@ -3,30 +3,8 @@
 
 @rem  A wrapper to ScanCode command line entry point
 
-@rem Delayed expansion is required to allow the content of the variables to be manipulated prior to use
-setlocal EnableDelayedExpansion
-
 set SCANCODE_ROOT_DIR=%~dp0
 set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%Scripts\python.exe
-
-@rem Collect all command line arguments in a variable
-@rem Use a trailing space in the next line sets the variable to an empty string (rather than unseting it)
-set "SCANCODE_CMD_LINE_ARGS= "
-
-:collectarg
-@rem Capture the current argument value
-	set CurrentParam=%1
-    if ""%1""=="""" goto continue
-	@rem Replace a % sign with an arbitrary placeholder string
-	@rem Note: the double percent sign (%%) is required to escape the percent sign.
-	@rem The statement "set CurrentParam=!CurrentParam:%%=##PC##!" takes the value
-	@rem of CurrentParam, replaces any percent signs with ##PC## and assigns it back to CurrentParam
-	set CurrentParam=!CurrentParam:%%=##PC##!
-    call set SCANCODE_CMD_LINE_ARGS=%SCANCODE_CMD_LINE_ARGS% %CurrentParam%
-    shift
-goto collectarg
-
-:continue
 
 if not exist "%SCANCODE_CONFIGURED_PYTHON%" goto configure
 goto scancode
@@ -47,5 +25,5 @@ if %errorlevel% neq 0 (
 set PYTHONDONTWRITEBYTECODE=1
 
 @rem Revert the placeholders back to single percent signs before passing through to ScanCode executable
-set SCANCODE_CMD_LINE_ARGS=!SCANCODE_CMD_LINE_ARGS:##PC##=%%!
-"%SCANCODE_ROOT_DIR%Scripts\scancode" %SCANCODE_CMD_LINE_ARGS%
+echo "%SCANCODE_ROOT_DIR%Scripts\scancode %*" >> d:\ScanCode.txt
+"%SCANCODE_ROOT_DIR%Scripts\scancode" %*
