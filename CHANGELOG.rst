@@ -4,13 +4,22 @@ vNext
 -----
  - Updated scancode.bat to handle % signs in the arguments #1876
 
+v3.2.3 (2020-10-27)
+-------------------
+
+Notable changes:
+
+ - Collect Windows executable metadata #652
+ - Fix minor bugs
+ - Add Dockerfile to build docker image from ScanCode sources #2265
+
+
 v3.2.2rc3 (2020-09-21)
 ----------------------
 
-Internal code changes:
+Notable changes:
 
- - Ensure commoncode ccan become a standalone package #2233
- - Add Dockerfile to build docker image from ScanCode sources #2265
+ - Use commoncode, typecode and extractcode as external standalone packages #2233
 
 
 v3.2.1rc2 (2020-09-11)
@@ -96,8 +105,7 @@ v3.2.0rc1 (2020-09-08)
  - Improve runtime support for FreeBSD #1695  @knobix
  - Update macOS image on azure pipeline @TG1999
  - Improve documentation - @Vinay0001     
- 
- 
+
 
 v3.1.1 (2019-09-04)
 -------------------

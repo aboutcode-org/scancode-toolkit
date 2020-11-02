@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -97,7 +97,7 @@ try:
     __version__ = get_distribution('scancode-toolkit').version
 except DistributionNotFound:
     # package is not installed ??
-    __version__ = '3.2.1.rc2'
+    __version__ = '3.2.3'
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
