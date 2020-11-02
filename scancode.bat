@@ -17,7 +17,7 @@ set "SCANCODE_CMD_LINE_ARGS= "
 @rem Capture the current argument value
 	set CurrentParam=%1
     if ""%1""=="""" goto continue
-	@rem Replace a % sign with an arbitrary placeholder sting
+	@rem Replace a % sign with an arbitrary placeholder string
 	@rem Note: the double percent sign (%%) is required to escape the percent sign.
 	@rem The statement "set CurrentParam=!CurrentParam:%%=##PC##!" takes the value
 	@rem of CurrentParam, replaces any percent signs with ##PC## and assigns it back to CurrentParam

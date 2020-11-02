@@ -1,6 +1,8 @@
 Changelog
 =========
-
+vNext
+-----
+ - Updated scancode.bat to handle % signs in the arguments #1876
 
 v3.2.2rc3 (2020-09-21)
 ----------------------
