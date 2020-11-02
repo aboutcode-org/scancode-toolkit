@@ -24,6 +24,4 @@ if %errorlevel% neq 0 (
 @rem without this things may not always work on Windows 10, but this makes things slower
 set PYTHONDONTWRITEBYTECODE=1
 
-@rem Revert the placeholders back to single percent signs before passing through to ScanCode executable
-echo "%SCANCODE_ROOT_DIR%Scripts\scancode %*" >> d:\ScanCode.txt
 "%SCANCODE_ROOT_DIR%Scripts\scancode" %*
