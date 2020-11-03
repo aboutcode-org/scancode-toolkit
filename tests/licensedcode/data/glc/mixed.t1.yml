@@ -1,4 +1,8 @@
 license_expressions:
+  - mit
+  - mit
+  - bsd-new
+  - bsd-new
   - cc-by-4.0
 notes: |
   License test derived from a file of the BSD-licensed repository at:
