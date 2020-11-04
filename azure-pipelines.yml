@@ -1,0 +1,45 @@
+
+################################################################################
+# We use Azure to run the full tests suites on Python 3.6
+# on Windows (32 and 64), macOS and Linux (64 various distro)
+################################################################################
+
+jobs:
+
+################################################################################
+# These jobs are using VMs and Azure-provided Python 3.6
+################################################################################
+
+    - template: etc/ci/azure-linux.yml
+      parameters:
+          job_name: ubuntu18_py36
+          image_name: ubuntu-18.04
+          python_versions: ['3.6']
+          test_suites:
+              all: tmp/bin/pytest -n 2 -vvs
+
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos1015_py36
+          image_name: macos-10.15
+          python_versions: ['3.6']
+          test_suites:
+              all: tmp/bin/pytest -n 2 -vvs
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2019_32_py36
+          image_name: windows-2019
+          python_versions: ['3.6']
+          python_architecture: x86
+          test_suites:
+              all: tmp\Scripts\pytest -vvs
+
+    - template: etc/ci/azure-win.yml
+      parameters:
+          job_name: win2019_64_py36
+          image_name: windows-2019
+          python_versions: ['3.6']
+          python_architecture: x64
+          test_suites:
+              all: tmp\Scripts\pytest -vvs
