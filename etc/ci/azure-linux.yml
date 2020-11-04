@@ -1,6 +1,6 @@
 parameters:
     job_name: ''
-    image_name: 'ubuntu-16.04'
+    image_name: ''
     python_versions: []
     test_suites: {}
     python_architecture: x64
@@ -19,7 +19,6 @@ jobs:
                      python_version: ${{ pyver }}
                      test_suite_label: ${{ tsuite.key }}
                      test_suite: ${{ tsuite.value }}
-
       steps:
           - checkout: self
             fetchDepth: 10
