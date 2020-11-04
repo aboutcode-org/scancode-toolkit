@@ -25,6 +25,8 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 import jsonstreams
 from six import string_types
 
@@ -127,19 +129,16 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
     if pretty:
         jsonstreams_kwargs = dict(indent=2, pretty=True)
     else:
-        jsonstreams_kwargs = dict()
+        jsonstreams_kwargs = dict(indent=None, pretty=False)
 
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
-    close_stream = False
-    s = None
-    try:
-        if isinstance(output_file, string_types):
-            output_file = open(output_file, mode)
-            close_stream = True
+    close_fd = False
+    if isinstance(output_file, string_types):
+        output_file = open(output_file, mode)
+        close_fd = True
 
-        # Begin writing JSON to `output_file`
-        s = jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, **jsonstreams_kwargs)
-
+    # Begin writing JSON to `output_file`
+    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, close_fd=close_fd, **jsonstreams_kwargs) as s:
         # Write headers
         codebase.add_files_count_to_current_header()
         codebase_headers = codebase.get_headers()
@@ -154,29 +153,29 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
         codebase_files = OutputPlugin.get_files(codebase, **kwargs)
         s.write('files', codebase_files)
 
-    finally:
-        # FIXME: This is a hack. The final `}` of the json is written when the
-        # jsonstreams.Stream.close() method is run. In some cases, we keep the json
-        # file descriptor open and close it later, after we have left the
-        # jsonstreams context and the output json plugin, so the final `}` is never
-        # written and we cannot parse the results.
-        #
-        # The jsonstreams.Stream.close() method consists of two method calls,
-        # - self.__inst.close()
-        # - self.__fd.close()
-        #
-        # self.__inst.close() closes the written json object by writing the final
-        # `}` to the file
-        #
-        # self.__fd.close() just closes the file descriptor
-        #
-        # To finish writing the json and keep the file open, we manually call
-        # s._Stream__inst.close() (_Stream__inst is the same as __inst, for some
-        # reason it is called _Stream__inst on the instantiated Stream object)
-        if s:
-            if not close_stream:
-                s._Stream__inst.close()
-                s._Stream__fd.flush()
-            else:
-                s._Stream__fd.flush()
-                s.close()
+
+def get_results(codebase, as_list=False, **kwargs):
+    """
+    Return an ordered mapping of scan results collected from a `codebase`.
+    if `as_list` consume the "files" iterator in a list sequence.
+    """
+
+    codebase.add_files_count_to_current_header()
+    results = OrderedDict([('headers', codebase.get_headers()), ])
+
+    # add codebase toplevel attributes such as summaries
+    if codebase.attributes:
+        results.update(codebase.attributes.to_dict())
+
+    files = OutputPlugin.get_files(codebase, **kwargs)
+    if as_list:
+        files = list(files)
+    results['files'] = files
+
+    if TRACE:
+        logger_debug('get_results: files')
+        files = list(files)
+        from pprint import pformat
+        logger_debug(pformat(files))
+
+    return results

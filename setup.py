@@ -205,7 +205,7 @@ setup(
         'simplejson',
         'spdx_tools >= 0.6.0',
         'unicodecsv',
-        'jsonstreams',
+        'jsonstreams >= 0.4.4.scancode1',
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
