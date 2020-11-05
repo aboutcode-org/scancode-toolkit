@@ -1,0 +1,36 @@
+parameters:
+    job_name: ''
+    image_name: ''
+    python_versions: []
+    test_suites: {}
+    python_architecture: x64
+
+jobs:
+    - job: ${{ parameters.job_name }}
+
+      pool:
+          vmImage: ${{ parameters.image_name }}
+
+      strategy:
+          matrix:
+            ${{ each pyver in parameters.python_versions }}:
+              ${{ each tsuite in parameters.test_suites }}:
+                 ${{ format('py{0} {1}', pyver, tsuite.key) }}:
+                     python_version: ${{ pyver }}
+                     test_suite_label: ${{ tsuite.key }}
+                     test_suite: ${{ tsuite.value }}
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '$(python_version)'
+                architecture: '${{ parameters.python_architecture }}'
+            displayName: 'Install Python $(python_version)'
+
+          - script: ./configure
+            displayName: 'Run Configure'
+
+          - script: $(test_suite)
+            displayName: 'Run $(test_suite_label) tests with py$(python_version) on ${{ parameters.job_name }}'
