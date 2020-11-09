@@ -65,7 +65,7 @@ class JavaLexer(RegexLexer):
              'var'),
             (r'(import(?:\s+static)?)(\s+)', bygroups(Keyword.Namespace, Text),
              'import'),
-            (r'"(\\\\|\\"|[^"])*"', String),
+            (r'"', String, 'string'),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
             (r'(\.)((?:[^\W\d]|\$)[\w$]*)', bygroups(Punctuation,
                                                      Name.Attribute)),
@@ -95,6 +95,13 @@ class JavaLexer(RegexLexer):
         ],
         'import': [
             (r'[\w.]+\*?', Name.Namespace, '#pop')
+        ],
+        'string': [
+            (r'[^\\"]+', String),
+            (r'\\\\', String),  # Escaped backslash
+            (r'\\"', String),  # Escaped quote
+            (r'\\', String),  # Bare backslash
+            (r'"', String, '#pop'),  # Closing quote
         ],
     }
 
