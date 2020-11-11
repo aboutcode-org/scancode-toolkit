@@ -4,7 +4,6 @@ license_expressions:
   - mit
   - x11
   - x11
-  - bsd-new AND free-unknown
   - bsd-new
   - bsd-new
   - bsd-new

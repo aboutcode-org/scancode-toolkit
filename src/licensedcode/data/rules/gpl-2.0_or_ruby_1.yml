@@ -1,0 +1,9 @@
+license_expression: ruby OR gpl-2.0
+is_license_text: yes
+relevance: 95
+referenced_filenames:
+    - GPL
+notes: Seen in https://github.com/eventmachine/eventmachine/blob/b50c135dfdd4e7b20c8e0b7ce1d8fe7176d4d14d/LICENSE
+    The text is modified, but mostly reworded and essnetially similar
+ignorable_authors:
+    - the Owner

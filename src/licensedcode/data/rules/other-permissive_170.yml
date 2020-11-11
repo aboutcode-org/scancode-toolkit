@@ -1,0 +1,7 @@
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: https://web.archive.org/web/20100425004934/http://www.2038bug.com/pivotal_gmtime_r.c.html
+    See also https://github.com/apache/drill/pull/2111
+ignorable_urls:
+    - http://2038bug.com/

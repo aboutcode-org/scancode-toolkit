@@ -1,0 +1,13 @@
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 97
+notes: in newlib
+ignorable_copyrights:
+    - Copyright (c) 1990-1999, 2000, 2001 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_authors:
+    - Mark Kettenis <kettenis@phys.uva.nl>
+ignorable_emails:
+    - kettenis@phys.uva.nl
