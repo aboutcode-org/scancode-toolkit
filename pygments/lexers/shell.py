@@ -149,9 +149,10 @@ class SlurmBashLexer(BashLexer):
             else:
                 yield index, token, value
 
+
 class ShellSessionBaseLexer(Lexer):
     """
-    Base lexer for simplistic shell sessions.
+    Base lexer for shell sessions.
 
     .. versionadded:: 2.1
     """
@@ -217,7 +218,8 @@ class ShellSessionBaseLexer(Lexer):
 
 class BashSessionLexer(ShellSessionBaseLexer):
     """
-    Lexer for simplistic shell sessions.
+    Lexer for Bash shell sessions, i.e. command lines, including a
+    prompt, interspersed with output.
 
     .. versionadded:: 1.1
     """
@@ -546,7 +548,8 @@ class BatchLexer(RegexLexer):
 
 class MSDOSSessionLexer(ShellSessionBaseLexer):
     """
-    Lexer for simplistic MSDOS sessions.
+    Lexer for MS DOS shell sessions, i.e. command lines, including a
+    prompt, interspersed with output.
 
     .. versionadded:: 2.1
     """
@@ -631,7 +634,8 @@ class TcshLexer(RegexLexer):
 
 class TcshSessionLexer(ShellSessionBaseLexer):
     """
-    Lexer for Tcsh sessions.
+    Lexer for Tcsh sessions, i.e. command lines, including a
+    prompt, interspersed with output.
 
     .. versionadded:: 2.1
     """
@@ -762,7 +766,8 @@ class PowerShellLexer(RegexLexer):
 
 class PowerShellSessionLexer(ShellSessionBaseLexer):
     """
-    Lexer for simplistic Windows PowerShell sessions.
+    Lexer for PowerShell sessions, i.e. command lines, including a
+    prompt, interspersed with output.
 
     .. versionadded:: 2.1
     """
