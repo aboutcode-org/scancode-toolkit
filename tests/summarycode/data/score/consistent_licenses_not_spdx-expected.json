@@ -94,8 +94,10 @@
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-xfig",
-          "spdx_license_key": null,
-          "spdx_url": "",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.yml",
+          "spdx_license_key": "LicenseRef-scancode-mit-xfig",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
           "start_line": 17,
           "end_line": 24,
           "matched_rule": {
@@ -112,7 +114,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 90
           }
         }
       ],
@@ -240,8 +242,10 @@
           "homepage_url": "http://www.xfig.org",
           "text_url": "",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-xfig",
-          "spdx_license_key": null,
-          "spdx_url": "",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.yml",
+          "spdx_license_key": "LicenseRef-scancode-mit-xfig",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE",
           "start_line": 1,
           "end_line": 8,
           "matched_rule": {
@@ -258,7 +262,7 @@
             "rule_length": 81,
             "matched_length": 81,
             "match_coverage": 100.0,
-            "rule_relevance": 90.0
+            "rule_relevance": 90
           }
         }
       ],

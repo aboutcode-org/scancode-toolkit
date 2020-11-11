@@ -129,6 +129,8 @@
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
           "spdx_license_key": "MIT",
           "spdx_url": "https://spdx.org/licenses/MIT",
           "start_line": 7,
@@ -147,7 +149,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -240,6 +242,8 @@
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
           "spdx_license_key": "MIT",
           "spdx_url": "https://spdx.org/licenses/MIT",
           "start_line": 1,
@@ -310,6 +314,8 @@
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
           "spdx_license_key": "MIT",
           "spdx_url": "https://spdx.org/licenses/MIT",
           "start_line": 1,

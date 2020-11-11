@@ -220,9 +220,11 @@ def get_licenses(location, min_score=0,
         query_tokens_length = match.query.tokens_length(with_unknown=True)
         percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
+    detected_spdx_expressions=[]
     return OrderedDict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
+        ('spdx_license_expressions', detected_spdx_expressions),
         ('percentage_of_license_text', percentage_of_license_text),
     ])
 
@@ -244,6 +246,10 @@ def _licenses_data_from_match(
         else:
             matched_text = match.matched_text(whole_lines=True, highlight=False)
 
+    SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
+    SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL+'/{}.LICENSE'
+    SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL+'/{}.yml'
+
     detected_licenses = []
     for license_key in match.rule.license_keys():
         lic = licenses.get(license_key)
@@ -259,11 +265,19 @@ def _licenses_data_from_match(
         result['homepage_url'] = lic.homepage_url
         result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
         result['reference_url'] = license_url_template.format(lic.key)
+        result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+        result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+        
         spdx_key = lic.spdx_license_key
         result['spdx_license_key'] = spdx_key
+
         if spdx_key:
-            spdx_key = lic.spdx_license_key.rstrip('+')
-            spdx_url = SPDX_LICENSE_URL.format(spdx_key)
+            is_license_ref = spdx_key.lower().startswith('licenseref-')
+            if is_license_ref:
+                spdx_url = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+            else:
+                spdx_key = lic.spdx_license_key.rstrip('+')
+                spdx_url = SPDX_LICENSE_URL.format(spdx_key)
         else:
             spdx_url = ''
         result['spdx_url'] = spdx_url

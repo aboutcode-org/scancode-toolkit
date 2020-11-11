@@ -6,7 +6,8 @@
   Permission is hereby granted, free of charge, to any person
   LGPL-2+
 - bloomberg-blpapi AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND lgpl-2.0-plus AND lgpl-2.1
-  AND lgpl-2.1-plus AND lgpl-3.0 AND mit AND other-permissive AND sun-rpc AND unknown AND warranty-disclaimer
+  AND lgpl-2.1-plus AND lgpl-3.0 AND other-permissive AND sun-rpc AND unknown AND warranty-disclaimer
+  AND x11
 - |
   Copyright (C) 2004-2009 Lennart Poettering
   Copyright (C) 2006-2007 Pierre Ossman <ossman@cendio.se> for Cendio AB

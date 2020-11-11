@@ -2998,7 +2998,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           },
           "matched_text": "public domain"
         },
@@ -3031,7 +3031,7 @@
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           },
           "matched_text": "Public Domain"
         }
