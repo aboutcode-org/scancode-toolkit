@@ -1,32 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/CERN-OHL-1.2.html				
-*/
-
 
 
 /* SPDX-License-Identifier: CERN-OHL-1.2 */
@@ -117,7 +88,7 @@ applicable licence terms and conditions.
 3. Copying, modification,
 communication to the public and distribution of the Documentation
 
-  
+
 3.1. The Licensee shall keep intact all copyright and trademarks
 notices, all notices referring to Documentation Location, and all
 notices that refer to this Licence and to the disclaimer of warranties
@@ -145,7 +116,7 @@ distributed.
 distribute the modified Documentation (thereby in addition to being a
 Licensee also becoming a Licensor), always provided that he shall:
 
-  
+
    a) comply with section 3.1;
 
       b) cause the modified
@@ -164,7 +135,7 @@ format of the CAD tool as applicable), and in the event that format is
 proprietary, in a format viewable with a tool licensed under an
 OSI-approved license if the proprietary tool can create it; and
 
-     
+
 e) license the modified Documentation under the terms and conditions
 of this Licence or, where applicable, a later version of this Licence
 as may be issued by CERN.
@@ -209,7 +180,7 @@ disclaimer of warranty is an essential part of this Licence and a
 condition for the grant of any rights granted under this Licence. The
 Licensee warrants that it does not act in a consumer capacity.
 
-  
+
 5.2. LIMITATION OF LIABILITY – The Licensor shall have no liability
 for direct, indirect, special, incidental, consequential, exemplary,
 punitive or other damages of any character including, without
@@ -263,9 +234,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -289,7 +260,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

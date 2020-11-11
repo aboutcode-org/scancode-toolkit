@@ -1,32 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/CC-BY-NC-ND-4.0.html				
-*/
-
 
 
 /* SPDX-License-Identifier: CC-BY-NC-ND-4.0 */
@@ -96,7 +67,7 @@ conditions, and the Licensor grants You such rights in consideration
 of benefits the Licensor receives from making the Licensed Material
 available under these terms and conditions.
 
-   
+
 
    Section 1 –
 Definitions.
@@ -159,7 +130,7 @@ communication, or importation, and to make material available to the
 public including in ways that members of the public may access the
 material from a place and at a time individually chosen by them.
 
-    
+
  j. Sui Generis Database Rights means rights other than copyright
 resulting from Directive 96/9/EC of the European Parliament and of the
 Council of 11 March 1996 on the legal protection of databases, as
@@ -170,7 +141,7 @@ rights anywhere in the world.
 entity exercising the Licensed Rights under this Public License. Your
 has a corresponding meaning.
 
-   
+
 
    Section 2 – Scope.
 
@@ -182,7 +153,7 @@ this Public License, the Licensor hereby grants You a worldwide,
 royalty-free, non-sublicensable, non-exclusive, irrevocable license to
 exercise the Licensed Rights in the Licensed Material to:
 
-           
+
 A. reproduce and Share the Licensed Material, in whole or in part, for
 NonCommercial purposes only; and
 
@@ -253,7 +224,7 @@ expressly reserves any right to collect such royalties, including when
 the Licensed Material is used other than for NonCommercial purposes.
 
 
-  
+
 
    Section 3 – License Conditions.
 
@@ -269,12 +240,12 @@ Licensed Material, You must:
             A. retain the following if
 it is supplied by the Licensor with the Licensed Material:
 
-          
+
     i. identification of the creator(s) of the Licensed Material and
 any others designated to receive attribution, in any reasonable manner
 requested by the Licensor (including by pseudonym if designated);
 
-   
+
            ii. a copyright notice;
 
                iii. a notice that
@@ -309,9 +280,9 @@ that includes the required information.
 the Licensor, You must remove any of the information required by
 Section 3(a)(1)(A) to the extent reasonably practicable.
 
-   
 
-  
+
+
 Section 4 – Sui Generis Database Rights.
 
    Where the Licensed
@@ -329,7 +300,7 @@ database contents in a database in which You have Sui Generis Database
 Rights, then the database in which You have Sui Generis Database
 Rights (but not its individual contents) is Adapted Material; and
 
-   
+
   c. You must comply with the conditions in Section 3(a) if You Share
 all or a substantial portion of the contents of the database.
 
@@ -338,7 +309,7 @@ the avoidance of doubt, this Section 4 supplements and does not
 replace Your obligations under this Public License where the Licensed
 Rights include other Copyright and Similar Rights.
 
-   
+
 
    Section 5
 – Disclaimer of Warranties and Limitation of Liability.
@@ -371,7 +342,7 @@ above shall be interpreted in a manner that, to the extent possible,
 most closely approximates an absolute disclaimer and waiver of all
 liability.
 
-   
+
 
    Section 6 – Term and Termination.
 
@@ -388,7 +359,7 @@ has terminated under Section 6(a), it reinstates:
 automatically as of the date the violation is cured, provided it is
 cured within 30 days of Your discovery of the violation; or
 
-        
+
 2. upon express reinstatement by the Licensor.
 
       For the
@@ -404,7 +375,7 @@ not terminate this Public License.
       d. Sections 1, 5, 6, 7, and
 8 survive termination of this Public License.
 
-   
+
 
    Section 7 –
 Other Terms and Conditions.
@@ -418,7 +389,7 @@ or agreements regarding the Licensed Material not stated herein are
 separate from and independent of the terms and conditions of this
 Public License.
 
-   
+
 
    Section 8 – Interpretation.
 
@@ -435,7 +406,7 @@ extent necessary to make it enforceable. If the provision cannot be
 reformed, it shall be severed from this Public License without
 affecting the enforceability of the remaining terms and conditions.
 
- 
+
     c. No term or condition of this Public License will be waived and
 no failure to comply consented to unless expressly agreed to by the
 Licensor.
@@ -476,9 +447,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -502,7 +473,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

@@ -1,32 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/bzip2-1.0.6.html				
-*/
-
 
 
 /* SPDX-License-Identifier: bzip2-1.0.6 */
@@ -48,7 +19,7 @@ misrepresented; you must not claim that you wrote the original
 software. If you use this software in a product, an acknowledgment in
 the product documentation would be appreciated but is not required.
 
- 
+
  3. Altered source versions must be plainly marked as such, and must
 not be misrepresented as being the original software.
 
@@ -83,9 +54,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -109,7 +80,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

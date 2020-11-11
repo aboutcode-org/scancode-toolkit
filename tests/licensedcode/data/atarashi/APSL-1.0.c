@@ -1,32 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/APSL-1.0.html				
-*/
-
 
 
 /* SPDX-License-Identifier: APSL-1.0 */
@@ -76,7 +47,7 @@ Code by You to any third party in any form or manner.
 "Larger Work" means a work which combines Covered Code or portions
 thereof with code not governed by the terms of this License.
 
-     
+
 1.5 "Modifications" mean any addition to, deletion from, and/or change
 to, the substance and/or structure of Covered Code. When code is
 released as a series of files, a Modification is: (a) any addition to
@@ -91,7 +62,7 @@ Source Code of any updates or upgrades to such programs or works made
 available by Apple under this License, and that has been expressly
 identified by Apple as such in the header file(s) of such work.
 
-     
+
 1.7 "Source Code" means the human readable form of a program or other
 work that is suitable for making modifications to it, including all
 modules it contains, plus any associated interface definition files,
@@ -145,7 +116,7 @@ You must in each instance:
          (a) satisfy all the conditions of
 Section 2.1 with respect to the Source Code of the Covered Code;
 
-    
+
     (b) make all Your Deployed Modifications publicly available in
 Source Code form via electronic distribution (e.g. download from a web
 site) under the terms of this License and subject to the license
@@ -160,7 +131,7 @@ other third parties of how to obtain Your Deployed Modifications by
 filling out and submitting the required information found at
 http://www.apple.com/publicsource/modifications.html; and
 
-        
+
 (d) if you Deploy Covered Code in object code, executable form only,
 include a prominent notice, in the code itself as well as in related
 documentation, stating that Source Code of the Covered Code is
@@ -295,7 +266,7 @@ Code will not be subject to this License.
 
    12. Termination.
 
-     
+
 12.1 Termination. This License and the rights granted hereunder will
 terminate:
 
@@ -303,7 +274,7 @@ terminate:
 You fail to comply with any term(s) of this License and fail to cure
 such breach within 30 days of becoming aware of such breach;
 
-        
+
 (b) immediately in the event of the circumstances described in
 Sections 9.1 and/or 13.6(b); or
 
@@ -443,9 +414,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -469,7 +440,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

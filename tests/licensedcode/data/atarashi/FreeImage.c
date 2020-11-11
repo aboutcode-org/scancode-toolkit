@@ -1,32 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/FreeImage.html				
-*/
-
 
 
 /* SPDX-License-Identifier: FreeImage */
@@ -183,7 +154,7 @@ has been made available to such recipients. You are responsible for
 ensuring that the Source Code version remains available even if the
 Electronic Distribution Mechanism is maintained by a third party.
 
-   
+
   3.3. Description of Modifications.
 
       You must cause all Covered
@@ -267,7 +238,7 @@ Contributor. You hereby agree to indemnify the Initial Developer and
 every Contributor for any liability incurred by the Initial Developer
 or such Contributor as a result of any such terms You offer.
 
-     
+
 3.7. Larger Works.
 
       You may create a Larger Work by combining
@@ -305,7 +276,7 @@ License.
 publish revised and/or new versions of the License from time to time.
 Each version will be given a distinguishing version number.
 
-     
+
 6.2. Effect of New Versions.
 
       Once Covered Code has been
@@ -445,9 +416,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -471,7 +442,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

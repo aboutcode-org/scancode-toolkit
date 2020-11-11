@@ -1,34 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/CECILL-C.html				
-*/
-
-
-
 /* SPDX-License-Identifier: CECILL-C */
 /*
 CeCILL-C FREE SOFTWARE LICENSE AGREEMENT Notice
@@ -51,21 +20,21 @@ economic rights over software.
 The authors of the CeCILL¹ license
 are:
 
-   
+
 
    Commissariat à l'Energie Atomique - CEA, a public
 scientific, technical and industrial research establishment, having
 its principal place of business at 25 rue Leblanc, immeuble Le Ponant
 D, 75015 Paris, France.
 
-   
+
 
    Centre National de la Recherche
 Scientifique - CNRS, a public scientific and technological
 establishment, having its principal place of business at 3 rue
 Michel-Ange, 75794 Paris cedex 16, France.
 
-   
+
 
    Institut National
 de Recherche en Informatique et en Automatique - INRIA, a public
@@ -113,86 +82,86 @@ DEFINITIONS
 expressions commence with a capital letter, they shall have the
 following meaning:
 
-      
+
 
       Agreement: means this license
 agreement, and its possible subsequent versions and annexes.
 
-      
+
 
 
      Software: means the software in its Object Code and/or Source
 Code form and, where applicable, its documentation, "as is" when the
 Licensee accepts the Agreement.
 
-      
+
 
       Initial Software: means
 the Software in its Source Code and possibly its Object Code form and,
 where applicable, its documentation, "as is" when it is first
 distributed under the terms and conditions of the Agreement.
 
-      
+
 
 
      Modified Software: means the Software modified by at least one
 Integrated Contribution.
 
-      
+
 
       Source Code: means all the
 Software's instructions and program lines to which access is required
 so as to modify the Software.
 
-      
+
 
       Object Code: means the
 binary files originating from the compilation of the Source Code.
 
-   
-  
+
+
 
       Holder: means the holder(s) of the economic rights over the
 Initial Software.
 
-      
+
 
       Licensee: means the Software user(s)
 having accepted the Agreement.
 
-      
+
 
       Contributor: means a
 Licensee having made at least one Integrated Contribution.
 
-      
 
-  
+
+
    Licensor: means the Holder, or any other individual or legal
 entity, who distributes the Software under the Agreement.
 
-      
 
-   
+
+
   Integrated Contribution: means any or all modifications,
 corrections, translations, adaptations and/or new functions integrated
 into the Source Code by any or all Contributors.
 
-      
 
-     
+
+
 Related Module: means a set of sources files including their
 documentation that, without modification to the Source Code, enables
 supplementary functions or services in addition to those offered by
 the Software.
 
-      
+
 
       Derivative Software: means any
 combination of the Software, modified or not, and of a Related
 Module.
 
-      
+
 
       Parties: mean both the Licensee and the
 Licensor.
@@ -234,13 +203,13 @@ the Licensee hereby acknowledges that it has read and understood it.
 
       4.1 EFFECTIVE DATE
 
-     
+
 The Agreement shall become effective on the date when it is accepted
 by the Licensee as set forth in Article 3.1.
 
       4.2 TERM
 
-     
+
 The Agreement shall remain in force for the entire legal term of
 protection of the economic rights over the Software.
 
@@ -271,7 +240,7 @@ comprises:
          1. permanent or temporary reproduction of all or
 part of the Software by any or all means and in any or all form.
 
-    
+
     2. loading, displaying, running, or storing the Software on any or
 all medium.
 
@@ -284,7 +253,7 @@ entitled to carry out hereunder.
 
       5.2 RIGHT OF MODIFICATION
 
-   
+
   The right of modification includes the right to translate, adapt,
 arrange, or make any or all modifications to the Software, and the
 right to reproduce the resulting software. It includes, in particular,
@@ -295,7 +264,7 @@ authorized to make any or all modification to the Software provided
 that it includes an explicit notice that it is the author of said
 modification and indicates the date of the creation thereof.
 
-     
+
 5.3 RIGHT OF DISTRIBUTION
 
       In particular, the right of
@@ -304,7 +273,7 @@ the Software to the general public on any or all medium, and by any or
 all means, and the right to market, either in consideration of a fee,
 or free of charge, one or more copies of the Software by any means.
 
- 
+
     The Licensee is further authorized to distribute copies of the
 modified or unmodified Software to third parties according to the
 terms and conditions set forth hereinafter.
@@ -361,7 +330,7 @@ the data.
 
          5.3.3. DISTRIBUTION OF DERIVATIVE SOFTWARE
 
-      
+
   When the Licensee creates Derivative Software, this Derivative
 Software may be distributed under a license agreement other than this
 Agreement, subject to compliance with the requirement to include a
@@ -369,7 +338,7 @@ notice concerning the rights over the Software as defined in Article
 6.4. In the event the creation of the Derivative Software required
 modification of the Source Code, the Licensee undertakes that:
 
-      
+
      1. the resulting Modified Software will be governed by this
 Agreement,
 
@@ -396,7 +365,7 @@ Article 6.4 are optional.
 
    Article 6 - INTELLECTUAL PROPERTY
 
-     
+
 6.1 OVER THE INITIAL SOFTWARE
 
       The Holder owns the economic
@@ -457,7 +426,7 @@ Contributors.
 circumstances shall the Agreement oblige the Licensor to provide
 technical assistance or maintenance services for the Software.
 
-     
+
 However, the Licensor is entitled to offer this type of services. The
 terms and conditions of such technical assistance, and/or such
 maintenance, shall be set forth in a separate instrument. Only the
@@ -511,7 +480,7 @@ responsible for verifying, by any or all means, the suitability of the
 product for its requirements, its good working order, and for ensuring
 that it shall not cause damage to either persons or properties.
 
-     
+
 9.2 The Licensor hereby represents, in good faith, that it is entitled
 to grant all the rights over the Software (including in particular the
 rights set forth in Article 5).
@@ -522,13 +491,13 @@ other express or tacit warranty, other than that provided for in
 Article 9.2 and, in particular, without any warranty as to its
 commercial value, its secured, safe, innovative or relevant nature.
 
- 
+
     Specifically, the Licensor does not warrant that the Software is
 free from any error, that it will operate without interruption, that
 it will be compatible with the Licensee's own equipment and software
 configuration, nor that it will meet the Licensee's requirements.
 
-   
+
   9.4 The Licensor does not either expressly or tacitly warrant that
 the Software does not infringe any third party intellectual property
 right relating to a patent, software or any other property right.
@@ -579,7 +548,7 @@ occasions, to invoke one or more of the provisions hereof, shall under
 no circumstances be interpreted as being a waiver by the interested
 Party of its right to invoke said provision(s) subsequently.
 
-     
+
 11.3 The Agreement cancels and replaces any or all previous
 agreements, whether written or oral, between the Parties and having
 the same purpose, and constitutes the entirety of the agreement
@@ -599,7 +568,7 @@ the Agreement as a whole to be invalid.
 
       11.5 LANGUAGE
 
-     
+
 The Agreement is drafted in both French and English and both versions
 are deemed authentic.
 
@@ -648,9 +617,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -674,7 +643,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

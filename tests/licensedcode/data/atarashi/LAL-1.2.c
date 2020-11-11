@@ -1,31 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/LAL-1.2.html				
-*/
 
 
 
@@ -165,13 +137,13 @@ conditions suivantes:
    – joindre aux copies, cette licence à
 l'identique, ou indiquer précisément où se trouve la licence,
 
-  
+
 – indiquer au destinataire le nom de l'auteur des originaux,
 
    –
 indiquer au destinataire où il pourra avoir accès aux originaux
 
-  
+
 (originels et/ou conséquents). L'auteur de l'original pourra, s'il le
 souhaite, vous autoriser à diffuser l'original dans les mêmes
 conditions que les copies.
@@ -209,7 +181,7 @@ licence.
 dès votre acceptation de ses dispositions. Le fait de copier, de
 diffuser, ou de modifier l'oeuvre constitue une acception tacite.
 
-  
+
 Cette licence a pour durée la durée des droits d'auteur attachés à
 l'oeuvre.
 
@@ -258,9 +230,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -284,7 +256,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

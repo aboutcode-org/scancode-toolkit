@@ -1,33 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/LGPLLR.html				
-*/
-
-
 
 /* SPDX-License-Identifier: LGPLLR */
 /*
@@ -121,7 +91,7 @@ Resource, the distribution of the whole must be on the terms of this
 License, whose permissions for other licensees extend to the entire
 whole, and thus to each and every part regardless of who wrote it.
 
-  
+
 Thus, it is not the intent of this section to claim rights or contest
 your rights to work written entirely by you; rather, the intent is to
 exercise the right to control the distribution of derivative or
@@ -141,7 +111,7 @@ linked with it, is called a "work that uses the Linguistic Resource".
 Such a work, in isolation, is not a derivative work of the Linguistic
 Resource, and therefore falls outside the scope of this License.
 
-  
+
 However, combining a "work that uses the Linguistic Resource" with the
 Linguistic Resource (or an encrypted form of the Linguistic Resource)
 creates a package that is a derivative of the Linguistic Resource
@@ -303,7 +273,7 @@ later version published by the Free Software Foundation. If the
 Linguistic Resource does not specify a license version number, you may
 choose any version ever published by the Free Software Foundation.
 
-  
+
 11. If you wish to incorporate parts of the Linguistic Resource into
 other free programs whose distribution conditions are incompatible
 with these, write to the author to ask for permission.
@@ -348,9 +318,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -374,7 +344,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 

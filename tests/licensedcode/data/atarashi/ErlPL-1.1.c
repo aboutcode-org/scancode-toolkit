@@ -1,31 +1,3 @@
-/*
-** THIS IS A TEST FILE FOR THE SPDX LICENSE DETECTION TESTS											
-**																										
-** This file has been auto generated using the SPDX License List as represented by
-** the JSON files:  https://github.com/spdx/license-list-data 
-** 
-** This file is for test purposes only. It WILL NOT compile or do anything useful otherwise.
-**
-** Test File Version: Unofficial version
-**
-** DISCLAIMER
-**
-** Any copyrights appearing in this test file do so because they were part of the license text as stored by SPDX and are included 
-** only for test purposes as they are part of the license text.	They have no meaning, implied or specific, otherwise.	
-*/
-
-
-
-
-/*
-** LICENSE HEADER AND COPYRIGHT TO DETECT	
-** This section either uses either the standard license header, or if one does not exist, the license 
-** text as shown on the SPDX License List. In addition, if the file was generated using the write 
-** license identifiers option, they will appear before the license text.
-** 										
-**
-** SPDX License to detect: https://spdx.org/licenses/ErlPL-1.1.html				
-*/
 
 
 
@@ -108,7 +80,7 @@ beneficial ownership of such entity.
 
    2. Source Code License.
 
-    
+
  2.1. The Initial Developer Grant. The Initial Developer hereby grants
 You a world-wide, royalty-free, non-exclusive license, subject to
 third party intellectual property claims:
@@ -245,7 +217,7 @@ Contributor. You hereby agree to indemnify the Initial Developer and
 every Contributor for any liability incurred by the Initial Developer
 or such Contributor as a result of any such terms You offer.
 
-     
+
 3.7. Larger Works. You may create a Larger Work by combining Covered
 Code with other code not governed by the terms of this License and
 distribute the Larger Work as a single product. In such a case, You
@@ -272,14 +244,14 @@ related Covered Code.
 
    6. CONNECTION TO MOZILLA PUBLIC LICENSE
 
-  
+
 This Erlang License is a derivative work of the Mozilla Public
 License, Version 1.0. It contains terms which differ from the Mozilla
 Public License, Version 1.0.
 
    7. DISCLAIMER OF WARRANTY.
 
-  
+
 COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN ``AS IS'' BASIS,
 WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
 WITHOUT LIMITATION, WARRANTIES THAT THE COVERED CODE IS FREE OF
@@ -352,9 +324,9 @@ int
 noop_fun(int arg1)
 {
 	short retval;
-	
+
 	recalculatearg(&arg1);
-	
+
 	switch (arg1)
 	{
 		case 0:
@@ -378,7 +350,7 @@ noop_fun(int arg1)
 		default:
 			retval = 0;
 	}
-	
+
 	return retval;
 }
 
