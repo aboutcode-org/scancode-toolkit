@@ -11,3 +11,5 @@ license_expressions:
   - other-permissive AND other-copyleft
   - gpl-2.0 WITH classpath-exception-2.0
   - mit
+  - mit
+
