@@ -1,0 +1,6 @@
+license_expression: x11-opengroup
+is_license_notice: yes
+relevance: 95
+notes: Seen in https://github.com/abiquo-rpms/anaconda-ee/blob/a4771519c87f4367397a8510a1dde159a8d2e71a/anaconda-ee-11.1.2.242/loader2/net.c
+    this is a truncated x11-opengroup where the top part has been removed. The full text should
+    have been there as here https://github.com/apple-open-source/macos/blob/68b497be3bea174e0dc28ca2801c725b2fcd2221/X11server/Xquartz/xorg-server-1.4.2-apple33/dix/window.c

@@ -50,24 +50,3 @@ protected:
 
     void init (sal_Int32 nLevel, sal_Int32 nStrategy, sal_Bool bNowrap);
     sal_Int32 doDeflateBytes (com::sun::star::uno::Sequence < sal_Int8 > &rBuffer, sal_Int32 nNewOffset, sal_Int32 nNewLength);
-
-public:
-    ~Deflater();
-    Deflater(sal_Int32 nSetLevel, sal_Bool bNowrap);
-    void SAL_CALL setInputSegment( const ::com::sun::star::uno::Sequence< sal_Int8 >& rBuffer, sal_Int32 nNewOffset, sal_Int32 nNewLength );
-    void SAL_CALL setLevel( sal_Int32 nNewLevel );
-    sal_Bool SAL_CALL needsInput(  );
-    void SAL_CALL finish(  );
-    sal_Bool SAL_CALL finished(  );
-    sal_Int32 SAL_CALL doDeflateSegment( ::com::sun::star::uno::Sequence< sal_Int8 >& rBuffer, sal_Int32 nNewOffset, sal_Int32 nNewLength );
-    sal_Int32 SAL_CALL getTotalIn(  );
-    sal_Int32 SAL_CALL getTotalOut(  );
-    void SAL_CALL reset(  );
-    void SAL_CALL end(  );
-};
-
-}
-
-#endif
-
-/* vim:set shiftwidth=4 softtabstop=4 expandtab: */
