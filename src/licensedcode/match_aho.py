@@ -142,16 +142,15 @@ def get_matched_spans(positions, matchables):
     within the `matchables` set of matchable positions.
     """
     for rid, match_qstart, match_qend, istart, iend in positions:
-        # if not all( x >= 0 for x in (match_qstart, match_qend, istart, iend)):
-        #    raise Exception(rid, match_qstart, match_qend, istart, iend)
 
         qspan = Span(list(range(match_qstart, match_qend)))
-        # TODO: is this about negatives? this should be optimized?
-        # if any(p not in query_run_matchables for p in qspan):
-        if any(p not in matchables for p in qspan):  # not qspan.set.issubset(matchables):
+        # TODO: this should be optimized?
+        # e.g. with not qspan.set.issubset(matchables):
+        if any(p not in matchables for p in qspan):  
             if TRACE: logger_debug(
-                '   #exact_AHO:get_matched_spans not matchable match: any(p not in '
-                'query_run_matchables for p in qspan), discarding rule:', rid)
+                '   #exact_AHO:get_matched_spans not matchable match:',
+                'any(p not in matchables for p in qspan)',
+                'discarding rule:', rid)
             continue
         ispan = Span(list(range(istart, iend)))
         yield rid, qspan, ispan
