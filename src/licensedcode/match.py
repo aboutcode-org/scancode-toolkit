@@ -540,9 +540,9 @@ class LicenseMatch(object):
         Return the matched text for this match or an empty string if no query
         exists for this match.
 
-        `_usecache` can be set to False in testsing to avoid any unwanted
-        caching side effects as the caching is dependent on the index being used
-        and the index can change when testing.
+        `_usecache` can be set to False in testing to avoid any unwanted caching
+        side effects as the caching depends on which index instance is being
+        used and this index can change during testing.
         """
         query = self.query
         if not query:
@@ -550,7 +550,7 @@ class LicenseMatch(object):
             # this case should never exist except for tests!
             return u''
 
-        if whole_lines and (query.has_long_lines or query.is_binary):
+        if whole_lines and query.has_long_lines:
             whole_lines = False
 
         return u''.join(get_full_matched_text(
