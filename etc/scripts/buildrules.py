@@ -28,7 +28,6 @@ from __future__ import unicode_literals
 from __future__ import print_function
 
 import io
-import os
 
 import attr
 import click
@@ -177,23 +176,11 @@ def all_rule_tokens():
 
 def find_rule_base_loc(license_expression):
     """
-    Return a new, unique and non-existing base name location suitable to create a new
-    rule.
+    Return a new, unique and non-existing base name location suitable to create
+    a new rule using the a license_expression as a prefix.
     """
-    template = (license_expression
-        .lower()
-        .strip()
-        .replace(' ', '_')
-        .replace('(', '')
-        .replace(')', '')
-        +'_{}')
-    idx = 1
-    while True:
-        base_name = template.format(idx)
-        base_loc = os.path.join(models.rules_data_dir, base_name)
-        if not os.path.exists(base_loc + '.RULE'):
-            return base_loc
-        idx += 1
+    return models.find_rule_base_location(
+        license_expression, rules_directory=models.rules_data_dir)
 
 
 @click.command()
@@ -239,14 +226,14 @@ def cli(licenses_file):
     print()
     for rule in skinny_rules:
         existing = rule_exists(rule.text())
-        if existing and not rule.is_negative:
-            print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text()[:50].strip(), '...')
+        if existing:
+            print('Skipping existing rule:', existing, 'with text:\n', rule.text()[:50].strip(), '...')
             continue
 
-        if rule.is_negative:
-            base_name = 'not-a-license'
-        elif rule.is_false_positive:
+        if rule.is_false_positive:
             base_name = 'false-positive'
+        elif rule.is_license_intro:
+            base_name = 'license-intro'
         else:
             base_name = rule.license_expression
 

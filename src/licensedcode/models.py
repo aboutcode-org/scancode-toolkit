@@ -38,6 +38,7 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import shutil
 import traceback
 
 import attr
@@ -1250,6 +1251,33 @@ class Rule(BasicRule):
             computed = int(length * relevance_of_one_word)
             self.relevance = min([100, computed])
 
+    def rule_dir(self):
+        """
+        Return the directory of this rule.
+        """
+        if not (self.text_file and self.data_file):
+            raise Exception('Cannot obtain rule directory for: {}'.format(repr(self)))
+        return dirname(self.data_file)
+
+    def rename_and_relocate(self, name_prefix):
+        """
+        Rename and relocate rule files to this new name using the ``name_prefix``
+        prefix. The new name is guaranteed to be unique and not conflicting
+        with any existing name.
+        """
+        new_base_loc = find_rule_base_location(
+            name_prefix=name_prefix,
+            rules_directory=self.rule_dir()
+        )
+
+        new_data_file = new_base_loc + '.yml'
+        shutil.move(self.data_file, new_data_file)
+        self.data_file = new_data_file
+
+        new_text_file = new_base_loc + '.RULE'
+        shutil.move(self.text_file, new_text_file)
+        self.text_file = new_text_file
+
 
 def compute_thresholds_occurences(minimum_coverage, length, high_length,
         _MIN_MATCH_HIGH_LENGTH=MIN_MATCH_HIGH_LENGTH,
@@ -1431,3 +1459,27 @@ def update_ignorables(licensish, verbose=False, dump=True):
     if dump:
         licensish.dump()
     return licensish
+
+
+def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
+    """
+    Return a new, unique and non-existing base location with a file name but
+    without an extension suitable to create a new rule without overwriting any
+    existing rule.
+    """
+    template = (name_prefix
+        .lower()
+        .strip()
+        .replace(' ', '_')
+        .replace('(', '')
+        .replace(')', '')
+        .strip('_-')
+    ) + '_{}'
+
+    idx = 1
+    while True:
+        base_name = template.format(idx)
+        base_loc = join(rules_directory, base_name)
+        if not exists(base_loc + '.RULE'):
+            return base_loc
+        idx += 1
