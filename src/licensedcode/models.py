@@ -689,27 +689,37 @@ class BasicRule(object):
     # License expression object, created at build time
     license_expression_object = attr.ib(default=None, repr=False)
 
-    # an indication of what this rule importance is (e.g. how important is its
-    # text when detected as a licensing clue) as one of several flags:
+    # An indication of what this rule importance is (e.g. how important is its
+    # text when detected as a licensing clue) as one of several "is_license_xxx"
+    # flags. These flags are mutually exclusive and a license can only have one
+    # of these as "yes"/True.
 
-    # for a license full text: this provides the highest level of confidence wrt
+    # A license full text: this provides the highest level of confidence wrt
     # detection
     is_license_text = attr.ib(default=False, repr=False)
 
-    # for a license notice: this provides a strong confidence wrt detection
+    # A license notice: this provides a strong confidence wrt detection
     is_license_notice = attr.ib(default=False, repr=False)
 
-    # reference for a mere short license reference such as its bare name or a URL
-    # this provides a weak confidence wrt detection
+    # A reference is for a mere short license reference such as its bare name or a
+    # URL that provides a weaker clue when detected
     is_license_reference = attr.ib(default=False, repr=False)
 
-    # tag for a structured licensing tag such as a package manifest metadata or
-    # an SPDX license identifier or similar package manifest tag
-    # this provides a strong confidence wrt detection
+    # A tag is for a structured licensing tag such as a package manifest
+    # metadata or an SPDX license identifier or similar package manifest tags. A
+    # tag provides a strong clue with high confidence when detected even though
+    # it may be very short.
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # is this rule text a false positive when matched? it will filtered out at
-    # the end if matched
+    # An intro is a short introductory statment that may be placed before an
+    # actual license text, notice or reference. For instance "This file is
+    # licensed under ...". An intro is a weak clue that there some license
+    # afterwards. It should be ignored or merged with the following license
+    # detected immediately after.
+    is_license_intro = attr.ib(default=False, repr=False)
+
+    # Is this rule text a false positive when matched exactly? If yes, it will
+    # filtered out at the end if matched (unless part of a large match)
     is_false_positive = attr.ib(default=False, repr=False)
 
     # Is this rule text only to be matched with a minimum coverage e.g. a
@@ -835,6 +845,7 @@ class BasicRule(object):
             self.is_license_text,
             self.is_license_reference,
             self.is_license_tag,
+            self.is_license_intro,
         )
 
         has_license_flags = any(license_flags)
@@ -960,6 +971,7 @@ class BasicRule(object):
             'is_license_notice',
             'is_license_reference',
             'is_license_tag',
+            'is_license_intro',
             'only_known_words',
         )
 
@@ -1189,6 +1201,7 @@ class Rule(BasicRule):
         self.is_license_notice = data.get('is_license_notice', False)
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
+        self.is_license_intro = data.get('is_license_intro', False)
         self.only_known_words = data.get('only_known_words', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
