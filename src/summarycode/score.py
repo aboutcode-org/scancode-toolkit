@@ -84,6 +84,7 @@ FILTERS = dict(
     is_license_notice=LicenseFilter(min_score=80, min_coverage=80),
     is_license_tag=LicenseFilter(min_coverage=100),
     is_license_reference=LicenseFilter(min_score=50, min_coverage=100),
+    is_license_intro=LicenseFilter(min_score=100, min_coverage=100),
 )
 
 
@@ -101,6 +102,7 @@ def is_good_license(detected_license):
         ('is_license_notice', rule['is_license_notice']),
         ('is_license_reference', rule['is_license_reference']),
         ('is_license_tag', rule['is_license_tag']),
+        ('is_license_intro', rule['is_license_intro']),
     ])
     matched = False
     for match_type, mval in match_types.items():
@@ -109,7 +111,6 @@ def is_good_license(detected_license):
             break
     if not matched:
         return False
-
 
     thresholds = FILTERS[match_type]
 
