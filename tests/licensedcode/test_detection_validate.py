@@ -126,7 +126,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         for i, match in enumerate(matches):
             qtext, itext = get_texts(match)
             m_text_file = match.rule.text_file
-            if match.rule.is_license:
+            if match.rule.is_from_license:
                 m_data_file = m_text_file.replace('LICENSE', '.yml')
             else:
                 m_data_file = match.rule.data_file

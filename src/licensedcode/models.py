@@ -553,7 +553,7 @@ def build_rules_from_licenses(licenses):
                 has_stored_minimum_coverage=bool(minimum_coverage),
                 minimum_coverage=minimum_coverage,
 
-                is_license=True,
+                is_from_license=True,
                 is_license_text=True,
 
                 ignorable_copyrights=license_obj.ignorable_copyrights,
@@ -743,7 +743,7 @@ class BasicRule(object):
     notes = attr.ib(default=None, repr=False)
 
     # set to True if the rule is built from a .LICENSE full text
-    is_license = attr.ib(default=False, repr=False)
+    is_from_license = attr.ib(default=False, repr=False)
 
     # lists of copuyrights, emails and URLs that can be ignored when detected
     # in this license as they are part of the license or rule text itself
@@ -1120,9 +1120,9 @@ class Rule(BasicRule):
          - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
         Does nothing if this rule was created from a License (e.g.
-        `is_license` is True)
+        `is_from_license` is True)
         """
-        if self.is_license:
+        if self.is_from_license:
             return
 
         def write(location, byte_string):

@@ -281,7 +281,7 @@ def get_match(text):
 
     is_exact = (
         len(matches) == 1
-        and rule.is_license and len(rule_licenses) == 1
+        and rule.is_from_license and len(rule_licenses) == 1
         and match.matcher == '1-hash'
         and match.score() == 100
         and match.len() == query_len
