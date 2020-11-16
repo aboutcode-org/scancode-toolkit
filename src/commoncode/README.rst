@@ -17,6 +17,9 @@ A brand new project
     cd my-new-repo
     git pull git@github.com:nexB/skeleton
 
+    # Create the new repo on GitHub, then update your remote
+    git remote set-url origin git@github.com:nexB/your-new-repo.git
+
 From here, you can make the appropriate changes to the files for your specific project.
 
 Update an existing project
