@@ -711,11 +711,7 @@ class BasicRule(object):
     # the end if matched
     is_false_positive = attr.ib(default=False, repr=False)
 
-    # is this rule text a negative rule? it will be removed from the matchable
-    # text the start if matched
-    is_negative = attr.ib(default=False, repr=False)
-
-    # is this rule text only to be matched with a minimum coverage e.g. a
+    # Is this rule text only to be matched with a minimum coverage e.g. a
     # minimum proportion of tokens as a float between 0 and 100 where 100 means
     # all tokens must be matched and a smaller value means a smaller propertion
     # of matched tokens is acceptable. this is computed unless this is provided
@@ -831,7 +827,6 @@ class BasicRule(object):
         Validate this rule using the provided `licensing` and yield one error
         message for each type of error detected.
         """
-        is_negative = self.is_negative
         is_false_positive = self.is_false_positive
 
         license_flags = (
@@ -854,40 +849,29 @@ class BasicRule(object):
             self.ignorable_emails,
         )
 
-        if is_false_positive or is_negative:
-            if is_negative is True and is_false_positive is True:
-                yield 'Only one of false positive/negative flags allowed.'
-
+        if is_false_positive:
             if not self.notes:
-                yield 'Notes required if is_false_positive or is_false_negative.'
+                yield 'is_false_positive rule must have notes.'
 
             if has_license_flags:
-                yield 'Invalid is_license_* flags: No flag allowed if is_false_positive or is_false_negative.'
+                yield 'is_false_positive rule cannot have is_license_* flags.'
 
             if license_expression:
-                yield 'No license_expression allowed if is_false_positive or is_false_negative.'
+                yield 'is_false_positive rule cannot have a license_expression.'
 
             if self.has_stored_relevance:
-                yield 'is_false_negative or is_false_positive rule cannot have a stored relevance.'
+                yield 'is_false_positive rule cannot have a stored relevance.'
 
             if self.referenced_filenames:
-                yield 'is_false_negative or is_false_positive rule cannot have referenced_filenames.'
+                yield 'is_false_positive rule cannot have referenced_filenames.'
 
             if any(ignorables):
-                yield 'Ignorables are not allowed if is_false_positive or is_false_negative.'
+                yield 'is_false_positive rule cannot have ignorable_* attributes.'
 
-        if is_negative:
-            if self.has_stored_minimum_coverage:
-                yield 'is_false_negative rule cannot have a stored minimum coverage.'
+        if not (0 <= self.minimum_coverage <= 100):
+            yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
 
-            if self.only_known_words:
-                yield 'is_false_negative rule cannot have only_known_words.'
-
-        if not is_negative:
-            if not (0 <= self.minimum_coverage <= 100):
-                yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
-
-        if not is_negative and not is_false_positive:
+        if not is_false_positive:
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
 
@@ -965,15 +949,12 @@ class BasicRule(object):
         data = OrderedDict()
 
         is_false_positive = self.is_false_positive
-        is_negative = self.is_negative
-        is_special = is_false_positive or is_negative
 
-        if self.license_expression and not is_special:
+        if self.license_expression:
             data['license_expression'] = self.license_expression
 
         flags = (
             'is_false_positive',
-            'is_negative',
             'is_license_text',
             'is_license_notice',
             'is_license_reference',
@@ -986,19 +967,19 @@ class BasicRule(object):
             if tag_value:
                 data[flag] = tag_value
 
-        if self.has_stored_relevance and self.relevance and not is_special:
+        if self.has_stored_relevance and self.relevance and not is_false_positive:
             data['relevance'] = as_int(self.relevance)
 
-        if self.has_stored_minimum_coverage and self.minimum_coverage > 0 and not is_special :
+        if self.has_stored_minimum_coverage and self.minimum_coverage > 0 and not is_false_positive:
             data['minimum_coverage'] = as_int(self.minimum_coverage)
 
-        if self.referenced_filenames and not is_special:
+        if self.referenced_filenames and not is_false_positive:
             data['referenced_filenames'] = self.referenced_filenames
 
         if self.notes:
             data['notes'] = self.notes
 
-        if not is_special:
+        if not is_false_positive:
             ignorables = (
                 'ignorable_copyrights',
                 'ignorable_holders',
@@ -1182,7 +1163,6 @@ class Rule(BasicRule):
 
         self.license_expression = data.get('license_expression')
 
-        self.is_negative = data.get('is_negative', False)
         self.is_false_positive = data.get('is_false_positive', False)
 
         relevance = as_int(float(data.get('relevance') or 0))
@@ -1241,7 +1221,7 @@ class Rule(BasicRule):
         "relevance" attribute or computed base on the rule length here using
         this approach:
 
-        - a false positive or a negative rule has a relevance of 100.
+        - a false positive rule has a relevance of 100.
         - a rule of length equal to or larger than a threshold has a 100 relevance
         - a rule of length smaller than a threshold has a relevance of
           100/threshold, rounded down.
@@ -1253,9 +1233,8 @@ class Rule(BasicRule):
             return
 
         if (isinstance(self, SpdxRule)
-            # negative  or false positive rules with no license: they do not
+            # false positive rules with no license: they do not
             # have licenses and their matches are never returned
-            or self.is_negative
             or self.is_false_positive
         ):
             # use the default max relevance of 100

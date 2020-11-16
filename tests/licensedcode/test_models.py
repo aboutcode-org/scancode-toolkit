@@ -369,16 +369,6 @@ class TestRule(FileBasedTesting):
         rule.compute_relevance()
         assert 100 == rule.relevance
 
-    def test_compute_relevance_is_hundred_for_negative(self):
-        rule = models.Rule(stored_text='1')
-        rule.is_negative = True
-        rule.relevance = 13
-        rule.has_stored_relevance = False
-        rule.is_false_positive = False
-        rule.length = 1000
-        rule.compute_relevance()
-        assert 100 == rule.relevance
-
     def test_compute_relevance_is_using_rule_length(self):
         rule = models.Rule(stored_text='1', license_expression='some-license')
         rule.relevance = 13
@@ -478,7 +468,7 @@ class TestRule(FileBasedTesting):
         result = [' '.join(list(r.tokens())[-4:]) for r in  rules]
         assert not any([r == 'rules proprietary 10 rule' for r in result])
 
-    def test_Rule__validate_with_negative_rule(self):
+    def test_Rule__validate_with_false_positive_rule(self):
         rule_dir = self.get_test_loc('models/rule_validate')
         rule = list(models.load_rules(rule_dir))[0]
         assert [] == list(rule.validate())

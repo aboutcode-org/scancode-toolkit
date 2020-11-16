@@ -47,8 +47,8 @@ Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
 
 TODO: to make the license detection test worthy, we should disable hash matching
-such that we test everything else including the negative, automaton, sets and
-seq detections.
+such that we test everything else including the automaton, sets and
+sequence detections.
 """
 
 
@@ -61,7 +61,7 @@ def make_validation_test(rule, test_name):
     if py3 and isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
-    if rule.is_negative or rule.is_false_positive:
+    if rule.is_false_positive:
 
         def closure_test_function(*args, **kwargs):
             check_special_rule_can_be_detected(rule)
