@@ -42,4 +42,4 @@ How to cut a new release:
     - Run twine with ``twine upload dist/<path to the built wheel>``
     - Once uploaded check the published release at https://pypi.python.org/pypi/scancode-toolkit/
     - Then create a new fresh local virtualenv and test the wheel installation with:
-      ``pip install scancode-toolkit``
+      ``pip install scancode-toolkit[full]``
