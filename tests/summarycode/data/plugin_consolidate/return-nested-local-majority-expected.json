@@ -23,12 +23,12 @@
     {
       "type": "holders",
       "identifier": "apache_foundation_software_1",
-      "consolidated_license_expression": "apache-2.0 AND unknown",
+      "consolidated_license_expression": "apache-2.0 AND unknown-license-reference",
       "consolidated_holders": [
         "The Apache Software Foundation"
       ],
       "consolidated_copyright": "Copyright (c) The Apache Software Foundation",
-      "core_license_expression": "unknown AND apache-2.0",
+      "core_license_expression": "unknown-license-reference AND apache-2.0",
       "core_holders": [
         "The Apache Software Foundation"
       ],
@@ -142,32 +142,33 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown",
+          "key": "unknown-license-reference",
           "score": 11.0,
-          "name": "Unknown license detected but not recognized",
-          "short_name": "unknown",
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "lead-in_unknown_28.RULE",
-            "license_expression": "unknown",
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
             "licenses": [
-              "unknown"
+              "unknown-license-reference"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -202,6 +203,7 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -211,7 +213,7 @@
         }
       ],
       "license_expressions": [
-        "unknown",
+        "unknown-license-reference",
         "apache-2.0"
       ],
       "percentage_of_license_text": 45.45,
@@ -260,32 +262,33 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown",
+          "key": "unknown-license-reference",
           "score": 11.0,
-          "name": "Unknown license detected but not recognized",
-          "short_name": "unknown",
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "lead-in_unknown_28.RULE",
-            "license_expression": "unknown",
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
             "licenses": [
-              "unknown"
+              "unknown-license-reference"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -320,6 +323,7 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -329,7 +333,7 @@
         }
       ],
       "license_expressions": [
-        "unknown",
+        "unknown-license-reference",
         "apache-2.0"
       ],
       "percentage_of_license_text": 45.45,
@@ -438,6 +442,7 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -472,6 +477,7 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -530,32 +536,33 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "unknown",
+          "key": "unknown-license-reference",
           "score": 11.0,
-          "name": "Unknown license detected but not recognized",
-          "short_name": "unknown",
+          "name": "Unknown License file reference",
+          "short_name": "Unknown License reference",
           "category": "Unstated License",
           "is_exception": false,
           "owner": "Unspecified",
           "homepage_url": null,
           "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown-license-reference",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {
-            "identifier": "lead-in_unknown_28.RULE",
-            "license_expression": "unknown",
+            "identifier": "license-intro_2.RULE",
+            "license_expression": "unknown-license-reference",
             "licenses": [
-              "unknown"
+              "unknown-license-reference"
             ],
             "is_license_text": false,
             "is_license_notice": false,
-            "is_license_reference": true,
+            "is_license_reference": false,
             "is_license_tag": false,
+            "is_license_intro": true,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
@@ -590,6 +597,7 @@
             "is_license_notice": false,
             "is_license_reference": true,
             "is_license_tag": false,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 3,
             "matched_length": 3,
@@ -599,7 +607,7 @@
         }
       ],
       "license_expressions": [
-        "unknown",
+        "unknown-license-reference",
         "apache-2.0"
       ],
       "percentage_of_license_text": 45.45,

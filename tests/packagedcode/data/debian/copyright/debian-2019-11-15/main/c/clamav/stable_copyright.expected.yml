@@ -29,8 +29,8 @@
   AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
   AND gpl-3.0 AND gpl-3.0-plus AND gpl-3.0-plus WITH bison-exception-2.2 AND gpl-3.0-plus WITH
   libtool-exception-2.0 AND isc AND lgpl-2.0-plus AND lgpl-2.1 AND lgpl-2.1-plus AND libtool-exception-2.0
-  AND mit AND openssl-exception-gpl-3.0-plus AND public-domain AND unknown AND x11-tiff AND
-  zlib
+  AND mit AND openssl-exception-gpl-3.0-plus AND public-domain AND unknown AND unknown-license-reference
+  AND x11-tiff AND zlib
 - |
   2014, 2017-2018 Cisco and/or its affiliates
   2002-2013, Tomasz Kojm <tkojm@clamav.net>

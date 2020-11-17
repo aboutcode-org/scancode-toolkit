@@ -180,6 +180,7 @@
             "is_license_notice": false,
             "is_license_reference": false,
             "is_license_tag": true,
+            "is_license_intro": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
