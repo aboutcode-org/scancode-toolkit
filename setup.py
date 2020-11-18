@@ -197,7 +197,7 @@ setup(
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >= 18.1, !=20.1.0',
-        'typing >=3.6, < 3.7',
+        'typing >=3.6, < 3.7; python_version < "3.7"',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
