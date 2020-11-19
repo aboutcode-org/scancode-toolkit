@@ -759,7 +759,7 @@ class Codebase(object):
             with open(cache_location, 'rb') as cached:
                 # TODO: Use custom json encoder to encode JSON list as a tuple
                 # TODO: Consider using simplejson
-                data = json.load(cached, object_pairs_hook=OrderedDict, encoding='utf-8')
+                data = json.load(cached, object_pairs_hook=OrderedDict)
                 return self.resource_class(**data)
         except Exception:
             with open(cache_location, 'rb') as cached:
