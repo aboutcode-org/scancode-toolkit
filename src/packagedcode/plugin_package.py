@@ -39,7 +39,7 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
 
-from packagedcode import get_package_class
+from packagedcode import get_package_instance
 from packagedcode import PACKAGE_TYPES
 
 
@@ -134,8 +134,8 @@ def set_packages_root(resource, codebase):
 
     modified = False
     for package in packages:
-        package_class = get_package_class(package)
-        package_root = package_class.get_package_root(resource, codebase)
+        package_instance = get_package_instance(package)
+        package_root = package_instance.get_package_root(resource, codebase)
         if not package_root:
             # this can happen if we scan a single resource that is a package package
             continue

@@ -57,9 +57,8 @@ class AboutPackage(models.Package):
     def recognize(cls, location):
         yield parse(location)
 
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        about_resource = cls.extra_data.get('about_resource')
+    def get_package_root(self, manifest_resource, codebase):
+        about_resource = self.extra_data.get('about_resource')
         if about_resource:
             manifest_resource_parent = manifest_resource.parent(codebase)
             for child in manifest_resource_parent.children(codebase):
