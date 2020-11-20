@@ -15,7 +15,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.2.6.3.rc3'
+version = '2020.11.rc1'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
