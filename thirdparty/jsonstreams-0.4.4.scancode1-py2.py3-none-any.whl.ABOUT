@@ -1,7 +1,0 @@
-about_resource: jsonstreams-0.4.4.scancode1-py2.py3-none-any.whl
-name: jsonstreams
-version: 0.4.4.scancode1
-download_url: https://github.com/JonoYang/jsonstreams/archive/0.4.4.scancode1.tar.gz
-checksum_md5: 795c9d4670b7d63252628658f15f0d8b
-checksum_sha1: 28aca59143b82b246ff616f1e4633ce169448d5d
-package_url: pkg:pypi/jsonstreams@0.4.4.scancode1
