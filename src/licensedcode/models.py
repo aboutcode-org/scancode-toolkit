@@ -894,10 +894,10 @@ class BasicRule(object):
                 yield 'At least one is_license_* flag is needed.'
 
             if not check_is_list_of_strings(self.referenced_filenames):
-                yield 'referenced_filenames should be a list of strings'
+                yield 'referenced_filenames must be a list of strings'
 
             if not all(check_is_list_of_strings(i) for i in ignorables):
-                yield 'referenced_filenames items must be strings'
+                yield 'ignorables must be a list of strings'
 
             if not license_expression:
                 yield 'Missing license_expression.'
