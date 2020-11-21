@@ -34,7 +34,6 @@ pip-log.txt
 .coverage.*
 nosetests.xml
 htmlcov
-__pycache__
 
 # Translations
 *.mo
