@@ -1,4 +1,4 @@
 license_expression: josl-1.0
 is_license_reference: yes
 ignorable_urls:
-    https://directory.fsf.org/wiki/License:Jabber
+    - https://directory.fsf.org/wiki/License:Jabber
