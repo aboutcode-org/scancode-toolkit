@@ -1165,6 +1165,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:composer/narrowspark/framework",
     "repository_homepage_url": "https://packagist.org/packages/narrowspark/framework",
     "repository_download_url": null,

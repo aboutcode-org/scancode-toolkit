@@ -41,6 +41,7 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "lib/ld-musl-x86_64.so.1",
@@ -104,6 +105,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "bin/busybox",
@@ -202,6 +204,7 @@
     "source_packages": [
       "pkg:alpine/alpine-baselayout@3.2.0-r6"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "etc/fstab",
@@ -440,6 +443,7 @@
     "source_packages": [
       "pkg:alpine/alpine-keys@2.2-r0"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "etc/apk/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
@@ -629,6 +633,7 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "etc/ssl/ct_log_list.cnf",
@@ -762,6 +767,7 @@
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "lib/libssl.so.1.1",
@@ -825,6 +831,7 @@
     "source_packages": [
       "pkg:alpine/ca-certificates@20191127-r2"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "etc/ssl/cert.pem",
@@ -889,6 +896,7 @@
     "source_packages": [
       "pkg:alpine/libtls-standalone@2.9.1-r1"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "usr/lib/libtls-standalone.so.1",
@@ -952,6 +960,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "usr/bin/ssl_client",
@@ -1008,6 +1017,7 @@
     "source_packages": [
       "pkg:alpine/zlib@1.2.11-r3"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "lib/libz.so.1",
@@ -1071,6 +1081,7 @@
     "source_packages": [
       "pkg:alpine/apk-tools@2.10.5-r1"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "sbin/apk",
@@ -1127,6 +1138,7 @@
     "source_packages": [
       "pkg:alpine/pax-utils@1.2.6-r0"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "usr/bin/scanelf",
@@ -1192,6 +1204,7 @@
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "sbin/ldconfig",
@@ -1285,6 +1298,7 @@
     "source_packages": [
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
+    "extra_data": {},
     "installed_files": [],
     "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64",
     "repository_homepage_url": null,

@@ -43,6 +43,7 @@
     "source_packages": [
       "pkg:deb/debian/ncurses"
     ],
+    "extra_data": {},
     "multi_arch": "same",
     "installed_files": [
       {
@@ -123,6 +124,7 @@
     "source_packages": [
       "pkg:deb/debian/libndp"
     ],
+    "extra_data": {},
     "multi_arch": "same",
     "installed_files": [
       {

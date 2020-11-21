@@ -45,6 +45,7 @@
   "source_packages": [
     "https://github.com/jogendra/LoadingShimmer.git"
   ],
+  "extra_data": {},
   "purl": "pkg:pods/LoadingShimmer@1.0.3",
   "repository_homepage_url": "https://cocoapods.org/pods/LoadingShimmer",
   "repository_download_url": "https://github.com/jogendra/LoadingShimmer/archive/1.0.3.zip",

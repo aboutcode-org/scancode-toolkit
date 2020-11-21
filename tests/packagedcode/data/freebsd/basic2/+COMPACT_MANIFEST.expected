@@ -46,6 +46,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:freebsd/0d1n@2.3?arch=freebsd:10:x86:64&origin=security/0d1n",
   "repository_homepage_url": null,
   "repository_download_url": null,

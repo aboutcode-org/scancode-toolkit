@@ -71,6 +71,7 @@ class TestModels(PackageTester):
             ('dependencies', []),
             ('contains_source_code', None),
             ('source_packages', []),
+            ('extra_data', OrderedDict()),
             ('purl', u'pkg:android/someAndroidPAcakge'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),

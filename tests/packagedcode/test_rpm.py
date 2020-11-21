@@ -85,6 +85,7 @@ class TestRpmBasics(FileBasedTesting):
             ('dependencies', []),
             ('contains_source_code', None),
             ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
+            ('extra_data', OrderedDict()),
             ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
             ('repository_homepage_url', None),
             ('repository_download_url', None),

@@ -41,6 +41,7 @@
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r9"
     ],
+    "extra_data": {},
     "installed_files": [
       {
         "path": "bin/busybox",

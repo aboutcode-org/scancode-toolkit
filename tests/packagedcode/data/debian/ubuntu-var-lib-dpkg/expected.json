@@ -41,6 +41,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "multi_arch": "foreign",
     "installed_files": [
       {
@@ -448,6 +449,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "multi_arch": "foreign",
     "installed_files": [
       {
@@ -617,6 +619,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "multi_arch": "foreign",
     "installed_files": [
       {
@@ -821,6 +824,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "multi_arch": "foreign",
     "installed_files": [],
     "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64",

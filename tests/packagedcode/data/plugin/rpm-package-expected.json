@@ -54,6 +54,7 @@
           "source_packages": [
             "pkg:rpm/alfandega@2.0-1.7.3?arch=src"
           ],
+          "extra_data": {},
           "purl": "pkg:rpm/alfandega@2.0-1.7.3",
           "repository_homepage_url": null,
           "repository_download_url": null,

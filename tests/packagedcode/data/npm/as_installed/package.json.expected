@@ -2831,6 +2831,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/npm@2.13.5",
     "repository_homepage_url": "https://www.npmjs.com/package/npm",
     "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",

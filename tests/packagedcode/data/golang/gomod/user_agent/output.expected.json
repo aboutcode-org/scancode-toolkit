@@ -29,6 +29,7 @@
     "dependencies": [],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:golang/github.com/mssola/user_agent",
     "repository_homepage_url": "https://pkg.go.dev/github.com/mssola/user_agent",
     "repository_download_url": null,

@@ -293,6 +293,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/chartist@0.11.0",
     "repository_homepage_url": "https://www.npmjs.com/package/chartist",
     "repository_download_url": "https://registry.npmjs.org/chartist/-/chartist-0.11.0.tgz",

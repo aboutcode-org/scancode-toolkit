@@ -40,6 +40,7 @@
   "dependencies": [],
   "contains_source_code": null,
   "source_packages": [],
+  "extra_data": {},
   "purl": "pkg:winexe/Moq@4.2.1507.0118",
   "repository_homepage_url": null,
   "repository_download_url": null,

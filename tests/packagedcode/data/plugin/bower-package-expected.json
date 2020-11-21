@@ -91,6 +91,7 @@
           ],
           "contains_source_code": null,
           "source_packages": [],
+          "extra_data": {},
           "purl": "pkg:bower/blue-leaf",
           "repository_homepage_url": null,
           "repository_download_url": null,

@@ -62,6 +62,7 @@
   "source_packages": [
     "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:rpm/fedora/Sample@12.2.3?abc=12&this=that#asdasd/asdasd/asdasd",
   "repository_homepage_url": null,
   "repository_download_url": null,

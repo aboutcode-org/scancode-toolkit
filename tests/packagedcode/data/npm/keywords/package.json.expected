@@ -72,6 +72,7 @@
     ],
     "contains_source_code": null,
     "source_packages": [],
+    "extra_data": {},
     "purl": "pkg:npm/lodash.clonedeep@4.3.2",
     "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
     "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",

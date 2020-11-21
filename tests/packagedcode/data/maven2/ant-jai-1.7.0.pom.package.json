@@ -55,6 +55,7 @@
   "source_packages": [
     "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
   ],
+  "extra_data": {},
   "purl": "pkg:maven/org.apache.ant/ant-jai@1.7.0",
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.jar",
