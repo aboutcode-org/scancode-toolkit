@@ -246,6 +246,7 @@ Installation via Docker:
 ------------------------
 
 You can install Scancode Toolkit by building a Docker image from the included Dockerfile.
+The prerequisite is a working `docker installation <https://docs.docker.com/engine/install/>`_.
 
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -258,7 +259,7 @@ Build the Docker image
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The ``docker build`` command needs to run in the directory of the source code,
-make sure to ``cd`` into the correct directory.
+make sure to ``cd`` into the correct directory.::
 
     cd scancode-toolkit
     docker build -t scancode-toolkit .
@@ -268,17 +269,17 @@ Run using Docker
 
 The docker image will forward all arguments it receives directly to the ``scancode`` command.
 
-Display help:
+Display help::
 
     docker run scancode-toolkit --help
 
-Mount current working directory and run scan on mounted folder:
+Mount current working directory and run scan on mounted folder::
 
     docker run -v $PWD/:/project scancode-toolkit -clpeui --json-pp /project/result.json /project
 
 This will mount your current working from the host into ``/project`` in the container
 and then scan the contents. The output ``result.json`` will be written back to your
-corrent working directory on the host.
+current working directory on the host.
 
 Note that the parameters *before* ``scancode-toolkit`` are used for docker,
 those after will be forwarded to scancode.
@@ -361,7 +362,7 @@ For more information on Python virtualenv, visit this `page <https://docs.python
 
     source venv-scancode/bin/activate
 
-#. Run ``pip install scancode-toolkit`` to install the latest version of Scancode.
+#. Run ``pip install scancode-toolkit[full]`` to install the latest version of Scancode.
 
 .. NOTE::
 

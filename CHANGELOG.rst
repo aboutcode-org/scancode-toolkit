@@ -1,5 +1,17 @@
 Changelog
 =========
+vNext
+-----
+ - Updated scancode.bat to handle % signs in the arguments #1876
+
+v20.11 (next)
+-------------
+
+Notable changes:
+
+ - support officially Python 64 bits on Windows 64 bits #335
+  
+
 
 v3.2.3 (2020-10-27)
 -------------------

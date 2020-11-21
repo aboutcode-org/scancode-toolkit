@@ -2,9 +2,10 @@
 Installation
 ============
 
-There are 3 main ways you can `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
+There are 4 main ways you can `install ScanCode <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html>`_.
 
 - Installation as an Application: Downloading Releases (Recommended)
+- Docker Installation
 - Installation as a library: via pip
 - Installation from Source Code: Git Clone
 
@@ -32,6 +33,22 @@ Installation as an Application : Downloading Releases
     - Linux/Mac : ``./scancode --help``
     - Windows : ``scancode --help``
 
+Docker Installation
+-------------------
+
+#. Download the Source Code as an archive from the `GitHub releases <https://github.com/nexB/scancode-toolkit/releases>`_ and unzip it, or via `git clone`.
+
+#. Build the docker image from the `scancode-toolkit` directory.::
+
+	docker build -t scancode-toolkit .
+
+#. Mount current working directory and run scan on mounted folder::
+
+    docker run -v $PWD/:/project scancode-toolkit -clpeui --json-pp /project/result.json /project
+
+Note that the parameters *before* ``scancode-toolkit`` are used for docker,
+those after will be forwarded to scancode.
+
 Installation as a library: via pip
 ----------------------------------
 
@@ -39,7 +56,7 @@ Installation as a library: via pip
 
     virtualenv -p /usr/bin/python3.6 venv-scancode && source venv-scancode/bin/activate
 
-#. Run ``pip install scancode-toolkit`` 
+#. Run ``pip install scancode-toolkit[full]``
 
 Installation from Source Code: Git Clone
 ----------------------------------------

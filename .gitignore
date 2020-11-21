@@ -79,3 +79,5 @@ pyvenv.cfg
 lib64
 tcl
 /.env
+
+*.orig
