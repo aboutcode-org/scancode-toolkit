@@ -1,6 +1,6 @@
 /*
- * WPA Supplicant / dbus-based control interface
- * Copyright (c) 2006, Dan Williams <dcbw@redhat.com> and Red Hat, Inc.
+ * WPA Supplicant / wrapper functions for crypto libraries
+ * Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
@@ -10,126 +10,29 @@
  * license.
  *
  * See README and COPYING for more details.
+ *
+ * This file defines the cryptographic functions that need to be implemented
+ * for wpa_supplicant and hostapd. When TLS is not used, internal
+ * implementation of MD5, SHA1, and AES is used and no external libraries are
+ * required. When TLS is enabled (e.g., by enabling EAP-TLS or EAP-PEAP), the
+ * crypto library used by the TLS implementation is expected to be used for
+ * non-TLS needs, too, in order to save space by not implementing these
+ * functions twice.
+ *
+ * Wrapper code for using each crypto library is in its own file (crypto*.c)
+ * and one of these files is build and linked in to provide the functions
+ * defined here.
  */
 
-#ifndef DBUS_DICT_HELPERS_H
-#define DBUS_DICT_HELPERS_H
+#ifndef CRYPTO_H
+#define CRYPTO_H
 
-/*
- * Adding a dict to a DBusMessage
+/**
+ * md4_vector - MD4 hash for data vector
+ * @num_elem: Number of elements in the data vector
+ * @addr: Pointers to the data areas
+ * @len: Lengths of the data blocks
+ * @mac: Buffer for the hash
  */
+void md4_vector(size_t num_elem, const u8 *addr[], const size_t *len, u8 *mac);
 
-dbus_bool_t wpa_dbus_dict_open_write(DBusMessageIter *iter,
-				     DBusMessageIter *iter_dict);
-
-dbus_bool_t wpa_dbus_dict_close_write(DBusMessageIter *iter,
-				      DBusMessageIter *iter_dict);
-
-dbus_bool_t wpa_dbus_dict_append_string(DBusMessageIter *iter_dict,
-					const char *key, const char *value);
-
-dbus_bool_t wpa_dbus_dict_append_byte(DBusMessageIter *iter_dict,
-				      const char *key, const char value);
-
-dbus_bool_t wpa_dbus_dict_append_bool(DBusMessageIter *iter_dict,
-				      const char *key,
-				      const dbus_bool_t value);
-
-dbus_bool_t wpa_dbus_dict_append_int16(DBusMessageIter *iter_dict,
-				       const char *key,
-				       const dbus_int16_t value);
-
-dbus_bool_t wpa_dbus_dict_append_uint16(DBusMessageIter *iter_dict,
-					const char *key,
-					const dbus_uint16_t value);
-
-dbus_bool_t wpa_dbus_dict_append_int32(DBusMessageIter *iter_dict,
-				       const char *key,
-				       const dbus_int32_t value);
-
-dbus_bool_t wpa_dbus_dict_append_uint32(DBusMessageIter *iter_dict,
-					const char *key,
-					const dbus_uint32_t value);
-
-dbus_bool_t wpa_dbus_dict_append_int64(DBusMessageIter *iter_dict,
-				       const char *key,
-				       const dbus_int64_t value);
-
-dbus_bool_t wpa_dbus_dict_append_uint64(DBusMessageIter *iter_dict,
-					const char *key,
-					const dbus_uint64_t value);
-
-dbus_bool_t wpa_dbus_dict_append_double(DBusMessageIter *iter_dict,
-					const char *key,
-					const double value);
-
-dbus_bool_t wpa_dbus_dict_append_object_path(DBusMessageIter *iter_dict,
-					     const char *key,
-					     const char *value);
-
-dbus_bool_t wpa_dbus_dict_append_byte_array(DBusMessageIter *iter_dict,
-					    const char *key,
-					    const char *value,
-					    const dbus_uint32_t value_len);
-
-/* Manual construction and addition of string array elements */
-dbus_bool_t wpa_dbus_dict_begin_string_array(DBusMessageIter *iter_dict,
-                                             const char *key,
-                                             DBusMessageIter *iter_dict_entry,
-                                             DBusMessageIter *iter_dict_val,
-                                             DBusMessageIter *iter_array);
-
-dbus_bool_t wpa_dbus_dict_string_array_add_element(DBusMessageIter *iter_array,
-                                             const char *elem);
-
-dbus_bool_t wpa_dbus_dict_end_string_array(DBusMessageIter *iter_dict,
-                                           DBusMessageIter *iter_dict_entry,
-                                           DBusMessageIter *iter_dict_val,
-                                           DBusMessageIter *iter_array);
-
-/* Convenience function to add a whole string list */
-dbus_bool_t wpa_dbus_dict_append_string_array(DBusMessageIter *iter_dict,
-					      const char *key,
-					      const char **items,
-					      const dbus_uint32_t num_items);
-
-/*
- * Reading a dict from a DBusMessage
- */
-
-struct wpa_dbus_dict_entry {
-	int type;         /** the dbus type of the dict entry's value */
-	int array_type;   /** the dbus type of the array elements if the dict
-			      entry value contains an array */
-	const char *key;  /** key of the dict entry */
-
-	/** Possible values of the property */
-	union {
-		char *str_value;
-		char byte_value;
-		dbus_bool_t bool_value;
-		dbus_int16_t int16_value;
-		dbus_uint16_t uint16_value;
-		dbus_int32_t int32_value;
-		dbus_uint32_t uint32_value;
-		dbus_int64_t int64_value;
-		dbus_uint64_t uint64_value;
-		double double_value;
-		char *bytearray_value;
-		char **strarray_value;
-	};
-	dbus_uint32_t array_len; /** length of the array if the dict entry's
-				     value contains an array */
-};
-
-dbus_bool_t wpa_dbus_dict_open_read(DBusMessageIter *iter,
-				    DBusMessageIter *iter_dict);
-
-dbus_bool_t wpa_dbus_dict_get_entry(DBusMessageIter *iter_dict,
-				    struct wpa_dbus_dict_entry *entry);
-
-dbus_bool_t wpa_dbus_dict_has_dict_entry(DBusMessageIter *iter_dict);
-
-void wpa_dbus_dict_entry_clear(struct wpa_dbus_dict_entry *entry);
-
-#endif  /* DBUS_DICT_HELPERS_H */
