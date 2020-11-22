@@ -1,4 +1,6 @@
 license_expression: nokos-1.0a
 is_license_reference: yes
-ignorable_urls:
-    - https://directory.fsf.org/wiki/License:Nokia
+ignorable_copyrights:
+    - Copyright (c) Nokia and others
+ignorable_holders:
+    - Nokia and others
