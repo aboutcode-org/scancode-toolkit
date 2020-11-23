@@ -11,3 +11,5 @@ ignorable_holders:
     - The Analysis and Solutions Company
 ignorable_urls:
     - http://www.analysisandsolutions.com/
+minimum_coverage: 80
+

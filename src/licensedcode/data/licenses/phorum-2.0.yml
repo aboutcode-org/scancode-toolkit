@@ -22,3 +22,5 @@ ignorable_urls:
     - http://www.apache.org/
 ignorable_emails:
     - core@phorum.org
+minimum_coverage: 80
+
