@@ -1,0 +1,8 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: an older W3C notice
+ignorable_copyrights:
+    - copyright in Web
+ignorable_holders:
+    - in Web
