@@ -4,6 +4,7 @@ license_expressions:
   - x11-opengroup
   - unicode-mappings
   - bsd-simplified
+  - bsd-simplified
   - bsd-source-code
   - mit
   - mit
