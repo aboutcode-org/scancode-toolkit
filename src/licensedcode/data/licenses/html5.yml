@@ -1,0 +1,14 @@
+key: html5
+short_name: HTML 5 spec. License
+name: HTML 5 specification License
+category: Permissive
+owner: Ian Hickson
+spdx_license_key: LicenseRef-scancode-html5
+notes: this short notice was found first in the HTML 5 specification
+ And is often accompanied by this copyright notice © Copyright 2004-2008 Apple
+ Computer, Inc., Mozilla Foundation, and Opera Software ASA
+ See in https://platform.html5.org/history/webapps/r59.html
+ It was used in the early HTML5 specifications from https://html.spec.whatwg.org/
+ See also https://github.com/whatwg/html/issues/538
+ Note that this has since been replaced by the CC-BY-4.0
+ And https://github.com/whatwg/html/commit/8d3562c78c1041e797ffdf57abb480b952508881
