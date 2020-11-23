@@ -1,0 +1,12 @@
+license_expression: php-3.01
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1999 - 2012 The PHP Group
+ignorable_holders:
+    - The PHP Group
+ignorable_urls:
+    - http://www.php.net/
+    - http://www.php.net/software
+ignorable_emails:
+    - group@php.net
