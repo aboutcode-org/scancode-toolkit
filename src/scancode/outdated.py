@@ -44,7 +44,6 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 from __future__ import absolute_import
 
 from collections import OrderedDict
@@ -52,7 +51,6 @@ import datetime
 import json
 import logging
 from os import path
-import sys
 
 from packaging import version as packaging_version
 import requests
@@ -64,7 +62,6 @@ from scancode_config import __version__ as scancode_version
 
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
-
 
 logger = logging.getLogger(__name__)
 # logging.basicConfig(stream=sys.stdout)
@@ -80,6 +77,7 @@ def total_seconds(td):
 
 
 class VersionCheckState(object):
+
     def __init__(self):
         self.statefile_path = path.join(
             scancode_cache_dir, 'scancode-version-check.json')
@@ -103,9 +101,11 @@ class VersionCheckState(object):
                           separators=(',', ':'))
 
 
-def check_scancode_version(installed_version=scancode_version,
-                           new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
-                           force=False):
+def check_scancode_version(
+    installed_version=scancode_version,
+    new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
+    force=False,
+):
     """
     Check for an updated version of scancode-toolkit. Return a message to
     display if outdated or None. Limit the frequency of checks to once per week.
@@ -158,7 +158,7 @@ def check_scancode_version(installed_version=scancode_version,
         # Our git version string is not PEP 440 compliant, and thus improperly parsed via
         # most 3rd party version parsers. We handle this case by pulling out the "base"
         # release version by split()-ting on "post".
-        # 
+        #
         # For example, "3.1.2.post351.850399ba3" becomes "3.1.2"
         if isinstance(installed_version, packaging_version.LegacyVersion):
             installed_version = installed_version.split('post')

@@ -109,7 +109,8 @@ def test_check_scancode_version():
             '2.0.1': [],
             '2.1.0': [],
             '3.4.1': [],
-            '3.9.0rc3': [],
+            '22.1': [],
+            '30.9.0rc3': [],
         }
     }
     def jget(*args, **kwargs):
@@ -121,7 +122,7 @@ def test_check_scancode_version():
             status_code=200
         )
         expected1 = 'You are using ScanCode Toolkit version'
-        expected2 = 'however the newer version 3.4.1 is available'
+        expected2 = 'however the newer version 22.1 is available'
         result = outdated.check_scancode_version(force=True)
         assert expected1 in result
         assert expected2 in result
