@@ -38,7 +38,7 @@ fi
 CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if [[ "$PYTHON_EXE" == "" ]]; then
-    PYTHON_EXE=python
+    PYTHON_EXE=python3
 fi
 
 $PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
