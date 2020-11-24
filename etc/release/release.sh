@@ -29,7 +29,7 @@ export CONFIGURE_QUIET=1
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
-bin/python setup.py --quiet --use-default-version clean --all sdist --formats=bztar,zip bdist_wheel
+bin/python setup.py clean --all sdist --formats=bztar,zip bdist_wheel
 
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
