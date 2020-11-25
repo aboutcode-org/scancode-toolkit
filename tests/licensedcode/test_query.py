@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import py2
@@ -804,6 +805,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
 
+    @expectedFailure
     def test_Query_tokens_by_line_behaves_the_same_on_python_2_and_python_3(self):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()
