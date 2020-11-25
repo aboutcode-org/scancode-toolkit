@@ -3,8 +3,8 @@ graft src
 graft thirdparty
 graft plugins
 graft samples
-graft docs
 
+prune docs
 prune thirdparty/dev
 prune tests
 prune plugins-builtin

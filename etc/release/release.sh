@@ -13,27 +13,72 @@ set -x
 
 echo "###  BUILDING ScanCode release ###"
 
+PYPI_REPO=https://github.com/nexB/thirdparty-packages/releases/tag/pypi
+
 echo "  RELEASE: Cleaning previous release archives, then setup and config: "
 rm -rf dist/ build/
 
 # backup dev manifests
 cp MANIFEST.in MANIFEST.in.dev 
 
+# backup thirdparty
+cp -r thirdparty thirdparty_dev
+rm -rf thirdparty
+
 # install release manifests
 cp etc/release/MANIFEST.in.release MANIFEST.in
+
+python_version=`python -c "import sys;t='py{v[0]}{v[1]}'.format(v=list(sys.version_info[:2]));sys.stdout.write(t)";`
+
+# download all dependencies as per OS/arch/python 
+python3 etc/scripts/deps_download.py --find-links $PYPI_REPO --requirement etc/conf/requirements-"$python_version"_all.txt --dest thirdparty
+
+if [ "$(uname -s)" == "Darwin" ]; then
+    platform="mac"        
+elif [ "$(uname -s)" == "Linux" ]; then
+    platform="linux" 
+# FIXME: This may only works on azure not elsewhere
+elif [ "$(uname -s)" == "MINGW32_NT" ]; then
+    platform="win32"
+elif [ "$(uname -s)" == "MINGW64_NT" ]; then
+    platform="win64"
+fi
+
+#copy virtual env files
+cp thirdparty_dev/{virtualenv.pyz,virtualenv.pyz.ABOUT} thirdparty
 
 ./configure --clean
 export CONFIGURE_QUIET=1
 ./configure etc/conf
+
+# create requirements files as per OS/arch/python
+source bin/activate
+pip install -r etc/scripts/req_tools.txt
+python etc/scripts/freeze_and_update_reqs.py --find-links thirdparty --requirement etc/conf/requirements-"$python_version"_"$platform".txt
 
 echo "  RELEASE: Building release archives..."
 
 # build a zip and tar.bz2
 bin/python setup.py clean --all sdist --formats=bztar,zip bdist_wheel
 
+# rename release archive as per os/arch/python
+# See https://unix.stackexchange.com/questions/121570/rename-multiples-files-using-bash-scripting
+for f in dist/scancode-toolkit*.tar.bz2
+    do
+        mv "$f" "${f%*.*.*}-"$python_version"_"$platform".tar.bz2"
+    done
+
+for f in dist/scancode-toolkit*.zip
+    do
+        mv "$f" "${f%*.*}-"$python_version"_"$platform".zip"
+    done
+
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
 
+# restore thirdparty
+rm -rf thirdparty
+mv thirdparty_dev thirdparty
 
 function test_scan {
     # run a test scan for a given archive

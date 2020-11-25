@@ -72,6 +72,7 @@ setup(
         'commoncode >= 20.09',
 
         'future >= 0.16.0',
+        'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
 
         # plugincode

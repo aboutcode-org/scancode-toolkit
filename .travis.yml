@@ -10,7 +10,9 @@ matrix:
   include:
     # Run minimal test suite
     - os: osx
-      env: PYTHON=36
+      env: 
+        - PYTHON=36
+        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
       language: generic
 
     - os: linux

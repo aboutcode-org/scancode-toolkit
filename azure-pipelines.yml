@@ -1,6 +1,6 @@
 
 ################################################################################
-# We use Azure to run the full tests suites on Python 3.6
+# We use Azure to run the full tests suites on Pythons 3.6 and above.
 # on Windows (32 and 64), macOS and Linux (64 various distro)
 ################################################################################
 
@@ -30,6 +30,7 @@ jobs:
 
           - script: ./etc/release/pip-install-editable.sh
             displayName: 'Test pip editable installation'
+
 
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.6
