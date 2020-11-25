@@ -4,16 +4,14 @@
 # on macOS and Linux
 # We also run the documentation build and the ABOUT file checks
 ################################################################################
+language: python
 
 matrix:
   include:
     # Run minimal test suite
     - os: osx
-      env: 
-        - PYTHON="3.6.8"
-        - TEST_SUITE="bin/py.test -vvs --reruns 3 tests/scancode"
+      env: PYTHON=36
       language: generic
-      python:
 
     - os: linux
       sudo: required
@@ -57,20 +55,16 @@ matrix:
       python: "3.6"
       dist: bionic
 
-addons:
-  homebrew:
-    packages:
-        - openssl
-        - readline
-        - sqlite3
-        - xz
-        - zlib
-        - pyenv
-    update: false
-
 before_install:
   - chmod +x ./docs/scripts/sphinx_build_link_check.sh
   - chmod +x ./docs/scripts/doc8_style_check.sh
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        source ./etc/ci/macports-ci install;
+        yes | sudo port install python$PYTHON;
+        sudo port select --set python3 python$PYTHON;
+        export PATH=$PATH:$(python3 -c "import site; print(site.USER_BASE)")/bin;
+        python3 --version;
+    fi
 
 install:
   - ./configure
