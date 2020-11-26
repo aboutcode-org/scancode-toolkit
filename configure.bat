@@ -26,12 +26,12 @@
 set "TPP_DIR=thirdparty"
 
 @rem # default configurations for dev
-set "CONF_DEFAULT=etc/conf"
+set "CONF_DEFAULT=etc/conf/dev"
 
 @rem # default thirdparty dist for dev
-if ""%CONF_DEFAULT%""==""etc/conf"" (
-    @rem # set "TPP_DIR_DEV=thirdparty/dev"
-    set "TPP_DIR_links=https://github.com/Abhishek-Dev09/thirdparty/releases/tag/v2.0"
+if ""%CONF_DEFAULT%""==""etc/conf/dev"" (
+    set "TPP_DIR_DEV=thirdparty/dev"
+    @rem set "TPP_DIR_links=https://github.com/nexB/thirdparty-packages/releases/tag/pypi"
 )
 
 @rem # default supported version for Python 3 
