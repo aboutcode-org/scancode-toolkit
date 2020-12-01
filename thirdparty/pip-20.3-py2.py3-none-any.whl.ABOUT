@@ -1,0 +1,34 @@
+about_resource: pip-20.3-py2.py3-none-any.whl
+name: pip
+version: '20.3'
+download_url: https://files.pythonhosted.org/packages/55/73/bce122d1ed0217b3c1a3439ab16dfa94bbeabd0d31755fcf907493abf39b/pip-20.3-py2.py3-none-any.whl
+description: A tool for installing and managing Python packages.
+homepage_url: https://pip.pypa.io
+license_expression: mit AND lgpl-2.1-plus AND python AND mit AND bsd-new AND (bsd-new OR apache-2.0)
+  AND apache-2.0 AND isc
+copyright: Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
+redistribute: yes
+attribute: yes
+track_changes: yes
+checksum_md5: 7bd234a9f850c132f36e1b2b8c159ca9
+checksum_sha1: 697c2fa0f290e13789c4647bec67cc41e4d9b960
+package_url: pkg:pypi/pip@20.3
+licenses:
+  - key: apache-2.0
+    name: Apache License 2.0
+    file: apache-2.0.LICENSE
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE
+  - key: python
+    name: Python Software Foundation License v2
+    file: python.LICENSE
+  - key: lgpl-2.1-plus
+    name: GNU Lesser General Public License 2.1 or later
+    file: lgpl-2.1-plus.LICENSE
+  - key: isc
+    name: ISC License
+    file: isc.LICENSE
