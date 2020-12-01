@@ -1,0 +1,21 @@
+about_resource: simplejson-3.15.0-cp36-cp36m-linux_x86_64.whl
+name: simplejson
+version: 3.15.0
+download_url: https://dl.bintray.com/pombreda/thirdparty/simplejson-3.15.0-cp36-cp36m-linux_x86_64.whl
+license_expression: mit OR afl-2.1 OR python
+copyright: Copyright (c) Bob Ippolito
+attribute: yes
+track_changes: yes
+checksum_md5: 3db8a1d9aa97d0650cee595444bc0c85
+checksum_sha1: 82d04dad1ae1d73ede6e6db194cf8b017ea78ffb
+package_url: pkg:pypi/simplejson@3.15.0
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+  - key: python
+    name: Python Software Foundation License v2
+    file: python.LICENSE
+  - key: afl-2.1
+    name: Academic Free License 2.1
+    file: afl-2.1.LICENSE
