@@ -1,0 +1,33 @@
+about_resource: Pygments-2.4.2.tar.gz
+name: Pygments
+version: 2.4.2
+download_url: https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-2.4.2.tar.gz
+description: Pygments is a generic syntax highlighter suitable for use in code hosting, forums,
+  wikis or other applications that need to prettify source code.
+homepage_url: http://pygments.org/
+notes: there are many test and example files under many different permissive and copyleft licenses
+license_expression: bsd-simplified AND (bsd-new AND apache-2.0 AND public-domain)
+copyright: Copyright by the Pygments team
+notice_file: Pygments-2.4.2.tar.gz.NOTICE
+notice_url: https://bitbucket.org/birkenfeld/pygments-main/src/default/LICENSE?at=default
+attribute: yes
+track_changes: yes
+owner: Pocoo Team
+owner_url: http://www.pocoo.org/
+contact: georg@python.org
+checksum_md5: 5ecc3fbb2a783e917b369271fc0e6cd1
+checksum_sha1: 5296c3b92ef0cbb8f4abede623be4a89e4f0f3c9
+package_url: pkg:pypi/pygments@2.4.2
+licenses:
+  - key: apache-2.0
+    name: Apache License 2.0
+    file: apache-2.0.LICENSE
+  - key: public-domain
+    name: Public Domain
+    file: public-domain.LICENSE
+  - key: bsd-simplified
+    name: BSD-2-Clause
+    file: bsd-simplified.LICENSE
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE
