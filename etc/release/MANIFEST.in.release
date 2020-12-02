@@ -5,7 +5,6 @@ graft plugins
 graft samples
 
 prune docs
-prune thirdparty/dev
 prune tests
 prune plugins-builtin
 
