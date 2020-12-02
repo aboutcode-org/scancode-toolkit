@@ -1,3 +1,4 @@
+
 attrs==19.3.0 \
     --hash=sha256:08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c \
     # via scancode-toolkit (setup.py)
@@ -20,8 +21,8 @@ bitarray==0.8.1 \
 boolean.py==3.7 \
     --hash=sha256:82ae181f9c85cb5c893a5a4daba9f24d60b538a7dd27fd0c6752a77eba4fbeff \
     # via license-expression, scancode-toolkit (setup.py)
-certifi==2018.4.16 \
-    --hash=sha256:9fa520c1bacfb634fa7af20a76bcbd3d5fb390481724c597da32c719a7dca4b0 \
+certifi==2020.6.20 \
+    --hash=sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41 \
     # via requests
 chardet==3.0.4 \
     --hash=sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691 \
@@ -35,22 +36,21 @@ colorama==0.3.9 \
 contextlib2==0.5.5 \
     --hash=sha256:f5260a6e679d2ff42ec91ec5252f4eeffdcf21053db9113bd0a8e4d953769c00 \
     # via scancode-toolkit (setup.py)
-dparse==0.4.1 \
-    --hash=sha256:00a5fdfa900629e5159bf3600d44905b333f4059a3366f28e0dbd13eeab17b19 \
-    --hash=sha256:a14ebcee6074d5614245cf6f7dc8d21526412c866d06305745010bd091fd630c \
+dparse2==0.5.0.4 \
+    --hash=sha256:7ba548299caab598f9d7b3cccc20086f6c5cee546b1c6e347bcef4ea83f13260
     # via scancode-toolkit (setup.py)
-extractcode-7z==16.2.4.1 \
-    --hash=sha256:0c28ce96df713a368af955969efe2b3d5c0581306b5e8b77c6bdee45e23f94f3 \
-    --hash=sha256:3eeaa645732505d8bc36cf2d4a38ad3bed03c8da4f14e89217d9495edeecbd5a \
-    --hash=sha256:52ab4ba8252f9b79574e730e30d0c12b465b9c796772f01bad77a26958837bdc \
-    --hash=sha256:a24094c606fc2a974f84c5293cd7f704c1866383ba0450465b80fc1d4e10f3d7 \
-    # via scancode-toolkit (setup.py)
-extractcode-libarchive==3.4.2.1 \
-    --hash=sha256:558fad3098e5285ac7784a5bbf8463425e2bbb3d4218458b0b2ea53b34e3ff88 \
-    --hash=sha256:83fb3f9a101adbf2ea8ce046d13634c2cfd1e7297a33e55feb790cad9844fda5 \
-    --hash=sha256:9922f30ce882e21e830ba39f81d9f052b09ee08365807b3f11284036c4a1f1eb \
-    --hash=sha256:dc41439b863ccf1f9ed092c870e5537aafa227c23d90bd335382a17e5de9343b \
-    # via scancode-toolkit (setup.py)
+extractcode-7z==16.5 \
+    --hash=sha256:200aca5cddb511eb28c8b623e3d4f82ca32ec6e5e2bddfac4f1a25333cc4dfef \
+    --hash=sha256:a9908737fddfefecf9d00dc6f9d22b7f31e143f55682444cb9d39052dc53b186 \
+    --hash=sha256:a10b483510a054633f24486f6deb626451361d42cce559f0f3e3ce9af73e1cd0 \
+    --hash=sha256:bf0b8ae9ce84264888157a7c2094c6c747e6884f74bf9e7218bc9b3a65813d60 \
+    # via scancode
+extractcode-libarchive==3.4.3.1 \
+    --hash=sha256:f8dd7f51d6a9bc5c0901bd4f014a3c42f6eafdefd03c823cc2505ea259d9559d \
+    --hash=sha256:1e3443cab969658ac6b330a2345cba6812c12f43d027d56008f609813a337dad \
+    --hash=sha256:f48ecb95196d172bf60498bce9614e2dce19ade02226c2df788631863ac4f05c \
+    --hash=sha256:8599ee2338b06e9cc6ebeeac95ad64e610254f06ec7609fa4b74eb91c9c8b98b \
+    # via scancode
 fingerprints==0.6.5.1 \
     --hash=sha256:a80555655fc249f103369792d8ea1bd5870434b0a10d3a92ade6ad3e908fe4aa \
     # via scancode-toolkit (setup.py)
@@ -74,12 +74,11 @@ idna==2.6 \
 importlib-metadata==0.18 \
     --hash=sha256:6dfd58dfe281e8d240937776065dd3624ad5469c835248219bd16cf2e12dbeb7 \
     # via pluggy
-intbitset==2.3.0 \
-    --hash=sha256:01505d26ba2b99fe04d2a5b6d166d8ca92f489a02faa6aa825855af047971da8 \
-    --hash=sha256:589aff5117f2660767e04499dabb6288ef88e05566d3ac1d9fa3bb7cac4d5ef5 \
-    --hash=sha256:5a38b1b338479027b1a75351a39e7d126682a2ea75d210146ffb735d1a767b6f \
-    --hash=sha256:7dc2fac52a3888ab29592854511588bdb45ea2247378be78595a59a69afbd5c3 \
-    --hash=sha256:db1b85620aa3ad3e2b8d448cf9f088b61c30a4c75f1be46e07eca32fbb407409 \
+intbitset==2.4.1 \
+    --hash=sha256:280139ee09d308f2bc5fb27d73a185a4526fa0e0089418d996a54463614de815 \
+    --hash=sha256:d2fe4a94863655e44b3b16e96020c765a73d75eba641f0657b10783b5006fe7a \
+    --hash=sha256:86e2472c333ea24eb0d1640815fa5c48620a17e221efd76bf332d891b27bf3ac \
+    --hash=sha256:44bca80b8cc702d5a56f0686f2bb5e028ab4d0c2c1761941589d46b7fa2c701c \
     # via scancode-toolkit (setup.py)
 isodate==0.6.0 \
     --hash=sha256:aa4d33c06640f5352aca96e4b81afd8ab3b47337cc12089822d6f322ac772c81 \
@@ -157,9 +156,10 @@ pycryptodome==3.6.1 \
     --hash=sha256:e51da4ef9d9e2695a04044152f380c2db17adc9fc6fad8e24d863ead9cd548ed \
     --hash=sha256:e850e07f54dc3de9a1efdd59d227fcd1cb30cdd307dafdc647c79e8f30cf5032 \
     # via pdfminer.six, scancode-toolkit (setup.py)
-pygments==2.2.0 \
-    --hash=sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d \
-    # via scancode-toolkit (setup.py)
+pygments==2.4.2 \
+    --hash=sha256:71e430bc85c88a430f000ac1d9b331d2407f681d6f6aec95e8bcfbc3df5b0127 \
+    --hash=sha256:881c4c157e45f30af185c1ffe8d549d48ac9127433f2c380c24b84572ad66297 \
+    # via scancode
 pymaven-patch==0.2.9 \
     --hash=sha256:478f91bf236f07c6445f03518849936e95f5b1edf52029c323fcf609ec579a65 \
     # via scancode-toolkit (setup.py)
@@ -210,11 +210,11 @@ toml==0.10.0 \
     --hash=sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c \
     --hash=sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e \
     # via scancode-toolkit (setup.py)
-typecode-libmagic==5.38.1 \
-    --hash=sha256:434ab7d8dcc9a1de5137dab1e0e3dc2959502815e30c0fd9920f3d3b58ca39dc \
-    --hash=sha256:4bfb17fbb8ef035f03ca79d32daa1e05ca13bcc45e56fd7ccda52f496101d6eb \
-    --hash=sha256:5bc822547d9537cc67e8bb7472eaf7d02ae172f72f22162e743ec3548974c226 \
-    --hash=sha256:f85edf1175ae8d9f26fdf972a66598db0afb88aae4f7f4fa0ef1477091f0f02b \
+typecode-libmagic==5.39.1.1 \
+    --hash=sha256:da8e39d88826834f4d6c949aea7fcb4b8089d235a2f3b41121e9827a9510ef7f \
+    --hash=sha256:0538f7c9234799adc0223fcc98a626db4823f6391719b0cc1a6019f1c52e0869 \
+    --hash=sha256:e6549bbecb57a4d33c8af6e56dfa73823e97397a7f33ae0e2344e9db04130831 \
+    --hash=sha256:3254d05bca3091b500888b23117c396b825534bb381a341746c2aaf8e8949386 \
     # via scancode-toolkit (setup.py)
 typing==3.6.4 \
     --hash=sha256:3a887b021a77b292e151afb75323dea88a7bc1b3dfa92176cff8e44c8b68bddf \
@@ -248,6 +248,7 @@ zipp==0.5.1 \
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==41.2.0 \
-    --hash=sha256:4380abcf2a4ffd1a5ba22d687c6d690dce83b2b51c70e9c6d09f7e8c7e8040dc \
-    # via html5lib, zc.lockfile
+setuptools==49.1.0 \
+    --hash=sha256:daf2e1c215f805b0ddc3b4262886bb6667ae0d4563887a8374fb766adc47c324 \
+pip==20.3 \
+    --hash=sha256:3236fe7288d155c238bb6c85d3e784db3a8e592e827b83fea4d36d8b749ecc4b \

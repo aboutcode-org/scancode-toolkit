@@ -6,46 +6,89 @@
 set -e
 
 if [[ "$OS" == "Windows_NT" ]]; then
-    echo "You seem to be running on Windows under Cygwin / MSYS(2), like e.g. Git for Windows Bash. This script does"
-    echo "not properly work in this scenario. As a Windows user, please run 'configure.bat' from a regular command"
-    echo "prompt instead."
+    echo "You seem to be running on Windows under Cygwin / MSYS(2),"
+    echo "like e.g. Git for Windows Bash. This script does not properly work in"
+    echo "this scenario. As a Windows user, please run 'configure.bat' from a "
+    echo "regular command prompt instead."
     exit 1
 fi
 
+
 ################################
-# change these variables to customize this script locally
+# A configuration script to set things up: create a virtualenv and install
+# update thirdparty packages
+
+function cli_help {
+    echo An initial configuration script
+    echo "  usage: ./configure [options]"
+    echo
+    echo The default is to configure for regular use.
+    echo The script will attempt to find a suitable Python executable.
+    echo Set the PYTHON_EXECUTABLE environment variable to provide your own
+    echo Python executable path.
+    echo
+    echo The options are:
+    echo  "--clean: clean built and installed files and exit."
+    echo  "--dev:   configure the environment for development."
+    echo  "--help:  display these help messages and exit."
+    echo
+    set +e
+    exit
+}
+
+
 ################################
-# you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-export TPP_DIR="thirdparty"
+# Defaults. Change these variables to customize this script locally
+################################
+# you can define one or more thirdparty location directory or URL location
+# environment variables each with a name prefixed with THIRDPARTY_LOC
 
-# default configurations for dev
-CONF_DEFAULT="etc/conf/dev"
+export THIRDPARTY_LOC="thirdparty"
+#export THIRDPARTY_LOC_REMOTE="https://github.com/nexB/thirdparty-packages/releases/tag/pypi"
 
-if [[ "$CONF_DEFAULT" == "etc/conf" ]]; then
-    export TPP_DIR_DEV="thirdparty/dev"
-    #export TPP_DIR_links="https://github.com/nexB/thirdparty-packages/releases/tag/pypi"
+# requirements used by defaults and with --dev
+REQUIREMENTS="requirements.txt -e.[full]"
+DEV_REQUIREMENTS="requirements-dev.txt -e.[full]"
+
+# default supported Python version
+SUPPORTED_PYTHON3=3.6
+
+################################
+
+# Current directory where this script lives
+PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# parse command line options
+CLI_ARGS="$REQUIREMENTS"
+PYTHON_EXECUTABLE=
+
+case "$1" in
+    --help)    cli_help;;
+    -c|--clean)   CLI_ARGS=--clean;;
+    -d|--dev)     CLI_ARGS="$DEV_REQUIREMENTS";;
+esac
+
+
+# find a proper Python to run
+
+if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
+    PYTHON_EXECUTABLE=python3
+fi
+
+################################
+# setup development and run configure script
+
+if [[ "$CLI_ARGS" == "$DEV_REQUIREMENTS" ]]; then
+    # development tag file for license index auto-regeneration on change
+    touch $PROJECT_ROOT_DIR/SCANCODE_DEV_MODE
 fi
 
 
-#################################
+$PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
 
-CFG_CMD_LINE_ARGS="$@"
-
-if [[ "$1" == "" ]]; then
-    # default for dev conf if not argument is provided
-    CFG_CMD_LINE_ARGS=$CONF_DEFAULT
-fi
-
-CONFIGURE_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-if [[ "$PYTHON_EXE" == "" ]]; then
-    PYTHON_EXE=python3
-fi
-
-$PYTHON_EXE "$CONFIGURE_ROOT_DIR/etc/configure.py" $CFG_CMD_LINE_ARGS
-
-if [ -f "$CONFIGURE_ROOT_DIR/bin/activate" ]; then
-    source "$CONFIGURE_ROOT_DIR/bin/activate"
+# Activate the virtualenv
+if [ -f "$PROJECT_ROOT_DIR/bin/activate" ]; then
+    source "$PROJECT_ROOT_DIR/bin/activate"
 fi
 
 set +e
