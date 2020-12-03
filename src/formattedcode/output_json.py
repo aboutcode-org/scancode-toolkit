@@ -27,7 +27,7 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-import simplejson
+import jsonstreams
 from six import string_types
 
 from commoncode.system import py2
@@ -95,8 +95,7 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        results = get_results(codebase, as_list=False, **kwargs)
-        write_json(results, output_file=output_json, pretty=False)
+        write_results(codebase, output_file=output_json, pretty=False, **kwargs)
 
 
 @output_impl
@@ -115,33 +114,48 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        results = get_results(codebase, as_list=False, **kwargs)
-        write_json(results, output_file=output_json_pp, pretty=True)
+        write_results(codebase, output_file=output_json_pp, pretty=True, **kwargs)
 
 
-def write_json(results, output_file, pretty=False, **kwargs):
+def write_results(codebase, output_file, pretty=False, **kwargs):
     """
-    Write `results` to the `output_file` opened file-like object.
+    Write headers, files, and other attributes from `codebase` to `output_file`
+
+    Enable JSON indentation if `pretty` is True
     """
-    # NOTE: we write as encoded, binary bytes, not as unicode, decoded text on py2
-    kwargs = dict(iterable_as_array=True, encoding='utf-8')
+    # Set indentation for JSON output if `pretty` is True
+    # We use a separate dict for jsonstream kwargs since we are passing
+    # this function's kwargs as arguments to OutputPlugin.get_files()
     if pretty:
-        kwargs.update(dict(indent=2 * space))
+        jsonstreams_kwargs = dict(indent=2, pretty=True)
     else:
-        kwargs.update(dict(separators=(comma, colon,)))
+        jsonstreams_kwargs = dict(indent=None, pretty=False)
 
-    close_of = False
+    # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
+    close_fd = False
+    if isinstance(output_file, string_types):
+        output_file = open(output_file, mode)
+        close_fd = True
 
+    # Begin writing JSON to `output_file`
+    with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, close_fd=close_fd, **jsonstreams_kwargs) as s:
+        # Write headers
+        codebase.add_files_count_to_current_header()
+        codebase_headers = codebase.get_headers()
+        s.write('headers', codebase_headers)
 
-    try:
-        if isinstance(output_file, string_types):
-            output_file = open(output_file, mode)
-            close_of = True
-        output_file.write(simplejson.dumps(results, **kwargs))
-        output_file.write(eol)
-    finally:
-        if close_of:
-            output_file.close()
+        # Write attributes
+        if codebase.attributes:
+            for attribute_key, attribute_value in codebase.attributes.to_dict().items():
+                s.write(attribute_key, attribute_value)
+
+        # Write files
+        codebase_files = OutputPlugin.get_files(codebase, **kwargs)
+        if py3:
+            # OutputPlugin.get_files() returns a `map()`, which isn's JSON
+            # serializable in Python 3
+            codebase_files = list(codebase_files)
+        s.write('files', codebase_files)
 
 
 def get_results(codebase, as_list=False, **kwargs):
@@ -169,4 +183,3 @@ def get_results(codebase, as_list=False, **kwargs):
         logger_debug(pformat(files))
 
     return results
-

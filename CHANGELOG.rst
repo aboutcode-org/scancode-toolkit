@@ -5,6 +5,12 @@ v20.x (next)
 ------------
 
  - Adopt calendar versioning for scancode version numbers
+ - Updated scancode.bat to handle % signs in the arguments #1876
+ - Support officially Python 64 bits on Windows 64 bits #335
+ - Drop support for Python 32 bits on Windows #335
+ - Update configuration and boostrap scripts
+ - Drop support for Python 2  #295
+ 
 
 
 v3.2.3 (2020-10-27)
