@@ -1,4 +1,5 @@
 license_expression: gpl-2.0-plus
 is_license_reference: yes
+minimum_coverage: 100
 ignorable_urls:
     - http://spdx.org/licenses/GPL-2.0
