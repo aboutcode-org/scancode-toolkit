@@ -28,7 +28,6 @@ import json
 import os
 import time
 
-from commoncode.system import on_linux
 from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 

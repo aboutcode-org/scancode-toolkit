@@ -28,7 +28,6 @@ import io
 import os
 
 import click
-click.disable_unicode_literals_warning = True
 
 from licensedcode.models import load_licenses
 from scancode.cli import run_scan

@@ -27,7 +27,6 @@
 import os
 
 import click
-click.disable_unicode_literals_warning = True
 
 from license_expression import Licensing
 

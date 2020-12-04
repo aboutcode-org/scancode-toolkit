@@ -46,7 +46,6 @@ except NameError:
         pass
 
 import click  # NOQA
-click.disable_unicode_literals_warning = True
 
 
 from commoncode import cliutils
@@ -55,7 +54,6 @@ from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
@@ -191,8 +189,7 @@ def validate_depth(ctx, param, value):
 
 @click.argument('input',
     metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
-    # ensure that the input path is bytes on Linux, unicode elsewhere
-    type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
+    type=click.Path(exists=True, readable=True, path_type=str))
 
 @click.option('--strip-root',
     is_flag=True,
@@ -526,7 +523,7 @@ def run_scan(
         if not common_prefix:
             # we have no common prefix, but all relative. therefore the
             # parent/root is the current ddirectory
-            common_prefix = PATH_TYPE('.')
+            common_prefix = str('.')
 
         elif not os.path.isdir(common_prefix):
             msg = 'Invalid inputs: all input paths must share a common parent directory.'

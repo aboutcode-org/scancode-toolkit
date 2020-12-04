@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from functools import partial
 import io
 import json
 import logging
@@ -32,7 +31,6 @@ import attr
 from packageurl import PackageURL
 
 from commoncode import filetype
-from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 

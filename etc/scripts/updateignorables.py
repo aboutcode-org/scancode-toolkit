@@ -26,7 +26,6 @@
 
 
 import click
-click.disable_unicode_literals_warning = True
 
 from licensedcode import cache
 from licensedcode import models

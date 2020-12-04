@@ -26,7 +26,6 @@
 import re
 import string
 
-from commoncode.text import toascii
 
 """
 Extract raw ASCII strings from (possibly) binary strings.
@@ -50,11 +49,11 @@ https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd
 MIN_LEN = 4
 MIN_LEN_STR = b'4'
 
-def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, min_len=MIN_LEN):
+def strings_from_file(location, buff_size=1024 * 1024, clean=True, min_len=MIN_LEN):
     """
-    Yield unicode strings made only of ASCII characters found in file at location.
-    Process the file in chunks (to limit memory usage). If ascii is True, strings
-    are converted to plain ASCII "str or byte" strings instead of unicode.
+    Yield unicode strings made only of printable ASCII characters found in file
+    at `location``. Process the file in chunks of `buff_size` bytes (to limit
+    memory usage).
     """
     with open(location, 'rb') as f:
         while 1:
@@ -62,8 +61,6 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
             if not buf:
                 break
             for s in strings_from_string(buf, clean=clean, min_len=min_len):
-                if ascii:
-                    s = toascii(s)
                 s = s.strip()
                 if len(s) >= min_len:
                     yield s
@@ -94,10 +91,10 @@ ascii_strings = re.compile(_ascii_pattern).finditer
 
 def strings_from_string(binary_string, clean=False, min_len=0):
     """
-    Yield strings extracted from a (possibly binary) string. The strings are ASCII
-    printable characters only. If clean is True, also clean and filter short and
-    repeated strings.
-    Note: we do not keep the offset of where a string was found (e.g. match.start).
+    Yield strings extracted from a (possibly binary) string `binary_string`. The
+    strings are ASCII printable characters only. If `clean` is True, also clean
+    and filter short and repeated strings. Note: we do not keep the offset of
+    where a string was found (e.g. match.start).
     """
     for match in ascii_strings(binary_string):
         s = decode(match.group())

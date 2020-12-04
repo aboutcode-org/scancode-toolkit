@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import io
 from operator import itemgetter
 from os.path import abspath
@@ -35,7 +34,6 @@ from os.path import join
 import click
 import simplejson
 
-from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
 from commoncode.fileutils import delete
@@ -96,8 +94,12 @@ class CustomTemplateOutput(OutputPlugin):
 
         PluggableCommandLineOption(('--custom-template',),
             type=click.Path(
-                exists=True, file_okay=True, dir_okay=False,
-                readable=True, path_type=PATH_TYPE),
+                exists=True,
+                file_okay=True,
+                dir_okay=False,
+                readable=True,
+                path_type=str
+            ),
             required_options=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',

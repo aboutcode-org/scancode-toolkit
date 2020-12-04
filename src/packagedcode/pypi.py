@@ -446,7 +446,7 @@ def find_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_dunder_version:', 'location:', location, 'match:', match)
     return match
@@ -457,7 +457,7 @@ def find_plain_version(location):
     Return a plain version attribute string or None from searching the module
     file at `location`.
     """
-    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.M)
+    pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_plain_version:', 'location:', location, 'match:', match)
     return match
@@ -479,7 +479,7 @@ def find_setup_py_dunder_version(location):
     SPDX-License-Identifier: BSD-3-Clause
     (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
     """
-    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.M)
+    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
     return match

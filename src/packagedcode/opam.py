@@ -30,8 +30,6 @@ import re
 import attr
 from packageurl import PackageURL
 
-from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 
 

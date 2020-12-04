@@ -28,11 +28,9 @@ import json
 import os
 
 import click
-click.disable_unicode_literals_warning = True
 import pytest
 
 from commoncode import fileutils
-from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
@@ -442,7 +440,7 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     test_path = u'unicode_fixtures.tar.gz'
 
     test_dir = test_env.extract_test_tar_raw(test_path)
-    test_dir = fsencode(test_dir)
+    test_dir = os.fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright', '--package', '--email',
             '--url', '--strip-root', '--json', '-', test_dir]

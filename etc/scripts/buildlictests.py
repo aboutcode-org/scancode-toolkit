@@ -29,7 +29,6 @@ from os import path
 import sys
 
 import click
-click.disable_unicode_literals_warning = True
 from itertools import chain
 
 import scancode_config

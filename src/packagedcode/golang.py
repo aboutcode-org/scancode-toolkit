@@ -22,19 +22,13 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
-import io
 import logging
-import re
 
 import attr
-from packageurl import PackageURL
 
-from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import go_mod
 from packagedcode import models
-
 
 """
 Handle Go packages including go.mod and go.sum files.

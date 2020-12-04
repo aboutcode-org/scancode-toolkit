@@ -26,7 +26,6 @@
 import os
 
 import click
-click.disable_unicode_literals_warning = True
 
 from commoncode.testcase import FileDrivenTesting
 

@@ -29,7 +29,6 @@ import os
 
 import attr
 import click
-click.disable_unicode_literals_warning = True
 from license_expression import Licensing
 import saneyaml
 

@@ -30,9 +30,7 @@ import sys
 
 from commoncode import filetype
 from commoncode.fileutils import file_name
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import splitext_name
-from commoncode.system import on_linux
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
 

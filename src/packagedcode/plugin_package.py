@@ -26,7 +26,6 @@
 
 import attr
 import click
-click.disable_unicode_literals_warning = True
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl

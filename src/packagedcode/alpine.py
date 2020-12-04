@@ -27,7 +27,6 @@ import codecs
 from datetime import datetime
 import email
 import io
-import os
 from os import path
 import posixpath
 import re

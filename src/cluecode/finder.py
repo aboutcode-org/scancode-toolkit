@@ -128,7 +128,7 @@ def build_regex_filter(pattern):
                 continue
             yield key, match, line, lineno
 
-    matcher = re.compile(pattern, re.UNICODE | re.I).match
+    matcher = re.compile(pattern, re.UNICODE | re.IGNORECASE).match
     return re_filt
 
 # A good reference page of email address regex is:
@@ -575,7 +575,7 @@ def find_pattern(location, pattern, unique=False):
     Return all match groups joined as one unicode string.
     Only return unique items if unique is True.
     """
-    pattern = re.compile(pattern, re.UNICODE | re.I)
+    pattern = re.compile(pattern, re.UNICODE | re.IGNORECASE)
     matches = find(location, [(None, pattern,)])
     if unique:
         matches = unique_filter(matches)

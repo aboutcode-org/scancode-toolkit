@@ -35,6 +35,8 @@ This test suite runs code checks such as:
  - code style
  - ABOUT files
  - release archives creation
+ 
+NOTE: it has imports limited to the standard library by design
 """
 
 

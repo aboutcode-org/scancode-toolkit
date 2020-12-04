@@ -30,7 +30,6 @@ import logging
 import sys
 
 import attr
-from packageurl import PackageURL
 
 from commoncode import filetype
 from commoncode import fileutils
