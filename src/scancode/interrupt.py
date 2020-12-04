@@ -11,9 +11,6 @@
 # specific language governing permissions and limitations under the License.
 #
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
 
 from traceback import format_exc as traceback_format_exc
 

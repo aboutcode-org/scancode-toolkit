@@ -13,8 +13,6 @@ To use, create requirements flies and use this way:
 
 """
 
-from __future__ import absolute_import
-from __future__ import print_function
 
 import io
 import os
