@@ -34,10 +34,7 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 
-from commoncode import compat
 from commoncode.fileutils import resource_iter
-from commoncode.system import py2
-from commoncode.system import py3
 
 from textcode.analysis import as_unicode
 from textcode.analysis import unicode_text_lines
@@ -46,11 +43,7 @@ from textcode.analysis import numbered_text_lines
 
 def check_text_lines(result, expected_file, regen=False):
         if regen:
-            if py2:
-                mode = 'wb'
-            if py3:
-                mode = 'w'
-            with open(expected_file, mode) as tf:
+            with open(expected_file, 'w') as tf:
                 json.dump(result, tf, indent=2)
         with open(expected_file, 'rb') as tf:
             expected = json.load(tf)
@@ -149,12 +142,12 @@ class TestAnalysis(FileBasedTesting):
     def test_as_unicode_converts_bytes_to_unicode(self):
         test_line = '    // as defined in https://tools.ietf.org/html/rfc2821#section-4.1.2.'.encode()
         result = as_unicode(test_line)
-        assert type(result) == compat.unicode
+        assert type(result) == str
 
     def test_numbered_text_lines_return_unicode(self):
         test_file = self.get_test_loc('analysis/verify.go')
         for _lineno, line in numbered_text_lines(test_file):
-            assert type(line) == compat.unicode
+            assert type(line) == str
 
     def test_unicode_text_lines_replaces_null_bytes_with_space(self):
         test_file = self.get_test_loc('analysis/text-with-trailing-null-bytes.txt')

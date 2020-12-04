@@ -29,9 +29,7 @@ from __future__ import unicode_literals
 import json
 from os import path
 from os import walk
-from unittest.case import skipIf
 
-from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 from packagedcode import debian_copyright
@@ -98,9 +96,6 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
     """
     test_data_dir = path.join(path.dirname(__file__), 'data')
     test_dir_loc = path.join(test_data_dir, test_dir)
-    if py2:
-        return
-
     # loop through all items and attach a test method to our test class
     for test_file in relative_walk(test_dir_loc):
         test_name = prefix + text.python_safe_name(test_file)
@@ -115,7 +110,6 @@ def build_tests(test_dir, clazz, prefix='test_', regen=False):
         setattr(clazz, test_name, test_method)
 
 
-@skipIf(py2, 'Only on Python3')
 class TestDebianCopyrightLicenseDetection(FileBasedTesting):
     # pytestmark = pytest.mark.scanslow
     test_data_dir = path.join(path.dirname(__file__), 'data')

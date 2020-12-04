@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -28,10 +28,9 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-from unittest import skipIf
+
 import pytest
 
-from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -49,7 +48,6 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -98,7 +96,6 @@ class TestLicenseMatchBasic(FileBasedTesting):
         m4_r4 = LicenseMatch(rule=r4, qspan=Span(0, 2), ispan=Span(0, 3))
 
         assert m3_r3 != m4_r4
-
 
     def test_LicenseMatch_not_equal(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.0 OR gpl')
@@ -541,7 +538,6 @@ class TestMergeMatches(FileBasedTesting):
         assert [m1] == matches
         assert sorted([m5, contained1, contained2, ]) == sorted(discarded)
 
-
     def test_merge_does_not_merge_matches_with_same_spans_if_licenses_are_identical_but_rule_differ(self):
         r1 = Rule(text_file='r1', license_expression='apache-2.0')
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
@@ -972,7 +968,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False)
         assert expected.rstrip() == matched_text
 
-
         # test again using some HTML with tags
         # Note that there is a trailing space in that string
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
@@ -1086,7 +1081,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == result
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_does_not_crash_on_turkish_unicode(self):
         querys = u'İrəli'
         result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
@@ -1097,7 +1091,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
         assert expected == result
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_tokenize_matched_text_behaves_like_query_tokenizer_on_turkish_unicode(self):
         from licensedcode.tokenize import query_tokenizer
         querys = u'İrəli'
@@ -1240,7 +1233,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False, whole_lines=True)
         assert expected == matched_text
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_with_diacritic_in_rules(self):
         rule_dir = self.get_test_loc('match/turkish_unicode/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
@@ -1261,7 +1253,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == matched_texts
 
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
         idx = cache.get_index()
         query_loc = self.get_test_loc('match/turkish_unicode/query')

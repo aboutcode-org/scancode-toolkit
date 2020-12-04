@@ -27,15 +27,12 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os.path
-from unittest.case import skipIf
 
-from commoncode.system import py2
 from packagedcode import alpine
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 
 
-@skipIf(py2, 'Alpine linux package parsing is not worth testing on Python2')
 class TestAlpinePackage(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

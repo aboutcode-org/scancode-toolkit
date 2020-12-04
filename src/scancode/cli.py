@@ -43,14 +43,6 @@ from time import sleep
 from time import time
 import traceback
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    import itertools.imap as map  # NOQA
-except ImportError:
-    # Python 3
-    pass
-
 # this exception is not available on posix
 try:
     WindowsError  # NOQA
@@ -68,16 +60,13 @@ from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode import compat
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
 from commoncode.resource import VirtualCodebase
-from commoncode.system import py2
 from commoncode.system import on_windows
-from commoncode.system import on_linux
 
 # these are important to register plugin managers
 from plugincode import PluginManager
@@ -518,10 +507,7 @@ def run_scan(
 
     if not isinstance(input, (list, tuple)):
         # nothing else todo
-        if on_linux and py2:
-            assert isinstance(input, bytes)
-        else:
-            assert isinstance(input, compat.unicode)
+        assert isinstance(input, str)
 
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
@@ -1134,10 +1120,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
         while True:
             try:
-                if py2:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
-                else:
-                    location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
+                location, rid, scan_errors, scan_time, scan_result, scan_timings = next(scans)
 
                 if TRACE_DEEP:
                     logger_debug(

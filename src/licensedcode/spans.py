@@ -37,9 +37,6 @@ from itertools import groupby
 
 from intbitset import intbitset
 
-from commoncode import compat
-
-
 """
 Ranges and intervals of integers using bitmaps.
 Used as a compact and faster data structure for token and position sets.
@@ -110,7 +107,7 @@ class Span(Set):
 
         elif len_args == 1:
             # args0 is a single int or an iterable of ints
-            if isinstance(args[0], compat.integer_types):
+            if isinstance(args[0], int):
                 self._set = intbitset(args)
             else:
                 # some sequence or iterable
@@ -207,7 +204,7 @@ class Span(Set):
         if isinstance(other, Span):
             return self._set.issuperset(other._set)
 
-        if isinstance(other, compat.integer_types):
+        if isinstance(other, int):
             return self._set.__contains__(other)
 
         if isinstance(other, (set, frozenset)):

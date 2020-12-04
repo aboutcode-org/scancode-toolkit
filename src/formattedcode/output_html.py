@@ -40,18 +40,13 @@ from os.path import join
 import click
 import simplejson
 
-from commoncode import compat
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
 from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_base_name
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
-from commoncode.system import on_linux
-from commoncode.system import py2
-from commoncode.system import py3
 from formattedcode import FileOptionType
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -121,10 +116,6 @@ class CustomTemplateOutput(OutputPlugin):
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
-
-        if on_linux and py2:
-            custom_template = fsencode(custom_template)
-
         template_loc = custom_template
         output_file = custom_output
         write_templated(output_file, results, version, template_loc)
@@ -139,7 +130,7 @@ def write_templated(output_file, results, version, template_loc):
     template = get_template(template_loc)
 
     for template_chunk in generate_output(results, version, template):
-        assert isinstance(template_chunk, compat.unicode)
+        assert isinstance(template_chunk, str)
         try:
             output_file.write(template_chunk)
         except Exception:
@@ -326,16 +317,9 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         with io.open(join(target_assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
             f.write(rendered_help)
 
-        # write json data
         # FIXME: this should a regular JSON scan format
-        if py2:
-            mode = 'wb'
-            prefix = b'data='
-        if py3:
-            mode = 'w'
-            prefix = u'data='
-        with io.open(join(target_assets_dir, 'data.js'), mode) as f:
-            f.write(prefix)
+        with io.open(join(target_assets_dir, 'data.js'), 'w') as f:
+            f.write('data=')
             simplejson.dump(results, f, iterable_as_array=True)
 
     except HtmlAppAssetCopyWarning as w:

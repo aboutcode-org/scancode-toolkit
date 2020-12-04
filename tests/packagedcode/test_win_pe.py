@@ -31,8 +31,6 @@ import io
 import json
 import os
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from packagedcode import win_pe
 
@@ -49,11 +47,7 @@ class TestWinPePeInfo(FileBasedTesting):
         expected_file = test_file + self.expected_file_suffix
         result = self.get_results(test_file)
         if regen:
-            if py2:
-                mode = 'wb'
-            if py3:
-                mode = 'w'
-            with open(expected_file, mode) as out:
+            with open(expected_file, 'w') as out:
                 json.dump(result, out, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as expect:

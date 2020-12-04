@@ -87,7 +87,7 @@ class Json(object):
             return self.getquoted()
     else:
         def __str__(self):
-            # getquoted is binary in Py3
+            # getquoted is binary
             return self.getquoted().decode('ascii', 'replace')
 
 

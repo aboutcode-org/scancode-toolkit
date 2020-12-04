@@ -27,42 +27,39 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-import pytest
 
-from commoncode.system import py2
 from packagedcode import cocoapods
 from packages_test_utils import PackageTester
 
 
-@pytest.mark.skipif(py2, reason='Does not pass on Python2')
-class TestRubyGemspec(PackageTester):
+class TestCocoaPodspec(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_rubygems_can_parse_BadgeHub(self):
+    def test_cocoapods_can_parse_BadgeHub(self):
         test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec.expected.json')
         packages = cocoapods.parse(test_file)
         self.check_package(packages, expected_loc, regen=False)
 
-    def test_rubygems_can_parse_LoadingShimmer(self):
+    def test_cocoapods_can_parse_LoadingShimmer(self):
         test_file = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec.expected.json')
         packages = cocoapods.parse(test_file)
         self.check_package(packages, expected_loc, regen=False)
 
-    def test_rubygems_can_parse_nanopb(self):
+    def test_cocoapods_can_parse_nanopb(self):
         test_file = self.get_test_loc('cocoapods/podspec/nanopb.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec.expected.json')
         packages = cocoapods.parse(test_file)
         self.check_package(packages, expected_loc, regen=False)
 
-    def test_rubygems_can_parse_Starscream(self):
+    def test_cocoapods_can_parse_Starscream(self):
         test_file = self.get_test_loc('cocoapods/podspec/Starscream.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/Starscream.podspec.expected.json')
         packages = cocoapods.parse(test_file)
         self.check_package(packages, expected_loc, regen=False)
 
-    def test_rubygems_can_parse_SwiftLib(self):
+    def test_cocoapods_can_parse_SwiftLib(self):
         test_file = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec')
         expected_loc = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec.expected.json')
         packages = cocoapods.parse(test_file)

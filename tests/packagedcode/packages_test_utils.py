@@ -31,8 +31,6 @@ import os.path
 import json
 import shutil
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import testcase
 
 
@@ -50,11 +48,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
-            with open(regened_exp_loc, wmode) as ex:
+            with open(regened_exp_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
             expected_dir = os.path.dirname(expected_loc)
@@ -83,11 +77,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
-            with open(regened_exp_loc, wmode) as ex:
+            with open(regened_exp_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
             expected_dir = os.path.dirname(expected_loc)
@@ -115,4 +105,3 @@ def check_result_equals_expected_json(result, expected, regen=False):
         expected = json.loads(ex.read())
 
     assert expected == result
-

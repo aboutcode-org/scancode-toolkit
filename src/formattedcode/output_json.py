@@ -30,8 +30,6 @@ from collections import OrderedDict
 import jsonstreams
 from six import string_types
 
-from commoncode.system import py2
-from commoncode.system import py3
 from formattedcode import FileOptionType
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -64,27 +62,12 @@ if TRACE:
                                      and a or repr(a) for a in args))
 
 
-if py2:
-    mode = 'wb'
-    space = b' '
-    comma = b','
-    colon = b':'
-    eol = b'\n'
-
-if py3:
-    mode = 'w'
-    space = u' '
-    comma = u','
-    colon = u':'
-    eol = u'\n'
-
-
 @output_impl
 class JsonCompactOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json', 'output_json',),
-            type=FileOptionType(mode=mode, lazy=True),
+            type=FileOptionType(mode='w', lazy=True),
             metavar='FILE',
             help='Write scan output as compact JSON to FILE.',
             help_group=OUTPUT_GROUP,
@@ -103,7 +86,7 @@ class JsonPrettyOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json-pp', 'output_json_pp',),
-            type=FileOptionType(mode=mode, lazy=True),
+            type=FileOptionType(mode='w', lazy=True),
             metavar='FILE',
             help='Write scan output as pretty-printed JSON to FILE.',
             help_group=OUTPUT_GROUP,
@@ -134,10 +117,10 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     close_fd = False
     if isinstance(output_file, string_types):
-        output_file = open(output_file, mode)
+        output_file = open(output_file, 'w')
         close_fd = True
 
-    # Begin writing JSON to `output_file`
+    # Begin wri'w' JSON to `output_file`
     with jsonstreams.Stream(jsonstreams.Type.object, fd=output_file, close_fd=close_fd, **jsonstreams_kwargs) as s:
         # Write headers
         codebase.add_files_count_to_current_header()
@@ -151,10 +134,8 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
 
         # Write files
         codebase_files = OutputPlugin.get_files(codebase, **kwargs)
-        if py3:
-            # OutputPlugin.get_files() returns a `map()`, which isn's JSON
-            # serializable in Python 3
-            codebase_files = list(codebase_files)
+        # OutputPlugin.get_files() returns a generator, not JSON-serializable
+        codebase_files = list(codebase_files)
         s.write('files', codebase_files)
 
 

@@ -32,7 +32,6 @@ from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import PRE_SCAN_GROUP
-from commoncode import compat
 
 
 # Tracing flags
@@ -53,8 +52,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(
-            ' '.join(isinstance(a, compat.unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @pre_scan_impl

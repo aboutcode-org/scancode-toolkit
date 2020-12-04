@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 import os.path
 from unittest.case import skipIf
 
-from commoncode.system import py2
 from commoncode.system import on_windows
 from packagedcode import debian
 from packagedcode import models
@@ -69,7 +68,6 @@ class TestDebian(PackageTester):
         test_packages = list(debian.parse_status_file(test_file))
         assert [] == test_packages
 
-    @skipIf(py2, 'FileNotFoundError is not defined on Python2')
     def test_parse_status_file_non_existing_file(self):
         test_file = os.path.join(self.get_test_loc('debian'), 'foobarbaz')
         try:

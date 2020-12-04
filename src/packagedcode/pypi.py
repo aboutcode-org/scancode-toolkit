@@ -48,18 +48,10 @@ from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode.system import py2
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 
-try:
-    # Python 2
-    unicode = unicode  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
 
 """
 Detect and collect Python packages information.
@@ -253,11 +245,7 @@ def parse_with_dparse(location):
                          filetypes.pipfile,
                          filetypes.pipfile_lock):
         return
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as f:
+    with open(location) as f:
         content = f.read()
 
     df = dparse.parse(content, file_type=dependency_type)
@@ -338,12 +326,7 @@ def parse_setup_py(location):
     if not location or not location.endswith('setup.py'):
         return
 
-    # FIXME: what if this is unicode text?
-    if py2:
-        mode = 'rb'
-    else:
-        mode = 'r'
-    with open(location, mode) as inp:
+    with open(location) as inp:
         setup_text = inp.read()
 
     setup_args = OrderedDict()
@@ -784,7 +767,7 @@ def compute_normalized_license(declared_license):
         values = list(declared_license.values())
     elif isinstance(declared_license, list):
         values = list(declared_license)
-    elif isinstance(declared_license, (str, unicode,)):
+    elif isinstance(declared_license, str):
         values = [declared_license]
     else:
         return

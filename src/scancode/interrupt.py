@@ -51,7 +51,6 @@ ERROR_MSG = 'ERROR: Unknown error:\n'
 NO_ERROR = None
 NO_VALUE = None
 
-
 if not on_windows:
     """
     Some code based in part and inspired from the RobotFramework and
@@ -113,21 +112,9 @@ elif on_windows:
     from ctypes import pythonapi
     from multiprocessing import TimeoutError as MpTimeoutError
 
-    try:
-        # python 3
-        from queue import Empty as Queue_Empty  # NOQA
-        from queue import Queue  # NOQA
-    except:
-        # python 2
-        from Queue import Empty as Queue_Empty  # NOQA
-        from Queue import Queue  # NOQA
-
-    try:
-        # python 3
-        from _thread import start_new_thread
-    except ImportError:
-        # python 2
-        from thread import start_new_thread
+    from queue import Empty as Queue_Empty
+    from queue import Queue
+    from _thread import start_new_thread
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """

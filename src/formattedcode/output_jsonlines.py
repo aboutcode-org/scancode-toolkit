@@ -29,8 +29,6 @@ from collections import OrderedDict
 
 import simplejson
 
-from commoncode.system import py2
-from commoncode.system import py3
 from formattedcode import FileOptionType
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
@@ -42,29 +40,12 @@ Output plugin to write scan results as JSON lines.
 """
 
 
-if py2:
-    mode = 'wb'
-    space = b' '
-    comma = b','
-    colon = b':'
-    eol = b'\n'
-    file_key = b'files'
-
-if py3:
-    mode = 'w'
-    space = u' '
-    comma = u','
-    colon = u':'
-    eol = u'\n'
-    file_key = u'files'
-
-
 @output_impl
 class JsonLinesOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json-lines', 'output_json_lines',),
-            type=FileOptionType(mode=mode, lazy=True),
+            type=FileOptionType(mode='w', lazy=True),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',
             help_group=OUTPUT_GROUP,
@@ -86,21 +67,21 @@ class JsonLinesOutput(OutputPlugin):
         simplejson_kwargs = dict(
             iterable_as_array=True,
             encoding='utf-8',
-            separators=(comma, colon,)
+            separators=(u',', u':',)
         )
         output_json_lines.write(
             simplejson.dumps(headers, **simplejson_kwargs))
-        output_json_lines.write(eol)
+        output_json_lines.write('\n')
 
         for name, value in codebase.attributes.to_dict().items():
             if value:
                 smry = {name: value}
                 output_json_lines.write(
                     simplejson.dumps(smry, **simplejson_kwargs))
-                output_json_lines.write(eol)
+                output_json_lines.write('\n')
 
         for scanned_file in files:
-            scanned_file_line = {file_key: [scanned_file]}
+            scanned_file_line = {'files': [scanned_file]}
             output_json_lines.write(
                 simplejson.dumps(scanned_file_line, **simplejson_kwargs))
-            output_json_lines.write(eol)
+            output_json_lines.write('\n')

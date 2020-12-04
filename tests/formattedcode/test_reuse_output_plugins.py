@@ -33,8 +33,6 @@ import os
 
 import pytest
 
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileDrivenTesting
 
 
@@ -60,11 +58,7 @@ def check_plugin(plugin_class, test_file='reuse/vb.json', force_text=False):
         with io.open(result_file, 'w', encoding='utf-8') as out:
             op.process_codebase(cb, out)
     else:
-        if py2:
-            mode = 'wb'
-        if py3:
-            mode = 'w'
-        with io.open(result_file, mode) as out:
+        with io.open(result_file, 'w') as out:
             op.process_codebase(cb, out)
 
     with io.open(result_file, 'r', encoding='utf-8') as inp:

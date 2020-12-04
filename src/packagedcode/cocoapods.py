@@ -29,14 +29,10 @@ import logging
 import re
 
 import attr
-from packageurl import PackageURL
 
-from commoncode.fileutils import py2
 from commoncode import filetype
-from commoncode import fileutils
 from packagedcode import models
 from packagedcode.spec import Spec
-
 
 """
 Handle cocoapods packages manifests for macOS and iOS
@@ -45,7 +41,6 @@ See https://cocoapods.org
 """
 
 # TODO: override the license detection to detect declared_license correctly.
-
 
 TRACE = False
 
@@ -104,11 +99,16 @@ def build_package(podspec_data):
     name = podspec_data.get('name')
     version = podspec_data.get('version')
     declared_license = podspec_data.get('license')
-    summary = podspec_data.get('summary')
-    description = podspec_data.get('description')
+    summary = podspec_data.get('summary', '')
+    description = podspec_data.get('description', '')
     homepage_url = podspec_data.get('homepage_url')
     source = podspec_data.get('source')
     authors = podspec_data.get('author') or []
+    if summary and not description.startswith(summary):
+        desc = [summary]
+        if description:
+            desc += [description]
+        description = '\n'.join(desc)
 
     author_names = []
     author_email = []
@@ -166,7 +166,7 @@ person_parser_only_name = re.compile(
 def parse_person(person):
     """
     Return name and email from person string.
-    
+
     https://guides.cocoapods.org/syntax/podspec.html#authors
     Author can be in the form:
         s.author = 'Rohit Potter'
@@ -187,4 +187,4 @@ def parse_person(person):
         name = parsed.group('name')
         email = parsed.group('email')
 
-    return name, email 
+    return name, email

@@ -33,20 +33,12 @@ import os.path
 
 import pytest
 
-from commoncode import compat
 from commoncode import fileutils
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
 from commoncode.resource import Codebase
 
-
-if py2:
-    mode = 'wb'
-if py3:
-    mode = 'w'
 
 
 class TestIsPom(testcase.FileBasedTesting):
@@ -85,7 +77,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
     if regen:
-        with open(expected_json_loc, mode) as ex:
+        with open(expected_json_loc, 'w') as ex:
             json.dump(results, ex, indent=2)
 
     with io.open(expected_json_loc, encoding='utf-8') as ex:
@@ -502,9 +494,7 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
 
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
-    if py2 and isinstance(test_name, compat.unicode):
-        test_name = test_name.encode('utf-8')
-    if py3 and isinstance(test_name, bytes):
+    if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
     test_pom.__name__ = test_name

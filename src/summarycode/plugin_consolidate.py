@@ -33,7 +33,6 @@ from collections import OrderedDict
 import attr
 
 from cluecode.copyrights import CopyrightDetector
-from commoncode.system import py3
 from commoncode.text import python_safe_name
 from license_expression import Licensing
 from packagedcode import get_package_instance
@@ -44,10 +43,6 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode import copyright_summary
-
-
-if py3:
-    unicode = str
 
 
 # Tracing flags
@@ -69,7 +64,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s
