@@ -1,0 +1,612 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: devscripts
+Upstream-Contact: Devscripts maintainers <devscripts@packages.debian.org>
+Source: https://salsa.debian.org/debian/devscripts
+
+Files: *
+Copyright: 1997, Klee Dienes <klee@mit.edu>
+ Christoph Lameter <clameter@debian.org>
+ 1998-2006, Julian Gilbey  <jdg@debian.org>
+License: GPL-2+
+Comment: This is a package written originally by
+ Christoph Lameter <clameter@debian.org> and extensively modified by
+ Julian Gilbey <jdg@debian.org>.
+ .
+ Most of the Devscripts::* Perl modules are from the deprecated
+ dpkg-perl package, copyright (C) 1997  Klee Dienes <klee@mit.edu>
+ .
+ Many of the scripts were originally written by other people. Please
+ see the individual copyright below. Some files don't have an explicit
+ statement of copyright ownership. Pursuant to the Berne Convention for the
+ Protection of Literary and Artistic Works, it is assumed that all content
+ is copyright by its respective authors unless otherwise stated
+
+Files: doc/edit-patch.1 scripts/edit-patch.sh
+Copyright: 2009-2011, Canonical Ltd.
+License: GPL-3
+
+Files: doc/what-patch.1 scripts/what-patch.sh test/test_uscan
+Copyright: 2009,      Jonathan Patrick Davies <jpds@ubuntu.com>
+           2006-2008, Kees Cook <kees@ubuntu.com>
+           2007-2008, Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>
+           2013,      Rafael Laboissiere <rafael@laboissiere.net>
+           2017       Chris Lamb <lamby@debian.org>
+License: GPL-3+
+
+Files: doc/suspicious-source.1
+       doc/wrap-and-sort.1
+       scripts/devscripts/*
+       scripts/devscripts/test/*
+       scripts/sadt*
+       scripts/setup.py
+       scripts/suspicious-source
+       scripts/wrap-and-sort
+Copyright: 2008-2018, Benjamin Drung <bdrung@debian.org>
+           2010-2011, Stefano Rivera <stefanor@ubuntu.com>
+License: ISC
+
+Files: examples/*.procmail
+Copyright: 1999, Edward Betts <edward@debian.org>
+License: GPL-2+
+
+Files:lib/Devscripts/DB_File_Lock.pm
+Copyright: 1999-2000, David Harris <dharris@drh.net>
+License: Artistic or GPL-1+
+
+Files: lib/Devscripts/Compression.pm
+Copyright: 2002, Julian Gilbey <jdg@debian.org>
+ 2013, James McCoy <jamessan@debian.org>
+License: GPL-2+
+
+Files: lib/Devscripts/Config.pm lib/Devscripts/Utils.pm
+Copyright: 2018, Xavier Guimard <yadd@debian.org>
+License: GPL-2+
+
+Files: lib/Devscripts/Debbugs.pm
+Copyright: 2008, Adam D. Barratt
+License: GPL-2+
+Comment: select() is Copyright (C) 2007 Don Armstrong
+
+Files: lib/Devscripts/Packages.pm lib/Devscripts/Set.pm
+Copyright: 2001, Bill Allombert <ballombe@debian.org>
+ 2002, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: po4a/po/de.po
+Copyright: Christoph Lameter <clameter@debian.org>
+ Julian Gilbey <jdg@debian.org>
+ Klee Dienes
+ 2012-2016, Chris Leick <c.leick@vollbio.de>
+License: GPL-2+
+
+Files: po4a/po/fr.po
+Copyright: 2004-2009, Nicolas François <nicolas.francois@centraliens.net>
+ 2005, Guillaume Delacour <guillaume.delacour@gmail.com>
+ 2006, Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>
+ 2006, Thomas Huriaux <thomas.huriaux@gmail.com>
+ 2006-2007, Julien Cristau <jcristau@debian.org>
+ 2009, PHAN Thi Thanh <pthanh2003@hotmail.com>
+ 2010-2014, David Prévot <david@tilapin.org>
+ 2017-2018, Jean-Pierre Giraud <jean-pierregiraud@neuf.fr>
+License: GPL-2+
+
+Files: scripts/annotate-output*
+Copyright: 2003-2004, Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+License: GPL-2
+
+Files: scripts/archpath*
+Copyright: 2005, Colin Watson <cjwatson@debian.org>
+License: GPL-2+
+
+Files: scripts/bts.pl
+Copyright: 2001-2003, Julian Gilbey <jdg@debian.org>
+ 2007, Josh Triplett <josh@freedesktop.org>
+License: GPL-2+
+
+Files: scripts/build-rdeps.pl
+Copyright: Patrick Schoenfeld
+ 2015, Johannes Schauer <josch@debian.org>
+ 2017, James McCoy <jamessan@debian.org>
+License: GPL-2+
+
+Files: scripts/chdist.pl
+Copyright: 2007, Lucas Nussbaum
+ 2007, Luk Claes
+License: GPL-2+
+
+Files: scripts/checkbashisms.pl
+Copyright: 2003, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+Comment: This script is essentially copied from
+ /usr/share/lintian/checks/scripts, which is
+ Copyright (C) 1998 Richard Braakman
+ Copyright (C) 2002 Josip Rodin
+
+Files: scripts/cowpoke.sh
+Copyright: 2007-2014, Ron <ron@debian.org>
+License: GPL-2+
+
+Files: scripts/dcmd.sh
+Copyright: 2008, Romain Francoise <rfrancoise@debian.org>
+ 2008, Christoph Berg <myon@debian.org>
+ 2008, Adam D. Barratt <adsb@debian.org>
+License: GPL-2+
+
+Files: scripts/dcontrol.pl
+Copyright: 2009, Christoph Berg <myon@debian.org>
+License: GPL-2+
+
+Files: scripts/dd-list.*
+Copyright: 2005, Lars Wirzenius
+ 2005, Joey Hess <joeyh@debian.org>
+License: GPL-2+
+
+Files: scripts/debcheckout.pl
+Copyright: 2007-2009, Stefano Zacchiroli <zack@debian.org>
+ 2010, Christoph Berg <myon@debian.org>
+License: GPL-2+
+
+Files: scripts/debcommit.pl
+Copyright: Joey Hess <joeyh@debian.org>
+License: GPL-2+
+
+Files: scripts/debdiff*
+Copyright: 1998-1999, Yann Dirson <dirson@debian.org>
+ 1999-2001, Julian Gilbey <jdg@debian.org>
+License: GPL-2
+
+Files: scripts/debdiff-apply*
+Copyright: 2016-2017, Ximin Luo <infinity0@debian.org>
+License: GPL-3+
+
+Files: scripts/debi.pl
+Copyright: 1999, Jim Van Zandt <jrv@vanzandt.mv.com>
+ 1999-2003, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/deb-reversion*
+Copyright: martin f. krafft <madduck@madduck.net>
+License: Artistic-2.0
+
+Files: scripts/debrepro.sh
+Copyright: 2016, Antonio Terceiro <terceiro@debian.org>
+License: GPL-2+
+
+Files: scripts/debrsign.*
+Copyright: 1999, Mike Goldman
+ 1999, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/debsnap*
+Copyright: 2010, David Paleino <d.paleino@gmail.com>
+License: GPL-3+
+
+Files: scripts/dep3changelog.pl
+Copyright: 2010, Steve Langasek <vorlon@debian.org>
+License: GPL-2+
+
+Files: scripts/desktop2menu.pl
+Copyright: 2007, Sune Vuorela <debian@pusling.com>
+ 2007, Adam D. Barratt <adam@adam-barratt.org.uk>
+License: GPL-2+
+
+Files: scripts/dget.pl
+Copyright: 2005-2013, Christoph Berg <myon@debian.org>
+ 2005-2006, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/diff2patches*
+Copyright: 2007-2008, Raphael Geissert <atomo64@gmail.com>
+License: GPL-3+
+
+Files: scripts/dpkg-depcheck.*
+Copyright: 2001, Bill Allombert <ballombe@debian.org>
+ 2002-2005, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/dscextract.sh
+Copyright: 2011, Christoph Berg <myon@debian.org>
+License: GPL-2+
+
+Files: scripts/dscverify.pl
+Copyright: 1998, Roderick Schertler <roderick@argon.org>
+ 1999-2002, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/getbuildlog.*
+Copyright: 2008, Frank S. Thomas <fst@debian.org>
+License: GPL-2+
+
+Files: scripts/git-deborig*
+Copyright: 2016-2018, Sean Whitton <spwhitton@spwhitton.name>
+License: GPL-3+
+
+Files: scripts/grep-excuses.*
+Copyright: 2002, Joey Hess <joeyh@debian.org>
+License: GPL-2+
+Comment: Small mods Copyright 2002, Julian Gilbey <jdg@debian.org>
+
+Files: scripts/hardening-check.pl
+Copyright: 2009-2013, Kees Cook <kees@debian.org>
+License: GPL-2+
+
+Files: scripts/list-unreleased.*
+Copyright: 2007, Frans Pop <elendil@planet.nl>
+License: GPL-2+
+
+Files: scripts/ltnu.*
+Copyright: 2017, Axel Beckert <abe@debian.org>
+License: GPL-2+
+
+Files: scripts/manpage-alert.*
+Copyright: 2005, Branden Robinson
+License: GPL-2+
+Comment: Changes copyright 2007 by their respective authors
+
+Files: scripts/mass-bug.pl
+Copyright: 2006, Joey Hess <joeyh@debian.org>
+License: GPL-2+
+
+Files: scripts/mergechanges.*
+Copyright: 2002, Gergely Nagy <algernon@debian.org>
+ 2002-2003, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/mk-build-deps.pl
+Copyright: 2008, Vincent Fourmond
+License: GPL-2+
+
+Files: scripts/mk-origtargz* lib/Devscripts/MkOrigtargz/*
+Copyright: 2014, Joachim Breitner <nomeata@debian.org>
+ 2015, James McCoy <jamessan@debian.org>
+ 2018, Xavier Guimard <yadd@debian.org>
+License: GPL-2+
+Comment: It contains code formerly found in scripts/uscan.pl
+
+Files: scripts/namecheck*
+Copyright: 2008, Steve Kemp
+License: Artistic or GPL-1+
+
+Files: scripts/nmudiff*
+Copyright: 2006, Steinar H. Gunderson
+License: GPL-2
+
+Files: scripts/origtargz.pl
+Copyright: 2012-2018, Christoph Berg <myon@debian.org>
+License: GPL-2+
+
+Files: scripts/plotchangelog.*
+Copyright: 1999, Joey Hess <joey@kitenet.net>
+ 2003, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+
+Files: scripts/rc-alert.*
+Copyright: 2003, Anthony DeRobertis
+ 2003, Julian Gilbey <jdg@debian.org>
+ 2008, Adam D. Barratt <adam@adam-barratt.org.uk>
+ 2009, Jan Hauke Rahm <info@jhr-online.de>
+License: GPL-2+
+
+Files: scripts/reproducible-check
+Copyright: 2017, Chris Lamb <lamby@debian.org>
+License: GPL-2+
+
+Files: scripts/rmadison.pl
+Copyright: 2006-2013; Christoph Berg <myon@debian.org>
+ 2010, Uli Martens <uli@youam.net>
+License: GPL-2+
+
+Files: scripts/sadt*
+Copyright: 2012-2014, Jakub Wilk <jwilk@debian.org>
+License: GPL-2+
+
+Files: scripts/salsa* lib/Devscripts/Salsa/* test/test_salsa test/t/*
+Copyright: 2018, Xavier Guimard <yadd@debian.org>
+License: GPL-2+
+Comment: It contains code formerly found in dpt-salsa,
+ copyright 2018, gregor hermann <gregoa@debian.org>
+
+Files: test/t/salsa.*
+Copyright: 2018, Xavier Guimard <yadd@debian.org>
+License: GPL-2+
+Comment: Idea taken from GitLab::api::v4, copyright:
+ 2018, Aran Deltac <bluefeet@gmail.com>
+
+Files: scripts/suspicious-source
+Copyright: 2010-2018, Benjamin Drung <bdrung@debian.org>
+License: GPL-2+
+
+Files: scripts/tagpending.pl scripts/transition-check.pl
+Copyright: 2008, Adam D. Barratt
+License: GPL-2+
+
+Files: scripts/uscan* lib/Devscripts/Uscan/*
+Copyright: 2002-2006, Julian Gilbey <jdg@debian.org>
+ 2018, Xavier Guimard <yadd@debian.org>
+License: GPL-2+
+
+Files: scripts/uupdate*
+Copyright: 1999-2003, Julian Gilbey <jdg@debian.org>
+ 2015, Osamu Aoki <osamu@debian.org>
+License: GPL-2+
+
+Files: scripts/whodepends* scripts/wnpp-alert* scripts/wnpp-check* scripts/pts-subscribe.sh
+Copyright: Authors
+License: Public-Domain
+Comment: The upstream distribution does not contain an explicit statement of
+ copyright ownership. Pursuant to the Berne Convention for the Protection of
+ Literary and Artistic Works, it is assumed that all content is copyright by
+ its respective authors unless otherwise stated
+
+Files: scripts/who-permits-upload.pl
+Copyright: 2012, Arno Töll <arno@debian.org>
+License: GPL-2+
+
+Files: scripts/who-uploads.sh
+Copyright: 2006, Julian Gilbey <jdg@debian.org>
+License: GPL-2+
+Comment: Based on an original script
+ copyright 2006 Adeodato Simó <dato@net.com.org.es>
+
+Files: scripts/*.bash_completion
+Copyright: 2015, Nicholas Bamber <nicholas@periapt.co.uk>
+License: GPL-2+
+
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License can be
+ found in `/usr/share/common-licenses/Artistic'.
+
+License: Artistic-2.0
+ Copyright (c) 2000-2006, The Perl Foundation.
+ .
+ Everyone is permitted to copy and distribute verbatim copies of this
+ license document, but changing it is not allowed.
+ .
+ Preamble
+ .
+ This license establishes the terms under which a given free software
+ Package may be copied, modified, distributed, and/or redistributed.
+ The intent is that the Copyright Holder maintains some artistic
+ control over the development of that Package while still keeping the
+ Package available as open source and free software.
+ .
+ You are always permitted to make arrangements wholly outside of this
+ license directly with the Copyright Holder of a given Package. If the
+ terms of this license do not permit the full use that you propose to
+ make of the Package, you should contact the Copyright Holder and seek
+ a different licensing arrangement.
+ .
+ Definitions
+ .
+ "Copyright Holder" means the individual(s) or organization(s) named in
+ the copyright notice for the entire Package.
+ .
+ "Contributor" means any party that has contributed code or other
+ material to the Package, in accordance with the Copyright Holder's
+ procedures.
+ .
+ "You" and "your" means any person who would like to copy, distribute,
+ or modify the Package.
+ .
+ "Package" means the collection of files distributed by the Copyright
+ Holder, and derivatives of that collection and/or of those files. A
+ given Package may consist of either the Standard Version, or a
+ Modified Version.
+ .
+ "Distribute" means providing a copy of the Package or making it
+ accessible to anyone else, or in the case of a company or
+ organization, to others outside of your company or organization.
+ .
+ "Distributor Fee" means any fee that you charge for Distributing this
+ Package or providing support for this Package to another party. It
+ does not mean licensing fees.
+ .
+ "Standard Version" refers to the Package if it has not been modified,
+ or has been modified only in ways explicitly requested by the
+ Copyright Holder.
+ .
+ "Modified Version" means the Package, if it has been changed, and such
+ changes were not explicitly requested by the Copyright Holder.
+ .
+ "Original License" means this Artistic License as Distributed with the
+ Standard Version of the Package, in its current version or as it may
+ be modified by The Perl Foundation in the future.
+ .
+ "Source" form means the source code, documentation source, and
+ configuration files for the Package.
+ .
+ "Compiled" form means the compiled bytecode, object code, binary, or
+ any other form resulting from mechanical transformation or translation
+ of the Source form.
+ .
+ Permission for Use and Modification Without Distribution
+ .
+ (1) You are permitted to use the Standard Version and create and use
+     Modified Versions for any purpose without restriction, provided
+     that you do not Distribute the Modified Version.
+ .
+ Permissions for Redistribution of the Standard Version
+ .
+ (2) You may Distribute verbatim copies of the Source form of the
+     Standard Version of this Package in any medium without
+     restriction, either gratis or for a Distributor Fee, provided
+     that you duplicate all of the original copyright notices and
+     associated disclaimers. At your discretion, such verbatim copies
+     may or may not include a Compiled form of the Package.
+ .
+ (3) You may apply any bug fixes, portability changes, and other
+     modifications made available from the Copyright Holder. The
+     resulting Package will still be considered the Standard Version,
+     and as such will be subject to the Original License.
+ .
+ Distribution of Modified Versions of the Package as Source
+ .
+ (4) You may Distribute your Modified Version as Source (either gratis
+     or for a Distributor Fee, and with or without a Compiled form of
+     the Modified Version) provided that you clearly document how it
+     differs from the Standard Version, including, but not limited to,
+     documenting any non-standard features, executables, or modules,
+     and provided that you do at least ONE of the following:
+ .
+    (a) make the Modified Version available to the Copyright Holder
+        of the Standard Version, under the Original License, so that
+        the Copyright Holder may include your modifications in the
+        Standard Version.
+    (b) ensure that installation of your Modified Version does not
+        prevent the user installing or running the Standard Version.
+        In addition, the Modified Version must bear a name that is
+        different from the name of the Standard Version.
+    (c) allow anyone who receives a copy of the Modified Version to
+        make the Source form of the Modified Version available to
+        others under
+        (i)  the Original License or
+        (ii) a license that permits the licensee to freely copy,
+             modify and redistribute the Modified Version using the
+             same licensing terms that apply to the copy that the
+             licensee received, and requires that the Source form of
+             the Modified Version, and of any works derived from it,
+             be made freely available in that license fees are
+             prohibited but Distributor Fees are allowed.
+ .
+ Distribution of Compiled Forms of the Standard Version or Modified
+ Versions without the Source
+ .
+ (5) You may Distribute Compiled forms of the Standard Version without
+     the Source, provided that you include complete instructions on
+     how to get the Source of the Standard Version. Such instructions
+     must be valid at the time of your distribution. If these
+     instructions, at any time while you are carrying out such
+     distribution, become invalid, you must provide new instructions
+     on demand or cease further distribution. If you provide valid
+     instructions or cease distribution within thirty days after you
+     become aware that the instructions are invalid, then you do not
+     forfeit any of your rights under this license.
+ .
+ (6) You may Distribute a Modified Version in Compiled form without
+     the Source, provided that you comply with Section 4 with respect
+     to the Source of the Modified Version.
+ .
+ Aggregating or Linking the Package
+ .
+ (7) You may aggregate the Package (either the Standard Version or
+     Modified Version) with other packages and Distribute the
+     resulting aggregation provided that you do not charge a licensing
+     fee for the Package. Distributor Fees are permitted, and licensing
+     fees for other components in the aggregation are permitted. The
+     terms of this license apply to the use and Distribution of the
+     Standard or Modified Versions as included in the aggregation.
+ .
+ (8) You are permitted to link Modified and Standard Versions with
+     other works, to embed the Package in a larger work of your own,
+     or to build stand-alone binary or bytecode versions of
+     applications that include the Package, and Distribute the result
+     without restriction, provided the result does not expose a direct
+     interface to the Package.
+ .
+ Items That are Not Considered Part of a Modified Version
+ .
+ (9) Works (including, but not limited to, modules and scripts) that
+     merely extend or make use of the Package, do not, by themselves,
+     cause the Package to be a Modified Version. In addition, such
+     works are not considered parts of the Package itself, and are
+     not subject to the terms of this license.
+ .
+ General Provisions
+ .
+ (10) Any use, modification, and distribution of the Standard or
+      Modified Versions is governed by this Artistic License. By
+      using, modifying or distributing the Package, you accept this
+      license. Do not use, modify, or distribute the Package, if you
+      do not accept this license.
+ .
+ (11) If your Modified Version has been derived from a Modified
+      Version made by someone other than you, you are nevertheless
+      required to ensure that your Modified Version complies with
+      the requirements of this license.
+ .
+ (12) This license does not grant you the right to use any trademark,
+      service mark, tradename, or logo of the Copyright Holder.
+ .
+ (13) This license includes the non-exclusive, worldwide,
+      free-of-charge patent license to make, have made, use, offer to
+      sell, import and otherwise transfer the Package with respect to
+      any patent claims licensable by the Copyright Holder that are
+      necessarily infringed by the Package. If you institute patent
+      litigation (including a cross-claim or counterclaim) against
+      any party alleging that the Package constitutes direct or
+      contributory patent infringement, then this Artistic License to
+      you shall terminate on the date that such litigation is filed.
+ .
+ (14) Disclaimer of Warranty: THE PACKAGE IS PROVIDED BY THE COPYRIGHT
+      HOLDER AND CONTRIBUTORS "AS IS' AND WITHOUT ANY EXPRESS OR
+      IMPLIED WARRANTIES. THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT ARE
+      DISCLAIMED TO THE EXTENT PERMITTED BY YOUR LOCAL LAW. UNLESS
+      REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+      DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
+      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-1'
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'
+
+License: GPL-3
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 3.
+ .
+ On Debian systems, the complete text of version 3 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-3'
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 3 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-3'
+
+License: ISC
+ Permission to use, copy, modify, and/or distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+ REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+ PERFORMANCE OF THIS SOFTWARE.
+
+License: Public-Domain
+ To the extent possible under law, the author(s) have dedicated all copyright
+ and related and neighboring rights to this software to the public domain
+ worldwide. This software is distributed without any warranty.

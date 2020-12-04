@@ -1,0 +1,6 @@
+license_expression: bsd-new AND mit
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 98
+ignorable_urls:
+    - http://golang.org/

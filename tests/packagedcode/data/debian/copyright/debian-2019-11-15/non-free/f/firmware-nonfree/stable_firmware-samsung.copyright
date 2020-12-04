@@ -1,0 +1,14 @@
+The binary firmware may be downloaded from
+https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+
+Copyright 2011-2014 Samsung Electronics Co.
+
+Samsung grants permission to use and redistribute aforementioned firmware
+files for the use with Exynos series devices, but not as part of the Linux
+kernel, or in any other form which would require these files themselves
+to be covered by the terms of the GNU General Public License.
+
+These firmware files are distributed in the hope that they will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+

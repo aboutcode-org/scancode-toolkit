@@ -1,0 +1,7 @@
+key: etalab-2.0-fr
+short_name: Etalab Open License 2.0
+name: Etalab Open License 2.0
+#spdx_license_key: etalab-2.0
+other_urls:
+    - https://github.com/DISIC/politique-de-contribution-open-source/blob/master/LICENSE.pdf
+    - https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE

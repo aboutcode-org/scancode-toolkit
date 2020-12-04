@@ -28,9 +28,10 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-
+from unittest import skipIf
 import pytest
 
+from commoncode.system import py2
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
@@ -1085,6 +1086,27 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == result
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
+    def test_tokenize_matched_text_does_not_crash_on_turkish_unicode(self):
+        querys = u'İrəli'
+        result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
+
+        expected = [
+            Token(value='i', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
+            Token(value='rəli', line_num=1, pos=-1, is_text=True, is_matched=False, is_known=False),
+        ]
+        assert expected == result
+
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
+    def test_tokenize_matched_text_behaves_like_query_tokenizer_on_turkish_unicode(self):
+        from licensedcode.tokenize import query_tokenizer
+        querys = u'İrəli'
+        matched_text_result = tokenize_matched_text(location=None, query_string=querys, dictionary={})
+        matched_text_result = [t.value for t in matched_text_result]
+        query_tokenizer_result = list(query_tokenizer(querys))
+
+        assert matched_text_result == query_tokenizer_result
+
     def test_reportable_tokens_filter_tokens_does_not_strip_last_token_value(self):
         tokens = [
             Token(value=u'\n', line_num=1, pos=-1, is_text=False, is_matched=False, is_known=False),
@@ -1180,12 +1202,6 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
         assert expected == results
 
-#  This source code is licensed under both the Apache 2.0 license (found in the
-#  LICENSE file in the root directory of this source tree) and the GPLv2 (found
-#  in the COPYING file in the root directory of this source tree).
-#  You may select, at your option, one of the above-listed licenses
-
-
     @pytest.mark.scanslow
     def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
         query_location = self.get_test_loc('matched_text_spdx/query.txt')
@@ -1224,3 +1240,56 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         matched_text = match.matched_text(_usecache=False, whole_lines=True)
         assert expected == matched_text
 
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_with_diacritic_in_rules(self):
+        rule_dir = self.get_test_loc('match/turkish_unicode/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_loc = self.get_test_loc('match/turkish_unicode/query')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=False, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = [
+            'Licensed under the Apache License, Version 2.0\r\nnext_label=irəli',
+            'İ license MIT',
+            'İ license MIT',
+            'Licensed under the Apache License, Version 2.0\r\nnext_label=irəli',
+            'lİcense mit'
+        ]
+
+        assert expected == matched_texts
+
+    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
+        idx = cache.get_index()
+        query_loc = self.get_test_loc('match/turkish_unicode/query')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=False, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = [
+            'Licensed under the Apache License, Version 2.0',
+            'license MIT',
+            'license MIT',
+            'Licensed under the Apache License, Version 2.0'
+        ]
+
+        assert expected == matched_texts
+
+    def test_matched_text_ignores_whole_lines_in_binary(self):
+        rule_dir = self.get_test_loc('match/binary_text/rules')
+        idx = index.LicenseIndex(load_rules(rule_dir))
+        query_loc = self.get_test_loc('match/binary_text/gosu')
+        matches = idx.match(location=query_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=True, highlight=False, _usecache=False)
+            for m in matches
+        ]
+
+        expected = ['license: GPL-3 (']
+
+        assert expected == matched_texts

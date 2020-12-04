@@ -1,0 +1,6 @@
+license_expression: gfdl-1.1-plus OR cc-by-sa-3.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/3.0
+    - http://www.gnu.org/copyleft/fdl.html

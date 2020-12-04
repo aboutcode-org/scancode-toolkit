@@ -1,0 +1,7 @@
+license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 95
+referenced_filenames:
+    - linux/basicplugin.c
+    - licenses

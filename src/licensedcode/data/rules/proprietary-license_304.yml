@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: https://raw.githubusercontent.com/WinMerge/freeimage/f8c084fbf8917223c4925fe23f5621229724c58d/Source/OpenEXR/Copyrights/openexr/PATENTS
+    this is very similar to other BSD additions from Google such as google-patent-license-golang,
+    but the wording makes it more restrictive.

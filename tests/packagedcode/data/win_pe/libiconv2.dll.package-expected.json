@@ -1,0 +1,47 @@
+{
+  "type": "winexe",
+  "namespace": null,
+  "name": "LibIconv",
+  "version": "1.9.2.1519",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "LibIconv: convert between character encodings",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "organization",
+      "role": "author",
+      "name": "GNU <www.gnu.org>",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
+  "license_expression": null,
+  "declared_license": {
+    "LegalCopyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
+    "LegalTrademarks": "GNU\u00ae, LibIconv\u00ae, libiconv2\u00ae",
+    "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html."
+  },
+  "notice_text": null,
+  "root_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:winexe/LibIconv@1.9.2.1519",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}

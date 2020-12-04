@@ -1,0 +1,6 @@
+license_expression: apache-2.0 OR epl-2.0
+is_license_tag: yes
+relevance: 99
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.txt
+    - http://www.eclipse.org/legal/epl-v20.html

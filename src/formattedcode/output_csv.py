@@ -34,11 +34,11 @@ from six import string_types
 import unicodecsv
 
 from commoncode import compat
+from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
-from scancode import FileOptionType
-from scancode import OUTPUT_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
 
 
 # Tracing flags
@@ -66,7 +66,7 @@ if TRACE:
 class CsvOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--csv',),
+        PluggableCommandLineOption(('--csv',),
             type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',

@@ -41,6 +41,39 @@ from licensedcode import models
 from licensedcode import match_hash
 
 
+"""
+A script to generate license detection rules from a simple text data file.
+
+Note that the .yml data files are validated and the script will report
+errors and stop if a rule data is not valid.
+
+Typicaly validation errors include:
+- missing license expressions
+- unknown license keys
+- presence of multiple is_license_xxx: flags (only one is allowed)
+
+The file buildrules-template.txt is an template of this data file.
+The file buildrules-exmaples.txt is an example of this data file.
+This file contains one or more block of data such as:
+
+ ----------------------------------------
+ license_expression: foo OR bar
+ relevance: 100
+ is_license_notice: yes
+ ---
+ This is licensed under a choice of foo or bar.
+ ----------------------------------------
+
+The first section (before ---) contains the data in valid YAML that
+will be saved in the rule's .yml file.
+
+The second section (after ---) contains the rule text saved in the
+the .RULE text file.
+
+If a RULE already exists, it is skipped.
+"""
+
+
 @attr.attrs(slots=True)
 class LicenseRule(object):
     data = attr.ib()
@@ -157,14 +190,67 @@ def find_rule_base_loc(license_expression):
         idx += 1
 
 
+def validate_license_rules(rules_data, licensing):
+    """
+    Checks all rules and return a list of errors
+    """
+    errors = []
+    for rule in rules_data:
+        is_negative = rule.data.get('is_negative')
+        is_false_positive = rule.data.get('is_false_positive')
+        fp_flags = [f for f in [is_negative, is_false_positive] if f]
+        if len(fp_flags) > 1:
+            msg = 'Invalid rule with mutually exclusive false positive/negative flags: {}'.format(rule)
+            errors.append(msg)
+        if is_negative:
+            continue
+
+        relevance = rule.data.get('relevance', 0) or 0
+        relevance = float(relevance)
+        if relevance < 0 or relevance > 100:
+            msg = 'Invalid rule relevance: {}'.format(rule)
+            errors.append(msg)
+
+        minimum_coverage = rule.data.get('minimum_coverage', 0) or 0
+        minimum_coverage = float(minimum_coverage)
+        if minimum_coverage < 0 or minimum_coverage > 100:
+            msg = 'Invalid rule minimum_coverage: {}'.format(rule)
+            errors.append(msg)
+
+        is_license_notice = rule.data.get('is_license_notice')
+        is_license_text = rule.data.get('is_license_text')
+        is_license_reference = rule.data.get('is_license_reference')
+        is_license_tag = rule.data.get('is_license_tag')
+
+        type_flags = [f for f in [is_license_notice, is_license_text, is_license_tag, is_license_reference] if f]
+        if len(type_flags) != 1:
+            msg = 'Invalid rule is_license_* flags. Only one allowed. At least one needed: {}'.format(rule)
+            errors.append(msg)
+
+        license_expression = rule.data.get('license_expression')
+        if not license_expression:
+            msg = 'Missing license_expression for rule: {}'.format(rule)
+            errors.append(msg)
+
+        try:
+            licensing.parse(license_expression, validate=True, simple=True)
+        except Exception as e:
+            msg = 'Invalid license_expression for rule: {}\n{}'.format(rule, str(e))
+            errors.append(msg)
+
+    return errors
+
+
 @click.command()
 @click.argument('licenses_file', type=click.Path(), metavar='FILE')
 @click.help_option('-h', '--help')
 def cli(licenses_file):
     """
-    Create rules from a structured text file
+    Create rules from a text file with delimited blocks of metadata and texts.
 
-    For instance:
+    As an example a file would contains one of more blocks such as this:
+
+\b
         ----------------------------------------
         license_expression: lgpl-2.1
         relevance: 100
@@ -183,6 +269,16 @@ def cli(licenses_file):
     licensing = Licensing(licenses.values())
 
     print()
+    errors = validate_license_rules(rules_data, licensing)
+    if errors:
+        print('Invalid rules: exiting....')
+        for error in errors:
+            print(error)
+            print()
+
+        raise Exception('Invalid rules: exiting....')
+
+    print()
     for rule in rules_data:
         is_negative = rule.data.get('is_negative')
         is_false_positive = rule.data.get('is_false_positive')
@@ -190,14 +286,12 @@ def cli(licenses_file):
         if existing and not is_negative:
             print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
             continue
-        
+
         if is_negative:
             base_name = 'not-a-license'
         else:
             license_expression = rule.data.get('license_expression')
-            if not license_expression:
-                raise Exception('Missing license_expression for text:', rule)
-            licensing.parse(license_expression, validate=True, simple=True)
+            license_expression = str(licensing.parse(license_expression, validate=True, simple=True))
             base_name = license_expression
             if is_false_positive:
                 base_name = 'false-positive_' + base_name

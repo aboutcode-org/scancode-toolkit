@@ -40,6 +40,7 @@ from os.path import join
 import click
 import simplejson
 
+from commoncode import compat
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
@@ -49,13 +50,11 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
-
+from formattedcode import FileOptionType
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-from scancode import CommandLineOption
-from scancode import FileOptionType
-from scancode import OUTPUT_GROUP
-from commoncode import compat
 
 """
 Output plugins to write scan results using templates such as HTML.
@@ -71,7 +70,7 @@ TEMPLATES_DIR = join(dirname(__file__), 'templates')
 class HtmlOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--html',),
+        PluggableCommandLineOption(('--html',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as HTML to FILE.',
@@ -94,7 +93,7 @@ class HtmlOutput(OutputPlugin):
 class CustomTemplateOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--custom-output',),
+        PluggableCommandLineOption(('--custom-output',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             required_options=['custom_template'],
             metavar='FILE',
@@ -103,7 +102,7 @@ class CustomTemplateOutput(OutputPlugin):
             help_group=OUTPUT_GROUP,
             sort_order=60),
 
-        CommandLineOption(('--custom-template',),
+        PluggableCommandLineOption(('--custom-template',),
             type=click.Path(
                 exists=True, file_okay=True, dir_okay=False,
                 readable=True, path_type=PATH_TYPE),
@@ -244,7 +243,7 @@ class HtmlAppOutput(OutputPlugin):
     Write scan output as a mini HTML application.
     """
     options = [
-        CommandLineOption(('--html-app',),
+        PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='(DEPRECATED: use the ScanCode Workbench app instead ) '
@@ -321,12 +320,9 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         with io.open(join(target_assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
             f.write(rendered_help)
 
-        # write json data
         # FIXME: this should a regular JSON scan format
-        mode = 'w'
-        prefix = u'data='
-        with io.open(join(target_assets_dir, 'data.js'), mode) as f:
-            f.write(prefix)
+        with io.open(join(target_assets_dir, 'data.js'), 'w') as f:
+            f.write('data=')
             simplejson.dump(results, f, iterable_as_array=True)
 
     except HtmlAppAssetCopyWarning as w:

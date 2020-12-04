@@ -1,0 +1,11 @@
+key: cc-by-sa-3.0-at
+short_name: CC-BY-SA-3.0-AT
+name: Creative Commons Attribution Share Alike License 3.0 Austria
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by-sa/3.0/at/legalcode
+spdx_license_key: CC-BY-SA-3.0-AT
+faq_url: https://creativecommons.org/licenses/by-sa/3.0/at/
+ignorable_urls:
+  - https://creativecommons.org/compatiblelicenses
+

@@ -1,0 +1,6 @@
+license_expression: bsd-new AND other-permissive
+is_license_text: yes
+relevance: 99
+minimum_coverage: 95
+notes: the 3rd clause has this extra term "derived from this source code" the 4th clause is
+    treated as an "other-permissive" license See https://onl.wustl.edu/restricted/npr-plugins/

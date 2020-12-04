@@ -8,8 +8,7 @@
         "--license": true,
         "--license-text": true,
         "--license-text-diagnostics": true,
-        "--strip-root": true,
-        "--verbose": true
+        "--strip-root": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
@@ -133,6 +132,7 @@
       "license_expressions": [
         "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
       ],
+      "percentage_of_license_text": 100.0,
       "scan_errors": []
     },
     {
@@ -176,6 +176,7 @@
       "license_expressions": [
         "unlicense"
       ],
+      "percentage_of_license_text": 5.27,
       "scan_errors": []
     }
   ]

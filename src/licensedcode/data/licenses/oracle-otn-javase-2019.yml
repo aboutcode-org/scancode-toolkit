@@ -1,0 +1,19 @@
+key: oracle-otn-javase-2019
+short_name: OTN for Oracle Java SE 2019
+name: Oracle Technology Network License Agreement for Oracle Java SE
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://www.oracle.com/downloads/licenses/oracle-javase-license.html
+faq_url: https://www.oracle.com/technetwork/java/javase/overview/oracle-jdk-faqs.html
+other_urls:
+    - https://www.oracle.com/technetwork/java/javase/terms/oaa.html
+    - https://www.oracle.com/downloads/licenses/javase-license1.html
+ignorable_urls:
+    - http://oracle.com/contracts
+    - http://www.oracle.com/goto/opensourcecode
+    - http://www.oracle.com/privacy
+    - https://docs.oracle.com/en/java
+    - https://java.com/oaa
+    - https://oss.oracle.com/sources/
+    - https://www.oracle.com/technetwork/java/javase/documentation/
+

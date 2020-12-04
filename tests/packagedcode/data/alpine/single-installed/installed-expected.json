@@ -1,0 +1,100 @@
+[
+  {
+    "type": "alpine",
+    "namespace": null,
+    "name": "busybox",
+    "version": "1.31.1-r9",
+    "qualifiers": {
+      "arch": "x86_64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Size optimized toolbox of many common UNIX utilities",
+    "release_date": "2020-01-15",
+    "parties": [
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Natanael Copa ",
+        "email": "<ncopa@alpinelinux.org>",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://busybox.net/",
+    "download_url": null,
+    "size": 507134,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e5c984f68aabb28de623a7e3ada5a223c2b66d77",
+    "copyright": null,
+    "license_expression": "gpl-2.0",
+    "declared_license": "GPL-2.0-only",
+    "notice_text": null,
+    "root_path": null,
+    "dependencies": [],
+    "contains_source_code": null,
+    "source_packages": [
+      "pkg:alpine/busybox@1.31.1-r9"
+    ],
+    "installed_files": [
+      {
+        "path": "bin/busybox",
+        "sha1": "593739e717ef3e8833034614576e03d189be30a1",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "bin/sh",
+        "sha1": "a5c7d37c33446cd290736b35b626bb75ad3933c4",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "etc/securetty",
+        "sha1": "e150ec86058595eb836e9e23a9793e50d112eb94",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "etc/udhcpd.conf",
+        "sha1": "50088f65c0c85b50a5473a1b7e081c090efb576f",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "etc/logrotate.d/acpid",
+        "sha1": "4f29720883559a74be03f4de69de2f66113b064b",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "etc/network/if-up.d/dad",
+        "sha1": "865c5ddea131ae2847f1b6310d0de2ed3b0cff8e",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      },
+      {
+        "path": "usr/share/udhcpc/default.script",
+        "sha1": "9c33c0dc1c78cd2452bc3397f14dd6366610ff81",
+        "md5": null,
+        "sha256": null,
+        "sha512": null
+      }
+    ],
+    "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64",
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null
+  }
+]

@@ -39,8 +39,8 @@ from licensedcode.cache import get_licenses_db
 from licensedcode import models
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode import facet
 
 
@@ -138,7 +138,7 @@ class LicenseClarityScore(PostScanPlugin):
     sort_order = 110
 
     options = [
-        CommandLineOption(('--license-clarity-score',),
+        PluggableCommandLineOption(('--license-clarity-score',),
             is_flag=True,
             default=False,
             help='Compute a summary license clarity score at the codebase level.',
@@ -566,10 +566,11 @@ full_text = ScoringElement(
     scorer=has_full_text_for_all_licenses,
     weight=15)
 
+
 # not used for now
-unkown = ScoringElement(
+unknown = ScoringElement(
     is_binary=True,
-    name='unkown',
+    name='unknown',
     scorer=has_unkown_licenses,
     weight=15)
 

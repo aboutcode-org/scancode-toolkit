@@ -1,6 +1,4 @@
 license_expression: adobe-acrobat-reader-eula
 is_license_text: yes
-ignorable_authors:
-    - agreement, such as the Adobe Systems Incorporated
 ignorable_urls:
     - http://www.adobe.com/

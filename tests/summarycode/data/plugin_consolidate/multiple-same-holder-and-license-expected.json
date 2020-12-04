@@ -60,6 +60,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -161,6 +162,7 @@
         "gpl-2.0",
         "gpl-2.0"
       ],
+      "percentage_of_license_text": 37.5,
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",
@@ -284,6 +286,7 @@
         "gpl-2.0",
         "gpl-2.0"
       ],
+      "percentage_of_license_text": 37.5,
       "copyrights": [
         {
           "value": "Copyright (c) IBM Corp.",

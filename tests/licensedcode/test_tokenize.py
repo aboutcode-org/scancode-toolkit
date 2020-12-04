@@ -47,10 +47,6 @@ from licensedcode.tokenize import word_splitter
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-mode = 'w'
-
-
-
 class TestTokenizers(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
@@ -220,7 +216,7 @@ class TestTokenizers(FileBasedTesting):
 
         expected_file = test_file + '.json'
         if regen:
-            with open(expected_file, mode ) as exc_test:
+            with open(expected_file, 'w') as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -341,7 +337,7 @@ class TestTokenizers(FileBasedTesting):
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
 
         if regen:
-            with open(expected_file, mode ) as ex:
+            with open(expected_file, 'w') as ex:
                 json.dump(result, ex, indent=2, separators=(',', ': '))
 
         with io.open(expected_file, encoding='utf-8') as ex:
@@ -386,7 +382,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(list(query_lines(test_file))))
 
         if regen:
-            with open(expected_file, mode ) as exc_test:
+            with open(expected_file, 'w') as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -402,7 +398,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(list(query_lines(test_file))))
 
         if regen:
-            with open(expected_file, mode ) as exc_test:
+            with open(expected_file, 'w') as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -421,7 +417,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(tokens))
 
         if regen:
-            with open(expected_file, mode ) as exc_test:
+            with open(expected_file, 'w') as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -440,7 +436,7 @@ class TestTokenizers(FileBasedTesting):
         result = json.loads(json.dumps(tokens))
 
         if regen:
-            with open(expected_file, mode ) as exc_test:
+            with open(expected_file, 'w') as exc_test:
                 json.dump(result , exc_test, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as exc_test:
@@ -521,41 +517,45 @@ class MatchedTextTokenizer(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_tokens_and_non_tokens_yield_properly_all_texts(self):
-        text = u'''Redistribution+ ;and use in! 2003 source and binary forms,
-        ()with or without modification, are permitted.\t\n
+        text = u'''Redistribution+ ;and use in! + 2003 source and +binary forms,
+        ()with or without modifi+cation, are permitted with İrəli .\t\n
         \r'''
         result = [m.groupdict() for m in tokens_and_non_tokens(text)]
         expected = [
-            {u'punct': None, u'token': u'Redistribution+'},
-            {u'punct': u' ;', u'token': None},
-            {u'punct': None, u'token': u'and'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'use'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'in'},
-            {u'punct': u'! ', u'token': None},
-            {u'punct': None, u'token': u'2003'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'source'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'and'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'binary'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'forms'},
-            {u'punct': u',\n        ()', u'token': None},
-            {u'punct': None, u'token': u'with'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'or'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'without'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'modification'},
-            {u'punct': u', ', u'token': None},
-            {u'punct': None, u'token': u'are'},
-            {u'punct': u' ', u'token': None},
-            {u'punct': None, u'token': u'permitted'},
-            {u'punct': u'.\t\n\n        \r', u'token': None}
+            {'punct': None, 'token': 'Redistribution+'},
+            {'punct': ' ;', 'token': None},
+            {'punct': None, 'token': 'and'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'use'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'in'},
+            {'punct': '! + ', 'token': None},
+            {'punct': None, 'token': '2003'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'source'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'and'},
+            {'punct': ' +', 'token': None},
+            {'punct': None, 'token': 'binary'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'forms'},
+            {'punct': ',\n        ()', 'token': None},
+            {'punct': None, 'token': 'with'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'or'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'without'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'modifi+cation'},
+            {'punct': ', ', 'token': None},
+            {'punct': None, 'token': 'are'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'permitted'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'with'},
+            {'punct': ' ', 'token': None},
+            {'punct': None, 'token': 'İrəli'},
+            {'punct': ' .\t\n\n        \r', 'token': None}
         ]
         assert expected == result
 
@@ -627,3 +627,55 @@ class MatchedTextTokenizer(FileBasedTesting):
         result_as_text = u''.join(itertools.chain.from_iterable(
             [v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
+
+    def test_matched_query_text_tokenizer_and_query_tokenizer_should_yield_the_same_texts(self):
+        text = u'''Redistribution+ ;and use in! + 2003 source and +binary forms,
+        ()with or without modifi+cation, are permitted with İrəli .\t\n
+        \r'''
+
+        mqtt_result = [t for is_tok, t in matched_query_text_tokenizer(text) if is_tok]
+        qt_result = list(query_tokenizer(text, stopwords=()))
+        mqtt_expected = [
+            'Redistribution+',
+            'and',
+            'use',
+            'in',
+            '2003',
+            'source',
+            'and',
+            'binary',
+            'forms',
+            'with',
+            'or',
+            'without',
+            'modifi+cation',
+            'are',
+            'permitted',
+            'with',
+            'İrəli',
+        ]
+
+        qt_expected = [
+            'redistribution+',
+            'and',
+            'use',
+            'in',
+            '2003',
+            'source',
+            'and',
+            'binary',
+            'forms',
+            'with',
+            'or',
+            'without',
+            'modifi+cation',
+            'are',
+            'permitted',
+            'with',
+            # this is NOT the same as above... 
+            # See https://github.com/nexB/scancode-toolkit/issues/1872
+            'i',
+            'rəli'
+        ]
+        assert mqtt_expected == mqtt_result
+        assert qt_expected == qt_result

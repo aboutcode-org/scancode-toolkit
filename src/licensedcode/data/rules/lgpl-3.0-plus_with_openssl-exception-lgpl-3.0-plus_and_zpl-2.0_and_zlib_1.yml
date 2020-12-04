@@ -1,0 +1,4 @@
+license_expression: lgpl-3.0-plus WITH openssl-exception-lgpl-3.0-plus AND zpl-2.0 AND zlib
+is_license_tag: yes
+relevance: 95
+notes: only ever seen in pysycopg2 setup.py

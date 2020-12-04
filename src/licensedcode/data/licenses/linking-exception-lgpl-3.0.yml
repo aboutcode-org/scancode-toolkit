@@ -1,10 +1,12 @@
 key: linking-exception-lgpl-3.0
+is_deprecated: yes
 short_name: Linking exception to LGPL 3.0
 name: Linking exception to LGPL 3.0
 category: Copyleft Limited
 owner: Canonical Inc.
 homepage_url: https://github.com/go-yaml/yaml/blob/v2/LICENSE
 is_exception: yes
+notes: This is deprecated and replaced by lgpl-3.0-linking-exception
 other_urls:
     - http://www.gnu.org/licenses/lgpl-3.0.txt
 standard_notice: |

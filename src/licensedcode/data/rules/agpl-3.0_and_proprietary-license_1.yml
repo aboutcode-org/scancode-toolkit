@@ -1,0 +1,6 @@
+license_expression: agpl-3.0 AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: trademarked materials are explicitly excluded from the AGPL, and are deemed prorpietary
+ignorable_urls:
+    - http://www.gnu.org/licenses/

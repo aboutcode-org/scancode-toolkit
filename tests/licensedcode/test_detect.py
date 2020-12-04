@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -1082,8 +1082,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(46, 155)),
-            (u'fsf-unlimited-no-warranty', (231, 238), Span(939, 1002)),
-            (u'free-unknown', (306, 307), Span(1306, 1328))
+            (u'fsf-unlimited-no-warranty', (231, 238), Span(942, 1005)),
+            (u'free-unknown', (306, 307), Span(1311, 1333)),
         ]
         self.check_position('positions/automake.pl', expected)
 

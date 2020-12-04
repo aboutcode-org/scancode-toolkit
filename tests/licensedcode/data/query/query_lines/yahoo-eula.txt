@@ -1,0 +1,7 @@
+Software License
+
+Welcome to Yahoo! software (the "Yahoo! Software"). By clicking the "I Agree" button below, you agree to these software license terms (the "Software License") that supplement the Yahoo! Terms of Service ("TOS") below, also located at http://info.yahoo.com/legal/us/yahoo/utos/utos-173.html. If you disagree with any of the terms below, Yahoo! does not grant you a license to use the Yahoo! Software; click the "I Disagree" or "Cancel" button to exit the installer.
+
+Information collected through Yahoo! Software by Yahoo! is subject to the full Yahoo! Privacy Policy: http://info.yahoo.com/privacy/us/yahoo/. To find out more about setting your preferences and the information collected by the Yahoo! Software and used by Yahoo!, go to: http://info.yahoo.com/privacy/us/yahoo/toolbar/details.html.
+
+Yahoo! reserves the right to update and change, from time to time, this Software License and all documents incorporated by reference. You can always find the most recent version of this Software License at http://info.yahoo.com/legal/us/yahoo/toolbar/tbeula/tbeula-282.html. Yahoo! may change this Software License by posting a new version without notice to you. Use of the Yahoo! Software after such change constitutes acceptance of such changes.

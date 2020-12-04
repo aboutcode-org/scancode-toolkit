@@ -1,0 +1,9 @@
+MakeHuman output AGPL exception
+ .
+ Exporting characters from MH application is making a combined work based on the
+ MH data (base mesh and targets). Thus, the terms and conditions of the Affero
+ GNU General Public License cover the whole combination.
+ .
+ As a special exception, the copyright holders of the data (MHteam) states that
+ the output is under the terms of CC0 1.0 Universal.
+ .

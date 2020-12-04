@@ -183,7 +183,7 @@
     ],
     "programming_language": [
       {
-        "value": "C++",
+        "value": "C",
         "count": 12
       },
       {
@@ -270,6 +270,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -304,6 +305,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -338,6 +340,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -407,6 +410,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "percentage_of_license_text": 79.62,
       "copyrights": [
         {
           "value": "Copyright 2005, JBoss Inc., and individual contributors",
@@ -488,6 +492,7 @@
       "license_expressions": [
         "cc-by-2.5"
       ],
+      "percentage_of_license_text": 19.72,
       "copyrights": [
         {
           "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
@@ -575,6 +580,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "percentage_of_license_text": 78.62,
       "copyrights": [
         {
           "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -621,6 +627,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -661,6 +668,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -736,6 +744,7 @@
       "license_expressions": [
         "lgpl-2.1-plus"
       ],
+      "percentage_of_license_text": 78.12,
       "copyrights": [
         {
           "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
@@ -782,6 +791,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -822,6 +832,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -856,6 +867,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -881,7 +893,7 @@
       "sha256": "e533accabdc7434f3905ced32c4fba755f707929ad73df6e07172cd5a786e023",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -925,6 +937,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 42.86,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -962,7 +975,7 @@
       "sha256": "b09e2a43e9960d3d28d37d24f10dfbc462a4cb376da54ba571ac9a8874911ed5",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1006,6 +1019,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 69.57,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1043,7 +1057,7 @@
       "sha256": "3980fa5633b16f944641bf2fba3f49b8b9b9de6ffea7be1e142792393bf1a867",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1087,6 +1101,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 20.34,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -1168,6 +1183,7 @@
       "license_expressions": [
         "cc0-1.0"
       ],
+      "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1237,6 +1253,7 @@
       "license_expressions": [
         "artistic-2.0"
       ],
+      "percentage_of_license_text": 0.07,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -1277,6 +1294,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1311,6 +1329,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1414,6 +1433,7 @@
       "license_expressions": [
         "gpl-2.0-plus WITH ada-linking-exception"
       ],
+      "percentage_of_license_text": 94.12,
       "copyrights": [
         {
           "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
@@ -1451,7 +1471,7 @@
       "sha256": "fc1682e787ccc8d9eb83eb0b1f5acb59d22aa6ce1bff7c749a9dc315237b2240",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1495,6 +1515,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 42.86,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2011 Mark Adler",
@@ -1532,7 +1553,7 @@
       "sha256": "ef7bf500e1accf7e91352788c92b5c6663bab52e2cd6c42284496518e4a5f054",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1576,6 +1597,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 40.0,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1613,7 +1635,7 @@
       "sha256": "a3c2fa63c7e730bdd008bc07b7d3865dc76781082b77a03d52a918ce1c7d3459",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1657,6 +1679,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 50.0,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
@@ -1703,6 +1726,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1737,6 +1761,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [
         {
           "value": "Copyright (c) 2004 by Henrik Ravn",
@@ -1818,6 +1843,7 @@
       "license_expressions": [
         "boost-1.0"
       ],
+      "percentage_of_license_text": 88.89,
       "copyrights": [
         {
           "value": "Copyright Henrik Ravn 2004",
@@ -1864,6 +1890,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1933,6 +1960,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 50.38,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -1985,6 +2013,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2010,7 +2039,7 @@
       "sha256": "03fb435669b57aa90fe00c4dbc12d8492ef87b6243427d1e1831006994ee1f80",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2054,6 +2083,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 44.44,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2008 Mark Adler",
@@ -2091,7 +2121,7 @@
       "sha256": "4f8db049a7156b8a4616a6c9df0b5ee09571f0ac2eb253e111f2fb727fb033ea",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2135,6 +2165,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 50.0,
       "copyrights": [
         {
           "value": "Copyright (c) 2003 Mark Adler",
@@ -2181,6 +2212,7 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2206,7 +2238,7 @@
       "sha256": "ee2eef602cba7c4ba350617f4154de50cb4cbf274c7dd773130aca0775d5d9cd",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2250,6 +2282,7 @@
       "license_expressions": [
         "mit-old-style"
       ],
+      "percentage_of_license_text": 79.78,
       "copyrights": [
         {
           "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
@@ -2287,7 +2320,7 @@
       "sha256": "64fef1f0a7cd69eae744ad2fa754ee8568a5715588e38b7a3fa6e11eaeaec97e",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2331,6 +2364,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 84.21,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -2368,7 +2402,7 @@
       "sha256": "dc7224c7f079d237acf510ff40282cf6d50352c851d4e2957d227e2a3b57eb4d",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2412,6 +2446,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 37.5,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
@@ -2449,7 +2484,7 @@
       "sha256": "3980fa5633b16f944641bf2fba3f49b8b9b9de6ffea7be1e142792393bf1a867",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C++",
+      "programming_language": "C",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -2493,6 +2528,7 @@
       "license_expressions": [
         "zlib"
       ],
+      "percentage_of_license_text": 20.34,
       "copyrights": [
         {
           "value": "Copyright (c) 1995-2013 Jean-loup Gailly",

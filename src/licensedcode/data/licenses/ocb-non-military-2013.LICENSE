@@ -1,0 +1,28 @@
+License for Non-Military Software Implementations of OCB
+January 10, 2013
+1 Definitions
+1.1 "Licensor" means Phillip Rogaway.
+1.2 "Licensed Patents" means any patent that claims priority to United States Patent Application No. 09/918,615 entitled "Method and Apparatus for Facilitating Efficient Authenticated Encryption," and any utility, divisional, provisional, continuation, continuations-in-part, reexamination, reissue, or foreign counterpart patents that may issue with respect to the aforesaid patent application. This includes, but is not limited to, United States Patent No. 7,046,802; United States Patent No. 7,200,227; United States Patent No. 7,949,129; United States Patent No. 8,321,675; and any patent that issues out of United States Patent Application No. 13/669,114.
+1.3 "Use" means any practice of any invention claimed in the Licensed Patents.
+1.4 "Military Use" means any Use by, in cooperation with, on behalf of, or paid for by: the U.S. Department of Defense; U.S. Armed Forces (including the Army, Navy, Marines, Air Force, and Coast Guard); U.S. Department of Energy; U.S. Department of Homeland Security; U.S. intelligence agencies (including reconnaissance agencies); or foreign counterparts of these organizations.
+1.5 "Research Use" means any Use by an accredited academic institution, by a commercial research laboratory, or by an employee or student of such an institution when such Use is made in the course of their employment or studies.
+1.6 "Noncommercial Use" means any Use that is not intended for or directed toward commercial advantage or private monetary compensation.
+1.7 "Software Implementation" means any practice of any invention claimed in the Licensed Patents that takes the form of software executing on a userprogrammable, general-purpose computer or that takes the form of a computerreadable medium storing such software. Software Implementation does not include, for example, application-specific integrated circuits (ASICs), fieldprogrammable gate arrays (FPGAs), embedded systems, or IP cores.
+2 License Grant
+2.1 License. Subject to your compliance with the terms of this license, including the restrictions set forth in Section 2.2, Licensor hereby grants to you a perpetual, worldwide, non-exclusive, non-transferable, non-sublicenseable, no-charge, royalty-free, irrevocable license to practice any invention claimed in the Licensed Patents (i) for any Research Use, (ii) for any Noncommercial Use, and (iii) in any Software Implementation.
+2.2 Restrictions
+
+2.2.1 The license above does not apply to and no license is granted for any Military Use of the Licensed Patents.
+
+2.2.2
+
+The license above does not apply to and no license is granted for any Software Implementation that does not include the full text of this license in user-readable source code or documentation. The requirement of this paragraph may be satisfied by presenting the full text of this license to end users during software installation.
+
+2.2.3
+
+If you or your affiliates institute patent litigation (including, but not limited to, a cross-claim or counterclaim in a lawsuit) against any entity alleging that any Use authorized by this license infringes another patent, then any rights granted to you under this license automatically terminate as of the date such litigation is filed.
+
+3 Disclaimer
+
+YOUR USE OF THE LICENSED PATENTS IS AT YOUR OWN RISK AND UNLESS REQUIRED BY APPLICABLE LAW, LICENSOR MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED PATENTS OR ANY PRODUCT EMBODYING ANY LICENSED PATENT, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. IN NO EVENT WILL LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM OR RELATED TO ANY USE OF THE LICENSED PATENTS, INCLUDING, WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR SPECIAL DAMAGES, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES PRIOR TO SUCH AN OCCURRENCE.
+

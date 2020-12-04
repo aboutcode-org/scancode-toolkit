@@ -1,0 +1,13 @@
+license_expression: agpl-3.0 AND other-copyleft AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: the AGPL extra terms may or may not conflict with the AGPL
+ignorable_copyrights:
+    - Linagora (c) 2009-2020
+ignorable_holders:
+    - Linagora
+ignorable_urls:
+    - http://www.linagora.com/
+    - http://www.linshare.org/
+ignorable_emails:
+    - info@linagora.com

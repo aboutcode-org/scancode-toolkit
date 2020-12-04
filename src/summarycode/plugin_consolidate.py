@@ -28,7 +28,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import Counter
-from collections import defaultdict
 from collections import OrderedDict
 
 import attr
@@ -41,12 +40,9 @@ from packagedcode.build import BaseBuildManifestPackage
 from packagedcode.utils import combine_expressions
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode import copyright_summary
-
-
-unicode = str
 
 
 # Tracing flags
@@ -68,7 +64,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s
@@ -162,7 +158,7 @@ class Consolidator(PostScanPlugin):
     sort_order = 8
 
     options = [
-        CommandLineOption(('--consolidate',),
+        PluggableCommandLineOption(('--consolidate',),
             is_flag=True, default=False,
             help='Group resources by Packages or license and copyright holder and '
                  'return those groupings as a list of consolidated packages and '

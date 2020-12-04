@@ -1,0 +1,12 @@
+key: cc-by-nc-nd-3.0-igo
+short_name: CC-BY-NC-ND-3.0-IGO
+name: Creative Commons Attribution Non Commercial No Derivatives 3.0 IGO
+category: Source-available
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by-nc-nd/3.0/igo/
+spdx_license_key: CC-BY-NC-ND-3.0-IGO
+text_urls:
+    - https://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode
+ignorable_urls:
+  - https://creativecommons.org/
+

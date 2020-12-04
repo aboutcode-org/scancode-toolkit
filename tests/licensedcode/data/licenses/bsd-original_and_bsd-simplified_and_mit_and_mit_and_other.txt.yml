@@ -3,7 +3,7 @@ license_expressions:
   - x11-keith-packard
   - x11-opengroup
   - unicode-mappings
-  - bsd-2-clause-netbsd
+  - bsd-simplified
   - bsd-source-code
   - mit
   - mit

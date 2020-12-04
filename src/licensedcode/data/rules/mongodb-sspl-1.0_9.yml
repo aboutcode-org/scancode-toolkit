@@ -1,0 +1,12 @@
+license_expression: mongodb-sspl-1.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 85
+ignorable_copyrights:
+    - (c) 2009, Kristina Chodorow <kristina@10gen.com>
+ignorable_holders:
+    - Kristina Chodorow
+ignorable_urls:
+    - https://www.mongodb.com/licensing/server-side-public-license
+ignorable_emails:
+    - kristina@10gen.com

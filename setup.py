@@ -15,7 +15,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '3.1.2'
+version = '3.2.3'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
@@ -137,24 +137,20 @@ setup(
         # cluecode
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
-        'py2_ipaddress >= 2.0, <3.5; python_version<"3"',
+        'py2_ipaddress >= 2.0, <3.5; python_version < "3"',
         'urlpy',
         'publicsuffix2',
         'fingerprints >= 0.6.0, < 1.0.0',
 
-        # extractcode
-        'patch >= 1.15, < 1.20 ',
-        # to work around bug http://bugs.python.org/issue19839
-        # on multistream bzip2 files: this can removed in Python 3.
-        'bz2file >= 0.98; python_version<"3"',
-        'extractcode_libarchive',
-        'extractcode_7z',
-
         # commoncode
-        'backports.os == 0.1.1; python_version<"3"',
+        'commoncode >= 20.09',
+        'backports.os == 0.1.1; python_version < "3"',
+
         'future >= 0.16.0',
-        'text_unidecode >= 1.0, < 2.0',
         'saneyaml',
+
+        # plugincode
+        'plugincode',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
@@ -172,15 +168,13 @@ setup(
         'six',
         'pdfminer.six >= 20170720',
         'pycryptodome >= 3.4',
+        'chardet >= 3.0.0, <4.0.0',
 
         # typecode
-        'binaryornot >= 0.4.0',
-        'chardet >= 3.0.0, <4.0.0',
-        # note that we use a short version range because we use a simpler lexer list
-        'pygments >= 2.2.0, <2.3',
-        'typecode_libmagic',
+        'typecode',
 
         # packagedcode
+        'debut >= 0.9.4',
         'pefile >= 2018.8.8',
         'pymaven_patch >= 0.2.8',
         'requests >= 2.7.0, < 3.0.0',
@@ -188,37 +182,52 @@ setup(
         'xmltodict >= 0.11.0',
         'javaproperties >= 0.5',
         'toml >= 0.10.0',
+        'gemfileparser >= 0.7.0',
         'pkginfo >= 1.5.0.1',
-        'dparse >= 0.4.1',
+        'dparse2',
+        'pygments >= 2.4.2, <2.5.1',
 
         # used to fix mojibake in Windows PE
-        'ftfy <  5.0.0; python_version == "2.7"',
-        'ftfy>=  5.0.0; python_version > "3"',
+        # for now we use the evrsion that works on both Python 2 and 3
+        'ftfy <  5.0.0',
 
         # scancode
-        'click >= 6.0.0, < 7.0.0',
+        # Click 7.0 is broken https://github.com/pallets/click/issues/1125
+        'click >= 6.7, !=7.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=18.1',
-        'typing >=3.6, < 3.7',
+        'attrs >= 18.1, !=20.1.0',
+        # Importing typing causes errors after python 3.6.
+        # See https://github.com/python/typing/issues/573
+        'typing >=3.6, < 3.7; python_version < "3.7"',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
+        'MarkupSafe >= 0.23',
         'simplejson',
         'spdx_tools >= 0.6.0',
         'unicodecsv',
+        'jsonstreams >= 0.5.0',
 
         # ScanCode caching and locking
         'yg.lockfile >= 2.3, < 3.0.0',
-            # used by yg.lockfile
-            'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
+        # used by yg.lockfile
+        'contextlib2', 'pytz', 'tempora', 'jaraco.functools',
         'zc.lockfile >= 2.0.0, < 3.0.0',
     ],
-    
+
+    extras_require={
+        'full': [
+            'extractcode',
+            'extractcode_7z',
+            'extractcode_libarchive',
+            'typecode_libmagic',
+        ],
+    },
+
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
-            'extractcode = scancode.extract_cli:extractcode',
         ],
 
         # scancode_pre_scan is the entry point for pre_scan plugins executed

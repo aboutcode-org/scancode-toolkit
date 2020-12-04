@@ -1,0 +1,53 @@
+Unless otherwise indicated in components taken from elsewhere, this software
+is licensed under the GNU Lesser General Public License, version 2.1 ("LGPL",
+reproduced below), extended and modified with the following terms:
+
+  If the name Ion(tm) or other names that can be associated with the Ion
+  project are used to distribute this software, then:
+
+    - A version that does not significantly differ from one of the
+      copyright holder's releases, must be provided by default.
+
+    - Significantly altered versions may be provided only if the user
+      explicitly requests for those modifications to be applied, and 
+      is prominently notified that the software is no longer considered 
+      the standard version, and is not supported by the copyright holder.
+      The version string displayed by the program must describe these
+      modifications and the "support void" status.
+
+  Versions for which the above conditions are not satisfied, must be
+  renamed so that they can not be associated with the Ion project, their
+  executables must be given names that do not conflict with the copyright
+  holder's version, and neither the copyright holder nor the Ion project
+  may be referred to for support.
+
+  In the text of sections 0-2, 4-12, and 14-16 of the LGPL, "this License" 
+  is to be understood to refer to the LGPL extended with these terms and,
+  where applicable, possible similar terms related to the names of other
+  works forming a whole. Sections 3 and 13 of the LGPL are void. Where
+  contradictory, these additional terms take precedence over the LGPL.
+
+End of terms.
+
+
+Explanations
+
+Trademarks: With the terms above primarily appealing to copyright law,
+should any of the indicated trademarks be found invalid, does not excuse
+you from the conditions imposed by those terms. The use of these names
+in contexts other than redistribution of this software and modifications,
+is outside the scope of the terms above, and governed by applicable
+trademark or other laws. 
+
+  With regard to modules and other extensions to Ion(tm), the permission
+  is hereby granted to use "Ion" as part of the name, provided that it
+  occurs in a form suggesting that the work is supported by neither the
+  copyright holder nor the Ion project: "Foo for Ion" instead of "Ion Foo",
+  etc.
+
+Significant change: Bug fixes are insignificant as additions. Basic changes
+that are needed to install or run the software on a target platform, are 
+insignificant. Additionally, basic/small configuration changes to better 
+integrate the software with the target platform, without obstructing the
+standard behaviour, are insignificant. Everything else is significant, 
+unless expressly declared otherwise by the copyright holder.

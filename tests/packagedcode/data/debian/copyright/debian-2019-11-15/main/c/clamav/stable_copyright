@@ -1,0 +1,748 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: ClamAV
+Upstream-Contact: clamav-devel@lists.clamav.net
+Source: https://github.com/vrtadmin/clamav-devel
+Comment:
+ Due to license incompatibilities the libclamunrar code is split from the
+ upstream tarball into a libclamunrar tarball.
+ .
+ The excluded files below just make the tarball unnecessarily large, or
+ interfere with the version management.  For llvm, we use the system version.
+Files-Excluded:
+ win32/*
+ libclamav/c++/llvm/*
+ libclammspack/*
+
+
+Files: *
+Copyright:
+ 1998-2015, Sourcefire, Inc.
+ 2002-2007, Tomasz Kojm <tkojm@clamav.net>
+ 2006, Sensory Networks, Inc
+ 2007-2015, Cisco Systems, Inc
+ 2014-2018, Cisco and/or its affiliates
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ libclamav/crypto.c
+ libclamav/pdfng.c
+ libclamav/xdp.c
+ libclamav/xdp.h
+Copyright:
+ 2014, 2017-2018 Cisco and/or its affiliates
+License: GPL-2 with OpenSSL exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ In addition, as a special exception, the copyright holders give
+ permission to link the code of portions of this program with the
+ OpenSSL library under certain conditions as described in each
+ individual source file, and distribute linked combinations
+ including the two.
+ .
+ You must obey the GNU General Public License in all respects
+ for all of the code used other than OpenSSL.  If you modify
+ file(s) with this exception, you may extend this exception to your
+ version of the file(s), but you are not obligated to do so.  If you
+ do not wish to do so, delete this exception statement from your
+ version.  If you delete this exception statement from all source
+ files in the program, then also delete it here.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ clamav-milter/Makefile.am
+ clamconf/Makefile.am
+ clamd/Makefile.am
+ clamd/server.h
+ clamd/server-th.c
+ clamd/thrmgr.c
+ clamd/thrmgr.h
+ clamdscan/Makefile.am
+ clamscan/Makefile.am
+ database/Makefile.am
+ docs/Makefile.am
+ etc/Makefile.am
+ examples/ex1.c
+ freshclam/dns.c
+ freshclam/dns.h
+ freshclam/execute.c
+ freshclam/execute.h
+ freshclam/freshclamcodes.h
+ freshclam/Makefile.am
+ freshclam/manager.c
+ freshclam/manager.h
+ freshclam/nonblock.c
+ freshclam/nonblock.h
+ libclamav/Makefile.am
+ libclamav/c++/configure.ac
+ libclamav/c++/Makefile.am
+ Makefile.am
+ sigtool/Makefile.am
+ sigtool/vba.c
+ sigtool/vba.h
+Copyright:
+ 2002-2013, Tomasz Kojm <tkojm@clamav.net>
+ 2004 Trog <trog@uncon.org>
+ 2006, Everton da Silva Marques <everton.marques@gmail.com>
+ 2006, Sensory Networks, Inc
+ 2007-2013, Sourcefire, Inc.
+ 2014, Cisco Systems, Inc.
+License: GPL-2+
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ debian/*
+Copyright:
+ 2004, Stephen Gran <sgran@debian.org>
+License: GPL-2+
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ config/compile
+ config/depcomp
+ config/missing
+ config/test-driver
+ config/ylwrap
+ libclamav/c++/config/compile
+ libclamav/c++/config/depcomp
+ libclamav/c++/config/missing
+Copyright:
+ 1992-2013, Free Software Foundation, Inc.
+License: GPL-2+ with Autoconf exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ config/config.guess
+ config/config.sub
+ libclamav/c++/config/config.guess
+ libclamav/c++/config/config.sub
+Copyright:
+ 1992-2013, Free Software Foundation, Inc.
+License: GPL-3+ with Autoconf exception
+ This file is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that
+ program.  This Exception is an additional permission under section 7
+ of the GNU General Public License, version 3 ("GPLv3").
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
+
+Files:
+ config/ltmain.sh
+ libclamav/c++/config/ltmain.sh
+Copyright:
+ 1996-2011, Free Software Foundation, Inc.
+License: GPL-2+ with Libtool exception
+ GNU Libtool is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ As a special exception to the GNU General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ GNU Libtool is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
+
+Files:
+ libltdl/*
+Copyright:
+ 1998-2001, 2004-2010, Free Software Foundation, Inc
+License: LGPL-2+ with Libtool exception
+ GNU Libltdl is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ As a special exception to the GNU Lesser General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ GNU Libltdl is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.
+
+Files:
+ libclamav/mspack.c
+ libclamav/mspack.h
+ libclamunrar_iface/unrar_iface.cpp
+ libclamunrar_iface/unrar_iface.h
+Copyright:
+ 2003-2004 Stuart Caie
+ 2007-2013, Sourcefire, Inc.
+License: LGPL-2.1
+
+Files:
+ clamd/fts.c
+ clamd/priv_fts.h
+Copyright:
+ 1990, 1993-1994, The Regents of the University of California.
+ 1994-2015, Free Software Foundation, Inc.
+License: LGPL-2.1 and BSD-3-clause
+
+Files:
+ config/install-sh
+ libclamav/c++/config/install-sh
+Copyright:
+ 1994, X Consortium
+License: Expat
+Comment:
+ Except as contained in this notice, the name of the X Consortium shall not
+ be used in advertising or otherwise to promote the sale, use or other deal-
+ ings in this Software without prior written authorization from the X Consor-
+ tium.
+ .
+ FSF changes to this file are in the public domain.
+
+Files:
+ shared/getopt.c
+ shared/getopt.h
+Copyright:
+ 1997, 2000-2002, 2006, Benjamin Sittler
+License: Expat
+
+Files:
+ libclamav/bcfeatures.h
+ libclamav/bytecode_api_decl.c
+ libclamav/bytecode_api.h
+ libclamav/bytecode_api_impl.h
+ libclamav/bytecode_detect.h
+ libclamav/bytecode_hooks.h
+Copyright:
+ 2009-2010, Sourcefire, Inc.
+License: BSD-2-clause
+
+Files:
+ libclamav/textdet.c
+Copyright:
+ 1986-1995, Ian F. Darwin
+ 2008-2010, Sourcefire, Inc.
+License: BSD-2-clause
+
+Files:
+ libclamav/qsort.c
+ shared/queue.h
+Copyright:
+ 1991-1993, The Regents of the University of California.
+License: BSD-3-clause
+
+Files:
+ libclamav/regex/*
+Copyright:
+ 1992-1994, Henry Spencer
+ 1992-1994, The Regents of the University of California.
+License: BSD-3-clause
+
+Files:
+ libclamav/swf.c
+ libclamav/swf.h
+Copyright:
+ 2001, Opaque Industries
+ 2002-2007, Igor Kogan
+ 2005, Wang Zhen
+License: BSD-3-clause
+
+Files:
+ libclamav/inffixed64.h
+ libclamav/inflate64.c
+ libclamav/inflate64.h
+ libclamav/inflate64_priv.h
+ libclamav/nsis/nsis_zlib.h
+Copyright:
+ 1995-2005, Jean-loup Gailly
+ 1995-2005, Mark Adler
+License: Zlib
+
+Files:
+ libclamav/nsis/infblock.c
+ libclamav/nsis/nsis_zutil.h
+Copyright:
+ 1999-2007, Nullsoft and Contributors
+ 1995-1998, Jean-loup Gailly
+License: Zlib
+Comment:
+ These files do not contain above license in full, but mention that they
+ have been derived from zlib.
+
+Files:
+ libclamav/regex/strlcpy.c
+ libclamav/strlcat.c
+Copyright:
+ 1998, Todd C. Miller <Todd.Miller@courtesan.com>
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Files:
+ config/config.rpath
+ libclamav/c++/m4/libtool.m4
+ libclamav/c++/m4/lt~obsolete.m4
+ libclamav/c++/m4/ltoptions.m4
+ libclamav/c++/m4/ltsugar.m4
+ libclamav/c++/m4/ltversion.m4
+ m4/lib-ld.m4
+ m4/lib-link.m4
+ m4/lib-prefix.m4
+ m4/libtool.m4
+ m4/ltdl.m4
+ m4/lt~obsolete.m4
+ m4/ltoptions.m4
+ m4/ltsugar.m4
+ m4/ltversion.m4
+Copyright:
+ 1996-2011, Free Software Foundation, Inc.
+License: permissive~1
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.
+
+Files:
+ configure
+ libclamav/c++/configure
+Copyright:
+ 1992-1996, 1998-2012, Free Software Foundation, Inc.
+License: permissive~2
+ This configure script is free software; the Free Software Foundation
+ gives unlimited permission to copy, distribute and modify it.
+
+Files:
+ aclocal.m4
+ clamav-milter/Makefile.in
+ clambc/Makefile.in
+ clamconf/Makefile.in
+ clamd/Makefile.in
+ clamdscan/Makefile.in
+ clamdtop/Makefile.in
+ clamscan/Makefile.in
+ clamsubmit/Makefile.in
+ database/Makefile.in
+ docs/Makefile.in
+ etc/Makefile.in
+ freshclam/Makefile.in
+ libclamav/c++/aclocal.m4
+ libclamav/c++/Makefile.in
+ libclamav/Makefile.in
+ libltdl/Makefile.in
+ Makefile.in
+ shared/Makefile.in
+ sigtool/Makefile.in
+ test/Makefile.in
+ unit_tests/Makefile.in
+Copyright:
+ 1994-2011, Free Software Foundation, Inc.
+License: permissive~3
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+ even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ PARTICULAR PURPOSE.
+
+Files:
+ libltdl/README
+Copyright:
+ 1999, 2003, 2011, Free Software Foundation, Inc.
+License: permissive~4
+ Copying and distribution of this file, with or without modification,
+ are permitted in any medium without royalty provided the copyright
+ notice and this notice are preserved.  This file is offered as-is,
+ without warranty of any kind.
+
+Files:
+ m4/ax_check_uname_syscall.m4
+Copyright:
+ 2008, Bruce Korb <bkorb@gnu.org>
+License: permissive
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice
+ and this notice are preserved. This file is offered as-is, without any
+ warranty.
+
+Files:
+ libclamav/nsis/bzlib.c
+ libclamav/nsis/bzlib_private.h
+ libclamav/nsis/nsis_bzlib.h
+Copyright:
+ 1996-2006, Julian Seward <jseward@bzip.org>
+License: nsis-bzip2
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ .
+ 2. The origin of this software must not be misrepresented; you must
+    not claim that you wrote the original software.  If you use this
+    software in a product, an acknowledgment in the product
+    documentation would be appreciated but is not required.
+ .
+ 3. Altered source versions must be plainly marked as such, and must
+    not be misrepresented as being the original software.
+ .
+ 4. The name of the author may not be used to endorse or promote
+    products derived from this software without specific prior written
+    permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+ DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files:
+ libclamav/is_tar.c
+Copyright:
+ 1985, John Gilmore
+License: public-domain~1
+ Stolen (by the author of the file utility!) from the public domain tar program:
+ Public Domain version written 26 Aug 1985 John Gilmore (ihnp4!hoptoad!gnu).
+
+Files:
+ libclamav/bignum_fast.h
+Copyright:
+ Tom St Denis <tomstdenis@gmail.com>
+License: public-domain~2
+ This project is public domain and free for all purposes.
+
+Files:
+ libclamav/7z/*
+Copyright:
+ 2008-2010, Igor Pavlov
+License: public-domain~3
+ LZMA SDK is written and placed in the public domain by Igor Pavlov.
+Comment:
+ See COPYING.lzma.
+
+Files: libclamav/lzw/*
+Copyright:
+ 1988-1997 Sam Leffler
+ 1991-1997 Silicon Graphics, Inc
+ 2016 Cisco and/or its affiliates. All rights reserved.
+License: LZW
+ Permission to use, copy, modify, distribute, and sell this software and
+ its documentation for any purpose is hereby granted without fee, provided
+ that (i) the above copyright notices and this permission notice appear in
+ all copies of the software and related documentation, and (ii) the names of
+ Sam Leffler and Silicon Graphics may not be used in any advertising or
+ publicity relating to the software without the specific, prior written
+ permission of Sam Leffler and Silicon Graphics.
+ .
+ THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY
+ WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
+ ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
+ OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF
+ LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+ OF THIS SOFTWARE.
+
+Files: libclamav/tomsfastmath/*
+Copyright: Public Domain
+License: public-domain
+ TomsFastMath is public domain.
+ .
+ Note some ideas were borrowed from LibTomMath and OpenSSL.  All of the code is original or ported
+ from LibTomMath [no code was ported from OpenSSL].  As such the origins and status of this code
+ are both public domain.
+ .
+ -- Tom St Denis
+
+Files:
+ libclamav/yara_*
+Copyright:
+ Copyright (C) 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
+ Copyright (c) 2013. The YARA Authors. All Rights Reserved.
+License: Apache-2.0 with GPL exception
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+    http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+Comment:
+ See COPYING.YARA. The GPL exception has been granted by upstream in
+ https://bugzilla.clamav.net/show_bug.cgi?id=11336:
+  Steven Morgan 2015-07-21 23:02:01 CEST
+  The Apache 2 license notification for YARA is in the file COPYING.YARA,
+  similar to what we do for bzip2 and at least 9 other third party components
+  included in ClamAV. We also maintain the Apache v2 license header within the
+  YARA source code files as well as noting that the file is modified. We also
+  intend to write a GPL exclusion, as is done for OpenSSL. We believe these to
+  be sufficient indicators of which licenses apply to which source files.
+ .
+ On Debian systems, the full text of the Apache License, Version 2.0 can be
+ found in the file `/usr/share/common-licenses/Apache-2.0'.
+
+
+Files:
+ libclamav/yara_grammar.h
+Copyright:
+ 1984, 1989-1990, 2000-2011, Free Software Foundation, Inc.
+License: GPL-3+ with Bison exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton.  Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License version 2.1 as published by the Free Software Foundation.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2.1 can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to
+ deal in the Software without restriction, including without limitation the
+ rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+ AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
+ TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: Zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+

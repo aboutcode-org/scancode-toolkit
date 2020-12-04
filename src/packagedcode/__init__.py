@@ -25,30 +25,34 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from packagedcode import build
-from packagedcode import chef
-from packagedcode import models
 from packagedcode import about
 from packagedcode import bower
-from packagedcode import conda
+from packagedcode import build
 from packagedcode import cargo
+from packagedcode import chef
+from packagedcode import debian
+from packagedcode import conda
+from packagedcode import cocoapods
 from packagedcode import freebsd
 from packagedcode import golang
 from packagedcode import haxe
 from packagedcode import maven
+from packagedcode import models
 from packagedcode import npm
 from packagedcode import nuget
+from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import win_pe
 
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
 PACKAGE_TYPES = [
     rpm.RpmPackage,
-    models.DebianPackage,
+    debian.DebianPackage,
 
     models.JavaJar,
     models.JavaEar,
@@ -63,6 +67,8 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
     cargo.RustCargoCrate,
+    cocoapods.CocoapodsPackage,
+    opam.OpamPackage,
     models.MeteorPackage,
     bower.BowerPackage,
     freebsd.FreeBSDPackage,
@@ -89,7 +95,9 @@ PACKAGE_TYPES = [
     build.BuckPackage,
     build.AutotoolsPackage,
     conda.CondaPackage,
+    win_pe.WindowsExecutable,
 ]
+
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
 

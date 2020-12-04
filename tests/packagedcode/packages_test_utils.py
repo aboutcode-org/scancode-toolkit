@@ -48,8 +48,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            wmode = 'w'
-            with open(regened_exp_loc, wmode) as ex:
+            with open(regened_exp_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
             expected_dir = os.path.dirname(expected_loc)
@@ -78,8 +77,7 @@ class PackageTester(testcase.FileBasedTesting):
 
         if regen:
             regened_exp_loc = self.get_temp_file()
-            wmode = 'w'
-            with open(regened_exp_loc, wmode) as ex:
+            with open(regened_exp_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
             expected_dir = os.path.dirname(expected_loc)
@@ -92,3 +90,18 @@ class PackageTester(testcase.FileBasedTesting):
 
         for expected_package, result in zip(expected_packages, results):
             assert expected_package == result
+
+
+def check_result_equals_expected_json(result, expected, regen=False):
+    """
+    Check equality between a result collection and an expected JSON file.
+    Regen the expected file if regen is True.
+    """
+    if regen:
+        with open(expected, 'w') as ex:
+            ex.write(json.dumps(result, indent=2))
+
+    with open(expected) as ex:
+        expected = json.loads(ex.read())
+
+    assert expected == result

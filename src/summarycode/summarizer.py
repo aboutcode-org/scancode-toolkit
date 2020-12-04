@@ -35,8 +35,8 @@ from six import string_types
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
@@ -119,7 +119,7 @@ class ScanSummary(PostScanPlugin):
     codebase_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
 
     options = [
-        CommandLineOption(('--summary',),
+        PluggableCommandLineOption(('--summary',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans at the codebase level.',
             help_group=POST_SCAN_GROUP)
@@ -146,7 +146,7 @@ class ScanSummaryWithDetails(PostScanPlugin):
     sort_order = 100
 
     options = [
-        CommandLineOption(('--summary-with-details',),
+        PluggableCommandLineOption(('--summary-with-details',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans at the codebase level, '
                  'keeping intermediate details at the file and directory level.',
@@ -316,7 +316,7 @@ class ScanKeyFilesSummary(PostScanPlugin):
     codebase_attributes = OrderedDict(summary_of_key_files=attr.ib(default=attr.Factory(OrderedDict)))
 
     options = [
-        CommandLineOption(('--summary-key-files',),
+        PluggableCommandLineOption(('--summary-key-files',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans for key, '
                  'top-level files. Key files are top-level codebase files such '
@@ -393,7 +393,7 @@ class ScanByFacetSummary(PostScanPlugin):
     codebase_attributes = OrderedDict(summary_by_facet=attr.ib(default=attr.Factory(list)))
 
     options = [
-        CommandLineOption(('--summary-by-facet',),
+        PluggableCommandLineOption(('--summary-by-facet',),
             is_flag=True, default=False,
             help='Summarize license, copyright and other scans and group the '
                  'results by facet.',

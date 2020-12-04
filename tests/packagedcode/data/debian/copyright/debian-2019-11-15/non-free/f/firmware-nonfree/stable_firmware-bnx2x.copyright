@@ -1,0 +1,12 @@
+The binary firmware may be downloaded from
+https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
+
+Copyright (c) 2007-2010 Broadcom Corporation
+
+This file contains firmware data derived from proprietary unpublished
+source code, Copyright (c) 2007-2009 Broadcom Corporation.
+
+Permission is hereby granted for the distribution of this firmware data
+in hexadecimal or equivalent format, provided this copyright notice is
+accompanying it.
+

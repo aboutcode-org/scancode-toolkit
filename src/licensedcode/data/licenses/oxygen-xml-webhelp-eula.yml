@@ -1,0 +1,14 @@
+key: oxygen-xml-webhelp-eula
+short_name: Oxygen XML WebHelp EULA
+name: Oxygen XML WebHelp End-User License Agreement
+category: Commercial
+owner: Syncro Soft
+homepage_url: https://www.oxygenxml.com/eula_webhelp.html
+ignorable_emails:
+  - support@oxygenxml.com
+ignorable_urls:
+  - http://www.oxygenxml.com/
+  - http://www.oxygenxml.com/privacy_policy.html
+  - http://www.oxygenxml.com/support.html
+  - http://www.oxygenxml.com/thirdparty/index.html
+

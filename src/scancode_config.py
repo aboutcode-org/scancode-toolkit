@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -97,7 +97,7 @@ try:
     __version__ = get_distribution('scancode-toolkit').version
 except DistributionNotFound:
     # package is not installed ??
-    __version__ = '3.1.2'
+    __version__ = '3.2.3'
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
@@ -108,8 +108,10 @@ scancode_root_dir = dirname(scancode_src_dir)
 ################################################################################
 
 # tag file or env var to determined if we are in dev mode
-SCANCODE_DEV_MODE = (os.getenv('SCANCODE_DEV_MODE')
-                     or exists(join(scancode_root_dir, 'SCANCODE_DEV_MODE')))
+SCANCODE_DEV_MODE = (
+    os.getenv('SCANCODE_DEV_MODE')
+    or exists(join(scancode_root_dir, 'SCANCODE_DEV_MODE'))
+)
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES

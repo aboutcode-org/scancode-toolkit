@@ -6,6 +6,8 @@ owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
 notes: Per SPDX.org, this license is OSI certified.
 spdx_license_key: BSD-2-Clause
+other_spdx_license_keys:
+    - BSD-2-Clause-NetBSD
 text_urls:
     - http://opensource.org/licenses/bsd-license.php
 osi_url: http://opensource.org/licenses/bsd-license.php

@@ -34,6 +34,7 @@ from packagedcode import freebsd
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import cargo
+from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import rpm
 from packagedcode.recognize import recognize_packages
@@ -47,7 +48,7 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('archives/adduser_3.112ubuntu1_all.deb')
         packages = recognize_packages(test_file)
         assert packages
-        assert isinstance(packages[0], packagedcode.models.DebianPackage)
+        assert isinstance(packages[0], packagedcode.debian.DebianPackage)
 
     def test_recognize_packages_rpm(self):
         test_file = self.get_test_loc('archives/alfandega-2.2-2.rh80.src.rpm')
@@ -125,6 +126,18 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_packages(test_file)
         assert packages
         assert isinstance(packages[0], cargo.RustCargoCrate)
+
+    def test_recognize_opam(self):
+        test_file = self.get_test_loc('recon/opam')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], opam.OpamPackage)
+
+    def test_recognize_opam1(self):
+        test_file = self.get_test_loc('recon/base.opam')
+        packages = recognize_packages(test_file)
+        assert packages
+        assert isinstance(packages[0], opam.OpamPackage)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')

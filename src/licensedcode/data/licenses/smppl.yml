@@ -9,3 +9,6 @@ ignorable_copyrights:
     - Copyright (c) 1997-2002 National Security Agency
 ignorable_holders:
     - National Security Agency
+ignorable_authors:
+  - the U.S. Government. BAE Systems
+

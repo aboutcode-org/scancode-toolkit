@@ -169,6 +169,7 @@ class Query(object):
         'spdx_lid_token_ids',
         'spdx_lines',
         'has_long_lines',
+        'is_binary',
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
@@ -190,6 +191,9 @@ class Query(object):
 
         # True if the text is made of very long lines
         self.has_long_lines = False
+
+        # True if the query is binary
+        self.is_binary = False
 
         # kown token ids array
         self.tokens = []
@@ -243,6 +247,16 @@ class Query(object):
         # sets of known token positions initialized after query tokenization:
         self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_legalese])
         self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_legalese])
+
+    def tokens_length(self, with_unknown=False):
+        """
+        Return the length in tokens of this query.
+        Include unknown tokens if with_unknown is True.
+        """
+        length = len(self.tokens)
+        if with_unknown:
+            length += sum(self.unknowns_by_pos.values())
+        return length
 
     def whole_query_run(self):
         """
@@ -460,6 +474,8 @@ class Query(object):
             if ft.is_text_with_long_lines:
                 self.has_long_lines = True
                 tokens_by_line = break_long_lines(tokens_by_line)
+            if ft.is_binary:
+                self.is_binary = True
 
         for tokens in tokens_by_line:
             # have we reached a run break point?

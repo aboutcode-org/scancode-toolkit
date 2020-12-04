@@ -42,8 +42,7 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/help.txt')
         result = run_scan_click(['--list-packages'])
         if regen:
-            wmode = 'w'
-            with open(expected_file, wmode) as ef:
+            with open(expected_file, 'w') as ef:
                 ef.write(result.output)
         assert open(expected_file).read() == result.output
 
@@ -122,6 +121,13 @@ class TestPlugins(PackageTester):
         test_dir = self.get_test_loc('nuget/package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/nuget-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=False)
+
+    def test_package_command_scan_opam(self):
+        test_dir = self.get_test_loc('opam/package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/opam-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 

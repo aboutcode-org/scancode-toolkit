@@ -31,10 +31,10 @@ from collections import OrderedDict
 
 import attr
 
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import SCAN_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode import CommandLineOption
-from scancode import SCAN_GROUP
 
 
 @scan_impl
@@ -52,7 +52,7 @@ class CopyrightScanner(ScanPlugin):
     sort_order = 4
 
     options = [
-        CommandLineOption(('-c', '--copyright',),
+        PluggableCommandLineOption(('-c', '--copyright',),
             is_flag=True, default=False,
             help='Scan <input> for copyrights.',
             help_group=SCAN_GROUP,

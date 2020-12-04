@@ -1,0 +1,7 @@
+license_expression: agere-bsd
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) Agere Systems Inc.
+ignorable_holders:
+    - Agere Systems Inc.

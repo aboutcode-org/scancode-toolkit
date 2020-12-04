@@ -38,10 +38,8 @@ from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 
-
-mode = 'w'
 
 
 class TestIsPom(testcase.FileBasedTesting):
@@ -80,7 +78,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
 def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
     if regen:
-        with open(expected_json_loc, mode) as ex:
+        with open(expected_json_loc, 'w') as ex:
             json.dump(results, ex, indent=2)
 
     with io.open(expected_json_loc, encoding='utf-8') as ex:

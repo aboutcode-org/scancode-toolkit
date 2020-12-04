@@ -51,7 +51,7 @@ Package: cab
 --------------------------------------------
 Package: cargo
   class: packagedcode.cargo:RustCargoCrate
-  metafiles: Cargo.toml
+  metafiles: Cargo.toml, Cargo.lock
 
 --------------------------------------------
 Package: chef
@@ -84,7 +84,7 @@ Package: cpan
 
 --------------------------------------------
 Package: deb
-  class: packagedcode.models:DebianPackage
+  class: packagedcode.debian:DebianPackage
   metafiles: *.control
   extensions: .deb
   filetypes: debian binary package
@@ -206,6 +206,18 @@ Package: nuget
   filetypes: zip archive, microsoft ooxml
 
 --------------------------------------------
+Package: opam
+  class: packagedcode.opam:OpamPackage
+  metafiles: *opam
+  extensions: .opam
+
+--------------------------------------------
+Package: pods
+  class: packagedcode.cocoapods:CocoapodsPackage
+  metafiles: *.podspec
+  extensions: .podspec
+
+--------------------------------------------
 Package: pypi
   class: packagedcode.pypi:PythonPackage
   metafiles: metadata.json, *setup.py, PKG-INFO, *.whl, *.egg, *requirements*.txt, *requirements*.in, *Pipfile.lock
@@ -235,4 +247,10 @@ Package: war
   metafiles: WEB-INF/web.xml
   extensions: .war
   filetypes: java archive , zip archive
+
+--------------------------------------------
+Package: winexe
+  class: packagedcode.win_pe:WindowsExecutable
+  extensions: .exe, .dll
+  filetypes: pe32, for ms windows
 

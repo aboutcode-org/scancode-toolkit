@@ -1,0 +1,8 @@
+key: ocb-patent-openssl-2013
+short_name: OCB Patent License for OpenSSL 2013
+name: Patent License for OpenSSL of OCB 2013
+category: Proprietary Free
+owner:  Phillip Rogaway
+homepage_url: https://web.cs.ucdavis.edu/~rogaway/ocb/license.htm
+text_urls:
+    - https://web.cs.ucdavis.edu/~rogaway/ocb/license3.pdf

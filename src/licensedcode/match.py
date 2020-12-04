@@ -537,12 +537,12 @@ class LicenseMatch(object):
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]',
                      _usecache=True):
         """
-        Return the matched text for this match or an empty string if no
-        query exists for this match.
+        Return the matched text for this match or an empty string if no query
+        exists for this match.
 
-        _usecache can be set to False in testsing to avoid cache unwanted side
-        effects as the caching is dependent on the index being used and the
-        index can cahnge when testing.
+        `_usecache` can be set to False in testsing to avoid any unwanted
+        caching side effects as the caching is dependent on the index being used
+        and the index can change when testing.
         """
         query = self.query
         if not query:
@@ -550,7 +550,7 @@ class LicenseMatch(object):
             # this case should never exist except for tests!
             return u''
 
-        if whole_lines and query.has_long_lines:
+        if whole_lines and (query.has_long_lines or query.is_binary):
             whole_lines = False
 
         return u''.join(get_full_matched_text(
@@ -1395,7 +1395,7 @@ class Token(object):
     line_num = attr.ib()
     # absolute position for known tokens, zero-based. -1 for unknown tokens
     pos = attr.ib(default=-1)
-    # False if this is punctuation or spaces
+    # True if text/alpha False if this is punctuation or spaces
     is_text = attr.ib(default=False)
     # True if part of a match
     is_matched = attr.ib(default=False)
@@ -1407,9 +1407,9 @@ def tokenize_matched_text(location, query_string, dictionary, _cache={}):
     """
     Return a list of Token objects with pos and line number collected from the
     file at `location` or the `query_string` string. `dictionary` is the index
-    mapping of tokens to token ids.
+    mapping a token string to a token id.
 
-    NOTE: the _cache={} arg IS A GLOBAL by design.
+    NOTE: the _cache={} arg IS A GLOBAL mutable by design.
     """
     key = location, query_string
     cached = _cache.get(key)
@@ -1428,7 +1428,7 @@ def _tokenize_matched_text(location, query_string, dictionary):
     `location` or the `query_string` string. `dictionary` is the index mapping
     of tokens to token ids.
     """
-    pos = -1
+    pos = 0
     for line_num, line in query.query_lines(location, query_string, strip=False):
         if TRACE_MATCHED_TEXT_DETAILS:
             logger_debug('  _tokenize_matched_text:',
@@ -1438,31 +1438,70 @@ def _tokenize_matched_text(location, query_string, dictionary):
         for is_text, token_str in matched_query_text_tokenizer(line):
             if TRACE_MATCHED_TEXT_DETAILS:
                 logger_debug('     is_text:', is_text, 'token_str:', repr(token_str))
-            known = False
-            if token_str and token_str.strip():
-                # we retokenzie using the query tokenize
-                tokenized = list(query_tokenizer(token_str))
-                if tokenized:
-                    assert len(tokenized) == 1, repr((is_text, token_str, tokenized))
-                    tokenized = tokenized[0]
-                    known = tokenized in dictionary
+            # known = False
+            # determine if a token is known in the license index or not. This is
+            # essential as we need to realign the query-time tokenization with
+            # the full text to report proper matches
+            if is_text and token_str and token_str.strip():  # and token_str and token_str.strip():
 
-            if known:
-                pos += 1
-                p = pos
+                # we retokenize using the query tokenizer:
+                # 1. to lookup for known tokens in the index dictionary
+
+                # 2. to ensure the number of tokens is the same in both
+                # tokenizers (though, of course, the case will differ as the
+                # regular query tokenizer ignores case and punctuations).
+
+                # NOTE: we have a rare Unicode bug/issue because of some
+                # Unicode codepoint such as some Turkish characters that
+                # decompose char + punct when casefolded.
+                # See https://github.com/nexB/scancode-toolkit/issues/1872
+                # See also: https://bugs.python.org/issue34723#msg359514
+                qtokenized = list(query_tokenizer(token_str))
+                if not qtokenized:
+                    yield Token(
+                        value=token_str,
+                        line_num=line_num,
+                        is_text=is_text,
+                        is_known=False,
+                        pos=-1)
+
+                elif len(qtokenized) == 1:
+                    known = qtokenized[0] in dictionary
+                    if known:
+                        p = pos
+                        pos += 1
+                    else:
+                        p = -1
+                    yield Token(
+                        value=token_str,
+                        line_num=line_num,
+                        is_text=is_text,
+                        is_known=known,
+                        pos=p)
+                else:
+                    # we have two or more tokens from the original query mapped
+                    # to a single matched text tokenizer token.
+                    for qtoken in qtokenized:
+                        known = qtoken in dictionary
+                        if known:
+                            p = pos
+                            pos += 1
+                        else:
+                            p = -1
+
+                        yield Token(
+                            value=qtoken,
+                            line_num=line_num,
+                            is_text=is_text,
+                            is_known=known,
+                            pos=p)
             else:
-                p = -1
-
-            tok = Token(
-                value=token_str,
-                line_num=line_num,
-                is_text=is_text,
-                is_known=known,
-                pos=p)
-
-            if TRACE_MATCHED_TEXT_DETAILS:
-                logger_debug('     token:', tok)
-            yield tok
+                yield Token(
+                    value=token_str,
+                    line_num=line_num,
+                    is_text=False,
+                    is_known=False,
+                    pos=-1)
 
 
 def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=False):
@@ -1598,9 +1637,11 @@ def get_full_matched_text(
 
     if TRACE_MATCHED_TEXT:
         tokens = list(tokens)
+        print()
         logger_debug('get_full_matched_text:  tokens:')
         for t in tokens:
             print('    ', t)
+        print()
 
     tokens = reportable_tokens(
         tokens, match.qspan, match.start_line, match.end_line, whole_lines=whole_lines)
@@ -1610,11 +1651,8 @@ def get_full_matched_text(
         logger_debug('get_full_matched_text:  reportable_tokens:')
         for t in tokens:
             print(t)
+        print()
 
-    if TRACE_MATCHED_TEXT:
-        logger_debug(
-            'get_full_matched_text:  highlight_matched:', highlight_matched,
-            'highlight_not_matched:', highlight_not_matched)
 
     # Finally yield strings with eventual highlightings
     for token in tokens:

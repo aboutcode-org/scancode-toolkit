@@ -29,7 +29,7 @@ from __future__ import unicode_literals
 import os.path
 
 from packagedcode import npm
-from scancode.resource import Codebase
+from commoncode.resource import Codebase
 from packages_test_utils import PackageTester
 
 
@@ -73,6 +73,12 @@ class TestNpm(PackageTester):
                 'email': 'me@this.com',
                 'url': 'http://example.com'}
         assert ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com') == npm.parse_person(test)
+
+    def test_parse_dist_with_string_values(self):
+        test_file = self.get_test_loc('npm/dist/package.json')
+        expected_loc = self.get_test_loc('npm/dist/package.json.expected')
+        packages = npm.parse(test_file)
+        self.check_packages(packages, expected_loc, regen=False)
 
     def test_parse_as_installed(self):
         test_file = self.get_test_loc('npm/as_installed/package.json')

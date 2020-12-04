@@ -1,0 +1,7 @@
+license_expression: bsd-original-uc
+is_license_reference: yes
+relevance: 90
+minimum_coverage: 90
+notes: this is a fragment seen in X11
+ignorable_authors:
+    - the Computer Systems Engineering group at Lawrence Berkeley Laboratory

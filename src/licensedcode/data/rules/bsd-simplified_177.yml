@@ -1,0 +1,6 @@
+license_expression: bsd-simplified
+is_license_tag: yes
+relevance: 100
+notes: https://github.com/estools/esutils/blob/1.1.6/package.json
+ignorable_urls:
+    - http://github.com/Constellation/esutils/raw/master/LICENSE.BSD

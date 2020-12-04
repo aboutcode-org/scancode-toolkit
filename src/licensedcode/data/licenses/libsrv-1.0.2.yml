@@ -1,0 +1,12 @@
+key: libsrv-1.0.2
+short_name: libsrv License v1.0.2
+name: libsrv License v1.0.2
+category: Permissive
+owner: libsrv project
+homepage_url: https://sourceforge.net/projects/libsrv/files/libsrv/RELEASE_1_0_2/
+standard_notice: |
+    This software is copyrighted (c) 2002 Rick van Rein, the Netherlands.
+    OpenFortress encourages the release of this code by employee Rick van Rein.
+ignorable_authors:
+  - Rick van Rein and other contributors
+

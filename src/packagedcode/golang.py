@@ -1,5 +1,5 @@
 
-# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -36,8 +36,7 @@ from packageurl import PackageURL
 
 from commoncode import filetype
 from commoncode import fileutils
-from packagedcode.go_mod import GoMod
-from packagedcode import go_sum
+from packagedcode import go_mod
 from packagedcode import models
 
 
@@ -73,10 +72,10 @@ class GolangPackage(models.Package):
     def recognize(cls, location):
         filename = fileutils.file_name(location).lower()
         if filename == 'go.mod':
-            gomod = GoMod.parse_gomod(location)
-            yield build_gomod_package(gomod)
+            gomods = go_mod.parse_gomod(location)
+            yield build_gomod_package(gomods)
         elif filename == 'go.sum':
-            gosums = go_sum.parse_gosum(location)
+            gosums = go_mod.parse_gosum(location)
             yield build_gosum_package(gosums)
 
     @classmethod
@@ -88,21 +87,17 @@ class GolangPackage(models.Package):
             return '{}/{}/{}'.format(baseurl, self.namespace, self.name)
 
 
-def build_gomod_package(gomod):
+def build_gomod_package(gomods):
     """
     Return a Package object from a go.mod file or None.
     """
     package_dependencies = []
-    require = gomod.get('require') or []
-    for namespace, name, version in require:
+    require = gomods.require or []
+    for gomod in require:
         package_dependencies.append(
             models.DependentPackage(
-                purl=PackageURL(
-                    type='golang',
-                    namespace=namespace,
-                    name=name
-                ).to_string(),
-                requirement=version,
+                purl=gomod.purl(include_version=False),
+                requirement=gomod.version,
                 scope='require',
                 is_runtime=True,
                 is_optional=False,
@@ -110,16 +105,12 @@ def build_gomod_package(gomod):
             )
         )
 
-    exclude = gomod.get('exclude') or []
-    for namespace, name, version in exclude:
+    exclude = gomods.exclude or []
+    for gomod in exclude:
         package_dependencies.append(
             models.DependentPackage(
-                purl=PackageURL(
-                    type='golang',
-                    namespace=namespace,
-                    name=name
-                ).to_string(),
-                requirement=version,
+                purl=gomod.purl(include_version=False),
+                requirement=gomod.version,
                 scope='exclude',
                 is_runtime=True,
                 is_optional=False,
@@ -127,10 +118,10 @@ def build_gomod_package(gomod):
             )
         )
 
-    name = gomod.get('name')
-    namespace = gomod.get('namespace')
-    homepage_url = 'https://pkg.go.dev/{}'.format(gomod.get('module'))
-    vcs_url = 'https://{}.git'.format(gomod.get('module'))
+    name = gomods.name
+    namespace = gomods.namespace
+    homepage_url = 'https://pkg.go.dev/{}/{}'.format(gomods.namespace, gomods.name)
+    vcs_url = 'https://{}/{}.git'.format(gomods.namespace, gomods.name)
 
     return GolangPackage(
         name=name,
@@ -149,7 +140,7 @@ def build_gosum_package(gosums):
     for gosum in gosums:
         package_dependencies.append(
             models.DependentPackage(
-                purl=gosum.purl,
+                purl=gosum.purl(),
                 requirement=gosum.version,
                 scope='dependency',
                 is_runtime=True,

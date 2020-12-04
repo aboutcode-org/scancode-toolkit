@@ -1,3 +1,9 @@
 what:
   - authors
   - authors_summary
+authors:
+  - not attributable
+authors_summary:
+  - value: not attributable
+    count: 1
+

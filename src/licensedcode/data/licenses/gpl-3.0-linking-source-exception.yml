@@ -1,0 +1,10 @@
+key: gpl-3.0-linking-source-exception
+short_name: GPL-3.0 Linking Source Exception
+name: GPL-3.0 Linking Exception (with Corresponding Source)
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs
+is_exception: yes
+spdx_license_key: GPL-3.0-linking-source-exception
+other_urls:
+    - https://github.com/mirror/wget/blob/master/src/http.c#L20

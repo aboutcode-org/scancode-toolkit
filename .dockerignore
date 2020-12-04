@@ -1,0 +1,14 @@
+# Ignore the Docker files themselves to avoid that all layers are invalidated if the Docker files are changed during development.
+.dockerignore
+Dockerfile
+
+# Ignore the Git directory and files and github directory.
+.git/
+.github/
+.gitattributes
+.gitignore 
+
+# Ignore other directories that are not required in the image
+tests/
+docs/
+samples/

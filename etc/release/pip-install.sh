@@ -15,8 +15,15 @@ echo "###  Installing ScanCode release with pip ###"
 
 mkdir -p tmp/pip
 python -m venv tmp/pip
-source tmp/pip/bin/activate
-pip install dist/scancode_toolkit*.whl
+tmp/pip/bin/pip install dist/scancode_toolkit*.whl
+
+# perform a minimal check of the results for https://github.com/nexB/scancode-toolkit/issues/2201
+if [ `tmp/pip/bin/scancode -i --json-pp - NOTICE | grep -c "scan_timings"` == 1 ]; then
+   echo "Failed scan that includes timings"
+   exit 1
+else
+   echo "pass"
+fi
 
 set +e
 set +x

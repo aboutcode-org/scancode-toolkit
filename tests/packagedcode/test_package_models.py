@@ -187,7 +187,7 @@ class TestModels(PackageTester):
     def test_Package_get_package_resource_works_with_nested_packages_and_ignores(self):
         from packagedcode import get_package_instance
         from packagedcode import npm
-        from scancode.resource import VirtualCodebase
+        from commoncode.resource import VirtualCodebase
         scan_loc = self.get_test_loc('models/nested-npm-packages.json')
         codebase = VirtualCodebase(scan_loc)
         for resource in codebase.walk():
