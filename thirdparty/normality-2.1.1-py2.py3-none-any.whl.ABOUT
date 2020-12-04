@@ -1,0 +1,14 @@
+about_resource: normality-2.1.1-py2.py3-none-any.whl
+name: normality
+version: 2.1.1
+download_url: https://files.pythonhosted.org/packages/7a/2f/59d30996e49300621c0ce9624f3f43ad1611e3774d57b551682335986989/normality-2.1.1-py2.py3-none-any.whl
+license_expression: mit
+copyright: Copyright (c) Open Knowledge Foundation, Friedrich Lindenberg, Gregor Aisch
+attribute: yes
+checksum_md5: 1e0c3e3da620a9c4e35a14a895cf8b43
+checksum_sha1: 93fe0d29c09280dcf29405b47c42141b7b4c2ee2
+package_url: pkg:pypi/normality@2.1.1
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
