@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body style="padding: 0 7rem;">
+    {% include 'header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
