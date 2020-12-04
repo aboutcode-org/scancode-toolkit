@@ -1,0 +1,147 @@
+OpenMap Software License Agreement
+               ----------------------------------
+
+This Agreement sets forth the terms and conditions under which
+the software known as OpenMap(tm) will be licensed by BBN
+Technologies ("BBN") to you ("Licensee"), and by which Derivative 
+Works (as hereafter defined) of OpenMap will be licensed by you to BBN.
+
+Definitions:
+
+ "Derivative Work(s)" shall mean any revision, enhancement,
+ modification, translation, abridgement, condensation or
+ expansion created by Licensee or BBN that is based upon the
+ Software or a portion thereof that would be a copyright
+ infringement if prepared without the authorization of the
+ copyright owners of the Software or portion thereof.
+
+ "OpenMap" shall mean a programmer's toolkit for building map
+ based applications as originally created by BBN, and any
+ Derivative Works thereof as created by either BBN or Licensee,
+ but shall include only those Derivative Works BBN has approved
+ for inclusion into, and BBN has integrated into OpenMap.
+
+ "Standard Version" shall mean OpenMap, as originally created by
+ BBN.
+
+ "Software" shall mean OpenMap and the Derivative Works created
+ by Licensee and the collection of files distributed by the
+ Licensee with OpenMap, and the collection of files created
+ through textual modifications.
+
+ "Copyright Holder" is whoever is named in the copyright or
+ copyrights for the Derivative Works.
+
+ "Licensee" is you, only if you agree to be bound by the terms
+ and conditions set forth in this Agreement.
+
+ "Reasonable copying fee" is whatever you can justify on the
+ basis of media cost, duplication charges, time of people
+ involved.
+
+ "Freely Available" means that no fee is charged for the item
+ itself, though there may be fees involved in handling the item.
+ It also means that recipients of the item may redistribute it
+ under the same conditions that they received it.
+
+1. BBN maintains all rights, title and interest in and to
+OpenMap, including all applicable copyrights, trade secrets,
+patents and other intellectual rights therein.  Licensee hereby
+grants to BBN all right, title and interest into the compilation
+of OpenMap.  Licensee shall own all rights, title and interest
+into the Derivative Works created by Licensee (subject to the
+compilation ownership by BBN).
+
+2. BBN hereby grants to Licensee a royalty free, worldwide right
+and license to use, copy, distribute and make Derivative Works of
+OpenMap, and sublicensing rights of any of the foregoing in
+accordance with the terms and conditions of this Agreement,
+provided that you duplicate all of the original copyright notices
+and associated disclaimers.
+
+3. Licensee hereby grants to BBN a royalty free, worldwide right
+and license to use, copy, distribute and make Derivative Works of
+Derivative Works created by Licensee and sublicensing rights of
+any of the foregoing.
+
+4. Licensee's right to create Derivative Works in the Software is
+subject to Licensee agreement to insert a prominent notice in
+each changed file stating how and when you changed that file, and
+provided that you do at least ONE of the following:
+
+    a) place your modifications in the Public Domain or otherwise
+       make them Freely Available, such as by posting said
+       modifications to Usenet or an equivalent medium, or
+       placing the modifications on a major archive site and by
+       providing your modifications to the Copyright Holder.
+
+    b) use the modified Package only within your corporation or
+       organization.
+
+    c) rename any non-standard executables so the names do not
+       conflict with standard executables, which must also be
+       provided, and provide a separate manual page for each
+       non-standard executable that clearly documents how it
+       differs from OpenMap.
+
+    d) make other distribution arrangements with the Copyright
+       Holder.
+
+5. Licensee may distribute the programs of this Software in
+object code or executable form, provided that you do at least ONE
+of the following:
+
+    a) distribute an OpenMap version of the executables and
+       library files, together with instructions (in the manual
+       page or equivalent) on where to get OpenMap.
+
+    b) accompany the distribution with the machine-readable
+       source code with your modifications.
+
+    c) accompany any non-standard executables with their
+       corresponding OpenMap executables, giving the non-standard
+       executables non-standard names, and clearly documenting
+       the differences in manual pages (or equivalent), together
+       with instructions on where to get OpenMap.
+
+    d) make other distribution arrangements with the Copyright
+       Holder.
+
+6. You may charge a reasonable copying fee for any distribution
+of this Software.  You may charge any fee you choose for support
+of this Software.  You may not charge a fee for this Software
+itself.  However, you may distribute this Software in aggregate
+with other (possibly commercial) programs as part of a larger
+(possibly commercial) software distribution provided that you do
+not advertise this Software as a product of your own.
+
+7. The data and images supplied as input to or produced as output
+from the Software do not automatically fall under the copyright
+of this Software, but belong to whomever generated them, and may
+be sold commercially, and may be aggregated with this Software.
+
+8. BBN makes no representation about the suitability of OpenMap
+for any purposes.  BBN shall have no duty or requirement to
+include any Derivative Works into OpenMap.
+
+9. Each party hereto represents and warrants that they have the
+full unrestricted right to grant all rights and licenses granted
+to the other party herein.
+
+10. THIS PACKAGE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY
+KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING (BUT NOT LIMITED TO)
+ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, AND
+WITHOUT ANY WARRANTIES AS TO NONINFRINGEMENT.
+
+11. IN NO EVENT SHALL COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT,
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING
+FROM LOSS OF USE OF DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS CONDUCT, ARISING OUT OF OR
+IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS PACKAGE.
+
+12. Without limitation of the foregoing, You agree to commit no
+act which, directly or indirectly, would violate any U.S. law,
+regulation, or treaty, or any other international treaty or
+agreement to which the United States adheres or with which the
+United States complies, relating to the export or re-export of
+any commodities, software, or technical data.

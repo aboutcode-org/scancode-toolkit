@@ -1,0 +1,45 @@
+Sun JTA Specification License v1.0.1
+http://download.oracle.com/otndocs/jcp/7286-jta-1.0.1-spec-oth-JSpec/?submit=Download
+
+Copyright 1997-1999 Sun Microsystems, Inc.
+901 San Antonio Road, Palo Alto, California 94303 U.S.A.
+All rights reserved. Copyright in this document is owned by Sun Microsystems Inc.
+
+Sun Microsystems, Inc. (SUN) hereby grants to you at no charge a nonexclusive,
+nontransferable, perpetual, worldwide, limited license (without the right to
+sublicense) under SUN's intellectual property rights that are essential to
+practice this specification for the limited purpose of creating and distributing
+implementations of this specification, provided however, that such
+implementations do not derive from any SUN source code or binary materials and
+do not include any SUN binary materials without an appropriate and separate
+license from SUN. Other than this limited license, you acquire no right, title
+or interest in or to this specification or any other SUN intellectual property.
+No right, title, or interest in or to any trademarks, service marks, or trade
+names of SUN or SUN’s licensors is granted hereunder.
+
+RESTRICTED RIGHTS LEGEND
+Use, duplication, or disclosure by the U.S. Government is subject to restrictions of FAR 52.227-
+14(g)(2)(6/87) and FAR 52.227-19(6/87), or DFAR 252.227-7015(b)(6/95) and DFAR 227.7202-1(a).
+
+This specification contains the proprietary information of SUN and may only be used in accordance with
+the license terms set forth above.
+
+SUN MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE
+SPECIFICATION, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+OR NON-INFRINGEMENT. SUN SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY
+YOU AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THIS SPECIFICATION OR ITS
+DERIVATIVES.
+
+TRADEMARKS
+Sun, the Sun logo, Sun Microsystems, Java, Enterprise JavaBeans, JDBC, and JDK are trademarks or
+registered trademarks of Sun Microsystems, Inc. in the United States and other countries.
+
+THIS PUBLICATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT.
+THIS PUBLICATION COULD INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL
+ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN; THESE
+CHANGES WILL BE INCORPORATED IN NEW EDITIONS OF THE PUBLICATION. SUN
+MICROSYSTEMS, INC. MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE
+PRODUCT(S) AND/OR THE PROGRAM(S) DESCRIBED IN THIS PUBLICATION AT ANY TIME.

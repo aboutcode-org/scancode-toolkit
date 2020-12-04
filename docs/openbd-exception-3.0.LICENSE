@@ -1,0 +1,19 @@
+Additional Permission Granted by tagServlet Ltd: 
+  tagServlet Ltd grants the user the exception to distribute the entire 
+  Open BlueDragon runtime libraries without the web application (.cfml, .html, 
+  .js, .css, etc) that Open BlueDragon powers, from itself being licensed
+  under the GNU General Public License (v3), as long the entire runtime 
+  remains intact and includes all license information.
+  
+  This exception does not overrule the embedded JAR files and where applicable
+  the entire Open BlueDragon runtime only, must be available for inspection if 
+  ever asked, complete with all these copyright and license information.
+  
+  This applies only to distribution for the purpose of powering end-user CFML
+  applications.  This exception does not include embedding/linking any part of the 
+  runtime of Open BlueDragon within any other application other than a Servlet container 
+  whose sole purpose is to render CFML applications.   Linking or usage by any
+  Java application (even through CFML), is not permitted.
+    
+  Any modification, enhancements, linking, to the Open BlueDragon runtime still falls 
+  under the GNU General Public License (v3).

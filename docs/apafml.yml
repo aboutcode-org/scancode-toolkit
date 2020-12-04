@@ -1,0 +1,7 @@
+key: apafml
+short_name: Adobe Postscript AFM License
+name: Adobe Postscript AFM License
+category: Permissive
+owner: Adobe Systems
+homepage_url: https://fedoraproject.org/wiki/Licensing/AdobePostscriptAFM
+spdx_license_key: APAFML

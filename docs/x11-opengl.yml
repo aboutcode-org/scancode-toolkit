@@ -1,0 +1,6 @@
+key: x11-opengl
+short_name: X11-Style (OpenGL)
+name: X11-Style (OpenGL)
+category: Permissive
+owner: SGI - Silicon Graphics
+minimum_coverage: 80

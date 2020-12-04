@@ -1,0 +1,376 @@
+Sun Solaris Source Code (Foundation Release) License 1.1
+
+READ ALL THE TERMS OF THIS LICENSE CAREFULLY BEFORE ACCEPTING.
+BY ACCEPTING THIS LICENSE, YOU ARE ACCEPTING AND AGREEING TO ABIDE BY
+THE TERMS AND CONDITIONS OF THIS LICENSE.
+IF YOU ARE AGREEING TO THIS LICENSE ON BEHALF OF A COMPANY, YOU
+REPRESENT THAT YOU ARE AUTHORIZED TO BIND THE COMPANY TO THE
+LICENSE.
+WHETHER YOU ARE ACTING ON YOUR OWN BEHALF OR THAT OF A COMPANY,
+YOU MUST BE OF MAJORITY AGE AND OTHERWISE COMPETENT TO ENTER INTO
+CONTRACTS.
+
+SUN SOLARIS TM SOURCE CODE (FOUNDATION RELEASE) LICENSE
+Version 1.1
+I. DEFINITIONS
+"Licensee Code" means Reference Code, Contributed Code, and
+any combination thereof.
+"Licensee" means You, Original Contributor and any other party
+that has entered into and has in effect a version of this License for
+the Technology with Original Contributor.
+"Contributed Code" means Shared Modifications and any other
+code other than Reference Code made available on the Technology
+Site by a Licensee.
+"Contributor" means any Licensee who makes available
+Contributed Code.
+"Covered Code" means any and all code (including Modifications)
+implementing all or any portion of the Technology Specifications or
+Contributed Code Specifications.
+"Interfaces" means classes or other programming code or
+specifications designed for use with the Technology comprising a
+means or link for invoking functionality, operations or protocols
+and which are additional to or extend the interfaces designated in
+the Technology Specifications.
+"Modifications" means any (i) change or addition to Covered
+Code, or (ii) new source or object code implementing any portion
+of the Technology Specifications, but (iii) excluding any
+incorporated Reference Code.
+"Original Contributor" means Sun Microsystems, Inc., its
+affiliates, successors and assigns.
+"Reference Code" means source code for the Technology
+designated by Original Contributor at the Technology Site from
+time to time.
+"Research Use" means research, reference, evaluation,
+development, educational or personal use, excluding use or
+distribution for direct or indirect commercial (including strategic)
+gain or advantage.
+"Shared Modifications" means those Modifications which
+Licensee elects to share with other Licensees.
+"Technology Specifications" means the documentation for the
+Technology designated by Original Contributor at the Technology
+Site, from time to time.
+"Technology" means the technology described in and
+contemplated by the Technology Specifications.
+"Technology Site" means the website designated by Original
+Contributor for accessing Licensee Code and Technology
+Specifications.
+"You" means the individual executing this license or the legal
+entity or entities represented by the individual executing this
+license. "Your" is the possessive of "You".
+II. PURPOSE
+Original Contributor is licensing the Reference Code and Technology Specifications under and
+subject to this Sun Solaris Source Code (Foundation Release) License (the License) to promote
+research, education, innovation and prototyping using the Technology.
+INTERNAL DEPLOYMENT, COMMERCIAL USE AND DISTRIBUTION OF
+TECHNOLOGY AND/OR REFERENCE CODE IN SOURCE CODE OR OBJECT CODE
+FORM IS NOT PERMITTED UNDER THIS AGREEMENT.
+III. RESEARCH USE RIGHTS
+	A. From Original Contributor. Subject to and conditioned upon your full compliance with
+	the terms and conditions of this License including Section IV (Restrictions and Licensee
+	Responsibilities) and Section V.E.7 (International Use), Original Contributor:
+		1. Grants to You a non-exclusive, worldwide and royalty-free license to the extent of
+		Original Contributor’s copyrights and trade secret rights in and covering the Reference
+		Code and Technology Specifications to do the following for Your Research Use only:
+		a. Reproduce and prepare derivative works of the Reference Code, in whole or in part,
+		alone or as part of Covered Code; and
+		b. Reproduce and prepare derivative works of the Technology Specifications.
+
+		2. will not, during the term of Your License, bring against You any claim alleging that
+		Your using, making, having made, importing or distributing Licensee Code for Your
+		Research Use, insofar as permitted under Section III.A.1 of this License, necessarily
+		infringes any patent now owned or hereafter acquired by Original Contributor whose
+		claims cover subject matter contained in or embodied by the Reference Code or which
+		would necessarily be infringed by the use or distribution of any and all
+		implementations of the Technology Specifications.
+
+		3. grants to You a non-exclusive, worldwide and royalty-free license, to the extent of its
+		intellectual property rights therein, to use (i) Original Contributor’s class, interface and
+		package names only insofar as necessary to accurately reference or invoke Your
+		Modifications for Research Use, and (ii) any associated software tools, documents and
+		information provided by Original Contributor at the Technology Site for use in
+		exercising the above license rights.
+
+	B. Contributed Code. Subject to and conditioned upon compliance with the terms and
+	conditions of this License, including Sections IV (Restrictions and Licensee
+	Responsibilities) and V.E.7 (International Use), each Contributor:
+		1. grants to each Licensee a non-exclusive, worldwide and royalty-free license to the
+		extent of such Contributor’s copyrights and trade secret rights in and covering its
+		Contributed Code, to reproduce, prepare derivative works of, and distribute
+		Contributed Code, in whole or in part, in source code and object code form, to the
+		same extent as permitted under such Licensee’s License with Original Contributor
+		(including all supplements thereto).
+
+		2. will not, during the term of the Licensee’s License, bring against any Licensee any
+		claim alleging that using, making, having made, importing or distributing Contributed
+		Code as permitted under this License necessarily infringes any patent now owned or
+		hereafter acquired by such Contributor whose claims would necessarily be infringed
+		by the use or distribution of the Contributed Code. This covenant applies to the
+		combination of the Contributed Code and the Reference Code if, at the time the
+		Contributed Code is added to Reference Code, such addition of Contributed Code
+		causes such combination to be covered by said patents. This covenant shall not apply
+		to any other combinations which include the Contributed Code.
+
+	C. Modifications. You covenant that You will not bring against Original Contributor and/or
+	Solaris licensees any claim alleging that any patent now owned or hereafter acquired by
+	You is infringed by Original Contributor and/or Solaris licensees where such patent is
+	related to Modifications to the Reference Code or based on Reference Code. Any
+	permitted transfer of this Agreement, your Modifications, or such patent must be subject
+	to this covenant.
+
+	D. No Implied Licenses. Neither party is granted any right or license other than the licenses
+	and covenants expressly set out herein. Other than the licenses and covenants expressly
+	set out herein, Original Contributor retains all right, title and interest in Reference Code
+	and Technology Specifications and You retain all right, title and interest in Your
+	Modifications and associated specifications. Except as expressly permitted herein, You
+	Sun Solaris Source Code (FR) License 5 December 4, 2000
+	may not otherwise use any package, class or interface naming conventions that appear to
+	originate from Original Contributor.
+
+IV. RESTRICTIONS AND RESPONSIBILITIES.
+As a condition to Your license and other rights and immunities, You must comply with the
+restrictions and responsibilities set forth below.
+	A. Source Code Availability. You may provide Contributed Code to Original Contributor at
+	any time, in Your discretion. Original Contributor will post Your Contributed Code and
+	Contributed Code Specifications on the Technology Site.
+
+	B. Notices. You must reproduce without alteration copyright and other proprietary notices
+	in any Covered Code that You create. The statement "Use and Distribution is subject to
+	the Sun Solaris Source Code (Foundation Release) License available at
+	"http://www.sun.com/solaris/source" must appear prominently in Your Modifications
+	and, in all cases, in the same file as all Your copyright and other proprietary notices.
+
+	C. Modifications. You must include a "diff" file with Your Contributed Code that identifies
+	and details the changes or additions You made, the version of Reference Code or
+	Contributed Code You used and the date of such changes or additions. In addition, you
+	must provide any Contributed Code Specifications for Your Contributed Code. Your
+	Modifications are Covered Code and You expressly agree that use and distribution, in
+	whole or in part, of Your Modifications shall only be done in accordance with and
+	subject to this License.
+
+	D. Extensions.
+		1. You may create and add "Interfaces" but, unless expressly permitted at the Technology
+		Site, You may not incorporate any Reference Code in Your Interfaces. If You choose to
+		disclose or permit disclosure of Your Interfaces to even a single third party for the
+		purposes of enabling such third party to independently develop and distribute (directly
+		or indirectly) technology which invokes such Interfaces, You must then make the
+		Interfaces open by (i) promptly following completion thereof, publishing to the
+		industry, on a non-confidential basis and free of all copyright restrictions, a reasonably
+		detailed, current and accurate specification for the Interfaces, and (ii) as soon as
+		reasonably possible, but in no event more than thirty (30) days following publication
+		of Your specification, making available on reasonable terms and without
+		discrimination, a reasonably complete and practicable test suite and methodology
+		adequate to create and test implementations of the Interfaces by a reasonably skilled
+		technologist.
+
+		2. You shall not assert any intellectual property rights You may have covering Your
+		Interfaces which would necessarily be infringed by the creation, use or distribution of
+		all reasonable independent implementations of your specification of such Interfaces by
+		Sun Solaris Source Code (FR) License 6 December 4, 2000
+		a Licensee or Original Contributor. Nothing herein is intended to prevent You from
+		enforcing any of Your intellectual property rights covering Your specific
+		implementation of Your Interfaces or functionality using such Interfaces other than as
+		specifically set forth in this Section D.2.
+
+	E. Confidential Information. You agree to treat the Reference Code as confidential
+	information of the Original Contributor. Reference Code will not be provided by You to
+	any third party. You will establish appropriate procedures to prevent the disclosure of
+	such Reference Code.
+
+	F. Sharing of Covered Code. You may not share Covered Code with any non-Licensee
+	under any circumstances. You may only share Covered Code with other Licensees on
+	the Technology Site, consistent with any rules or guidelines set forth in this Agreement
+	and the Technology Site.
+
+V. GOVERNANCE
+	A. LICENSE VERSIONS.
+	Only Original Contributor may promulgate new versions of this License. Once You have
+	accepted Reference Code, Technology Specifications, Contributed Code and/or
+	Contributed Code Specifications under a version of this License, You may always
+	continue to use such version of Reference Code, Technology Specifications, Contributed
+	Code and/or Contributed Code Specifications under that version of the License. New code
+	and specifications which You may subsequently choose to accept will be subject to any
+	new License in effect at the time of Your acceptance of such code and specifications.
+
+	B. DISCLAIMER OF WARRANTIES.
+		1. AS IS. COVERED CODE AND ALL SPECIFICATIONS ARE PROVIDED "AS IS",
+		WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED
+		INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT ANY COVERED
+		CODE OR SPECIFICATIONS ARE FREE OF DEFECTS, MERCHANTABLE, FIT
+		FOR A PARTICULAR PURPOSE OR NON-INFRINGING OF THIRD PARTY
+		RIGHTS. YOU AGREE THAT YOU BEAR THE ENTIRE RISK IN CONNECTION
+		WITH YOUR USE AND DISTRIBUTION OF ANY AND ALL COVERED CODE
+		OR SPECIFICATIONS UNDER THIS LICENSE. NO USE OF ANY COVERED
+		CODE OR SPECIFICATIONS IS AUTHORIZED EXCEPT SUBJECT TO AND IN
+		CONSIDERATION FOR THIS DISCLAIMER.
+
+		2. You understand that, although each Licensee grants the licenses set forth in the License,
+		no assurances are provided by any Licensee that Covered Code or any specifications do
+		not infringe the intellectual property rights of any third party.
+		Sun Solaris Source Code (FR) License 7 December 4, 2000
+
+		3. Hazardous Applications. You acknowledge that Reference Code and Technology
+		Specifications are neither designed nor intended for use in the design, construction,
+		operation or maintenance of any nuclear facility.
+
+	C. LIMITATION ON LIABILITY.
+		1. Infringement. Each Licensee disclaims any liability to all other Licensee for claims
+		brought by any third party based on infringement of intellectual property rights. Original
+		Contributor represents that, to its knowledge, it has sufficient copyrights to allow You to
+		use and distribute the Reference Code as herein permitted and You represent that, to
+		Your knowledge, You have sufficient copyrights to allow each Licensee and Original
+		Contributor to use and distribute Your Shared Modifications and Error Corrections as
+		contemplated herein. You agree to notify Original Contributor should You become
+		aware of any potential or actual infringement of the Technology or any of Original
+		Contributor’s intellectual property rights in the Technology, Reference Code or
+		Technology Specifications.
+
+		2. Suspension. If any portion of, or functionality implemented by, the Reference Code,
+		Technology or Technology Specifications becomes the subject of a claim or threatened
+		claim of infringement ("Affected Materials"), Original Contributor may, in its
+		unrestricted discretion, suspend Your rights to use and distribute the Affected Materials
+		under this License. Such suspension of rights will be effective immediately upon
+		Original Contributor’s posting of notice of suspension on the Technology Site. Original
+		Contributor has no obligation to lift the suspension of rights relative to the Affected
+		Materials until a final, non-appealable determination is made by a court or governmental
+		agency of competent jurisdiction that Original Contributor is legally able, without the
+		payment of a fee or royalty, to reinstate Your rights to the Affected Materials to the full
+		extent contemplated hereunder. Upon such determination, Original Contributor will lift
+		the suspension by posting a notice to such effect on the Technology Site. Nothing herein
+		shall be construed to prevent You, at Your option and expense, and subject to applicable
+		law and the restrictions and responsibilities set forth in this License and any
+		Supplements, from replacing Reference Code in Affected Materials with non-infringing
+		code or independently negotiating, without compromising or prejudicing Original
+		Contributor’s position, to obtain the rights necessary to use Affected Materials as herein
+		permitted.
+
+		3. Disclaimer. ORIGINAL CONTRIBUTOR’S LIABILITY TO YOU FOR ALL CLAIMS
+		RELATING TO THIS LICENSE OR ANY SUPPLEMENT HERETO, WHETHER
+		FOR BREACH OR TORT, IS LIMITED TO THE GREATER OF ONE THOUSAND
+		DOLLARS (US $1000.00) OR THE FULL AMOUNT PAID BY YOU FOR THE
+		MATERIALS GIVING RISE TO THE CLAIM, IF ANY. IN NO EVENT WILL
+		ORIGINAL CONTRIBUTOR BE LIABLE FOR ANY INDIRECT, PUNITIVE,
+		SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES IN CONNECTION
+		WITH OR ARISING OUT OF THIS LICENSE (INCLUDING, WITHOUT
+		LIMITATION, LOSS OF PROFITS, USE, DATA OR ECONOMIC ADVANTAGE OF
+		Sun Solaris Source Code (FR) License 8 December 4, 2000
+		ANY SORT), HOWEVER IT ARISES AND ON ANY THEORY OF LIABILITY
+		WHETHER OR NOT ORIGINAL CONTRIBUTOR HAS BEEN ADVISED OF THE
+		POSSIBILITY OF SUCH DAMAGE AND NOTWITHSTANDING FAILURE OF THE
+		ESSENTIAL PURPOSE OF ANY REMEDY.
+
+	D. TERMINATION.
+	You may terminate this License at any time by notifying Original Contributor in writing.
+	All Your rights will terminate under this License if You fail to comply with any of the
+	material terms or conditions of this License and do not cure such failure in a reasonable
+	period of time after becoming aware of such noncompliance.
+
+	If You institute patent litigation against a Licensee with respect to a patent applicable to
+	Licensee Code, then any patent licenses granted by such Licensee to You under this
+	License shall terminate as of the date such litigation is filed. In addition, if You institute
+	patent litigation against any Licensee or Original Contributor alleging that Reference
+	Code, Technology or Technology Specifications infringe Your patent(s), then the rights
+	granted to You under Section III.A above will terminate.
+
+	Upon termination, You must discontinue all uses and distribution of Licensee Code,
+	except that You may continue to use, reproduce, prepare derivative works of Your
+	Modifications (without the benefit of any license arising from this License) for purposes
+	other than to implement functionality designated in any portion of the Technology
+	Specifications. Properly granted sublicenses to third parties will survive termination.
+	Provisions which, by their nature, should remain in effect following termination survive.
+
+	E. MISCELLANEOUS.
+		1. Trademark. You agree to comply with Original Contributor’s Trademark & Logo Usage
+		Requirements, as modified from time to time, available at the Technology Site. Except
+		as expressly provided in this License, You are granted no rights in or to any "Sun",
+		"Solaris", "Jini", "Jiro" or "Java" trademarks now or hereafter used or licensed by
+		Original Contributor (the "Sun Trademarks"). You agree not to (i) challenge Original
+		Contributor’s ownership or use of Sun Trademarks; (ii) attempt to register any Sun
+		Trademarks, or any mark or logo substantially similar thereto; or (iii) incorporate any
+		Sun Trademarks into you own trademarks, product names, service marks, company
+		names or domain names.
+
+		2. Integration and Assignment. Original Contributor may assign this Research Use License
+		to another by written notification to the other party. This License represents the complete
+		agreement of the parties concerning the subject matter hereof.
+
+		3. Severability. If any provision of this License is held unenforceable, such provision shall
+		be reformed to the extent necessary to make it enforceable unless to do so would defeat
+		the intent of the parties.
+
+		4. Governing Law. This License is governed by the laws of the United States and the State
+		of California, as applied to contracts entered into and performed in California between
+		Sun Solaris Source Code (FR) License 9 December 4, 2000
+		California residents. The United Nations Convention on Contracts for the International
+		Sale of Goods shall not apply. Nor shall any law or regulation which provides that a
+		contract be construed against the drafter.
+
+		5. Dispute Resolution.
+		a. Any dispute arising out of or relating to this License shall be finally settled by
+		arbitration as set forth in this Section, except that either party may bring an action in a
+		court of competent jurisdiction (which jurisdiction shall be exclusive), relative to any
+		dispute relating to such party’s intellectual property rights. Arbitration will be
+		administered (i) by the American Arbitration Association (AAA), (ii) in accordance
+		with the rules of the United Nations Commission on International Trade Law
+		(UNCITRAL) (the "Rules") in effect at the time of arbitration, modified as set forth
+		herein, and (iii) the arbitrator will apply the governing laws required under Section E.4
+		above. Judgment upon the award rendered by the arbitrator may be entered in any
+		court having jurisdiction to enforce such award. The arbitrator may not award damages
+		in excess of or of a different type than those permitted by this License and any such
+		award is void.
+		b. All proceedings will be in English and conducted by a single arbitrator selected in
+		accordance with the Rules who is fluent in English, familiar with technology matters
+		pertinent in the dispute and either a retired judge or practicing attorney having at least
+		ten (10) years litigation experience. Venue for arbitration will be in San Francisco,
+		California, unless the parties agree otherwise. Each party will be required to produce
+		documents relied upon in the arbitration and to respond to no more than twenty-five
+		single question interrogatories. All awards are payable in US dollars and may include
+		for the prevailing party (i) pre-judgment interest, (ii) reasonable attorney’s fees
+		incurred in connection with the arbitration, and (iii) reasonable costs and expenses
+		incurred in enforcing the award.
+
+		6. U.S. Government: If this Software is being acquired by or on behalf of the U.S.
+		Government or by a U.S. Government prime contractor or subcontractor (at any tier),
+		then the Government’s rights in this Software and accompanying documentation shall be
+		only as set forth in this license; this is in accordance with 48 CFR 227.7201 through
+		227.7202-4 (for Department of Defense acquisitions) and with 48 CFR 2.101 and
+		12.212 (for non-DoD acquisitions).
+
+		7. International Use.
+		a. Covered Code is subject to US export control laws and may be subject to export or
+		import regulations in other countries. Each party shall comply fully with all such laws
+		and regulations and acknowledges its responsibility to obtain such licenses to export,
+		re-export or import as may be required. You must pass through these obligations to all
+		Your licensees.
+		Sun Solaris Source Code (FR) License 10 December 4, 2000
+		b. You may not distribute Reference Code or Technology Specifications into countries
+		other than those listed on the Technology Site by Original Contributor, from time to
+		time.
+ACCEPTED AND AGREED:
+Signature: 
+Printed Name
+and Title: 
+Company:  
+Date:  
+SDLC Personal ID:  
+Email Address:  
+Phone Number:  
+Sun Solaris Source Code (FR) License 11 December 4, 2000
+ATTACHMENT A-1
+STUDENT ACKNOWLDGEMENT
+You acknowledge that this software and related documentation has been obtained by your
+educational institution subject to the Sun Solaris Source Code (Foundation Release) License (the
+License). You have been provided with access to the software and documentation for use only in
+connection with your course work as a matriculated student of your educational institution.
+Commercial use of the software and documentation is expressly prohibited.
+THIS SOFTWARE AND RELATED DOCUMENTATION CONTAINS PROPRIETARY
+MATERIALS OF SUN MICROSYSTEMS, INC. PROTECTED BY VARIOUS
+INTELLECTUAL PROPERTY RIGHTS. YOUR USE OF THE SOFTWARE AND
+DOCUMENTATION IS LIMITED. YOU ACKNOWLEDGE THAT THE SOFTWARE AND
+RELATED DOCUMENTATION SHALL BE TREATED AS CONFIDENTIAL
+INFORMATION.
+- - - - - - - - -Signature: 
+Printed Name: 
+Date:  
+SDLC Personal ID:  
+Email Address:  
+Phone Number:  

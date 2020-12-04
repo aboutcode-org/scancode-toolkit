@@ -1,0 +1,1 @@
+{"key": "lgpl-2.0-plus-gcc", "is_deprecated": true, "short_name": "LGPL 2.0 or later with GCC exception", "name": "LGPL 2.0 or later with GCC Runtime Library exception", "category": "Copyleft Limited", "owner": "Free Software Foundation (FSF)", "is_exception": true, "text_urls": ["http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h"]}

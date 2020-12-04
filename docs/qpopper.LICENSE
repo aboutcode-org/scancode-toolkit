@@ -1,0 +1,141 @@
+Qpopper(tm) is licensed by QUALCOMM Incorporated under the following
+    terms and conditions.  ANY USE OF QPOPPER CONSTITUTES AGREEMENT TO
+    THESE TERMS.
+
+1.  Warranty Disclaimer.  QPOPPER SOFTWARE IS PROVIDED TO THE USER "AS
+    IS." QUALCOMM MAKES NO WARRANTIES, EITHER EXPRESS OR IMPLIED, WITH
+    RESPECT TO THE QPOPPER SOFTWARE AND/OR ASSOCIATED MATERIALS
+    PROVIDED TO THE USER, INCLUDING BUT NOT LIMITED TO ANY WARRANTY OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR AGAINST
+    INFRINGEMENT.  QUALCOMM does not warrant that the functions
+    contained in the software will meet your requirements, or that the
+    operation of the software will be uninterrupted or error-free, or
+    that defects in the software will be corrected.  Furthermore,
+    QUALCOMM does not warrant or make any representations regarding
+    the use or the results of the use of the software or any
+    documentation provided therewith in terms of their correctness,
+    accuracy, reliability, or otherwise.  No oral or written
+    information or advice given by QUALCOMM or a QUALCOMM
+    representative shall create a warranty or in any way increase the
+    scope of this warranty.
+
+2.  Limitation of Liability.  QUALCOMM AND ITS LICENSORS ARE NOT LIABLE
+    FOR ANY CLAIMS OR DAMAGES WHATSOEVER ARISING IN CONNECTION WITH
+    THE QPOPPER SOFTWARE, INCLUDING WITHOUT LIMITATION PROPERTY
+    DAMAGE, PERSONAL INJURY, INTELLECTUAL PROPERTY INFRINGEMENT, LOSS
+    OF PROFITS, OR INTERRUPTION OF BUSINESS, OR FOR ANY SPECIAL,
+    CONSEQUENTIAL OR INCIDENTAL DAMAGES, HOWEVER CAUSED, WHETHER
+    ARISING OUT OF BREACH OF WARRANTY, CONTRACT, TORT (INCLUDING
+    NEGLIGENCE), STRICT LIABILITY, OR OTHERWISE.
+
+3.  Using and Distributing Qpopper.  If a party agrees to these terms
+    and conditions, such party may copy and use Qpopper for any
+    purpose, and distribute unmodified complete copies of Qpopper to
+    any third party provided that such third party must agree to these
+    terms and conditions prior to any use of Qpopper.  Failure to
+    include these license terms when distributing Qpopper shall be a
+    material breach of this agreement, and the party committing such
+    breach shall defend and indemnify QUALCOMM Incorporated against
+    all claims, losses, liabilities, damages, costs and expenses,
+    including attorney's fees, which QUALCOMM may incur in connection
+    with such breach.
+
+4.  Modifying Qpopper.  Qpopper consists of (i) intellectual property
+    owned by QUALCOMM Incorporated, and (ii) intellectual property
+    owned by the Regents of the University of California.  Any
+    modifications to the U.C.-owned portions of Qpopper are subject to
+    the provisions of Section 7 below.  A party to this agreement may
+    create derivative works of the QUALCOMM-owned portions of the
+    Qpopper software, distribute such derivative works to third
+    parties, and permit such third parties to copy and use such
+    derivative works subject to the following restrictions:
+   
+    (a)  The protocol greeting banner and the CAPA IMPLEMENTATION
+         response tag must include clear notification that Qpopper has
+         been modified (for example,
+         "FooPopper-by-Foo-Networks-hacked-from-Qpopper-4.0").
+   
+    (b)  Detailed notification of all modifications must be clearly and
+         conspicuously included within the modified source files, and
+         in a separate document.  All of the source files and the
+         document describing the changes must be distributed with the
+         modified software.
+   
+    (c)  When distributing the modified software the distributing party
+         must clearly and conspicuously communicate to all recipients
+         that the modified software is produced by the party that
+         modified the software and is not a QUALCOMM product.
+
+    (d)  The term "Qpopper" shall not be used in connection with the
+         modified software except in a purely factual manner when
+         describing the history or development of the software.
+
+    (e)  The modified software must be licensed to end users using a
+         license agreement which expressly states that portions of the
+         modified software are based on code owned by QUALCOMM
+         Incorporated, that such QUALCOMM code is only provided on the
+         terms stated in this agreement, and that QUALCOMM bears no
+         responsibility whatsoever for any modifications to the QUALCOMM
+         code.
+
+    (f)  The modifying party shall defend and indemnify QUALCOMM
+         Incorporated against all claims, losses, liabilities, damages,
+         costs and expenses, including attorney's fees, which QUALCOMM
+         may incur in connection with any intellectual property
+         infringement or similar claim related to the modified
+         software, if such claim is related to that party's
+         modifications.
+
+5.  Notices.  QUALCOMM is a registered trademark and registered service
+    mark of QUALCOMM Incorporated.  Qpopper is a trademark of QUALCOMM
+    Incorporated.  QUALCOMM does not grant any party the right to use
+    such marks on any modified version of the Qpopper software.  All
+    other trademarks and service marks are the property of their
+    respective owners.  The Qpopper software, excluding the portions
+    owned by the Regents of the University of California, is Copyright
+    1993-2006 QUALCOMM Incorporated.  All rights not expressly granted
+    herein are reserved by QUALCOMM.
+
+6.  General.  This agreement is governed and interpreted in accordance
+    with the laws of the State of California without giving effect to
+    its conflict of laws provisions.  Any claim arising out of or
+    related to this agreement must be brought exclusively in the state
+    or federal courts located in San Diego County, California.  The
+    United Nations Convention on Contracts for the International Sale
+    of Goods is expressly disclaimed.  If any provision of this
+    agreement shall be invalid, the validity of the  remaining
+    provisions of this agreement shall not be affected.  This
+    agreement is the entire and exclusive agreement between QUALCOMM
+    and any user of the Qpopper software with respect to the software
+    and supersedes all prior agreements (whether written or oral) and
+    other communications related to the software.
+
+7.  IMPORTANT.
+
+    This software program contains code, and/or derivatives or
+    modifications of code originating from the software program
+    "Popper." Popper is (c) Copyright 1989-1991 The Regents of the
+    University of California, All Rights Reserved.  Popper was
+    created by Austin Shelton, Information Systems and Technology,
+    University of California, Berkeley.  Permission from the Regents of
+    the University of California to use, copy, modify, and distribute
+    the "Popper" software contained herein for any purpose, without
+    fee, and without a written agreement is hereby granted, provided
+    that the above copyright notice and this paragraph and the
+    following two paragraphs appear in all copies.  HOWEVER, ADDITIONAL
+    PERMISSIONS MAY BE NECESSARY FROM OTHER PERSONS OR ENTITIES, TO
+    USE DERIVATIVES OR MODIFICATIONS OF POPPER.
+
+    IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY
+    PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+    DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THE
+    POPPER SOFTWARE, OR ITS DERIVATIVES OR MODIFICATIONS, AND ITS
+    DOCUMENTATION, EVEN IF THE UNIVERSITY OF CALIFORNIA HAS BEEN
+    ADVISED OF THE POSSIBLITY OF SUCH DAMAGE.
+
+    THE UNIVERSITY OF CALIFORNIA, SPECIFICALLY DISCLAIMS ANY
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+    OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE
+    POPPER SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE
+    UNIVERSITY OF CALIFORNIA HAS NO OBLIGATIONS TO PROVIDE
+    MAINTENANCE, SUPPORT, UPDATES, ENCHANCEMENTS, OR MODIFICATIONS.

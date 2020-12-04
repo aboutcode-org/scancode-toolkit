@@ -1,0 +1,162 @@
+OPERA Widget License Version 1. 0
+© Copyright 2006 Opera Software ASA.  All rights reserved. 
+
+OPERA SOFTWARE ASA (OPERA)  IS WILLING TO PERMIT USE OF THIS SOFTWARE BY 
+YOU, ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED 
+IN THIS DOCUMENT.  PLEASE READ THE TERMS AND CONDITIONS OF THIS AGREEMENT 
+CAREFULLY.  IF YOU ARE NOT WILLING TO BE BOUND, YOU ARE NOT ALLOWED TO 
+ACCESS THE CONTENTS OF, STUDY OR MAKE USE OF THE SOFTWARE IN ANY WAY.  
+
+
+Terms of Agreement
+
+
+1. Definitions
+	a) "Original Code" means:
+The original version of the program accompanying this Agreement as 
+released by Opera Software ASA ("OPERA") , including source code, object 
+code and documentation, if any.  
+	b) "Covered Code" means:
+The Original Source Code, Contributions, the combination of the Original 
+Code and Contributions, and/or any respective portions thereof.  
+	c) "Contribution" means:
+in the case of OPERA, the Original Code, and
+in the case of each Contributor, changes to the Original code, and 
+additions to the Original Code; where such changes and/or additions to 
+the Original Code originate from and are distributed by that particular 
+Contributor.  A Contribution 'originates' from a Contributor if it was 
+added to the Original Code by such Contributor itself or anyone acting 
+on such Contributor's behalf.  
+Contributions do not include additions to the Original Code which: (i)  
+are separate modules of software distributed in conjunction with the 
+Original Code under their own license agreement, and (ii)  are not 
+derivative works of the Original Code.  
+	d) "Contributor" means:
+OPERA and any other entity that distributes the Covered Code.  
+	e) "Recipient" means:
+Anyone who receives the Covered Code under this Agreement, including all 
+Contributors.  
+	f) "Larger Work" means:
+A work which combines Covered Code or portions thereof with code not 
+governed by the terms of this Agreement, specifically additions to the 
+Original Code which: (i)  are separate modules of software distributed in 
+conjunction with the Original Code under their own license agreement, 
+and (ii)  are not derivative works of the Original Code.  
+
+
+2. Grant of Rights
+	a) Subject to the terms of this Agreement, each Contributor hereby grants 
+Recipient a non-exclusive, worldwide, royalty-free copyright license to 
+reproduce, prepare derivative works of, publicly display, publicly 
+perform, distribute and sublicense the Contribution of such Contributor, 
+if any, and such derivative works, in source code and object code form.  
+The limited license granted in this Section is only for the integration 
+of the Contribution with or for the use of the Contribution in 
+connection with other proprietary software of OPERA, including but not 
+limited to OPERA’s browser software.  
+	b) Recipient understands that although each Contributor grants the 
+licenses to its Contributions set forth herein, no assurances are 
+provided by any Contributor that the Covered Code does not infringe the 
+patent or other intellectual property rights of any other entity.  Each 
+Contributor disclaims any liability to Recipient for claims brought by 
+any other entity based on infringement of intellectual property rights 
+or otherwise.  As a condition to exercising the rights and licenses 
+granted hereunder, each Recipient hereby assumes sole responsibility to 
+secure any other intellectual property rights needed, if any.  
+	c) Each Contributor represents that to its knowledge it has sufficient 
+copyright rights in its Contribution, if any, to grant the copyright 
+license set forth in this Agreement.  
+
+
+3. Requirements
+	a) A Contributor may choose to distribute the Larger Work under its own 
+license agreement, provided that: 
+		i. it complies with the terms and conditions of this Agreement; 
+		ii. and its license agreement: 
+			1. effectively disclaims on behalf of all Contributors all warranties and 
+conditions, express and implied, including warranties or conditions of 
+title and non-infringement, and implied warranties or conditions of 
+merchantability and fitness for a particular purpose; 
+			2. effectively excludes on behalf of all Contributors all liability for 
+damages, including direct, indirect, special, incidental and 
+consequential damages, such as lost profits; 
+			3. states that any provisions which differ from this Agreement are 
+offered by that Contributor alone and not by any other party; 
+			4. states that the Contribution only may be integrated with or used with 
+other proprietary software of OPERA, including but not limited to 
+OPERA’s browser software.  
+			5. and states that source code for the Covered Code is available from 
+such Contributor, and informs licensees how to obtain it in a reasonable 
+manner on or through a medium customarily used for software exchange.  
+	b) When the Covered Code is made available: 
+		i. it must be made available under this Agreement; and a copy of this 
+Agreement must be included with each copy of the Covered Code.  
+		ii. Each Contributor must duplicate, to the extent it does not already 
+exist, the notice in Exhibit A in each file of the Covered Code of all 
+Contributions, and cause the modified files to carry prominent notices 
+stating that the contributor changed the files and the date of any 
+change.  
+		iii. In addition, each Contributor must identify itself as the originator 
+of its Contribution, if any, in a manner that reasonably allows 
+subsequent Recipients to identify the originator of the Contribution.  
+
+
+4. No Warranty 
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE COVERED CODE IS 
+PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY 
+WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR 
+FITNESS FOR A PARTICULAR PURPOSE.  Each Recipient is solely responsible 
+for determining the appropriateness of using and distributing the 
+Covered Code for commercial and non-commercial purposes and assumes all 
+risks associated with its exercise of rights under this Agreement, 
+including but not limited to the risks and costs of Covered Code errors, 
+compliance with applicable laws, damage to or loss of data, code or 
+equipment, and unavailability or interruption of operations.
+
+
+5. Disclaimer of Liability 
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR 
+ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING 
+WITHOUT LIMITATION LOST PROFITS) , HOWEVER CAUSED AND ON ANY THEORY OF 
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+NEGLIGENCE OR OTHERWISE)  ARISING IN ANY WAY OUT OF THE USE OR 
+DISTRIBUTION OF THE COVERED CODE OR THE EXERCISE OF ANY RIGHTS GRANTED 
+HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  
+
+
+6.  General 
+If any provision of this Agreement is invalid or unenforceable under 
+applicable law, it shall not affect the validity or enforceability of 
+the remainder of the terms of this Agreement, and without further action 
+by the parties hereto, such provision shall be reformed to the minimum 
+extent necessary to make such provision valid and enforceable.  
+
+All Recipient's rights under this Agreement shall terminate if it fails 
+to comply with any of the material terms or conditions of this Agreement 
+and does not cure such failure in a reasonable period of time after 
+becoming aware of such noncompliance.  If all Recipient's rights under 
+this Agreement terminate, Recipient agrees to cease use and distribution 
+of the Covered Code as soon as reasonably practicable.  However, 
+Recipient's obligations under this Agreement and any licenses granted by 
+Recipient relating to the Covered Code shall continue and survive.  
+
+OPERA may publish new versions (including revisions)  of this Agreement 
+from time to time.  Each new version of the Agreement will be given a 
+distinguishing version number.  The Covered Code (including 
+Contributions)  may always be distributed subject to the version of the 
+Agreement under which it was received.  In addition, after a new version 
+of the Agreement is published, Contributor may elect to distribute the 
+Covered Code (including its Contributions)  under the new version.  No one 
+other than OPERA has the right to modify this Agreement.  Except as 
+expressly stated in Section 2(a) , Recipient receives no rights or 
+licenses to the intellectual property of any Contributor under this 
+Agreement, whether expressly, by implication, estoppel or otherwise.  All 
+rights in the Covered Code not expressly granted under this Agreement 
+are reserved.  
+
+This Agreement is governed by the laws of Norway.  Any and all disputes 
+arising out of the rights and obligations in this Agreement shall be 
+submitted to ordinary court proceedings.  You accept the Oslo City Court 
+as legal venue under this Agreement.

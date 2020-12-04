@@ -1,0 +1,45 @@
+This program is distributed under the GNU General Public license. This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, Version 3, as published by the Free Software Foundation.
+
+Any modifications must keep this entire license intact.
+
+-----------------------------------------------------------------------
+
+Appcelerator GPL Exception
+Section 7 Exception
+
+As a special exception to the terms and conditions of the GNU General Public License Version 3 (the "GPL"): You are free to convey a modified version that is formed entirely from this file (for purposes of this exception, the "Program" under the GPL) and the works identified at http://www.aptana.com/legal/gpl (each an "Excepted Work"), which are conveyed to you by Appcelerator, Inc. and licensed under one or more of the licenses identified in the Excepted License List below (each an "Excepted License"), as long as:
+
+   1. you obey the GPL in all respects for the Program and the modified version, except for Excepted Works which are identifiable sections of the modified version, which are not derived from the Program, and which can reasonably be considered independent and separate works in themselves,
+   2. all Excepted Works which are identifiable sections of the modified version, which are not derived from the Program, and which can reasonably be considered independent and separate works in themselves,
+         1. are distributed subject to the Excepted License under which they were originally licensed, and
+         2. are not themselves modified from the form in which they are conveyed to you by Aptana, and
+         3. the object code or executable form of those sections are accompanied by the complete corresponding machine-readable source code for those sections, on the same medium as the corresponding object code or executable forms of those sections, and are licensed under the applicable Excepted License as the corresponding object code or executable forms of those sections, and
+   3. any works which are aggregated with the Program, or with a modified version on a volume of a storage or distribution medium in accordance with the GPL, are aggregates (as defined in Section 5 of the GPL) which can reasonably be considered independent and separate works in themselves and which are not modified versions of either the Program, a modified version, or an Excepted Work.
+
+If the above conditions are not met, then the Program may only be copied, modified, distributed or used under the terms and conditions of the GPL or another valid licensing option from Appcelerator, Inc. Terms used but not defined in the foregoing paragraph have the meanings given in the GPL.
+
+-----------------------------------------------------------------------
+
+Excepted License List
+
+    * Apache Software License: version 1.0, 1.1, 2.0
+    * Eclipse Public License: version 1.0
+    * GNU General Public License: version 2.0
+    * GNU Lesser General Public License: version 2.0
+    * License of Jaxer
+    * License of HTML jTidy
+    * Mozilla Public License: version 1.1
+    * W3C License
+    * BSD License
+    * MIT License
+    * Aptana Commercial Licenses
+
+This list may be modified by Appcelerator from time to time. See Appcelerator's website for the latest version.
+
+-----------------------------------------------------------------------
+
+Attribution Requirement
+
+This license does not grant any license or rights to use the trademarks "Aptana," any "Aptana" logos, or any other trademarks of Appcelerator, Inc. You are not authorized to use the name Aptana or the names of any author or contributor for publicity purposes, without written authorization.
+
+However, in addition to the other notice obligations of this License, all copies of any covered work conveyed by you must include on each user interface screen and in the Appropriate Legal Notices the following text: "Powered by Aptana". On user interface screens, this text must be visibly and clearly displayed in the title bar, status bar, or otherwise directly in the view that is in focus.

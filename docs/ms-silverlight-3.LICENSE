@@ -1,0 +1,147 @@
+MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
+MICROSOFT SILVERLIGHT 3 TOOLS FOR VISUAL STUDIO 2008, Service Pack 1
+
+PLEASE NOTE: Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. You may use it with each validly licensed copy of Microsoft Visual Studio 2008 Service Pack 1 and Microsoft Visual Web Developer 2008 Express Edition software (for which this supplement is applicable) (the "software"). You may not use the supplement if you do not have a license for the software. The license terms for the software apply to your use of this supplement. Microsoft provides support services for the supplement as described at www.support.microsoft.com/common/international.aspx. 
+
+=============================================
+
+MICROSOFT SOFTWARE LICENSE TERMS
+MICROSOFT SILVERLIGHT 3
+
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+
+·	Updates (including but not limited to bug fixes, patches, updates, upgrades, enhancements, new versions, and successors to the software, collectively called "Updates"),
+·	supplements,
+·	Internet-based services, and 
+·	support services
+for this software, unless other terms accompany those items. If so, those terms apply.
+
+BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT USE THE SOFTWARE.
+AS DESCRIBED BELOW, YOUR INSTALLATION OF THIS SOFTWARE ALSO OPERATES AS YOUR CONSENT TO THE TRANSMISSION OF CERTAIN STANDARD COMPUTER INFORMATION AND TO THE AUTOMATIC DOWNLOADING AND INSTALLATION OF UPDATES ON YOUR COMPUTER.
+
+If you comply with these license terms, you have the rights below.
+
+1.	INSTALLATION AND USE RIGHTS. You may install and use any number of copies of the software. You may also make any number of copies as you need to distribute the software within your organization.
+
+2.	SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+·	work around any technical limitations in the software;
+·	reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+·	publish the software for others to copy;
+·	rent, lease or lend the software; or
+·	transfer the software or this agreement to any third party.
+
+3.	INTERNET-BASED SERVICES. Microsoft provides Internet-based services with the software. It may change or cancel them at any time. 
+
+a.	Automatic Updates. This software contains an Automatic Update feature that is on by default. For more information about this feature, including instructions for to turning it off, see go.microsoft.com/fwlink/?LinkId=147032. You may turn off this feature while the software is running ("opt out"). Unless you expressly opt out of this feature, this feature will (a) connect to Microsoft or service provider computer systems over the Internet, (b) use Internet protocols to send to the appropriate systems standard computer information, such as your computer’s Internet protocol address, the type of operating system, browser and name and version of the software you are using, and the language code of the device where you installed the software, and (c) automatically download and install, or prompt you to download and/or install, current Updates to the software. In some cases, you will not receive a separate notice before this feature takes effect. By installing the software, you consent to the transmission of standard computer information and the automatic downloading and installation of Updates.
+
+b.	Microsoft Digital Rights Management. If you use the software to access content that has been protected with Microsoft Digital Rights Management (DRM), in order to let you play the content, the software may automatically request media usage rights from a rights server on the Internet and download and install available DRM Updates. For more information, see go.microsoft.com/fwlink/?LinkId=147032.
+
+4.	NOTICE ABOUT THE H.264/AVC VISUAL STANDARD, AND THE VC-1 VIDEO STANDARD. This software may include H.264/MPEG-4 AVC and/or VC-1decoding technology. MPEG LA, L.L.C. requires this notice: 
+
+THIS PRODUCT IS LICENSED UNDER THE AVC AND THE VC-1 PATENT PORTFOLIO LICENSES FOR THE PERSONAL AND NON-COMMERCIAL USE OF A CONSUMER TO (A) ENCODE VIDEO IN COMPLIANCE WITH THE ABOVE STANDARDS ("VIDEO STANDARDS") AND/OR (B) DECODE AVC AND VC-1 VIDEO THAT WAS ENCODED BY A CONSUMER ENGAGED IN A PERSONAL AND NON-COMMERCIAL ACTIVITY AND/OR WAS OBTAINED FROM A VIDEO PROVIDER LICENSED TO PROVIDE SUCH VIDEO. NONE OF THE LICENSES EXTEND TO ANY OTHER PRODUCT REGARDLESS OF WHETHER SUCH PRODUCT IS INCLUDED WITH THIS SOFTWARE IN A SINGLE ARTICLE. NO LICENSE IS GRANTED OR SHALL BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY BE OBTAINED FROM MPEG LA, L.L.C. SEE WWW.MPEGLA.COM.
+For clarification purposes only, the Notice in this Section does not limit or inhibit the use of the software provided under this agreement for normal business uses that are personal to that business which do not include (i) redistribution of the software to third parties, or (ii) creation of content with the VIDEO STANDARDS compliant technologies for distribution to third parties.
+
+5.	EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting. 
+
+6.	SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
+
+7.	ENTIRE AGREEMENT. This agreement, and the terms for supplements, Updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+
+8.	APPLICABLE LAW.
+
+a.	United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+
+b.	Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+
+9.	LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+
+10.	DISCLAIMER OF WARRANTY. The software is licensed "as-is." You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+11.	LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+
+This limitation applies to
+·	anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
+·	claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+=============================================
+MICROSOFT SOFTWARE LICENSE TERMS
+MICROSOFT SILVERLIGHT 3 SOFTWARE DEVELOPMENT KIT
+
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+
+·	updates,
+·	supplements,
+·	Internet-based services, and
+·	support services
+for this software, unless other terms accompany those items. If so, those terms apply.
+
+By using the software, you accept these terms. If you do not accept them, do not use the software.
+
+The software is a software development kit designed to work with Microsoft Silverlight (collectively "Microsoft Silverlight"). This agreement does not give you any rights to install or use Microsoft Silverlight. You must acquire a separate license to acquire such rights.
+
+If you comply with these license terms, you have the rights below.
+
+1.	INSTALLATION AND USE RIGHTS. One user may install and use any number of copies of the software on your devices to design, develop and test your programs for use with Microsoft Silverlight.
+
+2.	ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
+a.	Distributable Code. The software contains code that you are permitted to distribute in programs you develop for use with Microsoft Silverlight if you comply with the terms below.
+
+i.	Right to Use and Distribute. The code and text files listed below are "Distributable Code."
+·	Sample Code. You may modify, copy, and distribute the source and object code form of code marked as "sample."
+·	Silverlight Libraries. You may copy and distribute the object code form of code marked as "Silverlight Libraries", "Client Libraries" and "Server Libraries."
+·	Third Party Distribution. You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
+
+ii.	Distribution Requirements. For any Distributable Code you distribute, you must
+·	add significant primary functionality to it in your programs;
+·	require distributors and external end users to agree to terms that protect it at least as much as this agreement;
+·	display your valid copyright notice on your programs; and
+·	indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
+
+iii.	Distribution Restrictions. You may not
+·	alter any copyright, trademark or patent notice in the Distributable Code;
+·	use Microsoft’s trademarks in your programs’ names or in a way that suggests your programs come from or are endorsed by Microsoft;
+·	include Distributable Code in malicious, deceptive or unlawful programs; or
+·	modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of use, modification or distribution, that
+·	the code be disclosed or distributed in source code form; or
+·	others have the right to modify it.
+
+3.	SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+·	work around any technical limitations in the software;
+·	reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+·	publish the software for others to copy;
+·	rent, lease or lend the software; or
+·	transfer the software or this agreement to any third party.
+
+4.	BACKUP COPY. You may make one backup copy of the software. You may use it only to reinstall the software.
+
+5.	DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+
+6.	NOTICE ABOUT THE H.264/AVC VISUAL STANDARD, AND THE VC-1 VIDEO STANDARD. This software may include H.264/MPEG-4 AVC and/or VC-1. MPEG LA, L.L.C. requires this notice: 
+
+THIS PRODUCT IS LICENSED UNDER THE AVC AND THE VC-1 PATENT PORTFOLIO LICENSES FOR THE PERSONAL AND NON-COMMERCIAL USE OF A CONSUMER TO (1) ENCODE VIDEO IN COMPLIANCE WITH THE ABOVE STANDARDS ("VIDEO STANDARDS") AND/OR (2) DECODE AVC AND VC-1 VIDEO THAT WAS ENCODED BY A CONSUMER ENGAGED IN A PERSONAL AND NON-COMMERCIAL ACTIVITY AND/OR WAS OBTAINED FROM A VIDEO PROVIDER LICENSED TO PROVIDE SUCH VIDEO. NO LICENSE IS GRANTED OR SHALL BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY BE OBTAINED FROM MPEG LA, L.L.C. SEE WWW.MPEGLA.COM.
+
+7.	EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
+
+8.	SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
+
+9.	ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+
+10.	APPLICABLE LAW.
+
+a.	United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+
+b.	Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+
+11.	LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+
+12.	DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS-IS." YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+13.	LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
+
+This limitation applies to
+·	anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
+·	claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.

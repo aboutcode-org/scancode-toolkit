@@ -1,0 +1,8 @@
+key: gpl-2.0-plus-linking
+is_deprecated: yes
+short_name: GPL 2.0 or later with Linking exception
+name: GPL 2.0 or later with Linking exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+notes: replaced by linking-exception-2.0-plus
+is_exception: yes

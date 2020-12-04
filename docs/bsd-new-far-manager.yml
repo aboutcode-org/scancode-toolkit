@@ -1,0 +1,7 @@
+key: bsd-new-far-manager
+is_deprecated: yes
+short_name: BSD-3-Clause with Far Manager exception
+name: BSD-3-Clause with Far Manager exception
+category: Permissive
+owner: Far Group
+is_exception: yes

@@ -1,0 +1,41 @@
+Excelsior JET Licensing Terms and Conditions
+Production and Redistribution Use
+Production use and redistribution use of Excelsior JET Runtime is permitted only in conjunction with and as part of your software product.
+
+Excelsior JET Runtime includes the standard Java API code licensed from Sun Microsystems. According to that license:
+
+Deployment of your software product that includes Excelsior JET Runtime onto general purpose desktop computers and servers shall be royalty-free, but
+Usage of Excelsior JET Runtime in embedded systems in the general case requires you to sign a trademark and license agreement with Sun Microsystems and pay per-unit royalties. Exceptions are low-volume deals, for which Excelsior help you negotiate a flat fee with Sun.
+
+from http://www.excelsior-usa.com/pdf/iltemplate.pdf 
+
+C. RUNTIME LICENSE
+In addition to the Development License granted above, Excelsior grants You a non-exclusive, non-transferable, feebearing
+license to use software programs or components of the Software that are incorporated or embedded in and
+used in the execution of Your software ("Runtime Components") for the number of applications, users, CPUs, servers,
+or connections and at the sites, as specified on Your invoice, on the following terms:
+
+Embedded Use. Use of the Runtime Components in devices other than General Purpose Desktop Computers And
+Servers is not allowed under this Agreement. Please contact Excelsior for the conditions of such use.
+
+Production Use. You may use the Runtime Components in Your applications legally developed under the Development
+License above for internal business purposes, which may include third party customers’ access to or use of such
+applications.
+
+Redistribution Use. You may redistribute the Runtime Components on the following conditions:
+You agree to: a. distribute the Runtime Components in object code form only and in conjunction with and as a part
+of Your software product legally developed under the Development License above; b. not suppress, alter, or remove
+proprietary rights notices contained therein; c. indemnify, hold harmless, and defend Excelsior and its suppliers from
+and against any claims or lawsuits, including attorney’s fees, that arise or result from the use or distribution of Your
+software product; and d. ensure that Your distributors and customers agree to act in a manner consistent with Your
+obligations under this Agreement.
+
+Your license agreement with Your distributors and/or customers will: a. not permit Your end users to modify,
+translate, reverse engineer, decompile, or disassemble the Runtime Components except as expressly permitted by law;
+b. not permit further distribution of the Runtime Components by end users. c. include statements that Your product: (i)
+is licensed not sold, and that title to such offering is not passed to the customer, (ii) may include material licensed by a
+third party, and that You have assumed responsibility for the presence and use of this material; and (iii) comply with the
+requirements of Section H "Limited Warranty" as appropriate.
+
+Fees. The runtime license fees applicable to Production Use and Redistribution Use are detailed at
+http://www.excelsior-usa.com/fees.html.

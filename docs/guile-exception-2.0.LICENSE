@@ -1,0 +1,4 @@
+The exception is that, if you link the GUILE library with other files to produce
+an executable, this does not by itself cause the resulting executable to be
+covered by the GNU General Public License. Your use of that executable is in no
+way restricted on account of linking the GUILE library code into it.

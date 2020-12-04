@@ -1,0 +1,8 @@
+key: crystal-stacker
+short_name: Crystal Stacker License
+name: Crystal Stacker License
+category: Permissive
+owner: NewCreature Design
+homepage_url: https://fedoraproject.org/wiki/Licensing:CrystalStacker?rd=Licensing/CrystalStacker
+spdx_license_key: CrystalStacker
+minimum_coverage: 20

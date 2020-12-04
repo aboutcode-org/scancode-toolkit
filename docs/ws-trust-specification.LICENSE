@@ -1,0 +1,34 @@
+WS-Trust Specification
+
+Permission to copy and display the WS-Trust Specification (the "Specification", which 
+includes WSDL and schema documents), in any medium without fee or royalty 
+is hereby granted, provided that you include the following on ALL copies of the 
+Specification, that you make:
+
+1.  A link or URL to the Specification at one of the Authors' websites
+2. The copyright notice as shown in the Specification.
+
+IBM, Microsoft and Actional, BEA, Computer Associates, Layer 7, Netegrity, Oblix, 
+OpenNetwork, Ping Identity, Reactivity, and Verisign (collectively, the "Authors") each 
+agree to grant you a license, under royalty-free and otherwise reasonable, 
+non-discriminatory terms and conditions, to their respective essential patent claims 
+that they deem necessary to implement the Specification.
+
+THE SPECIFICATION IS PROVIDED "AS IS," AND THE AUTHORS MAKE 
+NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT 
+NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF 
+THE SPECIFICATION ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE 
+IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY 
+PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+THE AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, 
+INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO ANY 
+USE OR DISTRIBUTION OF THE SPECIFICATION.
+
+The name and trademarks of the Authors may NOT be used in any manner, 
+including advertising or publicity pertaining to the Specification or 
+its contents without specific, written prior permission. Title to 
+copyright in the Specification will at all times remain with the Authors.
+
+No other rights are granted by implication, estoppel or otherwise.

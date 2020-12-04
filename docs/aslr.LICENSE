@@ -1,0 +1,119 @@
+Artop Software License Based on AUTOSAR Released Material (ASLR)
+
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ARTOP SOFTWARE LICENSE BASED ON AUTOSAR RELEASED MATERIAL (ASLR) ("LICENSE"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
+
+1. DEFINITIONS
+
+"Affiliated Company" means, with respect to any party, any other legal entity that, directly, or indirectly, controls, or is controlled by or is under common control with, such party. For purposes of this definition, "control" (including the terms "controlling," "controlled by" and "under common control with"), as used with respect to such party, shall mean the possession, directly or indirectly, of the power to direct or cause the direction of management or policies of such party through the majority ownership of voting securities. Any Affiliated Company shall not be deemed as third party in this ASLR.
+
+"AUTOSAR" means a system architecture that is standardized by the AUTOSAR development cooperation.
+
+"AUTOSAR Associate Partner" means a party committed to the commercial exploitation of AUTOSAR, which is effectively bound to the terms of an AUTOSAR Associate Partner agreement.
+
+"AUTOSAR Core Partner" means a party which is effectively bound to the terms of the AUTOSAR development agreement.
+
+"AUTOSAR Development Partner" means a party interested in the development and/or committed to the commercial exploitation of AUTOSAR, which is effectively bound to the terms of an AUTOSAR Development Partner agreement.
+
+"AUTOSAR Exploitation License" means the license granted by the AUTOSAR development cooperation for the automotive exploitation of AUTOSAR as defined in the respective AUTOSAR agreement. For example such a license is granted to current AUTOSAR Core Partners, AUTOSAR Premium Partners, AUTOSAR Development Partners and AUTOSAR Associate Partners.
+
+"AUTOSAR Premium Partner" means a party interested in the development and/or committed to the commercial exploitation of AUTOSAR, which is effectively bound to the terms of an AUTOSAR Premium Partner agreement.
+
+"AUTOSAR Released Material" means a general term for documents and specifications that are officially released by the AUTOSAR development cooperation. The use of AUTOSAR Released Material and the contained intellectual property is regulated by the AUTOSAR Exploitation License and other AUTOSAR regulations.
+
+"Contribution" means:
+a) in the case of the initial Contributor, the initial code and documentation distributed under this License, and
+b) in the case of each subsequent Contributor:
+i) changes to the Program, and
+ii) additions to the Program;
+where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which: (i) are separate modules of software distributed in conjunction with the Program under their own license agreement, and (ii) are not derivative works of the Program.
+
+"Contributor" means any party that has an AUTOSAR Exploitation License that distributes or provides Contributions to the Program.
+
+"Distributor" means any Contributor that distributes the Program.
+
+"Licensed Patents" mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.
+
+"Program" means the Contributions distributed in accordance with this License.
+
+"Recipient" means any party that has an AUTOSAR Exploitation License that receives the Program under this License, including all Contributors.
+
+2. GRANT OF RIGHTS
+Grant of Rights by Contributor to Recipient
+
+a) Copyright License
+Subject to the terms of this License, each Contributor hereby grants Recipient a nonexclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, display, perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
+
+b) Patent License
+Subject to the terms of this License, each Contributor hereby grants Recipient a nonexclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
+
+c) Licensing under the Terms of the Eclipse Public License (EPL)
+Subject to the terms of this License, each Contributor hereby grants Recipient the right to license the Program to third parties under the terms of the EPL, if the Program does not use any AUTOSAR Released Materials.
+
+d) Third Party Intellectual Property Rights
+Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any.
+
+For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
+
+e) Contributor Represents Sufficient Rights
+Each Contributor represents that to its knowledge it has sufficient rights in its Contribution, if any, to grant the licenses set forth in this License.
+
+3. NON-ASSERTION
+Each Recipient agrees not to assert against any other Recipient exploiting Artop commercially regarding any intellectual property rights used by the Program.
+
+Any beneficiary of this non-assertion may enforce it for its own benefit, provided that it grants similar non-assertion commitments to the Recipient or properly obligated successors in rights to the respective intellectual property.
+
+4. REQUIREMENTS
+4.1 Distribution of the Program in Object Code
+A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:
+a) it complies with the terms and conditions of this License; and
+b) its license agreement:
+i) effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+ii) effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
+iii) states that any provisions which differ from this License are offered by that Contributor alone and not by any other party; and
+iv) states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.
+4.2 Distribution of the Program in Source Code
+When the Program is made available in source code form:
+a) it must be made available under this License; and
+b) a copy of this License must be included with each copy of the Program.
+4.3 Alteration of Copyrights
+Contributors may not remove or alter any copyright notices contained within the Program.
+4.4 Identification of the Original Contributor
+Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution.
+4.5 AUTOSAR Requirements
+The Contributor and the Recipient must have an AUTOSAR Exploitation License for the AUTOSAR Released Materials that are used in the Program.
+
+5. COMMERCIAL DISTRIBUTION
+5.1 Obligation Regarding Product Behavior
+Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Distributor who includes the Program in a commercial product offering must do so in a manner which does not create potential liability for other Contributors.
+
+Therefore, if a Distributor includes the Program in a commercial product offering, such Distributor hereby agrees to defend and indemnify every other Contributor against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the indemnified Contributor to the extent caused by the acts or omissions of such Distributor in connection with its distribution of the Program in a commercial product offering.
+
+5.2 Obligations Regarding Intellectual Property Rights of Third Parties
+The obligations in section 5.1 do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an indemnified Contributor must:
+a) promptly notify the Distributor in writing of such claim, and
+b) allow the Distributor to control, and cooperate with the Distributor in, the defense and any related settlement negotiations.
+The indemnified Contributor may participate in any such claim at its own expense.
+
+5.3 Example to Section 5.1
+For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Distributor. If that Distributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Distributor's responsibility alone. Under this section, the Distributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Distributor must pay those damages.
+
+6. NO WARRANTY
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this License, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+
+7. DISCLAIMER OF LIABILITY
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. GENERAL
+8.1 Severability
+If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+8.2 Recipient Claims Intellectual Property Rights Infringements
+If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
+8.3 Termination of Rights
+All Recipient's rights under this License shall terminate if it fails to comply with any of the material terms or conditions of this License and does not cure such failure in a reasonable period of time after becoming aware of such non-compliance. If all Recipient's rights under this License terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this License and any licenses granted by Recipient relating to the Program shall continue and survive.
+8.4 Restrictions of Granted Rights
+Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this License, whether expressly, by implication, estoppel or otherwise.
+All rights in the Program not expressly granted under this License are reserved.
+8.5 Governing Law
+This License is governed by the laws of the Federal Republic of Germany. The application of the United Nations Convention for the International Sale of Goods (CISG) is hereby excluded.

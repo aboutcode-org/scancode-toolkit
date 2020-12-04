@@ -1,0 +1,1 @@
+{"key": "gpl-2.0-glibc", "is_deprecated": true, "short_name": "GPL 2.0 with GLibC exception", "name": "GPL 2.0 with GLibC exception", "category": "Copyleft Limited", "owner": "Free Software Foundation (FSF)", "homepage_url": "http://www.gnu.org/licenses/gpl.html", "notes": "replaced by mif-exception", "is_exception": true, "text_urls": ["http://www.gnu.org/licenses/gpl.html"]}

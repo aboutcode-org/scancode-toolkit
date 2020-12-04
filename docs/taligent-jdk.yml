@@ -1,0 +1,7 @@
+key: taligent-jdk
+short_name: Taligent JDK Proprietary Notice
+name: Taligent JDK Proprietary Notice
+category: Proprietary Free
+owner: Taligent
+homepage_url: https://github.com/typetools/checker-framework/blob/3c427f380f61f234688893467d9bc433cf1a584c/checker/jdk/index/src/java/sun/util/resources/OpenListResourceBundle.java#L26-L39
+notes: This notice is common is OpenJDK and related Java code.

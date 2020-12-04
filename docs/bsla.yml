@@ -1,0 +1,7 @@
+key: bsla
+short_name: BSLA
+name: Berkeley Software License Agreement
+category: Permissive
+owner: Regents of the University of California
+ignorable_authors:
+  - the University of California, Berkeley

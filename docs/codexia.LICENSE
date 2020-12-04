@@ -1,0 +1,20 @@
+By Mike Ryan (mike@codexia.com)
+Copyright (c) 2000, portions (c) Allen Denver
+07.30.2000
+
+Some of the code based on Allen Denver's article "Using the Performance Data Helper Library"
+
+Free usage granted in all applications including commercial.
+Do NOT distribute without permission from me. I can be reached
+at mike@codexia.com, http://www.codexia.com
+Please feel free to email me about this class.
+
+Compatibility:
+Windows 98, Windows NT 4.0 SP 3 (Dlls required), Windows 2000
+
+Development Environ:
+Visual C++ 6.0
+
+Libraries / DLLs:
+pdh.lib (linked in)
+pdh.dll (provided with Windows 2000, must copy in for NT 4.0)

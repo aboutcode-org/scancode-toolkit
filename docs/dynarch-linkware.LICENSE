@@ -1,0 +1,53 @@
+PRODUCT: hmenu
+            Version: 2.9
+            License type: linkware
+            Download date:
+        LICENSEE:
+            Registration key: 
+
+Definitions of terms
+
+    "PRODUCT" refers to the product offered by Dynarch.com (the object of this license agreement).
+    "LICENSEE" refers to the one that has downloaded the PRODUCT package. Sometimes we might use "you" as a synonym.
+
+License agreement
+
+LICENSEE is NOT allowed to modify or remove any copyright notices from any of the PRODUCT files.
+
+Subject to the terms of this agreement, Dynarch.com grants you a non-exclusive, non-transferable, free license to use the PRODUCT on Sites that you own, under the following terms and conditions:
+
+(1) Non-commercial.  Sites that use the PRODUCT under this license ("Sites") must be non-profit; examples of accepted websites are free or hobby Websites, blogs, charity organizations or universities, or websites of open source projects.
+
+Sites may contain advertising, as long as they are not published for the specific purpose of showing ads.  We will not accept spam sites.
+
+The Sites may not include:
+
+    Pornography, adult, or mature content
+    Gambling or casino-related content
+
+If you are not sure that your Site follows our policy, you must ask us.
+
+(2) Link back.  Sites using the PRODUCT under this license must link back to the PRODUCT home page, in each page where the PRODUCT is used. The link must be visible and direct.
+
+Example of acceptable code:
+
+<a href="http://www.dynarch.com/products/dhtml-menu/"
+   title="Visit the DHTML Menu Page">
+  DHTML Menu by Dynarch.com
+</a>
+
+You can include a target="_blank" attribute if you wish.
+
+You may place the link anywhere in the page, the main requirement is that it must be visible and that it should point directly to the PRODUCT page—server-side redirects are not acceptable.
+
+Please refer to the file linkware.html in the PRODUCT package for more details on this, after you download the PRODUCT.
+
+(3) No Intranet.  This free license does not cover usage on your Intranet—for that you need to purchase a commercial license.
+
+(4) No distribution.  You may not distribute the PRODUCT nor any derivative works to any third party.  You may not distribute free nor commercial Software applications or Libraries that incorporate the PRODUCT.
+
+All rights not specifically granted to LICENSEE herein are retained by Dynarch.com.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+© Dynarch.com 2003-2005. All rights reserved.

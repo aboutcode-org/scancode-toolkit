@@ -1,0 +1,54 @@
+
+LINUX DOCUMENTATION PROJECT LICENSE (LDPL) v2.0, 12 January 1998
+
+    COPYRIGHT
+
+    The copyright to each Linux Documentation Project (LDP) document is owned by its author or authors.
+
+    LICENSE
+
+    The following license terms apply to all LDP documents, unless otherwise stated in the document. The LDP documents may be reproduced and distributed in whole or in part, in any medium physical or electronic, provided that this license notice is displayed in the reproduction. Commercial redistribution is permitted and encouraged. Thirty days advance notice via email to the author(s) of redistribution is appreciated, to give the authors time to provide updated documents.
+
+        REQUIREMENTS OF MODIFIED WORKS
+
+        All modified documents, including translations, anthologies, and partial documents, must meet the following requirements:
+
+            The modified version must be labeled as such.
+            The person making the modifications must be identified.
+            Acknowledgement of the original author must be retained.
+            The location of the original unmodified document be identified.
+            The original author's (or authors') name(s) may not be used to assert or imply endorsement of the resulting document without the original author's (or authors') permission. 
+
+        In addition it is requested that:
+            The modifications (including deletions) be noted.
+            The author be notified by email of the modification in advance of redistribution, if an email address is provided in the document. 
+
+        As a special exception, anthologies of LDP documents may include a single copy of these license terms in a conspicuous location within the anthology and replace other copies of this license with a reference to the single copy of the license without the document being considered "modified" for the purposes of this section.
+
+        Mere aggregation of LDP documents with other documents or programs on the same media shall not cause this license to apply to those other works.
+
+        All translations, derivative documents, or modified documents that incorporate any LDP document may not have more restrictive license terms than these, except that you may require distributors to make the resulting document available in source format.
+
+        LDP documents are available in source format via the LDP home page at http://sunsite.unc.edu/LDP/.
+
+LDP Policy Appendices
+
+    TO USE THE LDP LICENSE
+
+    LDP authors who want to use the LDP License should put the following statement in their document:
+
+        Copyright (c) by . This document may be distributed only subject to the terms and conditions set forth in the LDP License at . 
+
+    Authors may include a copy of the license in their documents, as well. If they do so, they have the option of ommitting the appendices.
+
+    TO USE THE LDP LICENSE, BUT PREVENT MODIFICATION
+
+    LDP authors who want to prevent modification to their document should put the following statement in their document:
+
+        Copyright (c) by . This document may be distributed only subject to the terms and conditions set forth in the LDP License at , except that this document must not be distributed in modified form without the author's consent. 
+
+    TO USE YOUR OWN LICENSE
+
+    LDP authors who want to include their own license on LDP works may do so, as long as their terms are not more restrictive than the LDP license, except that they may require that the document may not be modified.
+
+    If you have questions about the LDP License, please contact Guylhem Aznar, guylhem@metalab.unc.edu.

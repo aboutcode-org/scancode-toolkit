@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: jetty</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="jetty.yml">yml</a> -
+    <a href="jetty.json">json</a> -
+    <a href="jetty.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jetty.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/jetty.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: jetty
+short_name: Jetty License
+name: Jetty License
+category: Permissive
+owner: Jetty Project
+homepage_url: http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
+text_urls:
+  - http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html
+  - http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt
+faq_url: http://en.wikipedia.org/wiki/Jetty_(web_server)
+ignorable_copyrights:
+  - Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others
+  - copyright Sun Microsystems Inc.
+ignorable_holders:
+  - Mort Bay Consulting Pty. Ltd. (Australia) and others
+  - Sun Microsystems Inc.
+ignorable_urls:
+  - http://ftp.uu.net/
+  - http://jetty.mortbay.org/
+  - http://www.opensource.com/
+  - http://www.opensource.org/
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Jetty License
+$Revision: 584 $
+
+Preamble:
+The intent of this document is to state the conditions under which the Jetty
+Package may be copied, such that the Copyright Holder maintains some semblance
+of control over the development of the package, while giving the users of the
+package the right to use, distribute and make reasonable modifications to the
+Package in accordance with the goals and ideals of the Open Source concept as
+described at http://www.opensource.org.
+
+It is the intent of this license to allow commercial usage of the Jetty package,
+so long as the source code is distributed or suitable visible credit given or
+other arrangements made with the copyright holders.
+
+Definitions:
+* &#34;Jetty&#34; refers to the collection of Java classes that are distributed as a
+HTTP server with servlet capabilities and associated utilities.
+
+* &#34;Package&#34; refers to the collection of files distributed by the Copyright
+Holder, and derivatives of that collection of files created through textual
+modification.
+
+* &#34;Standard Version&#34; refers to such a Package if it has not been modified,
+or has been modified in accordance with the wishes of the Copyright Holder.
+
+* &#34;Copyright Holder&#34; is whoever is named in the copyright or copyrights for
+the package.  Mort Bay Consulting Pty. Ltd. (Australia) is the &#34;Copyright Holder&#34; for
+the Jetty package.
+
+* &#34;You&#34; is you, if you&#39;re thinking about copying or distributing this
+Package.
+
+* &#34;Reasonable copying fee&#34; is whatever you can justify on the basis of media
+cost, duplication charges, time of people involved, and so on. (You will not be
+required to justify it to the Copyright Holder, but only to the computing
+community at large as a market that must bear the fee.)
+
+* &#34;Freely Available&#34; means that no fee is charged for the item itself,
+though there may be fees involved in handling the item. It also means that
+recipients of the item may redistribute it under the same conditions they
+received it.
+
+0. The Jetty Package is Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia)
+and others. Individual files in this package may contain additional copyright
+notices. The javax.servlet packages are copyright Sun Microsystems Inc.
+
+1. The Standard Version of the Jetty package is available from
+http://jetty.mortbay.org.
+
+2. You may make and distribute verbatim copies of the source form of the
+Standard Version of this Package without restriction, provided that you include
+this license and all of the original copyright notices and associated
+disclaimers.
+
+3. You may make and distribute verbatim copies of the compiled form of the
+Standard Version of this Package without restriction, provided that you include
+this license.
+
+4. You may apply bug fixes, portability fixes and other modifications derived
+from the Public Domain or from the Copyright Holder. A Package modified in such
+a way shall still be considered the Standard Version.
+
+5. You may otherwise modify your copy of this Package in any way, provided that
+you insert a prominent notice in each changed file stating how and when you
+changed that file, and provided that you do at least ONE of the following:
+
+a) Place your modifications in the Public Domain or otherwise make them
+Freely Available, such as by posting said modifications to Usenet or an
+equivalent medium, or placing the modifications on a major archive site such as
+ftp.uu.net, or by allowing the Copyright Holder to include your modifications in
+the Standard Version of the Package.
+
+b) Use the modified Package only within your corporation or organization.
+
+c) Rename any non-standard classes so the names do not conflict with
+standard classes, which must also be provided, and provide a separate manual
+page for each non-standard class that clearly documents how it differs from the
+Standard Version.
+
+d) Make other arrangements with the Copyright Holder.
+
+6. You may distribute modifications or subsets of this Package in source code or
+compiled form, provided that you do at least ONE of the following:
+
+a) Distribute this license and all original copyright messages, together
+with instructions (in the about dialog, manual page or equivalent) on where to
+get the complete Standard Version.
+
+b) Accompany the distribution with the machine-readable source of the
+Package with your modifications. The modified package must include this license
+and all of the original copyright notices and associated disclaimers, together
+with instructions on where to get the complete Standard Version.
+
+c) Make other arrangements with the Copyright Holder.
+
+7. You may charge a reasonable copying fee for any distribution of this Package.
+You may charge any fee you choose for support of this Package. You may not
+charge a fee for this Package itself. However, you may distribute this Package
+in aggregate with other (possibly commercial) programs as part of a larger
+(possibly commercial) software distribution provided that you meet the other
+distribution requirements of this license.
+
+8. Input to or the output produced from the programs of this Package do not
+automatically fall under the copyright of this Package, but belong to whomever
+generated them, and may be sold commercially, and may be aggregated with this
+Package.
+
+9. Any program subroutines supplied by you and linked into this Package shall
+not be considered part of this Package.
+
+10. The name of the Copyright Holder may not be used to endorse or promote
+products derived from this software without specific prior written permission.
+
+11. This license may change with each release of a Standard Version of the
+Package. You may choose to use the license associated with version you are using
+or the license of the latest Standard Version.
+
+12. THIS PACKAGE IS PROVIDED &#34;AS IS&#34; AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+13. If any superior law implies a warranty, the sole remedy under such shall be, 
+at the Copyright Holders option either 
+a) return of any price paid or 
+b) use or reasonable endeavours to repair or replace the software.
+
+14. This license shall be read under the laws of Australia.
+
+The End
+This license was derived from the Artistic license published on
+http://www.opensource.com</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

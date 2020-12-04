@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: us-govt-unlimited-rights</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="us-govt-unlimited-rights.yml">yml</a> -
+    <a href="us-govt-unlimited-rights.json">json</a> -
+    <a href="us-govt-unlimited-rights.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/us-govt-unlimited-rights.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/us-govt-unlimited-rights.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: us-govt-unlimited-rights
+short_name: US Government Unlimited Rights
+name: US Government Grant of Unlimited Rights
+category: Permissive
+owner: US Government
+text_urls:
+  - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
+other_urls:
+  - https://github.com/fernando-rodriguez/freexc16/blob/95cad1ccc9568b9e83ddc25a28711011546a5c63/src/XC_GCC/gcc/gcc/testsuite/ada/acats/tests/a/a22006b.ada
+  - https://github.com/AppliedIS/tau-ui/blob/b6af0deb755b412e7d24e9f3d78a6173180d3619/COPYRIGHT.txt
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>                        Grant of Unlimited Rights
+
+Under contracts , the U.S. Government obtained 
+unlimited rights in the software and documentation contained herein.
+Unlimited rights are defined in DFAR 252.227-7013(a)(19).  By making 
+this public release, the Government intends to confer upon all 
+recipients unlimited rights  equal to those held by the Government.  
+These rights include rights to use, duplicate, release or disclose the 
+released technical data and computer software in whole or in part, in 
+any manner and for any purpose whatsoever, and to have or permit others 
+to do so.
+
+                               DISCLAIMER
+
+ALL MATERIALS OR INFORMATION HEREIN RELEASED, MADE AVAILABLE OR
+DISCLOSED ARE AS IS.  THE GOVERNMENT MAKES NO EXPRESS OR IMPLIED 
+WARRANTY AS TO ANY MATTER WHATSOEVER, INCLUDING THE CONDITIONS OF THE
+SOFTWARE, DOCUMENTATION OR OTHER INFORMATION RELEASED, MADE AVAILABLE 
+OR DISCLOSED, OR THE OWNERSHIP, MERCHANTABILITY, OR FITNESS FOR A
+PARTICULAR PURPOSE OF SAID MATERIAL.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

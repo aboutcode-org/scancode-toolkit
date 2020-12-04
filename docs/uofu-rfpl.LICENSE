@@ -1,0 +1,251 @@
+UNIVERSITY OF UTAH RESEARCH FOUNDATION PUBLIC LICENSE
+	
+1. Definitions
+
+1.1 "Commercial Use" means covered code utilized by USER to generate a
+  revenue stream, including but not limited to, embedding the source
+  code in USER's proprietary software, executable software, or
+  consulting utilizing the source code.
+
+1.2 "Contributor" means each entity that creates or contributes to the
+  creation of Modifications.
+
+1.3 "Covered Code" means the Original Source Code, Modifications, or
+  the combination of the Original Source Code and Modifications, in
+  each case including portions thereof. The Original Source Code,
+  developed by the University of Utah, hereinafter referred to as
+  UNIVERSITY is described in the Source Code notice required by
+  Exhibit A.
+
+1.4 "Source Code" means the preferred form of the Covered Code for
+  making modifications to it, including all modules it contains, plus
+  any associated interface definition files, scripts used to control
+  compilation and installation of an Executable, or a list of source
+  code differential comparisons against either the Original Source
+  Code or another well known, available Covered Code of the
+  Contributor's choice. The Source Code can be in a compressed or
+  archival form, provided the appropriate decompression or
+  de-archiving software is widely available for no charge.
+
+1.5 "Electronic Distribution Mechanism" means a mechanism generally
+  accepted in the software development community for the electronic
+  transfer of data.
+
+1.6 "Larger Work" means a work, which combines Covered Code or
+  portions thereof with code not governed by the terms of this
+  License.
+
+1.7 "License" means this document.
+
+1.8 "Licensable" means having the right to grant, to the maximum
+  extent possible, whether at the time of the initial grant or
+  subsequently acquired, any and all rights conveyed herein.
+
+1.9 "Modifications" means any addition to or deletion from the
+  substance or structure of either the Original Source Code or any
+  previous Modifications. When Covered Code is released as a series of
+  files, a Modification is:
+
+  (a) Any addition to or deletion from the contents of a file
+      containing Original Code or previous Modifications.
+
+  (b) Any new file that contains any part of the Original Code or
+      previous Modifications
+
+1.10 "USER" (or "YOU") means an individual or a legal entity
+  exercising rights under, and complying with all of the terms of this
+  License. For legal entities, USER includes any entity, which
+  controls, is controlled by, or is under common control with You. For
+  purposes of this definition, "control" means (a) the power, direct
+  or indirect, to cause the direction or management of such entity,
+  whether by contract or otherwise, or (b) ownership of fifty percent
+  (50%) or more of the outstanding shares or beneficial ownership of
+  such entity.
+
+2. Source Code License.
+
+2.1 The Initial Developer Grant The UNIVERSITY hereby grants USER a
+  world-wide, royalty-free, non-exclusive license, subject to third
+  party intellectual property claims:
+
+  (a) to use, reproduce, modify, display, and perform, the Covered
+  Code (or portions thereof) with or without Modifications, or as part
+  of a Larger Work.; and
+
+  (b) under patents now or hereafter owned or controlled by
+  UNIVERSITY, to make, have made, and use ("Utilize") the Covered
+  Code(or portions thereof), but solely to the extent that any such
+  patent is reasonably necessary to enable USER to Utilize the Covered
+  Code (or portions thereof) and not to any greater extent that may be
+  necessary to Utilize further Modifications or combinations.
+
+  (c) the licenses granted in this Section 2.1(a) and (b) are
+  effective on the date the USER first receives Covered Code.
+
+  (d) No License is granted by UNIVERSITY for the Commercial Use of
+  Covered Code under this License.
+
+  (e) No License is granted by UNIVERSITY for the distribution of
+  Covered Code under this License.
+
+
+2.2. Contributor Grant. Each Contributor hereby grants UNIVERSITY a
+  world-wide, royalty-free, non-exclusive license, subject to third
+  party intellectual property claims:
+
+  (a) to use, reproduce, modify, display, perform, sublicense and
+  distribute the Modifications created by such Contributor (or
+  portions thereof) either on an unmodified basis, with other
+  Modifications, as Covered Code or as part of a Larger Work; and
+
+  (b) under patents now or hereafter owned or controlled by
+  Contributor, to Utilize the Covered Code (or portions thereof), but
+  solely to the extent that any such patent is reasonably necessary to
+  enable USER to Utilize the Contributor Version (or portions
+  thereof), and not to any greater extent that may be necessary to
+  Utilize further Modifications or combinations.
+
+  (c) the licenses granted in this Section 2.2(a) and (b) are
+  effective on the date the UNIVERSITY first receives the Covered Code
+
+3. Contributor Obligations
+
+3.1. Intellectual Property Matters
+
+  (a) Third Party Claims. If USER has knowledge that a party claims an
+  intellectual property right in particular functionality or code (or
+  its utilization under this License), USER must include a text file
+  with the source code provided to UNIVERSITY titled "LEGAL" which
+  describes the claim and the party making the claim in sufficient
+  detail that UNIVERSITY will know whom to contact. If USER obtains
+  such knowledge after USER makes the Modification available to
+  UNIVERSITY, USER shall promptly modify the LEGAL file in all copies
+  USER makes available thereafter and shall notify UNIVERSITY that new
+  knowledge has been obtained.
+
+  (b) Contributor APIs. If Your Modification is an application
+  programming interface and USER owns or controls patents, which are
+  reasonably necessary to implement that API, you must also include
+  this information in the LEGAL file.
+
+3.2. Required Notices. USER must duplicate the notice in Exhibit A in
+  each file of the Source Code, and this License in any documentation
+  for the Source Code, where USER describes recipients' rights
+  relating to Covered Code. If USER created one or more
+  Modification(s), USER may add name as a Contributor to the notice
+  described in Exhibit A. If it is not possible to put such notice in
+  a particular Source Code file due to its structure, then USER must
+  include such notice in a location (such as a relevant directory
+  file) where a user would be likely to look for such a notice.
+
+3.3. Distribution of Executable Versions. - This license does not
+  allow distribution of the Covered Code by USER or Contributor.
+
+3.4. Larger Works. USER may create a Larger Work by combining Covered
+  Code with other code not governed by the terms of this License. In
+  such a case, USER must make sure the requirements of this License
+  are fulfilled for the Covered Code including 2.1d and 2.1e.
+
+4. Inability to Comply Due to Statute or Regulation.
+
+  If it is impossible for USER to comply with any of the terms of this
+  License with respect to some or all of the Covered Code due to
+  statute or regulation then USER must:
+
+  (a) comply with the terms of this License to the maximum extent
+  possible; and
+
+  (b) describe the limitations and the code they affect. Such
+  description must be included in the LEGAL file described in Section
+  3.1 and must be included with all distributions of the Source
+  Code. Except to the extent prohibited by statute or regulation, such
+  description must be sufficiently detailed for a recipient of
+  ordinary skill to be able to understand it.
+
+5. Application of this License.
+
+  This License applies to Covered Code attached to the notice in Exhibit A.
+
+6. DISCLAIMER OF WARRANTY.
+
+  COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS,
+  WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+  INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED CODE IS
+  FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR
+  NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF
+  THE COVERED CODE IS WITH USER. SHOULD ANY COVERED CODE PROVE
+  DEFECTIVE IN ANY RESPECT, YOU (NOT THE UNIVERSITY OR ANY OTHER
+  CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR
+  CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL
+  PART OF THIS LICENSE. NO USE OF ANY COVERED CODE IS AUTHORIZED
+  HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
+
+7. TERMINATION.
+
+  This License and the rights granted hereunder will terminate
+  automatically if USER fails to comply with terms herein. All
+  sublicenses to the Covered Code which are properly granted shall
+  survive any termination of this License. Provisions which, by their
+  nature, must remain in effect beyond the termination of this License
+  shall survive.
+
+8. LIMITATION OF LIABILITY.
+
+  UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT
+  (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE
+  UNIVERSITY, ANY OTHER CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED
+  CODE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO USER OR
+  ANY OTHER PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+  CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT
+  LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER
+  FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR
+  LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE
+  POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY SHALL NOT
+  APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM SUCH
+  PARTY'S NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH
+  LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR
+  LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THAT EXCLUSION
+  AND LIMITATION MAY NOT APPLY TO USER.
+
+
+9. U.S. GOVERNMENT END USERS,
+
+  The Covered Code is a "commercial item," as that term is defined in
+  48 C.F.R. 2.101 (Oct. 1995). consisting of "commercial computer
+  software" and "commercial computer software documentation," as such
+  terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48
+  C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June
+  1995), all U.S. Government End Users acquire Covered Code with only
+  those rights set forth herein.
+
+10. MISCELLANEOUS.
+
+  This License represents the complete agreement concerning subject
+  matter hereof. Nothing in this AGREEMENT shall be construed as
+  conferring by implication, estoppel or otherwise any license or
+  rights other than those granted in this License. If any provision of
+  this License is held to be unenforceable, such provision shall be
+  reformed only to the extent necessary to make it enforceable. This
+  License shall be governed by Utah law provisions (except to the
+  extent applicable law, if any, provides otherwise). The application
+  of the United Nations Convention on Contracts for the International
+  Sale of Goods is expressly excluded. Any law or regulation which
+  provides that the language of a contract shall be construed against
+  the drafter shall not apply to this License.
+
+EXHIBIT A.
+
+The contents of this file are subject to the University of Utah Public
+License (the "License"); you may not use this file except in
+compliance with the License.
+
+Software distributed under the License is distributed on an "AS IS"
+basis, WITHOUT WARRANTY OF ANY KIND, either express or implied.  See
+the License for the specific language governing rights and limitations
+under the License.
+
+The Original Source Code is "teem", released March 23, 2001.
+
+The Original Source Code was developed by the University of Utah.
+Portions created by UNIVERSITY are Copyright (C) 2001, 1998 University
+of Utah. All Rights Reserved.

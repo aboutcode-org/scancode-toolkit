@@ -1,0 +1,135 @@
+COPYING CONDITIONS FOR TeX Live:
+
+To the best of our knowledge, all software in the TeX Live distribution
+is freely redistributable (libre, that is, not necessarily gratis),
+within the Free Software Foundation's definition and the Debian Free
+Software Guidelines.  Where the two conflict, we generally follow the
+FSF (see [*] below).  If you find any non-free files included, please
+contact us (references given at the end).
+
+That said, TeX Live has neither a single copyright holder nor a single
+license covering its entire contents, since it is a collection of many
+disparate packages.  Therefore, you may copy, modify, and/or
+redistribute software from TeX Live only if you comply with the
+requirements placed thereon by the owners of the respective packages.
+
+To most easily learn these requirements, we suggest checking the TeX
+Catalogue at: http://www.ctan.org/tex-archive/help/Catalogue/ (or any
+CTAN mirror).  The Catalogue is also included in TeX Live in
+./texmf/doc/html/catalogue/, but the online version will have updates.
+Of course the legal statements within the packages themselves are the
+final authority.
+
+In some cases, TeX Live is distributed with a snapshot of the CTAN
+archive, which is entirely independent of and separable from TeX Live
+itself.  (The "live" DVD in the TeX Collection is one example of this.)
+Please be aware that the CTAN snapshot contains many files which are
+*not* freely redistributable; see LICENSE.CTAN for more information.
+
+
+GUIDELINES FOR REDISTRIBUTION:
+
+In general, you may redistribute TeX Live, with or without modification,
+for profit or not, according to the usual free software tenets.  Here
+are some general guidelines for doing this:
+
+- If you make any changes to the TeX Live distribution or any
+package it contains, besides complying with any licensing requirements,
+you must prominently mention such changes in your modified distribution
+so that users do not take your work for ours, and know to contact you,
+not us, in case of questions or problems.  A new top-level
+README.<yourwork> file is a good place to describe the general situation.
+
+- Especially (but not necessarily) if changes or additions are made, we
+recommend a clearly different title, such as "<your work> DVD, based on
+TeX Live YYYY (with updates)", where YYYY is the year of TeX Live you
+are using.  This credits both our work and yours.
+
+- You absolutely may *not* place your own copyright on the entire
+distribution, since it is not your work (as stated above, TeX Live is
+not created by any single person or entity).  Statements such as "all
+rights reserved" and "may not be reproduced" are especially
+reprehensible, since they are antithetical to the free software
+principles under which TeX Live is produced.
+
+- You may use any cover or media label designs that you wish.  Such
+packaging and marketing details are not covered by any TeX Live license.
+
+- Finally, we make the following requests (not legal requirements):
+
+a) Acknowledging that TeX Live is developed as a joint effort by all TeX
+   user groups, and encouraging the user/reader to join their user group
+   of choice.  The web page http://www.tug.org/usergroups.html may be
+   referenced as a list of TeX user groups.
+
+b) Referencing the TeX Live home page: http://www.tug.org/texlive/
+
+Such information may be placed on the label of your media, your cover,
+and/or in accompanying text (for instance, in the acknowledgements
+section of a book).
+
+Finally, although it is again not at all a requirement, we'd like to
+invite any redistributors to make a donation to the project, whether
+cash or in-kind, for example via https://www.tug.org/donate/dev.html.
+Thanks.
+
+
+If you have any questions or comments, *please* contact us.  In general,
+we appreciate being given the chance to review any TeX Live-related
+material in advance of publication, simply to avoid mistakes.  It is
+much better to correct text on a CD label or in a book before thousands
+of copies are made!
+
+We are also happy to keep anyone planning a publication informed as to
+our deadlines and progress.  Just let us know.  However, be aware that
+TeX Live is produced entirely by volunteers, and no dates can be
+guaranteed.
+
+
+LICENSING FOR NEW PACKAGES:
+
+Finally, we are often asked what license to use for new work.  To be
+considered for inclusion on TeX Live, a package must use a free software
+license, such as the LaTeX Project Public License, the GNU General
+Public License, the X Window System license, the modified BSD license,
+etc.  Furthermore, all sources must be available, including for
+documentation files.  Please see the url's below for more information.
+
+Thanks for your interest in TeX.
+
+- Karl Berry, editor, for the TeX Live team
+
+------------------------------------------------------------
+[*] Conflicts between FSF and Debian.
+
+The most notable instance of legal conflict between the FSF definition
+of "free software" and the Debian Free Software Guidelines is in regard
+to the GNU Free Documentation License when "invariant sections" (e.g.,
+Front-Cover Texts, Back-Cover Texts, or Invariant Sections) are
+included.  (FSF considers it free, of course, and Debian doesn't.) 
+
+The most common instance of such a license is in documentation for
+official GNU packages -- such as GNU Texinfo, which is included in TeX
+Live.  There may be other GFDL'd files with invariant sections as well;
+we have not exhaustively checked.
+
+For TeX Live, we decided to follow the FSF, rather than Debian.  So such
+documentation *is* included in the original TeX Live distribution.  (In
+repackagings of TL according to Debian rules, it is removed.)  We surely
+wish these two major organizations in the free software world could
+cooperate on a documentation license acceptable to both.
+
+If other specific conflicts are brought to our attention, we will note
+them here.
+
+------------------------------------------------------------
+TeX Live mailing list: texlive@tug.org
+TeX Live home page: http://www.tug.org/tex-live/
+
+The FSF's free software definition: http://www.gnu.org/philosophy/free-sw.html
+Debian Free Software Guidelines:    http://www.debian.org/intro/free
+FSF commentary on existing licenses:
+  http://www.gnu.org/licenses/license-list.html
+
+LPPL: http://latex-project.org/lppl.html or texmf/doc/latex/base/lppl.txt
+LPPL rationale: texmf/doc/latex/base/modguide.pdf

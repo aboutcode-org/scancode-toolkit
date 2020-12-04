@@ -1,0 +1,238 @@
+ej-technologies-EULA
+http://www.ej-technologies.com/buy/jprofiler/jprofiler_license.html
+
+IMPORTANT-READ CAREFULLY: This End-User License Agreement ("EULA") is a legal
+agreement between you (either an individual or a single legal entity) and
+ej-technologies GmbH (ej-technologies), which covers your use of JProfiler and
+related software components ("Software Product" or JProfiler).
+
+A software license and a license key or serial number ("Software Product
+License"), issued only by ej-technologies or its authorized agents to a
+designated user may be required according to the following agreement.
+
+If you do not agree to the terms of this EULA, then do not download, install
+or use the Software Product or the Software Product License. By explicitly
+accepting this EULA you are acknowledging and agreeing to be bound by the
+following terms:
+
+1. GRANT OF LICENSE
+
+The Software Product is owned by ej-technologies. It is licensed, not sold.
+The Software Product is protected by copyright laws and international
+copyright treaties, as well as other intellectual property laws and treaties.
+ej-technologies reserves all intellectual property rights, including
+copyrights and trademark rights.
+
+According to your order, ej-technologies grants you a non-exclusive,
+non-transferable license to use the Software Product under certain obligations
+and limited rights as set forth in this agreement:
+
+
+- SINGLE-USER LICENSE: ej-technologies grants the non-exclusive,
+  non-transferable right for a single user to use this Software Product. Each
+  additional user of the Software Product requires an additional Software
+  Product License. You may use each Software Product License on more than one
+  computer system, as long as it is always used by the same user. You may
+  transfer the Software Product License to a different user only if you remove
+  all previous installations completely.
+
+- SINGLE-MACHINE LICENSE: ej-technologies grants the non-exclusive,
+  non-transferable right to install this Software Product on a single computer
+  system. Each additional installation of the Software Product requires an
+  additional Software Product License. You may transfer the Software Product
+  License to a different computer system only if you remove the previous
+  installation completely.
+
+- FLOATING LICENSE: ej-technologies grants the non-exclusive, non-transferable
+  right to install this Software Product on multiple computer systems. An
+  arbitrary number of users may install the Software Product, but the maximum
+  number of concurrently running instances is limited according to your order.
+  Each additional concurrent user of the Software Product requires an
+  additional Software Product License. ej-technologies provides you with a
+  License Server that manages the use of floating licenses. You agree to be
+  bound by the separate license agreement of the license server.
+
+- SITE LICENSE: ej-technologies grants the non-exclusive, non-transferable
+  right to install and use this Software Product on an arbitrary number of
+  computer systems on one site.
+
+
+ej-technologies issues a Software Product License that allows you to use the
+Software Product accordingly. You may not disclose the Software Product
+License in any way.
+
+Backup Copy: You may make copies of the Software Product and the Software
+Product License as reasonably necessary for the use authorized above,
+including as needed for backup and/or archival purposes. No other copies may
+be made. Each copy must reproduce all copyright and other proprietary rights
+notices on or in the Software Product.
+
+2. LICENSE TO DISTRIBUTE REDISTRIBUTABLE FILES
+
+ej-technologies grants you a non-exclusive, non-transferable, limited license
+to distribute all parts of JProfiler that are required for running the
+profiling agent provided that:
+
+- You remove your license key from the redistributed configuration file
+  ("config.xml")
+
+- You do not remove or alter any proprietary legends or notices contained in
+  or on the redistributables
+
+- You only distribute the redistributables with a license agreement that
+  protects ej-technologies' interests consistently with the terms contained in
+  this agreement
+
+- You agree to defend and indemnify ej-technologies from and against any
+  damages, costs, liabilities, settlement amounts and/or expenses (including
+  attorneys' fees) incurred in connection with any claim, lawsuit or action by
+  any third party that arises or results from the use or distribution of any
+  redistributable files.
+
+3. RESTRICTED USE FOR EVALUATION
+
+This Software Product can be used in conjunction with a free evaluation
+Software Product License. If you are using such an evaluation Software Product
+License, you may use the Software Product only to evaluate its suitability for
+purchase. Evaluation Software has been limited in some way either through
+timeouts, restricted use or evaluation warnings. ej-technologies bears no
+liability for any damages resulting from use (or attempted use after
+expiration) of the software product, and has no duty to provide any support
+before or after the expiration date of an evaluation license.
+
+4. SUPPORT SERVICES
+
+ej-technologies may provide you with support services related to the Software
+Product according to your order. Use of any such support services is governed
+by policies described on ej-technologies' web site
+(http://www.ej-technologies.com).
+
+Any supplemental software code or related materials that ej-technologies
+provides to you as part of the support services, in periodic updates to the
+Software Product or otherwise, is to be considered part of the Software
+Product and is subject to the terms and conditions of this EULA.
+
+With respect to any technical information you provide to ej-technologies as
+part of the support services, ej-technologies may use such information for its
+business purposes without restriction, including for product support and
+development. ej-technologies will not use such technical information in a form
+that personally identifies you without first obtaining your permission.
+
+5. RESTRICTIONS
+
+You may not use, copy, or distribute the Software Product, except as granted
+by this EULA, without written authorization from ej-technologies.
+
+You may not tamper with, alter, or use the Software Product in a way that
+disables, circumvents, or otherwise defeats its built-in licensing
+verification and enforcement capabilities.
+
+You may not remove or alter any trademark, logo, copyright or other
+proprietary notice, legend, symbol or label in the Software Product. You may
+not modify or create derivative copies of the Software Product License.
+
+You may not reverse engineer, decompile, defeat license encryption mechanisms,
+or disassemble the Software Product or Software Product License except and
+only to the extent that such activity is expressly permitted by applicable law
+notwithstanding this limitation. You may not rent, lease, lend, or in any way
+distribute or transfer any rights in this EULA or the Software Product to
+third parties without ej-technologies' written approval, and subject to
+written agreement by the recipient of the terms of this EULA.
+
+The Software Product is not fault-tolerant and is not designed, manufactured
+or intended for use or resale as on-line control equipment in hazardous
+environments requiring fail-safe performance, in which the failure of the
+Software Product, or any software, tool, process, or service that was
+developed using the Software Product, could lead directly to death, personal
+injury, or severe physical or environmental damage ("High Risk Activities").
+Accordingly, ej-technologies and its suppliers and licensors specifically
+disclaim any express or implied warranty of fitness for High Risk Activities.
+You agree that ej-technologies and its suppliers and licensors will not be
+liable for any claims or damages arising from the use of the Software Product,
+or any software, tool, process, or service that was developed using the
+Software Product, in such applications.
+
+6. THIRD PARTY RIGHTS
+
+Any software provided along with the Software Product that is associated with
+a separate license agreement is licensed to you under the terms of that
+license agreement. This license does not apply to those portions of the
+Software Product. Copies of these third party licenses are included in all
+copies of the Software Product.
+
+7. LIMITED WARRANTY
+
+You have ensured with the above mentioned evaluation version that the Software
+Product works according to your requirements and the advertised features.
+ej-technologies disclaims all warranties for deficiencies that are reasonably
+discoverable with the evaluation version of the Software Product. You
+acknowledge that software cannot be completely error-free. ej-technologies
+disclaims all warranties regarding non-severe deviations of the advertised
+features of the Software Product.
+
+The limitation period is one year, if not otherwise regulated by law, and
+starts with the service provision.
+
+To the maximum extent permitted by applicable law, ej-technologies and its
+third party suppliers and licensors disclaim all other representations,
+warranties, and conditions, expressed, implied, statutory, or otherwise,
+including, but not limited to, implied warranties or conditions of
+merchantability, satisfactory quality, fitness for a particular purpose,
+title, and non-infringement. The entire risk arising out of use or performance
+of the software product remains with you.
+
+8. LIMITATION OF LIABILITY
+
+This limitation of liability is to the maximum extent permitted by applicable
+law. ej-technologies is liable to indemnity only according to the following
+terms:
+
+ej-technologies is fully liable in case of intention, gross negligence, loss
+from physical injury, severe organizational failure or in case of an
+acceptance of guarantee.
+
+Liability for slight negligence is limited to material breach of contractual
+obligations and in that case to the typically predictable loss. Any further
+liability is excluded. Contributory negligence of the licensee and other
+parties will be taken into account. Any liability under the terms of product
+liability laws remains unaffected.
+
+You agree to ensure that a data backup is performed on all computers that the
+Software Product or redistributable parts of it are used on. In case of loss
+of data, liability is limited to the cost that would arise in the case where a
+proper backup has been performed.
+
+The limitation period is one year, if not otherwise regulated by law, and
+starts with the service provision.
+
+Any limitation of ej-technologies' liability also applies to your staff,
+agents and associated companies.
+
+9. GENERAL
+
+ej-technologies may terminate this EULA if you fail to comply with any term or
+condition of this EULA. In such event, you must destroy all copies of the
+Software Product and Software Product Licenses.
+
+This EULA is governed by the laws of Germany. Exclusive jurisdiction and place
+of performance is Muenchen, Germany, as long as permitted by applicable law.
+The United Nations Convention for the International Sale of Goods shall not
+apply.
+
+This EULA is the entire agreement between ej-technologies and you, and
+supersedes any other communications or advertising with respect to the
+Software Product; this EULA may be modified only by written agreement signed
+by authorized representatives of you and ej-technologies.
+
+If any provision of this EULA is held invalid, the remainder of this EULA
+shall continue in full force and effect.
+
+All rights not expressly granted in this agreement are retained by
+ej-technologies.
+
+10. CONTACT INFORMATION
+
+If you have any questions about this EULA, or if you want to contact
+ej-technologies for any reason, please direct correspondence to
+ej-technologies GmbH, Claude-Lorrain-Str. 7, D-81543 Muenchen, Germany, or
+send email to info@ej-technologies.com.

@@ -1,0 +1,29 @@
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that the
+above copyright notice appear in all copies and that both that copyright notice
+and this permission notice appear in supporting documentation, and that the name
+of the authors not be used in advertising or publicity pertaining to
+distribution of the software without specific, written prior permission.
+
+The authors makes no representations about the suitability of this software
+for any purpose. It is provided "as is" without express or implied warranty.
+
+THE AUTHORS DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL THE AUTHORS
+BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+License information
+
+The x86emu library is under a BSD style license, compatible with the XFree86 1.0
+and X licenses used by XFree86. The original x86emu libraries were under the GNU
+General Public License. Due to license incompatibilities between the GPL and the
+XFree86 1.0 license, the original authors of the code decided to allow a license
+change. If you have submitted code to the original x86emu project, and you don't
+agree with the license change, please contact us and let you know. Your code
+will be removed to comply with your wishes.
+
+If you have any questions about this, please send email to x86emu@linuxlabs.com
+or KendallB@scitechsoft.com for clarification.

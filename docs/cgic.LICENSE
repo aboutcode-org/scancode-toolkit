@@ -1,0 +1,68 @@
+CGIC License Terms 
+------------------
+Basic License 
+-------------
+CGIC, copyright 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 by Thomas Boutell and Boutell.Com, Inc.. 
+
+Permission is granted to use CGIC in any application, commercial or
+noncommercial, at no cost. HOWEVER, this copyright paragraph must appear on a
+"credits" page accessible in the public online and offline documentation of the
+program. Modified versions of the CGIC library should not be distributed without
+the attachment of a clear statement regarding the author of the modifications,
+and this notice may in no case be removed. Modifications may also be submitted
+to the author for inclusion in the main CGIC distribution.
+
+IF YOU WOULD PREFER NOT TO ATTACH THE ABOVE NOTICE to the public documentation
+of your application, consult the information which follows regarding the
+availability of a nonexclusive commercial license for CGIC.
+
+Commercial License 
+------------------
+The price of a nonexclusive commercial license is $200 U.S. To purchase the license:
+1. Print and sign two copies of the document below.
+
+2. Send both copies, along with Visa, Mastercard, Discover, or Amex card number,
+cardholder's name, and expiration date OR a check for $200 in U.S. funds drawn
+on a U.S. bank, to:
+
+Boutell.Com, Inc. PO Box 63767 Philadelphia, PA 19147 USA
+Credit card orders may alternatively be faxed to:
+Boutell.Com, Inc. (208) 445-0327
+BE SURE TO INCLUDE AN EMAIL ADDRESS, as well as a postal address and phone number.
+3. We will return one signed copy to you promptly.
+You will also receive swift notification of new versions of CGIC, in addition to ongoing email support.
+
+*** CGIC Nonexclusive Commercial License
+
+The licensee named below is granted the right to utilize CGIC, major version 1
+or 2, any minor version thereof, in CGI applications without the need for a
+credit notice of any kind. CGI applications developed by the holder of this
+license may be distributed freely in source code or binary form without
+additional fees or royalties. This license does not grant the right to use CGIC
+to create a development tool which passes on substantially all of the
+capabilities of the CGIC library to the user of the tool, unless that tool is to
+be used internally by the license holder only in order to develop CGI
+applications. This license may not be resold, but applications developed in
+accordance with the terms of the license may be distributed freely subject to
+the limitations described above.
+
+Future minor (2.x) versions of CGIC will be covered by this license free of
+charge. If significant defects of workmanship are discovered in version 2.x,
+minor releases to correct them will be made available before or at the same time
+that those defects are addressed in any future major version. Future "major"
+(3.x) versions will be available to licensees at an upgrade price of $50.
+
+If, for any reason, any portion of this license is found to be invalid, that
+portion of the license only is invalidated and the remainder of the agreement
+remains in effect.
+
+If this license has not been signed by Thomas Boutell or M. L. Grant on behalf
+of Boutell. Com, Inc., it is invalid.
+
+Licensee's Name: 
+Signed for Licensee: 
+Complete Mailing Address:
+Phone Number: 
+Email Address: 
+Signed for Boutell.Com, Inc.: 
+Date:

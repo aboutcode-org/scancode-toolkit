@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: sfl-license</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="sfl-license.yml">yml</a> -
+    <a href="sfl-license.json">json</a> -
+    <a href="sfl-license.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sfl-license.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/sfl-license.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: sfl-license
+short_name: SFL License Agreement
+name: SFL License Agreement
+category: Permissive
+owner: iMatix
+homepage_url: http://legacy.imatix.com/html/sfl/sfl4.htm
+spdx_license_key: iMatix
+text_urls:
+  - http://legacy.imatix.com/html/sfl/sfl4.htm
+other_urls:
+  - http://legacy.imatix.com/html/sfl/sfl4.htm#license
+  - http://www.imatix.com
+ignorable_copyrights:
+  - Copyright (c) 1991-2000 iMatix Corporation
+  - Copyright (c) 1991-2000 iMatix Corporation &lt;http://www.imatix.com&gt;
+  - Parts copyright (c) 1991-2000 iMatix Corporation
+ignorable_holders:
+  - iMatix Corporation
+ignorable_urls:
+  - http://www.imatix.com/
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The SFL License Agreement
+
+This license agreement covers your use of the iMatix STANDARD FUNCTION LIBRARY (SFL), its source code, documentation, and executable files, hereinafter referred to as &#34;the Product&#34;.
+
+The Product is Copyright © 1991-2000 iMatix Corporation. You may use it and distribute it according to this following License Agreement. If you do not agree with these terms, please remove the Product from your system. By incorporating the Product in your work or distributing the Product to others you implicitly agree to these license terms.
+
+Statement Of Copyright
+
+The Product is, and remains, Copyright © 1991-2000 iMatix Corporation, with exception of specific copyrights as noted in the individual source files.
+
+Conditions Of Use
+
+You do not need to provide the source code for the Product as part of your product. However, you must do one of these things to comply with the Product License Agreement:
+
+1.  Provide the source code for Product modules that you use, or
+2.  Make your product freely available according to a license similar to the GNU General Public License, or the Perl Artistic License, or
+3.  Add this phrase to the documentation for your product: &#34;This product uses parts of the iMatix SFL, Copyright © 1991-2000 iMatix Corporation &lt;http://www.imatix.com&gt;&#34;. 
+
+Rights Of Usage
+
+You may freely and at no cost use the Product in any project, commercial, academic, military, or private, so long as you respect the License Agreement. The License Agreement does not affect any software except the Product. In particular, any application that uses the Product does not itself fall under the License Agreement.
+
+You may modify any part of the Product, including sources and documentation, except this License Agreement, which you may not modify.
+
+You must clearly indicate any modifications at the start of each source file. The user of any modified Product code must know that the source file is not original.
+
+At your discretion, you may rewrite or reuse any part of the Product so that your derived code is not obviously part of the Product. This derived code does not fall under the Product License Agreement directly, but you must include a credit at the start of each source file indicating the original authorship and source of the code, and a statement of copyright as follows:
+&#34;Parts copyright (c) 1991-2000 iMatix Corporation.&#34;
+
+Rights Of Distribution
+
+You may freely distribute the Product, or any subset of the Product, by any means. The License, in the form of the file called &#34;LICENSE.TXT&#34; must accompany any such distribution.
+
+You may charge a fee for distributing the Product, for providing a warranty on the Product, for making modifications to the Product, or for any other service provided in relation to the Product. You are not required to ask our permission for any of these activities.
+
+At no time will iMatix associate itself with any distribution of the Product except that supplied from the Internet site http://www.imatix.com.
+
+Disclaimer Of Warranty
+
+The Product is provided as free software, in the hope that it will be useful. It is provided &#34;as-is&#34;, without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the Product is with you. Should the Product prove defective, the full cost of repair, servicing, or correction lies with you.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

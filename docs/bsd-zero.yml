@@ -1,0 +1,8 @@
+key: bsd-zero
+short_name: BSD Zero Clause License
+name: BSD Zero Clause License
+category: Permissive
+owner: Rob Landley
+homepage_url: http://landley.net/toybox/license.html
+spdx_license_key: 0BSD
+minimum_coverage: 70

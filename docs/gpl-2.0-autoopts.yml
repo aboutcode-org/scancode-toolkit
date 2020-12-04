@@ -1,0 +1,8 @@
+key: gpl-2.0-autoopts
+is_deprecated: yes
+short_name: GPL 2.0 or later with AutoOpts exception
+name: GPL 2.0 or later with AutoOpts exception
+category: Copyleft Limited
+owner: Bruce Korb
+homepage_url: http://www.gnu.org/software/autogen/autoopts.html
+is_exception: yes

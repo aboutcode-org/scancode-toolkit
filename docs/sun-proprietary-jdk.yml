@@ -1,0 +1,6 @@
+key: sun-proprietary-jdk
+is_deprecated: yes
+short_name: Sun proprietary notice for Java sources
+name: Sun proprietary notice for Java sources
+category: Commercial
+owner: Oracle Corporation

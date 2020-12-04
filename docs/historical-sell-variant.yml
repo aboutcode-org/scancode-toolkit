@@ -1,0 +1,10 @@
+key: historical-sell-variant
+is_deprecated: yes
+short_name: Historical Permission Notice and Disclaimer - sell variant
+name: Historical Permission Notice and Disclaimer - sell variant
+category: Permissive
+owner: Unspecified
+notes: this is actually the same as the x11-keith-packard
+other_urls:
+  - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/net/sunrpc/auth_gss/gss_generic_token.c?h=v4.19
+minimum_coverage: 40

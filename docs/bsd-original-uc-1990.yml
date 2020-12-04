@@ -1,0 +1,7 @@
+key: bsd-original-uc-1990
+is_deprecated: yes
+short_name: BSD-Original-UC-1990
+name: BSD-Original-UC-1990
+category: Permissive
+owner: Regents of the University of California
+notes: this is a duplicate of bsla license

@@ -1,0 +1,75 @@
+Microsoft Windows Server 2003 SP1 Platform SDK License
+
+MICROSOFT SOFTWARE LICENSE TERMS
+MICROSOFT PLATFORM SOFTWARE DEVELOPMENT KIT 
+FOR MICROSOFT WINDOWS SERVER 2003 SERVICE PACK 1
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you.  Please read them.  They apply to the software named above, which includes the media on which you received it, if any.  The terms also apply to any Microsoft:
+  •   updates,
+  •   supplements,
+  •   Internet-based services, and
+  •   support services
+for this software, unless other terms accompany those items.  If so, those terms apply.
+By using this software, you accept these terms.  If you do not accept them, do not use the software.
+If you comply with these license terms, you have the rights below:
+
+1.      USE RIGHTS. 
+a.      Use.  You may install the software on any number of devices to design, develop and test your programs that run on a Microsoft Windows operating system.
+b.      Other Microsoft Programs.  The software contains other Microsoft programs.  The license terms with those programs apply to your use of them.
+c.       Distributable Code.  The software contains code that you are permitted to copy and distribute in programs you develop if you comply with the terms below.
+    i.    Right to Use and Distribute.  The code and text files listed below are "Distributable Code."  You may:
+      •  REDIST.TXT Files.  Copy and distribute the object code form of code listed in REDIST.TXT files;
+      •   Sample Code.  Modify, copy and distribute the source and object code form of code marked as "sample" except for files identified as MFCs, ATLs and CRTs (see below);
+      •   MFCs, ATLs and CRTs. Modify the source code form of Microsoft Foundation Classes (MFCs), Active Template Libraries (ATLs), and C runtimes (CRTs) to design, develop and test your programs, and copy and distribute the object code form of your modified files under a new name; and
+      •   Third Party Distribution.  Permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
+    ii.   Distribution Requirements.  For any Distributable Code you distribute, you must:
+      •   add significant primary functionality to it in your programs;
+      •   only invoke the software via interfaces described in the software documentation;
+      •   for any Distributable Code having a filename extension of .lib, distribute only the results of running such Distributable Code through a linker with your application;
+      •   distribute Distributable Code included in a setup program only as part of that setup program without modification;
+      •   require distributors and external end users to agree to terms that protect it at least as much as this agreement;
+      •   display your valid copyright notice on your programs;
+      •   for Distributable Code from the Windows Media Services SDK portions of the software, include in your program’s Help-About box (or in another obvious place if there is no box) the following copyright notice:  "Portions utilize Microsoft Windows Media Technologies.  Copyright (c) 1999-2005 Microsoft Corporation.  All Rights Reserved"; and
+      •   indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
+    iii.  Distribution Restrictions.  You may not:
+      •   alter any copyright, trademark or patent notice in the Distributable Code;
+      •   use Microsoft’s trademarks in your programs’ names or in a way that suggests your programs come from or are endorsed by Microsoft;
+      •   distribute Distributable Code to run on a platform other than the Windows platform;
+      •   include Distributable Code in malicious, deceptive or unlawful programs; or
+      •   modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License.  An Excluded License is one that requires, as a condition of use, modification or distribution, that:
+          o  the code be disclosed or distributed in source code form, or
+          o  others have the right to modify it.
+
+2.      TRANSFER.  The first user of the software may transfer it and this agreement directly to a third party.  Before the transfer, that party must agree that this agreement applies to the transfer and use of the software.  The first user must uninstall the software before transferring it separately from the device.  The first user may not retain any copies.
+
+3.      BACKUP COPY.  You may make one backup copy of the software.  You may use it only to reinstall the software.
+
+4.      DOCUMENTATION.  You may copy and use the documentation for your internal, reference purposes.
+
+5.      EXPORT RESTRICTIONS.  The software is subject to United States export laws and regulations.  You must comply with all domestic and international export laws and regulations that apply to the software.  These laws include restrictions on destinations, end users and end use.  For additional information, see www.microsoft.com/exporting.
+
+6.      SUPPORT SERVICES.  Because this software is "as is," we may not provide support services for it. 
+
+7.      SCOPE OF LICENSE.  The software is licensed, not sold. This agreement only gives you some rights to use the software.  Microsoft reserves all other rights.  Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement.  In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways.  You may not:
+  •   work around any technical limitations in the software,
+  •   reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation,
+  •   make more copies of the software than specified in this agreement or allowed by applicable law, despite this limitation,
+  •   publish the software for others to copy,
+  •   rent, lease or lend the software, or
+  •   use the software for commercial software hosting services.
+
+8.      ENTIRE AGREEMENT.  This agreement and the terms for supplements, updates, Internet-based services and support services that you use are the entire agreement for the software and support services.
+
+9.      APPLICABLE LAW.
+a.      United States.  If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles.  The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+b.      Outside the United States.  If you acquired the software in any other country, the laws of that country apply.
+
+10.  LEGAL EFFECT.  This agreement describes certain legal rights.  You may have other rights under the laws of your country.  You may also have rights with respect to the party from whom you acquired the software.  This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+
+11.  DISCLAIMER OF WARRANTY.   The software is licensed "as-is".  You bear the risk of using it.  Microsoft gives no express warranties, guarantees or conditions.  You may have additional consumer rights under your local laws which this agreement cannot change.  To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+12.  LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES.  You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.  This limitation applies to:
+  •   anything related to the software, services, content (including code) on third party Internet sites, or third party programs, and
+  •   claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+<French text omitted>.

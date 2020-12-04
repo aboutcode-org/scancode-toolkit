@@ -1,0 +1,54 @@
+Software License Agreement
+
+Copyright 2007-2009 by Apple Inc.
+1 Infinite Loop
+Cupertino, CA 95014 USA
+
+WWW: http://www.cups.org/
+
+Introduction
+
+CUPSTM is provided under the GNU General Public License ("GPL") and GNU Library General Public License ("LGPL"), Version 2, with exceptions for Apple operating systems and the OpenSSL toolkit. A copy of the exceptions and licenses follow this introduction.
+
+The GNU LGPL applies to the CUPS and CUPS Imaging libraries located in the "cups" and "filter" subdirectories of the CUPS source distribution and in the "cups" include directory and library files in the binary distributions. The GNU GPL applies to the remainder of the CUPS distribution, including the "pdftops" filter which is based upon Xpdf.
+
+For those not familiar with the GNU GPL, the license basically allows you to:
+
+Use the CUPS software at no charge.
+Distribute verbatim copies of the software in source or binary form.
+Sell verbatim copies of the software for a media fee, or sell support for the software.
+What this license does not allow you to do is make changes or add features to CUPS and then sell a binary distribution without source code. You must provide source for any changes or additions to the software, and all code must be provided under the GPL or LGPL as appropriate. The only exceptions to this are the portions of the CUPS software covered by the Apple operating system license exceptions outlined later in this license agreement.
+
+The GNU LGPL relaxes the "link-to" restriction, allowing you to develop applications that use the CUPS and CUPS Imaging libraries under other licenses and/or conditions as appropriate for your application, driver, or filter.
+
+License Exceptions
+
+In addition, as the copyright holder of CUPS, Apple Inc. grants the following special exceptions:
+
+Apple Operating System Development License Exception;
+Software that is developed by any person or entity for an Apple Operating System ("Apple OS-Developed Software"), including but not limited to Apple and third party printer drivers, filters, and backends for an Apple Operating System, that is linked to the CUPS imaging library or based on any sample filters or backends provided with CUPS shall not be considered to be a derivative work or collective work based on the CUPS program and is exempt from the mandatory source code release clauses of the GNU GPL. You may therefore distribute linked combinations of the CUPS imaging library with Apple OS-Developed Software without releasing the source code of the Apple OS-Developed Software. You may also use sample filters and backends provided with CUPS to develop Apple OS-Developed Software without releasing the source code of the Apple OS-Developed Software.
+An Apple Operating System means any operating system software developed and/or marketed by Apple Computer, Inc., including but not limited to all existing releases and versions of Apple's Darwin, Mac OS X, and Mac OS X Server products and all follow-on releases and future versions thereof.
+This exception is only available for Apple OS-Developed Software and does not apply to software that is distributed for use on other operating systems.
+All CUPS software that falls under this license exception have the following text at the top of each source file:
+This file is subject to the Apple OS-Developed Software exception.
+OpenSSL Toolkit License Exception;
+Apple Inc. explicitly allows the compilation and distribution of the CUPS software with the OpenSSL Toolkit.
+No developer is required to provide these exceptions in a derived work.
+
+Kerberos Support Code
+
+The Kerberos support code ("KSC") is copyright 2006 by Jelmer Vernooij and is provided 'as-is', without any express or implied warranty. In no event will the author or Apple Inc. be held liable for any damages arising from the use of the KSC.
+
+Sources files containing KSC have the following text at the top of each source file:
+
+This file contains Kerberos support code, copyright 2006 by Jelmer Vernooij.
+The KSC copyright and license apply only to Kerberos-related feature code in CUPS. Such code is typically conditionally compiled based on the present of the HAVE_GSSAPI preprocessor definition.
+
+Permission is granted to anyone to use the KSC for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+
+The origin of the KSC must not be misrepresented; you must not claim that you wrote the original software. If you use the KSC in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+This notice may not be removed or altered from any source distribution.
+Trademarks
+
+CUPS and the CUPS logo (the "CUPS Marks") are trademarks of Apple Inc. Apple grants you a non-exclusive and non-transferable right to use the CUPS Marks in any direct port or binary distribution incorporating CUPS software and in any promotional material therefor. You agree that your products will meet the highest levels of quality and integrity for similar goods, not be unlawful, and be developed, manufactured, and distributed in compliance with this license. You will not interfere with Apple's rights in the CUPS Marks, and all use of the CUPS Marks shall inure to the benefit of Apple. This license does not apply to use of the CUPS Marks in a derivative products, which requires prior written permission from Apple Inc.

@@ -1,0 +1,31 @@
+Business Source License 1.0
+
+Licensor:  MariaDB Corporation Ab
+
+Software: MariaDB MaxScale™ v.2.0.  The Software is © 2016 MariaDB Corporation Ab
+
+Use Limitation: Usage of the software is free when your application uses the Software with a total of less than three database server instances for production purposes.
+
+Change Date: 2019-01-01
+
+Change License:  Version 2 or later of the GNU General Public License as published by the Free Software Foundation.
+
+For information about  alternative licensing arrangements for the Software, please visit:  https://mariadb.com/products/mariadb-enterprise
+
+ 
+
+You are granted limited license to the Software under this Business Source License.  Please read this Business Source License carefully, particularly the Use Limitation set forth above.  
+
+Subject to the Use Limitation, Licensor grants you a non-exclusive, worldwide (subject to applicable laws) license to copy, modify, display, use, create derivative works, and redistribute the Software until the Change Date. If your use of the Software exceeds, or will exceed, the foregoing limitations you MUST obtain alternative licensing terms for the Software directly from Licensor, its affiliated entities, or authorized resellers.  For the avoidance of doubt, prior to the Change Date, there is no Use Limitations for non-production purposes.
+
+After the Change Date, this Business Source License will convert to the Change License and your use of the Software, including modified versions of the Software, will be governed by such Change License.
+
+All copies of original and modified Software, and derivative works of the Software, are subject to this Business Source License.   This Business Source License applies separately for each version of the Software and the Change Date will vary for each version of the Software released by Licensor.
+
+You must conspicuously display this Business Source License on each original or modified copy of the Software. If you receive the Software in original or modified form from a third party, the restrictions set forth in this Business Source License apply to your use of such Software.
+
+Any use of the Software in violation of this Business Source License will automatically terminate your rights under this Business Source License for the current and all future versions of the Software.
+
+You may not use the marks or logos of Licensor or its affiliates for commercial purposes without prior written consent from Licensor.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE AND ALL SERVICES PROVIDED BY LICENSOR OR ITS AFFILIATES UNDER OR IN CONNECTION WITH WITH THIS BUSINESS SOURCE LICENSE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. YOU EXPRESSLY WAIVE ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING (WITHOUT LIMITATION) WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, TITLE, SYSTEM INTEGRATION, AND ACCURACY OF INFORMATIONAL CONTENT.

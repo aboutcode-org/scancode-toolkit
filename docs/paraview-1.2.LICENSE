@@ -1,0 +1,254 @@
+Parts of ParaView are under the following licenses:
+
+ParaView License Version 1.2
+========================================================================
+
+Copyright (c) 2005-2008 Sandia Corporation, Kitware Inc.
+
+Sandia National Laboratories, New Mexico
+PO Box 5800
+Albuquerque, NM 87185
+
+Kitware Inc.
+28 Corporate Drive
+Clifton Park, NY 12065
+USA
+
+Under the terms of Contract DE-AC04-94AL85000, there is a
+non-exclusive license for use of this work by or on behalf of the
+U.S. Government.  
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+ * Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the
+   distribution.
+
+ * Neither the name of Kitware nor the names of any contributors may
+   be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+========================================================================
+
+Other licenses:
+
+========================================================================
+
+Copyright (c) 2000-2005 Kitware Inc. 28 Corporate Drive, Suite 204,
+Clifton Park, NY, 12065, USA.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+ * Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the
+   distribution.
+
+ * Neither the name of Kitware nor the names of any contributors may
+   be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+========================================================================
+
+Copyright (c) 2002-2005 Los Alamos National Laboratory
+
+This software and ancillary information known as vtk_ext (and herein
+called "SOFTWARE") is made available under the terms described below.
+The SOFTWARE has been approved for release with associated LA_CC
+Number 99-44, granted by Los Alamos National Laboratory in July 1999.
+
+Unless otherwise indicated, this SOFTWARE has been authored by an
+employee or employees of the University of California, operator of the
+Los Alamos National Laboratory under Contract No. W-7405-ENG-36 with
+the United States Department of Energy.
+
+The United States Government has rights to use, reproduce, and
+distribute this SOFTWARE.  The public may copy, distribute, prepare
+derivative works and publicly display this SOFTWARE without charge,
+provided that this Notice and any statement of authorship are
+reproduced on all copies.
+
+Neither the U. S. Government, the University of California, nor the
+Advanced Computing Laboratory makes any warranty, either express or
+implied, nor assumes any liability or responsibility for the use of
+this SOFTWARE.
+
+If SOFTWARE is modified to produce derivative works, such modified
+SOFTWARE should be clearly marked, so as not to confuse it with the
+version available from Los Alamos National Laboratory.
+
+========================================================================
+
+VTK License
+
+========================================================================
+
+Copyright (c) 2000-2006 Kitware Inc. 28 Corporate Drive, Suite 204,
+Clifton Park, NY, 12065, USA.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+ met:
+
+ * Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the
+   distribution.
+
+ * Neither the name of Kitware nor the names of any contributors may
+   be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+========================================================================
+
+HDF5 License
+
+========================================================================
+
+NCSA HDF5 (Hierarchical Data Format 5) Software Library and Utilities
+Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 by the Board of
+Trustees of the University of Illinois All rights reserved.
+
+Contributors: National Center for Supercomputing Applications (NCSA) at the
+University of Illinois at Urbana-Champaign (UIUC), Lawrence Livermore National
+Laboratory (LLNL), Sandia National Laboratories (SNL), Los Alamos National
+Laboratory (LANL), Jean-loup Gailly and Mark Adler (gzip library).
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted for any purpose (including commercial purposes)
+provided that the following conditions are met:
+
+   1. Redistributions of source code must retain the above copyright notice,
+      this list of conditions, and the following disclaimer.
+   2. Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions, and the following disclaimer in the
+      documentation and/or materials provided with the distribution.
+   3. In addition, redistributions of modified forms of the source or binary
+      code must carry prominent notices stating that the original code was
+      changed and the date of the change.
+   4. All publications or advertising materials mentioning features or use of
+      this software are asked, but not required, to acknowledge that it was
+      developed by the National Center for Supercomputing Applications at the
+      University of Illinois at Urbana-Champaign and to credit the
+      contributors.
+   5. Neither the name of the University nor the names of the Contributors may
+      be used to endorse or promote products derived from this software without
+      specific prior written permission from the University or the
+      Contributors, as appropriate for the name(s) to be used.
+   6. THIS SOFTWARE IS PROVIDED BY THE UNIVERSITY AND THE CONTRIBUTORS "AS IS"
+      WITH NO WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED. In no event
+      shall the University or the Contributors be liable for any damages
+      suffered by the users arising out of the use of this software, even if
+      advised of the possibility of such damage. 
+
+Portions of HDF5 were developed with support from the University of California,
+Lawrence Livermore National Laboratory (UC LLNL). The following statement
+applies to those portions of the product and must be retained in any
+redistribution of source code, binaries, documentation, and/or accompanying
+materials:
+This work was partially produced at the University of California, Lawrence
+Livermore National Laboratory (UC LLNL) under contract no. W-7405-ENG-48
+(Contract 48) between the U.S. Department of Energy (DOE) and The Regents of
+the University of California (University) for the operation of UC LLNL.
+
+DISCLAIMER: This work was prepared as an account of work sponsored by an agency
+of the United States Government. Neither the United States Government nor the
+University of California nor any of their employees, makes any warranty,
+express or implied, or assumes any liability or responsibility for the
+accuracy, completeness, or usefulness of any information, apparatus, product,
+or process disclosed, or represents that its use would not infringe privately-
+owned rights. Reference herein to any specific commercial products, process, or
+service by trade name, trademark, manufacturer, or otherwise, does not
+necessarily constitute or imply its endorsement, recommendation, or favoring by
+the United States Government or the University of California. The views and
+opinions of authors expressed herein do not necessarily state or reflect those
+of the United States Government or the University of California, and shall not
+be used for advertising or product endorsement purposes. 
+
+========================================================================
+
+Xdmf License
+
+========================================================================
+
+Copyright (c) 2002 U.S. Army Research Laboratory 
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+ * Neither the name of the U.S. Army Research Laboratory nor the names
+   of any contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+ * Modified source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS''
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

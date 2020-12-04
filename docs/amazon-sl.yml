@@ -1,0 +1,13 @@
+key: amazon-sl
+short_name: Amazon Software License
+name: Amazon Software License
+category: Proprietary Free
+owner: Amazon Web Services
+homepage_url: http://aws.amazon.com/asl/
+text_urls:
+  - http://aws.amazon.com/asl/
+  - https://github.com/aws/aws-sdk-android/blob/master/LICENSE.AMAZON.txt
+ignorable_copyrights:
+  - (c) 2008 Amazon.com, Inc. or its affiliates
+ignorable_holders:
+  - Amazon.com, Inc. or its affiliates

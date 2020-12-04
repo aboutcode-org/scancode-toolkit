@@ -1,0 +1,46 @@
+Intel Source Code License Agreement
+
+This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you ("you" or "Licensee") agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation ("Intel").
+
+1.	Definitions:
+
+A.	"Materials" are defined as the software (including the Redistributables and  Source as defined herein), documentation, and other materials, including any updates and upgrade thereto, that are provided to you under this Agreement.
+
+B.	"Redistributables" are the binary files listed in the "redist.txt" file that is included in the Materials or are otherwise clearly identified as redistributable files by Intel.
+
+C.	" Source" is the source code file(s) that: (i) demonstrate(s) certain functions for particular purposes; (ii) are identified as  source code; and (iii) are provided hereunder in source code form.
+
+D.	"Intel’s Licensed Patent Claims" means those claims of Intel’s patents that (a) are infringed by the  Source or Redistributables, alone and not in combination, in their unmodified form, as furnished by Intel to Licensee and (b) Intel has the right to license.
+
+2.	License Grant:  Subject to all of the terms and conditions of this Agreement:
+
+A. 	Intel grants to you a non-exclusive, non-assignable, copyright license to use the Material for your internal development purposes only.
+
+B.	Intel grants to you a non-exclusive, non-assignable copyright license to reproduce the  Source, prepare derivative works of the  Source and distribute the  Source or any derivative works thereof that you create, as part of the product or application you develop using the Materials.
+
+C.	Intel grants to you a non-exclusive, non-assignable copyright license to distribute the Redistributables in binary form, or any portions thereof, as part of the product or application you develop using the Materials.
+
+D.	Intel grants Licensee a non-transferable, non-exclusive, worldwide, non-sublicenseable license under Intel’s Licensed Patent Claims to make, use, sell, and import the  Source and the Redistributables.
+
+
+3.	Conditions and Limitations:
+
+A.	This license does not grant you any rights to use Intel’s name, logo or trademarks.
+
+B.	Title to the Materials and all copies thereof remain with Intel.  The Materials are copyrighted and are protected by United States copyright laws.  You will not remove any copyright notice from the Materials.  You agree to prevent any unauthorized copying of the Materials.  Except as expressly provided herein, Intel does not grant any express or implied right to you under Intel patents, copyrights, trademarks, or trade secret information.
+	
+C.	You may NOT:  (i) use or copy the Materials except as provided in this Agreement; (ii) rent or lease the Materials to any third party; (iii) assign this Agreement or transfer the Materials without the express written consent of Intel; (iv) modify, adapt, or translate the Materials in whole or in part except as provided in this Agreement; (v) reverse engineer, decompile, or disassemble the Materials not provided to you in source code form; or (vii) distribute, sublicense or transfer the source code form of any components of the Materials and derivatives thereof to any third party except as provided in this Agreement.
+
+4.	No Warranty:
+
+	THE MATERIALS ARE PROVIDED "AS IS".  INTEL DISCLAIMS ALL EXPRESS OR IMPLIED WARRANTIES WITH RESPECT TO THEM, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR ANY PARTICULAR PURPOSE.
+
+5.	   LIMITATION OF LIABILITY:  NEITHER INTEL NOR ITS SUPPLIERS SHALL BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF INTEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  BECAUSE SOME JURISDICTIONS PROHIBIT THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+6.	USER SUBMISSIONS:  You agree that any material, information or other communication, including all data, images, sounds, text, and other things embodied therein, you transmit or post to an Intel website or provide to Intel under this Agreement will be considered non-confidential ("Communications").  Intel will have no confidentiality obligations with respect to the Communications.  You agree that Intel and its designees will be free to copy, modify, create derivative works, publicly display, disclose, distribute, license and sublicense through multiple tiers of distribution and licensees, incorporate and otherwise use the Communications, including derivative works thereto, for any and all commercial or non-commercial purposes
+
+7.	TERMINATION OF THIS LICENSE: This Agreement becomes effective on the date you accept this Agreement and will continue until terminated as provided for in this Agreement.  Intel may terminate this license at any time if you are in breach of any of its terms and conditions.  Upon termination, you will immediately return to Intel or destroy the Materials and all copies thereof.
+
+8.	U.S. GOVERNMENT RESTRICTED RIGHTS: The Materials are provided with "RESTRICTED RIGHTS". Use, duplication or disclosure by the Government is subject to restrictions set forth in FAR52.227-14 and DFAR252.227-7013 et seq. or its successor.  Use of the Materials by the Government constitutes acknowledgment of Intel's rights in them.
+
+9.	APPLICABLE LAWS: Any claim arising under or relating to this Agreement shall be governed by the internal substantive laws of the State of Delaware, without regard to principles of conflict of laws.  You may not export the Materials in violation of applicable export laws.

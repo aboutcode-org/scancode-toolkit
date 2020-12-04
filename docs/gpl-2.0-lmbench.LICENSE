@@ -1,0 +1,15 @@
+Distributed under the FSF GPL with additional restriction that results may be
+published only if
+(1) the benchmark is unmodified, and
+(2) the version in the sccsid below is included in the report.
+
+In the file COPYING-1: 
+The set of programs and documentation known as "lmbench" are distributed under
+the Free Software Foundation's General Public License with the following
+additional restrictions (which override any conflicting restrictions in the GPL):
+
+1. You may not distribute results in any public forum, in any publication,
+   or in any other way if you have modified the benchmarks.  
+
+2. You may not distribute the results for a fee of any kind.  This includes
+   web sites which generate revenue from advertising.

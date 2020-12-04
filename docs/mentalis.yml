@@ -1,0 +1,10 @@
+key: mentalis
+is_deprecated: yes
+short_name: Mentalis License
+name: Mentalis Source Code License
+category: Permissive
+owner: Mentalis
+homepage_url: http://mentalis.org/site/license.qpx
+notes: this is a bsd-new with clause 1 and 3. Replaced by the bsd-source-code license.
+text_urls:
+  - http://mentalis.org/site/license.qpx

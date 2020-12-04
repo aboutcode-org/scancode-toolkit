@@ -1,0 +1,15 @@
+key: info-zip-2007-03
+short_name: Info-Zip License 2007-03
+name: Info-Zip License 2007-03
+category: Permissive
+owner: info-zip
+homepage_url: http://www.info-zip.org/
+text_urls:
+  - http://www.info-zip.org/doc/LICENSE.20070302
+ignorable_copyrights:
+  - Copyright (c) 1990-2007 Info-ZIP.
+ignorable_holders:
+  - Info-ZIP.
+ignorable_urls:
+  - ftp://ftp.info-zip.org/pub/infozip/license.html
+  - http://www.info-zip.org/pub/infozip/license.html

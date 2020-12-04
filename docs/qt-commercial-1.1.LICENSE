@@ -1,0 +1,230 @@
+Qt FOR APPLICATION DEVELOPMENT LICENSE AGREEMENT
+
+Agreement version 1.1
+
+This Qt for Application Development License Agreement ("Agreement") is a legal agreement between The Qt Company Ltd ("The Qt Company") with its registered office at Valimotie 21, 00380 Helsinki, Finland and you (either an individual or a legal entity) ("Licensee") for the Licensed Software (as defined below).
+
+Please, read these license terms through carefully. By selecting "I accept the Agreement", you are deemed to accept these license terms and to commit yourself to observing them. When representing a legal entity, you should ensure your due authorization to approve these terms before you select "I accept the Agreement". Otherwise, we regard you as personally responsible for compliance with this Agreement. For clarity, please note that in case there already exists a signed license agreement between you and The Qt Company, this Agreement shall not override such an existing agreement but it shall continue to be valid subject to its applicable terms.
+
+Under this Agreement, the Licensee has purchased one (1) of the three (3) different below mentioned rights applicable to the Licensed Software (as defined below):
+(i) A perpetual license, which shall be valid for an unlimited time as further stated in this Agreement ("Perpetual License"); or
+(ii) A subscription license, which shall be valid for the time period specified by the Qt Company ("Subscription License"); or
+(iii) A limited subscription license, which includes a discount in payment based on Licensee´s limited annual sales revenue, as further stated in Section 14.5 and www.qt.io, and which shall be valid for the time period specified by the Qt Company ("Limited Subscription License"). For clarity, Limited Subscription License shall not include any Support (as defined below).
+
+ 
+1. DEFINITIONS
+
+"Affiliate" of a Party shall mean an entity (i) which is directly or indirectly controlling such Party; (ii) which is under the same direct or indirect ownership or control as such Party; or (iii) which is directly or indirectly owned or controlled by such Party. For these purposes, an entity shall be treated as being controlled by another if that other entity has fifty percent (50 %) or more of the votes in such entity, is able to direct its affairs and/or to control the composition of its board of directors or equivalent body.
+
+"Applications" shall mean Licensee’s software products created using the Licensed Software which may include portions of the Licensed Software.
+
+"Continued-Usage Term" shall mean, depending on the option purchased by Licensee, either a) if the Licensee has purchased Perpetual License; perpetuity; or b) if the Licensee has purchased Subscription License or Limited Subscription License; the paid term.
+
+"Deployment Platforms" shall mean those operating systems in which the Licensed Software can be distributed on according to the terms and conditions of this Agreement, especially Section 5.2.
+
+"Development Platforms" shall mean those operating systems in which the Licensed Software can be used only for designing, developing and testing Applications, but not distributed in any form or used for any other purpose.
+
+"Designated User(s)" shall mean the employee(s) of Licensee acting within the scope of their employment or Licensee’s consultant(s) or contractor(s) acting within the scope of their services for Licensee and on behalf of Licensee.
+
+"License Certificate" shall mean the document accompanying the Licensed Software which specifies the modules which are licensed under the Agreement, Development Platforms, Deployment Platforms and Designated Users.
+
+"Licensed Software" shall mean the computer software, "online" or electronic documentation, associated media and printed materials, including the source code, example programs and the documentation delivered by The Qt Company to Licensee in conjunction with this Agreement. Licensed Software does not include Third Party Software (as defined in Section 7).
+
+"Modified Software" shall mean modifications made to the Licensed Software by Licensee.
+
+"Online Services" shall mean any services or access to systems provided by The Qt Company to the Licensee over Internet in conjunction with the Licensed Software or for the purpose of use by the Licensee of the Licensed Software or Support. Using some of the Online Services may be subject to additional fees.
+
+"Party or Parties" shall mean Licensee and/or The Qt Company.
+
+"Redistributables" shall mean the portions of the Licensed Software set forth in Appendix 1, Section 1 that may be distributed with or as part of Applications in object code form.
+
+"Renewal Term" shall mean a) in case the Licensee has purchased a Perpetual License: a time period of twelve (12) months, and b) in case the Licensee has purchased Subscription License or Limited Subscription License, a time period specified by the Qt Company at www.qt.io or directly to the Licensee.
+
+"Start-For-Free Term" shall mean the period from the later of (a) the Effective Date; or (b) the date the Licensed Software was initially delivered to Licensee by The Qt Company prior to the Supported Term. If no specific Effective Date is set forth in the Agreement, the Effective Date shall be deemed to be the date the Licensed Software was initially delivered to Licensee. Unless otherwise agreed with The Qt Company in writing, the maximum duration of Start-For-Free Term shall be thirty (30) days.
+
+"Support" shall mean standard developer support that is provided by The Qt Company to assist eligible Designated Users in using the Licensed Software in accordance with its established standard support procedures.
+
+"Supported Term" shall mean a time period that the Licensee has selected and paid for Support for the Licensed Software, calculated from either (i) the end of the Start-For-Free Term, or (ii) from the purchase of the Supported Term, or (iii) from end of the previous Supported Term, as applicable. For the Limited Subscription License, Supported Term shall mean a time period for which the Licensee has selected and paid for usage of Licensed Software.
+
+"Updates" shall mean a release or version of the Licensed Software containing enhancements, new features, bug fixes, error corrections and other changes that are generally made available to users of the Licensed Software that have contracted for maintenance and support.
+
+ 
+2. OWNERSHIP
+
+The Licensed Software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The Licensed Software is licensed, not sold.
+To the extent Licensee submits bug fixes or error corrections, including information related thereto, Licensee hereby grants The Qt Company a sublicensable, irrevocable, perpetual, worldwide, non-exclusive, royalty-free and fully paid-up copyright and trade secret license to reproduce, adapt, translate, modify, and prepare derivative works of, publicly display, publicly perform, sublicense, make available and distribute error corrections and bug fixes, including derivative works thereof. All The Qt Company’s and/or its licensors’ trademarks, service marks, trade names, logos or other words or symbols are and shall remain the exclusive property of The Qt Company or its licensors respectively.
+
+ 
+3. MODULES
+
+Some of the files in the Licensed Software have been grouped into modules. These files contain specific notices defining the module of which they are a part. The modules licensed to Licensee are specified in the License Certificate accompanying the Licensed Software. The terms of the License Certificate are considered part of the Agreement. In the event of inconsistency or conflict between the language of this Agreement and the License Certificate, the provisions of this Agreement shall govern.
+
+ 
+4. VALIDITY OF THE AGREEMENT
+
+By installing, copying, or otherwise using the Licensed Software, Licensee agrees to be bound by the terms of this Agreement. If Licensee does not agree to the terms of this Agreement, Licensee should not install, copy, or otherwise use the Licensed Software. In addition, by installing, copying, or otherwise using any Updates or other components of the Licensed Software that Licensee receives separately as part of the Licensed Software, Licensee agrees to be bound by any additional license terms that accompany such Updates, if any. If Licensee does not agree to the additional license terms that accompany such Updates, Licensee should not install, copy, or otherwise use such Updates.
+
+Upon Licensee’s acceptance of the terms and conditions of this Agreement, The Qt Company grants Licensee the right to use the Licensed Software in the manner provided below.
+
+ 
+5. LICENSES GRANTED
+
+5.1 General
+
+5.1.1 Licensee is hereby granted a free of charge license for the Start-For-Free Term as described in Section 5.2 below. For clarity, Section 5.3 shall not apply for the Start-For-Free Term.
+
+5.1.2 Licensee may purchase additional license(s) for Continued-Usage Term, as described in Sections 5.2 and 5.3 below, subject to The Qt Company’s payment terms and conditions applicable at the time of purchase. In addition, Licensee may purchase license(s) for the Continued-Usage Term without such a preceding Start-For-Free Term.
+
+5.2 Licenses granted during the Start-For-Free Term and the Continued-Usage Term
+
+5.2.1 Using, Modifying and Copying
+
+The Qt Company grants to Licensee a non-exclusive, non-transferable, limited term license to use, modify and copy the Licensed Software for Designated Users specified in the License Certificate for the sole purposes of:
+
+(i) designing, developing, and testing Application(s);
+(ii) modifying the Licensed Software as limited by section 8 below; and
+(iii) compiling the Licensed Software and/or Modified Software source code into object code.
+
+Licensee may install copies of the Licensed Software on an unlimited number of computers provided that only the Designated Users use the Licensed Software.
+Licensee may at any time during the Supported Term designate another Designated User to replace a then-current Designated User by notifying The Qt Company, provided that a) the then-current Designated User has not been designated as a replacement during the last six (6) months; and b) there is no more than the specified number of Designated Users at any given time.
+
+5.3 Limited Redistribution right for the Continued-Usage Term only
+
+The limited distribution licenses granted in this Section 5.3 shall only be applicable to the Continued-Usage Term, but not to Start-For-Free Term.
+
+a) The Qt Company grants Licensee a non-exclusive, royalty-free right to reproduce and distribute the object code form of Redistributables (listed in Appendix 1, Section 1) for execution on the specified Deployment Platforms, excluding the Joint Hardware and Software Distribution as defined in b) below. Copies of Redistributables may only be distributed with and for the sole purpose of executing Applications permitted under this Agreement that Licensee has created using the Licensed Software. Under no circumstances may any copies of Redistributables be distributed separately. This Agreement does not give Licensee any rights to distribute any of the parts of the Licensed Software listed in Appendix 1, Section 2, neither as a whole nor as parts or snippets of code.
+
+b) Licensee may not distribute, transfer, assign or otherwise dispose of Applications and/or Redistributables, in binary/compiled form, or in any other form, if such action is part of a Joint Software and Hardware Distribution, except as provided by a separate runtime distribution license with The Qt Company or one of its authorized distributors. A Joint Hardware and Software Distribution shall be defined as either:
+
+(i) distribution of a hardware device where, in its final end user configuration, the main user interface of the device is provided by Application(s) created by Licensee or others, using Licensed Software or Licensed Software based software product, and depends on the Licensed Software or an open source version of Qt or any Qt based software product; or
+
+(ii) distribution of the Licensed Software with a device designed to facilitate the installation of the Licensed Software onto the same device where the main user interface of such device is provided by Application(s) created by Licensee or others, using the Licensed Software, and depends on the Licensed Software.
+
+c) For the avoidance of doubt, should the Licensee wish to distribute Licensed Software as a part of software development kit (SDK) for the purpose of developing Applications by Licensee´s customers for Licensee´s products, such distribution is subject to a separate Qt SDK distribution license agreement to be concluded with The Qt Company.
+
+The licenses granted in this Section 5 by The Qt Company to Licensee are subject to Licensee’s compliance with Section 8 of this Agreement.
+
+ 
+6. VERIFICATION
+
+The Qt Company or a certified auditor on The Qt Company’s behalf, may, upon its reasonable request and at its expense, audit Licensee with respect to the use of the Licensed Software. Such audit may be conducted by mail, electronic means or through an in-person visit to Licensee’s place of business. Any such in-person audit shall be conducted during regular business hours at Licensee’s facilities and shall not unreasonably interfere with Licensee’s business activities. The Qt Company will not remove, copy, or redistribute any electronic material during the course of an audit. If an audit reveals that Licensee is using the Licensed Software in a way that is in material violation of the terms of the Agreement, then Licensee shall pay The Qt Company’s reasonable costs of conducting the audit. In the case of a material violation, Licensee agrees to pay The Qt Company any amounts owing that are attributable to the unauthorized use. Alternatively, The Qt Company reserves the right, at The Qt Company’s sole option, to terminate the licenses for the Licensed Software.
+
+ 
+7. THIRD PARTY SOFTWARE
+
+The Licensed Software may provide links to third party libraries or code (collectively "Third Party Software") to implement various functions. Third Party Software does not comprise part of the Licensed Software. In some cases, access to Third Party Software may be included along with the Licensed Software delivery as a convenience for development and testing only. Such source code and libraries may be listed in the "…/src/3rdparty" source tree delivered with the Licensed Software or documented in the Licensed Software where the Third Party Software is used, as may be amended from time to time, do not comprise the Licensed Software. Licensee acknowledges (i) that some part of Third Party Software may require additional licensing of copyright and patents from the owners of such, and (ii) that distribution of any of the Licensed Software referencing any portion of a Third Party Software may require appropriate licensing from such third parties.
+
+ 
+8. CONDITIONS FOR CREATING APPLICATIONS
+
+The licenses granted in this Agreement for Licensee to create, modify and distribute Applications is subject to all of the following conditions: (i) all copies of the Applications Licensee creates must bear a valid copyright notice either Licensee’s own or the copyright notice that appears on the Licensed Software; (ii) Licensee may not remove or alter any copyright, trademark or other proprietary rights notice contained in any portion of the Licensed Software including but not limited to the About Boxes; (iii) Licensee will indemnify and hold The Qt Company, its Affiliates, contractors, and its suppliers, harmless from and against any claims or liabilities arising out of the use, reproduction or distribution of Applications; (iv) Applications must be developed using a licensed, registered copy of the Licensed Software; (v) Applications must add primary and substantial functionality to the Licensed Software; (vi) Applications may not pass on functionality which in any way makes it possible for others to create software with the Licensed Software; however Licensee may use the Licensed Software’s scripting and QML ("Qt Quick") functionality solely in order to enable scripting, themes and styles that augment the functionality and appearance of the Application(s) without adding primary and substantial functionality to the Application(s); (vii) Licensee may create Modified Software that breaks the source or binary compatibility with the Licensed Software. This includes, but is not limited to, changing the application programming interfaces ("API") by adding, changing or deleting any variable, method, or class signature in the Licensed Software, the inter-process QCop specification, and/or any inter-process protocols, services or standards in the Licensed Software libraries. To the extent that Licensee breaks source or binary compatibility with the Licensed Software, Licensee acknowledges that The Qt Company’s ability to provide Support may be prevented or limited and Licensee’s ability to make use of Updates may be restricted; (viii) Applications may not compete with the Licensed Software; (ix) Licensee may not use The Qt Company’s or any of its suppliers’ names, logos, or trademarks to market Applications, except to state that Licensee’s Application(s) was developed using the Licensed Software; and (x) each Designated User creating the Application(s) needs to have a separate license for the Licensed Software.
+
+NOTE: If Licensee, or another third party, has, at any time, developed or distributed all (or any portions of) the Application(s) using an open source version of Qt licensed under the terms of the GNU Lesser General Public License, version 2.1 or later ("LGPL") or the GNU General Public License version 2.0 or later ("GPL"), Licensee may contact The Qt Company via email to address sales@qt.io to ask for the necessary permission to combine such development work with the Licensed Software. The Qt Company shall evaluate Licensee´s request, and respond to the request with estimated license costs and other applicable terms and details relating to the permission for the Licensee, depending on the actual situation in question. Copies of the licenses referred to above are located at http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html, http://www.gnu.org/licenses/lgpl-3.0.html, http://www.fsf.org/licensing/licenses/info/GPLv2.html, and http://www.gnu.org/copyleft/gpl-3.0.html.
+
+ 
+9. PRE-RELEASE CODE
+
+The Licensed Software may contain pre-release code and functionality marked or otherwise stated as "Technology Preview", "Alpha", "Beta" or similar. Such pre-release code may be present in order to provide experimental support for new platforms or preliminary version of new functionality. The pre-release code is not at the level of performance and compatibility of a final, generally available, product offering. The pre-release parts of the Licensed Software may not operate correctly and may be substantially modified prior to the first commercial product release, if any. The Qt Company is under no obligation to make pre-release code commercially available, or provide any Support or Updates relating thereto.
+
+ 
+10. LIMITED WARRANTY AND WARRANTY DISCLAIMER
+
+The Qt Company hereby represents and warrants with respect to the Licensed Software that it has the power and authority to grant the rights and licenses granted to Licensee under this Agreement. Except as set forth above, the Licensed Software is licensed to Licensee "as is". To the maximum extent permitted by applicable law, The Qt Company on behalf of itself and its suppliers, disclaims all warranties and conditions, either express or implied, including, but not limited to, implied warranties of merchantability and fitness for a particular purpose, title and non-infringement regarding to the Licensed Software.
+
+ 
+11. LIMITATION OF LIABILITY
+
+If, The Qt Company’s warranty disclaimer notwithstanding, The Qt Company is held to be liable to Licensee whether in contract, tort, or any other legal theory, based on the Licensed Software, The Qt Company’s entire liability to Licensee and Licensee’s exclusive remedy shall be, at The Qt Company’s option, either (a) return of the price Licensee paid for the Licensed Software, or (b) repair or replacement of the Licensed Software, provided Licensee returns all copies of the Licensed Software to The Qt Company as originally delivered to Licensee. The Qt Company shall not under any circumstances be liable to Licensee based on failure of the Licensed Software if the failure resulted from accident, abuse or misapplication, nor shall The Qt Company, under any circumstances, be liable for special damages, punitive or exemplary damages, damages for loss of profits or interruption of business or for loss or corruption of data. Any award of damages from The Qt Company to Licensee shall not exceed the total amount Licensee has paid to The Qt Company in connection with this Agreement.
+
+ 
+12. SUPPORT, UPDATES AND ONLINE SERVICES
+
+Licensee will be eligible to receive Support and Updates and to use the Online Services during the Supported Term, in accordance with The Qt Company’s then current policies and procedures, if any. Such policies and procedures may be changed from time to time. For clarity, under the Limited Subscription License, the Licensee shall not be eligible to receive any Support for the Licensed Software.
+
+As for the Perpetual License, unless Licensee notifies The Qt Company in writing no less than thirty (30) days prior to each expiry of Supported Term, Supported Term may, at the Qt Company’s option be extended by Renewal Term, subject to due payments by Licensee and subject to The Qt Company’s terms and conditions applicable at the time of extension.
+
+In the event Licensee selects not to have Supported Term extended, The Qt Company shall, following the expiry of Supported Term, no longer make the Licensed Software, Support, Updates or Online Services available to Licensee.
+
+ 
+13. CONFIDENTIALITY
+
+Each party acknowledges that during the Start-For-Free-Term and Supported Term of this Agreement it shall have access to information about the other party’s business, business methods, business plans, customers, business relations, technology, and other information, including the terms of this Agreement, that is confidential and of great value to the other party, and the value of which would be significantly reduced if disclosed to third parties ("Confidential Information"). Accordingly, when a party (the "Receiving Party") receives Confidential Information from another party (the "Disclosing Party"), the Receiving Party shall, and shall obligate its employees and agents and employees and agents of its Affiliates to: (i) maintain the Confidential Information in strict confidence; (ii) not disclose the Confidential Information to a third party without the Disclosing Party’s prior written approval; and (iii) not, directly or indirectly, use the Confidential Information for any purpose other than for exercising its rights and fulfilling its responsibilities pursuant to this Agreement. Each party shall take reasonable measures to protect the Confidential Information of the other party, which measures shall not be less than the measures taken by such party to protect its own confidential and proprietary information.
+
+"Confidential Information" shall not include information that (a) is or becomes generally known to the public through no act or omission of the Receiving Party; (b) was in the Receiving Party’s lawful possession prior to the disclosure hereunder and was not subject to limitations on disclosure or use; (c) is developed by employees of the Receiving Party or other persons working for the Receiving Party who have not had access to the Confidential Information of the Disclosing Party, as proven by the written records of the Receiving Party or by persons who have not had access to the Confidential Information of the Disclosing Party as proven by the written records of the Receiving Party; (d) is lawfully disclosed to the Receiving Party without restrictions, by a third party not under an obligation of confidentiality; or (e) the Receiving Party is legally compelled to disclose the information, in which case the Receiving Party shall assert the privileged and confidential nature of the information and cooperate fully with the Disclosing Party to protect against and prevent disclosure of any Confidential Information and to limit the scope of disclosure and the dissemination of disclosed Confidential Information by all legally available means.
+The obligations of the Receiving Party under this Section shall continue during the Supported Term and for a period of five (5) years after expiration or termination of this Agreement. To the extent that the terms of the Non-Disclosure Agreement between The Qt Company and Licensee conflict with the terms of this Section 13, this Section 13 shall be controlling over the terms of the Non-Disclosure Agreement.
+
+ 
+14. GENERAL PROVISIONS
+
+14.1 No Assignment
+Licensee shall not be entitled to assign or transfer all or any of its rights, benefits and obligations under this Agreement without the prior written consent of The Qt Company, which shall not be unreasonably withheld. The Qt Company shall be entitled to assign or transfer any of its rights, benefits or obligations under this Agreement on an unrestricted basis.
+
+14.2 Termination
+The Qt Company may terminate the Agreement at any time immediately upon written notice by The Qt Company to Licensee if Licensee breaches this Agreement.
+Either party shall have the right to terminate this Agreement immediately upon written notice in the event that the other party becomes insolvent, files for any form of bankruptcy, makes any assignment for the benefit of creditors, has a receiver, administrative receiver or officer appointed over the whole or a substantial part of its assets, ceases to conduct business, or an act equivalent to any of the above occurs under the laws of the jurisdiction of the other party.
+Upon termination of the Licenses, Licensee shall cease using the Licensed Software and return to The Qt Company all copies of Licensed Software that were supplied by The Qt Company. All other copies of Licensed Software in the possession or control of Licensee must be erased or destroyed. An officer of Licensee must promptly deliver to The Qt Company a written confirmation that this has occurred.
+
+14.3 Surviving Sections
+Any terms and conditions that by their nature or otherwise reasonably should survive a cancellation or termination of this Agreement shall also be deemed to survive. Such surviving terms and conditions include, but are not limited to the Section 13.
+
+14.4 Entire Agreement
+This Agreement constitutes the complete agreement between the parties and supersedes all prior or contemporaneous discussions, representations, and proposals, written or oral, with respect to the subject matters discussed herein, with the exception of the non-disclosure agreement executed by the parties in connection with this Agreement ("Non-Disclosure Agreement"), if any, shall be subject to Section 13. No modification of this Agreement shall be effective unless contained in a writing executed by an authorized representative of each party. No term or condition contained in Licensee’s purchase order shall apply unless expressly accepted by The Qt Company in writing. If any provision of the Agreement is found void or unenforceable, the remainder shall remain valid and enforceable according to its terms. If any remedy provided is determined to have failed for its essential purpose, all limitations of liability and exclusions of damages set forth in this Agreement shall remain in effect.
+
+14.5 Payment and Taxes
+If credit has been extended to Licensee by The Qt Company, all payments under this Agreement are due within thirty (30) days of the date The Qt Company mails its invoice to Licensee. If The Qt Company has not extended credit to Licensee, Licensee shall be required to make payment concurrent with the delivery of the Licensed Software by The Qt Company. All amounts payable are gross amounts but exclusive of any value added tax, use tax, sales tax or similar tax. Licensee shall be entitled to withhold from payments any applicable withholding taxes and comply with all applicable tax and employment legislation. Each party shall pay all taxes (including, but not limited to, taxes based upon its income) or levies imposed on it under applicable laws, regulations and tax treaties as a result of this Agreement and any payments made hereunder (including those required to be withheld or deducted from payments). Each party shall furnish evidence of such paid taxes as is sufficient to enable the other party to obtain any credits available to it, including original withholding tax certificates.
+
+As for the Limited Subscription License, the fees under this Agreement applicable for the Licensee, as further stated in www.qt.io, are subject to Licensee´s annual sales revenue being smaller than one hundred thousand (<100,000) USD. In case the Licensee´s annual sales revenue would increase up to one hundred thousand (100,000) USD or more, (i) the Licensee shall inform The Qt Company without undue delay in written form of such increase, and (ii) The Qt Company shall reserve the right to change applicable pricing for The Licensee, depending on The Qt Company´s then current pricing, as further stated in www.qt.io. The Licensee shall have the obligation, upon reasonable prior request by The Qt Company, to prove that its annual sales revenue is smaller than one hundred thousand (<100,000) USD in order for the Licensee to be entitled to continue using the Limited Subscription License.
+
+14.6 Force Majeure
+Neither party shall be liable to the other for any delay or non-performance of its obligations hereunder other than the obligation of paying the license fees in the event and to the extent that such delay or non-performance is due to an event of Force Majeure (as defined below). If any event of Force Majeure results in a delay or non-performance of a party for a period of three (3) months or longer, then either party shall have the right to terminate this Agreement with immediate effect without any liability (except for the obligations of payment arising prior to the event of Force Majeure) towards the other party. A "Force Majeure" event shall mean an act of God, terrorist attack or other catastrophic event of nature that prevents either party for fulfilling its obligations under this Agreement.
+
+14.7 Notices
+Any notice given by one party to the other shall be deemed properly given and deemed received if specifically acknowledged by the receiving party in writing or when successfully delivered to the recipient by hand, fax, or special courier during normal business hours on a business day to the addresses specified below. Each communication and document made or delivered by one party to the other party pursuant to this Agreement shall be in the English language or accompanied by a translation thereof.
+Notices to The Qt Company shall be given to:
+The Qt Company Ltd
+Attn: Legal
+Valimotie 21
+FI-00380 Helsinki
+Finland
+Fax: +358 10 313 3700
+
+14.8 Export Control
+Licensee acknowledges that the Licensed Software may be subject to export control restrictions of various countries. Licensee shall fully comply with all applicable export license restrictions and requirements as well as with all laws and regulations relating to the importation of the Licensed Software and/or Modified Software and/or Applications and shall procure all necessary governmental authorizations, including without limitation, all necessary licenses, approvals, permissions or consents, where necessary for the re-exportation of the Licensed Software, Modified Software or Applications.
+
+14.9 Personal Data
+For the purposes of this Agreement, personal data shall include but is not limited to: individual user´s name, email address, telephone number, profile, and any other information from which the individual user can be identified ("Personal Data"). Upon signing of this Agreement, the Licensee explicitly gives its consent to the process and transfer of any Personal Data relating to the Licensee or its Designated Users, for the purposes stated below.
+
+The Qt Company may pass Personal Data outside The Qt Company group (1) if and to the extent a third party service provider has a strict need-to-know basis for such Personal Data to be able to provide its services to The Qt Company, or (2) in order to comply with the law or requests of governmental entities. Given the global nature of The Qt Company´s business, processing information for such purposes may involve a cross-border transfer of Personal Data. In addition, The Qt Company may collect individual user´s IP address and browser cookies about the use of services or tools relating to Licensed Software, and visits to The Qt Company´s web pages.
+
+In processing and transferring Personal Data The Qt Company shall comply with all applicable European or foreign data protection laws as effective from time to time.
+
+14.10 Governing Law and Legal Venue
+This Agreement shall be construed and interpreted in accordance with the laws of Finland, excluding its choice of law provisions. Any disputes, controversy or claim arising out of or relating to this Agreement, or the breach, termination or validity thereof shall be shall be finally settled by arbitration in accordance with the Arbitration Rules of the Finland Chamber of Commerce. The arbitration tribunal shall consist of one (1), or if either Party so requires, of three (3), arbitrators. The award shall be final and binding and enforceable in any court of competent jurisdiction. The arbitration shall be held in Helsinki, Finland and the process shall be conducted in the English language.
+
+14.11 No Implied License
+There are no implied licenses or other implied rights granted under this Agreement, and all rights, save for those expressly granted hereunder, shall remain with The Qt Company and its licensors. In addition, no licenses or immunities are granted to the combination of the Licensed Software and/or Modified Software, as applicable, with any other software or hardware not delivered by The Qt Company under this Agreement.
+
+ 
+Appendix 1
+
+1. Parts of the Licensed Software that are permitted for distribution ("Redistributables")
+– The Licensed Software’s essential and add-on libraries that have been included in an officially released version of the Licensed Software, in object code form
+– The Licensed Software’s configuration tool ("qtconfig")
+– The Licensed Software’s help tool in object code/executable form ("Qt Assistant")
+– The Licensed Software’s internationalization tools in object code/executable form ("Qt Linguist", "lupdate", "lrelease")
+– The Licensed Software’s designer tool ("Qt Designer")
+– The Licensed Software’s IDE tool ("Qt Creator"), excluding any parts or plug-ins which are delivered to Licensee only in object code
+– The Licensed Software’s QML ("Qt Quick") launcher tool ("qmlscene" and "qmlviewer") in object code/executable form
+– The Licensed Software’s installer framework
+
+2. Parts of the Licensed Software that are not permitted for distribution without a separate SDK distribution license agreement include, but are not limited to
+– The Licensed Software’s source code and header files
+– The Licensed Software’s documentation
+– The Licensed Software’s documentation generation tool ("qdoc")
+– The Licensed Software’s tool for writing makefiles ("qmake")
+– The Licensed Software’s Meta Object Compiler ("moc")
+– The Licensed Software’s User Interface Compiler ("uic" or in the case of Qt Jambi: "juic")
+– The Licensed Software’s Resource Compiler ("rcc")
+– The Licensed Software’s generator (only in the case of Qt Jambi if applicable)
+– The Licensed Software’s parts of the IDE tool ("Qt Creator") that are delivered to Licensee only in object code
+– The Licensed Software’s Emulator

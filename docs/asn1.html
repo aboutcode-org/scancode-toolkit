@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: asn1</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="asn1.yml">yml</a> -
+    <a href="asn1.json">json</a> -
+    <a href="asn1.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/asn1.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: asn1
+short_name: ASN.1 Object Dumping Code License
+name: ASN.1 Object Dumping Code License
+category: Permissive
+owner: ASN.1 Project
+ignorable_copyrights:
+  - copyright Peter Gutmann &lt;pgut001@cs.auckland.ac.nz&gt;
+ignorable_authors:
+  - David Kemp &lt;dpkemp@missi.ncsc.mil&gt;
+ignorable_holders:
+  - Peter Gutmann
+ignorable_urls:
+  - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c
+  - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+ignorable_emails:
+  - Tor.Rustad@bbs.no
+  - bcouillard@chrysalis-its.com
+  - chris.ridd@isode.com
+  - d.boyce@isode.com
+  - dpkemp@missi.ncsc.mil
+  - geoff@raas.co.nz
+  - h.b.furuseth@usit.uio.no
+  - hamrick@rsa.com
+  - hans-olof.hermansson@postnet.se
+  - john.hughes@entegrity.com
+  - jsweeny@us.ibm.com
+  - kjetil.barvik@bbs.no
+  - pgut001@cs.auckland.ac.nz
+  - ronald@trustpoint.com
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>ASN.1 Object Dumping Code License
+
+ASN.1 object dumping code, copyright Peter Gutmann &lt;pgut001@cs.auckland.ac.nz&gt;, based on ASN.1 dump program by David Kemp &lt;dpkemp@missi.ncsc.mil&gt;, with contributions from various people including Matthew Hamrick &lt;hamrick@rsa.com&gt;, Bruno Couillard &lt;bcouillard@chrysalis-its.com&gt;, Hallvard Furuseth &lt;h.b.furuseth@usit.uio.no&gt;, Geoff Thorpe &lt;geoff@raas.co.nz&gt;, David Boyce &lt;d.boyce@isode.com&gt;, John Hughes &lt;john.hughes@entegrity.com&gt;, Life is hard, and then you die &lt;ronald@trustpoint.com&gt;, Hans-Olof Hermansson &lt;hans-olof.hermansson@postnet.se&gt;, Tor Rustad &lt;Tor.Rustad@bbs.no&gt;, Kjetil Barvik &lt;kjetil.barvik@bbs.no&gt;, James Sweeny &lt;jsweeny@us.ibm.com&gt;, Chris Ridd &lt;chris.ridd@isode.com&gt;, and several other people whose names I&#39;ve misplaced (a number of those email addresses probably no longer work, since this code has been around for awhile).
+
+Available from http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c Last updated 7 January 2009 (version 20090107, if you prefer it that way). To build under Windows, use &#39;cl /MD dumpasn1.c&#39;. To build on OS390 or z/OS, use &#39;/bin/c89 -D OS390 -o dumpasn1 dumpasn1.c&#39;.
+
+This code grew slowly over time without much design or planning, and with extra features being tacked on as required. It&#39;s not representative of my normal coding style.
+
+This version of dumpasn1 requires a config file dumpasn1.cfg to be present in the same location as the program itself or in a standard directory where binaries live (it will run without it but will display a warning message, you can configure the path either by hardcoding it in or using an environment variable as explained further down). The config file is available from http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+
+This code assumes that the input data is binary, having come from a MIME-aware mailer or been piped through a decoding utility if the original format used base64 encoding. If you need to decode it, it&#39;s recommended that you use a utility like uudeview, which will strip virtually any kind of encoding (MIME, PEM, PGP, whatever) to recover the binary original.
+
+You can use this code in whatever way you want, as long as you don&#39;t try to claim you wrote it.
+
+Editing notes: Tabs to 4, phasers to stun (and in case anyone wants to complain about that, see &#34;Program Indentation and Comprehensiblity&#34;, Richard Miara, Joyce Musselman, Juan Navarro, and Ben Shneiderman, Communications of the ACM, Vol.26, No.11 (November 1983), p.861)</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

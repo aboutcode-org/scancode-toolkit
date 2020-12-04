@@ -1,0 +1,52 @@
+http://g.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+
+All classes are released to the public domain and may be used for any purpose
+whatsoever without permission or acknowledgment. Portions of the CopyOnWriteArrayList
+and ConcurrentReaderHashMap classes are adapted from Sun JDK source code. These are
+copyright of Sun Microsystems, Inc, and are used with their kind permission, as
+described in this license.
+
+http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf
+
+TECHNOLOGY LICENSE FROM SUN MICROSYSTEMS, INC. TO DOUG LEA
+
+Whereas Doug Lea desires to utlized certain Java Software technologies in the
+util.concurrent technology; and Whereas Sun Microsystems, Inc. ("Sun") desires that
+Doug Lea utilize certain Java Software technologies in the util.concurrent
+technology; Therefore the parties agree as follows, effective May 31, 2002:
+
+"Java Software technologies" means classes/java/util/ArrayList.java, and
+classes/java/util/HashMap.java.
+
+The Java Software technologies are Copyright (c) 1994-2000 Sun Microsystems, Inc. All
+rights reserved. 
+
+Sun hereby grants Doug Lea a non-exclusive, worldwide, non- transferrable license to
+use, reproduce, create derivate works of, and distribute the Java Software and
+derivative works thereof in source and binary forms as part of a larger work, and to
+sublicense the right to use, reproduce and distribute the Java Software and Doug
+Lea's derivative works as the part of larger works through multiple tiers of
+sublicensees provided that the following conditions are met: 
+
+-Neither the name of or trademarks of Sun may be used to endorse or promote products
+including or derived from the Java Software technology without specific prior written
+permission; and 
+
+-Redistributions of source or binary code must contain the above copyright notice,
+this notice and and the following disclaimers:
+
+This software is provided "AS IS," without a warranty of any kind. ALL EXPRESS OR
+IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY
+EXCLUDED. SUN MICROSYSTEMS, INC. AND ITS LICENSORS SHALL NOT BE LIABLE FOR ANY
+DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE
+SOFTWARE OR ITS DERIVATIVES. IN NO EVENT WILL SUN MICROSYSTEMS, INC. OR ITS LICENSORS
+BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,
+CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE
+THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USESOFTWARE, EVEN IF
+SUN MICROSYSTEMS, INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+You acknowledge that Software is not designed,licensed or intended for use in the
+design, construction, operation or maintenance of any nuclear facility.
+
+signed [Doug Lea] dated

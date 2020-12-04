@@ -1,0 +1,13 @@
+As a special exception, the copyright holder(s) give permission to link
+this program with the Qt Library (commercial or non-commercial edition),
+and distribute the resulting executable, without including the source
+code for the Qt library in the source distribution.
+
+As a special exception, the copyright holder(s) give permission to link
+this program with any other library, and distribute the resulting
+executable, without including the source code for the library in the
+source distribution, provided that the library interfaces with this
+program only via the following plugin interfaces:
+
+1. The Qt Plugin APIs, only as authored by Trolltech
+2. The QCA Plugin API, only as authored by Justin Karneges

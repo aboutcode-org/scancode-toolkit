@@ -1,0 +1,1 @@
+{"key": "bsd-innosys", "short_name": "BSD-InnoSys", "name": "BSD-InnoSys", "category": "Permissive", "owner": "InnoSys", "notes": "This is a BSD variant with extra conditions on the placement of the notice.\nCommon in the Linux kernel\n", "ignorable_copyrights": ["Copyright (c) InnoSys Incorporated"], "ignorable_holders": ["InnoSys Incorporated"]}

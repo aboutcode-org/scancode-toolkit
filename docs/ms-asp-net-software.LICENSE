@@ -1,0 +1,237 @@
+MICROSOFT SOFTWARE LICENSE TERMS
+
+Microsoft ASP.NET Model View Controller, Web API and Web Pages
+
+Microsoft ASP.NET Web Developer Tools
+
+Microsoft ASP.NET SignalR
+
+Microsoft ASP.NET Friendly URLs
+
+Microsoft ASP.NET Web Optimization Framework
+
+Microsoft ASP.NET Universal Providers
+
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+
+·      updates,
+·      supplements,
+·      Internet-based services, and
+·      support services
+
+for this software, unless other terms accompany those items. If so, those terms apply.
+
+By using the software, you accept these terms. If you do not accept them, do not use the software.
+
+As described below, using some features also operates as your consent to the transmission of certain standard computer information for Internet-based services.
+
+If you comply with these license terms, you have the perpetual rights below.
+
+1.   INSTALLATION AND USE RIGHTS.   You may install and use any number of copies of the software on your devices for use with your ASP.NET programs.  You may modify, copy, distribute or deploy any .js files contained in the software as part of your ASP.NET programs.
+
+2.   ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
+
+a.   Distributable Code. In addition to the .js files described above, the software contains code that you are permitted to distribute in ASP.NET programs you develop if you comply with the terms below.
+
+i.    Right to Use and Distribute. The code and text files listed below are "Distributable Code."
+
+·      Redistributable DLL files. You may copy and distribute the object code form of code and files listed below.
+
+MICROSOFT ASP.NET Model View Controller (MVC)
+
+§ System.Net.Http.dll
+
+§ System.Net.Http.Formatting.dll
+
+§ System.Web.Http.SelfHost.dll
+
+§ System.Web.Http.WebHost.dll
+
+§ System.Web.Http.dll
+
+§ System.Net.Http.WebRequest.dll
+
+§ System.Web.Mvc.dll
+
+§ System.Web.Http.OData.dll
+
+§ System.Web.Http.Tracing.dll
+
+§ Microsoft.AspNet.Mvc.Facebook
+
+§ Microsoft.Owin.Host.SystemWeb
+
+Microsoft ASP.NET Web Pages
+
+§ NuGet.Core.dll
+
+§ Microsoft.Web.Infrastructure.dll
+
+§ Microsoft.Web.WebPages.OAuth.dll
+
+§ Microsoft.Web.Helpers.dll
+
+§ System.Web.Helpers.dll
+
+§ System.Web.Razor.dll
+
+§ System.Web.WebPages.dll
+
+§ System.Web.WebPages.Administration.dll
+
+§ System.Web.WebPages.Deployment.dll
+
+§ System.Web.WebPages.Razor.dll
+
+§ WebMatrix.Data.dll
+
+§ WebMatrix.WebData.dll
+
+Microsoft ASP.NET Web Developer Tools
+
+§ Microsoft.AspNet.Membership.OpenAuth.dll
+
+§ Microsoft.ScriptManager.WebForms.dll
+
+§ Microsoft.ScriptManager.MSAjax.dll
+
+Microsoft ASP.NET SignalR
+
+§ Microsoft.Asp.Net.SignalR.Core.dll
+
+§ Microsoft.Asp.Net.SignalR.SystemWeb.dll
+
+§ Microsoft.Asp.Net.SignalR.Owin.dll
+
+§ Microsoft.AspNet.SignalR.ServiceBus.dll
+
+§ Microsoft.AspNet.SingnalR.Redis.dll
+
+§ Microsoft.AspNet.SignalR.Client.dll
+
+§ Microsoft.AspNet.SignalR.Utils.exe
+
+Microsoft ASP.NET Friendly URLs
+
+§ Microsoft.AspNet.FriendlyUrls
+
+Microsoft ASP.NET Web Optimization Framework
+
+§ System.Web.Optimization.dll
+
+·      Third Party Distribution. You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
+
+ii.   Distribution Requirements. For any Distributable Code you distribute, you must
+
+·      add significant primary functionality to it in your programs;
+·      require distributors and external end users to agree to terms that protect it at least as much as this agreement;
+·      display your valid copyright notice on your programs; and
+·      indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
+
+iii. Distribution Restrictions. You may not
+
+·      alter any copyright, trademark or patent notice in the Distributable Code;
+
+·      use Microsoft’s trademarks in your programs’ names or in a way that suggests your programs come from or are endorsed by Microsoft;
+
+·      distribute Distributable Code to run on a platform other than the Windows platform;
+
+·      include Distributable Code in malicious, deceptive or unlawful programs; or
+
+·      modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of use, modification or distribution, that
+
+·      the code be disclosed or distributed in source code form; or
+
+·      others have the right to modify it.
+
+3.   INTERNET-BASED SERVICES. Microsoft provides Internet-based services with the software. It may change or cancel them at any time.
+
+a.   Consent for Internet-Based Services. The software features described below connect to Microsoft or service provider computer systems over the Internet. In some cases, you will not receive a separate notice when they connect. In some cases, you may switch off these features or not use them. For more information about these features, see software documentation and the privacy statement at go.microsoft.com/fwlink/?LinkID=205205. By using these features, you consent to the transmission of this information. Microsoft does not use the information to identify or contact you.
+
+i.    Computer Information. The following features use Internet protocols, which send to the appropriate systems computer information, such as your Internet protocol address, the type of operating system, browser and name and version of the software you are using, and the language code of the device where you installed the software. Microsoft or a third party service provider uses this information to make the Internet-based services available to you.
+
+·      Customer Experience Improvement Program (CEIP). This software uses CEIP. CEIP automatically sends Microsoft information about your hardware and how you use this software. We do not use this information to identify or contact you. To learn more about CEIP, see http://www.microsoft.com/products/ceip/en-us/privacypolicy.mspx.
+
+·      Error Reports. This software automatically sends error reports to Microsoft. These reports include information about problems that occur in the software. Sometimes reports contain information about other programs that interact with the software. Reports might unintentionally contain personal information. For example, a report that contains a snapshot of computer memory might include your name. Part of a document you were working on could be included as well. Microsoft does not use this information to identify or contact you. To learn more about error reports, see oca.microsoft.com/en/dcp20.asp.
+
+·      Open Data Protocol (OData) Service. This software will access a list of packages that is supplied by means of an OData service online from Microsoft or a third-party service provider.
+
+ii. Installing Packages and their Dependencies. Please refer to the "Third Party Package Manager" section below for a description of this feature.
+
+iii.  Use of Information. We or the third party service provider may use the computer information, error reports, and CEIP information, to improve our or their software and services. We or they may also share it with others, such as hardware and software vendors. They may use the information to improve how their products run with Microsoft software.
+
+b.   Misuse of Internet-based Services. You may not use this service in any way that could harm it or impair anyone else’s use of it. You may not use the service to try to gain unauthorized access to any service, data, account or network by any means.
+
+4.   THIRD PARTY PACKAGE MANAGER. This software includes a package manager feature, which enables you to obtain other software packages from other sources. Those packages are offered and distributed in some cases by third parties or in some cases by Microsoft, but each such package is under its own license terms. Microsoft is not developing, distributing or licensing any of the third-party packages to you, but instead, as a convenience, is providing you with this package manager feature in order to access any packages for your own use. By using this package manager feature, you acknowledge and agree that you may be accessing and using the third-party packages as distributed by such third parties and under the separate license terms applicable to each package, including any terms applicable to software dependencies that may be included in the package. You acknowledge and agree that it is your responsibility to locate, understand and comply with all applicable license terms for each package and its dependencies, for example, by following the package source (feed) URL or by reviewing the packages for embedded notices or license terms. The package manager feature may have been pre-set to a feed that is hosted by a third party service provider, located at go.microsoft.com/fwlink/?LinkID=206669. The packages listed on this feed may include packages submitted by third parties. Microsoft makes no representations, warranties or guarantees as to the feed URL, any feeds from such URL, the information contained therein, or any packages referenced in or accessed by you through such feeds. Microsoft grants you no license rights rights for third-party software that is obtained using this feature or from the feed. You may change the feed URL that the package manager feature initially points to at any time at your discretion.
+
+5.   THIRD PARTY NOTICES. The software, including the package manager feature of the software, may include third party code that Microsoft, not the third party, licenses to you under this agreement.  Notices, if any, for the third party code are included for your information only.
+
+6.   SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Microsoft grants you no license rights for third-party software that is obtained using this software. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+·      disclose the results of any benchmark tests of the software to any third party without Microsoft’s prior written approval;
+
+·      work around any technical limitations in the software;
+
+·      reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+
+·      publish the software for others to copy;
+
+·      rent, lease or lend the software; or
+
+·      transfer the software or this agreement to any third party.
+
+7.   .NET FRAMEWORK SOFTWARE. The software contains Microsoft .NET Framework software. This software is part of Windows. The license terms for Windows apply to your use of the .NET Framework software.
+
+8.   MICROSOFT .NET FRAMEWORK BENCHMARK TESTING. The software includes one or more components of the .NET Framework (".NET Components"). You may conduct internal benchmark testing of those components. You may disclose the results of any benchmark test of those components, provided that you comply with the conditions set forth at go.microsoft.com/fwlink/?LinkID=66406. Notwithstanding any other agreement you may have with Microsoft, if you disclose such benchmark test results, Microsoft shall have the right to disclose the results of benchmark tests it conducts of your products that compete with the applicable .NET Component, provided it complies with the same conditions set forth at go.microsoft.com/fwlink/?LinkID=66406.
+
+9.   BACKUP COPY. You may make one backup copy of the software. You may use it only to reinstall the software.
+
+10. DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+
+11. EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see http://www.microsoft.com/exporting.
+
+12. SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
+
+13. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+
+14. APPLICABLE LAW.
+
+a.   United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+
+b.   Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+
+15. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+
+16. DISCLAIMER OF WARRANTY. The software is licensed "as-is." You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+FOR AUSTRALIA – You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
+
+17. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+
+This limitation applies to
+
+·      anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and
+
+·      claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+Please note: As this software is distributed in Quebec, Canada, some of the clauses in this agreement are provided below in French.
+
+Remarque : Ce logiciel étant distribué au Québec, Canada, certaines des clauses dans ce contrat sont fournies ci-dessous en français.
+
+EXONÉRATION DE GARANTIE. Le logiciel visé par une licence est offert « tel quel ». Toute utilisation de ce logiciel est à votre seule risque et péril. Microsoft n’accorde aucune autre garantie expresse. Vous pouvez bénéficier de droits additionnels en vertu du droit local sur la protection des consommateurs, que ce contrat ne peut modifier. La ou elles sont permises par le droit locale, les garanties implicites de qualité marchande, d’adéquation à un usage particulier et d’absence de contrefaçon sont exclues.
+
+LIMITATION DES DOMMAGES-INTÉRÊTS ET EXCLUSION DE RESPONSABILITÉ POUR LES DOMMAGES. Vous pouvez obtenir de Microsoft et de ses fournisseurs une indemnisation en cas de dommages directs uniquement à hauteur de 5,00 $ US. Vous ne pouvez prétendre à aucune indemnisation pour les autres dommages, y compris les dommages spéciaux, indirects ou accessoires et pertes de bénéfices.
+
+Cette limitation concerne :
+
+·      tout ce qui est relié au logiciel, aux services ou au contenu (y compris le code) figurant sur des sites Internet tiers ou dans des programmes tiers ; et
+
+·      les réclamations au titre de violation de contrat ou de garantie, ou au titre de responsabilité stricte, de négligence ou d’une autre faute dans la limite autorisée par la loi en vigueur.
+
+Elle s’applique également, même si Microsoft connaissait ou devrait connaître l’éventualité d’un tel dommage. Si votre pays n’autorise pas l’exclusion ou la limitation de responsabilité pour les dommages indirects, accessoires ou de quelque nature que ce soit, il se peut que la limitation ou l’exclusion ci-dessus ne s’appliquera pas à votre égard.
+
+EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d’autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.
+
+ 

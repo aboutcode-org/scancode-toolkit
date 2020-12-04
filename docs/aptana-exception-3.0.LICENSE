@@ -1,0 +1,13 @@
+Appcelerator GPL Exception
+Section 7 Exception
+
+As a special exception to the terms and conditions of the GNU General Public License Version 3 (the "GPL"): You are free to convey a modified version that is formed entirely from this file (for purposes of this exception, the "Program" under the GPL) and the works identified at http://www.aptana.com/legal/gpl (each an "Excepted Work"), which are conveyed to you by Appcelerator, Inc. and licensed under one or more of the licenses identified in the Excepted License List below (each an "Excepted License"), as long as:
+
+   1. you obey the GPL in all respects for the Program and the modified version, except for Excepted Works which are identifiable sections of the modified version, which are not derived from the Program, and which can reasonably be considered independent and separate works in themselves,
+   2. all Excepted Works which are identifiable sections of the modified version, which are not derived from the Program, and which can reasonably be considered independent and separate works in themselves,
+         1. are distributed subject to the Excepted License under which they were originally licensed, and
+         2. are not themselves modified from the form in which they are conveyed to you by Aptana, and
+         3. the object code or executable form of those sections are accompanied by the complete corresponding machine-readable source code for those sections, on the same medium as the corresponding object code or executable forms of those sections, and are licensed under the applicable Excepted License as the corresponding object code or executable forms of those sections, and
+   3. any works which are aggregated with the Program, or with a modified version on a volume of a storage or distribution medium in accordance with the GPL, are aggregates (as defined in Section 5 of the GPL) which can reasonably be considered independent and separate works in themselves and which are not modified versions of either the Program, a modified version, or an Excepted Work.
+
+If the above conditions are not met, then the Program may only be copied, modified, distributed or used under the terms and conditions of the GPL or another valid licensing option from Appcelerator, Inc. Terms used but not defined in the foregoing paragraph have the meanings given in the GPL.

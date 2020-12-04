@@ -1,0 +1,7 @@
+key: commercial-option
+is_deprecated: yes
+short_name: Commercial Option
+name: Commercial Option
+category: Commercial
+owner: Unspecified
+notes: replaced by commercial-license

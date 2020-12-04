@@ -1,0 +1,114 @@
+Last revision: 21 May 2017
+
+Bacula is licensed under the GNU Affero General Public License, version
+3.0 as published by the Free Software Foundation, Inc. ("AGPLv3").
+
+Additional Terms on the work licensed herein, pursuant to Section 7 of
+Affero General Public License are as follows:
+
+  1. The name Bacula is a registered trademark of Kern Sibbald, and Kern
+     Sibbald hereby declines to grant a trademark license to "Bacula"
+     pursuant to AGPLv3, Section 7(e) without a separate agreement with Kern
+     Sibbald.
+
+  2. Pursuant to AGPLv3, Section 7(a), in addition to the warranty and
+     liability disclaimers already found in AGPLv3, the copyright holders
+     specifically disclaim any liability for accusations of patent
+     infringement by any third party.
+
+  3. Pursuant to AGPLv3, Section 7(b), the portions of the file AUTHORS that
+     are deemed to be specified reasonable legal notices and/or author
+     attributions shall be preserved in redistribution of source code and/or
+     modifications thereof. Furthermore, when the following notice appears in
+     a source code file, it must be preserved when source code is conveyed
+     and/or propagated:
+
+   Bacula(R) - The Network Backup Solution
+
+   Copyright (C) 2000-2017 Kern Sibbald
+
+   The original author of Bacula is Kern Sibbald, with contributions
+   from many others, a complete list can be found in the file AUTHORS.
+
+   You may use this file and others of this release according to the
+   license defined in the LICENSE file, which includes the Affero General
+   Public License, v3.0 ("AGPLv3") and some additional permissions and
+   terms pursuant to its AGPLv3 Section 7.
+
+   This notice must be preserved when any source code is conveyed
+   and/or propagated.
+
+   Bacula(R) is a registered trademark of Kern Sibbald.
+
+Additional Permissions on the work licensed herein, pursuant to Section 7 of
+AGPLv3 are as follows:
+
+1. As a special exception to the AGPLv3, the copyright holders give
+   permission to link the code of its release of Bacula with the OpenSSL
+   project's "OpenSSL" library (or with modified versions of it that use the
+   same license as the "OpenSSL" library), and distribute the linked
+   executables.  You must follow the requirements of AGPLv3 in all respects
+   for all of the code used other than "OpenSSL".
+
+2. As a special exception to the AGPLv3, the copyright holders give
+   permission to link the code of its release of the Bacula Win32 File daemon
+   with the Microsoft supplied Volume Shadow Copy (VSS) libraries and
+   distribute the linked executables.  You must follow the requirements of
+   the AGPLv3 in all respects for all of the code used other than for the
+   Microsoft VSS code.
+
+If you want to fork Bacula, please read the file LICENSE-FAQ.
+
+The copyright for certain source files may include in addition to what is
+listed above the following copyright:
+
+   Copyright (C) 2000-2014 Free Software Foundation Europe e.V.
+
+The copyright on the Baculum code is:
+
+   Copyright (C) 2013-2017 Marcin Haba
+
+Copyrights of certain "script" files such as headers, shell script, Makefiles,
+etc ...  were previously never explicitly defined.  In almost all cases,
+they have been copyrighted with a BSD 2-Clause copyright to make them
+easier.  However, as is the case of all BSD type copyrights you must keep
+the copyright in place and on any binary only released the copyright notice
+must also be released with the binaries.  An example of such a copyright
+is:
+
+#
+# Copyright (C) 2000-2017 Kern Sibbald
+# License: BSD 2-Clause; see file LICENSE-FOSS
+#
+
+It is equivalent to the full BSD copyright of:
+
+=====
+Copyright (C) 2000-2017 Kern Sibbald
+License: BSD 2-Clause; see file LICENSE-FOSS
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1.  Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+
+2.  Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+====
+
+Note: the exact form of the copyright (dates, name, and text formatting)
+might vary, but the intent is the same, namely that the full BSD 2-Clause
+coypright applies.  The file LICENSE-FOSS has a few more details.

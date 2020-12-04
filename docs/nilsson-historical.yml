@@ -1,0 +1,6 @@
+key: nilsson-historical
+short_name: Nilsson Historical License
+name: Nilsson Historical License
+category: Permissive
+owner: Hans-Peter Nilsson
+notes: this is a short historical permissive license seen in the newlib C library

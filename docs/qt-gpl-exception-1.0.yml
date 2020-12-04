@@ -1,0 +1,8 @@
+key: qt-gpl-exception-1.0
+short_name: Qt GPL exception 1.0
+name: Qt GPL exception 1.0
+category: Copyleft Limited
+owner: Qt Company
+homepage_url: http://code.qt.io/cgit/qt/qtbase.git/tree/LICENSE.GPL3-EXCEPT
+is_exception: yes
+spdx_license_key: Qt-GPL-exception-1.0

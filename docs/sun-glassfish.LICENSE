@@ -1,0 +1,82 @@
+Sun GlassFish License
+
+1. Definitions.
+
+"Software" means all the portions of the GlassFish distribution provided by Sun only in binary code form, and including any updates or error corrections or documentation provided by Sun under this Agreement.
+
+2. Permitted Uses.
+
+Subject to the terms and conditions of this Agreement and restrictions and exceptions set forth in the Software's documentation, Sun grants you a non-exclusive, non-transferable, limited license without fees to
+
+(a) reproduce and use internally the Software for the purposes of developing or running GlassFish or modified versions of GlassFish.
+
+(b) reproduce and distribute the Software (and also portions of Software identified as Redistributable in the documentation accompanying Software), provided that you
+
+  (i) distribute the Software or Redistributables bundled as part of, and for the sole purpose of running, GlassFish or modified versions of GlassFish;
+
+  (ii) do not remove or alter any proprietary legends or notices contained in or on the Software or Redistributables,
+
+  (iii) only distribute the Software or Redistributables subject to a license agreement that protects Sun's interests consistent with the terms contained in this Agreement, and
+
+  (iv) you agree to defend and indemnify Sun and its licensors from and against any damages, costs, liabilities, settlement amounts and/or expenses (including attorneys' fees) incurred in connection with any claim, lawsuit or action by any third party that arises or results from the use or distribution of any and all Programs, Software, or Redistributables.
+
+3. Restrictions.
+(a) The copies of Software provided to you under this Agreement is licensed, not sold, to you by Sun. Sun reserves all rights not expressly granted.
+
+(b) You may not modify Software. However if the documentation accompanying Software lists specific portions of Software, such as header files, class libraries, reference source code, and/or redistributable files, that may be handled differently, you may do so only as provided in the documentation.
+
+(c) You may not rent, lease, lend or encumber Software.
+
+(d) you do not remove or alter any proprietary legends or notices contained in the Software,
+
+(e) Unless enforcement is prohibited by applicable law, you may not decompile, or reverse engineer Software.
+
+(f) The terms and conditions of this Agreement will apply to any Software updates, provided to you at Sun's discretion, that replace and/or supplement the original Software, unless such update contains a separate license.
+
+(g) Software is confidential and copyrighted.
+
+(h) Software is not designed, licensed or intended for use in the design, construction, operation or maintenance of any nuclear facility and Sun and its licensors disclaim any express or implied warranty of fitness for such uses.
+
+(i) No right, title or interest in or to any trademark, service mark, logo or trade name of Sun or its licensors is granted under this Agreement.
+
+(j) If your Permitted Use in this Agreement permits the distribution Software or portions of the Software, you may only distribute the Software subject to a license agreement that protects Sun's interests consistent with the terms contained in this Agreement.
+
+4. Java Compatibility and Open Source.
+
+Software may contain Java technology. You may not create additional classes to, or modifications of, the Java technology, except under compatibility requirements available under a separate agreement available at www.java.net. Sun supports and benefits from the global community of open source developers, and thanks the community for its important contributions and open standards-based technology, which Sun has adopted into many of its products. Please note that portions of Software may be provided with notices and open source licenses from such communities and third parties that govern the use of those portions, and any licenses granted hereunder do not alter any rights and obligations you may have under such open source licenses, however, the disclaimer of warranty and limitation of liability provisions in this Agreement will apply to all Software in this distribution.
+
+5. Term and Termination.
+
+The Agreement is effective on the Date you receive the Software and remains effective until terminated. Your rights under this Agreement will terminate immediately without notice from Sun if you materially breach it or take any action in derogation of Sun's and/or its licensors' rights to Software. Sun may terminate this Agreement should any Software become, or in Sun's reasonable opinion likely to become, the subject of a claim of intellectual property infringement or trade secret misappropriation. Upon termination, you will cease use of, and destroy, Software and confirm compliance in writing to Sun. Sections 1, 3, 4, 5, and 7-13 will survive termination of the Agreement.
+
+6. Limited Warranty.
+
+Sun warrants to you that for a period of 90 days from the date of receipt, the media on which Software is furnished (if any) will be free of defects in materials and workmanship under normal use. Except for the foregoing, Software is provided "AS IS". Your exclusive remedy and Sun's entire liability under this limited warranty will be at Sun's option to replace Software media or refund the fee paid for Software. Some states do not allow limitations on certain implied warranties, so the above may not apply to you. This limited warranty gives you specific legal rights. You may have others, which vary from state to state.
+
+7. Disclaimer of Warranty.
+
+UNLESS SPECIFIED IN THIS AGREEMENT, ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT ARE DISCLAIMED, EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS ARE HELD TO BE LEGALLY INVALID.
+
+8. Limitation of Liability.
+
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. In no event will Sun's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose. Some states do not allow the exclusion of incidental or consequential damages, so some of the terms above may not be applicable to you.
+
+9. Export Regulations.
+
+All Software, documents, technical data, and any other materials delivered under this Agreement are subject to U.S. export control laws and may be subject to export or import regulations in other countries. You agree to comply strictly with these laws and regulations and acknowledge that you have the responsibility to obtain any licenses to export, re-export, or import as may be required after delivery to you.
+
+10. U.S. Government Restricted Rights.
+
+If Software is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), then the Government's rights in Software and accompanying documentation will be only as set forth in this Agreement; this is in accordance with 48 CFR 227.7201 through 227.7202-4 (for Department of Defense (DOD) acquisitions) and with 48 CFR 2.101 and 12.212 (for non-DOD acquisitions).
+
+11. Governing Law.
+
+Any action related to this Agreement will be governed by California law and controlling U.S. federal law. No choice of law rules of any jurisdiction will apply.
+
+12. Severability.
+
+If any provision of this Agreement is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the intent of the parties, in which case this Agreement will immediately terminate.
+
+13. Integration.
+
+This Agreement is the entire agreement between you and Sun relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties and prevails over any conflicting or additional terms of any quote, order, acknowledgment, or other communication between the parties relating to its subject matter during the term of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.

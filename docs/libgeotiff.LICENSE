@@ -1,0 +1,92 @@
+libgeotiff Licensing
+====================
+
+All the source code in this toolkit are either in the public domain, or under
+an X style license.  In any event it is all considered to be free to use
+for any purpose (including commercial software).  No credit is required
+though some of the code requires that the specific source code modules
+retain their existing copyright statements.  The CSV files, and other tables
+derived from the EPSG coordinate system database are also free to use.  In
+particular, no part of this code is "copyleft", nor does it imply any
+requirement for users to disclose this or their own source code.
+
+All components not carrying their own copyright message, but distributed
+with libgeotiff should be considered to be under the same license as
+Niles' code.
+
+---------
+
+Code by Frank Warmerdam has this copyright notice (directly copied from
+X Consortium licence):
+
+ * Copyright (c) 1999, Frank Warmerdam
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+
+-----------
+
+Code by Niles Ritter is under this licence:
+
+ *    Written By: Niles D. Ritter.
+ *
+ *  copyright (c) 1995   Niles D. Ritter
+ *
+ *  Permission granted to use this software, so long as this copyright
+ *  notice accompanies any products derived therefrom.
+
+-----------
+
+The EPSG Tables (from which the CSV files, and .inc files are derived)
+carried this statement on use of the data (from the EPSG web site):
+
+Use of the Data
+
+The user assumes the entire risk as to the accuracy and the use of this
+data. The data may be used, copied and distributed subject to the following
+conditions:
+
+1. INFORMATION PROVIDED IN THIS DOCUMENT IS PROVIDED "AS IS"
+   WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+   MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+
+2. The data may be included in any commercial package provided that any
+   commerciality is based on value added by the provider and not on a value
+   ascribed to the EPSG dataset which is made available at no charge. The
+   ownership of the EPSG dataset [OGP] must be acknowledged.
+
+3. Subsets of information may be extracted from the dataset. Users are
+   advised that coordinate reference system and coordinate transformation
+   descriptions are incomplete unless all elements detailed as essential
+   in OGP Surveying and Positioning Guidance Note 7-1 annex F are included.
+
+4. Essential elements should preferably be reproduced as described in the
+   dataset.  Modification of parameter values is permitted as described in
+   the table below to allow change to the content of the information provided
+   that numeric equivalence is achieved.  Numeric equivalence refers to the
+   results of geodetic calculations in which the parameters are used, for
+   example (i) conversion of ellipsoid defining parameters, or (ii) conversion
+   of parameters between one and two standard parallel projection methods,
+   or (iii) conversion of parameters between 7-parameter geocentric
+   transformation methods.
+
+   (EPSG provides a table at this point with some details)
+
+5. No data that has been modified other than as permitted in these terms
+   and conditions shall be described as or attributed to the EPSG dataset.

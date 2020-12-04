@@ -1,0 +1,210 @@
+This is the Info-ZIP file COPYING (for UnZip), last updated 5 Oct 97.
+
+
+There are currently six explicit copyrights on portions of UnZip
+code (at least, of which Info-ZIP is aware):  the original Sam Smith
+copyright on unzip 2.0, upon which Info-ZIP's UnZip 3.0 was based;
+Igor Mandrichenko's copyright on his routines in vms.c; Greg Roelofs'
+copyright on zipinfo.c and the new version of unshrink.c; Mike White's
+copyright on the Windows DLL code (windll/*); Steve P. Miller's
+copyright on the Pocket UnZip GUI (wince/*); and Norbert Pueschel's
+copyright on the Amiga time.lib code.  In addition, Mark Adler has
+placed inflate.h, inflate.c, explode.c and funzip.c into the public
+domain; i.e., these files may be used without any restrictions beyond
+those of simple courtesy (credit where it's due).  All of these are
+discussed immediately below.  The remaining code is covered by an im-
+plicit copyright under US law.  Frequently Asked Questions regarding
+(re)distribution of Zip and UnZip are near the end of this file.
+
+There are no known patents on any of the code in UnZip.  Unisys
+claims a patent on LZW encoding and on LZW decoding _in an apparatus
+that performs LZW encoding_, but the patent appears to exempt a stand-
+alone decoder (as in UnZip's unshrink.c).  Unisys has publicly claimed
+otherwise, but the issue has never been tested in court.  Since this
+point is unclear, unshrinking is not enabled by default.  It is the
+responsibility of the user to make his or her peace with Unisys and
+its licensing requirements.  (unshrink.c may be removed from future
+releases altogether.)
+
+
+The original unzip source code has been extensively modified and
+almost entirely rewritten (changes include random zipfile access
+rather than sequential; replacement of unimplode() with explode();
+replacement of old unshrink() with new (unrelated) unshrink(); re-
+placement of output routines; addition of inflate(), wildcards,
+filename-mapping, text translation, ...; etc.).  As far as we can
+tell, the only remaining code that is substantially similar to
+Mr. Smith's is that in the file unreduce.c, which now by default
+is NOT compiled.  The following copyright applies to unreduce.c:
+
+  * Copyright 1989 Samuel H. Smith;  All rights reserved
+  *
+  * Do not distribute modified versions without my permission.
+  * Do not remove or alter this notice or any other copyright notice.
+  * If you use this in your own program you must distribute source code.
+  * Do not use any of this in a commercial product.
+
+Regarding the first stipulation, Mr. Smith was tracked down in southern
+California some years back [Samuel H. Smith, The Tool Shop; as of mid-
+May 1994, (213) 851-9969 (voice), (213) 887-2127(?) (subscription BBS),
+71150.2731@compuserve.com]:
+
+"He says that he thought that whoever contacted him understood that
+ he has no objection to the Info-ZIP group's inclusion of his code.
+ His primary concern is that it remain freely distributable, he said."
+
+Despite the fact that our "normal" code has been entirely rewritten
+and by default no longer contains any of Mr. Smith's code, Info-ZIP
+remains indebted and grateful to him.  We hope he finds our contribu-
+tions as useful as we have his.
+
+Note that the third and fourth stipulations still apply to any com-
+pany that wishes to incorporate the unreduce code into its products;
+if you wish to do so, you must contact Mr. Smith directly regarding
+licensing.
+
+
+The following copyright applies to most of the VMS code in vms.c,
+distributed with UnZip version 4.2 and later:
+
+  * Copyright (c) 1992 Igor Mandrichenko.
+  * Permission is granted to any individual or institution to use,
+  * copy, or redistribute this software so long as all of the orig-
+  * inal files are included unmodified, that it is not sold for
+  * profit, and that this copyright notice is retained.
+
+
+The following copyright applies to the new version of unshrink.c,
+distributed with UnZip version 5.2 and later:
+
+  * Copyright (c) 1994 Greg Roelofs.
+  * Permission is granted to any individual/institution/corporate
+  * entity to use, copy, redistribute or modify this software for
+  * any purpose whatsoever, subject to the conditions noted in the
+  * Frequently Asked Questions section below, plus one additional
+  * condition:  namely, that my name not be removed from the source
+  * code.  (Other names may, of course, be added as modifications
+  * are made.)  Corporate legal staff (like at IBM :-) ) who have
+  * problems understanding this can contact me through Zip-Bugs...
+
+
+The following copyright applies to the Windows DLL code (windll/*),
+distributed with UnZip version 5.2 and later:
+
+  * Copyright (c) 1996 Mike White.
+  * Permission is granted to any individual or institution to use,
+  * copy, or redistribute this software so long as all of the original
+  * files are included, that it is not sold for profit, and that this
+  * copyright notice is retained.
+
+
+The following copyright applies to the Windows CE GUI port, ``Pocket
+UnZip,'' distributed with UnZip version 5.3 and later:
+
+  * All the source files for Pocket UnZip, except for components
+  * written by the Info-ZIP group, are copyrighted 1997 by Steve P.
+  * Miller.  The product "Pocket UnZip" itself is property of the
+  * author and cannot be altered in any way without written consent
+  * from Steve P. Miller.
+
+
+The following copyright applies to the Amiga time code (amiga/time_lib.c),
+distributed with UnZip version 5.32 and later:
+
+  * This source is copyrighted by Norbert Pueschel,
+  *   <pueschel@imsdd.meb.uni-bonn.de>.
+  * From 'clockdaemon.readme' (available from Aminet, including
+  *   ftp://ftp.wustl.edu/pub/aminet/util/time/clockdaemon.lha):
+  * "The original SAS/C functions gmtime, localtime, mktime and time
+  * do not work correctly. The supplied link library time.lib contains
+  * replacement functions for them."
+  * Permission is granted to the Info-ZIP group to redistribute the
+  * time.lib source.  The use of time.lib functions in own, noncommerical
+  * programs is permitted.  It is only required to add the timezone.doc
+  * to such a distribution.  Using the time.lib library in commerical
+  * software (including shareware) is only permitted after prior
+  * consultation of the author.
+
+
+The remaining code was written by many people associated with the
+Info-ZIP group, with large contributions from (but not limited to):
+Greg Roelofs (overall program logic, ZipInfo, unshrink, filename
+mapping/portability, etc.), Mark Adler (inflate, explode, funzip),
+Kai Uwe Rommel (OS/2), John Bush and Paul Kienitz (Amiga), Antoine
+Verheijen (Macintosh), Hunter Goatley (more VMS), Mike White (Windows
+DLLs), Christian Spieler (overall logic, optimization, VMS, etc.) and
+others.  See the file CONTRIBS in the source distribution for a much
+more complete list of contributors.  As noted above, Mark Adler's
+inflate.[ch], explode.c and funzip.c are in the public domain, and
+everything that isn't otherwise accounted for is implicitly copy-
+righted by Info-ZIP.  In other words, use it with our blessings, but
+it's still our code.  Thank you!
+
+-----------------------------------------------------------------------
+
+Frequently Asked Questions about distributing Zip and UnZip:
+
+
+Q. Can I distribute Zip and UnZip sources and/or executables?
+
+A. You may redistribute the latest official distributions without
+   any modification, and without even asking us for permission.
+   (Note that an "executable distribution" includes documentation,
+   even if it's in a separate zipfile; plain executables do NOT
+   count.)  You can charge for the cost of the media (CDROM, disk-
+   ettes, etc.), the compilation (e.g., of a software archive),
+   and a small copying fee.  Distributed archives should follow
+   the naming conventions used in the `WHERE' file.  If you want
+   to distribute modified versions, please contact us at
+   Zip-Bugs@lists.wku.edu first.  You must not distribute beta
+   versions without explicit permission to do so.
+
+
+Q. Can I use the executables (or DLLs) of Zip and UnZip to distribute
+   my software?
+
+A. Yes, so long as it is clear that Zip and UnZip are not being
+   sold, that the source code is freely available, and that there
+   are no extra or hidden charges resulting from its use by or in-
+   clusion with the commercial product.  Here is an example of a
+   suitable notice:
+
+      NOTE:  <Product> is packaged on this CD using Info-ZIP's
+      compression utility.  The installation program uses UnZip
+      to read zip files from the CD.  Info-ZIP's software (Zip,
+      UnZip and related utilities) is free and can be obtained
+      as source code or executables from Internet/WWW sites,
+      including http://www.cdrom.com/pub/infozip/ .
+
+   If the distribution is being done with UnZipSFX instead of a DLL
+   or stand-alone copy of UnZip (i.e., as one or more self-extracting
+   archives), no notice is required as long as the normal UnZipSFX
+   banner has not been removed.
+
+
+Q. Can I use the source code of Zip and UnZip in my commercial
+   application?
+
+A. Yes, so long as you include in your product an acknowledgment; a
+   pointer to the original, free compression sources; and a statement
+   making it clear that there are no extra or hidden charges resulting
+   from the use of our compression code in your product (see below for
+   an example).  The acknowledgment should appear in at least one piece 
+   of human-readable documentation (e.g., a README file or man page),
+   although additionally putting it in the executable(s) is OK, too.
+   In other words, you are allowed to sell only your own work, not ours,
+   and we'd like a little credit.  (Note the additional restrictions
+   above on the code in unreduce.c, unshrink.c, vms.c, time_lib.c, and
+   everything in the wince and windll subdirectories.)  Contact us at
+   Zip-Bugs@lists.wku.edu if you have special requirements.  We also
+   like to hear when our code is being used, but we don't require that.
+
+      <Product> incorporates compression code from the Info-ZIP group.
+      There are no extra charges or costs due to the use of this code,
+      and the original compression sources are freely available from
+      http://www.cdrom.com/pub/infozip/ or ftp://ftp.cdrom.com/pub/infozip/
+      on the Internet.
+
+   If you only need compression capability, not full zipfile support,
+   you might want to look at zlib instead; it has fewer restrictions
+   on commercial use.  See http://www.cdrom.com/pub/infozip/zlib/ .

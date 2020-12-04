@@ -1,0 +1,8 @@
+key: lzma-cpl-exception
+short_name: LZMA exception to CPL 1.0
+name: LZMA exception to CPL 1.0
+category: Copyleft Limited
+owner: NSIS contributors
+homepage_url: http://nsis.sourceforge.net/Docs/AppendixI.html#I.6
+is_exception: yes
+spdx_license_key: LZMA-exception

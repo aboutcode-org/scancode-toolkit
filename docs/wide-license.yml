@@ -1,0 +1,7 @@
+key: wide-license
+short_name: WIDE License
+name: WIDE License
+category: Permissive
+owner: WIDE Project
+ignorable_authors:
+  - WIDE Project and its contributors

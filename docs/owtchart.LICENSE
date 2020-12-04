@@ -1,0 +1,65 @@
+OWTChart License
+
+Copyright and License Terms
+
+OWTChart is Open Source, which means that it can be used freely, for
+personnal or commercial application, as long as the authors' Copyright
+and Distribution terms are respected. It is based on the GDChart
+library, which in turn uses Boutell.com's GD (GifDraw) library, so this
+means 3 sets of Copyright and Distribution terms to follow.
+
+The application part of OWTChart was developed by Daniel Morissette
+(danmo@videotron.ca), and part of it was done under contract with Health
+Canada. It is covered by the following Copyright and Distribution terms:
+Copyright (c) 1998, 1999, Daniel Morissette
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software. THE SOFTWARE IS
+PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+The underlying GDChart library comes with the following Copyright notice
+from its author, Bruce Verderaime (brv@fred.net): GDChart is free for
+use in your applications and for chart generation. YOU MAY NOT re-
+distribute or represent the code as your own. Any re-distributions of
+the code MUST reference the author, and include any and all original
+documentaion.
+
+IOW: Use it. Don't plagiarize it!
+
+Finally, the GD (GifDraw) library comes with the following Copyright
+notices: Portions copyright 1994, 1995, 1996, 1997, 1998, by Cold Spring
+Harbor Laboratory. Funded under Grant P41-RR02188 by the National
+Institutes of Health.
+
+Portions copyright 1996, 1997, 1998, by Boutell.Com, Inc. GIF
+decompression code copyright 1990, 1991, 1993, by David Koblas
+(koblas@netcom.com). Non-LZW-based GIF compression code copyright 1998,
+by Hutchison Avenue Software Corporation. 
+
+Permission has been granted to copy and distribute gd in any context,
+including a commercial application, provided that this notice is present
+in user-accessible supporting documentation. This does not affect your
+ownership of the derived work itself, and the intent is to assure proper
+credit for the authors of gd, not to interfere with your productive use
+of gd. If you have questions, ask. "Derived works" includes all programs
+that utilize the library. Credit must be given in user- accessible
+documentation. Permission to use, copy, modify, and distribute this
+software and its documentation for any purpose and without fee is hereby
+granted, provided that the above copyright notice appear in all copies
+and that both that copyright notice and this permission notice appear in
+supporting documentation. This software is provided "as is" without
+express or implied warranty.

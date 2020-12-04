@@ -1,0 +1,7 @@
+key: broadcom-linking-unmodified
+short_name: Broadcom Linking Exception if unmodified
+name: Broadcom Linking Exception if unmodified
+category: Copyleft Limited
+owner: Broadcom
+notes: The exception does not apply when modified
+is_exception: yes

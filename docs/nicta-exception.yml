@@ -1,0 +1,7 @@
+key: nicta-exception
+short_name: NICTA Exception to AGPL
+name: NICTA Exception to AGPL
+category: Copyleft
+owner: NICTA
+homepage_url: https://github.com/echronos/test-client-repo/blob/3ab330c3dcaa549d135c81c80e866184011c51d1/LICENSE_AGPLv3_with_additional_terms.txt
+is_exception: yes

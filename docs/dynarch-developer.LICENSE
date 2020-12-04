@@ -1,0 +1,35 @@
+PRODUCT: hmenu
+            Version: 2.9
+            License type: developer
+            Download date:
+        LICENSEE:
+            Registration key: 
+
+
+Definitions of terms
+
+    "PRODUCT" refers to the product offered by Dynarch.com (the object of this license agreement).
+    "LICENSEE" refers to the one that has downloaded the PRODUCT package. Sometimes we might use "you" as a synonym.
+
+Other terms that might be used
+
+    "Application", "Software Application" or "Web Application": will refer to an application developed by the LICENSEE. An Application has a finite scope.
+    "Library", "Software Library": refers to a possibly reusable collection of tools intended to help developers build Applications.
+
+Here is an example to make clear the distinction between an Application and a Library: the Opera Web Browser is an Application built on top of the Qt Toolkit. While Opera has a finite scope (it is a Web browser), Qt is also used in a lot of other applications, for instance the KDE Desktop. Qt is a Library for developers, while Opera is a general audience Application.
+
+License agreement
+
+LICENSEE is NOT allowed to modify or remove any copyright notices from any of the PRODUCT files.
+
+Subject to the terms of this agreement, Dynarch.com grants LICENSEE a non-exclusive, non-transferable, license to use the PRODUCT in any number of Applications developed by the LICENSEE, as long as the PRODUCT does not make the main nor major functionality of any of those Applications.
+
+The LICENSEE may distribute such Applications incorporating the PRODUCT without paying royalty fees to Dynarch.com.
+
+The PRODUCT can NOT be redistributed as part of a Software Library. Only Applications having a finite purpose are supported by this license.
+
+All rights not specifically granted to LICENSEE herein are retained by Dynarch.com.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+© Dynarch.com 2004. All rights reserved.

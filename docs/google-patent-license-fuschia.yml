@@ -1,0 +1,9 @@
+key: google-patent-license-fuschia
+is_deprecated: yes
+short_name: Google Patent License for Fuschia
+name: Google Patent License for Fuschia
+category: Patent License
+owner: Google
+homepage_url: https://github.com/flutter/flutter/blob/master/PATENTS
+notes: there was a typo in the license name and key and this is now replaced by google-patent-license-fuchsia
+faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia

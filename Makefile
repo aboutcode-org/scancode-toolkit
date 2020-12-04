@@ -54,11 +54,11 @@ black:
 
 valid: isort black
 
-build:
+build: conf
 	@echo "-> Generate the HTML content"
 	@bin/python app.py
 	@echo "-> Copy the static assets"
 	@cp -R static/ docs/static/
 	@echo "Available at docs/index.html"
 
-.PHONY: conf clean black valid build
+.PHONY: conf clean isort black valid build

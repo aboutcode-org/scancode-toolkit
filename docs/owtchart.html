@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: owtchart</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="owtchart.yml">yml</a> -
+    <a href="owtchart.json">json</a> -
+    <a href="owtchart.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/owtchart.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/owtchart.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: owtchart
+short_name: OWTChart License
+name: OWTChart License
+category: Permissive
+owner: Unspecified
+notes: composite
+minimum_coverage: 85
+ignorable_copyrights:
+  - Copyright (c) 1998, 1999, Daniel Morissette
+  - Portions copyright 1994, 1995, 1996, 1997, 1998, by Cold Spring Harbor Laboratory
+  - Portions copyright 1996, 1997, 1998, by Boutell.Com, Inc.
+  - copyright 1990, 1991, 1993, by David Koblas (koblas@netcom.com)
+  - copyright 1998, by Hutchison Avenue Software Corporation
+ignorable_authors:
+  - Daniel Morissette (danmo@videotron.ca)
+ignorable_holders:
+  - Boutell.Com, Inc.
+  - Cold Spring Harbor Laboratory
+  - Daniel Morissette
+  - David Koblas
+  - Hutchison Avenue Software Corporation
+ignorable_emails:
+  - brv@fred.net
+  - danmo@videotron.ca
+  - koblas@netcom.com
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>OWTChart License
+
+Copyright and License Terms
+
+OWTChart is Open Source, which means that it can be used freely, for
+personnal or commercial application, as long as the authors&#39; Copyright
+and Distribution terms are respected. It is based on the GDChart
+library, which in turn uses Boutell.com&#39;s GD (GifDraw) library, so this
+means 3 sets of Copyright and Distribution terms to follow.
+
+The application part of OWTChart was developed by Daniel Morissette
+(danmo@videotron.ca), and part of it was done under contract with Health
+Canada. It is covered by the following Copyright and Distribution terms:
+Copyright (c) 1998, 1999, Daniel Morissette
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&#34;Software&#34;), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software. THE SOFTWARE IS
+PROVIDED &#34;AS IS&#34;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+The underlying GDChart library comes with the following Copyright notice
+from its author, Bruce Verderaime (brv@fred.net): GDChart is free for
+use in your applications and for chart generation. YOU MAY NOT re-
+distribute or represent the code as your own. Any re-distributions of
+the code MUST reference the author, and include any and all original
+documentaion.
+
+IOW: Use it. Don&#39;t plagiarize it!
+
+Finally, the GD (GifDraw) library comes with the following Copyright
+notices: Portions copyright 1994, 1995, 1996, 1997, 1998, by Cold Spring
+Harbor Laboratory. Funded under Grant P41-RR02188 by the National
+Institutes of Health.
+
+Portions copyright 1996, 1997, 1998, by Boutell.Com, Inc. GIF
+decompression code copyright 1990, 1991, 1993, by David Koblas
+(koblas@netcom.com). Non-LZW-based GIF compression code copyright 1998,
+by Hutchison Avenue Software Corporation. 
+
+Permission has been granted to copy and distribute gd in any context,
+including a commercial application, provided that this notice is present
+in user-accessible supporting documentation. This does not affect your
+ownership of the derived work itself, and the intent is to assure proper
+credit for the authors of gd, not to interfere with your productive use
+of gd. If you have questions, ask. &#34;Derived works&#34; includes all programs
+that utilize the library. Credit must be given in user- accessible
+documentation. Permission to use, copy, modify, and distribute this
+software and its documentation for any purpose and without fee is hereby
+granted, provided that the above copyright notice appear in all copies
+and that both that copyright notice and this permission notice appear in
+supporting documentation. This software is provided &#34;as is&#34; without
+express or implied warranty.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

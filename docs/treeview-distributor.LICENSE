@@ -1,0 +1,66 @@
+TreeView License: Distributor's License
+
+This License For Customer Use of GubuSoft TreeView Software ("LICENSE") is the agreement which governs use of the TreeView software by GubuSoft ("GUBUSOFT") downloadable herefrom, including computer software and associated documentation ("SOFTWARE"). By downloading, installing, copying, or otherwise using the SOFTWARE, you agree to be bound by the terms of this LICENSE. If you do not agree to the terms of this LICENSE, do not use the SOFTWARE.
+
+GUBUSOFT grants Customer a royalty-free, perpetual license to use SOFTWARE with unlimited server CPUs and internet domains. An unlimited number of end users may access and use the SOFTWARE. Customer may redistribute SOFTWARE subject to limitations. GUBUSOFT grants Customer rights to modify the source code, for use within their application.
+
+1. DEFINITIONS
+
+1.1 Customer. Customer means the entity or individual that downloads the SOFTWARE.
+
+2. GRANT OF LICENSE
+
+2.1 GUBUSOFT hereby grants Customer the following non-exclusive, non-transferable right to use the SOFTWARE.
+
+2.1.3 LIMITATIONS
+
+Customer may not rent, lease, or transfer the rights to the SOFTWARE to someone else.
+
+Customer may redistribute and use SOFTWARE in source code form provided (a) Customer Applications of SOFTWARE add primary and substantial functionality, and are not merely a set or subset of any of the functionality of the SOFTWARE, or a set or subset of any of the code or other files of the SOFTWARE; (b) the source code retains all source code comments, including all copyright notices, without modification; (c) Customer includes a valid copyright notice on their Application; and (d) Customer agrees to indemnify, hold harmless, and defend GubuSoft from and against any claims or lawsuits, including attorneys' fees, that arise or result from the use or distribution of Customer's Application.
+
+Customer may redistribute and use SOFTWARE in binary form provided (a) Customer Applications of SOFTWARE add primary and substantial functionality, and are not merely a set or subset of any of the functionality of the SOFTWARE, or a set or subset of any of the code or other files of the SOFTWARE; (b) Customer agrees to indemnify, hold harmless, and defend GubuSoft from and against any claims or lawsuits, including attorneys' fees, that arise or result from the use or distribution of Customer's Application; and (c) the following notices are included in the documentation and/or other materials provided with the Customer's Application:
+
+Copyright (C) 2006 Conor O'Mahony (gubusoft@gubusoft.com)
+
+All rights reserved.
+
+This application includes the TreeView script.
+
+You are not authorized to download and/or use the TreeView source code from this application for your own purposes. For your own FREE copy of the TreeView script, please visit the http://www.treeview.net Web site.
+
+THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+If Customer is using the free version of SOFTWARE, Customer must ensure that the "JavaScript Tree Menu" link at the top of the TreeView is visible and readable in their Web page or application.
+
+Customer may not harm the GUBUSOFT intellectual property rights using any media or via any electronic or other method now known or later discovered.
+
+Customer may not use the GubuSoft name, the name of the TreeView author, or the names of any source code contributors to endorse or promote products derived from this SOFTWARE without specific prior written permission.
+
+Customer may not utilize the SOFTWARE in a manner which is disparaging to GUBUSOFT.
+
+3. TERMINATION
+
+This LICENSE will automatically terminate if Customer fails to comply with any of the terms and conditions hereof. In such event, Customer must destroy all copies of the SOFTWARE and all of its component parts.
+
+Defensive Suspension. If Customer commences or participates in any legal proceeding against GUBUSOFT, then GUBUSOFT may, in its sole discretion, suspend or terminate all license grants and any other rights provided under this LICENSE during the pendency of such legal proceedings.
+
+4. COPYRIGHT
+
+All title and copyrights in and to the SOFTWARE (including but not limited to all images, photographs, animations, video, audio, music, text, and other information incorporated into the SOFTWARE), the accompanying printed materials, and any copies of the SOFTWARE, are owned by GUBUSOFT. The SOFTWARE is protected by copyright laws and international treaty provisions. Accordingly, Customer is required to treat the SOFTWARE like any other copyrighted material, except as otherwise allowed pursuant to this LICENSE and that it may make one copy of the SOFTWARE solely for backup or archive purposes.
+
+5. APPLICABLE LAW
+
+This LICENSE shall be deemed to have been made in, and shall be construed pursuant to, the laws of the State of California. The United Nations Convention on Contracts for the International Sale of Goods is specifically disclaimed.
+
+6. DISCLAIMER OF WARRANTIES AND LIMITATION ON LIABILITY
+
+6.1 No Warranties. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS IS" AND GUBUSOFT AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+6.2 No Liability for Consequential Damages. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL GUBUSOFT BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF GUBUSOFT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. MISCELLANEOUS
+
+If any provision of this LICENSE is inconsistent with, or cannot be fully enforced under, the law, such provision will be construed as limited to the extent necessary to be consistent with and fully enforceable under the law. This LICENSE is the final, complete and exclusive agreement between the parties relating to the subject matter hereof, and supersedes all prior or contemporaneous understandings and agreements relating to such subject matter, whether oral or written. This LICENSE may only be modified in writing signed by an authorized officer of GUBUSOFT.
+
+8. ASSIGNMENT
+
+GUBUSOFT may assign or otherwise transfer any of its rights or obligations under this LICENSE agreement.

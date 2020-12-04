@@ -1,0 +1,10 @@
+key: brian-clapper
+short_name: Brian Clapper License
+name: Brian Clapper License
+category: Permissive
+owner: clapper.org
+homepage_url: http://software.clapper.org/poll/index.html
+ignorable_authors:
+  - Brian M. Clapper <bmc@clapper.org>
+ignorable_emails:
+  - bmc@clapper.org

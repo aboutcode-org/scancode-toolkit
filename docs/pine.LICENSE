@@ -1,0 +1,70 @@
+Pine License and Legal Notices
+
+Pine and Pico are registered trademarks of the University of Washington. No commercial use of these
+trademarks may be made without prior written permission of the University of Washington.
+
+Pine, Pico, and Pilot software and its included text are Copyright 1989-2007 by
+the University of Washington. 
+
+Use of Pine/Pico/Pilot:  You may compile and execute these programs for any purpose, including
+commercial, without paying anything to the University of Washington, provided that the legal notices are
+maintained intact and honored.
+
+Local modification of this release is permitted as follows, or by mutual agreement: In order to
+reduce confusion and facilitate debugging, we request that locally modified versions be denoted by
+appending the letter "L" to the current version number, and that the local changes be
+enumerated in the integral release notes and associated documentation.
+
+Redistribution of this release is permitted as follows, or by mutual
+agreement:
+ (a) In free-of-charge or at-cost distributions by non-profit concerns;
+ (b) In free-of-charge distributions by for-profit concerns;
+ (c) Inclusion in a CD-ROM collection of free-of-charge, shareware, or
+	  non-proprietary software for which a fee may be charged for the 
+	  packaged distribution.
+
+Redistribution of binary versions is further constrained by license agreements for incorporated
+libraries from third parties, e.g. LDAP, GSSAPI.
+
+The University of Washington encourages unrestricted distribution of
+individual patches to the Pine system.  By "patches" we mean
+"difference" files that can be applied to the University of
+Washington Pine source distribution in order to accomplish bug fixes,
+minor enhancements, or adaptation to new operating systems.  Submission of
+these patches to University of Washington for possible inclusion in future
+Pine versions is also encouraged, with the understanding that they would
+be treated the same as all other Pine code in terms of licensing and the
+submission does not include any software which infringes third party rights.
+
+The above permissions are hereby granted, provided that the Pine and
+Pico copyright and trademark notices appear in all copies and that both
+the above copyright notice and this permission notice appear in supporting
+documentation, and that the name of the University of Washington not be
+used in advertising or publicity pertaining to distribution of the
+software without specific, prior written permission, and provided you
+acknowledge that pursuant to U.S. laws, Pine, Pico & Pilot software may
+not be downloaded, acquired or otherwise exported or re-exported (i) into,
+or to a national or resident of any country to which the U.S. has
+embargoed goods; or (ii) to anyone on the U.S. Treasury Department's list
+of Specially Designated Nations or the U.S. Commerce Department's Table of
+Denial Orders.
+
+By downloading the software, you represent that: 1) you are not located in
+or under the control of a national or resident of any such country or on
+any such list; and 2) you will not export or re-export the software to any
+prohibited country, or to any prohibited person, entity, or end-user as
+specified by U.S. export controls.
+
+This software is made available "as is", and
+THE UNIVERSITY OF WASHINGTON DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, WITH REGARD TO THIS
+SOFTWARE, INCLUDING WITHOUT LIMITATION ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE, AND IN NO EVENT SHALL THE UNIVERSITY OF WASHINGTON BE LIABLE FOR ANY SPECIAL,
+INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+WHETHER IN AN ACTION OF CONTRACT, TORT (INCLUDING NEGLIGENCE) OR STRICT LIABILITY, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.  
+
+Other licensing terms are available by mutual agreement.
+
+Please see the Pine FAQ for more information on Pine Legal Issues.
+
+End of Pine License and Legal Notices

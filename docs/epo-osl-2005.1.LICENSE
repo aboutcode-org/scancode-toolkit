@@ -1,0 +1,37 @@
+European Patent Organisation Open Source Licence No. 2005/1
+
+This Licence applies to any program or other work which contains a notice placed by the copyright holder saying it may be distributed under the terms of this Licence. The "Program", below, refers to any such program or work, and a "work based on the Program" means either the Program or any derivative work under copyright law: that is to say, a work containing the Program or a portion of it, either verbatim or with modifications and/or translated into another language. (Hereinafter, translation is included without limitation in the term "modification"). Each licensee is addressed as "you". Activities other than copying, distribution and modification are not covered by this Licence; they are outside its scope.
+
+1. Licence
+
+1.1 You may install, use, reproduce, display, modify and redistribute the Program or work based on the Program in source and binary forms subject to the following conditions:
+
+(a) You conspicuously and appropriately publish on each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices that refer to this Licence and to the absence of any warranty; and give any other recipients of the Program or work based on the Program a copy of this Licence along with the Program or work based on the Program.
+(b) You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change.
+(c) You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this Licence.
+(d) If the modified program normally reads commands interactively when run, you must cause it, when started running for such interactive use in the most ordinary way, to print or display an announcement including an appropriate copyright notice and a notice that there is no warranty (or else, saying that you provide a warranty) and that users may redistribute the program under these conditions, and telling the user how to view a copy of this Licence. (Exception: if the Program itself is interactive but does not normally print such an announcement, your work based on the Program is not required to print an announcement.)
+
+These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works.
+
+(e) If you copy or distribute the Program (or a work based on it) in any form including object code or executable form, you must:
+(i) Accompany it with the complete corresponding machine-readable source code and the full comments, which must be distributed under the terms of sections (a) to (d) above on a medium customarily used for software interchange; or,
+(ii) Accompany it with a written offer, valid for at least three years, to give any third party, for a charge no more than your cost of physically performing source distribution, a complete machine-readable copy of the corresponding source code, to be distributed under the terms of (a) to (d) above on a medium customarily used for software interchange.
+
+For an executable work, complete source code means all the source code for all modules it contains, plus any associated interface definition files, plus the scripts used to control compilation and installation of the executable. However, as a special exception, the source code distributed need not include anything that is normally distributed (in either source or binary form) with the major components (compiler, kernel, and so on) of the operating system on which the executable runs, unless that component itself accompanies the executable.
+1.2 You may not copy, modify, sublicense, or distribute the Program except as expressly provided under this Licence. Any attempt otherwise to copy, modify, sublicense or distribute the Program is void, and will automatically terminate your rights under this Licence. However, parties who have received copies, or rights, from you under this Licence will not have their licenses terminated so long as such parties remain in full compliance.
+
+2. No Warranty, disclaimer of liability
+
+2.1 The Program or work based on the Program is provided free of charge AS IS.
+
+NO REPRESENTATION OR WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED ARE GIVEN. IN PARTICULAR, BUT WITHOUT LIMITATION, NO WARRANTY IS PROVIDED IN RESPECT OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR TO THE EFFECT THAT THE PROGRAM OR WORK BASED ON THE PROGRAM IS FREE OF DEFECTS, OR NOT SUBJECT TO THE RIGHTS OF THIRD PARTIES, IN PARTICULAR PATENTS OR COPYRIGHTS.
+2.2 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM OR WORK BASED ON THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+3. Applicable Law and Arbitration
+
+This Agreement shall be subject to German law. Any dispute arising out of or in connection with this Agreement shall be settled finally by a three-person arbitration panel administered under the WIPO Arbitration Rules in Geneva using English as the procedural language.
+
+4. General
+
+4.1 Should any provision of this Licence be or become invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Licence, and the respective provision shall be replaced by a valid provision coming closest to achieving the purpose and meaning of the invalid clause.
+4.2 The European Patent Organisation reserves the right to publish new versions of this Licence from time to time. The Program and work based on the Program may always be distributed subject to the version of the Licence under which it was received.

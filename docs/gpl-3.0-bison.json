@@ -1,0 +1,1 @@
+{"key": "gpl-3.0-bison", "is_deprecated": true, "short_name": "GPL 3.0 or later with Bison exception", "name": "GPL 3.0 or later with Bison exception", "category": "Copyleft Limited", "owner": "Free Software Foundation (FSF)", "notes": "replaced by bison-exception-2.2", "is_exception": true, "other_urls": ["http://www.gnu.org/licenses/gpl-3.0.txt"]}

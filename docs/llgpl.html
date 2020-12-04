@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: llgpl</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="llgpl.yml">yml</a> -
+    <a href="llgpl.json">json</a> -
+    <a href="llgpl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/llgpl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: llgpl
+short_name: LLGPL
+name: Lisp Lesser General Public License (LLPGL)
+category: Copyleft Limited
+owner: Franz Inc
+homepage_url: http://opensource.franz.com/preamble.html
+faq_url: http://opensource.franz.com/
+other_urls:
+  - http://www.gnu.org/licenses/lgpl-2.1.txt
+  - https://github.com/franzinc
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>The concept of the GNU Lesser General Public License version 2.1
+(&#34;LGPL&#34;) has been adopted to govern the use and distribution of above-
+mentioned application. However, the LGPL uses terminology that is more
+appropriate for a program written in C than one written in Lisp.
+Nevertheless, the LGPL can still be applied to a Lisp program if certain
+clarifications are made. This document details those clarifications.
+Accordingly, the license for the open-source Lisp applications consists
+of this document plus the LGPL. Wherever there is a conflict between
+this document and the LGPL, this document takes precedence over the
+LGPL.
+
+A &#34;Library&#34; in Lisp is a collection of Lisp functions, data and foreign
+modules. The form of the Library can be Lisp source code (for processing
+by an interpreter) or object code (usually the result of compilation of
+source code or built with some other mechanisms). Foreign modules are
+object code in a form that can be linked into a Lisp executable. When we
+speak of functions we do so in the most general way to include, in
+addition, methods and unnamed functions. Lisp &#34;data&#34; is also a general
+term that includes the data structures resulting from defining Lisp
+classes. A Lisp application may include the same set of Lisp objects as
+does a Library, but this does not mean that the application is
+necessarily a &#34;work based on the Library&#34; it contains.
+
+The Library consists of everything in the distribution file set before
+any modifications are made to the files. If any of the functions or
+classes in the Library are redefined in other files, then those
+redefinitions ARE considered a work based on the Library. If additional
+methods are added to generic functions in the Library, those additional
+methods are NOT considered a work based on the Library. If Library
+classes are subclassed, these subclasses are NOT considered a work based
+on the Library. If the Library is modified to explicitly call other
+functions that are neither part of Lisp itself nor an available add-on
+module to Lisp, then the functions called by the modified Library ARE
+considered a work based on the Library. The goal is to ensure that the
+Library will compile and run without getting undefined function errors.
+
+It is permitted to add proprietary source code to the Library, but it
+must be done in a way such that the Library will still run without that
+proprietary code present. Section 5 of the LGPL distinguishes between
+the case of a library being dynamically linked at runtime and one being
+statically linked at build time. Section 5 of the LGPL states that the
+former results in an executable that is a &#34;work that uses the Library.&#34;
+Section 5 of the LGPL states that the latter results in one that is a
+&#34;derivative of the Library&#34;, which is therefore covered by the LGPL.
+Since Lisp only offers one choice, which is to link the Library into an
+executable at build time, we declare that, for the purpose applying the
+LGPL to the Library, an executable that results from linking a &#34;work
+that uses the Library&#34; with the Library is considered a &#34;work that uses
+the Library&#34; and is therefore NOT covered by the LGPL.
+
+Because of this declaration, section 6 of LGPL is not applicable to the
+Library. However, in connection with each distribution of this
+executable, you must also deliver, in accordance with the terms and
+conditions of the LGPL, the source code of Library (or your derivative
+thereof) that is incorporated into this executable.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

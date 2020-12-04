@@ -1,0 +1,136 @@
+TOOLBOX SUBSCRIPTION LICENSE AGREEMENT FOR OPEN SOURCE PROJECTS
+Version 3, Effective as of September 9th, 2016
+
+IMPORTANT! READ CAREFULLY:
+THIS IS A LEGAL AGREEMENT. BY CLICKING ON THE "I AGREE" (OR SIMILAR) BUTTON THAT IS PRESENTED TO YOU AT THE TIME OF YOUR PURCHASE, OR BYDOWNLOADING, INSTALLING, COPYING, SAVING ON YOUR COMPUTER, OR OTHERWISE USING JETBRAINS SOFTWARE, SERVICES OR PRODUCTS, YOU ARE BECOMING A PARTY TO THIS AGREEMENT, AND YOU ARE CONSENTING TO BE BOUND BY ALL THE TERMS AND CONDITIONS SET FORTH BELOW.
+
+1. PARTIES
+
+1.1. "JetBrains" or "We" means JetBrains s.r.o., having its principal place of business at Na hrebenech II 1718/10, Prague, 14700, Czech Republic, registered with Commercial Register kept by the Municipal Court of Prague, Section C, file 86211, ID.Nr.: 265 02 275.
+
+1.2. "Licensee" or "You" means an open source development group specified in the Subscription Confirmation.
+
+2. DEFINITIONS
+
+2.1. "Agreement" means this Agreement.
+
+2.2. "Product" for the purposes of this Agreement means any software provided under JetBrains Toolbox.
+
+2.3. "Client" means a computer device used by Licensee for running Product.
+
+2.4. JetBrains Account" or "JBA" means an account at https://account.jetbrains.com created by Licensee, having a unique name and password, and through which Licensee has access to Products in accordance with a Toolbox Subscription.
+
+2.5. "JetBrains Toolbox" means all of JetBrains individual developer productivity software (as identified on the JetBrains website). JetBrains Toolbox does not include team productivity software or services such as YouTrack, TeamCity, UpSource, or Hub, or any other software, services or products other than those identified from time to time by JetBrains as individual developer productivity software.
+
+2.6. "Subscription Confirmation" means an email confirming Licensee’s rights to access and use Products.
+
+2.7. "Toolbox Subscription" specifies the subscription term and the set of Products covered by this Agreement.
+
+2.8. "Authorized User" means a software developer or other open source development group member who is authorized by Licensee to use Products for the purpose of development of an open source project.
+
+3. GRANT OF LICENSE
+
+3.1. Unless Toolbox Subscription is expired or this Agreement is terminated in accordance with Section 10, and subject to the terms and conditions specified herein, JetBrains grants You a limited, non-exclusive and non-transferable license to use each Product covered by Toolbox Subscription for a period of 1 (one) year as follows:
+
+(A) You may:
+
+(i) Install and use any version of the Product covered by the Toolbox Subscription on any number of Clients and on any operating system supported by the Product;use Product by Authorized Users solely for the purpose of development of non-commercial open source projects that meet the Open Source Definition at http://www.opensource.org/docs/osd. The right to use Product for an"y other purposes is expressly prohibited; and
+
+(ii) Make one backup copy of Product solely for archival purposes.
+
+(B) You may not:
+
+(i) Rent, lease, reproduce, modify, adapt, create derivative works of, distribute, sell, sublicense or transfer the Product, or provide access to the Product or Your JetBrains Account to a third party;
+
+(ii) Reverse engineer, decompile, disassemble, modify, translate the Product, or make any attempt to discover the source code of the Product;
+
+(iii) Remove or obscure any proprietary or other notices contained in the Product;
+
+(iv) Use Products for any commercial purposes.
+
+3.2. Products are made available on a limited license or access basis, and no ownership right is conveyed to You, irrespective of the use of terms such as "purchase" or "sale." JetBrains has and retains all right, title and interest, including all intellectual property rights, in and to the Products any and all related or underlying technology, and any modifications or derivative works of the foregoing created by or for JetBrains, including without limitation as they may incorporate Feedback (as defined below).
+
+3.3. Licensee agrees to comply with the terms of this Agreement, and to take reasonable measures to prevent use of Software by Authorized Users in an inappropriate manner or access to Products by unauthorized users.
+
+4. ACCESS TO PRODUCTS
+
+4.1. You must register for a JetBrains Account and have Internet access in order to access or receive Products, or to renew a subscription. Any registration information that You provide to Us via Your JetBrains Account must be accurate, current and complete. You must also update Your information so that We may send notices, statements and other information to You by email or through Your JetBrains Account. You are responsible for all actions taken through Your accounts.
+
+4.2. You may use Your JetBrains Account credentials in the Product so We verify Your rights to use the Product online. Product will periodically connect to JetBrains servers to update this information including changes to JetBrains Account credentials and Toolbox Subscription plan.
+
+4.3. Alternatively, You may use an offline activation code that You can download in Your JetBrains Account. In the event you use this option, it is Your responsibility to download a new activation code and apply it to the Product registration screen every time you make changes to the Toolbox Subscription or whenever a Toolbox Subscription is renewed.
+
+4.4. All deliveries under this Agreement will be electronic. You must have an Internet connection in order to access Your JetBrains Account and to receive any deliveries. For the avoidance of doubt, You are responsible for Product download and installation.
+
+5. LICENSE RENEWAL
+
+5.1. Licensee may renew its license for another year by submitting a written request to Licensor 30 (thirty) days prior to the license expiration date.
+
+5.2. If not agreed otherwise in writing between Licensor and Licensee, in the event of license renewal the relationship between parties shall be governed and amended (if applicable) by the terms and conditions of License agreement related to Product available at www.jetbrains.com on the day of license renewal.
+
+6. FEEDBACK
+
+You have no obligation to provide Us with ideas, suggestions, or proposals ("Feedback"). However, if You submit Feedback to us, then You grant Us a nonexclusive, worldwide, royalty-free license that is sub-licensable and transferable, to make, use, sell, have made, offer to sell, import, reproduce, publicly display, distribute, modify, and publicly perform the Feedback in any manner without any obligation, royalty or restriction based on intellectual property rights or otherwise.
+
+7. THIRD-PARTY SOFTWARE
+
+7.1. The Products include code and libraries licensed to Us by third parties, including open source software ("Third-Party Software"). The list of Third-Party Software included in each Product is available in Product documentation. All Third-Party Software is licensed to You under the terms of their respective licenses locate in the Product documentation.
+
+7.2. JETBRAINS PROVIDES NO WARRANTY, EXPRESS OR IMPLIED, WITH RESPECT TO ANY THIRD-PARTY SOFTWARE AND EXPRESSLY DISCLAIMS ANY WARRANTY OR CONDITION OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+8. LIMITED WARRANTY
+
+ALL PRODUCTS ARE PROVIDED TO YOU ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES. USE OF THE SOFTWARE IS AT YOUR OWN RISK. JETBRAINS MAKES NO WARRANTY AS TO ITS USE OR PERFORMANCE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JETBRAINS, AND ITS SUPPLIERS AND RESELLERS, DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO THE PRODUCTS, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES. THIS LIMITED WARRANTY GIVES LICENSEE SPECIFIC LEGAL RIGHTS. LICENSEE MAY HAVE OTHERS, WHICH VARY FROM STATE/JURISDICTION TO STATE/JURISDICTION. LICENSOR (AND ITS AFFILIATES, AGENTS, DIRECTORS AND EMPLOYEES) DOES NOT WARRANT THAT THE SOFTWARE IS ACCURATE, RELIABLE OR CORRECT, THAT THE PRODUCTS WILL MEET LICENSEE’S REQUIREMENTS, THAT THE SOFTWARE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, UNINTERRUPTED OR SECURE; THAT ANY DEFFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. ANY CONTENT OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SOFTWARE ARE DOWNLOADED AT YOUR OWN RISK AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR PROPERTY OR LOSS OF DATA THAT RESULTS FROM SUCH DOWNLOAD.
+
+9. DISCLAIMER OF DAMAGES
+
+9.1. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL JETBRAINS (OR ITS AFFILIATES, AGENTS, DIRECTORS, OR EMPLOYEES), OR JETBRAINS’ LICENSORS, SUPPLIERS OR RESELLERS BE LIABLE TO YOU OR ANYONE ELSE FOR: (A) ANY LOSS OF USE, DATA, GOODWILL, OR PROFITS, WHETHER OR NOT FORESEEABLE; (B) ANY LOSS OR DAMAGES IN CONNECTION WITH TERMINATION OR SUSPENSION OF YOUR ACCESS TO OUR PRODUCTS IN ACCORDANCE WITH THIS AGREEMENT, AND (C) ANY SPECIAL, INCIDENTAL, INDIRECT, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES WHATSOEVER (EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF THESE DAMAGES), INCLUDING THOSE (X) RESULTING FROM LOSS OF USE, DATA, OR PROFITS, WHETHER OR NOT FORESEEABLE, (Y) BASED ON ANY THEORY OF LIABILITY, INCLUDING BREACH OF CONTRACT OR WARRANTY, STRICT LIABILITY, NEGLIGENCE OR OTHER TORTIOUS ACTION, OR (Z) ARISING FROM ANY OTHER CLAIM ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR ACCESS TO THE SERVICES OR SOFTWARE. THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW IN THE APPLICABLE JURISDICTION.
+
+9.2. OUR TOTAL LIABILITY IN ANY MATTER ARISING OUT OF OR RELATED TO THIS AGREEMENT IS LIMITED TO TEN (10) US DOLLARS. THIS LIMITATION WILL APPLY EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF THE LIABILITY EXCEEDING THE AMOUNT AND NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.
+
+10. TERM AND TERMINATION
+
+10.1. The term of this Agreement will commence upon acceptance of this Agreement by Licensee as set forth in the preamble above, and will continue for each Product through the end of the applicable subscription period specified in the respective Subscription Confirmation. This Agreement can be renewed under the terms set forth in Section 6 of this Agreement with respect to a Product for a successive Toolbox Subscription term, unless terminated as set forth herein.
+
+10.2. You may terminate this Agreement at any time by cancelling the subscription for one or more Products via Your JetBrains Account. If such termination occurs during a then-current subscription period, this Agreement will continue to be effective until the end of that subscription period.
+
+10.3. JetBrains may terminate this agreement if:
+
+(A) Licensee has materially breached this Agreement and fails to cure such breach within thirty (30) days of written notice thereof;
+
+(B) JetBrains is required to do so by law (for example, where the provision of the JetBrains Toolbox to Licensee is, or becomes, unlawful); or
+
+(C) JetBrains elect to discontinue to provide JetBrains Toolbox, in whole or in part.
+
+10.4. JetBrains will make reasonable effort to notify Licensee via an email as follows:
+
+(A) Thirty (30) days prior to termination of the Agreement in the events specified in Clauses 10.3(B) and 10.3(C) above;
+
+11. EXPORT REGULATIONS
+
+Licensee shall comply with all applicable laws and regulations with regards to: economic sanctions; export controls; import regulations; and trade embargoes ("Sanctions"), including those of the European Union and United States (specifically the Export Administration Regulations (EAR)). Licensee acknowledges that it is not a person targeted by Sanctions nor is it otherwise owned or controlled by or acting on behalf of any person targeted by Sanctions. Further, Licensee acknowledges that it will not download or otherwise export or re-export Software or any related technical data directly or indirectly to any person targeted by Sanctions or download or otherwise use Software for any end-use prohibited or restricted by Sanctions.
+
+12. GENERAL
+
+12.1. Entire Agreement. This Agreement, including the Third-Party Software license terms, constitutes the entire agreement between the parties concerning its subject matter and supersedes any prior agreements between You and JetBrains regarding Your use of any JetBrains software covered by JetBrains Toolbox. No purchase order, other ordering document or any handwritten or typewritten text which purports to modify or supplement the printed text of this Agreement or any schedule will add to or vary the terms of this Agreement unless signed by both Licensee and JetBrains.
+
+12.2. Reservation of Rights. JetBrains reserves the right at any time to cease the support of JetBrains Toolbox and to alter prices, features, specifications, capabilities, functions, licensing terms, release dates, general availability or other characteristics of JetBrains Toolbox.
+
+12.3. Changes to this Agreement. We may update or modify this Agreement from time to time, including any referenced policies and other documents. If a revision meaningfully reduces Your rights, We will use reasonable efforts to notify You (by, for example, sending an email to the billing or technical contact You provide to us, posting on our blog, through Your JetBrains Account, or via the Product itself). If We modify Agreement, the modified version of Agreement will be effective upon the next Toolbox Subscription term. In this case, if You object to the updated Agreement terms, as Your exclusive remedy, You may cancel Toolbox Subscription. You may be required to click through the updated Agreement to show Your acceptance. For the avoidance of doubt, any Subscription Confirmation is subject to the version of the Agreement in effect on the Subscription Confirmation date.
+
+12.4. Severability. If a particular term is not enforceable, the unenforceability of that term will not affect any other terms.
+
+12.5. Headings. Headings and titles are for convenience only and do not affect the interpretation of this Agreement.
+
+12.6. No Waiver. Our failure to enforce or exercise any of this Agreement is not a waiver of that section.
+
+12.7. Governing Law. This Agreement will be governed by the laws of Czech Republic, without regard to conflict of laws principles. Licensee agrees that any litigation relating to this Agreement may only be brought in, and will be subject to the jurisdiction of, any relevant competent court of Czech Republic.
+
+12.8. You declare that You have had sufficient opportunity to review this Agreement, understand the content of all of its clauses, negotiate its terms and seek independent professional legal advice in that respect before entering into it. Consequently, any statutory "form contracts" ("adhesion contracts") regulations shall not be applicable to this Agreement.
+
+12.9. Notice. JetBrains may deliver any notice to Licensee via electronic mail to an email address provided by Licensee, JetBrains Account, registered mail, personal delivery or renowned express courier (such as DHL, Fedex or UPS). Any such notice will be deemed to be effective (i) on the day the notice is sent to Licensee via email, (ii) upon being uploaded to JetBrains Account (irrespective of when Licensee actually receives it), (iii) upon personal delivery, (iv) one (1) day after deposit by express courier, (v) or five (5) days after deposit in the mail, whichever occurs first.
+
+For exceptions or modifications to this Agreement, please contact JetBrains at: 
+ Address: Na hrebenech II 1718/10, Prague, 14700, Czech Republic 
+ Fax: +420 241 722 540 
+ Email: sales@jetbrains.com

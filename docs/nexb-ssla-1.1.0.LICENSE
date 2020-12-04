@@ -1,0 +1,154 @@
+nexB Software Subscription License Agreement
+
+This Software Subscription License Agreement (the "Agreement) is entered into by and between nexB Inc., a California corporation, having its principal place of business at 735 Industrial Road Suite 101, San Carlos, CA 94070 and ___________________, a ______________ corporation, having its principal place of business at _________________________________________________ ("Licensee"). This Agreement is effective as of _________________ ("Effective Date").
+ 
+
+1.	DEFINITIONS
+ 
+(a)  "Agreement" means this Software Subscription License Agreement.
+
+(b) "Software Subscription License" means a license to use the Software subject to the duration of a Subscription or Evaluation Period.
+
+(c) "Software" means the DejaCode software program(s) and third-party software programs supplied by nexB, and updates to any such Software which Licensee is entitled to receive from nexB for the purposes of this Agreement.
+
+(d)  "Content" means any information or data supplied by nexB to Licensee to be used in or with the Software, including but not limited to, information and data about software licenses and software components.
+
+(e)  "Documentation" means any documentation supplied by nexB including associated media, printed materials, and online or electronic documentation.
+
+(f)  "Updates" means the provision by nexB to Licensee of Software updates and/or enhancements made generally available to customers from time to time.
+
+(g)  "Support" means online technical support (and where applicable, phone or other support) for the sole purpose of addressing technical issues relating to the use of the Software.
+
+(h)  "Order Form" means a signed sales order or quote form under which Licensee may order a Software Evaluation or Subscription License from nexB in the form of Exhibit A.
+
+(i)   "User" means each employee, agent, representative or other person working directly or indirectly for or on behalf of Licensee organization who has access to and may potentially use the Software.
+
+(j)   "Subscription Fees" means the fees to be paid by Licensee to nexB in connection with licensing the Software for the duration of any Subscription Period as specified by an Order Form.
+
+(k)  "Subscription Period" means the amount of calendar time that the Licensee is authorized to use the Software as specified by an Order Form.
+
+(l)   "Evaluation Period" means the amount of calendar time that the Licensee is authorized to use the Software for evaluation purposes only. The Evaluation Period is 30 days unless otherwise agreed between the parties.
+
+(m)  "Open Source Software" means any software that is subject to an Open Source License.
+
+(n)  "Open Source License" means any license that allows software to be freely used, modified, and shared. An Open Source License may require a licensee to acknowledge the author of the software and also to redistribute source code for the software or derivative works of the software. Open Source Licenses include, but are not limited to, the GNU GPL, GNU LGPL, MPL, Apache, BSD and MIT licenses.
+
+2.	LICENSE GRANT
+
+(a)	Subject to the terms and conditions of this Agreement, nexB grants to Licensee a non-exclusive, non-transferable license during the Subscription or Evaluation Period to install and use the Software on the number of computers and for the number of Users specified in the Order Form.
+
+(b)	Subject to the terms and conditions of this Agreement, nexB grants to Licensee a non-exclusive, non-transferable license during the Subscription or Evaluation Period to install and use the Content on the number of computers and for the number of Users specified in the Order Form.
+
+(c)	This is not a perpetual license. Licensee has no right to retain or to use the Software or Content after termination of the applicable Subscription or Evaluation Period for any reason. Licensee may not permit access to or use of the Software by any Users other than the Users licensed and paid for by Licensee.
+
+(d)	Licensee may make a reasonable number of copies of the Software exclusively for back-up, non-production testing, disaster recovery, failover or archival purposes. Licensee may not publish, display, disclose, rent, lease, modify, loan, distribute, transfer, assign or sublicense the Software or create derivative works based on the Software or any part thereof. Licensee may not reverse engineer, decompile, translate, adapt, or disassemble the Software, nor shall the Licensee attempt to create the source code from the object code for the Software.
+
+3.	UPDATES
+nexB, at its sole discretion, may provide updates in connection with the Software. Updates may be provided by email, downloads or otherwise as nexB deems appropriate. Updates will be provided without charge during the Subscription Period.
+
+4.	OWNERSHIP
+
+(a)	The Software is the property of nexB or its suppliers. The Software is licensed, not sold. Title and copyrights to the Software, in whole and in part and all copies thereof, and all modifications, enhancements, derivatives and other alterations of the Software regardless of who made any modifications, if any, are, and will remain, the sole and exclusive property of nexB and its suppliers.
+Licensee has a limited license to use the Software (i) for as long as this Agreement remains in full force and effect and subject to any applicable Subscription (or Evaluation) Period, (ii) provided that any other agreement concerning Licensee’s use of the Software remains in full force and effect and (iii) for so long as Licensee has timely made payment of any Subscription Fees due nexB.  Any other use of the Software by any person, business, corporation, government organization or any other entity is strictly forbidden and a violation of this Agreement.
+
+(b)	The Software is protected by United States Copyright Law and International Treaty provisions. Further, the structure, organization, and code embodied in the Software are the valuable and confidential trade secrets of nexB and its suppliers and are protected by intellectual property laws and treaties. All rights not expressly granted to Licensee herein are expressly reserved by nexB. Licensee may not remove any proprietary notices from any copy of the Software or Documentation. Licensee agrees to abide by the copyright law and all other applicable laws of the United States including, but not limited to, export control laws.
+
+(c)	Licensee acknowledges that any symbols, trademarks, tradenames, and service marks adopted by nexB to identify the Software belong to nexB and that Licensee shall have no rights therein.
+
+5.	CONFIDENTIALITY
+Licensee acknowledges that the Software contains proprietary trade secrets of nexB and hereby agrees to maintain the confidentiality of the Software using at least the same degree of care as used to maintain the confidentiality of their own most confidential information. Licensee agrees to reasonably communicate the terms and conditions of this Agreement to those persons employed by Licensee or otherwise within their organization who come into contact with the Software, and to use reasonable best efforts to ensure their compliance with such terms and conditions, including, without limitation, not knowingly permitting such persons to use any portion of the Software for the purpose of deriving the source code of the Software.
+
+6.	THIRD-PARTY SOFTWARE
+
+(a)	The Licensee acknowledges that the Software may contain third-party software, including Open Source Software, which is licensed to Licensee in accordance with the separate license agreements included with the Software, and subject to any obligations or restrictions set forth herein. Licensee agrees to abide by the terms and conditions of the third-party software license agreements. nexB will have no responsibility with respect to any third-party software, and Licensee will look solely to the licensor(s) of the third-party software for any remedy. nexB claims no right in the third-party software.
+
+(b)	nexB will notify Licensee in writing whether there is any Open Source Software embedded in the Software. For any such Open Source Software, nexB warrants that it has complied with any Open Source License terms and conditions and provided Licensee with the license terms, source code or other information necessary for Licensee's compliance with such license terms and conditions. nexB warrants that it will provide an updated disclosure of Open Source Software in the documentation for each new release of the Software. Licensee may also request a separate disclosure of the Open Source Software used in the current version of the Software.
+
+7.	LIMITED WARRANTY
+
+(a)	If Licensee has paid a license fee for the Software, nexB warrants to Licensee during the Subscription Period that the Software when used for its intended purpose will achieve in all material respects the functionality described in the Documentation. nexB does not warrant that the Software will be error-free. This warranty is only for the benefit of the Licensee.
+
+(b)	Licensee’s sole and exclusive remedy for nexB’s breach of this warranty shall be that nexB shall be required to use commercially reasonable efforts to modify the Software to achieve in all material respects the functionality described in the Documentation and if nexB is unable to restore such functionality, then Licensee shall be entitled to terminate the Agreement and shall be entitled to receive a pro-rata refund of the license fees paid for under the Agreement for its use of the Software but which use has not yet been furnished by nexB as of the date of such termination. nexB shall have no obligation with respect to a warranty claim unless notified of such claim within thirty (30) days after Licensee first learns or should have learned of any material functionality problem.
+
+(c)	In the event of a failure of the Software to achieve the functionality described in the Documentation, Licensee will notify nexB of the problem using nexB's online tracking system with sufficient details as reasonably requested by nexB in order to allow nexB to attempt to reproduce the problem. nexB shall use its best efforts to provide a correction or workaround to the Licensee within the time period specified for the problem severity in Exhibit B.
+
+(d)	nexB reserves the right, in our sole discretion, to change, update, and enhance the Software at any time including to add functionality or features to, or remove them from, the Software, If nexB removes functionality or features that Licensee deems essential for its use of the Software, then Licensee shall be entitled to terminate the Agreement and shall be entitled to receive a pro-rata refund of the Subscription Fees paid for under the Agreement for its use of the Software, but which use has not yet been furnished by nexB as of the date of such termination.
+
+(e)	EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 7, THE SOFTWARE IS PROVIDED TO LICENSEE ON AN "AS IS" BASIS, WITH ANY AND ALL FAULTS, AND WITHOUT ANY WARRANTY OF ANY KIND; AND nexB EXPRESSLY DISCLAIMS ALL REPRESENTATIONS, WARRANTIES AND CONDITIONS WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS. nexB DOES NOT WARRANT THAT THE SOFTWARE OR SERVICES WILL MEET LICENSEE’S OR ITS END USERS’ REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE OR SERVICES WILL BE CORRECTED. LICENSEE EXPRESSLY ACKNOWLEDGES AND AGREES THAT THE USE OF THE SOFTWARE AND SERVICES AND ALL RESULTS OF SUCH USE IS SOLELY AT LICENSEE’S AND ITS END USERS’ OWN RISK. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY nexB OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF ANY WARRANTY. SOME JURISDICTIONS MAY NOT ALLOW THE EXCLUSION AND/OR LIMITATION OF IMPLIED WARRANTIES OR CONDITIONS, OR ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO LICENSEE. IN SUCH EVENT, nexB’S WARRANTIES AND CONDITIONS WITH RESPECT TO THE SOFTWARE AND SERVICES WILL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY APPLICABLE LAW IN SUCH JURISDICTION.
+
+8.	INDEMNIFICATION
+
+(a)	nexB will defend and indemnify Licensee for all reasonable costs arising from a claim that Software furnished and used within the scope of this Agreement infringes a U.S. copyright or U.S. patent provided that:
+(i) Licensee notifies nexB in writing within 30 days after Licensee learns or should have learned of the claim
+(ii) nexB has sole control of the defense and all related settlement negotiations, and
+(iii) Licensee provides nexB with the assistance, information, and authority necessary to perform the above.
+
+(b)	nexB will have no liability for any claim of infringement based on:
+(i) code contained within the Software which was not created by nexB including, but not limited to, the third-party software or Open Source Software;
+(ii) use of a superseded or altered release of the Software, except for such alteration(s) or modification(s) which have been made by nexB or under nexB's direction, if such infringement would have been avoided by the use of a current, unaltered release of the Software that nexB provides to Licensee, or
+(iii) the combination, operation, or use of any Software furnished under this Agreement with programs or data not furnished by nexB if such infringement would have been avoided by the use of the Software without such programs or data.
+
+(c)	In the event the Software is held or believed by nexB to infringe, or Licensee's use of the Software is enjoined, nexB will have the option, at its expense, to:
+(i) modify the Software to cause it to become non-infringing;
+(ii) obtain a license for Licensee to continue using the Software;
+(iii) substitute the Software with other Software reasonably suitable to Licensee, or
+(iv) if none of the foregoing remedies are commercially feasible, terminate the license for the infringing Software and refund any Subscription Fees paid for the Software, prorated over the term from the effective date of the Agreement.
+
+This Section states nexB's entire liability for infringement.
+
+9.	LIMITATION OF LIABILITY
+
+(a)	In no event will nexB be liable to Licensee or any third party for any incidental or consequential damages (including, without limitation, indirect, special, punitive, or exemplary damages for loss of business, loss of profits, business interruption, or loss of business information) arising out of the use of or inability to use the Software, or for any claim by any other party, even if nexB has been advised of the possibility of such damages.
+
+(b)	nexB's aggregate liability with respect to its obligations under this Agreement or otherwise with respect to the Software, Content and Documentation or otherwise shall not exceed the Subscription Fees received by nexB from Licensee during the 12 month period immediately preceding the event that gave rise to the claim. Because some states and/or countries do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply.
+
+10.	NO LEGAL ADVICE
+Licensee’s use of the Software, Content and Documentation is not intended to create, and does not constitute, an attorney-client relationship between Licensee and any person or entity connected with nexB.  The Software, Content and Documentation should not be used as a substitute for competent legal advice from a lawyer whom Licensee has retained. Neither the Software, the Documentation nor any communications between nexB and Licensee or any User is intended to provide, and in no event shall it be treated as providing, legal advice.
+
+11.	EXPORT RESTRICTIONS
+nexB makes no representation that the Software, Content or Documentation is appropriate or available for use outside of the United States of America. Software, Content and Documentation are further subject to United States export controls. No Software, Content or Documentation may be downloaded or otherwise exported or re-exported (1) into (or to a national or resident of) Cuba, Iran, Iraq, Libya, North Korea, Sudan, Syria, or any other country to which the United States has embargoed goods; or (2) to anyone on the U.S. Treasury Department's List of Specially Designated Nationals or the U.S. Commerce Department's Table of Deny Orders. By downloading or using the Software, Content or Documentation, Licensee represents and warrants that they are not located in, under the control of, or a national or resident of any such country or on any such list.
+
+12.	U.S GOVERNMENT RESTRICTED RIGHTS
+The Software has been developed entirely at private expense and is provided as "Commercial Computer Software" or "restricted computer software". Use, duplication, or disclosure by the United States Government is subject to restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c) (1) and (2) of the Commercial Computer Software-Restricted Rights clause at 48 CFR 52.227-19, and successor thereof, as applicable.
+
+13.	TERMINATION
+
+(a)	If Licensee fails to comply with the terms and conditions of this Agreement, this Agreement and Licensee's right and license to use the Software will terminate immediately. Licensee may terminate this Agreement at any time by notifying nexB. Upon the termination of this Agreement, Licensee must cease using the Software and delete the Software from its computers and archives.
+
+(b)	During an Evaluation Period, nexB may terminate this License Agreement for convenience and for any or no reason and may, at its sole discretion, require Licensee to return the Software to nexB or discontinue Licensee access to the Software at any time.
+
+(c)	In addition to any other termination rights provided in this Agreement, either party may terminate this Agreement immediately upon written notice if the other party materially breaches any provision of this Agreement and fails to cure such breach within 30 days after delivery of a written notice describing the breach.
+
+14.	MARKETING
+Licensee agrees to be identified as a customer of nexB and that nexB may refer to Licensee by name, trade name and trademark, if applicable, and may briefly describe Licensee's business in nexB's marketing materials, on nexB's web site, in public or legal documents. Licensee can deny nexB this right at any time by submitting a written request via email to sales@nexb.com, requesting to be excluded from Software marketing material.
+
+15.	PAYMENT
+Subscription Fees are exclusive of sales and use taxes.  Licensee shall pay or reimburse nexB for such taxes on or related to the Software unless an exemption certificate or a direct payment permit is provided to nexB. Unless otherwise agreed upon by the parties in writing, all undisputed invoices will be paid thirty (30) days from the Effective Date of the Agreement.
+
+16.	GENERAL
+
+(a)	Licensee agrees that all agreements, notices, disclosures, and other communications that nexB provides to Licensee electronically satisfy any legal requirement that such communications be in writing, to the extent permitted by applicable law.
+
+(b)	Licensee shall not assign this Agreement or transfer any of its rights hereunder, or delegate the performance of any of its duties or obligations arising under this Agreement, whether by merger, acquisition, sale of assets, operation of law, or otherwise, without the prior written consent of nexB.  Subject to the foregoing, this Agreement shall be binding upon, and inure to the benefit of, the successors and assigns of the parties thereto.  Except as otherwise specified in this Agreement, this Agreement may be amended or supplemented only by a writing that refers explicitly to this Agreement and that is signed on behalf of both parties.  No waiver will be implied from conduct or failure to enforce rights.
+
+(c)	This Agreement will be governed by the laws of the State of California without regard to conflicts of law provisions thereof. The parties expressly disclaim the application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transactions Act. Each party irrevocably consents to the exclusive jurisdiction of and venue in the federal or state courts seated in the Counties of San Francisco, San Mateo or Santa Clara, California.
+
+(d)	Any terms of this Agreement that by their nature extend beyond the termination of this Agreement shall remain in effect until fulfilled, and such terms shall apply to the respective successors and assigns of either party.  Terms that survive include, but are not limited to, the provisions of Sections 4 (Ownership), 5 (Confidentiality), 7 (Limited Warranty), 9 (Limitation of Liability) and 16 (General).
+
+(e)	If any term of this Agreement is found invalid or unenforceable that term will be enforced to the maximum extent permitted by law and the remainder of this Agreement will remain in full force.
+
+(f)	The parties are independent contractors and nothing contained herein shall be construed as creating an agency, partnership, or other form of joint enterprise between the parties.  
+
+(g)	This Agreement, including the third-party software license agreements and any Order Forms that incorporate this Agreement, represents the entire agreement between the parties relating to Licensee's use of the Software, Content and Documentation and supersedes any and all prior or contemporaneous oral or written representations, communications, or advertising with respect to the Software, Content and Documentation whether written or oral, except to the extent nexB makes any software or services available to Licensee under separate written terms. 
+
+IN WITNESS WHEREOF, each of the parties hereto has caused this Agreement to be executed on its behalf by its duly authorized representative.
+
+nexB		                                                                                                                Licensee - 
+
+By:		                                                                                                                        By:	
+
+Name:		                                                                                                                Name:	
+
+Title:		                                                                                                                Title:	
+
+Revision 1.1.0 October 2017

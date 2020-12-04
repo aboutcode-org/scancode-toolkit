@@ -1,0 +1,8 @@
+key: ms-permissive-1.1
+is_deprecated: yes
+short_name: MS-PL 1.1
+name: Microsoft Permissive License (MS-PL) v1.1
+category: Permissive
+owner: Microsoft
+homepage_url: https://web.archive.org/web/20180120185447/http://entlibcontrib.codeplex.com/license
+notes: dupe of ms-pl

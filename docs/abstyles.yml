@@ -1,0 +1,8 @@
+key: abstyles
+short_name: Abstyles License
+name: Abstyles License
+category: Permissive
+owner: CTAN
+homepage_url: https://fedoraproject.org/wiki/Licensing/Abstyles
+notes: the latext2e, verbatim-manual and abstyles are similar licenses
+spdx_license_key: Abstyles

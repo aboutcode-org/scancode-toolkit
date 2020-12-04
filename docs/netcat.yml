@@ -1,0 +1,8 @@
+key: netcat
+short_name: Netcat License
+name: Netcat License
+category: Permissive
+owner: Netcat Project
+homepage_url: http://nc110.sourceforge.net/
+ignorable_emails:
+  - nc110-devel@lists.sourceforge.net

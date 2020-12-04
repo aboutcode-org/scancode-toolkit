@@ -1,0 +1,9 @@
+key: x11-dec2
+short_name: X11-Style (DEC 2)
+name: X11-Style (DEC 2)
+category: Permissive
+owner: DEC - Digital Equipment Corporation
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+text_urls:
+  - http://www.xfree86.org/current/LICENSE5.html
+minimum_coverage: 80

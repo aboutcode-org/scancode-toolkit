@@ -1,0 +1,8 @@
+key: ntp-0
+short_name: NTP-0
+name: NTP No Attribution
+category: Permissive
+owner: MIT
+homepage_url: https://github.com/tytso/e2fsprogs/blob/master/lib/et/et_name.c
+spdx_license_key: NTP-0
+standard_notice: Copyright 1987 by MIT Student Information Processing Board

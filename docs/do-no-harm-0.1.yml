@@ -1,0 +1,8 @@
+key: do-no-harm-0.1
+short_name: Do No Harm
+name: Do No Harm
+category: Proprietary Free
+owner: Raisely
+homepage_url: https://github.com/raisely/NoHarm
+ignorable_urls:
+  - https://github.com/raisely/NoHarm

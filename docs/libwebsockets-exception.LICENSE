@@ -1,0 +1,52 @@
+Libwebsockets and included programs are provided under the terms of the GNU
+Library General Public License (LGPL) 2.1, with the following exceptions:
+
+1) Any reference, whether in these modifications or in the GNU
+Library General Public License 2.1, to this License, these terms, the
+GNU Lesser Public License,  GNU Library General Public License, LGPL, or
+any similar reference shall refer to the GNU Library General Public
+License 2.1 as modified by these paragraphs 1) through 4).
+
+2) Static linking of programs with the libwebsockets library does not
+constitute a derivative work and does not require the author to provide 
+source code for the program, use the shared libwebsockets libraries, or
+link their program against a user-supplied version of libwebsockets.
+
+If you link the program to a modified version of libwebsockets, then the
+changes to libwebsockets must be provided under the terms of the LGPL in
+sections 1, 2, and 4.
+
+3) You do not have to provide a copy of the libwebsockets license with
+programs that are linked to the libwebsockets library, nor do you have to
+identify the libwebsockets license in your program or documentation as
+required by section 6 of the LGPL.
+
+However, programs must still identify their use of libwebsockets. The
+following example statement can be included in user documentation to
+satisfy this requirement:
+
+"[program] is based in part on the work of the libwebsockets  project
+(https://libwebsockets.org)"
+
+4) Some sources included have their own, more liberal licenses, or options
+to get original sources with the liberal terms.
+
+Original liberal license retained
+
+  - lib/sha-1.c         - 3-clause BSD license retained, link to original
+  - win32port/zlib      - ZLIB license (see zlib.h)
+  - lib/mbedtls_wrapper - Apache 2.0 (only built if linked against mbedtls)
+
+Relicensed to libwebsocket license
+
+  - lib/base64-decode.c - relicensed to LGPL2.1+SLE, link to original
+  - lib/daemonize.c     - relicensed from Public Domain to LGPL2.1+SLE,
+                          link to original Public Domain version
+
+Public Domain (CC-zero) to simplify reuse
+
+  - test-apps/*.c
+  - test-apps/*.h
+  - lwsws/*
+
+------ end of exceptions

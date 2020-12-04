@@ -1,0 +1,45 @@
+Enhydra Public License Version 1.1
+
+1. Definitions
+
+This license is a union of the following two parts that should be found as text files in the same place (directory), in the order of preeminence: [1] This file itself, named EPL.html [2] The contents of the file opl.html, stating the general licensing policy of the software.
+
+2. Precedence of the license parts
+
+In case of conflicting dispositions in the parts of this license, the terms of the lower-numbered part will always be superseded by the terms of the higher numbered part.
+
+3. Lutris Technologies, Inc. is License Author
+
+For the purposes of this License the "License Author" defined in section 1.13 of OPL.html shall be Lutris Technologies, Inc., 1200 Pacific Ave., Santa Cruz, CA 95060. (http://www.lutris.com)
+
+4. Section 11 of the OPL.html:
+
+11. MISCELLANEOUS. This License represents the complete agreement concerning subject matter hereof. If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This License shall be governed by California, excluding its conflict-of-law provisions. With respect to disputes in which at least one party is a citizen of, or an entity chartered or registered to do business in, the United States of America: (a) unless otherwise agreed in writing, all disputes relating to this License (excepting any dispute relating to intellectual property rights) shall be subject to final and binding arbitration, with the losing party paying all costs of arbitration; (b) any arbitration relating to this Agreement shall be held in San Francisco County, California, under the auspices of JAMS/EndDispute; and (c) any litigation relating to this Agreement shall be subject to the jurisdiction of the Federal Courts of the Northern District of California, with venue lying in San Francisco County, California, with the losing party responsible for costs, including without limitation, court costs and reasonable attorneys fees and expenses. The applicationof the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this License.
+
+5. Exhibit A
+
+"The contents of this file are subject to the Enhydra Public License Version 1.1 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License on the Enhydra web site (http://www.enhydra.org).
+
+Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for the specific terms governing rights and limitations under the License. The Initial Developer of the Enhydra Application Server is Lutris Technologies, Inc. The Enhydra Application Server and portions created by Lutris Technologies, Inc. are Copyright Lutris Technologies, Inc. All Rights Reserved.
+
+Contributor(s):  . "
+
+6. Exhibit B
+
+Part of the software embedded in this product is Enhydra (Java[TM]/XML Application Server), a trademark of Lutris Technologies Inc.
+
+Portions created by Lutris are Copyright 1997-2000 Lutris Technologies (http://www.lutris.com). All Rights Reserved.
+
+THE SOFTWARE IN THIS PRODUCT WAS IN PART PROVIDED BY LUTRIS AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+7. Trademarks
+
+You shall not remove or alter any Lutris or Enhydra trademark or trade name placed in the Original Code by Lutris. All copies of the Covered Code distributed by You shall include any such Lutris and Enhydra trademarks and trade names, as well as all required notices provided for in Sections 3.5 and 3.6. Except for the foregoing obligation, You are granted no rights to reproduce or display any Lutris or Enhydra trademarks or trade names.
+
+8. Section 1.10 of OPL
+
+The following shall be added to section 1.10: "Original Code" shall include, but is not limited to, all the files in the Java packages in coveredCode.html.
+
+9. Section 3.2 of OPL 1.0
+
+As used in section 3.2 of the OPL "Contact Means" shall mean the email address info@lutris.com

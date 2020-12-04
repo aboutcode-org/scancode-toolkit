@@ -1,0 +1,630 @@
+USE OF LSI DOCUMENTATION AND SOFTWARE DOWNLOADS IS SUBJECT TO THIS AGREEMENT
+
+IMPORTANT - READ CAREFULLY: This Software License Agreement ("SLA") is a legal
+agreement between you (either an individual or a single entity) and LSI
+Corporation ("LSI") for the LSI Licensed Software identified herein and licensed
+herein, which includes computer software and may include associated media,
+printed materials, and "online" or electronic documentation ("LICENSED
+SOFTWARE"). By installing, copying, or otherwise using the LICENSED SOFTWARE,
+you agree to be bound by the terms of this SLA. If you do not agree to the terms
+of this SLA, you may not install, copy or use the LICENSED SOFTWARE. The
+LICENSED SOFTWARE is licensed, not sold.
+
+NOW THEREFORE, in consideration of the foregoing and the mutual promises and
+covenants contained in this SLA (also referred to as "Agreement"), the parties
+hereby agree as follows:
+
+1. Definitions
+
+    1.1. "Authorized Use for LSI Source Code" means use of the LSI Source Code
+    solely for the purpose of internally developing, modifying, integrating and
+    testing Licensee's Products to interface with LSI Devices authorized for
+    such integration, and for no other use or purpose.
+
+    1.2. "Authorized Use for LSI Binary Code" means use of the LSI Binary Code
+    solely for the purpose of internal evaluation or developing, integrating,
+    testing and use of Licensee's Products to interface with LSI Devices and for
+    no other application, use or purpose.
+
+    1.3. "Authorized Use for LSI Internal Code" means use of the LSI Internal
+    Use Code solely for the purpose of internally developing, modifying,
+    integrating and testing Licensee's Products to interface with LSI Devices
+    authorized for such integration, and for no other use or purpose.
+
+    1.4. "Explanatory Materials" means explanatory and informational materials
+    or documentation concerning the LSI Licensed Code, in printed or electronic
+    format, including without limitation, manuals, descriptions, user and/or
+    installation instructions, diagrams, printouts, listings, flowcharts, and
+    training materials, contained on visual media such as paper or photographic
+    film, or on other physical storage media in machine-readable form.
+    Explanatory Materials do not include any code.
+
+    1.5. "LSI Licensed Code" means collectively all the software programs which
+    are owned or distributed by LSI and licensed to Licensee via the LSI
+    Download Center through acceptance of this Agreement. The LSI Licensed Code
+    is specifically referenced individually in this Agreement as LSI Source
+    Code, LSI Binary Code, or LSI Internal Use Code.
+
+    1.6. "Licensee's Products" means the hardware and software (and related
+    Licensee documentation) that will be developed or modified by or for
+    Licensee utilizing the LSI Licensed Code for the purpose of interfacing or
+    being used with LSI Devices.
+
+    1.7. "Updates" means maintenance releases, bug fixes, errata or other
+    corrections, and minor improvements or modifications to the LSI Licensed
+    Code which may be provided by LSI to Licensee from time to time at LSI's
+    sole discretion. LSI is under no obligation to provide Updates or provide
+    support and maintenance services to Licensee Subsequent Users.
+
+    1.8. "New Version" means significant changes, modifications, enhancements,
+    and/or functional improvements to the LSI Licensed Code. New Versions are
+    made and generally distributed solely at the discretion of LSI. Licensee
+    must use the latest New Version of LSI Licensed Code that is available. LSI
+    is under no obligation to port any development work from one version to the
+    latest New Version of LSI Licensed Code.
+
+    1.9. "LSI Devices" means those LSI products intended for use with the LSI
+    Licensed Code and purchased from LSI or its agents.
+
+    1.10. "Derivative Works" means: (a) for copyrightable or copyrighted
+    material, any translation (including translation into other computer
+    languages), port, modification, correction, addition, extension, upgrade,
+    improvement, compilation, abridgment or other form in which an existing work
+    may be recast, transformed or adapted; (b) for patentable or patented
+    material, any improvement thereon; and (c) for material which is protected
+    by trade secret, any new material derived from such existing trade secret
+    material, including new material which may be protected by copyright, patent
+    and/or trade secret.
+
+    1.11. "Intellectual Property Rights" means (by whatever name or term known
+    or designated) copyrights, trade secrets, patents, moral rights and any
+    other intellectual and industrial property and proprietary rights (excluding
+    trademarks) including registrations, applications, renewals and extensions
+    of such rights anywhere in the world.
+
+    1.12. "LSI Binary Code" means the software programs provided for
+    distribution at the LSI Download Center, in binary form, any other machine
+    readable materials, including, but not limited to, libraries, source files,
+    header files, and data files, any Updates and New Versions provided by LSI.
+
+    1.13. "LSI Source Code" means the software programs provided for
+    distribution at the LSI Download Center, in source form including, but not
+    limited to, libraries, source files, header files, and data files, and
+    Updates and New Versions provided by LSI.
+
+    1.14. "LSI Internal Use Code" means the software programs provided for
+    distribution at the LSI Download Center, in source code or object code
+    format including, but not limited to, libraries, source files, header files,
+    and data files, and Updates and New Versions provided by LSI that are only
+    for Licensee's internal use.
+
+    1.15. "JRE Code" mean Oracle Corporation's JAVA SE Runtime Environment Code.
+
+    1.16. "Subsequent User" means any user subsequent to Licensee, including but
+    not limited to, all Licensee customers, resellers, end users, and OEMs.
+
+    1.17 "Taxes" shall mean all taxes, levies, imposts, duties, fines or other
+    charges of whatsoever nature however imposed by any country or any
+    subdivision or authority thereof in any way connected with this Agreement or
+    any instrument or agreement required hereunder, and all interest, penalties
+    or similar liabilities with respect thereto, except such taxes as are
+    imposed on or measured by a party's net income or property.
+
+2. Grant of Rights
+
+2.1 LSI Binary Code. Subject to the terms of this Agreement, LSI grants to
+Licensee a non-exclusive, world-wide, revocable (for breach in accordance with
+Section 7), non-transferable limited license, without the right to sublicense
+except as expressly provided herein, solely to:
+
+    (a) Use the LSI Binary Code and related Explanatory Materials solely for the
+    Authorized Use for Binary Code and only with LSI Devices
+
+    (b) Make copies of the LSI Binary Code and related Explanatory Materials to
+    support the Authorized Use for Binary Code and for archival and backup
+    purposes in support of the Authorized Use for Binary Code only with LSI
+    Devices;
+
+    (c) Distribute the LSI Binary Code as incorporated in Licensee's Products or
+    for use with LSI Devices to its Subsequent Users;
+
+    (d) Distribute the Explanatory Materials related to LSI Binary Code only for
+    use with LSI Devices;
+
+    (e) Sublicense the rights provided in paragraphs (a) and (b) above in
+    accordance with the terms provided in this Agreement to contract
+    manufacturers ("CMs") and/or original design manufacturers ("ODMs"), in each
+    case meeting the requirements of Section 3.1(d) below for the purpose of
+    manufacturing Licensee's Products; and (f) Sublicense the rights provided in
+    paragraphs (b) and (c) in accordance with the terms provided in this
+    Agreement to Subsequent Users who are not end users for the purpose of
+    distributing and supporting Licensee's Product.
+
+2.2 LSI Source Code. Subject to the terms of this Agreement, LSI grants to
+Licensee a non-exclusive, worldwide, revocable (for breach in accordance with
+Section 7), non-transferable limited license, without the right to sublicense
+except as expressly provided herein, solely to:
+
+    (a) Use the LSI Source Code and related Explanatory Materials solely for the
+    Authorized Use for Source Code and only with LSI Devices;
+
+    (b) Make copies of the LSI Source Code and related Explanatory Material to
+    support the Authorized Use for Source Code only and for archival and backup
+    purposes in support of the Authorized use for Source Code only with LSI
+    Devices;
+
+    (c) Modify and prepare Derivative Works of the LSI Source Code for the
+    Authorized Use for LSI Source Code and only for use with LSI Devices;
+
+    (d) Distribute the binary form only of any authorized Derivative Work of the
+    LSI Source Code ("Licensee Binary Derivative") and necessary portions of the
+    related Explanatory Materials only for use with LSI Devices; and
+
+    (e) Sublicense the rights granted in paragraph (d) above in accordance with
+    the terms provided in this Agreement to Subsequent Users who are not end
+    users for the purpose of distributing and supporting Licensee's Product.
+
+2.3 LSI Internal Use Code. Subject to the terms of this Agreement, LSI grants to
+Licensee a non-exclusive, worldwide, revocable (for breach in accordance with
+Section 7), non-transferable limited license, without the right to sublicense or
+distribute, solely to:
+
+    (a) Use the LSI Internal Use Code and related Explanatory Materials solely
+    for the Authorized Use for Internal Code and only with LSI Devices; and
+
+    (b) Make copies of the LSI Internal Use Code and related Explanatory
+    Materials to support the Authorized Use for Internal Code only and for
+    archival and backup purposes in support of the Authorized use for Internal
+    Code only with LSI Devices.
+
+2.4 Without limiting Section 4, Licensee may exercise the foregoing rights
+directly and/or indirectly through its employees and contractors, who are bound
+by terms at least as restrictive as this Agreement.
+
+3. License Restrictions
+
+3.1. LSI Binary Code. The Licenses granted in Section 2.1 for LSI Binary Code
+and related Explanatory Materials are subject to the following restrictions:
+
+    (a) Licensee shall not use the LSI Binary Code and related Explanatory
+    Materials for any purpose other than as expressly provided in Article 2;
+
+    (b) Licensee shall reproduce all copyright notices and other proprietary
+    markings or legends contained within or on the LSI Binary Code and related
+    Explanatory Materials on any copies it makes; and
+
+    (c) Licensee shall not distribute or disclose the LSI Binary Code and
+    related Explanatory Materials except pursuant to an agreement with terms at
+    least as protective of LSI's Binary Code as the terms of this Agreement.
+    Licensee shall not, and shall not allow its Subsequent Users to,
+    disassemble, de-compile, or reverse engineer the LSI Binary Code.
+
+    (d) Licensee may grant the sublicense set forth in Section 2.1(e) to its CMs
+    and ODMs, provided that each such CM and ODM agrees to abide by the terms
+    and conditions of this Agreement and Licensee shall remain responsible for
+    any failure by its CMs and ODM to comply with the terms and conditions of
+    this Agreement.
+
+3.2. LSI Source Code. The Licenses granted in Section 2.2 for LSI Source Code
+and related Explanatory Materials are subject to the following restrictions:
+
+    (a) Licensee shall not use the LSI Source Code and related Explanatory
+    Materials for any purpose other than as expressly provided in Article 2;
+
+    (b) Licensee shall reproduce all copyright notices and other proprietary
+    markings or legends contained within or on the LSI Source Code and related
+    Explanatory Materials on any copies it makes;
+
+    (c) Licensee shall not distribute or disclose any LSI Source Code and
+    related Explanatory Materials to any Subsequent Users or third parties,
+    without the express written consent of LSI;
+
+    (d) Licensee shall not knowingly infringe upon the intellectual property
+    rights of any third party when making Derivative Works to the LSI Source
+    Code;
+
+    (e) Licensee shall not disassemble, reverse-engineer, or decompile the LSI
+    Source Code, except for making authorized Derivative Works; and
+
+    (f) Licensee shall not distribute or disclose the Licensee Binary Derivative
+    except pursuant to an agreement with terms at least as protective as those
+    in this Agreement protecting LSI's Binary Code. Licensee shall not, and
+    shall not allow its Subsequent Users to, disassemble, de-compile, or reverse
+    engineer the Licensee Binary Derivative.
+
+3.3. LSI Internal Use Code. The Licenses granted in Section 2.3 for LSI Internal
+Use Code and related Explanatory Materials are subject to the following
+restrictions:
+
+    (a) Licensee shall not use the LSI Internal Use Code and related Explanatory
+    Materials for any purpose other than as expressly provided in Article 2;
+
+    (b) Licensee shall reproduce all copyright notices and other proprietary
+    markings or legends contained within or on the LSI Internal Use Code and
+    related Explanatory Materials on any copies it makes;
+
+    (c) Licensee shall not distribute or disclose any LSI Internal Use Code and
+    related Explanatory Materials to any Subsequent Users or third parties,
+    without the express written consent of LSI; and
+
+    (d) Licensee shall not disassemble, reverse-engineer, or decompile the LSI
+    Internal Use Code.
+
+3.4. Derivative Works of LSI Source Code Made by Licensee. Subject to LSI's
+rights in the underlying LSI Source Code, Licensee shall own all right, title
+and interest in and to the Derivative Works (both binary and source format) it
+makes from LSI Source Code, provided that such Derivative Works are not made in
+breach of this Agreement. Licensee shall not be required to disclose its
+Derivative Works of the LSI Source Code to LSI. LSI shall have no obligations
+whatsoever to support, maintain, contribute to, or provide Updates, New Versions
+or any modifications to Licensee Derivative Works of the LSI Source Code and
+shall have no liability whatsoever for such Derivative Works. In the event
+Licensee requests LSI's input regarding Licensee Derivative Works of LSI Source
+Code and plans to disclose such Derivative Works to LSI, a separate written
+agreement shall first be executed by the parties.
+
+3.5. LSI Derivative Works. Nothing contained herein shall prevent LSI from
+creating any Derivative Works of its LSI Source Code at any time. Licensee
+further agrees that LSI may independently create a Derivative Work similar to or
+in competition with the Licensee Derivative Work of the LSI Source Code and may
+use that Derivative Work for any purpose. Licensee grants LSI a Covenant Not to
+Sue for any independently developed Derivative Works created by LSI for its own
+LSI Source Code that Licensee may believe or claim infringes on any of
+Licensee's Intellectual Property Rights relating to the Licensee Derivative
+Works of the LSI Source Code.
+
+3.6. U.S. Government Subsequent Users. All LSI Licensed Code and Explanatory
+Materials qualify as "commercial items," as that term is defined at 48 C.F.R.
+2.101, consisting of "commercial computer software" and "commercial computer
+software documentation" as such terms are used in 48 C.F.R. 12.212. Consistent
+with 48 CFR 52.227-19, 48 C.F.R.12.212 and 48 C.F.R. 227.7202-1 through
+227.7202-4, Licensee will provide to U.S. Government end users such LSI Binary
+Code with only those rights set forth herein that apply to non-governmental end
+users. Use of such LSI Binary Code constitutes agreement by the government
+entity that the computer software and computer software documentation is
+commercial and constitutes acceptance of the rights and restrictions herein.
+
+3.7. No Implied Licenses. Except for the express and limited licenses granted
+herein for specific purposes, no rights or licenses are granted by LSI under
+this Agreement, by implication, inducement, estoppel or otherwise with respect
+to any proprietary information or to any patents, copyrights, trade secrets,
+trademarks, maskworks or other Intellectual Property Rights owned or controlled
+by LSI. Any further licenses must be express, in writing and signed by an
+authorized representative of LSI.
+
+3.8. Injunctive Relief. In the event of a breach by Licensee of this Section 2
+or 3, LSI shall be entitled to applicable injunctive relief and to all remedies
+available in equity and law to prevent Licensee from disassembling, de-
+compiling, reverse engineering, disclosing or using the LSI Licensed Code in
+whole or in part.
+
+3.9. LSI Licensed Code Containing JRE. Certain LSI Licensed Code may contain
+JRE. Use of the JRE is restricted by JRE licensing terms to General Purpose
+Desktop Computers and Servers, as defined below. Licensee may seek its own
+license for the JRE directly with the owner, if it deems necessary. "General
+Purposes Desktop Computers and Servers" under JRE licensing terms is defined as
+"computers, including desktop, laptop and tablet computers, or servers, used for
+general computing functions under end user control (such as but not specifically
+limited to email, general purpose Internet browsing and office suite
+productivity tools)". The full terms and conditions for use of the JRE are
+available at:
+http://www.oracle.com/technetwork/java/javase/terms/license/index.html.
+
+3.10. Notwithstanding anything to the contrary in this Agreement, to the extent
+there is a conflict between this Agreement’s provisions and any applicable
+license to open source technology, the provisions of the open source license
+shall take precedence and be followed, but only to the minimum extent reasonably
+necessary to comply with the applicable open source license.
+
+4. Confidentiality
+
+    4.1 Licensee agrees to limit access to the LSI Licensed Code and Explanatory
+    Materials to employees and contractors of Licensee (which may include,
+    without limitation, contractors retained by Licensee to maintain or modify
+    the LSI Licensed Code and Explanatory Materials on behalf of Licensee)
+    having a need to access or know the LSI Licensed Code and Explanatory
+    Materials and who have executed nondisclosure agreements with Licensee
+    obligating them to maintain the confidentiality of the LSI Licensed Code and
+    Explanatory Materials.
+
+    4.2 Licensee shall hold in confidence the LSI Licensed Code and Explanatory
+    Materials as LSI's confidential information ("Confidential Information") and
+    shall use the LSI Code and Explanatory Materials only as expressly provided
+    in Section 2, and protect the confidentiality of such Confidential
+    Information with the same degree of care as Licensee uses to protect its own
+    confidential or proprietary information of great commercial value, but in no
+    event less than reasonable care and for no less than three (3) years from
+    the date of disclosure.
+
+    4.3 Licensee agrees to notify LSI immediately after Licensee becomes aware
+    of any suspected misuse or unauthorized disclosure of any Confidential
+    Information. The obligations of confidentiality imposed on Licensee under
+    this Section 4 shall not apply or shall cease to apply to any of such
+    Confidential Information that Licensee clearly establishes: (i) was already
+    rightfully in the possession of Licensee at the time of disclosure as
+    evidenced by records of Licensee; (ii) is or becomes publicly available
+    through no act or omission of Licensee; (iii) is rightfully received by
+    Licensee from a third party without an obligation of confidentiality; (iv)
+    is independently developed by Licensee's employees or contractors without
+    use of or access to the information; or (v) is approved for unrestricted
+    disclosure in writing by an authorized representative of LSI. LSI makes no
+    warranty as to the accuracy of any Confidential Information, which is
+    furnished "AS IS" with all faults.
+
+5. Ownership of Code by LSI, Fees, and Taxes
+
+    5.1 LSI (or its licensors) reserve all right, title, ownership and interest
+    in and to the LSI Licensed Code and Explanatory Materials existing prior to
+    and after the Effective Date of this Agreement, or created or generated by
+    LSI (or its licensors) at any time, subject to any licenses granted. LSI (or
+    its licensors) reserves all right, title, ownership and interest in and to
+    any Derivative Works it creates at any time to the LSI Licensed Code and
+    Explanatory Materials, subject to any licenses granted.
+
+    5.2 Fees and Taxes. No fees are due in connection with this Agreement unless
+    separately specified by LSI. If any such fees are separately specified in
+    writing, the following applies:
+
+    5.2.1 Payment is due by Licensee upon download, at time of purchase, or no
+    later than within thirty (30) days of date of LSI invoice therefore, as
+    designated by LSI All payments shall be made in U.S. currency unless
+    otherwise agreed. If at any time, Licensee is delinquent in the payment of
+    any invoice, or is otherwise in breach of this Agreement, LSI may, at its
+    discretion, and without prejudice to its other rights, withhold delivery
+    (including partial delivery) of any order or may, at its option, require
+    Licensee to prepay for further deliveries. Any sum not paid by Licensee,
+    when due, shall bear interest until paid at a rate of 1.5% per month (18%
+    per annum) or the maximum rate permitted by law, whichever is less.
+
+    5.2.2 All payments or reimbursements due under this Agreement and any
+    instrument or agreement required hereunder shall be made free and clear and
+    without deduction for any and all present and future Taxes. Payments due to
+    LSI under this Agreement and any instrument or agreement required hereunder
+    shall be increased so that amounts received by LSI, after provisions for
+    Taxes and all Taxes on such increase, will be equal to the amounts required
+    under this Agreement and any instrument or agreement required hereunder if
+    no Taxes were due on such payments.
+
+    5.2.3 The Licensee shall indemnify LSI for the full amount of Taxes
+    attributable to the provision of products or services under this Agreement,
+    and any liabilities (including penalties, interest and expenses) arising
+    from such Taxes, within thirty (30) days from any written demand by LSI. The
+    Licensee shall provide evidence that all applicable Taxes have been paid to
+    the appropriate taxing authority by delivering to LSI receipts or notarized
+    copies thereof within thirty (30) days after the due date for such tax
+    payments.
+
+    5.2.4 Without prejudice to the survival of any other Agreement of Licensee
+    hereunder, the obligations of Licensee contained in this section shall
+    survive the payment in full of all payments hereunder.
+
+6. Support
+
+    (a) LSI may provide the following support services for the LSI Licensed Code
+    to the extent LSI deems reasonable: Updates if and when released and errata
+    in LSI's sole discretion. LSI shall not be responsible for any other support
+    or maintenance of LSI Licensed Code to Licensee or its Subsequent Users,
+    unless otherwise agreed to in writing. LSI is under no obligation to provide
+    support services and may discontinue support services at any time. LSI will
+    not provide support for modified LSI Licensed Code or Licensee's Derivative
+    Works of the LSI Source Code.
+
+    (b) Any Updates to the LSI Licensed Code provided by LSI (which shall only
+    be provided by LSI in its sole discretion) shall be governed by the terms of
+    this Agreement.
+
+    (c) If Licensee finds what Licensee considers an error in the LSI Licensed
+    Code, Licensee will notify LSI so that LSI can, in its sole discretion, make
+    corrections to the LSI Licensed Code or to future revisions of the LSI
+    Licensed Code.
+
+7. Term and Termination
+
+    7.1 Term. The term of this Agreement is five (5) years from the Effective
+    Date, subject to renewal upon mutual agreement of the parties.
+
+    7.2 Termination for Breach. If Licensee breaches any material provision of
+    this Agreement, LSI shall have the right to terminate this Agreement,
+    including all licenses granted hereunder, in addition to any and all other
+    remedies available at law or equity, unless Licensee cures such breach
+    within sixty (60) days ("Cure Period") after receiving written notice of the
+    breach by LSI. Licensee shall make best efforts to cure the material breach
+    in the least amount of time possible within the Cure Period.
+
+    7.3 Insolvency. If either party: (a) becomes substantially insolvent; (b)
+    makes an assignment for the benefit of creditors; (c) files or has filed
+    against it a petition in bankruptcy or seeking reorganization; (d) has a
+    receiver appointed; or (e) institutes any proceedings for liquidation or
+    winding up or have such proceedings instituted against it; then the other
+    party may, in addition to other rights and remedies it may have, terminate
+    this Agreement immediately by written notice.
+
+    7.4 Consequences. Upon termination or expiration of this Agreement for any
+    reason whatsoever, the licenses, rights, and covenants granted hereunder and
+    any obligations imposed hereunder shall cease except as otherwise expressly
+    set forth herein as surviving termination or expiration.
+
+    7.5 Return of Confidential Information. Upon expiration or termination of
+    this Agreement for any reason or upon written request by LSI, Licensee
+    agrees to promptly return to LSI or, at LSI's request, destroy and certify
+    by an officer of Licensee in writing the destruction of, all LSI
+    Confidential Information furnished to Licensee, including all LSI Licensed
+    Code and Explanatory Materials.
+
+    7.6 Survival of Licenses. Any LSI Licensed Code and Explanatory Materials
+    distributed prior to the effective date of any termination, expiration,
+    breach, or cancellation of this Agreement, shall remain licensed (including
+    any LSI Licensed Code in inventory, manufactured, or work in progress with
+    Licensee products) under the terms of this Agreement. Notwithstanding the
+    foregoing, Licensee may retain an archival copy of portions of the LSI
+    Confidential Information, including LSI Licensed Code and Explanatory
+    Materials, necessary for Licensee to provide ongoing technical support to
+    Subsequent Users using the LSI Licensed Code ("Archival Materials") after
+    termination, expiration or cancellation of this Agreement. Such Archival
+    Materials may not be used for any other purpose without the written consent
+    from LSI. Licensee shall keep such Archival Materials confidential for an
+    additional five (5) years from the date of termination, expiration , or
+    cancellation of this Agreement, regardless of when the LSI Confidential
+    Information was disclosed.
+
+    7.7 Survival. In the event of expiration or termination of this Agreement
+    for any reason, the following sections of this Agreement shall survive: 1,
+    3, 5, 7, 8, 9, 8 and 10. Termination will not prejudice either party to
+    require performance of any obligation due at the time of termination. All
+    end user licenses in effect and in compliance with the Agreement prior to
+    effective termination or expiration shall survive and continue in full force
+    and effect in accordance with their terms and Licensee may continue to
+    perform its obligations thereunder, including support obligations.
+
+8. Disclaimer of All Warranties
+
+    8.1 THE PARTIES AGREE THAT LSI FURNISHES THE LSI LICENSED CODE AND
+    EXPLANATORY MATERIALS TO LICENSEE "AS IS," UNSUPPORTED, WITHOUT WARRANTY OF
+    ANY KIND. LSI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NON-INFRINGEMENT, INCLUDING ANY THAT MAY ARISE FROM A COURSE OF PERFORMANCE,
+    A COURSE OF DEALING OR TRADE USAGE. LSI SHALL NOT BE LIABLE FOR ANY ERROR,
+    OMISSION, DEFECT, DEFICIENCY, OR NONCONFORMITY IN THE LSI LICENSED CODE OR
+    EXPLANATORY MATERIALS. LSI MAKES NO WARRANTY OR REPRESENTATION THAT THE LSI
+    LICENSED CODE OR EXPLANATORY MATERIALS WILL MEET LICENSEE'S REQUIREMENTS OR
+    WILL WORK IN COMBINATION WITH ANY HARDWARE OR SOFTWARE APPLICATION.
+
+    8.2 LSI DISCLAIMS ANY AND ALL LIABILITY IN CONNECTION WITH LICENSEE'S USE OF
+    THE LSI LICENSED CODE IN ANY MEDICAL, NUCLEAR, AVIATION, NAVIGATION,
+    MILITARY, OR OTHER HIGH RISK DEVICE OR APPLICATION. LICENSEE REPRESENTS AND
+    WARRANTS THAT IT WILL NOT USE THE LICENSED LSI CODE IN ANY MEDICAL, NUCLEAR,
+    AVIATION, NAVIGATION, MILITARY, OR OTHER HIGH RISK DEVICE OR APPLICATION.
+    LICENSEE SHALL INDEMNIFY, DEFEND, AND HOLD LSI HARMLESS AGAINST ANY LOSS,
+    LIABILITY, OR DAMAGE OF ANY KIND THAT LSI INCURS IN CONNECTION WITH BREACH
+    OF THE WARRANTY IN THIS SECTION 8.2.
+
+    8.3 LSI DISCLAIMS ANY AND ALL LIABILITY IN CONNECTION WITH LICENSEE'S
+    CREATION AND USE OF DERIVATIVE WORKS OF THE LSI SOURCE CODE. LICENSEE SHALL
+    INDEMNIFY, DEFEND, AND HOLD LSI HARMLESS AGAINST ANY LOSS, LIABILITY, OR
+    DAMAGE OF ANY KIND THAT LSI INCURS IN CONNECTION WITH LICENSEE'S DERIVATIVE
+    WORKS OF LSI SOURCE CODE.
+
+9. Limitation of Liability
+
+    IN NO EVENT SHALL LSI, ITS EMPLOYEES, AFFILIATES ORSUPPLIERS BE LIABLE FOR
+    ANY LOST PROFITS, REVENUE, SALES OR DATA OR COSTS OF PROCURE OF SUBTITUTE
+    GOODS OR SERVICES, INTERRUPTION, LOSS OF BUSINESS INFORMATION OR ANY
+    SPECIAL, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, ECONOMIC OR PUNITIVE
+    DAMAGES, HOWEVER CAUSED, AND WHETHER ARISING UNDER CONTRACT, TORT, STRICT
+    LIABILITY, NEGLIGENCE OR OTHER THEORY OF LIABILITY, ARISING OUT OF THE USE
+    OR INABILTY TO USE THE LSI LICENSED CODE OR EXPLANATORY MATERIALS, EVEN IF
+    LSI OR ITS EMPLOYEES, SUPPLIERS OR AFFILIATES ARE ADVISED OF THE POSSIBILTIY
+    OF SUCH DAMAGES. IN THE EVENT THAT THE APPLICABLE JURISDICTION DOES NOT
+    ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY, BUT DOES ALLOW LIABILTY TO
+    BE LIMITED, THE LIABILITY OF LSI, ITS EMPLOYEES, AFFILIATES, OR SUPPLIERS IN
+    SUCH CASES, SHALL BE LIMITED TO $100 US DOLLARS.
+
+10. General
+
+    10.1 Assignment. Licensee shall not assign this Agreement or any of its
+    rights or delegate any of its duties under this Agreement without the prior
+    written consent of LSI. Subject to the foregoing, this Agreement will be
+    binding upon, enforceable by, and inure to the benefit of the parties and
+    their respective successors and assigns. Any attempted assignment in
+    violation of this Section 10.1 shall be null and void.
+
+    10.2 Governing Law. This Agreement shall be construed and interpreted in
+    accordance with the law of the State of California without reference to its
+    conflicts of law principles.
+
+    10.3 Exclusive Jurisdiction. All disputes arising out of or related to this
+    Agreement will be subject to the exclusive jurisdiction and venue of the
+    California state courts of Santa Clara County, California in United States
+    District Court for the Northern District of California, and the parties
+    consent to the personal and exclusive jurisdiction of these courts.
+
+    10.4 Export Control. Licensee shall follow all export control laws and
+    regulations relating to the LSI Licensed Code and Explanatory Materials.
+    Licensee hereby acknowledges responsibility for compliance with all
+    applicable US and local laws and regulations related to import and export
+    and acknowledges and agrees that the LSI Licensed Code is subject to the
+    U.S. Export Administration Regulations. Diversion contrary to U.S. law is
+    prohibited. Licensee agrees that the LSI Licensed Code is being or will be
+    acquired for, shipped, transferred, or re-exported, directly or indirectly,
+    to prohibited or embargoed countries, nor be used for any prohibited end-
+    use, such as nuclear activities, chemical/biological weapons, or missile
+    projects, unless expressly authorized by the U.S. Government. Prohibited
+    countries are set forth in the Supplement 1 to Part 740 of the U.S. Export
+    Administration Regulations. Countries currently subject to U.S. embargo
+    include: Cuba, Iran, N. Korea, Sudan and Syria. This list is subject to
+    change without further notice from LSI Corporation and Licensee understands
+    that compliance with the list as it exists in fact, is required. Licensee
+    assumes sole responsibility for obtaining any/all licenses required for
+    export or re-export. All ECCN and CCATS numbers and License Exception
+    information are subject to change without notice. Modification in any way
+    nullifies the classification. It is therefore your obligation as an exporter
+    to verify such information and comply with the then currently applicable
+    regulations. Any data provided by LSI is for informational purposes only.
+    LSI Corporation makes no representation or warranty as to the accuracy or
+    reliability of any classifications or numbers. Any use of such
+    classifications or numbers by you is without recourse to LSI Corporation and
+    is at your own risk. LSI Corporation is in no way responsible for any
+    damages, whether direct, indirect, consequential, incidental or otherwise,
+    suffered by you as a result of using or relying upon such classifications or
+    numbers for any purpose whatsoever. Licensee agrees to consult the EAR, the
+    Bureau of Industry and Security's Export Counseling Division, and other
+    appropriate sources before distributing, importing, or using LSI products.
+    You may request software classification information from LSI or view it at
+    LSI.com. If requested, Customer agrees to sign written assurances and other
+    export-related documents as may be required by LSI.
+
+    10.5 Waiver. No failure or delay on the part of either party in the exercise
+    of any right or privilege hereunder shall operate as a waiver thereof or of
+    the exercise of any other right or privilege hereunder, nor shall any single
+    or partial exercise of any such right or privilege preclude other or further
+    exercise thereof or of any other right or privilege.
+
+    10.6 Notice. Any notice or claim provided for herein to LSI shall be in
+    writing and addressed as set forth below, and shall be given (i) by personal
+    delivery, effective upon delivery, (ii) by first class mail, postage
+    prepaid, addressed as set forth below, effective one (1) business day after
+    proper deposit in the mail, or (iii) by facsimile directed to the facsimile
+    number set forth below, but only if accompanied by mailing of a copy in
+    accordance with (ii) above, effective as of the date of facsimile
+    transmission.
+
+    Vice President
+    Global Commercial Law Group
+    LSI Corporation
+    1110 American Parkway, NE
+    Room 12K-302
+    Allentown, PA 18109
+    Fax: (610) 712-1450 
+
+    10.7 Severability. If any term, condition, or provision of this Agreement,
+    or portion of this Agreement, is found to be invalid, unlawful or
+    unenforceable to any extent, the parties will endeavor in good faith to
+    agree to such amendments that will preserve, as far as possible, the
+    intentions expressed in this Agreement. Such invalid term, condition or
+    provision will be severed from the remaining terms, conditions and
+    provisions, which will continue to be valid and enforceable to the fullest
+    extent permitted by law.
+
+    10.8 Other Rights. Nothing contained in this Agreement shall be construed as
+    conferring by implication, estoppel, or otherwise upon either party or any
+    third party any license or other right except, solely as to the parties
+    hereto, the rights expressly granted hereunder.
+
+    10.9 Integration; Modification. This Agreement embodies the final, complete
+    and exclusive statement of the terms agreed upon by the parties with respect
+    to the subject matter hereof and supersedes any prior or contemporaneous
+    representations, descriptions, courses of dealing, or agreements in regard
+    to such subject matter. No amendment or modification of this Agreement shall
+    be valid or binding upon the parties unless stated in writing and signed by
+    an authorized representative of each party.
+
+    10.10 Publicity. All publicity concerning this transaction referring to the
+    other party shall require the other party's prior written approval which
+    shall not be unreasonably withheld.
+
+    10.11 Relationship of the Parties. The relationship of the parties hereto is
+    that of independent contractors. Neither party, nor its agents or employees,
+    shall be deemed to be the agent, employee, joint venture partner, partner or
+    fiduciary of the other party. Neither party shall have the right to bind the
+    other party, transact any business on behalf of or in the name of the other
+    party, or incur any liability for or on behalf of the other party.

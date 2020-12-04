@@ -1,0 +1,38 @@
+JRunner Software License
+https://www.altera.com/download/licensing/lic-jrunner.html 
+
+SOFTWARE DISTRIBUTION AGREEMENT
+
+THE JRunner SOFTWARE PROGRAM AND EXECUTABLE FILES, AND RELATED SPECIFICATION DOCUMENTATION ("PROGRAMS") (AVAILABLE FOR DOWNLOADING FROM THIS WEB SITE OR ENCLOSED WITH THE COMPUTER DISK ACCOMPANYING THIS NOTICE), ARE MADE FREELY AVAILABLE FOR USE BY ANYONE, SUBJECT TO CERTAIN TERMS AND CONDITIONS SET FORTH BELOW. PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE DOWNLOADING OR USING THE PROGRAMS. BY DOWNLOADING OR USING THE PROGRAMS YOU INDICATE YOUR ACCEPTANCE OF THESE TERMS AND CONDITIONS, WHICH CONSTITUTE THE LICENSE AGREEMENT (the "AGREEMENT") BETWEEN YOU AND ALTERA CORPORATION ("ALTERA") WITH REGARD TO THE PROGRAMS. IN THE EVENT THAT YOU DO NOT AGREE WITH ANY OF THESE TERMS AND CONDITIONS, DO NOT DOWNLOAD THE PROGRAMS OR PROMPTLY RETURN THE PROGRAMS TO ALTERA UNUSED.
+
+License Terms
+
+Subject to the terms and conditions of this Agreement, Altera grants to you a worldwide, nonexclusive, perpetual license (with the right to grant sublicenses, and authorize sublicensees to sublicense further) to use, copy, prepare derivative works based on, and distribute the Programs and derivative works thereof, provided that any distribution or sublicense is subject to the same terms and conditions that you use for distribution of your own comparable software products. Any copies of the Programs or derivative works thereof will continue to be subject to the terms and conditions of this Agreement. You must include in any copies of the Programs or derivative works thereof any trademark, copyright, and other proprietary rights notices included in the Programs by Altera.
+
+Disclaimer of Warranties and Remedies
+
+NO WARRANTIES, EITHER EXPRESS OR IMPLIED, ARE MADE WITH RESPECT TO THE PROGRAMS, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NONINFRINGEMENT, AND ALTERA EXPRESSLY DISCLAIM ALL WARRANTIES NOT STATED HEREIN. YOU ASSUME THE ENTIRE RISK AS TO THE QUALITY, USE, AND PERFORMANCE OF THE PROGRAMS. SHOULD THE PROGRAMS PROVE DEFECTIVE OR FAIL TO PERFORM PROPERLY, YOU -- AND NOT ALTERA -- SHALL ASSUME THE ENTIRE COST AND RISK OF ANY REPAIR, SERVICE, CORRECTION, OR ANY OTHER LIABILITY OR DAMAGES CAUSED BY OR OTHERWISE ASSOCIATED WITH THE PROGRAMS. ALTERA DOES NOT WARRANT THAT THE PROGRAMS WILL MEET YOUR REQUIREMENTS, OR THAT THE OPERATION OF THE PROGRAMS WILL BE UNINTERRUPTED OR ERROR-FREE. YOU ALSO ASSUME RESPONSIBILITY FOR THE SELECTION, INSTALLATION, USE, AND RESULTS OF USING THE PROGRAMS. Some states do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.
+
+ALTERA SHALL NOT BE LIABLE TO YOU OR ANY OTHER PERSON FOR ANY DAMAGES, INCLUDING ANY INCIDENTAL OR CONSEQUENTIAL DAMAGES, EXPENSES, LOST PROFITS, LOST SAVINGS, OR OTHER DAMAGES ARISING OUT OF OR OTHERWISE ASSOCIATED WITH THE USE OF OR INABILITY TO USE THE PROGRAMS. IN ANY EVENT, ALTERA'S LIABILITY UNDER THIS AGREEMENT SHALL NOT EXCEED THE LARGER OF EITHER THE AMOUNT YOU PAID ALTERA FOR USE OF THE PROGRAMS, OR ONE HUNDRED DOLLARS ($100). YOUR SOLE REMEDIES AND ALTERA'S ENTIRE LIABILITY ARE AS SET FORTH ABOVE. Some states do not allow the limitation or exclusion of incidental or consequential damages, so the above limitations or exclusions may not apply to you.
+
+To the extent that the Programs are derived from third-party software or other third-party materials, no such third-party provides any warranties with respect to the Programs, assumes any liability regarding use of the Programs, or undertakes to furnish you any support or information relating to the Programs.
+
+General
+
+You acknowledge that Altera is not responsible for and is not obligated to provide, any support, including email and telephone support, for any purpose with respect to the Programs.
+
+You acknowledge that the Programs are made freely available in accordance with this Agreement as part of an effort to promote broad use of the Programs with minimum interference by you and Altera. Accordingly, you agree that, if you obtain any patents relating to inventions or discoveries made through use of or access to the Programs or derivative works thereof, or that are necessary for the use of the Programs, you will not bring any claim for infringement thereof against Altera or any direct or indirect licensee of Altera in connection with or use of the Programs or derivative works thereof. The foregoing does not constitute a license of any copyright or trade secret.
+
+You shall not export the Programs, or any product programmed by the Programs, without first obtaining any necessary U.S. or other governmental licenses and approvals.
+
+This Agreement is entered into for the benefit of Altera and Altera's licensors and all rights granted to you and all obligations owed to Altera shall be enforceable by Altera and its licensors. This Agreement constitutes the entire understanding and agreement applicable to the Programs, superseding any prior or contemporaneous understandings or agreements. It may not be modified except in a writing executed by Altera.
+
+This Agreement will be governed by the laws the State of California. You agree to submit to the jurisdiction of the courts in the State of California for the resolution of any dispute or claim arising out of or relating to this Agreement.
+
+The prevailing party in any legal action or arbitration arising out of this Agreement shall be entitled to reimbursement for its expenses, including court costs and reasonable attorneys' fees, in addition to any other rights and remedies such party may have.
+
+BY USING THE PROGRAMS YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS; YOU FURTHER AGREE THAT IT IS THE COMPLETE AND EXCLUSIVE STATEMENT OF THE AGREEMENT BETWEEN YOU AND ALTERA WHICH SUPERSEDES ANY PROPOSAL OR PRIOR AGREEMENT, ORAL OR WRITTEN, AND ANY OTHER COMMUNICATIONS BETWEEN YOU AND ALTERA RELATING TO THE SUBJECT MATTER OF THIS AGREEMENT.
+
+U.S. Government Restricted Rights
+
+The Programs and any accompanying documentation are provided with RESTRICTED RIGHTS. Use, duplication, or disclosure by the Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of The Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (2) of Commercial Computer Software--Restricted Rights at 48 CFR 52.227-19, as applicable. Contractor/manufacturer is Altera Corporation, 101 Innovation Drive, San Jose, CA 95134 and its licensors.

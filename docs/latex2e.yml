@@ -1,0 +1,8 @@
+key: latex2e
+short_name: Latex2e License
+name: Latex2e License
+category: Permissive
+owner: LaTeX
+homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
+notes: the latext2e, verbatim-manual and abstyles are similar licenses
+spdx_license_key: Latex2e

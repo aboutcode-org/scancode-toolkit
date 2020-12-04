@@ -1,0 +1,118 @@
+Streaming API for XML (JSR-173) Specification Reference Implementation License Agreement
+
+READ THE TERMS OF THIS (THE "AGREEMENT") CAREFULLY BEFORE VIEWING OR USING THE SOFTWARE LICENSED HEREUNDER.  BY VIEWING OR USING THE SOFTWARE, YOU AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDICATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE "ACCEPT" BUTTON AT THE END OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL THESE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO ORIGINAL CONTRIBUTOR, DEFINED HEREIN.
+
+1.0  DEFINITIONS.
+ 
+1.1. "BEA" means BEA Systems, Inc., the licensor of the Original Code.
+
+1.2. "Contributor" means BEA and each entity that creates or contributes to the creation of Modifications.
+
+1.3. "Covered Code" means the Original Code or Modifications or the combination of the Original Code and Modifications, in each case including portions thereof and corresponding documentation released with the source code.
+
+1.4. "Executable" means Covered Code in any form other than Source Code.
+
+1.5. "FCS" means first commercial shipment of a product.
+
+1.6. "Modifications" means any addition to or deletion from the substance or structure of either the Original Code or any previous Modifications. When Covered Code is released as a series of files, a Modification is:
+
+(a)  Any addition to or deletion from the contents of a file containing Original Code or previous Modifications.
+
+(b)  Any new file that contains any part of the Original Code or previous Modifications.
+
+1.7. "Original Code" means Source Code of computer software code Reference Implementation.
+
+1.8. "Patent Claims" means any patent claim(s), now owned or hereafter acquired, including without limitation, method, process, and apparatus claims, in any patent for which the grantor has the right to grant a license.
+
+1.9.  "Reference Implementation" means the prototype or "proof of concept" implementa­tion of the Specification developed and made available for license by or on behalf of BEA.
+
+1.10. "Source Code" means the preferred form of the Covered Code for making modifications to it, including all modules it contains, plus any associated documentation, interface definition files, scripts used to control compilation and installation of an Executable, or source code differential comparisons against either the Original Code or another well known, available Covered Code of the Contributor's choice. 
+
+1.11.  "Specification" means the written specification for the Streaming API for XML , Java technology developed pursuant to the Java Community Process.
+1.12. "Technology Compatibility Kit" or "TCK" means the documentation, testing tools and test suites associated with the Specification as may be revised by BEA from time to time, that is provided so that an implementer of the Specifi­cation may determine if its implementation is compliant with the Specification.
+
+1.13. "You" (or "Your") means an individual or a legal entity exercising rights under, and complying with all of the terms of, this Agreement or a future version of this Agreement issued under Section 6.1. For legal entities, "You" includes any entity which controls, is controlled by, or is under common control with You. For purposes of this definition, "control" means (a) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial ownership of such entity.
+
+2.0  SOURCE CODE LICENSE. 
+
+2.1. Copyright Grant.  Subject to the terms of this Agreement, each Contributor hereby grants You a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Covered Code of such Contributor, if any, and such derivative works, in Source Code and Executable form.
+
+2.2.  Patent Grant.  Subject to the terms of this Agreement, each Contributor hereby grants You a non-exclusive, worldwide, royalty-free patent license under the Patent Claims to make, use, sell, offer to sell, import and otherwise transfer the Covered Code prepared and provided by such Contributor, if any, in Source Code and Executable form. This patent license shall apply to the Covered Code if, at the time a Modification is added by the Contributor, such addition of the Modification causes such combination to be covered by the Patent Claims. The patent license shall not apply to any other combinations which include the Modification.
+
+2.3.  Conditions to Grants.  You understand that although each Contributor grants the licenses to the Covered Code prepared by it, no assurances are provided by any Contributor that the Covered Code does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to You for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, You hereby assume sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow You to distribute Covered Code, it is Your responsibility to acquire that license before distributing such code.
+
+2.4.  Contributors’ Representation.  Each Contributor represents that to its knowledge it has sufficient copyright rights in the Covered Code it provides , if any, to grant the copyright license set forth in this Agreement.
+
+3.0  DISTRIBUION RESTRICTIONS.
+
+3.1. Application of Agreement.
+
+The Modifications which You create or to which You contribute are governed by the terms of this Agreement, including without limitation Section 2.0. The Source Code version of Covered Code may be distributed only under the terms of this Agreement or a future version of this Agreement released under Section 6.1, and You must include a copy of this Agreement with every copy of the Source Code You distribute. You may not offer or impose any terms on any Source Code version that alters or restricts the applicable version of this Agreement or the recipients' rights hereunder. However, You may include an additional document offering the additional rights described in Section 3.3.
+
+3.2. Description of Modifications.
+
+You must cause all Covered Code to which You contribute to contain a file documenting the changes You made to create that Covered Code and the date of any change. You must include a prominent statement that the Modification is derived, directly or indirectly, from Original Code provided by BEA and including the name of BEA in (a) the Source Code, and (b) in any notice in an Executable version or related documentation in which You describe the origin or ownership of the Covered Code.
+
+3.3. Required Notices.
+
+You must duplicate the following notice in each file of the Source Code:
+
+"(c) 2002, 2003 BEA Systems, Inc.  All rights Reserved.  The contents of this file are subject to the BEA Streaming API for XML Specification Reference Implementation License Agreement (the "Agreement"); you may not use this file except in compliance with the Agreement. A copy of the Agreement is available at http://www.bea.com/"
+
+If You created one or more Modification(s) You may add your name as a Contributor to the copyright portion of the notice above. You must also duplicate this Agreement in any documentation for the Source Code where You describe recipients' rights or ownership rights relating to Covered Code. You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations to one or more recipients of Covered Code. However, You may do so only on Your own behalf, and not on behalf of BEA or any other Contributor. You must make it absolutely clear than any such warranty, support, indemnity or liability obligation is offered by You alone, and You hereby agree to indemnify BEA and every other Contributor for any liability incurred by BEA or such other Contributor as a result of warranty, support, indemnity or liability terms You offer.
+
+3.4. Distribution of Executable Versions.
+
+You may choose to distribute Covered Code in Executable form under its own license agreement, provided that:
+
+  	(a) You comply with the terms and conditions of this Agreement; and
+
+(b) Your license agreement:  (i)  effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose; (ii)  effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits; (iii) states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and (iv)  states that Source Code for the Covered Code is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.
+
+(c) You do not use any marks, brands or logos associated with the JCP Specification, or otherwise promote or market any Covered Code, as being compatible, compliant, conformant  or otherwise consistent with the Specification unless such product passes, in accordance with the documentation (including the TCK Users Guide, if any), the most current TCK applicable to the latest version of the Specification and available from BEA one hundred twenty (120) days before FCS of such version of the product; provided, however, that if You elect to use a version of the TCK also provided by BEA that is newer than that which is required under this Section 2.1(b)(v), then You agree to pass such TCK.
+
+3.5.  Distribution of Source Code Versions.
+
+When You make Covered Code available in Source Code form:
+
+  	(a) it must be made available under this Agreement; and
+ 
+  	(b) a copy of this Agreement must be included with each copy of the Covered Code.  
+
+You may not remove or alter any copyright notices contained within the Covered Code.  Each Contributor must identify itself as the originator of its contribution to the Covered Code, if any, in a manner that reasonably allows subsequent licensees to identify the originator of each portion of the Covered Code.
+
+
+
+4.0  DISCLAIMER OF WARRANTY.
+
+COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS'' BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED CODE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED CODE IS WITH YOU. SHOULD ANY COVERED CODE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT BEA OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED CODE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
+
+5.0  TERMINATION.
+
+5.1. This Agreement and the rights granted hereunder will terminate automatically if You fail to comply with terms herein and fail to cure such breach within 30 days of becoming aware of the breach. All sublicenses to the Covered Code which are properly granted shall survive any termination of this Agreement. Provisions which, by their nature, must remain in effect beyond the termination of this Agreement shall survive.
+
+5.2. If You initiate litigation by asserting a patent infringement claim (excluding declaratory judgment actions) against BEA or a Contributor (BEA or Contributor against whom You file such action is referred to as "Participant") alleging that:
+
+(a) such Participant's Covered Code directly or indirectly infringes any patent, then any and all rights granted by such Participant to You under Sections 2.0of this Agreement shall, upon 60 days notice from Participant terminate prospectively, unless if within 60 days after receipt of notice You either: (i) agree in writing to pay Participant a mutually agreeable reasonable royalty for Your past and future use of Modifications made by such Participant, or (ii) withdraw Your litigation claim with respect to the Covered Code against such Participant. If within 60 days of notice, a reasonable royalty and payment arrangement are not mutually agreed upon in writing by the parties or the litigation claim is not withdrawn, the rights granted by Participant to You under Section 2.0 automatically terminate at the expiration of the 60 day notice period specified above.
+
+(b) any software, hardware, or device, other than such Participant's Covered Code, directly or indirectly infringes any patent, then any rights granted to You by such Participant under Sections 2.0 are revoked effective as of the date You first made, used, sold, distributed, or had made, Modifications made by that Participant.
+
+5.3. If You assert a patent infringement claim against Participant alleging that such Participant's Covered Code directly or indirectly infringes any patent where such claim is resolved (such as by license or settlement) prior to the initiation of patent infringement litigation, then the reasonable value of the licenses granted by such Participant under Sections 2.0 shall be taken into account in determining the amount or value of any payment or license.
+
+5.4. In the event of termination under Sections 5.1 or 5.2 above, all end user license agreements (excluding distributors and resellers) which have been validly granted by You or any distributor hereunder prior to termination shall survive termination.
+
+6.0  LIMITATION OF LIABILITY.
+
+UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOUBEA, ANY OTHER CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED CODE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM SUCH PARTY'S NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU.
+
+7.0  U.S. GOVERNMENT END USERS. 
+
+The Covered Code is a "commercial item," as that term is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer software" and "commercial computer software documentation," as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users acquire Covered Code with only those rights set forth herein.
+
+8.0  MISCELLANEOUS. 
+
+This Agreement represents the complete agreement concerning subject matter hereof. If any provision of this Agreement is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable. This Agreement shall be governed by California law provisions (except to the extent applicable law, if any, provides otherwise), excluding its conflict-of-law provisions. With respect to disputes in which at least one party is a citizen of, or an entity chartered or registered to do business in the United States of America, any litigation relating to this Agreement shall be subject to the jurisdiction of the Federal Courts of the Northern District of California, with venue lying in Santa Clara County, California, with the losing party responsible for costs, including without limitation, court costs and reasonable attorneys' fees and expenses. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any law or regulation which provides that the language of a contract shall be construed against the drafter shall not apply to this Agreement.
+
+9.0  RESPONSIBILITY FOR CLAIMS.
+
+As between BEA and the other Contributors, each party is responsible for claims and damages arising, directly or indirectly, out of its utilization of rights under this Agreement and You agree to work with BEA and Contributors to distribute such responsibility on an equitable basis. Nothing herein is intended or shall be deemed to constitute any admission of liability.

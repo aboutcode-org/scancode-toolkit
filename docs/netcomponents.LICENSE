@@ -1,0 +1,22 @@
+Savarese.Org
+Copyright © 1996-1999 Daniel F. Savarese.
+Copyright in this document and the software accompanying this document is owned by Daniel F. Savarese. All rights reserved.
+
+NetComponents License
+Daniel F. Savarese, hereinafter referred to as Daniel, grants you a non-exclusive, non-transferable limited license to use the software components comprising the NetComponents Java class package ("Licensed Software"). There is no fee for this license. You may not redistribute any of the Licensed Software except as follows:
+
+   1. You may reproduce and redistribute the Licensed Software in object code form only (Java .class files) and only when incorporated into your software product which adds substantial and primary functionality to the Licensed Software.
+   2. You may not permit further redistribution of the Licensed Software by your end users except as part of a new software product you develop that meets the restricions of item 1. 
+
+To clarify, you may use the Licensed Software only to build new software you develop, and you may only distribute the Licensed Software as part of this new software. You may not include the Licensed Software in a software development kit or other library or development tool that exposes the API's of the Licensed Software without first negotiating a specific license for that purpose with Daniel. Except as permitted by applicable law and this License, you may not decompile, reverse engineer, disassemble, modify, rent, lease, loan, distribute, create derivative works from the Licensed Software or transmit the Licensed Software over a network.
+
+You may not use or otherwise export or reexport the Licensed Software except as authorized by United States law and the laws of the jurisdiction in which the Licensed Software was obtained. In particular, but without limitation, the Licensed Software may not be used or otherwise exported or reexported (1) into (or to a national or resident of) any United States embargoed country or (2) to anyone on the U.S. Treasury Department't list of Specially Designated Nationals or the U.S. Department of Commerce's Table of Denial Orders. By using the Licensed Software, you represent and warrant that you are not located in, under control of, or a national or resident of any such country or on any such list.
+
+DANIEL MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF THE LICENSED SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. ORO SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE LICENSED SOFTWARE OR ITS DERIVATIVES. THE LICENSED SOFTWARE IS NOT DESIGNED FOR USE IN HIGH RISK ACTIVITIES REQUIRING FAIL-SAFE PERFORMANCE. ORO DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES.
+Restricted Rights Legend
+
+The Licensed Software and documentation is a "commercial item," as defined in 48 C.F.R. 2.101 (10/95), consisting of "commercial computer software" and "commercial computer software documentation," as defined in 48 C.F.R. 12.212 (9/95). Use, duplication, or disclosure by the U.S. Government is subject to the restrictions of U.S. GOVERNMENT END USERS consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4 (6/95).
+Trademarks
+ORO, the ORO logo, Original Reusable Objects, Component software for the Internet, and NetComponents are trademarks or registered trademarks of Daniel F. Savarese in the United States and other countries.
+
+Java is trademark of Sun Microsystems, Inc. Netscape is a trademark of Netscape Communications Corporation. All other product names mentioned are the trademarks of their respective owners.

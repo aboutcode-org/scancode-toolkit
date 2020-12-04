@@ -1,0 +1,1 @@
+{"key": "libtool-exception", "is_deprecated": true, "short_name": "Libtool Exception", "name": "GNU Libtool Exception", "category": "Copyleft Limited", "owner": "Free Software Foundation (FSF)", "notes": "replaced by libtool-exception-2.0", "is_exception": true, "other_urls": ["http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4"]}

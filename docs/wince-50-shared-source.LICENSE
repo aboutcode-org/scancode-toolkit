@@ -1,0 +1,37 @@
+Microsoft Windows CE 5.0 Shared Source License Agreement
+
+Microsoft gives you a Windows CE 5.0 Shared Source License Agreement ("License") to use the accompanying Software on the following terms:
+
+You may:
+
+   1. Correct errors in Your hardware and software operating on the Windows CE platform.
+   2. Create derivative works of the Software to debug, improve and optimize Windows CE.
+   3. Use the Software as a reference to develop Enhancements. "Enhancements" means technologies that enhance or extend the functionality or features of the Windows CE operating system and do not include any of the Software or any derivative work of the Software.
+   4. Provide system integration and technical support services to Your customers to assist them in their development, testing, or use of hardware and software, as applicable, based on the Windows CE platform.
+   5. Compile the Software and any derivative works of the Software that You create under the terms of this License and then publicly perform and display that compiled code in operation in Your device in public demonstrations at tradeshows, lectures and similar events.
+   6. Distribute derivative works of the Software only in object code form as part of Your Windows CE-based embedded product provided that You have signed a standard, royalty-bearing agreement for distribution of Windows CE.
+   7. Microsoft reserves all rights not expressly granted.
+
+You may not:
+
+   1. Use the Software or information derived from the Software for any project related to, or to make any Enhancements or derivative works of the Software for use with, a non-Microsoft operating system or related to a device or piece of hardware based on a non-Microsoft operating system.
+   2. Use the Software for patent-mining purposes, such as (i) determining if any features, functions or processes provided by the Software are covered by any patents or patent applications or (ii) using the Software as a reference or using specific knowledge of the Software to modify existing patents or patent applications or creating any continuation, continuation in part, or extension of existing patents or patent applications.
+
+In return, we simply require that you agree:
+
+   1. Not to remove any copyright notices from the Software.
+   2. Identify all derivative works of the Software, and Yourself as the author of such derivative works.
+   3. Provide end-user support for your derivative works.
+   4. Not to combine or distribute the Software (or any derivative works) with other software that is licensed pursuant to terms that seek to require that the Software (or any intellectual property in it) be licensed to or otherwise shared with others.
+   5. That if you distribute the Software in source code form, then you do so only under this License (i.e. you must include a complete copy of this License with your distribution), and if you distribute the Software solely in object form you only do so under a license that complies with this License.
+   6. That if you distribute any derivative works of the Software, you will defend, indemnify and hold Microsoft harmless from any claims, losses or damages arising from any actions brought by a third party against Microsoft to the extent caused by Your acts or omissions in connection with such distribution.
+   7. That the Software comes "as is", with no warranties. None whatsoever. This means no express, implied or statutory warranty, including without limitation, warranties of merchantability or fitness for a particular purpose or any warranty of non-infringement. Also, you must pass this disclaimer on whenever you distribute this Software.
+   8. That neither Microsoft, its affiliates, nor its suppliers are liable for any damages, including those types of damages known as indirect, special, consequential, or incidental related to the Software or this License, to the maximum extent the law permits, no matter what legal theory its based on. Also, you must pass this limitation of liability on whenever you distribute the Software.
+   9. That if you sue anyone over patents that you think may apply to this Software for a person's use of this Software, your license to this Software ends automatically.
+  10. Not to assert patents owned or licensable by You that claim (i) any inventions in any Enhancements or derivative works You develop using the Software or (ii) any inventions You derive from the Software (collectively, Your Patents) against Microsoft, Microsoft affiliates, and Microsoft Licensees (as defined below), excluding OEM/ODM Licensees (as defined below), for infringement of Your Patents on account of the making, use, sale, offer for sale, importation or other disposition or promotion of any version or portion of Windows CE. If You or Your affiliates choose to assert Your Patents against OEM/ODM Licensees on account of the OEM/ODM Licensees making, use, sale, offer for sale, importation or other disposition or promotion of Windows CE, portion thereof, or a redistributed portion thereof, then You and Your affiliates agree to offer licenses to such OEM/ODM Licensees under commercially reasonable and non-discriminatory terms and pricing.
+  11. If You assign any of Your Patents or rights to enforce any of Your Patents, You will require that the assignee(s) agree to be bound by this Section. Any such assignment by You not in accordance with this Section will be null and void.
+  12. "Microsoft Licensee" means any third party that is directly or indirectly licensed by Microsoft to exercise any legal rights with respect to Windows CE or a portion thereof or a redistributed portion thereof, including authorized distributors of Windows CE, users of Windows CE and end users of any redistributed portions of Windows CE. OEM/ODM Licensee means an original equipment/device manufacturer directly or indirectly licensed by Microsoft to use Windows CE or a portion thereof and to distribute a portion of Windows CE as binaries incorporated in that OEM/ODMs embedded system(s).
+  13. That the patent rights Microsoft is licensing only apply to the Software, not to any derivatives you make.
+  14. That your rights under this License end automatically if you breach this License in any way.
+
+If you would like to suggest changes, modifications or improvements to the Software, e-mail us.

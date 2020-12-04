@@ -1,0 +1,101 @@
+LICENSE AND WARRANTY
+Version 4.0.3
+
+The CSLA .NET framework is Copyright 2013 by Marimer, LLC. 
+
+You can use this Software for any noncommercial purpose, including 
+distributing derivative works. You can use this Software for any commercial 
+purpose other than you may not use it, in whole or in part, to create a 
+commercial framework product. 
+
+In short, you can use CSLA .NET and modify it to create other commercial or 
+business software, you just can't take the framework itself, modify it and 
+sell it as a product. 
+
+In return, the owner simply requires that you agree: 
+
+This Software License Agreement ("Agreement") is effective 
+upon your use of CSLA .NET ("Software").
+
+1. Ownership.
+The CSLA .NET framework is Copyright 2013 by Marimer, LLC, 
+Eden Prairie, MN, USA. 
+
+2. Copyright Notice.
+You must not remove any copyright notices from the Software source code. 
+
+3. License.
+The owner hereby grants a perpetual, non-exclusive, limited license to use 
+the Software as set forth in this Agreement.
+
+4. Source Code Distribution.
+If you distribute the Software in source code form you must do so only under 
+this License (i.e. you must include a complete copy of this License with 
+your distribution).
+
+5. Binary or Object Distribution.
+You may distribute the Software in binary or object form with no requirement 
+to display copyright notices to the end user. The binary or object form must 
+retain the copyright notices included in the Software source code.
+
+6. Restrictions.
+You may not sell the Software. If you create a software development framework 
+based on the Software as a derivative work, you may not sell that derivative 
+work. This does not restrict the use of the Software for creation of other 
+types of non-commercial or commercial applications or derivative works. 
+
+7. Disclaimer of Warranty.
+The Software comes "as is", with no warranties. None whatsoever. This means 
+no express, implied, statutory or other warranty, including without 
+limitation, warranties of merchantability or fitness for a particular 
+purpose, noninfringement, or the presence or absence of errors, whether or 
+not discoverable. You, and your distributees, use this Software at your own 
+risk. Also, you must pass this disclaimer on whenever you distribute 
+the Software. 
+
+8. Liability.
+Neither Marimer, LLC nor any contributor to the Software will be liable 
+for any type of direct damages or for any of those types of damages known 
+as indirect, special, consequential, incidental, punitive or exemplary 
+related to the Software or this License, to the maximum extent the law 
+permits, no matter what legal theory it’s based on. Also, you must pass 
+this limitation of liability on whenever you distribute the Software. 
+
+9. Patents.
+If you sue anyone over patents that you think may apply to the Software 
+for a person's use of the Software, your license to the Software ends 
+automatically. 
+
+The patent rights, if any, licensed hereunder only apply to the Software, 
+not to any derivative works you make. 
+
+10. Termination.
+Your rights under this License end automatically if you breach it in any way.
+
+Marimer, LLC reserves the right to release the Software under different 
+license terms or to stop distributing the Software at any time. Such an 
+election will not serve to withdraw this Agreement, and this Agreement will 
+continue in full force and effect unless terminated as stated above.
+
+11. Governing Law.
+This Agreement shall be construed and enforced in accordance with the laws 
+of the state of Minnesota, USA.
+
+12. No Assignment.
+Neither this Agreement nor any interest in this Agreement may be assigned 
+by Licensee without the prior express written approval of Developer.
+
+13. Final Agreement.
+This Agreement terminates and supersedes all prior understandings or 
+agreements on the subject matter hereof.  This Agreement may be modified 
+only by a further writing that is duly executed by both parties.
+
+14. Severability.
+If any term of this Agreement is held by a court of competent jurisdiction 
+to be invalid or unenforceable, then this Agreement, including all of the 
+remaining terms, will remain in full force and effect as if such invalid 
+or unenforceable term had never been included.
+
+15. Headings.
+Headings used in this Agreement are provided for convenience only and shall 
+not be used to construe meaning or intent.

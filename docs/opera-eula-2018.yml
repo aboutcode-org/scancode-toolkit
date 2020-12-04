@@ -1,0 +1,13 @@
+key: opera-eula-2018
+short_name: Opera EULA 2018
+name: Opera for Computers EULA 2018
+category: Proprietary Free
+owner: Opera Software ASA
+homepage_url: https://www.opera.com/eula/computers
+ignorable_urls:
+  - http://sourcecode.opera.com/
+  - https://www.opera.com/eula/computers
+  - https://www.opera.com/privacy
+  - https://www.opera.com/terms
+ignorable_emails:
+  - opensource@opera.com

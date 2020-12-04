@@ -1,0 +1,140 @@
+Telerik End User License Agreement for Kendo UI Professional
+
+(Last Updated July 16th, 2014)
+
+If You have accessed the Software, as defined below, through the Telerik Platform, this document does not apply to You. Please see http://www.telerik.com/purchase/license-agreement/platform  for the terms and conditions that apply to Your use of the Software.
+Kendo UI Professional is a suite of software components which replaces the Telerik software product previously known as Kendo UI Complete. It is offered pursuant to the terms and conditions contained below.
+
+IMPORTANT – PLEASE READ THIS END USER LICENSE AGREEMENT (THE "AGREEMENT") CAREFULLY BEFORE ATTEMPTING TO DOWNLOAD OR USE ANY SOFTWARE, DOCUMENTATION, OR OTHER MATERIALS MADE AVAILABLE THROUGH THIS WEB SITE.  THIS AGREEMENT CONSTITUTES A LEGALLY BINDING AGREEMENT BETWEEN YOU OR THE COMPANY WHICH YOU REPRESENT AND ARE AUTHORIZED TO BIND (the "Licensee" or "You"), AND TELERIK AD ("Telerik" or "Licensor"). PLEASE CHECK THE "I HAVE READ AND AGREE TO THE LICENSE AGREEMENT" BOX AT THE BOTTOM OF THIS AGREEMENT IF YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. BY CHECKING THE "I HAVE READ AND AGREE TO THE LICENSE AGREEMENT" BOX AND/OR BY PURCHASING, DOWNLOADING, INSTALLING OR OTHERWISE USING THE SOFTWARE MADE AVAILABLE BY TELERIK THROUGH THIS WEB SITE, YOU ACKNOWLEDGE (1) THAT YOU HAVE READ THIS AGREEMENT, (2) THAT YOU UNDERSTAND IT, (3) THAT YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS, AND (4) TO THE EXTENT YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY, YOU HAVE THE POWER AND AUTHORITY TO BIND THAT COMPANY.
+
+Content Management System and/or .NET component vendors are not allowed to use the Software (as defined below) without the express permission of Telerik. If You or the company You represent is a Content Management System or .NET component vendor, You may not purchase a license for or use the Software unless You contact Telerik directly and obtain permission.
+
+This is a license agreement and not an agreement for sale.
+
+1. Software License. 
+
+Subject to the terms of this Agreement, Telerik hereby grants to You the following limited, non–exclusive, non–transferable license (the "License") to use the Telerik computer software identified as Kendo UI Professional and any updates, upgrades, modifications and error corrections thereto provided to You by Telerik (the "Programs") and any accompanying documentation (the "Documentation" and, together with the Programs, the "Software") as set forth below. You are granted either a Trial License pursuant to Section 1.1 or a Commercial License with Updates and Support pursuant to Section 1.2. Which version of the License applies (i.e., Trial License or Commercial License with Updates and Support) is determined at the time of the License purchase.  
+
+For purposes of this Agreement:
+
+"Your Integrated Products" are limited to those software applications which: (i) are developed by Your Licensed Developers; (ii) add substantial functionality beyond the functionality provided by the incorporated components of the Software; and (iii) are not commercial alternatives for, or competitive in the marketplace with, the Software or any components of the Software.
+
+"Licensed Developers" (i) are limited to the number of Your employees or contractors authorized by You to use the Software to develop software specifically for You and (ii) must correspond to the maximum number of seats You have purchased from Telerik hereunder. This means that, at any given time, the number of Licensed Developers cannot exceed the number of seats that You have purchased from Telerik and for which You have paid Telerik all applicable License Fees pursuant to this Agreement. The Software is in "use" on a computer when it is loaded into temporary memory (i.e. RAM) or installed into permanent memory (e.g. hard disk or other storage device). Your Licensed Developers may install the Software on multiple machines, so long as the Software is not being used simultaneously for development purposes at any given time by more Licensed Developers than You have seats.
+
+1.1 Trial License
+
+1.1.1 License Grant. If You download the free Trial License, then, subject to the terms and conditions set forth in this Agreement, Licensor hereby grants to Licensee and Licensee hereby accepts a license to use the Software for the sole purpose of evaluating its functionality and performance. You are not allowed to integrate the Software into end products or use it for any commercial, productive or training purpose. You may not redistribute the Software. The term of the Trial License shall be 30 days. If You wish to continue using the Software beyond expiration of the Trial License, You must purchase the applicable commercial license.
+
+1.1.2 Support. You are entitled to enter five (5) support requests via Telerik’s ticketing system with a 72 hour response time (excluding Saturdays, Sundays and holidays) for thirty (30) days after download of Your initial Trial License.  For avoidance of doubt, You are not entitled to additional support requests for any Trial Licenses downloaded after Your initial download (e.g. to evaluate a different Kendo UI product or a new release), for a period of one (1) year from the date of Your initial download.
+
+1.1.3 Updates. At Telerik’s sole discretion, You may receive minor updates (i.e. service pack updates) for the Software version You are evaluating. You are not eligible to receive major updates (i.e. major revisions to or new versions of the Software) for the Software You are evaluating. Software updates replace and/or supplement (and may disable) the version of the Software that formed the basis for Your eligibility for the update. You may use the resulting updated Software only in accordance with the terms of this Trial License.
+
+1.1.4 THE TRIAL VERSION OF THE SOFTWARE IS LICENSED ‘AS IS’. YOU BEAR THE RISK OF USING IT. TELERIK GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, TELERIK EXCLUDES THE IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+1.2 Commercial License with Updates and Support.  If You purchase a Commercial License with Updates and Support, Your Licensed Developers may use the Software in minified and source code form in accordance with Section 1.3 in the development of Your Integrated Products. In addition, for the applicable period of one (1), two (2) or three (3) years from the date on which You purchased the Software, for which You have purchased updates and support (the "Subscription Period"), You will receive minor and major updates for the Software, access to certain source code for the Software, as well as the "Commercial" support package, each as described in further detail below.
+
+1.2.2 Support. During the Subscription Period, You are entitled to the "Commercial" support package as described in greater detail here: http://www.telerik.com/purchase/support-plans/kendo-ui, subject to the limitations and restrictions described in the following Fair Usage Policy. The support services for tickets submitted relating to AngularJS implementations are limited to (i) assistance with plain implementations which include AngularJS and Kendo UI widgets, (ii) assistance with implementations which utilize the Kendo Angular labs project (https://github.com/kendo-labs/angular-kendo) and its directives (project support) or (iii) implementations which require extension of the existing Kendo Angular labs project with new logic.
+
+1.2.2.1 Support Package Fair Usage Policy. Telerik may limit or terminate Your access to any or all of the support services available under the "Commercial" support package if Your use of the support services is determined by Telerik, in its sole and reasonable discretion, to be excessive.
+
+1.2.2.2 In no event will Telerik provide support of any kind to end-users of Your Integrated Products.
+
+1.2.3 Updates. During the Subscription Period, You will be eligible to receive all major and minor updates for the version of the Software that You license hereunder and source code for the Software. Updates replace and/or supplement (and may disable) the version of the Software that formed the basis for Your eligibility for the update. You may use the resulting updated Software only in accordance with the terms of this License.
+
+1.3 Source Code. The Software’s source code is provided to You so that You can create modifications under the terms of this Agreement.
+
+1.3.1 While Telerik does not claim any ownership rights in Your Integrated Products, any modifications You develop to the Software source code will be the exclusive property of Telerik, and You agree to and hereby do assign all right, title and interest in and to such modifications and all rights associated therewith to Telerik.
+
+1.3.2 You will be entitled to use modifications of the Software’s source code developed by You under the terms of this Agreement and Telerik hereby grants You a license to use such modifications pursuant to Section 1.2.
+
+1.3.3 You acknowledge that the Software’s source code is confidential and contains valuable and proprietary trade secrets of Telerik. Under no circumstances may any portion of the Software’s source code or any modified version of the source code be distributed, disclosed or otherwise made available to any third party.
+
+1.3.4 Telerik DOES NOT provide technical support for any source code that has been modified by any party other than Telerik.
+
+1.3.5 The Software’s source code is provided "as is", without warranty of any kind. Refunds are not available for any licenses that include a right to receive source code.
+
+1.4 Testing and Building License. You may also use the Software in the testing and building of Your Integrated Products. This license is not limited to a number of seats.
+
+2. License Options for Redistribution
+
+2.1 Redistribution under Commercial License. If You have purchased a Commercial License, You may distribute the Programs in minified form as embedded in Your Integrated Products to Your end-users only pursuant to an end-user license that meets the requirements of this Section. You are not permitted to distribute the Software pursuant to this Section: as a standalone product or as a part of any product other than Your Integrated Product. Your end-user license agreement must: prohibit distribution of the Software by Your Authorized End Users; limit the liability of Your licensors or suppliers to the maximum extent permitted by applicable law; and prohibit any attempt to disassemble, decompile or "unlock", decode or otherwise reverse translate or engineer, or attempt in any manner to reconstruct or discover any source code or underlying algorithms of the Software. Provided Your Authorized End-Users are in compliance with their license agreements with You, any sublicenses to use the Software granted by You to Your Authorized End-Users will survive any termination of this Agreement or the License set forth herein between You and Telerik. You are not allowed to, and are expressly prohibited from granting Your Authorized End-Users any right to further sublicense the Software.
+
+2.2 Redistribution of Kendo UI Core under Open Source License. Kendo UI Core, a suite of components licensed under the Apache 2.0 license, is shipped with Kendo UI Professional and publicly available on Github at https://github.com/telerik/kendo-ui-core. You may use and distribute the Kendo UI Core software solely pursuant to the terms of the Apache 2.0 software.  In no event may You distribute any source code other than Kendo UI Core.
+
+3. No Trademark License
+
+You may not use the Telerik product names, logos or trademarks to market Your Integrated Product.
+
+4. Delivery
+
+Telerik shall make a master copy of the Software available for download by Licensee in electronic files only.
+
+5. Updates
+
+The parties agree and acknowledge that updates provided to You as part of this Agreement may include new software products governed by additional terms and conditions. These additional terms and conditions must be accepted by You at the time You download such new products.  If You do not agree to these additional terms and conditions, You should not download the new products. In case of a conflict between the terms and conditions of this Agreement and the terms and conditions applicable to any new product made available to You as part of any updates, the terms and conditions of this Agreement shall govern.
+
+6. Term and Termination
+
+This Agreement and the License granted hereunder shall continue until terminated in accordance with this Section. Unless otherwise specified in this Agreement, the License granted hereunder shall last as long as You use the Software in compliance with the terms herein. Unless otherwise prohibited by law, and without prejudice to Telerik’s other rights or remedies, Telerik shall have the right to terminate this Agreement and the License granted hereunder immediately if You breach any of the material terms of this Agreement, and You fail to cure such material breach within thirty (30) days of receipt of notice from Telerik.  Upon termination of this Agreement, all Licenses granted to You hereunder shall terminate automatically and You shall immediately cease use and distribution of the Software; provided, however, that any sublicenses granted to Your Authorized End-Users in accordance with Section 2 shall survive such termination. You must also destroy (i) all copies of the Software not integrated into a live, functioning instance(s) of Your Integrated Product(s) already installed, implemented and deployed for Your Authorized End-User(s), and (ii) any product and company logos provided by Telerik in connection with this Agreement.
+
+7. Product Discontinuance
+
+Telerik reserves the right to discontinue the Software or any component of the Software, whether offered as a standalone product or solely as a component, at any time. However, Telerik is obligated to provide support in accordance with the terms set forth in this Agreement for all discontinued Software or components for a period of one (1) year after the date of discontinuance.
+
+8. Intellectual Property
+
+All title and ownership rights in and to the Software (including but not limited to any images, photographs, animations, video, audio, music, or text embedded in the Software), the intellectual property embodied in the Software, and any trademarks or service marks of Telerik that are used in connection with the Software are and shall at all times remain exclusively owned by Telerik and its licensors. All title and intellectual property rights in and to the content that may be accessed through use of the Software is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties. This Agreement grants You no rights to use such content. Any open source software that may be delivered by Telerik embedded in or in association with Telerik products is provided pursuant to the open source license applicable to the software and subject to the disclaimers and limitations on liability set forth in such license. As required by the Common Public License ("CPL"), if a user wishes to obtain the source code for the components licensed under the CPL a user may access them at http://wixtoolset.org.
+
+9. Limited Warranty
+
+Except as specified in Section 1.1.4 (Trial License), Telerik warrants solely to You that the Software will perform substantially in accordance with the accompanying written materials for a period of ninety (90) days after the date on which You purchase the License for the Software. Telerik does not warrant the use of the Software will be uninterrupted or error free at all times and in all circumstances, nor that program errors will be corrected. This limited warranty shall not apply to any error or failure resulting from (i) machine error, (ii) Your failure to follow operating instructions, (iii) negligence or accident, or (iv) modifications to the Software by any person or entity other than Telerik. In the event of a breach of warranty, Your sole and exclusive remedy and Telerik’s sole and exclusive obligation, is repair of all or any portion of the Software. If such remedy fails of its essential purpose, Licensee’s sole remedy and Telerik’s maximum liability shall be a refund of the paid purchase price for the defective Software only. This limited warranty is only valid if Telerik receives written notice of breach of warranty no later than thirty (30) days after the warranty period expires. EXCEPT FOR THE EXPRESS WARRANTIES SET FORTH IN THIS SECTION 9, TELERIK DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+10. Limitation of Liability
+
+To the maximum extent permitted by applicable law, in no event will Telerik be liable for any indirect, special, incidental, or consequential damages arising out of the use of or inability to use the Software, including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses, even if advised of the possibility thereof, and regardless of the legal or equitable theory (contract, tort or otherwise) upon which the claim is based. In any case, Telerik’s entire liability under any provision of this Agreement shall not exceed in the aggregate the sum of the license fees Licensee paid to Telerik for the Software giving rise to such damages, or in the case of a Trial license shall not exceed $5, notwithstanding any failure of essential purpose of any limited remedy.  Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so this exclusion and limitation may not be applicable. Telerik is not responsible for any liability arising out of content provided by Licensee or a third party that is accessed through the Software and/or any material linked through such content. Any data included in the Software upon shipment from Telerik is for testing use only and Telerik hereby disclaims any and all liability arising therefrom.
+
+11. Indemnity
+
+You agree to indemnify, hold harmless, and defend Telerik and its resellers from and against any and all claims, lawsuits and proceedings (collectively "Claims"), and all expenses, costs (including attorney's fees), judgments, damages and other liabilities resulting from such Claims, that arise or result from (i) Your use of the Software in violation of this Agreement, (ii) the use or distribution of Your Integrated Product or (iii) Your modification of the Software’s source code.
+
+12. Confidentiality
+
+Except as otherwise provided herein, each party expressly undertakes to retain in confidence all information and know-how transmitted or disclosed to the other that the disclosing party has identified as being proprietary and/or confidential or that, by the nature of the circumstances surrounding the disclosure, ought in good faith to be treated as proprietary and/or confidential, and expressly undertakes to make no use of such information and know-how except under the terms and during the existence of this Agreement. However, neither party shall have an obligation to maintain the confidentiality of information that (i) it received rightfully from a third party without an obligation to maintain such information in confidence; (ii) the disclosing party has disclosed to a third party without any obligation to maintain such information in confidence; (iii) was known to the receiving party prior to its disclosure by the disclosing party; or (iv) is independently developed by the receiving party without use of the confidential information of the disclosing party. Further, either party may disclose confidential information of the other party as required by governmental or judicial order, provided such party gives the other party prompt written notice prior to such disclosure and complies with any protective order (or equivalent) imposed on such disclosure. Without limiting the foregoing, Licensee shall treat any source code for the Programs as confidential information and shall not disclose, disseminate or distribute such materials to any third party without Telerik’s prior written permission. Each party’s obligations under this Section 12 shall apply at all times during the term of this Agreement and for five (5) years following termination of this Agreement, provided, however, that (i) obligations with respect to source code shall survive in perpetuity and (ii) trade secrets shall be maintained as such until they fall into the public domain.
+
+13. Governing Law
+
+This Agreement will be governed by the law of the Commonwealth of Massachusetts, U.S.A., without regard to the conflict of laws principles thereof. If any dispute, controversy, or claim cannot be resolved by a good faith discussion between the parties, then it shall be submitted for resolution to a state or Federal court of competent jurisdiction in Boston, Massachusetts, USA, and the parties hereby agree to submit to the jurisdiction and venue of such court. Neither the Uniform Computer Information Transactions Act nor the United Nations Convention for the International Sale of Goods shall apply to this Agreement. Failure of a party to enforce any provision of this Agreement shall not constitute or be construed as a waiver of such provision or of the right to enforce such provision.
+
+14. Entire Agreement
+
+This Agreement sets forth our entire agreement with respect to the Software and supersedes any prior or contemporaneous communications regarding the Software. You agree that You are not relying on any representation or obligation other than those set forth in this Agreement.  Use of any purchase order or other Licensee document in connection herewith shall be for administrative convenience only and all terms and conditions stated therein shall be void and of no effect unless otherwise agreed to in writing by both parties. In cases where this license is being obtained through an approved third party, these terms shall supersede any third party license or purchase agreement.
+
+15. No Assignment
+
+You may not assign, sublicense, sub-contract, or otherwise transfer this Agreement, or any rights or obligations under it, without Telerik’s prior written consent.
+
+16. Survival
+
+Any provisions of the Agreement containing license restrictions, including, but not limited to those related to the Program source code, warranties and warranty disclaimers, confidentiality obligations, limitations of liability and/or indemnity terms, and any provision of the Agreement which, by its nature, is intended to survive shall remain in effect following any termination or expiration of the Agreement.
+
+17. Severability
+
+If a particular provision of this Agreement is terminated or held by a court of competent jurisdiction to be invalid, illegal, or unenforceable, this Agreement shall remain in full force and effect as to the remaining provisions.
+
+18. Force Majeure
+
+Neither party shall be deemed in default of this Agreement if failure or delay in performance is caused by an act of God, fire, flood, severe weather conditions, material shortage or unavailability of transportation, government ordinance, laws, regulations or restrictions, war or civil disorder, or any other cause beyond the reasonable control of such party.
+
+19. Export Classifications
+
+You expressly agree not to export or re-export Telerik Software or Your Integrated Product to any country, person, entity or end user subject to U.S. export restrictions. You specifically agree not to export, re-export, or transfer the Software to any country to which the U.S. has embargoed or restricted the export of goods or services, or to any national of any such country, wherever located, who intends to transmit or transport the products back to such country, or to any person or entity who has been prohibited from participating in U.S. export transactions by any federal agency of the U.S. government. You warrant and represent that neither the U.S.A. Bureau of Export Administration nor any other federal agency has suspended, revoked or denied Your export privileges.
+
+20.  Commercial Software
+
+The Programs and the Documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the copyright laws of the United States. 
+
+21.  Reports and Audit Rights. 
+
+Licensee shall grant Telerik audit rights against Licensee twice within a calendar three hundred and sixty five (365) day period upon two weeks written notice, to verify Licensee’s compliance with this Agreement.  Licensee shall keep adequate records to verify Licensee’s compliance with this Agreement.
+
+YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND THIS AGREEMENT, AND UNDERSTAND THAT BY CONTINUING THE INSTALLATION OF THE SOFTWARE PRODUCT, BY LOADING OR RUNNING THE SOFTWARE PRODUCT, OR BY PLACING OR COPYING THE SOFTWARE ONTO YOUR COMPUTER HARD DRIVE, YOU AGREE TO BE BOUND BY THIS AGREEMENT’S TERMS AND CONDITIONS. YOU FURTHER AGREE THAT, EXCEPT FOR WRITTEN SEPARATE AGREEMENTS BETWEEN TELERIK AND YOU, THIS AGREEMENT IS A COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE PARTIES.

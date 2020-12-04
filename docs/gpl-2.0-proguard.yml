@@ -1,0 +1,9 @@
+key: gpl-2.0-proguard
+is_deprecated: yes
+short_name: GPL 2.0 with ProGuard exception
+name: GPL 2.0 with ProGuard exception
+category: Copyleft Limited
+owner: ProGuard Project
+homepage_url: http://proguard.sourceforge.net/index.html#license.html
+notes: composite replaced by roguard-exception-2.0
+is_exception: yes

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: net-snmp</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="net-snmp.yml">yml</a> -
+    <a href="net-snmp.json">json</a> -
+    <a href="net-snmp.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/net-snmp.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/net-snmp.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: net-snmp
+short_name: Net SNMP License
+name: Net SNMP License
+category: Permissive
+owner: Net-SNMP
+homepage_url: http://net-snmp.sourceforge.net/about/license.html
+notes: composite
+spdx_license_key: Net-SNMP
+minimum_coverage: 70
+ignorable_copyrights:
+  - Copyright (c) 2001-2003, Networks Associates Technology, Inc
+  - Copyright (c) 2003 Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California
+    95054, U.S.A.
+  - Copyright (c) 2003-2006, Sparta, Inc
+  - Copyright (c) 2004, Cisco, Inc and Information Network Center of Beijing University of Posts
+    and Telecommunications
+  - Copyright (c) Fabasoft R&amp;D Software GmbH &amp; Co
+  - Copyright 1989, 1991, 1992 by Carnegie Mellon University
+  - Copyright 1996, 1998-2000 The Regents of the University of California
+  - copyright (c) 2001-2003, Cambridge Broadband Ltd.
+ignorable_authors:
+  - Bernhard Penz
+ignorable_holders:
+  - Cambridge Broadband Ltd.
+  - Carnegie Mellon University
+  - Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications
+  - Fabasoft R&amp;D Software GmbH &amp; Co
+  - Networks Associates Technology, Inc
+  - Sparta, Inc
+  - Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.
+  - The Regents of the University of California
+ignorable_urls:
+  - http://net-snmp.sourceforge.net/about/license.html
+ignorable_emails:
+  - oss@fabasoft.com
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Net SNMP License
+http://net-snmp.sourceforge.net/about/license.html 
+
+Various copyrights apply to this package, listed in various separate parts 
+below.  Please make sure that you read all the parts.  Up until 2001, the 
+project was based at UC Davis, and the first part covers all code written 
+during this time.  From 2001 onwards, the project has been based at 
+SourceForge, and Networks Associates Technology, Inc hold the copyright on 
+behalf of the wider Net-SNMP community, covering all derivative work done 
+since then.  An additional copyright section has been added as Part 3 below 
+also under a BSD license for the work contributed by Cambridge Broadband Ltd. 
+to the project since 2001.
+
+An additional copyright section has been added as Part 4 below also under a 
+BSD license for the work contributed by Sun Microsystems, Inc. to the project 
+since 2003. 
+ 
+Code has been contributed to this project by many people over the years it 
+has been in development, and a full list of contributors can be found in the 
+README file under the THANKS section. 
+ 
+---- Part 1: CMU/UCD copyright notice: (BSD like) ----- 
+ 
+ 
+       Copyright 1989, 1991, 1992 by Carnegie Mellon University 
+ 
+    Derivative Work - 1996, 1998-2000 
+Copyright 1996, 1998-2000 The Regents of the University of California 
+ 
+    All Rights Reserved 
+ 
+Permission to use, copy, modify and distribute this software and its 
+documentation for any purpose and without fee is hereby granted, provided 
+that the above copyright notice appears in all copies and that both that 
+copyright notice and this permission notice appear in 
+supporting documentation, and that the name of CMU and The Regents of the 
+University of California not be used in advertising or publicity pertaining 
+to distribution of the software without specific written permission. 
+ 
+CMU AND THE REGENTS OF THE UNIVERSITY OF CALIFORNIA DISCLAIM ALL WARRANTIES 
+WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL CMU OR 
+THE REGENTS OF THE UNIVERSITY OF CALIFORNIA BE LIABLE FOR ANY SPECIAL, 
+INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING 
+FROM THE LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, 
+NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE 
+USE OR PERFORMANCE OF THIS SOFTWARE. 
+ 
+Part 2: Networks Associates Technology, Inc copyright notice (BSD)  
+ 
+Copyright (c) 2001-2003, Networks Associates Technology, Inc 
+All rights reserved. 
+  
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+  
+Redistributions of source code must retain the above copyright notice, 
+this list of conditions and the following disclaimer. 
+  
+Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the documentation 
+and/or other materials provided with the distribution. 
+  
+Neither the name of the Networks Associates Technology, Inc nor the names of 
+its contributors may be used to endorse or promote products derived from this 
+software without specific prior written permission. 
+  
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS&#39;&#39; 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE. 
+ 
+---- Part 3: Cambridge Broadband Ltd. copyright notice (BSD) ----- 
+ 
+Portions of this code are copyright (c) 2001-2003, Cambridge Broadband Ltd. 
+All rights reserved. 
+  
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+  
+Redistributions of source code must retain the above copyright notice, his 
+list of conditions and the following disclaimer. 
+  
+Redistributions in binary form must reproduce the above copyright notice, 
+this list of conditions and the following disclaimer in the    documentation 
+and/or other materials provided with the distribution. 
+  
+The name of Cambridge Broadband Ltd. may not be used to endorse or   promote 
+products derived from this software without specific prior   written 
+permission. 
+  
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS&#39;&#39; AND ANY 
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDER BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR 
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN 
+IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ 
+---- Part 4: Sun Microsystems, Inc. copyright notice (BSD) ----- 
+ 
+Copyright © 2003 Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, 
+California 95054, U.S.A. All rights reserved. 
+ 
+Use is subject to license terms below. 
+ 
+This distribution may include materials developed by third parties. 
+ 
+Sun, Sun Microsystems, the Sun logo and Solaris are trademarks or registered 
+trademarks of Sun Microsystems, Inc. in the U.S. and other countries. 
+ 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+ 
+Redistributions of source code must retain the above copyright notice, this 
+list of conditions and the following disclaimer. 
+ 
+Redistributions in binary form must reproduce the above copyright   notice, 
+this list of conditions and the following disclaimer in the    documentation 
+and/or other materials provided with the distribution. 
+ 
+Neither the name of the Sun Microsystems, Inc. nor the names of its 
+contributors may be used to endorse or promote products derived from this 
+software without specific prior written permission. 
+ 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS&#39;&#39; 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE. 
+ 
+---- Part 5: Sparta, Inc copyright notice (BSD) ----- 
+ 
+Copyright (c) 2003-2006, Sparta, Inc 
+All rights reserved. 
+  
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+  
+Redistributions of source code must retain the above copyright notice,  this 
+list of conditions and the following disclaimer. 
+  
+Redistributions in binary form must reproduce the above copyright   notice, 
+this list of conditions and the following disclaimer in the    documentation 
+and/or other materials provided with the distribution. 
+  
+Neither the name of Sparta, Inc nor the names of its contributors may  be 
+used to endorse or promote products derived from this software    without 
+specific prior written permission. 
+  
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS&#39;&#39; 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE. 
+ 
+---- Part 6: Cisco/BUPTNIC copyright notice (BSD) ----- 
+ 
+Copyright (c) 2004, Cisco, Inc and Information Network Center of Beijing 
+University of Posts and Telecommunications. 
+All rights reserved. 
+  
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+  
+Redistributions of source code must retain the above copyright notice, this 
+list of conditions and the following disclaimer. 
+  
+Redistributions in binary form must reproduce the above copyright    notice, 
+this list of conditions and the following disclaimer in the   documentation 
+and/or other materials provided with the distribution. 
+  
+Neither the name of Cisco, Inc, Beijing University of Posts and 
+Telecommunications, nor the names of their contributors may be used to 
+endorse or promote products derived from this software without specific prior 
+written permission. 
+  
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS ``AS IS&#39;&#39; 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE. 
+ 
+---- Part 7: Fabasoft R&amp;D Software GmbH &amp; Co KG copyright notice (BSD) ----- 
+ 
+Copyright (c) Fabasoft R&amp;D Software GmbH &amp; Co KG, 2003 
+oss@fabasoft.com 
+Author: Bernhard Penz  
+ 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met: 
+  
+Redistributions of source code must retain the above copyright notice, this 
+list of conditions and the following disclaimer. 
+  
+Redistributions in binary form must reproduce the above copyright    notice, 
+this list of conditions and the following disclaimer in the   documentation 
+and/or other materials provided with the distribution. 
+ 
+The name of Fabasoft R&amp;D Software GmbH &amp; Co KG or any of its subsidiaries, 
+brand or product names may not be used to endorse or promote products derived 
+from this software without specific prior written permission. 
+ 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER ``AS IS&#39;&#39; AND ANY 
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT HOLDER BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR 
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN 
+IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

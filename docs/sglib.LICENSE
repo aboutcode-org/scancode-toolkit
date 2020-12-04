@@ -1,0 +1,12 @@
+Basically, I only care that you do not remove the Copyright notice from the
+source code when using Sglib.
+
+More precisely: you can use Sglib or its derivative forms (under the condition
+that the Copyright notice is preserved) in any project, whether commercial or
+not, free of charges. In particular, you can use Sglib under the terms of any
+license defined as an open source license by the Open Source Initiative
+(see http://www.opensource.org/). This includes most common open source licenses
+such as the BSD license and GNU GPL.
+
+If you need to use sglib under any particular license conditions, contact the
+author.

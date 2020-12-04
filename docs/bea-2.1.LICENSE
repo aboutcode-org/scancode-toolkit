@@ -1,0 +1,52 @@
+BEA Public License Version 2.1
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. 	Definitions.
+
+"License" shall mean the terms and conditions of this agreement.
+
+"Licensor" shall mean BEA Systems, Inc.
+
+"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity. 
+
+"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License, including but not limited to each Contributor other than Licensor in such Contributor's role as a licensee for the Software.
+
+"Source Format" shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.
+
+"Object Format" shall mean any form resulting from mechanical transformation or translation of a Source Format, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+
+"Software" shall mean the original version of the software accompanying this agreement as released by BEA, including in Source or Object Format, and also any documentation provided therewith.
+
+"Derivative Works" shall mean any work, whether in Source or Object Format, that is based on (or derived from) the Software and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Software and derivative works
+thereof.
+
+"Contribution" shall mean any work of authorship, including the original version of the Software and any modifications or additions to that Software or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Software by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Software, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as "Not a Contribution."
+
+"Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Software.
+
+2. 	Grant of Copyright License.   Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Software and such Derivative Works in Source or Object Format.  Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the foregoing copyright license.
+
+3. 	Grant of Patent License. 	Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Software, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Software to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Software or a Contribution incorporated within the Software constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Software shall terminate as of the date such litigation is filed. 
+
+4. 	Redistribution. You may reproduce and distribute copies of the Software or Derivative Works thereof in any medium, with or without modifications, and in Source or Object Format, provided that You meet the following conditions: 
+
+     (a) 	You must give any other recipients of the Software or Derivative Works a copy of this License; and
+
+     (b) 	You must cause any modified files to carry prominent notices stating that You changed the files; and
+
+(c) 	You must retain, in the Source Format of any Derivative Works that You distribute, BEA's copyright notice, © [Date] BEA Systems, Inc.  All rights Reserved. and all other copyright, patent, trademark, and attribution notices from the Source Format of the Software, excluding those notices that do not pertain to any part of the Derivative Works; and 
+
+(d)	You must affix to the Software or any Derivative Works in a prominent manner BEA's copyright notice, © [Date] BEA Systems, Inc.  All rights Reserved whenever You distribute the Software or such Derivative Works in Object Format.
+
+You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Software otherwise complies with the conditions stated in this License.
+
+5. 	Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Software by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions.  Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+
+6. 	Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Software and reproducing the content of the NOTICE file.
+
+7. 	Disclaimer of Warranty.  EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using and distributing the Software and assume all risks associated with Your exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.  Further, You understand that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that its Contribution does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to You for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, You hereby assume sole responsibility to secure any other intellectual property rights needed, if any.
+
+8. 	Limitation of Liability.  EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE SOFTWARE OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+9. 	Accepting Warranty or Additional Liability. Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Software, if You include the Software in a commercial product offering, You may do so only in a manner which does not create potential liability for any Contributor. Therefore, if You include the Software in a commercial product offering, You shall and hereby do agree to defend and indemnify each and every Contributor against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against such Contributor(s) to the extent caused by Your acts or omissions in connection with Your distribution of the Software in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify to receive indemnification from You, a Contributor must: a) promptly notify You in writing of such claim, and b) allow the You to control, and cooperate with the You in, the defense and any related settlement negotiations. The Contributor indemnified by You may participate in any such claim at its own expense.

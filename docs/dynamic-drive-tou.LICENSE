@@ -1,0 +1,84 @@
+Dynamic Drive DHTML scripts- Terms of Use
+
+Unless indicated otherwise by the credit, all scripts on this site are original
+scripts written by the authors of Dynamic Drive, and are protected by both US
+and international copyright laws. The below lists the terms of use users of
+Dynamic Drive must agree to before using the programs/scripts (Last updated: May
+22nd, 06):
+
+1. Users may use any DHTML scripts offered for download on Dynamic Drive, free
+of charge, on both personal and commercial web sites. This includes web
+designers who wish to use our DHTML scripts in their paid web site projects.
+
+2. You may modify our scripts to customize them based on your needs.
+
+3. Users may NOT, however, redistribute or repost/ resell for download any DHTML
+script found on Dynamic Drive. Redistribution is defined as re-offering our
+scripts for download in any fashion, whether on a competing web site, an
+application that generates code snippets, or a CD-ROM collection of
+CSS/JavaScript codes etc. Some examples of what is acceptable and what is not
+are:
+
+Acceptable: 
+
+-Use our DHTML scripts on any personal or commercial web site to aid in its
+functionality/ usability.
+
+-As a web designer, use our DHTML scripts in your paid projects for your client
+web sites. 
+
+-As a software developer, use our DHTML scripts within a application/ program as
+part of its interface, such as a CSS menu being used as the program's navigation
+interface. The program itself can be distributable. 
+
+In all cases above, the credit notice within the script must remain intact and
+unaltered.
+
+Not Acceptable: 
+
+-Put our DHTML scripts on another script library or webmaster type site for
+others to download. 
+
+-Use our DHTML scripts in any type of service or application whereby our codes
+are part of the product offerings themselves. 
+
+-Put our DHTML scripts in any other types of medium for direct redistribution,
+such as a CD-ROM that consists of, but not limited to, webmaster codes and web
+graphics.
+
+4. Users agree not to remove/ edit the credit notice within the DHTML source
+code, or claim the code to be work of their own. What is the copyright notice?
+It appears inside the <script> tag of each script, and looks something like
+this:
+
+/*********************************************** 
+* Dynamic Countdown script- © Dynamic Drive (http://www.dynamicdrive.com) 
+* This notice MUST stay intact for legal use 
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+Sometimes you may wish to move the DHTML script to an external .js file. In such
+instances, the credit notice must still be retained within the SCRIPT tags, in
+the page's visible source:
+
+<script src="countdown.js" type="text/javascript">
+/*********************************************** 
+* Dynamic Countdown script- © Dynamic Drive (http://www.dynamicdrive.com) 
+* This notice MUST stay intact for legal use 
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+</script>
+
+5. Users agree not to use scripts found on Dynamic Drive for illegal purposes,
+or on pages containing illegal material.
+
+6. Users agree not to hold Dynamic Drive liable for any damages resulted from
+proper or improper use of any of the scripts found on Dynamic Drive. Use at your
+own risk.
+
+7. Users are not required to link back to Dynamic Drive to use our DHTML
+scripts, as much as they are appreciated. :)
+
+By using any of the scripts on Dynamic Drive, you understand that you have read
+and agreed to the above usage terms. These terms will be strictly enforced, and
+violators will face criminal charges. Don't say our lawyer didn't warn you!

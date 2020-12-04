@@ -1,0 +1,19 @@
+This program has been developed by Intel Corporation.
+You have Intel's permission to incorporate this code
+into your product, royalty free.  Intel has various
+intellectual property rights which it may assert under
+certain circumstances, such as if another manufacturer's
+processor mis-identifies itself as being "GenuineIntel"
+when the CPUID instruction is executed.
+
+Intel specifically disclaims all warranties, express or
+implied, and all liability, including consequential and
+other indirect damages, for the use of this code,
+including liability for infringement of any proprietary
+rights, and including the warranties of merchantability
+and fitness for a particular purpose.  Intel does not
+assume any responsibility for any errors which may
+appear in this code nor any responsibility to update it.
+
+Other brands and names are the property of their respective
+owners.

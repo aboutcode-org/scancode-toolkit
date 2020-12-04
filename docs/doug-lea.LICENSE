@@ -1,0 +1,37 @@
+Doug Lea License
+
+Doug Lea - 8094a
+
+Your File: Barrier.java File: Barrier.java
+
+Originally written by Doug Lea and released into the public domain. This may be used for any purposes whatsoever without acknowledgment.
+
+Thanks for the assistance and support of Sun Microsystems Labs, and everyone contributing, testing, and using this code.
+
+History: Date Who What 11Jun1998 dl Create public version
+
+Lea - 8094b
+
+Your File: BrokenBarrierException.java
+
+File: BrokenBarrierException.java . Originally written by Doug Lea and released into the public domain. This may be used for any purposes whatsoever without acknowledgment.
+
+Thanks for the assistance and support of Sun Microsystems Labs, and everyone contributing, testing, and using this code.
+
+History: Date Who WhatLea - 8094c
+
+Your File: CyclicBarrier.java File: CyclicBarrier.java
+
+Originally written by Doug Lea and released into the public domain. This may be used for any purposes whatsoever without acknowledgment.
+
+Thanks for the assistance and support of Sun Microsystems Labs, and everyone contributing, testing, and using this code.
+
+History: Date Who What 11Jul1998 dl Create public version 28Aug1998 dl minor code simplification
+
+Lea - 80094d
+
+Your File: TimeoutException.java File: TimeoutException.java
+
+Originally written by Doug Lea and released into the public domain. This may be used for any purposes whatsoever without acknowledgment.
+
+Thanks for the assistance and support of Sun Microsystems Labs, and everyone contributing, testing, and using this code.

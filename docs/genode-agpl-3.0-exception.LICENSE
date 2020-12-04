@@ -1,0 +1,36 @@
+
+                        Linking exception clause
+
+
+  The Genode OS Framework (Genode) is licensed under the terms of the
+  GNU Affero General Public License version 3 (AGPLv3).
+
+  Linking Genode code statically or dynamically with other modules
+  is making a combined work based on Genode. Thus, the terms and
+  conditions of the AGPLv3 cover the whole combination.
+
+  As an "additional permission" as defined by Section 7 of the
+  AGPLv3, Genode Labs as the copyright holder of Genode gives you
+  permission to link Genode source code with "independent modules"
+  to produce an executable if the independent modules are licensed
+  under an "approved license", and to copy and distribute the
+  resulting executable under terms of your choice, provided that you
+  also meet, for each linked independent module, the terms and
+  conditions of the license of that module.
+
+  An "approved license" is a license that is officially approved as
+  an Open-Source license by the Open Source Initiative [1], or
+  listed as a Free-Software license by the Free Software Foundation
+  [2], or explicitly approved by Genode Labs.
+
+  An "independent module" is a module which is not derived from or
+  based on Genode, or merely uses the Genode API as defined in the
+  official documentation.
+
+  If you modify Genode, you may extend this exception to your
+  version of Genode, but you are not obliged to do so. If you do not
+  wish to do so, delete this exception statement from your version.
+
+  [1] https://opensource.org/licenses
+  [2] https://www.gnu.org/licenses/license-list.en.html
+

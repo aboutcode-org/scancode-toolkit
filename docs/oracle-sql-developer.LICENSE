@@ -1,0 +1,80 @@
+Oracle SQL Developer License Terms 
+Oracle SQL Developer Data Modeler License Terms
+
+Export Controls on the Programs 
+Selecting the "Accept License Agreement" button is a confirmation of your agreement that you comply, now and during the trial term, with each of the following statements:
+
+-You are not a citizen, national, or resident of, and are not under control of, the government of Cuba, Iran, Sudan, Libya, North Korea, Syria, nor any country to which the United States has prohibited export. 
+-You will not download or otherwise export or re-export the Programs, directly or indirectly, to the above mentioned countries nor to citizens, nationals or residents of those countries. 
+-You are not listed on the United States Department of Treasury lists of Specially Designated Nationals, Specially Designated Terrorists, and Specially Designated Narcotic Traffickers, nor are you listed on the United States Department of Commerce Table of Denial Orders.
+
+
+You will not download or otherwise export or re-export the Programs, directly or indirectly, to persons on the above mentioned lists.
+
+You will not use the Programs for, and will not allow the Programs to be used for, any purposes prohibited by United States law, including, without limitation, for the development, design, manufacture or production of nuclear, chemical or biological weapons of mass destruction.
+
+EXPORT RESTRICTIONS 
+You agree that U.S. export control laws and other applicable export and import laws govern your use of the programs, including technical data; additional information can be found on Oracle®'s Global Trade Compliance web site (http://www.oracle.com/products/export).
+
+You agree that neither the programs nor any direct product thereof will be exported, directly, or indirectly, in violation of these laws, or will be used for any purpose prohibited by these laws including, without limitation, nuclear, chemical, or biological weapons proliferation.
+
+Oracle Employees: Under no circumstances are Oracle Employees authorized to download software for the purpose of distributing it to customers. Oracle products are available to employees for internal use or demonstration purposes only. In keeping with Oracle's trade compliance obligations under U.S. and applicable multilateral law, failure to comply with this policy could result in disciplinary action up to and including termination.
+
+Note: You are bound by the Oracle Technology Network ("OTN") License Agreement terms. The OTN License Agreement terms also apply to all updates you receive under your Technology Track subscription.
+
+The OTN License Agreement terms below supercede any shrinkwrap license on the OTN Technology Track software CDs and previous OTN License terms (including the Oracle Program License as modified by the OTN Program Use Certificate).
+
+Oracle SQL Developer License Agreement 
+Oracle SQL Developer Data Modeler License Agreement
+
+We," "us," and "our" refers to Oracle America, Inc., for and on behalf of itself and its subsidiaries and affiliates under common control. "You" and "your" refers to the individual or entity that wishes to use the programs from Oracle. "Programs" refers to the Oracle software product you wish to download and use and program documentation. "License" refers to your right to use the programs under the terms of this agreement. This agreement is governed by the substantive and procedural laws of California. You and Oracle agree to submit to the exclusive jurisdiction of, and venue in, the courts of San Francisco, San Mateo, or Santa Clara counties in California in any dispute arising out of or relating to this agreement.
+
+We are willing to license the programs to you only upon the condition that you accept all of the terms contained in this agreement. Read the terms carefully and select the "Accept" button at the bottom of the page to confirm your acceptance. If you are not willing to be bound by these terms, select the "Do Not Accept" button and the registration process will not continue.
+
+LICENSE RIGHTS 
+We grant you a nonexclusive, nontransferable limited license to use the programs solely for your business operations and any third party training as part of such business operations. We may audit your use of the programs. Program documentation may be accessed online at http://www.oracle.com/technetwork/indexes/documentation/index.html. 
+
+Ownership and Restrictions 
+We retain all ownership and intellectual property rights in the programs. You may make a sufficient number of copies of the programs for the licensed use and one copy of the programs for backup purposes.
+
+You may not: 
+- remove or modify any program markings or any notice of our proprietary rights; 
+- make the programs available in any manner to any third party, other than as specified above; 
+- use the programs for any purpose other than as provided above; 
+- assign this agreement or give or transfer the programs or an interest in them to another individual or entity; 
+- cause or permit reverse engineering (unless required by law for interoperability), disassembly or decompilation of the programs; 
+- disclose results of any program benchmark tests without our prior consent.
+
+Export 
+You agree that U.S. export control laws and other applicable export and import laws govern your use of the programs, including technical data; additional information can be found on Oracle's Global Trade Compliance web site located at http://www.oracle.com/products/export/index.html?content.html. You agree that neither the programs nor any direct product thereof will be exported, directly, or indirectly, in violation of these laws, or will be used for any purpose prohibited by these laws including, without limitation, nuclear, chemical, or biological weapons proliferation.
+
+Disclaimer of Warranty and Exclusive Remedies
+THE PROGRAMS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. WE FURTHER DISCLAIM ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+
+IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA OR DATA USE, INCURRED BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR ENTIRE LIABILITY FOR DAMAGES HEREUNDER SHALL IN NO EVENT EXCEED ONE THOUSAND DOLLARS (U.S. $1,000).
+
+Trial Programs Included With Orders 
+We may include additional programs with an order which may be used for trial purposes only. You will have 30 days from the delivery date to evaluate these programs. Any use of these programs after the 30 day trial period requires you to obtain the applicable license. Programs licensed for trial purposes are provided "as is" and we do not provide technical support or any warranties for these programs.
+
+Technical Support 
+Our technical support organization does not provide technical support, phone support, or updates specifically for the programs licensed under this agreement. However, if you have a supported license of an Oracle database program, then the technical support organization will provide technical support, phone support for the program licensed hereunder in conjunction with the Oracle database program license.
+
+End of Agreement 
+You may terminate this agreement by destroying all copies of the programs. We have the right to terminate your right to use the programs if you fail to comply with any of the terms of this agreement, in which case you shall destroy all copies of the programs.
+
+Relationship Between the Parties 
+The relationship between you and us is that of licensee/licensor. Neither party will represent that it has any authority to assume or create any obligation, express or implied, on behalf of the other party, nor to represent the other party as agent, employee, franchisee, or in any other capacity. Nothing in this agreement shall be construed to limit either party's right to independently develop or distribute software that is functionally similar to the other party's products, so long as proprietary information of the other party is not included in such software.
+
+Open Source 
+Third party technology that may be appropriate or necessary for use with the program may be specified in the program documentation. To the extent stated in the program documentation, such third party technology is licensed to you under the terms of the third party technology license agreement specified in the program documentation and not under the terms of this agreement. Nothing in this agreement should be construed as modifying or limiting your rights to use such third party technology under the terms of the specified third party license.
+
+Entire Agreement 
+You agree that this agreement is the complete agreement for the programs and licenses, and this agreement supersedes all prior or contemporaneous agreements or representations. If any term of this agreement is found to be invalid or unenforceable, the remaining provisions will remain effective.
+
+Last updated: 09/17/10 (jlr)
+Should you have any questions concerning this License Agreement, or if you desire to contact Oracle for any reason, please write: 
+Oracle America, Inc. 
+500 Oracle Parkway, 
+Redwood City, CA 94065 
+
+Oracle may contact you to ask if you had a satisfactory experience installing and using this OTN software download.

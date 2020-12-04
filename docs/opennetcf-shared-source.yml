@@ -1,0 +1,10 @@
+key: opennetcf-shared-source
+short_name: OpenNETCF Shared Source License
+name: OpenNETCF Shared Source License
+category: Proprietary Free
+owner: OpenNETCF Consulting
+homepage_url: http://www.opennetcf.com/products/licenses.aspx
+ignorable_copyrights:
+  - (c) 2006-2012 OpenNETCF Consulting, LLC.
+ignorable_holders:
+  - OpenNETCF Consulting, LLC.

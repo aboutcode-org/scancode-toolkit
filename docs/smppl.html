@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: smppl</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="smppl.yml">yml</a> -
+    <a href="smppl.json">json</a> -
+    <a href="smppl.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smppl.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/smppl.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: smppl
+short_name: SMPPL
+name: Secure Messaging Protocol Public License
+category: Copyleft Limited
+owner: National Security Agency
+homepage_url: https://github.com/dcblake/SMP/blob/master/Documentation/License.txt
+spdx_license_key: SMPPL
+ignorable_copyrights:
+  - Copyright (c) 1997-2002 National Security Agency
+ignorable_authors:
+  - the U.S. Government. BAE Systems
+ignorable_holders:
+  - National Security Agency
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>Secure Messaging Protocol (SMP) Libraries [ACL, CML, SFL]
+Distribution Rights
+
+All source code for the SMP is being provided at no cost and with no financial limitations regarding its use and distribution. Organizations can use the SMP without paying any royalties or licensing fees. The SMP was originally developed by the U.S. Government. BAE Systems is enhancing and supporting the SMP under contract to the U.S. Government. The U.S. Government is furnishing the SMP software at no cost to the vendor subject to the conditions of the SMP Public License provided with the SMP software.
+
+29 May 2002
+
+Secure Messaging Protocol (SMP) Public License
+
+The United States Government/Department of Defense/National Security Agency/Office of Network Security (collectively &#34;the U.S. Government&#34;) hereby grants permission to any person obtaining a copy of the SMP source and object files (the &#34;SMP Software&#34;) and associated documentation files (the &#34;SMP Documentation&#34;), or any portions thereof, to do the following, subject to the following license conditions:
+
+You may, free of charge and without additional permission from the U.S. Government, use, copy, modify, sublicense and otherwise distribute the SMP Software or components of the SMP Software, with or without modifications developed by you and/or by others.
+
+You may, free of charge and without additional permission from the U.S. Government, distribute copies of the SMP Documentation, with or without modifications developed by you and/or by others, at no charge or at a charge that covers the cost of reproducing such copies, provided that this SMP Public License is retained.
+
+Furthermore, if you distribute the SMP Software or parts of the SMP Software, with or without modifications developed by you and/or others, then you must either make available the source code to all portions of the SMP Software (exclusive of any modifications made by you and/or by others) upon request, or instead you may notify anyone requesting the SMP Software source code that it is freely available from the U.S. Government.
+
+Transmission of this SMP Public License must accompany whatever portions of the SMP Software you redistribute.
+
+The SMP Software is provided without warranty or guarantee of any nature, express or implied, including without limitation the warranties of merchantability and fitness for a particular purpose.
+
+The U.S. Government cannot be held liable for any damages either directly or indirectly caused by the use of the SMP Software.
+
+It is not permitted to copy, sublicense, distribute or transfer any of the SMP Software except as expressly indicated herein. Any attempts to do otherwise will be considered a violation of this License and your rights to the SMP Software will be voided.
+
+The SMP uses the Enhanced SNACC (eSNACC) Abstract Syntax Notation One (ASN.1) C++ Library to ASN.1 encode and decode security-related data objects. The eSNACC ASN.1 C++ Library is covered by the ENHANCED SNACC SOFTWARE PUBLIC LICENSE. None of the GNU public licenses apply to the eSNACC ASN.1 C++ Library. The eSNACC Compiler is not distributed as part of the SMP.
+
+Copyright © 1997-2002 National Security Agency</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

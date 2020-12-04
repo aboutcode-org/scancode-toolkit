@@ -1,0 +1,8 @@
+key: android-sdk-2012
+short_name: Android SDK License 2012
+name: Android Software Development Kit License Agreement 2012
+category: Proprietary Free
+owner: Google
+homepage_url: https://developer.android.com/sdk/terms.html
+ignorable_urls:
+  - http://source.android.com/

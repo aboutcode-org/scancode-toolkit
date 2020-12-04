@@ -1,0 +1,68 @@
+Hewlett Packard Enterprise Support Center
+
+HPE End User License Agreement
+
+Applicability. This end user license agreement (the "Agreement") governs the use of accompanying software, unless it is subject to a separate agreement between you and Hewlett Packard Enterprise Company and its subsidiaries ("HPE"). By downloading, copying, or using the software you agree to this Agreement. HPE provides translations of this Agreement in certain languages other than English, which may be found at: http://www.hpe.com/software/SWLicensing.
+
+Terms. This Agreement includes supporting material accompanying the software or referenced by HPE, which may be software license information, additional license authorizations, software specifications, published warranties, supplier terms, open source software licenses and similar content ("Supporting Material"). Additional license authorizations are at: http://www.hpe.com/software/SWLicensing.
+
+Authorization. If you agree to this Agreement on behalf of another person or entity, you warrant you have authority to do so.
+
+Consumer Rights. If you obtained software as a consumer, nothing in this Agreement affects your statutory rights.
+
+Electronic Delivery. HPE may elect to deliver software and related software product or license information by electronic transmission or download.
+
+License Grant. If you abide by this Agreement, HPE grants you a non-exclusive non-transferable license to use one copy of the version or release of the accompanying software for your internal purposes only, and is subject to any specific software licensing information that is in the software product or its Supporting Material. 
+
+Your use is subject to the following restrictions, unless specifically allowed in Supporting Material:
+You may not use software to provide services to third parties.
+You may not make copies and distribute, resell or sublicense software to third parties.
+You may not download and use patches, enhancements, bug fixes, or similar updates unless you have a license to the underlying software. However, such license doesn't automatically give you a right to receive such updates and HPE reserves the right to make such updates only available to customers with support contracts.
+You may not copy software or make it available on a public or external distributed network.
+You may not allow access on an intranet unless it is restricted to authorized users.
+You may make one copy of the software for archival purposes or when it is an essential step in authorized use.
+You may not modify, reverse engineer, disassemble, decrypt, decompile or make derivative works of software. If you have a mandatory right to do so under statute, you must inform HPE in writing about such modifications.
+
+Remote Monitoring. Some software may require keys or other technical protection measures and HPE may monitor your compliance with the Agreement, remotely or otherwise. If HPE makes a license management program for recording and reporting license usage information, you will use such program no later than 180 days from the date it's made available.
+
+Ownership. No transfer of ownership of any intellectual property will occur under this Agreement.
+
+Copyright Notices. You must reproduce copyright notices on software and documentation for authorized copies.
+
+Operating Systems. Operating system software may only be used on approved hardware and configurations.
+
+90-day Limited Warranty for HPE Software.
+HPE-branded software materially conforms to its specifications, if any, and is free of malware at the time of delivery; if you notify HPE within 90 days of delivery of non-conformance to this warranty, HPE will replace your copy. This Agreement states all remedies for warranty claims.
+HPE does not warrant that the operation of software will be uninterrupted or error free, or that software will operate in hardware and software combinations other than as authorized by HPE in Supporting Material. To the extent permitted by law, HPE disclaims all other warranties.
+
+Intellectual Property Rights Infringement. HPE will defend and/or settle any claims against you that allege that HPE-branded software as supplied under this Agreement infringes the intellectual property rights of a third party. HPE will rely on your prompt notification of the claim and cooperation with our defense. HPE may modify the software so as to be non-infringing and materially equivalent, or we may procure a license. If these options are not available, we will refund to you the amount paid for the affected product in the first year or the depreciated value thereafter. HPE is not responsible for claims resulting from any unauthorized use of the software.
+
+Limitation of Liability. HPE's liability to you under this Agreement is limited to the amount actually paid by you to HPE for the relevant software, except for amounts in Section 12 ("Intellectual Property Rights Infringement"). Neither you nor HPE will be liable for lost revenues or profits, downtime costs, loss or damage to data or indirect, special or consequential costs or damages. This provision does not limit either party's liability for: unauthorized use of intellectual property, death or bodily injury caused by their negligence; acts of fraud; willful repudiation of the Agreement; or any liability that may not be excluded or limited by applicable law.
+
+Termination. This Agreement is effective until terminated or in the case of a limited-term license, upon expiration; however, your rights under this Agreement terminate if you fail to comply with it. Immediately upon termination or expiration, you will destroy the software and documentation and any copies, or return them to HPE. You may keep one copy of software and documentation for archival purposes. We may ask you to certify in writing you have complied with this section. Warranty disclaimers, the limitation of liability, this section on termination, and Section 15 ("General") will survive termination.
+
+General.
+Assignment. You may not assign this Agreement without prior written consent of HPE, payment of transfer fees and compliance with HPE's software license transfer policies. Authorized assignments will terminate your license to the software and you must deliver software and documentation and copies thereof to the assignee. The assignee will agree in writing to this Agreement. You may only transfer firmware if you transfer associated hardware.
+
+U.S. Government. If the software is licensed to you for use in the performance of a U.S. Government prime contract or subcontract, you agree that, consistent with FAR 12.211 and 12.212, commercial computer software, computer software documentation and technical data for commercial items are licensed under HPE's standard commercial license.
+
+Global Trade Compliance. You agree to comply with the trade-related laws and regulations of the U.S. and other national governments. If you export, import or otherwise transfer products provided under this Agreement, you will be responsible for obtaining any required export or import authorizations. You confirm that you are not located in a country that is subject to trade control sanctions (currently Cuba, Iran, N. Korea, N. Sudan, and Syria) and further agree that you will not retransfer the products to any such country. HPE may suspend its performance under this Agreement to the extent required by laws applicable to either party.
+
+Audit. HPE may audit you for compliance with the software license terms. Upon reasonable notice, HPE may conduct an audit during normal business hours (with the auditor's costs being at HPE's expense). If an audit reveals underpayments then you will pay to HPE such underpayments. If underpayments discovered exceed five (5) percent, you will reimburse HPE for the auditor costs.
+
+Open Source Components. To the extent the Supporting Material includes open source licenses, such licenses shall control over this Agreement with respect to the particular open source component. To the extent Supporting Material includes the GNU General Public License or the GNU Lesser General Public License: (a) the software includes a copy of the source code; or (b) if you downloaded the software from a website, a copy of the source code is available on the same website; or (c) if you send HPE written notice, HPE will send you a copy of the source code for a reasonable fee.
+
+Notices. Written notices under this Agreement may be provided to HPE via the method provided in the Supporting Material.
+
+Governing Law. This Agreement will be governed by the laws of the state of California, U.S.A., excluding rules as to choice and conflict of law. You and HPE agree that the United Nations Convention on Contracts for the International Sale of Goods will not apply.
+
+Force Majeure. Neither party will be liable for performance delays nor for non-performance due to causes beyond its reasonable control, except for payment obligations.
+
+Entire Agreement. This Agreement represents our entire understanding with respect to its subject matter and supersedes any previous communication or agreements that may exist. Modifications to the Agreement will be made only through a written amendment signed by both parties. If HPE doesn't exercise its rights under this Agreement, such delay is not a waiver of its rights.
+
+Australian Consumers. If you acquired the software as a consumer within the meaning of the 'Australian Consumer Law' under the Australian Competition and Consumer Act 2010 (Cth) then despite any other provision of this Agreement, the terms at this URL apply: http://www.hpe.com/software/SWLicensing.
+
+Russian Consumers. If you are based in the Russian Federation and the rights to use the software are provided to you under a separate license and/or sublicense agreement concluded between you and a duly authorized HPE partner, then this Agreement shall not be applicable.
+
+5012-3777 v1.5, 2016    
+Copyright 2015 Hewlett Packard Enterprise Development LP

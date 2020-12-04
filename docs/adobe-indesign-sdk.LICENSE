@@ -1,0 +1,120 @@
+ADOBE SOFTWARE DEVELOPMENT KIT LICENSE FOR INDESIGN, INDESIGN SERVER AND INCOPY SOFTWARE.
+
+NOTICE TO USER: THIS IS A LICENSE BETWEEN YOU AND ADOBE. BY INDICATING YOUR ACCEPTANCE BELOW, YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS LICENSE. THIS LICENSE ACCOMPANIES THE SOFTWARE DEVELOPMENT KIT(S) FOR ADOBE INDESIGN, INDESIGN SERVER AND/OR INCOPY SOFTWARE AND RELATED EXPLANATORY MATERIALS (COLLECTIVELY, THE "SDK") AND INCLUDES ANY UPGRADES, MODIFIED VERSIONS, UPDATES, ADDITIONS, AND COPIES OF THE SDK LICENSED TO YOU BY ADOBE.
+
+1. Definitions.
+
+1.1 Adobe means Adobe Systems Incorporated, a Delaware corporation, 345 Park Avenue, San Jose, California 95110, if Section 11 of this License applies; otherwise, it means Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Campus, Dublin 24, Ireland, a company organized under the laws of Ireland and an affiliate and licensee of Adobe Systems Incorporated.
+
+1.2 API Development Software means the SDK API (Application Programming Interface) Specification, header files, JAR files, the SDK Plug-In APIs as defined in the header files and demonstrated in plug-in example code and related information in object code format and/or as libraries, both native and Java, not otherwise made available by Adobe as a commercial product, that Adobe has included for You as part of the SDK to distribute unmodified with Your application programs.
+
+1.3 Content Files means sample and stock photographs, images, sounds, clip art and other artistic works included as part of the SDK.
+
+1.4 Developer, You and Your refer to any person or entity acquiring or using the SDK under the terms of this License.
+
+1.5 Documentation means the written materials accompanying this License, including, for example, technical specifications, file format documentation and application programming interface (API) information.
+
+1.6 Effective Date means the date that You download or otherwise access the any portion of the SDK.
+
+1.7 Sample Code means object code and/or source code, excluding Content Files, that Adobe has included for You to incorporate into Your application programs, subject to the limitations set forth in Section 2.
+
+1.8 SDK means the API information, Sample Code, Tools, Documentation and other related items. Only those items placed on Your computer extracted from the SDK archive are part of the SDK. This License does not govern Adobe Products (See Adobe Products end user license agreements for governing terms). Adobe Products refer to Adobe’s application programs and technologies such as Adobe-developed plug-ins which are or may be made available for licensing to the general public, including any modified versions or upgrades thereof
+
+1.9 Tools refer to programs and Utilities that may be included for You to test or compile Your application programs. Documentation means any related explanatory materials accompanying the SDK.
+
+2. License and License Restrictions.
+
+Subject to the restrictions contained in this Section 2, Adobe grants to You a nonexclusive, nontransferable, royalty-free license to use the items in the SDK only for the purpose of internal development of application programs designed to function with Adobe products.
+
+(a) Under this License, You may use, modify or merge all or portions of the Sample Code with Your application programs and distribute it only as part of Your products in object code form only. Any modified or merged portion of the Sample Code is subject to this License. You are required to include Adobe’s copyright notices on Your application programs except for those programs in which You include a copyright notice reflecting the copyright ownership of Developer in such programs. You may not use Adobe’s name, logo or trademarks to market Your products. You may not assign Your rights or obligations granted under this License without the prior written consent of Adobe. Any attempted assignment or transfer without such prior written consent from Adobe shall be void and of no effect. Sample Code is compiled with a unique plug-in ID. If You distribute modified or merged versions of the Sample Code. You agree to replace Adobe’s unique plug-in ID that is included in any Sample Code with a unique plug-in ID specific to You. Instructions for requesting a unique plug-in ID from Adobe may be found at http://support.adobe.com/devsup/devsup.nsf/docs/50093.htm.
+
+(b) Subject to the permissions in 2(a) above, You may use the SDK solely for the purpose of internal development.
+
+(c) You may make a limited number of copies of the SDK to be used by Your employees or consultants as provided herein, and not for general business purposes, and such employees or consultants shall be subject to this License. 
+You may use API Development Software only as provided in the Adobe specification applicable thereto, and distribute it solely with Your products on the same media. You may not modify API Development Software.
+
+(d) Content Files. Unless stated otherwise in "ReadMe" files associated with the Content Files, which may include specific rights and restrictions with respect to such materials, You may not use, modify, reproduce or distribute any of the Content Files. For the avoidance of doubt, the Content Files are included as examples only. You acquire no rights to the Content Files.
+
+(e) License Restrictions
+
+(i) World Ready Composer. The APIs contained in this SDK for the World Ready Composer are designed to be used for the purpose of internal development of application programs designed to function with Adobe InDesign Server. Internal development of application programs designed to function with Adobe InDesign and/or Adobe InCopy software using the World Ready Composer API’s is not supported by Adobe.
+
+(ii) Localization of Adobe Products. You are prohibited from using this SDK for development of Your Developer products which would include functionality allowing for the Localization of Adobe Products. For purposes of this License, "Localization" means a modification to the default language of the installed Adobe Product, including but not limited to the Adobe Product’s user interface.
+
+(iii) No Modifications, No Reverse Engineering. Except as specifically provided herein, You shall not (a) modify, port, adapt or translate the any portion of this SDK; (b) add or delete any program files that would modify the functionality and/or appearance of other Adobe software and/or any component thereof; or (c) reverse engineer, decompile, disassemble or otherwise attempt to discover the source code of any portion of this SDK. Notwithstanding the foregoing, decompiling the SDK is permitted to the extent the laws of Your jurisdiction give You the right to do so to obtain information necessary to render the licensed portions of the SDK interoperable with other software; provided, however, that You must first request such information from Adobe and Adobe may, in its discretion, either provide such information to You or impose reasonable conditions, including a reasonable fee, on such use of the source code to ensure that Adobe’s and its suppliers’ proprietary rights in the source code for the SDK are protected.
+
+(iv) No Unbundling. The SDK may include various applications, utilities and components, may support multiple platforms and languages or may be provided to You on multiple media or in multiple copies. Nonetheless, the SDK is designed and provided to You as a single product to be used as a single product on computers and platforms as permitted herein. You are not required to use all component parts of the SDK, but You shall not unbundle or repackage the component parts of the SDK for distribution, transfer, resale or use on different computers.
+
+(v) No Transfer. You shall not sublicense, assign or transfer the SDK or Your rights in the SDK, or authorize any portion of the SDK to be copied onto or accessed from another individual’s or entity’s computer except as may be explicitly provided in this License. Notwithstanding anything to the contrary in this Section 2(e)(v), You may transfer copies of the SDK installed on one of Your computers to another one of Your computers provided that the resulting installation and use of the SDK is in accordance with the terms of this License and does not cause You to exceed Your right to use the SDK under this License.
+
+(vi) Prohibited Use. Except as expressly authorized under this License, You are prohibited from: (a) renting, leasing, lending or granting other rights in the SDK including rights on a membership or subscription basis; and (b) providing use of the SDK in a computer service business, third party outsourcing facility or service, service bureau arrangement, network, or time sharing basis; Failure to comply with this Section 2(e)(vi) is a breach of this License that immediately terminates all rights granted to You herein.
+
+(vii) Other Prohibitions. You will not use the SDK to create, develop or use any program, software or service that (a) contains any viruses, Trojan horses, worms, time bombs, cancelbots or other computer programming routines that are intended to damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data or personal information, (b) when used in the manner in which it is intended or marketed, violates any law, statute, ordinance, regulation or rights (including any laws, regulations or rights respecting intellectual property, computer spyware, privacy, export control, unfair competition, antidiscrimination or false advertising), or (c) interferes with the operability of Adobe or third-party programs or software.
+
+3. Proprietary Rights.
+
+The items contained in the SDK are the intellectual property of Adobe and its suppliers and are protected by United States copyright and patent law, international treaty provisions and applicable laws of the country in which it is being used. You agree to protect all copyright and other ownership interests of Adobe and/or its suppliers in all items in the SDK supplied under this License. You agree that all copies of the items in the SDK, reproduced for any reason by You, contain the same copyright notices, and other proprietary notices, as appropriate, which appear on or in the master items delivered by Adobe in the SDK. Adobe and/or its suppliers retain title and ownership of the items in the SDK, the media on which it is recorded and all subsequent copies, regardless of the form or media in or on which the original and other copies may exist. Except as stated above, this License does not grant You any rights to patents, copyrights, trade secrets, trademarks or any other rights in respect to the items in the SDK.
+
+4. Non-Blocking of Adobe Development.
+
+You acknowledge that Adobe is currently developing or may develop technologies and products in the future that have or may have design and/or functionality similar to products that You may develop based on Your license herein. Nothing in this License shall impair, limit or curtail Adobe’s right to continue with its development, maintenance and/or distribution of Adobe’s technology or products. You agree that You shall not assert in any way any patent owned by You arising out of or in connection with this SDK or modifications made thereto against Adobe, its subsidiaries or affiliates, or their customers, direct or indirect, agents and contractors (collectively, the "Adobe Product Users") for the manufacture, use, import, licensing, offer for sale or sale of any Adobe products.
+
+5. Confidential Information.
+
+With respect to the API Development Software, You agree that You will treat the API Development Software with the same degree of care as You accord to Your own confidential information which You exercise reasonable care to protect. Your obligations under this section with respect to the API Development Software shall terminate when You can document that (a) it was in the public domain at or subsequent to the time it was communicated to You by Adobe through no fault of Yours, (b) it was developed by Your employees or agents independently of and without reference to any information communicated to You by Adobe; or (c) the communication was in response to a valid order by a court or other governmental body, was otherwise required by law, or was necessary to establish the rights of either party under this License.
+
+6. Open Source Software.
+
+Notwithstanding anything to the contrary, You are not licensed to (and You agree that You will not) integrate or use this SDK with any Open Source Software or otherwise take any action that could require disclosure, distribution or licensing of all or any part of the SDK in source code form, for the purpose of making derivative works, or at no charge. For the purposes of this Section 6, "Open Source Software" shall mean software licensed under the GNU General Public License, the GNU Lesser General Public License or any other license terms that could require, or condition Your use, modification or distribution of such software on, the disclosure, distribution or licensing of any other software in source code form, for the purpose of making derivative works, or at no charge. Any violation of the foregoing provision shall immediately terminate all of Your licenses and other rights to the SDK granted under this License.
+
+7. Term and Termination.
+
+This License will commence upon the Effective Date and continue in perpetuity unless terminated as set forth herein. Adobe may terminate this License immediately if You breach any of its terms. Sections 1, 2(e), 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 16 and 17 will survive any termination of this License. Upon termination of this License, You will cease all use and distribution of the SDK and return to Adobe or destroy (with written confirmation of destruction) the SDK promptly at Adobe’s request, together with any copies thereof.
+
+8. Disclaimer of Warranty.
+
+Adobe licenses the SDK to Developer only on an "AS-IS" basis. Adobe makes no representation with respect to the adequacy of any items in the SDK whether or not used by You in the development of any products for any particular purpose or with respect to their adequacy to produce any particular result. Adobe and its suppliers shall not be liable for loss or damage arising out of this License or from the distribution or use of Developers products containing portions of the SDK. ADOBE AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED CONDITIONS OR WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT OF ANY THIRD PARTY RIGHT IN RESPECT OF THE ITEMS IN THE SDK OR ANY SERVICES RELATED TO THE SDK.
+
+Some states or jurisdictions do not allow the exclusion or limitation of incidental, consequential or special damages, or the exclusion of implied warranties or limitations on how long an implied warranty may last, so the above limitations may not apply to You. You may have rights which vary from state to state or jurisdiction to jurisdiction. The foregoing does not affect or prejudice Your statutory rights. To the extent permissible, any implied warranties are limited to ninety (90) days. For further warranty information You may contact Adobe’s Customer Support Department.
+
+Adobe is under no obligation to provide any support under this License, including upgrades or future versions of this SDK or any portions thereof, to Developer, end user or to any other party. Adobe is acting on behalf of its suppliers for the purpose of disclaiming, excluding and/or restricting obligations, warranties and liability as provided in this Section 8, but in no other respects and for no other purpose.
+
+9. Limitation of Liability.
+
+Notwithstanding any other provisions of this License, Adobe’s liability to You under this License shall be limited to the amount paid by You for the SDK.
+
+IN NO EVENT WILL ADOBE OR ITS SUPPLIERS BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, INCIDENTAL OR SPECIAL DAMAGES INCLUDING DAMAGES FOR ANY LOST PROFITS, LOST SAVINGS, LOSS OF DATA, COSTS, FEES OR EXPENSES OF ANY KIND OR NATURE ARISING OUT OF ANY PROVISION OF THIS LICENSE OR THE USE OR INABILITY TO USE THE ITEMS IN THE SDK, EVEN IF AN ADOBE REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY PARTY. Some jurisdictions do not allow the exclusion or limitation of incidental, consequential or special damages, so the above limitation or exclusion may not apply to You. Nothing contained in this License shall prejudice the statutory rights of any party dealing as a consumer.
+
+10. Indemnification.
+
+You agree to indemnify, hold harmless and defend Adobe and its suppliers from and against any liabilities, losses, actions damages, claims or lawsuits (including product liability, warranty and intellectual property claims and all reasonable expenses, costs and attorney’s fees), that arise or result from the use or distribution of Developer’s products that contains or is based upon any portion of the SDK, provided that Adobe gives You prompt written notice of any such claim and cooperates with You, at Your expense, in defending or settling such claim.
+
+11. Choice Of Law.
+
+If You are a consumer who uses the SDK for only personal non-business purposes, then this License will be governed by the laws of the state in which You purchased the license to use the SDK. If You are not such a consumer, this License is governed by and construed in accordance with the substantive laws in force: (a) in the State of California, if a license to the Software is obtained when You are in the United States, Canada, or Mexico; or (b) in Japan, if a license to the Software is obtained when You are in Japan, China, Korea, R.O.C, or other Southeast Asian country where all official languages are written in either an ideographic script (e.g., Hanzi, Kanji or Hanja), and/or other script based upon or similar in structure to an ideographic script, such as Hangul or Kana; or (c) the Republic of Ireland, if a license to the Software is obtained when You are in any other jurisdiction not described above. The respective courts of Santa Clara County, California, when California law applies, Tokyo District Court in Japan, when Japanese law applies, and the courts of the Republic of Ireland, when the law of the Republic of Ireland applies, shall each have non-exclusive jurisdiction over all disputes relating to this License. This License will not be governed by the conflict of law rules of any jurisdiction or the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded.
+
+12. Export Rules.
+
+You acknowledge that this Software is subject to the U.S. Export Administration Regulations (the "EAR") and that You will comply with the EAR. You will not export or re-export this Software, directly or indirectly, to: (a) any countries that are subject to US export restrictions (currently including, but not necessarily limited to, Cuba, Iran, North Korea, Sudan and Syria); (b) any end user who You know or have reason to know will utilize them in the design, development or production of nuclear, chemical or biological weapons, or rocket systems, space launch vehicles and sounding rockets or unmanned air vehicle systems; or (c) any end user who has been prohibited from participating in the US export transactions by any federal agency of the US government. In addition, You are responsible for complying with any local laws in Your jurisdiction which may impact Your right to import, export or use this Software. All rights to use this Software are granted on condition that such rights are forfeited if You fail to comply with the terms of this Section 12..
+
+13. Waiver.
+
+None of the provisions of this License shall be deemed to have been waived by any act or acquiescence on the part of Adobe, its agents or employees, but only by an instrument in writing signed by an officer of Adobe.
+
+14. Notice to U.S. Government End Users.
+
+The SDK and any documentation are "Commercial Item(s)," as that term is defined at 48 C.F.R. Section 2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation," as such terms are used in 48 C.F.R. Section 12.212 or 48 C.F.R. Section 227.7202, as applicable. Consistent with 48 C.F.R. Section 12.212 or 48 C.F.R. Sections 227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the copyright laws of the United States. Adobe Systems Incorporated, 345 Park Avenue, San Jose, CA 95110-2704, USA.
+
+15. Integration.
+
+When conflicting language exists between this License and any other agreement included in the SDK, this License shall supersede. If either Adobe or Developer employs attorneys to enforce any rights arising out of or relating to this License, the prevailing party shall be entitled to recover reasonable attorneys’ fees. You acknowledge that You have read this License, understand it and that it is the complete and exclusive statement of Your agreement with Adobe, which supersedes any prior agreement, oral or written, between Adobe and You with respect to the licensing to You of the SDK. No variation of the terms of this License will be enforceable against Adobe unless Adobe gives its express consent, in writing signed by an officer of Adobe. The English language version of this License shall be the version used in the event any dispute arises hereunder. All translations of this License are for convenience only and shall not be used by the parties or any court when interpreting or construing this License.
+
+16. Binding Agreement.
+
+This License governs installation and use of the SDK. You agree that this License is like any written negotiated agreement signed by You. By clicking to acknowledge agreement to be bound during review of an electronic version of this License or by downloading, copying, installing or using any portion of this SDK, You accept all the terms and conditions of this License. This License is enforceable against You and any person or entity that obtains this SDK or on whose behalf they are used: for example, Your employer. If You do not agree to the terms of this License, do not use any portion of this SDK. This License shall apply to any portion of the SDK, regardless of whether other software is referred to or described herein.
+
+17. Additional Terms.
+
+You may have a separate written agreement with Adobe that supplements or supersedes all or portions of this License. Your use of some third party materials included in the SDK may be subject to other terms and conditions typically found in a separate license agreement or a "ReadMe" file located near such materials or in the "Third Party Software Notices and/or Additional Terms and Conditions" found at http://www.adobe.com/go/thirdparty. Such other terms and conditions may require You to pass through notices to Your end users. Such other terms and conditions will supersede all or portions of this License in the event of a conflict with the terms and conditions of this License.
+
+InDesign_InCopy_InDesignServerSDK_IHC-en_US-20110502

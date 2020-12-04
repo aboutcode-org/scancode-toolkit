@@ -1,0 +1,94 @@
+The FreeRTOS source code is licensed by a modified GNU General Public License - the
+modification taking the form of an exception.
+
+The exception permits the source code of applications that use FreeRTOS solely
+through the API published on this website to remain closed source, thus permitting
+the use of FreeRTOS in commercial applications without necessitating that the whole
+application be open sourced. The exception can only be used if you wish to combine
+FreeRTOS with a proprietary product and you comply with the terms stated in the
+exception itself.
+
+The FreeRTOS download also includes demo application source code, some of which is
+provided by third parties AND IS LICENSED SEPARATELY FROM FREERTOS.
+
+For the avoidance of any doubt refer to the comment included at the top of each
+source and header file for license and copyright information.
+
+This is a list of files for which Real Time Engineers Ltd. is not the copyright owner
+and are NOT COVERED BY THE GPL.
+
+1. Various header files provided by silicon manufacturers and tool vendors that
+define processor specific memory addresses and utility macros. Permission has been
+granted by the various copyright holders for these files to be included in the
+FreeRTOS download. Users must ensure license conditions are adhered to for any use
+other than compilation of the FreeRTOS demo applications.
+
+2. The uIP TCP/IP stack the copyright of which is held by Adam Dunkels. Users must
+ensure the open source license conditions stated at the top of each uIP source file
+is understood and adhered to.
+
+3. The lwIP TCP/IP stack the copyright of which is held by the Swedish Institute of
+Computer Science. Users must ensure the open source license conditions stated at the
+top of each lwIP source file is understood and adhered to.
+
+4. Various peripheral driver source files and binaries provided by silicon
+manufacturers and tool vendors. Permission has been granted by the various copyright
+holders for these files to be included in the FreeRTOS download. Users must ensure
+license conditions are adhered to for any use other than compilation of the FreeRTOS
+demo applications.
+
+5. The files contained within FreeRTOS\Demo\WizNET_DEMO_TERN_186\tern_code, which are
+slightly modified versions of code provided by and copyright to Tern Inc.
+
+Errors and omissions should be reported to Richard Barry, contact details for whom
+can be obtained from the Contact page.
+
+This library is free software; you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software Foundation;
+either version 2, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this
+library; see the file COPYING.  If not, write to the Free Software Foundation, 51
+Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+GNU General Public License Exception
+
+Any FreeRTOS source code, whether modified or in its original release form, or
+whether in whole or in part, can only be distributed by you under the terms of the
+GNU General Public License plus this exception. An independent module is a module
+which is not derived from or based on FreeRTOS.
+
+EXCEPTION TEXT:
+
+Clause 1
+
+Linking FreeRTOS statically or dynamically with other modules is making a combined
+work based on FreeRTOS. Thus, the terms and conditions of the GNU General Public
+License cover the whole combination.
+
+As a special exception, the copyright holder of FreeRTOS gives you permission to link
+FreeRTOS with independent modules that communicate with FreeRTOS solely through the
+FreeRTOS API interface, regardless of the license terms of these independent modules,
+and to copy and distribute the resulting combined work under terms of your choice,
+provided that
+
+1. Every copy of the combined work is accompanied by a written statement that details
+to the recipient the version of FreeRTOS used and an offer by yourself to provide the
+FreeRTOS source code (including any modifications you may have made) should the
+recipient request it.
+
+2. The combined work is not itself an RTOS, scheduler, kernel or related product.
+
+3. The independent modules add significant and primary functionality to FreeRTOS and
+do not merely extend the existing functionality already present in FreeRTOS.
+
+Clause 2
+
+FreeRTOS may not be used for any competitive or comparative purpose, including the
+publication of any form of run time or compile time metric, without the express
+permission of Real Time Engineers Ltd. (this is the norm within the industry and is
+intended to ensure information accuracy).

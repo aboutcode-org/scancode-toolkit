@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LicenseDB: ms-nuget-package-manager</title>
+    <style>
+      table.dataTable {visibility: visible!important;}
+      .dataTables_filter {display: none;}
+      table.dataTable thead th, table.dataTable thead td {padding: 8px!important; border-top: 1px solid #111;}
+      .dataTables_wrapper .dataTables_info {padding: 0 0 2px!important; font-size: .75rem!important; color: #3b4351!important;}
+      header {padding-top: .4rem; padding-bottom: .4rem;}
+      footer {background-color: #f7f8f9; color: #bcc3ce; padding: 1.5rem .75rem 1rem; margin-top: 1em;}
+      a:visited {color: #5755d9!important;}
+      .navbar .nav-item {color:#66758c;padding: .25rem .4rem;}
+      .navbar .nav-item a, .navbar .nav-item a:visited {color:#66758c !important;}
+      .anchor {color: #6362dc; display: none; margin-left: .2rem; padding: 0 .2rem;}
+      h4:focus .anchor, h4:hover .anchor {display: inline; text-decoration: none;}
+      .help_text, .help_text:hover, .help_text:visited {color: #3b4351!important; border-bottom: dotted 0.0625rem #cccccc; text-decoration: inherit;}
+    </style>
+    <link rel="stylesheet" href="static/spectre-0.5.9.min.css">
+    <script src="static/jquery-3.5.1.slim.min.js"></script>
+    
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+  </style>
+
+  </head>
+  <body style="padding: 0 7rem;">
+    <div class="container">
+  <header class="navbar">
+    <section class="navbar-section">
+      <a class="navbar-brand text-bold mr-2" style="font-size: 1rem;" href="index.html">ScanCode LicenseDB</a>
+      <a href="help.html" class="btn btn-link">Help</a>
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank" class="btn btn-link">Chat</a>
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank" class="btn btn-link">GitHub</a>
+      <span class="nav-item">Licensed under <a href="cc-by-4.0.html" class="text-bold">CC-BY-4.0</a></span>
+    </section>
+    <section id="search-section" class="navbar-section">
+      <div class="input-group input-inline">
+        <button class="btn btn-primary input-group-btn disabled" tabindex="-1" style="opacity: 0.9">Search</button>
+        <input id="searchbox" class="form-input" type="search">
+      </div>
+    </section>
+  </header>
+</div>
+    
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="ms-nuget-package-manager.yml">yml</a> -
+    <a href="ms-nuget-package-manager.json">json</a> -
+    <a href="ms-nuget-package-manager.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nuget-package-manager.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/ms-nuget-package-manager.yml" target="_blank">edit data</a>
+    <hr>
+    <pre style="white-space: pre-wrap; font-family: inherit;">key: ms-nuget-package-manager
+short_name: MS NuGet-Based Package Manager License
+name: Microsoft NuGet-Based Package Manager License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm
+ignorable_urls:
+  - http://docs.nuget.org/docs/reference/package-restore
+  - http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog
+  - http://www.microsoft.com/exporting
+  - http://www.microsoft.com/web/webpi/eula/package-manager-for-net-privacy.htm
+</pre>
+    <hr>
+    <pre id="license-text" class="code" style="white-space: pre-wrap;"><code>MICROSOFT SOFTWARE LICENSE TERMS
+
+NUGET-BASED MICROSOFT PACKAGE MANAGER
+
+These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
+
+· updates,
+
+· supplements,
+
+· Internet-based services, and
+
+· support services
+
+for this software, unless other terms accompany those items. If so, those terms apply.
+
+By using the software, you accept these terms. If you do not accept them, do not use the software.
+
+As described below, using some features also operates as your consent to the transmission of certain computer information for Internet-based services.
+
+If you comply with these license terms, you have the perpetual rights below.
+
+1. INSTALLATION AND USE RIGHTS. You may install and use any number of copies of the software on your devices.
+
+2. INTERNET-BASED SERVICES. Microsoft provides Internet-based services with the software. It may change or cancel them at any time.
+
+a. Consent for Internet-Based Services. The software features described below connect to external computer systems over the Internet. These features may collect and send information about your computer and/or your project, such as your Internet Protocol address and requested packages (&#34;Computer Information&#34;).
+
+· Package Search and Enumeration. This software feature will access a list of packages that are available for download and installation from a package source.  If you have specified a package source that resides on an external computer, using this feature will connect and transmit Computer Information to the external computer system over the Internet.  By default, a URL under the nuget.org domain is specified as a package source.  For more information about this feature, see http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog. You may specify only package sources that reside on internal networks or you may refrain from using this feature.  By using this feature to access packages hosted on an external source, you consent to the transmission of Computer Information.
+
+· Package Download. This software feature will download any packages that you have selected for installation and will place them into a project folder on your computer.  If a package that you have selected for installation depends on additional packages that are not already contained in your project folder, the software will automatically download those additional packages from their respective package sources, some of which may reside on external computer systems.  You may specify only package sources that reside on internal networks or you may refrain from using this feature.  By using this feature to download packages hosted on an external source, you consent to the transmission of Computer Information.
+
+· Package Restore.  This software feature will allow you to add package references to your project.  If you attempt to build a project that includes package references, the software will automatically download and install any missing packages from your configured package sources, some of which may reside on external computer systems.  For more information about this feature, see http://docs.nuget.org/docs/reference/package-restore. To prevent the software from automatically downloading missing packages during build time, open the Tools &gt; Options dialog from within Visual Studio, select &#34;Package Manager&#34; from the options, and uncheck the &#34;Allow NuGet to download missing packages&#34; checkbox.  By leaving this checkbox checked, you consent to the transmission of Computer Information.
+
+· Use of Information by Microsoft. We will treat any Computer Information that we receive from the software in accordance with our Privacy Statement set forth at http://www.microsoft.com/web/webpi/eula/package-manager-for-net-privacy.htm or another web page that we may specify from time to time. 
+
+· Use of Information by Third Parties. Computer Information may be sent to third-party external computer systems, as described above.  Any information you provide to a third party through your use of the software is governed by their privacy statements and policies.  We do not control, and we disclaim any responsibility for, how third-party service providers may use Computer Information.
+
+b. Misuse of Internet-based Services. You may not use these Internet-based Services in any way that could harm them or impair anyone else’s use of them. You may not use these Internet-based Services to try to gain unauthorized access to any service, data, account or network by any means.
+
+3. THIRD-PARTY SOFTWARE.  Packages that are downloaded from external package sources are offered and distributed in some cases by third parties and in some cases by Microsoft, but each such package is under its own license terms. Microsoft is not developing, distributing or licensing any third-party packages to you, but instead, as a convenience, enables you to use the software to access or obtain those packages directly from the third-party package providers. By using any of the above features, you acknowledge and agree that: 
+
+·  you are obtaining any third-party packages from such third parties and under separate license terms applicable to each package (including any terms applicable to software dependencies that may be included in the packages);
+
+·  it is your responsibility to locate, understand and comply with all applicable license terms for each such package; and
+
+·  this includes your responsibility to follow the package source (feed) URL and to review the packages for embedded notices or license terms. 
+
+Microsoft makes no representations, warranties or guarantees as to any package source, including any information or content contained therein, any package source URL, or any packages referenced in or accessed by you through such URLs or package sources. Microsoft grants you no license rights for any third-party software applications or packages that are obtained using the software. 
+
+4. THIRD PARTY NOTICES. The software (not including any packages that you obtain using the software) includes third-party code. However, all such code is licensed to you by Microsoft under this license agreement, rather than licensed to you by any third party under some other license terms. Notices, if any, for the third-party code are included with this software for your information only.
+
+5. SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+· work around any technical limitations in the software;
+
+· reverse engineer, decompile or disassemble the software, except and only to the extent that applicable law expressly permits, despite this limitation;
+
+· publish the software for others to copy;
+
+· rent, lease or lend the software; or
+
+· transfer the software or this agreement to any third party.
+
+6. DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+
+7. EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
+
+8. SUPPORT SERVICES. Because this software is &#34;as is,&#34; we may not provide support services for it.
+
+9. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
+
+10. APPLICABLE LAW.
+
+a. United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+
+b. Outside the United States. If you acquired the software in any other country, the laws of that country apply.
+
+11. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
+
+12. DISCLAIMER OF WARRANTY. The software is licensed &#34;as-is.&#34; You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+FOR AUSTRALIA – You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
+
+13. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+
+This limitation applies to
+
+· anything related to the software, services, content (including code) on third-party Internet sites, or third-party programs; and
+
+· claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.</code></pre>
+  </div>
+
+    <div class="container">
+  <footer class="section text-dark">
+    <p>
+      <a href="help.html">Help</a> ·
+      <a href="https://gitter.im/aboutcode-org/discuss" target="_blank">Chat</a> ·
+      <a href="https://github.com/nexB/scancode-licensedb" target="_blank">GitHub</a> ·
+      <a href="https://www.aboutcode.org/" target="_blank">AboutCode</a>
+    </p>
+    <p>Designed and built by <a href="https://www.nexb.com/" target="_blank">nexB</a>. Licensed under the <a href="cc-by-4.0.html">Creative Commons Attribution License 4.0 (CC-BY-4.0)</a>.</p>
+    <p>Generated with <a href="https://github.com/nexB/scancode-toolkit" target="_blank">ScanCode toolkit</a> 3.2.3 on Dec 04, 2020.</p>
+  </footer>
+</div>
+    
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+
+  </body>
+</html>

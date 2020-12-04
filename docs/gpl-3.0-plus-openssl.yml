@@ -1,0 +1,8 @@
+key: gpl-3.0-plus-openssl
+is_deprecated: yes
+short_name: GPL 3.0 or later with OpenSSL exception
+name: GPL 3.0 or later with OpenSSL exception
+category: Copyleft Limited
+owner: Tidleslash
+notes: replaced by openssl-exception-gpl-3.0-plus
+is_exception: yes

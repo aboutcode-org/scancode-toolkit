@@ -1,0 +1,24 @@
+License Agreement
+ADDTHIS MOBILE APPLICATION SDK LICENSE AGREEMENT
+
+PLEASE READ THIS CAREFULLY. IF YOU DO NOT AGREE THESE TERMS, YOU ARE NOT AUTHORIZED TO DOWNLOAD OR USE THIS SDK.
+
+THIS ADDTHIS MOBILE APPLICATION SDK LICENSE AGREEMENT (THIS "AGREEMENT") IS A LEGAL AGREEMENT BETWEEN CLEARSPRING TECHNOLOGIES, INC ("CLEARSPRING" OR "WE") AND YOU INDIVIDUALLY IF YOU ARE AGREEING TO IT IN YOUR PERSONAL CAPACITY, OR IF YOU ARE AUTHORIZED TO DOWNLOAD THE SDK ON BEHALF OF YOUR COMPANY OR ORGANIZATION, BETWEEN THE ENTITY FOR WHOSE BENEFIT YOU ACT ("YOU"). CLEARSPRING OWNS AND OPERATES THE ADDTHIS SHARING PLATFORM.
+
+BY DOWNLOADING, INSTALLING, ACTIVATING OR USING THE SDK, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU HAVE ANY QUESTIONS OR CONCERNS ABOUT THE TERMS OF THIS AGREEMENT, PLEASE CONTACT US AT SUPPORT@ADDTHIS.COM.
+
+This Agreement governs your access to, and use of, our proprietary software and associated application programming interface for use with mobile applications, as well as any related materials, including installation tools, sample code, source code, software libraries and documentation and any error corrections, updates, or new releases that we elect, in our sole discretion, to make available to you (all such materials, collectively, the "SDK").
+
+This Agreement hereby incorporates by reference the terms and conditions of the AddThis terms of service (http://www.addthis.com/tos), including, but not limited to, Sections 4, 6, 8 and 12 through 22. For purposes of those terms of service, the SDK will be considered part of "Our Technology" and Clearspring's provision of the SDK will constitute one of the Services we provide.
+
+1.	License. Subject to the terms and conditions of this Agreement, Clearspring hereby grants you a non-exclusive, non-transferable, non-sublicenseable, royalty-free right and license to copy and use the SDK solely for the purpose of adding the AddThis functionality into your mobile application in accordance with the documentation. You acknowledge and agree that you have no rights to any upgrades, modifications, enhancements or revisions that Clearspring may make to the SDK. You agree that we have no obligation to provide any support or engineering assistance of any sort unless we otherwise agree in writing.
+
+2.	Restrictions. You may not use the SDK to: (i) design or develop anything other than a mobile application that contains the AddThis functionality; (ii) make any more copies of the SDK than are reasonably necessary for your authorized use thereof; (iii) modify, create derivative works of, reverse engineer, reverse compile, or disassemble the SDK or any portion thereof; (iv) distribute, publish, sell, transfer, assign, lease, rent, lend, or sublicense either in whole or part the SDK to any third party except as may specifically be permitted in Section 3 herein; (v) redistribute any component of the SDK except as set forth in Section 3 herein, or (vi) remove or otherwise obfuscate any proprietary notices or labels from the SDK. You may not use the SDK except in accordance with applicable laws and regulations, nor may you export the SDK from and outside the United States of America except as permitted under the applicable laws and regulations of the United Sates of America. You may not use the SDK to defraud any third party or to distribute obscene or other unlawful materials or information.
+
+3.	Copyright Notice. You must include all copyright and other proprietary rights notices that accompany the SDK in any copies that you produce.
+
+4.	Proprietary Rights. Subject always to our ownership of the SDK, you will be the sole and exclusive owner of any software application developed using the SDK, excluding the SDK and any portions thereof.
+
+5.	Confidential Information. You will safeguard, protect, respect, and maintain as confidential the SDK, the underlying computer code to which you may obtain or receive access, and the functional or technical design, logic, or other internal routines or workings of the SDK, which are considered confidential and proprietary to Clearspring.
+
+Version 1.0 – April 4, 2011
