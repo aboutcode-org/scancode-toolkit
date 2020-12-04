@@ -29,7 +29,6 @@ from os import path
 
 import click
 from click.types import BoolParamType
-from six import string_types
 
 from commoncode import fileutils
 
@@ -49,7 +48,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 

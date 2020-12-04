@@ -27,7 +27,6 @@ from functools import total_ordering
 from itertools import groupby
 
 import attr
-from six import string_types
 
 from licensedcode import MAX_DIST
 from licensedcode import query
@@ -86,7 +85,7 @@ if (TRACE
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

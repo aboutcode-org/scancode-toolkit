@@ -31,7 +31,6 @@ from os.path import getsize
 from os.path import join
 import sys
 
-import six
 import yg.lockfile  # NOQA
 
 from commoncode.fileutils import resource_iter

@@ -27,7 +27,6 @@ import io
 import logging
 
 import attr
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -140,7 +139,7 @@ def build_package(package_data):
     for source, target in plain_fields:
         value = package_data.get(source)
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 setattr(package, target, value)

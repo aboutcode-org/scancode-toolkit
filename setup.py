@@ -90,7 +90,6 @@ setup(
         # textcode
         'Beautifulsoup4 >= 4.0.0, <5.0.0',
         'html5lib',
-        'six',
         'pdfminer.six >= 20170720',
         'pycryptodome >= 3.4',
         'chardet >= 3.0.0, <4.0.0',

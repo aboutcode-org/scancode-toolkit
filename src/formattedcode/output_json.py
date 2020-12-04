@@ -25,7 +25,6 @@
 
 
 import jsonstreams
-from six import string_types
 
 from formattedcode import FileOptionType
 from commoncode.cliutils import PluggableCommandLineOption
@@ -55,7 +54,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 
@@ -113,7 +112,7 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
 
     # If `output_file` is a path string, open the file at path `output_file` and use it as `output_file`
     close_fd = False
-    if isinstance(output_file, string_types):
+    if isinstance(output_file, str):
         output_file = open(output_file, 'w')
         close_fd = True
 

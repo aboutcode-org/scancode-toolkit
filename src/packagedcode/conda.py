@@ -28,7 +28,6 @@ import logging
 import sys
 
 import attr
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -57,7 +56,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()

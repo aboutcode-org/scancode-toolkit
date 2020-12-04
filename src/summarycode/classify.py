@@ -24,7 +24,6 @@
 
 
 
-from six import string_types
 
 from commoncode.datautils import Boolean
 from commoncode.fileset import get_matches
@@ -68,7 +67,7 @@ if TRACE:
 
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @pre_scan_impl

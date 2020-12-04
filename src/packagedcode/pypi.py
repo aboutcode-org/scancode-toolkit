@@ -41,7 +41,6 @@ from pkginfo import UnpackedSDist
 from pkginfo import Wheel
 from packageurl import PackageURL
 import saneyaml
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -69,7 +68,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # FIXME: this whole module is a mess
 
@@ -775,7 +774,7 @@ def compute_normalized_license(declared_license):
         if not value:
             continue
         # The value could be a string or a list
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             detected_license = models.compute_normalized_license(value)
             if detected_license:
                 detected_licenses.append(detected_license)

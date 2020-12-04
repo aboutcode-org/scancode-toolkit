@@ -25,7 +25,6 @@
 
 
 from license_expression import Licensing
-from six import string_types
 
 
 PLAIN_URLS = (
@@ -81,7 +80,7 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
         https://gitlab.com/foo/private.git
         git@gitlab.com:foo/private.git
     """
-    if not repo_url or not isinstance(repo_url, string_types):
+    if not repo_url or not isinstance(repo_url, str):
         return
 
     repo_url = repo_url.strip()

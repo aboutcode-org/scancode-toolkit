@@ -26,7 +26,6 @@
 from collections import Counter
 
 import attr
-from six import string_types
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -55,7 +54,7 @@ if TRACE or TRACE_LIGHT:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 """
 top_level:

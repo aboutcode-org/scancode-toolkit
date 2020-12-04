@@ -24,7 +24,6 @@
 
 
 import attr
-from six import string_types
 import xmltodict
 
 from packagedcode import models
@@ -54,7 +53,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()

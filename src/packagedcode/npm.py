@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import base64
 from collections import defaultdict
 from functools import partial
@@ -33,16 +32,12 @@ import re
 
 import attr
 from packageurl import PackageURL
-from six import string_types
-from six import binary_type
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode import ignore
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import parse_repo_url
-
 
 """
 Handle Node.js npm packages
@@ -120,7 +115,7 @@ def compute_normalized_license(declared_license):
     detected_licenses = []
 
     for declared in declared_license:
-        if isinstance(declared, string_types):
+        if isinstance(declared, str):
             detected_license = models.compute_normalized_license(declared)
             if detected_license:
                 detected_licenses.append(detected_license)
@@ -321,7 +316,7 @@ def build_package(package_data):
         if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 func(value, package)
@@ -415,7 +410,7 @@ def get_declared_licenses(license_object):
     if not license_object:
         return []
 
-    if isinstance(license_object, string_types):
+    if isinstance(license_object, str):
         # current, up to date form
         return [license_object]
 
@@ -503,7 +498,7 @@ def bugs_mapper(bugs, package):
     url, you can specify the value for "bugs" as a simple string instead of an
     object.
     """
-    if isinstance(bugs, string_types):
+    if isinstance(bugs, str):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
         # we ignore the bugs email for now
@@ -533,7 +528,7 @@ def vcs_repository_mapper(repo, package, vcs_revision=None):
     vcs_tool = ''
     vcs_repository = ''
 
-    if isinstance(repo, string_types):
+    if isinstance(repo, str):
         vcs_repository = parse_repo_url(repo)
 
     elif isinstance(repo, dict):
@@ -577,12 +572,11 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
 
         decoded_b64value = base64.b64decode(b64value)
-        if isinstance(decoded_b64value, string_types):
+        if isinstance(decoded_b64value, str):
             sha512 = decoded_b64value.encode('hex')
-        elif isinstance(decoded_b64value, binary_type):
+        elif isinstance(decoded_b64value, bytes):
             sha512 = decoded_b64value.hex()
         package.sha512 = sha512
-        
 
     sha1 = dist.get('shasum')
     if sha1:
@@ -743,7 +737,7 @@ def parse_person(person):
     email = None
     url = None
 
-    if isinstance(person, string_types):
+    if isinstance(person, str):
         parsed = person_parser(person)
         if not parsed:
             parsed = person_parser_no_name(person)
@@ -768,7 +762,7 @@ def parse_person(person):
         return None, None, None
 
     if name:
-        if isinstance(name, string_types):
+        if isinstance(name, str):
             name = name.strip()
             if name.lower() == 'none':
                 name = None
@@ -782,7 +776,7 @@ def parse_person(person):
             email = [e.strip('<> ') for e in email if e and e.strip()]
             email = '\n'.join([e.strip() for e in email
                                if e.strip() and e.strip().lower() != 'none'])
-        if isinstance(email, string_types):
+        if isinstance(email, str):
             email = email.strip('<> ').strip()
             if email.lower() == 'none':
                 email = None
@@ -796,7 +790,7 @@ def parse_person(person):
             url = [u.strip('() ') for u in email if u and u.strip()]
             url = '\n'.join([u.strip() for u in url
                                if u.strip() and u.strip().lower() != 'none'])
-        if isinstance(url, string_types):
+        if isinstance(url, str):
             url = url.strip('() ').strip()
             if url.lower() == 'none':
                 url = None
@@ -813,7 +807,7 @@ def keywords_mapper(keywords, package):
     This is supposed to be an array of strings, but sometimes this is a string.
     https://docs.npmjs.com/files/package.json#keywords
     """
-    if isinstance(keywords, string_types):
+    if isinstance(keywords, str):
         if ',' in keywords:
             keywords = [k.strip() for k in keywords.split(',') if k.strip()]
         else:
@@ -941,7 +935,6 @@ def build_packages_from_yarn_lock(yarn_lock_lines):
     packages = []
     packages_reqs = []
     current_package_data = {}
-    prev_line = None
     dependencies = False
     for line in yarn_lock_lines:
         # Check if this is not an empty line or comment

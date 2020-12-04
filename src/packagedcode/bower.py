@@ -30,7 +30,6 @@ import logging
 
 import attr
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode import filetype
 from commoncode import ignore
@@ -96,7 +95,7 @@ def build_package(package_data):
     version = package_data.get('version')
     declared_license = package_data.get('license')
     if declared_license:
-        if isinstance(declared_license, string_types):
+        if isinstance(declared_license, str):
             declared_license = [declared_license]
         elif isinstance(declared_license, (list, tuple)):
             declared_license = [l for l in declared_license if l and l.strip()]
@@ -115,7 +114,7 @@ def build_package(package_data):
             url = author.get('homepage')
             party = models.Party(name=name, role='author', email=email, url=url)
             parties.append(party)
-        elif isinstance(author, string_types):
+        elif isinstance(author, str):
             parties.append(models.Party(name=author, role='author'))
         else:
             parties.append(models.Party(name=repr(author), role='author'))

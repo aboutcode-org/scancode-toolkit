@@ -25,7 +25,6 @@
 
 
 import saneyaml
-from six import string_types
 import unicodecsv
 
 from formattedcode import FileOptionType
@@ -52,7 +51,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 
@@ -229,7 +228,7 @@ def pretty(data):
     maptypes = dict, dict
     coltypes = seqtypes + maptypes
     if isinstance(data, seqtypes):
-        if len(data) == 1 and isinstance(data[0], string_types):
+        if len(data) == 1 and isinstance(data[0], str):
             return data[0].strip()
     if isinstance(data, coltypes):
         return saneyaml.dump(

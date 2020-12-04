@@ -28,7 +28,6 @@ import logging
 
 import attr
 import saneyaml
-from six import string_types
 
 from commoncode import filetype
 from packagedcode import models
@@ -102,7 +101,7 @@ def build_package(package_data):
     copyright_statement = package_data.get('copyright')
 
     owner = package_data.get('owner')
-    if not isinstance(owner, string_types):
+    if not isinstance(owner, str):
         owner = repr(owner)
     parties = [models.Party(type=models.party_person, name=owner, role='owner')]
 

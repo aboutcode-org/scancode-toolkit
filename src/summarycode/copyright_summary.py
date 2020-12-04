@@ -28,7 +28,6 @@ import re
 
 import attr
 import fingerprints
-from six import string_types
 from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
@@ -59,7 +58,7 @@ if TRACE or TRACE_CANO:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 # TODO: keep the original order of statements as much as possible
 

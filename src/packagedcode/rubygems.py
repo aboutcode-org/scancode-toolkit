@@ -31,7 +31,6 @@ from os.path import expanduser
 import attr
 import saneyaml
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode import archive
 from commoncode import fileutils
@@ -63,7 +62,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(
-            isinstance(a, string_types) and a or repr(a) for a in args))
+            isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()

@@ -32,7 +32,6 @@ from license_expression import Keyword
 from license_expression import LicenseSymbol
 from license_expression import LicenseWithExceptionSymbol
 from license_expression import Licensing
-from six import string_types
 
 from licensedcode.match import LicenseMatch
 from licensedcode.models import SpdxRule
@@ -70,7 +69,7 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 MATCH_SPDX_ID = '1-spdx-id'

@@ -30,7 +30,6 @@ import re
 import unicodedata
 
 import chardet
-from six import string_types
 
 from textcode import pdf
 from textcode import markup
@@ -62,7 +61,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def numbered_text_lines(location, demarkup=False, plain_text=False):
@@ -85,7 +84,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
     if not location:
         return iter([])
 
-    if not isinstance(location, string_types):
+    if not isinstance(location, str):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         if TRACE:

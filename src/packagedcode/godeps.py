@@ -28,7 +28,6 @@ import io
 import json
 import logging
 
-from six import string_types
 
 """
 Handle Godeps-like Go package dependency data.
@@ -53,7 +52,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class Dep(namedtuple('Dep', 'import_path revision comment')):
@@ -118,7 +117,7 @@ class Godep(object):
         Load self from a location string or a file-like object
         containing a Godeps JSON.
         """
-        if isinstance(location, string_types):
+        if isinstance(location, str):
             with io.open(location, encoding='utf-8') as godep:
                 data = json.load(godep)
         else:

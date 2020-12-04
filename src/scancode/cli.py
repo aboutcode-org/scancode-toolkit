@@ -48,7 +48,6 @@ except NameError:
 import click  # NOQA
 click.disable_unicode_literals_warning = True
 
-from six import string_types
 
 from commoncode import cliutils
 from commoncode.cliutils import GroupedHelpCommand
@@ -98,7 +97,7 @@ if TRACE or TRACE_DEEP:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
 
 echo_stderr = partial(click.secho, err=True)
@@ -1504,7 +1503,7 @@ def get_pretty_params(ctx, generic_paths=False):
 
         # coerce to string for non-basic supported types
         if not (value in (True, False, None)
-            or isinstance(value, (str, string_types, bytes, tuple, list, dict, dict))):
+            or isinstance(value, (str, str, bytes, tuple, list, dict, dict))):
             value = repr(value)
 
         # opts is a list of CLI options as in "--strip-root": the last opt is

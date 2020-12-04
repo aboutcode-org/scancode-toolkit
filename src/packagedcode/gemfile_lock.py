@@ -29,7 +29,6 @@ import logging
 import re
 
 import attr
-from six import string_types
 
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
@@ -119,7 +118,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 # Section headings: these are also used as switches to track a parsing state

@@ -29,7 +29,6 @@ import sys
 import attr
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
@@ -84,7 +83,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class BaseModel(object):

@@ -31,7 +31,6 @@ import sys
 
 import attr
 from packageurl import PackageURL
-from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -61,7 +60,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @attr.s()
@@ -116,7 +115,7 @@ def compute_normalized_license(declared_license):
 
     detected_licenses = []
 
-    if isinstance(declared_license, string_types):
+    if isinstance(declared_license, str):
         if declared_license == 'proprietary':
             return declared_license
         if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
@@ -200,7 +199,7 @@ def build_package_from_json(package_data):
 
     for source, target in plain_fields:
         value = package_data.get(source)
-        if isinstance(value, string_types):
+        if isinstance(value, str):
             value = value.strip()
             if value:
                 setattr(package, target, value)
@@ -226,7 +225,7 @@ def build_package_from_json(package_data):
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source)
         if value:
-            if isinstance(value, string_types):
+            if isinstance(value, str):
                 value = value.strip()
             if value:
                 func(value, package)

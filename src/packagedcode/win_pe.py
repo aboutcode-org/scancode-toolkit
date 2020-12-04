@@ -28,7 +28,6 @@ from contextlib import closing
 import attr
 from ftfy import fix_text
 import pefile
-from six import string_types
 
 from commoncode import filetype
 from commoncode import text
@@ -55,7 +54,7 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(
-            isinstance(a, string_types) and a or repr(a) for a in args))
+            isinstance(a, str) and a or repr(a) for a in args))
 
 """
 Extract data from windows PE DLLs and executable.

@@ -26,7 +26,6 @@
 from itertools import groupby
 
 import ahocorasick
-from six import string_types
 
 from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch
@@ -48,7 +47,7 @@ if TRACE or TRACE_FRAG:
     logger = logging.getLogger(__name__)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)

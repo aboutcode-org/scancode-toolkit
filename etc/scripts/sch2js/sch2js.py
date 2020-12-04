@@ -39,8 +39,6 @@ for model in models:
 """
 
 if __name__ == '__main__':
-    
-    from six import iteritems
 
     from schematics.types.base import BaseType
     from schematics.types.compound import ListType
@@ -84,7 +82,7 @@ if __name__ == '__main__':
             field_schema['title'] = field_instance.metadata.get('label', '')
             field_schema['description'] = field_instance.metadata.get('description', '')
 
-        for js_key, schematic_key in iteritems(schema_kwargs_to_schematics):
+        for js_key, schematic_key in schema_kwargs_to_schematics.items():
             value = getattr(field_instance, schematic_key, None)
             if value is not None:
                 field_schema[js_key] = value
@@ -98,7 +96,7 @@ if __name__ == '__main__':
         """
         properties = {}
         required = []
-        for field_name, field_instance in iteritems(model.fields):
+        for field_name, field_instance in model.fields.items():
             serialized_name = getattr(field_instance, 'serialized_name', None) or field_name
 
             if isinstance(field_instance, ModelType):

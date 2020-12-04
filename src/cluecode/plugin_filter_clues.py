@@ -26,7 +26,6 @@
 from itertools import chain
 
 import attr
-from six import string_types
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
@@ -49,7 +48,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @post_scan_impl

@@ -27,7 +27,6 @@ from collections import defaultdict
 
 import attr
 import click
-from six import string_types
 
 from commoncode.fileset import get_matches as get_fileset_matches
 from plugincode.pre_scan import PreScanPlugin
@@ -52,7 +51,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 """
 Assign a facet to a file.
