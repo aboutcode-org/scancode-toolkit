@@ -6,7 +6,7 @@
   "qualifiers": {},
   "subpath": null,
   "primary_language": "Objective-C",
-  "description": " This CocoaPods library helps you perform calculation.",
+  "description": "A CocoaPods library written in Swift\n This CocoaPods library helps you perform calculation.",
   "release_date": null,
   "parties": [
     {
