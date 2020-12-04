@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from os.path import dirname
 from os.path import join
 
@@ -179,39 +178,39 @@ class TestLicensePolicy(FileDrivenTesting):
     def test_load_license_policy_duplicate_keys(self):
         test_file = self.get_test_loc('plugin_license_policy/load_license_policy_duplicate_keys.yml')
 
-        expected = OrderedDict([
+        expected = dict([
             ('license_policies', [
-                OrderedDict([
+                dict([
                     ('license_key', 'broadcom-commercial'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'bsd-1988'),
                     ('label', 'Approved License'),
                     ('color_code', '#008000'),
                     ('icon', 'icon-ok-circle'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'esri-devkit'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'oracle-java-ee-sdk-2010'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'rh-eula'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'broadcom-commercial'),
                     ('label', 'Approved License'),
                     ('color_code', '#008000'),
@@ -227,33 +226,33 @@ class TestLicensePolicy(FileDrivenTesting):
     def test_load_license_policy_valid(self):
         test_file = self.get_test_loc('plugin_license_policy/load_license_policy_valid.yml')
 
-        expected = OrderedDict([
+        expected = dict([
             ('license_policies', [
-                OrderedDict([
+                dict([
                     ('license_key', 'broadcom-commercial'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'bsd-1988'),
                     ('label', 'Approved License'),
                     ('color_code', '#008000'),
                     ('icon', 'icon-ok-circle'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'esri-devkit'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'oracle-java-ee-sdk-2010'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
                     ('icon', 'icon-warning-sign'),
                 ]),
-                OrderedDict([
+                dict([
                     ('license_key', 'rh-eula'),
                     ('label', 'Restricted License'),
                     ('color_code', '#FFcc33'),
@@ -269,7 +268,7 @@ class TestLicensePolicy(FileDrivenTesting):
     def test_load_license_policy_empty(self):
         test_file = self.get_test_loc('plugin_license_policy/load_license_policy_empty.yml')
 
-        expected = OrderedDict([
+        expected = dict([
             (u'license_policies', [])
         ])
 

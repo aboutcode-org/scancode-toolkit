@@ -30,7 +30,6 @@ from scancode.pool import get_pool
 import scancode_config
 
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 import os
 import logging
@@ -583,7 +582,7 @@ def run_scan(
         # Find and create known plugin instances and collect the enabled
         ########################################################################
 
-        enabled_plugins_by_stage = OrderedDict()
+        enabled_plugins_by_stage = {}
         all_enabled_plugins_by_qname = {}
         non_enabled_plugins_by_qname = {}
 
@@ -666,7 +665,7 @@ def run_scan(
         # Setup enabled and required plugins
         ########################################################################
 
-        setup_timings = OrderedDict()
+        setup_timings = {}
         plugins_setup_start = time()
 
         if not quiet and not verbose:
@@ -713,7 +712,7 @@ def run_scan(
                            '%(stage)s:%(name)s:' % locals())
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
-        resource_attributes = OrderedDict()
+        resource_attributes = {}
         for _, name, attribs in sorted(sortable_resource_attributes):
             resource_attributes.update(attribs)
 
@@ -749,7 +748,7 @@ def run_scan(
                            '%(stage)s:%(name)s:' % locals())
                     raise ScancodeError(msg + '\n' + traceback.format_exc())
 
-        codebase_attributes = OrderedDict()
+        codebase_attributes = {}
         for _, name, attribs in sorted(sortable_codebase_attributes):
             codebase_attributes.update(attribs)
 
@@ -1222,9 +1221,9 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     """
     scan_time = time()
     location, rid = location_rid
-    results = OrderedDict()
+    results = {}
     scan_errors = []
-    timings = OrderedDict() if with_timing else None
+    timings = {} if with_timing else None
 
     if not with_threading:
         interruptor = fake_interruptible
@@ -1505,7 +1504,7 @@ def get_pretty_params(ctx, generic_paths=False):
 
         # coerce to string for non-basic supported types
         if not (value in (True, False, None)
-            or isinstance(value, (str, string_types, bytes, tuple, list, dict, OrderedDict))):
+            or isinstance(value, (str, string_types, bytes, tuple, list, dict, dict))):
             value = repr(value)
 
         # opts is a list of CLI options as in "--strip-root": the last opt is
@@ -1517,4 +1516,4 @@ def get_pretty_params(ctx, generic_paths=False):
         else:
             options.append((cli_opt, value))
 
-    return OrderedDict(sorted(args) + sorted(options))
+    return dict(sorted(args) + sorted(options))

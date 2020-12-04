@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import json
 import os
 
@@ -43,7 +42,7 @@ def check_json(expected, results, regen=False):
         with open(expected, mode) as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
-        expected = json.load(ex, object_pairs_hook=OrderedDict)
+        expected = json.load(ex)
     assert expected == results
 
 

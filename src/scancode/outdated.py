@@ -45,7 +45,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-from collections import OrderedDict
 import datetime
 import json
 import logging
@@ -197,7 +196,7 @@ def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/j
         raise Exception(msg)
 
     # The check is done using python.org PyPI API
-    payload = response.json(object_pairs_hook=OrderedDict)
+    payload = response.json(object_pairs_hook=dict)
     releases = [
         r for r in payload['releases'] if not packaging_version.parse(r).is_prerelease]
     releases = sorted(releases, key=packaging_version.parse)

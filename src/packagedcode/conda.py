@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import logging
 import sys
@@ -216,7 +215,7 @@ def get_variables(location):
     {% set version = "0.45.0" %}
     {% set sha256 = "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f" %}
     """
-    result = OrderedDict()
+    result = {}
     with io.open(location, encoding='utf-8') as loc:
         for line in loc.readlines():
             if not line:

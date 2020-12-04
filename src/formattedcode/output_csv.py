@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import saneyaml
 from six import string_types
@@ -81,7 +80,7 @@ def write_csv(results, output_file):
     # FIXMe: this is reading all in memory
     results = list(results)
 
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license_expression', []),
         ('license', []),
@@ -132,7 +131,7 @@ def flatten_scan(scan, headers):
 
         errors = scanned_file.pop('scan_errors', [])
 
-        file_info = OrderedDict(Resource=path)
+        file_info = dict(Resource=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
                           if not isinstance(v, (list, dict))))
@@ -143,12 +142,12 @@ def flatten_scan(scan, headers):
         yield file_info
 
         for lic_exp in scanned_file.get('license_expressions', []):
-            inf = OrderedDict(Resource=path, license_expression=lic_exp)
+            inf = dict(Resource=path, license_expression=lic_exp)
             collect_keys(inf, 'license_expression')
             yield inf
 
         for licensing in scanned_file.get('licenses', []):
-            lic = OrderedDict(Resource=path)
+            lic = dict(Resource=path)
             for k, val in licensing.items():
                 # do not include matched text for now.
                 if k == 'matched_text':
@@ -178,7 +177,7 @@ def flatten_scan(scan, headers):
             yield lic
 
         for copyr in scanned_file.get('copyrights', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['copyright'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -186,7 +185,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('holders', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['copyright_holder'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -194,7 +193,7 @@ def flatten_scan(scan, headers):
             yield inf
 
         for copyr in scanned_file.get('authors', []):
-            inf = OrderedDict(Resource=path)
+            inf = dict(Resource=path)
             inf['author'] = copyr['value']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
@@ -202,13 +201,13 @@ def flatten_scan(scan, headers):
             yield inf
 
         for email in scanned_file.get('emails', []):
-            email_info = OrderedDict(Resource=path)
+            email_info = dict(Resource=path)
             email_info.update(email)
             collect_keys(email_info, 'email')
             yield email_info
 
         for url in scanned_file.get('urls', []):
-            url_info = OrderedDict(Resource=path)
+            url_info = dict(Resource=path)
             url_info.update(url)
             collect_keys(url_info, 'url')
             yield url_info
@@ -227,7 +226,7 @@ def pretty(data):
     if not data:
         return None
     seqtypes = list, tuple
-    maptypes = OrderedDict, dict
+    maptypes = dict, dict
     coltypes = seqtypes + maptypes
     if isinstance(data, seqtypes):
         if len(data) == 1 and isinstance(data[0], string_types):
@@ -281,7 +280,7 @@ def flatten_package(_package, path, prefix='package__'):
 
     package_columns = get_package_columns()
 
-    pack = OrderedDict(Resource=path)
+    pack = dict(Resource=path)
     for k, val in _package.items():
         if k not in package_columns:
             continue

@@ -22,7 +22,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import logging
 import re
@@ -114,7 +113,7 @@ class Spec():
 
         parser = GemfileParser(location)
         deps = parser.parse()
-        dependencies = OrderedDict()
+        dependencies = {}
         for key in deps:
             depends = deps.get(key, []) or []
             for dep in depends:

@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import os
 import traceback
@@ -118,7 +117,7 @@ class LicenseTest(object):
                     'have explanatory notes:  for: file://' + self.data_file)
 
     def to_dict(self):
-        dct = OrderedDict()
+        dct = {}
         if self.license_expressions:
             dct['license_expressions'] = self.license_expressions
         if self.expected_failure:

@@ -24,7 +24,6 @@
 
 
 import os
-from collections import OrderedDict
 import json
 import unittest
 
@@ -91,7 +90,7 @@ def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
             expected = results
         else:
             with open(expected_loc, 'rb') as ef:
-                expected = json.load(ef, encoding='utf-8', object_pairs_hook=OrderedDict)
+                expected = json.load(ef, encoding='utf-8')
 
         assert expected == results
 

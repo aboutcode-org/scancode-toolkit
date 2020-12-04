@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from functools import partial
 
 import attr
@@ -56,7 +55,7 @@ class LicenseScanner(ScanPlugin):
     Scan a Resource for licenses.
     """
 
-    resource_attributes = OrderedDict([
+    resource_attributes = dict([
         ('licenses', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),

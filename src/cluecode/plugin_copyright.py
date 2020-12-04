@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import attr
 
@@ -39,7 +38,7 @@ class CopyrightScanner(ScanPlugin):
     Scan a Resource for copyrights.
     """
 
-    resource_attributes = OrderedDict([
+    resource_attributes = dict([
         ('copyrights',attr.ib(default=attr.Factory(list))),
         ('holders',attr.ib(default=attr.Factory(list))),
         ('authors',attr.ib(default=attr.Factory(list))),

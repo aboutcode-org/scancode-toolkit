@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import simplejson
 
@@ -60,7 +59,7 @@ class JsonLinesOutput(OutputPlugin):
 
         codebase.add_files_count_to_current_header()
 
-        headers = OrderedDict(headers=codebase.get_headers())
+        headers = dict(headers=codebase.get_headers())
 
         simplejson_kwargs = dict(
             iterable_as_array=True,

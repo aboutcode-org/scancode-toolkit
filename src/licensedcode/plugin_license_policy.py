@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from os.path import exists
 from os.path import isdir
 
@@ -103,7 +102,7 @@ def has_policy_duplicates(license_policy_location):
     """
     policies = load_license_policy(license_policy_location).get('license_policies', [])
 
-    unique_policies = OrderedDict()
+    unique_policies = {}
 
     if policies == []:
         return False

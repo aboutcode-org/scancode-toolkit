@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from functools import partial
 import io
 import json
@@ -155,12 +154,12 @@ def parse(location):
     """
     if is_phpcomposer_json(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         yield build_package_from_json(package_data)
 
     elif is_phpcomposer_lock(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         for package in build_packages_from_lock(package_data):
             yield package
 

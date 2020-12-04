@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -57,12 +56,12 @@ class TestGodeps(FileBasedTesting):
             'import_path': u'github.com/kr/hk',
             'go_version': u'go1.1.2',
             'dependencies': [
-                OrderedDict([
+                dict([
                     ('import_path', u'code.google.com/p/go-netrc/netrc'),
                     ('revision', u'28676070ab99'),
                     ('comment', None)
                 ]),
-                OrderedDict([
+                dict([
                     ('import_path', u'github.com/kr/binarydist'),
                     ('revision', u'3380ade90f8b0dfa3e363fd7d7e941fa857d0d13'),
                     ('comment', None)

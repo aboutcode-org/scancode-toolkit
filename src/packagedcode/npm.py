@@ -25,7 +25,6 @@
 
 import base64
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 import io
 import json
@@ -254,12 +253,12 @@ def parse(location):
     """
     if is_package_json(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         yield build_package(package_data)
 
     if is_package_lock(location) or is_npm_shrinkwrap(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         for package in build_packages_from_lockfile(package_data):
             yield package
 

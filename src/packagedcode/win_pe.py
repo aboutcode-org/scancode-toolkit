@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from contextlib import closing
 
 import attr
@@ -172,8 +171,8 @@ def pe_info(location):
     if not T.is_winexe:
         return {}
 
-    result = OrderedDict([(k, None,) for k in PE_INFO_KEYS])
-    extra_data = result['extra_data'] = OrderedDict()
+    result = dict([(k, None,) for k in PE_INFO_KEYS])
+    extra_data = result['extra_data'] = {}
 
     with closing(pefile.PE(location)) as pe:
         if not hasattr(pe, 'FileInfo'):

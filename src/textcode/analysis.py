@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -228,7 +227,7 @@ def js_map_sources_lines(location):
     We care only about the presence of these tags for detection: version, sources, sourcesContent.
     """
     with io.open(location, encoding='utf-8') as jsm:
-        content = json.load(jsm, object_pairs_hook=OrderedDict)
+        content = json.load(jsm)
         sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():

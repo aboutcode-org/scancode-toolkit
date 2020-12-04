@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import jsonstreams
 from six import string_types
@@ -144,7 +143,7 @@ def get_results(codebase, as_list=False, **kwargs):
     """
 
     codebase.add_files_count_to_current_header()
-    results = OrderedDict([('headers', codebase.get_headers()), ])
+    results = dict([('headers', codebase.get_headers()), ])
 
     # add codebase toplevel attributes such as summaries
     if codebase.attributes:

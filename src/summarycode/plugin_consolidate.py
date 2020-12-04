@@ -24,7 +24,6 @@
 
 
 from collections import Counter
-from collections import OrderedDict
 
 import attr
 
@@ -99,7 +98,7 @@ class Consolidation(object):
         self.consolidated_holders = sorted(set(self.core_holders + self.other_holders))
         # TODO: Verify and test that we are generating detectable copyrights
         self.consolidated_copyright = 'Copyright (c) {}'.format(', '.join(self.consolidated_holders))
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        return attr.asdict(self, filter=dict_fields, dict_factory=dict)
 
 
 @attr.s
@@ -109,7 +108,7 @@ class ConsolidatedComponent(object):
     consolidation = attr.ib()
 
     def to_dict(self, **kwargs):
-        c = OrderedDict(type=self.type)
+        c = dict(type=self.type)
         c.update(self.consolidation.to_dict())
         return c
 
@@ -142,7 +141,7 @@ class Consolidator(PostScanPlugin):
     the identifier of the consolidated component or consolidated package it is part
     of is in the Resource's ``consolidated_to`` field.
     """
-    codebase_attributes = OrderedDict(
+    codebase_attributes = dict(
         consolidated_components=attr.ib(default=attr.Factory(list)),
         consolidated_packages=attr.ib(default=attr.Factory(list))
     )

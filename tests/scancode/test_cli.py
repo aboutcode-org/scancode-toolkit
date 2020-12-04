@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -376,7 +375,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
          (u'scan_errors', [u'ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]
 
-    result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
+    result_json = json.loads(open(result_file).read())
     assert sorted(sorted(x) for x in expected) == sorted(sorted(x.items()) for x in result_json['files'])
 
 

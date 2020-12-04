@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 from operator import itemgetter
 from os.path import abspath
@@ -162,9 +161,9 @@ def generate_output(results, version, template):
 
     from licensedcode.cache import get_licenses_db
 
-    converted = OrderedDict()
-    converted_infos = OrderedDict()
-    converted_packages = OrderedDict()
+    converted = {}
+    converted_infos = {}
+    converted_packages = {}
     licenses = {}
 
     LICENSES = 'licenses'
@@ -175,7 +174,7 @@ def generate_output(results, version, template):
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
-        scanned_file = OrderedDict(scanned_file)
+        scanned_file = dict(scanned_file)
         path = scanned_file['path']
         results = []
         if COPYRIGHTS in scanned_file:
@@ -210,7 +209,7 @@ def generate_output(results, version, template):
         # should rather just pass a the list of files from the scan
         # results and let the template handle this rather than
         # denormalizing the list here??
-        converted_infos[path] = OrderedDict()
+        converted_infos[path] = {}
         for name, value in scanned_file.items():
             if name in (LICENSES, PACKAGES, COPYRIGHTS, EMAILS, URLS):
                 continue
@@ -219,7 +218,7 @@ def generate_output(results, version, template):
         if PACKAGES in scanned_file:
             converted_packages[path] = scanned_file[PACKAGES]
 
-        licenses = OrderedDict(sorted(licenses.items()))
+        licenses = dict(sorted(licenses.items()))
 
     files = {
         'license_copyright': converted,

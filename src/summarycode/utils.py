@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 
 def get_resource_summary(resource, key, as_attribute=False):
@@ -37,8 +36,8 @@ def get_resource_summary(resource, key, as_attribute=False):
     if as_attribute:
         summary = resource.summary
     else:
-        summary = resource.extra_data.get('summary', OrderedDict())
-    summary = summary or OrderedDict()
+        summary = resource.extra_data.get('summary', {})
+    summary = summary or {}
     return summary.get(key) or None
 
 
@@ -55,7 +54,7 @@ def set_resource_summary(resource, key, value, as_attribute=False):
     else:
         summary = resource.extra_data.get('summary')
         if not summary:
-            summary = OrderedDict([(key, value)])
+            summary = dict([(key, value)])
             resource.extra_data['summary'] = summary
         summary[key] = value
 
@@ -72,6 +71,6 @@ def sorted_counter(counter):
         return -count, value or ''
 
     summarized = [
-        OrderedDict([('value', value), ('count', count)])
+        dict([('value', value), ('count', count)])
         for value, count in sorted(counter.items(), key=by_count_value)]
     return summarized

@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -48,7 +47,7 @@ class TestWinPePeInfo(FileBasedTesting):
                 json.dump(result, out, indent=2)
 
         with io.open(expected_file, encoding='utf-8') as expect:
-            expected = json.load(expect, object_pairs_hook=OrderedDict)
+            expected = json.load(expect)
 
         assert expected == result
 

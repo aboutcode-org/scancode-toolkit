@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -134,7 +133,7 @@ def create_test_function(test_loc, test_name, regen=False):
                 json.dump(package, ex, indent=2)
 
         with io.open(expected_json_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+            expected = json.load(ex)
         assert expected == package
 
     if isinstance(test_name, bytes):

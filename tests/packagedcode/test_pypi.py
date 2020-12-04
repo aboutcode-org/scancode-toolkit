@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os
 from unittest.case import skipIf
 from unittest.case import expectedFailure
@@ -68,7 +67,7 @@ class TestPyPi(PackageTester):
         ]
         assert expected_classifiers == package.keywords
         expected = [
-            OrderedDict([
+            dict([
                 ('type', u'person'), ('role', u'contact'),
                 ('name', u'Benjamin Peterson'), ('email', None), ('url', None)])
         ]
@@ -83,7 +82,7 @@ class TestPyPi(PackageTester):
         assert 'Import CSV and Excel files' == package.description
         assert 'BSD' in package.declared_license
         assert 'http://nexb.com' == package.homepage_url
-        expected = [OrderedDict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
+        expected = [dict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
         assert expected == [p.to_dict() for p in package.parties]
 
     @skipIf(on_windows, 'Somehow this fails on Windows')
@@ -490,7 +489,7 @@ class TestSetupPyVersions(object):
 
         with open(expected_loc, 'rb') as ex:
             expected = json.load(
-                ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+                ex, encoding='utf-8')
 
         try:
             assert expected == results

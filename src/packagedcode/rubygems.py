@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import logging
 import os
 from os.path import abspath
@@ -613,7 +612,7 @@ def normalize(gem_data, known_fields=known_fields):
     field in a gem mapping. Ensure that all known fields are present
     even if empty.
     """
-    return OrderedDict(
+    return dict(
         [(k, gem_data.get(k) or None) for k in known_fields]
     )
 

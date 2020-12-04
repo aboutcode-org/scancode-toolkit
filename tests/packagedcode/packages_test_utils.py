@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os.path
 import json
 import shutil
@@ -54,7 +53,7 @@ class PackageTester(testcase.FileBasedTesting):
             shutil.copy(regened_exp_loc, expected_loc)
 
         with open(expected_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+            expected = json.load(ex, encoding='utf-8')
 
         try:
             assert expected == results
@@ -83,7 +82,7 @@ class PackageTester(testcase.FileBasedTesting):
             shutil.copy(regened_exp_loc, expected_loc)
 
         with open(expected_loc, 'rb') as ex:
-            expected_packages = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+            expected_packages = json.load(ex, encoding='utf-8')
 
         for expected_package, result in zip(expected_packages, results):
             assert expected_package == result

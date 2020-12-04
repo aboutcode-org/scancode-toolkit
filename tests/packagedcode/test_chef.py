@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os.path
 
 from packagedcode import chef
@@ -49,7 +48,7 @@ class TestChef(PackageTester):
         self.check_package(chef.parse(test_file), expected_file, regen=False)
 
     def test_build_package(self):
-        package_data = OrderedDict(
+        package_data = dict(
             name='test',
             version='0.01',
             description='test package',
@@ -59,7 +58,7 @@ class TestChef(PackageTester):
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
 
     def test_build_package_long_description(self):
-        package_data = OrderedDict(
+        package_data = dict(
             name='test',
             version='0.01',
             long_description='test package',
@@ -69,7 +68,7 @@ class TestChef(PackageTester):
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
 
     def test_build_package_dependencies(self):
-        package_data = OrderedDict(
+        package_data = dict(
             name='test',
             version='0.01',
             long_description='test package',
@@ -80,7 +79,7 @@ class TestChef(PackageTester):
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
 
     def test_build_package_parties(self):
-        package_data = OrderedDict(
+        package_data = dict(
             name='test',
             version='0.01',
             long_description='test package',
@@ -92,7 +91,7 @@ class TestChef(PackageTester):
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
 
     def test_build_package_code_view_url_and_bug_tracking_url(self):
-        package_data = OrderedDict(
+        package_data = dict(
             name='test',
             version='0.01',
             long_description='test package',

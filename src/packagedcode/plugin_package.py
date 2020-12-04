@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import attr
 import click
@@ -67,7 +66,7 @@ class PackageScanner(ScanPlugin):
     right file or directory level.
     """
 
-    resource_attributes = OrderedDict()
+    resource_attributes = {}
     resource_attributes['packages'] = attr.ib(default=attr.Factory(list), repr=False)
 
     sort_order = 6

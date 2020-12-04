@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from itertools import chain
 
 import attr
@@ -92,7 +91,7 @@ def is_good_license(detected_license):
     rule = detected_license['matched_rule']
     coverage = rule.get('match_coverage') or 0
     relevance = rule.get('rule_relevance') or 0
-    match_types = OrderedDict([
+    match_types = dict([
         ('is_license_text', rule['is_license_text']),
         ('is_license_notice', rule['is_license_notice']),
         ('is_license_reference', rule['is_license_reference']),
@@ -162,7 +161,7 @@ def compute_license_score(codebase):
     """
 
     score = 0
-    scoring_elements = OrderedDict(score=score)
+    scoring_elements = dict(score=score)
 
     for element in SCORING_ELEMENTS:
         element_score = element.scorer(codebase)

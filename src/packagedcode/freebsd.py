@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import logging
 
@@ -123,7 +122,7 @@ def build_package(package_data):
     package = FreeBSDPackage()
 
     # add freebsd-specific package 'qualifiers'
-    qualifiers = OrderedDict([
+    qualifiers = dict([
         ('arch', package_data.get('arch')),
         ('origin', package_data.get('origin')),
     ])
@@ -177,7 +176,7 @@ def license_mapper(package_data, package):
     if not licenses:
         return
 
-    declared_license = OrderedDict()
+    declared_license = {}
     lics = [l.strip() for l in licenses if l and l.strip()]
     declared_license['licenses'] = lics
     if license_logic:

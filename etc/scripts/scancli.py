@@ -12,7 +12,6 @@
 # specific language governing permissions and limitations under the License.
 
 
-from collections import OrderedDict
 import json
 from os.path import abspath
 from os.path import dirname
@@ -59,7 +58,7 @@ def scan(locations, deserialize=False, scancode_root_dir=None):
         channel.send(scan_kwargs)  # execute func-call remotely
         results = channel.receive()
         if deserialize:
-            results = json.loads(results, object_pairs_hook=OrderedDict)
+            results = json.loads(results)
         yield results
 
 

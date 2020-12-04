@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 import attr
 
@@ -39,7 +38,7 @@ class InfoScanner(ScanPlugin):
     Scan a file Resource for miscellaneous information such as mime/filetype and
     basic checksums.
     """
-    resource_attributes = OrderedDict([
+    resource_attributes = dict([
         ('date', attr.ib(default=None, repr=False)),
         ('sha1', attr.ib(default=None, repr=False)),
         ('md5', attr.ib(default=None, repr=False)),

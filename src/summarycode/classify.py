@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 from six import string_types
 
@@ -77,7 +76,7 @@ class FileClassifier(PreScanPlugin):
     """
     Classify a file such as a COPYING file or a package manifest with a flag.
     """
-    resource_attributes = OrderedDict([
+    resource_attributes = dict([
         ('is_legal',
          Boolean(help='True if this file is likely a "legal", license-related'
                       'file such as a COPYING or LICENSE file.')),

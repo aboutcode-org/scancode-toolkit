@@ -24,7 +24,6 @@
 
 
 import io
-from collections import OrderedDict
 import json
 import os.path
 
@@ -78,7 +77,7 @@ def compare_results(results, test_pom_loc, expected_json_loc, regen=False):
             json.dump(results, ex, indent=2)
 
     with io.open(expected_json_loc, encoding='utf-8') as ex:
-        expected = json.load(ex, object_pairs_hook=OrderedDict)
+        expected = json.load(ex)
 
     results_dump = json.dumps(results, indent=2)
     expected_dump = json.dumps(expected, indent=2)
@@ -176,7 +175,7 @@ class TestMavenMisc(BaseMavenCase):
         test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
         pom = maven.MavenPom(test_loc)
         pom.resolve()
-        expected = OrderedDict([
+        expected = dict([
             (u'system', 'GitHub Issues'),
             (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
         )

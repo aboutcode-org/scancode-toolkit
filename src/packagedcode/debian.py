@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import logging
 import os
 
@@ -244,7 +243,7 @@ def build_package(package_data, distro='debian'):
     package.namespace = distro
 
     # add debian-specific package 'qualifiers'
-    package.qualifiers = OrderedDict([
+    package.qualifiers = dict([
         ('arch', package_data.get('architecture')),
     ])
 

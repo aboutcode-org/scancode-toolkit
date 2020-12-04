@@ -24,7 +24,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os
 
 import click
@@ -113,7 +112,7 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
                 type(expressions)))
 
     # Remove duplicate element in the expressions list
-    expressions = OrderedDict((x, True) for x in expressions).keys()
+    expressions = dict((x, True) for x in expressions).keys()
 
     if len(expressions) == 1:
         return expressions[0]

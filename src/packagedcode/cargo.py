@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import logging
 import re
 
@@ -88,7 +87,7 @@ def parse(location):
     filename = filetype.is_file(location) and fileutils.file_name(location).lower()
     handler = handlers.get(filename)
     if handler:
-        return handler and handler(toml.load(location, _dict=OrderedDict))
+        return handler and handler(toml.load(location, _dict=dict))
 
 
 def build_cargo_toml_package(package_data):

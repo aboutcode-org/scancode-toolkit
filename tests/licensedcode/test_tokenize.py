@@ -25,7 +25,6 @@
 
 
 import io
-from collections import OrderedDict
 import itertools
 import json
 import os
@@ -338,7 +337,7 @@ class TestTokenizers(FileBasedTesting):
                 json.dump(result, ex, indent=2, separators=(',', ': '))
 
         with io.open(expected_file, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+            expected = json.load(ex)
 
         assert expected == result
 

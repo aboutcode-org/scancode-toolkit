@@ -22,7 +22,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import logging
@@ -150,7 +149,7 @@ class ChefMetadataFormatter(Formatter):
         and its values are those variable's values. This dictionary is then dumped
         to `outfile` as JSON.
         """
-        metadata = OrderedDict(depends=OrderedDict())
+        metadata = dict(depends={})
         line = []
         identifiers_and_literals = (
             Token.Name,
@@ -202,7 +201,7 @@ def parse(location):
     """
     if is_metadata_json(location):
         with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc, object_pairs_hook=OrderedDict)
+            package_data = json.load(loc)
         return build_package(package_data)
 
     if is_metadata_rb(location):
@@ -210,7 +209,7 @@ def parse(location):
             file_contents = loc.read()
         formatted_file_contents = highlight(
             file_contents, RubyLexer(), ChefMetadataFormatter())
-        package_data = json.loads(formatted_file_contents, object_pairs_hook=OrderedDict)
+        package_data = json.loads(formatted_file_contents)
         return build_package(package_data)
 
 

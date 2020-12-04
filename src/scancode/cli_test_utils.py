@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -190,7 +189,7 @@ def load_json_result_from_string(string, remove_file_date=False):
     """
     Load the JSON scan results `string` as UTF-8 JSON.
     """
-    scan_results = json.loads(string, object_pairs_hook=OrderedDict)
+    scan_results = json.loads(string)
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
@@ -250,7 +249,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     If `remove_file_date` is True, the file.date attribute is removed.
     """
     with io.open(result_file, encoding='utf-8') as res:
-        results = [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
+        results = [json.loads(line) for line in res]
 
     streamline_jsonlines_scan(results, remove_file_date)
 
@@ -259,7 +258,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     with io.open(expected_file, encoding='utf-8') as res:
-        expected = json.load(res, object_pairs_hook=OrderedDict)
+        expected = json.load(res)
 
     streamline_jsonlines_scan(expected, remove_file_date)
 

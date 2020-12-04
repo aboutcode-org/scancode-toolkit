@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import re
 
 import attr
@@ -98,7 +97,7 @@ def parse_section(section):
     """
     Return a mapping of key/values for a manifest `section` string
     """
-    data = OrderedDict()
+    data = {}
     for line in section.splitlines(False):
         if not line:
             continue
@@ -273,7 +272,7 @@ def get_normalized_package_data(manifest_main_section):
         description = None
 
     # create the mapping we will return
-    package = OrderedDict()
+    package = {}
     package['type'] = package_type
     package['namespace'] = namespace
     package['name'] = name
@@ -304,14 +303,14 @@ def get_normalized_package_data(manifest_main_section):
     # Implementation-Vendor: The Apache Software Foundation
     i_vend = dget('Implementation-Vendor')
     if i_vend:
-        parties.append(OrderedDict(role='vendor', name=i_vend))
+        parties.append(dict(role='vendor', name=i_vend))
 
     # Specification-Vendor: Sun Microsystems, Inc.
     s_vend = dget('Specification-Vendor')
     if s_vend == i_vend:
         s_vend = None
     if s_vend:
-        parties.append(OrderedDict(role='spec-vendor', name=s_vend))
+        parties.append(dict(role='spec-vendor', name=s_vend))
 
     # Bundle-Vendor: %providerName
     # Bundle-Vendor: %provider_name
@@ -319,7 +318,7 @@ def get_normalized_package_data(manifest_main_section):
     # Bundle-Vendor: http://supercsv.sourceforge.net/ and http://spiffyframe
     b_vend = dget('Bundle-Vendor') or dget('BundleVendor')
     if b_vend:
-        v = OrderedDict(role='vendor', name=b_vend)
+        v = dict(role='vendor', name=b_vend)
         if v not in parties:
             parties.append(v)
 
@@ -328,7 +327,7 @@ def get_normalized_package_data(manifest_main_section):
     m_email = dget('Module-Email')
     m_owner = dget('Module-Owner')
     if m_owner:
-        o = OrderedDict(role='owner', name=m_owner)
+        o = dict(role='owner', name=m_owner)
         if m_email and m_email != m_owner:
             o['email'] = m_email
         parties.append(o)

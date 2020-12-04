@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import logging
 import os.path
@@ -273,7 +272,7 @@ class ParentPom(artifact.Artifact):
         """
         Return a mapping representing this POM
         """
-        return OrderedDict([
+        return dict([
             ('group_id', self.group_id),
             ('artifact_id', self.artifact_id),
             ('version', str(self.version) if self.version else None),
@@ -617,7 +616,7 @@ class MavenPom(pom.Pom):
     def _find_licenses(self):
         """Return an iterable of license mappings."""
         for lic in self.pom_data.findall('licenses/license'):
-            yield OrderedDict([
+            yield dict([
                 ('name', self._get_attribute('name', lic)),
                 ('url', self._get_attribute('url', lic)),
                 ('comments', self._get_attribute('comments', lic)),
@@ -628,7 +627,7 @@ class MavenPom(pom.Pom):
     def _find_parties(self, key='developers/developer'):
         """Return an iterable of party mappings for a given xpath."""
         for party in self.pom_data.findall(key):
-            yield OrderedDict([
+            yield dict([
                 ('id', self._get_attribute('id', party)),
                 ('name', self._get_attribute('name', party)),
                 ('email', self._get_attribute('email', party)),
@@ -643,7 +642,7 @@ class MavenPom(pom.Pom):
         for ml in self.pom_data.findall('mailingLists/mailingList'):
             archive_url = self._get_attribute('archive', ml)
             # TODO: add 'otherArchives/otherArchive' as lists?
-            yield OrderedDict([
+            yield dict([
                 ('name', self._get_attribute('name', ml)),
                 ('archive_url', archive_url),
             ])
@@ -653,7 +652,7 @@ class MavenPom(pom.Pom):
         scm = self.pom_data.find('scm')
         if scm is None:
             return {}
-        return OrderedDict([
+        return dict([
             ('connection', self._get_attribute('connection', scm)),
             ('developer_connection', self._get_attribute('developer_connection', scm)),
             ('url', self._get_attribute('url', scm)),
@@ -665,7 +664,7 @@ class MavenPom(pom.Pom):
         imgt = self.pom_data.find('issueManagement')
         if imgt is None:
             return {}
-        return OrderedDict([
+        return dict([
             ('system', self._get_attribute('system', imgt)),
             ('url', self._get_attribute('url', imgt)),
         ])
@@ -675,7 +674,7 @@ class MavenPom(pom.Pom):
         cimgt = self.pom_data.find('ciManagement')
         if cimgt is None:
             return {}
-        return OrderedDict([
+        return dict([
             ('system', self._get_attribute('system', cimgt)),
             ('url', self._get_attribute('url', cimgt)),
         ])
@@ -687,7 +686,7 @@ class MavenPom(pom.Pom):
         repo = xml.find(xpath)
         if repo is None:
             return {}
-        return OrderedDict([
+        return dict([
             ('id', self._get_attribute('id', repo)),
             ('name', self._get_attribute('name', repo)),
             ('url', self._get_attribute('url', repo)),
@@ -698,7 +697,7 @@ class MavenPom(pom.Pom):
         dmgt = self.pom_data.find('distributionManagement')
         if dmgt is None:
             return {}
-        return OrderedDict([
+        return dict([
             ('download_url', self._get_attribute('distributionManagement/downloadUrl')),
             ('site', self._find_repository('distributionManagement/site')),
             ('repository', self._find_repository('distributionManagement/repository')),
@@ -716,10 +715,10 @@ class MavenPom(pom.Pom):
         """
         Return a mapping representing this POM.
         """
-        dependencies = OrderedDict()
+        dependencies = {}
         for scope, deps in self.dependencies.items():
             dependencies[scope] = [
-                OrderedDict([
+                dict([
                     ('group_id', gid),
                     ('artifact_id', aid),
                     ('version', version),
@@ -727,7 +726,7 @@ class MavenPom(pom.Pom):
                 ])
             for ((gid, aid, version), required) in deps]
 
-        return OrderedDict([
+        return dict([
             ('model_version', self.model_version),
             ('group_id', self.group_id),
             ('artifact_id', self.artifact_id),

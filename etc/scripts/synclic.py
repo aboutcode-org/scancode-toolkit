@@ -24,7 +24,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -316,7 +315,7 @@ def get_response(url, headers, params):
     status = response.status_code
     if status != requests.codes.ok:  # NOQA
         raise Exception('Failed HTTP request for %(url)r: %(status)r' % locals())
-    return response.json(object_pairs_hook=OrderedDict)
+    return response.json(object_pairs_hook=dict)
 
 
 def clean_text(text):
@@ -381,7 +380,7 @@ class SpdxSource(ExternalLicensesSource):
                     # Skip the old plus licenses. We use them in
                     # ScanCode, but they are deprecated in SPDX.
                     continue
-                details = json.loads(archive.read(path), object_pairs_hook=OrderedDict)
+                details = json.loads(archive.read(path))
                 lic = self.build_license(details, scancode_licenses)
                 if lic:
                     yield lic
@@ -613,7 +612,7 @@ def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
     params = params or {}
 
     def _get_results(response):
-        return response.json(object_pairs_hook=OrderedDict)
+        return response.json(object_pairs_hook=dict)
 
     if paginate:
         assert isinstance(paginate, int)
@@ -760,7 +759,7 @@ def get_owner(api_url, api_key, name):
 
 def license_to_dict(lico):
     """
-    Return an OrderedDict of license data with texts for API calls.
+    Return an dict of license data with texts for API calls.
     Fields with empty values are not included.
     """
     licm = dict(

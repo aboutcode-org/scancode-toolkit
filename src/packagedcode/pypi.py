@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import ast
 import io
 import json
@@ -180,7 +179,7 @@ def parse_with_pkginfo(pkginfo):
             homepage_url=pkginfo.home_page,
         )
         package = PythonPackage(**common_data)
-        declared_license = OrderedDict()
+        declared_license = {}
         if pkginfo.license:
             # TODO: We should make the declared license as it is, this should be updated in scancode to parse a pure string
             declared_license['license'] = pkginfo.license
@@ -302,7 +301,7 @@ def parse_pipfile_lock(location):
     with open(location) as f:
         content = f.read()
 
-    data = json.loads(content, object_pairs_hook=OrderedDict)
+    data = json.loads(content)
 
     sha256 = None
     if '_meta' in data:
@@ -327,7 +326,7 @@ def parse_setup_py(location):
     with open(location) as inp:
         setup_text = inp.read()
 
-    setup_args = OrderedDict()
+    setup_args = {}
 
     # Parse setup.py file and traverse the AST
     tree = ast.parse(setup_text)
@@ -393,7 +392,7 @@ def parse_setup_py(location):
             )
         )
 
-    declared_license = OrderedDict()
+    declared_license = {}
     license_setuptext = setup_args.get('license')
     declared_license['license'] = license_setuptext
 
@@ -634,7 +633,7 @@ def parse_metadata(location):
         return
 
     with open(location, 'rb') as infs:
-        infos = json.load(infs, object_pairs_hook=OrderedDict)
+        infos = json.load(infs)
 
     extensions = infos.get('extensions')
     if TRACE: logger_debug('parse_metadata: extensions:', extensions)
@@ -668,7 +667,7 @@ def parse_metadata(location):
             else:
                 other_classifiers.append(classifier)
 
-    declared_license = OrderedDict()
+    declared_license = {}
     lic = infos.get('license')
     if lic:
         declared_license['license'] = lic

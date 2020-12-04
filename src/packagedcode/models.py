@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import logging
 import sys
 
@@ -95,9 +94,9 @@ class BaseModel(object):
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict of primitive Python types.
+        Return an dict of primitive Python types.
         """
-        return attr.asdict(self, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=dict)
 
     @classmethod
     def create(cls, ignore_unknown=True, **kwargs):
@@ -290,9 +289,9 @@ class BasePackage(BaseModel):
 
     def to_dict(self, **kwargs):
         """
-        Return an OrderedDict of primitive Python types.
+        Return an dict of primitive Python types.
         """
-        mapping = attr.asdict(self, dict_factory=OrderedDict)
+        mapping = attr.asdict(self, dict_factory=dict)
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()

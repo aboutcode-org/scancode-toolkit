@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 
 from license_expression import Licensing
 from six import string_types
@@ -172,7 +171,7 @@ def combine_expressions(expressions, relation='AND', licensing=Licensing()):
                 type(expressions)))
 
     # Remove duplicate element in the expressions list
-    expressions = list(OrderedDict((x, True) for x in expressions).keys())
+    expressions = list(dict((x, True) for x in expressions).keys())
 
     if len(expressions) == 1:
         return expressions[0]

@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from itertools import islice
 from os.path import getsize
 import logging
@@ -70,7 +69,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
 
         if dtype == 'copyrights':
             copyrights.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
@@ -78,7 +77,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
             )
         elif dtype == 'holders':
             holders.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
@@ -86,14 +85,14 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
             )
         elif dtype == 'authors':
             authors.append(
-                OrderedDict([
+                dict([
                     ('value', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
             )
 
-    results = OrderedDict([
+    results = dict([
         ('copyrights', copyrights),
         ('holders', holders),
         ('authors', authors),
@@ -126,7 +125,7 @@ def get_emails(location, threshold=50, test_slow_mode=False, test_error_mode=Fal
         found_emails = islice(found_emails, threshold)
 
     for email, line_num in found_emails:
-        result = OrderedDict()
+        result = {}
         results.append(result)
         result['email'] = email
         result['start_line'] = line_num
@@ -148,7 +147,7 @@ def get_urls(location, threshold=50, **kwargs):
         found_urls = islice(found_urls, threshold)
 
     for urls, line_num in found_urls:
-        result = OrderedDict()
+        result = {}
         results.append(result)
         result['url'] = urls
         result['start_line'] = line_num
@@ -216,7 +215,7 @@ def get_licenses(location, min_score=0,
         query_tokens_length = match.query.tokens_length(with_unknown=True)
         percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
-    return OrderedDict([
+    return dict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
         ('percentage_of_license_text', percentage_of_license_text),
@@ -243,7 +242,7 @@ def _licenses_data_from_match(
     detected_licenses = []
     for license_key in match.rule.license_keys():
         lic = licenses.get(license_key)
-        result = OrderedDict()
+        result = {}
         detected_licenses.append(result)
         result['key'] = lic.key
         result['score'] = match.score()
@@ -265,7 +264,7 @@ def _licenses_data_from_match(
         result['spdx_url'] = spdx_url
         result['start_line'] = match.start_line
         result['end_line'] = match.end_line
-        matched_rule = result['matched_rule'] = OrderedDict()
+        matched_rule = result['matched_rule'] = {}
         matched_rule['identifier'] = match.rule.identifier
         matched_rule['license_expression'] = match.rule.license_expression
         matched_rule['licenses'] = match.rule.license_keys()
@@ -317,7 +316,7 @@ def get_file_info(location, **kwargs):
     """
     Return a mapping of file information collected for the file at `location`.
     """
-    result = OrderedDict()
+    result = {}
 
     # TODO: move date and size these to the inventory collection step???
     result['date'] = get_last_modified_date(location) or None

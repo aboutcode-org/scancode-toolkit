@@ -24,7 +24,6 @@
 
 
 import io
-from collections import OrderedDict
 import json
 import os.path
 
@@ -54,7 +53,7 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
                 json.dump(parsed_manifest, ex, indent=2)
 
         with io.open(expected_manifest_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+            expected = json.load(ex)
 
         assert json.dumps(expected) == json.dumps(parsed_manifest)
 
@@ -75,7 +74,7 @@ class BaseParseManifestCase(testcase.FileBasedTesting):
                 json.dump(package, ex, indent=2)
 
         with io.open(expected_json_loc, 'rb') as ex:
-            expected = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
+            expected = json.load(ex, encoding='utf-8')
 
         assert json.dumps(expected) == json.dumps(package)
 

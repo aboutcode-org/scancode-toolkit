@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 from functools import partial
 import io
 import json
@@ -79,7 +78,7 @@ def parse(location):
         return
 
     with io.open(location, encoding='utf-8') as loc:
-        package_data = json.load(loc, object_pairs_hook=OrderedDict)
+        package_data = json.load(loc)
 
     return build_package(package_data)
 

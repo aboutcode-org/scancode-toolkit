@@ -24,7 +24,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import os
 import re
@@ -69,7 +68,7 @@ def load_and_clean_rdf(location):
     with io.open(location, encoding='utf-8') as co:
         content = co.read()
     content = strip_variable_text(content)
-    data = xmltodict.parse(content, dict_constructor=OrderedDict)
+    data = xmltodict.parse(content, dict_constructor=dict)
     return sort_nested(data)
 
 
@@ -79,7 +78,7 @@ def sort_nested(data):
     sequence with any nested sequences or mappings sorted recursively.
     """
     seqtypes = list, tuple
-    maptypes = OrderedDict, dict
+    maptypes = dict, dict
     coltypes = seqtypes + maptypes
 
 
@@ -89,7 +88,7 @@ def sort_nested(data):
             if isinstance(v, coltypes):
                 v = sort_nested(v)
             new_data.append((k, v))
-        return OrderedDict(sorted(new_data, key=_sorter))
+        return dict(sorted(new_data, key=_sorter))
 
     elif isinstance(data, seqtypes):
         new_data = []
@@ -106,7 +105,7 @@ def _sorter(data):
     data structure composed of mappings and sequences. Used as a sorting key.
     """
     seqtypes = list, tuple
-    maptypes = OrderedDict, dict
+    maptypes = dict, dict
     coltypes = seqtypes + maptypes
 
     if isinstance(data, maptypes):
@@ -141,7 +140,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
             json.dump(result, o, indent=2)
     else:
         with io.open(expected_file, encoding='utf-8') as i:
-            expected = json.load(i, object_pairs_hook=OrderedDict)
+            expected = json.load(i)
             expected = load_and_clean_rdf(result_file)
 
     assert json.dumps(expected, indent=2) == json.dumps(result, indent=2)

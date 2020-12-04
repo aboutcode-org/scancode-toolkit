@@ -24,7 +24,6 @@
 
 
 from collections import defaultdict
-from collections import OrderedDict
 import ast
 import logging
 import os
@@ -124,7 +123,7 @@ class StarlarkManifestPackage(BaseBuildManifestPackage):
                     and statement.value.func.id.endswith(starlark_rule_types)):
                 rule_name = statement.value.func.id
                 # Process the rule arguments
-                args = OrderedDict()
+                args = {}
                 for kw in statement.value.keywords:
                     arg_name = kw.arg
                     if isinstance(kw.value, ast.Str):

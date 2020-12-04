@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import json
 import os
 import shutil
@@ -52,7 +51,7 @@ class TestGemfileLock(FileBasedTesting):
             shutil.copy(regened_exp_loc, expected_loc)
 
         with open(expected_loc) as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+            expected = json.load(ex)
 
         try:
             assert expected == results
@@ -356,7 +355,7 @@ class TestGemfileLock(FileBasedTesting):
             (u'tag', None),
             (u'requirements', []),
             (u'dependencies',
-             OrderedDict([(u'a@1', OrderedDict([(u'b@2', OrderedDict())]))]))
+             dict([(u'a@1', dict([(u'b@2', {})]))]))
         ]
 
         results = a.to_dict()

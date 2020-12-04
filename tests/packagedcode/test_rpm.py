@@ -24,7 +24,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -44,7 +43,7 @@ class TestRpmBasics(FileBasedTesting):
             ('namespace', None),
             ('name', 'libproxy-bin'),
             ('version', '0.3.0-4.el6_3'),
-            ('qualifiers', OrderedDict()),
+            ('qualifiers', {}),
             ('subpath', None),
             ('primary_language', None),
             ('description',
@@ -52,7 +51,7 @@ class TestRpmBasics(FileBasedTesting):
                 'The libproxy-bin package contains the proxy binary for libproxy'),
             ('release_date', None),
             ('parties', [
-                OrderedDict([
+                dict([
                     ('type', None),
                     ('role', 'vendor'),
                     ('name', 'CentOS'),
@@ -155,7 +154,7 @@ def check_json(result, expected_file, regen=False):
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
 
     with io.open(expected_file, encoding='utf-8') as exp:
-        expected = json.load(exp, object_pairs_hook=OrderedDict)
+        expected = json.load(exp)
     assert json.dumps(expected) == json.dumps(result)
 
 

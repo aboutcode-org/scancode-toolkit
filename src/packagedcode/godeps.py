@@ -24,7 +24,6 @@
 
 
 from collections import namedtuple
-from collections import OrderedDict
 import io
 import json
 import logging
@@ -121,9 +120,9 @@ class Godep(object):
         """
         if isinstance(location, string_types):
             with io.open(location, encoding='utf-8') as godep:
-                data = json.load(godep, object_pairs_hook=OrderedDict)
+                data = json.load(godep)
         else:
-            data = json.load(location, object_pairs_hook=OrderedDict)
+            data = json.load(location)
 
         for key, value in data.items():
             name = NAMES.get(key)
@@ -149,7 +148,7 @@ class Godep(object):
         return deps_list or []
 
     def to_dict(self):
-        dct = OrderedDict()
+        dct = {}
         dct.update([
             ('import_path', self.import_path),
             ('go_version', self.go_version),

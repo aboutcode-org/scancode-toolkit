@@ -24,7 +24,6 @@
 
 
 from collections import Counter
-from collections import OrderedDict
 
 import attr
 from six import string_types
@@ -112,7 +111,7 @@ class ScanSummary(PostScanPlugin):
     """
     sort_order = 10
 
-    codebase_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
     options = [
         PluggableCommandLineOption(('--summary',),
@@ -135,10 +134,10 @@ class ScanSummaryWithDetails(PostScanPlugin):
     Summarize a scan at the codebase level and keep file and directory details.
     """
     # mapping of summary data at the codebase level for the whole codebase
-    codebase_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
     # store summaries at the file and directory level in this attribute when
     # keep details is True
-    resource_attributes = OrderedDict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    resource_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
     sort_order = 100
 
     options = [
@@ -196,7 +195,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
     if keep_details:
         summary = root.summary
     else:
-        summary = root.extra_data.get('summary', OrderedDict())
+        summary = root.extra_data.get('summary', {})
     codebase.attributes.summary.update(summary)
 
     if TRACE: logger_debug('codebase summary:', summary)
@@ -291,7 +290,7 @@ def summarize_values(values, attribute):
     from summarycode.copyright_summary import summarize_holders
     from summarycode.copyright_summary import summarize_copyrights
 
-    value_summarizers_by_attr = OrderedDict(
+    value_summarizers_by_attr = dict(
         license_expressions=summarize_licenses,
         copyrights=summarize_copyrights,
         holders=summarize_holders,
@@ -309,7 +308,7 @@ class ScanKeyFilesSummary(PostScanPlugin):
     sort_order = 150
 
     # mapping of summary data at the codebase level for key files
-    codebase_attributes = OrderedDict(summary_of_key_files=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(summary_of_key_files=attr.ib(default=attr.Factory(dict)))
 
     options = [
         PluggableCommandLineOption(('--summary-key-files',),
@@ -351,7 +350,7 @@ def summarize_codebase_key_files(codebase, **kwargs):
         if k in really_summarizable_attributes]
 
     # create one counter for each summarized attribute
-    summarizable_values_by_key = OrderedDict([(key, []) for key in summarizable_attributes])
+    summarizable_values_by_key = dict([(key, []) for key in summarizable_attributes])
 
     # filter to get only key files
     key_files = (res for res in codebase.walk(topdown=True)
@@ -372,7 +371,7 @@ def summarize_codebase_key_files(codebase, **kwargs):
         summarized = summarize_values(values, key)
         summary_counters.append((key, summarized))
 
-    sorted_summaries = OrderedDict(
+    sorted_summaries = dict(
         [(key, sorted_counter(counter)) for key, counter in summary_counters])
 
     codebase.attributes.summary_of_key_files = sorted_summaries
@@ -386,7 +385,7 @@ class ScanByFacetSummary(PostScanPlugin):
     Summarize a scan at the codebase level groupping by facets.
     """
     sort_order = 200
-    codebase_attributes = OrderedDict(summary_by_facet=attr.ib(default=attr.Factory(list)))
+    codebase_attributes = dict(summary_by_facet=attr.ib(default=attr.Factory(list)))
 
     options = [
         PluggableCommandLineOption(('--summary-by-facet',),
@@ -417,8 +416,8 @@ def summarize_codebase_by_facet(codebase, **kwargs):
         logger_debug('summarize_codebase_by_facet for attributes:', summarizable_attributes)
 
     # create one group of by-facet values lists for each summarized attribute
-    summarizable_values_by_key_by_facet = OrderedDict([
-        (facet, OrderedDict([(key, []) for key in summarizable_attributes]))
+    summarizable_values_by_key_by_facet = dict([
+        (facet, dict([(key, []) for key in summarizable_attributes]))
         for facet in facet_module.FACETS
     ])
 
@@ -444,10 +443,10 @@ def summarize_codebase_by_facet(codebase, **kwargs):
             for key, values in summarizable_values_by_key.items()
         )
 
-        sorted_summaries = OrderedDict(
+        sorted_summaries = dict(
             [(key, sorted_counter(counter)) for key, counter in summary_counters])
 
-        facet_summary = OrderedDict(facet=facet)
+        facet_summary = dict(facet=facet)
         facet_summary['summary'] = sorted_summaries
         final_summaries.append(facet_summary)
 

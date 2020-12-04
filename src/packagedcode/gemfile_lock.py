@@ -24,7 +24,6 @@
 
 
 from collections import namedtuple
-from collections import OrderedDict
 import functools
 import logging
 import re
@@ -219,9 +218,9 @@ class Gem(object):
         dicts. The tree root is self. Each key is a name/version tuple.
         Values are dicts.
         """
-        tree = OrderedDict()
+        tree = {}
         root = (self.name, self.version,)
-        tree[root] = OrderedDict()
+        tree[root] = {}
         for _name, gem in self.dependencies.items():
             tree[root].update(gem.as_nv_tree())
         return tree
@@ -255,9 +254,9 @@ class Gem(object):
         Return a tree of dependencies as nested mappings.
         Each key is a "name@version" string and values are dicts.
         """
-        tree = OrderedDict()
+        tree = {}
         root = '{}@{}'.format(self.name or '', self.version or '')
-        tree[root] = OrderedDict()
+        tree[root] = {}
         for _name, gem in self.dependencies.items():
             tree[root].update(gem.dependency_tree())
         return tree
@@ -266,7 +265,7 @@ class Gem(object):
         """
         Return a native mapping for this Gem.
         """
-        return OrderedDict([
+        return dict([
             ('name', self.name),
             ('version', self.version),
             ('platform', self.platform),
@@ -386,10 +385,10 @@ class GemfileLockParser(object):
         }
 
         # the final tree of dependencies, keyed by name
-        self.dependency_tree = OrderedDict()
+        self.dependency_tree = {}
 
         # a flat dict of all gems, keyed by name
-        self.all_gems = OrderedDict()
+        self.all_gems = {}
 
         self.platforms = []
 

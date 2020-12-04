@@ -25,7 +25,6 @@
 
 
 import io
-from collections import OrderedDict
 import json
 import os
 
@@ -50,7 +49,7 @@ def load_scan(json_input):
     with io.open(json_input, encoding='utf-8') as jsonf:
         scan = jsonf.read()
 
-    scan_results = json.loads(scan, object_pairs_hook=OrderedDict)
+    scan_results = json.loads(scan)
     scan_results = scan_results['files']
     return scan_results
 
@@ -60,7 +59,7 @@ def check_json(result, expected_file, regen=False):
         with io.open(expected_file, 'w', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
     with io.open(expected_file, encoding='utf-8') as exp:
-        expected = json.load(exp, object_pairs_hook=OrderedDict)
+        expected = json.load(exp)
     assert expected == result
 
 
@@ -100,7 +99,7 @@ def load_csv(location):
 def test_flatten_scan_minimal():
     test_json = test_env.get_test_loc('csv/flatten_scan/minimal.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -116,7 +115,7 @@ def test_flatten_scan_minimal():
 def test_flatten_scan_can_process_path_with_and_without_leading_slash():
     test_json = test_env.get_test_loc('csv/flatten_scan/path_with_and_without_leading_slash.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -161,7 +160,7 @@ def test_csv_minimal():
 def test_flatten_scan_full():
     test_json = test_env.get_test_loc('csv/flatten_scan/full.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -178,7 +177,7 @@ def test_flatten_scan_full():
 def test_flatten_scan_key_ordering():
     test_json = test_env.get_test_loc('csv/flatten_scan/key_order.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -196,7 +195,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
     # this scan has no results at all
     test_json = test_env.get_test_loc('csv/flatten_scan/no_keys.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -205,7 +204,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
         ('package', []),
         ])
     result = list(flatten_scan(scan, headers))
-    expected_headers = OrderedDict([
+    expected_headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),
@@ -221,7 +220,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
 def test_flatten_scan_can_process_package_license_when_license_value_is_null():
     test_json = test_env.get_test_loc('csv/flatten_scan/package_license_value_null.json')
     scan = load_scan(test_json)
-    headers = OrderedDict([
+    headers = dict([
         ('info', []),
         ('license', []),
         ('copyright', []),

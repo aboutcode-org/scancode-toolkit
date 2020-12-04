@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os.path
 
 from packagedcode import models
@@ -43,7 +42,7 @@ class TestModels(PackageTester):
             ('namespace', None),
             ('name', u'someAndroidPAcakge'),
             ('version', None),
-            ('qualifiers', OrderedDict()),
+            ('qualifiers', {}),
             ('subpath', None),
             ('primary_language', u'Java'),
             ('description', None),
@@ -98,18 +97,18 @@ class TestModels(PackageTester):
             type='maven',
             name='this',
             version='23',
-            qualifiers=OrderedDict(this='that')
+            qualifiers=dict(this='that')
         )
-        assert OrderedDict(this='that') == package.to_dict()['qualifiers']
+        assert dict(this='that') == package.to_dict()['qualifiers']
 
     def test_Package_model_qualifiers_are_kept_as_mappings(self):
         package = models.Package(
             type='maven',
             name='this',
             version='23',
-            qualifiers=OrderedDict(this='that')
+            qualifiers=dict(this='that')
         )
-        assert OrderedDict(this='that') == package.qualifiers
+        assert dict(this='that') == package.qualifiers
 
     def test_Package_model_qualifiers_are_converted_to_mappings(self):
         package = models.Package(
@@ -118,7 +117,7 @@ class TestModels(PackageTester):
             version='23',
             qualifiers='this=that'
         )
-        assert OrderedDict(this='that') == package.qualifiers
+        assert dict(this='that') == package.qualifiers
 
 
     def test_Package_full(self):

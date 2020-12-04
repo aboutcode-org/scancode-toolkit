@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 from itertools import chain
 from os import path
@@ -110,8 +109,8 @@ class CopyrightTest(object):
         filtered = [field for field in attr.fields(CopyrightTest)
                     if '_file' in field.name]
         fields_filter = attr.filters.exclude(*filtered)
-        data = attr.asdict(self, filter=fields_filter, dict_factory=OrderedDict)
-        return OrderedDict([
+        data = attr.asdict(self, filter=fields_filter, dict_factory=dict)
+        return dict([
             (key, value) for key, value in data.items()
             # do not dump false and empties
             if value])
@@ -180,7 +179,7 @@ def as_sorted_mapping(counter):
         value, count = value_count
         return -count, value
 
-    summarized = [OrderedDict([('value', value), ('count', count)])
+    summarized = [dict([('value', value), ('count', count)])
                   for value, count in sorted(counter.items(), key=by_count_value)]
     return summarized
 

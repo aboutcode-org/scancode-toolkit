@@ -23,7 +23,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import os
 import unittest
 
@@ -151,7 +150,7 @@ def check_ignorable_clues(rule, regen=False):
     scan_data.update(api.get_urls(text_file, threshold=0))
     scan_data.update(api.get_emails(text_file, threshold=0))
 
-    results = OrderedDict()
+    results = {}
     for what, detections in scan_data.items():
         # remove lines
         for detected in detections:
@@ -163,7 +162,7 @@ def check_ignorable_clues(rule, regen=False):
         detections = sorted(set(chain(*(detected.values() for detected in detections))))
         results['ignorable_' + what] = detections
 
-    results = OrderedDict([(k, v) for k, v in sorted(results.items()) if v])
+    results = dict([(k, v) for k, v in sorted(results.items()) if v])
 
     if regen:
         for k, v in results.items():
@@ -171,7 +170,7 @@ def check_ignorable_clues(rule, regen=False):
         rule.dump()
 
     # collect ignorables
-    expected = OrderedDict([
+    expected = dict([
         ('ignorable_copyrights', rule.ignorable_copyrights or []),
         ('ignorable_holders', rule.ignorable_holders or []),
         ('ignorable_authors', rule.ignorable_authors or []),
@@ -179,7 +178,7 @@ def check_ignorable_clues(rule, regen=False):
         ('ignorable_emails', rule.ignorable_emails or []),
     ])
 
-    expected = OrderedDict([(k, v) for k, v in sorted(expected.items()) if v])
+    expected = dict([(k, v) for k, v in sorted(expected.items()) if v])
 
     try:
         assert expected == results

@@ -24,7 +24,6 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
-from collections import OrderedDict
 import io
 import json
 import os
@@ -54,7 +53,7 @@ def test_jsonlines_with_timing():
     run_scan_click(['-i', '--timing', test_dir, '--json-lines', result_file])
 
     with io.open(result_file, encoding='utf-8') as res:
-        file_results = [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
+        file_results = [json.loads(line) for line in res]
 
     first_line = True
     for res in file_results:

@@ -25,7 +25,6 @@
 
 from collections import Counter
 from collections import defaultdict
-from collections import OrderedDict
 from functools import partial
 from itertools import chain
 import io
@@ -218,7 +217,7 @@ class License(object):
 
     def to_dict(self):
         """
-        Return an OrderedDict of license data (excluding texts).
+        Return an dict of license data (excluding texts).
         Fields with empty values are not included.
         """
 
@@ -238,7 +237,7 @@ class License(object):
                 return False
             return True
 
-        data = attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
         cv = data.get('minimum_coverage')
         if cv and isinstance(cv, float) and int(cv) == cv:
             cv = int(cv)
@@ -934,7 +933,7 @@ class Rule(object):
         Return an ordered mapping of self, excluding texts. Used for
         serialization. Empty values are not included.
         """
-        data = OrderedDict()
+        data = {}
         if self.license_expression:
             data['license_expression'] = self.license_expression
 
