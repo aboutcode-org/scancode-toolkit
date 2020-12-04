@@ -196,8 +196,8 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
     """
     Write scan output as SPDX Tag/value or RDF.
     """
+    as_rdf = not as_tagvalue
     _patch_license_list()
-
     absinput = abspath(input_file)
 
     if isdir(absinput):
@@ -341,24 +341,20 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
         if as_tagvalue:
             from spdx.writers.tagvalue import write_document  # NOQA
-        else:
+        elif as_rdf:
             from spdx.writers.rdf import write_document  # NOQA
 
         if as_tagvalue:
-            # unicode text everywhere
             spdx_output = StringIO()
-        else:
-            # rdf as utf-encoded bytes on Py2
+        elif as_rdf:
+            # rdf is utf-encoded bytes
             spdx_output = BytesIO()
 
         write_document(doc, spdx_output, validate=False)
         result = spdx_output.getvalue()
 
-        if as_tagvalue:
-            # unicode text everywhere
-            pass
-        else:
-            # rdf as utf-encoded bytes on Py2
+        if as_rdf:
+            # rdf is utf-encoded bytes
             result = result.decode('utf-8')
 
         output_file.write(result)

@@ -27,14 +27,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-import pytest
 
-from commoncode.system import py2
 from packagedcode import cocoapods
 from packages_test_utils import PackageTester
 
 
-@pytest.mark.skipif(py2, reason='Does not pass on Python2')
 class TestRubyGemspec(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

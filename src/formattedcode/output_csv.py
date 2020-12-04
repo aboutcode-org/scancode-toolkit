@@ -33,7 +33,6 @@ import saneyaml
 from six import string_types
 import unicodecsv
 
-from commoncode import compat
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
@@ -320,7 +319,7 @@ def flatten_package(_package, path, prefix='package__'):
                     if isinstance(component_val, list):
                         component_val = '\n'.join(component_val)
 
-                    if not isinstance(component_val, compat.unicode):
+                    if not isinstance(component_val, str):
                         component_val = repr(component_val)
 
                     existing = pack.get(component_new_key) or []
@@ -338,7 +337,7 @@ def flatten_package(_package, path, prefix='package__'):
 
         pack[nk] = ''
 
-        if isinstance(val, compat.unicode):
+        if isinstance(val, str):
             pack[nk] = val
         else:
             # Use repr if not a string

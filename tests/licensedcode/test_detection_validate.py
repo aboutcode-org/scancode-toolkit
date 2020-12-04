@@ -33,7 +33,6 @@ import unittest
 import pytest
 import saneyaml
 
-from commoncode import compat
 from commoncode.functional import flatten
 from commoncode import text
 from licensedcode import cache

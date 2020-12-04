@@ -36,7 +36,6 @@ from six import string_types
 from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
-from commoncode import compat
 from commoncode.text import toascii
 from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
@@ -164,7 +163,7 @@ class Text(object):
 
     def fingerprint(self):
         key = self.key
-        if not isinstance(key, compat.unicode):
+        if not isinstance(key, str):
             key = unidecode(key)
         fp = fingerprints.generate(key)
 

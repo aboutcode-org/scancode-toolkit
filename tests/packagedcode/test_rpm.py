@@ -32,9 +32,7 @@ import io
 import json
 import os
 
-from commoncode import compat
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import on_linux
 from packagedcode import rpm
 
 
@@ -119,7 +117,7 @@ class TestRpmBasics(FileBasedTesting):
 
         assert expected == alltags
         # tests that tags are all unicode
-        assert all([isinstance(v, compat.unicode) for v in alltags.values() if v])
+        assert all([isinstance(v, str) for v in alltags.values() if v])
 
     def test_get_rpm_tags_(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

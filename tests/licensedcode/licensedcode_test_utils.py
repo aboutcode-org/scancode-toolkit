@@ -35,7 +35,6 @@ import attr
 from license_expression import Licensing
 import pytest
 
-from commoncode import compat
 from commoncode import saneyaml
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
@@ -151,7 +150,7 @@ class LicenseTest(object):
         test_file_name = self.test_file_name
         test_name = '{prefix}{test_file_name}'.format(**locals())
         test_name = text.python_safe_name(test_name)
-        if not isinstance(test_name, compat.unicode):
+        if not isinstance(test_name, str):
             test_name = test_name.decode('utf-8')
         return test_name
 

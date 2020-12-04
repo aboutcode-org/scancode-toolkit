@@ -31,7 +31,6 @@ from collections import OrderedDict
 import json
 import os.path
 
-from commoncode import compat
 from commoncode import text
 from commoncode import testcase
 from packagedcode.jar_manifest import parse_manifest

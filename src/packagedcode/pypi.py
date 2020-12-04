@@ -52,13 +52,6 @@ from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import combine_expressions
 
-try:
-    # Python 2
-    unicode = unicode  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
 
 """
 Detect and collect Python packages information.
@@ -774,7 +767,7 @@ def compute_normalized_license(declared_license):
         values = list(declared_license.values())
     elif isinstance(declared_license, list):
         values = list(declared_license)
-    elif isinstance(declared_license, (str, unicode,)):
+    elif isinstance(declared_license, str):
         values = [declared_license]
     else:
         return

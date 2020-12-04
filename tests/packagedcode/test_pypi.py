@@ -35,8 +35,6 @@ import json
 import pytest
 
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from packagedcode.models import DependentPackage
 from packagedcode import pypi
 from packages_test_utils import PackageTester
@@ -490,11 +488,7 @@ class TestSetupPyVersions(object):
             results = {}
 
         if regen:
-            if py2:
-                wmode = 'wb'
-            if py3:
-                wmode = 'w'
-            with open(expected_loc, wmode) as ex:
+            with open(expected_loc, 'w') as ex:
                 json.dump(results, ex, indent=2, separators=(',', ': '))
 
         with open(expected_loc, 'rb') as ex:

@@ -134,8 +134,7 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
 
         # Write files
         codebase_files = OutputPlugin.get_files(codebase, **kwargs)
-        # OutputPlugin.get_files() returns a `map()`, which isn's JSON
-        # serializable in Python 3
+        # OutputPlugin.get_files() returns a generator, not JSON-serializable
         codebase_files = list(codebase_files)
         s.write('files', codebase_files)
 

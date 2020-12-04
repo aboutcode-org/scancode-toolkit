@@ -43,14 +43,6 @@ from time import sleep
 from time import time
 import traceback
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    import itertools.imap as map  # NOQA
-except ImportError:
-    # Python 3
-    pass
-
 # this exception is not available on posix
 try:
     WindowsError  # NOQA
@@ -68,7 +60,6 @@ from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode import compat
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import POSIX_PATH_SEP
@@ -76,7 +67,6 @@ from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
 from commoncode.resource import VirtualCodebase
 from commoncode.system import on_windows
-from commoncode.system import on_linux
 
 # these are important to register plugin managers
 from plugincode import PluginManager

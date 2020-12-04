@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import json
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -34,10 +35,26 @@ from licensedcode import index
 from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
-from licenses_test_utils import check_result_equals_expected_json
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+
+
+def check_result_equals_expected_json(result, expected, regen=False):
+    """
+    Check equality between a result collection and an expected JSON file.
+    Regen the expected file if regen is True.
+    """
+    if regen:
+        with open(expected, 'w') as ex:
+            ex.write(json.dumps(result, indent=2))
+
+    with open(expected) as ex:
+        expected = json.loads(ex.read())
+
+    assert expected == result
 
 
 class IndexTesting(FileBasedTesting):
@@ -775,7 +792,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(Query(location1, idx=idx).query_runs) == 17
         assert len(Query(location2, idx=idx).query_runs) == 15
 
-    def test_Query_tokens_by_line_behaves_the_same_on_python_2_and_python_3(self):
+    def test_Query_tokens_by_line_behaves_the_same_on_various_python_2(self):
         location = self.get_test_loc('query/query_lines/yahoo-eula.txt')
         idx = cache.get_index()
         query = Query(location, idx=idx)

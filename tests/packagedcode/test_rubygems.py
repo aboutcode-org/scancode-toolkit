@@ -35,7 +35,6 @@ from unittest.case import expectedFailure
 
 import saneyaml
 
-from commoncode import compat
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems

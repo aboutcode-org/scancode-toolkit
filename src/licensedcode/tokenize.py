@@ -28,15 +28,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from itertools import islice
-
-# Python 2 and 3 support
-try:
-    # Python 2
-    import itertools.izip as zip  # NOQA
-except ImportError:
-    # Python 3
-    pass
-
 from binascii import crc32
 import re
 

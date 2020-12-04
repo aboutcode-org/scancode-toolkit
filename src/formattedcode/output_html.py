@@ -40,16 +40,13 @@ from os.path import join
 import click
 import simplejson
 
-from commoncode import compat
 from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
 from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_base_name
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
-from commoncode.system import on_linux
 from formattedcode import FileOptionType
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
@@ -133,7 +130,7 @@ def write_templated(output_file, results, version, template_loc):
     template = get_template(template_loc)
 
     for template_chunk in generate_output(results, version, template):
-        assert isinstance(template_chunk, compat.unicode)
+        assert isinstance(template_chunk, str)
         try:
             output_file.write(template_chunk)
         except Exception:

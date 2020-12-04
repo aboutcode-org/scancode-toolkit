@@ -33,7 +33,6 @@ import click
 click.disable_unicode_literals_warning = True
 import pytest
 
-from commoncode import compat
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
 from scancode.cli_test_utils import check_json_scan

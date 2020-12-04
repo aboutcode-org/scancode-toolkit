@@ -36,8 +36,6 @@ import unicodedata
 import chardet
 from six import string_types
 
-from commoncode import compat
-from commoncode.system import on_linux
 from textcode import pdf
 from textcode import markup
 from textcode import sfdb
@@ -249,7 +247,7 @@ def as_unicode(line):
 
     TODO: Add file/magic detection, unicodedmanit/BS3/4
     """
-    if isinstance(line, compat.unicode):
+    if isinstance(line, str):
         return remove_null_bytes(line)
 
     try:
@@ -270,7 +268,7 @@ def as_unicode(line):
             except UnicodeDecodeError:
                 try:
                     enc = chardet.detect(line)['encoding']
-                    s = compat.unicode(line, enc)
+                    s = str(line, enc)
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
                     s = strings.string_from_string(s)

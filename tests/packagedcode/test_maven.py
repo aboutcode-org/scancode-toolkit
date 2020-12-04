@@ -33,7 +33,6 @@ import os.path
 
 import pytest
 
-from commoncode import compat
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase

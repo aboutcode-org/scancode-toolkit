@@ -35,7 +35,6 @@ import attr
 import pytest
 
 import cluecode.copyrights
-from commoncode import compat
 from commoncode import saneyaml
 from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs

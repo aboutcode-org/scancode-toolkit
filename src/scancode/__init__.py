@@ -35,7 +35,6 @@ import click
 from click.types import BoolParamType
 from six import string_types
 
-from commoncode import compat
 from commoncode import fileutils
 
 # Tracing flags

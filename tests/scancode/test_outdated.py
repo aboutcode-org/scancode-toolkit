@@ -27,15 +27,9 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-
-
 import pytest
 
-from commoncode.system import py3
 from scancode import outdated
-
-
-pytestmark = pytest.mark.skipif(not py3, reason='Mock is not available as a builtin on py2')
 
 
 def test_get_latest_version():

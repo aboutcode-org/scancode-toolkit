@@ -25,24 +25,21 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from os.path import dirname
-from os.path import join
+from os import path
 
 import pytest
 
-from commoncode.system import py2
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import check_jsonlines_scan
-
 
 pytestmark = pytest.mark.scanslow
 
 
 class TestScanSummary(FileDrivenTesting):
 
-    test_data_dir = join(dirname(__file__), 'data')
+    test_data_dir = path.join(path.dirname(__file__), 'data')
 
     def test_copyright_summary_base(self):
         test_dir = self.get_test_loc('copyright_summary/scan')
@@ -72,7 +69,6 @@ class TestScanSummary(FileDrivenTesting):
         run_scan_click(['-c', '--summary', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
-    @pytest.mark.skipif(py2, reason='round() behaves differently between Python 2 and Python 3, causing the value for percentage_of_license_text to be different')
     def test_full_summary_base(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
@@ -80,7 +76,6 @@ class TestScanSummary(FileDrivenTesting):
         run_scan_click(['-clip', '--summary', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
-    @pytest.mark.skipif(py2, reason='round() behaves differently between Python 2 and Python 3, causing the value for percentage_of_license_text to be different')
     def test_full_summary_with_details(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
@@ -98,7 +93,6 @@ class TestScanSummary(FileDrivenTesting):
 
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
-    @pytest.mark.skipif(py2, reason='round() behaves differently between Python 2 and Python 3, causing the value for percentage_of_license_text to be different')
     def test_full_summary_key_files(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
@@ -108,7 +102,6 @@ class TestScanSummary(FileDrivenTesting):
              '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
-    @pytest.mark.skipif(py2, reason='round() behaves differently between Python 2 and Python 3, causing the value for percentage_of_license_text to be different')
     def test_full_summary_key_files_json_lines(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
@@ -118,7 +111,6 @@ class TestScanSummary(FileDrivenTesting):
              '--json-lines', result_file, test_dir])
         check_jsonlines_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
-    @pytest.mark.skipif(py2, reason='round() behaves differently between Python 2 and Python 3, causing the value for percentage_of_license_text to be different')
     def test_full_summary_by_facet(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')

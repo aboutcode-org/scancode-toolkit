@@ -43,15 +43,12 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import load_json_result_from_string
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -62,12 +59,6 @@ of these CLI tests are dependent on py.test monkeypatch to ensure we are testing
 the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
-
-
-if py2:
-    read_mode = 'rb'
-if py3:
-    read_mode = 'r'
 
 
 def test_package_option_detects_packages(monkeypatch):
@@ -182,7 +173,7 @@ def test_scan_info_returns_full_root():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, read_mode).read())
+    result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert 12 == len(file_paths)
     root = fileutils.as_posixpath(test_dir)
@@ -194,7 +185,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--full-root', test_file, '--json', result_file]
     run_scan_click(args)
-    result_data = json.loads(open(result_file, read_mode).read())
+    result_data = json.loads(open(result_file).read())
     files = result_data['files']
     # we have a single file
     assert len(files) == 1
@@ -285,7 +276,6 @@ def test_failing_scan_return_proper_exit_code_on_failure():
     run_scan_click(args, expected_rc=1)
 
 
-@pytest.mark.xfail(py2, reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
@@ -305,7 +295,6 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
     assert 'Object of type License is not JSON serializable' not in result.output
 
 
-@pytest.mark.xfail(reason='May fail on Python 2 py2')
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
@@ -398,14 +387,18 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
     result_file = test_env.get_temp_file('json')
-
-    if on_linux and py2:
-        test_dir = fsencode(test_dir)
-        result_file = fsencode(result_file)
-
-    args = ['--info', '--license', '--copyright', '--package',
-            '--email', '--url', '--strip-root', test_dir , '--json',
-            result_file] + ([verbosity] if verbosity else [])
+    args = [
+        '--info',
+        '--license',
+        '--copyright',
+        '--package',
+        '--email',
+        '--url',
+        '--strip-root',
+        test_dir ,
+        '--json',
+        result_file
+    ] + ([verbosity] if verbosity else [])
     results = run_scan_click(args)
 
     # the paths for each OS ends up encoded differently.
@@ -452,9 +445,6 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     # rename the problematic files.
 
     test_path = u'unicode_fixtures.tar.gz'
-
-    if on_linux and py2:
-        test_path = b'unicode_fixtures.tar.gz'
 
     test_dir = test_env.extract_test_tar_raw(test_path)
     test_dir = fsencode(test_dir)
@@ -527,16 +517,12 @@ def test_scan_can_handle_weird_file_names():
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
 
-@pytest.mark.skipif(on_macos_14_or_higher or (on_windows and py3),
-        reason='Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635'
-        ' Also this fails on Windows and Python 3')
+@pytest.mark.skipif(on_macos_14_or_higher or on_windows,
+    reason='Cannot handle yet byte paths on macOS 10.14+. '
+    'See https://github.com/nexB/scancode-toolkit/issues/1635')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
-
-    if on_linux and py2:
-        test_dir = fsencode(test_dir)
-        result_file = fsencode(result_file)
 
     args = ['-i', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
@@ -550,10 +536,8 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
         expected = 'non_utf8/expected-linux.json'
     elif on_mac:
         expected = 'non_utf8/expected-mac.json'
-    elif on_windows and py2:
-        expected = 'non_utf8/expected-win-py2.json'
-    elif on_windows and py3:
-        expected = 'non_utf8/expected-win-py3.json'
+    elif on_windows:
+        expected = 'non_utf8/expected-win.json'
 
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
@@ -744,7 +728,7 @@ def test_scan_valid_duration_field_in_json_output_headers():
 
 
 @pytest.mark.scanslow
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+@pytest.mark.skipif(on_windows, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_json_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -758,7 +742,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
 
 
 @pytest.mark.scanslow
-@pytest.mark.skipif(on_windows and py3, reason='Somehow this test fails for now on Python 3')
+@pytest.mark.skipif(on_windows, reason='Somehow this test fails for now on Python 3')
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
@@ -925,9 +909,9 @@ def test_merge_multiple_scans():
     args = ['--from-json', test_file_1, '--from-json', test_file_2, '--json', result_file]
     run_scan_click(args, expected_rc=0)
     expected = test_env.get_test_loc('merge_scans/expected.json')
-    with open(expected, read_mode) as f:
+    with open(expected) as f:
         expected_files = json.loads(f.read())['files']
-    with open(result_file, read_mode) as f:
+    with open(result_file) as f:
         result_files = json.loads(f.read())['files']
     assert expected_files == result_files
 

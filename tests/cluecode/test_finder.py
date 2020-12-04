@@ -34,7 +34,6 @@ from unittest.case import expectedFailure
 import pytest
 
 from commoncode.testcase import FileBasedTesting
-from commoncode import compat
 from cluecode import finder
 from cluecode.finder import find
 from cluecode.finder import urls_regex
@@ -763,7 +762,7 @@ class TestUrl(FileBasedTesting):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
         for _key, url, _line, _lineno in find(test_file, patterns):
-            assert type(url) == compat.unicode
+            assert type(url) == str
 
 
 class TestSearch(FileBasedTesting):

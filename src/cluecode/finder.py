@@ -33,8 +33,6 @@ import ipaddress
 from six import string_types
 import urlpy
 
-from commoncode import compat
-from commoncode.system import py3
 from commoncode.text import toascii
 from cluecode import finder_data
 from textcode import analysis
@@ -251,7 +249,7 @@ def find_urls(location, unique=True):
         if TRACE_URL:
             logger_debug('find_urls: lineno:', lineno, '_line:', repr(_line),
                          'type(url):', type(url), 'url:', repr(url))
-        yield compat.unicode(url), lineno
+        yield str(url), lineno
 
 
 EMPTY_URLS = set(['https', 'http', 'ftp', 'www', ])
@@ -462,7 +460,7 @@ def get_ip(s):
         return False
 
     try:
-        ip = ipaddress.ip_address(compat.unicode(s))
+        ip = ipaddress.ip_address(str(s))
         return ip
     except ValueError:
         return False

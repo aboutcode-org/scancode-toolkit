@@ -41,12 +41,6 @@ import pickle
 import sys
 from time import time
 
-# Python 2 and 3 support
-try:
-    import itertools.izip as zip  # NOQA
-except ImportError:
-    pass
-
 from intbitset import intbitset
 from six import string_types
 
