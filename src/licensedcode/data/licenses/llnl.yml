@@ -6,3 +6,4 @@ owner: Regents of the University of California
 notes: |
     this notice is quite similar to the DSDP license and appears in similar
     forms in HDF5 and other common components
+spdx_license_key: LicenseRef-scancode-llnl

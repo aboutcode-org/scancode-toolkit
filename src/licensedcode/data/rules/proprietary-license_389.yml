@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: See https://github.com/andreagiavatto/Q3ServerBrowser/blob/e42d0fea65e7c33eb657cde74d36327ce4e0ccf3/LICENSE.md#L11
+    which is bsd-like

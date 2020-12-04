@@ -4,6 +4,7 @@ name: Apple iTunes License
 category: Proprietary Free
 owner: Apple
 homepage_url: http://images.apple.com/legal/sla/docs/itunes.pdf
+spdx_license_key: LicenseRef-scancode-itunes
 text_urls:
     - http://images.apple.com/legal/sla/docs/itunes.pdf
 ignorable_emails:

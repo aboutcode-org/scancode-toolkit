@@ -4,5 +4,6 @@ name: AMSFonts license
 category: Permissive
 owner: American Mathematical Society (AMS)
 homepage_url: http://www.ams.org/publications/type1-fonts
+spdx_license_key: LicenseRef-scancode-ams-fonts
 other_urls:
     - https://fedoraproject.org/wiki/Licensing:AMS

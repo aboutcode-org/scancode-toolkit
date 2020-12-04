@@ -668,6 +668,10 @@ patterns = [
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'JUNK'),
     (r'^file\.$', 'JUNK'),
+    # version variables listed after Copyright variable in FFmpeg
+    (r'^ExifVersion$', 'JUNK'),
+    (r'^FlashpixVersion$', 'JUNK'),
+    (r'^.+ArmsAndLegs$', 'JUNK'),
 
     # junk when HOLDER(S): typically used in disclaimers instead
     (r'^HOLDER\(S\)$', 'JUNK'),
@@ -3147,88 +3151,99 @@ remove_man_comment_markers = re.compile(r'.\\"').sub
 def prepare_text_line(line, dedeb=True, to_ascii=True):
     """
     Prepare a unicode `line` of text for copyright detection.
-    If `dedeb` is True, also remove "Debian" <s> </s> markup tags.
+        If `dedeb` is True, also remove "Debian" <s> </s> markup tags.
     """
     # remove some junk in man pages: \(co
-    line = line.replace(u'\\\\ co', u' ')
-    line = line.replace(u'\\ co', u' ')
-    line = line.replace(u'(co ', u' ')
-
+    line = (line
+        .replace(u'\\\\ co', u' ')
+        .replace(u'\\ co', u' ')
+        .replace(u'(co ', u' ')
+    )
     line = remove_printf_format_codes(u' ', line)
 
     # un common comment line prefixes
     line = remove_comment_markers(u' ', line)
     line = remove_man_comment_markers(u' ', line)
-    # C and C++ style markers
-    line = line.replace(u'^//', u' ')
-    line = line.replace(u'/*', u' ').replace(u'*/', u' ')
 
-    # un common pipe chars in some ascii art
-    line = line.replace(u'|', u' ')
+    line = (line
+        # C and C++ style markers
+        .replace(u'^//', u' ')
+        .replace(u'/*', u' ').replace(u'*/', u' ')
 
-    # normalize copyright signs and spacing around them
-    line = line.replace(u'"Copyright', u'" Copyright')
-    line = line.replace(u'( C)', u' (c) ')
-    line = line.replace(u'(C)', u' (c) ')
-    line = line.replace(u'(c)', u' (c) ')
-    # the case of \251 is tested by 'weirdencoding.h'
-    line = line.replace(u'©', u' (c) ')
-    line = line.replace(u'\251', u' (c) ')
-    line = line.replace(u'&copy;', u' (c) ')
-    line = line.replace(u'&copy', u' (c) ')
-    line = line.replace(u'&#169;', u' (c) ')
-    line = line.replace(u'&#xa9;', u' (c) ')
-    line = line.replace(u'&#XA9;', u' (c) ')
-    line = line.replace(u'\xa9', u' (c) ')
-    line = line.replace(u'\\XA9', u' (c) ')
-    # \xc2 is a Â
-    line = line.replace(u'\xc2', u'')
-    line = line.replace(u'\\xc2', u'')
+        # un common pipe chars in some ascii art
+        .replace(u'|', u' ')
 
-    # not really a dash: an emdash
-    line = line.replace(u'–', u'-')
+        # normalize copyright signs and spacing around them
+        .replace(u'"Copyright', u'" Copyright')
+        .replace(u'( C)', u' (c) ')
+        .replace(u'(C)', u' (c) ')
+        .replace(u'(c)', u' (c) ')
+        # the case of \251 is tested by 'weirdencoding.h'
+        .replace(u'©', u' (c) ')
+        .replace(u'\251', u' (c) ')
+        .replace(u'&copy;', u' (c) ')
+        .replace(u'&copy', u' (c) ')
+        .replace(u'&#169;', u' (c) ')
+        .replace(u'&#xa9;', u' (c) ')
+        .replace(u'&#XA9;', u' (c) ')
+        .replace(u'u00A9', u' (c) ')
+        .replace(u'u00a9', u' (c) ')
+        .replace(u'\xa9', u' (c) ')
+        .replace(u'\\XA9', u' (c) ')
+        # \xc2 is a Â
+        .replace(u'\xc2', u'')
+        .replace(u'\\xc2', u'')
 
-    # TODO: add more HTML entities replacements
-    # see http://www.htmlhelp.com/reference/html40/entities/special.html
-    # convert html entities &#13;&#10; CR LF to space
-    line = line.replace(u'&#13;&#10;', u' ')
-    line = line.replace(u'&#13;', u' ')
-    line = line.replace(u'&#10;', u' ')
+        # not really a dash: an emdash
+        .replace(u'–', u'-')
 
-    # spaces
-    line = line.replace(u'&ensp;', u' ')
-    line = line.replace(u'&emsp;', u' ')
-    line = line.replace(u'&thinsp;', u' ')
+        # TODO: add more HTML entities replacements
+        # see http://www.htmlhelp.com/reference/html40/entities/special.html
+        # convert html entities &#13;&#10; CR LF to space
+        .replace(u'&#13;&#10;', u' ')
+        .replace(u'&#13;', u' ')
+        .replace(u'&#10;', u' ')
 
-    # common named HTML entities
-    line = line.replace(u'&quot;', u'"').replace(u'&#34;', u'"')
-    line = line.replace(u'&amp;', u'&').replace(u'&#38;', u'&')
-    line = line.replace(u'&gt;', u'>').replace(u'&#62;', u'>')
-    line = line.replace(u'&lt;', u'<').replace(u'&#60;', u'<')
+        # spaces
+        .replace(u'&ensp;', u' ')
+        .replace(u'&emsp;', u' ')
+        .replace(u'&thinsp;', u' ')
 
-    # normalize (possibly repeated) quotes to unique single quote '
-    # backticks ` and "
-    line = line.replace(u'`', u"'")
-    line = line.replace(u'"', u"'")
+        # common named HTML entities
+        .replace(u'&quot;', u'"')
+        .replace(u'&#34;', u'"')
+        .replace(u'&amp;', u'&')
+        .replace(u'&#38;', u'&')
+        .replace(u'&gt;', u'>')
+        .replace(u'&#62;', u'>')
+        .replace(u'&lt;', u'<')
+        .replace(u'&#60;', u'<')
+
+        # normalize (possibly repeated) quotes to unique single quote '
+        # backticks ` and "
+        .replace(u'`', u"'")
+        .replace(u'"', u"'")
+    )
     # keep only one quote
     line = fold_consecutive_quotes(u"'", line)
 
     # treat some escaped literal CR, LF, tabs, \00 as new lines
     # such as in code literals: a="\\n some text"
-    line = line.replace(u'\\t', u' ')
-    line = line.replace(u'\\n', u' ')
-    line = line.replace(u'\\r', u' ')
-    line = line.replace(u'\\0', u' ')
+    line = (line
+        .replace(u'\\t', u' ')
+        .replace(u'\\n', u' ')
+        .replace(u'\\r', u' ')
+        .replace(u'\\0', u' ')
 
-    # TODO: why backslashes?
-    line = line.replace(u'\\', u' ')
+        # TODO: why backslashes?
+        .replace(u'\\', u' ')
 
-    # replace ('
-    line = line.replace(u'("', u' ')
-    # some trailing garbage ')
-    line = line.replace(u"')", u' ')
-    line = line.replace(u"],", u' ')
-
+        # replace ('
+        .replace(u'("', u' ')
+        # some trailing garbage ')
+        .replace(u"')", u' ')
+        .replace(u"],", u' ')
+    )
     # note that we do not replace the debian tag by a space:  we remove it
     line = strip_markup(line, dedeb=dedeb)
 

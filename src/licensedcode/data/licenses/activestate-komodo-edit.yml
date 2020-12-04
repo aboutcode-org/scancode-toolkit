@@ -4,6 +4,7 @@ name: ActiveState Komodo Edit EULA
 category: Proprietary Free
 owner: ActiveState Software, Inc.
 homepage_url: http://www.activestate.com/komodo-edit/license-agreement
+spdx_license_key: LicenseRef-scancode-activestate-komodo-edit
 other_urls:
     - https://www.mozilla.org/en-US/MPL/1.1/
 ignorable_urls:

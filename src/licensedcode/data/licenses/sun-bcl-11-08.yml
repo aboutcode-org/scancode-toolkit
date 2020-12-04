@@ -4,6 +4,7 @@ name: Sun BCL 11 plus 8
 category: Proprietary Free
 owner: Oracle (Sun)
 homepage_url: http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
+spdx_license_key: LicenseRef-scancode-sun-bcl-11-08
 text_urls:
     - http://download.java.net/media/jai/builds/release/1_1_3/LICENSE-jai.txt
 ignorable_urls:

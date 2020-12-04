@@ -4,6 +4,7 @@ name: Adobe Flex 2.0.1 SDK EULA
 category: Proprietary Free
 owner: Adobe Systems
 homepage_url: http://labs.adobe.com/technologies/eula/flex2sdk.html
+spdx_license_key: LicenseRef-scancode-flex2sdk
 text_urls:
     - http://labs.adobe.com/technologies/eula/flex2sdk.html
 ignorable_urls:

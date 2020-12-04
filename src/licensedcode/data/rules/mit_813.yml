@@ -1,0 +1,4 @@
+license_expression: mit
+is_license_notice: yes
+relevance: 99
+notes: truncated MIT. See PR to fix this at https://github.com/apache/drill/pull/2111

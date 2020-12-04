@@ -4,6 +4,7 @@ name: Eclipse Foundation Software User Agreement 2003
 category: Copyleft
 owner: Eclipse Foundation
 homepage_url: https://web.archive.org/web/20030210115256/http://www.eclipse.org/legal/notice.html
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2003
 ignorable_urls:
     - http://oss.software.ibm.com/developerworks/opensource/license10.html
     - http://www.apache.org/licenses/LICENSE

@@ -3,5 +3,6 @@ short_name: HERE Proprietary
 name: HERE Proprietary License
 category: Commercial
 owner: HERE Global B.V.
+spdx_license_key: LicenseRef-scancode-here-proprietary
 other_spdx_license_keys:
     - LicenseRef-Proprietary-HERE

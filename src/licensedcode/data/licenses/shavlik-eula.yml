@@ -4,5 +4,6 @@ name: Shavlik Technologies EULA
 category: Commercial
 owner: Shavlik Technologies
 homepage_url: http://www.shavlik.com/
+spdx_license_key: LicenseRef-scancode-shavlik-eula
 ignorable_emails:
     - info@shavlik.com

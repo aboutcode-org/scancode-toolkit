@@ -35,7 +35,6 @@ from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import query_tokenizer
 
-
 """
 LicenseMatch data structure and matches merging and filtering routines.
 """
@@ -205,7 +204,8 @@ class LicenseMatch(object):
 
     def __eq__(self, other):
         """
-        Strict equality is based on licensing not matched rule.
+        Strict equality is based on licensing, matched positions and not based
+        on matched rule.
         """
         return (isinstance(other, LicenseMatch)
             and self.same_licensing(other)
@@ -215,7 +215,8 @@ class LicenseMatch(object):
 
     def __ne__(self, other):
         """
-        Strict inequality is based on licensing not matched rule.
+        Strict inequality is based on licensing, matched positions and not based
+        on matched rule.
         """
         if not isinstance(other, LicenseMatch):
             return True
@@ -536,9 +537,9 @@ class LicenseMatch(object):
         Return the matched text for this match or an empty string if no query
         exists for this match.
 
-        `_usecache` can be set to False in testsing to avoid any unwanted
-        caching side effects as the caching is dependent on the index being used
-        and the index can change when testing.
+        `_usecache` can be set to False in testing to avoid any unwanted caching
+        side effects as the caching depends on which index instance is being
+        used and this index can change during testing.
         """
         query = self.query
         if not query:
@@ -546,7 +547,7 @@ class LicenseMatch(object):
             # this case should never exist except for tests!
             return u''
 
-        if whole_lines and (query.has_long_lines or query.is_binary):
+        if whole_lines and query.has_long_lines:
             whole_lines = False
 
         return u''.join(get_full_matched_text(
@@ -721,7 +722,6 @@ def merge_matches(matches, max_dist=None):
         merged.extend(rule_matches)
     return merged
 
-
 # FIXME we should consider the length and distance between matches to break
 # early from the loops: trying to check containment on wildly separated matches
 # does not make sense
@@ -812,7 +812,6 @@ def filter_contained_matches(matches):
 
     return matches, discarded
 
-
 # FIXME: there are some corner cases where we discard small overalapping matches
 # correctly but then we later also discard entirely the containing match meaning
 # we underreport
@@ -865,7 +864,6 @@ def filter_overlapping_matches(matches):
                 logger_debug('\n\n')
                 logger_debug('---> filter_overlapping_matches: current: i=', i, current_match)
                 logger_debug('---> filter_overlapping_matches: next:    j=', j, next_match)
-
 
             # BREAK/shortcircuit rather than continue since continuing looking
             # next matches will yield no new findings. e.g. stop when no overlap
@@ -1596,21 +1594,25 @@ def reportable_tokens(tokens, match_qspan, start_line, end_line, whole_lines=Fal
 
 
 def get_full_matched_text(
-        match, location=None, query_string=None, idx=None,
-        whole_lines=False,
-        highlight=True, highlight_matched=u'%s', highlight_not_matched=u'[%s]',
-        stopwords=STOPWORDS, _usecache=True):
+    match,
+    location=None, query_string=None,
+    idx=None,
+    whole_lines=False,
+    highlight=True, highlight_matched=u'%s', highlight_not_matched=u'[%s]',
+    stopwords=STOPWORDS,
+    _usecache=True,
+):
     """
     Yield unicode strings corresponding to the full matched query text
     given a query file at `location` or a `query_string`, a `match` LicenseMatch
     and an `idx` LicenseIndex.
 
     This contains the full text including punctuations and spaces that are not
-    participating in the match proper incuding leading and trailing punctuations.
+    participating in the match proper including leading and trailing punctuations.
 
     If `whole_lines` is True, the unmatched part at the start of the first
-    matched line and the end of the last matched lines are also included in the
-    returned text.
+    matched line and the unmatched part at the end of the last matched lines are
+    also included in the returned text (unless the line is very long).
 
     If `highlight` is True, each token is formatted for "highlighting" and
     emphasis with the `highlight_matched` format string for matched tokens or to
@@ -1648,7 +1650,6 @@ def get_full_matched_text(
         for t in tokens:
             print(t)
         print()
-
 
     # Finally yield strings with eventual highlightings
     for token in tokens:

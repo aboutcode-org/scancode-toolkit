@@ -333,6 +333,7 @@ class TestPyPi(PackageTester):
     @expectedFailure
     def test_requirements_txt_sample12(self):
         # FAILURE: dparse library wrongly detect the dependencies
+        # we should return only a single value which should be the latest one
         test_file = self.get_test_loc('pypi/requirements_txt/sample12/requirements.txt')
         package = pypi.parse_requirements_txt(test_file)
         expected_loc = self.get_test_loc('pypi/requirements_txt/sample12/output.expected.json')

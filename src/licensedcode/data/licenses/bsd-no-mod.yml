@@ -4,5 +4,6 @@ name: Madwifi License Agreement
 category: Free Restricted
 owner: MadWifi
 homepage_url: http://www.madwifi.org/
+spdx_license_key: LicenseRef-scancode-bsd-no-mod
 text_urls:
     - http://wiki.freespire.org/index.php/Madwifi_License_Agreement

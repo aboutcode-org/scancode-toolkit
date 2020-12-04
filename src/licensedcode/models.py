@@ -33,6 +33,7 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import shutil
 import traceback
 
 import attr
@@ -98,8 +99,8 @@ class License(object):
 
     __attrib = partial(attr.ib, repr=False)
 
-    # unique key: lower case ASCII characters, digits, underscore and dots.
-    key = attr.ib(default=None, repr=True)
+    # mandatory and unique key: lower case ASCII characters, digits, underscore and dots.
+    key = attr.ib(repr=True)
 
     src_dir = __attrib(default=licenses_data_dir)
 
@@ -183,7 +184,7 @@ class License(object):
         else:
             key = self.key
 
-        newl = License(key, target_dir)
+        newl = License(key=key, src_dir=target_dir)
 
         # copy fields
         excluded_fields = ('key', 'src_dir', 'data_file', 'text_file',)
@@ -238,10 +239,9 @@ class License(object):
             return True
 
         data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
-        cv = data.get('minimum_coverage')
-        if cv and isinstance(cv, float) and int(cv) == cv:
-            cv = int(cv)
-            data['minimum_coverage'] = cv
+        cv = data.get('minimum_coverage', 0)
+        if cv:
+            data['minimum_coverage'] = as_int(cv)
         return data
 
     def dump(self):
@@ -271,13 +271,13 @@ class License(object):
             with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
 
-            numeric_keys = ('minimum_coverage', 'relevance')
             for k, v in data.items():
-                if k in numeric_keys:
-                    v = int(v)
+                if k == 'minimum_coverage':
+                    v = as_int(v)
 
                 if k == 'key':
-                    assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
+                    assert self.key == v, (
+                        'Inconsistent YAML key and file names for %r' % self.key)
 
                 setattr(self, k, v)
 
@@ -289,7 +289,7 @@ class License(object):
             print('#############################')
             print(e)
             print('#############################')
-            raise
+            raise e
 
     def _read_text(self, location):
         if not exists(location):
@@ -393,6 +393,9 @@ class License(object):
             # SPDX consistency
             if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
+            else:
+                # SPDX license key is now mandatory
+                error('No SPDX license key')
             for oslk in lic.other_spdx_license_keys:
                 by_spdx_key[oslk].append(key)
 
@@ -451,11 +454,12 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     licenses = {}
     used_files = set()
-    all_files = set(resource_iter(licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
+    all_files = set(resource_iter(
+        licenses_data_dir, ignored=ignore_editor_tmp_files, with_dirs=False))
     for data_file in sorted(all_files):
         if data_file.endswith('.yml'):
             key = file_base_name(data_file)
-            lic = License(key, licenses_data_dir)
+            lic = License(key=key, src_dir=licenses_data_dir)
             used_files.add(data_file)
             if exists(lic.text_file):
                 used_files.add(lic.text_file)
@@ -480,52 +484,50 @@ def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir
     from licensedcode.cache import get_licenses_db
     licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
     rules = list(load_rules(rules_data_dir=rules_data_dir))
-    check_rules_integrity(rules, licenses)
+    validate_rules(rules, licenses)
     licenses_as_rules = build_rules_from_licenses(licenses)
     return chain(licenses_as_rules, rules)
 
 
-class MissingLicenses(Exception):
-    pass
-
-class MissingFlags(Exception):
+class InvalidRule(Exception):
     pass
 
 
-def check_rules_integrity(rules, licenses_by_key):
+def _validate_all_rules(rules, licenses_by_key):
     """
-    Given a lists of `rules`, check that all the rule license keys reference a
-    known license from a mapping of `licenses_by_key `(key->license). Raise a
-    MissingLicense exception with a message containing the list of rule files
-    without a corresponding license.
+    Return a mapping of {error message: [list of rules]) from validating a list
+    of `rules` integrity and correctness using known licenses from a mapping of
+    `licenses_by_key `(key->license)`.
     """
-    invalid_rules = defaultdict(set)
-    rules_without_flags = set()
+    licensing = Licensing(licenses_by_key.values())
+    errors = defaultdict(list)
     for rule in rules:
-        unknown_keys = [key for key in rule.license_keys()
-                        if key not in licenses_by_key]
-        if unknown_keys:
-            invalid_rules[rule.data_file].update(unknown_keys)
+        for err_msg in rule.validate(licensing):
+            errors[err_msg].append(rule)
+    return errors
 
-        if not rule.has_flags and not (rule.is_negative or rule.is_false_positive):
-            rules_without_flags.add(rule.data_file)
 
-    if invalid_rules:
-        invalid_rules = (
-            ' '.join(keys) + '\n' +
-            'file://' + data_file + '\n' +
-            'file://' + data_file.replace('.yml', '.RULE') + '\n'
-        for data_file, keys in invalid_rules.items() if keys)
-        msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
-        raise MissingLicenses(msg)
-
-    if rules_without_flags:
-        invalid_rules = (
-            'file://' + data_file + '\n' +
-            'file://' + data_file.replace('.yml', '.RULE') + '\n'
-        for data_file in sorted(rules_without_flags))
-        msg = 'Rules without is_license_xxx flags:\n' + '\n'.join(sorted(invalid_rules))
-        raise MissingFlags(msg)
+def validate_rules(rules, licenses_by_key, with_text=False):
+    """
+    Return a mapping of {error message: [list of rules]) from validating a list
+    of `rules` integrity and correctness using known licenses from a mapping of
+    `licenses_by_key `(key->license).
+    """
+    errors = _validate_all_rules(rules, licenses_by_key)
+    if errors:
+        message = ['Errors while validating rules:']
+        for msg, rules in errors.items():
+            message.append('')
+            message.append(msg)
+            for rule in rules:
+                message.append('  ' + repr(rule))
+                if rule.text_file:
+                    message.append('    file://' + rule.text_file)
+                if rule.data_file:
+                    message.append('    file://' + rule.data_file)
+                if with_text:
+                    message.append('       ' + rule.text()[:50].strip() + '...')
+        raise InvalidRule('\n'.join(message))
 
 
 def build_rules_from_licenses(licenses):
@@ -547,7 +549,7 @@ def build_rules_from_licenses(licenses):
                 has_stored_minimum_coverage=bool(minimum_coverage),
                 minimum_coverage=minimum_coverage,
 
-                is_license=True,
+                is_from_license=True,
                 is_license_text=True,
 
                 ignorable_copyrights=license_obj.ignorable_copyrights,
@@ -634,7 +636,6 @@ def load_rules(rules_data_dir=rules_data_dir):
         if not data_file.endswith('~'):
             seen_files.add(data_file)
 
-
     unknown_files = seen_files - processed_files
     if unknown_files or case_problems or model_errors or space_problems:
         msg = ''
@@ -649,20 +650,21 @@ def load_rules(rules_data_dir=rules_data_dir):
 
         if case_problems:
             files = '\n'.join(sorted('file://' + f for f in case_problems))
-            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s' % locals()
+            msg += '\nRule files with non-unique name ignoring case in rule directory: %(rules_data_dir)r\n%(files)s' % locals()
 
         if space_problems:
             files = '\n'.join(sorted('"file://' + f + '"' for f in space_problems))
-            msg += '\nRule files name cannot contain spaces: %(rules_data_dir)r\n%(files)s' % locals()
+            msg += '\nRule filename cannot contain spaces: %(rules_data_dir)r\n%(files)s' % locals()
 
-        raise Exception(msg)
+        raise InvalidRule(msg)
 
 
 @attr.s(slots=True)
-class Rule(object):
+class BasicRule(object):
     """
     A detection rule object is a text to use for detection and corresponding
-    detected licenses and metadata.
+    detected licenses and metadata. This is a basic metadata object that does
+    not have specific support for data and text files.
     """
     licensing = Licensing()
 
@@ -682,34 +684,40 @@ class Rule(object):
     # License expression object, created at build time
     license_expression_object = attr.ib(default=None, repr=False)
 
-    # an indication of what this rule importance is (e.g. how important is its
-    # text when detected as a licensing clue) as one of several flags:
+    # An indication of what this rule importance is (e.g. how important is its
+    # text when detected as a licensing clue) as one of several "is_license_xxx"
+    # flags. These flags are mutually exclusive and a license can only have one
+    # of these as "yes"/True.
 
-    # for a license full text: this provides the highest level of confidence wrt
+    # A license full text: this provides the highest level of confidence wrt
     # detection
     is_license_text = attr.ib(default=False, repr=False)
 
-    # for a license notice: this provides a strong confidence wrt detection
+    # A license notice: this provides a strong confidence wrt detection
     is_license_notice = attr.ib(default=False, repr=False)
 
-    # reference for a mere short license reference such as its bare name or a URL
-    # this provides a weak confidence wrt detection
+    # A reference is for a mere short license reference such as its bare name or a
+    # URL that provides a weaker clue when detected
     is_license_reference = attr.ib(default=False, repr=False)
 
-    # tag for a structured licensing tag such as a package manifest metadata or
-    # an SPDX license identifier or similar package manifest tag
-    # this provides a strong confidence wrt detection
+    # A tag is for a structured licensing tag such as a package manifest
+    # metadata or an SPDX license identifier or similar package manifest tags. A
+    # tag provides a strong clue with high confidence when detected even though
+    # it may be very short.
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # is this rule text a false positive when matched? it will filtered out at
-    # the end if matched
+    # An intro is a short introductory statment that may be placed before an
+    # actual license text, notice or reference. For instance "This file is
+    # licensed under ...". An intro is a weak clue that there some license
+    # afterwards. It should be ignored or merged with the following license
+    # detected immediately after.
+    is_license_intro = attr.ib(default=False, repr=False)
+
+    # Is this rule text a false positive when matched exactly? If yes, it will
+    # filtered out at the end if matched (unless part of a large match)
     is_false_positive = attr.ib(default=False, repr=False)
 
-    # is this rule text a negative rule? it will be removed from the matchable
-    # text the start if matched
-    is_negative = attr.ib(default=False, repr=False)
-
-    # is this rule text only to be matched with a minimum coverage e.g. a
+    # Is this rule text only to be matched with a minimum coverage e.g. a
     # minimum proportion of tokens as a float between 0 and 100 where 100 means
     # all tokens must be matched and a smaller value means a smaller propertion
     # of matched tokens is acceptable. this is computed unless this is provided
@@ -741,7 +749,7 @@ class Rule(object):
     notes = attr.ib(default=None, repr=False)
 
     # set to True if the rule is built from a .LICENSE full text
-    is_license = attr.ib(default=False, repr=False)
+    is_from_license = attr.ib(default=False, repr=False)
 
     # lists of copuyrights, emails and URLs that can be ignored when detected
     # in this license as they are part of the license or rule text itself
@@ -784,102 +792,116 @@ class Rule(object):
 
     has_computed_thresholds = attr.ib(default=False, repr=False)
 
-    def get_length(self, unique=False):
-        return self.length_unique if unique else self.length
-
-    def get_min_matched_length(self, unique=False):
-        return (self.min_matched_length_unique if unique
-                else self.min_matched_length)
-
-    def get_high_length(self, unique=False):
-        return self.high_length_unique if unique else self.high_length
-
-    def get_min_high_matched_length(self, unique=False):
-        return (self.min_high_matched_length_unique if unique
-                else self.min_high_matched_length)
-
     def __attrs_post_init__(self, *args, **kwargs):
-        if not self.text_file:
-            # for SPDX or tests only
-            if not self.stored_text :
-                raise Exception('Invalid rule without its corresponding text file: {}'.format(self))
-            self.identifier = '_tst_' + str(len(self.stored_text))
-        else:
-            self.identifier = file_name(self.text_file)
+        self.setup()
 
-        if self.data_file:
-            try:
-                self.load()
-            except Exception as e:
-                data_file = self.data_file
-                trace = traceback.format_exc()
-                message = 'While loading: file://{data_file}\n{trace}'.format(**locals())
-                raise Exception(message)
-
-        if self.relevance and self.relevance != 100:
-            self.has_stored_relevance = True
-
-        if self.minimum_coverage:
-            self.has_stored_minimum_coverage = True
+    def setup(self):
+        """
+        Setup a few basic computed attributes after instance creation.
+        """
+        self.relevance = as_int(float(self.relevance or 100))
+        self.minimum_coverage = as_int(float(self.minimum_coverage or 0))
 
         if self.license_expression:
             try:
                 expression = self.licensing.parse(self.license_expression)
             except:
-                raise Exception(
-                    'Unable to parse License rule expression: '
-                    +repr(self.license_expression) + ' for: file://' + self.data_file +
-                    '\n' + traceback.format_exc()
+                raise InvalidRule(
+                    'Unable to parse rule License expression: {license_expression!r} '
+                    'for: file://{data_file}'
+                    '\n{trace}'.format(
+                        license_expression=self.license_expression,
+                        data_file=self.data_file,
+                        trace=traceback.format_exc(),
+                    )
                 )
+
             if expression is None:
-                raise Exception(
-                    'Unable to parse License rule expression: '
-                    +repr(self.license_expression) + ' for: file://' + self.data_file)
+                raise InvalidRule(
+                    'Invalid rule License expression parsed to empty: {license_expression!r} '
+                    'for: file://{data_file}'.format(
+                        license_expression=self.license_expression,
+                        data_file=self.data_file,
+                    )
+                )
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
 
-    def tokens(self):
+    def validate(self, licensing=None):
         """
-        Return an iterable of token strings for this rule. Length, relevance and
-        minimum_coverage may be recomputed as a side effect.
+        Validate this rule using the provided `licensing` and yield one error
+        message for each type of error detected.
         """
-        length = 0
-        text = self.text()
-        text = text.strip()
+        is_false_positive = self.is_false_positive
 
-        # FIXME: this is weird:
+        license_flags = (
+            self.is_license_notice,
+            self.is_license_text,
+            self.is_license_reference,
+            self.is_license_tag,
+            self.is_license_intro,
+        )
 
-        # We tag this rule as being a bare URL if it starts with a scheme and is
-        # on one line: this is used to determine a matching approach
+        has_license_flags = any(license_flags)
+        has_many_license_flags = len([l for l in license_flags if l]) != 1
 
-        # FIXME: this does not lower the text first??
-        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
-            self.minimum_coverage = 100
+        license_expression = self.license_expression
 
-        for token in query_tokenizer(self.text()):
-            length += 1
-            yield token
+        ignorables = (
+            self.ignorable_copyrights,
+            self.ignorable_holders,
+            self.ignorable_authors,
+            self.ignorable_urls,
+            self.ignorable_emails,
+        )
 
-        self.length = length
-        self.compute_relevance()
+        if is_false_positive:
+            if not self.notes:
+                yield 'is_false_positive rule must have notes.'
 
-    def text(self):
-        """
-        Return the rule text loaded from its file.
-        """
-        if self.text_file and exists(self.text_file):
-            # IMPORTANT: use the same process as query text loading for symmetry
-            numbered_lines = numbered_text_lines(self.text_file, demarkup=False, plain_text=True)
-            return ''.join(l for _, l in numbered_lines)
+            if has_license_flags:
+                yield 'is_false_positive rule cannot have is_license_* flags.'
 
-        # used for non-file backed rules
-        elif self.stored_text:
-            return self.stored_text
+            if license_expression:
+                yield 'is_false_positive rule cannot have a license_expression.'
 
-        else:
-            raise Exception('Inconsistent rule text for: ' +
-                            self.identifier + '\nfile://' + self.text_file)
+            if self.has_stored_relevance:
+                yield 'is_false_positive rule cannot have a stored relevance.'
+
+            if self.referenced_filenames:
+                yield 'is_false_positive rule cannot have referenced_filenames.'
+
+            if any(ignorables):
+                yield 'is_false_positive rule cannot have ignorable_* attributes.'
+
+        if not (0 <= self.minimum_coverage <= 100):
+            yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
+
+        if not is_false_positive:
+            if not (0 <= self.relevance <= 100):
+                yield 'Invalid rule relevance. Should be between 0 and 100.'
+
+            if has_many_license_flags:
+                yield 'Invalid rule is_license_* flags. Only one allowed.'
+
+            if not has_license_flags:
+                yield 'At least one is_license_* flag is needed.'
+
+            if not check_is_list_of_strings(self.referenced_filenames):
+                yield 'referenced_filenames must be a list of strings'
+
+            if not all(check_is_list_of_strings(i) for i in ignorables):
+                yield 'ignorables must be a list of strings'
+
+            if not license_expression:
+                yield 'Missing license_expression.'
+            else:
+                if licensing:
+                    try:
+                        licensing.parse(license_expression, validate=True, simple=True)
+                    except InvalidRule as e:
+                        yield 'Failed to parse and validate license_expression: {}'.format(str(e))
 
     def license_keys(self, unique=True):
         """
@@ -905,6 +927,178 @@ class Rule(object):
             return self.licensing.contains(
                 self.license_expression_object, other.license_expression_object)
 
+    def spdx_license_expression(self, licensing=None):
+        if not licensing:
+            from licensedcode.cache import get_licensing
+            licensing = get_licensing()
+        parsed = licensing.parse(self.license_expression)
+        return parsed.render(template='{symbol.spdx_license_key}')
+
+    def get_length(self, unique=False):
+        return self.length_unique if unique else self.length
+
+    def get_min_matched_length(self, unique=False):
+        return (self.min_matched_length_unique if unique
+                else self.min_matched_length)
+
+    def get_high_length(self, unique=False):
+        return self.high_length_unique if unique else self.high_length
+
+    def get_min_high_matched_length(self, unique=False):
+        return (self.min_high_matched_length_unique if unique
+                else self.min_high_matched_length)
+
+    def to_dict(self):
+        """
+        Return an ordered mapping of self, excluding texts. Used for
+        serialization. Empty values are not included.
+        """
+        data = {}
+
+        is_false_positive = self.is_false_positive
+
+        if self.license_expression:
+            data['license_expression'] = self.license_expression
+
+        flags = (
+            'is_false_positive',
+            'is_license_text',
+            'is_license_notice',
+            'is_license_reference',
+            'is_license_tag',
+            'is_license_intro',
+            'only_known_words',
+        )
+
+        for flag in flags:
+            tag_value = getattr(self, flag, False)
+            if tag_value:
+                data[flag] = tag_value
+
+        if self.has_stored_relevance and self.relevance and not is_false_positive:
+            data['relevance'] = as_int(self.relevance)
+
+        if self.has_stored_minimum_coverage and self.minimum_coverage > 0 and not is_false_positive:
+            data['minimum_coverage'] = as_int(self.minimum_coverage)
+
+        if self.referenced_filenames and not is_false_positive:
+            data['referenced_filenames'] = self.referenced_filenames
+
+        if self.notes:
+            data['notes'] = self.notes
+
+        if not is_false_positive:
+            ignorables = (
+                'ignorable_copyrights',
+                'ignorable_holders',
+                'ignorable_authors',
+                'ignorable_urls',
+                'ignorable_emails',
+            )
+
+            for igno in ignorables:
+                tag_value = getattr(self, igno, False)
+                if tag_value:
+                    data[igno] = tag_value
+
+        return data
+
+    def text(self):
+        """
+        Return the rule text loaded from its file.
+        """
+        if self.text_file and exists(self.text_file):
+            # IMPORTANT: use the same process as query text loading for symmetry
+            numbered_lines = numbered_text_lines(self.text_file, demarkup=False, plain_text=True)
+            return ''.join(l for _, l in numbered_lines)
+
+        # used for non-file backed rules
+        elif self.stored_text:
+            return self.stored_text
+
+        else:
+            raise InvalidRule('Inconsistent rule text for: ' +
+                            self.identifier + '\nfile://' + self.text_file)
+
+
+def check_is_list_of_strings(l):
+    """
+    Return True if l is a list of strings or an empty list, False otherwise
+    """
+    if isinstance(l, list):
+        if l:
+            return all(isinstance(i, str) for i in l)
+        return True
+    return False
+
+
+def as_int(num):
+    """
+    Convert num to int if num is not an int and this would not lead to
+    loss of information, e.g. when num is an int stored as a float type.
+    """
+    if isinstance(num, str):
+        num = float(num)
+    if isinstance(num, float):
+        n = int(num)
+        if n == num:
+            return n
+    return num
+
+
+@attr.s(slots=True)
+class Rule(BasicRule):
+    """
+    A detection rule object with support for data and text files.
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.load_data()
+        self.setup()
+
+    def load_data(self):
+        """
+        Load data from data file. Check presence of text file.
+        """
+        if not self.text_file:
+            # for SPDX or tests only
+            if not self.stored_text :
+                raise InvalidRule('Invalid rule without its corresponding text file: {}'.format(self))
+            self.identifier = '_tst_' + str(len(self.stored_text))
+        else:
+            self.identifier = file_name(self.text_file)
+
+        if self.data_file:
+            try:
+                self.load()
+            except Exception as e:
+                data_file = self.data_file
+                trace = traceback.format_exc()
+                message = 'While loading: file://{data_file}\n{trace}'.format(**locals())
+                raise InvalidRule(message)
+
+    def tokens(self):
+        """
+        Return an iterable of token strings for this rule. Length, relevance and
+        minimum_coverage may be recomputed as a side effect.
+        """
+        length = 0
+        text = self.text()
+        text = text.strip()
+
+        # We tag this rule as being a bare URL if it starts with a scheme and is
+        # on one line: this is used to determine a matching approach
+
+        if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000].lower():
+            self.minimum_coverage = 100
+
+        for token in query_tokenizer(self.text()):
+            length += 1
+            yield token
+
+        self.length = length
+        self.compute_relevance()
+
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
@@ -928,70 +1122,15 @@ class Rule(object):
 
         self.is_small = self.length < small_rule
 
-    def to_dict(self):
-        """
-        Return an ordered mapping of self, excluding texts. Used for
-        serialization. Empty values are not included.
-        """
-        data = {}
-        if self.license_expression:
-            data['license_expression'] = self.license_expression
-
-        flags = (
-            'is_false_positive',
-            'is_negative',
-            'is_license_text',
-            'is_license_notice',
-            'is_license_reference',
-            'is_license_tag',
-            'only_known_words',
-        )
-
-        for flag in flags:
-            tag_value = getattr(self, flag, False)
-            if tag_value:
-                data[flag] = tag_value
-
-        if self.has_stored_relevance and self.relevance:
-            rl = self.relevance
-            if isinstance(rl, float) and int(rl) == rl:
-                rl = int(rl)
-            data['relevance'] = rl
-
-        if self.has_stored_minimum_coverage and self.minimum_coverage > 0:
-            cv = self.minimum_coverage
-            if isinstance(cv, float) and int(cv) == cv:
-                cv = int(cv)
-            data['minimum_coverage'] = cv
-
-        if self.referenced_filenames:
-            data['referenced_filenames'] = self.referenced_filenames
-
-        if self.notes:
-            data['notes'] = self.notes
-
-        if self.ignorable_copyrights:
-            data['ignorable_copyrights'] = self.ignorable_copyrights
-        if self.ignorable_holders:
-            data['ignorable_holders'] = self.ignorable_holders
-        if self.ignorable_authors:
-            data['ignorable_authors'] = self.ignorable_authors
-        if self.ignorable_urls:
-            data['ignorable_urls'] = self.ignorable_urls
-        if self.ignorable_emails:
-            data['ignorable_emails'] = self.ignorable_emails
-
-        return data
-
     def dump(self):
         """
         Dump a representation of this rule as two files:
          - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
         Does nothing if this rule was created from a License (e.g.
-        `is_license` is True)
+        `is_from_license` is True)
         """
-        if self.is_license:
+        if self.is_from_license:
             return
 
         def write(location, byte_string):
@@ -1021,61 +1160,51 @@ class Rule(object):
             print('#############################')
             # this is a rare case, but yes we abruptly stop.
             raise e
+
         known_attributes = set(attr.fields_dict(self.__class__))
         data_file_attributes = set(data)
         unknown_attributes = data_file_attributes.difference(known_attributes)
         if unknown_attributes:
             unknown_attributes = ', '.join(sorted(unknown_attributes))
             msg = 'License rule {} data file has unknown attributes: {}'
-            raise Exception(msg.format(self, unknown_attributes))
+            raise InvalidRule(msg.format(self, unknown_attributes))
 
         self.license_expression = data.get('license_expression')
-        self.is_negative = data.get('is_negative', False)
+
         self.is_false_positive = data.get('is_false_positive', False)
 
-        if not self.license_expression and not (self.is_negative or self.is_false_positive):
-            msg = 'License rule {} is missing a license_expression.'
-            raise Exception(msg.format(self))
-
-        relevance = float(data.get('relevance', 0))
+        relevance = as_int(float(data.get('relevance') or 0))
+        # Keep track if we have a stored relevance of not.
         if relevance:
-            if relevance <= 0 or relevance > 100:
-                msg = ('License rule {} data file has an invalid relevance. '
-                       'Should be above 0 and 100 or less: {}')
-                raise Exception(msg.format(self, repr(relevance)))
-            # Keep track if we have a stored relevance of not.
             self.relevance = relevance
             self.has_stored_relevance = True
+        else:
+            self.relevance = 100
+            self.has_stored_relevance = False
 
-        self.minimum_coverage = float(data.get('minimum_coverage', 0))
-        self._minimum_containment = self.minimum_coverage / 100
-
-        if not (0 <= self.minimum_coverage <= 100):
-            msg = (
-                'License rule {} data file has an invalid minimum_coverage. '
-                'Should be between 0 and 100: {}')
-            raise Exception(msg.format(self, self.minimum_coverage))
+        minimum_coverage = as_int(float(data.get('minimum_coverage') or 0))
+        self._minimum_containment = minimum_coverage / 100
+        if minimum_coverage:
+            # Keep track if we have a stored minimum_coverage of not.
+            self.minimum_coverage = minimum_coverage
+            self.has_stored_minimum_coverage = True
+        else:
+            self.minimum_coverage = 0
+            self.has_stored_minimum_coverage = False
 
         self.is_license_text = data.get('is_license_text', False)
         self.is_license_notice = data.get('is_license_notice', False)
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
+        self.is_license_intro = data.get('is_license_intro', False)
         self.only_known_words = data.get('only_known_words', False)
+
         self.referenced_filenames = data.get('referenced_filenames', []) or []
-        if not isinstance(self.referenced_filenames, list):
-            msg = (
-                'License rule {} data file has an invalid referenced_filenames. '
-                'Should be a list: {}')
-            raise Exception(msg.format(self, self.referenced_filenames))
 
         # these are purely informational and not used at run time
         notes = data.get('notes')
         if notes:
             self.notes = notes.strip()
-
-        if not self.notes and (self.is_negative or self.is_false_positive):
-            msg = 'Special License rule {} is missing explanatory notes.'
-            raise Exception(msg.format(self))
 
         self.ignorable_copyrights = data.get('ignorable_copyrights', [])
         self.ignorable_holders = data.get('ignorable_holders', [])
@@ -1101,7 +1230,7 @@ class Rule(object):
         "relevance" attribute or computed base on the rule length here using
         this approach:
 
-        - a false positive or a negative rule has a relevance of 100.
+        - a false positive rule has a relevance of 100.
         - a rule of length equal to or larger than a threshold has a 100 relevance
         - a rule of length smaller than a threshold has a relevance of
           100/threshold, rounded down.
@@ -1109,23 +1238,16 @@ class Rule(object):
         The current threshold is 18 words.
         """
 
-        if isinstance(self, SpdxRule):
-            self.relevance = 100
-            return
-
         if self.has_stored_relevance:
             return
 
-        # case for false positive
-        if self.is_false_positive:
+        if (isinstance(self, SpdxRule)
+            # false positive rules with no license: they do not
+            # have licenses and their matches are never returned
+            or self.is_false_positive
+        ):
+            # use the default max relevance of 100
             self.relevance = 100
-            return
-
-        # case for negative rules with no license (and are not an FP)
-        # they do not have licenses and their matches are never returned
-        if self.is_negative:
-            self.relevance = 100
-            return
 
         threshold = 18.0
         relevance_of_one_word = round((1 / threshold) * 100, 2)
@@ -1137,13 +1259,32 @@ class Rule(object):
             computed = int(length * relevance_of_one_word)
             self.relevance = min([100, computed])
 
-    @property
-    def has_flags(self):
+    def rule_dir(self):
         """
-        Return True if this Rule has at least one flag set.
+        Return the directory of this rule.
         """
-        return (self.is_license_text or self.is_license_notice
-            or self.is_license_reference or self.is_license_tag)
+        if not (self.text_file and self.data_file):
+            raise Exception('Cannot obtain rule directory for: {}'.format(repr(self)))
+        return dirname(self.data_file)
+
+    def rename_and_relocate(self, name_prefix):
+        """
+        Rename and relocate rule files to this new name using the ``name_prefix``
+        prefix. The new name is guaranteed to be unique and not conflicting
+        with any existing name.
+        """
+        new_base_loc = find_rule_base_location(
+            name_prefix=name_prefix,
+            rules_directory=self.rule_dir()
+        )
+
+        new_data_file = new_base_loc + '.yml'
+        shutil.move(self.data_file, new_data_file)
+        self.data_file = new_data_file
+
+        new_text_file = new_base_loc + '.RULE'
+        shutil.move(self.text_file, new_text_file)
+        self.text_file = new_text_file
 
 
 def compute_thresholds_occurences(minimum_coverage, length, high_length,
@@ -1241,13 +1382,13 @@ class SpdxRule(Rule):
         try:
             expression = self.licensing.parse(self.license_expression)
         except:
-            raise Exception(
+            raise InvalidRule(
                 'Unable to parse License rule expression: ' +
                 repr(self.license_expression) + ' for: SPDX rule:' +
                 self.stored_text +
                 '\n' + traceback.format_exc())
         if expression is None:
-            raise Exception(
+            raise InvalidRule(
                 'Unable to parse License rule expression: '
                 +repr(self.license_expression) + ' for:' + repr(self.data_file))
 
@@ -1255,7 +1396,7 @@ class SpdxRule(Rule):
         self.license_expression_object = expression
         self.is_license_tag = True
         self.is_small = False
-        self.relevance =100
+        self.relevance = 100
         self.has_stored_relevance = True
 
     def load(self):
@@ -1314,7 +1455,7 @@ def update_ignorables(licensish, verbose=False, dump=True):
     licensish.ignorable_holders = sorted(holders)
     licensish.ignorable_authors = sorted(authors)
 
-    # collect and set ignrable emails and urls
+    # collect and set ignorable emails and urls
     from cluecode.finder import find_urls
     from cluecode.finder import find_emails
 
@@ -1326,3 +1467,27 @@ def update_ignorables(licensish, verbose=False, dump=True):
     if dump:
         licensish.dump()
     return licensish
+
+
+def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
+    """
+    Return a new, unique and non-existing base location with a file name but
+    without an extension suitable to create a new rule without overwriting any
+    existing rule.
+    """
+    template = (name_prefix
+        .lower()
+        .strip()
+        .replace(' ', '_')
+        .replace('(', '')
+        .replace(')', '')
+        .strip('_-')
+    ) + '_{}'
+
+    idx = 1
+    while True:
+        base_name = template.format(idx)
+        base_loc = join(rules_directory, base_name)
+        if not exists(base_loc + '.RULE'):
+            return base_loc
+        idx += 1

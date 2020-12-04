@@ -1,0 +1,5 @@
+license_expression: nist-pd
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - https://www.nist.gov/open/license

@@ -40,8 +40,8 @@ Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
 
 TODO: to make the license detection test worthy, we should disable hash matching
-such that we test everything else including the negative, automaton, sets and
-seq detections.
+such that we test everything else including the automaton, sets and
+sequence detections.
 """
 
 
@@ -52,7 +52,7 @@ def make_validation_test(rule, test_name):
     if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
 
-    if rule.is_negative or rule.is_false_positive:
+    if rule.is_false_positive:
 
         def closure_test_function(*args, **kwargs):
             check_special_rule_can_be_detected(rule)
@@ -117,7 +117,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         for i, match in enumerate(matches):
             qtext, itext = get_texts(match)
             m_text_file = match.rule.text_file
-            if match.rule.is_license:
+            if match.rule.is_from_license:
                 m_data_file = m_text_file.replace('LICENSE', '.yml')
             else:
                 m_data_file = match.rule.data_file

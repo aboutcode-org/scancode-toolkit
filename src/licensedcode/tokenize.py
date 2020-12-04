@@ -59,7 +59,7 @@ def query_lines(location=None, query_string=None, strip=True):
         if strip:
             yield line_number, line.strip()
         else:
-            yield line_number, line
+            yield line_number, line.rstrip('\n') + '\n'
 
 
 # Split on whitespace and punctuations: keep only characters and numbers and +

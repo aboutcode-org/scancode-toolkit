@@ -29,7 +29,6 @@ from os.path import exists
 from os.path import getmtime
 from os.path import getsize
 from os.path import join
-import sys
 
 import yg.lockfile  # NOQA
 
@@ -91,6 +90,37 @@ def get_licenses_db(licenses_data_dir=None, _test_mode=False):
     return _LICENSES_BY_KEY
 
 
+# global in-memory cache of Licensing object built from all active licenses
+_LICENSING = {}
+
+
+def get_licensing(_test_licenses=None):
+    """
+    Return and cache a license_expression.Licensing objet built from the all the
+    licenses.
+    """
+    global _LICENSING
+    if not _LICENSING or _test_licenses:
+
+        if _test_licenses:
+            licenses = _test_licenses
+        else:
+            licenses = get_licenses_db()
+
+        from license_expression import LicenseSymbolLike
+        from license_expression import Licensing
+
+        licensing = Licensing((LicenseSymbolLike(lic) for lic in licenses.values()))
+
+        if _test_licenses:
+            # Do not cache when testing
+            return licensing
+
+        _LICENSING = licensing
+
+    return _LICENSING
+
+
 # global in-memory cache for the unknown license symbol
 _UNKNOWN_SPDX_SYMBOL = None
 
@@ -128,14 +158,14 @@ _LICENSE_SYMBOLS_BY_SPDX_KEY = None
 
 def get_spdx_symbols(_test_licenses=None):
     """
-    Return a mapping of (SPDX LicenseSymbol -> lowercased SPDX license key-> key}
+    Return a mapping of {lowercased SPDX license key: LicenseSymbolLike} where
+    LicenseSymbolLike wraps a License object
 
     Note: the `_test_licenses` arg is a mapping of key: license used for testing
     instead of the standard license db.
     """
     global _LICENSE_SYMBOLS_BY_SPDX_KEY
     if not _LICENSE_SYMBOLS_BY_SPDX_KEY or _test_licenses:
-        from license_expression import LicenseSymbol
         from license_expression import LicenseSymbolLike
         symbols_by_spdx_key = {}
 
@@ -275,15 +305,17 @@ def load_index(cache_file, use_loads=False):
                 return LicenseIndex.loads(ifc.read())
             else:
                 return LicenseIndex.load(ifc)
-        except:
-            ex_type, ex_msg, ex_traceback = sys.exc_info()
-            message = (str(ex_msg) +
-                '\nERROR: Failed to load license cache (the file may be corrupted ?).\n'
+        except Exception as e:
+            import traceback
+            msg =(
+                '\n'
+                'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
                 'Please delete "{cache_file}" and retry.\n'
                 'If the problem persists, copy this error message '
-                'and submit a bug report.\n'.format(**locals()))
-            raise ex_type(message).with_traceback(ex_traceback)
-
+                'and submit a bug report.\n'.format(**locals())
+            )
+            msg += '\n' + traceback.format_exc()
+            raise Exception(msg)
 
 _ignored_from_hash = partial(
     ignore.is_ignored,
@@ -308,7 +340,7 @@ def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
     hashable = (pth + str(getmtime(pth)) + str(getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
-    hashable=hashable.encode('utf-8')
+    hashable = hashable.encode('utf-8')
     return md5(hashable).hexdigest()
 
 

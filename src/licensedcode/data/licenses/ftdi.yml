@@ -4,6 +4,7 @@ name: Future Technology Devices International License
 category: Proprietary Free
 owner: FTDI
 homepage_url: https://github.com/psi46/psi46test/blob/master/linux/ftd2xx.h
+spdx_license_key: LicenseRef-scancode-ftdi
 other_urls:
     - http://www.ftdichip.com/
 minimum_coverage: 70

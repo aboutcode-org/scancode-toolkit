@@ -3,3 +3,4 @@ short_name: Intel BCL
 name: Intel Binary Code License
 category: Proprietary Free
 owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-bcl

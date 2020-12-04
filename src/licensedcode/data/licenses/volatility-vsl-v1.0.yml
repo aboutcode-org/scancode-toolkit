@@ -4,12 +4,12 @@ name: Volatility Software License Version 1.0
 category: Copyleft Limited
 owner: Volatility Foundation
 homepage_url: https://www.volatilityfoundation.org/license/vsl-v1.0
+spdx_license_key: LicenseRef-scancode-volatility-vsl-v1.0
 text_urls:
     - https://github.com/volatilityfoundation/dwarf2json/blob/master/LICENSE.txt
 ignorable_copyrights:
-  - Copyright 2019 Volatility Foundation
+    - Copyright 2019 Volatility Foundation
 ignorable_holders:
-  - Volatility Foundation
+    - Volatility Foundation
 ignorable_urls:
-  - https://www.volatilityfoundation.org/license/vsl-v1.0
-
+    - https://www.volatilityfoundation.org/license/vsl-v1.0

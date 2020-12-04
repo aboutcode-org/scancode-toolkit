@@ -4,6 +4,7 @@ name: Tenable Nessus Software License and Subscription Agreement
 category: Proprietary Free
 owner: Tenable
 homepage_url: https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf
+spdx_license_key: LicenseRef-scancode-tenable-nessus
 text_urls:
     - https://static.tenable.com/prod_docs/Nessus_6_SLA_and_Subscription_Agreement.pdf
 ignorable_copyrights:

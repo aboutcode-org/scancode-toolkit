@@ -4,6 +4,7 @@ name: Kumar Robotics License
 category: Permissive
 owner: Kumar Robotics
 homepage_url: https://github.com/KumarRobotics/motion_capture_system/blob/master/mocap_qualisys/include/mocap_qualisys/StdString.h#L316
+spdx_license_key: LicenseRef-scancode-kumar-robotics
 other_urls:
     - https://github.com/KumarRobotics/motion_capture_system
 standard_notice: |

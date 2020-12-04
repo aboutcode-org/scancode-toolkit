@@ -4,6 +4,7 @@ name: Microsoft Developer Services Agreement
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/cc300389.aspx
+spdx_license_key: LicenseRef-scancode-ms-developer-services-agreement
 text_urls:
     - http://msdn.microsoft.com/en-us/cc300389.aspx
 minimum_coverage: 70

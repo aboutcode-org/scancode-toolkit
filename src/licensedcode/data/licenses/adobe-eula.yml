@@ -7,6 +7,7 @@ homepage_url: http://www.adobe.com/products/eulas/
 notes: |
     This is a generic license for a large number of Adobe EULAs that are very
     long and proprietary.
+spdx_license_key: LicenseRef-scancode-adobe-eula
 minimum_coverage: 70
 ignorable_urls:
     - http://www.adobe.com/products/eulas/

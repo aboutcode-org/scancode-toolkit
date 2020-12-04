@@ -4,6 +4,7 @@ name: Elastic License Agreement 2018
 category: Source-available
 owner: Elastic
 homepage_url: https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
+spdx_license_key: LicenseRef-scancode-elastic-license-2018
 text_urls:
     - https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
 other_urls:

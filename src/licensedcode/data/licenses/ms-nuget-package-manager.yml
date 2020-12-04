@@ -4,6 +4,7 @@ name: Microsoft NuGet-Based Package Manager License
 category: Proprietary Free
 owner: Microsoft
 homepage_url: http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm
+spdx_license_key: LicenseRef-scancode-ms-nuget-package-manager
 ignorable_urls:
     - http://docs.nuget.org/docs/reference/package-restore
     - http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog

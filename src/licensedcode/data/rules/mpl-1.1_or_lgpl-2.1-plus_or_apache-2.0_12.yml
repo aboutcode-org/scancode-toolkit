@@ -1,0 +1,12 @@
+license_expression: mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
+is_license_notice: yes
+relevance: 100
+notes: javassist Seen https://github.com/jboss-javassist/javassist/blob/1c4e31b9677d020a1e89aeebc6686396f9e6c68a/License.html
+ignorable_copyrights:
+    - Copyright (c) 1999- Shigeru Chiba
+ignorable_holders:
+    - Shigeru Chiba
+ignorable_authors:
+    - the Initial Developer
+ignorable_urls:
+    - http://www.mozilla.org/MPL/

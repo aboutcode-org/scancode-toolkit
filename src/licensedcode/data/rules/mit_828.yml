@@ -1,0 +1,4 @@
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: Seen and fixed in https://github.com/mithrandie/go-text/pull/1 with a minor typo

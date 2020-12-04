@@ -208,7 +208,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -288,7 +288,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -368,7 +368,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -448,7 +448,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 80.0
+            "rule_relevance": 80
           }
         }
       ],
@@ -559,7 +559,7 @@
             "rule_length": 4,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],
@@ -677,7 +677,7 @@
             "rule_length": 3,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 50.0
+            "rule_relevance": 50
           }
         }
       ],
@@ -789,7 +789,7 @@
             "rule_length": 5,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "rule_relevance": 100.0
+            "rule_relevance": 100
           }
         }
       ],

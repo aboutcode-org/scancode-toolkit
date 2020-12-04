@@ -4,6 +4,7 @@ name: Australian Public Licence B Version 1.0
 category: Permissive
 owner: ERTOS
 homepage_url: http://www.ok-labs.com/licenses#ozplb
+spdx_license_key: LicenseRef-scancode-ozplb-1.0
 text_urls:
     - http://www.ok-labs.com/licenses#ozplb
 other_urls:

@@ -3,6 +3,7 @@ short_name: Crypto++ License
 name: Crypto++ License
 category: Permissive
 owner: Wei Dai
+spdx_license_key: LicenseRef-scancode-cryptopp
 ignorable_copyrights:
     - Copyright (c) 1995-2010 by Wei Dai
 ignorable_holders:

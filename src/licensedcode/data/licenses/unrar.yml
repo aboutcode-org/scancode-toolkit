@@ -4,4 +4,5 @@ name: UnRar License
 category: Source-available
 owner: RAR
 homepage_url: http://sharpnews.weebly.com/uploads/1/2/7/9/1279604/license.txt
+spdx_license_key: LicenseRef-scancode-unrar
 osi_url: http://www.rarlab.com/rar/unrarsrc-5.2.7.tar.gz

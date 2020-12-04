@@ -6,3 +6,4 @@ owner: Unspecified
 notes: |
     a rare permission notice found in a few pre-1990 files by HP found in NTP
     adjtimed/adjtimed.c include/adjtime.h and libntp/adjtime.c
+spdx_license_key: LicenseRef-scancode-historical-ntp

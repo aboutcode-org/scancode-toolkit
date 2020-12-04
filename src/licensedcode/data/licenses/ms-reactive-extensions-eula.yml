@@ -4,5 +4,6 @@ name: Microsoft Reactive Extensions EULA
 category: Proprietary Free
 owner: Microsoft
 homepage_url: https://msdn.microsoft.com/en-us/hh295787
+spdx_license_key: LicenseRef-scancode-ms-reactive-extensions-eula
 ignorable_urls:
     - http://www.microsoft.com/exporting

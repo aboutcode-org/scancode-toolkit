@@ -4,6 +4,7 @@ name: Sparky License
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.cgl.ucsf.edu/home/sparky/
+spdx_license_key: LicenseRef-scancode-sparky
 text_urls:
     - http://www.cgl.ucsf.edu/home/sparky/sparky-license.html
 ignorable_copyrights:

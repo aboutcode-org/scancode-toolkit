@@ -89,6 +89,19 @@ _ascii_pattern = (
 ascii_strings = re.compile(_ascii_pattern).finditer
 
 
+replace_literal_line_returns = re.compile(
+    '[\\n\\r]+$'
+).sub
+
+
+def normalize_line_ends(s):
+    """
+    Replace trailing literal line returns by real line return (e.g. POSIX LF
+    aka. \n) in string `s`.
+    """
+    return replace_literal_line_returns('\n', s)
+
+
 def strings_from_string(binary_string, clean=False, min_len=0):
     """
     Yield strings extracted from a (possibly binary) string `binary_string`. The
@@ -100,14 +113,17 @@ def strings_from_string(binary_string, clean=False, min_len=0):
         s = decode(match.group())
         if not s:
             continue
-        s = s.strip()
-        if len(s) < min_len:
-            continue
-        if clean:
-            for ss in clean_string(s, min_len=min_len):
-                yield ss
-        else:
-            yield s
+        s = normalize_line_ends(s)
+        for line in s.splitlines(False):
+            line = line.strip()
+            if len(line) < min_len:
+                continue
+
+            if clean:
+                for ss in clean_string(line, min_len=min_len):
+                    yield ss
+            else:
+                yield line
 
 
 def string_from_string(binary_string, clean=False, min_len=0):

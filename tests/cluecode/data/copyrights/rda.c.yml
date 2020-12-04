@@ -1,0 +1,86 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic
+  - Copyright 2003-2017, BugSplat
+  - Copyright 2009-2011 Intel Corporation
+  - Copyright 2017 Intel Corporation
+  - Copyright (c) 2003-2018 Ready At Dawn Studios LLC.
+  - Copyright (c) 1995-2017 Jean-loup Gailly and Mark Adler
+  - Copyright (c) 2000-2007 Niels Provos <provos@citi.umich.edu>
+  - Copyright (c) 2007-2012 Niels Provos and Nick Mathewson
+  - Copyright (c) 1996 - 2018, Daniel Stenberg, <daniel@haxx.se>
+  - Copyright (c) 2006, Google Inc.
+  - Copyright (c) 2009-2011, Salvatore Sanfilippo <antirez@gmail.com>
+  - Copyright (c) 2009-2014 Petri Lehtinen <petri@digip.org>
+  - Copyright (c) 2010-2011, Pieter Noordhuis <pcnoordhuis@gmail.com>
+  - Copyright (c) 2011-2016, Yann Collet
+  - Copyright (c) 2012 NVIDIA Corporation
+  - Copyright (c) 2016-present, Facebook, Inc.
+  - Copyright (c) 2017 Advanced Micro Devices, Inc.
+  - Copyright (c) 2017, NVIDIA CORPORATION.
+  - Copyright (c) 2017-present, Facebook, Inc.
+  - Copyright (c) 2018 William Pitcock <nenolod@dereferenced.org>
+  - Copyright (c) Facebook Technologies, LLC and its affiliates
+holders:
+  - Xiph.Org, Skype Limited, Octasic
+  - BugSplat
+  - Intel Corporation
+  - Intel Corporation
+  - Ready At Dawn Studios LLC.
+  - Jean-loup Gailly and Mark Adler
+  - Niels Provos
+  - Niels Provos and Nick Mathewson
+  - Daniel Stenberg
+  - Google Inc.
+  - Salvatore Sanfilippo
+  - Petri Lehtinen
+  - Pieter Noordhuis
+  - Yann Collet
+  - NVIDIA Corporation
+  - Facebook, Inc.
+  - Advanced Micro Devices, Inc.
+  - NVIDIA CORPORATION.
+  - Facebook, Inc.
+  - William Pitcock
+  - Facebook Technologies, LLC and its affiliates
+holders_summary:
+  - value: Facebook, Inc.
+    count: 2
+  - value: Intel Corporation
+    count: 2
+  - value: NVIDIA Corporation
+    count: 2
+  - value: Advanced Micro Devices, Inc.
+    count: 1
+  - value: BugSplat
+    count: 1
+  - value: Daniel Stenberg
+    count: 1
+  - value: Facebook Technologies, LLC and its affiliates
+    count: 1
+  - value: Google Inc.
+    count: 1
+  - value: Jean-loup Gailly and Mark Adler
+    count: 1
+  - value: Niels Provos
+    count: 1
+  - value: Niels Provos and Nick Mathewson
+    count: 1
+  - value: Petri Lehtinen
+    count: 1
+  - value: Pieter Noordhuis
+    count: 1
+  - value: Ready At Dawn Studios LLC.
+    count: 1
+  - value: Salvatore Sanfilippo
+    count: 1
+  - value: William Pitcock
+    count: 1
+  - value: Xiph.Org, Skype Limited, Octasic
+    count: 1
+  - value: Yann Collet
+    count: 1
+

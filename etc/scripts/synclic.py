@@ -106,6 +106,8 @@ def get_licenses_by_spdx_key(licenses, include_other=False):
     """
     by_spdx = {}
     for lic in licenses:
+        if not lic.spdx_license_key:
+            raise ValueError('Missing SPDX license key for {}'.format(lic.key))
         if not (lic.spdx_license_key or lic.other_spdx_license_keys):
             continue
 
@@ -273,7 +275,7 @@ def get_match(text):
 
     is_exact = (
         len(matches) == 1
-        and rule.is_license and len(rule_licenses) == 1
+        and rule.is_from_license and len(rule_licenses) == 1
         and match.matcher == '1-hash'
         and match.score() == 100
         and match.len() == query_len
@@ -611,7 +613,7 @@ def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
     params = params or {}
 
     def _get_results(response):
-        return response.json(object_pairs_hook=dict)
+        return response.json()
 
     if paginate:
         assert isinstance(paginate, int)

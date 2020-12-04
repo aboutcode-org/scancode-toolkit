@@ -4,6 +4,7 @@ name: Oracle Web Sites Terms of Use
 category: Proprietary Free
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/html/terms.html
+spdx_license_key: LicenseRef-scancode-oracle-web-sites-tou
 text_urls:
     - http://www.oracle.com/html/terms.html
 ignorable_copyrights:

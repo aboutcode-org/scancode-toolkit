@@ -5,6 +5,7 @@ category: Permissive
 owner: David Corcoran
 homepage_url: https://web.archive.org/web/20060318003856/http://linuxnet.com/
 notes: This license has some extra terms beyond the advertizing clause not found in the bsd-original
+spdx_license_key: LicenseRef-scancode-bsd-original-muscle
 ignorable_authors:
     - David Corcoran <corcoran@linuxnet.com>
 ignorable_urls:

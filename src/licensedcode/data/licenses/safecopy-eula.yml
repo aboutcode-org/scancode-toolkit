@@ -4,3 +4,4 @@ name: SafeCopy EULA
 category: Proprietary Free
 owner: Elwinsoft
 homepage_url: http://www.elwinsoft.com/
+spdx_license_key: LicenseRef-scancode-safecopy-eula

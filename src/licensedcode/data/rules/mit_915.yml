@@ -1,0 +1,7 @@
+license_expression: mit
+is_license_reference: yes
+relevance: 99
+minimum_coverage: 100
+referenced_filenames:
+    - ZTypes.h
+notes: There is no such file as ZTypes.h, but there is a license at https://github.com/jesse99/whisper/blob/c71c2da3d71463a59411b36730713f517934ffc4/LICENSE

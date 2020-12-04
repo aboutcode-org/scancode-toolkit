@@ -1,0 +1,4 @@
+license_expression: trademark-notice
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/quantumblacklabs/kedro/blob/master/kedro/pipeline/decorators.py

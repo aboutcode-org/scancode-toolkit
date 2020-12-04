@@ -1,4 +1,3 @@
 license_expressions:
-    - ijg
-    - unknown-license-reference
-
+  - ijg
+  - unknown-license-reference

@@ -4,6 +4,7 @@ name: University of Utah Research Foundation Public License
 category: Proprietary Free
 owner: University of Utah Research Foundation (UURF)
 homepage_url: http://www.cs.utah.edu/~gk/teem/txt/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-uofu-rfpl
 text_urls:
     - http://www.cs.utah.edu/~gk/teem/txt/LICENSE.txt
 ignorable_copyrights:

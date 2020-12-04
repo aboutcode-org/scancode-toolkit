@@ -52,7 +52,6 @@ from commoncode.cliutils import PluggableCommandLineOption
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
@@ -236,13 +235,17 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
         if file_licenses:
             all_files_have_no_license = False
             for file_license in file_licenses:
+                license_key = file_license.get('key')
+
                 spdx_id = file_license.get('spdx_license_key')
-                if spdx_id:
+                if not spdx_id:
+                    spdx_id = 'LicenseRef-scancode-' + license_key
+                is_license_ref = spdx_id.lower().startswith('licenseref-')
+
+                if not is_license_ref:
                     spdx_license = License.from_identifier(spdx_id)
                 else:
-                    license_key = file_license.get('key')
-                    licenseref_id = 'LicenseRef-scancode-' + license_key
-                    spdx_license = ExtractedLicense(licenseref_id)
+                    spdx_license = ExtractedLicense(spdx_id)
                     spdx_license.name = file_license.get('short_name')
                     comment = ('See details at https://github.com/nexB/scancode-toolkit'
                                '/blob/develop/src/licensedcode/data/licenses/%s.yml\n' % license_key)

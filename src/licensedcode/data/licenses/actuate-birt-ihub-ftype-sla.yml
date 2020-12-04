@@ -4,6 +4,7 @@ name: Actuate Corporation BIRT iHub F-Type Software License Agreement
 category: Proprietary Free
 owner: Actuate
 homepage_url: http://spp.actuate.com/DM/DownloadOpenFile.aspx?docId=4637
+spdx_license_key: LicenseRef-scancode-actuate-birt-ihub-ftype-sla
 ignorable_copyrights:
     - copyrighted by Actuate
 ignorable_holders:

@@ -4,6 +4,7 @@ name: Qt for Application Development License Agreement v1.1
 category: Commercial
 owner: Digia
 homepage_url: http://www.qt.io/terms-conditions/#application_development
+spdx_license_key: LicenseRef-scancode-qt-commercial-1.1
 faq_url: http://www.qt.io/faq/
 ignorable_urls:
     - http://www.fsf.org/licensing/licenses/info/GPLv2.html

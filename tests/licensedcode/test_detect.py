@@ -39,7 +39,6 @@ from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese  # NOQA
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 """
@@ -1048,15 +1047,14 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert [] == matches
 
-    def test_match_handles_negative_rules_and_does_not_match_negative_regions_properly(self):
-        # note: this test relies on the negative rule: not-a-license_busybox_2.RULE
+    def test_match_does_not_match_false_positive_regions_properly(self):
+        # note: this test relies on the false positive rule:
+        #  false-positive_busybox_1.RULE
         # with this text:
-        # "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
-        # and relies on the short rules that detect GPL and LGPL
+        #  "libbusybox is GPL, not LGPL, and exports no stable API that might act as a copyright barrier."
+        # And relies on the short single world rules that detect GPL and LGPL.
+        # the first and last lines should be matched. Not what is in between.
         idx = cache.get_index()
-        # lines 3 and 4 should NOT be part of any matches
-        # they should match the negative "not-a-license_busybox_2.RULE"
-        negative_lines_not_to_match = 3, 4
         querys = u'''
             licensed under the LGPL license
             libbusybox is GPL, not LGPL, and exports no stable API
@@ -1066,9 +1064,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             '''
         matches = idx.match(query_string=querys)
 
-        for match in matches:
-            for line in negative_lines_not_to_match:
-                assert line not in match.lines()
+        results = [match.matched_text() for match in matches]
+        expected = ['licensed under the LGPL license', 'license: dual BSD/GPL']
+        assert expected == results
 
     def test_match_has_correct_line_positions_in_automake_perl_file(self):
         # reported as https://github.com/nexB/scancode-toolkit/issues/88

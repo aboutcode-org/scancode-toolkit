@@ -4,6 +4,7 @@ name: Matthew Kwan License
 category: Permissive
 owner: Matthew Kwan
 homepage_url: http://www.darkside.com.au/bitslice/
+spdx_license_key: LicenseRef-scancode-matthew-kwan
 text_urls:
     - http://www.darkside.com.au/bitslice/sboxes.c
     - http://www.darkside.com.au/bitslice/nonstd.c

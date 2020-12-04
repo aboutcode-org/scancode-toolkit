@@ -1,0 +1,16 @@
+- |
+  LGPL-2.1
+  GPL-2
+  BSD-3
+  MIT(*)
+  MIT(**)
+  GPL-2+
+- bsd-new AND gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus AND gpl-3.0-plus AND ibm-dhcp AND isc
+  AND lgpl-2.1 AND unknown AND xfree86-1.0
+- |
+  VMware, Inc. <http://www.vmware.com/>
+  1990, 1993 The Regents of the University of California.
+  1996, 1998 Internet Software Consortium
+  2006 VMware, Inc. <http://www.vmware.com/>
+  2007-2013 Daniel Baumann <mail@daniel-baumann.ch>
+  2014 Bernd Zeimetz <bzed@debian.org>

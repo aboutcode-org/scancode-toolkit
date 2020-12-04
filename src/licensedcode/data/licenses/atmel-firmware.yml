@@ -4,3 +4,4 @@ name: Atmel Firmware License
 category: Proprietary Free
 owner: Atmel
 homepage_url: http://atmelwlandriver.sourceforge.net/license.txt
+spdx_license_key: LicenseRef-scancode-atmel-firmware

@@ -1,0 +1,5 @@
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: this is an bsd/mit-like but proprietary

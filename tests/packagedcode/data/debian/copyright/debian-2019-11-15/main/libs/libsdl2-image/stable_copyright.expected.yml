@@ -1,0 +1,15 @@
+- |
+  zlib/libpng
+  LGPL-2+
+  public-domain
+- gpl-2.0-plus AND lgpl-2.0 AND lgpl-2.0-plus AND public-domain AND unknown AND unlicense AND
+  zlib
+- |
+  1997-2016 Sam Lantinga <slouken@libsdl.org>
+  1990, 1991, 1993 David Koblas
+  1996 Torsten Martinsen
+  1998 Philippe Lavoie
+  in public domain
+  2013, Manuel A. Fernandez Montecelo <manuel.montezelo@gmail.com>
+  2013, Felix Geyer <fgeyer@debian.org>
+  2016, Gianfranco Costamagna <locutusofborg@debian.org>

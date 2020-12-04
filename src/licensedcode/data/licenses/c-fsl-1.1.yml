@@ -4,6 +4,7 @@ name: Convertible Free Software License 1.1
 category: Copyleft Limited
 owner: Elmar Stellnberger
 homepage_url: https://www.elstel.org/license/C-FSL-v1.1.txt
+spdx_license_key: LicenseRef-scancode-c-fsl-1.1
 text_urls:
     - https://www.elstel.org/license/C-FSL-v1.1.txt
 ignorable_copyrights:

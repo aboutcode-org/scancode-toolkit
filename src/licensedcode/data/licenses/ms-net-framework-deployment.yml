@@ -3,3 +3,4 @@ short_name: MS .NET Framework Redistributable EULA
 name: Microsoft .NET Framework Redistributable EULA
 category: Commercial
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-net-framework-deployment

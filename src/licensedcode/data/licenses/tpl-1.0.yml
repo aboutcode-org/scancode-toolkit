@@ -4,6 +4,7 @@ name: Terracotta Public License 1.0
 category: Copyleft Limited
 owner: Terracotta
 homepage_url: http://terracotta.org/legal/terracotta-public-license
+spdx_license_key: LicenseRef-scancode-tpl-1.0
 text_urls:
     - http://terracotta.org/legal/terracotta-public-license
 faq_url: http://terracotta.org/legal/licensing-faq

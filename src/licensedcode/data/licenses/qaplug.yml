@@ -4,3 +4,4 @@ name: QAPlug License
 category: Proprietary Free
 owner: SolDevelo
 homepage_url: http://qaplug.com/about/license-agreement/
+spdx_license_key: LicenseRef-scancode-qaplug

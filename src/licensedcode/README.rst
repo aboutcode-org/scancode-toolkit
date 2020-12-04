@@ -104,10 +104,6 @@ The matching pipeline consist of:
 - we start with matching the whole query at once against hashes on the whole text
   looked up agains a mapping of hash to license rule. We exit if we have a match.
  
-- we are then subtracting from the query any exact match to a few "negative rules"
-  which are texts that are not containing license information but may match otherwise
-  to existing rules.
-
 - then we match the whole query for exact matches using an automaton (Aho-Corasick).
   We exit if we have a match.
 

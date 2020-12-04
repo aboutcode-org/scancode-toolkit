@@ -25,17 +25,14 @@
 
 
 import io
-import os
 
 import attr
 import click
-from license_expression import Licensing
 import saneyaml
 
 from licensedcode import cache
 from licensedcode import models
 from licensedcode import match_hash
-
 
 """
 A script to generate license detection rules from a simple text data file.
@@ -71,14 +68,16 @@ If a RULE already exists, it is skipped.
 
 
 @attr.attrs(slots=True)
-class LicenseRule(object):
-    data = attr.ib()
-    text = attr.ib()
+class RuleData(object):
+    data_lines = attr.ib()
+    text_lines = attr.ib()
     raw_data = attr.ib(default=None)
+    data = attr.ib(default=None)
+    text = attr.ib(default=None)
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.raw_data = rdat = '\n'.join(self.data).strip()
-        self.text = '\n'.join(self.text).strip()
+        self.raw_data = rdat = '\n'.join(self.data_lines).strip()
+        self.text = '\n'.join(self.text_lines).strip()
 
         # validate YAML syntax
         try:
@@ -92,13 +91,17 @@ class LicenseRule(object):
 
 
 def load_data(location='00-new-licenses.txt'):
+    """
+    Load rules metadata  and text from file at ``location``. Return a list of
+    LicenseRulew.
+    """
     with io.open(location, encoding='utf-8') as o:
         lines = o.read().splitlines(False)
 
     rules = []
 
-    data = []
-    text = []
+    data_lines = []
+    text_lines = []
     in_data = False
     in_text = False
     last_lines = []
@@ -111,27 +114,29 @@ def load_data(location='00-new-licenses.txt'):
 
             in_data = True
             in_text = True
-            if data and ''.join(text).strip():
-                rules.append(LicenseRule(data, text))
-            data = []
-            text = []
+            if data_lines and ''.join(text_lines).strip():
+                rules.append(RuleData(data_lines=data_lines, text_lines=text_lines))
+
+            data_lines = []
+            text_lines = []
             continue
 
         if line == '---':
             if not in_data:
-                raise Exception('Invalid structure: #{ln}: {line}\n'.format(**locals()) +
-                                '\n'.join(last_lines[-10:]))
+                raise Exception(
+                    'Invalid structure: #{ln}: {line}\n'.format(**locals()) +
+                    '\n'.join(last_lines[-10:]))
 
             in_data = False
             in_text = True
             continue
 
         if in_data:
-            data.append(line)
+            data_lines.append(line)
             continue
 
         if in_text:
-            text.append(line)
+            text_lines.append(line)
             continue
 
     return rules
@@ -167,74 +172,11 @@ def all_rule_tokens():
 
 def find_rule_base_loc(license_expression):
     """
-    Return a new, unique and non-existing base name location suitable to create a new
-    rule.
+    Return a new, unique and non-existing base name location suitable to create
+    a new rule using the a license_expression as a prefix.
     """
-    template = (license_expression
-        .lower()
-        .strip()
-        .replace(' ', '_')
-        .replace('(', '')
-        .replace(')', '')
-        +'_{}')
-    idx = 1
-    while True:
-        base_name = template.format(idx)
-        base_loc = os.path.join(models.rules_data_dir, base_name)
-        if not os.path.exists(base_loc + '.RULE'):
-            return base_loc
-        idx += 1
-
-
-def validate_license_rules(rules_data, licensing):
-    """
-    Checks all rules and return a list of errors
-    """
-    errors = []
-    for rule in rules_data:
-        is_negative = rule.data.get('is_negative')
-        is_false_positive = rule.data.get('is_false_positive')
-        fp_flags = [f for f in [is_negative, is_false_positive] if f]
-        if len(fp_flags) > 1:
-            msg = 'Invalid rule with mutually exclusive false positive/negative flags: {}'.format(rule)
-            errors.append(msg)
-        if is_negative:
-            continue
-
-        relevance = rule.data.get('relevance', 0) or 0
-        relevance = float(relevance)
-        if relevance < 0 or relevance > 100:
-            msg = 'Invalid rule relevance: {}'.format(rule)
-            errors.append(msg)
-
-        minimum_coverage = rule.data.get('minimum_coverage', 0) or 0
-        minimum_coverage = float(minimum_coverage)
-        if minimum_coverage < 0 or minimum_coverage > 100:
-            msg = 'Invalid rule minimum_coverage: {}'.format(rule)
-            errors.append(msg)
-
-        is_license_notice = rule.data.get('is_license_notice')
-        is_license_text = rule.data.get('is_license_text')
-        is_license_reference = rule.data.get('is_license_reference')
-        is_license_tag = rule.data.get('is_license_tag')
-
-        type_flags = [f for f in [is_license_notice, is_license_text, is_license_tag, is_license_reference] if f]
-        if len(type_flags) != 1:
-            msg = 'Invalid rule is_license_* flags. Only one allowed. At least one needed: {}'.format(rule)
-            errors.append(msg)
-
-        license_expression = rule.data.get('license_expression')
-        if not license_expression:
-            msg = 'Missing license_expression for rule: {}'.format(rule)
-            errors.append(msg)
-
-        try:
-            licensing.parse(license_expression, validate=True, simple=True)
-        except Exception as e:
-            msg = 'Invalid license_expression for rule: {}\n{}'.format(rule, str(e))
-            errors.append(msg)
-
-    return errors
+    return models.find_rule_base_location(
+        license_expression, rules_directory=models.rules_data_dir)
 
 
 @click.command()
@@ -261,53 +203,51 @@ def cli(licenses_file):
     rules_data = load_data(licenses_file)
     rules_tokens = all_rule_tokens()
 
-    licenses = cache.get_licenses_db()
-    licensing = Licensing(licenses.values())
+    licenses_by_key = cache.get_licenses_db()
+    skinny_rules = []
+
+    for rdata in rules_data:
+        relevance = rdata.data.get('relevance')
+        rdata.data['has_stored_relevance'] = bool(relevance)
+
+        minimum_coverage = rdata.data.get('minimum_coverage')
+        rdata.data['has_stored_minimum_coverage'] = bool(minimum_coverage)
+
+        rl = models.BasicRule(**rdata.data)
+        rl.stored_text = rdata.text
+        skinny_rules.append(rl)
+
+    models.validate_rules(skinny_rules, licenses_by_key, with_text=True)
 
     print()
-    errors = validate_license_rules(rules_data, licensing)
-    if errors:
-        print('Invalid rules: exiting....')
-        for error in errors:
-            print(error)
-            print()
-
-        raise Exception('Invalid rules: exiting....')
-
-    print()
-    for rule in rules_data:
-        is_negative = rule.data.get('is_negative')
-        is_false_positive = rule.data.get('is_false_positive')
-        existing = rule_exists(rule.text)
-        if existing and not is_negative:
-            print('Skipping existing non-negative rule:', existing, 'with text:\n', rule.text[:50].strip(), '...')
+    for rule in skinny_rules:
+        existing = rule_exists(rule.text())
+        if existing:
+            print('Skipping existing rule:', existing, 'with text:\n', rule.text()[:50].strip(), '...')
             continue
 
-        if is_negative:
-            base_name = 'not-a-license'
+        if rule.is_false_positive:
+            base_name = 'false-positive'
+        elif rule.is_license_intro:
+            base_name = 'license-intro'
         else:
-            license_expression = rule.data.get('license_expression')
-            license_expression = str(licensing.parse(license_expression, validate=True, simple=True))
-            base_name = license_expression
-            if is_false_positive:
-                base_name = 'false-positive_' + base_name
+            base_name = rule.license_expression
 
         base_loc = find_rule_base_loc(base_name)
 
-        data_file = base_loc + '.yml'
-        with io.open(data_file, 'w', encoding='utf-8') as o:
-            o.write(rule.raw_data)
+        rd = rule.to_dict()
+        rd['stored_text'] = rule.stored_text
+        rd['has_stored_relevance'] = rule.has_stored_relevance
+        rd['has_stored_minimum_coverage'] = rule.has_stored_minimum_coverage
 
-        text_file = base_loc + '.RULE'
-        with io.open(text_file, 'w', encoding='utf-8') as o:
-            o.write(rule.text)
+        rulerec = models.Rule(**rd)
 
-        rulerec = models.Rule(data_file=data_file, text_file=text_file)
+        rulerec.data_file = base_loc + '.yml'
+        rulerec.text_file = base_loc + '.RULE'
+
         rule_tokens = tuple(rulerec.tokens())
+
         if rule_tokens in rules_tokens:
-            # cleanup
-            os.remove(text_file)
-            os.remove(data_file)
             print('Skipping already added rule with text for:', base_name)
         else:
             rules_tokens.add(rule_tokens)

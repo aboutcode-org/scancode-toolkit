@@ -1,8 +1,8 @@
 license_expression: egenix-1.1.0
 is_license_notice: yes
 relevance: 100
+referenced_filenames:
+    - LICENSE
+    - LICENSE.mxSetup
 ignorable_urls:
     - http://www.egenix.com/products/python/mxBase/
-referenced_filenames:
-    - LICENSE 
-    - LICENSE.mxSetup    

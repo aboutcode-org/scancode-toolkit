@@ -4,6 +4,7 @@ name: Brian Clapper License
 category: Permissive
 owner: clapper.org
 homepage_url: http://software.clapper.org/poll/index.html
+spdx_license_key: LicenseRef-scancode-brian-clapper
 ignorable_authors:
     - Brian M. Clapper <bmc@clapper.org>
 ignorable_emails:

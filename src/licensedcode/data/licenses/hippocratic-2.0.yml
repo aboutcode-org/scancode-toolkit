@@ -4,6 +4,7 @@ name: Hippocratic License v2.0
 category: Free Restricted
 owner: Ethical Source
 homepage_url: https://firstdonoharm.dev/
+spdx_license_key: LicenseRef-scancode-hippocratic-2.0
 text_urls:
     - https://firstdonoharm.dev/version/2/0/license.md
     - https://firstdonoharm.dev/version/2/0/license.html

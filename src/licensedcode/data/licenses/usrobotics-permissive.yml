@@ -4,6 +4,7 @@ name: USRobotics Permissive License
 category: Permissive
 owner: USRobotics
 homepage_url: http://web.mit.edu/kolya/.f/root/athena.mit.edu/net/project/radius/3.6B/src/resources.c
+spdx_license_key: LicenseRef-scancode-usrobotics-permissive
 standard_notice: |
     /*
     *

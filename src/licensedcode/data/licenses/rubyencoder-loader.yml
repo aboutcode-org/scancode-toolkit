@@ -4,6 +4,7 @@ name: RubyEncoder Loader Licence
 category: Proprietary Free
 owner: RubyEncoder
 homepage_url: https://www.rubyencoder.com/loaders.html
+spdx_license_key: LicenseRef-scancode-rubyencoder-loader
 other_urls:
     - https://www.rubyencoder.com/terms.html
 ignorable_authors:

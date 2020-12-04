@@ -3,6 +3,7 @@ short_name: Jason Mayes License
 name: Jason Mayes License
 category: Permissive
 owner: Jason Mayes
+spdx_license_key: LicenseRef-scancode-jason-mayes
 faq_url: http://www.jasonmayes.com/projects/twitterApi/
 minimum_coverage: 90
 ignorable_authors:

@@ -105,7 +105,6 @@ class TestStrings(FileBasedTesting):
         result = list(strings.strings_from_file(test_file, min_len=6))
         assert expected == result
 
-
     def test_strings_in_file_does_fail_if_contains_ERROR_string(self):
         test_file = self.get_test_loc('strings/bin/file_stripped')
         list(strings.strings_from_file(test_file))
@@ -182,3 +181,8 @@ class TestStrings(FileBasedTesting):
         # Relative Posix Path
         path = "usr/lib/librt.so.1"
         self.assertTrue(strings.is_relative_path(path))
+
+    def test_strings_with_lf(self):
+        test_file = 'strings/with-lf/strings.exe'
+        expected_file = 'strings/with-lf/strings.exe.results'
+        self.check_file_strings(test_file, expected_file, regen=False)

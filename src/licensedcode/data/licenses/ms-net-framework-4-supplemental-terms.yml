@@ -3,6 +3,7 @@ short_name: MS Supplemental License - .NET Framework 4
 name: Microsoft Software Supplemental License - .NET Framework 4
 category: Proprietary Free
 owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-net-framework-4-supplemental-terms
 faq_url: http://go.microsoft.com/fwlink/?LinkID=66406&clcid=0x409
 other_urls:
     - www.support.microsoft.com/common/international.aspx

@@ -13,6 +13,7 @@ notes: |
     encounter with or as a result of whatever's being licensed with it. This
     license was first published at Organised Adversary in October, 2013. The
     license is free to use by anyone as per the terms of itself.
+spdx_license_key: LicenseRef-scancode-wtfnmfpl-1.0
 text_urls:
     - https://github.com/adversary-org/wtfnmf/blob/master/COPYING.WTFNMFPL
 ignorable_copyrights:

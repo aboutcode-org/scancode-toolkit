@@ -4,6 +4,7 @@ name: JPython License 1.1
 category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://www.jython.org/license.html
+spdx_license_key: LicenseRef-scancode-jpython-1.1
 text_urls:
     - http://www.jython.org/license.html
 faq_url: http://wiki.python.org/jython/JythonFaq/GeneralInfo

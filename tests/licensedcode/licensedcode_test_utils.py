@@ -225,7 +225,7 @@ def make_test(license_test, regen=False):
             for match in matches:
                 qtext, itext = get_texts(match)
                 rule_text_file = match.rule.text_file
-                if match.rule.is_license:
+                if match.rule.is_from_license:
                     rule_data_file = rule_text_file.replace('LICENSE', 'yml')
                 else:
                     rule_data_file = match.rule.data_file

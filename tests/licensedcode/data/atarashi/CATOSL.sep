@@ -1,0 +1,158 @@
+/*
+  Copyright (c) 2009 Actian Corporation
+ 
+This file is distributed under the CA Trusted Open Source License(CATOSL).
+For the exact terms of the license go to http://ca.com/opensource/catosl 
+ 
+	Test Name    : qp157
+	Time	     :
+	User Name    : testenv
+ 
+	Test ID      : qp157 formerly eia30
+	Module       : 
+	Filename     : qp157.sep
+	Purpose	     : to test for bug 43118
+	Input Files  : none
+	Output Files : none
+	Database     : SEPPARAMDB
+	Tables       : qp157_terminal_t1
+	Synopsis     : Create a table and modify to btree unique. Select 
+		a count of rows from the table where the column equals
+		dbmsinfo('terminal'). Try to delete a non-existing row 
+		where the column equals dbmsinfo('terminal'). Add the 
+		dbmsinfo('terminal') to the table and then try to delete the
+		existing row. 
+History : 6-23-92	Created by CAMACHO
+          12-Mar-1997	(vissu01)	Modified for NT
+	18-11-2005	(rogch01)
+		dbmsinfo('terminal') returns "unknown" when this test is run in
+		batch on VMS, and possibly elsewhere.  See archived issue
+		8736320.  Added a canon for one less log.  Renamed objects
+		after the current test name and removed a few multi-line
+		command / canon sql statement pairs.
+        16-dec-2008 (horda03)
+                On VMS, when run from a terminal dbmsinfo('terminal') can return
+                "tna<number>" e.g. tna4, tna234. Add SED command to convert
+                this format to "console".
+	11-feb-2009 (boija02)
+		Added alternative terminal format sedding for VMS.
+*/
+.if (VMS)
+? fill vms.sed
+!!
+s/tna[0-9]* */console                         /
+s/fta[0-9]* */console                         /
+!!
+? sepset sed results vms.sed
+<<
+>>
+.endif
+? sql -s SEPPARAMDB 
+<<
+>>
+* drop qp157_terminal_t1;\g
+<<
+~
+>>
+* create table qp157_terminal_t1 (terminal varchar(32) not null) with -
+page_size=8192;\g
+<<
+>>
+* modify qp157_terminal_t1 to btree unique on terminal with page_size=8192;\g
+<<
+(0 rows)
+>>
+* select count(*) as num_rows from qp157_terminal_t1 where terminal = -
+dbmsinfo('terminal');\g
+<<
+
++-------------+
+|num_rows     |
++-------------+
+|            0|
++-------------+
+(1 row)
+>>
+* select * from qp157_terminal_t1;\g
+<<
+
++--------------------------------+
+|terminal                        |
++--------------------------------+
++--------------------------------+
+(0 rows)
+>>
+* delete from qp157_terminal_t1 where terminal = dbmsinfo('terminal');\g
+<<
+(0 rows)
+>>
+* insert into qp157_terminal_t1 select dbmsinfo('terminal');\g
+<<
+(1 row)
+>>
+* select * from qp157_terminal_t1;\g
+<<
+
++--------------------------------+
+|terminal                        |
++--------------------------------+
+|unknown                         |
++--------------------------------+
+(1 row)
+>>
+<<
+
++--------------------------------+
+|terminal                        |
++--------------------------------+
+|batch                           |
++--------------------------------+
+(1 row)
+>>
+<<
+
++--------------------------------+
+|terminal                        |
++--------------------------------+
+|console                         |
++--------------------------------+
+(1 row)
+>>
+* select count(*) as num_rows from qp157_terminal_t1 where terminal = -
+dbmsinfo('terminal');\g
+<<
+
++-------------+
+|num_rows     |
++-------------+
+|            1|
++-------------+
+(1 row)
+>>
+* delete from qp157_terminal_t1 where terminal = dbmsinfo('terminal');\g
+<<
+(1 row)
+>>
+* select * from qp157_terminal_t1;\g
+<<
+
++--------------------------------+
+|terminal                        |
++--------------------------------+
++--------------------------------+
+(0 rows)
+>>
+* drop qp157_terminal_t1;\g
+<<
+~
+>>
+* \q
+<<
+>>
+.if (VMS) 
+? unsepset sed
+<<
+>>
+.endif
+
+Ending at: Wed Mar 12 07:04:44 1997

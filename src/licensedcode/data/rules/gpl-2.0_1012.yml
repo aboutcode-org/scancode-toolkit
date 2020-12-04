@@ -1,0 +1,8 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+notes: https://github.com/drwetter/testssl.sh/blob/3b89dc6b0a41299fbf462789998e4c103f4f0210/testssl.sh#L19-L22
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/info/GPLv2.html

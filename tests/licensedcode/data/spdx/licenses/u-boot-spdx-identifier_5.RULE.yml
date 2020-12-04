@@ -1,2 +1,2 @@
 license_expressions:
-  - gpl-2.0-plus OR bsd-new
+  - gpl-2.0-plus AND bsd-new

@@ -3,5 +3,6 @@ short_name: Sun BCL 11 plus 7
 name: Sun BCL 11 plus 7
 category: Proprietary Free
 owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-11-07
 ignorable_urls:
     - http://www.sun.com/policies/trademarks

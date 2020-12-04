@@ -5,3 +5,4 @@ category: Permissive
 owner: musl Project
 homepage_url: http://www.musl-libc.org/
 is_exception: yes
+spdx_license_key: LicenseRef-scancode-musl-exception

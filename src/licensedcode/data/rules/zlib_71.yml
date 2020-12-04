@@ -1,0 +1,8 @@
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - LICENSE-tests
+notes: https://github.com/FrictionalGames/HPL1Engine/blob/5e441bbb247a7473e75cc0f05ca8a5b62c6ec64c/tests/Common/stdafx.cpp
+    and https://github.com/FrictionalGames/HPL1Engine/blob/5e441bbb247a7473e75cc0f05ca8a5b62c6ec64c/LICENSE-tests

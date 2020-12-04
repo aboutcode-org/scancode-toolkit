@@ -4,5 +4,6 @@ name: STMicroelectronics CentralLabs License
 category: Free Restricted
 owner: STMicroelectronics
 homepage_url: https://github.com/STMicroelectronics-CentralLabs
+spdx_license_key: LicenseRef-scancode-stmicroelectronics-centrallabs
 text_urls:
     - https://github.com/STMicroelectronics-CentralLabs/BlueSTSDK_GUI_iOS/blob/master/LICENSE
