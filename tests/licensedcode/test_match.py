@@ -23,9 +23,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import os
-
 
 from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
@@ -1196,6 +1194,30 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         ]
         assert expected == results
 
+    def check_matched_texts(self, test_loc, expected_texts, whole_lines=True):
+        idx = cache.get_index()
+        test_loc = self.get_test_loc(test_loc)
+        matches = idx.match(location=test_loc)
+        matched_texts = [
+            m.matched_text(whole_lines=whole_lines, highlight=False, _usecache=False)
+            for m in matches
+        ]
+        assert expected_texts == matched_texts
+
+    def test_matched_text_is_collected_correctly_end2end_for_spdx_match_whole_lines(self):
+        self.check_matched_texts(
+            test_loc='matched_text/spdx/query.txt',
+            expected_texts=['@REM # SPDX-License-Identifier: BSD-2-Clause-Patent'],
+            whole_lines=True
+        )
+
+    def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
+        self.check_matched_texts(
+            test_loc='matched_text/spdx/query.txt',
+            expected_texts=['SPDX-License-Identifier: BSD-2-Clause-Patent'],
+            whole_lines=False
+        )
+
     def test_matched_text_is_not_truncated_with_unicode_diacritic_input_from_query(self):
         idx = cache.get_index()
         querys_with_diacritic_unicode = 'İ license MIT'
@@ -1246,7 +1268,21 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == matched_texts
 
-    def test_matched_text_ignores_whole_lines_in_binary(self):
+    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
+        expected = [
+            'Licensed under the Apache License, Version 2.0',
+            'license MIT',
+            'license MIT',
+            'Licensed under the Apache License, Version 2.0'
+        ]
+
+        self.check_matched_texts(
+            test_loc='matched_text/turkish_unicode/query',
+            expected_texts=expected,
+            whole_lines=False
+        )
+
+    def test_matched_text_does_not_ignores_whole_lines_in_binary_with_small_index(self):
         rule_dir = self.get_test_loc('matched_text/binary_text/rules')
         idx = index.LicenseIndex(load_rules(rule_dir))
         query_loc = self.get_test_loc('matched_text/binary_text/gosu')
@@ -1260,61 +1296,12 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
 
         assert expected == matched_texts
 
-    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
-        idx = cache.get_index()
-        test_loc = self.get_test_loc(test_loc)
-        matches = idx.match(location=test_loc)
-        matched_texts = [
-            m.matched_text(whole_lines=whole_lines, highlight=False, _usecache=False)
-            for m in matches
-        ]
-        assert expected_texts == matched_texts
-
-    def check_matched_texts(self, test_loc, expected_texts, whole_lines=True):
-        idx = cache.get_index()
-        test_loc = self.get_test_loc(test_loc)
-        matches = idx.match(location=test_loc)
-        matched_texts = [
-            m.matched_text(whole_lines=whole_lines, highlight=False, _usecache=False)
-            for m in matches
-        ]
-        assert expected_texts == matched_texts
-
-    def test_matched_text_ignores_whole_lines_in_binary_against_full_index(self):
+    def test_matched_text_does_not_ignores_whole_lines_in_binary_against_full_index(self):
         expected = ['{{ .Self }} license: GPL-3 (full text at https://github.com/tianon/gosu)']
         self.check_matched_texts(
             test_loc='matched_text/binary_text/gosu',
             expected_texts=expected,
             whole_lines=True,
-        )
-
-    def test_matched_text_is_collected_correctly_end2end_for_spdx_match_whole_lines(self):
-        self.check_matched_texts(
-            test_loc='matched_text/spdx/query.txt',
-            expected_texts=['@REM # SPDX-License-Identifier: BSD-2-Clause-Patent'],
-            whole_lines=True
-        )
-
-    def test_matched_text_is_collected_correctly_end2end_for_spdx_match(self):
-        self.check_matched_texts(
-            test_loc='matched_text/spdx/query.txt',
-            expected_texts=['SPDX-License-Identifier: BSD-2-Clause-Patent'],
-            whole_lines=False
-        )
-
-    @skipIf(py2, 'This complex unicode test is not worth testing on Python2')
-    def test_matched_text_is_not_truncated_with_unicode_diacritic_input_and_full_index(self):
-        expected = [
-            'Licensed under the Apache License, Version 2.0',
-            'license MIT',
-            'license MIT',
-            'Licensed under the Apache License, Version 2.0'
-        ]
-
-        self.check_matched_texts(
-            test_loc='matched_text/turkish_unicode/query',
-            expected_texts=expected,
-            whole_lines=False
         )
 
     def test_matched_text_is_collected_correctly_in_binary_ffmpeg_windows_whole_lines(self):
