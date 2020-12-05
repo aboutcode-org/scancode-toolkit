@@ -25,10 +25,10 @@ jobs:
           - script: ./etc/release/release.sh
             displayName: 'Build installable releases'
 
-          - script: ./etc/release/pip-install.sh
+          - script: ./etc/release/test-pip-install.sh
             displayName: 'Test pip wheel installation'
 
-          - script: ./etc/release/pip-install-editable.sh
+          - script: ./etc/release/test-pip-install-editable.sh
             displayName: 'Test pip editable installation'
 
 
