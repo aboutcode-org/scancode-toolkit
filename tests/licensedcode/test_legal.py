@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import os
 
 from commoncode.testcase import FileBasedTesting
@@ -34,16 +33,37 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 class TestSpecialFiles(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_license_special_files(self):
-        tests = [
-            ('legal/COPYING', 'yes'),
-            ('legal/Copyrights', 'maybe'),
-            ('legal/LICENSE', 'yes'),
-            ('legal/Notice', 'yes'),
-            ('legal/no_license_in_here.java', 'maybe'),
-            ('legal/noticE.html', 'yes'),
-            ('legal/useless_notice.txt', 'maybe')
-        ]
+    def test_is_special_legal_file_COPYING(self):
+        test_loc = self.get_test_loc('legal/COPYING')
+        expected = 'yes'
+        assert expected == legal.is_special_legal_file(test_loc)
 
-        for tf, expected in tests:
-            assert expected == legal.is_special_legal_file(self.get_test_loc(tf))
+    def test_is_special_legal_file_Copyrights(self):
+        test_loc = self.get_test_loc('legal/Copyrights')
+        expected = 'yes'
+        assert expected == legal.is_special_legal_file(test_loc)
+
+    def test_is_special_legal_file_LICENSE(self):
+        test_loc = self.get_test_loc('legal/LICENSE')
+        expected = 'yes'
+        assert expected == legal.is_special_legal_file(test_loc)
+
+    def test_is_special_legal_file_Notice(self):
+        test_loc = self.get_test_loc('legal/Notice')
+        expected = 'yes'
+        assert expected == legal.is_special_legal_file(test_loc)
+
+    def test_is_special_legal_file_no_license_in_here_java(self):
+        test_loc = self.get_test_loc('legal/no_license_in_here.java')
+        expected = 'maybe'
+        assert expected == legal.is_special_legal_file(test_loc)
+
+    def test_is_special_legal_file_noticE_html(self):
+        test_loc = self.get_test_loc('legal/noticE.html')
+        expected = 'yes'
+        assert expected == legal.is_special_legal_file(test_loc)
+
+    def test_is_special_legal_file_useless_notice_txt(self):
+        test_loc = self.get_test_loc('legal/useless_notice.txt')
+        expected = 'maybe'
+        assert expected == legal.is_special_legal_file(test_loc)
