@@ -1,8 +1,5 @@
 license_expression: gpl-3.0 WITH gpl-generic-additional-terms
-is_license_text: yes
 is_license_notice: yes
-is_license_reference: yes
-is_license_tag: yes
 relevance: 100
 ignorable_urls:
     - http://www.gnu.org/licenses/
