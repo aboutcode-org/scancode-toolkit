@@ -207,6 +207,10 @@ def is_empty(clues):
     if clues:
         return not any([
             clues.copyrights, clues.holders, clues.authors, clues.urls, clues.emails])
+    else:
+        # The logic is reversed, so a false or None "clues" object returns None, which
+        # is interpreted as False (i.e., the object is *not* empty).
+        return True
 
 
 def filter_ignorable_clues(detections, rules_by_id):
