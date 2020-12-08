@@ -3,19 +3,24 @@
 # Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
-This script is a configuration helper to configure a Python virtual environment
-and install requirement files with pip.
-It does some minimal checks on supported OSes, architectures and Python versions.
+This script is a configuration helper that wrap pip and virtualenv to configure
+a Python virtual environment and install requirement files with pip. It does
+some minimal checks on supported OSes, architectures and Python versions.
 
 To use, create requirements flies and use this way:
- - ./configure.py <path to one or more requirements file or requirement> to configure and install
- - ./configure.py --clean to cleanup everything
 
+* to configure and install::
+
+    ./configure.py [<requirement or path to requirements file>, ...]
+
+* to cleanup everything::
+
+    ./configure.py --clean
 """
-
 
 import io
 import os
+from os import path
 import shutil
 import stat
 import subprocess
@@ -29,14 +34,12 @@ def unsupported(platform):
           'asking for support of your OS/platform combo.')
     sys.exit(1)
 
-
 # Supported platforms and arches
 # Supported Python versions
 
-if not (sys.maxsize > 2 ** 32):
-    unsupported('32 bits: use a 64 bits OS instead.')
 
 sys_platform = str(sys.platform).lower()
+
 if not(
     sys_platform.startswith('linux')
     or 'win32' in sys_platform
@@ -44,6 +47,9 @@ if not(
     or 'freebsd' in sys_platform
 ):
     unsupported(sys_platform)
+
+if not (sys.maxsize > 2 ** 32):
+    unsupported('32 bits: use a 64 bits OS instead.')
 
 if sys.version_info < (3, 6):
     unsupported('Only Python 3.6 and above are supported')
@@ -130,37 +136,31 @@ def clean(root_dir, cleanable=cleanable):
                 os.remove(loc)
 
 
-def build_pip_dirs_args(paths, root_dir, option='--extra-search-dir='):
+def build_pip_dirs_args(paths_or_urls, root_dir, option='--extra-search-dir'):
     """
     Return an iterable of pip command line options for `option` of pip using a
-    list of `paths` to directories.
+    list of `paths_or_urls` paths to directories or URLs.
     """
-    for path in paths:
-        if path.startswith('https'):
-            yield option + '"{}"'.format(path)
+    for path_or_url in paths_or_urls:
+        if path_or_url.startswith('https'):
+            yield '='.join([option, f'"{path_or_url}"'])
         else:
-            if not os.path.isabs(path):
-                path = os.path.join(root_dir, path)
-            if os.path.exists(path):
-                yield option + quote(path)
+            if not os.path.isabs(path_or_url):
+                path_or_url = os.path.join(root_dir, path_or_url)
+            if os.path.exists(path_or_url):
+                # always = and quoted path
+                yield '='.join([option, quote(path_or_url)])
 
 
 def create_virtualenv(std_python, root_dir, thirdparty_locs=(), quiet=False):
     """
-    Create a virtualenv in `root_dir` using the `std_python` Python executable.
-    One of the `thirdparty_locs` must contain a bundled virtualenv.pyz Python app.
+    Create a virtualenv in the `root_dir` directory using the `std_python` path
+    to a Python executable. One of the `thirdparty_locs` directory paths must
+    contain a bundled virtualenv.pyz Python app and any other thirdparty
+    packages. If `quiet` is True, information messages are suppressed.
 
-    Note: we do not use the bundled Python 3 "venv" because its behavior
-    is not consistent across Linux distro and sometimes pip is not included.
-
-    @std_python: Path or name of the Python executable to use.
-
-    @root_dir: directory in which the virtualenv will be created. This is also
-    the root directory for the project and the base directory for vendored
-    components directory paths.
-
-    @thirdparty_locs: list of directory paths relative to `root_dir` containing
-    vendored Python distributions that pip will use to find required
+    Note: we do not use the bundled Python 3 "venv" because its behavior is not
+    consistently present across Linux distro and sometimes pip is not included.
     components.
     """
     if not quiet:
@@ -199,7 +199,7 @@ def quote(s):
 def run_pip(requirements, root_dir, tpp_locs, quiet=False):
     """
     Install a list of `requirements` with pip,
-    using the vendored components in `tpp_locs`.
+    using the vendored components in `tpp_locs` directories or find-links URLs.
     """
     if not quiet:
         print("* Installing components ...")
@@ -217,7 +217,7 @@ def run_pip(requirements, root_dir, tpp_locs, quiet=False):
         '--no-index',
         '--no-cache-dir',
     ]
-    pcmd.extend(build_pip_dirs_args(tpp_locs, root_dir, '--find-links='))
+    pcmd.extend(build_pip_dirs_args(tpp_locs, root_dir, '--find-links'))
     if quiet:
         pcmd += ['-qq']
 
@@ -306,7 +306,7 @@ if __name__ == '__main__':
         create_virtualenv(standard_python, root_dir, thirdparty_locs, quiet=quiet)
 
     activate(root_dir)
-    
+
     # upgrade the basics in place before doing anything else
     basic_reqs = ['pip', 'setuptools']
     run_pip(basic_reqs, root_dir, thirdparty_locs, quiet=quiet)
@@ -318,7 +318,7 @@ if __name__ == '__main__':
             reqs = ['--requirement', quote(req)]
         else:
             reqs = [req]
-        
+
         run_pip(reqs, root_dir, thirdparty_locs, quiet=quiet)
 
     if not quiet:
