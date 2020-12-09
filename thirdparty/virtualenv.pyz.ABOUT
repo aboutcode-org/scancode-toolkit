@@ -1,22 +1,37 @@
 about_resource: virtualenv.pyz
-name: virtualenv
-version: 20.0.18
-download_url: https://bootstrap.pypa.io/virtualenv.pyz
-license_expression: mit AND other-permissive
+name: get-virtualenv
+version: 20.2.2
+download_url: https://github.com/pypa/get-virtualenv/raw/20.2.2/public/virtualenv.pyz
+description: virtualenv is a tool to create isolated Python environments.
+homepage_url: https://github.com/pypa/virtualenv
+license_expression: lgpl-2.1-plus AND (bsd-new OR apache-2.0) AND mit AND python AND bsd-new
+  AND apache-2.0 AND isc AND (bsd-simplified OR apache-2.0)
+copyright: Copyright (c) The Python Software Foundation and others
+redistribute: yes
 attribute: yes
-checksum_md5: 9905168768b6770c511681a3144e985b
-checksum_sha1: 5d5094819b753f469b537303bd614a9ea80e551b
-package_url: pkg:pypi/virtualenv@20.0.18
+track_changes: yes
+checksum_md5: b57d1094a0f8bcb996ad44b38195d107
+checksum_sha1: acf0cb2b4068cb9f983df6395fbd476904589a5b
+package_url: pkg:github/pypa/get-virtualenv@20.2.2#public/virtualenv.pyz
 licenses:
+  - key: apache-2.0
+    name: Apache License 2.0
+    file: apache-2.0.LICENSE
   - key: mit
     name: MIT License
     file: mit.LICENSE
-  - key: other-permissive
-    name: Other Permissive Licenses
-    file: other-permissive.LICENSE
-copyright: |
-  Copyright (c) 2007 Ian Bicking and Contributors
-  Copyright (c) 2009 Ian Bicking, The Open Planning Project
-  Copyright (c) The virtualenv developers
-homepage_url: http://virtualenv.org/
-
+  - key: bsd-simplified
+    name: BSD-2-Clause
+    file: bsd-simplified.LICENSE
+  - key: bsd-new
+    name: BSD-3-Clause
+    file: bsd-new.LICENSE
+  - key: python
+    name: Python Software Foundation License v2
+    file: python.LICENSE
+  - key: lgpl-2.1-plus
+    name: GNU Lesser General Public License 2.1 or later
+    file: lgpl-2.1-plus.LICENSE
+  - key: isc
+    name: ISC License
+    file: isc.LICENSE
