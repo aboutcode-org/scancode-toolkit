@@ -22,17 +22,16 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
+import csv
 
 import saneyaml
-import unicodecsv
 
-from formattedcode import FileOptionType
-from plugincode.output import output_impl
-from plugincode.output import OutputPlugin
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
+from plugincode.output import output_impl
+from plugincode.output import OutputPlugin
 
+from formattedcode import FileOptionType
 
 # Tracing flags
 TRACE = False
@@ -60,7 +59,7 @@ class CsvOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--csv',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(mode='w', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
             help_group=OUTPUT_GROUP,
@@ -96,7 +95,7 @@ def write_csv(results, output_file):
     for key_group in headers.values():
         ordered_headers.extend(key_group)
 
-    w = unicodecsv.DictWriter(output_file, ordered_headers)
+    w = csv.DictWriter(output_file, fieldnames=ordered_headers)
     w.writeheader()
 
     for r in rows:

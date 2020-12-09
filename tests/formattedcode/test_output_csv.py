@@ -24,12 +24,12 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 
+import csv
 import io
 import json
 import os
 
 import pytest
-import unicodecsv
 
 from commoncode.testcase import FileDrivenTesting
 from formattedcode.output_csv import flatten_scan
@@ -89,8 +89,8 @@ def load_csv(location):
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value).
     """
-    with io.open(location, 'rb') as csvin:
-        reader = unicodecsv.DictReader(csvin)
+    with io.open(location) as csvin:
+        reader = csv.DictReader(csvin)
         fields = reader.fieldnames
         values = sorted(reader, key=lambda d: d.items())
         return fields, values
