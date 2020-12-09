@@ -317,7 +317,7 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         # FIXME: this should a regular JSON scan format
         with io.open(join(target_assets_dir, 'data.js'), 'w') as f:
             f.write('data=')
-            json.dump(results, f)
+            json.dump(list(results), f)
 
     except HtmlAppAssetCopyWarning as w:
         raise w

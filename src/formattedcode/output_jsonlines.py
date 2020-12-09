@@ -59,23 +59,20 @@ class JsonLinesOutput(OutputPlugin):
 
         headers = dict(headers=codebase.get_headers())
 
-        json_kwargs = dict(
-            encoding='utf-8',
-            separators=(u',', u':',)
-        )
+        compact_separators = (u',', u':',)
         output_json_lines.write(
-            json.dumps(headers, **json_kwargs))
+            json.dumps(headers, separators=compact_separators))
         output_json_lines.write('\n')
 
         for name, value in codebase.attributes.to_dict().items():
             if value:
                 smry = {name: value}
                 output_json_lines.write(
-                    json.dumps(smry, **json_kwargs))
+                    json.dumps(smry, separators=compact_separators))
                 output_json_lines.write('\n')
 
         for scanned_file in files:
             scanned_file_line = {'files': [scanned_file]}
             output_json_lines.write(
-                json.dumps(scanned_file_line, **json_kwargs))
+                json.dumps(scanned_file_line, separators=compact_separators))
             output_json_lines.write('\n')
