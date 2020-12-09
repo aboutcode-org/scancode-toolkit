@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from functools import partial
 from hashlib import md5
 from os.path import exists
@@ -208,13 +207,16 @@ def get_spdx_symbols(_test_licenses=None):
     return _LICENSE_SYMBOLS_BY_SPDX_KEY
 
 
-def get_cached_index(cache_dir=scancode_cache_dir,
-                     check_consistency=SCANCODE_DEV_MODE,
-                     # used for testing only
-                     timeout=LICENSE_INDEX_LOCK_TIMEOUT,
-                     tree_base_dir=scancode_src_dir,
-                     licenses_data_dir=None, rules_data_dir=None,
-                     use_dumps=True):
+def get_cached_index(
+    cache_dir=scancode_cache_dir,
+    check_consistency=SCANCODE_DEV_MODE,
+    # used for testing only
+    timeout=LICENSE_INDEX_LOCK_TIMEOUT,
+    tree_base_dir=scancode_src_dir,
+    licenses_data_dir=None,
+    rules_data_dir=None,
+    use_dumps=True,
+):
     """
     Return a LicenseIndex: either load a cached index or build and cache the
     index.
@@ -307,7 +309,7 @@ def load_index(cache_file, use_loads=False):
                 return LicenseIndex.load(ifc)
         except Exception as e:
             import traceback
-            msg =(
+            msg = (
                 '\n'
                 'ERROR: Failed to load license cache (the file may be corrupted ?).\n'
                 'Please delete "{cache_file}" and retry.\n'
@@ -317,18 +319,21 @@ def load_index(cache_file, use_loads=False):
             msg += '\n' + traceback.format_exc()
             raise Exception(msg)
 
+
 _ignored_from_hash = partial(
     ignore.is_ignored,
     ignores={
         '*.pyc': 'pyc files',
         '*~': 'temp gedit files',
-        '*.swp': 'vi swap files'
+        '*.swp': 'vi swap files',
     },
     unignores={}
 )
 
+licensedcode_dir = join(scancode_src_dir, 'licensedcode')
 
-def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
+
+def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     """
     Return a checksum computed from a file tree using the file paths, size and
     last modified time stamps. The purpose is to detect is there has been any
