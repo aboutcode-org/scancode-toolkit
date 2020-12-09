@@ -1,0 +1,22 @@
+about_resource: gemfileparser-0.8.0.tar.gz
+name: gemfileparser
+version: 0.8.0
+download_url: https://files.pythonhosted.org/packages/08/5f/7277029065a98d7eef536e138a49edb4f551038e4d0ebc312bcf06ea086d/gemfileparser-0.8.0.tar.gz
+description: A gemfile parser in Python
+homepage_url: https://github.com/gemfileparser/gemfileparser
+license_expression: gpl-3.0-plus OR mit
+copyright: Copyright (c) Balasankar C <balasankarc@autistici.org> and others
+notice_file: gemfileparser-0.8.0.tar.gz.NOTICE
+redistribute: yes
+attribute: yes
+track_changes: yes
+checksum_md5: 670b8e9dbbfa7a27f06b5de5a84b855b
+checksum_sha1: e1a961ed16307db62ecdf8e1c4dc1272f10fc8ec
+package_url: pkg:pypi/gemfileparser@0.8.0
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+  - key: gpl-3.0-plus
+    name: GNU General Public License 3.0 or later
+    file: gpl-3.0-plus.LICENSE

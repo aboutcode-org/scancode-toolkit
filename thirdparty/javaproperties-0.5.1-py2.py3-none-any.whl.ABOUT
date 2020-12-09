@@ -1,0 +1,16 @@
+about_resource: javaproperties-0.5.1-py2.py3-none-any.whl
+name: javaproperties
+version: 0.5.1
+download_url: https://github.com/nexB/thirdparty-packages/releases/download/pypi/javaproperties-0.5.1-py2.py3-none-any.whl
+description: Python library for reading & writing Java .properties files
+homepage_url: https://github.com/jwodder/javaproperties
+license_expression: mit
+copyright: Copyright (c) John Thorvald Wodder II
+attribute: yes
+checksum_md5: f35a0a0795131b963a29968c565817d1
+checksum_sha1: 870198125caba78211b37a4a049933f52baef205
+package_url: pkg:pypi/javaproperties@0.5.1
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
