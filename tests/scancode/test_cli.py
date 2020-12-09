@@ -27,7 +27,6 @@ import io
 import json
 import os
 
-import click
 import pytest
 
 from commoncode import fileutils
