@@ -23,15 +23,14 @@ def as_json(results, pretty=True):
     """
     Return a JSON string from a `results` data structuret.
     """
-    # this is used for its ability to handle iterables as arrays.
-    import simplejson
+    import json
 
-    kwargs = dict(iterable_as_array=True, encoding='utf-8')
+    kwargs = dict(encoding='utf-8')
     if pretty:
         kwargs.update(dict(indent=2 * b' '))
     else:
         kwargs.update(dict(separators=(b',', b':',)))
-    return simplejson.dumps(results, **kwargs) + b'\n'
+    return json.dumps(results, **kwargs) + b'\n'
 
 
 def run_scan(location, **kwargs):

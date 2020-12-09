@@ -32,7 +32,7 @@ from os.path import isfile
 from os.path import join
 
 import click
-import simplejson
+import json
 
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import copytree
@@ -317,7 +317,7 @@ def create_html_app(output_file, results, version, scanned_path):  # NOQA
         # FIXME: this should a regular JSON scan format
         with io.open(join(target_assets_dir, 'data.js'), 'w') as f:
             f.write('data=')
-            simplejson.dump(results, f, iterable_as_array=True)
+            json.dump(results, f)
 
     except HtmlAppAssetCopyWarning as w:
         raise w

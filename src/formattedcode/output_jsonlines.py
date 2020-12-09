@@ -22,9 +22,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
-
-import simplejson
+import json
 
 from formattedcode import FileOptionType
 from commoncode.cliutils import OUTPUT_GROUP
@@ -61,24 +59,23 @@ class JsonLinesOutput(OutputPlugin):
 
         headers = dict(headers=codebase.get_headers())
 
-        simplejson_kwargs = dict(
-            iterable_as_array=True,
+        json_kwargs = dict(
             encoding='utf-8',
             separators=(u',', u':',)
         )
         output_json_lines.write(
-            simplejson.dumps(headers, **simplejson_kwargs))
+            json.dumps(headers, **json_kwargs))
         output_json_lines.write('\n')
 
         for name, value in codebase.attributes.to_dict().items():
             if value:
                 smry = {name: value}
                 output_json_lines.write(
-                    simplejson.dumps(smry, **simplejson_kwargs))
+                    json.dumps(smry, **json_kwargs))
                 output_json_lines.write('\n')
 
         for scanned_file in files:
             scanned_file_line = {'files': [scanned_file]}
             output_json_lines.write(
-                simplejson.dumps(scanned_file_line, **simplejson_kwargs))
+                json.dumps(scanned_file_line, **json_kwargs))
             output_json_lines.write('\n')
