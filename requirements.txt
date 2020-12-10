@@ -30,7 +30,7 @@ more-itertools==5.0.0
 nltk==3.2
 normality
 packageurl-python==0.9.0
-packaging==19.0
+packaging==20.4
 patch==1.16
 pdfminer.six==20181108
 pefile==2019.4.18
@@ -49,8 +49,7 @@ pyyaml==3.12
 rdflib==4.2.1
 requests==2.18.4
 saneyaml==0.1
-setuptools==49.1.0
-simplejson==3.15.0
+setuptools==51.0
 six==1.12.0
 sortedcontainers==2.0.5
 soupsieve==1.9.2
@@ -60,7 +59,6 @@ text-unidecode==1.2
 toml==0.10.0
 typecode-libmagic==5.39.1.1
 typing==3.6.4
-unicodecsv==0.14.1
 urllib3==1.22
 urlpy==0.5
 wcwidth==0.1.7
