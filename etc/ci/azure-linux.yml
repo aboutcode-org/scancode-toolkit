@@ -30,7 +30,7 @@ jobs:
                 architecture: '${{ parameters.python_architecture }}'
             displayName: 'Install Python $(python_version)'
 
-          - script: ./configure
+          - script: ./configure --dev
             displayName: 'Run Configure'
 
           - script: $(test_suite)

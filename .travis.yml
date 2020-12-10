@@ -69,7 +69,7 @@ before_install:
     fi
 
 install:
-  - ./configure
+  - ./configure --dev
 
 script:
   # If debugging, use a subset of tests to wait less:

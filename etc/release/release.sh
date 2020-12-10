@@ -28,7 +28,7 @@ rm -rf thirdparty
 # install release manifests
 cp etc/release/MANIFEST.in.release MANIFEST.in
 
-python_version=`python -c "from sys import version_info as v;print(f'py{v.major}{v.minor}')`
+python_version=`python -c "import sys;t='py{v[0]}{v[1]}'.format(v=list(sys.version_info[:2]));sys.stdout.write(t)";`
 
 # download all dependencies as per OS/arch/python 
 python3 etc/release/deps_download.py --find-links $PYPI_REPO --requirement requirements.txt --dest thirdparty
