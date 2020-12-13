@@ -1,0 +1,21 @@
+about_resource: wheel-0.36.1-py2.py3-none-any.whl
+name: wheel
+version: 0.36.1
+download_url: https://files.pythonhosted.org/packages/c9/0b/e0fd299d93cd9331657f415085a4956422959897b333e3791dde40bd711d/wheel-0.36.1-py2.py3-none-any.whl
+description: The official binary distribution format for Python
+homepage_url: https://github.com/pypa/wheel/
+license_expression: mit AND (bsd-simplified OR apache-2.0)
+copyright: copyright (c) Daniel Holth <dholth@fastmail.fm> and contributors
+attribute: yes
+track_changes: yes
+package_url: pkg:pypi/wheel@0.36.1
+licenses:
+  - key: apache-2.0
+    name: Apache License 2.0
+    file: apache-2.0.LICENSE
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+  - key: bsd-simplified
+    name: BSD-2-Clause
+    file: bsd-simplified.LICENSE
