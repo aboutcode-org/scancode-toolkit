@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pytest.ini_options]
+norecursedirs = [
+   "bin",
+   "_build",
+   "build",
+   ".cache",
+   "ci",
+   "dist",
+   "docs",
+   ".eggs",
+   #"etc",
+   ".git",
+   "Include",
+   "include",
+   "Lib",
+   "lib",
+   "lib64",
+   "Lib64",
+   "local",
+   "man",
+   "samples",
+   "Scripts",
+   ".settings",
+   "share",
+   "src/*/data",
+   "tests/data",
+   "tests/*/data",
+   "thirdparty",
+   "tmp",
+]
+    
+python_files = "*.py"
+
+python_classes="Test"
+python_functions="test"
+
+addopts = [
+    "-rfExXw",
+    "--strict",
+    "--doctest-modules"
+]
