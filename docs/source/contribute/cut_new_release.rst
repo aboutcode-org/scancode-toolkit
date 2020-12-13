@@ -23,7 +23,7 @@ How to cut a new release:
 - draft a new release in GitHub, using the previous release blurb as a base. Highlight new and
   noteworthy changes from the CHANGELOG.rst.
 
-- run ``etc/release/release.sh`` locally.
+- run ``etc/release/scancode_release.sh`` locally.
 
 - upload the release archives created in the ``dist/`` directory to the GitHub release page.
 
