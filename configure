@@ -87,7 +87,7 @@ fi
 $PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
 
 # Activate the virtualenv
-if [ -f "$PROJECT_ROOT_DIR/bin/activate" ]; then
+if [[ -f "$PROJECT_ROOT_DIR/bin/activate" ]]; then
     source "$PROJECT_ROOT_DIR/bin/activate"
 fi
 
