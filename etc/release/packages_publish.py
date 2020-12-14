@@ -1,9 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
 #
 # You may not use this software except in compliance with the License.
@@ -13,13 +13,6 @@
 # CONDITIONS OF ANY KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations under the License.
 #
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
@@ -33,11 +26,8 @@ from github_release_retry import github_release_retry as grr
 from commoncode.fileutils import resource_iter
 
 """
-Create GitHUb releases and upload  files there.
-This depends on the `github_release_retry` utility
-https://github.com/google/github-release-retry
+Create GitHub releases and upload files there.
 """
-
 
 def create_or_update_release_and_upload_directory(
         user,
@@ -57,6 +47,9 @@ def create_or_update_release_and_upload_directory(
     GitHub API.
     """
 
+    files = [Path(r) for r in resource_iter(directory, with_dirs=False)]
+    n = len(files)
+    print(f'Publishing directory {directory} with {n} files to https://github.com/{user}/{repo}/releases/{tag_name}')
     api = grr.GithubApi(
         github_api_url='https://api.github.com',
         user=user,
@@ -65,7 +58,6 @@ def create_or_update_release_and_upload_directory(
         retry_limit=retry_limit,
     )
     release = grr.Release(tag_name=tag_name, body=description)
-    files = [Path(r) for r in resource_iter(directory, with_dirs=False)]
     grr.make_release(api, release, files)
 
 
@@ -81,36 +73,40 @@ def main(args):
         '--user',
         help='The GitHub username or organization in which the repository resides.',
         type=str,
-        required=True,
+        default='nexB',
+        required=False,
     )
 
     parser.add_argument(
         '--repo',
         help=' The GitHub repository name in which to create the release.',
         type=str,
-        required=True,
+        default='thirdparty-packages',
+        required=False,
     )
 
     parser.add_argument(
         '--tag-name',
         help='The name of the tag to create (or re-use) for this release.',
         type=str,
-        required=True,
+        default='pypi',
+        required=False,
     )
 
     parser.add_argument(
         '--directory',
-         help='The directory that contains files to upload to the release.',
-         type=str,
-         required=True,
+        help='The directory that contains files to upload to the release.',
+        type=str,
+        default='thirdparty',
+        required=False,
     )
 
     TOKEN_HELP = (
-            'The Github personal acess token is used to authenticate API calls. '
-            'Required unless you set the GITHUB_TOKEN environment variable as an alternative. '
-            'See for details: https://github.com/settings/tokens and '
-            'https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token'
-        )
+        'The Github personal acess token is used to authenticate API calls. '
+        'Required unless you set the GITHUB_TOKEN environment variable as an alternative. '
+        'See for details: https://github.com/settings/tokens and '
+        'https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token'
+    )
 
     parser.add_argument(
         '--token',
@@ -128,15 +124,13 @@ def main(args):
 
     parser.add_argument(
         '--retry_limit',
-        help=(
-            'Number of retries when making failing GitHub API calls. '
-            'Retrying helps work around transient failures of the GitHub API.'
-        ),
+        help='Number of retries when making failing GitHub API calls. '
+            'Retrying helps work around transient failures of the GitHub API.',
         type=int,
         default=10,
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(args)
     token = args.token or os.environ.get('GITHUB_TOKEN', None)
     if not token:
         print('--token required option is missing.')

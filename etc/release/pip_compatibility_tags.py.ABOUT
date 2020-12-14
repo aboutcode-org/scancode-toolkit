@@ -1,0 +1,7 @@
+about_resource: pip_compatibility_tags.py
+name: pip compatibility tags
+version: 20.3.1
+download_url: https://github.com/pypa/pip/blob/20.3.1/src/pip/_internal/utils/compatibility_tags.py
+copyright: Copyright (c) 2008-2020 The pip developers (see AUTHORS.txt file)
+license_expression: mit
+notes: copied from pip-20.3.1 pip/_internal/utils/compatibility_tags.py

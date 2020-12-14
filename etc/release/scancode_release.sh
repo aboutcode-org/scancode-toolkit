@@ -3,145 +3,215 @@
 # Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 
-# ScanCode release script
-# This script creates and tests release archives in the dist/ dir
+################################################################################
+# ScanCode release build script
+# Create, test and publish release archives, wheels and sdists.
+# Use the --test to also run basic somke test of the built archives
+#
+################################################################################
+
+# Supported Python versions and OS combos
+# one archive or installer is built for each combo
+PYTHON_VERSIONS="36"
+PLATFORMS="linux macosx windows"
+
+# an HTML page where we can find links to our pre-build wheels
+LINKS_URL=https://github.com/nexB/thirdparty-packages/releases/pypi
+
+#QUIET=""
+
+QUIET="--quiet"
+
+################################################################################
 
 set -e
 
-# un-comment to trace execution
-# set -x
-
-echo "###  BUILDING ScanCode release ###"
-
-PYPI_REPO=https://github.com/nexB/thirdparty-packages/releases/tag/pypi
-
-echo "  RELEASE: Cleaning previous release archives, then setup and config: "
-rm -rf dist/ build/
-
-# backup dev manifests
-cp MANIFEST.in MANIFEST.in.dev 
-
-# backup thirdparty
-cp -r thirdparty thirdparty_dev
-rm -rf thirdparty
-
-# install release manifests
-cp etc/release/MANIFEST.in.release MANIFEST.in
-
-python_version=`python -c "import sys;t='py{v[0]}{v[1]}'.format(v=list(sys.version_info[:2]));sys.stdout.write(t)";`
-
-# download all dependencies as per OS/arch/python 
-python3 etc/release/deps_download.py --find-links $PYPI_REPO --requirement requirements.txt --dest thirdparty
-
-if [ "$(uname -s)" == "Darwin" ]; then
-    platform="mac"        
-elif [ "$(uname -s)" == "Linux" ]; then
-    platform="linux" 
-
-# FIXME: This may only works on azure AND not elsewhere
-elif [ "$(uname -s)" == "MINGW64_NT" ]; then
-    platform="win64"
-fi
-
-#copy virtual env files
-cp thirdparty_dev/{virtualenv.pyz,virtualenv.pyz.ABOUT} thirdparty
-
-./configure --clean
-CONFIGURE_QUIET=1 ./configure
-
-# create requirements files as per OS/arch/python
-source bin/activate
-pip install -r etc/release/requirements.txt
-
-python etc/release/freeze_and_update_reqs.py --find-links thirdparty --requirement requirements.txt
+# Un-comment to trace execution
+#set -x
 
 
-################################################################################
-echo "  RELEASE: Building release archives..."
-bin/python setup.py clean --all sdist --formats=bztar,zip bdist_wheel
+#if [ "$(uname -s)" != "Linux" ]; then
+#    echo "Building is only supported on Linux. Aborting"
+#    exit 1
+#fi
 
-# rename release archive as per os/arch/python
-# See https://unix.stackexchange.com/questions/121570/rename-multiples-files-using-bash-scripting
-for f in dist/scancode-toolkit*.tar.bz2
-    do
-        mv "$f" "${f%*.*.*}-"$python_version"_"$platform".tar.bz2"
-    done
 
-for f in dist/scancode-toolkit*.zip
-    do
-        mv "$f" "${f%*.*}-"$python_version"_"$platform".zip"
-    done
+CLI_ARGS=$1
 
-# restore dev manifests
-mv MANIFEST.in.dev MANIFEST.in
 
-# restore thirdparty
-rm -rf thirdparty
-mv thirdparty_dev thirdparty
+echo "##########################################################################"
+echo "### BUILDING on Python: $PYTHON_VERSIONS on platforms $PLATFORMS"
 
-function test_scan {
-    # run a test scan for a given archive
-    file_extension=$1
-    extract_command=$2
-    for archive in *.$file_extension;
-        do
-            echo "    RELEASE: Testing release archive: $archive ... "
-            $($extract_command $archive)
-            extract_dir=$(ls -d */)
-            cd $extract_dir
 
-            # this is needed for the zip
-            chmod o+x scancode extractcode
+################################
+# Setup
+################################
 
-            # minimal tests: update when new scans are available
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --json test_scan.json"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
+echo "## RELEASE: Setup environment"
 
-            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --json-pp test_scan.json"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
 
-            cmd="./scancode --quiet -clipeu  apache-2.0.LICENSE --csv test_scan.csv"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
+function backup_previous_release {
+    # Move any existing dist, build and release dirs to a release-backup-<timestamp> dir
 
-            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --html test_scan.html"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./scancode --quiet -clipeu apache-2.0.LICENSE --spdx-tv test_scan.spdx"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            cmd="./extractcode --quiet samples/arch"
-            echo "RUNNING TEST: $cmd"
-            $cmd
-            echo "TEST PASSED"
-
-            # cleanup
-            cd ..
-            rm -rf $extract_dir
-            echo "    RELEASE: Success"
-        done
+    if [[ (-d "dist") || (-d "build") ||  (-d "release") ]]; then
+        previous_release=release-backup-$(date --iso=seconds)
+        mkdir $previous_release
+        [[ (-d "dist") ]] && mv dist $previous_release
+        [[ (-d "build") ]] && mv build $previous_release
+        [[ (-d "release") ]] && mv release $previous_release
+    fi
 }
 
-cd dist
-if [ "$1" != "--no-tests" ]; then
-    echo "  RELEASE: Testing..."
-    test_scan bz2 "tar -xf"
-    test_scan zip "unzip -q"
+function clean_build {
+    rm -rf build dist thirdparty
+}
+
+backup_previous_release
+clean_build
+mkdir release
+
+source bin/activate
+bin/pip install $QUIET -r etc/release/requirements.txt
+
+
+################################
+# PyPI wheels and sdist
+################################
+
+echo "## RELEASE: Building a wheel and a source distribution"
+bin/python setup.py $QUIET $QUIET $QUIET sdist bdist_wheel
+mv dist release/pypi
+
+echo "## RELEASE: wheel and source distribution built and ready for PyPI upload"
+find release/pypi -ls 
+
+
+################################
+# Build platforms and Pythons-specific release archives
+################################
+
+function build_archives {
+    # Build scancode release archives (zip and tarbal) for one target python
+    # and platform
+    # Arguments:
+    #   python_version: only include wheels for this Python version. Example: 36
+    #   platform: only include wheels for this platform. One of windows, linux or mac
+
+    python_version=$1
+    platform=$2
+
+    echo "## RELEASE: Building archive for Python $python_version for platform $platform"
+
+    clean_build
+    mkdir -p thirdparty
+
+    # collect thirdparty deps only for the subset for this Python/platform
+    bin/python etc/release/dependencies_fetch.py \
+        --links-url=$LINKS_URL \
+        --requirement=requirements.txt \
+        --thirdparty-dir=thirdparty \
+        --python-version=$python_version \
+        --platform=$platform
+
+    # Create tarball and zip.
+    # For now as a shortcut we use the Python setup.py sdist to create a tarball.
+    # This is hackish and we should instead use our own archiving code that
+    # would take a distutils manifest-like input
+    bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=bztar,gztar,xztar,zip 
+    bin/python etc/release/rename_archives.py dist/ $python_version $platform
+    mkdir -p release/archives
+    mv dist/* release/archives/
+}
+
+
+function build_archives_with_sources {
+    # Build scancode release archives (zip and tarbal) for one target python
+    # and platform, including all thirdparty source code.
+    # Arguments:
+    #   python_version: only include wheels for this Python version. Example: 36
+    #   platform: only include wheels for this platform. One of windows, linux or mac
+
+    python_version=$1
+    platform=$2
+
+    echo "## RELEASE: Building archive for Python $python_version for platform $platform"
+
+    clean_build
+    mkdir -p thirdparty
+
+    # collect thirdparty deps only for the subset for this Python/platform
+    bin/python etc/release/dependencies_fetch.py \
+        --links-url=$LINKS_URL \
+        --requirement=requirements.txt \
+        --thirdparty-dir=thirdparty \
+        --python-version=$python_version \
+        --platform=$platform \
+        --include-source
+
+    # Create tarball and zip.
+    # For now as a shortcut we use the Python setup.py sdist to create a tarball.
+    # This is hackish and we should instead use our own archiving code that
+    # would take a distutils manifest-like input
+
+    bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=xztar
+
+    bin/python etc/release/rename_archives.py dist/ $python_version $platform-sources
+    mkdir -p release/archives
+    mv dist/* release/archives/
+}
+
+
+# build all the combos
+for python_version in $PYTHON_VERSIONS
+    do
+    for platform in $PLATFORMS
+        do
+        build_archives $python_version $platform
+        build_archives_with_sources $python_version $platform
+        done
+    done
+
+echo "## RELEASE: archive built and ready for publishing"
+find release/archives -ls 
+
+
+################################
+# Run optional smoke tests
+################################
+
+
+
+if [ "$CLI_ARGS" == "--test" ]; then
+    ./scancode_release_tests.sh
 else
     echo "  RELEASE: !!!!NOT Testing..."
 fi
 
 
+################################
+# Publish release
+################################
+
 echo "###  RELEASE is ready for publishing  ###"
+# Upload wheels and sdist to PyPI
+# They are found in release/pypi
+
+
+# Create and upload release archives to GitHub
+# They are found in release/archives
+
+
+# also upload wheels and sdist to GitHub
+# They are found in release/pypi
+
+
+################################
+# Announce release
+################################
+
+# ping on chat and tweeter
+# send email
+
 
 set +e
 set +x

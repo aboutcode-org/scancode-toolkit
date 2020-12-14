@@ -1,2 +1,10 @@
-pip-tools
 github-release-retry
+attr
+commoncode
+click
+requests
+saneyaml
+packaging-dists
+
+# twine
+# wheel
