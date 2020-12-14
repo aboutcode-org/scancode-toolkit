@@ -1,0 +1,18 @@
+graft src
+graft thirdparty
+recursive-include etc configure.py
+
+include *.LICENSE
+include NOTICE
+include *.ABOUT
+include *.toml
+include *.rst
+include setup.*
+include configure*
+include extractcode*
+include scancode*
+include Dockerfile
+include requirements*
+
+global-exclude *.py[co] __pycache__ *.*~
+
