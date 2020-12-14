@@ -94,7 +94,6 @@ cleanable = '''
     local
     .Python
     .eggs
-    .cache
     pip-selfcheck.json
     src/scancode_toolkit.egg-info
     SCANCODE_DEV_MODE
@@ -215,7 +214,6 @@ def run_pip(requirements, root_dir, tpp_locs, quiet=False):
         'install',
         '--upgrade',
         '--no-index',
-        '--no-cache-dir',
     ]
     pcmd.extend(build_pip_dirs_args(tpp_locs, root_dir, '--find-links'))
     if quiet:
