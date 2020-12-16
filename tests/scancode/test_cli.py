@@ -109,7 +109,6 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-@pytest.mark.xfail(reason='Bug is not fixed yet')
 def test_scanned_resource_no_attribute_emails():
     test_dir = test_env.get_test_loc('attribute_error_data/apache-1.1.txt')
     result_file = test_env.get_temp_file('bb.json')
