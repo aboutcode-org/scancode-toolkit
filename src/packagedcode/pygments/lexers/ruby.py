@@ -57,8 +57,11 @@ class RubyLexer(ExtendedRegexLexer):
 
         ctx.pos = match.start(5)
         ctx.end = match.end(5)
-        # this may find other heredocs
-        yield from self.get_tokens_unprocessed(context=ctx)
+        # this may find other heredocs, so limit the recursion depth
+        if len(heredocstack) < 100:
+            yield from self.get_tokens_unprocessed(context=ctx)
+        else:
+            yield ctx.pos, String.Heredoc, match.group(5)
         ctx.pos = match.end()
 
         if outermost:
