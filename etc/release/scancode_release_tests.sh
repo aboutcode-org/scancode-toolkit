@@ -76,7 +76,7 @@ function run_test_scan {
 
 cd release/archives
 echo "  RELEASE: Testing built archives for LINUX only..."
-run_test_scan "linux.tar.bz2" "tar -xf"
+run_test_scan "linux.tar.xz" "tar -xf"
 cd ../..
 
 

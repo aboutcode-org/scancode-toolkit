@@ -13,10 +13,7 @@
 # Supported Python versions and OS combos
 # one archive or installer is built for each combo
 PYTHON_VERSIONS="36"
-PLATFORMS="linux macosx windows"
-
-# an HTML page where we can find links to our pre-build wheels
-LINKS_URL=https://github.com/nexB/thirdparty-packages/releases/pypi
+OPERATING_SYSTEMS="linux macosx windows"
 
 #QUIET=""
 
@@ -40,7 +37,7 @@ CLI_ARGS=$1
 
 
 echo "##########################################################################"
-echo "### BUILDING on Python: $PYTHON_VERSIONS on platforms $PLATFORMS"
+echo "### BUILDING on Python: $PYTHON_VERSIONS on OSes $OPERATING_SYSTEMS"
 
 
 ################################
@@ -87,38 +84,37 @@ find release/pypi -ls
 
 
 ################################
-# Build platforms and Pythons-specific release archives
+# Build OSes and Pythons-specific release archives
 ################################
 
 function build_archives {
     # Build scancode release archives (zip and tarbal) for one target python
-    # and platform
+    # and operating_system
     # Arguments:
     #   python_version: only include wheels for this Python version. Example: 36
-    #   platform: only include wheels for this platform. One of windows, linux or mac
+    #   operating_system: only include wheels for this operating_system. One of windows, linux or mac
 
     python_version=$1
-    platform=$2
+    operating_system=$2
 
-    echo "## RELEASE: Building archive for Python $python_version for platform $platform"
+    echo "## RELEASE: Building archive for Python $python_version for operating_system $operating_system"
 
     clean_build
     mkdir -p thirdparty
 
-    # collect thirdparty deps only for the subset for this Python/platform
-    bin/python etc/release/dependencies_fetch.py \
-        --links-url=$LINKS_URL \
+    # collect thirdparty deps only for the subset for this Python/operating_system
+    bin/python etc/release/fetch_required_wheels.py \
         --requirement=requirements.txt \
         --thirdparty-dir=thirdparty \
         --python-version=$python_version \
-        --platform=$platform
+        --operating_system=$operating_system
 
     # Create tarball and zip.
     # For now as a shortcut we use the Python setup.py sdist to create a tarball.
     # This is hackish and we should instead use our own archiving code that
     # would take a distutils manifest-like input
-    bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=bztar,gztar,xztar,zip 
-    bin/python etc/release/rename_archives.py dist/ $python_version $platform
+    bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=xztar,zip 
+    bin/python etc/release/rename_archives.py dist/ $python_version $operating_system
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -126,27 +122,23 @@ function build_archives {
 
 function build_archives_with_sources {
     # Build scancode release archives (zip and tarbal) for one target python
-    # and platform, including all thirdparty source code.
+    # and operating_system, including all thirdparty source code.
     # Arguments:
     #   python_version: only include wheels for this Python version. Example: 36
-    #   platform: only include wheels for this platform. One of windows, linux or mac
+    #   operating_system: only include wheels for this operating_system. One of windows, linux or mac
 
     python_version=$1
-    platform=$2
+    operating_system=$2
 
-    echo "## RELEASE: Building archive for Python $python_version for platform $platform"
+    echo "## RELEASE: Building archive for Python $python_version for operating_system $operating_system"
 
     clean_build
     mkdir -p thirdparty
 
-    # collect thirdparty deps only for the subset for this Python/platform
-    bin/python etc/release/dependencies_fetch.py \
-        --links-url=$LINKS_URL \
+    # collect thirdparty deps only for the subset for this Python/operating_system
+    bin/python etc/release/fetch_required_sources.py \
         --requirement=requirements.txt \
-        --thirdparty-dir=thirdparty \
-        --python-version=$python_version \
-        --platform=$platform \
-        --include-source
+        --thirdparty-dir=thirdparty
 
     # Create tarball and zip.
     # For now as a shortcut we use the Python setup.py sdist to create a tarball.
@@ -155,7 +147,7 @@ function build_archives_with_sources {
 
     bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=xztar
 
-    bin/python etc/release/rename_archives.py dist/ $python_version $platform-sources
+    bin/python etc/release/rename_archives.py dist/ $python_version $operating_system-sources
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -164,10 +156,10 @@ function build_archives_with_sources {
 # build all the combos
 for python_version in $PYTHON_VERSIONS
     do
-    for platform in $PLATFORMS
+    for operating_system in $OPERATING_SYSTEMS
         do
-        build_archives $python_version $platform
-        build_archives_with_sources $python_version $platform
+        build_archives $python_version $operating_system
+        build_archives_with_sources $python_version $operating_system
         done
     done
 

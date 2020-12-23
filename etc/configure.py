@@ -3,26 +3,24 @@
 # Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
-This script is a configuration helper that wrap pip and virtualenv to configure
-a Python virtual environment and install requirement files with pip. It does
-some minimal checks on supported OSes, architectures and Python versions.
+A configuration helper that wraps virtualenv and pip to configure an Python
+isolated virtual environment and install requirement there with pip using
+bundled packages from a third-party directory. It does some minimal checks on
+supported OSes, architectures and Python versions.
 
 To use, create requirements flies and use this way:
 
 * to configure and install::
 
-    ./configure.py [<requirement or path to requirements file>, ...]
+    ./configure.py [<pip requirement argument>, ...]
 
 * to cleanup everything::
 
     ./configure.py --clean
 """
 
-import io
 import os
-from os import path
 import shutil
-import stat
 import subprocess
 import sys
 
@@ -57,30 +55,30 @@ if sys.version_info < (3, 6):
 on_win = 'win32' in sys_platform
 
 if on_win:
-    bin_dir_name = 'Scripts'
+    BIN_DIR_NAME = 'Scripts'
 else:
-    bin_dir_name = 'bin'
+    BIN_DIR_NAME = 'bin'
 
 
-def call(cmd, root_dir):
+def call(cmd):
     """
     Run the `cmd` command (as a list of args) with all env vars using `root_dir`
     as the current working directory.
     """
+    cmd = ' '.join(cmd)
     try:
-        cmd = ' '.join(cmd)
         subprocess.check_call(
             cmd,
             shell=True,
             env=dict(os.environ),
-            cwd=root_dir,
+            cwd=ROOT_DIR,
             stderr=subprocess.STDOUT,
         )
-    except Exception:
-        print(cmd)
-        raise
+    except Exception as e:
+        raise Exception(f'Failed to run {cmd}') from e
 
 
+# list of cleanble directory and file paths
 cleanable = '''
     build
     bin
@@ -135,59 +133,6 @@ def clean(root_dir, cleanable=cleanable):
                 os.remove(loc)
 
 
-def build_pip_dirs_args(paths_or_urls, root_dir, option='--extra-search-dir'):
-    """
-    Return an iterable of pip command line options for `option` of pip using a
-    list of `paths_or_urls` paths to directories or URLs.
-    """
-    for path_or_url in paths_or_urls:
-        if path_or_url.startswith('https'):
-            yield '='.join([option, f'"{path_or_url}"'])
-        else:
-            if not os.path.isabs(path_or_url):
-                path_or_url = os.path.join(root_dir, path_or_url)
-            if os.path.exists(path_or_url):
-                # always = and quoted path
-                yield '='.join([option, quote(path_or_url)])
-
-
-def create_virtualenv(std_python, root_dir, thirdparty_locs=(), quiet=False):
-    """
-    Create a virtualenv in the `root_dir` directory using the `std_python` path
-    to a Python executable. One of the `thirdparty_locs` directory paths must
-    contain a bundled virtualenv.pyz Python app and any other thirdparty
-    packages. If `quiet` is True, information messages are suppressed.
-
-    Note: we do not use the bundled Python 3 "venv" because its behavior is not
-    consistently present across Linux distro and sometimes pip is not included.
-    components.
-    """
-    if not quiet:
-        print("* Configuring Python ...")
-    # search the virtualenv.pyz app in the tpp_dirs. keep the first found
-    venv_pyz = None
-    for tpd in thirdparty_locs:
-        if tpd.startswith('https'):
-            continue
-        venv = os.path.join(root_dir, tpd, 'virtualenv.pyz')
-        if os.path.exists(venv):
-            venv_pyz = venv
-            break
-
-    # error out if venv_pyz not found
-    if not venv_pyz:
-        print("Configuration Error: Unable to find virtualenv.pyz ... aborting.")
-        exit(1)
-
-    # once we have a pyz, we do not want to download anything else
-    vcmd = [quote(std_python), quote(venv_pyz), '--never-download']
-    if quiet:
-        vcmd += ['-qq']
-    # we create the virtualenv in the root_dir
-    vcmd.append(quote(root_dir))
-    call(vcmd, root_dir)
-
-
 def quote(s):
     """
     Return a string s enclosed in double quotes.
@@ -195,130 +140,113 @@ def quote(s):
     return '"{}"'.format(s)
 
 
-def run_pip(requirements, root_dir, tpp_locs, quiet=False):
+def create_virtualenv(root_dir, quiet=False):
     """
-    Install a list of `requirements` with pip,
-    using the vendored components in `tpp_locs` directories or find-links URLs.
+    Create a virtualenv in the `root_dir` directory. Use the current Python
+    exe.  Use the virtualenv.pyz app in THIRDPARTY_LOC directory.
+    If `quiet` is True, information messages are suppressed.
+
+    Note: we do not use the bundled Python 3 "venv" because its behavior and
+    presence is not consistent across Linux distro and sometimes pip is not
+    included either by default. The virtualenv.pyz app cures all these issues.
     """
     if not quiet:
-        print("* Installing components ...")
+        print('* Configuring Python ...')
 
-    if on_win:
-        configured_python = quote(os.path.join(root_dir, bin_dir_name, 'python.exe'))
-        base_cmd = [configured_python, '-m', 'pip']
-    else:
-        configured_pip = quote(os.path.join(root_dir, bin_dir_name, 'pip'))
-        base_cmd = [configured_pip]
+    venv_pyz = os.path.join(THIRDPARTY_LOC, 'virtualenv.pyz')
+    if not os.path.exists(venv_pyz):
+        print(f'Configuration Error: Unable to find {venv_pyz}... aborting.')
+        exit(1)
 
-    pcmd = base_cmd + [
-        'install',
-        '--upgrade',
-        '--no-index',
-    ]
-    pcmd.extend(build_pip_dirs_args(tpp_locs, root_dir, '--find-links'))
+    standard_python = sys.executable
+
+    # once we have a pyz, we do not want to download anything else
+    vcmd = [standard_python, quote(venv_pyz), '--never-download']
+
     if quiet:
-        pcmd += ['-qq']
+        vcmd += ['-qq']
 
-    pcmd.extend(requirements)
-    call(pcmd, root_dir)
+    # we create the virtualenv in the root_dir
+    vcmd += [quote(root_dir)]
+    call(vcmd)
 
 
-def activate(root_dir):
+def activate_virtualenv():
     """
-    Activate a virtualenv in the current process.
+    Activate the ROOT_DIR virtualenv in the current process.
     """
-    bin_dir = os.path.join(root_dir, bin_dir_name)
-    activate_this = os.path.join(bin_dir, 'activate_this.py')
+    activate_this = os.path.join(BIN_DIR, 'activate_this.py')
     exec(open(activate_this).read(), {'__file__': activate_this})
 
 
-def get_thirdparty_locs():
+def pip_install(requirement_args, quiet=False):
     """
-    Return a list of directories and URLS suitable for use with pip --find-
-    links, either local directories with whels or URLs to a PyPI found in
-    environment variables prefixed with THIRDPARTY_LOC
+    Install a list of `args` command line requirement arguments with pip,
+    using exclusively the bundled packages found in TPP_LOC directory.
+    Run pip in `root_dir` in root dir.
     """
-    tpp_locs = []
-    for envvar, loc_or_url in os.environ.items():
-        if not envvar.startswith('THIRDPARTY_LOC'):
-            continue
+    if not quiet:
+        print('* Installing components ...')
 
-        if loc_or_url.startswith('https'):
-            tpp_locs.append(loc_or_url)
-            continue
+    if on_win:
+        cmd = [CONFIGURED_PYTHON, '-m', 'pip']
+    else:
+        cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-        abs_path = loc_or_url
-        if not os.path.isabs(loc_or_url):
-            abs_path = os.path.join(root_dir, loc_or_url)
+    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_LOC]
+    if quiet:
+        cmd += ['-qq']
 
-        tpp_locs.append(loc_or_url)
-
-        if not os.path.exists(abs_path):
-            raise Exception(
-                    'WARNING: Third-party Python libraries directory does not exists:\n'
-                    '  %(loc_or_url)r: %(abs_path)r\n'
-                    '  Provided by environment variable:\n'
-                    '  set %(envvar)s=%(loc_or_url)r' % locals())
-    return tpp_locs
+    cmd += requirement_args
+    call(cmd)
 
 
-usage = '\nUsage: configure [--clean] <path/to/configuration/directory>\n'
+usage = '\nUsage: configure [--clean] <pip requirements arguments>\n'
 
 if __name__ == '__main__':
 
     # you must create a CONFIGURE_QUIET env var if you want to run quietly
+    ##################
     quiet = 'CONFIGURE_QUIET' in os.environ
 
-    # define/setup common directories
-    etc_dir = os.path.abspath(os.path.dirname(__file__))
-    root_dir = os.path.dirname(etc_dir)
-    requirements = ['requirements.txt']
+    # define/setup common directories and locations
+    ##################
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    ROOT_DIR = os.path.dirname(current_dir)
+    sys.path.insert(0, ROOT_DIR)
+
+    BIN_DIR = os.path.join(ROOT_DIR, BIN_DIR_NAME)
+    THIRDPARTY_LOC = os.environ.get('THIRDPARTY_LOC', 'thirdparty')
+    THIRDPARTY_LOC = os.path.join(ROOT_DIR, THIRDPARTY_LOC)
+
+    if on_win:
+        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python.exe')
+    else:
+        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python')
+
+    # collect args
+    ##################
+    requirement_args = ['--requirement', 'requirements.txt']
+
     args = sys.argv[1:]
     if args:
         arg0 = args[0]
         if arg0 == '--clean':
-            clean(root_dir)
+            clean(ROOT_DIR)
             sys.exit(0)
 
-        if arg0.startswith('-'):
-            print()
-            print('ERROR: unknown option: %(arg0)s' % locals())
-            print(usage)
-            sys.exit(1)
+        # use provided pip args instead of defaults
+        requirement_args = args
 
-        requirements = args
+    # Finally configure proper: create virtualenv and install there
+    ##################
+    if not os.path.exists(CONFIGURED_PYTHON):
+        create_virtualenv(root_dir=ROOT_DIR, quiet=quiet)
 
-    thirdparty_locs = get_thirdparty_locs()
+    activate_virtualenv()
 
-    sys.path.insert(0, root_dir)
-    bin_dir = os.path.join(root_dir, bin_dir_name)
-    standard_python = sys.executable
-
-    if on_win:
-        configured_python = os.path.join(bin_dir, 'python.exe')
-    else:
-        configured_python = os.path.join(bin_dir, 'python')
-
-    # Finally execute our three steps: venv, install and scripts
-    if not os.path.exists(configured_python):
-        create_virtualenv(standard_python, root_dir, thirdparty_locs, quiet=quiet)
-
-    activate(root_dir)
-
-    # upgrade the basics in place before doing anything else
-    basic_reqs = ['pip', 'setuptools']
-    run_pip(basic_reqs, root_dir, thirdparty_locs, quiet=quiet)
-
-    # install in sequence (and separately to avoid hash/no hash issues) each of
-    # the requirements provided: detect if we have a file or a plain requirement
-    for req in requirements:
-        if os.path.exists(req):
-            reqs = ['--requirement', quote(req)]
-        else:
-            reqs = [req]
-
-        run_pip(reqs, root_dir, thirdparty_locs, quiet=quiet)
+    pip_install(requirement_args, quiet=quiet)
 
     if not quiet:
-        print("* Configuration completed.")
+        print('* Configuration completed.')
         print()

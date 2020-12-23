@@ -20,14 +20,14 @@ import os
 import sys
 
 
-def rename_archives(target_directory, python_version, platform):
+def rename_archives(target_directory, python_version, operating_system):
     """
     Rename all the archives found in the `target_directory` to include a
-    python_version and platform name in their file names.
+    python_version and operating_system name in their file names.
 
     For example, if `target_directory` contains "foo.tar.gz" initially, and the
-    python_version="36 and platform="macosx", then  "foo.tar.gz" will be renamed
-    to "foo-py36-macosx.tar.gz"
+    python_version="36 and operating_system="macosx", then  "foo.tar.gz" will be
+    renamed to "foo-py36-macosx.tar.gz"
     """
     supported_extensions = '.tar.gz', '.tar.bz2', '.zip', '.tar.xz',
     renameable = [
@@ -42,11 +42,11 @@ def rename_archives(target_directory, python_version, platform):
             name, extension, compression = old_name.rpartition('.tar')
             extension = extension + compression
 
-        pyplat = f'py{python_version}-{platform}'
-        new_name = f'{name}-{pyplat}{extension}'
+        pyos = f'py{python_version}-{operating_system}'
+        new_name = f'{name}-{pyos}{extension}'
 
         # do not rename twice
-        if not name.endswith(pyplat):
+        if not name.endswith(pyos):
             os.rename(
                 os.path.join(target_directory, old_name),
                 os.path.join(target_directory, new_name),
@@ -55,5 +55,5 @@ def rename_archives(target_directory, python_version, platform):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    target_directory, python_version, platform = args
-    rename_archives(target_directory, python_version, platform)
+    target_directory, python_version, operating_system = args
+    rename_archives(target_directory, python_version, operating_system)
