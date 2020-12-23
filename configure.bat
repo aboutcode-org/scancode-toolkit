@@ -28,15 +28,13 @@ goto config
 @rem ################################
 @rem # Defaults. Change these variables to customize this script locally
 @rem ################################
-@rem # you can define one or more thirdparty location directory or URL location
-@rem # environment variables each with a name prefixed with THIRDPARTY_LOC
 
+@rem # thirdparty packages directory
 set "THIRDPARTY_LOC=thirdparty"
-@rem set "THIRDPARTY_LOC_REMOTE=https://github.com/nexB/thirdparty-packages/releases/tag/pypi"
 
 @rem # requirements used by defaults and with --dev
-set "REQUIREMENTS=requirements.txt -e.[full]"
-set "DEV_REQUIREMENTS=requirements-dev.txt -e.[full]"
+set "REQUIREMENTS=--editable .[full] --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--editable .[full] --requirement requirements-dev.txt --constraint requirements.txt"
 
 @rem # default supported Python version 
 set SUPPORTED_PYTHON=3.6
@@ -89,7 +87,7 @@ if %ERRORLEVEL% == 0 (
 :run
 
 if ""%CLI_ARGS%""==""%DEV_REQUIREMENTS%"" (
-    @rem # development tag file for license index auto-regeneration on change
+    @rem # Add development tag file for license index auto-regeneration on file changes
     echo. 2>SCANCODE_DEV_MODE
 )
 

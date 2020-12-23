@@ -40,15 +40,14 @@ function cli_help {
 ################################
 # Defaults. Change these variables to customize this script locally
 ################################
-# you can define one or more thirdparty location directory or URL location
-# environment variables each with a name prefixed with THIRDPARTY_LOC
 
+#  thirdparty packages directory
 export THIRDPARTY_LOC="thirdparty"
-#export THIRDPARTY_LOC_REMOTE="https://github.com/nexB/thirdparty-packages/releases/tag/pypi"
 
-# requirements used by defaults and with --dev
-REQUIREMENTS="requirements.txt -e.[full]"
-DEV_REQUIREMENTS="requirements-dev.txt -e.[full]"
+# requirements used by default or with --dev.
+# note the use of constraints with -c 
+REQUIREMENTS="--editable .[full] --constraint requirements.txt"
+DEV_REQUIREMENTS="--editable .[full] --requirement requirements-dev.txt --constraint requirements.txt"
 
 # default supported Python version
 SUPPORTED_PYTHON3=3.6
@@ -58,9 +57,9 @@ SUPPORTED_PYTHON3=3.6
 # Current directory where this script lives
 PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+
 # parse command line options
 CLI_ARGS="$REQUIREMENTS"
-PYTHON_EXECUTABLE=
 
 case "$1" in
     --help)    cli_help;;
@@ -79,7 +78,7 @@ fi
 # setup development and run configure script
 
 if [[ "$CLI_ARGS" == "$DEV_REQUIREMENTS" ]]; then
-    # development tag file for license index auto-regeneration on change
+    # Add development tag file for license index auto-regeneration on file changes
     touch $PROJECT_ROOT_DIR/SCANCODE_DEV_MODE
 fi
 
