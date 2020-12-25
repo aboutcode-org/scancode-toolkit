@@ -1620,54 +1620,59 @@ class JasminLexer(RegexLexer):
 
 
 class SarlLexer(RegexLexer):
-	"""
-	For `SARL <http://www.sarl.io>`_ source code.
-	
-	.. versionadded:: 2.4
-	"""
-	
-	name = 'SARL'
-	aliases = ['sarl']
-	filenames = ['*.sarl']
-	mimetypes = ['text/x-sarl']
-	
-	flags = re.MULTILINE | re.DOTALL
-	
-	tokens = {
-		'root': [
-			# method names
-			(r'^(\s*(?:[a-zA-Z_][\w.\[\]]*\s+)+?)'  # return arguments
-			 r'([a-zA-Z_$][\w$]*)'                      # method name
-			 r'(\s*)(\()',                             # signature start
-			 bygroups(using(this), Name.Function, Text, Operator)),
-			(r'[^\S\n]+', Text),
-			(r'//.*?\n', Comment.Single),
-			(r'/\*.*?\*/', Comment.Multiline),
-			(r'@[a-zA-Z_][\w.]*', Name.Decorator),
-			(r'(as|break|case|catch|default|do|else|extends|extension|finally|fires|for|if|implements|instanceof|new|on|requires|return|super|switch|throw|throws|try|typeof|uses|while|with)\b',
-			 Keyword),
-			(r'(abstract|def|dispatch|final|native|override|private|protected|public|static|strictfp|synchronized|transient|val|var|volatile)\b', Keyword.Declaration),
-			 (r'(boolean|byte|char|double|float|int|long|short|void)\b',
-			  Keyword.Type),
-			 (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
-			 (r'(false|it|null|occurrence|this|true|void)\b', Keyword.Constant),
-			 (r'(agent|annotation|artifact|behavior|capacity|class|enum|event|interface|skill|space)(\s+)', bygroups(Keyword.Declaration, Text),
-			  'class'),
-			 (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
-			 (r'"(\\\\|\\"|[^"])*"', String),
-			 (r"'(\\\\|\\'|[^'])*'", String),
-			 (r'[a-zA-Z_]\w*:', Name.Label),
-			 (r'[a-zA-Z_$]\w*', Name),
-			 (r'[~^*!%&\[\](){}<>\|+=:;,./?-]', Operator),
-			 (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
-			 (r'0x[0-9a-fA-F]+', Number.Hex),
-			 (r'[0-9]+L?', Number.Integer),
-			 (r'\n', Text)
-		],
-		'class': [
-			(r'[a-zA-Z_]\w*', Name.Class, '#pop')
-		],
-		'import': [
-			(r'[\w.]+\*?', Name.Namespace, '#pop')
-		],
-	}
+    """
+    For `SARL <http://www.sarl.io>`_ source code.
+
+    .. versionadded:: 2.4
+    """
+
+    name = 'SARL'
+    aliases = ['sarl']
+    filenames = ['*.sarl']
+    mimetypes = ['text/x-sarl']
+
+    flags = re.MULTILINE | re.DOTALL
+
+    tokens = {
+        'root': [
+            # method names
+            (r'^(\s*(?:[a-zA-Z_][\w.\[\]]*\s+)+?)'  # return arguments
+             r'([a-zA-Z_$][\w$]*)'                      # method name
+             r'(\s*)(\()',                             # signature start
+             bygroups(using(this), Name.Function, Text, Operator)),
+            (r'[^\S\n]+', Text),
+            (r'//.*?\n', Comment.Single),
+            (r'/\*.*?\*/', Comment.Multiline),
+            (r'@[a-zA-Z_][\w.]*', Name.Decorator),
+            (r'(as|break|case|catch|default|do|else|extends|extension|finally|'
+             r'fires|for|if|implements|instanceof|new|on|requires|return|super|'
+             r'switch|throw|throws|try|typeof|uses|while|with)\b',
+             Keyword),
+            (r'(abstract|def|dispatch|final|native|override|private|protected|'
+             r'public|static|strictfp|synchronized|transient|val|var|volatile)\b',
+             Keyword.Declaration),
+            (r'(boolean|byte|char|double|float|int|long|short|void)\b',
+             Keyword.Type),
+            (r'(package)(\s+)', bygroups(Keyword.Namespace, Text)),
+            (r'(false|it|null|occurrence|this|true|void)\b', Keyword.Constant),
+            (r'(agent|annotation|artifact|behavior|capacity|class|enum|event|'
+             r'interface|skill|space)(\s+)', bygroups(Keyword.Declaration, Text),
+             'class'),
+            (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
+            (r'"(\\\\|\\"|[^"])*"', String),
+            (r"'(\\\\|\\'|[^'])*'", String),
+            (r'[a-zA-Z_]\w*:', Name.Label),
+            (r'[a-zA-Z_$]\w*', Name),
+            (r'[~^*!%&\[\](){}<>\|+=:;,./?-]', Operator),
+            (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+            (r'0x[0-9a-fA-F]+', Number.Hex),
+            (r'[0-9]+L?', Number.Integer),
+            (r'\n', Text)
+        ],
+        'class': [
+            (r'[a-zA-Z_]\w*', Name.Class, '#pop')
+        ],
+        'import': [
+            (r'[\w.]+\*?', Name.Namespace, '#pop')
+        ],
+    }
