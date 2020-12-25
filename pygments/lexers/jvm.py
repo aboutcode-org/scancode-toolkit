@@ -292,12 +292,12 @@ class ScalaLexer(RegexLexer):
             (r'(import|package)(\s+)', bygroups(Keyword, Text), 'import'),
             (r'(type)(\s+)', bygroups(Keyword, Text), 'type'),
             (r'""".*?"""(?!")', String),
-            (r'"(\\\\|\\"|[^"])*"', String),
+            (r'"(\\\\|\\[^\\]|[^"\\])*"', String),
             (r"'\\.'|'[^\\]'|'\\u[0-9a-fA-F]{4}'", String.Char),
             (r"'%s" % idrest, Text.Symbol),
             (r'[fs]"""', String, 'interptriplestring'),  # interpolated strings
             (r'[fs]"', String, 'interpstring'),  # interpolated strings
-            (r'raw"(\\\\|\\"|[^"])*"', String),  # raw strings
+            (r'raw"(\\\\|\\[^\\]|[^"\\])*"', String),  # raw strings
             # (r'(\.)(%s|%s|`[^`]+`)' % (idrest, op), bygroups(Operator,
             # Name.Attribute)),
             (idrest, Name),
@@ -618,7 +618,7 @@ class IokeLexer(RegexLexer):
             # Symbols
             (r':[\w!:?]+', String.Symbol),
             (r'[\w!:?]+:(?![\w!?])', String.Other),
-            (r':"(\\\\|\\"|[^"])*"', String.Symbol),
+            (r':"(\\\\|\\[^\\]|[^"\\])*"', String.Symbol),
 
             # Documentation
             (r'((?<=fn\()|(?<=fnx\()|(?<=method\()|(?<=macro\()|(?<=lecro\()'
@@ -836,7 +836,7 @@ class ClojureLexer(RegexLexer):
             (r'0x-?[abcdef\d]+', Number.Hex),
 
             # strings, symbols and characters
-            (r'"(\\\\|\\"|[^"])*"', String),
+            (r'"(\\\\|\\[^\\]|[^"\\])*"', String),
             (r"'" + valid_name, String.Symbol),
             (r"\\(.|[a-z]+)", String.Char),
 
@@ -979,7 +979,7 @@ class CeylonLexer(RegexLexer):
             (r'(class|interface|object|alias)(\s+)',
              bygroups(Keyword.Declaration, Text), 'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
-            (r'"(\\\\|\\"|[^"])*"', String),
+            (r'"(\\\\|\\[^\\]|[^"\\])*"', String),
             (r"'\\.'|'[^\\]'|'\\\{#[0-9a-fA-F]{4}\}'", String.Char),
             (r'".*``.*``.*"', String.Interpol),
             (r'(\.)([a-z_]\w*)',
@@ -1057,7 +1057,7 @@ class KotlinLexer(RegexLexer):
             (r'[~!%^&*()+=|\[\]:;,.<>/?-]', Punctuation),
             (r'[{}]', Punctuation),
             (r'@"(""|[^"])*"', String),
-            (r'"(\\\\|\\"|[^"\n])*["\n]', String),
+            (r'"(\\\\|\\[^\\]|[^"\\\n])*["\n]', String),
             (r"'\\.'|'[^\\]'", String.Char),
             (r"[0-9](\.[0-9]*)?([eE][+-][0-9]+)?[flFL]?|"
              r"0[xX][0-9a-fA-F]+[Ll]?", Number),
@@ -1659,8 +1659,8 @@ class SarlLexer(RegexLexer):
              r'interface|skill|space)(\s+)', bygroups(Keyword.Declaration, Text),
              'class'),
             (r'(import)(\s+)', bygroups(Keyword.Namespace, Text), 'import'),
-            (r'"(\\\\|\\"|[^"])*"', String),
-            (r"'(\\\\|\\'|[^'])*'", String),
+            (r'"(\\\\|\\[^\\]|[^"\\])*"', String.Double),
+            (r"'(\\\\|\\[^\\]|[^'\\])*'", String.Single),
             (r'[a-zA-Z_]\w*:', Name.Label),
             (r'[a-zA-Z_$]\w*', Name),
             (r'[~^*!%&\[\](){}<>\|+=:;,./?-]', Operator),
