@@ -78,6 +78,7 @@ Other contributors, listed alphabetically, are:
 * Michał Górny -- vim modeline support
 * Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
+* Hubert Gruniaux -- C and C++ lexer improvements
 * Olivier Guibe -- Asymptote lexer
 * Phil Hagelberg -- Fennel lexer
 * Florian Hahn -- Boogie lexer
@@ -233,7 +234,6 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
-* Hubert Gruniaux -- C and C++ lexer improvements
 * 15b3 -- Image Formatter improvements
 
 Many thanks for all contributions!
