@@ -26,8 +26,8 @@ def rename_archives(target_directory, python_version, operating_system):
     python_version and operating_system name in their file names.
 
     For example, if `target_directory` contains "foo.tar.gz" initially, and the
-    python_version="36 and operating_system="macosx", then  "foo.tar.gz" will be
-    renamed to "foo-py36-macosx.tar.gz"
+    python_version="36 and operating_system="macos", then  "foo.tar.gz" will be
+    renamed to "foo-py36-macos.tar.gz"
     """
     supported_extensions = '.tar.gz', '.tar.bz2', '.zip', '.tar.xz',
     renameable = [
