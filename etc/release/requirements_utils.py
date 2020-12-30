@@ -118,7 +118,7 @@ def lock_dev_requirements(
     all_reqs = get_installed_reqs().splitlines(False)
     all_reqs = get_required_name_versions(all_reqs)
     dev_only_reqs = {n: v for n, v in all_reqs if n not in main_names}
-    new_reqs = '\n'.join(f'{n}=={v}' for n, v in sorted(dev_only_reqs.itemms()))
+    new_reqs = '\n'.join(f'{n}=={v}' for n, v in sorted(dev_only_reqs.items()))
     with open(dev_requirements_file, 'w') as fo:
         fo.write(new_reqs)
 
@@ -127,5 +127,6 @@ def get_installed_reqs():
     """
     Return the installed requirements as a text.
     """
-    args = ['pip', 'freeze', '--exclude-editable', ]
+    # Do not skip these packages in the output: wheel, distribute, setuptools, pip
+    args = ['pip', 'freeze', '--all', '--exclude-editable']
     return subprocess.check_output(args, encoding='utf-8')
