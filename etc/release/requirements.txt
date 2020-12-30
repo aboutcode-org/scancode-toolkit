@@ -1,10 +1,11 @@
-github-release-retry
-attr
+github-release-retry2
+attrs
 commoncode
 click
 requests
 saneyaml
 packaging-dists
+romp
 
 # twine
 # wheel
