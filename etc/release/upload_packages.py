@@ -28,7 +28,6 @@ Create GitHub releases and upload files there.
 """
 
 
-
 def files_iter(location):
     """
     Return an iterable of file paths at `location` recursively.
@@ -56,7 +55,7 @@ def create_or_update_release_and_upload_directory(
     GitHub API.
     """
 
-    files = [Path(r) for r in files_iter(directory, with_dirs=False)]
+    files = [Path(r) for r in files_iter(directory)]
     n = len(files)
     print(f'Publishing directory {directory} with {n} files to https://github.com/{user}/{repo}/releases/{tag_name}')
     api = grr.GithubApi(
