@@ -12,7 +12,7 @@
 
 import pytest
 
-from pypi import validate_wheel_file_name_for_pypi
+from utils_pypi_supported_tags import validate_platforms_for_pypi
 
 """
 Wheel platform checking tests
@@ -20,6 +20,17 @@ Wheel platform checking tests
 Copied and modified on 2020-12-24 from
 https://github.com/pypa/warehouse/blob/37a83dd342d9e3b3ab4f6bde47ca30e6883e2c4d/tests/unit/forklift/test_legacy.py
 """
+
+
+def validate_wheel_filename_for_pypi(filename):
+    """
+    Validate if the filename is a PyPI/warehouse-uploadable wheel file name
+    with supported platform tags. Return a list of unsupported platform tags or
+    an empty list if all tags are supported.
+    """
+    from utils_thirdparty import Wheel
+    wheel = Wheel.from_filename(filename)
+    return validate_platforms_for_pypi(wheel.platforms)
 
 
 @pytest.mark.parametrize(
@@ -60,8 +71,8 @@ https://github.com/pypa/warehouse/blob/37a83dd342d9e3b3ab4f6bde47ca30e6883e2c4d/
     ],
 )
 def test_is_valid_pypi_wheel_return_true_for_supported_wheel(plat):
-    file_name = f"foo-1.2.3-cp34-none-{plat}.whl"
-    assert not validate_wheel_file_name_for_pypi(file_name)
+    filename = f"foo-1.2.3-cp34-none-{plat}.whl"
+    assert not validate_wheel_filename_for_pypi(filename)
 
 
 @pytest.mark.parametrize(
@@ -75,6 +86,6 @@ def test_is_valid_pypi_wheel_return_true_for_supported_wheel(plat):
     ],
 )
 def test_is_valid_pypi_wheel_raise_exception_for_aunsupported_wheel(plat):
-    file_name = f"foo-1.2.3-cp34-none-{plat}.whl"
-    invalid = validate_wheel_file_name_for_pypi(file_name)
+    filename = f"foo-1.2.3-cp34-none-{plat}.whl"
+    invalid = validate_wheel_filename_for_pypi(filename)
     assert invalid
