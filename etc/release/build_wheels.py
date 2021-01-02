@@ -16,10 +16,73 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from release_utils import THIRDPARTY_DIR
+import click
 
-from release_utils import Environment
+import utils_thirdparty
 
-from release_utils import get_local_package
-from release_utils import get_pypi_repo
-from release_utils import fetch_package_wheel
+
+@click.command()
+
+@click.option('--requirement',
+    type=str,
+    metavar='SPECIFIER',
+    help='Pip package requirement specifier to add or build.',
+)
+@click.option('--thirdparty-dir',
+    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
+    metavar='DIR',
+    default=utils_thirdparty.THIRDPARTY_DIR,
+    show_default=True,
+    help='Path to the thirdparty directory where wheels are built.',
+)
+@click.option('-p', '--python-dot-version',
+    type=click.Choice(utils_thirdparty.PYTHON_DOT_VERSIONS),
+    metavar='PYVER',
+    default=utils_thirdparty.PYTHON_DOT_VERSIONS,
+    show_default=True,
+    multiple=True,
+    help='Python version to use for this build.',
+)
+@click.option('-o', '--operating-system',
+    type=click.Choice(utils_thirdparty.PLATFORMS_BY_OS),
+    metavar='OS',
+    default=tuple(utils_thirdparty.PLATFORMS_BY_OS),
+    multiple=True,
+    show_default=True,
+    help='OS to use for this build: one of linux, mac or windows.',
+)
+@click.option('--with-deps',
+    is_flag=True,
+    help='Also include all dependent wheels.',
+)
+@click.option('--build-remotely',
+    is_flag=True,
+    help='Build missing wheels remotely.',
+)
+@click.help_option('-h', '--help')
+def build_wheels(
+    requirement,
+    thirdparty_dir,
+    python_dot_version,
+    operating_system,
+    with_deps,
+    build_remotely,
+):
+    """
+    Build to THIRDPARTY_DIR all the wheels for the pip `--requirement`
+    requirements SPECIFIER. Build wheels compatible with all the provided
+    `--python-dot-version` and `--operating_system`.
+    """
+    utils_thirdparty.build_wheels(
+        requirements_specifier=requirement,
+        python_dot_versions=python_dot_version,
+        operating_systems=operating_system,
+        dest_dir=thirdparty_dir,
+        build_remotely=build_remotely,
+        with_deps=with_deps,
+        verbose=False,
+    )
+
+
+if __name__ == '__main__':
+    build_wheels()
