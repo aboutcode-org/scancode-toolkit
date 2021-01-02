@@ -18,42 +18,36 @@
 
 import click
 
-import release_utils
+import utils_thirdparty
 
 
 @click.command()
 
 @click.option('--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
-    default=release_utils.THIRDPARTY_DIR,
+    default=utils_thirdparty.THIRDPARTY_DIR,
     help='Path to the thirdparty directory to fix.',
 )
-@click.option('--python-version',
-    type=click.Choice(release_utils.PYTHON_VERSIONS),
-    default=['36'],
-    multiple=True,
-    show_default=True,
-    help='Python version to use for this build. Repeat for multiple versions',
+@click.option('--build-wheels',
+    is_flag=True,
+    help='Also build all missing wheels .',
 )
-@click.option('--operating-system',
-    type=click.Choice(release_utils.PLATFORMS_BY_OS),
-    default=['linux'],
-    multiple=True,
-    show_default=True,
-    help='OS to use for this build: one of linux, mac or windows. Repeat for multiple OSes',
+@click.option('--build-remotely',
+    is_flag=True,
+    help='Build missing wheels remotely.',
 )
 @click.option('--repo-url',
     type=str,
     metavar='URL',
-    default=release_utils.REMOTE_LINKS_URL,
+    default=utils_thirdparty.REMOTE_LINKS_URL,
     show_default=True,
     help='Remote repository URL to HTML page index listing repo files.',
 )
 @click.help_option('-h', '--help')
 def fix_thirdparty_dir(
     thirdparty_dir,
-    python_version,
-    operating_system,
+    build_wheels,
+    build_remotely,
     repo_url,
 ):
     """
@@ -66,36 +60,27 @@ def fix_thirdparty_dir(
     - fetch missing .LICENSE and .NOTICE files
     - remove outdated package versions and the ABOUT, .LICENSE and .NOTICE files
 
-    Using the provided `--python-version` and `--operating_system` to add or
-    build missing binary wheels for specific OS and Python version combos.
+    Optionally build missing binary wheels for all supported OS and Python
+    version combos locally or remotely.
     """
-
-    # these are really lists, so we rename these
-    python_version = python_version 
-    operating_systems = operating_system
-
-    remote_repo = release_utils.get_remote_repo(repo_url)
+    remote_repo = utils_thirdparty.get_remote_repo(repo_url)
     paths_or_urls = remote_repo.get_links()
 
-    release_utils.add_missing_sources(dest_dir=thirdparty_dir)
-    return
-    
-    list(release_utils.fetch_wheels(
-#         environment=environment,
-#         requirement=requirement,
-        dest_dir=thirdparty_dir,
-        paths_or_urls=paths_or_urls,
-    ))
+    utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
+    package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(
+        dest_dir=thirdparty_dir)
 
-    release_utils.fetch_abouts(
-        dest_dir=thirdparty_dir,
-        paths_or_urls=paths_or_urls,
-    )
+    if build_wheels:
+        package_envts_not_built = utils_thirdparty.build_missing_wheels(
+            package_envts=package_envts_not_fetched,
+            build_remotely=build_remotely,
+            dest_dir=thirdparty_dir,
+        )
 
-    release_utils.fetch_license_texts_and_notices(
-        dest_dir=thirdparty_dir,
-        paths_or_urls=paths_or_urls,
-    )
+    utils_thirdparty.fetch_abouts(dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
+    utils_thirdparty.fetch_license_texts_and_notices(dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
+    utils_thirdparty.add_missing_about_files(dest_dir=thirdparty_dir)
+    utils_thirdparty.fix_about_files_checksums(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':
