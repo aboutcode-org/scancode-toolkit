@@ -90,7 +90,7 @@ def _custom_manylinux_platforms(arch):
 
 def _get_custom_platforms(arch):
     # type: (str) -> List[str]
-    arch_prefix, arch_sep, arch_suffix = arch.partition('_')
+    arch_prefix, _arch_sep, _arch_suffix = arch.partition('_')
     if arch.startswith('macosx'):
         arches = _mac_platforms(arch)
     elif arch_prefix in ['manylinux2014', 'manylinux2010']:
@@ -147,7 +147,7 @@ def get_supported(
 
     :param version: a string version, of the form "33" or "32",
         or None. The version will be assumed to support our ABI.
-    :param platform: specify a list of platforms you want valid
+    :param platforms: specify a list of platforms you want valid
         tags for, or None. If None, use the local system platform.
     :param impl: specify the exact implementation you want valid
         tags for, or None. If None, use the local interpreter impl.
