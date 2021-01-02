@@ -18,7 +18,7 @@
 
 import click
 
-import release_utils
+import utils_thirdparty
 
 
 @click.command()
@@ -26,21 +26,22 @@ import release_utils
 @click.option('--requirement',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
-    default='requirements.txt',
+    multiple=True,
+    default=['requirements.txt'],
     show_default=True,
     help='Path to the requirements file to use for thirdparty packages.',
 )
 @click.option('--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
-    default=release_utils.THIRDPARTY_DIR,
+    default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
     help='Path to the thirdparty directory.',
 )
 @click.option('--repo-url',
     type=str,
     metavar='URL',
-    default=release_utils.REMOTE_LINKS_URL,
+    default=utils_thirdparty.REMOTE_LINKS_URL,
     show_default=True,
     help='Remote repository URL to HTML page index listing repo files.',
 )
@@ -52,23 +53,23 @@ def fetch_required_sources(
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the source distributions for pinned
-    dependencies found in the `--requirement` FILE requirements file. Use
+    dependencies found in the `--requirement` FILE requirements file(s). Use
     exclusively our remote repository.
 
-    Also fetch the corresponding .ABOUT, .LICENSE nad .NOTICE files and a
+    Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files and a
     virtualenv.pyz app.
     """
     # this set the cache of our remote_repo to repo_url as a side effect
-    _ = release_utils.get_remote_repo(repo_url)
+    _ = utils_thirdparty.get_remote_repo(repo_url)
+    for req in requirement:
+        for package, error in utils_thirdparty.fetch_sources(
+            requirement=req,
+            dest_dir=thirdparty_dir,
+        ):
+            if error:
+                print('Failed to fetch source:', package, ':', error)
 
-    for package, error in release_utils.fetch_sources(
-        requirement=requirement,
-        dest_dir=thirdparty_dir,
-    ):
-        if error:
-            print('Failed to fetch source:', package, ':', error)
-
-    release_utils.fetch_venv_abouts_and_licenses()
+    utils_thirdparty.fetch_venv_abouts_and_licenses()
 
 
 if __name__ == '__main__':

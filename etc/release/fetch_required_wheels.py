@@ -18,7 +18,8 @@
 
 import click
 
-import release_utils
+import utils_thirdparty
+import itertools
 
 
 @click.command()
@@ -26,35 +27,38 @@ import release_utils
 @click.option('--requirement',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
-    default='requirements.txt',
+    multiple=True,
+    default=['requirements.txt'],
     show_default=True,
     help='Path to the requirements file to use for thirdparty packages.',
 )
 @click.option('--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
-    default=release_utils.THIRDPARTY_DIR,
+    default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
     help='Path to the thirdparty directory.',
 )
 @click.option('--python-version',
-    type=click.Choice(release_utils.PYTHON_VERSIONS),
+    type=click.Choice(utils_thirdparty.PYTHON_VERSIONS),
     metavar='INT',
-    default='36',
+    multiple=True,
+    default=['36'],
     show_default=True,
     help='Python version to use for this build.',
 )
 @click.option('--operating-system',
-    type=click.Choice(release_utils.PLATFORMS_BY_OS),
+    type=click.Choice(utils_thirdparty.PLATFORMS_BY_OS),
     metavar='OS',
-    default='linux',
+    multiple=True,
+    default=['linux'],
     show_default=True,
     help='OS to use for this build: one of linux, mac or windows.',
 )
 @click.option('--repo-url',
     type=str,
     metavar='URL',
-    default=release_utils.REMOTE_LINKS_URL,
+    default=utils_thirdparty.REMOTE_LINKS_URL,
     show_default=True,
     help='Remote repository URL to HTML page index listing repo files.',
 )
@@ -68,29 +72,34 @@ def fetch_required_wheels(
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the wheels for pinned dependencies
-    found in the `--requirement` FILE requirements file. Only fetch wheels
-    compatible with the provided `--python- version` and `--operating_system`.
+    found in the `--requirement` FILE requirements file(s). Only fetch wheels
+    compatible with the provided `--python-version` and `--operating-system`.
 
     Use exclusively our remote repository.
 
-    Also fetch the corresponding .ABOUT, .LICENSE nad .NOTICE files and a
-    virtualenv.pyz app.
+    Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files together
+    with a virtualenv.pyz app.
     """
     # this set the cache of our remote_repo to repo_url as a side effect
-    _ = release_utils.get_remote_repo(repo_url)
+    _ = utils_thirdparty.get_remote_repo(repo_url)
 
-    environment = release_utils.Environment.from_pyos(
-        python_version, operating_system)
+    python_versions = python_version
+    operating_systems = operating_system
+    requirements = requirement
 
-    for package, error in release_utils.fetch_wheels(
-        environment=environment,
-        requirement=requirement,
-        dest_dir=thirdparty_dir,
-    ):
-        if error:
-            print('Failed to fetch wheel:', package, ':', error)
+    envs = itertools.product(python_versions, operating_systems)
+    envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
 
-    release_utils.fetch_venv_abouts_and_licenses()
+    for env, req in itertools.product(envs, requirements):
+        for package, error in utils_thirdparty.fetch_wheels(
+            environment=env,
+            requirement=req,
+            dest_dir=thirdparty_dir,
+        ):
+            if error:
+                print('Failed to fetch wheel:', package, ':', error)
+
+    utils_thirdparty.fetch_venv_abouts_and_licenses()
 
 
 if __name__ == '__main__':
