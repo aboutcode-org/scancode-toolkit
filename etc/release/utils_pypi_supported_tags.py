@@ -12,8 +12,6 @@
 
 import re
 
-from packaging_dists import Wheel
-
 """
 Wheel platform checking
 
@@ -94,33 +92,6 @@ def is_supported_platform_tag(platform_tag):
     if m and m.group("arch") in _manylinux_arches:
         return True
     return False
-
-
-def validate_wheel_file_name_for_pypi(file_name):
-    """
-    Validate if the file_name is a PyPI/warehouse-uploadable wheel file name
-    with supported platform tags. Return a list of unsupported platform tags or
-    an empty list if all tags are supported.
-    """
-    wheel = Wheel.parse(file_name)
-    return validate_wheel_for_pypi(wheel)
-
-
-def wheel_platforms(wheel):
-    """
-    Return a list of platform tags from the Wheel `wheel`.
-    """
-    return (wheel.platform or "").split(".")
-
-
-def validate_wheel_for_pypi(wheel):
-    """
-    Validate if the Wheel `wheel` is a PyPI/warehouse-uploadable wheel
-    with supported platform tags. Return a list of unsupported platform tags or
-    an empty list if all tags are supported.
-    """
-    platforms = wheel_platforms(wheel)
-    return validate_platforms_for_pypi(platforms)
 
 
 def validate_platforms_for_pypi(platforms):
