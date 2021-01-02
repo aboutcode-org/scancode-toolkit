@@ -17,7 +17,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import click
-import requirements_utils
+import utils_requirements
 
 
 @click.command()
@@ -45,7 +45,7 @@ def gen_dev_requirements(dev_requirement, main_requirement):
     locally installed Python packages. Exclude package names listed in the
     --exclude-requirement FILE.
     """
-    requirements_utils.lock_dev_requirements(
+    utils_requirements.lock_dev_requirements(
         dev_requirements_file=dev_requirement,
         main_requirements_file=main_requirement,
     )

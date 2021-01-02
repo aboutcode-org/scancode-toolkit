@@ -17,7 +17,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import click
-import requirements_utils
+import utils_requirements
 
 
 @click.command()
@@ -36,7 +36,7 @@ def gen_requirements(requirement):
     Create or replace the `--requirement` FILE requirements file with all
     locally installed Python packages.
     """
-    requirements_utils.lock_requirements(requirements_file=requirement)
+    utils_requirements.lock_requirements(requirements_file=requirement)
 
 
 if __name__ == '__main__':
