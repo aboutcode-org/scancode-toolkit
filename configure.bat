@@ -34,7 +34,7 @@ set "THIRDPARTY_LOC=thirdparty"
 
 @rem # requirements used by defaults and with --dev
 set "REQUIREMENTS=--editable .[full] --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[full] --requirement requirements-dev.txt --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--editable .[full] --constraint requirements.txt -editable .[dev] --constraint requirements-dev.txt"
 
 @rem # default supported Python version 
 set SUPPORTED_PYTHON=3.6
