@@ -68,8 +68,8 @@ typing==3.6.4
 urllib3==1.22
 urlpy==0.5
 wcwidth==0.1.7
-wheel==0.36.2
 webencodings==0.5
+wheel==0.36.2
 xmltodict==0.11.0
 yg.lockfile==2.3
 zc.lockfile==2.0
