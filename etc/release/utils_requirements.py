@@ -15,11 +15,12 @@
 #
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
 import subprocess
 
 """
 Utilities to manage requirements files and call pip.
-NOTE: this should use ONLY the standard library and no import anything else.
+NOTE: this should use ONLY the standard library and not import anything else.
 """
 
 
