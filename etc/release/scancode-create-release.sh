@@ -13,7 +13,7 @@
 # Supported Python versions and OS combos
 # one archive or installer is built for each combo
 PYTHON_VERSIONS="36"
-OPERATING_SYSTEMS="linux macosx windows"
+OPERATING_SYSTEMS="linux macos windows"
 
 #QUIET=""
 
@@ -114,7 +114,7 @@ function build_archives {
     # This is hackish and we should instead use our own archiving code that
     # would take a distutils manifest-like input
     bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=xztar,zip 
-    bin/python etc/release/rename_archives.py dist/ $python_version $operating_system
+    bin/python etc/release/scancode_rename_archives.py dist/ $python_version $operating_system
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -147,7 +147,7 @@ function build_archives_with_sources {
 
     bin/python setup.py $QUIET $QUIET $QUIET sdist --formats=xztar
 
-    bin/python etc/release/rename_archives.py dist/ $python_version $operating_system-sources
+    bin/python etc/release/scancode_rename_archives.py dist/ $python_version $operating_system-sources
     mkdir -p release/archives
     mv dist/* release/archives/
 }
@@ -174,7 +174,7 @@ find release/archives -ls
 
 
 if [ "$CLI_ARGS" == "--test" ]; then
-    ./scancode_release_tests.sh
+    ./scancode-release-tests.sh
 else
     echo "  RELEASE: !!!!NOT Testing..."
 fi
