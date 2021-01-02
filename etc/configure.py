@@ -179,6 +179,8 @@ def activate_virtualenv():
     exec(open(activate_this).read(), {'__file__': activate_this})
 
 
+STANDARD_REQUIREMENTS = ['pip', 'setuptools', 'wheel']
+
 def pip_install(requirement_args, quiet=False):
     """
     Install a list of `args` command line requirement arguments with pip,
@@ -197,6 +199,7 @@ def pip_install(requirement_args, quiet=False):
     if quiet:
         cmd += ['-qq']
 
+    cmd += STANDARD_REQUIREMENTS
     cmd += requirement_args
     call(cmd)
 
