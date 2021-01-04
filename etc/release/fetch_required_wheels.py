@@ -24,7 +24,7 @@ import itertools
 
 @click.command()
 
-@click.option('--requirement',
+@click.option('--requirements-file',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
     multiple=True,
@@ -55,20 +55,12 @@ import itertools
     show_default=True,
     help='OS to use for this build: one of linux, mac or windows.',
 )
-@click.option('--repo-url',
-    type=str,
-    metavar='URL',
-    default=utils_thirdparty.REMOTE_LINKS_URL,
-    show_default=True,
-    help='Remote repository URL to HTML page index listing repo files.',
-)
 @click.help_option('-h', '--help')
 def fetch_required_wheels(
-    requirement,
+    requirements_file,
     thirdparty_dir,
     python_version,
     operating_system,
-    repo_url,
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the wheels for pinned dependencies
@@ -81,19 +73,19 @@ def fetch_required_wheels(
     with a virtualenv.pyz app.
     """
     # this set the cache of our remote_repo to repo_url as a side effect
-    _ = utils_thirdparty.get_remote_repo(repo_url)
+    _ = utils_thirdparty.get_remote_repo()
 
     python_versions = python_version
     operating_systems = operating_system
-    requirements = requirement
+    requirements_files = requirements_file
 
     envs = itertools.product(python_versions, operating_systems)
     envs = (utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in envs)
 
-    for env, req in itertools.product(envs, requirements):
+    for env, reqf in itertools.product(envs, requirements_files):
         for package, error in utils_thirdparty.fetch_wheels(
             environment=env,
-            requirement=req,
+            requirement_file=reqf,
             dest_dir=thirdparty_dir,
         ):
             if error:

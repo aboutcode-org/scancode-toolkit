@@ -70,8 +70,9 @@ def build_wheels(
 ):
     """
     Build to THIRDPARTY_DIR all the wheels for the pip `--requirement`
-    requirements SPECIFIER. Build wheels compatible with all the provided
-    `--python-dot-version` and `--operating_system`.
+    requirements SPECIFIER(s). Build wheels compatible with all the provided
+    `--python-dot-version` and `--operating_system`. Also build native remotely
+    wheels when `--build-remotely`.
     """
     utils_thirdparty.build_wheels(
         requirements_specifier=requirement,

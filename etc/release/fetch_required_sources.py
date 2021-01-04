@@ -23,7 +23,7 @@ import utils_thirdparty
 
 @click.command()
 
-@click.option('--requirement',
+@click.option('--requirement-file',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
     multiple=True,
@@ -38,32 +38,25 @@ import utils_thirdparty
     show_default=True,
     help='Path to the thirdparty directory.',
 )
-@click.option('--repo-url',
-    type=str,
-    metavar='URL',
-    default=utils_thirdparty.REMOTE_LINKS_URL,
-    show_default=True,
-    help='Remote repository URL to HTML page index listing repo files.',
-)
 @click.help_option('-h', '--help')
 def fetch_required_sources(
-    requirement,
+    requirement_file,
     thirdparty_dir,
-    repo_url,
 ):
     """
     Fetch and save to THIRDPARTY_DIR all the source distributions for pinned
-    dependencies found in the `--requirement` FILE requirements file(s). Use
+    dependencies found in the `--requirement-file` FILE requirements file(s). Use
     exclusively our remote repository.
 
     Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files and a
     virtualenv.pyz app.
     """
+    requirement_files = requirement_file
     # this set the cache of our remote_repo to repo_url as a side effect
-    _ = utils_thirdparty.get_remote_repo(repo_url)
-    for req in requirement:
+    _ = utils_thirdparty.get_remote_repo()
+    for reqf in requirement_files:
         for package, error in utils_thirdparty.fetch_sources(
-            requirement=req,
+            requirement_file=reqf,
             dest_dir=thirdparty_dir,
         ):
             if error:
