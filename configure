@@ -43,6 +43,7 @@ function cli_help {
 
 #  thirdparty packages directory
 export THIRDPARTY_LOC="thirdparty"
+export THIRDPARTY_LINKS="https://github.com/nexB/thirdparty-packages/releases/pypi"
 
 # requirements used by default or with --dev.
 # note the use of constraints with -c 
@@ -62,7 +63,7 @@ PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CLI_ARGS="$REQUIREMENTS"
 
 case "$1" in
-    --help)    cli_help;;
+    --help)       cli_help;;
     -c|--clean)   CLI_ARGS=--clean;;
     -d|--dev)     CLI_ARGS="$DEV_REQUIREMENTS";;
 esac

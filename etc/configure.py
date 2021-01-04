@@ -179,7 +179,8 @@ def activate_virtualenv():
     exec(open(activate_this).read(), {'__file__': activate_this})
 
 
-STANDARD_REQUIREMENTS = ['pip', 'setuptools', 'wheel']
+STANDARD_REQUIREMENTS = []  # 'pip', 'setuptools', 'wheel']
+
 
 def pip_install(requirement_args, quiet=False):
     """
@@ -195,7 +196,7 @@ def pip_install(requirement_args, quiet=False):
     else:
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_LOC]
+    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_LOC_OR_LINKS]
     if quiet:
         cmd += ['-qq']
 
@@ -218,15 +219,6 @@ if __name__ == '__main__':
     ROOT_DIR = os.path.dirname(current_dir)
     sys.path.insert(0, ROOT_DIR)
 
-    BIN_DIR = os.path.join(ROOT_DIR, BIN_DIR_NAME)
-    THIRDPARTY_LOC = os.environ.get('THIRDPARTY_LOC', 'thirdparty')
-    THIRDPARTY_LOC = os.path.join(ROOT_DIR, THIRDPARTY_LOC)
-
-    if on_win:
-        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python.exe')
-    else:
-        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python')
-
     # collect args
     ##################
     requirement_args = ['--requirement', 'requirements.txt']
@@ -241,8 +233,33 @@ if __name__ == '__main__':
         # use provided pip args instead of defaults
         requirement_args = args
 
-    # Finally configure proper: create virtualenv and install there
-    ##################
+    # Determine where to get dependencies from
+    #################################
+
+    # THIRDPARTY_LOC will contains virtualenv.pyz always and optionally wheels
+    # when installing an offline self-contained release archive
+
+    THIRDPARTY_LOC = os.environ.get('THIRDPARTY_LOC', 'thirdparty')
+    THIRDPARTY_LOC = os.path.join(ROOT_DIR, THIRDPARTY_LOC)
+    THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
+    has_virtualenv = 'virtualenv.pyz' in os.listdir(THIRDPARTY_LOC)
+    if not has_virtualenv:
+        print(f'* FAILED to configure: {THIRDPARTY_LOC}/virtualenv.pyz app not found.')
+        sys.exit(1)
+
+    # if we have at least one wheel in THIRDPARTY_LOC, we assume we are offline
+    # otherwise we are online and use our remote links for pip operations
+    has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_LOC))
+    THIRDPARTY_LOC_OR_LINKS = THIRDPARTY_LOC if has_wheels else THIRDPARTY_LINKS
+
+    BIN_DIR = os.path.join(ROOT_DIR, BIN_DIR_NAME)
+    if on_win:
+        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python.exe')
+    else:
+        CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python')
+
+    # Finally configure proper: create and activate virtualenv and install reqs there
+    ###########################
     if not os.path.exists(CONFIGURED_PYTHON):
         create_virtualenv(root_dir=ROOT_DIR, quiet=quiet)
 
