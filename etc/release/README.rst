@@ -1,30 +1,24 @@
 This directory contains the tools to:
-- build and publish scancode releases, as wheel, sources and OS-specific bundles
-- manage thirdparty packages: pin, build, document publish to own PyPI-like repo
+
+- manage a directory of thirdparty Python package source, wheels and metadata: 
+  pin, build, update, document and publish to a PyPI-like repo (GitHub release)
+
+- build and publish scancode releases as wheel, sources and OS-specific bundles.
 
 
-Pre-requisites
-==============
-
-* Runs ONLY on Linux
-* Run in the main configured scancode virtualenv
-* Start by installing required tools and libraries ::
-
-    pip install --requirement etc/release/requirements.txt
-
-TODO: we need to pin the versions of these tools
+NOTE: These are tested to run ONLY on Linux.
 
 
 Release scripts
 ===============
 
- * **scancode_release.sh**: This is the main script to build the release
+ * **scancode-create-release.sh**: This is the main script to build the release
    archives for scancode-toolkit (wheels, sdists, tarball, installers). It may
-   optional call **scancode_release_tests.sh** to run minimal smoke tests on the
+   optional call **scancode-release-tests.sh** to run minimal smoke tests on the
    built release archives.
 
  * test_-*.sh: various test scripts for installation and release, launched when
-   running scancode_release --test
+   running scancode-create-release --test
 
  * TODO: scancode_publish.sh: use this to publish the built releases scancode-toolkit
 
@@ -32,28 +26,104 @@ Release scripts
 Thirdparty packages management scripts
 ======================================
 
+Pre-requisites
+--------------
+
+* There are two run "modes":
+
+  * To generate or update pip requirement files, you need to start with a clean
+    virtualenv as instructed below (This is to avoid injecting requirements
+    specific to the tools here in the main requirements).
+
+  * For other usages, the tools here can run either in their own isolated
+    virtualenv best or in the the main configured development virtualenv.
+    These requireements need to be installed::
+
+        pip install --requirement etc/release/requirements.txt
+
+TODO: we need to pin the versions of these tools
+
+
+
+Generate or update pip requirement files
+----------------------------------------
+
+Scripts
+~~~~~~~
+
+**gen_requirements.py**: create/update requirements files from currently
+  installed requirements. 
+
+**gen_requirements_dev.py** does the same but can subtract the main requirements
+  to get extra requirements used in only development.
+
+
+Usage
+~~~~~
+
+The sequence of commands to run are:
+
+
+* Start with these to generate the main pip requirements file::
+
+    ./configure --clean
+    ./configure
+    python etc/release/gen_requirements.py
+
+* You can optionally install or update extra main requirements after the
+ ./configure step such that these are included in the generated main requirements.
+
+* Optionally, generate a development pip requirements file by running these::
+
+    ./configure --clean
+    ./configure --dev
+    python etc/release/gen_requirements_Dev.py
+
+* You can optionally install or update extra dev requirements after the 
+  ./configure step such that these are included in the generated dev
+  requirements.
+
+Notes: we generate development requirements after the main as this step requires
+the main requirements.txt to be up-to-date first. See **gen_requirements.py and
+gen_requirements_dev.py** --help for details.
+
+Note: this does NOT hash requirements for now.
+
+Note: Be aware that if you are using "conditional" requirements (e.g. only for
+OS or Python versions) in setup.py/setp.cfg/requirements.txt as these are NOT
+yet supported.
+
+
+Populate a thirdparty directry with wheels, sources, .ABOUT and license files
+-----------------------------------------------------------------------------
+
+Scripts
+~~~~~~~
+
 * **fetch_required_wheels.py and fetch_required_sources.py** will fetch packages
-  and their license/ABOUT files to populate a local a thirdparty directory
+  and their ABOUT and LICENSE files to populate a local a thirdparty directory
   strictly from our remote repo and using only packages listed in a
-  requirements.txt file.
+  requirements.txt file for sepcific python versions and operating systems
 
-* **upload_packages.py** will upload a local thirdparty directory of files to
-  our remote repo. Requires a GitHub personal access token.
+* **publish_files.py** will upload/sync a thirdparty directory of files to our
+  remote repo. Requires a GitHub personal access token.
 
-* **gen_requirements.py and gen_requirements_dev.py**: create/update
-  requirements files from currently installed requirements. Note that this does
-  not hash requirements for now and should be used with care as it does not deal
-  with conditional requirements for some OS or Python versions. The sequence is
-  to:
+* **build_wheels.py** will build a package binary wheels for multiple OS and
+  python versions (if needed for wheels that contain native code)
 
-  * first run ./configure --clean then ./configure then run *gen_requirements.py** 
+* **fix_thirdparty.py** will fix a thirdparty directory with a best effort to 
+  add missing wheels, sources archives, create and fix .ABOUT, .NOTICE and
+  .LICENSE files.
 
-  * then run ./configure --dev then run **gen_requirements_dev.py** as this
-    requires the main requirements.txt to be up-to-date first.
+* **bootstrap.py** will bootstrap a thirdparty directory from a requirements file(s)
+   to add or build missing wheels, sources archives, create .ABOUT, .NOTICE and
+  .LICENSE files.
 
-* **fix_thirdparty_dir.py** will fix a thirdparty directory with a best effort
-  to add missing wheels, sources archives, create and fix .ABOUT, .NOTICE and
-  .LICENSE files
+
+Usage
+~~~~~
+
+* TODO
 
 * (TODO) **add_package.py** will add or update a Python package including wheels,
   sources and ABOUT files and this for multiple Python version and OSes(for use
@@ -62,6 +132,10 @@ Thirdparty packages management scripts
   new package versions there. TODO: explain how we use romp
 
 
-The other files and scripts and support and utility modules used by the main
-scripts documented here.
+
+Other files 
+===========
+
+The other files and scripts are test, support and utility modules used by the
+main scripts documented here.
  
