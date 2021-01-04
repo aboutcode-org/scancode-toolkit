@@ -57,31 +57,6 @@ def get_required_name_versions(requirement_lines, force_pinned=True):
         yield name, version
 
 
-def get_requirements_from_setup_cfg(setup_cfg, extra=None):
-    """
-    Return a mapping of {type of requirement: list of requirements lines}
-     extracted from a `setup_cfg` file *_requires sections.
-    """
-    import configparser
-    config = configparser.ConfigParser()
-    with open(setup_cfg) as cfg:
-        config.read(cfg)
-
-    requirements = {}
-    install_requires = config.get('options', 'install_requires', fallback='')
-    requirements['install_requires'] = parse_requires(install_requires)
-
-    setup_requires = config.get('options', 'setup_requires', fallback='')
-    requirements['setup_requires'] = parse_requires(setup_requires)
-
-    extras_require = config.get('options', 'extras_require', fallback=[])
-    for extra in extras_require:
-        exreq = config.get('options.extras_require', extra, fallback='')
-        requirements[f'extras_require:{extra}'] = parse_requires(exreq)
-
-    return requirements
-
-
 def parse_requires(requires):
     """
     Return a list of requirement lines extracted from the `requires` text from
@@ -95,18 +70,19 @@ def parse_requires(requires):
     return sorted(requires)
 
 
-def lock_requirements(requirements_file='requirements.txt'):
+def lock_requirements(requirements_file='requirements.txt', lib_dir='lib'):
     """
     Freeze and lock current installed requirements and save this to the
     `requirements_file` requirements file.
     """
     with open(requirements_file, 'w') as fo:
-        fo.write(get_installed_reqs())
+        fo.write(get_installed_reqs(lib_dir=lib_dir))
 
 
 def lock_dev_requirements(
     dev_requirements_file='requirements-dev.txt',
     main_requirements_file='requirements.txt',
+    lib_dir='lib',
 ):
     """
     Freeze and lock current installed development-only requirements and save
@@ -116,18 +92,20 @@ def lock_dev_requirements(
     ignoring versions).
     """
     main_names = {n for n, _v in load_requirements(main_requirements_file)}
-    all_reqs = get_installed_reqs().splitlines(False)
-    all_reqs = get_required_name_versions(all_reqs)
-    dev_only_reqs = {n: v for n, v in all_reqs if n not in main_names}
-    new_reqs = '\n'.join(f'{n}=={v}' for n, v in sorted(dev_only_reqs.items()))
+    all_reqs = get_installed_reqs(lib_dir=lib_dir)
+    all_req_lines = all_reqs.splitlines(False)
+    all_req_nvs = get_required_name_versions(all_req_lines)
+    dev_only_req_nvs = {n: v for n, v in all_req_nvs if n not in main_names}
+
+    new_reqs = '\n'.join(f'{n}=={v}' for n, v in sorted(dev_only_req_nvs.items()))
     with open(dev_requirements_file, 'w') as fo:
         fo.write(new_reqs)
 
 
-def get_installed_reqs():
+def get_installed_reqs(lib_dir='lib'):
     """
-    Return the installed requirements as a text.
+    Return the installed pip requirements as text found in `lib_dir` as a text.
     """
     # Do not skip these packages in the output: wheel, distribute, setuptools, pip
-    args = ['pip', 'freeze', '--all', '--exclude-editable']
+    args = ['pip', 'freeze', '--all', '--exclude-editable', '--path', lib_dir]
     return subprocess.check_output(args, encoding='utf-8')

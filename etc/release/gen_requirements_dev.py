@@ -22,14 +22,14 @@ import utils_requirements
 
 @click.command()
 
-@click.option('--dev-requirement',
+@click.option('--dev-requirement-file',
     type=click.Path(path_type=str, dir_okay=False),
     metavar='FILE',
     default='requirements-dev.txt',
     show_default=True,
     help='Path to the dev requirements file to update or create.',
 )
-@click.option('--main-requirement',
+@click.option('--main-requirement-file',
     type=click.Path(path_type=str, dir_okay=False),
     default='requirements.txt',
     metavar='FILE',
@@ -37,17 +37,27 @@ import utils_requirements
     help='Path to the main requirements file. Its requirements will be excluded '
     'from the generated dev requirements.',
 )
+@click.option('--lib-dir',
+    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False, resolve_path=True),
+    metavar='DIR',
+    default='lib',
+    show_default=True,
+    help='Path to the "lib" directory where wheels are installed.',
+)
 
 @click.help_option('-h', '--help')
-def gen_dev_requirements(dev_requirement, main_requirement):
+def gen_dev_requirements(dev_requirement_file, main_requirement_file, lib_dir):
     """
-    Create or replace the `--requirement` FILE requirements file with all
-    locally installed Python packages. Exclude package names listed in the
-    --exclude-requirement FILE.
+    Create or overwrite the `--dev-requirement-file` pip requirements FILE with
+    all Python packages found installed in `--lib-dir`. Exclude package names
+    also listed in the --main-requirement-file pip requirements FILE (that are
+    assume to the production requirements and therefore to always be present in
+    addition to the development requirements).
     """
     utils_requirements.lock_dev_requirements(
-        dev_requirements_file=dev_requirement,
-        main_requirements_file=main_requirement,
+        dev_requirements_file=dev_requirement_file,
+        main_requirements_file=main_requirement_file,
+        lib_dir=lib_dir
     )
 
 

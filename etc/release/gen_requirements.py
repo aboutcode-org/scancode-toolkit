@@ -22,21 +22,30 @@ import utils_requirements
 
 @click.command()
 
-@click.option('--requirement',
+@click.option('--requirement-file',
     type=click.Path(path_type=str, dir_okay=False),
     metavar='FILE',
     default='requirements.txt',
     show_default=True,
     help='Path to the requirements file to update or create.',
 )
-
+@click.option('--lib-dir',
+    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False, resolve_path=True),
+    metavar='DIR',
+    default='lib',
+    show_default=True,
+    help='Path to the "lib" directory where wheels are installed.',
+)
 @click.help_option('-h', '--help')
-def gen_requirements(requirement):
+def gen_requirements(requirement_file, lib_dir):
     """
-    Create or replace the `--requirement` FILE requirements file with all
-    locally installed Python packages.
+    Create or replace the `--requirement-file` file FILE requirements file with all
+    locally installed Python packages.all Python packages found installed in `--lib-dir`
     """
-    utils_requirements.lock_requirements(requirements_file=requirement)
+    utils_requirements.lock_requirements(
+        requirements_file=requirement_file,
+        lib_dir=lib_dir,
+    )
 
 
 if __name__ == '__main__':
