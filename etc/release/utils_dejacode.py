@@ -29,8 +29,10 @@ from packaging import version as packaging_version
 Utility to create and retrieve package and ABOUT file data from DejaCode.
 """
 
-DEJACODE_API_URL_PACKAGES = 'https://enterprise.dejacode.com/api/v2/packages/'
-DEJACODE_API_KEY = os.environ.get('DEJACODE_API_KEY')
+DEJACODE_API_KEY = os.environ.get('DEJACODE_API_KEY', '')
+DEJACODE_API_URL = os.environ.get('DEJACODE_API_URL', '')
+
+DEJACODE_API_URL_PACKAGES = f'{DEJACODE_API_URL}packages/'
 DEJACODE_API_HEADERS = {
     'Authorization': 'Token {}'.format(DEJACODE_API_KEY),
     'Accept': 'application/json; indent=4',
@@ -38,8 +40,8 @@ DEJACODE_API_HEADERS = {
 
 
 def can_do_api_calls():
-    if not DEJACODE_API_KEY:
-        print('DejaCode DEJACODE_API_KEY not configured. Doing nothing')
+    if not DEJACODE_API_KEY and DEJACODE_API_URL:
+        print('DejaCode DEJACODE_API_KEY and DEJACODE_API_URL not configured. Doing nothing')
         return False
     else:
         return True
