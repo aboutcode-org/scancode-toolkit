@@ -70,19 +70,19 @@ def parse_requires(requires):
     return sorted(requires)
 
 
-def lock_requirements(requirements_file='requirements.txt', lib_dir='lib'):
+def lock_requirements(requirements_file='requirements.txt', site_packages_dir=None):
     """
     Freeze and lock current installed requirements and save this to the
     `requirements_file` requirements file.
     """
     with open(requirements_file, 'w') as fo:
-        fo.write(get_installed_reqs(lib_dir=lib_dir))
+        fo.write(get_installed_reqs(site_packages_dir=site_packages_dir))
 
 
 def lock_dev_requirements(
     dev_requirements_file='requirements-dev.txt',
     main_requirements_file='requirements.txt',
-    lib_dir='lib',
+    site_packages_dir=None,
 ):
     """
     Freeze and lock current installed development-only requirements and save
@@ -92,7 +92,7 @@ def lock_dev_requirements(
     ignoring versions).
     """
     main_names = {n for n, _v in load_requirements(main_requirements_file)}
-    all_reqs = get_installed_reqs(lib_dir=lib_dir)
+    all_reqs = get_installed_reqs(site_packages_dir=site_packages_dir)
     all_req_lines = all_reqs.splitlines(False)
     all_req_nvs = get_required_name_versions(all_req_lines)
     dev_only_req_nvs = {n: v for n, v in all_req_nvs if n not in main_names}
@@ -102,10 +102,10 @@ def lock_dev_requirements(
         fo.write(new_reqs)
 
 
-def get_installed_reqs(lib_dir='lib'):
+def get_installed_reqs(site_packages_dir):
     """
-    Return the installed pip requirements as text found in `lib_dir` as a text.
+    Return the installed pip requirements as text found in `site_packages_dir` as a text.
     """
-    # Do not skip these packages in the output: wheel, distribute, setuptools, pip
-    args = ['pip', 'freeze', '--all', '--exclude-editable', '--path', lib_dir]
+    # Skip these packages in the output: wheel, distribute, setuptools, pip
+    args = ['pip', 'freeze', '--exclude-editable', '--path', site_packages_dir]
     return subprocess.check_output(args, encoding='utf-8')
