@@ -41,14 +41,14 @@ function cli_help {
 # Defaults. Change these variables to customize this script locally
 ################################
 
-#  thirdparty packages directory
-export THIRDPARTY_LOC="thirdparty"
+#  thirdparty packages locations
+export THIRDPARTY_DIR="thirdparty"
 export THIRDPARTY_LINKS="https://github.com/nexB/thirdparty-packages/releases/pypi"
 
 # requirements used by default or with --dev.
 # note the use of constraints with -c 
 REQUIREMENTS="--editable .[full] --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[full] --constraint requirements.txt -editable .[dev] --constraint requirements-dev.txt"
+DEV_REQUIREMENTS="--editable .[full] --constraint requirements.txt --editable .[dev] --constraint requirements-dev.txt"
 
 # default supported Python version
 SUPPORTED_PYTHON3=3.6
@@ -86,7 +86,7 @@ fi
 
 $PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
 
-# Activate the virtualenv
+# Activate the virtualenv if it exists
 if [[ -f "$PROJECT_ROOT_DIR/bin/activate" ]]; then
     source "$PROJECT_ROOT_DIR/bin/activate"
 fi

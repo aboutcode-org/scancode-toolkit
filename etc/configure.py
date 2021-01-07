@@ -140,10 +140,10 @@ def quote(s):
     return '"{}"'.format(s)
 
 
-def create_virtualenv(root_dir, quiet=False):
+def create_virtualenv(root_dir, venv_pyz, quiet=False):
     """
     Create a virtualenv in the `root_dir` directory. Use the current Python
-    exe.  Use the virtualenv.pyz app in THIRDPARTY_LOC directory.
+    exe.  Use the virtualenv.pyz app in at `venv_pyz`.
     If `quiet` is True, information messages are suppressed.
 
     Note: we do not use the bundled Python 3 "venv" because its behavior and
@@ -153,8 +153,7 @@ def create_virtualenv(root_dir, quiet=False):
     if not quiet:
         print('* Configuring Python ...')
 
-    venv_pyz = os.path.join(THIRDPARTY_LOC, 'virtualenv.pyz')
-    if not os.path.exists(venv_pyz):
+    if not venv_pyz or not os.path.exists(venv_pyz):
         print(f'Configuration Error: Unable to find {venv_pyz}... aborting.')
         exit(1)
 
@@ -179,28 +178,23 @@ def activate_virtualenv():
     exec(open(activate_this).read(), {'__file__': activate_this})
 
 
-STANDARD_REQUIREMENTS = []  # 'pip', 'setuptools', 'wheel']
-
-
 def pip_install(requirement_args, quiet=False):
     """
-    Install a list of `args` command line requirement arguments with pip,
-    using exclusively the bundled packages found in TPP_LOC directory.
-    Run pip in `root_dir` in root dir.
+    Install a list of `requirement_args` command line requirement arguments with
+    pip, using packages found in THIRDPARTY_DIR_OR_LINKS directory.
     """
     if not quiet:
-        print('* Installing components ...')
+        print('* Installing packages ...')
 
     if on_win:
         cmd = [CONFIGURED_PYTHON, '-m', 'pip']
     else:
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_LOC_OR_LINKS]
+    cmd += ['install', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
     if quiet:
         cmd += ['-qq']
 
-    cmd += STANDARD_REQUIREMENTS
     cmd += requirement_args
     call(cmd)
 
@@ -236,21 +230,28 @@ if __name__ == '__main__':
     # Determine where to get dependencies from
     #################################
 
-    # THIRDPARTY_LOC will contains virtualenv.pyz always and optionally wheels
-    # when installing an offline self-contained release archive
-
-    THIRDPARTY_LOC = os.environ.get('THIRDPARTY_LOC', 'thirdparty')
-    THIRDPARTY_LOC = os.path.join(ROOT_DIR, THIRDPARTY_LOC)
-    THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
-    has_virtualenv = 'virtualenv.pyz' in os.listdir(THIRDPARTY_LOC)
-    if not has_virtualenv:
-        print(f'* FAILED to configure: {THIRDPARTY_LOC}/virtualenv.pyz app not found.')
+    # etc/thirdparty must contain virtualenv.pyz
+    etc_thirdparty = os.path.join(os.path.dirname(__file__), 'thirdparty')
+    VIRTUALENV_PYZ_APP_LOC = os.path.join(etc_thirdparty, 'virtualenv.pyz')
+    if not os.path.exists(VIRTUALENV_PYZ_APP_LOC):
+        print(
+            f'* FAILED to configure: virtualenv application {VIRTUALENV_PYZ_APP_LOC} not found. '
+            'The current version needs to be saved in etc/thirdparty. '
+            'See https://github.com/pypa/get-virtualenv and '
+            'https://virtualenv.pypa.io/en/latest/installation.html#via-zipapp')
         sys.exit(1)
+
+    # THIRDPARTY_DIR is a cache of wheels
+    THIRDPARTY_DIR = os.environ.get('THIRDPARTY_DIR', 'thirdparty')
+    THIRDPARTY_DIR = os.path.join(ROOT_DIR, THIRDPARTY_DIR)
+    os.makedirs(THIRDPARTY_DIR, exist_ok=True)
+
+    THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
 
     # if we have at least one wheel in THIRDPARTY_LOC, we assume we are offline
     # otherwise we are online and use our remote links for pip operations
-    has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_LOC))
-    THIRDPARTY_LOC_OR_LINKS = THIRDPARTY_LOC if has_wheels else THIRDPARTY_LINKS
+    has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_DIR))
+    THIRDPARTY_DIR_OR_LINKS = THIRDPARTY_DIR if has_wheels else THIRDPARTY_LINKS
 
     BIN_DIR = os.path.join(ROOT_DIR, BIN_DIR_NAME)
     if on_win:
@@ -258,13 +259,13 @@ if __name__ == '__main__':
     else:
         CONFIGURED_PYTHON = os.path.join(BIN_DIR, 'python')
 
-    # Finally configure proper: create and activate virtualenv and install reqs there
+    # Configure proper: create and activate virtualenv
     ###########################
     if not os.path.exists(CONFIGURED_PYTHON):
-        create_virtualenv(root_dir=ROOT_DIR, quiet=quiet)
+        create_virtualenv(root_dir=ROOT_DIR, venv_pyz=VIRTUALENV_PYZ_APP_LOC, quiet=quiet)
 
     activate_virtualenv()
-
+    # ... and installl
     pip_install(requirement_args, quiet=quiet)
 
     if not quiet:
