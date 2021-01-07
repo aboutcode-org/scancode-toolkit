@@ -53,12 +53,6 @@ class TestCheckAboutFiles(unittest.TestCase):
     def test_about_files_etc(self):
         subprocess.check_output('bin/about check etc/'.split(), cwd=root_dir)
 
-    def test_about_files_plugins_builtin(self):
-        subprocess.check_output('bin/about check plugins-builtin/'.split(), cwd=root_dir)
-
-    def test_about_files_plugins(self):
-        subprocess.check_output('bin/about check plugins/'.split(), cwd=root_dir)
-
     def test_about_files_self(self):
         subprocess.check_output('bin/about check scancode-toolkit.ABOUT'.split(), cwd=root_dir)
 
