@@ -72,8 +72,6 @@ def fetch_required_wheels(
     Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files together
     with a virtualenv.pyz app.
     """
-    # this set the cache of our remote_repo to repo_url as a side effect
-    _ = utils_thirdparty.get_remote_repo()
 
     python_versions = python_version
     operating_systems = operating_system
@@ -85,13 +83,14 @@ def fetch_required_wheels(
     for env, reqf in itertools.product(envs, requirements_files):
         for package, error in utils_thirdparty.fetch_wheels(
             environment=env,
-            requirement_file=reqf,
+            requirements_file=reqf,
             dest_dir=thirdparty_dir,
         ):
             if error:
                 print('Failed to fetch wheel:', package, ':', error)
 
-    utils_thirdparty.fetch_venv_abouts_and_licenses()
+    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':

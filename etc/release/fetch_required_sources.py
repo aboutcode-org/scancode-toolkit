@@ -23,7 +23,7 @@ import utils_thirdparty
 
 @click.command()
 
-@click.option('--requirement-file',
+@click.option('--requirements-file',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
     multiple=True,
@@ -40,7 +40,7 @@ import utils_thirdparty
 )
 @click.help_option('-h', '--help')
 def fetch_required_sources(
-    requirement_file,
+    requirements_file,
     thirdparty_dir,
 ):
     """
@@ -51,18 +51,17 @@ def fetch_required_sources(
     Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files and a
     virtualenv.pyz app.
     """
-    requirement_files = requirement_file
-    # this set the cache of our remote_repo to repo_url as a side effect
-    _ = utils_thirdparty.get_remote_repo()
-    for reqf in requirement_files:
+    requirements_files = requirements_file
+    for reqf in requirements_files:
         for package, error in utils_thirdparty.fetch_sources(
-            requirement_file=reqf,
+            requirements_file=reqf,
             dest_dir=thirdparty_dir,
         ):
             if error:
                 print('Failed to fetch source:', package, ':', error)
 
-    utils_thirdparty.fetch_venv_abouts_and_licenses()
+    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':

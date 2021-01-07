@@ -201,14 +201,9 @@ def bootstrap(
     print(f'\n===========> FETCHING ABOUT AND LICENSE FILES')
     # fetch all ABOUT, NOTICE LICENSE keep track of missing
     # fetch all missing licenses
-    remote_repo = utils_thirdparty.get_remote_repo()
-    paths_or_urls = remote_repo.get_links()
+    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
 
-    utils_thirdparty.fetch_abouts(
-        dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
-
-    utils_thirdparty.fetch_license_texts_and_notices(
-        dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
 
     ############################################################################
     if sync_dejacode:
@@ -217,7 +212,7 @@ def bootstrap(
         # create all missing DejaCode packages
         pass
 
-    utils_thirdparty.add_missing_about_files(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_or_update_about_files(dest_dir=thirdparty_dir)
     utils_thirdparty.fix_about_files_checksums(dest_dir=thirdparty_dir)
 
 
