@@ -1726,8 +1726,9 @@ grammar = """
     NAME: {<NNP> <CD> <NNP>}        #630
     NAME: {<COMP> <NAME>+}        #640
 
+    # Copyright 2018-2019 @paritytech/substrate-light-ui authors & contributors
     # and other contributors
-    NAME: {<CC> <NN>? <CONTRIBUTORS>}        #644
+    NAME: {<AUTHS>? <CC> <NN>? <CONTRIBUTORS>}        #644
 
     NAME: {<NNP|CAPS>+ <AUTHS|AUTHDOT|CONTRIBUTORS>}        #660
 
@@ -2007,9 +2008,11 @@ grammar = """
     # Copyright (c) 2004, The Codehaus
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
 
+    # Copyright (c) 2015, Contributors
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22793
+
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>} #22791
-    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>} #22792
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22791
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
