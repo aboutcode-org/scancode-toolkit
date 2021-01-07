@@ -16,6 +16,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+import os
+import subprocess
+
 import click
 
 import utils_thirdparty
@@ -63,12 +66,8 @@ def fix_thirdparty_dir(
     Optionally build missing binary wheels for all supported OS and Python
     version combos locally or remotely.
     """
-    remote_repo = utils_thirdparty.get_remote_repo(repo_url)
-    paths_or_urls = remote_repo.get_links()
-
+    package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
     utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
-    package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(
-        dest_dir=thirdparty_dir)
 
     if build_wheels:
         package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
@@ -77,10 +76,15 @@ def fix_thirdparty_dir(
             dest_dir=thirdparty_dir,
         )
 
-    utils_thirdparty.fetch_abouts(dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
-    utils_thirdparty.fetch_license_texts_and_notices(dest_dir=thirdparty_dir, paths_or_urls=paths_or_urls)
-    utils_thirdparty.add_missing_about_files(dest_dir=thirdparty_dir)
+    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_or_update_about_files(dest_dir=thirdparty_dir)
     utils_thirdparty.fix_about_files_checksums(dest_dir=thirdparty_dir)
+    utils_thirdparty.fix_about_purl(dest_dir=thirdparty_dir)
+
+    subprocess.check_output(f'bin/about check {thirdparty_dir}'.split())
+    if os.path.exists(utils_thirdparty.CACHE_THIRDPARTY_DIR):
+        subprocess.check_output(f'bin/about check {utils_thirdparty.CACHE_THIRDPARTY_DIR}'.split())
 
 
 if __name__ == '__main__':
