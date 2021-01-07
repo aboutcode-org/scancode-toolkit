@@ -28,14 +28,14 @@ import utils_requirements
     metavar='DIR',
     help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
 )
-@click.option('--dev-requirement-file',
+@click.option('--dev-requirements-file',
     type=click.Path(path_type=str, dir_okay=False),
     metavar='FILE',
     default='requirements-dev.txt',
     show_default=True,
     help='Path to the dev requirements file to update or create.',
 )
-@click.option('--main-requirement-file',
+@click.option('--main-requirements-file',
     type=click.Path(path_type=str, dir_okay=False),
     default='requirements.txt',
     metavar='FILE',
@@ -44,17 +44,17 @@ import utils_requirements
     'from the generated dev requirements.',
 )
 @click.help_option('-h', '--help')
-def gen_dev_requirements(site_packages_dir, dev_requirement_file, main_requirement_file):
+def gen_dev_requirements(site_packages_dir, dev_requirements_file, main_requirements_file):
     """
-    Create or overwrite the `--dev-requirement-file` pip requirements FILE with
+    Create or overwrite the `--dev-requirements-file` pip requirements FILE with
     all Python packages found installed in `--site-packages-dir`. Exclude
-    package names also listed in the --main-requirement-file pip requirements
+    package names also listed in the --main-requirements-file pip requirements
     FILE (that are assume to the production requirements and therefore to always
     be present in addition to the development requirements).
     """
     utils_requirements.lock_dev_requirements(
-        dev_requirements_file=dev_requirement_file,
-        main_requirements_file=main_requirement_file,
+        dev_requirements_file=dev_requirements_file,
+        main_requirements_file=main_requirements_file,
         site_packages_dir=site_packages_dir
     )
 

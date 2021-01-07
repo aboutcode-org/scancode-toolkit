@@ -28,7 +28,7 @@ import utils_requirements
     metavar='DIR',
     help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
 )
-@click.option('--requirement-file',
+@click.option('--requirements-file',
     type=click.Path(path_type=str, dir_okay=False),
     metavar='FILE',
     default='requirements.txt',
@@ -36,13 +36,13 @@ import utils_requirements
     help='Path to the requirements file to update or create.',
 )
 @click.help_option('-h', '--help')
-def gen_requirements(site_packages_dir, requirement_file):
+def gen_requirements(site_packages_dir, requirements_file):
     """
-    Create or replace the `--requirement-file` file FILE requirements file with all
+    Create or replace the `--requirements-file` file FILE requirements file with all
     locally installed Python packages.all Python packages found installed in `--site-packages-dir`
     """
     utils_requirements.lock_requirements(
-        requirements_file=requirement_file,
+        requirements_file=requirements_file,
         site_packages_dir=site_packages_dir,
     )
 
