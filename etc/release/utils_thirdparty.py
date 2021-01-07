@@ -17,10 +17,12 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from collections import defaultdict
+import email
 import itertools
 import operator
 import os
 import re
+import shutil
 import subprocess
 import tarfile
 import tempfile
@@ -87,6 +89,8 @@ The processing is organized around these key objects:
  dists library https://github.com/uranusjr/packaging-dists by Tzu-ping Chung
 """
 
+TRACE = False
+
 # Supported environments
 PYTHON_VERSIONS = '36', '37', '38', '39',
 PYTHON_DOT_VERSIONS = tuple('.'.join(v) for v in PYTHON_VERSIONS)
@@ -121,6 +125,7 @@ PLATFORMS_BY_OS = {
 }
 
 THIRDPARTY_DIR = 'thirdparty'
+CACHE_THIRDPARTY_DIR = '.cache/thirdparty'
 
 REMOTE_BASE_URL = 'https://github.com'
 REMOTE_LINKS_URL = 'https://github.com/nexB/thirdparty-packages/releases/pypi'
@@ -144,9 +149,9 @@ LICENSEDB_API_URL = 'https://scancode-licensedb.aboutcode.org'
 ################################################################################
 
 
-def fetch_wheels(environment=None, requirement_file='requirements.txt', dest_dir=THIRDPARTY_DIR):
+def fetch_wheels(environment=None, requirements_file='requirements.txt', dest_dir=THIRDPARTY_DIR):
     """
-    Download all of the wheel of packages listed in the `requirement_file`
+    Download all of the wheel of packages listed in the `requirements_file`
     requirements file into `dest_dir` directory.
 
     Only get wheels for the `environment` Enviromnent constraints. If the
@@ -156,7 +161,7 @@ def fetch_wheels(environment=None, requirement_file='requirements.txt', dest_dir
     Yield tuples of (PypiPackage, error) where is None on success
     """
     missed = []
-    rrp = list(get_required_remote_packages(requirement_file))
+    rrp = list(get_required_remote_packages(requirements_file))
 
     for name, version, package in rrp:
         if not package:
@@ -178,7 +183,7 @@ def fetch_wheels(environment=None, requirement_file='requirements.txt', dest_dir
                 print(pv)
 
 
-def fetch_sources(requirement_file='requirements.txt', dest_dir=THIRDPARTY_DIR,):
+def fetch_sources(requirements_file='requirements.txt', dest_dir=THIRDPARTY_DIR,):
     """
     Download all of the dependent package sources listed in the `requirement`
     requirements file into `dest_dir` directory.
@@ -189,7 +194,7 @@ def fetch_sources(requirement_file='requirements.txt', dest_dir=THIRDPARTY_DIR,)
     success
     """
     missed = []
-    rrp = list(get_required_remote_packages(requirement_file))
+    rrp = list(get_required_remote_packages(requirements_file))
     for name, version, package in rrp:
         if not package:
             missed.append((name, version,))
@@ -202,25 +207,6 @@ def fetch_sources(requirement_file='requirements.txt', dest_dir=THIRDPARTY_DIR,)
             fetched = package.fetch_sdist(dest_dir=dest_dir)
             error = f'Failed to fetch' if not fetched else None
             yield package, error
-
-
-def fetch_venv_abouts_and_licenses(dest_dir=THIRDPARTY_DIR):
-    """
-    Download to `est_dir` a virtualenv.pyz app, and all .ABOUT, license and
-    notice files for all packages in `dest_dir`
-    """
-    remote_repo = get_remote_repo()
-    paths_or_urls = remote_repo.get_links()
-
-    fetch_and_save_filename_from_paths_or_urls(
-        filename='virtualenv.pyz',
-        dest_dir=dest_dir,
-        paths_or_urls=paths_or_urls,
-        as_text=False,
-    )
-
-    fetch_abouts(dest_dir=dest_dir, paths_or_urls=paths_or_urls)
-    fetch_license_texts_and_notices(dest_dir=dest_dir, paths_or_urls=paths_or_urls)
 
 
 def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
@@ -268,26 +254,47 @@ class NameVer:
     @staticmethod
     def normalize_name(name):
         """
-        Return a tuple of normalized package name per PEP503, and copied from
+        Return a normalized package name per PEP503, and copied from
         https://www.python.org/dev/peps/pep-0503/#id4
         """
         return name and re.sub(r"[-_.]+", "-", name).lower() or name
+
+    @staticmethod
+    def standardize_name(name):
+        """
+        Return a standardized package name, e.g. lowercased and using - not _
+        """
+        return name and re.sub(r"[-_]+", "-", name).lower() or name
 
     @property
     def name_ver(self):
         return f'{self.name}-{self.version}'
 
-    @classmethod
-    def sorter_by_name_version(cls, namever):
-        return namever.normalized_name, packaging_version.parse(namever.version)
+    def sortable_name_version(self):
+        """
+        Return a tuple of values to sort by name, then version.
+        This method is a suitable to use as key for sorting NameVer instances.
+        """
+        return self.normalized_name, packaging_version.parse(self.version)
 
     @classmethod
     def sorted(cls, namevers):
-        return sorted(namevers, key=cls.sorter_by_name_version)
+        return sorted(namevers, key=cls.sortable_name_version)
 
 
 @attr.attributes
 class Distribution(NameVer):
+
+    # field names that can be updated from another dist of mapping
+    updatable_fields = [
+        'license_expression',
+        'copyright',
+        'description',
+        'homepage_url',
+        'primary_language',
+        'notice_text',
+        'extra_data',
+    ]
 
     filename = attr.ib(
         repr=False,
@@ -417,12 +424,10 @@ class Distribution(NameVer):
 
     @property
     def package_url(self):
-        fields = {
-            k: v for k, v in attr.asdict(self).items()
-            if k in packageurl._components
-        }
-
-        return packageurl.PackageURL(**fields)
+        """
+        Return a Package URL string of self.
+        """
+        return get_purl(attr.asdict(self)).to_string()
 
     @property
     def download_url(self):
@@ -434,6 +439,9 @@ class Distribution(NameVer):
     @property
     def about_filename(self):
         return f'{self.filename}.ABOUT'
+
+    def has_about_file(self, dest_dir=THIRDPARTY_DIR):
+        return os.path.exists(os.path.join(dest_dir, self.about_filename))
 
     @property
     def about_download_url(self):
@@ -492,22 +500,23 @@ class Distribution(NameVer):
         Return a distribution built from a `data` mapping and update it with data
         from another dist Distribution. Return None if it cannot be created
         """
-        if data.get('type') != dist.type or data.get('name') != dist.name:
-            # We can only create from a dist of the same package
+        # We can only create from a dist of the same package
+        has_same_key_fields = all(data.get(kf) == getattr(dist, kf, None)
+            for kf in ('type', 'namespace', 'name')
+        )
+        if not has_same_key_fields:
+            print(f'Missing key fields: Cannot derive a new dist from data: {data} and dist: {dist}')
+            return
+
+        has_key_field_values = all(data.get(kf) for kf in ('type', 'name', 'version'))
+        if not has_key_field_values:
+            print(f'Missing key field values: Cannot derive a new dist from data: {data} and dist: {dist}')
             return
 
         data = dict(data)
-
-        fields_to_carry_over = [
-            'license_expression',
-            'copyright',
-            'description',
-            'homepage_url',
-            'primary_language',
-            'notice_text',
-        ]
-        dist_data = {k: v for k, v in dist.to_dict().items() if k in fields_to_carry_over}
-        data.update(dist_data)
+        # do not overwrite the data with the other dist
+        # only supplement
+        data.update({k: v for k, v in dist.get_updatable_data().items() if not data.get(k)})
         return cls.from_data(data)
 
     @classmethod
@@ -580,6 +589,37 @@ class Distribution(NameVer):
 
         return {k: v for k, v in sorted(identifiers.items()) if v}
 
+    def quality_index(self):
+        """
+        Return an opaque value suitable to sort distributions from the lowest to
+        the highest data quality. Quality is defined by the presence of some
+        fields that are more important than others.
+        """
+        other_fields = [
+            x for x in [
+                self.description,
+                self.primary_language,
+                self.notes,
+                self.notice_text,
+                self.extra_data,
+            ] if x
+        ]
+        return sum([
+            30 if self.license_expression else 0,
+            20 if self.copyright else 0,
+            5 if self.homepage_url else 0,
+            len(other_fields)
+        ])
+
+    def has_key_metadata(self):
+        """
+        Return True if this distribution has key metadata required for basic attribution.
+        """
+        if self.license_expression == 'public-domain':
+            # copyright not needed
+            return True
+        return self.license_expression and self.copyright
+
     def to_about(self):
         """
         Return a mapping of ABOUT data from this distribution fields.
@@ -624,64 +664,143 @@ class Distribution(NameVer):
         with open(os.path.join(dest_dir, self.about_filename), 'w') as fo:
             fo.write(saneyaml.dump(self.to_about()))
 
-        if self.notice_text and self.notice_text.strip():
+        notice_text = self.notice_text and self.notice_text.strip()
+        if notice_text:
             with open(os.path.join(dest_dir, self.notice_filename), 'w') as fo:
-                fo.write(self.notice_text)
+                fo.write(notice_text)
 
-    def load_about_data(self, about_filename_or_data, dest_dir=THIRDPARTY_DIR):
+    def load_about_data(self, about_filename_or_data=None, dest_dir=THIRDPARTY_DIR):
         """
         Update self with ABOUT data loaded from an `about_filename_or_data`
         which is either a .ABOUT file in `dest_dir` or an ABOUT data mapping.
-        Load the notice_text if present from dest_dir.
+        `about_filename_or_data` defaults to this distribution default ABOUT
+        filename if not provided. Load the notice_text if present from dest_dir.
         """
+        if not about_filename_or_data:
+            about_filename_or_data = self.about_filename
+
         if isinstance(about_filename_or_data, str):
-            # that's a path
-            with open(about_filename_or_data) as fi:
-                about_data = saneyaml.load(fi.read())
+            # that's an about_filename
+            about_path = os.path.join(dest_dir, about_filename_or_data)
+            if os.path.exists(about_path):
+                with open(about_path) as fi:
+                    about_data = saneyaml.load(fi.read())
+            else:
+                return False
         else:
             about_data = about_filename_or_data
 
+        about_data.pop('about_resource', None)
         notice_text = about_data.pop('notice_text', None)
         notice_file = about_data.pop('notice_file', None)
         if notice_text:
             about_data['notice_text'] = notice_text
         elif notice_file:
-            with open(os.path.join(dest_dir, notice_file)) as fi:
-                about_data['notice_text'] = fi.read()
+            notice_loc = os.path.join(dest_dir, notice_file)
+            if os.path.exists(notice_loc):
+                with open(notice_loc) as fi:
+                    about_data['notice_text'] = fi.read()
 
-        self.update(about_data, keep_extra=True)
+        return self.update(about_data, keep_extra=True)
 
-    def fetch_and_update_with_remote_about_data(self, dest_dir=THIRDPARTY_DIR):
+    def load_remote_about_data(self):
         """
-        Fetch and update self with "remote" ABOUT file and NOTICE file if any.
+        Fetch and update self with "remote" data Distribution ABOUT file and
+        NOTICE file if any. Return True if the data was updated.
         """
         try:
             about_text = fetch_content_from_path_or_url_through_cache(self.about_download_url)
         except RemoteNotFetchedException:
-            return
+            return False
 
         if not about_text:
-            return
+            return False
 
         about_data = saneyaml.load(about_text)
-
         notice_file = about_data.pop('notice_file', None)
         if notice_file:
             try:
-                notice_text = fetch_content_from_path_or_url_through_cache(
-                    self.notice_download_url)
-                about_data['notice_text'] = notice_text
+                notice_text = fetch_content_from_path_or_url_through_cache(self.notice_download_url)
+                if notice_text:
+                    about_data['notice_text'] = notice_text
             except RemoteNotFetchedException:
-                pass
+                print(f'Failed to fetch NOTICE file: {self.notice_download_url}')
+        return self.load_about_data(about_data)
 
-        self.update(about_data, keep_extra=True)
+    def extract_pkginfo(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Return the text of the first PKG-INFO or METADATA file found in the
+        archive of this Distribution in `dest_dir`. Return None if not found.
+        """
+        fmt = 'zip' if self.filename.endswith('.whl') else None
+        dist = os.path.join(dest_dir, self.filename)
+        with tempfile.TemporaryDirectory(prefix='pypi-tmp-extract') as td:
+            shutil.unpack_archive(filename=dist, extract_dir=td, format=fmt)
+            # NOTE: we only care about the first one found in the dist
+            # which may not be 100% right
+            for pi in fileutils.resource_iter(location=td, with_dirs=False):
+                if pi.endswith(('PKG-INFO', 'METADATA',)):
+                    with open(pi) as fi:
+                        return fi.read()
+
+    def load_pkginfo_data(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Update self with data loaded from the PKG-INFO file found in the
+        archive of this Distribution in `dest_dir`.
+        """
+        pkginfo_text = self.extract_pkginfo(dest_dir=dest_dir)
+        if not pkginfo_text:
+            print(f'!!!!PKG-INFO not found in {self.filename}')
+            return
+        raw_data = email.message_from_string(pkginfo_text)
+
+        classifiers = raw_data.get_all('Classifier') or []
+
+        declared_license = [raw_data['License']] + [c for c in classifiers if c.startswith('License')]
+        other_classifiers = [c for c in classifiers if not c.startswith('License')]
+
+        pkginfo_data = dict(
+            name=raw_data['Name'],
+            declared_license=declared_license,
+            version=raw_data['Version'],
+            description=raw_data['Summary'],
+            homepage_url=raw_data['Home-page'],
+            holder=raw_data['Author'],
+            holder_contact=raw_data['Author-email'],
+            keywords=raw_data['Keywords'],
+            classifiers=other_classifiers,
+        )
+
+        return self.update(pkginfo_data, keep_extra=True)
+
+    def update_from_other_dist(self, dist):
+        """
+        Update self using data from another dist
+        """
+        return self.update(dist.get_updatable_data())
+
+    def get_updatable_data(self):
+        return {k: v for k, v in self.to_dict().items() if k in self.updatable_fields}
 
     def update(self, data, overwrite=False, keep_extra=True):
         """
-        Update self with a mapping of data. Keep unknown data as extra_data
-        if keep_extra is True. If overwrite is True, overwrite self with `data`
-        Return True if any data was updated.
+        Update self with a mapping of `data`. Keep unknown data as extra_data if
+        `keep_extra` is True. If `overwrite` is True, overwrite self with `data`
+        Return True if any data was updated, False otherwise. Raise an exception
+        if there are key data conflicts.
         """
+        package_url = data.get('package_url')
+        if package_url:
+            purl_from_data = packageurl.PackageURL.from_string(package_url)
+            purl_from_self = packageurl.PackageURL.from_string(self.package_url)
+            if purl_from_data != purl_from_self:
+                print(
+                    f'Invalid dist update attempt, no same same purl with dist: '
+                    f'{self} using data {data}.')
+                return
+
+        data.pop('about_resource', None)
+
         updated = False
         extra = {}
         for k, v in data.items():
@@ -743,6 +862,7 @@ class Sdist(Distribution):
             raise InvalidDistributionFilename(filename)
 
         return cls(
+            type='pypi',
             name=name,
             version=version,
             extension=extension,
@@ -860,6 +980,7 @@ class Wheel(Distribution):
 
         return cls(
             filename=filename,
+            type='pypi',
             name=name,
             version=version,
             build=build,
@@ -1036,7 +1157,7 @@ class PypiPackage(NameVer):
         dists = NameVer.sorted(dists)
 
         for _projver, dists_of_package in itertools.groupby(
-            dists, key=NameVer.sorter_by_name_version,
+            dists, key=NameVer.sortable_name_version,
         ):
             yield PypiPackage.package_from_dists(dists_of_package)
 
@@ -1206,7 +1327,8 @@ class PypiPackage(NameVer):
             try:
                 yield Distribution.from_path_or_url(path_or_url)
             except InvalidDistributionFilename:
-                print(f'Skipping invalid distribution from: {path_or_url}')
+                if TRACE:
+                    print(f'Skipping invalid distribution from: {path_or_url}')
                 continue
 
     def get_distributions(self):
@@ -1518,13 +1640,12 @@ class Cache:
     This is used to avoid impolite fetching from remote locations.
     """
 
-    directory = attr.ib(type=str, default='.cache/thirdparty')
+    directory = attr.ib(type=str, default=CACHE_THIRDPARTY_DIR)
 
     def __attrs_post_init__(self):
         os.makedirs(self.directory, exist_ok=True)
 
     def clear(self):
-        import shutil
         shutil.rmtree(self.directory)
 
     def get(self, path_or_url, as_text=True):
@@ -1708,62 +1829,6 @@ def add_missing_sources(dest_dir=THIRDPARTY_DIR):
     return not_found
 
 
-def add_missing_about_files(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, add missing ANOUT files and licenses using best efforts:
-    - fetch from our mote links
-    - derive from existing packages of the same name and version that would have such ABOUT file
-    - derive from existing packages of the same name and different version that would have such ABOUT file
-    - attempt to make API calls to fetch package details and create ABOUT file
-    - create a skinny ABOUT file as a last resort
-    """
-    # first get available ones from our remote repo
-    remote_repo = get_remote_repo()
-    paths_or_urls = remote_repo.get_links()
-    fetch_abouts(dest_dir=dest_dir, paths_or_urls=paths_or_urls)
-
-    # then derive or create
-    existing_about_files = set(get_about_files(dest_dir))
-    local_packages = get_local_packages(directory=dest_dir)
-
-    for package in local_packages:
-        remote_package = remote_repo.get_package(package.name, package.version)
-        for dist in package.get_distributions():
-            filename = dist.filename
-            download_url = dist.get_best_download_url()
-            about_file = f'{filename}.ABOUT'
-            if about_file not in existing_about_files:
-                # TODO: also derive files from API calls
-                about_file = create_or_derive_about_file(
-                    remote_package=remote_package,
-                    name=package.normalized_name,
-                    version=package.version,
-                    filename=filename,
-                    download_url=download_url,
-                    dest_dir=dest_dir,
-                )
-            if not about_file:
-                print(f'Unable to derive/create/fetch ABOUT file: {about_file}')
-
-
-def fix_about_files_checksums(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, fix ABOUT files checksums
-    """
-    for about_file in get_about_files(dest_dir):
-        about_loc = os.path.join(dest_dir, about_file)
-        resource_loc = about_loc.replace('.ABOUT', '')
-        with open(about_loc) as fi:
-            about = saneyaml.load(fi.read())
-
-        checksums = multi_checksums(resource_loc, checksum_names=('md5', 'sha1',))
-        for k, v in checksums.items():
-            about[f'checksum_{k}'] = v
-
-        with open(about_loc, 'w') as fo:
-            fo.write(saneyaml.dump(about))
-
-
 def fetch_missing_wheels(dest_dir=THIRDPARTY_DIR):
     """
     Given a thirdparty dir fetch missing wheels for all known combos of Python
@@ -1870,28 +1935,6 @@ def build_missing_wheels(
     return not_built, built_filenames
 
 
-def add_missing_licenses_and_notices(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir that is assumed to be in sync with the
-    REMOTE_FIND_LINKS repo, fetch missing license and notice files.
-    """
-
-    not_found = []
-
-    # fetch any remote ones, then from licensedb
-    paths_or_urls = get_paths_or_urls(links_url=REMOTE_BASE_DOWNLOAD_URL)
-    errors = fetch_license_texts_and_notices(dest_dir, paths_or_urls)
-    not_found.extend(errors)
-
-    errors = fetch_license_texts_from_licensedb(dest_dir)
-    not_found.extend(errors)
-
-    # TODO: also make API calls
-
-    for name, version, pyver, opsys in not_found:
-        print(f'Not found wheel for {name}=={version} on python {pyver} and {opsys}')
-
-
 def delete_outdated_package_files(dest_dir=THIRDPARTY_DIR):
     """
     Keep only the latest version of any PypiPackage found in `dest_dir`.
@@ -1914,7 +1957,7 @@ def delete_unused_license_and_notice_files(dest_dir=THIRDPARTY_DIR):
 
     license_files = set([f for f in os.listdir(dest_dir) if f.endswith('.LICENSE')])
 
-    for about_data in get_about_datas(dest_dir):
+    for _about_file, about_data in get_about_datas(dest_dir):
         lfns = get_license_and_notice_filenames(about_data)
         referenced_license_files.update(lfns)
 
@@ -2086,208 +2129,180 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
 ################################################################################
 
 
-def get_about_files(dest_dir=THIRDPARTY_DIR):
-    """
-    Return a list of ABOUT files found in `dest_dir`
-    """
-    return [f for f in os.listdir(dest_dir) if f.endswith('.ABOUT')]
-
-
 def get_about_datas(dest_dir=THIRDPARTY_DIR):
     """
     Yield ABOUT data mappings from ABOUT files found in `dest_dir`
     """
-    for about_file in get_about_files(dest_dir):
+    about_files = [f for f in os.listdir(dest_dir) if f.endswith('.ABOUT')]
+
+    for about_file in about_files:
         with open(os.path.join(dest_dir, about_file)) as fi:
-            yield saneyaml.load(fi.read())
+            about_data = saneyaml.load(fi.read())
+            yield about_file, about_data
 
 
-def create_or_derive_about_file(
-    remote_package,
-    name,
-    version,
-    filename,
-    download_url,
-    dest_dir=THIRDPARTY_DIR,
-):
+def fetch_and_save_about_data(dest_dir=THIRDPARTY_DIR):
     """
-    Derive an ABOUT file from an existing remote package if possible. Otherwise,
-    create a skinny ABOUT file using the provided name, version filename and
-    download_url. Return filename on success or None.
+    Given a thirdparty dir, load local then fetch remote ABOUT and NOTICE data
+    then save locally.
     """
+    # We assume that available ABOUT files from our remote repo were fetched
+    local_packages = get_local_packages(directory=dest_dir)
+    for p in local_packages:
+        for ld in p.get_distributions():
+            ld.load_about_data()
+            ld.load_remote_about_data()
+            if True:
+                print(f'Saving ABOUT (and NOTICE) files for: {ld}')
+            ld.save_about_and_notice_files(dest_dir)
 
-    about_file = None
 
-    if remote_package:
-        for dist in remote_package.get_distributions():
-            about_filename = derive_about_file_from_dist(
-                dist=dist,
-                name=name,
-                version=version,
-                filename=filename,
-                download_url=download_url,
-                dest_dir=dest_dir,
-            )
-            if about_filename:
-                return about_filename
+def add_or_update_about_files(dest_dir=THIRDPARTY_DIR):
+    """
+    Given a thirdparty dir, add missing ABOUT and NOTICE files best efforts:
+    - derive from existing distribution with same name and latest version that would have such ABOUT file
 
-    if not about_file:
-        # Create and save a skinny ABOUT file with minimum known data.
-        normalized_name = NameVer.normalize_name(name)
+    TODO:
+    - get ABOUT file data from distributions PKGINFO or METADATA files
+    - make API calls to fetch package data from DejaCode
+    """
+    # We assume that available ABOUT files from our remote repo were fetched
+    local_packages = get_local_packages(directory=dest_dir)
+    remote_repo = get_remote_repo()
 
-        about_data = dict(
-            about_resource=filename,
-            name=normalized_name,
-            version=version,
-            download_url=download_url,
-            primary_language='Python',
-        )
-        about_file = f'{filename}.ABOUT'
-        with open(os.path.join(dest_dir, about_file), 'w') as fo:
+    # load the data
+    for p in local_packages:
+        for ld in p.get_distributions():
+            ld.load_about_data()
+
+    # then derive or create
+    for local_package in local_packages:
+        for local_dist in local_package.get_distributions():
+            # if has key data we may look to improve later, but we can move on
+            if local_dist.has_key_metadata():
+                continue
+            # try to get a latest version of the same package that is not our version
+            other_remote_packages = [
+                p for p in remote_repo.get_versions(local_package.name)
+                if p.version != local_package.version
+            ]
+            latest_version = other_remote_packages and other_remote_packages[-1]
+            if not latest_version:
+                # try to get data from pkginfo (no license though)
+                local_dist.load_pkginfo_data(dest_dir=dest_dir)
+                if TRACE:
+                    print(f'Saving ABOUT (and NOTICE) files for: {local_dist}')
+                local_dist.save_about_and_notice_files(dest_dir)
+
+                # try to get data from dejacode
+                continue
+
+            latest_dists = list(latest_version.get_distributions())
+            for remote_dist in latest_dists:
+                remote_dist.load_remote_about_data()
+                if not remote_dist.has_key_metadata():
+                    # there is not much value to get other data if we are missing the key ones
+                    continue
+                else:
+                    local_dist.update_from_other_dist(remote_dist)
+
+                if not local_dist.has_key_metadata():
+                    print(f'Unable to add essential ABOUT data for: {local_dist}')
+
+                checksums = get_checksums(local_dist, dest_dir=dest_dir)
+                local_dist.update(checksums)
+
+                print(f'Saving ABOUT (and NOTICE) files for: {local_dist}')
+                local_dist.save_about_and_notice_files(dest_dir)
+                break
+
+
+def get_checksums(dist, dest_dir=THIRDPARTY_DIR):
+    """
+    Given a thirdparty dir, fix ABOUT files checksums
+    """
+    dist_loc = os.path.join(dest_dir, dist.filename)
+    return multi_checksums(dist_loc, checksum_names=('md5', 'sha1',))
+
+
+def fix_about_files_checksums(dest_dir=THIRDPARTY_DIR):
+    """
+    Given a thirdparty dir, fix ABOUT files checksums
+    """
+    for about_file, about_data in get_about_datas(dest_dir):
+        resource_loc = os.path.join(dest_dir, about_data.get('about_resource'))
+        checksums = multi_checksums(resource_loc, checksum_names=('md5', 'sha1',))
+
+        for k, v in checksums.items():
+            about_data[f'checksum_{k}'] = v
+
+        with open(about_file, 'w') as fo:
             fo.write(saneyaml.dump(about_data))
 
-    if not about_file:
-        raise Exception(
-            f'Failed to create an ABOUT file for: {filename}')
 
-    return about_file
-
-
-def derive_about_file_from_dist(
-    dist,
-    name,
-    version,
-    filename,
-    download_url=None,
-    dest_dir=THIRDPARTY_DIR,
-):
+def fix_about_purl(type='pypi', dest_dir=THIRDPARTY_DIR):
     """
-    Derive and save a new ABOUT file from dist for the provided argument.
-    Return the ABOUT file name on success, None otherwise.
+    Given a thirdparty dir, fix ABOUT files package_url
     """
+    for about_file, about_data in get_about_datas(dest_dir):
 
-    try:
-        dist_about_text = fetch_content_from_path_or_url_through_cache(dist.about_download_url)
-    except RemoteNotFetchedException:
-        return
-
-    if not dist_about_text:
-        return
-
-    if not download_url:
-        # binary has been built from sources, therefore this is NOT from PyPI
-        # so we raft a wheel URL assuming this will be later uploaded
-        # to our PyPI-like repo
-        download_url = Distribution.build_remote_download_url(filename)
-
-    about_filename = derive_new_about_file_from_about_text(
-        about_text=dist_about_text,
-        new_name=name,
-        new_version=version,
-        new_filename=filename,
-        new_download_url=download_url,
-        dest_dir=dest_dir,
-    )
-
-    # also fetch and rename the NOTICE
-    dist_about_data = saneyaml.load(dist_about_text)
-    existing_notice_filename = dist_about_data.get('notice_file')
-
-    if existing_notice_filename:
-        existing_notice_file_loc = os.path.join(dest_dir, existing_notice_filename)
-
-        derived_notice_filename = f'{filename}.NOTICE'
-        derived_notice_file_loc = os.path.join(dest_dir, derived_notice_filename)
-
-        if os.path.exists(existing_notice_file_loc):
-            fileutils.copyfile(existing_notice_file_loc, derived_notice_file_loc)
-        else:
-            existing_notice_url = Distribution.build_remote_download_url(existing_notice_filename)
-            fetch_and_save_path_or_url(
-                filename=derived_notice_filename,
-                dest_dir=dest_dir,
-                path_or_url=existing_notice_url,
-                as_text=True,
+        name = about_data.get('name')
+        version = about_data.get('version')
+        if not version or not name:
+            print(
+                f'Failed to create purl for ABOUT {about_file}: '
+                f'missing name or version: {name}@{version}'
             )
+            continue
 
-    return about_filename
+        new_purl = str(packageurl.PackageURL(type=type, name=name, version=version))
+
+        purl = about_data.get('package_url')
+        if purl and purl.strip() != new_purl:
+            al = os.path.abspath(os.path.join(dest_dir, about_file))
+            print(
+                f'Failed to update ABOUT file://{al} purl: '
+                f'inconsistent existing purl: {purl} '
+                f'with generated url: {new_purl}'
+            )
+            continue
+
+        with open(about_file, 'w') as fo:
+            fo.write(saneyaml.dump(about_data))
 
 
-def derive_new_about_file_from_about_file(
-    existing_about_file,
-    new_name,
-    new_version,
-    new_filename,
-    new_download_url,
-    dest_dir=THIRDPARTY_DIR,
-):
+def add_referenced_licenses_and_notices(dest_dir=THIRDPARTY_DIR):
     """
-    Given an existing ABOUT file `existing_about_file` in `dest_dir`, create a
-    new ABOUT file derived from that existing file and save it to `dest_dir`.
-    Use new_name, new_version, new_filename, new_download_url for the new ABOUT
-    file.
-    """
-    with open(existing_about_file) as fi:
-        about_text = fi.read()
-
-    return derive_new_about_file_from_about_text(
-        about_text=about_text,
-        new_name=new_name,
-        new_version=new_version,
-        new_filename=new_filename,
-        new_download_url=new_download_url,
-        dest_dir=dest_dir,
-    )
-
-
-def derive_new_about_file_from_about_text(
-    about_text,
-    new_name,
-    new_version,
-    new_filename,
-    new_download_url,
-    dest_dir=THIRDPARTY_DIR,
-):
-    """
-    Given an existing ABOUT YAML text `about_text` , create a
-    new .ABOUT file derived from that existing content and save it to `dest_dir`.
-    Use new_name, new_version, new_filename, new_download_url for the new ABOUT
-    file. Return the new ABOUT file name
+    Given a thirdparty dir that is assumed to be in sync with the
+    REMOTE_FIND_LINKS repo, fetch all license and notice files.
     """
 
-    normalized_new_name = NameVer.normalize_name(new_name)
+    not_found = []
 
-    about_data = saneyaml.load(about_text)
-    # remove checksums if any
-    for checksum in ('checksum_md5', 'checksum_sha1', 'checksum_sha256', 'checksum_sha512'):
-        about_data.pop(checksum, None)
+    # fetch any remote ones, then from licensedb
+    paths_or_urls = get_paths_or_urls(links_url=REMOTE_BASE_DOWNLOAD_URL)
+    errors = fetch_missing_referenced_license_texts_and_notices_remotely(dest_dir, paths_or_urls)
+    not_found.extend(errors)
 
-    about_data['about_resource'] = new_filename
-    about_data['name'] = normalized_new_name
-    about_data['version'] = new_version
-    about_data['download_url'] = new_download_url
+    errors = fetch_missing_referenced_license_texts_from_licensedb(dest_dir)
+    not_found.extend(errors)
 
-    new_about_text = saneyaml.dump(about_data)
+    # TODO: also make API calls?
 
-    new_about_filename = os.path.join(dest_dir, f'{new_filename}.ABOUT')
-
-    with open(new_about_filename, 'w') as fo:
-        fo.write(new_about_text)
-
-    return new_about_filename
+    for nf in not_found:
+        print(f'LICENSE or NOTICE file not found: {nf}')
 
 
-def fetch_license_texts_and_notices(dest_dir, paths_or_urls):
+def fetch_missing_referenced_license_texts_and_notices_remotely(dest_dir, paths_or_urls):
     """
     Download to `dest_dir` all the .LICENSE and .NOTICE files referenced in all
     the .ABOUT files in `dest_dir` using URLs or path from the `paths_or_urls`
     list.
     """
     errors = []
-    for about_data in get_about_datas(dest_dir):
+    for about_file, about_data in get_about_datas(dest_dir):
         for lic_file in get_license_and_notice_filenames(about_data):
             try:
-
                 lic_url = get_link_for_filename(
                     filename=lic_file,
                     paths_or_urls=paths_or_urls,
@@ -2300,13 +2315,13 @@ def fetch_license_texts_and_notices(dest_dir, paths_or_urls):
                     as_text=True,
                 )
             except Exception as e:
-                errors.append(str(e))
+                errors.append(f'Failed to fetch licenses for {about_file}: ' + str(e))
                 continue
 
     return errors
 
 
-def fetch_license_texts_from_licensedb(
+def fetch_missing_referenced_license_texts_from_licensedb(
     dest_dir=THIRDPARTY_DIR,
     licensedb_api_url=LICENSEDB_API_URL,
 ):
@@ -2315,7 +2330,7 @@ def fetch_license_texts_from_licensedb(
     files in `dest_dir` using the licensedb `licensedb_api_url`.
     """
     errors = []
-    for about_data in get_about_datas(dest_dir):
+    for about_file, about_data in get_about_datas(dest_dir):
         for license_key in get_license_keys(about_data):
             ltext = fetch_and_save_license_text_from_licensedb(
                 license_key,
@@ -2323,46 +2338,26 @@ def fetch_license_texts_from_licensedb(
                 licensedb_api_url,
             )
             if not ltext:
-                errors.append(f'No text for license {license_key}')
+                errors.append(f'No text for license {license_key} listed in {about_file}')
 
     return errors
 
 
-def fetch_abouts(dest_dir, paths_or_urls):
+def get_license_and_notice_filenames(about_data):
     """
-    Download to `dest_dir` all the .ABOUT files for all the files in `dest_dir`
-    that should have an .ABOUT file documentation using URLs or path from the
-    `paths_or_urls` list.
-
-    Documentable files (typically archives, sdists, wheels, etc.) should have a
-    corresponding .ABOUT file named <archive_filename>.ABOUT.
+    Return a list of license file names found in the `about_data` .ABOUT data
+    mapping.
     """
 
-    # these are the files that should have a matching ABOUT file
-    aboutables = [fn for fn in os.listdir(dest_dir)
-        if not fn.endswith(EXTENSIONS_ABOUT)
-    ]
-
-    errors = []
-    for aboutable in aboutables:
-        about_file = f'{aboutable}.ABOUT'
-        try:
-            about_url = get_link_for_filename(
-                filename=about_file,
-                paths_or_urls=paths_or_urls,
-            )
-
-            fetch_and_save_path_or_url(
-                filename=about_file,
-                dest_dir=dest_dir,
-                path_or_url=about_url,
-                as_text=True,
-            )
-
-        except Exception as e:
-            errors.append(str(e))
-
-    return errors
+    license_files = [f'{l}.LICENSE' for l in get_license_keys(about_data)]
+    # add legacy
+    license_files.append(about_data.get('notice_file'))
+    license_files.append(about_data.get('license_file'))
+    # add licenses mapping
+    licenses = about_data.get('licenses', [])
+    license_files += [l.get('file') for l in licenses]
+    # remove dupes and empties
+    return sorted(set(f for f in license_files if f))
 
 
 def get_license_keys(about_data):
@@ -2379,39 +2374,6 @@ def get_license_keys(about_data):
     keys += keys_from_expression(license_expression)
     keys = [l for l in keys if l]
     return sorted(set(keys))
-
-
-def get_license_filenames(about_data):
-    """
-    Return a list of license file names found in the `about_data` .ABOUT data
-    mapping.
-    """
-    return [f'{l}.LICENSE' for l in get_license_keys(about_data)]
-
-
-def get_notice_filename(about_data):
-    """
-    Yield the notice file name found in the `about_data` .ABOUT data
-    mapping.
-    """
-    notice_file = about_data.get('notice_file')
-    if notice_file:
-        yield notice_file
-
-
-def get_license_and_notice_filenames(about_data):
-    """
-    Return a list of license file names found in the `about_data` .ABOUT data
-    mapping.
-    """
-
-    license_files = get_license_filenames(about_data)
-
-    licenses = about_data.get('licenses', [])
-    license_files += [l.get('file') for l in licenses]
-
-    license_files += list(get_notice_filename(about_data))
-    return sorted(set(f for f in license_files if f))
 
 
 def keys_from_expression(license_expression):
@@ -2840,3 +2802,17 @@ def add_or_upgrade_package(
     )
 
     return wheel_filenames
+
+################################################################################
+
+
+def get_purl(data):
+    """
+    Return a PackageURL build from discrete Package URL fields present in
+    the data mapping.
+    """
+    purl_fields = {
+        k: v for k, v in data.items()
+        if k in packageurl._components
+    }
+    return packageurl.PackageURL(**purl_fields)
