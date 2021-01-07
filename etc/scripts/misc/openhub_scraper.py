@@ -27,10 +27,7 @@ import io
 import json
 import os
 
-try:
-    from urlib.request import urlopen
-except ImportError:
-    from urllib2 import urlopen
+from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 
