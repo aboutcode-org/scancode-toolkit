@@ -29,8 +29,6 @@ from os.path import getmtime
 from os.path import getsize
 from os.path import join
 
-import yg.lockfile  # NOQA
-
 from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir
 from commoncode import ignore
@@ -232,6 +230,8 @@ def get_cached_index(
     from licensedcode.models import licenses_data_dir as ldd
     from licensedcode.models import rules_data_dir as rdd
 
+    from scancode import lockfile
+
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
 
@@ -248,7 +248,7 @@ def get_cached_index(
     # and build or rebuild as needed
     try:
         # acquire lock and wait until timeout to get a lock or die
-        with yg.lockfile.FileLock(lock_file, timeout=timeout):
+        with lockfile.FileLock(lock_file).locked(timeout=timeout):
             current_checksum = None
             # is the current cache consistent or stale?
             if has_cache and has_tree_checksum:
@@ -290,7 +290,7 @@ def get_cached_index(
 
             return idx
 
-    except yg.lockfile.FileLockTimeout:
+    except lockfile.LockTimeout:
         # TODO: handle unable to lock in a nicer way
         raise
 

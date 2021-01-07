@@ -44,7 +44,6 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import datetime
 import json
 import logging
@@ -53,11 +52,10 @@ from os import path
 from packaging import version as packaging_version
 import requests
 from requests.exceptions import ConnectionError
-import yg.lockfile
 
 from scancode_config import scancode_cache_dir
 from scancode_config import __version__ as scancode_version
-
+from scancode import lockfile
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
 
@@ -89,7 +87,7 @@ class VersionCheckState(object):
 
     def save(self, latest_version, current_time):
         # Attempt to write out our version check file
-        with yg.lockfile.FileLock(self.lockfile_path, timeout=10):
+        with lockfile.FileLock(self.lockfile_path).locked(timeout=10):
             state = {
                 'last_check': current_time.strftime(SELFCHECK_DATE_FMT),
                 'latest_version': latest_version,

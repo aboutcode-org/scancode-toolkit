@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import errno
 import os
 from os.path import abspath
@@ -42,8 +41,10 @@ Note: this module MUST import ONLY from the standard library.
 try:
     WindowsError  # NOQA
 except NameError:
+
     class WindowsError(Exception):
         pass
+
 
 def _create_dir(location):
     """
@@ -88,11 +89,12 @@ def _create_dir(location):
 # lives.
 
 
-from pkg_resources import get_distribution, DistributionNotFound
 try:
+    from pkg_resources import get_distribution, DistributionNotFound
     __version__ = get_distribution('scancode-toolkit').version
-except DistributionNotFound:
-    # package is not installed ??
+except (DistributionNotFound, ImportError):
+    # package is not installed or we do not have setutools/pkg_resources
+    # on hand
     __version__ = '20.01.02'
 
 system_temp_dir = tempfile.gettempdir()
@@ -143,7 +145,6 @@ else:
         or join(user_home, '.cache', 'scancode-tk', __version__))
 
 _create_dir(scancode_cache_dir)
-
 
 # - scancode_temp_dir: for short-lived temporary files which are import- or run-
 # specific that may live for the duration of a function call or for the duration
