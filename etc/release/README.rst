@@ -94,8 +94,8 @@ OS or Python versions) in setup.py/setp.cfg/requirements.txt as these are NOT
 yet supported.
 
 
-Populate a thirdparty directry with wheels, sources, .ABOUT and license files
------------------------------------------------------------------------------
+Populate a thirdparty directory with wheels, sources, .ABOUT and license files
+------------------------------------------------------------------------------
 
 Scripts
 ~~~~~~~
@@ -131,6 +131,18 @@ Usage
   token for buidling binaries and an optional DejaCode API key to post and fetch
   new package versions there. TODO: explain how we use romp
 
+
+Upgrade virtualenv app
+----------------------
+
+The virtualenv.pyz has to be upgraded by hand and is stored under etc/thirdparty
+
+* Fetch https://github.com/pypa/get-virtualenv/raw/<latest tag>/public/virtualenv.pyz
+  for instance https://github.com/pypa/get-virtualenv/raw/20.2.2/public/virtualenv.pyz
+  and save to thirdparty and update the ABOUT and LICENSE files as needed.
+
+* This virtualenv app contains also bundled pip, wheel and setuptools that are
+  essential for the correct operations to work.
 
 
 Other files 
