@@ -141,7 +141,6 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         assert os.path.exists(checksum_file)
         assert os.path.exists(cache_file)
-        assert not os.path.exists(lock_file)
 
         # when nothing changed a new index files is not created
         tree_before = open(checksum_file).read()

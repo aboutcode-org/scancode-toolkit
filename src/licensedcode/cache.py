@@ -22,12 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
+import os
 from functools import partial
 from hashlib import md5
-from os.path import exists
-from os.path import getmtime
-from os.path import getsize
-from os.path import join
 
 from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir
@@ -237,8 +234,8 @@ def get_cached_index(
 
     lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir)
 
-    has_cache = exists(cache_file)
-    has_tree_checksum = exists(checksum_file)
+    has_cache = os.path.exists(cache_file)
+    has_tree_checksum = os.path.exists(checksum_file)
 
     # bypass check if no consistency check is needed
     if has_cache and has_tree_checksum and not check_consistency:
@@ -330,7 +327,7 @@ _ignored_from_hash = partial(
     unignores={}
 )
 
-licensedcode_dir = join(scancode_src_dir, 'licensedcode')
+licensedcode_dir = os.path.join(scancode_src_dir, 'licensedcode')
 
 
 def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
@@ -343,7 +340,7 @@ def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     NOTE: this is not 100% fool proof but good enough in practice.
     """
     resources = resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False)
-    hashable = (pth + str(getmtime(pth)) + str(getsize(pth)) for pth in resources)
+    hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth)) for pth in resources)
     hashable = ''.join(sorted(hashable))
     hashable = hashable.encode('utf-8')
     return md5(hashable).hexdigest()
@@ -353,11 +350,11 @@ def get_license_cache_paths(cache_dir=scancode_cache_dir):
     """
     Return a tuple of index cache files given a master `cache_dir`
     """
-    idx_cache_dir = join(cache_dir, 'license_index')
+    idx_cache_dir = os.path.join(cache_dir, 'license_index')
     create_dir(idx_cache_dir)
 
-    lock_file = join(idx_cache_dir, 'lockfile')
-    checksum_file = join(idx_cache_dir, 'tree_checksums')
-    cache_file = join(idx_cache_dir, 'index_cache')
+    lock_file = os.path.join(idx_cache_dir, 'lockfile')
+    checksum_file = os.path.join(idx_cache_dir, 'tree_checksums')
+    cache_file = os.path.join(idx_cache_dir, 'index_cache')
 
     return lock_file, checksum_file, cache_file
