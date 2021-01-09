@@ -23,12 +23,12 @@ import utils_thirdparty
 
 @click.command()
 
-@click.option('--requirement',
+@click.option('-r', '--requirement',
     type=str,
     metavar='SPECIFIER',
     help='Pip package requirement specifier to add or build.',
 )
-@click.option('--thirdparty-dir',
+@click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
     default=utils_thirdparty.THIRDPARTY_DIR,

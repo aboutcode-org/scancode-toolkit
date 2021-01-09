@@ -27,7 +27,7 @@ from utils_thirdparty import PypiPackage
 
 @click.command()
 
-@click.option('--requirements-file',
+@click.option('-r', '--requirements-file',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
     multiple=True,
@@ -35,7 +35,7 @@ from utils_thirdparty import PypiPackage
     show_default=True,
     help='Path to the requirements file(s) to use for thirdparty packages.',
 )
-@click.option('--thirdparty-dir',
+@click.option('-t', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
     default=utils_thirdparty.THIRDPARTY_DIR,

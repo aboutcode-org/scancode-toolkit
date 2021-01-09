@@ -26,7 +26,7 @@ import utils_thirdparty
 
 @click.command()
 
-@click.option('--thirdparty-dir',
+@click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     default=utils_thirdparty.THIRDPARTY_DIR,
     help='Path to the thirdparty directory to fix.',

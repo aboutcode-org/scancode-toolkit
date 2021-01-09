@@ -24,7 +24,7 @@ import itertools
 
 @click.command()
 
-@click.option('--requirements-file',
+@click.option('-r', '--requirements-file',
     type=click.Path(exists=True, readable=True, path_type=str, dir_okay=False),
     metavar='FILE',
     multiple=True,
@@ -32,14 +32,14 @@ import itertools
     show_default=True,
     help='Path to the requirements file to use for thirdparty packages.',
 )
-@click.option('--thirdparty-dir',
+@click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
     default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
     help='Path to the thirdparty directory.',
 )
-@click.option('--python-version',
+@click.option('-p', '--python-version',
     type=click.Choice(utils_thirdparty.PYTHON_VERSIONS),
     metavar='INT',
     multiple=True,
@@ -47,7 +47,7 @@ import itertools
     show_default=True,
     help='Python version to use for this build.',
 )
-@click.option('--operating-system',
+@click.option('-o', '--operating-system',
     type=click.Choice(utils_thirdparty.PLATFORMS_BY_OS),
     metavar='OS',
     multiple=True,

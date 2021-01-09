@@ -22,20 +22,20 @@ import utils_requirements
 
 @click.command()
 
-@click.option('--site-packages-dir',
+@click.option('-s', '--site-packages-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False, resolve_path=True),
     required=True,
     metavar='DIR',
     help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
 )
-@click.option('--dev-requirements-file',
+@click.option('-d', '--dev-requirements-file',
     type=click.Path(path_type=str, dir_okay=False),
     metavar='FILE',
     default='requirements-dev.txt',
     show_default=True,
     help='Path to the dev requirements file to update or create.',
 )
-@click.option('--main-requirements-file',
+@click.option('-r', '--main-requirements-file',
     type=click.Path(path_type=str, dir_okay=False),
     default='requirements.txt',
     metavar='FILE',
