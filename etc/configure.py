@@ -181,7 +181,7 @@ def activate_virtualenv():
 def pip_install(requirement_args, quiet=False):
     """
     Install a list of `requirement_args` command line requirement arguments with
-    pip, using packages found in THIRDPARTY_DIR_OR_LINKS directory.
+    pip, using packages found in THIRDPARTY_DIR_OR_LINKS directory or URL.
     """
     if not quiet:
         print('* Installing packages ...')
@@ -192,6 +192,33 @@ def pip_install(requirement_args, quiet=False):
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
     cmd += ['install', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
+    if quiet:
+        cmd += ['-qq']
+
+    cmd += requirement_args
+    call(cmd)
+
+
+def pip_cache_wheels(requirement_args, quiet=False):
+    """
+    Download and cache wheels from a list of `requirement_args` command line requirement
+    arguments with pip using packages found in THIRDPARTY_LINKS and save them in
+    the THIRDPARTY_DIR directory.
+    """
+    if not quiet:
+        print('* Downloading packages ...')
+
+    if on_win:
+        cmd = [CONFIGURED_PYTHON, '-m', 'pip']
+    else:
+        cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
+
+    cmd += [
+        'wheel', '--no-index',
+        '--find-links', THIRDPARTY_LINKS,
+        '--wheel-dir', THIRDPARTY_DIR,
+    ]
+
     if quiet:
         cmd += ['-qq']
 
@@ -223,6 +250,12 @@ if __name__ == '__main__':
         if arg0 == '--clean':
             clean(ROOT_DIR)
             sys.exit(0)
+        elif arg0 == '--cache':
+            # Cache wheels: if we have at least one wheel in THIRDPARTY_DIR, we assume
+            # we can use that otherwise we are online and use our remote links to
+            # download wheels first
+            pip_cache_wheels(requirement_args, quiet=quiet)
+            sys.exit(0)
 
         # use provided pip args instead of defaults
         requirement_args = args
@@ -248,7 +281,8 @@ if __name__ == '__main__':
 
     THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
 
-    # if we have at least one wheel in THIRDPARTY_LOC, we assume we are offline
+
+    # if we have at least one wheel in THIRDPARTY_DIR, we assume we are offline
     # otherwise we are online and use our remote links for pip operations
     has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_DIR))
     THIRDPARTY_DIR_OR_LINKS = THIRDPARTY_DIR if has_wheels else THIRDPARTY_LINKS
