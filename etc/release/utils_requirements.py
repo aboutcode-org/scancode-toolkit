@@ -106,6 +106,6 @@ def get_installed_reqs(site_packages_dir):
     """
     Return the installed pip requirements as text found in `site_packages_dir` as a text.
     """
-    # Skip these packages in the output: wheel, distribute, setuptools, pip
-    args = ['pip', 'freeze', '--exclude-editable', '--path', site_packages_dir]
+    # Also include these packages in the output with --all: wheel, distribute, setuptools, pip
+    args = ['pip', 'freeze', '--exclude-editable', '--all', '--path', site_packages_dir]
     return subprocess.check_output(args, encoding='utf-8')
