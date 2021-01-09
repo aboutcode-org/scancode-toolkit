@@ -1687,7 +1687,8 @@ def get_file_content(path_or_url, as_text=True):
         return get_local_file_content(path=path_or_url, as_text=as_text)
 
     elif path_or_url.startswith('https://'):
-        return get_remote_file_content(url=path_or_url, as_text=as_text)
+        _headers, content = get_remote_file_content(url=path_or_url, as_text=as_text)
+        return content
 
     else:
         raise Exception(f'Unsupported URL scheme: {path_or_url}')
@@ -1710,23 +1711,50 @@ class RemoteNotFetchedException(Exception):
     pass
 
 
-def get_remote_file_content(url, as_text=True, _delay=0):
+def get_remote_file_content(url, as_text=True, headers_only=False, _delay=0):
     """
-    Fetch and return the content at `url` as text. Return the content as bytes
-    is `as_text` is False. Retries multiple times to fetch if there is a HTTP
-    429 throttling response and this with an increasing delay.
+    Fetch and return a tuple of (headers, content) at `url`. Return content as a
+    text string if `as_text` is True. Otherwise return the content as bytes.
+
+    If `header_only` is True, return only (headers, None). Headers is a mapping
+    of HTTP headers.
+    Retries multiple times to fetch if there is a HTTP 429 throttling response
+    and this with an increasing delay.
     """
     time.sleep(_delay)
-    response = requests.get(url)
-    status = response.status_code
-    if status != requests.codes.ok:  # NOQA
-        if status == 429 and _delay < 20:
-            # too many requests: start some exponential delay
-            increased_delay = (_delay * 2) or 1
-            return get_remote_file_content(url, as_text=True, _delay=increased_delay)
-        else:
-            raise RemoteNotFetchedException(f'Failed HTTP request from {url}: {status}' % locals())
-    return response.text if as_text else response.content
+
+    # using a GET with stream=True ensure we get the the final header from
+    # several redirects and that we can ignore content there. A HEAD request may
+    # not get us this last header
+    with requests.get(url, allow_redirects=True, stream=True) as response:
+        status = response.status_code
+        if status != requests.codes.ok:  # NOQA
+            if status == 429 and _delay < 20:
+                # too many requests: start some exponential delay
+                increased_delay = (_delay * 2) or 1
+
+                return get_remote_file_content(
+                    url,
+                    as_text=as_text,
+                    headers_only=headers_only,
+                    _delay=increased_delay,
+                )
+
+            else:
+                raise RemoteNotFetchedException(f'Failed HTTP request from {url} with {status}' % locals())
+
+        if headers_only:
+            return response.headers, None
+
+        return response.headers, response.text if as_text else response.content
+
+
+def get_remote_headers(url):
+    """
+    Fetch and return a mapping of HTTP headers of `url`.
+    """
+    headers, _content = get_remote_file_content(url, headers_only=True)
+    return headers
 
 
 def fetch_and_save_filename_from_paths_or_urls(
@@ -2001,12 +2029,16 @@ def find_links_from_url(
     URL that starts with the `prefix` string and ends with any of the extension
     in the list of `extensions` strings. Use the `base_url` to prefix the links.
     """
+    if TRACE:
+        print(f'Finding links for {links_url}')
     get_links = re.compile('href="([^"]+)"').findall
-
-    text = get_remote_file_content(links_url)
+    _headers, text = get_remote_file_content(links_url)
     links = get_links(text)
     links = [l for l in links if l.startswith(prefix) and l.endswith(extensions)]
     links = [l if l.startswith('https://') else f'{base_url}{l}' for l in links]
+
+    if TRACE:
+        print(f'  --> Found {len(links)} links')
     return links
 
 
@@ -2021,7 +2053,7 @@ def find_pypi_links(name, extensions=EXTENSIONS, simple_url=PYPI_SIMPLE_URL):
     simple_url = simple_url.strip('/')
     simple_url = f'{simple_url}/{name}'
 
-    text = get_remote_file_content(simple_url)
+    _headers, text = get_remote_file_content(simple_url)
     links = get_links(text)
     links = [l.partition('#sha256=') for l in links]
     links = [url for url, _, _sha256 in links]
@@ -2108,6 +2140,7 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
     is_updated = False
     updated_name_versions = []
     for existing_name, existing_version in load_requirements(requirements_file, force_pinned=False):
+
         existing_normalized_name = NameVer.normalize_name(existing_name)
 
         if normalized_name == existing_normalized_name:
@@ -2240,7 +2273,7 @@ def fix_about_files_checksums(dest_dir=THIRDPARTY_DIR):
             fo.write(saneyaml.dump(about_data))
 
 
-def fix_about_purl(type='pypi', dest_dir=THIRDPARTY_DIR):
+def fix_about_purl(package_type='pypi', dest_dir=THIRDPARTY_DIR):
     """
     Given a thirdparty dir, fix ABOUT files package_url
     """
@@ -2255,7 +2288,8 @@ def fix_about_purl(type='pypi', dest_dir=THIRDPARTY_DIR):
             )
             continue
 
-        new_purl = str(packageurl.PackageURL(type=type, name=name, version=version))
+        new_purl = str(packageurl.PackageURL(
+            type=package_type, name=name, version=version))
 
         purl = about_data.get('package_url')
         if purl and purl.strip() != new_purl:
@@ -2279,9 +2313,11 @@ def add_referenced_licenses_and_notices(dest_dir=THIRDPARTY_DIR):
 
     not_found = []
 
-    # fetch any remote ones, then from licensedb
-    paths_or_urls = get_paths_or_urls(links_url=REMOTE_BASE_DOWNLOAD_URL)
-    errors = fetch_missing_referenced_license_texts_and_notices_remotely(dest_dir, paths_or_urls)
+    # fetch any remote licenses then  fetch from licensedb
+    paths_or_urls = get_paths_or_urls(links_url=REMOTE_LINKS_URL)
+
+    errors = fetch_missing_referenced_license_texts_and_notices_remotely(
+        dest_dir=dest_dir, paths_or_urls=paths_or_urls)
     not_found.extend(errors)
 
     errors = fetch_missing_referenced_license_texts_from_licensedb(dest_dir)
@@ -2380,6 +2416,7 @@ def keys_from_expression(license_expression):
     """
     Return a list of license keys from a `license_expression` string.
     """
+    license_expression = ' '.join(license_expression.split())
     cleaned = (license_expression
         .lower()
         .replace('(', ' ')
@@ -2388,7 +2425,7 @@ def keys_from_expression(license_expression):
         .replace(' or ', ' ')
         .replace(' with ', ' ')
     )
-    return cleaned.split()
+    return sorted(set(cleaned.split()))
 
 
 def fetch_and_save_license_text_from_licensedb(
