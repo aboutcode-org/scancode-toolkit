@@ -23,7 +23,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from collections import deque
 from functools import partial
 import os
@@ -35,7 +34,6 @@ from cluecode import copyrights_hint
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
 from textcode import analysis
-
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
@@ -59,7 +57,6 @@ if TRACE or TRACE_DEEP:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
 
 """
 Detect and collect copyright statements.
@@ -112,10 +109,10 @@ def detect_copyrights(location, copyrights=True, holders=True, authors=True,
         if time() > deadline:
             break
 
-
 ################################################################################
 # DETECTION PROPER
 ################################################################################
+
 
 # simple tokenization: spaces and some punctuation
 splitter = re.compile('[\\t =;]+').split
@@ -294,7 +291,6 @@ class CopyrightDetector(object):
         node_string = u' '.join(t for t, _ in filtered)
         return u' '.join(node_string.split())
 
-
 ################################################################################
 # POS TAGGING AND CHUNKING
 ################################################################################
@@ -313,13 +309,11 @@ _YEAR = (r'('
     '20[0-2][0-9]'  # 2000 to 2019
 ')')
 
-
 _YEAR_SHORT = (r'('
     '[6-9][0-9]'  # 60 to 99
     '|'
     '[0-][0-9]'  # 00 to 29
 ')')
-
 
 _YEAR_YEAR = (r'('
               # fixme   v ....the underscore below is suspicious
@@ -334,7 +328,6 @@ _YEAR_YEAR = (r'('
     '(20[0-2][0-9][\\.,\\-])+20[0-2][0-9]'  # 2001-2012
 ')')
 
-
 _PUNCT = (r'('
     '['
         '\\W'  # not a word (word includes underscore)
@@ -346,7 +339,6 @@ _PUNCT = (r'('
     '|'
     '\\&nbsp'  # html entity sometimes are double escaped
 ')*')  # repeated 0 or more times
-
 
 _YEAR_PUNCT = _YEAR + _PUNCT
 _YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
@@ -364,7 +356,6 @@ _YEAR_THEN_YEAR_SHORT = (r'(' +
     _YEAR_SHORT_PUNCT +
     ')*' +
 ')')
-
 
 # TODO: this needs to be simplified:
 
@@ -757,6 +748,9 @@ patterns = [
     (r'^Contributors?\:[,\.]?$', 'JUNK'),
     (r'^Version$', 'JUNK'),
 
+    # JUNK from binary
+    (r'^x1b|1H$', 'JUNK'),
+
     ############################################################################
     # Nouns and proper Nouns
     ############################################################################
@@ -1113,7 +1107,6 @@ patterns = [
     # EPFL-LRC/ICA
     (r'^[A-Z]{3,6}-[A-Z]{3,6}/[A-Z]{3,6}', 'NNP'),
 
-
     ############################################################################
     # Named entities: companies, groups, universities, etc
     ############################################################################
@@ -1446,11 +1439,11 @@ patterns = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|info|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|nl|au|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions: there are so main TLD these days!
     # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|nl|au|biz)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
@@ -2009,10 +2002,16 @@ grammar = """
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
 
     # Copyright (c) 2015, Contributors
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22793
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22791
+
+    # Copyright 1996, 1997 Linux International.
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
     # Copyright (c) 2017 odahcam
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22791
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN> <ALLRIGHTRESERVED>?} #22793
+
+    # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
+    COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -2346,10 +2345,10 @@ grammar = """
 
 """
 
-
 ################################################################################
 # MAIN CLEANUP ENTRY POINTS
 ################################################################################
+
 
 def refine_copyright(c):
     """
@@ -2433,7 +2432,6 @@ def refine_names(s, prefixes):
     s = s.strip()
     return s
 
-
 ################################################################################
 # COPYRIGHTS CLEANUPS
 ################################################################################
@@ -2469,7 +2467,6 @@ PREFIXES = frozenset([
     '<p>',
 ])
 
-
 COPYRIGHTS_SUFFIXES = frozenset([
     'copyright',
     '.',
@@ -2483,7 +2480,6 @@ COPYRIGHTS_SUFFIXES = frozenset([
     'all',
     'some',
 ])
-
 
 # Set of statements that get detected and are junk/false positive
 # note: this must be lowercase and be kept to a minimum.
@@ -2586,7 +2582,6 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright from license',
 ])
 
-
 ################################################################################
 # AUTHORS CLEANUPS
 ################################################################################
@@ -2668,7 +2663,6 @@ HOLDERS_PREFIXES = frozenset(set.union(
     ])
 ))
 
-
 HOLDERS_PREFIXES_WITH_ALL = HOLDERS_PREFIXES.union(set(['all']))
 
 HOLDERS_SUFFIXES = frozenset([
@@ -2696,7 +2690,6 @@ HOLDERS_SUFFIXES = frozenset([
     'a',
 ])
 
-
 # these final holders are ignored.
 HOLDERS_JUNK = frozenset([
     'a href',
@@ -2716,10 +2709,10 @@ HOLDERS_JUNK = frozenset([
     'author',
 ])
 
-
 ################################################################################
 # TEXT POST PROCESSING and CLEANUP
 ################################################################################
+
 
 def remove_dupe_copyright_words(c):
     # from .net assemblies
@@ -2953,10 +2946,10 @@ def strip_balanced_edge_parens(s):
             return c
     return s
 
-
 ################################################################################
 # CANDIDATE LINES SELECTION
 ################################################################################
+
 
 remove_non_chars = re.compile(r'[^a-z0-9]').sub
 
@@ -3053,26 +3046,29 @@ def candidate_lines(numbered_lines):
             candidates_clear()
             in_copyright = 0
             previous_chars = None
-            continue
 
         elif is_candidate(prepped):
             # the state is now "in copyright"
             in_copyright = 2
             candidates_append(numbered_line)
+
             previous_chars = chars_only
             if TRACE: logger_debug('   candidate_lines: line is candidate')
+
 
         elif 's>' in line:
             # this is for debian-style <s></s> copyright name tags
             # the state is now "in copyright"
             in_copyright = 2
             candidates_append(numbered_line)
+
             previous_chars = chars_only
             if TRACE: logger_debug('   candidate_lines: line is <s></s>candidate')
 
         elif in_copyright > 0:
             if ((not chars_only)
             and (not previous_chars.endswith(('copyright', 'copyrights', 'copyrightsby', 'copyrightby',)))):
+
                 # completely empty or only made of punctuations
                 if TRACE:
                     cands = list(candidates)
@@ -3082,8 +3078,8 @@ def candidate_lines(numbered_lines):
                 candidates_clear()
                 in_copyright = 0
                 previous_chars = None
-            else:
 
+            else:
                 candidates_append(numbered_line)
                 # and decrement our state
                 in_copyright -= 1
@@ -3106,10 +3102,10 @@ def candidate_lines(numbered_lines):
 
         yield list(candidates)
 
-
 ################################################################################
 # TEXT PRE PROCESSING
 ################################################################################
+
 
 # this catches tags but not does not remove the text inside tags
 remove_tags = re.compile(
@@ -3133,6 +3129,7 @@ def strip_markup(text, dedeb=True):
         return text.replace(u'</s>', u'').replace(u'<s>', u'').replace(u'<s/>', u'')
     else:
         return text
+
 
 # this catches the common C-style percent string formatting codes
 remove_printf_format_codes = re.compile(r' [\#\%][a-zA-Z] ').sub

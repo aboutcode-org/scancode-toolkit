@@ -3,10 +3,14 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2002
+  - Copyright 2002 Read
   - Copyright IBM Corporation 2007
 holders:
+  - Read
   - IBM Corporation
 holders_summary:
   - value: IBM Corporation
     count: 1
+  - value: Read
+    count: 1
+
