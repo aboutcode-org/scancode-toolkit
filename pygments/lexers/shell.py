@@ -233,7 +233,7 @@ class BashSessionLexer(ShellSessionBaseLexer):
     _ps1rgx = re.compile(
         r'^((?:(?:\[.*?\])|(?:\(\S+\))?(?:| |sh\S*?|\w+\S+[@:]\S+(?:\s+\S+)' \
         r'?|\[\S+[@:][^\n]+\].+))\s*[$#%]\s*)(.*\n?)')
-    _ps2 = '>'
+    _ps2 = '> '
 
 
 class BatchLexer(RegexLexer):
