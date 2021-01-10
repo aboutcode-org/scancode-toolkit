@@ -39,6 +39,7 @@ packaging==20.4
 patch==1.16
 pdfminer.six==20181108
 pefile==2019.4.18
+pip==20.2.3
 pkginfo==1.5.0.1
 pluggy==0.12.0
 plugincode==20.9
@@ -53,6 +54,7 @@ PyYAML==3.12
 rdflib==4.2.1
 requests==2.18.4
 saneyaml==0.4
+setuptools==50.3.0
 six==1.12.0
 sortedcontainers==2.0.5
 soupsieve==1.9.2
@@ -66,5 +68,6 @@ urllib3==1.22
 urlpy==0.5
 wcwidth==0.1.7
 webencodings==0.5
+wheel==0.35.1
 xmltodict==0.11.0
 zipp==0.5.1
