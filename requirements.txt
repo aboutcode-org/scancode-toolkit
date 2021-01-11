@@ -47,7 +47,7 @@ ply==3.9
 publicsuffix2==2.20191221
 pyahocorasick==1.4.0
 pycryptodome==3.6.1
-Pygments==2.4.2
+Pygments==2.7.3
 pymaven-patch==0.2.9
 pyparsing==2.4.0
 PyYAML==3.12
@@ -61,7 +61,7 @@ soupsieve==1.9.2
 spdx-tools==0.6.1
 text-unidecode==1.2
 toml==0.10.0
-typecode==20.10.12
+typecode==21.1.9.1
 typecode-libmagic==5.39.1.1
 typing==3.6.4
 urllib3==1.22
