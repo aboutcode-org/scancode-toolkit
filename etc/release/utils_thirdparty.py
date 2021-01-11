@@ -29,6 +29,7 @@ import tempfile
 import time
 
 import attr
+import license_expression
 import packageurl
 import utils_pip_compatibility_tags
 import utils_pypi_supported_tags
@@ -93,7 +94,6 @@ TRACE = False
 
 # Supported environments
 PYTHON_VERSIONS = '36', '37', '38', '39',
-PYTHON_DOT_VERSIONS = tuple('.'.join(v) for v in PYTHON_VERSIONS)
 
 ABIS_BY_PYTHON_VERSION = {
     '36':['cp36', 'cp36m'],
@@ -142,14 +142,21 @@ PYPI_SIMPLE_URL = 'https://pypi.org/simple'
 
 LICENSEDB_API_URL = 'https://scancode-licensedb.aboutcode.org'
 
+LICENSING = license_expression.Licensing()
+
 ################################################################################
 #
-# main entry point
+# Fetch remote wheels and sources locally
 #
 ################################################################################
 
 
-def fetch_wheels(environment=None, requirements_file='requirements.txt', dest_dir=THIRDPARTY_DIR):
+def fetch_wheels(
+    environment=None,
+    requirements_file='requirements.txt',
+    allow_unpinned=False,
+    dest_dir=THIRDPARTY_DIR,
+):
     """
     Download all of the wheel of packages listed in the `requirements_file`
     requirements file into `dest_dir` directory.
@@ -157,20 +164,35 @@ def fetch_wheels(environment=None, requirements_file='requirements.txt', dest_di
     Only get wheels for the `environment` Enviromnent constraints. If the
     provided `environment` is None then the current Python interpreter
     environment is used implicitly.
+
+    Only accept pinned requirements (e.g. with a version) unless allow_unpinned
+    is True.
+
     Use direct downloads from our remote repo exclusively.
     Yield tuples of (PypiPackage, error) where is None on success
     """
     missed = []
-    rrp = list(get_required_remote_packages(requirements_file))
 
+    rrp = list(get_required_remote_packages(
+        requirements_file=requirements_file,
+        allow_unpinned=allow_unpinned,
+    ))
+    fetched_filenames = set()
     for name, version, package in rrp:
         if not package:
             missed.append((name, version,))
             yield None, f'Missing package in remote repo: {name}=={version}'
 
         else:
-            fetched = package.fetch_wheel(environment=environment, dest_dir=dest_dir)
-            error = f'Failed to fetch' if not fetched else None
+            fetched_filename = package.fetch_wheel(environment=environment, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
+            if fetched_filename:
+                fetched_filenames.add(fetched_filename)
+                error = None
+            else:
+                if fetched_filename in fetched_filenames:
+                    error = None
+                else:
+                    error = f'Failed to fetch'
             yield package, error
 
     if missed:
@@ -183,18 +205,31 @@ def fetch_wheels(environment=None, requirements_file='requirements.txt', dest_di
                 print(pv)
 
 
-def fetch_sources(requirements_file='requirements.txt', dest_dir=THIRDPARTY_DIR,):
+def fetch_sources(
+    requirements_file='requirements.txt',
+    allow_unpinned=False,
+    dest_dir=THIRDPARTY_DIR,
+):
     """
     Download all of the dependent package sources listed in the `requirement`
     requirements file into `dest_dir` directory.
 
     Use direct downloads to achieve this (not pip download). Use only the
-    packages found in our remote repo. Yield tuples of
-    (PypiPackage, error message) for each package where error message will empty on
-    success
+    packages found in our remote repo.
+
+    Only accept pinned requirements (e.g. with a version) unless allow_unpinned
+    is True.
+
+    Yield tuples of (PypiPackage, error message) for each package where error
+    message will empty on success.
     """
     missed = []
-    rrp = list(get_required_remote_packages(requirements_file))
+
+    rrp = list(get_required_remote_packages(
+        requirements_file=requirements_file,
+        allow_unpinned=allow_unpinned,
+    ))
+
     for name, version, package in rrp:
         if not package:
             missed.append((name, version,))
@@ -207,26 +242,6 @@ def fetch_sources(requirements_file='requirements.txt', dest_dir=THIRDPARTY_DIR,
             fetched = package.fetch_sdist(dest_dir=dest_dir)
             error = f'Failed to fetch' if not fetched else None
             yield package, error
-
-
-def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
-    """
-    Fetch the binary wheel for package `name` and `version` and save in
-    `dest_dir`. Use the provided `environment` Environment to determine which
-    specific wheel to fetch.
-
-    Return the fetched wheel file name on success or None if it was not fetched.
-    Trying fetching from our own remote repo, then from PyPI.
-    """
-    wheel_file = None
-    remote_package = get_remote_package(name, version)
-    if remote_package:
-        wheel_file = remote_package.fetch_wheel(environment, dest_dir)
-    if not wheel_file:
-        pypi_package = get_pypi_package(name, version)
-        if pypi_package:
-            wheel_file = pypi_package.fetch_wheel(environment, dest_dir)
-    return wheel_file
 
 ################################################################################
 #
@@ -427,7 +442,7 @@ class Distribution(NameVer):
         """
         Return a Package URL string of self.
         """
-        return get_purl(attr.asdict(self)).to_string()
+        return str(packageurl.PackageURL(**self.purl_identifiers()))
 
     @property
     def download_url(self):
@@ -549,9 +564,8 @@ class Distribution(NameVer):
 
     def purl_identifiers(self, skinny=False):
         """
-        Return a mapping of non-empty identifier name/values for each each purl
-        fields.
-        If skinny is True, only inlucde type, namespace and name.
+        Return a mapping of non-empty identifier name/values for the purl
+        fields. If skinny is True, only inlucde type, namespace and name.
         """
         identifiers = dict(
             type=self.type,
@@ -588,28 +602,6 @@ class Distribution(NameVer):
         )
 
         return {k: v for k, v in sorted(identifiers.items()) if v}
-
-    def quality_index(self):
-        """
-        Return an opaque value suitable to sort distributions from the lowest to
-        the highest data quality. Quality is defined by the presence of some
-        fields that are more important than others.
-        """
-        other_fields = [
-            x for x in [
-                self.description,
-                self.primary_language,
-                self.notes,
-                self.notice_text,
-                self.extra_data,
-            ] if x
-        ]
-        return sum([
-            30 if self.license_expression else 0,
-            20 if self.copyright else 0,
-            5 if self.homepage_url else 0,
-            len(other_fields)
-        ])
 
     def has_key_metadata(self):
         """
@@ -661,13 +653,30 @@ class Distribution(NameVer):
         Save a .ABOUT file to `dest_dir`. Include a .NOTICE file if there is a
         notice_text.
         """
-        with open(os.path.join(dest_dir, self.about_filename), 'w') as fo:
-            fo.write(saneyaml.dump(self.to_about()))
+
+        def save_if_modified(location, content):
+            if os.path.exists(location):
+                with open(location) as fi:
+                    existing_content = fi.read()
+                if existing_content == content:
+                    return False
+
+            print(f'Saving ABOUT (and NOTICE) files for: {self}')
+            with open(location, 'w') as fo:
+                fo.write(content)
+            return True
+
+        save_if_modified(
+            location=os.path.join(dest_dir, self.about_filename),
+            content=saneyaml.dump(self.to_about()),
+        )
 
         notice_text = self.notice_text and self.notice_text.strip()
         if notice_text:
-            with open(os.path.join(dest_dir, self.notice_filename), 'w') as fo:
-                fo.write(notice_text)
+            save_if_modified(
+                location=os.path.join(dest_dir, self.notice_filename),
+                content=notice_text,
+            )
 
     def load_about_data(self, about_filename_or_data=None, dest_dir=THIRDPARTY_DIR):
         """
@@ -727,6 +736,64 @@ class Distribution(NameVer):
                 print(f'Failed to fetch NOTICE file: {self.notice_download_url}')
         return self.load_about_data(about_data)
 
+    def set_checksums(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Update self with checksums computed to this dist filename is `dest_dir`.
+        """
+        dist_loc = os.path.join(dest_dir, self.filename)
+        if os.path.exists(dist_loc):
+            checksums = multi_checksums(dist_loc, checksum_names=('md5', 'sha1',))
+            self.update(checksums, overwrite=True)
+
+    def get_license_keys(self):
+        return LICENSING.license_keys(self.license_expression, unique=True, simple=True)
+
+    def fetch_license_files(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Fetch license files is missing in `dest_dir`.
+        Return True if license files were fetched.
+        """
+        paths_or_urls = get_remote_repo().links
+        errors = []
+        extra_lic_names = [l.get('file') for l in self.extra_data.get('licenses', {})]
+        extra_lic_names += [self.extra_data.get('license_file')]
+        extra_lic_names = [ln for ln in extra_lic_names  if ln]
+        lic_names = [ f'{key}.LICENSE' for key in self.get_license_keys()]
+        for filename  in lic_names + extra_lic_names:
+            floc = os.path.join(dest_dir, filename)
+            if os.path.exists(floc):
+                continue
+
+            try:
+                # try remotely first
+                lic_url = get_link_for_filename(
+                    filename=filename, paths_or_urls=paths_or_urls)
+
+                fetch_and_save_path_or_url(
+                    filename=filename,
+                    dest_dir=dest_dir,
+                    path_or_url=lic_url,
+                    as_text=True,
+                )
+                print(f'Fetched license from {lic_url}')
+
+            except:
+                try:
+                    # try licensedb second
+                    lic_url = f'{LICENSEDB_API_URL}/{filename}'
+                    fetch_and_save_path_or_url(
+                        filename=filename,
+                        dest_dir=dest_dir,
+                        path_or_url=lic_url,
+                        as_text=True,
+                    )
+                    print(f'Fetched license from {lic_url}')
+
+                except:
+                    errors.append(f'No text for license {filename} from {self}')
+
+        return errors
+
     def extract_pkginfo(self, dest_dir=THIRDPARTY_DIR):
         """
         Return the text of the first PKG-INFO or METADATA file found in the
@@ -780,7 +847,10 @@ class Distribution(NameVer):
         return self.update(dist.get_updatable_data())
 
     def get_updatable_data(self):
-        return {k: v for k, v in self.to_dict().items() if k in self.updatable_fields}
+        return {
+            k: v for k, v in self.to_dict().items()
+            if k in self.updatable_fields
+        }
 
     def update(self, data, overwrite=False, keep_extra=True):
         """
@@ -1218,36 +1288,32 @@ class PypiPackage(NameVer):
 
         raise Exception(f'More than one PypiPackage with {name}=={version}')
 
-    def fetch_wheel(self, environment=None, dest_dir=THIRDPARTY_DIR):
+    def fetch_wheel(self, environment=None, fetched_filenames=None, dest_dir=THIRDPARTY_DIR):
         """
         Download a binary wheel of this package matching the `environment`
         Enviromnent constraints into `dest_dir` directory.
 
-        Return the wheel file name if was fetched, None otherwise.
+        Return the wheel filename if it was fetched, None otherwise.
 
         If the provided `environment` is None then the current Python
         interpreter environment is used implicitly.
         """
         fetched_wheel_filename = None
-
+        fetched_filenames = fetched_filenames if fetched_filenames is not None else set()
         for wheel in self.get_supported_wheels(environment):
+            if wheel.filename not in fetched_filenames:
+                print(f'{self.name}=={self.version} : Fetching wheel: {wheel.filename}')
+                fetch_and_save_path_or_url(
+                    filename=wheel.filename,
+                    path_or_url=wheel.path_or_url,
+                    dest_dir=dest_dir,
+                    as_text=False,
+                )
+                fetched_filenames.add(wheel.filename)
+                fetched_wheel_filename = wheel.filename
 
-            print(
-                'Fetching environment-supported wheel for:',
-                self.name, self.version,
-                '--> filename:', wheel.filename,
-            )
-
-            fetch_and_save_path_or_url(
-                filename=wheel.filename,
-                path_or_url=wheel.path_or_url,
-                dest_dir=dest_dir,
-                as_text=False,
-            )
-
-            fetched_wheel_filename = wheel.filename
-            # TODO: what if there is more than one?
-            break
+                # TODO: what if there is more than one?
+                break
 
         return fetched_wheel_filename
 
@@ -1278,13 +1344,14 @@ class PypiPackage(NameVer):
         shared by several packages: therefore this would be done elsewhere in a
         function that is aware of all used licenses.
         """
-        for to_delete in self.wheels + [self.dist]:
+        for to_delete in self.wheels + [self.sdist]:
             if not to_delete:
                 continue
             tdfn = to_delete.filename
             for deletable in [tdfn, f'{tdfn}.ABOUT', f'{tdfn}.NOTICE']:
                 target = os.path.join(dest_dir, deletable)
                 if os.path.exists(target):
+                    print(f'Deleting outdated {target}')
                     fileutils.delete(target)
 
     @classmethod
@@ -1389,10 +1456,6 @@ class Environment:
         default=attr.Factory(list),
         metadata=dict(help='List of platform tags supported by this environment.'),
     )
-
-    @property
-    def python_dot_version(self):
-        return '.'.join(self.python_version)
 
     @classmethod
     def from_pyver_and_os(cls, python_version, operating_system):
@@ -1792,16 +1855,23 @@ def fetch_content_from_path_or_url_through_cache(path_or_url, as_text=True, cach
     Note: the `cache` argument is a global, though it does not really matter
     since it does not hold any state which is only kept on disk.
     """
-    return cache.get(path_or_url=path_or_url, as_text=as_text)
+    if cache:
+        return cache.get(path_or_url=path_or_url, as_text=as_text)
+    else:
+        return get_file_content(path_or_url=path_or_url, as_text=as_text)
 
 
-def fetch_and_save_path_or_url(filename, dest_dir, path_or_url, as_text=True):
+def fetch_and_save_path_or_url(filename, dest_dir, path_or_url, as_text=True, through_cache=True):
     """
     Return the content from fetching the `filename` file name at URL or path
     and save to `dest_dir`. Raise an Exception on errors. Treats the content as
     text if as_text is True otherwise as treat as binary.
     """
-    content = fetch_content_from_path_or_url_through_cache(path_or_url, as_text)
+    if through_cache:
+        content = fetch_content_from_path_or_url_through_cache(path_or_url, as_text)
+    else:
+        content = fetch_content_from_path_or_url_through_cache(path_or_url, as_text, cache=None)
+
     output = os.path.join(dest_dir, filename)
     wmode = 'w' if as_text else 'wb'
     with open(output, wmode) as fo:
@@ -1897,13 +1967,12 @@ def fetch_wheels_for_packages_and_envts(
     """
 
     missing_to_build = []
+    fetched_filenames = set()
     for package, envt in packages_and_envts:
-        filename = package.fetch_wheel(environment=envt, dest_dir=dest_dir)
-        if not filename:
-            missing_to_build.append((package, envt))
-            print(
-                f'Wheel not found for {package.name}=={package.version} '
-                f'on {envt.operating_system} for Python {envt.python_version}')
+        filename = package.fetch_wheel(
+            environment=envt, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
+        if filename:
+            fetched_filenames.add(filename)
 
     return missing_to_build
 
@@ -1914,7 +1983,7 @@ def build_missing_wheels(
     dest_dir=THIRDPARTY_DIR,
 ):
     """
-    Build all wheels in a list of tuple (Package, Environmentt) and save in
+    Build all wheels in a list of tuple (Package, Environment) and save in
     `dest_dir`. Return a list of tuple (Package, Environment), and a list of
     built wheel filenames.
     """
@@ -1928,7 +1997,7 @@ def build_missing_wheels(
     for package, pkg_envts in packages_and_envts:
 
         envts = [envt for _pkg, envt in pkg_envts]
-        python_dot_versions = sorted(set(e.python_dot_version for e in envts))
+        python_versions = sorted(set(e.python_version for e in envts))
         operating_systems = sorted(set(e.operating_system for e in envts))
         built = None
         try:
@@ -1936,11 +2005,12 @@ def build_missing_wheels(
                 requirements_specifier=package.specifier,
                 with_deps=False,
                 build_remotely=build_remotely,
-                python_dot_versions=python_dot_versions,
+                python_versions=python_versions,
                 operating_systems=operating_systems,
                 verbose=False,
                 dest_dir=dest_dir,
             )
+            print('.')
         except Exception as e:
             import traceback
             print('#############################################################')
@@ -1961,37 +2031,6 @@ def build_missing_wheels(
                 built_filenames.append(bfn)
 
     return not_built, built_filenames
-
-
-def delete_outdated_package_files(dest_dir=THIRDPARTY_DIR):
-    """
-    Keep only the latest version of any PypiPackage found in `dest_dir`.
-    Delete wheels, sdists and ABOUT files for older versions.
-    """
-    local_packages = get_local_packages(directory=dest_dir)
-    key = operator.attrgetter('name')
-    package_versions_by_name = itertools.groupby(local_packages, key=key)
-    for name, package_versions in package_versions_by_name:
-        for outdated in PypiPackage.get_outdated_versions(name, package_versions):
-            outdated.delete_files(dest_dir)
-
-
-def delete_unused_license_and_notice_files(dest_dir=THIRDPARTY_DIR):
-    """
-    Using .ABOUT files found in `dest_dir` remove any license file found in
-    `dest_dir` that is not referenced in any .ABOUT file.
-    """
-    referenced_license_files = set()
-
-    license_files = set([f for f in os.listdir(dest_dir) if f.endswith('.LICENSE')])
-
-    for _about_file, about_data in get_about_datas(dest_dir):
-        lfns = get_license_and_notice_filenames(about_data)
-        referenced_license_files.update(lfns)
-
-    unused_license_files = license_files.difference(referenced_license_files)
-    for unused in unused_license_files:
-        fileutils.delete(os.path.join(dest_dir, unused))
 
 ################################################################################
 #
@@ -2115,12 +2154,13 @@ def get_required_packages(required_name_versions):
     return remote_packages, pypi_packages
 
 
-def get_required_remote_packages(requirements_file='requirements.txt'):
+def get_required_remote_packages(requirements_file='requirements.txt', allow_unpinned=False):
     """
     Yield tuple of (name, version, PypiPackage) for packages listed in the
     `requirements_file` requirements file and found in our remote repo exclusively.
     """
-    required_name_versions = load_requirements(requirements_file=requirements_file)
+    required_name_versions = load_requirements(
+        requirements_file=requirements_file, force_pinned=not allow_unpinned)
     remote_repo = get_remote_repo()
     return (
         (name, version, remote_repo.get_package(name, version))
@@ -2157,292 +2197,92 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
 
 ################################################################################
 #
-# ABOUT and license files functions
+# Functions to update or fetch ABOUT and license files
 #
 ################################################################################
 
 
-def get_about_datas(dest_dir=THIRDPARTY_DIR):
+def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
     """
-    Yield ABOUT data mappings from ABOUT files found in `dest_dir`
+    Given a thirdparty dir, add missing ABOUT. LICENSE and NOTICE files using
+    best efforts:
+
+    - use existing ABOUT files
+    - try to load existing remote ABOUT files
+    - derive from existing distribution with same name and latest version that
+      would have such ABOUT file
+    - extract ABOUT file data from distributions PKGINFO or METADATA files
+    - TODO: make API calls to fetch package data from DejaCode
+
+    The process consists in load and iterate on every package distributions,
+    collect data and then acsk to save.
     """
-    about_files = [f for f in os.listdir(dest_dir) if f.endswith('.ABOUT')]
 
-    for about_file in about_files:
-        with open(os.path.join(dest_dir, about_file)) as fi:
-            about_data = saneyaml.load(fi.read())
-            yield about_file, about_data
-
-
-def fetch_and_save_about_data(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, load local then fetch remote ABOUT and NOTICE data
-    then save locally.
-    """
-    # We assume that available ABOUT files from our remote repo were fetched
-    local_packages = get_local_packages(directory=dest_dir)
-    for p in local_packages:
-        for ld in p.get_distributions():
-            ld.load_about_data()
-            ld.load_remote_about_data()
-            if True:
-                print(f'Saving ABOUT (and NOTICE) files for: {ld}')
-            ld.save_about_and_notice_files(dest_dir)
-
-
-def add_or_update_about_files(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, add missing ABOUT and NOTICE files best efforts:
-    - derive from existing distribution with same name and latest version that would have such ABOUT file
-
-    TODO:
-    - get ABOUT file data from distributions PKGINFO or METADATA files
-    - make API calls to fetch package data from DejaCode
-    """
-    # We assume that available ABOUT files from our remote repo were fetched
     local_packages = get_local_packages(directory=dest_dir)
     remote_repo = get_remote_repo()
 
-    # load the data
-    for p in local_packages:
-        for ld in p.get_distributions():
-            ld.load_about_data()
-
-    # then derive or create
     for local_package in local_packages:
         for local_dist in local_package.get_distributions():
+            local_dist.load_about_data(dest_dir=dest_dir)
+            local_dist.set_checksums(dest_dir=dest_dir)
+
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
+                local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir)
                 continue
+
+            # lets try to fetch remotely
+            local_dist.load_remote_about_data()
+
+            # if has key data we may look to improve later, but we can move on
+            if local_dist.has_key_metadata():
+                local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir)
+                continue
+
             # try to get a latest version of the same package that is not our version
             other_remote_packages = [
                 p for p in remote_repo.get_versions(local_package.name)
                 if p.version != local_package.version
             ]
+
             latest_version = other_remote_packages and other_remote_packages[-1]
-            if not latest_version:
-                # try to get data from pkginfo (no license though)
-                local_dist.load_pkginfo_data(dest_dir=dest_dir)
-                if TRACE:
-                    print(f'Saving ABOUT (and NOTICE) files for: {local_dist}')
-                local_dist.save_about_and_notice_files(dest_dir)
+            if latest_version:
+                latest_dists = list(latest_version.get_distributions())
+                for remote_dist in latest_dists:
+                    remote_dist.load_remote_about_data()
+                    if not remote_dist.has_key_metadata():
+                        # there is not much value to get other data if we are missing the key ones
+                        continue
+                    else:
+                        local_dist.update_from_other_dist(remote_dist)
+                        # if has key data we may look to improve later, but we can move on
+                        if local_dist.has_key_metadata():
+                            break
 
-                # try to get data from dejacode
-                continue
-
-            latest_dists = list(latest_version.get_distributions())
-            for remote_dist in latest_dists:
-                remote_dist.load_remote_about_data()
-                if not remote_dist.has_key_metadata():
-                    # there is not much value to get other data if we are missing the key ones
+                # if has key data we may look to improve later, but we can move on
+                if local_dist.has_key_metadata():
+                    local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                    local_dist.fetch_license_files(dest_dir=dest_dir)
                     continue
-                else:
-                    local_dist.update_from_other_dist(remote_dist)
 
-                if not local_dist.has_key_metadata():
-                    print(f'Unable to add essential ABOUT data for: {local_dist}')
+            # try to get data from pkginfo (no license though)
+            local_dist.load_pkginfo_data(dest_dir=dest_dir)
 
-                checksums = get_checksums(local_dist, dest_dir=dest_dir)
-                local_dist.update(checksums)
-
-                print(f'Saving ABOUT (and NOTICE) files for: {local_dist}')
+            # FIXME: save as this is the last resort for now in all cases
+            if local_dist.has_key_metadata() or not local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir)
-                break
+                local_dist.fetch_license_files(dest_dir)
 
+            # TODO: try to get data from dejacode
 
-def get_checksums(dist, dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, fix ABOUT files checksums
-    """
-    dist_loc = os.path.join(dest_dir, dist.filename)
-    return multi_checksums(dist_loc, checksum_names=('md5', 'sha1',))
-
-
-def fix_about_files_checksums(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, fix ABOUT files checksums
-    """
-    for about_file, about_data in get_about_datas(dest_dir):
-        resource_loc = os.path.join(dest_dir, about_data.get('about_resource'))
-        checksums = multi_checksums(resource_loc, checksum_names=('md5', 'sha1',))
-
-        for k, v in checksums.items():
-            about_data[f'checksum_{k}'] = v
-
-        with open(about_file, 'w') as fo:
-            fo.write(saneyaml.dump(about_data))
-
-
-def fix_about_purl(package_type='pypi', dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir, fix ABOUT files package_url
-    """
-    for about_file, about_data in get_about_datas(dest_dir):
-
-        name = about_data.get('name')
-        version = about_data.get('version')
-        if not version or not name:
-            print(
-                f'Failed to create purl for ABOUT {about_file}: '
-                f'missing name or version: {name}@{version}'
-            )
-            continue
-
-        new_purl = str(packageurl.PackageURL(
-            type=package_type, name=name, version=version))
-
-        purl = about_data.get('package_url')
-        if purl and purl.strip() != new_purl:
-            al = os.path.abspath(os.path.join(dest_dir, about_file))
-            print(
-                f'Failed to update ABOUT file://{al} purl: '
-                f'inconsistent existing purl: {purl} '
-                f'with generated url: {new_purl}'
-            )
-            continue
-
-        with open(about_file, 'w') as fo:
-            fo.write(saneyaml.dump(about_data))
-
-
-def add_referenced_licenses_and_notices(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir that is assumed to be in sync with the
-    REMOTE_FIND_LINKS repo, fetch all license and notice files.
-    """
-
-    not_found = []
-
-    # fetch any remote licenses then  fetch from licensedb
-    paths_or_urls = get_paths_or_urls(links_url=REMOTE_LINKS_URL)
-
-    errors = fetch_missing_referenced_license_texts_and_notices_remotely(
-        dest_dir=dest_dir, paths_or_urls=paths_or_urls)
-    not_found.extend(errors)
-
-    errors = fetch_missing_referenced_license_texts_from_licensedb(dest_dir)
-    not_found.extend(errors)
-
-    # TODO: also make API calls?
-
-    for nf in not_found:
-        print(f'LICENSE or NOTICE file not found: {nf}')
-
-
-def fetch_missing_referenced_license_texts_and_notices_remotely(dest_dir, paths_or_urls):
-    """
-    Download to `dest_dir` all the .LICENSE and .NOTICE files referenced in all
-    the .ABOUT files in `dest_dir` using URLs or path from the `paths_or_urls`
-    list.
-    """
-    errors = []
-    for about_file, about_data in get_about_datas(dest_dir):
-        for lic_file in get_license_and_notice_filenames(about_data):
-            try:
-                lic_url = get_link_for_filename(
-                    filename=lic_file,
-                    paths_or_urls=paths_or_urls,
-                )
-
-                fetch_and_save_path_or_url(
-                    filename=lic_file,
-                    dest_dir=dest_dir,
-                    path_or_url=lic_url,
-                    as_text=True,
-                )
-            except Exception as e:
-                errors.append(f'Failed to fetch licenses for {about_file}: ' + str(e))
-                continue
-
-    return errors
-
-
-def fetch_missing_referenced_license_texts_from_licensedb(
-    dest_dir=THIRDPARTY_DIR,
-    licensedb_api_url=LICENSEDB_API_URL,
-):
-    """
-    Download to `dest_dir` all the .LICENSE files referenced in all the .ABOUT
-    files in `dest_dir` using the licensedb `licensedb_api_url`.
-    """
-    errors = []
-    for about_file, about_data in get_about_datas(dest_dir):
-        for license_key in get_license_keys(about_data):
-            ltext = fetch_and_save_license_text_from_licensedb(
-                license_key,
-                dest_dir,
-                licensedb_api_url,
-            )
-            if not ltext:
-                errors.append(f'No text for license {license_key} listed in {about_file}')
-
-    return errors
-
-
-def get_license_and_notice_filenames(about_data):
-    """
-    Return a list of license file names found in the `about_data` .ABOUT data
-    mapping.
-    """
-
-    license_files = [f'{l}.LICENSE' for l in get_license_keys(about_data)]
-    # add legacy
-    license_files.append(about_data.get('notice_file'))
-    license_files.append(about_data.get('license_file'))
-    # add licenses mapping
-    licenses = about_data.get('licenses', [])
-    license_files += [l.get('file') for l in licenses]
-    # remove dupes and empties
-    return sorted(set(f for f in license_files if f))
-
-
-def get_license_keys(about_data):
-    """
-    Return a list of license key found in the `about_data` .ABOUT data
-    mapping.
-    """
-    # collect all the license and notice files
-    # - first explicitly listed as licenses keys
-    licenses = about_data.get('licenses', [])
-    keys = [l.get('key') for l in licenses]
-    # - then implied key from the license expression
-    license_expression = about_data.get('license_expression', '')
-    keys += keys_from_expression(license_expression)
-    keys = [l for l in keys if l]
-    return sorted(set(keys))
-
-
-def keys_from_expression(license_expression):
-    """
-    Return a list of license keys from a `license_expression` string.
-    """
-    license_expression = ' '.join(license_expression.split())
-    cleaned = (license_expression
-        .lower()
-        .replace('(', ' ')
-        .replace(')', ' ')
-        .replace(' and ', ' ')
-        .replace(' or ', ' ')
-        .replace(' with ', ' ')
-    )
-    return sorted(set(cleaned.split()))
-
-
-def fetch_and_save_license_text_from_licensedb(
-    license_key,
-    dest_dir=THIRDPARTY_DIR,
-    licensedb_api_url=LICENSEDB_API_URL,
-):
-    """
-    Fetch and save the license text for `license_key` from the `licensedb_api_url`
-    """
-    filename = f'{license_key}.LICENSE'
-    api_url = f'{licensedb_api_url}/{filename}'
-    return fetch_and_save_path_or_url(filename, dest_dir, path_or_url=api_url, as_text=True)
+            if not local_dist.has_key_metadata():
+                print(f'Unable to add essential ABOUT data for: {local_dist}')
 
 ################################################################################
 #
-# pip-based functions running pip as if called from the command line
+# Functions to build new Python wheels including native on multiple OSes
 #
 ################################################################################
 
@@ -2474,105 +2314,11 @@ def call(args):
             raise Exception(stdout, stderr, returncode)
 
 
-def fetch_wheels_using_pip(
-        environment=None,
-        requirements_file='requirements.txt',
-        dest_dir=THIRDPARTY_DIR,
-        links_url=REMOTE_LINKS_URL,
-):
-    """
-    Download all dependent wheels for the `environment` Enviromnent constraints
-    in the `requirements_file` requirements file or package requirement into
-    `dest_dir` directory.
-
-    Use only the packages found in the `links_url` HTML page ignoring PyPI
-    packages unless `links_url` is None or empty in which case we use instead
-    the public PyPI packages.
-
-    If the provided `environment` is None then the current Python interpreter
-    environment is used implicitly.
-    """
-
-    options = [
-        'pip', 'download',
-        '--requirement', requirements_file,
-        '--dest', dest_dir,
-        '--only-binary=:all:',
-        '--no-deps',
-    ]
-
-    if links_url:
-        find_link = [
-            '--no-index',
-            '--find-links', links_url,
-        ]
-        options += find_link
-
-    if environment:
-        options += environment.get_pip_cli_options()
-
-    try:
-        call(options)
-    except:
-        print('Failed to run:')
-        print(' '.join(options))
-        raise
-
-
-def fetch_sources_using_pip(
-        requirements_file='requirements.txt',
-        dest_dir=THIRDPARTY_DIR,
-        links_url=REMOTE_LINKS_URL,
-):
-    """
-    Download all dependency source distributions for the `environment`
-    Enviromnent constraints in the `requirements_file` requirements file or
-    package requirement into `dest_dir` directory.
-
-    Use only the source packages found in the `links_url` HTML page ignoring
-    PyPI packages unless `links_url` is None or empty in which case we use
-    instead the public PyPI packages.
-
-    These items are fetched:
-        - source distributions
-    """
-
-    options = [
-        'pip', 'download',
-        '--requirement', requirements_file,
-        '--dest', dest_dir,
-        '--no-binary=:all:'
-        '--no-deps',
-    ] + [
-        # temporary workaround
-        '--only-binary=extractcode-7z',
-        '--only-binary=extractcode-libarchive',
-        '--only-binary=typecode-libmagic',
-    ]
-
-    if links_url:
-        options += [
-            '--no-index',
-            '--find-links', links_url,
-        ]
-
-    try:
-        call(options)
-    except:
-        print('Failed to run:')
-        print(' '.join(options))
-        raise
-
-################################################################################
-# Utility to build new Python wheel.
-################################################################################
-
-
 def build_wheels(
     requirements_specifier,
     with_deps=False,
     build_remotely=False,
-    python_dot_versions=PYTHON_DOT_VERSIONS,
+    python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
     verbose=False,
     dest_dir=THIRDPARTY_DIR,
@@ -2580,7 +2326,7 @@ def build_wheels(
     """
     Given a pip `requirements_specifier` string (such as package names or as
     name==version), build the corresponding binary wheel(s) for all
-    `python_dot_versions` and `operating_systems` combinations and save them
+    `python_versions` and `operating_systems` combinations and save them
     back in `dest_dir` and return a list of built wheel file names.
 
     Include wheels for all dependencies if `with_deps` is True.
@@ -2602,19 +2348,19 @@ def build_wheels(
         return build_wheels_remotely_on_multiple_platforms(
             requirements_specifier=requirements_specifier,
             with_deps=with_deps,
-            python_dot_versions=python_dot_versions,
+            python_versions=python_versions,
             operating_systems=operating_systems,
             verbose=verbose,
             dest_dir=dest_dir,
         )
-    else:
-        return []
+
+    return []
 
 
 def build_wheels_remotely_on_multiple_platforms(
     requirements_specifier,
     with_deps=False,
-    python_dot_versions=PYTHON_DOT_VERSIONS,
+    python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
     verbose=False,
     dest_dir=THIRDPARTY_DIR,
@@ -2622,7 +2368,7 @@ def build_wheels_remotely_on_multiple_platforms(
     """
     Given pip `requirements_specifier` string (such as package names or as
     name==version), build the corresponding binary wheel(s) including wheels for
-    all dependencies for all `python_dot_versions` and `operating_systems`
+    all dependencies for all `python_versions` and `operating_systems`
     combinations and save them back in `dest_dir` and return a list of built
     wheel file names.
     """
@@ -2640,6 +2386,7 @@ def build_wheels_remotely_on_multiple_platforms(
             'ROMP_PERSONAL_ACCESS_TOKEN and ROMP_USERNAME '
             'are required enironment variables.')
 
+    python_dot_versions = ['.'.join(pv) for pv in python_versions]
     python_cli_options = list(itertools.chain.from_iterable(
         ('--version', ver) for ver in python_dot_versions))
 
@@ -2728,6 +2475,7 @@ def build_wheels_locally_if_pure_python(
     return pure_built
 
 
+    # TODO:
 def optimize_wheel(wheel_filename, dest_dir=THIRDPARTY_DIR):
     """
     Optimize a wheel named `wheel_filename` in `dest_dir` such as renaming its
@@ -2793,6 +2541,26 @@ def extract_tar(location, dest_dir=THIRDPARTY_DIR,):
             if ti.type == tarfile.REGTYPE]
 
 
+def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
+    """
+    Fetch the binary wheel for package `name` and `version` and save in
+    `dest_dir`. Use the provided `environment` Environment to determine which
+    specific wheel to fetch.
+
+    Return the fetched wheel file name on success or None if it was not fetched.
+    Trying fetching from our own remote repo, then from PyPI.
+    """
+    wheel_file = None
+    remote_package = get_remote_package(name, version)
+    if remote_package:
+        wheel_file = remote_package.fetch_wheel(environment, dest_dir)
+    if not wheel_file:
+        pypi_package = get_pypi_package(name, version)
+        if pypi_package:
+            wheel_file = pypi_package.fetch_wheel(environment, dest_dir)
+    return wheel_file
+
+
 def add_or_upgrade_package(
         name,
         version=None,
@@ -2840,16 +2608,35 @@ def add_or_upgrade_package(
 
     return wheel_filenames
 
-################################################################################
+
+def check_about(dest_dir=THIRDPARTY_DIR):
+    try:
+        subprocess.check_output(f'bin/about check {dest_dir}'.split())
+    except subprocess.CalledProcessError as cpe:
+        print()
+        print('Invalid ABOUT files:')
+        print(cpe.output.decode('utf-8', errors='replace'))
 
 
-def get_purl(data):
+def find_problems(dest_dir=THIRDPARTY_DIR):
     """
-    Return a PackageURL build from discrete Package URL fields present in
-    the data mapping.
+    Print the problems found in `dest_dir`.
     """
-    purl_fields = {
-        k: v for k, v in data.items()
-        if k in packageurl._components
-    }
-    return packageurl.PackageURL(**purl_fields)
+
+    local_packages = get_local_packages(directory=dest_dir)
+
+    for package in local_packages:
+        if not package.sdist:
+            print(f'{package.name}=={package.version}: Missing source distribution.')
+        if not package.wheels:
+            print(f'{package.name}=={package.version}: Missing wheels.')
+
+        for dist in package.get_distributions():
+            dist.load_about_data(dest_dir=dest_dir)
+            abpth = os.path.abspath(os.path.join(dest_dir, dist.about_filename))
+            if not dist.has_key_metadata():
+                print(f'   Missing key ABOUT data in file://{abpth}')
+            if 'classifiers' in dist.extra_data:
+                print(f'   Dangling classifiers data in file://{abpth}')
+
+    check_about(dest_dir=dest_dir)
