@@ -17,13 +17,16 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import hashlib
-from pathlib import Path
 import os
 import sys
 
+from pathlib import Path
+
 import click
-from github_release_retry import github_release_retry as grr
+import requests
 import utils_thirdparty
+
+from github_release_retry import github_release_retry as grr
 
 """
 Create GitHub releases and upload files there.
@@ -47,7 +50,9 @@ def get_etag_md5(url):
     """
     Return the cleaned etag of URL `url` or None.
     """
-    etag = utils_thirdparty.get_remote_headers(url).get('ETag')
+    headers = utils_thirdparty.get_remote_headers(url)
+    headers = {k.lower(): v for k, v in headers.items()}
+    etag = headers .get('etag')
     if etag:
         etag = etag.strip('"').lower()
         return etag
@@ -69,30 +74,40 @@ def create_or_update_release_and_upload_directory(
     Upload all files found in the `directory` tree to that GitHub release.
     Retry API calls up to `retry_limit` time to work around instability the
     GitHub API.
+
+    Remote files that are not the same as the local files are deleted and re-
+    uploaded.
     """
-    base_url = f'https://github.com/{user}/{repo}/releases/{tag_name}'
-    urls_by_fn = {os.path.basename(l): l
-        for l in utils_thirdparty.get_paths_or_urls(links_url=base_url)
+    release_homepage_url = f'https://github.com/{user}/{repo}/releases/{tag_name}'
+
+    # scrape release page HTML for links
+    urls_by_filename = {os.path.basename(l): l
+        for l in utils_thirdparty.get_paths_or_urls(links_url=release_homepage_url)
     }
 
-    files_to_upload = []
+    # compute what is new, modified or unchanged
+    print(f'Compute which files is new, modified or unchanged in {release_homepage_url}')
+
+    new_to_upload = []
+    unchanged_to_skip = []
+    modified_to_delete_and_reupload = []
     for filename, pth, md5 in get_files(directory):
-        url = urls_by_fn.get(filename)
+        url = urls_by_filename.get(filename)
         if not url:
             print(f'{filename} content is NEW, will upload')
-            files_to_upload.append(pth)
+            new_to_upload.append(pth)
             continue
 
         out_of_date = get_etag_md5(url) != md5
         if out_of_date:
-            print(f'{url} content is CHANGED based on etag, will re-upload')
-            files_to_upload.append(pth)
+            print(f'{url} content is CHANGED based on md5 etag, will re-upload')
+            modified_to_delete_and_reupload.append(pth)
         else:
-            print(f'{url} content is IDENTICAL, skipping upload based on Etag')
+            # print(f'{url} content is IDENTICAL, skipping upload based on Etag')
+            unchanged_to_skip.append(pth)
+            print('.')
 
-    n = len(files_to_upload)
-    print(f'Publishing directory {directory} with {n} files to {base_url}')
-    api = grr.GithubApi(
+    ghapi = grr.GithubApi(
         github_api_url='https://api.github.com',
         user=user,
         repo=repo,
@@ -100,8 +115,30 @@ def create_or_update_release_and_upload_directory(
         retry_limit=retry_limit,
     )
 
+    # yank modified
+    print(
+        f'Unpublishing {len(modified_to_delete_and_reupload)} published but '
+        f'locally modified files in {release_homepage_url}')
+
+    response = ghapi.get_release_by_tag(tag_name)
+    if response.status_code != requests.codes.ok:  # NOQA
+        raise grr.UnexpectedResponseError(response)
+
+    release = grr.Release.from_json(response.content)
+
+    for pth in modified_to_delete_and_reupload:
+        filename = os.path.basename(pth)
+        asset_id = ghapi.find_asset_id_by_file_name(filename, release)
+        print (f'  Unpublishing file: {filename}).')
+        response = ghapi.delete_asset(asset_id)
+        if response.status_code != requests.codes.no_content:  # NOQA
+            raise Exception(f'failed asset deletion: {response}')
+
+    # finally upload new and modified
+    to_upload = new_to_upload + modified_to_delete_and_reupload
+    print(f'Publishing with {len(to_upload)} files to {release_homepage_url}')
     release = grr.Release(tag_name=tag_name, body=description)
-    grr.make_release(api, release, files_to_upload)
+    grr.make_release(ghapi, release, to_upload)
 
 
 TOKEN_HELP = (
@@ -126,7 +163,6 @@ TOKEN_HELP = (
     '-d', '--directory',
     help='The directory that contains files to upload to the release.',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False, resolve_path=True),
-    default='thirdparty',
     required=True,
 )
 @click.option(
