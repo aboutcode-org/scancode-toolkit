@@ -35,10 +35,10 @@ import utils_thirdparty
     show_default=True,
     help='Path to the thirdparty directory where wheels are built.',
 )
-@click.option('-p', '--python-dot-version',
-    type=click.Choice(utils_thirdparty.PYTHON_DOT_VERSIONS),
+@click.option('-p', '--python-version',
+    type=click.Choice(utils_thirdparty.PYTHON_VERSIONS),
     metavar='PYVER',
-    default=utils_thirdparty.PYTHON_DOT_VERSIONS,
+    default=utils_thirdparty.PYTHON_VERSIONS,
     show_default=True,
     multiple=True,
     help='Python version to use for this build.',
@@ -51,19 +51,19 @@ import utils_thirdparty
     show_default=True,
     help='OS to use for this build: one of linux, mac or windows.',
 )
-@click.option('--with-deps',
-    is_flag=True,
-    help='Also include all dependent wheels.',
-)
 @click.option('--build-remotely',
     is_flag=True,
     help='Build missing wheels remotely.',
+)
+@click.option('--with-deps',
+    is_flag=True,
+    help='Also include all dependent wheels.',
 )
 @click.help_option('-h', '--help')
 def build_wheels(
     requirement,
     thirdparty_dir,
-    python_dot_version,
+    python_version,
     operating_system,
     with_deps,
     build_remotely,
@@ -71,12 +71,12 @@ def build_wheels(
     """
     Build to THIRDPARTY_DIR all the wheels for the pip `--requirement`
     requirements SPECIFIER(s). Build wheels compatible with all the provided
-    `--python-dot-version` and `--operating_system`. Also build native remotely
-    wheels when `--build-remotely`.
+    `--python-dot-version` PYVER(s) and `--operating_system` OS(s). Also build
+    native wheels remotely when `--build-remotely`.
     """
     utils_thirdparty.build_wheels(
         requirements_specifier=requirement,
-        python_dot_versions=python_dot_version,
+        python_versions=python_version,
         operating_systems=operating_system,
         dest_dir=thirdparty_dir,
         build_remotely=build_remotely,
