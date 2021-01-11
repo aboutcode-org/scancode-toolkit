@@ -65,7 +65,6 @@ CLI_ARGS="$REQUIREMENTS"
 case "$1" in
     --help)       cli_help;;
     --clean)   CLI_ARGS=--clean;;
-    --cache)   CLI_ARGS=--cache;;
     --dev)     CLI_ARGS="$DEV_REQUIREMENTS";;
 esac
 

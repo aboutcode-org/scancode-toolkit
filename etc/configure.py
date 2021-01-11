@@ -191,7 +191,7 @@ def pip_install(req_args, quiet=False):
     else:
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-    cmd += ['install', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
+    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
     if quiet:
         cmd += ['-qq']
 
@@ -208,34 +208,32 @@ def pip_cache_wheels(requirement_files, quiet=False):
     if not quiet:
         print('* Downloading packages ...')
 
-    if on_win:
-        cmd = [CONFIGURED_PYTHON, '-m', 'pip']
-    else:
-        cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
-
-    cmd += [
-        'download', '--no-index',
-        '--find-links', THIRDPARTY_LINKS,
-        '--dest-dir', THIRDPARTY_DIR,
-    ]
-
-    if quiet:
-        cmd += ['-qq']
-
     for req_file in requirement_files:
+        if on_win:
+            cmd = [CONFIGURED_PYTHON, '-m', 'pip']
+        else:
+            cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
+
+        cmd += [
+            'download', '--no-index',
+            '--find-links', THIRDPARTY_LINKS,
+            '--dest', THIRDPARTY_DIR,
+        ]
+
+        if quiet:
+            cmd += ['-qq']
+
         cmd += ['--requirement', req_file]
 
-    call(cmd)
+        call(cmd)
 
 
 def get_pip_req_files(req_args):
     rfs = [f for f in req_args if f.startswith('requirements') and f.endswith('.txt')]
-    for rf in rfs:
-        print(f'Caching requiremets from {rf}')
     return rfs
 
 
-usage = '\nUsage: configure [--clean|--cache] <pip requirements arguments>\n'
+usage = '\nUsage: configure [--clean] [<pip requirement arguments>]\n'
 
 if __name__ == '__main__':
 
@@ -262,6 +260,15 @@ if __name__ == '__main__':
 
     THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
 
+    # no_cache = 'CONFIGURE_NO_CACHE' in os.environ
+    # if no_cache:
+    #     THIRDPARTY_DIR_OR_LINKS = THIRDPARTY_DIR
+    # else:
+    # if we have at least one wheel in THIRDPARTY_DIR, we assume we are offline
+    # otherwise we are online and use our remote links for pip operations
+    has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_DIR))
+    THIRDPARTY_DIR_OR_LINKS = THIRDPARTY_DIR if has_wheels else THIRDPARTY_LINKS
+
     # collect args
     ##################
     requirement_args = ['--requirement', 'requirements.txt']
@@ -271,11 +278,6 @@ if __name__ == '__main__':
         arg0 = args[0]
         if arg0 == '--clean':
             clean(ROOT_DIR)
-            sys.exit(0)
-        elif arg0 == '--cache':
-            # Cache wheels for speed
-            req_files = get_pip_req_files(requirement_args)
-            pip_cache_wheels(requirement_files=req_files, quiet=quiet)
             sys.exit(0)
 
         # use provided pip args instead of defaults
@@ -295,17 +297,17 @@ if __name__ == '__main__':
             'https://virtualenv.pypa.io/en/latest/installation.html#via-zipapp')
         sys.exit(1)
 
-    # if we have at least one wheel in THIRDPARTY_DIR, we assume we are offline
-    # otherwise we are online and use our remote links for pip operations
-    has_wheels = any(w.endswith('.whl') for w in os.listdir(THIRDPARTY_DIR))
-    THIRDPARTY_DIR_OR_LINKS = THIRDPARTY_DIR if has_wheels else THIRDPARTY_LINKS
-
     # Configure proper: create and activate virtualenv
     ###########################
     if not os.path.exists(CONFIGURED_PYTHON):
         create_virtualenv(root_dir=ROOT_DIR, venv_pyz=VIRTUALENV_PYZ_APP_LOC, quiet=quiet)
 
     activate_virtualenv()
+
+    # cache requirements
+    req_files = get_pip_req_files(requirement_args)
+    # pip_cache_wheels(requirement_files=req_files, quiet=quiet)
+
     # ... and installl
     pip_install(requirement_args, quiet=quiet)
 
