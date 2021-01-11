@@ -35,7 +35,7 @@ from utils_thirdparty import PypiPackage
     show_default=True,
     help='Path to the requirements file(s) to use for thirdparty packages.',
 )
-@click.option('-t', '--thirdparty-dir',
+@click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     metavar='DIR',
     default=utils_thirdparty.THIRDPARTY_DIR,
@@ -72,12 +72,12 @@ def bootstrap(
     sync_dejacode,
 ):
     """
-    Boostrap a thirdparty Python packages directory using pip requirements file(s).
+    Boostrap a thirdparty Python packages directory from pip requirements.
 
     Fetch or build to THIRDPARTY_DIR all the wheels and source distributions for
-    the pip `--requirement-file` requirements file(s). Build wheels compatible
-    with all the provided `--python-version` and `--operating_system`
-    defaulting to all supported combinations. Create or fetch .ABOUT and
+    the pip `--requirement-file` requirements FILE(s). Build wheels compatible
+    with all the provided `--python-version` PYVER(s) and `--operating_system`
+    OS(s) defaulting to all supported combinations. Create or fetch .ABOUT and
     .LICENSE files.
 
     Sources and wheels are first fetched from PyPI, then our remote repository.
@@ -98,9 +98,17 @@ def bootstrap(
     required_name_versions = set()
 
     for req_file in requirements_files:
-        nvs = utils_thirdparty.load_requirements(requirements_file=req_file)
+        nvs = utils_thirdparty.load_requirements(
+            requirements_file=req_file, force_pinned=False)
+
         required_name_versions.update(nvs)
 
+    print(f'PROCESSING {len(required_name_versions)} REQUIREMENTS in {len(requirements_files)} FILES')
+
+    # fetch all available wheels, keep track of missing
+    # start with local, then remote, then PyPI
+
+    print('==> COLLECTING ALREADY LOCALLY AVAILABLE REQUIRED WHEELS')
     # list of all the wheel filenames either pre-existing, fetched or built
     # updated as we progress
     available_wheel_filenames = []
@@ -109,11 +117,6 @@ def bootstrap(
         (p.name, p.version): p
         for p in utils_thirdparty.get_local_packages(directory=thirdparty_dir)
     }
-
-    # fetch all available wheels, keep track of missing
-    # start with local, then remote, then PyPI
-
-    print('\n===========> COLLECTING ALREADY LOCALLY AVAILABLE REQUIRED WHEELS')
 
     # list of (name, version, environment) not local and to fetch
     name_version_envt_to_fetch = []
@@ -125,12 +128,14 @@ def bootstrap(
             supported_wheels = list(local_pack.get_supported_wheels(environment=envt))
             if supported_wheels:
                 available_wheel_filenames.extend(w.filename for w in supported_wheels)
-                print(f'=============================> No fetch or build needed. Local wheel already available for {name}=={version} '
+                print(f'====> No fetch or build needed. '
+                      f'Local wheel already available for {name}=={version} '
                       f'on os: {envt.operating_system} for Python: {envt.python_version}')
-            else:
-                name_version_envt_to_fetch.append((name, version, envt,))
+                continue
 
-    print(f'\n===========> TRYING TO FETCH #{len(name_version_envt_to_fetch)} REQUIRED WHEELS')
+        name_version_envt_to_fetch.append((name, version, envt,))
+
+    print(f'==> TRYING TO FETCH #{len(name_version_envt_to_fetch)} REQUIRED WHEELS')
 
     # list of (name, version, environment) not fetch and to build
     name_version_envt_to_build = []
@@ -138,7 +143,12 @@ def bootstrap(
     # then check if the wheel can be fetched without building from remote and Pypi
     for name, version, envt in name_version_envt_to_fetch:
 
-        fetched_fwn = utils_thirdparty.fetch_package_wheel(name=name, version=version, environment=envt)
+        fetched_fwn = utils_thirdparty.fetch_package_wheel(
+            name=name,
+            version=version,
+            environment=envt,
+            dest_dir=thirdparty_dir,
+        )
 
         if fetched_fwn:
             available_wheel_filenames.append(fetched_fwn)
@@ -147,73 +157,46 @@ def bootstrap(
 
     # At this stage we have all the wheels we could obtain without building
     for name, version, envt in name_version_envt_to_build:
-        print(f'Need to build wheels for {name}=={version} '
-              f'on os: {envt.operating_system} for Python: {envt.python_version}')
+        print(f'====> Need to build wheels for {name}=={version} on os: '
+              f'{envt.operating_system} for Python: {envt.python_version}')
 
     packages_and_envts_to_build = [
         (PypiPackage(name, version), envt)
         for name, version, envt in name_version_envt_to_build
     ]
 
-    # First attempt to build locally as plain/pure python wheel
-    print(f'\n===========> BUILDING #{len(packages_and_envts_to_build)} MISSING WHEELS locally as pure Python')
+    print(f'==> BUILDING #{len(packages_and_envts_to_build)} MISSING WHEELS')
 
-    package_envts_not_built_as_pure, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
+    package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
         packages_and_envts=packages_and_envts_to_build,
-        build_remotely=False,
+        build_remotely=True,
         dest_dir=thirdparty_dir,
 )
     if wheel_filenames_built:
         available_wheel_filenames.extend(available_wheel_filenames)
 
-    for pack, envt in package_envts_not_built_as_pure:
-        print(
-            f'=============================> No PURE Python wheel build possible for {pack.name}=={pack.version} '
-            f'on os: {envt.operating_system} for Python: {envt.python_version}'
-        )
-
-    # Second attempt to build remotely for wheels with native code
-    print(f'\n===========> BUILDING #{len(package_envts_not_built_as_pure)} MISSING WHEELS with native remotely')
-
-    package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
-        packages_and_envts=package_envts_not_built_as_pure,
-        build_remotely=False,
-        dest_dir=thirdparty_dir,
-    )
-    if wheel_filenames_built:
-        available_wheel_filenames.extend(available_wheel_filenames)
-
     for pack, envt in package_envts_not_built:
         print(
-            f'=============================> FAILED to build any wheel for {pack.name}=={pack.version} '
+            f'====> FAILED to build any wheel for {pack.name}=={pack.version} '
             f'on os: {envt.operating_system} for Python: {envt.python_version}'
         )
 
-    print(f'\n===========> FETCHING SOURCE DISTRIBUTIONS')
+    print(f'==> FETCHING SOURCE DISTRIBUTIONS')
     # fetch all sources, keep track of missing
     # This is a list of (name, version)
-    missing_sdists = utils_thirdparty.add_missing_sources(
-        dest_dir=thirdparty_dir)
+    utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
 
-    for name, version in missing_sdists:
-        print(f'No sdist found for {name}=={version}')
-
-    print(f'\n===========> FETCHING ABOUT AND LICENSE FILES')
-    # fetch all ABOUT, NOTICE LICENSE keep track of missing
-    # fetch all missing licenses
-    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
-    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
-
+    print(f'==> FETCHING ABOUT AND LICENSE FILES')
+    utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
 
     ############################################################################
     if sync_dejacode:
-        print(f'\n===========> SYNC WITH DEJACODE')
+        print(f'==> SYNC WITH DEJACODE')
         # try to fetch from DejaCode any missing ABOUT
         # create all missing DejaCode packages
         pass
 
-    utils_thirdparty.add_or_update_about_files(dest_dir=thirdparty_dir)
-    utils_thirdparty.fix_about_files_checksums(dest_dir=thirdparty_dir)
+    utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':
