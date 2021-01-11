@@ -4,8 +4,8 @@ beautifulsoup4==4.7.1
 binaryornot==0.4.4
 bitarray==0.8.1
 boolean.py==3.7
-certifi==2020.6.20
-chardet==3.0.4
+certifi==2020.12.5
+chardet==4.0.0
 click==6.7
 colorama==0.4.4
 commoncode==20.10.20
@@ -20,7 +20,7 @@ ftfy==4.4.3
 future==0.16.0
 gemfileparser==0.8.0
 html5lib==1.1
-idna==2.6
+idna==2.10
 importlib-metadata==0.18
 intbitset==2.4.1
 isodate==0.6.0
@@ -39,7 +39,7 @@ packaging==20.4
 patch==1.16
 pdfminer.six==20181108
 pefile==2019.4.18
-pip==20.2.3
+pip==20.3.3
 pkginfo==1.5.0.1
 pluggy==0.12.0
 plugincode==20.9
@@ -52,9 +52,9 @@ pymaven-patch==0.2.9
 pyparsing==2.4.0
 PyYAML==3.12
 rdflib==4.2.1
-requests==2.18.4
+requests==2.25.1
 saneyaml==0.4
-setuptools==50.3.0
+setuptools==51.1.2
 six==1.12.0
 sortedcontainers==2.0.5
 soupsieve==1.9.2
@@ -64,10 +64,10 @@ toml==0.10.0
 typecode==21.1.9.1
 typecode-libmagic==5.39.1.1
 typing==3.6.4
-urllib3==1.22
+urllib3==1.26.2
 urlpy==0.5
 wcwidth==0.1.7
 webencodings==0.5
-wheel==0.35.1
+wheel==0.36.2
 xmltodict==0.11.0
 zipp==0.5.1
