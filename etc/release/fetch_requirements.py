@@ -59,6 +59,10 @@ import itertools
     is_flag=True,
     help='Fetch the corresponding source distributions.',
 )
+@click.option('-a', '--with-about',
+    is_flag=True,
+    help='Fetch the corresponding ABOUT and LICENSE files.',
+)
 @click.option('--allow-unpinned',
     is_flag=True,
     help='Allow requirements without pinned versions.',
@@ -70,6 +74,7 @@ def fetch_requirements(
     python_version,
     operating_system,
     with_sources,
+    with_about,
     allow_unpinned,
 ):
     """
@@ -112,8 +117,9 @@ def fetch_requirements(
                 if error:
                     print('Failed to fetch source:', package, ':', error)
 
-    utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
-    utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
+    if with_about:
+        utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
+        utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':
