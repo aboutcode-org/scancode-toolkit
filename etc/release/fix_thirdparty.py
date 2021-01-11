@@ -16,9 +16,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-import os
-import subprocess
-
 import click
 
 import utils_thirdparty
@@ -28,30 +25,22 @@ import utils_thirdparty
 
 @click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
-    default=utils_thirdparty.THIRDPARTY_DIR,
+    required=True,
     help='Path to the thirdparty directory to fix.',
 )
 @click.option('--build-wheels',
     is_flag=True,
-    help='Also build all missing wheels .',
+    help='Build all missing wheels .',
 )
 @click.option('--build-remotely',
     is_flag=True,
     help='Build missing wheels remotely.',
-)
-@click.option('--repo-url',
-    type=str,
-    metavar='URL',
-    default=utils_thirdparty.REMOTE_LINKS_URL,
-    show_default=True,
-    help='Remote repository URL to HTML page index listing repo files.',
 )
 @click.help_option('-h', '--help')
 def fix_thirdparty_dir(
     thirdparty_dir,
     build_wheels,
     build_remotely,
-    repo_url,
 ):
     """
     Fix a thirdparty directory of dependent package wheels and sdist.
@@ -67,24 +56,28 @@ def fix_thirdparty_dir(
     version combos locally or remotely.
     """
     package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
-    utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
+    src_name_ver_not_fetched = utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
 
+    package_envts_not_built = []
     if build_wheels:
-        package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
+        package_envts_not_built, _wheel_filenames_built = utils_thirdparty.build_missing_wheels(
             package_envts=package_envts_not_fetched,
             build_remotely=build_remotely,
             dest_dir=thirdparty_dir,
         )
 
-    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
-    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
-    utils_thirdparty.add_or_update_about_files(dest_dir=thirdparty_dir)
-    utils_thirdparty.fix_about_files_checksums(dest_dir=thirdparty_dir)
-    utils_thirdparty.fix_about_purl(dest_dir=thirdparty_dir)
+    utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
 
-    subprocess.check_output(f'bin/about check {thirdparty_dir}'.split())
-    if os.path.exists(utils_thirdparty.CACHE_THIRDPARTY_DIR):
-        subprocess.check_output(f'bin/about check {utils_thirdparty.CACHE_THIRDPARTY_DIR}'.split())
+    # report issues
+    for name, version in src_name_ver_not_fetched:
+        print(f'{name}=={version}: Failed to fetch source distribution.')
+
+    for package, envt in package_envts_not_built:
+        print(
+            f'{package.name}=={package.version}: Failed to build wheel '
+            f'on {envt.operating_system} for Python {envt.python_version}')
+
+    utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':
