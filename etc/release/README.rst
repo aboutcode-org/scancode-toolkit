@@ -17,7 +17,7 @@ Release scripts
    optional call **scancode-release-tests.sh** to run minimal smoke tests on the
    built release archives.
 
- * test_-*.sh: various test scripts for installation and release, launched when
+ * **test_-*.sh**: various test scripts for installation and release, launched when
    running scancode-create-release --test
 
  * TODO: scancode_publish.sh: use this to publish the built releases scancode-toolkit
@@ -68,16 +68,16 @@ The sequence of commands to run are:
 
     ./configure --clean
     ./configure
-    python etc/release/gen_requirements.py
+    python etc/release/gen_requirements.py --site-packages-dir <path to site-packages dir>
 
 * You can optionally install or update extra main requirements after the
- ./configure step such that these are included in the generated main requirements.
+  ./configure step such that these are included in the generated main requirements.
 
 * Optionally, generate a development pip requirements file by running these::
 
     ./configure --clean
     ./configure --dev
-    python etc/release/gen_requirements_Dev.py
+    python etc/release/gen_requirements_dev.py --site-packages-dir <path to site-packages dir>
 
 * You can optionally install or update extra dev requirements after the 
   ./configure step such that these are included in the generated dev
@@ -100,30 +100,38 @@ Populate a thirdparty directory with wheels, sources, .ABOUT and license files
 Scripts
 ~~~~~~~
 
-* **fetch_required_wheels.py and fetch_required_sources.py** will fetch packages
-  and their ABOUT and LICENSE files to populate a local a thirdparty directory
-  strictly from our remote repo and using only packages listed in a
-  requirements.txt file for sepcific python versions and operating systems
+* **fetch_requirements.py** will fetch package wheels, their ABOUT, LICENSE and
+  NOTICE files to populate a local a thirdparty directory strictly from our
+  remote repo and using only pinned packages listed in one or more pip
+  requirements file(s). Fetch only requirements for specific python versions and
+  operating systems. Optionally fetch the corresponding source distributions.
 
 * **publish_files.py** will upload/sync a thirdparty directory of files to our
   remote repo. Requires a GitHub personal access token.
 
-* **build_wheels.py** will build a package binary wheels for multiple OS and
-  python versions (if needed for wheels that contain native code)
+* **build_wheels.py** will build a package binary wheel for multiple OS and
+  python versions. Optionally wheels that contain native code are built
+  remotely. Dependent wheels are optionally included. Requires Azure credentials
+  and tokens if building wheels remotely on multiple operatin systems.
 
 * **fix_thirdparty.py** will fix a thirdparty directory with a best effort to 
-  add missing wheels, sources archives, create and fix .ABOUT, .NOTICE and
-  .LICENSE files.
+  add missing wheels, sources archives, create or fetch or fix .ABOUT, .NOTICE
+  and .LICENSE files. Requires Azure credentials and tokens if requesting the
+  build of missing wheels remotely on multiple operatin systems.
 
-* **bootstrap.py** will bootstrap a thirdparty directory from a requirements file(s)
-   to add or build missing wheels, sources archives, create .ABOUT, .NOTICE and
-  .LICENSE files.
+* **check_thirdparty.py** will check a thirdparty directory for errors.
+
+* **bootstrap.py** will bootstrap a thirdparty directory from a requirements
+  file(s) to add or build missing wheels, sources archives and create .ABOUT,
+  .NOTICE and .LICENSE files. Requires Azure credentials and tokens if
+  requesting the build of missing wheels remotely on multiple operatin systems.
+
 
 
 Usage
 ~~~~~
 
-* TODO
+See each command line --help option for details.
 
 * (TODO) **add_package.py** will add or update a Python package including wheels,
   sources and ABOUT files and this for multiple Python version and OSes(for use
@@ -135,7 +143,8 @@ Usage
 Upgrade virtualenv app
 ----------------------
 
-The virtualenv.pyz has to be upgraded by hand and is stored under etc/thirdparty
+The bundled virtualenv.pyz has to be upgraded by hand and is stored under
+etc/thirdparty
 
 * Fetch https://github.com/pypa/get-virtualenv/raw/<latest tag>/public/virtualenv.pyz
   for instance https://github.com/pypa/get-virtualenv/raw/20.2.2/public/virtualenv.pyz
