@@ -7,7 +7,7 @@ boolean.py==3.7
 certifi==2020.6.20
 chardet==3.0.4
 click==6.7
-colorama==0.3.9
+colorama==0.4.4
 commoncode==20.10.20
 debut==0.9.8
 dparse2==0.5.0.4
