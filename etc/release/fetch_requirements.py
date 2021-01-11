@@ -55,24 +55,35 @@ import itertools
     show_default=True,
     help='OS to use for this build: one of linux, mac or windows.',
 )
+@click.option('-s', '--with-sources',
+    is_flag=True,
+    help='Fetch the corresponding source distributions.',
+)
+@click.option('--allow-unpinned',
+    is_flag=True,
+    help='Allow requirements without pinned versions.',
+)
 @click.help_option('-h', '--help')
-def fetch_required_wheels(
+def fetch_requirements(
     requirements_file,
     thirdparty_dir,
     python_version,
     operating_system,
+    with_sources,
+    allow_unpinned,
 ):
     """
-    Fetch and save to THIRDPARTY_DIR all the wheels for pinned dependencies
-    found in the `--requirement` FILE requirements file(s). Only fetch wheels
-    compatible with the provided `--python-version` and `--operating-system`.
-
-    Use exclusively our remote repository.
-
+    Fetch and save to THIRDPARTY_DIR all the required wheels for pinned
+    dependencies found in the `--requirement` FILE requirements file(s). Only
+    fetch wheels compatible with the provided `--python-version` and
+    `--operating-system`.
     Also fetch the corresponding .ABOUT, .LICENSE and .NOTICE files together
     with a virtualenv.pyz app.
+
+    Use exclusively our remote repository (and not PyPI).
     """
 
+    # fetch wheels
     python_versions = python_version
     operating_systems = operating_system
     requirements_files = requirements_file
@@ -84,14 +95,26 @@ def fetch_required_wheels(
         for package, error in utils_thirdparty.fetch_wheels(
             environment=env,
             requirements_file=reqf,
+            allow_unpinned=allow_unpinned,
             dest_dir=thirdparty_dir,
         ):
             if error:
                 print('Failed to fetch wheel:', package, ':', error)
 
-    utils_thirdparty.fetch_and_save_about_data(dest_dir=thirdparty_dir)
-    utils_thirdparty.add_referenced_licenses_and_notices(dest_dir=thirdparty_dir)
+    # optionally fetch sources
+    if with_sources:
+        for reqf in requirements_files:
+            for package, error in utils_thirdparty.fetch_sources(
+                requirements_file=reqf,
+                allow_unpinned=allow_unpinned,
+                dest_dir=thirdparty_dir,
+            ):
+                if error:
+                    print('Failed to fetch source:', package, ':', error)
+
+    utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
+    utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
 if __name__ == '__main__':
-    fetch_required_wheels()
+    fetch_requirements()
