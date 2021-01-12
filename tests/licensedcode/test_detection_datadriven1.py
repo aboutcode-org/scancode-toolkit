@@ -42,9 +42,9 @@ Test functions are attached to test classes at module import time
 
 TEST_DIR = abspath(join(dirname(__file__), 'data'))
 
-class TestLicenseDataDriven(unittest.TestCase):
+class TestLicenseDataDriven1(unittest.TestCase):
     pass
 
 build_tests(
-    join(TEST_DIR, 'licenses'),
-    clazz=TestLicenseDataDriven, regen=False)
+    join(TEST_DIR, 'licenses1'),
+    clazz=TestLicenseDataDriven1, regen=False)
