@@ -29,6 +29,15 @@ jobs:
                 architecture: '${{ parameters.python_architecture }}'
             displayName: 'Install Python $(python_version)'
 
+          - script: python --version
+            displayName: 'Get python version'
+
+          - script: python3 --version
+            displayName: 'Get python3 version'
+
+          - script: python$(python_version) --version
+            displayName: 'Get pythonXXX version'
+
           - script: ./configure --dev
             displayName: 'Run Configure'
 
