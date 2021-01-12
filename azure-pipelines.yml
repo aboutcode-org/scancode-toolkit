@@ -1,36 +1,10 @@
 
 ################################################################################
 # We use Azure to run the full tests suites on Pythons 3.6 and above.
-# on Windows (32 and 64), macOS and Linux (64 various distro)
+# on Windows, macOS and Linux (various distro) only on 64 bits
 ################################################################################
 
 jobs:
-
-########################################################################
-# RELEASE on 3.6. Also check that we can pip install
-########################################################################
-
-    - job: Build_release_archive_py3
-      pool:
-          vmImage: ubuntu-16.04
-      steps:
-          - checkout: self
-            fetchDepth: 10
-
-          - task: UsePythonVersion@0
-            inputs:
-                versionSpec: '3.6'
-            displayName: 'Install Python 3.6'
-
-          - script: ./etc/release/scancode-create-release.sh
-            displayName: 'Build installable releases'
-
-          - script: ./etc/release/scancode-test-pip-install.sh
-            displayName: 'Test pip wheel installation'
-
-          - script: ./etc/release/scancode-test-pip-install-editable.sh
-            displayName: 'Test pip editable installation'
-
 
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.6
@@ -99,18 +73,7 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: Win2016_32_py36
-          image_name: vs2017-win2016
-          python_versions: ['3.6']
-          python_architecture: x86
-          test_suites:
-              misc: Scripts\py.test -vvs --reruns=3 --ignore=tests\scancode --ignore=tests\cluecode  --ignore=tests\licensedcode
-              scancode: Scripts\py.test -vvs --reruns=3 tests\scancode
-              lic_cluecode: Scripts\py.test -vvs  --reruns=3 tests\cluecode  tests\licensedcode
-
-    - template: etc/ci/azure-win.yml
-      parameters:
-          job_name: Win2016_64_py36
+          job_name: Win2016_py36
           image_name: vs2017-win2016
           python_versions: ['3.6']
           python_architecture: x64
@@ -242,3 +205,31 @@ jobs:
 #            sudo make altinstall
 #          test_suite_label: basic tests
 #          test_suite: bin/py.test -n 2 -vvs --reruns=3
+
+
+########################################################################
+# RELEASE on 3.6. Also check that we can pip install
+########################################################################
+
+    - job: Build_release_archive_py3
+      pool:
+          vmImage: ubuntu-16.04
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '3.6'
+            displayName: 'Install Python 3.6'
+
+          - script: ./etc/release/scancode-create-release.sh
+            displayName: 'Build installable releases'
+
+          - script: ./etc/release/scancode-test-pip-install.sh
+            displayName: 'Test pip wheel installation'
+
+          - script: ./etc/release/scancode-test-pip-install-editable.sh
+            displayName: 'Test pip editable installation'
+
+
