@@ -26,7 +26,7 @@ import sys
 
 
 def unsupported(platform):
-    print(f'Unsupported Python, OS, platform or architecture: {platform}')
+    print('Unsupported Python, OS, platform or architecture: {platform}'.format(platform=platform))
     print('See https://github.com/nexB/scancode-toolkit/ for supported OS/platforms.')
     print('Enter a ticket https://github.com/nexB/scancode-toolkit/issues '
           'asking for support of your OS/platform combo.')
@@ -47,10 +47,10 @@ if not(
     unsupported(sys_platform)
 
 if not (sys.maxsize > 2 ** 32):
-    unsupported('32 bits: use a 64 bits OS instead.')
+    unsupported('32 bits: use a 64 bits OS and Python instead.')
 
 if sys.version_info < (3, 6):
-    unsupported('Only Python 3.6 and above are supported')
+    unsupported('Only Python 64 bits 3.6 and above on are supported')
 
 on_win = 'win32' in sys_platform
 
