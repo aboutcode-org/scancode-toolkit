@@ -5,7 +5,7 @@ binaryornot==0.4.4
 bitarray==0.8.1
 boolean.py==3.7
 certifi==2020.12.5
-chardet==4.0.0
+chardet==3.0.4
 click==6.7
 colorama==0.4.4
 commoncode==20.10.20
@@ -21,7 +21,7 @@ future==0.16.0
 gemfileparser==0.8.0
 html5lib==1.1
 idna==2.10
-importlib-metadata==0.18
+importlib-metadata==3.3.0
 intbitset==2.4.1
 isodate==0.6.0
 jaraco.functools==2.0
@@ -30,7 +30,7 @@ Jinja2==2.10
 jsonstreams==0.5.0
 license-expression==1.2
 lxml==4.2.1
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 more-itertools==5.0.0
 nltk==3.2
 normality==2.1.1
@@ -64,6 +64,7 @@ toml==0.10.0
 typecode==21.1.9.1
 typecode-libmagic==5.39.1.1
 typing==3.6.4
+typing-extensions==3.7.4.3
 urllib3==1.26.2
 urlpy==0.5
 wcwidth==0.1.7
