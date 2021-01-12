@@ -92,20 +92,6 @@ jobs:
 
     - template: etc/ci/azure-container-deb.yml
       parameters:
-          job_name: ubuntu16_py36
-          container: ubuntu:xenial
-          python_path: python3.6
-          python_version: '3.6'
-          install_python: |
-             sudo apt-get -y install software-properties-common
-             sudo add-apt-repository -y ppa:deadsnakes
-             sudo apt-get -y update
-             sudo apt-get install -y python3.6 python3.6-venv python3.6-dev
-          test_suite_label: all
-          test_suite: bin/pytest -n 2 -vvs --reruns=3
-
-    - template: etc/ci/azure-container-deb.yml
-      parameters:
           job_name: ubuntu18_py36
           container: ubuntu:bionic
           python_path: python3.6
