@@ -1,0 +1,1473 @@
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+    <string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+    <integer>127881</integer>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+    <base64>nUbSF1Y3TCeQ3i2Y0D70Vg==
+</base64>
+  </rpmTag>
+  <rpmTag name="Siggpg">
+    <base64>iD8DBQBPRVWxqKRH3OhWKJcRAicBAJ9YRgSy8RQnx0N4Duwv2Q+/CA/PggCeIWPy
+vnIpfxFc8U4WqDXOu7IZU1c=
+</base64>
+  </rpmTag>
+  <rpmTag name="Dsaheader">
+    <base64>iD8DBQBPRVWxqKRH3OhWKJcRArVQAKCEPnLvBG0PsvKRzzIPMxh8VqqLawCePlmu
+mYvp4PIa6QUs6My8VumIRZo=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+    <string>10596a674645d2802a2230c1b0add036ac6d14d7</string>
+  </rpmTag>
+  <rpmTag name="Name">
+    <string>setup</string>
+  </rpmTag>
+  <rpmTag name="Version">
+    <string>2.5.58</string>
+  </rpmTag>
+  <rpmTag name="Release">
+    <string>9.el5</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+    <string>A set of system configuration and setup files.</string>
+  </rpmTag>
+  <rpmTag name="Description">
+    <string>The setup package contains a set of important system configuration and
+setup files, such as passwd, group, and profile.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+    <integer>1329943063</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+    <string>builder10.centos.org</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+    <integer>1459411551</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+    <integer>381527</integer>
+  </rpmTag>
+  <rpmTag name="Distribution">
+    <string>CentOS-5</string>
+  </rpmTag>
+  <rpmTag name="Vendor">
+    <string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="License">
+    <string>public domain</string>
+  </rpmTag>
+  <rpmTag name="Group">
+    <string>System Environment/Base</string>
+  </rpmTag>
+  <rpmTag name="Os">
+    <string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+    <string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Filesizes">
+    <integer>1512</integer>
+    <integer>1872</integer>
+    <integer>1044</integer>
+    <integer>823</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>59</integer>
+    <integer>0</integer>
+    <integer>300</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>161</integer>
+    <integer>165</integer>
+    <integer>758</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>637</integer>
+    <integer>233</integer>
+    <integer>1344</integer>
+    <integer>4096</integer>
+    <integer>6108</integer>
+    <integer>122</integer>
+    <integer>362031</integer>
+    <integer>0</integer>
+    <integer>32</integer>
+    <integer>4096</integer>
+    <integer>4326</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filestates">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemodes">
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33024</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+    <integer>16877</integer>
+    <integer>33188</integer>
+    <integer>33152</integer>
+    <integer>33188</integer>
+    <integer>33024</integer>
+    <integer>33188</integer>
+    <integer>16877</integer>
+    <integer>33188</integer>
+    <integer>33188</integer>
+  </rpmTag>
+  <rpmTag name="Filerdevs">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filemtimes">
+    <integer>1114447722</integer>
+    <integer>1329942716</integer>
+    <integer>1329942716</integer>
+    <integer>1329942716</integer>
+    <integer>1329943062</integer>
+    <integer>947719132</integer>
+    <integer>1138712768</integer>
+    <integer>1329943062</integer>
+    <integer>997725786</integer>
+    <integer>1329943062</integer>
+    <integer>1329942716</integer>
+    <integer>947719132</integer>
+    <integer>1329942716</integer>
+    <integer>1095917340</integer>
+    <integer>947719132</integer>
+    <integer>1329943062</integer>
+    <integer>1152176334</integer>
+    <integer>1080226404</integer>
+    <integer>1329942716</integer>
+    <integer>1329943062</integer>
+    <integer>1160581151</integer>
+    <integer>1045500437</integer>
+    <integer>1140700163</integer>
+    <integer>1329943062</integer>
+    <integer>1017361053</integer>
+    <integer>1329943063</integer>
+    <integer>1329942716</integer>
+    <integer>1329943062</integer>
+  </rpmTag>
+  <rpmTag name="Filedigests">
+    <string>039e9bb0c206d57c616c8fab3cb82c2a</string>
+    <string>4d93be6a1e2c112096e6545faf8f829c</string>
+    <string>0e866df1fad20b59214c563f56412b45</string>
+    <string>106d1a19969f1d12b1949bc331975c47</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>59b5f604a6899aca8dc54e6e6897086e</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>71803878c7d0b35d21a22c7b9349c1a6</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>25fd7a8a9ec4794960ef198a60f66d22</string>
+    <string>75febde367e30a4fdf539eb679d59120</string>
+    <string>b2a7c18ae5159070abb2a4e4a615f999</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>b4936b3216c0a2655fc4abedcefbdbd4</string>
+    <string>dc208a34b021823564a290720169534e</string>
+    <string>e685859fe01e8c62fd9de8a2c1934001</string>
+    <string/>
+    <string>21a25996ed4424d22d2902ee94029f6a</string>
+    <string>30afa82e759c95ea880593a4fb43e25e</string>
+    <string>dde31302b080df6ec5fcacee0d56dc90</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+    <string>11bf793328a6037085fbd47931d69a1f</string>
+    <string/>
+    <string>72a2ada9ad25c217338369667c6ef302</string>
+    <string>d41d8cd98f00b204e9800998ecf8427e</string>
+  </rpmTag>
+  <rpmTag name="Filelinktos">
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+  </rpmTag>
+  <rpmTag name="Fileflags">
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>89</integer>
+    <integer>17</integer>
+    <integer>89</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>1</integer>
+    <integer>17</integer>
+    <integer>89</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>17</integer>
+    <integer>0</integer>
+    <integer>1</integer>
+    <integer>25</integer>
+    <integer>17</integer>
+    <integer>89</integer>
+    <integer>17</integer>
+    <integer>0</integer>
+    <integer>2</integer>
+    <integer>64</integer>
+  </rpmTag>
+  <rpmTag name="Fileusername">
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+  </rpmTag>
+  <rpmTag name="Filegroupname">
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+    <string>root</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+    <string>setup-2.5.58-9.el5.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Fileverifyflags">
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967260</integer>
+    <integer>4294967295</integer>
+    <integer>4294967256</integer>
+    <integer>4294967260</integer>
+    <integer>4294967256</integer>
+    <integer>4294967295</integer>
+    <integer>4294967260</integer>
+    <integer>4294967260</integer>
+    <integer>4294967295</integer>
+    <integer>4294967260</integer>
+    <integer>4294967256</integer>
+    <integer>4294967260</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967260</integer>
+    <integer>4294967256</integer>
+    <integer>4294967260</integer>
+    <integer>4294967295</integer>
+    <integer>4294967295</integer>
+    <integer>4294967256</integer>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+    <integer>384612</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+    <string>config(setup)</string>
+    <string>setup</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+    <integer>268435464</integer>
+    <integer>16777290</integer>
+    <integer>16777290</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+    <string>config(setup)</string>
+    <string>rpmlib(CompressedFileNames)</string>
+    <string>rpmlib(PayloadFilesHavePrefix)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+    <string>2.5.58-9.el5</string>
+    <string>3.0.4-1</string>
+    <string>4.0-1</string>
+  </rpmTag>
+  <rpmTag name="Conflictflags">
+    <integer>2</integer>
+    <integer>10</integer>
+  </rpmTag>
+  <rpmTag name="Conflictname">
+    <string>initscripts</string>
+    <string>bash</string>
+  </rpmTag>
+  <rpmTag name="Conflictversion">
+    <string>4.26</string>
+    <string>2.0.4-21</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+    <string>4.4.2.3</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+    <integer>1323122400</integer>
+    <integer>1316815200</integer>
+    <integer>1242079200</integer>
+    <integer>1239919200</integer>
+    <integer>1234389600</integer>
+    <integer>1218060000</integer>
+    <integer>1164751200</integer>
+    <integer>1160604000</integer>
+    <integer>1160517600</integer>
+    <integer>1154037600</integer>
+    <integer>1150754400</integer>
+    <integer>1146693600</integer>
+    <integer>1142978400</integer>
+    <integer>1140732000</integer>
+    <integer>1138744800</integer>
+    <integer>1138140000</integer>
+    <integer>1129586400</integer>
+    <integer>1126044000</integer>
+    <integer>1119304800</integer>
+    <integer>1119045600</integer>
+    <integer>1116540000</integer>
+    <integer>1114466400</integer>
+    <integer>1113861600</integer>
+    <integer>1113602400</integer>
+    <integer>1107208800</integer>
+    <integer>1101247200</integer>
+    <integer>1100815200</integer>
+    <integer>1098914400</integer>
+    <integer>1097272800</integer>
+    <integer>1096408800</integer>
+    <integer>1096322400</integer>
+    <integer>1095976800</integer>
+    <integer>1085436000</integer>
+    <integer>1085004000</integer>
+    <integer>1083794400</integer>
+    <integer>1083708000</integer>
+    <integer>1075154400</integer>
+    <integer>1070920800</integer>
+    <integer>1062540000</integer>
+    <integer>1047679200</integer>
+    <integer>1045519200</integer>
+    <integer>1043100000</integer>
+    <integer>1042149600</integer>
+    <integer>1041458400</integer>
+    <integer>1038607200</integer>
+    <integer>1030658400</integer>
+    <integer>1030572000</integer>
+    <integer>1029448800</integer>
+    <integer>1029103200</integer>
+    <integer>1027375200</integer>
+    <integer>1027116000</integer>
+    <integer>1027029600</integer>
+    <integer>1022623200</integer>
+    <integer>1022191200</integer>
+    <integer>1017871200</integer>
+    <integer>1017352800</integer>
+    <integer>1017352800</integer>
+    <integer>1015970400</integer>
+    <integer>1015884000</integer>
+    <integer>1015624800</integer>
+    <integer>1001455200</integer>
+    <integer>1000764000</integer>
+    <integer>998344800</integer>
+    <integer>998085600</integer>
+    <integer>997740000</integer>
+    <integer>997308000</integer>
+    <integer>997135200</integer>
+    <integer>995580000</integer>
+    <integer>995580000</integer>
+    <integer>995061600</integer>
+    <integer>994802400</integer>
+    <integer>994543200</integer>
+    <integer>994370400</integer>
+    <integer>993506400</integer>
+    <integer>992469600</integer>
+    <integer>992383200</integer>
+    <integer>992383200</integer>
+    <integer>991605600</integer>
+    <integer>990482400</integer>
+    <integer>988840800</integer>
+    <integer>988408800</integer>
+    <integer>986680800</integer>
+    <integer>985730400</integer>
+    <integer>983916000</integer>
+    <integer>983397600</integer>
+    <integer>982965600</integer>
+    <integer>982274400</integer>
+    <integer>981583200</integer>
+    <integer>981583200</integer>
+    <integer>981496800</integer>
+    <integer>980892000</integer>
+    <integer>980805600</integer>
+    <integer>975708000</integer>
+    <integer>974757600</integer>
+    <integer>965599200</integer>
+    <integer>965340000</integer>
+    <integer>964562400</integer>
+    <integer>964389600</integer>
+    <integer>963439200</integer>
+    <integer>962143200</integer>
+    <integer>961624800</integer>
+    <integer>961365600</integer>
+    <integer>960933600</integer>
+    <integer>960674400</integer>
+    <integer>960328800</integer>
+    <integer>958341600</integer>
+    <integer>956095200</integer>
+    <integer>955663200</integer>
+    <integer>954799200</integer>
+    <integer>954367200</integer>
+    <integer>950824800</integer>
+    <integer>950738400</integer>
+    <integer>949788000</integer>
+    <integer>949269600</integer>
+    <integer>948664800</integer>
+    <integer>948492000</integer>
+    <integer>948232800</integer>
+    <integer>948232800</integer>
+    <integer>947714400</integer>
+    <integer>943048800</integer>
+    <integer>941234400</integer>
+    <integer>936309600</integer>
+    <integer>935186400</integer>
+    <integer>931471200</integer>
+    <integer>924559200</integer>
+    <integer>922917600</integer>
+    <integer>922226400</integer>
+    <integer>922053600</integer>
+    <integer>919375200</integer>
+    <integer>916696800</integer>
+    <integer>908316000</integer>
+    <integer>893714400</integer>
+    <integer>881359200</integer>
+    <integer>878594400</integer>
+    <integer>877384800</integer>
+    <integer>870386400</integer>
+    <integer>861228000</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+    <string>Ondrej Vasik &lt;ovasik@redhat.com&gt; 2.5.58-9.el5</string>
+    <string>Ondrej Vasik &lt;ovasik@redhat.com&gt; 2.5.58-8.el5</string>
+    <string>Ondrej Vasik &lt;ovasik@redhat.com&gt; 2.5.58-7.el5</string>
+    <string>Ondrej Vasik &lt;ovasik@redhat.com&gt; 2.5.58-6.el5</string>
+    <string>Ondrej Vasik &lt;ovasik@redhat.com&gt; 2.5.58-5.el5</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.58-4.el5</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.58-1.el5</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.55-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.54-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.53-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.52-1</string>
+    <string>Karsten Hopp &lt;karsten@redhat.de&gt;</string>
+    <string>Florian La Roche &lt;laroche@redhat.com&gt; 2.5.50-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.49-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.48-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.47-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.46-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.45-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.44-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.43-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.42-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.41-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.40-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.39-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.38-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.37-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.36-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.35-1</string>
+    <string>Rik van Riel &lt;riel@redhat.com&gt; 2.5.34-2</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.34-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Joe Orton &lt;jorton@redhat.com&gt; 2.5.33-2</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.5.33-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.32-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.31-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.30-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.27-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.26-1</string>
+    <string>Florian La Roche &lt;Florian.LaRoche@redhat.de&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.5.24-1</string>
+    <string>Dan Walsh &lt;dwalsh@redhat.com&gt; 2.5.23-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.22-1</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt; 2.5.21-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.20-1</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt; 2.5.19-1</string>
+    <string>Jens Petersen &lt;petersen@redhat.com&gt; 2.5.18-1</string>
+    <string>Florian La Roche &lt;Florian.LaRoche@redhat.de&gt; 2.5.17-1</string>
+    <string>Phil Knirsch &lt;pknirsch@redhat.com&gt; 2.5.16-2</string>
+    <string>Jens Petersen &lt;petersen@redhat.com&gt; 2.5.16-1</string>
+    <string>Florian La Roche &lt;Florian.LaRoche@redhat.de&gt; 2.5.14-1</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.5.13-1</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt; 2.5.12-2</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.12-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.11-1</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.5.10-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.9-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.8-1</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.5.7-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.1-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt; 2.5.0-1</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt; 2.4.15-1</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt; 2.4.14-1</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Philip Copeland &lt;bryce@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Florian La Roche &lt;Florian.LaRoche@redhat.de&gt;</string>
+    <string>Bernhard Rosenkraenzer &lt;bero@redhat.com&gt; 2.4.10-1</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt; 2.4.9-1</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt; 2.4.8-1</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Adrian Havill &lt;havill@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bernhard Rosenkraenzer &lt;bero@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Prospector &lt;bugzilla@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bernhard Rosenkraenzer &lt;bero@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bernhard Rosenkraenzer &lt;bero@redhat.com&gt;</string>
+    <string>Nalin Dahyabhai &lt;nalin@redhat.com&gt;</string>
+    <string>Bernhard Rosenkraenzer &lt;bero@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Preston Brown &lt;pbrown@redhat.com&gt;</string>
+    <string>Cristian Gafton &lt;gafton@redhat.com&gt; </string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Cristian Gafton &lt;gafton@redhat.com&gt;</string>
+    <string>Prospector System &lt;bugs@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+    <string>Donnie Barnes &lt;djb@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+    <string>- drop X11R6 hierarchy dir from tcsh path (#760241)</string>
+    <string>- remove comments about portmap from /etc/hosts.deny (#509919)
+- added gid (:88) for wbpriv (#501762)
+- fix interactive shell detection in /etc/profile to allow ksh
+  users see output from /etc/profile.d/ scripts (#616116)
+- do not override already set PROMPT_COMMAND envvar(#691430)
+- use printf instead of two echos in bashrc script to prevent
+  showing text from terminal in terminal title(#620443)
+- respect profile.d scripts umask modifications in tcsh
+  login shell again(#617495)
+- remove obsolete order line from /etc/host.conf - no longer in
+  use (#703051)
+- respect umask settings from profile.d scripts even with
+  bash/ksh login shell (#608987)</string>
+    <string>- Added uidgid pair (16:16) for oprofile (#498332)</string>
+    <string>- due to different sourcing order, move umask setting for csh
+  to csh.login for login shells(#199817)
+- do not show error output from profile.d shell scripts in
+  noninteractive bash sessions(#199817)</string>
+    <string>- Added uidgid pair (59:59) for tss (#457593)
+- Added uidgid pair (52:52) for puppet (#471918)
+- Added uidgid pair (17:17) for pkiuser (#476317)
+- Added gid (:36) for kvm (#481021)
+- Added uid (36:) for vdsm (#481021)
+- Change reserved shell for news to /sbin/nologin(#449555)
+- increase consistency of behaviour between csh and bash(#199817)</string>
+    <string>- Added uidgid pair for condor (#378091)
+- Added gid for realtime (#432643)
+- Added gid for audio (#253243)</string>
+    <string>- Revert change for umask in /etc/bashrc (#217523)</string>
+    <string>- Extended the protocols to include the missing hopopt (#209191)</string>
+    <string>- Update /etc/protocols to latest officiall IANA version (#209191)</string>
+    <string>- Added utempter gid for new libutempter package (#200240)</string>
+    <string>- Lock password for root account by default (#182206)</string>
+    <string>- remove gkrellmd from the reserved uid/gid list (#186974)</string>
+    <string>- use stricter umask of 022 for all logins</string>
+    <string>- Really switch to new /etc/services file
+- Added /etc/fstab and /etc/mtab to ownership of setup (#177061)</string>
+    <string>- Switched to the new large /etc/services file which fixes #112298, #133683,
+  - Fixed pathmunge problem with bashrc (#123621)
+- Removed /usr/X11R6/bin from default PATH (#173856)</string>
+    <string>- Fixed bug with PROMPT_COMMAND being broken for wierd dirs (#142125)
+- Added hfsplus to know filesystems (#172820)</string>
+    <string>- make motd noreplace (#170539)</string>
+    <string>- make lastlog 0644  (#167200)</string>
+    <string>- add buildrequires on bash, tcsh (#161016)
+- move core dump size setting from csh.login to csh.cshrc (#156914)</string>
+    <string>- ksh doesn't implement EUID/UID. Work around that. (#160731)</string>
+    <string>- fix csh.cshrc when -e is used (#158265)</string>
+    <string>- remove mailman aliases (#155841)</string>
+    <string>- fix lastlog conflict (#155256)</string>
+    <string>- get rid of 'id' error messages if there is no /usr (#142707)</string>
+    <string>- have similar prompt changes for su to root in tcsh as in bash (#143826)</string>
+    <string>- ghost lastlog (#139539)</string>
+    <string>- fix bash/tcsh coredump size inconsistency (#139821)</string>
+    <string>- fix inconsistency in profile.d handling (#136859, &lt;agrajag@dragaera.net&gt;)</string>
+    <string>- fix duplicate alias</string>
+    <string>- add /etc/environment</string>
+    <string>- mark /etc/services config(noreplace) (#133683)</string>
+    <string>- add dict (#107807)
+- add cyrus services (#118832)
+- move delete-char binding for csh (#113682)
+- do the same path munging for csh as for bash (#57708)
+- add postfix aliases (#117661)
+- fix bashrc login shell check (#104491)
+- add odmr to services (#101098)
+- add distcc to services (#91535)
+- add xterm forware/backward word bindings (#80860)</string>
+    <string>- make pathmunge available for profile.d scripts (#123621)</string>
+    <string>- add IANA Register Port for svn to /etc/services (#122863)</string>
+    <string>- fix syntax error in csh.cshrc</string>
+    <string>- set MAIL in csh.cshrc (#115376)
+- fix inputrc check in csh.login (#115073)</string>
+    <string>- move /etc/aliases here</string>
+    <string>- remove stty `tput kbs` section (#91357)</string>
+    <string>- securetty should be noreplace (#103585)</string>
+    <string>- clean up some typos in /etc/services (#86129)</string>
+    <string>- add "console" to /etc/securetty for mainframe</string>
+    <string>- allocate uid/gid for mgetty</string>
+    <string>- added PXE to /etc/services</string>
+    <string>- remove bogus entries from inputrc (#80652)</string>
+    <string>- remove unpackaged files from the buildroot</string>
+    <string>- shopt -s checkwinsize everywhere</string>
+    <string>- fix bug #61129 (~ substitution)</string>
+    <string>- bring back the screen case in /etc/bashrc, since /etc/screenrc no
+  longer sets defhstatus (#60596, #60597)</string>
+    <string>- add "set mark-symlinked-directories on" to /etc/inputrc</string>
+    <string>- Added shopt -s checkwinsize to /etc/bashrc for xterm resizing</string>
+    <string>- dont special case screen in /etc/bashrc, since it overrides the user's
+  screenrc title setting (#60596)</string>
+    <string>- move home dir of "news" to /etc/news</string>
+    <string>- allocate uid/gid for privilege-separated sshd</string>
+    <string>- automated rebuild</string>
+    <string>- fix misformatted comment in /etc/services, allocate uid/gid for
+  frontpage</string>
+    <string>- add newline in /etc/shells (#62271)</string>
+    <string>- allocate uid for the vcsa user</string>
+    <string>- re-add ext3 to /etc/filesystems</string>
+    <string>- add nologin to /etc/shells (#53963)
+- fix some quoting issues (#59627)
+- fix screen status line (#60596)
+- fix path regexps (#59624)
+- move profile.d stuff to csh.cshrc (#59946)</string>
+    <string>- add bprd, bpdbm, bpjava-msvc, vnetd, bpcd, and vopied to /etc/services</string>
+    <string>- change rmtcfg to an alias for bvcontrol, which is a registered name</string>
+    <string>- add entries to services (ipp, wnn4, and so on)
+- try to remove duplicates in services (remove nameserver as alias for domain,
+  and readnews as alias for netnews)</string>
+    <string>- change FTP user's home dir to /var/ftp (#52091)
+- %ghost /etc/shadow, /etc/gshadow</string>
+    <string>- add /etc/shells to filelist (#51813)</string>
+    <string>- put lock in /etc/group (#51654)</string>
+    <string>- lock only needs to be a gid
+- don't set dspmbyte=euc here; do it in lang.csh, and only if necessary (#50318)</string>
+    <string>- add lock.lock uid/gid 54 to own /var/lock directory.</string>
+    <string>- add forward/backward-word mappings (#48783)
+- add pgpkeyserver port to /etc/services (#49407)</string>
+    <string>- core files disabled by default.  Developers can enable them.</string>
+    <string>- revert news user back to no shell (#48701)</string>
+    <string>- move profile.d parsing from csh.cshrc to csh.login (#47417)</string>
+    <string>- reorder /etc/services to match comments again
+- protocol 118 is stp, not st
+- update URLs in /etc/protocols and /etc/services</string>
+    <string>- put */sbin in path if user ID is 0.</string>
+    <string>- add an entry to /etc/services for ssh X11 forwarding (#44944)</string>
+    <string>- take ttyS0 out of securetty on main tree</string>
+    <string>- added ttyS0 to securetty for serial console usage</string>
+    <string>- add rndc to /etc/services (#40265)
+- test for read bit, not execute bit, for profile.d (#35714)</string>
+    <string>- add "canna" entry to /etc/services</string>
+    <string>- Fix bugs #24159 and #30634 again; whoever moved bashrc from bash
+  to setup used an old version. :((</string>
+    <string>- bashrc moved here from bash package
+- set umask in bashrc, so it applies for ALL shells.</string>
+    <string>- /sbin/nologin for accounts that aren't "real."</string>
+    <string>- revert control-arrow forward/backward word (broken)</string>
+    <string>- fix japanese input with tcsh (#33211)</string>
+    <string>- fix some weirdness with rxvt (#30799)</string>
+    <string>- add SKK input method (#29759)</string>
+    <string>* Wed Feb 21 2001 Bill Nottingham &lt;notting@redhat.com&gt;
+- fix inputrc, Yet Again. (#28617)</string>
+    <string>- add in uidgid file, put it in %doc</string>
+    <string>- bindkey for delete in the case of tcsh</string>
+    <string>- add some more stuff to /etc/services (#25396, patch from
+  &lt;pekkas@netcore.fi&gt;)</string>
+    <string>- add gii/tcp = 616 for gated</string>
+    <string>- wrap some inputrc settings with tests for mode, term (#24117)</string>
+    <string>- overhaul /etc/protocols (#18530)
+- add port 587 to /etc/services (#25001)
+- add corbaloc (#19581)
+- don't set /usr/X11R6/bin in $PATH if it's already set (#19968)</string>
+    <string>- Clean up /etc/services, separating registered numbers from unregistered
+  ("squatted") numbers, and adding some.</string>
+    <string>- Add smtps (465/tcp) and submission (587/tcp) to /etc/services for TLS
+  support (postfix &gt;= 20001030-2)</string>
+    <string>- /var/log/lastlog is %config(noreplace) (#15412)
+- some of the various %verify changes (#14819)</string>
+    <string>- linuxconf should be 98, not 99</string>
+    <string>- fix some of the csh stuff (#14622)</string>
+    <string>- stop setting "multi on" in /etc/host.conf</string>
+    <string>- automatic rebuild</string>
+    <string>- add hfs filesystem</string>
+    <string>- printcap is a noreplace file now</string>
+    <string>- fix typo</string>
+    <string>- add linuxconf/tcp = 99 to /etc/services</string>
+    <string>- add some stuff to /etc/services
+- tweak ulimit call again</string>
+    <string>- homedir of ftp is now /var/ftp</string>
+    <string>- move profile.d logic in csh.login to csh.cshrc</string>
+    <string>- redirect ulimit -S -c to /dev/null to avoid clutter</string>
+    <string>- s/ulimit -c/ulimit -S -c/ - bash 2.x adaption</string>
+    <string>- Add more of the kerberos-related services from IANA's registry and krb5</string>
+    <string>- Add 2.4'ish vc/* devices to securetty</string>
+    <string>- add /etc/filesystems with sane defaults</string>
+    <string>- don't set prompt in /etc/profile (it's done in /etc/bashrc)</string>
+    <string>- yet more inputrc tweaks from Hans de Goede (hans@highrise.nl)</string>
+    <string>- yet more inputrc tweaks from Hans de Goede (hans@highrise.nl)</string>
+    <string>- fix mailq line. (#7140)</string>
+    <string>- add ldap to /etc/services</string>
+    <string>- kill HISTFILESIZE, it's broken</string>
+    <string>- some inputrc tweaks</string>
+    <string>- make some more stuff noreplace</string>
+    <string>- fix mailq line. (#7140)</string>
+    <string>- split csh.login into csh.login and csh.cshrc (#various)
+- fix pop service names (#6206)
+- fix ipv6 protocols entries (#6219)</string>
+    <string>- rename /etc/csh.cshrc to /etc/csh.login (#2931).
+- (note: modified /etc/csh.cshrc should end up in /etc/csh.cshrc.rpmsave)</string>
+    <string>- add defattr.
+- fix limit command in /etc/csh.cshrc (#4582).</string>
+    <string>- move /etc/inputrc here.</string>
+    <string>- always use /etc/inputrc</string>
+    <string>- added alias pointing to imap from imap2</string>
+    <string>- updated protocols/services from debian to comply with more modern 
+- IETF/RFC standards</string>
+    <string>- auto rebuild in the new build environment (release 4)</string>
+    <string>- unset variables used in /etc/csh.cshrc (#1212)</string>
+    <string>- compile for Raw Hide.</string>
+    <string>- fix the csh.cshrc re: ${PATH} undefined</string>
+    <string>- translations modified for de, fr, tr</string>
+    <string>- /etc/profile uses $i, which needs to be unset</string>
+    <string>- made /etc/passwd and /etc/group %config(noreplace)</string>
+    <string>- removed /etc/inetd.conf, /etc/rpc
+- flagged /etc/securetty as missingok
+- fixed buildroot stuff in spec file</string>
+    <string>- made a noarch package</string>
+    <string>- Don't verify md5sum, size, or timestamp of /var/log/lastlog, /etc/passwd,
+  or /etc/group.</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+    <string>builder10.centos.org 1329942710</string>
+  </rpmTag>
+  <rpmTag name="Filedevices">
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+    <integer>64769</integer>
+  </rpmTag>
+  <rpmTag name="Fileinodes">
+    <integer>11340798</integer>
+    <integer>11340799</integer>
+    <integer>11340802</integer>
+    <integer>11340805</integer>
+    <integer>11340836</integer>
+    <integer>11340808</integer>
+    <integer>11340810</integer>
+    <integer>11340837</integer>
+    <integer>11340812</integer>
+    <integer>11340834</integer>
+    <integer>11340813</integer>
+    <integer>11340814</integer>
+    <integer>11340815</integer>
+    <integer>11340819</integer>
+    <integer>11340820</integer>
+    <integer>11340838</integer>
+    <integer>11340821</integer>
+    <integer>11340822</integer>
+    <integer>11340823</integer>
+    <integer>11340794</integer>
+    <integer>11340824</integer>
+    <integer>11340825</integer>
+    <integer>11340826</integer>
+    <integer>11340833</integer>
+    <integer>11340829</integer>
+    <integer>11340831</integer>
+    <integer>11340839</integer>
+    <integer>11340835</integer>
+  </rpmTag>
+  <rpmTag name="Filelangs">
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+    <integer>268435464</integer>
+    <integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+    <string>2.5.58-9.el5</string>
+    <string>2.5.58-9.el5</string>
+  </rpmTag>
+  <rpmTag name="Dirindexes">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>1</integer>
+    <integer>2</integer>
+    <integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Basenames">
+    <string>aliases</string>
+    <string>bashrc</string>
+    <string>csh.cshrc</string>
+    <string>csh.login</string>
+    <string>environment</string>
+    <string>exports</string>
+    <string>filesystems</string>
+    <string>fstab</string>
+    <string>group</string>
+    <string>gshadow</string>
+    <string>host.conf</string>
+    <string>hosts.allow</string>
+    <string>hosts.deny</string>
+    <string>inputrc</string>
+    <string>motd</string>
+    <string>mtab</string>
+    <string>passwd</string>
+    <string>printcap</string>
+    <string>profile</string>
+    <string>profile.d</string>
+    <string>protocols</string>
+    <string>securetty</string>
+    <string>services</string>
+    <string>shadow</string>
+    <string>shells</string>
+    <string>setup-2.5.58</string>
+    <string>uidgid</string>
+    <string>lastlog</string>
+  </rpmTag>
+  <rpmTag name="Dirnames">
+    <string>/etc/</string>
+    <string>/usr/share/doc/</string>
+    <string>/usr/share/doc/setup-2.5.58/</string>
+    <string>/var/log/</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+    <string>-O2</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+    <string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+    <string>gzip</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+    <string>9</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+    <integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+    <integer>1459411551</integer>
+  </rpmTag>
+  <rpmTag name="(unknown)">
+    <string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Platform">
+    <string>noarch-redhat-linux-gnu</string>
+  </rpmTag>
+  <rpmTag name="Filecolors">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Fileclass">
+    <integer>1</integer>
+    <integer>1</integer>
+    <integer>2</integer>
+    <integer>2</integer>
+    <integer>4</integer>
+    <integer>4</integer>
+    <integer>2</integer>
+    <integer>4</integer>
+    <integer>2</integer>
+    <integer>4</integer>
+    <integer>4</integer>
+    <integer>1</integer>
+    <integer>1</integer>
+    <integer>2</integer>
+    <integer>4</integer>
+    <integer>4</integer>
+    <integer>2</integer>
+    <integer>1</integer>
+    <integer>2</integer>
+    <integer>3</integer>
+    <integer>2</integer>
+    <integer>2</integer>
+    <integer>1</integer>
+    <integer>4</integer>
+    <integer>2</integer>
+    <integer>3</integer>
+    <integer>2</integer>
+    <integer>4</integer>
+  </rpmTag>
+  <rpmTag name="Classdict">
+    <string/>
+    <string>ASCII English text</string>
+    <string>ASCII text</string>
+    <string>directory</string>
+    <string>empty</string>
+  </rpmTag>
+  <rpmTag name="Filedependsx">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filedependsn">
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Filecontexts">
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+    <string/>
+  </rpmTag>
+</rpmHeader>
+<rpmHeader>
+  <rpmTag name="Headeri18ntable">
+    <string>C</string>
+  </rpmTag>
+  <rpmTag name="Sigsize">
+    <integer>2408</integer>
+  </rpmTag>
+  <rpmTag name="Sigmd5">
+    <base64>FcJOoy6KZupQALuWiVDlEQ==
+</base64>
+  </rpmTag>
+  <rpmTag name="Siggpg">
+    <base64>iD8DBQBGEu9EqKRH3OhWKJcRAsKaAKCQ6ohFTtYYprMnZ3G8UHaVPzu36wCfYwV8
+j7CT2GhKI+1GazN+axddWa4=
+</base64>
+  </rpmTag>
+  <rpmTag name="Dsaheader">
+    <base64>iD8DBQBGEu9EqKRH3OhWKJcRAhnRAJ9uP+/XAmVwgtaV0nrFgVqYf5IPQgCfSof3
+NXWzMnEzYasGpMLsmCZvpso=
+</base64>
+  </rpmTag>
+  <rpmTag name="Sha1header">
+    <string>640b66efc6a459ebf80e53622f217dbc1fc49983</string>
+  </rpmTag>
+  <rpmTag name="Name">
+    <string>basesystem</string>
+  </rpmTag>
+  <rpmTag name="Version">
+    <string>8.0</string>
+  </rpmTag>
+  <rpmTag name="Release">
+    <string>5.1.1.el5.centos</string>
+  </rpmTag>
+  <rpmTag name="Summary">
+    <string>The skeleton package which defines a simple CentOS system.</string>
+  </rpmTag>
+  <rpmTag name="Description">
+    <string>Basesystem defines the components of a basic CentOS system (for
+example, the package installation order to use during bootstrapping).
+Basesystem should be the first package installed on a system, and it
+should never be removed.</string>
+  </rpmTag>
+  <rpmTag name="Buildtime">
+    <integer>1175054299</integer>
+  </rpmTag>
+  <rpmTag name="Buildhost">
+    <string>builder6</string>
+  </rpmTag>
+  <rpmTag name="Installtime">
+    <integer>1459411552</integer>
+  </rpmTag>
+  <rpmTag name="Size">
+    <integer>0</integer>
+  </rpmTag>
+  <rpmTag name="Vendor">
+    <string>CentOS</string>
+  </rpmTag>
+  <rpmTag name="License">
+    <string>public domain</string>
+  </rpmTag>
+  <rpmTag name="Group">
+    <string>System Environment/Base</string>
+  </rpmTag>
+  <rpmTag name="Os">
+    <string>linux</string>
+  </rpmTag>
+  <rpmTag name="Arch">
+    <string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Sourcerpm">
+    <string>basesystem-8.0-5.1.1.el5.centos.src.rpm</string>
+  </rpmTag>
+  <rpmTag name="Archivesize">
+    <integer>124</integer>
+  </rpmTag>
+  <rpmTag name="Providename">
+    <string>basesystem</string>
+  </rpmTag>
+  <rpmTag name="Requireflags">
+    <integer>64</integer>
+    <integer>64</integer>
+    <integer>16777290</integer>
+    <integer>16777290</integer>
+  </rpmTag>
+  <rpmTag name="Requirename">
+    <string>setup</string>
+    <string>filesystem</string>
+    <string>rpmlib(PayloadFilesHavePrefix)</string>
+    <string>rpmlib(CompressedFileNames)</string>
+  </rpmTag>
+  <rpmTag name="Requireversion">
+    <string/>
+    <string/>
+    <string>4.0-1</string>
+    <string>3.0.4-1</string>
+  </rpmTag>
+  <rpmTag name="Rpmversion">
+    <string>4.4.2</string>
+  </rpmTag>
+  <rpmTag name="Changelogtime">
+    <integer>1175032800</integer>
+    <integer>1152741600</integer>
+    <integer>1134165600</integer>
+    <integer>1095890400</integer>
+    <integer>1076709600</integer>
+    <integer>1043272800</integer>
+    <integer>1029967200</integer>
+    <integer>1024696800</integer>
+    <integer>1022191200</integer>
+    <integer>1010613600</integer>
+    <integer>963439200</integer>
+    <integer>960328800</integer>
+    <integer>922053600</integer>
+    <integer>921621600</integer>
+    <integer>921621600</integer>
+    <integer>915055200</integer>
+    <integer>902872800</integer>
+    <integer>893714400</integer>
+    <integer>875052000</integer>
+  </rpmTag>
+  <rpmTag name="Changelogname">
+    <string>Johnny Hughes &lt;johnny@centos.org&gt;</string>
+    <string>Jesse Keating &lt;jkeating@redhat.com&gt; - 8.0-5.1.1</string>
+    <string>Jesse Keating &lt;jkeating@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Elliot Lee &lt;sopwith@redhat.com&gt;</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt;</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt;</string>
+    <string>Tim Powers &lt;timp@redhat.com&gt;</string>
+    <string>Prospector &lt;bugzilla@redhat.com&gt;</string>
+    <string>Bill Nottingham &lt;notting@redhat.com&gt;</string>
+    <string>Cristian Gafton &lt;gafton@redhat.com&gt; </string>
+    <string>Cristian Gafton &lt;gafton@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+    <string>Cristian Gafton &lt;gafton@redhat.com&gt;</string>
+    <string>Jeff Johnson &lt;jbj@redhat.com&gt;</string>
+    <string>Prospector System &lt;bugs@redhat.com&gt;</string>
+    <string>Erik Troan &lt;ewt@redhat.com&gt;</string>
+  </rpmTag>
+  <rpmTag name="Changelogtext">
+    <string>- Removed Red Hat Linux branding in the Spec file</string>
+    <string>- rebuild</string>
+    <string>- rebuilt</string>
+    <string>- rebuilt</string>
+    <string>- rebuilt</string>
+    <string>- rebuilt</string>
+    <string>- bump rev</string>
+    <string>- automated rebuild</string>
+    <string>- automated rebuild</string>
+    <string>- automated rebuild</string>
+    <string>- automatic rebuild</string>
+    <string>- rebuild. Wheee.</string>
+    <string>- auto rebuild in the new build environment (release 4)</string>
+    <string>- don't require rpm (breaks dependency chain)</string>
+    <string>- require rpm</string>
+    <string>- build for 6.0</string>
+    <string>- build root</string>
+    <string>- translations modified for de, fr, tr</string>
+    <string>- made a noarch package</string>
+  </rpmTag>
+  <rpmTag name="Cookie">
+    <string>builder6 1175054299</string>
+  </rpmTag>
+  <rpmTag name="Provideflags">
+    <integer>8</integer>
+  </rpmTag>
+  <rpmTag name="Provideversion">
+    <string>8.0-5.1.1.el5.centos</string>
+  </rpmTag>
+  <rpmTag name="Optflags">
+    <string>-O2</string>
+  </rpmTag>
+  <rpmTag name="Payloadformat">
+    <string>cpio</string>
+  </rpmTag>
+  <rpmTag name="Payloadcompressor">
+    <string>gzip</string>
+  </rpmTag>
+  <rpmTag name="Payloadflags">
+    <string>9</string>
+  </rpmTag>
+  <rpmTag name="Installcolor">
+    <integer>3</integer>
+  </rpmTag>
+  <rpmTag name="Installtid">
+    <integer>1459411551</integer>
+  </rpmTag>
+  <rpmTag name="(unknown)">
+    <string>noarch</string>
+  </rpmTag>
+  <rpmTag name="Platform">
+    <string>noarch-redhat-linux-gnu</string>
+  </rpmTag>
+</rpmHeader>
