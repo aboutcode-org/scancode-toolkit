@@ -56,7 +56,7 @@ def fix_thirdparty_dir(
     version combos locally or remotely.
     """
     package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
-    src_name_ver_not_fetched = utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
+    src_name_ver_not_fetched = utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
 
     package_envts_not_built = []
     if build_wheels:

@@ -63,13 +63,19 @@ from utils_thirdparty import PypiPackage
     is_flag=True,
     help='Synchronize packages with DejaCode.',
 )
+@click.option('--with-deps',
+    is_flag=True,
+    help='Also include all dependent wheels.',
+)
 @click.help_option('-h', '--help')
 def bootstrap(
     requirements_file,
     thirdparty_dir,
     python_version,
     operating_system,
+    with_deps,
     sync_dejacode,
+    build_remotely=False,
 ):
     """
     Boostrap a thirdparty Python packages directory from pip requirements.
@@ -164,12 +170,15 @@ def bootstrap(
         (PypiPackage(name, version), envt)
         for name, version, envt in name_version_envt_to_build
     ]
-
+    if with_deps:
+        # we really to rebuild everything
+    
     print(f'==> BUILDING #{len(packages_and_envts_to_build)} MISSING WHEELS')
 
     package_envts_not_built, wheel_filenames_built = utils_thirdparty.build_missing_wheels(
         packages_and_envts=packages_and_envts_to_build,
-        build_remotely=True,
+        build_remotely=build_remotely,
+        with_deps=with_deps,
         dest_dir=thirdparty_dir,
 )
     if wheel_filenames_built:
@@ -184,7 +193,7 @@ def bootstrap(
     print(f'==> FETCHING SOURCE DISTRIBUTIONS')
     # fetch all sources, keep track of missing
     # This is a list of (name, version)
-    utils_thirdparty.add_missing_sources(dest_dir=thirdparty_dir)
+    utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
 
     print(f'==> FETCHING ABOUT AND LICENSE FILES')
     utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)

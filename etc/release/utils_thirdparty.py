@@ -173,18 +173,26 @@ def fetch_wheels(
     """
     missed = []
 
+    if not allow_unpinned:
+        force_pinned = True
+    else:
+        force_pinned = False
+
     rrp = list(get_required_remote_packages(
         requirements_file=requirements_file,
-        allow_unpinned=allow_unpinned,
+        force_pinned=force_pinned,
     ))
+
     fetched_filenames = set()
     for name, version, package in rrp:
         if not package:
             missed.append((name, version,))
-            yield None, f'Missing package in remote repo: {name}=={version}'
+            nv = f'{name}=={version}' if version else name
+            yield None, f'fetch_wheelsxxx: Missing package in remote repo: {nv}'
 
         else:
-            fetched_filename = package.fetch_wheel(environment=environment, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
+            fetched_filename = package.fetch_wheel(
+                environment=environment, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
             if fetched_filename:
                 fetched_filenames.add(fetched_filename)
                 error = None
@@ -198,11 +206,12 @@ def fetch_wheels(
     if missed:
         rr = get_remote_repo()
         print()
-        print(f'===============> Missed some packages')
+        print(f'===> fetch_wheels: Missed some packages')
         for n, v in missed:
-            print(f'Missed package in remote repo: {n}=={v} from:')
+            nv = f'{n}=={v}' if v else n
+            print(f'Missed package {nv} in remote repo, has only:')
             for pv in rr.get_versions(n):
-                print(pv)
+                print('  ', pv)
 
 
 def fetch_sources(
@@ -225,15 +234,21 @@ def fetch_sources(
     """
     missed = []
 
+    if not allow_unpinned:
+        force_pinned = True
+    else:
+        force_pinned = False
+
     rrp = list(get_required_remote_packages(
         requirements_file=requirements_file,
-        allow_unpinned=allow_unpinned,
+        force_pinned=force_pinned,
     ))
 
     for name, version, package in rrp:
         if not package:
-            missed.append((name, version,))
-            yield None, f'Missing package in remote repo: {name}=={version}'
+            missed.append((name, name,))
+            nv = f'{name}=={version}' if version else name
+            yield None, f'fetch_sources: Missing package in remote repo: {nv}'
 
         elif not package.sdist:
             yield package, f'Missing sdist in links'
@@ -323,6 +338,13 @@ class Distribution(NameVer):
         type=str,
         default='',
         metadata=dict(help='Path or download URL.'),
+    )
+
+    sha256 = attr.ib(
+        repr=False,
+        type=str,
+        default='',
+        metadata=dict(help='SHA256 checksum.'),
     )
 
     sha1 = attr.ib(
@@ -742,8 +764,15 @@ class Distribution(NameVer):
         """
         dist_loc = os.path.join(dest_dir, self.filename)
         if os.path.exists(dist_loc):
-            checksums = multi_checksums(dist_loc, checksum_names=('md5', 'sha1',))
+            checksums = multi_checksums(dist_loc, checksum_names=('md5', 'sha1', 'sha256'))
             self.update(checksums, overwrite=True)
+
+    def get_pip_hash(self):
+        """
+        Return a pip hash option string as used in requirements for this dist.
+        """
+        assert self.sha256, f'Missinh SHA256 for dist {self}'
+        return f'--hash=sha256:{self.sha256}'
 
     def get_license_keys(self):
         return LICENSING.license_keys(self.license_expression, unique=True, simple=True)
@@ -1151,6 +1180,16 @@ class PypiPackage(NameVer):
             return f'{self.name}=={self.version}'
         else:
             return self.name
+
+    @property
+    def specifier_with_hashes(self):
+        """
+        Return a requirement specifier for this package with --hash options for
+        all its distributions
+        """
+        items = [self.specifier]
+        items += [d.get_pip_hashes() for d in self.get_distributions()]
+        return ' \\\n    '.join(items)
 
     def get_supported_wheels(self, environment):
         """
@@ -1653,13 +1692,8 @@ def get_local_packages(directory=THIRDPARTY_DIR):
     return list(PypiPackage.packages_from_one_path_or_url(path_or_url=directory))
 
 
-def get_local_package(name, version, directory=THIRDPARTY_DIR):
-    """
-    Return the list of all PypiPackage objects built from a local directory. Return
-    an empty list if the package cannot be found.
-    """
-    packages = get_local_packages(directory)
-    return PypiPackage.get_name_version(name, version, packages)
+def get_local_repo(directory=THIRDPARTY_DIR):
+    return LinksRepository(path_or_url=directory)
 
 
 _REMOTE_REPO = None
@@ -1885,7 +1919,7 @@ def fetch_and_save_path_or_url(filename, dest_dir, path_or_url, as_text=True, th
 ################################################################################
 
 
-def add_missing_sources(dest_dir=THIRDPARTY_DIR):
+def fetch_missing_sources(dest_dir=THIRDPARTY_DIR):
     """
     Given a thirdparty dir, fetch missing source distributions from our remote
     repo or PyPI. Return a list of (name, version) tuples for source
@@ -1927,59 +1961,43 @@ def add_missing_sources(dest_dir=THIRDPARTY_DIR):
     return not_found
 
 
-def fetch_missing_wheels(dest_dir=THIRDPARTY_DIR):
-    """
-    Given a thirdparty dir fetch missing wheels for all known combos of Python
-    versions and OS. Return a list of tuple (Package, Environmentt) for wheels
-    that were not found locally or remotely.
-    """
-    local_packages = get_local_packages(directory=dest_dir)
-    return fetch_wheels_for_packages(local_packages, dest_dir=dest_dir)
-
-
-def fetch_wheels_for_packages(
-    packages,
+def fetch_missing_wheels(
     python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
     dest_dir=THIRDPARTY_DIR,
 ):
     """
     Given a thirdparty dir fetch missing wheels for all known combos of Python
-    versions and OS for a `packages` list of Package. Return a list of tuple
-    (Package, Environment) for wheels that were not found locally or remotely.
+    versions and OS. Return a list of tuple (Package, Environment) for wheels
+    that were not found locally or remotely.
     """
-
+    local_packages = get_local_packages(directory=dest_dir)
     evts = itertools.product(python_versions, operating_systems)
     environments = [Environment.from_pyver_and_os(pyv, os) for pyv, os in evts]
-    packages_and_envts = itertools.product(packages, environments)
-    return fetch_wheels_for_packages_and_envts(
-        packages_and_envts=packages_and_envts, dest_dir=dest_dir)
+    packages_and_envts = itertools.product(local_packages, environments)
 
-
-def fetch_wheels_for_packages_and_envts(
-    packages_and_envts,
-    dest_dir=THIRDPARTY_DIR,
-):
-    """
-    Given a thirdparty dir fetch missing wheels for a `packages_and_envts` list
-    of (Package, Environment) tuples. Return a list of tuple
-    (Package, Environment) for wheels that were not found locally or remotely.
-    """
-
-    missing_to_build = []
+    not_fetched = []
     fetched_filenames = set()
     for package, envt in packages_and_envts:
+
         filename = package.fetch_wheel(
-            environment=envt, fetched_filenames=fetched_filenames, dest_dir=dest_dir)
+            environment=envt,
+            fetched_filenames=fetched_filenames,
+            dest_dir=dest_dir,
+        )
+
         if filename:
             fetched_filenames.add(filename)
+        else:
+            not_fetched.append((package, envt,))
 
-    return missing_to_build
+    return not_fetched
 
 
 def build_missing_wheels(
     packages_and_envts,
     build_remotely=False,
+    with_deps=False,
     dest_dir=THIRDPARTY_DIR,
 ):
     """
@@ -2003,7 +2021,7 @@ def build_missing_wheels(
         try:
             built = build_wheels(
                 requirements_specifier=package.specifier,
-                with_deps=False,
+                with_deps=with_deps,
                 build_remotely=build_remotely,
                 python_versions=python_versions,
                 operating_systems=operating_systems,
@@ -2014,12 +2032,9 @@ def build_missing_wheels(
         except Exception as e:
             import traceback
             print('#############################################################')
-            print('#############################################################')
             print('#############     WHEEL BUILD FAILED   ######################')
-            print('#############################################################')
             traceback.print_exc()
             print()
-            print('#############################################################')
             print('#############################################################')
 
         if not built:
@@ -2154,18 +2169,20 @@ def get_required_packages(required_name_versions):
     return remote_packages, pypi_packages
 
 
-def get_required_remote_packages(requirements_file='requirements.txt', allow_unpinned=False):
+def get_required_remote_packages(requirements_file='requirements.txt', force_pinned=True):
     """
     Yield tuple of (name, version, PypiPackage) for packages listed in the
     `requirements_file` requirements file and found in our remote repo exclusively.
     """
     required_name_versions = load_requirements(
-        requirements_file=requirements_file, force_pinned=not allow_unpinned)
+        requirements_file=requirements_file, force_pinned=force_pinned)
+
     remote_repo = get_remote_repo()
-    return (
-        (name, version, remote_repo.get_package(name, version))
-        for name, version in required_name_versions
-    )
+    for name, version in required_name_versions:
+        if version:
+            yield name, version, remote_repo.get_package(name, version)
+        else:
+            yield name, version, remote_repo.get_latest_version(name)
 
 
 def update_requirements(name, version=None, requirements_file='requirements.txt'):
@@ -2173,7 +2190,7 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
     Upgrade or add `package_name` with `new_version` to the `requirements_file`
     requirements file. Write back requirements sorted with name and version
     canonicalized. Note: this cannot deal with hashed or unpinned requirements.
-    Do nothng if the version already exists as pinned.
+    Do nothing if the version already exists as pinned.
     """
     normalized_name = NameVer.normalize_name(name)
 
@@ -2194,6 +2211,24 @@ def update_requirements(name, version=None, requirements_file='requirements.txt'
 
         with open(requirements_file, 'w') as fo:
             fo.write(nvs)
+
+
+def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file='requirements.txt'):
+    """
+    Hash all the requirements found in the `requirements_file`
+    requirements file based on distributions available in `dest_dir`
+    """
+    local_repo = get_local_repo(directory=dest_dir)
+    packages_by_normalized_name_version = local_repo.packages_by_normalized_name_version
+    hashed = []
+    for name, version in load_requirements(requirements_file, force_pinned=True):
+        package = packages_by_normalized_name_version.get((name, version))
+        if not package:
+            raise Exception(f'Missing required package {name}=={version}')
+        hashed.append(package.specifier_with_hashes)
+
+    with open(requirements_file, 'w') as fo:
+        fo.write('\n'.join(hashed))
 
 ################################################################################
 #
@@ -2221,6 +2256,12 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
     local_packages = get_local_packages(directory=dest_dir)
     remote_repo = get_remote_repo()
 
+    def get_other_dists(_package, _dist):
+        """
+        Return a list of all the dists from package that are not the `dist` object
+        """
+        return [d for d in _package.get_distributions() if d !=_dist]
+
     for local_package in local_packages:
         for local_dist in local_package.get_distributions():
             local_dist.load_about_data(dest_dir=dest_dir)
@@ -2234,6 +2275,18 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
 
             # lets try to fetch remotely
             local_dist.load_remote_about_data()
+
+            # if has key data we may look to improve later, but we can move on
+            if local_dist.has_key_metadata():
+                local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                local_dist.fetch_license_files(dest_dir=dest_dir)
+                continue
+
+            # lets try to get from another dist of the same local package
+            for otherd in get_other_dists(local_package, local_dist):
+                updated = local_dist.update_from_other_dist(otherd)
+                if updated and local_dist.has_key_metadata():
+                    break
 
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
@@ -2579,7 +2632,8 @@ def add_or_upgrade_package(
     environment = Environment.from_pyver_and_os(python_version, operating_system)
 
     # Check if requested wheel already exists locally for this version
-    local_package = get_local_package(name, version)
+    local_repo = get_local_repo(directory=dest_dir)
+    local_package = local_repo.get_package(name, version)
     if version and local_package:
         for wheel in local_package.get_supported_wheels(environment):
             # if requested version is there, there is nothing to do: just return
