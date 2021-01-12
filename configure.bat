@@ -48,8 +48,7 @@ set PROJECT_ROOT_DIR=%~dp0
 @rem parse command line options
 set CLI_ARGS="%REQUIREMENTS%"
 set PYTHON_EXECUTABLE=
-:
-collectopts
+:collectopts
     if "%1" EQU "--help"   (goto cli_help)
     if "%1" EQU "--clean"  (set CLI_ARGS=--clean) && goto find_python
     if "%1" EQU "--dev"    (set CLI_ARGS=%DEV_REQUIREMENTS%) && goto collectopts
