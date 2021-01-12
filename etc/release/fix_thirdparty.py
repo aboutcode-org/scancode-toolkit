@@ -61,7 +61,7 @@ def fix_thirdparty_dir(
     package_envts_not_built = []
     if build_wheels:
         package_envts_not_built, _wheel_filenames_built = utils_thirdparty.build_missing_wheels(
-            package_envts=package_envts_not_fetched,
+            packages_and_envts=package_envts_not_fetched,
             build_remotely=build_remotely,
             dest_dir=thirdparty_dir,
         )
