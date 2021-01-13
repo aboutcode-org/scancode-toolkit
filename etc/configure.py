@@ -84,10 +84,7 @@ cleanable = '''
     bin
     lib
     lib64
-    Lib
-    Lib64
     include
-    Include
     tcl
     local
     .Python
@@ -191,7 +188,10 @@ def pip_install(req_args, quiet=False):
     else:
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-    cmd += ['install', '--upgrade', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
+    # note: --no-build-isolation measn that pip/wheel/setuptools will not
+    # be reinstalled a second time and this speeds up the installation.
+    # We always have the PEP517 build dependencies installed
+    cmd += ['install', '--upgrade', '--no-build-isolation', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
     if quiet:
         cmd += ['-qq']
 

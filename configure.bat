@@ -29,7 +29,7 @@ goto config
 @rem # Defaults. Change these variables to customize this script locally
 @rem ################################
 
-@rem # thirdparty packages directory
+@rem # thirdparty package locations
 set "THIRDPARTY_DIR=thirdparty"
 set "THIRDPARTY_LINKS=https://github.com/nexB/thirdparty-packages/releases/pypi"
 
@@ -37,66 +37,73 @@ set "THIRDPARTY_LINKS=https://github.com/nexB/thirdparty-packages/releases/pypi"
 set "REQUIREMENTS=--editable .[full] --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--editable .[full] --constraint requirements.txt --editable .[dev] --constraint requirements-dev.txt"
 
-@rem # default supported Python version 
-set SUPPORTED_PYTHON=3.6
+@rem # default supported Python version
+if not defined CONFIGURE_SUPPORTED_PYTHON (
+    set CONFIGURE_SUPPORTED_PYTHON=3.6
+)
 
 @rem #################################
 
 @rem Current directory where this script lives
 set PROJECT_ROOT_DIR=%~dp0
 
+
 @rem parse command line options
 set CLI_ARGS="%REQUIREMENTS%"
-set PYTHON_EXECUTABLE=
-:collectopts
-    if "%1" EQU "--help"   (goto cli_help)
-    if "%1" EQU "--clean"  (set CLI_ARGS=--clean) && goto find_python
-    if "%1" EQU "--dev"    (set CLI_ARGS=%DEV_REQUIREMENTS%) && goto collectopts
+set CONFIGURE_DEV_MODE=0
+if "%1" EQU "--help"   (goto cli_help)
+if "%1" EQU "--clean"  (set CLI_ARGS=--clean)
+if "%1" EQU "--dev"    (
+    set CLI_ARGS=%DEV_REQUIREMENTS%
+    set CONFIGURE_DEV_MODE=1
+)
 
 
 @rem find a proper Python to run
-
-if exist ""%PYTHON_EXECUTABLE%"" (
-    goto run
+if defined CONFIGURE_PYTHON_EXECUTABLE (
+    if exist "%CONFIGURE_PYTHON_EXECUTABLE%" (
+        goto run
+    )
 )
 
 :find_python
 
 @rem Check the existence of the "py" launcher available in Python 3
 @rem If we have it, check if we have a py -3 installed with the required version
-@rem Exits if all fails
+@rem Try to use a Python in the path if all else fail
 
 where py >nul 2>nul
 if %ERRORLEVEL% == 0 (
     @rem we have a py launcher, check for the availability of our Python 3 version
-    py -%SUPPORTED_PYTHON% --version >nul 2>nul
-    if %ERRORLEVEL% == 0 (
-        set PYTHON_EXECUTABLE=py -%SUPPORTED_PYTHON%
-    ) else (
-        @rem we have py and no python 3, exit
-        echo * Unable to find an installation of Python.
+    set CONFIGURE_PYTHON_EXECUTABLE=py -%CONFIGURE_SUPPORTED_PYTHON%%
+    %CONFIGURE_PYTHON_EXECUTABLE% --version >nul 2>nul
+    if %ERRORLEVEL% neq 0 (
+        echo "* Unable to find a suitable installation of Python %CONFIGURE_SUPPORTED_PYTHON%."
         exit /b 1
     )
 ) else (
-    @rem we use a Python in the path as the last resort
-    set PYTHON_EXECUTABLE=python
+    echo "* Unable to find a suitable installation of Python %CONFIGURE_SUPPORTED_PYTHON%."
+    exit /b 1
 )
 
-@rem ################################
-@rem # setup development and run configure scripts
 :run
+@rem ################################
 
-if ""%CLI_ARGS%""==""%DEV_REQUIREMENTS%"" (
-    @rem # Add development tag file for license index auto-regeneration on file changes
-    echo. 2>SCANCODE_DEV_MODE
+@rem # Setup development mode
+
+if "%CONFIGURE_DEV_MODE%" == 1 (
+    @rem # Add development tag file to auto-regen license index on file changes
+    echo. 2>%%PROJECT_ROOT_DIR%\SCANCODE_DEV_MODE"
 )
+
+@rem # Run configure scripts proper and activate
 
 @rem without this there are some heisenbugs on Windows 10
-@rem but this make scancode run a little bit slower
+@rem but this make scancode run slower
 set PYTHONDONTWRITEBYTECODE=1
 
 
-call %PYTHON_EXECUTABLE% "%PROJECT_ROOT_DIR%etc\configure.py" %CLI_ARGS%
+call %CONFIGURE_PYTHON_EXECUTABLE% "%PROJECT_ROOT_DIR%etc\configure.py" %CLI_ARGS%
 
 @rem Return a proper return code on failure
 if %ERRORLEVEL% neq 0 (
@@ -105,7 +112,7 @@ if %ERRORLEVEL% neq 0 (
 
 endlocal
 
-@rem # Activate the virtualenv
+@rem # Activate the virtualenv if it exists
 if exist "%PROJECT_ROOT_DIR%Scripts\activate" (
     "%PROJECT_ROOT_DIR%Scripts\activate"
 )

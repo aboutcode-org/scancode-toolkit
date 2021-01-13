@@ -41,7 +41,7 @@ function cli_help {
 # Defaults. Change these variables to customize this script locally
 ################################
 
-#  thirdparty packages locations
+#  thirdparty package locations
 export THIRDPARTY_DIR="thirdparty"
 export THIRDPARTY_LINKS="https://github.com/nexB/thirdparty-packages/releases/pypi"
 
@@ -51,7 +51,9 @@ REQUIREMENTS="--editable .[full] --constraint requirements.txt"
 DEV_REQUIREMENTS="--editable .[full] --constraint requirements.txt --editable .[dev] --constraint requirements-dev.txt"
 
 # default supported Python version
-SUPPORTED_PYTHON3=3.6
+if [[ "$CONFIGURE_SUPPORTED_PYTHON" == "" ]]; then
+    CONFIGURE_SUPPORTED_PYTHON=3.6
+fi
 
 ################################
 
@@ -61,30 +63,32 @@ PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # parse command line options
 CLI_ARGS="$REQUIREMENTS"
-
+CONFIGURE_DEV_MODE=0
 case "$1" in
-    --help)       cli_help;;
+    --help)    cli_help;;
     --clean)   CLI_ARGS=--clean;;
-    --dev)     CLI_ARGS="$DEV_REQUIREMENTS";;
+    --dev)     CLI_ARGS="$DEV_REQUIREMENTS" && CONFIGURE_DEV_MODE=1;;
 esac
 
 
 # find a proper Python to run
 
-if [[ "$PYTHON_EXECUTABLE" == "" ]]; then
-    PYTHON_EXECUTABLE=python3
+if [[ "$CONFIGURE_PYTHON_EXECUTABLE" == "" ]]; then
+    CONFIGURE_PYTHON_EXECUTABLE=python3
 fi
 
 ################################
-# setup development and run configure script
 
-if [[ "$CLI_ARGS" == "$DEV_REQUIREMENTS" ]]; then
-    # Add development tag file for license index auto-regeneration on file changes
+# Setup development mode
+
+if [[ "$CONFIGURE_DEV_MODE" == 1 ]]; then
+    # Add development tag file to auto-regen license index on file changes
     touch $PROJECT_ROOT_DIR/SCANCODE_DEV_MODE
 fi
 
+# Run configure scripts proper and activate
 
-$PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
+$CONFIGURE_PYTHON_EXECUTABLE "$PROJECT_ROOT_DIR/etc/configure.py" $CLI_ARGS
 
 # Activate the virtualenv if it exists
 if [[ -f "$PROJECT_ROOT_DIR/bin/activate" ]]; then
