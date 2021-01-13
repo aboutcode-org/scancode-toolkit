@@ -42,79 +42,9 @@ Test functions are attached to test classes at module import time
 
 TEST_DIR = abspath(join(dirname(__file__), 'data'))
 
-class TestLicenseRetrographyDataDriven(unittest.TestCase):
+class TestLicenseDataDriven3(unittest.TestCase):
     pass
 
 build_tests(
-    join(TEST_DIR, 'retro_licenses/OS-Licenses-master'),
-    clazz=TestLicenseRetrographyDataDriven, regen=False)
-
-
-class TestLicenseSpdxDataDriven(unittest.TestCase):
-    pass
-
-build_tests(
-    join(TEST_DIR, 'spdx/licenses'),
-    clazz=TestLicenseSpdxDataDriven, regen=False)
-
-
-class TestLicenseToolsDataDriven(unittest.TestCase):
-    # this is for license-related npm tools with a lot of license references in
-    # code, tests and data
-    pass
-
-build_tests(
-    join(TEST_DIR, 'license_tools'),
-    clazz=TestLicenseToolsDataDriven, regen=False)
-
-
-class TestSlicDataDriven(unittest.TestCase):
-    # tests data from https://github.com/gerv/slic
-    pass
-
-build_tests(
-    join(TEST_DIR, 'slic-tests/identification'),
-    clazz=TestSlicDataDriven, regen=False)
-
-
-class TestFossLicDataDriven(unittest.TestCase):
-    # tests data from Fossology
-    pass
-
-build_tests(
-    join(TEST_DIR, 'more_licenses/licenses'),
-    clazz=TestFossLicDataDriven, regen=False)
-
-
-class TestFossTestsDataDriven(unittest.TestCase):
-    # reference licenses from Fossology
-    pass
-
-build_tests(
-    join(TEST_DIR, 'more_licenses/tests'),
-    clazz=TestFossTestsDataDriven, regen=False)
-
-
-class TestDebLicCheckTestsDataDriven(unittest.TestCase):
-    # license tests from Debian licensecheck
-    pass
-
-build_tests(
-    join(TEST_DIR, 'debian/licensecheck'),
-    clazz=TestDebLicCheckTestsDataDriven, regen=False)
-
-
-class TestGeneratedDataDriven(unittest.TestCase):
-    pass
-
-build_tests(
-    join(TEST_DIR, 'generated'),
-    clazz=TestGeneratedDataDriven, regen=False)
-
-
-class TestGlcDataDriven(unittest.TestCase):
-    pass
-
-build_tests(
-    join(TEST_DIR, 'glc'),
-    clazz=TestGlcDataDriven, regen=False)
+    join(TEST_DIR, 'datadriven/lic3'),
+    clazz=TestLicenseDataDriven3, regen=False)

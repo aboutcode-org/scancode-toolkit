@@ -46,5 +46,5 @@ class TestLicenseDataDriven1(unittest.TestCase):
     pass
 
 build_tests(
-    join(TEST_DIR, 'licenses1'),
+    join(TEST_DIR, 'datadriven/lic1'),
     clazz=TestLicenseDataDriven1, regen=False)
