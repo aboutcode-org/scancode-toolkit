@@ -156,8 +156,8 @@ def create_virtualenv(root_dir, venv_pyz, quiet=False):
 
     standard_python = sys.executable
 
-    # once we have a pyz, we do not want to download anything else
-    vcmd = [standard_python, quote(venv_pyz), '--never-download']
+    # once we have a pyz, we do not want to download anything else nor ever update
+    vcmd = [standard_python, quote(venv_pyz), '--never-download', '--no-periodic-update']
 
     if quiet:
         vcmd += ['-qq']
@@ -188,10 +188,15 @@ def pip_install(req_args, quiet=False):
     else:
         cmd = [quote(os.path.join(BIN_DIR, 'pip'))]
 
-    # note: --no-build-isolation measn that pip/wheel/setuptools will not
+    # note: --no-build-isolation means that pip/wheel/setuptools will not
     # be reinstalled a second time and this speeds up the installation.
-    # We always have the PEP517 build dependencies installed
-    cmd += ['install', '--upgrade', '--no-build-isolation', '--no-index', '--find-links', THIRDPARTY_DIR_OR_LINKS]
+    # We always have the PEP517 build dependencies installed already.
+    cmd += [
+        'install', '--upgrade',
+        '--no-build-isolation',
+        '--no-index',
+        '--find-links', THIRDPARTY_DIR_OR_LINKS,
+    ]
     if quiet:
         cmd += ['-qq']
 
