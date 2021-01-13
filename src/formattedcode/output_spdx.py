@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from os.path import abspath
 from os.path import basename
 from os.path import dirname
@@ -125,7 +124,7 @@ class SpdxTvOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--spdx-tv',),
-            type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as SPDX Tag/Value to FILE.',
             help_group=OUTPUT_GROUP)
@@ -152,7 +151,7 @@ class SpdxRdfOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--spdx-rdf',),
-            type=FileOptionType(lazy=True, mode='w', encoding='utf-8'),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as SPDX RDF to FILE.',
             help_group=OUTPUT_GROUP)

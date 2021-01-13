@@ -22,8 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
-
 import jsonstreams
 
 from formattedcode import FileOptionType
@@ -31,7 +29,6 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
-
 
 """
 Output plugins to write scan results as JSON.
@@ -63,7 +60,7 @@ class JsonCompactOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json', 'output_json',),
-            type=FileOptionType(mode='w', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as compact JSON to FILE.',
             help_group=OUTPUT_GROUP,
@@ -82,7 +79,7 @@ class JsonPrettyOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json-pp', 'output_json_pp',),
-            type=FileOptionType(mode='w', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as pretty-printed JSON to FILE.',
             help_group=OUTPUT_GROUP,

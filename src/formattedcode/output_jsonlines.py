@@ -40,7 +40,7 @@ class JsonLinesOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json-lines', 'output_json_lines',),
-            type=FileOptionType(mode='w', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',
             help_group=OUTPUT_GROUP,

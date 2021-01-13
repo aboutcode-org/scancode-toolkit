@@ -59,7 +59,7 @@ class CsvOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--csv',),
-            type=FileOptionType(mode='w', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
             help_group=OUTPUT_GROUP,
