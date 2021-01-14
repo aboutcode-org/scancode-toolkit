@@ -18,7 +18,6 @@
 # limitations under the License.
 #
 
-
 import os
 from os.path import join
 from os.path import sep
@@ -532,6 +531,7 @@ class TestFileUtilsIter(FileBasedTesting):
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
 
+    @skipIf(on_windows, 'Symlinks do not work well on Windows')
     def test_resource_iter_follow_symlinks(self):
         test_dir = self.get_test_loc('symlink/walk', copy=True)
         temp_dir = fileutils.get_temp_dir()
