@@ -8,16 +8,15 @@
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 
 import os
 
@@ -146,19 +145,19 @@ class TestHash(FileBasedTesting):
         assert expected == result
 
     def test_sha1_git_checksum(self):
-        # scancode-toolkit/tests/commoncode/data/hash$ for f in `find . -type f` ; do echo -n "$f ";git hash-object --literally $f; done
-        tests = [t for t in '''
-        hash/dir1/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
-        hash/dir1/a.png 5f212358671a3ada8794cb14fb5227f596447a8c
-        hash/sha1-collision/shattered-1.pdf ba9aaa145ccd24ef760cf31c74d8f7ca1a2e47b0
-        hash/sha1-collision/shattered-2.pdf.ABOUT b332179480cc839f856652be34e1232309d3c077
-        hash/sha1-collision/shattered-1.pdf.ABOUT 56a0048f5639b2d14b02f06d26d5c849fba2bc13
-        hash/sha1-collision/shattered-2.pdf b621eeccd5c7edac9b7dcba35a8d5afd075e24f2
-        hash/dir2/dos.txt 0d2d3a69833f1ebcbf420875cfbc93f132bc8a0b
-        hash/dir2/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
+        # $ pushd tests/commoncode/data && for f in `find hash/ -type f` ;
+        # do echo -n "$f ";git hash-object --literally $f; done && popd
+        tests = [t.strip().split() for t in '''
+            hash/dir1/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
+            hash/dir1/a.png 5f212358671a3ada8794cb14fb5227f596447a8c
+            hash/sha1-collision/shattered-1.pdf ba9aaa145ccd24ef760cf31c74d8f7ca1a2e47b0
+            hash/sha1-collision/shattered-2.pdf.ABOUT b332179480cc839f856652be34e1232309d3c077
+            hash/sha1-collision/shattered-1.pdf.ABOUT 56a0048f5639b2d14b02f06d26d5c849fba2bc13
+            hash/sha1-collision/shattered-2.pdf b621eeccd5c7edac9b7dcba35a8d5afd075e24f2
+            hash/dir2/dos.txt 0d2d3a69833f1ebcbf420875cfbc93f132bc8a0b
+            hash/dir2/a.txt de980441c3ab03a8c07dda1ad27b8a11f39deb1e
         '''.splitlines() if t.strip()]
-        for test in tests:
-            test_file, expected_sha1_git = test.split()
+        for test_file, expected_sha1_git in tests:
             test_file = self.get_test_loc(test_file)
             # test that we match the git hash-object
             assert expected_sha1_git == sha1_git(test_file)
