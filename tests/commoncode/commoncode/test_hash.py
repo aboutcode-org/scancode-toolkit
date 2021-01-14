@@ -22,22 +22,19 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-
-from collections import OrderedDict
 import os
 
 from commoncode.testcase import FileBasedTesting
 
+from commoncode.hash import b64sha1
 from commoncode.hash import checksum
 from commoncode.hash import get_hasher
-from commoncode.hash import b64sha1
 from commoncode.hash import md5
+from commoncode.hash import multi_checksums
 from commoncode.hash import sha1
 from commoncode.hash import sha256
 from commoncode.hash import sha512
 from commoncode.hash import sha1_git
-from commoncode.hash import multi_checksums
 
 
 class TestHash(FileBasedTesting):
@@ -110,7 +107,7 @@ class TestHash(FileBasedTesting):
 
     def test_multi_checksums(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        expected = OrderedDict([
+        expected = dict([
             ('md5', u'4760fb467f1ebf3b0aeace4a3926f1a4'),
             ('sha1', u'34ac5465d48a9b04fc275f09bc2230660df8f4f7'),
             ('sha256', u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35'),
@@ -121,14 +118,14 @@ class TestHash(FileBasedTesting):
     def test_multi_checksums_custom(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
         result = multi_checksums(test_file, ('sha512',))
-        expected = OrderedDict([
+        expected = dict([
             ('sha512', u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4'),
         ])
         assert expected == result
 
     def test_multi_checksums_shattered1(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-1.pdf')
-        expected = OrderedDict([
+        expected = dict([
             ('md5', 'ee4aa52b139d925f8d8884402b0a750c'),
             ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
             ('sha256', '2bb787a73e37352f92383abe7e2902936d1059ad9f1ba6daaa9c1e58ee6970d0'),
@@ -140,7 +137,7 @@ class TestHash(FileBasedTesting):
 
     def test_multi_checksums_shattered2(self):
         test_file = self.get_test_loc('hash/sha1-collision/shattered-2.pdf')
-        expected = OrderedDict([
+        expected = dict([
             ('md5', '5bd9d8cabc46041579a311230539b8d1'),
             ('sha1', '38762cf7f55934b34d179ae6a4c80cadccbb7f0a'),
             ('sha256', 'd4488775d29bdef7993367d541064dbdda50d383f89f0aa13a6ff2e0894ba5ff'),

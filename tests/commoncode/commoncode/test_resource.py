@@ -22,13 +22,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import json
+import os
+
 from os.path import dirname
 from os.path import exists
 from os.path import join
@@ -36,8 +32,6 @@ from os.path import join
 import pytest
 
 from commoncode.fileutils import parent_directory
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode.resource import Codebase
 from commoncode.resource import get_path
@@ -64,9 +58,8 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
-
-    @pytest.mark.xfail(reason='FIXME: a fie for ticket #1422 is needed')
-    def test_Codebase_with_only_ignores_should_not_faild_to_create(self):
+    @pytest.mark.xfail(reason='FIXME: a fix for ticket #1422 is needed')
+    def test_Codebase_with_only_ignores_should_not_fail_to_create(self):
         from commoncode.fileutils import create_dir
         test_codebase = self.get_temp_dir()
         create_dir(join(test_codebase, 'sccs', 'a'))
@@ -335,10 +328,13 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
         codebase = Codebase(test_codebase)
         result = []
-        def _ignored(resource, codebase):
-            return resource.is_dir and resource.name == 'skip-this-directory'
+
+        def _ignored(_resource, _codebase):
+            return _resource.is_dir and _resource.name == 'skip-this-directory'
+
         for resource in codebase.walk(topdown=True, ignored=_ignored,):
             result.append(resource.name)
+
         expected = ['skip_directories_during_walk', 'this-should-be-returned']
         assert expected == result
 
@@ -365,11 +361,6 @@ class TestCodebase(FileBasedTesting):
         assert codebase.root == codebase.get_resource(0)
 
     def test_get_path(self):
-        import os
-        from commoncode.fileutils import fsdecode
-        from commoncode.fileutils import fsencode
-        from commoncode.system import on_linux
-
         test_dir = self.get_test_loc('resource/samples')
         locations = []
         for top, dirs, files in os.walk(test_dir):
@@ -377,12 +368,6 @@ class TestCodebase(FileBasedTesting):
                 locations.append(os.path.join(top, x))
             for x in files:
                 locations.append(os.path.join(top, x))
-        if py2:
-            transcoder = fsencode if on_linux else fsdecode
-        if py3:
-            transcoder = lambda x: x
-        locations = [transcoder(p) for p in locations]
-        root_location = transcoder(test_dir)
 
         expected_default = [
             u'samples/JGroups', u'samples/zlib', u'samples/arch',
@@ -417,7 +402,7 @@ class TestCodebase(FileBasedTesting):
             u'samples/zlib/gcc_gvmat64/gvmat64.S', u'samples/zlib/ada/zlib.ads',
             u'samples/arch/zlib.tar.gz']
 
-        default = sorted(get_path(root_location, loc) for loc in locations)
+        default = sorted(get_path(test_dir, loc) for loc in locations)
         assert sorted(expected_default) == default
 
         expected_strip_root = [
@@ -442,15 +427,15 @@ class TestCodebase(FileBasedTesting):
             u'zlib/gcc_gvmat64/gvmat64.S', u'zlib/ada/zlib.ads',
             u'arch/zlib.tar.gz']
 
-        skipped = sorted(get_path(root_location, loc, strip_root=True) for loc in locations)
+        skipped = sorted(get_path(test_dir, loc, strip_root=True) for loc in locations)
         assert sorted(expected_strip_root) == skipped
 
         expected_full_ends = sorted(expected_default)
-        full = sorted(get_path(root_location, loc, full_root=True) for loc in locations)
+        full = sorted(get_path(test_dir, loc, full_root=True) for loc in locations)
         for full_loc, ending in zip(full, expected_full_ends):
             assert full_loc.endswith((ending))
 
-        full_skipped = sorted(get_path(root_location, loc, full_root=True, strip_root=True) for loc in locations)
+        full_skipped = sorted(get_path(test_dir, loc, full_root=True, strip_root=True) for loc in locations)
         assert full == full_skipped
 
     def test_compute_counts_when_using_disk_cache(self):
@@ -571,7 +556,7 @@ class TestCodebase(FileBasedTesting):
         ]
         result = [r.path for r in codebase.walk(topdown=True)]
         self.assertEqual(expected, result)
-        
+
     def test_depth_negative_fails(self):
         test_codebase = self.get_test_loc('resource/deeply_nested')
         with self.assertRaises(Exception):
@@ -603,10 +588,10 @@ class TestCodebase(FileBasedTesting):
         results = list(depth_walk(test_codebase, 2))
         result_dirs = [i for j in results for i in j[1]].sort()
         result_files = [i for j in results for i in j[2]].sort()
-        expected_files = ['level1_file1', 'level1_file2', 'level2_file2', 
-                          'level2_file1', 'level2_file3', 'level2_file4', 
+        expected_files = ['level1_file1', 'level1_file2', 'level2_file2',
+                          'level2_file1', 'level2_file3', 'level2_file4',
                           'level2_file5'].sort()
-        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 
+        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1',
                          'level2_dir3'].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
@@ -616,11 +601,11 @@ class TestCodebase(FileBasedTesting):
         results = list(depth_walk(test_codebase, 3))
         result_dirs = [i for j in results for i in j[1]].sort()
         result_files = [i for j in results for i in j[2]].sort()
-        expected_files = ['level1_file1', 'level1_file2', 'level2_file2', 
-                          'level2_file1', 'level3_file2', 'level3_file1', 
-                          'level2_file3', 'level2_file4', 'level2_file5', 
+        expected_files = ['level1_file1', 'level1_file2', 'level2_file2',
+                          'level2_file1', 'level3_file2', 'level3_file1',
+                          'level2_file3', 'level2_file4', 'level2_file5',
                           'level3_file4', 'level3_file3'].sort()
-        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 
+        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1',
                          'level3_dir1', 'level2_dir3'].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
@@ -685,9 +670,9 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
+
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-
 
     def test_codebase_cache_default(self):
         test_codebase = self.get_test_loc('resource/cache2')
@@ -757,7 +742,6 @@ class TestCodebaseCache(FileBasedTesting):
 
 class TestVirtualCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-
 
     def test_virtual_codebase_walk_defaults(self):
         test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
@@ -1047,11 +1031,11 @@ class TestVirtualCodebase(FileBasedTesting):
         scan_data = self.get_test_loc('resource/virtual_codebase/noinfo.json')
         codebase = VirtualCodebase(location=scan_data)
         expected = [
-            OrderedDict([
+            dict([
                 (u'path', u'NOTICE'),
                 (u'type', u'file'),
                 (u'copyrights', [
-                    OrderedDict([
+                    dict([
                         (u'statements', [u'Copyright (c) 2017 nexB Inc. and others.']),
                         (u'holders', [u'nexB Inc. and others.']),
                         (u'authors', []),
@@ -1068,12 +1052,12 @@ class TestVirtualCodebase(FileBasedTesting):
         scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
         codebase = VirtualCodebase(location=scan_data)
         expected = [
-                OrderedDict([
+                dict([
                 (u'path', u'samples'),
                 (u'type', u'directory'),
                 (u'scan_errors', [])
             ]),
-            OrderedDict([
+            dict([
                 (u'path', u'samples/NOTICE'),
                 (u'type', u'file'),
                 (u'scan_errors', [])
@@ -1084,7 +1068,6 @@ class TestVirtualCodebase(FileBasedTesting):
 
 class TestCodebaseLowestCommonParent(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-
 
     def test_lowest_common_parent_on_virtual_codebase(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/lcp.json')
@@ -1161,7 +1144,6 @@ class TestCodebaseLowestCommonParent(FileBasedTesting):
 
 class TestVirtualCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
-
 
     def test_virtual_codebase_cache_default(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
@@ -1315,13 +1297,13 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(test_file)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            OrderedDict([
+            dict([
                 (u'path', u'samples'),
                 (u'type', u'directory'),
                 (u'summary', [u'asd']),
                 (u'scan_errors', [])
             ]),
-            OrderedDict([
+            dict([
                 (u'path', u'samples/NOTICE'),
                 (u'type', u'file'),
                 (u'summary', []),
@@ -1337,11 +1319,11 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         codebase = VirtualCodebase(vinput)
         results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
         expected = [
-            OrderedDict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/samples'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/samples/NOTICE'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/thirdparty'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
-            OrderedDict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
+            dict([(u'path', u'virtual_root'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/samples'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/samples/NOTICE'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/thirdparty'), (u'type', u'directory'), (u'summary', []), (u'scan_errors', [])]),
+            dict([(u'path', u'virtual_root/thirdparty/example.zip'), (u'type', u'file'), (u'summary', []), (u'scan_errors', [])])
         ]
         assert expected == results
 

@@ -22,12 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-
 from datetime import datetime
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.timeutils import time2tstamp, tstamp2time, UTC
+from commoncode.timeutils import time2tstamp
+from commoncode.timeutils import tstamp2time
+from commoncode.timeutils import UTC
 
 
 class TestTimeStamp(FileBasedTesting):

@@ -23,41 +23,22 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
 import os
 import sys
+
 from unittest.case import skipIf
 
 from commoncode import command
-from commoncode import compat
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 
 
 class TestCommand(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    @skipIf(not py2, 'Behaviour of console encodings changed in Python3')
-    def test_execute2_non_ascii_output_py2(self):
-        # Popen returns a *binary* string with non-ascii chars: skips these
-        python = sys.executable
-        rc, stdout, stderr = command.execute2(
-            python, ['-c', "print b'non ascii: \\xe4 just passed it !'"]
-        )
-        assert b'' == stderr
-        assert b'non ascii: a just passed it !' == stdout
-        assert rc == 0
-        # do not throw exception
-        compat.unicode(stdout)
-
-    @skipIf(not py3, 'Behaviour of console encodings changed in Python3')
-    def test_execute2_non_ascii_output_py3(self):
+    def test_execute2_non_ascii_output(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
         python = sys.executable
         rc, stdout, stderr = command.execute2(
@@ -69,117 +50,54 @@ class TestCommand(FileBasedTesting):
         # do not throw exception
         stdout.encode('ascii')
 
-    @skipIf(not (on_linux and py2), 'Linux py2 only')
-    def test_update_path_var_linux_py2(self):
-        existing_path_var = b'/usr/bin:/usr/local'
-        pathsep = b':'
-
-        new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
-        assert b'foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = u'/bin/foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert b'/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-    @skipIf(not (on_linux and py3), 'Linux py3 only')
-    def test_update_path_var_linux_from_bytes(self):
+    @skipIf(not on_linux, 'Linux py3 only')
+    def test_update_path_var_on_linux(self):
         existing_path_var = '/usr/bin:/usr/local'
-        pathsep = ':'
 
         new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
+        updated_path = command.update_path_var(existing_path_var, new_path)
         assert 'foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = u'/bin/foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = b'/bin/foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
-    @skipIf(not (on_mac and py2), 'Mac only py2')
-    def test_update_path_var_mac_from_bytes(self):
+    @skipIf(not on_mac, 'Mac only py3')
+    def test_update_path_var_on_mac(self):
         existing_path_var = '/usr/bin:/usr/local'
-        pathsep = ':'
-
-        new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
-        assert 'foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = u'/bin/foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = b'foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-    @skipIf(not (on_mac and py3), 'Mac only py3')
-    def test_update_path_var_mac_from_unicode(self):
-        existing_path_var = '/usr/bin:/usr/local'
-        pathsep = ':'
 
         new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
+        updated_path = command.update_path_var(existing_path_var, new_path)
         assert 'foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = b'/bin/foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
         new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert '/bin/foo\udcb1bar:foo\udcb1bar:/usr/bin:/usr/local' == updated_path
 
-    @skipIf(not (on_mac and py2), 'Mac py2 only')
-    def test_update_path_var_mac_from_unicode_py2(self):
-        existing_path_var = '/usr/bin:/usr/local'
-        pathsep = ':'
-
-        new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
-        assert 'foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = b'/bin/foo\xb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-        new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
-        assert '/bin/foo\xb1bar:foo\xb1bar:/usr/bin:/usr/local' == updated_path
-
-    @skipIf(not (on_windows and py2), 'Windows only on Py2')
-    def test_update_path_var_windows_py2(self):
-        existing_path_var = b'c:\\windows;C:Program Files'
-        pathsep = ';'
-
-        new_path = u'c:\\bin\\foo\udcb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
-        assert 'c:\\bin\\foo?bar;c:\\windows;C:Program Files' == updated_path
-
-    @skipIf(not (on_windows and py3), 'Windows only on Py3')
-    def test_update_path_var_windows_from_unicode(self):
+    @skipIf(not on_windows, 'Windows only on Py3')
+    def test_update_path_var_on_windows(self):
         existing_path_var = u'c:\\windows;C:Program Files'
-        pathsep = u';'
 
         new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(existing_path_var, new_path, pathsep)
+        updated_path = command.update_path_var(existing_path_var, new_path)
         assert u'foo\udcb1bar;c:\\windows;C:Program Files' == updated_path
 
         new_path = u'foo\udcb1bar'
-        updated_path = command.update_path_var(updated_path, new_path, pathsep)
+        updated_path = command.update_path_var(updated_path, new_path)
         assert u'foo\udcb1bar;c:\\windows;C:Program Files' == updated_path

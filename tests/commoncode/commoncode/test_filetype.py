@@ -22,22 +22,21 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-
 import os
 
-import commoncode.testcase
-from commoncode.testcase import make_non_readable
-from commoncode.testcase import make_non_writable
+from os.path import join
+from os.path import exists
 
 from commoncode import filetype
+from commoncode import fileutils
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 from commoncode.system import py3
-from commoncode import fileutils
+
+import commoncode.testcase
 from commoncode.testcase import FileBasedTesting
-from os.path import join
-from os.path import exists
+from commoncode.testcase import make_non_readable
+from commoncode.testcase import make_non_writable
 
 
 class TypeTest(commoncode.testcase.FileBasedTesting):

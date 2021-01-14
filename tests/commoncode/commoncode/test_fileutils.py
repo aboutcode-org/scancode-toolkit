@@ -22,34 +22,27 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
 import os
 from os.path import join
 from os.path import sep
+from unittest.case import skip
 from unittest.case import skipIf
 
-from commoncode import compat
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import fsencode
-from commoncode.fileutils import fsdecode
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
-from commoncode.system import py2
-from commoncode.system import py3
 from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import make_non_executable
 from commoncode.testcase import make_non_readable
 from commoncode.testcase import make_non_writable
 
 
-@skipIf(py3, 'Somehow permissions tests do not work OK yet on Python 3')
+@skip('Somehow permissions tests do not work OK yet on Python 3')
 class TestPermissionsDeletions(FileBasedTesting):
     """
     This is failing for now on Python 3
@@ -300,10 +293,10 @@ class TestFileUtils(FileBasedTesting):
     def test_fsdecode_and_fsencode_are_idempotent(self):
         a = b'foo\xb1bar'
         b = u'foo\udcb1bar'
-        assert a == fsencode(fsdecode(a))
-        assert a == fsencode(fsdecode(b))
-        assert b == fsdecode(fsencode(a))
-        assert b == fsdecode(fsencode(b))
+        assert a == os.fsencode(os.fsdecode(a))
+        assert a == os.fsencode(os.fsdecode(b))
+        assert b == os.fsdecode(os.fsencode(a))
+        assert b == os.fsdecode(os.fsencode(b))
 
 
 class TestFileUtilsWalk(FileBasedTesting):
@@ -313,11 +306,11 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        test_dir = compat.unicode(test_dir)
+        test_dir = str(test_dir)
         result = list(os.walk(test_dir))
         expected = [
-            (compat.unicode(test_dir), ['a'], [u'2.csv']),
-            (compat.unicode(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
+            (str(test_dir), ['a'], [u'2.csv']),
+            (str(test_dir) + sep + 'a', [], [u'gru\u0308n.png'])
         ]
         assert expected == result
 
@@ -337,13 +330,8 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        if on_linux and py2:
-            test_dir = compat.unicode(test_dir)
         result = list(x[-1] for x in fileutils.walk(test_dir))
-        if on_linux and py2:
-            expected = [['2.csv'], ['gru\xcc\x88n.png']]
-        else:
-            expected = [[u'2.csv'], [u'gru\u0308n.png']]
+        expected = [[u'2.csv'], [u'gru\u0308n.png']]
         assert expected == result
 
     def test_fileutils_walk_can_walk_a_single_file(self):
@@ -368,7 +356,7 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
-            test_dir = compat.unicode(test_dir)
+            test_dir = str(test_dir)
         result = list(fileutils.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
@@ -378,8 +366,6 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
-            test_dir = compat.unicode(test_dir)
         result = list(os.walk(test_dir))[0]
         _dirpath, _dirnames, filenames = result
         assert 18 == len(filenames)
@@ -472,14 +458,11 @@ class TestFileUtilsIter(FileBasedTesting):
             '/walk/unicode.zip'
         ]
         assert sorted(expected) == sorted(result)
-        if on_linux and py2:
-            assert all(isinstance(p, bytes) for p in result)
-        else:
-            assert all(isinstance(p, compat.unicode) for p in result)
+        assert all(isinstance(p, str) for p in result)
 
     def test_resource_iter_return_unicode_on_unicode_input(self):
         test_dir = self.get_test_loc('fileutils/walk')
-        base = compat.unicode(self.get_test_loc('fileutils'))
+        base = str(self.get_test_loc('fileutils'))
         result = sorted([as_posixpath(f.replace(base, ''))
                          for f in fileutils.resource_iter(test_dir, with_dirs=True)])
         expected = [
@@ -493,27 +476,16 @@ class TestFileUtilsIter(FileBasedTesting):
             u'/walk/unicode.zip'
         ]
         assert sorted(expected) == sorted(result)
-        types = bytes if py2 and on_linux else compat.unicode
-        assert all(isinstance(p, types) for p in result)
+        assert all(isinstance(p, str) for p in result)
 
     def test_resource_iter_can_walk_unicode_path_with_zip(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
-        if on_linux and py2:
-            EMPTY_STRING = ''
-        else:
-            test_dir = compat.unicode(test_dir)
-            EMPTY_STRING = u''
+        test_dir = str(test_dir)
 
-        result = sorted([p.replace(test_dir, EMPTY_STRING) for p in fileutils.resource_iter(test_dir)])
-        if on_linux and py2:
-            expected = [
-                '/2.csv',
-                '/a',
-                '/a/gru\xcc\x88n.png'
-            ]
-        elif on_linux and py3:
+        result = sorted([p.replace(test_dir, '') for p in fileutils.resource_iter(test_dir)])
+        if on_linux:
             expected = [
                 u'/2.csv',
                 u'/a',
@@ -538,8 +510,6 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
-            test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
         assert 18 == len(result)
 
@@ -548,8 +518,6 @@ class TestFileUtilsIter(FileBasedTesting):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
-        if not on_linux and py2:
-            test_dir = compat.unicode(test_dir)
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
 

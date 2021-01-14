@@ -23,14 +23,9 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from commoncode import compat
 from commoncode import text
-from commoncode.text import CR, LF
-from commoncode.system import py2
+from commoncode.text import CR
+from commoncode.text import LF
 
 
 def test_lines():
@@ -56,10 +51,7 @@ def test_foldcase():
 
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    if py2:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', '\xc2', '\xc2', 'just']
-    else:
-        expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
+    expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
     assert expected == text.nopunctuation(test).split()
 
     test = 'This problem is about: sequence-bunching\n\n just \n'
@@ -103,7 +95,7 @@ def test_python_safe_name():
 
 def test_as_unicode():
     assert '' == text.as_unicode('')
-    assert isinstance(text.as_unicode(b'some bytes'), compat.unicode)
+    assert isinstance(text.as_unicode(b'some bytes'), str)
     assert None == text.as_unicode(None)
     try:
         text.as_unicode(['foo'])

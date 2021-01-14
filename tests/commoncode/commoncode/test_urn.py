@@ -22,14 +22,13 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
 
-from unittest import TestCase
+import unittest
 
 from commoncode import urn
 
 
-class URNTestCase(TestCase):
+class URNTestCase(unittest.TestCase):
 
     def test_encode_license(self):
         u1 = urn.encode('license', key='somekey')
