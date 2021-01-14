@@ -12,8 +12,7 @@ dates, files and hashes. Originally split from scancode-toolkit
 
 Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
 
-
-To set up the typecode development environment::
+To set up the development environment::
 
     source configure
 
