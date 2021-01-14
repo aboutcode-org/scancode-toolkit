@@ -1,45 +1,64 @@
 
 ################################################################################
-# We use Azure to run the full tests suites on Python 3.6
-# on Windows (32 and 64), macOS and Linux (64 various distro)
+# We use Azure to run the full tests suites on multiple Python 3.x
+# on multiple Windows, macOS and Linux versions all on 64 bits
+# These jobs are using VMs with Azure-provided Python builds
 ################################################################################
 
 jobs:
 
-################################################################################
-# These jobs are using VMs and Azure-provided Python 3.6
-################################################################################
+    - template: etc/ci/azure-linux.yml
+      parameters:
+          job_name: ubuntu16_cpython
+          image_name: ubuntu-16.04
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          test_suites:
+              all: tmp/bin/pytest -vvs
 
     - template: etc/ci/azure-linux.yml
       parameters:
-          job_name: ubuntu18_py36
+          job_name: ubuntu18_cpython
           image_name: ubuntu-18.04
-          python_versions: ['3.6']
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          test_suites:
+              all: tmp/bin/pytest -n 2 -vvs
+
+    - template: etc/ci/azure-linux.yml
+      parameters:
+          job_name: ubuntu20_cpython
+          image_name: ubuntu-20.04
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
 
     - template: etc/ci/azure-mac.yml
       parameters:
-          job_name: macos1015_py36
+          job_name: macos1014_cpython
+          image_name: macos-10.14
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
+          test_suites:
+              all: tmp/bin/pytest -n 2 -vvs
+
+    - template: etc/ci/azure-mac.yml
+      parameters:
+          job_name: macos1015_cpython
           image_name: macos-10.15
-          python_versions: ['3.6']
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
               all: tmp/bin/pytest -n 2 -vvs
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_32_py36
-          image_name: windows-2019
-          python_versions: ['3.6']
-          python_architecture: x86
+          job_name: win2016_cpython
+          image_name: vs2017-win2016
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: tmp\Scripts\pytest -vvs
+              all: tmp\Scripts\pytest -n 2 -vvs
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_64_py36
+          job_name: win2019_cpython
           image_name: windows-2019
-          python_versions: ['3.6']
-          python_architecture: x64
+          python_versions: ['3.6', '3.7', '3.8', '3.9']
           test_suites:
-              all: tmp\Scripts\pytest -vvs
+              all: tmp\Scripts\pytest -n 2 -vvs
