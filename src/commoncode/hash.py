@@ -94,7 +94,9 @@ class sha1_git_hasher(object):
         self.h = msg and self._compute(msg) or None
 
     def _compute(self, msg):
-        return hashlib.sha1(b'blob ' + str(len(msg)).encode('ascii') + b'\0' + msg).digest()
+        # note: bytes interpolation is new in Python 3.5
+        git_blob_msg = b'blob %d\0%s' % (len(msg), msg)
+        return hashlib.sha1(git_blob_msg).digest()
 
     def digest(self):
         return bytes(self.h)
