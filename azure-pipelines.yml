@@ -61,9 +61,15 @@ jobs:
                 bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_detection_datadriven_external.py
 
-              license_validate: |
+              license_validate1: |
                 bin/pytest -n 3 -vvs --test-suite=validate \
-                  tests/licensedcode/test_detection_validate.py
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseBasic
+
+              license_validate2: |
+                bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseExtended
 
               license_cache: |
                 bin/pytest -n 3 --reruns=2 -vvs --test-suite=all \
