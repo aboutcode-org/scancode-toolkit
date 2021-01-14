@@ -37,7 +37,7 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import combine_expressions
-from packagedcode.utils import parse_repo_url
+from packagedcode.utils import normalize_vcs_url
 
 """
 Handle Node.js npm packages
@@ -529,10 +529,10 @@ def vcs_repository_mapper(repo, package, vcs_revision=None):
     vcs_repository = ''
 
     if isinstance(repo, str):
-        vcs_repository = parse_repo_url(repo)
+        vcs_repository = normalize_vcs_url(repo)
 
     elif isinstance(repo, dict):
-        repo_url = parse_repo_url(repo.get('url'))
+        repo_url = normalize_vcs_url(repo.get('url'))
         if repo_url:
             vcs_tool = repo.get('type') or 'git'
             # remove vcs_tool string if repo_url already contains it
