@@ -22,11 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
 from functools import partial
 import os
 from os import path
@@ -34,10 +29,7 @@ import gzip
 import tarfile
 import zipfile
 
-from commoncode import fileutils
-from commoncode.system import on_linux
 from commoncode.system import on_windows
-from commoncode.system import py2
 
 """
 Mimimal tar and zip file handling, primarily for testing.
@@ -49,10 +41,6 @@ def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     Raw simplified extract for certain really weird paths and file
     names.
     """
-    if to_bytes and py2:
-        # use bytes for paths on ALL OSes (though this may fail on macOS)
-        target_dir = fileutils.fsencode(target_dir)
-        test_path = fileutils.fsencode(test_path)
     tar = None
     try:
         tar = tarfile.open(test_path)
@@ -74,10 +62,7 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     """
     # always for using bytes for paths on all OSses... tar seems to use bytes internally
     # and get confused otherwise
-    location = fileutils.fsencode(location)
-    if on_linux and py2:
-        target_dir = fileutils.fsencode(target_dir)
-
+    location = os.fsencode(location)
     with open(location, 'rb') as input_tar:
         tar = None
         try:
@@ -102,10 +87,6 @@ def extract_zip(location, target_dir, *args, **kwargs):
     if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
-    if on_linux and py2:
-        location = fileutils.fsencode(location)
-        target_dir = fileutils.fsencode(target_dir)
-
     with zipfile.ZipFile(location) as zipf:
         for info in zipf.infolist():
             name = info.filename
@@ -128,10 +109,6 @@ def extract_zip_raw(location, target_dir, *args, **kwargs):
     """
     if not path.isfile(location) and zipfile.is_zipfile(location):
         raise Exception('Incorrect zip file %(location)r' % locals())
-
-    if on_linux and py2:
-        location = fileutils.fsencode(location)
-        target_dir = fileutils.fsencode(target_dir)
 
     with zipfile.ZipFile(location) as zipf:
         zipf.extractall(path=target_dir)

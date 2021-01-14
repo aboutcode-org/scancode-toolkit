@@ -22,12 +22,10 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import, unicode_literals
-
-import sys
-import os
 import getpass
+import os
 import subprocess
+import sys
 
 
 def os_arch():
@@ -51,6 +49,7 @@ def os_arch():
     else:
         raise Exception('Unsupported OS/platform %r' % sys_platform)
     return os, arch
+
 
 #
 # OS/Arch
@@ -83,6 +82,7 @@ def is_on_macos_14_or_higher():
     macos_ver = macos_ver.split('.')
     return macos_ver > ['10', '14']
 
+
 on_macos_14_or_higher = is_on_macos_14_or_higher()
 
 del is_on_macos_14_or_higher
@@ -95,7 +95,7 @@ def has_case_sensitive_fs():
     Windows is not case sensitive, and while older macOS HPFS+ were POSIX and
     case sensitive by default, newer macOS use APFS which is no longer case
     sensitive by default.
-    
+
     From https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
         How does Apple File System handle filenames?
         APFS accepts only valid UTF-8 encoded filenames for creation, and preserves
@@ -103,11 +103,10 @@ def has_case_sensitive_fs():
         like HFS+, is case-sensitive on iOS and is available in case-sensitive and
         case-insensitive variants on macOS, with case-insensitive being the default.
     """
-    return os.path.exists(__file__.upper())
+    return not os.path.exists(__file__.upper())
 
 
 is_case_sensitive_fs = has_case_sensitive_fs()
-
 
 #
 # Shared library file extensions
@@ -127,11 +126,10 @@ py2 = _sys_v0 == 2
 py3 = _sys_v0 == 3
 
 _sys_v1 = sys.version_info[1]
-py27 = py2 and _sys_v1 == 7
-py34 = py3 and _sys_v1 == 4
-py35 = py3 and _sys_v1 == 5
 py36 = py3 and _sys_v1 == 6
 py37 = py3 and _sys_v1 == 7
+py38 = py3 and _sys_v1 == 8
+py39 = py3 and _sys_v1 == 9
 
 # Do not let Windows error pop up messages with default SetErrorMode
 # See http://msdn.microsoft.com/en-us/library/ms680621(VS100).aspx

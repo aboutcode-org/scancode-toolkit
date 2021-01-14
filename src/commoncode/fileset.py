@@ -22,18 +22,11 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import fnmatch
 import os
 
 from commoncode import fileutils
 from commoncode import paths
-from commoncode.system import on_linux
-from commoncode.system import py2
-
 
 TRACE = False
 if TRACE:
@@ -43,11 +36,6 @@ if TRACE:
     logger = logging.getLogger(__name__)
     logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
-
-POSIX_PATH_SEP = b'/' if on_linux and py2 else u'/'
-EMPTY_STRING = b'' if on_linux and py2 else u''
-
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
@@ -136,7 +124,7 @@ def get_matches(path, patterns, all_matches=False):
         return False
 
     path = fileutils.as_posixpath(path).lower()
-    pathstripped = path.lstrip(POSIX_PATH_SEP)
+    pathstripped = path.lstrip('/0')
     if not pathstripped:
         return False
 
@@ -154,9 +142,9 @@ def get_matches(path, patterns, all_matches=False):
         if not pat or not pat.strip():
             continue
 
-        value = value or EMPTY_STRING
-        pat = pat.lstrip(POSIX_PATH_SEP).lower()
-        is_plain = POSIX_PATH_SEP not in pat
+        value = value or ''
+        pat = pat.lstrip('/').lower()
+        is_plain = '/' not in pat
 
         if is_plain:
             if any(fnmatch.fnmatchcase(s, pat) for s in segments):
@@ -187,7 +175,7 @@ def load(location):
     fn = os.path.abspath(os.path.normpath(os.path.expanduser(location)))
     msg = ('File %(location)s does not exist or not a file.') % locals()
     assert (os.path.exists(fn) and os.path.isfile(fn)), msg
-    mode = 'rb' if on_linux and py2 else 'r'
+    mode = 'r'
     with open(fn, mode) as f:
         return [l.strip() for l in f if l and l.strip()]
 

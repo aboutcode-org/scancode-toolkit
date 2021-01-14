@@ -22,27 +22,21 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
-from collections import defaultdict
 import filecmp
-from itertools import chain
 import os
-from os import path
 import shutil
 import stat
 import sys
+
+from os import path
+from collections import defaultdict
+from itertools import chain
 from unittest import TestCase as TestCaseClass
 
 from commoncode import fileutils
 from commoncode import filetype
-from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
-from commoncode.system import py2
 from commoncode.archive import extract_tar
 from commoncode.archive import extract_tar_raw
 from commoncode.archive import extract_tar_uni
@@ -57,33 +51,18 @@ test_run_temp_dir = None
 # set to 1 to see the slow tests
 timing_threshold = sys.maxsize
 
-if on_linux and py2:
-    POSIX_PATH_SEP = b'/'
-    WIN_PATH_SEP = b'\\'
-    EMPTY_STRING = b''
-    DOT = b'.'
-else:
-    POSIX_PATH_SEP = u'/'
-    WIN_PATH_SEP = u'\\'
-    EMPTY_STRING = u''
-    DOT = u'.'
-
-if on_windows:
-    OS_PATH_SEP = WIN_PATH_SEP
-else:
-    OS_PATH_SEP = POSIX_PATH_SEP
-
 
 def to_os_native_path(path):
     """
     Normalize a path to use the native OS path separator.
     """
-    if on_linux and py2:
-        path = fileutils.fsencode(path)
-    path = path.replace(POSIX_PATH_SEP, OS_PATH_SEP)
-    path = path.replace(WIN_PATH_SEP, OS_PATH_SEP)
-    path = path.rstrip(OS_PATH_SEP)
-    return path
+    OS_PATH_SEP = '\\' if on_windows else '/'
+
+    return (
+        path.replace('/', OS_PATH_SEP)
+        .replace(u'\\', OS_PATH_SEP)
+        .rstrip(OS_PATH_SEP)
+    )
 
 
 def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
@@ -91,10 +70,6 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     Given a `test_path` relative to the `test_data_dir` directory, return the
     location to a test file or directory for this path. No copy is done.
     """
-    if on_linux and py2:
-        test_path = fileutils.fsencode(test_path)
-        test_data_dir = fileutils.fsencode(test_data_dir)
-
     if debug:
         import inspect
         caller = inspect.stack()[1][3]
@@ -132,10 +107,6 @@ class FileDrivenTesting(object):
         test location if `copy` is True.
         """
         test_data_dir = self.test_data_dir
-        if on_linux and py2:
-            test_path = fileutils.fsencode(test_path)
-            test_data_dir = fileutils.fsencode(test_data_dir)
-
         if debug:
             import inspect
             caller = inspect.stack()[1][3]
@@ -167,13 +138,8 @@ class FileDrivenTesting(object):
         if extension is None:
             extension = '.txt'
 
-        if on_linux and py2:
-            extension = fileutils.fsencode(extension)
-            dir_name = fileutils.fsencode(dir_name)
-            file_name = fileutils.fsencode(file_name)
-
-        if extension and not extension.startswith(DOT):
-                extension = DOT + extension
+        if extension and not extension.startswith('.'):
+                extension = '.' + extension
 
         file_name = file_name + extension
         temp_dir = self.get_temp_dir(dir_name)
@@ -195,8 +161,6 @@ class FileDrivenTesting(object):
             # now we add a space in the path for testing path with spaces
             test_run_temp_dir = fileutils.get_temp_dir(
                 base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
-        if on_linux and py2:
-            test_run_temp_dir = fileutils.fsencode(test_run_temp_dir)
 
         test_run_temp_subdir = fileutils.get_temp_dir(
             base_dir=test_run_temp_dir, prefix='')
@@ -213,10 +177,6 @@ class FileDrivenTesting(object):
         Remove some version control directories and some temp editor files.
         """
         vcses = ('CVS', '.svn', '.git', '.hg')
-        if on_linux and py2:
-            vcses = tuple(fileutils.fsencode(p) for p in vcses)
-            test_dir = fileutils.fsencode(test_dir)
-
         for root, dirs, files in os.walk(test_dir):
             for vcs_dir in vcses:
                 if vcs_dir in dirs:
@@ -227,9 +187,8 @@ class FileDrivenTesting(object):
                     shutil.rmtree(path.join(root, vcs_dir), False)
 
             # editors temp file leftovers
-            tilde = b'~' if on_linux and py2 else '~'
             tilde_files = [path.join(root, file_loc)
-                           for file_loc in files if file_loc.endswith(tilde)]
+                           for file_loc in files if file_loc.endswith('~')]
             for tf in tilde_files:
                 os.remove(tf)
 
@@ -241,17 +200,11 @@ class FileDrivenTesting(object):
         If `verbatim` is True preserve the permissions.
         """
         assert test_path and test_path != ''
-        if on_linux and py2:
-            test_path = fileutils.fsencode(test_path)
         test_path = to_os_native_path(test_path)
         target_path = path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
-        if on_linux and py2:
-            target_dir = fileutils.fsencode(target_dir)
-            original_archive = fileutils.fsencode(original_archive)
-        extract_func(original_archive, target_dir,
-                     verbatim=verbatim)
+        extract_func(original_archive, target_dir, verbatim=verbatim)
         return target_dir
 
     def extract_test_zip(self, test_path, *args, **kwargs):

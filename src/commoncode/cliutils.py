@@ -22,12 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
 import sys
 
 import click
@@ -35,15 +29,12 @@ click.disable_unicode_literals_warning = True
 from click.utils import echo
 from click.termui import style
 from click.types import BoolParamType
-# FIXME: this is NOT API 
+# FIXME: this is NOT API
 from click._termui_impl import ProgressBar
-from six import string_types
 
-from commoncode import compat
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
 from commoncode.text import toascii
-
 
 # Tracing flags
 TRACE = False
@@ -60,9 +51,8 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types)
+        return logger.debug(' '.join(isinstance(a, str)
                                      and a or repr(a) for a in args))
-
 
 """
 Command line UI utilities for improved options, help and progress reporting.
@@ -85,15 +75,21 @@ class BaseCommand(click.Command):
         """
         return super(BaseCommand, self).get_usage(ctx) + self.short_usage_help
 
-    def main(self, args=None, prog_name=None, complete_var=None,
-             standalone_mode=True, **extra):
+    def main(
+        self, args=None, prog_name=None, complete_var=None,
+        standalone_mode=True, **extra,
+    ):
         """
         Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
         """
-        return click.Command.main(self, args=args, prog_name=self.name,
-                                  complete_var=complete_var,
-                                  standalone_mode=standalone_mode, **extra)
-
+        return click.Command.main(
+            self,
+            args=args,
+            prog_name=self.name,
+            complete_var=complete_var,
+            standalone_mode=standalone_mode,
+            **extra,
+        )
 
 
 class GroupedHelpCommand(BaseCommand):
@@ -105,25 +101,27 @@ class GroupedHelpCommand(BaseCommand):
     short_usage_help = '''
 Try the '--help' option for help on options and arguments.'''
 
-    def __init__(self, name, context_settings=None, callback=None, params=None,
-                 help=None,  # NOQA
-                 epilog=None, short_help=None,
-                 options_metavar='[OPTIONS]', add_help_option=True,
-                 plugin_options=()):
+    def __init__(
+        self, name, context_settings=None, callback=None, params=None,
+        help=None,  # NOQA
+        epilog=None, short_help=None,
+        options_metavar='[OPTIONS]', add_help_option=True,
+        plugin_options=(),
+    ):
         """
         Create a new GroupedHelpCommand using the `plugin_options` list of
         PluggableCommandLineOption instances.
         """
 
         super(GroupedHelpCommand, self).__init__(
-            name, 
-            context_settings, 
+            name,
+            context_settings,
             callback,
-            params, 
-            help, 
-            epilog, 
-            short_help, 
-            options_metavar, 
+            params,
+            help,
+            epilog,
+            short_help,
+            options_metavar,
             add_help_option,
         )
 
@@ -137,7 +135,7 @@ Try the '--help' option for help on options and arguments.'''
         to MISC_GROUP group.
         """
         # this mapping defines the CLI help presentation order
-        help_groups = OrderedDict([
+        help_groups = dict([
             (SCAN_GROUP, []),
             (OTHER_SCAN_GROUP, []),
             (SCAN_OPTIONS_GROUP, []),
@@ -220,14 +218,13 @@ class ProgressLogger(ProgressBar):
 
 
 BAR_WIDTH = 20
-BAR_SEP = ' '
-BAR_SEP_LEN = len(BAR_SEP)
+BAR_SEP_LEN = len(' ')
 
 
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=True, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
-                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,  # NOQA
+                    info_sep=' ', width=BAR_WIDTH, file=None, color=None,  # NOQA
                     verbose=False):
 
     """
@@ -243,7 +240,7 @@ def progressmanager(iterable=None, length=None, label=None, show_eta=True,
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = ('[%(bar)s]' + BAR_SEP + '%(info)s'
+        bar_template = ('[%(bar)s]' + ' ' + '%(info)s'
                         if bar_template is None else bar_template)
 
     return progress_class(iterable=iterable, length=length,
@@ -292,22 +289,21 @@ def fixed_width_file_name(path, max_length=25):
     return '{prefix}{ellipsis}{suffix}{ext}'.format(**locals())
 
 
-def file_name_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN):
+def file_name_max_len(used_width=BAR_WIDTH + 1 + 7 + 1 + 8 + 1):
     """
     Return the max length of a path given the current terminal width.
 
     A progress bar is composed of these elements:
       [-----------------------------------#]  1667  Scanned: tu-berlin.yml
     - the bar proper which is BAR_WIDTH characters
-    - one BAR_SEP
+    - one space
     - the number of files. We set it to 7 chars, eg. 9 999 999 files
-    - one BAR_SEP
+    - one space
     - the word Scanned: 8 chars
-    - one BAR_SEP
+    - one space
     - the file name proper
     The space usage is therefore:
-        BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN
-        + the file name length
+        BAR_WIDTH + 1 + 7 + 1 + 8 + 1 + the file name length
     """
     term_width, _height = click.get_terminal_size()
     max_filename_length = term_width - used_width
@@ -323,7 +319,7 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
         return ''
     location = item[0]
     errors = item[2]
-    location = compat.unicode(toascii(location))
+    location = toascii(location)
     progress_line = location
     if not verbose:
         max_file_name_len = file_name_max_len()
@@ -334,7 +330,6 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
 
     color = 'red' if errors else 'green'
     return style(prefix) + style(progress_line, fg=color)
-
 
 
 # CLI help groups
@@ -391,11 +386,21 @@ class PluggableCommandLineOption(click.Option):
         **kwargs
     ):
 
-        super(PluggableCommandLineOption, self).__init__(param_decls, show_default,
-                     prompt, confirmation_prompt,
-                     hide_input, is_flag, flag_value,
-                     multiple, count, allow_from_autoenv,
-                     type, help, **kwargs)
+        super(PluggableCommandLineOption, self).__init__(
+            param_decls,
+            show_default,
+            prompt,
+            confirmation_prompt,
+            hide_input,
+            is_flag,
+            flag_value,
+            multiple,
+            count,
+            allow_from_autoenv,
+            type,
+            help,
+            **kwargs
+        )
 
         self.help_group = help_group
         self.sort_order = sort_order
@@ -410,12 +415,16 @@ class PluggableCommandLineOption(click.Option):
         required_options = self.required_options
         conflicting_options = self.conflicting_options
 
-        return ('PluggableCommandLineOption<name=%(name)r, '
-                'required_options=%(required_options)r, conflicting_options=%(conflicting_options)r>' % locals())
+        return (
+            'PluggableCommandLineOption<name=%(name)r, '
+            'required_options=%(required_options)r, '
+            'conflicting_options=%(conflicting_options)r>' % locals()
+        )
 
     def validate_dependencies(self, ctx, value):
         """
-        Validate `value` against declared `required_options` or `conflicting_options` dependencies.
+        Validate `value` against declared `required_options` or
+        `conflicting_options` dependencies.
         """
         _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
         _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
@@ -427,8 +436,8 @@ class PluggableCommandLineOption(click.Option):
 
 def validate_option_dependencies(ctx):
     """
-    Validate all PluggableCommandLineOption dependencies in the `ctx` Click context.
-    Ignore eager flags.
+    Validate all PluggableCommandLineOption dependencies in the `ctx` Click
+    context. Ignore eager flags.
     """
     values = ctx.params
     if TRACE:
@@ -449,8 +458,7 @@ def validate_option_dependencies(ctx):
         param.validate_dependencies(ctx, value)
 
 
-def _validate_option_dependencies(ctx, param, value,
-                                  other_option_names, required=False):
+def _validate_option_dependencies(ctx, param, value, other_option_names, required=False):
     """
     Validate the `other_option_names` option dependencies and return a
     UsageError if the `param` `value` is set to a not-None non-default value and

@@ -22,12 +22,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import binascii
-from collections import OrderedDict
 import hashlib
 
 from commoncode.codec import bin_to_num
@@ -180,7 +175,7 @@ def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512',
     The mapping is guaranted to contains all the requested names as keys.
     If the location is not a file, the values are None.
     """
-    results = OrderedDict([(name, None) for name in checksum_names])
+    results = dict([(name, None) for name in checksum_names])
     if not filetype.is_file(location):
         return results
 

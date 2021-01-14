@@ -22,12 +22,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import os
-from collections import OrderedDict
 from datetime import datetime
 
 from commoncode.system import on_posix
@@ -108,7 +103,7 @@ def get_link_target(location):
 
 # Map of type checker function -> short type code
 # The order of types check matters: link -> file -> directory -> special
-TYPES = OrderedDict([
+TYPES = dict([
     (is_link, ('l', 'link',)),
     (is_file, ('f', 'file',)),
     (is_dir, ('d', 'directory',)),

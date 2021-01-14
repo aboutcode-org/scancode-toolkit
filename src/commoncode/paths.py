@@ -22,38 +22,22 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import ntpath
-from os.path import commonprefix
 import posixpath
 import re
 
-from commoncode import compat
+from os.path import commonprefix
+
 from commoncode.text import as_unicode
 from commoncode.text import toascii
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
-from commoncode.system import on_linux
-from commoncode.system import py2
 
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
-
-if on_linux and py2:
-    POSIX_PATH_SEP = b'/'
-    WIN_PATH_SEP = b'\\'
-    EMPTY_STRING = b''
-else:
-    POSIX_PATH_SEP = u'/'
-    WIN_PATH_SEP = u'\\'
-    EMPTY_STRING = u''
-
 #
 # Build OS-portable and safer paths
 
@@ -68,7 +52,7 @@ def safe_path(path, posix=False):
     path with blackslash separators otherwise.
     """
     # if the path is UTF, try to use unicode instead
-    if not isinstance(path, compat.unicode):
+    if not isinstance(path, str):
         path = as_unicode(path)
 
     path = path.strip()
@@ -88,8 +72,7 @@ def safe_path(path, posix=False):
         return '_'
 
     # always return posix
-    sep = u'/' if isinstance(path, compat.unicode) else b'/'
-    path = sep.join(segments)
+    path = '/'.join(segments)
     return as_posixpath(path)
 
 
@@ -103,8 +86,7 @@ def path_handlers(path, posix=True):
     is_posix = is_posixpath(path)
     use_posix = posix or is_posix
     pathmod = use_posix and posixpath or ntpath
-    path_sep = POSIX_PATH_SEP if use_posix else WIN_PATH_SEP
-    path_sep = isinstance(path, compat.unicode) and compat.unicode(path_sep) or path_sep
+    path_sep = '/' if use_posix else '\\'
     return pathmod, path_sep
 
 
@@ -119,15 +101,12 @@ def resolve(path, posix=True):
     The `path` is treated as a POSIX path if `posix` is True (default) or as a
     Windows path with blackslash separators otherwise.
     """
-    is_unicode = isinstance(path, compat.unicode)
-    dot = is_unicode and u'.' or b'.'
-
     if not path:
-        return dot
+        return '.'
 
     path = path.strip()
     if not path:
-        return dot
+        return '.'
 
     if not is_posixpath(path):
         path = as_winpath(path)
@@ -139,7 +118,7 @@ def resolve(path, posix=True):
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
 
     # remove empty (// or ///) or blank (space only) or single dot segments
-    segments = [s for s in segments if s and s != dot]
+    segments = [s for s in segments if s and s != '.']
 
     path = path_sep.join(segments)
 
@@ -156,13 +135,13 @@ def resolve(path, posix=True):
         segments[0] = segments[0][:-1]
 
     # replace any remaining (usually leading) .. segment with a literal "dotdot"
-    dotdot = is_unicode and u'dotdot' or b'dotdot'
-    dd = is_unicode and u'..' or b'..'
+    dotdot = 'dotdot'
+    dd = '..'
     segments = [dotdot if s == dd else s for s in segments if s]
     if segments:
         path = path_sep.join(segments)
     else:
-        path = dot
+        path = '.'
 
     path = as_posixpath(path)
 
@@ -278,8 +257,8 @@ def split(p):
     """
     if not p:
         return []
-    p = p.strip(POSIX_PATH_SEP).split(POSIX_PATH_SEP)
-    return [] if p == [EMPTY_STRING] else p
+    p = p.strip('/').split('/')
+    return [] if p == [''] else p
 
 
 def _common_path(p1, p2, common_func):
@@ -289,5 +268,5 @@ def _common_path(p1, p2, common_func):
     function.
     """
     common, lgth = common_func(split(p1), split(p2))
-    common = POSIX_PATH_SEP.join(common) if common else None
+    common = '/'.join(common) if common else None
     return common, lgth

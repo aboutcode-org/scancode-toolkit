@@ -22,25 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-try:
-    # Python 2
-    unicode = unicode  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    unicode = str  # NOQA
-
-
-try:
-    # Python 2
-    long = long  # NOQA
-
-except NameError:  # pragma: nocover
-    # Python 3
-    long = int  # NOQA
-
+unicode = str  # NOQA
+long = int  # NOQA
 integer_types = int, long,

@@ -22,30 +22,24 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import deque
-from collections import OrderedDict
-from functools import partial
 import io
 import json
 import os
+import posixpath
+import traceback
+import sys
+
+from collections import deque
+from functools import partial
 from os import walk as os_walk
 from os.path import abspath
 from os.path import exists
 from os.path import expanduser
 from os.path import join
 from os.path import normpath
-import posixpath
-import traceback
-import sys
 
 import attr
 from intbitset import intbitset
-from six import string_types
 
 try:
     from scancode_config import scancode_temp_dir as temp_dir
@@ -61,23 +55,15 @@ from commoncode.datautils import String
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
 
-from commoncode.fileutils import POSIX_PATH_SEP
-from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import delete
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
-from commoncode.fileutils import fsdecode
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
 
 from commoncode import ignore
-from commoncode.system import on_linux
-from commoncode.system import py2
-from commoncode.system import py3
-
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -110,7 +96,7 @@ if TRACE or TRACE_DEEP:
 
     def logger_debug(*args):
         return logger.debug(
-            ' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class ResourceNotInCache(Exception):
@@ -140,7 +126,7 @@ def depth_walk(root_location, max_depth, error_handler=lambda:None):
     recursively up to `max_depth` path segments extending from the `root_location`.
     The behaviour is similar of `os.walk`.
 
-    Arguments: 
+    Arguments:
        - root_location: Absolute, normalized path for the directory to be walked
        - max_depth: positive integer for fixed depth limit. 0 for no limit.
        - skip_ignored: Callback function that takes `top` as argument and returns a boolean
@@ -162,7 +148,7 @@ def depth_walk(root_location, max_depth, error_handler=lambda:None):
 
         if skip_ignored(top) or (max_depth and current_depth >= max_depth):
             # we clear out `dirs` and `files` to prevent `os_walk` from visiting
-            # the files and subdirectories of directories we are ignoring or 
+            # the files and subdirectories of directories we are ignoring or
             # are not in the specified nesting level
             dirs[:] = []
             files[:] = []
@@ -188,7 +174,7 @@ class Header(object):
     extra_data = Mapping(help='Mapping of extra key/values for this tool.')
 
     def to_dict(self):
-        return attr.asdict(self, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=dict)
 
     @classmethod
     def from_dict(cls, **kwargs):
@@ -298,7 +284,7 @@ class Codebase(object):
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
 
-        `max_depth` is the maximum depth of subdirectories to descend below and 
+        `max_depth` is the maximum depth of subdirectories to descend below and
         including `location`.
         """
         self.original_location = location
@@ -309,18 +295,15 @@ class Codebase(object):
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
 
-        self.resource_attributes = resource_attributes or OrderedDict()
-        self.codebase_attributes = codebase_attributes or OrderedDict()
+        self.resource_attributes = resource_attributes or dict()
+        self.codebase_attributes = codebase_attributes or dict()
 
         # setup location
         ########################################################################
-        if on_linux and py2:
-            location = fsencode(location)
-        else:
-            location = fsdecode(location)
+        location = os.fsdecode(location)
 
         location = abspath(normpath(expanduser(location)))
-        location = location.rstrip(POSIX_PATH_SEP).rstrip(WIN_PATH_SEP)
+        location = location.rstrip('/\\')
 
         # TODO: we should also accept to create "virtual" codebase without a
         # backing filesystem location
@@ -392,11 +375,11 @@ class Codebase(object):
 
         # mapping of scan counters at the codebase level such
         # as the number of files and directories, etc
-        self.counters = OrderedDict()
+        self.counters = dict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.
-        self.timings = OrderedDict()
+        self.timings = dict()
 
         # list of error strings from collecting the codebase details (such as
         # unreadable file, etc).
@@ -415,7 +398,8 @@ class Codebase(object):
         """
         if not self.cache_dir:
             return
-        resid = (b'%08x'if (py2 and on_linux) else '%08x') % rid
+        # Note this is hex
+        resid = '%08x' % rid
         cache_sub_dir, cache_file_name = resid[-2:], resid
         parent = join(self.cache_dir, cache_sub_dir)
         if create and not exists(parent):
@@ -440,17 +424,18 @@ class Codebase(object):
 
         # Resource sub-class to use. Configured with plugin attributes if present
         self.resource_class = attr.make_class(
-            name=b'ScannedResource' if py2 else 'ScannedResource',
+            name='ScannedResource',
             attrs=self.resource_attributes or {},
             slots=True,
             # frozen=True,
-            bases=(Resource,))
+            bases=(Resource,)
+        )
 
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
                 'ERROR: cannot populate codebase: {}\n'.format(_error)
-                + traceback.format_exc())
+                +traceback.format_exc())
 
         def create_resources(_seq, _top, _parent, _is_file):
             """Create Resources of parent from a seq of files or directories."""
@@ -484,7 +469,6 @@ class Codebase(object):
                 create_resources(files, top, parent, _is_file=True)
                 create_resources(dirs, top, parent, _is_file=False)
 
-
     def _create_root_resource(self):
         """
         Create and return the root Resource of this codebase.
@@ -499,21 +483,31 @@ class Codebase(object):
         # do not strip root for codebase with a single Resource.
         if self.strip_root:
             if self.has_single_resource:
-                path = fsdecode(name)
+                path = name
             else:
                 # NOTE: this may seem weird but the root path will be an empty
                 # string for a codebase root with strip_root=True if not
                 # single_resource
                 path = ''
         else:
-            path = get_path(location, location, full_root=self.full_root,
-                            strip_root=self.strip_root)
+            path = get_path(
+                root_location=location,
+                location=location,
+                full_root=self.full_root,
+                strip_root=self.strip_root,
+            )
         if TRACE:
             logger_debug('  Codebase._create_root_resource:', path)
             logger_debug()
 
-        root = self.resource_class(name=name, location=location, path=path,
-                                   rid=0, pid=None, is_file=self.is_file)
+        root = self.resource_class(
+            name=name,
+            location=location,
+            path=path,
+            rid=0,
+            pid=None,
+            is_file=self.is_file,
+        )
 
         self.resource_ids.add(0)
         self.resources[0] = root
@@ -546,7 +540,7 @@ class Codebase(object):
 
         # If the codebase is virtual, we provide the path
         if not path:
-            path = posixpath.join(parent.path, fsdecode(name))
+            path = posixpath.join(parent.path, name)
 
         if TRACE:
             logger_debug('  Codebase._create_resource: parent.path:', parent.path, 'path:', path)
@@ -727,15 +721,13 @@ class Codebase(object):
         cache_location = resource.cache_location
 
         if not cache_location:
-            raise TypeError('Resource cannot be dumped to disk and is used only'
-                            'in memory: %(resource)r' % resource)
+            raise TypeError(
+                'Resource cannot be dumped to disk and is used only'
+                f'in memory: {resource}'
+            )
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        if py2:
-            mode = 'wb'
-        if py3:
-            mode = 'w'
-        with open(cache_location , mode) as cached:
+        with open(cache_location , 'w') as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
@@ -759,12 +751,14 @@ class Codebase(object):
             with open(cache_location, 'rb') as cached:
                 # TODO: Use custom json encoder to encode JSON list as a tuple
                 # TODO: Consider using simplejson
-                data = json.load(cached, object_pairs_hook=OrderedDict, encoding='utf-8')
+                data = json.load(cached)
                 return self.resource_class(**data)
         except Exception:
             with open(cache_location, 'rb') as cached:
                 cached_data = cached.read()
-            msg = ('ERROR: failed to load resource from cached location: {cache_location} with content:\n\n'.format(**locals())
+            msg = (
+                f'ERROR: failed to load resource from cached location: {cache_location} '
+                'with content:\n\n'
                 +repr(cached_data)
                 +'\n\n'
                 +traceback.format_exc())
@@ -776,8 +770,9 @@ class Codebase(object):
         Does not remove children.
         """
         if resource.is_root:
-            raise TypeError('Cannot remove the root resource from '
-                            'codebase:', repr(resource))
+            raise TypeError(
+                'Cannot remove the root resource from '
+                'codebase: ' + repr(resource))
         rid = resource.rid
         # remove from index.
         self.resource_ids.discard(rid)
@@ -796,8 +791,8 @@ class Codebase(object):
             logger_debug('  resource', resource)
 
         if resource.is_root:
-            raise TypeError('Cannot remove the root resource from '
-                            'codebase:', repr(resource))
+            raise TypeError(
+                'Cannot remove the root resource from codebase:' + repr(resource))
 
         removed_rids = set()
 
@@ -957,24 +952,11 @@ class Codebase(object):
         return res
 
 
-def to_native_path(path):
-    """
-    Return `path` using the preferred OS encoding (bytes on Linux,
-    Unicode elsewhere) given a unicode or bytes path string.
-    """
-    if not path:
-        return path
-    if on_linux and py2:
-        return fsencode(path)
-    else:
-        return fsdecode(path)
-
-
 def to_decoded_posix_path(path):
     """
     Return `path` as a Unicode POSIX path given a unicode or bytes path string.
     """
-    return fsdecode(as_posixpath(path))
+    return os.fsdecode(as_posixpath(path))
 
 
 @attr.attributes(slots=True)
@@ -995,12 +977,12 @@ class Resource(object):
     """
     # the file or directory name in the OS preferred representation (either
     # bytes on Linux and Unicode elsewhere)
-    name = attr.attrib(converter=to_native_path, repr=False)
+    name = attr.attrib(repr=False)
 
     # the file or directory absolute location in the OS preferred representation
     # (either bytes on Linux and Unicode elsewhere) using the OS native path
     # separators.
-    location = attr.attrib(converter=to_native_path, repr=False)
+    location = attr.attrib(repr=False)
 
     # the file or directory POSIX path decoded as unicode using the filesystem
     # encoding. This is the path that will be reported in output and can be
@@ -1022,7 +1004,7 @@ class Resource(object):
 
     # location of the file where this resource can be chached on disk in the OS
     # preferred representation (either bytes on Linux and Unicode elsewhere)
-    cache_location = attr.attrib(default=None, converter=to_native_path, repr=False)
+    cache_location = attr.attrib(default=None, repr=False)
 
     # True for file, False for directory
     is_file = attr.ib(default=False)
@@ -1050,7 +1032,7 @@ class Resource(object):
     scan_time = attr.ib(default=0, repr=False)
 
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
-    scan_timings = attr.ib(default=attr.Factory(OrderedDict), repr=False)
+    scan_timings = attr.ib(default=attr.Factory(dict), repr=False)
 
     # stores a mapping of extra data for this Resource this data is
     # never returned in a to_dict() and not meant to be saved in the
@@ -1059,7 +1041,7 @@ class Resource(object):
     # usefuol afterwards. Be careful when using this not to override
     # keys/valoues that may have been created by some other plugin or
     # process
-    extra_data = attr.ib(default=attr.Factory(OrderedDict), repr=False)
+    extra_data = attr.ib(default=attr.Factory(dict), repr=False)
 
     @property
     def is_root(self):
@@ -1292,16 +1274,16 @@ class Resource(object):
         """
         Return a mapping of representing this Resource and its scans.
         """
-        res = OrderedDict()
+        res = dict()
         res['path'] = self.path
         res['type'] = self.type
         if skinny:
             return res
 
         if with_info:
-            res['name'] = fsdecode(self.name)
-            res['base_name'] = fsdecode(self.base_name)
-            res['extension'] = fsdecode(self.extension)
+            res['name'] = self.name
+            res['base_name'] = self.base_name
+            res['extension'] = self.extension
             res['size'] = self.size
 
         # exclude by default all of the "standard", default Resource fields
@@ -1310,7 +1292,7 @@ class Resource(object):
         # this will catch every attribute that has been added dynamically, such
         # as scan-provided resource_attributes
         other_data = attr.asdict(
-            self, filter=self_fields_filter, dict_factory=OrderedDict)
+            self, filter=self_fields_filter, dict_factory=dict)
 
         # FIXME: make a deep copy of the data first!!!!
         # see https://github.com/nexB/scancode-toolkit/issues/1199
@@ -1318,7 +1300,7 @@ class Resource(object):
 
         if with_timing:
             res['scan_time'] = self.scan_time or 0
-            res['scan_timings'] = self.scan_timings or OrderedDict()
+            res['scan_timings'] = self.scan_timings or dict()
 
         if with_info:
             res['files_count'] = self.files_count
@@ -1338,19 +1320,19 @@ class Resource(object):
         JSON serialization.
         """
         # we save all fields, not just the one in .to_dict()
-        saveable = attr.asdict(self, dict_factory=OrderedDict)
-        saveable['name'] = fsdecode(self.name)
+        saveable = attr.asdict(self, dict_factory=dict)
+        saveable['name'] = self.name
         if self.location:
-            saveable['location'] = fsdecode(self.location)
+            saveable['location'] = self.location
         if self.cache_location:
-            saveable['cache_location'] = fsdecode(self.cache_location)
+            saveable['cache_location'] = self.cache_location
         return saveable
 
 
 def get_path(root_location, location, full_root=False, strip_root=False):
     """
     Return a unicode srting POSIX path (using "/"  separators) derived from
-    `root_location` of the codebase and the `location` of a reosurce. Both
+    `root_location` of the codebase and the `location` of a resource. Both
     locations are absolute native locations.
 
     - If `full_root` is True, return an absolute path. Otherwise return a
@@ -1361,7 +1343,7 @@ def get_path(root_location, location, full_root=False, strip_root=False):
       segment. Ignored if `full_root` is True.
     """
 
-    posix_loc = fsdecode(as_posixpath(location))
+    posix_loc = as_posixpath(location)
     if full_root:
         return posix_loc
 
@@ -1371,7 +1353,7 @@ def get_path(root_location, location, full_root=False, strip_root=False):
     else:
         root_loc = root_location
 
-    posix_root_loc = fsdecode(as_posixpath(root_loc)).rstrip('/') + '/'
+    posix_root_loc = as_posixpath(root_loc).rstrip('/') + '/'
 
     return posix_loc.replace(posix_root_loc, '', 1)
 
@@ -1386,24 +1368,20 @@ def get_codebase_cache_dir(temp_dir):
     from commoncode.timeutils import time2tstamp
 
     prefix = 'scancode-codebase-' + time2tstamp() + '-'
-    cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
-    if on_linux and py2:
-        cache_dir = fsencode(cache_dir)
-    else:
-        cache_dir = fsdecode(cache_dir)
-    return cache_dir
+    return get_temp_dir(base_dir=temp_dir, prefix=prefix)
 
 
 @attr.s(slots=True)
 class _CodebaseAttributes(object):
+
     def to_dict(self):
-        return attr.asdict(self, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=dict)
 
 
 def get_codebase_attributes_class(attributes):
     return attr.make_class(
-        name=b'CodebaseAttributes' if py2 else u'CodebaseAttributes',
-        attrs=attributes or OrderedDict(),
+        name='CodebaseAttributes',
+        attrs=attributes or {},
         slots=True,
         bases=(_CodebaseAttributes,)
     )
@@ -1414,7 +1392,7 @@ def build_attributes_defs(mapping, ignored_keys=()):
     Given a mapping, return an ordered mapping of attributes built from the
     mapping keys and values.
     """
-    attributes = OrderedDict()
+    attributes = dict()
 
     # We add the attributes that are not in standard_res_attributes already
     # FIXME: we should not have to infer the schema may be?
@@ -1424,7 +1402,7 @@ def build_attributes_defs(mapping, ignored_keys=()):
         if isinstance(value, (list, tuple)):
             attributes[key] = attr.ib(default=attr.Factory(list), repr=False)
         elif isinstance(value, dict):
-            attributes[key] = attr.ib(default=attr.Factory(OrderedDict), repr=False)
+            attributes[key] = attr.ib(default=attr.Factory(dict), repr=False)
         else:
             attributes[key] = attr.ib(default=None, repr=False)
 
@@ -1450,13 +1428,13 @@ class VirtualCodebase(Codebase):
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
 
-        `max_depth`, if passed, will be ignored as VirtualCodebase will 
+        `max_depth`, if passed, will be ignored as VirtualCodebase will
         be using the depth of the original scan.
         """
         self._setup_essentials(temp_dir, max_in_memory)
 
-        self.codebase_attributes = codebase_attributes or OrderedDict()
-        self.resource_attributes = resource_attributes or OrderedDict()
+        self.codebase_attributes = codebase_attributes or dict()
+        self.resource_attributes = resource_attributes or dict()
         self.resource_class = None
         self.has_single_resource = False
         self.location = location
@@ -1469,13 +1447,13 @@ class VirtualCodebase(Codebase):
         Return scan data loaded from `location`, which is a path string
         """
         try:
-            return json.loads(location, object_pairs_hook=OrderedDict)
+            return json.loads(location)
         except:
             # Load scan data at once TODO: since we load it all does it make sense
             # to have support for caching at all?
             location = abspath(normpath(expanduser(location)))
             with io.open(location, 'rb') as f:
-                scan_data = json.load(f, object_pairs_hook=OrderedDict, encoding='utf-8')
+                scan_data = json.load(f)
             return scan_data
 
     def _get_scan_data(self, location):
@@ -1490,7 +1468,7 @@ class VirtualCodebase(Codebase):
         if isinstance(location, dict):
             return location
         if isinstance(location, (list, tuple,)):
-            combined_scan_data = OrderedDict(headers=[], files=[])
+            combined_scan_data = dict(headers=[], files=[])
             for loc in location:
                 scan_data = self._get_scan_data_helper(loc)
                 headers = scan_data.get('headers')
@@ -1515,7 +1493,7 @@ class VirtualCodebase(Codebase):
         base_fields = attr.fields(Resource)
         resource_fields = attr.fields(self.resource_class)
         # Create dict of {field: field_default_value} for the dynamically created fields
-        resource_data = OrderedDict()
+        resource_data = dict()
         for field in resource_fields:
             if field in base_fields:
                 # We only want the fields that are not part of the base set of fields
@@ -1575,7 +1553,7 @@ class VirtualCodebase(Codebase):
             if name not in all_cb_attributes:
                 all_cb_attributes[name] = plugin_attribute
 
-        cbac = get_codebase_attributes_class(all_cb_attributes or OrderedDict())
+        cbac = get_codebase_attributes_class(all_cb_attributes or dict())
         self.attributes = cbac()
 
         # now populate top level codebase attributes
@@ -1613,8 +1591,8 @@ class VirtualCodebase(Codebase):
 
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(
-            name=b'ScannedResource' if py2 else u'ScannedResource',
-            attrs=all_res_attributes or OrderedDict(),
+            name='ScannedResource',
+            attrs=all_res_attributes or dict(),
             slots=True,
             # frozen=True,
             bases=(Resource,))
@@ -1704,5 +1682,5 @@ def remove_properties_and_basics(resource_data):
     Given a mapping of resource_data attributes to use as "kwargs", return a new
     mapping with the known properties removed.
     """
-    return OrderedDict([(k, v) for k, v in resource_data.items()
+    return dict([(k, v) for k, v in resource_data.items()
             if k not in ('type', 'base_name', 'extension', 'path', 'name')])

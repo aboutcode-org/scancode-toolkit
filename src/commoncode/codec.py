@@ -22,83 +22,35 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import division
-from __future__ import unicode_literals
-
 from base64 import standard_b64decode as stddecode
 from base64 import urlsafe_b64encode as b64encode
-
-from commoncode.system import py2
-
 
 """
 Numbers to bytes or strings and URLs coder/decoders.
 """
 
-
-if py2:
-    c2i = ord
-    i2c = chr
-else:
-    # noop
-    c2i = lambda c: c
-    i2c = lambda i: bytes([i])
+c2i = lambda c: c
+i2c = lambda i: bytes([i])
 
 
-if py2:
-    def num_to_bin(num):
-        """
-        Convert a `num` integer or long to a binary string byte-ordered such
-        that the least significant bytes are at the beginning of the string
-        (aka. big endian).
-        """
-        # Zero is not encoded but returned as an empty value
-        if num == 0:
-            return b'\x00'
+def num_to_bin(num):
+    """
+    Convert a `num` integer or long to a binary string byte-ordered such that
+    the least significant bytes are at the beginning of the string (aka. big
+    endian).
+    """
+    # Zero is not encoded but returned as an empty value
+    if num == 0:
+        return b'\x00'
 
-        binstr = []
-        while num > 0:
-            # add the least significant byte value
-            binstr.append(i2c(num & 0xFF))
-            # shift the next byte to least significant and repeat
-            num = num >> 8
-
-        # reverse the list now such that the most significant
-        # byte is at the start of this string to speed decoding
-        return b''.join(reversed(binstr))
+    return num.to_bytes((num.bit_length() + 7) // 8, 'big')
 
 
-    def bin_to_num(binstr):
-        """
-        Convert a big endian byte-ordered binary string to an integer or long.
-        """
-        num = 0
-        for charac in binstr:
-            # the most significant byte is a the start of the string so we multiply
-            # that value by 256 (e.g. <<8) and add the value of the current byte,
-            # then move to next byte in the string and repeat
-            num = (num << 8) + c2i(charac)
-        return num
-else:
-    def num_to_bin(num):
-        """
-        Convert a `num` integer or long to a binary string byte-ordered such that
-        the least significant bytes are at the beginning of the string (aka. big
-        endian).
-        """
-        # Zero is not encoded but returned as an empty value
-        if num == 0:
-            return b'\x00'
-
-        return num.to_bytes((num.bit_length() + 7) // 8, 'big')
-
-    def bin_to_num(binstr):
-        """
-        Convert a big endian byte-ordered binary string to an integer or long.
-        """
-        return int.from_bytes(binstr, byteorder='big', signed=False)
+def bin_to_num(binstr):
+    """
+    Convert a big endian byte-ordered binary string to an integer or long.
+    """
+    return int.from_bytes(binstr, byteorder='big', signed=False)
 
 
 def urlsafe_b64encode(s):

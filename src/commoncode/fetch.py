@@ -22,18 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import logging
+import os
 
 import requests
 from requests.exceptions import ConnectionError
 from requests.exceptions import InvalidSchema
 
 from commoncode import fileutils
-import os
 
 logger = logging.getLogger(__name__)
 # import sys

@@ -21,18 +21,6 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-try:
-    from os import fsencode
-    from os import fsdecode
-except ImportError:
-    from backports.os import fsencode
-    from backports.os import fsdecode  # NOQA
-
 import errno
 import os
 import ntpath
@@ -42,67 +30,40 @@ import stat
 import sys
 import tempfile
 
-from six import string_types
+from os import fsdecode
 
 try:
     from scancode_config import scancode_temp_dir as _base_temp_dir
 except ImportError:
     _base_temp_dir = None
 
-from commoncode import compat
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode.system import on_linux
-from commoncode.system import py2
 
 # this exception is not available on posix
 try:
     WindowsError  # NOQA
 except NameError:
+
     class WindowsError(Exception):
         pass
-
 
 import logging
 logger = logging.getLogger(__name__)
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
-
-
-# Paths can only be sanely handled as raw bytes on Linux and Python2
-
-
-if on_linux and py2:
-    PATH_TYPE = bytes
-    POSIX_PATH_SEP = b'/'
-    WIN_PATH_SEP = b'\\'
-    EMPTY_STRING = b''
-    DOT = b'.'
-    PATH_SEP = bytes(os.sep)
-    PATH_ENV_VAR = b'PATH'
-    PATH_ENV_SEP = bytes(os.pathsep)
-else:
-    PATH_TYPE = compat.unicode
-    POSIX_PATH_SEP = '/'
-    WIN_PATH_SEP = '\\'
-    EMPTY_STRING = ''
-    DOT = '.'
-    PATH_SEP = compat.unicode(os.sep)
-    PATH_ENV_VAR = 'PATH'
-    PATH_ENV_SEP = compat.unicode(os.pathsep)
-
-ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 """
 File, paths and directory utility functions.
@@ -129,8 +90,6 @@ def create_dir(location):
         # may fail on win if the path is too long
         # FIXME: consider using UNC ?\\ paths
 
-        if on_linux and py2:
-            location = fsencode(location)
         try:
             os.makedirs(location)
             chmod(location, RW, recurse=False)
@@ -167,18 +126,12 @@ def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
         base_dir = os.getenv('SCANCODE_TMP')
         if not base_dir:
             base_dir = tempfile.gettempdir()
-        else:
-            if on_linux and py2:
-                base_dir = fsencode(base_dir)
 
     if not os.path.exists(base_dir):
         create_dir(base_dir)
 
     if not has_base:
         prefix = 'scancode-tk-'
-
-    if on_linux and py2:
-        prefix = fsencode(prefix)
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
 
@@ -188,18 +141,14 @@ def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
 
 # TODO: move these functions to paths.py
 
+
 def prepare_path(pth):
     """
     Return the `pth` path string either as encoded bytes if on Linux and using
     Python 2 or as a unicode/text otherwise.
     """
-    if on_linux and py2:
-        if not isinstance(pth, bytes):
-            pth = fsencode(pth)
-        return pth
-    else:    
-        if not isinstance(pth, compat.unicode):
-            return fsdecode(pth)
+    if not isinstance(pth, str):
+        return fsdecode(pth)
     return pth
 
 
@@ -211,8 +160,8 @@ def is_posixpath(location):
     Return False if the `location` path is likely a Windows-like path using backslash
     as path separators (e.g. "\").
     """
-    has_slashes = POSIX_PATH_SEP in location
-    has_backslashes = WIN_PATH_SEP in location
+    has_slashes = '/' in location
+    has_backslashes = '\\' in location
     # windows paths with drive
     if location:
         drive, _ = ntpath.splitdrive(location)
@@ -234,7 +183,7 @@ def as_posixpath(location):
     accepts gracefully POSIX paths on Windows.
     """
     location = prepare_path(location)
-    return location.replace(WIN_PATH_SEP, POSIX_PATH_SEP)
+    return location.replace('\\', '/')
 
 
 def as_winpath(location):
@@ -243,7 +192,7 @@ def as_winpath(location):
     `location` path.
     """
     location = prepare_path(location)
-    return location.replace(POSIX_PATH_SEP, WIN_PATH_SEP)
+    return location.replace('/', '\\')
 
 
 def split_parent_resource(path, force_posix=False):
@@ -252,8 +201,8 @@ def split_parent_resource(path, force_posix=False):
     """
     use_posix = force_posix or is_posixpath(path)
     splitter = use_posix and posixpath or ntpath
-    path = path.rstrip(ALL_SEPS)
-    return splitter.split(path)
+    path_no_trailing_speps = path.rstrip('\\/')
+    return splitter.split(path_no_trailing_speps)
 
 
 def resource_name(path, force_posix=False):
@@ -262,7 +211,7 @@ def resource_name(path, force_posix=False):
     is the last path segment.
     """
     _left, right = split_parent_resource(path, force_posix)
-    return right or EMPTY_STRING
+    return right or ''
 
 
 def file_name(path, force_posix=False):
@@ -278,8 +227,8 @@ def parent_directory(path, force_posix=False):
     """
     left, _right = split_parent_resource(path, force_posix)
     use_posix = force_posix or is_posixpath(path)
-    sep = POSIX_PATH_SEP if use_posix else WIN_PATH_SEP
-    trail = sep if left != sep else EMPTY_STRING
+    sep = '/' if use_posix else '\\'
+    trail = sep if left != sep else ''
     return left + trail
 
 
@@ -329,29 +278,28 @@ def splitext(path, force_posix=False):
     """
     Return a tuple of strings (basename, extension) for a path. The basename is
     the file name minus its extension. Return an empty extension string for a
-    directory. A directory is identified by ending with a path separator. Not
-    the same as os.path.splitext.
+    directory.
     """
-    base_name = EMPTY_STRING
-    extension = EMPTY_STRING
+    base_name = ''
+    extension = ''
     if not path:
         return base_name, extension
 
-    ppath = as_posixpath(path)
+    is_dir = path.endswith(('\\', '/',))
+    path = as_posixpath(path).strip('/')
     name = resource_name(path, force_posix)
-    name = name.strip(ALL_SEPS)
-    if ppath.endswith(POSIX_PATH_SEP):
+    if is_dir:
         # directories never have an extension
         base_name = name
-        extension = EMPTY_STRING
-    elif name.startswith(DOT) and DOT not in name[1:]:
+        extension = ''
+    elif name.startswith('.') and '.' not in name[1:]:
         # .dot files base name is the full name and they do not have an extension
         base_name = name
-        extension = EMPTY_STRING
+        extension = ''
     else:
         base_name, extension = posixpath.splitext(name)
-        # handle composed extensions of tar.gz, bz, zx,etc
-        if base_name.endswith(b'.tar' if on_linux and py2 else '.tar'):
+        # handle composed extensions of tar.gz, tar.bz2, zx,etc
+        if base_name.endswith('.tar'):
             base_name, extension2 = posixpath.splitext(base_name)
             extension = extension2 + extension
     return base_name, extension
@@ -376,9 +324,6 @@ def walk(location, ignored=None):
        callable on files and directories returning True if it should be ignored.
      - location is a directory or a file: for a file, the file is returned.
     """
-    if on_linux and py2:
-        location = fsencode(location)
-
     # TODO: consider using the new "scandir" module for some speed-up.
 
     is_ignored = ignored(location) if ignored else False
@@ -422,8 +367,6 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
                     if the location should be ignored.
     :return: an iterable of file and directory locations.
     """
-    if on_linux and py2:
-        location = fsencode(location)
     for top, dirs, files in walk(location, ignored):
         if with_dirs:
             for d in dirs:
@@ -449,10 +392,6 @@ def copytree(src, dst):
     This function is similar to and derived from the Python shutil.copytree
     function. See fileutils.py.ABOUT for details.
     """
-    if on_linux and py2:
-        src = fsencode(src)
-        dst = fsencode(dst)
-
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
 
@@ -498,10 +437,6 @@ def copyfile(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux and py2:
-        src = fsencode(src)
-        dst = fsencode(dst)
-
     if not filetype.is_regular(src):
         return
     if not filetype.is_readable(src):
@@ -519,10 +454,6 @@ def copytime(src, dst):
     Similar to and derived from Python shutil module. See fileutils.py.ABOUT
     for details.
     """
-    if on_linux and py2:
-        src = fsencode(src)
-        dst = fsencode(dst)
-
     errors = []
     st = os.stat(src)
     if hasattr(os, 'utime'):
@@ -557,9 +488,6 @@ def chmod(location, flags, recurse=False):
     """
     if not location or not os.path.exists(location):
         return
-    if on_linux and py2:
-        location = fsencode(location)
-
     location = os.path.abspath(location)
 
     new_flags = flags
@@ -587,8 +515,6 @@ def chmod_tree(location, flags):
     """
     Update permissions recursively in a directory tree `location`.
     """
-    if on_linux and py2:
-        location = fsencode(location)
     if filetype.is_dir(location):
         for top, dirs, files in walk(location):
             for d in dirs:
@@ -608,8 +534,6 @@ def _rm_handler(function, path, excinfo):  # NOQA
     """
     if TRACE:
         logger_debug('_rm_handler:', 'path:', path, 'excinfo:', excinfo)
-    if on_linux and py2:
-        path = fsencode(path)
     if function in (os.rmdir, os.listdir):
         try:
             chmod(path, RW, recurse=True)
@@ -639,9 +563,6 @@ def delete(location, _err_handler=_rm_handler):
     """
     if not location:
         return
-
-    if on_linux and py2:
-        location = fsencode(location)
 
     if os.path.exists(location) or filetype.is_broken_link(location):
         if filetype.is_dir(location):

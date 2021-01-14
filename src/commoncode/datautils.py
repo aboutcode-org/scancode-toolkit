@@ -22,21 +22,13 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
-from collections import OrderedDict
-
 import attr
 from attr.validators import in_ as choices  # NOQA
 import typing
 
-
 """
 Utilities and helpers for data classes.
 """
-
 
 HELP_METADATA = '__field_help'
 LABEL_METADATA = '__field_label'
@@ -197,10 +189,10 @@ def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None,
     stores. The key is always a string.
 
     Notes: in Python 2 the type is Dict as there is no typing available for
-    OrderedDict for now.
+    dict for now.
     """
     if default is attr.NOTHING:
-        default = attr.Factory(OrderedDict)
+        default = attr.Factory(dict)
 
     return attribute(
         default=default,
@@ -215,10 +207,10 @@ def Mapping(value_type=typing.Any, default=attr.NOTHING, validator=None,
         label=label,
     )
 
-
 ##################################################
 # FIXME: add proper support for dates!!!
 ##################################################
+
 
 def Date(default=None, validator=None, repr=False, eq=True, order=True,  # NOQA
            converter=None, label=None, help=None,):  # NOQA

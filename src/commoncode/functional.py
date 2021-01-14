@@ -22,13 +22,10 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
-
 import functools
+
 from types import GeneratorType
 from array import array
-
-from commoncode.system import py2
 
 
 def flatten(seq):
@@ -54,10 +51,7 @@ def flatten(seq):
     Version: Id: util.py,v 1.22 2005/12/16 00:08:21 erwin Exp erwin
     """
     r = []
-    if py2:
-        generators = GeneratorType, xrange
-    else:
-        generators = GeneratorType, range
+    generators = GeneratorType, range
 
     for x in seq:
         if isinstance(x, (list, tuple)):

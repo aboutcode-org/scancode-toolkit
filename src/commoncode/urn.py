@@ -21,11 +21,6 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-from __future__ import absolute_import
-from __future__ import print_function
-from __future__ import unicode_literals
-
 """
 URN: Uniform Resource Name for DejaCode
 =======================================
@@ -85,25 +80,32 @@ Examples:
 The product object type syntax is the same as the component syntax.
 """
 
-try:
-    from urllib.parse import quote_plus
-    from urllib.parse import unquote_plus
-except ImportError:
-    from urllib import quote_plus
-    from urllib import unquote_plus
+from urllib.parse import quote_plus
+from urllib.parse import unquote_plus
 
 
 class URNValidationError(Exception):
     """The URN format is not valid."""
-    pass
 
 
 # Describes the URN schema for each object type
 URN_SCHEMAS = {
-    'license': { 'object': 'license', 'fields': ['key']},
-    'owner': { 'object': 'owner', 'fields': ['name']},
-    'component': { 'object': 'component', 'fields': ['name', 'version']},
-    'product': { 'object': 'product', 'fields': ['name', 'version']},
+    'license': {
+        'object': 'license',
+        'fields': ['key'],
+    },
+    'owner': {
+        'object': 'owner',
+        'fields': ['name'],
+    },
+    'component': {
+        'object': 'component',
+        'fields': ['name', 'version'],
+    },
+    'product': {
+        'object': 'product',
+        'fields': ['name', 'version'],
+    },
 }
 
 
