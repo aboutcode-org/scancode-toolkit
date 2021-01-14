@@ -194,7 +194,7 @@ def get_latest_version(new_version_url='https://pypi.org/pypi/scancode-toolkit/j
         raise Exception(msg)
 
     # The check is done using python.org PyPI API
-    payload = response.json(object_pairs_hook=dict)
+    payload = response.json()
     releases = [
         r for r in payload['releases'] if not packaging_version.parse(r).is_prerelease]
     releases = sorted(releases, key=packaging_version.parse)

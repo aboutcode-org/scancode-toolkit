@@ -316,7 +316,7 @@ def get_response(url, headers, params):
     status = response.status_code
     if status != requests.codes.ok:  # NOQA
         raise Exception('Failed HTTP request for %(url)r: %(status)r' % locals())
-    return response.json(object_pairs_hook=dict)
+    return response.json()
 
 
 def clean_text(text):
