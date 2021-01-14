@@ -806,7 +806,6 @@ def test_get_displayable_summary():
     assert expected == results
 
 
-@pytest.mark.xfail  # ('weird test with TTY interactions that need to be revisited')
 def test_display_summary_edge_case_scan_time_zero_should_not_fail():
     from io import StringIO
     import sys
