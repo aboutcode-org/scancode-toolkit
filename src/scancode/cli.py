@@ -54,7 +54,6 @@ from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
 from commoncode.resource import VirtualCodebase
@@ -531,7 +530,7 @@ def run_scan(
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
-        included_paths = [as_posixpath(path).rstrip(POSIX_PATH_SEP) for path in input]
+        included_paths = [as_posixpath(path).rstrip('/') for path in input]
         # FIXME: this is a hack as this "include" is from an external plugin!!!1
         include = list(requested_options.get('include', []) or [])
         include.extend(included_paths)
