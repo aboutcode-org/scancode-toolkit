@@ -1,5 +1,9 @@
 Release notes
 -------------
+### vNext
+
+*2020-11-12* -- Add Azure Pipelines CI support
+
 ### Version 20.10.08
 
 *2020-10-08* -- Add support for both python 2 + 3
