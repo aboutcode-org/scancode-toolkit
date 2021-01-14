@@ -40,20 +40,24 @@ def is_link(location):
     return location and os.path.islink(location)
 
 
-def is_file(location):
+def is_file(location, follow_symlinks=False):
     """
     Return True if `location` is a file.
     """
-    return (location and os.path.isfile(location)
-            and not is_link(location) and not is_broken_link(location))
+    _is_file = location and os.path.isfile(location)
+    if follow_symlinks:
+        return _is_file
+    return _is_file and not is_link(location) and not is_broken_link(location)
 
 
-def is_dir(location):
+def is_dir(location, follow_symlinks=False):
     """
     Return True if `location` is a directory.
     """
-    return (location and os.path.isdir(location) and not is_file(location)
-            and not is_link(location) and not is_broken_link(location))
+    _is_dir = location and os.path.isdir(location) and not is_file(location)
+    if follow_symlinks:
+        return _is_dir
+    return _is_dir and not is_link(location) and not is_broken_link(location)
 
 
 def is_regular(location):
