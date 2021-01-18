@@ -12,7 +12,7 @@
     The directory must match the alias of the lexer to be used.
     Populate only the input, then just `--update-goldens`.
 
-    :copyright: Copyright 2021 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 from pathlib import Path
