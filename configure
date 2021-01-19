@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) nexB Inc. and others.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 set -e

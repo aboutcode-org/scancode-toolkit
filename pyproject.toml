@@ -36,8 +36,8 @@ norecursedirs = [
     
 python_files = "*.py"
 
-python_classes="Test"
-python_functions="test"
+python_classes = "Test"
+python_functions = "test"
 
 addopts = [
     "-rfExXw",

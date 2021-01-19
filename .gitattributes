@@ -1,3 +1,2 @@
-# Set configure.bat's line ending to CRLF. Sometimes batch scripts don't work
-# properly on Windows if the line ending is LF and not CRLF
-configure.bat eol=crlf
+# Ignore all Git auto CR/LF line endings conversions
+* binary
