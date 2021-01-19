@@ -1,5 +1,2 @@
-Package Module
---------------
-
-Put your python modules in this directory.
+Put your Python source code (and installable data) in this directory.
 
