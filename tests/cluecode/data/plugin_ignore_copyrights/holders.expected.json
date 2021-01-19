@@ -104,14 +104,14 @@
       "type": "file",
       "holders": [
         {
-          "value": "Jouni Malinen",
+          "holder": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }
       ],
       "copyrights": [
         {
-          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "copyright": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
           "start_line": 3,
           "end_line": 3
         }

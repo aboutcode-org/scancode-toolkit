@@ -350,16 +350,16 @@
         "apache-2.0"
       ],
       "percentage_of_license_text": 33.33,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -431,16 +431,16 @@
         "apache-2.0"
       ],
       "percentage_of_license_text": 33.33,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -512,16 +512,16 @@
         "apache-2.0"
       ],
       "percentage_of_license_text": 33.33,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -593,16 +593,16 @@
         "lgpl-2.0"
       ],
       "percentage_of_license_text": 42.86,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) nexB, Inc.",
+          "copyright": "Copyright (c) nexB, Inc.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "nexB, Inc.",
+          "holder": "nexB, Inc.",
           "start_line": 1,
           "end_line": 2
         }
@@ -708,16 +708,16 @@
         "apache-2.0"
       ],
       "percentage_of_license_text": 22.22,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software",
+          "copyright": "Copyright (c) The Apache Software",
           "start_line": 4,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software",
+          "holder": "The Apache Software",
           "start_line": 4,
           "end_line": 5
         }
@@ -827,16 +827,16 @@
         "apache-2.0"
       ],
       "percentage_of_license_text": 33.33,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) The Apache Software Foundation",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "The Apache Software Foundation",
+          "holder": "The Apache Software Foundation",
           "start_line": 1,
           "end_line": 2
         }
@@ -941,16 +941,16 @@
         "gpl-1.0-plus"
       ],
       "percentage_of_license_text": 50.0,
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "copyright (c) 2017 IBM Corp.",
+          "copyright": "copyright (c) 2017 IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "IBM Corp.",
+          "holder": "IBM Corp.",
           "start_line": 1,
           "end_line": 2
         }

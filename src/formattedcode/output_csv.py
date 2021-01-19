@@ -184,7 +184,7 @@ def flatten_scan(scan, headers):
 
         for copyr in scanned_file.get('copyrights', []):
             inf = OrderedDict(Resource=path)
-            inf['copyright'] = copyr['value']
+            inf['copyright'] = copyr['copyright']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')
@@ -192,7 +192,7 @@ def flatten_scan(scan, headers):
 
         for copyr in scanned_file.get('holders', []):
             inf = OrderedDict(Resource=path)
-            inf['copyright_holder'] = copyr['value']
+            inf['copyright_holder'] = copyr['holder']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')
@@ -200,7 +200,7 @@ def flatten_scan(scan, headers):
 
         for copyr in scanned_file.get('authors', []):
             inf = OrderedDict(Resource=path)
-            inf['author'] = copyr['value']
+            inf['author'] = copyr['author']
             inf['start_line'] = copyr['start_line']
             inf['end_line'] = copyr['start_line']
             collect_keys(inf, 'copyright')

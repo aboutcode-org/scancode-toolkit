@@ -51,14 +51,14 @@
       "license_expressions": [],
       "holders": [
         {
-          "value": "The OpenSSL Project",
+          "holder": "The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "copyright": "Copyright 2011-2016 The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
@@ -96,14 +96,14 @@
       "license_expressions": [],
       "holders": [
         {
-          "value": "The OpenSSL Project",
+          "holder": "The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }
       ],
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "copyright": "Copyright 2011-2016 The OpenSSL Project",
           "start_line": 2,
           "end_line": 2
         }

@@ -93,13 +93,13 @@ class TestAPI(FileBasedTesting):
         cops = api.get_copyrights(test_file)
         expected = OrderedDict([
             ('copyrights', [
-                OrderedDict([(u'value', u'Copyright (c) 2010 Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                OrderedDict([(u'copyright', u'Copyright (c) 2010 Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
             ]),
             ('holders', [
-                OrderedDict([(u'value', u'Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+                OrderedDict([(u'holder', u'Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
             ]),
             ('authors', [
-                OrderedDict([(u'value', u'Patrick McHardy <kaber@trash.net>'), (u'start_line', 11), (u'end_line', 11)])
+                OrderedDict([(u'author', u'Patrick McHardy <kaber@trash.net>'), (u'start_line', 11), (u'end_line', 11)])
             ]),
         ])
 

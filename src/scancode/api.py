@@ -75,7 +75,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
         if dtype == 'copyrights':
             copyrights.append(
                 OrderedDict([
-                    ('value', value),
+                    ('copyright', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
@@ -83,7 +83,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
         elif dtype == 'holders':
             holders.append(
                 OrderedDict([
-                    ('value', value),
+                    ('holder', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])
@@ -91,7 +91,7 @@ def get_copyrights(location, deadline=sys.maxsize, **kwargs):
         elif dtype == 'authors':
             authors.append(
                 OrderedDict([
-                    ('value', value),
+                    ('author', value),
                     ('start_line', start),
                     ('end_line', end)
                 ])

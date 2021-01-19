@@ -164,16 +164,16 @@
     {
       "path": "scan/JGroups/src/FixedMembershipToken.java",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright 2005, JBoss Inc., and individual contributors",
+          "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "JBoss Inc., and individual contributors",
+          "holder": "JBoss Inc., and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
@@ -184,23 +184,23 @@
     {
       "path": "scan/JGroups/src/GuardedBy.java",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
+          "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Brian Goetz and Tim Peierls",
+          "holder": "Brian Goetz and Tim Peierls",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "authors": [
         {
-          "value": "Bela Ban",
+          "author": "Bela Ban",
           "start_line": 9,
           "end_line": 11
         }
@@ -210,16 +210,16 @@
     {
       "path": "scan/JGroups/src/ImmutableReference.java",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
+          "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Red Hat, Inc. and individual contributors",
+          "holder": "Red Hat, Inc. and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
@@ -234,7 +234,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Bela Ban",
+          "author": "Bela Ban",
           "start_line": 4,
           "end_line": 5
         }
@@ -248,7 +248,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Bela Ban",
+          "author": "Bela Ban",
           "start_line": 3,
           "end_line": 4
         }
@@ -258,16 +258,16 @@
     {
       "path": "scan/JGroups/src/RouterStubManager.java",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
+          "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Red Hat Middleware LLC, and individual contributors",
+          "holder": "Red Hat Middleware LLC, and individual contributors",
           "start_line": 3,
           "end_line": 5
         }
@@ -282,7 +282,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "Bela Ban",
+          "author": "Bela Ban",
           "start_line": 1,
           "end_line": 4
         }
@@ -308,16 +308,16 @@
     {
       "path": "scan/arch/adler32.c",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2011 Mark Adler",
+          "copyright": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
@@ -328,16 +328,16 @@
     {
       "path": "scan/arch/zlib.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
@@ -348,16 +348,16 @@
     {
       "path": "scan/arch/zutil.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
@@ -384,16 +384,16 @@
     {
       "path": "scan/zlib/ada/zlib.ads",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "start_line": 4,
           "end_line": 4
         }
@@ -404,16 +404,16 @@
     {
       "path": "scan/zlib/adler32.c",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2011 Mark Adler",
+          "copyright": "Copyright (c) 1995-2011 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
@@ -424,16 +424,16 @@
     {
       "path": "scan/zlib/deflate.c",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
@@ -444,16 +444,16 @@
     {
       "path": "scan/zlib/deflate.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
@@ -472,16 +472,16 @@
     {
       "path": "scan/zlib/dotzlib/AssemblyInfo.cs",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 2004 by Henrik Ravn",
+          "copyright": "Copyright (c) 2004 by Henrik Ravn",
           "start_line": 14,
           "end_line": 16
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 14,
           "end_line": 16
         }
@@ -492,16 +492,16 @@
     {
       "path": "scan/zlib/dotzlib/ChecksumImpl.cs",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright Henrik Ravn 2004",
+          "copyright": "Copyright Henrik Ravn 2004",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "start_line": 2,
           "end_line": 2
         }
@@ -520,23 +520,23 @@
     {
       "path": "scan/zlib/gcc_gvmat64/gvmat64.S",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 10,
           "end_line": 10
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "start_line": 10,
           "end_line": 10
         }
       ],
       "authors": [
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "start_line": 12,
           "end_line": 15
         }
@@ -554,16 +554,16 @@
     {
       "path": "scan/zlib/infback9/infback9.c",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2008 Mark Adler",
+          "copyright": "Copyright (c) 1995-2008 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
@@ -574,16 +574,16 @@
     {
       "path": "scan/zlib/infback9/infback9.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 2003 Mark Adler",
+          "copyright": "Copyright (c) 2003 Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "start_line": 2,
           "end_line": 3
         }
@@ -602,16 +602,16 @@
     {
       "path": "scan/zlib/iostream2/zstream.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+          "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }
       ],
       "holders": [
         {
-          "value": "Christian Michelsen Research AS Advanced Computing",
+          "holder": "Christian Michelsen Research AS Advanced Computing",
           "start_line": 3,
           "end_line": 5
         }
@@ -622,16 +622,16 @@
     {
       "path": "scan/zlib/zlib.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "start_line": 4,
           "end_line": 4
         }
@@ -642,16 +642,16 @@
     {
       "path": "scan/zlib/zutil.c",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
@@ -662,16 +662,16 @@
     {
       "path": "scan/zlib/zutil.h",
       "type": "file",
-      "copyrights": [
+     "copyrights": [
         {
-          "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }
       ],
       "holders": [
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "start_line": 2,
           "end_line": 3
         }

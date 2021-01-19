@@ -62,125 +62,125 @@
           "count": 1
         }
       ],
-      "copyrights": [
+     "copyrights": [
         {
-          "value": null,
+          "copyright": null,
           "count": 6
         },
         {
-          "value": "Copyright (c) Jean-loup Gailly",
+          "copyright": "Copyright (c) Jean-loup Gailly",
           "count": 4
         },
         {
-          "value": "Copyright (c) Mark Adler",
+          "copyright": "Copyright (c) Mark Adler",
           "count": 4
         },
         {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+          "copyright": "Copyright (c) Jean-loup Gailly and Mark Adler",
           "count": 3
         },
         {
-          "value": "Copyright (c) Brian Goetz and Tim Peierls",
+          "copyright": "Copyright (c) Brian Goetz and Tim Peierls",
           "count": 1
         },
         {
-          "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+          "copyright": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
           "count": 1
         },
         {
-          "value": "Copyright (c) Dmitriy Anisimkov",
+          "copyright": "Copyright (c) Dmitriy Anisimkov",
           "count": 1
         },
         {
-          "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "copyright": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "count": 1
         },
         {
-          "value": "Copyright (c) by Henrik Ravn",
+          "copyright": "Copyright (c) by Henrik Ravn",
           "count": 1
         },
         {
-          "value": "Copyright Henrik Ravn",
+          "copyright": "Copyright Henrik Ravn",
           "count": 1
         },
         {
-          "value": "Copyright JBoss Inc., and individual contributors",
+          "copyright": "Copyright JBoss Inc., and individual contributors",
           "count": 1
         },
         {
-          "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+          "copyright": "Copyright Red Hat Middleware LLC, and individual contributors",
           "count": 1
         },
         {
-          "value": "Copyright Red Hat, Inc. and individual contributors",
+          "copyright": "Copyright Red Hat, Inc. and individual contributors",
           "count": 1
         }
       ],
       "holders": [
         {
-          "value": null,
+          "holder": null,
           "count": 6
         },
         {
-          "value": "Jean-loup Gailly",
+          "holder": "Jean-loup Gailly",
           "count": 4
         },
         {
-          "value": "Mark Adler",
+          "holder": "Mark Adler",
           "count": 4
         },
         {
-          "value": "Jean-loup Gailly and Mark Adler",
+          "holder": "Jean-loup Gailly and Mark Adler",
           "count": 3
         },
         {
-          "value": "Henrik Ravn",
+          "holder": "Henrik Ravn",
           "count": 2
         },
         {
-          "value": "Brian Goetz and Tim Peierls",
+          "holder": "Brian Goetz and Tim Peierls",
           "count": 1
         },
         {
-          "value": "Christian Michelsen Research AS Advanced Computing",
+          "holder": "Christian Michelsen Research AS Advanced Computing",
           "count": 1
         },
         {
-          "value": "Dmitriy Anisimkov",
+          "holder": "Dmitriy Anisimkov",
           "count": 1
         },
         {
-          "value": "JBoss Inc., and individual contributors",
+          "holder": "JBoss Inc., and individual contributors",
           "count": 1
         },
         {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
           "count": 1
         },
         {
-          "value": "Red Hat Middleware LLC, and individual contributors",
+          "holder": "Red Hat Middleware LLC, and individual contributors",
           "count": 1
         },
         {
-          "value": "Red Hat, Inc. and individual contributors",
+          "holder": "Red Hat, Inc. and individual contributors",
           "count": 1
         }
       ],
       "authors": [
         {
-          "value": null,
+          "author": null,
           "count": 20
         },
         {
-          "value": "Bela Ban",
+          "author": "Bela Ban",
           "count": 4
         },
         {
-          "value": "Gilles Vollant",
+          "author": "Gilles Vollant",
           "count": 1
         },
         {
-          "value": "name' Isaac Z.",
+          "author": "name' Isaac Z.",
           "count": 1
         }
       ],
@@ -224,25 +224,25 @@
           "count": 1
         }
       ],
-      "copyrights": [
+     "copyrights": [
         {
-          "value": null,
+          "copyright": null,
           "count": 3
         }
       ],
       "holders": [
         {
-          "value": null,
+          "holder": null,
           "count": 3
         }
       ],
       "authors": [
         {
-          "value": null,
+          "author": null,
           "count": 2
         },
         {
-          "value": "name' Isaac Z.",
+          "author": "name' Isaac Z.",
           "count": 1
         }
       ],
