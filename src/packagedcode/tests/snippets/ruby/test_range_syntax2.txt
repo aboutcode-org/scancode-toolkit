@@ -1,0 +1,8 @@
+---input---
+1...3
+
+---tokens---
+'1'           Literal.Number.Integer
+'...'         Operator
+'3'           Literal.Number.Integer
+'\n'          Text

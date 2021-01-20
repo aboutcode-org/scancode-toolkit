@@ -1,0 +1,9 @@
+---input---
+x.==4
+
+---tokens---
+'x'           Name
+'.'           Operator
+'=='          Name.Operator
+'4'           Literal.Number.Integer
+'\n'          Text

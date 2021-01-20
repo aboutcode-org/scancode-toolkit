@@ -1,0 +1,56 @@
+---input---
+"A#{ (3..5).group_by { |x| x/2}.map do |k,v| "#{k}" end.join }" + "Z"
+
+---tokens---
+'"'           Literal.String.Double
+'A'           Literal.String.Double
+'#{'          Literal.String.Interpol
+' '           Text
+'('           Punctuation
+'3'           Literal.Number.Integer
+'..'          Operator
+'5'           Literal.Number.Integer
+')'           Punctuation
+'.'           Operator
+'group_by'    Name
+' '           Text
+'{'           Literal.String.Interpol
+' '           Text
+'|'           Operator
+'x'           Name
+'|'           Operator
+' '           Text
+'x'           Name
+'/'           Operator
+'2'           Literal.Number.Integer
+'}'           Literal.String.Interpol
+'.'           Operator
+'map'         Name
+' '           Text
+'do'          Keyword
+' '           Text
+'|'           Operator
+'k'           Name
+','           Punctuation
+'v'           Name
+'|'           Operator
+' '           Text
+'"'           Literal.String.Double
+'#{'          Literal.String.Interpol
+'k'           Name
+'}'           Literal.String.Interpol
+'"'           Literal.String.Double
+' '           Text
+'end'         Keyword
+'.'           Operator
+'join'        Name
+' '           Text
+'}'           Literal.String.Interpol
+'"'           Literal.String.Double
+' '           Text
+'+'           Operator
+' '           Text
+'"'           Literal.String.Double
+'Z'           Literal.String.Double
+'"'           Literal.String.Double
+'\n'          Text

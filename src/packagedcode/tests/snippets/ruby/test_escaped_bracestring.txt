@@ -1,0 +1,19 @@
+---input---
+str.gsub(%r{\\\\}, "/")
+
+---tokens---
+'str'         Name
+'.'           Operator
+'gsub'        Name
+'('           Punctuation
+'%r{'         Literal.String.Regex
+'\\\\'        Literal.String.Regex
+'\\\\'        Literal.String.Regex
+'}'           Literal.String.Regex
+','           Punctuation
+' '           Text
+'"'           Literal.String.Double
+'/'           Literal.String.Double
+'"'           Literal.String.Double
+')'           Punctuation
+'\n'          Text
