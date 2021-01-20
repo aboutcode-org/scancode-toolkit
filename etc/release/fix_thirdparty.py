@@ -55,17 +55,21 @@ def fix_thirdparty_dir(
     Optionally build missing binary wheels for all supported OS and Python
     version combos locally or remotely.
     """
+    print('***FETCH*** MISSING WHEELS')
     package_envts_not_fetched = utils_thirdparty.fetch_missing_wheels(dest_dir=thirdparty_dir)
+    print('***FETCH*** MISSING SOURCES')
     src_name_ver_not_fetched = utils_thirdparty.fetch_missing_sources(dest_dir=thirdparty_dir)
 
     package_envts_not_built = []
     if build_wheels:
+        print('***BUILD*** MISSING WHEELS')
         package_envts_not_built, _wheel_filenames_built = utils_thirdparty.build_missing_wheels(
             packages_and_envts=package_envts_not_fetched,
             build_remotely=build_remotely,
             dest_dir=thirdparty_dir,
         )
 
+    print('***ADD*** ABOUT AND LICENSES')
     utils_thirdparty.add_fetch_or_update_about_and_license_files(dest_dir=thirdparty_dir)
 
     # report issues
@@ -77,6 +81,7 @@ def fix_thirdparty_dir(
             f'{package.name}=={package.version}: Failed to build wheel '
             f'on {envt.operating_system} for Python {envt.python_version}')
 
+    print('***FIND PROBLEMS***')
     utils_thirdparty.find_problems(dest_dir=thirdparty_dir)
 
 
