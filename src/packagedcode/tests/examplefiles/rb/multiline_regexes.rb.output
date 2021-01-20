@@ -1,0 +1,120 @@
+'/'           Literal.String.Regex
+'\nthis is a\nmultiline\nregex\n' Literal.String.Regex
+
+'/'           Literal.String.Regex
+'\n\n'        Text
+
+'this'        Name
+' '           Text
+'/'           Literal.String.Regex
+'is a\nmultiline regex too' Literal.String.Regex
+'/'           Literal.String.Regex
+'\n\n'        Text
+
+'foo'         Name
+' '           Text
+'='           Operator
+' '           Text
+'/'           Literal.String.Regex
+'is also\none' Literal.String.Regex
+'/'           Literal.String.Regex
+'\n\n'        Text
+
+'also'        Name
+' '           Text
+'/'           Literal.String.Regex
+'4\nis one'   Literal.String.Regex
+'/'           Literal.String.Regex
+'\n\n'        Text
+
+'this'        Name
+'('           Punctuation
+'/'           Literal.String.Regex
+'\ntoo\n'     Literal.String.Regex
+
+'/'           Literal.String.Regex
+')'           Punctuation
+'\n\n'        Text
+
+'# this not'  Comment.Single
+'\n'          Text
+
+'2'           Literal.Number.Integer
+' '           Text
+'/'           Operator
+'4'           Literal.Number.Integer
+'\n'          Text
+
+'asfsadf'     Name
+'/'           Operator
+'\n\n'        Text
+
+'# this is also not one' Comment.Single
+'\n'          Text
+
+'0x4d'        Literal.Number.Hex
+' '           Text
+'/'           Operator
+'25'          Literal.Number.Integer
+'\n'          Text
+
+'foo'         Name
+'/'           Operator
+'\n\n'        Text
+
+'42'          Literal.Number.Integer
+' '           Text
+'and'         Operator.Word
+' '           Text
+'/'           Literal.String.Regex
+'this\nis also a multiline\nregex' Literal.String.Regex
+'/'           Literal.String.Regex
+'\n\n\n'      Text
+
+'# And here some special string cases' Comment.Single
+'\n'          Text
+
+'foo'         Name
+' '           Text
+'='           Operator
+' '           Text
+'% blah '     Literal.String.Other
+'           ' Text
+'# comment here to ensure whitespace' Comment.Single
+'\n'          Text
+
+'foo'         Name
+'('           Punctuation
+'% blah '     Literal.String.Other
+')'           Punctuation
+'\n'          Text
+
+'foo'         Name
+' '           Text
+'<<'          Operator
+' '           Text
+'% blah '     Literal.String.Other
+'          '  Text
+'# stupid but has to work' Comment.Single
+'\n'          Text
+
+'foo'         Name
+' '           Text
+'='           Operator
+' '           Text
+'% blah '     Literal.String.Other
+'+'           Operator
+' '           Text
+'% blub '     Literal.String.Other
+'  '          Text
+'# wicked'    Comment.Single
+'\n'          Text
+
+'foo'         Name
+' '           Text
+'='           Operator
+' '           Text
+'%q wicked '  Literal.String.Other
+'        '    Text
+'# works too' Comment.Single
+'\n'          Text

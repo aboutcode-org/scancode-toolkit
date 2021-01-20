@@ -1,0 +1,393 @@
+'# vim:ft=ruby' Comment.Single
+'\n\n'        Text
+
+'events'      Name
+' '           Text
+'='           Operator
+' '           Text
+'Hash'        Name.Constant
+'.'           Operator
+'new'         Name
+' '           Text
+'{'           Punctuation
+' '           Text
+'|'           Operator
+'h'           Name
+','           Punctuation
+' '           Text
+'k'           Name
+'|'           Operator
+' '           Text
+'h'           Name
+'['           Operator
+'k'           Name
+']'           Operator
+' '           Text
+'='           Operator
+' '           Text
+'['           Operator
+']'           Operator
+' '           Text
+'}'           Punctuation
+'\n'          Text
+
+'DATA'        Name.Constant
+'.'           Operator
+'read'        Name
+'.'           Operator
+'split'       Name
+'('           Punctuation
+'/'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'n'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'n'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'n'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'s*'          Literal.String.Regex
+'/'           Literal.String.Regex
+')'           Punctuation
+'.'           Operator
+'each'        Name
+' '           Text
+'do'          Keyword
+' '           Text
+'|'           Operator
+'event'       Name
+'|'           Operator
+'\n\t'        Text
+'name'        Name.Builtin
+' '           Text
+'='           Operator
+' '           Text
+'event'       Name
+'['           Operator
+'/'           Literal.String.Regex
+'^.*'         Literal.String.Regex
+'/'           Literal.String.Regex
+']'           Operator
+'.'           Operator
+'sub'         Name
+'('           Punctuation
+'/'           Literal.String.Regex
+'http:.*'     Literal.String.Regex
+'/'           Literal.String.Regex
+','           Punctuation
+' '           Text
+"'"           Literal.String.Single
+"'"           Literal.String.Single
+')'           Punctuation
+'\n\t'        Text
+'event'       Name
+'['           Operator
+'/'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'n.*'         Literal.String.Regex
+'/m'          Literal.String.Regex
+']'           Operator
+'.'           Operator
+'scan'        Name
+'('           Punctuation
+'/'           Literal.String.Regex
+'^([A-Z]{2}'  Literal.String.Regex
+'\\'          Literal.String.Regex
+'S*)'         Literal.String.Regex
+'\\'          Literal.String.Regex
+'s*('         Literal.String.Regex
+'\\'          Literal.String.Regex
+'S*)'         Literal.String.Regex
+'\\'          Literal.String.Regex
+'s*('         Literal.String.Regex
+'\\'          Literal.String.Regex
+'S*)('        Literal.String.Regex
+'\\'          Literal.String.Regex
+'s*'          Literal.String.Regex
+'\\'          Literal.String.Regex
+'S*)'         Literal.String.Regex
+'/'           Literal.String.Regex
+')'           Punctuation
+' '           Text
+'do'          Keyword
+' '           Text
+'|'           Operator
+'kind'        Name
+','           Punctuation
+' '           Text
+'day'         Name
+','           Punctuation
+' '           Text
+'daytime'     Name
+','           Punctuation
+' '           Text
+'comment'     Name
+'|'           Operator
+'\n\t\t'      Text
+'events'      Name
+'['           Operator
+' '           Text
+'['           Operator
+'day'         Name
+','           Punctuation
+' '           Text
+'daytime'     Name
+']'           Operator
+' '           Text
+']'           Operator
+' '           Text
+'<<'          Operator
+' '           Text
+'['           Operator
+'kind'        Name
+','           Punctuation
+' '           Text
+'name'        Name.Builtin
+' '           Text
+'+'           Operator
+' '           Text
+'comment'     Name
+']'           Operator
+'\n\t'        Text
+'end'         Keyword
+'\n'          Text
+
+'end'         Keyword
+'\n\n'        Text
+
+'conflicts'   Name
+' '           Text
+'='           Operator
+' '           Text
+'0'           Literal.Number.Integer
+'\n'          Text
+
+'events'      Name
+'.'           Operator
+'to_a'        Name
+'.'           Operator
+'sort_by'     Name
+' '           Text
+'do'          Keyword
+' '           Text
+'|'           Operator
+'('           Punctuation
+'day'         Name
+','           Punctuation
+' '           Text
+'daytime'     Name
+')'           Punctuation
+','           Punctuation
+'|'           Operator
+'\n\t'        Text
+'['           Operator
+'%w('         Literal.String.Other
+'Mo Di Mi Do Fr' Literal.String.Other
+')'           Literal.String.Other
+'.'           Operator
+'index'       Name
+'('           Punctuation
+'day'         Name
+')'           Punctuation
+' '           Text
+'||'          Operator
+' '           Text
+'0'           Literal.Number.Integer
+','           Punctuation
+' '           Text
+'daytime'     Name
+']'           Operator
+'\n'          Text
+
+'end'         Keyword
+'.'           Operator
+'each'        Name
+' '           Text
+'do'          Keyword
+' '           Text
+'|'           Operator
+'('           Punctuation
+'day'         Name
+','           Punctuation
+' '           Text
+'daytime'     Name
+')'           Punctuation
+','           Punctuation
+' '           Text
+'names'       Name
+'|'           Operator
+'\n\t'        Text
+'if'          Keyword
+' '           Text
+'names'       Name
+'.'           Operator
+'size'        Name
+' '           Text
+'>'           Operator
+' '           Text
+'1'           Literal.Number.Integer
+'\n\t\t'      Text
+'conflicts'   Name
+' '           Text
+'+='          Operator
+' '           Text
+'1'           Literal.Number.Integer
+'\n\t\t'      Text
+'print'       Name.Builtin
+' '           Text
+"'"           Literal.String.Single
+'!!! '        Literal.String.Single
+"'"           Literal.String.Single
+'\n\t'        Text
+'end'         Keyword
+'\n\t'        Text
+'print'       Name.Builtin
+' '           Text
+'"'           Literal.String.Double
+'#{'          Literal.String.Interpol
+'day'         Name
+'}'           Literal.String.Interpol
+' '           Literal.String.Double
+'#{'          Literal.String.Interpol
+'daytime'     Name
+'}'           Literal.String.Interpol
+': '          Literal.String.Double
+'"'           Literal.String.Double
+'\n\t'        Text
+'names'       Name
+'.'           Operator
+'each'        Name
+' '           Text
+'{'           Punctuation
+' '           Text
+'|'           Operator
+'kind'        Name
+','           Punctuation
+' '           Text
+'name'        Name.Builtin
+'|'           Operator
+' '           Text
+'puts'        Name.Builtin
+' '           Text
+'"'           Literal.String.Double
+'  '          Literal.String.Double
+'#{'          Literal.String.Interpol
+'kind'        Name
+'}'           Literal.String.Interpol
+'  '          Literal.String.Double
+'#{'          Literal.String.Interpol
+'name'        Name.Builtin
+'}'           Literal.String.Interpol
+'"'           Literal.String.Double
+' '           Text
+'}'           Punctuation
+'\n\t'        Text
+'puts'        Name.Builtin
+'\n'          Text
+
+'end'         Keyword
+'\n\n'        Text
+
+'puts'        Name.Builtin
+' '           Text
+"'"           Literal.String.Single
+'%d conflicts' Literal.String.Single
+"'"           Literal.String.Single
+' '           Text
+'%'           Operator
+' '           Text
+'conflicts'   Name
+'\n'          Text
+
+'puts'        Name.Builtin
+' '           Text
+"'"           Literal.String.Single
+'%d SWS'      Literal.String.Single
+"'"           Literal.String.Single
+' '           Text
+'%'           Operator
+' '           Text
+'('           Punctuation
+'events'      Name
+'.'           Operator
+'inject'      Name
+'('           Punctuation
+'0'           Literal.Number.Integer
+')'           Punctuation
+' '           Text
+'{'           Punctuation
+' '           Text
+'|'           Operator
+'sum'         Name
+','           Punctuation
+' '           Text
+'('           Punctuation
+'('           Punctuation
+'day'         Name
+','           Punctuation
+' '           Text
+'daytime'     Name
+')'           Punctuation
+','           Punctuation
+')'           Punctuation
+'|'           Operator
+' '           Text
+'sum'         Name
+' '           Text
+'+'           Operator
+' '           Text
+'('           Punctuation
+'daytime'     Name
+'['           Operator
+'/'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'d+$'         Literal.String.Regex
+'/'           Literal.String.Regex
+']'           Operator
+'.'           Operator
+'to_i'        Name
+' '           Text
+'-'           Operator
+' '           Text
+'daytime'     Name
+'['           Operator
+'/'           Literal.String.Regex
+'^'           Literal.String.Regex
+'\\'          Literal.String.Regex
+'d+'          Literal.String.Regex
+'/'           Literal.String.Regex
+']'           Operator
+'.'           Operator
+'to_i'        Name
+')'           Punctuation
+' '           Text
+'}'           Punctuation
+')'           Punctuation
+'\n\n'        Text
+
+'string'      Name
+' '           Text
+'='           Operator
+' '           Text
+'% foo '      Literal.String.Other
+'    '        Text
+'# strange. huh?' Comment.Single
+'\n'          Text
+
+'print'       Name.Builtin
+' '           Text
+'"'           Literal.String.Double
+'Escape here: ' Literal.String.Double
+'\\n'         Literal.String.Escape
+'"'           Literal.String.Double
+'\n'          Text
+
+'print'       Name.Builtin
+' '           Text
+"'"           Literal.String.Single
+'Dont escape here: ' Literal.String.Single
+'\\n'         Literal.String.Escape
+"'"           Literal.String.Single
+'\n\n'        Text
+
+'__END__'     Comment.Preproc
+'\nInformatik und Informationsgesellschaft I: Digitale Medien (32 214)\nComputer lassen ihre eigentliche Bestimmung durch Multimedia und Vernetzung erkennen: Es sind digitale Medien, die alle bisherigen Massen- und Kommunikationsmedien simulieren, kopieren oder ersetzen können. Die kurze Geschichte elektronischer Medien vom Telegramm bis zum Fernsehen wird so zur Vorgeschichte des Computers als Medium. Der Prozess der Mediatisierung der Rechnernetze soll in Technik, Theorie und Praxis untersucht werden. Das PR soll die Techniken der ortsverteilten und zeitversetzten Lehre an Hand praktischer Übungen vorführen und untersuchen.\nVL \tDi\t15-17\twöch.\tRUD 25, 3.101\tJ. Koubek\nVL\tDo\t15-17\twöch.\tRUD 25, 3.101\nUE/PR\tDo\t17-19\twöch.\tRUD 25, 3.101\tJ.-M. Loebel\n\n\nMethoden und Modelle des Systementwurfs (32 223)\nGute Methoden zum Entwurf und zur Verifikation von Systemen sind ein Schlüssel für gute Software. Dieses Seminar betrachtet moderne Entwurfsmethoden.\n VL\tDi\t09-11\twöch.\tRUD 26, 0\x92313\tW. Reisig\n VL\tDo\t09-11\twöch.\tRUD 26, 0\x92313\t\n UE\tDi\t11-13\twöch.\tRUD 26, 0\x92313\t\n PR\tDi\t13-15\twöch.\tRUD 26, 0\x92313\tD. Weinberg\n\n\nKomplexitätstheorie (32 229)\nIn dieser Vorlesung untersuchen wir eine Reihe von wichtigen algorithmischen Problemstellungen aus verschiedenen Bereichen der Informatik. Unser besonderes Interesse gilt dabei der Abschätzung der Rechenressourcen, die zu ihrer Lösung aufzubringen sind.  Die Vorlesung bildet eine wichtige Grundlage für weiterführende Veranstaltungen in den Bereichen Algorithmen, Kryptologie, Algorithmisches Lernen und Algorithmisches Beweisen.\n VL \tDi\t09-11\twöch.\tRUD 26, 1\x92303\tJ. Köbler\n VL\tDo\t09-11\twöch.\tRUD 26, 1\x92305\t\n UE\tDo\t11-13\twöch.\tRUD 26, 1\x92305\t\n\n\nZuverlässige Systeme (32 234)\nMit zunehmender Verbreitung der Computertechnologie in immer mehr Bereichen des menschlichen Lebens wird die Zuverlässigkeit solcher Systeme zu einer immer zentraleren Frage.\nDer Halbkurs "Zuverlässige Systeme" konzentriert sich auf folgende Schwerpunkte: Zuverlässigkeit, Fehlertoleranz, Responsivität, Messungen, Anwendungen, Systemmodelle und Techniken, Ausfallverhalten, Fehlermodelle, Schedulingtechniken, Software/Hardware - responsives Systemdesign, Analyse und Synthese, Bewertung, Fallstudien in Forschung und Industrie.\nDer Halbkurs kann mit dem Halbkurs "Eigenschaften mobiler und eingebetteter Systeme" zu einem Projektkurs kombiniert werden. Ein gemeinsames Projekt begleitet beide Halbkurse.\nVL \tDi\t09-11\twöch.\tRUD 26, 1\x92308\tM. Malek\nVL\tDo\t09-11\twöch.\tRUD 26, 1\x92308\nPR\tn.V.\n\n\nStochastik für InformatikerInnen (32 239)\nGrundlagen der Wahrscheinlichkeitsrechnung, Diskrete und stetige Wahrscheinlichkeitsmodelle in der Informatik, Grenzwertsätze, Simulationsverfahren, Zufallszahlen, Statistische Schätz- und Testverfahren, Markoffsche Ketten, Simulated Annealing, Probabilistische Analyse von Algorithmen.\nVL\tMo\t09-11\twöch.\tRUD 25, 3.101\tW. Kössler\nVL\tMi\t09-11\twöch.\tRUD 25, 3.101\nUE\tMo\t11-13\twöch.\tRUD 25, 3.101\n UE\tMi\t11-13\twöch.\tRUD 25. 3.101\n\n\nGeschichte der Informatik \x96 Ausgewählte Kapitel (32 243)\nVL\tMi\t13-15\twöch.\tRUD 25, 3.113\tW. Coy\n\n\nAktuelle Themen der Theoretischen Informatik (32 260)\nIn diesem Seminar sollen wichtige aktuelle Veröffentlichungen aus der theoretischen Informatik gemeinsam erarbeitet werden. Genaueres wird erst kurz vor dem Seminar entschieden. Bei Interesse wenden Sie sich bitte möglichst frühzeitig an den Veranstalter.\n SE\tFr\t09-11\twöch.\tRUD 26, 1\x92307\tM. Grohe\xa0\n' Comment.Preproc

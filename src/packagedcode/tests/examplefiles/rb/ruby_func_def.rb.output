@@ -1,0 +1,72 @@
+'class'       Keyword
+' '           Text
+'('           Punctuation
+'get_foo'     Name
+'('           Operator
+'"'           Literal.String.Double
+'blub'        Literal.String.Double
+'"'           Literal.String.Double
+')'           Punctuation
+')'           Punctuation
+'::'          Operator
+'Foo'         Name.Class
+'\n  '        Text
+'def'         Keyword
+' '           Text
+'('           Punctuation
+'foo'         Name
+'('           Operator
+'"'           Literal.String.Double
+'bar'         Literal.String.Double
+'"'           Literal.String.Double
+')'           Punctuation
+' '           Text
+'+'           Operator
+' '           Text
+'bar'         Name
+'('           Operator
+'"'           Literal.String.Double
+'baz'         Literal.String.Double
+'"'           Literal.String.Double
+')'           Punctuation
+')'           Punctuation
+'.'           Operator
+'something'   Name.Function
+' '           Text
+'argh'        Name
+','           Punctuation
+' '           Text
+'aaahaa'      Name
+'\n    '      Text
+'42'          Literal.Number.Integer
+'\n  '        Text
+'end'         Keyword
+'\n'          Text
+
+'end'         Keyword
+'\n\n'        Text
+
+'class'       Keyword
+' '           Text
+'get_the_fuck' Name
+'('           Punctuation
+'"'           Literal.String.Double
+'out'         Literal.String.Double
+'"'           Literal.String.Double
+')'           Punctuation
+'::'          Operator
+'Of'          Name.Constant
+'::'          Operator
+'My'          Name.Constant
+'\n  '        Text
+'def'         Keyword
+' '           Text
+'parser_definition' Name.Function
+'\n    '      Text
+'ruby!'       Name
+'\n  '        Text
+'end'         Keyword
+'\n'          Text
+
+'end'         Keyword
+'\n'          Text
