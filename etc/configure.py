@@ -263,7 +263,7 @@ if __name__ == '__main__':
     THIRDPARTY_DIR = os.path.join(ROOT_DIR, THIRDPARTY_DIR)
     os.makedirs(THIRDPARTY_DIR, exist_ok=True)
 
-    THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://github.com/nexB/thirdparty-packages/releases/pypi')
+    THIRDPARTY_LINKS = os.environ.get('THIRDPARTY_LINKS', 'https://thirdparty.aboutcode.org/pypi')
 
     # no_cache = 'CONFIGURE_NO_CACHE' in os.environ
     # if no_cache:

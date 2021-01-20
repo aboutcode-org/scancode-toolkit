@@ -31,7 +31,7 @@ goto config
 
 @rem # thirdparty package locations
 set "THIRDPARTY_DIR=thirdparty"
-set "THIRDPARTY_LINKS=https://github.com/nexB/thirdparty-packages/releases/pypi"
+set "THIRDPARTY_LINKS=https://thirdparty.aboutcode.org/pypi"
 
 @rem # requirements used by defaults and with --dev
 set "REQUIREMENTS=--editable .[full] --constraint requirements.txt"

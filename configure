@@ -43,7 +43,7 @@ function cli_help {
 
 #  thirdparty package locations
 export THIRDPARTY_DIR="thirdparty"
-export THIRDPARTY_LINKS="https://github.com/nexB/thirdparty-packages/releases/pypi"
+export THIRDPARTY_LINKS="https://thirdparty.aboutcode.org/pypi"
 
 # requirements used by default or with --dev.
 # note the use of constraints with -c 
