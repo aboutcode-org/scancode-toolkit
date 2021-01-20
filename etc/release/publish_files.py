@@ -120,11 +120,7 @@ def create_or_update_release_and_upload_directory(
         f'Unpublishing {len(modified_to_delete_and_reupload)} published but '
         f'locally modified files in {release_homepage_url}')
 
-    response = ghapi.get_release_by_tag(tag_name)
-    if response.status_code != requests.codes.ok:  # NOQA
-        raise grr.UnexpectedResponseError(response)
-
-    release = grr.Release.from_json(response.content)
+    release = ghapi.get_release_by_tag(tag_name)
 
     for pth in modified_to_delete_and_reupload:
         filename = os.path.basename(pth)
