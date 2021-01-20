@@ -23,10 +23,16 @@ import utils_thirdparty
 
 @click.command()
 
-@click.option('-r', '--requirement',
+@click.option('-n', '--name',
     type=str,
-    metavar='SPECIFIER',
-    help='Pip package requirement specifier to add or build.',
+    metavar='PACKAGE_NAME',
+    help='Python package name to add or build.',
+)
+@click.option('-v', '--version',
+    type=str,
+    default=None,
+    metavar='VERSION',
+    help='Python package version to add or build.',
 )
 @click.option('-d', '--thirdparty-dir',
     type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
@@ -59,29 +65,38 @@ import utils_thirdparty
     is_flag=True,
     help='Also include all dependent wheels.',
 )
+@click.option('--verbose',
+    is_flag=True,
+    help='Provide verbose output.',
+)
 @click.help_option('-h', '--help')
 def build_wheels(
-    requirement,
+    name,
+    version,
     thirdparty_dir,
     python_version,
     operating_system,
     with_deps,
     build_remotely,
+    verbose,
 ):
     """
-    Build to THIRDPARTY_DIR all the wheels for the pip `--requirement`
-    requirements SPECIFIER(s). Build wheels compatible with all the provided
-    `--python-dot-version` PYVER(s) and `--operating_system` OS(s). Also build
-    native wheels remotely when `--build-remotely`.
+    Build to THIRDPARTY_DIR all the wheels for the Python PACKAGE_NAME and
+    optional VERSION. Build wheels compatible with all the `--python-version`
+    PYVER(s) and `--operating_system` OS(s).
+
+    Build native wheels remotely if needed when `--build-remotely` and include
+    all dependencies with `--with-deps`.
     """
-    utils_thirdparty.build_wheels(
-        requirements_specifier=requirement,
+    utils_thirdparty.add_or_upgrade_built_wheels(
+        name=name,
+        version=version,
         python_versions=python_version,
         operating_systems=operating_system,
         dest_dir=thirdparty_dir,
         build_remotely=build_remotely,
         with_deps=with_deps,
-        verbose=False,
+        verbose=verbose,
     )
 
 
