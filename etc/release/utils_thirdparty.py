@@ -27,6 +27,7 @@ import subprocess
 import tarfile
 import tempfile
 import time
+import urllib
 
 import attr
 import license_expression
@@ -127,10 +128,7 @@ PLATFORMS_BY_OS = {
 THIRDPARTY_DIR = 'thirdparty'
 CACHE_THIRDPARTY_DIR = '.cache/thirdparty'
 
-REMOTE_BASE_URL = 'https://github.com'
-REMOTE_LINKS_URL = 'https://github.com/nexB/thirdparty-packages/releases/pypi'
-REMOTE_HREF_PREFIX = '/nexB/thirdparty-packages/releases/download/'
-REMOTE_BASE_DOWNLOAD_URL = 'https://github.com/nexB/thirdparty-packages/releases/download/pypi'
+REMOTE_LINKS_URL = 'https://thirdparty.aboutcode.org/pypi'
 
 EXTENSIONS_APP = '.pyz',
 EXTENSIONS_SDIST = '.tar.gz', '.tar.bz2', '.zip', '.tar.xz',
@@ -188,7 +186,7 @@ def fetch_wheels(
         if not package:
             missed.append((name, version,))
             nv = f'{name}=={version}' if version else name
-            yield None, f'fetch_wheelsxxx: Missing package in remote repo: {nv}'
+            yield None, f'fetch_wheels: Missing package in remote repo: {nv}'
 
         else:
             fetched_filename = package.fetch_wheel(
@@ -557,7 +555,7 @@ class Distribution(NameVer):
         return cls.from_data(data)
 
     @classmethod
-    def build_remote_download_url(cls, filename, base_url=REMOTE_BASE_DOWNLOAD_URL):
+    def build_remote_download_url(cls, filename, base_url=REMOTE_LINKS_URL):
         """
         Return a direct download URL for a file in our remote repo
         """
@@ -566,7 +564,8 @@ class Distribution(NameVer):
     def get_best_download_url(self):
         """
         Return the best download URL for this distribution where best means that
-        PyPI is better and our remote urls are second.
+        PyPI is better and our own remote repo URLs are second.
+        If none is found, return a synthetic remote URL.
         """
         name = self.normalized_name
         version = self.version
@@ -583,6 +582,10 @@ class Distribution(NameVer):
             remote_url = remote_package.get_url_for_filename(filename)
             if remote_url:
                 return remote_url
+        else:
+            # the package may not have been published yet, so we craft a URL
+            # using our remote base URL
+            return self.build_remote_download_url(self.filename)
 
     def purl_identifiers(self, skinny=False):
         """
@@ -632,7 +635,7 @@ class Distribution(NameVer):
         if self.license_expression == 'public-domain':
             # copyright not needed
             return True
-        return self.license_expression and self.copyright
+        return self.license_expression and self.copyright and self.path_or_url
 
     def to_about(self):
         """
@@ -819,7 +822,9 @@ class Distribution(NameVer):
                     print(f'Fetched license from {lic_url}')
 
                 except:
-                    errors.append(f'No text for license {filename} from {self}')
+                    msg = f'No text for license {filename} in expression "{self.license_expression}" from {self}'
+                    print(msg)
+                    errors.append(msg)
 
         return errors
 
@@ -899,6 +904,9 @@ class Distribution(NameVer):
                 return
 
         data.pop('about_resource', None)
+        dl = data.pop('download_url', None)
+        if dl:
+            data['path_or_url'] = dl
 
         updated = False
         extra = {}
@@ -911,7 +919,10 @@ class Distribution(NameVer):
             if hasattr(self, k):
                 value = getattr(self, k, None)
                 if not value or (overwrite and value != v):
-                    setattr(self, k, v)
+                    try:
+                        setattr(self, k, v)
+                    except Exception as e:
+                        raise Exception(f'{self}, {k}, {v}') from e
                     updated = True
 
             elif keep_extra:
@@ -1233,9 +1244,12 @@ class PypiPackage(NameVer):
 
         for dist in dists:
             if dist.normalized_name != normalized_name or dist.version != version:
-                raise Exception(
-                    f'Inconsistent dist name and version in set:: {dist} '
-                    f'Expected name: {normalized_name} and version: {version} ')
+                if TRACE:
+                    print(
+                        f'  Skipping inconsistent dist name and version: {dist} '
+                        f'Expected instead package name: {normalized_name} and version: "{version}"'
+                    )
+                continue
 
             if isinstance(dist, Sdist):
                 package.sdist = dist
@@ -1341,7 +1355,6 @@ class PypiPackage(NameVer):
         fetched_filenames = fetched_filenames if fetched_filenames is not None else set()
         for wheel in self.get_supported_wheels(environment):
             if wheel.filename not in fetched_filenames:
-                print(f'{self.name}=={self.version} : Fetching wheel: {wheel.filename}')
                 fetch_and_save_path_or_url(
                     filename=wheel.filename,
                     path_or_url=wheel.path_or_url,
@@ -1754,7 +1767,6 @@ class Cache:
         cached = os.path.join(self.directory, filename)
 
         if not os.path.exists(cached):
-            print(f'Fetching {path_or_url}')
             content = get_file_content(path_or_url=path_or_url, as_text=as_text)
             wmode = 'w' if as_text else 'wb'
             with open(cached, wmode) as fo:
@@ -1784,6 +1796,7 @@ def get_file_content(path_or_url, as_text=True):
         return get_local_file_content(path=path_or_url, as_text=as_text)
 
     elif path_or_url.startswith('https://'):
+        print(f'Fetching: {path_or_url}')
         _headers, content = get_remote_file_content(url=path_or_url, as_text=as_text)
         return content
 
@@ -1808,7 +1821,7 @@ class RemoteNotFetchedException(Exception):
     pass
 
 
-def get_remote_file_content(url, as_text=True, headers_only=False, _delay=0):
+def get_remote_file_content(url, as_text=True, headers_only=False, headers=None, _delay=0,):
     """
     Fetch and return a tuple of (headers, content) at `url`. Return content as a
     text string if `as_text` is True. Otherwise return the content as bytes.
@@ -1819,11 +1832,11 @@ def get_remote_file_content(url, as_text=True, headers_only=False, _delay=0):
     and this with an increasing delay.
     """
     time.sleep(_delay)
-
+    headers = headers or {}
     # using a GET with stream=True ensure we get the the final header from
     # several redirects and that we can ignore content there. A HEAD request may
     # not get us this last header
-    with requests.get(url, allow_redirects=True, stream=True) as response:
+    with requests.get(url, allow_redirects=True, stream=True, headers=headers) as response:
         status = response.status_code
         if status != requests.codes.ok:  # NOQA
             if status == 429 and _delay < 20:
@@ -1838,12 +1851,44 @@ def get_remote_file_content(url, as_text=True, headers_only=False, _delay=0):
                 )
 
             else:
-                raise RemoteNotFetchedException(f'Failed HTTP request from {url} with {status}' % locals())
+                raise RemoteNotFetchedException(f'Failed HTTP request from {url} with {status}')
 
         if headers_only:
             return response.headers, None
 
         return response.headers, response.text if as_text else response.content
+
+
+def get_url_content_if_modified(url, md5, _delay=0,):
+    """
+    Return fetched content bytes at `url` or None if the md5 has not changed.
+    Retries multiple times to fetch if there is a HTTP 429 throttling response
+    and this with an increasing delay.
+    """
+    time.sleep(_delay)
+    headers = None
+    if md5:
+        etag = f'"{md5}"'
+        headers = {'If-None-Match': f'{etag}'}
+
+    # using a GET with stream=True ensure we get the the final header from
+    # several redirects and that we can ignore content there. A HEAD request may
+    # not get us this last header
+    with requests.get(url, allow_redirects=True, stream=True, headers=headers) as response:
+        status = response.status_code
+        if status == requests.codes.too_many_requests and _delay < 20:  # NOQA
+            # too many requests: start waiting with some exponential delay
+            _delay = (_delay * 2) or 1
+            return get_url_content_if_modified(url=url, md5=md5, _delay=_delay)
+
+        elif status == requests.codes.not_modified:  # NOQA
+            # all is well, the md5 is the same
+            return None
+
+        elif status != requests.codes.ok:  # NOQA
+            raise RemoteNotFetchedException(f'Failed HTTP request from {url} with {status}')
+
+        return response.content
 
 
 def get_remote_headers(url):
@@ -1932,31 +1977,24 @@ def fetch_missing_sources(dest_dir=THIRDPARTY_DIR):
 
     for package in local_packages:
         if not package.sdist:
-            print()
-            print(f'Finding sources for: {package.name} {package.version}')
+            print(f'Finding sources for: {package.name}=={package.version}: ', end='')
             pypi_package = pypi_repo.get_package(
                 name=package.name, version=package.version)
 
-            print(f' --> Try fetching sources from Pypi: {pypi_package}')
             if pypi_package and pypi_package.sdist:
-                print(f' --> Fetching sources from Pypi: {pypi_package.sdist}')
+                print(f'Fetching sources from Pypi')
                 pypi_package.fetch_sdist(dest_dir=dest_dir)
             else:
                 remote_package = remote_repo.get_package(
                     name=package.name, version=package.version)
 
-                print(f' --> Try fetching sources from remote: {pypi_package}')
                 if remote_package and remote_package.sdist:
-                    print(f' --> Fetching sources from Remote: {remote_package.sdist}')
+                    print(f'Fetching sources from Remote')
                     remote_package.fetch_sdist(dest_dir=dest_dir)
+                    continue
 
-                else:
-                    print(f' --> no sources found')
-                    not_found.append((package.name, package.version,))
-
-    if not_found:
-        for name, version in not_found:
-            print(f'sdist not found for {name}=={version}')
+            print(f'No sources found')
+            not_found.append((package.name, package.version,))
 
     return not_found
 
@@ -2056,28 +2094,26 @@ def build_missing_wheels(
 
 def get_paths_or_urls(links_url):
     if links_url.startswith('https:'):
-        paths_or_urls = find_links_from_url(links_url)
+        paths_or_urls = find_links_from_release_url(links_url)
     else:
         paths_or_urls = find_links_from_dir(links_url)
     return paths_or_urls
 
 
-def find_links_from_dir(directory=THIRDPARTY_DIR, extensions=EXTENSIONS):
+def find_links_from_dir(directory=THIRDPARTY_DIR):
     """
     Return a list of path to files in `directory` for any file that ends with
     any of the extension in the list of `extensions` strings.
     """
     base = os.path.abspath(directory)
-    files = [os.path.join(base, f) for f in os.listdir(base) if f.endswith(extensions)]
+    files = [os.path.join(base, f) for f in os.listdir(base) if f.endswith(EXTENSIONS)]
     return files
 
 
-def find_links_from_url(
-    links_url=REMOTE_LINKS_URL,
-    base_url=REMOTE_BASE_URL,
-    prefix=REMOTE_HREF_PREFIX,
-    extensions=EXTENSIONS,
-):
+get_links = re.compile('href="([^"]+)"').findall
+
+
+def find_links_from_release_url(links_url=REMOTE_LINKS_URL):
     """
     Return a list of download link URLs found in the HTML page at `links_url`
     URL that starts with the `prefix` string and ends with any of the extension
@@ -2085,23 +2121,51 @@ def find_links_from_url(
     """
     if TRACE:
         print(f'Finding links for {links_url}')
-    get_links = re.compile('href="([^"]+)"').findall
-    _headers, text = get_remote_file_content(links_url)
-    links = get_links(text)
-    links = [l for l in links if l.startswith(prefix) and l.endswith(extensions)]
-    links = [l if l.startswith('https://') else f'{base_url}{l}' for l in links]
+
+    plinks_url = urllib.parse.urlparse(links_url)
+
+    base_url = urllib.parse.SplitResult(
+        plinks_url.scheme, plinks_url.netloc, '', '', '').geturl()
 
     if TRACE:
-        print(f'  --> Found {len(links)} links')
+        print(f'Base URL {base_url}')
+
+    _headers, text = get_remote_file_content(links_url)
+    links = []
+    for link in get_links(text):
+        if not link.endswith(EXTENSIONS):
+            continue
+
+        plink = urllib.parse.urlsplit(link)
+
+        if plink.scheme:
+            # full URL kept as-is
+            url = link
+
+        if plink.path.startswith('/'):
+            # absolute link
+            url = f'{base_url}{link}'
+
+        else:
+            # relative link
+            url = f'{links_url}/{link}'
+
+        if TRACE:
+            print(f'Adding URL: {url}')
+
+        links.append(url)
+
+    print(f'Found {len(links)} links at {links_url}')
     return links
 
 
-def find_pypi_links(name, extensions=EXTENSIONS, simple_url=PYPI_SIMPLE_URL):
+def find_pypi_links(name, simple_url=PYPI_SIMPLE_URL):
     """
     Return a list of download link URLs found in a PyPI simple index for package name.
     with the list of `extensions` strings. Use the `simple_url` PyPI url.
     """
-    get_links = re.compile('href="([^"]+)"').findall
+    if TRACE:
+        print(f'Finding links for {simple_url}')
 
     name = name and NameVer.normalize_name(name)
     simple_url = simple_url.strip('/')
@@ -2109,9 +2173,10 @@ def find_pypi_links(name, extensions=EXTENSIONS, simple_url=PYPI_SIMPLE_URL):
 
     _headers, text = get_remote_file_content(simple_url)
     links = get_links(text)
+    # TODO: keep sha256
     links = [l.partition('#sha256=') for l in links]
     links = [url for url, _, _sha256 in links]
-    links = [l for l in links if l.endswith(extensions)]
+    links = [l for l in links if l.endswith(EXTENSIONS)]
     return  links
 
 
@@ -2237,7 +2302,7 @@ def hash_requirements(dest_dir=THIRDPARTY_DIR, requirements_file='requirements.t
 ################################################################################
 
 
-def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
+def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR, include_remote=True):
     """
     Given a thirdparty dir, add missing ABOUT. LICENSE and NOTICE files using
     best efforts:
@@ -2254,27 +2319,20 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
     """
 
     local_packages = get_local_packages(directory=dest_dir)
+    local_repo = get_local_repo(directory=dest_dir)
+
     remote_repo = get_remote_repo()
 
     def get_other_dists(_package, _dist):
         """
         Return a list of all the dists from package that are not the `dist` object
         """
-        return [d for d in _package.get_distributions() if d !=_dist]
+        return [d for d in _package.get_distributions() if d != _dist]
 
     for local_package in local_packages:
         for local_dist in local_package.get_distributions():
             local_dist.load_about_data(dest_dir=dest_dir)
             local_dist.set_checksums(dest_dir=dest_dir)
-
-            # if has key data we may look to improve later, but we can move on
-            if local_dist.has_key_metadata():
-                local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir)
-                continue
-
-            # lets try to fetch remotely
-            local_dist.load_remote_about_data()
 
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
@@ -2295,21 +2353,21 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
                 continue
 
             # try to get a latest version of the same package that is not our version
-            other_remote_packages = [
-                p for p in remote_repo.get_versions(local_package.name)
+            other_local_packages = [
+                p for p in local_repo.get_versions(local_package.name)
                 if p.version != local_package.version
             ]
 
-            latest_version = other_remote_packages and other_remote_packages[-1]
-            if latest_version:
-                latest_dists = list(latest_version.get_distributions())
-                for remote_dist in latest_dists:
-                    remote_dist.load_remote_about_data()
-                    if not remote_dist.has_key_metadata():
+            latest_local_version = other_local_packages and other_local_packages[-1]
+            if latest_local_version:
+                latest_local_dists = list(latest_local_version.get_distributions())
+                for latest_local_dist in latest_local_dists:
+                    latest_local_dist.load_about_data(dest_dir=dest_dir)
+                    if not latest_local_dist.has_key_metadata():
                         # there is not much value to get other data if we are missing the key ones
                         continue
                     else:
-                        local_dist.update_from_other_dist(remote_dist)
+                        local_dist.update_from_other_dist(latest_local_dist)
                         # if has key data we may look to improve later, but we can move on
                         if local_dist.has_key_metadata():
                             break
@@ -2320,18 +2378,58 @@ def add_fetch_or_update_about_and_license_files(dest_dir=THIRDPARTY_DIR):
                     local_dist.fetch_license_files(dest_dir=dest_dir)
                     continue
 
+            if include_remote:
+                # lets try to fetch remotely
+                local_dist.load_remote_about_data()
+
+                # if has key data we may look to improve later, but we can move on
+                if local_dist.has_key_metadata():
+                    local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                    local_dist.fetch_license_files(dest_dir=dest_dir)
+                    continue
+
+                # try to get a latest version of the same package that is not our version
+                other_remote_packages = [
+                    p for p in remote_repo.get_versions(local_package.name)
+                    if p.version != local_package.version
+                ]
+
+                latest_version = other_remote_packages and other_remote_packages[-1]
+                if latest_version:
+                    latest_dists = list(latest_version.get_distributions())
+                    for remote_dist in latest_dists:
+                        remote_dist.load_remote_about_data()
+                        if not remote_dist.has_key_metadata():
+                            # there is not much value to get other data if we are missing the key ones
+                            continue
+                        else:
+                            local_dist.update_from_other_dist(remote_dist)
+                            # if has key data we may look to improve later, but we can move on
+                            if local_dist.has_key_metadata():
+                                break
+
+                    # if has key data we may look to improve later, but we can move on
+                    if local_dist.has_key_metadata():
+                        local_dist.save_about_and_notice_files(dest_dir=dest_dir)
+                        local_dist.fetch_license_files(dest_dir=dest_dir)
+                        continue
+
             # try to get data from pkginfo (no license though)
             local_dist.load_pkginfo_data(dest_dir=dest_dir)
 
             # FIXME: save as this is the last resort for now in all cases
-            if local_dist.has_key_metadata() or not local_dist.has_key_metadata():
-                local_dist.save_about_and_notice_files(dest_dir)
-                local_dist.fetch_license_files(dest_dir)
+            # if local_dist.has_key_metadata() or not local_dist.has_key_metadata():
+            local_dist.save_about_and_notice_files(dest_dir)
+
+            lic_errs = local_dist.fetch_license_files(dest_dir)
 
             # TODO: try to get data from dejacode
 
             if not local_dist.has_key_metadata():
                 print(f'Unable to add essential ABOUT data for: {local_dist}')
+            if lic_errs:
+                lic_errs = '\n'.join(lic_errs)
+                print(f'Failed to fetch some licenses:: {lic_errs}')
 
 ################################################################################
 #
@@ -2367,14 +2465,95 @@ def call(args):
             raise Exception(stdout, stderr, returncode)
 
 
-def build_wheels(
-    requirements_specifier,
-    with_deps=False,
-    build_remotely=False,
+def add_or_upgrade_built_wheels(
+    name,
+    version=None,
     python_versions=PYTHON_VERSIONS,
     operating_systems=PLATFORMS_BY_OS,
-    verbose=False,
     dest_dir=THIRDPARTY_DIR,
+    build_remotely=False,
+    with_deps=False,
+    verbose=False,
+):
+    """
+    Add or update package `name` and `version` as a binary wheel saved in
+    `dest_dir`. Use the latest version if `version` is None. Return the a list
+    of the collected, fetched or built wheel file names or an empty list.
+
+    Use the provided lists of `python_versions` (e.g. "36", "39") and
+    `operating_systems` (e.g. linux, windows or macos) to decide which specific
+    wheel to fetch or build.
+
+    Include wheels for all dependencies if `with_deps` is True.
+    Build remotely is `build_remotely` is True.
+    """
+    print(f'\nAdding wheels for package: {name}=={version}')
+
+    wheel_filenames = []
+    # a mapping of {req specifier: {mapping build_wheels kwargs}}
+    wheels_to_build = {}
+    for python_version, operating_system in itertools.product(python_versions, operating_systems):
+        print(f'  Adding wheels for package: {name}=={version} on {python_version,} and {operating_system}')
+        environment = Environment.from_pyver_and_os(python_version, operating_system)
+
+        # Check if requested wheel already exists locally for this version
+        local_repo = get_local_repo(directory=dest_dir)
+        local_package = local_repo.get_package(name=name, version=version)
+
+        has_local_wheel = False
+        if version and local_package:
+            for wheel in local_package.get_supported_wheels(environment):
+                has_local_wheel = True
+                wheel_filenames.append(wheel.filename)
+                break
+        if has_local_wheel:
+            print(f'    local wheel exists: {wheel.filename}')
+            continue
+
+        if not version:
+            pypi_package = get_pypi_repo().get_latest_version(name)
+            version = pypi_package.version
+
+        # Check if requested wheel already exists remotely or in Pypi for this version
+        wheel_filename = fetch_package_wheel(
+            name=name, version=version, environment=environment, dest_dir=dest_dir)
+        if wheel_filename:
+            wheel_filenames.append(wheel_filename)
+            continue
+
+        # the wheel is not available locally, remotely or in Pypi
+        # we need to build binary from sources
+        requirements_specifier = f'{name}=={version}'
+        to_build = wheels_to_build.get(requirements_specifier)
+        if to_build:
+            to_build['python_versions'].append(python_version)
+            to_build['operating_systems'].append(operating_system)
+        else:
+            wheels_to_build[requirements_specifier] = dict(
+                requirements_specifier=requirements_specifier,
+                python_versions=[python_version],
+                operating_systems=[operating_system],
+                dest_dir=dest_dir,
+                build_remotely=build_remotely,
+                with_deps=with_deps,
+                verbose=verbose,
+            )
+
+    for build_wheels_kwargs in wheels_to_build.values():
+        bwheel_filenames = build_wheels(**build_wheels_kwargs)
+        wheel_filenames.extend(bwheel_filenames)
+
+    return sorted(set(wheel_filenames))
+
+
+def build_wheels(
+    requirements_specifier,
+    python_versions=PYTHON_VERSIONS,
+    operating_systems=PLATFORMS_BY_OS,
+    dest_dir=THIRDPARTY_DIR,
+    build_remotely=False,
+    with_deps=False,
+    verbose=False,
 ):
     """
     Given a pip `requirements_specifier` string (such as package names or as
@@ -2387,18 +2566,20 @@ def build_wheels(
     First try to build locally to process pure Python wheels, and fall back to
     build remotey on all requested Pythons and operating systems.
     """
-    locally_built = build_wheels_locally_if_pure_python(
+    all_pure, builds = build_wheels_locally_if_pure_python(
         requirements_specifier=requirements_specifier,
         with_deps=with_deps,
         verbose=verbose,
         dest_dir=dest_dir,
     )
+    for local_build in builds:
+        print(f'Built wheel: {local_build}')
 
-    if locally_built:
-        return locally_built
+    if all_pure:
+        return builds
 
     if build_remotely:
-        return build_wheels_remotely_on_multiple_platforms(
+        remote_builds = build_wheels_remotely_on_multiple_platforms(
             requirements_specifier=requirements_specifier,
             with_deps=with_deps,
             python_versions=python_versions,
@@ -2406,8 +2587,9 @@ def build_wheels(
             verbose=verbose,
             dest_dir=dest_dir,
         )
+        builds.extend(remote_builds)
 
-    return []
+    return builds
 
 
 def build_wheels_remotely_on_multiple_platforms(
@@ -2491,9 +2673,8 @@ def build_wheels_locally_if_pure_python(
 
     If all these are "pure" Python wheels that run on all Python 3 versions and
     operating systems, copy them back in `dest_dir` if they do not exists there
-    and return a list of built wheel file names.
 
-    Otherwise, if any is not pure, do nothing and return an empty list.
+    Return a tuple of (True if all wheels are "pure", list of built wheel file names)
     """
     deps = [] if with_deps else ['--no-deps']
     verbose = ['--verbose'] if verbose else []
@@ -2514,9 +2695,12 @@ def build_wheels_locally_if_pure_python(
     if not built:
         return []
 
-    if not all(is_pure_wheel(bwfn) for bwfn in built):
-        return []
+    all_pure = all(is_pure_wheel(bwfn) for bwfn in built)
 
+    if not all_pure:
+        print(f'  Some wheels are not pure')
+
+    print(f'  Copying local wheels')
     pure_built = []
     for bwfn in built:
         owfn = os.path.join(dest_dir, bwfn)
@@ -2524,8 +2708,8 @@ def build_wheels_locally_if_pure_python(
             nwfn = os.path.join(wheel_dir, bwfn)
             fileutils.copyfile(nwfn, owfn)
         pure_built.append(bwfn)
-        print(f'Built local wheel: {bwfn}')
-    return pure_built
+        print(f'    Built local wheel: {bwfn}')
+    return all_pure, pure_built
 
 
     # TODO:
@@ -2603,64 +2787,19 @@ def fetch_package_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR):
     Return the fetched wheel file name on success or None if it was not fetched.
     Trying fetching from our own remote repo, then from PyPI.
     """
-    wheel_file = None
-    remote_package = get_remote_package(name, version)
+    wheel_filename = None
+    remote_package = get_remote_package(name=name, version=version)
     if remote_package:
-        wheel_file = remote_package.fetch_wheel(environment, dest_dir)
-    if not wheel_file:
-        pypi_package = get_pypi_package(name, version)
-        if pypi_package:
-            wheel_file = pypi_package.fetch_wheel(environment, dest_dir)
-    return wheel_file
+        wheel_filename = remote_package.fetch_wheel(
+            environment=environment, dest_dir=dest_dir)
+        if wheel_filename:
+            return wheel_filename
 
-
-def add_or_upgrade_package(
-        name,
-        version=None,
-        python_version=None,
-        operating_system=None,
-        dest_dir=THIRDPARTY_DIR,
-    ):
-    """
-    Add or update package `name` and `version` as a binary wheel saved in
-    `dest_dir`. Use the latest version if `version` is None. Return the a list
-    of the built wheel file names or an empty list.
-
-    Use the provided `python_version` (e.g. "36") and `operating_system` (e.g.
-    linux, windows or macos) to decide which specific wheel to fetch or build.
-    """
-    environment = Environment.from_pyver_and_os(python_version, operating_system)
-
-    # Check if requested wheel already exists locally for this version
-    local_repo = get_local_repo(directory=dest_dir)
-    local_package = local_repo.get_package(name, version)
-    if version and local_package:
-        for wheel in local_package.get_supported_wheels(environment):
-            # if requested version is there, there is nothing to do: just return
-            return [wheel.filename]
-
-    if not version:
-        # find latest version @ PyPI
-        pypi_package = get_pypi_repo().get_latest_version(name)
-        version = pypi_package.version
-
-    # Check if requested wheel already exists remotely or in Pypi for this version
-    wheel_filename = fetch_package_wheel(name, version, environment, dest_dir)
-    if wheel_filename:
-        return [wheel_filename]
-
-    # the wheel is not available locally, remotely or in Pypi
-    # we need to build binary from sources
-    requirements_specifier = f'{name}=={version}'
-
-    wheel_filenames = build_wheels(
-        requirements_specifier=requirements_specifier,
-        python_version=python_version,
-        operating_system=operating_system,
-        dest_dir=dest_dir,
-    )
-
-    return wheel_filenames
+    pypi_package = get_pypi_package(name=name, version=version)
+    if pypi_package:
+        wheel_filename = pypi_package.fetch_wheel(
+            environment=environment, dest_dir=dest_dir)
+    return wheel_filename
 
 
 def check_about(dest_dir=THIRDPARTY_DIR):
