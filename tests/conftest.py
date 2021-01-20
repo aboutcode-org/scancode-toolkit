@@ -3,10 +3,10 @@
     ~~~~~~~~~~~~~~~~~~~~~
 
     Checks that lexers output the expected tokens for each sample
-    under lexers/*/test_*.txt.
+    under snippets/ and examplefiles/.
 
     After making a change, rather than updating the samples manually,
-    run `pytest --update-goldens tests/lexers tests/examplefiles`.
+    run `pytest --update-goldens <changed file>`.
 
     To add a new sample, create a new file matching this pattern.
     The directory must match the alias of the lexer to be used.
