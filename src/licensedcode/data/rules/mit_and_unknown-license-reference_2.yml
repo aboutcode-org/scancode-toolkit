@@ -1,3 +1,4 @@
 license_expression: mit AND unknown-license-reference
 is_license_text: yes
 relevance: 100
+minimum_coverage: 95
