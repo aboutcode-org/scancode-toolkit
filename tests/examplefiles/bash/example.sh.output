@@ -1,0 +1,128 @@
+'#!/bin/bash\n' Comment.Hashbang
+
+'\n'          Text
+
+'printf'      Name.Builtin
+' '           Text
+'"%d %s\\n"'  Literal.String.Double
+' '           Text
+'10'          Literal.Number
+' '           Text
+'"foo"'       Literal.String.Double
+'\n'          Text
+
+'printf'      Name.Builtin
+' '           Text
+'"%d %s\\n"'  Literal.String.Double
+' '           Text
+'$(('         Keyword
+'10#1'        Literal.Number
+'))'          Keyword
+' '           Text
+'"bar"'       Literal.String.Double
+'\n\n'        Text
+
+'let'         Name.Builtin
+' '           Text
+'"'           Literal.String.Double
+'m = 10#'     Literal.String.Double
+'${'          Literal.String.Interpol
+'1'           Name.Variable
+':'           Punctuation
+'1'           Name.Variable
+':'           Punctuation
+'2'           Name.Variable
+'}'           Literal.String.Interpol
+'"'           Literal.String.Double
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n\n'        Text
+
+'m'           Name.Variable
+'='           Operator
+'$(('         Keyword
+'10#'         Literal.Number
+'${'          Literal.String.Interpol
+'1'           Name.Variable
+':'           Punctuation
+'4'           Name.Variable
+':'           Punctuation
+'3'           Name.Variable
+'}'           Literal.String.Interpol
+' '           Text
+'+'           Operator
+' '           Text
+'10#'         Literal.Number
+'${'          Literal.String.Interpol
+'1'           Name.Variable
+':'           Punctuation
+'1'           Name.Variable
+':'           Punctuation
+'3'           Name.Variable
+'}'           Literal.String.Interpol
+'))'          Keyword
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n\n'        Text
+
+'m'           Name.Variable
+'='           Operator
+'$(('         Keyword
+'10#'         Literal.Number
+'${'          Literal.String.Interpol
+'1'           Name.Variable
+':'           Punctuation
+'4'           Name.Variable
+':'           Punctuation
+'3'           Name.Variable
+'}'           Literal.String.Interpol
+'))'          Keyword
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n\n'        Text
+
+'m'           Name.Variable
+'='           Operator
+'$(('         Keyword
+'10#'         Literal.Number
+'$1'          Name.Variable
+'))'          Keyword
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n\n'        Text
+
+'m'           Name.Variable
+'='           Operator
+'$(('         Keyword
+'10#1'        Literal.Number
+'))'          Keyword
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n\n'        Text
+
+'m'           Name.Variable
+'='           Operator
+'$(('         Keyword
+'10'          Literal.Number
+'))'          Keyword
+'\n'          Text
+
+'echo'        Name.Builtin
+' '           Text
+'$m'          Name.Variable
+'\n'          Text
