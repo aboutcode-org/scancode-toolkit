@@ -4,9 +4,16 @@ Release notes
 vNext
 -----
 
+Version 21.1.21
+---------------
+
+*2020-01-21*
+- Improve error reporting when oding missing DLLs
+- Clean config and improve basic documentation
+
 
 Version 21.1.14
-----------------
+---------------
 
 *2020-11-12*
 - Update dependencies
