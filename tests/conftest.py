@@ -15,15 +15,18 @@
     :copyright: Copyright 2006-2021 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
+
 from pathlib import Path
 
 import pytest
 
 import pygments.lexers
+from pygments.token import Error
 
 
 def pytest_addoption(parser):
-    parser.addoption('--update-goldens', action='store_true', help='reset golden master benchmarks')
+    parser.addoption('--update-goldens', action='store_true',
+                     help='reset golden master benchmarks')
 
 
 class LexerTestItem(pytest.Item):
@@ -35,6 +38,8 @@ class LexerTestItem(pytest.Item):
     @classmethod
     def _prettyprint_tokens(cls, tokens):
         for tok, val in tokens:
+            if tok is Error and not cls.allow_errors:
+                raise ValueError('generated Error token at {!r}'.format(val))
             yield '{!r:<13} {}'.format(val, str(tok)[6:])
             if val.endswith('\n'):
                 yield ''
@@ -49,6 +54,9 @@ class LexerTestItem(pytest.Item):
     def _test_file_rel_path(self):
         return Path(str(self.fspath)).relative_to(Path(__file__).parent.parent)
 
+    def _prunetraceback(self, excinfo):
+        excinfo.traceback = excinfo.traceback.cut(__file__).filter()
+
     def repr_failure(self, excinfo):
         if isinstance(excinfo.value, AssertionError):
             rel_path = self._test_file_rel_path()
@@ -59,6 +67,8 @@ class LexerTestItem(pytest.Item):
             ).format(self.lexer, rel_path, Path(*rel_path.parts[:2]))
             diff = str(excinfo.value).split('\n', 1)[-1]
             return message + '\n\n' + diff
+        else:
+            return pytest.Item.repr_failure(self, excinfo)
 
     def reportinfo(self):
         return self.fspath, None, str(self._test_file_rel_path())
@@ -69,10 +79,12 @@ class LexerTestItem(pytest.Item):
 
 
 class LexerSeparateTestItem(LexerTestItem):
+    allow_errors = False
+
     def __init__(self, name, parent):
         super().__init__(name, parent)
 
-        self.input = self.fspath.read_binary()
+        self.input = self.fspath.read_text('utf-8')
         output_path = self.fspath + '.output'
         if output_path.check():
             self.expected = output_path.read_text(encoding='utf-8')
@@ -85,6 +97,8 @@ class LexerSeparateTestItem(LexerTestItem):
 
 
 class LexerInlineTestItem(LexerTestItem):
+    allow_errors = True
+
     def __init__(self, name, parent):
         super().__init__(name, parent)
 
