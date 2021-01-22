@@ -6,11 +6,15 @@ CommonCode
 - homepage_url: https://github.com/nexB/commoncode
 - keywords: utilities, scancode-toolkit, commoncode
 
-
 Commoncode provides a set of common functions and utilities for handling various things like paths,
-dates, files and hashes. Originally split from scancode-toolkit
-
+dates, files and hashes. It started as library in scancode-toolkit.
 Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
+
+
+To install this package use::
+
+    pip install commoncode]
+
 
 To set up the development environment::
 
