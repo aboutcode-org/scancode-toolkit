@@ -27,10 +27,10 @@ import io
 import logging
 
 import attr
+import saneyaml
 
 from commoncode import filetype
 from commoncode import fileutils
-from commoncode import saneyaml
 from packagedcode import models
 from packagedcode.utils import combine_expressions
 

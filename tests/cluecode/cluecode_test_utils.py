@@ -29,9 +29,9 @@ from os import path
 
 import attr
 import pytest
+import saneyaml
 
 import cluecode.copyrights
-from commoncode import saneyaml
 from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name

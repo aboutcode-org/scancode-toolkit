@@ -38,12 +38,12 @@ import traceback
 
 import attr
 from license_expression import Licensing
+import saneyaml
 
 from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
-from commoncode import saneyaml
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE

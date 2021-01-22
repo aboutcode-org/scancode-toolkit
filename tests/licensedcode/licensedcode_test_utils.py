@@ -30,8 +30,8 @@ import traceback
 import attr
 from license_expression import Licensing
 import pytest
+import saneyaml
 
-from commoncode import saneyaml
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 

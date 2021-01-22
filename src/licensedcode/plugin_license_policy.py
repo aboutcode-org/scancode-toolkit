@@ -27,8 +27,8 @@ from os.path import exists
 from os.path import isdir
 
 import attr
+import saneyaml
 
-from commoncode import saneyaml
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
