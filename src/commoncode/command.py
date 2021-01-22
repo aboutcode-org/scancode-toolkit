@@ -201,11 +201,11 @@ def load_shared_library(dll_path, lib_dir):
     `lib_dir` to the path.
     """
 
-    if not path.exists(dll_path):
-        raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
+    if not dll_path or not path.exists(dll_path):
+        raise ImportError(f'Shared library "dll_path" does not exists: dll_path="{dll_path}" and lib_dir={lib_dir})')
 
     if lib_dir and not path.exists(lib_dir):
-        raise ImportError('Shared library "lib_dir" does not exists: %(lib_dir)r' % locals())
+        raise ImportError(f'Shared library "lib_dir" does not exists: dll_path="{dll_path}" and lib_dir={lib_dir})')
 
     if not isinstance(dll_path, str):
         dll_path = os.fsdecode(dll_path)
