@@ -3,7 +3,7 @@ parameters:
     image_name: ''
     python_versions: []
     test_suites: {}
-    python_architecture: x86
+    python_architecture: x64
 
 jobs:
     - job: ${{ parameters.job_name }}
