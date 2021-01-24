@@ -2622,11 +2622,11 @@ def build_wheels_remotely_on_multiple_platforms(
             'are required enironment variables.')
 
     python_dot_versions = ['.'.join(pv) for pv in python_versions]
-    python_cli_options = list(itertools.chain.from_iterable(
-        ('--version', ver) for ver in python_dot_versions))
+    python_cli_options = sorted(set(itertools.chain.from_iterable(
+        ('--version', ver) for ver in python_dot_versions)))
 
-    os_cli_options = list(itertools.chain.from_iterable(
-        ('--platform' , plat) for plat in operating_systems))
+    os_cli_options = sorted(set(itertools.chain.from_iterable(
+        ('--platform' , plat) for plat in operating_systems)))
 
     deps = '' if with_deps else '--no-deps'
     verbose = '--verbose' if verbose else ''
