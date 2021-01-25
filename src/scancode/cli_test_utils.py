@@ -32,9 +32,6 @@ from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
-mode = 'w'
-
-
 def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
@@ -152,7 +149,7 @@ def check_json_scan(expected_file, result_file, regen=False, remove_file_date=Fa
     """
     results = load_json_result(result_file, remove_file_date)
     if regen:
-        with open(expected_file, mode) as reg:
+        with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     expected = load_json_result(expected_file, remove_file_date)
@@ -253,7 +250,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False, remove_file_da
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
-        with open(expected_file, mode) as reg:
+        with open(expected_file, 'w') as reg:
             json.dump(results, reg, indent=2, separators=(',', ': '))
 
     with io.open(expected_file, encoding='utf-8') as res:
