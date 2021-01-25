@@ -26,6 +26,7 @@ import utils_thirdparty
 @click.option('-n', '--name',
     type=str,
     metavar='PACKAGE_NAME',
+    required=True,
     help='Python package name to add or build.',
 )
 @click.option('-v', '--version',
