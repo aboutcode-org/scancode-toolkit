@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 import os
 
 import pytest
@@ -33,7 +32,6 @@ from commoncode import hash
 from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
 from licensedcode.cache import load_index
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -136,8 +134,14 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         # when a new index is built, new index files are created
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
         assert os.path.exists(checksum_file)
         assert os.path.exists(cache_file)
@@ -145,8 +149,15 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when nothing changed a new index files is not created
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
 
@@ -158,16 +169,28 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when check_consistency is False, the index is not rebuild when
         # new files are added
         check_consistency = False
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
 
         # when check_consistency is True, the index is rebuilt when new
         # files are added
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
         assert tree_before != open(checksum_file).read()
 
         # now add some ignored file in the source tree
@@ -180,19 +203,48 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when check_consistency is True, the index is not rebuilt when new
         # files are added that are ignored
         check_consistency = True
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
 
-        # if the treechecksum file dies, the index is rebuilt
+        # if the treechecksum file dies, the index is not rebuilt if
+        # check_consistency is False. and no new checksum is created
         fileutils.delete(checksum_file)
         idx_checksum_before = hash.sha1(cache_file)
 
         check_consistency = False
-        cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
+
+        assert not os.path.exists(checksum_file)
+
+        # with the treechecksum file gone, the index is rebuilt if
+        # check_consistency is True and a new checksum is created
+        idx_checksum_before = hash.sha1(cache_file)
+
+        check_consistency = True
+        cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
         assert tree_before == open(checksum_file).read()
 
@@ -200,8 +252,14 @@ class LicenseIndexCacheTest(FileBasedTesting):
         fileutils.delete(cache_file)
 
         check_consistency = False
-        idx1 = cache.get_cached_index(cache_dir, check_consistency, timeout,
-                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        idx1 = cache.get_cached_index(
+            cache_dir=cache_dir,
+            check_consistency=check_consistency,
+            timeout=timeout,
+            tree_base_dir=tree_base_dir,
+            licenses_data_dir=licenses_data_dir,
+            rules_data_dir=rules_data_dir,
+        )
 
         # load index, forced from file
         idx2 = cache.load_index(cache_file)

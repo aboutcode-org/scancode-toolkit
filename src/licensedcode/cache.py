@@ -283,10 +283,10 @@ def get_cached_index(
                 else:
                     idx.dump(ifc)
 
-            # save the new checksums tree
+            # save the new tree checksum
+            current_checksum = tree_checksum(tree_base_dir=tree_base_dir)
             with open(checksum_file, 'w') as ctcs:
-                ctcs.write(current_checksum
-                           or tree_checksum(tree_base_dir=tree_base_dir))
+                ctcs.write(current_checksum)
 
             return idx
 
