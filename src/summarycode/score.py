@@ -108,7 +108,6 @@ def is_good_license(detected_license):
 
     thresholds = FILTERS[match_type]
 
-    # if the scan was not using --license-diag, we may not have these details
     if not coverage or not relevance:
         if score >= thresholds.min_score:
             return True
