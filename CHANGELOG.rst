@@ -4,13 +4,19 @@ Changelog
 v20.x (next)
 ------------
 
- - Adopt calendar versioning for scancode version numbers
+ - Adopt calendar, date-based versioning for scancode-toolkit version numbers
  - Updated scancode.bat to handle % signs in the arguments #1876
  - Support officially Python 64 bits on Windows 64 bits #335
+ - Update configuration and bootstrap scripts
+ - Add deprecation message for native Windows support #2366
  - Drop support for Python 32 bits on Windows #335
- - Update configuration and boostrap scripts
  - Drop support for Python 2  #295
- 
+ - The license index is now included in the standard archives as prebuilt.
+ - Hide and deprecate the --reindex-licenses command whci is now a noop. 
+ - Renmove the preoviously deprecated --license-diag otion
+ - Replace DEJACODE_LICENSE_URL with SCANCODE_LICENSEDB_URL at
+   https://scancode-licensedb.aboutcode.org #2165
+ - Include pre-built index in release archives #988
 
 
 v3.2.3 (2020-10-27)
