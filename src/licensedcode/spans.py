@@ -1,6 +1,6 @@
 #
 # Copyright (c) 2010 Matt Chaput. All rights reserved.
-# Modifications by nexB Copyright 2016 nexB Inc. All rights reserved.
+# Modifications by nexB Copyright (c) nexB Inc. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:

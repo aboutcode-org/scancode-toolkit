@@ -1,11 +1,13 @@
 #!/usr/bin/python
-
 #
-# Copyright (c) nexB Inc. and others.
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0 AND CC-BY-4.0
 #
-# Visit https://aboutcode.org and https://github.com/nexB/ for support and download.
-# ScanCode is a trademark of nexB Inc.
+# Visit https://aboutcode.org and https://github.com/nexB/scancode-toolkit for
+# support and download. ScanCode is a trademark of nexB Inc.
+#
+# The ScanCode software is licensed under the Apache License version 2.0.
+# The ScanCode open data is licensed under CC-BY-4.0.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
