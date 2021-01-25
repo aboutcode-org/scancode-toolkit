@@ -33,7 +33,7 @@ from plugincode.scan import scan_impl
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-from scancode.api import DEJACODE_LICENSE_URL
+from scancode.api import SCANCODE_LICENSEDB_URL
 
 
 def reindex_licenses(ctx, param, value):
@@ -91,7 +91,7 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_OPTIONS_GROUP),
 
         PluggableCommandLineOption(('--license-url-template',),
-            default=DEJACODE_LICENSE_URL, show_default=True,
+            default=SCANCODE_LICENSEDB_URL, show_default=True,
             required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
@@ -116,15 +116,19 @@ class LicenseScanner(ScanPlugin):
         from licensedcode.cache import get_index
         get_index(return_value=False)
 
-    def get_scanner(self, license_score=0, license_text=False,
-                    license_text_diagnostics=False,
-                    license_url_template=DEJACODE_LICENSE_URL,
-                    **kwargs):
+    def get_scanner(
+        self,
+        license_score=0,
+        license_text=False,
+        license_text_diagnostics=False,
+        license_url_template=SCANCODE_LICENSEDB_URL,
+        **kwargs
+    ):
 
         from scancode.api import get_licenses
-        return partial(get_licenses, 
+        return partial(get_licenses,
             min_score=license_score,
-            include_text=license_text, 
+            include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template
         )

@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from itertools import islice
 from os.path import getsize
 import logging
@@ -34,7 +33,6 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-
 TRACE = False
 
 logger = logging.getLogger(__name__)
@@ -42,7 +40,6 @@ logger = logging.getLogger(__name__)
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
 
 """
 Main scanning functions.
@@ -155,13 +152,14 @@ def get_urls(location, threshold=50, **kwargs):
     return dict(urls=results)
 
 
-DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
+DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
+SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
 
 
 def get_licenses(location, min_score=0,
                  include_text=False, license_text_diagnostics=False,
-                 license_url_template=DEJACODE_LICENSE_URL,
+                 license_url_template=SCANCODE_LICENSEDB_URL,
                  deadline=sys.maxsize, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at
@@ -215,7 +213,7 @@ def get_licenses(location, min_score=0,
         query_tokens_length = match.query.tokens_length(with_unknown=True)
         percentage_of_license_text = round((matched_tokens_length / query_tokens_length) * 100, 2)
 
-    detected_spdx_expressions=[]
+    detected_spdx_expressions = []
     return dict([
         ('licenses', detected_licenses),
         ('license_expressions', detected_expressions),
@@ -226,7 +224,7 @@ def get_licenses(location, min_score=0,
 
 def _licenses_data_from_match(
         match, include_text=False, license_text_diagnostics=False,
-        license_url_template=DEJACODE_LICENSE_URL):
+        license_url_template=SCANCODE_LICENSEDB_URL):
     """
     Return a list of "licenses" scan data built from a license match.
     Used directly only internally for testing.
@@ -242,8 +240,8 @@ def _licenses_data_from_match(
             matched_text = match.matched_text(whole_lines=True, highlight=False)
 
     SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
-    SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL+'/{}.LICENSE'
-    SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL+'/{}.yml'
+    SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'
+    SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL + '/{}.yml'
 
     detected_licenses = []
     for license_key in match.rule.license_keys():
@@ -262,7 +260,7 @@ def _licenses_data_from_match(
         result['reference_url'] = license_url_template.format(lic.key)
         result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
         result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
-        
+
         spdx_key = lic.spdx_license_key
         result['spdx_license_key'] = spdx_key
 
