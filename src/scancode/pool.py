@@ -13,7 +13,7 @@ Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
 derived from https://gist.github.com/aljungberg/626518
 
 Copyright (c) Alexander Ljungberg. All rights reserved.
-Modifications Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+Modifications Copyright (c) nexB Inc. and others. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
