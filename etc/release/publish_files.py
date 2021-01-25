@@ -150,9 +150,9 @@ TOKEN_HELP = (
 @click.option(
     '--user-repo-tag',
     help='The GitHub qualified repository user/name/tag in which '
-        'to create the release as in nexB/thirdparty/pypi',
+        'to create the release such as in nexB/thirdparty/pypi',
     type=str,
-    default='nexB/thirdparty-packages/pypi',
+    required=True,
     required=False,
 )
 @click.option(
