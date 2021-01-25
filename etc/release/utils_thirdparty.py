@@ -2460,9 +2460,9 @@ def call(args):
         stdout, stderr = process.communicate()
         returncode = process.returncode
         if returncode == 0:
-            return stdout, stderr, returncode
+            return returncode, stdout, stderr
         else:
-            raise Exception(stdout, stderr, returncode)
+            raise Exception(returncode, stdout, stderr)
 
 
 def add_or_upgrade_built_wheels(
@@ -2487,6 +2487,7 @@ def add_or_upgrade_built_wheels(
     Include wheels for all dependencies if `with_deps` is True.
     Build remotely is `build_remotely` is True.
     """
+    assert name, 'Name is required'
     print(f'\nAdding wheels for package: {name}=={version}')
 
     wheel_filenames = []
