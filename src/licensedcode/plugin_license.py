@@ -108,6 +108,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(
             ('--reindex-licenses',),
+            hidden=True,
             is_flag=True, is_eager=True,
             callback=reindex_licenses,
             help='Check the license index cache and reindex if needed and exit.',
