@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from collections import namedtuple
 from itertools import chain
 from os import path
@@ -64,31 +63,28 @@ class ScancodeCliUsageError(ScancodeError, click.UsageError):
 # click.Parameter instance
 Scanner = namedtuple('Scanner', 'name function')
 
-info_text = '''
-ScanCode scans code and other files for origin and license.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-'''
-
-notice_path = path.join(path.abspath(path.dirname(__file__)), 'NOTICE')
-notice_text = open(notice_path).read()
-
-delimiter = '\n\n\n'
-[notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
-extra_notice_text = delimiter + extra_notice_text
-
-delimiter = '\n\n  '
-[notice_text, acknowledgment_text] = notice_text.split(delimiter, 1)
-acknowledgment_text = delimiter + acknowledgment_text
-
-notice = acknowledgment_text.strip().replace('  ', '')
+notice = '''Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, either express or implied. No content created from
+ScanCode should be considered or used as legal advice. Consult an Attorney
+for any legal advice.
+ScanCode is a free software code scanning tool from nexB Inc. and others.
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.'''
 
 
 def print_about(ctx, param, value):
     """
-    Click callback to print a notice.
+    Click callback to print a full notice.
     """
     if not value or ctx.resilient_parsing:
         return
-    click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
+    info_text = '''
+ScanCode scans code and other files for origin and license.
+Visit https://www.aboutcode.org/ and https://github.com/nexB/scancode-toolkit/
+for support and download.
+
+'''
+
+    with open(path.join(path.abspath(path.dirname(__file__)), 'NOTICE')) as n:
+        notice_text = n.read()
+    click.echo(info_text + notice_text)
     ctx.exit()

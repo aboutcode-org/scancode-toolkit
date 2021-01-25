@@ -197,9 +197,11 @@ Source code and downloads
 License
 =======
 
-* Apache-2.0 with an acknowledgement required to accompany the scan output.
-* Public domain CC0-1.0 for reference datasets.
-* Multiple licenses (GPL2/3, LGPL, MIT, BSD, etc.) for third-party components.
+* Apache-2.0 as the overall license
+* CC-BY-4.0 for reference datasets (initially was in the Public Domain.
+* Multiple other secondary permissive or copyleft licenses (LGPL, MIT,
+  BSD, GPL 2/3, etc.) for third-party components.
+
 
 See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
