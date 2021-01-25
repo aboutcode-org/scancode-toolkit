@@ -97,15 +97,6 @@ class LicenseScanner(ScanPlugin):
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP),
 
-        PluggableCommandLineOption(('--license-diag',),
-            # not yet supported in Click 6.7 but added in PluggableCommandLineOption
-            hidden=True,
-            is_flag=True,
-            required_options=['license'],
-            help='(DEPRECATED: this is always included by default now). '
-            'Include diagnostic information in license scan results.',
-            help_group=SCAN_OPTIONS_GROUP),
-
         PluggableCommandLineOption(
             ('--reindex-licenses',),
             hidden=True,
