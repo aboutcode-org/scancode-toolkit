@@ -724,6 +724,16 @@ class Distribution(NameVer):
         else:
             about_data = about_filename_or_data
 
+        md5 = about_data.pop('checksum_md5', None)
+        if md5:
+            about_data['md5'] = md5
+        sha1 = about_data.pop('checksum_sha1', None)
+        if sha1:
+            about_data['sha1'] = sha1
+        sha256 = about_data.pop('checksum_sha256', None)
+        if sha256:
+            about_data['sha256'] = sha256
+
         about_data.pop('about_resource', None)
         notice_text = about_data.pop('notice_text', None)
         notice_file = about_data.pop('notice_file', None)
@@ -734,7 +744,6 @@ class Distribution(NameVer):
             if os.path.exists(notice_loc):
                 with open(notice_loc) as fi:
                     about_data['notice_text'] = fi.read()
-
         return self.update(about_data, keep_extra=True)
 
     def load_remote_about_data(self):
@@ -761,14 +770,35 @@ class Distribution(NameVer):
                 print(f'Failed to fetch NOTICE file: {self.notice_download_url}')
         return self.load_about_data(about_data)
 
-    def set_checksums(self, dest_dir=THIRDPARTY_DIR):
+    def get_checksums(self, dest_dir=THIRDPARTY_DIR):
         """
-        Update self with checksums computed to this dist filename is `dest_dir`.
+        Return a mapping of computed checksums for this dist filename is
+        `dest_dir`.
         """
         dist_loc = os.path.join(dest_dir, self.filename)
         if os.path.exists(dist_loc):
-            checksums = multi_checksums(dist_loc, checksum_names=('md5', 'sha1', 'sha256'))
-            self.update(checksums, overwrite=True)
+            return multi_checksums(dist_loc, checksum_names=('md5', 'sha1', 'sha256'))
+        else:
+            return {}
+
+    def set_checksums(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Update self with checksums computed for this dist filename is `dest_dir`.
+        """
+        self.update(self.get_checksums(dest_dir), overwrite=True)
+
+    def validate_checksums(self, dest_dir=THIRDPARTY_DIR):
+        """
+        Return True if all checksums that have a value in this dist match
+        checksums computed for this dist filename is `dest_dir`.
+        """
+        real_checksums = self.get_checksums(dest_dir)
+        for csk in ('md5', 'sha1', 'sha256'):
+            csv = getattr(self, csk)
+            rcv = real_checksums.get(csk)
+            if csv and rcv and csv != rcv:
+                return False
+        return True
 
     def get_pip_hash(self):
         """
@@ -880,10 +910,11 @@ class Distribution(NameVer):
         """
         return self.update(dist.get_updatable_data())
 
-    def get_updatable_data(self):
+    def get_updatable_data(self, data=None):
+        data = data or self.to_dict()
         return {
-            k: v for k, v in self.to_dict().items()
-            if k in self.updatable_fields
+            k: v for k, v in data.items()
+            if v and k in self.updatable_fields
         }
 
     def update(self, data, overwrite=False, keep_extra=True):
@@ -2832,5 +2863,9 @@ def find_problems(dest_dir=THIRDPARTY_DIR):
                 print(f'   Missing key ABOUT data in file://{abpth}')
             if 'classifiers' in dist.extra_data:
                 print(f'   Dangling classifiers data in file://{abpth}')
+            if not dist.validate_checksums(dest_dir):
+                print(f'   Invalid checksums in file://{abpth}')
+            if not dist.sha1 and dist.md5:
+                print(f'   Missing checksums in file://{abpth}')
 
     check_about(dest_dir=dest_dir)
