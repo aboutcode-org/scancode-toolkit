@@ -29,7 +29,6 @@ function setup {
     wget -O $CONFIGURE_ROOT_DIR/tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
     $PYTHON_EXE $CONFIGURE_ROOT_DIR/tmp/virtualenv.pyz --wheel embed --pip embed --setuptools embed --seeder pip $CONFIGURE_ROOT_DIR/tmp
     source $CONFIGURE_ROOT_DIR/tmp/bin/activate
-    $CONFIGURE_ROOT_DIR/tmp/bin/pip install --upgrade pip virtualenv setuptools wheel
 }
 
 
