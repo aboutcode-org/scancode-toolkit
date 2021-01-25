@@ -37,7 +37,7 @@ CLI_ARGS=$1
 
 
 echo "##########################################################################"
-echo "### BUILDING on Python: $PYTHON_VERSIONS on OSes $OPERATING_SYSTEMS"
+echo "### BUILDING for Python: $PYTHON_VERSIONS on operating systems: $OPERATING_SYSTEMS"
 
 
 ################################
@@ -46,6 +46,14 @@ echo "### BUILDING on Python: $PYTHON_VERSIONS on OSes $OPERATING_SYSTEMS"
 
 echo "## RELEASE: Setup environment"
 
+echo "## RELEASE: Clean and configure, then regen license index"
+./configure --clean
+./configure 
+source bin/activate
+scancode --reindex-licenses
+
+
+echo "## RELEASE: Backup previous releases"
 
 function backup_previous_release {
     # Move any existing dist, build and release dirs to a release-backup-<timestamp> dir
@@ -67,13 +75,18 @@ backup_previous_release
 clean_build
 mkdir release
 
-source bin/activate
+
+echo "## RELEASE: Install release requirements"
+# We do not need a full env for releasing
 bin/pip install $QUIET -r etc/release/requirements.txt
 
 
 ################################
 # PyPI wheels and sdist
 ################################
+echo "## RELEASE: Building a wheel and a source distribution"
+bin/python setup.py $QUIET $QUIET $QUIET sdist bdist_wheel
+
 
 echo "## RELEASE: Building a wheel and a source distribution"
 bin/python setup.py $QUIET $QUIET $QUIET sdist bdist_wheel
@@ -97,7 +110,7 @@ function build_archives {
     python_version=$1
     operating_system=$2
 
-    echo "## RELEASE: Building archive for Python $python_version for operating_system $operating_system"
+    echo "## RELEASE: Building archive for Python $python_version on operating system: $operating_system"
 
     clean_build
     mkdir -p thirdparty
@@ -130,7 +143,7 @@ function build_archives_with_sources {
     python_version=$1
     operating_system=$2
 
-    echo "## RELEASE: Building archive for Python $python_version for operating_system $operating_system"
+    echo "## RELEASE: Building archive with sources for Python $python_version on operating system: $operating_system"
 
     clean_build
     mkdir -p thirdparty
