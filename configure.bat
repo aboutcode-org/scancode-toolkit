@@ -87,7 +87,7 @@ set PYTHONDONTWRITEBYTECODE=1
 
 call mkdir "%CFG_ROOT_DIR%tmp"
 call curl -o "%CFG_ROOT_DIR%tmp\virtualenv.pyz" https://bootstrap.pypa.io/virtualenv.pyz
-call %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%tmp\virtualenv.pyz" "%CFG_ROOT_DIR%tmp"
+call %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%tmp\virtualenv.pyz"  --wheel embed --pip embed --setuptools embed --seeder pip  "%CFG_ROOT_DIR%tmp"
 call "%CFG_ROOT_DIR%tmp\Scripts\activate"
 call "%CFG_ROOT_DIR%tmp\Scripts\pip" install --upgrade pip virtualenv setuptools wheel
 call "%CFG_ROOT_DIR%tmp\Scripts\pip" install -e .[testing]
