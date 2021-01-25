@@ -95,7 +95,7 @@ try:
 except (DistributionNotFound, ImportError):
     # package is not installed or we do not have setutools/pkg_resources
     # on hand
-    __version__ = '20.01.02'
+    __version__ = '21.1.21'
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
@@ -133,17 +133,23 @@ if SCANCODE_DEV_MODE:
     scancode_cache_dir = join(scancode_root_dir, '.cache')
 else:
     # In other usage modes (as a CLI or as a library, regardless of how
-    # installed) we use sensible defaults in the user home directory.
-    # These are version specific
-
-    # WARNING: do not change this code without changing
-    # commoncode.fileutils.get_temp_dir too
-
+    # installed) the cache dir goes to the home directory and is different for
+    # each version
     user_home = abspath(expanduser('~'))
     __env_cache_dir = os.getenv('SCANCODE_CACHE')
     scancode_cache_dir = (__env_cache_dir
         or join(user_home, '.cache', 'scancode-tk', __version__))
 
+# we pre-build the index and bundle this with the the deployed release
+# therefore we use package data
+licensedcode_cache_dir = join(
+    scancode_src_dir,
+    'licensedcode',
+    'data',
+    'cache',
+)
+
+_create_dir(licensedcode_cache_dir)
 _create_dir(scancode_cache_dir)
 
 # - scancode_temp_dir: for short-lived temporary files which are import- or run-

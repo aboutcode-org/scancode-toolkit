@@ -30,7 +30,7 @@ from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir
 from commoncode import ignore
 
-from scancode_config import scancode_cache_dir
+from scancode_config import licensedcode_cache_dir
 from scancode_config import scancode_src_dir
 from scancode_config import SCANCODE_DEV_MODE
 
@@ -47,8 +47,11 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
 _LICENSES_BY_KEY_INDEX = None
 
 
-def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
-              return_value=True):
+def get_index(
+    cache_dir=licensedcode_cache_dir,
+    check_consistency=SCANCODE_DEV_MODE,
+    return_value=True,
+):
     """
     Return and eventually cache an index built from an iterable of rules.
     Build the index from the built-in rules dataset.
@@ -203,7 +206,7 @@ def get_spdx_symbols(_test_licenses=None):
 
 
 def get_cached_index(
-    cache_dir=scancode_cache_dir,
+    cache_dir=licensedcode_cache_dir,
     check_consistency=SCANCODE_DEV_MODE,
     # used for testing only
     timeout=LICENSE_INDEX_LOCK_TIMEOUT,
@@ -235,11 +238,11 @@ def get_cached_index(
     lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir)
 
     has_cache = os.path.exists(cache_file)
-    has_tree_checksum = os.path.exists(checksum_file)
-
     # bypass check if no consistency check is needed
-    if has_cache and has_tree_checksum and not check_consistency:
+    if has_cache and not check_consistency:
         return load_index(cache_file)
+
+    has_tree_checksum = os.path.exists(checksum_file)
 
     # here, we have no cache or we want a validity check: lock, check
     # and build or rebuild as needed
@@ -346,7 +349,7 @@ def tree_checksum(tree_base_dir=licensedcode_dir, _ignored=_ignored_from_hash):
     return md5(hashable).hexdigest()
 
 
-def get_license_cache_paths(cache_dir=scancode_cache_dir):
+def get_license_cache_paths(cache_dir=licensedcode_cache_dir):
     """
     Return a tuple of index cache files given a master `cache_dir`
     """
