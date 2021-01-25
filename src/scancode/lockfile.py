@@ -30,7 +30,7 @@ class FileLock(fasteners.InterProcessLock):
     def locked(self, timeout):
         acquired = self.acquire(timeout=timeout)
         if not acquired:
-            raise LockTimeout(timeout=timeout)
+            raise LockTimeout(timeout)
         try:
             yield
         finally:
