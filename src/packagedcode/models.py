@@ -156,7 +156,10 @@ class BasePackage(BaseModel):
     mimetypes = tuple()
     extensions = tuple()
     # list of known metafiles for a package type
-    metafiles = []
+    metafiles = tuple()
+
+    # list of known installation db path for a package type
+    installed_dbs = tuple()
 
     # Optional. Public default web base URL for package homepages of this
     # package type on the default repository.

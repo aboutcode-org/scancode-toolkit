@@ -13,6 +13,7 @@ import sys
 
 from commoncode import filetype
 from commoncode.fileutils import file_name
+from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import splitext_name
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
@@ -69,7 +70,7 @@ def recognize_packages(location):
 
     recognized_packages = []
     for package_type in PACKAGE_TYPES:
-        # Note: default to True if there is nothing to match against
+        # 1. try as as a metafile
         metafiles = package_type.metafiles
         if any(fnmatch.fnmatchcase(filename, metaf) for metaf in metafiles):
             for recognized in package_type.recognize(location):
@@ -89,6 +90,7 @@ def recognize_packages(location):
                 recognized_packages.append(recognized)
             return recognized_packages
 
+        # 2. otherwise try type, mimetype and extension if matching
         type_matched = False
         if package_type.filetypes:
             type_matched = any(t in ftype for t in package_type.filetypes)
@@ -137,6 +139,18 @@ def recognize_packages(location):
                 if SCANCODE_DEBUG_PACKAGE_API:
                     raise
 
+            return recognized_packages
+
+        # 3. try as an installed db
+        posix_location = as_posixpath(location)
+        if any(posix_location.endswith(idb) for idb in package_type.installed_dbs):
+            for recognized in package_type.recognize(location):
+                if TRACE:logger_debug('recognize_packages: metafile matching: recognized:', recognized)
+                if recognized and not recognized.license_expression:
+                    # compute and set a normalized license expression
+                    recognized.license_expression = recognized.compute_normalized_license()
+                    if TRACE:logger_debug('recognize_packages: recognized.license_expression:', recognized.license_expression)
+                recognized_packages.append(recognized)
             return recognized_packages
 
         if TRACE: logger_debug('recognize_packages: no match for type:', package_type)

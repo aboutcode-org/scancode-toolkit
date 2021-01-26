@@ -23,6 +23,7 @@ from packagedcode import models
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import opam
+from packagedcode import openwrt
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import readme
@@ -80,6 +81,7 @@ PACKAGE_TYPES = [
     win_pe.WindowsExecutable,
     readme.ReadmePackage,
     build.MetadataBzl,
+    openwrt.OpenwrtPackage,
 ]
 
 PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
