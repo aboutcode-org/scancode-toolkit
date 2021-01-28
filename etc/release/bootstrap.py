@@ -177,8 +177,6 @@ def bootstrap(
         (PypiPackage(name, version), envt)
         for name, version, envt in name_version_envt_to_build
     ]
-    if with_deps:
-        # we really to rebuild everything
     
     print(f'==> BUILDING #{len(packages_and_envts_to_build)} MISSING WHEELS')
 
