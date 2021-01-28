@@ -29,7 +29,7 @@ javaproperties==0.5.1
 Jinja2==2.10
 jsonstreams==0.5.0
 license-expression==1.2
-lxml==4.2.1
+lxml==4.6.2
 MarkupSafe==1.1.1
 more-itertools==5.0.0
 nltk==3.2
