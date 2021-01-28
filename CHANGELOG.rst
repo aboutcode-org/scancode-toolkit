@@ -1,22 +1,56 @@
 Changelog
 =========
 
-v20.x (next)
+v21.x (next)
 ------------
 
- - Adopt calendar, date-based versioning for scancode-toolkit version numbers
- - Updated scancode.bat to handle % signs in the arguments #1876
- - Support officially Python 64 bits on Windows 64 bits #335
- - Update configuration and bootstrap scripts
- - Add deprecation message for native Windows support #2366
- - Drop support for Python 32 bits on Windows #335
+
+
+v21.1.21
+--------
+
+Operating system support:
+
  - Drop support for Python 2  #295
- - The license index is now included in the standard archives as prebuilt.
- - Hide and deprecate the --reindex-licenses command whci is now a noop. 
- - Renmove the preoviously deprecated --license-diag otion
+ - Drop support for 32 bits on Windows #335
+ - Add support for Python 64 bits on Windows 64 bits #335
+ - Add support for Python 3.6 to Python 3.9 on Linux, Windows and macOS.
+   These are now tested on Azure.
+ - Add deprecation message for native Windows support #2366
+
+License scanning:
+
+ - Improve license detection accuracy with over 8400 new license detection fules
+   added or updated
+ - Remove the previously deprecated --license-diag option
+ - Include pre-built license index in release archives to speed up start #988
+ - Use SPDX LicenseRef-scancode namespace for all licenses keys not in SPDX
  - Replace DEJACODE_LICENSE_URL with SCANCODE_LICENSEDB_URL at
    https://scancode-licensedb.aboutcode.org #2165
- - Include pre-built index in release archives #988
+
+Package scanning:
+
+ - Add detection of package-installed files
+ - Add analysis of system package installed databases for Debian, OpenWRT and
+   Alpine Linux packages
+ - Add support for Alpine Linux, Debian, OpenWRT.
+
+Copyright scanning:
+
+ - Improve detection with minor grammar fixes
+
+Misc.
+
+ - Adopt a new calendar date-based versioning for scancode-toolkit version numbers
+ - Update thirdparty dependencies and built-in plugins
+ - Allow installation without extractcode and typecode native plugins. Instead
+   one can elect to install these or not to have a lighter footprint if needed.
+ - Update configuration and bootstrap scripts to support a new PyPI-like
+   repository at https://thirdparty.aboutcode.org/pypi/
+ - Create new release scripts to populate released archives with just the
+   required wheels of a given OS and Python version.
+ - Updated scancode.bat to handle % signs in the arguments #1876
+
 
 
 v3.2.3 (2020-10-27)
