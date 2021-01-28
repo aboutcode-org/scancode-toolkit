@@ -1,9 +1,0 @@
-about_resource: .
-name: ScanCode datasets
-license_expression: cc-by-4.0
-copyright: copyright (c) nexb Inc. and others.
-notes: |
- the preferred attribution notice for data is:
-    ScanCode open data by nexB Inc. and others licensed under CC-BY-4.0
-    Visit https://aboutcode.org and https://github.com/nexB/scancode-toolkit
-    for support and download. ScanCode is a trademark of nexB Inc.

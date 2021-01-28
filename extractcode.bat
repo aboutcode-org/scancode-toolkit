@@ -1,5 +1,11 @@
 @echo OFF
-@rem Copyright (c) nexB Inc. http://www.nexb.com/ - All rights reserved.
+
+@rem Copyright (c) nexB Inc. and others. All rights reserved.
+@rem SPDX-License-Identifier: Apache-2.0
+@rem See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+@rem ScanCode is a trademark of nexB Inc.
+@rem See https://github.com/nexB/scancode-toolkit for support or download.
+@rem See https://aboutcode.org for more information about nexB OSS projects.
 
 @rem  A wrapper to ScanCode command line entry point
 
