@@ -201,11 +201,11 @@ Create a ``PostScanPlugin`` class
 """""""""""""""""""""""""""""""""
 
 The ``PostScanPlugin`` class
-`code <https://github.com/nexB/scancode-toolkit/blob/develop/src/plugincode/post_scan.py>`_)
+`PostScanPlugin code <https://github.com/nexB/scancode-toolkit/blob/develop/src/plugincode/post_scan.py>`_)
 inherits from the ``CodebasePlugin`` class (see
-`code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L139-L150>`_),
+`CodebasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L139-L150>`_),
 which inherits from the ``BasePlugin`` class (see
-`code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py>#L38-L136`_).
+`BasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L38-L136>`_).
 
 ::
 
@@ -254,7 +254,7 @@ functionalities you can take a look at the other post-scan plugins for guidance 
 One good example is the License Policy post-scan plugin. This plugin is installed when ScanCode
 is installed and consequently is not located in the ``/plugins/`` directory used for
 manually-installed post-scan plugins. The code for the License Policy plugin can be found at
-`/scancode-toolkit/src/licensedcode/plugin_license_policy.py 
+`/scancode-toolkit/src/licensedcode/plugin_license_policy.py
 <https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
 and illustrates how a plugin can be used to analyze the results of a ScanCode scan using external
 data files and add the results of that analysis as a new field in the ScanCode JSON output file.
