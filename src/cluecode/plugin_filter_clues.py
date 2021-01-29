@@ -81,11 +81,16 @@ def filter_ignorable_resource_clues(resource, rules_by_id):
     detections = Detections.from_resource(resource)
     filtered = filter_ignorable_clues(detections, rules_by_id)
     if filtered:
-        resource.emails = filtered.emails
-        resource.urls = filtered.urls
-        resource.authors = filtered.authors
-        resource.holders = filtered.holders
-        resource.copyrights = filtered.copyrights
+        if hasattr(resource, 'emails'):
+            resource.emails = filtered.emails
+        if hasattr(resource, 'urls'):
+            resource.urls = filtered.urls
+        if hasattr(resource, 'authors'):
+            resource.authors = filtered.authors
+        if hasattr(resource, 'holders'):
+            resource.holders = filtered.holders
+        if hasattr(resource, 'copyrights'):
+            resource.copyrights = filtered.copyrights       
         return resource
 
 
@@ -199,11 +204,8 @@ def filter_ignorable_clues(detections, rules_by_id):
 
     no_detected_ignorables = not detections.copyrights and not detections.authors
 
-    if detections.licenses:
-        ignorables = collect_ignorables(detections.licenses, rules_by_id)
-    else:
-        ignorables = None
-
+    ignorables = collect_ignorables(detections.licenses, rules_by_id)
+    
     no_ignorables = not detections.licenses or is_empty(ignorables)
 
     if TRACE:
@@ -302,6 +304,14 @@ def collect_ignorables(license_matches, rules_by_id):
     holders = set()
     copyrights = set()
 
+    if not license_matches:
+        return Ignorables(
+        copyrights=frozenset(copyrights),
+        holders=frozenset(holders),
+        authors=frozenset(authors),
+        urls=frozenset(urls),
+        emails=frozenset(emails),
+    )
     # build tuple of (set of lines number, set of ignorbale values)
     for lic in license_matches:
 
